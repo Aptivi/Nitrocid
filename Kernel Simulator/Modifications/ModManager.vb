@@ -22,12 +22,9 @@ Imports Newtonsoft.Json.Linq
 
 Public Module ModManager
 
-    ''' <summary>
-    ''' Mods with their parts and scripts.
-    ''' </summary>
-    Public scripts As New Dictionary(Of String, ModInfo)
     Public BlacklistedModsString As String = ""
     Friend ReadOnly ModPath As String = GetKernelPath(KernelPathType.Mods)
+    Friend Mods As New Dictionary(Of String, ModInfo)
 
     ''' <summary>
     ''' Loads all mods in KSMods
@@ -113,8 +110,8 @@ Public Module ModManager
                 Wdbg(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count)
 
                 'Enumerate and delete the script as soon as the stopping is complete
-                For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
-                    Dim TargetMod As ModInfo = scripts.Values(ScriptIndex)
+                For ScriptIndex As Integer = Mods.Count - 1 To 0 Step -1
+                    Dim TargetMod As ModInfo = Mods.Values(ScriptIndex)
                     Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
 
                     'Try to stop the mod and all associated parts
@@ -135,7 +132,7 @@ Public Module ModManager
 
                     'Remove the mod from the list
                     Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
-                    scripts.Remove(scripts.Keys(ScriptIndex))
+                    Mods.Remove(Mods.Keys(ScriptIndex))
                 Next
 
                 'Clear all mod commands list, since we've stopped all mods.
@@ -214,8 +211,8 @@ Public Module ModManager
                         Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
 
                         'Iterate through all the mods
-                        For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
-                            Dim TargetMod As ModInfo = scripts.Values(ScriptIndex)
+                        For ScriptIndex As Integer = Mods.Count - 1 To 0 Step -1
+                            Dim TargetMod As ModInfo = Mods.Values(ScriptIndex)
                             Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
 
                             'Try to stop the mod and all associated parts
@@ -292,7 +289,7 @@ Public Module ModManager
 
                                 'Remove the mod from the list
                                 Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
-                                scripts.Remove(scripts.Keys(ScriptIndex))
+                                Mods.Remove(Mods.Keys(ScriptIndex))
                             End If
                         Next
                     Else
@@ -335,11 +332,11 @@ Public Module ModManager
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Function HasModStarted(ModFilename As String) As Boolean
         'Iterate through each mod and mod part
-        For Each ModName As String In scripts.Keys
+        For Each ModName As String In Mods.Keys
             Wdbg(DebugLevel.I, "Checking mod {0}...", ModName)
-            For Each PartName As String In scripts(ModName).ModParts.Keys
+            For Each PartName As String In Mods(ModName).ModParts.Keys
                 Wdbg(DebugLevel.I, "Checking part {0}...", PartName)
-                If scripts(ModName).ModParts(PartName).PartFilePath = ModFilename Then
+                If Mods(ModName).ModParts(PartName).PartFilePath = ModFilename Then
                     Wdbg(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename)
                     Return True
                 End If
@@ -499,6 +496,29 @@ Public Module ModManager
             Write(DoTranslation("Uninstallation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' Lists the mods
+    ''' </summary>
+    Public Function ListMods() As Dictionary(Of String, ModInfo)
+        Return ListMods("")
+    End Function
+
+    ''' <summary>
+    ''' Lists the mods
+    ''' </summary>
+    ''' <param name="SearchTerm">Search term</param>
+    Public Function ListMods(SearchTerm As String) As Dictionary(Of String, ModInfo)
+        Dim ListedMods As New Dictionary(Of String, ModInfo)
+
+        'List the mods using the search term
+        For Each ModName As String In Mods.Keys
+            If ModName.Contains(SearchTerm) Then
+                ListedMods.Add(ModName, Mods(ModName))
+            End If
+        Next
+        Return ListedMods
+    End Function
 
     ''' <summary>
     ''' Reloads all generic definitions so it can be updated with language change

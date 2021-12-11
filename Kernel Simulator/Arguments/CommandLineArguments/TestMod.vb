@@ -21,7 +21,7 @@ Class CommandLine_TestModArgument
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
         ParseMod(StringArgs)
-        If scripts.Count = 0 Then
+        If Mods.Count = 0 Then
             Environment.Exit(1)
         Else
             Environment.Exit(0)

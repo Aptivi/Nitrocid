@@ -149,7 +149,7 @@ Public Class Events
     ''' Makes the mod respond to the event of kernel start
     ''' </summary>
     Public Sub RespondStartKernel() Handles Me.KernelStarted
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -166,7 +166,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-login
     ''' </summary>
     Public Sub RespondPreLogin() Handles Me.PreLogin
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -183,7 +183,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-login
     ''' </summary>
     Public Sub RespondPostLogin(Username As String) Handles Me.PostLogin
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -200,7 +200,7 @@ Public Class Events
     ''' Makes the mod respond to the event of login error
     ''' </summary>
     Public Sub RespondLoginError(Username As String, Reason As String) Handles Me.LoginError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -217,7 +217,7 @@ Public Class Events
     ''' Makes the mod respond to the event of the shell being initialized
     ''' </summary>
     Public Sub RespondShellInitialized() Handles Me.ShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -234,7 +234,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-execute command
     ''' </summary>
     Public Sub RespondPreExecuteCommand(Command As String) Handles Me.PreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -251,7 +251,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-execute command
     ''' </summary>
     Public Sub RespondPostExecuteCommand(Command As String) Handles Me.PostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -268,7 +268,7 @@ Public Class Events
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
     Public Sub RespondKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -285,7 +285,7 @@ Public Class Events
     ''' Makes the mod respond to the event of continuable kernel error
     ''' </summary>
     Public Sub RespondContKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.ContKernelError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -302,7 +302,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-shutdown
     ''' </summary>
     Public Sub RespondPreShutdown() Handles Me.PreShutdown
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -319,7 +319,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-shutdown
     ''' </summary>
     Public Sub RespondPostShutdown() Handles Me.PostShutdown
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -336,7 +336,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-reboot
     ''' </summary>
     Public Sub RespondPreReboot() Handles Me.PreReboot
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -353,7 +353,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-reboot
     ''' </summary>
     Public Sub RespondPostReboot() Handles Me.PostReboot
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -370,7 +370,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-screensaver show
     ''' </summary>
     Public Sub RespondPreShowScreensaver(Screensaver As String) Handles Me.PreShowScreensaver
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -387,7 +387,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-screensaver show
     ''' </summary>
     Public Sub RespondPostShowScreensaver(Screensaver As String) Handles Me.PostShowScreensaver
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -404,7 +404,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-unlock
     ''' </summary>
     Public Sub RespondPreUnlock(Screensaver As String) Handles Me.PreUnlock
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -421,7 +421,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-unlock
     ''' </summary>
     Public Sub RespondPostUnlock(Screensaver As String) Handles Me.PostUnlock
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -438,7 +438,7 @@ Public Class Events
     ''' Makes the mod respond to the event of command error
     ''' </summary>
     Public Sub RespondCommandError(Command As String, Exception As Exception) Handles Me.CommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -455,7 +455,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-reload config
     ''' </summary>
     Public Sub RespondPreReloadConfig() Handles Me.PreReloadConfig
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -471,7 +471,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-reload config
     ''' </summary>
     Public Sub RespondPostReloadConfig() Handles Me.PostReloadConfig
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -488,7 +488,7 @@ Public Class Events
     ''' Makes the mod respond to the event of a placeholder being parsed
     ''' </summary>
     Public Sub RespondPlaceholderParsing(Target As String) Handles Me.PlaceholderParsing
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -505,7 +505,7 @@ Public Class Events
     ''' Makes the mod respond to the event of a parsed placeholder
     ''' </summary>
     Public Sub RespondPlaceholderParsed(Target As String) Handles Me.PlaceholderParsed
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -522,7 +522,7 @@ Public Class Events
     ''' Makes the mod respond to the event of garbage collection finish
     ''' </summary>
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -539,7 +539,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP shell initialized
     ''' </summary>
     Public Sub RespondFTPShellInitialized() Handles Me.FTPShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -556,7 +556,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondFTPPreExecuteCommand(Command As String) Handles Me.FTPPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -573,7 +573,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondFTPPostExecuteCommand(Command As String) Handles Me.FTPPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -590,7 +590,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP command error
     ''' </summary>
     Public Sub RespondFTPCommandError(Command As String, Exception As Exception) Handles Me.FTPCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -607,7 +607,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP pre-download
     ''' </summary>
     Public Sub RespondFTPPreDownload(File As String) Handles Me.FTPPreDownload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -624,7 +624,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP post-download
     ''' </summary>
     Public Sub RespondFTPPostDownload(File As String, Success As Boolean) Handles Me.FTPPostDownload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -641,7 +641,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP pre-upload
     ''' </summary>
     Public Sub RespondFTPPreUpload(File As String) Handles Me.FTPPreUpload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -658,7 +658,7 @@ Public Class Events
     ''' Makes the mod respond to the event of FTP post-upload
     ''' </summary>
     Public Sub RespondFTPPostUpload(File As String, Success As Boolean) Handles Me.FTPPostUpload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -675,7 +675,7 @@ Public Class Events
     ''' Makes the mod respond to the event of IMAP shell initialized
     ''' </summary>
     Public Sub RespondIMAPShellInitialized() Handles Me.IMAPShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -692,7 +692,7 @@ Public Class Events
     ''' Makes the mod respond to the event of IMAP pre-command execution
     ''' </summary>
     Public Sub RespondIMAPPreExecuteCommand(Command As String) Handles Me.IMAPPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -709,7 +709,7 @@ Public Class Events
     ''' Makes the mod respond to the event of IMAP post-command execution
     ''' </summary>
     Public Sub RespondIMAPPostExecuteCommand(Command As String) Handles Me.IMAPPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -726,7 +726,7 @@ Public Class Events
     ''' Makes the mod respond to the event of IMAP command error
     ''' </summary>
     Public Sub RespondIMAPCommandError(Command As String, Exception As Exception) Handles Me.IMAPCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -743,7 +743,7 @@ Public Class Events
     ''' Makes the mod respond to the event of remote debugging connection accepted
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionAccepted(IP As String) Handles Me.RemoteDebugConnectionAccepted
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -760,7 +760,7 @@ Public Class Events
     ''' Makes the mod respond to the event of remote debugging connection disconnected
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionDisconnected(IP As String) Handles Me.RemoteDebugConnectionDisconnected
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -777,7 +777,7 @@ Public Class Events
     ''' Makes the mod respond to the event of remote debugging command execution
     ''' </summary>
     Public Sub RespondRemoteDebugExecuteCommand(IP As String, Command As String) Handles Me.RemoteDebugExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -794,7 +794,7 @@ Public Class Events
     ''' Makes the mod respond to the event of remote debugging command error
     ''' </summary>
     Public Sub RespondRemoteDebugCommandError(IP As String, Command As String, Exception As Exception) Handles Me.RemoteDebugCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -811,7 +811,7 @@ Public Class Events
     ''' Makes the mod respond to the event of RPC command sent
     ''' </summary>
     Public Sub RespondRPCCommandSent(Command As String, Argument As String, IP As String, Port As Integer) Handles Me.RPCCommandSent
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -828,7 +828,7 @@ Public Class Events
     ''' Makes the mod respond to the event of RPC command received
     ''' </summary>
     Public Sub RespondRPCCommandReceived(Command As String, IP As String, Port As Integer) Handles Me.RPCCommandReceived
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -845,7 +845,7 @@ Public Class Events
     ''' Makes the mod respond to the event of RPC command error
     ''' </summary>
     Public Sub RespondRPCCommandError(Command As String, Exception As Exception, IP As String, Port As Integer) Handles Me.RPCCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -862,7 +862,7 @@ Public Class Events
     ''' Makes the mod respond to the event of RSS shell initialized
     ''' </summary>
     Public Sub RespondRSSShellInitialized(FeedUrl As String) Handles Me.RSSShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -879,7 +879,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondRSSPreExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -896,7 +896,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondRSSPostExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -913,7 +913,7 @@ Public Class Events
     ''' Makes the mod respond to the event of RSS command error
     ''' </summary>
     Public Sub RespondRSSCommandError(FeedUrl As String, Command As String, Exception As Exception) Handles Me.RSSCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -930,7 +930,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP shell initialized
     ''' </summary>
     Public Sub RespondSFTPShellInitialized() Handles Me.SFTPShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -947,7 +947,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondSFTPPreExecuteCommand(Command As String) Handles Me.SFTPPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -964,7 +964,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondSFTPPostExecuteCommand(Command As String) Handles Me.SFTPPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -981,7 +981,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP command error
     ''' </summary>
     Public Sub RespondSFTPCommandError(Command As String, Exception As Exception) Handles Me.SFTPCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -998,7 +998,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP pre-download
     ''' </summary>
     Public Sub RespondSFTPPreDownload(File As String) Handles Me.SFTPPreDownload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1015,7 +1015,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP post-download
     ''' </summary>
     Public Sub RespondSFTPPostDownload(File As String) Handles Me.SFTPPostDownload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1032,7 +1032,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP download error
     ''' </summary>
     Public Sub RespondSFTPDownloadError(File As String, Exception As Exception) Handles Me.SFTPDownloadError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1049,7 +1049,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP pre-upload
     ''' </summary>
     Public Sub RespondSFTPPreUpload(File As String) Handles Me.SFTPPreUpload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1066,7 +1066,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP post-upload
     ''' </summary>
     Public Sub RespondSFTPPostUpload(File As String) Handles Me.SFTPPostUpload
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1083,7 +1083,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SFTP download error
     ''' </summary>
     Public Sub RespondSFTPUploadError(File As String, Exception As Exception) Handles Me.SFTPUploadError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1100,7 +1100,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SSH being connected
     ''' </summary>
     Public Sub RespondSSHConnected(Target As String) Handles Me.SSHConnected
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1117,7 +1117,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SSH being disconnected
     ''' </summary>
     Public Sub RespondSSHDisconnected() Handles Me.SSHDisconnected
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1134,7 +1134,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondSSHPreExecuteCommand(Target As String, Command As String) Handles Me.SSHPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1151,7 +1151,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondSSHPostExecuteCommand(Target As String, Command As String) Handles Me.SSHPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1168,7 +1168,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SSH command error
     ''' </summary>
     Public Sub RespondSSHCommandError(Target As String, Command As String, Exception As Exception) Handles Me.SSHCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1185,7 +1185,7 @@ Public Class Events
     ''' Makes the mod respond to the event of SSH error
     ''' </summary>
     Public Sub RespondSSHError(Exception As Exception) Handles Me.SSHError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1202,7 +1202,7 @@ Public Class Events
     ''' Makes the mod respond to the event of UESH pre-execute
     ''' </summary>
     Public Sub RespondUESHPreExecute(Command As String) Handles Me.UESHPreExecute
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1219,7 +1219,7 @@ Public Class Events
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
     Public Sub RespondUESHPostExecute(Command As String) Handles Me.UESHPostExecute
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1236,7 +1236,7 @@ Public Class Events
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
     Public Sub RespondUESHError(Command As String, Exception As Exception) Handles Me.UESHError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1253,7 +1253,7 @@ Public Class Events
     ''' Makes the mod respond to the event of text shell initialized
     ''' </summary>
     Public Sub RespondTextShellInitialized() Handles Me.TextShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1270,7 +1270,7 @@ Public Class Events
     ''' Makes the mod respond to the event of text pre-command execution
     ''' </summary>
     Public Sub RespondTextPreExecuteCommand(Command As String) Handles Me.TextPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1287,7 +1287,7 @@ Public Class Events
     ''' Makes the mod respond to the event of text post-command execution
     ''' </summary>
     Public Sub RespondTextPostExecuteCommand(Command As String) Handles Me.TextPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1304,7 +1304,7 @@ Public Class Events
     ''' Makes the mod respond to the event of text command error
     ''' </summary>
     Public Sub RespondTextCommandError(Command As String, Exception As Exception) Handles Me.TextCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1321,7 +1321,7 @@ Public Class Events
     ''' Makes the mod respond to the event of notification being sent
     ''' </summary>
     Public Sub RespondNotificationSent(Notification As Notification) Handles Me.NotificationSent
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1338,7 +1338,7 @@ Public Class Events
     ''' Makes the mod respond to the event of notifications being sent
     ''' </summary>
     Public Sub RespondNotificationsSent(Notifications As List(Of Notification)) Handles Me.NotificationsSent
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1355,7 +1355,7 @@ Public Class Events
     ''' Makes the mod respond to the event of notification being received
     ''' </summary>
     Public Sub RespondNotificationReceived(Notification As Notification) Handles Me.NotificationReceived
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1372,7 +1372,7 @@ Public Class Events
     ''' Makes the mod respond to the event of notifications being received
     ''' </summary>
     Public Sub RespondNotificationsReceived(Notifications As List(Of Notification)) Handles Me.NotificationsReceived
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1389,7 +1389,7 @@ Public Class Events
     ''' Makes the mod respond to the event of notification being dismissed
     ''' </summary>
     Public Sub RespondNotificationDismissed() Handles Me.NotificationDismissed
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1406,7 +1406,7 @@ Public Class Events
     ''' Makes the mod respond to the event of config being saved
     ''' </summary>
     Public Sub RespondConfigSaved() Handles Me.ConfigSaved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1423,7 +1423,7 @@ Public Class Events
     ''' Makes the mod respond to the event of config having problems saving
     ''' </summary>
     Public Sub RespondConfigSaveError(Exception As Exception) Handles Me.ConfigSaveError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1440,7 +1440,7 @@ Public Class Events
     ''' Makes the mod respond to the event of config being read
     ''' </summary>
     Public Sub RespondConfigRead() Handles Me.ConfigRead
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1457,7 +1457,7 @@ Public Class Events
     ''' Makes the mod respond to the event of config having problems reading
     ''' </summary>
     Public Sub RespondConfigReadError(Exception As Exception) Handles Me.ConfigReadError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1474,7 +1474,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod command pre-execution
     ''' </summary>
     Public Sub RespondPreExecuteModCommand(Command As String) Handles Me.PreExecuteModCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1491,7 +1491,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod command post-execution
     ''' </summary>
     Public Sub RespondPostExecuteModCommand(Command As String) Handles Me.PostExecuteModCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1508,7 +1508,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod being parsed
     ''' </summary>
     Public Sub RespondModParsed(ModFileName As String) Handles Me.ModParsed
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1525,7 +1525,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod having problems parsing
     ''' </summary>
     Public Sub RespondModParseError(ModFileName As String) Handles Me.ModParseError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1542,7 +1542,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod being finalized
     ''' </summary>
     Public Sub RespondModFinalized(ModFileName As String) Handles Me.ModFinalized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1559,7 +1559,7 @@ Public Class Events
     ''' Makes the mod respond to the event of mod having problems finalizing
     ''' </summary>
     Public Sub RespondModFinalizationFailed(ModFileName As String, Reason As String) Handles Me.ModFinalizationFailed
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1576,7 +1576,7 @@ Public Class Events
     ''' Makes the mod respond to the event of user being added
     ''' </summary>
     Public Sub RespondUserAdded(Username As String) Handles Me.UserAdded
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1593,7 +1593,7 @@ Public Class Events
     ''' Makes the mod respond to the event of user being removed
     ''' </summary>
     Public Sub RespondUserRemoved(Username As String) Handles Me.UserRemoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1610,7 +1610,7 @@ Public Class Events
     ''' Makes the mod respond to the event of username being changed
     ''' </summary>
     Public Sub RespondUsernameChanged(OldUsername As String, NewUsername As String) Handles Me.UsernameChanged
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1627,7 +1627,7 @@ Public Class Events
     ''' Makes the mod respond to the event of user password being changed
     ''' </summary>
     Public Sub RespondUserPasswordChanged(Username As String) Handles Me.UserPasswordChanged
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1644,7 +1644,7 @@ Public Class Events
     ''' Makes the mod respond to the event of hardware probing
     ''' </summary>
     Public Sub RespondHardwareProbing() Handles Me.HardwareProbing
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1661,7 +1661,7 @@ Public Class Events
     ''' Makes the mod respond to the event of hardware being probed
     ''' </summary>
     Public Sub RespondHardwareProbed() Handles Me.HardwareProbed
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1678,7 +1678,7 @@ Public Class Events
     ''' Makes the mod respond to the event of current directory being changed
     ''' </summary>
     Public Sub RespondCurrentDirectoryChanged() Handles Me.CurrentDirectoryChanged
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1695,7 +1695,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file creation
     ''' </summary>
     Public Sub RespondFileCreated(File As String) Handles Me.FileCreated
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1712,7 +1712,7 @@ Public Class Events
     ''' Makes the mod respond to the event of directory creation
     ''' </summary>
     Public Sub RespondDirectoryCreated(Directory As String) Handles Me.DirectoryCreated
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1729,7 +1729,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file copying process
     ''' </summary>
     Public Sub RespondFileCopied(Source As String, Destination As String) Handles Me.FileCopied
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1746,7 +1746,7 @@ Public Class Events
     ''' Makes the mod respond to the event of directory copying process
     ''' </summary>
     Public Sub RespondDirectoryCopied(Source As String, Destination As String) Handles Me.DirectoryCopied
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1763,7 +1763,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file moving process
     ''' </summary>
     Public Sub RespondFileMoved(Source As String, Destination As String) Handles Me.FileMoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1780,7 +1780,7 @@ Public Class Events
     ''' Makes the mod respond to the event of directory moving process
     ''' </summary>
     Public Sub RespondDirectoryMoved(Source As String, Destination As String) Handles Me.DirectoryMoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1797,7 +1797,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file removal
     ''' </summary>
     Public Sub RespondFileRemoved(File As String) Handles Me.FileRemoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1814,7 +1814,7 @@ Public Class Events
     ''' Makes the mod respond to the event of directory removal
     ''' </summary>
     Public Sub RespondDirectoryRemoved(Directory As String) Handles Me.DirectoryRemoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1831,7 +1831,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file attribute addition
     ''' </summary>
     Public Sub RespondFileAttributeAdded(File As String, Attributes As FileAttributes) Handles Me.FileAttributeAdded
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1848,7 +1848,7 @@ Public Class Events
     ''' Makes the mod respond to the event of file attribute removal
     ''' </summary>
     Public Sub RespondFileAttributeRemoved(File As String, Attributes As FileAttributes) Handles Me.FileAttributeRemoved
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1865,7 +1865,7 @@ Public Class Events
     ''' Makes the mod respond to the event of console colors being reset
     ''' </summary>
     Public Sub RespondColorReset() Handles Me.ColorReset
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1882,7 +1882,7 @@ Public Class Events
     ''' Makes the mod respond to the event of theme setting
     ''' </summary>
     Public Sub RespondThemeSet(Theme As String) Handles Me.ThemeSet
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1899,7 +1899,7 @@ Public Class Events
     ''' Makes the mod respond to the event of theme setting problem
     ''' </summary>
     Public Sub RespondThemeSetError(Theme As String, Reason As String) Handles Me.ThemeSetError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1916,7 +1916,7 @@ Public Class Events
     ''' Makes the mod respond to the event of console colors being set
     ''' </summary>
     Public Sub RespondColorSet() Handles Me.ColorSet
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1933,7 +1933,7 @@ Public Class Events
     ''' Makes the mod respond to the event of console colors having problems being set
     ''' </summary>
     Public Sub RespondColorSetError(Reason As String) Handles Me.ColorSetError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1950,7 +1950,7 @@ Public Class Events
     ''' Makes the mod respond to the event of theme studio start
     ''' </summary>
     Public Sub RespondThemeStudioStarted() Handles Me.ThemeStudioStarted
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1967,7 +1967,7 @@ Public Class Events
     ''' Makes the mod respond to the event of theme studio exit
     ''' </summary>
     Public Sub RespondThemeStudioExit() Handles Me.ThemeStudioExit
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -1984,7 +1984,7 @@ Public Class Events
     ''' Makes the mod respond to the event of console colors having problems being set
     ''' </summary>
     Public Sub RespondArgumentsInjected(InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2001,7 +2001,7 @@ Public Class Events
     ''' Makes the mod respond to the event of ZIP shell initialized
     ''' </summary>
     Public Sub RespondZipShellInitialized() Handles Me.ZipShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2018,7 +2018,7 @@ Public Class Events
     ''' Makes the mod respond to the event of ZIP pre-command execution
     ''' </summary>
     Public Sub RespondZipPreExecuteCommand(Command As String) Handles Me.ZipPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2035,7 +2035,7 @@ Public Class Events
     ''' Makes the mod respond to the event of ZIP post-command execution
     ''' </summary>
     Public Sub RespondZipPostExecuteCommand(Command As String) Handles Me.ZipPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2052,7 +2052,7 @@ Public Class Events
     ''' Makes the mod respond to the event of ZIP command error
     ''' </summary>
     Public Sub RespondZipCommandError(Command As String, Exception As Exception) Handles Me.ZipCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2069,7 +2069,7 @@ Public Class Events
     ''' Makes the mod respond to the event of HTTP shell initialized
     ''' </summary>
     Public Sub RespondHTTPShellInitialized() Handles Me.HTTPShellInitialized
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2086,7 +2086,7 @@ Public Class Events
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
     Public Sub RespondHTTPPreExecuteCommand(Command As String) Handles Me.HTTPPreExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2103,7 +2103,7 @@ Public Class Events
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
     Public Sub RespondHTTPPostExecuteCommand(Command As String) Handles Me.HTTPPostExecuteCommand
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2120,7 +2120,7 @@ Public Class Events
     ''' Makes the mod respond to the event of HTTP command error
     ''' </summary>
     Public Sub RespondHTTPCommandError(Command As String, Exception As Exception) Handles Me.HTTPCommandError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
@@ -2137,7 +2137,7 @@ Public Class Events
     ''' Makes the mod respond to the event of process error
     ''' </summary>
     Public Sub RespondProcessError(Process As String, Exception As Exception) Handles Me.ProcessError
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript

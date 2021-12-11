@@ -32,7 +32,7 @@ Public Module ModExecutor
         Wdbg(DebugLevel.I, "Command = {0}", actualCmd)
 
         'Check to see if the command written needs normalization
-        For Each ModPart As ModInfo In scripts.Values
+        For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
                 If script.Commands IsNot Nothing Then
@@ -54,8 +54,8 @@ Public Module ModExecutor
         End If
 
         'Try to execute the command.
-        For Each ModPart As String In scripts(actualCmd).ModParts.Keys
-            Dim Script As IScript = scripts(actualCmd).ModParts(ModPart).PartScript
+        For Each ModPart As String In Mods(actualCmd).ModParts.Keys
+            Dim Script As IScript = Mods(actualCmd).ModParts(ModPart).PartScript
             If Script.Commands IsNot Nothing Then
                 'Found commands dictionary! Now, check it for the command
                 If Script.Commands.ContainsKey(parts(0)) Then
