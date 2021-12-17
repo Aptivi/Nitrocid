@@ -26,7 +26,7 @@ Public Module Paths
             If IsOnUnix() Then
                 Return Environment.GetEnvironmentVariable("HOME")
             Else
-                Return Environment.GetEnvironmentVariable("USERPROFILE")
+                Return Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/")
             End If
         End Get
     End Property
@@ -39,7 +39,7 @@ Public Module Paths
             If IsOnUnix() Then
                 Return "/tmp"
             Else
-                Return Environment.GetEnvironmentVariable("TEMP")
+                Return Environment.GetEnvironmentVariable("TEMP").Replace("\", "/")
             End If
         End Get
     End Property
