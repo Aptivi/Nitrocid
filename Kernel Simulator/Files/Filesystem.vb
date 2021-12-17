@@ -474,7 +474,7 @@ Public Module Filesystem
 
         'Replace last occurrences of current directory of path with nothing.
         If Not Source = "" Then
-            If Path.Contains(Source.Replace("\", "/")) And Path.AllIndexesOf(Source.Replace("\", "/")).Count > 1 Then
+            If Path.Contains(Source) And Path.AllIndexesOf(Source).Count > 1 Then
                 Path = ReplaceLastOccurrence(Path, Source, "")
             End If
         End If
