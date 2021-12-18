@@ -59,7 +59,7 @@ Public Module ConfigTools
 
         'Screensaver keys and sections
         Dim ExpectedScreensaverKeys As Integer = 4
-        Dim ExpectedScreensavers As Integer = 26
+        Dim ExpectedScreensavers As Integer = 27
         Dim ExpectedScreensaverSections As Integer = ExpectedScreensavers + ExpectedScreensaverKeys
 
         'Individual screensaver keys
@@ -89,6 +89,7 @@ Public Module ConfigTools
         Dim ExpectedScreensaverSnakerKeys As Integer = 12
         Dim ExpectedScreensaverBarRotKeys As Integer = 33
         Dim ExpectedScreensaverFireworksKeys As Integer = 12
+        Dim ExpectedScreensaverFigletKeys As Integer = 13
 
         'Check for missing sections
         If ConfigToken.Count <> ExpectedSections Then
@@ -299,6 +300,12 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("Fireworks") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Fireworks").Count <> ExpectedScreensaverFireworksKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Fireworks. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Figlet") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Figlet").Count <> ExpectedScreensaverFigletKeys Then
+                    Wdbg(DebugLevel.W, "Missing keys in Screensaver > Figlet. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

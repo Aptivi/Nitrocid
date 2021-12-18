@@ -1602,4 +1602,58 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public FireworksMaximumColorLevel As Integer = 255
 
+    '-> Figlet
+    ''' <summary>
+    ''' [Figlet] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Figlet255Colors As Boolean
+    ''' <summary>
+    ''' [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public FigletTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Figlet] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FigletDelay As Integer = 1000
+    ''' <summary>
+    ''' [Figlet] Text for Figlet. Shorter is better.
+    ''' </summary>
+    Public FigletText As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Figlet] Figlet font supported by the figlet library used.
+    ''' </summary>
+    Public FigletFont As String = "Small"
+    ''' <summary>
+    ''' [Figlet] The minimum red color level (true color)
+    ''' </summary>
+    Public FigletMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Figlet] The minimum green color level (true color)
+    ''' </summary>
+    Public FigletMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Figlet] The minimum blue color level (true color)
+    ''' </summary>
+    Public FigletMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Figlet] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FigletMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Figlet] The maximum red color level (true color)
+    ''' </summary>
+    Public FigletMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Figlet] The maximum green color level (true color)
+    ''' </summary>
+    Public FigletMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Figlet] The maximum blue color level (true color)
+    ''' </summary>
+    Public FigletMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Figlet] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FigletMaximumColorLevel As Integer = 255
+
 End Module

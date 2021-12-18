@@ -801,6 +801,24 @@ Public Module Config
             }
             ScreensaverConfig.Add("Fireworks", FireworksConfig)
 
+            'Figlet config json object
+            Dim FigletConfig As New JObject From {
+                    {"Activate 255 Color Mode", Figlet255Colors},
+                    {"Activate True Color Mode", FigletTrueColor},
+                    {"Delay in Milliseconds", FigletDelay},
+                    {"Text Shown", FigletText},
+                    {"Figlet font", FigletFont},
+                    {"Minimum red color level", FigletMinimumRedColorLevel},
+                    {"Minimum green color level", FigletMinimumGreenColorLevel},
+                    {"Minimum blue color level", FigletMinimumBlueColorLevel},
+                    {"Minimum color level", FigletMinimumColorLevel},
+                    {"Maximum red color level", FigletMaximumRedColorLevel},
+                    {"Maximum green color level", FigletMaximumGreenColorLevel},
+                    {"Maximum blue color level", FigletMaximumBlueColorLevel},
+                    {"Maximum color level", FigletMaximumColorLevel}
+            }
+            ScreensaverConfig.Add("Figlet", FigletConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1510,6 +1528,21 @@ Public Module Config
             FireworksMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum green color level"), 255)
             FireworksMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum blue color level"), 255)
             FireworksMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum color level"), 255)
+
+            '> Figlet
+            Figlet255Colors = If(ConfigToken("Screensaver")?("Figlet")?("Activate 255 Color Mode"), False)
+            FigletTrueColor = If(ConfigToken("Screensaver")?("Figlet")?("Activate True Color Mode"), True)
+            FigletDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Figlet")?("Delay in Milliseconds"), 10)
+            FigletText = If(ConfigToken("Screensaver")?("Figlet")?("Text Shown"), "Kernel Simulator")
+            FigletFont = If(ConfigToken("Screensaver")?("Figlet")?("Figlet font"), "Small")
+            FigletMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Minimum red color level"), 0)
+            FigletMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Minimum green color level"), 0)
+            FigletMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Minimum blue color level"), 0)
+            FigletMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Minimum color level"), 0)
+            FigletMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum red color level"), 255)
+            FigletMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 255)
+            FigletMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 255)
+            FigletMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 255)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

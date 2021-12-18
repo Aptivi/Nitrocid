@@ -104,6 +104,24 @@ Public Module FieldManager
     End Function
 
     ''' <summary>
+    ''' Gets the properties from the type dynamically
+    ''' </summary>
+    ''' <param name="VariableType">Variable type</param>
+    ''' <returns>Value of a property</returns>
+    Public Function GetProperties(VariableType As Type) As Dictionary(Of String, Object)
+        'Get field for specified variable
+        Dim Properties As PropertyInfo() = VariableType.GetProperties()
+        Dim PropertyDict As New Dictionary(Of String, Object)
+
+        'Get the properties and get their values
+        For Each VarProperty As PropertyInfo In Properties
+            Dim PropertyValue As Object = VarProperty.GetValue(VariableType)
+            PropertyDict.Add(VarProperty.Name, PropertyValue)
+        Next
+        Return PropertyDict
+    End Function
+
+    ''' <summary>
     ''' Gets a field from variable name
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>

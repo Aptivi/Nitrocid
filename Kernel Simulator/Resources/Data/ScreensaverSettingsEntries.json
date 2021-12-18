@@ -2397,5 +2397,88 @@
                 "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
             }
         ]
+    },
+    "Figlet": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Figlet255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "FigletTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FigletDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "FigletText",
+                "Description": "Write any text you want shown. Shorter is better."
+            },
+            {
+                "Name": "Figlet font",
+                "Type": "SString",
+                "Variable": "FigletFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "FigletMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "FigletMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "FigletMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "FigletMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "FigletMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "FigletMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "FigletMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "FigletMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
     }
 }
