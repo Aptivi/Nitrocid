@@ -46,7 +46,7 @@ Public Module LanguageManager
                                                                                {"ger", New LanguageInfo("ger", "German", False)},
                                                                                {"glc", New LanguageInfo("glc", "Galician", False)},
                                                                                {"grk", New LanguageInfo("grk", "Greek", True)}, {"grk-T", New LanguageInfo("grk-T", "Greek", True)},
-                                                                               {"guj", New LanguageInfo("guj", "Gujarati", True)}, {"guj-T", New LanguageInfo("ind-T", "Gujarati", True)},
+                                                                               {"guj", New LanguageInfo("guj", "Gujarati", True)}, {"guj-T", New LanguageInfo("guj-T", "Gujarati", True)},
                                                                                {"hxr-1", New LanguageInfo("hxr-1", "H4X0R Level 1", False)},
                                                                                {"hxr-2", New LanguageInfo("hxr-2", "H4X0R Level 2", False)},
                                                                                {"hxr-3", New LanguageInfo("hxr-3", "H4X0R Level 3", False)},
