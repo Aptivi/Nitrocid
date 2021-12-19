@@ -58,7 +58,7 @@ Imports KS
     ''' Tests trying to get the line ending from text file
     ''' </summary>
     <TestMethod()> <TestCategory("Querying")> Public Sub TestGetLineEndingFromFile()
-        Dim ExpectedStyle As FilesystemNewlineStyle = FilesystemNewlineStyle.CRLF
+        Dim ExpectedStyle As FilesystemNewlineStyle = FilesystemNewlineStyle.LF
         Dim ActualStyle As FilesystemNewlineStyle = GetLineEndingFromFile(Path.GetFullPath("TestText.txt"))
         ActualStyle.ShouldBe(ExpectedStyle)
     End Sub
