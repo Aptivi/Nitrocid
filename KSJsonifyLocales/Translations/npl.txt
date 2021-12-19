@@ -1,0 +1,1007 @@
+Upalabdha ādēśaharū: {0}
+Ādēśa in̄jēkśana radda gari'ēkō cha.
+Injēkṭa gari'ēkā tarkaharū arkō ribuṭamā calā'unakō lāgi nirdhārita garinēcha.
+Vāstavika ādēśa-lā'ina tarkaharū pārsa gardā truṭi: {0}
+Avaidha raṅa ṭēmplēṭa {0}
+hwprobe: Tapā'īṅkō hārḍavēyara jām̐ca garinēcha. Kr̥payā parkhanuhōs...
+CPU: Ēka vā baḍhī CPU kōraharū jām̐ca garna asaphala bhayō. Jē bha'ē pani jānakārī dēkhā'um̐dai...
+RAM: Ēka vā baḍhī RAM cipaharū jām̐ca garna asaphala bhayō. Jē bha'ē pani jānakārī dēkhā'um̐dai...
+HDD: Ēka vā dhērai hārḍa ḍrā'ibhaharū jām̐ca garna asaphala bhayō. Jē bha'ē pani jānakārī dēkhā'um̐dai...
+CPU: Prōsēsaraharūkō kula saṅkhyā: {0}
+Marmatakā lāgi praśāsaka pāsavarḍa praviṣṭa garnuhōs.
+Buṭa gardā karnēla truṭi: {0}
+Ḍabala pyānika: Ribuṭa samayalē adhikatama anumati di'i'ēkō {0} truṭi ribuṭa samaya nāghyō. Tapā'īnlē karnēla baga phēlā pārnubhayō.
+[{0}] Ātaṅka: Truṭi stara {0} bha'ēkō kāraṇa ribuṭa sakṣama gariyō.
+[{0}] Ātaṅka: Ribuṭa garna samaya: {1} Sēkēnḍa, 1 ghaṇṭā nāghyō. Yō 1 minēṭamā sēṭa gari'ēkō cha.
+Ḍabala pyānika: Truṭi prakāra {0} amān'ya cha.
+[{0}] Dpanic: {1} -- {2} Sēkēnḍamā ribuṭa gardai...
+[{0}] Ātaṅka: Truṭi stara {0} bha'ēkō kāraṇa ribuṭa asakṣama gariyō.
+[{0}] Ātaṅka: {1} -- Karnēla prayōga jārī rākhna kunai pani kuñjī thicnuhōs.
+[{0}] Ātaṅka: {1} -- Banda garna kunai pani kuñjī thicnuhōs.
+[{0}] Ātaṅka: {1} -- {2} Sēkēnḍamā ribuṭa gardai...
+Ḍabala pyānika: Karnēla baga: {0}
+Banda gardai...
+Ribuṭa gardai...
+Karnēla simyulēṭarakō arkō udāharaṇa calirahēkō cha. Hastakṣēpa kō māmalā mā banda.
+Anumati sūcīmā prayōgakartā thapna asaphala: Avaidha prakāra {0}
+anumati sūcīmā prayōgakartā thapna asaphala: Avaidha prayōgakartā {0}
+anumati sūcībāṭa prayōgakartā haṭā'una asaphala: Avaidha prakāra {0}
+tapā'īṁ pahilē nai laga ina hunuhuncha.
+Anumati sūcībāṭa prayōgakartā haṭā'una asaphala: Avaidha prayōgakartā {0}
+tapā'īnlē yā ta baga phēlā pārnubha'ēkō cha, vā tapā'īnlē thapna vā haṭā'una prayāsa garnubha'ēkō anumati pahilē nai saki'ēkō cha, vā an'ya truṭi.
+Truṭi {0}: {1}
+Tapā'īnlē yā ta baga phēlā pārnubha'ēkō cha, vā tapā'īnlē nayām̐ prayōgakartākā lāgi sampādana garnē prayāsa garnubha'ēkō anumati asaphala bha'ēkō cha.
+Upalabdha prayōgakartā nāmaharū: {0}
+Prayōgakartā nāma:
+Ṭhā'um̐harūlā'ī anumati chaina.
+Viśēṣa varṇaharūlā'ī anumati chaina.
+{0} Kō pāsavarḍa:
+Galata pāsavarḍa.
+Prayōgakartā asakṣama gari'ēkō cha.
+Galata prayōgakartā nāma.
+Plēsahōlḍaraharū pārsa garnē prayāsa gardā truṭi bhayō. {0} - Sṭyāka ṭrēsa:
+Plēsahōlḍaraharū pārsa garnē prayāsa gardā truṭi bhayō. {0}
+Prayōgakartā nāma thapna prayāsa gardā truṭi.
+Usrmgr: Prayōgakartā nāma sirjanā gardai {0}...
+Khālī prayōgakartā nāma.
+Prayōgakartā {0} phēlā parēna.
+Prayōgakartā {0} lā'ī haṭā'una anumati chaina.
+Prayōgakartā {0} pahilē nai laga ina cha. Laga-ā'uṭa ra arkō praśāsakakō rūpamā laga-ina garnuhōs.
+Prayōgakartā {0} haṭā'iyō.
+Prayōgakartā nāma haṭā'una prayāsa gardā truṭi.
+Anurōdha gari'ēkō skrinasēbhara {0} phēlā parēna.
+{0} Rāmrōsam̐ga prārambha gari'ēkō cha.
+{0} Suru bha'ēna. Suru gardā skrinasēbhara kōḍalē truṭi anubhava garēkō huna sakcha.
+Skrinasēbhara {0} avasthita chaina.
+{0} Pūrvanirdhārita skrinasēbharamā sēṭa gari'ēkō cha.
+Skrinasēbhara {0} ḍāṭābēsamā phēlā parēna. Nāma jām̐ca garnuhōs ra phēri prayāsa garnuhōs.
+Nimna kāraṇalē gardā skrinasēbhara lōḍa garna sakim̐daina:
+Pāṭha mudraṇa gardā ē'uṭā gambhīra truṭi cha.
+Kanphigarēsana sirjanā garnē prayāsa gardā truṭi cha.
+RAM khālī garna prayāsa gardā truṭi: {0} - Jārī...
+Nimna kāraṇalē gardā mōḍa lōḍa garna sakim̐daina:
+Mōḍa: Mōḍaharū lōḍa gardai...
+Mōḍa: Mōḍaharū rōkdai...
+Mōḍa {0} kō nāma chaina. Srōta kōḍa samīkṣā garnuhōs.
+Mōḍa {0} sam̐ga sanskaraṇa chaina.
+{0} V{1} suru bhayō
+ādēśa {0} kō lāgi kunai paribhāṣā chaina.
+Dvārā paribhāṣita ādēśa
+tapā'īnlē arkō sarbharamā jaḍāna garnu aghi sarbharabāṭa vicchēda garnuparcha
+{0} kō lāgi prayōgakartā nāma:
+{0} Kō lāgi pāsavarḍa:
+{0} Mā jaḍāna bhayō
+{0} mā jaḍāna garnē prayāsa gardā truṭi: {1}
+Sṭyāka ṭrēsa: ​​{2}
+Sthānīya ḍā'irēkṭarī {0} avasthita chaina.
+Sthānīya nirdēśikā praviṣṭa garnuhōs. ".." Phirtā jāna.
+Ḍā'irēkṭarī {0} phēlā parēna.
+Rimōṭa ḍā'irēkṭarī praviṣṭa garnuhōs. ".." Phirtā jāna
+ḍā'irēkṭarī parivartana garnu aghi tapā'īnlē sarbharamā jaḍāna garnuparcha
+sthānīya nirdēśikā: {0}
+Rimōṭa ḍā'irēkṭarī: {0}
+Hālakō rimōṭa ḍā'irēkṭarī prāpta garnu aghi tapā'īnlē sarbharamā jaḍāna garnuparcha.
+Tapā'īnlē mēṭā'unē kārya garnu aghi praśāsanika viśēṣādhikāraharūsam̐ga sarbharamā jaḍāna garnuparcha.
+{0} Bāṭa vicchēda bhayō
+tapā'īnlē ahilēsam'ma kunai pani sarbharamā jaḍāna garnubha'ēkō chaina
+phā'ila ḍā'unalōḍa gardai {0}...
+Ḍā'unalōḍa gari'ēkō phā'ila {0}.
+Tapā'īnlē prasāraṇa pradarśana garnu aghi sarbharamā jaḍāna garnuparcha.
+{0} KB | yasamā parimārjana gari'ēkō: {1}
+Tapā'īnlē sabai rimōṭa phā'ilaharū sūcībad'dha garnu aghi sarbharamā jaḍāna garnuparcha.
+Phā'ila apalōḍa gardai {0}...
+Apalōḍa gari'ēkō phā'ila {0}
+Hālakō sthānīya ḍā'irēkṭarī prāpta gardacha
+hālakō rimōṭa ḍā'irēkṭarī prāpta gardacha
+ḍā'unalōḍa garna vā bāṭa apalōḍa garna sthānīya ḍā'irēkṭarī parivartana gardacha
+bāṭa ḍā'unalōḍa garna vā apalōḍa garna ṭāḍhākō ḍā'irēkṭarī parivartana gardacha
+sarbharabāṭa rimōṭa phā'ila mēṭā'um̐cha
+sarbharabāṭa vicchēda huncha
+bā'inarī vā pāṭha prayōga garēra sthānīya ḍā'irēkṭarīmā ṭāḍhākō phā'ila ḍā'unalōḍa gardacha
+FTP śēlabāṭa niskancha ra karnēlamā pharkancha
+maddata skrina dēkhā'um̐cha
+sthānīya nirdēśikā sūcī
+rimōṭa ḍā'irēkṭarī sūcībad'dha gardacha
+bā'inarī vā pāṭha prayōga garēra ṭāḍhākō ḍā'irēkṭarīmā sthānīya phā'ila apalōḍa gardacha
+FTP sandēśa: Anurōdha gari'ēkō ādēśa {0} phēlā parēna. FTP śēlamā nirdiṣṭa upalabdha ādēśaharūkō sūcīkō lāgi'maddata' hērnuhōs.
+Ēḍāpṭarakā lāgi guṇaharū prāpta garna asaphala bhayō {0}
+ēḍāpṭara nambara:
+Ēḍāpṭara nāma:
+Adhikatama prasāraṇa ēkā'i: {2} Ēkā'iharū
+DHCP sakṣama:
+Gaira-yunikāsṭa pyākēṭaharū:
+Yunikāsṭa pyākēṭaharū:
+Truṭi āgamana/ā'uṭagō'iṅga pyākēṭaharū:
+Upanāma ādēśakō rūpamā ē'uṭai nāma huna sakdaina.
+{0} Lā'ī upanāmakō ādēśa phēlā parēna.
+Aba tapā'im̐ "{0}" lā'ī ādēśakō rūpamā calā'una saknuhuncha: "{1}".
+Upanāma {0} haṭā'i'ēkō phēlā parēna.
+Avaidha mōḍa {0}.
+Injēkṭa gari'ēkā ārgumēnṭaharū, {0}, arkō ribuṭamā calnē samayatālikā hunēcha.
+Paryāpta tarka thi'ēna. Prayōgakō lāgi tala hērnuhōs:
+Ḍā'irēkṭarī {0} phēlā parēna
+khālī hōsṭa nāma.
+Bāṭa parivartana gardai: {0} Mā {1}...
+Dina kō khālī sandēśa.
+Laga'ina pachi khālī MAL.
+Galata prayōgakartā pāsavarḍa.
+Pāsavarḍaharū mēla khām̐dainan.
+Prayōgakartā nāma {0} mā parivartana gari'ēkō cha!
+Tapā'īnlē praviṣṭa garnubha'ēkō nayām̐ nāma pahilē nai phēlā parēkō cha.
+{0} Phēlā parēna.
+Kanphigarēsana puna: Lōḍa gariyō. Kēhī parivartanaharū prabhāvakārī hunakō lāgi tapā'īnlē karnēla ribuṭa garnuparnē huna sakcha.
+Ēka vā baḍhī raṅaharū amān'ya chan.
+Raṅgaharū upalabdha chainan. Karnēla kanphigarēsanamā raṅgīna śēla khōlnuhōs.
+Skrinasēbhara {0} phēlā parēna.
+karnēla sanskaraṇa:
+Ḍibaga mōḍa:
+Raṅgīna śēla:
+Buṭamā tarkaharū:
+Maddata ādēśa saralīkr̥ta:
+Laga'inamā MOTD:
+Kunāmā samaya/miti:
+hālakō prayōgakartā nāma:
+Hālakō hōsṭa nāma:
+Upalabdha prayōgakartā nāmaharū:
+Ādēśa kāryānvayana garnē prayāsamā truṭi bhayō
+ḍā'irēkṭarī parivartana gardacha
+hālakō prayōgakartākō lāgi pāsavarḍa parivartana gardacha
+skrina khālī garcha
+sarbharaharūsam̐ga antarakriyā garna FTP śēla prayōga garnuhōs
+maddata pr̥ṣṭha
+hālakō phōlḍaramā phā'ila/phōlḍara sāmagrīharū sūcībad'dha garnuhōs
+pāsavarḍakō sātha tapā'īṅkō skrina laka gardacha
+tapā'īnlā'ī laga ā'uṭa garcha
+ḍā'irēkṭarī banā'um̐cha
+sabai upalabdha inṭaraphēsaharūkō bārēmā jānakārī sūcībad'dha gardacha
+tapā'im̐kō kampyūṭara puna: Suru gardacha (cētāvanī: Kunai siṅka chaina, kinabhanē yō antima karnēla hō'ina)
+sampādana gari'ēkō kanphigarēsana phā'ila puna: Lōḍa gardacha.
+Tapā'īṅkō skrinalā'ī jalā'unabāṭa bacā'um̐cha
+karnēla skrinasēbharaharū sēṭa garnuhōs
+karnēla viṣayavastuharū sēṭa garnuhōs
+miti ra samaya dēkhā'um̐cha
+kṣētraharūmā miti ra samaya dēkhā'um̐cha
+karnēla banda hunēcha
+praṇālī jānakārī
+* tapā'īlē ādēśaharū bīcakō kōlana prayōga garēra dhērai ādēśaharū prayōga garna saknuhuncha.
+Prayōga:
+Jahām̐ tarkaharū {0} hunēchan
+jahām̐ kasṭamasēbhara hunēcha
+Khōlamā truṭi thiyō.
+Tapā'īnsam̐ga {0} prayōga garnē anumati chaina
+śēla sandēśa: Anurōdha gari'ēkō ādēśa {0} lā'ī marmata mōḍamā calā'una anumati chaina.
+Śēla sandēśa: Anurōdha gari'ēkō ādēśa {0} phēlā parēna. Upalabdha ādēśaharūkō lāgi'maddata' hērnuhōs.
+Śēla sandēśa: Ādēśa {0} lā'ī laga inamā calna anumati chaina.
+Ādēśa kāryānvayana garnē prayāsamā truṭi bhayō.
+- Samaya {0}: {1}
+{0} Mā calirahēkō cha
+tapā'īṁ {0} kō lāgi jānakārī prāpta garna adhikr̥ta hunuhunna.
+Yō ādēśa apracalita cha ra bhaviṣyakō rilījamā haṭā'inēcha.
+Tapā'īṁ {0} kō pāsavarḍa parivartana garna adhikr̥ta hunuhunna kinabhanē lakṣya ēka praśāsaka thiyō.
+Usrmgr: Prayōgakartā nāma {0} pahilē nai phēlā parēkō cha
+ḍibaga laga mā sabai mēṭā'um̐cha
+amān'ya bhāṣā
+bhāṣā parivartana garcha
+------------------------------------------ karnēla ātaṅka ḍampa ------------------ -----------
+>> ātaṅka jānakārī <<
+> vivaraṇa: {0}
+> Truṭi prakāra: {1}
+> Miti ra samaya: {2}
+>> Apavāda jānakārī <<
+> apavāda: {0}
+> Vivaraṇa: {1}
+> HRESULT: {2}
+> Srōta: {3}
+> Sṭyāka ṭrēsa <
+>> bhitrī apavāda {0} jānakārī <<
+>> apavāda {0} mūla kāraṇa hō <<
+>> kunai apavāda chaina; karnēla truṭi huna sakcha. <<
+>> Phrēmaharū, phā'ilaharū, rēkhāharū, ra stambhaharū <<
+> phrēma {0}: Phā'ila: {1} | Rēkhā: {2} | Stambha: {3}
+> Phrēma jānakārī prāpta garnē prayāsa gardā truṭi cha. {0}: {1}
+Karnēlamā svāgata cha!
+<User> kō rūpamā saphalatāpūrvaka laga ina gariyō
+MOTD/MAL mān'ya cha, tara sandēśa prakāra mān'ya chaina. MOTD māndai...
+MOTD/MAL paḍhnē prayāsa gariyō juna avaidha sandēśa prakārakō hō.
+Ḍā'unalōḍa pūrā bhayō.
+Prayāsamā ḍā'unalōḍa asaphala bhayō {0}: {1}
+Yadi tapā'im̐ FTP sarbharabāṭa phā'ilaharū ḍā'unalōḍa garna jām̐dai hunuhuncha bhanē kr̥payā"ftp" prayōga garnuhōs.
+Hālakō kārya nirdēśikāmā phā'ila ḍā'unalōḍa gardacha
+ḍibaga upakaraṇa vicchēda garnuhōs
+jaḍāna gari'ēkā ḍibagiṅa yantraharū sūcī gardacha
+ḍibaga yantra {0} phēlā parēna.
+Yantra {0} vicchēda bhayō.
+Jaḍānamā truṭi: {0}
+Pōrṭa {0} prayōga garēra sabai ṭhēgānāharūmā ḍibaga sunna.
+Kunai tarka nirdiṣṭa gari'ēkō chaina. Saṅkēta: Khālī ṭhā'um̐harūdvārā chuṭyā'ēkā dhērai tarkaharū nirdiṣṭa garnuhōs
+upanāma pahilē nai phēlā paryō: {0}
+Ḍibaga laga haṭā'iyō. Sabai jaḍāna gari'ēkā ḍibagiṅa upakaraṇaharūlē ajhai pani sandēśaharū hērna sakchan.
+Ḍibaga laga haṭā'una asaphala bhayō: {0}
+Ḍā'irēkṭarī parivartana garna asaphala bhayō: {0}
+Ṭhēgānā nirdiṣṭa garnuhōs
+ḍā'irēkṭarī haṭā'una asamartha: {0}
+Samaya kṣētra galata rūpamā nirdiṣṭa gari'ēkō cha.
+Avaidha prōphā'ila cayana.
+Prōphā'ila {1} sam̐ga {0} mā jaḍāna garnē prayāsa gardai...
+Ādēśa {0} phēlā parēna. Ādēśaharūkō sūcīkō lāgi"maddata" ādēśa hērnuhōs.
+Ēḍāpṭara {0} kō lāgi IPv6 guṇaharū prāpta garna asaphala bhayō. Jārī...
+IPv4 jānakārī:
+IPv6 jānakārī:
+Ēḍāpṭara {0} lē IPv6 lā'ī samarthana gardaina. Jārī...
+Ēḍāpṭara {0} lē IPv4 lā'ī samarthana gardaina. Anusandhāna asaphala bhayō.
+Tapā'īnlē karnēlakō vikāsa sanskaraṇa calā'irahanubha'ēkō thiyō jastō dēkhincha. Jaba tapā'im̐ pakṣaharū dēkhna saknuhuncha, yō bārambāra adyāvadhika huncha ra bagaharū paricaya huna sakcha. Yō siphārisa gari'ēkō cha ki tapā'īṁ sthira sanskaraṇamā rahanuhōs.
+Tapā'īnlē cayana garnubha'ēkō bhāṣāmā du'īvaṭā bhēriyanṭaharū chan. Ē'uṭā chānnuhōs:
+Avaidha chanōṭa. Puna: Prayāsa garnuhōs.
+Tapā'īṁ hālakō ḍā'irēkṭarī sēṭa garna anādhikr̥ta hunuhuncha {0}: {1}
+Tapā'īnlē nirdiṣṭa garnubha'ēkō mārga dhērai lāmō cha.
+Ḍampa jānakārī saṅkalanakartā {0}: {1} Bārē jānakārī prāpta garnē prayāsa gardā kryāsa bhayō
+MOTD/MAL sēṭa garnē prayāsa gardā truṭi: {0}
+MOTD/MAL prāpta garnē prayāsa gardā truṭi: {0}
+Skrinasēbhara suru garnē prayāsa gardā truṭi, avaidha sañcālanakō kāraṇa.
+Surakṣita mōḍamā puna: Lōḍa garna anumati chaina.
+Surakṣita mōḍamā pārsiṅa mōḍaharūlā'ī anumati chaina.
+Pārsa mōḍa sēṭa garnē prayāsa gardā truṭi. Mūlya jām̐ca garnuhōs ra phēri prayāsa garnuhōs. Yadi yō sahī cha bhanē, karnēla ḍibagiṅa sakṣama hum̐dā sṭyāka ṭrēsa hērnuhōs.
+Patha na ta phā'ila hō na ḍā'irēkṭarī.
+Pharaka ḍā'irēkṭarī vā nāma antargata phā'ilakō arkō pratilipi sirjanā gardacha.
+Phā'ilalā'ī arkō ḍā'irēkṭarīmā sārcha
+milāna {0} ({1}): {2}
+Milāna {0}: {1}
+Samaya bitāyō: {0} Milisēkēnḍa
+nāma: {0}
+Phā'ila rakama gaṇanā gardacha.
+Tapā'im̐lā'ī hāmrō GitHub Wiki mā laijāncha.
+Avaidha inkripśana ēlgōridama.
+Rimōṭa ḍibagiṅa sakṣama vā asakṣama pārcha.
+Yadi tapā'im̐ samaya mā sahī śabda hijjē garna saknuhuncha ki hērnuhōs
+yadi tapā'īlē samayamai gaṇitīya samīkaraṇaharū samādhāna garna saknuhuncha bhanē hērnuhōs
+Prēma vā ghr̥ṇā ṭippaṇīharūkō javāpha dinuhōs.
+Yadi kasailē tapā'īṅkō bhiḍiyōmā yō ṭippaṇī garēkō cha bhanē:
+Tapā'īṁ kastō pratikriyā dinuhunēcha?
+Avaidha cayana. Arkō ṭippaṇīmā jām̐dai...
+Mahāna! {0} Tapā'īṅkō dhan'yavādakō kadara garnēcha.
+Sahī hijjē!
+Galata hijjē.
+Pūrṇa rūpamā samādhāna gariyō!
+Galata tarikālē samādhāna gariyō.
+RPC pahilē nai calirahēkō cha.
+Pōrṭa {0} prayōga garēra sabai ṭhēgānāharūmā RPC sundai.
+Ārapīsī suru gardai...
+SSH sarbharamā jaḍāna huncha.
+{0} Kō lāgi pāsavarḍa praviṣṭa garnuhōs:
+SSH vicchēda bhayō.
+Kōḍapēja sēṭa garna asamartha. Bhāṣā ṭhīkasam̐ga pradarśana nahuna sakcha.
+Ḍibagiṅa sakṣama chaina.
+Dhan'yavāda! Yō rōcaka cha.
+Yasakā lāgi sabailē tapā'īṅkō bhiḍiyōlā'ī samarthana garnēchan.
+Mailē tapā'īkō arkō bhiḍiyōkō lāgi tapā'īkō i-mēlamā viśēṣa phā'ila di'ēm̐.
+Sunnuhōs, ghr̥ṇā garnēharū, uhām̐lē hāmīlā'ī maddata garna khōjdai hunuhuncha, ghōṭālā hō'ina.
+Malā'ī thāhā chaina yō bhiḍiyōkō lāgi ma ra mērā sāthīharūlā'ī kati dhan'yavāda dinchu.
+Ma tapā'īnlā'ī yō bhiḍiyōkō lāgi māyā garchu.
+Jārī rākhnuhōs, narōknuhōs.
+Ma tapā'īnlā'ī 1M sadasyaharūmā pugna maddata garnēchu!
+Mērā sāthīharūlē tapā'īṅkō kāraṇalē unīharūkō kampyuṭara ṭhīka pārē.
+Gajabakō ṭhaṭṭā! Mailē mērō śatrukō pīsī banda garēṁ.
+Ghr̥ṇā garnēharūlā'ī: Usalā'ī ghr̥ṇā garna banda garnuhōs
+ghr̥ṇā garnēharūlā'ī: Kāmamā lāgnuhōs
+tapā'īṅkō vastu lukā'unē gā'iḍakō lāgi dhan'yavāda aba kasailē pani yō yāda garnēchaina
+ma timrā bhiḍiyōharū hērna banda garnēchu. Sadasya harā'ē.
+Yō kē hō? Yō aspaṣṭa cha.
+Yō bhiḍiyō sabaibhandā kharāba cha!
+Sabailē yō bhiḍiyō ripōrṭa garnuhōs!
+Mērā sāthīharū timīsam̐ga risā'ē!
+Prēmīharūlē aba tapā'īlā'ī yasakō lāgi ghr̥ṇā garnēchan.
+Tapā'īkō sāthīlē tapā'īlā'ī yasakō lāgi ghr̥ṇā garnēcha.
+Yō majākalē malā'ī tapā'im̐kō sadasyatā radda garyō.
+Miśana asaphala, sam'māna -, grāhaka -
+yastō bhiḍiyō banā'una banda gara!!!
+Āphnō kāmamā pharkanuhōs, tapā'īṅkō bhiḍiyōharū sabaibhandā kharāba chan!
+Hāmī yō bhiḍiyōmā pūrvāgraha rākhchauṁ.
+Sabai prāpta sūcanāharū dēkhā'um̐cha
+sūcanā khārēja garcha
+sūcanā saphalatāpūrvaka khārēja gariyō.
+Pyākēṭaharū (inabā'unḍa):
+Pyākēṭaharū (ā'uṭabā'unḍa):
+Prāpta pyākēṭaharūmā truṭiharū:
+Sāmān'ya IPv6 guṇaharū
+sāmān'ya IPv4 guṇaharū
+ṭāḍhābāṭa ṭāḍhākō pīsīmā ādēśa kāryānvayana gardacha
+- caraṇa 1: Praṇālī prārambhikaraṇa
+- sṭēja 2: Hārḍavēyara pattā lagā'unē
+- caraṇa 3: Mōḍa ra skrinasēbhara pattā lagā'unē
+- caraṇa 4: Laga ina garnuhōs
+tapā'īnlē rilīja um'mēdvāra sanskaraṇa calā'irahanubha'ēkō jastō dēkhincha. Yō siphārisa gari'ēkō cha ki tapā'īṁ sthira sanskaraṇamā rahanuhōs.
+Avaidha prakāra {0}.
+Ākāra: {0}
+Nirdēśikā {0} pahilē nai avasthita cha.
+{0} Mā jaḍāna garnē prayāsa gardā truṭi: Jaḍāna ṭā'ima'ā'uṭa vā jaḍāna harā'ēkō
+abhivyakti gaṇanā garna kyālakulēṭara.
+Gaṇanāmā truṭi.
+Praṇālī apaḍēṭa
+praṇālī adyāvadhikaharūkō lāgi jām̐ca gardai...
+Nayām̐ sanskaraṇa phēlā paryō:
+Tapā'īṁ yasalā'ī ḍā'unalōḍa garna saknuhuncha:
+Kunai hālakō sūcanāharū chainan
+pradāna gari'ēkō phā'ilamā nirdiṣṭa sṭriṅa khōjcha
+nirdiṣṭa ḍā'irēkṭarīmā phā'ilaharūkō yōgaphala gaṇanā gardacha.
+Prayōgakartā nāma vā mēla ṭhēgānā praviṣṭa garnuhōs:
+Pāsavarḍa praviṣṭa garnuhōs:
+{0} Mā jaḍāna gardā truṭi: {1}
+{0} Mā jaḍāna gardai...
+Pramāṇīkaraṇa gardai...
+IMAP śēlabāṭa bāhira niskancha
+ādēśaharūkō sūcī
+sandēśaharū ḍā'unalōḍa ra tinīharūlā'ī sūcī
+sandēśa khōlcha
+Pr̥ṣṭha saṅkhyātmaka māna hō'ina.
+Sandēśa nambara r̥ṇātmaka vā śūn'ya nahuna sakcha.
+Sandēśa nambara saṅkhyātmaka māna hō'ina.
+- {0} Bāṭa
+- {0} lā'ī
+- {1} mā {0} mā paṭhā'iyō
+nirdiṣṭa sandēśa phēlā parēna.
+Rimōṭa ḍibaga suru garna asaphala bhayō: {0}
+Prōphā'ilaharū tayāra gardai... Yasalē dhērai minēṭa lina sakcha...
+skripṭa kāryānvayana garnē prayāsa gardā truṭi: {0}
+Kansōlamā pāṭha lēkhcha
+prayōgakartā vikalpa banā'um̐cha
+'n' Hz mā bipa ra'n' milisēkēnḍamā samaya
+jahām̐ <$variable> pratikriyā bhaṇḍāraṇa garna prayōga garinē kunai pani cara hō
+Āvr̥tti saṅkhyātmaka hunuparcha. Yadi yō saṅkhyātmaka cha bhanē, yō >= 37 ra <= 32767 hō bhanī suniścita garnuhōs.
+Samaya saṅkhyātmaka hunuparcha.
+Jahām̐ <uttaraharū> slyāśaharūmā vibhājita praśnakō ēka-akṣara uttaraharū hun
+SSH sarbharamā jaḍāna garna prayāsa gardā truṭi: {0}
+Prayōgakartālā'ī inapuṭa praviṣṭa garna anumati dincha
+hālakō mēla ḍā'irēkṭarī parivartana gardacha
+mēla phōlḍara khōlna asamartha {0}: {1}
+Tapā'īṅkō mēla ṭhēgānāmā nirdēśikāharū sūcībad'dha garnuhōs
+kunai pani nēṭavarkamā chiṭō jaḍāna garna spīḍa ḍāyalabāṭa jānakārī prayōga gardacha
+jaḍāna garna ṭhēgānā cayana garnuhōs:
+Cayana dāyarā bāhira cha. 1-{0} Bīca cayana garnuhōs. Puna: Prayāsa garnuhōs.
+Cayana saṅkhyā hō'ina. Puna: Prayāsa garnuhōs.
+Pramāṇapatra pramāṇīkaraṇakō kramamā, tyahām̐ pramāṇapatra truṭiharū chan. Tapā'īnlē sarbharamā jaḍāna garnubha'ēkō yō pahilō paṭaka huna sakcha vā pramāṇapatrakō myāda saki'ēkō huna sakcha. Yahām̐ ē'uṭā truṭi cha:
+Kē tapā'īm̐ jaḍāna garna cāhanuhuncha bhannē kurāmā niścita hunuhuncha?
+Avaidha javāpha. Phēri prayāsa garnuhōsa.
+Spīḍa ḍāyala khālī cha. Yasamā ṭhēgānā thapna sarbharamā jaḍāna garnuhōs.
+Spīḍa ḍāyala avasthita chaina. Yasamā ṭhēgānā thapna sarbharamā jaḍāna garnuhōs.
+IMAP sarbhara ṭhēgānā ra pōrṭa praviṣṭa garnuhōs (<address> or <address>:[Port]):
+SMTP sarbhara ṭhēgānā ra pōrṭa praviṣṭa garnuhōs (<address> or <address>:[Port]):
+ṭhēgānāmā sandēśa paṭhā'um̐cha
+prāptakartā mēla ṭhēgānā praviṣṭa garnuhōs:
+Viṣaya praviṣṭa garnuhōs:
+Tala āphnō sandēśa praviṣṭa garnuhōs. Puṣṭi garna"EOF" lēkhnuhōs.
+Sandēśa paṭhā'um̐dai...
+Sandēśa paṭhā'iyō.
+Avaidha imēla ṭhēgānā. Niścita garnuhōs ki tapā'īnlē ṭhēgānā sahī rūpamā lēkhnubha'ēkō cha ra yō dēkhā'i'ēkō udāharaṇakō ḍhām̐cāsam̐ga mēla khāncha:
+Sandēśa haṭā'um̐cha
+prāptakartābāṭa sabai sandēśaharū haṭā'um̐cha
+sandēśa {0} bāṭa {1} bāṭa haṭā'iyō {2} bāṭa. {3} Sandēśaharū pārsa garna bām̐kī cha.
+Sandēśa {0} bāṭa {1} inabaksabāṭa mēṭā'iyō. {2} Sandēśaharū pārsa garna bām̐kī cha.
+Pāṭha phā'ila sampādana garnuhōs
+nayām̐ phā'ila banā'um̐cha
+phā'ila pahilē nai avasthita cha.
+Phā'ila sirjanā garnē prayāsamā truṭi: {0}
+Phā'ila khōlna asaphala bhayō. Śēla bāhira niskam̐dai...
+Nirdiṣṭa pāṭha sampādaka ādēśa phēlā parēna.
+Upalabdha ādēśaharū sūcībad'dha garnuhōs
+pāṭha sampādaka bāhira niskancha ra bacata nagari'ēkā parivartanaharū bacata garnuhōs
+kansōlamā lā'ina nambaraharū sahita phā'ilakō sāmagrīharū chāpcha
+phā'ilakō antyamā pāṭhakō sātha nayām̐ lā'ina thapcha
+nirdiṣṭa lā'ina nambara haṭā'um̐cha
+ē'uṭā śabda vā vākyānśalā'ī arkō śabdalē badalcha
+rēkhā nambarabāṭa śabda vā vākyānśa mēṭā'um̐cha
+nirdiṣṭa rēkhāmā kyārēkṭara nambarabāṭa kyārēkṭara mēṭā'um̐cha
+rēkhā haṭā'iyō.
+Nirdiṣṭa lā'ina nambara {0} mān'ya saṅkhyā hō'ina.
+Surakṣita mōḍamā calirahēkō cha. Sṭēja chōḍdai...
+>> Rimōṭa ḍibaga ra cyāṭa: Sanskaraṇa
+>> tapā'īṅkō ṭhēgānā {0} hō.
+>> Tapā'īṅkō nāma {0} hō.
+Ādēśa {0} phēlā parēna. Sūcī hērnakō lāgi"/help" prayōga garnuhōs.
+Anukramaṇikā {0} amān'ya. Tyahām̐ {1} sṭyāka ṭrēsaharū chan. Anukramaṇikā śūn'ya-ādhārita cha, tyasailē 1 dvārā ghaṭā'unē prayāsa garnuhōs.
+Kunai sṭyāka ṭrēsa chaina
+apavādamā antima sṭyāka ṭrēsa dēkhā'um̐cha
+satramā hālakō prayōgakartā nāma dēkhā'um̐cha
+tapā'īnlā'ī ḍibagarabāṭa vicchēda gardacha
+IP ṭhēgānā dvārā ḍibaga upakaraṇa anablaka garnuhōs
+IP ṭhēgānā dvārā ḍibaga upakaraṇa rōknuhōs
+{0} aba phēri rimōṭa ḍibagamā sāmēla huna sakcha.
+{0} Ajhai blaka gari'ēkō chaina.
+Sēṭiṅaharū lōḍa gardā truṭi
+sēṭiṅaharū lōḍa gardā truṭi cha. Tapā'īnlē sēṭiṅa phā'ila jām̐ca garna āvaśyaka huna sakcha.
+Khaṇḍa cayana garnuhōs:
+Sēṭiṅharū bacata garnuhōs
+bāhira niskanuhōs
+nirdiṣṭa vikalpa {0} amān'ya cha.
+Uttara saṅkhyātmaka hunuparcha.
+Buṭamā tarkaharūkō lāgi prampṭa
+marmatasambhāra mōḍa ṭrigara
+Sṭārṭa'apamā adyāvadhikaharūkō lāgi jām̐ca garnuhōs
+śānta jām̐ca
+laga-inamā MOTD dēkhā'unuhōs
+laga-inamā skrina khālī garnuhōs
+upalabdha prayōgakartā nāmaharū dēkhā'unuhōs
+raṅgīna śēla
+saralīkr̥ta maddata ādēśa
+ḍibaga pōrṭa
+puna: Prayāsa samaya ḍā'unalōḍa garnuhōs
+FTP prayōgakartā nāma laga garnuhōs
+FTP IP ṭhēgānā laga garnuhōs
+pahilō FTP prōphā'ila mātra pharkā'unuhōs
+māthillō dāyām̐ kunāmā samaya/miti dēkhā'unuhōs
+skrinasēbhara ṭā'ima'ā'uṭa ms mā
+bā'iṭamā ḍibaga sā'ija kōṭā
+sā'ija pārsa mōḍa
+sṭārṭa'apa mā mārkī
+lāmō samaya ra miti
+lukēkā phā'ilaharū dēkhā'unuhōs
+avaidha khaṇḍa praviṣṭa gariyō. Kr̥payā phirtā jānuhōs.
+Pachāḍī jā'u...
+Sakṣama garnuhōs
+asakṣama pārnuhōs
+Sēṭa garna rūṭa pāsavarḍa lēkhnuhōs. Cintā nagarnuhōs; pāsavarḍa tārākō rūpamā dēkhā'i'ēkō cha.
+Rūṭa pāsavarḍa parivartana garnē?
+Rūṭa pāsavarḍa sēṭa garnuhōs...
+Rimōṭa ḍibagara pōrṭa lēkhnuhōs. Yō saṅkhyātmaka hunuparcha, ra pahilē nai prayōga garinu hum̐daina. An'yathā, rimōṭa ḍibagara pōrṭa khōlna asaphala hunēcha.
+Lēkhnuhōs kati paṭaka"prāpta garnuhōs" ādēśalē asaphala ḍā'unalōḍaharū puna: Prayāsa garnuparcha. Yō saṅkhyātmaka hunuparcha.
+Nirdiṣṭa milisēkēnḍa pachi skrinasēbhara kahilē suru garnē lēkhnuhōs. Yō saṅkhyātmaka hunuparcha.
+Ḍibaga laga bhaṇḍāraṇa garna saknē kati bā'iṭaharū lēkhnuhōs. Yō saṅkhyātmaka hunuparcha.
+Javāpha nakārātmaka nahuna sakcha.
+Javāpha amān'ya cha. Uttarakō rūpamā saṅkhyāharū cāhinē kanphiga praviṣṭiharūkō lāgi uttara saṅkhyātmaka cha bhanī suniścita garna jām̐ca garnuhōs.
+Cara {0} kunai pani mōḍyulamā phēlā parēna.
+Karnēla kanphigarēsana parivartana gardacha
+255 Raṅgaharū sakriya garnuhōs
+kē tapā'im̐ jaḍāna rahana cāhanuhuncha?
+Avaidha chanōṭa. Haina māndai...
+Bhāṣāharū svica gardā sanskr̥ti parivartana garnuhōs
+pāṭha dēkhā'iyō
+tapā'īnlē dēkhā'una cāhanubha'ēkō kunai pani pāṭha lēkhnuhōs. Chōṭō rāmrō cha.
+Apalōḍa garna asaphala bhayō {0}
+rimōṭa ḍibaga ādēśa kāryānvayana gardā truṭi {0}: {1}
+Prayōgakartā thapcha
+ādēśaharūmā upanāmaharū thapcha
+karnēlamā tarkaharū injēkṭa gardacha (ribuṭa āvaśyaka cha)
+hōsṭa nāma parivartana gardacha
+MAL parivartana gardacha, laga'ina pachi MOTD
+parivartanaharū MOTD, dinakō sandēśa
+prayōgakartā nāma parivartana gardacha
+prayōgakartāharūkō lāgi anumatiharū prabandha garnuhōs
+KSMods mā skrinasēbhara phā'ila puna: Lōḍa gardacha
+sūcībāṭa prayōgakartā haṭā'um̐cha
+upanāma {0} saphalatāpūrvaka haṭā'iyō.
+Adyāvadhikaharūkō lāgi jām̐ca garna asaphala bhayō.
+Sūcīmā arū kunai prayōgakartāharū bām̐kī chainan.
+Bhāṣā sēṭa garna asaphala bhayō.
+Sūcanā khārēja garnē prayāsamā truṭi bhayō.
+Usrmgr: Prayōgakartā nāma sirjanā garna asaphala bhayō {0}: {1}
+Prayōgakartākō nāma parivartana garna asaphala bhayō. {0}
+Anumati sūcīharū madhyē ēkamā prayōgakartā nāma {0} samāvēśa chaina.
+Phā'ilabāṭa anumatiharū lōḍa garna asaphala: {0}
+Hōsṭa nāma parivartana garna asaphala: {0}
+Prayōgakartā phēlā parēna
+prayōgakartā nāmakō pāsavarḍa parivartana garna asaphala: {0}
+Phā'ila vā ḍā'irēkṭarī pratilipi garna asaphala: {0}
+Phā'ila vā ḍā'irēkṭarī sārna asaphala: {0}
+"{0}" Sṭriṅasam̐ga mēla khānē phā'ila phēlā pārna asamartha: {1}
+Phā'ila {0} kō lāgi ḍā'unalōḍa asaphala bhayō.
+Rimōṭa phā'ilaharū sūcībad'dha garna asaphala: {0}
+Kē tapā'im̐ niścita hunuhuncha ki tapā'im̐ mēṭā'una cāhanuhuncha {0} <y </ n>?
+Mēṭdai {0}...
+{0} Sarbharamā phēlā parēna.
+{0} Dvārā banā'i'ēkō sabai mēla saphalatāpūrvaka haṭā'iyō.
+{0} Dvārā banā'i'ēkō sabai mēla haṭā'una asaphala bhayō.
+Sandēśa paṭhā'um̐dā truṭi bhayō.
+{0} Lā'ī {1} mā sārdai...
+Saphalatāpūrvaka sāriyō
+phā'ila vā ḍā'irēkṭarīlā'ī arkō phā'ila vā ḍā'irēkṭarīmā sārcha. Tapā'īṁ phā'ilaharū puna: Nāmākaraṇa garna pani prayōga garna saknuhuncha.
+{0} Lā'ī {1} mā sārna asaphala bhayō.
+{0} Lā'ī {1} mā pratilipi gardai...
+Saphalatāpūrvaka pratilipi gariyō
+phā'ila vā ḍā'irēkṭarīlā'ī arkō phā'ila vā ḍā'irēkṭarīmā pratilipi gardacha.
+{0} Lā'ī {1} mā pratilipi garna asaphala bhayō.
+Sandēśa sārcha
+prāptakartābāṭa sabai sandēśaharū sārcha
+{0} dvārā banā'i'ēkō sabai mēlaharū saphalatāpūrvaka sāriyō.
+{0} Dvārā banā'i'ēkō sabai mēla sārna asaphala bhayō.
+Sandēśa {0} bāṭa {1} sāriyō {2} bāṭa. {3} Sandēśaharū pārsa garna bām̐kī cha.
+Nirdiṣṭa śaharakō lāgi mausama jānakārī dēkhā'um̐cha. OpenWeatherMap prayōga gardacha.
+-- {0} Kō mausama jānakārī --
+mausama: {0}
+Dabāba: {0}
+Ārdratā: {0}
+Tapā'īnlē https://Home.Openweathermap.Org/api_keys mā āphnō āphnai API kuñjī prāpta garna saknuhuncha.
+Tapā'īnlē jahilē pani http://Bulk.Openweathermap.Org/sample/city.List.Json.Gz lā'ī tinīharūkō ā'īḍī sahitakō śaharaharūkō sūcīkō lāgi parāmarśa garna saknuhuncha.
+Tāpakramakō lāgi rucā'i'ēkō ēkā'i
+karnēla sēṭa apa garnuhōs tāki yasalē tapā'īnlā'ī buṭamā tarkakō lāgi prōmpṭa gardacha.
+Marmata mōḍa ṭrigara gardacha. Yasalē dhērai khātāharū asakṣama pārcha.
+Pratyēka sṭārṭa'apa, yasalē apaḍēṭaharūkō lāgi jām̐ca garnēcha.
+Bhāṣāharū badaldā, mahinākō nāma, pātrō, ādi parivartana garnuhōs.
+Yadi karnēla suru bhayō bhanē, yasalē rūṭa pāsavarḍa sēṭa garnēcha.
+Hārḍavēyara jām̐ca sandēśaharū mauna rākhnuhōs.
+Laga'ina skrina pradarśana garnu aghi dinakō sandēśa dēkhā'unuhōs.
+Laga'ina skrina pradarśana garnu aghi skrina khālī garnuhōs.
+Sakṣama bha'ēmā upalabdha prayōgakartāharūlā'ī dēkhā'um̐cha.
+Karnēla raṅa samarthana dincha
+sabai śēlaharūkō lāgi saralīkr̥ta maddata ādēśa
+FTP prayōgakartā nāma laga garnē vā nagarnē.
+FTP IP ṭhēgānā laga garnē vā nagarnē.
+Jaḍāna gardā mātra pahilō prōphā'ila chānnuhōs.
+Samaya ra miti skrinakō māthillō dāyām̐ kunāmā dēkhā'inēcha
+yadi sakṣama pāriyō bhanē, karnēlalē sampūrṇa phōlḍaralā'ī yasakō kula ākārakō lāgi pārsa garnēcha. An'yathā, satahalā'ī mātra pārsa garnēcha.
+Sṭārṭa'apa mā eyecandy sakṣama gardacha
+samaya ra miti lāmō hunēcha, pūrā mahinā nāmaharū dēkhā'um̐dai, ādi.
+Lukēkā phā'ilaharū dēkhā'um̐cha.
+Tāpakramakō lāgi āphnō manaparnē ēkā'i cayana garnuhōs (yō kēvala"mausama" ādēśamā lāgū huncha)
+mōḍa {0} rōkiyō
+{0} v {1} rōkiyō
+mōḍa {0} mā bhāgakō nāma chaina. Mōḍa pārsiṅa asaphala bhayō. Srōta kōḍa samīkṣā garnuhōs.
+Tapā'īnlē ḍibaga laga khālī garna saknu aghi tapā'īnlē ḍibaga mōḍa sakriya garnuparcha.
+{0} Nayām̐ sandēśaharū inabaksamā ā'ē.
+Tinīharūlā'ī hērna"lsmail" khōlnuhōs.
+Phā'ila haṭā'una asamartha: {0}
+Ḍā'irēkṭarī vā phā'ila haṭā'um̐cha
+{0} haṭā'una sakim̐daina kinabhanē yō avasthita chaina.
+Bāhira niskana CTRL+C thicnuhōs.
+Phā'ila bārē jānakārī pradāna gardacha
+nirdēśikā bārē jānakārī pradāna gardacha
+avasthita nirdēśikā bārē jānakārī prāpta garna sakim̐daina.
+Avasthita phā'ila bārē jānakārī prāpta garna sakim̐daina.
+Pūrā nāma: {0}
+Nirmāṇa samaya: {0}
+Antima pahum̐ca samaya: {0}
+Antima paṭaka lēkhnē samaya: {0}
+Viśēṣatāharū: {0}
+Abhibhāvaka nirdēśikā: {0}
+Kahām̐ phēlā pārnē: {0}
+Phā'ila ākāra: {0}
+Phā'ilakō viśēṣatā parivartana gardacha
+phā'ila phēlā parēna.
+Jahām̐ <attributes> nimna madhyē ēka hō:
+Phā'ila sāmān'ya phā'ila hō
+phā'ila paḍhnē mātra phā'ila hō
+phā'ila lukēkō phā'ila hō
+phā'ila ē'uṭā abhilēkha hō. Byāka'apakā lāgi prayōga garincha.
+Viśēṣatā"{0}" amān'ya cha.
+Viśēṣatā saphalatāpūrvaka thapi'ēkō cha.
+Viśēṣatā saphalatāpūrvaka haṭā'iyō.
+Viśēṣatā thapna saki'ēna.
+Viśēṣatā haṭā'una asaphala bhayō.
+Ēka paṅktimā arkō śabda vā vākyānśa pratisthāpana gardacha
+rātō raṅakō stara nāghyō. Yō {0} thiyō.
+Hariyō raṅgakō stara nāghyō. Yō {0} thiyō.
+Nīlō raṅgakō stara nāghyō. Yō {0} thiyō.
+Sām̐cō raṅgaharū sakriya garnuhōs
+Anablaka garna asaphala bhayō {0}.
+{0} Pahilē nai rōki'ēkō cha.
+{0} Ahilē rimōṭa ḍibagamā sāmēla huna sakdaina.
+{0} Lā'ī rōka lagā'una asaphala bhayō.
+Sā'ikala raṅaharū
+ḍiskō sakriya hum̐dā raṅaharū calā'unēcha. An'yathā, aniyamita raṅaharū cayana garnuhōs.
+Sanlagnakaharūkō lāgi phā'ila mārgaharū praviṣṭa garnuhōs. Puṣṭi garna khālī bāṭōmā ENTER thicnuhōs.
+Inkripṭēḍa sandēśa khōlcha
+kuñjī ID kō lāgi pāsavarḍa lēkhnuhōs {0}
+ṭhēgānāmā inkripṭēḍa sandēśa paṭhā'um̐cha
+{0} bāṭa ḍā'unalōḍa gardai...
+"Prāpta" vā"puṭa" ādēśabāṭa ḍā'unalōḍa vā apalōḍa gardā pragati paṭṭī dēkhā'unuhōs
+yadi sahī cha bhanē, yasalē ḍā'unalōḍa vā apalōḍa gardā pragati paṭṭī dēkhā'una"prāpta" vā"puṭa" banā'um̐cha.
+Nirdiṣṭa vēbasā'iṭamā phā'ila apalōḍa gardacha
+ṭhēgānā piṅa garcha
+{0} lā'ī {1} mā apalōḍa gardai...
+Apalōḍa pūrā bhayō.
+Yadi tapā'im̐ FTP sarbharamā phā'ilaharū apalōḍa garna jām̐dai hunuhuncha bhanē kr̥payā"ftp" prayōga garnuhōs.
+Prayāsamā apalōḍa asaphala bhayō {0}: {1}
+"Puṭa" kamāṇḍalē asaphala apalōḍaharū puna: Prayāsa garnē kati paṭaka lēkhnuhōs. Yō saṅkhyātmaka hunuparcha.
+Ṭhēgānā khālī nahuna sakcha.
+{0} Piṅa garna asaphala: {1}
+Piṅa {0} ms mā saphala bhayō.
+Nirdiṣṭa lā'ina nambara antima phā'ila lā'ina nambara bhandā ṭhūlō nahuna sakcha.
+Jastō lāgcha: {0}
+Tāpakrama: {0}
+Hāvākō gati: {0}
+Hāvākō diśā: {0}
+Pachāḍi jānakō lāgi kunai pani kuñjī thicnuhōs.
+Mēla phōlḍara sirjanā garna asamartha {0}: {1}
+Hālakō kāma garnē ḍā'irēkṭarīmā ḍā'irēkṭarī banā'um̐cha
+hālakō kāma garnē ḍā'irēkṭarībāṭa ḍā'irēkṭarī haṭā'um̐cha
+mēla phōlḍara {0} phēlā parēna.
+Mēla phōlḍara mēṭā'una asamartha {0}: {1}
+{0}, {1} {2} Mā sirjanā gari'ēkō, {3} {4} mā parimārjana gari'ēkō
+phā'ilakō vivēka pramāṇita gardacha
+hyāsaharū vikr̥ta chan.
+Hyāsaharū mildainan.
+Hyāsa milcha.
+Phōlḍara puna: Nāmākaraṇa gardacha
+parīkṣaṇa khōla khōlcha
+* karnēla suru garna kunai pani kuñjī vā bāhira niskana ESC thicnuhōs.
+"{0}" Suru garna asaphala: {1}
+Mēla sandēśa pūrvāvalōkana dēkhā'unuhōs
+mēla sandēśaharū sūcībad'dha gardā, śarīra pūrvāvalōkana dēkhā'unuhōs.
+Inapuṭa raṅa
+lā'isēnsa raṅga
+nirantara karnēla truṭi raṅa
+nirantara karnēla truṭi raṅa
+hōsṭa nāma raṅa
+prayōgakartā nāma raṅa
+pr̥ṣṭhabhūmi raṅga
+taṭastha pāṭha raṅga
+sṭēja raṅga
+truṭi raṅga
+FTP prampṭa śailī
+mēla prampṭa śailī
+SFTP prampṭa śailī
+Avaidha mārga pahum̐ca garna prayāsa gardai.
+Pāṭha phā'ila khālī gardacha
+pāṭha sampādakabāṭa bāhira niskancha
+nirdiṣṭa rēkhā vā sabai rēkhāharūmā kyārēkṭaralā'ī sōdhnuhōs
+tapā'īnlē vikāsa sanskaraṇa calā'irahanubha'ēkō hunālē apaḍēṭaharū jām̐ca garnē kārya asakṣama gari'ēkō cha.
+Pāṭha sampādaka svataḥ bacata suvidhā khōlnuhōs vā banda garnuhōs.
+Yadi svata: Bacata sakṣama cha bhanē, pāṭha phā'ila pratyēka"n" sēkēnḍakō lāgi bacata hunēcha.
+Pāṭha sampādaka svata: Bacata sakṣama garnuhōs
+pāṭha sampādaka svataḥ bacata antarāla
+phā'ila bacata garcha
+laga ḍibaga garna cyāṭa rēkarḍa garnuhōs
+ḍibaga laga garna rimōṭa ḍibaga cyāṭa rēkarḍa gardacha.
+Milisēkēnḍamā ḍhilā'i
+arkō lēkhnu aghi kati milisēkēnḍa parkhanu parcha?
+Tapā'īnlā'ī SSH FTP sarbhara prayōga garna dincha
+ādēśa"{0}" kō lāgi kunai maddata chaina.
+RGB raṅakō lāgi amān'ya VT anukrama.
+Sēkēnḍa bārakō raṅa
+minēṭa bārakō raṅa
+ghaṇṭā paṭṭī kō raṅga
+jānakārī kō raṅga
+raṅga parivartana garna ṭiksa
+Yadi raṅa sā'ikala calā'una sakṣama cha bhanē, ProgressClock mā raṅa parivartana garnu aghi kati ṭikaharū? 1 Ṭika = 0.5 Sēkēnḍa
+yadi yō sakṣama cha bhanē ProgressClock lē aniyamita raṅaharū cayana garnēcha. An'yathā, kanphigarēsanabāṭa raṅaharū prayōga garnuhōs.
+Nayām̐ viṣayavastu banā'um̐cha
+nayām̐ viṣayavastu"{0}" banā'um̐dai
+hālakō nirdēśikāmā viṣayavastu bacata garnuhōs
+arkō ḍā'irēkṭarīmā viṣayavastu bacata garnuhōs...
+"<-" Ra"->" kuñjīharū prayōga garēra raṅa cayana garnuhōs. Chōḍnakō lāgi ENTER thicnuhōs. Myānu'ala rūpamā raṅa nambara sam'milita garna"i" thicnuhōs.
+"<-" Ra"->" kuñjīharū prayōga garēra raṅa cayana garnuhōs. Raṅa dāyarāharū bīca cayana garna ērō apa ra ērō ḍā'una kuñjīharū prayōga garnuhōs. Chōḍnakō lāgi ENTER thicnuhōs. Myānu'ala rūpamā raṅa nambara sam'milita garna"i" thicnuhōs.
+Karnēlamā svāgata cha! - Sanskaraṇa {0}
+cētāvanī raṅga
+vikalpa raṅga
+0 dēkhi 255 sam'ma raṅa nambara praviṣṭa garnuhōs:
+Hārḍavēyara bārē vistārita jānakārīkō lāgi"hwinfo" prayōga garnuhōs.
+Hārḍavēyara jānakārī chāpcha
+Prōsēsara nāma:
+Prōsēsara biṭsa:
+Vibhājana phā'ila praṇālī:
+Vibhājana ākāra:
+GPU: Ēka vā baḍhī grāphiksa kārḍaharū jām̐ca garna asaphala bhayō. Jē bha'ē pani jānakārī dēkhā'um̐dai...
+>> Svāgata cha! Yō tapā'īkō pahilō paṭaka rimōṭa ḍibaga ra cyāṭamā pravēśa garnē hō. Dartā garna"/register <name>" prayōga garnuhōs.
+Yantra pahilē nai avasthita cha.
+Tyastō kunai upakaraṇa chaina.
+Upakaraṇa prayōgakartā nāma sēṭa gardacha
+tapā'īṁ pahilē nai dartā hunuhuncha.
+Namastē, {0}!
+Kansōlamā phā'ilakō sāmagrī chāpcha
+vā, yō ādēśamā"listcities" pāsa garnuhōs.
+Praviṣṭi pahilē nai avasthita cha.
+Kansōla ā'uṭapuṭa bērcha
+ādēśa ryāpa yōgya chaina. Yī ādēśaharū ryāpayōgya chan:
+ZIP abhilēkha nikālcha
+ZIP abhilēkha sirjanā gardacha
+{0} mā nirmita
+ḍibaga ḍāṭā ḍā'unalōḍa gardā truṭi
+ḍibaga ḍāṭā ḍā'unalōḍa gardā truṭi cha. Āphnō inṭaranēṭa jaḍāna jām̐ca garnuhōs.
+Mōḍalā'ī antima rūpa dina asaphala bhayō {0}: {1}
+Sabai phāyara gari'ēkā ghaṭanāharū sūcībad'dha garnuhōs
+hālakō nirdēśikā
+śēlakō hālakō ḍā'irēkṭarī sēṭa gardacha. Kunai pani avasthita nirdēśikāmā nirapēkṣa mārga lēkhnuhōs.
+R‍yāpa sūcī ā'uṭapuṭaharū
+yadi hālakō kansōla jyāmitikō lāgi dhērai lāmō dēkhincha bhanē sūcī ā'uṭapuṭaharū lapēṭcha.
+Piṅa!
+{0} Lē tapā'īnlā'ī piṅa garnubhayō.
+Yasa rūpamā hālakō nirdēśikāmā viṣayavastu bacata garnuhōs...
+Yasa rūpamā arkō ḍā'irēkṭarīmā viṣayavastu bacata garnuhōs...
+Viṣayavastukō nāma nirdiṣṭa garnuhōs:
+Prayōgakartā {0} lā'ī"{1}" sūcīmā thapi'ēkō cha.
+Prayōgakartā {0} lā'ī"{1}" sūcībāṭa haṭā'iyō.
+Avaidha mōḍa {0}
+Pūrvanirmita thimaharūbāṭa viṣayavastu lōḍa garnuhōs...
+.Json vistāra binā viṣayavastu phā'ila nāma nirdiṣṭa garnuhōs:
+ZIP abhilēkha khōlcha
+ZIP śēlabāṭa bāhira niskancha
+abhilēkha bhitra sabai phā'ilaharū sūcībad'dha garnuhōs
+nirdiṣṭa ḍā'irēkṭarī vā hālakō ḍā'irēkṭarīmā phā'ila nikālcha
+abhilēkha ḍā'irēkṭarī parivartana gardacha
+nirdiṣṭa ZIP śēla ādēśa phēlā parēna.
+Nirdēśikā {0} avasthita chaina
+abhilēkha nirdēśikā {0} avasthita chaina
+adhikatama pada gaṇanā
+madhurō hunu aghi kati sthānaharū prajvalita hunchan?
+Sūcī praviṣṭi raṅga
+sūcī mūlya raṅa
+ādēśa kāryānvayana garna SSH sarbharamā jaḍāna huncha.
+amān'ya raṅa nirdiṣṭakartā. Niścita garnuhōs ki yō sahī ḍhām̐cāmā cha, jasakō matalaba 0-255 sam'makō saṅkhyā hō yadi 255 raṅaharū prayōga gardai hunuhuncha vā VT anukrama nimna rūpamā prayōga gardai hunuhuncha bhanē:
+Parīkṣaṇa śēlamā truṭi: {0}
+Lipimā mānamā cara sēṭa garcha
+baga ripōrṭiṅa prampṭa.
+Hāmīlā'ī ṭikaṭa uṭhā'unu bha'ēkōmā dhan'yavāda! Tapā'im̐sam̐ga kastō prakārakō anurōdha cha cayana garnuhōs.
+Ē'uṭā samasyā
+ēka suvidhā anurōdha
+ē'uṭā praśna
+tapā'īnlē ēka suvidhā nirdiṣṭa garnuparcha.
+Ēka praśna sōdhnuhōs, āphnō vicāra jaṭa garnuhōs, vā samasyā ripōrṭa garnuhōs.
+Tapā'īnlē āphnō anurōdha lēkhnuparcha.
+FTP śēlamā truṭi thiyō:
+Ajñāta FTP śēla truṭi:
+SFTP śēlamā truṭi thiyō:
+Ajñāta SFTP śēla truṭi:
+SSH byānara dēkhā'unuhōs
+jaḍānamā SSH sarbhara byānara dēkhā'um̐cha.
+Tapā'īṁ kasarī pramāṇīkaraṇa garna cāhanuhuncha?
+Nijī kuñjī phā'ila
+pāsavarḍa
+kuñjī {0} kō lāgi pāsaphrēja praviṣṭa garnuhōs:
+Ēka astitvahīna mārga taṭastha.
+Kuñjī phā'ila {0} avasthita chaina.
+Nijī kuñjī thapna prayāsa gardā truṭi:
+255 Raṅga mōḍamā svica garna"t" thicnuhōs.
+Sām̐cō raṅa mōḍamā svica garna"t" thicnuhōs.
+Yastō dēkhincha ki tapā'īsam̐ga rūṭa bāhēka kunai prayōgakartā chaina. Yō narāmrō cha. Hāmī tapā'īnlā'ī kasarī ē'uṭā sirjanā garnē mārgadarśana garnēchauṁ.
+Āphnō prayōgakartā nāma lēkhnuhōs.
+Tapā'īnlē āphnō prayōgakartā nāma lēkhnuparcha.
+Āphnō pāsavarḍa lēkhnuhōs.
+Tapā'īnlē āphnō pāsavarḍa lēkhnuparcha.
+Khātā prakāra cayana garnuhōs.
+Praśāsaka: Yō khātā prakārakō karnēlamā sabaibhandā baḍhī śakti huncha, jasalē tapā'īnlā'ī praṇālī vyavasthāpana kāryakramaharū prayōga garna anumati dincha.
+Sāmān'ya prayōgakartā: Yō khātā prakāra praśāsakaharū bhandā ali baḍhī pratibandhita cha.
+Badhā'ī cha! Tapā'īnlē nayām̐ khātā banā'unubha'ēkō cha! Yasalā'ī samāpta garna, āphnō nayām̐ khātākō rūpamā laga ina garnuhōs.
+Mōḍa: Kunai mōḍaharū phēlā parēna.
+Sāmān'ya ādēśaharū:
+Mōḍa ādēśaharū:
+Upanāma ādēśaharū:
+Marmata mōḍa
+khōja nirdēśikāharū
+br̥hadāntradvārā chuṭyā'ēkō mārgaharūkō samūha. Yasalē PATH jastai kāma garcha. Phōlḍara vā phōlḍarakō nāmamā pūrā patha lēkhnuhōs. Jaba tapā'īnlē samāpta garnubhayō, "q" lēkhnuhōs. Avasthita ḍā'irēkṭarī haṭā'una pathakō chē'umā mā'inasa cinha lēkhnuhōs.
+Kunai mōḍa ādēśaharū chainan.
+Kunai upanāma ādēśaharū chainan.
+Raṅga māna 0-255 kō dāyarā bāhira cha.
+R‍yāpa garna milnē ādēśa phēlā parēna.
+Nirdiṣṭa rēkhā vā sabai rēkhāharūmā ēka śabda praśna garnuhōs
+{1} madhyē {0} ḍā'unalōḍa gariyō.
+{1} Madhyē {0} apalōḍa gariyō.
+Raṅa prakāra ra rēkhā prinṭa prayōga garēra kansōlamā sṭriṅa prinṭa gardacha
+Ḍhām̐cā samarthanakō sātha raṅa prakāra ra rēkhā prinṭa prayōga garēra kansōlamā sṭriṅa prinṭa gardacha
+ḍibagaramā sṭriṅa prinṭa garcha
+ḍhām̐cā samarthanakō sātha ḍibagara garna sṭriṅa prinṭa gardacha
+karnēla truṭi suvidhā parīkṣaṇa gardacha
+ḍhām̐cā samarthanakō sātha karnēla truṭi suvidhā parīkṣaṇa gardacha
+srōtaharūmā avasthita sṭriṅalā'ī viśiṣṭa bhāṣāmā anuvāda garnē parīkṣaṇaharū
+kansōlakō lāgi sṭriṅa prinṭa gardacha ra phēlā parēkā plēsahōlḍaraharūlā'ī pārsa gardacha
+niyamita abhivyakti suvidhā parīkṣaṇa gardacha
+sabai mōḍa suru huncha
+sabai mōḍaharū rōkcha
+ḍibaga sakṣama vā asakṣama pārcha
+rimōṭa ḍibaga sakṣama vā asakṣama pārcha
+255 raṅaharūkō lāgi VT anukrama parīkṣaṇa gardacha
+sām̐cō raṅakō lāgi VT anukrama parīkṣaṇa gardacha
+prāptakartā parīkṣaṇa garna sūcanā paṭhā'um̐cha
+vibhinna pātrōharū prayōga garēra mudraṇa miti parīkṣaṇa gardacha
+sabai samarthita kōḍapējaharū sūcībad'dha garnuhōs
+kuna kampā'ilara caraharū anuprayōgamā sakṣama chan?
+Viśiṣṭa ghaṭanā baḍhā'um̐dai parīkṣaṇaharū
+hārḍavēyara jām̐ca garnē parīkṣaṇaharū
+phōhōra saṅkalana garnē parīkṣaṇa
+parīkṣaṇa śēlabāṭa bāhira niskancha ra karnēla suru huncha
+parīkṣaṇa śēlabāṭa bāhira niskancha ra karnēla banda gardacha
+hālakō ḍā'irēkṭarīlā'ī karnēla kanphigarēsana phā'ilamā bacata garcha
+sṭriṅa ra sṭriṅa ērēsam̐ga sūcī lēkhakakō parīkṣaṇa gardacha
+pūrṇāṅka ra pūrṇāṅka ērēsam̐ga sūcī lēkhakakō parīkṣaṇa gardacha
+cāra ra cāra ērēsam̐ga sūcī lēkhakakō parīkṣaṇa gardacha
+sāmān'ya sṭriṅa sūcī:
+Ērē sṭriṅa sūcī:
+Sāmān'ya pūrṇāṅka sūcī:
+Ērē pūrṇāṅka sūcī:
+Sāmān'ya varṇa sūcī:
+Ērē cāra sūcī:
+RPC sakṣama garnuhōs
+RPC pōrṭa
+RPC sakṣama garnē vā nagarnē.
+RPC pōrṭa lēkhnuhōs. Yō saṅkhyātmaka hunuparcha, ra pahilē nai prayōga garinu hum̐daina. An'yathā, RPC pōrṭa khōlna asaphala hunēcha.
+RPC suru gari'ēna kinabhanē yō asakṣama cha.
+Samarthita sanskr̥tiharūkō sūcī
+niyamita abhivyakti prayōga garī pradāna gari'ēkō phā'ilamā nirdiṣṭa sṭriṅakō lāgi khōjī gardacha
+yadi tapā'im̐ samaya mā kuñjī thicna saknuhuncha ki hērnuhōs
+prayōgakartālē samayamai kunai pani inapuṭa pradāna garēna.
+caritra samayamai thici'ēkō chaina.
+Tapā'īnlē sahī kyārēkṭara thicnu bha'ēkō cha!
+Tapā'īnlē galata kyārēkṭara thicnubha'ēkō cha.
+Bāhira niskana ESC thicnuhōs.
+Miti ra samaya jānakārī prāpta gardacha
+milisēkēnḍa:
+Sēkēnḍa:
+Minēṭa:
+Ghaṇṭā:
+Dinaharū:
+Mahināharū:
+Varṣa:
+Varṣakō dina:
+Haptākō dina:
+Bā'inarī:
+Sthānīya samaya:
+Viśvavyāpī samaya:
+Yuniksa samaya:
+Kō lāgi miti jānakārī pārsa garna asaphala
+ḍhām̐cā sahī cha bhanēra suniścita garnuhōs.
+Miti:
+Samaya:
+Phā'ila anumatiharū sēṭa gardacha. Yō yuniksa calā'unē FTP sarbharaharūmā mātra samarthita cha.
+Yō satrakō lāgi prakāra sēṭa gardacha
+phā'ila praṇālī sañcālana garnu aghi tapā'īnlē sarbharamā jaḍāna garnuparcha.
+{0} Lā'ī {1} lā'ī anumatiharū sēṭa garna asaphala bhayō.
+Phā'ilakā lāgi anumatiharū saphalatāpūrvaka sēṭa gariyō
+ḍāṭā prakāra ASCII mā sēṭa gariyō!
+Ḍāṭā prakāra bā'inarīmā sēṭa gariyō!
+Avaidha ḍēṭā prakāra.
+Dhēraijasō phā'ilaharūlē yō mōḍa prayōga garēra ḍā'unalōḍa vā apalōḍa gardainan bhanēra sāvadhāna rahanuhōs, tyasailē hāmī dhēraijasō paristhitiharūmā bā'inarī mōḍa prayōga garna siphārisa garchauṁ.
+RPC suru nabha'ēkō bēlā RPC ādēśa paṭhā'unē prayāsa gardai.
+Milisēkēnḍamā phēḍa ā'uṭa ḍhilā'i
+adhikatama phēḍa caraṇaharū
+pāṭha phēḍa ā'uṭa hunu aghi kati milisēkēnḍa kurnu parcha?
+Kati phēḍa caraṇaharū garna?
+Pūrṇa jām̐ca
+yadi satya hō bhanē, sabai hārḍavēyara jām̐ca gardacha; an'yathā, āvaśyaka hārḍavēyara mātra jām̐ca garnēcha.
+Kanphigarēsanabāṭa skrinasēbhara {0} haṭā'una asaphala bhayō.
+Anukūlana sēbhara sēṭiṅaharū prāpta gardacha
+anukūlana sēbhara sēṭiṅaharū sēṭa gardacha
+skrinasēbharakā lāgi sēṭiṅaharū saphalatāpūrvaka sēṭa gariyō
+skrinasēbharakō lāgi sēṭiṅa sēṭa garna asaphala bhayō
+Phiḍaharū paḍhnakō lāgi RSS śēla khōlcha
+RSS śēlabāṭa niskancha ra karnēlamā pharkancha
+phiḍa liṅka parivartana gardacha
+sabai phiḍaharū sūcībad'dha garnuhōs
+vēba brā'ujaramā phiḍa paḍhcha
+nirdiṣṭa RSS śēla ādēśa phēlā parēna.
+Avaidha RSS2 phiḍa.
+Avaidha RSS1 phiḍa.
+Amān'ya ēṭama phiḍa.
+RSS phiḍa URL praviṣṭa garnuhōs:
+Avaidha RSS phiḍa prakāra.
+Ajñāta śēla truṭi:
+Lēkha jānakārī pā'um̐cha
+lēkha saṅkhyā upalabdha lēkhaharū bhandā ṭhūlō huna sakdaina.
+Śīrṣaka:
+Liṅka:
+Phiḍa jānakārī prāpta gardacha
+vivaraṇa:
+Phiḍa prakāra:
+Lēkha saṅkhyā:
+Lēkhakō liṅka chaina!
+Ḍā'irēkṭarīkō lāgi phā'ila praṇālī praviṣṭiharūkō sūcī banā'una asaphala bhayō
+phā'ila praṇālī kramabad'dha mōḍa
+phā'ila praṇālī kramabad'dha diśā
+phā'ilaharū kramabad'dha hunē tarikā niyantraṇa garcha.
+Phā'ila praṇālī kramabad'dha garnē diśālā'ī niyantraṇa garcha cāhē yō ārōhī hōs vā ghaṭdō hōs.
+milisēkēnḍamā phēri vilamba lēkhnuhōs
+phēri pāṭha lēkhnu aghi kati milisēkēnḍa parkhanu parcha?
+Tapā'īnlē dēkhā'una cāhanubha'ēkō kunai pani pāṭha lēkhnuhōs. Lāmō samaya rāmrō cha.
+WPM mā n'yūnatama lēkhana gati
+WPM mā adhikatama lēkhana gati
+pratiśatamā ṭā'ipōkō sambhāvanā
+hālakō nirdēśikā bacata garna asaphala: {0}
+Diśā parivartana garna vā'ipa garnuhōs
+Aniyamita rūpamā diśā parivartana garnu aghi kativaṭā vā'ipaharū garnuparcha?
+Sṭēja mā samāpta bhayō
+āntarika prārambhamā samāpta bhayō
+sandarbha phā'ila {0} phēlā parēna. Yō mōḍalē yō phā'ila binā rāmrōsam̐ga kāma nagarna sakcha.
+Mōḍa suru gardai
+ādēśa nāma:
+Ādēśa paribhāṣā:
+Ādēśa prakāra:
+Kaḍā ādēśa?
+Mōḍa sanskaraṇa:
+Mōḍa {0} phēlā parēna.
+Pāṭha sampādakalē ahilēsam'ma phā'ila sṭrima khōlēkō chaina.
+Sṭriṅa badaliyō.
+Ēka vā dubai saṅkhyāharū saṅkhyātmaka chainan.
+Śabda mēṭā'iyō.
+Kyārēkṭara mēṭā'iyō.
+Sēṭiṅharūmā svāgata cha!
+SSH ādēśa kāryānvayana gardā truṭi
+SSH śēlamā truṭi
+- ēpa jānakārī
+Sṭriṅa ra sṭriṅa ērēsam̐ga śabdakōśa lēkhakakō parīkṣaṇa gardacha
+akṣara ra cāra ērēsam̐ga śabdakōśa lēkhakakō parīkṣaṇa gardacha
+pūrṇāṅka ra pūrṇāṅka ērēsam̐ga śabdakōśa lēkhakakō parīkṣaṇa gardacha
+sāmān'ya sṭriṅa śabdakōśa:
+Ērē sṭriṅa śabdakōśa:
+Sāmān'ya pūrṇāṅka śabdakōśa:
+Ērē pūrṇāṅka śabdakōśa:
+Sāmān'ya akṣara śabdakōśa:
+Ērē varṇa śabdakōśa:
+Parīkṣaṇa śēlamā svāgata cha!
+Phā'ila praṇālī sañcālanamā pragati dēkhā'unuhōs
+phā'ila praṇālī sañcālanakō kramamā kuna phā'ila praśōdhana bha'irahēkō cha dēkhā'um̐cha
+jahām̐ HardwareType hunēcha
+yā ta hārḍavēyara prakāra {0} prōba gari'ēkō chaina, vā mān'ya chaina.
+Hārḍavēyara prakāra {0} ajhai jām̐ca gari'ēkō chaina. Yadi tapā'im̐ niścita hunuhuncha ki yō jām̐ca gari'ēkō cha bhanē, ḍibagiṅa sakṣama bha'ēkō sātha karnēla puna: Suru garnuhōs.
+Vibhājanaharū sūcīmā pārsa gari'ēkō chaina.
+Vibhājaka chāpcha
+ḍhām̐cā samarthanakō sātha vibhājaka chāpcha
+raṅa samarthanakō sātha vibhājaka prinṭa gardacha
+raṅa ra ḍhām̐cā samarthanakō sātha vibhājaka prinṭa gardacha
+sadhaiṁ kēndrita
+Tapā'īnlē dēkhā'una cāhanubha'ēkō kunai pani pāṭha lēkhnuhōs.
+Mārkīmā dēkhā'i'ēkō pāṭha sadhaiṁ kēndrita cha ki chaina.
+Tarka {0} injēkṭa garna phēlā parēna.
+Ādēśa rēkhā tarka {0} phēlā parēna.
+skrinasēbharalē pradarśana gardā truṭi anubhava garyō: {0}. Bāhira niskana kunai kuñjī thicnuhōs.
+Pūrvāvalōkana...
+Yahām̐ tapā'īkō viṣayavastu kastō dēkhinēcha:
+Lapēṭna milnē ādēśaharū:
+Mōḍa {0} mā amān'ya ādēśa cha. Mōḍa pārsiṅa asaphala bhayō. Srōta kōḍa samīkṣā garnuhōs.
+Mōḍa bhāgaharū:
+Kansōla API prayōga garnuhōs
+pāṭha khālī garna kansōla API prayōga garnē vā VT anukrama khālī garnē druta rēkhā prayōga garnē. Yadi False, Marquee lē upayukta VT anukrama prayōga garnēcha. An'yathā, yasalē sambhavataḥ ḍhilō kansōla API prayōga garnēcha.
+URL khōldai... Skrinamā dēkhā'i'ēkā caraṇaharū pālanā garna niścita garnuhōs.
+Mōḍamā kunai bhāgaharū chainan.
+Mōḍa nāma:
+Mōḍa phā'ila nāma:
+Mōḍa phā'ila mārga:
+Bhāga sanskaraṇa:
+Āvaśyaka tarkaharūkō n'yūnatama gaṇanā:
+Tarka āvaśyaka cha?
+Lapēṭnē ādēśa?
+Śēla cara sēṭa gardai hunuhuncha?
+Marmata mōḍamā calā'una saknuhunna?
+Apracalita?
+Āra'ēsa'ēsa prampṭa śailī
+pāṭha sampādana prampṭa śailī
+jipa śēla prampṭa śailī
+phōlḍara khālī cha.
+Saphalatāpūrvaka jām̐ca gariyō {0}.
+Verbose Probe
+hārḍavēyara jām̐ca sandēśaharū ali bōlnē banā'unuhōs.
+> Phrēma bārē kunai jānakārī chaina.
+Āphnō nāma lēkhnuparcha.
+JSON phā'ilalā'ī sundara banā'um̐cha
+kanphiga śrēṇī {0} phēlā parēna.
+Kanphiga praviṣṭi {0} phēlā parēna.
+Prati minēṭa bīṭsa prayōga garnuhōs
+arkō raṅa lēkhnakō lāgi biṭsa prati minēṭa ēkā'i prayōga garnē ki nagarnē.
+Biṭsa prati minēṭamā ḍhilā'i
+bīṭa kalara
+arkō lēkhnu aghi prati minēṭa kati bīṭaharū parkhanu parcha?
+Yadi sakṣama cha bhanē BeatFader lē aniyamita raṅaharū cayana garnēcha. An'yathā, kanphigarēsanabāṭa raṅaharū prayōga garnuhōs.
+Anukūlana sṭārṭa'apa byānara
+Bā'inarī vā pāṭha prayōga garēra sthānīya ḍā'irēkṭarīmā ṭāḍhākō phōlḍara ḍā'unalōḍa gardacha
+bā'inarī vā pāṭha prayōga garēra ṭāḍhākō ḍā'irēkṭarīmā sthānīya phōlḍara apalōḍa gardacha
+Phōlḍara ḍā'unalōḍa gardai {0}...
+Ḍā'unalōḍa gari'ēkō phōlḍara {0}.
+Phōlḍara {0} kō lāgi ḍā'unalōḍa asaphala bhayō.
+Phōlḍara apalōḍa gardai {0}...
+Apalōḍa gari'ēkō phōlḍara {0}
+Pūrṇa raṅga kōḍa lēkhna"c" thicnuhōs.
+Yī ḍhām̐cāharū pūrā garnē raṅa kōḍa praviṣṭa garnuhōs:
+JSON phā'ilalā'ī sānō banā'um̐cha
+milisēkēnḍamā nayām̐ skrina ḍhilā'i
+stambha gaṇanā
+lā'ina phila thrēsahōlḍa
+pratiśatamā lā'ina phila kyāpiṅa sambhāvyatā
+rēkhā bharnē prakāra
+nayām̐ skrinamā phēri pāṭha lēkhnu aghi kati milisēkēnḍa parkhanu parcha?
+Chāpinē pāṭha stambhaharū.
+"Lā'ina phila" ṭrigara garnu aghi kati varṇaharū lēkhnuparcha?
+Rēkhā bharnē ḍhām̐cā sabai kyāpsamā pratiśatamā chāpinē sambhāvanā cha
+rēkhā bharnē ḍhām̐cā prakāra
+javāpha śūn'ya nahuna sakcha.
+Javāpha dēkhā'i'ēkō praviṣṭiharū bhandā baḍhī nahuna sakcha.
+Parivartanaharū surakṣita garnuhōsa...
+Āphnō mōḍaharū prabandha garnuhōs
+mōḍa vyavasthāpana surakṣita mōḍamā asakṣama gari'ēkō cha.
+Amān'ya ādēśa {0}. Tala prayōga jām̐ca garnuhōs:
+Mōḍa phēlā parēna vā phā'ilamā amān'ya varṇaharū chan.
+Pratiśatamā misa hunē sambhāvanā
+skrinasēbhara ḍibagiṅa sakṣama garnuhōs
+skrinasēbharaharūkō lāgi ḍibagiṅa sakṣama gardacha. Kr̥payā dhyāna dinuhōs ki yasalē druta rūpamā ḍibaga laga bharna sakcha ra prayōga gari'ēkō skrinasēbharakō ādhāramā skrinasēbharalā'ī thōrai ḍhilō garna sakcha. Nidāna uddēśyakā lāgi karnēla ḍibagiṅa sakṣama bha'ēmā mātra kāma garcha.
+Ḍibaga ḍāṭā ḍā'unalōḍa gardā nēṭavarka chaina
+āphnō inṭaranēṭa jaḍāna jām̐ca garnuhōs ra phēri prayāsa garnuhōs.
+Myānu'ala pr̥ṣṭha {0} amān'ya cha.
+Yō myānu'ala pr̥ṣṭha bharnē vicāra garnuhōs.
+Myānu'ala pr̥ṣṭha paḍhna kunai pani kuñjī thicnuhōs...
+Yō myānu'ala pr̥ṣṭhakō lāgi kāma āvaśyaka cha:
+Myānu'ala pr̥ṣṭha {0} phēlā parēna.
+Mōḍa myānu'ala

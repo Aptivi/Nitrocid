@@ -705,13 +705,45 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\afr.json" />
     <None Include="Resources\arb-T.json" />
     <None Include="Resources\arb.json" />
+    <None Include="Resources\arm-T.json" />
+    <None Include="Resources\arm.json" />
     <None Include="Resources\azr.json" />
     <None Include="Resources\ben-T.json" />
     <None Include="Resources\ben.json" />
+    <None Include="Resources\blg-T.json" />
+    <None Include="Resources\blg.json" />
+    <None Include="Resources\bsn.json" />
+    <None Include="Resources\cbn.json" />
+    <None Include="Resources\cnt-T.json" />
+    <None Include="Resources\cnt.json" />
     <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
     <None Include="Resources\Data\SettingsEntries.json" />
+    <None Include="Resources\grk-T.json" />
+    <None Include="Resources\grk.json" />
+    <None Include="Resources\guj-T.json" />
+    <None Include="Resources\guj.json" />
+    <None Include="Resources\hng.json" />
+    <None Include="Resources\hus.json" />
+    <None Include="Resources\hxr-1.json" />
+    <None Include="Resources\hxr-2.json" />
+    <None Include="Resources\hxr-3.json" />
+    <None Include="Resources\icl.json" />
+    <None Include="Resources\krd.json" />
+    <None Include="Resources\kzk-T.json" />
+    <None Include="Resources\kzk.json" />
+    <None Include="Resources\lol.json" />
+    <None Include="Resources\ltv.json" />
+    <None Include="Resources\lxm.json" />
+    <None Include="Resources\mcd-T.json" />
+    <None Include="Resources\mcd.json" />
+    <None Include="Resources\npl-T.json" />
+    <None Include="Resources\npl.json" />
+    <None Include="Resources\pir.json" />
+    <None Include="Resources\psh.json" />
+    <None Include="Resources\snd.json" />
     <None Include="Resources\Themes\Breeze.json" />
     <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\bsq.json" />
@@ -794,6 +826,11 @@
     <None Include="Resources\Themes\TealerOS.json" />
     <None Include="Resources\Themes\Ubuntu.json" />
     <None Include="Resources\Themes\TrafficLight.json" />
+    <None Include="Resources\tkm.json" />
+    <None Include="Resources\tky.json" />
+    <None Include="Resources\ukr-T.json" />
+    <None Include="Resources\ukr.json" />
+    <None Include="Resources\urd.json" />
     <None Include="Resources\uzb.json" />
     <None Include="Resources\vtn.json" />
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
@@ -804,6 +841,7 @@
     <None Include="Resources\wls.json" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\yrb.json" />
     <None Include="Resources\zul.json" />
   </ItemGroup>
   <ItemGroup />

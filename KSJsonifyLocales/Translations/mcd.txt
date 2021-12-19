@@ -1,0 +1,1007 @@
+Dostapni komandi: {0}
+Komandnoto vbrizguvanje e otkažano.
+Injektiranite argumenti ḱe bidat planirani da se izvršuvaat pri slednoto restartiranje.
+Greška pri analizata na vistinskite argumenti na komandnata linija: {0}
+Nevažečki šablon vo boja {0}
+hwprobe: Vašiot hardver ḱe bide ispitan. Ve molam počekajte...
+Procesor: Edno ili poveḱe od jadrata na procesorot ne uspea da se ispita. Vo sekoj slučaj se prikažuvaat informacii...
+RAM: Eden ili poveḱe od RAM-čipovite ne uspea da se ispita. Vo sekoj slučaj se prikažuvaat informacii...
+HDD: Eden ili poveḱe od hard diskovite ne uspea da se ispita. Vo sekoj slučaj se prikažuvaat informacii...
+Procesor: vkupen broj na procesori: {0}
+Vnesete ja administrativnata lozinka za održuvanje.
+Greška vo jadroto pri podignuvanje: {0}
+DVOJNA PANIKA: Vremeto na restartiranje go nadminuva maksimalnoto dozvoleno vreme za restartiranje na greška od {0}. Najdovte greška vo jadroto.
+[{0}] panika: restartiranjeto e ovozmoženo poradi nivoto na greška što e {0}.
+[{0}] panika: vreme za restartiranje: {1} sekundi, nadminuva 1 čas. Postaveno e na 1 minuta.
+DVOJNA PANIKA: Vidot na greškata {0} e nevažečki.
+[{0}] dpanic: {1} -- Se restartira za {2} sekundi...
+[{0}] panika: restartiranjeto e onevozmoženo poradi nivoto na greška što e {0}.
+[{0}] panika: {1} -- Pritisnete koe bilo kopče za da prodolžite da go koristite kernelot.
+[{0}] panika: {1} -- Pritisnete koe bilo kopče za da se iskluči.
+[{0}] panika: {1} -- Se restartira za {2} sekundi...
+DVOJNA PANIKA: greška na jadroto: {0}
+Se isklučuva...
+Se restartira...
+Drug primer na Kernel Simulator raboti. Isklučuvanje vo slučaj na prečki.
+Ne uspea da se dodade korisnik vo listite so dozvoli: nevažečki tip {0}
+Ne uspea da se dodade korisnik vo listite so dozvoli: nevažečki korisnik {0}
+Ne uspea da se otstrani korisnikot od spisocite so dozvoli: nevažečki tip {0}
+Veḱe ste najaveni.
+Ne uspea da se otstrani korisnikot od spisocite so dozvoli: nevažečki korisnik {0}
+Ili ste našle greška, ili dozvolata što se obidovte da ja dodadete ili otstranite e veḱe završena, ili druga greška.
+Greška {0}: {1}
+Ili ste našle greška, ili dozvolata što se obidovte da ja uredite za nov korisnik ne uspea.
+Dostapni korisnički iminja: {0}
+Korisničko ime:
+Ne se dozvoleni mesta.
+Specijalni znaci ne se dozvoleni.
+lozinka na {0}:
+Pogrešna lozinka.
+Korisnikot e onevozmožen.
+Pogrešno korisničko ime.
+Greška vo obidot da se analiziraat postavkite. {0} - Traga na magacinot:
+Greška vo obidot da se analiziraat postavkite. {0}
+Greška pri obidot da se dodade korisničko ime.
+usrmgr: Se sozdava korisničko ime {0}...
+Prazno korisničko ime.
+Korisnikot {0} ne e pronajden.
+Na korisnikot {0} ne mu e dozvoleno da se otstrani.
+Korisnikot {0} e veḱe najaven. Odjavete se i najavete se kako drug administrator.
+Korisnikot {0} e otstranet.
+Greška pri otstranuvanje na korisničkoto ime.
+Baraniot zaštitnik na ekranot {0} ne e pronajden.
+{0} e inicijaliziran pravilno.
+{0} ne se inicijaliziraše. Kodot na zaštitnikot na ekranot možebi doživeal greška pri inicijaliziranjeto.
+Zaštitnikot na ekranot {0} ne postoi.
+{0} e postaven na standarden zaštitnik na ekranot.
+Zaštitnikot na ekranot {0} ne e pronajden vo bazata na podatoci. Proverete go imeto i obidete se povtorno.
+Zaštitnikot na ekranot ne može da se včita poradi slednovo:
+Ima seriozna greška pri pečatenje tekst.
+Ima greška pri obidot da se sozdade konfiguracija.
+Greška pri obidot da se oslobodi RAM memorijata: {0} - Prodolžuvame...
+Mod ne može da se včita poradi slednovo:
+mod: se včituvaat modovi...
+mod: zapiranje na modovite...
+Mod {0} go nema imeto. Pregledajte go izvorniot kod.
+Mod {0} ja nema verzijata.
+{0} v{1} započna
+Nema definicija za komandata {0}.
+Komanda definirana od
+Treba da se isklučite od serverot pred da se povrzete na drug server
+Korisničko ime za {0}:
+Lozinka za {0}:
+Povrzan so {0}
+Greška pri obidot da se povrzete so {0}: {1}
+Stak Traga: {2}
+Lokalniot direktorium {0} ne postoi.
+Vnesete lokalen direktorium. „..“ da se vratam nazad.
+Direktoriumot {0} ne e pronajden.
+Vnesete dalečinski direktorium. „..“ da se vratam nazad
+Mora da se povrzete na server pred da go promenite direktoriumot
+Lokalen direktorium: {0}
+Dalečinski direktorium: {0}
+Mora da se povrzete so serverot pred da go dobiete tekovniot dalečinski direktorium.
+Mora da se povrzete so server so administrativni privilegii pred da go izvršite brišenjeto.
+Isklučena od {0}
+Sè ušte ne ste se povrzale na nitu eden server
+Se prezema datotekata {0}...
+Prezemena datoteka {0}.
+Mora da se povrzete so serverot pred da izvršite prenos.
+{0} KB | Izmeneto vo: {1}
+Treba da se povrzete so serverot pred da gi navedete site oddalečeni datoteki.
+Se postavuva datotekata {0}...
+Postavena datoteka {0}
+Go dobiva tekovniot lokalen direktorium
+Go dobiva tekovniot dalečinski direktorium
+Go menuva lokalniot direktorium za prezemanje ili postavuvanje od
+Go menuva dalečinskiot direktorium za prezemanje ili postavuvanje na
+Ja briše oddalečenata datoteka od serverot
+Se isklučuva od serverot
+Prezema oddalečena datoteka vo lokalniot direktorium koristejḱi binaren ili tekst
+Izleguva od FTP školka i se vraḱa vo kernelot
+Go prikažuva ekranot za pomoš
+Lista na lokalniot direktorium
+Lista na dalečinskiot direktorium
+Postavuva lokalna datoteka vo oddalečen direktorium koristejḱi binaren ili tekst
+FTP poraka: Baranata komanda {0} ne e pronajdena. Videte „pomoš“ za spisok so dostapni komandi navedeni na FTP školka.
+Ne uspea da se dobijat svojstva za adapterot {0}
+Broj na adapter:
+Ime na adapter:
+Maksimalna edinica za prenos: {2} edinici
+Ovozmoženo DHCP:
+Paketi koi ne se unikatni:
+Unicast paketi:
+Greška pri dojdovni/pojdovni paketi:
+Alijas ne može da bide isto ime kako komanda.
+Komandata ne e pronajdena vo psevdonimot na {0}.
+Sega možete da izvršite „{0}“ kako komanda: „{1}“.
+Alijasot {0} ne e pronajden da se otstrani.
+Nevažečki režim {0}.
+Injektiranite argumenti, {0}, ḱe bidat planirani da se izvršuvaat pri slednoto restartiranje.
+Nemaše dovolno argumenti. Poglednete podolu za upotreba:
+Direktoriumot {0} ne e pronajden
+Prazno ime na domaḱin.
+Se menuva od: {0} vo {1}...
+Prazna poraka na denot.
+Prazen MAL po najavuvanjeto.
+Pogrešna korisnička lozinka.
+Lozinkite ne se sovpaǵaat.
+Korisničkoto ime e promeneto vo {0}!
+Novoto ime što go vnesovte e veḱe pronajdeno.
+{0} ne e pronajden.
+Konfiguracijata e povtorno včitana. Možebi ḱe treba da go restartirate kernelot za da stapat na sila nekoi promeni.
+Edna ili poveḱe od boite ne se validni.
+Boite ne se dostapni. Vklučete oboena školka vo konfiguracijata na jadroto.
+Zaštitnikot na ekranot {0} ne e pronajden.
+Verzija na jadroto:
+Režim za otstranuvanje greški:
+Oboena školka:
+Argumenti za podiganje:
+Komandata za pomoš e poednostavena:
+MOTD pri najavuvanje:
+Vreme/datum na agolot:
+Tekovno korisničko ime:
+Tekovno ime na domaḱin:
+Dostapni korisnički iminja:
+Greška pri izvršuvanje na komandata
+Go menuva direktoriumot
+Ja menuva lozinkata za tekovniot korisnik
+Go briše ekranot
+Koristete FTP školka za da komunicirate so serverite
+Stranica za pomoš
+Navedete ja sodržinata na datotekata/papkata vo tekovnata papka
+Go zaklučuva vašiot ekran so lozinka
+Ve odjavuva
+Sozdava direktorium
+Nabrojuva informacii za site dostapni interfejsi
+Go restartira kompjuterot (PREDUPREDUVANJE: Nema sinhronizacija, bidejḱi ne e finalen kernel)
+Povtorno ja včituva konfiguraciskata datoteka što e uredena.
+Go začuvuva vašiot ekran od izgorenici
+Postavuva skrinsejveri na jadroto
+Postavuva temi za jadroto
+Pokažuva datum i vreme
+Pokažuva datum i vreme vo zoni
+Kernelot ḱe se iskluči
+Sistemski informacii
+* Možete da koristite poveḱe komandi so pomoš na debeloto crevo pomeǵu komandite.
+Upotreba:
+kade što argumentite ḱe bidat {0}
+kade ḱe bide carinikot
+Imaše greška vo školka.
+Nemate dozvola da koristite {0}
+Poraka od školka: Baranata komanda {0} ne smee da raboti vo režim na održuvanje.
+Poraka od školka: Baranata komanda {0} ne e pronajdena. Videte „pomoš“ za dostapni komandi.
+Poraka od školka: Naredbata {0} ne e dozvoleno da raboti pri najavuvanje.
+Greška pri izvršuvanje na komandata.
+- Vreme od {0}: {1}
+raboti na {0}
+Ne ste ovlasteni da dobivate informacii za {0}.
+Ovaa komanda e zastarena i ḱe bide otstraneta vo idnoto izdanie.
+Ne ste ovlasteni da ja menuvate lozinkata na {0} bidejḱi celta beše administrator.
+usrmgr: Korisničkoto ime {0} e veḱe pronajdeno
+Brišenje sè vo dnevnikot za otstranuvanje greški
+Nevažečki jazik
+Go menuva jazikot
+----------------------------- Deponija za panika na jadroto ------------------- -----------
+>> Informacii za panika <<
+> Opis: {0}
+> Tip na greška: {1}
+> Datum i vreme: {2}
+>> Informacii za isklučok <<
+> Isklučok: {0}
+> Opis: {1}
+> REZULTAT: {2}
+> Izvor: {3}
+> Stak traga <
+>> Vnatrešen isklučok {0} informacii <<
+>> Isklučok {0} e osnovnata pričina <<
+>> Nema isklučok; može da e greška vo jadroto. <<
+>> Ramki, datoteki, linii i koloni <<
+> Ramka {0}: Datoteka: {1} | Linija: {2} | Kolona: {3}
+> Ima greška koga se obiduvate da dobiete informacii za ramkata. {0}: {1}
+Dobredojdovte vo Kernel!
+Uspešno se najavivte kako <korisnik>
+MOTD/MAL e validen, no tipot na porakata ne e validen. Pretpostavuvajḱi MOTD...
+Se obidov da pročitam MOTD/MAL što e od nevažečki tip na poraka.
+Prezemanjeto e završeno.
+Prezemanjeto ne uspea vo obidot {0}: {1}
+Ve molime koristete „ftp“ ako sakate da prezemate datoteki od FTP serverot.
+Prezema datoteka vo tekovniot raboten direktorium
+Isklučete ured za otstranuvanje greški
+Gi naveduva povrzanite uredi za otstranuvanje greški
+Uredot za otstranuvanje greški {0} ne e pronajden.
+Uredot {0} e isklučen.
+Greška vo povrzuvanjeto: {0}
+Otstranete greški pri slušanjeto na site adresi so pomoš na portata {0}.
+Nema navedeni argumenti. Sovet: navedete poveḱe argumenti oddeleni so prazni mesta
+Alijasot veḱe e pronajden: {0}
+Dnevnikot za otstranuvanje greški e otstranet. Site povrzani uredi za otstranuvanje greški sè ušte može da gledaat poraki.
+Otstranuvanjeto na dnevnikot za otstranuvanje greški ne uspea: {0}
+Promenata na direktoriumot ne uspea: {0}
+Navedete ja adresata
+Ne može da se otstrani direktoriumot: {0}
+Vremenskata zona e pogrešno odredena.
+Nevažečki izbor na profil.
+Se obiduva da se povrze na {0} so profilot {1}...
+Komandata {0} ne e pronajdena. Videte ja komandata „pomoš“ za spisokot so komandi.
+Ne uspea da se dobijat svojstvata na IPv6 za adapterot {0}. Prodolžuvajḱi...
+Informacii za IPv4:
+Informacii za IPv6:
+Adapterot {0} ne poddržuva IPv6. Prodolžuvajḱi...
+Adapterot {0} ne poddržuva IPv4. Sondata ne uspea.
+Se čini deka ja izvršuvavte razvojnata verzija na kernelot. Iako možete da gi vidite aspektite, toj često se ažurira i može da vovede greški. Se preporačuva da ostanete na stabilnata verzija.
+Jazikot što go izbravte sodrži dve varijanti. Izberi edno:
+Nevažečki izbor. Obidi se povtorno.
+Ne ste ovlasteni da go postavite tekovniot direktorium na {0}: {1}
+Patekata što ja navedovte e predolga.
+Sobiračot na deponii padna koga se obiduvaše da dobie informacii za {0}: {1}
+Greška pri obidot da se postavi MOTD/MAL: {0}
+Greška pri obidot da se dobie MOTD/MAL: {0}
+Greška pri obidot da se startuva zaštitnikot na ekranot, poradi nevažečka operacija.
+Včituvanjeto ne e dozvoleno vo bezbeden režim.
+Modovite za parsiranje ne se dozvoleni vo bezbeden režim.
+Greška pri obidot da se postavi režim na analiza. Proverete ja vrednosta i obidete se povtorno. Ako ova e točno, videte ja tragata na odžakot koga e ovozmoženo otstranuvanje greški na jadroto.
+Patekata ne e nitu datoteka nitu direktorium.
+Sozdava druga kopija od datoteka pod različen direktorium ili ime.
+Premestuva datoteka vo drug direktorium
+Odgovara na {0} ({1}): {2}
+Natprevar {0}: {1}
+Potrošeno vreme: {0} milisekundi
+Ime: {0}
+Presmetuva zbir na datoteki.
+Ve vodi do našata GitHub Viki.
+Nevažečki algoritam za šifriranje.
+Ovozmožuva ili onevozmožuva dalečinsko otstranuvanje greški.
+Poglednete dali možete pravilno da gi speluvate zborovite na vreme
+Poglednete dali možete da gi rešite matematičkite ravenki na vreme
+Odgovorete na komentarite so ljubov ili omraza.
+Ako nekoj go dade ovoj komentar na vašeto video:
+Kako bi odgovoril?
+Nevažečki izbor. Odime na sledniot komentar...
+Odlično! {0} ḱe ja ceni vašata blagodarnost.
+Sovršeno napišano!
+Napišano pogrešno.
+Sovršeno rešeno!
+Rešen pogrešno.
+RPC veḱe raboti.
+RPC slušanje na site adresi so pomoš na portata {0}.
+Startuvanje na RPC...
+Se povrzuva so SSH server.
+Vnesete ja lozinkata za {0}:
+SSH e isklučen.
+Ne može da se postavi kodnata stranica. Jazikot može da ne se prikažuva pravilno.
+Otstranuvanjeto greški ne e ovozmoženo.
+Blagodaram! Ova e interesno.
+Site ḱe go poddržat vašeto video za ova.
+Vi ja dadov specijalnata datoteka vo vašata e-pošta za vašeto sledno video.
+Slušajte hejteri, toj se obiduva da ni pomogne, a ne da izmami.
+Ne znam kolku jas i moite prijateli vi blagodarime za ova video.
+Te sakam za ova video.
+Prodolži, ne zastanuvaj.
+Ḱe vi pomognam da dostignete 1 milion pretplatnici!
+Moite prijateli go popravija kompjuterot poradi tebe.
+Prekrasna šega! Go isklučiv kompjuterot na mojot neprijatel.
+Za hejterite: PRESTANETE DA GO MRAZITE
+Do mraziteli: FAJTE NA RABOTA
+Nikoj nema da go zabeleži ova sega blagodarenie na vašiot vodič za krienje na predmeti
+Ḱe prestanam da gi gledam tvoite videa. Izguben pretplatnik.
+Što e ova? Ova e nejasno.
+Ova video e najlošoto!
+Site prijavete go ova video!
+Moite prijateli se besni na tebe!
+Ljubovnicite sega ḱe ve mrazat poradi ova.
+Vašiot prijatel ḱe ve mrazi poradi ova.
+Ovaa šega me natera da se otpišam na tebe.
+Misijata ne uspea, Počit -, pretplatnik -
+Prestanete da pravite vakvo video!!!
+Vratete se na vašata rabota, vašite videa se najloši!
+Imame predrasudi za ova video.
+Gi prikažuva site primeni izvestuvanja
+Otfrla izvestuvanje
+Izvestuvanjeto e otfrleno uspešno.
+Paketi (vlezni):
+Paketi (pojdovni):
+Greški vo primenite paketi:
+Opšti svojstva na IPv6
+Opšti svojstva na IPv4
+Dalečinski izvršuva komanda na oddalečen kompjuter
+- Faza 1: Inicijalizacija na sistemot
+- Faza 2: Otkrivanje na hardver
+- Faza 3: Otkrivanje na modovi i skrinsejveri
+- Faza 4: Najavete se
+Izgleda deka ja izvršuvavte verzijata za kandidat za izdavanje. Se preporačuva da ostanete na stabilnata verzija.
+Nevažečki tip {0}.
+Golemina: {0}
+Direktoriumot {0} veḱe postoi.
+Greška pri obidot da se povrzete na {0}: istek na vrskata ili izgubena vrska
+Kalkulator za presmetuvanje na izrazi.
+Greška vo presmetkata.
+Sistemsko ažuriranje
+Se proveruva za ažuriranja na sistemot...
+Pronajdena e nova verzija:
+Možete da go prezemete na:
+Nema neodamnešni izvestuvanja
+Prebaruva odredena niza vo dadenata datoteka
+Presmetuva zbir na datoteki vo navedeniot direktorium.
+Vnesete korisničko ime ili adresa za e-pošta:
+Vnesete ja lozinkata:
+Greška pri povrzuvanje so {0}: {1}
+Se povrzuva so {0}...
+Se proveruva...
+Izleguva od IMAP školka
+Spisok na komandi
+Prezema poraki i gi naveduva
+Otvora poraka
+Stranicata ne e numerička vrednost.
+Brojot na porakata može da ne e negativen ili nula.
+Brojot na porakata ne e numerička vrednost.
+- od {0}
+- do {0}
+- Isprateno vo {0} vo {1}
+Navedenata poraka ne e pronajdena.
+Dalečinskoto otstranuvanje greški ne uspea da započne: {0}
+Se podgotvuvaat profili... Može da potrae nekolku minuti...
+Greška pri izvršuvanje na skripta: {0}
+Zapišuva tekst vo konzolata
+Pravi korisnički izbori
+Bip vo 'n' Hz i vremeto vo 'n' milisekundi
+kade što <$variable> e koja bilo promenliva što ḱe se koristi za skladiranje na odgovor
+Frekvencijata mora da bide numerička. Ako e numerički, proverete dali e >= ​​37 i <= 32767.
+Vremeto mora da bide numeričko.
+kade što <odgovori> se odgovorite so edna bukva na prašanjeto podeleni so kosi crti
+Greška pri povrzuvanje so SSH server: {0}
+Ovozmožuva korisnikot da vnesuva vlez
+Go menuva tekovniot imenik za pošta
+Ne može da se otvori papkata za pošta {0}: {1}
+Gi naveduva direktoriumite vo vašata pošta adresa
+Koristi informacii od Brzo biranje za brzo povrzuvanje na koja bilo mreža
+Izberete adresa za povrzuvanje:
+Izborot e nadvor od opsegot. Izberete pomeǵu 1-{0}. Obidi se povtorno.
+Izborot ne e brojka. Obidi se povtorno.
+Za vreme na validacijata na sertifikatot, ima greški vo sertifikatot. Možebi e prvpat da se povrzete na serverot ili možebi sertifikatot e istečen. Eve edna greška:
+Dali ste sigurni deka sakate da se povrzete?
+Nevažečki odgovor. Ve molime obidete se povtorno.
+Brzoto biranje e prazno. Povrzete se so server za da dodadete adresa na nego.
+Brzo biranje ne postoi. Povrzete se so server za da dodadete adresa na nego.
+Vnesete adresa i porta na serverot IMAP (<adresa> ili <adresa>:[porta]):
+Vnesete adresa i porta na serverot SMTP (<adresa> ili <adresa>:[porta]):
+Ispraḱa poraka na adresa
+Vnesete ja adresata na pošta na primačot:
+Vnesete ja temata:
+Vnesete ja vašata poraka podolu. Napišete „EOF“ za da potvrdite.
+Se ispraḱa poraka...
+Porakata e ispratena.
+Nevažečka adresa na e-pošta. Proverete dali ste ja napišale pravilno adresata i deka se sovpaǵa so formatot na prikažaniot primer:
+Otstranuva poraka
+Gi otstranuva site poraki od primačot
+Porakata {0} od {1} e izbrišana od {2}. Preostanuvaat ušte {3} poraki za analiza.
+Porakata {0} od {1} e izbrišana od sandačeto. Preostanuvaat ušte {2} poraki za analiza.
+Ureduva tekstualna datoteka
+Pravi nova datoteka
+Datotekata veḱe postoi.
+Greška pri obidot da se sozdade datoteka: {0}
+Ne uspea da se otvori datotekata. Izleguva od školka...
+Navedenata komanda za ureduvač na tekst ne e pronajdena.
+Gi naveduva dostapnite komandi
+Izleguva od ureduvačot na tekst i začuvuva nezačuvani promeni
+Ja pečati sodržinata na datotekata so broevi na linii vo konzolata
+Dodava nova linija so tekst na krajot od datotekata
+Go otstranuva navedeniot broj na linija
+Zamenuva zbor ili fraza so druga
+Brišenje zbor ili fraza od brojot na linijata
+Brišenje znak od brojot na znaci vo odredenata linija
+Otstraneta linija.
+Navedeniot broj na linijata {0} ne e važečki broj.
+Raboti vo bezbeden režim. Preskoknuvanje na fazata...
+>> Dalečinsko otstranuvanje greški i razgovor: verzija
+>> Vašata adresa e {0}.
+>> Vašeto ime e {0}.
+Komandata {0} ne e pronajdena. Koristete „/pomoš“ za da ja vidite listata.
+Indeksot {0} e nevažečki. Ima {1} tragi od stek. Indeksot e zasnovan na nula, zatoa obidete se da odzemete za 1.
+Nema traga od magacinot
+Prikažuva traga od poslednoto stek na isklučok
+Go prikažuva tekovnoto korisničko ime vo sesijata
+Ve isklučuva od debagerot
+Deblokirajte ured za otstranuvanje greški po IP adresa
+Blokirajte ured za otstranuvanje greški po IP adresa
+{0} sega može povtorno da se pridruži na dalečinsko otstranuvanje greški.
+{0} sè ušte ne e blokiran.
+Greška pri včituvanje na postavkite
+Ima greška pri včituvanje na postavkite. Možebi ḱe treba da ja proverite datotekata so postavki.
+Izberete del:
+Začuvaj gi postavkite
+Izlezete
+Navedenata opcija {0} e nevažečka.
+Odgovorot mora da bide numerički.
+Prašanje za argumenti na podiganje
+Aktiviranje na režimot na održuvanje
+Proverete dali ima ažuriranja pri startuvanje
+Tivka sonda
+Prikaži MOTD pri logiranje
+Izbriši go ekranot pri najavuvanje
+Prikaži dostapni korisnički iminja
+Oboena školka
+Poednostavena komanda za pomoš
+Porta za otstranuvanje greški
+Prezemete go Povtorete go vremeto
+Prijavete go korisničkoto ime na FTP
+Prijavete ja FTP IP adresata
+Vratete go samo prviot FTP profil
+Prikaži vreme/datum na gorniot desen agol
+Istekuvanje na zaštitnikot na ekranot vo ms
+Kvota za otstranuvanje greški vo bajti
+Režim na analiza na goleminata
+Marki pri startuvanje
+Dolgo vreme i datum
+Prikaži skrieni datoteki
+Vnesen e nevažečki del. Ve molime vratete se nazad.
+Vrati se nazad...
+Ovozmoži
+Onevozmoži
+Napišete ja root lozinkata što treba da se postavi. Ne grižete se; lozinkata se prikažani kako dzvezdi.
+Da se ​​smeni root lozinkata?
+Postavete lozinka za root...
+Napišete porta za dalečinski debager. Mora da bide numerički i ne smee veḱe da se koristi. Vo sprotivno, dalečinskiot debager nema da uspee da ja otvori portata.
+Napišete kolku pati komandata „zemi“ treba povtorno da se obide so neuspešni prezemanja. Mora da bide numerički.
+Napišete koga da startuvate zaštitnik na ekranot po odredeni milisekundi. Mora da bide numerički.
+Napišete kolku bajti može da skladira dnevnikot za otstranuvanje greški. Mora da bide numerički.
+Odgovorot možebi ne e negativen.
+Odgovorot e nevaliden. Proverete za da bidete sigurni deka odgovorot e numerički za konfiguraciskite zapisi na koi im se potrebni broevi kako odgovori.
+Promenlivata {0} ne e pronajdena na nitu eden od modulite.
+Ja menuva konfiguracijata na kernelot
+Aktivirajte 255 boi
+Dali sakate da ostanete povrzani?
+Nevažečki izbor. Pretpostavuvajḱi deka nema ...
+Promenete ja kulturata koga menuvate jazici
+Prikažan tekst
+Napišete koj bilo tekst što sakate da se prikaže. Pokratko e podobro.
+Ne uspea da se postavi {0}
+Greška pri izvršuvanjeto na komandata za dalečinsko otstranuvanje greški {0}: {1}
+Dodava korisnici
+Dodava psevdonimi na komandite
+Vnesuva argumenti vo kernelot (potrebno e restartiranje)
+Go menuva imeto na domaḱinot
+Go menuva MAL, MOTD po najavuvanjeto
+Go menuva MOTD, porakata na denot
+Go menuva korisničkoto ime
+Upravuvajte so dozvolite za korisnicite
+Povtorno včituva datoteka za zaštita na ekranot vo KSMods
+Otstranuva korisnik od spisokot
+Uspešno e otstranet psevdonimot {0}.
+Ne uspea da se proveri dali ima ažuriranja.
+Nema poveḱe korisnici na spisokot.
+Ne uspea da se postavi jazikot.
+Greška pri obidot da se otfrli izvestuvanjeto.
+usrmgr: Ne uspea da se sozdade korisničko ime {0}: {1}
+Ne uspea da se preimenuva korisnikot. {0}
+Edna od spisocite so dozvoli ne sodrži korisničko ime {0}.
+Ne uspea da se včitaat dozvolite od datotekata: {0}
+Ne uspea da se smeni imeto na domaḱinot: {0}
+Korisnikot ne e pronajden
+Ne uspea da se smeni lozinkata na korisničkoto ime: {0}
+Ne uspea da se kopira datoteka ili direktorium: {0}
+Ne uspea da se premesti datotekata ili direktoriumot: {0}
+Ne može da se najde datoteka što odgovara na nizata „{0}“: {1}
+Prezemanjeto ne uspea za datotekata {0}.
+Ne uspea da se navedat oddalečenite datoteki: {0}
+Dali ste sigurni deka sakate da go izbrišete {0} <y/n>?
+Se briše {0}...
+{0} ne e pronajden na serverot.
+Site poraki napraveni od {0} se uspešno otstraneti.
+Ne uspea da se otstrani celata pošta napravena od {0}.
+Greška pri ispraḱanje poraka.
+Se premestuva {0} vo {1}...
+Uspešno se preseli
+Premestuva datoteka ili direktorium vo druga datoteka ili direktorium. Možete isto taka da go koristite za preimenuvanje datoteki.
+Ne uspea da se premesti {0} vo {1}.
+Se kopira {0} vo {1}...
+Kopirano uspešno
+Kopira datoteka ili direktorium vo druga datoteka ili direktorium.
+Ne uspea da se kopira {0} vo {1}.
+Premestuva poraka
+Gi premestuva site poraki od primačot
+Site poraki napraveni od {0} se uspešno premesteni.
+Ne uspea da se premesti celata pošta napravena od {0}.
+Porakata {0} od {1} e premestena od {2}. Preostanuvaat ušte {3} poraki za analiza.
+Prikažuva informacii za vremeto za odreden grad. Koristi OpenWeatherMap.
+-- Vremenski informacii za {0} --
+Vreme: {0}
+Pritisok: {0}
+Vlažnost: {0}
+Možete da dobiete sopstven API kluč na https://home.openweathermap.org/api_keys.
+Sekogaš možete da se konsultirate so http://bulk.openweathermap.org/sample/city.list.json.gz za spisokot na gradovi so nivnite lični karti.
+Pretpočitana edinica za temperatura
+Go postavuva kernelot taka što ḱe ve pottikne za argument pri podiganje.
+Aktivira režim na održuvanje. Ova onevozmožuva poveḱe smetki.
+Sekoe startuvanje, ḱe proveruva dali ima ažuriranja.
+Koga menuvate jazici, promenete gi iminjata na mesecite, kalendarot itn.
+Ako kernelot se startuva, ḱe postavi lozinka za root.
+Premolčete gi porakite za hardversko ispituvanje.
+Prikaži ja porakata na denot pred da se prikaže ekranot za najavuvanje.
+Izbrišete go ekranot pred da se prikaže ekranot za najavuvanje.
+Gi prikažuva dostapnite korisnici dokolku e ovozmoženo.
+Mu dava poddrška na bojata na jadroto
+Poednostavena komanda za pomoš za site školki
+Dali da se najavite korisničko ime na FTP ili ne.
+Dali da se najavite FTP IP adresata ili ne.
+Izberete go prviot profil samo koga se povrzuvate.
+Vremeto i datumot ḱe bidat prikažani vo gorniot desen agol na ekranot
+Ako e ovozmoženo, kernelot ḱe ja analizira celata papka za nejzinata vkupna golemina. Vo sprotivno, samo ḱe ja analizira površinata.
+Ovozmožuva eyecandy pri startuvanje
+Vremeto i datumot ḱe bidat podolgi, prikažuvajḱi gi iminjata na celite meseci, itn.
+Pokažuva skrieni datoteki.
+Izberete ja pretpočitanata edinica za temperatura (ova se odnesuva samo na komandata „vreme“)
+Mod {0} prestana
+{0} v{1} zapre
+Mod {0} go nema imeto na delot. Parsiranjeto na režimot ne uspea. Pregledajte go izvorniot kod.
+Mora da go vklučite režimot za otstranuvanje greški pred da možete da go izbrišete dnevnikot za otstranuvanje greški.
+{0} novi poraki pristignaa vo sandače.
+Otvorete „lsmail“ za da gi vidite.
+Ne može da se otstrani datotekata: {0}
+Otstranuva direktorium ili datoteka
+Ne može da se otstrani {0} bidejḱi ne postoi.
+Pritisnete CTRL+C za da izlezete.
+Obezbeduva informacii za datoteka
+Obezbeduva informacii za direktorium
+Ne možam da dobijam informacii za nepostoečki direktorium.
+Ne možam da dobijam informacii za nepostoečka datoteka.
+Celosno ime: {0}
+Vreme na sozdavanje: {0}
+Posleden pristap: {0}
+Posledno vreme za pišuvanje: {0}
+Atributi: {0}
+Roditelski imenik: {0}
+Kade da najdete: {0}
+Golemina na datoteka: {0}
+Go menuva atributot na datotekata
+Dokumentot ne e pronajden.
+kade što <attributi> e edno od slednive:
+Datotekata e normalna datoteka
+Datotekata e datoteka samo za čitanje
+Datotekata e skriena datoteka
+Datotekata e arhiva. Se koristi za rezervni kopii.
+Atributot „{0}“ e nevažečki.
+Atributot e uspešno dodaden.
+Atributot e uspešno otstranet.
+Ne uspea da se dodade atribut.
+Ne uspea da se otstrani atributot.
+Zamenuva zbor ili fraza so drug vo linija
+Nivoto na crvena boja e nadminato. Beše {0}.
+Nivoto na zelenata boja e nadminato. Beše {0}.
+Nivoto na sina boja e nadminato. Beše {0}.
+Aktivirajte gi vistinskite boi
+Ne uspea da se odblokira {0}.
+{0} e veḱe blokiran.
+{0} ne može da se pridruži na dalečinsko otstranuvanje greški sega.
+Ne uspea da se blokira {0}.
+Ciklusni boi
+Diskoto ḱe gi ciklira boite koga e ovozmoženo. Vo sprotivno, izberete slučajni boi.
+Vnesete pateki na datoteki do prilozite. Pritisnete ENTER na prazna pateka za da potvrdite.
+Otvora šifrirana poraka
+Napišete lozinka za ID na klučot {0}
+Ispraḱa šifrirana poraka na adresa
+Se prezema od {0}...
+Prikaži ja lentata za napredok dodeka se prezema ili prikačuva od komandata „get“ ili „put“.
+Ako e točno, toa pravi „zemi“ ili „stavi“ da ja prikaže lentata za napredok dodeka se prezema ili prikačuva.
+Postavuva datoteka na odredena veb-lokacija
+Pinguva adresa
+Se postavuva {0} na {1}...
+Postavuvanjeto e završeno.
+Ve molime koristete "ftp" ako sakate da ispraḱate datoteki na FTP serverot.
+Postavuvanjeto ne uspea vo obidot {0}: {1}
+Napišete kolku pati komandata „stavi“ treba povtorno da se obide so neuspešni prikačuvanja. Mora da bide numerički.
+Adresata može da ne e prazna.
+Ping na {0} ne uspea: {1}
+Pingot uspea za {0} ms.
+Navedeniot broj na linija ne može da bide pogolem od posledniot broj na linija na datotekata.
+Se čuvstvuva kako: {0}
+Temperatura: {0}
+Brzina na veterot: {0}
+Nasoka na veterot: {0}
+Pritisnete koe bilo kopče za da se vratite nazad.
+Ne može da se sozdade papka za pošta {0}: {1}
+Pravi direktorium vo tekovniot raboten direktorium
+Otstranuva direktorium od tekovniot raboten direktorium
+Papkata za pošta {0} ne e pronajdena.
+Ne može da se izbriše papkata za pošta {0}: {1}
+{0}, sozdadeno vo {1} {2}, izmeneto vo {3} {4}
+Ja potvrduva razumnosta na datotekata
+Hešovite se pogrešno formirani.
+Hešovite ne se sovpaǵaat.
+Hešovite se sovpaǵaat.
+Preimenuva papka
+Otvora probna školka
+* Pritisnete koe bilo kopče za da go startuvate kernelot ili ESC za da izlezete.
+Ne uspea da započne „{0}“: {1}
+Prikaži pregled na porakata po pošta
+Koga naveduvate poraki po pošta, prikažete go pregledot na teloto.
+Vlezna boja
+Boja na licenca
+Boja na greška vo jadroto što može da se prodolži
+Boja na greška na jadroto što ne može da se prodolži
+Boja na imeto na domaḱinot
+Korisničko ime boja
+Boja na pozadina
+Neutralna boja na tekstot
+Boja na scenata
+Boja na greška
+Stil na prompt FTP
+Stil na baranje za pošta
+SFTP prompt stil
+Se obiduva da pristapi do nevažečka pateka.
+Ja briše tekstualnata datoteka
+Izleguva od ureduvačot na tekst
+Bara znak vo odredena linija ili site linii
+Proverkata za ažuriranja e onevozmožena bidejḱi koristite razvojna verzija.
+Ja vklučuva ili isklučuva funkcijata za avtomatsko začuvuvanje na ureduvačot na tekst.
+Ako e ovozmoženo avtomatsko začuvuvanje, tekstualnata datoteka ḱe se začuvuva za sekoja „n“ sekundi.
+Ovozmožete avtomatsko začuvuvanje na ureduvačot na tekst
+Interval na avtomatsko začuvuvanje na ureduvačot na tekst
+Ja začuvuva datotekata
+Snimajte razgovor vo dnevnikot za otstranuvanje greški
+Snima dalečinski razgovor za otstranuvanje greški vo dnevnik za otstranuvanje greški.
+Docnenje vo milisekundi
+Kolku milisekundi da počekate pred da go napravite slednoto pišuvanje?
+Vi ovozmožuva da koristite SSH FTP server
+Nema pomoš za komandata „{0}“.
+Nevažečka VT sekvenca za RGB boja.
+Lenta za boja na sekundi
+Lenta za boja na minuti
+Lenta „Boja na časovi“.
+Boja na informacii
+Krleži za promena na bojata
+Ako e ovozmoženo ciklusot na boi, kolku štikli pred da gi smenite boite vo ProgressClock? 1 krlež = 0,5 sekundi
+ProgressClock ḱe izbira slučajni boi ako e ovozmoženo. Vo sprotivno, koristete boi od konfiguracijata.
+Pravi nova tema
+Sozdavanje nova tema „{0}“.
+Začuvajte ja temata vo Tekovniot direktorium
+Začuvaj ja temata vo drug direktorium...
+Izberete boja koristejḱi gi kopčinjata „<-“ i „->“. Pritisnete ENTER za da izlezete. Pritisnete „i“ za račno da go vmetnete brojot na bojata.
+Izberete boja koristejḱi gi kopčinjata „<-“ i „->“. Koristete gi kopčinjata so strelki nagore i nadolu za da izberete pomeǵu opsegot na boi. Pritisnete ENTER za da izlezete. Pritisnete „i“ za račno da go vmetnete brojot na bojata.
+Dobre dojdovte vo kernelot! - Verzija {0}
+Predupreduvačka boja
+Boja na opcija
+Vnesete broj na boja od 0 do 255:
+Koristete „hwinfo“ za prošireni informacii za hardverot.
+Pečati hardverski informacii
+Ime na procesorot:
+Bitovi na procesorot:
+Datotečniot sistem za particija:
+Golemina na particija:
+GPU: Edna ili poveḱe od grafičkite kartički ne uspea da se ispita. Vo sekoj slučaj se prikažuvaat informacii...
+>> Dobredojdovte! Ova e vaš prv pat da vleguvate vo dalečinsko otstranuvanje greški i razgovor. Koristete „/register <ime>“ za da se registrirate.
+Uredot veḱe postoi.
+Nema takov ured.
+Go postavuva korisničkoto ime na uredot
+Veḱe ste registrirani.
+Zdravo, {0}!
+Ja pečati sodržinata na datotekata vo konzola
+Ili, prefrlete „listi gradovi“ na ovaa komanda.
+Vlezot veḱe postoi.
+Go obvitkuva izlezot od konzolata
+Komandata ne može da se zavitka. Ovie komandi može da se zavitkaat:
+Izvlekuva arhiva ZIP
+Sozdava ZIP arhiva
+Vgraden vo {0}
+Greška pri prezemanjeto na podatocite za otstranuvanje greški
+Ima greška pri prezemanjeto na podatocite za otstranuvanje greški. Proverete ja vašata internet konekcija.
+Ne uspea da se finalizira modot {0}: {1}
+Gi naveduva site otpušteni nastani
+Tekoven direktorium
+Go postavuva tekovniot direktorium na školka. Napišete apsolutna pateka do koj bilo postoečki direktorium.
+Zavitkajte gi rezultatite od spisokot
+Gi obvitkuva izlezite od spisokot ako izgleda predolg za tekovnata geometrija na konzolata.
+Ping!
+{0} ve piniraše.
+Začuvajte ja temata vo Tekovniot direktorium kako...
+Začuvajte ja temata vo drug direktorium kako...
+Navedete ime na tema:
+Korisnikot {0} e dodaden na spisokot „{1}“.
+Korisnikot {0} e otstranet od spisokot „{1}“.
+Nevažečki režim {0}
+Včitaj tema od prethodno izgradeni temi...
+Navedete go imeto na datotekata na temata bez nastavkata .json:
+Otvora arhiva ZIP
+Izleguva od ZIP školka
+Gi naveduva site datoteki vo arhivata
+Izvlekuva datoteka vo odreden direktorium ili tekoven direktorium
+Go menuva direktoriumot so arhivi
+Navedenata komanda ZIP školka ne e pronajdena.
+Direktoriumot {0} ne postoi
+Direktorium za arhiviranje {0} ne postoi
+Maksimalniot broj na pozicii
+Kolku pozicii se osvetleni pred da se zatemni?
+Boja za vlez vo spisokot
+Navedete ja bojata na vrednosta
+Se povrzuva so SSH server za da izvrši komanda.
+Nevažečki specifikator na boja. Uverete se deka e na pravilen format, što znači broj od 0-255 ako koristite 255 boi ili VT sekvenca ako koristite vistinska boja kako što sleduva:
+Greška vo test školka: {0}
+Postavuva promenliva na vrednost vo skripta
+Promocija za izvestuvanje za greški.
+Vi blagodarime što podignavte bilet za nas! Izberete kakvo baranje imate.
+Problem
+Baranje za funkcija
+Prašanje
+Mora da navedete karakteristika.
+Postavete prašanje, zapišete ja vašata ideja ili prijavete problem.
+Mora da go napišete vašeto baranje.
+Imaše greška vo FTP školka:
+Nepoznata greška vo FTP školka:
+Imaše greška vo SFTP školka:
+Nepoznata greška vo SFTP školka:
+Prikaži SSH baner
+Go prikažuva banerot na serverot SSH pri konekcijata.
+Kako sakate da se avtenticirate?
+Datoteka so privaten kluč
+Lozinka
+Vnesete ja lozinkata za klučot {0}:
+Neutralizirana nepostoečka pateka.
+Klučnata datoteka {0} ne postoi.
+Greška pri obidot za dodavanje privaten kluč:
+Pritisnete „t“ za da se prefrlite na 255 režim na boja.
+Pritisnete „t“ za da se prefrlite vo režim na vistinska boja.
+Se čini deka nemate korisnik osven root. Ova e lošo. Ḱe ve vodime kako da kreirate.
+Napišete go vašeto korisničko ime.
+Mora da go napišete vašeto korisničko ime.
+Napišete ja vašata lozinka.
+Mora da ja napišete vašata lozinka.
+Izberete tip na smetka.
+Administrator: Ovoj tip na smetka ima najgolema moḱ vo kernelot, što vi ovozmožuva da koristite programi za upravuvanje so sistemot.
+Normalen korisnik: Ovoj tip na smetka e malku poograničen od administratorite.
+Sekoja čest! Napravivte nova smetka! Za da go završite ova, najavete se kako nova smetka.
+mod: Ne se otkrieni modovi.
+Opšti komandi:
+Mod komandi:
+Alias komanduva:
+Režim na održuvanje
+Prebaruvanje direktoriumi
+Grupa na pateki oddeleni so debeloto crevo. Raboti isto kako PATH. Napišete celosna pateka do papka ili ime na papka. Koga ḱe završite, napišete „q“. Napišete znak minus do patekata za otstranuvanje na postoečki direktorium.
+Nema mod komandi.
+Nema komandi za alijas.
+Vrednosta na bojata e nadvor od opsegot od 0-255.
+Komandata za zavitkuvanje ne e pronajdena.
+Bara zbor vo odredena linija ili site linii
+Prezemeni se {0} od {1}.
+Postaveni se {0} od {1}.
+Pečati niza vo konzola koristejḱi tip na boja i linisko pečatenje
+Pečati niza vo konzola koristejḱi tip na boja i linisko pečatenje so poddrška za format
+Pečati niza za otstranuvanje greški
+Pečati niza vo debager so poddrška za format
+Go testira objektot za greška vo jadroto
+Go testira objektot za greška vo jadroto so poddrška za format
+Testovi za preveduvanje na niza što postoi vo resursite na odreden jazik
+Pečati niza vo konzola i gi analizira pronajdenite postavki
+Ja testira regularnata ekspresivna struktura
+Gi započnuva site modovi
+Gi zapira site modovi
+Ovozmožuva ili onevozmožuva otstranuvanje greški
+Ovozmožuva ili onevozmožuva dalečinsko otstranuvanje greški
+Ja testira VT sekvencata za 255 boi
+Ja testira VT sekvencata za vistinska boja
+Ispraḱa izvestuvanje za testiranje na resiverot
+Go testira datumot na pečatenje koristejḱi različni kalendari
+Gi naveduva site poddržani kodni stranici
+Koi promenlivi na kompajlerot se ovozmoženi vo aplikacijata?
+Testovi koi go podignuvaat konkretniot nastan
+Testovi za ispituvanje na hardverot
+Go testira sobiračot na ǵubre
+Izleguva od test školkata i go startuva kernelot
+Izleguva od test školkata i go isklučuva kernelot
+Go začuvuva tekovniot direktorium vo konfiguraciskata datoteka na jadroto
+Go testira pišuvačot na lista so nizata niza i niza
+Go testira zapišuvačot na spisok so cela i celobrojna niza
+Go testira pišuvačot na spisok so nizata char i char
+Normalna lista na nizi:
+Spisok so nizi so niza:
+Normalen spisok so celi broevi:
+Spisok so cel broj niza:
+Spisok so normalni znaci:
+Spisok so znaci so niza:
+Ovozmoži RPC
+RPC pristanište
+Dali da se ovozmoži RPC ili ne.
+Napišete porta RPC. Mora da bide numerički i ne smee veḱe da se koristi. Vo sprotivno, RPC nema da uspee da ja otvori portata.
+Ne se startuva RPC bidejḱi e onevozmožen.
+Gi naveduva poddržanite kulturi
+Prebaruva odredena niza vo dadenata datoteka koristejḱi regularni izrazi
+Poglednete dali možete da pritisnete kopče na vreme
+Korisnikot ne dal nikakvi informacii navremeno.
+Karakterot ne e pritisnat na vreme.
+Go pritisnavte vistinskiot znak!
+Ste pritisnale pogrešen znak.
+Pritisnete ESC za da izlezete.
+Dobiva informacii za datumot i vremeto
+Milisekundi:
+Sekundi:
+Minuti:
+Časovi:
+Denovi:
+Meseci:
+Godina:
+Den vo godinata:
+Den vo nedelata:
+Binarni:
+Lokalno vreme:
+Univerzalno vreme:
+Vreme na Unix:
+Ne uspea da se analiziraat informaciite za datumot za
+Proverete dali formatot e točen.
+Datum:
+Vreme:
+Postavuva dozvoli za datoteki. Ova e poddržano samo na FTP serveri koi rabotat Unix.
+Go postavuva tipot za ovaa sesija
+Mora da se povrzete so serverot pred da izvršite operacii so datotečen sistem.
+Ne uspea da se postavat dozvolite od {0} na {1}.
+Dozvolite se uspešno postaveni za datotekata
+Tipot na podatoci e postaven na ASCII!
+Tipot na podatoci e postaven na Binaren!
+Nevažečki tip na podatoci.
+Vnimavajte deka poveḱeto datoteki nema da se prezemaat ili prikačat pravilno so koristenje na ovoj režim, zatoa preporačuvame da go koristite Binarniot režim vo poveḱeto situacii.
+Se obiduvate da ispratite komanda RPC dodeka RPC ne startuvaše.
+Zadocnuvanje na izbleduvanje vo milisekundi
+Maks Fade čekori
+Kolku milisekundi da počekate pred da izbledi tekstot?
+Kolku izbledeni čekori da napravite?
+Celosna sonda
+Ako e točno, go ispituva celiot hardver; vo sprotivno, samo ḱe go ispita potrebniot hardver.
+Ne uspea da se otstrani zaštitnikot na ekranot {0} od konfiguracijata.
+Dobiva prisposobeni postavki za štedač
+Postavuva prisposobeni postavki za štedačot
+Postavkite se uspešno postaveni za zaštitnikot na ekranot
+Ne uspea da se postavi postavka za zaštitnik na ekranot
+Otvora RSS školka za čitanje dovodi
+Izleguva od RSS školka i se vraḱa vo kernelot
+Ja menuva vrskata za dovod
+Gi naveduva site dovodi
+Čita dovod vo veb-prelistuvač
+Navedenata komanda RSS školka ne e pronajdena.
+Nevažečki RSS2 dovod.
+Nevažečki dovod na RSS1.
+Nevažečka aktivnost na Atom.
+Vnesete URL na RSS dovodot:
+Nevažečki tip na RSS dovod.
+Nepoznata greška na školka:
+Dobiva informacii za statijata
+Brojot na napisot ne može da bide pogolem od dostapnite statii.
+Naslov:
+Link:
+Gi dobiva informaciite za aktivnosta
+Opis:
+Tip na dovod:
+Broj na statii:
+Statijata nema vrska!
+Ne uspea da se napravi spisok so zapisi vo datotečniot sistem za direktoriumot
+Režim na sortiranje na datotečen sistem
+Nasoka za sortiranje na datotečniot sistem
+Kontrolira kako ḱe se podreduvaat datotekite.
+Ja kontrolira nasokata na sortiranjeto na datotečniot sistem bez razlika dali e rastečko ili opaǵačko.
+Zadocnuvanje na pišuvanje povtorno vo milisekundi
+Kolku milisekundi da počekate pred povtorno da napišete tekst?
+Napišete koj bilo tekst što sakate da se prikaže. Podolgo e podobro.
+Minimalna brzina na pišuvanje vo WPM
+Maksimalna brzina na pišuvanje vo WPM
+Verojatnost za pečatna greška vo procenti
+Ne uspea da se začuva tekovniot direktorium: {0}
+Maramčinja za promena na nasokata
+Kolku brišenja treba da napravite pred slučajno da ja smenite nasokata?
+Etapata završi vo
+Vnatrešnata inicijalizacija završi vo
+Referenciranata datoteka {0} ne e pronajdena. Ovoj mod možebi nema da raboti pravilno bez ovaa datoteka.
+Startuvanje na mod
+Ime na komandata:
+Definicija na komanda:
+Tip na komanda:
+Stroga komanda?
+Mod verzija:
+Mod {0} ne e pronajden.
+Ureduvačot na tekst sè ušte ne otvoril prenos na datoteki.
+Nizata e zameneta.
+Eden ili dvata od broevite ne se numerički.
+Zborot e izbrišan.
+Znakot e izbrišan.
+Dobre dojdovte vo Postavki!
+Greška pri izvršuvanjeto na komandata SSH
+Greška na SSH školka
+- Informacii za aplikacijata
+Go testira pisatelot na rečnik so nizata niza i niza
+Go testira pisatelot na rečnik so nizata char i char
+Go testira pisatelot na rečnik so cela i celobrojna niza
+Normalen rečnik na žici:
+Rečnik na niza so niza:
+Normalen rečnik so cel broj:
+Rečnik so cel broj niza:
+Normalen rečnik so znaci:
+Rečnik so znaci so niza:
+Dobredojdovte vo Test Šel!
+Prikaži napredok vo operaciite na datotečniot sistem
+Pokažuva koja datoteka se obrabotuva za vreme na operaciite na datotečniot sistem
+kade što ḱe bide HardwareType
+Ili hardverskiot tip {0} ne e ispitan ili ne e validen.
+Tipot na hardverot {0} sè ušte ne e ispitan. Ako ste sigurni deka e ispitano, restartirajte go kernelot so ovozmoženo debagiranje.
+Particiite ne se analizirani vo spisokot.
+Pečati separator
+Pečati separator so poddrška za format
+Pečati separator so poddrška za boja
+Pečati separator so poddrška za boja i format
+Sekogaš centriran
+Napišete koj bilo tekst što sakate da se prikaže.
+Dali tekstot prikažan na marketot e sekogaš centriran.
+Argumentot {0} ne e pronajden za injektiranje.
+Argumentot na komandnata linija {0} ne e pronajden.
+Zaštitnikot na ekranot doživea greška pri prikažuvanjeto: {0}. Pritisnete koe bilo kopče za da izlezete.
+Pregled...
+Eve kako ḱe izgleda vašata tema:
+Komandi za zavitkuvanje:
+Mod {0} ima nevažečka komanda. Parsiranjeto na režimot ne uspea. Pregledajte go izvorniot kod.
+Delovi za mod:
+Koristete API na konzolata
+Dali da se koristi API na konzolata za da se isčisti tekstot ili da se koristi pobrzata sekvenca VT za brišenje linii. Ako e netočno, Marquee ḱe ja koristi soodvetnata VT sekvenca. Vo sprotivno, ḱe go koristi verojatno pobavniot API na konzolata.
+Se otvora URL-to... Pogrižete se da gi sledite čekorite prikažani na ekranot.
+Nema delovi vo mod.
+Ime na mod:
+Ime na datotekata za mod:
+Pateka na datotekata Mod:
+Del verzija:
+Minimalen broj na potrebni argumenti:
+Potrebni se argumenti?
+Zavitkana komanda?
+Postavuvanje promenliva na školka?
+Ne može da raboti vo režim na održuvanje?
+Zastarena?
+Stil na baranje za RSS
+Stil na baranje za ureduvanje tekst
+Poštenski Šel Prompt Stil
+Papkata e prazna.
+Uspešno ispitan {0}.
+Razgovorna sonda
+Napravete gi porakite za hardversko ispituvanje malku razgovorlivi.
+> Nema informacii za ramki.
+Treba da go napišete vašeto ime.
+Ja razubavuva datotekata JSON
+Kategorijata za konfiguracija {0} ne e pronajdena.
+Zapisot za konfiguracija {0} ne e pronajden.
+Koristete otčukuvanja vo minuta
+Dali da se koristi edinicata Otčukuvanja vo minuta za da se napiše slednata boja.
+Docnenje vo otčukuvanja vo minuta
+Pobedi boja
+Kolku otčukuvanja vo minuta da čekate pred da go napravite slednoto pišuvanje?
+BeatFader ḱe izbere slučajni boi ako e ovozmoženo. Vo sprotivno, koristete boi od konfiguracijata.
+Prilagoden baner za startuvanje
+Prezema oddalečena papka vo lokalniot direktorium koristejḱi binaren ili tekst
+Postavuva lokalna papka vo oddalečen direktorium koristejḱi binaren ili tekst
+Se prezema papkata {0}...
+Prezemena papka {0}.
+Prezemanjeto ne uspea za papkata {0}.
+Se postavuva papkata {0}...
+Postavena papka {0}
+Pritisnete „c“ za da napišete celosen kod vo boja.
+Vnesete kod za boja što gi zadovoluva ovie formati:
+Ja minimizira datotekata JSON
+Novo docnenje na ekranot za milisekundi
+Broj na koloni
+Prag za popolnuvanje na linijata
+Verojatnost za ograničuvanje na popolnuvanje na linijata vo procenti
+Tip na popolnuvanje na linijata
+Kolku milisekundi da počekate pred povtorno da go napišete tekstot na noviot ekran?
+Tekstualnite koloni što treba da se ispečatat.
+Kolku znaci da se napiše pred da se aktivira „popolnuvanje na linijata“?
+Možnost šablonot za popolnuvanje na linijata da bide ispečaten so site bukvi vo procenti
+Tip na šema za popolnuvanje linija
+Odgovorot možebi ne e nula.
+Odgovorot ne smee da gi nadmine prikažanite zapisi.
+Začuvaj promeni...
+Upravuvajte so vašite modovi
+Upravuvanjeto so mod e onevozmoženo vo bezbeden režim.
+Nevažečka komanda {0}. Proverete ja upotrebata podolu:
+Modot ne e pronajden ili datotekata ima nevažečki znaci.
+Verojatnosta za promašuvanje vo procenti
+Ovozmožete debagiranje na zaštitnikot na ekranot
+Ovozmožuva otstranuvanje greški za skrinsejveri. Imajte predvid deka može brzo da go popolni dnevnikot za otstranuvanje greški i malku da go zabavi zaštitnikot na ekranot, vo zavisnost od koristeniot zaštitnik na ekranot. Raboti samo ako debagiranjeto na jadroto e ovozmoženo za dijagnostički celi.
+Nema mreža dodeka se prezemaat podatoci za otstranuvanje greški
+Proverete ja vašata internet konekcija i obidete se povtorno.
+Račnata stranica {0} e nevažečka.
+Razmislete za popolnuvanje na ovaa stranica so priračnik.
+Pritisnete koe bilo kopče za da ja pročitate račnata stranica...
+Ovaa račna stranica bara rabota za:
+Račnata stranica {0} ne e pronajdena.
+Priračnik za mod

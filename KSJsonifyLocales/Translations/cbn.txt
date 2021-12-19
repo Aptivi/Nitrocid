@@ -1,0 +1,1007 @@
+Anaa nga mga sugo: {0}
+Gikansela ang command injection.
+Ang gi-inject nga mga argumento gikatakda nga modagan sa sunod nga pag-reboot.
+Sayop samtang nag-parse sa tinuod nga mga argumento sa command-line: {0}
+Dili balido nga template sa kolor {0}
+hwprobe: Ang imong hardware susihon. Palihog hulat...
+CPU: Usa o daghan pa sa mga cores sa CPU napakyas sa pagsusi. Nagpakita gihapon og impormasyon...
+RAM: Usa o daghan pa sa RAM chips napakyas sa pagsusi. Nagpakita gihapon og impormasyon...
+HDD: Usa o daghan pa sa mga hard drive napakyas sa pagsusi. Nagpakita gihapon og impormasyon...
+CPU: Kinatibuk-ang gidaghanon sa mga processor: {0}
+Pagsulod sa admin password alang sa maintenance.
+Kernel Error samtang nag-boot: {0}
+DOBLE PANIC: Reboot Time milapas sa pinakataas nga gitugot nga {0} error reboot time. Nakakita ka ug kernel bug.
+[{0}] kalisang: Nahimo ang reboot tungod sa lebel sa kasaypanan kay {0}.
+[{0}] kalisang: Oras sa pag-reboot: {1} segundos, milapas sa 1 ka oras. Gitakda kini sa 1 ka minuto.
+DOUBLE PANIC: Error Type {0} dili balido.
+[{0}] dpanic: {1} -- Pag-reboot sa {2} ka segundo...
+[{0}] kalisang: Ang pag-reboot na-disable tungod sa lebel sa sayup kay {0}.
+[{0}] kalisang: {1} -- Pindota ang bisan unsang yawe aron magpadayon sa paggamit sa kernel.
+[{0}] kalisang: {1} -- Pindota ang bisan unsang yawe aron mapalong.
+[{0}] kalisang: {1} -- Pag-reboot sa {2} ka segundo...
+DOBLE PANIC: Kernel bug: {0}
+Gipalong...
+Nag-reboot...
+Ang laing pananglitan sa Kernel Simulator nagdagan. Pagsira sa kaso sa pagpanghilabot.
+Napakyas sa pagdugang sa taggamit sa mga lista sa pagtugot: dili balido nga tipo {0}
+Napakyas sa pagdugang sa taggamit sa mga lista sa pagtugot: dili balido nga tiggamit {0}
+Napakyas sa pagtangtang sa tiggamit gikan sa mga lista sa pagtugot: dili balido nga tipo {0}
+Naka-log in ka na.
+Napakyas sa pagtangtang sa tiggamit gikan sa mga lista sa pagtugot: dili balido nga tiggamit {0}
+Naa kay nakit-an nga bug, o ang pagtugot nga imong gisulayan nga idugang o kuhaon nahuman na, o uban pang sayup.
+Sayop {0}: {1}
+Nakakita ka ug bug, o ang pagtugot nga imong gisulayan pag-edit alang sa usa ka bag-ong tiggamit napakyas.
+Anaa nga mga username: {0}
+Username:
+Gidili ang mga espasyo.
+Ang mga espesyal nga karakter dili gitugotan.
+password ni {0}:
+Sayop nga password.
+Ang tiggamit gi-disable.
+Sayop nga username.
+Sayop sa pagsulay sa pag-parse sa mga placeholder. {0} - Pagsubay sa stack:
+Sayop sa pagsulay sa pag-parse sa mga placeholder. {0}
+Sayop sa pagsulay sa pagdugang sa username.
+usrmgr: Paghimo og username {0}...
+Blangko nga username.
+User {0} wala makit-an.
+Ang tiggamit {0} dili tugutan nga matangtang.
+Ang user nga si {0} naka-log in na. Log-out ug log-in isip laing admin.
+Gitangtang ang tiggamit {0}.
+Sayop sa pagsulay sa pagtangtang sa username.
+Ang gipangayo nga screensaver {0} wala makit-an.
+Ang {0} gisugdan sa hustong paagi.
+{0} wala magsugod. Ang screensaver code tingali nakasinati og usa ka sayup samtang nag-initialize.
+Ang screensaver {0} wala anaa.
+{0} gitakda sa default screensaver.
+Screensaver {0} wala makit-an sa database. Susiha ang ngalan ug sulayi pag-usab.
+Ang screensaver dili ma-load tungod sa mosunod:
+Adunay usa ka seryoso nga sayup sa pag-imprinta sa teksto.
+Adunay usa ka sayup nga nagsulay sa paghimo og configuration.
+Sayop sa pagsulay sa pagpahigawas sa RAM: {0} - Nagpadayon...
+Ang mod dili ma-load tungod sa mosunod:
+mod: Nag-load sa mga mod...
+mod: Paghunong sa mods...
+Mod {0} walay ngalan. Ribyuha ang source code.
+Ang mod {0} walay bersyon.
+{0} v{1} nagsugod
+Walay kahulugan sa sugo {0}.
+Sugo nga gihubit sa
+Kinahanglan ka nga magdiskonekta gikan sa server sa dili pa magkonektar sa laing server
+Username para sa {0}:
+Password para sa {0}:
+Konektado sa {0}
+Sayop sa pagsulay sa pagkonektar sa {0}: {1}
+Stack Trace: {2}
+Wala ang lokal nga direktoryo {0}.
+Pagsulod ug lokal nga direktoryo. ".." mubalik.
+Direktoryo {0} wala makit-an.
+Pagsulod ug hilit nga direktoryo. ".." mubalik
+Kinahanglan ka magkonektar sa usa ka server sa dili pa mag-ilis sa direktoryo
+Lokal nga direktoryo: {0}
+Layo nga direktoryo: {0}
+Kinahanglan ka nga magkonektar sa server sa dili pa makakuha sa kasamtangan nga hilit nga direktoryo.
+Kinahanglan ka nga magkonektar sa server nga adunay mga pribilehiyo sa pagdumala sa dili pa ipahigayon ang pagtangtang.
+Giputol gikan sa {0}
+Wala ka pa nakakonekta sa bisan unsang server
+Nag-download sa payl {0}...
+Na-download nga payl {0}.
+Kinahanglan ka magkonektar sa server sa dili pa ipahigayon ang transmission.
+{0} KB | Giusab sa: {1}
+Kinahanglan ka nga magkonektar sa server sa dili pa ilista ang tanan nga hilit nga mga file.
+Nag-upload sa payl {0}...
+Gi-upload nga payl {0}
+Nakuha ang kasamtangan nga lokal nga direktoryo
+Nakuha ang kasamtangan nga hilit nga direktoryo
+Gibag-o ang lokal nga direktoryo aron i-download o gikan sa pag-upload
+Gibag-o ang hilit nga direktoryo aron i-download o i-upload
+Pagtangtang sa hilit nga file gikan sa server
+Gidiskonekta gikan sa server
+Nag-download sa hilit nga file sa lokal nga direktoryo gamit ang binary o teksto
+Mogawas sa FTP shell ug mobalik sa kernel
+Nagpakita sa screen sa tabang
+Naglista sa lokal nga direktoryo
+Naglista sa hilit nga direktoryo
+Nag-upload sa lokal nga file sa hilit nga direktoryo gamit ang binary o teksto
+FTP nga mensahe: Ang gipangayo nga sugo {0} wala makit-an. Tan-awa ang 'tabang' alang sa usa ka lista sa magamit nga mga sugo nga gipiho sa FTP shell.
+Napakyas sa pagkuha sa mga kabtangan alang sa adapter {0}
+Numero sa Adapter:
+Ngalan sa Adapter:
+Pinakataas nga Yunit sa Transmisyon: {2} Mga Yunit
+Gipaandar ang DHCP:
+Non-unicast nga mga pakete:
+Unicast nga mga pakete:
+Sayop sa umaabot/gawas nga mga pakete:
+Ang alyas dili mahimong parehas nga ngalan sa usa ka sugo.
+Ang sugo wala makit-an sa alyas sa {0}.
+Mahimo na nimong ipadagan ang "{0}" isip sugo: "{1}".
+Ang alyas {0} wala makita nga tangtangon.
+Dili balido nga paagi {0}.
+Ang gi-inject nga mga argumento, {0}, gikatakda nga modagan sa sunod nga reboot.
+Walay igo nga mga argumento. Tan-awa sa ubos para sa paggamit:
+Direktoryo {0} wala makit-an
+Blangko nga ngalan sa host.
+Pag-ilis gikan sa: {0} ngadto sa {1}...
+Blangko nga mensahe sa adlaw.
+Blangko nga MAL Human sa Pag-login.
+Sayop nga password sa user.
+Ang mga password dili magkatugma.
+Username giusab ngadto sa {0}!
+Ang bag-ong ngalan nga imong gisulod nakit-an na.
+{0} wala makit-an.
+Gi-reload ang configuration. Tingali kinahanglan nimo nga i-reboot ang kernel alang sa pipila nga mga pagbag-o aron ma-epekto.
+Ang usa o daghan pa sa mga kolor dili balido.
+Ang mga kolor dili magamit. I-on ang kolor nga kabhang sa kernel config.
+Screensaver {0} wala makit-an.
+Bersyon sa Kernel:
+Debug Mode:
+Kolor nga Shell:
+Mga argumento sa Boot:
+Tabang nga sugo gipasimple:
+MOTD sa Login:
+Oras/Petsa sa eskina:
+Kasamtangang user name:
+Kasamtangang ngalan sa host:
+Anaa nga mga username:
+Sayop sa pagsulay sa pagpatuman sa mando
+Mga pagbag-o sa direktoryo
+Pag-ilis sa password alang sa kasamtangang tiggamit
+Gilimpyohan ang screen
+Gamit ug FTP shell para makig-interact sa mga server
+Panid sa tabang
+Ilista ang mga sulod sa file/folder sa kasamtangan nga folder
+I-lock ang imong screen gamit ang password
+Nag log out ka
+Naghimo ug direktoryo
+Naglista sa kasayuran bahin sa tanan nga magamit nga mga interface
+I-restart ang imong computer (WARNING: Walay pag-sync, tungod kay dili kini katapusan nga kernel)
+I-reload ang configuration file nga gi-edit.
+Gitipigan ang imong screen gikan sa pagkasunog
+Nag-set up sa kernel screensaver
+Nag-set up sa mga tema sa kernel
+Nagpakita sa petsa ug oras
+Nagpakita sa petsa ug oras sa mga sona
+Ang kernel isira
+Impormasyon sa sistema
+* Mahimo nimong gamiton ang daghang mga sugo gamit ang colon taliwala sa mga sugo.
+Paggamit:
+diin ang mga argumento mahimong {0}
+asa ang customsaver
+Adunay usa ka sayup sa kabhang.
+Wala kay pagtugot sa paggamit sa {0}
+Mensahe sa Shell: Ang gipangayo nga sugo {0} dili tugotan nga modagan sa maintenance mode.
+Mensahe sa Shell: Ang gipangayo nga sugo {0} wala makit-an. Tan-awa ang 'tabang' alang sa anaa nga mga sugo.
+Mensahe sa Shell: Ang sugo {0} dili tugutan nga modagan sa pag-log in.
+Sayop sa pagsulay sa pagpatuman sa mando.
+- Oras sa {0}: {1}
+Nagdagan sa {0}
+Dili ka awtorisado nga makakuha og impormasyon para sa {0}.
+Kini nga sugo dili na magamit ug tangtangon sa umaabot nga pagpagawas.
+Dili ka gitugotan sa pag-ilis sa password sa {0} tungod kay ang target kay admin.
+usrmgr: Username {0} nakit-an na
+Gitangtang ang tanan sa debug log
+Dili balido nga pinulongan
+Nagbag-o sa pinulongan
+----------------------------- Kernel panic dump ------------------ -----------
+>> Panic nga impormasyon <<
+> Deskripsyon: {0}
+> Sayop nga tipo: {1}
+> Petsa ug Oras: {2}
+>> Eksepsiyon nga impormasyon <<
+> Eksepsiyon: {0}
+> Deskripsyon: {1}
+> HRESULT: {2}
+> Tinubdan: {3}
+> Pagsubay sa stack <
+>> Inner exception {0} impormasyon <<
+>> Ang eksepsiyon {0} mao ang hinungdan nga hinungdan <<
+>> Walay eksepsiyon; tingali usa ka sayup sa kernel. <<
+>> Mga frame, mga file, mga linya, ug mga kolum <<
+> Frame {0}: File: {1} | Linya: {2} | Kolum: {3}
+> Adunay usa ka sayup sa pagsulay sa pagkuha sa impormasyon sa frame. {0}: {1}
+Welcome sa Kernel!
+Malampuson nga naka-log in isip <user>
+Ang MOTD/MAL balido, apan ang tipo sa mensahe dili balido. Sa paghuna-huna sa MOTD...
+Gisulayan pagbasa ang MOTD/MAL nga dili balido nga tipo sa mensahe.
+Nakompleto na ang pag-download.
+Napakyas ang pag-download sa pagsulay {0}: {1}
+Palihug gamita ang "ftp" kung mag-download ka og mga file gikan sa FTP server.
+Nag-download sa usa ka file sa kasamtangan nga direktoryo nga nagtrabaho
+Idiskonekta ang usa ka debug device
+Naglista sa mga kagamitan sa pag-debug nga konektado
+Debug device {0} wala makit-an.
+Device {0} natangtang.
+Sayop sa koneksyon: {0}
+Pag-debug sa pagpaminaw sa tanang adres gamit ang pantalan {0}.
+Walay gipiho nga mga argumento. Sugyot: Ipiho ang daghang argumento nga gibulag sa mga espasyo
+Nakit-an na ang alyas: {0}
+Gitangtang ang log sa debug. Ang tanan nga konektado nga mga aparato sa pag-debug mahimo gihapon nga makita ang mga mensahe.
+Napakyas ang pagtangtang sa debug log: {0}
+Napakyas ang pag-ilis sa direktoryo: {0}
+Ipiho ang adres
+Dili matangtang ang direktoryo: {0}
+Ang timezone sayop nga gipiho.
+Dili balido nga pagpili sa profile.
+Naningkamot sa pagkonektar sa {0} gamit ang profile {1}...
+Ang sugo {0} wala makit-an. Tan-awa ang "tabang" nga sugo alang sa listahan sa mga sugo.
+Napakyas sa pagkuha sa IPv6 propyedad alang sa adapter {0}. Nagpadayon...
+Impormasyon sa IPv4:
+IPv6 impormasyon:
+Ang adaptor {0} wala mosuporta sa IPv6. Nagpadayon...
+Ang adaptor {0} wala mosuporta sa IPv4. Napakyas ang pagsusi.
+Morag gipadagan nimo ang bersyon sa pag-uswag sa kernel. Samtang makita nimo ang mga aspeto, kini kanunay nga gi-update ug mahimo’g magpaila sa mga bug. Girekomenda nga magpabilin ka sa stable nga bersyon.
+Ang pinulongan nga imong gipili adunay duha ka variant. Pagpili og usa:
+Dili balido nga pagpili. Sulayi pag-usab.
+Dili ka awtorisado nga itakda ang kasamtangang direktoryo sa {0}: {1}
+Ang dalan nga imong gipiho taas ra kaayo.
+Ang tigkolekta og impormasyon sa dump nahagsa sa dihang misulay pagkuha og impormasyon bahin sa {0}: {1}
+Sayop sa pagsulay sa pagtakda sa MOTD/MAL: {0}
+Sayop sa pagsulay sa pagkuha sa MOTD/MAL: {0}
+Sayop sa pagsulay sa pagsugod sa screensaver, tungod sa usa ka dili balido nga operasyon.
+Dili gitugotan ang pag-reload sa safe mode.
+Gidili ang pag-parse sa mga mod sa safe mode.
+Sayop sa pagsulay sa pagtakda sa parse mode. Susiha ang bili ug sulayi pag-usab. Kung husto kini, tan-awa ang stack trace kung ang kernel debugging gipagana.
+Ang dalan dili usa ka file o usa ka direktoryo.
+Naghimo og laing kopya sa usa ka file ubos sa lain-laing direktoryo o ngalan.
+Nagbalhin sa usa ka file ngadto sa laing direktoryo
+Ipares {0} ({1}): {2}
+Ipares {0}: {1}
+Oras nga gigahin: {0} milliseconds
+Ngalan: {0}
+Gikalkulo ang mga kantidad sa file.
+Dad-on ka sa among GitHub Wiki.
+Dili balido nga algorithm sa pag-encrypt.
+Makapahimo o makapugong sa hilit nga pag-debug.
+Tan-awa kon ma-spelling ba nimo ang mga pulong sa hustong oras
+Tan-awa kung masulbad ba nimo ang mga equation sa matematika sa oras
+Pagtubag sa mga komentaryo sa gugma o pagdumot.
+Kung adunay naghimo niini nga komento sa imong video:
+Unsaon nimo pagtubag?
+Dili balido nga pagpili. Adto sa sunod nga komento...
+Nindot! {0} mopasalamat sa imong pasalamat.
+Perpekto nga spelling!
+Sayop ang spelling.
+Nasulbad nga hingpit!
+Nasulbad nga sayop.
+Nagdagan na ang RPC.
+Pagpaminaw sa RPC sa tanang adres gamit ang pantalan {0}.
+Pagsugod sa RPC...
+Nagkonektar sa usa ka SSH server.
+Isulod ang password para sa {0}:
+Naputol ang SSH.
+Dili mabutang ang codepage. Ang pinulongan mahimong dili mapakita sa hustong paagi.
+Ang pag-debug wala gipagana.
+Salamat! Makapainteres kini.
+Ang tanan mosuporta sa imong video alang niini.
+Gihatagan ko ikaw sa espesyal nga file sa imong e-mail alang sa imong sunod nga video.
+Paminaw, mga nagdumot, siya naningkamot sa pagtabang kanato, dili scam.
+Wala ko kabalo kung unsa ako ug akong mga higala nagpasalamat sa kini nga video.
+Gihigugma ko ikaw alang niini nga video.
+Padayon, ayaw paghunong.
+Tabangan ko nimo nga maabot ang 1M subscribers!
+Akong mga amiga naayo ilang computer tungod nimo.
+Nindot nga prank! Gipalong nako ang PC sa akong kaaway.
+Sa mga nagdumot: HUGNA NA ANG PAGDUMOT NIYA
+Sa mga nagdumot: TRABAHO
+Walay makamatikod niini karon salamat sa imong giya sa pagtago sa butang
+Mohunong ko sa pagtan-aw sa imong mga video. Nawala ang subscriber.
+Unsa man ni? Kini dili klaro.
+Kini nga video mao ang pinakagrabe!
+Ang tanan nagtaho niini nga video!
+Ang akong mga higala nasuko kanimo!
+Ang mga hinigugma karon magdumot kanimo tungod niini.
+Ang imong higala magdumot kanimo tungod niini.
+Kini nga prank nakapa-unsubscribe nako nimo.
+Napakyas ang misyon, Respeto -, Subscriber -
+Hunonga ang paghimo niini nga matang sa video!!!
+Balik sa imong trabaho, ang imong mga video ang pinakagrabe!
+Kami nagpihig sa kini nga video.
+Nagpakita sa tanan nga nadawat nga mga pahibalo
+Gisalikway ang usa ka pahibalo
+Malampuson nga gisalikway ang pahibalo.
+Mga Pakete (inbound):
+Mga Pakete (gikan sa gawas):
+Mga sayop sa nadawat nga mga pakete:
+Kinatibuk-ang IPv6 nga mga kabtangan
+Kinatibuk-ang IPv4 nga mga kabtangan
+Gipatuman sa layo ang usa ka mando sa hilit nga PC
+- Yugto 1: Pagsugod sa sistema
+- Stage 2: Hardware detection
+- Stage 3: Mods ug screensaver detection
+- Yugto 4: Pag-log in
+Morag gipadagan nimo ang bersyon sa kandidato sa pagpagawas. Girekomenda nga magpabilin ka sa stable nga bersyon.
+Dili balido nga tipo {0}.
+Gidak-on: {0}
+Ang direktoryo {0} anaa na.
+Sayop sa pagsulay sa pagkonektar sa {0}: Koneksyon timeout o nawala koneksyon
+Calculator sa pagkalkulo sa mga ekspresyon.
+Sayop sa kalkulasyon.
+Pag-update sa sistema
+Pagsusi sa mga update sa sistema...
+Nakakaplag bag-ong bersyon:
+Mahimo nimo kini i-download sa:
+Walay bag-o nga mga pahibalo
+Gipangita ang gipiho nga string sa gihatag nga file
+Gikalkulo ang mga kantidad sa mga file sa piho nga direktoryo.
+Pagsulod sa username o mail address:
+Pagsulod sa password:
+Sayop samtang nagkonektar sa {0}: {1}
+Nagdugtong sa {0}...
+Nagpamatuod...
+Migawas sa IMAP shell
+Listahan sa mga sugo
+Nag-download sa mga mensahe ug naglista niini
+Nag-abli og mensahe
+Ang panid dili numero nga kantidad.
+Ang numero sa mensahe mahimong dili negatibo o zero.
+Ang numero sa mensahe dili numero nga kantidad.
+- Gikan sa {0}
+- Ngadto sa {0}
+- Gipadala sa {0} sa {1}
+Ang mensahe nga gipiho wala makita.
+Ang layo nga debug napakyas sa pagsugod: {0}
+Pag-andam sa mga profile... Mahimong molungtad og pipila ka minuto...
+Sayop sa pagsulay sa pagpatuman sa script: {0}
+Gisulat ang teksto sa console
+Naghimo sa mga pagpili sa tiggamit
+Beep sa 'n' Hz ug oras sa 'n' milliseconds
+diin ang <$variable> mao ang bisan unsang variable nga gamiton sa pagtipig sa tubag
+Ang frequency kinahanglan numeric. Kung kini numeric, siguroha nga kini mao ang >= 37 ug <= 32767.
+Ang oras kinahanglan nga numero.
+diin ang <answers> kay usa ka letra nga mga tubag sa pangutana nga gibulag sa mga slash
+Sayop sa pagsulay sa pagkonektar sa SSH server: {0}
+Gitugotan ang tiggamit sa pagsulod sa input
+Giusab ang kasamtangan nga direktoryo sa mail
+Dili maabli ang mail folder {0}: {1}
+Naglista sa mga direktoryo sa imong adres sa koreo
+Gigamit ang impormasyon gikan sa Speed ​​Dial aron makakonektar dayon sa bisan unsang network
+Pagpili og adres aron makonektar:
+Ang pagpili kay wala sa range. Pagpili tali sa 1-{0}. Sulayi pag-usab.
+Ang pagpili dili usa ka numero. Sulayi pag-usab.
+Atol sa pag-validate sa sertipiko, adunay mga sayup sa sertipiko. Tingali kini ang unang higayon nga nakakonekta ka sa server o ang sertipiko mahimo’g na-expire na. Ania ang usa ka sayup:
+Sigurado ka ba nga gusto nimong magkonektar?
+Dili balido nga tubag. Palihug sulayi pag-usab.
+Ang speed dial walay sulod. Sumpaysumpaya ang usa ka server aron makadugang ug adres niini.
+Ang speed dial wala. Sumpaysumpaya ang usa ka server aron makadugang ug adres niini.
+Pagsulod sa IMAP server address ug pantalan (<address> o <address>:[port]):
+Pagsulod sa SMTP server address ug port (<address> o <address>: [port]):
+Nagpadala usa ka mensahe sa usa ka adres
+Pagsulod sa recipient mail address:
+Pagsulod sa hilisgutan:
+Ibutang ang imong mensahe sa ubos. Isulat ang "EOF" aron makumpirma.
+Nagpadala og mensahe...
+Gipadala ang mensahe.
+Dili balido nga e-mail address. Siguroha nga imong gisulat ang adres sa husto ug nga kini mohaum sa pormat sa panig-ingnan nga gipakita:
+Pagtangtang sa usa ka mensahe
+Pagtangtang sa tanan nga mga mensahe gikan sa nakadawat
+Mensahe {0} gikan sa {1} gitangtang gikan sa {2}. {3} mga mensahe nga nahabilin aron ma-parse.
+Mensahe {0} gikan sa {1} gitangtang gikan sa inbox. {2} mga mensahe nga nahabilin aron ma-parse.
+Nag-edit sa usa ka text file
+Naghimo ug bag-ong file
+Ang file anaa na.
+Sayop sa pagsulay sa paghimo og payl: {0}
+Napakyas sa pag-abli sa file. Paggawas sa shell...
+Ang gipiho nga text editor nga sugo wala makita.
+Naglista sa mga magamit nga mga sugo
+Mogawas sa text editor ug i-save ang wala ma-save nga mga pagbag-o
+Nag-imprinta sa mga sulod sa file nga adunay mga numero sa linya ngadto sa console
+Nagdugang usa ka bag-ong linya nga adunay teksto sa katapusan sa file
+Gikuha ang gipiho nga numero sa linya
+Ilisan ang pulong o hugpong sa lain
+Pagtangtang sa usa ka pulong o hugpong sa mga pulong gikan sa numero sa linya
+Pagtangtang sa usa ka karakter gikan sa numero sa karakter sa piho nga linya
+Gitangtang nga linya.
+Ang gipiho nga numero sa linya {0} dili balido nga numero.
+Nagdagan sa luwas nga paagi. Paglaktaw sa yugto...
+>> Remote Debug ug Chat: bersyon
+>> Ang imong adres kay {0}.
+>> Ang imong ngalan kay {0}.
+Ang sugo {0} wala makit-an. Gamita ang "/help" aron makita ang lista.
+Ang indeks {0} dili balido. Adunay {1} stack traces. Ang indeks kay zero-based, busa sulayi ang pagkubsan sa 1.
+Walay stack trace
+Nagpakita sa katapusang stack nga pagsubay sa eksepsiyon
+Nagpakita sa kasamtangan nga username sa sesyon
+Gidiskonekta ka sa debugger
+I-unblock ang debug device pinaagi sa IP address
+Pag-block sa usa ka debug device pinaagi sa IP address
+{0} mahimo na nga moapil sa layo nga debug pag-usab.
+{0} wala pa gibabagan.
+Sayop sa pagkarga sa mga setting
+Adunay usa ka sayup samtang nagkarga sa mga setting. Tingali kinahanglan nimo nga susihon ang file sa mga setting.
+Pilia ang seksyon:
+I-save ang Mga Setting
+Paggawas
+Ang gipili nga kapilian {0} dili balido.
+Ang tubag kinahanglan nga numero.
+Pag-aghat alang sa mga Argumento sa Boot
+Pag-trigger sa Mode sa Pagmentinar
+Susiha ang mga Update sa Startup
+Hilom nga Probe
+Ipakita ang MOTD sa Log-in
+Tin-aw nga Screen sa Log-in
+Ipakita ang magamit nga mga username
+Kolor nga Shell
+Gipasimple nga Sugo sa Tabang
+Debug Port
+I-download ang mga Panahon sa Pagsulay
+Log FTP username
+Log FTP IP address
+Ibalik lamang ang unang FTP profile
+Ipakita ang Oras/Petsa sa Upper Right Corner
+Screensaver Timeout sa ms
+Debug Size Quota sa Bytes
+Gidak-on parse mode
+Marquee sa pagsugod
+Dugay nga Panahon ug Petsa
+Ipakita ang Natago nga mga File
+Dili balido nga seksyon ang gisulod. Palihog balik.
+Balik...
+Makahimo
+Pag-disable
+Isulat ang root password nga itakda. Ayaw kabalaka; ang password gipakita ingon nga mga bituon.
+Usba ang Root Password?
+Ibutang ang Root Password...
+Pagsulat ug hilit nga debugger port. Kinahanglang numeric kini, ug kinahanglang dili pa gamiton. Kung dili, ang hilit nga debugger mapakyas sa pag-abli sa pantalan.
+Isulat kung pila ka beses ang "pagkuha" nga mando kinahanglan nga sulayan pag-usab ang mga napakyas nga pag-download. Kini kinahanglan nga numero.
+Isulat kung kanus-a ilunsad ang screensaver pagkahuman sa piho nga mga millisecond. Kini kinahanglan nga numero.
+Isulat kung pila ka byte ang mahimo sa debug log store. Kini kinahanglan nga numero.
+Ang tubag mahimong dili negatibo.
+Ang tubag dili balido. Susiha aron masiguro nga ang tubag kay numeric para sa config entries nga nagkinahanglan og mga numero isip mga tubag.
+Ang variable {0} wala makit-an sa bisan unsang mga module.
+Gibag-o ang configuration sa kernel
+I-aktibo ang 255 ka kolor
+Gusto ba nimong magpadayon nga konektado?
+Dili balido nga pagpili. Sa pag-ingon nga dili...
+Usba ang Kultura sa Pagbalhin sa Pinulongan
+Gipakita ang teksto
+Isulat ang bisan unsang teksto nga gusto nimo ipakita. Mas mugbo mas maayo.
+Napakyas sa pag-upload sa {0}
+Sayop sa pagpatuman sa hilit nga debug nga sugo {0}: {1}
+Nagdugang mga tiggamit
+Nagdugang og mga alias sa mga sugo
+Nag-inject sa mga argumento sa kernel (kinahanglan reboot)
+Nagbag-o sa ngalan sa host
+Gibag-o ang MAL, ang MOTD Human sa Pag-login
+Nagbag-o sa MOTD, ang Mensahe Sa Adlaw
+Giusab ang user name
+Pagdumala sa mga pagtugot alang sa mga tiggamit
+I-reload ang screensaver file sa KSMods
+Pagtangtang sa usa ka tiggamit gikan sa lista
+Malampuson nga gikuha ang alias {0}.
+Napakyas sa pagsusi alang sa mga update.
+Wala nay mga tiggamit nga nahabilin sa lista.
+Napakyas sa pagtakda sa pinulongan.
+Sayop sa pagsulay sa pagsalikway sa pahibalo.
+usrmgr: Napakyas paghimo og username {0}: {1}
+Napakyas sa pag-usab sa ngalan sa user. {0}
+Usa sa mga lista sa pagtugot walay username {0}.
+Napakyas sa pagkarga sa mga pagtugot gikan sa payl: {0}
+Napakyas sa pag-ilis sa ngalan sa host: {0}
+Wala makit-an ang tiggamit
+Napakyas sa pag-ilis sa password sa username: {0}
+Napakyas sa pagkopya sa payl o direktoryo: {0}
+Napakyas sa pagbalhin sa file o direktoryo: {0}
+Dili makit-an ang file nga motakdo sa string "{0}": {1}
+Napakyas ang pag-download alang sa payl {0}.
+Napakyas sa paglista sa hilit nga mga payl: {0}
+Sigurado ka ba nga gusto nimong papason ang {0} <y/n>?
+Gipapas ang {0}...
+{0} wala makit-an sa server.
+Ang tanang mail nga gihimo ni {0} malampusong natangtang.
+Napakyas sa pagtangtang sa tanang mail nga gihimo ni {0}.
+Error sa pagpadala og mensahe.
+Pagbalhin {0} ngadto sa {1}...
+Malampuson nga nabalhin
+Nagbalhin sa file o direktoryo ngadto sa laing file o direktoryo. Mahimo usab nimo kini gamiton aron mabag-o ang ngalan sa mga file.
+Napakyas sa pagbalhin sa {0} ngadto sa {1}.
+Pagkopya sa {0} ngadto sa {1}...
+Malampusong gikopya
+Pagkopya sa file o direktoryo ngadto sa laing file o direktoryo.
+Napakyas sa pagkopya sa {0} ngadto sa {1}.
+Naglihok sa usa ka mensahe
+Gibalhin ang tanan nga mga mensahe gikan sa nakadawat
+Ang tanang mail nga gihimo ni {0} malampusong nabalhin.
+Napakyas sa pagbalhin sa tanang mail nga gihimo ni {0}.
+Mensahe {0} gikan sa {1} gibalhin gikan sa {2}. {3} mga mensahe nga nahabilin aron ma-parse.
+Nagpakita sa impormasyon sa panahon alang sa piho nga siyudad. Gigamit ang OpenWeatherMap.
+-- Impormasyon sa panahon para sa {0} --
+Panahon: {0}
+Presyon: {0}
+Humidity: {0}
+Makuha nimo ang imong kaugalingong API key sa https://home.openweathermap.org/api_keys.
+Mahimo nimong konsultahon kanunay ang http://bulk.openweathermap.org/sample/city.list.json.gz para sa listahan sa mga siyudad uban sa ilang mga ID.
+Gipalabi nga Yunit alang sa Temperatura
+Gipahimutang ang kernel aron kini mag-aghat kanimo alang sa argumento sa boot.
+Nag-trigger sa maintenance mode. Gi-disable niini ang daghang mga account.
+Matag pagsugod, susihon niini ang mga update.
+Kung mag-ilis sa mga pinulongan, usba ang mga ngalan sa bulan, kalendaryo, ug uban pa.
+Kung ang kernel gisugdan, kini magbutang sa root password.
+Hupti nga hilum ang mga mensahe sa pagsusi sa hardware.
+Ipakita ang Mensahe sa Adlaw sa dili pa ipakita ang screen sa pag-login.
+Tin-aw ang screen sa dili pa ipakita ang login screen.
+Nagpakita sa mga magamit nga tiggamit kung mahimo.
+Naghatag suporta sa kolor sa kernel
+Gipasayon ​​nga tabang nga sugo alang sa tanan nga mga kabhang
+Kung mag log FTP username o dili.
+Kung mag log FTP IP address o dili.
+Pilia lang ang una nga profile kung magkonektar.
+Ang oras ug petsa ipakita sa taas nga tuo nga suok sa screen
+Kung mahimo, ang kernel mag-parse sa tibuok folder alang sa kinatibuk-ang gidak-on niini. Kung dili, mag-parse ra sa nawong.
+Makapahimo sa eyecandy sa pagsugod
+Ang oras ug petsa mahimong mas taas, nga nagpakita sa tibuok bulan nga mga ngalan, ug uban pa.
+Nagpakita sa mga tinago nga mga file.
+Pilia ang imong gusto nga yunit alang sa temperatura (kini magamit lamang sa "panahon" nga sugo)
+Mod {0} mihunong
+{0} v{1} mihunong
+Ang Mod {0} walay ngalan sa bahin. Napakyas ang pag-parse sa mod. Ribyuha ang source code.
+Kinahanglan nimong i-on ang debug mode sa dili pa nimo ma-clear ang debug log.
+{0} bag-ong mga mensahe miabot sa inbox.
+Ablihi ang "lsmail" aron makita sila.
+Dili matangtang ang payl: {0}
+Pagtangtang sa usa ka direktoryo o file
+Dili matangtang ang {0} tungod kay wala kini.
+Pindota ang CTRL+C aron mogawas.
+Naghatag impormasyon bahin sa usa ka file
+Naghatag impormasyon bahin sa usa ka direktoryo
+Dili makakuha og impormasyon bahin sa wala naglungtad nga direktoryo.
+Dili makakuha og impormasyon bahin sa wala maglungtad nga file.
+Tibuok nga ngalan: {0}
+Panahon sa paghimo: {0}
+Katapusan nga oras sa pag-access: {0}
+Katapusan nga oras sa pagsulat: {0}
+Mga kinaiya: {0}
+Direktoryo sa ginikanan: {0}
+Asa pangitaon: {0}
+Gidak-on sa payl: {0}
+Gibag-o ang attribute sa usa ka file
+Wala makit-an ang file.
+diin ang <attributes> maoy usa sa mosunod:
+Ang file usa ka normal nga file
+Ang payl kay read-only file
+Ang file usa ka tinago nga file
+Ang file usa ka archive. Gigamit alang sa pag-backup.
+Ang hiyas nga "{0}" dili balido.
+Ang hiyas malampuson nga nadugang.
+Ang hiyas malampuson nga natangtang.
+Napakyas sa pagdugang ug hiyas.
+Napakyas sa pagtangtang sa hiyas.
+Ilisan ang pulong o hugpong sa lain nga pulong sa linya
+Ang lebel sa pula nga kolor milapas. Kaniadto {0}.
+Ang lebel sa berde nga kolor milapas. Kaniadto {0}.
+Ang lebel sa asul nga kolor milapas. Kaniadto {0}.
+I-aktibo ang tinuod nga mga kolor
+Napakyas sa pag-unblock sa {0}.
+{0} gibabagan na.
+{0} dili makaapil sa layo nga debug karon.
+Napakyas sa pagpugong sa {0}.
+Mga kolor sa siklo
+Ang Disco mag-cycle sa mga kolor kung mahimo. Kung dili, pilia ang mga random nga kolor.
+Pagsulod sa mga agianan sa file ngadto sa mga attachment. Pindota ang ENTER sa blangko nga dalan aron makumpirma.
+Nagbukas sa usa ka naka-encrypt nga mensahe
+Pagsulat og password para sa yawe nga ID {0}
+Nagpadala usa ka naka-encrypt nga mensahe sa usa ka adres
+Nag-download gikan sa {0}...
+Ipakita ang progress bar samtang nag-download o nag-upload gikan sa "get" o "put" nga sugo
+Kung tinuod, kini naghimo sa "pagkuha" o "ibutang" nga ipakita ang progress bar samtang nag-download o nag-upload.
+Nag-upload sa usa ka file sa piho nga website
+I-ping ang usa ka adres
+Nag-upload sa {0} ngadto sa {1}...
+Nakompleto na ang pag-upload.
+Palihug gamita ang "ftp" kung mag-upload ka og mga file sa FTP server.
+Napakyas ang pag-upload sa pagsulay {0}: {1}
+Isulat kung pila ka beses ang "ibutang" nga mando kinahanglan nga sulayan pag-usab ang mga napakyas nga pag-upload. Kini kinahanglan nga numero.
+Ang adres mahimong walay sulod.
+Napakyas sa pag-ping {0}: {1}
+Ang ping milampos sa {0} ms.
+Ang espesipikong numero sa linya mahimong dili mas dako kay sa kataposang numero sa linya sa file.
+Gibati sama sa: {0}
+Temperatura: {0}
+Kakusog sa hangin: {0}
+direksyon sa hangin: {0}
+Pindota ang bisan unsang yawe aron makabalik.
+Dili makahimo sa mail folder {0}: {1}
+Naghimo usa ka direktoryo sa karon nga direktoryo sa pagtrabaho
+Pagtangtang sa usa ka direktoryo gikan sa kasamtangan nga direktoryo sa pagtrabaho
+Ang mail folder {0} wala makit-an.
+Dili mapapas ang mail folder {0}: {1}
+{0}, Gihimo sa {1} {2}, Giusab sa {3} {4}
+Gipamatud-an ang katin-awan sa file
+Ang mga hash nadaot.
+Ang mga hash dili magkatugma.
+Hashes match.
+Nag-usab sa ngalan sa usa ka folder
+Nagbukas sa usa ka kabhang sa pagsulay
+* Pindota ang bisan unsang yawe aron masugdan ang kernel o ESC aron mogawas.
+Napakyas sa pagsugod sa "{0}": {1}
+Ipakita ang preview sa mensahe sa mail
+Kung naglista sa mga mensahe sa mail, ipakita ang preview sa lawas.
+Input nga kolor
+Kolor sa lisensya
+Padayon nga kolor sa sayup sa kernel
+Dili mapadayon nga kolor sa sayup sa kernel
+Kolor sa ngalan sa host
+Kolor sa ngalan sa tiggamit
+Kolor sa background
+Neyutral nga kolor sa teksto
+Kolor sa entablado
+Sayop nga kolor
+FTP Prompt Style
+Estilo sa Mail Prompt
+Estilo sa Pag-aghat sa SFTP
+Pagsulay sa pag-access sa dili balido nga agianan.
+Paglimpyo sa text file
+Migawas sa text editor
+Nangutana sa usa ka karakter sa usa ka piho nga linya o sa tanan nga mga linya
+Ang pagsusi alang sa mga update gi-disable tungod kay nagdagan ka usa ka bersyon sa pag-uswag.
+I-on o i-off ang feature nga autosave sa text editor.
+Kung ang autosave ma-enable, ang text file ma-save sa matag "n" segundos.
+I-enable ang autosave sa text editor
+Awtomatikong pagluwas sa agwat sa text editor
+Gitipigan ang file
+Irekord ang chat aron ma-debug ang log
+Nagrekord sa layo nga debug chat aron sa pag-debug sa log.
+Paglangan sa Milliseconds
+Pila ka millisecond ang maghulat sa dili pa mohimo sa sunod nga pagsulat?
+Gitugotan ka nga mogamit usa ka SSH FTP server
+Walay tabang alang sa sugo "{0}".
+Dili balido nga han-ay sa VT alang sa kolor sa RGB.
+Kolor sa Segundo Bar
+Kolor sa Minuto Bar
+Kolor sa mga Oras Bar
+Kolor sa Impormasyon
+Ticks aron mausab ang kolor
+Kung ang color cycling ma-enable, pila ka mga ticks sa dili pa mag-ilis og mga kolor sa ProgressClock? 1 tik = 0.5 segundos
+Ang ProgressClock mopili ug random nga mga kolor kon kini ma-enable. Kung dili, gamita ang mga kolor gikan sa config.
+Naghimo ug bag-ong tema
+Paghimo ug bag-ong tema "{0}".
+I-save ang Tema sa Kasamtangang Direktoryo
+I-save ang Tema sa Lain nga Direktoryo...
+Pilia ang kolor gamit ang "<-" ug "->" nga mga yawe. Pindota ang ENTER aron mohunong. Pindota ang "i" aron manu-mano ang pagsulod sa numero sa kolor.
+Pilia ang kolor gamit ang "<-" ug "->" nga mga yawe. Gamita ang mga arrow pataas ug arrow down nga mga yawe aron makapili tali sa mga kolor sa kolor. Pindota ang ENTER aron mohunong. Pindota ang "i" aron manu-mano ang pagsulod sa numero sa kolor.
+Welcome sa kernel! - Bersyon {0}
+Warning color
+Kolor nga kapilian
+Pagsulod sa numero sa kolor gikan sa 0 hangtod 255:
+Gamita ang "hwinfo" para sa dugang nga impormasyon bahin sa hardware.
+Nag-imprinta sa impormasyon sa hardware
+Ngalan sa processor:
+Mga bahin sa processor:
+Partition filesystem:
+Gidak-on sa partisyon:
+GPU: Usa o daghan pa sa mga graphics card napakyas sa pagsusi. Nagpakita gihapon og impormasyon...
+>> Welcome! Kini ang imong unang higayon nga mosulod sa remote debug ug chat. Gamita ang "/register <name>" para magparehistro.
+Anaa na ang device.
+Walay ingon nga device.
+Nagtakda og username sa device
+Nakarehistro ka na.
+Kumusta, {0}!
+Nag-imprinta sa sulod sa file ngadto sa console
+O, ipasa ang "listcities" niini nga sugo.
+Anaa na ang entry.
+Giputos ang output sa console
+Ang sugo dili wrappable. Kini nga mga sugo kay wrappable:
+Gikuha ang ZIP archive
+Naghimo ug ZIP archive
+Gitukod sa {0}
+Sayop sa pag-download sa debug data
+Adunay usa ka sayup samtang nag-download sa datos sa pag-debug. Susiha ang imong koneksyon sa internet.
+Napakyas sa pagtapos sa mod {0}: {1}
+Gilista ang tanan nga gipabuto nga mga panghitabo
+Kasamtangang Direktoryo
+Nagtakda sa kasamtangan nga direktoryo sa shell. Pagsulat usa ka hingpit nga agianan sa bisan unsang kasamtangan nga direktoryo.
+I-wrap ang mga output sa lista
+I-wrap ang mga output sa lista kung kini daw taas kaayo alang sa kasamtangan nga console geometry.
+Ping!
+{0} mi-ping nimo.
+I-save ang Tema sa Kasamtangang Direktoryo isip...
+I-save ang Tema sa Laing Direktoryo isip...
+Ipiho ang ngalan sa tema:
+Ang tiggamit {0} gidugang sa "{1}" nga lista.
+Ang user nga {0} gitangtang gikan sa "{1}" nga lista.
+Dili balido nga paagi {0}
+I-load ang Tema Gikan sa Prebuilt Themes...
+Ipiho ang ngalan sa file sa tema nga wala ang .json extension:
+Nagbukas ug ZIP archive
+Migawas sa ZIP shell
+Naglista sa tanan nga mga file sa sulod sa archive
+Gikuha ang usa ka file sa usa ka piho nga direktoryo o usa ka karon nga direktoryo
+Gibag-o ang direktoryo sa archive
+Ang gipiho nga ZIP shell command wala makit-an.
+Wala ang direktoryo {0}.
+Ang direktoryo sa archive {0} wala anaa
+Ihap sa Max nga Posisyon
+Pila ka mga posisyon ang gipasiga sa dili pa modan-ag?
+Ilista ang kolor sa pagsulod
+Ilista ang bili sa kolor
+Nagkonektar sa usa ka SSH server aron ipatuman ang usa ka mando.
+Dili balido nga espesipiko sa kolor. Siguruha nga naa kini sa husto nga format, nga nagpasabut usa ka numero gikan sa 0-255 kung naggamit 255 nga mga kolor o usa ka VT sequence kung gigamit ang tinuod nga kolor sama sa mosunod:
+Sayop sa pagsulay nga kabhang: {0}
+Nagbutang sa usa ka variable sa usa ka kantidad sa usa ka script
+Usa ka bug reporting prompt.
+Salamat sa pagpasaka ug ticket kanamo! Pilia kon unsa nga matang sa hangyo ang anaa kanimo.
+Usa ka problema
+Usa ka hangyo nga bahin
+Usa ka pangutana
+Kinahanglan nimong ipiho ang usa ka bahin.
+Pangutana, isulat ang imong ideya, o ireport ang usa ka problema.
+Kinahanglan nimong isulat ang imong hangyo.
+Adunay usa ka sayup sa FTP shell:
+Wala mailhi nga FTP shell error:
+Adunay usa ka sayup sa SFTP shell:
+Wala mailhi nga SFTP shell error:
+Ipakita ang SSH nga bandera
+Nagpakita sa SSH server banner sa koneksyon.
+Unsaon nimo pag-authenticate?
+Pribado nga yawe nga file
+Password
+Ibutang ang passphrase para sa yawe {0}:
+Gi-neutralize ang usa ka wala nga dalan.
+Ang yawe nga payl {0} wala anaa.
+Sayop sa pagsulay sa pagdugang sa pribadong yawe:
+Pindota ang "t" para mubalhin sa 255 color mode.
+Pindota ang "t" para mubalhin sa true color mode.
+Murag wala kay user gawas sa root. Kini daotan. Giyahan ka namo unsaon paghimo og usa.
+Isulat ang imong username.
+Kinahanglan nimong isulat ang imong username.
+Isulat ang imong password.
+Kinahanglan nimong isulat ang imong password.
+Pilia ang tipo sa account.
+Administrator: Kini nga tipo sa account adunay labing kusog sa kernel, nga nagtugot kanimo sa paggamit sa mga programa sa pagdumala sa sistema.
+Normal nga Gumagamit: Kini nga matang sa account mas gipugngan kay sa mga tigdumala.
+Mga pahalipay! Nakahimo ka usa ka bag-ong account! Aron mahuman kini, pag-log in isip imong bag-ong account.
+mod: Walay mods nga nakita.
+Kinatibuk-ang mga sugo:
+Mga sugo sa mod:
+Ang alyas nagmando:
+Mode sa Pagmentinar
+Pangitaa ang mga Direktoryo
+Grupo sa mga agianan nga gibulag sa colon. Kini nagtrabaho sama sa PATH. Pagsulat usa ka tibuuk nga agianan sa usa ka folder o ngalan sa folder. Kung nahuman ka, isulat ang "q". Pagsulat og minus sign tapad sa dalan aron matangtang ang kasamtangan nga direktoryo.
+Walay mod nga mga sugo.
+Walay alyas nga mga sugo.
+Ang bili sa kolor anaa sa gawas sa han-ay sa 0-255.
+Ang wrappable nga sugo dili makita.
+Pagpangutana sa usa ka pulong sa usa ka piho nga linya o tanan nga linya
+{0} sa {1} gi-download.
+{0} sa {1} gi-upload.
+Nag-imprenta og usa ka hilo aron sa paghupay gamit ang tipo sa kolor ug pag-imprinta sa linya
+Nag-imprenta og usa ka hilo aron sa paghupay gamit ang tipo sa kolor ug linya nga pag-imprinta nga adunay suporta sa format
+Nag-imprenta og usa ka pisi aron sa pag-debug
+Nag-imprenta sa usa ka hilo aron ma-debug nga adunay suporta sa format
+Gisulayan ang pasilidad sa kernel error
+Gisulayan ang pasilidad sa sayup sa kernel nga adunay suporta sa format
+Mga pagsulay sa paghubad sa usa ka string nga anaa sa mga kapanguhaan ngadto sa piho nga pinulongan
+Nag-imprinta og usa ka pisi aron sa paghupay ug pag-parse sa mga placeholder nga nakit-an
+Gisulayan ang pasilidad sa regular nga ekspresyon
+Nagsugod ang tanan nga mga mod
+Gihunong ang tanan nga mga mod
+Makapahimo o nag-disable sa debug
+Makapahimo o makapugong sa hilit nga pag-debug
+Gisulayan ang VT sequence alang sa 255 ka kolor
+Pagsulay sa VT han-ay alang sa tinuod nga kolor
+Nagpadala usa ka pahibalo aron sulayan ang tigdawat
+Gisulayan ang petsa sa pag-imprenta gamit ang lainlaing mga kalendaryo
+Gilista ang tanan nga gisuportahan nga mga panid sa code
+Unsa nga mga baryable sa compiler ang gipalihok sa aplikasyon?
+Mga pagsulay nga nagpataas sa piho nga panghitabo
+Mga pagsulay nga nagsusi sa hardware
+Gisulayan ang tigkolekta sa basura
+Mogawas sa test shell ug magsugod sa kernel
+Migawas sa test shell ug gipalong ang kernel
+Gitipigan ang kasamtangan nga direktoryo sa kernel configuration file
+Sulayi ang listahan nga magsusulat gamit ang string ug string array
+Gisulayan ang tagsulat sa lista gamit ang integer ug integer array
+Sulayi ang tagsulat sa lista gamit ang char ug char array
+Normal nga listahan sa string:
+Lista sa mga string sa array:
+Normal nga listahan sa integer:
+Array integer nga lista:
+Normal nga lista sa char:
+Lista sa Array char:
+I-enable ang RPC
+RPC Port
+Mahimo ba o dili ang RPC.
+Pagsulat ug RPC port. Kinahanglang numeric kini, ug kinahanglang dili pa gamiton. Kung dili, ang RPC mapakyas sa pag-abli sa pantalan.
+Dili magsugod sa RPC tungod kay kini disabled.
+Ilista ang gisuportahan nga mga kultura
+Pagpangita alang sa piho nga string sa gihatag nga file gamit ang regular nga mga ekspresyon
+Tan-awa kon mahimo ba nimong pug-on ang usa ka yawe sa oras
+Ang tiggamit wala maghatag bisan unsang input sa tukma sa panahon nga paagi.
+Ang karakter wala gipugos sa oras.
+Gipugos nimo ang husto nga karakter!
+Gipugos nimo ang sayup nga karakter.
+Pindota ang ESC aron mogawas.
+Nakuha ang impormasyon sa petsa ug oras
+Milisecond:
+Segundo:
+Minuto:
+Mga oras:
+Mga adlaw:
+Mga bulan:
+Tuig:
+Adlaw sa Tuig:
+Adlaw sa Semana:
+binary:
+Lokal nga Oras:
+Universal Oras:
+Oras sa Unix:
+Napakyas sa pag-parse sa impormasyon sa petsa para sa
+Siguroha nga ang format husto.
+Petsa:
+Panahon:
+Nagtakda sa mga permiso sa file. Gisuportahan lamang kini sa mga FTP server nga nagpadagan sa Unix.
+Nagtakda sa tipo alang niini nga sesyon
+Kinahanglan ka nga magkonektar sa server sa dili pa ipahigayon ang mga operasyon sa filesystem.
+Napakyas sa pagtakda sa mga pagtugot sa {0} ngadto sa {1}.
+Malampusong gitakda ang mga permiso para sa file
+Ang tipo sa datos gitakda sa ASCII!
+Ang tipo sa datos gitakda sa Binary!
+Dili balido nga tipo sa datos.
+Pagbantay nga kadaghanan sa mga file dili mag-download o mag-upload sa husto nga paagi gamit kini nga mode, busa among girekomenda nga gamiton ang Binary mode sa kadaghanan nga mga sitwasyon.
+Pagsulay sa pagpadala sa usa ka RPC command samtang RPC wala magsugod.
+Fade Out Delay sa Milliseconds
+Max Fade Lakang
+Pila ka millisecond ang maghulat una mawala ang text?
+Pila ka fade nga mga lakang ang buhaton?
+Puno nga Probe
+Kon tinuod, susiha ang tanang hardware; kung dili, susihon ra ang gikinahanglan nga hardware.
+Napakyas sa pagtangtang sa screensaver {0} gikan sa config.
+Nakakuha ug custom saver settings
+Nagtakda ug custom saver settings
+Malampuson nga gitakda ang mga setting para sa screensaver
+Napakyas sa pagtakda og setting para sa screensaver
+Nag-abli og RSS shell aron mabasa ang mga feed
+Mogawas sa RSS shell ug mobalik sa kernel
+Giusab ang link sa feed
+Gilista ang tanan nga mga feed
+Nagbasa og feed sa usa ka web browser
+Ang gipiho nga RSS shell command wala makit-an.
+Dili balido nga RSS2 feed.
+Dili balido nga RSS1 feed.
+Dili balido nga feed sa Atom.
+Pagsulod ug RSS feed URL:
+Dili balido nga matang sa RSS feed.
+Wala mailhi nga kasaypanan sa shell:
+Nakuha ang impormasyon sa artikulo
+Ang numero sa artikulo dili mahimong mas dako kaysa sa magamit nga mga artikulo.
+Titulo:
+Link:
+Nagkuha sa impormasyon sa feed
+Deskripsyon:
+Uri sa pagpakaon:
+Gidaghanon sa mga artikulo:
+Ang artikulo walay link!
+Napakyas sa paghimo og lista sa mga filesystem entries para sa direktoryo
+Filesystem sort mode
+Direksyon sa pagsunud sa filesystem
+Gikontrol kung giunsa paghan-ay ang mga file.
+Gikontrol ang direksyon sa paghan-ay sa filesystem kung kini pataas o paubos.
+Pagsulat Pag-usab Paglangan sa Milliseconds
+Pila ka millisecond ang maghulat sa dili pa isulat pag-usab ang teksto?
+Isulat ang bisan unsang teksto nga gusto nimo ipakita. Ang mas dugay mas maayo.
+Minimum nga katulin sa pagsulat sa WPM
+Pinakataas nga katulin sa pagsulat sa WPM
+Ang kalagmitan sa typo sa porsyento
+Napakyas sa pagtipig sa kasamtangang direktoryo: {0}
+Pagpahid aron mausab ang direksyon
+Pila ka pagpahid ang buhaton sa dili pa mag-ilis sa direksyon nga random?
+Natapos ang entablado sa
+Ang internal nga pagsugod nahuman sa
+Ang gi-refer nga payl {0} wala makit-an. Mahimong dili molihok kini nga mod kung wala kini nga file.
+Pagsugod sa mod
+Ngalan sa sugo:
+Kahulugan sa sugo:
+Uri sa sugo:
+Estrikto nga sugo?
+Mod nga bersyon:
+Mod {0} wala makit-an.
+Ang text editor wala pa makaabli ug file stream.
+Gipuli ang string.
+Ang usa o ang duha sa mga numero dili numeric.
+Gitangtang ang pulong.
+Gitangtang ang karakter.
+Welcome sa Settings!
+Sayop sa pagpatuman sa SSH command
+Sayop sa SSH shell
+- Impormasyon sa app
+Gisulayan ang magsusulat sa diksyonaryo gamit ang string ug string array
+Gisulayan ang magsusulat sa diksyonaryo gamit ang char ug char array
+Gisulayan ang magsusulat sa diksyonaryo gamit ang integer ug integer array
+Normal nga string dictionary:
+Array string nga diksyonaryo:
+Normal nga integer nga diksyonaryo:
+Array integer nga diksyonaryo:
+Normal nga diksyonaryo sa char:
+Array char nga diksyonaryo:
+Welcome sa Test Shell!
+Ipakita ang pag-uswag sa mga operasyon sa filesystem
+Nagpakita kung unsa nga file ang giproseso sa panahon sa mga operasyon sa filesystem
+diin ang HardwareType
+Bisan ang tipo sa hardware {0} wala gisusi, o dili balido.
+Ang tipo sa hardware {0} wala pa masusi. Kung sigurado ka nga gisusi kini, i-restart ang kernel gamit ang pag-debug nga gipagana.
+Ang mga partisyon nga wala gi-parse aron ilista.
+Nag-imprinta og separator
+Nag-imprinta og separator nga adunay suporta sa format
+Nag-imprinta og separator nga adunay suporta sa kolor
+Nag-imprinta og separator nga adunay suporta sa kolor ug format
+Kanunay nakasentro
+Isulat ang bisan unsang teksto nga gusto nimo ipakita.
+Kung ang teksto nga gipakita sa marquee kanunay nga nakasentro.
+Ang argumento {0} wala makit-an nga nag-inject.
+Ang argumento sa command line {0} wala makit-an.
+Screensaver nakasinati og sayop samtang nagpakita: {0}. Pindota ang bisan unsang yawe aron makagawas.
+Preview...
+Mao kini ang hitsura sa imong tema:
+Maputos nga mga sugo:
+Mod {0} adunay dili balido nga sugo. Napakyas ang pag-parse sa mod. Ribyuha ang source code.
+Mga bahin sa mod:
+Gamita ang Console API
+Kung gamiton ang Console API aron ma-clear ang text o gamiton ang mas paspas nga linya sa paghawan sa VT sequence. Kung Sayop, ang Marquee mogamit sa angay nga VT sequence. Kung dili, gamiton niini ang lagmit hinay nga Console API.
+Pag-abli sa URL... Siguruha nga sundon ang mga lakang nga gipakita sa screen.
+Walay mga bahin sa mod.
+Ngalan sa Mod:
+Ngalan sa file sa mod:
+Mod file path:
+Bersyon sa bahin:
+Minimum nga ihap sa gikinahanglan nga mga argumento:
+Gikinahanglan ang mga argumento?
+Maputos nga sugo?
+Pagbutang sa shell variable?
+Dili makadagan sa maintenance mode?
+Karaan na?
+RSS Prompt Style
+Text Edit Prompt Style
+Estilo sa Pag-aghat sa Zip Shell
+Walay sulod ang folder.
+Malampuson nga pagsusi {0}.
+Verbose Probe
+Himoa ang hardware probing nga mga mensahe nga medyo estorya.
+> Walay impormasyon mahitungod sa mga frame.
+Kinahanglan nimong isulat ang imong ngalan.
+Gipanindot ang JSON file
+Config kategorya {0} wala makit-an.
+Ang config entry {0} wala makit-an.
+Gamita ang Beats Kada Minuto
+Kung gamiton ang Beats Per Minute nga yunit sa pagsulat sa sunod nga kolor.
+Paglangay sa Beats Matag Minuto
+Kolor sa Pukpok
+Pila ka beats kada minuto ang paabuton sa dili pa mohimo sa sunod nga pagsulat?
+Ang BeatFader mopili ug random nga mga kolor kon kini ma-enable. Kung dili, gamita ang mga kolor gikan sa config.
+Custom nga Startup Banner
+Nag-download sa hilit nga folder sa lokal nga direktoryo gamit ang binary o teksto
+Nag-upload sa lokal nga folder sa hilit nga direktoryo gamit ang binary o teksto
+Nag-download sa folder {0}...
+Gi-download nga folder {0}.
+Napakyas ang pag-download alang sa folder {0}.
+Nag-upload sa folder {0}...
+Gi-upload nga folder {0}
+Pindota ang "c" aron masulat ang tibuok kolor nga code.
+Pagsulod sa code sa kolor nga makatagbaw niini nga mga format:
+Gipamub-an ang JSON file
+Bag-ong Screen Delay sa Milliseconds
+Ihap sa Kolum
+Linya sa Pagpuno sa Threshold
+Line Fill Capping Probability sa porsyento
+Uri sa Pagpuno sa Linya
+Pila ka millisecond ang maghulat una isulat pag-usab ang teksto sa bag-ong screen?
+Ang mga kolum sa teksto nga i-imprinta.
+Pila ka mga karakter ang isulat sa dili pa ma-trigger ang "line fill"?
+Posibilidad nga ang pattern sa pagpuno sa linya maimprinta sa tanan nga mga takup sa porsyento
+Uri sa pattern sa pagpuno sa linya
+Ang tubag mahimong dili zero.
+Ang tubag mahimong dili molapas sa gipakita nga mga entry.
+I-save ang mga Kausaban...
+Pagdumala sa imong mods
+Ang pagdumala sa mod gi-disable sa safe mode.
+Dili balido nga sugo {0}. Susiha ang paggamit sa ubos:
+Ang mod wala makit-an o ang file adunay dili balido nga mga karakter.
+Ang kalagmitan sa pagkawala sa porsyento
+I-enable ang pag-debug sa screensaver
+Makapahimo sa pag-debug para sa mga screensaver. Palihug timan-i nga kini mahimong dali nga pun-on ang debug log ug gamay nga hinay ang screensaver, depende sa screensaver nga gigamit. Mogana lamang kung ang pag-debug sa kernel gipagana alang sa mga katuyoan sa diagnostic.
+Walay network samtang nag-download sa debug data
+Susiha ang imong koneksyon sa internet ug sulayi pag-usab.
+Ang manwal nga panid {0} dili balido.
+Ikonsiderar ang pagpuno niini nga manwal nga panid.
+Pindota ang bisan unsang yawe aron mabasa ang manwal nga panid...
+Kini nga manwal nga panid nanginahanglan trabaho alang sa:
+Manwal nga panid {0} wala makit-an.
+Mod manual

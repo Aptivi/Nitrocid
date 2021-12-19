@@ -1,0 +1,1007 @@
+Verfügbar Kommandoen: {0}
+Kommando Injektioun gouf annuléiert.
+Injizéiert Argumenter gi geplangt fir beim nächste Restart ze lafen.
+Feeler beim Parsing vun echte Kommandozeilargumenter: {0}
+Ongülteg Faarfschabloun {0}
+hwprobe: Är Hardware gëtt gepréift. W.e.g. waart ...
+CPU: Een oder méi vun den CPU-Kären konnt net gepréift ginn. Weist souwisou Informatioun ...
+RAM: Een oder méi vun de RAM Chips konnt net gepréift ginn. Weist souwisou Informatioun ...
+HDD: Een oder méi vun den Harddisken konnt net gepréift ginn. Weist souwisou Informatioun ...
+CPU: Gesamtzuel vun de Prozessoren: {0}
+Gitt d'Admin Passwuert fir Ënnerhalt.
+Kernel Feeler beim Booten: {0}
+DOUBLE PANIC: Neistartzäit iwwerschreift maximal erlaabt {0} Feeler Neistartzäit. Dir hutt e Kernel Käfer fonnt.
+[{0}] Panik: Neistart aktivéiert wéinst dem Feelerniveau {0}.
+[{0}] Panik: Zäit fir nei ze starten: {1} Sekonnen, méi wéi 1 Stonn. Et ass op 1 Minutt gesat.
+DOUBLE PANIC: Feeler Typ {0} ongëlteg.
+[{0}] dpanic: {1} -- Neistart an {2} Sekonnen...
+[{0}] Panik: Neistart ausgeschalt wéinst dem Feelerniveau {0}.
+[{0}] Panik: {1} -- Dréckt all Schlëssel fir weider de Kärel ze benotzen.
+[{0}] Panik: {1} -- Press all Schlëssel fir auszeschalten.
+[{0}] Panik: {1} -- Neistart an {2} Sekonnen...
+DOUBLE PANIC: Kernel Käfer: {0}
+Ausschalten ...
+Neistarten...
+Eng aner Instanz vum Kernel Simulator leeft. Ausschalten am Fall vun Interferenz.
+Ausgefall fir de Benotzer an d'Erlaabneslëschten ze addéieren: ongülteg Typ {0}
+Ausgefall fir de Benotzer an d'Autorisatiounslëschten ze addéieren: ongülteg Benotzer {0}
+Konnt net de Benotzer aus Erlaabnislëschten erofhuelen: ongülteg Typ {0}
+Dir sidd schonn ageloggt.
+Konnt net de Benotzer aus Erlaabnislëschten erofhuelen: ongülteg Benotzer {0}
+Dir hutt entweder e Feeler fonnt, oder d'Erlaabnes, déi Dir probéiert hutt derbäizefügen oder ze läschen, ass scho gemaach, oder en anere Feeler.
+Feeler {0}: {1}
+Dir hutt entweder e Feeler fonnt, oder d'Erlaabnes, déi Dir probéiert hutt fir en neie Benotzer z'änneren, ass gescheitert.
+Verfügbar Benotzernimm: {0}
+Benotzernumm:
+Plaze sinn net erlaabt.
+Spezial Zeechen sinn net erlaabt.
+{0}'s Passwuert:
+Falscht Passwuert.
+Benotzer ass behënnert.
+Falsche Benotzernumm.
+Feeler beim Versuch Plazhalter ze analyséieren. {0} - Stack Trace:
+Feeler beim Versuch Plazhalter ze analyséieren. {0}
+Feeler beim Versuch vum Benotzernumm derbäi ze ginn.
+usrmgr: Benotzernumm erstellen {0}...
+Blank Benotzernumm.
+Benotzer {0} net fonnt.
+De Benotzer {0} däerf net geläscht ginn.
+De Benotzer {0} ass scho ageloggt. Loggt aus a loggt Iech als en aneren Administrateur un.
+Benotzer {0} ewechgeholl.
+Feeler beim Versuch de Benotzernumm ze läschen.
+Den ugefrote Screensaver {0} gëtt net fonnt.
+{0} gouf richteg initialiséiert.
+{0} gouf net initialiséiert. De Screensavercode kéint e Feeler beim Initialiséierung erlieft hunn.
+Screensaver {0} existéiert net.
+{0} ass op Default Screensaver gesat.
+Screensaver {0} net an der Datebank fonnt. Kontrolléiert den Numm a probéiert nach eng Kéier.
+Screensaver kann net gelueden ginn wéinst de folgenden:
+Et gëtt e seriöse Feeler beim Drécken vum Text.
+Et gëtt e Feeler beim Versuch d'Konfiguratioun ze kreéieren.
+Feeler beim Versuch de RAM fräi ze maachen: {0} - Continuing...
+Mod kann net gelueden ginn wéinst de folgenden:
+mod: Mods lueden ...
+mod: Mods stoppen ...
+Mod {0} huet keen Numm. Iwwerpréift de Quellcode.
+Mod {0} huet keng Versioun.
+{0} v{1} ugefaangen
+Keng Definitioun fir Kommando {0}.
+Kommando definéiert vun
+Dir sollt vum Server trennen ier Dir mat engem anere Server verbënnt
+Benotzernumm fir {0}:
+Passwuert fir {0}:
+Verbonne mat {0}
+Fehler wann Dir probéiert mat {0} ze verbannen: {1}
+Stack Trace: {2}
+Lokal Verzeechnes {0} existéiert net.
+Gitt e lokale Verzeichnis. ".." zréck goen.
+Verzeechnes {0} net fonnt.
+Gitt e Fernverzeechnes un. ".." zréck goen
+Dir musst mat engem Server konnektéieren ier Dir de Verzeechnes ännert
+Lokal Verzeechnes: {0}
+Fernverzeechnes: {0}
+Dir musst mam Server verbannen ier Dir den aktuellen Fernverzeechnes kritt.
+Dir musst mam Server mat administrativen Privilegien verbannen ier Dir d'Läschung ausféiert.
+Ofgeschloss vum {0}
+Dir hutt nach kee Server ugeschloss
+Luet de Fichier {0} erof...
+Erofgelueden Datei {0}.
+Dir musst mam Server konnektéieren ier Dir d'Transmissioun maacht.
+{0} KB | Geännert an: {1}
+Dir sollt mam Server verbannen ier Dir all Ferndateien oplëscht.
+Eroplueden Datei {0}...
+Eropgelueden Datei {0}
+Kritt aktuell lokal Verzeechnes
+Kritt den aktuellen Fernverzeechnes
+Ännert de lokale Verzeichnis fir erofzelueden oder eropzelueden
+Ännert de Fernverzeechnes fir erofzelueden oder eropzelueden
+Läscht Remote Datei vum Server
+Trennt vum Server
+Luet d'Ferndatei an de lokalen Verzeechnes mat Binär oder Text erof
+Verléisst FTP Shell a geet zréck an de Kernel
+Weist Hëllef Écran
+Lëscht lokal Verzeechnes
+Lëscht Fernverzeechnes
+Eroplueden lokal Datei an de Fernverzeechnes mat binär oder Text
+FTP Message: De gefrote Kommando {0} gëtt net fonnt. Kuckt 'Hëllef' fir eng Lëscht vun verfügbare Kommandoen, déi op FTP-Shell spezifizéiert sinn.
+Ausgefall Properties fir den Adapter {0}
+Adapternummer:
+Adapter Numm:
+Maximum Transmissioun Eenheet: {2} Unitéiten
+DHCP aktivéiert:
+Net-unicast Pakete:
+Unicast Pakete:
+Feeler erakommen / erausginn Pakete:
+Alias ​​kann net de selwechten Numm wéi e Kommando sinn.
+Kommando net fonnt fir den Alias ​​un {0}.
+Dir kënnt elo "{0}" als Kommando ausféieren: "{1}".
+Den Alias ​​{0} gëtt net fonnt fir ze läschen.
+Ongülteg Modus {0}.
+Injizéiert Argumenter, {0}, gi geplangt fir beim nächsten Neistart ze lafen.
+Et gouf net genuch Argumenter. Kuckt hei ënnen fir d'Benotzung:
+Verzeechnes {0} net fonnt
+Blank Hostnumm.
+Änneren vun: {0} op {1}...
+Eidel Message vum Dag.
+Blank MAL No Login.
+Falsch Benotzerpasswuert.
+Passwierder passen net.
+Benotzernumm gouf op {0} geännert!
+Den neien Numm deen Dir aginn hutt ass scho fonnt.
+{0} gëtt net fonnt.
+Configuratioun nei gelueden. Dir musst vläicht de Kernel nei starten fir datt e puer Ännerungen a Kraaft trieden.
+Eng oder méi vun de Faarwen ass ongëlteg.
+Faarwen sinn net verfügbar. Schalt faarweg Shell an der Kernel Config un.
+Screensaver {0} net fonnt.
+Kernel Versioun:
+Debug Modus:
+Faarweg Shell:
+Argumenter iwwer Boot:
+Hëllef Kommando vereinfacht:
+MOTD beim Login:
+Zäit / Datum am Eck:
+Aktuelle Benotzernumm:
+Aktuelle Hostnumm:
+Verfügbar Benotzernimm:
+Feeler beim Versuch vum Kommando auszeféieren
+Ännerunge Verzeechnes
+Ännert Passwuert fir den aktuelle Benotzer
+Kläert den Ecran
+Benotzt eng FTP Shell fir mat Serveren ze interagéieren
+Hëllef Säit
+Lëscht Fichier / Dossier Inhalt am aktuellen Dossier
+Spär Ären Écran mat engem Passwuert
+Loggt Iech aus
+Erstellt e Verzeichnis
+Lëscht Informatioun iwwer all verfügbare Interfaces
+Restart Äre Computer (OPGEPASST: Keng Synchroniséierung, well et net e finalen Kernel ass)
+Reloads Konfiguratiounsdatei déi geännert gëtt.
+Spuert Ären Écran vu Burnouts
+Setzt Kernel Screensavers op
+Setzt Kernel Themen op
+Weist Datum an Zäit
+Weist Datum an Zäit an Zonen
+De Kärel gëtt zougemaach
+System Informatiounen
+* Dir kënnt verschidde Befehle benotze mam Colon tëscht Kommandoen.
+Benotzung:
+wou Argumenter {0} sinn
+wou Douanespuer wäert sinn
+Et gouf e Feeler an der Schuel.
+Dir hutt keng Erlaabnis fir {0} ze benotzen
+Shell Message: De ugefrote Kommando {0} ass net erlaabt am Maintenance Modus ze lafen.
+Shell Message: De ugefrote Kommando {0} gëtt net fonnt. Kuckt 'Hëllef' fir verfügbare Kommandoen.
+Shell Message: Kommando {0} ass net erlaabt beim Umelden ze lafen.
+Feeler beim Versuch vum Kommando auszeféieren.
+- Zäit vun {0}: {1}
+Lafen op {0}
+Dir sidd net autoriséiert Informatioun fir {0} ze kréien.
+Dëse Kommando ass veroudert a gëtt an enger zukünfteg Verëffentlechung geläscht.
+Dir sidd net autoriséiert d'Passwuert vum {0} z'änneren, well d'Zil en Administrateur war.
+usrmgr: Benotzernumm {0} gëtt scho fonnt
+Läscht alles am Debug Log
+Ongülteg Sprooch
+Ännert Sprooch
+---------------------------- Kernel Panik Dump ------------------ -----------
+>> Panik Informatiounen <<
+> Beschreiwung: {0}
+> Feeler Typ: {1}
+> Datum an Zäit: {2}
+>> Ausnahmsinformation <<
+> Ausnam: {0}
+> Beschreiwung: {1}
+> RESULTAT: {2}
+> Quelle: {3}
+> Stack Trace <
+>> Innere Ausnam {0} Informatiounen <<
+>> Ausnam {0} ass d'Ursaach <<
+>> Keng Ausnam; kéint e Kernelfehler sinn. <<
+>> Frames, Dateien, Linnen a Kolonnen <<
+> Frame {0}: Datei: {1} | Linn: {2} | Kolonn: {3}
+> Et gëtt e Feeler wann Dir probéiert d'Kaderinformatioun ze kréien. {0}: {1}
+Wëllkomm zu Kernel!
+Aloggen erfollegräich als <Benotzer>
+MOTD / MAL ass valabel, mä de Message Typ ass net valabel. Ugeholl MOTD ...
+Probéiert MOTD / MAL ze liesen déi vum ongültege Messagetyp ass.
+Den Download ass ofgeschloss.
+Eroflueden am Versuch {0} gescheitert: {1}
+Benotzt w.e.g. "ftp" wann Dir Dateien vum FTP-Server eroflueden wëllt.
+Luet eng Datei an den aktuellen Aarbechtsverzeechnes erof
+Trennt en Debug-Apparat
+Lëscht Debugging Apparater verbonne
+Debug Apparat {0} net fonnt.
+Apparat {0} deconnectéiert.
+Feeler an der Verbindung: {0}
+Debug Nolauschteren op all Adressen mam Port {0}.
+Keng Argumenter uginn. Tipp: Gitt méi Argumenter un, getrennt vu Raum
+Alias ​​scho fonnt: {0}
+Debug Log geläscht. All verbonne Debugging Apparater kënnen nach ëmmer Messagen gesinn.
+Entfernung vum Debug-Log ass gescheitert: {0}
+D'Ännerung vum Verzeechnes ass gescheitert: {0}
+Gitt d'Adress un
+Kann den Verzeechnes net läschen: {0}
+Zäitzone ass falsch spezifizéiert.
+Ongülteg Profilauswiel.
+Probéiert mat {0} mam Profil {1} ​​ze verbannen...
+Kommando {0} net fonnt. Kuckt de Kommando "Hëllef" fir d'Lëscht vun de Kommandoen.
+Konnt net kréien IPv6 Eegeschafte fir den Adapter {0}. Fuert weider ...
+IPv4 Informatioun:
+IPv6 Informatioun:
+Adapter {0} ënnerstëtzt net IPv6. Fuert weider ...
+Adapter {0} ënnerstëtzt net IPv4. Sonde gescheitert.
+Gesäit aus wéi wann Dir d'Entwécklungsversion vum Kernel gefuer hutt. Wärend Dir d'Aspekter kënnt gesinn, gëtt et dacks aktualiséiert a kéint Bugs aféieren. Et ass recommandéiert datt Dir op der stabiler Versioun bleift.
+D'Sprooch déi Dir gewielt hutt enthält zwou Varianten. Wielt een:
+Ongülteg Wiel. Versich et nach eng Kéier.
+Dir sidd net autoriséiert den aktuelle Verzeichnis op {0} ze setzen: {1}
+De Wee deen Dir uginn hutt ass ze laang.
+Dump Informatiounssammler ass erofgefall wann Dir probéiert Informatiounen iwwer {0} ze kréien: {1}
+Feeler beim Versuch MOTD/MAL ze setzen: {0}
+Feeler beim Versuch MOTD/MAL ze kréien: {0}
+Fehler wann Dir probéiert de Screensaver unzefänken, wéinst enger ongülteg Operatioun.
+Reloading net erlaabt am séchere Modus.
+Parsing Mods net erlaabt am Safe Modus.
+Feeler beim Versuch de Parse Modus ze setzen. Kontrolléiert de Wäert a probéiert nach eng Kéier. Wann dëst richteg ass, kuckt de Stack Trace wann Kernel Debugging aktivéiert ass.
+De Wee ass weder e Fichier nach e Verzeechnes.
+Erstellt eng aner Kopie vun enger Datei ënner anerem Verzeechnes oder Numm.
+Beweegt eng Datei an en anere Verzeichnis
+Match {0} ({1}): {2}
+Match {0}: {1}
+Zäit verbréngt: {0} Millisekonnen
+Numm: {0}
+Berechent Fichier Zommen.
+Bréngt Iech op eis GitHub Wiki.
+Ongülteg Verschlësselungsalgorithmus.
+Aktivéiert oder deaktivéiert Remote Debugging.
+Kuckt ob Dir d'Wierder an der Zäit richteg schreiwe kënnt
+Kuckt ob Dir mathematesch Equatiounen zu Zäit léise kënnt
+Äntwert op Léift oder Haass Kommentarer.
+Wann iergendeen dëse Kommentar zu Ärem Video gemaach huet:
+Wéi géift Dir reagéieren?
+Ongülteg Auswiel. Gitt op den nächste Kommentar ...
+Super! {0} wäert Äre Merci schätzen.
+Perfekt geschriwwe!
+Falsch geschriwwe.
+Perfekt geléist!
+Falsch geléist.
+RPC leeft scho.
+RPC lauschtert op all Adressen mam Port {0}.
+RPC starten ...
+Verbënnt mat engem SSH Server.
+Gitt d'Passwuert fir {0} an:
+SSH disconnected.
+Kann net Codepage astellen. D'Sprooch kann net richteg ugewise ginn.
+Debugging net aktivéiert.
+Merci! Dëst ass interessant.
+Jiddereen wäert Äre Video dofir ënnerstëtzen.
+Ech hunn Iech déi speziell Datei an Ärer E-Mail fir Ären nächste Video ginn.
+Lauschtert, Haters, hie probéiert eis ze hëllefen, net Bedruch.
+Ech weess net wéi vill ech a meng Frënn Iech Merci fir dëse Video soen.
+Ech hunn dech gär fir dëse Video.
+Fuert weider, halt net op.
+Ech hëllefen Iech op 1M Abonnenten z'erreechen!
+Meng Frënn hunn hire Computer wéinst Iech fixéiert.
+Awesome Prank! Ech hunn mäi Feind säi PC zougemaach.
+Fir Haters: HAT OP HAT HATEN
+Zu Haters: SCHAFFT SCHAFFT
+Keen wäert dat elo bemierken dank Ärem Objet verstoppt Guide
+Ech stoppen Är Videoen ze kucken. Abonnent verluer.
+Wat ass dat? Dëst ass onkloer.
+Dëse Video ass dat Schlëmmst!
+Jiddereen mellt dëse Video!
+Meng Frënn sinn rosen op Iech!
+D'Liebhaber wäerten dech elo dofir haassen.
+Äre Frënd wäert dech dofir haassen.
+Dëse Prank huet mech bei Iech ofgeschloss.
+Missioun gescheitert, Respekt -, Abonnent -
+Halt op dës Zort Video ze maachen!!!
+Gitt zréck op Är Aarbecht, Är Videoen sinn déi Schlëmmst!
+Mir Viruerteeler op dësem Video.
+Weist all kritt Notifikatiounen
+Entlooss eng Notifikatioun
+Notifikatioun erfollegräich entlooss.
+Pakete (inbound):
+Pakete (outbound):
+Feeler an erhalen Pakete:
+Allgemeng IPv6 Eegeschaften
+Allgemeng IPv4 Eegeschaften
+Féiert e Kommando op Remote PC aus
+- Etapp 1: System initialization
+- Etapp 2: Hardware Detektioun
+- Stage 3: Mods a Screensavers Detektioun
+- Etapp 4: Log an
+Gesäit aus wéi wann Dir d'Verëffentlechungskandidatversioun leeft. Et ass recommandéiert datt Dir op der stabiler Versioun bleift.
+Invalid Typ {0}.
+Gréisst: {0}
+Verzeechnes {0} existéiert schonn.
+Fehler wann Dir probéiert mat {0} ze verbannen: Verbindungszäit oder verluer Verbindung
+Rechner fir Ausdréck ze berechnen.
+Feeler an der Berechnung.
+System Update
+Iwwerpréift no Systemupdates ...
+Nei Versioun fonnt:
+Dir kënnt et eroflueden op:
+Keng rezent Notifikatiounen
+Sicht no spezifizéierter String an der geliwwerter Datei
+Berechent Zomme vu Dateien am spezifizéierte Verzeichnis.
+Gitt Benotzernumm oder Mail Adress:
+Passwuert aginn:
+Feeler beim Uschloss un {0}: {1}
+Verbënnt mat {0}...
+Authentifikatioun ...
+Gitt d'IMAP Shell aus
+Lëscht vun de Kommandoen
+Luet Messagen erof a lëscht se
+Maacht e Message op
+Säit ass keen numeresche Wäert.
+Message Zuel kann net negativ oder null ginn.
+Message Zuel ass keen numeresche Wäert.
+- Vun {0}
+- An {0}
+- Geschéckt um {0} am {1}
+De spezifizéierte Message gëtt net fonnt.
+Remote Debug konnt net starten: {0}
+Profiler virbereeden... Et kéint e puer Minutten daueren...
+Feeler beim Versuch vum Skript auszeféieren: {0}
+Schreift Text an d'Konsole
+Maacht Benotzerwahlen
+Pipt an 'n' Hz an Zäit an 'n' Millisekonnen
+wou <$variable> all Variabel ass déi benotzt gëtt fir d'Äntwert ze späicheren
+D'Frequenz muss numeresch sinn. Wann et numeresch ass, gitt sécher datt et >= 37 an <= 32767 ass.
+Zäit muss numeresch sinn.
+wou <Äntwerten> Äntwerten mat engem Bréiwer vun der Fro sinn, getrennt a Schnëtt
+Feeler beim Versuch mam SSH Server ze verbannen: {0}
+Erlaabt de Benotzer den Input anzeginn
+Ännert aktuell Mail Verzeechnes
+Kann den E-Mail-Ordner {0} net opmaachen: {1}
+Lëscht Verzeichnungen an Ärer Mailadress
+Benotzt Informatioun vu Speed ​​Dial fir séier mat all Netzwierk ze verbannen
+Wielt eng Adress fir ze verbannen:
+D'Auswiel ass ausserhalb. Wielt tëscht 1-{0}. Versich et nach eng Kéier.
+D'Auswiel ass keng Zuel. Versich et nach eng Kéier.
+Wärend der Zertifikatvalidatioun ginn et Zertifikatfehler. Et ass vläicht déi éischte Kéier datt Dir mam Server verbonne sidd oder den Zertifika ass ofgelaf. Hei ass e Feeler:
+Sidd Dir sécher datt Dir wëllt konnektéieren?
+Invalid Äntwert. Probéiert w.e.g. nach eng Kéier.
+Geschwindegkeetswiel ass eidel. Connect op e Server fir eng Adress derbäi ze addéieren.
+Speed ​​Dial existéiert net. Connect op e Server fir eng Adress derbäi ze addéieren.
+Gitt IMAP Server Adress an Port (<Adress> oder <Adress>:[port]):
+Gitt SMTP Server Adress an Port (<Adress> oder <Adress>:[port]):
+Schéckt e Message un eng Adress
+Gitt d'E-Mailadress vum Empfänger un:
+Gitt d'Thema an:
+Gitt Äre Message hei drënner. Schreift "EOF" fir ze bestätegen.
+Schéckt Message...
+Message geschéckt.
+Ongülteg E-Mail Adress. Vergewëssert Iech datt Dir d'Adress richteg geschriwwen hutt an datt et dem Format vum ugewisen Beispill entsprécht:
+Ewechzehuelen e Message
+Ewechzehuelen all Messagen vum Empfänger
+Message {0} vum {1} geläscht vum {2}. {3} Messagen bleiwe fir ze analyséieren.
+Message {0} vum {1} aus der Inbox geläscht. {2} Messagen bleiwe fir ze analyséieren.
+Ännert eng Textdatei
+Maacht eng nei Datei
+De Fichier gëtt et schonn.
+Feeler beim Versuch e Fichier ze kreéieren: {0}
+Ausgefall op de Fichier. Ausgaang Shell ...
+De spezifizéierte Texteditor Kommando gëtt net fonnt.
+Lëscht verfügbar Kommandoen
+Gitt den Texteditor aus a späichert net gespäichert Ännerungen
+Dréckt den Inhalt vun der Datei mat Zeilnummeren op d'Konsole
+Füügt eng nei Zeil mat Text um Enn vun der Datei
+Ewechzehuelen der spezifizéierter Linn Zuel
+Ersetzt e Wuert oder eng Phrase mat engem aneren
+Läscht e Wuert oder Ausdrock vun der Linnnummer
+Läscht e Charakter aus Zeechennummer an spezifizéierter Linn
+Geläscht Linn.
+Spezifizéiert Linnnummer {0} ass keng valabel Zuel.
+Lafen am séchere Modus. Etapp iwwersprongen ...
+>> Remote Debug and Chat: Versioun
+>> Är Adress ass {0}.
+>> Ären Numm ass {0}.
+Kommando {0} net fonnt. Benotzt "/ Hëllef" fir d'Lëscht ze gesinn.
+Index {0} ongëlteg. Et gi {1} Stackspuren. Index ass null-baséiert, also probéiert mat 1 ze subtrahéieren.
+Nee Stack Spure
+Weist lescht Stack Spure op Ausnam
+Weist den aktuelle Benotzernumm an der Sessioun
+Trennt Iech vum Debugger
+Spär en Debug-Apparat duerch IP Adress op
+Block en Debug-Apparat duerch IP Adress
+{0} kann elo erëm mat Remote Debug bäitrieden.
+{0} ass nach net gespaart.
+Feeler beim Luede vun Astellungen
+Et gëtt e Feeler beim Luede vun Astellungen. Dir musst vläicht d'Astellungsdatei kontrolléieren.
+Wielt Sektioun:
+Späicheren Astellungen
+Sortie
+Spezifizéiert Optioun {0} ass ongëlteg.
+D'Äntwert muss numeresch sinn.
+Prompt fir Argumenter beim Boot
+Ënnerhalt Modus Ausléiser
+Kuckt fir Updates beim Startup
+Roueg Sonde
+Show MOTD op Login
+Kloer Écran op Login
+Weist verfügbare Benotzernimm
+Faarweg Shell
+Vereinfacht Hëllef Kommando
+Debug Port
+Download Retry Times
+Log FTP Benotzernumm
+Log FTP IP Adress
+Zréck nëmmen éischt FTP Profil
+Show Zäit / Datum op Uewer Recht Corner
+Screensaver Timeout an MS
+Debug Gréisst Quot an Bytes
+Gréisst Parse Modus
+Marquee beim Startup
+Laang Zäit an Datum
+Show Hidden Files
+Ongülteg Sektioun aginn. Gitt w.e.g. zréck.
+Géi zréck...
+Aktivéieren
+Desaktivéieren
+Schreift d'Root Passwuert fir ze setzen. Maacht Iech keng Suergen; d'Passwuert ginn als Stäre gewisen.
+Root Passwuert änneren?
+Root Passwuert setzen ...
+Schreift e Remote Debugger Hafen. Et muss numeresch sinn a däerf net scho benotzt ginn. Soss wäert Remote Debugger net den Hafen opmaachen.
+Schreift wéivill Mol de "get" Kommando misst e Feeler eroflueden. Et muss numeresch sinn.
+Schreift wéini de Screensaver no spezifizéierte Millisekonnen ze starten. Et muss numeresch sinn.
+Schreift wéivill Bytes de Debug Log Store kann. Et muss numeresch sinn.
+D'Äntwert ass vläicht net negativ.
+D'Äntwert ass ongëlteg. Kontrolléiert fir sécher ze sinn datt d'Äntwert numeresch ass fir Configuratiouns-Einträg déi Zuelen als Äntwerte brauchen.
+Variabel {0} gëtt op keng vun de Moduler fonnt.
+Ännert Kernel Konfiguratioun
+Aktivéiert 255 Faarwen
+Wëllt Dir verbonne bleiwen?
+Ongülteg Wiel. Unzehuelen nee ...
+Kultur änneren wann Dir Sprooche wiesselt
+Text gewisen
+Schreift all Text Dir wëllt gewisen. Kuerz ass besser.
+Konnt net eropluede {0}
+Fehler beim Ausféiere vun de Remote Debug Kommando {0}: {1}
+Füügt Benotzer
+Füügt Aliasen un Kommandoen
+Injizéiert Argumenter an de Kernel (Restart erfuerderlech)
+Ännert den Hostnumm
+Ännerungen MAL, der MOTD No Login
+Ännerungen MOTD, de Message vum Dag
+Ännert Benotzernumm
+Verwalte Permissiounen fir Benotzer
+Reloads Screensaver Datei an KSMods
+Ewechzehuelen e Benotzer aus der Lëscht
+Den Alias ​​{0} erfollegräich geläscht.
+Ausgefall fir Updates ze kontrolléieren.
+Et gi keng Benotzer méi op der Lëscht.
+Ausgefall Sprooch astellen.
+Feeler beim Versuch d'Notifikatioun ze entloossen.
+usrmgr: Konnt Benotzernumm {0} net erstellen: {1}
+Konnt net de Benotzer ëmbenennen. {0}
+Eng vun den Erlaabnislëschten enthält kee Benotzernumm {0}.
+Konnt net lueden Permissiounen aus dem Fichier: {0}
+Konnt net änneren Hostnumm: {0}
+Benotzer net fonnt
+Ausgefall Passwuert vum Benotzernumm änneren: {0}
+Konnt net kopéieren Datei oder Verzeechnes: {0}
+Konnt net réckelen Datei oder Verzeechnes: {0}
+Kann de Fichier net fannen fir mat String "{0}" ze passen: {1}
+Eroflueden fir de Fichier {0} gescheitert.
+Ausgefall op Remote Dateien: {0}
+Sidd Dir sécher datt Dir {0} <y/n> läschen wëllt?
+Läscht {0}...
+{0} gëtt net um Server fonnt.
+All E-Mail, déi vum {0} gemaach gouf, ginn erfollegräich geläscht.
+Ausgefall fir all E-Mail vun {0} ze läschen.
+Feeler beim Schécken vum Message.
+Plënnert {0} op {1}...
+Geplënnert erfollegräich
+Beweegt Datei oder Verzeechnes an eng aner Datei oder Verzeechnes. Dir kënnt dat och benotze fir Dateien ëmbenennen.
+Ausgefall {0} op {1} ze réckelen.
+Kopéiert {0} op {1}...
+Erfolleg kopéiert
+Kopéiert Datei oder Verzeechnes an eng aner Datei oder Verzeechnes.
+Konnt {0} op {1} kopéieren.
+Beweegt e Message
+Beweegt all Messagen vum Empfänger
+All E-Mail, déi vum {0} gemaach gouf, ginn erfollegräich geplënnert.
+Ausgefall fir all E-Mail ze réckelen, déi vum {0} gemaach gouf.
+Message {0} vum {1} geplënnert vun {2}. {3} Messagen bleiwe fir ze analyséieren.
+Weist Wiederinformatioun fir spezifizéiert Stad. Benotzt OpenWeatherMap.
+-- Wiederinformatioun fir {0} --
+Wieder: {0}
+Drock: {0}
+Fiichtegkeet: {0}
+Dir kënnt Ären eegene API Schlëssel op https://home.openweathermap.org/api_keys kréien.
+Dir kënnt ëmmer consultéieren http://bulk.openweathermap.org/sample/city.list.json.gz fir d'Lëscht vun de Stied mat hiren IDen.
+Preferenze Eenheet fir Temperatur
+Setzt de Kernel op sou datt et Iech fir Argumenter beim Boot freet.
+Ausléiser Ënnerhalt Modus. Dëst deaktivéiert verschidde Konten.
+All Startup gëtt no Updates iwwerpréift.
+Wann Dir Sprooche wiesselt, ännert d'Nimm vum Mount, de Kalenner, asw.
+Wann de Kernel gestart ass, setzt de Root Passwuert.
+Halt d'Hardware probéiere Messagen roueg.
+Show Message vum Dag ier Dir de Loginbildschierm weist.
+Kloer Écran ier Dir Login Écran weist.
+Weist verfügbare Benotzer wann aktivéiert.
+Gëtt de Kärel Faarf Ënnerstëtzung
+Vereinfacht Hëllef Kommando fir all Muschelen
+Ob FTP Benotzernumm aloggen oder net.
+Ob FTP IP Adress aloggen oder net.
+Wielt den éischte Profil nëmmen wann Dir verbënnt.
+D'Zäit an den Datum ginn an der ieweschter rechter Ecke vum Écran gewisen
+Wann aktivéiert, parséiert de Kernel de ganzen Dossier fir seng Gesamtgréisst. Soss wäert nëmmen d'Uewerfläch parséieren.
+Aktivéiert eyecandy beim Startup
+D'Zäit an den Datum wäerte méi laang sinn, voll Mount Nimm ze weisen, asw.
+Weist verstoppte Dateien.
+Wielt Är bevorzugt Eenheet fir Temperatur (dëst gëllt nëmme fir de Kommando "Wieder")
+Mod {0} gestoppt
+{0} v{1} gestoppt
+Mod {0} huet keen Deelnumm. Mod Parsing gescheitert. Iwwerpréift de Quellcode.
+Dir musst Debug Modus aktivéieren ier Dir Debug Log läschen kann.
+{0} nei Messagen sinn an der Inbox ukomm.
+Open "lsmail" fir se ze gesinn.
+Kann de Fichier net läschen: {0}
+Ewechzehuelen engem Verzeechnes oder eng Datei
+Kann {0} net ewechhuelen well et net existéiert.
+Dréckt CTRL + C fir ze verloossen.
+Gitt Informatioun iwwer e Fichier
+Gitt Informatioun iwwer e Verzeechnes
+Kann keng Informatioun iwwer net existent Verzeechnes kréien.
+Kann keng Informatioun iwwer net existent Datei kréien.
+Voll Numm: {0}
+Kreatiounszäit: {0}
+Leschten Zougangszäit: {0}
+Lescht Schreifzäit: {0}
+Attributer: {0}
+Elterenverzeechnes: {0}
+Wou ze fannen: {0}
+Dateigréisst: {0}
+Ännert Attributer vun enger Datei
+Datei net fonnt.
+wou <Attributer> ee vun de folgenden ass:
+De Fichier ass eng normal Datei
+D'Datei ass e Read-only Datei
+De Fichier ass eng verstoppte Datei
+De Fichier ass en Archiv. Benotzt fir Backups.
+Den Attribut "{0}" ass ongëlteg.
+Attribut gouf erfollegräich dobäigesat.
+Attribut gouf erfollegräich geläscht.
+Ausgefall Attributer derbäi.
+Ausgefall Attributer ze läschen.
+Ersetzt e Wuert oder eng Phrase mat engem aneren an enger Zeil
+Rout Faarf Niveau iwwerschratt. Et war {0}.
+Gréng Faarf Niveau iwwerschratt. Et war {0}.
+Blo Faarf Niveau iwwerschratt. Et war {0}.
+Aktivéiert richteg Faarwen
+Konnt net deblockéieren {0}.
+{0} ass scho gespaart.
+{0} kann elo net mat Remote Debug matmaachen.
+Konnt {0} net blockéieren.
+Cycle Faarwen
+Disco wäert Zyklus Faarwen wann ageschalt. Soss, wielt zoufälleg Faarwen.
+Gitt Dateiweeër op Uschlëss un. Dréckt ENTER op engem eidele Wee fir ze bestätegen.
+Maacht e verschlësselte Message op
+Schreift Passwuert fir Schlëssel ID {0}
+Schéckt eng verschlësselte Message un eng Adress
+Eroflueden vum {0}...
+Show Fortschrëtter Bar beim Eroflueden oder Eroplueden vum "get" oder "put" Kommando
+Wann et richteg ass, mécht et "kréien" oder "setzen" d'Fortschrëtterbar ze weisen beim Download oder Eroplueden.
+Eroplueden e Fichier op spezifizéierter Websäit
+Pings eng Adress
+Eroplueden {0} op {1}...
+Eroplueden ass ofgeschloss.
+Benotzt w.e.g. "ftp" wann Dir Dateien op den FTP-Server eropluede wëllt.
+Eroplueden ass gescheitert beim Versuch {0}: {1}
+Schreift wéivill Mol de "put" Kommando sollt e Versuch vu gescheitert Eroplueden. Et muss numeresch sinn.
+Adress kann net eidel ginn.
+Ausgefall {0}: {1}
+Ping gelongen an {0} MS.
+Déi spezifizéiert Linnnummer däerf net méi grouss sinn wéi déi lescht Dateilinnnummer.
+Gefillt wéi: {0}
+Temperatur: {0}
+Wandgeschwindegkeet: {0}
+Wandrichtung: {0}
+Dréckt all Schlëssel fir zréck ze goen.
+Kann den E-Mail-Ordner {0} net erstellen: {1}
+Maacht e Verzeechnes am aktuellen Aarbechtsverzeechnes
+Ewechzehuelen e Verzeechnes aus dem aktuellen Aarbechtsverzeichnis
+Mail Dossier {0} net fonnt.
+Kann den E-Mail Ordner {0} net läschen: {1}
+{0}, erstallt am {1} {2}, geännert am {3} {4}
+Verifizéiert Sanitéit vun der Datei
+Hashes sinn falsch geformt.
+Hashes passen net.
+Hashes Match.
+Ëmbenannt engem Dossier
+Maacht eng Test Shell op
+* Dréckt all Schlëssel fir de Kärel ze starten oder ESC fir erauszekommen.
+Konnt net starten "{0}": {1}
+Show Mail Message Virschau
+Wann Oplëschtung Mail Messagen, weisen Kierper Virschau.
+Input Faarf
+Lizenz Faarf
+Kontinuéierlech Kärfehler Faarf
+Uncontinuable Kernel Feeler Faarf
+Host Numm Faarf
+Benotzernumm Faarf
+Hannergrondfaarf
+Neutral Text Faarf
+Bühn Faarf
+Feeler Faarf
+FTP Prompt Style
+Mail Prompt Style
+SFTP Prompt Style
+Probéiert Zougang zu ongültege Wee.
+Läscht den Textdatei
+Gitt den Texteditor aus
+Ufroen e Charakter an enger spezifizéierter Linn oder all Linnen
+Iwwerpréift no Updates ass ausgeschalt well Dir eng Entwécklungsversion leeft.
+Schalt den Texteditor Autosave Feature un oder aus.
+Wann autosave aktivéiert ass, gëtt d'Textdatei fir all "n" Sekonnen gespäichert.
+Aktivéiert den Texteditor Autospäicheren
+Text Editor Autosave Intervall
+Späichert d'Datei
+Rekord Chat fir Debug Log
+Recordt Remote Debug Chat fir Debug Log.
+Verspéidung an Millisekonnen
+Wéi vill Millisekonnen ze waarden ier Dir déi nächst Schreifweis maacht?
+Loosst Iech en SSH FTP Server benotzen
+Keng Hëllef fir de Kommando "{0}".
+Invalid VT Sequenz fir RGB Faarf.
+Faarf vun Sekonnen Bar
+Faarf vun Minutt Bar
+Faarf vun Stonnen Bar
+Faarf vun Informatiounen
+Ticken fir d'Faarf z'änneren
+Wann Faarf Cycling aktivéiert ass, wéi vill Ticken ier Dir Faarwen am ProgressClock ännert? 1 Tick = 0,5 Sekonnen
+ProgressClock wäert zoufälleg Faarwen wielen wann et ageschalt ass. Soss benotzt Faarwen aus Configuratioun.
+Maacht en neit Thema
+En neit Thema "{0}" maachen.
+Spuert Thema an den aktuelle Verzeechnes
+Späichert Thema an en anere Verzeechnes ...
+Wielt Faarf mat "<-" an "->" Schlësselen. Dréckt ENTER fir opzehalen. Dréckt "i" fir d'Faarfnummer manuell anzeginn.
+Wielt Faarf mat "<-" an "->" Schlësselen. Benotzt Pfeil erop a Pfeil erof Schlësselen fir tëscht Faarfbereich ze wielen. Dréckt ENTER fir opzehalen. Dréckt "i" fir d'Faarfnummer manuell anzeginn.
+Wëllkomm op de Kärel! - Versioun {0}
+Warnung Faarf
+Optioun Faarf
+Gitt Faarfnummer vun 0 bis 255 an:
+Benotzt "hwinfo" fir erweidert Informatiounen iwwer Hardware.
+Dréckt Hardware Informatioun
+Prozessor Numm:
+Prozessor Bits:
+Partition Dateisystem:
+Partition Gréisst:
+GPU: Eng oder méi vun de Grafike Kaarte konnt net gepréift ginn. Weist souwisou Informatioun ...
+>> Wëllkomm! Dëst ass Är éischte Kéier wann Dir Remote Debug an Chat agitt. Benotzt "/register <name>" fir Iech anzeschreiwen.
+Apparat existéiert schonn.
+Keen esou Apparat.
+Setzt den Apparat Benotzernumm
+Dir sidd schonn ugemellt.
+Moien, {0}!
+Dréckt Inhalt vun der Datei op d'Konsole
+Oder, gitt "Lëschtstied" un dëse Kommando.
+Entrée existéiert schonn.
+Wickelt d'Konsolausgang
+De Kommando ass net wrapbar. Dës Kommandoe sinn wrapbar:
+Extraitéiert e ZIP Archiv
+Erstellt en ZIP Archiv
+Gebaut an {0}
+Feeler beim Download vun Debugdaten
+Et gëtt e Feeler beim Download vun Debugdaten. Kontrolléiert Är Internetverbindung.
+Konnt net finaliséieren Mod {0}: {1}
+Lëscht all gebrannt Evenementer
+Aktuelle Verzeechnes
+Setzt den aktuellen Verzeechnes vun der Shell. Schreift en absolute Wee fir all existent Verzeechnes.
+Wrap Lëscht Ausgänge
+Wickelt d'Lëschtausgaben wann et ze laang schéngt fir déi aktuell Konsolgeometrie.
+Ping!
+{0} huet dech gepingt.
+Späichert Thema an den aktuelle Verzeechnes als ...
+Späichert Thema an en anere Verzeechnes als ...
+Gitt Thema Numm:
+De Benotzer {0} gouf op d'Lëscht "{1}" bäigefüügt.
+De Benotzer {0} gouf aus der "{1}" Lëscht geläscht.
+Invalid Modus {0}
+Lueden Theme Vun Prebuilt Themen ...
+Gitt Thema Dateinumm un ouni d'.json Extensioun:
+Eröffnet e ZIP Archiv
+Gitt d'Zip Shell aus
+Lëscht all Dateien am Archiv
+Extraitéiert eng Datei an e spezifizéierte Verzeichnis oder en aktuellen Verzeechnes
+Ännert Archivverzeechnes
+De spezifizéierte ZIP Shell Kommando gëtt net fonnt.
+Verzeechnes {0} gëtt et net
+Den Archivverzeechnes {0} gëtt et net
+Max Positiounen Zuel
+Wéi vill Positioune si virum Dimm beliicht?
+Lëscht Entrée Faarf
+Lëscht Wäert Faarf
+Verbënnt mat engem SSH Server fir e Kommando auszeféieren.
+Invalid Faarf Spezifizéierer. Vergewëssert Iech datt et am richtege Format ass, dat heescht eng Zuel vun 0-255 wann Dir 255 Faarwen benotzt oder eng VT Sequenz wann Dir richteg Faarf benotzt wéi follegt:
+Feeler an der Test Shell: {0}
+Setzt eng Variabel op e Wäert an engem Skript
+E Feeler Berichterstattung.
+Merci fir d'Erhéijung vun engem Ticket fir eis! Wielt wéi eng Ufro Dir hutt.
+E Problem
+Eng Fonktioun Ufro
+Eng Fro
+Dir musst eng Fonktioun uginn.
+Stellt eng Fro, schreift Är Iddi oder mellt e Problem.
+Dir musst Är Demande schreiwen.
+Et gouf e Feeler an der FTP Shell:
+Onbekannt FTP Shell Feeler:
+Et gouf e Feeler an der SFTP Shell:
+Onbekannt SFTP Shell Feeler:
+Show SSH Banner
+Weist den SSH Server Banner op der Verbindung.
+Wéi wëllt Dir authentifizéieren?
+Privat Schlëssel Datei
+Passwuert
+Gitt de Passwuert fir de Schlëssel {0} an:
+Neutraliséiert en net existente Wee.
+Schlësseldatei {0} gëtt et net.
+Feeler beim Versuch de private Schlëssel derbäi ze ginn:
+Press "t" fir ze wiesselen ugefaangen 255 Faarf Modus.
+Dréckt "t" fir op de richtege Faarfmodus ze wiesselen.
+Et gesäit aus wéi wann Dir kee Benotzer hutt ausser Root. Dëst ass schlecht. Mir guidéieren Iech wéi Dir een erstellt.
+Schreift Äre Benotzernumm.
+Dir musst Äre Benotzernumm schreiwen.
+Schreift Äert Passwuert.
+Dir musst Äert Passwuert schreiwen.
+Wielt Kont Typ.
+Administrator: Dëse Kontentyp huet déi meeschte Kraaft am Kärel, wat Iech erlaabt Systemmanagement Programmer ze benotzen.
+Normal Benotzer: Dëse Kont Typ ass liicht méi limitéiert wéi Administrateuren.
+Gratulatioun! Dir hutt en neie Kont gemaach! Fir dëst ofzeschléissen, loggt Iech als neie Kont un.
+mod: Keng Mods fonnt.
+Allgemeng Kommandoen:
+Mod Kommandoen:
+Alias ​​Kommandoen:
+Ënnerhalt Modus
+Sich Verzeechnes
+Grupp vu Weeër getrennt vum Colon. Et funktionnéiert d'selwecht wéi PATH. Schreift e ganze Wee an en Dossier oder en Dossiernumm. Wann Dir fäerdeg sidd, schreift "q". Schreift e Minuszeechen nieft dem Wee fir en existente Verzeechnes ze läschen.
+Keng Mod Kommandoen.
+Keng Aliassbefehle.
+De Faarfwäert ass ausserhalb vum Beräich vun 0-255.
+De wrapbare Kommando gëtt net fonnt.
+Ufroen e Wuert an enger spezifizéierter Linn oder all Linnen
+{0} vun {1} erofgelueden.
+{0} vun {1} eropgelueden.
+Dréckt e String op d'Konsole mat der Faarftyp an der Zeilprint
+Dréckt e String op d'Konsole mat Faarftyp an Zeilprint mat Format Support
+Dréckt eng String op Debugger
+Dréckt eng String fir ze Debugger mat Format Ënnerstëtzung
+Testt d'Kernelfehler Ariichtung
+Testt d'Kernelfehler Ariichtung mat Format Support
+Tester iwwersetzen eng String déi a Ressourcen existéiert op eng spezifesch Sprooch
+Dréckt eng String op d'Konsole a parséiert déi fonnt Plazhalter
+Testt déi regulär Ausdrocksanlag
+Fänkt all Mods un
+Stoppt all Mods
+Aktivéiert oder desaktivéiert Debug
+Aktivéiert oder deaktivéiert Remote Debug
+Testt d'VT Sequenz fir 255 Faarwen
+Testt d'VT Sequenz fir richteg Faarf
+Schéckt eng Notifikatioun fir den Empfänger ze testen
+Tester Drécken Datum mat verschiddene Kalenneren
+Listt all ënnerstëtzt Codepages
+Wat Compiler Variablen sinn an der Applikatioun aktivéiert?
+Tester déi spezifesch Event erhéijen
+Tester d'Hardware ënnersichen
+Testt de Gerempels
+Gitt d'Test Shell aus a fänkt de Kernel un
+Gitt d'Test Shell aus a schalt de Kernel aus
+Späichert den aktuellen Verzeechnes an d'Kernel Konfiguratiounsdatei
+Testt de Lëschte Schrëftsteller mat der String a String Array
+Testt de Lëschte Schrëftsteller mat der ganzer an ganzer Array
+Testt de Lëschte Schrëftsteller mat der Char a Char Array
+Normal String Lëscht:
+Array String Lëscht:
+Normal ganz Zuel Lëscht:
+Array integer Lëscht:
+Normal Charg Lëscht:
+Array Char Lëscht:
+RPC aktivéieren
+RPC Port
+Ob RPC aktivéiert oder net.
+Schreift en RPC Hafen. Et muss numeresch sinn a däerf net scho benotzt ginn. Soss wäert RPC net den Hafen opmaachen.
+RPC net starten well et behënnert ass.
+Lëschte ënnerstëtzt Kulturen
+Sicht no spezifizéierte String an der geliwwerter Datei mat reguläre Ausdréck
+Gesinn, wann Dir e Schlëssel op Zäit Press kann
+De Benotzer huet keng Input an enger fristgerechter Manéier geliwwert.
+Charakter net op Zäit gedréckt.
+Dir hutt de richtege Charakter gedréckt!
+Dir hutt de falsche Charakter gedréckt.
+Dréckt ESC fir ze verloossen.
+Kritt d'Datum an d'Zäitinformatioun
+Millisekonnen:
+Sekonnen:
+Minutten:
+Stonnen:
+Deeg:
+Méint:
+Joer:
+Dag vum Joer:
+Dag vun der Woch:
+Binär:
+Lokal Zäit:
+Universal Zäit:
+Unix Zäit:
+Ausgefall Datum Informatiounen fir ze analyséieren
+Vergewëssert Iech datt d'Format richteg ass.
+Datum:
+Zäit:
+Setzt Fichier Permissiounen. Dëst gëtt nëmmen op FTP-Server ënnerstëtzt déi Unix lafen.
+Setzt den Typ fir dës Sessioun
+Dir musst mam Server konnektéieren ier Dir Dateiesystem Operatiounen ausféiert.
+Ausgefall fir Permissiounen vun {0} op {1} ze setzen.
+Permissiounen erfollegräich fir Datei gesat
+Datentyp op ASCII gesat!
+Datentyp op Binär gesat!
+Invalid Datentyp.
+Opgepasst datt déi meescht Dateien net mat dësem Modus eroflueden oder eroplueden, sou datt mir de Binäre Modus an de meeschte Situatioune recommandéieren.
+Probéiert e RPC Kommando ze schécken wärend RPC net ugefaang huet.
+Fade Out Verzögerung a Millisekonne
+Max Fade Schrëtt
+Wéi vill Millisekonnen ze waarden ier Dir den Text verschwannen?
+Wéi vill Fade Schrëtt ze maachen?
+Voll Sonde
+Wann et richteg ass, probéiert all Hardware; soss, wäert nëmmen déi néideg Hardware Sonde.
+Ausgefall Screensaver {0} aus der Konfiguratioun ze läschen.
+Kritt personaliséiert Saver Astellungen
+Setzt personaliséiert Saver Astellungen
+Astellungen erfollegräich fir Screensaver agestallt
+Ausgefall fir eng Astellung fir Screensaver ze setzen
+Maacht eng RSS Shell op fir d'Feeds ze liesen
+Verléisst RSS Shell a geet zréck op de Kernel
+Ännert de Feedlink
+Lëscht all Feeds
+Liest e Feed an engem Webbrowser
+De spezifizéierte RSS Shell Kommando gëtt net fonnt.
+Invalid RSS2 Feed.
+Invalid RSS1 Feed.
+Invalid Atom Feed.
+Gitt eng RSS Feed URL an:
+Invalid RSS Feed Typ.
+Onbekannt Shell Feeler:
+Kritt den Artikel Info
+Artikelnummer kéint net méi grouss sinn wéi déi verfügbar Artikelen.
+Titel:
+Link:
+Kritt d'Feedinformatioun
+Beschreiwung:
+Feed Typ:
+Zuel vun Artikelen:
+Artikel huet kee Link!
+Ausgefall fir eng Lëscht vun Dateiesystementrée fir den Verzeechnes ze maachen
+Dateisystem Zort Modus
+Dateisystem Zort Richtung
+Kontrolléiert wéi d'Dateien zortéiert ginn.
+Kontrolléiert d'Richtung vun der Sortéierung vum Dateisystem ob et opsteigend oder erof geet.
+Schreift erëm Verspéidung a Millisekonne
+Wéivill Millisekonnen ze waarden ier Dir nach eng Kéier Text schreift?
+Schreift all Text Dir wëllt gewisen. Méi laang ass besser.
+Minimum Schreifgeschwindegkeet an WPM
+Maximal Schreifgeschwindegkeet an WPM
+Wahrscheinlechkeet vun Tippfeeler am Prozent
+Konnt den aktuelle Verzeichnis net späicheren: {0}
+Wipes fir Richtung ze änneren
+Wéi vill Wëschen ze maachen ier Dir zoufälleg Richtung ännert?
+Etapp fäerdeg an
+Intern Initialiséierung fäerdeg an
+Referenzéiert Datei {0} net fonnt. Dëse Mod funktionnéiert vläicht net richteg ouni dës Datei.
+Start Mod
+Kommando Numm:
+Kommando Definitioun:
+Kommando Typ:
+Streng Kommando?
+Mod Versioun:
+Mod {0} net fonnt.
+Den Texteditor huet nach keen Dateistream opgemaach.
+String ersat.
+Een oder béid vun den Zuelen sinn net numeresch.
+Wuert geläscht.
+Charakter geläscht.
+Wëllkomm op Astellungen!
+Feeler beim Ausféiere vum SSH Kommando
+Feeler op SSH Shell
+- App Informatioun
+Testt den Dictionnaire Schrëftsteller mat der String a String Array
+Testt den Wierderbuch Schrëftsteller mat der Char an Char Array
+Testt den Dictionnaire Schrëftsteller mat der ganzer an ganzer Array
+Normal String Wierderbuch:
+Array String Wierderbuch:
+Normal ganztall Wierderbuch:
+Array integer Wierderbuch:
+Normal Char Dictionnaire:
+Array Char dictionary:
+Wëllkomm op Test Shell!
+Show Fortschrëtter op Dateisystem Operatiounen
+Weist wat fir eng Datei während de Dateiesystemoperatioune veraarbecht gëtt
+wou HardwareType wäert sinn
+Entweder den Hardwaretyp {0} ass net gepréift oder ass net valabel.
+Den Hardwaretyp {0} ass nach net gepréift. Wann Dir sécher sidd datt et gepréift ass, restart de Kernel mat Debugging aktivéiert.
+Partitionen net op d'Lëscht parséiert.
+Dréckt e Separator
+Dréckt e Separator mat Format Ënnerstëtzung
+Dréckt e Separator mat Faarfunterstëtzung
+Dréckt e Separator mat Faarf a Format Ënnerstëtzung
+Ëmmer zentréiert
+Schreift all Text Dir wëllt gewisen.
+Ob den Text op der Marquee ëmmer zentréiert ass.
+Argument {0} net fonnt fir ze sprëtzen.
+Kommandozeilargument {0} net fonnt.
+Screensaver huet e Feeler erlieft beim Affichage: {0}. Dréckt all Schlëssel fir ze verloossen.
+Virschau...
+Hei ass wéi Äert Thema ausgesäit:
+Wrapable Kommandoen:
+Mod {0} huet e ongültegt Kommando. Mod Parsing gescheitert. Iwwerpréift de Quellcode.
+Mod Deeler:
+Benotzt Console API
+Ob d'Console API ze benotzen fir Text ze läschen oder déi méi séier Linn Clearing VT Sequenz ze benotzen. Wann falsch, benotzt Marquee déi entspriechend VT Sequenz. Soss wäert et déi wahrscheinlech méi lues Console API benotzen.
+URL opmaachen ... Vergewëssert Iech d'Schrëtt um Bildschierm ze verfollegen.
+Et gi keng Deeler am Mod.
+Mod Numm:
+Mod Dateinumm:
+Mod Datei Wee:
+Deel Versioun:
+Minimum Unzuel vun erfuerderlechen Argumenter:
+Argumenter néideg?
+Wrapable Kommando?
+Astellung Shell Variabel?
+Kann net am Ënnerhalt Modus lafen?
+Verouderd?
+RSS Prompt Style
+Text Edit Prompt Style
+Zip Shell Prompt Style
+Dossier ass eidel.
+Erfollegräich ënnersicht {0}.
+Verbose Sonde
+Maachen Hardware-probing Messagen e bësse sproochlech.
+> Et gi keng Informatiounen iwwer Rummen.
+Dir musst Ären Numm schreiwen.
+Schéint d'JSON Datei
+Konfiguratiounskategorie {0} net fonnt.
+Configuratioun Entrée {0} net fonnt.
+Benotzt Beats Per Minute
+Ob d'Beats Per Minute Eenheet benotzt fir déi nächst Faarf ze schreiwen.
+Verzögerung an Beats Per Minute
+Beat Faarf
+Wéi vill Beats pro Minutt fir ze waarden ier Dir déi nächst Schreifweis maacht?
+BeatFader wielt zoufälleg Faarwen wann et aktivéiert ass. Soss benotzt Faarwen aus Configuratioun.
+Benotzerdefinéiert Startup Banner
+Luet den Remote-Ordner an de lokale Verzeichnis mat binär oder Text erof
+Eroplueden lokalen Dossier an de Fernverzeechnes mat binär oder Text
+Den Dossier {0} eroflueden...
+Erofgelueden Dossier {0}.
+Eroflueden fir den Dossier {0} gescheitert.
+Eroplueden Dossier {0}...
+Eropgelueden Dossier {0}
+Dréckt "c" fir voll Faarfcode ze schreiwen.
+Gitt Faarfcode un deen dës Formater entsprécht:
+Miniméiert d'JSON Datei
+Neie Écran Verzögerung a Millisekonne
+Kolonne Grof
+Linn Fill Threshold
+Line Fill Capping Wahrscheinlechkeet a Prozent
+Linn Fëll Typ
+Wéi vill Millisekonnen ze waarden ier Dir den Text erëm um neien Écran schreift?
+D'Textkolonnen déi gedréckt ginn.
+Wéivill Zeechen ze schreiwen ier Dir de "Linn Fëllung" ausléist?
+Méiglechkeet, datt d'Linn fëllt Muster an all Mutzen am Prozent gedréckt ginn
+Linn Fëllmuster Typ
+D'Äntwert ass vläicht net null.
+D'Äntwert däerf d'Entréen net iwwerschreiden.
+Ännerungen späicheren ...
+Verwalte Är Mods
+Mod Management ass am Safe Modus deaktivéiert.
+Ongülteg Kommando {0}. Kontrolléiert d'Benotzung hei ënnen:
+Mod net fonnt oder Datei huet ongëlteg Zeechen.
+Wahrscheinlechkeet vun verpasst am Prozent
+Screensaver Debugging aktivéieren
+Aktivéiert Debugging fir Screensavers. Notéiert w.e.g. datt et séier den Debug-Logbuch ausfëllt an de Screensaver liicht verlangsamt, ofhängeg vum benotzte Screensaver. Nëmme funktionnéiert wann Kernel Debugging fir diagnostesch Zwecker aktivéiert ass.
+Kee Netzwierk beim Download vun Debugdaten
+Kontrolléiert Är Internetverbindung a probéiert nach eng Kéier.
+D'manuell Säit {0} ass ongëlteg.
+Betruecht dës Handbuch Säit auszefëllen.
+Dréckt all Schlëssel fir d'Handbuch Säit ze liesen ...
+Dës Handbuch Säit brauch Aarbecht fir:
+Manuell Säit {0} net fonnt.
+Mod manuell

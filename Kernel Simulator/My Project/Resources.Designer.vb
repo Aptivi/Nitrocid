@@ -115,11 +115,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Beskikbare opdragte: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Bevelinspuiting is gekanselleer.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ingespuite argumente sal geskeduleer word om by volgende herselflaai te loop.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fout tydens die ontleding van regte opdragreëlargumente: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleursjabloon {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property afr() As String
+            Get
+                Return ResourceManager.GetString("afr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;al&apos;awamir almtaht: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;aktaba al&apos;amr:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;tam &apos;iilgha&apos; haqn al&apos;awamir.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;aifsil bayn wasaytat altamhid bifawasil bidun masafat , ealaa sabil almithal , \&quot;motd � gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;awamir munfasilat ealaa &apos; [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;sayatimu jadwlat alhujaj almahqunat litashghiliha eind &apos;iieadat altamhid altaali.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;khata &apos;athna&apos; tahlil wasayitat satar al&apos;awamir alhaqiqiat: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;qalib &apos;alwan ghayr salih {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pr [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb() As String
             Get
@@ -130,14 +146,45 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;الأوامر المتاحة: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;اكتب الأمر:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;تم إلغاء حقن الأوامر.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;افصل بين وسيطات التمهيد بفواصل بدون مسافات ، على سبيل المثال ، \&quot;motd ، gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;أوامر منفصلة على &apos;cmdinject&apos; مع colons بمسافات ، على س [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;خطأ أثناء تحليل وسيطات سطر الأوامر الحقيقية: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;قالب ألوان غير صالح {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb_T() As String
             Get
                 Return ResourceManager.GetString("arb_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Hasaneli hramanner՝ {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Hramani nerarkumy ch’egharkvel e.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Nerarkvats argumentnery nakhatesvum e gortsarkel hajord veragortsarkman zhamanak:&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Skhal՝ irakan hramani toghi argumentnery verlutselis՝ {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Anvaver guyni dzevanmush {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be p [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property arm() As String
+            Get
+                Return ResourceManager.GetString("arm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Հասանելի հրամաններ՝ {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Հրամանի ներարկումը չեղարկվել է։&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ներարկված արգումենտները նախատեսվում է գործարկել հաջորդ վերագործարկման ժամանակ:&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Սխալ՝ իրական հրամանի տողի արգումենտները վերլուծելիս՝ {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Անվավեր գույնի ձևանմուշ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed.  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property arm_T() As String
+            Get
+                Return ResourceManager.GetString("arm_T", resourceCulture)
             End Get
         End Property
         
@@ -213,10 +260,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mövcud əmrlər: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Komanda yazın:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komanda inyeksiyası ləğv edildi.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Boşluqları vergüllə ayırın, məsələn &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;Cmdinject&apos; əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, &apos;cmdinject  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Enjekte edilmiş arqumentlərin növbəti yenidən başlatma zamanı işə salınması planlaşdırılır.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Həqiqi əmr sətri arqumentlərini təhlil edərkən səhv: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Yanlış rəng şablonu {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property azr() As String
             Get
@@ -253,10 +301,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha kamānḍa: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Ādēśa likhuna: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kamānḍa iñjēkaśana bātila karā haẏēchē.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;spēsa saha kōlan [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Inajēkṭēḍa ārgumēnṭaguli parabartī ribuṭē cālānōra jan&apos;ya nirdhārita habē.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Āsala kamānḍa-lā&apos;ina ārgumēnṭaguli pārsa karāra samaẏa truṭi: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Abaidha raṅēra ṭēmpalēṭa {0}&quot;,
+        '''  &quot;hwprobe: Your hardware wil [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ben() As String
             Get
@@ -267,10 +316,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;উপলব্ধ কমান্ড: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;আদেশ লিখুন:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;কমান্ড ইঞ্জেকশন বাতিল করা হয়েছে।&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ইনজেক্টেড আর্গুমেন্টগুলি পরবর্তী রিবুটে চালানোর জন্য নির্ধারিত হবে।&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;আসল কমান্ড-লাইন আর্গুমেন্টগুলি পার্স করার সময় ত্রুটি: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;অবৈধ রঙের টেম্পলেট {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;:  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ben_T() As String
             Get
@@ -302,6 +352,36 @@ Namespace My.Resources
         Public ReadOnly Property BlackOnWhite() As String
             Get
                 Return ResourceManager.GetString("BlackOnWhite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Nalichni komandi: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Inzhektiraneto na komanda e otmeneno.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Inzhektiranite argumenti shte bŭdat planirani za izpŭlnenie pri sledvashtoto restartirane.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Greshka pri analizirane na realni argumenti ot komandniya red: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nevaliden tsveten shablon {0}&quot;,
+        '''  &quot;hwprobe: Yo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property blg() As String
+            Get
+                Return ResourceManager.GetString("blg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Налични команди: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Инжектирането на команда е отменено.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Инжектираните аргументи ще бъдат планирани за изпълнение при следващото рестартиране.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Грешка при анализиране на реални аргументи от командния ред: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Невалиден цветен шаблон {0}&quot;,
+        '''  &quot;hwprobe: Your hardware [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property blg_T() As String
+            Get
+                Return ResourceManager.GetString("blg_T", resourceCulture)
             End Get
         End Property
         
@@ -428,10 +508,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Napišite komandu:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injekcija naredbe je otkazana.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Odvojeni argumenti za pokretanje sa zarezima bez razmaka, na primjer, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojene naredbe na &apos;cmdinject&apos; s  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ubrizgani argumenti će biti zakazani za izvođenje pri sljedećem ponovnom pokretanju.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Greška prilikom raščlanjivanja stvarnih argumenata naredbenog retka: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nevažeći predložak boje {0}&quot;,
+        '''  &quot;hwprobe: Your hardwa [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property bsn() As String
             Get
@@ -442,10 +523,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Eskuragarri dauden komandoak: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Idatzi komandoa:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komando injekzioa bertan behera utzi da.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bereiztu abio-argumentuak komarik zuriunerik gabe, adibidez, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Bereiztu komandoak &apos;cm [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektatutako argumentuak hurrengo berrabiaraztean exekutatzeko programatuta egongo da.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Errorea benetako komando-lerroko argumentuak analizatzean: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Kolore txantiloia baliogabea {0}&quot;,
+        '''  &quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property bsq() As String
             Get
@@ -455,11 +537,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Anaa nga mga sugo: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Gikansela ang command injection.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ang gi-inject nga mga argumento gikatakda nga modagan sa sunod nga pag-reboot.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Sayop samtang nag-parse sa tinuod nga mga argumento sa command-line: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Dili balido nga template sa kolor {0}&quot;,
+        '''  &quot;hwprobe: Your [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property cbn() As String
+            Get
+                Return ResourceManager.GetString("cbn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Malamulo omwe alipo: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Lembani lamulo:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Jekeseni wamalamulo waletsedwa.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Siyanitsani zotsutsana za boot ndi makasitomala opanda malo, mwachitsanzo, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Patulani malamulo pa &apos;cmdin [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zoyambitsa jekeseni zidzakonzedwa poyambiranso.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Zalakwitsa posanthula mfundo zenizeni za mzere wa lamulo: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Chizindikiro cha mtundu cholakwika {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait... [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ccw() As String
             Get
@@ -470,10 +568,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Xiě mìnglìng: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào f [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe:  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi() As String
             Get
@@ -484,15 +583,47 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;编写命令：&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;引导参数之间用逗号分隔，不带空格，例如&apos;motd，gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;在&apos;cmdinject&apos;上用冒号分隔空格的命令，例如&apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;&quot;,
-        '''  &quot;Note that the &apos;debug&apos; argument does not fully cover the k [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的参数将计划在下次重新引导时运行。&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;解析实际的命令行参数时出错：{0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;无效的颜色模板{0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
+        '''  &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU内核无 [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi_T() As String
             Get
                 Return ResourceManager.GetString("chi_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng:{0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng bèi ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò:{0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property cnt() As String
+            Get
+                Return ResourceManager.GetString("cnt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的參數將被安排在下次重新啟動時運行。&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;解析實際命令行參數時出錯：{0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;無效的顏色模板 {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
+        '''  &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一個或多個 CPU 內 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property cnt_T() As String
+            Get
+                Return ResourceManager.GetString("cnt_T", resourceCulture)
             End Get
         End Property
         
@@ -508,10 +639,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne naredbe: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Napisati naredbu:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Ukidanje naredbe je otkazano.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argumente pokretanja odvojite zarezima bez razmaka, na primjer, \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojite naredbe na &apos;cmdinject&apos; kolonam [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektirani argumenti treba se pokrenuti pri sljedećem ponovnom pokretanju.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Pogreška prilikom raščlanjivanja stvarnih argumenata naredbenog retka: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nevažeći predložak boja {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cro() As String
             Get
@@ -522,10 +654,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandi dispunibili: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Scrive cumandamentu:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione di cumandamentu hè stata annullata.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate argumenti di avvio cù virgole senza spazi, per esempiu, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandamenti sep [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;L&apos;argumenti iniettati saranu pianificati per esse eseguiti à u prossimu riavvio.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Errore durante l&apos;analisi di veri argumenti di riga di cummanda: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modellu di culore invalidu {0}&quot;,
+        '''  &quot;hwprob [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property csc() As String
             Get
@@ -536,10 +669,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Ordres disponibles: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Escriu l&apos;ordre:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;La injecció d’ordres s’ha cancel·lat.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separeu els arguments d&apos;arrencada amb comes sense espais, per exemple, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separeu les ordres de &apos;cmd [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Els arguments injectats es programaran per executar-se al proper reinici.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error en analitzar arguments de línia de comandes reals: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no vàlida {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will b [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ctl() As String
             Get
@@ -550,10 +684,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupné příkazy: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Příkaz Write:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Příkazové injekce byla zrušena.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argumenty spouštění oddělte čárkami bez mezer, například &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Samostatné příkazy na &apos;cmdinject&apos; s dvojtečkami s  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vložené argumenty budou naplánovány na další restart.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Chyba při analýze reálných argumentů příkazového řádku: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona barev {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cze() As String
             Get
@@ -564,10 +699,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tilgængelige kommandoer: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjektion er annulleret.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Adskil boot-argumenter med kommaer uden mellemrum, for eksempel &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate kommandoer på &apos;cmdinject [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injicerede argumenter vil blive planlagt til at køre ved næste genstart.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fejl under analyse af ægte kommandolinjeargumenter: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ugyldig farveskabelon {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Ple [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property dan() As String
             Get
@@ -604,10 +740,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Beschikbare opdrachten: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Schrijf commando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Commando-injectie is geannuleerd.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Aparte opstartargumenten met komma&apos;s zonder spaties, bijvoorbeeld &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Afzonderlijke opdrachten op &apos; [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fout tijdens het parseren van echte opdrachtregelargumenten: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleurensjabloon {0}&quot;,
+        '''  &quot;hw [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property dtc() As String
             Get
@@ -618,10 +755,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Write command: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate commands on &apos;cmdinject&apos;  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled to run at next reboot.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error while parsing real command-line arguments: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property eng() As String
             Get
@@ -632,10 +770,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Käytettävissä olevat komennot: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Kirjoita komento:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komentosuihku on peruutettu.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Erota komennot &apos;cmdinje [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektoidut argumentit ajoitetaan seuraavassa uudelleenkäynnistyksessä.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Virhe todellisia komentorivin argumentteja jäsennettäessä: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Virheellinen värimalli {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pr [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property fin() As String
             Get
@@ -646,10 +785,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mga magagamit na utos: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Sumulat ng utos:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kinansela ang command injection.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Paghiwalayin ang mga argumento ng boot sa mga kuwit nang walang puwang, halimbawa, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Paghiwalayin an [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ang mga na-injected na argumento ay maiiskedyul na tumakbo sa susunod na pag-reboot.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error habang ini-parse ang tunay na mga argumento sa linya ng utos: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Di-wastong template ng kulay {0}&quot;,
+        '''  &quot;hwprobe:  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property flp() As String
             Get
@@ -660,10 +800,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Commandes disponibles: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Commande d&apos;écriture: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;injection de commande a été annulée.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Séparez les arguments de démarrage par des virgules sans espaces, par exemple \&quot;motd,gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Séparez  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Les arguments injectés seront programmés pour s&apos;exécuter au prochain redémarrage.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erreur lors de l&apos;analyse des arguments de ligne de commande réels: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modèle de couleur non valide {0}&quot;,
+        '''  &quot;hwprobe [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property fre() As String
             Get
@@ -674,10 +815,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Verfügbare Befehle: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Schreibbefehl: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Die Befehlsinjektion wurde abgebrochen.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Trennen Sie Befehle in &apos;cmdin [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injizierte Argumente werden für den nächsten Neustart geplant.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fehler beim Analysieren von echten Befehlszeilenargumenten: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ungültige Farbvorlage {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Ple [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ger() As String
             Get
@@ -688,10 +830,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos dispoñibles: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Escribir comando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Cancelouse a inxección de ordes.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe os argumentos de arranque con comas sen espazos, por exemplo, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separe os comandos de &apos;cmdinj [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Os argumentos inxectados programaranse para executarse no seguinte reinicio.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erro ao analizar argumentos reais de liña de comandos: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modelo de cor non válido {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be prob [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property glc() As String
             Get
@@ -728,6 +871,36 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Diathésimes entolés: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;I énesi entolís échei akyrotheí.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ta epicheirímata pou échoun eisachtheí tha programmatistoún na ektelestoún stin epómeni epanekkínisi.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Sfálma katá tin análysi pragmatikón orismáton grammís entolón: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Mi énkyro prótypo chrómatos {0}&quot;,
+        '''  &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property grk() As String
+            Get
+                Return ResourceManager.GetString("grk", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Διαθέσιμες εντολές: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Η ένεση εντολής έχει ακυρωθεί.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Τα επιχειρήματα που έχουν εισαχθεί θα προγραμματιστούν να εκτελεστούν στην επόμενη επανεκκίνηση.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Σφάλμα κατά την ανάλυση πραγματικών ορισμάτων γραμμής εντολών: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Μη έγκυρο πρότυπο χρώματος {0}&quot;,
+        '''  &quot;hwprobe:  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property grk_T() As String
+            Get
+                Return ResourceManager.GetString("grk_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;11&quot;,
         '''    &quot;LicenseColor&quot;: &quot;11&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;3&quot;,
@@ -755,10 +928,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;ઉપલબ્ધ આદેશો: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;આદેશ લખો:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;આદેશ ઇન્જેક્શન રદ કરવામાં આવ્યું છે.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ખાલી જગ્યાઓ વગર અલ્પવિરામથી બુટ દલીલો અલગ કરો, ઉદાહરણ તરીકે, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;જગ્યાઓ સાથે કોલોન સાથે &apos;cmdinject&apos; પર અલગ આદેશો,  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ઇન્જેક્ટેડ દલીલો આગામી રીબુટ સમયે ચાલશે.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;વાસ્તવિક કમાન્ડ લાઇન દલીલોનું વિશ્લેષણ કરતી વખતે ભૂલ: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;અમાન્ય રંગ નમૂનો {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: તમારા હાર્ડવેરની ત [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property guj() As String
             Get
@@ -769,10 +943,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha ādēśō: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Ādēśa lakhō:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Ādēśa injēkśana rada karavāmāṁ āvyuṁ chē.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Khālī jagyā&apos;ō vagara alpavirāmathī buṭa dalīlō alaga karō, udāharaṇa tarīkē, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;jagyā&apos;ō sāthē kōlōna s [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injēkṭēḍa dalīlō āgāmī rībuṭa samayē cālaśē.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Vāstavika kamānḍa lā&apos;ina dalīlōnuṁ viślēṣaṇa karatī vakhatē bhūla: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Amān&apos;ya raṅga namūnō {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property guj_T() As String
             Get
@@ -808,11 +983,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Rendelkezésre álló parancsok: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;A parancsinjekciót törölték.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;A beadott argumentumok a következő újraindításkor futnak.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Hiba a valódi parancssori argumentumok elemzése során: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Érvénytelen színsablon {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait.. [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hng() As String
+            Get
+                Return ResourceManager.GetString("hng", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kòmandman ki disponib: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Ekri lòd:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Piki lòd te anile.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Agiman bòt separe ak vigil san espas, pou egzanp, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kòmandman apa sou &apos;cmdinject&apos; ak kolon ak espas, pou egzanp, &apos;cmdinje [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Piki agiman yo pral pwograme yo kouri nan pwochen rdemare.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erè pandan wap analize agiman liy kòmand reyèl la: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modèl koulè ki pa valab {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Mater [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property hti() As String
             Get
@@ -822,11 +1013,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Akwai umarni: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;An soke allurar umarni.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Za a shirya muhawarar allurar da za ta yi aiki a sake yi na gaba.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Kuskure yayin tantance ainihin mahawararra-layin umarni: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Samfurin launi mara inganci {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;h [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hus() As String
+            Get
+                Return ResourceManager.GetString("hus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Nā kauoha i loaʻa: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Kākau kauoha:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Ua hoʻopau ʻia ka ʻoki kauoha.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;E hoʻokaʻawale i nā paio puʻupuʻu me nā koma me ka ʻole o nā hakahaka, no ka laʻana, &apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;E hoʻokaʻawale i nā kau [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;E hoʻonohonoho ʻia nā paio i kuhi ʻia i ka wā hou.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Hewa i ka wā e wehewehe nei i nā paio laina kauoha maoli: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Hōʻailona kala ʻānō hewa {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprob [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property hwi() As String
             Get
@@ -836,11 +1043,68 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;4v41l4bl3 c0mm4nd5: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;c0mm4nd 1nj3c710n h45 b33n c4nc3ll3d.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;1nj3c73d 4r6um3n75 w1ll b3 5ch3dul3d 70 run 47 n3x7 r3b007.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;3rr0r wh1l3 p4r51n6 r34l c0mm4nd-l1n3 4r6um3n75: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;1nv4l1d c0l0r 73mpl473 {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hxr_1() As String
+            Get
+                Return ResourceManager.GetString("hxr_1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;4\\\\/4!|_4|3|_3 (0/\\\\/\\\\/\\\\/\\\\4|\\\\||)5: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;(0/\\\\/\\\\/\\\\/\\\\4|\\\\||) !|\\\\|_|3(7!0|\\\\| |-|45 |333|\\\\| (4|\\\\|(3|_|_3|).&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_|3(73|) 4|29(_)/\\\\/\\\\3|\\\\|75 \\\\/\\\\/!|_|_ |33 5(|-|3|)(_)|_3|) 70 |2(_)|\\\\| 47 |\\\\|3&gt;&lt;7 |23|3007.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;3|2|20|2 \\\\/\\\\/|-|!|_3 |D4|25!|\\\ [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hxr_2() As String
+            Get
+                Return ResourceManager.GetString("hxr_2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;4\\\\/4!14813 (0|\\\\/||\\\\/|4|\\\\||)5: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;(0|\\\\/||\\\\/|4|\\\\||) !|\\\\|_)3(+!0|\\\\| |-|45 833|\\\\| (4|\\\\|(3113|).&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_)3(+3|) 4|26|_||\\\\/|3|\\\\|+5 \\\\|/!11 83 5(|-|3|)|_|13|) +0 |2|_||\\\\| 4+ |\\\\|3%+ |23800+.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;3|2|20|2 \\\\|/|-|!13 |&gt;4|25!|\\\\|6 |2341 (0|\\\\/||\\\\/|4|\\\\||)- [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hxr_3() As String
+            Get
+                Return ResourceManager.GetString("hxr_3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Tiltækar skipanir: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Skipunarsprautun hefur verið hætt.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Inndælt rök verða áætlað að keyra við næstu endurræsingu.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Villa við þáttun raunverulegra skipanalínubreyta: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ógilt litasniðmát {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: V [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property icl() As String
+            Get
+                Return ResourceManager.GetString("icl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;upalabdh aadesh: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;kamaand likhen: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;kamaand injekshan radd kar diya gaya hai.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;rikt sthaan vaale kolan ke s [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;asalee kamaand lain tarkon ko paars karate samay truti: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;amaany rang tempalet {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind() As String
             Get
@@ -851,10 +1115,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेश: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;कमांड लिखें:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;कमांड इंजेक्शन रद्द कर दिया गया है।&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;रिक्त स्थान के बिना अल्पविराम के साथ अलग बूट तर्क, उदाहरण के लिए, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;रिक्त स्थान के साथ कॉलन के साथ &apos;cmdinject&apos;  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;इंजेक्ट किए गए तर्कों को अगले रिबूट पर चलाने के लिए निर्धारित किया जाएगा।&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;वास्तविक कमांड-लाइन तर्कों को पार्स करते समय त्रुटि: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;अमान्य रंग टेम्पलेट {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait. [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind_T() As String
             Get
@@ -865,10 +1130,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Orduithe ar fáil: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Scríobh ordú:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Tá instealladh ordaithe curtha ar ceal.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argóintí tosaithe ar leithligh le camóga gan spásanna, mar shampla, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Orduithe ar leithligh ar &apos;cmdin [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Beidh argóintí insteallta sceidealta le reáchtáil ag an gcéad atosaigh eile.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Earráid agus fíor-argóintí líne ordaithe á parsáil: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Teimpléad dathanna neamhbhailí {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will b [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property iri() As String
             Get
@@ -879,10 +1145,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandi disponibili: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Scrivi il comando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione del comando è stata annullata.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separare gli argomenti di avvio con virgole senza spazi, ad esempio \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandi separati s [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Errore durante l&apos;analisi degli argomenti della riga di comando reali: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modello di colore non valido {0}&quot;,
+        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ita() As String
             Get
@@ -893,10 +1160,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Riyō kanōna komando: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Kakikomi komando: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandoinjekushon wa kyanseru sa remashita. &quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Būto hikisū o supēsu nashi no kanma de kugirimasu. Tatoeba, `motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos; no komando o s [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Chūnyū sa reta hikisū wa, jikai no saikidōji ni jikkō sa reru yō ni sukejūru sa remasu. &quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Jissai no komandorainhikisū no kaiseki-chū ni erā ga hassei shimashita: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Mukōna karātenpurēto {0} &quot;,
+        '''  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jpn() As String
             Get
@@ -907,11 +1175,12 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;利用可能なコマンド：{0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;書き込みコマンド：&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;コマンドインジェクションはキャンセルされました。&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ブート引数をスペースなしのカンマで区切ります。たとえば、「motd、gpuprobe」&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos;のコマンドをスペース付きのコロンで区切ります。たとえば、 &apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;&quot;,
-        '''  &quot;Note that  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入された引数は、次回の再起動時に実行されるようにスケジュールされます。&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;実際のコマンドライン引数の解析中にエラーが発生しました：{0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;無効なカラーテンプレート{0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
+        '''  &quot;CPU: One or more of the CPU cores fai [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jpn_T() As String
             Get
@@ -922,10 +1191,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Prentah sing kasedhiya: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Tulis prentah:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injeksi komando wis dibatalake.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Pisahake argumen boot karo koma tanpa spasi, contone, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Misahake printah &apos;cmdinject&apos; karo colon kanthi [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumentasi sing disuntik bakal dijadwalake mbukak ing sabanjure.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Kesalahan nalika ngrampungake argumen baris perintah nyata: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Cithakan warna ora valid {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. P [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jvn() As String
             Get
@@ -936,10 +1206,10 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;sayong ganeunghan myeonglyeong : {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;sseugi myeonglyeong :&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;myeonglyeong ju-ib-i chwisodoeeossseubnida.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;gongbaeg-eobs-i swimpyolo gubun doen buting insu (ye : &apos;motd, gpuprobe&apos;)&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;gongbaeg-iissneu [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ju-ib doen insuneun da-eum-e dasi buting hal ttae silhaengdoedolog yeyagdoebnida.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;silje myeonglyeong haeng insuleul gumun bunseoghaneun jung-e olyuga balsaenghaessseubnida : {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;jalmos [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor() As String
             Get
@@ -950,11 +1220,12 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;사용 가능한 명령 : {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;쓰기 명령 :&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;명령 주입이 취소되었습니다.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;공백없이 쉼표로 구분 된 부팅 인수 (예 : &apos;motd, gpuprobe&apos;)&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;공백이있는 콜론으로 &apos;cmdinject&apos;명령을 구분하십시오 (예 : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)&quot;,
-        '''  &quot;Note that the &apos;debu [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;주입 된 인수는 다음에 다시 부팅 할 때 실행되도록 예약됩니다.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;실제 명령 행 인수를 구문 분석하는 중에 오류가 발생했습니다 : {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;잘못된 색상 템플릿 {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
+        '''  &quot;CPU: One or more of the CPU cores faile [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor_T() As String
             Get
@@ -964,11 +1235,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Fermanên berdest: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Derziya fermanê hat betalkirin.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumanên derzîkirî dê bêne plansaz kirin ku di nûvekirina paşîn de werin xebitandin.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Di parkirina argumanên rêza fermanê yên rast de çewtî: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Şablonên rengîn nederbasdar {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property krd() As String
+            Get
+                Return ResourceManager.GetString("krd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Qoldanbalı pärmender: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Jazw parmeni:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandalıq ïnekcïya joyıldı.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bos orınsız ütirmen bölek jüktew argwmentteri, säykes, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;«Cmdinject» boyınşa bos orındar är türli komandalar [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Engizilgen argwmentter kelesi qayta jüktew kezinde iske qosıladı.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Naqtı pärmen jolı argwmentteriniñ taldaw kezindegi qate: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Tüs ülgisi jaramsız {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait... [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kzk() As String
             Get
@@ -979,10 +1266,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Қол жетімді пәрмендер: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Жазу пәрмені:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Командалық инъекция жойылды.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Бос орынсыз үтірмен бөлек жүктеу аргументтері, мысалы, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;«Cmdinject» бойынша бос орындары бар бөлек команда [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Енгізілген аргументтер келесі қайта жүктеу кезінде іске қосылады.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Нақты пәрмен жолы аргументтерін талдау кезіндегі қате: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Түс үлгісі жарамсыз {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kzk_T() As String
             Get
@@ -1046,11 +1334,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;AVAILABLE COMMANDZ: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;COMMAND INJECSHUN HAS BEEN CANCELLD.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;INJECTD ARGUMENTS WILL BE SCHEDULD 2 RUN AT NEXT REBOOT.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;ERROR WHILE PARSIN REAL COMMAND-LINE ARGUMENTS: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;INVALID COLOR TEMPLATE {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;HWPRO [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property lol() As String
+            Get
+                Return ResourceManager.GetString("lol", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Available imperium {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Write mandatum:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Iniectio mandatum irritum est.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Commatibus separatum tabernus sine argumentis per spatia, exempli gratia, &apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separatum praecepisse &apos;cmdinject [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Accedant et tunc currere ad rationes infusum reboot.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Imperium-line cum verus error parsing rationes: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Aliquam color template {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vestri  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ltn() As String
             Get
@@ -1060,11 +1364,42 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Pieejamās komandas: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandas injekcija ir atcelta.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ievadītie argumenti tiks ieplānoti nākamajā atsāknēšanas reizē.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Kļūda, analizējot īstus komandrindas argumentus: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nederīga krāsu veidne {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwpr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ltv() As String
+            Get
+                Return ResourceManager.GetString("ltv", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Verfügbar Kommandoen: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommando Injektioun gouf annuléiert.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injizéiert Argumenter gi geplangt fir beim nächste Restart ze lafen.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Feeler beim Parsing vun echte Kommandozeilargumenter: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ongülteg Faarfschabloun {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Pl [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property lxm() As String
+            Get
+                Return ResourceManager.GetString("lxm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Tulis perintah:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Suntikan arahan telah dibatalkan.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Perintah berasingan pada &apos;cmdinje [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumen yang disuntik akan dijadualkan dijalankan pada reboot seterusnya.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Ralat semasa menghuburkan hujah baris perintah sebenar: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Templat warna tidak sah {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be prob [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property mal() As String
             Get
@@ -1074,25 +1409,54 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;8&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;7&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;8&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;8&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;8&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;7&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;239&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;8&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;8&quot;,
-        '''  &quot;StageColor&quot;: &quot;7&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;8&quot;,
-        '''  &quot;WarningColor&quot;: &quot;8&quot;,
-        '''  &quot;OptionColor&quot;: &quot;7&quot;,
-        '''  &quot;BannerColor&quot;: &quot;7&quot;,
-        '''  &quot;NotificationTitleColor&quot;: &quot;7&quot;,
-        '''  &quot;NotificationDescriptionColor&quot;: &quot;8&quot;,
-        '''  &quot;NotificationProgressColor&quot;: &quot;7&quot;,
-        '''  &quot; [rest of string was truncated]&quot;;.
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostapni komandi: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandnoto vbrizguvanje e otkažano.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektiranite argumenti ḱe bidat planirani da se izvršuvaat pri slednoto restartiranje.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Greška pri analizata na vistinskite argumenti na komandnata linija: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nevažečki šablon vo boja {0}&quot;,
+        '''  &quot;hwprobe: Yo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property mcd() As String
+            Get
+                Return ResourceManager.GetString("mcd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Достапни команди: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Командното вбризгување е откажано.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Инјектираните аргументи ќе бидат планирани да се извршуваат при следното рестартирање.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Грешка при анализата на вистинските аргументи на командната линија: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Неважечки шаблон во боја {0}&quot;,
+        '''  &quot;hwprobe: Your  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property mcd_T() As String
+            Get
+                Return ResourceManager.GetString("mcd_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;8&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;8&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;8&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;8&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;239&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;8&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;8&quot;,
+        '''    &quot;StageColor&quot;: &quot;7&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;8&quot;,
+        '''    &quot;WarningColor&quot;: &quot;8&quot;,
+        '''    &quot;OptionColor&quot;: &quot;7&quot;,
+        '''    &quot;BannerColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;8&quot;,
+        '''    &quot;N [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Metallic() As String
             Get
@@ -1103,10 +1467,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kmandi disponibbli: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Ikteb kmand:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;L-injezzjoni tal-kmand ġiet ikkanċellata.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Issepara argumenti tal-ibbutjar b&apos;virgoli mingħajr spazji, per eżempju, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kmandi separati fuq &apos;cmd [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;L-argumenti injettati se jkunu skedati li jibdew fir-reboot li jmiss.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Żball waqt li analizza argumenti reali tal-linja tal-kmand: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Mudell tal-kulur mhux validu {0}&quot;,
+        '''  &quot;hwprobe: Your hardware wil [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property mts() As String
             Get
@@ -1117,10 +1482,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Tulis perintah:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Perintah injeksi telah dibatalkan.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Pisahkan argumen boot dengan koma tanpa spasi, misalnya, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Pisahkan perintah pada &apos;cmdinject&apos; deng [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumen yang disuntikkan akan dijadwalkan untuk dijalankan pada reboot berikutnya.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Galat saat mem-parsing argumen baris perintah nyata: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Templat warna tidak valid {0}&quot;,
+        '''  &quot;hwprobe: Your hardware wil [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ndo() As String
             Get
@@ -1209,11 +1575,42 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha ādēśaharū: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Ādēśa in̄jēkśana radda gari&apos;ēkō cha.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injēkṭa gari&apos;ēkā tarkaharū arkō ribuṭamā calā&apos;unakō lāgi nirdhārita garinēcha.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Vāstavika ādēśa-lā&apos;ina tarkaharū pārsa gardā truṭi: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Avaidha raṅa ṭēmplēṭa {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probe [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property npl() As String
+            Get
+                Return ResourceManager.GetString("npl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेशहरू: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;आदेश इंजेक्शन रद्द गरिएको छ।&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;इन्जेक्ट गरिएका तर्कहरू अर्को रिबुटमा चलाउनको लागि निर्धारित गरिनेछ।&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;वास्तविक आदेश-लाइन तर्कहरू पार्स गर्दा त्रुटि: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;अवैध रङ टेम्प्लेट {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: तप [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property npl_T() As String
+            Get
+                Return ResourceManager.GetString("npl_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tilgjengelige kommandoer: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjeksjon er kansellert.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate startargumenter med komma uten mellomrom, for eksempel &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate kommandoer på &apos;cmdinjec [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injiserte argumenter vil bli planlagt kjørt ved neste omstart.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Feil under analyse av ekte kommandolinjeargumenter: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ugyldig fargemal {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;:  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property nwg() As String
             Get
@@ -1223,11 +1620,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;command injection been cancelled.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injected arguments be scheduled to run at next reboot.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot; error while parsin&apos; real command-line arguments: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;invalid color template {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;&apos;wprobe: [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property pir() As String
+            Get
+                Return ResourceManager.GetString("pir", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dost?pne polecenia: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Napisz polecenie:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Wprowadzanie polece? zosta?o anulowane.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad „motd, gpuprobe”&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddzielne polecenia na „cmdi [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Wstrzykni?te argumenty zostan? zaplanowane do uruchomienia przy nast?pnym restarcie.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;B??d podczas analizowania rzeczywistych argument?w wiersza polecenia: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nieprawid?owy szablon kolor?w {0}&quot;,
+        '''  &quot;hw [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pol() As String
             Get
@@ -1237,11 +1650,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;شته حکمونه: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;کمانډ انجیکشن لغوه شو.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;انجیکشن شوي دلیلونه به په راتلونکي ریبوټ کې د چلولو لپاره ټاکل کیږي.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;د ریښتیني کمانډ لاین دلیلونو تحلیل کولو پرمهال تېروتنه: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;د رنګ ناسم کينډۍ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ستاس [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property psh() As String
+            Get
+                Return ResourceManager.GetString("psh", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponíveis: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Comando de gravação: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;A injeção de comando foi cancelada.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandos separ [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumentos injetados serão agendados para serem executados na próxima reinicialização.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erro ao analisar argumentos de linha de comando reais: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Modelo de cor inválido {0}&quot;,
+        '''  &quot;hwprobe: Your hardware w [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ptg() As String
             Get
@@ -1252,10 +1681,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Upalabadha kamāṇḍāṁ: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Kamāṇḍa likhō:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kamāṇḍa ijaikaśana rada kara ditā gi&apos;ā hai.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bināṁ sapēsa dē kāmi&apos;āṁ nāla būṭa āragūmaiṇṭāṁ nū vakha karō, udāharaṇa vajōṁ, &apos;mōṭaḍa, jīpīparōba&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;kamāṇḍāṁ [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zaḵẖamī bahisāṁ nū agalē rībūṭa tē calā&apos;uṇa la&apos;ī tahi kītā jāvēgā.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Asala kamāṇḍa-lā&apos;īna āragūmaiṇṭasa pārasa karana vēlē galatī: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Avaidha raga namūnā {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pr [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pun() As String
             Get
@@ -1266,10 +1696,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;ਉਪਲਬਧ ਕਮਾਂਡਾਂ: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;ਕਮਾਂਡ ਲਿਖੋ:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;ਕਮਾਂਡ ਇੰਜੈਕਸ਼ਨ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ਬਿਨਾਂ ਸਪੇਸ ਦੇ ਕਾਮਿਆਂ ਨਾਲ ਬੂਟ ਆਰਗੂਮੈਂਟਾਂ ਨੂੰ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ, &apos;ਮੋਟਡ, ਜੀਪੀਪਰੋਬ&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;ਕਮਾਂਡਾਂ ਨੂੰ &apos;ਸੈਮੀਡਨੀਜੈਕਟ&apos; &apos;ਤੇ ਖਾਲੀ ਥਾਂਵਾਂ  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;ਅਸਲ ਕਮਾਂਡ-ਲਾਈਨ ਆਰਗੂਮੈਂਟਸ ਪਾਰਸ ਕਰਨ ਵੇਲੇ ਗਲਤੀ: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;ਅਵੈਧ ਰੰਗ ਨਮੂਨਾ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ਤੁਹਾਡੇ ਹਾਰਡਵ [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pun_T() As String
             Get
@@ -1307,10 +1738,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comenzi disponibile: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Comanda de scriere:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injectarea comenzii a fost anulat?.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separa?i argumentele de pornire cu virgule f?r? spa?ii, de exemplu, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separa comenzile de pe „cm [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumentele injectate vor fi programate s? ruleze la repornirea urm?toare.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Eroare la analizarea argumentelor reale ale liniei de comand?: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;?ablon de culoare nevalid {0}&quot;,
+        '''  &quot;hwprobe: Your hardware wil [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rmn() As String
             Get
@@ -1321,10 +1753,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupnyye komandy: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Napisat&apos; komandu:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandnaya in\&quot;yektsiya byla otmenena.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Otdel&apos;nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Otdel&apos;nyye komandy dlya «cmd [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Oshibka pri analize real&apos;nykh argumentov komandnoy stroki: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nevernyy tsvetovoy shablon {0}&quot;,
+        '''  &quot;hwprobe: Your ha [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus() As String
             Get
@@ -1335,10 +1768,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Доступные команды: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Написать команду:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Командная инъекция была отменена.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Отдельные аргументы загрузки с запятыми без пробелов, например, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Отдельные команды для «cmdinject» с  [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введенные аргументы будут запланированы для запуска при следующей перезагрузке.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Ошибка при анализе реальных аргументов командной строки: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Неверный цветовой шаблон {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be p [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus_T() As String
             Get
@@ -1394,14 +1828,30 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupné príkazy: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Príkaz na napísanie:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injekcia príkazu bola zrušená.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddeľte príkazy na &apos;cmdinject&apos; dvojbodka [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektované argumenty budú naplánované na spustenie pri nasledujúcom reštarte.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Chyba pri analýze skutočných argumentov príkazového riadku: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Neplatná farebná šablóna {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property slo() As String
             Get
                 Return ResourceManager.GetString("slo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;دستياب حڪم: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;ڪمانڊ انجيڪشن کي منسوخ ڪيو ويو آهي.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;انجيل ٿيل دليلن کي ايندڙ ريبوٽ تي هلائڻ لاءِ مقرر ڪيو ويندو.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;حقيقي ڪمانڊ لائن دليلن کي پارس ڪرڻ دوران نقص: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;غلط رنگ ٽيمپليٽ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: توهان جي ه [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property snd() As String
+            Get
+                Return ResourceManager.GetString("snd", resourceCulture)
             End Get
         End Property
         
@@ -1454,10 +1904,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Amarada la heli karo: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Qor amar:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Cirbadda taliska waa la joojiyay.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Kala sooc dooda muranka leh hakad la&apos;aan, tusaale ahaan, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kala amar gaar ah oo ku saabsan &apos;cmdinject&apos; oo l [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Doodaha la isku duro ayaa loo qorsheyn doonaa inay dib u bilaabaan xiga.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Cilad markii la turjumayo doodaha dhabta ah ee amarka-tooska ah: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Muunad midab aan ansax ahayn {0}&quot;,
+        '''  &quot;hwprobe: Your hardware w [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property som() As String
             Get
@@ -1468,10 +1919,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponibles: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Comando de escritura: &quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;La inyección de comandos ha sido cancelada.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandos se [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error al analizar los argumentos de línea de comando reales: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no válida {0}&quot;,
+        '''  &quot;hwprobe: Y [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property spa() As String
             Get
@@ -1482,10 +1934,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Vrite command:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Ubacivanje komande je otkazano.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, „motd, gpuprobe“&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojite komande na &apos;cmdinject&apos; sa kol [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injektirani argumenti ?e se zakazati pri slede?em ponovnom pokretanju.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Gre?ka prilikom ra??lanjivanja stvarnih argumenata naredbene linije: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Neva?e?i ?ablon boja {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probe [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property srb() As String
             Get
@@ -1496,10 +1949,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Доступне команде: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Врите цомманд:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Убацивање команде је отказано.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Раздвојите аргументе за покретање зарезима без размака, на пример, „мотд, гпупробе“&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Одвојите команде на &apos;цмдињецт&apos; са колона [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ињектирани аргументи ће се заказати при следећем поновном покретању.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Грешка приликом рашчлањивања стварних аргумената наредбене линије: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Неважећи шаблон боја {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Pl [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property srb_T() As String
             Get
@@ -1510,10 +1964,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Amri zinazopatikana: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Andika amri:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Sindano ya amri imefutwa.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Tenga hoja za buti na koma bila nafasi, kwa mfano, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Tenga amri kwenye &apos;cmdinject&apos; na koloni zilizo na nafasi, kw [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Hoja za sindano zitapangiwa kuanza wakati wa kuwasha tena.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Hitilafu wakati wa kuchanganua hoja halisi za mstari wa amri: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Kiolezo batili cha rangi {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property swa() As String
             Get
@@ -1524,10 +1979,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tillgängliga kommandon: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjektion har avbrutits.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separata startargument med kommatecken utan mellanslag, till exempel \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separata kommandon på &apos;cmdi [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injicerade argument kommer att schemaläggas att köras vid nästa omstart.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Ett fel uppstod när man analyserade riktiga kommandoradsargument: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Ogiltig färgmall {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property swe() As String
             Get
@@ -1563,11 +2019,27 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Elýeterli buýruklar: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Buýruk sanjymy ýatyryldy.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Sanjym edilen argumentler indiki gaýtadan açylanda meýilleşdiriler.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Hakyky buýruk setiriniň argumentlerini derňemekde ýalňyşlyk: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nädogry reňk şablony {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property tkm() As String
+            Get
+                Return ResourceManager.GetString("tkm", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kullanılabilir komutlar: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Komut yaz:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komut enjeksiyonu iptal edildi.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Önyükleme bağımsız değişkenlerini boşluksuz virgülle ayırın, örneğin, &apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos; üzerinde boşluk içeren [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Enjekte edilen argümanlar bir sonraki yeniden başlatmada çalışacak şekilde programlanacaktır.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Gerçek komut satırı bağımsız değişkenleri ayrıştırılırken hata oluştu: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Geçersiz renk şablonu {0}&quot;,
+        '''  &quot;hwp [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property tky() As String
             Get
@@ -1629,11 +2101,57 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupni komandy: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Vvedennya komandy skasovano.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Pomylka pid chas analizu realʹnykh arhumentiv komandnoho ryadka: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Nediysnyy shablon kolʹoru {0}&quot;,
+        '''  &quot;hwprobe: Your hardware [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ukr() As String
+            Get
+                Return ResourceManager.GetString("ukr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Доступні команди: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Введення команди скасовано.&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введені аргументи будуть заплановані на запуск під час наступного перезавантаження.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Помилка під час аналізу реальних аргументів командного рядка: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Недійсний шаблон кольору {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ukr_T() As String
+            Get
+                Return ResourceManager.GetString("ukr_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;دستیاب کمانڈز: {0}&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;کمانڈ انجیکشن منسوخ کر دیا گیا ہے۔&quot;,
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;انجکشن شدہ دلائل اگلے ریبوٹ پر چلائے جائیں گے۔&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;اصلی کمانڈ لائن آرگیومینٹس کو پارس کرتے وقت خرابی: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;غلط رنگ ٹیمپلیٹ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: آپ کے ہارڈ ویئر ک [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property urd() As String
+            Get
+                Return ResourceManager.GetString("urd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mavjud buyruqlar: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Yozish buyrug&apos;i:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Buyruqni kiritish bekor qilindi.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bo&apos;sh joylarsiz vergul bilan alohida yuklash argumentlari, masalan, \&quot;motd, gpuprobe\&quot;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;\&quot;Cmdinject\&quot; dagi alohida buyruq [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;AOK qilingan argumentlar keyingi qayta ishga tushirishda rejalashtirilishi kerak.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Haqiqiy buyruqlar satrlarini tahlil qilishda xato: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Noto�g�ri rang shablonlari {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probe [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property uzb() As String
             Get
@@ -1644,10 +2162,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Các lệnh khả dụng: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Viết lệnh:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Lệnh tiêm đã bị hủy bỏ.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: &apos;motd,gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Các lệnh riêng biệt trên &apos;cmdinject&apos; với dấu ha [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Mẫu màu không hợp lệ {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please w [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property vtn() As String
             Get
@@ -1731,10 +2250,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Gorchmynion sydd ar gael: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Ysgrifennwch orchymyn:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Mae chwistrelliad gorchymyn wedi&apos;i ganslo.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Dadleuon cist ar wahân gyda choma heb ofodau, er enghraifft, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Gorchmynion ar wah [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Disgwylir i ddadleuon wedi&apos;u chwistrellu redeg yn yr ailgychwyn nesaf.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Gwall wrth rannu dadleuon llinell orchymyn go iawn: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Templed lliw annilys {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be pro [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property wls() As String
             Get
@@ -1744,24 +2264,23 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;166&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;130&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;130&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;166&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;166&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;130&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;130&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;166&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;130&quot;,
-        '''  &quot;StageColor&quot;: &quot;166&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;166&quot;,
-        '''  &quot;WarningColor&quot;: &quot;166&quot;,
-        '''  &quot;OptionColor&quot;: &quot;166&quot;,
-        '''  &quot;BannerColor&quot;: &quot;166&quot;,
-        '''  &quot;NotificationTitleColor&quot;: &quot;166&quot;,
-        '''  &quot;NotificationDescriptionColor&quot;: &quot;130&quot;,
-        '''  &quot;Notific [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;166&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;130&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;130&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;166&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;166&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;130&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;130&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;166&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;130&quot;,
+        '''    &quot;StageColor&quot;: &quot;166&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;166&quot;,
+        '''    &quot;WarningColor&quot;: &quot;166&quot;,
+        '''    &quot;OptionColor&quot;: &quot;166&quot;,
+        '''    &quot;BannerColor&quot;: &quot;166&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;166&quot;,
+        '''    &quot;NotificationDes [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Wood() As String
             Get
@@ -1825,10 +2344,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Awọn pipaṣẹ to wa: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Kọ aṣẹ:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Abẹrẹ aṣẹ ti paarẹ.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Lọtọ awọn ariyanjiyan bata pẹlu aami idẹsẹ laisi awọn alafo, fun apẹẹrẹ, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Awọn pipaṣẹ lọtọ lori &apos;cmdinject&apos; pẹlu awọn oluṣafi [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Awọn ariyanjiyan abẹrẹ yoo jẹ eto lati ṣiṣẹ ni atunbere atẹle.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Aṣiṣe lakoko sisọ awọn ariyanjiyan laini aṣẹ gidi: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Awoṣe awọ ti ko tọna {0}&quot;,
+        '''  &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ohun el [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property yrb() As String
             Get
@@ -1839,10 +2359,11 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Imiyalo etholakalayo: {0}&quot;,
-        '''  &quot;Write command: &quot;: &quot;Bhala umyalo:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Umjovo we-Command ukhanseliwe.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Hlukanisa izimpikiswano zebhuthi ngamakhoma ngaphandle kwezikhala, isibonelo, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Hlukanisa imiyalo ku-&apos;cmdi [rest of string was truncated]&quot;;.
+        '''  &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Ama-agumenti afakiwe azohlelelwa ukuqaliswa ekuqaleni kabusha okulandelayo.&quot;,
+        '''  &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Iphutha ngenkathi kuhlaziywa izingxabano zangempela zomugqa womyalo: {0}&quot;,
+        '''  &quot;Invalid color template {0}&quot;: &quot;Isifanekiso sombala esingavumelekile {0}&quot;,
+        '''  &quot;hwprobe: You [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property zul() As String
             Get

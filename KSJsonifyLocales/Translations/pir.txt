@@ -1,0 +1,1007 @@
+Available commands: {0}
+command injection been cancelled.
+injected arguments be scheduled to run at next reboot.
+ error while parsin' real command-line arguments: {0}
+invalid color template {0}
+'wprobe: yer 'ardware be probed. Please wait...
+ cpu: one or more o' the cpu cores failed to be probed. Showin' information anyway...
+ ram: one or more o' the ram chips failed to be probed. Showin' information anyway...
+ 'dd: one or more o' the 'ard drives failed to be probed. Showin' information anyway...
+ cpu: total number o' processors: {0}
+enter the admin password fer maintenance.
+ kernel error while booting: {0}
+double panic: reboot time exceeds maximum allowed {0} error reboot time. Ye found a kernel bug.
+ [{0}] panic: reboot enabled due to error level bein' {0}.
+ [{0}] panic: time to reboot: {1} seconds, exceeds 1 'our. It be set to 1 minute.
+ double panic: error type {0} invalid.
+ [{0}] dpanic: {1} -- rebootin' in {2} seconds...
+ [{0}] panic: reboot disabled due to error level bein' {0}.
+ [{0}] panic: {1} -- press any key to continue usin' the kernel.
+ [{0}] panic: {1} -- press any key to shutdown.
+ [{0}] panic: {1} -- rebootin' in {2} seconds...
+ double panic: kernel bug: {0}
+shuttin' down...
+ rebootin'...
+ another instance o' kernel simulator be runnin'. Shuttin' down in case o' interference.
+ failed to add user into permission lists: invalid type {0}
+failed to add user into permission lists: invalid user {0}
+failed to remove user from permission lists: invalid type {0}
+ye be already logged in.
+ failed to remove user from permission lists: invalid user {0}
+ye 'ave either found a bug, or the permission ye tried to add or remove be already done, or other error.
+ error {0}: {1}
+ye 'ave either found a bug, or the permission ye tried to edit fer a new user 'as failed.
+ available usernames: {0}
+username: 
+spaces ain't allowed.
+ special characters ain't allowed.
+ {0}'s password: 
+wrong password.
+ user be disabled.
+ wrong username.
+ error tryin' to parse placeholders. {0} - stack trace:
+error tryin' to parse placeholders. {0}
+error tryin' to add username.
+ usrmgr: creatin' username {0}...
+ blank username.
+ user {0} not found.
+ user {0} isn't allowed to be removed.
+ user {0} be already logged in. Log-out an' log-in as another admin.
+ user {0} removed.
+ error tryin' to remove username.
+ the requested screensaver {0} be not found.
+ {0} been initialized properly.
+ {0} did not initialize. The screensaver code might 'ave experienced an error while initializin'.
+ screensaver {0} does not exist.
+ {0} be set to default screensaver.
+ screensaver {0} not found in database. Check the name an' try again.
+ screensaver can't be loaded because o' the following: 
+there be a serious error when printin' text.
+ there be an error tryin' to create configuration.
+ error tryin' to free ram: {0} - continuin'...
+ mod can't be loaded because o' the following: 
+mod: loadin' mods...
+ mod: stoppin' mods...
+ mod {0} does not 'ave the name. Review the source code.
+ mod {0} does not 'ave the version.
+ {0} v{1} started
+no definition fer command {0}.
+ command defined by 
+ye should disconnect from server before connectin' to another server
+username fer {0}: 
+password fer {0}: 
+connected to {0}
+error when tryin' to connect to {0}: {1}
+stack trace: {2}
+ local directory {0} doesn't exist.
+ enter a local directory. ".." to go aft.
+ directory {0} not found.
+ enter a remote directory. ".." to go aft
+ye must connect to a server before changin' directory
+local directory: {0}
+remote directory: {0}
+ye must connect to server before gettin' current remote directory.
+ ye must connect to server with administrative privileges before performin' the deletion.
+ disconnected from {0}
+ye 'aven't connected to any server yet
+downloadin' file {0}...
+ downloaded file {0}.
+ ye must connect to server before performin' transmission.
+{0} kb | modified in: {1}
+ye should connect to server before listin' all remote files.
+ uploadin' file {0}...
+ uploaded file {0}
+gets current local directory
+gets current remote directory
+changes local directory to download to or upload from
+changes remote directory to download from or upload to
+deletes remote file from server
+disconnects from server
+downloads remote file to local directory usin' binary or text
+exits ftp shell an' returns to kernel
+shows 'elp screen
+lists local directory
+lists remote directory
+uploads local file to remote directory usin' binary or text
+ftp message: the requested command {0} be not found. See 'help' fer a list o' available commands specified on ftp shell.
+ failed to get properties fer adapter {0}
+adapter number:
+adapter name:
+maximum transmission unit: {2} units
+dhcp enabled:
+non-unicast packets:
+unicast packets:
+error incoming/outgoin' packets:
+alias can't be the same name as a command.
+ command not found to alias to {0}.
+ ye can now run "{0}" as a command: "{1}".
+ alias {0} be not found to be removed.
+ invalid mode {0}.
+ injected arguments, {0}, be scheduled to run at next reboot.
+ there been not enough arguments. See below fer usage:
+directory {0} not found
+blank 'ost name.
+ changin' from: {0} to {1}...
+ blank message o' the day.
+ blank mal after login.
+ wrong user password.
+ passwords don't match.
+ username been changed to {0}!
+the new name ye entered be already found.
+ {0} be not found.
+ configuration reloaded. Ye might need to reboot the kernel fer some changes to take effect.
+ one or more o' the colors be invalid.
+ colors ain't available. Turn on colored shell in the kernel config.
+ screensaver {0} not found.
+kernel version:
+debug mode:
+colored shell:
+arguments on boot:
+'elp command simplified:
+motd on login:
+time/date on corner:
+current user name:
+current 'ost name:
+available usernames:
+error tryin' to execute command
+changes directory
+changes password fer current user
+clears the screen
+use an ftp shell to interact with servers
+'elp page
+list file/folder contents in current folder
+locks yer screen with a password
+logs ye out
+creates a directory
+lists information about all available interfaces
+restarts yer computer (warning: no syncing, because it be not a final kernel)
+reloads configuration file that there be edited.
+ saves yer screen from burn outs
+sets to the sky kernel screensavers
+sets to the sky kernel themes
+shows date an' time
+shows date an' time in zones
+the kernel be shut down
+system information
+* ye can use multiple commands usin' the colon between commands.
+ usage:
+where arguments be {0}
+where customsaver be
+ there been an error in the shell.
+Ye don't 'ave permission to use {0}
+shell message: the requested command {0} be not allowed to run in maintenance mode.
+ shell message: the requested command {0} be not found. See 'help' fer available commands.
+ shell message: command {0} be not allowed to run on log in.
+ error tryin' to execute command.
+- time o' {0}: {1}
+ runnin' on {0}
+ye ain't authorized to get info fer {0}.
+ this here command be obsolete an' be removed in a future release.
+ ye ain't authorized to change password o' {0} because the target been an admin.
+ usrmgr: username {0} be already found
+deletes everythin' in debug log
+invalid language
+changes language
+----------------------------- kernel panic dump -----------------------------
+>> panic information <<
+> description: {0}
+> error type: {1}
+> date an' time: {2}
+>> exception information <<
+> exception: {0}
+> description: {1}
+> 'result: {2}
+> source: {3}
+> stack trace <
+>> inner exception {0} information <<
+>> exception {0} be the root cause <<
+>> no exception; might be a kernel error. <<
+>> frames, files, lines, an' columns <<
+> frame {0}: file: {1} | line: {2} | column: {3}
+> there be an error when tryin' to get frame information. {0}: {1}
+ ye be welcome to kernel!
+logged in successfully as <user>
+motd/mal be valid, but the message type be not valid. Assumin' motd...
+ tried to read motd/mal that there be o' the invalid message type.
+ download 'as completed.
+ download failed in try {0}: {1}
+please use "ftp" if ye be goin' to download files from the ftp server.
+ downloads a file to current workin' directory
+disconnect a debug device
+lists debuggin' devices connected
+debug device {0} not found.
+ device {0} disconnected.
+ error in connection: {0}
+debug listenin' on all addresses usin' port {0}.
+ no arguments specified. 'int: specify multiple arguments separated by spaces
+alias already found: {0}
+debug log removed. All connected debuggin' devices may still view messages.
+ debug log removal failed: {0}
+changin' directory 'as failed: {0}
+specify the address
+unable to remove directory: {0}
+timezone be specified incorrectly.
+ invalid profile selection.
+ tryin' to connect to {0} with profile {1}...
+ command {0} not found. See the "help" command fer the list o' commands.
+ failed to get ipv6 properties fer adapter {0}. Continuin'...
+ ipv4 information:
+ipv6 information:
+adapter {0} doesn't support ipv6. Continuin'...
+ adapter {0} doesn't support ipv4. Probe failed.
+ looks such as yerself was runnin' the development version o' the kernel. While ye can see the aspects, it be frequently updated an' might introduce bugs. It be recommended that there ye stay on the stable version.
+ the language ye've selected contains two variants. Select one:
+invalid choice. Try again.
+ ye be unauthorized to set current directory to {0}: {1}
+the path ye've specified be too long.
+ dump information gatherer crashed when tryin' to get information about {0}: {1}
+error when tryin' to set motd/mal: {0}
+error when tryin' to get motd/mal: {0}
+error when tryin' to start screensaver, because o' an invalid operation.
+ reloadin' not allowed in safe mode.
+ parsin' mods not allowed on safe mode.
+ error when tryin' to set parse mode. Check the value an' try again. If this here be correct, see the stack trace when kernel debuggin' be enabled.
+ the path be neither a file nor a directory.
+ creates another copy o' a file under different directory or name.
+ moves a file to another directory
+match {0} ({1}): {2}
+match {0}: {1}
+time spent: {0} milliseconds
+name: {0}
+calculates file sums.
+ takes ye to our github wiki.
+ invalid encryption algorithm.
+ enables or disables remote debuggin'.
+ see if ye can spell words correctly on time
+see if ye can solve mathematical equations on time
+Respond to love or 'ate comments.
+ if someone made this here comment to yer video:
+'ow would ye respond?
+invalid selection. Goin' to the next comment...
+ jolly! {0} will appreciate yer thanks.
+ spelt perfectly!
+spelt incorrectly.
+ solved perfectly!
+solved incorrectly.
+ rpc be already runnin'.
+ rpc listenin' on all addresses usin' port {0}.
+ startin' rpc...
+ connects to an ssh server.
+ enter the password fer {0}: 
+ssh disconnected.
+ unable to set codepage. The language may not display properly.
+ debuggin' not enabled.
+ thanks! this here be interestin'.
+ everyone will support yer video fer this here.
+ I gave ye the special file in yer e-mail fer yer next video.
+ listen, 'aters, 'e be tryin' to 'elp us, not scam.
+ I don't know 'ow much do I an' me mates thank ye fer this here video.
+ I love ye fer this here video.
+ keep going, don't avast.
+ I will 'elp ye reach to 1m subscribers!
+me mates got their computer fixed because o' ye.
+ awesome prank! I shut down me enemy's pc.
+ to 'aters: avast 'atin' on 'im
+to 'aters: get to work
+nobody will notice this here now thanks to yer object 'idin' guide
+I will avast watchin' yer videos. Subscriber lost.
+ what be this here? this here be unclearrr.
+ this here video be the worst!
+everyone report this here video!
+me mates be furious with ye!
+lovers will now 'ate ye fer this here.
+ yer mate will 'ate ye fer this here.
+ this here prank made me unsubscribe to ye.
+ mission failed, respect -, subscriber -
+avast makin' this here kind o' video!!!
+get aft to yer job, yer videos be the worst!
+we prejudice on this here video.
+ shows all received notifications
+dismisses a notification
+notification dismissed successfully.
+ packets (inbound):
+packets (outbound):
+errors in received packets:
+general ipv6 properties
+general ipv4 properties
+remotely executes a command to remote pc
+- stage 1: system initialization
+- stage 2: 'ardware detection
+- stage 3: mods an' screensavers detection
+- stage 4: log in
+looks such as yerself was runnin' the release candidate version. It be recommended that there ye stay on the stable version.
+ invalid type {0}.
+ size: {0}
+directory {0} already exists.
+ error when tryin' to connect to {0}: connection timeout or lost connection
+calculator to calculate expressions.
+ error in calculation.
+ system update
+checkin' fer system updates...
+ found new version: 
+ye can download it at: 
+no recent notifications
+searches fer specified strin' in the provided file
+calculates sums o' files in specified directory.
+ enter username or mail address: 
+enter password: 
+error while connectin' to {0}: {1}
+connectin' to {0}...
+ authenticatin'...
+ exits the imap shell
+list o' commands
+downloads messages an' lists them
+opens a message
+ page be not a numeric value.
+ message number may not be negative or zero.
+ message number be not a numeric value.
+ - from {0}
+- to {0}
+- sent at {0} in {1}
+message specified be not found.
+ remote debug failed to start: {0}
+preparin' profiles... It could take several minutes...
+error tryin' to execute script: {0}
+writes text into the console
+makes user choices
+beep in 'n' 'z an' time in 'n' milliseconds
+where <$variable> be any variable that there be used to store response
+Frequency must be numeric. If it be numeric, ensure that there it be >= 37 an' <= 32767.
+ time must be numeric.
+ where <answers> be one-lettered answers o' the question separated in slashes
+error tryin' to connect to ssh server: {0}
+allows user to enter input
+changes current mail directory
+unable to open mail folder {0}: {1}
+lists directories in yer mail address
+uses information from speed dial to connect to any network quickly
+select an address to connect to:
+the selection be out o' range. Select between 1-{0}. Try again.
+ the selection be not a number. Try again.
+ durin' certificate validation, there be certificate errors. It might be the first time ye've connected to the server or the certificate might 'ave been expired. 'ere's an error:
+be ye sure that there ye want to connect?
+invalid answer. Please try again.
+ speed dial be empty. Connect to a server to add an address to it.
+ speed dial doesn't exist. Connect to a server to add an address to it.
+ enter imap server address an' port (<address> or <address>:[port]): 
+enter smtp server address an' port (<address> or <address>:[port]): 
+sends a message to an address
+enter recipient mail address:
+enter the subject:
+enter yer message below. Write "eof" to confirm.
+ sendin' message...
+ message sent.
+ invalid e-mail address. Make sure ye've written the address correctly an' that there it matches the format o' the example shown:
+removes a message
+removes all messages from recipient
+message {0} from {1} deleted from {2}. {3} messages remainin' to parse.
+ message {0} from {1} deleted from inbox. {2} messages remainin' to parse.
+ edits a text file
+makes a new file
+file already exists.
+ error tryin' to create a file: {0}
+failed to open file. Exitin' shell...
+ the specified text editor command be not found.
+ lists available commands
+exits the text editor an' save unsaved changes
+prints the contents o' the file with line numbers to the console
+adds a new line with text at the end o' the file
+removes the specified line number
+replaces a word or phrase with another one
+deletes a word or phrase from line number
+deletes a character from character number in specified line
+removed line.
+ specified line number {0} be not a valid number.
+runnin' in safe mode. Skippin' stage...
+ >> remote debug an' chat: version
+>> yer address be {0}.
+ >> yer name be {0}.
+ command {0} not found. Use "/help" to see the list.
+ index {0} invalid. There be {1} stack traces. Index be zero-based, so try subtractin' by 1.
+ no stack trace
+shows last stack trace on exception
+shows current username in the session
+disconnects ye from the debugger
+unblock a debug device by ip address
+block a debug device by ip address
+{0} can now join remote debug again.
+ {0} be not blocked yet.
+ error loadin' settings
+there be an error while loadin' settings. Ye may need to check the settings file.
+ select section:
+ save settings
+exit
+specified option {0} be invalid.
+ the answer must be numeric.
+ prompt fer arguments on boot
+maintenance mode trigger
+ check fer updates on startup
+quiet probe
+show motd on log-in
+clearrr screen on log-in
+show available usernames
+colored shell
+simplified 'elp command
+debug port
+download retry times
+log ftp username
+log ftp ip address
+return only first ftp profile
+show time/date on upper right corner
+screensaver timeout in Miss
+debug size quota in bytes
+size parse mode
+marquee on startup
+long time an' date
+show 'idden files
+invalid section entered. Please go aft.
+ go aft...
+Enable
+disable
+ write the root password to be set. Don't worry; the password be shown as stars.
+ change root password?
+set root password...
+ write a remote debugger port. It must be numeric, an' must not be already used. Otherwise, remote debugger will fail to open the port.
+ write 'ow many times the "get" command should retry failed downloads. It must be numeric.
+ write when to launch screensaver after specified milliseconds. It must be numeric.
+ write 'ow many bytes can the debug log store. It must be numeric.
+ the answer may not be negative.
+ the answer be invalid. Check to make sure that there the answer be numeric fer config entries that there need numbers as answers.
+ variable {0} be not found on any o' the modules.
+ changes kernel configuration
+ activate 255 colors
+do ye want to keep connected?
+invalid choice. Assumin' no...
+ change culture when switchin' languages
+text shown
+write any text ye want shown. Shorter be better.
+ failed to upload {0}
+error executin' remote debug command {0}: {1}
+adds users
+adds aliases to commands
+injects arguments to the kernel (reboot required)
+changes 'ost name
+changes mal, the motd after login
+changes motd, the message o' the day
+changes user name
+manage permissions fer users
+reloads screensaver file in ksmods
+removes a user from the list
+removed alias {0} successfully.
+ failed to check fer updates.
+ there be no more users remainin' in the list.
+ failed to set language.
+ error tryin' to dismiss notification.
+ usrmgr: failed to create username {0}: {1}
+failed to rename user. {0}
+one o' the permission lists doesn't contain username {0}.
+ failed to load permissions from file: {0}
+failed to change 'ost name: {0}
+user not found
+failed to change password o' username: {0}
+failed to copy file or directory: {0}
+failed to move file or directory: {0}
+unable to find file to match strin' "{0}": {1}
+download failed fer file {0}.
+ failed to list remote files: {0}
+ be ye sure ye want to delete {0} <y/n>?
+deletin' {0}...
+ {0} be not found in the server.
+ all mail made by {0} be removed successfully.
+ failed to remove all mail made by {0}.
+ error sendin' message.
+ movin' {0} to {1}...
+ moved successfully
+moves file or directory to another file or directory. Ye can also use that there to rename files.
+ failed to move {0} to {1}.
+ copyin' {0} to {1}...
+ copied successfully
+copies file or directory to another file or directory.
+ failed to copy {0} to {1}.
+ moves a message
+moves all messages from recipient
+all mail made by {0} be moved successfully.
+ failed to move all mail made by {0}.
+ message {0} from {1} moved from {2}. {3} messages remainin' to parse.
+ shows weather info fer specified city. Uses openweathermap.
+ -- weather info fer {0} --
+weather: {0}
+pressure: {0}
+'umidity: {0}
+ye can get yer own api key at 'ttps://home.openweathermap.org/api_keys.
+ ye can always consult 'ttp://bulk.openweathermap.org/sample/city.list.json.gz fer the list o' cities with their ids.
+ preferred unit fer temperature
+sets up the kernel so it prompts ye fer argument on boot.
+ triggers maintenance mode. This here disables multiple accounts.
+ each startup, it will check fer updates.
+ when switchin' languages, change the month names, calendar, etc.
+ if the kernel be started, it will set root password.
+ keep 'ardware probin' messages silent.
+ show message o' the day before displayin' login screen.
+ clearrr screen before displayin' login screen.
+ shows available users if enabled.
+ gives the kernel color support
+simplified 'elp command fer all the shells
+whether or not to log ftp username.
+ whether or not to log ftp ip address.
+ pick the first profile only when connectin'.
+ the time an' date be shown in the upper right corner o' the screen
+if enabled, the kernel will parse the 'ole folder fer its total size. Else, will only parse the surface.
+ enables eyecandy on startup
+the time an' date be longer, showin' full month names, etc.
+ shows 'idden files.
+ select yer preferred unit fer temperature (this only applies to the "weather" command)
+mod {0} stopped
+{0} v{1} stopped
+mod {0} does not 'ave the part name. Mod parsin' failed. Review the source code.
+ ye must turn on debug mode before ye can clearrr debug log.
+ {0} new messages arrived in inbox.
+ open "lsmail" to see them.
+ unable to remove file: {0}
+removes a directory or a file
+can't remove {0} because it doesn't exist.
+ press ctrl+c to exit.
+ provides information about a file
+provides information about a directory
+can't get information about nonexistent directory.
+ can't get information about nonexistent file.
+ full name: {0}
+creation time: {0}
+last access time: {0}
+last write time: {0}
+attributes: {0}
+parent directory: {0}
+where to find: {0}
+file size: {0}
+changes attribute o' a file
+file not found.
+ where <attributes> be one o' the following:
+the file be a normal file
+the file be a read-only file
+the file be a 'idden file
+the file be an archive. Used fer backups.
+ attribute "{0}" be invalid.
+ attribute been added successfully.
+ attribute been removed successfully.
+ failed to add attribute.
+ failed to remove attribute.
+ replaces a word or phrase with another one in a line
+red color level exceeded. It been {0}.
+ green color level exceeded. It been {0}.
+ blue color level exceeded. It been {0}.
+ activate true colors
+ failed to unblock {0}.
+ {0} be already blocked.
+ {0} can't join remote debug now.
+ failed to block {0}.
+ cycle colors
+disco will cycle colors when enabled. Otherwise, select random colors.
+ enter file paths to attachments. Press enter on a blank path to confirm.
+ opens an encrypted message
+write password fer key id {0}
+sends an encrypted message to an address
+downloadin' from {0}...
+ show progress barrr while downloadin' or uploadin' from "get" or "put" command
+if true, it makes "get" or "put" show the progress barrr while downloadin' or uploadin'.
+ uploads a file to specified website
+pings an address
+uploadin' {0} to {1}...
+ upload 'as completed.
+ please use "ftp" if ye be goin' to upload files to the ftp server.
+ upload failed in try {0}: {1}
+write 'ow many times the "put" command should retry failed uploads. It must be numeric.
+ address may not be empty.
+ failed to pin' {0}: {1}
+pin' succeeded in {0} Miss.
+ the specified line number may not be larger than the last file line number.
+ feels like: {0}
+temperature: {0}
+wind speed: {0}
+wind direction: {0}
+ press any key to go aft.
+ unable to create mail folder {0}: {1}
+makes a directory in the current workin' directory
+removes a directory from the current workin' directory
+mail folder {0} not found.
+ unable to delete mail folder {0}: {1}
+{0}, created in {1} {2}, modified in {3} {4}
+verifies sanity o' the file
+'ashes be malformed.
+ 'ashes don't match.
+ 'ashes match.
+ renames a folder
+opens a test shell
+* press any key to start the kernel or esc to exit.
+ failed to start "{0}": {1}
+show mail message preview
+when listin' mail messages, show body preview.
+ input color
+license color
+continuable kernel error color
+uncontinuable kernel error color
+'ost name color
+user name color
+background color
+neutral text color
+stage color
+error color
+ftp prompt style
+mail prompt style
+sftp prompt style
+ tryin' to access invalid path.
+ clears the text file
+exits the text editor
+queries a character in a specified line or all lines
+checkin' fer updates be disabled because ye be runnin' a development version.
+ turns on or off the text editor autosave feature.
+ if autosave be enabled, the text file be saved fer each "n" seconds.
+ enable text editor autosave
+text editor autosave interval
+saves the file
+record chat to debug log
+records remote debug chat to debug log.
+ delay in milliseconds
+'ow many milliseconds to wait before makin' the next write?
+lets ye use an ssh ftp server
+no 'elp fer command "{0}".
+ invalid vt sequence fer rgb color.
+ color o' seconds barrr
+color o' minutes barrr
+color o' 'ours barrr
+color o' information
+ticks to change color
+ if color cyclin' be enabled, 'ow many ticks before changin' colors in progressclock? 1 tick = 0.5 seconds
+progressclock will select random colors if it be enabled. Otherwise, use colors from config.
+ makes a new theme
+makin' a new theme "{0}".
+ save theme to current directory
+save theme to another directory...
+ select color usin' "<-" an' "->" keys. Press enter to quit. Press "i" to insert color number manually.
+ select color usin' "<-" an' "->" keys. Use arrow up an' arrow down keys to select between color ranges. Press enter to quit. Press "i" to insert color number manually.
+ ye be welcome to the kernel! - version {0}
+warnin' color
+option color
+enter color number from 0 to 255:
+use "hwinfo" fer extended information about 'ardware.
+ prints 'ardware information
+processor name:
+processor bits:
+partition filesystem:
+partition size:
+gpu: one or more o' the graphics cards failed to be probed. Showin' information anyway...
+ >> ye be welcome! this here be yer first time enterin' remote debug an' chat. Use "/register <name>" to register.
+ device already exists.
+ no such device.
+Sets device username
+ye be already registered.
+ Ahoy, {0}!
+prints content o' file to console
+or, pass "listcities" to this here command.
+ entry already exists.
+ wraps the console output
+the command be not wrappable. These commands be wrappable:
+extracts a zip archive
+creates a zip archive
+built in {0}
+error downloadin' debug data
+there be an error while downloadin' debug data. Check yer internet connection.
+ failed to finalize mod {0}: {1}
+lists all fired events
+current directory
+sets the shell's current directory. Write an absolute path to any existin' directory.
+ wrap list outputs
+wraps the list outputs if it seems too long fer the current console geometry.
+ ping!
+{0} pinged ye.
+ save theme to current directory as...
+ save theme to another directory as...
+ specify theme name:
+the user {0} been added to the "{1}" list.
+ the user {0} been removed from the "{1}" list.
+ invalid mode {0}
+ load theme from prebuilt themes...
+ specify theme file name wihout the.json extension:
+opens a zip archive
+exits the zip shell
+lists all files inside the archive
+extracts a file to a specified directory or a current directory
+changes archive directory
+the specified zip shell command be not found.
+ directory {0} doesn't exist
+archive directory {0} doesn't exist
+max positions count
+'ow many positions be lit before dimming?
+ list entry color
+list value color
+connects to an ssh server to execute a command.
+invalid color specifier. Ensure that there it be on the correct format, which means a number from 0-255 if usin' 255 colors or a vt sequence if usin' true color as follows:
+error in test shell: {0}
+sets a variable to a value in a script
+a bug reportin' prompt.
+ thank ye fer raisin' a ticket to us! select what kind o' offer do ye 'ave.
+ a problem
+a feature offer
+a question
+ye must specify a feature.
+ ask a question, jot yer idea, or report a problem.
+ ye must write yer offer.
+ there been an error in the ftp shell:
+unknown ftp shell error:
+there been an error in the sftp shell:
+unknown sftp shell error:
+show ssh banner
+shows the ssh server banner on connection.
+ 'ow do ye want to authenticate?
+private key file
+password
+enter the passphrase fer key {0}: 
+neutralized a non-existent path.
+ key file {0} doesn't exist.
+ error tryin' to add private key:
+press "t" to switch to 255 color mode.
+ press "t" to switch to true color mode.
+ it looks such as yerself've got no user except root. This here be bad. We'll guide ye 'ow to create one.
+ write yer username.
+ ye must write yer username.
+ write yer password.
+ ye must write yer password.
+ select account type.
+ administrator: this here account type 'as the most power in the kernel, allowin' ye to use system management programs.
+ normal user: this here account type be slightly more restricted than administrators.
+ congratulations! ye've made a new account! to finish this here off, log in as yer new account.
+ mod: no mods detected.
+ general commands:
+mod commands:
+alias commands:
+maintenance mode
+lookup directories
+crew o' paths separated by the colon. It works the same as path. Write a full path to a folder or a folder name. When ye be finished, write "q". Write a minus sign next to the path to remove an existin' directory.
+ no mod commands.
+ no alias commands.
+ the color value be outside the range o' 0-255.
+ the wrappable command be not found.
+ queries a word in a specified line or all lines
+{0} o' {1} downloaded.
+ {0} o' {1} uploaded.
+ prints a strin' to console usin' color type an' line print
+Prints a strin' to console usin' color type an' line print with format support
+prints a strin' to debugger
+prints a strin' to debugger with format support
+tests the kernel error facility
+tests the kernel error facility with format support
+tests translatin' a strin' that there exists in resources to specific language
+prints a strin' to console an' parses the placeholders found
+tests the regularrr expression facility
+starts all mods
+stops all mods
+enables or disables debug
+enables or disables remote debug
+tests the vt sequence fer 255 colors
+tests the vt sequence fer true color
+sends a notification to test the receiver
+tests printin' date usin' different calendars
+lists all supported codepages
+what compiler variables be enabled in the application?
+tests raisin' the specific event
+tests probin' the 'ardware
+tests the garbage collector
+exits the test shell an' starts the kernel
+exits the test shell an' shuts down the kernel
+saves the current directory to kernel configuration file
+tests the list writer with the strin' an' strin' array
+tests the list writer with the integer an' integer array
+tests the list writer with the charrr an' charrr array
+normal strin' list:
+array strin' list:
+normal integer list:
+array integer list:
+normal charrr list:
+array charrr list:
+enable rpc
+rpc port
+whether or not to enable rpc.
+ write an rpc port. It must be numeric, an' must not be already used. Otherwise, rpc will fail to open the port.
+ not startin' rpc because it be disabled.
+ lists supported cultures
+searches fer specified strin' in the provided file usin' regularrr expressions
+see if ye can press a key on time
+user did nay provide any input in a timely fashion.
+character not pressed on time.
+ ye've pressed starboard character!
+ye've pressed the wrong character.
+ press esc to exit.
+ gets the date an' time information
+milliseconds:
+seconds:
+minutes:
+'ours:
+days:
+months:
+year:
+day o' year:
+day o' week:
+binary:
+local time:
+universal time:
+unix time:
+failed to parse date information fer
+ensure that there the format be correct.
+ date:
+time:
+sets file permissions. This here be supported only on ftp servers that there run unix.
+ sets the type fer this here session
+ye must connect to server before performin' filesystem operations.
+ failed to set permissions o' {0} to {1}.
+ permissions set successfully fer file
+data type set to ascii!
+data type set to binary!
+invalid data type.
+ beware that there most files won't download or upload properly usin' this here mode, so we 'ighly recommend usin' the binary mode on most situations.
+ tryin' to send an rpc command while rpc did nay start.
+ fade out delay in milliseconds
+max fade steps
+'ow many milliseconds to wait before fadin' out text?
+'ow many fade steps to do?
+full probe
+if true, probes all the 'ardware; else, will only probe the needed 'ardware.
+ failed to remove screensaver {0} from config.
+ gets custom saver settings
+sets custom saver settings
+settings set successfully fer screensaver
+failed to set a settin' fer screensaver
+ opens an rss shell to read the feeds
+exits rss shell an' returns to kernel
+changes the feed link
+lists all feeds
+reads a feed in a web browser
+the specified rss shell command be not found.
+ invalid rss2 feed.
+ invalid rss1 feed.
+ invalid atom feed.
+ enter an rss feed url:
+invalid rss feed type.
+ unknown shell error:
+Gets the article info
+article number couldn't be bigger than the available articles.
+ title:
+link:
+gets the feed info
+description:
+feed type:
+number o' articles:
+article doesn't 'ave a link!
+failed to make a list o' filesystem entries fer directory
+filesystem sort mode
+filesystem sort direction
+controls 'ow the files be sorted.
+ controls the direction o' filesystem sortin' whether it be ascendin' or descendin'.
+write again delay in milliseconds
+'ow many milliseconds to wait before writin' text again?
+write any text ye want shown. Longer be better.
+ minimum writin' speed in wpm
+maximum writin' speed in wpm
+probability o' typo in percent
+failed to save current directory: {0}
+wipes to change direction
+ 'ow many wipes to do before changin' direction randomly?
+stage finished in
+internal initialization finished in
+referenced file {0} not found. This here mod might not work properly without this here file.
+ startin' mod
+command name:
+command definition:
+command type:
+strict command?
+mod version:
+mod {0} not found.
+the text editor 'asn't opened a file stream yet.
+ strin' replaced.
+ one or both o' the numbers ain't numeric.
+ word deleted.
+ character deleted.
+ ye be welcome to settings!
+error executin' ssh command
+error on ssh shell
+- app information
+ tests the dictionary writer with the strin' an' strin' array
+tests the dictionary writer with the charrr an' charrr array
+tests the dictionary writer with the integer an' integer array
+normal strin' dictionary:
+array strin' dictionary:
+normal integer dictionary:
+array integer dictionary:
+normal charrr dictionary:
+array charrr dictionary:
+ye be welcome to test shell!
+show progress on filesystem operations
+shows what file be bein' processed durin' the filesystem operations
+where 'ardwaretype be
+either the 'ardware type {0} be not probed, or be not valid.
+ the 'ardware type {0} be not probed yet. If ye be sure that there it be probed, restart the kernel with debuggin' enabled.
+ partitions not parsed to list.
+ prints a separator
+prints a separator with format support
+prints a separator with color support
+prints a separator with color an' format support
+always centered
+ write any text ye want shown.
+ whether the text shown on the marquee be always centered.
+ argument {0} not found to inject.
+ command line argument {0} not found.
+screensaver experienced an error while displaying: {0}. Press any key to exit.
+ preview...
+ 'ere's 'ow yer theme will look like:
+wrappable commands:
+mod {0} 'as invalid command. Mod parsin' failed. Review the source code.
+ mod parts:
+use console api
+whether to use the console api to clearrr text or to use the more speed, catch some wind, lads line clearin' vt sequence. If false, marquee will use the appropriate vt sequence. Otherwise, it will use the probably slower console api.
+ openin' url... Make sure to follow the steps shown on the screen.
+ there be no parts in mod.
+ mod name:
+Mod file name:
+mod file path:
+part version:
+minimum count o' required arguments:
+arguments required?
+wrappable command?
+settin' shell variable?
+can not run in maintenance mode?
+obsolete?
+rss prompt style
+text edit prompt style
+zip shell prompt style
+folder be empty.
+ successfully probed {0}.
+ verbose probe
+make 'ardware probin' messages a bit talkative.
+ > there be no information about frames.
+ ye need to write yer name.
+ beautifies the json file
+config category {0} not found.
+ config entry {0} not found.
+ use beats per minute
+whether to use the beats per minute unit to write the next color.
+ delay in beats per minute
+beat color
+'ow many beats per minute to wait before makin' the next write?
+ beatfader will select random colors if it be enabled. Otherwise, use colors from config.
+ custom startup banner
+downloads remote folder to local directory usin' binary or text
+uploads local folder to remote directory usin' binary or text
+ downloadin' folder {0}...
+ downloaded folder {0}.
+ download failed fer folder {0}.
+ uploadin' folder {0}...
+ uploaded folder {0}
+ press "c" to write full color code.
+ enter color code that there satisfies these formats:
+minifies the json file
+new screen delay in milliseconds
+column count
+line fill threshold
+line fill cappin' probability in percent
+line fill type
+'ow many milliseconds to wait before writin' the text in the new screen again?
+the text columns to be printed.
+ 'ow many characters to write before triggerin' the "line fill"?
+possibility that there the line fill pattern be printed in all caps in percent
+line fill pattern type
+the answer may not be zero.
+ the answer may not exceed the entries shown.
+ save changes...
+ manage yer mods
+mod management be disabled in safe mode.
+ invalid command {0}. Check the usage below:
+mod not found or file 'as invalid characters.
+ probability o' miss in percent
+enable screensaver debuggin'
+enables debuggin' fer screensavers. Please note that there it may quickly fill the debug log an' slightly slow the screensaver down, dependin' on the screensaver used. Only works if kernel debuggin' be enabled fer diagnostic purposes.
+ no network while downloadin' debug data
+check yer internet connection an' try again.
+ the manual page {0} be invalid.
+ consider fillin' this here manual page.
+ press any key to read the manual page...
+ this here manual page needs work fer:
+manual page {0} not found.
+ mod manual

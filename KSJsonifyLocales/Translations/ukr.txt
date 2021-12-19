@@ -1,0 +1,1007 @@
+Dostupni komandy: {0}
+Vvedennya komandy skasovano.
+Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.
+Pomylka pid chas analizu realʹnykh arhumentiv komandnoho ryadka: {0}
+Nediysnyy shablon kolʹoru {0}
+hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...
+TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...
+RAM: ne vdalosya pereviryty odyn abo kilʹka mikroskhem RAM. Pokaz informatsiyi vse odno...
+HDD: ne vdalosya pereviryty odyn abo kilʹka zhorstkykh dyskiv. Pokaz informatsiyi vse odno...
+TSP: Zahalʹna kilʹkistʹ protsesoriv: {0}
+Vveditʹ parolʹ administratora dlya obsluhovuvannya.
+Pomylka yadra pid chas zavantazhennya: {0}
+PODVIYNA PANIKA: chas perezavantazhennya perevyshchuye maksymalʹno dozvolenyy chas perezavantazhennya pomylky {0}. Vy znayshly pomylku yadra.
+[{0}] panika: perezavantazhennya vvimkneno cherez rivenʹ pomylky {0}.
+[{0}] panika: chas perezavantazhennya: {1} sekund, bilʹshe 1 hodyny. Vin vstanovlenyy na 1 khvylynu.
+PODVIYNA PANIKA: Typ pomylky {0} nediysnyy.
+[{0}] dpanic: {1} -- Perezavantazhennya cherez {2} sekund...
+[{0}] panika: perezavantazhennya vymkneno cherez rivenʹ pomylky {0}.
+[{0}] panika: {1} -- Natysnitʹ budʹ-yaku klavishu, shchob prodovzhyty vykorystannya yadra.
+[{0}] panika: {1} -- Natysnitʹ budʹ-yaku klavishu, shchob vymknuty.
+[{0}] panika: {1} -- Perezavantazhennya cherez {2} sekund...
+PODVIYNA PANIKA: Pomylka yadra: {0}
+Zakryttya...
+Perezavantazhennya...
+Zapushcheno inshyy ekzemplyar Kernel Simulator. Vymknennya u razi pereshkod.
+Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy typ {0}
+Ne vdalosya dodaty korystuvacha do spyskiv dozvoliv: nediysnyy korystuvach {0}
+Ne vdalosya vydalyty korystuvacha zi spyskiv dozvoliv: nediysnyy typ {0}
+Vy vzhe vviyshly.
+Ne vdalosya vydalyty korystuvacha zi spyskiv dozvoliv: nediysnyy korystuvach {0}
+Vy abo znayshly pomylku, abo dozvil, yakyy vy namahalysya dodaty chy vydalyty, uzhe vykonano, abo insha pomylka.
+Pomylka {0}: {1}
+Vy abo znayshly pomylku, abo dozvil, yakyy vy namahalysya zminyty dlya novoho korystuvacha, ne vdalosya.
+Dostupni imena korystuvachiv: {0}
+Im'ya korystuvacha:
+Probily zaboroneni.
+Spetsialʹni symvoly ne dopuskayutʹsya.
+Parolʹ korystuvacha {0}:
+Nepravylʹnyy parolʹ.
+Korystuvach vidklyuchenyy.
+Nepravylʹne imʺya korystuvacha.
+Pomylka pry sprobi proanalizuvaty zapovnyuvachi. {0} – trasuvannya steka:
+Pomylka pry sprobi proanalizuvaty zapovnyuvachi. {0}
+Pomylka sproby dodaty imʺya korystuvacha.
+usrmgr: stvorennya imeni korystuvacha {0}...
+Porozhnye imʺya korystuvacha.
+Korystuvacha {0} ne znaydeno.
+Korystuvacha {0} ne mozhna vydalyty.
+Korystuvach {0} vzhe vviyshov u systemu. Vyyditʹ i vviyditʹ yak inshyy administrator.
+Korystuvacha {0} vydaleno.
+Pomylka pry sprobi vydalyty imʺya korystuvacha.
+Zapytuvanu zastavku {0} ne znaydeno.
+{0} bulo pravylʹno initsializovano.
+{0} ne initsializovano. Mozhlyvo, pid chas initsializatsiyi stalasya pomylka kodu zastavky.
+Zastavka {0} ne isnuye.
+{0} vstanovleno yak zastavku za umovchannyam.
+Zastavku {0} ne znaydeno v bazi danykh. Perevirte nazvu ta sprobuyte shche raz.
+Ne vdayetʹsya zavantazhyty zastavku cherez nastupne:
+Pid chas druku tekstu stalasya seryozna pomylka.
+Pid chas sproby stvoryty konfihuratsiyu stalasya pomylka.
+Pomylka pry sprobi zvilʹnyty operatyvnu pamʺyatʹ: {0} - Prodovzhennya...
+Mod ne mozhe buty zavantazhenyy cherez nastupne:
+mod: Zavantazhennya modiv...
+mod: Zupynka modiv...
+Mod {0} ne maye nazvy. Perehlyanʹte vykhidnyy kod.
+Mod {0} ne maye versiyi.
+Rozpochato {0} v{1}
+Nemaye vyznachennya dlya komandy {0}.
+Komanda vyznachena
+Pered pidklyuchennyam do inshoho servera slid vidklyuchytysya vid servera
+Im'ya korystuvacha dlya {0}:
+Parolʹ dlya {0}:
+Pidklyucheno do {0}
+Pomylka pid chas sproby pidklyuchytysya do {0}: {1}
+Trasuvannya steka: {2}
+Lokalʹnyy kataloh {0} ne isnuye.
+Vveditʹ lokalʹnyy kataloh. ".." povertatysya.
+Kataloh {0} ne znaydeno.
+Vveditʹ viddalenyy kataloh. ".." povertatysya
+Pered zminoyu katalohu neobkhidno pidklyuchytysya do servera
+Lokalʹnyy kataloh: {0}
+Viddalenyy kataloh: {0}
+Vy povynni pidklyuchytysya do servera, persh nizh otrymaty potochnyy viddalenyy kataloh.
+Vy povynni pidklyuchytysya do servera z pravamy administratora, persh nizh vykonuvaty vydalennya.
+Vidʺyednano vid {0}
+Vy shche ne pidklyuchylysya do zhodnoho servera
+Zavantazhennya faylu {0}...
+Zavantazheno fayl {0}.
+Vy povynni pidklyuchytysya do servera, persh nizh vykonuvaty peredachu.
+{0} KB | Zmineno v: {1}
+Vy povynni pidklyuchytysya do servera, persh nizh pererakhuvaty vsi viddaleni fayly.
+Zavantazhennya faylu {0}...
+Zavantazhenyy fayl {0}
+Otrymuye potochnyy lokalʹnyy kataloh
+Otrymuye potochnyy viddalenyy kataloh
+Zminyuye lokalʹnyy kataloh dlya zavantazhennya abo zavantazhennya
+Zminyuye viddalenyy kataloh dlya zavantazhennya abo zavantazhennya
+Vydalyaye viddalenyy fayl iz servera
+Vid'yednuyetʹsya vid servera
+Zavantazhuye viddalenyy fayl u lokalʹnyy kataloh, vykorystovuyuchy dviykovyy abo tekstovyy fayl
+Vykhodytʹ z obolonky FTP i povertayetʹsya do yadra
+Pokazuye ekran dovidky
+Perelichuye lokalʹnyy kataloh
+Perelichuye viddalenyy kataloh
+Zavantazhuye lokalʹnyy fayl u viddalenyy kataloh za dopomohoyu dviykovoho abo tekstovoho faylu
+FTP-povidomlennya: zapytuvanu komandu {0} ne znaydeno. Perehlyanʹte «dovidku» dlya otrymannya spysku dostupnykh komand, zaznachenykh v obolontsi FTP.
+Ne vdalosya otrymaty vlastyvosti dlya adaptera {0}
+Nomer adaptera:
+Nazva adaptera:
+Maksymalʹna odynytsya peredachi: {2} odynytsʹ
+DHCP uvimkneno:
+Pakety bez odnoadresnoyi peredachi:
+Odnoadresni pakety:
+Pomylka vkhidnykh/vykhidnykh paketiv:
+Psevdonim ne mozhe zbihatysya z imʺyam komandy.
+Ne znaydeno komandu dlya psevdonima {0}.
+Teper vy mozhete zapustyty "{0}" yak komandu: "{1}".
+Psevdonim {0} ne znaydeno dlya vydalennya.
+Nediysnyy rezhym {0}.
+Vvedeni arhumenty, {0}, budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.
+Arhumentiv ne vystachalo. Dyvitʹsya nyzhche shchodo vykorystannya:
+Kataloh {0} ne znaydeno
+Porozhnye imʺya khosta.
+Zmina z: {0} na {1}...
+Porozhnye povidomlennya dnya.
+Porozhniy MAL pislya vkhodu.
+Nepravylʹnyy parolʹ korystuvacha.
+Paroli ne zbihayutʹsya.
+Imʺya korystuvacha zmineno na {0}!
+Nove imʺya, yake vy vvely, uzhe znaydeno.
+{0} ne znaydeno.
+Konfihuratsiya perezavantazhena. Mozhlyvo, vam dovedetʹsya perezavantazhyty yadro, shchob deyaki zminy vstupyly v sylu.
+Odyn abo kilʹka kolʹoriv nediysni.
+Kolʹory nedostupni. Uvimknitʹ kolʹorovu obolonku v konfihuratsiyi yadra.
+Zastavku {0} ne znaydeno.
+Versiya yadra:
+Rezhym nalahodzhennya:
+Kolʹorova obolonka:
+Arhumenty shchodo zavantazhennya:
+Komanda dovidky sproshchena:
+MOTD pid chas vkhodu:
+Chas/Data na kutku:
+Potochne im'ya korystuvacha:
+Potochne im'ya khosta:
+Dostupni imena korystuvachiv:
+Pomylka sproby vykonaty komandu
+Zminyuye kataloh
+Zminyuye parolʹ dlya potochnoho korystuvacha
+Ochyshchaye ekran
+Vykorystovuyte obolonku FTP dlya vzayemodiyi z serveramy
+Dovidkova storinka
+Perelik vmistu faylu/papky v potochniy paptsi
+Blokuye ekran za dopomohoyu parolya
+Vykhodytʹ iz systemy
+Stvoryuye kataloh
+Perelichuye informatsiyu pro vsi dostupni interfeysy
+Perezavantazhuye kompʺyuter (POPEREDZHENNYA: nemaye synkhronizatsiyi, oskilʹky tse ne ostatochne yadro)
+Perezavantazhuye fayl konfihuratsiyi, yakyy redahuyetʹsya.
+Zakhyshchaye vash ekran vid vyhoryannya
+Vstanovlyuye zastavky yadra
+Vstanovlyuye temy yadra
+Pokazuye datu ta chas
+Pokazuye datu ta chas u zonakh
+Yadro bude vymkneno
+Informatsiya pro systemu
+* Vy mozhete vykorystovuvaty dekilʹka komand, vykorystovuyuchy dvokrapku mizh komandamy.
+Vykorystannya:
+de arhumenty budutʹ {0}
+de bude mytnyk
+Stalasya pomylka v obolontsi.
+Vy ne mayete dozvolu vykorystovuvaty {0}
+Povidomlennya obolonky: zapytanu komandu {0} zaboroneno vykonuvaty v rezhymi obsluhovuvannya.
+Povidomlennya obolonky: zapytanu komandu {0} ne znaydeno. Dostupni komandy dyv. u rozdili «Dovidka».
+Povidomlennya obolonky: komandi {0} zaboroneno vykonuvaty pid chas vkhodu.
+Pomylka sproby vykonaty komandu.
+- Chas {0}: {1}
+Zapusk na {0}
+Vy ne mayete prava otrymuvaty informatsiyu pro {0}.
+Tsya komanda zastarila i bude vyluchena v maybutnʹomu vypusku.
+Vy ne mayete prava zminyuvaty parolʹ {0}, oskilʹky tsilʹ buv administratorom.
+usrmgr: Im'ya korystuvacha {0} vzhe znaydeno
+Vydalyaye vse v zhurnali nalahodzhennya
+Nediysna mova
+Zminyuye movu
+----------------------------- Damp paniky yadra ------------------ -----------
+>> Informatsiya pro paniku <<
+> Opys: {0}
+> Typ pomylky: {1}
+> Data i chas: {2}
+>> Informatsiya pro vynyatky <<
+> Vynyatok: {0}
+> Opys: {1}
+> REZULʹTAT: {2}
+> Dzherelo: {3}
+> Trasuvannya steka <
+>> Informatsiya pro vnutrishniy vynyatok {0} <<
+>> Vynyatok {0} ye pershoprychynoyu <<
+>> Bez vynyatku; mozhe buty pomylka yadra. <<
+>> Kadry, fayly, ryadky ta stovptsi <<
+> Kadr {0}: fayl: {1} | Ryadok: {2} | Stovpetsʹ: {3}
+> Pid chas sproby otrymaty informatsiyu pro kadr stalasya pomylka. {0}: {1}
+Laskavo prosymo do Kernel!
+Uspishno vviyshov yak <korystuvach>
+MOTD/MAL diysnyy, ale typ povidomlennya nediysnyy. Prypuskayuchy MOTD...
+Namahavsya prochytaty MOTD/MAL, yake maye nediysnyy typ povidomlennya.
+Zavantazhennya zaversheno.
+Pomylka zavantazhennya pid chas sproby {0}: {1}
+Budʹ laska, vykorystovuyte "ftp", yakshcho vy zbyrayetesya zavantazhuvaty fayly z FTP-servera.
+Zavantazhuye fayl u potochnyy robochyy kataloh
+Vidʺyednayte prystriy dlya nalahodzhennya
+Perelichuye pidklyucheni prystroyi dlya nalahodzhennya
+Nalahodzhuvalʹnyy prystriy {0} ne znaydeno.
+Prystriy {0} vidklyucheno.
+Pomylka pidklyuchennya: {0}
+Nalahodzhennya proslukhovuvannya vsikh adres za dopomohoyu portu {0}.
+Arhumenty ne vkazani. Pidkazka: vkazhitʹ kilʹka arhumentiv, rozdilenykh probilamy
+Psevdonim uzhe znaydeno: {0}
+Zhurnal nalahodzhennya vydaleno. Usi pidklyucheni prystroyi dlya nalahodzhennya vse shche mozhutʹ perehlyadaty povidomlennya.
+Pomylka vydalennya zhurnalu nalahodzhennya: {0}
+Ne vdalosya zminyty kataloh: {0}
+Vkazhitʹ adresu
+Ne vdayetʹsya vydalyty kataloh: {0}
+Chasovyy poyas vkazano nepravylʹno.
+Nediysnyy vybir profilyu.
+Sproba pidklyuchytysya do {0} za dopomohoyu profilyu {1}...
+Komandu {0} ne znaydeno. Spysok komand dyv. u komandi «dovidka».
+Ne vdalosya otrymaty vlastyvosti IPv6 dlya adaptera {0}. Prodovzhennya...
+Informatsiya pro IPv4:
+Informatsiya pro IPv6:
+Adapter {0} ne pidtrymuye IPv6. Prodovzhennya...
+Adapter {0} ne pidtrymuye IPv4. Pomylka zonda.
+Skhozhe, vy zapuskaly versiyu yadra dlya rozrobky. Khocha vy mozhete pobachyty aspekty, vin chasto onovlyuyetʹsya i mozhe vnosyty pomylky. Rekomenduyetʹsya zalyshatysya na stabilʹniy versiyi.
+Vybrana mova mistytʹ dva varianty. Oberitʹ odne:
+Nediysnyy vybir. Sprobuyte shche raz.
+Vy ne mayete prava vstanovlyuvaty potochnyy kataloh na {0}: {1}
+Shlyakh, yakyy vy vkazaly, zanadto dovhyy.
+Pid chas sproby otrymaty informatsiyu pro {0} zavershyvsya zbiy zbirnyka damp informatsiyi: {1}
+Pomylka pid chas sproby vstanovyty MOTD/MAL: {0}
+Pomylka pid chas sproby otrymaty MOTD/MAL: {0}
+Pomylka pid chas sproby zapustyty zastavku cherez nediysnu operatsiyu.
+Perezavantazhennya zaboroneno v bezpechnomu rezhymi.
+Rozbir modiv zaboroneno v bezpechnomu rezhymi.
+Pomylka pid chas sproby vstanovyty rezhym analizu. Perevirte znachennya ta sprobuyte shche raz. Yakshcho tse pravylʹno, podyvitʹsya trasuvannya steka, koly vvimkneno nalahodzhennya yadra.
+Shlyakh ne ye ni faylom, ni katalohom.
+Stvoryuye shche odnu kopiyu faylu v inshomu katalozi abo imeni.
+Peremishchuye fayl v inshyy kataloh
+Zbih {0} ({1}): {2}
+Zbih {0}: {1}
+Vytrachenyy chas: {0} milisekund
+Im'ya: {0}
+Obchyslyuye sumy fayliv.
+Perenese vas do nashoyi Wiki GitHub.
+Nediysnyy alhorytm shyfruvannya.
+Vmykaye abo vymykaye viddalene nalahodzhennya.
+Perevirte, chy vmiyete vy pravylʹno pysaty slova vchasno
+Perevirte, chy vmiyete vy rozvʺyazuvaty matematychni rivnyannya vchasno
+Vidpovidayte na komentari z lyubovʺyu chy nenavystyu.
+Yakshcho khtosʹ zrobyv takyy komentar do vashoho video:
+Yak by vy vidpovily?
+Nediysnyy vybir. Perekhodzhu do nastupnoho komentarya...
+Chudovo! {0} bude vdyachnyy za vashu podyaku.
+Napysano idealʹno!
+Napysano nepravylʹno.
+Vyrisheno idealʹno!
+Vyrisheno nepravylʹno.
+RPC vzhe zapushcheno.
+RPC proslukhovuye vsi adresy za dopomohoyu portu {0}.
+Zapusk RPC...
+Pidklyuchayetʹsya do SSH-servera.
+Vveditʹ parolʹ dlya {0}:
+SSH vidklyucheno.
+Ne vdalosya vstanovyty kodovu storinku. Mova mozhe vidobrazhatysya nepravylʹno.
+Nalahodzhennya ne vvimkneno.
+Dyakuyu! Tse tsikavo.
+Usi pidtrymayutʹ vashe video dlya tsʹoho.
+YA nadav vam spetsialʹnyy fayl u vashiy elektronniy poshti dlya vashoho nastupnoho video.
+Slukhayte, kheytery, vin namahayetʹsya nam dopomohty, a ne shakhray.
+Ne znayu, naskilʹky ya ta moyi druzi dyakuyemo vam za tse video.
+YA lyublyu tebe za tse video.
+Prodovzhuyte, ne zupynyaytesya.
+YA dopomozhu vam dosyahty 1 mln peredplatnykiv!
+Cherez vas moyi druzi polahodyly kompʺyuter.
+Chudova vytivka! YA vymknuv PK svoho voroha.
+Nenavysnykam: PRYPYNITʹ NENAVYDYTY YOHO
+Nenavysnykam: DO ROBOTY
+Teper tsʹoho nikhto ne pomitytʹ zavdyaky vashomu posibnyku z prykhovuvannya obʺyektiv
+YA perestanu dyvytysya vashi video. Abonent vtratyv.
+Shcho tse? Tse nezrozumilo.
+Tse video nayhirshe!
+Usi povidomlyayutʹ pro tse video!
+Moyi druzi v hnivi na tebe!
+Zakokhani teper budutʹ nenavydity vas za tse.
+Vash druh nenavydytʹ vas za tse.
+Tsya vytivka zmusyla mene vidmovytysya vid vas.
+Misiya ne vykonana, Povaha -, Pidpysnyk -
+Prypynitʹ znimaty take video!!!
+Povernitʹsya do svoyeyi roboty, vashi video nayhirshi!
+My uperedzhuyemo tse video.
+Pokazuye vsi otrymani spovishchennya
+Vidkhylyaye spovishchennya
+Spovishchennya uspishno vidkhyleno.
+Pakety (vkhidni):
+Pakety (vykhidni):
+Pomylky v otrymanykh paketakh:
+Zahalʹni vlastyvosti IPv6
+Zahalʹni vlastyvosti IPv4
+Viddaleno vykonuye komandu na viddalenyy PK
+- Etap 1: Initsializatsiya systemy
+- Etap 2: vyyavlennya obladnannya
+- Etap 3: vyyavlennya modiv i zastavok
+- Etap 4: Uviyditʹ
+Skhozhe, vy zapuskaly versiyu-kandydat na vypusk. Rekomenduyetʹsya zalyshatysya na stabilʹniy versiyi.
+Nediysnyy typ {0}.
+Rozmir: {0}
+Kataloh {0} vzhe isnuye.
+Pomylka pid chas sproby pidʺyednatysya do {0}: chas ochikuvannya zʺyednannya abo vtrachene zʺyednannya
+Kalʹkulyator dlya obchyslennya vyraziv.
+Pomylka v rozrakhunkakh.
+Onovlennya systemy
+Perevirka onovlenʹ systemy...
+Znayshov novu versiyu:
+Vy mozhete zavantazhyty yoho za adresoyu:
+Nemaye ostannikh spovishchenʹ
+Shukaye vkazanyy ryadok u nadanomu fayli
+Obchyslyuye sumu fayliv u vkazanomu katalozi.
+Vveditʹ im'ya korystuvacha abo adresu elektronnoyi poshty:
+Vveditʹ parolʹ:
+Pomylka pid chas pidklyuchennya do {0}: {1}
+Pidklyuchennya do {0}...
+Autentyfikatsiya...
+Vykhodytʹ z obolonky IMAP
+Spysok komand
+Zavantazhuye povidomlennya ta pererakhovuye yikh
+Vidkryvaye povidomlennya
+Storinka ne ye chyslovym znachennyam.
+Nomer povidomlennya ne mozhe buty vidʺyemnym abo nulʹovym.
+Nomer povidomlennya ne ye chyslovym znachennyam.
+- Vid {0}
+- Do {0}
+- Nadislano o {0} u {1}
+Vkazane povidomlennya ne znaydeno.
+Ne vdalosya zapustyty viddalene nalahodzhennya: {0}
+Pidhotovka profiliv... Tse mozhe zaynyaty kilʹka khvylyn...
+Pomylka sproby vykonaty stsenariy: {0}
+Zapysuye tekst u konsolʹ
+Robytʹ vybir korystuvacha
+Zvukovyy syhnal u 'n' Hts i chas u 'n' milisekundakh
+de <$variable> – budʹ-yaka zminna, yaka bude vykorystovuvatysya dlya zberihannya vidpovidi
+Chastota maye buty chyslovoyu. Yakshcho vono chyslove, perekonaytesya, shcho vono >= 37 i <= 32767.
+Chas maye buty chyslovym.
+de <answers> — vidpovidi na zapytannya z odniyeyi litery, rozdileni kosymy ryskamy
+Pomylka pidklyuchennya do SSH-servera: {0}
+Dozvolyaye korystuvachevi vvodyty vvedennya
+Zminyuye potochnyy kataloh poshty
+Ne vdayetʹsya vidkryty papku poshty {0}: {1}
+Spysok katalohiv u vashiy poshtoviy adresi
+Vykorystovuye informatsiyu zi shvydkoho naboru dlya shvydkoho pidklyuchennya do budʹ-yakoyi merezhi
+Vyberitʹ adresu dlya pidklyuchennya:
+Vybir poza diapazonom. Vyberitʹ mizh 1-{0}. Sprobuyte shche raz.
+Vybir ne ye chyslom. Sprobuyte shche raz.
+Pid chas perevirky sertyfikata vynykayutʹ pomylky sertyfikata. Mozhlyvo, vy vpershe pidklyuchylysya do servera abo termin diyi sertyfikata zakinchyvsya. Osʹ pomylka:
+Vy vpevneni, shcho khochete pidklyuchytysya?
+Nevirna vidpovidʹ. Budʹ laska sprobuyte shche raz.
+Shvydkyy nabir porozhniy. Pidklyuchitʹsya do servera, shchob dodaty do nʹoho adresu.
+Shvydkoho naboru ne isnuye. Pidklyuchitʹsya do servera, shchob dodaty do nʹoho adresu.
+Vveditʹ adresu ta port servera IMAP (<adresa> abo <adresa>:[port]):
+Vveditʹ adresu ta port SMTP-servera (<adresa> abo <adresa>:[port]):
+Nadsylaye povidomlennya na adresu
+Vveditʹ poshtovu adresu oderzhuvacha:
+Vveditʹ temu:
+Vveditʹ svoye povidomlennya nyzhche. Napyshitʹ «EOF» dlya pidtverdzhennya.
+Nadsylannya povidomlennya...
+Povidomlennya nadislano.
+Nevirna adresa elektronnoyi poshty. Perekonaytesya, shcho vy pravylʹno napysaly adresu ta chy vona vidpovidaye formatu pokazanoho prykladu:
+Vydalyaye povidomlennya
+Vydalyaye vsi povidomlennya vid oderzhuvacha
+Povidomlennya {0} vid {1} vydaleno z {2}. Zalyshylosya proanalizuvaty {3} povidomlenʹ.
+Povidomlennya {0} vid {1} vydaleno z papky "Vkhidni". Zalyshylosya proanalizuvaty {2} povidomlenʹ.
+Redahuye tekstovyy fayl
+Stvoryuye novyy fayl
+Fayl uzhe isnuye.
+Pomylka sproby stvoryty fayl: {0}
+Ne vdalosya vidkryty fayl. Vykhid z obolonky...
+Vkazana komanda tekstovoho redaktora ne znaydena.
+Perelichuye dostupni komandy
+Vykhid iz tekstovoho redaktora ta zberezhennya nezberezhenykh zmin
+Vyvodytʹ na konsolʹ vmist faylu z nomeramy ryadkiv
+Dodaye novyy ryadok z tekstom u kintsi faylu
+Vydalyaye vkazanyy nomer ryadka
+Zaminyuye slovo chy frazu inshym
+Vydalyaye slovo chy frazu z nomera ryadka
+Vydalyaye symvol iz nomera symvolu u vkazanomu ryadku
+Vyluchena liniya.
+Ukazanyy nomer ryadka {0} ne ye diysnym chyslom.
+Zapusk u bezpechnomu rezhymi. Propusk etapu...
+>> Viddalene nalahodzhennya ta chat: versiya
+>> Vasha adresa: {0}.
+>> Vashe im'ya {0}.
+Komandu {0} ne znaydeno. Vykorystovuyte «/help», shchob perehlyanuty spysok.
+Indeks {0} nediysnyy. Isnuye {1} trasuvannya steka. Indeks zasnovanyy na nuli, tomu sprobuyte vidnyaty na 1.
+Nemaye trasuvannya steka
+Pokazuye ostannyu trasuvannya steka za vynyatkom
+Pokazuye potochne imʺya korystuvacha v seansi
+Vidʺyednuye vas vid nalahodzhuvacha
+Rozblokuyte prystriy dlya nalahodzhennya za IP-adresoyu
+Blokuyte prystriy dlya nalahodzhennya za IP-adresoyu
+{0} teper mozhe znovu pryyednatysya do viddalenoho nalahodzhennya.
+{0} shche ne zablokovano.
+Pomylka zavantazhennya nalashtuvanʹ
+Pid chas zavantazhennya nalashtuvanʹ stalasya pomylka. Mozhlyvo, vam znadobytʹsya pereviryty fayl nalashtuvanʹ.
+Vyberitʹ rozdil:
+Zberehty nalashtuvannya
+Vykhid
+Vkazanyy parametr {0} nediysnyy.
+Vidpovidʹ maye buty chyslovoyu.
+Pidkazka arhumentiv pid chas zavantazhennya
+Tryher rezhymu obsluhovuvannya
+Perevirte nayavnistʹ onovlenʹ pid chas zapusku
+Tykhyy zond
+Pokazaty MOTD pid chas vkhodu
+Ochystyty ekran pid chas vkhodu
+Pokazaty dostupni imena korystuvachiv
+Kolʹorova obolonka
+Sproshchena komanda dovidky
+Port nalahodzhennya
+Zavantazhte chas povtoriv
+Im'ya korystuvacha zhurnalu FTP
+Zareyestruyte IP-adresu FTP
+Povernuty lyshe pershyy profilʹ FTP
+Pokazaty chas/datu u verkhnʹomu pravomu kuti
+Chas ochikuvannya zastavky v ms
+Kvota rozmiru nalahodzhennya v baytakh
+Rezhym analizu rozmiru
+Vydil pid chas zapusku
+Dovhyy chas i data
+Pokazaty prykhovani fayly
+Vvedeno nediysnyy rozdil. Budʹ laska, povernitʹsya.
+Povertaysya...
+Uvimknuty
+Vymknuty
+Napyshitʹ parolʹ root, yakyy potribno vstanovyty. Ne khvylyuytesya; parolʹ vidobrazhayetʹsya zirochkamy.
+Zminyty parolʹ root?
+Vstanovyty parolʹ root...
+Napyshitʹ port viddalenoho nalahodzhuvacha. Vin maye buty chyslovym i ne povynen buty vzhe vykorystanyy. Inakshe viddalenyy nalahodzhuvach ne zmozhe vidkryty port.
+Napyshitʹ, skilʹky raziv komanda "get" maye povtoryty nevdali zavantazhennya. Vono maye buty chyslovym.
+Napyshitʹ, koly zapuskaty zastavku cherez vkazani milisekundy. Vono maye buty chyslovym.
+Napyshitʹ, skilʹky baytiv mozhe zberihaty zhurnal nalahodzhennya. Vono maye buty chyslovym.
+Vidpovidʹ mozhe buty ne nehatyvnoyu.
+Vidpovidʹ nediysna. Perekonaytesya, shcho vidpovidʹ ye chyslovoyu dlya zapysiv konfihuratsiyi, yaki potrebuyutʹ chysla yak vidpovidi.
+Zminna {0} ne znaydena v zhodnomu z moduliv.
+Zminyuye konfihuratsiyu yadra
+Aktyvuyte 255 kolʹoriv
+Khochete zalyshatysya na zvʺyazku?
+Nediysnyy vybir. Yakshcho prypustyty, shcho ni...
+Zminitʹ kulʹturu pry zmini movy
+Pokazanyy tekst
+Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty. Korotshe - krashche.
+Ne vdalosya zavantazhyty {0}
+Pomylka vykonannya komandy viddalenoho nalahodzhennya {0}: {1}
+Dodaye korystuvachiv
+Dodaye psevdonimy do komand
+Vvodytʹ arhumenty v yadro ​​(potribne perezavantazhennya)
+Zminyuye im'ya khosta
+Zminyuye MAL, MOTD pislya vkhodu
+Zminy MOTD, povidomlennya dnya
+Zminyuye im'ya korystuvacha
+Keruyte dozvolamy dlya korystuvachiv
+Perezavantazhuye fayl zastavky v KSMods
+Vydalyaye korystuvacha zi spysku
+Psevdonim {0} uspishno vydaleno.
+Ne vdalosya pereviryty nayavnistʹ onovlenʹ.
+U spysku bilʹshe nemaye korystuvachiv.
+Ne vdalosya vstanovyty movu.
+Pomylka sproby zakryty spovishchennya.
+usrmgr: Ne vdalosya stvoryty im'ya korystuvacha {0}: {1}
+Ne vdalosya pereymenuvaty korystuvacha. {0}
+Odyn zi spyskiv dozvoliv ne mistytʹ imeni korystuvacha {0}.
+Ne vdalosya zavantazhyty dozvoly z faylu: {0}
+Ne vdalosya zminyty imʺya khosta: {0}
+Korystuvach ne znaydenyy
+Ne vdalosya zminyty parolʹ imeni korystuvacha: {0}
+Ne vdalosya skopiyuvaty fayl abo kataloh: {0}
+Ne vdalosya peremistyty fayl abo kataloh: {0}
+Ne vdayetʹsya znayty fayl, yakyy vidpovidaye ryadku "{0}": {1}
+Ne vdalosya zavantazhyty fayl {0}.
+Pomylka spysku viddalenykh fayliv: {0}
+Vy vpevneni, shcho khochete vydalyty {0} <y/n>?
+Vydalennya {0}...
+{0} ne znaydeno na serveri.
+Usi lysty, nadislani {0}, uspishno vydaleno.
+Ne vdalosya vydalyty vsyu poshtu, nadislanu {0}.
+Pomylka nadsylannya povidomlennya.
+Peremishchennya {0} do {1}...
+Peremishcheno uspishno
+Peremishchuye fayl abo kataloh v inshyy fayl abo kataloh. Vy takozh mozhete vykorystovuvaty tse dlya pereymenuvannya fayliv.
+Ne vdalosya peremistyty {0} do {1}.
+Kopiyuvannya {0} do {1}...
+Skopiyovano uspishno
+Kopiyuye fayl abo kataloh v inshyy fayl abo kataloh.
+Ne vdalosya skopiyuvaty {0} do {1}.
+Peremishchuye povidomlennya
+Peremishchuye vsi povidomlennya vid oderzhuvacha
+Vsya poshta, nadislana {0}, uspishno peremishchena.
+Ne vdalosya peremistyty vsyu poshtu, nadislanu {0}.
+Povidomlennya {0} vid {1} peremishcheno z {2}. Zalyshylosya proanalizuvaty {3} povidomlenʹ.
+Pokazuye informatsiyu pro pohodu dlya vkazanoho mista. Vykorystovuye OpenWeatherMap.
+-- Informatsiya pro pohodu dlya {0} --
+Pohoda: {0}
+Tysk: {0}
+Volohistʹ: {0}
+Vy mozhete otrymaty vlasnyy klyuch API na https://home.openweathermap.org/api_keys.
+Vy zavzhdy mozhete zvernutysya do http://bulk.openweathermap.org/sample/city.list.json.gz, shchob otrymaty spysok mist z yikhnimy identyfikatoramy.
+Bazhana odynytsya vymiryuvannya temperatury
+Nalashtovuye yadro, shchob vono zaproponuvalo vam arhument pid chas zavantazhennya.
+Aktyvuye rezhym obsluhovuvannya. Tse vymykaye kilʹka oblikovykh zapysiv.
+Pry kozhnomu zapusku vin pereviryatyme nayavnistʹ onovlenʹ.
+Pry zmini movy zminyuyte nazvy misyatsiv, kalendar toshcho.
+Yakshcho yadro ​​zapushcheno, vono vstanovytʹ parolʹ root.
+Zberihayte movchannya povidomlenʹ pro aparatne testuvannya.
+Pokazuvaty povidomlennya dnya pered vidobrazhennyam ekrana vkhodu.
+Ochystitʹ ekran pered vidobrazhennyam ekrana vkhodu.
+Pokazuye dostupnykh korystuvachiv, yakshcho vvimkneno.
+Nadaye pidtrymku kolʹoru yadra
+Sproshchena komanda dopomohy dlya vsikh obolonok
+Chy potribno reyestruvaty imʺya korystuvacha FTP.
+Chy reyestruvaty IP-adresu FTP.
+Vybyrayte pershyy profilʹ tilʹky pry pidklyuchenni.
+Chas i data budutʹ pokazani u verkhnʹomu pravomu kuti ekrana
+Yakshcho vvimkneno, yadro ​​analizuvatyme vsyu papku na zahalʹnyy rozmir. V inshomu vypadku bude rozibrano lyshe poverkhnyu.
+Vmykaye eyecandy pid chas zapusku
+Chas i data budutʹ dovshymy, vidobrazhatymutʹsya povni nazvy misyatsiv toshcho.
+Pokazuye prykhovani fayly.
+Vyberitʹ bazhanu odynytsyu dlya temperatury (tse stosuyetʹsya lyshe komandy «Pohoda»)
+Mod {0} zupyneno
+{0} v{1} zupyneno
+Mod {0} ne maye nazvy chastyny. Pomylka analizu modu. Perehlyanʹte vykhidnyy kod.
+Vy povynni uvimknuty rezhym nalahodzhennya, persh nizh vy zmozhete ochystyty zhurnal nalahodzhennya.
+U papku "Vkhidni" nadiyshlo {0} novykh povidomlenʹ.
+Vidkryyte «lsmail», shchob pobachyty yikh.
+Ne vdayetʹsya vydalyty fayl: {0}
+Vydalyaye kataloh abo fayl
+Ne vdayetʹsya vydalyty {0}, oskilʹky vin ne isnuye.
+Natysnitʹ CTRL+C, shchob vyyty.
+Nadaye informatsiyu pro fayl
+Nadaye informatsiyu pro kataloh
+Ne vdayetʹsya otrymaty informatsiyu pro neisnuyuchyy kataloh.
+Ne vdayetʹsya otrymaty informatsiyu pro neisnuyuchyy fayl.
+Povne im'ya: {0}
+Chas stvorennya: {0}
+Chas ostannʹoho dostupu: {0}
+Chas ostannʹoho zapysu: {0}
+Atrybuty: {0}
+Batʹkivsʹkyy kataloh: {0}
+De znayty: {0}
+Rozmir faylu: {0}
+Zminyuye atrybut faylu
+Fayl ne znaydeno.
+de <atrybuty> ye odnym iz nastupnykh:
+Fayl ye zvychaynym faylom
+Fayl ye faylom lyshe dlya chytannya
+Fayl ye prykhovanym faylom
+Fayl ye arkhivom. Vykorystovuyetʹsya dlya rezervnoho kopiyuvannya.
+Atrybut "{0}" nediysnyy.
+Atrybut uspishno dodano.
+Atrybut uspishno vydaleno.
+Ne vdalosya dodaty atrybut.
+Ne vdalosya vydalyty atrybut.
+Zaminyuye slovo chy frazu inshym u ryadku
+Perevyshcheno rivenʹ chervonoho kolʹoru. Tse bulo {0}.
+Perevyshcheno rivenʹ zelenoho kolʹoru. Tse bulo {0}.
+Perevyshcheno rivenʹ synʹoho kolʹoru. Tse bulo {0}.
+Aktyvuyte spravzhni kolʹory
+Ne vdalosya rozblokuvaty {0}.
+{0} uzhe zablokovano.
+{0} zaraz ne mozhe pryyednatysya do viddalenoho nalahodzhennya.
+Ne vdalosya zablokuvaty {0}.
+Kolʹory tsyklu
+Dyskoteka zminyuvatyme kolʹory, koly vvimkneno. V inshomu vypadku vyberitʹ vypadkovi kolʹory.
+Vveditʹ shlyakhy fayliv do vkladenʹ. Natysnitʹ ENTER na porozhnʹomu shlyakhu, shchob pidtverdyty.
+Vidkryvaye zashyfrovane povidomlennya
+Vveditʹ parolʹ dlya identyfikatora klyucha {0}
+Nadsylaye zashyfrovane povidomlennya na adresu
+Zavantazhennya z {0}...
+Pokazuvaty indykator vykonannya pid chas zavantazhennya abo zavantazhennya za dopomohoyu komand "get" abo "put".
+Yakshcho virno, to pid chas zavantazhennya abo zavantazhennya "get" abo "put" pokazuye indykator vykonannya.
+Zavantazhuye fayl na vkazanyy veb-sayt
+Pinhuye adresu
+Zavantazhennya {0} do {1}...
+Zavantazhennya zaversheno.
+Budʹ laska, vykorystovuyte "ftp", yakshcho vy zbyrayetesya zavantazhuvaty fayly na FTP-server.
+Pomylka zavantazhennya pid chas sproby {0}: {1}
+Napyshitʹ, skilʹky raziv komanda "put" maye povtoryty nevdali zavantazhennya. Vono maye buty chyslovym.
+Adresa ne mozhe buty pustoyu.
+Ne vdalosya vykonaty ping {0}: {1}
+Uspishno vykonaty ping cherez {0} ms.
+Vkazanyy nomer ryadka ne mozhe buty bilʹshym za nomer ryadka ostannʹoho faylu.
+Vidchuttya: {0}
+Temperatura: {0}
+Shvydkistʹ vitru: {0}
+Napryamok vitru: {0}
+Natysnitʹ budʹ-yaku klavishu, shchob povernutysya nazad.
+Ne vdayetʹsya stvoryty papku poshty {0}: {1}
+Stvoryuye kataloh u potochnomu robochomu katalozi
+Vydalyaye kataloh iz potochnoho robochoho katalohu
+Papku poshty {0} ne znaydeno.
+Ne vdayetʹsya vydalyty papku poshty {0}: {1}
+{0}, stvoreno {1} {2}, zmineno {3} {4}
+Pereviryaye spravnistʹ faylu
+Kheshi nepravylʹno sformovani.
+Kheshi ne zbihayutʹsya.
+Zbihayutʹsya kheshi.
+Pereymenovuye papku
+Vidkryvaye testovu obolonku
+* Natysnitʹ budʹ-yaku klavishu, shchob zapustyty yadro, abo ESC, shchob vyyty.
+Ne vdalosya zapustyty "{0}": {1}
+Pokazaty poperedniy perehlyad poshtovykh povidomlenʹ
+U spysku poshtovykh povidomlenʹ vidobrazhaty poperedniy perehlyad osnovnoho tekstu.
+Kolir vvedennya
+Kolir litsenziyi
+Kolir pomylky yadra, shcho prodovzhuyetʹsya
+Kolir pomylky yadra, yakyy ne mozhna prodovzhuvaty
+Kolir imeni khosta
+Kolir imeni korystuvacha
+Kolir fonu
+Neytralʹnyy kolir tekstu
+Kolir stseny
+Kolir pomylky
+Stylʹ pidkazky FTP
+Stylʹ pidkazky poshty
+Stylʹ pidkazky SFTP
+Sproba otrymaty dostup do nediysnoho shlyakhu.
+Ochyshchaye tekstovyy fayl
+Vykhid iz tekstovoho redaktora
+Zapytuye symvol u vkazanomu ryadku abo v usikh ryadkakh
+Perevirku onovlenʹ vymkneno, oskilʹky vy vykorystovuyete versiyu dlya rozrobky.
+Vmykaye abo vymykaye funktsiyu avtozberezhennya tekstovoho redaktora.
+Yakshcho avtozberezhennya vvimkneno, tekstovyy fayl bude zberihatysya kozhni «n» sekundy.
+Uvimknuty avtozberezhennya tekstovoho redaktora
+Interval avtozberezhennya tekstovoho redaktora
+Zberihaye fayl
+Zapyshitʹ chat dlya zhurnalu nalahodzhennya
+Zapysuye viddalenyy chat iz nalahodzhennyam u zhurnal nalahodzhennya.
+Zatrymka v milisekundakh
+Skilʹky milisekund chekaty, persh nizh zrobyty nastupnyy zapys?
+Dozvolyaye vykorystovuvaty FTP-server SSH
+Nemaye dopomohy dlya komandy "{0}".
+Nediysna poslidovnistʹ VT dlya kolʹoru RGB.
+Kolir paneli sekund
+Kolir khvylynnoyi paneli
+Kolir hodynnyka
+Kolir informatsiyi
+Klishchi dlya zminy kolʹoru
+Yakshcho tsykl kolʹoriv uvimkneno, skilʹky halok pered zminoyu kolʹoriv u ProgressClock? 1 tyk = 0,5 sekundy
+ProgressClock vybyratyme vypadkovi kolʹory, yakshcho vin uvimknenyy. V inshomu vypadku vykorystovuyte kolʹory z konfihuratsiyi.
+Stvoryuye novu temu
+Stvorennya novoyi temy "{0}".
+Zberehty temu v potochnomu katalozi
+Zberehty temu v inshyy kataloh...
+Vyberitʹ kolir za dopomohoyu klavish «<-» ta «->». Natysnitʹ ENTER, shchob vyyty. Natysnitʹ «i», shchob vvesty nomer kolʹoru vruchnu.
+Vyberitʹ kolir za dopomohoyu klavish «<-» ta «->». Vykorystovuyte klavishi zi strilkamy vhoru ta vnyz, shchob vybraty mizh kolʹorovymy diapazonamy. Natysnitʹ ENTER, shchob vyyty. Natysnitʹ «i», shchob vvesty nomer kolʹoru vruchnu.
+Laskavo prosymo do yadra! - Versiya {0}
+Poperedzhuvalʹnyy kolir
+Variant kolʹoru
+Vveditʹ nomer kolʹoru vid 0 do 255:
+Vykorystovuyte «hwinfo» dlya otrymannya dodatkovoyi informatsiyi pro obladnannya.
+Drukuye informatsiyu pro obladnannya
+Nazva protsesora:
+Bity protsesora:
+Faylova systema rozdiliv:
+Rozmir rozdilu:
+GPU: ne vdalosya pereviryty odnu abo kilʹka videokart. Pokaz informatsiyi vse odno...
+>> Laskavo prosymo! Tse vash pershyy raz, koly vy vkhodyte v viddalene nalahodzhennya ta chat. Vykorystovuyte "/register <im'ya>", shchob zareyestruvatysya.
+Prystriy vzhe isnuye.
+Nemaye takoho prystroyu.
+Vstanovlyuye imʺya korystuvacha prystroyu
+Vy vzhe zareyestrovani.
+Pryvit, {0}!
+Vyvodytʹ vmist faylu na konsolʹ
+Abo peredayte tsiy komandi "spysky mist".
+Zapys uzhe isnuye.
+Obhortaye vykhid konsoli
+Komandu ne mozhna obhornuty. Tsi komandy mozhna obhornuty:
+Rozpakovuye ZIP-arkhiv
+Stvoryuye ZIP-arkhiv
+Vbudovanyy u {0}
+Pomylka zavantazhennya nalahodzhuvalʹnykh danykh
+Pid chas zavantazhennya nalahodzhuvalʹnykh danykh stalasya pomylka. Perevirte pidklyuchennya do Internetu.
+Ne vdalosya zavershyty mod {0}: {1}
+Perelichuye vsi zapushcheni podiyi
+Potochnyy kataloh
+Vstanovlyuye potochnyy kataloh obolonky. Napyshitʹ absolyutnyy shlyakh do budʹ-yakoho isnuyuchoho katalohu.
+Obertannya vyvodiv spysku
+Obhortaye vykhidni dani spysku, yakshcho vin zdayetʹsya zanadto dovhym dlya potochnoyi heometriyi konsoli.
+Pinh!
+{0} nadislav vam zapyt.
+Zberehty temu v potochnomu katalozi yak...
+Zberehty temu v inshomu katalozi yak...
+Vkazhitʹ nazvu temy:
+Korystuvacha {0} dodano do spysku "{1}".
+Korystuvacha {0} vydaleno zi spysku "{1}".
+Nediysnyy rezhym {0}
+Zavantazhyty temu iz poperednʹo stvorenykh tem...
+Vkazhitʹ nazvu faylu temy bez rozshyrennya .json:
+Vidkryvaye ZIP-arkhiv
+Vykhodytʹ z obolonky ZIP
+Perelichuye vsi fayly v arkhivi
+Rozpakovuye fayl u vkazanyy kataloh abo potochnyy kataloh
+Zminyuye kataloh arkhivu
+Vkazana komanda obolonky ZIP ne znaydena.
+Kataloh {0} ne isnuye
+Arkhivnyy kataloh {0} ne isnuye
+Maksymalʹna kilʹkistʹ pozytsiy
+Skilʹky pozytsiy osvitleno pered zatemnennyam?
+Kolir zapysu spysku
+Kolir znachennya spysku
+Pidklyuchayetʹsya do servera SSH dlya vykonannya komandy.
+Nediysnyy spetsyfikator kolʹoru. Perekonaytesya, shcho vin u pravylʹnomu formati, shcho oznachaye chyslo vid 0-255, yakshcho vykorystovuyetʹsya 255 kolʹoriv, abo poslidovnistʹ VT, yakshcho vykorystovuyetʹsya spravzhniy kolir, yak pokazano nyzhche:
+Pomylka v testoviy obolontsi: {0}
+Vstanovlyuye zminniy znachennya v stsenariyi
+Pidkazka povidomyty pro pomylku.
+Dyakuyemo, shcho nadaly nam kvytok! Vyberitʹ, yakyy u vas zapyt.
+Problema
+Zapyt na funktsiyu
+Pytannya
+Vy povynni vkazaty funktsiyu.
+Postavte zapytannya, zapyshitʹ svoyu ideyu abo povidomte pro problemu.
+Vy povynni napysaty sviy zapyt.
+Stalasya pomylka v obolontsi FTP:
+Nevidoma pomylka obolonky FTP:
+Stalasya pomylka v obolontsi SFTP:
+Nevidoma pomylka obolonky SFTP:
+Pokazaty baner SSH
+Pokazuye baner servera SSH pid chas pidklyuchennya.
+Yak vy khochete proyty avtentyfikatsiyu?
+Fayl pryvatnoho klyucha
+Parolʹ
+Vveditʹ parolʹnu frazu dlya klyucha {0}:
+Neytralizuvav neisnuyuchyy shlyakh.
+Klyuchovyy fayl {0} ne isnuye.
+Pomylka sproby dodaty zakrytyy klyuch:
+Natysnitʹ «t», shchob pereyty v rezhym 255 kolʹoriv.
+Natysnitʹ «t», shchob pereyty v rezhym istynnoho kolʹoru.
+Skhozhe, u vas nemaye korystuvacha, krim root. Tse pohano. My pidkazhemo vam, yak yoho stvoryty.
+Napyshitʹ svoye im'ya korystuvacha.
+Vy povynni napysaty svoye im'ya korystuvacha.
+Napyshitʹ sviy parolʹ.
+Vy povynni napysaty sviy parolʹ.
+Vyberitʹ typ oblikovoho zapysu.
+Administrator: tsey typ oblikovoho zapysu maye naybilʹshu potuzhnistʹ u yadri, shcho dozvolyaye vykorystovuvaty prohramy keruvannya systemoyu.
+Zvychaynyy korystuvach: tsey typ oblikovoho zapysu deshcho bilʹsh obmezhenyy, nizh administratory.
+Vitayu! Vy stvoryly novyy oblikovyy zapys! Shchob zavershyty tse, uviyditʹ u sviy novyy oblikovyy zapys.
+mod: mody ne vyyavleni.
+Zahalʹni komandy:
+Komandy mod:
+Komandy psevdonima:
+Rezhym obsluhovuvannya
+Poshuk katalohiv
+Hrupa shlyakhiv, rozdilenykh dvokrapkoyu. Vin pratsyuye tak samo, yak PATH. Napyshitʹ povnyy shlyakh do papky abo nazvu papky. Koly vy zakinchyte, napyshitʹ «q». Napyshitʹ znak minus bilya shlyakhu, shchob vydalyty isnuyuchyy kataloh.
+Nemaye komand mod.
+Nemaye komand psevdonima.
+Znachennya kolʹoru znakhodytʹsya za mezhamy diapazonu 0-255.
+Komandu, yaku mozhna obhornuty, ne znaydeno.
+Zapytuye slovo u vkazanomu ryadku abo v usikh ryadkakh
+Zavantazheno: {0} z {1}.
+Zavantazheno: {0} z {1}.
+Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta ryadkovoho druku
+Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk z pidtrymkoyu formatu
+Drukuye ryadok u nalahodzhuvach
+Drukuye ryadok u nalahodzhuvach iz pidtrymkoyu formatu
+Testuye mozhlyvistʹ pomylok yadra
+Testuye mozhlyvistʹ pomylok yadra z pidtrymkoyu formatuvannya
+Testy perekladu ryadka, yakyy isnuye v resursakh, na pevnu movu
+Drukuye ryadok na konsolʹ i analizuye znaydeni zapovnyuvachi
+Testuye zasib rehulyarnykh vyraziv
+Zapuskaye vsi mody
+Zupynyaye vsi mody
+Vmykaye abo vymykaye nalahodzhennya
+Vmykaye abo vymykaye viddalene nalahodzhennya
+Testuye poslidovnistʹ VT dlya 255 kolʹoriv
+Pereviryaye poslidovnistʹ VT na spravzhniy kolir
+Nadsylaye spovishchennya dlya perevirky pryymacha
+Pereviryaye druk daty za dopomohoyu riznykh kalendariv
+Perelik usikh pidtrymuvanykh kodovykh storinok
+Yaki zminni kompilyatora vklyucheni v prohrami?
+Testy, shcho stosuyutʹsya konkretnoyi podiyi
+Testy testuvannya obladnannya
+Testuye zbirnyk smittya
+Vykhodytʹ z testovoyi obolonky ta zapuskaye yadro
+Vykhodytʹ z testovoyi obolonky ta vymykaye yadro
+Zberihaye potochnyy kataloh u fayli konfihuratsiyi yadra
+Testuye zapysuvach spysku za dopomohoyu ryadka ta masyvu ryadkiv
+Testuye zapysuvach spysku za dopomohoyu tsiloho ta tsiloho masyvu
+Testuye zapysuvach spysku za dopomohoyu masyvu char i char
+Zvychaynyy spysok ryadkiv:
+Spysok ryadkiv masyvu:
+Zvychaynyy spysok tsilykh chysel:
+Spysok tsilykh masyviv:
+Zvychaynyy spysok symvoliv:
+Spysok symvoliv masyvu:
+Uvimknitʹ RPC
+Port RPC
+Uvimknuty RPC chy ni.
+Napyshitʹ port RPC. Vin maye buty chyslovym i ne povynen buty vzhe vykorystanyy. Inakshe RPC ne zmozhe vidkryty port.
+Ne zapuskayetʹsya RPC, oskilʹky vin vymknenyy.
+Spysok pidtrymuvanykh kulʹtur
+Shukaye vkazanyy ryadok u nadanomu fayli za dopomohoyu rehulyarnykh vyraziv
+Perevirte, chy zmozhete vy natysnuty klavishu vchasno
+Korystuvach ne nadav zhodnykh vvedenykh danykh vchasno.
+Symvol ne natysnutyy vchasno.
+Vy natysnuly pravylʹnyy symvol!
+Vy natysnuly nepravylʹnyy symvol.
+Natysnitʹ ESC, shchob vyyty.
+Otrymuye informatsiyu pro datu ta chas
+Milisekundy:
+sekundy:
+Khvylyny:
+Hodyny roboty:
+Dni:
+Misyatsi:
+Rik:
+Denʹ roku:
+Denʹ tyzhnya:
+dviykovyy:
+Mistsevyy chas:
+Vsesvitniy chas:
+Chas Unix:
+Ne vdalosya proanalizuvaty informatsiyu pro datu
+Perekonaytesya, shcho format pravylʹnyy.
+Data:
+chas:
+Vstanovlyuye prava dostupu do fayliv. Tse pidtrymuyetʹsya lyshe na FTP-serverakh, yaki pratsyuyutʹ pid upravlinnyam Unix.
+Vstanovlyuye typ dlya tsʹoho seansu
+Pered vykonannyam operatsiy z faylovoyu systemoyu neobkhidno pidklyuchytysya do servera.
+Ne vdalosya vstanovyty dozvoly vid {0} do {1}.
+Dozvoly uspishno vstanovleni dlya faylu
+Typ danykh vstanovleno na ASCII!
+Typ danykh vstanovleno na dviykovyy!
+Nediysnyy typ danykh.
+Mayte na uvazi, shcho bilʹshistʹ fayliv ne zavantazhuyutʹsya abo zavantazhuyutʹsya nalezhnym chynom u tsʹomu rezhymi, tomu my nastiyno rekomenduyemo vykorystovuvaty dviykovyy rezhym u bilʹshosti sytuatsiy.
+Sproba nadislaty komandu RPC, poky RPC ne zapustyvsya.
+Zatrymka z·hasannya v milisekundakh
+Maksymalʹne z·hasannya krokiv
+Skilʹky milisekund pochekaty, persh nizh tekst z·hasaye?
+Skilʹky krokiv znyknennya zrobyty?
+Povnyy zond
+Yakshcho virno, pereviryaye vse obladnannya; v inshomu vypadku perevirytʹ lyshe neobkhidne obladnannya.
+Ne vdalosya vydalyty zastavku {0} z konfihuratsiyi.
+Otrymuye vlasni nalashtuvannya zaoshchadzhennya
+Vstanovlyuye spetsialʹni parametry zberezhennya
+Nalashtuvannya dlya zastavky uspishno vstanovleno
+Ne vdalosya vstanovyty nalashtuvannya dlya zastavky
+Vidkryvaye obolonku RSS dlya chytannya kanaliv
+Vykhodytʹ z obolonky RSS i povertayetʹsya do yadra
+Zminyuye posylannya kanalu
+Perelichuye vsi kanaly
+Chytaye kanal u veb-brauzeri
+Vkazana komanda obolonky RSS ne znaydena.
+Nediysnyy kanal RSS2.
+Nediysnyy kanal RSS1.
+Nediysnyy kanal Atom.
+Vveditʹ URL-adresu kanalu RSS:
+Nediysnyy typ RSS-kanalu.
+Nevidoma pomylka obolonky:
+Otrymuye informatsiyu pro stattyu
+Nomer statti ne mozhe buty bilʹshym, nizh dostupni statti.
+Nazva:
+Posylannya:
+Otrymuye informatsiyu pro kanal
+Opys:
+Typ kormu:
+Kilʹkistʹ statey:
+Stattya ne maye posylannya!
+Ne vdalosya stvoryty spysok zapysiv faylovoyi systemy dlya katalohu
+Rezhym sortuvannya faylovoyi systemy
+Napryamok sortuvannya faylovoyi systemy
+Keruye sortuvannyam fayliv.
+Keruye napryamkom sortuvannya faylovoyi systemy za zrostannyam chy za spadannyam.
+Zatrymka zapysu v milisekundakh
+Skilʹky milisekund pochekaty, persh nizh pysaty tekst znovu?
+Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty. Chym dovshe, tym krashche.
+Minimalʹna shvydkistʹ zapysu v WPM
+Maksymalʹna shvydkistʹ zapysu v WPM
+Ymovirnistʹ pomylky u vidsotkakh
+Ne vdalosya zberehty potochnyy kataloh: {0}
+Servetky dlya zminy napryamku
+Skilʹky vytyranʹ potribno zrobyty, persh nizh vypadkovo zminyty napryamok?
+Etap zakincheno v
+Vnutrishnya initsializatsiya zavershena v
+Fayl posylannya {0} ne znaydeno. Tsey mod mozhe ne pratsyuvaty nalezhnym chynom bez tsʹoho faylu.
+Pochatkovyy mod
+Nazva komandy:
+Vyznachennya komandy:
+Typ komandy:
+Suvora komanda?
+Versiya moda:
+Mod {0} ne znaydeno.
+Tekstovyy redaktor shche ne vidkryv potik fayliv.
+Zamineno ryadok.
+Odne chy obydva chysla ne ye chyslovymy.
+Slovo vydaleno.
+Symvol vydaleno.
+Laskavo prosymo do Nalashtuvanʹ!
+Pomylka vykonannya komandy SSH
+Pomylka obolonky SSH
+- Informatsiya pro dodatok
+Testuye redaktor slovnyka za dopomohoyu ryadka ta masyvu ryadkiv
+Testuye redaktor slovnyka za dopomohoyu masyvu char i char
+Testuye redaktor slovnyka za dopomohoyu tsiloho ta tsiloho masyvu
+Zvychaynyy ryadkovyy slovnyk:
+Slovnyk ryadkiv masyvu:
+Zvychaynyy tsilochyselʹnyy slovnyk:
+Slovnyk tsiloho masyvu:
+Zvychaynyy slovnyk symvoliv:
+Slovnyk masyvu symvoliv:
+Laskavo prosymo do Test Shell!
+Pokazaty prohres operatsiy z faylovoyu systemoyu
+Pokazuye, yakyy fayl obroblyayetʹsya pid chas operatsiy faylovoyi systemy
+de bude HardwareType
+Typ aparatnoho zabezpechennya {0} ne perevirenyy, abo nediysnyy.
+Typ aparatnoho zabezpechennya {0} shche ne perevireno. Yakshcho vy vpevneni, shcho vin perevirenyy, perezapustitʹ yadro ​​z uvimknenym nalahodzhennyam.
+Rozdily ne proanalizovano dlya spysku.
+Drukuye rozdilʹnyk
+Drukuye rozdilʹnyk iz pidtrymkoyu formatu
+Drukuye rozdilʹnyk iz pidtrymkoyu kolʹoru
+Drukuye rozdilʹnyk iz pidtrymkoyu kolʹoru ta formatu
+Zavzhdy po tsentru
+Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty.
+Chy zavzhdy tekst, pokazanyy na ramtsi, vidtsentrovanyy.
+Arhument {0} ne znaydeno dlya vvedennya.
+Arhument komandnoho ryadka {0} ne znaydeno.
+Pid chas vidobrazhennya zastavky stalasya pomylka: {0}. Natysnitʹ budʹ-yaku klavishu, shchob vyyty.
+Poperedniy perehlyad...
+Osʹ yak bude vyhlyadaty vasha tema:
+Komandy, yaki mozhna obhornuty:
+Mod {0} mistytʹ nediysnu komandu. Pomylka analizu modu. Perehlyanʹte vykhidnyy kod.
+Chastyny modyfikatsiy:
+Vykorystovuyte API konsoli
+Chy vykorystovuvaty konsolʹnyy API dlya ochyshchennya tekstu chy vykorystovuvaty shvydshu poslidovnistʹ ochyshchennya ryadkiv VT. Yakshcho znachennya False, Marquee vykorystovuvatyme vidpovidnu poslidovnistʹ VT. Inakshe vin vykorystovuvatyme, ymovirno, povilʹnishyy API konsoli.
+Vidkryttya URL-adresy... Obovʺyazkovo dotrymuytesʹ instruktsiy, pokazanykh na ekrani.
+U modi nemaye detaley.
+Nazva modu:
+Nazva faylu modu:
+Shlyakh do faylu modu:
+Versiya chastyny:
+Minimalʹna kilʹkistʹ neobkhidnykh arhumentiv:
+Potribni arhumenty?
+Komanda, yaku mozhna obhornuty?
+Vstanovyty zminnu obolonky?
+Ne mozhna zapustyty v rezhymi obsluhovuvannya?
+Zastarilo?
+Stylʹ pidkazky RSS
+Stylʹ pidkazky redahuvannya tekstu
+Stylʹ pidkazky Zip Shell
+Papka porozhnya.
+Uspishno perevireno {0}.
+Detalʹnyy zond
+Zrobitʹ povidomlennya z aparatnym testuvannyam trokhy balakuchymy.
+> Informatsiyi pro ramky nemaye.
+Vam potribno napysaty svoye imʺya.
+Pokrashchuye fayl JSON
+Katehoriyu konfihuratsiyi {0} ne znaydeno.
+Zapys konfihuratsiyi {0} ne znaydeno.
+Vykorystovuyte udariv za khvylynu
+Chy vykorystovuvaty odynytsyu udariv za khvylynu dlya zapysu nastupnoho kolʹoru.
+Zatrymka v udarakh za khvylynu
+Beat Color
+Skilʹky udariv na khvylynu potribno chekaty, persh nizh zrobyty nastupnyy zapys?
+BeatFader vybyratyme vypadkovi kolʹory, yakshcho vin uvimknenyy. V inshomu vypadku vykorystovuyte kolʹory z konfihuratsiyi.
+Spetsialʹnyy baner zapusku
+Zavantazhuye viddalenu papku v lokalʹnyy kataloh, vykorystovuyuchy dviykovyy abo tekstovyy fayl
+Zavantazhuye lokalʹnu papku do viddalenoho katalohu za dopomohoyu dviykovoho abo tekstovoho faylu
+Zavantazhennya papky {0}...
+Zavantazhena papka {0}.
+Ne vdalosya zavantazhyty papku {0}.
+Zavantazhennya papky {0}...
+Zavantazhena papka {0}
+Natysnitʹ «c», shchob napysaty povnokolʹorovyy kod.
+Vveditʹ kolirnyy kod, yakyy vidpovidaye tsym formatam:
+Z·hortaye fayl JSON
+Nova zatrymka ekrana v milisekundakh
+Kilʹkistʹ kolonok
+Porih zapovnennya ryadkiv
+Imovirnistʹ obmezhennya zapovnennya ryadka u vidsotkakh
+Typ zapovnennya ryadkiv
+Skilʹky milisekund pochekaty, persh nizh znovu pysaty tekst na novomu ekrani?
+Tekstovi stovptsi dlya druku.
+Skilʹky symvoliv potribno napysaty, persh nizh initsiyuvaty «zapovnennya ryadka»?
+Mozhlyvistʹ toho, shcho shablon zapovnennya ryadkiv bude nadrukovanyy velykymy literamy u vidsotkakh
+Typ vizerunka zalyvky liniyi
+Vidpovidʹ mozhe buty ne nulʹovoyu.
+Vidpovidʹ ne mozhe perevyshchuvaty pokazanykh zapysiv.
+Zberehty zminy...
+Keruyte svoyimy modamy
+U bezpechnomu rezhymi keruvannya modamy vymkneno.
+Nediysna komanda {0}. Perevirte vykorystannya nyzhche:
+Mod ne znaydeno abo fayl mistytʹ nediysni symvoly.
+Ymovirnistʹ promakhu u vidsotkakh
+Uvimknuty nalahodzhennya zastavky
+Vmykaye nalahodzhennya dlya zastavok. Zvernitʹ uvahu, shcho tse mozhe shvydko zapovnyty zhurnal nalahodzhennya ta trokhy spovilʹnyty robotu zastavky, zalezhno vid vykorystovuvanoyi zastavky. Pratsyuye lyshe v tomu vypadku, yakshcho dlya diahnostychnykh tsiley uvimkneno nalahodzhennya yadra.
+Pid chas zavantazhennya nalahodzhuvalʹnykh danykh nemaye merezhi
+Perevirte pidklyuchennya do Internetu ta povtoritʹ sprobu.
+Storinka posibnyka {0} nediysna.
+Sprobuyte zapovnyty tsyu storinku posibnyka.
+Natysnitʹ budʹ-yaku klavishu, shchob prochytaty storinku posibnyka...
+Tsya storinka posibnyka potrebuye roboty dlya:
+Storinku posibnyka {0} ne znaydeno.
+Kerivnytstvo po modu

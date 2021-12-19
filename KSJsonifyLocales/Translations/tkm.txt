@@ -1,0 +1,1007 @@
+Elýeterli buýruklar: {0}
+Buýruk sanjymy ýatyryldy.
+Sanjym edilen argumentler indiki gaýtadan açylanda meýilleşdiriler.
+Hakyky buýruk setiriniň argumentlerini derňemekde ýalňyşlyk: {0}
+Nädogry reňk şablony {0}
+hwprobe: Enjamyňyz barlanar. Garaşmagyňyzy haýyş edýäris ...
+CPU: CPU ýadrosynyň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...
+RAM: RAM çipleriniň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...
+HDD: gaty diskleriň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...
+CPU: Prosessorlaryň umumy sany: {0}
+Bejeriş üçin administratoryň parolyny giriziň.
+Bootüklemekde ýadro ýalňyşlygy: {0}
+DUBBLE PANIC: Gaýtadan açmak wagty rugsat berlen iň ýokary {0} säwlikden ýokary. Ernadro näsazlygyny tapdyňyz.
+[{0}] howsala: error 0 error säwlik derejesi sebäpli gaýtadan açyň.
+[{0}] howsala: Gaýtadan açmagyň wagty: {1} sekunt, 1 sagatdan geçýär. 1 minutda düzüldi.
+Jübüt panika: roralňyş görnüşi {0} nädogry.
+[{0}] dpanic: {1} - {2} sekuntda gaýtadan açmak ...
+[{0}] howsala: erroralňyşlyk derejesi {0 being bolandygy sebäpli gaýtadan açyň.
+[{0}] howsala: {1} - ernadrosy ulanmagy dowam etdirmek üçin islendik düwmä basyň.
+[{0}] howsala: {1} - Öçürmek üçin islendik düwmäni basyň.
+[{0}] howsala: {1} - {2} sekuntda gaýtadan açmak ...
+Jübüt panika: ernadro ýalňyşlygy: {0}
+Öçürmek ...
+Gaýtadan açmak ...
+Kernel Simulator-yň başga bir mysaly işleýär. Päsgelçilik bolan ýagdaýynda ýapmak.
+Ulanyjyny rugsat sanawlaryna goşup bilmedi: nädogry görnüş {0}
+Ulanyjyny rugsat sanawlaryna goşup bilmedi: nädogry ulanyjy {0}
+Ulanyjyny rugsat sanawlaryndan aýyryp bilmedi: nädogry {0 type
+Siz eýýäm sessiýa açdyňyz.
+Ulanyjyny rugsat sanawlaryndan aýyryp bilmedi: nädogry ulanyjy {0}
+Eithera-da bir näsazlyk tapdyňyz, ýa-da goşmak ýa-da aýyrjak bolýan rugsadyňyz eýýäm ýerine ýetirildi ýa-da başga bir ýalňyşlyk.
+Roralňyşlyk {0}: {1}
+Eithera-da bir näsazlyk tapdyňyz, ýa-da täze ulanyjy üçin redaktirlemäge synanyşan rugsadyňyz başa barmady.
+Elýeterli ulanyjy atlary: {0}
+Ulanyjy ady:
+Boş ýerlere rugsat berilmeýär
+Charactersörite nyşanlara rugsat berilmeýär.
+{0} paroly:
+Yalnyş parol.
+Ulanyjy ýapyk.
+Nädogry ulanyjy ady.
+Placeer eýelerini derňemäge synanyşmakda ýalňyşlyk. {0} - ackoluň yzy:
+Placeer eýelerini derňemäge synanyşmakda ýalňyşlyk. {0}
+Ulanyjy adyny goşmak synanyşygynda säwlik.
+usrmgr: Ulanyjy adyny döretmek {0} ...
+Boş ulanyjy ady.
+Ulanyjy {0} tapylmady
+{0} ulanyjyny aýyrmaga rugsat berilmeýär.
+Ulanyjy {0 already eýýäm sessiýa açdy. Çykyň we başga bir administrator hökmünde giriň.
+Ulanyjy {0} aýryldy.
+Ulanyjy adyny aýyrmaga synanyşmakda säwlik.
+Talap edilýän ekran saklaýjy {0} tapylmady.
+{0} dogry başlandy.
+{0} başlamady. Ekran saklaýjy kody işe girizilende ýalňyşlyk başdan geçiren bolmagy mümkin.
+Ekran saklaýjy {0} ýok.
+Default 0 default deslapky ekran saklaýjysyna düzüldi.
+Maglumat bazasynda ekran saklaýjy {0} ýok. Adyny barlaň we gaýtadan synanyşyň.
+Aşakdakylar sebäpli ekran saklaýjyny ýükläp bolmaýar:
+Tekst çap edilende çynlakaý ýalňyşlyk bar.
+Sazlama döretmäge synanyşýan säwlik bar.
+RAM-y boşatmakda ýalňyşlyk: {0} - Dowamy ...
+Mod aşakdakylar sebäpli ýüklenip bilinmez:
+mod: modlary ýüklemek ...
+mod: Modlary duruzmak ...
+Mod {0} adynyň ady ýok. Çeşme koduny gözden geçiriň.
+Mod {0} wersiýasy ýok.
+{0} v {1} başlandy
+Command 0 command buýrugy üçin kesgitleme ýok.
+Buýruk bilen kesgitlenýär
+Başga bir serwere birikmezden ozal serwerden aýyrmaly
+{0 for ulanyjy ady:
+{0 for üçin parol:
+{0 to birikdirildi
+{0}: {1 to birikdirjek bolanyňyzda säwlik
+Ackol yzy: {2}
+Directoryerli katalog {0} ýok.
+Directoryerli katalogy giriziň. ".." yzyna dolanmak.
+Directory {0} tapylmady
+Uzakdaky katalogy giriziň. ".." yzyna dolanmak
+Katalogy üýtgetmezden ozal serwere birikmeli
+Directoryerli katalog: {0}
+Uzakdaky katalog: {0}
+Häzirki uzakdaky katalogy almazdan ozal serwere birikmeli.
+Öçürilmezden ozal administratiw aýratynlyklar bilen serwere birikmeli.
+{0 from kesildi
+Entek haýsydyr bir serwere birikmediňiz
+File 0} faýly göçürip almak ...
+File 0} faýly göçürildi.
+Geçirilmezden ozal serwere birikmeli.
+{0} KB | Üýtgedildi: {1}
+Remotehli uzakdaky faýllary sanawlamazdan ozal serwere birikmeli.
+Faýl ýüklemek {0} ...
+Fileüklenen faýl {0}
+Häzirki ýerli katalogy alýar
+Häzirki uzakdaky katalogy alýar
+Göçürip almak ýa-da ýüklemek üçin ýerli katalogy üýtgedýär
+Göçürip almak ýa-da ýüklemek üçin uzakdaky katalogy üýtgedýär
+Uzakdaky faýly serwerden pozýar
+Serwerden aýrylýar
+Ikilik ýa-da tekst ulanyp, uzakdaky faýly ýerli kataloga göçürip alýar
+FTP gabygyndan çykýar we ýadro görnüşine gaýdyp gelýär
+Kömek ekrany görkezýär
+Localerli katalogy sanawlaýar
+Uzakdaky katalogy sanawlaýar
+Ikili ýa-da tekst ulanyp, ýerli faýly uzakdaky kataloga ýükleýär
+FTP habary: {0} talap edilen buýruk tapylmady. FTP gabygynda görkezilen elýeterli buýruklaryň sanawy üçin 'kömek' serediň.
+Adapter {0 adapter üçin häsiýetleri alyp bilmedi
+Adapter belgisi:
+Adapteriň ady:
+Iň köp geçiriş bölümi: {2} Bölümler
+DHCP açyk:
+“Unicast” däl paketler:
+“Unicast” paketleri:
+Gelýän / çykýan paketlerde säwlik:
+Lakamlar buýruk ýaly bir at bolup bilmez.
+{0 to lakamyna buýruk tapylmady.
+Indi buýruk hökmünde "{0}" işledip bilersiňiz: "{1}".
+Lakam {0} aýrylmaýar.
+Nädogry re modeim {0}.
+Sanjymly argumentler, {0}, indiki gaýtadan açylanda işlener.
+Jedeller ýeterlik däldi. Ulanmak üçin aşakda serediň:
+Directory {0} tapylmady
+Boş öý eýesiniň ady.
+Üýtgetmek: {0} dan {1} ...
+Günüň boş habary.
+Girişden soň boş MAL.
+Ulanyjynyň paroly nädogry
+Parollar gabat gelenok
+Ulanyjy ady {0 to üýtgedildi!
+Girizen täze adyňyz eýýäm tapyldy.
+{0} tapylmady
+Sazlama täzeden ýüklendi. Käbir üýtgeşmeleriň güýje girmegi üçin ýadrosy täzeden açmaly bolmagyňyz mümkin.
+Reňkleriň bir ýa-da köpüsi nädogry.
+Reňkler ýok Ernadro konfigurasiýasyndaky reňkli gabygy açyň.
+Ekrany saklaýjy {0} tapylmady.
+Ernadro wersiýasy:
+Düzediş tertibi:
+Reňkli gabyk:
+Bootdaky jedeller:
+Kömek buýrugy ýönekeýleşdirildi:
+Girişde MOTD:
+Burçdaky wagt / senesi:
+Häzirki ulanyjynyň ady:
+Häzirki öý eýesiniň ady:
+Elýeterli ulanyjy atlary:
+Buýrugy ýerine ýetirmekde säwlik
+Katalogy üýtgedýär
+Häzirki ulanyjy üçin paroly üýtgedýär
+Ekrany arassalaýar
+Serwerler bilen täsirleşmek üçin FTP gabygyny ulanyň
+Kömek sahypasy
+Häzirki bukjadaky faýl / bukjanyň mazmunyny sanaň
+Ekranyňyzy parol bilen gulplaýar
+Sizi çykarýar
+Katalog döredýär
+Bar bolan interfeýsler barada maglumatlary görkezýär
+Kompýuteriňizi täzeden açýar (DUNDURYŞ: Sinhronlamak ýok, sebäbi bu soňky ýadro däl)
+Redaktirlenen konfigurasiýa faýlyny täzeden ýükleýär.
+Ekranyňyzy ýanmakdan halas edýär
+Ernadro ekran saklaýjylaryny düzýär
+Ernadro mowzuklaryny düzýär
+Sene we wagty görkezýär
+Zonalarda senäni we wagty görkezýär
+Ernadro ýapylar
+Ulgam maglumatlary
+* Buýruklaryň arasyndaky sütüni ulanyp, birnäçe buýrugy ulanyp bilersiňiz.
+Ulanylyşy:
+argumentler {0 be bolar
+gümrükhana nirede bolar
+Gabykda ýalňyşlyk bardy.
+{0 use ulanmaga rugsadyňyz ýok
+Gabyk habary: Talap edilýän {0 command buýrugy tehniki hyzmat tertibinde işlemäge rugsat berilmeýär.
+Gabyk habary: Talap edilýän {0 command buýrugy tapylmady. Elýeterli buýruklar üçin 'kömek' serediň.
+Gabyk habary: Command {0 Commanda girmek gadagan.
+Buýrugy ýerine ýetirmekde säwlik.
+- {0} wagty: {1}
+{0 on üstünde işleýär
+{0 for üçin maglumat almaga ygtyýaryňyz ýok.
+Bu buýruk köne we geljekde çykarylar.
+{0 of parolyny üýtgetmäge ygtyýaryňyz ýok, sebäbi maksat administratordy.
+usrmgr: Ulanyjy ady {0 already eýýäm tapyldy
+Düzediş gündeligindäki hemme zady pozýar
+Nädogry dil
+Dili üýtgedýär
+----------------------------- ernadro aljyraňňylygy ------------------ -----------
+>> Aljyraňňy maglumatlar <<
+> Düşündiriş: {0}
+> Roralňyş görnüşi: {1}
+> Sene we Wagt: {2}
+>> Kadadan çykma maglumatlary <<
+> Kadadan çykma: {0}
+> Düşündiriş: {1}
+> HRESULT: {2}
+> Çeşme: {3}
+> Stack yzy <
+>> Içerki kadadan çykma {0} maglumat <<
+>> Kadadan çykma {0 root düýp sebäbi <<
+>> Kadadan çykma ýok; ýadro ýalňyşlygy bolup biler. <<
+>> Çarçuwalar, faýllar, setirler we sütünler <<
+> Çarçuwa {0}: Faýl: {1} | Setir: {2} | Sütün: {3}
+> Çarçuwaly maglumat aljak bolanyňyzda ýalňyşlyk bar. {0}: {1}
+Ernadro hoş geldiňiz!
+<user> hökmünde üstünlikli girdi
+MOTD / MAL dogry, ýöne habaryň görnüşi dogry däl. MOTD-ni kabul etmek ...
+Nädogry habar görnüşindäki MOTD / MAL-ny okamaga synanyşdy.
+Göçürip almak
+{0 try: {1 try synanyşykda göçürip almak şowsuz
+FTP serwerinden faýl göçürip aljak bolsaňyz, "ftp" ulanyň.
+Faýly häzirki iş katalogyna göçürip alýar
+Düzediş enjamyny aýryň
+Birikdirilen düzediş enjamlarynyň sanawyny
+Düzediş enjamy {0} tapylmady
+Enjam {0} kesildi.
+Baglanyşykda säwlik: {0}
+{0 port ulanyp, ähli salgylarda diňlemek meselesini düzediň.
+Argument görkezilmedi. Maslahat: Boşluklar bilen bölünen birnäçe argumenti görkeziň
+Lakam eýýäm tapyldy: {0}
+Düzediş gündeligi aýryldy. Birikdirilen düzediş enjamlarynyň hemmesi habarlary görüp biler.
+Düzediş gündeligini aýyrmak şowsuz: {0}
+Katalogy üýtgetmek şowsuz: {0}
+Salgyny görkeziň
+Katalogy aýyryp bolmaýar: {0}
+Wagt guşaklygy nädogry görkezilýär.
+Nädogry profil saýlamak.
+{0 profile profil {1} ​​bilen birikmäge synanyşmak ...
+{0 command buýruk tapylmady. Buýruklaryň sanawy üçin "kömek" buýrugyna serediň.
+{0 adapter adapteri üçin IPv6 häsiýetlerini alyp bilmedi. Dowam edýär ...
+IPv4 maglumatlary:
+IPv6 maglumatlary:
+Adapter {0 IP IPv6-ny goldamaýar. Dowam edýär ...
+Adapter {0 IP IPv4-i goldamaýar. Synag başa barmady.
+Ernadrosyň ösüş wersiýasyny işledýän ýaly. Jähetlerini görüp bilseňiz, ýygy-ýygydan täzelenýär we kemçilikleri döredip biler. Durnukly wersiýada galmagyňyz maslahat berilýär.
+Saýlan diliňizde iki wariant bar. Birini saýla:
+Nädogry saýlaw. Täzeden synanş.
+Häzirki katalogy {0}: {1 set edip goýmaga rugsatsyz
+Görkezen ýoluňyz gaty uzyn.
+Maglumat taşlaýjy {0}: {1 about hakda maglumat aljak bolanda ýykyldy
+MOTD / MAL sazlamaga synanyşanda säwlik: {0}
+MOTD / MAL aljak bolanyňyzda säwlik: {0}
+Nädogry iş sebäpli ekran saklaýjysyny işe girizjek bolanyňyzda säwlik.
+Howpsuz tertipde ýüklemäge rugsat berilmeýär.
+Howpsuz tertipde jikme-jiklikleri derňemäge rugsat berilmeýär.
+Parse re modeimini düzjek bolanyňyzda säwlik. Bahasyny barlaň we gaýtadan synanyşyň. Bu dogry bolsa, ýadrosy düzetmek işledilende stack yzyny görüň.
+Pathol ne faýl, ne-de katalog.
+Dürli katalogda ýa-da at astynda bir faýlyň başga bir nusgasyny döredýär.
+Faýly başga bir kataloga geçirýär
+Duşuşyk {0} ({1}): {2}
+Duşuşyk {0}: {1}
+Geçirilen wagt: {0} millisekunt
+Ady: {0}
+Faýl jemlerini hasaplaýar.
+Sizi GitHub Wiki-ä alyp barýar.
+Nädogry şifrlemek algoritmi.
+Uzakdan düzetmegi işledýär ýa-da öçürýär.
+Sözleri wagtynda dogry ýazyp biljekdigiňize göz aýlaň
+Matematiki deňlemeleri wagtynda çözüp biljekdigiňize göz aýlaň
+Söýgä jogap beriň ýa-da teswirleri ýigreniň.
+Kimdir biri wideoňyza bu teswir beren bolsa:
+Oňa nähili jogap bererdiňiz?
+Nädogry saýlaw. Indiki teswire gitmek ...
+Gowy! {0} sag boluň.
+Gowy ýazylýar!
+Nädogry ýazyldy
+Gowy çözüldi!
+Nädogry çözüldi
+RPC eýýäm işleýär.
+C 0 port ulanyp, ähli salgylarda RPC diňleýär.
+RPC başlamak ...
+SSH serwerine birikýär.
+{0 for paroly giriziň:
+SSH kesildi.
+Kod sahypasyny düzüp bolmaýar Dil dogry görkezilmezligi mümkin.
+Düzediş mümkinçiligi ýok.
+Sag boluň! Bu gyzykly.
+Her kim munuň üçin wideoňyzy goldar.
+Indiki wideoňyz üçin e-poçtaňyzdaky ýörite faýly berdim.
+Diňläň, ýigrenýänler, aldawçylyga däl-de, bize kömek etjek bolýar.
+Bu wideo üçin men we dostlarym näçeräk minnetdarlygymy bilemok.
+Bu wideo üçin sizi gowy görýärin.
+Dowam et, durma.
+1M abonentlere ýetmäge kömek ederin!
+Dostlarym, seniň üçin kompýuterini düzeddiler.
+Ajaýyp degişme! Duşmanymyň kompýuterini ýapdym.
+Hatigrenýänlere: Oňa ýigrenmegi bes ediň
+Hatigrenýänlere: IŞLE. .N
+Obýektiňizi gizleýän gollanmaňyz sebäpli indi muny hiç kim görmez
+Wideoňyzy görmegi bes ederin. Abonent ýitdi.
+Bu näme? Bu düşnüksiz.
+Bu wideo iň erbet!
+Bu wideony hemmeler habar berýär!
+Dostlarym saňa gaharlanýar!
+Aşyklar indi munuň üçin sizi ýigrenerler.
+Dostuňyz munuň üçin sizi ýigrener.
+Bu degişme meni size abunalygymdan çykardy.
+Wezipe başa barmady, Hormat -, Abonent -
+Şeýle wideo taýýarlamagy bes ediň !!!
+Işiňize gaýdyp geliň, wideolaryňyz iň erbet!
+Bu wideo barada bir pikir ýöredýäris.
+Alnan habarnamalaryň hemmesini görkezýär
+Duýduryşy ýatyrýar
+Duýduryş üstünlikli ýatyryldy.
+Paketler (giriş):
+Paketler (çykyş):
+Alnan paketlerdäki ýalňyşlyklar:
+Umumy IPv6 häsiýetleri
+Umumy IPv4 häsiýetleri
+Uzakdaky kompýutere buýrugy uzakdan ýerine ýetirýär
+- 1-nji tapgyra: Ulgamyň başlangyjy
+- 2-nji tapgyra: Enjamlary tapmak
+- 3-nji tapgyra: Modlar we ekran saklaýjylary ýüze çykarmak
+- 4-nji tapgyra: Giriş
+Çykyş kandidatynyň wersiýasyny işledýän ýaly. Durnukly wersiýada galmagyňyz maslahat berilýär.
+Nädogry görnüş {0}.
+Ölçegi: {0}
+{0 Directory katalogy eýýäm bar.
+{0 to birikdirjek bolanyňyzda säwlik: Baglanyş wagty gutardy ýa-da birikmäni ýitirdi
+Aňlatmalary hasaplamak üçin kalkulýator.
+Hasaplamakda säwlik.
+Ulgam täzelenmesi
+Ulgam täzelenmelerini barlamak ...
+Täze wersiýa tapyldy:
+Ony şu ýerden göçürip alyp bilersiňiz:
+Soňky habarnamalar ýok
+Berlen faýlda görkezilen setir üçin gözlegler
+Görkezilen katalogdaky faýllaryň jemini hasaplaýar.
+Ulanyjy adyny ýa-da poçta salgysyny giriziň:
+Paroly giriziň:
+{0}: {1 to birikdirilende ýalňyşlyk
+{0 to birikdirmek ...
+Hakyky tassyklamak ...
+IMAP gabygyndan çykýar
+Buýruklaryň sanawy
+Habarlary göçürip alýar we sanawlaýar
+Habar açýar
+Sahypa san taýdan däl.
+Habar belgisi negatiw ýa-da nol bolup bilmez.
+Habar belgisi san bahasy däl.
+- {0 from
+- {0}
+- {1} -de {0 at iberildi
+Görkezilen habar tapylmady
+Uzakdan düzediş başlamady: {0}
+Tertipleri taýýarlamak ... Birnäçe minut gerek bolup biler ...
+Scriptazgyny ýerine ýetirmekde säwlik: {0}
+Konsola tekst ýazýar
+Ulanyjyny saýlaýar
+'N' Hz-de ses we 'n' millisekuntda wagt
+bu ýerde <$ üýtgeýji> jogap saklamak üçin ulanyljak islendik üýtgeýjidir
+Quygylyk san taýdan bolmaly. Eger san bolsa, onuň> = 37 we <= 32767 bolandygyna göz ýetiriň.
+Wagt san taýdan bolmaly.
+bu ýerde <jogaplar> çyzgyda bölünen soragyň bir harply jogaplarydyr
+SSH serwerine birikmäge synanyşmakda säwlik: {0}
+Ulanyja giriş girizmäge rugsat berýär
+Häzirki poçta bukjasyny üýtgedýär
+Poçta bukjasyny açyp bolmaýar {0}: {1}
+Poçta salgyňyzdaky kataloglary görkezýär
+Islendik tora çalt birikmek üçin “Speed ​​Dial” -dan maglumat ulanýar
+Birikmek üçin salgy saýlaň:
+Saýlaw çäkden çykýar. 1- {0 between arasynda saýlaň. Täzeden synanş.
+Saýlaw san däl. Täzeden synanş.
+Şahadatnamany tassyklamak wagtynda şahadatnamada ýalňyşlyklar bar. Serwere ilkinji gezek birikeniňizde ýa-da şahadatnamanyň möhleti gutaran bolmagy mümkin. Ine, ýalňyşlyk:
+Birikmek isleýändigiňize ynanýarsyňyzmy?
+Nädogry jogap Gaýtadan synanyşyň.
+Tiz aýlaw boş Salgy goşmak üçin serwere birikdiriň.
+Tiz aýlaw ýok Salgy goşmak üçin serwere birikdiriň.
+IMAP serweriniň salgysyny we portuny giriziň (<address> ýa-da <address>: [port]):
+SMTP serwer salgysyny we portuny giriziň (<address> ýa-da <address>: [port]):
+Adrese habar iberýär
+Alyjynyň poçta salgysyny giriziň:
+Temany giriziň:
+Habaryňyzy aşakda giriziň. Tassyklamak üçin "EOF" ýazyň.
+Habar ibermek ...
+Habar iberildi
+Email salgy ýalňyş. Salgyny dogry ýazandygyňyzy we görkezilen mysalyň formatyna laýyk gelýändigine göz ýetiriň:
+Habary aýyrýar
+Alyjydan ähli habarlary aýyrýar
+{0 from habary {1} -den {2 from öçürildi. Par 3} derňemek üçin galan habarlar.
+{1} -den {0} habary poçta gutusyndan öçürildi. Par 2} derňemek üçin galan habarlar.
+Tekst faýlyny redaktirleýär
+Täze faýl ýasaýar
+Faýl eýýäm bar.
+Faýl döretmäge synanyşmakda säwlik: {0}
+Faýl açyp bilmedi Çykýan gabyk ...
+Görkezilen tekst redaktory buýrugy tapylmady.
+Elýeterli buýruklaryň sanawyny
+Tekst redaktoryndan çykýar we saklanmadyk üýtgeşmeleri ýazdyryň
+Faýlyň mazmunyny setir sanlary bilen konsola çap edýär
+Faýlyň soňundaky tekst bilen täze setir goşýar
+Görkezilen setir belgisini aýyrýar
+Söz ýa-da söz düzümini başga birine çalyşýar
+Bir söz ýa-da söz düzümini setir belgisinden pozýar
+Görkezilen setirdäki nyşan belgisinden bir nyşan pozýar
+Aýrylan setir.
+Görkezilen setir belgisi {0} dogry san däl.
+Ygtybarly tertipde işlemek. Basgançakdan geçmek ...
+>> Uzakdan düzediş we söhbet: wersiýa
+>> Salgyňyz {0 is.
+>> Adyňyz {0 is.
+{0 command buýruk tapylmady. Sanawy görmek üçin "/ help" ulanyň.
+Index {0} nädogry. {1 ack yz yzlary bar. Indeks nula esaslanýar, şonuň üçin 1-den aýyrmaga synanyşyň.
+Hiç hili yz ýok
+Kadadan çykmada iň soňky yz yzyny görkezýär
+Sessiýada häzirki ulanyjy adyny görkezýär
+Düzediji enjamdan aýyrýar
+IP adresi boýunça düzediş enjamyny blokirläň
+Düzediş enjamyny IP adresi bilen blokirläň
+{0 now indi uzakdan düzedişe goşulyp biler.
+{0 yet entek petiklenmedi.
+Sazlamalary ýüklemekde säwlik
+Sazlamalary ýüklemekde ýalňyşlyk bar. Sazlamalar faýlyny barlamaly bolmagyňyz mümkin.
+Bölümi saýlaň:
+Sazlamalary ýazdyryň
+Çyk
+Görkezilen opsiýa {0} nädogry.
+Jogap san taýdan bolmaly.
+Bootdaky jedeller üçin gyssagly
+Bejeriş tertibi Trigger
+Başlangyçdaky täzelenmeleri barlaň
+Quuwaş gözleg
+Girişde MOTD görkeziň
+Girişdäki ekrany arassalaň
+Elýeterli ulanyjy atlaryny görkeziň
+Reňkli gabyk
+Helpönekeýleşdirilen kömek buýrugy
+Düzediş porty
+Gaýtadan synanyşyň
+FTP ulanyjy adyny hasaba alyň
+FTP IP adresini ýazyň
+Diňe ilkinji FTP profilini yzyna gaýtaryň
+Rightokarky sag burçda wagt / senäni görkeziň
+Ms-de ekran saklaýjy wagty
+Baýtda ululyk kwotasyny düzüň
+Ölçeg derňew tertibi
+Marke başlangyçda
+Uzak wagt we sene
+Gizlin faýllary görkez
+Nädogry bölüm girizildi Yzyňa dolanmagyňyzy haýyş edýäris.
+Yzyna dolan ...
+Işletmek
+Öçüriň
+Guruljak kök parolyny ýazyň. Alada etme; parol ýyldyz hökmünde görkezilýär.
+Kök parolyny üýtgediň?
+Kök parolyny düzüň ...
+Uzakdan düzediş portuny ýazyň. Sanly bolmaly we eýýäm ulanylmaly däl. Otherwiseogsam, uzakdan düzediji porty açyp bilmez.
+"Get" buýrugynyň şowsuz ýüklemeleri gaýtadan synap görmelidigini ýazyň. Sanly bolmaly.
+Görkezilen millisekuntdan soň ekran saklaýjyny haçan başlamalydygyny ýazyň. Sanly bolmaly.
+Düzediş gündeligini näçe baýt edip biljekdigini ýazyň. Sanly bolmaly.
+Jogap negatiw bolup bilmez.
+Jogap nädogry. Jogap hökmünde sanlara mätäç bolan konfigurasiýa ýazgylary üçin jogabyň sanlydygyna göz ýetiriň.
+Üýtgeýji modul modullaryň hiç birinde-de ýok.
+Ernadro konfigurasiýasyny üýtgedýär
+255 reňk işjeňleşdiriň
+Baglanyşyk saklamak isleýärsiňizmi?
+Nädogry saýlaw. Nook öýdýän ...
+Dilleri üýtgedeniňizde medeniýeti üýtgediň
+Tekst görkezildi
+Görkezmek isleýän tekstiňizi ýazyň. Has gysga.
+{0 upload ýükläp bilmedi
+Uzakdan düzediş buýrugyny ýerine ýetirmekde säwlik {0}: {1}
+Ulanyjylary goşýar
+Buýruklara lakam goşýar
+Ernadro argumentlerini sanjym edýär (gaýtadan açmak zerur)
+Hoster eýesiniň adyny üýtgedýär
+Girişden soň MOTD MAL-y üýtgedýär
+MOTD-i üýtgedýär, günüň habary
+Ulanyjynyň adyny üýtgedýär
+Ulanyjylar üçin rugsatlary dolandyryň
+KSMods-da ekran saklaýjy faýly täzeden ýükleýär
+Ulanyjyny sanawdan aýyrýar
+{0 lakamy üstünlikli aýryldy.
+Täzelenmeleri barlap bilmedi.
+Sanawda başga ulanyjy galmady.
+Dil düzüp bilmedi
+Duýduryşy ret etmekde säwlik.
+usrmgr: us 0 us ulanyjy adyny döredip bilmedi: {1}
+Ulanyjynyň adyny üýtgedip bilmedi. {0}
+Rugsat sanawlarynyň birinde us 0 us ulanyjy ady ýok.
+Faýldan rugsatlary ýükläp bilmedi: {0}
+Hoster eýesiniň adyny üýtgedip bilmedi: {0}
+Ulanyjy tapylmady
+Ulanyjy adynyň parolyny üýtgedip bilmedi: {0}
+Faýly ýa-da bukjany göçürip bilmedi: {0}
+Faýly ýa-da bukjany göçürip bilmedi: {0}
+"{0}" setirine gabat gelýän faýl tapyp bolmady: {1}
+{0 file faýly göçürip almak başa barmady.
+Uzakdaky faýllary sanap bilmedi: {0}
+{0} <y / n> pozmak isleýändigiňize ynanýarsyňyzmy?
+{0} pozmak ...
+{0} serwerde tapylmaýar.
+{0 by tarapyndan iberilen ähli poçta üstünlikli aýrylýar.
+{0 made tarapyndan iberilen hatlaryň hemmesini aýyryp bilmedi.
+Habar ibermekde säwlik.
+{0} {1} -e geçmek ...
+Üstünlikli geçirildi
+Faýly ýa-da bukjany başga bir faýla ýa-da kataloga geçirýär. Şeýle hem faýllaryň adyny üýtgetmek üçin ulanyp bilersiňiz.
+{0} {1 to süýşürip bilmedi.
+{0} -dan {1} -e göçürmek ...
+Üstünlikli göçürildi
+Faýly ýa-da katalogy başga bir faýla ýa-da kataloga göçürýär.
+{0} {1 to-a göçürip bilmedi.
+Habar iberýär
+Messageshli habarlary alyjydan geçirýär
+{0 by tarapyndan iberilen ähli poçta üstünlikli göçürilýär.
+{0 made tarapyndan iberilen ähli poçta göçürilmedi.
+{0 from habary {1} -den {2 from-den göçürildi. Par 3} derňemek üçin galan habarlar.
+Görkezilen şäher üçin howa maglumatyny görkezýär. OpenWeatherMap ulanýar.
+- {0 for üçin howa maglumaty -
+Howa: {0}
+Basyş: {0}
+Çyglylyk: {0}
+Öz API açaryňyzy https://home.openweathermap.org/api_keys sahypasyndan alyp bilersiňiz.
+Şahsyýetnamalary bolan şäherleriň sanawy üçin elmydama http://bulk.openweathermap.org/sample/city.list.json.gz bilen maslahatlaşyp bilersiňiz.
+Temperatura üçin ileri tutulýan bölüm
+Ernadrosy ýükläň, şonuň üçin size boot barada jedelleşer.
+Bejeriş tertibi. Bu birnäçe hasaby öçürýär.
+Her başlangyç, täzelenmeleri barlar.
+Dilleri üýtgedeniňizde, aýyň atlaryny, senenamasyny we ş.m. üýtgediň.
+Ernadro işe başlasa, kök parolyny goýar.
+Apparat gözleg habarlaryny dymyň.
+Giriş ekrany görkezilmezden ozal günüň habaryny görkeziň.
+Giriş ekranyny görkezmezden ozal ekrany arassalaň.
+Işledilen bolsa elýeterli ulanyjylary görkezýär.
+Ernadro reňk goldawyny berýär
+Allhli gabyklar üçin ýönekeý kömek buýrugy
+FTP ulanyjy adyny hasaba almalymy ýa-da ýokmy.
+FTP IP adresini açmalymy ýa-da ýokmy.
+Diňe birikdirilende ilkinji profili saýlaň.
+Wagt we sene ekranyň ýokarky sag burçunda görkeziler
+Işledilen bolsa, ýadro tutuş bukjany umumy ululygy üçin derňär. .Ogsam, diňe ýüzüni derňär.
+Başlangyçda göz gabagyny açýar
+Wagt we sene has uzyn bolar, doly aýyň atlaryny we ş.m. görkezer.
+Gizlin faýllary görkezýär.
+Temperatura üçin halaýan bölümiňizi saýlaň (bu diňe "howa" buýrugyna degişlidir)
+Mod {0} saklandy
+{0} v {1} saklandy
+Mod {0} böleginiň ady ýok. Mod derňewi şowsuz. Çeşme koduny gözden geçiriň.
+Düzediş gündeligini arassalamazdan ozal düzediş tertibini açmaly.
+{0} täze habarlar poçta gutusyna geldi.
+Olary görmek üçin "lsmail" -i açyň.
+Faýly aýyryp bolmaýar: {0}
+Katalogy ýa-da faýly aýyrýar
+{0 remove aýyryp bolmaýar, sebäbi ýok.
+Çykmak üçin CTRL + C basyň.
+Faýl hakda maglumat berýär
+Katalog hakda maglumat berýär
+Bar bolmadyk katalog hakda maglumat alyp bilemok.
+Bar bolmadyk faýl hakda maglumat alyp bilemok.
+Doly ady: {0}
+Dörediş wagty: {0}
+Iň soňky giriş wagty: {0}
+Iň soňky ýazan wagty: {0}
+Aýratynlyklary: {0}
+Ene-atanyň katalogy: {0}
+Nireden tapmaly: {0}
+Faýlyň ölçegi: {0}
+Faýlyň atributyny üýtgedýär
+Faýl tapylmady
+bu ýerde <attributes> aşakdakylardan biridir:
+Faýl adaty bir faýl
+Faýl diňe okalýan faýl
+Faýl gizlin faýl
+Faýl arhiwdir. Uptiýaçlyk nusgalar üçin ulanylýar.
+"{0}" häsiýeti nädogry.
+Aýratynlyk üstünlikli goşuldy.
+Aýratynlyk üstünlikli aýryldy.
+Aýratynlyk goşmak başartmady.
+Aýratynlygy aýyrmak başartmady.
+Söz ýa-da söz düzümini setirde başga biri bilen çalyşýar
+Gyzyl reňk derejesi geçdi. {0 was boldy.
+Greenaşyl reňk derejesi geçdi. {0 was boldy.
+Gök reňk derejesi geçdi. {0 was boldy.
+Hakyky reňkleri işjeňleşdiriň
+Blokdan aýrylmady {0}.
+{0} eýýäm petiklenendir.
+Remote 0 remote uzakdan düzedişe goşulyp bilemok.
+{0 block blokirlemedi.
+Sikl reňkleri
+Disko açyk bolanda reňkleri aýlaýar. Otherwiseogsam, tötänleýin reňkleri saýlaň.
+Goşundylara faýl ýollaryny giriziň. Tassyklamak üçin boş ýolda ENTER basyň.
+Şifrlenen habary açýar
+ID 0 key açar ID üçin parol ýazyň
+Şifrlenen habary adrese iberýär
+{0 from-dan göçürip almak ...
+"Get" ýa-da "goýmak" buýrugyndan göçürip alanyňyzda ýa-da ýükläniňizde ösüş setirini görkeziň
+Çyn bolsa, göçürip alanyňyzda ýa-da ýükläniňizde ösüş setirini "al" ýa-da "goýýar".
+Görkezilen web sahypasyna bir faýl ýükleýär
+Salgy berýär
+{0} {1} -e ýüklemek ...
+Uploadüklemek tamamlandy.
+FTP serwerine faýl ýüklemekçi bolsaňyz, "ftp" ulanyň.
+{0 try: {1 try synanyşykda ýüklemek şowsuz boldy
+"Goýmak" buýrugynyň şowsuz ýüklemeleri gaýtadan synanyşmalydygyny ýazyň. Sanly bolmaly.
+Salgy boş bolup bilmez.
+Ing 0 ing: {1 ing ping edip bilmedi
+Ping {0} ms-de üstünlik gazandy.
+Görkezilen setir belgisi soňky faýl setiriniň belgisinden uly bolup bilmez.
+Düşünýär: {0}
+Temperatura: {0}
+Windeliň tizligi: {0}
+Windeliň ugry: {0}
+Yza gaýdyp barmak üçin islendik düwmäni basyň.
+Poçta bukjasyny döredip bolmaýar {0}: {1}
+Häzirki işleýän katalogda bir katalog ýasaýar
+Häzirki işleýän katalogdan bir katalogy aýyrýar
+Poçta bukjasy {0} tapylmady
+Poçta bukjasyny pozup bolmaýar {0}: {1}
+{0}, {1} {2} -de döredilen, {3} {4 in üýtgedilen
+Faýlyň saglygyny barlaýar
+Haşlar nädogry.
+Haslar gabat gelenok.
+Hashes gabat gelýär.
+Papkanyň adyny üýtgediň
+Synag gabygyny açýar
+* Ernadrodan ýa-da ESC-den çykmak üçin islendik düwmä basyň.
+"{0}" başlap bilmedi: {1}
+Poçta habarynyň deslapky synyny görkez
+Poçta habarlary sanalanda, bedeniň deslapky synyny görkeziň.
+Giriş reňki
+Ygtyýarnamanyň reňki
+Dowamly ýadro ýalňyş reňki
+Üznüksiz ýadro ýalňyş reňki
+Hoster eýesiniň adynyň reňki
+Ulanyjynyň adynyň reňki
+Arka reňki
+Bitarap tekst reňki
+Sahnanyň reňki
+Roralňyş reňk
+FTP gyssagly stili
+Poçta gyssagly stili
+SFTP gyssagly stil
+Nädogry ýoldan girmäge synanyşmak.
+Tekst faýlyny arassalaýar
+Tekst redaktoryndan çykýar
+Belli bir setirde ýa-da ähli setirlerde bir nyşan soraýar
+Täzelenmeleri barlamak öçürilýär, sebäbi ösüş wersiýasyny işleýärsiňiz.
+Tekst redaktorynyň awtosave aýratynlygyny açýar ýa-da ýapýar.
+Awtomatiki usulda işledilen bolsa, tekst faýly her "n" sekuntda saklanar.
+Tekst redaktoryny awtomatiki saklamaga mümkinçilik beriň
+Tekst redaktory awtomatiki aralyk
+Faýly ýazdyrýar
+Çatlary düzetmek üçin söhbetdeşligi ýazga alyň
+Uzakdan düzediş söhbetini düzetmek gündeligini ýazga alýar.
+Millisekuntda gijä galmak
+Indiki ýazmazdan ozal näçe millisekunt garaşmaly?
+SSH FTP serwerini ulanmaga mümkinçilik berýär
+"{0}" buýrugy üçin kömek ýok.
+RGB reňki üçin nädogry VT yzygiderliligi.
+Sekuntlaryň reňki
+Minutlar çyzygynyň reňki
+Sagatlar zolagynyň reňki
+Maglumatyň reňki
+Reňkini üýtgetmek üçin bellikler
+Reňkli welosiped sürmek mümkinçiligi bar bolsa, “ProgressClock” -da reňkleri üýtgetmezden ozal näçe bellik bar? 1 bellik = 0,5 sekunt
+“ProgressClock” açyk bolsa, tötänleýin reňkleri saýlar. Otherwiseogsam, konfigurasiýadan reňkleri ulanyň.
+Täze tema açýar
+"{0}" täze tema döretmek.
+Temany häzirki kataloga ýazdyryň
+Temany başga bir kataloga ýazdyryň ...
+"<-" we "->" düwmelerini ulanyp reňk saýlaň. Çykmak üçin ENTER basyň. Reňk belgisini el bilen girizmek üçin "i" basyň.
+"<-" we "->" düwmelerini ulanyp reňk saýlaň. Reňk diapazonlaryny saýlamak üçin peýkamy we ok aşak düwmelerini ulanyň. Çykmak üçin ENTER basyň. Reňk belgisini el bilen girizmek üçin "i" basyň.
+Ernadro hoş geldiňiz! - {0 version wersiýasy
+Duýduryş reňki
+Opsiýanyň reňki
+0-dan 255-e çenli reňk belgisini giriziň:
+Apparat barada giňişleýin maglumat üçin "hwinfo" ulanyň.
+Apparat maglumatlary çap edýär
+Prosessoryň ady:
+Prosessor bitleri:
+Bölüm faýl ulgamy:
+Bölümiň ululygy:
+GPU: Grafiki kartalaryň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...
+>> Hoş geldiňiz! Bu uzakdan düzediş we söhbetdeşlige ilkinji gezek girmek. Hasaba almak üçin "/ registrasiýa <name>" ulanyň.
+Enjam eýýäm bar.
+Şeýle enjam ýok.
+Enjam ulanyjy adyny düzýär
+Siz eýýäm hasaba alyndy.
+Salam, {0}!
+Konsol üçin faýlyň mazmunyny çap edýär
+, A-da bu buýruga "sanaw sanawlaryny" geçiriň.
+Giriş eýýäm bar
+Konsol çykyşyny dolaýar
+Buýruk dolanyp bolmaýar. Bu buýruklary dolap bolýar:
+ZIP arhiwini çykarýar
+ZIP arhiwini döredýär
+{0 in içinde gurlan
+Düzediş maglumatlaryny göçürip almakda säwlik
+Düzediş maglumatlary göçürip alanyňyzda ýalňyşlyk bar. Internet birikmäňizi barlaň.
+Mod 0 mod: {1 mod moda gutaryp bilmedi
+Firehli atylan wakalaryň sanawyny
+Häzirki katalog
+Gabygyň häzirki katalogyny düzýär. Bar bolan kataloga mutlak ýol ýazyň.
+Sanawyň netijelerini örtüň
+Häzirki konsol geometriýasy üçin gaty uzyn ýaly görünse, sanawyň netijelerini örtüň.
+Ping!
+{0} seni basdy.
+Temany häzirki kataloga ýazdyryň ...
+Temany başga bir kataloga ýazdyryň ...
+Temanyň adyny görkeziň:
+{0 user ulanyjy "{1}" sanawyna goşuldy.
+{0 user ulanyjy "{1}" sanawyndan aýryldy.
+Nädogry re modeim {0}
+Gurulan mowzuklardan mowzuk ýükläň ...
+.Json giňeltmesinde mowzuk faýlyň adyny görkeziň:
+ZIP arhiwini açýar
+ZIP gabygyndan çykýar
+Arhiwdäki ähli faýllary sanawlaýar
+Belli bir kataloga ýa-da häzirki kataloga bir faýl çykarýar
+Arhiw katalogyny üýtgedýär
+Görkezilen ZIP gabyk buýrugy tapylmady.
+{0 Directory katalogy ýok
+{0} arhiw katalogy ýok
+Iň köp pozisiýa
+Garalmazdan ozal näçe pozisiýa ýakylýar?
+Giriş reňkini sanaň
+Bahanyň reňkini sanaň
+Buýrugy ýerine ýetirmek üçin SSH serwerine birikýär.
+Nädogry reňk kesgitleýji. Dogry formatda bolandygyna göz ýetiriň, ýagny 255 reňk ýa-da hakyky reňk aşakdaky ýaly ulanylsa, VT yzygiderliligi 0-255 aralygyndaky belgini aňladýar:
+Synag gabygynda säwlik: {0}
+Scriptazuwda bir üýtgeýjini düzýär
+Bugalňyşlyk barada hasabat.
+Bize bilet galdyranyňyz üçin sag boluň! Haýsy haýyşyňyzyň bardygyny saýlaň.
+Mesele
+Aýratynlyk haýyşy
+Sorag
+Bir aýratynlygy görkezmeli.
+Sorag beriň, pikiriňizi ýazyň ýa-da bir mesele barada habar beriň.
+Islegiňizi ýazmalysyňyz.
+FTP gabygynda ýalňyşlyk bardy:
+Näbelli FTP gabygynyň ýalňyşlygy:
+SFTP gabygynda ýalňyşlyk bardy:
+Näbelli SFTP gabyk ýalňyşlygy:
+SSH bannerini görkez
+Birikdirilende SSH serwer bannerini görkezýär.
+Hakyky tassyklamak isleýärsiňizmi?
+Şahsy açar faýl
+Parol
+Key 0 key düwmesiniň açar sözüni giriziň:
+Bar bolmadyk ýoly bitaraplaşdyrdy.
+Key 0 key açar faýly ýok.
+Şahsy açary goşmaga synanyşmakda säwlik:
+255 reňk re modeimine geçmek üçin "t" basyň.
+Hakyky reňk re toimine geçmek üçin "t" basyň.
+Kökden başga ulanyjy ýok ýaly. Bu erbet. Birini nädip döretmelidigini size görkezeris.
+Ulanyjy adyňyzy ýazyň.
+Ulanyjy adyňyzy ýazmaly.
+Parolyňyzy ýazyň
+Parolyňyzy ýazmaly
+Hasap görnüşini saýlaň.
+Dolandyryjy: Bu hasap görnüşi, ulgam dolandyryş programmalaryny ulanmaga mümkinçilik berýän ýadroda iň köp güýje eýe.
+Adaty ulanyjy: Bu hasap görnüşi dolandyryjylara garanyňda birneme çäklendirilen.
+Gutlaýarys! Täze hasap açdyňyz! Muny tamamlamak üçin täze hasabyňyz hökmünde giriň.
+mod: Hiç hili mod tapylmady.
+Umumy buýruklar:
+Mod buýruklary:
+Lakam buýruk berýär:
+Bejeriş tertibi
+Gözleg kataloglary
+Içege bilen bölünen ýollar topary. PATH ýaly işleýär. Bir bukja ýa-da bukjanyň adyna doly ýol ýazyň. Gutaranyňyzdan soň "q" ýazyň. Bar bolan katalogy aýyrmak üçin ýoluň gapdalynda minus belgisini ýazyň.
+Mod buýruklary ýok.
+Hiç hili lakamly buýruk ýok.
+Reňk bahasy 0-255 aralygynda.
+Gaplap boljak buýruk tapylmady.
+Belli bir setirde ýa-da ähli setirlerde bir söz soraň
+{0} {1} göçürildi.
+{0} {1} ýüklendi.
+Reňk görnüşini we çyzgy çap etmek arkaly konsol üçin bir setir çap edýär
+Reňk görnüşini we format goldawy bilen çyzgy çap etmek arkaly konsol üçin bir setir çap edýär
+Düzediş üçin bir setir çap edýär
+Format goldawy bilen düzeltmek üçin bir setir çap edýär
+Ernadro ýalňyş desgasyny barlaýar
+Format goldawy bilen ýadro ýalňyş desgasyny barlaýar
+Resurslarda bar bolan setiri belli bir dile terjime etmek üçin synaglar
+Köşeşdirmek üçin bir setir çap edýär we tapylan ýerleri derňeýär
+Adaty aňlatma desgasyny barlaýar
+Modhli modlary başlaýar
+Modhli modlary saklaýar
+Düzediş işini açýar ýa-da öçürýär
+Uzakdan düzetmegi işledýär ýa-da öçürýär
+255 reňk üçin VT yzygiderliligini barlaýar
+Hakyky reňk üçin VT yzygiderliligini barlaýar
+Alyjyny barlamak üçin habarnamany iberýär
+Dürli senenamalary ulanyp, çap edilýän senäni synagdan geçirýär
+Goldanýan kod sahypalarynyň hemmesini görkezýär
+Programmada haýsy düzüji üýtgeýjiler açyk?
+Belli bir wakany ýokarlandyrýan synaglar
+Enjamy barlamak üçin synaglar
+Zibil ýygnaýjyny barlaýar
+Synag gabygyndan çykýar we ýadrosy başlaýar
+Synag gabygyndan çykýar we ýadrosyny ýapýar
+Häzirki katalogy ýadro konfigurasiýa faýlyna ýazdyrýar
+Sanaw ýazyjysyny setir we setir massiwi bilen synag edýär
+Sanaw ýazyjysyny bitewi we bitewi massiw bilen synag edýär
+Sanaw ýazyjysyny char we char massiwinde synap görýär
+Adaty setir sanawy:
+Array setir sanawy:
+Adaty bitewi sanaw:
+Array bitewi sanawy:
+Adaty sanaw sanawy:
+Array sanaw sanawy:
+RPC-i işlediň
+RPC porty
+RPC-ni işletmek ýa-da işletmezlik.
+RPC portuny ýazyň. Sanly bolmaly we eýýäm ulanylmaly däl. Otherwiseogsam, RPC porty açyp bilmez.
+Öçürilenligi üçin RPC-ni başlamazlyk.
+Medeniýetleri goldaýan sanawlar
+Yzygiderli aňlatmalary ulanyp, berlen faýlda görkezilen setir üçin gözlegler
+Bir düwmäni wagtynda basyp biljekdigiňize göz aýlaň
+Ulanyjy öz wagtynda hiç hili giriş bermedi.
+Nyşan wagtynda basylmaýar.
+Dogry belgi basdyňyz!
+Nädogry belgini basdyňyz
+Çykmak üçin ESC basyň.
+Sene we wagt maglumatlary alýar
+Millisekunt:
+Sekuntlar:
+Minutlar:
+Sagatlar:
+Günler:
+Aýlar:
+: Yl:
+Yearylyň güni:
+Hepdäniň güni:
+Ikilik:
+Timeerli wagt:
+Univershliumumy Wagt:
+Unix wagty:
+Sene maglumatyny derňäp bilmedi
+Formatynyň dogrudygyna göz ýetiriň.
+Sene:
+Wagt:
+Faýl rugsatlaryny düzýär. Bu diňe Unix-i işleýän FTP serwerlerinde goldanýar.
+Bu sessiýanyň görnüşini düzýär
+Faýl ulgamy amallaryny ýerine ýetirmezden ozal serwere birikmeli.
+{0} -dan {1 to rugsatlaryny belläp bilmedi.
+Rugsatlar faýl üçin üstünlikli düzüldi
+Maglumatlaryň görnüşi ASCII-e düzüldi!
+Maglumatlaryň görnüşi Binary-a düzüldi!
+Nädogry maglumat görnüşi.
+Faýllaryň köpüsiniň bu re usingimi ulanyp dogry göçürip almajakdygyna üns beriň, şonuň üçin köp ýagdaýlarda ikilik re modeimini ulanmagy maslahat berýäris.
+RPC başlamadyk wagty RPC buýrugyny ibermäge synanyşmak.
+Millisekuntda gijä galmak
+Maks Fade ädimleri
+Tekst gutarmanka näçe millisekunt garaşmaly?
+Näçe ädim ätmeli?
+Doly gözleg
+Çyn bolsa, ähli enjamlary barlaýar; bolmasa, diňe zerur enjamlary barlar.
+Ekrany saklaýjy {0 config konfigurasiýadan aýryp bilmedi.
+Customörite tygşytlaýjy sazlamalary alýar
+Customörite tygşytlaýjy sazlamalary düzýär
+Ekran saklaýjy üçin sazlamalar üstünlikli düzüldi
+Ekranyň goragçysy üçin sazlama düzüp bilmedi
+Iýmitleri okamak üçin RSS gabygyny açýar
+RSS gabygyndan çykýar we ýadroga gaýdyp gelýär
+Iýmit baglanyşygyny üýtgedýär
+Feedhli iýmitleriň sanawyny
+Web brauzerinde iýmit okaýar
+Görkezilen RSS gabyk buýrugy tapylmady.
+Nädogry RSS2 iým.
+Nädogry RSS1 iým.
+Atom iýminiň nädogry.
+RSS iýmit URL-i giriziň:
+Nädogry RSS iýmit görnüşi.
+Näbelli gabyk ýalňyşlygy:
+Makala barada maglumat alýar
+Makalanyň sany elýeterli makalalardan uly bolup bilmez.
+Ady:
+Baglanyşyk:
+Iýmit maglumatlary alýar
+Düşündiriş:
+Iýmitiň görnüşi:
+Makalalaryň sany:
+Makalanyň baglanyşygy ýok!
+Katalog üçin faýl ulgamy ýazgylarynyň sanawyny düzüp bilmedi
+Faýl ulgamynyň tertibi
+Faýl ulgamynyň tertibi
+Faýllaryň nähili tertiplenjekdigine gözegçilik edýär.
+Faýl ulgamynyň ýokarlanmagyna ýa-da aşak düşmegine gözegçilik edýär.
+Millisekuntda gijä galmagy ýazyň
+Textene tekst ýazmazdan ozal näçe millisekunt garaşmaly?
+Görkezmek isleýän tekstiňizi ýazyň. Uzak bolsa has gowudyr.
+WPM-de iň pes ýazuw tizligi
+WPM-de iň ýokary ýazuw tizligi
+Göterimdäki ýalňyşlyk ähtimallygy
+Häzirki katalogy ýatda saklap bilmedi: {0}
+Ugry üýtgetmek üçin süpürgiç
+Tötänleýin ugry üýtgetmezden ozal näçe süpürgiç etmeli?
+Tapgyr tamamlandy
+Içerki başlangyç gutardy
+Salgylanan faýl {0} tapylmady. Bu mod bu faýl bolmasa dogry işlemän biler.
+Başlangyç mod
+Buýruk ady:
+Buýruk kesgitlemesi:
+Buýruk görnüşi:
+Gaty buýruk?
+Mod wersiýasy:
+Mod {0} tapylmady
+Tekst redaktory entek faýl akymyny açmady.
+Setir çalşyldy
+Sanlaryň biri ýa-da ikisi hem san däl.
+Söz öçürildi.
+Nyşan öçürildi
+Sazlamalara hoş geldiňiz!
+SSH buýrugyny ýerine ýetirmekde säwlik
+SSH gabygynda säwlik
+- Programma maglumatlary
+Sözlük ýazyjysyny setir we setir massiwi bilen barlaýar
+Sözlük ýazyjysyny char we char massiwinde synap görýär
+Sözlük ýazyjysyny bitewi we bitewi massiw bilen barlaýar
+Adaty setir sözlügi:
+Array setir sözlügi:
+Adaty bitewi sözlük:
+Array bitewi sözlügi:
+Adaty char sözlügi:
+Array char sözlügi:
+Synag gabygyna hoş geldiňiz!
+Faýl ulgamynyň amallarynda ösüşi görkeziň
+Faýl ulgamy amallary wagtynda haýsy faýlyň işlenýändigini görkezýär
+“HardwareType” nirede bolar
+The 0 apparat görnüşi barlanylmaýar ýa-da dogry däl.
+Apparat görnüşi {0 yet entek barlanmady. Barlanandygyna ynanýan bolsaňyz, ýadrosy düzetmek mümkinçiligi bilen täzeden açyň.
+Bölümler sanawda görkezilmeýär.
+Aýradyjy çap edýär
+Format goldawy bilen bölüjini çap edýär
+Reňk goldawy bilen bölüjini çap edýär
+Reňk we format goldawy bilen bölüjini çap edýär
+Elmydama merkezleşdirilen
+Görkezmek isleýän tekstiňizi ýazyň.
+Markada görkezilen tekst elmydama merkezleşdirilenmi.
+Argument {0 sanjym tapylmady.
+Buýruk setiri argumenti {0} tapylmady.
+Ekran saklaýjysy görkezilende ýalňyşlyk başdan geçirdi: {0}. Çykmak üçin islendik düwmä basyň.
+Öňünden syn ...
+Ine, mowzugyňyzyň görnüşi:
+Gaplap boljak buýruklar:
+Mod {0} nädogry buýruk bar. Mod derňewi şowsuz. Çeşme koduny gözden geçiriň.
+Mod bölekleri:
+Console API ulanyň
+Teksti arassalamak ýa-da VT yzygiderliligini has çalt arassalamak üçin Console API ulanmalymy. Sealňyş bolsa, Marquee degişli VT yzygiderliligini ulanar. Otherwiseogsam, has haýal Console API ulanar.
+URL açmak ... Ekranda görkezilen ädimleri ýerine ýetiriň.
+Modda bölek ýok.
+Mod ady:
+Mod faýlyň ady:
+Mod faýl ýoly:
+Bölüm wersiýasy:
+Talap edilýän argumentleriň iň az mukdary:
+Argumentler gerekmi?
+Wrappable buýrugy?
+Gabyk üýtgeýjisini düzmek?
+Bejeriş tertibinde işledip bolmaýarmy?
+Könelişenmi?
+RSS gyssagly stil
+Tekst redaktirleme gyssagly stili
+Zip Shell gyssagly stili
+Papka boş
+Üstünlik bilen barlanyldy {0}.
+Verbose Probe
+Apparat gözleg habarlaryny birneme gürleşiň.
+> Çarçuwalar barada maglumat ýok.
+Adyňyzy ýazmaly.
+JSON faýlyny owadanlaşdyrýar
+{0 category kategoriýasyny sazlaň.
+Entry 0} ýazgyny sazlaň.
+Bir minutda Beats ulanyň
+Indiki reňk ýazmak üçin Beats Per Minute bölümini ulanmalymy.
+Bir minutda Beats-da gijä galmak
+Reňk
+Indiki ýazmazdan ozal bir minutda näçe urmaly?
+“BeatFader” açyk bolsa, tötänleýin reňkleri saýlar. Otherwiseogsam, konfigurasiýadan reňkleri ulanyň.
+Omörite başlangyç banner
+Ikilik ýa-da tekst ulanyp, uzakdaky bukjany ýerli kataloga göçürip alýar
+Ikilik ýa-da tekst ulanyp, ýerli bukjany uzakdaky kataloga ýükleýär
+{0 folder bukjasyny göçürip almak ...
+{0 folder bukjasyny göçürip aldy.
+{0 folder bukjasy üçin göçürip alyp bolmaýar.
+Papka {0} ýüklemek ...
+Papka bukjasy {0}
+Doly reňk koduny ýazmak üçin "c" basyň.
+Bu formatlary kanagatlandyrýan reňk koduny giriziň:
+JSON faýlyny kiçeldýär
+Millisekuntda täze ekranyň gijikdirilmegi
+Sütün sanamak
+Çyzgyny doldurmak
+Çyzyk doldurmak göterimde göterim almak ähtimallygy
+Setir doldurmagyň görnüşi
+Täze ekranda teksti ýazmazdan ozal näçe millisekunt garaşmaly?
+Çap edilmeli tekst sütünleri.
+"Setir doldurmagy" başlamazdan ozal näçe simwol ýazmaly?
+Setiri doldurmagyň nagşynyň ähli gapaklarda göterim bilen çap edilmegi ähtimallygy
+Setir doldurmagyň nagyş görnüşi
+Jogap nol bolup bilmez.
+Jogap görkezilen ýazgylardan ýokary bolup bilmez.
+Üýtgetmeleri ýatda sakla...
+Modlaryňyzy dolandyryň
+Mod dolandyryşy howpsuz re inimde ýapyk.
+Nädogry buýruk {0}. Aşakdaky ulanylyşyny barlaň:
+Mod tapylmady ýa-da faýlyň nädogry nyşanlary bar.
+Göterimde sypdyrmak ähtimallygy
+Ekranyň saklaýjysyny düzetmegi işjeňleşdiriň
+Ekran saklaýjylary düzetmäge mümkinçilik berýär. Ulanylýan ekran saklaýjysyna baglylykda düzediş ýazgysyny çalt dolduryp, ekran saklaýjysyny birneme haýalladyp biljekdigini ýadyňyzdan çykarmaň. Diňe anyklaýyş maksatlary üçin ýadro düzedişleri açyk bolsa işleýär.
+Düzediş maglumatlary göçürip alanyňyzda tor ýok
+Internet birikmäňizi barlaň we gaýtadan synanyşyň.
+{0} gollanma sahypasy nädogry.
+Bu gollanma sahypasyny doldurmagy göz öňünde tutuň.
+Gollanma sahypasyny okamak üçin islendik düwmä basyň ...
+Bu gollanma sahypasy üçin işlemek zerur:
+El bilen {0} tapylmady.
+Mod gollanma
