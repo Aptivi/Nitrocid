@@ -26,7 +26,7 @@ Public Module Kernel
     Public HostName As String = "kernel"
     Public DefConsoleOut As TextWriter
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 4"
+    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 5"
     Public ReadOnly vbNewLine As String = Environment.NewLine
     Public ReadOnly KernelEventManager As New Events
     Friend StageTimer As New Stopwatch
