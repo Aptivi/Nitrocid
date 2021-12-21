@@ -193,6 +193,11 @@ Public Module TextWriterColor
         SyncLock WriteLock
 #End If
             Try
+                'Get the filtered positions first. Required for Linux.
+                Dim FilteredLeft, FilteredTop As Integer
+                If Not Line Then GetFilteredPositions(Text, FilteredLeft, FilteredTop, vars)
+
+                'Actually write
                 If Line Then
                     If Not vars.Length = 0 Then
                         Console.WriteLine(Text, vars)
@@ -206,6 +211,9 @@ Public Module TextWriterColor
                         Console.Write(Text)
                     End If
                 End If
+
+                'Return to the correct position if Linux is detected
+                If Not Line Then Console.SetCursorPosition(FilteredLeft, FilteredTop)
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

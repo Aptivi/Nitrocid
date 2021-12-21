@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Text.RegularExpressions
+
 Public Module ConsoleExtensions
 
     ''' <summary>
@@ -56,5 +58,26 @@ Public Module ConsoleExtensions
     Public Function PercentRepeatTargeted(CurrentNumber As Integer, MaximumNumber As Integer, TargetWidth As Integer) As Integer
         Return CurrentNumber * 100 / MaximumNumber * (TargetWidth * 0.01)
     End Function
+
+    ''' <summary>
+    ''' Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
+    ''' </summary>
+    ''' <param name="Text">The text that contains the VT sequences</param>
+    ''' <param name="Left">The filtered left position</param>
+    ''' <param name="Top">The filtered top position</param>
+    Public Sub GetFilteredPositions(Text As String, ByRef Left As Integer, ByRef Top As Integer, ParamArray Vars() As Object)
+        'First, get the old cursor positions
+        Dim OldLeft As Integer = Console.CursorLeft
+        Dim OldTop As Integer = Console.CursorTop
+
+        'Second, filter all text from the VT escape sequences
+        Text = Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+
+        'Third, print the text, return to the old position, and return the filtered positions
+        Console.Write(Text, Vars)
+        Left = Console.CursorLeft
+        Top = Console.CursorTop
+        Console.SetCursorPosition(OldLeft, OldTop)
+    End Sub
 
 End Module
