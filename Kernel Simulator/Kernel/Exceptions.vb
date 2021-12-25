@@ -920,4 +920,70 @@ Public Class Exceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when there was an installation failure for the language.
+    ''' </summary>
+    Public Class LanguageInstallException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars), e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there was a uninstallation failure for the language.
+    ''' </summary>
+    Public Class LanguageUninstallException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars), e)
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Thrown when there was a parse failure for the language.
+    ''' </summary>
+    Public Class LanguageParseException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars), e)
+        End Sub
+    End Class
+
 End Class

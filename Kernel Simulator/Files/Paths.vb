@@ -64,6 +64,7 @@ Public Module Paths
         KernelPaths.AddIfNotFound("CustomSaverSettings", HomePath + "/CustomSaverSettings.json")
         KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
         KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
+        KernelPaths.AddIfNotFound("CustomLanguages", HomePath + "/KSLanguages/")
     End Sub
 
     ''' <summary>

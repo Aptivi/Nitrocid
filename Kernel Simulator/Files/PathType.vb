@@ -72,4 +72,8 @@ Public Enum KernelPathType
     ''' Reminders folder
     ''' </summary>
     Reminders
+    ''' <summary>
+    ''' Custom languages folder
+    ''' </summary>
+    CustomLanguages
 End Enum

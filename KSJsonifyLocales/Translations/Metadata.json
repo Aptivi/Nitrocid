@@ -1,0 +1,374 @@
+{
+    "afr": {
+        "name": "Afrikaans",
+        "transliterable": false
+    },
+    "arb-T": {
+        "name": "Arabic",
+        "transliterable": true
+    },
+    "arb": {
+        "name": "Arabic",
+        "transliterable": true
+    },
+    "arm-T": {
+        "name": "Armenian",
+        "transliterable": true
+    },
+    "arm": {
+        "name": "Armenian",
+        "transliterable": true
+    },
+    "azr": {
+        "name": "Azerbaijani",
+        "transliterable": false
+    },
+    "ben-T": {
+        "name": "Bangla",
+        "transliterable": true
+    },
+    "ben": {
+        "name": "Bangla",
+        "transliterable": true
+    },
+    "bsq": {
+        "name": "Basque",
+        "transliterable": false
+    },
+    "bsn": {
+        "name": "Bosnian",
+        "transliterable": false
+    },
+    "blg-T": {
+        "name": "Bulgarian",
+        "transliterable": true
+    },
+    "blg": {
+        "name": "Bulgarian",
+        "transliterable": true
+    },
+    "ctl": {
+        "name": "Catalan",
+        "transliterable": false
+    },
+    "ccw": {
+        "name": "Chichewa",
+        "transliterable": false
+    },
+    "chi-T": {
+        "name": "Chinese",
+        "transliterable": true
+    },
+    "chi": {
+        "name": "Chinese",
+        "transliterable": true
+    },
+    "cnt-T": {
+        "name": "Chinese (Traditional)",
+        "transliterable": true
+    },
+    "cnt": {
+        "name": "Chinese (Traditional)",
+        "transliterable": true
+    },
+    "csc": {
+        "name": "Corsican",
+        "transliterable": false
+    },
+    "cro": {
+        "name": "Croatian",
+        "transliterable": false
+    },
+    "cbn": {
+        "name": "Cuban",
+        "transliterable": false
+    },
+    "cze": {
+        "name": "Czech",
+        "transliterable": false
+    },
+    "dan": {
+        "name": "Danish",
+        "transliterable": false
+    },
+    "dtc": {
+        "name": "Dutch",
+        "transliterable": false
+    },
+    "eng": {
+        "name": "English",
+        "transliterable": false
+    },
+    "fin": {
+        "name": "Finnish",
+        "transliterable": false
+    },
+    "flp": {
+        "name": "Filipino",
+        "transliterable": false
+    },
+    "fre": {
+        "name": "French",
+        "transliterable": false
+    },
+    "ger": {
+        "name": "German",
+        "transliterable": false
+    },
+    "glc": {
+        "name": "Galician",
+        "transliterable": false
+    },
+    "grk-T": {
+        "name": "Greek",
+        "transliterable": true
+    },
+    "grk": {
+        "name": "Greek",
+        "transliterable": true
+    },
+    "guj-T": {
+        "name": "Gujarati",
+        "transliterable": true
+    },
+    "guj": {
+        "name": "Gujarati",
+        "transliterable": true
+    },
+    "hxr-1": {
+        "name": "H4X0R Level 1",
+        "transliterable": false
+    },
+    "hxr-2": {
+        "name": "H4X0R Level 2",
+        "transliterable": false
+    },
+    "hxr-3": {
+        "name": "H4X0R Level 3",
+        "transliterable": false
+    },
+    "hti": {
+        "name": "Haitian",
+        "transliterable": false
+    },
+    "hwi": {
+        "name": "Hawaiian",
+        "transliterable": false
+    },
+    "hus": {
+        "name": "Hausa",
+        "transliterable": false
+    },
+    "ind-T": {
+        "name": "Hindi",
+        "transliterable": true
+    },
+    "ind": {
+        "name": "Hindi",
+        "transliterable": true
+    },
+    "hng": {
+        "name": "Hungarian",
+        "transliterable": false
+    },
+    "icl": {
+        "name": "Icelandic",
+        "transliterable": false
+    },
+    "ndo": {
+        "name": "Indonesian",
+        "transliterable": false
+    },
+    "iri": {
+        "name": "Irish",
+        "transliterable": false
+    },
+    "ita": {
+        "name": "Italian",
+        "transliterable": false
+    },
+    "jpn-T": {
+        "name": "Japanese",
+        "transliterable": true
+    },
+    "jpn": {
+        "name": "Japanese",
+        "transliterable": true
+    },
+    "jvn": {
+        "name": "Javanese",
+        "transliterable": false
+    },
+    "kzk-T": {
+        "name": "Kazakh",
+        "transliterable": true
+    },
+    "kzk": {
+        "name": "Kazakh",
+        "transliterable": true
+    },
+    "kor-T": {
+        "name": "Korean",
+        "transliterable": true
+    },
+    "kor": {
+        "name": "Korean",
+        "transliterable": true
+    },
+    "krd": {
+        "name": "Kurdish",
+        "transliterable": false
+    },
+    "ltn": {
+        "name": "Latin",
+        "transliterable": false
+    },
+    "ltv": {
+        "name": "Latvian",
+        "transliterable": false
+    },
+    "lol": {
+        "name": "LOLCAT",
+        "transliterable": false
+    },
+    "lxm": {
+        "name": "Luxembourgish",
+        "transliterable": false
+    },
+    "mcd-T": {
+        "name": "Macedonian",
+        "transliterable": true
+    },
+    "mcd": {
+        "name": "Macedonian",
+        "transliterable": true
+    },
+    "mal": {
+        "name": "Malay",
+        "transliterable": false
+    },
+    "mts": {
+        "name": "Maltese",
+        "transliterable": false
+    },
+    "npl-T": {
+        "name": "Nepali",
+        "transliterable": true
+    },
+    "npl": {
+        "name": "Nepali",
+        "transliterable": true
+    },
+    "nwg": {
+        "name": "Norwegian",
+        "transliterable": false
+    },
+    "psh": {
+        "name": "Pashto",
+        "transliterable": false
+    },
+    "pir": {
+        "name": "Pirate Speak",
+        "transliterable": false
+    },
+    "pol": {
+        "name": "Polish",
+        "transliterable": false
+    },
+    "ptg": {
+        "name": "Portuguese",
+        "transliterable": false
+    },
+    "pun-T": {
+        "name": "Punjabi",
+        "transliterable": true
+    },
+    "pun": {
+        "name": "Punjabi",
+        "transliterable": true
+    },
+    "rmn": {
+        "name": "Romanian",
+        "transliterable": false
+    },
+    "rus-T": {
+        "name": "Russian",
+        "transliterable": true
+    },
+    "rus": {
+        "name": "Russian",
+        "transliterable": true
+    },
+    "snd": {
+        "name": "Sindhi",
+        "transliterable": false
+    },
+    "slo": {
+        "name": "Slovak",
+        "transliterable": false
+    },
+    "som": {
+        "name": "Somali",
+        "transliterable": false
+    },
+    "spa": {
+        "name": "Spanish",
+        "transliterable": false
+    },
+    "srb-T": {
+        "name": "Serbian",
+        "transliterable": true
+    },
+    "srb": {
+        "name": "Serbian",
+        "transliterable": true
+    },
+    "swa": {
+        "name": "Swahili",
+        "transliterable": false
+    },
+    "swe": {
+        "name": "Swedish",
+        "transliterable": false
+    },
+    "tkm": {
+        "name": "Turkmen",
+        "transliterable": false
+    },
+    "tky": {
+        "name": "Turkish",
+        "transliterable": false
+    },
+    "ukr-T": {
+        "name": "Ukrainian",
+        "transliterable": true
+    },
+    "ukr": {
+        "name": "Ukrainian",
+        "transliterable": true
+    },
+    "urd": {
+        "name": "Urdu",
+        "transliterable": false
+    },
+    "uzb": {
+        "name": "Uzbek",
+        "transliterable": false
+    },
+    "vtn": {
+        "name": "Vietnamese",
+        "transliterable": false
+    },
+    "wls": {
+        "name": "Welsh",
+        "transliterable": false
+    },
+    "yrb": {
+        "name": "Yoruba",
+        "transliterable": false
+    },
+    "zul": {
+        "name": "Zulu",
+        "transliterable": false
+    }
+}

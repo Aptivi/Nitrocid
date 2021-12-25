@@ -144,6 +144,14 @@ Public Class Events
     Public Event HTTPPostExecuteCommand(Command As String)
     Public Event HTTPCommandError(Command As String, Exception As Exception)
     Public Event ProcessError(Process As String, Exception As Exception)
+    Public Event LanguageInstalled(Language As String)
+    Public Event LanguageUninstalled(Language As String)
+    Public Event LanguageInstallError(Language As String, Exception As Exception)
+    Public Event LanguageUninstallError(Language As String, Exception As Exception)
+    Public Event LanguagesInstalled()
+    Public Event LanguagesUninstalled()
+    Public Event LanguagesInstallError(Exception As Exception)
+    Public Event LanguagesUninstallError(Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -2150,6 +2158,142 @@ Public Class Events
             Next
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of a custom language installation
+    ''' </summary>
+    Public Sub RespondLanguageInstalled(Language As String) Handles Me.LanguageInstalled
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstalled()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguageInstalled", Language)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of a custom language uninstallation
+    ''' </summary>
+    Public Sub RespondLanguageUninstalled(Language As String) Handles Me.LanguageUninstalled
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstalled()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguageUninstalled", Language)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom language install error
+    ''' </summary>
+    Public Sub RespondLanguageInstallError(Language As String, Exception As Exception) Handles Me.LanguageInstallError
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageInstallError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguageInstallError", Language, Exception)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom language uninstall error
+    ''' </summary>
+    Public Sub RespondLanguageUninstallError(Language As String, Exception As Exception) Handles Me.LanguageUninstallError
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguageUninstallError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguageUninstallError", Language, Exception)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom languages installation
+    ''' </summary>
+    Public Sub RespondLanguagesInstalled() Handles Me.LanguagesInstalled
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstalled()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguagesInstalled")
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom languages uninstallation
+    ''' </summary>
+    Public Sub RespondLanguagesUninstalled() Handles Me.LanguagesUninstalled
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstalled()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguagesUninstalled")
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom languages install error
+    ''' </summary>
+    Public Sub RespondLanguagesInstallError(Exception As Exception) Handles Me.LanguagesInstallError
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesInstallError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguagesInstallError", Exception)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of custom languages uninstall error
+    ''' </summary>
+    Public Sub RespondLanguagesUninstallError(Exception As Exception) Handles Me.LanguagesUninstallError
+        For Each ModPart As ModInfo In Mods.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event LanguagesUninstallError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LanguagesUninstallError", Exception)
+                Catch ex As Exception
+                    WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrcConditional(EventDebug, ex)
+                End Try
+            Next
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -3095,6 +3239,70 @@ Public Class Events
         WdbgConditional(EventDebug, DebugLevel.I, "Raising event ProcessError() and responding in RespondProcessError()...")
         FiredEvents.Add("ProcessError (" + CStr(FiredEvents.Count) + ")", {Process, Exception})
         RaiseEvent ProcessError(Process, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of a custom language installation
+    ''' </summary>
+    Public Sub RaiseLanguageInstalled(Language As String)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageInstalled() and responding in RespondLanguageInstalled()...")
+        FiredEvents.Add("LanguageInstalled (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguageInstalled(Language)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of a custom language uninstallation
+    ''' </summary>
+    Public Sub RaiseLanguageUninstalled(Language As String)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageUninstalled() and responding in RespondLanguageUninstalled()...")
+        FiredEvents.Add("LanguageUninstalled (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguageUninstalled(Language)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom language install error
+    ''' </summary>
+    Public Sub RaiseLanguageInstallError(Language As String, Exception As Exception)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageInstallError() and responding in RespondLanguageInstallError()...")
+        FiredEvents.Add("LanguageInstallError (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguageInstallError(Language, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom language uninstall error
+    ''' </summary>
+    Public Sub RaiseLanguageUninstallError(Language As String, Exception As Exception)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageUninstallError() and responding in RespondLanguageUninstallError()...")
+        FiredEvents.Add("LanguageUninstallError (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguageUninstallError(Language, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom languages installation
+    ''' </summary>
+    Public Sub RaiseLanguagesInstalled()
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesInstalled() and responding in RespondLanguagesInstalled()...")
+        FiredEvents.Add("LanguagesInstalled (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguagesInstalled()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom languages uninstallation
+    ''' </summary>
+    Public Sub RaiseLanguagesUninstalled()
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesUninstalled() and responding in RespondLanguagesUninstalled()...")
+        FiredEvents.Add("LanguagesUninstalled (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguagesUninstalled()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom languages install error
+    ''' </summary>
+    Public Sub RaiseLanguagesInstallError(Exception As Exception)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesInstallError() and responding in RespondLanguagesInstallError()...")
+        FiredEvents.Add("LanguagesInstallError (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguagesInstallError(Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of custom languages uninstall error
+    ''' </summary>
+    Public Sub RaiseLanguagesUninstallError(Exception As Exception)
+        WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...")
+        FiredEvents.Add("LanguagesUninstallError (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent LanguagesUninstallError(Exception)
     End Sub
 
 End Class

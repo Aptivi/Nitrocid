@@ -341,6 +341,9 @@ Public Module KernelTools
         'Initialize date
         InitTimeDate()
 
+        'Initialize custom languages
+        InstallCustomLanguages()
+
         'Check for multiple instances of KS
         If InstanceChecked = False Then MultiInstance()
 
