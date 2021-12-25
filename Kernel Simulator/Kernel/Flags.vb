@@ -32,14 +32,6 @@ Public Module Flags
     ''' </summary>
     Public ArgsInjected As Boolean
     ''' <summary>
-    ''' Set Root Password boolean
-    ''' </summary>
-    Public SetRootPassword As Boolean
-    ''' <summary>
-    ''' Set Root Password to any password
-    ''' </summary>
-    Public RootPassword As String = "toor"
-    ''' <summary>
     ''' Maintenance Mode
     ''' </summary>
     Public Maintenance As Boolean

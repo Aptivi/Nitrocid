@@ -93,8 +93,6 @@ Public Module Config
             Dim GeneralConfig As New JObject From {
                     {"Prompt for Arguments on Boot", ArgsOnBoot},
                     {"Maintenance Mode", Maintenance},
-                    {"Change Root Password", SetRootPassword},
-                    {"Set Root Password to", RootPassword},
                     {"Check for Updates on Startup", CheckUpdateStart},
                     {"Custom Startup Banner", CustomBanner},
                     {"Change Culture when Switching Languages", LangChangeCulture},
@@ -956,8 +954,6 @@ Public Module Config
 
             'General Section
             Wdbg(DebugLevel.I, "Parsing general section...")
-            SetRootPassword = If(ConfigToken("General")?("Change Root Password"), False)
-            If SetRootPassword = True Then RootPassword = ConfigToken("General")?("Set Root Password to")
             Maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
             ArgsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
             CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)

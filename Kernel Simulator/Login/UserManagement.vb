@@ -321,9 +321,7 @@ Public Module UserManagement
     ''' Initializes root account
     ''' </summary>
     Sub InitializeSystemAccount()
-        If SetRootPassword Then
-            InitializeUser("root", RootPassword, True, True)
-        ElseIf FileExists(GetKernelPath(KernelPathType.Users)) Then
+        If FileExists(GetKernelPath(KernelPathType.Users)) Then
             If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
                 InitializeUser("root", GetUserProperty("root", UserProperty.Password), False, True)
             Else
@@ -420,6 +418,7 @@ Public Module UserManagement
         Dim [Step] As Integer = 1
         Dim AnswerUsername As String = ""
         Dim AnswerPassword As String = ""
+        Dim AnswerRootPassword As String = ""
         Dim AnswerType As Integer
 
         'First, select user name
@@ -481,9 +480,29 @@ Public Module UserManagement
             End If
         End While
 
-        'Finally, create an account
+        'Fourth, write root password
+        While [Step] = 4
+            Write(DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), True, ColTypes.Neutral)
+            Write(">> ", False, ColTypes.Input)
+            AnswerRootPassword = ReadLineNoInput("*"c)
+            Console.WriteLine()
+            Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
+            If String.IsNullOrWhiteSpace(AnswerPassword) Then
+                Wdbg(DebugLevel.W, "Password is not valid. Returning...")
+                Write(DoTranslation("You must write the administrator password."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Console.ReadKey()
+            Else
+                [Step] += 1
+            End If
+        End While
+
+        'Finally, create an account and change root password
         AddUser(AnswerUsername, AnswerPassword)
         If AnswerType = 1 Then AddPermission(PermissionType.Administrator, AnswerUsername)
+        AnswerRootPassword = GetEncryptedString(AnswerRootPassword, Algorithms.SHA256)
+        SetUserProperty("root", UserProperty.Password, AnswerRootPassword)
+        Users.Item("root") = AnswerRootPassword
         Write(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
     End Sub
 
