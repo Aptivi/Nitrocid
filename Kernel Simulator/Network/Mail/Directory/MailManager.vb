@@ -122,6 +122,7 @@ Public Module MailManager
                     'Remove message
                     Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                     Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
+                    'TODO: Use the newer Dir.Store routine implemented in MailKit 3.0.0
                     Dir.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
                     Wdbg(DebugLevel.I, "Removed.")
                     Dir.Expunge()
