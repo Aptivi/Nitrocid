@@ -27,11 +27,16 @@ Class WeatherCommand
             Dim Cities As Dictionary(Of Long, String) = ListAllCities()
             WriteList(Cities)
         Else
-            Dim APIKey As String
-            Write(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
-            Write(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
-            APIKey = ReadLineNoInput("*")
-            Console.WriteLine()
+            Dim APIKey As String = Forecast.ApiKey
+            If ListArgsOnly.Length > 1 Then
+                APIKey = ListArgsOnly(1)
+            ElseIf String.IsNullOrEmpty(APIKey) Then
+                Write(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
+                Write(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
+                APIKey = ReadLineNoInput("*")
+                Forecast.ApiKey = APIKey
+                Console.WriteLine()
+            End If
             PrintWeatherInfo(ListArgsOnly(0), APIKey)
         End If
     End Sub

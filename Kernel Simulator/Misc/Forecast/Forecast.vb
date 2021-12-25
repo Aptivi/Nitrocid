@@ -25,6 +25,26 @@ Imports System.Text
 Public Module Forecast
 
     Public PreferredUnit As UnitMeasurement = UnitMeasurement.Metric
+    Friend ApiKey As String = ""
+
+    ''' <summary>
+    ''' Gets current weather info from OpenWeatherMap
+    ''' </summary>
+    ''' <param name="CityID">City ID</param>
+    ''' <returns>A class containing properties of weather information</returns>
+    Public Function GetWeatherInfo(CityID As Long) As ForecastInfo
+        Return GetWeatherInfo(CityID, ApiKey, PreferredUnit)
+    End Function
+
+    ''' <summary>
+    ''' Gets current weather info from OpenWeatherMap
+    ''' </summary>
+    ''' <param name="CityID">City ID</param>
+    ''' <param name="APIKey">API key</param>
+    ''' <returns>A class containing properties of weather information</returns>
+    Public Function GetWeatherInfo(CityID As Long, APIKey As String) As ForecastInfo
+        Return GetWeatherInfo(CityID, APIKey, PreferredUnit)
+    End Function
 
     ''' <summary>
     ''' Gets current weather info from OpenWeatherMap
@@ -62,6 +82,25 @@ Public Module Forecast
         WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
         WeatherInfo.CityName = WeatherToken.SelectToken("name").ToString
         Return WeatherInfo
+    End Function
+
+    ''' <summary>
+    ''' Gets current weather info from OpenWeatherMap
+    ''' </summary>
+    ''' <param name="CityName">City name</param>
+    ''' <returns>A class containing properties of weather information</returns>
+    Public Function GetWeatherInfo(CityName As String) As ForecastInfo
+        Return GetWeatherInfo(CityName, ApiKey, PreferredUnit)
+    End Function
+
+    ''' <summary>
+    ''' Gets current weather info from OpenWeatherMap
+    ''' </summary>
+    ''' <param name="CityName">City name</param>
+    ''' <param name="APIKey">API key</param>
+    ''' <returns>A class containing properties of weather information</returns>
+    Public Function GetWeatherInfo(CityName As String, APIKey As String) As ForecastInfo
+        Return GetWeatherInfo(CityName, APIKey, PreferredUnit)
     End Function
 
     ''' <summary>
@@ -106,15 +145,23 @@ Public Module Forecast
     ''' Prints the weather information to the console
     ''' </summary>
     ''' <param name="CityID">City ID or name</param>
+    Public Sub PrintWeatherInfo(CityID As String)
+        PrintWeatherInfo(CityID, ApiKey)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the weather information to the console
+    ''' </summary>
+    ''' <param name="CityID">City ID or name</param>
     ''' <param name="APIKey">API Key</param>
     Public Sub PrintWeatherInfo(CityID As String, APIKey As String)
         Dim WeatherInfo As ForecastInfo
         Dim WeatherSpecifier As String = "°"
         Dim WindSpeedSpecifier As String = "m.s"
         If IsNumeric(CityID) Then
-            WeatherInfo = GetWeatherInfo(CLng(CityID), APIKey, PreferredUnit)
+            WeatherInfo = GetWeatherInfo(CLng(CityID), APIKey)
         Else
-            WeatherInfo = GetWeatherInfo(CityID, APIKey, PreferredUnit)
+            WeatherInfo = GetWeatherInfo(CityID, APIKey)
         End If
         Wdbg(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
         WriteSeparator(DoTranslation("-- Weather info for {0} --"), False, WeatherInfo.CityName)
