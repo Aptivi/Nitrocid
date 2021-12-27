@@ -24,9 +24,9 @@ Public Module WelcomeMessage
     Public CustomBanner As String = ""
 
     ''' <summary>
-    ''' Writes the welcoming message to the console (welcome to kernel)
+    ''' Gets the custom banner actual text with placeholders parsed
     ''' </summary>
-    Sub WriteMessage()
+    Function GetCustomBanner() As String
         'The default message to write
         Dim MessageWrite As String = "      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<      "
 
@@ -36,6 +36,17 @@ Public Module WelcomeMessage
             MessageWrite = ProbePlaces(MessageWrite)
         End If
 
+        'Just return the result
+        Return MessageWrite
+    End Function
+
+    ''' <summary>
+    ''' Writes the welcoming message to the console (welcome to kernel)
+    ''' </summary>
+    Sub WriteMessage()
+        'The default message to write
+        Dim MessageWrite As String = GetCustomBanner()
+
         'Finally, write the message
         If StartScroll Then
             WriteSlowly(MessageWrite, True, 10, ColTypes.Banner, KernelVersion)
@@ -43,7 +54,18 @@ Public Module WelcomeMessage
             Write(MessageWrite, True, ColTypes.Banner, KernelVersion)
         End If
 
-        'Show license
+        If NewWelcomeStyle Then
+            Write(vbNewLine + vbNewLine + Figgle.FiggleFonts.Banner.Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
+        Else
+            'Show license
+            WriteLicense()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Writes the license
+    ''' </summary>
+    Sub WriteLicense()
         Write(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +

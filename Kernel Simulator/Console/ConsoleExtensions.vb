@@ -60,6 +60,15 @@ Public Module ConsoleExtensions
     End Function
 
     ''' <summary>
+    ''' Filters the VT sequences that matches the regex
+    ''' </summary>
+    ''' <param name="Text">The text that contains the VT sequences</param>
+    ''' <returns>The text that doesn't contain the VT sequences</returns>
+    Public Function FilterVTSequences(Text As String) As String
+        Return Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+    End Function
+
+    ''' <summary>
     ''' Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
     ''' </summary>
     ''' <param name="Text">The text that contains the VT sequences</param>
@@ -71,7 +80,7 @@ Public Module ConsoleExtensions
         Dim OldTop As Integer = Console.CursorTop
 
         'Second, filter all text from the VT escape sequences
-        Text = Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+        Text = FilterVTSequences(Text)
 
         'Third, print the text, return to the old position, and return the filtered positions
         Console.Write(Text, Vars)

@@ -163,6 +163,12 @@ Public Module Kernel
                 'Notify user of errors if appropriate
                 If NotifyFaultsBoot Then NotifyStartupFaults()
 
+                'Show license if new style used
+                If NewWelcomeStyle Then
+                    WriteSeparator(DoTranslation("License information"), False, ColTypes.Stage)
+                    WriteLicense()
+                End If
+
                 'Initialize login prompt
                 DisposeAll()
                 If Not Maintenance Then

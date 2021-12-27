@@ -227,6 +227,10 @@ Public Module Flags
     ''' Enables event debugging
     ''' </summary>
     Public EventDebug As Boolean
+    ''' <summary>
+    ''' Use the new welcome style for the kernel (uses the Figlet text rendering)
+    ''' </summary>
+    Public NewWelcomeStyle As Boolean = True
 
     'Private flags
     ''' <summary>
