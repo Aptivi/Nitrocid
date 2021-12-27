@@ -15,19 +15,6 @@
                 "Description": "Triggers maintenance mode. This disables multiple accounts."
             },
             {
-                "Name": "Change Root Password?",
-                "Type": "SBoolean",
-                "Variable": "SetRootPassword",
-                "Description": "If the kernel is started, it will set root password."
-            },
-            {
-                "Name": "Set Root Password...",
-                "Type": "SMaskedString",
-                "Variable": "RootPassword",
-                "ShouldBeTrue": "SetRootPassword",
-                "Description": "Write the root password to be set. Don't worry; the password are shown as stars."
-            },
-            {
                 "Name": "Check for Updates on Startup",
                 "Type": "SBoolean",
                 "Variable": "CheckUpdateStart",
