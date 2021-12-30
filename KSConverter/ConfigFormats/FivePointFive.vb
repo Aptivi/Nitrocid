@@ -20,6 +20,7 @@ Imports System.Globalization
 Imports KS
 Imports MadMilkman.Ini
 Imports Extensification.StringExts
+Imports Core
 
 Module FivePointFive
 
@@ -41,12 +42,6 @@ Module FivePointFive
             End If
 
             'Now, install the values - General section
-            If ConfigReader.Sections("General").Keys.Contains("Change Root Password") Then
-                If ConfigReader.Sections("General").Keys("Change Root Password").Value = "True" Then SetRootPassword = True Else SetRootPassword = False
-            End If
-            If ConfigReader.Sections("General").Keys.Contains("Set Root Password to") Then
-                If SetRootPassword = True Then RootPassword = ConfigReader.Sections("General").Keys("Set Root Password to").Value
-            End If
             If ConfigReader.Sections("General").Keys.Contains("Maintenance Mode") Then
                 If ConfigReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then Maintenance = True Else Maintenance = False
             End If
@@ -357,7 +352,7 @@ Module FivePointFive
                 If ConfigReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
             End If
             If ConfigReader.Sections("Misc").Keys.Contains("Preferred Unit for Temperature") Then
-                PreferredUnit = ConfigReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
+                PreferredUnit = [Enum].Parse(GetType(UnitMeasurement), ConfigReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value)
             End If
             If ConfigReader.Sections("Misc").Keys.Contains("Enable text editor autosave") Then
                 If ConfigReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False

@@ -65,16 +65,6 @@ Module PreFivePointFive
                         If ColoredShell = True Then ListEntryColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Definition of command in Help Color = ") Then
                         If ColoredShell = True Then ListValueColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)))
-                    ElseIf line.Contains("Change Root Password = ") Then
-                        If line.Replace("Change Root Password = ", "") = "True" Then
-                            SetRootPassword = True
-                        ElseIf line.Replace("Change Root Password = ", "") = "False" Then
-                            SetRootPassword = False
-                        End If
-                    ElseIf line.Contains("Set Root Password to = ") Then
-                        If SetRootPassword = True Then
-                            RootPassword = line.Replace("Set Root Password to = ", "")
-                        End If
                     ElseIf line.Contains("Maintenance Mode = ") Then
                         If line.Replace("Maintenance Mode = ", "") = "True" Then
                             Maintenance = True
