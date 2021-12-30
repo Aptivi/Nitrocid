@@ -28,6 +28,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>KSBuild</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -846,6 +847,12 @@
   <ItemGroup>
     <None Include="Resources\yrb.json" />
     <None Include="Resources\zul.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
