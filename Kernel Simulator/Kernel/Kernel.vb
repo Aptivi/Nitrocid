@@ -165,8 +165,9 @@ Public Module Kernel
 
                 'Show license if new style used
                 If NewWelcomeStyle Then
-                    WriteSeparator(DoTranslation("License information"), False, ColTypes.Stage)
-                    WriteLicense()
+                    Console.WriteLine()
+                    WriteSeparator(DoTranslation("License information"), True, ColTypes.Stage)
+                    WriteLicense(False)
                 End If
 
                 'Initialize login prompt

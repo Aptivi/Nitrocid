@@ -58,20 +58,21 @@ Public Module WelcomeMessage
             Write(vbNewLine + vbNewLine + Figgle.FiggleFonts.Banner.Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
         Else
             'Show license
-            WriteLicense()
+            WriteLicense(True)
         End If
     End Sub
 
     ''' <summary>
     ''' Writes the license
     ''' </summary>
-    Sub WriteLicense()
+    Sub WriteLicense(TwoNewlines As Boolean)
         Write(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
-        Write("* " + DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/" + vbNewLine, True, ColTypes.License)
+        Write("* " + DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", True, ColTypes.License)
+        If TwoNewlines Then Console.WriteLine()
     End Sub
 
 End Module
