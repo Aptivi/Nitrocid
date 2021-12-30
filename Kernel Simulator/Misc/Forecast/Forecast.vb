@@ -15,12 +15,7 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-Imports Newtonsoft.Json.Linq
-Imports System.IO
-Imports System.IO.Compression
-Imports Extensification.ArrayExts
-Imports System.Text
+Imports Core
 
 Public Module Forecast
 
@@ -33,7 +28,7 @@ Public Module Forecast
     ''' <param name="CityID">City ID</param>
     ''' <returns>A class containing properties of weather information</returns>
     Public Function GetWeatherInfo(CityID As Long) As ForecastInfo
-        Return GetWeatherInfo(CityID, ApiKey, PreferredUnit)
+        Return Core.Forecast.GetWeatherInfo(CityID:=CityID, ApiKey, PreferredUnit)
     End Function
 
     ''' <summary>
@@ -43,45 +38,7 @@ Public Module Forecast
     ''' <param name="APIKey">API key</param>
     ''' <returns>A class containing properties of weather information</returns>
     Public Function GetWeatherInfo(CityID As Long, APIKey As String) As ForecastInfo
-        Return GetWeatherInfo(CityID, APIKey, PreferredUnit)
-    End Function
-
-    ''' <summary>
-    ''' Gets current weather info from OpenWeatherMap
-    ''' </summary>
-    ''' <param name="CityID">City ID</param>
-    ''' <param name="APIKey">API key</param>
-    ''' <returns>A class containing properties of weather information</returns>
-    Public Function GetWeatherInfo(CityID As Long, APIKey As String, Optional Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
-        Dim WeatherInfo As New ForecastInfo With {.CityID = CityID, .TemperatureMeasurement = Unit}
-        Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?id={CityID}&appid={APIKey}"
-        Dim WeatherDownloader As New WebClient
-        Dim WeatherData As String
-        Dim WeatherToken As JToken
-        Wdbg(DebugLevel.I, "Made new instance of class with {0} and {1}", CityID, Unit)
-        Wdbg(DebugLevel.I, "Weather URL: {0}", WeatherURL)
-
-        'Deal with measurements
-        If Unit = UnitMeasurement.Imperial Then
-            WeatherURL += "&units=imperial"
-        Else
-            WeatherURL += "&units=metric"
-        End If
-
-        'Download and parse JSON data
-        WeatherData = WeatherDownloader.DownloadString(WeatherURL)
-        WeatherToken = JToken.Parse(WeatherData)
-
-        'Put needed data to the class
-        WeatherInfo.Weather = WeatherToken.SelectToken("weather").First.SelectToken("id").ToObject(GetType(WeatherCondition))
-        WeatherInfo.Temperature = WeatherToken.SelectToken("main").SelectToken("temp").ToObject(GetType(Double))
-        WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Double))
-        WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Double))
-        WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Double))
-        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Double))
-        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
-        WeatherInfo.CityName = WeatherToken.SelectToken("name").ToString
-        Return WeatherInfo
+        Return Core.Forecast.GetWeatherInfo(CityID:=CityID, APIKey, PreferredUnit)
     End Function
 
     ''' <summary>
@@ -90,7 +47,7 @@ Public Module Forecast
     ''' <param name="CityName">City name</param>
     ''' <returns>A class containing properties of weather information</returns>
     Public Function GetWeatherInfo(CityName As String) As ForecastInfo
-        Return GetWeatherInfo(CityName, ApiKey, PreferredUnit)
+        Return Core.Forecast.GetWeatherInfo(CityName:=CityName, ApiKey, PreferredUnit)
     End Function
 
     ''' <summary>
@@ -100,45 +57,7 @@ Public Module Forecast
     ''' <param name="APIKey">API key</param>
     ''' <returns>A class containing properties of weather information</returns>
     Public Function GetWeatherInfo(CityName As String, APIKey As String) As ForecastInfo
-        Return GetWeatherInfo(CityName, APIKey, PreferredUnit)
-    End Function
-
-    ''' <summary>
-    ''' Gets current weather info from OpenWeatherMap
-    ''' </summary>
-    ''' <param name="CityName">City name</param>
-    ''' <param name="APIKey">API Key</param>
-    ''' <returns>A class containing properties of weather information</returns>
-    Public Function GetWeatherInfo(CityName As String, APIKey As String, Optional Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
-        Dim WeatherInfo As New ForecastInfo With {.CityName = CityName, .TemperatureMeasurement = Unit}
-        Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={APIKey}"
-        Dim WeatherDownloader As New WebClient
-        Dim WeatherData As String
-        Dim WeatherToken As JToken
-        Wdbg(DebugLevel.I, "Made new instance of class with {0} and {1}", CityName, Unit)
-        Wdbg(DebugLevel.I, "Weather URL: {0}", WeatherURL)
-
-        'Deal with measurements
-        If Unit = UnitMeasurement.Imperial Then
-            WeatherURL += "&units=imperial"
-        Else
-            WeatherURL += "&units=metric"
-        End If
-
-        'Download and parse JSON data
-        WeatherData = WeatherDownloader.DownloadString(WeatherURL)
-        WeatherToken = JToken.Parse(WeatherData)
-
-        'Put needed data to the class
-        WeatherInfo.Weather = WeatherToken.SelectToken("weather").First.SelectToken("id").ToObject(GetType(WeatherCondition))
-        WeatherInfo.Temperature = WeatherToken.SelectToken("main").SelectToken("temp").ToObject(GetType(Double))
-        WeatherInfo.FeelsLike = WeatherToken.SelectToken("main").SelectToken("feels_like").ToObject(GetType(Double))
-        WeatherInfo.Pressure = WeatherToken.SelectToken("main").SelectToken("pressure").ToObject(GetType(Double))
-        WeatherInfo.Humidity = WeatherToken.SelectToken("main").SelectToken("humidity").ToObject(GetType(Double))
-        WeatherInfo.WindSpeed = WeatherToken.SelectToken("wind").SelectToken("speed").ToObject(GetType(Double))
-        WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
-        WeatherInfo.CityID = WeatherToken.SelectToken("id").ToObject(GetType(Long))
-        Return WeatherInfo
+        Return Core.Forecast.GetWeatherInfo(CityName:=CityName, APIKey, PreferredUnit)
     End Function
 
     ''' <summary>
@@ -181,37 +100,5 @@ Public Module Forecast
         Write(DoTranslation("Pressure: {0}") + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
         Write(DoTranslation("Humidity: {0}") + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
     End Sub
-
-    ''' <summary>
-    ''' Lists all the available cities
-    ''' </summary>
-    Public Function ListAllCities() As Dictionary(Of Long, String)
-        Dim WeatherCityListURL As String = $"http://bulk.openweathermap.org/sample/city.list.json.gz"
-        Dim WeatherCityListDownloader As New WebClient
-        Dim WeatherCityListData As GZipStream
-        Dim WeatherCityListDataStream As Stream
-        Dim WeatherCityListUncompressed As New List(Of Byte)
-        Dim WeatherCityListReadByte As Integer = 0
-        Dim WeatherCityListToken As JToken
-        Dim WeatherCityList As New Dictionary(Of Long, String)
-        Wdbg(DebugLevel.I, "Weather City List URL: {0}", WeatherCityListURL)
-
-        'Download and parse JSON data
-        WeatherCityListDataStream = WeatherCityListDownloader.OpenRead(WeatherCityListURL)
-        WeatherCityListData = New GZipStream(WeatherCityListDataStream, CompressionMode.Decompress, False)
-        Do Until WeatherCityListReadByte = -1
-            WeatherCityListReadByte = WeatherCityListData.ReadByte
-            If WeatherCityListReadByte <> -1 Then WeatherCityListUncompressed.Add(WeatherCityListReadByte)
-        Loop
-        WeatherCityListToken = JToken.Parse(Encoding.Default.GetString(WeatherCityListUncompressed.ToArray))
-
-        'Put needed data to the class
-        For Each WeatherCityToken As JToken In WeatherCityListToken
-            WeatherCityList.AddIfNotFound(WeatherCityToken("id"), WeatherCityToken("name"))
-        Next
-
-        'Return list
-        Return WeatherCityList
-    End Function
 
 End Module

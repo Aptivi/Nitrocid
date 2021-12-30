@@ -994,8 +994,9 @@
                 "Type": "SSelection",
                 "Variable": "PreferredUnit",
                 "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "UnitMeasurement",
+                "EnumerationInternal": false,
+                "Enumeration": "Core.UnitMeasurement",
+                "EnumerationAssembly": "ManagedWeatherMap",
                 "EnumerationZeroBased": false,
                 "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command)"
             },

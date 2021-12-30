@@ -20,6 +20,7 @@ Imports System.Globalization
 Imports System.IO
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
+Imports Core
 
 Public Module Config
 
