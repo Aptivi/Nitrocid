@@ -73,7 +73,7 @@ Class LangManCommand
                     InstallCustomLanguages()
                 Case Else
                     Write(DoTranslation("Invalid command {0}. Check the usage below:"), True, ColTypes.Error, CommandMode)
-                    ShowHelp(Command)
+                    ShowHelp("langman")
             End Select
         Else
             Write(DoTranslation("Language management is disabled in safe mode."), True, ColTypes.Error)

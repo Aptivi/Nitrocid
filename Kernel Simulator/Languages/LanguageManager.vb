@@ -262,74 +262,78 @@ Public Module LanguageManager
     ''' </summary>
     ''' <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
     Public Sub InstallCustomLanguage(LanguageName As String, Optional ThrowOnAlreadyInstalled As Boolean = True)
-        Try
-            Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
-            If FileExists(LanguagePath) Then
-                Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath)
+        If Not SafeMode Then
+            Try
+                Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
+                If FileExists(LanguagePath) Then
+                    Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath)
 
-                'Check the metadata to see if it has relevant information for the language
-                Dim MetadataToken As JToken = JObject.Parse(File.ReadAllText(LanguagePath))
-                Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken Is Nothing)
-                If MetadataToken IsNot Nothing Then
-                    Wdbg(DebugLevel.I, "Metadata exists!")
+                    'Check the metadata to see if it has relevant information for the language
+                    Dim MetadataToken As JToken = JObject.Parse(File.ReadAllText(LanguagePath))
+                    Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken Is Nothing)
+                    If MetadataToken IsNot Nothing Then
+                        Wdbg(DebugLevel.I, "Metadata exists!")
 
-                    'Parse the values and install the language
-                    Dim ParsedLanguageName As String = If(MetadataToken.SelectToken("Name"), LanguageName)
-                    Dim ParsedLanguageTransliterable As Boolean = If(MetadataToken.SelectToken("Transliterable"), False)
-                    Dim ParsedLanguageLocalizations As JToken = MetadataToken.SelectToken("Localizations")
-                    Wdbg(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable)
+                        'Parse the values and install the language
+                        Dim ParsedLanguageName As String = If(MetadataToken.SelectToken("Name"), LanguageName)
+                        Dim ParsedLanguageTransliterable As Boolean = If(MetadataToken.SelectToken("Transliterable"), False)
+                        Dim ParsedLanguageLocalizations As JToken = MetadataToken.SelectToken("Localizations")
+                        Wdbg(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable)
 
-                    'Check the localizations...
-                    Wdbg(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations Is Nothing)
-                    If ParsedLanguageLocalizations IsNot Nothing Then
-                        Wdbg(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count)
+                        'Check the localizations...
+                        Wdbg(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations Is Nothing)
+                        If ParsedLanguageLocalizations IsNot Nothing Then
+                            Wdbg(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count)
 
-                        'Try to install the language info
-                        Dim ParsedLanguageInfo As New LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, ParsedLanguageLocalizations)
-                        Wdbg(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName))
-                        If Not Languages.ContainsKey(LanguageName) Then
-                            Wdbg(DebugLevel.I, "Language exists. Installing...")
-                            InstalledLanguages.Add(LanguageName, ParsedLanguageInfo)
-                            KernelEventManager.RaiseLanguageInstalled(LanguageName)
-                        ElseIf ThrowOnAlreadyInstalled Then
-                            Wdbg(DebugLevel.E, "Can't add existing language.")
-                            Throw New Exceptions.LanguageInstallException(DoTranslation("The language already exists and can't be overwritten."))
+                            'Try to install the language info
+                            Dim ParsedLanguageInfo As New LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, ParsedLanguageLocalizations)
+                            Wdbg(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName))
+                            If Not Languages.ContainsKey(LanguageName) Then
+                                Wdbg(DebugLevel.I, "Language exists. Installing...")
+                                InstalledLanguages.Add(LanguageName, ParsedLanguageInfo)
+                                KernelEventManager.RaiseLanguageInstalled(LanguageName)
+                            ElseIf ThrowOnAlreadyInstalled Then
+                                Wdbg(DebugLevel.E, "Can't add existing language.")
+                                Throw New Exceptions.LanguageInstallException(DoTranslation("The language already exists and can't be overwritten."))
+                            End If
+                        Else
+                            Wdbg(DebugLevel.E, "Metadata doesn't contain valid localizations!")
+                            Throw New Exceptions.LanguageInstallException(DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."))
                         End If
                     Else
-                        Wdbg(DebugLevel.E, "Metadata doesn't contain valid localizations!")
-                        Throw New Exceptions.LanguageInstallException(DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."))
+                        Wdbg(DebugLevel.E, "Metadata for language doesn't exist!")
+                        Throw New Exceptions.LanguageInstallException(DoTranslation("The metadata information needed to install the custom language doesn't exist."))
                     End If
-                Else
-                    Wdbg(DebugLevel.E, "Metadata for language doesn't exist!")
-                    Throw New Exceptions.LanguageInstallException(DoTranslation("The metadata information needed to install the custom language doesn't exist."))
                 End If
-            End If
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguageInstallError(LanguageName, ex)
-            Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom language {0}."), ex, LanguageName)
-        End Try
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguageInstallError(LanguageName, ex)
+                Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom language {0}."), ex, LanguageName)
+            End Try
+        End If
     End Sub
 
     ''' <summary>
     ''' Installs all the custom languages found in KSLanguages
     ''' </summary>
     Public Sub InstallCustomLanguages()
-        Try
-            'Enumerate all the JSON files generated by KSJsonifyLocales
-            For Each Language As String In GetFilesystemEntries(GetKernelPath(KernelPathType.CustomLanguages), "*.json")
-                'Install a custom language
-                Dim LanguageName As String = Path.GetFileNameWithoutExtension(Language)
-                InstallCustomLanguage(LanguageName, False)
-            Next
-            KernelEventManager.RaiseLanguagesInstalled()
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguagesInstallError(ex)
-            Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom languages."), ex)
-        End Try
+        If Not SafeMode Then
+            Try
+                'Enumerate all the JSON files generated by KSJsonifyLocales
+                For Each Language As String In GetFilesystemEntries(GetKernelPath(KernelPathType.CustomLanguages), "*.json")
+                    'Install a custom language
+                    Dim LanguageName As String = Path.GetFileNameWithoutExtension(Language)
+                    InstallCustomLanguage(LanguageName, False)
+                Next
+                KernelEventManager.RaiseLanguagesInstalled()
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguagesInstallError(ex)
+                Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom languages."), ex)
+            End Try
+        End If
     End Sub
 
     ''' <summary>
@@ -337,62 +341,66 @@ Public Module LanguageManager
     ''' </summary>
     ''' <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
     Public Sub UninstallCustomLanguage(LanguageName As String)
-        Try
-            Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
-            If FileExists(LanguagePath) Then
-                Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath)
+        If Not SafeMode Then
+            Try
+                Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
+                If FileExists(LanguagePath) Then
+                    Wdbg(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath)
 
-                'Now, check the metadata to see if it has relevant information for the language
-                Dim MetadataToken As JToken = JObject.Parse(File.ReadAllText(LanguagePath))
-                Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken Is Nothing)
-                If MetadataToken IsNot Nothing Then
-                    Wdbg(DebugLevel.I, "Metadata exists!")
+                    'Now, check the metadata to see if it has relevant information for the language
+                    Dim MetadataToken As JToken = JObject.Parse(File.ReadAllText(LanguagePath))
+                    Wdbg(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken Is Nothing)
+                    If MetadataToken IsNot Nothing Then
+                        Wdbg(DebugLevel.I, "Metadata exists!")
 
-                    'Uninstall the language
-                    If Not InstalledLanguages.Remove(LanguageName) Then
-                        Wdbg(DebugLevel.E, "Failed to uninstall custom language")
-                        Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."))
+                        'Uninstall the language
+                        If Not InstalledLanguages.Remove(LanguageName) Then
+                            Wdbg(DebugLevel.E, "Failed to uninstall custom language")
+                            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."))
+                        End If
+                        KernelEventManager.RaiseLanguageUninstalled(LanguageName)
+                    Else
+                        Wdbg(DebugLevel.E, "Metadata for language doesn't exist!")
+                        Throw New Exceptions.LanguageUninstallException(DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."))
                     End If
-                    KernelEventManager.RaiseLanguageUninstalled(LanguageName)
-                Else
-                    Wdbg(DebugLevel.E, "Metadata for language doesn't exist!")
-                    Throw New Exceptions.LanguageUninstallException(DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."))
                 End If
-            End If
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguageUninstallError(LanguageName, ex)
-            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName)
-        End Try
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguageUninstallError(LanguageName, ex)
+                Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName)
+            End Try
+        End If
     End Sub
 
     ''' <summary>
     ''' Uninstalls all the custom languages found in KSLanguages
     ''' </summary>
     Public Sub UninstallCustomLanguages()
-        Try
-            'Enumerate all the installed languages and query for the custom status to uninstall the custom languages
-            For LanguageIndex As Integer = Languages.Count - 1 To 0
-                Dim Language As String = Languages.Keys(LanguageIndex)
-                Dim LanguageInfo As LanguageInfo = Languages(Language)
+        If Not SafeMode Then
+            Try
+                'Enumerate all the installed languages and query for the custom status to uninstall the custom languages
+                For LanguageIndex As Integer = Languages.Count - 1 To 0
+                    Dim Language As String = Languages.Keys(LanguageIndex)
+                    Dim LanguageInfo As LanguageInfo = Languages(Language)
 
-                'Check the status
-                If LanguageInfo.Custom Then
-                    'Actually uninstall
-                    If Not InstalledLanguages.Remove(Language) Then
-                        Wdbg(DebugLevel.E, "Failed to uninstall custom languages")
-                        Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages."))
+                    'Check the status
+                    If LanguageInfo.Custom Then
+                        'Actually uninstall
+                        If Not InstalledLanguages.Remove(Language) Then
+                            Wdbg(DebugLevel.E, "Failed to uninstall custom languages")
+                            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages."))
+                        End If
                     End If
-                End If
-                KernelEventManager.RaiseLanguagesUninstalled()
-            Next
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguagesUninstallError(ex)
-            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex)
-        End Try
+                    KernelEventManager.RaiseLanguagesUninstalled()
+                Next
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguagesUninstallError(ex)
+                Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex)
+            End Try
+        End If
     End Sub
 
     ''' <summary>
@@ -400,28 +408,30 @@ Public Module LanguageManager
     ''' </summary>
     ''' <param name="LanguageName">Custom language name</param>
     Public Sub GenerateCustomLanguage(LanguageName As String)
-        Try
-            'Start KS Jsonify Locales up to generate custom language JSON file
-            Dim ExitCode As Integer = -1
-            If IsOnUnix() Then
-                ExitCode = ExecuteProcess("./ks-jl.sh", $"--Singular {LanguageName}")
-            Else
-                ExitCode = ExecuteProcess(Path.GetFullPath("ks-jl.cmd"), $"--Singular {LanguageName}")
-            End If
+        If Not SafeMode Then
+            Try
+                'Start KS Jsonify Locales up to generate custom language JSON file
+                Dim ExitCode As Integer = -1
+                If IsOnUnix() Then
+                    ExitCode = ExecuteProcess("./ks-jl.sh", $"--Singular {LanguageName}")
+                Else
+                    ExitCode = ExecuteProcess(Path.GetFullPath("ks-jl.cmd"), $"--Singular {LanguageName}")
+                End If
 
-            'Install the language
-            If ExitCode = 0 Then
-                InstallCustomLanguage(LanguageName)
-            Else
-                Wdbg(DebugLevel.E, "Failed to generate custom language. Exit code {0}", ExitCode)
-                Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to generate custom language. Locale generator returned exit code of {0}."), ExitCode)
-            End If
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to generate custom language: {0}", ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguagesUninstallError(ex)
-            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to generate custom language. See the inner exception for more info."), ex)
-        End Try
+                'Install the language
+                If ExitCode = 0 Then
+                    InstallCustomLanguage(LanguageName)
+                Else
+                    Wdbg(DebugLevel.E, "Failed to generate custom language. Exit code {0}", ExitCode)
+                    Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to generate custom language. Locale generator returned exit code of {0}."), ExitCode)
+                End If
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to generate custom language: {0}", ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguagesUninstallError(ex)
+                Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to generate custom language. See the inner exception for more info."), ex)
+            End Try
+        End If
     End Sub
 
     ''' <summary>
@@ -429,21 +439,23 @@ Public Module LanguageManager
     ''' </summary>
     ''' <param name="LanguageName">Custom language name</param>
     Public Sub PurgeCustomLanguage(LanguageName As String)
-        Try
-            UninstallCustomLanguage(LanguageName)
-            Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
-            If FileExists(LanguagePath) Then
-                If Not RemoveFile(LanguagePath) Then
-                    Wdbg(DebugLevel.E, "Failed to purge custom language")
-                    Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language."))
+        If Not SafeMode Then
+            Try
+                UninstallCustomLanguage(LanguageName)
+                Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
+                If FileExists(LanguagePath) Then
+                    If Not RemoveFile(LanguagePath) Then
+                        Wdbg(DebugLevel.E, "Failed to purge custom language")
+                        Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language."))
+                    End If
                 End If
-            End If
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to purge custom language: {0}", ex.Message)
-            WStkTrc(ex)
-            KernelEventManager.RaiseLanguagesUninstallError(ex)
-            Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language. See the inner exception for more info."), ex)
-        End Try
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to purge custom language: {0}", ex.Message)
+                WStkTrc(ex)
+                KernelEventManager.RaiseLanguagesUninstallError(ex)
+                Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language. See the inner exception for more info."), ex)
+            End Try
+        End If
     End Sub
 
     ''' <summary>

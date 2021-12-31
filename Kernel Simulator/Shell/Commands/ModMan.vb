@@ -115,7 +115,7 @@ Class ModManCommand
                     StartMods()
                 Case Else
                     Write(DoTranslation("Invalid command {0}. Check the usage below:"), True, ColTypes.Error, CommandMode)
-                    ShowHelp(Command)
+                    ShowHelp("modman")
             End Select
         Else
             Write(DoTranslation("Mod management is disabled in safe mode."), True, ColTypes.Error)
