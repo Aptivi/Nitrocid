@@ -490,6 +490,7 @@
     <Compile Include="Shell\Commands\Combine.vb" />
     <Compile Include="Shell\Commands\Find.vb" />
     <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
+    <Compile Include="Shell\Commands\LangMan.vb" />
     <Compile Include="Shell\Commands\Select.vb" />
     <Compile Include="Shell\Commands\Choice.vb" />
     <Compile Include="Shell\Commands\ChPwd.vb" />
@@ -683,6 +684,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="app.manifest" />
+    <None Include="ks-jl.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-jl.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ks-converter.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

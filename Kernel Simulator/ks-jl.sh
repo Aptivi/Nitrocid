@@ -17,10 +17,10 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-if [ -e "/usr/lib/ks/KSConverter.exe" ] then
-	mono "/usr/lib/ks/KSConverter.exe" $@
-elif [ -e "./KSConverter.exe" ] then
-	mono "./KSConverter.exe" $@
+if [ -e "/usr/lib/ks/KSJsonifyLocales.exe" ] then
+	mono "/usr/lib/ks/KSJsonifyLocales.exe" $@
+elif [ -e "./KSJsonifyLocales.exe" ] then
+	mono "./KSJsonifyLocales.exe" $@
 else
 	echo "Unable to find the entry point."
 fi

@@ -41,14 +41,40 @@ Module LocaleGenerator
 #End If
 
         'Parse for arguments
+        Dim Arguments As New List(Of String)
+        Dim Switches As New List(Of String)
         Dim Custom As Boolean = True
         Dim Normal As Boolean = True
         Dim CopyToResources As Boolean
+        Dim Singular As Boolean
+        Dim ToSearch As String = ""
         If Args.Length > 0 Then
+            'Separate between switches and arguments
+            For Each Arg As String In Args
+                If Arg.StartsWith("--") Then
+                    'It's a switch.
+                    Switches.Add(Arg)
+                Else
+                    'It's an argument.
+                    Arguments.Add(Arg)
+                End If
+            Next
+
             'Change the values of custom and normal to match the switches provided
-            Custom = Args.Contains("--CustomOnly") Or Args.Contains("--All")
-            Normal = Args.Contains("--NormalOnly") Or Args.Contains("--All")
-            CopyToResources = Args.Contains("--CopyToResources")
+            Custom = Switches.Contains("--CustomOnly") Or Switches.Contains("--All")
+            Normal = Switches.Contains("--NormalOnly") Or Switches.Contains("--All")
+            CopyToResources = Switches.Contains("--CopyToResources")
+
+            'Check to see if we're going to parse one language
+            Singular = Switches.Contains("--Singular")
+            If Singular And Arguments.Count > 0 Then
+                'Select the language to be searched
+                ToSearch = Arguments(0)
+            Else
+                'We can't be singular without providing the language!
+                Console.WriteLine("Provide a language to generate.")
+                Environment.Exit(1)
+            End If
         End If
 
         Dim Total As New Stopwatch
@@ -72,9 +98,11 @@ Module LocaleGenerator
 
                     'Check the file and add if the localization file is a text file
                     If FileExtension = ".txt" Then
-                        Dim LanguageInstance As New TargetLanguage(File, FileName, False)
-                        Debug.WriteLine(File)
-                        ToParse.Add(LanguageInstance)
+                        If Not Singular Or (Singular And FileName = ToSearch) Then
+                            Dim LanguageInstance As New TargetLanguage(File, FileName, False)
+                            Debug.WriteLine(File)
+                            ToParse.Add(LanguageInstance)
+                        End If
                     End If
                 Next
             End If
@@ -87,9 +115,11 @@ Module LocaleGenerator
 
                     'Check the file and add if not in KS resources, not a Readme, and is a text file
                     If FileExtension = ".txt" And Not FileName.ToLower = "readme" And Not KS.Languages.ContainsKey(FileName) Then
-                        Dim LanguageInstance As New TargetLanguage(File, FileName, True)
-                        Debug.WriteLine(File)
-                        ToParse.Add(LanguageInstance)
+                        If Not Singular Or (Singular And FileName = ToSearch) Then
+                            Dim LanguageInstance As New TargetLanguage(File, FileName, True)
+                            Debug.WriteLine(File)
+                            ToParse.Add(LanguageInstance)
+                        End If
                     End If
                 Next
             End If
@@ -164,9 +194,7 @@ Module LocaleGenerator
 
         'Finish the program
         Write("Finished in " + $"{Total.Elapsed}", True, ColTypes.Neutral)
-        Write("Press any key to continue...", True, ColTypes.Neutral)
         Total.Reset()
-        Console.ReadKey()
     End Sub
 
 End Module

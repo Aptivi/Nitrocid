@@ -55,7 +55,8 @@ Public Module ProcessExecutor
     ''' </summary>
     ''' <param name="File">Full path to file</param>
     ''' <param name="Args">Arguments, if any</param>
-    Public Sub ExecuteProcess(File As String, Args As String)
+    ''' <returns>Application exit code. -1 if internal error occurred.</returns>
+    Public Function ExecuteProcess(File As String, Args As String) As Integer
         Try
             Dim CommandProcess As New Process
             Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
@@ -100,15 +101,18 @@ Public Module ProcessExecutor
             'Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
             'This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
             NewDataSpotted = True
+            Return CommandProcess.ExitCode
         Catch taex As ThreadAbortException
             CancelRequested = False
-            Exit Sub
+            Return -1
+            Exit Function
         Catch ex As Exception
             KernelEventManager.RaiseProcessError(File + Args, ex)
             WStkTrc(ex)
             Write(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, File)
         End Try
-    End Sub
+        Return -1
+    End Function
 
     ''' <summary>
     ''' Handles executable output
