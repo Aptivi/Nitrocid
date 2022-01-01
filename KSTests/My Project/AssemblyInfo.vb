@@ -15,4 +15,4 @@ Imports System.Runtime.InteropServices
 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 <Assembly: AssemblyVersion("0.0.20.0")>
-<Assembly: AssemblyFileVersion("1.0.20.0")>
+<Assembly: AssemblyFileVersion("2.0.20.0")>

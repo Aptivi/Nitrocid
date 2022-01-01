@@ -70,9 +70,15 @@ Module LocaleGenerator
             If Singular And Arguments.Count > 0 Then
                 'Select the language to be searched
                 ToSearch = Arguments(0)
-            Else
+            ElseIf Singular Then
                 'We can't be singular without providing the language!
                 Console.WriteLine("Provide a language to generate.")
+                Environment.Exit(1)
+            End If
+
+            'Check to see if we're going to show help
+            If Switches.Contains("--Help") Then
+                Console.WriteLine("{0} [--CustomOnly|--NormalOnly|--All|--Singular|--CopyToResources|--Help]", Path.GetFileName(Environment.GetCommandLineArgs(0)))
                 Environment.Exit(1)
             End If
         End If
@@ -173,7 +179,7 @@ Module LocaleGenerator
                     Directory.CreateDirectory(KS.HomePath + "/KSLanguages/")
                     IO.File.WriteAllText(KS.HomePath + "/KSLanguages/" + FileName + ".json", SerializedLocale)
                 Else
-                    If Args.Length > 0 AndAlso Args(0) = "--CopyToResources" Then
+                    If CopyToResources Then
                         IO.File.WriteAllText("../Resources/" + FileName + ".json", SerializedLocale)
                     Else
                         Directory.CreateDirectory("Translations/Output")
