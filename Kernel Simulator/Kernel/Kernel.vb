@@ -90,7 +90,7 @@ Public Module Kernel
                 Console.WriteLine()
                 If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
-                If RDebugAutoStart Then
+                If RDebugAutoStart And DebugMode Then
                     ReportProgress(DoTranslation("Starting the remote debugger..."), 3, ColTypes.Neutral)
                     StartRDebugThread()
                     If Not RDebugFailed Then
@@ -172,9 +172,11 @@ Public Module Kernel
                 End If
 
                 'Show the closing screen
-                ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
-                CurrentSplash.Closing()
-                SplashThread = New Thread(Sub() CurrentSplash.Display())
+                If EnableSplash Then
+                    ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
+                    CurrentSplash.Closing()
+                    SplashThread = New Thread(Sub() CurrentSplash.Display())
+                End If
 
                 'Show current time
                 If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()

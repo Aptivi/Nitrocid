@@ -353,8 +353,10 @@ Public Module KernelTools
         InitializeConfig()
 
         'Load splash
-        CurrentSplash.Opening()
-        If Not SplashThread.IsAlive Then SplashThread.Start()
+        If EnableSplash Then
+            CurrentSplash.Opening()
+            If Not SplashThread.IsAlive Then SplashThread.Start()
+        End If
 
         'Load user token
         LoadUserToken()
