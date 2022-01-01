@@ -68,7 +68,9 @@ Class SplashSimple
     Public Sub Display() Implements ISplash.Display
         Wdbg(DebugLevel.I, "Splash displaying.")
         WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress, Progress.ToString.PadLeft(3))
-        WriteWhere("{0}", ProgressReportWritePositionX, ProgressReportWritePositionY, True, ColTypes.Neutral, ProgressText)
+        WriteWhere("{0}", ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral, ProgressText)
+        ClearLineToRight()
+
         While Not SplashClosing
         End While
         Wdbg(DebugLevel.I, "Splash done.")
@@ -82,7 +84,8 @@ Class SplashSimple
 
     Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer) Implements ISplash.Report
         WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress, Progress.ToString.PadLeft(3))
-        WriteWhere("{0}", ProgressReportWritePositionX, ProgressReportWritePositionY, True, ColTypes.Neutral, ProgressText)
+        WriteWhere("{0}", ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral, ProgressText)
+        ClearLineToRight()
     End Sub
 
 End Class
