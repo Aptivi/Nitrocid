@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -350,6 +350,10 @@ Public Module KernelTools
         'Create config file and then read it
         InitializeConfig()
 
+        'Load splash
+        CurrentSplash.Opening()
+        If Not SplashThread.IsAlive Then SplashThread.Start()
+
         'Load user token
         LoadUserToken()
 
@@ -357,24 +361,26 @@ Public Module KernelTools
         WriteMessage()
 
         'Some information
-        If ShowAppInfoOnBoot Then
+        If ShowAppInfoOnBoot And Not EnableSplash Then
             WriteSeparator(DoTranslation("App information"), True, ColTypes.Stage)
             Write("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
             Write("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
         End If
 
         'Show dev version notice
+        If Not EnableSplash Then
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
-        Write(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
+            Write(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
 #ElseIf SPECIFIER = "RC" Then
-        Write(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
+            Write(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
 #End If
+        End If
 
         'Parse real command-line arguments
         If ParseCommandLineArguments Then ParseCMDArguments(Args)
 
         'Check arguments
-        If ArgsOnBoot Then
+        If ArgsOnBoot And Not EnableSplash Then
             StageTimer.Stop()
             PromptArgs()
             StageTimer.Start()
@@ -445,24 +451,24 @@ Public Module KernelTools
     ''' Prompt for checking for kernel updates
     ''' </summary>
     Sub CheckKernelUpdates()
-        Write(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
+        ReportProgress(DoTranslation("Checking for system updates..."), 10, ColTypes.Neutral)
         Dim AvailableUpdate As KernelUpdate = FetchKernelUpdates()
         If AvailableUpdate IsNot Nothing Then
             If Not AvailableUpdate.Updated Then
-                Write(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
-                Write(AvailableUpdate.UpdateVersion.ToString, True, ColTypes.ListValue)
+                ReportProgress(DoTranslation("Found new version: "), 10, ColTypes.ListEntry)
+                ReportProgress(AvailableUpdate.UpdateVersion.ToString, 10, ColTypes.ListValue)
                 If AutoDownloadUpdate Then
                     DownloadFile(AvailableUpdate.UpdateURL.ToString, Path.Combine(Environment.CurrentDirectory, "update.zip"))
-                    Write(DoTranslation("Downloaded the update successfully!"), True, ColTypes.Success)
+                    ReportProgress(DoTranslation("Downloaded the update successfully!"), 10, ColTypes.Success)
                 Else
-                    Write(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
-                    Write(AvailableUpdate.UpdateURL.ToString, True, ColTypes.ListValue)
+                    ReportProgress(DoTranslation("You can download it at: "), 10, ColTypes.ListEntry)
+                    ReportProgress(AvailableUpdate.UpdateURL.ToString, 10, ColTypes.ListValue)
                 End If
             Else
-                Write(DoTranslation("You're up to date!"), True, ColTypes.Neutral)
+                ReportProgress(DoTranslation("You're up to date!"), 10, ColTypes.Neutral)
             End If
         ElseIf AvailableUpdate Is Nothing Then
-            Write(DoTranslation("Failed to check for updates."), True, ColTypes.Error)
+            ReportProgress(DoTranslation("Failed to check for updates."), 10, ColTypes.Error)
         End If
     End Sub
 

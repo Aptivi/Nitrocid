@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -231,6 +231,10 @@ Public Module Flags
     ''' Use the new welcome style for the kernel (uses the Figlet text rendering)
     ''' </summary>
     Public NewWelcomeStyle As Boolean = True
+    ''' <summary>
+    ''' Enable the stylish splash screen in place of the regular verbose boot messages
+    ''' </summary>
+    Public EnableSplash As Boolean
 
     'Private flags
     ''' <summary>
@@ -261,5 +265,9 @@ Public Module Flags
     ''' Notifies user as soon as the kernel finished booting if there was a kernel error in the previous boot
     ''' </summary>
     Friend NotifyKernelError As Boolean
+    ''' <summary>
+    ''' Notifies the kernel to be quiet
+    ''' </summary>
+    Friend QuietKernel As Boolean
 
 End Module

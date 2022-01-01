@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -44,21 +44,23 @@ Public Module WelcomeMessage
     ''' Writes the welcoming message to the console (welcome to kernel)
     ''' </summary>
     Sub WriteMessage()
-        'The default message to write
-        Dim MessageWrite As String = GetCustomBanner()
+        If Not EnableSplash Then
+            'The default message to write
+            Dim MessageWrite As String = GetCustomBanner()
 
-        'Finally, write the message
-        If StartScroll Then
-            WriteSlowly(MessageWrite, True, 10, ColTypes.Banner, KernelVersion)
-        Else
-            Write(MessageWrite, True, ColTypes.Banner, KernelVersion)
-        End If
+            'Finally, write the message
+            If StartScroll Then
+                WriteSlowly(MessageWrite, True, 10, ColTypes.Banner, KernelVersion)
+            Else
+                Write(MessageWrite, True, ColTypes.Banner, KernelVersion)
+            End If
 
-        If NewWelcomeStyle Then
-            Write(vbNewLine + vbNewLine + Figgle.FiggleFonts.Banner.Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
-        Else
-            'Show license
-            WriteLicense(True)
+            If NewWelcomeStyle Then
+                Write(vbNewLine + vbNewLine + Figgle.FiggleFonts.Banner.Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
+            Else
+                'Show license
+                WriteLicense(True)
+            End If
         End If
     End Sub
 
@@ -66,7 +68,7 @@ Public Module WelcomeMessage
     ''' Writes the license
     ''' </summary>
     Sub WriteLicense(TwoNewlines As Boolean)
-        Write(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
+        Write(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +

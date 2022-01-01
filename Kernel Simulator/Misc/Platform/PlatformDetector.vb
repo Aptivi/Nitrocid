@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -26,7 +26,7 @@ Public Module PlatformDetector
     End Function
 
     ''' <summary>
-    ''' Is this system a Unix system?
+    ''' Is this system a Unix system? True for macOS, too!
     ''' </summary>
     Public Function IsOnUnix() As Boolean
         Return Environment.OSVersion.Platform = PlatformID.Unix

@@ -1,6 +1,6 @@
 @echo off
 
-REM    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+REM    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 REM
 REM    This file is part of Kernel Simulator
 REM

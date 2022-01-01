@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -26,8 +26,6 @@ Public Module HardwareProbe
     ''' Starts probing hardware
     ''' </summary>
     Public Sub StartProbing()
-        If Not QuietHardwareProbe Then Write(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), True, ColTypes.Progress)
-
         'We will probe hardware
         KernelEventManager.RaiseHardwareProbing()
         Try
@@ -46,37 +44,6 @@ Public Module HardwareProbe
             KernelError(KernelErrorLevel.F, True, 10, DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message)
         End Try
 
-        If Not QuietHardwareProbe Then
-            If HardwareInfo IsNot Nothing Then
-                'We are checking to see if any of the probers reported a failure starting with CPU
-                If HardwareInfo.Hardware.CPU Is Nothing Or (HardwareInfo.Hardware.CPU IsNot Nothing And HardwareInfo.Hardware.CPU.Count = 0) Then
-                    Wdbg(DebugLevel.E, "CPU failed to probe.")
-                    Write(DoTranslation("CPU: One or more of the CPU cores failed to be probed. Showing information anyway..."), True, ColTypes.Warning)
-                End If
-
-                'then RAM
-                If HardwareInfo.Hardware.RAM Is Nothing Then
-                    Wdbg(DebugLevel.E, "RAM failed to probe.")
-                    Write(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway..."), True, ColTypes.Warning)
-                End If
-
-                'then GPU
-                If HardwareInfo.Hardware.GPU Is Nothing Then
-                    Wdbg(DebugLevel.E, "GPU failed to probe.")
-                    Write(DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway..."), True, ColTypes.Warning)
-                End If
-
-                'and finally HDD
-                If HardwareInfo.Hardware.HDD Is Nothing Or (HardwareInfo.Hardware.HDD IsNot Nothing And HardwareInfo.Hardware.HDD.Count = 0) Then
-                    Wdbg(DebugLevel.E, "HDD failed to probe.")
-                    Write(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway..."), True, ColTypes.Warning)
-                End If
-
-                'Print information about the probed hardware
-                ListHardware()
-            End If
-        End If
-
         'Raise event
         KernelEventManager.RaiseHardwareProbed()
     End Sub
@@ -86,7 +53,7 @@ Public Module HardwareProbe
     ''' </summary>
     Private Sub WriteWhatProbed(Hardware As InxiHardwareType)
         Wdbg(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString)
-        If Not QuietHardwareProbe And VerboseHardwareProbe Then Write(DoTranslation("Successfully probed {0}."), True, ColTypes.Neutral, Hardware.ToString)
+        If (Not QuietHardwareProbe And VerboseHardwareProbe) Or EnableSplash Then ReportProgress(DoTranslation("Successfully probed {0}.").FormatString(Hardware.ToString), 5, ColTypes.Neutral)
     End Sub
 
     ''' <summary>

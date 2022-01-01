@@ -238,7 +238,7 @@ License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 ## License
 
     Kernel Simulator - Simulates our future planned Kernel
-    Copyright (C) 2018-2021  EoflaOE
+    Copyright (C) 2018-2022  EoflaOE
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

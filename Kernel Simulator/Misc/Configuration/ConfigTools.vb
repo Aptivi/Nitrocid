@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -48,7 +48,7 @@ Public Module ConfigTools
 
         'General sections
         Dim ExpectedSections As Integer = 9
-        Dim ExpectedGeneralKeys As Integer = 17
+        Dim ExpectedGeneralKeys As Integer = 20
         Dim ExpectedColorsKeys As Integer = 37
         Dim ExpectedHardwareKeys As Integer = 4
         Dim ExpectedLoginKeys As Integer = 11

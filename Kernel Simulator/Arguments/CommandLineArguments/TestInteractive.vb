@@ -1,4 +1,4 @@
-﻿'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -20,8 +20,10 @@ Class CommandLine_TestInteractiveArgument
     Implements IArgument
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        InitTShell(False)
-        If Test_ShutdownFlag Then Environment.Exit(0)
+        If Not EnableSplash Then
+            InitTShell(False)
+            If Test_ShutdownFlag Then Environment.Exit(0)
+        End If
     End Sub
 
 End Class

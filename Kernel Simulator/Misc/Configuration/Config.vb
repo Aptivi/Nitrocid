@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -108,7 +108,10 @@ Public Module Config
                     {"Show stack trace on kernel error", ShowStackTraceOnKernelError},
                     {"Check debug quota", CheckDebugQuota},
                     {"Automatically download updates", AutoDownloadUpdate},
-                    {"Enable event debugging", EventDebug}
+                    {"Enable event debugging", EventDebug},
+                    {"New welcome banner", NewWelcomeStyle},
+                    {"Stylish splash screen", EnableSplash},
+                    {"Splash name", SplashName}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -969,6 +972,9 @@ Public Module Config
             CheckDebugQuota = If(ConfigToken("General")?("Check debug quota"), True)
             AutoDownloadUpdate = If(ConfigToken("General")?("Automatically download updates"), True)
             EventDebug = If(ConfigToken("General")?("Enable event debugging"), False)
+            NewWelcomeStyle = If(ConfigToken("General")?("New welcome banner"), True)
+            EnableSplash = If(ConfigToken("General")?("Stylish splash screen"), False)
+            SplashName = (If(ConfigToken("General")?("Splash name"), "Simple"))
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")

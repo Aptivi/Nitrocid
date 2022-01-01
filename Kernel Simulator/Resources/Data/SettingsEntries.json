@@ -102,6 +102,24 @@
                 "Type": "SBoolean",
                 "Variable": "EventDebug",
                 "Description": "Enables debugging for the kernel event system"
+            },
+            {
+                "Name": "New welcome banner",
+                "Type": "SBoolean",
+                "Variable": "NewWelcomeStyle",
+                "Description": "Shows the new Figlet-rendered welcome banner"
+            },
+            {
+                "Name": "Stylish splash screen",
+                "Type": "SBoolean",
+                "Variable": "EnableSplash",
+                "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
+            },
+            {
+                "Name": "Splash name",
+                "Type": "SString",
+                "Variable": "SplashName",
+                "Description": "Splash name from the available splashes implemented in the kernel."
             }
         ]
     },

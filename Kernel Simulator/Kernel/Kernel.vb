@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Reflection.Assembly
+Imports System.Threading
 
 Public Module Kernel
 
@@ -83,19 +84,25 @@ Public Module Kernel
 
                 'Stage 1: Initialize the system
                 If ShowStageFinishTimes Then
-                    Write(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    ReportProgress(DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
-                WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
+                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 If RDebugAutoStart Then StartRDebugThread()
-                Write(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
+                ReportProgress(DoTranslation("Starting RPC..."), 3, ColTypes.Neutral)
                 StartRPC()
 
                 'If the two files are not found, create two MOTD files with current config.
-                If Not FileExists(GetKernelPath(KernelPathType.MOTD)) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
-                If Not FileExists(GetKernelPath(KernelPathType.MAL)) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                If Not FileExists(GetKernelPath(KernelPathType.MOTD)) Then
+                    SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                    ReportProgress(DoTranslation("Generated default MOTD."), 3, ColTypes.Neutral)
+                End If
+                If Not FileExists(GetKernelPath(KernelPathType.MAL)) Then
+                    SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                    ReportProgress(DoTranslation("Generated default MAL."), 3, ColTypes.Neutral)
+                End If
 
                 'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
@@ -106,56 +113,60 @@ Public Module Kernel
 
                 'Phase 2: Probe hardware
                 If ShowStageFinishTimes Then
-                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
-                WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
+                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
+                If Not QuietHardwareProbe Then ReportProgress(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15, ColTypes.Progress)
                 StartProbing()
+                If Not EnableSplash Then ListHardware()
                 CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
                 If ShowStageFinishTimes Then
-                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
-                WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
+                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
+                'TODO: Make this more splash-friendly
                 If Not SafeMode Then
                     If StartKernelMods Then StartMods()
                 Else
-                    Write(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
+                    ReportProgress(DoTranslation("Running in safe mode. Skipping stage..."), 0, ColTypes.Neutral)
                 End If
                 KernelEventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
                 If ShowStageFinishTimes Then
-                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
-                WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
+                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
+                ReportProgress(DoTranslation("System account initialized"), 5, ColTypes.Neutral)
                 InitializeUsers()
+                ReportProgress(DoTranslation("Users initialized"), 5, ColTypes.Neutral)
                 LoadPermissions()
+                ReportProgress(DoTranslation("Permissions loaded"), 5, ColTypes.Neutral)
 
                 'Reset console state and stop stage timer
                 If ShowStageFinishTimes Then
-                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Reset()
                     Console.WriteLine()
                 End If
 
-                'Unquiet the kernel if quieted
-                If EnteredArguments IsNot Nothing Then
-                    If EnteredArguments.Contains("quiet") Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                End If
+                'Show the closing screen
+                ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
+                CurrentSplash.Closing()
+                SplashThread = New Thread(Sub() CurrentSplash.Display())
 
                 'Show current time
                 If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()
@@ -164,7 +175,7 @@ Public Module Kernel
                 If NotifyFaultsBoot Then NotifyStartupFaults()
 
                 'Show license if new style used
-                If NewWelcomeStyle Then
+                If NewWelcomeStyle Or EnableSplash Then
                     Console.WriteLine()
                     WriteSeparator(DoTranslation("License information"), True, ColTypes.Stage)
                     WriteLicense(False)

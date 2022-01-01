@@ -294,6 +294,12 @@
     <Compile Include="Misc\Screensaver\Customized\CustomSaverInfo.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Reflection\StringEvaluators.vb" />
+    <Compile Include="Misc\Splash\ISplash.vb" />
+    <Compile Include="Misc\Splash\Splashes\Blank.vb" />
+    <Compile Include="Misc\Splash\Splashes\Simple.vb" />
+    <Compile Include="Misc\Splash\SplashInfo.vb" />
+    <Compile Include="Misc\Splash\SplashManager.vb" />
+    <Compile Include="Misc\Splash\SplashReport.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLines.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\Clear.vb" />

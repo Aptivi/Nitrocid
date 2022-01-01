@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -43,8 +43,6 @@ Module ArgumentParse
                         Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)
                         Write(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
                     End If
-                Else
-                    Write(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, Argument)
                 End If
             Next
         Catch ex As Exception
