@@ -38,25 +38,36 @@ Public Module RemoteProcedure
     ''' <summary>
     ''' Starts the RPC listener
     ''' </summary>
-    Sub StartRPC()
+    Public Sub StartRPC()
+        If RPCEnabled Then
+            Wdbg(DebugLevel.I, "RPC: Starting...")
+            If Not RPCStarted Then
+                RPCListen = New UdpClient(RPCPort) With {.EnableBroadcast = True}
+                Wdbg(DebugLevel.I, "RPC: Listener started")
+                RPCThread.Start()
+                Wdbg(DebugLevel.I, "RPC: Thread started")
+            Else
+                Throw New ThreadStateException(DoTranslation("Trying to start RPC while it's already started."))
+            End If
+        Else
+            Throw New ThreadStateException(DoTranslation("Not starting RPC because it's disabled."))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' The wrapper for <see cref="StartRPC"/>
+    ''' </summary>
+    Sub WrapperStartRPC()
         If RPCEnabled Then
             Try
-                Wdbg(DebugLevel.I, "RPC: Starting...")
-                If Not RPCStarted Then
-                    RPCListen = New UdpClient(RPCPort) With {.EnableBroadcast = True}
-                    Wdbg(DebugLevel.I, "RPC: Listener started")
-                    RPCThread.Start()
-                    Wdbg(DebugLevel.I, "RPC: Thread started")
-                    Write(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
-                Else
-                    Throw New ThreadStateException(DoTranslation("Trying to start RPC while it's already started."))
-                End If
+                StartRPC()
+                ReportProgress(DoTranslation("RPC listening on all addresses using port {0}.").FormatString(RPCPort), 5, ColTypes.Neutral)
             Catch ex As ThreadStateException
-                Write(DoTranslation("RPC is already running."), True, ColTypes.Error)
+                ReportProgress(DoTranslation("RPC is already running."), 5, ColTypes.Error)
                 WStkTrc(ex)
             End Try
         Else
-            Write(DoTranslation("Not starting RPC because it's disabled."), True, ColTypes.Neutral)
+            ReportProgress(DoTranslation("Not starting RPC because it's disabled."), 3, ColTypes.Neutral)
         End If
     End Sub
 

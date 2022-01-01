@@ -31,14 +31,22 @@ Public Module RemoteDebugger
     Public RDebugStopping As Boolean
     Public RDebugAutoStart As Boolean = True
     Public RDebugMessageFormat As String = ""
+    Friend RDebugFailed As Boolean
+    Friend RDebugFailedReason As Exception
     Private ReadOnly RDebugVersion As String = "0.7.0"
+    Private RDebugBail As Boolean
 
     ''' <summary>
     ''' Whether to start or stop the remote debugger
     ''' </summary>
     Public Sub StartRDebugThread()
         If DebugMode Then
-            If Not RDebugThread.IsAlive Then RDebugThread.Start()
+            If Not RDebugThread.IsAlive Then
+                RDebugThread.Start()
+                While Not RDebugBail
+                End While
+                RDebugBail = False
+            End If
         End If
     End Sub
 
@@ -63,14 +71,15 @@ Public Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            Write(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Error, sex.Message)
+            RDebugFailed = True
+            RDebugFailedReason = sex
             WStkTrc(sex)
         End Try
 
         'Start the listening thread
         Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync) With {.Name = "Remote Debug Listener Thread"}
         RStream.Start()
-        Write(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
+        RDebugBail = True
 
         'Run forever! Until the remote debugger is stopping.
         While Not RDebugStopping

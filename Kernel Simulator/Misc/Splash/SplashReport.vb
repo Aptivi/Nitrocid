@@ -47,7 +47,7 @@ Public Module SplashReport
     Friend Sub ReportProgress(Text As String, Progress As Integer, Optional ColTypes As ColTypes = ColTypes.Neutral)
         If CurrentSplashInfo.DisplaysProgress Then
             If EnableSplash Then
-                CurrentSplash.Report(Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY)
+                CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY)
             ElseIf Not QuietKernel Then
                 Write(Text, True, ColTypes)
             End If

@@ -90,9 +90,17 @@ Public Module Kernel
                 Console.WriteLine()
                 If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
-                If RDebugAutoStart Then StartRDebugThread()
+                If RDebugAutoStart Then
+                    ReportProgress(DoTranslation("Starting the remote debugger..."), 3, ColTypes.Neutral)
+                    StartRDebugThread()
+                    If Not RDebugFailed Then
+                        ReportProgress(DoTranslation("Debug listening on all addresses using port {0}.").FormatString(DebugPort), 5, ColTypes.Neutral)
+                    Else
+                        ReportProgress(DoTranslation("Remote debug failed to start: {0}").FormatString(RDebugFailedReason.Message), 5, ColTypes.Error)
+                    End If
+                End If
                 ReportProgress(DoTranslation("Starting RPC..."), 3, ColTypes.Neutral)
-                StartRPC()
+                WrapperStartRPC()
 
                 'If the two files are not found, create two MOTD files with current config.
                 If Not FileExists(GetKernelPath(KernelPathType.MOTD)) Then

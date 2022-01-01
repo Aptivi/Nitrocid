@@ -287,6 +287,8 @@ Public Module KernelTools
         UserPermissions.Clear()
         Reminders.Clear()
         CalendarEvents.Clear()
+        _Progress = 0
+        _ProgressText = ""
         Wdbg(DebugLevel.I, "General variables reset")
 
         'Reset hardware info
