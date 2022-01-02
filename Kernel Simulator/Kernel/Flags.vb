@@ -235,6 +235,10 @@ Public Module Flags
     ''' Enable the stylish splash screen in place of the regular verbose boot messages
     ''' </summary>
     Public EnableSplash As Boolean
+    ''' <summary>
+    ''' When there is a remote debug connection error, notify the user
+    ''' </summary>
+    Public NotifyOnRemoteDebugConnectionError As Boolean = True
 
     'Private flags
     ''' <summary>

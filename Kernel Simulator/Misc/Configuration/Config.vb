@@ -279,7 +279,8 @@ Public Module Config
                     {"Verify retry attempts for FTP transmission", FtpVerifyRetryAttempts},
                     {"FTP connection timeout", FtpConnectTimeout},
                     {"FTP data connection timeout", FtpDataConnectTimeout},
-                    {"FTP IP versions", FtpProtocolVersions}
+                    {"FTP IP versions", FtpProtocolVersions},
+                    {"Notify on remote debug connection error", NotifyOnRemoteDebugConnectionError}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -1090,6 +1091,7 @@ Public Module Config
             FtpConnectTimeout = If(Integer.TryParse(ConfigToken("Network")?("FTP connection timeout"), 0), ConfigToken("Network")?("FTP connection timeout"), 15000)
             FtpDataConnectTimeout = If(Integer.TryParse(ConfigToken("Network")?("FTP data connection timeout"), 0), ConfigToken("Network")?("FTP data connection timeout"), 15000)
             FtpProtocolVersions = If(ConfigToken("Network")?("FTP IP versions") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("FTP IP versions"), FtpProtocolVersions), FtpProtocolVersions, FtpIpVersion.ANY), FtpIpVersion.ANY)
+            NotifyOnRemoteDebugConnectionError = If(ConfigToken("Network")?("Notify on remote debug connection error"), True)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

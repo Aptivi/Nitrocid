@@ -960,6 +960,12 @@
                 "EnumerationAssembly": "FluentFTP",
                 "EnumerationZeroBased": false,
                 "Description": "Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses."
+            },
+            {
+                "Name": "Notify on remote debug connection error",
+                "Type": "SBoolean",
+                "Variable": "NotifyOnRemoteDebugConnectionError",
+                "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
             }
         ]
     },

@@ -54,7 +54,7 @@ Public Module ConfigTools
         Dim ExpectedLoginKeys As Integer = 11
         Dim ExpectedShellKeys As Integer = 16
         Dim ExpectedFilesystemKeys As Integer = 11
-        Dim ExpectedNetworkKeys As Integer = 59
+        Dim ExpectedNetworkKeys As Integer = 60
         Dim ExpectedMiscKeys As Integer = 35
 
         'Screensaver keys and sections
