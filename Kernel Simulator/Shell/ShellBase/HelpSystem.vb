@@ -109,34 +109,31 @@ Public Module HelpSystem
 
         'Check to see if command exists
         If Not String.IsNullOrWhiteSpace(command) And CommandList.ContainsKey(command) Then
+            'Found!
             Dim HelpDefinition As String = CommandList(command).GetTranslatedHelpEntry
             Dim UsageLength As Integer = DoTranslation("Usage:").Length
             Dim HelpUsages() As String = CommandList(command).HelpUsages
 
             'Print usage information
-            If Not CommandType = ShellCommandType.RemoteDebugShell Then
-                If HelpUsages.Length <> 0 Then
-                    Write(DoTranslation("Usage:") + $" {command} {HelpUsages(0)}", False, ColTypes.ListEntry)
-                    If HelpUsages.Length > 1 Then
-                        For Each HelpUsage As String In HelpUsages.Skip(1)
-                            Write(vbNewLine + " ".Repeat(UsageLength) + $" {command} {HelpUsage}", False, ColTypes.ListEntry)
-                        Next
-                    End If
-                    Write(": ", False, ColTypes.ListEntry)
-                End If
-                Write($"{HelpDefinition}", True, ColTypes.ListValue)
-            ElseIf DebugDeviceSocket IsNot Nothing Then
-                If HelpUsages.Length <> 0 Then
-                    DebugDeviceSocket.Write(DoTranslation("Usage:") + $" /{command} {HelpUsages(0)}")
-                    If HelpUsages.Length > 1 Then
-                        For Each HelpUsage As String In HelpUsages.Skip(1)
-                            DebugDeviceSocket.Write(vbNewLine + " ".Repeat(UsageLength) + $" /{command} {HelpUsage}")
-                        Next
-                    End If
-                    DebugDeviceSocket.Write(": ")
-                End If
-                DebugDeviceSocket.WriteLine($"{HelpDefinition}")
+            If HelpUsages.Length <> 0 Then
+                'Print the usage information holder
+                Dim Indent As Boolean
+                DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Usage:"), False, ColTypes.ListEntry)
+
+                'If remote debug, set the command to be prepended by the slash
+                If CommandType = ShellCommandType.RemoteDebugShell Then command = $"/{command}"
+
+                'Enumerate through the available help usages
+                For Each HelpUsage As String In HelpUsages
+                    'Indent, if necessary
+                    If Indent Then DecisiveWrite(CommandType, DebugDeviceSocket, " ".Repeat(UsageLength), False, ColTypes.ListEntry)
+                    DecisiveWrite(CommandType, DebugDeviceSocket, $" {command} {HelpUsage}", True, ColTypes.ListEntry)
+                    Indent = True
+                Next
             End If
+
+            'Write the description now
+            DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Description:") + $" {HelpDefinition}", True, ColTypes.ListValue)
 
             'Extra help action for some commands
             If CommandList(command).AdditionalHelpAction IsNot Nothing Then
