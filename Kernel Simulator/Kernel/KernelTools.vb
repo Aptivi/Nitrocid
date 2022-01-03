@@ -25,6 +25,7 @@ Imports Newtonsoft.Json.Linq
 Public Module KernelTools
 
     'Variables
+    Public BannerFigletFont As String = "Banner"
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
     Friend LastKernelErrorException As Exception
     Friend InstanceChecked As Boolean

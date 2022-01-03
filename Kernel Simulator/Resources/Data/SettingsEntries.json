@@ -120,6 +120,12 @@
                 "Type": "SString",
                 "Variable": "SplashName",
                 "Description": "Splash name from the available splashes implemented in the kernel."
+            },
+            {
+                "Name": "Banner figlet font",
+                "Type": "SString",
+                "Variable": "BannerFigletFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             }
         ]
     },

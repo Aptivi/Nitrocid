@@ -111,7 +111,8 @@ Public Module Config
                     {"Enable event debugging", EventDebug},
                     {"New welcome banner", NewWelcomeStyle},
                     {"Stylish splash screen", EnableSplash},
-                    {"Splash name", SplashName}
+                    {"Splash name", SplashName},
+                    {"Banner figlet font", BannerFigletFont}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -977,7 +978,8 @@ Public Module Config
             EventDebug = If(ConfigToken("General")?("Enable event debugging"), False)
             NewWelcomeStyle = If(ConfigToken("General")?("New welcome banner"), True)
             EnableSplash = If(ConfigToken("General")?("Stylish splash screen"), False)
-            SplashName = (If(ConfigToken("General")?("Splash name"), "Simple"))
+            SplashName = If(ConfigToken("General")?("Splash name"), "Simple")
+            BannerFigletFont = If(ConfigToken("General")?("Banner figlet font"), "Banner")
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")

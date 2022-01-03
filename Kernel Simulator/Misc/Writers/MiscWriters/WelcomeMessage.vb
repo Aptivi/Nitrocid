@@ -56,7 +56,7 @@ Public Module WelcomeMessage
             End If
 
             If NewWelcomeStyle Then
-                Write(vbNewLine + vbNewLine + Figgle.FiggleFonts.Banner.Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
+                Write(vbNewLine + vbNewLine + GetFigletFont(BannerFigletFont).Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
             Else
                 'Show license
                 WriteLicense(True)

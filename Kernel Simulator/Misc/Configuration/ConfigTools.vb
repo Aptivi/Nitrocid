@@ -48,7 +48,7 @@ Public Module ConfigTools
 
         'General sections
         Dim ExpectedSections As Integer = 9
-        Dim ExpectedGeneralKeys As Integer = 20
+        Dim ExpectedGeneralKeys As Integer = 21
         Dim ExpectedColorsKeys As Integer = 37
         Dim ExpectedHardwareKeys As Integer = 4
         Dim ExpectedLoginKeys As Integer = 11
