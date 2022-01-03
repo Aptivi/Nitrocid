@@ -47,6 +47,7 @@ Module LocaleGenerator
         Dim Normal As Boolean = True
         Dim CopyToResources As Boolean
         Dim Singular As Boolean
+        Dim Quiet As Boolean
         Dim ToSearch As String = ""
         If Args.Length > 0 Then
             'Separate between switches and arguments
@@ -64,6 +65,7 @@ Module LocaleGenerator
             Custom = Switches.Contains("--CustomOnly") Or Switches.Contains("--All")
             Normal = Switches.Contains("--NormalOnly") Or Switches.Contains("--All")
             CopyToResources = Switches.Contains("--CopyToResources")
+            Quiet = Switches.Contains("--Quiet")
 
             'Check to see if we're going to parse one language
             Singular = Switches.Contains("--Singular")
@@ -145,7 +147,7 @@ Module LocaleGenerator
 
                 'Show the generation message
                 Debug.WriteLine("Lines for {0} (Eng: {1}, Loc: {2})", FileName, FileLinesEng.Length, FileLines.Length)
-                Write($"[{FileNumber}/{ToParse.Count}] " + "Generating locale JSON for " + $"{FileName}...", True, ColTypes.Progress)
+                If Not Quiet Then Write($"[{FileNumber}/{ToParse.Count}] " + "Generating locale JSON for " + $"{FileName}...", True, ColTypes.Progress)
 
                 'Make a JSON object for each language entry
                 Dim LocalizedJson As New JObject
@@ -156,8 +158,8 @@ Module LocaleGenerator
                             Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
                             LocalizationDataJson.Add(FileLinesEng(i), FileLines(i))
                         Catch ex As Exception
-                            Write($"[{FileNumber}/{ToParse.Count}] " + "Malformed line" + $" {i + 1}: {FileLinesEng(i)} -> {FileLines(i)}", True, ColTypes.Error)
-                            Write($"[{FileNumber}/{ToParse.Count}] " + "Error trying to parse above line:" + $" {ex.Message}", True, ColTypes.Error)
+                            If Not Quiet Then Write($"[{FileNumber}/{ToParse.Count}] " + "Malformed line" + $" {i + 1}: {FileLinesEng(i)} -> {FileLines(i)}", True, ColTypes.Error)
+                            If Not Quiet Then Write($"[{FileNumber}/{ToParse.Count}] " + "Error trying to parse above line:" + $" {ex.Message}", True, ColTypes.Error)
                         End Try
                     End If
                 Next
@@ -186,20 +188,20 @@ Module LocaleGenerator
                         IO.File.WriteAllText("Translations/Output/" + FileName + ".json", SerializedLocale)
                     End If
                 End If
-                Write($"[{FileNumber}/{ToParse.Count}] " + "Saved new language JSON file to" + $" {FileName}.json!", True, ColTypes.Success)
+                If Not Quiet Then Write($"[{FileNumber}/{ToParse.Count}] " + "Saved new language JSON file to" + $" {FileName}.json!", True, ColTypes.Success)
 
                 'Show elapsed time and reset
-                Write($"[{FileNumber}/{ToParse.Count}] " + "Time elapsed:" + $" {GenerationInterval.Elapsed}", True, ColTypes.StageTime)
+                If Not Quiet Then Write($"[{FileNumber}/{ToParse.Count}] " + "Time elapsed:" + $" {GenerationInterval.Elapsed}", True, ColTypes.StageTime)
                 FileNumber += 1
                 GenerationInterval.Restart()
             Next
         Catch ex As Exception
-            Write("Unexpected error in converter:" + $" {ex.Message}", True, ColTypes.Error)
-            Write(ex.StackTrace, True, ColTypes.Error)
+            If Not Quiet Then Write("Unexpected error in converter:" + $" {ex.Message}", True, ColTypes.Error)
+            If Not Quiet Then Write(ex.StackTrace, True, ColTypes.Error)
         End Try
 
         'Finish the program
-        Write("Finished in " + $"{Total.Elapsed}", True, ColTypes.Neutral)
+        If Not Quiet Then Write("Finished in " + $"{Total.Elapsed}", True, ColTypes.Neutral)
         Total.Reset()
     End Sub
 

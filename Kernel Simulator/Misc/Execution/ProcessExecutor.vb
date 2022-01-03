@@ -57,6 +57,16 @@ Public Module ProcessExecutor
     ''' <param name="Args">Arguments, if any</param>
     ''' <returns>Application exit code. -1 if internal error occurred.</returns>
     Public Function ExecuteProcess(File As String, Args As String) As Integer
+        Return ExecuteProcess(File, Args, CurrDir)
+    End Function
+
+    ''' <summary>
+    ''' Executes a file with specified arguments
+    ''' </summary>
+    ''' <param name="File">Full path to file</param>
+    ''' <param name="Args">Arguments, if any</param>
+    ''' <returns>Application exit code. -1 if internal error occurred.</returns>
+    Public Function ExecuteProcess(File As String, Args As String, WorkingDirectory As String) As Integer
         Try
             Dim CommandProcess As New Process
             Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
@@ -64,7 +74,7 @@ Public Module ProcessExecutor
                                                                   .RedirectStandardError = True,
                                                                   .FileName = File,
                                                                   .Arguments = Args,
-                                                                  .WorkingDirectory = CurrDir,
+                                                                  .WorkingDirectory = WorkingDirectory,
                                                                   .CreateNoWindow = True,
                                                                   .WindowStyle = ProcessWindowStyle.Hidden,
                                                                   .UseShellExecute = False}

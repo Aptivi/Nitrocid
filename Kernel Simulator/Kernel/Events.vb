@@ -276,7 +276,7 @@ Public Class Events
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
     Public Sub RespondKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
-        For Each ModPart As ModInfo In Mods.Values
+        For Each ModPart As ModInfo In Mods?.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript

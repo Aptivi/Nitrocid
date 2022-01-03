@@ -413,9 +413,9 @@ Public Module LanguageManager
                 'Start KS Jsonify Locales up to generate custom language JSON file
                 Dim ExitCode As Integer = -1
                 If IsOnUnix() Then
-                    ExitCode = ExecuteProcess("./ks-jl.sh", $"--Singular {LanguageName}")
+                    ExitCode = ExecuteProcess("./ks-jl.sh", $"--Quiet --CustomOnly --Singular {LanguageName}", ExecutableDir)
                 Else
-                    ExitCode = ExecuteProcess(Path.GetFullPath("ks-jl.cmd"), $"--Singular {LanguageName}")
+                    ExitCode = ExecuteProcess(Path.GetFullPath("ks-jl.cmd"), $"--Quiet --CustomOnly --Singular {LanguageName}", ExecutableDir)
                 End If
 
                 'Install the language
