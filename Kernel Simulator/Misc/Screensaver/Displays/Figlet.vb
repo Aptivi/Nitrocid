@@ -31,8 +31,7 @@ Module FigletDisplay
         Dim Randomizer As New Random
         Dim ConsoleMiddleWidth As Integer = Console.WindowWidth / 2
         Dim ConsoleMiddleHeight As Integer = Console.WindowHeight / 2
-        Dim FigletFonts As Dictionary(Of String, Object) = GetProperties(GetType(FiggleFonts))
-        Dim FigletFontUsed As FiggleFont = FigletFonts(FigletFont)
+        Dim FigletFontUsed As FiggleFont = GetFigletFont(FigletFont)
         Dim CurrentWindowWidth As Integer = Console.WindowWidth
         Dim CurrentWindowHeight As Integer = Console.WindowHeight
         Dim ResizeSyncing As Boolean

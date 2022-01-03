@@ -86,4 +86,14 @@ Public Module TimeDate
         Write("datetime: ", False, ColTypes.ListEntry) : Write(DoTranslation("Time Zone:") + " {0} ({1})", True, ColTypes.ListValue, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString(If(TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime) < TimeSpan.Zero, "\-", "\+") + "hh\:mm\:ss"))
     End Sub
 
+    ''' <summary>
+    ''' Gets the remaining time from now
+    ''' </summary>
+    ''' <param name="Milliseconds">The milliseconds interval</param>
+    Public Function GetRemainingTimeFromNow(Milliseconds As Integer) As String
+        Dim RemainingTime As TimeSpan = (Date.Now.AddMilliseconds(Milliseconds) - Date.Now)
+        Dim RemainingTimeString As String = RemainingTime.ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
+        Return RemainingTimeString
+    End Function
+
 End Module

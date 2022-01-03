@@ -239,6 +239,10 @@ Public Module Flags
     ''' When there is a remote debug connection error, notify the user
     ''' </summary>
     Public NotifyOnRemoteDebugConnectionError As Boolean = True
+    ''' <summary>
+    ''' Enables the Figlet font for the timer
+    ''' </summary>
+    Public EnableFigletTimer As Boolean
 
     'Private flags
     ''' <summary>
