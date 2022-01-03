@@ -404,61 +404,6 @@ Public Module LanguageManager
     End Sub
 
     ''' <summary>
-    ''' Generates the custom language from the languages folder.
-    ''' </summary>
-    ''' <param name="LanguageName">Custom language name</param>
-    Public Sub GenerateCustomLanguage(LanguageName As String)
-        If Not SafeMode Then
-            Try
-                'Start KS Jsonify Locales up to generate custom language JSON file
-                Dim ExitCode As Integer = -1
-                If IsOnUnix() Then
-                    ExitCode = ExecuteProcess("./ks-jl.sh", $"--Quiet --CustomOnly --Singular {LanguageName}", ExecutableDir)
-                Else
-                    ExitCode = ExecuteProcess(Path.GetFullPath("ks-jl.cmd"), $"--Quiet --CustomOnly --Singular {LanguageName}", ExecutableDir)
-                End If
-
-                'Install the language
-                If ExitCode = 0 Then
-                    InstallCustomLanguage(LanguageName)
-                Else
-                    Wdbg(DebugLevel.E, "Failed to generate custom language. Exit code {0}", ExitCode)
-                    Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to generate custom language. Locale generator returned exit code of {0}."), ExitCode)
-                End If
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to generate custom language: {0}", ex.Message)
-                WStkTrc(ex)
-                KernelEventManager.RaiseLanguagesUninstallError(ex)
-                Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to generate custom language. See the inner exception for more info."), ex)
-            End Try
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Purges the custom language from the languages folder once it has been uninstalled.
-    ''' </summary>
-    ''' <param name="LanguageName">Custom language name</param>
-    Public Sub PurgeCustomLanguage(LanguageName As String)
-        If Not SafeMode Then
-            Try
-                UninstallCustomLanguage(LanguageName)
-                Dim LanguagePath As String = GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json"
-                If FileExists(LanguagePath) Then
-                    If Not RemoveFile(LanguagePath) Then
-                        Wdbg(DebugLevel.E, "Failed to purge custom language")
-                        Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language."))
-                    End If
-                End If
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to purge custom language: {0}", ex.Message)
-                WStkTrc(ex)
-                KernelEventManager.RaiseLanguagesUninstallError(ex)
-                Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to purge custom language. See the inner exception for more info."), ex)
-            End Try
-        End If
-    End Sub
-
-    ''' <summary>
     ''' Lists the languages
     ''' </summary>
     ''' <param name="SearchTerm">Search term</param>

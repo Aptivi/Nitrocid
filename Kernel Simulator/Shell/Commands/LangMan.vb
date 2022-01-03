@@ -41,13 +41,6 @@ Class LangManCommand
                         Write(DoTranslation("Language is not specified."), True, ColTypes.Error)
                         Exit Sub
                     End If
-                Case "install", "uninstall"
-                    If ListArgsOnly.Length > 1 Then
-                        TargetLanguage = ListArgsOnly(1)
-                    Else
-                        Write(DoTranslation("Language is not specified."), True, ColTypes.Error)
-                        Exit Sub
-                    End If
                 Case "list"
                     If ListArgsOnly.Length > 1 Then
                         LanguageListTerm = ListArgsOnly(1)
@@ -63,10 +56,6 @@ Class LangManCommand
                     InstallCustomLanguage(TargetLanguagePath)
                 Case "unload"
                     UninstallCustomLanguage(TargetLanguagePath)
-                Case "install"
-                    GenerateCustomLanguage(TargetLanguage)
-                Case "uninstall"
-                    PurgeCustomLanguage(TargetLanguage)
                 Case "list"
                     For Each Language As String In ListLanguages(LanguageListTerm).Keys
                         WriteSeparator(Language, True)
