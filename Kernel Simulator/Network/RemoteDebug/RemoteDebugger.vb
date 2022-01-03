@@ -160,26 +160,20 @@ Public Module RemoteDebugger
     ''' Thread to listen to messages and post them to the debugger
     ''' </summary>
     Sub ReadAndBroadcastAsync()
-        Dim DeviceIndex As Integer = 0
         While True
-            Thread.Sleep(1)
-            If DeviceIndex > DebugDevices.Count - 1 Then
-                'We've reached all the devices!
-                DeviceIndex = 0
-            Else
-                'Variables
-                Dim MessageBuffer(65536) As Byte
-                Dim SocketStream As New NetworkStream(DebugDevices(DeviceIndex).ClientSocket)
-                Dim SocketStreamWriter As StreamWriter = DebugDevices(DeviceIndex).ClientStreamWriter
-                Dim SocketIP As String = DebugDevices(DeviceIndex).ClientIP
-                Dim SocketName As String = DebugDevices(DeviceIndex).ClientName
-
-                'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
-                SocketStream.ReadTimeout = 10
-
-                'Increment.
-                DeviceIndex += 1
+            For DeviceIndex As Integer = 0 To DebugDevices.Count - 1
+                Thread.Sleep(1)
                 Try
+                    'Variables
+                    Dim MessageBuffer(65536) As Byte
+                    Dim SocketStream As New NetworkStream(DebugDevices(DeviceIndex).ClientSocket)
+                    Dim SocketStreamWriter As StreamWriter = DebugDevices(DeviceIndex).ClientStreamWriter
+                    Dim SocketIP As String = DebugDevices(DeviceIndex).ClientIP
+                    Dim SocketName As String = DebugDevices(DeviceIndex).ClientName
+
+                    'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
+                    SocketStream.ReadTimeout = 10
+
                     'Read a message from the stream
                     SocketStream.Read(MessageBuffer, 0, 65536)
                     Dim Message As String = Text.Encoding.Default.GetString(MessageBuffer)
@@ -228,19 +222,30 @@ Public Module RemoteDebugger
                             End If
                         End If
                     End If
+                Catch ioex As IOException When ioex.Message.Contains("non-connected")
+                    'HACK: Ugly workaround, but we have to search the message for "non-connected" to get the specific error message that we
+                    'need to react appropriately. Removing the device from the debug devices list will allow the kernel to continue working
+                    'without crashing just because of this exception. We had to search the above word in this phrase:
+                    '
+                    '  System.IO.IOException: The operation is not allowed on non-connected sockets.
+                    '                                                         ^^^^^^^^^^^^^
+                    '
+                    'Though, we wish to have a better workaround to detect this specific error message on .NET Framework 4.8.
+                    DebugDevices.RemoveAt(DeviceIndex)
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If SE IsNot Nothing Then
+                        Dim SocketIP As String = DebugDevices(DeviceIndex)?.ClientIP
                         If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
                             Wdbg(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If
                     Else
-                        Wdbg(DebugLevel.E, "Unknown error of remote debug: {0}", ex.Message)
+                        Wdbg(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType.FullName, ex.Message)
                         WStkTrc(ex)
                     End If
                 End Try
-            End If
+            Next
         End While
     End Sub
 
