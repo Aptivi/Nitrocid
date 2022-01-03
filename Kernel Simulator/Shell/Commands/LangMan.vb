@@ -29,7 +29,7 @@ Class LangManCommand
 
             'These command modes require two arguments to be passed, so re-check here and there. Optional arguments also lie there.
             Select Case CommandMode
-                Case "reload", "install", "uninstall", "load", "unload"
+                Case "reload", "load", "unload"
                     If ListArgsOnly.Length > 1 Then
                         TargetLanguage = ListArgsOnly(1)
                         TargetLanguagePath = NeutralizePath(TargetLanguage + ".json", GetKernelPath(KernelPathType.CustomLanguages))
@@ -37,6 +37,13 @@ Class LangManCommand
                             Write(DoTranslation("Language not found or file has invalid characters."), True, ColTypes.Error)
                             Exit Sub
                         End If
+                    Else
+                        Write(DoTranslation("Language is not specified."), True, ColTypes.Error)
+                        Exit Sub
+                    End If
+                Case "install", "uninstall"
+                    If ListArgsOnly.Length > 1 Then
+                        TargetLanguage = ListArgsOnly(1)
                     Else
                         Write(DoTranslation("Language is not specified."), True, ColTypes.Error)
                         Exit Sub
