@@ -46,7 +46,6 @@ Public Module TimerScreen
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
         Dim CurrentRemainingString As String = GetRemainingTimeFromNow(TimerInterval)
-        Dim CurrentRemainingStringRendered As String = FigletFont.Render(CurrentRemainingString)
         Dim TimeLeftPosition As Integer = 0
         Dim TimeTopPosition As Integer = 0
         UpdateRemainingPositions(CurrentRemainingString, TimeLeftPosition, TimeTopPosition)
@@ -61,7 +60,7 @@ Public Module TimerScreen
         WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, True, ColTypes.Tip)
 
         'Print the time interval
-        WriteWhere(CurrentRemainingStringRendered, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+        WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
 
         While KeysKeypress <> ConsoleKey.Escape
             'Wait for a keypress
@@ -91,9 +90,8 @@ Public Module TimerScreen
                         Else
                             'Update the remaining time
                             Dim RemainingString As String = GetRemainingTimeFromNow(TimerInterval)
-                            Dim RemainingStringRendered As String = FigletFont.Render(CurrentRemainingString)
                             UpdateRemainingPositions(RemainingString, TimeLeftPosition, TimeTopPosition)
-                            WriteWhere(RemainingStringRendered, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                            WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
                         End If
 
                         'Clean up
@@ -124,13 +122,12 @@ Public Module TimerScreen
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
         Dim ElapsedText As String = New TimeSpan().ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
-        Dim ElapsedTextRendered As String = FigletFont.Render(ElapsedText)
         Dim TimeLeftPosition As Integer = 0
         Dim TimeTopPosition As Integer = 0
         UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
         If TimerUpdate.IsAlive Then TimerUpdate.Abort()
         TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
-        WriteWhere(ElapsedTextRendered, TimeLeftPosition, TimeTopPosition, True, ColTypes.Success)
+        WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Success)
         Timer.Stop()
     End Sub
 
@@ -145,11 +142,10 @@ Public Module TimerScreen
                 Dim HalfWidth As Integer = Console.WindowWidth / 2
                 Dim HalfHeight As Integer = Console.WindowHeight / 2
                 Dim UntilText As String = Until.ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
-                Dim UntilTextRendered As String = FigletFont.Render(UntilText)
                 Dim TimeLeftPosition As Integer = 0
                 Dim TimeTopPosition As Integer = 0
                 UpdateRemainingPositions(UntilText, TimeLeftPosition, TimeTopPosition)
-                WriteWhere(UntilTextRendered, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
             Catch ex As ThreadAbortException
                 Exit While
             End Try
