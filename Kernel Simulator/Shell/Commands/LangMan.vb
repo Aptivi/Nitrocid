@@ -50,8 +50,8 @@ Class LangManCommand
             'Now, the actual logic
             Select Case CommandMode
                 Case "reload"
-                    StopMod(TargetLanguagePath)
-                    StartMod(TargetLanguagePath)
+                    UninstallCustomLanguage(TargetLanguagePath)
+                    InstallCustomLanguage(TargetLanguagePath)
                 Case "load"
                     InstallCustomLanguage(TargetLanguage)
                 Case "unload"
