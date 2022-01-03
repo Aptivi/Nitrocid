@@ -52,7 +52,7 @@ Public Module TimerScreen
         UpdateRemainingPositions(CurrentRemainingString, TimeLeftPosition, TimeTopPosition)
 
         'Populate the keys text variable
-        Dim KeysText As String = "[ENTER] " + DoTranslation("Start counting down or recount") + " | [T] " + DoTranslation("Indicate milliseconds") + " | [ESC] " + DoTranslation("Exit")
+        Dim KeysText As String = "[ENTER] " + DoTranslation("Start (re)counting down") + " | [T] " + DoTranslation("Set interval") + " | [ESC] " + DoTranslation("Exit")
         Dim KeysTextLeftPosition As Integer = HalfWidth - (KeysText.Length / 2)
         Dim KeysTextTopPosition As Integer = Console.WindowHeight - 2
         Dim KeysKeypress As ConsoleKey
