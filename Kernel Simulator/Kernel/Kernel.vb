@@ -57,10 +57,8 @@ Public Module Kernel
                 InitPaths()
                 If Not IsOnUnix() Then Initialize255()
 
-                'Check if factory reset is required
-                If Args.Contains("reset") Then
-                    FactoryReset()
-                End If
+                'Check for pre-boot arguments
+                ParsePreBootCMDArguments(Args)
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
@@ -76,6 +74,21 @@ Public Module Kernel
                     End If
                 End If
 #End If
+
+                'Check for console size
+                If CheckingForConsoleSize Then
+                    'Check for the minimum console window requirements (80x24)
+                    Do While Console.WindowWidth < 80 Or Console.WindowHeight < 24
+                        Write(DoTranslation("Your console is too small to run properly:") + " {0}x{1}", True, ColTypes.Warning, Console.WindowWidth, Console.WindowHeight)
+                        Write(DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), True, ColTypes.Warning)
+                        Console.ReadKey(True)
+                    Loop
+                Else
+                    Write(DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + vbNewLine +
+                          DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), True, ColTypes.Warning)
+                    Console.ReadKey(True)
+                    CheckingForConsoleSize = True
+                End If
 
                 'Initialize everything
                 StageTimer.Start()

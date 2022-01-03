@@ -277,5 +277,9 @@ Public Module Flags
     ''' Notifies the kernel to be quiet
     ''' </summary>
     Friend QuietKernel As Boolean
+    ''' <summary>
+    ''' Checking for the console size (minimum req. 80x24)
+    ''' </summary>
+    Friend CheckingForConsoleSize As Boolean = True
 
 End Module

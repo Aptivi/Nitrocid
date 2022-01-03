@@ -1,5 +1,4 @@
-﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,20 +15,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Argument type enumeration
-''' </summary>
-Public Enum ArgumentType
-    ''' <summary>
-    ''' Kernel arguments
-    ''' </summary>
-    KernelArgs
-    ''' <summary>
-    ''' Command line arguments
-    ''' </summary>
-    CommandLineArgs
-    ''' <summary>
-    ''' Pre-boot command line arguments
-    ''' </summary>
-    PreBootCommandLineArgs
-End Enum
+Class PreBootCommandLine_BypassSizeDetectionArgument
+    Inherits ArgumentExecutor
+    Implements IArgument
+
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+        CheckingForConsoleSize = False
+    End Sub
+
+End Class

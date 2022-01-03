@@ -59,6 +59,8 @@ Public Class ProvidedArgumentArgumentsInfo
                 KernelArguments = AvailableArgs
             Case ArgumentType.CommandLineArgs
                 KernelArguments = AvailableCMDLineArgs
+            Case ArgumentType.PreBootCommandLineArgs
+                KernelArguments = AvailablePreBootCMDLineArgs
         End Select
 
         'Get the index of the first space (Used for step 3)

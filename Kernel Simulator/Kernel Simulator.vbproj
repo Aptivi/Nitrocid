@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arguments\ArgumentBase\ArgumentParse.vb" />
+    <Compile Include="Arguments\ArgumentBase\PreBootCommandLineArgsParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
     <Compile Include="Arguments\ArgumentBase\ArgumentInfo.vb" />
     <Compile Include="Arguments\ArgumentBase\ArgumentType.vb" />
@@ -185,6 +186,8 @@
     <Compile Include="Arguments\KernelArguments\Debug.vb" />
     <Compile Include="Arguments\KernelArguments\Quiet.vb" />
     <Compile Include="Arguments\ArgumentBase\ProvidedArgumentArgumentsInfo.vb" />
+    <Compile Include="Arguments\PreBootCommandLineArguments\BypassSizeDetection.vb" />
+    <Compile Include="Arguments\PreBootCommandLineArguments\Reset.vb" />
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />
     <Compile Include="Console\ColorTools.vb" />
