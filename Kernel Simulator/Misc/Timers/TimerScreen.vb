@@ -105,6 +105,7 @@ Public Module TimerScreen
                     Timer.Stop()
                     Timer.Dispose()
                     If TimerUpdate.IsAlive Then TimerUpdate.Abort()
+                    TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
             End Select
         End While
 
@@ -128,6 +129,7 @@ Public Module TimerScreen
         Dim TimeTopPosition As Integer = 0
         UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
         If TimerUpdate.IsAlive Then TimerUpdate.Abort()
+        TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
         WriteWhere(ElapsedTextRendered, TimeLeftPosition, TimeTopPosition, True, ColTypes.Success)
         Timer.Stop()
     End Sub
