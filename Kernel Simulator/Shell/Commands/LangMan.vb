@@ -53,9 +53,9 @@ Class LangManCommand
                     StopMod(TargetLanguagePath)
                     StartMod(TargetLanguagePath)
                 Case "load"
-                    InstallCustomLanguage(TargetLanguagePath)
+                    InstallCustomLanguage(TargetLanguage)
                 Case "unload"
-                    UninstallCustomLanguage(TargetLanguagePath)
+                    UninstallCustomLanguage(TargetLanguage)
                 Case "list"
                     For Each Language As String In ListLanguages(LanguageListTerm).Keys
                         WriteSeparator(Language, True)
