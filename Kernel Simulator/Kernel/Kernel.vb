@@ -101,8 +101,10 @@ Public Module Kernel
                     ReportProgress(DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
-                Console.WriteLine()
-                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
+                If Not EnableSplash And Not QuietKernel Then
+                    Console.WriteLine()
+                    WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
+                End If
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 If RDebugAutoStart And DebugMode Then
                     ReportProgress(DoTranslation("Starting the remote debugger..."), 3, ColTypes.Neutral)
@@ -138,12 +140,14 @@ Public Module Kernel
                     ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
-                Console.WriteLine()
-                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
+                If Not EnableSplash And Not QuietKernel Then
+                    Console.WriteLine()
+                    WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
+                End If
                 Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
                 If Not QuietHardwareProbe Then ReportProgress(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15, ColTypes.Progress)
                 StartProbing()
-                If Not EnableSplash Then ListHardware()
+                If Not EnableSplash And Not QuietKernel Then ListHardware()
                 CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
@@ -151,8 +155,10 @@ Public Module Kernel
                     ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
-                Console.WriteLine()
-                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
+                If Not EnableSplash And Not QuietKernel Then
+                    Console.WriteLine()
+                    WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
+                End If
                 Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
                 'TODO: Make this more splash-friendly
@@ -168,8 +174,10 @@ Public Module Kernel
                     ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
                     StageTimer.Restart()
                 End If
-                Console.WriteLine()
-                If Not EnableSplash Then WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
+                If Not EnableSplash And Not QuietKernel Then
+                    Console.WriteLine()
+                    WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
+                End If
                 Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 ReportProgress(DoTranslation("System account initialized"), 5, ColTypes.Neutral)
