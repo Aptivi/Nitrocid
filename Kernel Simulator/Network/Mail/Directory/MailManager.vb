@@ -122,15 +122,14 @@ Public Module MailManager
                     'Remove message
                     Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                     Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
-                    'TODO: Use the newer Dir.Store routine implemented in MailKit 3.0.0
-                    Dir.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
+                    Dir.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
                     Wdbg(DebugLevel.I, "Removed.")
                     Dir.Expunge()
                 Else
                     'Remove message
                     IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
                     Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber)
-                    IMAP_Client.Inbox.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
+                    IMAP_Client.Inbox.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
                     Wdbg(DebugLevel.I, "Removed.")
                     IMAP_Client.Inbox.Expunge()
                 End If
@@ -172,7 +171,7 @@ Public Module MailManager
 
                                 'Remove message
                                 Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, Sender)
-                                Dir.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                Dir.Store(MessageId, New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
                                 Wdbg(DebugLevel.I, "Removed.")
                                 Dir.Expunge()
                                 Wdbg(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
@@ -181,7 +180,7 @@ Public Module MailManager
                                 'Remove message
                                 IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
                                 Wdbg(DebugLevel.I, "Removing {0}...", Sender)
-                                IMAP_Client.Inbox.AddFlags(MessageId, MessageFlags.Deleted, True)
+                                IMAP_Client.Inbox.Store(MessageId, New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
                                 Wdbg(DebugLevel.I, "Removed.")
                                 IMAP_Client.Inbox.Expunge()
                                 Wdbg(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
