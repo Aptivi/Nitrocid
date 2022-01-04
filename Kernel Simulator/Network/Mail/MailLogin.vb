@@ -173,6 +173,7 @@ Module MailLogin
     ''' </summary>
     ''' <param name="Address">E-mail address</param>
     ''' <returns>Server address. Otherwise, null.</returns>
+    <Obsolete("Addresstigator library was just released to replace this function. Changing its behavior is going to take place, thus this function remains intact, not actually being removed.")>
     Public Function ServerDetect(Address As String, Type As ServerType) As String
         If Address.EndsWith("@gmail.com") Or Address.EndsWith("@googlemail.com") Then
             If Type = ServerType.IMAP Then
