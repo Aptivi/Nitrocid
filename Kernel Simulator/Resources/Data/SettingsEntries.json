@@ -930,7 +930,7 @@
                 "Name": "Show notification for upload progress",
                 "Type": "SBoolean",
                 "Variable": "UploadNotificationProvoke",
-                "Description": "Shows the notification showing the download progress."
+                "Description": "Shows the notification showing the upload progress."
             },
             {
                 "Name": "RSS feed fetch timeout",
