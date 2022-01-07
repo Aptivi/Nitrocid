@@ -243,6 +243,22 @@ Public Module Flags
     ''' Enables the Figlet font for the timer
     ''' </summary>
     Public EnableFigletTimer As Boolean
+    ''' <summary>
+    ''' Shows how many commands available in help for shells
+    ''' </summary>
+    Public ShowCommandsCount As Boolean
+    ''' <summary>
+    ''' Shows how many shell commands available in help for shells
+    ''' </summary>
+    Public ShowShellCommandsCount As Boolean = True
+    ''' <summary>
+    ''' Shows how many mod commands available in help for shells
+    ''' </summary>
+    Public ShowModCommandsCount As Boolean = True
+    ''' <summary>
+    ''' Shows how many aliases available in help for shells
+    ''' </summary>
+    Public ShowShellAliasesCount As Boolean = True
 
     'Private flags
     ''' <summary>

@@ -864,7 +864,11 @@ Public Module Config
                     {"Right frame character for RGB color wheel", WheelRightFrameChar},
                     {"Default JSON formatting for JSON shell", JsonShell_Formatting},
                     {"Enable Figlet for timer", EnableFigletTimer},
-                    {"Figlet font for timer", TimerFigletFont}
+                    {"Figlet font for timer", TimerFigletFont},
+                    {"Show the commands count on help", ShowCommandsCount},
+                    {"Show the shell commands count on help", ShowShellCommandsCount},
+                    {"Show the mod commands count on help", ShowModCommandsCount},
+                    {"Show the aliases count on help", ShowShellAliasesCount}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1592,6 +1596,10 @@ Public Module Config
             JsonShell_Formatting = If(ConfigToken("Misc")?("Default JSON formatting for JSON shell") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Default JSON formatting for JSON shell"), JsonShell_Formatting), JsonShell_Formatting, Formatting.Indented), Formatting.Indented)
             EnableFigletTimer = If(ConfigToken("Misc")?("Enable Figlet for timer"), False)
             TimerFigletFont = If(ConfigToken("Misc")?("Figlet font for timer"), "Small")
+            ShowCommandsCount = If(ConfigToken("Misc")?("Show the commands count on help"), False)
+            ShowShellCommandsCount = If(ConfigToken("Misc")?("Show the shell commands count on help"), True)
+            ShowModCommandsCount = If(ConfigToken("Misc")?("Show the mod commands count on help"), True)
+            ShowShellAliasesCount = If(ConfigToken("Misc")?("Show the aliases count on help"), True)
 
             'Check to see if the config needs fixes
             RepairConfig()

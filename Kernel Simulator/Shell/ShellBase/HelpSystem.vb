@@ -143,7 +143,7 @@ Public Module HelpSystem
             'List the available commands
             If Not SimHelp Then
                 'The built-in commands
-                DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("General commands:"), True, ColTypes.ListTitle)
+                DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("General commands:") + If(ShowCommandsCount And ShowShellCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, CommandList.Count)
 
                 'Check the command list count and print not implemented. This is an extremely rare situation.
                 If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
@@ -155,7 +155,7 @@ Public Module HelpSystem
                 Next
 
                 'The mod commands
-                DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.ListTitle)
+                DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Mod commands:") + If(ShowCommandsCount And ShowModCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, ModCommandList.Count)
                 If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No mod commands."), True, ColTypes.Warning)
                 For Each cmd As String In ModCommandList.Keys
                     DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
@@ -163,7 +163,7 @@ Public Module HelpSystem
                 Next
 
                 'The alias commands
-                DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.ListTitle)
+                DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Alias commands:") + If(ShowCommandsCount And ShowShellAliasesCount, " [{0}]", ""), True, ColTypes.ListTitle, AliasedCommandList.Count)
                 If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No alias commands."), True, ColTypes.Warning)
                 For Each cmd As String In AliasedCommandList.Keys
                     DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)

@@ -1242,6 +1242,30 @@
                 "Type": "SString",
                 "Variable": "TimerFigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            },
+            {
+                "Name": "Show the commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowCommandsCount",
+                "Description": "Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands."
+            },
+            {
+                "Name": "Show the shell commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowShellCommandsCount",
+                "Description": "Show the shell commands count on help"
+            },
+            {
+                "Name": "Show the mod commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowModCommandsCount",
+                "Description": "Show the mod commands count on help"
+            },
+            {
+                "Name": "Show the aliases count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowShellAliasesCount",
+                "Description": "Show the aliases count on help"
             }
         ]
     }
