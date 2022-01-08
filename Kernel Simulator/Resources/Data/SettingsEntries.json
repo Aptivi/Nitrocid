@@ -972,6 +972,12 @@
                 "Type": "SBoolean",
                 "Variable": "NotifyOnRemoteDebugConnectionError",
                 "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+            },
+            {
+                "Name": "Use legacy mail detection",
+                "Type": "SBoolean",
+                "Variable": "Mail_UseLegacyDetector",
+                "Description": "Enable to use the legacy mail detection system. Otherwise, uses the online Mozilla ISP Database to detect address."
             }
         ]
     },
