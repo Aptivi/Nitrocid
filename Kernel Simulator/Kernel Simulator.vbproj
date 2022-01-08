@@ -45,7 +45,7 @@
       <dependency id="Crc32.NET" version="1.2.0" />
       <dependency id="Figgle" version="0.4.0" />
       <dependency id="ManagedWeatherMap" version="1.0.0" />
-      <dependency id="Addresstigator" version="0.1.0" />
+      <dependency id="Addresstigator" version="0.1.0.1" />
     </Dependencies>
     <!-- KS Nuget Information End -->
   </PropertyGroup>
@@ -98,7 +98,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Addresstigator">
-      <Version>0.1.0</Version>
+      <Version>0.1.0.1</Version>
     </PackageReference>
     <PackageReference Include="Crc32.NET">
       <Version>1.2.0</Version>

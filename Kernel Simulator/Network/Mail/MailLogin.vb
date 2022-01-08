@@ -179,28 +179,26 @@ Module MailLogin
         If Not Mail_UseLegacyDetector Then
             'Get the mail server dynamically
             Dim DynamicConfiguration As ClientConfig = Tools.GetIspConfig(Address)
-            Dim ReturnedMailAddress As String
+            Dim ReturnedMailAddress As String = ""
             Dim ReturnedMailPort As Integer
             Select Case Type
                 Case ServerType.IMAP
-                    Dim ImapServer As IncomingServer = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x)
-                                                                                                                    If x.Type = "imap" Then
-                                                                                                                        Return x
-                                                                                                                    End If
-                                                                                                                End Function)(0)
-                    ReturnedMailAddress = ImapServer.Hostname
-                    ReturnedMailPort = ImapServer.Port
+                    Dim ImapServers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "imap")
+                    If ImapServers.Count > 0 Then
+                        Dim ImapServer As IncomingServer = ImapServers(0)
+                        ReturnedMailAddress = ImapServer.Hostname
+                        ReturnedMailPort = ImapServer.Port
+                    End If
                 Case ServerType.POP3
-                    Dim Pop3Server As IncomingServer = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x)
-                                                                                                                    If x.Type = "pop3" Then
-                                                                                                                        Return x
-                                                                                                                    End If
-                                                                                                                End Function)(0)
-                    ReturnedMailAddress = Pop3Server.Hostname
-                    ReturnedMailPort = Pop3Server.Port
+                    Dim Pop3Servers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "pop3")
+                    If Pop3Servers.Count > 0 Then
+                        Dim Pop3Server As IncomingServer = Pop3Servers(0)
+                        ReturnedMailAddress = Pop3Server.Hostname
+                        ReturnedMailPort = Pop3Server.Port
+                    End If
                 Case ServerType.SMTP
                     Dim SmtpServer As OutgoingServer = DynamicConfiguration.EmailProvider.OutgoingServer
-                    ReturnedMailAddress = SmtpServer.Hostname
+                    ReturnedMailAddress = SmtpServer?.Hostname
                     ReturnedMailPort = SmtpServer.Port
                 Case Else
                     Return ""
