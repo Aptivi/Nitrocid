@@ -66,6 +66,6 @@ Public Interface ISplash
     ''' <param name="ProgressWritePositionY"></param>
     ''' <param name="ProgressReportWritePositionX"></param>
     ''' <param name="ProgressReportWritePositionY"></param>
-    Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer)
+    Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object)
 
 End Interface

@@ -60,16 +60,16 @@ Public Module SplashReport
     ''' </remarks>
     Friend Sub ReportProgress(Text As String, Progress As Integer, ColTypes As ColTypes, ParamArray Vars() As String)
         If Not KernelBooted Then
+            _Progress += Progress
+            _ProgressText = Text
+            If _Progress >= 100 Then _Progress = 100
             If CurrentSplashInfo.DisplaysProgress Then
                 If EnableSplash Then
-                    CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY)
+                    CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY, Vars)
                 ElseIf Not QuietKernel Then
                     Write(Text, True, ColTypes, Vars)
                 End If
             End If
-            _Progress += Progress
-            _ProgressText = Text
-            If _Progress >= 100 Then _Progress = 100
         Else
             Write(Text, True, ColTypes, Vars)
         End If
