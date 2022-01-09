@@ -52,4 +52,27 @@ Public Module SplashManager
 
     Friend SplashThread As New Thread(Sub() CurrentSplash.Display())
 
+    ''' <summary>
+    ''' Opens the splash screen
+    ''' </summary>
+    Sub OpenSplash()
+        If EnableSplash Then
+            Console.CursorVisible = False
+            CurrentSplash.Opening()
+            If Not SplashThread.IsAlive Then SplashThread.Start()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Closes the splash screen
+    ''' </summary>
+    Sub CloseSplash()
+        If EnableSplash Then
+            CurrentSplash.Closing()
+            SplashThread = New Thread(Sub() CurrentSplash.Display())
+            Console.CursorVisible = True
+        End If
+        _KernelBooted = True
+    End Sub
+
 End Module

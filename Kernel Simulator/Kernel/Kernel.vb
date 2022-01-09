@@ -193,12 +193,8 @@ Public Module Kernel
                 End If
 
                 'Show the closing screen
-                If EnableSplash Then
-                    ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
-                    CurrentSplash.Closing()
-                    SplashThread = New Thread(Sub() CurrentSplash.Display())
-                End If
-                _KernelBooted = True
+                ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
+                CloseSplash()
 
                 'Show current time
                 If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()

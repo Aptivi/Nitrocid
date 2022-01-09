@@ -44,6 +44,7 @@ Public Module WelcomeMessage
     ''' Writes the welcoming message to the console (welcome to kernel)
     ''' </summary>
     Sub WriteMessage()
+        Console.CursorVisible = False
         If Not EnableSplash Then
             'The default message to write
             Dim MessageWrite As String = GetCustomBanner()
@@ -61,6 +62,7 @@ Public Module WelcomeMessage
                 'Show license
                 WriteLicense(True)
             End If
+            Console.CursorVisible = True
         End If
     End Sub
 
