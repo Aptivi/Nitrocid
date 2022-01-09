@@ -290,6 +290,7 @@ Public Module KernelTools
         CalendarEvents.Clear()
         _Progress = 0
         _ProgressText = ""
+        _KernelBooted = False
         Wdbg(DebugLevel.I, "General variables reset")
 
         'Reset hardware info

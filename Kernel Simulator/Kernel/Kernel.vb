@@ -161,7 +161,6 @@ Public Module Kernel
                 End If
                 Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
-                'TODO: Make this more splash-friendly
                 If Not SafeMode Then
                     If StartKernelMods Then StartMods()
                 Else
@@ -199,6 +198,7 @@ Public Module Kernel
                     CurrentSplash.Closing()
                     SplashThread = New Thread(Sub() CurrentSplash.Display())
                 End If
+                _KernelBooted = True
 
                 'Show current time
                 If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()

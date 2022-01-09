@@ -39,25 +39,25 @@ Public Module ModManager
 
             'Check to see if we have mods
             If count <> 0 Then
-                Write(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
+                ReportProgress(DoTranslation("mod: Loading mods..."), 0, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count)
                 Dim CurrentCount As Integer = 1
                 For Each modFile As String In Directory.EnumerateFiles(ModPath)
                     If Not GetBlacklistedMods.Contains(modFile) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
-                        Write("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
+                        ReportProgress("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", 0, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
                         ParseMod(modFile)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))
-                        Write("[{1}/{2}] " + DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile), CurrentCount, count)
+                        ReportProgress("[{1}/{2}] " + DoTranslation("Mod {0} is blacklisted."), 0, ColTypes.Warning, Path.GetFileName(modFile), CurrentCount, count)
                     End If
                     CurrentCount += 1
                 Next
             Else
-                Write(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
+                ReportProgress(DoTranslation("mod: No mods detected."), 0, ColTypes.Neutral)
             End If
         Else
-            Write(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+            ReportProgress(DoTranslation("Parsing mods not allowed on safe mode."), 0, ColTypes.Error)
         End If
     End Sub
 
@@ -76,20 +76,20 @@ Public Module ModManager
                 If Not HasModStarted(ModFilename) Then
                     If Not GetBlacklistedMods.Contains(ModFilename) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(ModFilename))
-                        Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        ReportProgress(DoTranslation("Starting mod") + " {0}...", 0, ColTypes.Neutral, Path.GetFileName(ModFilename))
                         ParseMod(ModFilename)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(ModFilename))
-                        Write(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(ModFilename))
+                        ReportProgress(DoTranslation("Mod {0} is blacklisted."), 0, ColTypes.Warning, Path.GetFileName(ModFilename))
                     End If
                 Else
-                    Write(DoTranslation("Mod has already been started!"), True, ColTypes.Error)
+                    ReportProgress(DoTranslation("Mod has already been started!"), 0, ColTypes.Error)
                 End If
             Else
-                Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                ReportProgress(DoTranslation("Mod {0} not found."), 0, ColTypes.Neutral, Path.GetFileName(ModFilename))
             End If
         Else
-            Write(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+            ReportProgress(DoTranslation("Parsing mods not allowed on safe mode."), 0, ColTypes.Error)
         End If
     End Sub
 

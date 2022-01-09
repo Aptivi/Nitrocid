@@ -192,6 +192,56 @@ Public Module Filesystem
     End Sub
 
     ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+    ''' </summary>
+    ''' <param name="Condition">The condition to satisfy</param>
+    ''' <param name="Filename">Path to text file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    Public Sub PrintLineWithHandleConditional(Condition As Boolean, Filename As String, LineNumber As Integer, ColumnNumber As Integer)
+        PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, ColTypes.Neutral)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+    ''' </summary>
+    ''' <param name="Condition">The condition to satisfy</param>
+    ''' <param name="Filename">Path to text file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    ''' <param name="ColorType">The type of color</param>
+    Public Sub PrintLineWithHandleConditional(Condition As Boolean, Filename As String, LineNumber As Integer, ColumnNumber As Integer, ColorType As ColTypes)
+        If Condition Then
+            PrintLineWithHandle(Filename, LineNumber, ColumnNumber, ColorType)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+    ''' </summary>
+    ''' <param name="Condition">The condition to satisfy</param>
+    ''' <param name="Array">A string array containing the contents of the file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    Public Sub PrintLineWithHandleConditional(Condition As Boolean, Array() As String, LineNumber As Integer, ColumnNumber As Integer)
+        PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, ColTypes.Neutral)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+    ''' </summary>
+    ''' <param name="Condition">The condition to satisfy</param>
+    ''' <param name="Array">A string array containing the contents of the file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    ''' <param name="ColorType">The type of color</param>
+    Public Sub PrintLineWithHandleConditional(Condition As Boolean, Array() As String, LineNumber As Integer, ColumnNumber As Integer, ColorType As ColTypes)
+        If Condition Then
+            PrintLineWithHandle(Array, LineNumber, ColumnNumber, ColorType)
+        End If
+    End Sub
+
+    ''' <summary>
     ''' List all files and folders in a specified folder
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>

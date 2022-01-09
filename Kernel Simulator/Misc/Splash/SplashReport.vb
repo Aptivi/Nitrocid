@@ -20,6 +20,7 @@ Public Module SplashReport
 
     Friend _Progress As Integer = 0
     Friend _ProgressText As String = ""
+    Friend _KernelBooted As Boolean = False
 
     ''' <summary>
     ''' The progress indicator of the kernel 
@@ -40,21 +41,38 @@ Public Module SplashReport
     End Property
 
     ''' <summary>
-    ''' Reports the progress for the splash screen while the kernel is booting
+    ''' Did the kernel boot successfully?
+    ''' </summary>
+    Public ReadOnly Property KernelBooted As Boolean
+        Get
+            Return _KernelBooted
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Reports the progress for the splash screen while the kernel is booting.
     ''' </summary>
     ''' <param name="Text">The progress text to indicate how did the kernel progress</param>
     ''' <param name="Progress">The progress indicator of the kernel</param>
-    Friend Sub ReportProgress(Text As String, Progress As Integer, Optional ColTypes As ColTypes = ColTypes.Neutral)
-        If CurrentSplashInfo.DisplaysProgress Then
-            If EnableSplash Then
-                CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY)
-            ElseIf Not QuietKernel Then
-                Write(Text, True, ColTypes)
+    ''' <remarks>
+    ''' If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+    ''' it will report the progress to the splash system.
+    ''' </remarks>
+    Friend Sub ReportProgress(Text As String, Progress As Integer, ColTypes As ColTypes, ParamArray Vars() As String)
+        If Not KernelBooted Then
+            If CurrentSplashInfo.DisplaysProgress Then
+                If EnableSplash Then
+                    CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY)
+                ElseIf Not QuietKernel Then
+                    Write(Text, True, ColTypes, Vars)
+                End If
             End If
+            _Progress += Progress
+            _ProgressText = Text
+            If _Progress >= 100 Then _Progress = 100
+        Else
+            Write(Text, True, ColTypes, Vars)
         End If
-        _Progress += Progress
-        _ProgressText = Text
-        If _Progress > 100 Then _Progress = 100
     End Sub
 
 End Module
