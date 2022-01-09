@@ -52,12 +52,7 @@ Public Module KernelTools
 
         Try
             'Unquiet
-            If EnteredArguments IsNot Nothing Then
-                If EnteredArguments.Contains("quiet") Then
-                    Wdbg(DebugLevel.I, "Removing quiet...")
-                    Console.SetOut(DefConsoleOut)
-                End If
-            End If
+            QuietKernel = False
 
             'Check error types and its capabilities
             Wdbg(DebugLevel.I, "Error type: {0}", ErrorType)
