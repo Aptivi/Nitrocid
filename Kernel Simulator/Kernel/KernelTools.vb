@@ -45,7 +45,6 @@ Public Module KernelTools
     ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     Public Sub KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
-        Dim StopPanicAndGoToDoublePanic As Boolean
         KernelErrored = True
         LastKernelErrorException = Exc
         NotifyKernelError = True
@@ -57,18 +56,20 @@ Public Module KernelTools
             'Check error types and its capabilities
             Wdbg(DebugLevel.I, "Error type: {0}", ErrorType)
             If [Enum].IsDefined(GetType(KernelErrorLevel), ErrorType) Then
-                If (ErrorType = KernelErrorLevel.U Or ErrorType = KernelErrorLevel.D) And RebootTime > 5 Then
-                    'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
-                    'generate a second kernel error stating that there is something wrong with the reboot time.
-                    Wdbg(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
-                    KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
-                    StopPanicAndGoToDoublePanic = True
-                ElseIf (ErrorType = KernelErrorLevel.U Or ErrorType = KernelErrorLevel.D) And Reboot = False Then
-                    'If the error type is unrecoverable, or double, and the rebooting is false where it should
-                    'not be false, then it can deal with this issue by enabling reboot.
-                    Wdbg(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType)
-                    Write(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), True, ColTypes.Uncontinuable, ErrorType)
-                    Reboot = True
+                If ErrorType = KernelErrorLevel.U Or ErrorType = KernelErrorLevel.D Then
+                    If RebootTime > 5 Then
+                        'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
+                        'generate a second kernel error stating that there is something wrong with the reboot time.
+                        Wdbg(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
+                        KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
+                        Exit Sub
+                    ElseIf Not Reboot Then
+                        'If the error type is unrecoverable, or double, and the rebooting is false where it should
+                        'not be false, then it can deal with this issue by enabling reboot.
+                        Wdbg(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType)
+                        Write(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), True, ColTypes.Uncontinuable, ErrorType)
+                        Reboot = True
+                    End If
                 End If
                 If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
@@ -80,7 +81,7 @@ Public Module KernelTools
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
                 Wdbg(DebugLevel.E, "Error type {0} is not valid.", ErrorType)
                 KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), Nothing, CStr(ErrorType))
-                StopPanicAndGoToDoublePanic = True
+                Exit Sub
             End If
 
             'Format the "Description" string variable
@@ -92,46 +93,43 @@ Public Module KernelTools
             'Make a dump file
             GeneratePanicDump(Description, ErrorType, Exc)
 
-            'Check error capabilities
-            If ErrorType = KernelErrorLevel.D Then
-                'If the error type is Double
-                Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.")
-                Write(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
-                Thread.Sleep(RebootTime * 1000)
-                Wdbg(DebugLevel.F, "Rebooting")
-                PowerManage(PowerMode.Reboot)
-            ElseIf StopPanicAndGoToDoublePanic = True Then
-                'Switch to Double Panic
-                StopPanicAndGoToDoublePanic = False
-                Exit Sub
-            ElseIf ErrorType = KernelErrorLevel.C And Reboot = True Then
-                'Check if error is Continuable and reboot is enabled
-                Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.")
-                Write(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.") + vbNewLine +
-                  DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
-                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Continuable)
-                Console.ReadKey()
-            ElseIf ErrorType = KernelErrorLevel.C And Reboot = False Then
-                'Check if error is Continuable and reboot is disabled
-                KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
-                Write(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
-                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Continuable)
-                Console.ReadKey()
-            ElseIf (Reboot = False And ErrorType <> KernelErrorLevel.D) Or (Reboot = False And ErrorType <> KernelErrorLevel.C) Then
-                'If rebooting is disabled and the error type does not equal Double or Continuable
-                Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
-                Write(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
-                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Uncontinuable)
-                Console.ReadKey()
-                PowerManage(PowerMode.Shutdown)
-            Else
-                'Everything else.
-                Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
-                Write(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
-                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Uncontinuable)
-                Thread.Sleep(RebootTime * 1000)
-                PowerManage(PowerMode.Reboot)
-            End If
+            'Check error type
+            Select Case ErrorType
+                Case KernelErrorLevel.D
+                    'Double panic printed and reboot initiated
+                    Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.")
+                    Write(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
+                    Thread.Sleep(RebootTime * 1000)
+                    Wdbg(DebugLevel.F, "Rebooting")
+                    PowerManage(PowerMode.Reboot)
+                Case KernelErrorLevel.C
+                    If Reboot Then
+                        'Continuable kernel errors shouldn't cause the kernel to reboot.
+                        Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.")
+                        Write(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), True, ColTypes.Warning, ErrorType)
+                    End If
+                    'Print normally
+                    KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                    Write(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
+                    If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Continuable)
+                    Console.ReadKey()
+                Case Else
+                    If Reboot Then
+                        'Offer the user to wait for the set time interval before the kernel reboots.
+                        Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
+                        Write(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
+                        If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Uncontinuable)
+                        Thread.Sleep(RebootTime * 1000)
+                        PowerManage(PowerMode.Reboot)
+                    Else
+                        'If rebooting is disabled, offer the user to shutdown the kernel
+                        Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
+                        Write(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
+                        If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Uncontinuable)
+                        Console.ReadKey()
+                        PowerManage(PowerMode.Shutdown)
+                    End If
+            End Select
         Catch ex As Exception
             WStkTrc(ex)
             KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
