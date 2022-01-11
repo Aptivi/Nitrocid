@@ -21,10 +21,25 @@ Public Module UESHVariables
     Public ShellVariables As New Dictionary(Of String, String)
 
     ''' <summary>
+    ''' Checks to see if the variable name starts with the correct format
+    ''' </summary>
+    ''' <param name="var">A $variable name</param>
+    ''' <returns>Sanitized variable name</returns>
+    Public Function SanitizeVariableName(var As String) As String
+        Wdbg(DebugLevel.I, "Sanitizing variable {0}...", var)
+        If Not var.StartsWith("$") Then
+            Wdbg(DebugLevel.W, "Unsanitized variable found. Prepending $...")
+            var = $"${var}"
+        End If
+        Return var
+    End Function
+
+    ''' <summary>
     ''' Initializes a $variable
     ''' </summary>
     ''' <param name="var">A $variable</param>
     Public Sub InitializeVariable(var As String)
+        var = SanitizeVariableName(var)
         If Not ShellVariables.ContainsKey(var) Then
             ShellVariables.Add(var, "")
             Wdbg(DebugLevel.I, "Initialized variable {0}", var)
@@ -60,6 +75,7 @@ Public Module UESHVariables
     ''' <returns>A value of $variable, or a variable name if not found</returns>
     Public Function GetVariable(var As String) As String
         Try
+            var = SanitizeVariableName(var)
             Return ShellVariables(var)
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message)
@@ -74,6 +90,7 @@ Public Module UESHVariables
     ''' <param name="value">A value to set to $variable</param>
     Public Function SetVariable(var As String, value As String) As Boolean
         Try
+            var = SanitizeVariableName(var)
             If Not ShellVariables.ContainsKey(var) Then InitializeVariable(var)
             ShellVariables(var) = value
             Wdbg(DebugLevel.I, "Set variable {0} to {1}", var, value)
@@ -91,6 +108,7 @@ Public Module UESHVariables
     ''' <param name="values">A set of values to set</param>
     Public Function SetVariables(var As String, values() As String) As Boolean
         Try
+            var = SanitizeVariableName(var)
             For ValueIndex As Integer = 0 To values.Length - 1
                 Dim VarName As String = $"{var}[{ValueIndex}]"
                 Dim VarValue As String = values(ValueIndex)
