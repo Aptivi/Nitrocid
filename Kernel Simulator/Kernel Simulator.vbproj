@@ -486,6 +486,9 @@
     <Compile Include="Network\Mail\MailShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Scripting\Interaction\UESHCommands.vb" />
+    <Compile Include="Scripting\UESHConditional.vb" />
+    <Compile Include="Scripting\UESHConditions.vb" />
+    <Compile Include="Scripting\UESHOperators.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
     <Compile Include="Shell\Commands\AddUser.vb" />
@@ -505,6 +508,7 @@
     <Compile Include="Shell\Commands\ChMotd.vb" />
     <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
     <Compile Include="Shell\Commands\Combine.vb" />
+    <Compile Include="Shell\Commands\If.vb" />
     <Compile Include="Shell\Commands\Find.vb" />
     <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
     <Compile Include="Shell\Commands\LangMan.vb" />

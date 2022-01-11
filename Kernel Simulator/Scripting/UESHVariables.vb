@@ -57,14 +57,14 @@ Public Module UESHVariables
     ''' Gets a value of a $variable
     ''' </summary>
     ''' <param name="var">A $variable</param>
-    ''' <returns>A value of $variable, or an empty string if not found</returns>
+    ''' <returns>A value of $variable, or a variable name if not found</returns>
     Public Function GetVariable(var As String) As String
         Try
             Return ShellVariables(var)
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message)
         End Try
-        Return ""
+        Return var
     End Function
 
     ''' <summary>
