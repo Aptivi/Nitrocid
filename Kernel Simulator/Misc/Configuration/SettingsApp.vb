@@ -364,6 +364,8 @@ Public Module SettingsApp
                             AnswerString = ReadLineLong()
                         ElseIf KeyType = SettingsKeyType.SMaskedString Then
                             AnswerString = ReadLineNoInput("*")
+                        ElseIf KeyType = SettingsKeyType.SChar Then
+                            AnswerString = Console.ReadKey().KeyChar
                         Else
                             AnswerString = Console.ReadLine
                         End If
@@ -443,8 +445,8 @@ Public Module SettingsApp
                 ElseIf KeyType = SettingsKeyType.SUnknown Then
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
-                ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Or KeyType = SettingsKeyType.SMaskedString Then
-                    Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String type. Setting variable...")
+                ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Or KeyType = SettingsKeyType.SMaskedString Or KeyType = SettingsKeyType.SChar Then
+                    Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString)
 
                     'Check to see if written answer is empty
                     If String.IsNullOrWhiteSpace(AnswerString) Then

@@ -60,4 +60,8 @@ Enum SettingsKeyType
     ''' The value is of <see cref="String"/>, but masked. Useful for passwords.
     ''' </summary>
     SMaskedString
+    ''' <summary>
+    ''' The value is of <see cref="Char"/> and only accepts one character.
+    ''' </summary>
+    SChar
 End Enum

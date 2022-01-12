@@ -213,7 +213,7 @@
             },
             {
                 "Name": "Line character",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "LinesLineChar",
                 "Description": "A character to form a line. Be sure to only input one character."
             },
@@ -641,145 +641,145 @@
             },
             {
                 "Name": "Upper left corner character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperLeftCornerCharHours",
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper left corner character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperLeftCornerCharMinutes",
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper left corner character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperLeftCornerCharSeconds",
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower left corner character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerLeftCornerCharHours",
                 "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower left corner character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerLeftCornerCharMinutes",
                 "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower left corner character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerLeftCornerCharSeconds",
                 "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper right corner character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperRightCornerCharHours",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper right corner character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperRightCornerCharMinutes",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper right corner character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperRightCornerCharSeconds",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerRightCornerCharHours",
                 "Description": "A character that resembles the lower right corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerRightCornerCharMinutes",
                 "Description": "A character that resembles the lower right corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerRightCornerCharSeconds",
                 "Description": "A character that resembles the lower right corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper frame character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperFrameCharHours",
                 "Description": "A character that resembles the upper frame. Be sure to only input one character."
             },
             {
                 "Name": "Upper frame character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperFrameCharMinutes",
                 "Description": "A character that resembles the upper frame. Be sure to only input one character."
             },
             {
                 "Name": "Upper frame character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockUpperFrameCharSeconds",
                 "Description": "A character that resembles the upper frame. Be sure to only input one character."
             },
             {
                 "Name": "Lower frame character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerFrameCharHours",
                 "Description": "A character that resembles the lower frame. Be sure to only input one character."
             },
             {
                 "Name": "Lower frame character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerFrameCharMinutes",
                 "Description": "A character that resembles the lower frame. Be sure to only input one character."
             },
             {
                 "Name": "Lower frame character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLowerFrameCharSeconds",
                 "Description": "A character that resembles the lower frame. Be sure to only input one character."
             },
             {
                 "Name": "Left frame character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLeftFrameCharHours",
                 "Description": "A character that resembles the left frame. Be sure to only input one character."
             },
             {
                 "Name": "Left frame character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLeftFrameCharMinutes",
                 "Description": "A character that resembles the left frame. Be sure to only input one character."
             },
             {
                 "Name": "Left frame character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockLeftFrameCharSeconds",
                 "Description": "A character that resembles the left frame. Be sure to only input one character."
             },
             {
                 "Name": "Right frame character for hours bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockRightFrameCharHours",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
             {
                 "Name": "Right frame character for minutes bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockRightFrameCharMinutes",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
             {
                 "Name": "Right frame character for seconds bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "ProgressClockRightFrameCharSeconds",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
@@ -1782,49 +1782,49 @@
             },
             {
                 "Name": "Upper left corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampUpperLeftCornerChar",
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower left corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampLowerLeftCornerChar",
                 "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper right corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampUpperRightCornerChar",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampLowerRightCornerChar",
                 "Description": "A character that resembles the lower right corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampUpperFrameChar",
                 "Description": "A character that resembles the upper frame. Be sure to only input one character."
             },
             {
                 "Name": "Lower frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampLowerFrameChar",
                 "Description": "A character that resembles the lower frame. Be sure to only input one character."
             },
             {
                 "Name": "Left frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampLeftFrameChar",
                 "Description": "A character that resembles the left frame. Be sure to only input one character."
             },
             {
                 "Name": "Right frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "RampRightFrameChar",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
@@ -2155,49 +2155,49 @@
             },
             {
                 "Name": "Upper left corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotUpperLeftCornerChar",
                 "Description": "A character that resembles the upper left corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower left corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotLowerLeftCornerChar",
                 "Description": "A character that resembles the lower left corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper right corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotUpperRightCornerChar",
                 "Description": "A character that resembles the upper right corner. Be sure to only input one character."
             },
             {
                 "Name": "Lower right corner character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotLowerRightCornerChar",
                 "Description": "A character that resembles the lower right corner. Be sure to only input one character."
             },
             {
                 "Name": "Upper frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotUpperFrameChar",
                 "Description": "A character that resembles the upper frame. Be sure to only input one character."
             },
             {
                 "Name": "Lower frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotLowerFrameChar",
                 "Description": "A character that resembles the lower frame. Be sure to only input one character."
             },
             {
                 "Name": "Left frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotLeftFrameChar",
                 "Description": "A character that resembles the left frame. Be sure to only input one character."
             },
             {
                 "Name": "Right frame character for ramp bar",
-                "Type": "SString",
+                "Type": "SChar",
                 "Variable": "BarRotRightFrameChar",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
