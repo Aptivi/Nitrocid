@@ -54,7 +54,7 @@ Public Module FieldManager
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
+            Throw New Exceptions.NoSuchReflectionVariableException(DoTranslation("Variable {0} is not found on any of the modules."), Variable)
         End If
     End Sub
 
@@ -92,8 +92,7 @@ Public Module FieldManager
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
-            Return Nothing
+            Throw New Exceptions.NoSuchReflectionVariableException(DoTranslation("Variable {0} is not found on any of the modules."), Variable)
         End If
     End Function
 
@@ -141,14 +140,12 @@ Public Module FieldManager
             Else
                 'Property not found on any of the "flag" modules.
                 Wdbg(DebugLevel.I, "Property {0} not found.", [Property])
-                Write(DoTranslation("Property {0} is not found on any of the modules."), True, ColTypes.Error, [Property])
-                Return Nothing
+                Throw New Exceptions.NoSuchReflectionPropertyException(DoTranslation("Property {0} is not found on any of the modules."), [Property])
             End If
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
-            Return Nothing
+            Throw New Exceptions.NoSuchReflectionVariableException(DoTranslation("Variable {0} is not found on any of the modules."), Variable)
         End If
     End Function
 
