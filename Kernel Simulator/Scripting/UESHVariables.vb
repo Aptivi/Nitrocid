@@ -130,4 +130,18 @@ Public Module UESHVariables
         Return False
     End Function
 
+    ''' <summary>
+    ''' Removes a variable from the shell variables dictionary
+    ''' </summary>
+    ''' <param name="var">Target variable</param>
+    Public Function RemoveVariable(var As String) As Boolean
+        Try
+            var = SanitizeVariableName(var)
+            Return ShellVariables.Remove(var)
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Error removing variable {0}: {1}", var, ex.Message)
+        End Try
+        Return False
+    End Function
+
 End Module
