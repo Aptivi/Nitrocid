@@ -18,7 +18,7 @@
 
 Public Module UESHVariables
 
-    Public ShellVariables As New Dictionary(Of String, String)
+    Friend ShellVariables As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Checks to see if the variable name starts with the correct format
@@ -81,6 +81,13 @@ Public Module UESHVariables
             Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message)
         End Try
         Return var
+    End Function
+
+    ''' <summary>
+    ''' Gets the variables and returns the available variables as a dictionary
+    ''' </summary>
+    Public Function GetVariables() As Dictionary(Of String, String)
+        Return ShellVariables
     End Function
 
     ''' <summary>
