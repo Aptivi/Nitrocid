@@ -33,7 +33,7 @@ Class PutCommand
                         If ListArgs.Length > 2 Then 'Username specified
                             Credentials.UserName = ListArgs(2)
                             Write(DoTranslation("Enter password: "), False, ColTypes.Input)
-                            Credentials.Password = ReadLineNoInput("*")
+                            Credentials.Password = ReadLineNoInput()
                             Console.WriteLine()
                         End If
                         Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)

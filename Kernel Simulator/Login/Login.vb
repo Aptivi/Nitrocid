@@ -182,7 +182,7 @@ Public Module Login
                 End If
 
                 'Get input
-                Dim answerpass As String = ReadLineNoInput("*"c)
+                Dim answerpass As String = ReadLineNoInput()
                 Console.WriteLine()
 
                 'Compute password hash

@@ -869,7 +869,8 @@ Public Module Config
                     {"Show the commands count on help", ShowCommandsCount},
                     {"Show the shell commands count on help", ShowShellCommandsCount},
                     {"Show the mod commands count on help", ShowModCommandsCount},
-                    {"Show the aliases count on help", ShowShellAliasesCount}
+                    {"Show the aliases count on help", ShowShellAliasesCount},
+                    {"Password mask character", CurrentMask}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1602,6 +1603,7 @@ Public Module Config
             ShowShellCommandsCount = If(ConfigToken("Misc")?("Show the shell commands count on help"), True)
             ShowModCommandsCount = If(ConfigToken("Misc")?("Show the mod commands count on help"), True)
             ShowShellAliasesCount = If(ConfigToken("Misc")?("Show the aliases count on help"), True)
+            CurrentMask = If(ConfigToken("Misc")?("Password mask character"), "*"c)
 
             'Check to see if the config needs fixes
             RepairConfig()

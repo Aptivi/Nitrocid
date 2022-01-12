@@ -50,7 +50,7 @@ Public Module FTPTools
         End If
 
         'Get input
-        FtpPass = ReadLineNoInput("*")
+        FtpPass = ReadLineNoInput()
         Console.WriteLine()
 
         'Set up credentials

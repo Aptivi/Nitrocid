@@ -363,7 +363,7 @@ Public Module SettingsApp
                         If KeyType = SettingsKeyType.SLongString Then
                             AnswerString = ReadLineLong()
                         ElseIf KeyType = SettingsKeyType.SMaskedString Then
-                            AnswerString = ReadLineNoInput("*")
+                            AnswerString = ReadLineNoInput()
                         ElseIf KeyType = SettingsKeyType.SChar Then
                             AnswerString = Console.ReadKey().KeyChar
                         Else

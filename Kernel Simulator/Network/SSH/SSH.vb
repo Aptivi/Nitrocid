@@ -96,7 +96,7 @@ Public Module SSH
                     If FileExists(PrivateKeyFile) Then
                         'Ask for passphrase
                         Write(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
-                        PrivateKeyPassphrase = ReadLineNoInput("*")
+                        PrivateKeyPassphrase = ReadLineNoInput()
                         Console.WriteLine()
 
                         'Add authentication method
@@ -126,7 +126,7 @@ Public Module SSH
 
                 'Ask for password
                 Write(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
-                Pass = ReadLineNoInput("*")
+                Pass = ReadLineNoInput()
                 Console.WriteLine()
 
                 'Add authentication method

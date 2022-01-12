@@ -21,6 +21,22 @@ Imports System.IO
 Public Module Input
 
     ''' <summary>
+    ''' Current mask character
+    ''' </summary>
+    Public CurrentMask As String = "*"c
+
+    ''' <summary>
+    ''' Reads the next line of characters from the standard input stream without showing input being written by user.
+    ''' </summary>
+    Public Function ReadLineNoInput() As String
+        If Not String.IsNullOrEmpty(CurrentMask) Then
+            Return ReadLineNoInput(CurrentMask(0))
+        Else
+            Return ReadLineNoInput("")
+        End If
+    End Function
+
+    ''' <summary>
     ''' Reads the next line of characters from the standard input stream without showing input being written by user.
     ''' </summary>
     ''' <param name="MaskChar">Specifies the password mask character</param>

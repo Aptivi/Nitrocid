@@ -84,7 +84,7 @@ Module MailLogin
         Else
             Write(DoTranslation("Enter password: "), False, ColTypes.Input)
         End If
-        Mail_Authentication.Password = ReadLineNoInput("*")
+        Mail_Authentication.Password = ReadLineNoInput()
         Console.WriteLine()
         Dim DynamicAddressIMAP As String = ServerDetect(Username, ServerType.IMAP)
         Dim DynamicAddressSMTP As String = ServerDetect(Username, ServerType.SMTP)

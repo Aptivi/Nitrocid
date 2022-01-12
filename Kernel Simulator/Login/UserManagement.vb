@@ -442,7 +442,7 @@ Public Module UserManagement
         While [Step] = 2
             Write(DoTranslation("Write your password."), True, ColTypes.Neutral)
             Write(">> ", False, ColTypes.Input)
-            AnswerPassword = ReadLineNoInput("*"c)
+            AnswerPassword = ReadLineNoInput()
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
@@ -484,7 +484,7 @@ Public Module UserManagement
         While [Step] = 4
             Write(DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), True, ColTypes.Neutral)
             Write(">> ", False, ColTypes.Input)
-            AnswerRootPassword = ReadLineNoInput("*"c)
+            AnswerRootPassword = ReadLineNoInput()
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then

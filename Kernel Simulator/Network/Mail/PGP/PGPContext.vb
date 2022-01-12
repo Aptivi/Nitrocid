@@ -33,7 +33,7 @@ Public Class PGPContext
         Else
             Write(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
         End If
-        Dim Password As String = ReadLineNoInput("*")
+        Dim Password As String = ReadLineNoInput()
         Console.WriteLine()
         Return Password
     End Function

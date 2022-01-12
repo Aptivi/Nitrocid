@@ -32,7 +32,7 @@ Class Get_Command
                         If ListArgs.Length > 1 Then 'Username specified
                             Credentials.UserName = ListArgs(1)
                             Write(DoTranslation("Enter password: "), False, ColTypes.Input)
-                            Credentials.Password = ReadLineNoInput("*")
+                            Credentials.Password = ReadLineNoInput()
                             Console.WriteLine()
                         End If
                         Write(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)

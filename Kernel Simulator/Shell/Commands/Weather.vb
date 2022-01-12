@@ -33,7 +33,7 @@ Class WeatherCommand
             ElseIf String.IsNullOrEmpty(APIKey) Then
                 Write(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
                 Write(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
-                APIKey = ReadLineNoInput("*")
+                APIKey = ReadLineNoInput()
                 Forecast.ApiKey = APIKey
                 Console.WriteLine()
             End If

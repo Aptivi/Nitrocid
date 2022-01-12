@@ -1272,6 +1272,12 @@
                 "Type": "SBoolean",
                 "Variable": "ShowShellAliasesCount",
                 "Description": "Show the aliases count on help"
+            },
+            {
+                "Name": "Password mask character",
+                "Type": "SChar",
+                "Variable": "CurrentMask",
+                "Description": "A character that masks the password. Leave blank for more security."
             }
         ]
     }
