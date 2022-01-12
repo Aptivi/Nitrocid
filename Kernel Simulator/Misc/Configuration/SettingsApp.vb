@@ -581,7 +581,6 @@ Public Module SettingsApp
     ''' <summary>
     ''' Checks all the settings variables to see if they can be parsed
     ''' </summary>
-    ''' <returns></returns>
     Public Function CheckSettingsVariables() As Dictionary(Of String, Boolean)
         Dim SettingsToken As JToken = JToken.Parse(My.Resources.SettingsEntries)
         Dim SaverSettingsToken As JToken = JToken.Parse(My.Resources.ScreensaverSettingsEntries)
@@ -616,18 +615,6 @@ Public Module SettingsApp
 
         'Return the results
         Return Results
-    End Function
-
-    ''' <summary>
-    ''' Checks the specified variable if it exists
-    ''' </summary>
-    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-    Public Function CheckField(Variable As String) As Boolean
-        'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
-
-        'Set the variable if found
-        Return TargetField IsNot Nothing
     End Function
 
     ''' <summary>

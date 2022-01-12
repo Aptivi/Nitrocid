@@ -156,4 +156,16 @@ Public Module FieldManager
         Next
     End Function
 
+    ''' <summary>
+    ''' Checks the specified variable if it exists
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    Public Function CheckField(Variable As String) As Boolean
+        'Get field for specified variable
+        Dim TargetField As FieldInfo = GetField(Variable)
+
+        'Set the variable if found
+        Return TargetField IsNot Nothing
+    End Function
+
 End Module
