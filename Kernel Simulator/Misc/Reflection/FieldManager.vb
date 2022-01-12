@@ -25,10 +25,24 @@ Public Module FieldManager
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
+    Public Sub SetValue(Variable As String, VariableValue As Object)
+        SetValue(Variable, VariableValue, Nothing)
+    End Sub
+
+    ''' <summary>
+    ''' Sets the value of a variable to the new value dynamically
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <param name="VariableValue">New value of variable</param>
     ''' <param name="VariableType">Variable type</param>
     Public Sub SetValue(Variable As String, VariableValue As Object, VariableType As Type)
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable, VariableType)
+        Dim TargetField As FieldInfo
+        If VariableType IsNot Nothing Then
+            TargetField = GetField(Variable, VariableType)
+        Else
+            TargetField = GetField(Variable)
+        End If
 
         'Set the variable if found
         If TargetField IsNot Nothing Then
@@ -48,11 +62,25 @@ Public Module FieldManager
     ''' Gets the value of a variable dynamically 
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <returns>Value of a variable</returns>
+    Public Function GetValue(Variable As String) As Object
+        Return GetValue(Variable, Nothing)
+    End Function
+
+    ''' <summary>
+    ''' Gets the value of a variable dynamically 
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableType">Variable type</param>
     ''' <returns>Value of a variable</returns>
     Public Function GetValue(Variable As String, VariableType As Type) As Object
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable, VariableType)
+        Dim TargetField As FieldInfo
+        If VariableType IsNot Nothing Then
+            TargetField = GetField(Variable, VariableType)
+        Else
+            TargetField = GetField(Variable)
+        End If
 
         'Get the variable if found
         If TargetField IsNot Nothing Then
@@ -74,21 +102,42 @@ Public Module FieldManager
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="Property">Property name from within the variable type</param>
+    ''' <returns>Value of a property</returns>
+    Public Function GetPropertyValueInVariable(Variable As String, [Property] As String) As Object
+        Return GetPropertyValueInVariable(Variable, [Property], Nothing)
+    End Function
+
+    ''' <summary>
+    ''' Gets the value of a property in the type of a variable dynamically
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <param name="Property">Property name from within the variable type</param>
     ''' <param name="VariableType">Variable type</param>
     ''' <returns>Value of a property</returns>
     Public Function GetPropertyValueInVariable(Variable As String, [Property] As String, VariableType As Type) As Object
         'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable, VariableType)
+        Dim TargetField As FieldInfo
+        If VariableType IsNot Nothing Then
+            TargetField = GetField(Variable, VariableType)
+        Else
+            TargetField = GetField(Variable)
+        End If
 
         'Get the variable if found
         If TargetField IsNot Nothing Then
             'Now, get the property
             Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
             Dim TargetProperty As PropertyInfo = TargetField.FieldType.GetProperty([Property])
+            Dim TargetValue As Object
+            If VariableType IsNot Nothing Then
+                TargetValue = GetValue(Variable, VariableType)
+            Else
+                TargetValue = GetValue(Variable)
+            End If
 
             'Get the property value if found
             If TargetProperty IsNot Nothing Then
-                Return TargetProperty.GetValue(GetValue(Variable, VariableType))
+                Return TargetProperty.GetValue(TargetValue)
             Else
                 'Property not found on any of the "flag" modules.
                 Wdbg(DebugLevel.I, "Property {0} not found.", [Property])

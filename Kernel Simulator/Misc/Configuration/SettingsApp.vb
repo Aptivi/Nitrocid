@@ -622,22 +622,9 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
+    <Obsolete("Use SetValue(String, Object) instead.")>
     Public Sub SetConfigValueField(Variable As String, VariableValue As Object)
-        'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
-
-        'Set the variable if found
-        If TargetField IsNot Nothing Then
-            'The "obj" description says this: "The object whose field value will be set."
-            'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-            'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
-            TargetField.SetValue(Variable, VariableValue)
-        Else
-            'Variable not found on any of the "flag" modules.
-            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
-        End If
+        SetValue(Variable, VariableValue)
     End Sub
 
     ''' <summary>
@@ -645,23 +632,9 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Value of a variable</returns>
+    <Obsolete("Use GetValue(String) instead.")>
     Public Function GetConfigValueField(Variable As String) As Object
-        'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
-
-        'Get the variable if found
-        If TargetField IsNot Nothing Then
-            'The "obj" description says this: "The object whose field value will be returned."
-            'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-            'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
-            Return TargetField.GetValue(Variable)
-        Else
-            'Variable not found on any of the "flag" modules.
-            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
-            Return Nothing
-        End If
+        Return GetValue(Variable)
     End Function
 
     ''' <summary>
@@ -670,31 +643,9 @@ Public Module SettingsApp
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="Property">Property name from within the variable type</param>
     ''' <returns>Value of a property</returns>
+    <Obsolete("Use GetPropertyValueInVariable(String, String) instead.")>
     Public Function GetConfigPropertyValueInVariableField(Variable As String, [Property] As String) As Object
-        'Get field for specified variable
-        Dim TargetField As FieldInfo = GetField(Variable)
-
-        'Get the variable if found
-        If TargetField IsNot Nothing Then
-            'Now, get the property
-            Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
-            Dim TargetProperty As PropertyInfo = TargetField.FieldType.GetProperty([Property])
-
-            'Get the property value if found
-            If TargetProperty IsNot Nothing Then
-                Return TargetProperty.GetValue(GetConfigValueField(Variable))
-            Else
-                'Property not found on any of the "flag" modules.
-                Wdbg(DebugLevel.I, "Property {0} not found.", [Property])
-                Write(DoTranslation("Property {0} is not found on any of the modules."), True, ColTypes.Error, [Property])
-                Return Nothing
-            End If
-        Else
-            'Variable not found on any of the "flag" modules.
-            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
-            Return Nothing
-        End If
+        Return GetPropertyValueInVariable(Variable, [Property])
     End Function
 
 End Module
