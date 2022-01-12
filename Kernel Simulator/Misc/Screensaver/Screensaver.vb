@@ -70,16 +70,16 @@ Public Module Screensaver
     ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
     ''' </summary>
     Sub HandleTimeout(sender As Object, e As DoWorkEventArgs) Handles Timeout.DoWork
-        Dim count As Integer
-        Dim oldcursor As Integer = Console.CursorLeft
+        Dim CountedTime As Integer
+        Dim OldCursorLeft As Integer = Console.CursorLeft
         While True
             If Not ScrnTimeReached Then
-                For count = 0 To ScrnTimeout
+                For CountedTime = 0 To ScrnTimeout
                     Thread.Sleep(1)
-                    If oldcursor <> Console.CursorLeft Then
-                        count = 0
+                    If Console.KeyAvailable Or OldCursorLeft <> Console.CursorLeft Then
+                        CountedTime = 0
                     End If
-                    oldcursor = Console.CursorLeft
+                    OldCursorLeft = Console.CursorLeft
                 Next
                 If Not RebootRequested Then
                     Wdbg(DebugLevel.W, "Screen time has reached.")
