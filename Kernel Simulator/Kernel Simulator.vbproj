@@ -237,6 +237,7 @@
     <Compile Include="Misc\Calendar\Reminders\ReminderManager.vb" />
     <Compile Include="Misc\Configuration\ConfigTools.vb" />
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
+    <Compile Include="Misc\Configuration\SettingsKeyType.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
