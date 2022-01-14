@@ -277,7 +277,6 @@ Public Module KernelTools
     Sub ResetEverything()
         'Reset every variable below
         If ArgsInjected = False Then EnteredArguments.Clear()
-        Test_ExitFlag = False
         UserPermissions.Clear()
         Reminders.Clear()
         CalendarEvents.Clear()

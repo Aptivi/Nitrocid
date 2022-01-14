@@ -220,7 +220,6 @@ Public Module Login
     ''' </summary>
     ''' <param name="signedInUser">A specified username</param>
     Public Sub SignIn(signedInUser As String)
-
         'Release lock
         If LockMode Then
             Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...")
@@ -245,7 +244,8 @@ Public Module Login
 
         'Initialize shell
         Wdbg(DebugLevel.I, "Shell is being initialized...")
-        InitializeShell()
+        StartShell(ShellCommandType.Shell)
+        PurgeShells()
     End Sub
 
 End Module

@@ -21,7 +21,7 @@ Class JsonShell_ExitNoSaveCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        JsonShell_Exiting = True
+        KillShell()
     End Sub
 
 End Class

@@ -16,18 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ZipShellCommand
-    Inherits CommandExecutor
-    Implements ICommand
+''' <summary>
+''' Base shell functions
+''' </summary>
+Public Interface IShell
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ListArgs(0) = NeutralizePath(ListArgs(0))
-        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-        If FileExists(ListArgs(0)) Then
-            StartShell(ShellCommandType.ZIPShell, ListArgs(0))
-        Else
-            Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
-        End If
-    End Sub
+    ''' <summary>
+    ''' The shell type
+    ''' </summary>
+    ReadOnly Property ShellType As ShellCommandType
+    ''' <summary>
+    ''' If true, will exit the shell
+    ''' </summary>
+    Property Bail As Boolean
+    ''' <summary>
+    ''' The shell initializer
+    ''' </summary>
+    Sub InitializeShell(ParamArray ShellArgs() As Object)
 
-End Class
+End Interface

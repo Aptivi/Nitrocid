@@ -16,11 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
 Imports MailKit
 Imports MimeKit.Text
 
-Public Module MailShell
+Public Module MailShellCommon
 
     'Variables
     Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, "Changes current mail directory", {"<folder>"}, True, 1, New Mail_CdCommand)},
@@ -53,95 +52,7 @@ Public Module MailShell
     Public Mail_ProgressStyle As String = ""
     Public Mail_ProgressStyleSingle As String = ""
     Public ReadOnly Mail_Progress As New MailTransferProgress
-    Friend ExitRequested, KeepAlive As Boolean
+    Friend KeepAlive As Boolean
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
-
-    ''' <summary>
-    ''' Initializes the shell of the mail client
-    ''' </summary>
-    ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
-    Sub OpenMailShell(Address As String)
-        'Send ping to keep the connection alive
-        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
-        IMAP_NoOp.Start()
-        Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()")
-        If Not Mail_UsePop3 Then
-            Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
-            SMTP_NoOp.Start()
-            Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
-        Else
-            Dim POP3_NoOp As New Thread(AddressOf POP3KeepConnection) With {.Name = "POP3 Keep Connection"}
-            POP3_NoOp.Start()
-            Wdbg(DebugLevel.I, "Made new thread about POP3KeepConnection()")
-        End If
-
-        'Add handler for IMAP and SMTP
-        SwitchCancellationHandler(ShellCommandType.MailShell)
-        KernelEventManager.RaiseIMAPShellInitialized()
-
-        While Not ExitRequested
-            SyncLock MailCancelSync
-                'Populate messages
-                PopulateMessages()
-                If Mail_NotifyNewMail Then InitializeHandlers()
-
-                'Initialize prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
-                If MailShellPromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Address) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                SetInputColor()
-
-                'Listen for a command
-                Dim cmd As String = Console.ReadLine
-                If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                    KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
-                    Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
-                    Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
-                    If MailCommands.ContainsKey(words(0)) Then
-                        Wdbg(DebugLevel.I, "Command found.")
-                        Dim Params As New ExecuteCommandThreadParameters(cmd, ShellCommandType.MailShell, Nothing)
-                        MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
-                        MailStartCommandThread.Start(Params)
-                        MailStartCommandThread.Join()
-                    ElseIf MailModCommands.Contains(words(0)) Then
-                        Wdbg(DebugLevel.I, "Mod command found.")
-                        ExecuteModCommand(cmd)
-                    ElseIf MailShellAliases.Keys.Contains(words(0)) Then
-                        Wdbg(DebugLevel.I, "Mail shell alias command found.")
-                        cmd = cmd.Replace($"""{words(0)}""", words(0))
-                        ExecuteMailAlias(cmd)
-                    ElseIf Not cmd.StartsWith(" ") Then
-                        Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
-                        Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
-                    End If
-                    KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
-                End If
-            End SyncLock
-        End While
-
-        'Disconnect the session
-        IMAP_CurrentDirectory = "Inbox"
-        If KeepAlive Then
-            Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
-        Else
-            Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
-            If Mail_NotifyNewMail Then ReleaseHandlers()
-            IMAP_Client.Disconnect(True)
-            SMTP_Client.Disconnect(True)
-            POP3_Client.Disconnect(True)
-        End If
-        ExitRequested = False
-
-        'Restore handler
-        SwitchCancellationHandler(LastShellType)
-    End Sub
 
 End Module

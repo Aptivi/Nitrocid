@@ -513,6 +513,7 @@
     <Compile Include="Shell\Commands\Find.vb" />
     <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
     <Compile Include="Shell\Commands\LangMan.vb" />
+    <Compile Include="Shell\Commands\Exit.vb" />
     <Compile Include="Shell\Commands\Select.vb" />
     <Compile Include="Shell\Commands\Choice.vb" />
     <Compile Include="Shell\Commands\ChPwd.vb" />
@@ -601,6 +602,7 @@
     <Compile Include="Shell\ShellBase\AliasExecutor.vb" />
     <Compile Include="Shell\ShellBase\CancellationHandlers.vb" />
     <Compile Include="Shell\ShellBase\CancellationInstallers.vb" />
+    <Compile Include="Shell\ShellBase\ShellExecutor.vb" />
     <Compile Include="Shell\ShellBase\CommandExecutor.vb" />
     <Compile Include="Shell\ShellBase\CommandManager.vb" />
     <Compile Include="Shell\ShellBase\ICommand.vb" />
@@ -622,10 +624,22 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Shell\ShellBase\HelpSystem.vb" />
+    <Compile Include="Shell\ShellBase\IShell.vb" />
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="Shell\ShellBase\ShellCommandType.vb" />
+    <Compile Include="Shell\ShellBase\ShellStart.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
+    <Compile Include="Shell\Shells\RSSShell.vb" />
+    <Compile Include="Shell\Shells\JsonShell.vb" />
+    <Compile Include="Shell\Shells\HTTPShell.vb" />
+    <Compile Include="Shell\Shells\ZipShell.vb" />
+    <Compile Include="Shell\Shells\TestShell.vb" />
+    <Compile Include="Shell\Shells\TextShell.vb" />
+    <Compile Include="Shell\Shells\SFTPShell.vb" />
+    <Compile Include="Shell\Shells\MailShell.vb" />
+    <Compile Include="Shell\Shells\FTPShell.vb" />
+    <Compile Include="Shell\Shells\UESHShell.vb" />
     <Compile Include="TestShell\Commands\CheckSettingsEntryVars.vb" />
     <Compile Include="TestShell\Commands\CheckLocalLines.vb" />
     <Compile Include="TestShell\Commands\CheckStrings.vb" />

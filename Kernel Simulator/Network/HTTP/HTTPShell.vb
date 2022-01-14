@@ -19,7 +19,7 @@
 Imports System.Net.Http
 Imports System.Threading
 
-Public Module HTTPShell
+Public Module HTTPShellCommon
 
     Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {{"delete", New CommandInfo("delete", ShellCommandType.HTTPShell, "Deletes content from HTTP server", {"<request>"}, True, 1, New HTTP_DeleteCommand)},
                                                                                  {"exit", New CommandInfo("exit", ShellCommandType.HTTPShell, "Exits HTTP shell and returns to kernel", {}, False, 0, New HTTP_ExitCommand)},
@@ -31,8 +31,6 @@ Public Module HTTPShell
     Public HTTPModCommands As New ArrayList
     Public HTTPShellPromptStyle As String = ""
     Public ClientHTTP As New HttpClient()
-    Friend HTTPExit As Boolean
-    Private HTTPCommand As String
 
     ''' <summary>
     ''' See if the HTTP shell is connected
@@ -44,78 +42,26 @@ Public Module HTTPShell
     End Property
 
     ''' <summary>
-    ''' Initializes the HTTP shell
-    ''' </summary>
-    Public Sub InitiateHttpShell()
-        While Not HTTPExit
-            SyncLock HTTPCancelSync
-                Try
-                    'Prompt for command
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "Preparing prompt...")
-                    If HTTPConnected Then
-                        Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
-                        If HTTPShellPromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
-                        End If
-                    Else
-                        Write("> ", False, ColTypes.Gray)
-                    End If
-
-                    'Run garbage collector
-                    DisposeAll()
-
-                    'Set input color
-                    SetInputColor()
-
-                    'Prompt for command
-                    Wdbg(DebugLevel.I, "Normal shell")
-                    HTTPCommand = Console.ReadLine()
-                    KernelEventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
-
-                    'Parse command
-                    If Not (HTTPCommand = Nothing Or HTTPCommand?.StartsWithAnyOf({" ", "#"})) Then
-                        HTTPGetLine()
-                        KernelEventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
-                    End If
-                Catch ex As Exception
-                    WStkTrc(ex)
-                    Throw New Exceptions.HTTPShellException(DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message)
-                End Try
-            End SyncLock
-        End While
-
-        'Exiting, so reset the site
-        HTTPSite = ""
-    End Sub
-
-    ''' <summary>
     ''' Parses a command line from HTTP shell
     ''' </summary>
-    Public Sub HTTPGetLine()
-        Dim words As String() = HTTPCommand.SplitEncloseDoubleQuotes(" ")
+    Public Sub HTTPGetLine(HttpCommand As String)
+        Dim words As String() = HttpCommand.SplitEncloseDoubleQuotes(" ")
         Wdbg(DebugLevel.I, $"Is the command found? {HTTPCommands.ContainsKey(words(0))}")
         If HTTPCommands.ContainsKey(words(0)) Then
             Wdbg(DebugLevel.I, "Command found.")
-            Dim Params As New ExecuteCommandThreadParameters(HTTPCommand, ShellCommandType.HTTPShell, Nothing)
+            Dim Params As New ExecuteCommandThreadParameters(HttpCommand, ShellCommandType.HTTPShell, Nothing)
             HTTPCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "HTTP Command Thread"}
             HTTPCommandThread.Start(Params)
             HTTPCommandThread.Join()
         ElseIf HTTPModCommands.Contains(words(0)) Then
             Wdbg(DebugLevel.I, "Mod command found.")
-            ExecuteModCommand(HTTPCommand)
+            ExecuteModCommand(HttpCommand)
         ElseIf HTTPShellAliases.Keys.Contains(words(0)) Then
             Wdbg(DebugLevel.I, "HTTP shell alias command found.")
-            HTTPCommand = HTTPCommand.Replace($"""{words(0)}""", words(0))
-            ExecuteHTTPAlias(HTTPCommand)
-        ElseIf Not HTTPCommand.StartsWith(" ") Then
-            Wdbg(DebugLevel.E, "Command {0} not found.", HTTPCommand)
+            HttpCommand = HttpCommand.Replace($"""{words(0)}""", words(0))
+            ExecuteHTTPAlias(HttpCommand)
+        ElseIf Not HttpCommand.StartsWith(" ") Then
+            Wdbg(DebugLevel.E, "Command {0} not found.", HttpCommand)
             Write(DoTranslation("HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub

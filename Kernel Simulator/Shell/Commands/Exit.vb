@@ -16,23 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ChMotdCommand
+Class ExitCommand
     Inherits CommandExecutor
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length > 0 Then
-            If StringArgs = "" Then
-                Write(DoTranslation("Blank message of the day."), True, ColTypes.Error)
-            Else
-                Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
-                SetMOTD(StringArgs, MessageType.MOTD)
-            End If
-        Else
-            StartShell(ShellCommandType.TextShell, GetKernelPath(KernelPathType.MOTD))
-            Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
-            ReadMOTD(MessageType.MOTD)
-        End If
+        KillShell()
     End Sub
 
 End Class

@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
-
 Class JsonShellCommand
     Inherits CommandExecutor
     Implements ICommand
@@ -26,7 +24,7 @@ Class JsonShellCommand
         ListArgs(0) = NeutralizePath(ListArgs(0))
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
         If FileExists(ListArgs(0)) Then
-            InitializeJsonShell(ListArgs(0))
+            StartShell(ShellCommandType.JsonShell, ListArgs(0))
         Else
             Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
         End If

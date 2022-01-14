@@ -18,7 +18,8 @@
 
 Imports System.Threading
 
-Public Module FTPShell
+'TODO: Unify GetLine as we're now moving to IShell to handle shells
+Public Module FTPShellCommon
 
     Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},
                                                                                 {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, "Changes local directory to download to or upload from", {"<directory>"}, True, 1, New FTP_CdlCommand)},
@@ -66,103 +67,11 @@ Public Module FTPShell
     Public FtpDataConnectTimeout As Integer = 15000
     Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
     Friend FtpPass As String
-    Friend FtpExit As Boolean
-    Private FtpCommand As String
-    Private FtpInitialized As Boolean
-
-    ''' <summary>
-    ''' Initializes the FTP shell
-    ''' </summary>
-    ''' <param name="Connects">Specifies whether the FTP client is currently connecting</param>
-    ''' <param name="Address">An IP address</param>
-    Public Sub InitiateShell(Optional Connects As Boolean = False, Optional Address As String = "")
-        While True
-            SyncLock FTPCancelSync
-                Try
-                    'Complete initialization
-                    If FtpInitialized = False Then
-                        Wdbg(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}")
-                        FtpTrace.AddListener(New FTPTracer)
-                        FtpTrace.LogUserName = FTPLoggerUsername
-                        FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
-                        FtpTrace.LogIP = FTPLoggerIP
-                        FtpCurrentDirectory = HomePath
-                        KernelEventManager.RaiseFTPShellInitialized()
-                        SwitchCancellationHandler(ShellCommandType.FTPShell)
-                        FtpInitialized = True
-                    End If
-
-                    'Check if the shell is going to exit
-                    If FtpExit = True Then
-                        Wdbg(DebugLevel.W, "Exiting shell...")
-                        FtpConnected = False
-                        ClientFTP?.Disconnect()
-                        FtpSite = ""
-                        FtpCurrentDirectory = ""
-                        FtpCurrentRemoteDir = ""
-                        FtpUser = ""
-                        FtpPass = ""
-                        FtpCommand = ""
-                        FtpExit = False
-                        FtpInitialized = False
-                        SwitchCancellationHandler(LastShellType)
-                        Exit Sub
-                    End If
-
-                    'Prompt for command
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    If Not Connects Then
-                        Wdbg(DebugLevel.I, "Preparing prompt...")
-                        If FtpConnected Then
-                            Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
-                            If FTPShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
-                        Else
-                            Write("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
-                        End If
-                    End If
-
-                    'Run garbage collector
-                    DisposeAll()
-
-                    'Set input color
-                    SetInputColor()
-
-                    'Try to connect if IP address is specified.
-                    If Connects Then
-                        Wdbg(DebugLevel.I, $"Currently connecting to {Address} by ""ftp (address)""...")
-                        FtpCommand = $"connect {Address}"
-                        Connects = False
-                    Else
-                        Wdbg(DebugLevel.I, "Normal shell")
-                        FtpCommand = Console.ReadLine()
-                    End If
-                    KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
-
-                    'Parse command
-                    If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
-                        FTPGetLine()
-                        KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
-                    End If
-                Catch ex As Exception
-                    WStkTrc(ex)
-                    Throw New Exceptions.FTPShellException(DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message)
-                End Try
-            End SyncLock
-        End While
-    End Sub
 
     ''' <summary>
     ''' Parses a command line from FTP shell
     ''' </summary>
-    Public Sub FTPGetLine()
+    Public Sub FTPGetLine(FtpCommand As String)
         Dim words As String() = FtpCommand.SplitEncloseDoubleQuotes(" ")
         Wdbg(DebugLevel.I, $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then

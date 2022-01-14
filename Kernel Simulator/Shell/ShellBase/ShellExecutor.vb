@@ -16,18 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ZipShellCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Public MustInherit Class ShellExecutor
+    Implements IShell
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ListArgs(0) = NeutralizePath(ListArgs(0))
-        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-        If FileExists(ListArgs(0)) Then
-            StartShell(ShellCommandType.ZIPShell, ListArgs(0))
-        Else
-            Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
-        End If
+    Public Overridable ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overridable Property Bail As Boolean Implements IShell.Bail
+
+    Public Overridable Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+        Wdbg(DebugLevel.F, "We shouldn't be here!!!")
+        Throw New InvalidOperationException()
     End Sub
 
 End Class

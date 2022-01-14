@@ -16,9 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
-
-Module TestShell
+Module TestShellCommon
 
     Public Test_ModCommands As New ArrayList
     Public ReadOnly Test_Commands As New Dictionary(Of String, CommandInfo) From {{"print", New CommandInfo("print", ShellCommandType.TestShell, "Prints a string to console using color type and line print", {"<Color> <Line> <Message>"}, True, 3, New Test_PrintCommand)},
@@ -87,73 +85,5 @@ Module TestShell
                                                                                   {"shutdown", New CommandInfo("shutdown", ShellCommandType.TestShell, "Exits the test shell and shuts down the kernel", {}, False, 0, New Test_ShutdownCommand)}}
     Public Test_ShutdownFlag As Boolean
     Public Test_PromptStyle As String = ""
-    Friend Test_ExitFlag As Boolean
-
-    ''' <summary>
-    ''' Whether the test shell is in shell
-    ''' </summary>
-    Public ReadOnly Property Test_InShell As Boolean
-        Get
-            Return Not Test_ExitFlag
-        End Get
-    End Property
-
-    ''' <summary>
-    ''' Initiates the test shell
-    ''' </summary>
-    Sub InitTShell(InvokedFromCommand As Boolean)
-        Dim FullCmd As String
-        If InvokedFromCommand Then Test_ExitFlag = False
-        SwitchCancellationHandler(ShellCommandType.TestShell)
-        StageTimer.Stop()
-        If Not Test_ExitFlag Then
-            Console.WriteLine()
-            WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
-        End If
-
-        While Test_InShell
-            SyncLock TestCancelSync
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
-                If Test_PromptStyle = "" Then
-                    Write("(t)> ", False, ColTypes.Input)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                FullCmd = Console.ReadLine
-                Try
-                    If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                        Wdbg(DebugLevel.I, "Command: {0}", FullCmd)
-                        Dim Command As String = FullCmd.SplitEncloseDoubleQuotes(" ")(0)
-                        If Test_Commands.ContainsKey(Command) Then
-                            Dim Params As New ExecuteCommandThreadParameters(FullCmd, ShellCommandType.TestShell, Nothing)
-                            TStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Test Shell Command Thread"}
-                            TStartCommandThread.Start(Params)
-                            TStartCommandThread.Join()
-                        ElseIf Test_ModCommands.Contains(Command) Then
-                            Wdbg(DebugLevel.I, "Mod command found.")
-                            ExecuteModCommand(FullCmd)
-                        ElseIf TestShellAliases.Keys.Contains(Command) Then
-                            Wdbg(DebugLevel.I, "Test shell alias command found.")
-                            FullCmd = FullCmd.Replace($"""{Command}""", Command)
-                            ExecuteTestAlias(FullCmd)
-                        Else
-                            Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, Command)
-                        End If
-                    End If
-                Catch ex As Exception
-                    Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
-                    Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
-                    WStkTrc(ex)
-                End Try
-            End SyncLock
-        End While
-
-        StageTimer.Start()
-    End Sub
 
 End Module

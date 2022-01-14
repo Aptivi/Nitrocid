@@ -21,7 +21,11 @@ Class LogoutCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        LogoutRequested = True
+        If ShellStack.Count = 1 Then
+            LogoutRequested = True
+        Else
+            Write(DoTranslation("Cannot log out from the subshell."), True, ColTypes.Error)
+        End If
     End Sub
 
 End Class
