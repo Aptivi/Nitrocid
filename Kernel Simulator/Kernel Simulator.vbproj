@@ -255,7 +255,7 @@
     <Compile Include="Misc\JsonShell\Commands\Help.vb" />
     <Compile Include="Misc\JsonShell\Commands\Print.vb" />
     <Compile Include="Misc\JsonShell\Commands\Save.vb" />
-    <Compile Include="Misc\JsonShell\JsonShell.vb" />
+    <Compile Include="Misc\JsonShell\JsonShellCommon.vb" />
     <Compile Include="Misc\JsonShell\JsonTools.vb" />
     <Compile Include="Misc\Reflection\MethodManager.vb" />
     <Compile Include="Misc\Notifiers\Notification.vb" />
@@ -327,7 +327,7 @@
     <Compile Include="Misc\TextEdit\Commands\ReplaceInlineRegex.vb" />
     <Compile Include="Misc\TextEdit\Commands\ReplaceInline.vb" />
     <Compile Include="Misc\TextEdit\Commands\Save.vb" />
-    <Compile Include="Misc\TextEdit\TextEditShell.vb" />
+    <Compile Include="Misc\TextEdit\TextEditShellCommon.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\Threading\NamedBackgroundWorker.vb">
       <SubType>Component</SubType>
@@ -363,7 +363,7 @@
     <Compile Include="Misc\ZipFile\Commands\Help.vb" />
     <Compile Include="Misc\ZipFile\Commands\List.vb" />
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
-    <Compile Include="Misc\ZipFile\ZipShell.vb" />
+    <Compile Include="Misc\ZipFile\ZipShellCommon.vb" />
     <Compile Include="Console\Themes\ThemeSetErrorReasons.vb" />
     <Compile Include="Modifications\IScript.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
@@ -408,7 +408,7 @@
     <Compile Include="Network\HTTP\Commands\Delete.vb" />
     <Compile Include="Network\HTTP\Commands\Exit.vb" />
     <Compile Include="Network\HTTP\Commands\Help.vb" />
-    <Compile Include="Network\HTTP\HTTPShell.vb" />
+    <Compile Include="Network\HTTP\HTTPShellCommon.vb" />
     <Compile Include="Network\HTTP\HTTPTools.vb" />
     <Compile Include="Network\Mail\Commands\Cd.vb" />
     <Compile Include="Network\Mail\Commands\Exit.vb" />
@@ -448,7 +448,7 @@
     <Compile Include="Network\RSS\Commands\Read.vb" />
     <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
     <Compile Include="Network\RSS\Instance\RSSFeed.vb" />
-    <Compile Include="Network\RSS\RSSShell.vb" />
+    <Compile Include="Network\RSS\RSSShellCommon.vb" />
     <Compile Include="Network\RSS\RSSTools.vb" />
     <Compile Include="Network\SFTP\Commands\Cdl.vb" />
     <Compile Include="Network\SFTP\Commands\Cdr.vb" />
@@ -465,11 +465,11 @@
     <Compile Include="Network\SFTP\Commands\QuickConnect.vb" />
     <Compile Include="Network\SFTP\Commands\Put.vb" />
     <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
-    <Compile Include="Network\SFTP\SFTPShell.vb" />
+    <Compile Include="Network\SFTP\SFTPShellCommon.vb" />
     <Compile Include="Network\SFTP\SFTPTools.vb" />
     <Compile Include="Network\SFTP\Transfer\SFTPTransfer.vb" />
     <Compile Include="Network\FTP\Filesystem\FTPFilesystem.vb" />
-    <Compile Include="Network\FTP\FTPShell.vb" />
+    <Compile Include="Network\FTP\FTPShellCommon.vb" />
     <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\FTP\Transfer\FTPTransfer.vb" />
     <Compile Include="Network\Mail\Directory\MailDirectory.vb" />
@@ -484,7 +484,7 @@
     <Compile Include="Network\RPC\RemoteProcedure.vb" />
     <Compile Include="Network\RPC\RPCCommands.vb" />
     <Compile Include="Network\Mail\MailLogin.vb" />
-    <Compile Include="Network\Mail\MailShell.vb" />
+    <Compile Include="Network\Mail\MailShellCommon.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Scripting\Interaction\UESHCommands.vb" />
     <Compile Include="Scripting\UESHConditional.vb" />
@@ -704,7 +704,7 @@
     <Compile Include="TestShell\Commands\TestSHA256.vb" />
     <Compile Include="TestShell\Commands\TestSHA512.vb" />
     <Compile Include="TestShell\Commands\Translate.vb" />
-    <Compile Include="TestShell\TestShell.vb" />
+    <Compile Include="TestShell\TestShellCommon.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeDateConverters.vb" />
     <Compile Include="TimeDate\TimeDateRenderers.vb" />
