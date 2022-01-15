@@ -42,8 +42,15 @@ Public Class UESHShell
                 ElseIf Not InSaver Then
                     Try
                         'Try to probe injected commands
-                        Wdbg(DebugLevel.I, "Probing injected commands using GetLine(True)...")
-                        GetLine(True, "")
+                        Wdbg(DebugLevel.I, "Probing injected commands...")
+                        If CommandFlag = True Then
+                            CommandFlag = False
+                            If ProbeInjectedCommands Then
+                                For Each cmd In InjectedCommands
+                                    GetLine(cmd, True)
+                                Next
+                            End If
+                        End If
 
                         'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
                         Console.CursorVisible = True
@@ -88,7 +95,7 @@ Public Class UESHShell
                                     End If
                                     If Done = False Then
                                         Wdbg(DebugLevel.I, "Executing built-in command")
-                                        GetLine(False, Command)
+                                        GetLine(Command)
                                     End If
                                 Next
 

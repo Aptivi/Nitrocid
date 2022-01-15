@@ -84,7 +84,7 @@ Public Module UESHParse
                 'See if the line is a comment or command
                 If Not Line.StartsWith("#") And Not Line.StartsWith(" ") Then
                     Wdbg(DebugLevel.I, "Line {0} is not a comment.", Line)
-                    GetLine(False, Line)
+                    GetLine(Line)
                 Else 'For debugging purposes
                     Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                 End If

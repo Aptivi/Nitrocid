@@ -124,7 +124,7 @@ Public Module RPCCommands
                     If LoggedIn Then
                         Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
                         Console.WriteLine()
-                        GetLine(False, Message.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
+                        GetLine(Message.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
                     Else
                         Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
                     End If

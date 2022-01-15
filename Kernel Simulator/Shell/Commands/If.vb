@@ -24,7 +24,7 @@ Class IfCommand
         Try
             If ConditionSatisfied(ListArgsOnly(0)) Then
                 Dim CommandString As String = String.Join(" ", ListArgsOnly.Skip(1).ToArray)
-                GetLine(False, CommandString)
+                GetLine(CommandString)
             End If
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message)
