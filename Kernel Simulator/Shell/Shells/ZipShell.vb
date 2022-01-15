@@ -69,33 +69,7 @@ Public Class ZipShell
                 'Prompt for command
                 KernelEventManager.RaiseZipShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
-
-                'Check to see if the command doesn't start with spaces or if the command is nothing
-                Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
-                If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
-                    Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
-                    Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
-                    If ZipShell_Commands.ContainsKey(Command) Then
-                        Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, ZipShell_Commands.Count)
-                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellType.ZIPShell, Nothing)
-                        ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
-                        KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
-                        Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                        ZipShell_CommandThread.Start(Params)
-                        ZipShell_CommandThread.Join()
-                        KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
-                    ElseIf ZipShell_ModCommands.Contains(Command) Then
-                        Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
-                        ExecuteModCommand(WrittenCommand)
-                    ElseIf ZIPShellAliases.Keys.Contains(Command) Then
-                        Wdbg(DebugLevel.I, "ZIP shell alias command found.")
-                        WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
-                        ExecuteZIPAlias(WrittenCommand)
-                    Else
-                        Write(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Error)
-                        Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, ZipShell_Commands.Count)
-                    End If
-                End If
+                GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
             End SyncLock
         End While
 

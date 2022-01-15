@@ -105,7 +105,7 @@ Public Class SFTPShell
 
                     'Parse command
                     If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
-                        SFTPGetLine(SFTPStrCmd)
+                        GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
                         KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If
                 Catch ex As Exception

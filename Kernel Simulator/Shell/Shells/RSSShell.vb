@@ -101,39 +101,7 @@ Begin:
                     'Prompt for command
                     KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
                     Dim WrittenCommand As String = Console.ReadLine
-
-                    'Check to see if the command doesn't start with spaces or if the command is nothing
-                    Try
-                        Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
-                        If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
-                            Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
-                            Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
-                            If RSSCommands.ContainsKey(Command) Then
-                                Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
-                                Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellType.RSSShell, Nothing)
-                                RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
-                                KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
-                                Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                                RSSCommandThread.Start(Params)
-                                RSSCommandThread.Join()
-                                KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
-                            ElseIf RSSModCommands.Contains(Command) Then
-                                Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
-                                ExecuteModCommand(WrittenCommand)
-                            ElseIf RSSShellAliases.Keys.Contains(Command) Then
-                                Wdbg(DebugLevel.I, "RSS shell alias command found.")
-                                WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
-                                ExecuteRSSAlias(WrittenCommand)
-                            Else
-                                Write(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
-                                Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
-                            End If
-                        End If
-                    Catch ex As Exception
-                        Wdbg(DebugLevel.E, "Unknown RSS shell error: {0}", ex.Message)
-                        WStkTrc(ex)
-                        Write(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Error, ex.Message)
-                    End Try
+                    GetLine(WrittenCommand, False, "", ShellType.RSSShell)
                 End SyncLock
             End If
         End While

@@ -43,6 +43,8 @@ Public Class TestShell
                 If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
+
+                'Write the custom prompt style for the test shell
                 Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
                 If Test_PromptStyle = "" Then
                     Write("(t)> ", False, ColTypes.Input)
@@ -51,27 +53,11 @@ Public Class TestShell
                     ParsedPromptStyle.ConvertVTSequences
                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                 End If
+
+                'Parse the command
                 Dim FullCmd As String = Console.ReadLine
                 Try
-                    If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                        Wdbg(DebugLevel.I, "Command: {0}", FullCmd)
-                        Dim Command As String = FullCmd.SplitEncloseDoubleQuotes(" ")(0)
-                        If Test_Commands.ContainsKey(Command) Then
-                            Dim Params As New ExecuteCommandThreadParameters(FullCmd, ShellType.TestShell, Nothing)
-                            TStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Test Shell Command Thread"}
-                            TStartCommandThread.Start(Params)
-                            TStartCommandThread.Join()
-                        ElseIf Test_ModCommands.Contains(Command) Then
-                            Wdbg(DebugLevel.I, "Mod command found.")
-                            ExecuteModCommand(FullCmd)
-                        ElseIf TestShellAliases.Keys.Contains(Command) Then
-                            Wdbg(DebugLevel.I, "Test shell alias command found.")
-                            FullCmd = FullCmd.Replace($"""{Command}""", Command)
-                            ExecuteTestAlias(FullCmd)
-                        Else
-                            Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, Command)
-                        End If
-                    End If
+                    GetLine(FullCmd, False, "", ShellType.TestShell)
                 Catch ex As Exception
                     Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
                     Wdbg(DebugLevel.E, "Error: {0}", ex.Message)

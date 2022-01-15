@@ -68,29 +68,4 @@ Public Module FTPShellCommon
     Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
     Friend FtpPass As String
 
-    ''' <summary>
-    ''' Parses a command line from FTP shell
-    ''' </summary>
-    Public Sub FTPGetLine(FtpCommand As String)
-        Dim words As String() = FtpCommand.SplitEncloseDoubleQuotes(" ")
-        Wdbg(DebugLevel.I, $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
-        If FTPCommands.ContainsKey(words(0)) Then
-            Wdbg(DebugLevel.I, "Command found.")
-            Dim Params As New ExecuteCommandThreadParameters(FtpCommand, ShellType.FTPShell, Nothing)
-            FTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "FTP Command Thread"}
-            FTPStartCommandThread.Start(Params)
-            FTPStartCommandThread.Join()
-        ElseIf FTPModCommands.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "Mod command found.")
-            ExecuteModCommand(FtpCommand)
-        ElseIf FTPShellAliases.Keys.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "FTP shell alias command found.")
-            FtpCommand = FtpCommand.Replace($"""{words(0)}""", words(0))
-            ExecuteFTPAlias(FtpCommand)
-        ElseIf Not FtpCommand.StartsWith(" ") Then
-            Wdbg(DebugLevel.E, "Command {0} not found.", FtpCommand)
-            Write(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell."), True, ColTypes.Error, words(0))
-        End If
-    End Sub
-
 End Module

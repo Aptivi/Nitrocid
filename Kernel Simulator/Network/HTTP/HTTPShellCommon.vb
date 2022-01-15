@@ -41,29 +41,4 @@ Public Module HTTPShellCommon
         End Get
     End Property
 
-    ''' <summary>
-    ''' Parses a command line from HTTP shell
-    ''' </summary>
-    Public Sub HTTPGetLine(HttpCommand As String)
-        Dim words As String() = HttpCommand.SplitEncloseDoubleQuotes(" ")
-        Wdbg(DebugLevel.I, $"Is the command found? {HTTPCommands.ContainsKey(words(0))}")
-        If HTTPCommands.ContainsKey(words(0)) Then
-            Wdbg(DebugLevel.I, "Command found.")
-            Dim Params As New ExecuteCommandThreadParameters(HttpCommand, ShellType.HTTPShell, Nothing)
-            HTTPCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "HTTP Command Thread"}
-            HTTPCommandThread.Start(Params)
-            HTTPCommandThread.Join()
-        ElseIf HTTPModCommands.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "Mod command found.")
-            ExecuteModCommand(HttpCommand)
-        ElseIf HTTPShellAliases.Keys.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "HTTP shell alias command found.")
-            HttpCommand = HttpCommand.Replace($"""{words(0)}""", words(0))
-            ExecuteHTTPAlias(HttpCommand)
-        ElseIf Not HttpCommand.StartsWith(" ") Then
-            Wdbg(DebugLevel.E, "Command {0} not found.", HttpCommand)
-            Write(DoTranslation("HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell."), True, ColTypes.Error, words(0))
-        End If
-    End Sub
-
 End Module

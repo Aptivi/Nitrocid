@@ -71,29 +71,7 @@ Public Class MailShell
 
                 'Listen for a command
                 Dim cmd As String = Console.ReadLine
-                If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                    KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
-                    Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
-                    Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
-                    If MailCommands.ContainsKey(words(0)) Then
-                        Wdbg(DebugLevel.I, "Command found.")
-                        Dim Params As New ExecuteCommandThreadParameters(cmd, ShellType.MailShell, Nothing)
-                        MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
-                        MailStartCommandThread.Start(Params)
-                        MailStartCommandThread.Join()
-                    ElseIf MailModCommands.Contains(words(0)) Then
-                        Wdbg(DebugLevel.I, "Mod command found.")
-                        ExecuteModCommand(cmd)
-                    ElseIf MailShellAliases.Keys.Contains(words(0)) Then
-                        Wdbg(DebugLevel.I, "Mail shell alias command found.")
-                        cmd = cmd.Replace($"""{words(0)}""", words(0))
-                        ExecuteMailAlias(cmd)
-                    ElseIf Not cmd.StartsWith(" ") Then
-                        Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
-                        Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
-                    End If
-                    KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
-                End If
+                GetLine(cmd, False, "", ShellType.MailShell)
             End SyncLock
         End While
 

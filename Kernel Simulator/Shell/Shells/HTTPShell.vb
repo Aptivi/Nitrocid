@@ -63,7 +63,7 @@ Public Class HTTPShell
 
                     'Parse command
                     If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
-                        HTTPGetLine(HttpCommand)
+                        GetLine(HttpCommand, False, "", ShellType.HTTPShell)
                         KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
                     End If
                 Catch ex As Exception

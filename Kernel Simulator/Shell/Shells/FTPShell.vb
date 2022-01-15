@@ -108,7 +108,7 @@ Public Class FTPShell
 
                     'Parse command
                     If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
-                        FTPGetLine(FtpCommand)
+                        GetLine(FtpCommand, False, "", ShellType.FTPShell)
                         KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                     End If
                 Catch ex As Exception

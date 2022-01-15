@@ -47,30 +47,4 @@ Public Module SFTPShellCommon
     Public ClientSFTP As SftpClient
     Friend SFTPPass As String
 
-    ''' <summary>
-    ''' Parses a command line from FTP shell
-    ''' </summary>
-    Public Sub SFTPGetLine(SFTPStrCmd As String)
-        Dim words As String() = SFTPStrCmd.SplitEncloseDoubleQuotes(" ")
-        Wdbg(DebugLevel.I, "Command: {0}", SFTPStrCmd)
-        Wdbg(DebugLevel.I, $"Is the command found? {SFTPCommands.ContainsKey(words(0))}")
-        If SFTPCommands.ContainsKey(words(0)) Then
-            Wdbg(DebugLevel.I, "Command found.")
-            Dim Params As New ExecuteCommandThreadParameters(SFTPStrCmd, ShellType.SFTPShell, Nothing)
-            SFTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "SFTP Command Thread"}
-            SFTPStartCommandThread.Start(Params)
-            SFTPStartCommandThread.Join()
-        ElseIf SFTPModCommands.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "Mod command found.")
-            ExecuteModCommand(SFTPStrCmd)
-        ElseIf SFTPShellAliases.Keys.Contains(words(0)) Then
-            Wdbg(DebugLevel.I, "Aliased command found.")
-            SFTPStrCmd = SFTPStrCmd.Replace($"""{words(0)}""", words(0))
-            ExecuteSFTPAlias(SFTPStrCmd)
-        ElseIf Not SFTPStrCmd.StartsWith(" ") Then
-            Wdbg(DebugLevel.E, "Command {0} not found.", SFTPStrCmd)
-            Write(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell."), True, ColTypes.Error, words(0))
-        End If
-    End Sub
-
 End Module
