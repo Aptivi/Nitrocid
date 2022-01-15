@@ -106,4 +106,34 @@ Public Class UESHShell
         End While
     End Sub
 
+    ''' <summary>
+    ''' Writes the input for command prompt
+    ''' </summary>
+    Public Sub CommandPromptWrite()
+        'Check the custom shell prompt style and kernel mode
+        Wdbg(DebugLevel.I, "ShellPromptStyle = {0}", ShellPromptStyle)
+        If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
+            'Parse the shell prompt style
+            Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
+            ParsedPromptStyle.ConvertVTSequences
+            Write(ParsedPromptStyle, False, ColTypes.Gray)
+
+            'Write the user dollar sign using the two styles, depending on the permission of the user
+            If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
+                Write(" # ", False, ColTypes.UserDollarSign)
+            Else
+                Write(" $ ", False, ColTypes.UserDollarSign)
+            End If
+        ElseIf String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
+            'Write the user dollar sign using the two styles, depending on the permission of the user
+            If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
+                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" # ", False, ColTypes.UserDollarSign)
+            Else
+                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" $ ", False, ColTypes.Gray, CurrDir)
+            End If
+        Else
+            Write(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
+        End If
+    End Sub
+
 End Class

@@ -158,35 +158,6 @@ Public Module Shell
                                                                              {"zipshell", New CommandInfo("zipshell", ShellCommandType.Shell, "Opens a ZIP archive", {"<zipfile>"}, True, 1, New ZipShellCommand)}}
 
     ''' <summary>
-    ''' Writes the input for command prompt
-    ''' </summary>
-    Public Sub CommandPromptWrite()
-
-        Wdbg(DebugLevel.I, "ShellPromptStyle = {0}", ShellPromptStyle)
-        If ShellPromptStyle <> "" And Not Maintenance Then
-            Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
-            ParsedPromptStyle.ConvertVTSequences
-            Write(ParsedPromptStyle, False, ColTypes.Gray)
-            If HasPermission(CurrentUser.Username, PermissionType.Administrator) = True Then
-                Write(" # ", False, ColTypes.UserDollarSign)
-            Else
-                Write(" $ ", False, ColTypes.UserDollarSign)
-            End If
-        ElseIf ShellPromptStyle = "" And Not Maintenance Then
-            If HasPermission(CurrentUser.Username, PermissionType.Administrator) = True Then
-                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" # ", False, ColTypes.UserDollarSign)
-            ElseIf Maintenance Then
-                Write(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
-            Else
-                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" $ ", False, ColTypes.Gray, CurrDir)
-            End If
-        Else
-            Write(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
-        End If
-
-    End Sub
-
-    ''' <summary>
     ''' Parses a specified command.
     ''' </summary>
     ''' <param name="ArgsMode">Specify if it runs using arguments</param>
