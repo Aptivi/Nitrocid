@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Reflection.Assembly
-Imports System.Threading
 
 Public Module Kernel
 

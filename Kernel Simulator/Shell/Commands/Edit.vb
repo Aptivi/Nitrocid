@@ -1,5 +1,4 @@
-﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+﻿'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -15,8 +14,6 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-Imports System.IO
 
 Class EditCommand
     Inherits CommandExecutor

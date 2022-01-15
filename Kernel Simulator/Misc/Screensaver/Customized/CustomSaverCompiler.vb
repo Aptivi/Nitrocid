@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.CodeDom.Compiler
-Imports System.IO
 Imports System.Reflection
 Imports Microsoft.CSharp
 

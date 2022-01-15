@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.IO.Compression
-Imports System.Threading
 
 Module ZipShellCommon
 
