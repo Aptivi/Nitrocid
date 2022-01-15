@@ -51,31 +51,10 @@ Public Class ProvidedCommandArgumentsInfo
     Friend Sub New(CommandText As String, CommandType As ShellType)
         Dim Command As String
         Dim RequiredArgumentsProvided As Boolean = True
-        Dim ShellCommands As Dictionary(Of String, CommandInfo) = Commands
+        Dim ShellCommands As Dictionary(Of String, CommandInfo)
 
         'Change the available commands list according to command type
-        Select Case CommandType
-            Case ShellType.FTPShell
-                ShellCommands = FTPCommands
-            Case ShellType.MailShell
-                ShellCommands = MailCommands
-            Case ShellType.RemoteDebugShell
-                ShellCommands = DebugCommands
-            Case ShellType.RSSShell
-                ShellCommands = RSSCommands
-            Case ShellType.SFTPShell
-                ShellCommands = SFTPCommands
-            Case ShellType.TestShell
-                ShellCommands = Test_Commands
-            Case ShellType.TextShell
-                ShellCommands = TextEdit_Commands
-            Case ShellType.ZIPShell
-                ShellCommands = ZipShell_Commands
-            Case ShellType.JsonShell
-                ShellCommands = JsonShell_Commands
-            Case ShellType.HTTPShell
-                ShellCommands = HTTPCommands
-        End Select
+        ShellCommands = GetCommands(CommandType)
 
         'Get the index of the first space (Used for step 3)
         Dim index As Integer = CommandText.IndexOf(" ")

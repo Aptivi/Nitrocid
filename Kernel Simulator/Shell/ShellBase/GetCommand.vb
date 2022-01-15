@@ -65,27 +65,7 @@ Public Module GetCommand
             Dim TargetCommands As Dictionary(Of String, CommandInfo) = Commands
 
             'Set TargetCommands according to the shell type
-            Select Case ShellType
-                Case ShellType.FTPShell
-                    TargetCommands = FTPCommands
-                Case ShellType.MailShell
-                    TargetCommands = MailCommands
-                Case ShellType.RSSShell
-                    TargetCommands = RSSCommands
-                Case ShellType.SFTPShell
-                    TargetCommands = SFTPCommands
-                Case ShellType.TestShell
-                    TargetCommands = Test_Commands
-                Case ShellType.TextShell
-                    TargetCommands = TextEdit_Commands
-                Case ShellType.ZIPShell
-                    TargetCommands = ZipShell_Commands
-                Case ShellType.JsonShell
-                    TargetCommands = JsonShell_Commands
-                Case ShellType.HTTPShell
-                    TargetCommands = HTTPCommands
-            End Select
-
+            TargetCommands = GetCommands(ShellType)
 
             'Check to see if a requested command is obsolete
             If TargetCommands(Command).Obsolete Then
@@ -111,5 +91,36 @@ Public Module GetCommand
             DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' Gets the command dictionary according to the shell type
+    ''' </summary>
+    ''' <param name="ShellType">The shell type</param>
+    Public Function GetCommands(ShellType As ShellType) As Dictionary(Of String, CommandInfo)
+        Select Case ShellType
+            Case ShellType.FTPShell
+                Return FTPCommands
+            Case ShellType.MailShell
+                Return MailCommands
+            Case ShellType.RemoteDebugShell
+                Return DebugCommands
+            Case ShellType.RSSShell
+                Return RSSCommands
+            Case ShellType.SFTPShell
+                Return SFTPCommands
+            Case ShellType.TestShell
+                Return Test_Commands
+            Case ShellType.TextShell
+                Return TextEdit_Commands
+            Case ShellType.ZIPShell
+                Return ZipShell_Commands
+            Case ShellType.JsonShell
+                Return JsonShell_Commands
+            Case ShellType.HTTPShell
+                Return HTTPCommands
+            Case Else
+                Return Commands
+        End Select
+    End Function
 
 End Module
