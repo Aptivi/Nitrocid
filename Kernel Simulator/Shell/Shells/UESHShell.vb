@@ -117,13 +117,6 @@ Public Class UESHShell
             Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
             ParsedPromptStyle.ConvertVTSequences
             Write(ParsedPromptStyle, False, ColTypes.Gray)
-
-            'Write the user dollar sign using the two styles, depending on the permission of the user
-            If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
-                Write(" # ", False, ColTypes.UserDollarSign)
-            Else
-                Write(" $ ", False, ColTypes.UserDollarSign)
-            End If
         ElseIf String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
             'Write the user dollar sign using the two styles, depending on the permission of the user
             If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then

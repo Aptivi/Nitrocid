@@ -506,4 +506,35 @@ Public Module UserManagement
         Write(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
     End Sub
 
+    ''' <summary>
+    ''' Checks to see if the user exists
+    ''' </summary>
+    ''' <param name="User">The target user</param>
+    Public Function UserExists(User As String) As Boolean
+        Return Users.ContainsKey(User)
+    End Function
+
+    ''' <summary>
+    ''' Gets the unique user identifier for the current user
+    ''' </summary>
+    Public Function GetUserDollarSign() As String
+        Return GetUserDollarSign(CurrentUser.Username)
+    End Function
+
+    ''' <summary>
+    ''' Gets the unique user identifier
+    ''' </summary>
+    ''' <param name="User">The target user</param>
+    Public Function GetUserDollarSign(User As String) As String
+        If UserExists(User) Then
+            If HasPermission(User, PermissionType.Administrator) Then
+                Return "#"
+            Else
+                Return "$"
+            End If
+        Else
+            Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
+        End If
+    End Function
+
 End Module

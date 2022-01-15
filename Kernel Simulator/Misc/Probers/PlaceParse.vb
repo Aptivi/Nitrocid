@@ -138,6 +138,10 @@ Public Module PlaceParse
                 Wdbg(DebugLevel.I, "Newline placeholder found.")
                 text = text.Replace("<newline>", vbNewLine)
             End If
+            If text.Contains("<dollar>") Then
+                Wdbg(DebugLevel.I, "Dollar placeholder found.")
+                text = text.Replace("<dollar>", GetUserDollarSign())
+            End If
             If text.Contains("<f:reset>") Then
                 Wdbg(DebugLevel.I, "Foreground color reset placeholder found.")
                 text = text.Replace("<f:reset>", NeutralTextColor.VTSequenceForeground)
