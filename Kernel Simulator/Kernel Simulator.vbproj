@@ -304,6 +304,7 @@
     <Compile Include="Misc\Reflection\StringEvaluators.vb" />
     <Compile Include="Misc\Splash\ISplash.vb" />
     <Compile Include="Misc\Splash\Splashes\Blank.vb" />
+    <Compile Include="Misc\Splash\Splashes\Progress.vb" />
     <Compile Include="Misc\Splash\Splashes\Simple.vb" />
     <Compile Include="Misc\Splash\SplashInfo.vb" />
     <Compile Include="Misc\Splash\SplashManager.vb" />
@@ -351,6 +352,7 @@
     <Compile Include="Misc\Writers\FancyWriters\TableColor.vb" />
     <Compile Include="Misc\Writers\FancyWriters\Tools\CellOptions.vb" />
     <Compile Include="Misc\Writers\FancyWriters\Tools\FigletTools.vb" />
+    <Compile Include="Misc\Writers\FancyWriters\Tools\ProgressTools.vb" />
     <Compile Include="Misc\Writers\MiscWriters\Decisive.vb" />
     <Compile Include="Misc\Writers\MiscWriters\LineHandleWriter.vb" />
     <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />

@@ -870,7 +870,15 @@ Public Module Config
                     {"Show the shell commands count on help", ShowShellCommandsCount},
                     {"Show the mod commands count on help", ShowModCommandsCount},
                     {"Show the aliases count on help", ShowShellAliasesCount},
-                    {"Password mask character", CurrentMask}
+                    {"Password mask character", CurrentMask},
+                    {"Upper left corner character for progress bars", ProgressUpperLeftCornerChar},
+                    {"Upper right corner character for progress bars", ProgressUpperRightCornerChar},
+                    {"Lower left corner character for progress bars", ProgressLowerLeftCornerChar},
+                    {"Lower right corner character for progress bars", ProgressLowerRightCornerChar},
+                    {"Upper frame character for progress bars", ProgressUpperFrameChar},
+                    {"Lower frame character for progress bars", ProgressLowerFrameChar},
+                    {"Left frame character for progress bars", ProgressLeftFrameChar},
+                    {"Right frame character for progress bars", ProgressRightFrameChar}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1604,6 +1612,14 @@ Public Module Config
             ShowModCommandsCount = If(ConfigToken("Misc")?("Show the mod commands count on help"), True)
             ShowShellAliasesCount = If(ConfigToken("Misc")?("Show the aliases count on help"), True)
             CurrentMask = If(ConfigToken("Misc")?("Password mask character"), "*"c)
+            ProgressUpperLeftCornerChar = If(ConfigToken("Misc")?("Upper left corner character for progress bars"), "╔")
+            ProgressUpperRightCornerChar = If(ConfigToken("Misc")?("Upper right corner character for progress bars"), "╗")
+            ProgressLowerLeftCornerChar = If(ConfigToken("Misc")?("Lower left corner character for progress bars"), "╚")
+            ProgressLowerRightCornerChar = If(ConfigToken("Misc")?("Lower right corner character for progress bars"), "╝")
+            ProgressUpperFrameChar = If(ConfigToken("Misc")?("Upper frame character for progress bars"), "═")
+            ProgressLowerFrameChar = If(ConfigToken("Misc")?("Lower frame character for progress bars"), "═")
+            ProgressLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for progress bars"), "║")
+            ProgressRightFrameChar = If(ConfigToken("Misc")?("Right frame character for progress bars"), "║")
 
             'Check to see if the config needs fixes
             RepairConfig()

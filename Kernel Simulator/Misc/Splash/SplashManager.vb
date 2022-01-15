@@ -21,6 +21,7 @@ Imports System.Threading
 Public Module SplashManager
 
     Public ReadOnly Splashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
+                                                                            {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
                                                                             {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)}}
     Public SplashName As String = "Simple"
 
