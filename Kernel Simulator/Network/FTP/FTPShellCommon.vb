@@ -18,7 +18,6 @@
 
 Imports System.Threading
 
-'TODO: Unify GetLine as we're now moving to IShell to handle shells
 Public Module FTPShellCommon
 
     Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},

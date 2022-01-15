@@ -19,7 +19,6 @@
 Imports System.IO
 Imports System.Threading
 
-'TODO: Make full use of the Shell interface (this shell and all the supported shells)
 Public Module Shell
 
     ''' <summary>
