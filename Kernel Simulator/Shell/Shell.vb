@@ -160,30 +160,32 @@ Public Module Shell
     ''' <summary>
     ''' Parses a specified command.
     ''' </summary>
-    ''' <param name="strcommand">Specify command</param>
+    ''' <param name="FullCommand">The full command string</param>
     ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
     ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
-    Public Sub GetLine(strcommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "")
+    ''' <param name="ShellType">Shell type</param>
+    ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+    Public Sub GetLine(FullCommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-        Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
+        Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", FullCommand.Contains(">>>"), FullCommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
         Dim OutputStream As FileStream
-        If strcommand.Contains(">>>") Then
+        If FullCommand.Contains(">>>") Then
             Wdbg(DebugLevel.I, "Output redirection found with append.")
             DefConsoleOut = Console.Out
-            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
+            Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
-            strcommand = strcommand.Replace(" >>> " + OutputFileName, "")
-        ElseIf strcommand.Contains(">>") Then
+            FullCommand = FullCommand.Replace(" >>> " + OutputFileName, "")
+        ElseIf FullCommand.Contains(">>") Then
             Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
             DefConsoleOut = Console.Out
-            Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
+            Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
             Console.SetOut(OutputTextWriter)
-            strcommand = strcommand.Replace(" >> " + OutputFileName, "")
+            FullCommand = FullCommand.Replace(" >> " + OutputFileName, "")
         End If
 
         'Checks to see if the user provided optional path
@@ -197,50 +199,52 @@ Public Module Shell
 
         'Reads command written by user
         Try
-            Dim EntireCommand As String = strcommand
-            If Not (strcommand = Nothing Or strcommand.StartsWithAnyOf({" ", "#"}) = True) Then
-                Console.Title = $"{ConsoleTitle} - {strcommand}"
+            Dim EntireCommand As String = FullCommand
+            If Not (FullCommand = Nothing Or FullCommand.StartsWithAnyOf({" ", "#"}) = True) Then
+                Console.Title = $"{ConsoleTitle} - {FullCommand}"
 
                 'Parse script command (if any)
-                Dim scriptArgs As List(Of String) = strcommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                Dim scriptArgs As List(Of String) = FullCommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
                 scriptArgs.RemoveAt(0)
 
                 'Get the index of the first space
-                Dim indexCmd As Integer = strcommand.IndexOf(" ")
-                Dim cmdArgs As String = strcommand 'Command with args
-                Wdbg(DebugLevel.I, "Prototype indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
-                If indexCmd = -1 Then indexCmd = strcommand.Length
-                strcommand = strcommand.Substring(0, indexCmd)
-                Wdbg(DebugLevel.I, "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
+                Dim indexCmd As Integer = FullCommand.IndexOf(" ")
+                Dim cmdArgs As String = FullCommand 'Command with args
+                Wdbg(DebugLevel.I, "Prototype indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
+                If indexCmd = -1 Then indexCmd = FullCommand.Length
+                FullCommand = FullCommand.Substring(0, indexCmd)
+                Wdbg(DebugLevel.I, "Finished indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
 
                 'Scan PATH for file existence and set file name as needed
                 Dim TargetFile As String = ""
                 Dim TargetFileName As String = ""
-                FileExistsInPath(strcommand, TargetFile)
-                If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(strcommand)
+                FileExistsInPath(FullCommand, TargetFile)
+                If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(FullCommand)
                 If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
 
                 'Check to see if a user is able to execute a command
-                If Commands.ContainsKey(strcommand) Then
-                    If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(strcommand).Strict Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
-                        Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, strcommand)
-                    ElseIf Maintenance = True And Commands(strcommand).NoMaintenance Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
-                        Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, strcommand)
-                    ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
-                        Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, strcommand)
-                    ElseIf (HasPermission(CurrentUser.Username, PermissionType.Administrator) And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
-                        Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType.Shell, Nothing)
-                        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
+                Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
+                If Commands.ContainsKey(FullCommand) Then
+                    If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(FullCommand).Strict Then
+                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", FullCommand)
+                        Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, FullCommand)
+                    ElseIf Maintenance = True And Commands(FullCommand).NoMaintenance Then
+                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", FullCommand)
+                        Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, FullCommand)
+                    ElseIf IsInvokedByKernelArgument And (FullCommand.StartsWith("logout") Or FullCommand.StartsWith("shutdown") Or FullCommand.StartsWith("reboot")) Then
+                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", FullCommand)
+                        Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, FullCommand)
+                    ElseIf (HasPermission(CurrentUser.Username, PermissionType.Administrator) And Commands(FullCommand).Strict) Or Commands.ContainsKey(FullCommand) Then
+                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", FullCommand, cmdArgs)
+                        Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
+                        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = $"{ShellType} Command Thread"}
                         StartCommandThread.Start(Params)
                         StartCommandThread.Join()
                     End If
-                ElseIf TryParsePath(TargetFile) Then
+                ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
+                    'If we're in the UESH shell, parse the script file or executable file
                     If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", strcommand)
+                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", FullCommand)
                         Try
                             'Create a new instance of process
                             If TryParsePath(TargetFile) Then
@@ -254,19 +258,19 @@ Public Module Shell
                             End If
                         Catch ex As Exception
                             Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
-                            Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, strcommand, ex.Message)
+                            Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, FullCommand, ex.Message)
                             WStkTrc(ex)
                         End Try
                     ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
+                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", FullCommand)
                         Execute(TargetFile, scriptArgs.Join(" "))
                     Else
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
-                        Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
+                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", FullCommand, indexCmd)
+                        Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, FullCommand)
                     End If
                 Else
-                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
-                    Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
+                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", FullCommand, indexCmd)
+                    Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, FullCommand)
                 End If
             End If
         Catch ex As Exception
