@@ -24,9 +24,9 @@ Public Class ZipShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.ZIPShell
+            Return ShellType.ZIPShell
         End Get
     End Property
 
@@ -34,7 +34,7 @@ Public Class ZipShell
 
     Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
         'Add handler for ZIP shell
-        SwitchCancellationHandler(ShellCommandType.ZIPShell)
+        SwitchCancellationHandler(ShellType.ZIPShell)
         ZipShell_CurrentDirectory = CurrDir
 
         'Get file path
@@ -77,7 +77,7 @@ Public Class ZipShell
                     Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                     If ZipShell_Commands.ContainsKey(Command) Then
                         Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, ZipShell_Commands.Count)
-                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.ZIPShell, Nothing)
+                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellType.ZIPShell, Nothing)
                         ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
                         KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                         Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)

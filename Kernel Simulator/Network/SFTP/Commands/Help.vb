@@ -22,9 +22,9 @@ Class SFTP_HelpCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs IsNot Nothing And ListArgs?.Count > 0 Then
-            ShowHelp("", ShellCommandType.SFTPShell)
+            ShowHelp("", ShellType.SFTPShell)
         Else
-            ShowHelp(StringArgs, ShellCommandType.SFTPShell)
+            ShowHelp(StringArgs, ShellType.SFTPShell)
         End If
     End Sub
 

@@ -32,13 +32,13 @@ Public Module GetCommand
         ''' <summary>
         ''' The shell type
         ''' </summary>
-        Friend ShellType As ShellCommandType
+        Friend ShellType As ShellType
         ''' <summary>
         ''' The debug device stream writer
         ''' </summary>
         Friend DebugDeviceSocket As StreamWriter
 
-        Friend Sub New(RequestedCommand As String, ShellType As ShellCommandType, DebugDeviceSocket As StreamWriter)
+        Friend Sub New(RequestedCommand As String, ShellType As ShellType, DebugDeviceSocket As StreamWriter)
             Me.RequestedCommand = RequestedCommand
             Me.ShellType = ShellType
             Me.DebugDeviceSocket = DebugDeviceSocket
@@ -51,7 +51,7 @@ Public Module GetCommand
     ''' <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
     Friend Sub ExecuteCommand(ThreadParams As ExecuteCommandThreadParameters)
         Dim RequestedCommand As String = ThreadParams.RequestedCommand
-        Dim ShellType As ShellCommandType = ThreadParams.ShellType
+        Dim ShellType As ShellType = ThreadParams.ShellType
         Dim DebugDeviceSocket As StreamWriter = ThreadParams.DebugDeviceSocket
         Try
             'Variables
@@ -66,23 +66,23 @@ Public Module GetCommand
 
             'Set TargetCommands according to the shell type
             Select Case ShellType
-                Case ShellCommandType.FTPShell
+                Case ShellType.FTPShell
                     TargetCommands = FTPCommands
-                Case ShellCommandType.MailShell
+                Case ShellType.MailShell
                     TargetCommands = MailCommands
-                Case ShellCommandType.RSSShell
+                Case ShellType.RSSShell
                     TargetCommands = RSSCommands
-                Case ShellCommandType.SFTPShell
+                Case ShellType.SFTPShell
                     TargetCommands = SFTPCommands
-                Case ShellCommandType.TestShell
+                Case ShellType.TestShell
                     TargetCommands = Test_Commands
-                Case ShellCommandType.TextShell
+                Case ShellType.TextShell
                     TargetCommands = TextEdit_Commands
-                Case ShellCommandType.ZIPShell
+                Case ShellType.ZIPShell
                     TargetCommands = ZipShell_Commands
-                Case ShellCommandType.JsonShell
+                Case ShellType.JsonShell
                     TargetCommands = JsonShell_Commands
-                Case ShellCommandType.HTTPShell
+                Case ShellType.HTTPShell
                     TargetCommands = HTTPCommands
             End Select
 

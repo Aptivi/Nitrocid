@@ -24,9 +24,9 @@ Public Class RSSShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.RSSShell
+            Return ShellType.RSSShell
         End Get
     End Property
 
@@ -34,7 +34,7 @@ Public Class RSSShell
 
     Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
         'Add handler for RSS shell
-        SwitchCancellationHandler(ShellCommandType.RSSShell)
+        SwitchCancellationHandler(ShellType.RSSShell)
         Dim OldRSSFeedLink As String = ""
         Dim FeedUrl As String = ""
         If ShellArgs.Length > 0 Then
@@ -110,7 +110,7 @@ Begin:
                             Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                             If RSSCommands.ContainsKey(Command) Then
                                 Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
-                                Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.RSSShell, Nothing)
+                                Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellType.RSSShell, Nothing)
                                 RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
                                 KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                                 Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)

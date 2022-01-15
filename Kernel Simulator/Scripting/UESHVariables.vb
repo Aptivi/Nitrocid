@@ -53,7 +53,7 @@ Public Module UESHVariables
     ''' <param name="cmd">A command line in script</param>
     ''' <returns>A command line in script that has a value of $variable</returns>
     Function GetVariableCommand(var As String, cmd As String) As String
-        Dim CommandArgumentsInfo As New ProvidedCommandArgumentsInfo(cmd, ShellCommandType.Shell)
+        Dim CommandArgumentsInfo As New ProvidedCommandArgumentsInfo(cmd, ShellType.Shell)
         Dim NewCommand As String = $"{CommandArgumentsInfo.Command} "
         If Not Commands(CommandArgumentsInfo.Command).SettingVariable Then
             For Each Word As String In CommandArgumentsInfo.ArgumentsList

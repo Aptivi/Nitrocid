@@ -454,7 +454,7 @@ Module MailLogin
 
             'Initialize shell
             Wdbg(DebugLevel.I, "Authentication succeeded. Opening shell...")
-            StartShell(ShellCommandType.MailShell)
+            StartShell(ShellType.MailShell)
         Catch ex As Exception
             Write(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Error, Address, ex.Message)
             WStkTrc(ex)

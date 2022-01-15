@@ -23,10 +23,10 @@ Class RSS_HelpCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 0 Then
             Wdbg(DebugLevel.I, "Requested help for {0}", ListArgs(0))
-            ShowHelp(ListArgs(0), ShellCommandType.RSSShell)
+            ShowHelp(ListArgs(0), ShellType.RSSShell)
         Else
             Wdbg(DebugLevel.I, "Requested help for all commands")
-            ShowHelp(ShellCommandType.RSSShell)
+            ShowHelp(ShellType.RSSShell)
         End If
     End Sub
 

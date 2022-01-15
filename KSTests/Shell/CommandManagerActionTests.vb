@@ -24,7 +24,7 @@ Imports KS
     ''' Tests seeing if the command is found in specific shell (test case: Normal shell, help command)
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestIsCommandFoundInSpecificShell()
-        IsCommandFound("help", ShellCommandType.Shell).ShouldBeTrue
+        IsCommandFound("help", ShellType.Shell).ShouldBeTrue
     End Sub
 
     ''' <summary>

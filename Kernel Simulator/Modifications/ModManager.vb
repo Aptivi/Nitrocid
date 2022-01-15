@@ -229,47 +229,47 @@ Public Module ModManager
                                     If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
                                         For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
                                             Select Case CommandInfo.Type
-                                                Case ShellCommandType.Shell
+                                                Case ShellType.Shell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
                                                     ModCommands.Remove(CommandInfo.Command)
                                                     ModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.FTPShell
+                                                Case ShellType.FTPShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)
                                                     FTPModCommands.Remove(CommandInfo.Command)
                                                     FTPModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.MailShell
+                                                Case ShellType.MailShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from mail shell...", CommandInfo.Command)
                                                     MailModCommands.Remove(CommandInfo.Command)
                                                     MailModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.SFTPShell
+                                                Case ShellType.SFTPShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from SFTP shell...", CommandInfo.Command)
                                                     SFTPModCommands.Remove(CommandInfo.Command)
                                                     SFTPModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.TextShell
+                                                Case ShellType.TextShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from text editor shell...", CommandInfo.Command)
                                                     TextEdit_ModCommands.Remove(CommandInfo.Command)
                                                     TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.TestShell
+                                                Case ShellType.TestShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from test shell...", CommandInfo.Command)
                                                     Test_ModCommands.Remove(CommandInfo.Command)
                                                     TestModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.RemoteDebugShell
+                                                Case ShellType.RemoteDebugShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from remote debug shell...", CommandInfo.Command)
                                                     DebugModCmds.Remove(CommandInfo.Command)
                                                     RDebugModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.ZIPShell
+                                                Case ShellType.ZIPShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from ZIP shell...", CommandInfo.Command)
                                                     ZipShell_ModCommands.Remove(CommandInfo.Command)
                                                     ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.RSSShell
+                                                Case ShellType.RSSShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
                                                     RSSModCommands.Remove(CommandInfo.Command)
                                                     RSSModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.JsonShell
+                                                Case ShellType.JsonShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
                                                     JsonShell_ModCommands.Remove(CommandInfo.Command)
                                                     JsonShell_ModDefs.Remove(CommandInfo.Command)
-                                                Case ShellCommandType.HTTPShell
+                                                Case ShellType.HTTPShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
                                                     HTTPModCommands.Remove(CommandInfo.Command)
                                                     HTTPModDefs.Remove(CommandInfo.Command)

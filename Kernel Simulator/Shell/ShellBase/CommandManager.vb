@@ -24,30 +24,30 @@ Public Module CommandManager
     ''' <param name="Command">A command</param>
     ''' <param name="ShellType">The shell type</param>
     ''' <returns>True if found; False if not found or shell type is invalid.</returns>
-    Public Function IsCommandFound(Command As String, ShellType As ShellCommandType) As Boolean
+    Public Function IsCommandFound(Command As String, ShellType As ShellType) As Boolean
         Wdbg(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType)
         Select Case ShellType
-            Case ShellCommandType.FTPShell
+            Case ShellType.FTPShell
                 Return FTPCommands.ContainsKey(Command)
-            Case ShellCommandType.JsonShell
+            Case ShellType.JsonShell
                 Return JsonShell_Commands.ContainsKey(Command)
-            Case ShellCommandType.MailShell
+            Case ShellType.MailShell
                 Return MailCommands.ContainsKey(Command)
-            Case ShellCommandType.RemoteDebugShell
+            Case ShellType.RemoteDebugShell
                 Return DebugCommands.ContainsKey(Command)
-            Case ShellCommandType.RSSShell
+            Case ShellType.RSSShell
                 Return RSSCommands.ContainsKey(Command)
-            Case ShellCommandType.SFTPShell
+            Case ShellType.SFTPShell
                 Return SFTPCommands.ContainsKey(Command)
-            Case ShellCommandType.Shell
+            Case ShellType.Shell
                 Return Commands.ContainsKey(Command)
-            Case ShellCommandType.TestShell
+            Case ShellType.TestShell
                 Return Test_Commands.ContainsKey(Command)
-            Case ShellCommandType.TextShell
+            Case ShellType.TextShell
                 Return TextEdit_Commands.ContainsKey(Command)
-            Case ShellCommandType.ZIPShell
+            Case ShellType.ZIPShell
                 Return ZipShell_Commands.ContainsKey(Command)
-            Case ShellCommandType.HTTPShell
+            Case ShellType.HTTPShell
                 Return HTTPCommands.ContainsKey(Command)
             Case Else
                 Return False

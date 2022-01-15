@@ -629,7 +629,7 @@
     <Compile Include="Shell\ShellBase\IShell.vb" />
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
-    <Compile Include="Shell\ShellBase\ShellCommandType.vb" />
+    <Compile Include="Shell\ShellBase\ShellType.vb" />
     <Compile Include="Shell\ShellBase\ShellStart.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
     <Compile Include="Shell\Shells\RSSShell.vb" />

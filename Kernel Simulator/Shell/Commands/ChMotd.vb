@@ -29,7 +29,7 @@ Class ChMotdCommand
                 SetMOTD(StringArgs, MessageType.MOTD)
             End If
         Else
-            StartShell(ShellCommandType.TextShell, GetKernelPath(KernelPathType.MOTD))
+            StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MOTD))
             Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
             ReadMOTD(MessageType.MOTD)
         End If

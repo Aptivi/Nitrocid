@@ -24,32 +24,32 @@ Public Module ShellStart
     ''' Starts the shell
     ''' </summary>
     ''' <param name="ShellType">The shell type</param>
-    Public Sub StartShell(ShellType As ShellCommandType, ParamArray ShellArgs() As Object)
+    Public Sub StartShell(ShellType As ShellType, ParamArray ShellArgs() As Object)
         Dim ShellExecute As ShellExecutor = New UESHShell()
 
         'Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
         'Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
         If ShellStack.Count >= 1 Then
             Select Case ShellType
-                Case ShellCommandType.Shell
+                Case ShellType.Shell
                     ShellExecute = New UESHShell()
-                Case ShellCommandType.FTPShell
+                Case ShellType.FTPShell
                     ShellExecute = New FTPShell()
-                Case ShellCommandType.MailShell
+                Case ShellType.MailShell
                     ShellExecute = New MailShell()
-                Case ShellCommandType.SFTPShell
+                Case ShellType.SFTPShell
                     ShellExecute = New SFTPShell()
-                Case ShellCommandType.TextShell
+                Case ShellType.TextShell
                     ShellExecute = New TextShell()
-                Case ShellCommandType.TestShell
+                Case ShellType.TestShell
                     ShellExecute = New TestShell()
-                Case ShellCommandType.ZIPShell
+                Case ShellType.ZIPShell
                     ShellExecute = New ZipShell()
-                Case ShellCommandType.RSSShell
+                Case ShellType.RSSShell
                     ShellExecute = New RSSShell()
-                Case ShellCommandType.JsonShell
+                Case ShellType.JsonShell
                     ShellExecute = New JsonShell()
-                Case ShellCommandType.HTTPShell
+                Case ShellType.HTTPShell
                     ShellExecute = New HTTPShell()
             End Select
         End If

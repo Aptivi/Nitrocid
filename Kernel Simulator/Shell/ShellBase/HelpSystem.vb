@@ -37,7 +37,7 @@ Public Module HelpSystem
     ''' Shows the help of a command, or command list if nothing is specified
     ''' </summary>
     ''' <param name="CommandType">A specified command type</param>
-    Public Sub ShowHelp(CommandType As ShellCommandType)
+    Public Sub ShowHelp(CommandType As ShellType)
         ShowHelp("", CommandType)
     End Sub
 
@@ -46,7 +46,7 @@ Public Module HelpSystem
     ''' </summary>
     ''' <param name="command">A specified command</param>
     Public Sub ShowHelp(command As String)
-        ShowHelp(command, ShellCommandType.Shell)
+        ShowHelp(command, ShellType.Shell)
     End Sub
 
     ''' <summary>
@@ -55,53 +55,53 @@ Public Module HelpSystem
     ''' <param name="command">A specified command</param>
     ''' <param name="CommandType">A specified command type</param>
     ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
-    Public Sub ShowHelp(command As String, CommandType As ShellCommandType, Optional DebugDeviceSocket As StreamWriter = Nothing)
+    Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
         'Determine command type
         Dim CommandList As Dictionary(Of String, CommandInfo) = Commands
         Dim ModCommandList As Dictionary(Of String, String) = ModDefs
         Dim AliasedCommandList As Dictionary(Of String, String) = Aliases
         Select Case CommandType
-            Case ShellCommandType.Shell
+            Case ShellType.Shell
                 CommandList = Commands
                 ModCommandList = ModDefs
                 AliasedCommandList = Aliases
-            Case ShellCommandType.FTPShell
+            Case ShellType.FTPShell
                 CommandList = FTPCommands
                 ModCommandList = FTPModDefs
                 AliasedCommandList = FTPShellAliases
-            Case ShellCommandType.MailShell
+            Case ShellType.MailShell
                 CommandList = MailCommands
                 ModCommandList = MailModDefs
                 AliasedCommandList = MailShellAliases
-            Case ShellCommandType.RSSShell
+            Case ShellType.RSSShell
                 CommandList = RSSCommands
                 ModCommandList = RSSModDefs
                 AliasedCommandList = RSSShellAliases
-            Case ShellCommandType.SFTPShell
+            Case ShellType.SFTPShell
                 CommandList = SFTPCommands
                 ModCommandList = SFTPModDefs
                 AliasedCommandList = SFTPShellAliases
-            Case ShellCommandType.TestShell
+            Case ShellType.TestShell
                 CommandList = Test_Commands
                 ModCommandList = TestModDefs
                 AliasedCommandList = TestShellAliases
-            Case ShellCommandType.TextShell
+            Case ShellType.TextShell
                 CommandList = TextEdit_Commands
                 ModCommandList = TextEdit_ModHelpEntries
                 AliasedCommandList = TextShellAliases
-            Case ShellCommandType.ZIPShell
+            Case ShellType.ZIPShell
                 CommandList = ZipShell_Commands
                 ModCommandList = ZipShell_ModHelpEntries
                 AliasedCommandList = ZIPShellAliases
-            Case ShellCommandType.RemoteDebugShell
+            Case ShellType.RemoteDebugShell
                 CommandList = DebugCommands
                 ModCommandList = RDebugModDefs
                 AliasedCommandList = RemoteDebugAliases
-            Case ShellCommandType.JsonShell
+            Case ShellType.JsonShell
                 CommandList = JsonShell_Commands
                 ModCommandList = JsonShell_ModDefs
                 AliasedCommandList = JsonShellAliases
-            Case ShellCommandType.HTTPShell
+            Case ShellType.HTTPShell
                 CommandList = HTTPCommands
                 ModCommandList = HTTPModDefs
                 AliasedCommandList = HTTPShellAliases
@@ -121,7 +121,7 @@ Public Module HelpSystem
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Usage:"), False, ColTypes.ListEntry)
 
                 'If remote debug, set the command to be prepended by the slash
-                If CommandType = ShellCommandType.RemoteDebugShell Then command = $"/{command}"
+                If CommandType = ShellType.RemoteDebugShell Then command = $"/{command}"
 
                 'Enumerate through the available help usages
                 For Each HelpUsage As String In HelpUsages
@@ -171,7 +171,7 @@ Public Module HelpSystem
                 Next
 
                 'A tip for you all
-                If CommandType = ShellCommandType.Shell Then
+                If CommandType = ShellType.Shell Then
                     DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Tip)
                 End If
             Else

@@ -23,9 +23,9 @@ Public Class JsonShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.JsonShell
+            Return ShellType.JsonShell
         End Get
     End Property
 
@@ -33,7 +33,7 @@ Public Class JsonShell
 
     Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
         'Add handler for JSON shell
-        SwitchCancellationHandler(ShellCommandType.JsonShell)
+        SwitchCancellationHandler(ShellType.JsonShell)
 
         'Get file path
         Dim FilePath As String = ""
@@ -81,7 +81,7 @@ Public Class JsonShell
                     Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                     If JsonShell_Commands.ContainsKey(Command) Then
                         Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, JsonShell_Commands.Count)
-                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.JsonShell, Nothing)
+                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellType.JsonShell, Nothing)
                         JsonShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}
                         KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                         Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)

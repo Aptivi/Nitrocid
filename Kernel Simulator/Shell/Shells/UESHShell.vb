@@ -20,9 +20,9 @@ Public Class UESHShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.Shell
+            Return ShellType.Shell
         End Get
     End Property
 
@@ -30,7 +30,7 @@ Public Class UESHShell
 
     Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
         'Let CTRL+C cancel running command
-        SwitchCancellationHandler(ShellCommandType.Shell)
+        SwitchCancellationHandler(ShellType.Shell)
 
         While Not Bail
             SyncLock CancelSync

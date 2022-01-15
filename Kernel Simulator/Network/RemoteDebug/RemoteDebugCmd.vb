@@ -20,11 +20,11 @@ Imports System.IO
 
 Module RemoteDebugCmd
 
-    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", {}, False, 0, New Debug_ExitCommand)},
-                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
-                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
-                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
-                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", {}, False, 0, New Debug_UsernameCommand)}}
+    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", {}, False, 0, New Debug_ExitCommand)},
+                                                                                  {"help", New CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
+                                                                                  {"register", New CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
+                                                                                  {"trace", New CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
+                                                                                  {"username", New CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", {}, False, 0, New Debug_UsernameCommand)}}
     Public DebugModCmds As New ArrayList
 
     ''' <summary>
@@ -35,7 +35,7 @@ Module RemoteDebugCmd
     ''' <param name="Address">An IP address</param>
     Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
         KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
-        Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellCommandType.RemoteDebugShell)
+        Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell)
         Dim Command As String = ArgumentInfo.Command
         Dim Args() As String = ArgumentInfo.ArgumentsList
         Dim StrArgs As String = ArgumentInfo.ArgumentsText

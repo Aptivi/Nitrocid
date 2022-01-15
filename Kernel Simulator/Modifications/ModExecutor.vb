@@ -59,7 +59,7 @@ Public Module ModExecutor
             If Script.Commands IsNot Nothing Then
                 'Found commands dictionary! Now, check it for the command
                 If Script.Commands.ContainsKey(parts(0)) Then
-                    If Script.Commands(parts(0)).Type = ShellCommandType.Shell Then
+                    If Script.Commands(parts(0)).Type = ShellType.Shell Then
                         'Command type is of shell. Check the user privileges for restricted commands.
                         If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
                             'User was authorized to use the command, or the command wasn't strict

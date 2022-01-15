@@ -25,10 +25,10 @@ Public Module CancellationInstallers
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <remarks>This is the workaround for a bug in .NET Framework regarding <see cref="Console.CancelKeyPress"/> event. More info can be found below:<br>
     ''' </br><see href="https://stackoverflow.com/a/22717063/6688914">Deep explanation of the bug</see></remarks>
-    Public Function SwitchCancellationHandler(ShellType As ShellCommandType) As Boolean
+    Public Function SwitchCancellationHandler(ShellType As ShellType) As Boolean
         LastShellType = CurrentShellType
         Select Case ShellType
-            Case ShellCommandType.FTPShell
+            Case ShellType.FTPShell
                 AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
@@ -39,7 +39,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.JsonShell
+            Case ShellType.JsonShell
                 AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -50,7 +50,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.MailShell
+            Case ShellType.MailShell
                 AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -61,7 +61,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.RSSShell
+            Case ShellType.RSSShell
                 AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -72,7 +72,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.SFTPShell
+            Case ShellType.SFTPShell
                 AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -83,7 +83,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.Shell
+            Case ShellType.Shell
                 AddHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -94,7 +94,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.TestShell
+            Case ShellType.TestShell
                 AddHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -105,7 +105,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.TextShell
+            Case ShellType.TextShell
                 AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
@@ -116,7 +116,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.ZIPShell
+            Case ShellType.ZIPShell
                 AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
@@ -127,7 +127,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellCommandType.HTTPShell
+            Case ShellType.HTTPShell
                 AddHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand

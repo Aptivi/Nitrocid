@@ -244,7 +244,7 @@ Public Module Login
 
         'Initialize shell
         Wdbg(DebugLevel.I, "Shell is being initialized...")
-        StartShell(ShellCommandType.Shell)
+        StartShell(ShellType.Shell)
         PurgeShells()
     End Sub
 

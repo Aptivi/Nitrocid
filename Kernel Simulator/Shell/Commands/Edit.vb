@@ -26,7 +26,7 @@ Class EditCommand
         ListArgs(0) = NeutralizePath(ListArgs(0))
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
         If FileExists(ListArgs(0)) Then
-            StartShell(ShellCommandType.TextShell, ListArgs(0))
+            StartShell(ShellType.TextShell, ListArgs(0))
         Else
             Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
         End If

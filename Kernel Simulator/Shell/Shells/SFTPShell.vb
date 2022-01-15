@@ -22,9 +22,9 @@ Public Class SFTPShell
 
     Private FtpInitialized As Boolean
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.SFTPShell
+            Return ShellType.SFTPShell
         End Get
     End Property
 
@@ -47,7 +47,7 @@ Public Class SFTPShell
                         Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                         SFTPCurrDirect = HomePath
                         KernelEventManager.RaiseSFTPShellInitialized()
-                        SwitchCancellationHandler(ShellCommandType.SFTPShell)
+                        SwitchCancellationHandler(ShellType.SFTPShell)
                         SFTPInitialized = True
                     End If
 

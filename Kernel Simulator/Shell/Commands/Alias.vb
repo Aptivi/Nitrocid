@@ -22,14 +22,14 @@ Class AliasCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 3 Then
-            If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellCommandType), ListArgs(1)) Then
-                ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellCommandType), ListArgs(1))), ListArgs(2), ListArgs(3))
+            If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
+                ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellType), ListArgs(1))), ListArgs(2), ListArgs(3))
             Else
                 Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
             End If
         ElseIf ListArgs?.Length = 3 Then
-            If ListArgs(0) = "rem" And [Enum].IsDefined(GetType(ShellCommandType), ListArgs(1)) Then
-                ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellCommandType), ListArgs(1))), ListArgs(2))
+            If ListArgs(0) = "rem" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
+                ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellType), ListArgs(1))), ListArgs(2))
             Else
                 Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
             End If

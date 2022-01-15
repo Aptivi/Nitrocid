@@ -22,7 +22,7 @@ Class MailCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If KeepAlive Then
-            StartShell(ShellCommandType.MailShell)
+            StartShell(ShellType.MailShell)
         Else
             If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
                 PromptUser()

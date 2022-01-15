@@ -29,7 +29,7 @@ Class ChMalCommand
                 SetMOTD(StringArgs, MessageType.MAL)
             End If
         Else
-            StartShell(ShellCommandType.TextShell, GetKernelPath(KernelPathType.MAL))
+            StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MAL))
             Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
             ReadMOTD(MessageType.MAL)
         End If

@@ -25,7 +25,7 @@ Public Class CommandInfo
     ''' <summary>
     ''' The type of command
     ''' </summary>
-    Public ReadOnly Property Type As ShellCommandType
+    Public ReadOnly Property Type As ShellType
     ''' <summary>
     ''' The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
     ''' </summary>
@@ -87,7 +87,7 @@ Public Class CommandInfo
     ''' <param name="Obsolete">Is the command obsolete?</param>
     ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
     ''' <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-    Public Sub New(Command As String, Type As ShellCommandType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
+    Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
         Me.Command = Command
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition

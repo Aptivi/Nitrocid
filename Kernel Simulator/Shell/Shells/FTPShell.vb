@@ -22,9 +22,9 @@ Public Class FTPShell
 
     Private FtpInitialized As Boolean
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.FTPShell
+            Return ShellType.FTPShell
         End Get
     End Property
 
@@ -50,7 +50,7 @@ Public Class FTPShell
                         FtpTrace.LogIP = FTPLoggerIP
                         FtpCurrentDirectory = HomePath
                         KernelEventManager.RaiseFTPShellInitialized()
-                        SwitchCancellationHandler(ShellCommandType.FTPShell)
+                        SwitchCancellationHandler(ShellType.FTPShell)
                         FtpInitialized = True
                     End If
 

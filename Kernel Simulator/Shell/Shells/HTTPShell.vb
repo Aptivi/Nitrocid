@@ -20,9 +20,9 @@ Public Class HTTPShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.HTTPShell
+            Return ShellType.HTTPShell
         End Get
     End Property
 

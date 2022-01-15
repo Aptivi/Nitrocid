@@ -22,9 +22,9 @@ Class Mail_HelpCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 0 Then
-            ShowHelp(ListArgs(0), ShellCommandType.MailShell)
+            ShowHelp(ListArgs(0), ShellType.MailShell)
         Else
-            ShowHelp(ShellCommandType.MailShell)
+            ShowHelp(ShellType.MailShell)
         End If
     End Sub
 

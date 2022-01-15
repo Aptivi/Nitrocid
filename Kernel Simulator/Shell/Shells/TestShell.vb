@@ -23,9 +23,9 @@ Public Class TestShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.TestShell
+            Return ShellType.TestShell
         End Get
     End Property
 
@@ -33,7 +33,7 @@ Public Class TestShell
 
     Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
         'Show the welcome message
-        SwitchCancellationHandler(ShellCommandType.TestShell)
+        SwitchCancellationHandler(ShellType.TestShell)
         Console.WriteLine()
         WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
 
@@ -57,7 +57,7 @@ Public Class TestShell
                         Wdbg(DebugLevel.I, "Command: {0}", FullCmd)
                         Dim Command As String = FullCmd.SplitEncloseDoubleQuotes(" ")(0)
                         If Test_Commands.ContainsKey(Command) Then
-                            Dim Params As New ExecuteCommandThreadParameters(FullCmd, ShellCommandType.TestShell, Nothing)
+                            Dim Params As New ExecuteCommandThreadParameters(FullCmd, ShellType.TestShell, Nothing)
                             TStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Test Shell Command Thread"}
                             TStartCommandThread.Start(Params)
                             TStartCommandThread.Join()

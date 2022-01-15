@@ -24,7 +24,7 @@ Public Interface IShell
     ''' <summary>
     ''' The shell type
     ''' </summary>
-    ReadOnly Property ShellType As ShellCommandType
+    ReadOnly Property ShellType As ShellType
     ''' <summary>
     ''' If true, will exit the shell
     ''' </summary>

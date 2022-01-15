@@ -23,14 +23,14 @@ Imports System.Threading
 Module ZipShellCommon
 
     'Variables
-    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, "Gets current local directory", {}, False, 0, New ZipShell_CDirCommand)},
-                                                                                      {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, "Changes directory", {"<directory>"}, True, 1, New ZipShell_ChDirCommand)},
-                                                                                      {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, "Changes archive directory", {"<archivedirectory>"}, True, 1, New ZipShell_ChADirCommand)},
-                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, "Exits the ZIP shell", {}, False, 0, New ZipShell_ExitCommand)},
-                                                                                      {"get", New CommandInfo("get", ShellCommandType.ZIPShell, "Extracts a file to a specified directory or a current directory", {"<entry> [where] [-absolute]"}, True, 1, New ZipShell_GetCommand, False, False, False, False, False, New Action(AddressOf (New ZipShell_GetCommand).HelpHelper))},
-                                                                                      {"help", New CommandInfo("help", ShellCommandType.ZIPShell, "Lists available commands", {"[command]"}, False, 0, New ZipShell_HelpCommand)},
-                                                                                      {"list", New CommandInfo("list", ShellCommandType.ZIPShell, "Lists all files inside the archive", {"[directory]"}, False, 0, New ZipShell_ListCommand)},
-                                                                                      {"pack", New CommandInfo("pack", ShellCommandType.ZIPShell, "Packs a local file to the archive", {"<localfile> [where]"}, True, 1, New ZipShell_PackCommand)}}
+    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", {}, False, 0, New ZipShell_CDirCommand)},
+                                                                                      {"chdir", New CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", {"<directory>"}, True, 1, New ZipShell_ChDirCommand)},
+                                                                                      {"chadir", New CommandInfo("chadir", ShellType.ZIPShell, "Changes archive directory", {"<archivedirectory>"}, True, 1, New ZipShell_ChADirCommand)},
+                                                                                      {"exit", New CommandInfo("exit", ShellType.ZIPShell, "Exits the ZIP shell", {}, False, 0, New ZipShell_ExitCommand)},
+                                                                                      {"get", New CommandInfo("get", ShellType.ZIPShell, "Extracts a file to a specified directory or a current directory", {"<entry> [where] [-absolute]"}, True, 1, New ZipShell_GetCommand, False, False, False, False, False, New Action(AddressOf (New ZipShell_GetCommand).HelpHelper))},
+                                                                                      {"help", New CommandInfo("help", ShellType.ZIPShell, "Lists available commands", {"[command]"}, False, 0, New ZipShell_HelpCommand)},
+                                                                                      {"list", New CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", {"[directory]"}, False, 0, New ZipShell_ListCommand)},
+                                                                                      {"pack", New CommandInfo("pack", ShellType.ZIPShell, "Packs a local file to the archive", {"<localfile> [where]"}, True, 1, New ZipShell_PackCommand)}}
     Public ZipShell_ModCommands As New ArrayList
     Public ZipShell_FileStream As FileStream
     Public ZipShell_ZipArchive As ZipArchive

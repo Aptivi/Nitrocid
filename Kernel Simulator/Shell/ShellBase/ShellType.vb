@@ -17,9 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ''' <summary>
-''' Shell command type enumeration
+''' Shell type enumeration
 ''' </summary>
-Public Enum ShellCommandType
+Public Enum ShellType
     ''' <summary>
     ''' Normal UESH shell
     ''' </summary>

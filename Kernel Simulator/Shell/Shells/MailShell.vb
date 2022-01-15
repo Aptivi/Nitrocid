@@ -22,9 +22,9 @@ Public Class MailShell
     Inherits ShellExecutor
     Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
-            Return ShellCommandType.MailShell
+            Return ShellType.MailShell
         End Get
     End Property
 
@@ -46,7 +46,7 @@ Public Class MailShell
         End If
 
         'Add handler for IMAP and SMTP
-        SwitchCancellationHandler(ShellCommandType.MailShell)
+        SwitchCancellationHandler(ShellType.MailShell)
         KernelEventManager.RaiseIMAPShellInitialized()
 
         While Not Bail
@@ -77,7 +77,7 @@ Public Class MailShell
                     Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
                     If MailCommands.ContainsKey(words(0)) Then
                         Wdbg(DebugLevel.I, "Command found.")
-                        Dim Params As New ExecuteCommandThreadParameters(cmd, ShellCommandType.MailShell, Nothing)
+                        Dim Params As New ExecuteCommandThreadParameters(cmd, ShellType.MailShell, Nothing)
                         MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
                         MailStartCommandThread.Start(Params)
                         MailStartCommandThread.Join()

@@ -19,7 +19,7 @@
 Public MustInherit Class ShellExecutor
     Implements IShell
 
-    Public Overridable ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
+    Public Overridable ReadOnly Property ShellType As ShellType Implements IShell.ShellType
     Public Overridable Property Bail As Boolean Implements IShell.Bail
 
     Public Overridable Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell

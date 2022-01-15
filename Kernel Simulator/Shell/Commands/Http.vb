@@ -21,7 +21,7 @@ Class HttpCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        StartShell(ShellCommandType.HTTPShell)
+        StartShell(ShellType.HTTPShell)
     End Sub
 
 End Class

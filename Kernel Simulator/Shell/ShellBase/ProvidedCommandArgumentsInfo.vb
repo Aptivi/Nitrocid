@@ -47,33 +47,33 @@ Public Class ProvidedCommandArgumentsInfo
     ''' Makes a new instance of the command argument info with the user-provided command text
     ''' </summary>
     ''' <param name="CommandText">Command text that the user provided</param>
-    ''' <param name="CommandType">Shell command type. Consult the <see cref="ShellCommandType"/> enum for information about supported shells.</param>
-    Friend Sub New(CommandText As String, CommandType As ShellCommandType)
+    ''' <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
+    Friend Sub New(CommandText As String, CommandType As ShellType)
         Dim Command As String
         Dim RequiredArgumentsProvided As Boolean = True
         Dim ShellCommands As Dictionary(Of String, CommandInfo) = Commands
 
         'Change the available commands list according to command type
         Select Case CommandType
-            Case ShellCommandType.FTPShell
+            Case ShellType.FTPShell
                 ShellCommands = FTPCommands
-            Case ShellCommandType.MailShell
+            Case ShellType.MailShell
                 ShellCommands = MailCommands
-            Case ShellCommandType.RemoteDebugShell
+            Case ShellType.RemoteDebugShell
                 ShellCommands = DebugCommands
-            Case ShellCommandType.RSSShell
+            Case ShellType.RSSShell
                 ShellCommands = RSSCommands
-            Case ShellCommandType.SFTPShell
+            Case ShellType.SFTPShell
                 ShellCommands = SFTPCommands
-            Case ShellCommandType.TestShell
+            Case ShellType.TestShell
                 ShellCommands = Test_Commands
-            Case ShellCommandType.TextShell
+            Case ShellType.TextShell
                 ShellCommands = TextEdit_Commands
-            Case ShellCommandType.ZIPShell
+            Case ShellType.ZIPShell
                 ShellCommands = ZipShell_Commands
-            Case ShellCommandType.JsonShell
+            Case ShellType.JsonShell
                 ShellCommands = JsonShell_Commands
-            Case ShellCommandType.HTTPShell
+            Case ShellType.HTTPShell
                 ShellCommands = HTTPCommands
         End Select
 

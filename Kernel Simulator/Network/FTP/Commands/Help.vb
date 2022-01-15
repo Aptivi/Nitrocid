@@ -22,9 +22,9 @@ Class FTP_HelpCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If StringArgs = "help" Then
-            ShowHelp(ShellCommandType.FTPShell)
+            ShowHelp(ShellType.FTPShell)
         Else
-            ShowHelp(StringArgs, ShellCommandType.FTPShell)
+            ShowHelp(StringArgs, ShellType.FTPShell)
         End If
     End Sub
 

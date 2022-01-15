@@ -24,9 +24,9 @@ Class Debug_HelpCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
         If ListArgs?.Length <> 0 Then
-            ShowHelp(ListArgs(0), ShellCommandType.RemoteDebugShell, SocketStreamWriter)
+            ShowHelp(ListArgs(0), ShellType.RemoteDebugShell, SocketStreamWriter)
         Else
-            ShowHelp("", ShellCommandType.RemoteDebugShell, SocketStreamWriter)
+            ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter)
         End If
     End Sub
 

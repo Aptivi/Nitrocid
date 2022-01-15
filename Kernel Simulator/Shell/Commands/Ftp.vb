@@ -23,9 +23,9 @@ Class FtpCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
-                StartShell(ShellCommandType.FTPShell)
+                StartShell(ShellType.FTPShell)
             Else
-                StartShell(ShellCommandType.FTPShell, ListArgs(0))
+                StartShell(ShellType.FTPShell, ListArgs(0))
             End If
         Catch ftpex As Exceptions.FTPShellException
             Write(ftpex.Message, True, ColTypes.Error)
