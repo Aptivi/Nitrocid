@@ -24,7 +24,7 @@ Public Class SFTPShell
 
     Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
         Get
-            Return ShellCommandType.FTPShell
+            Return ShellCommandType.SFTPShell
         End Get
     End Property
 

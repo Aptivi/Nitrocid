@@ -22,7 +22,7 @@ Public Class HTTPShell
 
     Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
         Get
-            Return ShellCommandType.MailShell
+            Return ShellCommandType.HTTPShell
         End Get
     End Property
 

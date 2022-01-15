@@ -25,7 +25,7 @@ Public Class TestShell
 
     Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
         Get
-            Return ShellCommandType.MailShell
+            Return ShellCommandType.TestShell
         End Get
     End Property
 

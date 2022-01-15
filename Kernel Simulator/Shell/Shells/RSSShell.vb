@@ -26,7 +26,7 @@ Public Class RSSShell
 
     Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
         Get
-            Return ShellCommandType.MailShell
+            Return ShellCommandType.RSSShell
         End Get
     End Property
 

@@ -26,7 +26,7 @@ Public Class ZipShell
 
     Public Overrides ReadOnly Property ShellType As ShellCommandType Implements IShell.ShellType
         Get
-            Return ShellCommandType.MailShell
+            Return ShellCommandType.ZIPShell
         End Get
     End Property
 
