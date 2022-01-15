@@ -164,12 +164,12 @@ Public Module SettingsApp
                     Else
                         'Determine how to get the current value
                         If VariableProperty Is Nothing Then
-                            CurrentValue = GetConfigValueField(Variable)
+                            CurrentValue = GetValue(Variable)
                             If TypeOf CurrentValue Is Color Then
                                 CurrentValue = CurrentValue.PlainSequence
                             End If
                         Else
-                            CurrentValue = GetConfigPropertyValueInVariableField(Variable, VariableProperty)
+                            CurrentValue = GetPropertyValueInVariable(Variable, VariableProperty)
                         End If
                         Write(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
                     End If
@@ -287,12 +287,12 @@ Public Module SettingsApp
                         TargetList = GetMethod(ListFunctionName).Invoke(ListFunctionType, Nothing)
                     End If
                     If KeyVarProperty Is Nothing Then
-                        KeyDefaultValue = GetConfigValueField(KeyVar)
+                        KeyDefaultValue = GetValue(KeyVar)
                         If TypeOf KeyDefaultValue Is Color Then
                             KeyDefaultValue = KeyDefaultValue.PlainSequence
                         End If
                     Else
-                        KeyDefaultValue = GetConfigPropertyValueInVariableField(KeyVar, KeyVarProperty)
+                        KeyDefaultValue = GetPropertyValueInVariable(KeyVar, KeyVarProperty)
                     End If
                 End If
 
@@ -384,10 +384,10 @@ Public Module SettingsApp
                         Select Case AnswerInt
                             Case 1 'True
                                 Wdbg(DebugLevel.I, "Setting to True...")
-                                SetConfigValueField(KeyVar, True)
+                                SetValue(KeyVar, True)
                             Case 2 'False
                                 Wdbg(DebugLevel.I, "Setting to False...")
-                                SetConfigValueField(KeyVar, False)
+                                SetValue(KeyVar, False)
                         End Select
                     ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
                         Wdbg(DebugLevel.I, "User requested exit. Returning...")
@@ -408,23 +408,23 @@ Public Module SettingsApp
                     ElseIf KeyType = SettingsKeyType.SSelection And AnswerInt > 0 And Selections IsNot Nothing Then
                         Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt)
                         KeyFinished = True
-                        SetConfigValueField(KeyVar, Selections(AnswerIndex))
+                        SetValue(KeyVar, Selections(AnswerIndex))
                     ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
                            (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
                         If KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions Then
                             If Not SelectionEnum Then
                                 Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                 KeyFinished = True
-                                SetConfigValueField(KeyVar, SelectFrom(AnswerInt - 1))
+                                SetValue(KeyVar, SelectFrom(AnswerInt - 1))
                             Else
                                 Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                 KeyFinished = True
-                                SetConfigValueField(KeyVar, AnswerInt)
+                                SetValue(KeyVar, AnswerInt)
                             End If
                         ElseIf KeyType = SettingsKeyType.SInt Then
                             Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                             KeyFinished = True
-                            SetConfigValueField(KeyVar, AnswerInt)
+                            SetValue(KeyVar, AnswerInt)
                         ElseIf KeyType = SettingsKeyType.SSelection Then
                             Wdbg(DebugLevel.W, "Answer is not valid.")
                             Write(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
@@ -462,23 +462,23 @@ Public Module SettingsApp
 
                     'Set the value
                     KeyFinished = True
-                    SetConfigValueField(KeyVar, AnswerString)
+                    SetValue(KeyVar, AnswerString)
                 ElseIf KeyType = SettingsKeyType.SList Then
                     Dim FinalDelimiter As String
                     Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
                     KeyFinished = True
                     If ListJoinString Is Nothing Then
-                        FinalDelimiter = GetConfigValueField(ListJoinStringVariable)
+                        FinalDelimiter = GetValue(ListJoinStringVariable)
                     Else
                         FinalDelimiter = ListJoinString
                     End If
-                    SetConfigValueField(KeyVar, String.Join(FinalDelimiter, TargetList))
+                    SetValue(KeyVar, String.Join(FinalDelimiter, TargetList))
                 ElseIf KeyType = SettingsKeyType.SVariant Then
-                    SetConfigValueField(KeyVar, VariantValue)
+                    SetValue(KeyVar, VariantValue)
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SColor Then
-                    SetConfigValueField(KeyVar, New Color(ColorValue.ToString))
+                    SetValue(KeyVar, New Color(ColorValue.ToString))
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 Else
