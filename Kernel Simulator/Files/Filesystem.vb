@@ -90,7 +90,7 @@ Public Module Filesystem
         'Read the contents
         ThrowOnInvalidPath(filename)
         filename = NeutralizePath(filename)
-        For Each FilePath As String In GetFilesystemEntries(filename)
+        For Each FilePath As String In GetFilesystemEntries(filename, True)
             Dim Contents As String() = ReadContents(FilePath)
             For ContentIndex As Integer = 0 To Contents.Length - 1
                 If PrintLineNumbers Then
@@ -1054,7 +1054,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Path">The path, including the pattern</param>
     ''' <returns>The array of full paths</returns>
-    Public Function GetFilesystemEntries(Path As String) As String()
+    Public Function GetFilesystemEntries(Path As String, Optional IsFile As Boolean = False) As String()
         Dim Entries As String() = {}
         Try
             ThrowOnInvalidPath(Path)
@@ -1072,8 +1072,12 @@ Public Module Filesystem
             Next
 
             'Split the path and the pattern
-            Dim Parent As String = IO.Path.GetDirectoryName(Path) + "/" + IO.Path.GetFileName(Path)
-            Dim Pattern As String = "*"
+            Dim Parent As String = NeutralizePath(IO.Path.GetDirectoryName(Path) + "/" + IO.Path.GetFileName(Path))
+            Dim Pattern As String = If(IsFile, "", "*")
+            If Parent.ContainsAnyOf(IO.Path.GetInvalidPathChars.Select(Function(Character) Character.ToString).ToArray) Then
+                Parent = IO.Path.GetDirectoryName(Path)
+                Pattern = IO.Path.GetFileName(Path)
+            End If
             If SelectedPatternIndex <> 0 Then
                 Parent = String.Join("/", SplitParent)
                 Pattern = String.Join("/", SplitPath.Skip(SelectedPatternIndex))
@@ -1105,6 +1109,8 @@ Public Module Filesystem
             If Directory.Exists(Parent) Then
                 Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern).ToArray
                 Wdbg(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern)
+            Else
+                Entries = {Parent}
             End If
         Catch ex As Exception
             WStkTrc(ex)
