@@ -294,7 +294,7 @@ Public Module Config
                     {"Ask for password after locking", PasswordLock}
             }
 
-            'Disco config json object
+            'ColorMix config json object
             Dim ColorMixConfig As New JObject From {
                     {"Activate 255 Color Mode", ColorMix255Colors},
                     {"Activate True Color Mode", ColorMixTrueColor},

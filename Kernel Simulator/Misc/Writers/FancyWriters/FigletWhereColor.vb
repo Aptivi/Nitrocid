@@ -21,7 +21,7 @@ Imports Figgle
 Public Module FigletWhereColor
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -44,7 +44,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -67,7 +67,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -92,7 +92,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -115,7 +115,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -140,7 +140,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>
@@ -163,7 +163,7 @@ Public Module FigletWhereColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text with position support
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="Left">Column number in console</param>

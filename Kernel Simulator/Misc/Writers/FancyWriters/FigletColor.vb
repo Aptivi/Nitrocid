@@ -21,7 +21,7 @@ Imports Figgle
 Public Module FigletColor
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -41,7 +41,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -61,7 +61,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -83,7 +83,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -103,7 +103,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -125,7 +125,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
@@ -145,7 +145,7 @@ Public Module FigletColor
     End Sub
 
     ''' <summary>
-    ''' Draw a separator with text
+    ''' Writes the figlet text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
