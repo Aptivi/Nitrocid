@@ -543,88 +543,97 @@ Public Module ColorTools
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SetConsoleColor(colorType As ColTypes) As Boolean
+        Return SetConsoleColor(colorType, False)
+    End Function
+
+    ''' <summary>
+    ''' Sets the console color
+    ''' </summary>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SetConsoleColor(colorType As ColTypes, Background As Boolean) As Boolean
         If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
             Select Case colorType
                 Case ColTypes.Neutral
-                    SetConsoleColor(NeutralTextColor)
+                    SetConsoleColor(NeutralTextColor, Background)
                 Case ColTypes.Continuable
-                    SetConsoleColor(ContKernelErrorColor)
+                    SetConsoleColor(ContKernelErrorColor, Background)
                 Case ColTypes.Uncontinuable
-                    SetConsoleColor(UncontKernelErrorColor)
+                    SetConsoleColor(UncontKernelErrorColor, Background)
                 Case ColTypes.HostName
-                    SetConsoleColor(HostNameShellColor)
+                    SetConsoleColor(HostNameShellColor, Background)
                 Case ColTypes.UserName
-                    SetConsoleColor(UserNameShellColor)
+                    SetConsoleColor(UserNameShellColor, Background)
                 Case ColTypes.License
-                    SetConsoleColor(LicenseColor)
+                    SetConsoleColor(LicenseColor, Background)
                 Case ColTypes.Gray
                     If BackgroundColor.IsBright Then
-                        SetConsoleColor(NeutralTextColor)
+                        SetConsoleColor(NeutralTextColor, Background)
                     Else
-                        SetConsoleColor(New Color(ConsoleColors.Gray))
+                        SetConsoleColor(New Color(ConsoleColors.Gray), Background)
                     End If
                 Case ColTypes.ListValue
-                    SetConsoleColor(ListValueColor)
+                    SetConsoleColor(ListValueColor, Background)
                 Case ColTypes.ListEntry
-                    SetConsoleColor(ListEntryColor)
+                    SetConsoleColor(ListEntryColor, Background)
                 Case ColTypes.Stage
-                    SetConsoleColor(StageColor)
+                    SetConsoleColor(StageColor, Background)
                 Case ColTypes.Error
-                    SetConsoleColor(ErrorColor)
+                    SetConsoleColor(ErrorColor, Background)
                 Case ColTypes.Warning
-                    SetConsoleColor(WarningColor)
+                    SetConsoleColor(WarningColor, Background)
                 Case ColTypes.Option
-                    SetConsoleColor(OptionColor)
+                    SetConsoleColor(OptionColor, Background)
                 Case ColTypes.Banner
-                    SetConsoleColor(BannerColor)
+                    SetConsoleColor(BannerColor, Background)
                 Case ColTypes.NotificationTitle
-                    SetConsoleColor(NotificationTitleColor)
+                    SetConsoleColor(NotificationTitleColor, Background)
                 Case ColTypes.NotificationDescription
-                    SetConsoleColor(NotificationDescriptionColor)
+                    SetConsoleColor(NotificationDescriptionColor, Background)
                 Case ColTypes.NotificationProgress
-                    SetConsoleColor(NotificationProgressColor)
+                    SetConsoleColor(NotificationProgressColor, Background)
                 Case ColTypes.NotificationFailure
-                    SetConsoleColor(NotificationFailureColor)
+                    SetConsoleColor(NotificationFailureColor, Background)
                 Case ColTypes.Question, ColTypes.Input
-                    SetConsoleColor(QuestionColor)
+                    SetConsoleColor(QuestionColor, Background)
                 Case ColTypes.Success
-                    SetConsoleColor(SuccessColor)
+                    SetConsoleColor(SuccessColor, Background)
                 Case ColTypes.UserDollarSign
-                    SetConsoleColor(UserDollarColor)
+                    SetConsoleColor(UserDollarColor, Background)
                 Case ColTypes.Tip
-                    SetConsoleColor(TipColor)
+                    SetConsoleColor(TipColor, Background)
                 Case ColTypes.SeparatorText
-                    SetConsoleColor(SeparatorTextColor)
+                    SetConsoleColor(SeparatorTextColor, Background)
                 Case ColTypes.Separator
-                    SetConsoleColor(SeparatorColor)
+                    SetConsoleColor(SeparatorColor, Background)
                 Case ColTypes.ListTitle
-                    SetConsoleColor(ListTitleColor)
+                    SetConsoleColor(ListTitleColor, Background)
                 Case ColTypes.DevelopmentWarning
-                    SetConsoleColor(DevelopmentWarningColor)
+                    SetConsoleColor(DevelopmentWarningColor, Background)
                 Case ColTypes.StageTime
-                    SetConsoleColor(StageTimeColor)
+                    SetConsoleColor(StageTimeColor, Background)
                 Case ColTypes.Progress
-                    SetConsoleColor(ProgressColor)
+                    SetConsoleColor(ProgressColor, Background)
                 Case ColTypes.BackOption
-                    SetConsoleColor(BackOptionColor)
+                    SetConsoleColor(BackOptionColor, Background)
                 Case ColTypes.LowPriorityBorder
-                    SetConsoleColor(LowPriorityBorderColor)
+                    SetConsoleColor(LowPriorityBorderColor, Background)
                 Case ColTypes.MediumPriorityBorder
-                    SetConsoleColor(MediumPriorityBorderColor)
+                    SetConsoleColor(MediumPriorityBorderColor, Background)
                 Case ColTypes.HighPriorityBorder
-                    SetConsoleColor(HighPriorityBorderColor)
+                    SetConsoleColor(HighPriorityBorderColor, Background)
                 Case ColTypes.TableSeparator
-                    SetConsoleColor(TableSeparatorColor)
+                    SetConsoleColor(TableSeparatorColor, Background)
                 Case ColTypes.TableHeader
-                    SetConsoleColor(TableHeaderColor)
+                    SetConsoleColor(TableHeaderColor, Background)
                 Case ColTypes.TableValue
-                    SetConsoleColor(TableValueColor)
+                    SetConsoleColor(TableValueColor, Background)
                 Case ColTypes.SelectedOption
-                    SetConsoleColor(SelectedOptionColor)
+                    SetConsoleColor(SelectedOptionColor, Background)
                 Case Else
                     Exit Select
             End Select
-            SetConsoleColor(BackgroundColor, True)
+            If Not Background Then SetConsoleColor(BackgroundColor, True)
         End If
         Return True
     End Function

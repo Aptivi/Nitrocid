@@ -74,6 +74,31 @@ Public Module FigletWhereColor
     ''' <param name="Top">Row number in console</param>
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="FigletFont">Figlet font to use in the text.</param>
+    ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+    ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
+    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray Vars() As Object)
+        Try
+            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+            SetConsoleColor(colorTypeForeground)
+            SetConsoleColor(colorTypeBackground, True)
+
+            'Actually write
+            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            WStkTrc(ex)
+            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Draw a separator with text
+    ''' </summary>
+    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
+    ''' <param name="FigletFont">Figlet font to use in the text.</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, Color As ConsoleColor, ParamArray Vars() As Object)

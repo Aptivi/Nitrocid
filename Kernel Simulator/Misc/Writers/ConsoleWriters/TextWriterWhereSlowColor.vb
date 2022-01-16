@@ -115,6 +115,42 @@ Module TextWriterWhereSlowColor
     ''' <param name="Top">Row number in console</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="Return">Whether or not to return to old position</param>
+    ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+    ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
+    Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(colorTypeForeground)
+                SetConsoleColor(colorTypeBackground, True)
+
+                'Write text in another place slowly
+                WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, [Return], vars)
+
+                'Reset the colors
+                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="Left">Column number in console</param>
+    ''' <param name="Top">Row number in console</param>
+    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+    ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, color As ConsoleColor, ParamArray vars() As Object)
