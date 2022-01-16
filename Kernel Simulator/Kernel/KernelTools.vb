@@ -571,13 +571,6 @@ Public Module KernelTools
     End Sub
 
     ''' <summary>
-    ''' Polls $TERM_PROGRAM to get terminal emulator
-    ''' </summary>
-    Public Function GetTerminalEmulator() As String
-        Return Environ("TERM_PROGRAM")
-    End Function
-
-    ''' <summary>
     ''' Gets the used compiler variables for building Kernel Simulator
     ''' </summary>
     ''' <returns>An array containing used compiler variables</returns>
