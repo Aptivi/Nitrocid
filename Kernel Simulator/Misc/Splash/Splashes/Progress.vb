@@ -74,10 +74,7 @@ Class SplashProgress
         ClearLineToRight()
 
         'Display the progress bar
-        WriteWhere(ProgressUpperLeftCornerChar + ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressUpperRightCornerChar, 4, Console.WindowHeight - 4, True, ColTypes.Gray)
-        WriteWhere(ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressRightFrameChar, 4, Console.WindowHeight - 3, True, ColTypes.Gray)
-        WriteWhere(ProgressLowerLeftCornerChar + ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressLowerRightCornerChar, 4, Console.WindowHeight - 2, True, ColTypes.Gray)
-        WriteWhere(" ".Repeat(PercentRepeat(Progress, 100, 10)), 5, Console.WindowHeight - 3, True, NeutralTextColor, New Color(ConsoleColors.Cyan))
+        WriteProgress(Progress, 4, Console.WindowHeight - 4)
 
         While Not SplashClosing
         End While
@@ -96,10 +93,7 @@ Class SplashProgress
         ClearLineToRight()
 
         'Display the progress bar
-        WriteWhere(ProgressUpperLeftCornerChar + ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressUpperRightCornerChar, 4, Console.WindowHeight - 4, True, ColTypes.Gray)
-        WriteWhere(ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressRightFrameChar, 4, Console.WindowHeight - 3, True, ColTypes.Gray)
-        WriteWhere(ProgressLowerLeftCornerChar + ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressLowerRightCornerChar, 4, Console.WindowHeight - 2, True, ColTypes.Gray)
-        WriteWhere(" ".Repeat(PercentRepeat(Progress, 100, 10)), 5, Console.WindowHeight - 3, True, NeutralTextColor, New Color(ConsoleColors.Cyan))
+        WriteProgress(Progress, 4, Console.WindowHeight - 4)
     End Sub
 
 End Class

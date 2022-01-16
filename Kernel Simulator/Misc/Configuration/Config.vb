@@ -146,7 +146,7 @@ Public Module Config
                     {"List Title Color", ListTitleColor.PlainSequenceEnclosed},
                     {"Development Warning Color", DevelopmentWarningColor.PlainSequenceEnclosed},
                     {"Stage Time Color", StageTimeColor.PlainSequenceEnclosed},
-                    {"Progress Color", ProgressColor.PlainSequenceEnclosed},
+                    {"Progress Color", ColorTools.ProgressColor.PlainSequenceEnclosed},
                     {"Back Option Color", BackOptionColor.PlainSequenceEnclosed},
                     {"Low Priority Border Color", LowPriorityBorderColor.PlainSequenceEnclosed},
                     {"Medium Priority Border Color", MediumPriorityBorderColor.PlainSequenceEnclosed},
@@ -962,7 +962,7 @@ Public Module Config
                 ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White).ToString)
                 DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow).ToString)
                 StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray).ToString)
-                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow).ToString)
+                ColorTools.ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow).ToString)
                 BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed).ToString)
                 LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White).ToString)
                 MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow).ToString)
