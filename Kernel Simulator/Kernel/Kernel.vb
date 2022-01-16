@@ -44,14 +44,17 @@ Public Module Kernel
                 'Check for terminal (macOS only). This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that
                 'has incompatibilities with VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit
                 'the program early when this stock terminal is spotted.
-#If STOCKTERMINALMACOS = False Then
+                '
+                'More information regarding this check: The blacklisted terminals will not be able to run Kernel Simulator properly, because they have broken
+                'support for colors and possibly more features. For example, we have Apple_Terminal that has no support for 255 and true colors; it only
+                'supports 16 colors setting by VT sequences and nothing can change that, although it's fully XTerm compliant.
                 If IsOnMacOS() Then
                     If GetTerminalEmulator() = "Apple_Terminal" Then
                         Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
+                        Console.WriteLine("Possible solution: Download iTerm here: https://iterm2.com/downloads.html")
                         Environment.Exit(5)
                     End If
                 End If
-#End If
 
                 'Initialize crucial things
                 InitPaths()

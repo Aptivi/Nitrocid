@@ -598,10 +598,6 @@ Public Module KernelTools
         CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG")
 #End If
 
-#If STOCKTERMINALMACOS Then
-        CompilerVars.Add("STOCKTERMINALMACOS")
-#End If
-
         'Return the compiler vars
         Return CompilerVars.ToArray
     End Function
