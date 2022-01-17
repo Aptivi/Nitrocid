@@ -42,8 +42,7 @@ Class ArgInjCommand
     End Sub
 
     Public Sub HelpHelper()
-        Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
+        Write(DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
     End Sub
 
 End Class

@@ -37,11 +37,10 @@ Class SetSaverCommand
     End Sub
 
     Public Sub HelpHelper()
-        Dim UsageLength As Integer = DoTranslation("Usage:").Length
         If CustomSavers.Count > 0 Then
-            Write(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
+            Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
         End If
-        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
+        Write(DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
     End Sub
 
 End Class

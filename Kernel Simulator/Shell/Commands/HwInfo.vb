@@ -25,8 +25,7 @@ Class HwInfoCommand
     End Sub
 
     Public Sub HelpHelper()
-        Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
+        Write(DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
     End Sub
 
 End Class

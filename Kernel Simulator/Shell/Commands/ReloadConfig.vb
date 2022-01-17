@@ -26,8 +26,7 @@ Class ReloadConfigCommand
     End Sub
 
     Public Sub HelpHelper()
-        Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        Write(" ".Repeat(UsageLength) + " " + DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
+        Write(DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
     End Sub
 
 End Class

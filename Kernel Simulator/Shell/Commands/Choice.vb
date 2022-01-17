@@ -45,9 +45,8 @@ Class ChoiceCommand
     End Sub
 
     Public Sub HelpHelper()
-        Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
-              " ".Repeat(UsageLength) + " " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
+        Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+              DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
         Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
         Write("  -multiple: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicate that the answer can take more than one character"), True, ColTypes.ListValue)
         Write("  -single: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicate that the answer can take just one character"), True, ColTypes.ListValue)

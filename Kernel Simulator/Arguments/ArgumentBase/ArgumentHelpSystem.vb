@@ -53,7 +53,6 @@ Public Module ArgumentHelpSystem
         If Not String.IsNullOrWhiteSpace(Argument) And ArgumentList.ContainsKey(Argument) Then
             Dim HelpDefinition As String = ArgumentList(Argument).GetTranslatedHelpEntry
             Dim HelpUsage As String = ArgumentList(Argument).HelpUsage
-            Dim UsageLength As Integer = DoTranslation("Usage:").Length
 
             'Print usage information
             Write(DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
