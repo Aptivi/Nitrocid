@@ -322,7 +322,9 @@ Public Module SettingsApp
                 End If
 
                 'Add an option to go back.
-                If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList Then
+                If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And
+                   Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And
+                   Not KeyType = SettingsKeyType.SChar Then
                     Write(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
                 ElseIf KeyType = SettingsKeyType.SList Then
                     Write(vbNewLine + " q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
