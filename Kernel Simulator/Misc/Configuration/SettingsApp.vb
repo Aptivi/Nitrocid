@@ -478,7 +478,11 @@ Public Module SettingsApp
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SColor Then
-                    SetValue(KeyVar, New Color(ColorValue.ToString))
+                    If GetField(KeyVar).FieldType = GetType(Color) Then
+                        SetValue(KeyVar, New Color(ColorValue.ToString))
+                    Else
+                        SetValue(KeyVar, ColorValue.ToString)
+                    End If
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 Else
