@@ -1,0 +1,12 @@
+{
+    "Progress": {
+        "Desc": "Settings for this splash screen are available here.",
+        "Keys": [
+            {
+                "Name": "Progress bar color",
+                "Type": "SColor",
+                "Variable": "ProgressProgressColor"
+            }
+        ]
+    }
+}

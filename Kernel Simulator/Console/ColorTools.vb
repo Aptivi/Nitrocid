@@ -667,4 +667,54 @@ Public Module ColorTools
         Return False
     End Function
 
+    ''' <summary>
+    ''' Tries parsing the color from the specifier string
+    ''' </summary>
+    ''' <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
+    ''' <returns>True if successful; False if failed</returns>
+    Public Function TryParseColor(ColorSpecifier As String) As Boolean
+        Try
+            Dim ColorInstance As New Color(ColorSpecifier)
+            Return True
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message)
+            WStkTrc(ex)
+            Return False
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Tries parsing the color from the specifier string
+    ''' </summary>
+    ''' <param name="ColorNum">The color number</param>
+    ''' <returns>True if successful; False if failed</returns>
+    Public Function TryParseColor(ColorNum As Integer) As Boolean
+        Try
+            Dim ColorInstance As New Color(ColorNum)
+            Return True
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message)
+            WStkTrc(ex)
+            Return False
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Tries parsing the color from the specifier string
+    ''' </summary>
+    ''' <param name="R">The red level</param>
+    ''' <param name="G">The green level</param>
+    ''' <param name="B">The blue level</param>
+    ''' <returns>True if successful; False if failed</returns>
+    Public Function TryParseColor(R As Integer, G As Integer, B As Integer) As Boolean
+        Try
+            Dim ColorInstance As New Color(R, G, B)
+            Return True
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Failed trying to parse color: {0}", ex.Message)
+            WStkTrc(ex)
+            Return False
+        End Try
+    End Function
+
 End Module

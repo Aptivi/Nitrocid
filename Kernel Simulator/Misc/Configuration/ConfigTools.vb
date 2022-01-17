@@ -47,7 +47,7 @@ Public Module ConfigTools
         Dim FixesNeeded As Boolean
 
         'General sections
-        Dim ExpectedSections As Integer = 9
+        Dim ExpectedSections As Integer = 10
         Dim ExpectedGeneralKeys As Integer = 21
         Dim ExpectedColorsKeys As Integer = 37
         Dim ExpectedHardwareKeys As Integer = 4
@@ -91,6 +91,14 @@ Public Module ConfigTools
         Dim ExpectedScreensaverFireworksKeys As Integer = 12
         Dim ExpectedScreensaverFigletKeys As Integer = 13
 
+        'Splash keys and sections
+        Dim ExpectedSplashKeys As Integer = 0
+        Dim ExpectedSplashes As Integer = 1
+        Dim ExpectedSplashSections As Integer = ExpectedSplashes + ExpectedSplashKeys
+
+        'Individual splash keys
+        Dim ExpectedSplashProgressKeys As Integer = 1
+
         'Check for missing sections
         If ConfigToken.Count <> ExpectedSections Then
             Wdbg(DebugLevel.W, "Missing sections. Config fix needed set to true.")
@@ -99,6 +107,12 @@ Public Module ConfigTools
         If ConfigToken("Screensaver") IsNot Nothing Then
             If ConfigToken("Screensaver").Count <> ExpectedScreensaverSections Then
                 Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Splash") IsNot Nothing Then
+            If ConfigToken("Splash").Count <> ExpectedSplashSections Then
+                Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
@@ -306,6 +320,14 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("Figlet") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Figlet").Count <> ExpectedScreensaverFigletKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Figlet. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+        End If
+        If ConfigToken("Splash") IsNot Nothing Then
+            If ConfigToken("Splash")("Progress") IsNot Nothing Then
+                If ConfigToken("Splash")("Progress").Count <> ExpectedSplashProgressKeys Then
+                    Wdbg(DebugLevel.W, "Missing keys in Splash > ColorMix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

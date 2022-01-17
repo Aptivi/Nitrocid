@@ -238,6 +238,7 @@
     <Compile Include="Misc\Configuration\ConfigTools.vb" />
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Configuration\SettingsKeyType.vb" />
+    <Compile Include="Misc\Configuration\SettingsType.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
@@ -309,6 +310,7 @@
     <Compile Include="Misc\Splash\SplashInfo.vb" />
     <Compile Include="Misc\Splash\SplashManager.vb" />
     <Compile Include="Misc\Splash\SplashReport.vb" />
+    <Compile Include="Misc\Splash\SplashSettings.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLines.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\Clear.vb" />
@@ -771,6 +773,7 @@
     <None Include="Resources\cbn.json" />
     <None Include="Resources\cnt-T.json" />
     <None Include="Resources\cnt.json" />
+    <None Include="Resources\Data\SplashSettingsEntries.json" />
     <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
     <None Include="Resources\Data\SettingsEntries.json" />
     <None Include="Resources\grk-T.json" />

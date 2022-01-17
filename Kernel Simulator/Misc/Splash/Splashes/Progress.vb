@@ -74,7 +74,12 @@ Class SplashProgress
         ClearLineToRight()
 
         'Display the progress bar
-        WriteProgress(Progress, 4, Console.WindowHeight - 4)
+        If Not String.IsNullOrEmpty(ProgressProgressColor) And TryParseColor(ProgressProgressColor) Then
+            Dim ProgressColor As New Color(ProgressProgressColor)
+            WriteProgress(Progress, 4, Console.WindowHeight - 4, ProgressColor)
+        Else
+            WriteProgress(Progress, 4, Console.WindowHeight - 4)
+        End If
 
         While Not SplashClosing
         End While
@@ -93,7 +98,12 @@ Class SplashProgress
         ClearLineToRight()
 
         'Display the progress bar
-        WriteProgress(Progress, 4, Console.WindowHeight - 4)
+        If Not String.IsNullOrEmpty(ProgressProgressColor) And TryParseColor(ProgressProgressColor) Then
+            Dim ProgressColor As New Color(ProgressProgressColor)
+            WriteProgress(Progress, 4, Console.WindowHeight - 4, ProgressColor)
+        Else
+            WriteProgress(Progress, 4, Console.WindowHeight - 4)
+        End If
     End Sub
 
 End Class

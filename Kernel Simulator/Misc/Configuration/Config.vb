@@ -827,6 +827,18 @@ Public Module Config
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
+            'The Splash Section
+            Dim SplashConfig As New JObject()
+
+            'Figlet config json object
+            Dim SplashProgressConfig As New JObject From {
+                    {"Progress bar color", ProgressProgressColor}
+            }
+            SplashConfig.Add("Progress", SplashProgressConfig)
+
+            'Add a splash config json object to Splash section
+            ConfigurationObject.Add("Splash", SplashConfig)
+
             'Misc Section
             Dim MiscConfig As New JObject From {
                     {"Show Time/Date on Upper Right Corner", CornerTimeDate},
@@ -1567,6 +1579,10 @@ Public Module Config
             FigletMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 255)
             FigletMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 255)
             FigletMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 255)
+
+            'Splash Section - Splash-specific settings go below:
+            '> Progress
+            ProgressProgressColor = New Color(If(ConfigToken("Splash")?("Progress")?("Progress bar color").ToString, ColorTools.ProgressColor.PlainSequence)).PlainSequence
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

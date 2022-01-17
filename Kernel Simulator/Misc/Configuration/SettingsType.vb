@@ -16,12 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class SettingsCommand
-    Inherits CommandExecutor
-    Implements ICommand
-
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        OpenMainPage(SettingsType.Normal)
-    End Sub
-
-End Class
+''' <summary>
+''' The settings type
+''' </summary>
+Public Enum SettingsType
+    ''' <summary>
+    ''' The normal kernel settings
+    ''' </summary>
+    Normal
+    ''' <summary>
+    ''' The screensaver settings
+    ''' </summary>
+    Screensaver
+    ''' <summary>
+    ''' The splash settings
+    ''' </summary>
+    Splash
+End Enum

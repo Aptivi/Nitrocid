@@ -25,11 +25,11 @@ Public Module SettingsApp
     ''' <summary>
     ''' Main page
     ''' </summary>
-    Sub OpenMainPage(Screensaver As Boolean)
+    Sub OpenMainPage(SettingsType As SettingsType)
         Dim PromptFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim SettingsToken As JToken = JToken.Parse(If(Screensaver, My.Resources.ScreensaverSettingsEntries, My.Resources.SettingsEntries))
+        Dim SettingsToken As JToken = OpenSettingsResource(SettingsType)
         Dim MaxSections As Integer = SettingsToken.Count
 
         While Not PromptFinished
@@ -39,7 +39,7 @@ Public Module SettingsApp
             Write(vbNewLine + DoTranslation("Select section:") + vbNewLine, True, ColTypes.Neutral)
             For SectionIndex As Integer = 0 To MaxSections - 1
                 Dim Section As JProperty = SettingsToken.ToList(SectionIndex)
-                If Screensaver Then
+                If SettingsType <> SettingsType.Normal Then
                     Write(" {0}) " + Section.Name + "...", True, ColTypes.Option, SectionIndex + 1)
                 Else
                     Write(" {0}) " + DoTranslation(Section.Name + " Settings..."), True, ColTypes.Option, SectionIndex + 1)
@@ -648,6 +648,23 @@ Public Module SettingsApp
     <Obsolete("Use GetPropertyValueInVariable(String, String) instead.")>
     Public Function GetConfigPropertyValueInVariableField(Variable As String, [Property] As String) As Object
         Return GetPropertyValueInVariable(Variable, [Property])
+    End Function
+
+    ''' <summary>
+    ''' Open the settings resource
+    ''' </summary>
+    ''' <param name="SettingsType">The settings type</param>
+    Private Function OpenSettingsResource(SettingsType As SettingsType) As JToken
+        Select Case SettingsType
+            Case SettingsType.Normal
+                Return JToken.Parse(My.Resources.SettingsEntries)
+            Case SettingsType.Screensaver
+                Return JToken.Parse(My.Resources.ScreensaverSettingsEntries)
+            Case SettingsType.Splash
+                Return JToken.Parse(My.Resources.SplashSettingsEntries)
+            Case Else
+                Return JToken.Parse(My.Resources.SettingsEntries)
+        End Select
     End Function
 
 End Module
