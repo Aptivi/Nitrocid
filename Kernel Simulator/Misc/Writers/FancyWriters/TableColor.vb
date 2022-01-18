@@ -71,13 +71,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -155,13 +157,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -240,13 +244,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -327,13 +333,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -415,13 +423,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -499,13 +509,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
@@ -584,13 +596,15 @@ Public Module TableColor
                 If RowValue Is Nothing Then RowValue = ""
 
                 'Get the cell options and set them as necessary
-                For Each CellOption As CellOptions In CellOptions
-                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
-                        ColoredCell = CellOption.ColoredCell
-                        CellColor = CellOption.CellColor
-                        CellBackgroundColor = CellOption.CellBackgroundColor
-                    End If
-                Next
+                If CellOptions IsNot Nothing Then
+                    For Each CellOption As CellOptions In CellOptions
+                        If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                            ColoredCell = CellOption.ColoredCell
+                            CellColor = CellOption.CellColor
+                            CellBackgroundColor = CellOption.CellBackgroundColor
+                        End If
+                    Next
+                End If
 
                 'Now, write the cell value
                 If ColoredCell Then
