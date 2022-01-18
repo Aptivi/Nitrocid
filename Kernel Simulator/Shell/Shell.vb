@@ -75,7 +75,7 @@ Public Module Shell
                                                                              {"disconndbgdev", New CommandInfo("disconndbgdev", ShellType.Shell, "Disconnect a debug device", {"<ip>"}, True, 1, New DisconnDbgDevCommand, True)},
                                                                              {"dismissnotif", New CommandInfo("dismissnotif", ShellType.Shell, "Dismisses a notification", {"<notificationNumber>"}, True, 1, New DismissNotifCommand)},
                                                                              {"dismissnotifs", New CommandInfo("dismissnotifs", ShellType.Shell, "Dismisses all notifications", {}, False, 0, New DismissNotifsCommand)},
-                                                                             {"echo", New CommandInfo("echo", ShellType.Shell, "Writes text into the console", {"<text>"}, False, 0, New EchoCommand)},
+                                                                             {"echo", New CommandInfo("echo", ShellType.Shell, "Writes text into the console", {"[text]"}, False, 0, New EchoCommand)},
                                                                              {"edit", New CommandInfo("edit", ShellType.Shell, "Edits a text file", {"<file>"}, True, 1, New EditCommand)},
                                                                              {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", {}, False, 0, New ExitCommand)},
                                                                              {"fileinfo", New CommandInfo("fileinfo", ShellType.Shell, "Provides information about a file", {"<file>"}, True, 1, New FileInfoCommand)},
