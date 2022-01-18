@@ -25,7 +25,7 @@ Imports KS
     ''' Tests getting value
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetValue()
-        Dim Value As String = GetConfigValueField("HiddenFiles")
+        Dim Value As String = GetValue("HiddenFiles")
         Value.ShouldNotBeNullOrEmpty
     End Sub
 
@@ -33,8 +33,8 @@ Imports KS
     ''' Tests setting value
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestSetValue()
-        SetConfigValueField("HiddenFiles", False)
-        Dim Value As String = GetConfigValueField("HiddenFiles")
+        SetValue("HiddenFiles", False)
+        Dim Value As String = GetValue("HiddenFiles")
         Value.ShouldBe("False")
     End Sub
 
@@ -50,7 +50,7 @@ Imports KS
     ''' Tests getting property value from variable
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigPropertyValueInVariableField()
-        Dim Value As String = GetConfigPropertyValueInVariableField(NameOf(CurrentCult), NameOf(CurrentCult.Name))
+        Dim Value As String = GetPropertyValueInVariable(NameOf(CurrentCult), NameOf(CurrentCult.Name))
         Value.ShouldNotBeNullOrEmpty
     End Sub
 
