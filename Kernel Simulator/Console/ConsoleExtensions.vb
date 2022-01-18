@@ -89,7 +89,7 @@ Public Module ConsoleExtensions
         Top = Console.CursorTop
 
         'Finally, set the correct old position
-        If Text.Length > Console.WindowLeft - OldLeft And IsOnUnix() Then
+        If Text.Length > Console.WindowLeft - OldLeft And (IsOnUnix() Or LinuxCompatibility) Then
             Dim Times As Integer = Math.Truncate((Text.Length + OldLeft) / Console.WindowWidth - 0.0001)
             OldTop -= Times
         End If
