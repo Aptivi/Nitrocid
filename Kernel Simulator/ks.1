@@ -60,5 +60,16 @@ Enters the safe mode where all the mods are disabled. You can't start mods up in
 .TP 4
 .B testInteractive
 Opens the test shell prior to starting the kernel up
+.SH PRE-BOOT COMMAND LINE ARGUMENTS
+In Kernel Simulator, when it starts, it checks for the pre-boot command line arguments to see if they are passed or not, and if so, will execute the following:
+.TP 4
+.B bypasssizedetection
+Bypasses the console size detection (checks to see if the console is a 80x24 form) and starts KS right away, although it gives you a chance to resize the window.
+.TP 4
+.B linuxcompatibility
+Starts up KS in Linux compatibility mode (only for Windows)
+.TP 4
+.B reset
+Resets the configuration
 .SH AUTHOR
 EoflaOE (eoflaoevicecity@gmail.com)
