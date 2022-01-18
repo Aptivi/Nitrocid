@@ -98,6 +98,7 @@ Public Module Shell
                                                                              {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", {}, False, 0, New LogoutCommand, False, False, True)},
                                                                              {"lovehate", New CommandInfo("lovehate", ShellType.Shell, "Respond to love or hate comments.", {}, False, 0, New LoveHateCommand)},
                                                                              {"lsdbgdev", New CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", {}, False, 0, New LsDbgDevCommand, True, True)},
+                                                                             {"lsvars", New CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", {}, False, 0, New LsVarsCommand, False, True)},
                                                                              {"mail", New CommandInfo("mail", ShellType.Shell, "Opens the mail client", {"[emailAddress]"}, False, 0, New MailCommand)},
                                                                              {"mathbee", New CommandInfo("mathbee", ShellType.Shell, "See if you can solve mathematical equations on time", {}, False, 0, New MathBeeCommand)},
                                                                              {"md", New CommandInfo("md", ShellType.Shell, "Creates a directory", {"<directory>"}, True, 1, New MdCommand)},
