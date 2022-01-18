@@ -25,29 +25,52 @@ Public Module ThemeTools
     ''' </summary>
     Public ReadOnly Themes As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
                                                                          {"3Y-Diamond", New ThemeInfo("_3Y_Diamond")},
+                                                                         {"Aquatic", New ThemeInfo("Aquatic")},
                                                                          {"AyuDark", New ThemeInfo("AyuDark")},
                                                                          {"AyuLight", New ThemeInfo("AyuLight")},
                                                                          {"AyuMirage", New ThemeInfo("AyuMirage")},
                                                                          {"BlackOnWhite", New ThemeInfo("BlackOnWhite")},
                                                                          {"BedOS", New ThemeInfo("BedOS")},
+                                                                         {"Bloody", New ThemeInfo("Bloody")},
+                                                                         {"Blue Power", New ThemeInfo("Blue_Power")},
+                                                                         {"Bluesome", New ThemeInfo("Bluesome")},
                                                                          {"Bluespire", New ThemeInfo("Bluespire")},
                                                                          {"BrandingBlue", New ThemeInfo("BrandingBlue")},
                                                                          {"BrandingPurple", New ThemeInfo("BrandingPurple")},
                                                                          {"BreezeDark", New ThemeInfo("BreezeDark")},
                                                                          {"Breeze", New ThemeInfo("Breeze")},
+                                                                         {"Dawn Aurora", New ThemeInfo("Dawn_Aurora")},
                                                                          {"Debian", New ThemeInfo("Debian")},
+                                                                         {"Fire", New ThemeInfo("Fire")},
+                                                                         {"Grape", New ThemeInfo("Grape")},
+                                                                         {"Grape Kiwi", New ThemeInfo("Grape_Kiwi")},
                                                                          {"GTASA", New ThemeInfo("GTASA")},
+                                                                         {"Grays", New ThemeInfo("Grays")},
                                                                          {"GrayOnYellow", New ThemeInfo("GrayOnYellow")},
+                                                                         {"Green Mix", New ThemeInfo("Green_Mix")},
+                                                                         {"Grink", New ThemeInfo("Grink")},
                                                                          {"Hacker", New ThemeInfo("Hacker")},
+                                                                         {"Lemon", New ThemeInfo("Lemon")},
+                                                                         {"Light Planks", New ThemeInfo("Light_Planks")},
                                                                          {"LinuxColoredDef", New ThemeInfo("LinuxColoredDef")},
                                                                          {"LinuxUncolored", New ThemeInfo("LinuxUncolored")},
+                                                                         {"Materialistic", New ThemeInfo("Materialistic")},
                                                                          {"Metallic", New ThemeInfo("Metallic")},
+                                                                         {"Mint", New ThemeInfo("Mint")},
+                                                                         {"Mint Gum", New ThemeInfo("Mint_Gum")},
+                                                                         {"Mintback", New ThemeInfo("Mintback")},
+                                                                         {"Mintish", New ThemeInfo("Mintish")},
                                                                          {"NeonBreeze", New ThemeInfo("NeonBreeze")},
                                                                          {"NFSHP-Cop", New ThemeInfo("NFSHP_Cop")},
                                                                          {"NFSHP-Racer", New ThemeInfo("NFSHP_Racer")},
+                                                                         {"Planted Wood", New ThemeInfo("Planted_Wood")},
+                                                                         {"Purlow", New ThemeInfo("Purlow")},
+                                                                         {"Red Breeze", New ThemeInfo("Red_Breeze")},
                                                                          {"RedConsole", New ThemeInfo("RedConsole")},
+                                                                         {"Reddish", New ThemeInfo("Reddish")},
                                                                          {"SolarizedDark", New ThemeInfo("SolarizedDark")},
                                                                          {"SolarizedLight", New ThemeInfo("SolarizedLight")},
+                                                                         {"Tealed", New ThemeInfo("Tealed")},
                                                                          {"TealerOS", New ThemeInfo("TealerOS")},
                                                                          {"TrafficLight", New ThemeInfo("TrafficLight")},
                                                                          {"Ubuntu", New ThemeInfo("Ubuntu")},
@@ -69,12 +92,9 @@ Public Module ThemeTools
 
             'Populate theme info
             Dim ThemeInfo As ThemeInfo
+            theme = theme.ReplaceAll({"-", " "}, "_")
             If theme = "Default" Then
                 ResetColors()
-            ElseIf theme = "NFSHP-Cop" Then
-                ThemeInfo = New ThemeInfo("NFSHP_Cop")
-            ElseIf theme = "NFSHP-Racer" Then
-                ThemeInfo = New ThemeInfo("NFSHP_Racer")
             ElseIf theme = "3Y-Diamond" Then
                 ThemeInfo = New ThemeInfo("_3Y_Diamond")
             Else

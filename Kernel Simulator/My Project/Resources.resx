@@ -511,4 +511,73 @@
   <data name="SplashSettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data\SplashSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Aquatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Aquatic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Bloody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Bloody.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Bluesome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Bluesome.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Blue_Power" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Blue Power.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Dawn_Aurora" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Dawn Aurora.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Fire.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Grape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Grape.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Grape_Kiwi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Grape Kiwi.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Grays" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Grays.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Green_Mix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Green Mix.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Grink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Grink.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Lemon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Lemon.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Light_Planks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Light Planks.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Materialistic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Materialistic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Mint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Mint.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Mintback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Mintback.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Mintish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Mintish.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Mint_Gum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Mint Gum.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Planted_Wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Planted Wood.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Purlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Purlow.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Reddish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Reddish.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Red_Breeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Red Breeze.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Tealed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Tealed.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>
