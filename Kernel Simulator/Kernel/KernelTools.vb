@@ -399,6 +399,9 @@ Public Module KernelTools
         'Load all events and reminders
         LoadEvents()
         LoadReminders()
+
+        'Load system env vars and convert them
+        ConvertSystemEnvironmentVariables()
     End Sub
 
     '----------------------------------------------- Misc -----------------------------------------------

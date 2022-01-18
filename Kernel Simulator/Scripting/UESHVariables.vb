@@ -144,4 +144,14 @@ Public Module UESHVariables
         Return False
     End Function
 
+    ''' <summary>
+    ''' Parses the system environment variables and converts them to the UESH shell variables
+    ''' </summary>
+    Public Sub ConvertSystemEnvironmentVariables()
+        Dim EnvVars As IDictionary = Environment.GetEnvironmentVariables()
+        For Each EnvVar As String In EnvVars.Keys
+            SetVariable(EnvVar, EnvVars(EnvVar))
+        Next
+    End Sub
+
 End Module
