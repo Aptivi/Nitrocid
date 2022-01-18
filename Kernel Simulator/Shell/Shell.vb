@@ -224,16 +224,21 @@ Public Module Shell
                 'Check to see if a user is able to execute a command
                 Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
                 If Commands.ContainsKey(FullCommand) Then
-                    If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(FullCommand).Strict Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", FullCommand)
-                        Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, FullCommand)
-                    ElseIf Maintenance = True And Commands(FullCommand).NoMaintenance Then
+                    If ShellType = ShellType.Shell Then
+                        If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(FullCommand).Strict Then
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", FullCommand)
+                            Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, FullCommand)
+                            Exit Try
+                        End If
+                    End If
+
+                    If Maintenance = True And Commands(FullCommand).NoMaintenance Then
                         Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", FullCommand)
                         Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, FullCommand)
                     ElseIf IsInvokedByKernelArgument And (FullCommand.StartsWith("logout") Or FullCommand.StartsWith("shutdown") Or FullCommand.StartsWith("reboot")) Then
                         Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", FullCommand)
                         Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, FullCommand)
-                    ElseIf (HasPermission(CurrentUser.Username, PermissionType.Administrator) And Commands(FullCommand).Strict) Or Commands.ContainsKey(FullCommand) Then
+                    Else
                         Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", FullCommand, cmdArgs)
                         Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
                         StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = $"{ShellType} Command Thread"}

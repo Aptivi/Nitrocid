@@ -60,6 +60,43 @@ Public Module ShellStart
     End Sub
 
     ''' <summary>
+    ''' Force starts the shell
+    ''' </summary>
+    ''' <param name="ShellType">The shell type</param>
+    Sub StartShellForced(ShellType As ShellType, ParamArray ShellArgs() As Object)
+        Dim ShellExecute As ShellExecutor = New UESHShell()
+
+        'Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
+        'Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
+        Select Case ShellType
+            Case ShellType.Shell
+                ShellExecute = New UESHShell()
+            Case ShellType.FTPShell
+                ShellExecute = New FTPShell()
+            Case ShellType.MailShell
+                ShellExecute = New MailShell()
+            Case ShellType.SFTPShell
+                ShellExecute = New SFTPShell()
+            Case ShellType.TextShell
+                ShellExecute = New TextShell()
+            Case ShellType.TestShell
+                ShellExecute = New TestShell()
+            Case ShellType.ZIPShell
+                ShellExecute = New ZipShell()
+            Case ShellType.RSSShell
+                ShellExecute = New RSSShell()
+            Case ShellType.JsonShell
+                ShellExecute = New JsonShell()
+            Case ShellType.HTTPShell
+                ShellExecute = New HTTPShell()
+        End Select
+
+        'Add a new executor and put it to the shell stack to indicate that we have a new shell (a visitor)!
+        ShellStack.Add(ShellExecute)
+        ShellExecute.InitializeShell(ShellArgs)
+    End Sub
+
+    ''' <summary>
     ''' Kills the last running shell
     ''' </summary>
     Public Sub KillShell()
@@ -69,6 +106,16 @@ Public Module ShellStart
             PurgeShells()
         Else
             Throw New InvalidOperationException(DoTranslation("Can not kill the mother shell!"))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Force kills the last running shell
+    ''' </summary>
+    Sub KillShellForced()
+        If ShellStack.Count >= 1 Then
+            ShellStack(ShellStack.Count - 1).Bail = True
+            PurgeShells()
         End If
     End Sub
 

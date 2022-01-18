@@ -22,7 +22,7 @@ Class Test_ShutdownCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Test_ShutdownFlag = True
-        KillShell()
+        KillShellForced()
     End Sub
 
 End Class

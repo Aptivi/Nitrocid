@@ -22,7 +22,8 @@ Class CommandLine_TestInteractiveArgument
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
         If Not EnableSplash Then
             StageTimer.Stop()
-            StartShell(ShellType.TestShell)
+            StartShellForced(ShellType.TestShell)
+            PurgeShells()
             StageTimer.Start()
             If Test_ShutdownFlag Then Environment.Exit(0)
         End If
