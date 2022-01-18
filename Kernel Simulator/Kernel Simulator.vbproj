@@ -333,6 +333,7 @@
     <Compile Include="Misc\TextEdit\Commands\Save.vb" />
     <Compile Include="Misc\TextEdit\TextEditShellCommon.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
+    <Compile Include="Misc\TextLocation.vb" />
     <Compile Include="Misc\Threading\NamedBackgroundWorker.vb">
       <SubType>Component</SubType>
     </Compile>

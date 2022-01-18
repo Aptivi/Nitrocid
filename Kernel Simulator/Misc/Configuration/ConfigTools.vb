@@ -93,11 +93,12 @@ Public Module ConfigTools
 
         'Splash keys and sections
         Dim ExpectedSplashKeys As Integer = 0
-        Dim ExpectedSplashes As Integer = 1
+        Dim ExpectedSplashes As Integer = 2
         Dim ExpectedSplashSections As Integer = ExpectedSplashes + ExpectedSplashKeys
 
         'Individual splash keys
-        Dim ExpectedSplashProgressKeys As Integer = 1
+        Dim ExpectedSplashSimpleKeys As Integer = 1
+        Dim ExpectedSplashProgressKeys As Integer = 2
 
         'Check for missing sections
         If ConfigToken.Count <> ExpectedSections Then
@@ -325,9 +326,15 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Splash") IsNot Nothing Then
+            If ConfigToken("Splash")("Simple") IsNot Nothing Then
+                If ConfigToken("Splash")("Simple").Count <> ExpectedSplashSimpleKeys Then
+                    Wdbg(DebugLevel.W, "Missing keys in Splash > Simple. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
             If ConfigToken("Splash")("Progress") IsNot Nothing Then
                 If ConfigToken("Splash")("Progress").Count <> ExpectedSplashProgressKeys Then
-                    Wdbg(DebugLevel.W, "Missing keys in Splash > ColorMix. Config fix needed set to true.")
+                    Wdbg(DebugLevel.W, "Missing keys in Splash > Progress. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

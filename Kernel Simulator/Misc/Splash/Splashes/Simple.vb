@@ -43,7 +43,14 @@ Class SplashSimple
 
     ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
         Get
-            Return Info.ProgressWritePositionY
+            Select Case SimpleProgressTextLocation
+                Case TextLocation.Top
+                    Return Info.ProgressWritePositionY
+                Case TextLocation.Bottom
+                    Return Console.WindowHeight - 2
+                Case Else
+                    Return Info.ProgressWritePositionY
+            End Select
         End Get
     End Property
 
@@ -55,7 +62,14 @@ Class SplashSimple
 
     ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
         Get
-            Return Info.ProgressReportWritePositionY
+            Select Case SimpleProgressTextLocation
+                Case TextLocation.Top
+                    Return Info.ProgressReportWritePositionY
+                Case TextLocation.Bottom
+                    Return Console.WindowHeight - 2
+                Case Else
+                    Return Info.ProgressReportWritePositionY
+            End Select
         End Get
     End Property
 

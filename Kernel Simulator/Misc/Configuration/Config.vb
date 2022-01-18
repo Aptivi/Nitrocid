@@ -830,9 +830,16 @@ Public Module Config
             'The Splash Section
             Dim SplashConfig As New JObject()
 
-            'Figlet config json object
+            'Simple config json object
+            Dim SplashSimpleConfig As New JObject From {
+                    {"Progress text location", SimpleProgressTextLocation}
+            }
+            SplashConfig.Add("Simple", SplashSimpleConfig)
+
+            'Progress config json object
             Dim SplashProgressConfig As New JObject From {
-                    {"Progress bar color", ProgressProgressColor}
+                    {"Progress bar color", ProgressProgressColor},
+                    {"Progress text location", ProgressProgressTextLocation}
             }
             SplashConfig.Add("Progress", SplashProgressConfig)
 
@@ -1581,8 +1588,12 @@ Public Module Config
             FigletMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 255)
 
             'Splash Section - Splash-specific settings go below:
+            '> Simple
+            SimpleProgressTextLocation = If(ConfigToken("Splash")?("Simple")?("Progress text location") IsNot Nothing, If([Enum].TryParse(ConfigToken("Splash")?("Simple")?("Progress text location"), SimpleProgressTextLocation), SimpleProgressTextLocation, TextLocation.Top), TextLocation.Top)
+
             '> Progress
             ProgressProgressColor = New Color(If(ConfigToken("Splash")?("Progress")?("Progress bar color").ToString, ColorTools.ProgressColor.PlainSequence)).PlainSequence
+            ProgressProgressTextLocation = If(ConfigToken("Splash")?("Progress")?("Progress text location") IsNot Nothing, If([Enum].TryParse(ConfigToken("Splash")?("Progress")?("Progress text location"), ProgressProgressTextLocation), ProgressProgressTextLocation, TextLocation.Top), TextLocation.Top)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

@@ -16,22 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module SplashSettings
-
-    '-> Simple
+''' <summary>
+''' The console text location (used for screensavers and splashes)
+''' </summary>
+Public Enum TextLocation
     ''' <summary>
-    ''' [Simple] The progress text location
+    ''' Top of the console
     ''' </summary>
-    Public SimpleProgressTextLocation As TextLocation = TextLocation.Top
-
-    '-> Progress
+    Top
     ''' <summary>
-    ''' [Progress] The progress color
+    ''' Bottom of the console
     ''' </summary>
-    Public ProgressProgressColor As String = ""
-    ''' <summary>
-    ''' [Progress] The progress text location
-    ''' </summary>
-    Public ProgressProgressTextLocation As TextLocation = TextLocation.Top
-
-End Module
+    Bottom
+End Enum
