@@ -571,6 +571,41 @@ Public Module KernelTools
     End Sub
 
     ''' <summary>
+    ''' Reports the new kernel stage
+    ''' </summary>
+    ''' <param name="StageNumber">The stage number</param>
+    ''' <param name="StageText">The stage text</param>
+    Sub ReportNewStage(StageNumber As Integer, StageText As String)
+        'Show the stage finish times
+        If StageNumber <= 1 Then
+            If ShowStageFinishTimes Then
+                ReportProgress(DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0, ColTypes.StageTime)
+                StageTimer.Restart()
+            End If
+        ElseIf StageNumber >= 5 Then
+            If ShowStageFinishTimes Then
+                ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
+                StageTimer.Reset()
+                Console.WriteLine()
+            End If
+        Else
+            If ShowStageFinishTimes Then
+                ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
+                StageTimer.Restart()
+            End If
+        End If
+
+        'Actually report the stage
+        If StageNumber >= 1 And StageNumber <= 4 Then
+            If Not EnableSplash And Not QuietKernel Then
+                Console.WriteLine()
+                WriteSeparator(DoTranslation($"- Stage {StageNumber}: {StageText}"), False, ColTypes.Stage)
+            End If
+            Wdbg(DebugLevel.I, $"- Kernel stage {StageNumber}: {StageText}")
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Gets the used compiler variables for building Kernel Simulator
     ''' </summary>
     ''' <returns>An array containing used compiler variables</returns>

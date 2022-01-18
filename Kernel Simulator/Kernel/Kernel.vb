@@ -99,15 +99,7 @@ Public Module Kernel
                 CheckErrored()
 
                 'Stage 1: Initialize the system
-                If ShowStageFinishTimes Then
-                    ReportProgress(DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}", 0, ColTypes.StageTime)
-                    StageTimer.Restart()
-                End If
-                If Not EnableSplash And Not QuietKernel Then
-                    Console.WriteLine()
-                    WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
-                End If
-                Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
+                ReportNewStage(1, "System initialization")
                 If RDebugAutoStart And DebugMode Then
                     ReportProgress(DoTranslation("Starting the remote debugger..."), 3, ColTypes.Neutral)
                     StartRDebugThread()
@@ -138,30 +130,14 @@ Public Module Kernel
 #End If
 
                 'Phase 2: Probe hardware
-                If ShowStageFinishTimes Then
-                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
-                    StageTimer.Restart()
-                End If
-                If Not EnableSplash And Not QuietKernel Then
-                    Console.WriteLine()
-                    WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
-                End If
-                Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
+                ReportNewStage(2, "Hardware detection")
                 If Not QuietHardwareProbe Then ReportProgress(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15, ColTypes.Progress)
                 StartProbing()
                 If Not EnableSplash And Not QuietKernel Then ListHardware()
                 CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
-                If ShowStageFinishTimes Then
-                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
-                    StageTimer.Restart()
-                End If
-                If Not EnableSplash And Not QuietKernel Then
-                    Console.WriteLine()
-                    WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
-                End If
-                Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
+                ReportNewStage(3, "Mods and screensavers detection")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     If StartKernelMods Then StartMods()
@@ -171,15 +147,7 @@ Public Module Kernel
                 KernelEventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
-                If ShowStageFinishTimes Then
-                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
-                    StageTimer.Restart()
-                End If
-                If Not EnableSplash And Not QuietKernel Then
-                    Console.WriteLine()
-                    WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
-                End If
-                Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
+                ReportNewStage(4, "Log in")
                 InitializeSystemAccount()
                 ReportProgress(DoTranslation("System account initialized"), 5, ColTypes.Neutral)
                 InitializeUsers()
@@ -188,11 +156,7 @@ Public Module Kernel
                 ReportProgress(DoTranslation("Permissions loaded"), 5, ColTypes.Neutral)
 
                 'Reset console state and stop stage timer
-                If ShowStageFinishTimes Then
-                    ReportProgress(DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10, ColTypes.StageTime)
-                    StageTimer.Reset()
-                    Console.WriteLine()
-                End If
+                ReportNewStage(5, "Done!")
 
                 'Show the closing screen
                 ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)
