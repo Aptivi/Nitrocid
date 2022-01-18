@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports Extensification.StringExts
 
 <TestClass()> Public Class ThemeInfoInitializationTests
 
@@ -70,17 +71,14 @@ Imports KS
         For Each ResourceName As String In Themes.Keys
 
             'Special naming cases
-            Dim ThemeName As String = ResourceName
+            Dim ThemeName As String = ResourceName.ReplaceAll({"-", " "}, "_")
             Select Case ResourceName
                 Case "Default"
                     ThemeName = "_Default"
-                Case "NFSHP-Cop"
-                    ThemeName = "NFSHP_Cop"
-                Case "NFSHP-Racer"
-                    ThemeName = "NFSHP_Racer"
                 Case "3Y-Diamond"
                     ThemeName = "_3Y_Diamond"
             End Select
+
             'Create instance
             Dim ThemeInfoInstance As New ThemeInfo(ThemeName)
 
