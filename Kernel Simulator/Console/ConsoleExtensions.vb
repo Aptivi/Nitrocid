@@ -83,9 +83,16 @@ Public Module ConsoleExtensions
         Text = FilterVTSequences(Text)
 
         'Third, print the text, return to the old position, and return the filtered positions
-        Console.Write(Text, Vars)
+        Text = String.Format(Text, Vars)
+        Console.Write(Text)
         Left = Console.CursorLeft
         Top = Console.CursorTop
+
+        'Finally, set the correct old position
+        If Text.Length > Console.WindowLeft - OldLeft And IsOnUnix() Then
+            Dim Times As Integer = Math.Truncate((Text.Length + OldLeft) / Console.WindowWidth - 0.0001)
+            OldTop -= Times
+        End If
         Console.SetCursorPosition(OldLeft, OldTop)
     End Sub
 
