@@ -49,7 +49,7 @@ Module CommandLineArgsParse
                             Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)
                             Write(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
                         End If
-                    Else
+                    ElseIf Not AvailablePreBootCMDLineArgs.Keys.Contains(Argument) Then
                         Write(DoTranslation("Command line argument {0} not found."), True, ColTypes.Error, Argument)
                     End If
                 Next
