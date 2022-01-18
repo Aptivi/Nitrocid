@@ -37,12 +37,12 @@ Public Module StopwatchScreen
         Console.CursorVisible = False
 
         'Populate the positions for time
+        Dim LapsText As String = DoTranslation("Lap")
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length) / 2
+        Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
         Dim TimeTopPosition As Integer = HalfHeight - 2
-        Dim LapsText As String = DoTranslation("Lap")
-        Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 1.5 + 2) - LapsText.Length / 2
+        Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
         Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
 
         'Populate the keys text variable
@@ -129,15 +129,15 @@ Public Module StopwatchScreen
     ''' </summary>
     Private Sub UpdateStopwatchElapsedDisplay()
         'Populate the positions for time and for lap list
+        Dim LapsText As String = DoTranslation("Lap")
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length) / 2
+        Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
         Dim TimeTopPosition As Integer = HalfHeight - 2
-        Dim LapsText As String = DoTranslation("Lap")
-        Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 1.5 + 2) - LapsText.Length / 2
+        Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
         Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
-        Dim LapsLapsListLeftPosition As Integer = (HalfWidth * 1.5 + 2) - LapsText.Length / 2
-        Dim LapsLapsListTopPosition As Integer = 1
+        Dim LapsLapsListLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
+        Dim LapsLapsListTopPosition As Integer = 2
 
         While StopwatchUpdate.IsAlive
             Try
@@ -147,7 +147,7 @@ Public Module StopwatchScreen
 
                 'Update the laps list if new lap is acknowledged
                 If NewLapAcknowledged Then
-                    Dim LapsListEndBorder As Integer = Console.WindowHeight - 6
+                    Dim LapsListEndBorder As Integer = Console.WindowHeight - 7
                     Dim LapsListBuilder As New StringBuilder
                     Dim BorderDifference As Integer = Laps.Count - LapsListEndBorder
                     If BorderDifference < 0 Then BorderDifference = 0
