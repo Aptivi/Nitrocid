@@ -50,9 +50,6 @@ Public Class HTTPShell
                         Write("> ", False, ColTypes.Gray)
                     End If
 
-                    'Run garbage collector
-                    DisposeAll()
-
                     'Set input color
                     SetInputColor()
 

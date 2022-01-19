@@ -89,9 +89,6 @@ Public Class FTPShell
                         End If
                     End If
 
-                    'Run garbage collector
-                    DisposeAll()
-
                     'Set input color
                     SetInputColor()
 

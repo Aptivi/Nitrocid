@@ -176,7 +176,6 @@ Public Module Kernel
                 End If
 
                 'Initialize login prompt
-                DisposeAll()
                 If Not Maintenance Then
                     LoginPrompt()
                 Else

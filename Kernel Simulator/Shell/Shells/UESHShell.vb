@@ -60,7 +60,6 @@ Public Class UESHShell
                             Console.SetOut(DefConsoleOut)
                         End If
                         CommandPromptWrite()
-                        DisposeAll()
 
                         'Set an input color
                         Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)

@@ -30,9 +30,6 @@ Public Module KernelTools
     Friend LastKernelErrorException As Exception
     Friend InstanceChecked As Boolean
 
-    'Windows function pinvokes
-    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (hProcess As IntPtr, dwMinimumWorkingSetSize As Integer, dwMaximumWorkingSetSize As Integer) As Integer
-
     '----------------------------------------------- Kernel errors -----------------------------------------------
 
     ''' <summary>
@@ -289,10 +286,6 @@ Public Module KernelTools
         HardwareInfo = Nothing
         Wdbg(DebugLevel.I, "Hardware info reset.")
 
-        'Release RAM used
-        DisposeAll()
-        Wdbg(DebugLevel.I, "Garbage collector finished")
-
         'Disconnect all hosts from remote debugger
         StopRDebugThread()
         Wdbg(DebugLevel.I, "Remote debugger stopped")
@@ -496,31 +489,6 @@ Public Module KernelTools
         'Now return compile date
         Return dt
     End Function
-
-    ''' <summary>
-    ''' Disposes all unused memory.
-    ''' </summary>
-    Public Sub DisposeAll()
-        Try
-            Dim proc As Process = GetCurrentProcess()
-            Wdbg(DebugLevel.I, "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
-
-            'Collect garbage
-            Wdbg(DebugLevel.I, "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
-            GC.Collect()
-            GC.WaitForPendingFinalizers()
-            If IsOnWindows() Then SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
-
-            'Finish the job
-            Wdbg(DebugLevel.I, "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
-            proc.Dispose()
-            KernelEventManager.RaiseGarbageCollected()
-        Catch ex As Exception
-            Wdbg("Error freeing RAM: {0}", ex.Message)
-            WStkTrc(ex)
-            Write(DoTranslation("Error trying to free RAM: {0} - Continuing..."), True, ColTypes.Error, ex.Message)
-        End Try
-    End Sub
 
     ''' <summary>
     ''' Removes all configuration files

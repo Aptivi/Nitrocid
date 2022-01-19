@@ -29,13 +29,6 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests garbage collection
-    ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestGarbageCollect()
-        DisposeAll()
-    End Sub
-
-    ''' <summary>
     ''' Tests raising an event and adding it to the fired events list
     ''' </summary>
     <TestMethod()> <TestCategory("Misc")> Public Sub TestRaiseEvent()

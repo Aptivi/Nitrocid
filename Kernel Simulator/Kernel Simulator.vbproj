@@ -665,7 +665,6 @@
     <Compile Include="TestShell\Commands\DCalend.vb" />
     <Compile Include="TestShell\Commands\Debug.vb" />
     <Compile Include="TestShell\Commands\Exit.vb" />
-    <Compile Include="TestShell\Commands\Garbage.vb" />
     <Compile Include="TestShell\Commands\GetCustomSaverSetting.vb" />
     <Compile Include="TestShell\Commands\Help.vb" />
     <Compile Include="TestShell\Commands\ListCodePages.vb" />
