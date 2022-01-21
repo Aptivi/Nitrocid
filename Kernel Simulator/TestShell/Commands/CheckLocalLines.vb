@@ -25,7 +25,7 @@ Class Test_CheckLocalLinesCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim EnglishJson As JToken = JToken.Parse(My.Resources.eng)
         Dim LanguageJson As JToken
-        For Each LanguageName As String In Languages.Keys
+        For Each LanguageName As String In Languages.Languages.Keys
             LanguageJson = JToken.Parse(My.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")))
             If LanguageJson.Count <> EnglishJson.Count Then
                 Write(DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", True, ColTypes.Warning, LanguageName, LanguageJson.Count, EnglishJson.Count)

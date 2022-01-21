@@ -33,7 +33,7 @@ Class LangManCommand
                     If ListArgsOnly.Length > 1 Then
                         TargetLanguage = ListArgsOnly(1)
                         TargetLanguagePath = NeutralizePath(TargetLanguage + ".json", GetKernelPath(KernelPathType.CustomLanguages))
-                        If Not (TryParsePath(TargetLanguagePath) AndAlso FileExists(TargetLanguagePath)) And Not Languages.ContainsKey(TargetLanguage) Then
+                        If Not (TryParsePath(TargetLanguagePath) AndAlso FileExists(TargetLanguagePath)) And Not Languages.Languages.ContainsKey(TargetLanguage) Then
                             Write(DoTranslation("Language not found or file has invalid characters."), True, ColTypes.Error)
                             Exit Sub
                         End If
@@ -59,10 +59,10 @@ Class LangManCommand
                 Case "list"
                     For Each Language As String In ListLanguages(LanguageListTerm).Keys
                         WriteSeparator(Language, True)
-                        Write("- " + DoTranslation("Language short name:") + " ", False, ColTypes.ListEntry) : Write(Languages(Language).ThreeLetterLanguageName, True, ColTypes.ListValue)
-                        Write("- " + DoTranslation("Language full name:") + " ", False, ColTypes.ListEntry) : Write(Languages(Language).FullLanguageName, True, ColTypes.ListValue)
-                        Write("- " + DoTranslation("Language transliterable:") + " ", False, ColTypes.ListEntry) : Write($"{Languages(Language).Transliterable}", True, ColTypes.ListValue)
-                        Write("- " + DoTranslation("Custom language:") + " ", False, ColTypes.ListEntry) : Write($"{Languages(Language).Custom}", True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Language short name:") + " ", False, ColTypes.ListEntry) : Write(Languages.Languages(Language).ThreeLetterLanguageName, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Language full name:") + " ", False, ColTypes.ListEntry) : Write(Languages.Languages(Language).FullLanguageName, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Language transliterable:") + " ", False, ColTypes.ListEntry) : Write($"{Languages.Languages(Language).Transliterable}", True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Custom language:") + " ", False, ColTypes.ListEntry) : Write($"{Languages.Languages(Language).Custom}", True, ColTypes.ListValue)
                     Next
                 Case "reloadall"
                     UninstallCustomLanguages()

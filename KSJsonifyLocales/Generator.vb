@@ -23,6 +23,7 @@ Imports KS.TextWriterColor
 Imports KS.PlatformDetector
 Imports KS.ConsoleBase
 Imports KS.Files
+Imports KS.Languages
 
 Module LocaleGenerator
 
@@ -120,7 +121,7 @@ Module LocaleGenerator
                     Dim FileExtension As String = Path.GetExtension(File)
 
                     'Check the file and add if not in KS resources, not a Readme, and is a text file
-                    If FileExtension = ".txt" And Not FileName.ToLower = "readme" And Not KS.Languages.ContainsKey(FileName) Then
+                    If FileExtension = ".txt" And Not FileName.ToLower = "readme" And Not Languages.ContainsKey(FileName) Then
                         If Not Singular Or (Singular And FileName = ToSearch) Then
                             Dim LanguageInstance As New TargetLanguage(File, FileName, True)
                             Debug.WriteLine(File)

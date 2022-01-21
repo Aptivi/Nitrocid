@@ -18,6 +18,7 @@
 
 Imports KS
 Imports Newtonsoft.Json.Linq
+Imports KS.Languages
 
 <TestClass()> Public Class LocalizationInitializationTests
 
@@ -34,7 +35,7 @@ Imports Newtonsoft.Json.Linq
     ''' Tests translation dictionary preparation for all languages
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForAllLanguages()
-        For Each Lang As String In Languages.Keys
+        For Each Lang As String In Languages.Languages.Keys
             Dim ExpectedLength As Integer = JObject.Parse(KS.My.Resources.ResourceManager.GetString(Lang.Replace("-", "_"))).SelectToken("Localizations").Count
             Dim ActualLength As Integer = PrepareDict(Lang).Values.Count
             ActualLength.ShouldBe(ExpectedLength, $"Lang: {Lang}")

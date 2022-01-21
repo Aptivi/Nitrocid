@@ -160,6 +160,7 @@
     <Import Include="KS.ConsoleBase.Themes.Studio" />
     <Import Include="KS.Files" />
     <Import Include="KS.Kernel" />
+    <Import Include="KS.Languages" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />
