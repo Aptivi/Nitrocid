@@ -16,32 +16,34 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Enumeration for the login error reasons
-''' </summary>
-Public Enum LoginErrorReasons
+Namespace Login
     ''' <summary>
-    ''' Unknown reason
+    ''' Enumeration for the login error reasons
     ''' </summary>
-    Unknown = 0
-    ''' <summary>
-    ''' Spaces not allowed on username
-    ''' </summary>
-    Spaces = 1
-    ''' <summary>
-    ''' Special characters not allowed on username
-    ''' </summary>
-    SpecialCharacters = 2
-    ''' <summary>
-    ''' User is disabled
-    ''' </summary>
-    Disabled = 4
-    ''' <summary>
-    ''' User is not found
-    ''' </summary>
-    NotFound = 8
-    ''' <summary>
-    ''' User entered the wrong password
-    ''' </summary>
-    WrongPassword = 16
-End Enum
+    Public Enum LoginErrorReasons
+        ''' <summary>
+        ''' Unknown reason
+        ''' </summary>
+        Unknown = 0
+        ''' <summary>
+        ''' Spaces not allowed on username
+        ''' </summary>
+        Spaces = 1
+        ''' <summary>
+        ''' Special characters not allowed on username
+        ''' </summary>
+        SpecialCharacters = 2
+        ''' <summary>
+        ''' User is disabled
+        ''' </summary>
+        Disabled = 4
+        ''' <summary>
+        ''' User is not found
+        ''' </summary>
+        NotFound = 8
+        ''' <summary>
+        ''' User entered the wrong password
+        ''' </summary>
+        WrongPassword = 16
+    End Enum
+End Namespace

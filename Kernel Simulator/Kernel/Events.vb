@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS.ConsoleBase.Themes
+Imports KS.Login
 
 Namespace Kernel
     Public Class Events

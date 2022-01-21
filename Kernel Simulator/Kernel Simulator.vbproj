@@ -161,6 +161,7 @@
     <Import Include="KS.Files" />
     <Import Include="KS.Kernel" />
     <Import Include="KS.Languages" />
+    <Import Include="KS.Login" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />
