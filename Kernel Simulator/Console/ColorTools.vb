@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Kernel
 
 Public Module ColorTools
 
@@ -273,7 +274,7 @@ Public Module ColorTools
         LoadBack()
 
         'Raise event
-        KernelEventManager.RaiseColorReset()
+        Kernel.KernelEventManager.RaiseColorReset()
     End Sub
 
     ''' <summary>
@@ -510,15 +511,15 @@ Public Module ColorTools
                 MakePermanent()
 
                 'Raise event
-                KernelEventManager.RaiseColorSet()
+                Kernel.KernelEventManager.RaiseColorSet()
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
+                Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
                 Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
             End Try
         Else
-            KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
+            Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False

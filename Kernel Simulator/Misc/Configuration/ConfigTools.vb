@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module ConfigTools
 
@@ -27,9 +28,9 @@ Public Module ConfigTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function ReloadConfig() As Boolean
         Try
-            KernelEventManager.RaisePreReloadConfig()
+            Kernel.KernelEventManager.RaisePreReloadConfig()
             InitializeConfig()
-            KernelEventManager.RaisePostReloadConfig()
+            Kernel.KernelEventManager.RaisePostReloadConfig()
             Return True
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to reload config: {0}", ex.Message)

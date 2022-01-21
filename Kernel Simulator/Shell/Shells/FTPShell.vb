@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Class FTPShell
     Inherits ShellExecutor
     Implements IShell
@@ -49,7 +51,7 @@ Public Class FTPShell
                         FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                         FtpTrace.LogIP = FTPLoggerIP
                         FtpCurrentDirectory = HomePath
-                        KernelEventManager.RaiseFTPShellInitialized()
+                        Kernel.KernelEventManager.RaiseFTPShellInitialized()
                         SwitchCancellationHandler(ShellType.FTPShell)
                         FtpInitialized = True
                     End If
@@ -101,12 +103,12 @@ Public Class FTPShell
                         Wdbg(DebugLevel.I, "Normal shell")
                         FtpCommand = Console.ReadLine()
                     End If
-                    KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
+                    Kernel.KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
 
                     'Parse command
                     If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
                         GetLine(FtpCommand, False, "", ShellType.FTPShell)
-                        KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
+                        Kernel.KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

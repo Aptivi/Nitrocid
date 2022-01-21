@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>KS.Kernel</StartupObject>
+    <StartupObject>KS.Kernel.Kernel</StartupObject>
     <RootNamespace>KS</RootNamespace>
     <AssemblyName>Kernel Simulator</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -212,7 +212,53 @@
     <Compile Include="Hardware\HardwareList.vb" />
     <Compile Include="Kernel\EventsManager.vb" />
     <Compile Include="Kernel\Events.vb" />
-    <Compile Include="Kernel\Exceptions.vb" />
+    <Compile Include="Kernel\Exceptions\HTTPShellException.vb" />
+    <Compile Include="Kernel\Exceptions\KernelErrorException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidPathException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidKernelPathException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidManpageException.vb" />
+    <Compile Include="Kernel\Exceptions\LanguageParseException.vb" />
+    <Compile Include="Kernel\Exceptions\LanguageUninstallException.vb" />
+    <Compile Include="Kernel\Exceptions\LanguageInstallException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchReflectionPropertyException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchReflectionVariableException.vb" />
+    <Compile Include="Kernel\Exceptions\UESHConditionParseException.vb" />
+    <Compile Include="Kernel\Exceptions\ModUninstallException.vb" />
+    <Compile Include="Kernel\Exceptions\ModInstallException.vb" />
+    <Compile Include="Kernel\Exceptions\ModNoPartsException.vb" />
+    <Compile Include="Kernel\Exceptions\ScreensaverManagementException.vb" />
+    <Compile Include="Kernel\Exceptions\ConsoleReadTimeoutException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidHashAlgorithmException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidHashException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidFeedTypeException.vb" />
+    <Compile Include="Kernel\Exceptions\FilesystemException.vb" />
+    <Compile Include="Kernel\Exceptions\RSSNetworkException.vb" />
+    <Compile Include="Kernel\Exceptions\SFTPNetworkException.vb" />
+    <Compile Include="Kernel\Exceptions\FTPNetworkException.vb" />
+    <Compile Include="Kernel\Exceptions\RSSShellException.vb" />
+    <Compile Include="Kernel\Exceptions\SFTPShellException.vb" />
+    <Compile Include="Kernel\Exceptions\FTPShellException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchMailDirectoryException.vb" />
+    <Compile Include="Kernel\Exceptions\MailException.vb" />
+    <Compile Include="Kernel\Exceptions\RemoteDebugDeviceAlreadyExistsException.vb" />
+    <Compile Include="Kernel\Exceptions\SFTPFilesystemException.vb" />
+    <Compile Include="Kernel\Exceptions\FTPFilesystemException.vb" />
+    <Compile Include="Kernel\Exceptions\RemoteDebugDeviceNotFoundException.vb" />
+    <Compile Include="Kernel\Exceptions\ColorException.vb" />
+    <Compile Include="Kernel\Exceptions\PermissionManagementException.vb" />
+    <Compile Include="Kernel\Exceptions\HostnameException.vb" />
+    <Compile Include="Kernel\Exceptions\UserManagementException.vb" />
+    <Compile Include="Kernel\Exceptions\UserCreationException.vb" />
+    <Compile Include="Kernel\Exceptions\ConfigException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchModException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchScreensaverException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchLanguageException.vb" />
+    <Compile Include="Kernel\Exceptions\AliasNoSuchCommandException.vb" />
+    <Compile Include="Kernel\Exceptions\AliasAlreadyExistsException.vb" />
+    <Compile Include="Kernel\Exceptions\AliasNoSuchAliasException.vb" />
+    <Compile Include="Kernel\Exceptions\AliasNoSuchTypeException.vb" />
+    <Compile Include="Kernel\Exceptions\AliasInvalidOperationException.vb" />
+    <Compile Include="Kernel\Exceptions\NullUsersException.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelErrorType.vb" />
     <Compile Include="Kernel\KernelTools.vb" />

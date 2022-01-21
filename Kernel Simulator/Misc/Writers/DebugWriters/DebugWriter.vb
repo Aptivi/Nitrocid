@@ -92,7 +92,7 @@ Public Module DebugWriter
                 For Each i As Integer In OffendingIndex
                     If i <> -1 Then
                         DebugDevices(i).ClientSocket.Disconnect(True)
-                        KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                        Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
                         Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
                         DebugDevices.RemoveAt(i)
                     End If
@@ -141,7 +141,7 @@ Public Module DebugWriter
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices(i).ClientSocket.Disconnect(True)
-                    KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                    Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
                     Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
                     DebugDevices.RemoveAt(i)
                 End If

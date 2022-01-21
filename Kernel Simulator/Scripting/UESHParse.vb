@@ -28,7 +28,7 @@ Public Module UESHParse
     Public Sub Execute(ScriptPath As String, ScriptArguments As String)
         Try
             'Raise event
-            KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments)
+            Kernel.KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments)
 
             'Open the script file for reading
             Dim FileStream As New StreamReader(ScriptPath)
@@ -89,9 +89,9 @@ Public Module UESHParse
                     Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                 End If
             End While
-            KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
+            Kernel.KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
         Catch ex As Exception
-            KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
+            Kernel.KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
             Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try

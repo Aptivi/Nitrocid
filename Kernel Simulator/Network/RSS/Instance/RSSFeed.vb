@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Xml
+Imports KS.Kernel
 
 Public Class RSSFeed
 

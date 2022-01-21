@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Module Login
 
     'Variables
@@ -49,7 +51,7 @@ Public Module Login
             End If
 
             'Fire event PreLogin
-            KernelEventManager.RaisePreLogin()
+            Kernel.KernelEventManager.RaisePreLogin()
 
             'Check to see if there are any users
             If Users.Count = 0 Then
@@ -102,7 +104,7 @@ Public Module Login
                             Else
                                 Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
                                 Write(DoTranslation("User is disabled."), True, ColTypes.Error)
-                                KernelEventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled)
+                                Kernel.KernelEventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled)
                             End If
                         Else
                             Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
@@ -127,11 +129,11 @@ Public Module Login
                 If InStr(answeruser, " ") > 0 Then
                     Wdbg(DebugLevel.W, "Spaces found in username.")
                     Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
-                    KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
+                    Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
                 ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                     Wdbg(DebugLevel.W, "Unknown characters found in username.")
                     Write(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
-                    KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
+                    Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
                 ElseIf Users.ContainsKey(answeruser) Then
                     Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
                     If Not HasPermission(answeruser, PermissionType.Disabled) Then
@@ -140,12 +142,12 @@ Public Module Login
                     Else
                         Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
                         Write(DoTranslation("User is disabled."), True, ColTypes.Error)
-                        KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
+                        Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
                     End If
                 Else
                     Wdbg(DebugLevel.E, "Username not found.")
                     Write(DoTranslation("Wrong username."), True, ColTypes.Error)
-                    KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
+                    Kernel.KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
                 End If
             End If
         End While
@@ -198,7 +200,7 @@ Public Module Login
                 Else
                     Wdbg(DebugLevel.I, "Passowrd written wrong...")
                     Write(DoTranslation("Wrong password."), True, ColTypes.Error)
-                    KernelEventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword)
+                    Kernel.KernelEventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword)
                     If Not Maintenance Then
                         If Not LockMode Then
                             Exit Sub
@@ -224,7 +226,7 @@ Public Module Login
         If LockMode Then
             Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...")
             LockMode = False
-            KernelEventManager.RaisePostUnlock(DefSaverName)
+            Kernel.KernelEventManager.RaisePostUnlock(DefSaverName)
             Exit Sub
         End If
 
@@ -240,7 +242,7 @@ Public Module Login
         ShowHeadlineLogin()
 
         'Fire event PostLogin
-        KernelEventManager.RaisePostLogin(CurrentUser.Username)
+        Kernel.KernelEventManager.RaisePostLogin(CurrentUser.Username)
 
         'Initialize shell
         Wdbg(DebugLevel.I, "Shell is being initialized...")

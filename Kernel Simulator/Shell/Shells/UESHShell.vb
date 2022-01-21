@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Class UESHShell
     Inherits ShellExecutor
     Implements IShell
@@ -67,12 +69,12 @@ Public Class UESHShell
 
                         'Wait for command
                         Wdbg(DebugLevel.I, "Waiting for command")
-                        KernelEventManager.RaiseShellInitialized()
+                        Kernel.KernelEventManager.RaiseShellInitialized()
                         Dim strcommand As String = Console.ReadLine()
 
                         If Not InSaver Then
                             'Fire event of PreRaiseCommand
-                            KernelEventManager.RaisePreExecuteCommand(strcommand)
+                            Kernel.KernelEventManager.RaisePreExecuteCommand(strcommand)
 
                             'Check for a type of command
                             If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
@@ -99,7 +101,7 @@ Public Class UESHShell
                                 Next
 
                                 'Fire an event of PostExecuteCommand
-                                KernelEventManager.RaisePostExecuteCommand(strcommand)
+                                Kernel.KernelEventManager.RaisePostExecuteCommand(strcommand)
                             End If
                         End If
                     Catch ex As Exception

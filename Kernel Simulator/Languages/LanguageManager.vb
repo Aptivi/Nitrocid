@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module LanguageManager
 
@@ -291,7 +292,7 @@ Public Module LanguageManager
                             If Not Languages.ContainsKey(LanguageName) Then
                                 Wdbg(DebugLevel.I, "Language exists. Installing...")
                                 InstalledLanguages.Add(LanguageName, ParsedLanguageInfo)
-                                KernelEventManager.RaiseLanguageInstalled(LanguageName)
+                                Kernel.KernelEventManager.RaiseLanguageInstalled(LanguageName)
                             ElseIf ThrowOnAlreadyInstalled Then
                                 Wdbg(DebugLevel.E, "Can't add existing language.")
                                 Throw New Exceptions.LanguageInstallException(DoTranslation("The language already exists and can't be overwritten."))
@@ -308,7 +309,7 @@ Public Module LanguageManager
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to install custom language {0}: {1}", LanguageName, ex.Message)
                 WStkTrc(ex)
-                KernelEventManager.RaiseLanguageInstallError(LanguageName, ex)
+                Kernel.KernelEventManager.RaiseLanguageInstallError(LanguageName, ex)
                 Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom language {0}."), ex, LanguageName)
             End Try
         End If
@@ -326,11 +327,11 @@ Public Module LanguageManager
                     Dim LanguageName As String = Path.GetFileNameWithoutExtension(Language)
                     InstallCustomLanguage(LanguageName, False)
                 Next
-                KernelEventManager.RaiseLanguagesInstalled()
+                Kernel.KernelEventManager.RaiseLanguagesInstalled()
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to install custom languages: {0}", ex.Message)
                 WStkTrc(ex)
-                KernelEventManager.RaiseLanguagesInstallError(ex)
+                Kernel.KernelEventManager.RaiseLanguagesInstallError(ex)
                 Throw New Exceptions.LanguageInstallException(DoTranslation("Failed to install custom languages."), ex)
             End Try
         End If
@@ -358,7 +359,7 @@ Public Module LanguageManager
                             Wdbg(DebugLevel.E, "Failed to uninstall custom language")
                             Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."))
                         End If
-                        KernelEventManager.RaiseLanguageUninstalled(LanguageName)
+                        Kernel.KernelEventManager.RaiseLanguageUninstalled(LanguageName)
                     Else
                         Wdbg(DebugLevel.E, "Metadata for language doesn't exist!")
                         Throw New Exceptions.LanguageUninstallException(DoTranslation("The metadata information needed to uninstall the custom language doesn't exist."))
@@ -367,7 +368,7 @@ Public Module LanguageManager
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to uninstall custom language {0}: {1}", LanguageName, ex.Message)
                 WStkTrc(ex)
-                KernelEventManager.RaiseLanguageUninstallError(LanguageName, ex)
+                Kernel.KernelEventManager.RaiseLanguageUninstallError(LanguageName, ex)
                 Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language {0}."), ex, LanguageName)
             End Try
         End If
@@ -392,12 +393,12 @@ Public Module LanguageManager
                             Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages."))
                         End If
                     End If
-                    KernelEventManager.RaiseLanguagesUninstalled()
+                    Kernel.KernelEventManager.RaiseLanguagesUninstalled()
                 Next
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to uninstall custom languages: {0}", ex.Message)
                 WStkTrc(ex)
-                KernelEventManager.RaiseLanguagesUninstallError(ex)
+                Kernel.KernelEventManager.RaiseLanguagesUninstallError(ex)
                 Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages. See the inner exception for more info."), ex)
             End Try
         End If

@@ -117,7 +117,7 @@ Public Module ProcessExecutor
             Return -1
             Exit Function
         Catch ex As Exception
-            KernelEventManager.RaiseProcessError(File + Args, ex)
+            Kernel.KernelEventManager.RaiseProcessError(File + Args, ex)
             WStkTrc(ex)
             Write(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, File)
         End Try

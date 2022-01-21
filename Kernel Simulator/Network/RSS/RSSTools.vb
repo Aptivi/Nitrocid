@@ -19,6 +19,7 @@
 Imports HtmlAgilityPack
 Imports System.Threading
 Imports System.Xml
+Imports KS.Kernel
 
 Public Module RSSTools
 

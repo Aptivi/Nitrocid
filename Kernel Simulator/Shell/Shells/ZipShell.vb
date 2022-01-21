@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.IO.Compression
+Imports KS.Kernel
 
 Public Class ZipShell
     Inherits ShellExecutor
@@ -66,7 +67,7 @@ Public Class ZipShell
                 SetInputColor()
 
                 'Prompt for command
-                KernelEventManager.RaiseZipShellInitialized()
+                Kernel.Kernel.KernelEventManager.RaiseZipShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
                 GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
             End SyncLock

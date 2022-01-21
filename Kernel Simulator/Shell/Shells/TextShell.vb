@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Threading
+Imports KS.Kernel
 
 Public Class TextShell
     Inherits ShellExecutor
@@ -72,7 +73,7 @@ Public Class TextShell
                 SetInputColor()
 
                 'Prompt for command
-                KernelEventManager.RaiseTextShellInitialized()
+                Kernel.KernelEventManager.RaiseTextShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
                 GetLine(WrittenCommand, False, "", ShellType.TextShell)
             End SyncLock

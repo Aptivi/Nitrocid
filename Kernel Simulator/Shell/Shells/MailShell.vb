@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Kernel
 
 Public Class MailShell
     Inherits ShellExecutor
@@ -47,7 +48,7 @@ Public Class MailShell
 
         'Add handler for IMAP and SMTP
         SwitchCancellationHandler(ShellType.MailShell)
-        KernelEventManager.RaiseIMAPShellInitialized()
+        Kernel.KernelEventManager.RaiseIMAPShellInitialized()
 
         While Not Bail
             SyncLock MailCancelSync

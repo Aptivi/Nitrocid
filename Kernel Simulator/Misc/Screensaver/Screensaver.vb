@@ -20,6 +20,7 @@ Imports System.ComponentModel
 Imports System.Reflection
 Imports System.Threading
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module Screensaver
 
@@ -98,7 +99,7 @@ Public Module Screensaver
         Try
             InSaver = True
             ScrnTimeReached = True
-            KernelEventManager.RaisePreShowScreensaver(saver)
+            Kernel.KernelEventManager.RaisePreShowScreensaver(saver)
             Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
             If Screensavers.ContainsKey(saver.ToLower()) Then
                 saver = saver.ToLower()
@@ -122,7 +123,7 @@ Public Module Screensaver
 
             'Raise event
             Wdbg(DebugLevel.I, "Screensaver really stopped.")
-            KernelEventManager.RaisePostShowScreensaver(saver)
+            Kernel.KernelEventManager.RaisePostShowScreensaver(saver)
         Catch ex As InvalidOperationException
             Write(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
             WStkTrc(ex)
@@ -141,7 +142,7 @@ Public Module Screensaver
     Public Sub LockScreen()
         LockMode = True
         ShowSavers(DefSaverName)
-        KernelEventManager.RaisePreUnlock(DefSaverName)
+        Kernel.KernelEventManager.RaisePreUnlock(DefSaverName)
         If PasswordLock Then
             ShowPasswordPrompt(CurrentUser.Username)
         Else

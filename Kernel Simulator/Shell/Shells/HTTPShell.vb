@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Class HTTPShell
     Inherits ShellExecutor
     Implements IShell
@@ -56,12 +58,12 @@ Public Class HTTPShell
                     'Prompt for command
                     Wdbg(DebugLevel.I, "Normal shell")
                     Dim HttpCommand As String = Console.ReadLine()
-                    KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
+                    Kernel.KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
 
                     'Parse command
                     If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
                         GetLine(HttpCommand, False, "", ShellType.HTTPShell)
-                        KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
+                        Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

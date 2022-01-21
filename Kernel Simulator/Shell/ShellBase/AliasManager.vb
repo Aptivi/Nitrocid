@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module AliasManager
 

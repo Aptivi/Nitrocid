@@ -33,9 +33,9 @@ Public Module EventsManager
         Dim FiredEvents As New Dictionary(Of String, Object())
 
         'Enumerate all the fired events
-        For Each FiredEvent As String In KernelEventManager.FiredEvents.Keys
+        For Each FiredEvent As String In Kernel.KernelEventManager.FiredEvents.Keys
             If FiredEvent.Contains(SearchTerm) Then
-                Dim EventArguments As Object() = KernelEventManager.FiredEvents(FiredEvent)
+                Dim EventArguments As Object() = Kernel.KernelEventManager.FiredEvents(FiredEvent)
                 FiredEvents.Add(FiredEvent, EventArguments)
             End If
         Next
@@ -46,7 +46,7 @@ Public Module EventsManager
     ''' Clears all the fired events
     ''' </summary>
     Public Sub ClearAllFiredEvents()
-        KernelEventManager.FiredEvents.Clear()
+        Kernel.KernelEventManager.FiredEvents.Clear()
     End Sub
 
 End Module

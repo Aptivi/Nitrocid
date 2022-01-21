@@ -86,7 +86,7 @@ Public Module GetCommand
             CancelRequested = False
             Exit Sub
         Catch ex As Exception
-            KernelEventManager.RaiseCommandError(RequestedCommand, ex)
+            Kernel.KernelEventManager.RaiseCommandError(RequestedCommand, ex)
             WStkTrc(ex)
             DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
         End Try

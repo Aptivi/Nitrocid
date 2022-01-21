@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Kernel
 
 Public Class RSSShell
     Inherits ShellExecutor
@@ -97,7 +98,7 @@ Begin:
                     SetInputColor()
 
                     'Prompt for command
-                    KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
+                    Kernel.KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
                     Dim WrittenCommand As String = Console.ReadLine
                     GetLine(WrittenCommand, False, "", ShellType.RSSShell)
                 End SyncLock

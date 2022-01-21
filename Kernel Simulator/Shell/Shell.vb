@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Threading
+Imports KS.Kernel
 
 Public Module Shell
 

@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Kernel
 
 Public Module PlaceParse
 
@@ -27,7 +28,7 @@ Public Module PlaceParse
     ''' <returns>A string that has the parsed placeholders</returns>
     Public Function ProbePlaces(text As String) As String
 
-        KernelEventManager.RaisePlaceholderParsing(text)
+        Kernel.KernelEventManager.RaisePlaceholderParsing(text)
         Try
             Wdbg(DebugLevel.I, "Parsing text for placeholders...")
             If text.Contains("<user>") Then
@@ -182,7 +183,7 @@ Public Module PlaceParse
                     text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
                 Loop
             End If
-            KernelEventManager.RaisePlaceholderParsed(text)
+            Kernel.KernelEventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)
             Write(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)

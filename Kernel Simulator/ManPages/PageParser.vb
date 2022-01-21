@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text
+Imports KS.Kernel
 
 Module PageParser
 

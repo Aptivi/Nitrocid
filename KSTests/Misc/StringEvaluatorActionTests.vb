@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
+Imports KS.Kernel
 
 <TestClass()> Public Class StringEvaluatorActionTests
 

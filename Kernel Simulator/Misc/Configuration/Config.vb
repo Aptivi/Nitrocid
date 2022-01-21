@@ -21,6 +21,7 @@ Imports System.IO
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
 Imports Core
+Imports KS.Kernel
 
 Public Module Config
 
@@ -903,10 +904,10 @@ Public Module Config
 
             'Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
-            KernelEventManager.RaiseConfigSaved()
+            Kernel.KernelEventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
-            KernelEventManager.RaiseConfigSaveError(ex)
+            Kernel.KernelEventManager.RaiseConfigSaveError(ex)
             WStkTrc(ex)
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
         End Try
@@ -1652,14 +1653,14 @@ Public Module Config
             RepairConfig()
 
             'Raise event and return true
-            KernelEventManager.RaiseConfigRead()
+            Kernel.KernelEventManager.RaiseConfigRead()
             Return True
         Catch nre As NullReferenceException
             'Rare, but repair config if an NRE is caught.
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message)
             RepairConfig()
         Catch ex As Exception
-            KernelEventManager.RaiseConfigReadError(ex)
+            Kernel.KernelEventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)

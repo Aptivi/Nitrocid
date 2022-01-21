@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module RemoteDebugTools
 
@@ -54,7 +55,7 @@ Public Module RemoteDebugTools
                     Found = True
                     DebugDevices(i).ClientSocket.Disconnect(True)
                     DebugDevices.RemoveAt(i)
-                    KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
+                    Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                 End If
             End If
         Next

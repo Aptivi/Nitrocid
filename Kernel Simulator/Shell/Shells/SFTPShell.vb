@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Class SFTPShell
     Inherits ShellExecutor
     Implements IShell
-
-    Private FtpInitialized As Boolean
 
     Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
         Get
@@ -46,7 +46,7 @@ Public Class SFTPShell
                     If SFTPInitialized = False Then
                         Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                         SFTPCurrDirect = HomePath
-                        KernelEventManager.RaiseSFTPShellInitialized()
+                        Kernel.KernelEventManager.RaiseSFTPShellInitialized()
                         SwitchCancellationHandler(ShellType.SFTPShell)
                         SFTPInitialized = True
                     End If
@@ -98,12 +98,12 @@ Public Class SFTPShell
                         Wdbg(DebugLevel.I, "Normal shell")
                         SFTPStrCmd = Console.ReadLine()
                     End If
-                    KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+                    Kernel.KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
 
                     'Parse command
                     If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
                         GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
-                        KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
+                        Kernel.KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

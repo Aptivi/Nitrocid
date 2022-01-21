@@ -24,7 +24,7 @@ Module ThemeStudio
     ''' <param name="ThemeName">Theme name</param>
     Sub StartThemeStudio(ThemeName As String)
         'Inform user that we're on the studio
-        KernelEventManager.RaiseThemeStudioStarted()
+        Kernel.Kernel.KernelEventManager.RaiseThemeStudioStarted()
         Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
         Dim MaximumOptions As Integer = 37 + 8 'Colors + options
@@ -311,7 +311,7 @@ Module ThemeStudio
         End While
 
         'Raise event
-        KernelEventManager.RaiseThemeStudioExit()
+        Kernel.Kernel.KernelEventManager.RaiseThemeStudioExit()
     End Sub
 
 End Module

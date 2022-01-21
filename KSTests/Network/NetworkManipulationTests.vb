@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
+Imports KS.Kernel
 
 'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
 <TestClass()> Public Class NetworkManipulationTests

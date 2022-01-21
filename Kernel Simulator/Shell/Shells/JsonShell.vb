@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Threading
+Imports KS.Kernel
 
 Public Class JsonShell
     Inherits ShellExecutor
@@ -71,7 +72,7 @@ Public Class JsonShell
                 SetInputColor()
 
                 'Prompt for command
-                KernelEventManager.RaiseTextShellInitialized()
+                Kernel.KernelEventManager.RaiseTextShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
                 GetLine(WrittenCommand, False, "", ShellType.JsonShell)
             End SyncLock

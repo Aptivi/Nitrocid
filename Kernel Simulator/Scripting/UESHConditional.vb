@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel
+
 Public Module UESHConditional
 
     ''' <summary>
@@ -47,7 +49,7 @@ Public Module UESHConditional
                     ConditionType = [Enum].Parse(GetType(UESHConditions), Condition)
                 End If
             Next
-            If Not ConditionFound Then Throw New Exceptions.UESHConditionParseError(DoTranslation("The condition was not found in the expression."))
+            If Not ConditionFound Then Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition was not found in the expression."))
             If ConditionType = UESHConditions.none Then
                 Wdbg(DebugLevel.I, "Doing nothing because the condition is none. Returning true...")
                 Return True
@@ -67,15 +69,15 @@ Public Module UESHConditional
             End Select
             If EnclosedWords.Count < RequiredArguments Then
                 Wdbg(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments)
-                Throw New Exceptions.UESHConditionParseError(DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType.ToString, RequiredArguments, EnclosedWords.Count)
+                Throw New Exceptions.UESHConditionParseException(DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType.ToString, RequiredArguments, EnclosedWords.Count)
             End If
             If ConditionShouldBeInMiddle And Not AvailableConditions.Contains(EnclosedWords(1)) Then
                 Wdbg(DebugLevel.E, "Condition should be in the middle, but {0} is not a condition.", EnclosedWords(1))
-                Throw New Exceptions.UESHConditionParseError(DoTranslation("The condition needs to be placed in the middle."))
+                Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition needs to be placed in the middle."))
             End If
             If ConditionShouldBeInBeginning And Not AvailableConditions.Contains(EnclosedWords(0)) Then
                 Wdbg(DebugLevel.E, "Condition should be in the beginning, but {0} is not a condition.", EnclosedWords(0))
-                Throw New Exceptions.UESHConditionParseError(DoTranslation("The condition needs to be placed in the beginning."))
+                Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition needs to be placed in the beginning."))
             End If
 
             'Execute the conditions
@@ -123,7 +125,7 @@ Public Module UESHConditional
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Syntax error in {0}: {1}", ConditionToSatisfy, ex.Message)
                 WStkTrc(ex)
-                Throw New Exceptions.UESHConditionParseError(DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message)
+                Throw New Exceptions.UESHConditionParseException(DoTranslation("Error parsing expression due to syntax error.") + " {0}: {1}", ex, ConditionToSatisfy, ex.Message)
             End Try
         End If
         Return False

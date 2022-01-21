@@ -27,7 +27,7 @@ Public Module HardwareProbe
     ''' </summary>
     Public Sub StartProbing()
         'We will probe hardware
-        KernelEventManager.RaiseHardwareProbing()
+        Kernel.KernelEventManager.RaiseHardwareProbing()
         Try
             AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
             AddHandler HardwareParsed, AddressOf WriteWhatProbed
@@ -45,7 +45,7 @@ Public Module HardwareProbe
         End Try
 
         'Raise event
-        KernelEventManager.RaiseHardwareProbed()
+        Kernel.KernelEventManager.RaiseHardwareProbed()
     End Sub
 
     ''' <summary>

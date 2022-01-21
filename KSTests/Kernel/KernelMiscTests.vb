@@ -32,7 +32,7 @@ Imports KS
     ''' Tests raising an event and adding it to the fired events list
     ''' </summary>
     <TestMethod()> <TestCategory("Misc")> Public Sub TestRaiseEvent()
-        KernelEventManager.RaiseStartKernel()
+        Kernel.KernelEventManager.RaiseStartKernel()
         ListAllFiredEvents().ShouldContainKey("KernelStarted (" + CStr(ListAllFiredEvents().Count - 1) + ")")
     End Sub
 

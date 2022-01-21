@@ -18,6 +18,7 @@
 
 Imports MailKit
 Imports MimeKit
+Imports KS.Kernel
 
 Public Module MailManager
 

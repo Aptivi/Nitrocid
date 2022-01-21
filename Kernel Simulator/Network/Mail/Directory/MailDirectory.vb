@@ -18,6 +18,7 @@
 
 Imports System.Text
 Imports MailKit
+Imports KS.Kernel
 
 Public Module MailDirectory
 

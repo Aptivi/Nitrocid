@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Module UserManagement
 
@@ -208,7 +209,7 @@ Public Module UserManagement
                     Wdbg(DebugLevel.I, "Initializing user with password")
                     InitializeUser(newUser, newPassword)
                 End If
-                KernelEventManager.RaiseUserAdded(newUser)
+                Kernel.KernelEventManager.RaiseUserAdded(newUser)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message)
@@ -269,7 +270,7 @@ Public Module UserManagement
                     File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
                     'Raise event
-                    KernelEventManager.RaiseUserRemoved(user)
+                    Kernel.KernelEventManager.RaiseUserRemoved(user)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -302,7 +303,7 @@ Public Module UserManagement
                     SetUserProperty(OldName, UserProperty.Username, Username)
 
                     'Raise event
-                    KernelEventManager.RaiseUsernameChanged(OldName, Username)
+                    Kernel.KernelEventManager.RaiseUsernameChanged(OldName, Username)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -353,7 +354,7 @@ Public Module UserManagement
                 SetUserProperty(Target, UserProperty.Password, NewPass)
 
                 'Raise event
-                KernelEventManager.RaiseUserPasswordChanged(Target)
+                Kernel.KernelEventManager.RaiseUserPasswordChanged(Target)
                 Return True
             ElseIf HasPermission(CurrentUser.Username, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))

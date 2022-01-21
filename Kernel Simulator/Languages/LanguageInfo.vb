@@ -18,6 +18,7 @@
 
 Imports System.Globalization
 Imports Newtonsoft.Json.Linq
+Imports KS.Kernel
 
 Public Class LanguageInfo
 
