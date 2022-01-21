@@ -58,6 +58,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="KS.Files" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Shouldly" />
     <Import Include="System" />

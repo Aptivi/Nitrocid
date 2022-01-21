@@ -22,6 +22,7 @@ Imports Newtonsoft.Json.Linq
 Imports KS.TextWriterColor
 Imports KS.PlatformDetector
 Imports KS.ConsoleBase
+Imports KS.Files
 
 Module LocaleGenerator
 
@@ -175,8 +176,8 @@ Module LocaleGenerator
                 'Save changes
                 Debug.WriteLine("Saving as {0}...", FileName + ".json")
                 If Language.CustomLanguage Then
-                    Directory.CreateDirectory(KS.HomePath + "/KSLanguages/")
-                    IO.File.WriteAllText(KS.HomePath + "/KSLanguages/" + FileName + ".json", SerializedLocale)
+                    Directory.CreateDirectory(HomePath + "/KSLanguages/")
+                    IO.File.WriteAllText(HomePath + "/KSLanguages/" + FileName + ".json", SerializedLocale)
                 Else
                     If CopyToResources Then
                         IO.File.WriteAllText("../Resources/" + FileName + ".json", SerializedLocale)

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports KS.Files
 
 <TestClass()> Public Class MOTDSettingTests
 

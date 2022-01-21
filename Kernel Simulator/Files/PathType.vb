@@ -16,64 +16,66 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Specifies the kernel path type
-''' </summary>
-Public Enum KernelPathType
+Namespace Files
     ''' <summary>
-    ''' Mods directory. Usually found in user directory as KSMods.
+    ''' Specifies the kernel path type
     ''' </summary>
-    Mods
-    ''' <summary>
-    ''' Configuration file.
-    ''' </summary>
-    Configuration
-    ''' <summary>
-    ''' Kernel debug log file.
-    ''' </summary>
-    Debugging
-    ''' <summary>
-    ''' Aliases file.
-    ''' </summary>
-    Aliases
-    ''' <summary>
-    ''' Users file.
-    ''' </summary>
-    Users
-    ''' <summary>
-    ''' FTP speed dial file.
-    ''' </summary>
-    FTPSpeedDial
-    ''' <summary>
-    ''' SFTP speed dial file.
-    ''' </summary>
-    SFTPSpeedDial
-    ''' <summary>
-    ''' Debug devices configuration file.
-    ''' </summary>
-    DebugDevNames
-    ''' <summary>
-    ''' MOTD text file.
-    ''' </summary>
-    MOTD
-    ''' <summary>
-    ''' MAL text file.
-    ''' </summary>
-    MAL
-    ''' <summary>
-    ''' Custom screensaver settings file.
-    ''' </summary>
-    CustomSaverSettings
-    ''' <summary>
-    ''' Events folder
-    ''' </summary>
-    Events
-    ''' <summary>
-    ''' Reminders folder
-    ''' </summary>
-    Reminders
-    ''' <summary>
-    ''' Custom languages folder
-    ''' </summary>
-    CustomLanguages
-End Enum
+    Public Enum KernelPathType
+        ''' <summary>
+        ''' Mods directory. Usually found in user directory as KSMods.
+        ''' </summary>
+        Mods
+        ''' <summary>
+        ''' Configuration file.
+        ''' </summary>
+        Configuration
+        ''' <summary>
+        ''' Kernel debug log file.
+        ''' </summary>
+        Debugging
+        ''' <summary>
+        ''' Aliases file.
+        ''' </summary>
+        Aliases
+        ''' <summary>
+        ''' Users file.
+        ''' </summary>
+        Users
+        ''' <summary>
+        ''' FTP speed dial file.
+        ''' </summary>
+        FTPSpeedDial
+        ''' <summary>
+        ''' SFTP speed dial file.
+        ''' </summary>
+        SFTPSpeedDial
+        ''' <summary>
+        ''' Debug devices configuration file.
+        ''' </summary>
+        DebugDevNames
+        ''' <summary>
+        ''' MOTD text file.
+        ''' </summary>
+        MOTD
+        ''' <summary>
+        ''' MAL text file.
+        ''' </summary>
+        MAL
+        ''' <summary>
+        ''' Custom screensaver settings file.
+        ''' </summary>
+        CustomSaverSettings
+        ''' <summary>
+        ''' Events folder
+        ''' </summary>
+        Events
+        ''' <summary>
+        ''' Reminders folder
+        ''' </summary>
+        Reminders
+        ''' <summary>
+        ''' Custom languages folder
+        ''' </summary>
+        CustomLanguages
+    End Enum
+End Namespace

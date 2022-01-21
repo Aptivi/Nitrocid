@@ -18,69 +18,71 @@
 
 Imports KS.Kernel
 
-Public Module Paths
+Namespace Files
+    Public Module Paths
 
-    ''' <summary>
-    ''' Platform-dependent home path
-    ''' </summary>
-    Public ReadOnly Property HomePath As String
-        Get
-            If IsOnUnix() Then
-                Return Environment.GetEnvironmentVariable("HOME")
+        ''' <summary>
+        ''' Platform-dependent home path
+        ''' </summary>
+        Public ReadOnly Property HomePath As String
+            Get
+                If IsOnUnix() Then
+                    Return Environment.GetEnvironmentVariable("HOME")
+                Else
+                    Return Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/")
+                End If
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Platform-dependent temp path
+        ''' </summary>
+        Public ReadOnly Property TempPath As String
+            Get
+                If IsOnUnix() Then
+                    Return "/tmp"
+                Else
+                    Return Environment.GetEnvironmentVariable("TEMP").Replace("\", "/")
+                End If
+            End Get
+        End Property
+
+        'Variables
+        Friend KernelPaths As New Dictionary(Of String, String)
+
+        ''' <summary>
+        ''' Initializes the paths
+        ''' </summary>
+        Sub InitPaths()
+            KernelPaths.AddIfNotFound("Mods", HomePath + "/KSMods/")
+            KernelPaths.AddIfNotFound("Configuration", HomePath + "/KernelConfig.json")
+            KernelPaths.AddIfNotFound("Debugging", HomePath + "/kernelDbg.log")
+            KernelPaths.AddIfNotFound("Aliases", HomePath + "/Aliases.json")
+            KernelPaths.AddIfNotFound("Users", HomePath + "/Users.json")
+            KernelPaths.AddIfNotFound("FTPSpeedDial", HomePath + "/FTP_SpeedDial.json")
+            KernelPaths.AddIfNotFound("SFTPSpeedDial", HomePath + "/SFTP_SpeedDial.json")
+            KernelPaths.AddIfNotFound("DebugDevNames", HomePath + "/DebugDeviceNames.json")
+            KernelPaths.AddIfNotFound("MOTD", HomePath + "/MOTD.txt")
+            KernelPaths.AddIfNotFound("MAL", HomePath + "/MAL.txt")
+            KernelPaths.AddIfNotFound("CustomSaverSettings", HomePath + "/CustomSaverSettings.json")
+            KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
+            KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
+            KernelPaths.AddIfNotFound("CustomLanguages", HomePath + "/KSLanguages/")
+        End Sub
+
+        ''' <summary>
+        ''' Gets the neutralized kernel path
+        ''' </summary>
+        ''' <param name="PathType">Kernel path type</param>
+        ''' <returns>A kernel path</returns>
+        ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
+        Public Function GetKernelPath(PathType As KernelPathType) As String
+            If [Enum].IsDefined(GetType(KernelPathType), PathType) Then
+                Return NeutralizePath(KernelPaths(PathType.ToString))
             Else
-                Return Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/")
+                Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
             End If
-        End Get
-    End Property
+        End Function
 
-    ''' <summary>
-    ''' Platform-dependent temp path
-    ''' </summary>
-    Public ReadOnly Property TempPath As String
-        Get
-            If IsOnUnix() Then
-                Return "/tmp"
-            Else
-                Return Environment.GetEnvironmentVariable("TEMP").Replace("\", "/")
-            End If
-        End Get
-    End Property
-
-    'Variables
-    Friend KernelPaths As New Dictionary(Of String, String)
-
-    ''' <summary>
-    ''' Initializes the paths
-    ''' </summary>
-    Sub InitPaths()
-        KernelPaths.AddIfNotFound("Mods", HomePath + "/KSMods/")
-        KernelPaths.AddIfNotFound("Configuration", HomePath + "/KernelConfig.json")
-        KernelPaths.AddIfNotFound("Debugging", HomePath + "/kernelDbg.log")
-        KernelPaths.AddIfNotFound("Aliases", HomePath + "/Aliases.json")
-        KernelPaths.AddIfNotFound("Users", HomePath + "/Users.json")
-        KernelPaths.AddIfNotFound("FTPSpeedDial", HomePath + "/FTP_SpeedDial.json")
-        KernelPaths.AddIfNotFound("SFTPSpeedDial", HomePath + "/SFTP_SpeedDial.json")
-        KernelPaths.AddIfNotFound("DebugDevNames", HomePath + "/DebugDeviceNames.json")
-        KernelPaths.AddIfNotFound("MOTD", HomePath + "/MOTD.txt")
-        KernelPaths.AddIfNotFound("MAL", HomePath + "/MAL.txt")
-        KernelPaths.AddIfNotFound("CustomSaverSettings", HomePath + "/CustomSaverSettings.json")
-        KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
-        KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
-        KernelPaths.AddIfNotFound("CustomLanguages", HomePath + "/KSLanguages/")
-    End Sub
-
-    ''' <summary>
-    ''' Gets the neutralized kernel path
-    ''' </summary>
-    ''' <param name="PathType">Kernel path type</param>
-    ''' <returns>A kernel path</returns>
-    ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
-    Public Function GetKernelPath(PathType As KernelPathType) As String
-        If [Enum].IsDefined(GetType(KernelPathType), PathType) Then
-            Return NeutralizePath(KernelPaths(PathType.ToString))
-        Else
-            Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
-        End If
-    End Function
-
-End Module
+    End Module
+End Namespace

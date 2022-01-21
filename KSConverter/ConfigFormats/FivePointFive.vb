@@ -19,6 +19,7 @@
 Imports System.Globalization
 Imports KS
 Imports KS.ConsoleBase
+Imports KS.Files
 Imports KS.Kernel
 Imports MadMilkman.Ini
 Imports Extensification.StringExts
