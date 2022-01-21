@@ -280,7 +280,7 @@ Public Module Shell
             End If
         Catch ex As Exception
             WStkTrc(ex)
-            Write(DoTranslation("Error trying to execute command.") + vbNewLine +
+            Write(DoTranslation("Error trying to execute command.") + NewLine +
                   DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
         End Try
         Console.Title = ConsoleTitle

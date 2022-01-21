@@ -150,33 +150,33 @@ Public Module KernelTools
 
             'Write info (Header)
             Dump.AutoFlush = True
-            Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------") + vbNewLine + vbNewLine +
-                           DoTranslation(">> Panic information <<") + vbNewLine +
-                           DoTranslation("> Description: {0}") + vbNewLine +
-                           DoTranslation("> Error type: {1}") + vbNewLine +
-                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType.ToString, Render)
+            Dump.WriteLine(DoTranslation("----------------------------- Kernel panic dump -----------------------------") + NewLine + NewLine +
+                           DoTranslation(">> Panic information <<") + NewLine +
+                           DoTranslation("> Description: {0}") + NewLine +
+                           DoTranslation("> Error type: {1}") + NewLine +
+                           DoTranslation("> Date and Time: {2}") + NewLine, Description, ErrorType.ToString, Render)
 
             'Write Info (Exception)
             If Exc IsNot Nothing Then
                 Dim Count As Integer = 1
-                Dump.WriteLine(DoTranslation(">> Exception information <<") + vbNewLine +
-                               DoTranslation("> Exception: {0}") + vbNewLine +
-                               DoTranslation("> Description: {1}") + vbNewLine +
-                               DoTranslation("> HRESULT: {2}") + vbNewLine +
-                               DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
-                               DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                               Exc.StackTrace + vbNewLine + vbNewLine, Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
+                Dump.WriteLine(DoTranslation(">> Exception information <<") + NewLine +
+                               DoTranslation("> Exception: {0}") + NewLine +
+                               DoTranslation("> Description: {1}") + NewLine +
+                               DoTranslation("> HRESULT: {2}") + NewLine +
+                               DoTranslation("> Source: {3}") + NewLine + NewLine +
+                               DoTranslation("> Stack trace <") + NewLine + NewLine +
+                               Exc.StackTrace + NewLine + NewLine, Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
                 Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
                 While InnerExc IsNot Nothing
-                    Dump.WriteLine(DoTranslation("> Exception: {0}") + vbNewLine +
-                                   DoTranslation("> Description: {1}") + vbNewLine +
-                                   DoTranslation("> HRESULT: {2}") + vbNewLine +
-                                   DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
-                                   DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                                   InnerExc.StackTrace + vbNewLine, InnerExc.GetType.FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source)
+                    Dump.WriteLine(DoTranslation("> Exception: {0}") + NewLine +
+                                   DoTranslation("> Description: {1}") + NewLine +
+                                   DoTranslation("> HRESULT: {2}") + NewLine +
+                                   DoTranslation("> Source: {3}") + NewLine + NewLine +
+                                   DoTranslation("> Stack trace <") + NewLine + NewLine +
+                                   InnerExc.StackTrace + NewLine, InnerExc.GetType.FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                     InnerExc = InnerExc.InnerException
                     If InnerExc IsNot Nothing Then
                         Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
@@ -187,7 +187,7 @@ Public Module KernelTools
                 End While
                 Dump.WriteLine()
             Else
-                Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<") + vbNewLine)
+                Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<") + NewLine)
             End If
 
             'Write info (Frames)
@@ -209,7 +209,7 @@ Public Module KernelTools
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName, ex.Message.Replace(vbNewLine, " | "))
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName, ex.Message.Replace(NewLine, " | "))
             End Try
 
             'Close stream

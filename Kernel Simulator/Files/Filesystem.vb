@@ -183,7 +183,7 @@ Namespace Files
                     Next
 
                     'Show total size in list optionally
-                    If ShowTotalSizeInList Then Write(vbNewLine + DoTranslation("Total size in folder:") + " {0}", True, ColTypes.Neutral, TotalSize.FileSizeToString)
+                    If ShowTotalSizeInList Then Write(NewLine + DoTranslation("Total size in folder:") + " {0}", True, ColTypes.Neutral, TotalSize.FileSizeToString)
                 Catch ex As Exception
                     Write(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                     WStkTrc(ex)

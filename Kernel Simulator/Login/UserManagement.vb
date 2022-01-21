@@ -116,7 +116,7 @@ Public Module UserManagement
             InitPermissionsForNewUser(uninitUser)
             Return True
         Catch ex As Exception
-            Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + vbNewLine +
+            Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + NewLine +
                                                        DoTranslation("Error {0}: {1}"), ex, ex.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try
@@ -274,7 +274,7 @@ Public Module UserManagement
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
-                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + vbNewLine +
+                    Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + NewLine +
                                                                  DoTranslation("Error {0}: {1}"), ex, ex.Message)
                 End Try
             End If
@@ -458,10 +458,10 @@ Public Module UserManagement
 
         'Third, select account type
         While [Step] = 3
-            Write(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
+            Write(DoTranslation("Select account type.") + NewLine, True, ColTypes.Neutral)
             Write(" 1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
             Write(" 2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
-            Write(vbNewLine + ">> ", False, ColTypes.Input)
+            Write(NewLine + ">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerType) Then
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerType)
                 Select Case AnswerType

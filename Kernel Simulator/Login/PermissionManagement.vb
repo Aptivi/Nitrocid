@@ -82,7 +82,7 @@ Public Module PermissionManagement
                 Write(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
             End If
         Catch ex As Exception
-            Write(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
+            Write(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + NewLine +
               DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try
@@ -199,7 +199,7 @@ Public Module PermissionManagement
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
+                Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + NewLine +
                                                                    DoTranslation("Error {0}: {1}"), ex, ex.GetType.FullName, ex.Message)
             End Try
         Else

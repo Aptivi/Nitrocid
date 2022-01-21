@@ -106,7 +106,7 @@ Public Class UESHShell
                         End If
                     Catch ex As Exception
                         WStkTrc(ex)
-                        Write(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                        Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
                         Continue While
                     End Try
                 End If

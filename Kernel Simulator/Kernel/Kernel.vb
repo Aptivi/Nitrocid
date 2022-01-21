@@ -30,7 +30,7 @@ Namespace Kernel
         Public DefConsoleOut As TextWriter
         Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 1"
-        Public ReadOnly vbNewLine As String = Environment.NewLine
+        Public ReadOnly NewLine As String = Environment.NewLine
         Public ReadOnly KernelEventManager As New Events
         Public ReadOnly ExecutableDir As String = Environment.CurrentDirectory
         Friend StageTimer As New Stopwatch
@@ -90,7 +90,7 @@ Namespace Kernel
                             Console.ReadKey(True)
                         Loop
                     Else
-                        Write(DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + vbNewLine +
+                        Write(DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + NewLine +
                           DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), True, ColTypes.Warning)
                         Console.ReadKey(True)
                         CheckingForConsoleSize = True

@@ -221,9 +221,9 @@ Public Module LanguageManager
                         ElseIf AlwaysTranslated Then
                             If Not lang.EndsWith("-T") Then lang += "-T"
                         Else
-                            Write(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
+                            Write(DoTranslation("The language you've selected contains two variants. Select one:") + NewLine, True, ColTypes.Neutral)
                             Write(" 1) " + DoTranslation("Transliterated version", lang), True, ColTypes.Option)
-                            Write(" 2) " + DoTranslation("Translated version", lang + "-T") + vbNewLine, True, ColTypes.Option)
+                            Write(" 2) " + DoTranslation("Translated version", lang + "-T") + NewLine, True, ColTypes.Option)
                             Dim LanguageSet As Boolean
                             While Not LanguageSet
                                 Write(">> ", False, ColTypes.Input)

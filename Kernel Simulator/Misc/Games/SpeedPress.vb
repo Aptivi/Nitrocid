@@ -80,7 +80,7 @@ Public Module SpeedPress
         End Select
 
         'Enter the loop until the user presses ESC
-        Write(DoTranslation("Press ESC to exit.") + vbNewLine, True, ColTypes.Tip)
+        Write(DoTranslation("Press ESC to exit.") + NewLine, True, ColTypes.Tip)
         While Not WrittenChar.Key = ConsoleKey.Escape Or Not WrittenChar.Modifiers = ConsoleModifiers.Control And WrittenChar.Key = ConsoleKey.C
             'Select a random character
             SelectedChar = Convert.ToChar(RandomEngine.Next(97, 122))

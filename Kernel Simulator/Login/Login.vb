@@ -77,7 +77,7 @@ Public Module Login
             'Show MOTD once
             Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD)
             If ShowMOTDOnceFlag = True And ShowMOTD = True Then
-                Write(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
+                Write(NewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
             ShowMOTDOnceFlag = False
 

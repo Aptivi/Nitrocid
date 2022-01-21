@@ -137,7 +137,7 @@ Public Module PlaceParse
             End If
             If text.Contains("<newline>") Then
                 Wdbg(DebugLevel.I, "Newline placeholder found.")
-                text = text.Replace("<newline>", vbNewLine)
+                text = text.Replace("<newline>", NewLine)
             End If
             If text.Contains("<dollar>") Then
                 Wdbg(DebugLevel.I, "Dollar placeholder found.")
