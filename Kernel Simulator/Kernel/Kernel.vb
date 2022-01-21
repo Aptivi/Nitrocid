@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
+Imports KS.Hardware
 Imports System.IO
 Imports System.Reflection.Assembly
 

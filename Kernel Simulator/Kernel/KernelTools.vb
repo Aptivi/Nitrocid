@@ -23,6 +23,7 @@ Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
 Imports KS.Kernel
+Imports KS.Hardware
 
 Public Module KernelTools
 

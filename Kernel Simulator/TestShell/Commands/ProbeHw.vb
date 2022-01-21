@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Hardware
+
 Class Test_ProbeHwCommand
     Inherits CommandExecutor
     Implements ICommand
