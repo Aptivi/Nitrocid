@@ -16,28 +16,30 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' One-lettered kernel error level enumeration
-''' </summary>
-Public Enum KernelErrorLevel
+Namespace Kernel
     ''' <summary>
-    ''' Continuable kernel error
+    ''' One-lettered kernel error level enumeration
     ''' </summary>
-    C
-    ''' <summary>
-    ''' Serious kernel error
-    ''' </summary>
-    S
-    ''' <summary>
-    ''' Double kernel panic
-    ''' </summary>
-    D
-    ''' <summary>
-    ''' Fatal kernel error
-    ''' </summary>
-    F
-    ''' <summary>
-    ''' Unrecoverable kernel error
-    ''' </summary>
-    U
-End Enum
+    Public Enum KernelErrorLevel
+        ''' <summary>
+        ''' Continuable kernel error
+        ''' </summary>
+        C
+        ''' <summary>
+        ''' Serious kernel error
+        ''' </summary>
+        S
+        ''' <summary>
+        ''' Double kernel panic
+        ''' </summary>
+        D
+        ''' <summary>
+        ''' Fatal kernel error
+        ''' </summary>
+        F
+        ''' <summary>
+        ''' Unrecoverable kernel error
+        ''' </summary>
+        U
+    End Enum
+End Namespace

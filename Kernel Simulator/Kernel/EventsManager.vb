@@ -16,37 +16,39 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module EventsManager
+Namespace Kernel
+    Public Module EventsManager
 
-    ''' <summary>
-    ''' Lists all the fired events with arguments
-    ''' </summary>
-    Public Function ListAllFiredEvents() As Dictionary(Of String, Object())
-        Return ListAllFiredEvents("")
-    End Function
+        ''' <summary>
+        ''' Lists all the fired events with arguments
+        ''' </summary>
+        Public Function ListAllFiredEvents() As Dictionary(Of String, Object())
+            Return ListAllFiredEvents("")
+        End Function
 
-    ''' <summary>
-    ''' Lists all the fired events with arguments
-    ''' </summary>
-    ''' <param name="SearchTerm">The search term</param>
-    Public Function ListAllFiredEvents(SearchTerm As String) As Dictionary(Of String, Object())
-        Dim FiredEvents As New Dictionary(Of String, Object())
+        ''' <summary>
+        ''' Lists all the fired events with arguments
+        ''' </summary>
+        ''' <param name="SearchTerm">The search term</param>
+        Public Function ListAllFiredEvents(SearchTerm As String) As Dictionary(Of String, Object())
+            Dim FiredEvents As New Dictionary(Of String, Object())
 
-        'Enumerate all the fired events
-        For Each FiredEvent As String In Kernel.KernelEventManager.FiredEvents.Keys
-            If FiredEvent.Contains(SearchTerm) Then
-                Dim EventArguments As Object() = Kernel.KernelEventManager.FiredEvents(FiredEvent)
-                FiredEvents.Add(FiredEvent, EventArguments)
-            End If
-        Next
-        Return FiredEvents
-    End Function
+            'Enumerate all the fired events
+            For Each FiredEvent As String In Kernel.KernelEventManager.FiredEvents.Keys
+                If FiredEvent.Contains(SearchTerm) Then
+                    Dim EventArguments As Object() = Kernel.KernelEventManager.FiredEvents(FiredEvent)
+                    FiredEvents.Add(FiredEvent, EventArguments)
+                End If
+            Next
+            Return FiredEvents
+        End Function
 
-    ''' <summary>
-    ''' Clears all the fired events
-    ''' </summary>
-    Public Sub ClearAllFiredEvents()
-        Kernel.KernelEventManager.FiredEvents.Clear()
-    End Sub
+        ''' <summary>
+        ''' Clears all the fired events
+        ''' </summary>
+        Public Sub ClearAllFiredEvents()
+            Kernel.KernelEventManager.FiredEvents.Clear()
+        End Sub
 
-End Module
+    End Module
+End Namespace

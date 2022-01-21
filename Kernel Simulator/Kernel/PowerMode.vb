@@ -16,32 +16,34 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Kernel power modes
-''' </summary>
-Public Enum PowerMode
+Namespace Kernel
     ''' <summary>
-    ''' Kernel will shut down
+    ''' Kernel power modes
     ''' </summary>
-    Shutdown
-    ''' <summary>
-    ''' Kernel will reboot
-    ''' </summary>
-    Reboot
-    ''' <summary>
-    ''' Kernel will reboot to safe mode (disables all mods)
-    ''' </summary>
-    RebootSafe
-    ''' <summary>
-    ''' Kernel will remotely shutdown another kernel on the network (if RPC is running here and there)
-    ''' </summary>
-    RemoteShutdown
-    ''' <summary>
-    ''' Kernel will remotely reboot another kernel on the network (if RPC is running here and there)
-    ''' </summary>
-    RemoteRestart
-    ''' <summary>
-    ''' Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
-    ''' </summary>
-    RemoteRestartSafe
-End Enum
+    Public Enum PowerMode
+        ''' <summary>
+        ''' Kernel will shut down
+        ''' </summary>
+        Shutdown
+        ''' <summary>
+        ''' Kernel will reboot
+        ''' </summary>
+        Reboot
+        ''' <summary>
+        ''' Kernel will reboot to safe mode (disables all mods)
+        ''' </summary>
+        RebootSafe
+        ''' <summary>
+        ''' Kernel will remotely shutdown another kernel on the network (if RPC is running here and there)
+        ''' </summary>
+        RemoteShutdown
+        ''' <summary>
+        ''' Kernel will remotely reboot another kernel on the network (if RPC is running here and there)
+        ''' </summary>
+        RemoteRestart
+        ''' <summary>
+        ''' Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
+        ''' </summary>
+        RemoteRestartSafe
+    End Enum
+End Namespace
