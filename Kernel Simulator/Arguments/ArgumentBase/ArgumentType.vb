@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Argument type enumeration
-''' </summary>
-Public Enum ArgumentType
+Namespace Arguments.ArgumentBase
     ''' <summary>
-    ''' Kernel arguments
+    ''' Argument type enumeration
     ''' </summary>
-    KernelArgs
-    ''' <summary>
-    ''' Command line arguments
-    ''' </summary>
-    CommandLineArgs
-    ''' <summary>
-    ''' Pre-boot command line arguments
-    ''' </summary>
-    PreBootCommandLineArgs
-End Enum
+    Public Enum ArgumentType
+        ''' <summary>
+        ''' Kernel arguments
+        ''' </summary>
+        KernelArgs
+        ''' <summary>
+        ''' Command line arguments
+        ''' </summary>
+        CommandLineArgs
+        ''' <summary>
+        ''' Pre-boot command line arguments
+        ''' </summary>
+        PreBootCommandLineArgs
+    End Enum
+End Namespace

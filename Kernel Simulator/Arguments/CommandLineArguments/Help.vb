@@ -15,16 +15,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class CommandLine_HelpArgument
-    Inherits ArgumentExecutor
-    Implements IArgument
+Imports KS.Arguments.ArgumentBase
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        ShowArgsHelp(ArgumentType.CommandLineArgs)
-        Write(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
-        If Console.ReadKey(True).Key = ConsoleKey.Escape Then
-            Environment.Exit(0)
-        End If
-    End Sub
+Namespace Arguments.CommandLineArguments
+    Class CommandLine_HelpArgument
+        Inherits ArgumentExecutor
+        Implements IArgument
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            ShowArgsHelp(ArgumentType.CommandLineArgs)
+            Write(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
+            If Console.ReadKey(True).Key = ConsoleKey.Escape Then
+                Environment.Exit(0)
+            End If
+        End Sub
+
+    End Class
+End Namespace

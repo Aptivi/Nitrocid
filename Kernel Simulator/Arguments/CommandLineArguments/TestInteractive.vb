@@ -15,20 +15,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Arguments.ArgumentBase
 Imports KS.Kernel
 
-Class CommandLine_TestInteractiveArgument
-    Inherits ArgumentExecutor
-    Implements IArgument
+Namespace Arguments.CommandLineArguments
+    Class CommandLine_TestInteractiveArgument
+        Inherits ArgumentExecutor
+        Implements IArgument
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        If Not EnableSplash Then
-            StageTimer.Stop()
-            StartShellForced(ShellType.TestShell)
-            PurgeShells()
-            StageTimer.Start()
-            If Test_ShutdownFlag Then Environment.Exit(0)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            If Not EnableSplash Then
+                StageTimer.Stop()
+                StartShellForced(ShellType.TestShell)
+                PurgeShells()
+                StageTimer.Start()
+                If Test_ShutdownFlag Then Environment.Exit(0)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

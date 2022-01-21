@@ -15,12 +15,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class PreBootCommandLine_ResetArgument
-    Inherits ArgumentExecutor
-    Implements IArgument
+Imports KS.Arguments.ArgumentBase
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        FactoryReset()
-    End Sub
+Namespace Arguments.PreBootCommandLineArguments
+    Class PreBootCommandLine_ResetArgument
+        Inherits ArgumentExecutor
+        Implements IArgument
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            FactoryReset()
+        End Sub
+
+    End Class
+End Namespace

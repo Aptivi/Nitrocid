@@ -16,18 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Base kernel argument executor
-''' </summary>
-Public Interface IArgument
-
+Namespace Arguments.ArgumentBase
     ''' <summary>
-    ''' Executes the kernel argument with the given argument
+    ''' Base kernel argument executor
     ''' </summary>
-    ''' <param name="StringArgs">Arguments in a string</param>
-    ''' <param name="ListArgs">List of provided arguments and switches</param>
-    ''' <param name="ListArgsOnly">List of provided arguments</param>
-    ''' <param name="ListSwitchesOnly">List of provided switches</param>
-    Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
+    Public Interface IArgument
 
-End Interface
+        ''' <summary>
+        ''' Executes the kernel argument with the given argument
+        ''' </summary>
+        ''' <param name="StringArgs">Arguments in a string</param>
+        ''' <param name="ListArgs">List of provided arguments and switches</param>
+        ''' <param name="ListArgsOnly">List of provided arguments</param>
+        ''' <param name="ListSwitchesOnly">List of provided switches</param>
+        Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
+
+    End Interface
+End Namespace

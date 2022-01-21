@@ -16,12 +16,14 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public MustInherit Class ArgumentExecutor
-    Implements IArgument
+Namespace Arguments.ArgumentBase
+    Public MustInherit Class ArgumentExecutor
+        Implements IArgument
 
-    Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        Wdbg(DebugLevel.F, "We shouldn't be here!!!")
-        Throw New InvalidOperationException()
-    End Sub
+        Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            Wdbg(DebugLevel.F, "We shouldn't be here!!!")
+            Throw New InvalidOperationException()
+        End Sub
 
-End Class
+    End Class
+End Namespace

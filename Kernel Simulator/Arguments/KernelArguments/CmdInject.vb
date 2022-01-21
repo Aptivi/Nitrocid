@@ -16,26 +16,30 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class CmdInjectArgument
-    Inherits ArgumentExecutor
-    Implements IArgument
+Imports KS.Arguments.ArgumentBase
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        If ListArgs IsNot Nothing Then
-            For Each InjectedCommand As String In ListArgsOnly
-                InjectedCommands.AddRange(InjectedCommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
-                CommandFlag = True
-            Next
-        Else
-            Write(DoTranslation("Available commands: {0}"), True, ColTypes.Neutral, String.Join(", ", Commands.Keys))
-            Write(">> ", False, ColTypes.Input)
-            InjectedCommands.AddRange(Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
-            If String.Join(", ", InjectedCommands) <> "q" Then
-                CommandFlag = True
+Namespace Arguments.KernelArguments
+    Class CmdInjectArgument
+        Inherits ArgumentExecutor
+        Implements IArgument
+
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            If ListArgs IsNot Nothing Then
+                For Each InjectedCommand As String In ListArgsOnly
+                    InjectedCommands.AddRange(InjectedCommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
+                    CommandFlag = True
+                Next
             Else
-                Write(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
+                Write(DoTranslation("Available commands: {0}"), True, ColTypes.Neutral, String.Join(", ", Commands.Keys))
+                Write(">> ", False, ColTypes.Input)
+                InjectedCommands.AddRange(Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
+                If String.Join(", ", InjectedCommands) <> "q" Then
+                    CommandFlag = True
+                Else
+                    Write(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

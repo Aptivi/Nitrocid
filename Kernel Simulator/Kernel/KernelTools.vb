@@ -20,6 +20,8 @@ Imports System.IO
 Imports System.Reflection
 Imports System.Threading
 Imports Newtonsoft.Json.Linq
+Imports KS.Arguments
+Imports KS.Arguments.ArgumentBase
 Imports KS.Kernel
 
 Public Module KernelTools
