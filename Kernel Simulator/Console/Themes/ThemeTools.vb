@@ -19,12 +19,13 @@
 Imports System.IO
 Imports KS.Kernel
 
-Public Module ThemeTools
+Namespace ConsoleBase.Themes
+    Public Module ThemeTools
 
-    ''' <summary>
-    ''' All the available built-in themes
-    ''' </summary>
-    Public ReadOnly Themes As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
+        ''' <summary>
+        ''' All the available built-in themes
+        ''' </summary>
+        Public ReadOnly Themes As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
                                                                          {"3Y-Diamond", New ThemeInfo("_3Y_Diamond")},
                                                                          {"Aquatic", New ThemeInfo("Aquatic")},
                                                                          {"AyuDark", New ThemeInfo("AyuDark")},
@@ -82,139 +83,140 @@ Public Module ThemeTools
                                                                          {"Windows95", New ThemeInfo("Windows95")},
                                                                          {"Wood", New ThemeInfo("Wood")}}
 
-    ''' <summary>
-    ''' Sets system colors according to the programmed templates
-    ''' </summary>
-    ''' <param name="theme">A specified theme</param>
-    Public Sub ApplyThemeFromResources(theme As String)
-        Wdbg(DebugLevel.I, "Theme: {0}", theme)
-        If Themes.ContainsKey(theme) Then
-            Wdbg(DebugLevel.I, "Theme found.")
+        ''' <summary>
+        ''' Sets system colors according to the programmed templates
+        ''' </summary>
+        ''' <param name="theme">A specified theme</param>
+        Public Sub ApplyThemeFromResources(theme As String)
+            Wdbg(DebugLevel.I, "Theme: {0}", theme)
+            If Themes.ContainsKey(theme) Then
+                Wdbg(DebugLevel.I, "Theme found.")
 
-            'Populate theme info
-            Dim ThemeInfo As ThemeInfo
-            theme = theme.ReplaceAll({"-", " "}, "_")
-            If theme = "Default" Then
-                ResetColors()
-            ElseIf theme = "3Y-Diamond" Then
-                ThemeInfo = New ThemeInfo("_3Y_Diamond")
-            Else
-                ThemeInfo = New ThemeInfo(theme)
-            End If
+                'Populate theme info
+                Dim ThemeInfo As ThemeInfo
+                theme = theme.ReplaceAll({"-", " "}, "_")
+                If theme = "Default" Then
+                    ResetColors()
+                ElseIf theme = "3Y-Diamond" Then
+                    ThemeInfo = New ThemeInfo("_3Y_Diamond")
+                Else
+                    ThemeInfo = New ThemeInfo(theme)
+                End If
 
-            If Not theme = "Default" Then
+                If Not theme = "Default" Then
 #Disable Warning BC42104
-                'Set colors as appropriate
-                SetColorsTheme(ThemeInfo)
+                    'Set colors as appropriate
+                    SetColorsTheme(ThemeInfo)
 #Enable Warning BC42104
-            End If
-
-            'Raise event
-            Kernel.KernelEventManager.RaiseThemeSet(theme)
-        Else
-            Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
-            Wdbg(DebugLevel.E, "Theme not found.")
-
-            'Raise event
-            Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Sets system colors according to the template file
-    ''' </summary>
-    ''' <param name="ThemeFile">Theme file</param>
-    Public Sub ApplyThemeFromFile(ThemeFile As String)
-        Try
-            Wdbg(DebugLevel.I, "Theme file name: {0}", ThemeFile)
-            ThemeFile = NeutralizePath(ThemeFile, True)
-            Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile)
-
-            'Populate theme info
-            Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
-
-            If Not ThemeFile = "Default" Then
-                'Set colors as appropriate
-                SetColorsTheme(ThemeInfo)
-            End If
-
-            'Raise event
-            Kernel.KernelEventManager.RaiseThemeSet(ThemeFile)
-        Catch ex As Exception
-            Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
-            Wdbg(DebugLevel.E, "Theme not found.")
-
-            'Raise event
-            Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' Sets custom colors. It only works if colored shell is enabled.
-    ''' </summary>
-    ''' <param name="ThemeInfo">Theme information</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="Exceptions.ColorException"></exception>
-    Public Function SetColorsTheme(ThemeInfo As ThemeInfo) As Boolean
-        If ThemeInfo Is Nothing Then Throw New ArgumentNullException(NameOf(ThemeInfo))
-
-        'Set the colors
-        If ColoredShell = True Then
-            Try
-                InputColor = ThemeInfo.ThemeInputColor
-                LicenseColor = ThemeInfo.ThemeLicenseColor
-                ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor
-                UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor
-                HostNameShellColor = ThemeInfo.ThemeHostNameShellColor
-                UserNameShellColor = ThemeInfo.ThemeUserNameShellColor
-                BackgroundColor = ThemeInfo.ThemeBackgroundColor
-                NeutralTextColor = ThemeInfo.ThemeNeutralTextColor
-                ListEntryColor = ThemeInfo.ThemeListEntryColor
-                ListValueColor = ThemeInfo.ThemeListValueColor
-                StageColor = ThemeInfo.ThemeStageColor
-                ErrorColor = ThemeInfo.ThemeErrorColor
-                WarningColor = ThemeInfo.ThemeWarningColor
-                OptionColor = ThemeInfo.ThemeOptionColor
-                BannerColor = ThemeInfo.ThemeBannerColor
-                NotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
-                NotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
-                NotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor
-                NotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor
-                QuestionColor = ThemeInfo.ThemeQuestionColor
-                SuccessColor = ThemeInfo.ThemeSuccessColor
-                UserDollarColor = ThemeInfo.ThemeUserDollarColor
-                TipColor = ThemeInfo.ThemeTipColor
-                SeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor
-                SeparatorColor = ThemeInfo.ThemeSeparatorColor
-                ListTitleColor = ThemeInfo.ThemeListTitleColor
-                DevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor
-                StageTimeColor = ThemeInfo.ThemeStageTimeColor
-                ColorTools.ProgressColor = ThemeInfo.ThemeProgressColor
-                BackOptionColor = ThemeInfo.ThemeBackOptionColor
-                LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
-                MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
-                HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
-                TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
-                TableHeaderColor = ThemeInfo.ThemeTableHeaderColor
-                TableValueColor = ThemeInfo.ThemeTableValueColor
-                SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
-                LoadBack()
-                MakePermanent()
+                End If
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseColorSet()
-                Return True
-            Catch ex As Exception
-                WStkTrc(ex)
-                Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
-                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
-            End Try
-        Else
-            Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
-            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
-        End If
-        Return False
-    End Function
+                Kernel.KernelEventManager.RaiseThemeSet(theme)
+            Else
+                Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
+                Wdbg(DebugLevel.E, "Theme not found.")
 
-End Module
+                'Raise event
+                Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Sets system colors according to the template file
+        ''' </summary>
+        ''' <param name="ThemeFile">Theme file</param>
+        Public Sub ApplyThemeFromFile(ThemeFile As String)
+            Try
+                Wdbg(DebugLevel.I, "Theme file name: {0}", ThemeFile)
+                ThemeFile = NeutralizePath(ThemeFile, True)
+                Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile)
+
+                'Populate theme info
+                Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
+
+                If Not ThemeFile = "Default" Then
+                    'Set colors as appropriate
+                    SetColorsTheme(ThemeInfo)
+                End If
+
+                'Raise event
+                Kernel.KernelEventManager.RaiseThemeSet(ThemeFile)
+            Catch ex As Exception
+                Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
+                Wdbg(DebugLevel.E, "Theme not found.")
+
+                'Raise event
+                Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Sets custom colors. It only works if colored shell is enabled.
+        ''' </summary>
+        ''' <param name="ThemeInfo">Theme information</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="Exceptions.ColorException"></exception>
+        Public Function SetColorsTheme(ThemeInfo As ThemeInfo) As Boolean
+            If ThemeInfo Is Nothing Then Throw New ArgumentNullException(NameOf(ThemeInfo))
+
+            'Set the colors
+            If ColoredShell = True Then
+                Try
+                    InputColor = ThemeInfo.ThemeInputColor
+                    LicenseColor = ThemeInfo.ThemeLicenseColor
+                    ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor
+                    UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor
+                    HostNameShellColor = ThemeInfo.ThemeHostNameShellColor
+                    UserNameShellColor = ThemeInfo.ThemeUserNameShellColor
+                    BackgroundColor = ThemeInfo.ThemeBackgroundColor
+                    NeutralTextColor = ThemeInfo.ThemeNeutralTextColor
+                    ListEntryColor = ThemeInfo.ThemeListEntryColor
+                    ListValueColor = ThemeInfo.ThemeListValueColor
+                    StageColor = ThemeInfo.ThemeStageColor
+                    ErrorColor = ThemeInfo.ThemeErrorColor
+                    WarningColor = ThemeInfo.ThemeWarningColor
+                    OptionColor = ThemeInfo.ThemeOptionColor
+                    BannerColor = ThemeInfo.ThemeBannerColor
+                    NotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
+                    NotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
+                    NotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor
+                    NotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor
+                    QuestionColor = ThemeInfo.ThemeQuestionColor
+                    SuccessColor = ThemeInfo.ThemeSuccessColor
+                    UserDollarColor = ThemeInfo.ThemeUserDollarColor
+                    TipColor = ThemeInfo.ThemeTipColor
+                    SeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor
+                    SeparatorColor = ThemeInfo.ThemeSeparatorColor
+                    ListTitleColor = ThemeInfo.ThemeListTitleColor
+                    DevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor
+                    StageTimeColor = ThemeInfo.ThemeStageTimeColor
+                    ColorTools.ProgressColor = ThemeInfo.ThemeProgressColor
+                    BackOptionColor = ThemeInfo.ThemeBackOptionColor
+                    LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
+                    MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
+                    HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
+                    TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
+                    TableHeaderColor = ThemeInfo.ThemeTableHeaderColor
+                    TableValueColor = ThemeInfo.ThemeTableValueColor
+                    SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
+                    LoadBack()
+                    MakePermanent()
+
+                    'Raise event
+                    Kernel.KernelEventManager.RaiseColorSet()
+                    Return True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
+                    Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
+                End Try
+            Else
+                Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
+                Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
+            End If
+            Return False
+        End Function
+
+    End Module
+End Namespace

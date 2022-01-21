@@ -155,6 +155,9 @@
     <Import Include="Extensification.StringExts" />
     <Import Include="FluentFTP" />
     <Import Include="FluentFTP.Helpers" />
+    <Import Include="KS.ConsoleBase" />
+    <Import Include="KS.ConsoleBase.Themes" />
+    <Import Include="KS.ConsoleBase.Themes.Studio" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />
@@ -202,8 +205,8 @@
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\ColorSetErrorReasons.vb" />
     <Compile Include="Console\Themes\ThemeInfo.vb" />
-    <Compile Include="Console\Themes\ThemeStudio.vb" />
-    <Compile Include="Console\Themes\ThemeStudioTools.vb" />
+    <Compile Include="Console\Themes\Studio\ThemeStudio.vb" />
+    <Compile Include="Console\Themes\Studio\ThemeStudioTools.vb" />
     <Compile Include="Console\Themes\ThemeTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Files\FilesystemEnums.vb" />

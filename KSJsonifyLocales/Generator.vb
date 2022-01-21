@@ -20,9 +20,8 @@ Imports System.IO
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 Imports KS.TextWriterColor
-Imports KS.ColorTools
 Imports KS.PlatformDetector
-Imports KS.ConsoleExtensions
+Imports KS.ConsoleBase
 
 Module LocaleGenerator
 

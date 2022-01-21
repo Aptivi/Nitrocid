@@ -21,6 +21,7 @@ Imports System.IO
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
 Imports Core
+Imports KS.ConsoleBase.Themes
 Imports KS.Kernel
 
 Public Module Config

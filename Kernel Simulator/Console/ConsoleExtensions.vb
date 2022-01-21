@@ -18,89 +18,91 @@
 
 Imports System.Text.RegularExpressions
 
-Public Module ConsoleExtensions
+Namespace ConsoleBase
+    Public Module ConsoleExtensions
 
-    ''' <summary>
-    ''' Clears the console buffer, but keeps the current cursor position
-    ''' </summary>
-    Public Sub ClearKeepPosition()
-        Dim Left As Integer = Console.CursorLeft
-        Dim Top As Integer = Console.CursorTop
-        Console.Clear()
-        Console.SetCursorPosition(Left, Top)
-    End Sub
+        ''' <summary>
+        ''' Clears the console buffer, but keeps the current cursor position
+        ''' </summary>
+        Public Sub ClearKeepPosition()
+            Dim Left As Integer = Console.CursorLeft
+            Dim Top As Integer = Console.CursorTop
+            Console.Clear()
+            Console.SetCursorPosition(Left, Top)
+        End Sub
 
-    ''' <summary>
-    ''' Clears the line to the right
-    ''' </summary>
-    Public Sub ClearLineToRight()
-        Console.Write(GetEsc() + "[0K")
-    End Sub
+        ''' <summary>
+        ''' Clears the line to the right
+        ''' </summary>
+        Public Sub ClearLineToRight()
+            Console.Write(GetEsc() + "[0K")
+        End Sub
 
-    ''' <summary>
-    ''' Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
-    ''' </summary>
-    ''' <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
-    ''' <param name="MaximumNumber">The maximum number.</param>
-    ''' <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
-    ''' <returns>How many times to repeat the character</returns>
-    Public Function PercentRepeat(CurrentNumber As Integer, MaximumNumber As Integer, WidthOffset As Integer) As Integer
-        Return CurrentNumber * 100 / MaximumNumber * ((Console.WindowWidth - WidthOffset) * 0.01)
-    End Function
+        ''' <summary>
+        ''' Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
+        ''' </summary>
+        ''' <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
+        ''' <param name="MaximumNumber">The maximum number.</param>
+        ''' <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
+        ''' <returns>How many times to repeat the character</returns>
+        Public Function PercentRepeat(CurrentNumber As Integer, MaximumNumber As Integer, WidthOffset As Integer) As Integer
+            Return CurrentNumber * 100 / MaximumNumber * ((Console.WindowWidth - WidthOffset) * 0.01)
+        End Function
 
-    ''' <summary>
-    ''' Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
-    ''' </summary>
-    ''' <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
-    ''' <param name="MaximumNumber">The maximum number.</param>
-    ''' <param name="TargetWidth">The target width</param>
-    ''' <returns>How many times to repeat the character</returns>
-    Public Function PercentRepeatTargeted(CurrentNumber As Integer, MaximumNumber As Integer, TargetWidth As Integer) As Integer
-        Return CurrentNumber * 100 / MaximumNumber * (TargetWidth * 0.01)
-    End Function
+        ''' <summary>
+        ''' Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
+        ''' </summary>
+        ''' <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
+        ''' <param name="MaximumNumber">The maximum number.</param>
+        ''' <param name="TargetWidth">The target width</param>
+        ''' <returns>How many times to repeat the character</returns>
+        Public Function PercentRepeatTargeted(CurrentNumber As Integer, MaximumNumber As Integer, TargetWidth As Integer) As Integer
+            Return CurrentNumber * 100 / MaximumNumber * (TargetWidth * 0.01)
+        End Function
 
-    ''' <summary>
-    ''' Filters the VT sequences that matches the regex
-    ''' </summary>
-    ''' <param name="Text">The text that contains the VT sequences</param>
-    ''' <returns>The text that doesn't contain the VT sequences</returns>
-    Public Function FilterVTSequences(Text As String) As String
-        Return Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
-    End Function
+        ''' <summary>
+        ''' Filters the VT sequences that matches the regex
+        ''' </summary>
+        ''' <param name="Text">The text that contains the VT sequences</param>
+        ''' <returns>The text that doesn't contain the VT sequences</returns>
+        Public Function FilterVTSequences(Text As String) As String
+            Return Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+        End Function
 
-    ''' <summary>
-    ''' Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
-    ''' </summary>
-    ''' <param name="Text">The text that contains the VT sequences</param>
-    ''' <param name="Left">The filtered left position</param>
-    ''' <param name="Top">The filtered top position</param>
-    Public Sub GetFilteredPositions(Text As String, ByRef Left As Integer, ByRef Top As Integer, ParamArray Vars() As Object)
-        'First, get the old cursor positions
-        Dim OldLeft As Integer = Console.CursorLeft
-        Dim OldTop As Integer = Console.CursorTop
+        ''' <summary>
+        ''' Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
+        ''' </summary>
+        ''' <param name="Text">The text that contains the VT sequences</param>
+        ''' <param name="Left">The filtered left position</param>
+        ''' <param name="Top">The filtered top position</param>
+        Public Sub GetFilteredPositions(Text As String, ByRef Left As Integer, ByRef Top As Integer, ParamArray Vars() As Object)
+            'First, get the old cursor positions
+            Dim OldLeft As Integer = Console.CursorLeft
+            Dim OldTop As Integer = Console.CursorTop
 
-        'Second, filter all text from the VT escape sequences
-        Text = FilterVTSequences(Text)
+            'Second, filter all text from the VT escape sequences
+            Text = FilterVTSequences(Text)
 
-        'Third, print the text, return to the old position, and return the filtered positions
-        Text = String.Format(Text, Vars)
-        Console.Write(Text)
-        Left = Console.CursorLeft
-        Top = Console.CursorTop
+            'Third, print the text, return to the old position, and return the filtered positions
+            Text = String.Format(Text, Vars)
+            Console.Write(Text)
+            Left = Console.CursorLeft
+            Top = Console.CursorTop
 
-        'Finally, set the correct old position
-        If Text.Length > Console.WindowLeft - OldLeft And (IsOnUnix() Or LinuxCompatibility) Then
-            Dim Times As Integer = Math.Truncate((Text.Length + OldLeft) / Console.WindowWidth - 0.0001)
-            OldTop -= Times
-        End If
-        Console.SetCursorPosition(OldLeft, OldTop)
-    End Sub
+            'Finally, set the correct old position
+            If Text.Length > Console.WindowLeft - OldLeft And (IsOnUnix() Or LinuxCompatibility) Then
+                Dim Times As Integer = Math.Truncate((Text.Length + OldLeft) / Console.WindowWidth - 0.0001)
+                OldTop -= Times
+            End If
+            Console.SetCursorPosition(OldLeft, OldTop)
+        End Sub
 
-    ''' <summary>
-    ''' Polls $TERM_PROGRAM to get terminal emulator
-    ''' </summary>
-    Public Function GetTerminalEmulator() As String
-        Return Environ("TERM_PROGRAM")
-    End Function
+        ''' <summary>
+        ''' Polls $TERM_PROGRAM to get terminal emulator
+        ''' </summary>
+        Public Function GetTerminalEmulator() As String
+            Return Environ("TERM_PROGRAM")
+        End Function
 
-End Module
+    End Module
+End Namespace

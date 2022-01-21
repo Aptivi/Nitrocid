@@ -17,9 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.TextWriterColor
-Imports KS.ColorTools
+Imports KS.ConsoleBase
 Imports KS.PlatformDetector
-Imports KS.ConsoleExtensions
 Imports KS.RemoteDebugTools
 Imports KS.NetworkTools
 Imports KS.AliasManager

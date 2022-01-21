@@ -63,7 +63,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -120,7 +120,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -177,7 +177,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -233,7 +233,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -292,7 +292,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -351,7 +351,7 @@ Public Module ListWriterColor
                         End If
                     End If
                 Next
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+                If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Enumeration for the theme setting error reasons
-''' </summary>
-Public Enum ThemeSetErrorReasons
+Namespace ConsoleBase.Themes
     ''' <summary>
-    ''' Unknown reason
+    ''' Enumeration for the theme setting error reasons
     ''' </summary>
-    Unknown = 0
-    ''' <summary>
-    ''' Theme is not found
-    ''' </summary>
-    NotFound = 1
-End Enum
+    Public Enum ThemeSetErrorReasons
+        ''' <summary>
+        ''' Unknown reason
+        ''' </summary>
+        Unknown = 0
+        ''' <summary>
+        ''' Theme is not found
+        ''' </summary>
+        NotFound = 1
+    End Enum
+End Namespace

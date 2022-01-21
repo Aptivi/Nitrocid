@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Enumeration for the color setting error reasons
-''' </summary>
-Public Enum ColorSetErrorReasons
+Namespace ConsoleBase
     ''' <summary>
-    ''' Unknown reason
+    ''' Enumeration for the color setting error reasons
     ''' </summary>
-    Unknown = 0
-    ''' <summary>
-    ''' The colored shell is disabled
-    ''' </summary>
-    NoColors = 1
-    ''' <summary>
-    ''' One or more of the colors is invalid
-    ''' </summary>
-    InvalidColors = 2
-End Enum
+    Public Enum ColorSetErrorReasons
+        ''' <summary>
+        ''' Unknown reason
+        ''' </summary>
+        Unknown = 0
+        ''' <summary>
+        ''' The colored shell is disabled
+        ''' </summary>
+        NoColors = 1
+        ''' <summary>
+        ''' One or more of the colors is invalid
+        ''' </summary>
+        InvalidColors = 2
+    End Enum
+End Namespace
