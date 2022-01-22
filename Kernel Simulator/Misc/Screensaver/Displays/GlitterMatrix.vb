@@ -18,59 +18,61 @@
 
 Imports System.ComponentModel
 
-Module GlitterMatrixDisplay
+Namespace Misc.Screensaver.Displays
+    Module GlitterMatrixDisplay
 
-    Public WithEvents GlitterMatrix As New NamedBackgroundWorker("GlitterMatrix screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WithEvents GlitterMatrix As New NamedBackgroundWorker("GlitterMatrix screensaver thread") With {.WorkerSupportsCancellation = True}
 
-    ''' <summary>
-    ''' Handles the code of Glitter Matrix
-    ''' </summary>
-    Sub GlitterMatrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
-        'Variables
-        Dim RandomDriver As New Random()
-        Dim CurrentWindowWidth As Integer = Console.WindowWidth
-        Dim CurrentWindowHeight As Integer = Console.WindowHeight
-        Dim ResizeSyncing As Boolean
+        ''' <summary>
+        ''' Handles the code of Glitter Matrix
+        ''' </summary>
+        Sub GlitterMatrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
-        'Preparations
-        SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
-        SetConsoleColor(New Color(GlitterMatrixForegroundColor))
-        Console.Clear()
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+            'Preparations
+            SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
+            SetConsoleColor(New Color(GlitterMatrixForegroundColor))
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-        'Screensaver logic
-        Do While True
-            Console.CursorVisible = False
-            If GlitterMatrix.CancellationPending = True Then
-                HandleSaverCancel()
-                Exit Do
-            Else
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
-                Console.SetCursorPosition(Left, Top)
-                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                If Not ResizeSyncing Then
-                    Console.Write(CStr(RandomDriver.Next(2)))
+            'Screensaver logic
+            Do While True
+                Console.CursorVisible = False
+                If GlitterMatrix.CancellationPending = True Then
+                    HandleSaverCancel()
+                    Exit Do
                 Else
-                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...")
-                    Console.Clear()
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
+                    Console.SetCursorPosition(Left, Top)
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        Console.Write(CStr(RandomDriver.Next(2)))
+                    Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...")
+                        Console.Clear()
+                    End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
+                SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
+            Loop
+        End Sub
 
-                'Reset resize sync
-                ResizeSyncing = False
-                CurrentWindowWidth = Console.WindowWidth
-                CurrentWindowHeight = Console.WindowHeight
-            End If
-            SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
-        Loop
-    End Sub
+        ''' <summary>
+        ''' Checks for any screensaver error
+        ''' </summary>
+        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles GlitterMatrix.RunWorkerCompleted
+            HandleSaverError(e.Error)
+        End Sub
 
-    ''' <summary>
-    ''' Checks for any screensaver error
-    ''' </summary>
-    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles GlitterMatrix.RunWorkerCompleted
-        HandleSaverError(e.Error)
-    End Sub
-
-End Module
+    End Module
+End Namespace

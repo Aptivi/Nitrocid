@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' The settings type
-''' </summary>
-Public Enum SettingsType
+Namespace Misc.Configuration
     ''' <summary>
-    ''' The normal kernel settings
+    ''' The settings type
     ''' </summary>
-    Normal
-    ''' <summary>
-    ''' The screensaver settings
-    ''' </summary>
-    Screensaver
-    ''' <summary>
-    ''' The splash settings
-    ''' </summary>
-    Splash
-End Enum
+    Public Enum SettingsType
+        ''' <summary>
+        ''' The normal kernel settings
+        ''' </summary>
+        Normal
+        ''' <summary>
+        ''' The screensaver settings
+        ''' </summary>
+        Screensaver
+        ''' <summary>
+        ''' The splash settings
+        ''' </summary>
+        Splash
+    End Enum
+End Namespace

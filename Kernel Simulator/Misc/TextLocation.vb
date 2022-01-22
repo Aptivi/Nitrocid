@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' The console text location (used for screensavers and splashes)
-''' </summary>
-Public Enum TextLocation
+Namespace Misc
     ''' <summary>
-    ''' Top of the console
+    ''' The console text location (used for screensavers and splashes)
     ''' </summary>
-    Top
-    ''' <summary>
-    ''' Bottom of the console
-    ''' </summary>
-    Bottom
-End Enum
+    Public Enum TextLocation
+        ''' <summary>
+        ''' Top of the console
+        ''' </summary>
+        Top
+        ''' <summary>
+        ''' Bottom of the console
+        ''' </summary>
+        Bottom
+    End Enum
+End Namespace

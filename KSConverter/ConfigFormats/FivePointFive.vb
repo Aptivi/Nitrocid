@@ -21,6 +21,10 @@ Imports KS
 Imports KS.ConsoleBase
 Imports KS.Languages
 Imports KS.Kernel
+Imports KS.Misc.Forecast
+Imports KS.Misc.Screensaver
+Imports KS.Misc.TextEdit
+Imports KS.Misc.Writers.DebugWriters
 Imports MadMilkman.Ini
 Imports Extensification.StringExts
 Imports Core

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Screensaver.Customized
+
 Class Test_GetCustomSaverSettingCommand
     Inherits CommandExecutor
     Implements ICommand

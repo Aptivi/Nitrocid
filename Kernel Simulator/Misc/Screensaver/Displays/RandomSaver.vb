@@ -18,47 +18,49 @@
 
 Imports System.ComponentModel
 
-Module RandomSaverDisplay
+Namespace Misc.Screensaver.Displays
+    Module RandomSaverDisplay
 
-    Public WithEvents RandomSaver As New NamedBackgroundWorker("RandomSaver screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WithEvents RandomSaver As New NamedBackgroundWorker("RandomSaver screensaver thread") With {.WorkerSupportsCancellation = True}
 
-    ''' <summary>
-    ''' Handles the code of RandomSaver
-    ''' </summary>
-    Sub RandomSaver_DoWork(sender As Object, e As DoWorkEventArgs) Handles RandomSaver.DoWork
-        'Variables
-        Dim RandomDriver As New Random()
-        Dim ScreensaverIndex As Integer = RandomDriver.Next(Screensavers.Count)
-        Dim ScreensaverName As String = Screensavers.Keys(ScreensaverIndex)
+        ''' <summary>
+        ''' Handles the code of RandomSaver
+        ''' </summary>
+        Sub RandomSaver_DoWork(sender As Object, e As DoWorkEventArgs) Handles RandomSaver.DoWork
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim ScreensaverIndex As Integer = RandomDriver.Next(Screensavers.Count)
+            Dim ScreensaverName As String = Screensavers.Keys(ScreensaverIndex)
 
-        'Preparations
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
 
-        'Screensaver logic
-        Do Until ScreensaverName <> "random"
-            'We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
-            ScreensaverIndex = RandomDriver.Next(Screensavers.Count)
-            ScreensaverName = Screensavers.Keys(ScreensaverIndex)
-        Loop
+            'Screensaver logic
+            Do Until ScreensaverName <> "random"
+                'We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
+                ScreensaverIndex = RandomDriver.Next(Screensavers.Count)
+                ScreensaverName = Screensavers.Keys(ScreensaverIndex)
+            Loop
 
-        'Run the screensaver thread and wait
-        Screensavers(ScreensaverName).RunWorkerAsync()
-        Do While True
-            If RandomSaver.CancellationPending = True Then
-                Screensavers(ScreensaverName).CancelAsync()
-                Exit Do
-            End If
-        Loop
-    End Sub
+            'Run the screensaver thread and wait
+            Screensavers(ScreensaverName).RunWorkerAsync()
+            Do While True
+                If RandomSaver.CancellationPending = True Then
+                    Screensavers(ScreensaverName).CancelAsync()
+                    Exit Do
+                End If
+            Loop
+        End Sub
 
-    ''' <summary>
-    ''' Checks for any screensaver error
-    ''' </summary>
-    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles RandomSaver.RunWorkerCompleted
-        HandleSaverError(e.Error)
-    End Sub
+        ''' <summary>
+        ''' Checks for any screensaver error
+        ''' </summary>
+        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles RandomSaver.RunWorkerCompleted
+            HandleSaverError(e.Error)
+        End Sub
 
-End Module
+    End Module
+End Namespace

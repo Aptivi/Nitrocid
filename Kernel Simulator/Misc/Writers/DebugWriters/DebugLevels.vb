@@ -16,24 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' One-lettered debugging level enumeration
-''' </summary>
-Public Enum DebugLevel
+Namespace Misc.Writers.DebugWriters
     ''' <summary>
-    ''' Informational message
+    ''' One-lettered debugging level enumeration
     ''' </summary>
-    I
-    ''' <summary>
-    ''' Warning message
-    ''' </summary>
-    W
-    ''' <summary>
-    ''' Error message
-    ''' </summary>
-    E
-    ''' <summary>
-    ''' Fatal error message
-    ''' </summary>
-    F
-End Enum
+    Public Enum DebugLevel
+        ''' <summary>
+        ''' Informational message
+        ''' </summary>
+        I
+        ''' <summary>
+        ''' Warning message
+        ''' </summary>
+        W
+        ''' <summary>
+        ''' Error message
+        ''' </summary>
+        E
+        ''' <summary>
+        ''' Fatal error message
+        ''' </summary>
+        F
+    End Enum
+End Namespace

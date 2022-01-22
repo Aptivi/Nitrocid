@@ -18,6 +18,7 @@
 
 Imports System.Net.Sockets
 Imports System.Threading
+Imports KS.Misc.Splash
 
 Public Module RemoteProcedure
 

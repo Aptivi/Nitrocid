@@ -18,26 +18,28 @@
 
 Imports System.Reflection
 
-Public Module MethodManager
+Namespace Misc.Reflection
+    Public Module MethodManager
 
-    ''' <summary>
-    ''' Gets a method from method name
-    ''' </summary>
-    ''' <param name="Method">Method name. Use operator NameOf to get name.</param>
-    ''' <returns>Method information</returns>
-    Public Function GetMethod(Method As String) As MethodBase
-        Dim PossibleTypes As Type()
-        Dim PossibleMethod As MethodInfo
+        ''' <summary>
+        ''' Gets a method from method name
+        ''' </summary>
+        ''' <param name="Method">Method name. Use operator NameOf to get name.</param>
+        ''' <returns>Method information</returns>
+        Public Function GetMethod(Method As String) As MethodBase
+            Dim PossibleTypes As Type()
+            Dim PossibleMethod As MethodInfo
 
-        'Get types of possible flag locations
-        PossibleTypes = Assembly.GetExecutingAssembly.GetTypes
+            'Get types of possible flag locations
+            PossibleTypes = Assembly.GetExecutingAssembly.GetTypes
 
-        'Get fields of flag modules
-        For Each PossibleType As Type In PossibleTypes
-            PossibleMethod = PossibleType.GetMethod(Method)
-            If PossibleMethod IsNot Nothing Then Return PossibleMethod
-        Next
-        Return Nothing
-    End Function
+            'Get fields of flag modules
+            For Each PossibleType As Type In PossibleTypes
+                PossibleMethod = PossibleType.GetMethod(Method)
+                If PossibleMethod IsNot Nothing Then Return PossibleMethod
+            Next
+            Return Nothing
+        End Function
 
-End Module
+    End Module
+End Namespace

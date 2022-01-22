@@ -16,25 +16,27 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ZipShell_GetCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.ZipFile.Commands
+    Class ZipShell_GetCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Where As String = ""
-        Dim Absolute As Boolean
-        If ListArgs?.Length > 1 Then
-            If Not ListArgs(1) = "-absolute" Then Where = NeutralizePath(ListArgs(1))
-            If ListArgs?.Contains("-absolute") Then
-                Absolute = True
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Where As String = ""
+            Dim Absolute As Boolean
+            If ListArgs?.Length > 1 Then
+                If Not ListArgs(1) = "-absolute" Then Where = NeutralizePath(ListArgs(1))
+                If ListArgs?.Contains("-absolute") Then
+                    Absolute = True
+                End If
             End If
-        End If
-        ExtractZipFileEntry(ListArgs(0), Where, Absolute)
-    End Sub
+            ExtractZipFileEntry(ListArgs(0), Where, Absolute)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -absolute: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicates that the target path is absolute"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -absolute: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicates that the target path is absolute"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS.Kernel
+Imports KS.Misc.Configuration
 
 Namespace ConsoleBase
     Public Module ColorTools

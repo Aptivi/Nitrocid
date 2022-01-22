@@ -16,64 +16,67 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Splash.Splashes
 Imports System.Threading
 
-Public Module SplashManager
+Namespace Misc.Splash
+    Public Module SplashManager
 
-    Public ReadOnly Splashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
-                                                                            {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
-                                                                            {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)}}
-    Public SplashName As String = "Simple"
+        Public ReadOnly Splashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
+                                                                                {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
+                                                                                {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)}}
+        Public SplashName As String = "Simple"
 
-    ''' <summary>
-    ''' Current splash screen
-    ''' </summary>
-    Public ReadOnly Property CurrentSplash As ISplash
-        Get
-            If Splashes.ContainsKey(SplashName) Then
-                Return Splashes(SplashName).EntryPoint
-            Else
-                Return Splashes("Simple").EntryPoint
+        ''' <summary>
+        ''' Current splash screen
+        ''' </summary>
+        Public ReadOnly Property CurrentSplash As ISplash
+            Get
+                If Splashes.ContainsKey(SplashName) Then
+                    Return Splashes(SplashName).EntryPoint
+                Else
+                    Return Splashes("Simple").EntryPoint
+                End If
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Current splash screen info instance
+        ''' </summary>
+        Public ReadOnly Property CurrentSplashInfo As SplashInfo
+            Get
+                If Splashes.ContainsKey(SplashName) Then
+                    Return Splashes(SplashName)
+                Else
+                    Return Splashes("Simple")
+                End If
+            End Get
+        End Property
+
+        Friend SplashThread As New Thread(Sub() CurrentSplash.Display())
+
+        ''' <summary>
+        ''' Opens the splash screen
+        ''' </summary>
+        Sub OpenSplash()
+            If EnableSplash Then
+                Console.CursorVisible = False
+                CurrentSplash.Opening()
+                If Not SplashThread.IsAlive Then SplashThread.Start()
             End If
-        End Get
-    End Property
+        End Sub
 
-    ''' <summary>
-    ''' Current splash screen info instance
-    ''' </summary>
-    Public ReadOnly Property CurrentSplashInfo As SplashInfo
-        Get
-            If Splashes.ContainsKey(SplashName) Then
-                Return Splashes(SplashName)
-            Else
-                Return Splashes("Simple")
+        ''' <summary>
+        ''' Closes the splash screen
+        ''' </summary>
+        Sub CloseSplash()
+            If EnableSplash Then
+                CurrentSplash.Closing()
+                SplashThread = New Thread(Sub() CurrentSplash.Display())
+                Console.CursorVisible = True
             End If
-        End Get
-    End Property
+            _KernelBooted = True
+        End Sub
 
-    Friend SplashThread As New Thread(Sub() CurrentSplash.Display())
-
-    ''' <summary>
-    ''' Opens the splash screen
-    ''' </summary>
-    Sub OpenSplash()
-        If EnableSplash Then
-            Console.CursorVisible = False
-            CurrentSplash.Opening()
-            If Not SplashThread.IsAlive Then SplashThread.Start()
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Closes the splash screen
-    ''' </summary>
-    Sub CloseSplash()
-        If EnableSplash Then
-            CurrentSplash.Closing()
-            SplashThread = New Thread(Sub() CurrentSplash.Display())
-            Console.CursorVisible = True
-        End If
-        _KernelBooted = True
-    End Sub
-
-End Module
+    End Module
+End Namespace

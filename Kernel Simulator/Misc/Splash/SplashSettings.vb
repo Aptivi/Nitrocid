@@ -16,22 +16,24 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module SplashSettings
+Namespace Misc.Splash
+    Public Module SplashSettings
 
-    '-> Simple
-    ''' <summary>
-    ''' [Simple] The progress text location
-    ''' </summary>
-    Public SimpleProgressTextLocation As TextLocation = TextLocation.Top
+        '-> Simple
+        ''' <summary>
+        ''' [Simple] The progress text location
+        ''' </summary>
+        Public SimpleProgressTextLocation As TextLocation = TextLocation.Top
 
-    '-> Progress
-    ''' <summary>
-    ''' [Progress] The progress color
-    ''' </summary>
-    Public ProgressProgressColor As String = ""
-    ''' <summary>
-    ''' [Progress] The progress text location
-    ''' </summary>
-    Public ProgressProgressTextLocation As TextLocation = TextLocation.Top
+        '-> Progress
+        ''' <summary>
+        ''' [Progress] The progress color
+        ''' </summary>
+        Public ProgressProgressColor As String = ""
+        ''' <summary>
+        ''' [Progress] The progress text location
+        ''' </summary>
+        Public ProgressProgressTextLocation As TextLocation = TextLocation.Top
 
-End Module
+    End Module
+End Namespace

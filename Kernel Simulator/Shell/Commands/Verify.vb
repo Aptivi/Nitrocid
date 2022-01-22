@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS.Kernel
+Imports KS.Misc.Encryption
 
 Class VerifyCommand
     Inherits CommandExecutor

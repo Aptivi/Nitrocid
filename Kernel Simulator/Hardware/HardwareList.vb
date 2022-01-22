@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Reflection
 Imports InxiFrontend
+Imports KS.Misc.Reflection
 
 Namespace Hardware
     Public Module HardwareList

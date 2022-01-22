@@ -16,36 +16,40 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<Serializable>
-Public Class EventInfo
+Imports KS.Misc.Notifications
 
-    Private EventNotified As Boolean
-    ''' <summary>
-    ''' Event date
-    ''' </summary>
-    Public ReadOnly Property EventDate As Date
-    ''' <summary>
-    ''' Event title
-    ''' </summary>
-    Public ReadOnly Property EventTitle As String
+Namespace Misc.Calendar.Events
+    <Serializable>
+    Public Class EventInfo
 
-    Public Sub New()
-    End Sub
+        Private EventNotified As Boolean
+        ''' <summary>
+        ''' Event date
+        ''' </summary>
+        Public ReadOnly Property EventDate As Date
+        ''' <summary>
+        ''' Event title
+        ''' </summary>
+        Public ReadOnly Property EventTitle As String
 
-    Public Sub New(EventDate As Date, EventTitle As String)
-        Me.EventDate = EventDate
-        Me.EventTitle = EventTitle
-    End Sub
+        Public Sub New()
+        End Sub
 
-    ''' <summary>
-    ''' Notifies the user about the event
-    ''' </summary>
-    Protected Friend Sub NotifyEvent()
-        If Not EventNotified Then
-            Dim EventNotification As New Notification(EventTitle, DoTranslation("Now it's an event day!"), NotifPriority.Medium, NotifType.Normal)
-            NotifySend(EventNotification)
-            EventNotified = True
-        End If
-    End Sub
+        Public Sub New(EventDate As Date, EventTitle As String)
+            Me.EventDate = EventDate
+            Me.EventTitle = EventTitle
+        End Sub
 
-End Class
+        ''' <summary>
+        ''' Notifies the user about the event
+        ''' </summary>
+        Protected Friend Sub NotifyEvent()
+            If Not EventNotified Then
+                Dim EventNotification As New Notification(EventTitle, DoTranslation("Now it's an event day!"), NotifPriority.Medium, NotifType.Normal)
+                NotifySend(EventNotification)
+                EventNotified = True
+            End If
+        End Sub
+
+    End Class
+End Namespace

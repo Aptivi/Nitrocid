@@ -16,41 +16,45 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<Serializable>
-Public Class ReminderInfo
+Imports KS.Misc.Notifications
 
-    Private ReminderNotified As Boolean
-    ''' <summary>
-    ''' Reminder date
-    ''' </summary>
-    Public ReadOnly Property ReminderDate As Date
-    ''' <summary>
-    ''' Reminder title
-    ''' </summary>
-    Public ReadOnly Property ReminderTitle As String
-    ''' <summary>
-    ''' Reminder importance
-    ''' </summary>
-    Public ReadOnly Property ReminderImportance As NotifPriority
+Namespace Misc.Calendar.Reminders
+    <Serializable>
+    Public Class ReminderInfo
 
-    Public Sub New()
-    End Sub
+        Private ReminderNotified As Boolean
+        ''' <summary>
+        ''' Reminder date
+        ''' </summary>
+        Public ReadOnly Property ReminderDate As Date
+        ''' <summary>
+        ''' Reminder title
+        ''' </summary>
+        Public ReadOnly Property ReminderTitle As String
+        ''' <summary>
+        ''' Reminder importance
+        ''' </summary>
+        Public ReadOnly Property ReminderImportance As NotifPriority
 
-    Public Sub New(ReminderDate As Date, ReminderTitle As String, ReminderImportance As NotifPriority)
-        Me.ReminderDate = ReminderDate
-        Me.ReminderTitle = ReminderTitle
-        Me.ReminderImportance = ReminderImportance
-    End Sub
+        Public Sub New()
+        End Sub
 
-    ''' <summary>
-    ''' Notifies the user about the reminder
-    ''' </summary>
-    Protected Friend Sub NotifyReminder()
-        If Not ReminderNotified Then
-            Dim ReminderNotification As New Notification(ReminderTitle, DoTranslation("Don't miss this!"), ReminderImportance, NotifType.Normal)
-            NotifySend(ReminderNotification)
-            ReminderNotified = True
-        End If
-    End Sub
+        Public Sub New(ReminderDate As Date, ReminderTitle As String, ReminderImportance As NotifPriority)
+            Me.ReminderDate = ReminderDate
+            Me.ReminderTitle = ReminderTitle
+            Me.ReminderImportance = ReminderImportance
+        End Sub
 
-End Class
+        ''' <summary>
+        ''' Notifies the user about the reminder
+        ''' </summary>
+        Protected Friend Sub NotifyReminder()
+            If Not ReminderNotified Then
+                Dim ReminderNotification As New Notification(ReminderTitle, DoTranslation("Don't miss this!"), ReminderImportance, NotifType.Normal)
+                NotifySend(ReminderNotification)
+                ReminderNotified = True
+            End If
+        End Sub
+
+    End Class
+End Namespace

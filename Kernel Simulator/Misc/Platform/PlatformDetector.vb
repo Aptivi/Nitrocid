@@ -16,41 +16,43 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module PlatformDetector
+Namespace Misc.Platform
+    Public Module PlatformDetector
 
-    ''' <summary>
-    ''' Is this system a Windows system?
-    ''' </summary>
-    Public Function IsOnWindows() As Boolean
-        Return Environment.OSVersion.Platform = PlatformID.Win32NT
-    End Function
+        ''' <summary>
+        ''' Is this system a Windows system?
+        ''' </summary>
+        Public Function IsOnWindows() As Boolean
+            Return Environment.OSVersion.Platform = PlatformID.Win32NT
+        End Function
 
-    ''' <summary>
-    ''' Is this system a Unix system? True for macOS, too!
-    ''' </summary>
-    Public Function IsOnUnix() As Boolean
-        Return Environment.OSVersion.Platform = PlatformID.Unix
-    End Function
+        ''' <summary>
+        ''' Is this system a Unix system? True for macOS, too!
+        ''' </summary>
+        Public Function IsOnUnix() As Boolean
+            Return Environment.OSVersion.Platform = PlatformID.Unix
+        End Function
 
-    ''' <summary>
-    ''' Is this system a macOS system?
-    ''' </summary>
-    Public Function IsOnMacOS() As Boolean
-        If IsOnUnix() Then
-            Dim UnameS As New Process
-            Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
+        ''' <summary>
+        ''' Is this system a macOS system?
+        ''' </summary>
+        Public Function IsOnMacOS() As Boolean
+            If IsOnUnix() Then
+                Dim UnameS As New Process
+                Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
                                                          .CreateNoWindow = True,
                                                          .UseShellExecute = False,
                                                          .WindowStyle = ProcessWindowStyle.Hidden,
                                                          .RedirectStandardOutput = True}
-            UnameS.StartInfo = UnameSInfo
-            UnameS.Start()
-            UnameS.WaitForExit()
-            Dim System As String = UnameS.StandardOutput.ReadToEnd
-            Return System.Contains("Darwin")
-        Else
-            Return False
-        End If
-    End Function
+                UnameS.StartInfo = UnameSInfo
+                UnameS.Start()
+                UnameS.WaitForExit()
+                Dim System As String = UnameS.StandardOutput.ReadToEnd
+                Return System.Contains("Darwin")
+            Else
+                Return False
+            End If
+        End Function
 
-End Module
+    End Module
+End Namespace

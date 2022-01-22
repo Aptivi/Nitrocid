@@ -16,12 +16,14 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class TextEdit_ExitNoSaveCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.TextEdit.Commands
+    Class TextEdit_ExitNoSaveCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        KillShell()
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            KillShell()
+        End Sub
 
-End Class
+    End Class
+End Namespace

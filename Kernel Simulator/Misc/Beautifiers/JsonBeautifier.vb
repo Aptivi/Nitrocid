@@ -19,39 +19,41 @@
 Imports Newtonsoft.Json.Linq
 Imports System.IO
 
-Public Module JsonBeautifier
+Namespace Misc.Beautifiers
+    Public Module JsonBeautifier
 
-    ''' <summary>
-    ''' Beautifies the JSON text contained in the file.
-    ''' </summary>
-    ''' <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="NeutralizePath(String, Boolean)"/>.</param>
-    ''' <returns>Beautified JSON</returns>
-    ''' <exception cref="FileNotFoundException"></exception>
-    Public Function BeautifyJson(JsonFile As String) As String
-        'Neutralize the file path
-        Wdbg(DebugLevel.I, "Neutralizing json file {0}...", JsonFile)
-        JsonFile = NeutralizePath(JsonFile, True)
-        Wdbg(DebugLevel.I, "Got json file {0}...", JsonFile)
+        ''' <summary>
+        ''' Beautifies the JSON text contained in the file.
+        ''' </summary>
+        ''' <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="NeutralizePath(String, Boolean)"/>.</param>
+        ''' <returns>Beautified JSON</returns>
+        ''' <exception cref="FileNotFoundException"></exception>
+        Public Function BeautifyJson(JsonFile As String) As String
+            'Neutralize the file path
+            Wdbg(DebugLevel.I, "Neutralizing json file {0}...", JsonFile)
+            JsonFile = NeutralizePath(JsonFile, True)
+            Wdbg(DebugLevel.I, "Got json file {0}...", JsonFile)
 
-        'Try to beautify JSON
-        Dim JsonFileContents As String = File.ReadAllText(JsonFile)
-        Return BeautifyJsonText(JsonFileContents)
-    End Function
+            'Try to beautify JSON
+            Dim JsonFileContents As String = File.ReadAllText(JsonFile)
+            Return BeautifyJsonText(JsonFileContents)
+        End Function
 
-    ''' <summary>
-    ''' Beautifies the JSON text.
-    ''' </summary>
-    ''' <param name="JsonText">Contents of a minified JSON.</param>
-    ''' <returns>Beautified JSON</returns>
-    Public Function BeautifyJsonText(JsonText As String) As String
-        'Make an instance of JToken with this text
-        Dim JsonToken As JToken = JToken.Parse(JsonText)
-        Wdbg(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length)
+        ''' <summary>
+        ''' Beautifies the JSON text.
+        ''' </summary>
+        ''' <param name="JsonText">Contents of a minified JSON.</param>
+        ''' <returns>Beautified JSON</returns>
+        Public Function BeautifyJsonText(JsonText As String) As String
+            'Make an instance of JToken with this text
+            Dim JsonToken As JToken = JToken.Parse(JsonText)
+            Wdbg(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length)
 
-        'Beautify JSON
-        Dim BeautifiedJson As String = JsonConvert.SerializeObject(JsonToken, Formatting.Indented)
-        Wdbg(DebugLevel.I, "Beautified the JSON text. Length: {0}", BeautifiedJson.Length)
-        Return BeautifiedJson
-    End Function
+            'Beautify JSON
+            Dim BeautifiedJson As String = JsonConvert.SerializeObject(JsonToken, Formatting.Indented)
+            Wdbg(DebugLevel.I, "Beautified the JSON text. Length: {0}", BeautifiedJson.Length)
+            Return BeautifiedJson
+        End Function
 
-End Module
+    End Module
+End Namespace

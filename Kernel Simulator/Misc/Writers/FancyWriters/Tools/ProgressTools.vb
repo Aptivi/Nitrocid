@@ -16,15 +16,17 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module ProgressTools
+Namespace Misc.Writers.FancyWriters.Tools
+    Public Module ProgressTools
 
-    Public ProgressUpperLeftCornerChar As String = "╔"
-    Public ProgressUpperRightCornerChar As String = "╗"
-    Public ProgressLowerLeftCornerChar As String = "╚"
-    Public ProgressLowerRightCornerChar As String = "╝"
-    Public ProgressUpperFrameChar As String = "═"
-    Public ProgressLowerFrameChar As String = "═"
-    Public ProgressLeftFrameChar As String = "║"
-    Public ProgressRightFrameChar As String = "║"
+        Public ProgressUpperLeftCornerChar As String = "╔"
+        Public ProgressUpperRightCornerChar As String = "╗"
+        Public ProgressLowerLeftCornerChar As String = "╚"
+        Public ProgressLowerRightCornerChar As String = "╝"
+        Public ProgressUpperFrameChar As String = "═"
+        Public ProgressLowerFrameChar As String = "═"
+        Public ProgressLeftFrameChar As String = "║"
+        Public ProgressRightFrameChar As String = "║"
 
-End Module
+    End Module
+End Namespace

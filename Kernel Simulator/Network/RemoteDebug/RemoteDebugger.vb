@@ -19,6 +19,7 @@
 Imports System.Net.Sockets
 Imports System.Threading
 Imports System.IO
+Imports KS.Misc.Notifications
 
 Public Module RemoteDebugger
 

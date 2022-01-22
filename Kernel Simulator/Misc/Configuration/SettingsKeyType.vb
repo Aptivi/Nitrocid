@@ -16,52 +16,54 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Key type for settings entry
-''' </summary>
-Enum SettingsKeyType
+Namespace Misc.Configuration
     ''' <summary>
-    ''' Unknown type
+    ''' Key type for settings entry
     ''' </summary>
-    SUnknown
-    ''' <summary>
-    ''' The value is of <see cref="Boolean"/>
-    ''' </summary>
-    SBoolean
-    ''' <summary>
-    ''' The value is of <see cref="Integer"/>
-    ''' </summary>
-    SInt
-    ''' <summary>
-    ''' The value is of <see cref="String"/>, but accepts less than or equal to 255 characters
-    ''' </summary>
-    SString
-    ''' <summary>
-    ''' The value is of <see cref="String"/>, but accepts more than 255 characters
-    ''' </summary>
-    SLongString
-    ''' <summary>
-    ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
-    ''' </summary>
-    SSelection
-    ''' <summary>
-    ''' The value is of <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
-    ''' </summary>
-    SList
-    ''' <summary>
-    ''' The value is variant and comes from a function
-    ''' </summary>
-    SVariant
-    ''' <summary>
-    ''' The value is of <see cref="Color"/> and comes from the color wheel
-    ''' </summary>
-    SColor
-    ''' <summary>
-    ''' The value is of <see cref="String"/>, but masked. Useful for passwords.
-    ''' </summary>
-    SMaskedString
-    ''' <summary>
-    ''' The value is of <see cref="Char"/> and only accepts one character.
-    ''' </summary>
-    SChar
-End Enum
+    Enum SettingsKeyType
+        ''' <summary>
+        ''' Unknown type
+        ''' </summary>
+        SUnknown
+        ''' <summary>
+        ''' The value is of <see cref="Boolean"/>
+        ''' </summary>
+        SBoolean
+        ''' <summary>
+        ''' The value is of <see cref="Integer"/>
+        ''' </summary>
+        SInt
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but accepts less than or equal to 255 characters
+        ''' </summary>
+        SString
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but accepts more than 255 characters
+        ''' </summary>
+        SLongString
+        ''' <summary>
+        ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
+        ''' </summary>
+        SSelection
+        ''' <summary>
+        ''' The value is of <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
+        ''' </summary>
+        SList
+        ''' <summary>
+        ''' The value is variant and comes from a function
+        ''' </summary>
+        SVariant
+        ''' <summary>
+        ''' The value is of <see cref="Color"/> and comes from the color wheel
+        ''' </summary>
+        SColor
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but masked. Useful for passwords.
+        ''' </summary>
+        SMaskedString
+        ''' <summary>
+        ''' The value is of <see cref="Char"/> and only accepts one character.
+        ''' </summary>
+        SChar
+    End Enum
+End Namespace

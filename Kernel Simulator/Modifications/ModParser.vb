@@ -21,6 +21,12 @@ Imports System.IO
 Imports System.Reflection
 Imports Microsoft.CSharp
 Imports KS.ManPages
+Imports KS.Misc.JsonShell
+Imports KS.Misc.Screensaver.Customized
+Imports KS.Misc.Splash
+Imports KS.Misc.TextEdit
+Imports KS.Misc.Writers.MiscWriters
+Imports KS.Misc.ZipFile
 
 Public Module ModParser
 

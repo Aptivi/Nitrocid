@@ -17,6 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Misc.JsonShell
+Imports KS.Misc.TextEdit
+Imports KS.Misc.Writers.MiscWriters
+Imports KS.Misc.ZipFile
 
 Public Module HelpSystem
 

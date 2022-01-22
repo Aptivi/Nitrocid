@@ -162,6 +162,12 @@
     <Import Include="KS.Kernel" />
     <Import Include="KS.Languages" />
     <Import Include="KS.Login" />
+    <Import Include="KS.Misc.Platform" />
+    <Import Include="KS.Misc.Probers" />
+    <Import Include="KS.Misc.Threading" />
+    <Import Include="KS.Misc.Writers.ConsoleWriters" />
+    <Import Include="KS.Misc.Writers.DebugWriters" />
+    <Import Include="KS.Misc.Writers.FancyWriters" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />

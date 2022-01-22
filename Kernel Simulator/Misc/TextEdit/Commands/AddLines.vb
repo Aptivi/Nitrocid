@@ -16,26 +16,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class TextEdit_AddLinesCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.TextEdit.Commands
+    Class TextEdit_AddLinesCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim FinalLines As New List(Of String)
-        Dim FinalLine As String = ""
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim FinalLines As New List(Of String)
+            Dim FinalLine As String = ""
 
-        'Keep prompting for lines until the user finishes
-        Write(DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write ""EOF"" on its own line."), True, ColTypes.Neutral)
-        Do Until FinalLine = "EOF"
-            Write(">> ", False, ColTypes.Input)
-            FinalLine = Console.ReadLine
-            If Not FinalLine = "EOF" Then
-                FinalLines.Add(FinalLine)
-            End If
-        Loop
+            'Keep prompting for lines until the user finishes
+            Write(DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write ""EOF"" on its own line."), True, ColTypes.Neutral)
+            Do Until FinalLine = "EOF"
+                Write(">> ", False, ColTypes.Input)
+                FinalLine = Console.ReadLine
+                If Not FinalLine = "EOF" Then
+                    FinalLines.Add(FinalLine)
+                End If
+            Loop
 
-        'Add the new lines
-        TextEdit_AddNewLines(FinalLines.ToArray)
-    End Sub
+            'Add the new lines
+            TextEdit_AddNewLines(FinalLines.ToArray)
+        End Sub
 
-End Class
+    End Class
+End Namespace

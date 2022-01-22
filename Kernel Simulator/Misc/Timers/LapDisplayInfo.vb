@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class LapDisplayInfo
+Namespace Misc.Timers
+    Class LapDisplayInfo
 
-    ''' <summary>
-    ''' The lap color
-    ''' </summary>
-    Public ReadOnly LapColor As Color
-    ''' <summary>
-    ''' The lap interval
-    ''' </summary>
-    Public ReadOnly LapInterval As TimeSpan
+        ''' <summary>
+        ''' The lap color
+        ''' </summary>
+        Public ReadOnly LapColor As Color
+        ''' <summary>
+        ''' The lap interval
+        ''' </summary>
+        Public ReadOnly LapInterval As TimeSpan
 
-    Sub New(LapColor As Color, LapInterval As TimeSpan)
-        Me.LapColor = LapColor
-        Me.LapInterval = LapInterval
-    End Sub
+        Sub New(LapColor As Color, LapInterval As TimeSpan)
+            Me.LapColor = LapColor
+            Me.LapInterval = LapInterval
+        End Sub
 
-End Class
+    End Class
+End Namespace

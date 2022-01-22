@@ -18,6 +18,8 @@
 
 Imports KS.Arguments.ArgumentBase
 Imports KS.Hardware
+Imports KS.Misc.Splash
+Imports KS.Misc.Writers.MiscWriters
 Imports System.IO
 Imports System.Reflection.Assembly
 

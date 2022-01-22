@@ -18,6 +18,7 @@
 
 Imports MailKit
 Imports MailKit.Net.Imap
+Imports KS.Misc.Notifications
 
 Public Module MailHandlers
 

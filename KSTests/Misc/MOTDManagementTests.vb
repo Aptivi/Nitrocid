@@ -19,6 +19,7 @@
 Imports System.IO
 Imports KS
 Imports KS.Kernel
+Imports KS.Misc.Probers
 
 <TestClass()> Public Class MOTDManagementTests
 

@@ -17,6 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Net.Sockets
+Imports KS.Misc.Notifications
+Imports KS.Misc.Screensaver
 
 Public Module RPCCommands
 

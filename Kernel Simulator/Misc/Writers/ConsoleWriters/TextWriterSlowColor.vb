@@ -19,233 +19,235 @@
 Imports System.Threading
 Imports KS.Kernel
 
-Module TextWriterSlowColor
+Namespace Misc.Writers.ConsoleWriters
+    Module TextWriterSlowColor
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with no color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyPlain(msg As String, Line As Boolean, MsEachLetter As Double, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with no color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowlyPlain(msg As String, Line As Boolean, MsEachLetter As Double, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
+                Try
+                    'Format string as needed
+                    If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
-                'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Write text slowly
+                    Dim chars As List(Of Char) = msg.ToCharArray.ToList
+                    For Each ch As Char In chars
+                        Thread.Sleep(MsEachLetter)
+                        Console.Write(ch)
+                    Next
+                    If Line Then
+                        Console.WriteLine()
+                    End If
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                SetConsoleColor(colorType)
+                Try
+                    'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    SetConsoleColor(colorType)
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-    ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                SetConsoleColor(colorTypeForeground)
-                SetConsoleColor(colorTypeBackground, True)
+                Try
+                    'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    SetConsoleColor(colorTypeForeground)
+                    SetConsoleColor(colorTypeBackground, True)
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
-                Console.ForegroundColor = color
+                Try
+                    Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                    Console.ForegroundColor = color
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                Console.BackgroundColor = BackgroundColor
-                Console.ForegroundColor = ForegroundColor
+                Try
+                    Console.BackgroundColor = BackgroundColor
+                    Console.ForegroundColor = ForegroundColor
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                    SetConsoleColor(color)
-                    SetConsoleColor(BackgroundColor, True)
-                End If
+                Try
+                    If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
+                        SetConsoleColor(color)
+                        SetConsoleColor(BackgroundColor, True)
+                    End If
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt slowly with color support.
-    ''' </summary>
-    ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt slowly with color support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                    SetConsoleColor(ForegroundColor)
-                    SetConsoleColor(BackgroundColor, True)
-                End If
+                Try
+                    If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
+                        SetConsoleColor(ForegroundColor)
+                        SetConsoleColor(BackgroundColor, True)
+                    End If
 
-                'Write text slowly
-                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+                    'Write text slowly
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-End Module
+    End Module
+End Namespace

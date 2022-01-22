@@ -16,82 +16,84 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Notification holder with title, description, and priority
-''' </summary>
-Public Class Notification
-
-    Private _Progress As Integer
-
+Namespace Misc.Notifications
     ''' <summary>
-    ''' Notification title
+    ''' Notification holder with title, description, and priority
     ''' </summary>
-    Property Title As String
+    Public Class Notification
 
-    ''' <summary>
-    ''' Notification description
-    ''' </summary>
-    Property Desc As String
+        Private _Progress As Integer
 
-    ''' <summary>
-    ''' Notification priority
-    ''' </summary>
-    Property Priority As NotifPriority
+        ''' <summary>
+        ''' Notification title
+        ''' </summary>
+        Property Title As String
 
-    ''' <summary>
-    ''' Notification type
-    ''' </summary>
-    Property Type As NotifType
+        ''' <summary>
+        ''' Notification description
+        ''' </summary>
+        Property Desc As String
 
-    ''' <summary>
-    ''' Whether the progress failed
-    ''' </summary>
-    Property ProgressFailed As Boolean
+        ''' <summary>
+        ''' Notification priority
+        ''' </summary>
+        Property Priority As NotifPriority
 
-    ''' <summary>
-    ''' Notification progress
-    ''' </summary>
-    Property Progress As Integer
-        Get
-            Return _Progress
-        End Get
-        Set
-            If Value >= 100 Then
-                _Progress = 100
-            ElseIf Value <= 0 Then
-                _Progress = 0
-            Else
-                _Progress = Value
-            End If
-        End Set
-    End Property
+        ''' <summary>
+        ''' Notification type
+        ''' </summary>
+        Property Type As NotifType
 
-    ''' <summary>
-    ''' Whether the progress has been compeleted successfully or with failure
-    ''' </summary>
-    ReadOnly Property ProgressCompleted As Boolean
-        Get
-            Return _Progress >= 100 Or ProgressFailed
-        End Get
-    End Property
+        ''' <summary>
+        ''' Whether the progress failed
+        ''' </summary>
+        Property ProgressFailed As Boolean
 
-    ''' <summary>
-    ''' The notification border color
-    ''' </summary>
-    Property NotificationBorderColor As Color
+        ''' <summary>
+        ''' Notification progress
+        ''' </summary>
+        Property Progress As Integer
+            Get
+                Return _Progress
+            End Get
+            Set
+                If Value >= 100 Then
+                    _Progress = 100
+                ElseIf Value <= 0 Then
+                    _Progress = 0
+                Else
+                    _Progress = Value
+                End If
+            End Set
+        End Property
 
-    ''' <summary>
-    ''' Creates a new notification
-    ''' </summary>
-    ''' <param name="Title">Title of notification</param>
-    ''' <param name="Desc">Description of notification</param>
-    ''' <param name="Priority">Priority of notification</param>
-    ''' <param name="Type">Notification type</param>
-    Public Sub New(Title As String, Desc As String, Priority As NotifPriority, Type As NotifType)
-        Me.Title = Title
-        Me.Desc = Desc
-        Me.Priority = Priority
-        Me.Type = Type
-    End Sub
+        ''' <summary>
+        ''' Whether the progress has been compeleted successfully or with failure
+        ''' </summary>
+        ReadOnly Property ProgressCompleted As Boolean
+            Get
+                Return _Progress >= 100 Or ProgressFailed
+            End Get
+        End Property
 
-End Class
+        ''' <summary>
+        ''' The notification border color
+        ''' </summary>
+        Property NotificationBorderColor As Color
+
+        ''' <summary>
+        ''' Creates a new notification
+        ''' </summary>
+        ''' <param name="Title">Title of notification</param>
+        ''' <param name="Desc">Description of notification</param>
+        ''' <param name="Priority">Priority of notification</param>
+        ''' <param name="Type">Notification type</param>
+        Public Sub New(Title As String, Desc As String, Priority As NotifPriority, Type As NotifType)
+            Me.Title = Title
+            Me.Desc = Desc
+            Me.Priority = Priority
+            Me.Type = Type
+        End Sub
+
+    End Class
+End Namespace

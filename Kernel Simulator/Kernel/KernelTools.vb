@@ -24,6 +24,13 @@ Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
 Imports KS.Kernel
 Imports KS.Hardware
+Imports KS.Misc.Calendar.Events
+Imports KS.Misc.Calendar.Reminders
+Imports KS.Misc.Configuration
+Imports KS.Misc.Notifications
+Imports KS.Misc.Screensaver
+Imports KS.Misc.Splash
+Imports KS.Misc.Writers.MiscWriters
 
 Namespace Kernel
     Public Module KernelTools
@@ -391,7 +398,7 @@ Namespace Kernel
             PopulateBlockedDevices()
 
             'Start screensaver timeout
-            If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
+            If Not Screensaver.Timeout.IsBusy Then Screensaver.Timeout.RunWorkerAsync()
 
             'Load all events and reminders
             LoadEvents()

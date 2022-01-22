@@ -16,6 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.JsonShell
+Imports KS.Misc.TextEdit
+Imports KS.Misc.ZipFile
+
 Public Module CommandManager
 
     ''' <summary>

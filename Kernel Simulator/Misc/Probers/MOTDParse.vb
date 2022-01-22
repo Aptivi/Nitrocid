@@ -18,105 +18,107 @@
 
 Imports KS.Kernel
 
-Public Module MOTDParse
+Namespace Misc.Probers
+    Public Module MOTDParse
 
-    'Variables
-    Public MOTDFilePath As String = GetKernelPath(KernelPathType.MOTD)
-    Public MALFilePath As String = GetKernelPath(KernelPathType.MAL)
+        'Variables
+        Public MOTDFilePath As String = GetKernelPath(KernelPathType.MOTD)
+        Public MALFilePath As String = GetKernelPath(KernelPathType.MAL)
 
-    ''' <summary>
-    ''' Types of message
-    ''' </summary>
-    Public Enum MessageType As Integer
         ''' <summary>
-        ''' MOTD (Message of the Day) message
+        ''' Types of message
         ''' </summary>
-        MOTD = 1
+        Public Enum MessageType As Integer
+            ''' <summary>
+            ''' MOTD (Message of the Day) message
+            ''' </summary>
+            MOTD = 1
+            ''' <summary>
+            ''' MAL (MOTD After Login) message
+            ''' </summary>
+            MAL
+        End Enum
+
         ''' <summary>
-        ''' MAL (MOTD After Login) message
+        ''' Sets the Message of the Day or MAL
         ''' </summary>
-        MAL
-    End Enum
+        ''' <param name="Message">A message of the day before/after login</param>
+        ''' <param name="MType">Message type</param>
+        Public Sub SetMOTD(Message As String, MType As MessageType)
+            Try
+                Dim MOTDStreamW As IO.StreamWriter
 
-    ''' <summary>
-    ''' Sets the Message of the Day or MAL
-    ''' </summary>
-    ''' <param name="Message">A message of the day before/after login</param>
-    ''' <param name="MType">Message type</param>
-    Public Sub SetMOTD(Message As String, MType As MessageType)
-        Try
-            Dim MOTDStreamW As IO.StreamWriter
+                'Get the MOTD and MAL file path
+                MOTDFilePath = NeutralizePath(MOTDFilePath)
+                MALFilePath = NeutralizePath(MALFilePath)
+                Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
+                Wdbg(DebugLevel.I, "Message type: {0}", MType)
 
-            'Get the MOTD and MAL file path
-            MOTDFilePath = NeutralizePath(MOTDFilePath)
-            MALFilePath = NeutralizePath(MALFilePath)
-            Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
-            Wdbg(DebugLevel.I, "Message type: {0}", MType)
+                'Set the message according to message type
+                If MType = MessageType.MOTD Then
+                    MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
+                    Wdbg(DebugLevel.I, "Opened stream to MOTD path")
+                    MOTDStreamW.WriteLine(Message)
+                    MOTDMessage = Message
+                ElseIf MType = MessageType.MAL Then
+                    MOTDStreamW = New IO.StreamWriter(MALFilePath) With {.AutoFlush = True}
+                    Wdbg(DebugLevel.I, "Opened stream to MAL path")
+                    MOTDStreamW.Write(Message)
+                    MAL = Message
+                Else
+                    Write(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD..."), True, ColTypes.Error)
+                    MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
+                    Wdbg(DebugLevel.I, "Opened stream to MOTD path")
+                    MOTDStreamW.WriteLine(Message)
+                    MOTDMessage = Message
+                End If
 
-            'Set the message according to message type
-            If MType = MessageType.MOTD Then
-                MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-                Wdbg(DebugLevel.I, "Opened stream to MOTD path")
-                MOTDStreamW.WriteLine(Message)
-                MOTDMessage = Message
-            ElseIf MType = MessageType.MAL Then
-                MOTDStreamW = New IO.StreamWriter(MALFilePath) With {.AutoFlush = True}
-                Wdbg(DebugLevel.I, "Opened stream to MAL path")
-                MOTDStreamW.Write(Message)
-                MAL = Message
-            Else
-                Write(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD..."), True, ColTypes.Error)
-                MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
-                Wdbg(DebugLevel.I, "Opened stream to MOTD path")
-                MOTDStreamW.WriteLine(Message)
-                MOTDMessage = Message
-            End If
-
-            'Close the message stream
-            MOTDStreamW.Close()
-            Wdbg(DebugLevel.I, "Stream closed")
-        Catch ex As Exception
-            Write(DoTranslation("Error when trying to set MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
-            WStkTrc(ex)
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' Reads the message of the day before/after login
-    ''' </summary>
-    ''' <param name="MType">Message type</param>
-    Public Sub ReadMOTD(MType As MessageType)
-        Try
-            Dim MOTDStreamR As IO.StreamReader
-            Dim MOTDBuilder As New Text.StringBuilder
-
-            'Get the MOTD and MAL file path
-            MOTDFilePath = NeutralizePath(MOTDFilePath)
-            MALFilePath = NeutralizePath(MALFilePath)
-            Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
-            Wdbg(DebugLevel.I, "Message type: {0}", MType)
-
-            'Read the message according to message type
-            If MType = MessageType.MOTD Then
-                MOTDStreamR = New IO.StreamReader(MOTDFilePath)
-                Wdbg(DebugLevel.I, "Opened stream to MOTD path")
-                MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
-                MOTDMessage = MOTDBuilder.ToString
-                MOTDStreamR.Close()
+                'Close the message stream
+                MOTDStreamW.Close()
                 Wdbg(DebugLevel.I, "Stream closed")
-            ElseIf MType = MessageType.MAL Then
-                MOTDStreamR = New IO.StreamReader(MALFilePath)
-                Wdbg(DebugLevel.I, "Opened stream to MAL path")
-                MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
-                MAL = MOTDBuilder.ToString
-                MOTDStreamR.Close()
-                Wdbg(DebugLevel.I, "Stream closed")
-            Else
-                Write(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type."), True, ColTypes.Error)
-            End If
-        Catch ex As Exception
-            Write(DoTranslation("Error when trying to get MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
-            WStkTrc(ex)
-        End Try
-    End Sub
-End Module
+            Catch ex As Exception
+                Write(DoTranslation("Error when trying to set MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
+                WStkTrc(ex)
+            End Try
+        End Sub
+
+        ''' <summary>
+        ''' Reads the message of the day before/after login
+        ''' </summary>
+        ''' <param name="MType">Message type</param>
+        Public Sub ReadMOTD(MType As MessageType)
+            Try
+                Dim MOTDStreamR As IO.StreamReader
+                Dim MOTDBuilder As New Text.StringBuilder
+
+                'Get the MOTD and MAL file path
+                MOTDFilePath = NeutralizePath(MOTDFilePath)
+                MALFilePath = NeutralizePath(MALFilePath)
+                Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
+                Wdbg(DebugLevel.I, "Message type: {0}", MType)
+
+                'Read the message according to message type
+                If MType = MessageType.MOTD Then
+                    MOTDStreamR = New IO.StreamReader(MOTDFilePath)
+                    Wdbg(DebugLevel.I, "Opened stream to MOTD path")
+                    MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
+                    MOTDMessage = MOTDBuilder.ToString
+                    MOTDStreamR.Close()
+                    Wdbg(DebugLevel.I, "Stream closed")
+                ElseIf MType = MessageType.MAL Then
+                    MOTDStreamR = New IO.StreamReader(MALFilePath)
+                    Wdbg(DebugLevel.I, "Opened stream to MAL path")
+                    MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
+                    MAL = MOTDBuilder.ToString
+                    MOTDStreamR.Close()
+                    Wdbg(DebugLevel.I, "Stream closed")
+                Else
+                    Write(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type."), True, ColTypes.Error)
+                End If
+            Catch ex As Exception
+                Write(DoTranslation("Error when trying to get MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
+                WStkTrc(ex)
+            End Try
+        End Sub
+    End Module
+End Namespace

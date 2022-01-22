@@ -19,43 +19,45 @@
 Imports System.ComponentModel
 Imports System.Threading
 
-'NOTE: OPEN THIS FILE WITH "Visual Basic Editor"!
-Public Class NamedBackgroundWorker
-    Inherits BackgroundWorker
+Namespace Misc.Threading
+    'NOTE: OPEN THIS FILE WITH "Visual Basic Editor"!
+    Public Class NamedBackgroundWorker
+        Inherits BackgroundWorker
 
-    Private _ThreadName As String
-    Private IsNameSet As Boolean
+        Private _ThreadName As String
+        Private IsNameSet As Boolean
 
-    ''' <summary>
-    ''' The thread name to identify the background worker
-    ''' </summary>
-    Public Property ThreadName As String
-        Get
-            Return _ThreadName
-        End Get
-        Private Set(value As String)
-            If Not IsNameSet Then
-                _ThreadName = value
-                IsNameSet = True
-            End If
-        End Set
-    End Property
+        ''' <summary>
+        ''' The thread name to identify the background worker
+        ''' </summary>
+        Public Property ThreadName As String
+            Get
+                Return _ThreadName
+            End Get
+            Private Set(value As String)
+                If Not IsNameSet Then
+                    _ThreadName = value
+                    IsNameSet = True
+                End If
+            End Set
+        End Property
 
-    ''' <summary>
-    ''' Makes a new background worker with the specified name
-    ''' </summary>
-    ''' <param name="ThreadName">The thread name</param>
-    Public Sub New(ThreadName As String)
-        Me.ThreadName = ThreadName
-    End Sub
+        ''' <summary>
+        ''' Makes a new background worker with the specified name
+        ''' </summary>
+        ''' <param name="ThreadName">The thread name</param>
+        Public Sub New(ThreadName As String)
+            Me.ThreadName = ThreadName
+        End Sub
 
-    ''' <summary>
-    ''' Identifies, then raises the <see cref="DoWork"/> event.
-    ''' </summary>
-    Protected Overrides Sub OnDoWork(e As DoWorkEventArgs)
-        If Thread.CurrentThread.Name Is Nothing Then Thread.CurrentThread.Name = ThreadName
-        Wdbg(DebugLevel.I, "Made a background worker thread [{0}] {1}", Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.Name)
-        MyBase.OnDoWork(e)
-    End Sub
+        ''' <summary>
+        ''' Identifies, then raises the <see cref="DoWork"/> event.
+        ''' </summary>
+        Protected Overrides Sub OnDoWork(e As DoWorkEventArgs)
+            If Thread.CurrentThread.Name Is Nothing Then Thread.CurrentThread.Name = ThreadName
+            Wdbg(DebugLevel.I, "Made a background worker thread [{0}] {1}", Thread.CurrentThread.ManagedThreadId, Thread.CurrentThread.Name)
+            MyBase.OnDoWork(e)
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,173 +18,175 @@
 
 Imports Figgle
 
-Public Module FigletWhereColor
+Namespace Misc.Writers.FancyWriters
+    Public Module FigletWhereColor
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWherePlain(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ParamArray Vars() As Object)
-        Try
-            'Format string as needed
-            If Not Vars.Length = 0 Then Text = String.Format(Text, Vars)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWherePlain(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ParamArray Vars() As Object)
+            Try
+                'Format string as needed
+                If Not Vars.Length = 0 Then Text = String.Format(Text, Vars)
 
-            'Write the font
-            Text = FigletFont.Render(Text)
-            WriteWherePlain(Text, Left, Top, [Return], Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Write the font
+                Text = FigletFont.Render(Text)
+                WriteWherePlain(Text, Left, Top, [Return], Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="ColTypes">A type of colors that will be changed.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ColTypes As ColTypes, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(ColTypes)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="ColTypes">A type of colors that will be changed.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ColTypes As ColTypes, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(ColTypes)
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-    ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(colorTypeForeground)
-            SetConsoleColor(colorTypeBackground, True)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(colorTypeForeground)
+                SetConsoleColor(colorTypeBackground, True)
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, Color As ConsoleColor, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(New Color(Color))
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, Color As ConsoleColor, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(New Color(Color))
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(New Color(ForegroundColor))
-            SetConsoleColor(New Color(BackgroundColor), True)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(New Color(ForegroundColor))
+                SetConsoleColor(New Color(BackgroundColor), True)
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="Color">A color that will be changed to.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, Color As Color, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(Color)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="Color">A color that will be changed to.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, Color As Color, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(Color)
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-    ''' <summary>
-    ''' Writes the figlet text with position support
-    ''' </summary>
-    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="Left">Column number in console</param>
-    ''' <param name="Top">Row number in console</param>
-    ''' <param name="Return">Whether or not to return to old position</param>
-    ''' <param name="FigletFont">Figlet font to use in the text.</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ForegroundColor As Color, BackgroundColor As Color, ParamArray Vars() As Object)
-        Try
-            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-            SetConsoleColor(ForegroundColor)
-            SetConsoleColor(BackgroundColor, True)
+        ''' <summary>
+        ''' Writes the figlet text with position support
+        ''' </summary>
+        ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="Return">Whether or not to return to old position</param>
+        ''' <param name="FigletFont">Figlet font to use in the text.</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="Vars">Variables to format the message before it's written.</param>
+        Public Sub WriteFigletWhere(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ForegroundColor As Color, BackgroundColor As Color, ParamArray Vars() As Object)
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(ForegroundColor)
+                SetConsoleColor(BackgroundColor, True)
 
-            'Actually write
-            WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
-        Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-            WStkTrc(ex)
-            KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-        End Try
-    End Sub
+                'Actually write
+                WriteFigletWherePlain(Text, Left, Top, [Return], FigletFont, Vars)
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+        End Sub
 
-End Module
+    End Module
+End Namespace

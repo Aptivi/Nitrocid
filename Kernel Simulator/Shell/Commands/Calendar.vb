@@ -16,6 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Calendar.Events
+Imports KS.Misc.Calendar.Reminders
+Imports KS.Misc.Calendar
+
 Class CalendarCommand
     Inherits CommandExecutor
     Implements ICommand
@@ -126,7 +130,7 @@ Class CalendarCommand
                                 'Enough arguments provided.
                                 Try
                                     Dim ReminderId As Integer = ActionArguments(1)
-                                    Dim ReminderInstance As ReminderInfo = Reminders(ReminderId - 1)
+                                    Dim ReminderInstance As ReminderInfo = Reminders.Reminders(ReminderId - 1)
                                     RemoveReminder(ReminderInstance.ReminderDate, ReminderId)
                                 Catch ex As Exception
                                     WStkTrc(ex)

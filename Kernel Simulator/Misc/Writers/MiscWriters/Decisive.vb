@@ -18,27 +18,29 @@
 
 Imports System.IO
 
-Public Module Decisive
+Namespace Misc.Writers.MiscWriters
+    Public Module Decisive
 
-    ''' <summary>
-    ''' Decides where to write the text
-    ''' </summary>
-    ''' <param name="CommandType">A specified command type</param>
-    ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub DecisiveWrite(CommandType As ShellType, DebugDeviceSocket As StreamWriter, Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
-        If Not CommandType = ShellType.RemoteDebugShell Then
-            Write(Text, Line, colorType, vars)
-        ElseIf DebugDeviceSocket IsNot Nothing Then
-            If Line Then
-                DebugDeviceSocket.WriteLine(Text, vars)
-            Else
-                DebugDeviceSocket.Write(Text, vars)
+        ''' <summary>
+        ''' Decides where to write the text
+        ''' </summary>
+        ''' <param name="CommandType">A specified command type</param>
+        ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub DecisiveWrite(CommandType As ShellType, DebugDeviceSocket As StreamWriter, Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+            If Not CommandType = ShellType.RemoteDebugShell Then
+                Write(Text, Line, colorType, vars)
+            ElseIf DebugDeviceSocket IsNot Nothing Then
+                If Line Then
+                    DebugDeviceSocket.WriteLine(Text, vars)
+                Else
+                    DebugDeviceSocket.Write(Text, vars)
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-End Module
+    End Module
+End Namespace

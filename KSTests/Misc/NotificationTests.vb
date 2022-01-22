@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
+Imports KS.Misc.Notifications
 
 <TestClass()> Public Class NotificationTests
 

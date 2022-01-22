@@ -21,6 +21,12 @@ Imports System.Reflection
 Imports Newtonsoft.Json.Linq
 Imports KS.Kernel
 Imports KS.ManPages
+Imports KS.Misc.Configuration
+Imports KS.Misc.JsonShell
+Imports KS.Misc.Screensaver.Customized
+Imports KS.Misc.Splash
+Imports KS.Misc.TextEdit
+Imports KS.Misc.ZipFile
 
 Public Module ModManager
 

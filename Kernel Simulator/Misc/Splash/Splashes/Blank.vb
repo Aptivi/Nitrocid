@@ -16,69 +16,71 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class SplashBlank
-    Implements ISplash
+Namespace Misc.Splash.Splashes
+    Class SplashBlank
+        Implements ISplash
 
-    'Standalone splash information
-    ReadOnly Property SplashName As String Implements ISplash.SplashName
-        Get
-            Return "Blank"
-        End Get
-    End Property
+        'Standalone splash information
+        ReadOnly Property SplashName As String Implements ISplash.SplashName
+            Get
+                Return "Blank"
+            End Get
+        End Property
 
-    Private ReadOnly Property Info As SplashInfo
-        Get
-            Return Splashes(SplashName)
-        End Get
-    End Property
+        Private ReadOnly Property Info As SplashInfo
+            Get
+                Return SplashManager.Splashes(SplashName)
+            End Get
+        End Property
 
-    'Property implementations
-    Property SplashClosing As Boolean Implements ISplash.SplashClosing
+        'Property implementations
+        Property SplashClosing As Boolean Implements ISplash.SplashClosing
 
-    ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
-        Get
-            Return Info.ProgressWritePositionX
-        End Get
-    End Property
+        ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
+            Get
+                Return Info.ProgressWritePositionX
+            End Get
+        End Property
 
-    ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
-        Get
-            Return Info.ProgressWritePositionY
-        End Get
-    End Property
+        ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
+            Get
+                Return Info.ProgressWritePositionY
+            End Get
+        End Property
 
-    ReadOnly Property ProgressReportWritePositionX As Integer Implements ISplash.ProgressReportWritePositionX
-        Get
-            Return Info.ProgressReportWritePositionX
-        End Get
-    End Property
+        ReadOnly Property ProgressReportWritePositionX As Integer Implements ISplash.ProgressReportWritePositionX
+            Get
+                Return Info.ProgressReportWritePositionX
+            End Get
+        End Property
 
-    ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
-        Get
-            Return Info.ProgressReportWritePositionY
-        End Get
-    End Property
+        ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
+            Get
+                Return Info.ProgressReportWritePositionY
+            End Get
+        End Property
 
-    'Actual logic
-    Public Sub Opening() Implements ISplash.Opening
-        Wdbg(DebugLevel.I, "Splash opening. Clearing console...")
-        Console.Clear()
-    End Sub
+        'Actual logic
+        Public Sub Opening() Implements ISplash.Opening
+            Wdbg(DebugLevel.I, "Splash opening. Clearing console...")
+            Console.Clear()
+        End Sub
 
-    Public Sub Display() Implements ISplash.Display
-        Wdbg(DebugLevel.I, "Splash displaying.")
-        While Not SplashClosing
-        End While
-        Wdbg(DebugLevel.I, "Splash done.")
-    End Sub
+        Public Sub Display() Implements ISplash.Display
+            Wdbg(DebugLevel.I, "Splash displaying.")
+            While Not SplashClosing
+            End While
+            Wdbg(DebugLevel.I, "Splash done.")
+        End Sub
 
-    Public Sub Closing() Implements ISplash.Closing
-        SplashClosing = True
-        Wdbg(DebugLevel.I, "Splash closing. Clearing console...")
-        Console.Clear()
-    End Sub
+        Public Sub Closing() Implements ISplash.Closing
+            SplashClosing = True
+            Wdbg(DebugLevel.I, "Splash closing. Clearing console...")
+            Console.Clear()
+        End Sub
 
-    Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
-    End Sub
+        Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
+        End Sub
 
-End Class
+    End Class
+End Namespace

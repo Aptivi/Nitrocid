@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Threading
 Imports KS.Kernel
+Imports KS.Misc.TextEdit
 
 Public Class TextShell
     Inherits ShellExecutor

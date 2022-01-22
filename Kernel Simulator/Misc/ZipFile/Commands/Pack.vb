@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ZipShell_PackCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.ZipFile.Commands
+    Class ZipShell_PackCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Where As String = ""
-        If ListArgsOnly.Length > 1 Then
-            Where = NeutralizePath(ListArgsOnly(1), ZipShell_CurrentDirectory)
-        End If
-        PackFile(ListArgsOnly(0), Where)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Where As String = ""
+            If ListArgsOnly.Length > 1 Then
+                Where = NeutralizePath(ListArgsOnly(1), ZipShell_CurrentDirectory)
+            End If
+            PackFile(ListArgsOnly(0), Where)
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,6 +18,7 @@
 
 Imports System.ComponentModel
 Imports System.Threading
+Imports KS.Misc.Screensaver
 
 Public Module TimeDate
 

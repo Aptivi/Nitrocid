@@ -18,234 +18,236 @@
 
 Imports KS.Kernel
 
-Public Module TextWriterWrappedColor
+Namespace Misc.Writers.ConsoleWriters
+    Public Module TextWriterWrappedColor
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrappedPlain(Text As String, Line As Boolean, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrappedPlain(Text As String, Line As Boolean, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
-            Try
-                'Format string as needed
-                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+                Try
+                    'Format string as needed
+                    If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
-                OldTop = Console.CursorTop
-                For Each TextChar As Char In Text.ToString.ToCharArray
-                    Console.Write(TextChar)
-                    LinesMade += Console.CursorTop - OldTop
                     OldTop = Console.CursorTop
-                    If LinesMade = Console.WindowHeight - 1 Then
-                        If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
-                        LinesMade = 0
+                    For Each TextChar As Char In Text.ToString.ToCharArray
+                        Console.Write(TextChar)
+                        LinesMade += Console.CursorTop - OldTop
+                        OldTop = Console.CursorTop
+                        If LinesMade = Console.WindowHeight - 1 Then
+                            If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    Next
+                    If Line Then Console.WriteLine()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
+#If Not NOWRITELOCK Then
+            End SyncLock
+#End If
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+            SyncLock WriteLock
+#End If
+                Try
+                    'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    SetConsoleColor(colorType)
+
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
+
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
+#If Not NOWRITELOCK Then
+            End SyncLock
+#End If
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+            SyncLock WriteLock
+#End If
+                Try
+                    'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                    SetConsoleColor(colorTypeForeground)
+                    SetConsoleColor(colorTypeBackground, True)
+
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
+
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
+#If Not NOWRITELOCK Then
+            End SyncLock
+#End If
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+            SyncLock WriteLock
+#End If
+                Try
+                    'Try to write to console
+                    Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                    Console.ForegroundColor = color
+
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
+
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
+#If Not NOWRITELOCK Then
+            End SyncLock
+#End If
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+            SyncLock WriteLock
+#End If
+                Try
+                    'Try to write to console
+                    Console.BackgroundColor = BackgroundColor
+                    Console.ForegroundColor = ForegroundColor
+
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
+
+                    'Reset the colors
+                    If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
+#If Not NOWRITELOCK Then
+            End SyncLock
+#End If
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+            SyncLock WriteLock
+#End If
+                Try
+                    'Try to write to console
+                    If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
+                        SetConsoleColor(color)
+                        SetConsoleColor(BackgroundColor, True)
                     End If
-                Next
-                If Line Then Console.WriteLine()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
+
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWrapped(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
-        SyncLock WriteLock
+            SyncLock WriteLock
 #End If
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                SetConsoleColor(colorType)
+                Try
+                    'Try to write to console
+                    If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
+                        SetConsoleColor(ForegroundColor)
+                        SetConsoleColor(BackgroundColor, True)
+                    End If
 
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
+                    'Write wrapped output
+                    WriteWrappedPlain(Text, Line, vars)
 
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
+                    'Reset the colors
+                    If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                    If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+                Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                End Try
 #If Not NOWRITELOCK Then
-        End SyncLock
+            End SyncLock
 #End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-    ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                SetConsoleColor(colorTypeForeground)
-                SetConsoleColor(colorTypeBackground, True)
-
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
-
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Try
-                'Try to write to console
-                Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
-                Console.ForegroundColor = color
-
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
-
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Try
-                'Try to write to console
-                Console.BackgroundColor = BackgroundColor
-                Console.ForegroundColor = ForegroundColor
-
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
-
-                'Reset the colors
-                If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Try
-                'Try to write to console
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                    SetConsoleColor(color)
-                    SetConsoleColor(BackgroundColor, True)
-                End If
-
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
-
-                'Reset the colors
-                If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-    ''' <summary>
-    ''' Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-    ''' </summary>
-    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-    ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
-    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
-        SyncLock WriteLock
-#End If
-            Try
-                'Try to write to console
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                    SetConsoleColor(ForegroundColor)
-                    SetConsoleColor(BackgroundColor, True)
-                End If
-
-                'Write wrapped output
-                WriteWrappedPlain(Text, Line, vars)
-
-                'Reset the colors
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
-            End Try
-#If Not NOWRITELOCK Then
-        End SyncLock
-#End If
-    End Sub
-
-End Module
+    End Module
+End Namespace

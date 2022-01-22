@@ -16,33 +16,35 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Class CustomSaverInfo
+Namespace Misc.Screensaver.Customized
+    Public Class CustomSaverInfo
 
-    ''' <summary>
-    ''' Name of the screensaver
-    ''' </summary>
-    Public ReadOnly Property SaverName As String
-    ''' <summary>
-    ''' File name of the screensaver
-    ''' </summary>
-    Public ReadOnly Property FileName As String
-    ''' <summary>
-    ''' File path of the screensaver
-    ''' </summary>
-    Public ReadOnly Property FilePath As String
-    ''' <summary>
-    ''' The screensaver code
-    ''' </summary>
-    Public ReadOnly Property Screensaver As ICustomSaver
+        ''' <summary>
+        ''' Name of the screensaver
+        ''' </summary>
+        Public ReadOnly Property SaverName As String
+        ''' <summary>
+        ''' File name of the screensaver
+        ''' </summary>
+        Public ReadOnly Property FileName As String
+        ''' <summary>
+        ''' File path of the screensaver
+        ''' </summary>
+        Public ReadOnly Property FilePath As String
+        ''' <summary>
+        ''' The screensaver code
+        ''' </summary>
+        Public ReadOnly Property Screensaver As ICustomSaver
 
-    ''' <summary>
-    ''' Creates new screensaver info instance
-    ''' </summary>
-    Friend Sub New(SaverName As String, FileName As String, FilePath As String, Screensaver As ICustomSaver)
-        Me.SaverName = SaverName
-        Me.FileName = FileName
-        Me.FilePath = FilePath
-        Me.Screensaver = Screensaver
-    End Sub
+        ''' <summary>
+        ''' Creates new screensaver info instance
+        ''' </summary>
+        Friend Sub New(SaverName As String, FileName As String, FilePath As String, Screensaver As ICustomSaver)
+            Me.SaverName = SaverName
+            Me.FileName = FileName
+            Me.FilePath = FilePath
+            Me.Screensaver = Screensaver
+        End Sub
 
-End Class
+    End Class
+End Namespace

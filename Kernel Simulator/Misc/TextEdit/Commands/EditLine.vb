@@ -16,24 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class TextEdit_EditLineCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.TextEdit.Commands
+    Class TextEdit_EditLineCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If IsNumeric(ListArgsOnly(0)) Then
-            If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
-                Windows.Forms.SendKeys.SendWait(TextEdit_FileLines(ListArgsOnly(0) - 1))
-                Write(">> ", False, ColTypes.Input)
-                Dim EditedLine As String = Console.ReadLine
-                TextEdit_FileLines(ListArgsOnly(0) - 1) = EditedLine
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If IsNumeric(ListArgsOnly(0)) Then
+                If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
+                    Windows.Forms.SendKeys.SendWait(TextEdit_FileLines(ListArgsOnly(0) - 1))
+                    Write(">> ", False, ColTypes.Input)
+                    Dim EditedLine As String = Console.ReadLine
+                    TextEdit_FileLines(ListArgsOnly(0) - 1) = EditedLine
+                Else
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
             Else
-                Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
+                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
             End If
-        Else
-            Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
-            Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

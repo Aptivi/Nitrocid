@@ -16,14 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ZipShell_ChDirCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.ZipFile.Commands
+    Class ZipShell_ChDirCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If Not ChangeWorkingZipLocalDirectory(ListArgs(0)) Then
-            Write(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ChangeWorkingZipLocalDirectory(ListArgs(0)) Then
+                Write(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

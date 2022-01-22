@@ -19,6 +19,7 @@
 Imports System.IO
 Imports KS
 Imports KS.ConsoleBase
+Imports KS.Misc.Beautifiers
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 

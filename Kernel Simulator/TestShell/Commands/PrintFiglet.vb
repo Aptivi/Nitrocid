@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Figgle
+Imports KS.Misc.Writers.FancyWriters.Tools
 
 Class Test_PrintFigletCommand
     Inherits CommandExecutor

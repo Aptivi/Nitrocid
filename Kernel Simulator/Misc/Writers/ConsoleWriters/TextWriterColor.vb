@@ -18,6 +18,7 @@
 
 Imports KS.Kernel
 
+'WARNING: Don't namespace this module by "Namespace Misc.Writers.ConsoleWriters"; Microsoft.VisualBasic.FileSystem.Write will wreak havoc.
 Public Module TextWriterColor
 
 #If Not NOWRITELOCK Then

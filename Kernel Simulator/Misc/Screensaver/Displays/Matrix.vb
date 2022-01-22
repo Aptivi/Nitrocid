@@ -18,54 +18,56 @@
 
 Imports System.ComponentModel
 
-Module MatrixDisplay
+Namespace Misc.Screensaver.Displays
+    Module MatrixDisplay
 
-    Public WithEvents Matrix As New NamedBackgroundWorker("Matrix screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WithEvents Matrix As New NamedBackgroundWorker("Matrix screensaver thread") With {.WorkerSupportsCancellation = True}
 
-    ''' <summary>
-    ''' Handles the code of Matrix
-    ''' </summary>
-    Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
-        'Variables
-        Dim random As New Random()
-        Dim CurrentWindowWidth As Integer = Console.WindowWidth
-        Dim CurrentWindowHeight As Integer = Console.WindowHeight
-        Dim ResizeSyncing As Boolean
+        ''' <summary>
+        ''' Handles the code of Matrix
+        ''' </summary>
+        Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
+            'Variables
+            Dim random As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
-        'Preparations
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.Green
-        Console.Clear()
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.Clear()
 
-        'Screensaver logic
-        Do While True
-            Console.CursorVisible = False
-            If Matrix.CancellationPending = True Then
-                HandleSaverCancel()
-                Exit Do
-            Else
-                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                If Not ResizeSyncing Then
-                    Console.Write(CStr(random.Next(2)))
+            'Screensaver logic
+            Do While True
+                Console.CursorVisible = False
+                If Matrix.CancellationPending = True Then
+                    HandleSaverCancel()
+                    Exit Do
                 Else
-                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
-                    Console.Clear()
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        Console.Write(CStr(random.Next(2)))
+                    Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
+                        Console.Clear()
+                    End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
+                SleepNoBlock(MatrixDelay, Matrix)
+            Loop
+        End Sub
 
-                'Reset resize sync
-                ResizeSyncing = False
-                CurrentWindowWidth = Console.WindowWidth
-                CurrentWindowHeight = Console.WindowHeight
-            End If
-            SleepNoBlock(MatrixDelay, Matrix)
-        Loop
-    End Sub
+        ''' <summary>
+        ''' Checks for any screensaver error
+        ''' </summary>
+        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Matrix.RunWorkerCompleted
+            HandleSaverError(e.Error)
+        End Sub
 
-    ''' <summary>
-    ''' Checks for any screensaver error
-    ''' </summary>
-    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Matrix.RunWorkerCompleted
-        HandleSaverError(e.Error)
-    End Sub
-
-End Module
+    End Module
+End Namespace

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports KS.Misc.Encryption
 
 <TestClass()> Public Class EncryptionActionTests
 

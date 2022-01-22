@@ -18,6 +18,7 @@
 
 Imports KS
 Imports KS.Kernel
+Imports KS.Misc.Reflection
 
 <TestClass()> Public Class StringEvaluatorActionTests
 

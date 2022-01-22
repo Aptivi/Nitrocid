@@ -17,49 +17,52 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
+Imports System.Threading
 
-Public Module ThreadManager
+Namespace Misc.Threading
+    Public Module ThreadManager
 
-    ''' <summary>
-    ''' Sleeps until either the time specified, or the thread has finished or cancelled.
-    ''' </summary>
-    ''' <param name="Time">Time in milliseconds</param>
-    ''' <param name="ThreadWork">The working thread</param>
-    Public Sub SleepNoBlock(Time As Long, ThreadWork As BackgroundWorker)
-        Dim WorkFinished As Boolean
-        Dim TimeCount As Long
-        AddHandler ThreadWork.RunWorkerCompleted, Sub() WorkFinished = True
-        Do Until WorkFinished Or TimeCount = Time
-            Threading.Thread.Sleep(1)
-            If ThreadWork.CancellationPending Then WorkFinished = True
-            TimeCount += 1
-        Loop
-    End Sub
+        ''' <summary>
+        ''' Sleeps until either the time specified, or the thread has finished or cancelled.
+        ''' </summary>
+        ''' <param name="Time">Time in milliseconds</param>
+        ''' <param name="ThreadWork">The working thread</param>
+        Public Sub SleepNoBlock(Time As Long, ThreadWork As BackgroundWorker)
+            Dim WorkFinished As Boolean
+            Dim TimeCount As Long
+            AddHandler ThreadWork.RunWorkerCompleted, Sub() WorkFinished = True
+            Do Until WorkFinished Or TimeCount = Time
+                Thread.Sleep(1)
+                If ThreadWork.CancellationPending Then WorkFinished = True
+                TimeCount += 1
+            Loop
+        End Sub
 
-    ''' <summary>
-    ''' Gets the actual milliseconds time from the sleep time provided
-    ''' </summary>
-    ''' <param name="Time">Sleep time</param>
-    ''' <returns>How many milliseconds did it really sleep?</returns>
-    Public Function GetActualMilliseconds(Time As Integer) As Integer
-        Dim SleepStopwatch As New Stopwatch
-        SleepStopwatch.Start()
-        Threading.Thread.Sleep(Time)
-        SleepStopwatch.Stop()
-        Return SleepStopwatch.ElapsedMilliseconds
-    End Function
+        ''' <summary>
+        ''' Gets the actual milliseconds time from the sleep time provided
+        ''' </summary>
+        ''' <param name="Time">Sleep time</param>
+        ''' <returns>How many milliseconds did it really sleep?</returns>
+        Public Function GetActualMilliseconds(Time As Integer) As Integer
+            Dim SleepStopwatch As New Stopwatch
+            SleepStopwatch.Start()
+            Thread.Sleep(Time)
+            SleepStopwatch.Stop()
+            Return SleepStopwatch.ElapsedMilliseconds
+        End Function
 
-    ''' <summary>
-    ''' Gets the actual ticks from the sleep time provided
-    ''' </summary>
-    ''' <param name="Time">Sleep time</param>
-    ''' <returns>How many ticks did it really sleep?</returns>
-    Public Function GetActualTicks(Time As Integer) As Long
-        Dim SleepStopwatch As New Stopwatch
-        SleepStopwatch.Start()
-        Threading.Thread.Sleep(Time)
-        SleepStopwatch.Stop()
-        Return SleepStopwatch.ElapsedTicks
-    End Function
+        ''' <summary>
+        ''' Gets the actual ticks from the sleep time provided
+        ''' </summary>
+        ''' <param name="Time">Sleep time</param>
+        ''' <returns>How many ticks did it really sleep?</returns>
+        Public Function GetActualTicks(Time As Integer) As Long
+            Dim SleepStopwatch As New Stopwatch
+            SleepStopwatch.Start()
+            Thread.Sleep(Time)
+            SleepStopwatch.Stop()
+            Return SleepStopwatch.ElapsedTicks
+        End Function
 
-End Module
+    End Module
+End Namespace

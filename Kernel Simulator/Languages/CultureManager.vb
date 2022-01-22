@@ -18,6 +18,7 @@
 
 Imports System.Globalization
 Imports Newtonsoft.Json.Linq
+Imports KS.Misc.Configuration
 
 Namespace Languages
     Public Module CultureManager

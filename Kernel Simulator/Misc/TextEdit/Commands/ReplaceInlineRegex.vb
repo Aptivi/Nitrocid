@@ -18,38 +18,40 @@
 
 Imports Extensification.IntegerExts
 
-Class TextEdit_ReplaceInlineRegexCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.TextEdit.Commands
+    Class TextEdit_ReplaceInlineRegexCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Count = 3 Then
-            If ListArgs(2).IsNumeric Then
-                If CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
-                    TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), ListArgs(2))
-                    Write(DoTranslation("String replaced."), True, ColTypes.Success)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Count = 3 Then
+                If ListArgs(2).IsNumeric Then
+                    If CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
+                        TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), ListArgs(2))
+                        Write(DoTranslation("String replaced."), True, ColTypes.Success)
+                    Else
+                        Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    End If
                 Else
-                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(2))
+                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(2))
                 End If
-            Else
-                Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(2))
-                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(2))
-            End If
-        ElseIf ListArgs?.Count > 3 Then
-            If IsNumeric(ListArgs(2)) And IsNumeric(ListArgs(3)) Then
-                If CInt(ListArgs(2)) <= TextEdit_FileLines.Count And CInt(ListArgs(3)) <= TextEdit_FileLines.Count Then
-                    Dim LineNumberStart As Integer = ListArgs(2)
-                    Dim LineNumberEnd As Integer = ListArgs(3)
-                    LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
-                    For LineNumber = LineNumberStart To LineNumberEnd
-                        TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), LineNumber)
-                        Write(DoTranslation("String replaced in line {0}."), True, ColTypes.Success, LineNumber)
-                    Next
-                Else
-                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+            ElseIf ListArgs?.Count > 3 Then
+                If IsNumeric(ListArgs(2)) And IsNumeric(ListArgs(3)) Then
+                    If CInt(ListArgs(2)) <= TextEdit_FileLines.Count And CInt(ListArgs(3)) <= TextEdit_FileLines.Count Then
+                        Dim LineNumberStart As Integer = ListArgs(2)
+                        Dim LineNumberEnd As Integer = ListArgs(3)
+                        LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
+                        For LineNumber = LineNumberStart To LineNumberEnd
+                            TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), LineNumber)
+                            Write(DoTranslation("String replaced in line {0}."), True, ColTypes.Success, LineNumber)
+                        Next
+                    Else
+                        Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    End If
                 End If
             End If
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

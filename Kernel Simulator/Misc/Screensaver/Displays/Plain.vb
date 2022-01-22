@@ -18,33 +18,35 @@
 
 Imports System.ComponentModel
 
-Module PlainDisplay
+Namespace Misc.Screensaver.Displays
+    Module PlainDisplay
 
-    Public WithEvents Plain As New NamedBackgroundWorker("Plain screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WithEvents Plain As New NamedBackgroundWorker("Plain screensaver thread") With {.WorkerSupportsCancellation = True}
 
-    ''' <summary>
-    ''' Handles the code of Plain
-    ''' </summary>
-    Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
-        'Preparations
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
-        Do While True
-            If Plain.CancellationPending = True Then
-                HandleSaverCancel()
-                Exit Do
-            End If
-            SleepNoBlock(10, Plain)
-        Loop
-    End Sub
+        ''' <summary>
+        ''' Handles the code of Plain
+        ''' </summary>
+        Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+            Do While True
+                If Plain.CancellationPending = True Then
+                    HandleSaverCancel()
+                    Exit Do
+                End If
+                SleepNoBlock(10, Plain)
+            Loop
+        End Sub
 
-    ''' <summary>
-    ''' Checks for any screensaver error
-    ''' </summary>
-    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Plain.RunWorkerCompleted
-        HandleSaverError(e.Error)
-    End Sub
+        ''' <summary>
+        ''' Checks for any screensaver error
+        ''' </summary>
+        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Plain.RunWorkerCompleted
+            HandleSaverError(e.Error)
+        End Sub
 
-End Module
+    End Module
+End Namespace

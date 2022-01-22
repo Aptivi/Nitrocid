@@ -19,6 +19,7 @@
 Imports System.Reflection
 Imports KS
 Imports KS.Languages
+Imports KS.Misc.Reflection
 
 <TestClass()> Public Class FieldManagementTests
 

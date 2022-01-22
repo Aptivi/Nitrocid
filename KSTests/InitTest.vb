@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports KS.Misc.Configuration
 
 <TestClass()> Public Class InitTest
 

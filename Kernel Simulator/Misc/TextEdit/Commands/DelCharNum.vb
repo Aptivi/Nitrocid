@@ -16,22 +16,24 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class TextEdit_DelCharNumCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Misc.TextEdit.Commands
+    Class TextEdit_DelCharNumCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(0)) Then
-            If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
-                TextEdit_DeleteChar(ListArgs(0), ListArgs(1))
-                Write(DoTranslation("Character deleted."), True, ColTypes.Success)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(0)) Then
+                If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
+                    TextEdit_DeleteChar(ListArgs(0), ListArgs(1))
+                    Write(DoTranslation("Character deleted."), True, ColTypes.Success)
+                Else
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
             Else
-                Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                Write(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
+                Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgs(0), ListArgs(1))
             End If
-        Else
-            Write(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
-            Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgs(0), ListArgs(1))
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

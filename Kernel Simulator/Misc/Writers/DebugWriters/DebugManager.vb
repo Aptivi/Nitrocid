@@ -18,29 +18,31 @@
 
 Imports System.IO
 
-Public Module DebugManager
+Namespace Misc.Writers.DebugWriters
+    Public Module DebugManager
 
-    Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
+        Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
 
-    ''' <summary>
-    ''' Checks to see if the debug file exceeds the quota
-    ''' </summary>
-    Public Sub CheckForDebugQuotaExceed()
-        Try
-            Dim FInfo As New FileInfo(GetKernelPath(KernelPathType.Debugging))
-            Dim OldSize As Double = FInfo.Length
-            If OldSize > DebugQuota Then
-                Dim Lines() As String = ReadAllLinesNoBlock(GetKernelPath(KernelPathType.Debugging)).Skip(5).ToArray
-                DebugStreamWriter.Close()
-                DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
-                For l As Integer = 0 To Lines.Length - 1 'Remove the first 5 lines from stream.
-                    DebugStreamWriter.WriteLine(Lines(l))
-                Next
-                Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-        End Try
-    End Sub
+        ''' <summary>
+        ''' Checks to see if the debug file exceeds the quota
+        ''' </summary>
+        Public Sub CheckForDebugQuotaExceed()
+            Try
+                Dim FInfo As New FileInfo(GetKernelPath(KernelPathType.Debugging))
+                Dim OldSize As Double = FInfo.Length
+                If OldSize > DebugQuota Then
+                    Dim Lines() As String = ReadAllLinesNoBlock(GetKernelPath(KernelPathType.Debugging)).Skip(5).ToArray
+                    DebugStreamWriter.Close()
+                    DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
+                    For l As Integer = 0 To Lines.Length - 1 'Remove the first 5 lines from stream.
+                        DebugStreamWriter.WriteLine(Lines(l))
+                    Next
+                    Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
+            End Try
+        End Sub
 
-End Module
+    End Module
+End Namespace
