@@ -18,49 +18,51 @@
 
 Imports KS.Kernel
 
-Public Class PartInfo
+Namespace Modifications
+    Public Class PartInfo
 
-    ''' <summary>
-    ''' The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
-    ''' </summary>
-    Public ReadOnly Property ModName As String
-    ''' <summary>
-    ''' The part name.
-    ''' </summary>
-    Public ReadOnly Property PartName As String
-    ''' <summary>
-    ''' The mod part file name
-    ''' </summary>
-    Public ReadOnly Property PartFileName As String
-    ''' <summary>
-    ''' The mod part file path
-    ''' </summary>
-    Public ReadOnly Property PartFilePath As String
-    ''' <summary>
-    ''' The mod part script
-    ''' </summary>
-    Public ReadOnly Property PartScript As IScript
+        ''' <summary>
+        ''' The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
+        ''' </summary>
+        Public ReadOnly Property ModName As String
+        ''' <summary>
+        ''' The part name.
+        ''' </summary>
+        Public ReadOnly Property PartName As String
+        ''' <summary>
+        ''' The mod part file name
+        ''' </summary>
+        Public ReadOnly Property PartFileName As String
+        ''' <summary>
+        ''' The mod part file path
+        ''' </summary>
+        Public ReadOnly Property PartFilePath As String
+        ''' <summary>
+        ''' The mod part script
+        ''' </summary>
+        Public ReadOnly Property PartScript As IScript
 
-    ''' <summary>
-    ''' Creates new mod info instance
-    ''' </summary>
-    Friend Sub New(ModName As String, PartName As String, PartFileName As String, PartFilePath As String, PartScript As IScript)
-        'Validate values. Check to see if the name is null. If so, it will take the mod file name.
-        If String.IsNullOrWhiteSpace(ModName) Then
-            ModName = PartFileName
-        End If
+        ''' <summary>
+        ''' Creates new mod info instance
+        ''' </summary>
+        Friend Sub New(ModName As String, PartName As String, PartFileName As String, PartFilePath As String, PartScript As IScript)
+            'Validate values. Check to see if the name is null. If so, it will take the mod file name.
+            If String.IsNullOrWhiteSpace(ModName) Then
+                ModName = PartFileName
+            End If
 
-        'Check to see if the part script is null. If so, throw exception.
-        If PartScript Is Nothing Then
-            Throw New Exceptions.ModNoPartsException(DoTranslation("Mod part is nothing."))
-        End If
+            'Check to see if the part script is null. If so, throw exception.
+            If PartScript Is Nothing Then
+                Throw New Exceptions.ModNoPartsException(DoTranslation("Mod part is nothing."))
+            End If
 
-        'Install values to new instance
-        Me.ModName = ModName
-        Me.PartName = PartName
-        Me.PartFileName = PartFileName
-        Me.PartFilePath = PartFilePath
-        Me.PartScript = PartScript
-    End Sub
+            'Install values to new instance
+            Me.ModName = ModName
+            Me.PartName = PartName
+            Me.PartFileName = PartFileName
+            Me.PartFilePath = PartFilePath
+            Me.PartScript = PartScript
+        End Sub
 
-End Class
+    End Class
+End Namespace

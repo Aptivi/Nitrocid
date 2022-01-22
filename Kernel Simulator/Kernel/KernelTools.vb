@@ -31,6 +31,7 @@ Imports KS.Misc.Notifications
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
+Imports KS.Modifications
 
 Namespace Kernel
     Public Module KernelTools

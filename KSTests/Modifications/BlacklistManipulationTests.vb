@@ -18,6 +18,7 @@
 
 Imports KS
 Imports KS.Files
+Imports KS.Modifications
 
 <TestClass()> Public Class BlacklistManipulationTests
 

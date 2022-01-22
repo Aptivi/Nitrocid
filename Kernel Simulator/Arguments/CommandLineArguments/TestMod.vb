@@ -16,6 +16,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
+Imports KS.Modifications
 
 Namespace Arguments.CommandLineArguments
     Class CommandLine_TestModArgument

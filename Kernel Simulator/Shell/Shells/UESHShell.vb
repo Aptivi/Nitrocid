@@ -18,6 +18,7 @@
 
 Imports KS.Kernel
 Imports KS.Misc.Screensaver
+Imports KS.Modifications
 
 Public Class UESHShell
     Inherits ShellExecutor

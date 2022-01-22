@@ -18,49 +18,51 @@
 
 Imports KS.Kernel
 
-Public Class ModInfo
+Namespace Modifications
+    Public Class ModInfo
 
-    ''' <summary>
-    ''' The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
-    ''' </summary>
-    Public ReadOnly Property ModName As String
-    ''' <summary>
-    ''' The mod file name
-    ''' </summary>
-    Public ReadOnly Property ModFileName As String
-    ''' <summary>
-    ''' The mod file path
-    ''' </summary>
-    Public ReadOnly Property ModFilePath As String
-    ''' <summary>
-    ''' The mod parts and their scripts
-    ''' </summary>
-    Friend Property ModParts As Dictionary(Of String, PartInfo)
-    ''' <summary>
-    ''' The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
-    ''' </summary>
-    Public ReadOnly Property ModVersion As String
+        ''' <summary>
+        ''' The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
+        ''' </summary>
+        Public ReadOnly Property ModName As String
+        ''' <summary>
+        ''' The mod file name
+        ''' </summary>
+        Public ReadOnly Property ModFileName As String
+        ''' <summary>
+        ''' The mod file path
+        ''' </summary>
+        Public ReadOnly Property ModFilePath As String
+        ''' <summary>
+        ''' The mod parts and their scripts
+        ''' </summary>
+        Friend Property ModParts As Dictionary(Of String, PartInfo)
+        ''' <summary>
+        ''' The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
+        ''' </summary>
+        Public ReadOnly Property ModVersion As String
 
-    ''' <summary>
-    ''' Creates new mod info instance
-    ''' </summary>
-    Friend Sub New(ModName As String, ModFileName As String, ModFilePath As String, ModParts As Dictionary(Of String, PartInfo), ModVersion As String)
-        'Validate values. Check to see if the name is null. If so, it will take the mod file name.
-        If String.IsNullOrWhiteSpace(ModName) Then
-            ModName = ModFileName
-        End If
+        ''' <summary>
+        ''' Creates new mod info instance
+        ''' </summary>
+        Friend Sub New(ModName As String, ModFileName As String, ModFilePath As String, ModParts As Dictionary(Of String, PartInfo), ModVersion As String)
+            'Validate values. Check to see if the name is null. If so, it will take the mod file name.
+            If String.IsNullOrWhiteSpace(ModName) Then
+                ModName = ModFileName
+            End If
 
-        'Check to see if the mod parts is null or zero. If so, throw exception.
-        If ModParts Is Nothing OrElse ModParts.Count = 0 Then
-            Throw New Exceptions.ModNoPartsException(DoTranslation("There are no parts in mod."))
-        End If
+            'Check to see if the mod parts is null or zero. If so, throw exception.
+            If ModParts Is Nothing OrElse ModParts.Count = 0 Then
+                Throw New Exceptions.ModNoPartsException(DoTranslation("There are no parts in mod."))
+            End If
 
-        'Install values to new instance
-        Me.ModName = ModName
-        Me.ModFileName = ModFileName
-        Me.ModFilePath = ModFilePath
-        Me.ModParts = ModParts
-        Me.ModVersion = ModVersion
-    End Sub
+            'Install values to new instance
+            Me.ModName = ModName
+            Me.ModFileName = ModFileName
+            Me.ModFilePath = ModFilePath
+            Me.ModParts = ModParts
+            Me.ModVersion = ModVersion
+        End Sub
 
-End Class
+    End Class
+End Namespace

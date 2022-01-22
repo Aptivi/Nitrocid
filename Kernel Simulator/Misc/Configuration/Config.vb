@@ -36,6 +36,7 @@ Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
+Imports KS.Modifications
 
 Namespace Misc.Configuration
     Public Module Config

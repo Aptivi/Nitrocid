@@ -16,49 +16,51 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Interface for mods
-''' </summary>
-Public Interface IScript
+Namespace Modifications
     ''' <summary>
-    ''' List of commands for mod
+    ''' Interface for mods
     ''' </summary>
-    Property Commands As Dictionary(Of String, CommandInfo)
-    ''' <summary>
-    ''' Mod name
-    ''' </summary>
-    Property Name As String
-    ''' <summary>
-    ''' Name of part of mod
-    ''' </summary>
-    Property ModPart As String
-    ''' <summary>
-    ''' Mod version
-    ''' </summary>
-    Property Version As String
-    ''' <summary>
-    ''' Code executed when starting mod
-    ''' </summary>
-    Sub StartMod()
-    ''' <summary>
-    ''' Code executed when stopping mod
-    ''' </summary>
-    Sub StopMod()
-    ''' <summary>
-    ''' Code executed when performing command
-    ''' </summary>
-    ''' <param name="Command">A command.</param>
-    ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
-    Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
-    ''' <summary>
-    ''' Code executed when initializing events
-    ''' </summary>
-    ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
-    Sub InitEvents(ev As String)
-    ''' <summary>
-    ''' Code executed when initializing events
-    ''' </summary>
-    ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
-    ''' <param name="Args">Arguments.</param>
-    Sub InitEvents(ev As String, ParamArray Args() As Object)
-End Interface
+    Public Interface IScript
+        ''' <summary>
+        ''' List of commands for mod
+        ''' </summary>
+        Property Commands As Dictionary(Of String, CommandInfo)
+        ''' <summary>
+        ''' Mod name
+        ''' </summary>
+        Property Name As String
+        ''' <summary>
+        ''' Name of part of mod
+        ''' </summary>
+        Property ModPart As String
+        ''' <summary>
+        ''' Mod version
+        ''' </summary>
+        Property Version As String
+        ''' <summary>
+        ''' Code executed when starting mod
+        ''' </summary>
+        Sub StartMod()
+        ''' <summary>
+        ''' Code executed when stopping mod
+        ''' </summary>
+        Sub StopMod()
+        ''' <summary>
+        ''' Code executed when performing command
+        ''' </summary>
+        ''' <param name="Command">A command.</param>
+        ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
+        Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
+        ''' <summary>
+        ''' Code executed when initializing events
+        ''' </summary>
+        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
+        Sub InitEvents(ev As String)
+        ''' <summary>
+        ''' Code executed when initializing events
+        ''' </summary>
+        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
+        ''' <param name="Args">Arguments.</param>
+        Sub InitEvents(ev As String, ParamArray Args() As Object)
+    End Interface
+End Namespace

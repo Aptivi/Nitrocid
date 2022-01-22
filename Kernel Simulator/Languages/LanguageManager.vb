@@ -20,6 +20,7 @@ Imports System.IO
 Imports Newtonsoft.Json.Linq
 Imports KS.Kernel
 Imports KS.Misc.Configuration
+Imports KS.Modifications
 
 Namespace Languages
     Public Module LanguageManager
