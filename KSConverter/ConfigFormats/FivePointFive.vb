@@ -25,6 +25,14 @@ Imports KS.Misc.Forecast
 Imports KS.Misc.Screensaver
 Imports KS.Misc.TextEdit
 Imports KS.Misc.Writers.DebugWriters
+Imports KS.Network.FTP
+Imports KS.Network.Mail.Directory
+Imports KS.Network.Mail
+Imports KS.Network.RemoteDebug
+Imports KS.Network.RPC
+Imports KS.Network.SFTP
+Imports KS.Network.SSH
+Imports KS.Network
 Imports MadMilkman.Ini
 Imports Extensification.StringExts
 Imports Core

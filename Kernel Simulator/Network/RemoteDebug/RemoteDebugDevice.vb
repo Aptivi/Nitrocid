@@ -19,38 +19,40 @@
 Imports System.IO
 Imports System.Net.Sockets
 
-Public Class RemoteDebugDevice
+Namespace Network.RemoteDebug
+    Public Class RemoteDebugDevice
 
-    ''' <summary>
-    ''' The client socket
-    ''' </summary>
-    Public ReadOnly Property ClientSocket As Socket
-    ''' <summary>
-    ''' The client stream
-    ''' </summary>
-    Public ReadOnly Property ClientStream As NetworkStream
-    ''' <summary>
-    ''' The client stream writer
-    ''' </summary>
-    Public ReadOnly Property ClientStreamWriter As StreamWriter
-    ''' <summary>
-    ''' The client IP address
-    ''' </summary>
-    Public ReadOnly Property ClientIP As String
-    ''' <summary>
-    ''' The client name
-    ''' </summary>
-    Public Property ClientName As String
+        ''' <summary>
+        ''' The client socket
+        ''' </summary>
+        Public ReadOnly Property ClientSocket As Socket
+        ''' <summary>
+        ''' The client stream
+        ''' </summary>
+        Public ReadOnly Property ClientStream As NetworkStream
+        ''' <summary>
+        ''' The client stream writer
+        ''' </summary>
+        Public ReadOnly Property ClientStreamWriter As StreamWriter
+        ''' <summary>
+        ''' The client IP address
+        ''' </summary>
+        Public ReadOnly Property ClientIP As String
+        ''' <summary>
+        ''' The client name
+        ''' </summary>
+        Public Property ClientName As String
 
-    ''' <summary>
-    ''' Makes a new instance of a remote debug device
-    ''' </summary>
-    Public Sub New(ClientSocket As Socket, ClientStream As NetworkStream, ClientIP As String, ClientName As String)
-        Me.ClientSocket = ClientSocket
-        Me.ClientStream = ClientStream
-        ClientStreamWriter = New StreamWriter(ClientStream) With {.AutoFlush = True}
-        Me.ClientIP = ClientIP
-        Me.ClientName = ClientName
-    End Sub
+        ''' <summary>
+        ''' Makes a new instance of a remote debug device
+        ''' </summary>
+        Public Sub New(ClientSocket As Socket, ClientStream As NetworkStream, ClientIP As String, ClientName As String)
+            Me.ClientSocket = ClientSocket
+            Me.ClientStream = ClientStream
+            ClientStreamWriter = New StreamWriter(ClientStream) With {.AutoFlush = True}
+            Me.ClientIP = ClientIP
+            Me.ClientName = ClientName
+        End Sub
 
-End Class
+    End Class
+End Namespace

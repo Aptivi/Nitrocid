@@ -16,29 +16,33 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RSS_ArticleInfoCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.RSS.Instance
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim ArticleIndex As Integer = ListArgs(0) - 1
-        If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
-            Write(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-            Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
-        Else
-            Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
-            Write("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
-            Write(Article.ArticleTitle, True, ColTypes.ListValue)
-            Write("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
-            Write(Article.ArticleLink, True, ColTypes.ListValue)
-            For Each Variable As String In Article.ArticleVariables.Keys
-                If Not Variable = "title" And Not Variable = "link" And Not Variable = "summary" And Not Variable = "description" And Not Variable = "content" Then
-                    Write("- {0}: ", False, ColTypes.ListEntry, Variable)
-                    Write(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
-                End If
-            Next
-            Write(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
-        End If
-    End Sub
+Namespace Network.RSS.Commands
+    Class RSS_ArticleInfoCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ArticleIndex As Integer = ListArgs(0) - 1
+            If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                Write(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
+                Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+            Else
+                Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
+                Write("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+                Write(Article.ArticleTitle, True, ColTypes.ListValue)
+                Write("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+                Write(Article.ArticleLink, True, ColTypes.ListValue)
+                For Each Variable As String In Article.ArticleVariables.Keys
+                    If Not Variable = "title" And Not Variable = "link" And Not Variable = "summary" And Not Variable = "description" And Not Variable = "content" Then
+                        Write("- {0}: ", False, ColTypes.ListEntry, Variable)
+                        Write(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
+                    End If
+                Next
+                Write(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
+            End If
+        End Sub
+
+    End Class
+End Namespace

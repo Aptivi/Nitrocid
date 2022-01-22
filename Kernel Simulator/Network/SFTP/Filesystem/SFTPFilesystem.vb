@@ -20,169 +20,171 @@ Imports System.Reflection
 Imports System.Text
 Imports KS.Kernel
 
-Module SFTPFilesystem
+Namespace Network.SFTP.Filesystem
+    Module SFTPFilesystem
 
-    ''' <summary>
-    ''' Lists remote folders and files
-    ''' </summary>
-    ''' <param name="Path">Path to folder</param>
-    ''' <returns>The list if successful; null if unsuccessful</returns>
-    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    Public Function SFTPListRemote(Path As String) As List(Of String)
-        SFTPListRemote(Path, SFTPShowDetailsInList)
-    End Function
+        ''' <summary>
+        ''' Lists remote folders and files
+        ''' </summary>
+        ''' <param name="Path">Path to folder</param>
+        ''' <returns>The list if successful; null if unsuccessful</returns>
+        ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        Public Function SFTPListRemote(Path As String) As List(Of String)
+            SFTPListRemote(Path, SFTPShowDetailsInList)
+        End Function
 
-    ''' <summary>
-    ''' Lists remote folders and files
-    ''' </summary>
-    ''' <param name="Path">Path to folder</param>
-    ''' <param name="ShowDetails">Shows the details of the file</param>
-    ''' <returns>The list if successful; null if unsuccessful</returns>
-    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    Public Function SFTPListRemote(Path As String, ShowDetails As Boolean) As List(Of String)
-        If SFTPConnected Then
-            Dim EntryBuilder As New StringBuilder
-            Dim Entries As New List(Of String)
-            Dim FileSize As Long
-            Dim ModDate As Date
-            Dim Listing As IEnumerable(Of Sftp.SftpFile)
+        ''' <summary>
+        ''' Lists remote folders and files
+        ''' </summary>
+        ''' <param name="Path">Path to folder</param>
+        ''' <param name="ShowDetails">Shows the details of the file</param>
+        ''' <returns>The list if successful; null if unsuccessful</returns>
+        ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        Public Function SFTPListRemote(Path As String, ShowDetails As Boolean) As List(Of String)
+            If SFTPConnected Then
+                Dim EntryBuilder As New StringBuilder
+                Dim Entries As New List(Of String)
+                Dim FileSize As Long
+                Dim ModDate As Date
+                Dim Listing As IEnumerable(Of Renci.SshNet.Sftp.SftpFile)
 
-            Try
-                If Path <> "" Then
-                    Listing = ClientSFTP.ListDirectory(Path)
-                Else
-                    Listing = ClientSFTP.ListDirectory(SFTPCurrentRemoteDir)
-                End If
-                For Each DirListSFTP As Sftp.SftpFile In Listing
-                    EntryBuilder.Append($"- {DirListSFTP.Name}")
-                    'Check to see if the file that we're dealing with is a symbolic link
-                    If DirListSFTP.IsSymbolicLink Then
-                        EntryBuilder.Append(" >> ")
-                        EntryBuilder.Append(SFTPGetCanonicalPath(DirListSFTP.FullName))
+                Try
+                    If Path <> "" Then
+                        Listing = ClientSFTP.ListDirectory(Path)
+                    Else
+                        Listing = ClientSFTP.ListDirectory(SFTPCurrentRemoteDir)
                     End If
-
-                    If DirListSFTP.IsRegularFile Then
-                        EntryBuilder.Append(": ")
-                        If ShowDetails Then
-                            FileSize = DirListSFTP.Length
-                            ModDate = DirListSFTP.LastWriteTime
-                            EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                    For Each DirListSFTP As Renci.SshNet.Sftp.SftpFile In Listing
+                        EntryBuilder.Append($"- {DirListSFTP.Name}")
+                        'Check to see if the file that we're dealing with is a symbolic link
+                        If DirListSFTP.IsSymbolicLink Then
+                            EntryBuilder.Append(" >> ")
+                            EntryBuilder.Append(SFTPGetCanonicalPath(DirListSFTP.FullName))
                         End If
-                    ElseIf DirListSFTP.IsDirectory Then
-                        EntryBuilder.Append("/")
-                    End If
-                    Entries.Add(EntryBuilder.ToString)
-                    EntryBuilder.Clear()
-                Next
-                Return Entries
-            Catch ex As Exception
-                WStkTrc(ex)
-                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}"), ex, ex.Message)
-            End Try
-        Else
-            Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files."))
-        End If
-        Return Nothing
-    End Function
 
-    ''' <summary>
-    ''' Removes remote file or folder
-    ''' </summary>
-    ''' <param name="Target">Target folder or file</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
-    Public Function SFTPDeleteRemote(Target As String) As Boolean
-        If SFTPConnected Then
-            Wdbg(DebugLevel.I, "Deleting {0}...", Target)
+                        If DirListSFTP.IsRegularFile Then
+                            EntryBuilder.Append(": ")
+                            If ShowDetails Then
+                                FileSize = DirListSFTP.Length
+                                ModDate = DirListSFTP.LastWriteTime
+                                EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                            End If
+                        ElseIf DirListSFTP.IsDirectory Then
+                            EntryBuilder.Append("/")
+                        End If
+                        Entries.Add(EntryBuilder.ToString)
+                        EntryBuilder.Clear()
+                    Next
+                    Return Entries
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Throw New Exceptions.SFTPFilesystemException(DoTranslation("Failed to list remote files: {0}"), ex, ex.Message)
+                End Try
+            Else
+                Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files."))
+            End If
+            Return Nothing
+        End Function
 
-            'Delete a file or folder
-            If ClientSFTP.Exists(Target) Then
+        ''' <summary>
+        ''' Removes remote file or folder
+        ''' </summary>
+        ''' <param name="Target">Target folder or file</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
+        Public Function SFTPDeleteRemote(Target As String) As Boolean
+            If SFTPConnected Then
                 Wdbg(DebugLevel.I, "Deleting {0}...", Target)
-                ClientSFTP.Delete(Target)
-            Else
-                Wdbg(DebugLevel.E, "{0} is not found.", Target)
-                Throw New Exceptions.SFTPFilesystemException(DoTranslation("{0} is not found in the server."), Target)
-                Return False
-            End If
-            Wdbg(DebugLevel.I, "Deleted {0}", Target)
-            Return True
-        Else
-            Throw New Exceptions.SFTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion."))
-        End If
-        Return False
-    End Function
 
-    ''' <summary>
-    ''' Changes FTP remote directory
-    ''' </summary>
-    ''' <param name="Directory">Remote directory</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="ArgumentNullException"></exception>
-    Public Function SFTPChangeRemoteDir(Directory As String) As Boolean
-        If SFTPConnected = True Then
-            If Directory <> "" Then
-                If ClientSFTP.Exists(Directory) Then
-                    'Directory exists, go to the new directory
-                    ClientSFTP.ChangeDirectory(Directory)
-                    SFTPCurrentRemoteDir = ClientSFTP.WorkingDirectory
-                    Return True
+                'Delete a file or folder
+                If ClientSFTP.Exists(Target) Then
+                    Wdbg(DebugLevel.I, "Deleting {0}...", Target)
+                    ClientSFTP.Delete(Target)
                 Else
-                    'Directory doesn't exist, go to the old directory
-                    Throw New Exceptions.SFTPFilesystemException(DoTranslation("Directory {0} not found."), Directory)
+                    Wdbg(DebugLevel.E, "{0} is not found.", Target)
+                    Throw New Exceptions.SFTPFilesystemException(DoTranslation("{0} is not found in the server."), Target)
+                    Return False
                 End If
-            Else
-                Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory. "".."" to go back"))
-            End If
-        Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to a server before changing directory"))
-        End If
-        Return False
-    End Function
-
-    Public Function SFTPChangeLocalDir(Directory As String) As Boolean
-        If Directory <> "" Then
-            Dim targetDir As String
-            targetDir = $"{SFTPCurrDirect}/{Directory}"
-            ThrowOnInvalidPath(targetDir)
-
-            'Check if folder exists
-            If FolderExists(targetDir) Then
-                'Parse written directory
-                Dim parser As New IO.DirectoryInfo(targetDir)
-                SFTPCurrDirect = parser.FullName
+                Wdbg(DebugLevel.I, "Deleted {0}", Target)
                 Return True
             Else
-                Throw New Exceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist."), Directory)
+                Throw New Exceptions.SFTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion."))
             End If
-        Else
-            Throw New ArgumentNullException(Directory, DoTranslation("Enter a local directory. "".."" to go back."))
-        End If
-        Return False
-    End Function
+            Return False
+        End Function
 
-    ''' <summary>
-    ''' Gets the absolute path for the given path
-    ''' </summary>
-    ''' <param name="Path">The remote path</param>
-    ''' <returns>Absolute path for a remote path</returns>
-    Public Function SFTPGetCanonicalPath(Path As String) As String
-        If SFTPConnected Then
-            'GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
-            Dim SFTPType As Type = ClientSFTP.GetType
-            Dim SFTPSessionField As FieldInfo = SFTPType.GetField("_sftpSession", BindingFlags.Instance Or BindingFlags.NonPublic)
-            Dim SFTPSession As Object = SFTPSessionField.GetValue(ClientSFTP)
-            Dim SFTPSessionType As Type = SFTPSession.GetType
-            Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
-            Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {Path})
-            Wdbg(DebugLevel.I, "Canonical path: {0}", CanonicalPath)
-            Return CanonicalPath
-        Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing filesystem operations."))
-        End If
-    End Function
+        ''' <summary>
+        ''' Changes FTP remote directory
+        ''' </summary>
+        ''' <param name="Directory">Remote directory</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="ArgumentNullException"></exception>
+        Public Function SFTPChangeRemoteDir(Directory As String) As Boolean
+            If SFTPConnected = True Then
+                If Directory <> "" Then
+                    If ClientSFTP.Exists(Directory) Then
+                        'Directory exists, go to the new directory
+                        ClientSFTP.ChangeDirectory(Directory)
+                        SFTPCurrentRemoteDir = ClientSFTP.WorkingDirectory
+                        Return True
+                    Else
+                        'Directory doesn't exist, go to the old directory
+                        Throw New Exceptions.SFTPFilesystemException(DoTranslation("Directory {0} not found."), Directory)
+                    End If
+                Else
+                    Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory. "".."" to go back"))
+                End If
+            Else
+                Throw New InvalidOperationException(DoTranslation("You must connect to a server before changing directory"))
+            End If
+            Return False
+        End Function
 
-End Module
+        Public Function SFTPChangeLocalDir(Directory As String) As Boolean
+            If Directory <> "" Then
+                Dim targetDir As String
+                targetDir = $"{SFTPCurrDirect}/{Directory}"
+                ThrowOnInvalidPath(targetDir)
+
+                'Check if folder exists
+                If FolderExists(targetDir) Then
+                    'Parse written directory
+                    Dim parser As New IO.DirectoryInfo(targetDir)
+                    SFTPCurrDirect = parser.FullName
+                    Return True
+                Else
+                    Throw New Exceptions.SFTPFilesystemException(DoTranslation("Local directory {0} doesn't exist."), Directory)
+                End If
+            Else
+                Throw New ArgumentNullException(Directory, DoTranslation("Enter a local directory. "".."" to go back."))
+            End If
+            Return False
+        End Function
+
+        ''' <summary>
+        ''' Gets the absolute path for the given path
+        ''' </summary>
+        ''' <param name="Path">The remote path</param>
+        ''' <returns>Absolute path for a remote path</returns>
+        Public Function SFTPGetCanonicalPath(Path As String) As String
+            If SFTPConnected Then
+                'GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
+                Dim SFTPType As Type = ClientSFTP.GetType
+                Dim SFTPSessionField As FieldInfo = SFTPType.GetField("_sftpSession", BindingFlags.Instance Or BindingFlags.NonPublic)
+                Dim SFTPSession As Object = SFTPSessionField.GetValue(ClientSFTP)
+                Dim SFTPSessionType As Type = SFTPSession.GetType
+                Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
+                Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {Path})
+                Wdbg(DebugLevel.I, "Canonical path: {0}", CanonicalPath)
+                Return CanonicalPath
+            Else
+                Throw New InvalidOperationException(DoTranslation("You must connect to server before performing filesystem operations."))
+            End If
+        End Function
+
+    End Module
+End Namespace

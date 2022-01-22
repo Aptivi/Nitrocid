@@ -16,31 +16,33 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_DisconnectCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_DisconnectCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If FtpConnected = True Then
-            'Set a connected flag to False
-            FtpConnected = False
-            ClientFTP.UngracefullDisconnection = ListSwitchesOnly.Contains("-f")
-            ClientFTP.Disconnect()
-            Write(DoTranslation("Disconnected from {0}"), True, ColTypes.Success, FtpSite)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If FtpConnected = True Then
+                'Set a connected flag to False
+                FtpConnected = False
+                ClientFTP.UngracefullDisconnection = ListSwitchesOnly.Contains("-f")
+                ClientFTP.Disconnect()
+                Write(DoTranslation("Disconnected from {0}"), True, ColTypes.Success, FtpSite)
 
-            'Clean up everything
-            FtpSite = ""
-            FtpCurrentRemoteDir = ""
-            FtpUser = ""
-            FtpPass = ""
-        Else
-            Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
-        End If
-    End Sub
+                'Clean up everything
+                FtpSite = ""
+                FtpCurrentRemoteDir = ""
+                FtpUser = ""
+                FtpPass = ""
+            Else
+                Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
+            End If
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -f: ", False, ColTypes.ListEntry) : Write(DoTranslation("Disconnects from server disgracefully"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -f: ", False, ColTypes.ListEntry) : Write(DoTranslation("Disconnects from server disgracefully"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

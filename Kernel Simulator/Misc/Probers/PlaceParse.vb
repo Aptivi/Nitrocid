@@ -18,6 +18,9 @@
 
 Imports System.IO
 Imports KS.Kernel
+Imports KS.Network.FTP
+Imports KS.Network.Mail
+Imports KS.Network.SFTP
 
 Namespace Misc.Probers
     Public Module PlaceParse

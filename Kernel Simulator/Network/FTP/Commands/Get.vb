@@ -16,22 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_GetCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Transfer
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim RemoteFile As String = ListArgs(0)
-        Dim LocalFile As String = If(ListArgs.Count > 1, ListArgs(1), "")
-        Write(DoTranslation("Downloading file {0}..."), False, ColTypes.Progress, RemoteFile)
-        Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFile), FTPGetFile(RemoteFile, LocalFile), FTPGetFile(RemoteFile))
-        If Result Then
-            Console.WriteLine()
-            Write(DoTranslation("Downloaded file {0}."), True, ColTypes.Success, RemoteFile)
-        Else
-            Console.WriteLine()
-            Write(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, RemoteFile)
-        End If
-    End Sub
+Namespace Network.FTP.Commands
+    Class FTP_GetCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RemoteFile As String = ListArgs(0)
+            Dim LocalFile As String = If(ListArgs.Count > 1, ListArgs(1), "")
+            Write(DoTranslation("Downloading file {0}..."), False, ColTypes.Progress, RemoteFile)
+            Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFile), FTPGetFile(RemoteFile, LocalFile), FTPGetFile(RemoteFile))
+            If Result Then
+                Console.WriteLine()
+                Write(DoTranslation("Downloaded file {0}."), True, ColTypes.Success, RemoteFile)
+            Else
+                Console.WriteLine()
+                Write(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, RemoteFile)
+            End If
+        End Sub
+
+    End Class
+End Namespace

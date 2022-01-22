@@ -18,14 +18,14 @@
 
 Imports KS.TextWriterColor
 Imports KS.ConsoleBase
-Imports KS.RemoteDebugTools
-Imports KS.NetworkTools
 Imports KS.AliasManager
+Imports KS.Network.RemoteDebug
 Imports System.IO
 Imports FluentFTP
 Imports KS.Misc.Configuration
 Imports KS.Misc.Platform
 Imports KS.Misc.Writers.FancyWriters
+Imports KS.Network
 
 Module Converter
 

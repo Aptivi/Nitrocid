@@ -16,21 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_SumFileCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Filesystem
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim RemoteFile As String = ListArgs(0)
-        Dim Hash As String = ListArgs(1)
+Namespace Network.FTP.Commands
+    Class FTP_SumFileCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-        'Check to see if hash is found
-        If [Enum].IsDefined(GetType(FtpHashAlgorithm), Hash) Then
-            Dim HashResult As FtpHash = FTPGetHash(RemoteFile, [Enum].Parse(GetType(FtpHashAlgorithm), Hash))
-            Write(HashResult.Value, True, ColTypes.Neutral)
-        Else
-            Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RemoteFile As String = ListArgs(0)
+            Dim Hash As String = ListArgs(1)
 
-End Class
+            'Check to see if hash is found
+            If [Enum].IsDefined(GetType(FtpHashAlgorithm), Hash) Then
+                Dim HashResult As FtpHash = FTPGetHash(RemoteFile, [Enum].Parse(GetType(FtpHashAlgorithm), Hash))
+                Write(HashResult.Value, True, ColTypes.Neutral)
+            Else
+                Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+            End If
+        End Sub
+
+    End Class
+End Namespace

@@ -16,18 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class HTTP_SetSiteCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.HTTP.Commands
+    Class HTTP_SetSiteCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            Dim SiteUri As New Uri(StringArgs)
-            Write(DoTranslation("Setting site to") + " {0}...", True, ColTypes.Progress, SiteUri.ToString)
-            HTTPSite = SiteUri.ToString
-        Catch ex As Exception
-            Write(DoTranslation("The site URI format is invalid."), True, ColTypes.Error)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                Dim SiteUri As New Uri(StringArgs)
+                Write(DoTranslation("Setting site to") + " {0}...", True, ColTypes.Progress, SiteUri.ToString)
+                HTTPSite = SiteUri.ToString
+            Catch ex As Exception
+                Write(DoTranslation("The site URI format is invalid."), True, ColTypes.Error)
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

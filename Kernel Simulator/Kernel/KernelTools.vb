@@ -32,6 +32,10 @@ Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
+Imports KS.Network.Mail
+Imports KS.Network.RemoteDebug
+Imports KS.Network.RPC
+Imports KS.Network
 
 Namespace Kernel
     Public Module KernelTools

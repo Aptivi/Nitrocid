@@ -16,28 +16,32 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_DelCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Filesystem
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If FtpConnected = True Then
-            'Print a message
-            Write(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
+Namespace Network.FTP.Commands
+    Class FTP_DelCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-            'Make a confirmation message so user will not accidentally delete a file or folder
-            Write(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))
-            Dim answer As String = Console.ReadKey.KeyChar
-            Console.WriteLine()
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If FtpConnected = True Then
+                'Print a message
+                Write(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
 
-            Try
-                FTPDeleteRemote(ListArgs(0))
-            Catch ex As Exception
-                Write(ex.Message, True, ColTypes.Error)
-            End Try
-        Else
-            Write(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
-        End If
-    End Sub
+                'Make a confirmation message so user will not accidentally delete a file or folder
+                Write(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))
+                Dim answer As String = Console.ReadKey.KeyChar
+                Console.WriteLine()
 
-End Class
+                Try
+                    FTPDeleteRemote(ListArgs(0))
+                Catch ex As Exception
+                    Write(ex.Message, True, ColTypes.Error)
+                End Try
+            Else
+                Write(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
+            End If
+        End Sub
+
+    End Class
+End Namespace

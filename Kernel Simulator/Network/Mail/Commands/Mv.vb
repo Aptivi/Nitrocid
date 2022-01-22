@@ -16,17 +16,21 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_MvCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.Mail.Directory
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Wdbg(DebugLevel.I, "Message number is numeric? {0}", ListArgs(0).IsNumeric)
-        If ListArgs(0).IsNumeric Then
-            MailMoveMessage(ListArgs(0), ListArgs(1))
-        Else
-            Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
-        End If
-    End Sub
+Namespace Network.Mail.Commands
+    Class Mail_MvCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Wdbg(DebugLevel.I, "Message number is numeric? {0}", ListArgs(0).IsNumeric)
+            If ListArgs(0).IsNumeric Then
+                MailMoveMessage(ListArgs(0), ListArgs(1))
+            Else
+                Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+            End If
+        End Sub
+
+    End Class
+End Namespace

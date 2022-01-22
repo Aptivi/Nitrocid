@@ -20,45 +20,47 @@ Imports MailKit
 Imports MailKit.Net.Imap
 Imports KS.Misc.Notifications
 
-Public Module MailHandlers
+Namespace Network.Mail
+    Public Module MailHandlers
 
-    ''' <summary>
-    ''' Initializes the CountChanged handlers. Currently, it only supports inbox.
-    ''' </summary>
-    Public Sub InitializeHandlers()
-        AddHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
-    End Sub
+        ''' <summary>
+        ''' Initializes the CountChanged handlers. Currently, it only supports inbox.
+        ''' </summary>
+        Public Sub InitializeHandlers()
+            AddHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
+        End Sub
 
-    ''' <summary>
-    ''' Releases the CountChanged handlers. Currently, it only supports inbox.
-    ''' </summary>
-    Public Sub ReleaseHandlers()
-        RemoveHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
-    End Sub
+        ''' <summary>
+        ''' Releases the CountChanged handlers. Currently, it only supports inbox.
+        ''' </summary>
+        Public Sub ReleaseHandlers()
+            RemoveHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
+        End Sub
 
-    ''' <summary>
-    ''' Handles WebAlert sent by Gmail
-    ''' </summary>
-    Sub HandleWebAlert(sender As Object, e As WebAlertEventArgs)
-        Wdbg(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
-        Write(e.Message, True, ColTypes.Warning)
-        Write(DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), True, ColTypes.Neutral)
-        Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
-    End Sub
+        ''' <summary>
+        ''' Handles WebAlert sent by Gmail
+        ''' </summary>
+        Sub HandleWebAlert(sender As Object, e As WebAlertEventArgs)
+            Wdbg(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
+            Write(e.Message, True, ColTypes.Warning)
+            Write(DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), True, ColTypes.Neutral)
+            Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
+        End Sub
 
-    ''' <summary>
-    ''' Executed when the CountChanged event is fired.
-    ''' </summary>
-    ''' <param name="Sender">A folder</param>
-    ''' <param name="e">Event arguments</param>
-    Sub OnCountChanged(Sender As Object, e As EventArgs)
-        Dim Folder As ImapFolder = Sender
-        If Folder.Count > IMAP_Messages.Count Then
-            Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
-            NotifySend(New Notification(DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
-                                        DoTranslation("Open ""mail"" to see them."),
-                                        NotifPriority.Medium, NotifType.Normal))
-        End If
-    End Sub
+        ''' <summary>
+        ''' Executed when the CountChanged event is fired.
+        ''' </summary>
+        ''' <param name="Sender">A folder</param>
+        ''' <param name="e">Event arguments</param>
+        Sub OnCountChanged(Sender As Object, e As EventArgs)
+            Dim Folder As ImapFolder = Sender
+            If Folder.Count > IMAP_Messages.Count Then
+                Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
+                NotifySend(New Notification(DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
+                                            DoTranslation("Open ""mail"" to see them."),
+                                            NotifPriority.Medium, NotifType.Normal))
+            End If
+        End Sub
 
-End Module
+    End Module
+End Namespace

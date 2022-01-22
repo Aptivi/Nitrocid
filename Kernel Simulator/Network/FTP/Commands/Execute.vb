@@ -16,25 +16,27 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_ExecuteCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_ExecuteCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If FtpConnected Then
-            Write("<<< C: {0}", True, ColTypes.Neutral, StringArgs)
-            Dim ExecutedReply As FtpReply = ClientFTP.Execute(StringArgs)
-            If ExecutedReply.Success Then
-                Write(">>> [{0}] M: {1}", True, ColTypes.Success, ExecutedReply.Code, ExecutedReply.Message)
-                Write(">>> [{0}] I: {1}", True, ColTypes.Success, ExecutedReply.Code, ExecutedReply.InfoMessages)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If FtpConnected Then
+                Write("<<< C: {0}", True, ColTypes.Neutral, StringArgs)
+                Dim ExecutedReply As FtpReply = ClientFTP.Execute(StringArgs)
+                If ExecutedReply.Success Then
+                    Write(">>> [{0}] M: {1}", True, ColTypes.Success, ExecutedReply.Code, ExecutedReply.Message)
+                    Write(">>> [{0}] I: {1}", True, ColTypes.Success, ExecutedReply.Code, ExecutedReply.InfoMessages)
+                Else
+                    Write(">>> [{0}] M: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.Message)
+                    Write(">>> [{0}] I: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.InfoMessages)
+                    Write(">>> [{0}] E: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage)
+                End If
             Else
-                Write(">>> [{0}] M: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.Message)
-                Write(">>> [{0}] I: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.InfoMessages)
-                Write(">>> [{0}] E: {1}", True, ColTypes.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage)
+                Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
             End If
-        Else
-            Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

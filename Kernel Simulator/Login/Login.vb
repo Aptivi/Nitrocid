@@ -18,6 +18,7 @@
 
 Imports KS.Misc.Encryption
 Imports KS.Misc.Screensaver
+Imports KS.Network.RSS
 
 Namespace Login
     Public Module Login

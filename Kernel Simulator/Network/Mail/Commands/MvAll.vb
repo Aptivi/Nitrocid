@@ -16,16 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_MvAllCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.Mail.Directory
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If MailMoveAllBySender(ListArgs(0), ListArgs(1)) Then
-            Write(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Success, ListArgs(0))
-        Else
-            Write(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
-        End If
-    End Sub
+Namespace Network.Mail.Commands
+    Class Mail_MvAllCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If MailMoveAllBySender(ListArgs(0), ListArgs(1)) Then
+                Write(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Success, ListArgs(0))
+            Else
+                Write(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
+            End If
+        End Sub
+
+    End Class
+End Namespace

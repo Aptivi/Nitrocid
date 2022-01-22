@@ -16,9 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module FTPShellCommon
+Imports KS.Network.FTP.Commands
 
-    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},
+Namespace Network.FTP
+    Public Module FTPShellCommon
+
+        Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},
                                                                                 {"cdl", New CommandInfo("cdl", ShellType.FTPShell, "Changes local directory to download to or upload from", {"<directory>"}, True, 1, New FTP_CdlCommand)},
                                                                                 {"cdr", New CommandInfo("cdr", ShellType.FTPShell, "Changes remote directory to download from or upload to", {"<directory>"}, True, 1, New FTP_CdrCommand)},
                                                                                 {"cp", New CommandInfo("cp", ShellType.FTPShell, "Copies file or directory to another file or directory.", {"<sourcefileordir> <targetfileordir>"}, True, 2, New FTP_CpCommand)},
@@ -42,27 +45,28 @@ Public Module FTPShellCommon
                                                                                 {"sumfile", New CommandInfo("sumfile", ShellType.FTPShell, "Calculates file sums.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFileCommand)},
                                                                                 {"sumfiles", New CommandInfo("sumfiles", ShellType.FTPShell, "Calculates sums of files in specified directory.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFilesCommand)},
                                                                                 {"type", New CommandInfo("type", ShellType.FTPShell, "Sets the type for this session", {"<a/b>"}, True, 1, New FTP_TypeCommand)}}
-    Public FtpConnected As Boolean
-    Public FtpSite As String
-    Public FtpCurrentDirectory As String
-    Public FtpCurrentRemoteDir As String
-    Public FtpUser As String
-    Public FTPModCommands As New ArrayList
-    Public FTPShellPromptStyle As String = ""
-    Public ClientFTP As FtpClient
-    Public FtpShowDetailsInList As Boolean = True
-    Public FtpUserPromptStyle As String = ""
-    Public FtpPassPromptStyle As String = ""
-    Public FtpUseFirstProfile As Boolean
-    Public FtpNewConnectionsToSpeedDial As Boolean = True
-    Public FtpTryToValidateCertificate As Boolean = True
-    Public FtpRecursiveHashing As Boolean
-    Public FtpShowMotd As Boolean = True
-    Public FtpAlwaysAcceptInvalidCerts As Boolean
-    Public FtpVerifyRetryAttempts As Integer = 3
-    Public FtpConnectTimeout As Integer = 15000
-    Public FtpDataConnectTimeout As Integer = 15000
-    Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
-    Friend FtpPass As String
+        Public FtpConnected As Boolean
+        Public FtpSite As String
+        Public FtpCurrentDirectory As String
+        Public FtpCurrentRemoteDir As String
+        Public FtpUser As String
+        Public FTPModCommands As New ArrayList
+        Public FTPShellPromptStyle As String = ""
+        Public ClientFTP As FtpClient
+        Public FtpShowDetailsInList As Boolean = True
+        Public FtpUserPromptStyle As String = ""
+        Public FtpPassPromptStyle As String = ""
+        Public FtpUseFirstProfile As Boolean
+        Public FtpNewConnectionsToSpeedDial As Boolean = True
+        Public FtpTryToValidateCertificate As Boolean = True
+        Public FtpRecursiveHashing As Boolean
+        Public FtpShowMotd As Boolean = True
+        Public FtpAlwaysAcceptInvalidCerts As Boolean
+        Public FtpVerifyRetryAttempts As Integer = 3
+        Public FtpConnectTimeout As Integer = 15000
+        Public FtpDataConnectTimeout As Integer = 15000
+        Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
+        Friend FtpPass As String
 
-End Module
+    End Module
+End Namespace

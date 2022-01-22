@@ -18,6 +18,8 @@
 
 Imports System.Threading
 Imports KS.Kernel
+Imports KS.Network.RSS.Instance
+Imports KS.Network.RSS
 
 Public Class RSSShell
     Inherits ShellExecutor

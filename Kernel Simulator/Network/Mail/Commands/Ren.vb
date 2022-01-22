@@ -16,12 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_RenCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.Mail.Directory
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        RenameMailDirectory(ListArgs(0), ListArgs(1))
-    End Sub
+Namespace Network.Mail.Commands
+    Class Mail_RenCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            RenameMailDirectory(ListArgs(0), ListArgs(1))
+        End Sub
+
+    End Class
+End Namespace

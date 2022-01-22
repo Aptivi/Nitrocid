@@ -16,24 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RSS_ReadCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.RSS.Commands
+    Class RSS_ReadCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim ArticleIndex As Integer = ListArgs(0) - 1
-        If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
-            Write(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-            Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
-        Else
-            If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
-                Wdbg(DebugLevel.I, "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
-                Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ArticleIndex As Integer = ListArgs(0) - 1
+            If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                Write(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
+                Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
             Else
-                Write(DoTranslation("Article doesn't have a link!"), True, ColTypes.Error)
-                Wdbg(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
+                    Wdbg(DebugLevel.I, "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                    Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                Else
+                    Write(DoTranslation("Article doesn't have a link!"), True, ColTypes.Error)
+                    Wdbg(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

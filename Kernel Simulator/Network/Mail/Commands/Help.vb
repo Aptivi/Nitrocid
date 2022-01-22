@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_HelpCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.Mail.Commands
+    Class Mail_HelpCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length > 0 Then
-            ShowHelp(ListArgs(0), ShellType.MailShell)
-        Else
-            ShowHelp(ShellType.MailShell)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Length > 0 Then
+                ShowHelp(ListArgs(0), ShellType.MailShell)
+            Else
+                ShowHelp(ShellType.MailShell)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

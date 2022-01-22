@@ -16,12 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_CdlCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Filesystem
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        FTPChangeLocalDir(ListArgs(0))
-    End Sub
+Namespace Network.FTP.Commands
+    Class FTP_CdlCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            FTPChangeLocalDir(ListArgs(0))
+        End Sub
+
+    End Class
+End Namespace

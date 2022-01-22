@@ -16,16 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RSS_ListCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.RSS.Instance
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
-            Write("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
-            Write(Article.ArticleLink, True, ColTypes.ListValue)
-            Write("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
-        Next
-    End Sub
+Namespace Network.RSS.Commands
+    Class RSS_ListCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
+                Write("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
+                Write(Article.ArticleLink, True, ColTypes.ListValue)
+                Write("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
+            Next
+        End Sub
+
+    End Class
+End Namespace

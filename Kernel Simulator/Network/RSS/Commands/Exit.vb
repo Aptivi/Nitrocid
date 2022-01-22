@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RSS_ExitCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.RSS.Commands
+    Class RSS_ExitCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        KillShell()
-        Write(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
-        SetConsoleColor(InputColor)
-        Dim Answer As Char = Console.ReadKey.KeyChar
-        Console.WriteLine()
-        If Answer = "y" Then
-            RSSKeepAlive = True
-        ElseIf Answer = "n" Then
-            RSSKeepAlive = False
-        Else
-            Write(DoTranslation("Invalid choice. Assuming no..."), True, ColTypes.Input)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            KillShell()
+            Write(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
+            SetConsoleColor(InputColor)
+            Dim Answer As Char = Console.ReadKey.KeyChar
+            Console.WriteLine()
+            If Answer = "y" Then
+                RSSKeepAlive = True
+            ElseIf Answer = "n" Then
+                RSSKeepAlive = False
+            Else
+                Write(DoTranslation("Invalid choice. Assuming no..."), True, ColTypes.Input)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

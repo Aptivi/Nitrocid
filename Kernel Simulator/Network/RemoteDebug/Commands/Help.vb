@@ -17,17 +17,20 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Network.RemoteDebug.Interface
 
-Class Debug_HelpCommand
-    Inherits RemoteDebugCommandExecutor
-    Implements IRemoteDebugCommand
+Namespace Network.RemoteDebug.Commands
+    Class Debug_HelpCommand
+        Inherits RemoteDebugCommandExecutor
+        Implements IRemoteDebugCommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-        If ListArgs?.Length <> 0 Then
-            ShowHelp(ListArgs(0), ShellType.RemoteDebugShell, SocketStreamWriter)
-        Else
-            ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+            If ListArgs?.Length <> 0 Then
+                ShowHelp(ListArgs(0), ShellType.RemoteDebugShell, SocketStreamWriter)
+            Else
+                ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

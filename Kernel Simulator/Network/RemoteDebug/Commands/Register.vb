@@ -17,27 +17,30 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Network.RemoteDebug.Interface
 
-Class Debug_RegisterCommand
-    Inherits RemoteDebugCommandExecutor
-    Implements IRemoteDebugCommand
+Namespace Network.RemoteDebug.Commands
+    Class Debug_RegisterCommand
+        Inherits RemoteDebugCommandExecutor
+        Implements IRemoteDebugCommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-        If String.IsNullOrWhiteSpace(GetDeviceProperty(DeviceAddress, DeviceProperty.Name)) Then
-            If ListArgs.Length <> 0 Then
-                SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgs(0))
-                DebugDevices.Select(Function(Device As RemoteDebugDevice)
-                                        If Device.ClientIP = DeviceAddress Then
-                                            Return Device
-                                        End If
-                                    End Function)(0).ClientName = ListArgs(0)
-                SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgs(0)))
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+            If String.IsNullOrWhiteSpace(GetDeviceProperty(DeviceAddress, DeviceProperty.Name)) Then
+                If ListArgs.Length <> 0 Then
+                    SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgs(0))
+                    DebugDevices.Select(Function(Device As RemoteDebugDevice)
+                                            If Device.ClientIP = DeviceAddress Then
+                                                Return Device
+                                            End If
+                                        End Function)(0).ClientName = ListArgs(0)
+                    SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgs(0)))
+                Else
+                    SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
+                End If
             Else
-                SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
+                SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
             End If
-        Else
-            SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

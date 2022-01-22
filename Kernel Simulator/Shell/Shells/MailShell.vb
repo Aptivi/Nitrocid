@@ -18,6 +18,8 @@
 
 Imports System.Threading
 Imports KS.Kernel
+Imports KS.Network.Mail.Transfer
+Imports KS.Network.Mail
 
 Public Class MailShell
     Inherits ShellExecutor

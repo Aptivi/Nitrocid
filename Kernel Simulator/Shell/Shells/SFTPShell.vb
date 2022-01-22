@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Kernel
+Imports KS.Network.SFTP
 
 Public Class SFTPShell
     Inherits ShellExecutor

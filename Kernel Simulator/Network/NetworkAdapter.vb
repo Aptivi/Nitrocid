@@ -18,20 +18,22 @@
 
 Imports System.Net.NetworkInformation
 
-Public Module NetworkAdapter
+Namespace Network
+    Public Module NetworkAdapter
 
-    ''' <summary>
-    ''' Checks to see if the adapter is one of the Internet adapters (Ethernet, Ethernet3Megabit, FastEthernetFx, FastEthernetT, GigabitEthernet, Wireless80211, Tunnel)
-    ''' </summary>
-    ''' <param name="InternetAdapter">Network adapter</param>
-    Public Function IsInternetAdapter(InternetAdapter As NetworkInterface) As Boolean
-        Return InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
-               InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel
-    End Function
+        ''' <summary>
+        ''' Checks to see if the adapter is one of the Internet adapters (Ethernet, Ethernet3Megabit, FastEthernetFx, FastEthernetT, GigabitEthernet, Wireless80211, Tunnel)
+        ''' </summary>
+        ''' <param name="InternetAdapter">Network adapter</param>
+        Public Function IsInternetAdapter(InternetAdapter As NetworkInterface) As Boolean
+            Return InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Ethernet3Megabit Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetFx Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.FastEthernetT Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.GigabitEthernet Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Wireless80211 Or
+                   InternetAdapter.NetworkInterfaceType = NetworkInterfaceType.Tunnel
+        End Function
 
-End Module
+    End Module
+End Namespace

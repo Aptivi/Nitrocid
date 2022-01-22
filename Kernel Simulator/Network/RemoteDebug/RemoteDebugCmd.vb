@@ -17,36 +17,40 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Network.RemoteDebug.Commands
+Imports KS.Network.RemoteDebug.Interface
 
-Module RemoteDebugCmd
+Namespace Network.RemoteDebug
+    Module RemoteDebugCmd
 
-    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", {}, False, 0, New Debug_ExitCommand)},
+        Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", {}, False, 0, New Debug_ExitCommand)},
                                                                                   {"help", New CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
                                                                                   {"register", New CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
                                                                                   {"trace", New CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
                                                                                   {"username", New CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", {}, False, 0, New Debug_UsernameCommand)}}
-    Public DebugModCmds As New ArrayList
+        Public DebugModCmds As New ArrayList
 
-    ''' <summary>
-    ''' Client command parsing.
-    ''' </summary>
-    ''' <param name="CmdString">A specified command. It may contain arguments.</param>
-    ''' <param name="SocketStreamWriter">A socket stream writer</param>
-    ''' <param name="Address">An IP address</param>
-    Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
-        Kernel.KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
-        Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell)
-        Dim Command As String = ArgumentInfo.Command
-        Dim Args() As String = ArgumentInfo.ArgumentsList
-        Dim StrArgs As String = ArgumentInfo.ArgumentsText
-        Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
+        ''' <summary>
+        ''' Client command parsing.
+        ''' </summary>
+        ''' <param name="CmdString">A specified command. It may contain arguments.</param>
+        ''' <param name="SocketStreamWriter">A socket stream writer</param>
+        ''' <param name="Address">An IP address</param>
+        Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
+            Kernel.KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
+            Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell)
+            Dim Command As String = ArgumentInfo.Command
+            Dim Args() As String = ArgumentInfo.ArgumentsList
+            Dim StrArgs As String = ArgumentInfo.ArgumentsText
+            Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
-        Try
-            Dim DebugCommandBase As RemoteDebugCommandExecutor = DebugCommands(Command).CommandBase
-            DebugCommandBase.Execute(StrArgs, Args, SocketStreamWriter, Address)
-        Catch ex As Exception
-            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
-            Kernel.KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
-        End Try
-    End Sub
-End Module
+            Try
+                Dim DebugCommandBase As RemoteDebugCommandExecutor = DebugCommands(Command).CommandBase
+                DebugCommandBase.Execute(StrArgs, Args, SocketStreamWriter, Address)
+            Catch ex As Exception
+                SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
+                Kernel.KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
+            End Try
+        End Sub
+    End Module
+End Namespace

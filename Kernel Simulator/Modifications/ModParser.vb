@@ -27,6 +27,12 @@ Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
+Imports KS.Network.FTP
+Imports KS.Network.HTTP
+Imports KS.Network.Mail
+Imports KS.Network.RemoteDebug
+Imports KS.Network.RSS
+Imports KS.Network.SFTP
 
 Namespace Modifications
     Public Module ModParser

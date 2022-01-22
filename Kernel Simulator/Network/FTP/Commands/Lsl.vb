@@ -16,27 +16,29 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_LslCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_LslCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse ShowFileDetailsList
-        Dim SuppressUnauthorizedMessage As Boolean = ListSwitchesOnly.Contains("-suppressmessages") OrElse SuppressUnauthorizedMessages
-        If ListArgsOnly?.Length = 0 Or ListArgsOnly Is Nothing Then
-            List(FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage)
-        Else
-            For Each Directory As String In ListArgsOnly
-                Dim direct As String = NeutralizePath(Directory)
-                List(direct, ShowFileDetails, SuppressUnauthorizedMessage)
-            Next
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse ShowFileDetailsList
+            Dim SuppressUnauthorizedMessage As Boolean = ListSwitchesOnly.Contains("-suppressmessages") OrElse SuppressUnauthorizedMessages
+            If ListArgsOnly?.Length = 0 Or ListArgsOnly Is Nothing Then
+                List(FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage)
+            Else
+                For Each Directory As String In ListArgsOnly
+                    Dim direct As String = NeutralizePath(Directory)
+                    List(direct, ShowFileDetails, SuppressUnauthorizedMessage)
+                Next
+            End If
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
-        Write("  -suppressmessages: ", False, ColTypes.ListEntry) : Write(DoTranslation("Suppresses the annoying ""permission denied"" messages"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
+            Write("  -suppressmessages: ", False, ColTypes.ListEntry) : Write(DoTranslation("Suppresses the annoying ""permission denied"" messages"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

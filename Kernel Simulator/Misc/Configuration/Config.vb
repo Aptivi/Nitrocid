@@ -37,6 +37,15 @@ Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Modifications
+Imports KS.Network.FTP
+Imports KS.Network.Mail.Directory
+Imports KS.Network.Mail
+Imports KS.Network.RemoteDebug
+Imports KS.Network.RPC
+Imports KS.Network.RSS
+Imports KS.Network.SFTP
+Imports KS.Network.SSH
+Imports KS.Network
 
 Namespace Misc.Configuration
     Public Module Config

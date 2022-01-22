@@ -16,25 +16,29 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class SFTP_DisconnectCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If SFTPConnected Then
-            'Set a connected flag to False
-            SFTPConnected = False
-            ClientSFTP.Disconnect()
-            Write(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, FtpSite)
+Namespace Network.SFTP.Commands
+    Class SFTP_DisconnectCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-            'Clean up everything
-            SFTPSite = ""
-            SFTPCurrentRemoteDir = ""
-            SFTPUser = ""
-            SFTPPass = ""
-        Else
-            Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If SFTPConnected Then
+                'Set a connected flag to False
+                SFTPConnected = False
+                ClientSFTP.Disconnect()
+                Write(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, FtpSite)
 
-End Class
+                'Clean up everything
+                SFTPSite = ""
+                SFTPCurrentRemoteDir = ""
+                SFTPUser = ""
+                SFTPPass = ""
+            Else
+                Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
+            End If
+        End Sub
+
+    End Class
+End Namespace

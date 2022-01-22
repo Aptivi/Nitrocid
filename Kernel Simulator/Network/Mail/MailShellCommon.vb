@@ -18,41 +18,45 @@
 
 Imports MailKit
 Imports MimeKit.Text
+Imports KS.Network.Mail.Commands
+Imports KS.Network.Mail.Transfer
 
-Public Module MailShellCommon
+Namespace Network.Mail
+    Public Module MailShellCommon
 
-    'Variables
-    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", {"<folder>"}, True, 1, New Mail_CdCommand)},
-                                                                                 {"exit", New CommandInfo("exit", ShellType.MailShell, "Exits the IMAP shell", {}, False, 0, New Mail_ExitCommand)},
-                                                                                 {"help", New CommandInfo("help", ShellType.MailShell, "List of commands", {"[command]"}, False, 0, New Mail_HelpCommand)},
-                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", {}, False, 0, New Mail_LsDirsCommand)},
-                                                                                 {"list", New CommandInfo("list", ShellType.MailShell, "Downloads messages and lists them", {"[pagenum]"}, False, 0, New Mail_ListCommand)},
-                                                                                 {"mkdir", New CommandInfo("mkdir", ShellType.MailShell, "Makes a directory in the current working directory", {"<foldername>"}, True, 1, New Mail_MkdirCommand)},
-                                                                                 {"mv", New CommandInfo("mv", ShellType.MailShell, "Moves a message", {"<mailid> <targetfolder>"}, True, 2, New Mail_MvCommand)},
-                                                                                 {"mvall", New CommandInfo("mvall", ShellType.MailShell, "Moves all messages from recipient", {"<sendername> <targetfolder>"}, True, 2, New Mail_MvAllCommand)},
-                                                                                 {"read", New CommandInfo("read", ShellType.MailShell, "Opens a message", {"<mailid>"}, True, 1, New Mail_ReadCommand)},
-                                                                                 {"readenc", New CommandInfo("readenc", ShellType.MailShell, "Opens an encrypted message", {"<mailid>"}, True, 1, New Mail_ReadEncCommand)},
-                                                                                 {"ren", New CommandInfo("ren", ShellType.MailShell, "Renames a folder", {"<oldfoldername> <newfoldername>"}, True, 2, New Mail_RenCommand)},
-                                                                                 {"rm", New CommandInfo("rm", ShellType.MailShell, "Removes a message", {"<mailid>"}, True, 1, New Mail_RmCommand)},
-                                                                                 {"rmall", New CommandInfo("rmall", ShellType.MailShell, "Removes all messages from recipient", {"<sendername>"}, True, 1, New Mail_RmAllCommand)},
-                                                                                 {"rmdir", New CommandInfo("rmdir", ShellType.MailShell, "Removes a directory from the current working directory", {"<foldername>"}, True, 1, New Mail_RmdirCommand)},
-                                                                                 {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", {}, False, 0, New Mail_SendCommand)},
-                                                                                 {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", {}, False, 0, New Mail_SendEncCommand)}}
-    Public IMAP_CurrentDirectory As String = "Inbox"
-    Public MailModCommands As New ArrayList
-    Public MailShellPromptStyle As String = ""
-    Public Mail_NotifyNewMail As Boolean = True
-    Public Mail_ImapPingInterval As Integer = 30000
-    Public Mail_SmtpPingInterval As Integer = 30000
-    Public Mail_POP3PingInterval As Integer = 30000
-    Public Mail_MaxMessagesInPage As Integer = 10
-    Public Mail_UsePop3 As Boolean
-    Public Mail_TextFormat As TextFormat = TextFormat.Plain
-    Public Mail_ShowProgress As Boolean = True
-    Public Mail_ProgressStyle As String = ""
-    Public Mail_ProgressStyleSingle As String = ""
-    Public ReadOnly Mail_Progress As New MailTransferProgress
-    Friend KeepAlive As Boolean
-    Friend IMAP_Messages As IEnumerable(Of UniqueId)
+        'Variables
+        Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", {"<folder>"}, True, 1, New Mail_CdCommand)},
+                                                                                     {"exit", New CommandInfo("exit", ShellType.MailShell, "Exits the IMAP shell", {}, False, 0, New Mail_ExitCommand)},
+                                                                                     {"help", New CommandInfo("help", ShellType.MailShell, "List of commands", {"[command]"}, False, 0, New Mail_HelpCommand)},
+                                                                                     {"lsdirs", New CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", {}, False, 0, New Mail_LsDirsCommand)},
+                                                                                     {"list", New CommandInfo("list", ShellType.MailShell, "Downloads messages and lists them", {"[pagenum]"}, False, 0, New Mail_ListCommand)},
+                                                                                     {"mkdir", New CommandInfo("mkdir", ShellType.MailShell, "Makes a directory in the current working directory", {"<foldername>"}, True, 1, New Mail_MkdirCommand)},
+                                                                                     {"mv", New CommandInfo("mv", ShellType.MailShell, "Moves a message", {"<mailid> <targetfolder>"}, True, 2, New Mail_MvCommand)},
+                                                                                     {"mvall", New CommandInfo("mvall", ShellType.MailShell, "Moves all messages from recipient", {"<sendername> <targetfolder>"}, True, 2, New Mail_MvAllCommand)},
+                                                                                     {"read", New CommandInfo("read", ShellType.MailShell, "Opens a message", {"<mailid>"}, True, 1, New Mail_ReadCommand)},
+                                                                                     {"readenc", New CommandInfo("readenc", ShellType.MailShell, "Opens an encrypted message", {"<mailid>"}, True, 1, New Mail_ReadEncCommand)},
+                                                                                     {"ren", New CommandInfo("ren", ShellType.MailShell, "Renames a folder", {"<oldfoldername> <newfoldername>"}, True, 2, New Mail_RenCommand)},
+                                                                                     {"rm", New CommandInfo("rm", ShellType.MailShell, "Removes a message", {"<mailid>"}, True, 1, New Mail_RmCommand)},
+                                                                                     {"rmall", New CommandInfo("rmall", ShellType.MailShell, "Removes all messages from recipient", {"<sendername>"}, True, 1, New Mail_RmAllCommand)},
+                                                                                     {"rmdir", New CommandInfo("rmdir", ShellType.MailShell, "Removes a directory from the current working directory", {"<foldername>"}, True, 1, New Mail_RmdirCommand)},
+                                                                                     {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", {}, False, 0, New Mail_SendCommand)},
+                                                                                     {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", {}, False, 0, New Mail_SendEncCommand)}}
+        Public IMAP_CurrentDirectory As String = "Inbox"
+        Public MailModCommands As New ArrayList
+        Public MailShellPromptStyle As String = ""
+        Public Mail_NotifyNewMail As Boolean = True
+        Public Mail_ImapPingInterval As Integer = 30000
+        Public Mail_SmtpPingInterval As Integer = 30000
+        Public Mail_POP3PingInterval As Integer = 30000
+        Public Mail_MaxMessagesInPage As Integer = 10
+        Public Mail_UsePop3 As Boolean
+        Public Mail_TextFormat As TextFormat = TextFormat.Plain
+        Public Mail_ShowProgress As Boolean = True
+        Public Mail_ProgressStyle As String = ""
+        Public Mail_ProgressStyleSingle As String = ""
+        Public ReadOnly Mail_Progress As New MailTransferProgress
+        Friend KeepAlive As Boolean
+        Friend IMAP_Messages As IEnumerable(Of UniqueId)
 
-End Module
+    End Module
+End Namespace

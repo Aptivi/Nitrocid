@@ -16,12 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_LsDirsCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.Mail.Directory
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Write(MailListDirectories, False, ColTypes.Neutral)
-    End Sub
+Namespace Network.Mail.Commands
+    Class Mail_LsDirsCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Write(MailListDirectories, False, ColTypes.Neutral)
+        End Sub
+
+    End Class
+End Namespace

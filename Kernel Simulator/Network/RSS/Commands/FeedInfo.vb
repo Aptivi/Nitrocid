@@ -16,21 +16,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RSS_FeedInfoCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.RSS.Commands
+    Class RSS_FeedInfoCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Write("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
-        Write(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
-        Write("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
-        Write(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
-        Write("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
-        Write(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
-        Write("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
-        Write(RSSFeedInstance.FeedType.ToString, True, ColTypes.ListValue)
-        Write("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
-        Write(RSSFeedInstance.FeedArticles.Count.ToString, True, ColTypes.ListValue)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Write("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+            Write(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
+            Write("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+            Write(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
+            Write("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
+            Write(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
+            Write("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
+            Write(RSSFeedInstance.FeedType.ToString, True, ColTypes.ListValue)
+            Write("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
+            Write(RSSFeedInstance.FeedArticles.Count.ToString, True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

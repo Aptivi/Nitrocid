@@ -18,61 +18,64 @@
 
 Imports System.Threading
 
-Module MailPingers
+Namespace Network.Mail.Transfer
+    Module MailPingers
 
-    ''' <summary>
-    ''' [IMAP] Tries to keep the connection going
-    ''' </summary>
-    Sub IMAPKeepConnection()
-        'Every 30 seconds, send a ping to IMAP server
-        While IMAP_Client.IsConnected
-            Thread.Sleep(Mail_ImapPingInterval)
-            If IMAP_Client.IsConnected Then
-                SyncLock IMAP_Client.SyncRoot
-                    IMAP_Client.NoOp()
-                End SyncLock
-                PopulateMessages()
-            Else
-                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
-                Thread.CurrentThread.Abort()
-            End If
-        End While
-    End Sub
+        ''' <summary>
+        ''' [IMAP] Tries to keep the connection going
+        ''' </summary>
+        Sub IMAPKeepConnection()
+            'Every 30 seconds, send a ping to IMAP server
+            While IMAP_Client.IsConnected
+                Thread.Sleep(Mail_ImapPingInterval)
+                If IMAP_Client.IsConnected Then
+                    SyncLock IMAP_Client.SyncRoot
+                        IMAP_Client.NoOp()
+                    End SyncLock
+                    PopulateMessages()
+                Else
+                    Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
+                    Thread.CurrentThread.Abort()
+                End If
+            End While
+        End Sub
 
-    ''' <summary>
-    ''' [SMTP] Tries to keep the connection going
-    ''' </summary>
-    Sub SMTPKeepConnection()
-        'Every 30 seconds, send a ping to IMAP server
-        While SMTP_Client.IsConnected
-            Thread.Sleep(Mail_SmtpPingInterval)
-            If SMTP_Client.IsConnected Then
-                SyncLock SMTP_Client.SyncRoot
-                    SMTP_Client.NoOp()
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
-                Thread.CurrentThread.Abort()
-            End If
-        End While
-    End Sub
+        ''' <summary>
+        ''' [SMTP] Tries to keep the connection going
+        ''' </summary>
+        Sub SMTPKeepConnection()
+            'Every 30 seconds, send a ping to IMAP server
+            While SMTP_Client.IsConnected
+                Thread.Sleep(Mail_SmtpPingInterval)
+                If SMTP_Client.IsConnected Then
+                    SyncLock SMTP_Client.SyncRoot
+                        SMTP_Client.NoOp()
+                    End SyncLock
+                Else
+                    Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
+                    Thread.CurrentThread.Abort()
+                End If
+            End While
+        End Sub
 
-    ''' <summary>
-    ''' [POP3] Tries to keep the connection going
-    ''' </summary>
-    Sub POP3KeepConnection()
-        'Every 30 seconds, send a ping to IMAP server
-        While POP3_Client.IsConnected
-            Thread.Sleep(Mail_POP3PingInterval)
-            If POP3_Client.IsConnected Then
-                SyncLock POP3_Client.SyncRoot
-                    POP3_Client.NoOp()
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping POP3KeepConnection()...")
-                Thread.CurrentThread.Abort()
-            End If
-        End While
-    End Sub
+        ''' <summary>
+        ''' [POP3] Tries to keep the connection going
+        ''' </summary>
+        Sub POP3KeepConnection()
+            'Every 30 seconds, send a ping to IMAP server
+            While POP3_Client.IsConnected
+                Thread.Sleep(Mail_POP3PingInterval)
+                If POP3_Client.IsConnected Then
+                    SyncLock POP3_Client.SyncRoot
+                        POP3_Client.NoOp()
+                    End SyncLock
+                Else
+                    Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping POP3KeepConnection()...")
+                    Thread.CurrentThread.Abort()
+                End If
+            End While
+        End Sub
 
-End Module
+    End Module
+End Namespace
+

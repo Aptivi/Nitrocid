@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Net.NetworkInformation
+Imports KS.Network
 
 Class PingCommand
     Inherits CommandExecutor

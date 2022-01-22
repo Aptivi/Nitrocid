@@ -16,21 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_CpCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Filesystem
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If FtpConnected Then
-            Write(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
-            If FTPCopyItem(ListArgs(0), ListArgs(1)) Then
-                Write(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Success)
+Namespace Network.FTP.Commands
+    Class FTP_CpCommand
+        Inherits CommandExecutor
+        Implements ICommand
+
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If FtpConnected Then
+                Write(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
+                If FTPCopyItem(ListArgs(0), ListArgs(1)) Then
+                    Write(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Success)
+                Else
+                    Write(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
+                End If
             Else
-                Write(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
+                Write(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
             End If
-        Else
-            Write(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

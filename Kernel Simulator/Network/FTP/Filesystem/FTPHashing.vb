@@ -18,82 +18,84 @@
 
 Imports KS.Kernel
 
-Public Module FTPHashing
+Namespace Network.FTP.Filesystem
+    Public Module FTPHashing
 
-    ''' <summary>
-    ''' Gets a hash for file
-    ''' </summary>
-    ''' <param name="File">A file to be hashed</param>
-    ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="ArgumentNullException"></exception>
-    Public Function FTPGetHash(File As String, HashAlgorithm As FtpHashAlgorithm) As FtpHash
-        If FtpConnected = True Then
-            If File <> "" Then
-                If ClientFTP.FileExists(File) Then
-                    Wdbg(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString)
-                    Return ClientFTP.GetChecksum(File, HashAlgorithm)
-                Else
-                    Wdbg(DebugLevel.E, "{0} is not found.", File)
-                    Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), File)
-                End If
-            Else
-                Throw New ArgumentNullException(File, DoTranslation("Enter a remote file to be hashed."))
-            End If
-        Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to a server before performing this operation."))
-        End If
-    End Function
-
-    ''' <summary>
-    ''' Gets a hash for files in a directory
-    ''' </summary>
-    ''' <param name="Directory">A directory for its contents to be hashed</param>
-    ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
-    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="ArgumentNullException"></exception>
-    Public Function FTPGetHashes(Directory As String, HashAlgorithm As FtpHashAlgorithm) As Dictionary(Of String, FtpHash)
-        Return FTPGetHashes(Directory, HashAlgorithm, FtpRecursiveHashing)
-    End Function
-
-    ''' <summary>
-    ''' Gets a hash for files in a directory
-    ''' </summary>
-    ''' <param name="Directory">A directory for its contents to be hashed</param>
-    ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
-    ''' <param name="Recurse">Whether to hash the files within the subdirectories too.</param>
-    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="ArgumentNullException"></exception>
-    Public Function FTPGetHashes(Directory As String, HashAlgorithm As FtpHashAlgorithm, Recurse As Boolean) As Dictionary(Of String, FtpHash)
-        If FtpConnected = True Then
-            If Directory <> "" Then
-                If ClientFTP.DirectoryExists(Directory) Then
-                    Dim Hashes As New Dictionary(Of String, FtpHash)
-                    Dim Items As FtpListItem()
-                    If Recurse Then
-                        Items = ClientFTP.GetListing(Directory, FtpListOption.Recursive)
+        ''' <summary>
+        ''' Gets a hash for file
+        ''' </summary>
+        ''' <param name="File">A file to be hashed</param>
+        ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="ArgumentNullException"></exception>
+        Public Function FTPGetHash(File As String, HashAlgorithm As FtpHashAlgorithm) As FtpHash
+            If FtpConnected = True Then
+                If File <> "" Then
+                    If ClientFTP.FileExists(File) Then
+                        Wdbg(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString)
+                        Return ClientFTP.GetChecksum(File, HashAlgorithm)
                     Else
-                        Items = ClientFTP.GetListing(Directory)
+                        Wdbg(DebugLevel.E, "{0} is not found.", File)
+                        Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), File)
                     End If
-                    For Each Item As FtpListItem In Items
-                        Wdbg(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString)
-                        Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm))
-                    Next
-                    Return Hashes
                 Else
-                    Wdbg(DebugLevel.E, "{0} is not found.", Directory)
-                    Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), Directory)
+                    Throw New ArgumentNullException(File, DoTranslation("Enter a remote file to be hashed."))
                 End If
             Else
-                Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory."))
+                Throw New InvalidOperationException(DoTranslation("You must connect to a server before performing this operation."))
             End If
-        Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to a server before performing this operation."))
-        End If
-    End Function
+        End Function
 
-End Module
+        ''' <summary>
+        ''' Gets a hash for files in a directory
+        ''' </summary>
+        ''' <param name="Directory">A directory for its contents to be hashed</param>
+        ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
+        ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="ArgumentNullException"></exception>
+        Public Function FTPGetHashes(Directory As String, HashAlgorithm As FtpHashAlgorithm) As Dictionary(Of String, FtpHash)
+            Return FTPGetHashes(Directory, HashAlgorithm, FtpRecursiveHashing)
+        End Function
+
+        ''' <summary>
+        ''' Gets a hash for files in a directory
+        ''' </summary>
+        ''' <param name="Directory">A directory for its contents to be hashed</param>
+        ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
+        ''' <param name="Recurse">Whether to hash the files within the subdirectories too.</param>
+        ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="ArgumentNullException"></exception>
+        Public Function FTPGetHashes(Directory As String, HashAlgorithm As FtpHashAlgorithm, Recurse As Boolean) As Dictionary(Of String, FtpHash)
+            If FtpConnected = True Then
+                If Directory <> "" Then
+                    If ClientFTP.DirectoryExists(Directory) Then
+                        Dim Hashes As New Dictionary(Of String, FtpHash)
+                        Dim Items As FtpListItem()
+                        If Recurse Then
+                            Items = ClientFTP.GetListing(Directory, FtpListOption.Recursive)
+                        Else
+                            Items = ClientFTP.GetListing(Directory)
+                        End If
+                        For Each Item As FtpListItem In Items
+                            Wdbg(DebugLevel.I, "Hashing {0} using {1}...", Item.FullName, HashAlgorithm.ToString)
+                            Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm))
+                        Next
+                        Return Hashes
+                    Else
+                        Wdbg(DebugLevel.E, "{0} is not found.", Directory)
+                        Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), Directory)
+                    End If
+                Else
+                    Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory."))
+                End If
+            Else
+                Throw New InvalidOperationException(DoTranslation("You must connect to a server before performing this operation."))
+            End If
+        End Function
+
+    End Module
+End Namespace

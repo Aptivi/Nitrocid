@@ -16,52 +16,54 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module FTPTransferProgress
+Namespace Network.FTP.Transfer
+    Public Module FTPTransferProgress
 
-    ''' <summary>
-    ''' Action of file progress. You can make your own handler by mods
-    ''' </summary>
-    Public FileProgress As New Action(Of FtpProgress)(AddressOf FileProgressHandler)
-    ''' <summary>
-    ''' Action of folder/multiple file progress. You can make your own handler by mods
-    ''' </summary>
-    Public MultipleProgress As New Action(Of FtpProgress)(AddressOf MultipleProgressHandler)
+        ''' <summary>
+        ''' Action of file progress. You can make your own handler by mods
+        ''' </summary>
+        Public FileProgress As New Action(Of FtpProgress)(AddressOf FileProgressHandler)
+        ''' <summary>
+        ''' Action of folder/multiple file progress. You can make your own handler by mods
+        ''' </summary>
+        Public MultipleProgress As New Action(Of FtpProgress)(AddressOf MultipleProgressHandler)
 
-    ''' <summary>
-    ''' Handles the individual file download/upload progress
-    ''' </summary>
-    Private Sub FileProgressHandler(Percentage As FtpProgress)
-        'If the progress is not defined, disable progress bar
-        If Percentage.Progress < 0 Then
-            progressFlag = False
-        Else
-            ConsoleOriginalPosition_LEFT = Console.CursorLeft
-            ConsoleOriginalPosition_TOP = Console.CursorTop
-            If progressFlag = True And Percentage.Progress <> 100 Then
-                Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
-                ClearLineToRight()
+        ''' <summary>
+        ''' Handles the individual file download/upload progress
+        ''' </summary>
+        Private Sub FileProgressHandler(Percentage As FtpProgress)
+            'If the progress is not defined, disable progress bar
+            If Percentage.Progress < 0 Then
+                progressFlag = False
+            Else
+                ConsoleOriginalPosition_LEFT = Console.CursorLeft
+                ConsoleOriginalPosition_TOP = Console.CursorTop
+                If progressFlag = True And Percentage.Progress <> 100 Then
+                    Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                    ClearLineToRight()
+                End If
+                Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
             End If
-            Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
-        End If
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Handles the multiple files/folder download/upload progress
-    ''' </summary>
-    Private Sub MultipleProgressHandler(Percentage As FtpProgress)
-        'If the progress is not defined, disable progress bar
-        If Percentage.Progress < 0 Then
-            progressFlag = False
-        Else
-            ConsoleOriginalPosition_LEFT = Console.CursorLeft
-            ConsoleOriginalPosition_TOP = Console.CursorTop
-            If progressFlag = True And Percentage.Progress <> 100 Then
-                Write("- [{0}/{1}] {2}: ", False, ColTypes.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath)
-                Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
-                ClearLineToRight()
+        ''' <summary>
+        ''' Handles the multiple files/folder download/upload progress
+        ''' </summary>
+        Private Sub MultipleProgressHandler(Percentage As FtpProgress)
+            'If the progress is not defined, disable progress bar
+            If Percentage.Progress < 0 Then
+                progressFlag = False
+            Else
+                ConsoleOriginalPosition_LEFT = Console.CursorLeft
+                ConsoleOriginalPosition_TOP = Console.CursorTop
+                If progressFlag = True And Percentage.Progress <> 100 Then
+                    Write("- [{0}/{1}] {2}: ", False, ColTypes.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath)
+                    Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                    ClearLineToRight()
+                End If
+                Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
             End If
-            Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
-        End If
-    End Sub
+        End Sub
 
-End Module
+    End Module
+End Namespace

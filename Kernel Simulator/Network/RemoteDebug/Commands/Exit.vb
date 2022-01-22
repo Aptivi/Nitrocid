@@ -17,13 +17,16 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Network.RemoteDebug.Interface
 
-Class Debug_ExitCommand
-    Inherits RemoteDebugCommandExecutor
-    Implements IRemoteDebugCommand
+Namespace Network.RemoteDebug.Commands
+    Class Debug_ExitCommand
+        Inherits RemoteDebugCommandExecutor
+        Implements IRemoteDebugCommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-        DisconnectDbgDev(DeviceAddress)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+            DisconnectDbgDev(DeviceAddress)
+        End Sub
 
-End Class
+    End Class
+End Namespace

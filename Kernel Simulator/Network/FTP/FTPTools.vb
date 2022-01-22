@@ -18,8 +18,10 @@
 
 Imports System.Net.Security
 Imports Newtonsoft.Json.Linq
+Imports KS.Network.FTP.Transfer
 
-Public Module FTPTools
+Namespace Network.FTP
+    Public Module FTPTools
 
     ''' <summary>
     ''' Prompts user for a password
@@ -303,22 +305,23 @@ Public Module FTPTools
 
 End Module
 
-Class FTPTracer
-    Inherits TraceListener 'Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
+    Class FTPTracer
+        Inherits TraceListener 'Both Write and WriteLine do exactly the same thing, which is writing to a debugger.
 
-    ''' <summary>
-    ''' Writes any message that the tracer has received to the debugger.
-    ''' </summary>
-    ''' <param name="Message">A message</param>
-    Public Overloads Overrides Sub Write(Message As String)
-        Wdbg(DebugLevel.I, Message)
-    End Sub
+        ''' <summary>
+        ''' Writes any message that the tracer has received to the debugger.
+        ''' </summary>
+        ''' <param name="Message">A message</param>
+        Public Overloads Overrides Sub Write(Message As String)
+            Wdbg(DebugLevel.I, Message)
+        End Sub
 
-    ''' <summary>
-    ''' Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
-    ''' </summary>
-    ''' <param name="Message">A message</param>
-    Public Overloads Overrides Sub WriteLine(Message As String)
-        Wdbg(DebugLevel.I, Message)
-    End Sub
-End Class
+        ''' <summary>
+        ''' Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
+        ''' </summary>
+        ''' <param name="Message">A message</param>
+        Public Overloads Overrides Sub WriteLine(Message As String)
+            Wdbg(DebugLevel.I, Message)
+        End Sub
+    End Class
+End Namespace

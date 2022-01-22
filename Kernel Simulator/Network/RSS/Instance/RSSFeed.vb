@@ -20,159 +20,161 @@ Imports System.IO
 Imports System.Xml
 Imports KS.Kernel
 
-Public Class RSSFeed
+Namespace Network.RSS.Instance
+    Public Class RSSFeed
 
-    Private _FeedUrl As String
-    Private _FeedType As RSSFeedType
-    Private _FeedTitle As String
-    Private _FeedDescription As String
-    Private _FeedArticles As New List(Of RSSArticle)
+        Private _FeedUrl As String
+        Private _FeedType As RSSFeedType
+        Private _FeedTitle As String
+        Private _FeedDescription As String
+        Private _FeedArticles As New List(Of RSSArticle)
 
-    ''' <summary>
-    ''' A URL to RSS feed
-    ''' </summary>
-    Public ReadOnly Property FeedUrl As String
-        Get
-            Return _FeedUrl
-        End Get
-    End Property
+        ''' <summary>
+        ''' A URL to RSS feed
+        ''' </summary>
+        Public ReadOnly Property FeedUrl As String
+            Get
+                Return _FeedUrl
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' RSS feed type
-    ''' </summary>
-    Public ReadOnly Property FeedType As RSSFeedType
-        Get
-            Return _FeedType
-        End Get
-    End Property
+        ''' <summary>
+        ''' RSS feed type
+        ''' </summary>
+        Public ReadOnly Property FeedType As RSSFeedType
+            Get
+                Return _FeedType
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' RSS feed type
-    ''' </summary>
-    Public ReadOnly Property FeedTitle As String
-        Get
-            Return _FeedTitle
-        End Get
-    End Property
+        ''' <summary>
+        ''' RSS feed type
+        ''' </summary>
+        Public ReadOnly Property FeedTitle As String
+            Get
+                Return _FeedTitle
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' RSS feed description (Atom feeds not supported and always return an empty string)
-    ''' </summary>
-    Public ReadOnly Property FeedDescription As String
-        Get
-            Return _FeedDescription
-        End Get
-    End Property
+        ''' <summary>
+        ''' RSS feed description (Atom feeds not supported and always return an empty string)
+        ''' </summary>
+        Public ReadOnly Property FeedDescription As String
+            Get
+                Return _FeedDescription
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' Feed articles
-    ''' </summary>
-    ''' <returns></returns>
-    Public ReadOnly Property FeedArticles As List(Of RSSArticle)
-        Get
-            Return _FeedArticles
-        End Get
-    End Property
+        ''' <summary>
+        ''' Feed articles
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property FeedArticles As List(Of RSSArticle)
+            Get
+                Return _FeedArticles
+            End Get
+        End Property
 
-    ''' <summary>
-    ''' Makes a new instance of an RSS feed class
-    ''' </summary>
-    ''' <param name="FeedUrl">A URL to RSS feed</param>
-    ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
-    Public Sub New(FeedUrl As String, FeedType As RSSFeedType)
-        Refresh(FeedUrl, FeedType)
-    End Sub
+        ''' <summary>
+        ''' Makes a new instance of an RSS feed class
+        ''' </summary>
+        ''' <param name="FeedUrl">A URL to RSS feed</param>
+        ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
+        Public Sub New(FeedUrl As String, FeedType As RSSFeedType)
+            Refresh(FeedUrl, FeedType)
+        End Sub
 
-    ''' <summary>
-    ''' Refreshes the RSS class instance
-    ''' </summary>
-    Public Sub Refresh()
-        Refresh(_FeedUrl, _FeedType)
-    End Sub
+        ''' <summary>
+        ''' Refreshes the RSS class instance
+        ''' </summary>
+        Public Sub Refresh()
+            Refresh(_FeedUrl, _FeedType)
+        End Sub
 
-    ''' <summary>
-    ''' Refreshes the RSS class instance
-    ''' </summary>
-    ''' <param name="FeedUrl">A URL to RSS feed</param>
-    ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
-    Public Sub Refresh(FeedUrl As String, FeedType As RSSFeedType)
-        'Make a web request indicator
-        Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl)
-        Dim FeedWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(FeedUrl), HttpWebRequest)
-        FeedWebRequest.Timeout = RSSFetchTimeout
+        ''' <summary>
+        ''' Refreshes the RSS class instance
+        ''' </summary>
+        ''' <param name="FeedUrl">A URL to RSS feed</param>
+        ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
+        Public Sub Refresh(FeedUrl As String, FeedType As RSSFeedType)
+            'Make a web request indicator
+            Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl)
+            Dim FeedWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(FeedUrl), HttpWebRequest)
+            FeedWebRequest.Timeout = RSSFetchTimeout
 
-        'Load the RSS feed and get the feed XML document
-        Dim FeedWebResponse As WebResponse = FeedWebRequest.GetResponse()
-        Dim FeedStream As Stream = FeedWebResponse.GetResponseStream()
-        Dim FeedDocument As New XmlDocument
-        FeedDocument.Load(FeedStream)
+            'Load the RSS feed and get the feed XML document
+            Dim FeedWebResponse As WebResponse = FeedWebRequest.GetResponse()
+            Dim FeedStream As Stream = FeedWebResponse.GetResponseStream()
+            Dim FeedDocument As New XmlDocument
+            FeedDocument.Load(FeedStream)
 
-        'Infer feed type
-        Dim FeedNodeList As XmlNodeList
-        If FeedType = RSSFeedType.Infer Then
-            If FeedDocument.GetElementsByTagName("rss").Count <> 0 Then
+            'Infer feed type
+            Dim FeedNodeList As XmlNodeList
+            If FeedType = RSSFeedType.Infer Then
+                If FeedDocument.GetElementsByTagName("rss").Count <> 0 Then
+                    FeedNodeList = FeedDocument.GetElementsByTagName("rss")
+                    _FeedType = RSSFeedType.RSS2
+                ElseIf FeedDocument.GetElementsByTagName("rdf:RDF").Count <> 0 Then
+                    FeedNodeList = FeedDocument.GetElementsByTagName("rdf:RDF")
+                    _FeedType = RSSFeedType.RSS1
+                ElseIf FeedDocument.GetElementsByTagName("feed").Count <> 0 Then
+                    FeedNodeList = FeedDocument.GetElementsByTagName("feed")
+                    _FeedType = RSSFeedType.Atom
+                End If
+            ElseIf FeedType = RSSFeedType.RSS2 Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("rss")
-                _FeedType = RSSFeedType.RSS2
-            ElseIf FeedDocument.GetElementsByTagName("rdf:RDF").Count <> 0 Then
+                If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS2 feed."))
+            ElseIf FeedType = RSSFeedType.RSS1 Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("rdf:RDF")
-                _FeedType = RSSFeedType.RSS1
-            ElseIf FeedDocument.GetElementsByTagName("feed").Count <> 0 Then
+                If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS1 feed."))
+            ElseIf FeedType = RSSFeedType.Atom Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("feed")
-                _FeedType = RSSFeedType.Atom
+                If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid Atom feed."))
             End If
-        ElseIf FeedType = RSSFeedType.RSS2 Then
-            FeedNodeList = FeedDocument.GetElementsByTagName("rss")
-            If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS2 feed."))
-        ElseIf FeedType = RSSFeedType.RSS1 Then
-            FeedNodeList = FeedDocument.GetElementsByTagName("rdf:RDF")
-            If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS1 feed."))
-        ElseIf FeedType = RSSFeedType.Atom Then
-            FeedNodeList = FeedDocument.GetElementsByTagName("feed")
-            If FeedNodeList.Count = 0 Then Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid Atom feed."))
-        End If
 
-        'Populate basic feed properties
+            'Populate basic feed properties
 #Disable Warning BC42104
-        Dim FeedTitle As String = GetFeedProperty("title", FeedNodeList, _FeedType)
-        Dim FeedDescription As String = GetFeedProperty("description", FeedNodeList, _FeedType)
+            Dim FeedTitle As String = GetFeedProperty("title", FeedNodeList, _FeedType)
+            Dim FeedDescription As String = GetFeedProperty("description", FeedNodeList, _FeedType)
 
-        'Populate articles
-        Dim Articles As List(Of RSSArticle) = MakeRssArticlesFromFeed(FeedNodeList, _FeedType)
+            'Populate articles
+            Dim Articles As List(Of RSSArticle) = MakeRssArticlesFromFeed(FeedNodeList, _FeedType)
 #Enable Warning BC42104
 
-        'Install the variables to a new instance
-        _FeedUrl = FeedUrl
-        _FeedTitle = FeedTitle
-        _FeedDescription = FeedDescription
-        If _FeedArticles.Count <> 0 And Articles.Count <> 0 Then
-            If Not _FeedArticles(0).Equals(Articles(0)) Then
+            'Install the variables to a new instance
+            _FeedUrl = FeedUrl
+            _FeedTitle = FeedTitle
+            _FeedDescription = FeedDescription
+            If _FeedArticles.Count <> 0 And Articles.Count <> 0 Then
+                If Not _FeedArticles(0).Equals(Articles(0)) Then
+                    _FeedArticles = Articles
+                End If
+            Else
                 _FeedArticles = Articles
             End If
-        Else
-            _FeedArticles = Articles
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
 
-''' <summary>
-''' Enumeration for RSS feed type
-''' </summary>
-Public Enum RSSFeedType
     ''' <summary>
-    ''' The RSS format is RSS 2.0
+    ''' Enumeration for RSS feed type
     ''' </summary>
-    RSS2
-    ''' <summary>
-    ''' The RSS format is RSS 1.0
-    ''' </summary>
-    RSS1
-    ''' <summary>
-    ''' The RSS format is Atom
-    ''' </summary>
-    Atom
-    ''' <summary>
-    ''' Try to infer RSS type
-    ''' </summary>
-    Infer = 1024
-End Enum
+    Public Enum RSSFeedType
+        ''' <summary>
+        ''' The RSS format is RSS 2.0
+        ''' </summary>
+        RSS2
+        ''' <summary>
+        ''' The RSS format is RSS 1.0
+        ''' </summary>
+        RSS1
+        ''' <summary>
+        ''' The RSS format is Atom
+        ''' </summary>
+        Atom
+        ''' <summary>
+        ''' Try to infer RSS type
+        ''' </summary>
+        Infer = 1024
+    End Enum
+End Namespace

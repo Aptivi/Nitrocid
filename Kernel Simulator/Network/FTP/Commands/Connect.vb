@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_ConnectCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_ConnectCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0).StartsWith("ftp://") Or ListArgs(0).StartsWith("ftps://") Or ListArgs(0).StartsWith("ftpes://") Then
-            TryToConnect(ListArgs(0))
-        Else
-            TryToConnect($"ftp://{ListArgs(0)}")
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs(0).StartsWith("ftp://") Or ListArgs(0).StartsWith("ftps://") Or ListArgs(0).StartsWith("ftpes://") Then
+                TryToConnect(ListArgs(0))
+            Else
+                TryToConnect($"ftp://{ListArgs(0)}")
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

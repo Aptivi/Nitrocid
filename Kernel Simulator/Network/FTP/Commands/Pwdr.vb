@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_PwdrCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_PwdrCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If FtpConnected Then
-            Write(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, FtpCurrentRemoteDir)
-        Else
-            Write(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If FtpConnected Then
+                Write(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, FtpCurrentRemoteDir)
+            Else
+                Write(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

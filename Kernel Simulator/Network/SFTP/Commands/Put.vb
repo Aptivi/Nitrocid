@@ -16,21 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class SFTP_PutCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.SFTP.Transfer
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Write(DoTranslation("Uploading file {0}..."), True, ColTypes.Progress, ListArgs(0))
+Namespace Network.SFTP.Commands
+    Class SFTP_PutCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-        'Begin the uploading process
-        If SFTPUploadFile(ListArgs(0)) Then
-            Console.WriteLine()
-            Write(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
-        Else
-            Console.WriteLine()
-            Write(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Write(DoTranslation("Uploading file {0}..."), True, ColTypes.Progress, ListArgs(0))
 
-End Class
+            'Begin the uploading process
+            If SFTPUploadFile(ListArgs(0)) Then
+                Console.WriteLine()
+                Write(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
+            Else
+                Console.WriteLine()
+                Write(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
+            End If
+        End Sub
+
+    End Class
+End Namespace

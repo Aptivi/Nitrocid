@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_QuickConnectCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_QuickConnectCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If Not FtpConnected Then
-            QuickConnect()
-        Else
-            Write(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not FtpConnected Then
+                QuickConnect()
+            Else
+                Write(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -16,25 +16,27 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_TypeCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.FTP.Commands
+    Class FTP_TypeCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0).ToLower = "a" Then
-            ClientFTP.DownloadDataType = FtpDataType.ASCII
-            ClientFTP.ListingDataType = FtpDataType.ASCII
-            ClientFTP.UploadDataType = FtpDataType.ASCII
-            Write(DoTranslation("Data type set to ASCII!"), True, ColTypes.Success)
-            Write(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
-        ElseIf ListArgs(0).ToLower = "b" Then
-            ClientFTP.DownloadDataType = FtpDataType.Binary
-            ClientFTP.ListingDataType = FtpDataType.Binary
-            ClientFTP.UploadDataType = FtpDataType.Binary
-            Write(DoTranslation("Data type set to Binary!"), True, ColTypes.Success)
-        Else
-            Write(DoTranslation("Invalid data type."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs(0).ToLower = "a" Then
+                ClientFTP.DownloadDataType = FtpDataType.ASCII
+                ClientFTP.ListingDataType = FtpDataType.ASCII
+                ClientFTP.UploadDataType = FtpDataType.ASCII
+                Write(DoTranslation("Data type set to ASCII!"), True, ColTypes.Success)
+                Write(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
+            ElseIf ListArgs(0).ToLower = "b" Then
+                ClientFTP.DownloadDataType = FtpDataType.Binary
+                ClientFTP.ListingDataType = FtpDataType.Binary
+                ClientFTP.UploadDataType = FtpDataType.Binary
+                Write(DoTranslation("Data type set to Binary!"), True, ColTypes.Success)
+            Else
+                Write(DoTranslation("Invalid data type."), True, ColTypes.Error)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

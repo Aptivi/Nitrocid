@@ -19,22 +19,24 @@
 Imports MimeKit.Cryptography
 Imports Org.BouncyCastle.Bcpg.OpenPgp
 
-Public Class PGPContext
-    Inherits GnuPGContext
+Namespace Network.Mail.PGP
+    Public Class PGPContext
+        Inherits GnuPGContext
 
-    ''' <summary>
-    ''' Gets password for secret key.
-    ''' </summary>
-    ''' <param name="key">Target key</param>
-    ''' <returns>Entered Password</returns>
-    Protected Overrides Function GetPasswordForKey(key As PgpSecretKey) As String
-        If Not String.IsNullOrWhiteSpace(Mail_GPGPromptStyle) Then
-            Write(ProbePlaces(Mail_GPGPromptStyle), False, ColTypes.Input, key.KeyId)
-        Else
-            Write(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
-        End If
-        Dim Password As String = ReadLineNoInput()
-        Console.WriteLine()
-        Return Password
-    End Function
-End Class
+        ''' <summary>
+        ''' Gets password for secret key.
+        ''' </summary>
+        ''' <param name="key">Target key</param>
+        ''' <returns>Entered Password</returns>
+        Protected Overrides Function GetPasswordForKey(key As PgpSecretKey) As String
+            If Not String.IsNullOrWhiteSpace(Mail_GPGPromptStyle) Then
+                Write(ProbePlaces(Mail_GPGPromptStyle), False, ColTypes.Input, key.KeyId)
+            Else
+                Write(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
+            End If
+            Dim Password As String = ReadLineNoInput()
+            Console.WriteLine()
+            Return Password
+        End Function
+    End Class
+End Namespace

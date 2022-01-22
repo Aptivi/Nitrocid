@@ -16,21 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Mail_ListCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.Mail.Directory
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length > 0 Then
-            Wdbg(DebugLevel.I, "Page is numeric? {0}", ListArgs(0).IsNumeric)
-            If ListArgs(0).IsNumeric Then
-                MailListMessages(ListArgs(0))
+Namespace Network.Mail.Commands
+    Class Mail_ListCommand
+        Inherits CommandExecutor
+        Implements ICommand
+
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Length > 0 Then
+                Wdbg(DebugLevel.I, "Page is numeric? {0}", ListArgs(0).IsNumeric)
+                If ListArgs(0).IsNumeric Then
+                    MailListMessages(ListArgs(0))
+                Else
+                    Write(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
+                End If
             Else
-                Write(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
+                MailListMessages(1)
             End If
-        Else
-            MailListMessages(1)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

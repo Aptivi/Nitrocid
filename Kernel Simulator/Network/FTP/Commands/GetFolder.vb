@@ -16,22 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FTP_GetFolderCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.FTP.Transfer
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim RemoteFolder As String = ListArgs(0)
-        Dim LocalFolder As String = If(ListArgs.Count > 1, ListArgs(1), "")
-        Write(DoTranslation("Downloading folder {0}..."), True, ColTypes.Progress, RemoteFolder)
-        Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPGetFolder(RemoteFolder, LocalFolder), FTPGetFolder(RemoteFolder))
-        If Result Then
-            Console.WriteLine()
-            Write(DoTranslation("Downloaded folder {0}."), True, ColTypes.Success, RemoteFolder)
-        Else
-            Console.WriteLine()
-            Write(DoTranslation("Download failed for folder {0}."), True, ColTypes.Error, RemoteFolder)
-        End If
-    End Sub
+Namespace Network.FTP.Commands
+    Class FTP_GetFolderCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-End Class
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RemoteFolder As String = ListArgs(0)
+            Dim LocalFolder As String = If(ListArgs.Count > 1, ListArgs(1), "")
+            Write(DoTranslation("Downloading folder {0}..."), True, ColTypes.Progress, RemoteFolder)
+            Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPGetFolder(RemoteFolder, LocalFolder), FTPGetFolder(RemoteFolder))
+            If Result Then
+                Console.WriteLine()
+                Write(DoTranslation("Downloaded folder {0}."), True, ColTypes.Success, RemoteFolder)
+            Else
+                Console.WriteLine()
+                Write(DoTranslation("Download failed for folder {0}."), True, ColTypes.Error, RemoteFolder)
+            End If
+        End Sub
+
+    End Class
+End Namespace

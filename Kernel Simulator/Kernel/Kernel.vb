@@ -21,6 +21,8 @@ Imports KS.Hardware
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
+Imports KS.Network.RemoteDebug
+Imports KS.Network.RPC
 Imports System.IO
 Imports System.Reflection.Assembly
 

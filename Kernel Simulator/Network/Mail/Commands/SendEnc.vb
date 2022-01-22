@@ -17,68 +17,71 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports MimeKit
+Imports KS.Network.Mail.Transfer
 
-Class Mail_SendEncCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Network.Mail.Commands
+    Class Mail_SendEncCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Receiver, Subject As String
-        Dim Body As New BodyBuilder
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Receiver, Subject As String
+            Dim Body As New BodyBuilder
 
-        'Prompt for receiver e-mail address
-        Write(DoTranslation("Enter recipient mail address:") + " ", False, ColTypes.Input)
-        Receiver = Console.ReadLine
-        Wdbg(DebugLevel.I, "Recipient: {0}", Receiver)
+            'Prompt for receiver e-mail address
+            Write(DoTranslation("Enter recipient mail address:") + " ", False, ColTypes.Input)
+            Receiver = Console.ReadLine
+            Wdbg(DebugLevel.I, "Recipient: {0}", Receiver)
 
-        'Check for mail format
-        If Receiver.Contains("@") And Receiver.Substring(Receiver.IndexOf("@")).Contains(".") Then
-            Wdbg(DebugLevel.I, "Mail format satisfied. Contains ""@"" and contains ""."" in the second part after the ""@"" symbol.")
+            'Check for mail format
+            If Receiver.Contains("@") And Receiver.Substring(Receiver.IndexOf("@")).Contains(".") Then
+                Wdbg(DebugLevel.I, "Mail format satisfied. Contains ""@"" and contains ""."" in the second part after the ""@"" symbol.")
 
-            'Prompt for subject
-            Write(DoTranslation("Enter the subject:") + " ", False, ColTypes.Input)
-            Subject = Console.ReadLine
-            Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length)
+                'Prompt for subject
+                Write(DoTranslation("Enter the subject:") + " ", False, ColTypes.Input)
+                Subject = Console.ReadLine
+                Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length)
 
-            'Prompt for body
-            Write(DoTranslation("Enter your message below. Write ""EOF"" to confirm."), True, ColTypes.Input)
-            Dim BodyLine As String = ""
-            While Not BodyLine.ToUpper = "EOF"
-                BodyLine = Console.ReadLine
-                If Not BodyLine.ToUpper = "EOF" Then
-                    Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
-                    Body.TextBody += BodyLine + vbNewLine
-                    Wdbg(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length)
-                End If
-            End While
-
-            Write(DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm."), True, ColTypes.Neutral)
-            Dim PathLine As String = " "
-            While Not PathLine = ""
-                Write("> ", False, ColTypes.Input)
-                PathLine = Console.ReadLine
-                If Not PathLine = "" Then
-                    PathLine = NeutralizePath(PathLine)
-                    Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
-                    If FileExists(PathLine) Then
-                        Body.Attachments.Add(PathLine)
+                'Prompt for body
+                Write(DoTranslation("Enter your message below. Write ""EOF"" to confirm."), True, ColTypes.Input)
+                Dim BodyLine As String = ""
+                While Not BodyLine.ToUpper = "EOF"
+                    BodyLine = Console.ReadLine
+                    If Not BodyLine.ToUpper = "EOF" Then
+                        Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
+                        Body.TextBody += BodyLine + vbNewLine
+                        Wdbg(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length)
                     End If
+                End While
+
+                Write(DoTranslation("Enter file paths to attachments. Press ENTER on a blank path to confirm."), True, ColTypes.Neutral)
+                Dim PathLine As String = " "
+                While Not PathLine = ""
+                    Write("> ", False, ColTypes.Input)
+                    PathLine = Console.ReadLine
+                    If Not PathLine = "" Then
+                        PathLine = NeutralizePath(PathLine)
+                        Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
+                        If FileExists(PathLine) Then
+                            Body.Attachments.Add(PathLine)
+                        End If
+                    End If
+                End While
+
+                'Send the message
+                Write(DoTranslation("Sending message..."), True, ColTypes.Progress)
+                If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
+                    Wdbg(DebugLevel.I, "Message sent.")
+                    Write(DoTranslation("Message sent."), True, ColTypes.Success)
+                Else
+                    Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
+                    Write(DoTranslation("Error sending message."), True, ColTypes.Error)
                 End If
-            End While
-
-            'Send the message
-            Write(DoTranslation("Sending message..."), True, ColTypes.Progress)
-            If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
-                Wdbg(DebugLevel.I, "Message sent.")
-                Write(DoTranslation("Message sent."), True, ColTypes.Success)
             Else
-                Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
-                Write(DoTranslation("Error sending message."), True, ColTypes.Error)
+                Wdbg(DebugLevel.E, "Mail format unsatisfied. " + Receiver)
+                Write(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
             End If
-        Else
-            Wdbg(DebugLevel.E, "Mail format unsatisfied. " + Receiver)
-            Write(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

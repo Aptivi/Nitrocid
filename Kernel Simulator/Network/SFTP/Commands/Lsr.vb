@@ -16,29 +16,33 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class SFTP_LsrCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Imports KS.Network.SFTP.Filesystem
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse SFTPShowDetailsInList
-        Dim Entries As New List(Of String)
-        If Not ListArgsOnly.Length = 0 Then
-            For Each TargetDirectory As String In ListArgsOnly
-                Entries = SFTPListRemote(TargetDirectory, ShowFileDetails)
+Namespace Network.SFTP.Commands
+    Class SFTP_LsrCommand
+        Inherits CommandExecutor
+        Implements ICommand
+
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse SFTPShowDetailsInList
+            Dim Entries As New List(Of String)
+            If Not ListArgsOnly.Length = 0 Then
+                For Each TargetDirectory As String In ListArgsOnly
+                    Entries = SFTPListRemote(TargetDirectory, ShowFileDetails)
+                Next
+            Else
+                Entries = SFTPListRemote("", ShowFileDetails)
+            End If
+            Entries.Sort()
+            For Each Entry As String In Entries
+                Write(Entry, True, ColTypes.ListEntry)
             Next
-        Else
-            Entries = SFTPListRemote("", ShowFileDetails)
-        End If
-        Entries.Sort()
-        For Each Entry As String In Entries
-            Write(Entry, True, ColTypes.ListEntry)
-        Next
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

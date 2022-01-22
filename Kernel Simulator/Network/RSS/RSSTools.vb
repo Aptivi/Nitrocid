@@ -21,192 +21,195 @@ Imports System.Threading
 Imports System.Xml
 Imports KS.Kernel
 Imports KS.Misc.Notifications
+Imports KS.Network.RSS.Instance
 
-Public Module RSSTools
+Namespace Network.RSS
+    Public Module RSSTools
 
-    ''' <summary>
-    ''' Whether to show the RSS headline each login
-    ''' </summary>
-    Public ShowHeadlineOnLogin As Boolean
-    ''' <summary>
-    ''' RSS headline URL
-    ''' </summary>
-    Public RssHeadlineUrl As String = "https://www.techrepublic.com/rssfeeds/articles/"
+        ''' <summary>
+        ''' Whether to show the RSS headline each login
+        ''' </summary>
+        Public ShowHeadlineOnLogin As Boolean
+        ''' <summary>
+        ''' RSS headline URL
+        ''' </summary>
+        Public RssHeadlineUrl As String = "https://www.techrepublic.com/rssfeeds/articles/"
 
-    ''' <summary>
-    ''' Make instances of RSS Article from feed node and type
-    ''' </summary>
-    ''' <param name="FeedNode">Feed XML node</param>
-    ''' <param name="FeedType">Feed type</param>
-    Function MakeRssArticlesFromFeed(FeedNode As XmlNodeList, FeedType As RSSFeedType) As List(Of RSSArticle)
-        Dim Articles As New List(Of RSSArticle)
-        Select Case FeedType
-            Case RSSFeedType.RSS2
-                For Each Node As XmlNode In FeedNode(0) '<channel>
-                    For Each Child As XmlNode In Node.ChildNodes '<item>
-                        If Child.Name = "item" Then
-                            Dim Article As RSSArticle = MakeArticleFromFeed(Child)
+        ''' <summary>
+        ''' Make instances of RSS Article from feed node and type
+        ''' </summary>
+        ''' <param name="FeedNode">Feed XML node</param>
+        ''' <param name="FeedType">Feed type</param>
+        Function MakeRssArticlesFromFeed(FeedNode As XmlNodeList, FeedType As RSSFeedType) As List(Of RSSArticle)
+            Dim Articles As New List(Of RSSArticle)
+            Select Case FeedType
+                Case RSSFeedType.RSS2
+                    For Each Node As XmlNode In FeedNode(0) '<channel>
+                        For Each Child As XmlNode In Node.ChildNodes '<item>
+                            If Child.Name = "item" Then
+                                Dim Article As RSSArticle = MakeArticleFromFeed(Child)
+                                Articles.Add(Article)
+                            End If
+                        Next
+                    Next
+                Case RSSFeedType.RSS1
+                    For Each Node As XmlNode In FeedNode(0) '<channel> or <item>
+                        If Node.Name = "item" Then
+                            Dim Article As RSSArticle = MakeArticleFromFeed(Node)
                             Articles.Add(Article)
                         End If
                     Next
-                Next
-            Case RSSFeedType.RSS1
-                For Each Node As XmlNode In FeedNode(0) '<channel> or <item>
-                    If Node.Name = "item" Then
-                        Dim Article As RSSArticle = MakeArticleFromFeed(Node)
-                        Articles.Add(Article)
-                    End If
-                Next
-            Case RSSFeedType.Atom
-                For Each Node As XmlNode In FeedNode(0) '<feed>
-                    If Node.Name = "entry" Then
-                        Dim Article As RSSArticle = MakeArticleFromFeed(Node)
-                        Articles.Add(Article)
-                    End If
-                Next
-            Case Else
-                Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
-        End Select
-        Return Articles
-    End Function
+                Case RSSFeedType.Atom
+                    For Each Node As XmlNode In FeedNode(0) '<feed>
+                        If Node.Name = "entry" Then
+                            Dim Article As RSSArticle = MakeArticleFromFeed(Node)
+                            Articles.Add(Article)
+                        End If
+                    Next
+                Case Else
+                    Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
+            End Select
+            Return Articles
+        End Function
 
-    ''' <summary>
-    ''' Generates an instance of article from feed
-    ''' </summary>
-    ''' <param name="Article">The child node which holds the entire article</param>
-    ''' <returns>An article</returns>
-    Function MakeArticleFromFeed(Article As XmlNode) As RSSArticle
-        'Variables
-        Dim Parameters As New Dictionary(Of String, XmlNode)
-        Dim Title, Link, Description As String
+        ''' <summary>
+        ''' Generates an instance of article from feed
+        ''' </summary>
+        ''' <param name="Article">The child node which holds the entire article</param>
+        ''' <returns>An article</returns>
+        Function MakeArticleFromFeed(Article As XmlNode) As RSSArticle
+            'Variables
+            Dim Parameters As New Dictionary(Of String, XmlNode)
+            Dim Title, Link, Description As String
 
-        'Parse article
-        For Each ArticleNode As XmlNode In Article.ChildNodes
-            'Check the title
-            If ArticleNode.Name = "title" Then
-                'Trimming newlines and spaces is necessary, since some RSS feeds (GitHub commits) might return string with trailing and leading spaces and newlines.
-                Title = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
-            End If
-
-            'Check the link
-            If ArticleNode.Name = "link" Then
-                'Links can be in href attribute, so check that.
-                If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("href") IsNot Nothing Then
-                    Link = ArticleNode.Attributes.GetNamedItem("href").InnerText
-                Else
-                    Link = ArticleNode.InnerText
+            'Parse article
+            For Each ArticleNode As XmlNode In Article.ChildNodes
+                'Check the title
+                If ArticleNode.Name = "title" Then
+                    'Trimming newlines and spaces is necessary, since some RSS feeds (GitHub commits) might return string with trailing and leading spaces and newlines.
+                    Title = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                 End If
-            End If
 
-            'Check the summary
-            If ArticleNode.Name = "summary" Or ArticleNode.Name = "content" Or ArticleNode.Name = "description" Then
-                'It can be of HTML type, or plain text type.
-                If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("type") IsNot Nothing Then
-                    If ArticleNode.Attributes.GetNamedItem("type").Value = "html" Then
-                        'Extract plain text from HTML
-                        Dim HtmlContent As New HtmlDocument
-                        HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(vbCr, vbLf, " "))
+                'Check the link
+                If ArticleNode.Name = "link" Then
+                    'Links can be in href attribute, so check that.
+                    If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("href") IsNot Nothing Then
+                        Link = ArticleNode.Attributes.GetNamedItem("href").InnerText
+                    Else
+                        Link = ArticleNode.InnerText
+                    End If
+                End If
 
-                        'Some feeds have no node called "pre," so work around this...
-                        Dim PreNode As HtmlNode = HtmlContent.DocumentNode.SelectSingleNode("pre")
-                        If PreNode Is Nothing Then
-                            Description = HtmlContent.DocumentNode.InnerText
+                'Check the summary
+                If ArticleNode.Name = "summary" Or ArticleNode.Name = "content" Or ArticleNode.Name = "description" Then
+                    'It can be of HTML type, or plain text type.
+                    If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("type") IsNot Nothing Then
+                        If ArticleNode.Attributes.GetNamedItem("type").Value = "html" Then
+                            'Extract plain text from HTML
+                            Dim HtmlContent As New HtmlDocument
+                            HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(vbCr, vbLf, " "))
+
+                            'Some feeds have no node called "pre," so work around this...
+                            Dim PreNode As HtmlNode = HtmlContent.DocumentNode.SelectSingleNode("pre")
+                            If PreNode Is Nothing Then
+                                Description = HtmlContent.DocumentNode.InnerText
+                            Else
+                                Description = PreNode.InnerText
+                            End If
                         Else
-                            Description = PreNode.InnerText
+                            Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                         End If
                     Else
                         Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                     End If
-                Else
-                    Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                 End If
-            End If
-            Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode)
-        Next
+                Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode)
+            Next
 #Disable Warning BC42104
-        Return New RSSArticle(Title, Link, Description, Parameters)
+            Return New RSSArticle(Title, Link, Description, Parameters)
 #Enable Warning BC42104
-    End Function
+        End Function
 
-    ''' <summary>
-    ''' Gets a feed property
-    ''' </summary>
-    ''' <param name="FeedProperty">Feed property name</param>
-    ''' <param name="FeedNode">Feed XML node</param>
-    ''' <param name="FeedType">Feed type</param>
-    Function GetFeedProperty(FeedProperty As String, FeedNode As XmlNodeList, FeedType As RSSFeedType) As Object
-        Select Case FeedType
-            Case RSSFeedType.RSS2
-                For Each Node As XmlNode In FeedNode(0) '<channel>
-                    For Each Child As XmlNode In Node.ChildNodes
-                        If Child.Name = FeedProperty Then
-                            Return Child.InnerXml
+        ''' <summary>
+        ''' Gets a feed property
+        ''' </summary>
+        ''' <param name="FeedProperty">Feed property name</param>
+        ''' <param name="FeedNode">Feed XML node</param>
+        ''' <param name="FeedType">Feed type</param>
+        Function GetFeedProperty(FeedProperty As String, FeedNode As XmlNodeList, FeedType As RSSFeedType) As Object
+            Select Case FeedType
+                Case RSSFeedType.RSS2
+                    For Each Node As XmlNode In FeedNode(0) '<channel>
+                        For Each Child As XmlNode In Node.ChildNodes
+                            If Child.Name = FeedProperty Then
+                                Return Child.InnerXml
+                            End If
+                        Next
+                    Next
+                Case RSSFeedType.RSS1
+                    For Each Node As XmlNode In FeedNode(0) '<channel> or <item>
+                        For Each Child As XmlNode In Node.ChildNodes
+                            If Child.Name = FeedProperty Then
+                                Return Child.InnerXml
+                            End If
+                        Next
+                    Next
+                Case RSSFeedType.Atom
+                    For Each Node As XmlNode In FeedNode(0) 'Children of <feed>
+                        If Node.Name = FeedProperty Then
+                            Return Node.InnerXml
                         End If
                     Next
-                Next
-            Case RSSFeedType.RSS1
-                For Each Node As XmlNode In FeedNode(0) '<channel> or <item>
-                    For Each Child As XmlNode In Node.ChildNodes
-                        If Child.Name = FeedProperty Then
-                            Return Child.InnerXml
-                        End If
-                    Next
-                Next
-            Case RSSFeedType.Atom
-                For Each Node As XmlNode In FeedNode(0) 'Children of <feed>
-                    If Node.Name = FeedProperty Then
-                        Return Node.InnerXml
+                Case Else
+                    Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
+            End Select
+        End Function
+
+        ''' <summary>
+        ''' Refreshes the feeds
+        ''' </summary>
+        Friend Sub RefreshFeeds()
+            Dim OldFeedsList As New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
+            Dim NewFeedsList As List(Of RSSArticle)
+            While RSSFeedInstance IsNot Nothing
+                If RSSFeedInstance IsNot Nothing Then
+                    'Refresh the feed
+                    RSSFeedInstance.Refresh()
+
+                    'Check for new feeds
+                    NewFeedsList = RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList
+                    If NewFeedsList.Count > 0 And NewFeedsList(0).ArticleTitle <> OldFeedsList(0).ArticleTitle Then
+                        'Update the list
+                        Wdbg(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
+                        OldFeedsList = New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
+                        For Each NewFeed As RSSArticle In NewFeedsList
+                            Dim FeedNotif As New Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotifPriority.Low, NotifType.Normal)
+                            NotifySend(FeedNotif)
+                        Next
                     End If
-                Next
-            Case Else
-                Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
-        End Select
-    End Function
-
-    ''' <summary>
-    ''' Refreshes the feeds
-    ''' </summary>
-    Friend Sub RefreshFeeds()
-        Dim OldFeedsList As New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
-        Dim NewFeedsList As List(Of RSSArticle)
-        While RSSFeedInstance IsNot Nothing
-            If RSSFeedInstance IsNot Nothing Then
-                'Refresh the feed
-                RSSFeedInstance.Refresh()
-
-                'Check for new feeds
-                NewFeedsList = RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList
-                If NewFeedsList.Count > 0 And NewFeedsList(0).ArticleTitle <> OldFeedsList(0).ArticleTitle Then
-                    'Update the list
-                    Wdbg(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
-                    OldFeedsList = New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
-                    For Each NewFeed As RSSArticle In NewFeedsList
-                        Dim FeedNotif As New Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotifPriority.Low, NotifType.Normal)
-                        NotifySend(FeedNotif)
-                    Next
                 End If
+                Thread.Sleep(RSSRefreshInterval)
+            End While
+        End Sub
+
+        ''' <summary>
+        ''' Show a headline on login
+        ''' </summary>
+        Sub ShowHeadlineLogin()
+            If ShowHeadlineOnLogin Then
+                Try
+                    Dim Feed As New RSSFeed(RssHeadlineUrl, RSSFeedType.Infer)
+                    If Not Feed.FeedArticles.Count = 0 Then
+                        Write(DoTranslation("Latest news:") + " ", False, ColTypes.ListEntry)
+                        Write(Feed.FeedArticles(0).ArticleTitle, True, ColTypes.ListValue)
+                    End If
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to get latest news: {0}", ex.Message)
+                    WStkTrc(ex)
+                    Write(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
+                End Try
             End If
-            Thread.Sleep(RSSRefreshInterval)
-        End While
-    End Sub
+        End Sub
 
-    ''' <summary>
-    ''' Show a headline on login
-    ''' </summary>
-    Sub ShowHeadlineLogin()
-        If ShowHeadlineOnLogin Then
-            Try
-                Dim Feed As New RSSFeed(RssHeadlineUrl, RSSFeedType.Infer)
-                If Not Feed.FeedArticles.Count = 0 Then
-                    Write(DoTranslation("Latest news:") + " ", False, ColTypes.ListEntry)
-                    Write(Feed.FeedArticles(0).ArticleTitle, True, ColTypes.ListValue)
-                End If
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to get latest news: {0}", ex.Message)
-                WStkTrc(ex)
-                Write(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
-            End Try
-        End If
-    End Sub
-
-End Module
+    End Module
+End Namespace
