@@ -46,6 +46,7 @@ Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.Network.SSH
 Imports KS.Network
+Imports KS.Scripting.Interaction
 
 Namespace Misc.Configuration
     Public Module Config

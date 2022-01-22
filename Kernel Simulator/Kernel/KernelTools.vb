@@ -36,6 +36,7 @@ Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.Network
+Imports KS.Scripting
 
 Namespace Kernel
     Public Module KernelTools

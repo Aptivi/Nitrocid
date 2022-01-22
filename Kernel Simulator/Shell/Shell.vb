@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Threading
 Imports KS.Kernel
 Imports KS.Misc.Execution
+Imports KS.Scripting
 
 Public Module Shell
 

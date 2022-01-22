@@ -16,52 +16,54 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' The list of known UESH conditions
-''' </summary>
-Public Enum UESHConditions
+Namespace Scripting
     ''' <summary>
-    ''' No condition
+    ''' The list of known UESH conditions
     ''' </summary>
-    none = 0
-    ''' <summary>
-    ''' Equals
-    ''' </summary>
-    eq
-    ''' <summary>
-    ''' Doesn't equal
-    ''' </summary>
-    neq
-    ''' <summary>
-    ''' Less than
-    ''' </summary>
-    les
-    ''' <summary>
-    ''' Greater than
-    ''' </summary>
-    gre
-    ''' <summary>
-    ''' Less than or equals to
-    ''' </summary>
-    lesoreq
-    ''' <summary>
-    ''' Greater than or equals to
-    ''' </summary>
-    greoreq
-    ''' <summary>
-    ''' File exists
-    ''' </summary>
-    fileex
-    ''' <summary>
-    ''' File doesn't exist
-    ''' </summary>
-    filenex
-    ''' <summary>
-    ''' Directory exists
-    ''' </summary>
-    direx
-    ''' <summary>
-    ''' Directory doesn't exist
-    ''' </summary>
-    dirnex
-End Enum
+    Public Enum UESHConditions
+        ''' <summary>
+        ''' No condition
+        ''' </summary>
+        none = 0
+        ''' <summary>
+        ''' Equals
+        ''' </summary>
+        eq
+        ''' <summary>
+        ''' Doesn't equal
+        ''' </summary>
+        neq
+        ''' <summary>
+        ''' Less than
+        ''' </summary>
+        les
+        ''' <summary>
+        ''' Greater than
+        ''' </summary>
+        gre
+        ''' <summary>
+        ''' Less than or equals to
+        ''' </summary>
+        lesoreq
+        ''' <summary>
+        ''' Greater than or equals to
+        ''' </summary>
+        greoreq
+        ''' <summary>
+        ''' File exists
+        ''' </summary>
+        fileex
+        ''' <summary>
+        ''' File doesn't exist
+        ''' </summary>
+        filenex
+        ''' <summary>
+        ''' Directory exists
+        ''' </summary>
+        direx
+        ''' <summary>
+        ''' Directory doesn't exist
+        ''' </summary>
+        dirnex
+    End Enum
+End Namespace

@@ -21,6 +21,7 @@ Imports KS.Kernel
 Imports KS.Network.FTP
 Imports KS.Network.Mail
 Imports KS.Network.SFTP
+Imports KS.Scripting
 
 Namespace Misc.Probers
     Public Module PlaceParse
