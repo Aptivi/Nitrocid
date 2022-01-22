@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Reflection
 Imports Newtonsoft.Json.Linq
 Imports KS.Kernel
+Imports KS.ManPages
 
 Public Module ModManager
 

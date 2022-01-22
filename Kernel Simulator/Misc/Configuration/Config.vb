@@ -23,6 +23,7 @@ Imports Newtonsoft.Json.Linq
 Imports Core
 Imports KS.ConsoleBase.Themes
 Imports KS.Kernel
+Imports KS.ManPages
 
 Public Module Config
 

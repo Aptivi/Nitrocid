@@ -18,44 +18,46 @@
 
 Imports System.Text
 
-Public Class Manual
+Namespace ManPages
+    Public Class Manual
 
-    ''' <summary>
-    ''' The manual page title
-    ''' </summary>
-    Public ReadOnly Property Title As String
-    ''' <summary>
-    ''' The manual page revision
-    ''' </summary>
-    Public ReadOnly Property Revision As String
-    ''' <summary>
-    ''' The body string (the contents of manual)
-    ''' </summary>
-    Public ReadOnly Property Body As StringBuilder
-    ''' <summary>
-    ''' The list of todos
-    ''' </summary>
-    Public ReadOnly Property Todos As List(Of String)
-    ''' <summary>
-    ''' Is the manual page valid?
-    ''' </summary>
-    Public ReadOnly Property ValidManpage As Boolean
+        ''' <summary>
+        ''' The manual page title
+        ''' </summary>
+        Public ReadOnly Property Title As String
+        ''' <summary>
+        ''' The manual page revision
+        ''' </summary>
+        Public ReadOnly Property Revision As String
+        ''' <summary>
+        ''' The body string (the contents of manual)
+        ''' </summary>
+        Public ReadOnly Property Body As StringBuilder
+        ''' <summary>
+        ''' The list of todos
+        ''' </summary>
+        Public ReadOnly Property Todos As List(Of String)
+        ''' <summary>
+        ''' Is the manual page valid?
+        ''' </summary>
+        Public ReadOnly Property ValidManpage As Boolean
 
-    ''' <summary>
-    ''' Makes a new instance of manual
-    ''' </summary>
-    Friend Sub New(ManualFileName As String)
-        Dim Title As String = ""
-        Dim Revision As String = ""
-        Dim Body As New StringBuilder
-        Dim Todos As New List(Of String)
-        ValidManpage = CheckManual(ManualFileName, Title, Revision, Body, Todos)
-        If ValidManpage Then
-            Me.Title = Title
-            Me.Revision = Revision
-            Me.Body = Body
-            Me.Todos = Todos
-        End If
-    End Sub
+        ''' <summary>
+        ''' Makes a new instance of manual
+        ''' </summary>
+        Friend Sub New(ManualFileName As String)
+            Dim Title As String = ""
+            Dim Revision As String = ""
+            Dim Body As New StringBuilder
+            Dim Todos As New List(Of String)
+            ValidManpage = CheckManual(ManualFileName, Title, Revision, Body, Todos)
+            If ValidManpage Then
+                Me.Title = Title
+                Me.Revision = Revision
+                Me.Body = Body
+                Me.Todos = Todos
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -20,6 +20,7 @@ Imports System.CodeDom.Compiler
 Imports System.IO
 Imports System.Reflection
 Imports Microsoft.CSharp
+Imports KS.ManPages
 
 Public Module ModParser
 
