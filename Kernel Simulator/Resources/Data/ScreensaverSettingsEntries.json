@@ -451,11 +451,6 @@
                 "Variable": "DissolveBackgroundColor"
             },
             {
-                "Name": "Foreground color",
-                "Type": "SColor",
-                "Variable": "DissolveForegroundColor"
-            },
-            {
                 "Name": "Minimum red color level",
                 "Type": "SInt",
                 "Variable": "DissolveMinimumRedColorLevel",
