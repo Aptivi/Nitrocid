@@ -595,32 +595,36 @@ Namespace Misc.Configuration
         Public Function CheckSettingsVariables() As Dictionary(Of String, Boolean)
             Dim SettingsToken As JToken = JToken.Parse(My.Resources.SettingsEntries)
             Dim SaverSettingsToken As JToken = JToken.Parse(My.Resources.ScreensaverSettingsEntries)
+            Dim SplashSettingsToken As JToken = JToken.Parse(My.Resources.SplashSettingsEntries)
+            Dim Tokens As JToken() = {SettingsToken, SaverSettingsToken, SplashSettingsToken}
             Dim Results As New Dictionary(Of String, Boolean)
 
             'Parse all the settings
-            For Each Section As JProperty In SettingsToken
-                Dim SectionToken As JToken = SettingsToken(Section.Name)
-                For Each Key As JToken In SectionToken("Keys")
-                    Dim KeyName As String = Key("Name")
-                    Dim KeyVariable As String = Key("Variable")
-                    Dim KeyEnumeration As String = Key("Enumeration")
-                    Dim KeyEnumerationInternal As Boolean = If(Key("EnumerationInternal"), False)
-                    Dim KeyEnumerationAssembly As String = Key("EnumerationAssembly")
+            For Each Token As JToken In Tokens
+                For Each Section As JProperty In Token
+                    Dim SectionToken As JToken = Token(Section.Name)
+                    For Each Key As JToken In SectionToken("Keys")
+                        Dim KeyName As String = Key("Name")
+                        Dim KeyVariable As String = Key("Variable")
+                        Dim KeyEnumeration As String = Key("Enumeration")
+                        Dim KeyEnumerationInternal As Boolean = If(Key("EnumerationInternal"), False)
+                        Dim KeyEnumerationAssembly As String = Key("EnumerationAssembly")
 
-                    'Check the variable field
-                    Results.Add($"{KeyName}, {KeyVariable}", CheckField(KeyVariable))
+                        'Check the variable field
+                        Results.Add($"{KeyName}, {KeyVariable}", CheckField(KeyVariable))
 
-                    'Check the enumeration field
-                    If KeyEnumeration IsNot Nothing Then
-                        Dim Result As Boolean
-                        If KeyEnumerationInternal Then
-                            'Apparently, we need to have a full assembly name for getting types.
-                            Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly.FullName) IsNot Nothing
-                        Else
-                            Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) IsNot Nothing
+                        'Check the enumeration field
+                        If KeyEnumeration IsNot Nothing Then
+                            Dim Result As Boolean
+                            If KeyEnumerationInternal Then
+                                'Apparently, we need to have a full assembly name for getting types.
+                                Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly.FullName) IsNot Nothing
+                            Else
+                                Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) IsNot Nothing
+                            End If
+                            Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result)
                         End If
-                        Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result)
-                    End If
+                    Next
                 Next
             Next
 
