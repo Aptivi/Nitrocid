@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Xml
-Imports KS.Kernel
 
 Namespace Network.RSS.Instance
     Public Class RSSFeed

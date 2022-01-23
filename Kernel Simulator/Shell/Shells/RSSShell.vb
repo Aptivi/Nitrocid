@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
-Imports KS.Kernel
 Imports KS.Network.RSS.Instance
 Imports KS.Network.RSS
 

@@ -16,7 +16,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
-Imports KS.Kernel
 Imports KS.TestShell
 
 Namespace Arguments.CommandLineArguments

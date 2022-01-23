@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
-
 <TestClass()> Public Class UserPermissionManagementTests
 
     <ClassInitialize> Public Shared Sub AddNecessaryUser(Context As TestContext)

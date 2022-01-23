@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.IO.Compression
-Imports KS.Kernel
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells

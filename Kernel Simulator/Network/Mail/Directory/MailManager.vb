@@ -18,7 +18,6 @@
 
 Imports MailKit
 Imports MimeKit
-Imports KS.Kernel
 
 Namespace Network.Mail.Directory
     Public Module MailManager

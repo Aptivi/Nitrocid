@@ -22,7 +22,6 @@ Imports System.Threading
 Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
-Imports KS.Kernel
 Imports KS.Hardware
 Imports KS.Misc.Calendar.Events
 Imports KS.Misc.Calendar.Reminders

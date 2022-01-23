@@ -20,7 +20,6 @@ Imports System.IO
 Imports System.Net.NetworkInformation
 Imports System.Text
 Imports Newtonsoft.Json.Linq
-Imports KS.Kernel
 Imports KS.Misc.Configuration
 
 Namespace Network

@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
-Imports KS.Kernel
 
 Namespace Shell.ShellBase
     Public Module AliasManager

@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.ConsoleBase.Themes
-
 Namespace Shell.Commands
     Class SetThemesCommand
         Inherits CommandExecutor
@@ -38,7 +36,7 @@ Namespace Shell.Commands
         End Sub
 
         Public Sub HelpHelper()
-            Write("<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
+            Write("<Theme>: ThemeName.json, " + String.Join(", ", Themes.Themes.Keys), True, ColTypes.Neutral)
         End Sub
 
     End Class

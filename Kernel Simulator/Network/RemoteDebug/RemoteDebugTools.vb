@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
-Imports KS.Kernel
 
 Namespace Network.RemoteDebug
     Public Module RemoteDebugTools

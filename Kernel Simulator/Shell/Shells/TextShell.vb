@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Threading
-Imports KS.Kernel
 Imports KS.Misc.TextEdit
 
 Namespace Shell.Shells

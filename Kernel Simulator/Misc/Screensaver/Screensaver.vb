@@ -20,7 +20,6 @@ Imports System.ComponentModel
 Imports System.Reflection
 Imports System.Threading
 Imports Newtonsoft.Json.Linq
-Imports KS.Kernel
 Imports KS.Misc.Configuration
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver.Displays

@@ -18,7 +18,6 @@
 
 Imports System.Reflection
 Imports System.Text
-Imports KS.Kernel
 
 Namespace Network.SFTP.Filesystem
     Module SFTPFilesystem

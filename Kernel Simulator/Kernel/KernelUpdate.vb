@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Newtonsoft.Json.Linq
-Imports KS.Kernel
 
 Namespace Kernel
     Public Class KernelUpdate

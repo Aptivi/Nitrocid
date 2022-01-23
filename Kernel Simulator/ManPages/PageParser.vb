@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Kernel
 
 Namespace ManPages
     Module PageParser

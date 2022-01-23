@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Kernel
 
 Namespace Network.FTP.Filesystem
     Public Module FTPFilesystem

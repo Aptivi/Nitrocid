@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Kernel
 
 'WARNING: Don't namespace this module by "Namespace Misc.Writers.ConsoleWriters"; Microsoft.VisualBasic.FileSystem.Write will wreak havoc.
 Public Module TextWriterColor
