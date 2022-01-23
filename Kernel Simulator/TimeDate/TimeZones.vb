@@ -18,69 +18,71 @@
 
 Imports System.TimeZoneInfo
 
-Public Module TimeZones
+Namespace TimeDate
+    Public Module TimeZones
 
-    ''' <summary>
-    ''' Populates current time in all of the time zones (IANA on Unix).
-    ''' </summary>
-    Public Function GetTimeZones() As Dictionary(Of String, Date)
-        'Get all system time zones (IANA on Unix)
-        Dim Zones As TimeZoneInfo() = GetSystemTimeZones.ToArray
-        Dim ZoneTimes As New Dictionary(Of String, Date)
-        Wdbg(DebugLevel.I, "Found {0} time zones.", Zones.Length)
+        ''' <summary>
+        ''' Populates current time in all of the time zones (IANA on Unix).
+        ''' </summary>
+        Public Function GetTimeZones() As Dictionary(Of String, Date)
+            'Get all system time zones (IANA on Unix)
+            Dim Zones As TimeZoneInfo() = GetSystemTimeZones.ToArray
+            Dim ZoneTimes As New Dictionary(Of String, Date)
+            Wdbg(DebugLevel.I, "Found {0} time zones.", Zones.Length)
 
-        'Run a cleanup in the list
-        ZoneTimes.Clear()
-        Wdbg(DebugLevel.I, "Cleaned up zoneTimes.")
+            'Run a cleanup in the list
+            ZoneTimes.Clear()
+            Wdbg(DebugLevel.I, "Cleaned up zoneTimes.")
 
-        'Adds date and time to every single time zone to the list
-        For Each Zone In Zones
-            ZoneTimes.Add(Zone.Id, ConvertTime(KernelDateTime, FindSystemTimeZoneById(Zone.Id)))
-        Next
+            'Adds date and time to every single time zone to the list
+            For Each Zone In Zones
+                ZoneTimes.Add(Zone.Id, ConvertTime(KernelDateTime, FindSystemTimeZoneById(Zone.Id)))
+            Next
 
-        'Return the populated array
-        Return ZoneTimes
-    End Function
+            'Return the populated array
+            Return ZoneTimes
+        End Function
 
-    ''' <summary>
-    ''' Shows current time in selected time zone
-    ''' </summary>
-    ''' <param name="zone">Time zone</param>
-    ''' <returns>True if found; False if not found</returns>
-    Public Function ShowTimeZone(Zone As String) As Boolean
-        Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
-        Dim ZoneFound As Boolean = ZoneTimes.Keys.Contains(Zone)
-        If ZoneFound Then
-            Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, Zone, ZoneTimes(Zone).ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(KernelDateTime).ToString)
-        End If
-        Return ZoneFound
-    End Function
-
-    ''' <summary>
-    ''' Shows current time in selected time zone
-    ''' </summary>
-    ''' <param name="zone">Time zone to search</param>
-    ''' <returns>True if found; False if not found</returns>
-    Public Function ShowTimeZones(Zone As String) As Boolean
-        Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
-        Dim ZoneFound As Boolean
-        For Each ZoneName As String In ZoneTimes.Keys
-            If ZoneName.Contains(Zone) Then
-                ZoneFound = True
-                Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, ZoneName, ZoneTimes(ZoneName).ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(KernelDateTime).ToString)
+        ''' <summary>
+        ''' Shows current time in selected time zone
+        ''' </summary>
+        ''' <param name="zone">Time zone</param>
+        ''' <returns>True if found; False if not found</returns>
+        Public Function ShowTimeZone(Zone As String) As Boolean
+            Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
+            Dim ZoneFound As Boolean = ZoneTimes.Keys.Contains(Zone)
+            If ZoneFound Then
+                Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, Zone, ZoneTimes(Zone).ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(KernelDateTime).ToString)
             End If
-        Next
-        Return ZoneFound
-    End Function
+            Return ZoneFound
+        End Function
 
-    ''' <summary>
-    ''' Shows current time in all time zones
-    ''' </summary>
-    Public Sub ShowAllTimeZones()
-        Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
-        For Each TimeZone In ZoneTimes.Keys
-            Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, TimeZone, ZoneTimes(TimeZone).ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(KernelDateTime).ToString)
-        Next
-    End Sub
+        ''' <summary>
+        ''' Shows current time in selected time zone
+        ''' </summary>
+        ''' <param name="zone">Time zone to search</param>
+        ''' <returns>True if found; False if not found</returns>
+        Public Function ShowTimeZones(Zone As String) As Boolean
+            Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
+            Dim ZoneFound As Boolean
+            For Each ZoneName As String In ZoneTimes.Keys
+                If ZoneName.Contains(Zone) Then
+                    ZoneFound = True
+                    Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, ZoneName, ZoneTimes(ZoneName).ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(KernelDateTime).ToString)
+                End If
+            Next
+            Return ZoneFound
+        End Function
 
-End Module
+        ''' <summary>
+        ''' Shows current time in all time zones
+        ''' </summary>
+        Public Sub ShowAllTimeZones()
+            Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
+            For Each TimeZone In ZoneTimes.Keys
+                Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, TimeZone, ZoneTimes(TimeZone).ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(KernelDateTime).ToString)
+            Next
+        End Sub
+
+    End Module
+End Namespace

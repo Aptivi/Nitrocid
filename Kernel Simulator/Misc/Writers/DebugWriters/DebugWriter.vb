@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS.Network.RemoteDebug
+Imports KS.TimeDate
 
 Namespace Misc.Writers.DebugWriters
     Public Module DebugWriter

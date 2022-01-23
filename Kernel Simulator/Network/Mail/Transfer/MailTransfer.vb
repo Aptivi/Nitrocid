@@ -25,6 +25,7 @@ Imports MimeKit.Cryptography
 Imports MimeKit.Text
 Imports KS.Network.Mail.Directory
 Imports KS.Network.Mail.PGP
+Imports KS.TimeDate
 
 Namespace Network.Mail.Transfer
     Public Module MailTransfer

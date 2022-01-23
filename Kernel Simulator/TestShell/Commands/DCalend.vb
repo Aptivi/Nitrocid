@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Globalization
+Imports KS.TimeDate
 
 Namespace TestShell.Commands
     Class Test_DCalendCommand

@@ -37,6 +37,7 @@ Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.Network
 Imports KS.Scripting
+Imports KS.TimeDate
 
 Namespace Kernel
     Public Module KernelTools

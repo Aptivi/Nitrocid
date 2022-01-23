@@ -18,6 +18,7 @@
 
 Imports System.Globalization
 Imports KS
+Imports KS.TimeDate
 
 <TestClass()> Public Class TimeActionTests
 
