@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class CalcCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class CalcCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            Dim Res As String = Evaluate(StringArgs)
-            Wdbg(DebugLevel.I, "Res = {0}", Res)
-            If Res = "" Then 'If there is an error in calculation
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                Dim Res As String = Evaluate(StringArgs)
+                Wdbg(DebugLevel.I, "Res = {0}", Res)
+                If Res = "" Then 'If there is an error in calculation
+                    Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
+                Else 'Calculation done
+                    Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
+                End If
+            Catch ex As Exception
+                WStkTrc(ex)
                 Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
-            Else 'Calculation done
-                Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-            Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
-        End Try
-    End Sub
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

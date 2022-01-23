@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class BeepCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class BeepCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0).IsNumeric And CInt(ListArgs(0)) >= 37 And CInt(ListArgs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
-            If ListArgs(1).IsNumeric Then 'Time must be numeric
-                Console.Beep(ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs(0).IsNumeric And CInt(ListArgs(0)) >= 37 And CInt(ListArgs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
+                If ListArgs(1).IsNumeric Then 'Time must be numeric
+                    Console.Beep(ListArgs(0), ListArgs(1))
+                Else
+                    Write(DoTranslation("Time must be numeric."), True, ColTypes.Error)
+                End If
             Else
-                Write(DoTranslation("Time must be numeric."), True, ColTypes.Error)
+                Write(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Error)
             End If
-        Else
-            Write(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

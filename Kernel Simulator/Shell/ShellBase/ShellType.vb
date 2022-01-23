@@ -16,52 +16,54 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Shell type enumeration
-''' </summary>
-Public Enum ShellType
+Namespace Shell.ShellBase
     ''' <summary>
-    ''' Normal UESH shell
+    ''' Shell type enumeration
     ''' </summary>
-    Shell
-    ''' <summary>
-    ''' FTP shell
-    ''' </summary>
-    FTPShell
-    ''' <summary>
-    ''' Mail shell
-    ''' </summary>
-    MailShell
-    ''' <summary>
-    ''' SFTP shell
-    ''' </summary>
-    SFTPShell
-    ''' <summary>
-    ''' Text shell
-    ''' </summary>
-    TextShell
-    ''' <summary>
-    ''' Test shell
-    ''' </summary>
-    TestShell
-    ''' <summary>
-    ''' Remote debug shell
-    ''' </summary>
-    RemoteDebugShell
-    ''' <summary>
-    ''' ZIP shell
-    ''' </summary>
-    ZIPShell
-    ''' <summary>
-    ''' RSS Shell
-    ''' </summary>
-    RSSShell
-    ''' <summary>
-    ''' JSON Shell
-    ''' </summary>
-    JsonShell
-    ''' <summary>
-    ''' HTTP shell
-    ''' </summary>
-    HTTPShell
-End Enum
+    Public Enum ShellType
+        ''' <summary>
+        ''' Normal UESH shell
+        ''' </summary>
+        Shell
+        ''' <summary>
+        ''' FTP shell
+        ''' </summary>
+        FTPShell
+        ''' <summary>
+        ''' Mail shell
+        ''' </summary>
+        MailShell
+        ''' <summary>
+        ''' SFTP shell
+        ''' </summary>
+        SFTPShell
+        ''' <summary>
+        ''' Text shell
+        ''' </summary>
+        TextShell
+        ''' <summary>
+        ''' Test shell
+        ''' </summary>
+        TestShell
+        ''' <summary>
+        ''' Remote debug shell
+        ''' </summary>
+        RemoteDebugShell
+        ''' <summary>
+        ''' ZIP shell
+        ''' </summary>
+        ZIPShell
+        ''' <summary>
+        ''' RSS Shell
+        ''' </summary>
+        RSSShell
+        ''' <summary>
+        ''' JSON Shell
+        ''' </summary>
+        JsonShell
+        ''' <summary>
+        ''' HTTP shell
+        ''' </summary>
+        HTTPShell
+    End Enum
+End Namespace

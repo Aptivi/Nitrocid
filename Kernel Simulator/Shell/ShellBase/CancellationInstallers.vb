@@ -16,133 +16,135 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module CancellationInstallers
+Namespace Shell.ShellBase
+    Public Module CancellationInstallers
 
-    ''' <summary>
-    ''' Switches the command cancellation handler for the shell
-    ''' </summary>
-    ''' <param name="ShellType">Target shell type</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <remarks>This is the workaround for a bug in .NET Framework regarding <see cref="Console.CancelKeyPress"/> event. More info can be found below:<br>
-    ''' </br><see href="https://stackoverflow.com/a/22717063/6688914">Deep explanation of the bug</see></remarks>
-    Public Function SwitchCancellationHandler(ShellType As ShellType) As Boolean
-        LastShellType = CurrentShellType
-        Select Case ShellType
-            Case ShellType.FTPShell
-                AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.JsonShell
-                AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.MailShell
-                AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.RSSShell
-                AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.SFTPShell
-                AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.Shell
-                AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.TestShell
-                AddHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.TextShell
-                AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.ZIPShell
-                AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-            Case ShellType.HTTPShell
-                AddHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-            Case Else
-                Return False
-        End Select
-        CurrentShellType = ShellType
-        Return True
-    End Function
+        ''' <summary>
+        ''' Switches the command cancellation handler for the shell
+        ''' </summary>
+        ''' <param name="ShellType">Target shell type</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <remarks>This is the workaround for a bug in .NET Framework regarding <see cref="Console.CancelKeyPress"/> event. More info can be found below:<br>
+        ''' </br><see href="https://stackoverflow.com/a/22717063/6688914">Deep explanation of the bug</see></remarks>
+        Public Function SwitchCancellationHandler(ShellType As ShellType) As Boolean
+            LastShellType = CurrentShellType
+            Select Case ShellType
+                Case ShellType.FTPShell
+                    AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.JsonShell
+                    AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.MailShell
+                    AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.RSSShell
+                    AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.SFTPShell
+                    AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.Shell
+                    AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.TestShell
+                    AddHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.TextShell
+                    AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.ZIPShell
+                    AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                Case ShellType.HTTPShell
+                    AddHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                Case Else
+                    Return False
+            End Select
+            CurrentShellType = ShellType
+            Return True
+        End Function
 
-End Module
+    End Module
+End Namespace

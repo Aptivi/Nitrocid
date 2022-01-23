@@ -18,23 +18,25 @@
 
 Imports System.IO
 
-Class CdbgLogCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class CdbgLogCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If DebugMode Then
-            Try
-                DebugStreamWriter.Close()
-                DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
-                Write(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
-            Catch ex As Exception
-                Write(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
-                WStkTrc(ex)
-            End Try
-        Else
-            Write(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If DebugMode Then
+                Try
+                    DebugStreamWriter.Close()
+                    DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
+                    Write(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
+                Catch ex As Exception
+                    Write(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
+                    WStkTrc(ex)
+                End Try
+            Else
+                Write(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

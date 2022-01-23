@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Text.RegularExpressions
 Imports KS
 Imports KS.Misc.Platform
+Imports KS.Shell
 
 <TestClass()> Public Class FilesystemManipulationTests
 

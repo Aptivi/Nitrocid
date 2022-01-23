@@ -18,16 +18,18 @@
 
 Imports KS.Misc.Screensaver
 
-Class SaveScreenCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SaveScreenCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If Not ListArgs?.Length = 0 Then
-            ShowSavers(ListArgs(0))
-        Else
-            ShowSavers(DefSaverName)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ListArgs?.Length = 0 Then
+                ShowSavers(ListArgs(0))
+            Else
+                ShowSavers(DefSaverName)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

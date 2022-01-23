@@ -18,16 +18,18 @@
 
 Imports KS.Hardware
 
-Class HwInfoCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class HwInfoCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ListHardware(ListArgs(0))
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            ListHardware(ListArgs(0))
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
+        End Sub
 
-End Class
+    End Class
+End Namespace

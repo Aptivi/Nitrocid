@@ -18,33 +18,35 @@
 
 Imports KS.Arguments
 
-Class ArgInjCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ArgInjCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim FinalArgs As New List(Of String)
-        For Each arg As String In ListArgs
-            Wdbg(DebugLevel.I, "Parsing argument {0}...", arg)
-            If AvailableArgs.ContainsKey(arg) Then
-                Wdbg(DebugLevel.I, "Adding argument {0}...", arg)
-                FinalArgs.Add(arg)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim FinalArgs As New List(Of String)
+            For Each arg As String In ListArgs
+                Wdbg(DebugLevel.I, "Parsing argument {0}...", arg)
+                If AvailableArgs.ContainsKey(arg) Then
+                    Wdbg(DebugLevel.I, "Adding argument {0}...", arg)
+                    FinalArgs.Add(arg)
+                Else
+                    Wdbg(DebugLevel.W, "Argument {0} not found.", arg)
+                    Write(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
+                End If
+            Next
+            If FinalArgs.Count = 0 Then
+                Write(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
             Else
-                Wdbg(DebugLevel.W, "Argument {0} not found.", arg)
-                Write(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
+                EnteredArguments = New List(Of String)(FinalArgs)
+                ArgsInjected = True
+                Write(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
             End If
-        Next
-        If FinalArgs.Count = 0 Then
-            Write(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
-        Else
-            EnteredArguments = New List(Of String)(FinalArgs)
-            ArgsInjected = True
-            Write(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
-        End If
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,55 +18,57 @@
 
 Imports KS.Kernel
 
-Public Class TestShell
-    Inherits ShellExecutor
-    Implements IShell
+Namespace Shell.Shells
+    Public Class TestShell
+        Inherits ShellExecutor
+        Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
-        Get
-            Return ShellType.TestShell
-        End Get
-    End Property
+        Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+            Get
+                Return ShellType.TestShell
+            End Get
+        End Property
 
-    Public Overrides Property Bail As Boolean Implements IShell.Bail
+        Public Overrides Property Bail As Boolean Implements IShell.Bail
 
-    Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-        'Show the welcome message
-        SwitchCancellationHandler(ShellType.TestShell)
-        Console.WriteLine()
-        WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
+        Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            'Show the welcome message
+            SwitchCancellationHandler(ShellType.TestShell)
+            Console.WriteLine()
+            WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
 
-        'Actual shell logic
-        While Not Bail
-            SyncLock TestCancelSync
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
+            'Actual shell logic
+            While Not Bail
+                SyncLock TestCancelSync
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
 
-                'Write the custom prompt style for the test shell
-                Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
-                If Test_PromptStyle = "" Then
-                    Write("(t)> ", False, ColTypes.Input)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
+                    'Write the custom prompt style for the test shell
+                    Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
+                    If Test_PromptStyle = "" Then
+                        Write("(t)> ", False, ColTypes.Input)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
 
-                'Parse the command
-                Dim FullCmd As String = Console.ReadLine
-                Try
-                    GetLine(FullCmd, False, "", ShellType.TestShell)
-                Catch ex As Exception
-                    Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
-                    Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
-                    WStkTrc(ex)
-                End Try
-            End SyncLock
-        End While
+                    'Parse the command
+                    Dim FullCmd As String = Console.ReadLine
+                    Try
+                        GetLine(FullCmd, False, "", ShellType.TestShell)
+                    Catch ex As Exception
+                        Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
+                        Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
+                        WStkTrc(ex)
+                    End Try
+                End SyncLock
+            End While
 
-        'Restore the cancellation handler
-        SwitchCancellationHandler(LastShellType)
-    End Sub
+            'Restore the cancellation handler
+            SwitchCancellationHandler(LastShellType)
+        End Sub
 
-End Class
+    End Class
+End Namespace

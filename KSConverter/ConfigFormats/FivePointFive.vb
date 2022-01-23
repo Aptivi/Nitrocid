@@ -33,6 +33,7 @@ Imports KS.Network.RPC
 Imports KS.Network.SFTP
 Imports KS.Network.SSH
 Imports KS.Network
+Imports KS.Shell
 Imports MadMilkman.Ini
 Imports Extensification.StringExts
 Imports Core

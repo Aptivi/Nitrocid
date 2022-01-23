@@ -18,19 +18,21 @@
 
 Imports KS.Network.SSH
 
-Class SshellCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SshellCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim AddressDelimiter() As String = ListArgs(0).Split(":")
-        Dim Address As String = AddressDelimiter(0)
-        If AddressDelimiter.Length > 1 Then
-            Dim Port As Integer = AddressDelimiter(1)
-            InitializeSSH(Address, Port, ListArgs(1), ConnectionType.Shell)
-        Else
-            InitializeSSH(Address, 22, ListArgs(1), ConnectionType.Shell)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim AddressDelimiter() As String = ListArgs(0).Split(":")
+            Dim Address As String = AddressDelimiter(0)
+            If AddressDelimiter.Length > 1 Then
+                Dim Port As Integer = AddressDelimiter(1)
+                InitializeSSH(Address, Port, ListArgs(1), ConnectionType.Shell)
+            Else
+                InitializeSSH(Address, 22, ListArgs(1), ConnectionType.Shell)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

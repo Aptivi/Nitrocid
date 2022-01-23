@@ -18,31 +18,33 @@
 
 Imports System.IO
 
-Class FileInfoCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class FileInfoCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        For Each FileName As String In ListArgs
-            Dim FilePath As String = NeutralizePath(FileName)
-            Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FileExists(FilePath))
-            WriteSeparator(FileName, True)
-            If FileExists(FilePath) Then
-                Dim FileInfo As New FileInfo(FilePath)
-                Dim Style As FilesystemNewlineStyle = GetLineEndingFromFile(FilePath)
-                Write(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
-                Write(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
-                Write(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
-                Write(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
-                Write(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
-                Write(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
-                Write(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
-                Write(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
-                Write(DoTranslation("Newline style:") + " {0}", True, ColTypes.Neutral, Style.ToString)
-            Else
-                Write(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
-            End If
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each FileName As String In ListArgs
+                Dim FilePath As String = NeutralizePath(FileName)
+                Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FileExists(FilePath))
+                WriteSeparator(FileName, True)
+                If FileExists(FilePath) Then
+                    Dim FileInfo As New FileInfo(FilePath)
+                    Dim Style As FilesystemNewlineStyle = GetLineEndingFromFile(FilePath)
+                    Write(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
+                    Write(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
+                    Write(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
+                    Write(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
+                    Write(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
+                    Write(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
+                    Write(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
+                    Write(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
+                    Write(DoTranslation("Newline style:") + " {0}", True, ColTypes.Neutral, Style.ToString)
+                Else
+                    Write(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
+                End If
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

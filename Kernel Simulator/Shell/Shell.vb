@@ -21,37 +21,39 @@ Imports System.Threading
 Imports KS.Kernel
 Imports KS.Misc.Execution
 Imports KS.Scripting
+Imports KS.Shell.Commands
 
-Public Module Shell
+Namespace Shell
+    Public Module Shell
 
-    ''' <summary>
-    ''' Whether the shell is colored or not
-    ''' </summary>
-    Public ColoredShell As Boolean = True
-    ''' <summary>
-    ''' Shell prompt style
-    ''' </summary>
-    Public ShellPromptStyle As String = ""
-    ''' <summary>
-    ''' Specifies where to lookup for executables in these paths. Same as in PATH implementation.
-    ''' </summary>
-    Public PathsToLookup As String = Environ("PATH")
-    ''' <summary>
-    ''' Path lookup delimiter, depending on the operating system
-    ''' </summary>
-    Public ReadOnly PathLookupDelimiter As String = Path.PathSeparator
-    ''' <summary>
-    ''' All injected commands
-    ''' </summary>
-    Public InjectedCommands As New List(Of String)
-    ''' <summary>
-    ''' All mod commands
-    ''' </summary>
-    Public ModCommands As New ArrayList
-    ''' <summary>
-    ''' List of commands
-    ''' </summary>
-    Public ReadOnly Commands As New Dictionary(Of String, CommandInfo) From {{"adduser", New CommandInfo("adduser", ShellType.Shell, "Adds users", {"<userName> [password] [confirm]"}, True, 1, New AddUserCommand, True)},
+        ''' <summary>
+        ''' Whether the shell is colored or not
+        ''' </summary>
+        Public ColoredShell As Boolean = True
+        ''' <summary>
+        ''' Shell prompt style
+        ''' </summary>
+        Public ShellPromptStyle As String = ""
+        ''' <summary>
+        ''' Specifies where to lookup for executables in these paths. Same as in PATH implementation.
+        ''' </summary>
+        Public PathsToLookup As String = Environ("PATH")
+        ''' <summary>
+        ''' Path lookup delimiter, depending on the operating system
+        ''' </summary>
+        Public ReadOnly PathLookupDelimiter As String = Path.PathSeparator
+        ''' <summary>
+        ''' All injected commands
+        ''' </summary>
+        Public InjectedCommands As New List(Of String)
+        ''' <summary>
+        ''' All mod commands
+        ''' </summary>
+        Public ModCommands As New ArrayList
+        ''' <summary>
+        ''' List of commands
+        ''' </summary>
+        Public ReadOnly Commands As New Dictionary(Of String, CommandInfo) From {{"adduser", New CommandInfo("adduser", ShellType.Shell, "Adds users", {"<userName> [password] [confirm]"}, True, 1, New AddUserCommand, True)},
                                                                              {"alias", New CommandInfo("alias", ShellType.Shell, "Adds aliases to commands", {$"<rem/add> <{String.Join("/", [Enum].GetNames(GetType(ShellType)))}> <alias> <cmd>"}, True, 3, New AliasCommand, True)},
                                                                              {"arginj", New CommandInfo("arginj", ShellType.Shell, "Injects arguments to the kernel (reboot required)", {"[Arguments separated by spaces]"}, True, 1, New ArgInjCommand, True, False, False, False, False, New Action(AddressOf (New ArgInjCommand).HelpHelper))},
                                                                              {"beep", New CommandInfo("beep", ShellType.Shell, "Beep in 'n' Hz and time in 'n' milliseconds", {"<37-32767 Hz> <milliseconds>"}, True, 2, New BeepCommand)},
@@ -159,141 +161,142 @@ Public Module Shell
                                                                              {"zip", New CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", {"<zipfile> <path> [-fast|-nocomp|-nobasedir]"}, True, 2, New ZipCommand, False, False, False, False, False, New Action(AddressOf (New ZipCommand).HelpHelper))},
                                                                              {"zipshell", New CommandInfo("zipshell", ShellType.Shell, "Opens a ZIP archive", {"<zipfile>"}, True, 1, New ZipShellCommand)}}
 
-    ''' <summary>
-    ''' Parses a specified command.
-    ''' </summary>
-    ''' <param name="FullCommand">The full command string</param>
-    ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
-    ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
-    ''' <param name="ShellType">Shell type</param>
-    ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-    Public Sub GetLine(FullCommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
-        'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-        Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", FullCommand.Contains(">>>"), FullCommand.Contains(">>"))
-        Dim OutputTextWriter As StreamWriter
-        Dim OutputStream As FileStream
-        If FullCommand.Contains(">>>") Then
-            Wdbg(DebugLevel.I, "Output redirection found with append.")
-            DefConsoleOut = Console.Out
-            Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
-            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
-            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-            Console.SetOut(OutputTextWriter)
-            FullCommand = FullCommand.Replace(" >>> " + OutputFileName, "")
-        ElseIf FullCommand.Contains(">>") Then
-            Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
-            DefConsoleOut = Console.Out
-            Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
-            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
-            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-            Console.SetOut(OutputTextWriter)
-            FullCommand = FullCommand.Replace(" >> " + OutputFileName, "")
-        End If
+        ''' <summary>
+        ''' Parses a specified command.
+        ''' </summary>
+        ''' <param name="FullCommand">The full command string</param>
+        ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
+        ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
+        ''' <param name="ShellType">Shell type</param>
+        ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        Public Sub GetLine(FullCommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
+            'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
+            Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", FullCommand.Contains(">>>"), FullCommand.Contains(">>"))
+            Dim OutputTextWriter As StreamWriter
+            Dim OutputStream As FileStream
+            If FullCommand.Contains(">>>") Then
+                Wdbg(DebugLevel.I, "Output redirection found with append.")
+                DefConsoleOut = Console.Out
+                Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
+                OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+                FullCommand = FullCommand.Replace(" >>> " + OutputFileName, "")
+            ElseIf FullCommand.Contains(">>") Then
+                Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
+                DefConsoleOut = Console.Out
+                Dim OutputFileName As String = FullCommand.Substring(FullCommand.LastIndexOf(">") + 2)
+                OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+                FullCommand = FullCommand.Replace(" >> " + OutputFileName, "")
+            End If
 
-        'Checks to see if the user provided optional path
-        If Not String.IsNullOrWhiteSpace(OutputPath) Then
-            Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath)
-            DefConsoleOut = Console.Out
-            OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
-            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-            Console.SetOut(OutputTextWriter)
-        End If
+            'Checks to see if the user provided optional path
+            If Not String.IsNullOrWhiteSpace(OutputPath) Then
+                Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath)
+                DefConsoleOut = Console.Out
+                OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+            End If
 
-        'Reads command written by user
-        Try
-            Dim EntireCommand As String = FullCommand
-            If Not (FullCommand = Nothing Or FullCommand.StartsWithAnyOf({" ", "#"}) = True) Then
-                Console.Title = $"{ConsoleTitle} - {FullCommand}"
+            'Reads command written by user
+            Try
+                Dim EntireCommand As String = FullCommand
+                If Not (FullCommand = Nothing Or FullCommand.StartsWithAnyOf({" ", "#"}) = True) Then
+                    Console.Title = $"{ConsoleTitle} - {FullCommand}"
 
-                'Parse script command (if any)
-                Dim scriptArgs As List(Of String) = FullCommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                scriptArgs.RemoveAt(0)
+                    'Parse script command (if any)
+                    Dim scriptArgs As List(Of String) = FullCommand.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    scriptArgs.RemoveAt(0)
 
-                'Get the index of the first space
-                Dim indexCmd As Integer = FullCommand.IndexOf(" ")
-                Dim cmdArgs As String = FullCommand 'Command with args
-                Wdbg(DebugLevel.I, "Prototype indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
-                If indexCmd = -1 Then indexCmd = FullCommand.Length
-                FullCommand = FullCommand.Substring(0, indexCmd)
-                Wdbg(DebugLevel.I, "Finished indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
+                    'Get the index of the first space
+                    Dim indexCmd As Integer = FullCommand.IndexOf(" ")
+                    Dim cmdArgs As String = FullCommand 'Command with args
+                    Wdbg(DebugLevel.I, "Prototype indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
+                    If indexCmd = -1 Then indexCmd = FullCommand.Length
+                    FullCommand = FullCommand.Substring(0, indexCmd)
+                    Wdbg(DebugLevel.I, "Finished indexCmd and FullCommand: {0}, {1}", indexCmd, FullCommand)
 
-                'Scan PATH for file existence and set file name as needed
-                Dim TargetFile As String = ""
-                Dim TargetFileName As String = ""
-                FileExistsInPath(FullCommand, TargetFile)
-                If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(FullCommand)
-                If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
+                    'Scan PATH for file existence and set file name as needed
+                    Dim TargetFile As String = ""
+                    Dim TargetFileName As String = ""
+                    FileExistsInPath(FullCommand, TargetFile)
+                    If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(FullCommand)
+                    If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
 
-                'Check to see if a user is able to execute a command
-                Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
-                If Commands.ContainsKey(FullCommand) Then
-                    If ShellType = ShellType.Shell Then
-                        If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(FullCommand).Strict Then
-                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", FullCommand)
-                            Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, FullCommand)
-                            Exit Try
-                        End If
-                    End If
-
-                    If Maintenance = True And Commands(FullCommand).NoMaintenance Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", FullCommand)
-                        Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, FullCommand)
-                    ElseIf IsInvokedByKernelArgument And (FullCommand.StartsWith("logout") Or FullCommand.StartsWith("shutdown") Or FullCommand.StartsWith("reboot")) Then
-                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", FullCommand)
-                        Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, FullCommand)
-                    Else
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", FullCommand, cmdArgs)
-                        Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
-                        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = $"{ShellType} Command Thread"}
-                        StartCommandThread.Start(Params)
-                        StartCommandThread.Join()
-                    End If
-                ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
-                    'If we're in the UESH shell, parse the script file or executable file
-                    If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", FullCommand)
-                        Try
-                            'Create a new instance of process
-                            If TryParsePath(TargetFile) Then
-                                cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
-                                Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
-                                Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
-                                ProcessStartCommandThread = New Thread(AddressOf ExecuteProcess) With {.Name = "Executable Command Thread"}
-                                ProcessStartCommandThread.Start(Params)
-                                ProcessStartCommandThread.Join()
+                    'Check to see if a user is able to execute a command
+                    Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
+                    If Commands.ContainsKey(FullCommand) Then
+                        If ShellType = ShellType.Shell Then
+                            If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(FullCommand).Strict Then
+                                Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", FullCommand)
+                                Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, FullCommand)
+                                Exit Try
                             End If
-                        Catch ex As Exception
-                            Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
-                            Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, FullCommand, ex.Message)
-                            WStkTrc(ex)
-                        End Try
-                    ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", FullCommand)
-                        Execute(TargetFile, scriptArgs.Join(" "))
+                        End If
+
+                        If Maintenance = True And Commands(FullCommand).NoMaintenance Then
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", FullCommand)
+                            Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, FullCommand)
+                        ElseIf IsInvokedByKernelArgument And (FullCommand.StartsWith("logout") Or FullCommand.StartsWith("shutdown") Or FullCommand.StartsWith("reboot")) Then
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", FullCommand)
+                            Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, FullCommand)
+                        Else
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", FullCommand, cmdArgs)
+                            Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
+                            StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = $"{ShellType} Command Thread"}
+                            StartCommandThread.Start(Params)
+                            StartCommandThread.Join()
+                        End If
+                    ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
+                        'If we're in the UESH shell, parse the script file or executable file
+                        If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", FullCommand)
+                            Try
+                                'Create a new instance of process
+                                If TryParsePath(TargetFile) Then
+                                    cmdArgs = cmdArgs.Replace(TargetFileName, "")
+                                    cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                                    Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
+                                    Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
+                                    ProcessStartCommandThread = New Thread(AddressOf ExecuteProcess) With {.Name = "Executable Command Thread"}
+                                    ProcessStartCommandThread.Start(Params)
+                                    ProcessStartCommandThread.Join()
+                                End If
+                            Catch ex As Exception
+                                Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
+                                Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, FullCommand, ex.Message)
+                                WStkTrc(ex)
+                            End Try
+                        ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", FullCommand)
+                            Execute(TargetFile, scriptArgs.Join(" "))
+                        Else
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", FullCommand, indexCmd)
+                            Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, FullCommand)
+                        End If
                     Else
                         Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", FullCommand, indexCmd)
                         Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, FullCommand)
                     End If
-                Else
-                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", FullCommand, indexCmd)
-                    Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, FullCommand)
                 End If
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-            Write(DoTranslation("Error trying to execute command.") + NewLine +
+            Catch ex As Exception
+                WStkTrc(ex)
+                Write(DoTranslation("Error trying to execute command.") + NewLine +
                   DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-        End Try
-        Console.Title = ConsoleTitle
+            End Try
+            Console.Title = ConsoleTitle
 
-        'Restore console output to its original state if any
+            'Restore console output to its original state if any
 #Disable Warning BC42104
-        If DefConsoleOut IsNot Nothing Then
-            Console.SetOut(DefConsoleOut)
-            OutputTextWriter?.Close()
-        End If
+            If DefConsoleOut IsNot Nothing Then
+                Console.SetOut(DefConsoleOut)
+                OutputTextWriter?.Close()
+            End If
 #Enable Warning BC42104
-    End Sub
+        End Sub
 
-End Module
+    End Module
+End Namespace

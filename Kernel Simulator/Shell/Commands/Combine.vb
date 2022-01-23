@@ -18,19 +18,21 @@
 
 Imports System.IO
 
-Class CombineCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class CombineCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim OutputPath As String = NeutralizePath(ListArgsOnly(0))
-        Dim InputPath As String = ListArgsOnly(1)
-        Dim CombineInputPaths() As String = ListArgsOnly.Skip(2).ToArray
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim OutputPath As String = NeutralizePath(ListArgsOnly(0))
+            Dim InputPath As String = ListArgsOnly(1)
+            Dim CombineInputPaths() As String = ListArgsOnly.Skip(2).ToArray
 
-        'Make a combined content array
-        Dim CombinedContents() As String = CombineFiles(InputPath, CombineInputPaths)
-        MakeFile(OutputPath, False)
-        File.WriteAllLines(OutputPath, CombinedContents)
-    End Sub
+            'Make a combined content array
+            Dim CombinedContents() As String = CombineFiles(InputPath, CombineInputPaths)
+            MakeFile(OutputPath, False)
+            File.WriteAllLines(OutputPath, CombinedContents)
+        End Sub
 
-End Class
+    End Class
+End Namespace

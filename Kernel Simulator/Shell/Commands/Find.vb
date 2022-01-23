@@ -16,20 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FindCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class FindCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim FileToSearch As String = ListArgsOnly(0)
-        Dim DirectoryToSearch As String = CurrDir
-        If ListArgsOnly.Length > 1 Then
-            DirectoryToSearch = NeutralizePath(ListArgsOnly(1))
-        End If
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim FileToSearch As String = ListArgsOnly(0)
+            Dim DirectoryToSearch As String = CurrDir
+            If ListArgsOnly.Length > 1 Then
+                DirectoryToSearch = NeutralizePath(ListArgsOnly(1))
+            End If
 
-        'Print the results if found
-        Dim FileEntries As String() = GetFilesystemEntries(DirectoryToSearch, FileToSearch)
-        WriteList(FileEntries, True)
-    End Sub
+            'Print the results if found
+            Dim FileEntries As String() = GetFilesystemEntries(DirectoryToSearch, FileToSearch)
+            WriteList(FileEntries, True)
+        End Sub
 
-End Class
+    End Class
+End Namespace

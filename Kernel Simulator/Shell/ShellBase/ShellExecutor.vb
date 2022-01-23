@@ -16,15 +16,17 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public MustInherit Class ShellExecutor
-    Implements IShell
+Namespace Shell.ShellBase
+    Public MustInherit Class ShellExecutor
+        Implements IShell
 
-    Public Overridable ReadOnly Property ShellType As ShellType Implements IShell.ShellType
-    Public Overridable Property Bail As Boolean Implements IShell.Bail
+        Public Overridable ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+        Public Overridable Property Bail As Boolean Implements IShell.Bail
 
-    Public Overridable Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-        Wdbg(DebugLevel.F, "We shouldn't be here!!!")
-        Throw New InvalidOperationException()
-    End Sub
+        Public Overridable Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            Wdbg(DebugLevel.F, "We shouldn't be here!!!")
+            Throw New InvalidOperationException()
+        End Sub
 
-End Class
+    End Class
+End Namespace

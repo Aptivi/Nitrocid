@@ -20,49 +20,51 @@ Imports System.IO
 Imports System.Text
 Imports KS.Misc.Encryption
 
-Class SumFileCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SumFileCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim file As String = NeutralizePath(ListArgs(1))
-        Dim out As String = ""
-        Dim FileBuilder As New StringBuilder
-        If Not ListArgs.Length < 3 Then
-            out = NeutralizePath(ListArgs(2))
-        End If
-        If FileExists(file) Then
-            Dim AlgorithmEnum As Algorithms
-            If ListArgs(0) = "all" Then
-                For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
-                    AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim file As String = NeutralizePath(ListArgs(1))
+            Dim out As String = ""
+            Dim FileBuilder As New StringBuilder
+            If Not ListArgs.Length < 3 Then
+                out = NeutralizePath(ListArgs(2))
+            End If
+            If FileExists(file) Then
+                Dim AlgorithmEnum As Algorithms
+                If ListArgs(0) = "all" Then
+                    For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
+                        AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
+                        Dim spent As New Stopwatch
+                        spent.Start() 'Time when you're on a breakpoint is counted
+                        Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                        Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                        Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                        FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                        spent.Stop()
+                    Next
+                ElseIf [Enum].TryParse(ListArgs(0), AlgorithmEnum) Then
                     Dim spent As New Stopwatch
                     spent.Start() 'Time when you're on a breakpoint is counted
                     Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                    Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                    Write(encrypted, True, ColTypes.Neutral)
                     Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                     FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                     spent.Stop()
-                Next
-            ElseIf [Enum].TryParse(ListArgs(0), AlgorithmEnum) Then
-                Dim spent As New Stopwatch
-                spent.Start() 'Time when you're on a breakpoint is counted
-                Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                Write(encrypted, True, ColTypes.Neutral)
-                Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
-                spent.Stop()
+                Else
+                    Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+                End If
+                If Not out = "" Then
+                    Dim FStream As New StreamWriter(out)
+                    FStream.Write(FileBuilder.ToString)
+                    FStream.Flush()
+                End If
             Else
-                Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+                Write(DoTranslation("{0} is not found."), True, ColTypes.Error, file)
             End If
-            If Not out = "" Then
-                Dim FStream As New StreamWriter(out)
-                FStream.Write(FileBuilder.ToString)
-                FStream.Flush()
-            End If
-        Else
-            Write(DoTranslation("{0} is not found."), True, ColTypes.Error, file)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

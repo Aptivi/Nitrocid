@@ -16,24 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RmCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class RmCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        For Each Path As String In ListArgs
-            Dim NeutPath As String = NeutralizePath(Path)
-            If FileExists(NeutPath) Then
-                Wdbg(DebugLevel.I, "{0} is a file. Removing...", Path)
-                RemoveFile(Path)
-            ElseIf FolderExists(NeutPath) Then
-                Wdbg(DebugLevel.I, "{0} is a folder. Removing...", Path)
-                RemoveDirectory(Path)
-            Else
-                Wdbg(DebugLevel.W, "Trying to remove {0} which is not found.", Path)
-                Write(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Error, Path)
-            End If
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each Path As String In ListArgs
+                Dim NeutPath As String = NeutralizePath(Path)
+                If FileExists(NeutPath) Then
+                    Wdbg(DebugLevel.I, "{0} is a file. Removing...", Path)
+                    RemoveFile(Path)
+                ElseIf FolderExists(NeutPath) Then
+                    Wdbg(DebugLevel.I, "{0} is a folder. Removing...", Path)
+                    RemoveDirectory(Path)
+                Else
+                    Wdbg(DebugLevel.W, "Trying to remove {0} which is not found.", Path)
+                    Write(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Error, Path)
+                End If
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

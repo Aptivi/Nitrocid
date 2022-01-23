@@ -18,20 +18,22 @@
 
 Imports KS.Network.Mail
 
-Class MailCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class MailCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If KeepAlive Then
-            StartShell(ShellType.MailShell)
-        Else
-            If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
-                PromptUser()
-            ElseIf Not ListArgs(0) = "" Then
-                PromptPassword(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If KeepAlive Then
+                StartShell(ShellType.MailShell)
+            Else
+                If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
+                    PromptUser()
+                ElseIf Not ListArgs(0) = "" Then
+                    PromptPassword(ListArgs(0))
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

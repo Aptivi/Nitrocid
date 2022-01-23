@@ -19,6 +19,7 @@
 Imports KS
 Imports KS.ConsoleBase
 Imports KS.Kernel
+Imports KS.Shell
 
 Module PreFivePointFive
 

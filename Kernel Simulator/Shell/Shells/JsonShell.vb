@@ -21,71 +21,73 @@ Imports System.Threading
 Imports KS.Kernel
 Imports KS.Misc.JsonShell
 
-Public Class JsonShell
-    Inherits ShellExecutor
-    Implements IShell
+Namespace Shell.Shells
+    Public Class JsonShell
+        Inherits ShellExecutor
+        Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
-        Get
-            Return ShellType.JsonShell
-        End Get
-    End Property
+        Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+            Get
+                Return ShellType.JsonShell
+            End Get
+        End Property
 
-    Public Overrides Property Bail As Boolean Implements IShell.Bail
+        Public Overrides Property Bail As Boolean Implements IShell.Bail
 
-    Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-        'Add handler for JSON shell
-        SwitchCancellationHandler(ShellType.JsonShell)
+        Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            'Add handler for JSON shell
+            SwitchCancellationHandler(ShellType.JsonShell)
 
-        'Get file path
-        Dim FilePath As String = ""
-        If ShellArgs.Length > 0 Then
-            FilePath = ShellArgs(0)
-        Else
-            Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
-            Bail = True
-        End If
+            'Get file path
+            Dim FilePath As String = ""
+            If ShellArgs.Length > 0 Then
+                FilePath = ShellArgs(0)
+            Else
+                Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
+                Bail = True
+            End If
 
-        While Not Bail
-            SyncLock JsonShellCancelSync
-                'Open file if not open
-                If JsonShell_FileStream Is Nothing Then
-                    Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
-                    If Not JsonShell_OpenJsonFile(FilePath) Then
-                        Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
-                        Exit While
+            While Not Bail
+                SyncLock JsonShellCancelSync
+                    'Open file if not open
+                    If JsonShell_FileStream Is Nothing Then
+                        Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
+                        If Not JsonShell_OpenJsonFile(FilePath) Then
+                            Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                            Exit While
+                        End If
+                        JsonShell_AutoSave.Start()
                     End If
-                    JsonShell_AutoSave.Start()
-                End If
 
-                'Prepare for prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
-                If JsonShell_PromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                SetInputColor()
+                    'Prepare for prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
+                    If JsonShell_PromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+                    SetInputColor()
 
-                'Prompt for command
-                Kernel.KernelEventManager.RaiseTextShellInitialized()
-                Dim WrittenCommand As String = Console.ReadLine
-                GetLine(WrittenCommand, False, "", ShellType.JsonShell)
-            End SyncLock
-        End While
+                    'Prompt for command
+                    Kernel.KernelEventManager.RaiseTextShellInitialized()
+                    Dim WrittenCommand As String = Console.ReadLine
+                    GetLine(WrittenCommand, False, "", ShellType.JsonShell)
+                End SyncLock
+            End While
 
-        'Close file
-        JsonShell_CloseTextFile()
-        JsonShell_AutoSave.Abort()
-        JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
+            'Close file
+            JsonShell_CloseTextFile()
+            JsonShell_AutoSave.Abort()
+            JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
 
-        'Remove handler for JSON shell
-        SwitchCancellationHandler(LastShellType)
-    End Sub
+            'Remove handler for JSON shell
+            SwitchCancellationHandler(LastShellType)
+        End Sub
 
-End Class
+    End Class
+End Namespace

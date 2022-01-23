@@ -19,31 +19,33 @@
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver
 
-Class SetSaverCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SetSaverCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim modPath As String = GetKernelPath(KernelPathType.Mods)
-        StringArgs = StringArgs.ToLower
-        If Screensavers.ContainsKey(StringArgs) Or CustomSavers.ContainsKey(StringArgs) Then
-            SetDefaultScreensaver(StringArgs)
-            Write(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
-        Else
-            If FileExists($"{modPath}{StringArgs}") And Not SafeMode Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim modPath As String = GetKernelPath(KernelPathType.Mods)
+            StringArgs = StringArgs.ToLower
+            If Screensavers.ContainsKey(StringArgs) Or CustomSavers.ContainsKey(StringArgs) Then
                 SetDefaultScreensaver(StringArgs)
                 Write(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
             Else
-                Write(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, StringArgs)
+                If FileExists($"{modPath}{StringArgs}") And Not SafeMode Then
+                    SetDefaultScreensaver(StringArgs)
+                    Write(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
+                Else
+                    Write(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, StringArgs)
+                End If
             End If
-        End If
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        If CustomSavers.Count > 0 Then
-            Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
-        End If
-        Write(DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
-    End Sub
+        Public Sub HelpHelper()
+            If CustomSavers.Count > 0 Then
+                Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
+            End If
+            Write(DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
+        End Sub
 
-End Class
+    End Class
+End Namespace

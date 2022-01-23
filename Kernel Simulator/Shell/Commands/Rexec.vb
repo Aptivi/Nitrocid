@@ -18,16 +18,18 @@
 
 Imports KS.Network.RPC
 
-Class RexecCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class RexecCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length = 2 Then
-            SendCommand("<Request:Exec>(" + ListArgs(1) + ")", ListArgs(0))
-        Else
-            SendCommand("<Request:Exec>(" + ListArgs(2) + ")", ListArgs(0), ListArgs(1))
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Length = 2 Then
+                SendCommand("<Request:Exec>(" + ListArgs(1) + ")", ListArgs(0))
+            Else
+                SendCommand("<Request:Exec>(" + ListArgs(2) + ")", ListArgs(0), ListArgs(1))
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

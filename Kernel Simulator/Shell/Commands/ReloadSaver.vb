@@ -19,26 +19,28 @@
 Imports System.IO
 Imports KS.Misc.Screensaver.Customized
 
-Class ReloadSaverCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ReloadSaverCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If Not SafeMode Then
-            CompileCustom(ListArgs(0))
-        Else
-            Write(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not SafeMode Then
+                CompileCustom(ListArgs(0))
+            Else
+                Write(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
+            End If
+        End Sub
 
-    Public Sub HelpHelper()
-        'Populate screensaver files
-        Dim ScreensaverFiles As New List(Of String)
-        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+        Public Sub HelpHelper()
+            'Populate screensaver files
+            Dim ScreensaverFiles As New List(Of String)
+            ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+            ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
 
-        'Print available screensavers
-        Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
-    End Sub
+            'Print available screensavers
+            Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
+        End Sub
 
-End Class
+    End Class
+End Namespace

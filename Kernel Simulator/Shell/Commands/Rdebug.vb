@@ -18,20 +18,22 @@
 
 Imports KS.Network.RemoteDebug
 
-Class RdebugCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class RdebugCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If DebugMode Then
-            If RDebugThread.IsAlive Then
-                StopRDebugThread()
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If DebugMode Then
+                If RDebugThread.IsAlive Then
+                    StopRDebugThread()
+                Else
+                    StartRDebugThread()
+                End If
             Else
-                StartRDebugThread()
+                Write(DoTranslation("Debugging not enabled."), True, ColTypes.Error)
             End If
-        Else
-            Write(DoTranslation("Debugging not enabled."), True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

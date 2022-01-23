@@ -18,12 +18,14 @@
 
 Imports KS.ConsoleBase.Themes.Studio
 
-Class MkThemeCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class MkThemeCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        StartThemeStudio(ListArgs(0))
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            StartThemeStudio(ListArgs(0))
+        End Sub
 
-End Class
+    End Class
+End Namespace

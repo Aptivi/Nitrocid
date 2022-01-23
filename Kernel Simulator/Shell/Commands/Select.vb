@@ -18,25 +18,27 @@
 
 Imports KS.Scripting.Interaction
 
-Class SelectCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SelectCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Titles As New List(Of String)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Titles As New List(Of String)
 
-        'Add the provided working titles
-        If ListArgsOnly.Length > 3 Then
-            Titles.AddRange(ListArgsOnly.Skip(3))
-        End If
+            'Add the provided working titles
+            If ListArgsOnly.Length > 3 Then
+                Titles.AddRange(ListArgsOnly.Skip(3))
+            End If
 
-        'Prompt for selection
-        PromptSelection(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
-    End Sub
+            'Prompt for selection
+            PromptSelection(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+        Public Sub HelpHelper()
+            Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
               DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

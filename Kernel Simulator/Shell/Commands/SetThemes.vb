@@ -18,26 +18,28 @@
 
 Imports KS.ConsoleBase.Themes
 
-Class SetThemesCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SetThemesCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ColoredShell Then
-            Dim ThemePath As String = NeutralizePath(ListArgs(0))
-            If FileExists(ThemePath) Then
-                ApplyThemeFromFile(ThemePath)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ColoredShell Then
+                Dim ThemePath As String = NeutralizePath(ListArgs(0))
+                If FileExists(ThemePath) Then
+                    ApplyThemeFromFile(ThemePath)
+                Else
+                    ApplyThemeFromResources(ListArgs(0))
+                End If
+                MakePermanent()
             Else
-                ApplyThemeFromResources(ListArgs(0))
+                Write(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
             End If
-            MakePermanent()
-        Else
-            Write(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
-        End If
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        Write("<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
-    End Sub
+        Public Sub HelpHelper()
+            Write("<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
+        End Sub
 
-End Class
+    End Class
+End Namespace

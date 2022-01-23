@@ -19,28 +19,30 @@
 Imports System.IO
 Imports KS.Misc.Beautifiers
 
-Class JsonBeautifyCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class JsonBeautifyCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim JsonFile As String = NeutralizePath(ListArgs(0))
-        Dim JsonOutputFile As String
-        Dim BeautifiedJson As String
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim JsonFile As String = NeutralizePath(ListArgs(0))
+            Dim JsonOutputFile As String
+            Dim BeautifiedJson As String
 
-        If FileExists(JsonFile) Then
-            'Beautify the JSON and display it on screen
-            BeautifiedJson = BeautifyJson(JsonFile)
-            Write(BeautifiedJson, True, ColTypes.Neutral)
+            If FileExists(JsonFile) Then
+                'Beautify the JSON and display it on screen
+                BeautifiedJson = BeautifyJson(JsonFile)
+                Write(BeautifiedJson, True, ColTypes.Neutral)
 
-            'Beautify it to an output file specified (optional)
-            If ListArgs.Count > 1 Then
-                JsonOutputFile = NeutralizePath(ListArgs(1))
-                File.WriteAllText(JsonOutputFile, BeautifiedJson)
+                'Beautify it to an output file specified (optional)
+                If ListArgs.Count > 1 Then
+                    JsonOutputFile = NeutralizePath(ListArgs(1))
+                    File.WriteAllText(JsonOutputFile, BeautifiedJson)
+                End If
+            Else
+                Write(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
             End If
-        Else
-            Write(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

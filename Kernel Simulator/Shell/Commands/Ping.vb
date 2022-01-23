@@ -19,39 +19,41 @@
 Imports System.Net.NetworkInformation
 Imports KS.Network
 
-Class PingCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class PingCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        'If the pinged address is actually a number of times
-        Dim PingTimes As Integer = 4
-        Dim StepsToSkip As Integer = 0
-        If IsNumeric(ListArgs(0)) Then
-            Wdbg(DebugLevel.I, "ListArgs(0) is numeric. Assuming number of times: {0}", ListArgs(0))
-            PingTimes = ListArgs(0)
-            StepsToSkip = 1
-        End If
-        For Each PingedAddress As String In ListArgs.Skip(StepsToSkip)
-            If PingedAddress <> "" Then
-                WriteSeparator(PingedAddress, True)
-                For CurrentTime As Integer = 1 To PingTimes
-                    Try
-                        Dim PingReplied As PingReply = PingAddress(PingedAddress)
-                        If PingReplied.Status = IPStatus.Success Then
-                            Write("[{1}] " + DoTranslation("Ping succeeded in {0} ms."), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
-                        Else
-                            Write("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, PingReplied.Status, CurrentTime)
-                        End If
-                    Catch ex As Exception
-                        Write("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, ex.Message, CurrentTime)
-                        WStkTrc(ex)
-                    End Try
-                Next
-            Else
-                Write(DoTranslation("Address may not be empty."), True, ColTypes.Error)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            'If the pinged address is actually a number of times
+            Dim PingTimes As Integer = 4
+            Dim StepsToSkip As Integer = 0
+            If IsNumeric(ListArgs(0)) Then
+                Wdbg(DebugLevel.I, "ListArgs(0) is numeric. Assuming number of times: {0}", ListArgs(0))
+                PingTimes = ListArgs(0)
+                StepsToSkip = 1
             End If
-        Next
-    End Sub
+            For Each PingedAddress As String In ListArgs.Skip(StepsToSkip)
+                If PingedAddress <> "" Then
+                    WriteSeparator(PingedAddress, True)
+                    For CurrentTime As Integer = 1 To PingTimes
+                        Try
+                            Dim PingReplied As PingReply = PingAddress(PingedAddress)
+                            If PingReplied.Status = IPStatus.Success Then
+                                Write("[{1}] " + DoTranslation("Ping succeeded in {0} ms."), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
+                            Else
+                                Write("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, PingReplied.Status, CurrentTime)
+                            End If
+                        Catch ex As Exception
+                            Write("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, ex.Message, CurrentTime)
+                            WStkTrc(ex)
+                        End Try
+                    Next
+                Else
+                    Write(DoTranslation("Address may not be empty."), True, ColTypes.Error)
+                End If
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

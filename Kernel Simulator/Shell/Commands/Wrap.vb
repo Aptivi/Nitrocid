@@ -18,43 +18,45 @@
 
 Imports System.IO
 
-Class WrapCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class WrapCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
-        If Commands.ContainsKey(CommandToBeWrapped) Then
-            If Commands(CommandToBeWrapped).Wrappable Then
-                Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
-                GetLine(ListArgs(0), False, WrapOutputPath)
-                Dim WrapOutputStream As New StreamReader(WrapOutputPath)
-                Dim WrapOutput As String = WrapOutputStream.ReadToEnd
-                WriteWrapped(WrapOutput, False, ColTypes.Neutral)
-                If Not WrapOutput.EndsWith(vbNewLine) Then Console.WriteLine()
-                WrapOutputStream.Close()
-                File.Delete(WrapOutputPath)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
+            If Shell.Commands.ContainsKey(CommandToBeWrapped) Then
+                If Shell.Commands(CommandToBeWrapped).Wrappable Then
+                    Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
+                    GetLine(ListArgs(0), False, WrapOutputPath)
+                    Dim WrapOutputStream As New StreamReader(WrapOutputPath)
+                    Dim WrapOutput As String = WrapOutputStream.ReadToEnd
+                    WriteWrapped(WrapOutput, False, ColTypes.Neutral)
+                    If Not WrapOutput.EndsWith(vbNewLine) Then Console.WriteLine()
+                    WrapOutputStream.Close()
+                    File.Delete(WrapOutputPath)
+                Else
+                    Dim WrappableCmds As New ArrayList
+                    For Each CommandInfo As CommandInfo In Shell.Commands.Values
+                        If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+                    Next
+                    Write(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
+                End If
             Else
-                Dim WrappableCmds As New ArrayList
-                For Each CommandInfo As CommandInfo In Commands.Values
-                    If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
-                Next
-                Write(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
+                Write(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
             End If
-        Else
-            Write(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
-        End If
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        'Get wrappable commands
-        Dim WrappableCmds As New ArrayList
-        For Each CommandInfo As CommandInfo In Commands.Values
-            If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
-        Next
+        Public Sub HelpHelper()
+            'Get wrappable commands
+            Dim WrappableCmds As New ArrayList
+            For Each CommandInfo As CommandInfo In Shell.Commands.Values
+                If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+            Next
 
-        'Print them along with help description
-        Write(DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
-    End Sub
+            'Print them along with help description
+            Write(DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
+        End Sub
 
-End Class
+    End Class
+End Namespace

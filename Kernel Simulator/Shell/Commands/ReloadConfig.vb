@@ -18,17 +18,19 @@
 
 Imports KS.Misc.Configuration
 
-Class ReloadConfigCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ReloadConfigCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ReloadConfig()
-        Write(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            ReloadConfig()
+            Write(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
+        End Sub
 
-End Class
+    End Class
+End Namespace

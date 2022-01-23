@@ -18,25 +18,27 @@
 
 Imports System.IO
 
-Class ChDirCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ChDirCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            SetCurrDir(ListArgs(0))
-        Catch sex As Security.SecurityException
-            Wdbg(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-            Write(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, ListArgs(0), sex.Message)
-            WStkTrc(sex)
-        Catch ptlex As PathTooLongException
-            Wdbg(DebugLevel.I, "Directory length: {0}", NeutralizePath(ListArgs(0)).Length)
-            Write(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
-            WStkTrc(ptlex)
-        Catch ex As Exception
-            Write(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Error, ex.Message)
-            WStkTrc(ex)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                SetCurrDir(ListArgs(0))
+            Catch sex As Security.SecurityException
+                Wdbg(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType)
+                Write(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, ListArgs(0), sex.Message)
+                WStkTrc(sex)
+            Catch ptlex As PathTooLongException
+                Wdbg(DebugLevel.I, "Directory length: {0}", NeutralizePath(ListArgs(0)).Length)
+                Write(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
+                WStkTrc(ptlex)
+            Catch ex As Exception
+                Write(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Error, ex.Message)
+                WStkTrc(ex)
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

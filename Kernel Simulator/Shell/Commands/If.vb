@@ -18,21 +18,23 @@
 
 Imports KS.Scripting
 
-Class IfCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class IfCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            If ConditionSatisfied(ListArgsOnly(0)) Then
-                Dim CommandString As String = String.Join(" ", ListArgsOnly.Skip(1).ToArray)
-                GetLine(CommandString)
-            End If
-        Catch ex As Exception
-            Wdbg(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message)
-            WStkTrc(ex)
-            Write(DoTranslation("Failed to satisfy condition. More info here:") + " {0}", True, ColTypes.Error, ex.Message)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                If ConditionSatisfied(ListArgsOnly(0)) Then
+                    Dim CommandString As String = String.Join(" ", ListArgsOnly.Skip(1).ToArray)
+                    GetLine(CommandString)
+                End If
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message)
+                WStkTrc(ex)
+                Write(DoTranslation("Failed to satisfy condition. More info here:") + " {0}", True, ColTypes.Error, ex.Message)
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -16,26 +16,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class CatCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class CatCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            Dim PrintLines As Boolean = PrintLineNumbers
-            If ListSwitchesOnly.Contains("-lines") Then PrintLines = True
-            If ListSwitchesOnly.Contains("-nolines") Then PrintLines = False '-lines and -nolines cancel together.
-            PrintContents(ListArgs(0), PrintLines)
-        Catch ex As Exception
-            WStkTrc(ex)
-            Write(ex.Message, True, ColTypes.Error)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                Dim PrintLines As Boolean = PrintLineNumbers
+                If ListSwitchesOnly.Contains("-lines") Then PrintLines = True
+                If ListSwitchesOnly.Contains("-nolines") Then PrintLines = False '-lines and -nolines cancel together.
+                PrintContents(ListArgs(0), PrintLines)
+            Catch ex As Exception
+                WStkTrc(ex)
+                Write(ex.Message, True, ColTypes.Error)
+            End Try
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -lines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prints the line numbers that follow the line being printed"), True, ColTypes.ListValue)
-        Write("  -nolines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prevents printing the line numbers"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -lines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prints the line numbers that follow the line being printed"), True, ColTypes.ListValue)
+            Write("  -nolines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prevents printing the line numbers"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

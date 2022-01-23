@@ -18,23 +18,25 @@
 
 Imports KS.Misc.Configuration
 
-Class SettingsCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SettingsCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim SettingsType As SettingsType = SettingsType.Normal
-        If ListSwitchesOnly.Length > 0 Then
-            If ListSwitchesOnly(0) = "-saver" Then SettingsType = SettingsType.Screensaver
-            If ListSwitchesOnly(0) = "-splash" Then SettingsType = SettingsType.Splash
-        End If
-        OpenMainPage(SettingsType)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim SettingsType As SettingsType = SettingsType.Normal
+            If ListSwitchesOnly.Length > 0 Then
+                If ListSwitchesOnly(0) = "-saver" Then SettingsType = SettingsType.Screensaver
+                If ListSwitchesOnly(0) = "-splash" Then SettingsType = SettingsType.Splash
+            End If
+            OpenMainPage(SettingsType)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -saver: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the screensaver settings"), True, ColTypes.ListValue)
-        Write("  -splash: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the splash settings"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -saver: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the screensaver settings"), True, ColTypes.ListValue)
+            Write("  -splash: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the splash settings"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

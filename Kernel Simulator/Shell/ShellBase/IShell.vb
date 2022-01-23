@@ -16,22 +16,24 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-''' <summary>
-''' Base shell functions
-''' </summary>
-Public Interface IShell
+Namespace Shell.ShellBase
+    ''' <summary>
+    ''' Base shell functions
+    ''' </summary>
+    Public Interface IShell
 
-    ''' <summary>
-    ''' The shell type
-    ''' </summary>
-    ReadOnly Property ShellType As ShellType
-    ''' <summary>
-    ''' If true, will exit the shell
-    ''' </summary>
-    Property Bail As Boolean
-    ''' <summary>
-    ''' The shell initializer
-    ''' </summary>
-    Sub InitializeShell(ParamArray ShellArgs() As Object)
+        ''' <summary>
+        ''' The shell type
+        ''' </summary>
+        ReadOnly Property ShellType As ShellType
+        ''' <summary>
+        ''' If true, will exit the shell
+        ''' </summary>
+        Property Bail As Boolean
+        ''' <summary>
+        ''' The shell initializer
+        ''' </summary>
+        Sub InitializeShell(ParamArray ShellArgs() As Object)
 
-End Interface
+    End Interface
+End Namespace

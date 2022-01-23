@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ChMalCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ChMalCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length > 0 Then
-            If StringArgs = "" Then
-                Write(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Length > 0 Then
+                If StringArgs = "" Then
+                    Write(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
+                Else
+                    Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
+                    SetMOTD(StringArgs, MessageType.MAL)
+                End If
             Else
+                StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MAL))
                 Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
-                SetMOTD(StringArgs, MessageType.MAL)
+                ReadMOTD(MessageType.MAL)
             End If
-        Else
-            StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MAL))
-            Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
-            ReadMOTD(MessageType.MAL)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,45 +18,47 @@
 
 Imports KS.Network
 
-Class PutCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class PutCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim RetryCount As Integer = 1
-        Dim FileName As String = NeutralizePath(ListArgs(0))
-        Dim URL As String = ListArgs(1)
-        Wdbg(DebugLevel.I, "URL: {0}", URL)
-        While Not RetryCount > UploadRetries
-            Try
-                If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
-                    If Not URL.StartsWith(" ") Then
-                        Dim Credentials As New NetworkCredential
-                        If ListArgs.Length > 2 Then 'Username specified
-                            Credentials.UserName = ListArgs(2)
-                            Write(DoTranslation("Enter password: "), False, ColTypes.Input)
-                            Credentials.Password = ReadLineNoInput()
-                            Console.WriteLine()
-                        End If
-                        Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
-                        If UploadFile(FileName, URL, Credentials) Then
-                            Write(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RetryCount As Integer = 1
+            Dim FileName As String = NeutralizePath(ListArgs(0))
+            Dim URL As String = ListArgs(1)
+            Wdbg(DebugLevel.I, "URL: {0}", URL)
+            While Not RetryCount > UploadRetries
+                Try
+                    If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
+                        If Not URL.StartsWith(" ") Then
+                            Dim Credentials As New NetworkCredential
+                            If ListArgs.Length > 2 Then 'Username specified
+                                Credentials.UserName = ListArgs(2)
+                                Write(DoTranslation("Enter password: "), False, ColTypes.Input)
+                                Credentials.Password = ReadLineNoInput()
+                                Console.WriteLine()
+                            End If
+                            Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
+                            If UploadFile(FileName, URL, Credentials) Then
+                                Write(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
+                            End If
+                        Else
+                            Write(DoTranslation("Specify the address"), True, ColTypes.Error)
                         End If
                     Else
-                        Write(DoTranslation("Specify the address"), True, ColTypes.Error)
+                        Write(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Error)
                     End If
-                Else
-                    Write(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Error)
-                End If
-                Exit Sub
-            Catch ex As Exception
-                UFinish = False
-                Write(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
-                RetryCount += 1
-                Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
-                WStkTrc(ex)
-            End Try
-        End While
-    End Sub
+                    Exit Sub
+                Catch ex As Exception
+                    UFinish = False
+                    Write(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
+                    RetryCount += 1
+                    Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
+                    WStkTrc(ex)
+                End Try
+            End While
+        End Sub
 
-End Class
+    End Class
+End Namespace

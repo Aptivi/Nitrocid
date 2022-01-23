@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ShowTdZoneCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ShowTdZoneCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim ShowAll As Boolean
-        If ListSwitchesOnly.Contains("-all") Then ShowAll = True
-        If ShowAll Then
-            ShowAllTimeZones()
-        Else
-            If Not ShowTimeZones(ListArgsOnly(0)) Then Write(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ShowAll As Boolean
+            If ListSwitchesOnly.Contains("-all") Then ShowAll = True
+            If ShowAll Then
+                ShowAllTimeZones()
+            Else
+                If Not ShowTimeZones(ListArgsOnly(0)) Then Write(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
+            End If
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -all: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows all the time zones"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -all: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows all the time zones"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

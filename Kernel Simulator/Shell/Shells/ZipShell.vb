@@ -21,68 +21,70 @@ Imports System.IO.Compression
 Imports KS.Kernel
 Imports KS.Misc.ZipFile
 
-Public Class ZipShell
-    Inherits ShellExecutor
-    Implements IShell
+Namespace Shell.Shells
+    Public Class ZipShell
+        Inherits ShellExecutor
+        Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
-        Get
-            Return ShellType.ZIPShell
-        End Get
-    End Property
+        Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+            Get
+                Return ShellType.ZIPShell
+            End Get
+        End Property
 
-    Public Overrides Property Bail As Boolean Implements IShell.Bail
+        Public Overrides Property Bail As Boolean Implements IShell.Bail
 
-    Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-        'Add handler for ZIP shell
-        SwitchCancellationHandler(ShellType.ZIPShell)
-        ZipShell_CurrentDirectory = CurrDir
+        Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            'Add handler for ZIP shell
+            SwitchCancellationHandler(ShellType.ZIPShell)
+            ZipShell_CurrentDirectory = CurrDir
 
-        'Get file path
-        Dim ZipFile As String = ""
-        If ShellArgs.Length > 0 Then
-            ZipFile = ShellArgs(0)
-        Else
-            Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
-            Bail = True
-        End If
+            'Get file path
+            Dim ZipFile As String = ""
+            If ShellArgs.Length > 0 Then
+                ZipFile = ShellArgs(0)
+            Else
+                Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
+                Bail = True
+            End If
 
-        While Not Bail
-            SyncLock ZipShellCancelSync
-                'Open file if not open
-                If ZipShell_FileStream Is Nothing Then ZipShell_FileStream = New FileStream(ZipFile, FileMode.Open)
-                If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
+            While Not Bail
+                SyncLock ZipShellCancelSync
+                    'Open file if not open
+                    If ZipShell_FileStream Is Nothing Then ZipShell_FileStream = New FileStream(ZipFile, FileMode.Open)
+                    If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
 
-                'Prepare for prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
-                If ZipShell_PromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                SetInputColor()
+                    'Prepare for prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
+                    If ZipShell_PromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+                    SetInputColor()
 
-                'Prompt for command
-                Kernel.Kernel.KernelEventManager.RaiseZipShellInitialized()
-                Dim WrittenCommand As String = Console.ReadLine
-                GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
-            End SyncLock
-        End While
+                    'Prompt for command
+                    Kernel.Kernel.KernelEventManager.RaiseZipShellInitialized()
+                    Dim WrittenCommand As String = Console.ReadLine
+                    GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
+                End SyncLock
+            End While
 
-        'Close file stream
-        ZipShell_ZipArchive.Dispose()
-        ZipShell_CurrentDirectory = ""
-        ZipShell_CurrentArchiveDirectory = ""
-        ZipShell_ZipArchive = Nothing
-        ZipShell_FileStream = Nothing
+            'Close file stream
+            ZipShell_ZipArchive.Dispose()
+            ZipShell_CurrentDirectory = ""
+            ZipShell_CurrentArchiveDirectory = ""
+            ZipShell_ZipArchive = Nothing
+            ZipShell_FileStream = Nothing
 
-        'Remove handler for ZIP shell
-        SwitchCancellationHandler(LastShellType)
-    End Sub
+            'Remove handler for ZIP shell
+            SwitchCancellationHandler(LastShellType)
+        End Sub
 
-End Class
+    End Class
+End Namespace

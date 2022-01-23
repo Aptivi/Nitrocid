@@ -18,17 +18,19 @@
 
 Imports KS.Misc.Notifications
 
-Class DismissNotifCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class DismissNotifCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim NotifIndex As Integer = ListArgs(0) - 1
-        If NotifDismiss(NotifIndex) Then
-            Write(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
-        Else
-            Write(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NotifIndex As Integer = ListArgs(0) - 1
+            If NotifDismiss(NotifIndex) Then
+                Write(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
+            Else
+                Write(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Error)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

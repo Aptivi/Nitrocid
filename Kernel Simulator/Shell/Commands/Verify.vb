@@ -20,36 +20,38 @@ Imports System.IO
 Imports KS.Kernel
 Imports KS.Misc.Encryption
 
-Class VerifyCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class VerifyCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            Dim HashFile As String = NeutralizePath(ListArgs(2))
-            If FileExists(HashFile) Then
-                If VerifyHashFromHashesFile(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
-                    Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                Dim HashFile As String = NeutralizePath(ListArgs(2))
+                If FileExists(HashFile) Then
+                    If VerifyHashFromHashesFile(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
+                        Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
+                    Else
+                        Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
+                    End If
                 Else
-                    Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
+                    If VerifyHashFromHash(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
+                        Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
+                    Else
+                        Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
+                    End If
                 End If
-            Else
-                If VerifyHashFromHash(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
-                    Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
-                Else
-                    Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
-                End If
-            End If
-        Catch ihae As Exceptions.InvalidHashAlgorithmException
-            WStkTrc(ihae)
-            Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
-        Catch ihe As Exceptions.InvalidHashException
-            WStkTrc(ihe)
-            Write(DoTranslation("Hashes are malformed."), True, ColTypes.Error)
-        Catch fnfe As FileNotFoundException
-            WStkTrc(fnfe)
-            Write(DoTranslation("{0} is not found."), True, ColTypes.Error, ListArgs(3))
-        End Try
-    End Sub
+            Catch ihae As Exceptions.InvalidHashAlgorithmException
+                WStkTrc(ihae)
+                Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+            Catch ihe As Exceptions.InvalidHashException
+                WStkTrc(ihe)
+                Write(DoTranslation("Hashes are malformed."), True, ColTypes.Error)
+            Catch fnfe As FileNotFoundException
+                WStkTrc(fnfe)
+                Write(DoTranslation("{0} is not found."), True, ColTypes.Error, ListArgs(3))
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

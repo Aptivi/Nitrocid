@@ -16,18 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class JsonShellCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class JsonShellCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ListArgs(0) = NeutralizePath(ListArgs(0))
-        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-        If FileExists(ListArgs(0)) Then
-            StartShell(ShellType.JsonShell, ListArgs(0))
-        Else
-            Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            ListArgs(0) = NeutralizePath(ListArgs(0))
+            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
+            If FileExists(ListArgs(0)) Then
+                StartShell(ShellType.JsonShell, ListArgs(0))
+            Else
+                Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

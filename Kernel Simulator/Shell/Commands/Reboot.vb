@@ -16,26 +16,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class RebootCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class RebootCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If Not ListArgs?.Length = 0 Then
-            If ListArgs(0) = "safe" Then
-                PowerManage(PowerMode.RebootSafe)
-            ElseIf ListArgs(0) <> "" Then
-                If ListArgs?.Length > 1 Then
-                    PowerManage(PowerMode.RemoteRestart, ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ListArgs?.Length = 0 Then
+                If ListArgs(0) = "safe" Then
+                    PowerManage(PowerMode.RebootSafe)
+                ElseIf ListArgs(0) <> "" Then
+                    If ListArgs?.Length > 1 Then
+                        PowerManage(PowerMode.RemoteRestart, ListArgs(0), ListArgs(1))
+                    Else
+                        PowerManage(PowerMode.RemoteRestart, ListArgs(0))
+                    End If
                 Else
-                    PowerManage(PowerMode.RemoteRestart, ListArgs(0))
+                    PowerManage(PowerMode.Reboot)
                 End If
             Else
                 PowerManage(PowerMode.Reboot)
             End If
-        Else
-            PowerManage(PowerMode.Reboot)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

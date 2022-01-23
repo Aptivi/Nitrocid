@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class UpdateCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class UpdateCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
 #If SPECIFIER = "REL" Then
         CheckKernelUpdates()
 #Else
-        Write(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
+            Write(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
 #End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -19,28 +19,30 @@
 Imports System.IO
 Imports System.IO.Compression
 
-Class UnZipCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class UnZipCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length = 1 Then
-            Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
-            ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
-        ElseIf ListArgs?.Length > 1 Then
-            Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
-            Dim Destination As String = If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")
-            If ListArgs?.Contains("-createdir") Then
-                Destination = $"{If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")}/{If(Not ListArgs(1) = "-createdir", Path.GetFileNameWithoutExtension(ZipArchiveName), NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}"
-                If Destination(0) = "/" Then Destination = Destination.RemoveLetter(0)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgs?.Length = 1 Then
+                Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
+                ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
+            ElseIf ListArgs?.Length > 1 Then
+                Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
+                Dim Destination As String = If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")
+                If ListArgs?.Contains("-createdir") Then
+                    Destination = $"{If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")}/{If(Not ListArgs(1) = "-createdir", Path.GetFileNameWithoutExtension(ZipArchiveName), NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}"
+                    If Destination(0) = "/" Then Destination = Destination.RemoveLetter(0)
+                End If
+                ZipFile.ExtractToDirectory(ZipArchiveName, Destination)
             End If
-            ZipFile.ExtractToDirectory(ZipArchiveName, Destination)
-        End If
-    End Sub
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -createdir: ", False, ColTypes.ListEntry) : Write(DoTranslation("Creates a directory that contains the contents of the ZIP file"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -createdir: ", False, ColTypes.ListEntry) : Write(DoTranslation("Creates a directory that contains the contents of the ZIP file"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

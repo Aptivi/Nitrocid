@@ -16,24 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ChLangCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ChLangCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim AlwaysTransliterated, AlwaysTranslated, Force As Boolean
-        If ListSwitchesOnly.Contains("-alwaystransliterated") Then AlwaysTransliterated = True
-        If ListSwitchesOnly.Contains("-alwaystranslated") Then AlwaysTranslated = True '-alwaystransliterated has higher priority.
-        If ListSwitchesOnly.Contains("-force") Then Force = True
-        PromptForSetLang(ListArgsOnly(0), Force, AlwaysTransliterated, AlwaysTranslated)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim AlwaysTransliterated, AlwaysTranslated, Force As Boolean
+            If ListSwitchesOnly.Contains("-alwaystransliterated") Then AlwaysTransliterated = True
+            If ListSwitchesOnly.Contains("-alwaystranslated") Then AlwaysTranslated = True '-alwaystransliterated has higher priority.
+            If ListSwitchesOnly.Contains("-force") Then Force = True
+            PromptForSetLang(ListArgsOnly(0), Force, AlwaysTransliterated, AlwaysTranslated)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write("<language>: " + String.Join("/", Languages.Languages.Keys), True, ColTypes.Neutral)
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -alwaystransliterated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the transliterated version"), True, ColTypes.ListValue)
-        Write("  -alwaystranslated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the translated version"), True, ColTypes.ListValue)
-        Write("  -force: ", False, ColTypes.ListEntry) : Write(DoTranslation("Force switching language"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write("<language>: " + String.Join("/", Languages.Languages.Keys), True, ColTypes.Neutral)
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -alwaystransliterated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the transliterated version"), True, ColTypes.ListValue)
+            Write("  -alwaystranslated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the translated version"), True, ColTypes.ListValue)
+            Write("  -force: ", False, ColTypes.ListEntry) : Write(DoTranslation("Force switching language"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

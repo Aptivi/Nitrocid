@@ -302,7 +302,7 @@ Namespace Modifications
                             Dim ActualCommand As String = Command
                             Select Case script.Commands(Command).Type
                                 Case ShellType.Shell
-                                    If Commands.ContainsKey(Command) Or ModCommands.Contains(Command) Then
+                                    If Shell.Shell.Commands.ContainsKey(Command) Or ModCommands.Contains(Command) Then
                                         Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                         Command += $"-{script.Name}-{script.ModPart}"
                                     End If

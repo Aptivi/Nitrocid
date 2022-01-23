@@ -18,31 +18,33 @@
 
 Imports KS.Misc.Games
 
-Class SpeedPressCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SpeedPressCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Difficulty As SpeedPressDifficulty = SpeedPressDifficulty.Medium
-        Dim CustomTimeout As Integer = SpeedPressTimeout
-        If ListSwitchesOnly.Contains("-e") Then Difficulty = SpeedPressDifficulty.Easy
-        If ListSwitchesOnly.Contains("-m") Then Difficulty = SpeedPressDifficulty.Medium
-        If ListSwitchesOnly.Contains("-h") Then Difficulty = SpeedPressDifficulty.Hard
-        If ListSwitchesOnly.Contains("-v") Then Difficulty = SpeedPressDifficulty.VeryHard
-        If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso ListArgsOnly(0).IsNumeric Then
-            Difficulty = SpeedPressDifficulty.Custom
-            CustomTimeout = ListArgsOnly(0)
-        End If
-        InitializeSpeedPress(Difficulty, CustomTimeout)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Difficulty As SpeedPressDifficulty = SpeedPressDifficulty.Medium
+            Dim CustomTimeout As Integer = SpeedPressTimeout
+            If ListSwitchesOnly.Contains("-e") Then Difficulty = SpeedPressDifficulty.Easy
+            If ListSwitchesOnly.Contains("-m") Then Difficulty = SpeedPressDifficulty.Medium
+            If ListSwitchesOnly.Contains("-h") Then Difficulty = SpeedPressDifficulty.Hard
+            If ListSwitchesOnly.Contains("-v") Then Difficulty = SpeedPressDifficulty.VeryHard
+            If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso ListArgsOnly(0).IsNumeric Then
+                Difficulty = SpeedPressDifficulty.Custom
+                CustomTimeout = ListArgsOnly(0)
+            End If
+            InitializeSpeedPress(Difficulty, CustomTimeout)
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -e: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in easy difficulty"), True, ColTypes.ListValue)
-        Write("  -m: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in medium difficulty"), True, ColTypes.ListValue)
-        Write("  -h: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in hard difficulty"), True, ColTypes.ListValue)
-        Write("  -v: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in very hard difficulty"), True, ColTypes.ListValue)
-        Write("  -c: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument."), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -e: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in easy difficulty"), True, ColTypes.ListValue)
+            Write("  -m: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in medium difficulty"), True, ColTypes.ListValue)
+            Write("  -h: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in hard difficulty"), True, ColTypes.ListValue)
+            Write("  -v: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in very hard difficulty"), True, ColTypes.ListValue)
+            Write("  -c: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument."), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

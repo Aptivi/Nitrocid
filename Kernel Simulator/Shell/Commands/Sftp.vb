@@ -18,23 +18,25 @@
 
 Imports KS.Kernel
 
-Class SftpCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SftpCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
-                StartShell(ShellType.SFTPShell)
-            Else
-                StartShell(ShellType.SFTPShell, ListArgs(0))
-            End If
-        Catch sftpex As Exceptions.SFTPShellException
-            Write(sftpex.Message, True, ColTypes.Error)
-        Catch ex As Exception
-            WStkTrc(ex)
-            Write(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
+                    StartShell(ShellType.SFTPShell)
+                Else
+                    StartShell(ShellType.SFTPShell, ListArgs(0))
+                End If
+            Catch sftpex As Exceptions.SFTPShellException
+                Write(sftpex.Message, True, ColTypes.Error)
+            Catch ex As Exception
+                WStkTrc(ex)
+                Write(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

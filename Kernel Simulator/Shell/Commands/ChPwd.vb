@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ChPwdCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class ChPwdCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Try
-            If InStr(ListArgs(3), " ") > 0 Then
-                Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
-            ElseIf ListArgs(3) = ListArgs(2) Then
-                ChangePassword(ListArgs(0), ListArgs(1), ListArgs(2))
-            ElseIf ListArgs(3) <> ListArgs(2) Then
-                Write(DoTranslation("Passwords doesn't match."), True, ColTypes.Error)
-            End If
-        Catch ex As Exception
-            Write(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Error, ex.Message)
-            WStkTrc(ex)
-        End Try
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Try
+                If InStr(ListArgs(3), " ") > 0 Then
+                    Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
+                ElseIf ListArgs(3) = ListArgs(2) Then
+                    ChangePassword(ListArgs(0), ListArgs(1), ListArgs(2))
+                ElseIf ListArgs(3) <> ListArgs(2) Then
+                    Write(DoTranslation("Passwords doesn't match."), True, ColTypes.Error)
+                End If
+            Catch ex As Exception
+                Write(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Error, ex.Message)
+                WStkTrc(ex)
+            End Try
+        End Sub
 
-End Class
+    End Class
+End Namespace

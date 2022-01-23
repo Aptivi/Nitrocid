@@ -20,55 +20,57 @@ Imports System.IO
 Imports System.Text
 Imports KS.Misc.Encryption
 
-Class SumFilesCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace Shell.Commands
+    Class SumFilesCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim folder As String = NeutralizePath(ListArgs(1))
-        Dim out As String = ""
-        Dim FileBuilder As New StringBuilder
-        If Not ListArgs.Length < 3 Then
-            out = NeutralizePath(ListArgs(2))
-        End If
-        If FolderExists(folder) Then
-            For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
-                file = NeutralizePath(file)
-                WriteSeparator(file, True)
-                Dim AlgorithmEnum As Algorithms
-                If ListArgs(0) = "all" Then
-                    For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
-                        AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim folder As String = NeutralizePath(ListArgs(1))
+            Dim out As String = ""
+            Dim FileBuilder As New StringBuilder
+            If Not ListArgs.Length < 3 Then
+                out = NeutralizePath(ListArgs(2))
+            End If
+            If FolderExists(folder) Then
+                For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
+                    file = NeutralizePath(file)
+                    WriteSeparator(file, True)
+                    Dim AlgorithmEnum As Algorithms
+                    If ListArgs(0) = "all" Then
+                        For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
+                            AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
+                            Dim spent As New Stopwatch
+                            spent.Start() 'Time when you're on a breakpoint is counted
+                            Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                            Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                            Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                            FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                            spent.Stop()
+                        Next
+                    ElseIf [Enum].TryParse(ListArgs(0), AlgorithmEnum) Then
                         Dim spent As New Stopwatch
                         spent.Start() 'Time when you're on a breakpoint is counted
                         Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                        Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                        Write(encrypted, True, ColTypes.Neutral)
                         Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                         FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                         spent.Stop()
-                    Next
-                ElseIf [Enum].TryParse(ListArgs(0), AlgorithmEnum) Then
-                    Dim spent As New Stopwatch
-                    spent.Start() 'Time when you're on a breakpoint is counted
-                    Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                    Write(encrypted, True, ColTypes.Neutral)
-                    Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                    FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
-                    spent.Stop()
-                Else
-                    Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
-                    Exit For
+                    Else
+                        Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+                        Exit For
+                    End If
+                    Console.WriteLine()
+                Next
+                If Not out = "" Then
+                    Dim FStream As New StreamWriter(out)
+                    FStream.Write(FileBuilder.ToString)
+                    FStream.Flush()
                 End If
-                Console.WriteLine()
-            Next
-            If Not out = "" Then
-                Dim FStream As New StreamWriter(out)
-                FStream.Write(FileBuilder.ToString)
-                FStream.Flush()
+            Else
+                Write(DoTranslation("{0} is not found."), True, ColTypes.Error, folder)
             End If
-        Else
-            Write(DoTranslation("{0} is not found."), True, ColTypes.Error, folder)
-        End If
-    End Sub
+        End Sub
 
-End Class
+    End Class
+End Namespace

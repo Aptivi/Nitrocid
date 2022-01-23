@@ -21,72 +21,74 @@ Imports System.Threading
 Imports KS.Kernel
 Imports KS.Misc.TextEdit
 
-Public Class TextShell
-    Inherits ShellExecutor
-    Implements IShell
+Namespace Shell.Shells
+    Public Class TextShell
+        Inherits ShellExecutor
+        Implements IShell
 
-    Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
-        Get
-            Return ShellType.TextShell
-        End Get
-    End Property
+        Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+            Get
+                Return ShellType.TextShell
+            End Get
+        End Property
 
-    Public Overrides Property Bail As Boolean Implements IShell.Bail
+        Public Overrides Property Bail As Boolean Implements IShell.Bail
 
-    Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-        'Add handler for text editor shell
-        SwitchCancellationHandler(ShellType.TextShell)
+        Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            'Add handler for text editor shell
+            SwitchCancellationHandler(ShellType.TextShell)
 
-        'Get file path
-        Dim FilePath As String = ""
-        If ShellArgs.Length > 0 Then
-            FilePath = ShellArgs(0)
-        Else
-            Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
-            Bail = True
-        End If
+            'Get file path
+            Dim FilePath As String = ""
+            If ShellArgs.Length > 0 Then
+                FilePath = ShellArgs(0)
+            Else
+                Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
+                Bail = True
+            End If
 
-        'Actual shell logic
-        While Not Bail
-            SyncLock EditorCancelSync
-                'Open file if not open
-                If TextEdit_FileStream Is Nothing Then
-                    Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
-                    If Not TextEdit_OpenTextFile(FilePath) Then
-                        Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
-                        Exit While
+            'Actual shell logic
+            While Not Bail
+                SyncLock EditorCancelSync
+                    'Open file if not open
+                    If TextEdit_FileStream Is Nothing Then
+                        Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
+                        If Not TextEdit_OpenTextFile(FilePath) Then
+                            Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                            Exit While
+                        End If
+                        TextEdit_AutoSave.Start()
                     End If
-                    TextEdit_AutoSave.Start()
-                End If
 
-                'Prepare for prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
-                If TextEdit_PromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                SetInputColor()
+                    'Prepare for prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
+                    If TextEdit_PromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+                    SetInputColor()
 
-                'Prompt for command
-                Kernel.KernelEventManager.RaiseTextShellInitialized()
-                Dim WrittenCommand As String = Console.ReadLine
-                GetLine(WrittenCommand, False, "", ShellType.TextShell)
-            End SyncLock
-        End While
+                    'Prompt for command
+                    Kernel.KernelEventManager.RaiseTextShellInitialized()
+                    Dim WrittenCommand As String = Console.ReadLine
+                    GetLine(WrittenCommand, False, "", ShellType.TextShell)
+                End SyncLock
+            End While
 
-        'Close file
-        TextEdit_CloseTextFile()
-        TextEdit_AutoSave.Abort()
-        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
+            'Close file
+            TextEdit_CloseTextFile()
+            TextEdit_AutoSave.Abort()
+            TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
 
-        'Remove handler for text editor shell
-        SwitchCancellationHandler(LastShellType)
-    End Sub
+            'Remove handler for text editor shell
+            SwitchCancellationHandler(LastShellType)
+        End Sub
 
-End Class
+    End Class
+End Namespace
