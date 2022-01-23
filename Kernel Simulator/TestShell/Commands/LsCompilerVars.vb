@@ -16,14 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_LsCompilerVarsCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_LsCompilerVarsCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        For Each CompilerVar As String In GetCompilerVars()
-            Write("- {0}", True, ColTypes.ListEntry, CompilerVar)
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each CompilerVar As String In GetCompilerVars()
+                Write("- {0}", True, ColTypes.ListEntry, CompilerVar)
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

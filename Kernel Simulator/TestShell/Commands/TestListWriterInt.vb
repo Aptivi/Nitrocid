@@ -16,17 +16,19 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_TestListWriterIntCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_TestListWriterIntCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim NormalIntegerList As New List(Of Integer) From {1, 2, 3}
-        Dim ArrayIntegerList As New List(Of Integer()) From {{{1, 2, 3}}, {{1, 2, 3}}, {{1, 2, 3}}}
-        Write(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
-        WriteList(NormalIntegerList)
-        Write(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
-        WriteList(ArrayIntegerList)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NormalIntegerList As New List(Of Integer) From {1, 2, 3}
+            Dim ArrayIntegerList As New List(Of Integer()) From {{{1, 2, 3}}, {{1, 2, 3}}, {{1, 2, 3}}}
+            Write(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
+            WriteList(NormalIntegerList)
+            Write(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
+            WriteList(ArrayIntegerList)
+        End Sub
 
-End Class
+    End Class
+End Namespace

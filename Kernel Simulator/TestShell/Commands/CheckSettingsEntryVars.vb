@@ -18,27 +18,29 @@
 
 Imports KS.Misc.Configuration
 
-Class Test_CheckSettingsEntryVarsCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_CheckSettingsEntryVarsCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Results As Dictionary(Of String, Boolean) = CheckSettingsVariables()
-        Dim NotFound As New List(Of String)
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Results As Dictionary(Of String, Boolean) = CheckSettingsVariables()
+            Dim NotFound As New List(Of String)
 
-        'Go through each and every result
-        For Each Variable As String In Results.Keys
-            Dim IsFound As Boolean = Results(Variable)
-            If Not IsFound Then
-                NotFound.Add(Variable)
+            'Go through each and every result
+            For Each Variable As String In Results.Keys
+                Dim IsFound As Boolean = Results(Variable)
+                If Not IsFound Then
+                    NotFound.Add(Variable)
+                End If
+            Next
+
+            'Warn if not found
+            If NotFound.Count > 0 Then
+                Write(DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), True, ColTypes.Warning)
+                WriteList(NotFound)
             End If
-        Next
+        End Sub
 
-        'Warn if not found
-        If NotFound.Count > 0 Then
-            Write(DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), True, ColTypes.Warning)
-            WriteList(NotFound)
-        End If
-    End Sub
-
-End Class
+    End Class
+End Namespace

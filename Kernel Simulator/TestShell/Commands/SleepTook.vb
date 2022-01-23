@@ -16,23 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_SleepTookCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_SleepTookCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim SleepMs As Integer = ListArgsOnly(0)
-        Dim Ticks As Boolean = ListSwitchesOnly.Contains("-t")
-        If Ticks Then
-            Write("{0} ms => {1} ticks", True, ColTypes.Neutral, SleepMs, GetActualTicks(SleepMs))
-        Else
-            Write("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, GetActualMilliseconds(SleepMs))
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim SleepMs As Integer = ListArgsOnly(0)
+            Dim Ticks As Boolean = ListSwitchesOnly.Contains("-t")
+            If Ticks Then
+                Write("{0} ms => {1} ticks", True, ColTypes.Neutral, SleepMs, GetActualTicks(SleepMs))
+            Else
+                Write("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, GetActualMilliseconds(SleepMs))
+            End If
+        End Sub
 
-    Public Sub HelpHelper()
-        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
-        Write("  -t: ", False, ColTypes.ListEntry) : Write(DoTranslation("Unit in ticks"), True, ColTypes.ListValue)
-    End Sub
+        Public Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -t: ", False, ColTypes.ListEntry) : Write(DoTranslation("Unit in ticks"), True, ColTypes.ListValue)
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -16,13 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_GetLineStyleCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_GetLineStyleCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Style As FilesystemNewlineStyle = GetLineEndingFromFile(ListArgsOnly(0))
-        Write(DoTranslation("Newline style:") + " {0}", True, ColTypes.Neutral, Style.ToString)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Style As FilesystemNewlineStyle = GetLineEndingFromFile(ListArgsOnly(0))
+            Write(DoTranslation("Newline style:") + " {0}", True, ColTypes.Neutral, Style.ToString)
+        End Sub
 
-End Class
+    End Class
+End Namespace

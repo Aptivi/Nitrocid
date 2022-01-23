@@ -18,19 +18,21 @@
 
 Imports Newtonsoft.Json.Linq
 
-Class Test_CheckLocalLinesCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_CheckLocalLinesCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim EnglishJson As JToken = JToken.Parse(My.Resources.eng)
-        Dim LanguageJson As JToken
-        For Each LanguageName As String In Languages.Languages.Keys
-            LanguageJson = JToken.Parse(My.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")))
-            If LanguageJson.Count <> EnglishJson.Count Then
-                Write(DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", True, ColTypes.Warning, LanguageName, LanguageJson.Count, EnglishJson.Count)
-            End If
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim EnglishJson As JToken = JToken.Parse(My.Resources.eng)
+            Dim LanguageJson As JToken
+            For Each LanguageName As String In Languages.Languages.Keys
+                LanguageJson = JToken.Parse(My.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")))
+                If LanguageJson.Count <> EnglishJson.Count Then
+                    Write(DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", True, ColTypes.Warning, LanguageName, LanguageJson.Count, EnglishJson.Count)
+                End If
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

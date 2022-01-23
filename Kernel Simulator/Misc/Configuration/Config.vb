@@ -47,6 +47,7 @@ Imports KS.Network.SFTP
 Imports KS.Network.SSH
 Imports KS.Network
 Imports KS.Scripting.Interaction
+Imports KS.TestShell
 
 Namespace Misc.Configuration
     Public Module Config

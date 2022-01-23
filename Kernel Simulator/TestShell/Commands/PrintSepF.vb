@@ -16,16 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_PrintSepFCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_PrintSepFCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Vars As Object() = ListArgs(0).Split(";")
-        For i As Integer = 0 To Vars.Length - 1
-            Vars(i) = Evaluate(Vars(i)).ToString
-        Next
-        WriteSeparator(ListArgs(1), True, Vars)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Vars As Object() = ListArgs(0).Split(";")
+            For i As Integer = 0 To Vars.Length - 1
+                Vars(i) = Evaluate(Vars(i)).ToString
+            Next
+            WriteSeparator(ListArgs(1), True, Vars)
+        End Sub
 
-End Class
+    End Class
+End Namespace

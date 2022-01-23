@@ -16,18 +16,20 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_CheckStringCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_CheckStringCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Text As String = ListArgsOnly(0)
-        Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
-        If LocalizedStrings.Keys.Contains(Text) Then
-            Write(DoTranslation("String found in the localization resources."), True, ColTypes.Success)
-        Else
-            Write(DoTranslation("String not found in the localization resources."), True, ColTypes.Neutral)
-        End If
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Text As String = ListArgsOnly(0)
+            Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
+            If LocalizedStrings.Keys.Contains(Text) Then
+                Write(DoTranslation("String found in the localization resources."), True, ColTypes.Success)
+            Else
+                Write(DoTranslation("String not found in the localization resources."), True, ColTypes.Neutral)
+            End If
+        End Sub
 
-End Class
+    End Class
+End Namespace

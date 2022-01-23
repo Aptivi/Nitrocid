@@ -16,21 +16,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_CheckStringsCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_CheckStringsCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim TextPath As String = ListArgsOnly(0)
-        Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
-        Dim Texts() As String = ReadContents(TextPath)
-        For Each Text As String In Texts
-            If LocalizedStrings.Keys.Contains(Text) Then
-                Write("[+] {0}", True, ColTypes.Success, Text)
-            Else
-                Write("[-] {0}", True, ColTypes.Neutral, Text)
-            End If
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim TextPath As String = ListArgsOnly(0)
+            Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
+            Dim Texts() As String = ReadContents(TextPath)
+            For Each Text As String In Texts
+                If LocalizedStrings.Keys.Contains(Text) Then
+                    Write("[+] {0}", True, ColTypes.Success, Text)
+                Else
+                    Write("[-] {0}", True, ColTypes.Neutral, Text)
+                End If
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

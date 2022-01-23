@@ -16,17 +16,19 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_TestDictWriterCharCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_TestDictWriterCharCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim NormalCharDict As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
-        Dim ArrayCharDict As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
-        Write(DoTranslation("Normal char dictionary:"), True, ColTypes.Neutral)
-        WriteList(NormalCharDict)
-        Write(DoTranslation("Array char dictionary:"), True, ColTypes.Neutral)
-        WriteList(ArrayCharDict)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NormalCharDict As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
+            Dim ArrayCharDict As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
+            Write(DoTranslation("Normal char dictionary:"), True, ColTypes.Neutral)
+            WriteList(NormalCharDict)
+            Write(DoTranslation("Array char dictionary:"), True, ColTypes.Neutral)
+            WriteList(ArrayCharDict)
+        End Sub
 
-End Class
+    End Class
+End Namespace

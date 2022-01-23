@@ -45,7 +45,7 @@ Namespace Shell.ShellBase
                     Case ShellType.TextShell
                         ShellExecute = New TextShell()
                     Case ShellType.TestShell
-                        ShellExecute = New TestShell()
+                        ShellExecute = New Shells.TestShell()
                     Case ShellType.ZIPShell
                         ShellExecute = New ZipShell()
                     Case ShellType.RSSShell
@@ -83,7 +83,7 @@ Namespace Shell.ShellBase
                 Case ShellType.TextShell
                     ShellExecute = New TextShell()
                 Case ShellType.TestShell
-                    ShellExecute = New TestShell()
+                    ShellExecute = New Shells.TestShell()
                 Case ShellType.ZIPShell
                     ShellExecute = New ZipShell()
                 Case ShellType.RSSShell

@@ -18,19 +18,21 @@
 
 Imports System.Text.RegularExpressions
 
-Class Test_TestRegExpCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_TestRegExpCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Exp As String = ListArgs(0)
-        Dim Reg As New Regex(Exp)
-        Dim Matches As MatchCollection = Reg.Matches(ListArgs(1))
-        Dim MatchNum As Integer = 1
-        For Each Mat As Match In Matches
-            Write(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
-            MatchNum += 1
-        Next
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Exp As String = ListArgs(0)
+            Dim Reg As New Regex(Exp)
+            Dim Matches As MatchCollection = Reg.Matches(ListArgs(1))
+            Dim MatchNum As Integer = 1
+            For Each Mat As Match In Matches
+                Write(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+                MatchNum += 1
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

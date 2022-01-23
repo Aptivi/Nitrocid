@@ -25,6 +25,7 @@ Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
+Imports KS.TestShell
 
 Namespace Shell.ShellBase
     Public Module CommandManager

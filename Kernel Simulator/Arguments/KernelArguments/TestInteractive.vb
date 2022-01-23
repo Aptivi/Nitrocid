@@ -17,6 +17,7 @@
 
 Imports KS.Kernel
 Imports KS.Arguments.ArgumentBase
+Imports KS.TestShell
 
 Namespace Arguments.KernelArguments
     Class TestInteractiveArgument

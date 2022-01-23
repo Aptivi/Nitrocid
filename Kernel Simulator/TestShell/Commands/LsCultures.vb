@@ -18,21 +18,23 @@
 
 Imports System.Globalization
 
-Class Test_LsCulturesCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_LsCulturesCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
-        For Each Cult As CultureInfo In Cults
-            If ListArgs?.Length > 0 Or ListArgs IsNot Nothing Then
-                If Cult.Name.ToLower.Contains(ListArgs(0).ToLower) Or Cult.EnglishName.ToLower.Contains(ListArgs(0).ToLower) Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
+            For Each Cult As CultureInfo In Cults
+                If ListArgs?.Length > 0 Or ListArgs IsNot Nothing Then
+                    If Cult.Name.ToLower.Contains(ListArgs(0).ToLower) Or Cult.EnglishName.ToLower.Contains(ListArgs(0).ToLower) Then
+                        Write("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
+                    End If
+                Else
                     Write("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
                 End If
-            Else
-                Write("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
-            End If
-        Next
-    End Sub
+            Next
+        End Sub
 
-End Class
+    End Class
+End Namespace

@@ -18,13 +18,15 @@
 
 Imports KS.Misc.Notifications
 
-Class Test_SendNotCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_SendNotCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Notif As New Notification(ListArgs(1), ListArgs(2), ListArgs(0), NotifType.Normal)
-        NotifySend(Notif)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Notif As New Notification(ListArgs(1), ListArgs(2), ListArgs(0), NotifType.Normal)
+            NotifySend(Notif)
+        End Sub
 
-End Class
+    End Class
+End Namespace

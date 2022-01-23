@@ -16,17 +16,19 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class Test_TestDictWriterStrCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_TestDictWriterStrCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim NormalStringDict As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
-        Dim ArrayStringDict As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
-        Write(DoTranslation("Normal string dictionary:"), True, ColTypes.Neutral)
-        WriteList(NormalStringDict)
-        Write(DoTranslation("Array string dictionary:"), True, ColTypes.Neutral)
-        WriteList(ArrayStringDict)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NormalStringDict As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
+            Dim ArrayStringDict As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
+            Write(DoTranslation("Normal string dictionary:"), True, ColTypes.Neutral)
+            WriteList(NormalStringDict)
+            Write(DoTranslation("Array string dictionary:"), True, ColTypes.Neutral)
+            WriteList(ArrayStringDict)
+        End Sub
 
-End Class
+    End Class
+End Namespace

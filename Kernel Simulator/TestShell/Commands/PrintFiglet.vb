@@ -19,15 +19,17 @@
 Imports Figgle
 Imports KS.Misc.Writers.FancyWriters.Tools
 
-Class Test_PrintFigletCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Namespace TestShell.Commands
+    Class Test_PrintFigletCommand
+        Inherits CommandExecutor
+        Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Color As ColTypes = ListArgs(0)
-        Dim FigletFont As FiggleFont = GetFigletFont(ListArgs(1))
-        Dim Text As String = ListArgs(2)
-        WriteFiglet(Text, FigletFont, Color)
-    End Sub
+        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Color As ColTypes = ListArgs(0)
+            Dim FigletFont As FiggleFont = GetFigletFont(ListArgs(1))
+            Dim Text As String = ListArgs(2)
+            WriteFiglet(Text, FigletFont, Color)
+        End Sub
 
-End Class
+    End Class
+End Namespace
