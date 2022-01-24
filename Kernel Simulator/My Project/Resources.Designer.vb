@@ -403,8 +403,7 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Nalichni komandi: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Inzhektiraneto na komanda e otmeneno.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Inzhektiranite argumenti shte bŭdat planirani za izpŭlnenie pri sledvashtoto restartirane.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Greshka pri analizirane na realni argumenti ot komandniya red: {0}&quot;,
-        ''' [rest of string was truncated]&quot;;.
+        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Greshka pri analizirane na realni argumenti ot komandniya red: {0}&quot;,        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property blg() As String
             Get
@@ -2074,6 +2073,29 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;45;60;61&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;45;60;61&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;61;72;74&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;178;180;175&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;88;96;82&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;228;224;212&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;149;151;140&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;178;187;195&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;211;205;189&quot;,
+        '''    &quot;StageColor&quot;: &quot;228;224;212&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;178;180;175&quot;,
+        '''    &quot;WarningColor&quot;: &quot;61;72;74&quot;,
+        '''    &quot;OptionColor&quot;: &quot;178;187;195 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Neutralized() As String
+            Get
+                Return ResourceManager.GetString("Neutralized", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;9&quot;,
         '''    &quot;LicenseColor&quot;: &quot;19&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;4&quot;,
@@ -2173,6 +2195,98 @@ Namespace My.Resources
         Public ReadOnly Property nwg() As String
             Get
                 Return ResourceManager.GetString("nwg", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;54;152;217&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;54;152;217&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;179;112;68&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;64;136;184&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;232;142;81&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;56;157;224&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;163;95;49&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;42;118;168&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;189;121;75&quot;,
+        '''    &quot;StageColor&quot;: &quot;56;157;224&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;64;136;184&quot;,
+        '''    &quot;WarningColor&quot;: &quot;179;112;68&quot;,
+        '''    &quot;OptionColor&quot;: &quot;42;118;16 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Orange_Sea() As String
+            Get
+                Return ResourceManager.GetString("Orange_Sea", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;204;227;222&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;204;227;222&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;204;147;200&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;191;227;125&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;126;158;217&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;242;240;240&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;171;214;181&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;197;151;240&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;247;236;188&quot;,
+        '''    &quot;StageColor&quot;: &quot;242;240;240&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;191;227;125&quot;,
+        '''    &quot;WarningColor&quot;: &quot;204;147;200&quot;,
+        '''    &quot;OptionColor [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Pastel_1() As String
+            Get
+                Return ResourceManager.GetString("Pastel_1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;252;204;189&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;252;204;189&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;207;209;208&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;197;153;207&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;231;235;202&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;148;195;227&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;235;122;158&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;191;250;190&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;225;218;245&quot;,
+        '''    &quot;StageColor&quot;: &quot;148;195;227&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;197;153;207&quot;,
+        '''    &quot;WarningColor&quot;: &quot;207;209;208&quot;,
+        '''    &quot;OptionColor [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Pastel_2() As String
+            Get
+                Return ResourceManager.GetString("Pastel_2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;132;217;139&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;132;217;139&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;218;211;230&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;224;211;184&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;176;247;245&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;242;153;220&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;161;209;121&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;160;174;242&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;227;131;116&quot;,
+        '''    &quot;StageColor&quot;: &quot;242;153;220&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;224;211;184&quot;,
+        '''    &quot;WarningColor&quot;: &quot;218;211;230&quot;,
+        '''    &quot;OptionColor [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Pastel_3() As String
+            Get
+                Return ResourceManager.GetString("Pastel_3", resourceCulture)
             End Get
         End Property
         
@@ -2612,17 +2726,18 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;Progress&quot;: {
+        '''    &quot;Simple&quot;: {
         '''        &quot;Desc&quot;: &quot;Settings for this splash screen are available here.&quot;,
         '''        &quot;Keys&quot;: [
         '''            {
-        '''                &quot;Name&quot;: &quot;Progress bar color&quot;,
-        '''                &quot;Type&quot;: &quot;SColor&quot;,
-        '''                &quot;Variable&quot;: &quot;ProgressProgressColor&quot;
-        '''            }
-        '''        ]
-        '''    }
-        '''}.
+        '''                &quot;Name&quot;: &quot;Progress text location&quot;,
+        '''                &quot;Type&quot;: &quot;SSelection&quot;,
+        '''                &quot;Variable&quot;: &quot;SimpleProgressTextLocation&quot;,
+        '''                &quot;IsEnumeration&quot;: true,
+        '''                &quot;EnumerationInternal&quot;: true,
+        '''                &quot;Enumeration&quot;: &quot;Misc.TextLocation&quot;,
+        '''                &quot;EnumerationZeroBased&quot;: true,
+        '''                &quot;Description&quot;: &quot;Select your preferr [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property SplashSettingsEntries() As String
             Get
@@ -2713,8 +2828,7 @@ Namespace My.Resources
         '''    &quot;StageColor&quot;: &quot;209;48;73&quot;,
         '''    &quot;ErrorColor&quot;: &quot;60;106;117&quot;,
         '''    &quot;WarningColor&quot;: &quot;51;99;128&quot;,
-        '''    &quot;OptionColor&quot;: &quot;252;91;116&quot;,
-        ''' [rest of string was truncated]&quot;;.
+        '''    &quot;OptionColor&quot;: &quot;252;91;116&quot;,        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Tealed() As String
             Get

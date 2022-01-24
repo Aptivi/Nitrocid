@@ -580,4 +580,19 @@
   <data name="Tealed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Tealed.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Neutralized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Neutralized.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Orange_Sea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Orange Sea.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Pastel_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Pastel 1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Pastel_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Pastel 2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Pastel_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Pastel 3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>
