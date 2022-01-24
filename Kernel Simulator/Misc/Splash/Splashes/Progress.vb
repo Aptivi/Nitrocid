@@ -84,8 +84,9 @@ Namespace Misc.Splash.Splashes
             Wdbg(DebugLevel.I, "Splash displaying.")
 
             'Display the text and percentage
+            Dim RenderedText As String = ProgressText.Truncate(Console.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3)
             WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress, Progress.ToString.PadLeft(3))
-            WriteWhere(ProgressText, ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral)
+            WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral)
             ClearLineToRight()
 
             'Display the progress bar
@@ -108,8 +109,9 @@ Namespace Misc.Splash.Splashes
         End Sub
 
         Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
+            Dim RenderedText As String = ProgressReport.Truncate(Console.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3)
             WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress, Progress.ToString.PadLeft(3))
-            WriteWhere(ProgressReport, ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral, Vars)
+            WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral, Vars)
             ClearLineToRight()
 
             'Display the progress bar
