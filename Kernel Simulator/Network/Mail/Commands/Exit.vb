@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Network.RSS
-
 Namespace Network.Mail.Commands
     Class Mail_ExitCommand
         Inherits CommandExecutor
@@ -25,18 +23,16 @@ Namespace Network.Mail.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             KillShell()
-            If RSSRefreshFeeds Then
-                Write(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
-                SetConsoleColor(InputColor)
-                Dim Answer As Char = Console.ReadKey.KeyChar
-                Console.WriteLine()
-                If Answer = "y" Then
-                    KeepAlive = True
-                ElseIf Answer = "n" Then
-                    KeepAlive = False
-                Else
-                    Write(DoTranslation("Invalid choice. Assuming no..."), True, ColTypes.Input)
-                End If
+            Write(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
+            SetConsoleColor(InputColor)
+            Dim Answer As Char = Console.ReadKey.KeyChar
+            Console.WriteLine()
+            If Answer = "y" Then
+                KeepAlive = True
+            ElseIf Answer = "n" Then
+                KeepAlive = False
+            Else
+                Write(DoTranslation("Invalid choice. Assuming no..."), True, ColTypes.Input)
             End If
         End Sub
 
