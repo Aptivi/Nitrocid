@@ -12,56 +12,67 @@ WARNING: Second-generation versions of KS is not backwards-compatible with the f
 
 ## Build Status
 
-Here are all the CI build status for all KS branches.
+Here are all the CI build status for all the active KS branches.
 
-| Branch      | AppVeyor | Travis CI
-|-------------|----------|------------
-| master      | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master) | [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=master)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
-| servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing) | [![Build Status](https://travis-ci.org/EoflaOE/Kernel-Simulator.svg?branch=servicing)](https://travis-ci.org/EoflaOE/Kernel-Simulator)
+| Branch      | AppVeyor 
+|-------------|----------
+| master      | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
+| servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
 
 ## System Requirements
 
-This section covers what you need to run Kernel Simulator. Please scroll down to your system below.
+This section covers what you need to run Kernel Simulator. Please refer to the table below:
 
-### Windows systems
+### Minimum requirements
 
-1. Windows 7 or later (Windows 10 recommended)
-2. .NET Framework 4.8
-3. Internet Connection
-4. Appropriate console that supports escape sequences and custom monotyped fonts for languages
+| System  | System version     | Framework version  | Terminal Emulator                   | Internet
+|---------|--------------------|--------------------|-------------------------------------|----------
+| Windows | Windows 7 or later | .NET Framework 4.8 | Improved cmd.exe, ConEmu            | Required
+| Linux   | Supported distros  | Mono 5.10 or later | Konsole, GNOME Terminal             | Required
+| macOS   | macOS Catalina     | Mono Runtime       | iTerm2 (Terminal.app not supported) | Required
 
-### Linux systems
+* mono-vbnc is required for string evaluation functions
+* Terminal.app has broken support for 255 and true colors. We discourage using it.
 
-1. Mono 5.10 or higher (6.0 or higher is recommended) with mono-vbnc installed
-2. Internet Connection
-3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (Konsole, GNOME Terminal, ...)
+### Recommended requirements
 
-### MacOS systems
+| System  | System version     | Framework version  | Terminal Emulator                   | Internet
+|---------|--------------------|--------------------|-------------------------------------|----------
+| Windows | Windows 10 or 11   | .NET Framework 4.8 | Improved cmd.exe, ConEmu            | Required
+| Linux   | Supported distros  | Mono 6.0 or later  | Konsole, GNOME Terminal             | Required
+| macOS   | macOS Catalina     | Mono Runtime       | iTerm2 (Terminal.app not supported) | Required
 
-1. Mono Runtime
-2. Internet Connection
-3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (iTerm2)
-
-WARNING: Don't use MacOS' builtin Terminal.app; it has broken support for 255 and true colors.
+* mono-vbnc is required for string evaluation functions
 
 ## How to install
 
 This section covers how to install Kernel Simulator on your system. Please scroll down to your system below.
 
-### Windows systems (First method)
+### Windows systems 
+
+#### Recommended method
+
+1. Install Chocolatey [here](https://chocolatey.org/install).
+2. Press the `chocolatey` button
+3. Follow the steps to install Kernel Simulator
+4. Once installed, open PowerShell and execute `ks`
+
+#### Alternative method
 
 1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
 2. Unzip the file to any directory
 3. Run it by double-clicking `Kernel Simulator.exe`
 
-### Windows systems (Second method)
+### Linux systems
 
-1. Install Chocolatey [here](https://chocolatey.org/install).
-2. Press the `chocolatey` button
-3. Follow the steps to install Kernel Simulator
-4. Once installed, open PowerShell and execute `Kernel Simulator`
+#### Recommended method (Ubuntu)
 
-### Linux systems (First method)
+1. Open the terminal, and execute `sudo add-apt-repository ppa:eofla/kernel-sim`
+2. Confirm the addition of the PPA. It should update your package cache
+3. Execute `sudo apt install kernel-simulator`
+4. Execute `ks`
+
+#### Alternative method
 
 1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
 2. Unzip the file to any directory
@@ -72,14 +83,9 @@ This section covers how to install Kernel Simulator on your system. Please scrol
    - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
 4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
 
-### Linux systems (Second method - Ubuntu)
-
-1. Open the terminal, and execute `sudo add-apt-repository ppa:eofla/kernel-sim`
-2. Confirm the addition of the PPA. It should update your package cache
-3. Execute `sudo apt install kernel-simulator`
-4. Execute `ks`
-
 ### macOS systems
+
+#### Recommended method
 
 1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
 2. Unzip the file to any directory
@@ -131,27 +137,21 @@ The packing and distribution procedures are now easier by executing this script 
 
 ## Credits
 
-**EoflaOE:** Owner of Kernel Simulator
-
-**OpenWeatherMap:** Weather API
-
-**https://jonasjacek.github.io/colors/:** Console color data
-
-**sindresorhus:** Word list
-
-**ayu-theme:** Ayu Theme
-
-**Ethan Schoonover:** Solarized Theme
-
-**Fabian Neuschmidt:** https://github.com/fneu/breezy
-
-**TechRepublic:** Articles RSS feed URL
-
-**All contributors:** Contribution
+| Credits to         | For
+|--------------------|--------------------
+| EoflaOE            | Owner of Kernel Simulator
+| OpenWeatherMap     | Weather API
+| jonasjacek         | [Console color data](https://jonasjacek.github.io/colors/)
+| sindresorhus       | Word list
+| ayu-theme          | Ayu Theme
+| Ethan Schoonover   | Solarized Theme
+| Fabian Neuschmidt  | [Breezy Theme](https://github.com/fneu/breezy)
+| TechRepublic       | Articles RSS feed URL
+| All contributors   | Contribution
 
 ## Open Source Libraries
 
-Below entries are the open source libraries that is used by KS. They are required for execution.
+Below entries are the open source libraries that are used by KS and are required for execution.
 
 ### CRC32.NET
 
