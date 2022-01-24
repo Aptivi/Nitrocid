@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Misc.Writers.ConsoleWriters
-    Module TextWriterWhereColor
+    Public Module TextWriterWhereColor
 
         ''' <summary>
         ''' Outputs the text into the terminal prompt with location support.

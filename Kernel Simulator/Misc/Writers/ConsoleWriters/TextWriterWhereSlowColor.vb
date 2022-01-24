@@ -19,7 +19,7 @@
 Imports System.Threading
 
 Namespace Misc.Writers.ConsoleWriters
-    Module TextWriterWhereSlowColor
+    Public Module TextWriterWhereSlowColor
 
         ''' <summary>
         ''' Outputs the text into the terminal prompt with location support.

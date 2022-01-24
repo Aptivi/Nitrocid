@@ -19,7 +19,7 @@
 Imports System.Threading
 
 Namespace Misc.Writers.ConsoleWriters
-    Module TextWriterSlowColor
+    Public Module TextWriterSlowColor
 
         ''' <summary>
         ''' Outputs the text into the terminal prompt slowly with no color support.
