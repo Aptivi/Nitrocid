@@ -205,7 +205,6 @@
     <Compile Include="Arguments\KernelArguments\Debug.vb" />
     <Compile Include="Arguments\KernelArguments\Quiet.vb" />
     <Compile Include="Arguments\ArgumentBase\ProvidedArgumentArgumentsInfo.vb" />
-    <Compile Include="Arguments\PreBootCommandLineArguments\LinuxCompatibility.vb" />
     <Compile Include="Arguments\PreBootCommandLineArguments\BypassSizeDetection.vb" />
     <Compile Include="Arguments\PreBootCommandLineArguments\Reset.vb" />
     <Compile Include="Console\Color.vb" />

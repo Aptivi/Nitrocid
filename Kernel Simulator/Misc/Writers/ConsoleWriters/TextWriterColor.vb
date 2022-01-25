@@ -35,7 +35,7 @@ Public Module TextWriterColor
         SyncLock WriteLock
 #End If
             Try
-                'Get the filtered positions first. Required for Linux.
+                'Get the filtered positions first.
                 Dim FilteredLeft, FilteredTop As Integer
                 If Not Line Then GetFilteredPositions(Text, FilteredLeft, FilteredTop, vars)
 
@@ -54,7 +54,7 @@ Public Module TextWriterColor
                     End If
                 End If
 
-                'Return to the correct position if Linux is detected
+                'Return to the processed position
                 If Not Line Then Console.SetCursorPosition(FilteredLeft, FilteredTop)
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)

@@ -298,10 +298,6 @@ Namespace Kernel
         ''' Checking for the console size (minimum req. 80x24)
         ''' </summary>
         Friend CheckingForConsoleSize As Boolean = True
-        ''' <summary>
-        ''' Whether the kernel uses the Linux compatibility mode (only for Windows)
-        ''' </summary>
-        Friend LinuxCompatibility As Boolean
 
     End Module
 End Namespace

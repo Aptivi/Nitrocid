@@ -22,8 +22,7 @@ Namespace Arguments.ArgumentBase
     Module PreBootCommandLineArgsParse
 
         Public AvailablePreBootCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"reset", New ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", False, 0, New PreBootCommandLine_ResetArgument)},
-                                                                                        {"bypasssizedetection", New ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", False, 0, New PreBootCommandLine_BypassSizeDetectionArgument)},
-                                                                                        {"linuxcompatibility", New ArgumentInfo("linuxcompatibility", ArgumentType.PreBootCommandLineArgs, "Boots Kernel Simulator in Linux compatibility mode (only for Windows consoles other than Command Prompt)", "", False, 0, New PreBootCommandLine_LinuxCompatibility)}}
+                                                                                            {"bypasssizedetection", New ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", False, 0, New PreBootCommandLine_BypassSizeDetectionArgument)}}
 
         ''' <summary>
         ''' Parses the pre-boot command line arguments
