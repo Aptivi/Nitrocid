@@ -47,8 +47,9 @@ Namespace Misc.Writers.MiscWriters
         ''' Writes the welcoming message to the console (welcome to kernel)
         ''' </summary>
         Sub WriteMessage()
-            Console.CursorVisible = False
             If Not EnableSplash Then
+                Console.CursorVisible = False
+
                 'The default message to write
                 Dim MessageWrite As String = GetCustomBanner()
 

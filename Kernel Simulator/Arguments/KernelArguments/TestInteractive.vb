@@ -24,13 +24,11 @@ Namespace Arguments.KernelArguments
         Implements IArgument
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-            If Not EnableSplash Then
-                StageTimer.Stop()
-                StartShellForced(ShellType.TestShell)
-                PurgeShells()
-                StageTimer.Start()
-                If Test_ShutdownFlag Then Environment.Exit(0)
-            End If
+            StageTimer.Stop()
+            StartShellForced(ShellType.TestShell)
+            PurgeShells()
+            StageTimer.Start()
+            If Test_ShutdownFlag Then Environment.Exit(0)
         End Sub
 
     End Class

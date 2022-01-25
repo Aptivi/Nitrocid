@@ -356,9 +356,6 @@ Namespace Kernel
             'Create config file and then read it
             InitializeConfig()
 
-            'Load splash
-            OpenSplash()
-
             'Load user token
             LoadUserToken()
 
@@ -375,7 +372,7 @@ Namespace Kernel
             'Show dev version notice
             If Not EnableSplash Then
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
-            Write(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
+                Write(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
 #ElseIf SPECIFIER = "RC" Then
                 Write(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
 #End If
@@ -394,6 +391,9 @@ Namespace Kernel
                 ArgsInjected = False
                 ParseArguments()
             End If
+
+            'Load splash
+            OpenSplash()
 
             'Write headers for debug
             Wdbg(DebugLevel.I, "-------------------------------------------------------------------")
