@@ -31,20 +31,42 @@ Namespace Misc.Games
             Dim RandomExpression As String
             Dim UserEvaluated As String
             Dim Operations() As String = {"+", "-", "*", "/"}
-            Write(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Neutral)
+
+            'Show tip to exit
+            Write(DoTranslation("Press ""q"" to exit."), True, ColTypes.Neutral)
             Wdbg(DebugLevel.I, "Initialized expressions.")
             While True
-                RandomExpression = CStr(RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber)) + Operations.ElementAt(RandomDriver.Next(Operations.Length)) + CStr(RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber))
+                'Populate the numbers
+                Dim FirstNumber As Integer = RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber)
+                Dim OperationIndex As Integer = RandomDriver.Next(Operations.Length)
+                Dim SecondNumber As Integer = RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber)
+
+                'Generate the expression
+                RandomExpression = CStr(FirstNumber) + Operations.ElementAt(OperationIndex) + CStr(SecondNumber)
                 Wdbg(DebugLevel.I, "Expression to be solved: {0}", RandomExpression)
                 Write(RandomExpression, True, ColTypes.Input)
+
+                'Wait for response
                 UserEvaluated = If(SolverShowInput, Console.ReadLine(), ReadLineNoInput(""))
                 Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated)
-                If CDbl(UserEvaluated) = New DataTable().Compute(RandomExpression, Nothing) Then
-                    Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
-                    Write(DoTranslation("Solved perfectly!"), True, ColTypes.Neutral)
+
+                'Check to see if the user has entered the correct answer
+                Dim UserEvaluatedNumber As Double
+                Dim EvaluatedNumber As Double = New DataTable().Compute(RandomExpression, Nothing)
+                If Double.TryParse(UserEvaluated, UserEvaluatedNumber) Then
+                    If UserEvaluatedNumber = EvaluatedNumber Then
+                        Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber)
+                        Write(DoTranslation("Solved perfectly!"), True, ColTypes.Neutral)
+                    Else
+                        Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, EvaluatedNumber)
+                        Write(DoTranslation("Solved incorrectly."), True, ColTypes.Neutral)
+                    End If
+                ElseIf UserEvaluated = "q" Then
+                    Wdbg(DebugLevel.W, "User requested exit.")
+                    Exit While
                 Else
-                    Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
-                    Write(DoTranslation("Solved incorrectly."), True, ColTypes.Neutral)
+                    Wdbg(DebugLevel.E, "User evaluated ""{0}"". However, it's not numeric.", UserEvaluated)
+                    Write(DoTranslation("You can only write the numbers."), True, ColTypes.Error)
                 End If
             End While
         End Sub
