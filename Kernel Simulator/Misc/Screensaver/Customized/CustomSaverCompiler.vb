@@ -206,7 +206,7 @@ Namespace Misc.Screensaver.Customized
                     For Each errorName As CompilerError In execCustomSaver.Errors
                         If errorName.IsWarning Then
                             ReportProgress(errorName.ToString, 0, ColTypes.Warning)
-                            PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And (Not QuietKernel Or Not EnableSplash)), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
+                            PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And Not QuietKernel And Not EnableSplash), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
                             Wdbg(DebugLevel.W, errorName.ToString)
                         End If
                     Next
@@ -217,7 +217,7 @@ Namespace Misc.Screensaver.Customized
                     For Each errorName As CompilerError In execCustomSaver.Errors
                         If Not errorName.IsWarning Then
                             ReportProgress(errorName.ToString, 0, ColTypes.Error)
-                            PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And (Not QuietKernel Or Not EnableSplash)), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
+                            PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And Not QuietKernel And Not EnableSplash), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
                             Wdbg(DebugLevel.E, errorName.ToString)
                         End If
                     Next
