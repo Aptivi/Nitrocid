@@ -45,7 +45,12 @@ Namespace Misc.Writers.ConsoleWriters
                         Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                         For Each ParagraphChar As Char In MessageParagraph
                             If Console.CursorLeft = Console.WindowWidth - 1 Then
-                                Console.CursorTop += 1
+                                If Console.CursorTop = Console.BufferHeight - 1 Then
+                                    'We've reached the end of buffer. Write the line to scroll.
+                                    Console.WriteLine()
+                                Else
+                                    Console.CursorTop += 1
+                                End If
                                 Console.CursorLeft = Left
                             End If
                             Console.Write(ParagraphChar)
@@ -53,7 +58,12 @@ Namespace Misc.Writers.ConsoleWriters
 
                         'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                            Console.CursorTop += 1
+                            If Console.CursorTop = Console.BufferHeight - 1 Then
+                                'We've reached the end of buffer. Write the line to scroll.
+                                Console.WriteLine()
+                            Else
+                                Console.CursorTop += 1
+                            End If
                             Console.CursorLeft = Left
                         End If
                     Next
