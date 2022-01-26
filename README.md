@@ -147,6 +147,7 @@ The packing and distribution procedures are now easier by executing this script 
 | Ethan Schoonover   | Solarized Theme
 | Fabian Neuschmidt  | [Breezy Theme](https://github.com/fneu/breezy)
 | TechRepublic       | Articles RSS feed URL
+| smashew            | [Name databases](https://github.com/smashew/NameDatabases)
 | All contributors   | Contribution
 
 ## Open Source Libraries

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Network
+
 Namespace Misc.Games
     Module LoveHateRespond
 
@@ -45,14 +47,9 @@ Namespace Misc.Games
                                                            DoTranslation("Get back to your job, your videos are the worst!"),
                                                            DoTranslation("We prejudice on this video.")}
         ReadOnly Comments As New Dictionary(Of String, List(Of String)) From {{CommentType.Love, LoveComments}, {CommentType.Hate, HateComments}}
-        ReadOnly Users As New Dictionary(Of String, CommentType) From {{"John Williams", Rnd()}, {"The Eagle", Rnd()},
-                                                                       {"Jim Walker", Rnd()}, {"Alex", Rnd()},
-                                                                       {"Will Philips", Rnd()}, {"Elaine McCann", Rnd()},
-                                                                       {"ProGamer453", Rnd()}, {"Rajput Singh", Rnd()},
-                                                                       {"Abhishek Chaudhary", Rnd()}, {"Johnny Alfonso", Rnd()},
-                                                                       {"Bruce Fitzgerald", Rnd()}, {"Mark Adams", Rnd()},
-                                                                       {"Wellington Marks", Rnd()}, {"CD-OS", Rnd()},
-                                                                       {"LinuxUser348", Rnd()}, {"Suspicion Ltd.", Rnd()}}
+        ReadOnly Users As New Dictionary(Of String, CommentType)
+        Friend Names() As String
+        Friend Surnames() As String
 
         Enum CommentType
             ''' <summary>
@@ -74,9 +71,19 @@ Namespace Misc.Games
             Dim Type As CommentType
             Dim ExitRequested As Boolean
             Dim Score, CommentNumber As Long
-            Write(DoTranslation("Press A on hate comments to apologize. Press T on love comments to thank. Press Q to quit the game."), True, ColTypes.Tip)
+
+            'Download the names list
+            Write(DoTranslation("Downloading names..."), True, ColTypes.Progress)
+            If Names.Length = 0 Then Names = DownloadString("https://raw.githubusercontent.com/smashew/NameDatabases/master/NamesDatabases/first%20names/us.txt").SplitNewLines
+            If Surnames.Length = 0 Then Surnames = DownloadString("https://raw.githubusercontent.com/smashew/NameDatabases/master/NamesDatabases/surnames/us.txt").SplitNewLines
+            For NameNum As Integer = 1 To 20
+                Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
+                Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
+                Users.Add($"{GeneratedName} {GeneratedSurname}", RandomDriver.Next(1))
+            Next
 
             'Game logic
+            Write(DoTranslation("Press A on hate comments to apologize. Press T on love comments to thank. Press Q to quit the game."), True, ColTypes.Tip)
             While Not ExitRequested
                 'Set necessary variables
                 RandomUser = Users.Keys.ElementAt(RandomDriver.Next(Users.Keys.Count))
@@ -98,8 +105,8 @@ Namespace Misc.Games
                 Wdbg(DebugLevel.I, "Response: {0}", Response)
 
                 'Parse response
-                Select Case Response
-                    Case "A", "a" 'Apologize
+                Select Case Response.ToLower
+                    Case "a" 'Apologize
                         Select Case Type
                             Case CommentType.Love
                                 Wdbg(DebugLevel.I, "Apologized to love comment")
@@ -110,7 +117,7 @@ Namespace Misc.Games
                                 Write(DoTranslation("You've apologized to a hate comment! Excellent!"), True, ColTypes.Neutral)
                                 Score += 1
                         End Select
-                    Case "T", "t" 'Thank
+                    Case "t" 'Thank
                         Select Case Type
                             Case CommentType.Love
                                 Wdbg(DebugLevel.I, "Thanked love comment")
@@ -121,7 +128,7 @@ Namespace Misc.Games
                                 Write(DoTranslation("You just thanked the hater for the hate comment!"), True, ColTypes.Neutral)
                                 Score -= 1
                         End Select
-                    Case "Q", "q" 'Quit
+                    Case "q" 'Quit
                         Wdbg(DebugLevel.I, "Exit requested")
                         ExitRequested = True
                     Case Else
