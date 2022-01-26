@@ -39,7 +39,6 @@ Karakterên taybet nayên destûr kirin.
 Şîfreya çewt.
 Bikarhêner neçalak e.
 Navê bikarhêner xelet.
-Çewtiya hewldana parkirina cihgiran. {0} - Şopa stûyê:
 Çewtiya hewldana parkirina cihgiran. {0}
 Çewtiya hewldana zêdekirina navê bikarhêner.
 usrmgr: Navê bikarhêner {0} çêdibe...
@@ -58,7 +57,6 @@ Screensaver {0} di databasê de nehat dîtin. Navê kontrol bikin û dîsa bicer
 Screensaver ji ber tiştên jêrîn nayê barkirin:
 Di çapkirina metnê de xeletiyeke cidî heye.
 Di hewldana çêkirina veavakirinê de xeletiyek heye.
-Çewtiya hewldana azadkirina RAMê: {0} - Berdewam dike...
 Mod ji ber van tiştan nayê barkirin:
 mod: Modên barkirin...
 mod: Rawestandina modan...
@@ -72,7 +70,6 @@ Navê bikarhêner ji bo {0}:
 Şîfreya ji bo {0}:
 Girêdayî {0}
 Çewtiya dema hewldana girêdana bi {0} re: {1}
-Stack Trace: {2}
 Pelrêça herêmî {0} tune.
 Peldanka herêmî binivîse. ".." vegere.
 Pelrêça {0} nehat dîtin.
@@ -103,7 +100,6 @@ Ekrana alîkariyê nîşan dide
 Pelrêça herêmî navnîş dike
 Lîsteya pelrêça dûr
 Pelê herêmî bi karanîna binary an nivîsê li pelrêça dûr bar dike
-Peyama FTP: Fermana tê xwestin {0} nayê dîtin. Ji bo navnîşek fermanên berdest ên ku li ser şêlê FTP-ê hatine destnîşan kirin 'alîkarî' bibînin.
 Ji bo adapterê {0} taybetmendî nehat bidestxistin
 Hejmara Adapter:
 Navê Adapter:
@@ -211,7 +207,6 @@ Amûrek debugê qut bike
 Amûrên verastkirinê yên girêdayî navnîş dike
 Amûra çewtiyê {0} nehat dîtin.
 Cîhaza {0} qut bû.
-Di pêwendiyê de çewtî: {0}
 Guhdariya li ser hemî navnîşanan bi karanîna porta {0} verast bike.
 Tu argûman nehatin diyarkirin. Nîşan: Gelek argûmanên ku ji hêla cîhan ve têne veqetandin diyar bikin
 Navnîşan jixwe hat dîtin: {0}
@@ -223,7 +218,6 @@ Nekarî pelrêça jê bibe: {0}
 Demjimêr bi xeletî hatiye diyarkirin.
 Hilbijartina profîla nederbasdar.
 Hewl dide ku bi profîla {1} ve bi {0} ve were girêdan...
-Fermana {0} nehat dîtin. Ji bo navnîşa fermanan emrê "alîkarî" bibînin.
 Nekarî taybetiyên IPv6 ji bo adapterê {0} werbigire. Berdewam...
 Agahdariya IPv4:
 Agahdariya IPv6:
@@ -381,7 +375,6 @@ Pelek nû çêdike
 Pelê jixwe heye.
 Çewtiya hewldana afirandina pelê: {0}
 Vekirina pelê bi ser neket. Derketina şêlê...
-Fermana edîtorê nivîsê ya diyarkirî nayê dîtin.
 Fermanên berdest navnîş dike
 Ji edîtorê nivîsê derdiket û guhertinên nehatine tomarkirin hilîne
 Naveroka pelê bi hejmarên rêzê li konsolê çap dike
@@ -438,9 +431,6 @@ Beşek nederbasdar ket. Ji kerema xwe vegere.
 Min himbêz bike...
 Bikêrkirin
 Neçalak bike
-Şîfreya root ya ku were danîn binivîse. Xem neke; şîfre wek stêrk têne nîşandan.
-Şîfreya Root biguherînin?
-Şîfreya Root saz bike...
 Portek debuggerê ya dûr binivîsin. Pêdivî ye ku ew hejmar be, û divê berê neyê bikar anîn. Wekî din, debugerê ji dûr ve dê nekaribe portê veke.
 Binivîsin ka emrê "get" çend caran divê dakêşanên têkçûyî ji nû ve biceribîne. Divê hejmar be.
 Kengî piştî millisecondên diyarkirî dîmendera dest pê bike binivîsin. Divê hejmar be.
@@ -515,7 +505,6 @@ Kernelê saz dike ji ber vê yekê ew ji we re argumana li ser bootê vedibêje.
 Moda lênêrînê vedike. Ev gelek hesabên asteng dike.
 Her destpêkek, ew ê nûvekirinan kontrol bike.
 Dema ku zimanan biguherînin, navên mehan, salname, hwd biguherînin.
-Ger kernel dest pê kir, ew ê şîfreya root saz bike.
 Peyamên lêgerîna hardware bêdeng bimînin.
 Berî ku dîmendera têketinê nîşan bide, peyama rojê nîşan bide.
 Berî ku dîmendera têketinê nîşan bide ekranê paqij bike.
@@ -566,9 +555,6 @@ Taybetmendî bi serkeftî hate rakirin.
 Nekarî taybetmendiyê lê zêde bike.
 Rakirina taybetmendiyê bi ser neket.
 Di rêzekê de peyvek an hevokek din bi cîh dike
-Asta rengê sor derbas bû. Ew {0} bû.
-Asta rengê kesk derbas bû. Ew {0} bû.
-Asta rengê şîn derbas bû. Ew {0} bû.
 Rengên rastîn çalak bikin
 Rakirina bloka {0} bi ser neket.
 {0} jixwe hatiye astengkirin.
@@ -644,7 +630,6 @@ Derengmayîn di Mîlyûçeyan de
 Berî nivîsandina din çend milî çirkeyan bisekinin?
 Dihêle hûn serverek SSH FTP bikar bînin
 Ji bo fermana "{0}" alîkarî tune.
-Rêzeya VT ya nederbasdar ji bo rengê RGB.
 Color of Seconds Bar
 Color of Minutes Bar
 Color of Hours Bar
@@ -706,7 +691,6 @@ Ji şêlê ZIP derdikeve
 Hemî pelên di hundurê arşîvê de navnîş dike
 Pelê ji pelrêçek diyarkirî an pelrêçek heyî derdixe
 pelrêça arşîvê diguherîne
-Fermana şêlê ZIP ya diyarkirî nayê dîtin.
 Pelrêça {0} tune
 Pelrêça arşîvê {0} tune
 Hejmara Positions Max
@@ -784,7 +768,6 @@ Hemî rûpelên kodê yên piştgirîkirî navnîş dike
 Di serîlêdanê de kîjan guherbarên berhevkerê têne çalak kirin?
 Testên ku bûyera taybetî bilind dikin
 Testên lêkolandina hardware
-Berhevkarê çopê diceribîne
 Ji qalika testê derdikeve û kernel dest pê dike
 Ji qalika testê derdikeve û kernelê digre
 Pelrêça heyî li pelê veavakirina kernelê diparêze
@@ -854,13 +837,11 @@ Ji şêlê RSS-ê derdikeve û vedigere kernelê
 Girêdana xwarinê diguherîne
 Lîsteya hemî xwarinan
 Di gerokek webê de feydeyek dixwîne
-Fermana şêlê RSS ya diyarkirî nayê dîtin.
 Xwarina RSS2 nederbasdar e.
 Xwarina RSS1 nederbasdar e.
 Xwarina Atomê nederbasdar e.
 URL-ya RSS-ê têkevin:
 Tîpa feed RSS ya nederbasdar.
-Çewtiya şêlê nenas:
 Agahdariya gotarê digire
 Jimareya gotarê nikare ji gotarên berdest mezintir be.
 Nav:

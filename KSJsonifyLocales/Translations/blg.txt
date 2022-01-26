@@ -39,7 +39,6 @@ parola na {0}:
 Greshna parola.
 Potrebitelyat e deaktiviran.
 Greshno potrebitelsko ime.
-Greshka pri opit za sintaktichen analiz na zamestiteli. {0} – Trasirane na steka:
 Greshka pri opit za sintaktichen analiz na zamestiteli. {0}
 Greshka pri opit za dobavyane na potrebitelsko ime.
 usrmgr: Sŭzdavane na potrebitelsko ime {0}...
@@ -58,7 +57,6 @@ Skriĭnseĭvŭr {0} ne e nameren v bazata danni. Proverete imeto i opitaĭte 
 Skriĭnseĭvŭrŭt ne mozhe da se zaredi poradi slednoto:
 Ima seriozna greshka pri otpechatvane na tekst.
 Ima greshka pri opit za sŭzdavane na konfiguratsiya.
-Greshka pri opit za osvobozhdavane na RAM: {0} - Prodŭlzhava...
 Modŭt ne mozhe da se zaredi poradi slednoto:
 mod: Modove se zarezhdat...
 mod: Spirane na modite...
@@ -72,7 +70,6 @@ Potrebitelsko ime za {0}:
 Parola za {0}:
 Svŭrzan s {0}
 Greshka pri opit za svŭrzvane s {0}: {1}
-Prosledyavane na steka: {2}
 Lokalna direktoriya {0} ne sŭshtestvuva.
 Vŭvedete lokalna direktoriya. ".." da se vŭrna.
 Direktoriya {0} ne e namerena.
@@ -103,7 +100,6 @@ Pokazva pomoshten ekran
 Izbroyava lokalna direktoriya
 Izbroyava otdalechena direktoriya
 Kachva lokalen faĭl v otdalechena direktoriya s pomoshtta na dvoichen faĭl ili tekst
-FTP sŭobshtenie: Iskanata komanda {0} ne e namerena. Vizhte „pomosht“ za spisŭk s nalichnite komandi, posocheni vŭv FTP obvivkata.
 Neuspeshno poluchavane na svoĭstva za adapter {0}
 Nomer na adaptera:
 Ime na adaptera:
@@ -211,7 +207,6 @@ Izklyuchete ustroĭstvo za ot·stranyavane na greshki
 Izbroyava svŭrzani ustroĭstva za ot·stranyavane na greshki
 Ustroĭstvoto za ot·stranyavane na greshki {0} ne e namereno.
 Ustroĭstvoto {0} e prekŭsnato.
-Greshka vŭv vrŭzkata: {0}
 Ot·stranyavane na greshki pri proslushvane na vsichki adresi chrez port {0}.
 Nyama posocheni argumenti. Sŭvet: Posochete mnozhestvo argumenti, razdeleni s intervali
 Psevdonimŭt veche e nameren: {0}
@@ -223,7 +218,6 @@ Ne mozhe da se premakhne direktoriyata: {0}
 Chasovata zona e posochena nepravilno.
 Nevaliden izbor na profil.
 Opitvam se da se svŭrzha s {0} s potrebitelski profil {1}...
-Komandata {0} ne e namerena. Vizhte komandata "pomosht" za spisŭka s komandi.
 Neuspeshno poluchavane na IPv6 svoĭstva za adapter {0}. Prodŭlzhavane...
 IPv4 informatsiya:
 IPv6 informatsiya:
@@ -381,7 +375,6 @@ Sŭzdava nov faĭl
 Faĭlŭt veche sŭshtestvuva.
 Greshka pri opit za sŭzdavane na faĭl: {0}
 Neuspeshno otvaryane na faĭl. Izlizane ot obvivkata...
-Posochenata komanda za tekstov redaktor ne e namerena.
 Izbroyava nalichnite komandi
 Izliza ot tekstoviya redaktor i zapazva nezapazenite promeni
 Otpechatva sŭdŭrzhanieto na faĭla s nomera na redove v konzolata
@@ -438,9 +431,6 @@ Vŭvedena e nevalidna sektsiya. Molya, vŭrnete se.
 Vŭrni se...
 Razreshavane
 Deaktiviraĭte
-Napishete root parolata, koyato da bŭde zadadena. Ne se pritesnyavaĭte; parolata se pokazva kato zvezdi.
-Promyana na Root parola?
-Zadaĭte Root parola...
 Napishete otdalechen port za ot·stranyavane na greshki. Tryabva da e chislovo i ne tryabva da se izpolzva veche. V protiven sluchaĭ otdalecheniyat debŭger nyama da uspee da otvori porta.
 Napishete kolko pŭti komandata "get" tryabva da opita otnovo neuspeshni izteglyaniya. Tryabva da e chislovo.
 Napishete koga da startirate skriĭnseĭvŭr sled opredeleni milisekundi. Tryabva da e chislovo.
@@ -515,7 +505,6 @@ Nastroĭva yadroto, taka che da vi podkanva za argument pri zarezhdane.
 Zadeĭstva rezhim na poddrŭzhka. Tova deaktivira mnozhestvo akaunti.
 Pri vsyako startirane toĭ shte proveryava za aktualizatsii.
 Pri prevklyuchvane na ezitsi promenete imenata na mesetsite, kalendara i t.n.
-Ako yadroto e startirano, to shte zadade root parola.
 Pazete bezshumni sŭobshteniyata za kharduerno sondirane.
 Pokazvane na sŭobshtenie za denya predi pokazvane na ekrana za vkhod.
 Izchistete ekrana, predi da se pokazhe ekranŭt za vlizane.
@@ -566,9 +555,6 @@ Atributŭt e premakhnat uspeshno.
 Dobavyaneto na atribut ne be uspeshno.
 Premakhvaneto na atributa ne be uspeshno.
 Zamenya duma ili fraza s druga v reda
-Nivoto na cherveniya tsvyat e previsheno. Beshe {0}.
-Nivoto na zelen tsvyat e previsheno. Beshe {0}.
-Nivoto na siniya tsvyat e previsheno. Beshe {0}.
 Aktiviraĭte istinski tsvetove
 Otblokiraneto na {0} ne be uspeshno.
 {0} veche e blokiran.
@@ -644,7 +630,6 @@ Zakŭsnenie v milisekundi
 Kolko milisekundi da izchakate, predi da napravite sledvashtoto zapisvane?
 Pozvolyava vi da izpolzvate SSH FTP sŭrvŭr
 Nyama pomosht za komandata "{0}".
-Nevalidna VT posledovatelnost za RGB tsvyat.
 Tsvyat na lentata za sekundi
 Tsvyat na lentata za minuti
 Tsvyat na chasovata lenta
@@ -706,7 +691,6 @@ Izliza ot ZIP obvivkata
 Izbroyava vsichki faĭlove v arkhiva
 Izvlicha faĭl v opredelena direktoriya ili tekushta direktoriya
 Promenya arkhivnata direktoriya
-Posochenata komanda na ZIP shell ne e namerena.
 Direktoriya {0} ne sŭshtestvuva
 Arkhivna direktoriya {0} ne sŭshtestvuva
 Maksimalen broĭ pozitsii
@@ -784,7 +768,6 @@ Izbroyava vsichki poddŭrzhani kodovi stranitsi
 Kakvi promenlivi na kompilatora sa aktivirani v prilozhenieto?
 Testove, povdigashti konkretnoto sŭbitie
 Testove za izsledvane na kharduera
-Testva kolektora za bokluk
 Izliza ot testovata obvivka i startira yadroto
 Izliza ot testovata obvivka i izklyuchva yadroto
 Zapisva tekushtata direktoriya v konfiguratsionniya faĭl na yadroto
@@ -854,13 +837,11 @@ Izliza ot RSS obvivkata i se vrŭshta kŭm yadroto
 Promenya vrŭzkata na emisiyata
 Izbroyava vsichki emisii
 Chete emisiya v ueb brauzŭr
-Posochenata komanda na RSS obvivka ne e namerena.
 Nevalidna RSS2 emisiya.
 Nevalidna RSS1 emisiya.
 Nevalidna emisiya na Atom.
 Vŭvedete URL na RSS emisiya:
 Nevaliden tip RSS emisiya.
-Neizvestna greshka v obvivkata:
 Poluchava informatsiya za statiyata
 Nomerŭt na statiyata ne mozhe da bŭde po-golyam ot nalichnite statii.
 Zaglavie:

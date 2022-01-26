@@ -39,7 +39,6 @@ Hatuk nishery t’uylatrvats ch’en:
 Skhal gaghtnabarr.
 Ogtatery anjatvats e:
 Skhal ogtvoghi anun:
-Ch’hajoghvets’ verlutsel teghapahnery: {0} - Kuyti hetk’.
 Ch’hajoghvets’ verlutsel teghapahnery: {0}
 Ch’hajoghvets’ avelats’nel ogtanuny:
 usrmgr. Steghtsvum e ogtanun {0}...
@@ -58,7 +57,6 @@ Ekranapahy {0} ch’i gtnvel tvyalneri bazayum: Stugek’ anuny yev norits’ p�
 Ekranapahy ch’i karogh berrnvel hetevyali patcharrov.
 Tek’sty tpelis lurj skhal ka.
 Konfigurats’ia steghtselis skhal e teghi unets’el:
-Ch’hajoghvets’ azatel RAM-y. {0} - Sharunakvum e...
 Mod-y ch’i karogh berrnvel hetevyali patcharrov.
 mod: Berrnvum yen rrezhimner...
 mod. rrezhimneri dadarets’um...
@@ -72,7 +70,6 @@ Ogtanun {0}-i hamar՝
 Gaghtnabarr {0}-i hamar՝
 Miats’vats e {0}-in
 {0}-in mianalu p’vordzi skhal՝ {1}
-Stack Trace՝ {2}
 Teghakan grats’uts’aky {0} goyut’yun ch’uni:
 Mutk’agrek’ teghakan grats’uts’ak: «..» het gnal.
 Grats’uts’aky {0} ch’i gtnvel:
@@ -103,7 +100,6 @@ Ts’uyts’ e talis ognut’yan ekrany
 Ts’uts’akum e teghakan grats’uts’aky
 Ts’uts’akum e herravor grats’uts’aky
 Teghakan fayly verberrnum e herravor grats’uts’ak՝ ogtagortselov yerkuakan kam tek’st
-FTP haghordagrut’yun. {0} pahanjvogh hramany ch’i gtnvel: Tes «ognut’yun» FTP shell-um nshvats hasaneli hramanneri ts’anki hamar:
 Ch’hajoghvets’ stanal {0} adapterneri hatkut’yunnery
 Adaptorneri hamary:
 Adaptori anuny.
@@ -211,7 +207,6 @@ Anjatek’ vripazertsogh sark’y
 Ts’uts’akum e miats’vats vripazertsogh sark’ery
 Vripazertsman sark’y {0} ch’i gtnvel:
 {0} sark’n anjatvats e:
-Skhal kapi mej՝ {0}
 Vripazertsel unkndrumy bolor hasts’enerum՝ ogtagortselov {0} navahangisty:
 Voch’ mi p’astark nshvats ch’e: Hushum. Nshek’ bazmat’iv argumentner՝ bazhanvats bats’atnerov
 P’vokhanunn arden gtnvel e՝ {0}
@@ -223,7 +218,6 @@ Hnaravor ch’e herrats’nel grats’uts’aky. {0}
 Zhamayin gotin skhal e nshvats:
 Anvaver profili yntrut’yun:
 P’vordzum e mianal {0}-in {1} profilov...
-{0} hramany ch’i gtnvel: Te՛s «ognut’yun» hramany hramanneri ts’anki hamar:
 Ch’hajoghvets’ stanal IPv6 hatkut’yunner {0} adapterneri hamar: Sharunakvum e...
 IPv4 teghekatvut’yun.
 IPv6 teghekatvut’yun.
@@ -381,7 +375,6 @@ Steghtsum e nor fayl
 Fayln arden goyut’yun uni:
 Ch’hajoghvets’ steghtsel fayl՝ {0}
 Ch’hajoghvets’ bats’el fayly: Durs galov patyanits’...
-Nshvats tek’stayin khmbagrich’i hramany ch’i gtnvel:
 Ts’uts’akum e hasaneli hramannery
 Durs e galis tek’stayin khmbagrich’its’ yev pahpanum e ch’pahvats p’vop’vokhut’yunnery
 Tpum e fayli bovandakut’yuny togheri hamarnerov vahanaki vra
@@ -438,9 +431,6 @@ Mutk’agrvel e anvaver bazhin: Khndrum yem het gna.
 Veradarrnal...
 Miats’nel
 Anjatel
-Grek’ armatayin gaghtnabarry, vory petk’ e sahmanvi: Mi anhangstats’ek’; gaghtnabarry ts’uts’adrvum e vorpes astgh:
-P’vokhe՞l armatayin gaghtnabarry:
-Sahmanel armatayin gaghtnabarr...
 Grek’ herraka kargaberich’ port: Ayn petk’ e lini t’vayin yev ch’petk’ e arden ogtagortsvats lini: Hakarrak depk’um, herrakarravarvogh vripazertsich’y ch’i karoghana bats’el porty:
 Grek’, t’e k’ani angam «get» hramany petk’ e norits’ p’vordzi dzakhoghvats nerberrnumnery: Ayn petk’ e lini t’vayin:
 Grek’, t’e yerb gortsarkel ekranapahich’y nshvats milivayrkyannerits’ heto: Ayn petk’ e lini t’vayin:
@@ -515,7 +505,6 @@ Kargavorum e mijuky aynpes, vor ayn dzez hushum e argumenti masin boot-um:
 Gortsarkum e pahpanman rrezhimy: Sa anjatum e bazmat’iv hashivner:
 Yurak’anch’yur gortsarkum ayn ​​kstugi t’armats’umneri hamar:
 Lezunery p’vokhelis p’vokhek’ amsva anunnery, orats’uyts’y yev ayln:
-Yet’e ​​mijuky gortsarkvi, ayn ksahmani armatayin gaghtnabarr:
 Lrrel aparatayin zondavorman haghordagrut’yunnery:
 Ts’uyts’ tal orva haghordagrut’yuny nakhk’an mutk’i ekrany ts’uts’adrely:
 Mak’rel ekrany nakhk’an mutk’i ekrany ts’uts’adrely:
@@ -566,9 +555,6 @@ Hatkanishy hajoghut’yamb herrats’vel e:
 Ch’hajoghvets’ hatkanish avelats’nel:
 Ch’hajoghvets’ herrats’nel hatkanishy:
 P’vokharinum e barry kam artahaytut’yuny toghum mek ayl barrov
-Karmir guyni makardaky gerazants’el e: Da {0} er:
-Kanach’ guyni makardaky gerazants’el e: Da {0} er:
-Kapuyt guyni makardaky gerazants’el e: Da {0} er:
 Aktivats’rek’ irakan guynery
 Ch’hajoghvets’ apaargelap’akel {0}-y:
 {0}-n arden argelap’akvats e:
@@ -644,7 +630,6 @@ Hetadzgum milivayrkyannerov
 K’ani՞ milivayrkyan petk’ e spasel hajord grut’yuny katareluts’ arraj:
 T’uyl e talis ogtagortsel SSH FTP server
 «{0}» hramani hamar ognut’yun ch’ka:
-Anvaver VT hajordakanut’yun RGB guyni hamar:
 Vayrkyanneri guyny bar
 Ropeneri guyny bar
 Zhameri guyny bar
@@ -706,7 +691,6 @@ Durs e galis ZIP patyanits’
 Ts’uts’akum e arkhivi nersum gtnvogh bolor faylery
 Fayly hanum e nshvats grats’uts’akum kam ynt’ats’ik grats’uts’akum
 P’vokhum e arkhivayin grats’uts’aky
-Nshvats ZIP shell hramany ch’i gtnvel:
 Grats’uts’aky {0} goyut’yun ch’uni
 Arkhivayin grats’uts’aky {0} goyut’yun ch’uni
 Arravelaguyn dirk’eri hashvark
@@ -784,7 +768,6 @@ Ts’uts’akum e bolor ajakts’vogh kodayin ejery
 Kompilyatori vo՞r p’vop’vokhakannern yen miats’vats havelvatsum:
 T’ester, voronk’ bardzrats’num yen konkret iradardzut’yuny
 Sark’avorumy zondavorogh t’ester
-P’vordzarkum e aghbahanin
 Durs e galis p’vordznakan keghevits’ yev sksum mijuky
 Durs e galis p’vordznakan keghevits’ yev anjatum mijuky
 Pahum e ynt’ats’ik grats’uts’aky mijuki kazmadzevman faylum
@@ -854,13 +837,11 @@ Durs e galis RSS vahanakits’ yev veradarrnum mijuk
 P’vokhum e snuts’man hghumy
 Ts’uts’akum e bolor hosk’ery
 Kardum e hosk’ veb brauzerum
-Nshvats RSS shell hramany ch’i gtnvel:
 Anvaver RSS2 hosk’:
 Anvaver RSS1 hosk’:
 Anvaver Atom hosk’:
 Mutk’agrek’ RSS hosk’i URL՝
 RSS hosk’i anvaver tesak:
-Anhayt vahanaki skhal.
 Stanum e hodvatsi masin teghekut’yunnery
 Hodvatsi hamary ch’er karogh aveli mets linel, k’an arrka hodvatsnery:
 Koch’um:

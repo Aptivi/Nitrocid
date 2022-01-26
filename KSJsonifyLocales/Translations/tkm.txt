@@ -39,7 +39,6 @@ Charactersörite nyşanlara rugsat berilmeýär.
 Yalnyş parol.
 Ulanyjy ýapyk.
 Nädogry ulanyjy ady.
-Placeer eýelerini derňemäge synanyşmakda ýalňyşlyk. {0} - ackoluň yzy:
 Placeer eýelerini derňemäge synanyşmakda ýalňyşlyk. {0}
 Ulanyjy adyny goşmak synanyşygynda säwlik.
 usrmgr: Ulanyjy adyny döretmek {0} ...
@@ -58,7 +57,6 @@ Maglumat bazasynda ekran saklaýjy {0} ýok. Adyny barlaň we gaýtadan synanyş
 Aşakdakylar sebäpli ekran saklaýjyny ýükläp bolmaýar:
 Tekst çap edilende çynlakaý ýalňyşlyk bar.
 Sazlama döretmäge synanyşýan säwlik bar.
-RAM-y boşatmakda ýalňyşlyk: {0} - Dowamy ...
 Mod aşakdakylar sebäpli ýüklenip bilinmez:
 mod: modlary ýüklemek ...
 mod: Modlary duruzmak ...
@@ -72,7 +70,6 @@ Başga bir serwere birikmezden ozal serwerden aýyrmaly
 {0 for üçin parol:
 {0 to birikdirildi
 {0}: {1 to birikdirjek bolanyňyzda säwlik
-Ackol yzy: {2}
 Directoryerli katalog {0} ýok.
 Directoryerli katalogy giriziň. ".." yzyna dolanmak.
 Directory {0} tapylmady
@@ -103,7 +100,6 @@ Kömek ekrany görkezýär
 Localerli katalogy sanawlaýar
 Uzakdaky katalogy sanawlaýar
 Ikili ýa-da tekst ulanyp, ýerli faýly uzakdaky kataloga ýükleýär
-FTP habary: {0} talap edilen buýruk tapylmady. FTP gabygynda görkezilen elýeterli buýruklaryň sanawy üçin 'kömek' serediň.
 Adapter {0 adapter üçin häsiýetleri alyp bilmedi
 Adapter belgisi:
 Adapteriň ady:
@@ -211,7 +207,6 @@ Düzediş enjamyny aýryň
 Birikdirilen düzediş enjamlarynyň sanawyny
 Düzediş enjamy {0} tapylmady
 Enjam {0} kesildi.
-Baglanyşykda säwlik: {0}
 {0 port ulanyp, ähli salgylarda diňlemek meselesini düzediň.
 Argument görkezilmedi. Maslahat: Boşluklar bilen bölünen birnäçe argumenti görkeziň
 Lakam eýýäm tapyldy: {0}
@@ -223,7 +218,6 @@ Katalogy aýyryp bolmaýar: {0}
 Wagt guşaklygy nädogry görkezilýär.
 Nädogry profil saýlamak.
 {0 profile profil {1} ​​bilen birikmäge synanyşmak ...
-{0 command buýruk tapylmady. Buýruklaryň sanawy üçin "kömek" buýrugyna serediň.
 {0 adapter adapteri üçin IPv6 häsiýetlerini alyp bilmedi. Dowam edýär ...
 IPv4 maglumatlary:
 IPv6 maglumatlary:
@@ -381,7 +375,6 @@ Täze faýl ýasaýar
 Faýl eýýäm bar.
 Faýl döretmäge synanyşmakda säwlik: {0}
 Faýl açyp bilmedi Çykýan gabyk ...
-Görkezilen tekst redaktory buýrugy tapylmady.
 Elýeterli buýruklaryň sanawyny
 Tekst redaktoryndan çykýar we saklanmadyk üýtgeşmeleri ýazdyryň
 Faýlyň mazmunyny setir sanlary bilen konsola çap edýär
@@ -438,9 +431,6 @@ Nädogry bölüm girizildi Yzyňa dolanmagyňyzy haýyş edýäris.
 Yzyna dolan ...
 Işletmek
 Öçüriň
-Guruljak kök parolyny ýazyň. Alada etme; parol ýyldyz hökmünde görkezilýär.
-Kök parolyny üýtgediň?
-Kök parolyny düzüň ...
 Uzakdan düzediş portuny ýazyň. Sanly bolmaly we eýýäm ulanylmaly däl. Otherwiseogsam, uzakdan düzediji porty açyp bilmez.
 "Get" buýrugynyň şowsuz ýüklemeleri gaýtadan synap görmelidigini ýazyň. Sanly bolmaly.
 Görkezilen millisekuntdan soň ekran saklaýjyny haçan başlamalydygyny ýazyň. Sanly bolmaly.
@@ -515,7 +505,6 @@ Ernadrosy ýükläň, şonuň üçin size boot barada jedelleşer.
 Bejeriş tertibi. Bu birnäçe hasaby öçürýär.
 Her başlangyç, täzelenmeleri barlar.
 Dilleri üýtgedeniňizde, aýyň atlaryny, senenamasyny we ş.m. üýtgediň.
-Ernadro işe başlasa, kök parolyny goýar.
 Apparat gözleg habarlaryny dymyň.
 Giriş ekrany görkezilmezden ozal günüň habaryny görkeziň.
 Giriş ekranyny görkezmezden ozal ekrany arassalaň.
@@ -566,9 +555,6 @@ Aýratynlyk üstünlikli aýryldy.
 Aýratynlyk goşmak başartmady.
 Aýratynlygy aýyrmak başartmady.
 Söz ýa-da söz düzümini setirde başga biri bilen çalyşýar
-Gyzyl reňk derejesi geçdi. {0 was boldy.
-Greenaşyl reňk derejesi geçdi. {0 was boldy.
-Gök reňk derejesi geçdi. {0 was boldy.
 Hakyky reňkleri işjeňleşdiriň
 Blokdan aýrylmady {0}.
 {0} eýýäm petiklenendir.
@@ -644,7 +630,6 @@ Millisekuntda gijä galmak
 Indiki ýazmazdan ozal näçe millisekunt garaşmaly?
 SSH FTP serwerini ulanmaga mümkinçilik berýär
 "{0}" buýrugy üçin kömek ýok.
-RGB reňki üçin nädogry VT yzygiderliligi.
 Sekuntlaryň reňki
 Minutlar çyzygynyň reňki
 Sagatlar zolagynyň reňki
@@ -706,7 +691,6 @@ ZIP gabygyndan çykýar
 Arhiwdäki ähli faýllary sanawlaýar
 Belli bir kataloga ýa-da häzirki kataloga bir faýl çykarýar
 Arhiw katalogyny üýtgedýär
-Görkezilen ZIP gabyk buýrugy tapylmady.
 {0 Directory katalogy ýok
 {0} arhiw katalogy ýok
 Iň köp pozisiýa
@@ -784,7 +768,6 @@ Goldanýan kod sahypalarynyň hemmesini görkezýär
 Programmada haýsy düzüji üýtgeýjiler açyk?
 Belli bir wakany ýokarlandyrýan synaglar
 Enjamy barlamak üçin synaglar
-Zibil ýygnaýjyny barlaýar
 Synag gabygyndan çykýar we ýadrosy başlaýar
 Synag gabygyndan çykýar we ýadrosyny ýapýar
 Häzirki katalogy ýadro konfigurasiýa faýlyna ýazdyrýar
@@ -854,13 +837,11 @@ RSS gabygyndan çykýar we ýadroga gaýdyp gelýär
 Iýmit baglanyşygyny üýtgedýär
 Feedhli iýmitleriň sanawyny
 Web brauzerinde iýmit okaýar
-Görkezilen RSS gabyk buýrugy tapylmady.
 Nädogry RSS2 iým.
 Nädogry RSS1 iým.
 Atom iýminiň nädogry.
 RSS iýmit URL-i giriziň:
 Nädogry RSS iýmit görnüşi.
-Näbelli gabyk ýalňyşlygy:
 Makala barada maglumat alýar
 Makalanyň sany elýeterli makalalardan uly bolup bilmez.
 Ady:

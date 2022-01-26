@@ -39,7 +39,6 @@ Viśēṣa varṇaharūlā'ī anumati chaina.
 Galata pāsavarḍa.
 Prayōgakartā asakṣama gari'ēkō cha.
 Galata prayōgakartā nāma.
-Plēsahōlḍaraharū pārsa garnē prayāsa gardā truṭi bhayō. {0} - Sṭyāka ṭrēsa:
 Plēsahōlḍaraharū pārsa garnē prayāsa gardā truṭi bhayō. {0}
 Prayōgakartā nāma thapna prayāsa gardā truṭi.
 Usrmgr: Prayōgakartā nāma sirjanā gardai {0}...
@@ -58,7 +57,6 @@ Skrinasēbhara {0} ḍāṭābēsamā phēlā parēna. Nāma jām̐ca garnuhōs 
 Nimna kāraṇalē gardā skrinasēbhara lōḍa garna sakim̐daina:
 Pāṭha mudraṇa gardā ē'uṭā gambhīra truṭi cha.
 Kanphigarēsana sirjanā garnē prayāsa gardā truṭi cha.
-RAM khālī garna prayāsa gardā truṭi: {0} - Jārī...
 Nimna kāraṇalē gardā mōḍa lōḍa garna sakim̐daina:
 Mōḍa: Mōḍaharū lōḍa gardai...
 Mōḍa: Mōḍaharū rōkdai...
@@ -72,7 +70,6 @@ tapā'īnlē arkō sarbharamā jaḍāna garnu aghi sarbharabāṭa vicchēda ga
 {0} Kō lāgi pāsavarḍa:
 {0} Mā jaḍāna bhayō
 {0} mā jaḍāna garnē prayāsa gardā truṭi: {1}
-Sṭyāka ṭrēsa: ​​{2}
 Sthānīya ḍā'irēkṭarī {0} avasthita chaina.
 Sthānīya nirdēśikā praviṣṭa garnuhōs. ".." Phirtā jāna.
 Ḍā'irēkṭarī {0} phēlā parēna.
@@ -103,7 +100,6 @@ maddata skrina dēkhā'um̐cha
 sthānīya nirdēśikā sūcī
 rimōṭa ḍā'irēkṭarī sūcībad'dha gardacha
 bā'inarī vā pāṭha prayōga garēra ṭāḍhākō ḍā'irēkṭarīmā sthānīya phā'ila apalōḍa gardacha
-FTP sandēśa: Anurōdha gari'ēkō ādēśa {0} phēlā parēna. FTP śēlamā nirdiṣṭa upalabdha ādēśaharūkō sūcīkō lāgi'maddata' hērnuhōs.
 Ēḍāpṭarakā lāgi guṇaharū prāpta garna asaphala bhayō {0}
 ēḍāpṭara nambara:
 Ēḍāpṭara nāma:
@@ -211,7 +207,6 @@ Hālakō kārya nirdēśikāmā phā'ila ḍā'unalōḍa gardacha
 jaḍāna gari'ēkā ḍibagiṅa yantraharū sūcī gardacha
 ḍibaga yantra {0} phēlā parēna.
 Yantra {0} vicchēda bhayō.
-Jaḍānamā truṭi: {0}
 Pōrṭa {0} prayōga garēra sabai ṭhēgānāharūmā ḍibaga sunna.
 Kunai tarka nirdiṣṭa gari'ēkō chaina. Saṅkēta: Khālī ṭhā'um̐harūdvārā chuṭyā'ēkā dhērai tarkaharū nirdiṣṭa garnuhōs
 upanāma pahilē nai phēlā paryō: {0}
@@ -223,7 +218,6 @@ upanāma pahilē nai phēlā paryō: {0}
 Samaya kṣētra galata rūpamā nirdiṣṭa gari'ēkō cha.
 Avaidha prōphā'ila cayana.
 Prōphā'ila {1} sam̐ga {0} mā jaḍāna garnē prayāsa gardai...
-Ādēśa {0} phēlā parēna. Ādēśaharūkō sūcīkō lāgi"maddata" ādēśa hērnuhōs.
 Ēḍāpṭara {0} kō lāgi IPv6 guṇaharū prāpta garna asaphala bhayō. Jārī...
 IPv4 jānakārī:
 IPv6 jānakārī:
@@ -381,7 +375,6 @@ nayām̐ phā'ila banā'um̐cha
 phā'ila pahilē nai avasthita cha.
 Phā'ila sirjanā garnē prayāsamā truṭi: {0}
 Phā'ila khōlna asaphala bhayō. Śēla bāhira niskam̐dai...
-Nirdiṣṭa pāṭha sampādaka ādēśa phēlā parēna.
 Upalabdha ādēśaharū sūcībad'dha garnuhōs
 pāṭha sampādaka bāhira niskancha ra bacata nagari'ēkā parivartanaharū bacata garnuhōs
 kansōlamā lā'ina nambaraharū sahita phā'ilakō sāmagrīharū chāpcha
@@ -438,9 +431,6 @@ avaidha khaṇḍa praviṣṭa gariyō. Kr̥payā phirtā jānuhōs.
 Pachāḍī jā'u...
 Sakṣama garnuhōs
 asakṣama pārnuhōs
-Sēṭa garna rūṭa pāsavarḍa lēkhnuhōs. Cintā nagarnuhōs; pāsavarḍa tārākō rūpamā dēkhā'i'ēkō cha.
-Rūṭa pāsavarḍa parivartana garnē?
-Rūṭa pāsavarḍa sēṭa garnuhōs...
 Rimōṭa ḍibagara pōrṭa lēkhnuhōs. Yō saṅkhyātmaka hunuparcha, ra pahilē nai prayōga garinu hum̐daina. An'yathā, rimōṭa ḍibagara pōrṭa khōlna asaphala hunēcha.
 Lēkhnuhōs kati paṭaka"prāpta garnuhōs" ādēśalē asaphala ḍā'unalōḍaharū puna: Prayāsa garnuparcha. Yō saṅkhyātmaka hunuparcha.
 Nirdiṣṭa milisēkēnḍa pachi skrinasēbhara kahilē suru garnē lēkhnuhōs. Yō saṅkhyātmaka hunuparcha.
@@ -515,7 +505,6 @@ karnēla sēṭa apa garnuhōs tāki yasalē tapā'īnlā'ī buṭamā tarkakō 
 Marmata mōḍa ṭrigara gardacha. Yasalē dhērai khātāharū asakṣama pārcha.
 Pratyēka sṭārṭa'apa, yasalē apaḍēṭaharūkō lāgi jām̐ca garnēcha.
 Bhāṣāharū badaldā, mahinākō nāma, pātrō, ādi parivartana garnuhōs.
-Yadi karnēla suru bhayō bhanē, yasalē rūṭa pāsavarḍa sēṭa garnēcha.
 Hārḍavēyara jām̐ca sandēśaharū mauna rākhnuhōs.
 Laga'ina skrina pradarśana garnu aghi dinakō sandēśa dēkhā'unuhōs.
 Laga'ina skrina pradarśana garnu aghi skrina khālī garnuhōs.
@@ -566,9 +555,6 @@ Viśēṣatā saphalatāpūrvaka haṭā'iyō.
 Viśēṣatā thapna saki'ēna.
 Viśēṣatā haṭā'una asaphala bhayō.
 Ēka paṅktimā arkō śabda vā vākyānśa pratisthāpana gardacha
-rātō raṅakō stara nāghyō. Yō {0} thiyō.
-Hariyō raṅgakō stara nāghyō. Yō {0} thiyō.
-Nīlō raṅgakō stara nāghyō. Yō {0} thiyō.
 Sām̐cō raṅgaharū sakriya garnuhōs
 Anablaka garna asaphala bhayō {0}.
 {0} Pahilē nai rōki'ēkō cha.
@@ -644,7 +630,6 @@ Milisēkēnḍamā ḍhilā'i
 arkō lēkhnu aghi kati milisēkēnḍa parkhanu parcha?
 Tapā'īnlā'ī SSH FTP sarbhara prayōga garna dincha
 ādēśa"{0}" kō lāgi kunai maddata chaina.
-RGB raṅakō lāgi amān'ya VT anukrama.
 Sēkēnḍa bārakō raṅa
 minēṭa bārakō raṅa
 ghaṇṭā paṭṭī kō raṅga
@@ -706,7 +691,6 @@ ZIP śēlabāṭa bāhira niskancha
 abhilēkha bhitra sabai phā'ilaharū sūcībad'dha garnuhōs
 nirdiṣṭa ḍā'irēkṭarī vā hālakō ḍā'irēkṭarīmā phā'ila nikālcha
 abhilēkha ḍā'irēkṭarī parivartana gardacha
-nirdiṣṭa ZIP śēla ādēśa phēlā parēna.
 Nirdēśikā {0} avasthita chaina
 abhilēkha nirdēśikā {0} avasthita chaina
 adhikatama pada gaṇanā
@@ -784,7 +768,6 @@ sabai samarthita kōḍapējaharū sūcībad'dha garnuhōs
 kuna kampā'ilara caraharū anuprayōgamā sakṣama chan?
 Viśiṣṭa ghaṭanā baḍhā'um̐dai parīkṣaṇaharū
 hārḍavēyara jām̐ca garnē parīkṣaṇaharū
-phōhōra saṅkalana garnē parīkṣaṇa
 parīkṣaṇa śēlabāṭa bāhira niskancha ra karnēla suru huncha
 parīkṣaṇa śēlabāṭa bāhira niskancha ra karnēla banda gardacha
 hālakō ḍā'irēkṭarīlā'ī karnēla kanphigarēsana phā'ilamā bacata garcha
@@ -854,13 +837,11 @@ RSS śēlabāṭa niskancha ra karnēlamā pharkancha
 phiḍa liṅka parivartana gardacha
 sabai phiḍaharū sūcībad'dha garnuhōs
 vēba brā'ujaramā phiḍa paḍhcha
-nirdiṣṭa RSS śēla ādēśa phēlā parēna.
 Avaidha RSS2 phiḍa.
 Avaidha RSS1 phiḍa.
 Amān'ya ēṭama phiḍa.
 RSS phiḍa URL praviṣṭa garnuhōs:
 Avaidha RSS phiḍa prakāra.
-Ajñāta śēla truṭi:
 Lēkha jānakārī pā'um̐cha
 lēkha saṅkhyā upalabdha lēkhaharū bhandā ṭhūlō huna sakdaina.
 Śīrṣaka:

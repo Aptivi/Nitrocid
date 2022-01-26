@@ -39,7 +39,6 @@ Password di {0}:
 Password sbagliatu.
 L'utilizatore hè disattivatu.
 Nome d'utilizatore sbagliatu.
-Errore à pruvà d'analizà i segnaposti. {0} - Traccia di pila:
 Errore à pruvà d'analizà i segnaposti. {0}
 Errore pruvendu à aghjunghje nome d'utilizatore.
 usrmgr: Creendu u nome d'utilizatore {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} micca truvatu in a basa di dati. Verificate u nome è riprovate.
 U screensaver ùn pò micca esse caricatu per via di e seguenti:
 Ci hè un grave errore quandu si stampa u testu.
 Ci hè un errore chì prova à creà a cunfigurazione.
-Errore pruvendu à liberà RAM: {0} - Cuntinuendu ...
 Mod ùn pò micca esse caricatu per via di i seguenti:
 mod: Caricendu mods ...
 mod: Fermendu mods ...
@@ -72,7 +70,6 @@ Nome d'utilizatore per {0}:
 Password per {0}:
 Cunnessu à {0}
 Errore quandu pruvate à cunnette vi à {0}: {1}
-Stack Trace: {2}
 U repertoriu lucale {0} ùn esiste micca.
 Entre un annuariu lucale. ".." per vultà in daretu.
 Repertoriu {0} micca truvatu.
@@ -103,7 +100,6 @@ Mostra schermu d'aiutu
 Elenca u repertoriu lucale
 Elenca u repertoriu remotu
 Carica u fugliale lucale in u repertoriu luntanu aduprendu binariu o testu
-Missaghju FTP: U cumandimu dumandatu {0} ùn hè micca trovu. Vede "aiutu" per un elencu di cumandamenti dispunibuli specificati nantu à u shell FTP.
 Fiascu d'ottene pruprietà per l'adattatore {0}
 Numeru di Adattatore:
 Nome di l'adattatore:
@@ -211,7 +207,6 @@ Scumpite un dispositivu di debug
 Elenca i dispositivi di debugging cunnessi
 Dispositivu di debug {0} micca truvatu.
 Dispositiu {0} disconnessu.
-Errore in cunnessione: {0}
 Debug ascultà annantu à tutti l'indirizzi aduprendu u portu {0}.
 Nisun argumentu specificatu. Suggerimentu: Specificate più argumenti separati da spazi
 Alias ​​hà digià trovu: {0}
@@ -223,7 +218,6 @@ Impussibule di caccià u repertoriu: {0}
 U fuso orariu hè specificatu in modu incorrettu.
 Selezzione di prufilu invalidu.
 Pruvendu à cunnette vi cù {0} cù u prufilu {1} ...
-Cumandamentu {0} micca truvatu. Vede u cumandimu "aiutu" per a lista di cumandamenti.
 Fallimentu à ottene e pruprietà IPv6 per l'adattatore {0}. Cuntinuendu ...
 Infurmazione IPv4:
 Infurmazione IPv6:
@@ -381,7 +375,6 @@ Face un novu schedariu
 U schedariu esiste dighjà.
 Errore pruvendu à creà un schedariu: {0}
 Impussibule di apre u fugliale. Esce da u shell ...
-U cumandamentu di l'editore di testu specificatu ùn hè micca truvatu.
 Elenca i cumandamenti dispunibili
 Esce da l'editore di testu è salva cambiamenti micca salvati
 Stampa u cuntenutu di u fugliale cù numeri di linea in a cunsola
@@ -438,9 +431,6 @@ Sezione invalida entrata. Per piacè torna.
 Riturnà...
 Attivà
 Disattivà
-Scrivite a password di root da stabilisce. Ùn v'inchietate; a password hè mustrata cum'è stelle.
-Cambia a Root Password?
-Set Password Root ...
 Scrivite un portu di debugger remoto. Deve esse numericu, è ùn deve esse dighjà adupratu. Inutili, u debugger remoto ùn puderà micca apre u portu.
 Scrivite quante volte u cumandimu "uttene" deve riprova i scaricamenti falliti. Deve esse numericu.
 Scrivite quandu lancià u screensaver dopu millisecondi specificati. Deve esse numericu.
@@ -515,7 +505,6 @@ Pone u kernel in modo da vi dumanda per l'argumentu à u boot.
 Triggers modalità di manutenzione. Questu disabilita più conti.
 Ogni startup, hà da verificà l'aghjurnamenti.
 Quandu cambiate di lingua, cambiate u nome di u mese, u calendariu, ecc.
-Se u kernel hè iniziatu, stabilirà a password di root.
 Mantene i messaghji di sonda hardware in silenziu.
 Mostra u Messaghju di u Ghjornu prima di vede a schermata di login.
 Schermà chjaru prima di visualizà a schermata di login.
@@ -566,9 +555,6 @@ L'attributu hè statu cacciatu bè.
 Fallimentu à aghjunghje l'attributu.
 Fiascu à caccià l'attributu.
 Sostituisce una parolla o una frase cù un'altra in una linea
-U nivellu di culore rossu hè superatu. Era {0}.
-U nivellu di culore verde hà superatu. Era {0}.
-U nivellu di culore turchinu hè superatu. Era {0}.
 Attivate i culori veri
 Fiascu di sbloccà {0}.
 {0} hè dighjà bluccatu.
@@ -644,7 +630,6 @@ Ritardu in Millisecondi
 Quanti millisecondi da aspettà prima di fà a prossima scrittura?
 Permette di aduprà un servitore FTP SSH
 Nisun aiutu per u cumandimu "{0}".
-Sequenza VT invalida per u culore RGB.
 Culore di Seconds Bar
 Culore di Minute Bar
 Bar di Culore di l'ore
@@ -706,7 +691,6 @@ Esce da u shell ZIP
 Elenca tutti i fugliali in l'archiviu
 Estrae un fugliale in un repertoriu specificatu o un repertoriu attuale
 Cambia l'annuariu d'archiviu
-U cumandamentu di cunchiglia ZIP specificatu ùn hè micca truvatu.
 U Directory {0} ùn esiste micca
 L'archiviu {0} ùn esiste micca
 Conti di Posizioni Max
@@ -784,7 +768,6 @@ Elenca tutte e pagine di codici supportate
 Chì variabili di compilatore sò attivate in l'applicazione?
 Prove chì alzanu l'avvenimentu specificu
 Prove chì sonda u hardware
-Pruvede u cullettore di i rifiuti
 Esce da u shell di prova è avvia u kernel
 Esce da u shell di prova è spegne u kernel
 Salva u cartulare attuale in u schedariu di cunfigurazione di u kernel
@@ -854,13 +837,11 @@ Esce da u shell RSS è torna à u kernel
 Cambia u ligame di alimentazione
 Elenca tutti i feed
 Leghje un alimentu in un navigatore web
-U cumandariu di cunchiglia RSS specificatu ùn hè micca truvatu.
 Flussu RSS2 invalidu.
 Flussu RSS1 invalidu.
 Feed Atom invalidu.
 Inserite una URL di alimentazione RSS:
 Tipu di alimentazione RSS invalidu.
-Errore di cunchiglia scunnisciutu:
 Ottiene l'infurmazioni nantu à l'articulu
 U numeru d'articulu ùn puderia micca esse più grande di l'articuli dispunibili.
 Titulu:

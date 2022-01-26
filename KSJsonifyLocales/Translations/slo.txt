@@ -39,7 +39,6 @@ Heslo používateľa {0}:
 Zlé heslo.
 Používateľ je zakázaný.
 Nesprávne používateľské meno.
-Chyba pri pokuse o analýzu zástupných symbolov. {0} - Sledovanie zásobníka:
 Chyba pri pokuse o analýzu zástupných symbolov. {0}
 Pri pokuse o pridanie používateľského mena sa vyskytla chyba.
 usrmgr: Vytvára sa používateľské meno {0} ...
@@ -58,7 +57,6 @@ Požadovaný šetrič obrazovky {0} sa nenašiel.
 Šetrič obrazovky nie je možné načítať z nasledujúcich dôvodov:
 Pri tlači textu sa vyskytla závažná chyba.
 Pri pokuse o vytvorenie konfigurácie došlo k chybe.
-Chyba pri pokuse o uvoľnenie pamäte RAM: {0} - Pokračuje ...
 Mod sa nedá načítať z nasledujúcich dôvodov:
 mod: Načítavajú sa režimy ...
 mod: Zastavuje sa režim ...
@@ -72,7 +70,6 @@ Používateľské meno pre {0}:
 Heslo pre {0}:
 Pripojené k {0}
 Chyba pri pokuse o pripojenie k službe {0}: {1}
-Stopa zásobníka: {2}
 Miestny adresár {0} neexistuje.
 Zadajte miestny adresár. ".." ísť späť.
 Adresár {0} sa nenašiel.
@@ -103,7 +100,6 @@ Zobrazí obrazovku pomocníka
 Vypíše miestny adresár
 Vypíše vzdialený adresár
 Odovzdá miestny súbor do vzdialeného adresára pomocou binárneho alebo textového súboru
-Správa FTP: Požadovaný príkaz {0} sa nenašiel. Zoznam dostupných príkazov zadaných v FTP shell nájdete v 'help'.
 Nepodarilo sa získať vlastnosti pre adaptér {0}
 Číslo adaptéra:
 Názov adaptéra:
@@ -211,7 +207,6 @@ Odpojte ladiace zariadenie
 Zoznam pripojených ladiacich zariadení
 Ladiace zariadenie {0} sa nenašlo.
 Zariadenie {0} bolo odpojené.
-Chyba pripojenia: {0}
 Ladenie počúvania na všetkých adresách pomocou portu {0}.
 Neboli zadané žiadne argumenty. Pomôcka: Zadajte viac argumentov oddelených medzerami
 Alias ​​už bol nájdený: {0}
@@ -223,7 +218,6 @@ Nemožno odstrániť adresár: {0}
 Časové pásmo je zadané nesprávne.
 Neplatný výber profilu.
 Pokúšam sa pripojiť k {0} s profilom {1} ...
-Príkaz {0} sa nenašiel. Zoznam príkazov nájdete v príkaze „help“.
 Nepodarilo sa získať vlastnosti IPv6 pre adaptér {0}. Pokračovanie ...
 Informácie IPv4:
 Informácie IPv6:
@@ -381,7 +375,6 @@ Vytvorí nový súbor
 Súbor už existuje.
 Chyba pri pokuse o vytvorenie súboru: {0}
 Nepodarilo sa otvoriť súbor. Opúšťa sa škrupina ...
-Zadaný príkaz textového editora nebol nájdený.
 Zoznam dostupných príkazov
 Ukončí textový editor a uloží neuložené zmeny
 Vytlačí obsah súboru s číslami riadkov na konzolu
@@ -438,9 +431,6 @@ Vnesen neveljaven razdelek. Pojdi nazaj.
 Pojdi nazaj...
 Omogoči
 Onemogoči
-Napišite root geslo, ki ga želite nastaviti. Ne skrbite; geslo so prikazane kot zvezdice.
-Želite spremeniti root geslo?
-Nastavi root geslo ...
 Napišite vrata oddaljenega napak. Mora biti številčno in ne sme biti že uporabljeno. V nasprotnem primeru oddaljeni razhroščevalec ne bo mogel odpreti vrat.
 Napišite, kolikokrat naj ukaz "" dobi "" poskusi znova neuspešne prenose. Mora biti številčno.
 Napišite, kdaj zagnati ohranjevalnik zaslona po določenih milisekundah. Mora biti številčno.
@@ -515,7 +505,6 @@ Nastavi jedro, tako da vas pozove k argumentu ob zagonu.
 Sproži način vzdrževanja. To onemogoči več računov.
 Pri vsakem zagonu bo preveril, ali so na voljo posodobitve.
 Pri menjavi jezikov spremenite imena mesecev, koledar itd.
-Če se jedro zažene, bo postavilo root geslo.
 Naj bodo sporočila tipala strojne opreme tiha.
 Pred prikazom zaslona za prijavo prikaži sporočilo dneva.
 Počisti zaslon pred prikazom prijavnega zaslona.
@@ -566,9 +555,6 @@ Atribut je bil uspešno odstranjen.
 Atributa ni bilo mogoče dodati.
 Atributa ni bilo mogoče odstraniti.
 Besedo ali besedno zvezo nadomesti z drugo v vrstici
-Rdeča barva je presežena. Bilo je {0}.
-Raven zelene barve presežena. Bilo je {0}.
-Presežena raven modre barve. Bilo je {0}.
 Aktivirajte prave barve
 Odblokiranja {0} ni uspelo.
 {0} je že blokiran.
@@ -644,7 +630,6 @@ Zamuda v milisekundah
 Koliko milisekund čakati pred naslednjim pisanjem?
 Umožňuje vám používať server SSH FTP
 Žiadna pomoc s príkazom „{0}“.
-Neplatná sekvencia VT pre farbu RGB.
 Farba pruhu sekúnd
 Farba panela minút
 Farba pruhu hodín
@@ -706,7 +691,6 @@ Ukončí schránku ZIP
 Uvádza zoznam všetkých súborov v archíve
 Extrahuje súbor do určeného adresára alebo aktuálneho adresára
 Zmení adresár archívu
-Zadaný príkaz ZIP shell sa nenašiel.
 Adresár {0} neexistuje
 Adresár archívu {0} neexistuje
 Max. Počet pozícií
@@ -784,7 +768,6 @@ Zoznam všetkých podporovaných kódových stránok
 Aké premenné prekladača sú v aplikácii povolené?
 Testy zvyšujúce konkrétne udalosti
 Testy na hardvér
-Testuje zberača odpadu
 Ukončí testovací shell a spustí jadro
 Opustí testovaciu škrupinu a vypne jadro
 Uloží aktuálny adresár do konfiguračného súboru jadra
@@ -854,13 +837,11 @@ Ukončí RSS shell a vráti sa do jadra
 Zmení odkaz na informačný kanál
 Uvádza zoznam všetkých informačných kanálov
 Číta informačný kanál vo webovom prehliadači
-Zadaný príkaz shellu RSS sa nenašiel.
 Neplatný informačný kanál RSS2.
 Neplatný informačný kanál RSS1.
 Neplatný informačný kanál Atom.
 Zadajte adresu URL informačného kanála RSS:
 Neplatný typ informačného kanála RSS.
-Neznáma chyba prostredia:
 Získa informácie o článku
 Číslo článku nemôže byť väčšie ako dostupné články.
 Názov:

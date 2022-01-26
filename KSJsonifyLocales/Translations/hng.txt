@@ -39,7 +39,6 @@ Speciális karakterek nem megengedettek.
 Rossz jelszó.
 A felhasználó le van tiltva.
 Rossz felhasználónév.
-Hiba a helyőrzők elemzése során. {0} – Verem nyomkövetése:
 Hiba a helyőrzők elemzése során. {0}
 Hiba a felhasználónév hozzáadásakor.
 usrmgr: Felhasználónév létrehozása: {0}...
@@ -58,7 +57,6 @@ A(z) {0} képernyővédő nem található az adatbázisban. Ellenőrizze a nevet
 A képernyővédőt nem lehet betölteni a következők miatt:
 Súlyos hiba történt a szöveg nyomtatása közben.
 Hiba történt a konfiguráció létrehozása közben.
-Hiba a RAM felszabadításakor: {0} - Folytatás...
 A mod nem tölthető be a következők miatt:
 mod: modok betöltése...
 mod: A modok leállítása...
@@ -72,7 +70,6 @@ Felhasználónév a következőhöz: {0}:
 Jelszó a következőhöz: {0}:
 Csatlakozva a következőhöz: {0}
 Hiba a következőhöz való csatlakozáskor: {0}: {1}
-Veremkövetés: {2}
 A(z) {0} helyi címtár nem létezik.
 Írjon be egy helyi könyvtárat. ".." vissza menni.
 A(z) {0} könyvtár nem található.
@@ -103,7 +100,6 @@ Megjeleníti a súgó képernyőt
 Felsorolja a helyi címtárat
 Felsorolja a távoli címtárat
 Helyi fájlt tölt fel a távoli könyvtárba bináris vagy szöveges használatával
-FTP üzenet: A kért {0} parancs nem található. Az FTP shellben megadott elérhető parancsok listájáért lásd a 'súgót'.
 Nem sikerült lekérni a(z) {0} adapter tulajdonságait
 Adapter száma:
 Adapter neve:
@@ -211,7 +207,6 @@ Válassza le a hibakereső eszközt
 Felsorolja a csatlakoztatott hibakereső eszközöket
 A(z) {0} hibakereső eszköz nem található.
 A(z) {0} eszköz leválasztva.
-Hiba a kapcsolódásban: {0}
 Hibakeresés az összes címen a(z) {0} port használatával.
 Nincsenek megadva argumentumok. Tipp: Adjon meg több argumentumot szóközzel elválasztva
 Alias ​​már megtalálható: {0}
@@ -223,7 +218,6 @@ Nem sikerült eltávolítani a következő könyvtárat: {0}
 Az időzóna helytelenül van megadva.
 Érvénytelen profilválasztás.
 Megpróbál csatlakozni a következőhöz: {0} a(z) {1} profillal...
-A(z) {0} parancs nem található. A parancsok listájához lásd a "help" parancsot.
 Nem sikerült lekérni a(z) {0} adapter IPv6 tulajdonságait. Folytatás...
 IPv4 információ:
 IPv6 információ:
@@ -381,7 +375,6 @@ Szöveges fájl szerkesztése
 A fájl már létezik.
 Hiba a fájl létrehozása közben: {0}
 Nem sikerült megnyitni a fájlt. Kilépés a shellből...
-A megadott szövegszerkesztő parancs nem található.
 Felsorolja az elérhető parancsokat
 Kilép a szövegszerkesztőből, és elmenti a nem mentett módosításokat
 Kinyomtatja a fájl tartalmát sorszámokkal a konzolra
@@ -438,9 +431,6 @@ Mutasd a rejtett fájlokat
 Menjen vissza...
 Engedélyezze
 Letiltás
-Írja be a beállítandó root jelszót. Ne aggódj; a jelszó csillagokkal jelenik meg.
-Root jelszó megváltoztatása?
-Állítsa be a root jelszót...
 Írjon egy távoli hibakereső portot. Ennek numerikusnak kell lennie, és nem szabad már használni. Ellenkező esetben a távoli hibakereső nem tudja megnyitni a portot.
 Írja meg, hogy a "get" parancs hányszor próbálja újra a sikertelen letöltéseket. Számszerűnek kell lennie.
 Írja be, hogy mikor kell elindítani a képernyővédőt meghatározott ezredmásodpercek után. Számszerűnek kell lennie.
@@ -515,7 +505,6 @@ Beállítja a kernelt, hogy rendszerindításkor argumentumokat kérjen.
 Karbantartási módot vált ki. Ez több fiókot letilt.
 Minden indításkor ellenőrizni fogja a frissítéseket.
 Nyelvváltáskor módosítsa a hónapok nevét, a naptárat stb.
-Ha a kernel elindul, akkor beállítja a root jelszót.
 Tartsa csendben a hardveres vizsgálati üzeneteket.
 A nap üzenetének megjelenítése a bejelentkezési képernyő megjelenítése előtt.
 Törölje a képernyőt a bejelentkezési képernyő megjelenítése előtt.
@@ -566,9 +555,6 @@ Az attribútum sikeresen eltávolítva.
 Nem sikerült hozzáadni az attribútumot.
 Nem sikerült eltávolítani az attribútumot.
 Egy szót vagy kifejezést lecserél egy másikra a sorban
-A vörös szín szintje túllépve. {0} volt.
-A zöld szín szintje túllépve. {0} volt.
-A kék szín szintje túllépve. {0} volt.
 Aktiválja az igazi színeket
 Nem sikerült feloldani {0} blokkolását.
 {0} már le van tiltva.
@@ -644,7 +630,6 @@ Késleltetés ezredmásodpercben
 Hány milliszekundumot kell várni a következő írás előtt?
 Lehetővé teszi SSH FTP szerver használatát
 Nincs segítség a(z) "{0}" parancshoz.
-Érvénytelen VT-szekvencia az RGB színhez.
 A másodpercsáv színe
 Percek sáv színe
 Az órák színe
@@ -706,7 +691,6 @@ Kilép a ZIP-héjból
 Felsorolja az archívumban lévő összes fájlt
 Kibont egy fájlt egy megadott könyvtárba vagy egy aktuális könyvtárba
 Megváltoztatja az archívum könyvtárát
-A megadott ZIP shell parancs nem található.
 A(z) {0} címtár nem létezik
 A(z) {0} archívumkönyvtár nem létezik
 Maximális pozíciók száma
@@ -784,7 +768,6 @@ Felsorolja az összes támogatott kódlapot
 Milyen fordítói változók engedélyezettek az alkalmazásban?
 A konkrét eseményt felvető tesztek
 A hardvert vizsgáló tesztek
-Teszteli a szemétgyűjtőt
 Kilép a teszthéjból, és elindítja a kernelt
 Kilép a teszthéjból és leállítja a kernelt
 Elmenti az aktuális könyvtárat a kernel konfigurációs fájljába
@@ -854,13 +837,11 @@ Kilép az RSS shellből, és visszatér a kernelhez
 Módosítja a hírcsatorna hivatkozását
 Felsorolja az összes hírcsatornát
 Beolvas egy hírfolyamot a webböngészőben
-A megadott RSS shell parancs nem található.
 Érvénytelen RSS2 hírcsatorna.
 Érvénytelen RSS1 hírcsatorna.
 Érvénytelen Atom feed.
 Adja meg az RSS feed URL-jét:
 Érvénytelen RSS feed-típus.
-Ismeretlen shell hiba:
 Megszerzi a cikk információit
 A cikkszám nem lehet nagyobb, mint a rendelkezésre álló cikkek száma.
 Cím:

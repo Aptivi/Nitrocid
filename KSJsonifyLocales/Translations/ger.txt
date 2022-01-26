@@ -39,7 +39,6 @@ Sonderzeichen sind nicht erlaubt.
 Falsches Passwort.
 Benutzer ist deaktiviert.
 Falscher Benutzername.
-Fehler beim Versuch, Platzhalter zu analysieren. {0} - Stack-Ablaufverfolgung:
 Fehler beim Versuch, Platzhalter zu analysieren. {0}
 Fehler beim Hinzufügen des Nutzernamens.
 usrmgr: Erstellen des Benutzernamens {0} ...
@@ -58,7 +57,6 @@ Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Si
 Der Bildschirmschoner kann aufgrund folgender Ursachen nicht geladen werden:
 Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 Beim Erstellen der Konfiguration ist ein Fehler aufgetreten.
-Fehler beim Versuch, RAM freizugeben: {0} - Fortfahren ...
 Der Mod kann wegen folgendem nicht geladen werden:
 mod: Lade Mods ...
 mod: Mods stoppen ...
@@ -72,7 +70,6 @@ Benutzername für {0}:
 Passwort für {0}:
 Verbunden mit {0}
 Fehler beim Versuch, eine Verbindung zu {0} herzustellen: {1}
-Stack Trace: {2}
 Das lokale Verzeichnis {0} existiert nicht.
 Geben Sie ein lokales Verzeichnis ein. ".." zurück zu gehen.
 Das Verzeichnis {0} wurde nicht gefunden.
@@ -103,7 +100,6 @@ Zeigt Hilfebildschirm
 Listet das lokale Verzeichnis auf
 Listet das entfernte Verzeichnis auf
 Lädt die lokale Datei unter Verwendung von Binärcode oder Text in das Remoteverzeichnis hoch
-FTP-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Eine Liste der verfügbaren Befehle in der FTP-Shell finden Sie unter 'help'.
 Fehler beim Abrufen der Eigenschaften für den Adapter {0}
 Adapternummer:
 Adaptername:
@@ -211,7 +207,6 @@ Trennen Sie ein Debug-Gerät
 Listet die verbundenen Debugging-Geräte auf
 Debug-Gerät {0} nicht gefunden.
 Gerät {0} nicht verbunden.
-Fehler in der Verbindung: {0}
 Debuggen Sie das Abhören aller Adressen über Port {0}.
 Keine Argumente angegeben. Tipp: Geben Sie mehrere durch Leerzeichen getrennte Argumente an
 Alias bereits gefunden: {0}
@@ -223,7 +218,6 @@ Verzeichnis kann nicht entfernt werden: {0}
 Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
-Befehl {0} nicht gefunden. Eine Liste der Befehle finden Sie im Befehl "help".
 Fehler beim Abrufen der IPv6-Eigenschaften für Adapter {0}. Auch weiterhin...
 IPv4-Informationen:
 IPv6-Informationen:
@@ -381,7 +375,6 @@ Erstellt eine neue Datei
 Die Datei existiert bereits.
 Fehler beim Erstellen einer Datei: {0}
 Datei konnte nicht geöffnet werden. Shell verlassen ...
-Der angegebene Texteditorbefehl wurde nicht gefunden.
 Listet verfügbare Befehle auf
 Beendet den Texteditor und speichert nicht gespeicherte Änderungen
 Druckt den Inhalt der Datei mit Zeilennummern an die Konsole
@@ -438,9 +431,6 @@ Ungültiger Abschnitt eingegeben. Bitte geh zurück.
 Geh zurück...
 Aktivieren
 Deaktivieren
-Schreiben Sie das einzustellende Root-Passwort. Mach dir keine Sorgen; Das Passwort wird als Sterne angezeigt.
-Root-Passwort ändern?
-Root-Passwort festlegen ...
 Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
 Schreiben Sie, wie oft der Befehl "" get "" fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
 Schreiben Sie, wann der Bildschirmschoner nach den angegebenen Millisekunden gestartet werden soll. Es muss numerisch sein.
@@ -515,7 +505,6 @@ Richtet den Kernel so ein, dass Sie beim Booten zur Argumentation aufgefordert w
 Löst den Wartungsmodus aus. Dadurch werden mehrere Konten deaktiviert.
 Bei jedem Start wird nach Updates gesucht.
 Ändern Sie beim Wechseln der Sprache die Monatsnamen, den Kalender usw.
-Wenn der Kernel gestartet wird, wird das Root-Passwort festgelegt.
 Halten Sie Hardware-Prüfmeldungen stumm.
 Nachricht des Tages anzeigen, bevor der Anmeldebildschirm angezeigt wird.
 Bildschirm löschen, bevor der Anmeldebildschirm angezeigt wird.
@@ -566,9 +555,6 @@ Attribut wurde erfolgreich entfernt.
 Attribut konnte nicht hinzugefügt werden.
 Attribut konnte nicht entfernt werden.
 Ersetzt ein Wort oder eine Phrase durch ein anderes in einer Zeile
-Rote Farbe überschritten. Es war {0}.
-Grüne Farbe überschritten. Es war {0}.
-Blauer Farbpegel überschritten. Es war {0}.
 Aktivieren Sie echte Farben
 {0} konnte nicht entsperrt werden.
 {0} ist bereits blockiert.
@@ -644,7 +630,6 @@ Verzögerung in Millisekunden
 Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?
 Ermöglicht die Verwendung eines SSH-FTP-Servers
 Keine Hilfe für Befehl "{0}".
-Ungültige VT-Sequenz für RGB-Farbe.
 Farbe des Sekundenbalkens
 Farbe des Minutenbalkens
 Farbe der Stundenleiste
@@ -706,7 +691,6 @@ Beendet die ZIP-Shell
 Listet alle Dateien im Archiv auf
 Extrahiert eine Datei in ein angegebenes Verzeichnis oder ein aktuelles Verzeichnis
 Ändert das Archivverzeichnis
-Der angegebene ZIP-Shell-Befehl wurde nicht gefunden.
 Verzeichnis {0} existiert nicht
 Archivverzeichnis {0} existiert nicht
 Anzahl der maximalen Positionen
@@ -784,7 +768,6 @@ Listet alle unterstützten Codepages auf
 Welche Compilervariablen sind in der Anwendung aktiviert?
 Tests, die das spezifische Ereignis auslösen
 Tests zur Sondierung der Hardware
-Testet den Garbage Collector
 Beendet die Test-Shell und startet den Kernel
 Beendet die Test-Shell und fährt den Kernel herunter
 Speichert das aktuelle Verzeichnis in der Kernel-Konfigurationsdatei
@@ -854,13 +837,11 @@ Beendet die RSS-Shell und kehrt zum Kernel zurück
 Ändert den Feed-Link
 Listet alle Feeds auf
 Liest einen Feed in einem Webbrowser
-Der angegebene RSS-Shell-Befehl wurde nicht gefunden.
 Ungültiger RSS2-Feed.
 Ungültiger RSS1-Feed.
 Ungültiger Atom-Feed.
 Geben Sie eine RSS-Feed-URL ein:
 Ungültiger RSS-Feed-Typ.
-Unbekannter Shell-Fehler:
 Ruft die Artikelinfo ab
 Artikelnummer könnte nicht größer sein als die verfügbaren Artikel.
 Titel:

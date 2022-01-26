@@ -39,7 +39,6 @@ Spezial Zeechen sinn net erlaabt.
 Falscht Passwuert.
 Benotzer ass behënnert.
 Falsche Benotzernumm.
-Feeler beim Versuch Plazhalter ze analyséieren. {0} - Stack Trace:
 Feeler beim Versuch Plazhalter ze analyséieren. {0}
 Feeler beim Versuch vum Benotzernumm derbäi ze ginn.
 usrmgr: Benotzernumm erstellen {0}...
@@ -58,7 +57,6 @@ Screensaver {0} net an der Datebank fonnt. Kontrolléiert den Numm a probéiert 
 Screensaver kann net gelueden ginn wéinst de folgenden:
 Et gëtt e seriöse Feeler beim Drécken vum Text.
 Et gëtt e Feeler beim Versuch d'Konfiguratioun ze kreéieren.
-Feeler beim Versuch de RAM fräi ze maachen: {0} - Continuing...
 Mod kann net gelueden ginn wéinst de folgenden:
 mod: Mods lueden ...
 mod: Mods stoppen ...
@@ -72,7 +70,6 @@ Benotzernumm fir {0}:
 Passwuert fir {0}:
 Verbonne mat {0}
 Fehler wann Dir probéiert mat {0} ze verbannen: {1}
-Stack Trace: {2}
 Lokal Verzeechnes {0} existéiert net.
 Gitt e lokale Verzeichnis. ".." zréck goen.
 Verzeechnes {0} net fonnt.
@@ -103,7 +100,6 @@ Weist Hëllef Écran
 Lëscht lokal Verzeechnes
 Lëscht Fernverzeechnes
 Eroplueden lokal Datei an de Fernverzeechnes mat binär oder Text
-FTP Message: De gefrote Kommando {0} gëtt net fonnt. Kuckt 'Hëllef' fir eng Lëscht vun verfügbare Kommandoen, déi op FTP-Shell spezifizéiert sinn.
 Ausgefall Properties fir den Adapter {0}
 Adapternummer:
 Adapter Numm:
@@ -211,7 +207,6 @@ Trennt en Debug-Apparat
 Lëscht Debugging Apparater verbonne
 Debug Apparat {0} net fonnt.
 Apparat {0} deconnectéiert.
-Feeler an der Verbindung: {0}
 Debug Nolauschteren op all Adressen mam Port {0}.
 Keng Argumenter uginn. Tipp: Gitt méi Argumenter un, getrennt vu Raum
 Alias ​​scho fonnt: {0}
@@ -223,7 +218,6 @@ Kann den Verzeechnes net läschen: {0}
 Zäitzone ass falsch spezifizéiert.
 Ongülteg Profilauswiel.
 Probéiert mat {0} mam Profil {1} ​​ze verbannen...
-Kommando {0} net fonnt. Kuckt de Kommando "Hëllef" fir d'Lëscht vun de Kommandoen.
 Konnt net kréien IPv6 Eegeschafte fir den Adapter {0}. Fuert weider ...
 IPv4 Informatioun:
 IPv6 Informatioun:
@@ -381,7 +375,6 @@ Maacht eng nei Datei
 De Fichier gëtt et schonn.
 Feeler beim Versuch e Fichier ze kreéieren: {0}
 Ausgefall op de Fichier. Ausgaang Shell ...
-De spezifizéierte Texteditor Kommando gëtt net fonnt.
 Lëscht verfügbar Kommandoen
 Gitt den Texteditor aus a späichert net gespäichert Ännerungen
 Dréckt den Inhalt vun der Datei mat Zeilnummeren op d'Konsole
@@ -438,9 +431,6 @@ Ongülteg Sektioun aginn. Gitt w.e.g. zréck.
 Géi zréck...
 Aktivéieren
 Desaktivéieren
-Schreift d'Root Passwuert fir ze setzen. Maacht Iech keng Suergen; d'Passwuert ginn als Stäre gewisen.
-Root Passwuert änneren?
-Root Passwuert setzen ...
 Schreift e Remote Debugger Hafen. Et muss numeresch sinn a däerf net scho benotzt ginn. Soss wäert Remote Debugger net den Hafen opmaachen.
 Schreift wéivill Mol de "get" Kommando misst e Feeler eroflueden. Et muss numeresch sinn.
 Schreift wéini de Screensaver no spezifizéierte Millisekonnen ze starten. Et muss numeresch sinn.
@@ -515,7 +505,6 @@ Setzt de Kernel op sou datt et Iech fir Argumenter beim Boot freet.
 Ausléiser Ënnerhalt Modus. Dëst deaktivéiert verschidde Konten.
 All Startup gëtt no Updates iwwerpréift.
 Wann Dir Sprooche wiesselt, ännert d'Nimm vum Mount, de Kalenner, asw.
-Wann de Kernel gestart ass, setzt de Root Passwuert.
 Halt d'Hardware probéiere Messagen roueg.
 Show Message vum Dag ier Dir de Loginbildschierm weist.
 Kloer Écran ier Dir Login Écran weist.
@@ -566,9 +555,6 @@ Attribut gouf erfollegräich geläscht.
 Ausgefall Attributer derbäi.
 Ausgefall Attributer ze läschen.
 Ersetzt e Wuert oder eng Phrase mat engem aneren an enger Zeil
-Rout Faarf Niveau iwwerschratt. Et war {0}.
-Gréng Faarf Niveau iwwerschratt. Et war {0}.
-Blo Faarf Niveau iwwerschratt. Et war {0}.
 Aktivéiert richteg Faarwen
 Konnt net deblockéieren {0}.
 {0} ass scho gespaart.
@@ -644,7 +630,6 @@ Verspéidung an Millisekonnen
 Wéi vill Millisekonnen ze waarden ier Dir déi nächst Schreifweis maacht?
 Loosst Iech en SSH FTP Server benotzen
 Keng Hëllef fir de Kommando "{0}".
-Invalid VT Sequenz fir RGB Faarf.
 Faarf vun Sekonnen Bar
 Faarf vun Minutt Bar
 Faarf vun Stonnen Bar
@@ -706,7 +691,6 @@ Gitt d'Zip Shell aus
 Lëscht all Dateien am Archiv
 Extraitéiert eng Datei an e spezifizéierte Verzeichnis oder en aktuellen Verzeechnes
 Ännert Archivverzeechnes
-De spezifizéierte ZIP Shell Kommando gëtt net fonnt.
 Verzeechnes {0} gëtt et net
 Den Archivverzeechnes {0} gëtt et net
 Max Positiounen Zuel
@@ -784,7 +768,6 @@ Listt all ënnerstëtzt Codepages
 Wat Compiler Variablen sinn an der Applikatioun aktivéiert?
 Tester déi spezifesch Event erhéijen
 Tester d'Hardware ënnersichen
-Testt de Gerempels
 Gitt d'Test Shell aus a fänkt de Kernel un
 Gitt d'Test Shell aus a schalt de Kernel aus
 Späichert den aktuellen Verzeechnes an d'Kernel Konfiguratiounsdatei
@@ -854,13 +837,11 @@ Verléisst RSS Shell a geet zréck op de Kernel
 Ännert de Feedlink
 Lëscht all Feeds
 Liest e Feed an engem Webbrowser
-De spezifizéierte RSS Shell Kommando gëtt net fonnt.
 Invalid RSS2 Feed.
 Invalid RSS1 Feed.
 Invalid Atom Feed.
 Gitt eng RSS Feed URL an:
 Invalid RSS Feed Typ.
-Onbekannt Shell Feeler:
 Kritt den Artikel Info
 Artikelnummer kéint net méi grouss sinn wéi déi verfügbar Artikelen.
 Titel:

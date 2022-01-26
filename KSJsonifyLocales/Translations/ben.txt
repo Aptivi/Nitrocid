@@ -39,7 +39,6 @@ Biśēṣa cihna samūhēra byabahāra niṣid'dha.
 Bhula gōpana nambara.
 Byabahārakārī akṣama.
 Bhula byabahārakārīra nāma.
-Sthānadhārakadēra pārsa karāra cēṣṭā karāra samaẏa truṭi. {0} - Sṭyāka ṭrēsa:
 Sthānadhārakadēra pārsa karāra cēṣṭā karāra samaẏa truṭi. {0}
 Byabahārakārīra nāma yukta karāra cēṣṭā karāra samaẏa truṭi.
 Usrmgr: Byabahārakārī nāma {0} tairi karā hacchē...
@@ -58,7 +57,6 @@ Skrīnasēbhāra {0} database ḍāṭābēsē pā'ōẏā yāẏa ni. Nāmaṭi
 Nimnalikhita kāraṇē skrīnasēbhāra lōḍa karā yāẏa nā:
 Pāṭhya mudraṇēra samaẏa ēkaṭi gurutara truṭi raẏēchē.
 Kanaphigārēśana tairi karāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē.
-Ra‌yāma mukta karāra cēṣṭā karē truṭi: {0} - Abirata...
 Mōḍa nimnalikhita kāraṇē lōḍa karā yāẏa nā:
 Mōḍa: Mōḍaguli lōḍa hacchē...
 Mōḍa: Mōḍaguli bandha karā hacchē...
@@ -72,7 +70,6 @@ Name {0} ēra jan'ya byabahārakārīra nāma:
 {0} Ēra jan'ya pāsa'ōẏārḍa:
 {0} Ēra sāthē sanyukta
 {0}: {1} To ēra sāthē sanyōga dē'ōẏāra cēṣṭā karāra samaẏa truṭi
-sṭyāka ṭrēsa: {2}
 Sthānīẏa ḍirēkṭari {0} bidyamāna nē'i.
 Ēkaṭi sthānīẏa ḍirēkṭari likhuna. ".." Phirē yētē.
 Ḍirēkṭari {0} Pā'ōẏā yāẏa ni.
@@ -103,7 +100,6 @@ sahāẏatā pardā dēkhāẏa
 sthānīẏa ḍirēkṭari tālikābhukta
 dūrabartī ḍirēkṭari tālikābhukta
 bā'ināri bā pāṭhya byabahāra karē dūrabartī ḍirēkṭaritē sthānīẏa phā'ila āpalōḍa karē
-Ēphaṭipi bārtā: Anurōdha kamānḍa {0} not pā'ōẏā yāẏa ni. Ēphaṭipi śēla-ē ullikhita upalabdha kamānḍēra tālikāra jan'ya'sahāẏatā' dēkhuna.
 Ayāḍāpṭārēra jan'ya baiśiṣṭya pētē byartha {0}
 ayāḍāpṭāra nambara:
 Ayāḍāpṭārēra nāma:
@@ -211,7 +207,6 @@ Bartamāna ōẏārkiṁ ḍirēkṭaritē ēkaṭi phā'ila ḍā'unalōḍa ka
 sanyukta ḍibāgiṁ ḍibhā'isagulira tālikābad'dha karē
 ḍibāga ḍibhā'isa {0} found pā'ōẏā yāẏa ni.
 Ḍibhā'isa {0} Sanyōga bicchinna.
-Sanyōgē truṭi: {0}
 Port 0 port pōrṭa byabahāra karē samasta ṭhikānāẏa ḍibāga śōnācchē}
 kōna'ō yukti nirdiṣṭa karā haẏani. Iṅgita: Spēsa dbārā pr̥thaka ēkādhika yukti ullēkha karuna
 ēliẏāsa itimadhyē pā'ōẏā gēchē: {0}
@@ -223,7 +218,6 @@ kōna'ō yukti nirdiṣṭa karā haẏani. Iṅgita: Spēsa dbārā pr̥thaka �
 Ṭā'imajōnaṭi bhulabhābē nirdiṣṭa karā haẏēchē.
 Abaidha prōphā'ila nirbācana.
 Prōphā'ila {1} saha {0} to ēra sāthē sanyōga sthāpanēra cēṣṭā karā hacchē...
-Kamānḍa {0} pā'ōẏā yāẏa ni. Kamānḍēra tālikāra jan'ya"sahāẏatā" kamānḍaṭi dēkhuna.
 Ayāḍāpṭāra {0} ēra jan'ya ā'ipibhi 6 baiśiṣṭya pētē byartha} abyāhata...
 Ā'ipibhi 4 tathya:
 IPv6 tathya:
@@ -381,7 +375,6 @@ Inabaksa thēkē Message {1} thēkē bārtā {0}. Muchē phēlā haẏēchē. Ar
 phā'ila itimadhyē bidyamāna.
 Ēkaṭi phā'ila tairi karāra cēṣṭā karāra samaẏa truṭi: {0}
 Phā'ila khulatē byartha. Śēla thēkē prasthāna karā hacchē...
-Nirdiṣṭa pāṭhya sampādaka kamānḍa pā'ōẏā yāẏa ni.
 Upalabdha kamānḍa tālikābhukta
 pāṭhya sampādaka thēkē prasthāna karuna ēbaṁ sanrakṣita paribartanaguli sanrakṣaṇa karuna
 kanasōlē lā'ina nambara saha phā'ilēra biṣaẏabastu mudraṇa karē
@@ -438,9 +431,6 @@ abaidha bibhāga prabēśa karānō haẏēchē. Phirē yāna
 phirē yā'ō...
 Sakṣama karuna
 akṣama karuna
-sēṭa karatē ruṭa pāsa'ōẏārḍa likhuna. Cintā karabēna nā; pāsa'ōẏārḍaṭi tārā hisābē dēkhānō haẏa.
-ruṭa pāsa'ōẏārḍa paribartana karabēna?
-Ruṭa pāsa'ōẏārḍa sēṭa karuna...
 Ēkaṭi rimōṭa ḍibāgāra pōrṭa likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē ēbaṁ ēṭi itimadhyē byabahāra karā ucita naẏa. An'yathāẏa, dūrabartī ḍibāgāraṭi pōrṭaṭi khulatē byartha habē.
 "" Pāna"" kamānḍaṭi katabāra byartha ḍā'unalōḍaguli punarāẏa cēṣṭā karabē tā likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
 Nirdiṣṭa milisēkēnḍēra parē skrīnasēbhāra kakhana cālu karabēna tā likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
@@ -515,7 +505,6 @@ kārnēla sēṭa āpa karuna yātē ēṭi āpanākē buṭē ārgumēnṭēra 
 Ṭrigāra rakṣaṇābēkṣaṇa mōḍa. Ēṭi ēkādhika ayākā'unṭa akṣama karē.
 Pratiṭi prārambhakālē ēṭi āpaḍēṭaguli parīkṣā karē dēkhabē.
 Bhāṣāguli syu'ica karāra samaẏa, māsēra nāma, kyālēnḍāra ityādi paribartana karuna
-kārnēlaṭi śuru karā halē ēṭi ruṭa pāsa'ōẏārḍa sēṭa karē.
 Hārḍa'ōẏyāra anusandhānakārī bārtāguli nīraba rākhuna
 Laga'ina skrina pradarśana karāra āgē dinēra bārtā dēkhāna.
 Laga'ina skrina pradarśana karāra āgē pardā sāpha karuna.
@@ -566,9 +555,6 @@ Sāphalya saphalabhābē muchē phēlā haẏēchē.
 Baiśiṣṭya yukta karatē byartha.
 Baiśiṣṭya apasāraṇa karatē byartha.
 Ēkaṭi śabda bā bākya pratisthāpana karē ēkaṭi lā'inēra sāthē an'ya ēkaṭi diẏē
-lāla raṅēra stara chāṛiẏē gēchē. Ēṭi chila {0}.
-Sabuja raṅēra stara chāṛiẏē gēchē. Ēṭi chila {0}.
-Nīla raṅēra stara chāṛiẏē gēchē. Ēṭi chila {0}.
 Satya raṅaguli sakriẏa karuna
 {0} Abarōdha mukta karatē byartha}
 {0 already itimadhyē abarud'dha.
@@ -644,7 +630,6 @@ Milisēkēnḍē bilamba
 parabartī lēkhāra āgē kata milisēkēnḍa apēkṣā karatē habē?
 Āpanākē ēkaṭi ēsa'ēsa'ē'ica ēphaṭipi sārbhāra byabahāra karatē dēẏa
 "{0}" Kamānḍēra jan'ya kōna'ō sahāẏatā nē'i.
-Ārajibi raṅēra jan'ya abaidha bhiṭi sikōẏēnsa.
 Sēkēnḍasa bārēra raṅa
 miniṭa bārēra raṅa
 ā'ōẏārsa bārēra raṅa
@@ -706,7 +691,6 @@ jipa śēla thēkē prasthāna karē
 sanrakṣaṇāgārēra bhitarē thākā samasta phā'ilēra tālikābad'dha karē
 ēkaṭi nirdiṣṭa ḍirēkṭari bā ēkaṭi bartamāna ḍirēkṭaritē ēkaṭi phā'ila bēra karē
 sanrakṣaṇāgāra ḍirēkṭari paribartana karē
-nirdiṣṭa jipa śēla kamānḍaṭi pā'ōẏā yāẏa ni.
 Ḍirēkṭari {0} bidyamāna nē'i
 sanrakṣaṇāgāra ḍirēkṭari {0} bidyamāna nē'i
 sarbōcca pajiśana gaṇanā
@@ -784,7 +768,6 @@ samasta samarthita kōḍapēja tālikābhukta karē
 ayāplikēśanaṭitē kōna saṅkalaka bhēriẏēbala sakṣama āchē?
 Parīkṣā nirdiṣṭa ibhēnṭa ut'thāpana
 hārḍa'ōẏyāra anusandhānēra parīkṣā
-ābarjanā saṅgrahakārī parīkṣā karē
 parīkṣāra śēla thēkē bēra haẏē kārnēlaṭi śuru karē
 parīkṣāra śēla thēkē bēra haẏē kārnēlaṭi bandha karē dēẏa
 kārnēla kanaphigārēśana phā'ilaṭitē bartamāna ḍirēkṭari sanrakṣaṇa karē
@@ -854,13 +837,11 @@ Phiḍaguli paṛatē ēkaṭi āra'ēsa'ēsa śēla khōlē
 phiḍēra liṅkaṭi paribartana karē
 samasta phiḍa tālikābhukta
 ēkaṭi ōẏēba brā'ujārē ēkaṭi phiḍa paṛē
-nirdiṣṭa āra'ēsa'ēsa śēla kamānḍaṭi pā'ōẏā yāẏa ni.
 Abaidha āra'ēsa'ēsa 2 phiḍa.
 Abaidha āra'ēsa'ēsa 1 phiḍa.
 Abaidha ayāṭama phiḍa.
 Āra'ēsa'ēsa phiḍēra URL likhuna:
 Abaidha āra'ēsa'ēsa phiḍēra dharaṇa.
-Ajānā śēla truṭi:
 Nibandha tathya pētē
 nibandha saṅkhyā upalabdha nibandhagulira cēẏē baṛa hatē pārē nā.
 Śirōnāma:

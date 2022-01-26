@@ -39,7 +39,6 @@ Modpas {0} a:
 Mal modpas.
 Itilizatè a enfim.
 Non itilizatè mal.
-Erè ap eseye analize ranplasman. {0} - Stack tras:
 Erè ap eseye analize ranplasman. {0}
 Erè ap eseye ajoute non itilizatè.
 usrmgr: Kreye non itilizatè {0} ...
@@ -58,7 +57,6 @@ Ekran {0} pa jwenn nan baz done. Tcheke non an epi eseye ankò.
 Ekran pa ka chaje paske nan bagay sa yo:
 Gen yon erè grav lè enprime tèks.
 Gen yon erè ap eseye kreye konfigirasyon.
-Erè ap eseye libere RAM: {0} - Kontinye ...
 Mod pa ka chaje paske nan bagay sa yo:
 mod: Loading mods ...
 mod: Sispann mods ...
@@ -72,7 +70,6 @@ Non itilizatè pou {0}:
 Modpas pou {0}:
 Konekte ak {0}
 Erè lè w ap eseye konekte nan {0}: {1}
-Stack Trace: {2}
 Anyè lokal {0} pa egziste.
 Antre nan yon anyè lokal yo. ".." pou tounen.
 Anyè {0} pa jwenn.
@@ -103,7 +100,6 @@ Montre ekran èd
 Lis anyè lokal yo
 Lis anyè aleka
 Uploads dosye lokal nan anyè aleka lè l sèvi avèk binè oswa tèks
-Mesaj ftp: yo pa jwenn kòmandman yo mande a {0}. Gade 'èd' pou yon lis ki disponib kòmandman espesifye sou koki ftp.
 Echwe pou pou jwenn pwopriyete pou adaptè {0}
 Nimewo adaptè:
 Non adaptè:
@@ -211,7 +207,6 @@ Dekonekte yon aparèy debug
 Lis aparèy debogaj konekte
 Aparèy debug {0} pa jwenn.
 Aparèy {0} dekonekte.
-Erè nan koneksyon: {0}
 Debug tande sou tout adrès lè l sèvi avèk pò {0}.
 Pa gen agiman ki espesifye. Men yon tipoul: Espesifye plizyè agiman separe pa espas
 Alyas deja jwenn: {0}
@@ -223,7 +218,6 @@ Pa kapab retire anyè: {0}
 Orè espesifye mal.
 Seleksyon pwofil ki pa valab.
 Ap eseye konekte ak {0} ak pwofil {1} ​​...
-Kòmandman {0} pa jwenn. Gade kòmand "èd la" pou lis kòmandman yo.
 Echwe pou pou jwenn pwopriyete IPv6 pou adaptè {0}. Kontinye ...
 Enfòmasyon IPv4:
 IPv6 enfòmasyon:
@@ -381,7 +375,6 @@ Fè yon nouvo dosye
 Dosye deja egziste.
 Erè ap eseye kreye yon dosye: {0}
 Echwe pou louvri dosye a. Sòti koki ...
-Kòmandman editè tèks espesifye a pa jwenn.
 Lis kòmandman ki disponib yo
 Sòti editè tèks la epi sove chanjman ki pa sove yo
 Enprime sa ki nan dosye a ak nimewo liy nan konsole la
@@ -438,9 +431,6 @@ Seksyon envalid antre. Tanpri tounen.
 Tounen ...
 Pèmèt
 Enfim
-Ekri modpas la rasin yo dwe mete. Pa enkyete ou; modpas la yo montre kòm zetwal yo.
-Chanje Modpas Rasin?
-Mete Rasin Modpas ...
 Ekri yon pò debogaj aleka. Li dwe nimerik, epi li pa dwe deja itilize. Sinon, aleka debogaj pral fail louvri pò a.
 Ekri konbyen fwa kòmandman an "jwenn" ta dwe eseye ankò downloads echwe. Li dwe nimerik.
 Ekri lè yo lanse ekran apre milisgond espesifye. Li dwe nimerik.
@@ -515,7 +505,6 @@ Mete kanpe Kernel la pou li envit ou pou agiman sou bòt.
 Deklanche mòd antretyen. Sa a enfim kont miltip.
 Chak demaraj, li pral tcheke pou dènye nouvèl.
 Lè w ap chanje lang, chanje non mwa yo, kalandriye, elatriye.
-Si Kernel la te kòmanse, li pral mete modpas rasin.
 Kenbe mesaj sonde pyès ki nan konpitè an silans.
 Montre mesaj nan jounen an anvan ou montre ekran login.
 Klè ekran anvan ou montre ekran login.
@@ -566,9 +555,6 @@ Atribi te retire avèk siksè.
 Echwe pou ajoute atribi.
 Echwe pou pou retire atribi.
 Ranplase yon mo oswa yon fraz ak yon lòt nan yon liy
-Nivo koulè wouj depase. Li te {0}.
-Nivo koulè vèt depase. Li te {0}.
-Nivo koulè ble depase. Li te {0}.
 Aktive koulè vre
 Echwe pou debloke {0}.
 {0} deja bloke.
@@ -644,7 +630,6 @@ Reta nan milisgond
 Konbyen milisgond pou ret tann anvan ou fè pwochen ekri a?
 Pèmèt ou itilize yon sèvè ftp SSH
 Pa gen èd pou lòd "{0}".
-Sekans VT ki pa valab pou koulè RVB.
 Koulè nan segonn Bar
 Koulè nan Minit Bar
 Koulè nan Orè Bar
@@ -706,7 +691,6 @@ Sòti koki postal la
 Lis tout dosye andedan achiv la
 Ekstrè yon dosye nan yon anyè espesifye oswa yon anyè aktyèl
 Chanje anyè achiv
-Kòmandman an koki postal espesifye yo pa jwenn.
 Anyè {0} pa egziste
 Anyè achiv {0} pa egziste
 Pozisyon Max Konte
@@ -784,7 +768,6 @@ Lis tout codepages sipòte
 Ki varyab du ki pèmèt nan aplikasyon an?
 Tès ogmante evènman an espesifik
 Tès sonde pyès ki nan konpitè
-Teste pèseptè fatra a
 Sòti kokiy tès la epi li kòmanse Kernel la
 Sòti koki tès la epi li fèmen Kernel la
 Sove anyè aktyèl la nan dosye konfigirasyon Kernel la
@@ -854,13 +837,11 @@ Sòti koki RSS epi retounen nan Kernel
 Chanje lyen manje a
 Lis tout manje
 Li yon manje nan yon navigatè entènèt
-Kòmandman koki RSS espesifye a pa jwenn.
 RSS2 ki pa valab.
 RSS1 pa valab.
 Atom ki pa valab.
 Mete yon URL RSS feed:
 Kalite RSS ki pa valab.
-Enkoni koki erè:
 Jwenn enfòmasyon sou atik la
 Nimewo Atik pa ka pi gwo pase atik ki disponib yo.
 Tit:

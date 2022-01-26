@@ -39,7 +39,6 @@ Awọn ohun kikọ pataki ko gba laaye.
 Ọrọigbaniwọle ti ko tọ.
 Olumulo naa jẹ alaabo.
 Orukọ olumulo ti ko tọ.
-Aṣiṣe gbiyanju lati ṣe itupalẹ awọn onile. {0} - Wa kaakiri:
 Aṣiṣe gbiyanju lati ṣe itupalẹ awọn onile. {0}
 Aṣiṣe gbiyanju lati ṣafikun orukọ olumulo.
 usrmgr: Ṣiṣẹda orukọ olumulo {0} ...
@@ -58,7 +57,6 @@ Ipamọ iboju {0} ko si ni ibi ipamọ data. Ṣayẹwo orukọ naa ki o tun gbi
 Iboju iboju ko le ṣe fifuye nitori atẹle naa:
 Aṣiṣe to ṣe pataki wa nigba titẹ ọrọ sita.
 Aṣiṣe kan n gbiyanju lati ṣẹda iṣeto.
-Aṣiṣe gbiyanju lati sọ Ramu di ofe: {0} - Tẹsiwaju ...
 Mod ko le ṣe kojọpọ nitori atẹle naa:
 moodi: Awọn mods ikojọpọ ...
 mod: Duro awọn mods ...
@@ -72,7 +70,6 @@ Orukọ olumulo fun {0}:
 Ọrọ aṣina fun {0}:
 Ti sopọ mọ {0}
 Aṣiṣe nigba igbiyanju lati sopọ si {0}: {1}
-Àtòjọ Àpapọ̀: {2}
 Itọsọna agbegbe {0} ko si.
 Tẹ itọsọna agbegbe kan sii. ".." lati pada sẹhin.
 A ko ri itọsọna {0}.
@@ -103,7 +100,6 @@ Ti jade ikarahun FTP ati pada si ekuro
 Ṣe atokọ itọsọna agbegbe
 Awọn atokọ latọna jijin
 Ṣe igbasilẹ faili agbegbe si itọsọna latọna jijin nipa lilo alakomeji tabi ọrọ
-Ifiranṣẹ FTP: Aṣẹ ti a beere fun {0} ko si. Wo 'iranlọwọ' fun atokọ ti awọn pipaṣẹ ti o wa ni pato lori ikarahun FTP.
 O kuna lati gba awọn ohun -ini fun oluyipada {0}
 Nọmba Adapter:
 Orukọ Adapter:
@@ -211,7 +207,6 @@ Ge asopọ ẹrọ ti n ṣatunṣe aṣiṣe
 Awọn atokọ n ṣatunṣe awọn ẹrọ ti o sopọ
 Koko ẹrọ {0} ko si.
 Ẹrọ {0} ti ge -asopọ.
-Aṣiṣe ni asopọ: {0}
 Nfeti ṣiṣatunṣe lori gbogbo awọn adirẹsi nipa lilo ibudo {0}.
 Ko si awọn ariyanjiyan pato. Akiyesi: Pato awọn ariyanjiyan lọtọ ti o ya sọtọ nipasẹ awọn aaye
 Alias ​​ti wa tẹlẹ: {0}
@@ -223,7 +218,6 @@ Ko le yọ liana kuro: {0}
 Aago agbegbe ti ṣalaye ni aṣiṣe.
 Aṣayan profaili ti ko wulo.
 N gbiyanju lati sopọ si {0} pẹlu profaili {1} ...
-Aṣẹ {0} ko ri. Wo aṣẹ “iranlọwọ” fun atokọ awọn ofin.
 Kuna lati gba awọn ohun -ini IPv6 fun oluyipada {0}. Tesiwaju ...
 Alaye IPv4:
 Alaye IPv6:
@@ -381,7 +375,6 @@ Ifiranṣẹ {0} lati {1} paarẹ lati apo -iwọle. {2} awọn ifiranṣẹ ti 
 Faili ti wa tẹlẹ.
 Aṣiṣe gbiyanju lati ṣẹda faili kan: {0}
 Kùnà láti ṣí fáìlì. Nlọ kuro ninu ikarahun ...
-A ko ri pipaṣẹ olootu ọrọ kan pato.
 Awọn akojọ awọn aṣẹ to wa
 Ti jade olootu ọrọ ati ṣafipamọ awọn ayipada ti ko fipamọ
 Ṣe atẹjade awọn akoonu ti faili pẹlu awọn nọmba laini si console
@@ -438,9 +431,6 @@ A ti tẹ aba ti ko tọna. Jọwọ lọ pada.
 Pada...
 Muu ṣiṣẹ
 Muu ṣiṣẹ
-Kọ ọrọ igbaniwọle gbongbo lati ṣeto. Maṣe yọ ara rẹ lẹnu; ọrọ igbaniwọle ti han bi irawọ.
-Yi Ọrọigbaniwọle Gbongbo bi?
-Ṣeto Ọrọigbaniwọle Gbongbo ...
 Kọ ibudo isakoṣo latọna jijin. O gbọdọ jẹ nọmba, ati pe ko gbọdọ lo tẹlẹ. Bibẹẹkọ, oluṣatunṣe latọna jijin yoo kuna lati ṣii ibudo naa.
 Kọ iye igba ti aṣẹ “gba” yẹ ki o tun gbiyanju awọn igbasilẹ ti o kuna. O gbọdọ jẹ nọmba.
 Kọ nigbati lati ṣe ifilọlẹ iboju lẹhin awọn milliseconds pato. O gbọdọ jẹ nọmba.
@@ -515,7 +505,6 @@ Ayanfẹ ti a fẹ fun Iwọn otutu
 Nfa itọju mode. Eleyi disables ọpọ àpamọ.
 Ibẹrẹ kọọkan, yoo ṣayẹwo fun awọn imudojuiwọn.
 Nigbati o ba n yi awọn ede pada, yi awọn orukọ oṣu pada, kalẹnda, abbl.
-Ti ekuro naa ba bẹrẹ, yoo ṣeto ọrọ igbaniwọle gbongbo.
 Jeki awọn ifiranṣẹ iwadii ohun elo idakẹjẹ.
 Fi Ifiranṣẹ Ọjọ han ṣaaju iṣafihan iboju iwọle.
 Pa iboju rẹ ṣaaju iṣafihan iboju iwọle.
@@ -566,9 +555,6 @@ A ti yọ abuda kuro ni aṣeyọri.
 Kuna lati ṣafikun abuda.
 Kuna lati yọ abuda kuro.
 Rọpo ọrọ kan tabi gbolohun pẹlu ọkan miiran ni laini kan
-Ipele awọ pupa ti kọja. {0} ni.
-Ipele awọ alawọ ewe ti kọja. {0} ni.
-Ipele awọ buluu ti kọja. {0} ni.
 Mu awọn awọ otitọ ṣiṣẹ
 Kùnà láti ṣí ìdènà {0}.
 Ti dina mọ {0} tẹlẹ.
@@ -644,7 +630,6 @@ Idaduro ni Miliseconds
 Awọn millisecond melo ni lati duro ṣaaju ṣiṣe kikọ atẹle?
 Jẹ ki o lo olupin FTP SSH kan
 Ko si iranlọwọ fun aṣẹ "{0}".
-Ilana VT ti ko tọna fun awọ RGB.
 Awọ ti Aaya Bar
 Awọ ti Iṣẹju Bar
 Awọ ti Wakati Bar
@@ -706,7 +691,6 @@ Ti jade ikarahun ZIP
 Ṣe atokọ gbogbo awọn faili inu ile -iwe
 Fa jade faili kan si itọsọna ti a sọtọ tabi itọsọna lọwọlọwọ
 Awọn ayipada iwe ilana pamosi
-A ko rii pipaṣẹ ikarahun ZIP ti a sọtọ.
 Itọsọna {0} ko si
 {0} ko si iwe ipamọ
 Awọn ipo Awọn ipo Max
@@ -784,7 +768,6 @@ Rán iwifunni kan lati ṣe idanwo olugba naa
 Awọn oniyipada alakopọ wo ni o ṣiṣẹ ninu ohun elo naa?
 Awọn idanwo igbega iṣẹlẹ kan pato
 Awọn idanwo ti n ṣawari ohun elo
-Ṣe idanwo olugba idoti
 Ti jade ikarahun idanwo ati bẹrẹ ekuro
 Ti jade ikarahun idanwo naa o si pa ekuro naa
 Ṣafipamọ itọsọna lọwọlọwọ si faili iṣeto ekuro
@@ -854,13 +837,11 @@ Ti jade ikarahun RSS ati pada si ekuro
 Yi ọna asopọ kikọ sii pada
 Ṣe atokọ gbogbo awọn kikọ sii
 Ka ifunni ni ẹrọ aṣawakiri wẹẹbu kan
-Awọn pàtó kan RSS ikarahun pipaṣẹ ti ko ba ri.
 Ifunni RSS2 ti ko tọna.
 Ifunni RSS1 ti ko tọna.
 Ifunni Atomu ti ko wulo.
 Tẹ URL ifunni RSS sii:
 Iru ifunni RSS ti ko tọna.
-Aṣiṣe ikarahun aimọ:
 Gba alaye nkan
 Nọmba nkan ko le tobi ju awọn nkan ti o wa lọ.
 Akole:

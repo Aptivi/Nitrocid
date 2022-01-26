@@ -39,7 +39,6 @@ Pasfhocal {0}:
 Focal faire mícheart.
 Tá an t-úsáideoir faoi mhíchumas.
 Ainm úsáideora mícheart.
-Earráid ag iarraidh áititheoirí a pharsáil. {0} - Rian cruachta:
 Earráid ag iarraidh áititheoirí a pharsáil. {0}
 Earráid agus tú ag iarraidh ainm úsáideora a chur leis.
 usrmgr: Ag cruthú ainm úsáideora {0} ...
@@ -58,7 +57,6 @@ Sábhálaí scáileáin {0} nach bhfuil le fáil sa bhunachar sonraí. Seiceáil
 Ní féidir spárálaí scáileáin a luchtú mar gheall ar an méid seo a leanas:
 Tá earráid thromchúiseach ann agus téacs á phriontáil.
 Tá earráid ag iarraidh cumraíocht a chruthú.
-Earráid ag iarraidh RAM a shaoradh: {0} - Leanúnach ...
 Ní féidir Mod a luchtú mar gheall ar an méid seo a leanas:
 mod: Mods á luchtú ...
 mod: Stopadh mods ...
@@ -72,7 +70,6 @@ Ainm úsáideora do {0}:
 Pasfhocal do {0}:
 Ceangailte le {0}
 Earráid agus tú ag iarraidh nasc a dhéanamh le {0}: {1}
-Rian Stack: {2}
 Níl eolaire áitiúil {0} ann.
 Iontráil eolaire áitiúil. ".." le dul ar ais.
 Níor aimsíodh eolaire {0}.
@@ -103,7 +100,6 @@ Taispeánann an scáileán cabhrach
 Liostaítear eolaire áitiúil
 Liostaí eolaire iargúlta
 Uaslódáil comhad áitiúil chuig eolaire iargúlta ag úsáid dénártha nó téacs
-Teachtaireacht FTP: Ní fhaightear an t-ordú iarrtha {0}. Féach ‘help’ le haghaidh liosta de na horduithe atá ar fáil a shonraítear ar bhlaosc FTP.
 Theip ar airíonna a fháil don oiriúntóir {0}
 Uimhir Cuibheora:
 Ainm an Cuibheora:
@@ -211,7 +207,6 @@ Déan gléas dífhabhtaithe a dhícheangal
 Liostaítear feistí dífhabhtaithe ceangailte
 Gléas dífhabhtaithe {0} gan aimsiú.
 Gléas {0} dícheangailte.
-Earráid i dtaca: {0}
 Éisteacht dífhabhtaithe ar gach seoladh ag úsáid calafort {0}.
 Níor sonraíodh aon argóintí. Leid: Sonraigh argóintí iolracha scartha le spásanna
 Ailias a fuarthas cheana: {0}
@@ -223,7 +218,6 @@ Ní féidir eolaire a bhaint: {0}
 Sonraítear crios ama go mícheart.
 Roghnú próifíl neamhbhailí.
 Ag iarraidh nasc a dhéanamh le {0} le próifíl {1} ​​...
-Ordú {0} gan aimsiú. Féach an t-ordú "help" le haghaidh liosta na n-orduithe.
 Theip ar airíonna IPv6 a fháil don adapter {0}. Ag leanúint ar aghaidh ...
 Faisnéis IPv4:
 Faisnéis IPv6:
@@ -381,7 +375,6 @@ Déanann sé comhad nua
 Tá comhad ann cheana.
 Earráid agus tú ag iarraidh comhad a chruthú: {0}
 Theip ar an gcomhad a oscailt. Blaosc ag imeacht ...
-Ní fhaightear an t-ordú sonraithe eagarthóra téacs.
 Liostaí orduithe ar fáil
 Scoir an t-eagarthóir téacs agus sábháil athruithe nár sábháladh
 Priontaí ábhar an chomhaid le huimhreacha líne ar an consól
@@ -438,9 +431,6 @@ Cuid neamhbhailí iontráilte. Téigh ar ais le do thoil.
 Dul ar ais...
 Cumasaigh
 Díchumasaithe
-Scríobh an focal faire fréimhe atá le socrú. Ná bíodh imní ort; taispeántar an focal faire mar réaltaí.
-Athraigh Pasfhocal Fréamh?
-Socraigh Pasfhocal Fréamh ...
 Scríobh calafort dífhabhtaithe iargúlta. Caithfidh sé a bheith uimhriúil, agus ní gá é a úsáid cheana féin. Seachas sin, ní theipfidh ar dhífhabhtóir iargúlta an calafort a oscailt.
 Scríobh cé mhéad uair ba cheart don ordú "faigh" íoslódálacha a theip orthu a atriail. Caithfidh sé a bheith uimhriúil.
 Scríobh cathain is féidir spárálaíscáileáin a sheoladh tar éis milleasoicindí sonraithe. Caithfidh sé a bheith uimhriúil.
@@ -515,7 +505,6 @@ Socraíonn sé an t-eithne ionas go spreagfaidh sé tú chun argóint a dhéanam
 Modh cothabhála truicear. Díchumasaíonn sé seo cuntais iolracha.
 Gach tosaithe, seiceálfaidh sé le haghaidh nuashonruithe.
 Agus teangacha á athrú agat, athraigh ainmneacha na míosa, an fhéilire, srl.
-Má tá an t-eithne tosaithe, socróidh sé pasfhocal fréimhe.
 Coinnigh teachtaireachtaí promhaidh crua-earraí ciúin.
 Taispeáin Teachtaireacht an Lae sula dtaispeánfar an scáileán logála isteach.
 Scáileán soiléir sula dtaispeántar an scáileán logála isteach.
@@ -566,9 +555,6 @@ Baineadh an tréith go rathúil.
 Theip ar an tréith a chur leis.
 Theip ar an tréith a bhaint.
 Cuirtear focal nó frása in ionad focal eile i líne
-Sáraíodh an leibhéal dath dearg. Bhí sé {0}.
-Sáraíodh an leibhéal dathanna glasa. Bhí sé {0}.
-Sáraíodh leibhéal dath gorm. Bhí sé {0}.
 Gníomhaigh dathanna fíor
 Theip ar dhíbhlocáil {0}.
 Tá {0} blocáilte cheana féin.
@@ -644,7 +630,6 @@ Moill i Milliseconds
 Cé mhéad milleasoicind atá le fanacht sula ndéanfaidh tú an chéad scríbhinn eile?
 Ligeann tú duit freastalaí SSH FTP a úsáid
 Gan aon chabhair don ordú "{0}".
-Seicheamh neamhbhailí VT do dhath RGB.
 Dath Bar na Soicind
 Dath Bar Miontuairiscí
 Dath Barra Uaireanta
@@ -706,7 +691,6 @@ Scoir an bhlaosc ZIP
 Liostaíonn sé gach comhad laistigh den chartlann
 Sliocht comhad chuig eolaire sonraithe nó eolaire reatha
 Athraíonn eolaire cartlainne
-Ní fhaightear an t-ordú sliogáin ZIP sonraithe.
 Níl eolaire {0} ann
 Níl eolaire cartlainne {0} ann
 Líon na bPost Max
@@ -784,7 +768,6 @@ Liostaítear na leathanaigh chóid uile a fhaigheann tacaíocht
 Cad iad na hathróga tiomsaitheora atá cumasaithe san iarratas?
 Tástálacha ag ardú na hócáide faoi leith
 Tástálacha ag fiosrú na crua-earraí
-Tástálacha ar an mbailitheoir truflais
 Scoir an bhlaosc tástála agus tosaíonn an t-eithne
 Scoir an bhlaosc tástála agus sciorr síos an eithne
 Sábhálann an eolaire reatha go comhad cumraíochta eithne
@@ -854,13 +837,11 @@ Scoir an bhlaosc RSS agus filleann sé ar eithne
 Athraíonn sé an nasc beathaithe
 Liostaítear gach fotha
 Léigh fotha i mbrabhsálaí gréasáin
-Ní fhaightear an t-ordú sliogáin RSS sonraithe.
 Beatha neamhbhailí RSS2.
 Beatha neamhbhailí RSS1.
 Beathú Adamh Neamhbhailí.
 Iontráil URL beatha RSS:
 Cineál beatha neamhbhailí RSS.
-Earráid anaithnid bhlaosc:
 Faigheann an t-eolas alt
 Ní fhéadfadh uimhir an ailt a bheith níos mó ná na hailt atá ar fáil.
 Teideal:

@@ -39,7 +39,6 @@ Contrasenya de {0}:
 Contrasenya incorrecta.
 L'usuari està desactivat.
 Nom d'usuari incorrecte.
-Error en intentar analitzar els espais reservats. {0} - Traça de la pila:
 Error en intentar analitzar els espais reservats. {0}
 Error en provar d'afegir un nom d'usuari.
 usrmgr: S'està creant un nom d'usuari {0} ...
@@ -58,7 +57,6 @@ No s'ha trobat l'estalvi de pantalla {0} a la base de dades. Comproveu el nom i 
 El salvapantalles no es pot carregar a causa dels següents:
 Hi ha un greu error en imprimir text.
 Hi ha un error en intentar crear la configuració.
-Error en intentar alliberar RAM: {0}: continua ...
 No es pot carregar el modificador a causa del següent:
 mod: carregant modificacions ...
 mod: Aturant modificacions ...
@@ -72,7 +70,6 @@ Nom d'usuari de {0}:
 Contrasenya per a {0}:
 Connectat a {0}
 Error en intentar connectar-vos a {0}: {1}
-Traça de la pila: {2}
 El directori local {0} no existeix.
 Introduïu un directori local. ".." tornar.
 No s'ha trobat el directori {0}.
@@ -103,7 +100,6 @@ Mostra la pantalla d'ajuda
 Llista el directori local
 Llista el directori remot
 Penja fitxers locals al directori remot mitjançant text binari o binari
-Missatge FTP: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir una llista d'ordres disponibles especificades a l'intèrpret d'ordres FTP.
 No s'han pogut obtenir les propietats de l'adaptador {0}
 Número d'adaptador:
 Nom de l'adaptador:
@@ -211,7 +207,6 @@ Desconnecteu un dispositiu de depuració
 Llista els dispositius de depuració connectats
 No s'ha trobat el dispositiu de depuració {0}.
 El dispositiu {0} s'ha desconnectat.
-Error de connexió: {0}
 Depuració de l'escolta en totes les adreces mitjançant el port {0}.
 No s'ha especificat cap argument. Consell: especifiqueu diversos arguments separats per espais
 Àlies ja trobat: {0}
@@ -223,7 +218,6 @@ No es pot eliminar el directori: {0}
 La zona horària s’especifica incorrectament.
 La selecció del perfil no és vàlida.
 S'està intentant connectar amb {0} amb el perfil {1} ​​...
-No s'ha trobat l'ordre {0}. Consulteu l'ordre "ajuda" per obtenir la llista d'ordres.
 No s'han pogut obtenir les propietats IPv6 de l'adaptador {0}. Continuant ...
 Informació IPv4:
 Informació IPv6:
@@ -381,7 +375,6 @@ Crea un fitxer nou
 El fitxer ja existeix.
 Error en intentar crear un fitxer: {0}
 No s'ha pogut obrir el fitxer. S'està sortint de l'intèrpret d'ordres ...
-No es troba l'ordre especificada de l'editor de text.
 Llista les ordres disponibles
 Surt de l'editor de text i desa els canvis no desats
 Imprimeix el contingut del fitxer amb números de línia a la consola
@@ -438,9 +431,6 @@ S'ha introduït una secció no vàlida. Si us plau, torneu enrere.
 Torna...
 Activa
 Desactivar
-Escriviu la contrasenya de root que cal establir. No us preocupeu; la contrasenya es mostra com a estrelles.
-Voleu canviar la contrasenya arrel?
-Estableix la contrasenya arrel ...
 Escriviu un port de depurador remot. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, el depurador remot no obrirà el port.
 Escriviu quantes vegades l'ordre "" get "" hauria de tornar a provar les baixades fallides. Ha de ser numèric.
 Escriviu quan s'iniciarà el salvapantalles després de mil·lisegons especificats. Ha de ser numèric.
@@ -515,7 +505,6 @@ Configura el nucli de manera que us demani arguments en arrencar.
 Activa el mode de manteniment. Això desactiva diversos comptes.
 Cada inici, comprovarà si hi ha actualitzacions.
 Quan canvieu d'idioma, canvieu els noms del mes, el calendari, etc.
-Si s'inicia el nucli, definirà la contrasenya de root.
 Manteniu els missatges de sondeig de maquinari silenciosos.
 Mostra el missatge del dia abans de mostrar la pantalla d'inici de sessió.
 Esborreu la pantalla abans de mostrar la pantalla d'inici de sessió.
@@ -566,9 +555,6 @@ L'atribut s'ha eliminat correctament.
 No s'ha pogut afegir l'atribut.
 No s'ha pogut eliminar l'atribut.
 Substitueix una paraula o frase per una altra en una línia
-S'ha superat el nivell de color vermell. Era {0}.
-S'ha superat el nivell de color verd. Era {0}.
-S'ha superat el nivell de color blau. Era {0}.
 Activeu els colors reals
 No s'ha pogut desbloquejar {0}.
 {0} ja està bloquejat.
@@ -644,7 +630,6 @@ Retard en mil·lisegons
 Quants mil·lisegons cal esperar abans de fer la següent escriptura?
 Us permet utilitzar un servidor FTP SSH
 No hi ha ajuda per a l'ordre "{0}".
-Seqüència VT no vàlida per al color RGB.
 Barra de color de segons
 Barra del color dels minuts
 Barra del color de les hores
@@ -706,7 +691,6 @@ Surt de l'intèrpret d'ordres ZIP
 Llista tots els fitxers de l'arxiu
 Extreu un fitxer a un directori especificat o a un directori actual
 Canvia el directori d’arxiu
-No s'ha trobat l'ordre de l'intèrpret d'ordres ZIP especificat.
 El directori {0} no existeix
 El directori d'arxiu {0} no existeix
 Nombre màxim de posicions
@@ -784,7 +768,6 @@ Mostra totes les pàgines de codis compatibles
 Quines variables del compilador estan habilitades a l'aplicació?
 Proves que plantegen l'esdeveniment concret
 Proves de sondeig del maquinari
-Prova el col·lector d'escombraries
 Surt de l'intèrpret d'ordres de prova i inicia el nucli
 Surt del shell de prova i apaga el nucli
 Desa el directori actual al fitxer de configuració del nucli
@@ -854,13 +837,11 @@ Surt de l'intèrpret d'ordres RSS i torna al nucli
 Canvia l'enllaç del feed
 Mostra tots els feeds
 Llegeix un feed en un navegador web
-No es troba l'ordre de l'intèrpret d'ordres RSS especificat.
 Feed RSS2 no vàlid.
 Feed RSS1 no vàlid.
 Feed Atom no vàlid.
 Introduïu un URL del canal RSS:
 El tipus de canal RSS no és vàlid.
-Error desconegut de l'intèrpret d'ordres:
 Obté la informació de l'article
 El número d'article no pot ser més gran que els articles disponibles.
 Títol:

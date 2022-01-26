@@ -39,7 +39,6 @@ Has?o {0}:
 Z?e has?o.
 U?ytkownik jest wy??czony.
 Z?a nazwa u?ytkownika.
-B??d podczas pr?by przetworzenia symboli zast?pczych. {0} - ?lad stosu:
 B??d podczas pr?by przetworzenia symboli zast?pczych. {0}
 B??d podczas pr?by dodania nazwy u?ytkownika.
 usrmgr: Tworzenie nazwy u?ytkownika {0} ...
@@ -58,7 +57,6 @@ Nie znaleziono wygaszacza ekranu {0} w bazie danych. Sprawd? nazw? i spr?buj pon
 Nie mo?na za?adowa? wygaszacza ekranu z nast?puj?cych powod?w:
 Wyst?pi? powa?ny b??d podczas drukowania tekstu.
 Wyst?pi? b??d podczas pr?by utworzenia konfiguracji.
-B??d podczas pr?by zwolnienia pami?ci RAM: {0} - kontynuowanie ...
 Modu nie mo?na za?adowa? z nast?puj?cych powod?w:
 mod: ?adowanie mod?w ...
 mod: Zatrzymywanie mod?w ...
@@ -72,7 +70,6 @@ Nazwa u?ytkownika dla {0}:
 Has?o do {0}:
 Po??czono z {0}
 B??d podczas pr?by po??czenia z {0}: {1}
-?lad stosu: {2}
 Katalog lokalny {0} nie istnieje.
 Wprowad? lokalny katalog. ".." wr?ci?.
 Katalog {0} nie zosta? znaleziony.
@@ -103,7 +100,6 @@ Wy?wietla ekran pomocy
 Wy?wietla lokalny katalog
 Wy?wietla zdalny katalog
 Przesy?a plik lokalny do zdalnego katalogu za pomoc? pliku binarnego lub tekstowego
-Komunikat FTP: ??dane polecenie {0} nie zosta?o znalezione. Zobacz „pomoc”, aby uzyska? list? dost?pnych polece? okre?lonych w pow?oce FTP.
 Nie mo?na uzyska? w?a?ciwo?ci adaptera {0}
 Numer adaptera:
 Nazwa adaptera:
@@ -211,7 +207,6 @@ Od??cz urz?dzenie debuguj?ce
 Wy?wietla list? pod??czonych urz?dze? do debugowania
 Nie znaleziono urz?dzenia debuguj?cego {0}.
 Urz?dzenie {0} zosta?o od??czone.
-B??d po??czenia: {0}
 Debuguj nas?uchiwanie na wszystkich adresach przy u?yciu portu {0}.
 Nie podano argument?w. Wskaz?wka: Podaj wiele argument?w oddzielonych spacjami
 Alias ju? znaleziony: {0}
@@ -223,7 +218,6 @@ Nie mo?na usun?? katalogu: {0}
 Strefa czasowa jest niepoprawnie okre?lona.
 Nieprawid?owy wyb?r profilu.
 Pr?buj? po??czy? si? z {0} z profilem {1} ...
-Nie znaleziono polecenia {0}. Zobacz polecenie „help”, aby uzyska? list? polece?.
 Nie mo?na pobra? w?a?ciwo?ci IPv6 dla adaptera {0}. Kontynuacja ...
 Informacje o IPv4:
 Informacje o IPv6:
@@ -381,7 +375,6 @@ Tworzy nowy plik
 Plik ju? istnieje.
 B??d podczas pr?by utworzenia pliku: {0}
 Nie uda?o si? otworzy? pliku. Wychodz? z pow?oki ...
-Nie znaleziono podanego polecenia edytora tekstu.
 Wy?wietla dost?pne polecenia
 Wychodzi z edytora tekstu i zapisuje niezapisane zmiany
 Wy?wietla zawarto?? pliku z numerami wierszy na konsoli
@@ -438,9 +431,6 @@ Wprowadzono nieprawid?ow? sekcj?. Wr??, prosz?.
 Wr??...
 W??czy?
 Wy??czy?
-Wpisz has?o roota, kt?re chcesz ustawi?. Nie martw si?; has?a s? wy?wietlane jako gwiazdki.
-Zmieni? has?o roota?
-Ustaw has?o roota ...
 Napisz port zdalnego debugera. Musi by? numeryczny i nie mo?e by? ju? u?ywany. W przeciwnym razie zdalny debugger nie otworzy portu.
 Napisz, ile razy polecenie „„ get ”” powinno ponawia? nieudane pobieranie. Musi by? liczb?.
 Napisz, kiedy uruchomi? wygaszacz ekranu po okre?lonych milisekundach. Musi by? liczb?.
@@ -515,7 +505,6 @@ Ustawia j?dro tak, aby wy?wietla?o monit o podanie argumentu przy starcie.
 Tryb konserwacji wyzwalaczy. To wy??cza wiele kont.
 Przy ka?dym uruchomieniu b?dzie sprawdza? dost?pno?? aktualizacji.
 Zmieniaj?c j?zyki, zmie? nazwy miesi?cy, kalendarza itp.
-Je?li j?dro jest uruchomione, ustawi has?o roota.
 Zachowaj cisz? wiadomo?ci z sondowania sprz?tu.
 Poka? wiadomo?? dnia przed wy?wietleniem ekranu logowania.
 Wyczy?? ekran przed wy?wietleniem ekranu logowania.
@@ -566,9 +555,6 @@ Atrybut zosta? pomy?lnie usuni?ty.
 Nie uda?o si? doda? atrybutu.
 Nie uda?o si? usun?? atrybutu.
 Zast?puje s?owo lub fraz? innym w wierszu
-Przekroczono poziom koloru czerwonego. To by?o {0}.
-Przekroczono poziom koloru zielonego. To by?o {0}.
-Przekroczono poziom koloru niebieskiego. To by?o {0}.
 Aktywuj prawdziwe kolory
 Nie uda?o si? odblokowa? {0}.
 Numer {0} jest ju? zablokowany.
@@ -644,7 +630,6 @@ Op??nienie w milisekundach
 Ile milisekund trzeba czeka? przed wykonaniem nast?pnego zapisu?
 Umo?liwia korzystanie z serwera FTP SSH
 Brak pomocy dla polecenia „{0}”.
-Nieprawid?owa sekwencja VT dla koloru RGB.
 Kolor paska sekund
 Pasek koloru minut
 Pasek koloru godzin
@@ -706,7 +691,6 @@ Wychodzi z pow?oki ZIP
 Wy?wietla wszystkie pliki w archiwum
 Rozpakowuje plik do okre?lonego katalogu lub bie??cego katalogu
 Zmienia katalog archiwum
-Nie znaleziono podanego polecenia pow?oki ZIP.
 Katalog {0} nie istnieje
 Katalog archiwum {0} nie istnieje
 Maksymalna liczba pozycji
@@ -784,7 +768,6 @@ Wy?wietla list? wszystkich obs?ugiwanych stron kodowych
 Jakie zmienne kompilatora s? w??czone w aplikacji?
 Testy podnosz?ce konkretne wydarzenie
 Testy sonduj?ce sprz?t
-Testuje od?miecacz
 Wychodzi z testowej pow?oki i uruchamia j?dro
 Wychodzi z testowej pow?oki i wy??cza j?dro
 Zapisuje bie??cy katalog do pliku konfiguracyjnego j?dra
@@ -854,13 +837,11 @@ Wychodzi z pow?oki RSS i wraca do j?dra
 Zmienia link do kana?u
 Wy?wietla wszystkie kana?y
 Czyta kana? w przegl?darce internetowej
-Nie znaleziono okre?lonego polecenia pow?oki RSS.
 Nieprawid?owy kana? RSS2.
 Nieprawid?owy kana? RSS1.
 Nieprawid?owy kana? Atom.
 Wprowad? adres URL kana?u RSS:
 Nieprawid?owy typ kana?u RSS.
-Nieznany b??d pow?oki:
 Pobiera informacje o artykule
 Numer artyku?u nie mo?e by? wi?kszy ni? dost?pne artyku?y.
 Tytu?:

@@ -39,7 +39,6 @@ kodikós prósvasis tou chrísti {0}:
 Láthos kodikós.
 O chrístis eínai apenergopoiiménos.
 Láthos ónoma chrísti.
-Sfálma katá tin análysi ton symvólon krátisis thésis. {0} - Íchni stoívas:
 Sfálma katá tin análysi ton symvólon krátisis thésis. {0}
 Sfálma katá tin prospátheia prosthíkis onómatos chrísti.
 usrmgr: Dimiourgía onómatos chrísti {0}...
@@ -58,7 +57,6 @@ I profýlaxi othónis {0} den vréthike sti vási dedoménon. Elénxte to ónoma
 Den eínai dynatí i fórtosi tis profýlaxis othónis gia ta akóloutha:
 Ypárchei sovaró sfálma katá tin ektýposi keiménou.
 Parousiástike sfálma katá tin prospátheia dimiourgías diamórfosis.
-Sfálma katá tin prospátheia apelefthérosis RAM: {0} - Synécheia...
 Den eínai dynatí i fórtosi tou Mod gia ta akóloutha:
 mod: Fórtosi mods...
 mod: Diakopí mods...
@@ -72,7 +70,6 @@ Tha prépei na aposyndetheíte apó ton diakomistí prin syndetheíte se állo d
 Kodikós prósvasis gia {0}:
 Syndéthike me {0}
 Sfálma katá tin prospátheia sýndesis sto {0}: {1}
-Stack Trace: {2}
 O topikós katálogos {0} den ypárchei.
 Eisagágete énan topikó katálogo. ".." na epistrepsei.
 O katálogos {0} den vréthike.
@@ -103,7 +100,6 @@ Emfanízei tin othóni voítheias
 Parathétei ton topikó katálogo
 Parathétei ton apomakrysméno katálogo
 Metafortónei topikó archeío se apomakrysméno katálogo chrisimopoióntas dyadikó í keímeno
-Mínyma FTP: I zitoúmeni entolí {0} den vréthike. Deíte "voítheia" gia mia lísta me tis diathésimes entolés pou kathorízontai sto kélyfos FTP.
 Apotychía lípsis idiotíton gia ton prosarmogéa {0}
 Arithmós prosarmogéa:
 Ónoma prosarmogéa:
@@ -211,7 +207,6 @@ Aposyndéste mia syskeví entopismoú sfalmáton
 Emfanízei tis syndedeménes syskevés entopismoú sfalmáton
 I syskeví entopismoú sfalmáton {0} den vréthike.
 I syskeví {0} aposyndéthike.
-Sfálma sti sýndesi: {0}
 Entopismós sfalmáton akróasis se óles tis diefthýnseis chrisimopoióntas ti thýra {0}.
 Den prosdiorístikan epicheirímata. Symvoulí: Kathoríste pollaplá orísmata diachorisména me kená
 To psevdónymo vréthike ídi: {0}
@@ -223,7 +218,6 @@ Den eínai dynatí i katárgisi tou katalógou: {0}
 I zóni óras échei oristeí esfalména.
 Mi énkyri epilogí profíl.
 Prospátheia sýndesis sto {0} me to profíl {1}...
-I entolí {0} den vréthike. Deíte tin entolí "voítheia" gia ti lísta ton entolón.
 Apotychía lípsis idiotíton IPv6 gia ton prosarmogéa {0}. Synécheia...
 Pliroforíes IPv4:
 Pliroforíes IPv6:
@@ -381,7 +375,6 @@ Dimiourgeí néo archeío
 O fákelos ypárchei ídi.
 Sfálma katá tin prospátheia dimiourgías archeíou: {0}
 Apétyche to ánoigma tou archeíou. Éxodos apó to kélyfos...
-I kathorisméni entolí epexergasías keiménou den vréthike.
 Emfanízei tis diathésimes entolés
 Éxodos apó to prógramma epexergasías keiménou kai apothíkefsi mi apothikevménon allagón
 Ektypónei ta periechómena tou archeíou me arithmoús grammís stin konsóla
@@ -438,9 +431,6 @@ Eisíchthi mi énkyri enótita. Parakaló epistrépste.
 Pígaine píso...
 epitrépo
 Kathistó aníkano
-Grápste ton kodikó prósvasis root pou thélete na orísete. Min anisycheíte. o kodikós prósvasis emfanízetai os astéria.
-Allagí kodikoú prósvasis root?
-Orismós kodikoú prósvasis rízas...
 Grápste mia apomakrysméni thýra entopismoú sfalmáton. Prépei na eínai arithmitikó kai den prépei na chrisimopoieítai ídi. Diaforetiká, to apomakrysméno prógramma entopismoú sfalmáton tha apotýchei na anoíxei ti thýra.
 Grápste póses forés i entolí "get" tha prépei na epanalávei tis apotychiménes lípseis. Prépei na eínai arithmitikó.
 Grápste póte tha xekinísei i profýlaxi othónis metá apó kathorisména chiliostá tou defteroléptou. Prépei na eínai arithmitikó.
@@ -515,7 +505,6 @@ Rythmízei ton pyrína étsi óste na sas zitá órisma katá tin ekkínisi.
 Energopoieí ti leitourgía syntírisis. Aftó apenergopoieí polloús logariasmoús.
 Káthe ekkínisi, tha elénchei gia enimeróseis.
 Katá tin enallagí glossón, alláxte ta onómata ton minón, to imerológio k.lp.
-Eán o pyrínas xekinísei, tha orísei kodikó prósvasis root.
 Kratíste siopilá ta minýmata exétasis ylikoú.
 Emfánisi tou minýmatos tis iméras prin apó tin emfánisi tis othónis sýndesis.
 Ekkatharíste tin othóni prin emfanisteí i othóni sýndesis.
@@ -566,9 +555,6 @@ To charaktiristikó échei afairetheí me epitychía.
 Apotychía prosthíkis charaktiristikoú.
 Apotychía katárgisis charaktiristikoú.
 Antikathistá mia léxi í frási me mia álli se mia grammí
-Ypérvasi tou epipédou kókkinou chrómatos. Ítan {0}.
-Ypérvasi tou epipédou prásinou chrómatos. Ítan {0}.
-Ypérvasi tou epipédou ble chrómatos. Ítan {0}.
 Energopoiíste ta alithiná chrómata
 I katárgisi apokleismoú tou {0} apétyche.
 To {0} eínai ídi apokleisméno.
@@ -644,7 +630,6 @@ Kathystérisi se chiliostá tou defteroléptou
 Pósa chiliostá tou defteroléptou na periménete prin kánete tin epómeni engrafí?
 Sas epitrépei na chrisimopoieíte énan diakomistí SSH FTP
 Den ypárchei voítheia gia tin entolí "{0}".
-Mi énkyri akolouthía VT gia chróma RGB.
 Bára chrómatos defterolépton
 Bára chrómatos leptón
 Bára chrómatos orón
@@ -706,7 +691,6 @@ Anoígei éna archeío ZIP
 Emfanízei óla ta archeía mésa sto archeío
 Exágei éna archeío se énan kathorisméno katálogo í se énan tréchonta katálogo
 Allázei ton katálogo archeiothétisis
-I kathorisméni entolí kelýfous ZIP den vréthike.
 O katálogos {0} den ypárchei
 O katálogos archeiothétisis {0} den ypárchei
 Mégistos arithmós théseon
@@ -784,7 +768,6 @@ Emfanízei óles tis ypostirizómenes kodikoselídes
 Poies metavlités metaglottistí eínai energopoiiménes stin efarmogí?
 Dokimés pou anevázoun to synkekriméno symván
 Dokimés pou dierevnoún to ylikó
-Dokimázei ton syllékti skoupidión
 Éxodos apó to dokimastikó kélyfos kai ekkínisi tou pyrína
 Éxodos apó to dokimastikó kélyfos kai termatismós leitourgías tou pyrína
 Apothikévei ton tréchonta katálogo sto archeío diamórfosis tou pyrína
@@ -854,13 +837,11 @@ Anoígei éna kélyfos RSS gia anágnosi ton roón
 Allázei ton sýndesmo roís
 Emfanízei óles tis roés
 Diavázei mia roí se éna prógramma periígisis istoú
-I kathorisméni entolí kelýfous RSS den vréthike.
 Mi énkyri roí RSS2.
 Mi énkyri roí RSS1.
 Mi énkyri roí Atom.
 Eisagágete mia diéfthynsi URL roís RSS:
 Mi énkyros týpos roís RSS.
-Ágnosto sfálma kelýfous:
 Lamvánei tis pliroforíes tou árthrou
 O arithmós tou árthrou den tha boroúse na eínai megalýteros apó ta diathésima árthra.
 Títlos:

@@ -39,7 +39,6 @@ Lozinka za {0}:
 Pogrešna lozinka.
 Korisnik je onemogućen.
 Pogrešno korisničko ime.
-Greška pri pokušaju raščlanjivanja rezerviranih mjesta. {0} - Praćenje steka:
 Greška pri pokušaju raščlanjivanja rezerviranih mjesta. {0}
 Greška pri pokušaju dodavanja korisničkog imena.
 usrmgr: Kreiranje korisničkog imena {0} ...
@@ -58,7 +57,6 @@ Traženi čuvar zaslona {0} nije pronađen.
 Čuvar zaslona se ne može učitati zbog sljedećeg:
 Došlo je do ozbiljne greške pri štampanju teksta.
 Došlo je do greške pri pokušaju stvaranja konfiguracije.
-Greška pri pokušaju oslobađanja RAM -a: {0} - Nastavak ...
 Mod se ne može učitati zbog sljedećeg:
 mod: Učitavanje modova ...
 mod: Zaustavljanje modova ...
@@ -72,7 +70,6 @@ Korisničko ime za {0}:
 Lozinka za {0}:
 Povezano na {0}
 Greška pri pokušaju povezivanja na {0}: {1}
-Praćenje snopa: {2}
 Lokalni direktorij {0} ne postoji.
 Unesite lokalni direktorij. ".." za povratak.
 Direktorij {0} nije pronađen.
@@ -103,7 +100,6 @@ Prikazuje ekran za pomoć
 Navodi lokalni direktorij
 Navodi udaljeni direktorij
 Otprema lokalnu datoteku u udaljeni direktorij pomoću binarnog zapisa ili teksta
-FTP poruka: Tražena naredba {0} nije pronađena. Pogledajte 'pomoć' za popis dostupnih naredbi navedenih na FTP ljusci.
 Preuzimanje svojstava za adapter {0} nije uspjelo
 Broj adaptera:
 Naziv adaptera:
@@ -211,7 +207,6 @@ Odspojite uređaj za otklanjanje grešaka
 Navodi povezane uređaje za otklanjanje grešaka
 Uređaj za otklanjanje grešaka {0} nije pronađen.
 Uređaj {0} je isključen.
-Greška pri povezivanju: {0}
 Otklonite greške pri slušanju na svim adresama pomoću porta {0}.
 Nisu navedeni argumenti. Savjet: Navedite više argumenata odvojenih razmacima
 Pseudonim je već pronađen: {0}
@@ -223,7 +218,6 @@ Nije moguće ukloniti direktorij: {0}
 Vremenska zona je pogrešno navedena.
 Nevažeći odabir profila.
 Pokušavam se povezati na {0} s profilom {1} ...
-Naredba {0} nije pronađena. Listu naredbi potražite u naredbi "help".
 Preuzimanje IPv6 svojstava za adapter {0} nije uspjelo. Nastavak ...
 IPv4 informacije:
 IPv6 informacije:
@@ -381,7 +375,6 @@ Pravi novu datoteku
 Datoteka već postoji.
 Greška pri pokušaju kreiranja datoteke: {0}
 Otvaranje datoteke nije uspjelo. Izlazak iz ljuske ...
-Navedena naredba uređivača teksta nije pronađena.
 Navodi dostupne komande
 Izlazi iz uređivača teksta i sprema nespremljene promjene
 Ispisuje sadržaj datoteke s brojevima redaka na konzolu
@@ -438,9 +431,6 @@ Unesen je nevažeći odjeljak. Molim vas, vratite se.
 Vrati se...
 Omogući
 Onemogući
-Napišite root lozinku koju želite postaviti. Ne brinite; lozinka je prikazana zvjezdicom.
-Promijeniti root lozinku?
-Postavi root lozinku ...
 Napišite port za udaljeni debager. Mora biti numerički i ne smije se već koristiti. U suprotnom udaljeni debager neće uspjeti otvoriti port.
 Napišite koliko puta bi naredba "get" trebala pokušati ponoviti neuspjela preuzimanja. Mora biti numerički.
 Napišite kada pokrenuti čuvar zaslona nakon navedenih milisekundi. Mora biti numerički.
@@ -515,7 +505,6 @@ Postavlja kernel tako da vas pita za argument pri pokretanju.
 Pokreće način održavanja. Ovo onemogućava više računa.
 Svaki pokretač će provjeravati ima li ažuriranja.
 Prilikom promjene jezika promijenite nazive mjeseci, kalendar itd.
-Ako se jezgro pokrene, postaviće root lozinku.
 Držite poruke o ispitivanju hardvera nečujnim.
 Prikaži poruku dana prije prikaza ekrana za prijavu.
 Očistite ekran prije prikaza ekrana za prijavu.
@@ -566,9 +555,6 @@ Atribut je uspješno uklonjen.
 Dodavanje atributa nije uspjelo.
 Uklanjanje atributa nije uspjelo.
 Zamjenjuje riječ ili izraz drugom u nizu
-Nivo crvene boje je premašen. Bilo je {0}.
-Prekoračen nivo zelene boje. Bilo je {0}.
-Prekoračen nivo plave boje. Bilo je {0}.
 Aktivirajte prave boje
 Deblokiranje {0} nije uspjelo.
 {0} je već blokiran.
@@ -644,7 +630,6 @@ Odgoda u milisekundama
 Koliko milisekundi čekati prije sljedećeg pisanja?
 Omogućava vam korištenje SSH FTP servera
 Nema pomoći za naredbu "{0}".
-Nevažeća VT sekvenca za RGB boju.
 Boja sekundne trake
 Boja trake minuta
 Boja sati Bar
@@ -706,7 +691,6 @@ Izlazi iz ZIP ljuske
 Navodi sve datoteke unutar arhive
 Izdvaja datoteku u navedeni ili trenutni direktorij
 Menja direktorijum arhive
-Navedena naredba ZIP ljuske nije pronađena.
 Direktorij {0} ne postoji
 Arhivski direktorij {0} ne postoji
 Maks. Broj pozicija
@@ -784,7 +768,6 @@ Navodi sve podržane kodne stranice
 Koje varijable kompajlera su omogućene u aplikaciji?
 Testovi koji podižu određeni događaj
 Testovi za ispitivanje hardvera
-Testira sakupljač smeća
 Izlazi iz testne ljuske i pokreće jezgru
 Izlazi iz testne ljuske i zatvara jezgru
 Sprema trenutni direktorij u konfiguracijsku datoteku jezgre
@@ -854,13 +837,11 @@ Izlazi iz ljuske RSS i vraća se u jezgru
 Mijenja vezu do feeda
 Navodi sve sažetke sadržaja
 Čita sažetak sadržaja u web pregledniku
-Navedena naredba RSS ljuske nije pronađena.
 Nevažeći RSS2 sažetak sadržaja.
 Nevažeći RSS1 feed.
 Nevažeći Atom feed.
 Unesite URL RSS kanala:
 Nevažeća vrsta RSS izvora.
-Nepoznata greška ljuske:
 Dobiva informacije o članku
 Broj članka ne može biti veći od dostupnih članaka.
 Naslov:

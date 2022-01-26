@@ -39,7 +39,6 @@ Zaporka {0}:
 Pogrešna lozinka.
 Korisnik je onemogućen.
 Pogrešno korisničko ime.
-Pogreška pri pokušaju raščlanjivanja rezerviranih mjesta. {0} - Trag snopa:
 Pogreška pri pokušaju raščlanjivanja rezerviranih mjesta. {0}
 Pogreška prilikom pokušaja dodavanja korisničkog imena.
 usrmgr: Stvaranje korisničkog imena {0} ...
@@ -58,7 +57,6 @@ Zatraženi čuvar zaslona {0} nije pronađen.
 Čuvar zaslona ne može se učitati zbog sljedećeg:
 Pri ispisu teksta postoji ozbiljna pogreška.
 Došlo je do pogreške prilikom pokušaja stvaranja konfiguracije.
-Pogreška pri pokušaju oslobađanja RAM-a: {0} - Nastavak ...
 Mod se ne može učitati zbog sljedećeg:
 mod: Učitavanje modova ...
 mod: Zaustavljanje modova ...
@@ -72,7 +70,6 @@ Korisničko ime za {0}:
 Lozinka za {0}:
 Povezano sa {0}
 Pogreška kod pokušaja povezivanja sa {0}: {1}
-Trag snopa: {2}
 Lokalni direktorij {0} ne postoji.
 Unesite lokalni direktorij. ".." vratiti se.
 Imenik {0} nije pronađen.
@@ -103,7 +100,6 @@ Prikazuje zaslon pomoći
 Navodi lokalni imenik
 Navodi udaljeni imenik
 Prenosi lokalnu datoteku u udaljeni direktorij koristeći binarni ili tekst
-FTP poruka: Zatražena naredba {0} nije pronađena. Pogledajte "pomoć" za popis dostupnih naredbi navedenih na FTP shellu.
 Nije uspjelo dobivanje svojstava za adapter {0}
 Broj adaptera:
 Naziv adaptera:
@@ -211,7 +207,6 @@ Odspojite uređaj za uklanjanje pogrešaka
 Popis povezanih uređaja za uklanjanje pogrešaka
 Uređaj za uklanjanje pogrešaka {0} nije pronađen.
 Uređaj {0} isključen.
-Pogreška u vezi: {0}
 Otklanjanje pogrešaka na svim adresama putem porta {0}.
 Nisu navedeni argumenti. Savjet: Navedite više argumenata odvojenih razmacima
 Alias je već pronađen: {0}
@@ -223,7 +218,6 @@ Nije moguće ukloniti direktorij: {0}
 Vremenska zona nije točno navedena.
 Nevažeći izbor profila.
 Pokušaj povezivanja sa {0} s profilom {1} ...
-Naredba {0} nije pronađena. Pogledajte naredbu "help" za popis naredbi.
 Nije uspjelo dobiti svojstva IPv6 za adapter {0}. Nastavak ...
 IPv4 podaci:
 IPv6 podaci:
@@ -381,7 +375,6 @@ Izrađuje novu datoteku
 Datoteka već postoji.
 Pogreška prilikom pokušaja izrade datoteke: {0}
 Otvaranje datoteke nije uspjelo. Izlaz iz ljuske ...
-Navedena naredba za uređivanje teksta nije pronađena.
 Navodi dostupne naredbe
 Izlazi iz uređivača teksta i sprema nespremljene promjene
 Ispisuje sadržaj datoteke s brojevima linija na konzolu
@@ -438,9 +431,6 @@ Unesen je nevažeći odjeljak. Molim te, vrati se.
 Vrati se ...
 Omogućiti
 Onemogući
-Napišite root lozinku koju želite postaviti. Ne brinite; lozinka je prikazana zvjezdicama.
-Promijeniti root lozinku?
-Postavi root lozinku ...
 Napišite daljinski port za ispravljanje pogrešaka. Mora biti numerička i ne smije se već koristiti. U suprotnom, udaljeni program za ispravljanje pogrešaka neće uspjeti otvoriti port.
 Napišite koliko puta bi naredba "" get "" trebala ponoviti neuspješna preuzimanja. Mora biti numerički.
 Napišite kada pokrenuti čuvar zaslona nakon određenih milisekundi. Mora biti numerički.
@@ -515,7 +505,6 @@ Postavlja jezgru tako da zatraži argument za pokretanje.
 Aktivira način održavanja. Ovo onemogućava više računa.
 Svakim pokretanjem provjerit će ima li ažuriranja.
 Pri promjeni jezika promijenite nazive mjeseci, kalendar itd.
-Ako je kernel pokrenut, postavit će root lozinku.
 Nemojte šutjeti poruke sondiranja hardvera.
 Prikaži poruku dana prije prikazivanja zaslona za prijavu.
 Očisti zaslon prije prikazivanja zaslona za prijavu.
@@ -566,9 +555,6 @@ Atribut je uspješno uklonjen.
 Dodavanje atributa nije uspjelo.
 Uklanjanje atributa nije uspjelo.
 Riječ ili frazu zamjenjuje drugom u retku
-Premašena je razina crvene boje. Bilo je {0}.
-Prekoračena je razina zelene boje. Bilo je {0}.
-Premašena je razina plave boje. Bilo je {0}.
 Aktivirajte prave boje
 Deblokiranje korisnika {0} nije uspjelo.
 {0} je već blokiran.
@@ -644,7 +630,6 @@ Kašnjenje u milisekundama
 Koliko milisekundi treba pričekati prije sljedećeg pisanja?
 Omogućuje vam upotrebu SSH FTP poslužitelja
 Nema pomoći za naredbu "{0}".
-Sequenza VT invalida per u culore RGB.
 Culore di Seconds Bar
 Culore di Minute Bar
 Bar di Culore di l'ore
@@ -706,7 +691,6 @@ Esce da u shell ZIP
 Elenca tutti i fugliali in l'archiviu
 Estrae un fugliale in un repertoriu specificatu o un repertoriu attuale
 Cambia l'annuariu d'archiviu
-U cumandamentu di cunchiglia ZIP specificatu ùn hè micca truvatu.
 U Directory {0} ùn esiste micca
 L'archiviu {0} ùn esiste micca
 Conti di Posizioni Max
@@ -784,7 +768,6 @@ Elenca tutte e pagine di codici supportate
 Chì variabili di compilatore sò attivate in l'applicazione?
 Prove chì alzanu l'avvenimentu specificu
 Prove chì sonda u hardware
-Pruvede u cullettore di i rifiuti
 Esce da u shell di prova è avvia u kernel
 Esce da u shell di prova è spegne u kernel
 Salva u cartulare attuale in u schedariu di cunfigurazione di u kernel
@@ -854,13 +837,11 @@ Esce da u shell RSS è torna à u kernel
 Cambia u ligame di alimentazione
 Elenca tutti i feed
 Leghje un alimentu in un navigatore web
-U cumandariu di cunchiglia RSS specificatu ùn hè micca truvatu.
 Flussu RSS2 invalidu.
 Flussu RSS1 invalidu.
 Feed Atom invalidu.
 Inserite una URL di alimentazione RSS:
 Tipu di alimentazione RSS invalidu.
-Errore di cunchiglia scunnisciutu:
 Ottiene l'infurmazioni nantu à l'articulu
 U numeru d'articulu ùn puderia micca esse più grande di l'articuli dispunibili.
 Titulu:

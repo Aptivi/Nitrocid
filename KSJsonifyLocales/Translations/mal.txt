@@ -39,7 +39,6 @@ Kata laluan {0}:
 Salah kata laluan.
 Pengguna dinyahdayakan.
 Nama pengguna salah.
-Ralat cuba menghurai ruang letak. {0} - Jejak tindanan:
 Ralat cuba menghurai ruang letak. {0}
 Ralat cuba menambah nama pengguna.
 usrmgr: Mencipta nama pengguna {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} tidak dijumpai dalam pangkalan data. Semak nama dan cuba lagi.
 Screensaver tidak boleh dimuatkan kerana perkara berikut:
 Terdapat ralat yang serius apabila mencetak teks.
 Terdapat ralat cuba mencipta konfigurasi.
-Ralat cuba untuk membebaskan RAM: {0} - Melanjutkan ...
 Mod tidak boleh dimuatkan kerana perkara berikut:
 mod: Memuat mod ...
 mod: Menghentikan mod ...
@@ -72,7 +70,6 @@ Nama pengguna untuk {0}:
 Kata laluan untuk {0}:
 Disambungkan ke {0}
 Ralat ketika cuba menyambung ke {0}: {1}
-Stack Trace: {2}
 Direktori setempat {0} tidak wujud.
 Masukkan direktori setempat. ".." untuk kembali semula.
 Direktori {0} tidak dijumpai.
@@ -103,7 +100,6 @@ Menunjukkan skrin bantuan
 Senarai direktori setempat
 Senarai direktori jauh
 Muat naik fail setempat ke direktori jauh menggunakan binari atau teks
-Mesej FTP: Perintah yang diminta {0} tidak dijumpai. Lihat 'help' untuk senarai arahan yang ada yang dinyatakan pada shell FTP.
 Gagal mendapatkan sifat untuk penyesuai {0}
 Nombor Adapter:
 Nama Penyesuai:
@@ -211,7 +207,6 @@ Putuskan sambungan peranti debug
 Senarai peranti debug yang disambungkan
 Peranti debug {0} tidak dijumpai.
 Peranti {0} terputus.
-Ralat berkaitan: {0}
 Mendengar debug pada semua alamat menggunakan port {0}.
 Tiada hujah yang dinyatakan. Petunjuk: Tentukan pelbagai argumen yang dipisahkan oleh ruang
 Alias sudah dijumpai: {0}
@@ -223,7 +218,6 @@ Tidak dapat menghapus direktori: {0}
 Waktu lapang dinyatakan dengan salah.
 Pemilihan profil tidak sah.
 Cuba untuk menyambung ke {0} dengan profil {1} ...
-Perintah {0} tidak dijumpai. Lihat arahan "help" untuk senarai arahan.
 Gagal mendapatkan sifat IPv6 untuk penyesuai {0}. Meneruskan ...
 Maklumat IPv4:
 Maklumat IPv6:
@@ -381,7 +375,6 @@ Membuat fail baru
 Fail sudah ada.
 Ralat semasa membuat fail: {0}
 Gagal membuka fail. Keluar dari cengkerang ...
-Perintah penyunting teks yang ditentukan tidak dijumpai.
 Menyenaraikan arahan yang ada
 Keluar dari penyunting teks dan simpan perubahan yang belum disimpan
 Mencetak kandungan fail dengan nombor baris ke konsol
@@ -438,9 +431,6 @@ Bahagian tidak sah dimasukkan. Tolong balik.
 Pergi balik...
 Aktifkan
 Lumpuhkan
-Tulis kata laluan root yang akan ditetapkan. Jangan bimbang; kata laluan ditunjukkan sebagai bintang.
-Tukar Kata Laluan Akar?
-Tetapkan Kata Laluan Akar ...
 Tulis port debugger jauh. Ia mesti berangka, dan tidak boleh digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port.
 Tulis berapa kali arahan "" get "" harus mencuba semula muat turun yang gagal. Ia mesti berangka.
 Tulis bila hendak melancarkan screensaver setelah milisaat yang ditentukan. Ia mesti berangka.
@@ -515,7 +505,6 @@ Menyiapkan kernel sehingga meminta anda untuk berdebat semasa boot.
 Mencetuskan mod penyelenggaraan. Ini melumpuhkan banyak akaun.
 Setiap permulaan, ia akan memeriksa kemas kini.
 Semasa menukar bahasa, ubah nama bulan, kalendar, dll.
-Sekiranya kernel dimulakan, ia akan menetapkan kata laluan root.
 Pastikan mesej penyiasatan perkakasan senyap.
 Tunjukkan Mesej Hari sebelum memaparkan skrin masuk.
 Kosongkan skrin sebelum memaparkan skrin masuk.
@@ -566,9 +555,6 @@ Atribut berjaya dikeluarkan.
 Gagal menambahkan atribut.
 Gagal membuang atribut.
 Menggantikan perkataan atau frasa dengan yang lain dalam satu baris
-Tahap warna merah melebihi. Ia adalah {0}.
-Tahap warna hijau melebihi. Ia adalah {0}.
-Tahap warna biru melebihi. Ia adalah {0}.
 Aktifkan warna sebenar
 Gagal menyahsekat {0}.
 {0} sudah disekat.
@@ -644,7 +630,6 @@ Kelewatan dalam Milisaat
 Berapa milisaat yang perlu ditunggu sebelum membuat penulisan seterusnya?
 Membolehkan anda menggunakan pelayan SSH FTP
 Tiada bantuan untuk arahan "{0}".
-Urutan VT tidak sah untuk warna RGB.
 Warna Bar Kedua
 Warna Bar Minit
 Warna Bar Jam
@@ -706,7 +691,6 @@ Keluar dari shell ZIP
 Menyenaraikan semua fail di dalam arkib
 Ekstrak fail ke direktori tertentu atau direktori semasa
 Menukar direktori arkib
-Perintah shell ZIP yang ditentukan tidak dijumpai.
 Direktori {0} tidak wujud
 Direktori arkib {0} tidak wujud
 Kiraan Posisi Maks
@@ -784,7 +768,6 @@ Menyenaraikan semua halaman kod yang disokong
 Pemboleh ubah penyusun apa yang diaktifkan dalam aplikasi?
 Ujian meningkatkan acara tertentu
 Ujian untuk memeriksa perkakasan
-Menguji pengutip sampah
 Keluar dari shell uji dan memulakan kernel
 Keluar dari shell uji dan mematikan kernel
 Menyimpan direktori semasa ke fail konfigurasi kernel
@@ -854,13 +837,11 @@ Keluar dari shell RSS dan kembali ke kernel
 Menukar pautan suapan
 Menyenaraikan semua suapan
 Membaca suapan dalam penyemak imbas web
-Perintah shell RSS yang ditentukan tidak dijumpai.
 Suapan RSS2 tidak sah.
 Suapan RSS1 tidak sah.
 Suapan Atom tidak sah.
 Masukkan URL suapan RSS:
 Jenis suapan RSS tidak sah.
-Ralat shell tidak diketahui:
 Mendapat maklumat artikel
 Nombor artikel tidak boleh lebih besar daripada artikel yang tersedia.
 Tajuk:

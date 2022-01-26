@@ -39,7 +39,6 @@ Special characters are not allowed.
 Wrong password.
 User is disabled.
 Wrong username.
-Error trying to parse placeholders. {0} - Stack trace:
 Error trying to parse placeholders. {0}
 Error trying to add username.
 usrmgr: Creating username {0}...
@@ -58,7 +57,6 @@ Screensaver {0} not found in database. Check the name and try again.
 Screensaver can't be loaded because of the following: 
 There is a serious error when printing text.
 There is an error trying to create configuration.
-Error trying to free RAM: {0} - Continuing...
 Mod can't be loaded because of the following: 
 mod: Loading mods...
 mod: Stopping mods...
@@ -72,7 +70,6 @@ Username for {0}:
 Password for {0}: 
 Connected to {0}
 Error when trying to connect to {0}: {1}
-Stack Trace: {2}
 Local directory {0} doesn't exist.
 Enter a local directory. ".." to go back.
 Directory {0} not found.
@@ -103,7 +100,6 @@ Shows help screen
 Lists local directory
 Lists remote directory
 Uploads local file to remote directory using binary or text
-FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell.
 Failed to get properties for adapter {0}
 Adapter Number:
 Adapter Name:
@@ -211,7 +207,6 @@ Disconnect a debug device
 Lists debugging devices connected
 Debug device {0} not found.
 Device {0} disconnected.
-Error in connection: {0}
 Debug listening on all addresses using port {0}.
 No arguments specified. Hint: Specify multiple arguments separated by spaces
 Alias already found: {0}
@@ -223,7 +218,6 @@ Unable to remove directory: {0}
 Timezone is specified incorrectly.
 Invalid profile selection.
 Trying to connect to {0} with profile {1}...
-Command {0} not found. See the "help" command for the list of commands.
 Failed to get IPv6 properties for adapter {0}. Continuing...
 IPv4 information:
 IPv6 information:
@@ -381,7 +375,6 @@ Makes a new file
 File already exists.
 Error trying to create a file: {0}
 Failed to open file. Exiting shell...
-The specified text editor command is not found.
 Lists available commands
 Exits the text editor and save unsaved changes
 Prints the contents of the file with line numbers to the console
@@ -438,9 +431,6 @@ Invalid section entered. Please go back.
 Go Back...
 Enable
 Disable
-Write the root password to be set. Don't worry; the password are shown as stars.
-Change Root Password?
-Set Root Password...
 Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
 Write how many times the "get" command should retry failed downloads. It must be numeric.
 Write when to launch screensaver after specified milliseconds. It must be numeric.
@@ -515,7 +505,6 @@ Sets up the kernel so it prompts you for argument on boot.
 Triggers maintenance mode. This disables multiple accounts.
 Each startup, it will check for updates.
 When switching languages, change the month names, calendar, etc.
-If the kernel is started, it will set root password.
 Keep hardware probing messages silent.
 Show Message of the Day before displaying login screen.
 Clear screen before displaying login screen.
@@ -566,9 +555,6 @@ Attribute has been removed successfully.
 Failed to add attribute.
 Failed to remove attribute.
 Replaces a word or phrase with another one in a line
-Red color level exceeded. It was {0}.
-Green color level exceeded. It was {0}.
-Blue color level exceeded. It was {0}.
 Activate true colors
 Failed to unblock {0}.
 {0} is already blocked.
@@ -644,7 +630,6 @@ Delay in Milliseconds
 How many milliseconds to wait before making the next write?
 Lets you use an SSH FTP server
 No help for command "{0}".
-Invalid VT sequence for RGB color.
 Color of Seconds Bar
 Color of Minutes Bar
 Color of Hours Bar
@@ -706,7 +691,6 @@ Exits the ZIP shell
 Lists all files inside the archive
 Extracts a file to a specified directory or a current directory
 Changes archive directory
-The specified ZIP shell command is not found.
 Directory {0} doesn't exist
 Archive directory {0} doesn't exist
 Max Positions Count
@@ -784,7 +768,6 @@ Lists all supported codepages
 What compiler variables are enabled in the application?
 Tests raising the specific event
 Tests probing the hardware
-Tests the garbage collector
 Exits the test shell and starts the kernel
 Exits the test shell and shuts down the kernel
 Saves the current directory to kernel configuration file
@@ -854,13 +837,11 @@ Exits RSS shell and returns to kernel
 Changes the feed link
 Lists all feeds
 Reads a feed in a web browser
-The specified RSS shell command is not found.
 Invalid RSS2 feed.
 Invalid RSS1 feed.
 Invalid Atom feed.
 Enter an RSS feed URL:
 Invalid RSS feed type.
-Unknown shell error:
 Gets the article info
 Article number couldn't be bigger than the available articles.
 Title:

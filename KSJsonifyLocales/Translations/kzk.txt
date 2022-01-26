@@ -39,7 +39,6 @@ Arnayı tañbalarğa jol berilmeydi.
 Parol qate.
 Qoldanwşı estildi.
 Qate qoldanwşı atı.
-Orın toltırğıştardı taldawda qate. {0} - Stek izderi:
 Orın toltırğıştardı taldawda qate. {0}
 Paydalanwşı atın qoswda qate.
 usrmgr: Paydalanwşı atı jasalwda {0} ...
@@ -58,7 +57,6 @@ Derekqorda {0} ékran saqtawşısı tabılmadı. Atın tekserip, qaytalap köri�
 Ékran saqtağıştı jüktew mümkin emes, mümkin:
 Mätindi basıp şığarw kezinde elewli qate bar.
 Konfïgwracïyanı qurw kezinde qate payda boldı.
-JJQ jiberw kezinde qate: {0} - Jalğastırılwda ...
 Modwldi jüktew mümkin emes, mümkin:
 rejïm: rejïmder jüktelwde ...
 rejïm: rejïmderdi toqtatw ...
@@ -72,7 +70,6 @@ Basqa serverge qosılmas burın serverden ajıratw kerek
 {0} qupïya sözi:
 {0} qosıldı
 {0} qosılw kezinde qate payda boldı: {1}
-Stek izdew: {2}
 {0} jergilikti katalogı joq.
 Jergilikti katalogtı jasañız. «..» qaytw üşin.
 {0} katalogı tabılmadı.
@@ -103,7 +100,6 @@ Anıqtama ékranınıñ bolwı
 Jergilikti katalogtı qoldanw
 Qaşıqtağı katalogtı şığarwşılar
 Jergilikti fayldı ekilik nemese mätindi qoldanw qaşıqtağı katalogqa jükteydi
-FTP xabarlaması: Suralğan {0} tapsırmalar tabılmadı. «Anıqtamadan» FTP qabattarında qol jetimdi komandalar tizbegi.
 {0} adapteriniñ sïpattarı alınbadı.
 Adapter mümkindigi:
 Adapter atawı:
@@ -211,7 +207,6 @@ Jöndew qurılısın ajıratıñız
 Qosılğan otladka qızmetiniñ tizimi
 {0} tüzetw tabısı tabılmadı.
 Qurılğı {0} ajıratıldı.
-Baylanıs qatesi: {0}
 {0} portı arqılı barlıq adresterdi tıñdawdı dayındaw.
 Argwmentter körsetilmegen. Keñes: bos orınmen bölingen kelesi argwmentterdi körsetiñiz
 Bürkenşik attar tabıldı: {0}
@@ -223,7 +218,6 @@ Katalogtı alwğa mümkin emes: {0}
 Waqıt beldewi qate jiberiledi.
 Profïl tañdawı jaramsız.
 {0} profïlimen {1} qosılwğa tırıswda ...
-{0} pärmeni tabılmadı. Pärmender tizimi üşin «anıqtama» twralı aqparat.
 {0} adapteri üşin IPv6 sïpattarı alınbadı. Jalğastırılwda ...
 IPv4 twralı aqparat:
 IPv6 twralı aqparat:
@@ -381,7 +375,6 @@ Jaña fayl
 Fayldannan bar.
 Fayl jasaw qate: {0}
 Aşılmadı. Qabıqtan şığw ...
-Körsetilgen mätindik redaktor komandası tabılmadı.
 Qoldaw komandaların belgilew
 Mätindik redaktordan şığadı jäne saqtalmağan özgertwlerdi saqtaydı
 Jol erejeleri fayl faylınıñ negizi konsolge basıp şığarıldı
@@ -438,9 +431,6 @@ Jaramsız bölim engizildi. Ötinemin, qaytıñız.
 Qaytıp kelw ...
 Qosw
 Öşirw
-Ornatılatın tübirlik qupïya sözdi jazıñız. Wayımdamañız; parol juldızşa sïyaqtı.
-Qupïya sözdi qoldanw kerek pe?
-Tübirlik qupïya sözdi qurastırw ...
 Qaşıqtağı otladçïk portın jazıñız. Ol cïfrlıq bolw kerek jäne qoldanılmawı kerek. Äytpese, qaşıqtağı otladçïk porttı aşa almaydı.
 Sätsiz jüktewlerdi «alw» pärmeni birneşe ret qaytalaw kerektigin jazıñız. Ol sandıq bolwı kerek.
 Körsetilgen mïllïsekwndtardan keyin ékran saqtağıştı qaşan iske asırw kerektigin jazıñız. Ol sandıq bolwı kerek.
@@ -515,7 +505,6 @@ Yadronı ornatadı, osılayşa ol jüktew kezinde argwment şaqıradı.
 Texnïkalıq qızmet körsetw rejïmin qosadı. Bul eseptik jazbanı öşiredi.
 Är iske kiris kezde ol jañartwlardı tekseredi.
 Tilderdi awıstırğan kezde ay atawların, küntizbeni jäne t.b.
-Eger yadro ​​iske qosılsa, ol qupïya sözdi ornatadı.
 Apparattı tekseretin xabarlardı ünsiz ustañız.
 Kündizgi xabardıñ körsetilwin körsetedi.
 Ékrandı körsetiñiz.
@@ -566,9 +555,6 @@ Atrïbwt sätti joyıldı.
 Atrïbwt qosılmadı.
 Atrïbwt joyılmadı.
 Sözdi nemese söz tirkesin basqa jolmen awıstırw
-Qızıl tüs erikken astı. Bul {0} boldı.
-Jasıl tüs därejesi astı. Bul {0} boldı.
-Kök tüs eriktigi. Bul {0} boldı.
 Nağız tüsterdi iske qosw
 {0} bögewden şığarılmadı.
 {0} buğattalğan.
@@ -644,7 +630,6 @@ Mïlïsekwndtarda kidiris
 Kelesi jazbanı jasamas burın qanşa mïllïsekwnd kütw kerek?
 SSH FTP serveriniñ mümkindikterin beredi
 «{0}» pärmeni boyınşa kömek joq.
-VT rettelwi üşin RGB tüsi.
 Sekwnd jolağınıñ tüsi
 Eñ az jolağınıñ tüsi
 Sağat tüsi jolağı
@@ -706,7 +691,6 @@ ZIP qabığınan şığadı
 Murağattağı barlıq fayldardı anıqtaydı
 Fayldı nusqaw katalogqa nemese basqarwdağı katalogqa şığarıldı
 Murağat katalogın özgertedi
-Körsetilgen ZIP qabığınıñ pärmeni tabılmadı.
 {0} katalogı joq
 {0} murağat katalogı joq
 Pozïcïyalardıñ maksïmaldı sanı
@@ -784,7 +768,6 @@ Barlıq qoldaw körsetw kodtıq better tizimin beredi
 Qoldanbada qanday kompïlyator aynımalısı bar?
 Belgili bir oqïğanı köteretin testter
 Apparattıq quraldı tekseretin testter
-Qoqıs jïnawşını tekseredi
 Sınaq qabığınan şığıp, yadro ​​iske qosıladı
 Sınaq qabığınan şığıp, yadro ​​jabıladı
 Ağımdağı katalogtı yadro ​​konfïgwracïya faylına saqtaydı
@@ -854,13 +837,11 @@ RSS qabığınan şığıp, yadroğa oraldı
 Fïd siltemesin özgertedi
 Barlıq arnalardı tanıstırw
 Arnanı veb -şolğışta oqıdı
-Belgïlengen RSS shell komandası tabılmadı.
 RSS2 arnası jaramsız.
 RSS1 arnası jaramsız.
 Atom fïdï jaramsız.
 RSS arnasınıñ URL mekenjayın engiziñiz:
 RSS arnasınıñ türi jaramsız.
-Qabıqtıñ belgisiz qatesi:
 Maqala twralı aqparat alw
 Maqala mümkindikteri qol jetimdi maqalalardan ülken jetw kerek.
 Atawı:

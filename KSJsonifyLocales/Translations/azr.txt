@@ -39,7 +39,6 @@ Xüsusi simvollara icazə verilmir.
 Parol səhvdir.
 İstifadəçi deaktivdir.
 Səhv istifadəçi adı.
-Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0} - Yığın izi:
 Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0}
 İstifadəçi adı əlavə olunarkən xəta baş verdi.
 usrmgr: İstifadəçi adı yaradılır {0} ...
@@ -58,7 +57,6 @@ Ekran qoruyucu {0} verilənlər bazasında tapılmadı. Adı yoxlayın və yenid
 Aşağıdakılara görə ekran qoruyucu yüklənə bilməz:
 Mətni çap edərkən ciddi bir səhv var.
 Konfiqurasiya yaratmağa çalışarkən bir səhv var.
-RAM-ı boşaltmağa cəhd zamanı xəta: {0} - Davam edir ...
 Aşağıdakılara görə mod yüklənə bilməz:
 mod: Yüklənən modlar ...
 mod: Modların dayandırılması ...
@@ -72,7 +70,6 @@ Başqa bir serverə qoşulmadan əvvəl serverdən ayrılmalısınız
 {0} üçün parol:
 {0} ilə əlaqəli
 {0} ilə əlaqə qurmağa cəhd zamanı xəta: {1}
-Yığın izi: {2}
 Yerli kataloqu {0} mövcud deyil.
 Yerli bir qovluq daxil edin. ".." geriyə qayıtmaq.
 {0} qovluğu tapılmadı.
@@ -103,7 +100,6 @@ Yardım ekranını göstərir
 Yerli qovluğu sadalayır
 Uzaq qovluğu sadalayır
 Yerli faylı ikili və ya mətn istifadə edərək uzaq qovluğa yükləyir
-FTP mesajı: İstədiyiniz {0} əmri tapılmadı. FTP qabığında göstərilən mövcud əmrlərin siyahısı üçün 'kömək' bölməsinə baxın.
 {0} adapteri üçün xüsusiyyətlər alınmadı
 Adapter nömrəsi:
 Adapter adı:
@@ -211,7 +207,6 @@ Ayıklama cihazını ayırın
 Bağlı ayıklama cihazlarını siyahıya alır
 Ayaq cihazı {0} tapılmadı.
 Cihaz {0} kəsildi.
-Bağlantıdakı xəta: {0}
 {0} limanından istifadə edərək bütün ünvanlarda dinləmə ayıklayın.
 Arqument göstərilməyib. İpucu: boşluqlarla ayrılmış çoxsaylı arqumentləri göstərin
 Takma adlar artıq tapılıb: {0}
@@ -223,7 +218,6 @@ Kataloq silinmədi: {0}
 Saat qurşağı səhv göstərilib.
 Yanlış profil seçimi.
 {0} ilə {1} profil ilə əlaqə qurmağa çalışırsınız ...
-{0} əmri tapılmadı. Komutların siyahısı üçün "kömək" əmrinə baxın.
 {0} adapteri üçün IPv6 xüsusiyyətləri əldə edilmədi. Davam edir ...
 IPv4 məlumatları:
 IPv6 məlumatları:
@@ -381,7 +375,6 @@ Yeni bir sənəd hazırlayır
 Fayl artıq mövcuddur.
 Fayl yaratmağa cəhd zamanı xəta baş verdi: {0}
 Fayl açılmadı. Qabıqdan çıxılır ...
-Göstərilən mətn redaktoru əmri tapılmadı.
 Mövcud əmrləri sadalayır
 Mətn redaktorundan çıxın və qeyd olunmayan dəyişiklikləri qeyd edin
 Faylın məzmununu xətt nömrələri ilə konsola yazdırır
@@ -438,9 +431,6 @@ Yanlış bölmə daxil edildi. Xahiş edirəm geri qayıdın.
 Qeri gayıt...
 Aktiv edin
 Deaktiv edin
-Qurulacaq kök şifrəni yazın. Narahat olma; parol ulduz şəklində göstərilir.
-Kök Şifrə dəyişdirilsin?
-Kök şifrəsini təyin edin ...
 Uzaqdan bir ayıklayıcı portu yazın. Rəqəmsal olmalıdır və artıq istifadə edilməməlidir. Əks təqdirdə, uzaqdan ayıklayıcı portu aça bilmir.
 "" Get "" əmrinin uğursuz yüklənmələri neçə dəfə təkrar etməsi lazım olduğunu yazın. Rəqəmsal olmalıdır.
 Müəyyən edilmiş millisaniyədən sonra ekran qoruyucusunu nə vaxt işə salacağınızı yazın. Rəqəmsal olmalıdır.
@@ -515,7 +505,6 @@ Nüvəni quraşdırır ki, açılışda mübahisəni istəsin.
 Baxım rejimini işə salır. Bu birdən çox hesabı deaktiv edir.
 Hər başlanğıcda yeniləmələri yoxlayacaq.
 Dilləri dəyişdirərkən ay adlarını, təqvimini və s. Dəyişdirin.
-Nüvə başlasa, kök şifrəsini təyin edəcəkdir.
 Təchizat yoxlama mesajlarını səssiz saxlayın.
 Giriş ekranını göstərmədən əvvəl Günün Mesajını göstərin.
 Giriş ekranını göstərmədən əvvəl ekranı silin.
@@ -566,9 +555,6 @@ Atribut uğurla silindi.
 Atribut əlavə etmək alınmadı.
 Atribut silinə bilmədi.
 Bir söz və ya ifadəni bir sətirdə başqası ilə əvəz edir
-Qırmızı rəng səviyyəsi aşıldı. {0} idi.
-Yaşıl rəng səviyyəsi aşıldı. {0} idi.
-Mavi rəng səviyyəsi aşıldı. {0} idi.
 Həqiqi rəngləri aktivləşdirin
 {0} blokdan çıxarmaq alınmadı.
 {0} artıq bloklanıb.
@@ -644,7 +630,6 @@ Milisaniyədə gecikmə
 Növbəti yazmadan əvvəl neçə milisaniyə gözləmək lazımdır?
 SSH FTP serverindən istifadə etməyə imkan verir
 "{0}" əmri üçün kömək yoxdur.
-RGB rəng üçün etibarsız VT ardıcıllığı.
 Rəng Saniyələr Çubuğu
 Dəqiqələr Çubuğu
 Saatların Rəngi
@@ -706,7 +691,6 @@ ZIP qabığından çıxır
 Arxivdəki bütün faylları siyahıya alır
 Bir faylı müəyyən bir qovluğa və ya cari bir qovluğa çıxarır
 Arxiv qovluğunu dəyişdirir
-Göstərilən ZIP qabığı əmri tapılmadı.
 {0} kataloqu mövcud deyil
 Arxiv kataloqu {0} mövcud deyil
 Maksimum mövqe sayı
@@ -784,7 +768,6 @@ Bütün dəstəklənən kod səhifələrini sadalayır
 Tətbiqdə hansı kompilyator dəyişənləri aktivdir?
 Xüsusi hadisəni artıran testlər
 Donanımı yoxlayan testlər
-Zibil toplayıcısını yoxlayır
 Test qabığından çıxır və nüvəni işə salır
 Test qabığından çıxır və nüvəni bağlayır
 Mövcud qovluğu kernel konfiqurasiya sənədinə saxlayır
@@ -854,13 +837,11 @@ RSS qabığından çıxır və kernelə qayıdır
 Feed bağlantısını dəyişdirir
 Bütün lentləri sadalayır
 Veb brauzerində bir lent oxuyur
-Göstərilən RSS shell əmri tapılmadı.
 Yanlış RSS2 lent.
 Yanlış RSS1 axını.
 Yanlış Atom yemi.
 RSS lent URL-i daxil edin:
 Yanlış RSS lent növü.
-Naməlum qabıq xətası:
 Məqalə məlumatını alır
 Məqalə nömrəsi mövcud məqalələrdən böyük ola bilməz.
 Başlıq:

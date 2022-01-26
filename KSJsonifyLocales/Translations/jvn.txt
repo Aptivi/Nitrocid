@@ -39,7 +39,6 @@ Sandhi {0}:
 Tembung sandhi sing salah
 Pangguna dipateni
 Jeneng pangguna salah.
-Kesalahan nyoba ngrampungake placeholder. {0} - Trek tumpukan:
 Kesalahan nyoba ngrampungake placeholder. {0}
 Kesalahan nyoba nambah jeneng panganggo.
 usrmgr: Nggawe jeneng pangguna {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} ora ditemokake ing basis data. Priksa jeneng banjur coba maneh.
 Screensaver ora bisa dimuat amarga ing ngisor iki:
 Ana kesalahan serius nalika nyithak teks.
 Ana kesalahan nalika nyoba nggawe konfigurasi.
-Kesalahan nyoba mbebasake RAM: {0} - Terus ...
 Mod ora bisa dimuat amarga ing ngisor iki:
 mod: Memuat mods ...
 mod: Nghentikan mods ...
@@ -72,7 +70,6 @@ Jeneng pangguna kanggo {0}:
 Tembung sandhi kanggo {0}:
 Nyambung menyang {0}
 Kesalahan nalika nyoba nyambung menyang {0}: {1}
-Lacak Tumpukan: {2}
 Direktori lokal {0} ora ana.
 Ketik direktori lokal. ".." kanggo bali.
 Direktori {0} ora ditemokake.
@@ -103,7 +100,6 @@ Nuduhake layar pitulung
 Dhaptar direktori lokal
 Dhaptar direktori remot
 Ngunggah file lokal menyang direktori jarak jauh nggunakake binar utawa teks
-Pesen FTP: Prentah sing dijaluk {0} ora ditemokake. Deleng 'pitulung' kanggo dhaptar perintah sing kasedhiya sing ditemtokake ing cangkang FTP.
 Gagal entuk properti kanggo adaptor {0}
 Nomer adaptor:
 Jeneng Adaptor:
@@ -211,7 +207,6 @@ Medhot sambungan piranti debug
 Dhaptar piranti debugging sing disambungake
 Piranti debug {0} ora ditemokake.
 Piranti {0} pedhot.
-Kesalahan ing sambungan: {0}
 Debug ngrungokake kabeh alamat nggunakake port {0}.
 Ora ana argumen sing ditemtokake. Petunjuk: Nemtokake macem-macem bantahan sing dipisahake kanthi spasi
 Alias ​​wis ditemokake: {0}
@@ -223,7 +218,6 @@ Ora bisa mbusak direktori: {0}
 Zona wektu ditemtokake kanthi salah.
 Pilihan profil ora valid.
 Nyoba nyambung menyang {0} karo profil {1} ​​...
-Prentah {0} ora ditemokake. Deleng prentah "pitulung" kanggo dhaptar perintah.
 Gagal entuk properti IPv6 kanggo adaptor {0}. Terus ...
 Informasi IPv4:
 Informasi IPv6:
@@ -381,7 +375,6 @@ Nggawe file anyar
 File wis ana.
 Kesalahan nyoba nggawe file: {0}
 Gagal mbukak file. Nampilake cangkang ...
-Prentah editor teks sing ditemtokake ora ditemokake.
 Dhaptar printah sing kasedhiya
 Metu editor teks lan nyimpen pangowahan sing durung disimpen
 Nyithak isi file kanthi nomer baris menyang konsol
@@ -438,9 +431,6 @@ Bagean salah mlebu. Tulung baleni.
 Bali ...
 Aktifake
 Pateni
-Tulis tembung sandhi kanggo disetel. Aja padha sumelang; sandhi ditampilake minangka lintang.
-Ganti Sandi ROOT?
-Setel Sandi ROOT ...
 Tulis port debugger jarak jauh. Kudu angka, lan kudu ora digunakake. Yen ora, debugger jarak jauh bakal gagal mbukak port.
 Tulis kaping pirang-pirang printah "entuk" kudu nyoba maneh undhuhan sing gagal. Kudu angka.
 Tulis nalika ngluncurake screensaver sawise milidetik sing ditemtokake. Kudu angka.
@@ -515,7 +505,6 @@ Nyetel kernel supaya sampeyan njaluk bantahan nalika boot.
 Mode pemeliharaan pemicu. Iki mateni macem-macem akun.
 Saben wiwitan, bakal mriksa nganyari.
 Nalika ngoper basa, ganti jeneng wulan, tanggalan, lsp.
-Yen kernel diwiwiti, sandhi root bakal disetel.
 Tetep menengo pesen hardware mriksa.
 Tampilake Pesen Dina sadurunge nampilake layar login.
 Mbusak layar sadurunge nampilake layar login.
@@ -566,9 +555,6 @@ Atribut wis dijupuk kanthi sukses.
 Gagal nambahake atribut.
 Gagal mbusak atribut.
 Ngganti tembung utawa frase karo tembung liyane kanthi larik
-Tingkat warna abang ngluwihi. Nalika semana {0}.
-Tingkat warna ijo ngluwihi. Nalika semana {0}.
-Tingkat warna biru ngluwihi. Nalika semana {0}.
 Aktifake warna sejati
 Gagal mbukak blokir {0}.
 {0} wis diblokir.
@@ -644,7 +630,6 @@ Tundha ing Milidetik
 Pira milidetik sing kudu ditunggu sadurunge nulis sabanjure?
 Ngijini sampeyan nggunakake server SSH FTP
 Ora ana pitulung kanggo printah "{0}".
-Urutan VT ora valid kanggo warna RGB.
 Werna Bar Detik
 Werna Minutes Bar
 Werna Jam Bar
@@ -706,7 +691,6 @@ Metu saka cangkang ZIP
 Dhaptar kabeh file ing arsip
 Ngekstrak file menyang direktori sing ditemtokake utawa direktori saiki
 Owahi direktori arsip
-Prentah cangkang ZIP sing ditemtokake ora ditemokake.
 Direktori {0} ora ana
 Direktori arsip {0} ora ana
 Max Positions Count
@@ -784,7 +768,6 @@ Dhaptar kabeh codepage sing didhukung
 Apa variabel kompilator sing aktif ing aplikasi kasebut?
 Tes nambah acara tartamtu
 Tes nyoba piranti keras
-Nyoba tukang sampah
 Metu cangkang tes lan miwiti kernel
 Metu cangkang tes lan mateni kernel
 Simpen direktori saiki menyang file konfigurasi kernel
@@ -854,13 +837,11 @@ Metu cangkang RSS lan bali menyang kernel
 Ngganti link feed
 Dhaptar kabeh feed
 Maca feed ing browser web
-Prentah cangkang RSS sing ditemtokake ora ditemokake.
 Pakan RSS2 ora valid.
 Pakan RSS1 ora valid.
 Pakan Atom ora valid.
 Ketik URL feed RSS:
 Jinis feed RSS ora valid.
-Kesalahan cangkang sing ora dingerteni:
 Entuk info artikel
 Nomer artikel ora bisa luwih gedhe tinimbang artikel sing kasedhiya.
 Judul:

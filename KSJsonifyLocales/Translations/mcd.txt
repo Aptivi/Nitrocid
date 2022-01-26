@@ -39,7 +39,6 @@ lozinka na {0}:
 Pogrešna lozinka.
 Korisnikot e onevozmožen.
 Pogrešno korisničko ime.
-Greška vo obidot da se analiziraat postavkite. {0} - Traga na magacinot:
 Greška vo obidot da se analiziraat postavkite. {0}
 Greška pri obidot da se dodade korisničko ime.
 usrmgr: Se sozdava korisničko ime {0}...
@@ -58,7 +57,6 @@ Zaštitnikot na ekranot {0} ne e pronajden vo bazata na podatoci. Proverete go i
 Zaštitnikot na ekranot ne može da se včita poradi slednovo:
 Ima seriozna greška pri pečatenje tekst.
 Ima greška pri obidot da se sozdade konfiguracija.
-Greška pri obidot da se oslobodi RAM memorijata: {0} - Prodolžuvame...
 Mod ne može da se včita poradi slednovo:
 mod: se včituvaat modovi...
 mod: zapiranje na modovite...
@@ -72,7 +70,6 @@ Korisničko ime za {0}:
 Lozinka za {0}:
 Povrzan so {0}
 Greška pri obidot da se povrzete so {0}: {1}
-Stak Traga: {2}
 Lokalniot direktorium {0} ne postoi.
 Vnesete lokalen direktorium. „..“ da se vratam nazad.
 Direktoriumot {0} ne e pronajden.
@@ -103,7 +100,6 @@ Go prikažuva ekranot za pomoš
 Lista na lokalniot direktorium
 Lista na dalečinskiot direktorium
 Postavuva lokalna datoteka vo oddalečen direktorium koristejḱi binaren ili tekst
-FTP poraka: Baranata komanda {0} ne e pronajdena. Videte „pomoš“ za spisok so dostapni komandi navedeni na FTP školka.
 Ne uspea da se dobijat svojstva za adapterot {0}
 Broj na adapter:
 Ime na adapter:
@@ -211,7 +207,6 @@ Isklučete ured za otstranuvanje greški
 Gi naveduva povrzanite uredi za otstranuvanje greški
 Uredot za otstranuvanje greški {0} ne e pronajden.
 Uredot {0} e isklučen.
-Greška vo povrzuvanjeto: {0}
 Otstranete greški pri slušanjeto na site adresi so pomoš na portata {0}.
 Nema navedeni argumenti. Sovet: navedete poveḱe argumenti oddeleni so prazni mesta
 Alijasot veḱe e pronajden: {0}
@@ -223,7 +218,6 @@ Ne može da se otstrani direktoriumot: {0}
 Vremenskata zona e pogrešno odredena.
 Nevažečki izbor na profil.
 Se obiduva da se povrze na {0} so profilot {1}...
-Komandata {0} ne e pronajdena. Videte ja komandata „pomoš“ za spisokot so komandi.
 Ne uspea da se dobijat svojstvata na IPv6 za adapterot {0}. Prodolžuvajḱi...
 Informacii za IPv4:
 Informacii za IPv6:
@@ -381,7 +375,6 @@ Pravi nova datoteka
 Datotekata veḱe postoi.
 Greška pri obidot da se sozdade datoteka: {0}
 Ne uspea da se otvori datotekata. Izleguva od školka...
-Navedenata komanda za ureduvač na tekst ne e pronajdena.
 Gi naveduva dostapnite komandi
 Izleguva od ureduvačot na tekst i začuvuva nezačuvani promeni
 Ja pečati sodržinata na datotekata so broevi na linii vo konzolata
@@ -438,9 +431,6 @@ Vnesen e nevažečki del. Ve molime vratete se nazad.
 Vrati se nazad...
 Ovozmoži
 Onevozmoži
-Napišete ja root lozinkata što treba da se postavi. Ne grižete se; lozinkata se prikažani kako dzvezdi.
-Da se ​​smeni root lozinkata?
-Postavete lozinka za root...
 Napišete porta za dalečinski debager. Mora da bide numerički i ne smee veḱe da se koristi. Vo sprotivno, dalečinskiot debager nema da uspee da ja otvori portata.
 Napišete kolku pati komandata „zemi“ treba povtorno da se obide so neuspešni prezemanja. Mora da bide numerički.
 Napišete koga da startuvate zaštitnik na ekranot po odredeni milisekundi. Mora da bide numerički.
@@ -515,7 +505,6 @@ Go postavuva kernelot taka što ḱe ve pottikne za argument pri podiganje.
 Aktivira režim na održuvanje. Ova onevozmožuva poveḱe smetki.
 Sekoe startuvanje, ḱe proveruva dali ima ažuriranja.
 Koga menuvate jazici, promenete gi iminjata na mesecite, kalendarot itn.
-Ako kernelot se startuva, ḱe postavi lozinka za root.
 Premolčete gi porakite za hardversko ispituvanje.
 Prikaži ja porakata na denot pred da se prikaže ekranot za najavuvanje.
 Izbrišete go ekranot pred da se prikaže ekranot za najavuvanje.
@@ -566,9 +555,6 @@ Atributot e uspešno otstranet.
 Ne uspea da se dodade atribut.
 Ne uspea da se otstrani atributot.
 Zamenuva zbor ili fraza so drug vo linija
-Nivoto na crvena boja e nadminato. Beše {0}.
-Nivoto na zelenata boja e nadminato. Beše {0}.
-Nivoto na sina boja e nadminato. Beše {0}.
 Aktivirajte gi vistinskite boi
 Ne uspea da se odblokira {0}.
 {0} e veḱe blokiran.
@@ -644,7 +630,6 @@ Docnenje vo milisekundi
 Kolku milisekundi da počekate pred da go napravite slednoto pišuvanje?
 Vi ovozmožuva da koristite SSH FTP server
 Nema pomoš za komandata „{0}“.
-Nevažečka VT sekvenca za RGB boja.
 Lenta za boja na sekundi
 Lenta za boja na minuti
 Lenta „Boja na časovi“.
@@ -706,7 +691,6 @@ Izleguva od ZIP školka
 Gi naveduva site datoteki vo arhivata
 Izvlekuva datoteka vo odreden direktorium ili tekoven direktorium
 Go menuva direktoriumot so arhivi
-Navedenata komanda ZIP školka ne e pronajdena.
 Direktoriumot {0} ne postoi
 Direktorium za arhiviranje {0} ne postoi
 Maksimalniot broj na pozicii
@@ -784,7 +768,6 @@ Gi naveduva site poddržani kodni stranici
 Koi promenlivi na kompajlerot se ovozmoženi vo aplikacijata?
 Testovi koi go podignuvaat konkretniot nastan
 Testovi za ispituvanje na hardverot
-Go testira sobiračot na ǵubre
 Izleguva od test školkata i go startuva kernelot
 Izleguva od test školkata i go isklučuva kernelot
 Go začuvuva tekovniot direktorium vo konfiguraciskata datoteka na jadroto
@@ -854,13 +837,11 @@ Izleguva od RSS školka i se vraḱa vo kernelot
 Ja menuva vrskata za dovod
 Gi naveduva site dovodi
 Čita dovod vo veb-prelistuvač
-Navedenata komanda RSS školka ne e pronajdena.
 Nevažečki RSS2 dovod.
 Nevažečki dovod na RSS1.
 Nevažečka aktivnost na Atom.
 Vnesete URL na RSS dovodot:
 Nevažečki tip na RSS dovod.
-Nepoznata greška na školka:
 Dobiva informacii za statijata
 Brojot na napisot ne može da bide pogolem od dostapnite statii.
 Naslov:

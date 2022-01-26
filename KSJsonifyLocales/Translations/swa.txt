@@ -39,7 +39,6 @@ Nenosiri la {0}:
 Nenosiri lisilo sahihi.
 Mtumiaji amelemazwa.
 Jina la mtumiaji lisilo sahihi.
-Hitilafu wakati wa kujaribu kuchanganua vishika nafasi. {0} - Ufuatiliaji wa Stack:
 Hitilafu wakati wa kujaribu kuchanganua vishika nafasi. {0}
 Hitilafu wakati wa kujaribu kuongeza jina la mtumiaji.
 usrmgr: Kuunda jina la mtumiaji {0} ...
@@ -58,7 +57,6 @@ Bongo {0} haipatikani katika hifadhidata. Angalia jina na ujaribu tena.
 Screensaver haiwezi kupakiwa kwa sababu ya yafuatayo:
 Kuna hitilafu kubwa wakati wa kuchapisha maandishi.
 Kuna hitilafu kujaribu kuunda usanidi.
-Hitilafu wakati wa kujaribu kuweka RAM: {0} - Inaendelea ...
 Mod haiwezi kupakiwa kwa sababu ya yafuatayo:
 mod: Inapakia mods ...
 mod: Kusimamisha mods ...
@@ -72,7 +70,6 @@ Jina la mtumiaji la {0}:
 Nenosiri la {0}:
 Imeunganishwa kwenye {0}
 Hitilafu wakati wa kujaribu kuungana na {0}: {1}
-Ufuatiliaji wa Baki
 Saraka ya eneo {0} haipo.
 Ingiza saraka ya karibu. ".." kurudi nyuma.
 Saraka {0} haipatikani.
@@ -103,7 +100,6 @@ Inaonyesha skrini ya msaada
 Orodha saraka ya ndani
 Orodha saraka ya mbali
 Inapakia faili ya ndani kwa saraka ya mbali kwa kutumia binary au maandishi
-Ujumbe wa FTP: Amri iliyoombwa {0} haipatikani. Angalia 'msaada' kwa orodha ya amri zinazopatikana zilizoainishwa kwenye ganda la FTP.
 Imeshindwa kupata mali ya adapta {0}
 Nambari ya adapta:
 Jina la adapta:
@@ -211,7 +207,6 @@ Tenganisha kifaa cha utatuzi
 Orodha za utatuzi wa vifaa vimeunganishwa
 Kifaa cha utatuzi {0} hakipatikani.
 Kifaa {0} kimetengwa.
-Hitilafu katika muunganisho: {0}
 Utatuzi wa utatuaji kwenye anwani zote ukitumia bandari {0}.
 Hakuna hoja zilizotajwa. Kidokezo: Bainisha hoja nyingi zilizotengwa na nafasi
 Jina tayari limepatikana: {0}
@@ -223,7 +218,6 @@ Imeshindwa kuondoa saraka: {0}
 Saa za eneo zimetajwa vibaya.
 Uteuzi batili wa wasifu.
 Inajaribu kuungana na {0} na wasifu {1} ...
-Amri {0} haipatikani. Tazama amri ya "msaada" kwa orodha ya amri.
 Imeshindwa kupata mali za IPv6 za adapta {0}. Inaendelea ...
 Habari ya IPv4:
 Habari ya IPv6:
@@ -381,7 +375,6 @@ Hufanya faili mpya
 Faili tayari ipo.
 Hitilafu wakati wa kujaribu kuunda faili: {0}
 Imeshindwa kufungua faili. Inatoka kwenye ganda ...
-Amri maalum ya mhariri wa maandishi haipatikani.
 Orodha amri zinazopatikana
 Toka kihariri cha maandishi na uhifadhi mabadiliko ambayo hayajahifadhiwa
 Chapisha yaliyomo kwenye faili na nambari za laini kwenye koni
@@ -438,9 +431,6 @@ Sehemu isiyo sahihi imeingizwa. Tafadhali rudi nyuma.
 Rudi nyuma...
 Washa
 Lemaza
-Andika nenosiri la mizizi litakalowekwa. Usijali; nywila zinaonyeshwa kama nyota.
-Badilisha Nenosiri la Mizizi?
-Weka Nenosiri la Mizizi ...
 Andika bandari ya utatuzi wa mbali. Lazima iwe nambari, na haipaswi kutumiwa tayari. Vinginevyo, mtatuaji wa mbali atashindwa kufungua bandari.
 Andika ni mara ngapi amri ya "pata" inapaswa kujaribu upakuaji ulioshindwa. Lazima iwe nambari.
 Andika wakati wa kuzindua kiwambo cha skrini baada ya sekunde maalum za millisekunde. Lazima iwe nambari.
@@ -515,7 +505,6 @@ Inaweka kernel kwa hivyo inakuchochea kwa hoja kwenye buti.
 Inasababisha hali ya matengenezo. Hii inalemaza akaunti nyingi.
 Kila kuanza, itakagua visasisho.
 Unapobadilisha lugha, badilisha majina ya mwezi, kalenda, n.k.
-Ikiwa punje imeanzishwa, itaweka nenosiri la mizizi.
 Weka ujumbe wa uchunguzi wa maunzi ukiwa kimya.
 Onyesha Ujumbe wa Siku kabla ya kuonyesha skrini ya kuingia.
 Futa skrini kabla ya kuonyesha skrini ya kuingia.
@@ -566,9 +555,6 @@ Sifa imeondolewa kwa mafanikio.
 Imeshindwa kuongeza sifa.
 Imeshindwa kuondoa sifa.
 Inabadilisha neno au kifungu na nyingine katika mstari
-Kiwango cha rangi nyekundu kilizidi. Ilikuwa {0}.
-Kiwango cha rangi ya kijani kilizidi. Ilikuwa {0}.
-Kiwango cha rangi ya hudhurungi kilizidi. Ilikuwa {0}.
 Anzisha rangi za kweli
 Imeshindwa kufungulia {0}.
 {0} tayari imezuiwa.
@@ -644,7 +630,6 @@ Kucheleweshwa kwa Milisekunde
 Ni millisecond ngapi za kusubiri kabla ya kuandika ijayo?
 Inakuwezesha kutumia seva ya SSH FTP
 Hakuna msaada kwa amri "{0}".
-Mlolongo batili wa VT wa rangi ya RGB.
 Rangi ya Baa ya Sekunde
 Rangi ya Baa ya Dakika
 Rangi ya Baa ya Masaa
@@ -706,7 +691,6 @@ Toka kwenye ganda la ZIP
 Orodhesha faili zote zilizo ndani ya kumbukumbu
 Inatoa faili kwa saraka maalum au saraka ya sasa
 Inabadilisha saraka ya kumbukumbu
-Amri maalum ya ganda la ZIP haipatikani.
 Saraka {0} haipo
 Saraka ya kumbukumbu {0} haipo
 Nafasi za Max Hesabu
@@ -784,7 +768,6 @@ Orodha zote codepages mkono
 Ni vigeuzi gani vya mkusanyaji vinavyowezeshwa katika programu?
 Vipimo vinavyoinua hafla maalum
 Vipimo vinavyochunguza vifaa
-Hujaribu mtoza takataka
 Inatoka kwenye ganda la mtihani na kuanza punje
 Inatoka kwenye ganda la jaribio na inazima kiini
 Huhifadhi saraka ya sasa kwenye faili ya usanidi wa kernel
@@ -854,13 +837,11 @@ Inatoka kwenye ganda la RSS na kurudi kwenye kernel
 Inabadilisha kiunga cha kulisha
 Orodha zote zinalisha
 Inasoma malisho kwenye kivinjari cha wavuti
-Amri maalum ya ganda la RSS haipatikani.
 Mlisho batili wa RSS2.
 Mlisho batili wa RSS1.
 Mlisho batili wa Atomu.
 Ingiza URL ya kulisha ya RSS:
 Aina batili ya mlisho wa RSS.
-Hitilafu isiyojulikana ya ganda:
 Inapata maelezo ya kifungu
 Nambari ya kifungu haiwezi kuwa kubwa kuliko nakala zilizopo.
 Kichwa:

@@ -39,7 +39,6 @@ Caracteres especiais não são permitidos.
 Senha incorreta.
 O usuário está desativado.
 Nome de usuário errado.
-Erro ao tentar analisar marcadores de posição. {0} - rastreamento de pilha:
 Erro ao tentar analisar marcadores de posição. {0}
 Erro ao tentar adicionar o nome de usuário.
 usrmgr: Criando nome de usuário {0} ...
@@ -58,7 +57,6 @@ Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente
 O protetor de tela não pode ser carregado por causa do seguinte: 
 Há um erro sério ao imprimir texto.
 Há um erro ao tentar criar uma configuração.
-Erro ao tentar liberar RAM: {0} - continuando ...
 Mod não pode ser carregado por causa do seguinte: 
 mod: Carregando mods ...
 mod: Parando mods ...
@@ -72,7 +70,6 @@ Nome de usuário para {0}:
 Senha para {0}: 
 Conectado a {0}
 Erro ao tentar se conectar a {0}: {1}
-Rastreamento de pilha: {2}
 O diretório local {0} não existe.
 Digite um diretório local. ".." voltar.
 Diretório {0} não encontrado.
@@ -103,7 +100,6 @@ Mostra a tela de ajuda
 Lista o diretório local
 Lista o diretório remoto
 Carrega arquivo local para o diretório remoto usando binário ou texto
-Mensagem de FTP: O comando solicitado {0} não foi encontrado. Veja 'help' para uma lista de comandos disponíveis especificados no shell do FTP.
 Falha ao obter propriedades para o adaptador {0}
 Número do Adaptador:
 Nome do Adaptador:
@@ -211,7 +207,6 @@ Desconectar um dispositivo de depuração
 Lista os dispositivos de depuração conectados
 Dispositivo de depuração {0} não encontrado.
 Dispositivo {0} desconectado.
-Erro na conexão: {0}
 Depure a escuta em todos os endereços usando a porta {0}.
 Nenhum argumento especificado. Dica: especifique vários argumentos separados por espaços
 Alias já encontrado: {0}
@@ -223,7 +218,6 @@ Não foi possível remover o diretório: {0}
 O fuso horário está especificado incorretamente.
 Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
-Comando {0} não encontrado. Veja o comando "help" para a lista de comandos.
 Falha ao obter propriedades IPv6 para o adaptador {0}. Continuando...
 Informações IPv4:
 Informações IPv6:
@@ -381,7 +375,6 @@ Cria um novo arquivo
 O arquivo já existe.
 Erro ao tentar criar um arquivo: {0}
 Falha ao abrir arquivo. Saindo do shell ...
-O comando do editor de texto especificado não foi encontrado.
 Lista comandos disponíveis
 Sai do editor de texto e salva as alterações não salvas
 Imprime o conteúdo do arquivo com números de linha no console
@@ -438,9 +431,6 @@ Seção inválida inserida. Por favor, volte.
 Volte...
 Habilitar
 Desabilitar
-Escreva a senha de root a ser definida. Não se preocupe; as senhas são mostradas como estrelas.
-Alterar a senha do root?
-Definir senha raiz ...
 Escreva uma porta de depurador remoto. Deve ser numérico e ainda não deve ser usado. Caso contrário, o depurador remoto não conseguirá abrir a porta.
 Escreva quantas vezes o comando "" get "" deve tentar downloads com falha. Deve ser numérico.
 Escreva quando iniciar o protetor de tela após milissegundos especificados. Deve ser numérico.
@@ -515,7 +505,6 @@ Configura o kernel para que ele solicite argumentos na inicialização.
 Modo de manutenção de gatilhos. Isso desativa várias contas.
 A cada inicialização, ele verificará se há atualizações.
 Ao mudar de idioma, altere os nomes dos meses, calendário, etc.
-Se o kernel for iniciado, ele definirá a senha do root.
 Mantenha as mensagens de sondagem de hardware silenciosas.
 Mostrar mensagem do dia antes de exibir a tela de login.
 Limpe a tela antes de exibir a tela de login.
@@ -566,9 +555,6 @@ O atributo foi removido com sucesso.
 Falha ao adicionar atributo.
 Falha ao remover atributo.
 Substitui uma palavra ou frase por outra em uma linha
-Nível de cor vermelha excedido. Era {0}.
-Nível de cor verde excedido. Era {0}.
-Nível de cor azul excedido. Era {0}.
 Ative cores verdadeiras
 Falha ao desbloquear {0}.
 {0} já está bloqueado.
@@ -644,7 +630,6 @@ Atraso em Milissegundos
 Quantos milissegundos esperar antes de fazer a próxima gravação?
 Permite usar um servidor SSH FTP
 Sem ajuda para o comando "{0}".
-Sequência de VT inválida para cor RGB.
 Cor da barra de segundos
 Cor da barra de minutos
 Cor da barra de horas
@@ -706,7 +691,6 @@ Sai do shell ZIP
 Lista todos os arquivos dentro do arquivo
 Extrai um arquivo para um diretório especificado ou um diretório atual
 Altera o diretório do arquivo
-O comando do shell ZIP especificado não foi encontrado.
 Diretório {0} não existe
 O diretório de arquivo {0} não existe
 Contagem de posições máximas
@@ -784,7 +768,6 @@ Lista todas as páginas de código com suporte
 Quais variáveis ​​do compilador estão habilitadas no aplicativo?
 Testes levantando o evento específico
 Testes sondando o hardware
-Testa o coletor de lixo
 Sai do shell de teste e inicia o kernel
 Sai do shell de teste e desliga o kernel
 Salva o diretório atual no arquivo de configuração do kernel
@@ -854,13 +837,11 @@ Sai do shell RSS e retorna ao kernel
 Altera o link do feed
 Lista todos os feeds
 Lê um feed em um navegador da web
-O comando de shell RSS especificado não foi encontrado.
 Feed RSS2 inválido.
 Feed RSS1 inválido.
 Feed Atom inválido.
 Insira um URL de feed RSS:
 Tipo de feed RSS inválido.
-Erro de shell desconhecido:
 Obtém as informações do artigo
 O número do artigo não pode ser maior do que os artigos disponíveis.
 Título:

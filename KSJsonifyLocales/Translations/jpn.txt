@@ -39,7 +39,6 @@ Tokushu moji wa shiyō dekimasen.
 Machigatta pasuwādo. 
 Yūzā wa mukōdesu. 
 Machigatta yūzā-mei. 
-Purēsuhorudā no kaiseki-chū ni erā ga hassei shimashita. {0} - Sutakkutorēsu: 
 Purēsuhorudā no kaiseki-chū ni erā ga hassei shimashita. {0} 
 Yūzā-mei o tsuika shiyou to shite erā ga hassei shimashita. 
 Usrmgr: Yūzā-mei {0} o sakusei shite imasu... 
@@ -58,7 +57,6 @@ Sukurīnsēbā {0} ga dētabēsu ni mitsukarimasen. Namae o kakunin shite sai sh
 Tsugi no riyū ni yori, sukurīnsēbā o yomikomemasen. 
 Tekisuto no insatsu-ji ni jūdaina erā ga hassei shimashita. 
 Kōsei no sakusei-chū ni erā ga hassei shimashita. 
-Ramu no kaihō-chū ni erā ga hassei shimashita: {0} - Zokkō shite imasu...
 Tsugi no riyū ni yori, moddo o rōdo dekimasen.
 Mod: Mod o yomikonde imasu...
 Mod: Moddo o teishi shite imasu...
@@ -72,7 +70,6 @@ no sābā ni setsuzoku suru mae ni sābā kara setsudan suru hitsuyō ga arimasu
 {0} No pasuwādo:
 {0} Ni setsuzoku shimashita
 {0} ni setsuzoku shiyou to shita toki no erā: {1}
-Sutakkutorēsu: {2}
 Rōkarudirekutori {0} wa sonzai shimasen.
 Rōkarudirekutori o nyūryoku shimasu. ".." Modoru.
 Direkutori {0} ga mitsukarimasen.
@@ -103,7 +100,6 @@ gamen o hyōji shimasu
 rōkarudirekutori o risuto shimasu
 rimōtodirekutori o risuto shimasu
 bainari matawa tekisuto o shiyō shite, rōkarufairu o rimōtodirekutori ni appurōdo shimasu
-FTP messēji: Yōkyū sa reta komando {0} ga mitsukarimasen. FTP sheru de shitei sa reta shiyō kanōna komando no risuto ni tsuite wa,`help' o sanshō shite kudasai.
 Adaputa {0} no puropati o shutoku dekimasendeshita
 adaputā bangō: 
 Adaputā-mei: 
@@ -211,7 +207,6 @@ Debaggudebaisu o setsudan suru
 setsuzoku sa rete iru debaggudebaisu o risuto shimasu
 debaggudebaisu {0} ga mitsukarimasen.
 Debaisu {0} ga setsudan sa remashita.
-Setsuzoku erā: {0}
 Pōto {0} o shiyō shite, subete no adoresu de rissun o debaggu shimasu.
 Hikisū ga shitei sa rete imasen. Hinto: Supēsu de kugira reta fukusū no hikisū o shitei shimasu
 eiriasu wa sudeni mitsukarimashita: {0}
@@ -223,7 +218,6 @@ direkutori o sakujo dekimasen: {0}
 Taimuzōn ga tadashiku shitei sa rete imasen.
 Mukōna Purofairu sentaku.
 Purofairu {1} de {0} ni setsuzoku shiyou to shite imasu...
-Komando {0} ga mitsukarimasen. Komando no risuto ni tsuite wa,`help' komando o sanshō shite kudasai.
 Adaputā {0} no IPv6 puropati no shutoku ni shippai shimashita. Zokkō shite imasu...
 IPv4 jōhō:
 IPv6 jōhō:
@@ -381,7 +375,6 @@ atarashī fairu o sakusei shimasu
 fairu ga sudeni sonzai shimasu.
 Fairu no sakusei-chū ni erā ga hassei shimashita: {0}
 Fairu o akemasendeshita. Sheru o shūryō shite imasu...
-Shitei sa reta tekisutoeditākomando ga mitsukarimasen.
 Shiyō kanōna komando o risuto shimasu
 tekisutoedita o shūryō shi, mi hozon no henkō o hozon shimasu
 fairu no naiyō o gyō bangō to tomoni konsōru ni shutsuryoku shimasu
@@ -438,9 +431,6 @@ Mukona Sekushon Ga Nyuryoku Saremashita . Modottekudasai .
 Modoru ...
 Yuko Ni Suru
 Muko Ni Suru
-Settei Suru Rot Pasuwado O Kinyu Shitekudasai . Shinpai Shinaidekudasai . Pasuwado Wa Hoshi Shirushi De Hyoji Saremasu .
-rū to pasu wā do o henkō shimasu ka ?
-Ruto Pasuwado O Settei ...
 Rimotodebaggapoto O Kijutsu Shimasu . Suchidearu Hitsuyo Ga Ari , Sudeni Shiyo Sarete Hanarimasen . So Shinaito , Rimotodebagga Wa Poto O Hiraku Koto Ga Dekimasen .
 " Get " Komando Ga Shippai Shita Daunrodo O Sai Shiko Suru Kaisu O Kakikomimasu . Suchidearu Hitsuyo Ga Arimasu .
 Shitei Sareta Miri Byo Go Ni Sukurinseba O Kido Suru Taimingu O Kijutsu Shimasu . Suchidearu Hitsuyo Ga Arimasu .
@@ -515,7 +505,6 @@ Kido Ji Ni Hikisu No Nyuryoku O Motomeru Yo Ni kāneru o settei Shimasu .
 Mentenansu Modo O Toriga Shimasu . Kore Niyori , Fukusu No Akaunto Ga Muko Ni Narimasu .
 Kido Suru Tabi Ni , Koshin O Kakunin Shimasu .
 Gengo O Kirikaeru Toki Wa , Tsuki No Namae Ya Karenda Nado O Henko Shitekudasai .
-Kaneru Ga Kido Suruto , Rot Pasuwado Ga Settei Saremasu .
 Hadoweapurobingumesseji O Sairento Ni Tamochimasu .
 Roguin Gamen O Hyoji Suru Mae Ni , Kyo No Messeji O Hyoji Shimasu .
 Roguin Gamen O Hyoji Suru Mae Ni Gamen O Kuria Shitekudasai .
@@ -566,9 +555,6 @@ Zokusei Wa Seijo Ni Sakujo Saremashita .
 Zokusei No Tsuika Ni Shippai Shimashita .
 Zokusei No Sakujo Ni Shippai Shimashita .
 Konai No Tango Mataha Furezu O Betsu No Tango Mataha Furezu Ni Okikaemasu
-Akairo Reberu O Koemashita . { 0 Deshita .
-Midori No Iro Reberu O Koemashita . { 0 Deshita .
-Ao No Iro Reberu O Koemashita . { 0 Deshita .
 Turukara O Yuko Ni Suru
 {0} No Burokku O Kaijo Dekimasendeshita .
 {0} Wa Sudeni Burokku Sareteimasu .
@@ -644,7 +630,6 @@ Miri byō tan'i no chien
 ji no kakikomi o okonau made ni nan-miri byō taiki shimasu ka?
 SSH FTP sābā o shiyō dekimasu
 Komando "{0}" no herupu wa arimasen.
-RGB karā no VT shīkensu ga mukōdesu.
 Byō bā no iro.
 Minittsubā no iro.
 -Jikan bā no iro.
@@ -706,7 +691,6 @@ ZIP sheru o shūryō shimasu.
 Ākaibu-nai no subetenofairu o risuto shimasu.
 Shitei sa reta direkutori matawa genzai no direkutori ni fairu o chūshutsu shimasu.
 Ākaibu direkutori o henkō shimasu.
-Shitei sa reta ZIP sheru komando ga mitsukarimasen.
 Direkutori {0} wa sonzai shimasen.
 Ākaibu direkutori {0} wa sonzai shimasen.
 Saidai ichi sū.
@@ -784,7 +768,6 @@ sapōto sa rete iru subete no kōdopēji o risuto shimasu
 apurikēshon de yūkō ni natte iru konpaira hensū wa?
 Tokutei no ibento o hassei sa seru tesuto
 hādou~ea o purōbu suru tesuto
-gabēji korekutā o tesuto shimasu.
 Tesuto sheru o shūryō shi, kāneru o kidō shimasu.
 Tesuto sheru o shūryō shi, kāneru o shattodaun shimasu.
 Genzai no direkutori o kāneru kōsei fairu ni hozon shimasu
@@ -854,13 +837,11 @@ RSS sheru o shūryō shi, kāneru ni modorimasu
 fīdo rinku o henkō shimasu
 subete no fīdo o risuto shimasu
 u~ebu burauza de fīdo o yomitorimasu
-shitei sa reta RSS sheru komando ga mitsukarimasen.
 Mukōna RSS2 fīdodesu.
 Mukōna RSS1 fīdodesu.
 Mukōna atomu fīdodesu.
 RSS fīdo no URL o nyūryoku shite kudasai:
 RSS fīdo taipu ga mukōdesu.
-Fumeina sheru erā:
 Kiji jōhō o shutoku shimasu
 kiji bangō wa, riyō kanōna kiji yori ōkiku suru koto wa dekimasen.
 Daimei:

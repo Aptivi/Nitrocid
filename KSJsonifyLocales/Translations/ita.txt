@@ -39,7 +39,6 @@ La password di {0}:
 Password errata.
 L'utente è disabilitato
 Username sbagliato.
-Errore durante il tentativo di analizzare i segnaposti. {0} - Traccia stack:
 Errore durante il tentativo di analizzare i segnaposti. {0}
 Errore durante il tentativo di aggiungere il nome utente.
 usrmgr: Creazione del nome utente {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} non trovato nel database. Controlla il nome e riprova.
 Il salvaschermo non può essere caricato a causa di quanto segue:
 Si è verificato un errore grave durante la stampa del testo.
 Si è verificato un errore durante il tentativo di creare la configurazione.
-Errore durante il tentativo di liberare la RAM: {0} - Continua ...
 Mod non può essere caricato a causa di quanto segue:
 mod: caricamento mod ...
 mod: interruzione mod ...
@@ -72,7 +70,6 @@ Nome utente per {0}:
 Password per {0}:
 Connesso a {0}
 Errore durante il tentativo di connessione a {0}: {1}
-Stack Trace: {2}
 La directory locale {0} non esiste.
 Inserisci una directory locale ".." tornare indietro.
 Directory {0} non trovata.
@@ -103,7 +100,6 @@ Mostra la schermata di aiuto
 Elenca la directory locale
 Elenca la directory remota
 Carica il file locale nella directory remota usando binari o testo
-Messaggio FTP: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per un elenco di comandi disponibili specificati sulla shell FTP.
 Impossibile ottenere le proprietà per la scheda {0}
 Numero di scheda:
 Nome dell'adattatore:
@@ -211,7 +207,6 @@ Disconnetti un dispositivo di debug
 Elenca i dispositivi di debug collegati
 Dispositivo di debug {0} non trovato.
 Dispositivo {0} disconnesso.
-Errore nella connessione: {0}
 Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.
 Nessun argomento specificato. Suggerimento: specificare più argomenti separati da spazi
 Alias già trovato: {0}
@@ -223,7 +218,6 @@ Impossibile rimuovere la directory: {0}
 Il fuso orario non è specificato correttamente.
 Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
-Comando {0} non trovato. Vedi il comando "help" per l'elenco dei comandi.
 Impossibile ottenere le proprietà IPv6 per l'adattatore {0}. Proseguendo ...
 Informazioni IPv4:
 Informazioni IPv6:
@@ -381,7 +375,6 @@ Crea un nuovo file
 Il file esiste già.
 Errore durante il tentativo di creare un file: {0}
 Impossibile aprire il file. Uscita dalla shell ...
-Il comando dell'editor di testo specificato non è stato trovato.
 Elenca i comandi disponibili
 Esce dall'editor di testo e salva le modifiche non salvate
 Stampa il contenuto del file con i numeri di riga sulla console
@@ -438,9 +431,6 @@ Sezione non valida inserita. Per favore torna indietro.
 Torna indietro...
 Abilitare
 disattivare
-Scrivi la password di root da impostare. Non preoccuparti; le password vengono visualizzate come stelle.
-Modificare la password di root?
-Imposta password root ...
 Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
 Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
 Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
@@ -515,7 +505,6 @@ Imposta il kernel in modo che richieda un argomento all'avvio.
 Attiva la modalità di manutenzione. Questo disabilita più account.
 Ad ogni avvio, verificherà la presenza di aggiornamenti.
 Quando si cambia lingua, modificare i nomi dei mesi, il calendario, ecc.
-Se il kernel viene avviato, imposterà la password di root.
 Mantieni silenziosi i messaggi di verifica hardware.
 Mostra il messaggio del giorno prima di visualizzare la schermata di accesso.
 Cancella lo schermo prima di visualizzare la schermata di accesso.
@@ -566,9 +555,6 @@ L'attributo è stato rimosso con successo.
 Impossibile aggiungere l'attributo.
 Impossibile rimuovere l'attributo.
 Sostituisce una parola o una frase con un'altra in una riga
-Livello di colore rosso superato. Era {0}.
-Livello di colore verde superato. Era {0}.
-Livello di colore blu superato. Era {0}.
 Attiva i veri colori
 Impossibile sbloccare {0}.
 {0} è già bloccato.
@@ -644,7 +630,6 @@ Ritardo in millisecondi
 Quanti millisecondi attendere prima di effettuare la successiva scrittura?
 Consente di utilizzare un server FTP SSH
 Nessun aiuto per il comando "{0}".
-Sequenza VT non valida per il colore RGB.
 Colore della barra dei secondi
 Colore della barra dei minuti
 Barra del colore delle ore
@@ -706,7 +691,6 @@ Esce dalla shell ZIP
 Elenca tutti i file all'interno dell'archivio
 Estrae un file in una directory specificata o in una directory corrente
 Cambia la directory dell'archivio
-Il comando ZIP shell specificato non è stato trovato.
 La directory {0} non esiste
 La directory di archivio {0} non esiste
 Numero massimo di posizioni
@@ -784,7 +768,6 @@ Elenca tutte le codepage supportate
 Quali variabili del compilatore sono abilitate nell'applicazione?
 Test che sollevano l'evento specifico
 Test che sondano l'hardware
-Testa il netturbino
 Esce dalla shell di test e avvia il kernel
 Esce dalla shell di test e chiude il kernel
 Salva la directory corrente nel file di configurazione del kernel
@@ -854,13 +837,11 @@ Esce dalla shell RSS e torna al kernel
 Cambia il collegamento al feed
 Elenca tutti i feed
 Legge un feed in un browser web
-Impossibile trovare il comando shell RSS specificato.
 Feed RSS2 non valido.
 Feed RSS1 non valido.
 Feed Atom non valido.
 Inserisci l'URL di un feed RSS:
 Tipo di feed RSS non valido.
-Errore di shell sconosciuto:
 Ottiene le informazioni sull'articolo
 Il numero dell'articolo non può essere più grande degli articoli disponibili.
 Titolo:

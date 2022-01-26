@@ -39,7 +39,6 @@ Mawu achinsinsi a {0}:
 Mawu achinsinsi olakwika.
 Wogwiritsa ntchito ndi wolumala.
 Lolakwika lolowera.
-Cholakwika poyesa kuyesa omwe ali ndi malo. {0} - Chotsatira:
 Cholakwika poyesa kuyesa omwe ali ndi malo. {0}
 Cholakwika kuyesera kuwonjezera dzina.
 usrmgr: Kupanga dzina lolowera {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} sapezeka mumndandanda. Chongani dzinalo ndikuyesanso.
 Screensaver sangathe kunyamulidwa chifukwa cha izi:
 Pali vuto lalikulu pakusindikiza mawu.
 Pali vuto poyesa kupanga zosintha.
-Vuto poyesa kumasula RAM: {0} - Kupitilira ...
 Ma mod sangathe kunyamulidwa chifukwa cha izi:
 Mod: Kutsegula ma mods ...
 mod: Kuyimitsa ma mods ...
@@ -72,7 +70,6 @@ Lolowera pa {0}:
 Chinsinsi cha {0}:
 Kulumikizidwa ku {0}
 Zalakwika poyesa kulumikizana ndi {0}: {1}
-Zovuta: {2}
 Zolemba zam'deralo {0} kulibe.
 Lowetsani chikwatu chakomweko. ".." kubwerera.
 Directory {0} sanapezeke.
@@ -103,7 +100,6 @@ Onetsani chithunzi chothandizira
 Lembani chikwatu chakomweko
 Lembani chikwatu chakutali
 Ikani mafayilo am'deralo kusanja yakutali pogwiritsa ntchito binary kapena zolemba
-Uthenga wa FTP: Lamulo lofunsidwa {0} silinapezeke. Onani 'chithandizo' pamndandanda wamalamulo omwe atchulidwa pachikopa cha FTP.
 Takanika kupeza katundu wa adaputala {0}
 Nambala ya Adapter:
 Dzina adaputala:
@@ -211,7 +207,6 @@ Chotsani chida cholakwika
 Mndandanda wazinthu zolakwika zolumikizidwa
 Chida chothana ndi vuto {0} sichinapezeke.
 Chipangizo {0} chadulidwa.
-Vuto polumikizira: {0}
 Kumvetsera mwatsatanetsatane pamadilesi onse ogwiritsa ntchito doko {0}.
 Palibe zotsutsana. Malangizo: Tchulani zifukwa zingapo zolekanitsidwa ndi malo
 Zapezeka kale: {0}
@@ -223,7 +218,6 @@ Takanika kuchotsa chikwatu: {0}
 Nthawi ya nthawi imafotokozedwa molakwika.
 Kusankha mbiri yolakwika.
 Kuyesera kulumikizana ndi {0} ndi mbiri {1} ...
-Lamulo {0} silinapezeke. Onani lamulo "lothandizira" pamndandanda wamalamulo.
 Takanika kupeza katundu wa IPv6 wa adaputala {0}. Kupitilira ...
 Zambiri za IPv4:
 Zambiri za IPv6:
@@ -381,7 +375,6 @@ Imapanga fayilo yatsopano
 Fayilo ilipo kale.
 Cholakwika poyesa kupanga fayilo: {0}
 Takanika kutsegula fayilo. Kutuluka chipolopolo ...
-Lamulo lofotokoza mkonzi silinapezeke.
 Lembani malamulo omwe alipo
 Tulukani pa cholembera mawu ndikusunga zosasintha
 Sindikizani zomwe zili mufayiloyi ndi manambala amizere kutonthoza
@@ -438,9 +431,6 @@ Gawo lolowera ndilolakwika. Chonde bwererani.
 Bwererani...
 Yambitsani
 Letsani
-Lembani mawu achinsinsi kuti akhazikike. Osadandaula; mawu achinsinsi akuwonetsedwa ngati nyenyezi.
-Kusintha Muzu Achinsinsi?
-Ikani Chinsinsi Cha Muzu ...
 Lembani doko lotsegulira kutali. Iyenera kukhala yowerengeka, ndipo siyiyenera kugwiritsidwa ntchito kale. Kupanda kutero, cholakwika chakutali sichilephera kutsegula doko.
 Lembani kangapo kuti "pezani" lamulo liyesenso kutsitsa komwe kwalephera. Iyenera kukhala yowerengeka.
 Lembani nthawi yoyambitsa zowonera pazenera patadutsa mamilliseconds. Iyenera kukhala yowerengeka.
@@ -515,7 +505,6 @@ Ikani kernel kuti ikuthandizireni kutsutsana pa boot.
 Zimayambitsa mawonekedwe osamalira. Izi zimasokoneza maakaunti angapo.
 Kuyamba kulikonse, kumayang'ana zosintha.
 Mukamasintha zilankhulo, sinthani mayina amwezi, kalendala, ndi zina zambiri.
-Ngati kernel yayambitsidwa, imayika mawu achinsinsi.
 Sungani mauthenga ofufuza za hardware kukhala chete.
 Onetsani Mauthenga Atsikulo musanawonetse mawonekedwe olowera.
 Chotsani chinsalu musanawonetse mawonekedwe olowera.
@@ -566,9 +555,6 @@ Makhalidwe achotsedwa bwino.
 Takanika kuwonjezera chikhumbo.
 Takanika kuchotsa malingaliro.
 M'malo mwa mawu kapena mawu ndi wina mu mzere
-Mulingo wofiira wapyola. Unali {0}.
-Mulingo wamtundu wobiriwira udapitilira. Unali {0}.
-Mulingo wabuluu wapitilira. Unali {0}.
 Yambitsani mitundu yoona
 Takanika kutsegula {0}.
 {0} yatsekedwa kale.
@@ -644,7 +630,6 @@ Kuchedwa mu Milliseconds
 Ndi ma millisecond angati amene mungadikire musanapange kulemba kotsatira?
 Amakulolani kugwiritsa ntchito seva ya SSH FTP
 Palibe thandizo pamalamulo "{0}".
-Zotsatira zosavomerezeka za VT zamtundu wa RGB.
 Mtundu wa Masekondi Bar
 Mtundu wa Mphindi Bar
 Mtundu wa Maola Bar
@@ -706,7 +691,6 @@ Imachoka mu chipolopolo cha ZIP
 Lembani mafayilo onse mkati mwazosungidwa
 Imachotsa fayilo kumalo osungidwira kapena chikwatu chomwe chilipo
 Kusintha chikwatu chachinsinsi
-Lamulo lachipolopolo la ZIP silinapezeke.
 Directory {0} kulibe
 Zolemba zakale {0} kulibe
 Maudindo A Max Kuwerengera
@@ -784,7 +768,6 @@ Ili pamndandanda zonse zodalirika
 Ndi mitundu iti yamakina yosanjikiza yomwe imathandizidwa pakugwiritsa ntchito?
 Kuyesa kukweza mwambowu
 Kuyesa kuyesa hardware
-Amayesa wokhometsa zinyalala
 Imatuluka pachikopa choyesa ndikuyamba khungu
 Atuluka mu chipolopolo ndikuyesa tsinde
 Imasunga chikwatu chomwe chikupezeka pakasinthidwe ka kernel
@@ -854,13 +837,11 @@ Imatuluka pachikopa cha RSS ndikubwerera ku kernel
 Kusintha ulalo wazakudya
 Lists zonse zimadyetsa
 Amawerenga chakudya patsamba lanu
-Mwachindunji RSS chipolopolo lamulo sapezeka.
 Zolakwika za RSS2.
 Zolakwika za RSS1.
 Chakudya cha Atomu cholakwika.
 Lowetsani RSS feed URL:
 Mtundu wosavomerezeka wa RSS.
-Cholakwika chosadziwika:
 Amapeza nkhaniyo
 Nambala ya nkhani siyingakhale yayikulu kuposa zomwe zilipo.
 Mutu:

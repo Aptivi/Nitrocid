@@ -39,7 +39,6 @@ Le mot de passe de {0}:
 Mauvais mot de passe.
 L'utilisateur est désactivé.
 Mauvais nom d'utilisateur.
-Erreur lors de la tentative d'analyse des espaces réservés. {0} - Trace de pile:
 Erreur lors de la tentative d'analyse des espaces réservés. {0}
 Erreur lors de la tentative d’ajout de nom d’utilisateur.
 usrmgr: Création du nom d'utilisateur {0} ...
@@ -58,7 +57,6 @@ L'économiseur d'écran {0} n'existe pas.
 L'économiseur d'écran ne peut pas être chargé à cause des problèmes suivants: 
 Il y a une grave erreur lors de l’impression de texte.
 Une erreur s'est produite lors de la tentative de création de la configuration.
-Erreur lors de la tentative de libération de la mémoire RAM: {0} - suite ...
 Mod ne peut pas être chargé pour les raisons suivantes:
 mod: Chargement des mods ...
 mod: Arrêter les mods ...
@@ -72,7 +70,6 @@ Nom d'utilisateur pour {0}:
 Mot de passe pour {0}: 
 Connecté à {0}
 Erreur lors de la tentative de connexion à {0}: {1}
-Trace de pile: {2}
 Le répertoire local {0} n'existe pas.
 Entrez un répertoire local. ".." retourner.
 Répertoire {0} introuvable.
@@ -103,7 +100,6 @@ Affiche l'écran d'aide
 Répertorie le répertoire local
 Répertorie le répertoire distant
 Télécharge un fichier local dans un répertoire distant à l'aide de binaire ou de texte
-Message FTP: La commande demandée {0} est introuvable. Voir 'help' pour une liste des commandes disponibles spécifiées sur le shell FTP.
 Échec d'obtention des propriétés pour l'adaptateur {0}.
 Numéro de l'adaptateur:
 Nom de l'adaptateur:
@@ -211,7 +207,6 @@ Déconnecter un périphérique de débogage
 Répertorie les périphériques de débogage connectés
 Dispositif de débogage {0} introuvable.
 Périphérique {0} déconnecté.
-Erreur de connexion: {0}
 Déboguer l’écoute sur toutes les adresses en utilisant le port {0}.
 Aucun argument spécifié. Astuce: spécifiez plusieurs arguments séparés par des espaces
 Alias déjà trouvé: {0}
@@ -223,7 +218,6 @@ Impossible de supprimer le répertoire: {0}
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
-Commande {0} introuvable. Voir la commande "help" pour la liste des commandes.
 Échec d'obtention des propriétés IPv6 pour l'adaptateur {0}. En continuant ...
 Informations IPv4:
 Informations IPv6:
@@ -381,7 +375,6 @@ Crée un nouveau fichier
 Le fichier existe déjà.
 Erreur lors de la tentative de création d'un fichier: {0}
 Échec de l'ouverture du fichier. Sortie du shell ...
-La commande de l'éditeur de texte spécifiée est introuvable.
 Répertorie les commandes disponibles
 Quitte l'éditeur de texte et enregistre les modifications non enregistrées
 Imprime le contenu du fichier avec les numéros de ligne sur la console
@@ -438,9 +431,6 @@ Section non valide saisie. Veuillez revenir en arrière.
 Retourner...
 Activer
 Désactiver
-Écrivez le mot de passe root à définir. Ne t'inquiète pas; le mot de passe est affiché sous forme d'étoiles.
-Changer le mot de passe root?
-Définir le mot de passe root ...
 Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
 Indiquez combien de fois la commande "" get "" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
 Écrivez quand lancer l'économiseur d'écran après des millisecondes spécifiées. Il doit être numérique.
@@ -515,7 +505,6 @@ Configure le noyau pour qu'il vous demande un argument au démarrage.
 Déclenche le mode maintenance. Cela désactive plusieurs comptes.
 À chaque démarrage, il vérifiera les mises à jour.
 Lorsque vous changez de langue, changez les noms de mois, le calendrier, etc.
-Si le noyau est démarré, il définira le mot de passe root.
 Gardez les messages de détection du matériel silencieux.
 Afficher le message du jour avant d'afficher l'écran de connexion.
 Effacer l'écran avant d'afficher l'écran de connexion.
@@ -566,9 +555,6 @@ L'attribut a été supprimé avec succès.
 Échec de l'ajout de l'attribut.
 Échec de la suppression de l'attribut.
 Remplace un mot ou une phrase par un autre dans une ligne
-Niveau de couleur rouge dépassé. C'était {0}.
-Niveau de couleur verte dépassé. C'était {0}.
-Niveau de couleur bleue dépassé. C'était {0}.
 Activez les vraies couleurs
 Échec du déblocage de {0}.
 {0} est déjà bloqué.
@@ -644,7 +630,6 @@ Retard en millisecondes
 Combien de millisecondes attendre avant de faire la prochaine écriture?
 Vous permet d'utiliser un serveur FTP SSH
 Aucune aide pour la commande "{0}".
-Séquence VT non valide pour la couleur RVB.
 Couleur de la barre des secondes
 Couleur de la barre des minutes
 Barre de couleur des heures
@@ -706,7 +691,6 @@ Quitte le shell ZIP
 Répertorie tous les fichiers à l'intérieur de l'archive
 Extrait un fichier dans un répertoire spécifié ou un répertoire courant
 Change le répertoire d'archives
-La commande shell ZIP spécifiée est introuvable.
 Le répertoire {0} n'existe pas
 Le répertoire d'archive {0} n'existe pas
 Nombre maximal de positions
@@ -784,7 +768,6 @@ Répertorie toutes les pages de codes prises en charge
 Quelles variables du compilateur sont activées dans l'application ?
 Tests soulevant l'événement spécifique
 Tests sondant le matériel
-Teste le ramasse-miettes
 Quitte le shell de test et démarre le noyau
 Quitte le shell de test et arrête le noyau
 Enregistre le répertoire actuel dans le fichier de configuration du noyau
@@ -854,13 +837,11 @@ Quitte le shell RSS et retourne au noyau
 Modifie le lien de flux
 Répertorie tous les flux
 Lit un flux dans un navigateur Web
-La commande shell RSS spécifiée est introuvable.
 Flux RSS2 non valide.
 Flux RSS1 non valide.
 Flux Atom non valide.
 Saisissez une URL de flux RSS :
 Type de flux RSS non valide.
-Erreur de shell inconnue :
 Obtient les informations sur l'article
 Le numéro d'article ne peut pas être plus grand que les articles disponibles.
 Titre:

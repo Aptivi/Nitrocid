@@ -39,7 +39,6 @@ Spesialtegn er ikke tillatt.
 Feil passord.
 Brukeren er deaktivert.
 Feil brukernavn.
-Feil ved forsøk på å analysere plassholdere. {0} - Stabelspor:
 Feil ved forsøk på å analysere plassholdere. {0}
 Feil ved forsøk på å legge til brukernavn.
 usrmgr: Oppretter brukernavn {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} ikke funnet i databasen. Sjekk navnet og prøv igjen.
 Skjermsparer kan ikke lastes på grunn av følgende:
 Det er en alvorlig feil når du skriver ut tekst.
 Det oppstod en feil ved å prøve å opprette konfigurasjon.
-Feil ved forsøk på å frigjøre RAM: {0} - Fortsetter ...
 Mod kan ikke lastes på grunn av følgende:
 mod: Laster inn mods ...
 mod: Stopper mods ...
@@ -72,7 +70,6 @@ Brukernavn for {0}:
 Passord for {0}:
 Koblet til {0}
 Feil når du prøver å koble til {0}: {1}
-Stack Trace: {2}
 Lokal katalog {0} eksisterer ikke.
 Gå inn i en lokal katalog. ".." å gå tilbake.
 Katalog {0} ikke funnet.
@@ -103,7 +100,6 @@ Viser hjelpeskjermbildet
 Viser lokal katalog
 Lister ekstern katalog
 Last opp lokal fil til ekstern katalog ved bruk av binær eller tekst
-FTP-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for en liste over tilgjengelige kommandoer spesifisert på FTP-shell.
 Kunne ikke få egenskaper for adapter {0}
 Adapternummer:
 Adapternavn:
@@ -211,7 +207,6 @@ Koble fra en feilsøkingsenhet
 Viser tilkoblede feilsøkingsenheter
 Feilsøkingsenhet {0} ikke funnet.
 Enheten {0} er koblet fra.
-Feil i tilkoblingen: {0}
 Feilsøke lytting på alle adresser ved bruk av port {0}.
 Ingen argumenter er spesifisert. Tips: Angi flere argumenter atskilt med mellomrom
 Alias ​​allerede funnet: {0}
@@ -223,7 +218,6 @@ Kan ikke fjerne katalogen: {0}
 Tidssone er angitt feil.
 Ugyldig profilvalg.
 Prøver å koble til {0} med profilen {1} ...
-Kommando {0} ikke funnet. Se "hjelp" -kommandoen for listen over kommandoer.
 Kunne ikke få IPv6-egenskaper for adapter {0}. Fortsetter ...
 IPv4-informasjon:
 IPv6 informasjon:
@@ -381,7 +375,6 @@ Oppretter en ny fil
 Filen finnes allerede.
 Feil ved forsøk på å lage en fil: {0}
 Kunne ikke åpne filen. Spennende skall ...
-Den spesifiserte tekstredigererkommandoen er ikke funnet.
 Viser tilgjengelige kommandoer
 Gå ut av tekstredigeringsprogrammet og lagre ulagrede endringer
 Skriver ut innholdet i filen med linjenumre til konsollen
@@ -438,9 +431,6 @@ Ugyldig del oppgitt. Vennligst gå tilbake.
 Gå tilbake...
 Muliggjøre
 Deaktiver
-Skriv root-passordet som skal angis. Ikke bekymre deg; passordet vises som stjerner.
-Endre rotpassord?
-Angi rotpassord ...
 Skriv en ekstern feilsøkingsport. Den må være numerisk og må ikke allerede brukes. Ellers klarer ikke ekstern feilsøkingsprogram å åpne porten.
 Skriv hvor mange ganger kommandoen "" get "" skal prøve mislykkede nedlastinger på nytt. Det må være numerisk.
 Skriv når du skal starte skjermsparer etter angitte millisekunder. Det må være numerisk.
@@ -515,7 +505,6 @@ Setter opp kjernen slik at den ber deg om argument ved oppstart.
 Utløser vedlikeholdsmodus. Dette deaktiverer flere kontoer.
 Hver oppstart vil den se etter oppdateringer.
 Når du bytter språk, endrer du månedens navn, kalender osv.
-Hvis kjernen startes, vil den angi rotpassord.
 Hold maskinvaresonderingsmeldinger stille.
 Vis dagens melding før du viser påloggingsskjermen.
 Tøm skjerm før påloggingsskjerm vises.
@@ -566,9 +555,6 @@ Attributtet er fjernet.
 Kunne ikke legge til attributt.
 Kunne ikke fjerne attributtet.
 Erstatter et ord eller en setning med et annet på en linje
-Rødt fargenivå overskredet. Det var {0}.
-Grønt fargenivå overskredet. Det var {0}.
-Blå fargenivå overskredet. Det var {0}.
 Aktiver ekte farger
 Kunne ikke oppheve blokkeringen av {0}.
 {0} er allerede blokkert.
@@ -644,7 +630,6 @@ Forsinkelse i millisekunder
 Hvor mange millisekunder å vente før du skriver neste gang?
 Lar deg bruke en SSH FTP-server
 Ingen hjelp for kommandoen "{0}".
-Ugyldig VT-sekvens for RGB-farge.
 Color of Seconds Bar
 Color of Minutes Bar
 Color of Hours Bar
@@ -706,7 +691,6 @@ Gå ut av ZIP-skallet
 Lister opp alle filene i arkivet
 Pakk ut en fil til en spesifisert katalog eller en aktuell katalog
 Endrer arkivkatalogen
-Den angitte ZIP shell-kommandoen ble ikke funnet.
 Katalogen {0} eksisterer ikke
 Arkivkatalogen {0} eksisterer ikke
 Maks antall posisjoner
@@ -784,7 +768,6 @@ Viser alle støttede kodesider
 Hvilke kompilatorvariabler er aktivert i applikasjonen?
 Tester som løfter den spesifikke hendelsen
 Tester sondering av maskinvaren
-Tester søppeloppsamleren
 Avslutter testskallet og starter kjernen
 Gå ut av testskallet og lukker kjernen
 Lagrer den gjeldende katalogen i kjernekonfigurasjonsfilen
@@ -854,13 +837,11 @@ Avslutter RSS-skallet og går tilbake til kjernen
 Endrer feedlink
 Viser alle feeder
 Leser en feed i en nettleser
-Den angitte RSS-skallkommandoen ble ikke funnet.
 Ugyldig RSS2-feed.
 Ugyldig RSS1-feed.
 Ugyldig Atom-feed.
 Skriv inn en RSS-feed-URL:
 Ugyldig RSS-feedtype.
-Ukjent skallfeil:
 Får artikkelen info
 Artikkelnummeret kan ikke være større enn tilgjengelige artikler.
 Tittel:

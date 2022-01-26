@@ -39,7 +39,6 @@ Viśēṣa pātrōnē man̄jūrī nathī.
 Khōṭō pāsavarḍa.
 Vaparāśakartā akṣama chē.
 Khōṭuṁ vaparāśakartā nāma.
-Plēsahōlḍarsanuṁ viślēṣaṇa karavānō prayāsa karavāmāṁ bhūla. {0} - Sṭēka ṭrēsa:
 Plēsahōlḍarsanuṁ viślēṣaṇa karavānō prayāsa karavāmāṁ bhūla. {0}
 Vaparāśakartānāma umēravānō prayāsa karavāmāṁ bhūla.
 Usrmgr: Vaparāśakartā nāma banāvī rahyuṁ chē {0}...
@@ -58,7 +57,6 @@ Skrīnasēvara {0} ḍēṭābējhamāṁ maḷyuṁ nathī. Nāma tapāsō anē
 Skrīnasēvaranē nīcēnānē kāraṇē lōḍa karī śakātuṁ nathī:
 Lakhāṇa chāpatī vakhatē gambhīra bhūla thāya chē.
 Rūparēkhāṅkana banāvavānō prayāsa karavāmāṁ bhūla āvī chē.
-RAM nē mukta karavānō prayāsa karavāmāṁ bhūla: {0} - Cālu...
 Nīcēnānē kāraṇē mōḍa lōḍa karī śakātuṁ nathī:
 Mōḍa: Mōḍsa lōḍa karī rahyuṁ chē...
 Mōḍa: Mōḍsa bandha karī rahyā chī'ē...
@@ -72,7 +70,6 @@ bījā sarvara sāthē jōḍātā pahēlā tamārē sarvarathī ḍiskanēkṭa
 {0} Māṭē pāsavarḍa:
 {0} Sāthē jōḍāyēla
 {0}: {1} Thī kanēkṭa karavānō prayāsa karatī vakhatē bhūla
-sṭēka ṭrēsa: {2}
 Sthānika ḍirēkṭarī {0} astitvamāṁ nathī.
 Sthānika ḍirēkṭarī dākhala karō. ".." Pāchā javāmāṭē.
 Ḍirēkṭarī {0} maḷī nathī.
@@ -103,7 +100,6 @@ madada skrīna batāvē chē
 sthānika ḍirēkṭarīnī yādī āpē chē
 dūrastha ḍirēkṭarīnī yādī āpē chē
 bā'īnarī athavā ṭēksṭanō upayōga karīnē rimōṭa ḍirēkṭarīmāṁ sthānika phā'ila apalōḍa karē chē
-FTP sandēśa: Vinantī karēla ādēśa {0} maḷyō nathī. FTP śēla para nirdiṣṭa upalabdha ādēśōnī yādī māṭē'madada' ju'ō.
 Ēḍēpṭara māṭē guṇadharmō mēḷavavāmāṁ niṣphaḷa {0}
 ēḍēpṭara nambara:
 Ēḍēpṭara nāma:
@@ -211,7 +207,6 @@ Vartamāna varkiṅga ḍirēkṭarīmāṁ phā'ila ḍā'unalōḍa karē chē
 ḍibagīṅga upakaraṇōnī yādī āpē chē
 ḍibaga upakaraṇa {0} maḷyuṁ nathī.
 Upakaraṇa {0} ḍiskanēkṭa thayuṁ.
-Jōḍāṇamāṁ bhūla: {0}
 Bandara {0} nō upayōga karīnē tamāma saranāmāṁ para ḍibaga śravaṇa.
 Kō'ī dalīlō spaṣṭa karēla nathī. Saṅkēta: Jagyā'ō dvārā alaga thayēla bahuvidha dalīlō spaṣṭa karō
 upanāma pahēlēthī maḷī gayuṁ: {0}
@@ -223,7 +218,6 @@ Saranāmuṁ spaṣṭa karō
 Ṭā'imajhōna khōṭī rītē spaṣṭa thayēla chē.
 Amān'ya prōphā'ila pasandagī.
 Prōphā'ila {1} sāthē {0} sāthē kanēkṭa karavānō prayāsa karī rahyāṁ chī'ē...
-Ādēśa {0} maḷyō nathī. Ādēśōnī sūci māṭē"madada" ādēśa ju'ō.
 Ēḍēpṭara {0} māṭē IPv6 guṇadharmō mēḷavavāmāṁ niṣphaḷa. Cālu...
 IPv4 māhitī:
 IPv6 māhitī:
@@ -381,7 +375,6 @@ navī phā'īla banāvē chē
 phā'ila pahēlēthī astitvamāṁ chē.
 Phā'ila banāvavānō prayāsa karavāmāṁ bhūla: {0}
 Phā'ila khōlavāmāṁ niṣphaḷa. Śēlamānthī bahāra nīkaḷī rahyuṁ chē...
-Ullēkhita lakhāṇa sampādaka ādēśa maḷyō nathī.
 Upalabdha ādēśōnī yādī āpē chē
 ṭēksṭa ēḍiṭaramānthī bahāra nīkaḷē chē anē vaṇasācavēlā phēraphārō sācavē chē
 kansōla para lā'ina nambara sāthē phā'ilanī sāmagrī chāpē chē
@@ -438,9 +431,6 @@ amān'ya vibhāga dākhala karyō. Kr̥pā karīnē pāchā jā'ō.
 Pāchā jāva...
 Sakṣama karō
 niṣkriya karō
-Sēṭa karavā māṭē ruṭa pāsavarḍa lakhō. Cintā karaśō nahīṁ; pāsavarḍa tārā tarīkē batāvavāmāṁ āvē chē.
-Ruṭa pāsavarḍa badalō?
-Ruṭa pāsavarḍa sēṭa karō...
 Rimōṭa ḍibagara pōrṭa lakhō. Tē āṅkaḍākīya hōvuṁ jō'ī'ē, anē pahēlēthī ja upayōgamāṁ lēvāyēla hōvuṁ jō'ī'ē nahīṁ. Nahintara, rimōṭa ḍibagara pōrṭa khōlavāmāṁ niṣphaḷa jaśē.
 "Gēṭa" ādēśanē kēṭalī vāra niṣphaḷa ḍā'unalōḍsanō pharī prayāsa karavō jō'ī'ē tē lakhō. Tē āṅkaḍākīya hōvuṁ jō'ī'ē.
 Ullēkhita milisēkanḍa pachī skrīnasēvara kyārē lōnca karavuṁ tē lakhō. Tē āṅkaḍākīya hōvuṁ jō'ī'ē.
@@ -515,7 +505,6 @@ karnala suyōjita karē chē jēthī tē tamanē buṭa para dalīla māṭē p�
 Jāḷavaṇī mōḍa ṭrigarsa. Ā bahuvidha ēkā'unṭsanē akṣama karē chē.
 Darēka sṭārṭa'apa, tē apaḍēṭsa māṭē tapāsa karaśē.
 Bhāṣā'ō badalatī vakhatē, mahinānā nāma, kēlēnḍara vagērē badalō.
-Jō karnala śarū thāya, tō tē ruṭa pāsavarḍa sēṭa karaśē.
 Hārḍavēra prōbiṅga mēsēja śānta rākhō.
 Lōgina skrīna darśāvatā pahēlā divasanō sandēśa batāvō.
 Pravēśa skrīna pradarśita karatā pahēlā skrīna sāpha karō.
@@ -566,9 +555,6 @@ Lakṣaṇa saphaḷatāpūrvaka dūra karavāmāṁ āvyuṁ chē.
 Lakṣaṇa umēravāmāṁ niṣphaḷa.
 Lakṣaṇa dūra karavāmāṁ niṣphaḷa.
 Ēka vākyamāṁ śabda athavā śabdasamūhanē bījā śabda sāthē badalē chē
-lāla raṅganuṁ stara ōḷaṅgā'ī gayuṁ. Tē {0} hatuṁ.
-Līlā raṅganuṁ stara ōḷaṅgā'ī gayuṁ. Tē {0} hatuṁ.
-Vādaḷī raṅganuṁ stara ōḷaṅgā'ī gayuṁ. Tē {0} hatuṁ.
 Sācā raṅgō sakriya karō
 {0} Nē anāvarōdhita karavāmāṁ niṣphaḷa.
 {0} Pahēlāthī ja avarōdhita chē.
@@ -644,7 +630,6 @@ Milisēkaṇḍamāṁ vilamba
 āgaḷa lakhatā pahēlā kēṭalā milisēkanḍa rāha jōvī?
 Tamanē SSH FTP sarvaranō upayōga karavā dē chē
 "{0}" ādēśa māṭē kō'ī madada nathī.
-RGB raṅga māṭē amān'ya VT krama.
 Sēkanḍsa bāranō raṅga
 miniṭa bāranō raṅga
 kalāka bāranō raṅga
@@ -706,7 +691,6 @@ jhīpa śēlamānthī bahāra nīkaḷē chē
 ārkā'ivanī andara badhī phā'ilōnī sūci
 ullēkhita ḍirēkṭarī athavā vartamāna ḍirēkṭarīmāṁ phā'ila kāē chē
 ārkā'iva ḍirēkṭarī badalē chē
-ullēkhita jhīpa śēla ādēśa maḷyō nathī.
 Ḍirēkṭarī {0} astitvamāṁ nathī
 ārkā'iva ḍirēkṭarī {0} astitvamāṁ nathī
 mahattama sthitinī gaṇatarī
@@ -784,7 +768,6 @@ badhā sapōrṭēḍa kōḍapējanī yādī āpē chē
 ēplikēśanamāṁ kayā kampā'ilara calō sakṣama chē?
 Cōkkasa ghaṭanānē vadhāratā parīkṣaṇō
 hārḍavēranī tapāsa karatī ṭēsṭa
-kacarō ēkatra karanāranuṁ parīkṣaṇa karē chē
 parīkṣaṇa śēlamānthī bahāra nīkaḷē chē anē karnala śarū karē chē
 parīkṣaṇa śēlamānthī bahāra nīkaḷē chē anē karnala bandha karē chē
 vartamāna ḍirēkṭarīnē karnala rūparēkhāṅkana phā'ilamāṁ sācavē chē
@@ -854,13 +837,11 @@ Phīḍsa vān̄cavā māṭē RSS śēla khōlē chē
 phīḍa liṅka badalē chē
 tamāma phīḍsanī yādī āpē chē
 vēba brā'ujharamāṁ phīḍa vān̄cē chē
-ullēkhita RSS śēla ādēśa maḷyō nathī.
 Amān'ya RSS2 phīḍa.
 Amān'ya RSS1 phīḍa.
 Amān'ya aṇu phīḍa.
 RSS phīḍa URL dākhala karō:
 Amān'ya RSS phīḍa prakāra.
-Ajāṇī śēla bhūla:
 Lēkhanī māhitī mēḷavē chē
 lēkhanī saṅkhyā upalabdha lēkhō karatāṁ mōṭī na hō'ī śakē.
 Śīrṣaka:

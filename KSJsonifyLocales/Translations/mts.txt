@@ -39,7 +39,6 @@ Il-password ta '{0}:
 Password ħażina.
 L-utent huwa diżattivat.
 Username ħażin.
-Żball meta ppruvaw jiġu analizzati dawk li jżommu l-post. {0} - Traċċa tal-munzell:
 Żball meta ppruvaw jiġu analizzati dawk li jżommu l-post. {0}
 Żball meta ppruvajt iżżid username.
 usrmgr: Noħolqu username {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} ma nstabx fid-database. Iċċekkja l-isem u erġa 'pprova.
 Screensaver ma jistax jitgħabba minħabba dan li ġej:
 Hemm żball serju meta tkun stampata test.
 Hemm żball li qed tipprova toħloq konfigurazzjoni.
-Żball meta ppruvajt teħles RAM: {0} - Tkompli ...
 Mod ma jistax jitgħabba minħabba dan li ġej:
 mod: Tagħbija tal-mods ...
 mod: Waqfien tal-mods ...
@@ -72,7 +70,6 @@ Username għal {0}:
 Password għal {0}:
 Konness ma '{0}
 Żball meta tipprova tikkonnettja ma '{0}: {1}
-Stack Trace: {2}
 Direttorju lokali {0} ma jeżistix.
 Daħħal direttorju lokali. ".." biex immur lura.
 Direttorju {0} ma nstabx.
@@ -103,7 +100,6 @@ Turi l-iskrin tal-għajnuna
 Listi tad-direttorju lokali
 Listi tad-direttorju remot
 Tella 'fajl lokali għal direttorju remot billi tuża binarju jew test
-Messaġġ FTP: Il-kmand mitlub {0} ma jinstabx. Ara 'għajnuna' għal lista ta 'kmandi disponibbli speċifikati fuq il-qoxra FTP.
 Ma rnexxilekx tikseb propjetajiet għall-adapter {0}
 Numru tal-Adapter:
 Isem tal-Adapter:
@@ -211,7 +207,6 @@ Skonnettja apparat ta 'debug
 Listi ta 'apparati ta' debugging konnessi
 Apparat tad-debug {0} ma nstabx.
 Apparat {0} skonnettjat.
-Żball fil-konnessjoni: {0}
 Debug smigħ fuq l-indirizzi kollha billi tuża l-port {0}.
 L-ebda argument speċifikat. Ħjiel: Speċifika argumenti multipli separati bi spazji
 Alias ​​diġà misjub: {0}
@@ -223,7 +218,6 @@ Ma tistax tneħħi d-direttorju: {0}
 Iż-żona tal-ħin hija speċifikata ħażin.
 Għażla tal-profil invalida.
 Tipprova tikkonnettja ma '{0} bil-profil {1} ​​...
-Kmand {0} ma nstabx. Ara l-kmand "għajnuna" għal-lista ta 'kmandi.
 Ma rnexxilekx tikseb propjetajiet IPv6 għall-adapter {0}. Ikompli ...
 Informazzjoni IPv4:
 Informazzjoni IPv6:
@@ -381,7 +375,6 @@ Jagħmel fajl ġdid
 Il-fajl diġà jeżisti.
 Żball meta ppruvajt toħloq fajl: {0}
 Ma rnexxilux jiftaħ il-fajl. Ħruġ mill-qoxra ...
-Il-kmand speċifikat tal-editur tat-test ma jinstabx.
 Listi tal-kmandi disponibbli
 Joħroġ mill-editur tat-test u ħlief bidliet mhux salvati
 Jistampa l-kontenut tal-fajl bin-numri tal-linji fuq il-console
@@ -438,9 +431,6 @@ Sezzjoni invalida mdaħħla. Jekk jogħġbok mur lura.
 Mur lura...
 Enable
 Itfi
-Ikteb il-password tal-għerq li trid tiġi ssettjata. Tinkwetax; il-password tidher bħala stilel.
-Ibdel il-Password tal-Għerq?
-Issettja l-Password tal-Għerq ...
 Ikteb port debugger remot. Għandu jkun numeriku, u m'għandux ikun diġà użat. Inkella, id-debugger remot jonqos milli jiftaħ il-port.
 Ikteb kemm-il darba l-kmand "" iġib "" għandu jerġa 'jipprova t-tniżżil fallut. Għandu jkun numeriku.
 Ikteb meta tniedi screensaver wara millisekondi speċifikati. Għandu jkun numeriku.
@@ -515,7 +505,6 @@ Issettja l-għadma sabiex iġġiegħlek l-argument fuq l-ibbutjar.
 Triggers modalità ta 'manutenzjoni. Dan jiddiżattiva kontijiet multipli.
 Kull istartjar, jiċċekkja għal aġġornamenti.
 Meta taqleb il-lingwa, ibdel l-ismijiet tax-xahar, il-kalendarju, eċċ.
-Jekk il-qalba tinbeda, se tissettja l-password tal-għerq.
 Żomm il-messaġġi tas-sondaġġ tal-ħardwer siekta.
 Uri Messaġġ tal-Ġurnata qabel ma turi l-iskrin tal-login.
 Skrin ċar qabel ma turi l-iskrin tal-login.
@@ -566,9 +555,6 @@ L-attribut tneħħa b’suċċess.
 Naqas milli jżid l-attribut.
 Ma rnexxilux ineħħi l-attribut.
 Jissostitwixxi kelma jew frażi b'waħda oħra f'linja
-Inqabeż il-livell tal-kulur aħmar. Kien {0}.
-Inqabeż il-livell tal-kulur aħdar. Kien {0}.
-Inqabeż il-livell tal-kulur blu. Kien {0}.
 Attiva kuluri vera
 Naqas milli jiżblokka {0}.
 {0} huwa diġà mblukkat.
@@ -644,7 +630,6 @@ Dewmien f'millisekondi
 Kemm millisekondi tistenna qabel ma tagħmel il-kitba li jmiss?
 Ihallik tuża server FTP SSH
 L-ebda għajnuna għall-kmand "{0}".
-Sekwenza VT invalida għall-kulur RGB.
 Kulur tal-Bar tas-Sekondi
 Kulur tal-Bar tal-Minuti
 Bar tal-Kulur tas-Sigħat
@@ -706,7 +691,6 @@ Joħroġ mill-qoxra ZIP
 Jelenka l-fajls kollha ġewwa l-arkivju
 Oħroġ fajl għal direttorju speċifikat jew direttorju kurrenti
 Bidliet fid-direttorju tal-arkivju
-Il-kmand speċifiku tal-qoxra ZIP ma jinstabx.
 Direttorju {0} ma jeżistix
 Id-direttorju tal-arkivju {0} ma jeżistix
 Għadd ta 'Pożizzjonijiet Max
@@ -784,7 +768,6 @@ Jelenka l-paġni tal-kodiċi kollha appoġġjati
 Liema varjabbli tal-kompilatur huma attivati ​​fl-applikazzjoni?
 Testijiet li jqajmu l-avveniment speċifiku
 Testijiet li jippruvaw il-hardware
-Jittestja l-kollettur taż-żibel
 Joħroġ mill-qoxra tat-test u jibda l-qalba
 Joħroġ mill-qoxra tat-test u jagħlaq il-qalba
 Isalva d-direttorju kurrenti fil-fajl tal-konfigurazzjoni tal-qalba
@@ -854,13 +837,11 @@ Joħroġ mill-qoxra RSS u jirritorna fil-qalba
 Ibdel il-link tal-għalf
 Jelenka l-għalf kollu
 Jaqra feed fi web browser
-Il-kmand tal-qoxra RSS speċifikat ma jinstabx.
 Feed RSS invalidu.
 Għalf RSS1 invalidu.
 Għalf Atom invalidu.
 Daħħal RSS feed URL:
 Tip ta 'feed RSS invalidu.
-Żball tal-qoxra mhux magħruf:
 Tikseb l-informazzjoni dwar l-artiklu
 In-numru tal-artiklu ma jistax ikun akbar mill-artikoli disponibbli.
 Titolu:

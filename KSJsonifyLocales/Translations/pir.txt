@@ -39,7 +39,6 @@ spaces ain't allowed.
 wrong password.
  user be disabled.
  wrong username.
- error tryin' to parse placeholders. {0} - stack trace:
 error tryin' to parse placeholders. {0}
 error tryin' to add username.
  usrmgr: creatin' username {0}...
@@ -58,7 +57,6 @@ error tryin' to add username.
  screensaver can't be loaded because o' the following: 
 there be a serious error when printin' text.
  there be an error tryin' to create configuration.
- error tryin' to free ram: {0} - continuin'...
  mod can't be loaded because o' the following: 
 mod: loadin' mods...
  mod: stoppin' mods...
@@ -72,7 +70,6 @@ username fer {0}:
 password fer {0}: 
 connected to {0}
 error when tryin' to connect to {0}: {1}
-stack trace: {2}
  local directory {0} doesn't exist.
  enter a local directory. ".." to go aft.
  directory {0} not found.
@@ -103,7 +100,6 @@ shows 'elp screen
 lists local directory
 lists remote directory
 uploads local file to remote directory usin' binary or text
-ftp message: the requested command {0} be not found. See 'help' fer a list o' available commands specified on ftp shell.
  failed to get properties fer adapter {0}
 adapter number:
 adapter name:
@@ -211,7 +207,6 @@ disconnect a debug device
 lists debuggin' devices connected
 debug device {0} not found.
  device {0} disconnected.
- error in connection: {0}
 debug listenin' on all addresses usin' port {0}.
  no arguments specified. 'int: specify multiple arguments separated by spaces
 alias already found: {0}
@@ -223,7 +218,6 @@ unable to remove directory: {0}
 timezone be specified incorrectly.
  invalid profile selection.
  tryin' to connect to {0} with profile {1}...
- command {0} not found. See the "help" command fer the list o' commands.
  failed to get ipv6 properties fer adapter {0}. Continuin'...
  ipv4 information:
 ipv6 information:
@@ -381,7 +375,6 @@ makes a new file
 file already exists.
  error tryin' to create a file: {0}
 failed to open file. Exitin' shell...
- the specified text editor command be not found.
  lists available commands
 exits the text editor an' save unsaved changes
 prints the contents o' the file with line numbers to the console
@@ -438,9 +431,6 @@ invalid section entered. Please go aft.
  go aft...
 Enable
 disable
- write the root password to be set. Don't worry; the password be shown as stars.
- change root password?
-set root password...
  write a remote debugger port. It must be numeric, an' must not be already used. Otherwise, remote debugger will fail to open the port.
  write 'ow many times the "get" command should retry failed downloads. It must be numeric.
  write when to launch screensaver after specified milliseconds. It must be numeric.
@@ -515,7 +505,6 @@ sets up the kernel so it prompts ye fer argument on boot.
  triggers maintenance mode. This here disables multiple accounts.
  each startup, it will check fer updates.
  when switchin' languages, change the month names, calendar, etc.
- if the kernel be started, it will set root password.
  keep 'ardware probin' messages silent.
  show message o' the day before displayin' login screen.
  clearrr screen before displayin' login screen.
@@ -566,9 +555,6 @@ the file be an archive. Used fer backups.
  failed to add attribute.
  failed to remove attribute.
  replaces a word or phrase with another one in a line
-red color level exceeded. It been {0}.
- green color level exceeded. It been {0}.
- blue color level exceeded. It been {0}.
  activate true colors
  failed to unblock {0}.
  {0} be already blocked.
@@ -644,7 +630,6 @@ records remote debug chat to debug log.
 'ow many milliseconds to wait before makin' the next write?
 lets ye use an ssh ftp server
 no 'elp fer command "{0}".
- invalid vt sequence fer rgb color.
  color o' seconds barrr
 color o' minutes barrr
 color o' 'ours barrr
@@ -706,7 +691,6 @@ exits the zip shell
 lists all files inside the archive
 extracts a file to a specified directory or a current directory
 changes archive directory
-the specified zip shell command be not found.
  directory {0} doesn't exist
 archive directory {0} doesn't exist
 max positions count
@@ -784,7 +768,6 @@ lists all supported codepages
 what compiler variables be enabled in the application?
 tests raisin' the specific event
 tests probin' the 'ardware
-tests the garbage collector
 exits the test shell an' starts the kernel
 exits the test shell an' shuts down the kernel
 saves the current directory to kernel configuration file
@@ -854,13 +837,11 @@ exits rss shell an' returns to kernel
 changes the feed link
 lists all feeds
 reads a feed in a web browser
-the specified rss shell command be not found.
  invalid rss2 feed.
  invalid rss1 feed.
  invalid atom feed.
  enter an rss feed url:
 invalid rss feed type.
- unknown shell error:
 Gets the article info
 article number couldn't be bigger than the available articles.
  title:

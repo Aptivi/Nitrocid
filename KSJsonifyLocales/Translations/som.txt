@@ -39,7 +39,6 @@ Furaha {0}:
 Furaha qaldan
 Isticmaalaha waa dansan yahay
 Magaca isticmaale khaldan
-Cilad isku day ah in lagu turxaan bixiyo dadka meesha haysta. {0} - Raadraac raad raac ah:
 Cilad isku day ah in lagu turxaan bixiyo dadka meesha haysta. {0}
 Cilad ayaa la isku dayay in lagu daro magaca isticmaalaha.
 usrmgr: Abuurista magaca isticmaalaha {0} ...
@@ -58,7 +57,6 @@ Sawir-qaadaha {0} lagama helin keydka xogta. Hubi magaca oo iskuday markale.
 Sawir-qaadaha lama rari karo sababaha soo socda awgood:
 Waxaa jira qalad aad u weyn markii la daabacayo qoraalka.
 Waxaa jira qalad isku dayaya in la abuuro qaabeynta.
-Cillad isku day ah in la sii daayo RAM: {0} - Sii socoshada ...
 Mod lama rari karo sababaha soo socda awgood:
 qaab: Load mods ...
 qaab: Joojinta mods ...
@@ -72,7 +70,6 @@ Magaca isticmaale ee {0}:
 Erayga sirta ah ee {0}:
 Kuxiran {0}
 Cilad markii la isku dayayay in lagu xiro {0}: {1}
-Raad raacsan: {2}
 Buugga deegaanka {0} ma jiro
 Gali tusaha deegaanka. ".." inaad dib ugu noqoto.
 Tusaha {0} lama helin.
@@ -103,7 +100,6 @@ Waxay muujinaysaa shaashadda caawinta
 Liis gareynta tusaha deegaanka
 Liiska diiwaanka fog
 Waxay faylalka maxalliga ah ugu shubtaa galka fog iyadoo la adeegsanayo laba-koob ama qoraal
-Farriinta FTP: Amarkii la codsaday {0} lama helin. Ka eeg 'caawimaad' liiska amarrada la heli karo ee ku qeexan qolofka FTP.
 Waa lagu guuldareystay in loo helo sifooyin adabtarada {0}
 Lambarka adabtarada:
 Magaca adabtarada:
@@ -211,7 +207,6 @@ Ka jar qalabka khaladka
 Liisaska qalabka ka saaraya qalabka ayaa ku xiran
 Qalab khalad ah {0} lama helin.
 Qalab {0} ayaa go'ay
-Cilad la xiriirta: {0}
 Dhegeysiga khaladka ah ee cinwaanada oo dhan adoo adeegsanaya dekedda {0}
 Wax muran ah lama cayimin. Tilmaam: Cadee doodo badan oo loo kala saaray meelo bannaan
 Naaneysi hore ayaa loo helay: {0}
@@ -223,7 +218,6 @@ Awoodin in la saaro liiska: {0}
 Waqtiga loo cayimay si khaldan.
 Xulitaanka muuqaalka aan ansax ahayn
 Iskuday inlagu xiro {0} leh astaan ​​{1} ...
-Amarka {0} lama helin. Ka eeg amarka "caawimaad" liiska amarrada.
 Waa lagu guuldareystay in loo helo guryaha IPv6 adabtarada {0}. Sii socda ...
 Macluumaadka IPv4:
 Macluumaadka IPv6:
@@ -381,7 +375,6 @@ Waxay sameysaa feyl cusub
 Fayl horey ayuu ujiray
 Cilad isku day ah in la abuuro feyl: {0}
 Fashilmay furin. Qolof ka baxaya ...
-Amarka tifaftiraha qoraalka la cayimay lama helin.
 Liisaska amarada la heli karo
 Ka bax tifaftiraha qoraalka oo keydso isbeddelada aan la badbaadin
 Wuxuu ku daabacaa waxa ku jira faylka oo leh nambar lambar xariijinta
@@ -438,9 +431,6 @@ Qayb aan ansax ahayn ayaa la galay. Fadlan dib u noqo.
 Dib u laabo ...
 Daar
 Hawl gab
-Qor lambarka sirta ah ee lagu dejinayo. Ha welwelin; lambarka sirta ah waxaa loo muujiyaa xiddigo.
-Beddel erayga sirta ah?
-Calan Password xididka ...
 Qor deked khafiifisa fog. Waa inuu noqdaa lambar, waana inaan horay loo isticmaalin. Haddii kale, qalabka wax baabiiya ee fog ayaa ku guuldareysan doona inuu furo dekedda.
 Qor inta jeer ee amarka "" hel "" ay tahay inuu dib u tijaabiyo soo dejinta fashilantay. Waa inuu noqdaa tiro.
 Qor goorta la bilaabayo kaydinta shaashadda kadib markii la caddeeyo millisekonds. Waa inuu noqdaa tiro.
@@ -515,7 +505,6 @@ Dejisaa guntinta si ay kuugu kallifto inaad ku doodo kabaha.
 Waxay kicineysaa habka dayactirka. Tani waxay joojineysaa koontooyin badan.
 Bilaabasho kasta, waxay hubin doontaa wixii cusbooneysiin ah.
 Markaad luqadaha beddelayso, beddel magacyada bisha, kalandarka, iwm.
-Haddii kernel la bilaabay, waxay dejin doontaa lambarka sirta ah.
 Aamus fariimaha baaritaanka qalabka.
 Muuji Farriinta Maalinta ka hor intaadan soo bandhigin shaashadda gelitaanka.
 Sharax nadiif ah ka hor intaadan soo bandhigin shaashadda soo galitaanka.
@@ -566,9 +555,6 @@ Sifada si guul leh ayaa looga saaray.
 Waa lagu guuldareystay in lagu daro astaamo.
 Ku guuldareystay inuu ka saaro sifada.
 Wuxuu ku badalayaa eray ama weedh mid kale safka
-Heerka midabka cas ayaa dhaafay. Waxay ahayd {0}.
-Heerka midabka cagaaran wuu dhaafay. Waxay ahayd {0}.
-Heerka midabka buluuga ah ayaa dhaafay. Waxay ahayd {0}.
 Dhaqaajiso midabada runta ah
 Waa lagu guuldareystay in laga furo {0}.
 {0} horay baa loo xiray
@@ -644,7 +630,6 @@ Dib udhac ku dhaca Millisekonds
 Immisa milliseconds ah in la sugo ka hor inta aan la samayn qorista xigta?
 Waxay kuu ogolaaneysaa inaad isticmaasho server-ka SSH FTP
 Caawinaad maleh amarka "{0}".
-Taxanaha VT aan ansax ahayn ee midabka RGB.
 Midabka Seconds Bar
 Midabka Daqiiqadaha Bar
 Midabka Saacadaha Bar
@@ -706,7 +691,6 @@ Ka bax qolofta ZIP
 Wuxuu liis gareeyaa dhammaan faylasha ku jira arjiga
 Waxay fayl u soo saartaa galka cayiman ama galka hadda jira
 Isbedelada galka kaydinta
-Amarka qolofka ZIP ee la cayimay lama helin.
 Tusaha {0} ma jiro
 Diiwaanka Diiwaanka {0} ma jiro
 Meeleynta Max Meelaha
@@ -784,7 +768,6 @@ Liisaska dhammaantood waa la taageeray koodhadhka
 Maxay yihiin doorsoomayaasha iskuxiraha ah ee karti u leh arjiga?
 Tijaabooyinka kor u qaadaya dhacdada gaarka ah
 Tijaabooyinka lagu baaro qalabka
-Tijaabiyaa qashin ururiyaha
 Ka bax qolofta tijaabada waxayna bilaabeysaa firida
 Ka bax qolofta tijaabada oo xir xiraha
 Kaydiyaa galka hadda faylka qaabeynta kernel
@@ -854,13 +837,11 @@ Ka bax qolofka RSS kuna laaban kernel
 Waxay badashaa iskuxirka quudinta
 Liisaska oo dhan ayaa lagu qoraa
 Wuxuu ka aqriyaa quudinta biraawsar biraawsar
-Amarka qolofka RSS ee la cayimay lama helin.
 Quudinta RSS2 aan ansax ahayn
 Quudinta RSS1 aan ansax ahayn
 Quudinta Atamka aan ansax ahayn
 Gali cinwaanka RSS:
 Nooca quudinta RSS ee aan ansax ahayn
-Khalad qolofta aan la garanayn:
 Hesho faahfaahinta maqaalka
 Lambarka qodobku kama weynaan karo qodobbada la heli karo.
 Ciwaanka:

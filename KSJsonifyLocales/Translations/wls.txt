@@ -39,7 +39,6 @@ Cyfrinair {0}:
 Cyfrinair anghywir.
 Mae'r defnyddiwr yn anabl.
 Enw defnyddiwr anghywir.
-Gwall wrth geisio dosrannu deiliaid lleoedd. {0} - Olrhain pentyrrau:
 Gwall wrth geisio dosrannu deiliaid lleoedd. {0}
 Gwall wrth geisio ychwanegu enw defnyddiwr.
 usrmgr: Creu enw defnyddiwr {0} ...
@@ -58,7 +57,6 @@ Arbedwr sgrin {0} heb ei ddarganfod yn y gronfa ddata. Gwiriwch yr enw a rhoi cy
 Ni ellir llwytho arbedwr sgrin oherwydd y canlynol:
 Mae gwall difrifol wrth argraffu testun.
 Mae gwall wrth geisio creu cyfluniad.
-Gwall wrth geisio rhyddhau RAM: {0} - Parhau ...
 Ni ellir llwytho mod oherwydd y canlynol:
 mod: Llwytho mods ...
 mod: Stopio mods ...
@@ -72,7 +70,6 @@ Enw defnyddiwr ar gyfer {0}:
 Cyfrinair ar gyfer {0}:
 Wedi'i gysylltu â {0}
 Gwall wrth geisio cysylltu â {0}: {1}
-Olrhain Stac: {2}
 Nid yw'r cyfeiriadur lleol {0} yn bodoli.
 Rhowch gyfeiriadur lleol. ".." i fynd yn ôl.
 Cyfeiriadur {0} heb ei ddarganfod.
@@ -103,7 +100,6 @@ Yn dangos sgrin gymorth
 Yn rhestru cyfeirlyfr lleol
 Yn rhestru cyfeirlyfr anghysbell
 Yn llwytho ffeil leol i gyfeiriadur anghysbell gan ddefnyddio deuaidd neu destun
-Neges FTP: Ni cheir hyd i'r gorchymyn {0} y gofynnwyd amdano. Gweler 'help' am restr o'r gorchmynion sydd ar gael a bennir ar gragen FTP.
 Wedi methu cael eiddo ar gyfer addasydd {0}
 Rhif Addasydd:
 Enw'r Addasydd:
@@ -211,7 +207,6 @@ Datgysylltwch ddyfais ddadfygio
 Yn rhestru dyfeisiau difa chwilod wedi'u cysylltu
 Dyfais debug {0} heb ei darganfod.
 Dyfais {0} wedi'i datgysylltu.
-Gwall mewn cysylltiad: {0}
 Debug yn gwrando ar bob cyfeiriad gan ddefnyddio porthladd {0}.
 Ni nodwyd dadleuon. Awgrym: Nodwch ddadleuon lluosog wedi'u gwahanu gan ofodau
 Canfu Alias ​​eisoes: {0}
@@ -223,7 +218,6 @@ Methu tynnu cyfeiriadur: {0}
 Mae parth amser wedi'i nodi'n anghywir.
 Dewis proffil annilys.
 Yn ceisio cysylltu â {0} gyda phroffil {1} ​​...
-Gorchymyn {0} heb ei ddarganfod. Gweler y gorchymyn "help" am y rhestr o orchmynion.
 Wedi methu cael eiddo IPv6 ar gyfer addasydd {0}. Parhau ...
 Gwybodaeth IPv4:
 Gwybodaeth IPv6:
@@ -381,7 +375,6 @@ Yn gwneud ffeil newydd
 Mae'r ffeil eisoes yn bodoli.
 Gwall wrth geisio creu ffeil: {0}
 Wedi methu agor ffeil. Cregyn sy'n gadael ...
-Ni cheir hyd i'r gorchymyn golygydd testun penodedig.
 Rhestrau gorchmynion sydd ar gael
 Allanfa'r golygydd testun ac arbed newidiadau heb eu cadw
 Yn argraffu cynnwys y ffeil gyda rhifau llinell i'r consol
@@ -438,9 +431,6 @@ Adran annilys wedi'i nodi. Ewch yn ôl.
 Mynd yn ôl...
 Galluogi
 Analluoga
-Ysgrifennwch y cyfrinair gwraidd i'w osod. Peidiwch â phoeni; dangosir y cyfrinair fel sêr.
-Newid Cyfrinair Gwreiddiau?
-Gosod Cyfrinair Gwreiddiau ...
 Ysgrifennwch borthladd dadfygiwr anghysbell. Rhaid iddo fod yn rhifol, ac ni ddylid ei ddefnyddio eisoes. Fel arall, bydd dadfygiwr anghysbell yn methu ag agor y porthladd.
 Ysgrifennwch sawl gwaith y dylai'r gorchymyn "cael" ail-geisio dadlwytho a fethwyd. Rhaid iddo fod yn rhifol.
 Ysgrifennwch pryd i lansio arbedwr sgrin ar ôl milieiliadau penodol. Rhaid iddo fod yn rhifol.
@@ -515,7 +505,6 @@ Yn gosod y cnewyllyn i fyny fel ei fod yn eich annog i ddadlau ar gist.
 Modd cynnal a chadw sbardunau. Mae hyn yn anablu cyfrifon lluosog.
 Bob cychwyn, bydd yn gwirio am ddiweddariadau.
 Wrth newid ieithoedd, newidiwch enwau'r mis, calendr, ac ati.
-Os cychwynnir y cnewyllyn, bydd yn gosod cyfrinair gwraidd.
 Cadwch negeseuon archwilio caledwedd yn dawel.
 Dangos Neges y Dydd cyn arddangos sgrin mewngofnodi.
 Clirio sgrin cyn arddangos sgrin mewngofnodi.
@@ -566,9 +555,6 @@ Mae priodoledd wedi'i ddileu yn llwyddiannus.
 Wedi methu ychwanegu priodoledd.
 Wedi methu cael gwared ar briodoledd.
 Yn disodli gair neu ymadrodd ag un arall mewn llinell
-Rhagorwyd ar lefel lliw coch. Roedd yn {0}.
-Rhagorwyd ar lefel lliw gwyrdd. Roedd yn {0}.
-Rhagorwyd ar lefel lliw glas. Roedd yn {0}.
 Ysgogi gwir liwiau
 Wedi methu dadflocio {0}.
 Mae {0} eisoes wedi'i rwystro.
@@ -644,7 +630,6 @@ Oedi yn Milliseconds
 Sawl milieiliad i aros cyn gwneud yr ysgrifen nesaf?
 Yn gadael i chi ddefnyddio gweinydd SSH FTP
 Dim help ar gyfer gorchymyn "{0}".
-Dilyniant VT annilys ar gyfer lliw RGB.
 Bar Lliw Eiliadau
 Bar Lliw Cofnodion
 Bar Lliw Oriau
@@ -706,7 +691,6 @@ Allanfa'r gragen ZIP
 Yn rhestru'r holl ffeiliau y tu mewn i'r archif
 Yn tynnu ffeil i gyfeiriadur penodol neu gyfeiriadur cyfredol
 Newid cyfeiriadur archif
-Ni cheir hyd i'r gorchymyn cragen ZIP penodedig.
 Nid yw'r cyfeiriadur {0} yn bodoli
 Nid yw cyfeiriadur archif {0} yn bodoli
 Swyddi Uchaf yn Cyfrif
@@ -784,7 +768,6 @@ Yn rhestru'r holl dudalennau cod a gefnogir
 Pa newidynnau crynhowr sy'n cael eu galluogi yn y cais?
 Profion yn codi'r digwyddiad penodol
 Profion yn archwilio'r caledwedd
-Profi'r casglwr sbwriel
 Allanfa'r gragen prawf a chychwyn y cnewyllyn
 Allanfa'r gragen prawf ac yn cau i lawr y cnewyllyn
 Yn arbed y cyfeiriadur cyfredol i ffeil cyfluniad cnewyllyn
@@ -854,13 +837,11 @@ Yn gadael cragen RSS ac yn dychwelyd i'r cnewyllyn
 Newid y ddolen bwyd anifeiliaid
 Yn rhestru pob porthiant
 Yn darllen porthiant mewn porwr gwe
-Ni cheir hyd i'r gorchymyn cregyn RSS penodedig.
 Porthiant RSS2 annilys.
 Porthiant RSS1 annilys.
 Porthiant Atom Annilys.
 Rhowch URL porthiant RSS:
 Math porthiant RSS annilys.
-Gwall cragen anhysbys:
 Cael gwybodaeth yr erthygl
 Ni allai rhif yr erthygl fod yn fwy na'r erthyglau sydd ar gael.
 Teitl:

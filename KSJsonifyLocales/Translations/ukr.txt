@@ -39,7 +39,6 @@ Parolʹ korystuvacha {0}:
 Nepravylʹnyy parolʹ.
 Korystuvach vidklyuchenyy.
 Nepravylʹne imʺya korystuvacha.
-Pomylka pry sprobi proanalizuvaty zapovnyuvachi. {0} – trasuvannya steka:
 Pomylka pry sprobi proanalizuvaty zapovnyuvachi. {0}
 Pomylka sproby dodaty imʺya korystuvacha.
 usrmgr: stvorennya imeni korystuvacha {0}...
@@ -58,7 +57,6 @@ Zastavku {0} ne znaydeno v bazi danykh. Perevirte nazvu ta sprobuyte shche raz.
 Ne vdayetʹsya zavantazhyty zastavku cherez nastupne:
 Pid chas druku tekstu stalasya seryozna pomylka.
 Pid chas sproby stvoryty konfihuratsiyu stalasya pomylka.
-Pomylka pry sprobi zvilʹnyty operatyvnu pamʺyatʹ: {0} - Prodovzhennya...
 Mod ne mozhe buty zavantazhenyy cherez nastupne:
 mod: Zavantazhennya modiv...
 mod: Zupynka modiv...
@@ -72,7 +70,6 @@ Im'ya korystuvacha dlya {0}:
 Parolʹ dlya {0}:
 Pidklyucheno do {0}
 Pomylka pid chas sproby pidklyuchytysya do {0}: {1}
-Trasuvannya steka: {2}
 Lokalʹnyy kataloh {0} ne isnuye.
 Vveditʹ lokalʹnyy kataloh. ".." povertatysya.
 Kataloh {0} ne znaydeno.
@@ -103,7 +100,6 @@ Pokazuye ekran dovidky
 Perelichuye lokalʹnyy kataloh
 Perelichuye viddalenyy kataloh
 Zavantazhuye lokalʹnyy fayl u viddalenyy kataloh za dopomohoyu dviykovoho abo tekstovoho faylu
-FTP-povidomlennya: zapytuvanu komandu {0} ne znaydeno. Perehlyanʹte «dovidku» dlya otrymannya spysku dostupnykh komand, zaznachenykh v obolontsi FTP.
 Ne vdalosya otrymaty vlastyvosti dlya adaptera {0}
 Nomer adaptera:
 Nazva adaptera:
@@ -211,7 +207,6 @@ Vidʺyednayte prystriy dlya nalahodzhennya
 Perelichuye pidklyucheni prystroyi dlya nalahodzhennya
 Nalahodzhuvalʹnyy prystriy {0} ne znaydeno.
 Prystriy {0} vidklyucheno.
-Pomylka pidklyuchennya: {0}
 Nalahodzhennya proslukhovuvannya vsikh adres za dopomohoyu portu {0}.
 Arhumenty ne vkazani. Pidkazka: vkazhitʹ kilʹka arhumentiv, rozdilenykh probilamy
 Psevdonim uzhe znaydeno: {0}
@@ -223,7 +218,6 @@ Ne vdayetʹsya vydalyty kataloh: {0}
 Chasovyy poyas vkazano nepravylʹno.
 Nediysnyy vybir profilyu.
 Sproba pidklyuchytysya do {0} za dopomohoyu profilyu {1}...
-Komandu {0} ne znaydeno. Spysok komand dyv. u komandi «dovidka».
 Ne vdalosya otrymaty vlastyvosti IPv6 dlya adaptera {0}. Prodovzhennya...
 Informatsiya pro IPv4:
 Informatsiya pro IPv6:
@@ -381,7 +375,6 @@ Stvoryuye novyy fayl
 Fayl uzhe isnuye.
 Pomylka sproby stvoryty fayl: {0}
 Ne vdalosya vidkryty fayl. Vykhid z obolonky...
-Vkazana komanda tekstovoho redaktora ne znaydena.
 Perelichuye dostupni komandy
 Vykhid iz tekstovoho redaktora ta zberezhennya nezberezhenykh zmin
 Vyvodytʹ na konsolʹ vmist faylu z nomeramy ryadkiv
@@ -438,9 +431,6 @@ Vvedeno nediysnyy rozdil. Budʹ laska, povernitʹsya.
 Povertaysya...
 Uvimknuty
 Vymknuty
-Napyshitʹ parolʹ root, yakyy potribno vstanovyty. Ne khvylyuytesya; parolʹ vidobrazhayetʹsya zirochkamy.
-Zminyty parolʹ root?
-Vstanovyty parolʹ root...
 Napyshitʹ port viddalenoho nalahodzhuvacha. Vin maye buty chyslovym i ne povynen buty vzhe vykorystanyy. Inakshe viddalenyy nalahodzhuvach ne zmozhe vidkryty port.
 Napyshitʹ, skilʹky raziv komanda "get" maye povtoryty nevdali zavantazhennya. Vono maye buty chyslovym.
 Napyshitʹ, koly zapuskaty zastavku cherez vkazani milisekundy. Vono maye buty chyslovym.
@@ -515,7 +505,6 @@ Nalashtovuye yadro, shchob vono zaproponuvalo vam arhument pid chas zavantazhenn
 Aktyvuye rezhym obsluhovuvannya. Tse vymykaye kilʹka oblikovykh zapysiv.
 Pry kozhnomu zapusku vin pereviryatyme nayavnistʹ onovlenʹ.
 Pry zmini movy zminyuyte nazvy misyatsiv, kalendar toshcho.
-Yakshcho yadro ​​zapushcheno, vono vstanovytʹ parolʹ root.
 Zberihayte movchannya povidomlenʹ pro aparatne testuvannya.
 Pokazuvaty povidomlennya dnya pered vidobrazhennyam ekrana vkhodu.
 Ochystitʹ ekran pered vidobrazhennyam ekrana vkhodu.
@@ -566,9 +555,6 @@ Atrybut uspishno vydaleno.
 Ne vdalosya dodaty atrybut.
 Ne vdalosya vydalyty atrybut.
 Zaminyuye slovo chy frazu inshym u ryadku
-Perevyshcheno rivenʹ chervonoho kolʹoru. Tse bulo {0}.
-Perevyshcheno rivenʹ zelenoho kolʹoru. Tse bulo {0}.
-Perevyshcheno rivenʹ synʹoho kolʹoru. Tse bulo {0}.
 Aktyvuyte spravzhni kolʹory
 Ne vdalosya rozblokuvaty {0}.
 {0} uzhe zablokovano.
@@ -644,7 +630,6 @@ Zatrymka v milisekundakh
 Skilʹky milisekund chekaty, persh nizh zrobyty nastupnyy zapys?
 Dozvolyaye vykorystovuvaty FTP-server SSH
 Nemaye dopomohy dlya komandy "{0}".
-Nediysna poslidovnistʹ VT dlya kolʹoru RGB.
 Kolir paneli sekund
 Kolir khvylynnoyi paneli
 Kolir hodynnyka
@@ -706,7 +691,6 @@ Vykhodytʹ z obolonky ZIP
 Perelichuye vsi fayly v arkhivi
 Rozpakovuye fayl u vkazanyy kataloh abo potochnyy kataloh
 Zminyuye kataloh arkhivu
-Vkazana komanda obolonky ZIP ne znaydena.
 Kataloh {0} ne isnuye
 Arkhivnyy kataloh {0} ne isnuye
 Maksymalʹna kilʹkistʹ pozytsiy
@@ -784,7 +768,6 @@ Perelik usikh pidtrymuvanykh kodovykh storinok
 Yaki zminni kompilyatora vklyucheni v prohrami?
 Testy, shcho stosuyutʹsya konkretnoyi podiyi
 Testy testuvannya obladnannya
-Testuye zbirnyk smittya
 Vykhodytʹ z testovoyi obolonky ta zapuskaye yadro
 Vykhodytʹ z testovoyi obolonky ta vymykaye yadro
 Zberihaye potochnyy kataloh u fayli konfihuratsiyi yadra
@@ -854,13 +837,11 @@ Vykhodytʹ z obolonky RSS i povertayetʹsya do yadra
 Zminyuye posylannya kanalu
 Perelichuye vsi kanaly
 Chytaye kanal u veb-brauzeri
-Vkazana komanda obolonky RSS ne znaydena.
 Nediysnyy kanal RSS2.
 Nediysnyy kanal RSS1.
 Nediysnyy kanal Atom.
 Vveditʹ URL-adresu kanalu RSS:
 Nediysnyy typ RSS-kanalu.
-Nevidoma pomylka obolonky:
 Otrymuye informatsiyu pro stattyu
 Nomer statti ne mozhe buty bilʹshym, nizh dostupni statti.
 Nazva:

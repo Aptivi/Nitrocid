@@ -39,7 +39,6 @@ Parola {0}:
 Parola gresita.
 Utilizatorul este dezactivat.
 Nume gre?it.
-A ap?rut o eroare la testarea loca?iilor. {0} - Urm?ritul stivei:
 A ap?rut o eroare la testarea loca?iilor. {0}
 Eroare încercat s? ad?uga?i nume de utilizator.
 usrmgr: Crearea numelui de utilizator {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} nu se g?se?te în baza de date. Verifica?i numele ?i încerca?i di
 Screensaverul nu poate fi înc?rcat din urm?toarele:
 Exist? o eroare grav? la imprimarea textului.
 Exist? o eroare încercând s? creeze configura?ie.
-Eroare la încercarea de a elibera RAM: {0} - Continuarea ...
 Modul nu poate fi înc?rcat din urm?toarele:
 mod: Inc?rcarea modurilor ...
 mod: Oprirea modurilor ...
@@ -72,7 +70,6 @@ Nume de utilizator pentru {0}:
 Parol? pentru {0}:
 Conectat la {0}
 Eroare când încerca?i s? v? conecta?i la {0}: {1}
-Urm?rit Stack: {2}
 Directorul local {0} nu exist?.
 Introduce?i un director local. ".." pentru a reveni.
 Directory {0} nu a fost g?sit.
@@ -103,7 +100,6 @@ Afi?eaz? ecranul de ajutor
 Listeaz? directorul local
 Listeaz? directorul la distan??
 Incarc? fi?ierul local într-un director de la distan?? folosind text binar sau text
-Mesaj FTP: Comanda solicitat? {0} nu este g?sit?. Consulta?i „ajutor” pentru o list? de comenzi disponibile specificate pe shell-ul FTP.
 Eroare la ob?inerea propriet??ilor pentru adaptor {0}
 Num?rul adaptorului:
 Nume adaptor:
@@ -211,7 +207,6 @@ Deconecta?i un dispozitiv de depanare
 Listeaz? dispozitivele de depanare conectate
 Dispozitivul de depanare {0} nu a fost g?sit.
 Dispozitivul {0} deconectat.
-Eroare în conexiune: {0}
 Debug asculta?i pe toate adresele folosind portul {0}.
 Nu sunt specificate argumente. Sugestie: specifica?i mai multe argumente separate prin spa?ii
 Alias a fost deja g?sit: {0}
@@ -223,7 +218,6 @@ Imposibil de eliminat directorul: {0}
 Fusul orar este specificat incorect.
 Selectarea nevalid? a profilului.
 Incerca?i s? v? conecta?i la {0} cu profilul {1} ...
-Comanda {0} nu a fost g?sit?. Consulta?i comanda „help” pentru lista comenzilor.
 Nu a reu?it s? ob?ine?i propriet??i IPv6 pentru adaptor {0}. Continuarea ...
 Informa?ii IPv4:
 Informa?ii IPv6:
@@ -381,7 +375,6 @@ Creeaz? un nou fi?ier
 Fisierul exist? deja.
 Eroare la încercarea de a crea un fi?ier: {0}
 Deschiderea fi?ierului a e?uat. Ie?ind din coaj? ...
-Comanda editorului de text specificat nu este g?sit?.
 Listeaz? comenzile disponibile
 Ie?e?te editorul de text ?i salveaz? modific?rile nesalvate
 Tip?re?te con?inutul fi?ierului cu numere de linie în consol?
@@ -438,9 +431,6 @@ S-a introdus o sec?iune nevalid?. V? rog s? v? întoarce?i.
 Intoarce-te...
 Permite
 Dezactiveaz?
-Scrie?i parola de root care trebuie setat?. Nu v? face?i griji; parola sunt afi?ate ca stele.
-Schimba?i parola r?d?cin??
-Seta?i parola r?d?cin? ...
 Scrie?i un port de depanare la distan??. Trebuie s? fie numeric? ?i s? nu fie deja utilizat?. In caz contrar, depanatorul la distan?? nu va reu?i s? deschid? portul.
 Scrie?i de câte ori comanda „„ ob?ine?i ”„ ar trebui s? reîncerce desc?rc?rile nereu?ite. Trebuie s? fie numeric?.
 Scrie?i când s? lansa?i screensaver dup? milisecunde specificate. Trebuie s? fie numeric?.
@@ -515,7 +505,6 @@ Configura?i nucleul astfel încât s? v? solicite argumentul la pornire.
 Declan?eaz? modul de între?inere. Aceasta dezactiveaz? mai multe conturi.
 La fiecare pornire, va verifica actualiz?rile.
 Când schimba?i limba, modifica?i numele lunii, calendarul etc.
-Dac? nucleul este pornit, acesta va seta parola de root.
 P?stra?i mesajele de sondare hardware t?cute.
 Afi?a?i mesajul zilei înainte de a afi?a ecranul de conectare.
 ?terge?i ecranul înainte de a afi?a ecranul de conectare.
@@ -566,9 +555,6 @@ Atributul a fost eliminat cu succes.
 Nu s-a putut ad?uga atributul.
 Eliminarea atributului nu a reu?it.
 Inlocuie?te un cuvânt sau o fraz? cu altul dintr-o linie
-Nivelul de culoare ro?ie a fost dep??it. A fost {0}.
-Nivelul de culoare verde a fost dep??it. A fost {0}.
-Nivelul culorii albastru a fost dep??it. A fost {0}.
 Activa?i culorile adev?rate
 Deblocarea {0} nu a reu?it.
 {0} este deja blocat.
@@ -644,7 +630,6 @@ Intârziere în milisecunde
 Câte milisecunde trebuie s? a?tep?i înainte de a scrie urm?toarea scriere?
 V? permite s? utiliza?i un server FTP SSH
 F?r? ajutor pentru comanda „{0}”.
-Secven?? VT nevalid? pentru culoarea RGB.
 Culoarea secundei
 Bara de culoare a minutelor
 Bara de culoare a orelor
@@ -706,7 +691,6 @@ Iese din shell-ul ZIP
 Listeaz? toate fi?ierele din arhiv?
 Extrage un fi?ier într-un director specificat sau un director curent
 Schimb? directorul arhivei
-Comanda ZIP shell specificat? nu este g?sit?.
 Directorul {0} nu exist?
 Directorul de arhivare {0} nu exist?
 Num?rul maxim de pozi?ii
@@ -784,7 +768,6 @@ Listeaz? toate paginile de cod acceptate
 Ce variabile de compilare sunt activate în aplica?ie?
 Teste care ridic? evenimentul specific
 Teste de testare a hardware-ului
-Testeaz? colectorul de gunoi
 Iese din shell-ul de test ?i porne?te nucleul
 Iese din shell-ul de testare ?i opre?te nucleul
 Salveaz? directorul curent în fi?ierul de configurare a nucleului
@@ -854,13 +837,11 @@ Iese din shell-ul RSS ?i revine la kernel
 Modific? leg?tura de alimentare
 Listeaz? toate fluxurile
 Cite?te un flux într-un browser web
-Comanda RSS shell specificat? nu este g?sit?.
 Feed RSS2 nevalid.
 Feed RSS1 nevalid.
 Feed Atom nevalid.
 Introduce?i o adres? URL a fluxului RSS:
 Tipul de flux RSS nevalid.
-Eroare shell necunoscut?:
 Ob?ine informa?iile despre articol
 Num?rul articolului nu poate fi mai mare decât articolele disponibile.
 Titlu:

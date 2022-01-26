@@ -39,7 +39,6 @@ kalmar sirri ta {0}:
 Kalmar sirri mara daidai.
 An kashe mai amfani
 Sunan mai amfani mara kyau.
-Kuskuren ƙoƙarin tantance masu riƙe wuri. {0} - Tari:
 Kuskuren ƙoƙarin tantance masu riƙe wuri. {0}
 Kuskure ƙoƙarin ƙara sunan mai amfani.
 usrmgr: Ƙirƙirar sunan mai amfani {0}...
@@ -58,7 +57,6 @@ Ba a sami mai adana allo {0} a cikin bayanan bayanai ba. Duba sunan kuma a sake 
 Ba za a iya loda kayan aikin allo ba saboda abubuwa masu zuwa:
 Akwai babban kuskure lokacin buga rubutu.
 Akwai kuskuren ƙoƙarin ƙirƙirar tsari.
-Kuskuren ƙoƙarin 'yantar da RAM: {0} - Ci gaba...
 Ba za a iya loda mod ɗin ba saboda masu zuwa:
 mod: Loading mods...
 mod: Tsayawa mods...
@@ -72,7 +70,6 @@ Sunan mai amfani don {0}:
 Kalmar wucewa ta {0}:
 Haɗa zuwa {0}
 Kuskure lokacin ƙoƙarin haɗi zuwa {0}: {1}
-Alamar Tari: {2}
 Babu littafin adireshi na gida {0}.
 Shigar da shugabanci na gida. "..." don dawowa.
 Ba a samo kundin adireshin {0} ba.
@@ -103,7 +100,6 @@ Yana nuna allon taimako
 Lissafin kundin adireshin gida
 Lissafa adireshi mai nisa
 Ana loda fayil ɗin gida zuwa babban fayil mai nisa ta amfani da binary ko rubutu
-Saƙon FTP: Ba a samo umarnin da aka nema ba. Dubi 'taimako' don lissafin samammun umarni da aka kayyade akan harsashi na FTP.
 An kasa samun kaddarorin adaftar {0}
 Lambar Adafta:
 Sunan Adafta:
@@ -211,7 +207,6 @@ Cire haɗin na'urar gyara kuskure
 Lissafin na'urorin da aka haɗa
 Ba a samo na'urar gyara kuskure {0} ba.
 An katse na'urar {0}
-Kuskure dangane: {0}
 Gyara sauraron duk adireshi ta amfani da tashar jiragen ruwa {0}.
 Babu takamaiman gardama. Alamomi: Ƙayyade gardama da yawa waɗanda sarari suka rabu
 An riga an sami lakabi: {0}
@@ -223,7 +218,6 @@ An kasa cire littafin adireshi: {0}
 An ƙayyade yankin lokaci ba daidai ba.
 Zaɓin bayanin martaba mara inganci.
 Ana ƙoƙarin haɗi zuwa {0} tare da bayanan martaba {1}...
-Ba a samo umarni {0} ba. Duba umarnin "taimako" don jerin umarni.
 An kasa samun kaddarorin IPv6 don adaftar {0}. Ci gaba...
 IPv4 bayani:
 IPv6 bayani:
@@ -381,7 +375,6 @@ Yana yin sabon fayil
 Fayil ya riga ya wanzu.
 Kuskuren ƙoƙarin ƙirƙirar fayil: {0}
 An kasa buɗe fayil. Ana fita harsashi...
-Ba a samo takamaiman umarnin editan rubutu ba.
 Jerin da akwai umarni
 Yana fita editan rubutu kuma ya adana canje-canjen da ba a ajiye ba
 Buga abubuwan da ke cikin fayil ɗin tare da lambobin layi zuwa na'ura wasan bidiyo
@@ -438,9 +431,6 @@ An shigar da sashe mara inganci. Da fatan za a koma.
 Komawa...
 Kunna
 A kashe
-Rubuta tushen kalmar sirri don saitawa. Kar ku damu; ana nuna kalmar sirri a matsayin taurari.
-Canza Tushen Kalmar wucewa?
-Saita Tushen Kalmar wucewa...
 Rubuta tashar tashar lalata mai nisa. Dole ne ya zama lamba, kuma kada a riga an yi amfani da shi. In ba haka ba, mai gyara nesa zai kasa buɗe tashar jiragen ruwa.
 Rubuta sau nawa umarnin "samu" ya kamata ya sake gwada abubuwan da aka kasa sauke. Dole ne ya zama lamba.
 Rubuta lokacin da za a ƙaddamar da ajiyar allo bayan ƙayyadadden millise seconds. Dole ne ya zama lamba.
@@ -515,7 +505,6 @@ Yana saita kernel don haka zai sa ku yi jayayya akan boot.
 Yana haifar da yanayin kulawa. Wannan yana hana asusu da yawa.
 Kowane farawa, zai bincika sabuntawa.
 Lokacin canza yaruka, canza sunayen wata, kalanda, da sauransu.
-Idan an fara kernel, zai saita tushen kalmar sirri.
 Rike saƙon binciken kayan masarufi shiru.
 Nuna Saƙon Ranar kafin nuna allon shiga.
 Share allon kafin nuna allon shiga.
@@ -566,9 +555,6 @@ An cire sifa cikin nasara.
 An kasa ƙara sifa.
 An kasa cire sifa.
 Yana maye gurbin kalma ko magana da wata a cikin layi
-Matsayin launin ja ya wuce. Ya kasance {0}.
-Koren launi ya wuce. Ya kasance {0}.
-Matsayin launin shuɗi ya wuce. Ya kasance {0}.
 Kunna launuka na gaskiya
 An kasa buɗewa {0}.
 An riga an katange {0}
@@ -644,7 +630,6 @@ Jinkirta a cikin Milliseconds
 millisecond nawa za a jira kafin yin rubutu na gaba?
 Yana ba ku damar amfani da sabar FTP ta SSH
 Babu taimako don umarni "{0}".
-Jerin VT mara inganci don launi RGB.
 Launuka Bar Bar
 Launi na Mintuna Bar
 Launi na Sa'o'i Bar
@@ -706,7 +691,6 @@ Yana fita harsashi na ZIP
 Yana lissafin duk fayilolin da ke cikin rumbun adana bayanai
 Yana fitar da fayil zuwa takamaiman kundin adireshi ko kundin adireshi na yanzu
 Canje-canjen kundin adireshi
-Ba a samo takamaiman umarnin harsashi na ZIP ba.
 Littafin jagora {0} babu shi
 Littafin tarihin {0} babu shi
 Matsakaicin Matsayi
@@ -784,7 +768,6 @@ Ya lissafa duk shafuka masu goyan baya
 Wadanne nau'ikan masu tarawa aka kunna a cikin aikace-aikacen?
 Gwaje-gwaje na haɓaka takamaiman taron
 Gwajin binciken kayan aikin
-Gwada mai tattara shara
 Yana fita harsashi na gwajin kuma ya fara kwaya
 Yana fita daga harsashin gwajin kuma yana rufe kwaya
 Ajiye kundin adireshi na yanzu zuwa fayil ɗin kernel
@@ -854,13 +837,11 @@ Yana fita harsashi RSS kuma ya koma kernel
 Yana canza hanyar hanyar ciyarwa
 Ya lissafa duk ciyarwa
 Yana karanta ciyarwa a cikin mai binciken gidan yanar gizo
-Ba a samo takamaiman umarnin harsashi na RSS ba.
 ciyarwar RSS2 mara inganci.
 ciyarwar RSS1 mara inganci.
 Abincin Atom mara inganci.
 Shigar da URL ɗin ciyarwar RSS:
 Nau'in ciyarwar RSS mara inganci.
-Kuskuren harsashi wanda ba a sani ba:
 Yana samun bayanin labarin
 Lambar labarin ba zata iya girma fiye da labaran da ake da su ba.
 Take:

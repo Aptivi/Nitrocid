@@ -39,7 +39,6 @@ Specijalni znakovi nisu dozvoljeni.
 Pogre?na lozinka.
 Korisnik je onemogu?en
 Pogre?no korisni?ko ime.
-Gre?ka pri poku?aju ra??lanjivanja rezerviranih mesta. {0} - Trag staka:
 Gre?ka pri poku?aju ra??lanjivanja rezerviranih mesta. {0}
 Gre?ka pri poku?aju dodavanja korisni?kog imena.
 usrmgr: Pravljenje korisni?kog imena {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} nije prona?en u bazi podataka. Proverite ime i poku?ajte ponovo.
 Screensaver se ne mo?e u?itati zbog slede?eg:
 Pri ?tampanju teksta postoji ozbiljna gre?ka.
 Do?lo je do gre?ke pri poku?aju kreiranja konfiguracije.
-Gre?ka pri poku?aju osloba?anja RAM-a: {0} - Nastavak ...
 Mod se ne mo?e u?itati zbog slede?eg:
 mod: U?itavanje modova ...
 mod: Zaustavljanje modova ...
@@ -72,7 +70,6 @@ Korisni?ko ime za {0}:
 Lozinka za {0}:
 Povezano sa {0}
 Gre?ka pri poku?aju povezivanja sa {0}: {1}
-Trag staka: {2}
 Lokalni direktorij {0} ne postoji.
 Unesite lokalni direktorij. ".." da se vratim.
 Imenik {0} nije prona?en.
@@ -103,7 +100,6 @@ Prikazuje ekran za pomo?
 Navodi lokalni direktorij
 Navodi udaljeni direktorij
 Otprema lokalnu datoteku u udaljeni direktorij koriste?i binarni ili tekst
-FTP poruka: Tra?ena naredba {0} nije prona?ena. Pogledajte „pomo?“ za spisak dostupnih komandi navedenih na FTP shell-u.
 Dobijanje svojstava za adapter nije uspelo {0}
 Broj adaptera:
 Naziv adaptera:
@@ -211,7 +207,6 @@ Isklju?ite ure?aj za uklanjanje pogre?aka
 Lista povezanih ure?aja za uklanjanje pogre?aka
 Ure?aj za uklanjanje pogre?aka {0} nije prona?en.
 Ure?aj {0} isklju?en.
-Gre?ka u vezi: {0}
 Otklanjanje gre?aka na svim adresama pomo?u porta {0}.
 Nisu navedeni argumenti. Savet: Navedite vi?e argumenata razdvojenih razmacima
 Alias je ve? prona?en: {0}
@@ -223,7 +218,6 @@ Nije mogu?e ukloniti direktorijum: {0}
 Vremenska zona je pogre?no navedena.
 Neva?e?i izbor profila.
 Poku?aj da se pove?ete na {0} sa profilom {1} ...
-Komanda {0} nije prona?ena. Pogledajte naredbu "pomo?" za listu komandi.
 Nije uspeo da dobije svojstva IPv6 za adapter {0}. Nastavlja...
 IPv4 informacije:
 IPv6 informacije:
@@ -381,7 +375,6 @@ Napravi novu datoteku
 Datoteka ve? postoji.
 Gre?ka pri poku?aju kreiranja datoteke: {0}
 Otvaranje datoteke nije uspelo. Izlaz iz ljuske ...
-Navedena naredba za ure?ivanje teksta nije prona?ena.
 Navodi dostupne komande
 Izlazi iz ure?iva?a teksta i sprema nespremljene promene
 ?tampa sadr?aj datoteke sa brojevima linija na konzoli
@@ -438,9 +431,6 @@ Unesen je neva?ec?i odeljak. Molim te, vrati se.
 Vratiti se...
 Omoguc?i
 Onemoguc?i
-Napi?ite root lozinku koju ?elite postaviti. Ne brinite; lozinka je prikazana zvezdicama.
-Promeniti root lozinku?
-Postavi root lozinku ...
 Napi?ite daljinski port za otklanjanje gre?aka. Mora biti numeri?ki i ne sme se vec? koristiti. U suprotnom, udaljeni program za otklanjanje gre?aka nec?e uspeti da otvori port.
 Napi?ite koliko puta bi naredba "" get "" trebalo da poku?a ponovo neuspe?na preuzimanja. Mora biti numeri?ki.
 Napi?ite kada da pokrenete ?uvar ekrana nakon odre?enih milisekundi. Mora biti numeri?ki.
@@ -515,7 +505,6 @@ Postavlja jezgro tako da vas pri pokretanju zatra?i za argument.
 Pokrec?e re?im odr?avanja. Ovo onemoguc?ava vi?e ra?una.
 Svako pokretanje c?e proveravati da li ima a?uriranja.
 Pri promeni jezika promenite nazive meseci, kalendar itd.
-Ako je kernel pokrenut, postavic?e root lozinku.
 Neka poruke o ispitivanju hardvera budu tihe.
 Prika?i poruku dana pre prikazivanja ekrana za prijavu.
 O?istite ekran pre prikaza ekrana za prijavu.
@@ -566,9 +555,6 @@ Atribut je uspe?no uklonjen.
 Dodavanje atributa nije uspelo.
 Uklanjanje atributa nije uspelo.
 Re? ili frazu zamenjuje drugom u redu
-Prekora?en nivo crvene boje. Bilo je {0}.
-Prekora?en nivo zelene boje. Bilo je {0}.
-Prekora?en nivo plave boje. Bilo je {0}.
 Aktivirajte prave boje
 Deblokiranje {0} nije uspelo.
 {0} je vec? blokiran.
@@ -644,7 +630,6 @@ Ka?njenje u milisekundama
 Koliko milisekundi treba sa?ekati pre sledec?eg pisanja?
 Omoguc?ava vam upotrebu SSH FTP servera
 Nema pomoc?i za komandu „{0}“.
-Neva?ec?a VT sekvenca za RGB boju.
 Traka u boji sekundi
 Traka sa bojama minuta
 Bar sa satima
@@ -706,7 +691,6 @@ Izlazi iz ?koljke ZIP
 Navodi sve datoteke u arhivi
 Izdvaja datoteku u navedeni direktorijum ili trenutni direktorijum
 Menja arhivsku mapu
-Navedena naredba ZIP ljuske nije prona?ena.
 Direktorij {0} ne postoji
 Direktorijum arhive {0} ne postoji
 Mak Pozicije se ra?unaju
@@ -784,7 +768,6 @@ Navodi sve podr?ane kodne stranice
 Koje su promenljive kompajlera omoguc?ene u aplikaciji?
 Testovi koji pokrec?u odre?eni doga?aj
 Testovi sondiranjem hardvera
-Testira sakuplja? smec?a
 Izlazi iz test ljuske i pokrec?e jezgro
 Izlazi iz test ljuske i isklju?uje jezgro
 Sprema trenutni direktorij u datoteku konfiguracije jezgra
@@ -854,13 +837,11 @@ Izlazi iz RSS ljuske i vrac?a se u kernel
 Menja vezu fida
 Navodi sve feedove
 ?ita fid u veb pregleda?u
-Navedena naredba RSS ljuske nije prona?ena.
 Neva?ec?i RSS2 feed.
 Neva?ec?i RSS1 feed.
 Neva?ec?i Atom fid.
 Unesite URL RSS feed-a:
 Neva?ec?a vrsta RSS feeda.
-Nepoznata gre?ka ljuske:
 Dobija informacije o ?lanku
 Broj ?lanka ne mo?e biti vec?i od dostupnih ?lanaka.
 Naslov:

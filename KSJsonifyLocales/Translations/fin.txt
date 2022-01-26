@@ -39,7 +39,6 @@ Erikoismerkit eivät ole sallittuja.
 Väärä salasana.
 Käyttäjä on poistettu käytöstä.
 Väärä käyttäjätunnus.
-Virhe yrittää jäsentää paikkamerkkejä. {0} - Stack-jälki:
 Virhe yrittää jäsentää paikkamerkkejä. {0}
 Virhe yrittäessäsi lisätä käyttäjätunnusta.
 usrmgr: Käyttäjätunnuksen {0} luominen ...
@@ -58,7 +57,6 @@ Näytönsäästäjä {0} ei löydy tietokannasta. Tarkista nimi ja yritä uudell
 Näytönsäästäjää ei voi ladata seuraavista syistä:
 Tulostettaessa tekstiä on vakava virhe.
 Konfigurointia yritettäessä luodaan virhe.
-Virhe RAM-muistia yritettäessä: {0} - jatkuu ...
 Modia ei voi ladata, koska:
 mod: Moduulien lataaminen ...
 mod: Moduulien pysäyttäminen ...
@@ -72,7 +70,6 @@ Käyttäjänimi {0}:
 Salasana {0}:
 Yhdistetty {0}
 Virhe yrittäessäsi muodostaa yhteyden {0}: {1}
-Pino Trace: {2}
 Paikallista hakemistoa {0} ei ole olemassa.
 Anna paikallinen hakemisto. ".." Mennä takaisin.
 Hakemistoa {0} ei löytynyt.
@@ -103,7 +100,6 @@ Näyttää ohjeenäytön
 Luettelee paikallisen hakemiston
 Luettelee etäkansion
 Lähettää paikallisen tiedoston etähakemistoon binäärisen tai tekstin avulla
-FTP-viesti: Pyydettyä komentoa {0} ei löydy. Katso ohjeet 'FTP-kuoressa määritettyjen käytettävissä olevien komentojen luettelosta.
 Sovittimen {0} ominaisuuksien saaminen epäonnistui
 Sovittimen numero:
 Adapterin nimi:
@@ -211,7 +207,6 @@ Irrota virheenkorjauslaite
 Näyttää liitettyjen virheenkorjauslaitteiden
 Debug-laitetta {0} ei löydy.
 Laite {0} irrotettu.
-Virhe yhteydessä: {0}
 Debug-kuuntelu kaikissa osoitteissa käyttämällä porttia {0}.
 Ei argumentteja määritetty. Vihje: Määritä useita välein erotettuja argumentteja
 Alias löytyi jo: {0}
@@ -223,7 +218,6 @@ Hakemistoa ei voi poistaa: {0}
 Aikavyöhyke on määritetty väärin.
 Virheellinen profiilivalinta.
 Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...
-Komentoa {0} ei löytynyt. Katso komentojen luettelo "help" -komennosta.
 Sovittimen {0} IPv6-ominaisuuksien saaminen epäonnistui. Jatkuvat ...
 IPv4-tiedot:
 IPv6-tiedot:
@@ -381,7 +375,6 @@ Tekee uuden tiedoston
 Tiedosto on jo olemassa.
 Virhe yrittäessä luoda tiedostoa: {0}
 Tiedoston avaaminen epäonnistui. Poistuu kuoresta ...
-Määritettyä tekstieditorinkomentoa ei löydy.
 Luettelee käytettävissä olevat komennot
 Poistuu tekstieditorista ja tallentaa tallentamattomat muutokset
 Tulostaa tiedoston sisällön ja rivinumeroita konsoliin
@@ -438,9 +431,6 @@ Virheellinen osa syötetty. Palaa takaisin.
 Mene takaisin...
 ota käyttöön
 Poista käytöstä
-Kirjoita asetettava pääsalasana. Älä huoli; salasana näytetään tähtinä.
-Vaihdetaanko salasana?
-Aseta pääsalasana ...
 Kirjoita virheenkorjausportti. Sen on oltava numeerinen, eikä sitä saa käyttää jo. Muussa tapauksessa etävianetsintäohjelma ei onnistu avaamaan porttia.
 Kirjoita kuinka monta kertaa "" get "-komennon pitäisi yrittää epäonnistuneita latauksia uudelleen. Sen on oltava numeerinen.
 Kirjoita, milloin näytönsäästäjä käynnistetään tietyn millisekunnin kuluttua. Sen on oltava numeerinen.
@@ -515,7 +505,6 @@ Asettaa ytimen niin, että se pyytää argumenttia käynnistettäessä.
 Käynnistää huoltotilan. Tämä poistaa useita tilejä käytöstä.
 Jokainen käynnistyksen yhteydessä se tarkistaa päivitykset.
 Kun vaihdat kieltä, vaihda kuukausien nimet, kalenteri jne.
-Jos ydin käynnistetään, se asettaa juurisalasanan.
 Pidä laitteistokokeiluviestit hiljaa.
 Näytä päivän viesti ennen kirjautumisnäytön näyttämistä.
 Tyhjennä näyttö ennen kirjautumisnäytön näyttämistä.
@@ -566,9 +555,6 @@ Attribuutti on poistettu.
 Määritteen lisääminen epäonnistui.
 Määritteen poistaminen epäonnistui.
 Korvaa sanan tai lauseen toisella rivillä
-Punainen väritaso ylitetty. Se oli {0}.
-Vihreän värin taso ylitetty. Se oli {0}.
-Sinisen väritaso ylitetty. Se oli {0}.
 Aktivoi todelliset värit
 Kohteen {0} eston kumoaminen epäonnistui.
 {0} on jo estetty.
@@ -644,7 +630,6 @@ Viive millisekunneissa
 Kuinka monta millisekuntia odottaa ennen seuraavan kirjoituksen kirjoittamista?
 Voit käyttää SSH FTP -palvelinta
 Ei apua komennolle "{0}".
-Virheellinen VT-sekvenssi RGB-väreille.
 Seconds-palkin väri
 Minuuttipalkin väri
 Tunnin palkin väri
@@ -706,7 +691,6 @@ Poistu ZIP-kuoresta
 Luetteloi kaikki arkistossa olevat tiedostot
 Pura tiedosto määritettyyn hakemistoon tai nykyiseen hakemistoon
 Muuttaa arkistohakemistoa
-Määritettyä ZIP-komentoa ei löydy.
 Hakemistoa {0} ei ole olemassa
 Arkistohakemistoa {0} ei ole olemassa
 Paikkojen enimmäismäärä
@@ -784,7 +768,6 @@ Luettelee kaikki tuetut koodisivut
 Mitkä kääntäjän muuttujat ovat käytössä sovelluksessa?
 Testit, jotka herättävät tietyn tapahtuman
 Testaa laitteiston tutkintaa
-Testaa roskien keräilijän
 Poistu testikuoresta ja käynnistää ytimen
 Poistu testikuoresta ja sammuttaa ytimen
 Tallentaa nykyisen hakemiston ytimen kokoonpanotiedostoon
@@ -854,13 +837,11 @@ Poistu RSS-kuoresta ja palaa ytimeen
 Vaihtaa syötelinkin
 Luettelee kaikki syötteet
 Lukee syötteen verkkoselaimessa
-Määritettyä RSS-komentokomentoa ei löydy.
 Virheellinen RSS2-syöte.
 Virheellinen RSS1-syöte.
 Virheellinen Atom-syöte.
 Kirjoita RSS-syötteen URL:
 Virheellinen RSS-syötetyyppi.
-Tuntematon kuorivirhe:
 Noutaa artikkelin tiedot
 Artikkelinumero ei voi olla suurempi kuin käytettävissä olevat artikkelit.
 Otsikko:

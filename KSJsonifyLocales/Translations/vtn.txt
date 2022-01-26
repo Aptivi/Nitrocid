@@ -39,7 +39,6 @@ Mật khẩu của {0}:
 Sai mật khẩu.
 Người dùng bị vô hiệu hóa.
 Tên người dùng sai.
-Lỗi cố gắng phân tích giữ chỗ. {0} - Theo dõi ngăn xếp:
 Lỗi cố gắng phân tích giữ chỗ. {0}
 Lỗi khi cố thêm tên người dùng.
 usrmgr: Tạo tên người dùng {0} ...
@@ -58,7 +57,6 @@ Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. 
 Trình bảo vệ màn hình không thể được tải vì những điều sau đây:
 Có một lỗi nghiêm trọng khi in văn bản.
 Có lỗi khi cố gắng tạo cấu hình.
-Lỗi khi cố gắng giải phóng RAM: {0} - Tiếp tục ...
 Mod không thể được tải vì những điều sau đây:
 mod: Đang tải mod ...
 mod: Dừng mod ...
@@ -72,7 +70,6 @@ Tên người dùng cho {0}:
 Mật khẩu cho {0}:
 Đã kết nối với {0}
 Lỗi khi cố gắng kết nối với {0}: {1}
-Dấu vết ngăn xếp: {2}
 Thư mục cục bộ {0} không tồn tại.
 Nhập một thư mục địa phương. ".." quay trở lại.
 Không tìm thấy thư mục {0}.
@@ -103,7 +100,6 @@ Hiển thị màn hình trợ giúp
 Liệt kê thư mục địa phương
 Liệt kê thư mục từ xa
 Tải tập tin cục bộ lên thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
-Thông báo FTP: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết danh sách các lệnh khả dụng được chỉ định trên vỏ FTP.
 Không thể lấy thuộc tính cho bộ điều hợp {0}
 Số bộ điều hợp:
 Tên bộ điều hợp:
@@ -211,7 +207,6 @@ Ngắt kết nối thiết bị gỡ lỗi
 Liệt kê các thiết bị gỡ lỗi được kết nối
 Không tìm thấy thiết bị gỡ lỗi {0}.
 Thiết bị {0} bị ngắt kết nối.
-Lỗi trong kết nối: {0}
 Nghe gỡ lỗi trên tất cả các địa chỉ bằng cổng {0}.
 Không có đối số được chỉ định. Gợi ý: Chỉ định nhiều đối số được phân tách bằng dấu cách
 Bí danh đã được tìm thấy: {0}
@@ -223,7 +218,6 @@ Không thể xóa thư mục: {0}
 Múi giờ được chỉ định không chính xác.
 Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối với {0} với hồ sơ {1} ...
-Lệnh {0} không tìm thấy. Xem lệnh "trợ giúp" để biết danh sách các lệnh.
 Không thể nhận các thuộc tính IPv6 cho bộ điều hợp {0}. Tiếp tục ...
 Thông tin về IPv4:
 Thông tin IPv6:
@@ -381,7 +375,6 @@ Tạo một tệp mới
 Tập tin đã tồn tại.
 Lỗi khi tạo tệp: {0}
 Không thể mở tập tin. Thoát khỏi vỏ ...
-Lệnh soạn thảo văn bản đã chỉ định không tìm thấy.
 Liệt kê các lệnh có sẵn
 Thoát khỏi trình soạn thảo văn bản và lưu các thay đổi chưa lưu
 In nội dung của tệp với số dòng vào bảng điều khiển
@@ -438,9 +431,6 @@ Hiển thị cac file bị ẩn
 Quay lại...
 Kích hoạt
 Vô hiệu hóa
-Viết mật khẩu gốc cần đặt. Đừng lo lắng; mật khẩu được hiển thị dưới dạng dấu sao.
-Thay đổi mật khẩu gốc?
-Đặt mật khẩu gốc ...
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
 Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
 Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
@@ -515,7 +505,6 @@ Thiết lập hạt nhân để nó nhắc bạn đối số khi khởi động.
 Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
 Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
 Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
-Nếu hạt nhân được khởi động, nó sẽ đặt mật khẩu gốc.
 Giữ im lặng các thông báo thăm dò phần cứng.
 Hiển thị Thông báo trong ngày trước khi hiển thị màn hình đăng nhập.
 Xóa màn hình trước khi hiển thị màn hình đăng nhập.
@@ -566,9 +555,6 @@ Thuộc tính đã được xóa thành công.
 Không thêm được thuộc tính.
 Không xóa được thuộc tính.
 Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng
-Đã vượt quá mức màu đỏ. Đó là {0}.
-Đã vượt quá mức màu xanh lục. Đó là {0}.
-Đã vượt quá mức màu xanh lam. Đó là {0}.
 Kích hoạt màu sắc trung thực
 Không thể bỏ chặn {0}.
 {0} đã bị chặn.
@@ -644,7 +630,6 @@ Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
 Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?
 Cho phép bạn sử dụng máy chủ SSH FTP
 Không có trợ giúp cho lệnh "{0}".
-Chuỗi VT không hợp lệ cho màu RGB.
 Màu của thanh giây
 Màu của thanh phút
 Màu của thanh giờ
@@ -706,7 +691,6 @@ Thoát khỏi trình bao ZIP
 Liệt kê tất cả các tệp bên trong kho lưu trữ
 Giải nén một tập tin vào một thư mục cụ thể hoặc một thư mục hiện tại
 Thay đổi thư mục lưu trữ
-Không tìm thấy lệnh ZIP shell được chỉ định.
 Thư mục {0} không tồn tại
 Thư mục lưu trữ {0} không tồn tại
 Số lượng vị trí tối đa
@@ -784,7 +768,6 @@ Liệt kê tất cả các mã được hỗ trợ
 Những biến trình biên dịch nào được kích hoạt trong ứng dụng?
 Thử nghiệm nâng cao sự kiện cụ thể
 Kiểm tra thăm dò phần cứng
-Kiểm tra bộ thu gom rác
 Thoát khỏi vỏ thử nghiệm và khởi động hạt nhân
 Thoát khỏi vỏ thử nghiệm và tắt hạt nhân
 Lưu thư mục hiện tại vào tệp cấu hình hạt nhân
@@ -854,13 +837,11 @@ Thoát khỏi trình bao RSS và quay trở lại hạt nhân
 Thay đổi liên kết nguồn cấp dữ liệu
 Liệt kê tất cả các nguồn cấp dữ liệu
 Đọc nguồn cấp dữ liệu trong trình duyệt web
-Không tìm thấy lệnh trình bao RSS được chỉ định.
 Nguồn cấp dữ liệu RSS2 không hợp lệ.
 Nguồn cấp dữ liệu RSS1 không hợp lệ.
 Nguồn cấp dữ liệu Atom không hợp lệ.
 Nhập URL nguồn cấp RSS:
 Loại nguồn cấp dữ liệu RSS không hợp lệ.
-Lỗi trình bao không xác định:
 Nhận thông tin bài viết
 Số lượng bài viết không được lớn hơn các bài viết có sẵn.
 Tiêu đề:

@@ -39,7 +39,6 @@ Ang password ni {0}:
 Maling password.
 Hindi pinagana ang gumagamit.
 Maling username.
-Error sa pagsubok sa pag-parse ng mga placeholder. {0} - Pagsubaybay sa stack:
 Error sa pagsubok sa pag-parse ng mga placeholder. {0}
 Error sa pagsubok na magdagdag ng username.
 usrmgr: Lumilikha ng username {0} ...
@@ -58,7 +57,6 @@ Ang Screensaver {0} ay hindi natagpuan sa database. Suriin ang pangalan at subuk
 Hindi mai-load ang Screensaver dahil sa mga sumusunod:
 Mayroong isang seryosong error kapag nagpi-print ng teksto.
 Mayroong isang error sa pagsubok na lumikha ng pagsasaayos.
-Error sa pagsubok na magbakante ng RAM: {0} - Nagpatuloy ...
 Hindi mai-load ang mod dahil sa mga sumusunod:
 mod: Naglo-load ng mga mod ...
 mod: Paghinto sa mga mod ...
@@ -72,7 +70,6 @@ Username para sa {0}:
 Ang password para sa {0}:
 Nakakonekta sa {0}
 Error kapag sinusubukang kumonekta sa {0}: {1}
-Stack Trace: {2}
 Ang lokal na direktoryo ay {0} wala.
 Magpasok ng isang lokal na direktoryo. ".." bumalik.
 Hindi nahanap ang direktoryo.
@@ -103,7 +100,6 @@ Nagpapakita ng help screen
 Naglista ng lokal na direktoryo
 Listahan ng remote na direktoryo
 Nag-a-upload ng lokal na file sa malayuang direktoryo gamit ang binary o teksto
-Mensahe ng FTP: Ang hiniling na utos na {0} ay hindi nahanap. Tingnan ang 'help' para sa isang listahan ng mga magagamit na mga utos na tinukoy sa FTP shell.
 Nabigong makakuha ng mga pag-aari para sa adapter {0}
 Numero ng adaptor:
 Pangalan ng adaptor:
@@ -211,7 +207,6 @@ Idiskonekta ang isang aparato ng pag-debug
 Nakalista ang mga listahan ng pag-debug ng mga aparato
 Hindi nahanap ang aparato ng pag-debug {0}.
 Nakakonekta ang aparato {0}.
-Error sa koneksyon: {0}
 Pag-debug ng pakikinig sa lahat ng mga address gamit ang port {0}.
 Walang tinukoy na mga argumento. Pahiwatig: Tukuyin ang maraming mga argumento na pinaghihiwalay ng mga puwang
 Natagpuan na ang alyas: {0}
@@ -223,7 +218,6 @@ Hindi matanggal ang direktoryo: {0}
 Mali ang tinukoy na Timezone.
 Di-wastong pagpili ng profile.
 Sinusubukang kumonekta sa {0} kasama ang profile {1} ...
-Hindi nahanap ang Command {0}. Tingnan ang utos na "tulong" para sa listahan ng mga utos.
 Nabigong makakuha ng mga pag-aari ng IPv6 para sa adapter {0}. Nagpapatuloy ...
 Impormasyon sa IPv4:
 Impormasyon sa IPv6:
@@ -381,7 +375,6 @@ Gumagawa ng isang bagong file
 Mayroon nang file.
 Error sa pagsubok sa paglikha ng isang file: {0}
 Nabigong buksan ang file. Lumabas na shell ...
-Hindi natagpuan ang tinukoy na utos ng text editor.
 Naglista ng mga magagamit na utos
 Lumabas sa text editor at mai-save ang mga hindi nai-save na pagbabago
 Nai-print ang mga nilalaman ng file na may mga numero ng linya sa console
@@ -438,9 +431,6 @@ Di-wastong seksyon na ipinasok. Mangyaring bumalik
 Bumalik ka...
 Paganahin
 Huwag paganahin
-Isulat ang root password na maitatakda. Huwag magalala; ang password ay ipinapakita bilang mga bituin.
-Palitan ang Root Password?
-Itakda ang Root Password ...
 Sumulat ng isang remote port ng debugger. Dapat itong numeric, at hindi dapat gamitin. Kung hindi man, mabibigo ang remote debugger na buksan ang port.
 Isulat kung gaano karaming beses dapat na subukang muli ng utos na "" makuha "" ang mga nabigong pag-download. Dapat ay numeric ito.
 Sumulat kung kailan ilulunsad ang screensaver pagkatapos ng mga tinukoy na milliseconds. Dapat ay numeric ito.
@@ -515,7 +505,6 @@ Itinatakda ang kernel kaya't hinihikayat ka nito para sa pagtatalo sa boot.
 Pag-trigger ng mode ng pagpapanatili. Hindi pinagagana nito ang maraming account.
 Ang bawat pagsisimula, susuriin nito para sa mga pag-update.
 Kapag lumilipat ng mga wika, baguhin ang mga pangalan ng buwan, kalendaryo, atbp.
-Kung sinimulan ang kernel, magtatakda ito ng root password.
 Patahimikin ang mga mensahe sa pagsisiyasat ng hardware.
 Ipakita ang Mensahe ng Araw bago ipakita ang login screen.
 I-clear ang screen bago ipakita ang login screen.
@@ -566,9 +555,6 @@ Matagumpay na naalis ang katangian.
 Nabigong magdagdag ng katangian.
 Nabigong alisin ang katangian.
 Pinapalitan ang isang salita o parirala sa isa pa sa isang linya
-Lumagpas sa antas ng pulang kulay. Ito ay {0}.
-Lumagpas sa antas ng berdeng kulay. Ito ay {0}.
-Lumagpas sa antas ng asul na kulay. Ito ay {0}.
 Paganahin ang mga totoong kulay
 Nabigong i-block ang {0}.
 Na-block na ang {0}.
@@ -644,7 +630,6 @@ Pagkaantala sa Milliseconds
 Ilang milliseconds ang maghihintay bago gawin ang susunod na pagsulat?
 Hinahayaan kang gumamit ng isang SSH FTP server
 Walang tulong para sa utos na "{0}".
-Di-wastong pagkakasunud-sunod ng VT para sa kulay ng RGB.
 Kulay ng Seconds Bar
 Kulay ng Minuto Bar
 Kulay ng Hours Bar
@@ -706,7 +691,6 @@ Lumabas sa shell ng ZIP
 Inililista ang lahat ng mga file sa loob ng archive
 Kinukuha ang isang file sa isang tinukoy na direktoryo o isang kasalukuyang direktoryo
 Binabago ang direktoryo ng archive
-Hindi natagpuan ang tinukoy na utos ng shell ng ZIP.
 Wala ang direktoryo
 Ang direktoryo ng archive {0} ay wala
 Bilang ng Max Posisyon
@@ -784,7 +768,6 @@ Nililista ang lahat ng mga sinusuportahang codepage
 Anong mga variable ng tagatala ang pinagana sa application?
 Mga pagsubok na pagtaas ng tukoy na kaganapan
 Mga pagsubok na sumusubok sa hardware
-Sinusubukan ang maniningil ng basura
 Lumabas sa test shell at sinisimulan ang kernel
 Lumabas sa test shell at pinapatay ang kernel
 Sine-save ang kasalukuyang direktoryo sa kernel config file
@@ -854,13 +837,11 @@ Lumabas sa RSS shell at bumalik sa kernel
 Binabago ang link ng feed
 Listahan ng lahat ng feed
 Nagbabasa ng feed sa isang web browser
-Ang tinukoy na RSS shell command ay hindi natagpuan.
 Di-wastong feed ng RSS2.
 Di-wastong feed ng RSS1.
 Di-wastong feed ng Atom.
 Magpasok ng isang RSS feed URL:
 Di-wastong uri ng RSS feed.
-Hindi kilalang error sa shell:
 Nakukuha ang impormasyon sa artikulo
 Ang bilang ng artikulo ay hindi maaaring maging mas malaki kaysa sa mga magagamit na artikulo.
 Pamagat:

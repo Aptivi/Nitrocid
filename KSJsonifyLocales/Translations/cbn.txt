@@ -39,7 +39,6 @@ password ni {0}:
 Sayop nga password.
 Ang tiggamit gi-disable.
 Sayop nga username.
-Sayop sa pagsulay sa pag-parse sa mga placeholder. {0} - Pagsubay sa stack:
 Sayop sa pagsulay sa pag-parse sa mga placeholder. {0}
 Sayop sa pagsulay sa pagdugang sa username.
 usrmgr: Paghimo og username {0}...
@@ -58,7 +57,6 @@ Screensaver {0} wala makit-an sa database. Susiha ang ngalan ug sulayi pag-usab.
 Ang screensaver dili ma-load tungod sa mosunod:
 Adunay usa ka seryoso nga sayup sa pag-imprinta sa teksto.
 Adunay usa ka sayup nga nagsulay sa paghimo og configuration.
-Sayop sa pagsulay sa pagpahigawas sa RAM: {0} - Nagpadayon...
 Ang mod dili ma-load tungod sa mosunod:
 mod: Nag-load sa mga mod...
 mod: Paghunong sa mods...
@@ -72,7 +70,6 @@ Username para sa {0}:
 Password para sa {0}:
 Konektado sa {0}
 Sayop sa pagsulay sa pagkonektar sa {0}: {1}
-Stack Trace: {2}
 Wala ang lokal nga direktoryo {0}.
 Pagsulod ug lokal nga direktoryo. ".." mubalik.
 Direktoryo {0} wala makit-an.
@@ -103,7 +100,6 @@ Nagpakita sa screen sa tabang
 Naglista sa lokal nga direktoryo
 Naglista sa hilit nga direktoryo
 Nag-upload sa lokal nga file sa hilit nga direktoryo gamit ang binary o teksto
-FTP nga mensahe: Ang gipangayo nga sugo {0} wala makit-an. Tan-awa ang 'tabang' alang sa usa ka lista sa magamit nga mga sugo nga gipiho sa FTP shell.
 Napakyas sa pagkuha sa mga kabtangan alang sa adapter {0}
 Numero sa Adapter:
 Ngalan sa Adapter:
@@ -211,7 +207,6 @@ Idiskonekta ang usa ka debug device
 Naglista sa mga kagamitan sa pag-debug nga konektado
 Debug device {0} wala makit-an.
 Device {0} natangtang.
-Sayop sa koneksyon: {0}
 Pag-debug sa pagpaminaw sa tanang adres gamit ang pantalan {0}.
 Walay gipiho nga mga argumento. Sugyot: Ipiho ang daghang argumento nga gibulag sa mga espasyo
 Nakit-an na ang alyas: {0}
@@ -223,7 +218,6 @@ Dili matangtang ang direktoryo: {0}
 Ang timezone sayop nga gipiho.
 Dili balido nga pagpili sa profile.
 Naningkamot sa pagkonektar sa {0} gamit ang profile {1}...
-Ang sugo {0} wala makit-an. Tan-awa ang "tabang" nga sugo alang sa listahan sa mga sugo.
 Napakyas sa pagkuha sa IPv6 propyedad alang sa adapter {0}. Nagpadayon...
 Impormasyon sa IPv4:
 IPv6 impormasyon:
@@ -381,7 +375,6 @@ Naghimo ug bag-ong file
 Ang file anaa na.
 Sayop sa pagsulay sa paghimo og payl: {0}
 Napakyas sa pag-abli sa file. Paggawas sa shell...
-Ang gipiho nga text editor nga sugo wala makita.
 Naglista sa mga magamit nga mga sugo
 Mogawas sa text editor ug i-save ang wala ma-save nga mga pagbag-o
 Nag-imprinta sa mga sulod sa file nga adunay mga numero sa linya ngadto sa console
@@ -438,9 +431,6 @@ Dili balido nga seksyon ang gisulod. Palihog balik.
 Balik...
 Makahimo
 Pag-disable
-Isulat ang root password nga itakda. Ayaw kabalaka; ang password gipakita ingon nga mga bituon.
-Usba ang Root Password?
-Ibutang ang Root Password...
 Pagsulat ug hilit nga debugger port. Kinahanglang numeric kini, ug kinahanglang dili pa gamiton. Kung dili, ang hilit nga debugger mapakyas sa pag-abli sa pantalan.
 Isulat kung pila ka beses ang "pagkuha" nga mando kinahanglan nga sulayan pag-usab ang mga napakyas nga pag-download. Kini kinahanglan nga numero.
 Isulat kung kanus-a ilunsad ang screensaver pagkahuman sa piho nga mga millisecond. Kini kinahanglan nga numero.
@@ -515,7 +505,6 @@ Gipahimutang ang kernel aron kini mag-aghat kanimo alang sa argumento sa boot.
 Nag-trigger sa maintenance mode. Gi-disable niini ang daghang mga account.
 Matag pagsugod, susihon niini ang mga update.
 Kung mag-ilis sa mga pinulongan, usba ang mga ngalan sa bulan, kalendaryo, ug uban pa.
-Kung ang kernel gisugdan, kini magbutang sa root password.
 Hupti nga hilum ang mga mensahe sa pagsusi sa hardware.
 Ipakita ang Mensahe sa Adlaw sa dili pa ipakita ang screen sa pag-login.
 Tin-aw ang screen sa dili pa ipakita ang login screen.
@@ -566,9 +555,6 @@ Ang hiyas malampuson nga natangtang.
 Napakyas sa pagdugang ug hiyas.
 Napakyas sa pagtangtang sa hiyas.
 Ilisan ang pulong o hugpong sa lain nga pulong sa linya
-Ang lebel sa pula nga kolor milapas. Kaniadto {0}.
-Ang lebel sa berde nga kolor milapas. Kaniadto {0}.
-Ang lebel sa asul nga kolor milapas. Kaniadto {0}.
 I-aktibo ang tinuod nga mga kolor
 Napakyas sa pag-unblock sa {0}.
 {0} gibabagan na.
@@ -644,7 +630,6 @@ Paglangan sa Milliseconds
 Pila ka millisecond ang maghulat sa dili pa mohimo sa sunod nga pagsulat?
 Gitugotan ka nga mogamit usa ka SSH FTP server
 Walay tabang alang sa sugo "{0}".
-Dili balido nga han-ay sa VT alang sa kolor sa RGB.
 Kolor sa Segundo Bar
 Kolor sa Minuto Bar
 Kolor sa mga Oras Bar
@@ -706,7 +691,6 @@ Migawas sa ZIP shell
 Naglista sa tanan nga mga file sa sulod sa archive
 Gikuha ang usa ka file sa usa ka piho nga direktoryo o usa ka karon nga direktoryo
 Gibag-o ang direktoryo sa archive
-Ang gipiho nga ZIP shell command wala makit-an.
 Wala ang direktoryo {0}.
 Ang direktoryo sa archive {0} wala anaa
 Ihap sa Max nga Posisyon
@@ -784,7 +768,6 @@ Gilista ang tanan nga gisuportahan nga mga panid sa code
 Unsa nga mga baryable sa compiler ang gipalihok sa aplikasyon?
 Mga pagsulay nga nagpataas sa piho nga panghitabo
 Mga pagsulay nga nagsusi sa hardware
-Gisulayan ang tigkolekta sa basura
 Mogawas sa test shell ug magsugod sa kernel
 Migawas sa test shell ug gipalong ang kernel
 Gitipigan ang kasamtangan nga direktoryo sa kernel configuration file
@@ -854,13 +837,11 @@ Mogawas sa RSS shell ug mobalik sa kernel
 Giusab ang link sa feed
 Gilista ang tanan nga mga feed
 Nagbasa og feed sa usa ka web browser
-Ang gipiho nga RSS shell command wala makit-an.
 Dili balido nga RSS2 feed.
 Dili balido nga RSS1 feed.
 Dili balido nga feed sa Atom.
 Pagsulod ug RSS feed URL:
 Dili balido nga matang sa RSS feed.
-Wala mailhi nga kasaypanan sa shell:
 Nakuha ang impormasyon sa artikulo
 Ang numero sa artikulo dili mahimong mas dako kaysa sa magamit nga mga artikulo.
 Titulo:

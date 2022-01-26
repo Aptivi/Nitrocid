@@ -39,7 +39,6 @@ teugsu munjaneun heoyongdoeji anhseubnida.
 jalmosdoen bimilbeonho.
 sayongjaga bihwalseonghwadoeeossseubnida.
 sayongja ileum-i jalmosdoeeossseubnida.
-jali pyosijaleul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida. {0}-seutaeg chujeog :
 jali pyosijaleul gumun bunseoghaneun dong-an olyuga balsaenghaessseubnida. {0}
 sayongja ileum-eul chugahaneun jung olyuga balsaenghaessseubnida.
 usrmgr : sayongja ileum {0} jagseong jung ...
@@ -58,7 +57,6 @@ deiteobeiseueseo hwamyeon bohogi {0}eul (leul) chaj-eul su eobs-seubnida. ileum-
 da-eum-eulo inhae seukeulin seibeoleullodeu hal su eobs-seubnida :
 tegseuteuleul inswae hal ttae simgaghan olyuga issseubnida.
 guseong-eul jagseonghaneun jung olyuga balsaenghaessseubnida.
-RAMeul hwagbohaneun jung olyu : {0}-gyesog ...
 da-eumgwa gat-eun iyulo modeuleullodeu hal su eobs-seubnida :
 modeu : modeulodeu jung ...
 modeu : modeu jungji jung ...
@@ -72,7 +70,6 @@ daleun seobeoe yeongyeolhagi jeon-e seobeowaui yeongyeol-eul kkeunh-eoyahabnida
 {0}ui bimilbeonho :
 {0}e yeongyeol
 {0}e yeongyeolhalyeogo hal ttae olyuga balsaenghaessseubnida : {1}
-seutaeg chujeog : {2}
 lokeol dilegtoli {0}i (ga) eobs-seubnida.
 lokeol dilegtolileul iblyeoghasibsio. ".."dol-a gagi
 {0} dilegtolileul chaj-eul su eobs-seubnida.
@@ -103,7 +100,6 @@ doummal hwamyeon-eul pyosihabnida
 lokeol dilegtolileul nayeolhabnida
 wongyeog dilegtolileul nayeolhabnida.
 ijin ttoneun tegseuteuleul sayonghayeo lokeol pail-eul wongyeog dilegtolie eoblodeu
-FTP mesiji : yocheong doen myeonglyeong {0}eul (leul) chaj-eul su eobs-seubnida. FTP swel-e jijeongdoen sayong ganeunghan myeonglyeong moglog-eun 'doummal'eul chamjohasibsio.
 {0} eodaebteoui teugseong-eul gajyeo oji moshaessseubnida.
 eodaebteo beonho :
 eodaebteo ileum :
@@ -211,7 +207,6 @@ dibeogeu jangchi yeongyeol kkeunhgi
 yeongyeoldoen dibeoging jangchileul nayeolhabnida
 dibeogeu jangchi {0}eul (leul) chaj-eul su eobs-seubnida.
 jangchi {0}ui yeongyeol-i kkeunh-eojyeossseubnida.
-yeongyeol olyu : {0}
 poteu {0}eul (leul) sayonghayeo modeun juso-eseo cheongchwileul dibeogeuhasibsio.
 insuga jijeongdoeji anh-assseubnida. hinteu : gongbaeg-eulo gubun doen yeoleo insuleul jijeonghasibsio.
 byeolmyeong-eul imi chaj-assseubnida : {0}
@@ -223,7 +218,6 @@ jusoleul jijeonghasibsio
 sigandaega jalmos jijeongdoeeossseubnida.
 jalmosdoen peulopil seontaeg
 {1} peulopaillo {0}e yeongyeolhalyeogohabnida ...
-{0} myeonglyeong-eul chaj-eul su eobs-seubnida. myeonglyeong moglog-eun "help"myeonglyeong-eul chamjohasibsio.
 eodaebteo {0}e daehan IPv6 teugseong-eul gajyeo oneun de silpaehaessseubnida. gyesog ...
 IPv4 jeongbo :
 IPv6 jeongbo :
@@ -381,7 +375,6 @@ saeloun pail-eul mandeubnida
 jonjaehaneun pail-ibnida.
 pail-eul jagseonghaneun jung-e olyuga balsaenghaessseubnida: {0}
 pail-eul yeolji moshaessseubnida. swel jonglyo jung ...
-jijeongdoen tegseuteu pyeonjibgi myeonglyeong-eul chaj-eul su eobs-seubnida.
 sayong ganeunghan myeonglyeong-eul nayeolhabnida.
 tegseuteu pyeonjibgileul jonglyohago jeojanghaji anh-eun byeongyeong sahang-eul jeojanghasibsio
 jul beonhowa hamkke pail-ui naeyong-eul konsol-e inswaehabnida
@@ -438,9 +431,6 @@ jalmosdoen segsyeon-i iblyeogdoeeossseubnida. dol-a gaseyo.
 dol-a gagi ...
 hwalseonghwa
 bihwalseonghwa
-seoljeonghal luteu amholeul jagseonghasibsio. geogjeonghaji maseyo. amhoneun byeolpyolo pyosidoebnida.
-luteu bimilbeonholeul byeongyeong hasigessseubnikka?
-luteu bimilbeonho seoljeong ...
 wongyeog dibeogeo poteuleul jagseonghasibsio. susja yeoyahamyeo imi sayongdoeeoseoneun andoebnida. geuleohji anh-eumyeon wongyeog dibeogeoga poteuleul yeolji moshabnida.
 ""get ""myeonglyeong-i silpaehan daunlodeuleul jae sidohaeyahaneun hoes-suleul giloghabnida. susja yeoyahabnida.
 jijeongdoen milli cho hue hwamyeon bohogileul sijaghalsigileul jagseonghabnida. susja yeoyahabnida.
@@ -515,7 +505,6 @@ butingsi insuleul yocheonghadolog keoneol-eul seoljeonghabnida.
 yuji gwanli modeuleul teuligeohabnida. ileohgehamyeon yeoleo gyejeong-i bihwalseonghwadoebnida.
 sijaghal ttaemada eobdeiteuleul hwag-inhabnida.
 eon-eoleul jeonhwan hal ttae wol ileum, dallyeog deung-eul byeongyeonghasibsio.
-keoneol-i sijagdoemyeon luteu amholeul seoljeonghabnida.
 hadeuweeo geomsaeg mesijileul joyonghi yujihabnida.
 logeu-in hwamyeon-eul pyosihagi jeon-e oneul-ui mesijileul pyosihabnida.
 logeu-in hwamyeon-eul pyosihagi jeon-e hwamyeon-eul jiusibsio.
@@ -566,9 +555,6 @@ sogseong-i seong-gongjeog-eulo jegeodoeeossseubnida.
 sogseong-eul chugahaji moshaessseubnida.
 sogseong-eul jegeohaji moshaessseubnida.
 han jul-eseo dan-eo na guleul daleun dan-eolo bakkubnida.
-ppalgansaeg sujun-i chogwadoeeossseubnida. {0}ieossseubnida.
-nogsaeg sujun-i chogwadoeeossseubnida. {0}ieossseubnida.
-palansaeg sujun-i chogwadoeeossseubnida. {0}ieossseubnida.
 teulu keolleo hwalseonghwa
 {0} chadan-eul haejehaji moshaessseubnida.
 {0}eun (neun) imi chadandoeeossseubnida.
@@ -644,7 +630,6 @@ milli cho dan-wiui jiyeon
 da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?
 SSH FTP seobeoleul sayonghal su issseubnida.
 "{0}"myeonglyeong-e daehan doummal-i eobs-seubnida.
-RGB saegsang-e daehan jalmosdoen VT sikwonseu-ibnida.
 cho magdaeui saegsang
 bun baui saegsang
 sigan magdaeui saegsang
@@ -706,7 +691,6 @@ ZIP syel-eul jonglyohabnida.
 akaibeu naeui modeun pail-eul nayeolhabnida.
 jijeongdoen dilegtoli ttoneun hyeonjae dilegtolie pail-eul chuchulhabnida.
 akaibeu dilegtoli byeongyeong
-jijeongdoen ZIP syel myeonglyeong-eul chaj-eul su eobs-seubnida.
 {0} dilegtoliga eobs-seubnida.
 akaibeu dilegtoli {0}i (ga) eobs-seubnida.
 choedae wichi su
@@ -784,7 +768,6 @@ jiwondoeneun modeun kodeu peijileul nayeolhabnida.
 eung-yong peulogeulaem-eseo eotteon keompailleo byeonsuleul sayonghal su issseubnikka?
 teugjeong ibenteuleul balsaengsikineun teseuteu
 hadeuweeo geomsa teseuteu
-gabiji sujibgileul teseuteuhabnida.
 teseuteu syel-eul jonglyohago keoneol-eul sijaghabnida.
 teseuteu syel-eul jonglyohago keoneol-eul jonglyohabnida.
 hyeonjae dilegtolileul keoneol guseong pail-e jeojanghabnida.
@@ -854,13 +837,11 @@ RSS syel-eul jonglyohago keoneollo dol-agabnida.
 pideu lingkeuleul byeongyeonghabnida.
 modeun pideuleul nayeolhabnida.
 web beulaujeoeseo pideuleul ilgseubnida.
-jijeongdoen RSS syel myeonglyeong-eul chaj-eul su eobs-seubnida.
 RSS2 pideuga jalmosdoeeossseubnida.
 RSS1 pideuga jalmosdoeeossseubnida.
 jalmosdoen Atom pideu-ibnida.
 RSS pideu URL iblyeog :
 RSS pideu yuhyeong-i jalmosdoeeossseubnida.
-al sueobsneun syel olyu :
 gisa jeongboleul gajyeoobnida.
 gisa beonhoneun sayong ganeunghan gisaboda keul su eobs-seubnida.
 pyoje:

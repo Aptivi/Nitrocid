@@ -39,7 +39,6 @@ Parol' {0}:
 Nepravil'nyy parol'.
 Pol'zovatel' otklyuchen.
 Nepravil'noye imya pol'zovatelya.
-Oshibka pri popytke proanalizirovat' zapolniteli. {0} - trassirovka steka:
 Oshibka pri popytke proanalizirovat' zapolniteli. {0}
 Oshibka pri popytke dobavit' imya pol'zovatelya.
 usrmgr: Sozdaniye imeni pol'zovatelya {0} ...
@@ -58,7 +57,6 @@ Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
 Zastavka ne mozhet byt' zagruzhena iz-za sleduyushchego:
 Pri pechati teksta voznikayet ser'yeznaya oshibka.
 Pri popytke sozdat' konfiguratsiyu proizoshla oshibka.
-Oshibka pri popytke osvobodit' OZU: {0} - prodolzheniye ...
 Mod ne mozhet byt' zagruzhen iz-za sleduyushchego:
 mod: zagruzka modov ...
 mod: Ostanovka modov ...
@@ -72,7 +70,6 @@ Imya pol'zovatelya dlya {0}:
 Parol' dlya {0}:
 Podklyucheno k {0}
 Oshibka pri popytke podklyucheniya k {0}: {1}
-Trassirovka steka: {2}
 Lokal'nyy katalog {0} ne sushchestvuyet.
 Vvedite lokal'nyy katalog. ".." vernut'sya nazad.
 Katalog {0} ne nayden.
@@ -103,7 +100,6 @@ Pokazyvayet ekran pomoshchi
 Spisok lokal'nykh katalogov
 Perechislyayet udalennyy katalog
 Zagruzhayet lokal'nyy fayl v udalennyy katalog, ispol'zuya dvoichnyy ili tekstovyy
-Soobshcheniye FTP: Zaproshennaya komanda {0} ne naydena. Sm. «Spravku» dlya polucheniya spiska dostupnykh komand, ukazannykh v obolochke FTP.
 Ne udalos' poluchit' svoystva dlya adaptera {0}
 Nomer adaptera:
 Imya adaptera:
@@ -211,7 +207,6 @@ Otklyuchit' otladochnoye ustroystvo
 Spiski ustroystv otladki podklyucheny
 Ustroystvo otladki {0} ne naydeno.
 Ustroystvo {0} otklyucheno.
-Oshibka v soyedinenii: {0}
 Otladka proslushivaniya vsekh adresov s ispol'zovaniyem porta {0}.
 Argumenty ne ukazany. Podskazka: ukazhite neskol'ko argumentov, razdelennykh probelami
 Psevdonim uzhe nayden: {0}
@@ -223,7 +218,6 @@ Nevozmozhno udalit' katalog: {0}
 Chasovoy poyas ukazan neverno.
 Nevernyy vybor profilya.
 Popytka podklyuchit'sya k {0} s profilem {1} ...
-Komanda {0} ne naydena. Sm. Komandu «help» dlya polucheniya spiska komand.
 Ne udalos' poluchit' svoystva IPv6 dlya adaptera {0}. Prodolzheniye ...
 Informatsiya IPv4:
 Informatsiya IPv6:
@@ -381,7 +375,6 @@ Delayet novyy fayl
 Fayl uzhe sushchestvuyet.
 Oshibka pri popytke sozdat' fayl: {0}
 Ne udalos' otkryt' fayl. Vykhod iz obolochki ...
-Ukazannaya komanda tekstovogo redaktora ne naydena.
 Spisok dostupnykh komand
 Vykhod iz tekstovogo redaktora i sokhraneniye nesokhranennykh izmeneniy.
 Vyvodit soderzhimoye fayla s nomerami strok na konsol'
@@ -438,9 +431,6 @@ Vveden nevernyy razdel. Pozhaluysta, vernis'.
 Vernites' nazad...
 vklyuchit'
 Otklyuchit'
-Napishite parol' root, kotoryy nuzhno ustanovit'. Ne volnuytes'; parol' pokazan zvezdochkami.
-Izmenit' parol' root?
-Ustanovit' parol' root ...
 Napishite port udalennogo otladchika. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye udalennyy otladchik ne smozhet otkryt' port.
 Napishite, skol'ko raz komanda "" get "dolzhna povtoryat' popytki zagruzki posle sboya. On dolzhen byt' chislovym.
 Napishite, kogda zapuskat' zastavku cherez ukazannyye millisekundy. On dolzhen byt' chislovym.
@@ -515,7 +505,6 @@ Ustanavlivayet yadro ​​tak, chtoby ono zaprashivalo argument pri zagruzke.
 Zapuskayet rezhim obsluzhivaniya. Eto otklyuchayet neskol'ko uchetnykh zapisey.
 Pri kazhdom zapuske on budet proveryat' nalichiye obnovleniy.
 Pri pereklyuchenii yazykov izmenite nazvaniya mesyatsev, kalendar' i t. D.
-Yesli yadro ​​zapushcheno, ono ustanovit parol' root.
 Ne soobshchayte soobshcheniyam o proverke oborudovaniya.
 Pokazat' soobshcheniye dnya pered otobrazheniyem ekrana vkhoda v sistemu.
 Ochistite ekran pered otobrazheniyem ekrana vkhoda v sistemu.
@@ -566,9 +555,6 @@ Atribut uspeshno udalen.
 Ne udalos' dobavit' atribut.
 Ne udalos' udalit' atribut.
 Zamenyayet slovo ili frazu drugim v stroke
-Prevyshen uroven' krasnogo tsveta. Eto bylo {0}.
-Prevyshen uroven' zelenogo tsveta. Eto bylo {0}.
-Prevyshen uroven' sinego tsveta. Eto bylo {0}.
 Aktivirovat' istinnyye tsveta
 Ne udalos' razblokirovat' {0}.
 {0} uzhe zablokirovan.
@@ -644,7 +630,6 @@ Zaderzhka v millisekundakh
 Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
 Pozvolyayet ispol'zovat' SSH FTP-server
 Net pomoshchi dlya komandy "{0}".
-Nedopustimaya posledovatel'nost' VT dlya tsveta RGB.
 Tsvet shkaly sekund
 Tsvet shkaly minut
 Tsvet shkaly chasov
@@ -706,7 +691,6 @@ Vykhod iz obolochki ZIP
 Spisok vsekh faylov vnutri arkhiva
 Izvlekayet fayl v ukazannyy katalog ili tekushchiy katalog
 Izmenyayet katalog arkhiva
-Ukazannaya komanda obolochki ZIP ne naydena.
 Katalog {0} ne sushchestvuyet
 Katalog arkhiva {0} ne sushchestvuyet
 Maksimal'noye kolichestvo pozitsiy
@@ -784,7 +768,6 @@ Perechislyayet vse podderzhivayemyye kodovyye stranitsy
 Kakiye peremennyye kompilyatora vklyucheny v prilozhenii?
 Testy, vyzyvayushchiye konkretnoye sobytiye
 Testy, proveryayushchiye oborudovaniye
-Testiruyet sborshchik musora
 Vykhodit iz testovoy obolochki i zapuskayet yadro
 Vykhodit iz testovoy obolochki i vyklyuchayet yadro
 Sokhranyayet tekushchiy katalog v fayl konfiguratsii yadra
@@ -854,13 +837,11 @@ Vykhodit iz obolochki RSS i vozvrashchayetsya v yadro
 Izmenyayet ssylku na fid
 Perechislyayet vse kanaly
 Chitayet lentu v veb-brauzere
-Ukazannaya komanda obolochki RSS ne naydena.
 Nevernyy kanal RSS2.
 Nevernyy kanal RSS1.
 Nevernyy fid Atom.
 Vvedite URL-adres RSS-kanala:
 Nevernyy tip RSS-kanala.
-Neizvestnaya oshibka obolochki:
 Poluchayet informatsiyu o stat'ye
 Nomer artikula ne mozhet byt' bol'she imeyushchikhsya artikulov.
 Zagolovok:

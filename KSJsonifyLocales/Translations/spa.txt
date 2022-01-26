@@ -39,7 +39,6 @@ Contraseña de {0}:
 Contraseña incorrecta.
 El usuario está deshabilitado.
 Nombre de usuario incorrecto.
-Error al intentar analizar los marcadores de posición. {0} - Rastreo de pila:
 Error al intentar analizar los marcadores de posición. {0}
 Error al intentar agregar el nombre de usuario.
 usrmgr: Creando nombre de usuario {0} ...
@@ -58,7 +57,6 @@ No se encontró el protector de pantalla {0} en la base de datos. Verifique el n
 El protector de pantalla no se puede cargar debido a lo siguiente: 
 Hay un error grave al imprimir texto.
 Hay un error al intentar crear la configuración.
-Error al intentar liberar la RAM: {0} - Continuando ...
 El mod no se puede cargar debido a lo siguiente: 
 mod: cargando mods ...
 mod: detener mods ...
@@ -72,7 +70,6 @@ Nombre de usuario para {0}:
 Contraseña para {0}: 
 Conectado a {0}
 Error al intentar conectarse a {0}: {1}
-Seguimiento de pila: {2}
 El directorio local {0} no existe.
 Introduzca un directorio local. ".." para volver.
 Directorio {0} no encontrado.
@@ -103,7 +100,6 @@ Muestra la pantalla de ayuda
 Lista del directorio local
 Lista del directorio remoto
 Carga el archivo local al directorio remoto usando binario o texto
-Mensaje de FTP: el comando solicitado {0} no se encuentra. Consulte 'help' para obtener una lista de los comandos disponibles especificados en el shell FTP.
 Error al obtener las propiedades para el adaptador {0}
 Número de adaptador:
 Nombre del adaptador:
@@ -211,7 +207,6 @@ Desconectar un dispositivo de depuración
 Enumera los dispositivos de depuración conectados
 Dispositivo de depuración {0} no encontrado.
 Dispositivo {0} desconectado.
-Error en la conexión: {0}
 Depure la escucha en todas las direcciones utilizando el puerto {0}.
 No hay argumentos especificados. Sugerencia: especifique varios argumentos separados por espacios
 Alias ya encontrado: {0}
@@ -223,7 +218,6 @@ No se puede eliminar el directorio: {0}
 La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
-Comando {0} no encontrado. Consulte el comando "help" para ver la lista de comandos.
 Error al obtener las propiedades de IPv6 para el adaptador {0}. Continuo...
 Información de IPv4:
 Información de IPv6:
@@ -381,7 +375,6 @@ Crea un nuevo archivo
 El archivo ya existe.
 Error al intentar crear un archivo: {0}
 Fallo al abrir el archivo. Saliendo de la carcasa ...
-No se encuentra el comando del editor de texto especificado.
 Enumera los comandos disponibles.
 Sale del editor de texto y guarda los cambios no guardados
 Imprime el contenido del archivo con números de línea en la consola
@@ -438,9 +431,6 @@ Se ingresó una sección no válida. Por favor regrese.
 Regresa...
 Habilitar
 Inhabilitar
-Escriba la contraseña de root que se establecerá. No se preocupe; la contraseña se muestra como estrellas.
-¿Cambiar la contraseña de root?
-Establecer contraseña de root ...
 Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
 Escriba cuántas veces el comando "" get "" debe reintentar descargas fallidas. Debe ser numérico.
 Escriba cuándo iniciar el protector de pantalla después de milisegundos especificados. Debe ser numérico.
@@ -515,7 +505,6 @@ Configura el kernel para que le solicite un argumento al arrancar.
 Activa el modo de mantenimiento. Esto deshabilita varias cuentas.
 Cada inicio, buscará actualizaciones.
 Al cambiar de idioma, cambie los nombres de los meses, el calendario, etc.
-Si se inicia el kernel, establecerá la contraseña de root.
 Mantenga los mensajes de prueba de hardware en silencio.
 Muestra el mensaje del día antes de mostrar la pantalla de inicio de sesión.
 Limpiar la pantalla antes de mostrar la pantalla de inicio de sesión.
@@ -566,9 +555,6 @@ El atributo se ha eliminado correctamente.
 No se pudo agregar el atributo.
 No se pudo eliminar el atributo.
 Reemplaza una palabra o frase por otra en una línea
-Se superó el nivel de color rojo. Fue {0}.
-Se superó el nivel de color verde. Fue {0}.
-Se superó el nivel de color azul. Fue {0}.
 Activar colores verdaderos
 No se pudo desbloquear {0}.
 {0} ya está bloqueado.
@@ -644,7 +630,6 @@ Retraso en milisegundos
 ¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?
 Le permite utilizar un servidor FTP SSH
 No hay ayuda para el comando "{0}".
-Secuencia VT no válida para color RGB.
 Barra de color de segundos
 Barra de color de minutos
 Barra de color de horas
@@ -706,7 +691,6 @@ Sale del caparazón ZIP
 Muestra todos los archivos dentro del archivo.
 Extrae un archivo a un directorio específico o un directorio actual
 Cambia el directorio de archivos
-No se encuentra el comando de shell ZIP especificado.
 El directorio {0} no existe
 El directorio de archivo {0} no existe
 Número máximo de posiciones
@@ -784,7 +768,6 @@ Muestra todas las páginas de códigos compatibles
 ¿Qué variables del compilador están habilitadas en la aplicación?
 Pruebas que plantean el evento específico
 Pruebas que prueban el hardware
-Prueba el recolector de basura
 Sale del shell de prueba e inicia el kernel.
 Sale del shell de prueba y apaga el kernel.
 Guarda el directorio actual en el archivo de configuración del kernel
@@ -854,13 +837,11 @@ Sale del shell RSS y vuelve al kernel
 Cambia el enlace del feed
 Muestra todos los feeds
 Lee un feed en un navegador web
-No se encuentra el comando de shell RSS especificado.
 Feed RSS2 no válido.
 Feed RSS1 no válido.
 Feed Atom no válido.
 Ingrese una URL de fuente RSS:
 Tipo de fuente RSS no válido.
-Error de shell desconocido:
 Obtiene la información del artículo
 El número de artículo no puede ser mayor que los artículos disponibles.
 Título:

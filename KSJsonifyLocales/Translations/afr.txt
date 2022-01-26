@@ -39,7 +39,6 @@ Spesiale karakters word nie toegelaat nie.
 Verkeerde wagwoord.
 Gebruiker is gedeaktiveer.
 Verkeerde gebruikersnaam.
-Kon nie plekhouers probeer ontleed nie. {0} - Stapelspoor:
 Kon nie plekhouers probeer ontleed nie. {0}
 Kon nie gebruikernaam probeer byvoeg nie.
 usrmgr: Skep tans gebruikernaam {0}...
@@ -58,7 +57,6 @@ Skermbeveiliging {0} nie in databasis gevind nie. Gaan die naam na en probeer we
 Skermbeveiliging kan nie gelaai word nie as gevolg van die volgende:
 Daar is 'n ernstige fout tydens die druk van teks.
 Daar is 'n fout om konfigurasie te skep.
-Kon nie RAM probeer vrymaak nie: {0} - Gaan voort...
 Mod kan nie gelaai word nie as gevolg van die volgende:
 mod: Laai mods...
 mod: Stop mods...
@@ -72,7 +70,6 @@ Gebruikersnaam vir {0}:
 Wagwoord vir {0}:
 Gekoppel aan {0}
 Fout wanneer probeer om aan {0} te koppel: {1}
-Stapelspoor: {2}
 Plaaslike gids {0} bestaan ​​nie.
 Voer 'n plaaslike gids in. ".." om terug te gaan.
 Gids {0} nie gevind nie.
@@ -103,7 +100,6 @@ Wys hulpskerm
 Lys plaaslike gids
 Lys afgeleë gids
 Laai plaaslike lêer op na afgeleë gids met behulp van binêre of teks
-FTP-boodskap: Die gevraagde opdrag {0} is nie gevind nie. Sien 'hulp' vir 'n lys van beskikbare opdragte gespesifiseer op FTP-dop.
 Kon nie eienskappe vir adapter {0} kry nie
 Adapternommer:
 Adapter Naam:
@@ -211,7 +207,6 @@ Ontkoppel 'n ontfouttoestel
 Lys ontfoutingstoestelle wat gekoppel is
 Ontfout toestel {0} nie gevind nie.
 Toestel {0} is ontkoppel.
-Fout in verbinding: {0}
 Ontfout luister op alle adresse deur poort {0} te gebruik.
 Geen argumente gespesifiseer nie. Wenk: Spesifiseer veelvuldige argumente geskei deur spasies
 Alias ​​reeds gevind: {0}
@@ -223,7 +218,6 @@ Kan nie gids verwyder nie: {0}
 Tydsone is verkeerd gespesifiseer.
 Ongeldige profielkeuse.
 Probeer tans om aan {0} te koppel met profiel {1}...
-Opdrag {0} nie gevind nie. Sien die "help"-opdrag vir die lys van opdragte.
 Kon nie IPv6-eienskappe vir adapter {0} kry nie. Gaan voort...
 IPv4 inligting:
 IPv6 inligting:
@@ -381,7 +375,6 @@ Maak 'n nuwe lêer
 Lêer bestaan ​​reeds.
 Kon nie 'n lêer probeer skep nie: {0}
 Kon nie lêer oopmaak nie. Verlaat tans dop...
-Die gespesifiseerde teksredigeerderopdrag is nie gevind nie.
 Lys beskikbare opdragte
 Verlaat die teksredigeerder en stoor ongestoorde veranderinge
 Druk die inhoud van die lêer met reëlnommers na die konsole
@@ -438,9 +431,6 @@ Ongeldige afdeling ingevoer. Gaan asseblief terug.
 Gaan terug...
 Aktiveer
 Deaktiveer
-Skryf die wortelwagwoord wat ingestel moet word. Moenie bekommerd wees nie; die wagwoord word as sterre gewys.
-Verander wortelwagwoord?
-Stel wortelwagwoord...
 Skryf 'n afstandontfouterpoort. Dit moet numeries wees en moet nie reeds gebruik word nie. Andersins sal afstandontfouter nie die poort oopmaak nie.
 Skryf hoeveel keer die "kry"-opdrag mislukte aflaaie moet herprobeer. Dit moet numeries wees.
 Skryf wanneer om skermbewaarder na gespesifiseerde millisekondes te begin. Dit moet numeries wees.
@@ -515,7 +505,6 @@ Stel die kern op sodat dit jou vra vir argument by opstart.
 Snellers instandhoudingsmodus. Dit deaktiveer verskeie rekeninge.
 Elke opstart, dit sal kyk vir opdaterings.
 Wanneer u van taal verander, verander die maandname, kalender, ens.
-As die kern begin word, sal dit die wortel wagwoord stel.
 Hou hardeware ondersoek boodskappe stil.
 Wys Boodskap van die Dag voordat die aanmeldskerm vertoon word.
 Maak skerm skoon voordat die aanmeldskerm vertoon word.
@@ -566,9 +555,6 @@ Eienskap is suksesvol verwyder.
 Kon nie kenmerk byvoeg nie.
 Kon nie kenmerk verwyder nie.
 Vervang 'n woord of frase met 'n ander een in 'n reël
-Rooi kleurvlak oorskry. Dit was {0}.
-Groen kleurvlak oorskry. Dit was {0}.
-Blou kleurvlak oorskry. Dit was {0}.
 Aktiveer ware kleure
 Kon nie {0} deblokkeer nie.
 {0} is reeds geblokkeer.
@@ -644,7 +630,6 @@ Vertraging in millisekondes
 Hoeveel millisekondes om te wag voor die volgende skryfwerk?
 Laat jou 'n SSH FTP-bediener gebruik
 Geen hulp vir opdrag "{0}" nie.
-Ongeldige VT-volgorde vir RGB-kleur.
 Kleur van sekondesbalk
 Kleur van minutebalk
 Kleur van ure Bar
@@ -706,7 +691,6 @@ Verlaat die zip-dop
 Lys alle lêers binne die argief
 Onttrek 'n lêer na 'n gespesifiseerde gids of 'n huidige gids
 Verander argiefgids
-Die gespesifiseerde zip-dop-opdrag is nie gevind nie.
 Gids {0} bestaan ​​nie
 Argiefgids {0} bestaan ​​nie
 Maksimum aantal posisies
@@ -784,7 +768,6 @@ Lys alle ondersteunde kodebladsye
 Watter samestellerveranderlikes is in die toepassing geaktiveer?
 Toetse wat die spesifieke gebeurtenis verhoog
 Toetse wat die hardeware ondersoek
-Toets die vullisverwyderaar
 Verlaat die toetsdop en begin die kern
 Verlaat die toetsdop en skakel die kern af
 Stoor die huidige gids na kernkonfigurasielêer
@@ -854,13 +837,11 @@ Verlaat RSS-dop en keer terug na kern
 Verander die voerskakel
 Lys alle feeds
 Lees 'n stroom in 'n webblaaier
-Die gespesifiseerde RSS-dop-opdrag is nie gevind nie.
 Ongeldige RSS2-stroom.
 Ongeldige RSS1-stroom.
 Ongeldige Atom-voer.
 Voer 'n RSS-stroom-URL in:
 Ongeldige RSS-stroomtipe.
-Onbekende dopfout:
 Kry die artikelinligting
 Artikelnommer kon nie groter as die beskikbare artikels wees nie.
 Titel:

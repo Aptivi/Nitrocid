@@ -39,7 +39,6 @@ Ez dira karaktere bereziak onartzen.
 Pasahitz okerra.
 Erabiltzailea desgaituta dago.
 Erabiltzaile izen okerra.
-Errore bat gertatu da leku-markak analizatzen saiatzean. {0} - Pilaren arrastoa:
 Errore bat gertatu da leku-markak analizatzen saiatzean. {0}
 Errorea erabiltzaile izena gehitzen saiatzean.
 usrmgr: {0} erabiltzaile izena sortzen ...
@@ -58,7 +57,6 @@ Ez da eskatutako pantaila-babeslea {0} aurkitu.
 Pantaila-babeslea ezin da kargatu hau dela eta:
 Testua inprimatzean errore larria dago.
 Errore bat dago konfigurazioa sortu nahian.
-Errorea RAM askatzen saiatzean: {0} - Jarraitzen ...
 Mod ezin da kargatu hau dela eta:
 mod: Mods kargatzen ...
 mod: modak gelditzen ...
@@ -72,7 +70,6 @@ Zerbitzaritik deskonektatu beharko zenuke beste zerbitzari batera konektatu aurr
 {0} pasahitza:
 {0} -ra konektatuta
 Errorea {0}-rekin konektatzen saiatzean: {1}
-Pilaren aztarna: {2}
 {0} direktorio lokala ez dago.
 Sartu direktorio lokala. ".." atzera egiteko.
 {0} direktorioa ez da aurkitu.
@@ -103,7 +100,6 @@ Laguntza pantaila erakusten du
 Tokiko direktorioa zerrendatzen du
 Urruneko direktorioa zerrendatzen du
 Fitxategi lokala urruneko direktoriora kargatzen du bitarra edo testua erabiliz
-FTP mezua: ez da eskatutako {0} komandoa aurkitu. Ikusi 'laguntza' FTP shellean zehaztutako komando erabilgarrien zerrenda ikusteko.
 Ezin izan da {0} egokitzailearen propietateak lortu.
 Egokitzaile zenbakia:
 Egokitzailearen izena:
@@ -211,7 +207,6 @@ Deskonektatu arazketa gailua
 Konektatutako arazketa-zerrendak
 {0} arazketa-gailua ez da aurkitu.
 {0} gailua deskonektatu da.
-Errorea konexioan: {0}
 Araztu helbide guztietan entzutea {0} ataka erabiliz.
 Ez da argudiorik zehaztu. Aholkua: zehaztu zuriunez bereizitako hainbat argumentu
 Ezizena dagoeneko aurkitu da: {0}
@@ -223,7 +218,6 @@ Ezin da direktorioa kendu: {0}
 Ordu-eremua gaizki zehaztuta dago.
 Profil hautaketa baliogabea.
 {0} profilarekin {1} konektatzen saiatzen ...
-{0} agindua ez da aurkitu. Ikus "laguntza" komandoa komandoen zerrenda ikusteko.
 Ezin izan da {0} egokitzailearen IPv6 propietateak lortu. Jarraitzen ...
 IPv4 informazioa:
 IPv6 informazioa:
@@ -381,7 +375,6 @@ Fitxategi berria egiten du
 Fitxategia dagoeneko badago.
 Errorea fitxategi bat sortzen saiatzean: {0}
 Ezin izan da ireki fitxategia. Shell-etik irteten ...
-Ez da zehaztutako testu editorearen komandoa aurkitu.
 Eskuragarri dauden komandoak zerrendatzen ditu
 Testu editoretik irten eta gorde gabeko aldaketak gorde
 Fitxategiaren edukia lerro zenbakiekin inprimatzen du kontsolan
@@ -438,9 +431,6 @@ Atal baliogabea sartu da. Itzuli mesedez.
 Atzera egin...
 Gaitu
 Desgaitu
-Idatzi ezarri beharreko root pasahitza. Ez kezkatu; pasahitza izar gisa agertzen da.
-Erroaren pasahitza aldatu nahi duzu?
-Ezarri root pasahitza ...
 Idatzi urruneko arazketa ataka. Zenbakizkoa izan behar du, eta ez da dagoeneko erabili behar. Bestela, urruneko arazleak huts egingo du ataka irekitzean.
 Idatzi "lortu" komandoak huts egin duen deskarga berriro saiatu behar duen. Zenbakizkoa izan behar du.
 Idatzi pantaila-babeslea noiz abiarazi zehaztutako milisegundoen ondoren. Zenbakizkoa izan behar du.
@@ -515,7 +505,6 @@ Nukleoa konfiguratzen du abioan argumentua eskatzeko.
 Mantentze-modua aktibatzen du. Hainbat kontu desgaitzen ditu.
 Abiarazte bakoitzean eguneratzeak egiaztatuko ditu.
 Hizkuntzaz aldatzean, aldatu hilabetearen izenak, egutegia eta abar.
-Nukleoa abiarazten bada, root pasahitza ezarriko du.
 Mantendu hardwareak probatzeko mezuak isilik.
 Erakutsi eguneko mezua saio hasiera pantaila erakutsi aurretik.
 Garbitu pantaila saio hasiera pantaila erakutsi aurretik.
@@ -566,9 +555,6 @@ Atributua behar bezala kendu da.
 Ezin izan da atributua gehitu.
 Ezin izan da atributua kendu.
 Hitz edo esaldi bat lerro bateko beste batekin ordezkatzen du
-Kolore gorri maila gainditu da. {0} zen.
-Kolore berde maila gainditu da. {0} zen.
-Kolore urdinaren maila gainditu da. {0} zen.
 Aktibatu benetako koloreak
 Ezin izan da {0} desblokeatu.
 {0} blokeatuta dago dagoeneko.
@@ -644,7 +630,6 @@ Atzerapena Milisegundotan
 Zenbat milisegundo itxaron behar da hurrengo idazketa egin aurretik?
 SSH FTP zerbitzari bat erabiltzen uzten dizu
 Ez dago laguntzarik "{0}" komandoan.
-RGB kolorearen VT sekuentzia baliogabea.
 Segunduen barra kolorea
 Minutuen barra kolorea
 Orduen kolorea barra
@@ -706,7 +691,6 @@ ZIP shell-etik irteten da
 Artxiboaren barruan dauden fitxategi guztiak zerrendatzen ditu
 Fitxategi bat zehaztutako direktorio batera edo uneko direktorio batera ateratzen du
 Artxiboen direktorioa aldatzen du
-Ez da zehaztutako ZIP shell komandoa aurkitu.
 {0} direktorioa ez dago
 Artxiboen direktorioa {0} ez dago
 Gehienezko posizioen kopurua
@@ -784,7 +768,6 @@ Onartutako kodeko orri guztiak zerrendatzen ditu
 Zer aldagai konpilatzaile gaituta daude aplikazioan?
 Gertaera zehatza planteatzen duten probak
 Hardwarea probatzen duten probak
-Zabor biltzailea probatzen du
 Probako shell-etik irten eta nukleoa abiarazten du
 Probako shell-etik irten eta kernela itzaltzen du
 Uneko direktorioa kernelaren konfigurazio fitxategian gordetzen du
@@ -854,13 +837,11 @@ RSS shell-etik irten eta kernelera itzultzen da
 Jarioaren esteka aldatzen du
 Jario guztiak zerrendatzen ditu
 Jario bat irakurtzen du web arakatzaile batean
-Zehaztutako RSS shell komandoa ez da aurkitu.
 RSS2 jario baliogabea.
 RSS1 jario baliogabea.
 Atom jario baliogabea.
 Sartu RSS jarioaren URLa:
 RSS jario mota baliogabea.
-Shell errore ezezaguna:
 Artikuluaren informazioa lortzen du
 Artikuluaren zenbakia ezin da eskuragarri dauden artikuluak baino handiagoa izan.
 Izenburua:

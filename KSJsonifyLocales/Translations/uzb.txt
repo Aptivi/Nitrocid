@@ -39,7 +39,6 @@ Maxsus belgilarga ruxsat berilmaydi.
 Parol noto‘g‘ri.
 Foydalanuvchi o‘chirib qo‘yilgan.
 Foydalanuvchi nomi noto‘g‘ri.
-To'ldiruvchilarni tahlil qilishda xato. {0} - Stack izi:
 To'ldiruvchilarni tahlil qilishda xato. {0}
 Foydalanuvchi nomini qo'shishda xatolik yuz berdi.
 usrmgr: {0} foydalanuvchi nomini yaratish ...
@@ -58,7 +57,6 @@ So‘ralgan {0} ekran saqlovchisi topilmadi.
 Ekran saqlagichini yuklab bo'lmaydi, chunki:
 Matnni chop etishda jiddiy xato mavjud.
 Konfiguratsiyani yaratishda xatolik yuz berdi.
-RAMni bo'shatishda xato: {0} - davom etmoqda ...
 Quyidagi sabablar tufayli modni yuklab bo'lmaydi:
 mod: Modlarni yuklash ...
 mod: Modlarni to'xtatish ...
@@ -72,7 +70,6 @@ Boshqa serverga ulanishdan oldin serverdan uzilish kerak
 {0} uchun parol:
 {0} ga ulangan
 {0} ga ulanishda xato: {1}
-Stack izi: {2}
 Mahalliy katalog {0} mavjud emas.
 Mahalliy katalogni kiriting. orqaga qaytish uchun "..".
 {0} katalog topilmadi.
@@ -103,7 +100,6 @@ Yordam ekranini ko'rsatadi
 Mahalliy katalog ro'yxati
 Masofaviy katalog ro'yxati
 Mahalliy faylni ikkilik yoki matn yordamida masofaviy katalogga yuklaydi
-FTP xabari: talab qilingan {0} buyrug'i topilmadi. FTP qobig'ida ko'rsatilgan mavjud buyruqlar ro'yxati uchun "yordam" ga qarang.
 {0} adapteri uchun xususiyatlarni olib bo'lmadi
 Adapter raqami:
 Adapter nomi:
@@ -211,7 +207,6 @@ Tuzatish moslamasini uzing
 Nosozliklarni tuzatish moslamalari ulandi
 {0} tuzatish moslamasi topilmadi.
 {0} qurilmasi uzildi.
-Ulanishda xatolik: {0}
 {0} portidan foydalanib barcha manzillardagi nosozliklarni tuzatish
 Hech qanday dalil ko'rsatilmagan. Maslahat: Bo'shliqlar bilan ajratilgan bir nechta dalillarni ko'rsating
 Taxallus allaqachon topilgan: {0}
@@ -223,7 +218,6 @@ Katalogni olib tashlab bo'lmadi: {0}
 Vaqt zonasi noto‘g‘ri ko‘rsatilgan.
 Profil tanlovi noto‘g‘ri.
 {0} profiliga {1} ulanishga harakat qilinmoqda ...
-{0} buyrug'i topilmadi. Buyruqlar ro'yxati uchun "help" buyrug'iga qarang.
 {0} adapteri uchun IPv6 xususiyatlarini olib bo'lmadi. Davomi ...
 IPv4 haqida ma'lumot:
 IPv6 haqida ma'lumot:
@@ -381,7 +375,6 @@ Yangi faylni yaratadi
 Fayl allaqachon mavjud.
 Fayl yaratishda xato: {0}
 Faylni ochib bo'lmadi. Qobiq chiqmoqda ...
-Belgilangan matn muharriri buyrug'i topilmadi.
 Mavjud buyruqlar ro'yxati
 Matn muharriridan chiqadi va saqlanmagan o'zgarishlarni saqlaydi
 Konsolga satr raqamlari bilan fayl tarkibini chop etadi
@@ -438,9 +431,6 @@ Noto'g'ri bo'lim kiritildi. Iltimos, orqaga qayting.
 Ortga qaytish...
 Yoqish
 O'chirish
-O'rnatiladigan ildiz parolini yozing. Xavotir olmang; parol yulduzcha sifatida ko'rsatilgan.
-Ildiz parolini o'zgartirish kerakmi?
-Ildiz parolini o'rnating ...
 Masofaviy tuzatuvchi portini yozing. Bu raqamli bo'lishi kerak va allaqachon ishlatilmasligi kerak. Aks holda, masofadan tuzatuvchi portni ocholmaydi.
 "" Get "" buyrug'i necha marta muvaffaqiyatsiz yuklab olinganligini takrorlashi kerakligini yozing. Bu raqamli bo'lishi kerak.
 Belgilangan millisekundalardan so'ng ekranni qachon ishga tushirishni yozing. Bu raqamli bo'lishi kerak.
@@ -515,7 +505,6 @@ Yadroni o'rnatadi, shunda u sizni yuklashda argumentni taklif qiladi.
 Xizmat ko'rsatish rejimini ishga tushiradi. Bu bir nechta hisoblarni o'chirib qo'yadi.
 Har bir ishga tushirish, u yangilanishlarni tekshiradi.
 Tillarni almashtirishda oy nomlari, taqvim va boshqalarni o'zgartiring.
-Agar yadro ishga tushirilsa, u root parolini o'rnatadi.
 Jihozni tekshiruvchi xabarlarni jim turing.
 Kirish ekranini ko'rsatishdan oldin kunning xabarini ko'rsating.
 Kirish ekranini ko'rsatmasdan oldin ekranni tozalang.
@@ -566,9 +555,6 @@ Xususiyat muvaffaqiyatli olib tashlandi.
 Atribut qo'shilmadi.
 Xususiyat o'chirilmadi.
 So'z yoki iborani qatorda boshqasi bilan almashtiradi
-Qizil rang darajasi oshib ketdi. Bu {0} edi.
-Yashil rang darajasi oshib ketdi. Bu {0} edi.
-Moviy rang darajasi oshib ketdi. Bu {0} edi.
 Haqiqiy ranglarni faollashtiring
 {0} blokdan chiqarilmadi.
 {0} allaqachon bloklangan.
@@ -644,7 +630,6 @@ Ghi l?i cu?c tr? chuy?n g? l?i t? xa vào nh?t k? g? l?i.
 Ph?i ??i bao nhiêu mili giây tr??c khi th?c hi?n l?n vi?t ti?p theo?
 Cho phép b?n s? d?ng m?y ch? SSH FTP
 "{0}" buyrug'i uchun yordam yo'q.
-RGB rangi uchun yaroqsiz VT ketma-ketligi.
 Sekundlar paneli
 Daqiqalar paneli
 Soatlar rangi paneli
@@ -706,7 +691,6 @@ ZIP qobiqdan chiqadi
 Arxiv ichidagi barcha fayllar ro'yxati
 Belgilangan katalogga yoki joriy katalogga faylni chiqaradi
 Arxiv katalogini o'zgartiradi
-Belgilangan ZIP qobig'i buyrug'i topilmadi.
 {0} katalogi mavjud emas
 {0} arxiv katalogi mavjud emas
 Maksimal pozitsiyalar soni
@@ -784,7 +768,6 @@ Barcha qo'llab-quvvatlanadigan kod sahifalarini ro'yxati
 Ilovada qanday kompilyator o'zgaruvchilari yoqilgan?
 Muayyan hodisani ko'taradigan testlar
 Uskunani tekshiradigan sinovlar
-Axlat yig'uvchini sinovdan o'tkazadi
 Sinov qobig'idan chiqib, yadroni ishga tushiradi
 Sinov qobig'idan chiqib, yadroni o'chiradi
 Joriy katalogni yadro konfiguratsiya faylida saqlaydi
@@ -854,13 +837,11 @@ RSS qobig'idan chiqib, yadroga qaytadi
 Besleme havolasini o'zgartiradi
 Barcha tasmalar ro'yxati
 Veb-brauzerda tasma o'qiydi
-Belgilangan RSS shell buyrug'i topilmadi.
 Noto'g'ri RSS2 tasmasi.
 Noto'g'ri RSS1 tasmasi.
 Yaroqsiz atom tasmasi.
 RSS tasma URL manzilini kiriting:
 Noto'g'ri RSS tasma turi.
-Noma'lum qobiq xatosi:
 Maqola haqida ma'lumot oladi
 Maqola soni mavjud maqolalardan kattaroq bo'lishi mumkin emas.
 Sarlavha:

@@ -39,7 +39,6 @@ Karakter spesial tidak diperbolehkan.
 Kata sandi salah.
 Pengguna dinonaktifkan.
 Nama pengguna salah.
-Kesalahan saat mencoba mengurai placeholder. {0} - Jejak tumpukan:
 Kesalahan saat mencoba mengurai placeholder. {0}
 Kesalahan saat mencoba menambah nama pengguna.
 usrmgr: Membuat nama pengguna {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} tidak ditemukan dalam database. Periksa nama dan coba lagi.
 Screensaver tidak dapat dimuat karena hal berikut:
 Ada kesalahan serius saat mencetak teks.
 Ada kesalahan saat mencoba membuat konfigurasi.
-Kesalahan saat mencoba membebaskan RAM: {0} - Melanjutkan ...
 Mod tidak dapat dimuat karena hal berikut:
 mod: Memuat mods ...
 mod: Menghentikan mod ...
@@ -72,7 +70,6 @@ Nama pengguna untuk {0}:
 Kata sandi untuk {0}:
 Terhubung ke {0}
 Kesalahan saat mencoba terhubung ke {0}: {1}
-Stack Trace: {2}
 Direktori lokal {0} tidak ada.
 Masukkan direktori lokal. ".." untuk kembali.
 Direktori {0} tidak ditemukan.
@@ -103,7 +100,6 @@ Menampilkan layar bantuan
 Daftar direktori lokal
 Daftar direktori jarak jauh
 Unggah file lokal ke direktori jarak jauh menggunakan biner atau teks
-Pesan FTP: Perintah yang diminta {0} tidak ditemukan. Lihat 'bantuan' untuk daftar perintah yang tersedia yang ditentukan pada shell FTP.
 Gagal mendapatkan properti untuk adaptor {0}
 Nomor Adaptor:
 Nama Adaptor:
@@ -211,7 +207,6 @@ Putuskan sambungan perangkat debug
 Daftar perangkat debug yang terhubung
 Perangkat debug {0} tidak ditemukan.
 Perangkat {0} terputus.
-Kesalahan dalam koneksi: {0}
 Debug mendengarkan semua alamat menggunakan port {0}.
 Tidak ada argumen yang ditentukan. Petunjuk: Tentukan beberapa argumen yang dipisahkan oleh spasi
 Alias sudah ditemukan: {0}
@@ -223,7 +218,6 @@ Tidak dapat menghapus direktori: {0}
 Zona waktu ditentukan secara tidak benar.
 Pilihan profil tidak valid.
 Mencoba terhubung ke {0} dengan profil {1} ...
-Perintah {0} tidak ditemukan. Lihat perintah "help" untuk daftar perintah.
 Gagal mendapatkan properti IPv6 untuk adaptor {0}. Melanjutkan ...
 Informasi IPv4:
 Informasi IPv6:
@@ -381,7 +375,6 @@ Membuat file baru
 File sudah ada.
 Kesalahan saat mencoba membuat file: {0}
 Gagal membuka file. Keluar dari shell ...
-Perintah editor teks yang ditentukan tidak ditemukan.
 Daftar perintah yang tersedia
 Keluar dari editor teks dan simpan perubahan yang belum disimpan
 Mencetak isi file dengan nomor baris ke konsol
@@ -438,9 +431,6 @@ Bagian yang dimasukkan tidak valid. Tolong kembali.
 Kembali...
 Memungkinkan
 Nonaktifkan
-Tulis kata sandi root yang akan disetel. Jangan khawatir; kata sandi ditampilkan sebagai bintang.
-Ubah Kata Sandi Root?
-Setel Kata Sandi Root ...
 Tulis port debugger jarak jauh. Ini harus numerik, dan belum pernah digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port.
 Tulis berapa kali perintah "" get "" harus mencoba ulang unduhan yang gagal. Itu harus numerik.
 Tulis kapan harus meluncurkan screensaver setelah milidetik yang ditentukan. Itu harus numerik.
@@ -515,7 +505,6 @@ Siapkan kernel agar meminta Anda memberikan argumen saat boot.
 Memicu mode pemeliharaan. Ini menonaktifkan banyak akun.
 Setiap startup, itu akan memeriksa pembaruan.
 Saat berpindah bahasa, ubah nama bulan, kalender, dll.
-Jika kernel dimulai, kata sandi root akan ditetapkan.
 Tetap diamkan pesan pemeriksaan perangkat keras.
 Tampilkan Pesan Hari Ini sebelum menampilkan layar login.
 Hapus layar sebelum menampilkan layar login.
@@ -566,9 +555,6 @@ Atribut berhasil dihapus.
 Gagal menambahkan atribut.
 Gagal menghapus atribut.
 Mengganti kata atau frase dengan yang lain dalam satu baris
-Tingkat warna merah terlampaui. Itu adalah {0}.
-Tingkat warna hijau terlampaui. Itu adalah {0}.
-Tingkat warna biru terlampaui. Itu adalah {0}.
 Aktifkan warna asli
 Gagal membebaskan {0}.
 {0} sudah diblokir.
@@ -644,7 +630,6 @@ Penundaan dalam Milidetik
 Berapa milidetik untuk menunggu sebelum membuat tulisan berikutnya?
 Memungkinkan Anda menggunakan server FTP SSH
 Tidak ada bantuan untuk perintah "{0}".
-Urutan VT tidak valid untuk warna RGB.
 Warna Bilah Detik
 Warna Bilah Menit
 Warna Jam Bar
@@ -706,7 +691,6 @@ Keluar dari cangkang ZIP
 Daftar semua file di dalam arsip
 Mengekstrak file ke direktori tertentu atau direktori saat ini
 Mengubah direktori arsip
-Perintah shell ZIP yang ditentukan tidak ditemukan.
 Direktori {0} tidak ada
 Direktori arsip {0} tidak ada
 Jumlah Posisi Maks
@@ -784,7 +768,6 @@ Mencantumkan semua halaman kode yang didukung
 Variabel kompiler apa yang diaktifkan dalam aplikasi?
 Tes meningkatkan acara tertentu
 Tes menyelidiki perangkat keras
-Menguji pengumpul sampah
 Keluar dari shell uji dan mulai kernel
 Keluar dari shell uji dan matikan kernel
 Menyimpan direktori saat ini ke file konfigurasi kernel
@@ -854,13 +837,11 @@ Keluar dari shell RSS dan kembali ke kernel
 Mengubah tautan umpan
 Daftar semua feed
 Membaca umpan di browser web
-Perintah shell RSS yang ditentukan tidak ditemukan.
 Umpan RSS2 tidak valid.
 Umpan RSS1 tidak valid.
 Umpan Atom tidak valid.
 Masukkan URL umpan RSS:
 Jenis umpan RSS tidak valid.
-Kesalahan shell tidak diketahui:
 Dapatkan info artikel
 Nomor artikel tidak boleh lebih besar dari artikel yang tersedia.
 Judul:

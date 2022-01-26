@@ -39,7 +39,6 @@ Boşluklara izin verilmez.
 Yanlış şifre.
 Kullanıcı devre dışı.
 Yanlış kullanıcı adı.
-Yer tutucuları ayrıştırmaya çalışırken hata oluştu. {0} - Yığın izleme:
 Yer tutucuları ayrıştırmaya çalışırken hata oluştu. {0}
 Kullanıcı adı eklemeye çalışırken hata oluştu.
 usrmgr: {0} kullanıcı adı oluşturuluyor...
@@ -58,7 +57,6 @@ Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edin ve tekrar deney
 Aşağıdakilerden dolayı ekran koruyucu yüklenemiyor:
 Metin yazdırırken ciddi bir hata var.
 Yapılandırma oluşturmaya çalışırken bir hata var.
-RAM boşaltmaya çalışırken hata oluştu: {0} - Devam ediyor...
 Mod, aşağıdakilerden dolayı yüklenemiyor:
 mod: Modlar yükleniyor...
 mod: Modlar durduruluyor...
@@ -72,7 +70,6 @@ Başka bir sunucuya bağlanmadan önce sunucuyla bağlantınızı kesmeniz gerek
 {0} için şifre:
 {0} ile bağlandı
 {0}'e bağlanmaya çalışırken hata oluştu: {1}
-Yığın İzi: {2}
 {0} yerel dizini mevcut değil.
 Yerel bir dizin girin. ".." geri dönmek için.
 {0} dizini bulunamadı.
@@ -103,7 +100,6 @@ Yardım ekranını gösterir
 Yerel dizini listeler
 Uzak dizini listeler
 İkili veya metin kullanarak yerel dosyayı uzak dizine yükler
-FTP mesajı: İstenen {0} komutu bulunamadı. FTP kabuğunda belirtilen kullanılabilir komutların listesi için 'yardım'a bakın.
 {0} bağdaştırıcısının özellikleri alınamadı
 Adaptör Numarası:
 Adaptör Adı:
@@ -211,7 +207,6 @@ Hata ayıklama cihazının bağlantısını kesin
 Bağlı hata ayıklama cihazlarını listeler
 Hata ayıklama cihazı {0} bulunamadı.
 {0} cihazının bağlantısı kesildi.
-Bağlantıda hata: {0}
 {0} bağlantı noktasını kullanarak tüm adreslerde dinleme hatalarını ayıklayın.
 Argüman belirtilmedi. İpucu: Boşluklarla ayrılmış birden çok bağımsız değişken belirtin
 Takma ad zaten bulundu: {0}
@@ -223,7 +218,6 @@ Dizin kaldırılamıyor: {0}
 Saat dilimi yanlış belirtildi.
 Geçersiz profil seçimi.
 {1} profiliyle {0} ile bağlantı kurulmaya çalışılıyor...
-{0} komutu bulunamadı. Komut listesi için "yardım" komutuna bakın.
 {0} bağdaştırıcısı için IPv6 özellikleri alınamadı. Devam ediyor...
 IPv4 bilgileri:
 IPv6 bilgileri:
@@ -381,7 +375,6 @@ Yeni bir dosya yapar
 Dosya zaten mevcut.
 Dosya oluşturmaya çalışırken hata oluştu: {0}
 Dosya açılamadı. Kabuktan çıkılıyor...
-Belirtilen metin düzenleyici komutu bulunamadı.
 Kullanılabilir komutları listeler
 Metin düzenleyiciden çıkar ve kaydedilmemiş değişiklikleri kaydeder
 Satır numaralarıyla dosyanın içeriğini konsola yazdırır
@@ -438,9 +431,6 @@ Geçersiz bölüm girildi. Lütfen geri dön.
 Geri gitmek...
 Olanak vermek
 Devre dışı bırakmak
-Ayarlanacak kök parolayı yazın. Merak etme; şifre yıldız olarak gösterilir.
-Kök Parola Değiştirilsin mi?
-Kök Parola Ayarla...
 Bir uzak hata ayıklayıcı bağlantı noktası yazın. Sayısal olmalı ve daha önce kullanılmamış olmalıdır. Aksi takdirde, uzak hata ayıklayıcı bağlantı noktasını açamaz.
 Başarısız indirmeleri "get" komutunun kaç kez yeniden denemesi gerektiğini yazın. Sayısal olmalıdır.
 Belirtilen milisaniyeden sonra ekran koruyucunun ne zaman başlatılacağını yazın. Sayısal olmalıdır.
@@ -515,7 +505,6 @@ Sıcaklık için Tercih Edilen Birim
 Bakım modunu tetikler. Bu, birden fazla hesabı devre dışı bırakır.
 Her başlangıç, güncellemeleri kontrol edecektir.
 Dilleri değiştirirken ay adlarını, takvimi vb. değiştirin.
-Çekirdek başlatılırsa, kök şifresini belirleyecektir.
 Donanım araştırma mesajlarını sessiz tutun.
 Giriş ekranını görüntülemeden önce Günün Mesajını Göster.
 Oturum açma ekranını görüntülemeden önce ekranı temizleyin.
@@ -566,9 +555,6 @@ Dosya bir arşivdir. Yedeklemeler için kullanılır.
 Özellik eklenemedi.
 Özellik kaldırılamadı.
 Satırdaki bir kelimeyi veya ifadeyi başka bir kelimeyle değiştirir
-Kırmızı renk seviyesi aşıldı. {0} idi.
-Yeşil renk seviyesi aşıldı. {0} idi.
-Mavi renk seviyesi aşıldı. {0} idi.
 Gerçek renkleri etkinleştir
 {0} engellemesi kaldırılamadı.
 {0} zaten engellenmiş.
@@ -644,7 +630,6 @@ Milisaniye cinsinden gecikme
 Bir sonraki yazma işlemini yapmadan önce kaç milisaniye beklenmeli?
 Bir SSH FTP sunucusu kullanmanıza izin verir
 "{0}" komutu için yardım yok.
-RGB rengi için geçersiz VT dizisi.
 Saniye Çubuğunun Rengi
 Dakika Çubuğunun Rengi
 Saat Çubuğunun Rengi
@@ -706,7 +691,6 @@ ZIP kabuğundan çıkar
 Arşiv içindeki tüm dosyaları listeler
 Bir dosyayı belirli bir dizine veya geçerli bir dizine ayıklar
 Arşiv dizinini değiştirir
-Belirtilen ZIP kabuğu komutu bulunamadı.
 {0} dizini mevcut değil
 {0} arşiv dizini mevcut değil
 Maks. Pozisyon Sayısı
@@ -784,7 +768,6 @@ Desteklenen tüm kod sayfalarını listeler
 Uygulamada hangi derleyici değişkenleri etkinleştirildi?
 Belirli olayı yükselten testler
 Donanımı araştıran testler
-Çöp toplayıcıyı test eder
 Test kabuğundan çıkar ve çekirdeği başlatır
 Test kabuğundan çıkar ve çekirdeği kapatır
 Geçerli dizini çekirdek yapılandırma dosyasına kaydeder
@@ -854,13 +837,11 @@ RSS kabuğundan çıkar ve çekirdeğe geri döner
 Besleme bağlantısını değiştirir
 Tüm yayınları listeler
 Bir web tarayıcısında bir beslemeyi okur
-Belirtilen RSS kabuğu komutu bulunamadı.
 Geçersiz RSS2 beslemesi.
 Geçersiz RSS1 beslemesi.
 Geçersiz Atom beslemesi.
 Bir RSS beslemesi URL'si girin:
 Geçersiz RSS besleme türü.
-Bilinmeyen kabuk hatası:
 Makale bilgilerini alır
 Makale numarası mevcut makalelerden büyük olamaz.
 Başlık:

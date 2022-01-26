@@ -39,7 +39,6 @@ Heslo {0}:
 Špatné heslo.
 Uživatel je zakázán.
 Chybné uživatelské jméno.
-Chyba při pokusu o analýzu zástupných symbolů. {0} - Stack trace:
 Chyba při pokusu o analýzu zástupných symbolů. {0}
 Při pokusu o přidání uživatelského jména došlo k chybě.
 usrmgr: Vytvoření uživatelského jména {0} ...
@@ -58,7 +57,6 @@ Spořič obrazovky {0} nebyl nalezen v databázi. Zkontrolujte název a zkuste t
 Spořič obrazovky nelze načíst z následujících důvodů:
 Při tisku textu došlo k závažné chybě.
 Při pokusu o vytvoření konfigurace došlo k chybě.
-Chyba při pokusu o uvolnění paměti RAM: {0} - Pokračování ...
 Mod nelze načíst z následujících důvodů:
 mod: Načítání modů ...
 mod: Zastavení modů ...
@@ -72,7 +70,6 @@ Uživatelské jméno pro {0}:
 Heslo pro {0}:
 Připojeno k {0}
 Chyba při pokusu o připojení k {0}: {1}
-Stoh Trace: {2}
 Místní adresář {0} neexistuje.
 Zadejte místní adresář. ".." vrátit se.
 Adresář {0} nebyl nalezen.
@@ -103,7 +100,6 @@ Zobrazí obrazovku nápovědy
 Seznam místních adresářů
 Seznamy vzdáleného adresáře
 Nahraje místní soubor do vzdáleného adresáře pomocí binárního nebo textového souboru
-Zpráva FTP: Požadovaný příkaz {0} nebyl nalezen. Seznam dostupných příkazů zadaných v prostředí FTP naleznete v nápovědě.
 Nepodařilo se získat vlastnosti adaptéru {0}
 Číslo adaptéru:
 Název adaptéru:
@@ -211,7 +207,6 @@ Odpojte ladicí zařízení
 Vypíše seznam ladících zařízení
 Ladicí zařízení {0} nebylo nalezeno.
 Zařízení {0} bylo odpojeno.
-Chyba ve spojení: {0}
 Ladění poslechu na všech adresách pomocí portu {0}.
 Nebyly zadány žádné argumenty. Tip: Určete více argumentů oddělených mezerami
 Alias již nalezen: {0}
@@ -223,7 +218,6 @@ Adresář nelze odstranit: {0}
 Časové pásmo je zadáno nesprávně.
 Neplatný výběr profilu.
 Pokouší se připojit k {0} s profilem {1} ...
-Příkaz {0} nebyl nalezen. Seznam příkazů naleznete v příkazu „help“.
 Nepodařilo se získat vlastnosti IPv6 pro adaptér {0}. Pokračování ...
 Informace IPv4:
 Informace IPv6:
@@ -381,7 +375,6 @@ Vytvoří nový soubor
 Soubor již existuje.
 Chyba při pokusu o vytvoření souboru: {0}
 Otevření souboru se nezdařilo. Ukončení shellu ...
-Zadaný příkaz textového editoru nebyl nalezen.
 Vypíše dostupné příkazy
 Ukončí textový editor a uloží neuložené změny
 Vytiskne obsah souboru s čísly řádků na konzoli
@@ -438,9 +431,6 @@ Zadána neplatná část. Vraťte se zpět.
 Vraťte se zpět ...
 Umožnit
 Zakázat
-Napište heslo uživatele root, které chcete nastavit. Nebojte se; heslo se zobrazí jako hvězdičky.
-Změnit root heslo?
-Nastavit root heslo ...
 Napište vzdálený port ladicího programu. Musí být číselné a nesmí být již použito. Jinak vzdálený ladicí program neotevře port.
 Napište, kolikrát by měl příkaz "" dostat "" zkusit opakovat neúspěšná stahování. Musí to být číselné.
 Napište, kdy se má spořič obrazovky spustit po zadaných milisekundách. Musí to být číselné.
@@ -515,7 +505,6 @@ Nastaví jádro, takže vás vyzve k argumentu při spuštění.
 Spustí režim údržby. Tím se deaktivuje více účtů.
 Každé spuštění zkontroluje aktualizace.
 Při přepínání jazyků změňte názvy měsíců, kalendář atd.
-Pokud je jádro spuštěno, nastaví heslo root.
 Udržujte tiché zprávy o hardwaru.
 Zobrazit zprávu dne před zobrazením přihlašovací obrazovky.
 Před zobrazením přihlašovací obrazovky vyčistěte obrazovku.
@@ -566,9 +555,6 @@ Atribut byl úspěšně odebrán.
 Nepodařilo se přidat atribut.
 Odebrání atributu se nezdařilo.
 Nahradí slovo nebo frázi jiným v řádku
-Byla překročena úroveň červené barvy. Bylo to {0}.
-Byla překročena úroveň zelené barvy. Bylo to {0}.
-Úroveň modré barvy překročena. Bylo to {0}.
 Aktivujte věrné barvy
 Odblokování uživatele {0} se nezdařilo.
 Web {0} je již zablokován.
@@ -644,7 +630,6 @@ Zpoždění v milisekundách
 Kolik milisekund čekat před dalším zápisem?
 Umožňuje použít server SSH FTP
 Žádná nápověda pro příkaz „{0}“.
-Ongeldige VT-reeks voor RGB-kleur.
 Kleur van secondenbalk
 Kleur van minutenbalk
 Kleur urenbalk
@@ -706,7 +691,6 @@ Verlaat de ZIP-shell
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
-De opgegeven ZIP-shellopdracht is niet gevonden.
 Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
@@ -784,7 +768,6 @@ Geeft een overzicht van alle ondersteunde codepagina's
 Welke compilervariabelen zijn ingeschakeld in de toepassing?
 Tests die de specifieke gebeurtenis verhogen
 Tests die de hardware onderzoeken
-Test de vuilnisman
 Sluit de testshell af en start de kernel
 Sluit de testshell af en sluit de kernel af
 Slaat de huidige map op in het kernelconfiguratiebestand
@@ -854,13 +837,11 @@ Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
-De opgegeven RSS-shellopdracht is niet gevonden.
 Ongeldige RSS2-feed.
 Ongeldige RSS1-feed.
 Ongeldige Atom-feed.
 Voer een RSS-feed-URL in:
 Ongeldig RSS-feedtype.
-Onbekende shell-fout:
 Krijgt de artikelinformatie
 Artikelnummer kon niet groter zijn dan de beschikbare artikelen.
 Titel:

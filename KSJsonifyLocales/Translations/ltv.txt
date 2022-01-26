@@ -39,7 +39,6 @@ Lietotāja {0} parole:
 Nepareiza parole.
 Lietotājs ir atspējots.
 Nepareizs lietotājvārds.
-Mēģinot parsēt vietturus, radās kļūda. {0} — steka izsekošana:
 Mēģinot parsēt vietturus, radās kļūda. {0}
 Mēģinot pievienot lietotājvārdu, radās kļūda.
 usrmgr: tiek izveidots lietotājvārds {0}...
@@ -58,7 +57,6 @@ Ekrānsaudzētājs {0} datu bāzē nav atrasts. Pārbaudiet nosaukumu un mēģin
 Ekrānsaudzētāju nevar ielādēt tālāk norādīto iemeslu dēļ.
 Drukājot tekstu, radās nopietna kļūda.
 Mēģinot izveidot konfigurāciju, radās kļūda.
-Kļūda, mēģinot atbrīvot RAM: {0} — Turpina...
 Mod nevar ielādēt šādu iemeslu dēļ:
 mod: Notiek modifikāciju ielāde...
 mod: tiek apturēta modifikācija...
@@ -72,7 +70,6 @@ Lietotājvārds {0}:
 Parole {0}:
 Savienots ar {0}
 Kļūda, mēģinot izveidot savienojumu ar {0}: {1}
-Stack Trace: {2}
 Vietējais direktorijs {0} nepastāv.
 Ievadiet vietējo direktoriju. ".." lai atgrieztos.
 Katalogs {0} nav atrasts.
@@ -103,7 +100,6 @@ Parāda palīdzības ekrānu
 Uzskaita vietējo direktoriju
 Uzskaita attālo direktoriju
 Augšupielādē lokālo failu attālajā direktorijā, izmantojot bināro vai tekstu
-FTP ziņojums: pieprasītā komanda {0} nav atrasta. Skatiet 'palīdzību', lai skatītu FTP čaulā norādīto pieejamo komandu sarakstu.
 Neizdevās iegūt adaptera {0} rekvizītus
 Adaptera numurs:
 Adaptera nosaukums:
@@ -211,7 +207,6 @@ Atvienojiet atkļūdošanas ierīci
 Uzskaita pievienotās atkļūdošanas ierīces
 Atkļūdošanas ierīce {0} nav atrasta.
 Ierīce {0} ir atvienota.
-Savienojuma kļūda: {0}
 Atkļūdojiet klausīšanos visās adresēs, izmantojot portu {0}.
 Nav norādīts neviens arguments. Padoms: norādiet vairākus argumentus, atdalot tos ar atstarpēm
 Aizstājvārds jau atrasts: {0}
@@ -223,7 +218,6 @@ Nevar noņemt direktoriju: {0}
 Laika josla ir norādīta nepareizi.
 Nederīga profila atlase.
 Mēģina izveidot savienojumu ar {0}, izmantojot profilu {1}...
-Komanda {0} nav atrasta. Komandu sarakstu skatiet komandā "help".
 Neizdevās iegūt IPv6 rekvizītus adapterim {0}. Turpinās...
 IPv4 informācija:
 IPv6 informācija:
@@ -381,7 +375,6 @@ Izveido jaunu failu
 Fails jau pastāv.
 Kļūda, mēģinot izveidot failu: {0}
 Neizdevās atvērt failu. No čaulas iziet...
-Norādītā teksta redaktora komanda nav atrasta.
 Uzskaita pieejamās komandas
 Iziet no teksta redaktora un saglabā nesaglabātās izmaiņas
 Konsolē izdrukā faila saturu ar rindu numuriem
@@ -438,9 +431,6 @@ Ievadīta nederīga sadaļa. Lūdzu, atgriezieties.
 Atgriezties...
 Iespējot
 Atspējot
-Ierakstiet saknes paroli, kas jāiestata. Neuztraucieties; parole tiek parādīta kā zvaigznītes.
-Vai mainīt saknes paroli?
-Iestatīt saknes paroli...
 Ierakstiet attālā atkļūdotāja portu. Tam ir jābūt skaitlim, un tas nedrīkst būt jau izmantots. Pretējā gadījumā attālais atkļūdotājs nevarēs atvērt portu.
 Uzrakstiet, cik reižu komandai “get” ir jāmēģina atkārtoti neveiksmīgas lejupielādes. Tam jābūt skaitliski.
 Uzrakstiet, kad palaist ekrānsaudzētāju pēc noteiktām milisekundēm. Tam jābūt skaitliski.
@@ -515,7 +505,6 @@ Iestata kodolu, lai tas sāknēšanas laikā liktu jums argumentēt.
 Iedarbina apkopes režīmu. Tādējādi tiek atspējoti vairāki konti.
 Katru reizi startējot, tas pārbaudīs atjauninājumus.
 Mainot valodas, mainiet mēnešu nosaukumus, kalendāru utt.
-Ja kodols tiek palaists, tas iestatīs root paroli.
 Neklusējiet aparatūras pārbaudes ziņojumus.
 Rādīt dienas ziņojumu pirms pieteikšanās ekrāna parādīšanas.
 Pirms pieteikšanās ekrāna parādīšanas notīriet ekrānu.
@@ -566,9 +555,6 @@ Atribūts ir veiksmīgi noņemts.
 Neizdevās pievienot atribūtu.
 Neizdevās noņemt atribūtu.
 Aizstāj vārdu vai frāzi ar citu vārdu vai frāzi rindā
-Pārsniegts sarkanās krāsas līmenis. Tas bija {0}.
-Pārsniegts zaļās krāsas līmenis. Tas bija {0}.
-Pārsniegts zilās krāsas līmenis. Tas bija {0}.
 Aktivizējiet patiesās krāsas
 Neizdevās atbloķēt lietotāju {0}.
 {0} jau ir bloķēts.
@@ -644,7 +630,6 @@ Aizkave milisekundēs
 Cik milisekundes jāgaida pirms nākamās rakstīšanas?
 Ļauj izmantot SSH FTP serveri
 Nav palīdzības par komandu "{0}".
-Nederīga VT secība RGB krāsai.
 Sekunžu joslas krāsa
 Minūtes joslas krāsa
 Stundu joslas krāsa
@@ -706,7 +691,6 @@ Iziet no ZIP čaulas
 Uzskaita visus arhīvā esošos failus
 Izvelk failu noteiktā direktorijā vai pašreizējā direktorijā
 Maina arhīva direktoriju
-Norādītā ZIP čaulas komanda nav atrasta.
 Katalogs {0} nepastāv
 Arhīva direktorijs {0} nepastāv
 Maksimālais pozīciju skaits
@@ -784,7 +768,6 @@ Uzskaita visas atbalstītās kodu lapas
 Kādi kompilatora mainīgie ir iespējoti lietojumprogrammā?
 Testi, kas izceļ konkrēto notikumu
 Aparatūras zondēšanas testi
-Pārbauda atkritumu savācēju
 Iziet no testa apvalka un startē kodolu
 Iziet no testa apvalka un izslēdz kodolu
 Saglabā pašreizējo direktoriju kodola konfigurācijas failā
@@ -854,13 +837,11 @@ Iziet no RSS čaulas un atgriežas kodolā
 Maina plūsmas saiti
 Uzskaita visas plūsmas
 Lasa plūsmu tīmekļa pārlūkprogrammā
-Norādītā RSS čaulas komanda nav atrasta.
 Nederīga RSS2 plūsma.
 Nederīga RSS1 plūsma.
 Nederīga Atom plūsma.
 Ievadiet RSS plūsmas URL:
 Nederīgs RSS plūsmas veids.
-Nezināma čaulas kļūda:
 Iegūst informāciju par rakstu
 Raksta numurs nedrīkst būt lielāks par pieejamajiem rakstiem.
 Nosaukums:

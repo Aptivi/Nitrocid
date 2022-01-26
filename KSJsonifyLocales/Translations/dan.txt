@@ -39,7 +39,6 @@ Specialtegn er ikke tilladt.
 Forkert kodeord.
 Brugeren er deaktiveret.
 Forkert brugernavn.
-Fejl ved forsøg på at analysere pladsholdere. {0} - Stakspor:
 Fejl ved forsøg på at analysere pladsholdere. {0}
 Fejl ved forsøg på at tilføje brugernavn.
 usrmgr: Oprettelse af brugernavn {0} ...
@@ -58,7 +57,6 @@ Screensaver {0} findes ikke i databasen. Kontroller navnet, og prøv igen.
 Screensaver kan ikke indlæses på grund af følgende:
 Der er en alvorlig fejl, når du udskriver tekst.
 Der er en fejl ved forsøg på at oprette konfiguration.
-Fejl ved forsøg på at frigøre RAM: {0} - Fortsætter ...
 Mod kan ikke indlæses på grund af følgende:
 mod: Indlæser mods ...
 mod: Stop af mods ...
@@ -72,7 +70,6 @@ Brugernavn til {0}:
 Adgangskode til {0}:
 Tilsluttet {0}
 Fejl ved forsøg på at oprette forbindelse til {0}: {1}
-Stakspor: {2}
 Lokalt bibliotek {0} findes ikke.
 Gå ind i et lokalt bibliotek. ".." at gå tilbage.
 Directory {0} ikke fundet.
@@ -103,7 +100,6 @@ Viser hjælpeskærm
 Lister lokalt bibliotek
 Viser fjernkatalog
 Uploader lokal fil til fjernkatalog ved hjælp af binær eller tekst
-FTP-meddelelse: Den anmodede kommando {0} findes ikke. Se 'hjælp' for en liste over tilgængelige kommandoer, der er specificeret på FTP-shell.
 Kunne ikke få egenskaber til adapter {0}
 Adapternummer:
 Adapternavn:
@@ -211,7 +207,6 @@ Frakobl en fejlfindingsenhed
 Viser tilsluttede fejlfindingsenheder
 Fejlfindingsenhed {0} ikke fundet.
 Enhed {0} afbrudt.
-Fejl i forbindelse: {0}
 Debug lytning på alle adresser ved hjælp af port {0}.
 Ingen argumenter specificeret. Tip: Angiv flere argumenter adskilt af mellemrum
 Alias ​​allerede fundet: {0}
@@ -223,7 +218,6 @@ Kan ikke fjerne mappen: {0}
 Tidszone er angivet forkert.
 Ugyldigt profilvalg.
 Forsøger at oprette forbindelse til {0} med profilen {1} ...
-Kommando {0} ikke fundet. Se kommandoen "help" for listen over kommandoer.
 Kunne ikke få IPv6-egenskaber til adapter {0}. Fortsætter ...
 IPv4 information:
 IPv6 information:
@@ -381,7 +375,6 @@ Opretter en ny fil
 Fil findes allerede.
 Fejl ved forsøg på at oprette en fil: {0}
 Kunne ikke åbne filen. Spændende skal ...
-Den angivne teksteditor-kommando findes ikke.
 Viser tilgængelige kommandoer
 Forlader teksteditoren og gem ændringer, der ikke er gemt
 Udskriver filindholdet med linjenumre til konsollen
@@ -438,9 +431,6 @@ Ugyldig sektion angivet. Gå tilbage.
 Gå tilbage...
 Aktiver
 Deaktiver
-Skriv root-adgangskoden, der skal indstilles. Bare rolig; adgangskoden vises som stjerner.
-Skift rodadgangskode?
-Indstil rodadgangskode ...
 Skriv en ekstern debugger-port. Det skal være numerisk og må ikke allerede bruges. Ellers kan fjernfejlfinder ikke åbne porten.
 Skriv hvor mange gange kommandoen "" get "" skal prøve mislykkede downloads igen. Det skal være numerisk.
 Skriv hvornår du skal starte pauseskærm efter specificerede millisekunder. Det skal være numerisk.
@@ -515,7 +505,6 @@ Indstiller kernen, så den beder dig om argument ved opstart.
 Udløser vedligeholdelsestilstand. Dette deaktiverer flere konti.
 Hver opstart kontrollerer den for opdateringer.
 Når du skifter sprog, skal du ændre månedens navne, kalender osv.
-Hvis kernen startes, indstiller den rodadgangskoden.
 Hold besked om hardware-sondering tavs.
 Vis dagens besked, inden loginskærmen vises.
 Ryd skærm, inden loginskærm vises.
@@ -566,9 +555,6 @@ Attribut er blevet fjernet.
 Kunne ikke tilføje attribut.
 Kunne ikke fjerne attribut.
 Erstatter et ord eller en sætning med et andet på en linje
-Rødt farveniveau overskredet. Det var {0}.
-Grønt farveniveau overskredet. Det var {0}.
-Blå farveniveau overskredet. Det var {0}.
 Aktivér ægte farver
 Kunne ikke fjerne blokeringen af ​​{0}.
 {0} er allerede blokeret.
@@ -644,7 +630,6 @@ Forsinkelse i millisekunder
 Hvor mange millisekunder skal du vente, før du skriver næste gang?
 Giver dig mulighed for at bruge en SSH FTP-server
 Ingen hjælp til kommandoen "{0}".
-Ongeldige VT-reeks voor RGB-kleur.
 Kleur van secondenbalk
 Kleur van minutenbalk
 Kleur urenbalk
@@ -706,7 +691,6 @@ Verlaat de ZIP-shell
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
-De opgegeven ZIP-shellopdracht is niet gevonden.
 Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
@@ -784,7 +768,6 @@ Geeft een overzicht van alle ondersteunde codepagina's
 Welke compilervariabelen zijn ingeschakeld in de toepassing?
 Tests die de specifieke gebeurtenis verhogen
 Tests die de hardware onderzoeken
-Test de vuilnisman
 Sluit de testshell af en start de kernel
 Sluit de testshell af en sluit de kernel af
 Slaat de huidige map op in het kernelconfiguratiebestand
@@ -854,13 +837,11 @@ Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
-De opgegeven RSS-shellopdracht is niet gevonden.
 Ongeldige RSS2-feed.
 Ongeldige RSS1-feed.
 Ongeldige Atom-feed.
 Voer een RSS-feed-URL in:
 Ongeldig RSS-feedtype.
-Onbekende shell-fout:
 Krijgt de artikelinformatie
 Artikelnummer kon niet groter zijn dan de beschikbare artikelen.
 Titel:

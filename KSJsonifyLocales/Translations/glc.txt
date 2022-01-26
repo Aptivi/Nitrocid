@@ -39,7 +39,6 @@ Contrasinal de {0}:
 Contrasinal incorrecto.
 O usuario está desactivado.
 Nome de usuario incorrecto.
-Erro ao intentar analizar os marcadores de posición. {0} - Rastrexo de pila:
 Erro ao intentar analizar os marcadores de posición. {0}
 Erro ao tentar engadir un nome de usuario.
 usrmgr: Creando nome de usuario {0} ...
@@ -58,7 +57,6 @@ Non se atopou o protector de pantalla {0} na base de datos. Comproba o nome e t�
 Non se pode cargar o protector de pantalla por mor do seguinte:
 Hai un erro grave ao imprimir texto.
 Produciuse un erro ao tentar crear a configuración.
-Erro ao tentar liberar a memoria RAM: {0} - Continuando ...
 Non se pode cargar o Mod por mor do seguinte:
 mod: Cargando modificacións ...
 mod: Detendo mods ...
@@ -72,7 +70,6 @@ Nome de usuario para {0}:
 Contrasinal para {0}:
 Conectado a {0}
 Erro ao tentar conectarse a {0}: {1}
-Rastrexo de pila: {2}
 O directorio local {0} non existe.
 Insira un directorio local. ".." para volver.
 Non se atopou o directorio {0}.
@@ -103,7 +100,6 @@ Mostra a pantalla de axuda
 Lista o directorio local
 Lista o directorio remoto
 Carga ficheiro local a directorio remoto usando binario ou texto
-Mensaxe FTP: non se atopou o comando solicitado {0}. Vexa "axuda" para unha lista de comandos dispoñibles especificados no shell FTP.
 Non se puideron obter as propiedades do adaptador {0}
 Número de adaptador:
 Nome do adaptador:
@@ -211,7 +207,6 @@ Desconecta un dispositivo de depuración
 Lista os dispositivos de depuración conectados
 Non se atopou o dispositivo de depuración {0}.
 Dispositivo {0} desconectado.
-Erro na conexión: {0}
 Depurar a audición en todos os enderezos usando o porto {0}.
 Non se especificaron argumentos. Consello: especifique varios argumentos separados por espazos
 Alias ​​xa atopado: {0}
@@ -223,7 +218,6 @@ Non se puido eliminar o directorio: {0}
 A zona horaria non se especifica incorrectamente.
 A selección do perfil non é válida.
 Tentando conectarse a {0} co perfil {1} ​​...
-Non se atopou o comando {0}. Vexa o comando "axuda" para ver a lista de comandos.
 Erro ao obter as propiedades IPv6 do adaptador {0}. Continuando ...
 Información de IPv4:
 Información de IPv6:
@@ -381,7 +375,6 @@ Crea un novo ficheiro
 O ficheiro xa existe.
 Erro ao tentar crear un ficheiro: {0}
 Erro ao abrir o ficheiro. Saíndo da shell ...
-Non se atopou o comando do editor de texto especificado.
 Lista os comandos dispoñibles
 Sae do editor de texto e garda os cambios sen gardar
 Imprime o contido do ficheiro con números de liña na consola
@@ -438,9 +431,6 @@ Introduciuse unha sección non válida. Volve atrás.
 Volver atrás ...
 Activar
 Desactivar
-Escribe o contrasinal de root que se vai definir. Non te preocupes; o contrasinal móstrase como estrelas.
-Cambiar contrasinal raíz?
-Establecer contrasinal raíz ...
 Escribe un porto de depurador remoto. Debe ser numérico e non debe estar xa usado. Se non, o depurador remoto non poderá abrir o porto.
 Escribe cantas veces o comando "get" debería tentar de novo as descargas erradas. Debe ser numérico.
 Escribe cando lanzar o protector de pantalla despois de milisegundos especificados. Debe ser numérico.
@@ -515,7 +505,6 @@ Configura o núcleo para que lle solicite argumentos no arranque.
 Desencadea o modo de mantemento. Isto desactiva varias contas.
 Cada inicio comprobará se hai actualizacións.
 Ao cambiar de idioma, cambia os nomes do mes, o calendario, etc.
-Se se inicia o núcleo, establecerá o contrasinal de root.
 Mantén as mensaxes de sondaxe de hardware en silencio.
 Mostrar a mensaxe do día antes de mostrar a pantalla de inicio de sesión.
 Borrar pantalla antes de mostrar a pantalla de inicio de sesión.
@@ -566,9 +555,6 @@ O atributo eliminouse correctamente.
 Non se puido engadir o atributo.
 Erro ao eliminar o atributo.
 Substitúe unha palabra ou frase por outra nunha liña
-Superouse o nivel de cor vermella. Foi {0}.
-Superouse o nivel de cor verde. Foi {0}.
-Superouse o nivel de cor azul. Foi {0}.
 Activa as cores verdadeiras
 Non se puido desbloquear {0}.
 {0} xa está bloqueado.
@@ -644,7 +630,6 @@ Atraso en milisegundos
 Cantos milisegundos agardar antes de facer a seguinte escritura?
 Permite usar un servidor FTP SSH
 Non hai axuda para o comando "{0}".
-Secuencia VT non válida para a cor RGB.
 Barra de cor de segundos
 Barra de cor de minutos
 Barra de cor de horas
@@ -706,7 +691,6 @@ Sae do shell ZIP
 Lista todos os ficheiros dentro do arquivo
 Extrae un ficheiro a un directorio especificado ou a un directorio actual
 Cambia o directorio de arquivo
-Non se atopou o comando de shell ZIP especificado.
 O directorio {0} non existe
 O directorio de arquivo {0} non existe
 Número máximo de posicións
@@ -784,7 +768,6 @@ Lista todas as páxinas de código admitidas
 Que variables do compilador están habilitadas na aplicación?
 Probas que levan o evento específico
 Probas que sondan o hardware
-Proba o colector de lixo
 Sae do shell de proba e inicia o núcleo
 Sae do intérprete de proba e apaga o núcleo
 Garda o directorio actual no ficheiro de configuración do núcleo
@@ -854,13 +837,11 @@ Sae do shell RSS e volve ao núcleo
 Cambia a ligazón do feed
 Lista todos os feeds
 Le un feed nun navegador web
-Non se atopou o comando de shell RSS especificado.
 Fonte RSS2 non válida.
 Fonte RSS1 non válida.
 Feed Atom non válido.
 Insira un URL de fonte RSS:
 Tipo de fonte RSS non válido.
-Erro de shell descoñecido:
 Obtén a información do artigo
 O número do artigo non pode ser maior que os artigos dispoñibles.
 Título:

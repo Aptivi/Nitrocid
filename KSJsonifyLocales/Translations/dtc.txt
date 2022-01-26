@@ -39,7 +39,6 @@ Speciale karakters zijn niet toegestaan.
 Verkeerd wachtwoord.
 Gebruiker is uitgeschakeld.
 Verkeerde gebruikersnaam.
-Fout bij proberen plaatsaanduidingen te ontleden. {0} - Stacktrace:
 Fout bij proberen plaatsaanduidingen te ontleden. {0}
 Fout bij proberen gebruikersnaam toe te voegen.
 usrmgr: gebruikersnaam {0} maken ...
@@ -58,7 +57,6 @@ Screensaver {0} niet gevonden in database. Controleer de naam en probeer het opn
 Screensaver kan niet worden geladen vanwege het volgende:
 Er is een ernstige fout opgetreden bij het afdrukken van tekst.
 Er is een fout opgetreden bij het proberen om de configuratie te maken.
-Fout bij proberen om RAM vrij te maken: {0} - Doorgaan ...
 Mod kan niet worden geladen vanwege het volgende:
 mod: Mods laden ...
 mod: Mods stoppen ...
@@ -72,7 +70,6 @@ Gebruikersnaam voor {0}:
 Wachtwoord voor {0}:
 Verbonden met {0}
 Fout bij proberen verbinding te maken met {0}: {1}
-Stack Trace: {2}
 Lokale directory {0} bestaat niet.
 Voer een lokale map in. ".." terug gaan.
 Directory {0} niet gevonden.
@@ -103,7 +100,6 @@ Toont helpscherm
 Geeft een lokale map weer
 Geeft de externe map weer
 Uploadt lokaal bestand naar de externe map met binaire of tekst
-FTP-bericht: het gevraagde commando {0} is niet gevonden. Zie 'help' voor een lijst met beschikbare opdrachten die zijn opgegeven in de FTP-shell.
 Kan eigenschappen voor adapter {0} niet ophalen
 Adapter nummer:
 Adapternaam:
@@ -211,7 +207,6 @@ Koppel een foutopsporingsapparaat los
 Toont foutopsporingsapparaten aangesloten
 Foutopsporingsapparaat {0} niet gevonden.
 Apparaat {0} verbroken.
-Fout in verbinding: {0}
 Debug luisteren op alle adressen met behulp van poort {0}.
 Geen argumenten opgegeven. Hint: specificeer meerdere argumenten gescheiden door spaties
 Alias al gevonden: {0}
@@ -223,7 +218,6 @@ Kan map niet verwijderen: {0}
 Tijdzone is onjuist opgegeven.
 Ongeldige profielselectie.
 Probeer verbinding te maken met {0} met profiel {1} ...
-Commando {0} niet gevonden. Zie de opdracht "help" voor de lijst met opdrachten.
 Kan IPv6-eigenschappen voor adapter {0} niet ophalen. Voortzetting van ...
 IPv4-informatie:
 IPv6-informatie:
@@ -381,7 +375,6 @@ Maakt een nieuw bestand
 Bestand bestaat al.
 Fout bij het maken van een bestand: {0}
 Gefaald om het document te openen. Shell afsluiten ...
-De opgegeven teksteditoropdracht is niet gevonden.
 Geeft beschikbare opdrachten weer
 Sluit de teksteditor af en sla niet-opgeslagen wijzigingen op
 Drukt de inhoud van het bestand met regelnummers af naar de console
@@ -438,9 +431,6 @@ Ongeldige sectie ingevoerd. Ga alsjeblieft terug.
 Ga terug...
 Inschakelen
 Uitschakelen
-Schrijf het root-wachtwoord dat moet worden ingesteld. Maak je geen zorgen; het wachtwoord wordt weergegeven als sterren.
-Root-wachtwoord wijzigen?
-Root-wachtwoord instellen ...
 Schrijf een poort voor foutopsporing op afstand. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger de poort niet openen.
 Schrijf op hoe vaak de opdracht "" get "" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.
 Schrijf wanneer de screensaver moet worden gestart na gespecificeerde milliseconden. Het moet numeriek zijn.
@@ -515,7 +505,6 @@ Stelt de kernel zo in dat hij bij het opstarten om een ​​argument vraagt.
 Activeert de onderhoudsmodus. Hierdoor worden meerdere accounts uitgeschakeld.
 Elke keer dat het opstart, controleert het op updates.
 Wijzig bij het wisselen van taal de maandnamen, de kalender, enz.
-Als de kernel wordt gestart, wordt het root-wachtwoord ingesteld.
 Houd hardware-onderzoekende berichten stil.
 Toon het bericht van de dag voordat het inlogscherm wordt weergegeven.
 Scherm wissen voordat het inlogscherm wordt weergegeven.
@@ -566,9 +555,6 @@ Kenmerk is succesvol verwijderd.
 Toevoegen van kenmerk is mislukt.
 Kan kenmerk niet verwijderen.
 Vervangt een woord of zin door een ander op een regel
-Kleurniveau rood overschreden. Het was {0}.
-Groen kleurniveau overschreden. Het was {0}.
-Blauw kleurniveau overschreden. Het was {0}.
 Activeer echte kleuren
 Deblokkeren van {0} is mislukt.
 {0} is al geblokkeerd.
@@ -644,7 +630,6 @@ Vertraging in milliseconden
 Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?
 Hiermee kunt u een SSH FTP-server gebruiken
 Geen hulp voor commando "{0}".
-Ongeldige VT-reeks voor RGB-kleur.
 Kleur van secondenbalk
 Kleur van minutenbalk
 Kleur urenbalk
@@ -706,7 +691,6 @@ Verlaat de ZIP-shell
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
-De opgegeven ZIP-shellopdracht is niet gevonden.
 Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
@@ -784,7 +768,6 @@ Geeft een overzicht van alle ondersteunde codepagina's
 Welke compilervariabelen zijn ingeschakeld in de toepassing?
 Tests die de specifieke gebeurtenis verhogen
 Tests die de hardware onderzoeken
-Test de vuilnisman
 Sluit de testshell af en start de kernel
 Sluit de testshell af en sluit de kernel af
 Slaat de huidige map op in het kernelconfiguratiebestand
@@ -854,13 +837,11 @@ Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
-De opgegeven RSS-shellopdracht is niet gevonden.
 Ongeldige RSS2-feed.
 Ongeldige RSS1-feed.
 Ongeldige Atom-feed.
 Voer een RSS-feed-URL in:
 Ongeldig RSS-feedtype.
-Onbekende shell-fout:
 Krijgt de artikelinformatie
 Artikelnummer kon niet groter zijn dan de beschikbare artikelen.
 Titel:

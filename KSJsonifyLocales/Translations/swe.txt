@@ -39,7 +39,6 @@ Specialtecken är inte tillåtna.
 Fel lösenord.
 Användaren är inaktiverad.
 Fel användarnamn.
-Det gick inte att försöka parsa platshållare. {0} - Stack spår:
 Det gick inte att försöka parsa platshållare. {0}
 Det gick inte att försöka lägga till användarnamn.
 usrmgr: Skapa användarnamn {0} ...
@@ -58,7 +57,6 @@ Skärmsläckare {0} hittades inte i databasen. Kontrollera namnet och försök i
 Skärmsläckaren kan inte laddas på grund av följande:
 Det finns ett allvarligt fel vid utskrift av text.
 Det gick inte att försöka skapa konfiguration.
-Ett fel på att försöka frigöra RAM: {0} - Fortsättning ...
 Mod kan inte laddas på grund av följande:
 mod: Laddar mods ...
 mod: Stopp mods ...
@@ -72,7 +70,6 @@ Användarnamn för {0}:
 Lösenord för {0}:
 Ansluten till {0}
 Fel vid försök att ansluta till {0}: {1}
-Stack Trace: {2}
 Lokal katalog {0} existerar inte.
 Ange en lokal katalog. ".." att gå tillbaka.
 Directory {0} not found.
@@ -103,7 +100,6 @@ Visar hjälpskärm
 Visar lokal katalog
 Listar fjärrkatalog
 Överför lokal fil till fjärrkatalog med binär eller text
-FTP-meddelande: Det begärda kommandot {0} hittades inte. Se "help" för en lista över tillgängliga kommandon som anges på FTP-skalet.
 Misslyckades med att få egenskaper för adapter {0}
 Adapternummer:
 Adapternamn:
@@ -211,7 +207,6 @@ Koppla bort en felsökningsenhet
 Listar felsökningsenheter anslutna
 Felsökningsenhet {0} hittades inte.
 Enheten {0} är frånkopplad.
-Fel i anslutningen: {0}
 Felsökning lyssnar på alla adresser med port {0}.
 Inga argument specificerade. Tips: Ange flera argument åtskilda med mellanslag
 Alias redan hittat: {0}
@@ -223,7 +218,6 @@ Det går inte att ta bort katalogen: {0}
 Tidszon anges felaktigt.
 Ogiltigt profilval.
 Försöker ansluta till {0} med profilen {1} ...
-Kommando {0} hittades inte. Se kommandot "help" för listan med kommandon.
 Det gick inte att få IPv6-egenskaper för adapter {0}. Fortlöpande...
 IPv4-information:
 IPv6-information:
@@ -381,7 +375,6 @@ Skapar en ny fil
 Filen finns redan.
 Fel vid försök att skapa en fil: {0}
 Misslyckades med att öppna fil. Avslutande skal ...
-Det angivna kommandot för textredigerare hittas inte.
 Listar tillgängliga kommandon
 Stänger textredigeraren och sparar ändringar som inte är sparade
 Skriver ut innehållet i filen med radnummer på konsolen
@@ -438,9 +431,6 @@ Ogiltigt avsnitt angett. Snälla gå tillbaka.
 Gå tillbaka...
 Gör det möjligt
 Inaktivera
-Skriv root-lösenordet som ska ställas in. Oroa dig inte; lösenordet visas som stjärnor.
-Ändra rotlösenord?
-Ställ in rotlösenord ...
 Skriv en extern felsökningsport. Det måste vara numeriskt och får inte redan användas. I annat fall kommer fjärrfelsökaren inte att öppna porten.
 Skriv hur många gånger kommandot "" get "" ska försöka misslyckade nedladdningar. Det måste vara numeriskt.
 Skriv när skärmsläckare ska startas efter angivna millisekunder. Det måste vara numeriskt.
@@ -515,7 +505,6 @@ Ställer in kärnan så att du uppmanas till argument vid start.
 Utlöser underhållsläge. Detta inaktiverar flera konton.
 Varje start kommer det att söka efter uppdateringar.
 När du byter språk, ändra månadens namn, kalender etc.
-Om kärnan startas ställer den in root-lösenordet.
 Håll meddelanden för maskinvarusondering tysta.
 Visa dagens meddelande innan inloggningsskärmen visas.
 Rensa skärmen innan inloggningsskärmen visas.
@@ -566,9 +555,6 @@ Attribut har tagits bort.
 Det gick inte att lägga till attribut.
 Det gick inte att ta bort attributet.
 Ersätter ett ord eller en fras med ett annat i en rad
-Röd färgnivå överskred. Det var {0}.
-Grön färg har överskridits. Det var {0}.
-Blå färgnivå överskridits. Det var {0}.
 Aktivera sanna färger
 Det gick inte att avblockera {0}.
 {0} är redan blockerad.
@@ -644,7 +630,6 @@ Fördröjning i millisekunder
 Hur många millisekunder väntar du innan du skriver nästa gång?
 Låter dig använda en SSH FTP-server
 Ingen hjälp för kommandot "{0}".
-Ogiltig VT-sekvens för RGB-färg.
 Color of Seconds Bar
 Color of Minutes Bar
 Color of Hours Bar
@@ -706,7 +691,6 @@ Avslutar ZIP-skalet
 Listar alla filer i arkivet
 Extraherar en fil till en viss katalog eller en aktuell katalog
 Ändrar arkivkatalogen
-Det angivna ZIP-skalkommandot hittades inte.
 Katalogen {0} finns inte
 Arkivkatalogen {0} finns inte
 Max antal positioner
@@ -784,7 +768,6 @@ Listar alla kodsidor som stöds
 Vilka kompilatorvariabler är aktiverade i applikationen?
 Tester som lyfter den specifika händelsen
 Testar sondering av hårdvaran
-Testar sopuppsamlaren
 Avslutar testskalet och startar kärnan
 Avslutar testskalet och stänger av kärnan
 Sparar den aktuella katalogen i kärnkonfigurationsfilen
@@ -854,13 +837,11 @@ Avslutar RSS-skalet och återgår till kärnan
 Ändrar matningslänken
 Listar alla flöden
 Läser ett flöde i en webbläsare
-Det angivna RSS-skalkommandot hittades inte.
 Ogiltigt RSS2-flöde.
 Ogiltigt RSS1-flöde.
 Ogiltigt Atom-flöde.
 Ange en RSS-feed URL:
 Ogiltig RSS-feedtyp.
-Okänt skalfel:
 Få information om artikeln
 Artikelnumret kan inte vara större än de tillgängliga artiklarna.
 Titel:
