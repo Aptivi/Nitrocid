@@ -119,9 +119,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomLanguages\Readme.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="OfficialAppIcon-Generic-256.ico" />
     <Content Include="Translations\afr.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
