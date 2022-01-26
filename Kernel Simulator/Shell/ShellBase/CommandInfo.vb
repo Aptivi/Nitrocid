@@ -67,10 +67,6 @@ Namespace Shell.ShellBase
         ''' Does the command set a UESH $variable?
         ''' </summary>
         Public ReadOnly Property SettingVariable As Boolean
-        ''' <summary>
-        ''' An extra help action intended to show extra information
-        ''' </summary>
-        Public ReadOnly Property AdditionalHelpAction As Action
 
         ''' <summary>
         ''' Installs a new instance of command info class
@@ -87,8 +83,7 @@ Namespace Shell.ShellBase
         ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
         ''' <param name="Obsolete">Is the command obsolete?</param>
         ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-        ''' <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
+        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
             Me.Command = Command
             Me.Type = Type
             Me.HelpDefinition = HelpDefinition
@@ -101,7 +96,6 @@ Namespace Shell.ShellBase
             Me.NoMaintenance = NoMaintenance
             Me.Obsolete = Obsolete
             Me.SettingVariable = SettingVariable
-            Me.AdditionalHelpAction = AdditionalHelpAction
         End Sub
 
         ''' <summary>

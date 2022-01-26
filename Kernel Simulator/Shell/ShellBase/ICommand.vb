@@ -31,5 +31,10 @@ Namespace Shell.ShellBase
         ''' <param name="ListSwitchesOnly">List of provided switches</param>
         Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
 
+        ''' <summary>
+        ''' Shows additional information for the command when "help command" is invoked
+        ''' </summary>
+        Sub HelpHelper()
+
     End Interface
 End Namespace

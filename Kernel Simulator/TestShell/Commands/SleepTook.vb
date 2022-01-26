@@ -31,7 +31,7 @@ Namespace TestShell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -t: ", False, ColTypes.ListEntry) : Write(DoTranslation("Unit in ticks"), True, ColTypes.ListValue)
         End Sub

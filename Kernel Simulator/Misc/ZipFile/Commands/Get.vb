@@ -33,7 +33,7 @@ Namespace Misc.ZipFile.Commands
             ExtractZipFileEntry(ListArgs(0), Where, Absolute)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -absolute: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicates that the target path is absolute"), True, ColTypes.ListValue)
         End Sub

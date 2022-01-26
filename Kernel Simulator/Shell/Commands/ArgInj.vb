@@ -44,7 +44,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
         End Sub
 

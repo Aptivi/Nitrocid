@@ -81,7 +81,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -s: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the system information"), True, ColTypes.ListValue)
             Write("  -h: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the hardware information"), True, ColTypes.ListValue)

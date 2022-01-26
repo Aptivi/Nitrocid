@@ -25,5 +25,9 @@ Namespace Shell.ShellBase
             Throw New InvalidOperationException()
         End Sub
 
+        Public Overridable Sub HelpHelper() Implements ICommand.HelpHelper
+            Wdbg(DebugLevel.I, "No additional information found.")
+        End Sub
+
     End Class
 End Namespace

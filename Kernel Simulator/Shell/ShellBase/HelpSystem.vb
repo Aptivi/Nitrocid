@@ -148,9 +148,7 @@ Namespace Shell.ShellBase
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Description:") + $" {HelpDefinition}", True, ColTypes.ListValue)
 
                 'Extra help action for some commands
-                If CommandList(command).AdditionalHelpAction IsNot Nothing Then
-                    CommandList(command).AdditionalHelpAction.DynamicInvoke()
-                End If
+                CommandList(command).CommandBase.HelpHelper()
             ElseIf String.IsNullOrWhiteSpace(command) Then
                 'List the available commands
                 If Not SimHelp Then

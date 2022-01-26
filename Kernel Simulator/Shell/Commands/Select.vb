@@ -35,7 +35,7 @@ Namespace Shell.Commands
             PromptSelection(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
               DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
         End Sub

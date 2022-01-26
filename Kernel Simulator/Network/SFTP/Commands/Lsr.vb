@@ -39,7 +39,7 @@ Namespace Network.SFTP.Commands
             Next
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
         End Sub

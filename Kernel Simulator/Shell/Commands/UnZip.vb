@@ -39,7 +39,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -createdir: ", False, ColTypes.ListEntry) : Write(DoTranslation("Creates a directory that contains the contents of the ZIP file"), True, ColTypes.ListValue)
         End Sub

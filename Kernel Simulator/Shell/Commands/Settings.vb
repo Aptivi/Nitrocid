@@ -32,7 +32,7 @@ Namespace Shell.Commands
             OpenMainPage(SettingsType)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -saver: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the screensaver settings"), True, ColTypes.ListValue)
             Write("  -splash: ", False, ColTypes.ListEntry) : Write(DoTranslation("Opens the splash settings"), True, ColTypes.ListValue)

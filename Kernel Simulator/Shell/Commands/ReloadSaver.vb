@@ -32,7 +32,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             'Populate screensaver files
             Dim ScreensaverFiles As New List(Of String)
             ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))

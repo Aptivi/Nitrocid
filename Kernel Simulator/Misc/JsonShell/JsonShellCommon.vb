@@ -32,7 +32,7 @@ Namespace Misc.JsonShell
                                                                                            {"exitnosave", New CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", {}, False, 0, New JsonShell_ExitNoSaveCommand)},
                                                                                            {"help", New CommandInfo("help", ShellType.JsonShell, "Lists available commands", {"[command]"}, False, 0, New JsonShell_HelpCommand)},
                                                                                            {"print", New CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", {"[property]"}, False, 0, New JsonShell_PrintCommand)},
-                                                                                           {"save", New CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", {"[-b|-m]"}, False, 0, New JsonShell_SaveCommand, False, False, False, False, False, New Action(AddressOf (New JsonShell_SaveCommand).HelpHelper))}}
+                                                                                           {"save", New CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", {"[-b|-m]"}, False, 0, New JsonShell_SaveCommand, False, False, False, False, False)}}
         Public JsonShell_ModCommands As New ArrayList
         Public JsonShell_FileStream As FileStream
         Public JsonShell_FileToken As JToken = JToken.Parse("{}")

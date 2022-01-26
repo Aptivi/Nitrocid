@@ -35,7 +35,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write("<Theme>: ThemeName.json, " + String.Join(", ", Themes.Themes.Keys), True, ColTypes.Neutral)
         End Sub
 

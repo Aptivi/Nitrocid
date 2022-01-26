@@ -39,7 +39,7 @@ Namespace Shell.Commands
             ZipFile.CreateFromDirectory(Destination, ZipArchiveName, ZipCompression, ZipBaseDir)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -fast: ", False, ColTypes.ListEntry) : Write(DoTranslation("Fast compression"), True, ColTypes.ListValue)
             Write("  -nocomp: ", False, ColTypes.ListEntry) : Write(DoTranslation("No compression"), True, ColTypes.ListValue)

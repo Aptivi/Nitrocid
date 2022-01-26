@@ -37,7 +37,7 @@ Namespace Shell.Commands
             InitializeSpeedPress(Difficulty, CustomTimeout)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -e: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in easy difficulty"), True, ColTypes.ListValue)
             Write("  -m: ", False, ColTypes.ListEntry) : Write(DoTranslation("Starts the game in medium difficulty"), True, ColTypes.ListValue)

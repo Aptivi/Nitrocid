@@ -51,7 +51,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("where <attributes> is one of the following:"), True, ColTypes.Neutral)
             Write("- Normal: ", False, ColTypes.ListEntry) : Write(DoTranslation("The file is a normal file"), True, ColTypes.ListValue)                   'Normal   = 128
             Write("- ReadOnly: ", False, ColTypes.ListEntry) : Write(DoTranslation("The file is a read-only file"), True, ColTypes.ListValue)              'ReadOnly = 1

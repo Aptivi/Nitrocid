@@ -29,7 +29,7 @@ Namespace Shell.Commands
             PromptForSetLang(ListArgsOnly(0), Force, AlwaysTransliterated, AlwaysTranslated)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write("<language>: " + String.Join("/", Languages.Languages.Keys), True, ColTypes.Neutral)
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -alwaystransliterated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the transliterated version"), True, ColTypes.ListValue)

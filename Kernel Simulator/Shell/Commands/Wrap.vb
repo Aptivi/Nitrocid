@@ -47,7 +47,7 @@ Namespace Shell.Commands
             End If
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             'Get wrappable commands
             Dim WrappableCmds As New ArrayList
             For Each CommandInfo As CommandInfo In Shell.Commands.Values

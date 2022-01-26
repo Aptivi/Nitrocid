@@ -30,7 +30,7 @@ Namespace Misc.JsonShell.Commands
             JsonShell_SaveFile(False, TargetFormatting)
         End Sub
 
-        Public Sub HelpHelper()
+        Public Overrides Sub HelpHelper()
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -b: ", False, ColTypes.ListEntry) : Write(DoTranslation("Saves the JSON file, beautifying it in the process"), True, ColTypes.ListValue)
             Write("  -m: ", False, ColTypes.ListEntry) : Write(DoTranslation("Saves the JSON file, minifying it in the process"), True, ColTypes.ListValue)
