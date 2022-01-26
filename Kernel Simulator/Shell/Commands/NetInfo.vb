@@ -24,7 +24,11 @@ Namespace Shell.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            PrintAdapterProperties()
+            If IsOnWindows() Then
+                PrintAdapterProperties()
+            Else
+                Write(DoTranslation("Due to technical difficulties, we're unable to list adapter properties on Unix systems."), True, ColTypes.Error)
+            End If
         End Sub
 
     End Class
