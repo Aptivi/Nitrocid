@@ -268,6 +268,10 @@ Namespace Misc.Screensaver.Displays
                     'Show the stage for few seconds before wiping
                     SleepNoBlock(SnakerStageDelay, Snaker)
 
+                    'Reset mass
+                    SnakeMassPositions.Clear()
+                    SnakeLength = 1
+
                     'Reset resize sync
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
