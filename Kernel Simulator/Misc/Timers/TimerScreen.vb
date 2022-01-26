@@ -63,7 +63,11 @@ Namespace Misc.Timers
             WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, True, ColTypes.Tip)
 
             'Print the time interval
-            WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+            If EnableFigletTimer Then
+                WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+            Else
+                WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+            End If
 
             While KeysKeypress <> ConsoleKey.Escape
                 'Wait for a keypress
@@ -94,7 +98,11 @@ Namespace Misc.Timers
                                 'Update the remaining time
                                 Dim RemainingString As String = GetRemainingTimeFromNow(TimerInterval)
                                 UpdateRemainingPositions(RemainingString, TimeLeftPosition, TimeTopPosition)
-                                WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+                                If EnableFigletTimer Then
+                                    WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+                                Else
+                                    WriteWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                                End If
                             End If
 
                             'Clean up
@@ -130,7 +138,11 @@ Namespace Misc.Timers
             UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
             If TimerUpdate.IsAlive Then TimerUpdate.Abort()
             TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
-            WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Success)
+            If EnableFigletTimer Then
+                WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Success)
+            Else
+                WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, ColTypes.Success)
+            End If
             Timer.Stop()
         End Sub
 
@@ -148,7 +160,11 @@ Namespace Misc.Timers
                     Dim TimeLeftPosition As Integer = 0
                     Dim TimeTopPosition As Integer = 0
                     UpdateRemainingPositions(UntilText, TimeLeftPosition, TimeTopPosition)
-                    WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+                    If EnableFigletTimer Then
+                        WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
+                    Else
+                        WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                    End If
                 Catch ex As ThreadAbortException
                     Exit While
                 End Try
