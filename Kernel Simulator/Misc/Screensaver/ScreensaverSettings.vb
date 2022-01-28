@@ -423,99 +423,99 @@ Namespace Misc.Screensaver
         ''' <summary>
         ''' [ProgressClock] Upper left corner character for hours bar
         ''' </summary>
-        Public ProgressClockUpperLeftCornerCharHours As String = "+"
+        Public ProgressClockUpperLeftCornerCharHours As String = "╔"
         ''' <summary>
         ''' [ProgressClock] Upper left corner character for minutes bar
         ''' </summary>
-        Public ProgressClockUpperLeftCornerCharMinutes As String = "+"
+        Public ProgressClockUpperLeftCornerCharMinutes As String = "╔"
         ''' <summary>
         ''' [ProgressClock] Upper left corner character for seconds bar
         ''' </summary>
-        Public ProgressClockUpperLeftCornerCharSeconds As String = "+"
+        Public ProgressClockUpperLeftCornerCharSeconds As String = "╔"
         ''' <summary>
         ''' [ProgressClock] Upper right corner character for hours bar
         ''' </summary>
-        Public ProgressClockUpperRightCornerCharHours As String = "+"
+        Public ProgressClockUpperRightCornerCharHours As String = "╗"
         ''' <summary>
         ''' [ProgressClock] Upper right corner character for minutes bar
         ''' </summary>
-        Public ProgressClockUpperRightCornerCharMinutes As String = "+"
+        Public ProgressClockUpperRightCornerCharMinutes As String = "╗"
         ''' <summary>
         ''' [ProgressClock] Upper right corner character for seconds bar
         ''' </summary>
-        Public ProgressClockUpperRightCornerCharSeconds As String = "+"
+        Public ProgressClockUpperRightCornerCharSeconds As String = "╗"
         ''' <summary>
         ''' [ProgressClock] Lower left corner character for hours bar
         ''' </summary>
-        Public ProgressClockLowerLeftCornerCharHours As String = "+"
+        Public ProgressClockLowerLeftCornerCharHours As String = "╚"
         ''' <summary>
         ''' [ProgressClock] Lower left corner character for minutes bar
         ''' </summary>
-        Public ProgressClockLowerLeftCornerCharMinutes As String = "+"
+        Public ProgressClockLowerLeftCornerCharMinutes As String = "╚"
         ''' <summary>
         ''' [ProgressClock] Lower left corner character for seconds bar
         ''' </summary>
-        Public ProgressClockLowerLeftCornerCharSeconds As String = "+"
+        Public ProgressClockLowerLeftCornerCharSeconds As String = "╚"
         ''' <summary>
         ''' [ProgressClock] Lower right corner character for hours bar
         ''' </summary>
-        Public ProgressClockLowerRightCornerCharHours As String = "+"
+        Public ProgressClockLowerRightCornerCharHours As String = "╝"
         ''' <summary>
         ''' [ProgressClock] Lower right corner character for minutes bar
         ''' </summary>
-        Public ProgressClockLowerRightCornerCharMinutes As String = "+"
+        Public ProgressClockLowerRightCornerCharMinutes As String = "╝"
         ''' <summary>
         ''' [ProgressClock] Lower right corner character for seconds bar
         ''' </summary>
-        Public ProgressClockLowerRightCornerCharSeconds As String = "+"
+        Public ProgressClockLowerRightCornerCharSeconds As String = "╝"
         ''' <summary>
         ''' [ProgressClock] Upper frame character for hours bar
         ''' </summary>
-        Public ProgressClockUpperFrameCharHours As String = "-"
+        Public ProgressClockUpperFrameCharHours As String = "═"
         ''' <summary>
         ''' [ProgressClock] Upper frame character for minutes bar
         ''' </summary>
-        Public ProgressClockUpperFrameCharMinutes As String = "-"
+        Public ProgressClockUpperFrameCharMinutes As String = "═"
         ''' <summary>
         ''' [ProgressClock] Upper frame character for seconds bar
         ''' </summary>
-        Public ProgressClockUpperFrameCharSeconds As String = "-"
+        Public ProgressClockUpperFrameCharSeconds As String = "═"
         ''' <summary>
         ''' [ProgressClock] Lower frame character for hours bar
         ''' </summary>
-        Public ProgressClockLowerFrameCharHours As String = "-"
+        Public ProgressClockLowerFrameCharHours As String = "═"
         ''' <summary>
         ''' [ProgressClock] Lower frame character for minutes bar
         ''' </summary>
-        Public ProgressClockLowerFrameCharMinutes As String = "-"
+        Public ProgressClockLowerFrameCharMinutes As String = "═"
         ''' <summary>
         ''' [ProgressClock] Lower frame character for seconds bar
         ''' </summary>
-        Public ProgressClockLowerFrameCharSeconds As String = "-"
+        Public ProgressClockLowerFrameCharSeconds As String = "═"
         ''' <summary>
         ''' [ProgressClock] Left frame character for hours bar
         ''' </summary>
-        Public ProgressClockLeftFrameCharHours As String = "|"
+        Public ProgressClockLeftFrameCharHours As String = "║"
         ''' <summary>
         ''' [ProgressClock] Left frame character for minutes bar
         ''' </summary>
-        Public ProgressClockLeftFrameCharMinutes As String = "|"
+        Public ProgressClockLeftFrameCharMinutes As String = "║"
         ''' <summary>
         ''' [ProgressClock] Left frame character for seconds bar
         ''' </summary>
-        Public ProgressClockLeftFrameCharSeconds As String = "|"
+        Public ProgressClockLeftFrameCharSeconds As String = "║"
         ''' <summary>
         ''' [ProgressClock] Right frame character for hours bar
         ''' </summary>
-        Public ProgressClockRightFrameCharHours As String = "|"
+        Public ProgressClockRightFrameCharHours As String = "║"
         ''' <summary>
         ''' [ProgressClock] Right frame character for minutes bar
         ''' </summary>
-        Public ProgressClockRightFrameCharMinutes As String = "|"
+        Public ProgressClockRightFrameCharMinutes As String = "║"
         ''' <summary>
         ''' [ProgressClock] Right frame character for seconds bar
         ''' </summary>
-        Public ProgressClockRightFrameCharSeconds As String = "|"
+        Public ProgressClockRightFrameCharSeconds As String = "║"
         ''' <summary>
         ''' [ProgressClock] Information text for hours bar
         ''' </summary>
