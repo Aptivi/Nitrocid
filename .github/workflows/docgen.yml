@@ -1,0 +1,31 @@
+name: KS API Documentation
+
+on:
+  push:
+    branches:
+      - master
+      - servicing
+  pull_request:
+    branches:
+      - master
+      - servicing
+
+jobs:
+  build:
+    name: "Make API Reference"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Fetching the KS source
+      - uses: "nunit/docfx-action@v1.7.0"
+        name: Generating documentation
+        with:
+          args: DocGen/docfx.json
+      - name: Saving changes to gh-pages
+        if: ${{ github.ref == 'refs/heads/master'}}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: "Updated documentation to reflect latest changes"
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./docs/
+          publish_branch: gh-pages
