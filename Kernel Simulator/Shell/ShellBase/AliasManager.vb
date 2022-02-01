@@ -282,7 +282,7 @@ Namespace Shell.ShellBase
         ''' Adds alias to kernel
         ''' </summary>
         ''' <param name="SourceAlias">A command to be aliased. It should exist in both shell and remote debug.</param>
-        ''' <param name="Destination">A one-word ccommand to alias to.</param>
+        ''' <param name="Destination">A one-word command to alias to.</param>
         ''' <param name="Type">Alias type, whether it be shell or remote debug.</param>
         ''' <returns>True if successful, False if unsuccessful.</returns>
         ''' <exception cref="Exceptions.AliasInvalidOperationException"></exception>
