@@ -139,7 +139,7 @@ Namespace Misc.Configuration
                     {"Stylish splash screen", EnableSplash},
                     {"Splash name", SplashName},
                     {"Banner figlet font", BannerFigletFont}
-            }
+                }
                 ConfigurationObject.Add("General", GeneralConfig)
 
                 'The Colors Section
@@ -181,7 +181,7 @@ Namespace Misc.Configuration
                     {"Table Header Color", TableHeaderColor.PlainSequenceEnclosed},
                     {"Table Value Color", TableValueColor.PlainSequenceEnclosed},
                     {"Selected Option Color", SelectedOptionColor.PlainSequenceEnclosed}
-            }
+                }
                 ConfigurationObject.Add("Colors", ColorConfig)
 
                 'The Hardware Section
@@ -190,7 +190,7 @@ Namespace Misc.Configuration
                     {"Full Probe", FullHardwareProbe},
                     {"Verbose Probe", VerboseHardwareProbe},
                     {"Use legacy hardware listing", UseLegacyHardwareListing}
-            }
+                }
                 ConfigurationObject.Add("Hardware", HardwareConfig)
 
                 'The Login Section
@@ -206,7 +206,7 @@ Namespace Misc.Configuration
                     {"Show MAL on Log-in", ShowMAL},
                     {"Include anonymous users", IncludeAnonymous},
                     {"Include disabled users", IncludeDisabled}
-            }
+                }
                 ConfigurationObject.Add("Login", LoginConfig)
 
                 'The Shell Section
@@ -227,7 +227,7 @@ Namespace Misc.Configuration
                     {"Probe injected commands", ProbeInjectedCommands},
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
-            }
+                }
                 ConfigurationObject.Add("Shell", ShellConfig)
 
                 'The Filesystem Section
@@ -243,7 +243,7 @@ Namespace Misc.Configuration
                     {"Print line numbers on printing file contents", PrintLineNumbers},
                     {"Sort the list", SortList},
                     {"Show total size in list", ShowTotalSizeInList}
-            }
+                }
                 ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
                 'The Network Section
@@ -309,7 +309,7 @@ Namespace Misc.Configuration
                     {"FTP IP versions", FtpProtocolVersions},
                     {"Notify on remote debug connection error", NotifyOnRemoteDebugConnectionError},
                     {"Use legacy mail detection", Mail_UseLegacyDetector}
-            }
+                }
                 ConfigurationObject.Add("Network", NetworkConfig)
 
                 'The Screensaver Section
@@ -318,7 +318,7 @@ Namespace Misc.Configuration
                     {"Screensaver Timeout in ms", ScrnTimeout},
                     {"Enable screensaver debugging", ScreensaverDebug},
                     {"Ask for password after locking", PasswordLock}
-            }
+                }
 
                 'ColorMix config json object
                 Dim ColorMixConfig As New JObject From {
@@ -334,7 +334,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", ColorMixMaximumGreenColorLevel},
                     {"Maximum blue color level", ColorMixMaximumBlueColorLevel},
                     {"Maximum color level", ColorMixMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("ColorMix", ColorMixConfig)
 
                 'Disco config json object
@@ -352,7 +352,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", DiscoMaximumGreenColorLevel},
                     {"Maximum blue color level", DiscoMaximumBlueColorLevel},
                     {"Maximum color level", DiscoMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Disco", DiscoConfig)
 
                 'GlitterColor config json object
@@ -368,7 +368,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", GlitterColorMaximumGreenColorLevel},
                     {"Maximum blue color level", GlitterColorMaximumBlueColorLevel},
                     {"Maximum color level", GlitterColorMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("GlitterColor", GlitterColorConfig)
 
                 'Lines config json object
@@ -386,7 +386,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", LinesMaximumGreenColorLevel},
                     {"Maximum blue color level", LinesMaximumBlueColorLevel},
                     {"Maximum color level", LinesMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Lines", LinesConfig)
 
                 'Dissolve config json object
@@ -402,7 +402,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", DissolveMaximumGreenColorLevel},
                     {"Maximum blue color level", DissolveMaximumBlueColorLevel},
                     {"Maximum color level", DissolveMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Dissolve", DissolveConfig)
 
                 'BouncingBlock config json object
@@ -420,7 +420,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", BouncingBlockMaximumGreenColorLevel},
                     {"Maximum blue color level", BouncingBlockMaximumBlueColorLevel},
                     {"Maximum color level", BouncingBlockMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("BouncingBlock", BouncingBlockConfig)
 
                 'ProgressClock config json object
@@ -493,7 +493,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", ProgressClockMaximumGreenColorLevel},
                     {"Maximum blue color level", ProgressClockMaximumBlueColorLevel},
                     {"Maximum color level", ProgressClockMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("ProgressClock", ProgressClockConfig)
 
                 'Lighter config json object
@@ -511,7 +511,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", LighterMaximumGreenColorLevel},
                     {"Maximum blue color level", LighterMaximumBlueColorLevel},
                     {"Maximum color level", LighterMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Lighter", LighterConfig)
 
                 'Wipe config json object
@@ -529,13 +529,13 @@ Namespace Misc.Configuration
                     {"Maximum green color level", WipeMaximumGreenColorLevel},
                     {"Maximum blue color level", WipeMaximumBlueColorLevel},
                     {"Maximum color level", WipeMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Wipe", WipeConfig)
 
                 'Matrix config json object
                 Dim MatrixConfig As New JObject From {
                     {"Delay in Milliseconds", MatrixDelay}
-            }
+                }
                 ScreensaverConfig.Add("Matrix", MatrixConfig)
 
                 'GlitterMatrix config json object
@@ -543,7 +543,7 @@ Namespace Misc.Configuration
                     {"Delay in Milliseconds", GlitterMatrixDelay},
                     {"Background color", If(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, GlitterMatrixBackgroundColor.EncloseByDoubleQuotes, GlitterMatrixBackgroundColor)},
                     {"Foreground color", If(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, GlitterMatrixForegroundColor.EncloseByDoubleQuotes, GlitterMatrixForegroundColor)}
-            }
+                }
                 ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
 
                 'BouncingText config json object
@@ -562,7 +562,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", BouncingTextMaximumGreenColorLevel},
                     {"Maximum blue color level", BouncingTextMaximumBlueColorLevel},
                     {"Maximum color level", BouncingTextMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
 
                 'Fader config json object
@@ -578,7 +578,7 @@ Namespace Misc.Configuration
                     {"Maximum red color level", FaderMaximumRedColorLevel},
                     {"Maximum green color level", FaderMaximumGreenColorLevel},
                     {"Maximum blue color level", FaderMaximumBlueColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Fader", FaderConfig)
 
                 'FaderBack config json object
@@ -592,7 +592,7 @@ Namespace Misc.Configuration
                     {"Maximum red color level", FaderBackMaximumRedColorLevel},
                     {"Maximum green color level", FaderBackMaximumGreenColorLevel},
                     {"Maximum blue color level", FaderBackMaximumBlueColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("FaderBack", FaderBackConfig)
 
                 'BeatFader config json object
@@ -611,7 +611,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", BeatFaderMaximumGreenColorLevel},
                     {"Maximum blue color level", BeatFaderMaximumBlueColorLevel},
                     {"Maximum color level", BeatFaderMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
 
                 'Typo config json object
@@ -624,7 +624,7 @@ Namespace Misc.Configuration
                     {"Probability of typo in percent", TypoMissStrikePossibility},
                     {"Probability of miss in percent", TypoMissPossibility},
                     {"Text color", If(New Color(TypoTextColor).Type = ColorType.TrueColor, TypoTextColor.EncloseByDoubleQuotes, TypoTextColor)}
-            }
+                }
                 ScreensaverConfig.Add("Typo", TypoConfig)
 
                 'Marquee config json object
@@ -644,7 +644,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", MarqueeMaximumGreenColorLevel},
                     {"Maximum blue color level", MarqueeMaximumBlueColorLevel},
                     {"Maximum color level", MarqueeMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Marquee", MarqueeConfig)
 
                 'Linotypo config json object
@@ -661,7 +661,7 @@ Namespace Misc.Configuration
                     {"Line Fill Type", LinotypoEtaoinType},
                     {"Probability of miss in percent", LinotypoMissPossibility},
                     {"Text color", If(New Color(LinotypoTextColor).Type = ColorType.TrueColor, LinotypoTextColor.EncloseByDoubleQuotes, LinotypoTextColor)}
-            }
+                }
                 ScreensaverConfig.Add("Linotypo", LinotypoConfig)
 
                 'Typewriter config json object
@@ -672,7 +672,7 @@ Namespace Misc.Configuration
                     {"Minimum writing speed in WPM", TypewriterWritingSpeedMin},
                     {"Maximum writing speed in WPM", TypewriterWritingSpeedMax},
                     {"Text color", If(New Color(TypewriterTextColor).Type = ColorType.TrueColor, TypewriterTextColor.EncloseByDoubleQuotes, TypewriterTextColor)}
-            }
+                }
                 ScreensaverConfig.Add("Typewriter", TypewriterConfig)
 
                 'FlashColor config json object
@@ -689,7 +689,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", FlashColorMaximumGreenColorLevel},
                     {"Maximum blue color level", FlashColorMaximumBlueColorLevel},
                     {"Maximum color level", FlashColorMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("FlashColor", FlashColorConfig)
 
                 'SpotWrite config json object
@@ -698,7 +698,7 @@ Namespace Misc.Configuration
                     {"New Screen Delay in Milliseconds", SpotWriteNewScreenDelay},
                     {"Text Shown", SpotWriteWrite},
                     {"Text color", SpotWriteTextColor}
-            }
+                }
                 ScreensaverConfig.Add("SpotWrite", SpotWriteonfig)
 
                 'Ramp config json object
@@ -740,7 +740,7 @@ Namespace Misc.Configuration
                     {"Left frame color for ramp bar", RampLeftFrameColor},
                     {"Right frame color for ramp bar", RampRightFrameColor},
                     {"Use border colors for ramp bar", RampUseBorderColors}
-            }
+                }
                 ScreensaverConfig.Add("Ramp", RampConfig)
 
                 'StackBox config json object
@@ -757,7 +757,7 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", StackBoxMaximumBlueColorLevel},
                     {"Maximum color level", StackBoxMaximumColorLevel},
                     {"Fill the boxes", StackBoxFill}
-            }
+                }
                 ScreensaverConfig.Add("StackBox", StackBoxConfig)
 
                 'Snaker config json object
@@ -774,7 +774,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", SnakerMaximumGreenColorLevel},
                     {"Maximum blue color level", SnakerMaximumBlueColorLevel},
                     {"Maximum color level", SnakerMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Snaker", SnakerConfig)
 
                 'BarRot config json object
@@ -812,7 +812,7 @@ Namespace Misc.Configuration
                     {"Left frame color for ramp bar", BarRotLeftFrameColor},
                     {"Right frame color for ramp bar", BarRotRightFrameColor},
                     {"Use border colors for ramp bar", BarRotUseBorderColors}
-            }
+                }
                 ScreensaverConfig.Add("BarRot", BarRotConfig)
 
                 'Fireworks config json object
@@ -829,7 +829,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", FireworksMaximumGreenColorLevel},
                     {"Maximum blue color level", FireworksMaximumBlueColorLevel},
                     {"Maximum color level", FireworksMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Fireworks", FireworksConfig)
 
                 'Figlet config json object
@@ -847,7 +847,7 @@ Namespace Misc.Configuration
                     {"Maximum green color level", FigletMaximumGreenColorLevel},
                     {"Maximum blue color level", FigletMaximumBlueColorLevel},
                     {"Maximum color level", FigletMaximumColorLevel}
-            }
+                }
                 ScreensaverConfig.Add("Figlet", FigletConfig)
 
                 'Add a screensaver config json object to Screensaver section
@@ -859,14 +859,14 @@ Namespace Misc.Configuration
                 'Simple config json object
                 Dim SplashSimpleConfig As New JObject From {
                     {"Progress text location", SimpleProgressTextLocation}
-            }
+                }
                 SplashConfig.Add("Simple", SplashSimpleConfig)
 
                 'Progress config json object
                 Dim SplashProgressConfig As New JObject From {
                     {"Progress bar color", ProgressProgressColor},
                     {"Progress text location", ProgressProgressTextLocation}
-            }
+                }
                 SplashConfig.Add("Progress", SplashProgressConfig)
 
                 'Add a splash config json object to Splash section
@@ -924,7 +924,7 @@ Namespace Misc.Configuration
                     {"Lower frame character for progress bars", ProgressLowerFrameChar},
                     {"Left frame character for progress bars", ProgressLeftFrameChar},
                     {"Right frame character for progress bars", ProgressRightFrameChar}
-            }
+                }
                 ConfigurationObject.Add("Misc", MiscConfig)
 
                 'Save Config

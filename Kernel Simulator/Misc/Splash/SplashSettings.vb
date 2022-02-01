@@ -29,7 +29,7 @@ Namespace Misc.Splash
         ''' <summary>
         ''' [Progress] The progress color
         ''' </summary>
-        Public ProgressProgressColor As String = ""
+        Public ProgressProgressColor As String = ColorTools.ProgressColor.PlainSequence
         ''' <summary>
         ''' [Progress] The progress text location
         ''' </summary>
