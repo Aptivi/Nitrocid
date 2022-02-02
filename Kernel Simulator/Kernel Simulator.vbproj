@@ -193,7 +193,6 @@
     <Compile Include="Arguments\ArgumentBase\CommandLineArgsParse.vb" />
     <Compile Include="Arguments\CommandLineArguments\Help.vb" />
     <Compile Include="Arguments\CommandLineArguments\Args.vb" />
-    <Compile Include="Arguments\CommandLineArguments\TestMod.vb" />
     <Compile Include="Arguments\CommandLineArguments\Debug.vb" />
     <Compile Include="Arguments\CommandLineArguments\TestInteractive.vb" />
     <Compile Include="Arguments\ArgumentBase\ArgumentHelpSystem.vb" />

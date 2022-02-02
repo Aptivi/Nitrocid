@@ -21,8 +21,7 @@ Imports KS.Arguments.CommandLineArguments
 Namespace Arguments.ArgumentBase
     Module CommandLineArgsParse
 
-        Public AvailableCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"testMod", New ArgumentInfo("testMod", ArgumentType.CommandLineArgs, "Tests mods by providing mod files", "<mod>", True, 1, New CommandLine_TestModArgument)},
-                                                                                 {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", False, 0, New CommandLine_TestInteractiveArgument)},
+        Public AvailableCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", False, 0, New CommandLine_TestInteractiveArgument)},
                                                                                  {"debug", New ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", False, 0, New CommandLine_DebugArgument)},
                                                                                  {"args", New ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", False, 0, New CommandLine_ArgsArgument)},
                                                                                  {"help", New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, New CommandLine_HelpArgument)}}
