@@ -33,13 +33,8 @@ Namespace Shell.Commands
         End Sub
 
         Public Overrides Sub HelpHelper()
-            'Populate screensaver files
-            Dim ScreensaverFiles As New List(Of String)
-            ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-            ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-
             'Print available screensavers
-            Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
+            Write(DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
         End Sub
 
     End Class

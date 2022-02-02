@@ -206,110 +206,94 @@ Namespace Modifications
 
             If Not SafeMode Then
                 If FileExists(ModFilename) Then
-                    'Determine if we're dealing with screensaver
-                    If Path.GetExtension(ModFilename) = ".ss." Then
-                        Wdbg(DebugLevel.I, "Target mod is a screensaver.")
+                    If HasModStarted(ModFilename) Then
+                        Write(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
 
-                        'Iterate through all the screensavers
-                        For SaverIndex As Integer = CustomSavers.Count - 1 To 0 Step -1
-                            Dim TargetScreensaver As CustomSaverInfo = CustomSavers.Values(SaverIndex)
-                            Wdbg(DebugLevel.I, "Checking screensaver {0}", TargetScreensaver.SaverName)
+                        'Iterate through all the mods
+                        For ScriptIndex As Integer = Mods.Count - 1 To 0 Step -1
+                            Dim TargetMod As ModInfo = Mods.Values(ScriptIndex)
+                            Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
 
-                            'Check to see if we're dealign with the same screensaver
-                            If TargetScreensaver.FileName = ModFilename Then
-                                CustomSavers.Remove(CustomSavers.Keys(SaverIndex))
+                            'Try to stop the mod and all associated parts
+                            Wdbg(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName)
+                            If TargetMod.ModFileName = Path.GetFileName(ModFilename) Then
+                                Wdbg(DebugLevel.I, "Found mod to be stopped. Stopping...")
+
+                                'Iterate through all the parts
+                                For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
+                                    Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
+                                    Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+
+                                    'Remove all the commands associated with the part
+                                    If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
+                                        For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
+                                            Select Case CommandInfo.Type
+                                                Case ShellType.Shell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    ModCommands.Remove(CommandInfo.Command)
+                                                    ModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.FTPShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)
+                                                    FTPModCommands.Remove(CommandInfo.Command)
+                                                    FTPModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.MailShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from mail shell...", CommandInfo.Command)
+                                                    MailModCommands.Remove(CommandInfo.Command)
+                                                    MailModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.SFTPShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from SFTP shell...", CommandInfo.Command)
+                                                    SFTPModCommands.Remove(CommandInfo.Command)
+                                                    SFTPModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.TextShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from text editor shell...", CommandInfo.Command)
+                                                    TextEdit_ModCommands.Remove(CommandInfo.Command)
+                                                    TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
+                                                Case ShellType.TestShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from test shell...", CommandInfo.Command)
+                                                    Test_ModCommands.Remove(CommandInfo.Command)
+                                                    TestModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.RemoteDebugShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from remote debug shell...", CommandInfo.Command)
+                                                    DebugModCmds.Remove(CommandInfo.Command)
+                                                    RDebugModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.ZIPShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from ZIP shell...", CommandInfo.Command)
+                                                    ZipShell_ModCommands.Remove(CommandInfo.Command)
+                                                    ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
+                                                Case ShellType.RSSShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
+                                                    RSSModCommands.Remove(CommandInfo.Command)
+                                                    RSSModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.JsonShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
+                                                    JsonShell_ModCommands.Remove(CommandInfo.Command)
+                                                    JsonShell_ModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.HTTPShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
+                                                    HTTPModCommands.Remove(CommandInfo.Command)
+                                                    HTTPModDefs.Remove(CommandInfo.Command)
+                                            End Select
+                                        Next
+                                    End If
+
+                                    'Stop the associated part
+                                    ScriptPartInfo.PartScript.StopMod()
+                                    If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
+                                        Write(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                                    End If
+
+                                    'Remove the part from the list
+                                    ScriptParts.Remove(ScriptParts.Keys(PartIndex))
+                                Next
+
+                                'Remove the mod from the list
+                                Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
+                                Mods.Remove(Mods.Keys(ScriptIndex))
                             End If
                         Next
                     Else
-                        If HasModStarted(ModFilename) Then
-                            Write(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
-                            Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
-
-                            'Iterate through all the mods
-                            For ScriptIndex As Integer = Mods.Count - 1 To 0 Step -1
-                                Dim TargetMod As ModInfo = Mods.Values(ScriptIndex)
-                                Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
-
-                                'Try to stop the mod and all associated parts
-                                Wdbg(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName)
-                                If TargetMod.ModFileName = Path.GetFileName(ModFilename) Then
-                                    Wdbg(DebugLevel.I, "Found mod to be stopped. Stopping...")
-
-                                    'Iterate through all the parts
-                                    For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
-                                        Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
-                                        Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
-
-                                        'Remove all the commands associated with the part
-                                        If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
-                                            For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
-                                                Select Case CommandInfo.Type
-                                                    Case ShellType.Shell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
-                                                        ModCommands.Remove(CommandInfo.Command)
-                                                        ModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.FTPShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)
-                                                        FTPModCommands.Remove(CommandInfo.Command)
-                                                        FTPModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.MailShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from mail shell...", CommandInfo.Command)
-                                                        MailModCommands.Remove(CommandInfo.Command)
-                                                        MailModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.SFTPShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from SFTP shell...", CommandInfo.Command)
-                                                        SFTPModCommands.Remove(CommandInfo.Command)
-                                                        SFTPModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.TextShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from text editor shell...", CommandInfo.Command)
-                                                        TextEdit_ModCommands.Remove(CommandInfo.Command)
-                                                        TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
-                                                    Case ShellType.TestShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from test shell...", CommandInfo.Command)
-                                                        Test_ModCommands.Remove(CommandInfo.Command)
-                                                        TestModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.RemoteDebugShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from remote debug shell...", CommandInfo.Command)
-                                                        DebugModCmds.Remove(CommandInfo.Command)
-                                                        RDebugModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.ZIPShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from ZIP shell...", CommandInfo.Command)
-                                                        ZipShell_ModCommands.Remove(CommandInfo.Command)
-                                                        ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
-                                                    Case ShellType.RSSShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
-                                                        RSSModCommands.Remove(CommandInfo.Command)
-                                                        RSSModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.JsonShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
-                                                        JsonShell_ModCommands.Remove(CommandInfo.Command)
-                                                        JsonShell_ModDefs.Remove(CommandInfo.Command)
-                                                    Case ShellType.HTTPShell
-                                                        Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
-                                                        HTTPModCommands.Remove(CommandInfo.Command)
-                                                        HTTPModDefs.Remove(CommandInfo.Command)
-                                                End Select
-                                            Next
-                                        End If
-
-                                        'Stop the associated part
-                                        ScriptPartInfo.PartScript.StopMod()
-                                        If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
-                                            Write(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
-                                        End If
-
-                                        'Remove the part from the list
-                                        ScriptParts.Remove(ScriptParts.Keys(PartIndex))
-                                    Next
-
-                                    'Remove the mod from the list
-                                    Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
-                                    Mods.Remove(Mods.Keys(ScriptIndex))
-                                End If
-                            Next
-                        Else
-                            Write(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
-                        End If
+                        Write(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
                     End If
                 Else
                     Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
@@ -422,15 +406,7 @@ Namespace Modifications
 
             Try
                 'First, parse the mod file
-                If Path.GetExtension(ModPath) = ".cs" Then
-                    'Mod has a language of C#
-                    Wdbg(DebugLevel.I, "Mod language is C# from extension "".cs""")
-                    Script = GenMod("C#", File.ReadAllText(ModPath))
-                ElseIf Path.GetExtension(ModPath) = ".vb" Then
-                    'Mod has a language of VB.NET
-                    Wdbg(DebugLevel.I, "Mod language is VB.NET from extension "".vb""")
-                    Script = GenMod("VB.NET", File.ReadAllText(ModPath))
-                ElseIf Path.GetExtension(ModPath) = ".dll" Then
+                If Path.GetExtension(ModPath) = ".dll" Then
                     'Mod is a dynamic DLL
                     Try
                         Script = GetModInstance(Assembly.LoadFrom(ModPath))

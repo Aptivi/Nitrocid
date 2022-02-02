@@ -16,16 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.CodeDom.Compiler
 Imports System.IO
 Imports System.Reflection
-Imports Microsoft.CSharp
 Imports KS.ManPages
 Imports KS.Misc.JsonShell
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
-Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -37,117 +34,6 @@ Imports KS.TestShell
 
 Namespace Modifications
     Public Module ModParser
-
-        ''' <summary>
-        ''' Compiles the script and returns the instance of script interface
-        ''' </summary>
-        ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
-        ''' <param name="code">Code blocks from script</param>
-        Friend Function GenMod(PLang As String, code As String) As IScript
-            'Check language
-            Dim provider As CodeDomProvider
-            Wdbg(DebugLevel.I, $"Language detected: {PLang}")
-            If PLang = "C#" Then
-                provider = New CSharpCodeProvider
-            ElseIf PLang = "VB.NET" Then
-                provider = New VBCodeProvider
-            Else
-                Exit Function
-            End If
-
-            'Declare new compiler parameter object
-            Dim prm As New CompilerParameters With {
-            .GenerateExecutable = False,
-            .GenerateInMemory = True
-        }
-
-            'Add referenced assemblies
-            Wdbg(DebugLevel.I, "Referenced assemblies will be added.")
-            prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
-            prm.ReferencedAssemblies.Add("System.dll")
-            prm.ReferencedAssemblies.Add("System.Core.dll")
-            prm.ReferencedAssemblies.Add("System.Data.dll")
-            prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.dll")
-            prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Wdbg(DebugLevel.I, "Referenced assemblies added.")
-
-            'Detect referenced assemblies from comments that start with "Reference GAC: <ref>" or "Reference File: <path/to/ref>".
-            Dim References() As String = code.SplitNewLines.Select(Function(x) x).Where(Function(x) x.ContainsAnyOf({"Reference GAC: ", "Reference File: "})).ToArray
-            Wdbg(DebugLevel.I, "Found {0} references (matches taken from searching for ""Reference GAC: "" or ""Reference File: "").", References.Length)
-            For Each Reference As String In References
-                Reference.RemoveNullsOrWhitespacesAtTheBeginning
-                Wdbg(DebugLevel.I, "Reference line: {0}", Reference)
-                Dim LocationCheckRequired As Boolean = Reference.Contains("Reference File: ")
-                If (Reference.StartsWith("//") And PLang = "C#") Or (Reference.StartsWith("'") And PLang = "VB.NET") Then
-                    'Remove comment mark
-                    If Reference.StartsWith("//") Then Reference = Reference.Remove(0, 2)
-                    If Reference.StartsWith("'") Then Reference = Reference.Remove(0, 1)
-
-                    'Remove "Reference GAC: " or "Reference File: " and remove all whitespaces or nulls in the beginning
-                    Reference = Reference.ReplaceAll({"Reference GAC: ", "Reference File: "}, "")
-                    Reference.RemoveNullsOrWhitespacesAtTheBeginning
-                    Wdbg(DebugLevel.I, "Final reference line: {0}", Reference)
-
-                    'Add reference
-                    If LocationCheckRequired Then
-                        'Check to see if the reference file exists
-                        If Not FileExists(Reference) Then
-                            Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
-                            ReportProgress(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), 0, ColTypes.Warning, Reference)
-                        Else
-                            prm.ReferencedAssemblies.Add(Reference)
-                        End If
-                    Else
-                        prm.ReferencedAssemblies.Add(Reference)
-                    End If
-                End If
-            Next
-
-            'Try to compile
-            Dim namespc As String = GetType(IScript).Namespace
-            Dim modCode() As String
-            If PLang = "VB.NET" Then
-                modCode = {$"Imports {namespc}{vbNewLine}{code}"}
-            ElseIf PLang = "C#" Then
-                modCode = {$"using {namespc};{vbNewLine}{code}"}
-            End If
-#Disable Warning BC42104
-            Wdbg(DebugLevel.I, "Compiling...")
-            Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
-#Enable Warning BC42104
-
-            'Check to see if there are compilation errors
-            Wdbg(DebugLevel.I, "Has errors: {0}", res.Errors.HasErrors)
-            Wdbg(DebugLevel.I, "Has warnings: {0}", res.Errors.HasWarnings)
-            If res.Errors.HasWarnings Then
-                ReportProgress(DoTranslation("Mod can be loaded, but these warnings may impact the way the mod works:"), 0, ColTypes.Warning)
-                Wdbg(DebugLevel.W, "Warnings when compiling:")
-                For Each errorName As CompilerError In res.Errors
-                    If errorName.IsWarning Then
-                        ReportProgress(errorName.ToString, 0, ColTypes.Warning)
-                        PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And Not QuietKernel And Not EnableSplash), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
-                        Wdbg(DebugLevel.W, errorName.ToString)
-                    End If
-                Next
-            End If
-            If res.Errors.HasErrors Then
-                ReportProgress(DoTranslation("Mod can't be loaded because of the following: "), 0, ColTypes.Error)
-                Wdbg(DebugLevel.E, "Errors when compiling:")
-                For Each errorName As CompilerError In res.Errors
-                    If Not errorName.IsWarning Then
-                        ReportProgress(errorName.ToString, 0, ColTypes.Error)
-                        PrintLineWithHandleConditional(KernelBooted Or (Not KernelBooted And Not QuietKernel And Not EnableSplash), modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
-                        Wdbg(DebugLevel.E, errorName.ToString)
-                    End If
-                Next
-                Exit Function
-            End If
-
-            'Make object type instance
-            Wdbg(DebugLevel.I, "Creating instance of type...")
-            Return GetModInstance(res.CompiledAssembly)
-        End Function
 
         ''' <summary>
         ''' Gets the mod instance from compiled assembly
@@ -162,28 +48,10 @@ Namespace Modifications
         ''' <summary>
         ''' Starts to parse the mod, and configures it so it can be used
         ''' </summary>
-        ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
+        ''' <param name="modFile">Mod file name with extension. It should end with .dll</param>
         Sub ParseMod(modFile As String)
             modFile = Path.GetFileName(modFile)
-            If modFile.EndsWith(".ss.vb") Then
-                'Mod is a screensaver that has a language of VB.NET
-                Wdbg(DebugLevel.W, "Mod file {0} is a screensaver. Language: VB.NET", modFile)
-                CompileCustom(modFile)
-            ElseIf modFile.EndsWith(".ss.cs") Then
-                'Mod is a screensaver that has a language of C#
-                Wdbg(DebugLevel.W, "Mod file {0} is a screensaver. Language: C#", modFile)
-                CompileCustom(modFile)
-            ElseIf modFile.EndsWith(".cs") Then
-                'Mod has a language of C#
-                Wdbg(DebugLevel.I, "Mod language is C# from extension "".cs""")
-                Dim script As IScript = GenMod("C#", File.ReadAllText(ModPath + modFile))
-                FinalizeMods(script, modFile)
-            ElseIf modFile.EndsWith(".vb") Then
-                'Mod has a language of VB.NET
-                Wdbg(DebugLevel.I, "Mod language is VB.NET from extension "".vb""")
-                Dim script As IScript = GenMod("VB.NET", File.ReadAllText(ModPath + modFile))
-                FinalizeMods(script, modFile)
-            ElseIf modFile.EndsWith(".dll") Then
+            If modFile.EndsWith(".dll") Then
                 'Mod is a dynamic DLL
                 Try
                     Dim script As IScript = GetModInstance(Assembly.LoadFrom(ModPath + modFile))
@@ -201,7 +69,7 @@ Namespace Modifications
                     ReportProgress(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), 0, ColTypes.Error)
                 End Try
             Else
-                'Ignore all mods that its file name doesn't end with .vb
+                'Ignore unsupported files
                 Wdbg(DebugLevel.W, "Unsupported file type for mod file {0}.", modFile)
             End If
         End Sub
@@ -210,7 +78,7 @@ Namespace Modifications
         ''' Configures the mod so it can be used
         ''' </summary>
         ''' <param name="script">Instance of script</param>
-        ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
+        ''' <param name="modFile">Mod file name with extension. It should end with .dll</param>
         Sub FinalizeMods(script As IScript, modFile As String)
             Dim ModParts As New Dictionary(Of String, PartInfo)
             Dim ModInstance As ModInfo
