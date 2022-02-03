@@ -18,16 +18,14 @@
 
 Imports System.Globalization
 Imports System.IO
-Imports MimeKit.Text
-Imports Newtonsoft.Json.Linq
 Imports Core
 Imports KS.ManPages
 Imports KS.Misc.Forecast
 Imports KS.Misc.Games
 Imports KS.Misc.JsonShell
 Imports KS.Misc.Notifications
-Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Screensaver
+Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
 Imports KS.Misc.Timers
@@ -35,17 +33,19 @@ Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Modifications
+Imports KS.Network
 Imports KS.Network.FTP
-Imports KS.Network.Mail.Directory
 Imports KS.Network.Mail
+Imports KS.Network.Mail.Directory
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.Network.SSH
-Imports KS.Network
 Imports KS.Scripting.Interaction
 Imports KS.TestShell
+Imports MimeKit.Text
+Imports Newtonsoft.Json.Linq
 
 Namespace Misc.Configuration
     Public Module Config
@@ -98,26 +98,14 @@ Namespace Misc.Configuration
         End Enum
 
         ''' <summary>
-        ''' Creates the kernel configuration file
+        ''' Creates a new JSON object containing the kernel settings of all kinds
         ''' </summary>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        ''' <exception cref="Exceptions.ConfigException"></exception>
-        Public Function CreateConfig() As Boolean
-            Return CreateConfig(GetKernelPath(KernelPathType.Configuration))
-        End Function
+        ''' <returns>A pristine config object</returns>
+        Public Function GetNewConfigObject() As JObject
+            Dim ConfigurationObject As New JObject
 
-        ''' <summary>
-        ''' Creates the kernel configuration file with custom path
-        ''' </summary>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        ''' <exception cref="Exceptions.ConfigException"></exception>
-        Function CreateConfig(ConfigPath As String) As Boolean
-            Try
-                Dim ConfigurationObject As New JObject
-                ThrowOnInvalidPath(ConfigPath)
-
-                'The General Section
-                Dim GeneralConfig As New JObject From {
+            'The General Section
+            Dim GeneralConfig As New JObject From {
                     {"Prompt for Arguments on Boot", ArgsOnBoot},
                     {"Maintenance Mode", Maintenance},
                     {"Check for Updates on Startup", CheckUpdateStart},
@@ -140,10 +128,10 @@ Namespace Misc.Configuration
                     {"Splash name", SplashName},
                     {"Banner figlet font", BannerFigletFont}
                 }
-                ConfigurationObject.Add("General", GeneralConfig)
+            ConfigurationObject.Add("General", GeneralConfig)
 
-                'The Colors Section
-                Dim ColorConfig As New JObject From {
+            'The Colors Section
+            Dim ColorConfig As New JObject From {
                     {"User Name Shell Color", UserNameShellColor.PlainSequenceEnclosed},
                     {"Host Name Shell Color", HostNameShellColor.PlainSequenceEnclosed},
                     {"Continuable Kernel Error Color", ContKernelErrorColor.PlainSequenceEnclosed},
@@ -182,19 +170,19 @@ Namespace Misc.Configuration
                     {"Table Value Color", TableValueColor.PlainSequenceEnclosed},
                     {"Selected Option Color", SelectedOptionColor.PlainSequenceEnclosed}
                 }
-                ConfigurationObject.Add("Colors", ColorConfig)
+            ConfigurationObject.Add("Colors", ColorConfig)
 
-                'The Hardware Section
-                Dim HardwareConfig As New JObject From {
+            'The Hardware Section
+            Dim HardwareConfig As New JObject From {
                     {"Quiet Probe", QuietHardwareProbe},
                     {"Full Probe", FullHardwareProbe},
                     {"Verbose Probe", VerboseHardwareProbe},
                     {"Use legacy hardware listing", UseLegacyHardwareListing}
                 }
-                ConfigurationObject.Add("Hardware", HardwareConfig)
+            ConfigurationObject.Add("Hardware", HardwareConfig)
 
-                'The Login Section
-                Dim LoginConfig As New JObject From {
+            'The Login Section
+            Dim LoginConfig As New JObject From {
                     {"Show MOTD on Log-in", ShowMOTD},
                     {"Clear Screen on Log-in", ClearOnLogin},
                     {"Host Name", HostName},
@@ -207,10 +195,10 @@ Namespace Misc.Configuration
                     {"Include anonymous users", IncludeAnonymous},
                     {"Include disabled users", IncludeDisabled}
                 }
-                ConfigurationObject.Add("Login", LoginConfig)
+            ConfigurationObject.Add("Login", LoginConfig)
 
-                'The Shell Section
-                Dim ShellConfig As New JObject From {
+            'The Shell Section
+            Dim ShellConfig As New JObject From {
                     {"Colored Shell", ColoredShell},
                     {"Simplified Help Command", SimHelp},
                     {"Current Directory", CurrDir},
@@ -228,10 +216,10 @@ Namespace Misc.Configuration
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
                 }
-                ConfigurationObject.Add("Shell", ShellConfig)
+            ConfigurationObject.Add("Shell", ShellConfig)
 
-                'The Filesystem Section
-                Dim FilesystemConfig As New JObject From {
+            'The Filesystem Section
+            Dim FilesystemConfig As New JObject From {
                     {"Filesystem sort mode", SortMode.ToString},
                     {"Filesystem sort direction", SortDirection.ToString},
                     {"Debug Size Quota in Bytes", DebugQuota},
@@ -244,10 +232,10 @@ Namespace Misc.Configuration
                     {"Sort the list", SortList},
                     {"Show total size in list", ShowTotalSizeInList}
                 }
-                ConfigurationObject.Add("Filesystem", FilesystemConfig)
+            ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
-                'The Network Section
-                Dim NetworkConfig As New JObject From {
+            'The Network Section
+            Dim NetworkConfig As New JObject From {
                     {"Debug Port", DebugPort},
                     {"Download Retry Times", DownloadRetries},
                     {"Upload Retry Times", UploadRetries},
@@ -310,18 +298,18 @@ Namespace Misc.Configuration
                     {"Notify on remote debug connection error", NotifyOnRemoteDebugConnectionError},
                     {"Use legacy mail detection", Mail_UseLegacyDetector}
                 }
-                ConfigurationObject.Add("Network", NetworkConfig)
+            ConfigurationObject.Add("Network", NetworkConfig)
 
-                'The Screensaver Section
-                Dim ScreensaverConfig As New JObject From {
+            'The Screensaver Section
+            Dim ScreensaverConfig As New JObject From {
                     {"Screensaver", DefSaverName},
                     {"Screensaver Timeout in ms", ScrnTimeout},
                     {"Enable screensaver debugging", ScreensaverDebug},
                     {"Ask for password after locking", PasswordLock}
                 }
 
-                'ColorMix config json object
-                Dim ColorMixConfig As New JObject From {
+            'ColorMix config json object
+            Dim ColorMixConfig As New JObject From {
                     {"Activate 255 Color Mode", ColorMix255Colors},
                     {"Activate True Color Mode", ColorMixTrueColor},
                     {"Delay in Milliseconds", ColorMixDelay},
@@ -335,10 +323,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", ColorMixMaximumBlueColorLevel},
                     {"Maximum color level", ColorMixMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("ColorMix", ColorMixConfig)
+            ScreensaverConfig.Add("ColorMix", ColorMixConfig)
 
-                'Disco config json object
-                Dim DiscoConfig As New JObject From {
+            'Disco config json object
+            Dim DiscoConfig As New JObject From {
                     {"Activate 255 Color Mode", Disco255Colors},
                     {"Activate True Color Mode", DiscoTrueColor},
                     {"Delay in Milliseconds", DiscoDelay},
@@ -354,10 +342,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", DiscoMaximumBlueColorLevel},
                     {"Maximum color level", DiscoMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Disco", DiscoConfig)
+            ScreensaverConfig.Add("Disco", DiscoConfig)
 
-                'GlitterColor config json object
-                Dim GlitterColorConfig As New JObject From {
+            'GlitterColor config json object
+            Dim GlitterColorConfig As New JObject From {
                     {"Activate 255 Color Mode", GlitterColor255Colors},
                     {"Activate True Color Mode", GlitterColorTrueColor},
                     {"Delay in Milliseconds", GlitterColorDelay},
@@ -370,10 +358,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", GlitterColorMaximumBlueColorLevel},
                     {"Maximum color level", GlitterColorMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("GlitterColor", GlitterColorConfig)
+            ScreensaverConfig.Add("GlitterColor", GlitterColorConfig)
 
-                'Lines config json object
-                Dim LinesConfig As New JObject From {
+            'Lines config json object
+            Dim LinesConfig As New JObject From {
                     {"Activate 255 Color Mode", Lines255Colors},
                     {"Activate True Color Mode", LinesTrueColor},
                     {"Delay in Milliseconds", LinesDelay},
@@ -388,10 +376,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", LinesMaximumBlueColorLevel},
                     {"Maximum color level", LinesMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Lines", LinesConfig)
+            ScreensaverConfig.Add("Lines", LinesConfig)
 
-                'Dissolve config json object
-                Dim DissolveConfig As New JObject From {
+            'Dissolve config json object
+            Dim DissolveConfig As New JObject From {
                     {"Activate 255 Color Mode", Dissolve255Colors},
                     {"Activate True Color Mode", DissolveTrueColor},
                     {"Background color", If(New Color(DissolveBackgroundColor).Type = ColorType.TrueColor, DissolveBackgroundColor.EncloseByDoubleQuotes, DissolveBackgroundColor)},
@@ -404,10 +392,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", DissolveMaximumBlueColorLevel},
                     {"Maximum color level", DissolveMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Dissolve", DissolveConfig)
+            ScreensaverConfig.Add("Dissolve", DissolveConfig)
 
-                'BouncingBlock config json object
-                Dim BouncingBlockConfig As New JObject From {
+            'BouncingBlock config json object
+            Dim BouncingBlockConfig As New JObject From {
                     {"Activate 255 Color Mode", BouncingBlock255Colors},
                     {"Activate True Color Mode", BouncingBlockTrueColor},
                     {"Delay in Milliseconds", BouncingBlockDelay},
@@ -422,10 +410,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", BouncingBlockMaximumBlueColorLevel},
                     {"Maximum color level", BouncingBlockMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("BouncingBlock", BouncingBlockConfig)
+            ScreensaverConfig.Add("BouncingBlock", BouncingBlockConfig)
 
-                'ProgressClock config json object
-                Dim ProgressClockConfig As New JObject From {
+            'ProgressClock config json object
+            Dim ProgressClockConfig As New JObject From {
                     {"Activate 255 Color Mode", ProgressClock255Colors},
                     {"Activate True Color Mode", ProgressClockTrueColor},
                     {"Cycle Colors", ProgressClockCycleColors},
@@ -495,10 +483,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", ProgressClockMaximumBlueColorLevel},
                     {"Maximum color level", ProgressClockMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("ProgressClock", ProgressClockConfig)
+            ScreensaverConfig.Add("ProgressClock", ProgressClockConfig)
 
-                'Lighter config json object
-                Dim LighterConfig As New JObject From {
+            'Lighter config json object
+            Dim LighterConfig As New JObject From {
                     {"Activate 255 Color Mode", Lighter255Colors},
                     {"Activate True Color Mode", LighterTrueColor},
                     {"Delay in Milliseconds", LighterDelay},
@@ -513,10 +501,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", LighterMaximumBlueColorLevel},
                     {"Maximum color level", LighterMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Lighter", LighterConfig)
+            ScreensaverConfig.Add("Lighter", LighterConfig)
 
-                'Wipe config json object
-                Dim WipeConfig As New JObject From {
+            'Wipe config json object
+            Dim WipeConfig As New JObject From {
                     {"Activate 255 Color Mode", Wipe255Colors},
                     {"Activate True Color Mode", WipeTrueColor},
                     {"Delay in Milliseconds", WipeDelay},
@@ -531,24 +519,24 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", WipeMaximumBlueColorLevel},
                     {"Maximum color level", WipeMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Wipe", WipeConfig)
+            ScreensaverConfig.Add("Wipe", WipeConfig)
 
-                'Matrix config json object
-                Dim MatrixConfig As New JObject From {
+            'Matrix config json object
+            Dim MatrixConfig As New JObject From {
                     {"Delay in Milliseconds", MatrixDelay}
                 }
-                ScreensaverConfig.Add("Matrix", MatrixConfig)
+            ScreensaverConfig.Add("Matrix", MatrixConfig)
 
-                'GlitterMatrix config json object
-                Dim GlitterMatrixConfig As New JObject From {
+            'GlitterMatrix config json object
+            Dim GlitterMatrixConfig As New JObject From {
                     {"Delay in Milliseconds", GlitterMatrixDelay},
                     {"Background color", If(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, GlitterMatrixBackgroundColor.EncloseByDoubleQuotes, GlitterMatrixBackgroundColor)},
                     {"Foreground color", If(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, GlitterMatrixForegroundColor.EncloseByDoubleQuotes, GlitterMatrixForegroundColor)}
                 }
-                ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
+            ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
 
-                'BouncingText config json object
-                Dim BouncingTextConfig As New JObject From {
+            'BouncingText config json object
+            Dim BouncingTextConfig As New JObject From {
                     {"Activate 255 Color Mode", BouncingText255Colors},
                     {"Activate True Color Mode", BouncingTextTrueColor},
                     {"Delay in Milliseconds", BouncingTextDelay},
@@ -564,10 +552,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", BouncingTextMaximumBlueColorLevel},
                     {"Maximum color level", BouncingTextMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
+            ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
 
-                'Fader config json object
-                Dim FaderConfig As New JObject From {
+            'Fader config json object
+            Dim FaderConfig As New JObject From {
                     {"Delay in Milliseconds", FaderDelay},
                     {"Fade Out Delay in Milliseconds", FaderFadeOutDelay},
                     {"Text Shown", FaderWrite},
@@ -580,10 +568,10 @@ Namespace Misc.Configuration
                     {"Maximum green color level", FaderMaximumGreenColorLevel},
                     {"Maximum blue color level", FaderMaximumBlueColorLevel}
                 }
-                ScreensaverConfig.Add("Fader", FaderConfig)
+            ScreensaverConfig.Add("Fader", FaderConfig)
 
-                'FaderBack config json object
-                Dim FaderBackConfig As New JObject From {
+            'FaderBack config json object
+            Dim FaderBackConfig As New JObject From {
                     {"Delay in Milliseconds", FaderBackDelay},
                     {"Fade Out Delay in Milliseconds", FaderBackFadeOutDelay},
                     {"Max Fade Steps", FaderBackMaxSteps},
@@ -594,10 +582,10 @@ Namespace Misc.Configuration
                     {"Maximum green color level", FaderBackMaximumGreenColorLevel},
                     {"Maximum blue color level", FaderBackMaximumBlueColorLevel}
                 }
-                ScreensaverConfig.Add("FaderBack", FaderBackConfig)
+            ScreensaverConfig.Add("FaderBack", FaderBackConfig)
 
-                'BeatFader config json object
-                Dim BeatFaderConfig As New JObject From {
+            'BeatFader config json object
+            Dim BeatFaderConfig As New JObject From {
                     {"Activate 255 Color Mode", BeatFader255Colors},
                     {"Activate True Color Mode", BeatFaderTrueColor},
                     {"Delay in Beats Per Minute", BeatFaderDelay},
@@ -613,10 +601,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", BeatFaderMaximumBlueColorLevel},
                     {"Maximum color level", BeatFaderMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
+            ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
 
-                'Typo config json object
-                Dim TypoConfig As New JObject From {
+            'Typo config json object
+            Dim TypoConfig As New JObject From {
                     {"Delay in Milliseconds", TypoDelay},
                     {"Write Again Delay in Milliseconds", TypoWriteAgainDelay},
                     {"Text Shown", TypoWrite},
@@ -626,10 +614,10 @@ Namespace Misc.Configuration
                     {"Probability of miss in percent", TypoMissPossibility},
                     {"Text color", If(New Color(TypoTextColor).Type = ColorType.TrueColor, TypoTextColor.EncloseByDoubleQuotes, TypoTextColor)}
                 }
-                ScreensaverConfig.Add("Typo", TypoConfig)
+            ScreensaverConfig.Add("Typo", TypoConfig)
 
-                'Marquee config json object
-                Dim MarqueeConfig As New JObject From {
+            'Marquee config json object
+            Dim MarqueeConfig As New JObject From {
                     {"Activate 255 Color Mode", Marquee255Colors},
                     {"Activate True Color Mode", MarqueeTrueColor},
                     {"Delay in Milliseconds", MarqueeDelay},
@@ -646,10 +634,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", MarqueeMaximumBlueColorLevel},
                     {"Maximum color level", MarqueeMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Marquee", MarqueeConfig)
+            ScreensaverConfig.Add("Marquee", MarqueeConfig)
 
-                'Linotypo config json object
-                Dim LinotypoConfig As New JObject From {
+            'Linotypo config json object
+            Dim LinotypoConfig As New JObject From {
                     {"Delay in Milliseconds", LinotypoDelay},
                     {"New Screen Delay in Milliseconds", LinotypoNewScreenDelay},
                     {"Text Shown", LinotypoWrite},
@@ -663,10 +651,10 @@ Namespace Misc.Configuration
                     {"Probability of miss in percent", LinotypoMissPossibility},
                     {"Text color", If(New Color(LinotypoTextColor).Type = ColorType.TrueColor, LinotypoTextColor.EncloseByDoubleQuotes, LinotypoTextColor)}
                 }
-                ScreensaverConfig.Add("Linotypo", LinotypoConfig)
+            ScreensaverConfig.Add("Linotypo", LinotypoConfig)
 
-                'Typewriter config json object
-                Dim TypewriterConfig As New JObject From {
+            'Typewriter config json object
+            Dim TypewriterConfig As New JObject From {
                     {"Delay in Milliseconds", TypewriterDelay},
                     {"New Screen Delay in Milliseconds", TypewriterNewScreenDelay},
                     {"Text Shown", TypewriterWrite},
@@ -674,10 +662,10 @@ Namespace Misc.Configuration
                     {"Maximum writing speed in WPM", TypewriterWritingSpeedMax},
                     {"Text color", If(New Color(TypewriterTextColor).Type = ColorType.TrueColor, TypewriterTextColor.EncloseByDoubleQuotes, TypewriterTextColor)}
                 }
-                ScreensaverConfig.Add("Typewriter", TypewriterConfig)
+            ScreensaverConfig.Add("Typewriter", TypewriterConfig)
 
-                'FlashColor config json object
-                Dim FlashColorConfig As New JObject From {
+            'FlashColor config json object
+            Dim FlashColorConfig As New JObject From {
                     {"Activate 255 Color Mode", FlashColor255Colors},
                     {"Activate True Color Mode", FlashColorTrueColor},
                     {"Delay in Milliseconds", FlashColorDelay},
@@ -691,19 +679,19 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", FlashColorMaximumBlueColorLevel},
                     {"Maximum color level", FlashColorMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("FlashColor", FlashColorConfig)
+            ScreensaverConfig.Add("FlashColor", FlashColorConfig)
 
-                'SpotWrite config json object
-                Dim SpotWriteonfig As New JObject From {
+            'SpotWrite config json object
+            Dim SpotWriteonfig As New JObject From {
                     {"Delay in Milliseconds", SpotWriteDelay},
                     {"New Screen Delay in Milliseconds", SpotWriteNewScreenDelay},
                     {"Text Shown", SpotWriteWrite},
                     {"Text color", SpotWriteTextColor}
                 }
-                ScreensaverConfig.Add("SpotWrite", SpotWriteonfig)
+            ScreensaverConfig.Add("SpotWrite", SpotWriteonfig)
 
-                'Ramp config json object
-                Dim RampConfig As New JObject From {
+            'Ramp config json object
+            Dim RampConfig As New JObject From {
                     {"Activate 255 Color Mode", Ramp255Colors},
                     {"Activate True Color Mode", RampTrueColor},
                     {"Delay in Milliseconds", RampDelay},
@@ -742,10 +730,10 @@ Namespace Misc.Configuration
                     {"Right frame color for ramp bar", RampRightFrameColor},
                     {"Use border colors for ramp bar", RampUseBorderColors}
                 }
-                ScreensaverConfig.Add("Ramp", RampConfig)
+            ScreensaverConfig.Add("Ramp", RampConfig)
 
-                'StackBox config json object
-                Dim StackBoxConfig As New JObject From {
+            'StackBox config json object
+            Dim StackBoxConfig As New JObject From {
                     {"Activate 255 Color Mode", StackBox255Colors},
                     {"Activate True Color Mode", StackBoxTrueColor},
                     {"Delay in Milliseconds", StackBoxDelay},
@@ -759,10 +747,10 @@ Namespace Misc.Configuration
                     {"Maximum color level", StackBoxMaximumColorLevel},
                     {"Fill the boxes", StackBoxFill}
                 }
-                ScreensaverConfig.Add("StackBox", StackBoxConfig)
+            ScreensaverConfig.Add("StackBox", StackBoxConfig)
 
-                'Snaker config json object
-                Dim SnakerConfig As New JObject From {
+            'Snaker config json object
+            Dim SnakerConfig As New JObject From {
                     {"Activate 255 Color Mode", Snaker255Colors},
                     {"Activate True Color Mode", SnakerTrueColor},
                     {"Delay in Milliseconds", SnakerDelay},
@@ -776,10 +764,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", SnakerMaximumBlueColorLevel},
                     {"Maximum color level", SnakerMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Snaker", SnakerConfig)
+            ScreensaverConfig.Add("Snaker", SnakerConfig)
 
-                'BarRot config json object
-                Dim BarRotConfig As New JObject From {
+            'BarRot config json object
+            Dim BarRotConfig As New JObject From {
                     {"Activate 255 Color Mode", BarRot255Colors},
                     {"Activate True Color Mode", BarRotTrueColor},
                     {"Delay in Milliseconds", BarRotDelay},
@@ -814,10 +802,10 @@ Namespace Misc.Configuration
                     {"Right frame color for ramp bar", BarRotRightFrameColor},
                     {"Use border colors for ramp bar", BarRotUseBorderColors}
                 }
-                ScreensaverConfig.Add("BarRot", BarRotConfig)
+            ScreensaverConfig.Add("BarRot", BarRotConfig)
 
-                'Fireworks config json object
-                Dim FireworksConfig As New JObject From {
+            'Fireworks config json object
+            Dim FireworksConfig As New JObject From {
                     {"Activate 255 Color Mode", Fireworks255Colors},
                     {"Activate True Color Mode", FireworksTrueColor},
                     {"Delay in Milliseconds", FireworksDelay},
@@ -831,10 +819,10 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", FireworksMaximumBlueColorLevel},
                     {"Maximum color level", FireworksMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Fireworks", FireworksConfig)
+            ScreensaverConfig.Add("Fireworks", FireworksConfig)
 
-                'Figlet config json object
-                Dim FigletConfig As New JObject From {
+            'Figlet config json object
+            Dim FigletConfig As New JObject From {
                     {"Activate 255 Color Mode", Figlet255Colors},
                     {"Activate True Color Mode", FigletTrueColor},
                     {"Delay in Milliseconds", FigletDelay},
@@ -849,32 +837,32 @@ Namespace Misc.Configuration
                     {"Maximum blue color level", FigletMaximumBlueColorLevel},
                     {"Maximum color level", FigletMaximumColorLevel}
                 }
-                ScreensaverConfig.Add("Figlet", FigletConfig)
+            ScreensaverConfig.Add("Figlet", FigletConfig)
 
-                'Add a screensaver config json object to Screensaver section
-                ConfigurationObject.Add("Screensaver", ScreensaverConfig)
+            'Add a screensaver config json object to Screensaver section
+            ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
-                'The Splash Section
-                Dim SplashConfig As New JObject()
+            'The Splash Section
+            Dim SplashConfig As New JObject()
 
-                'Simple config json object
-                Dim SplashSimpleConfig As New JObject From {
+            'Simple config json object
+            Dim SplashSimpleConfig As New JObject From {
                     {"Progress text location", SimpleProgressTextLocation}
                 }
-                SplashConfig.Add("Simple", SplashSimpleConfig)
+            SplashConfig.Add("Simple", SplashSimpleConfig)
 
-                'Progress config json object
-                Dim SplashProgressConfig As New JObject From {
+            'Progress config json object
+            Dim SplashProgressConfig As New JObject From {
                     {"Progress bar color", ProgressProgressColor},
                     {"Progress text location", ProgressProgressTextLocation}
                 }
-                SplashConfig.Add("Progress", SplashProgressConfig)
+            SplashConfig.Add("Progress", SplashProgressConfig)
 
-                'Add a splash config json object to Splash section
-                ConfigurationObject.Add("Splash", SplashConfig)
+            'Add a splash config json object to Splash section
+            ConfigurationObject.Add("Splash", SplashConfig)
 
-                'Misc Section
-                Dim MiscConfig As New JObject From {
+            'Misc Section
+            Dim MiscConfig As New JObject From {
                     {"Show Time/Date on Upper Right Corner", CornerTimeDate},
                     {"Marquee on startup", StartScroll},
                     {"Long Time and Date", LongTimeDate},
@@ -926,7 +914,28 @@ Namespace Misc.Configuration
                     {"Left frame character for progress bars", ProgressLeftFrameChar},
                     {"Right frame character for progress bars", ProgressRightFrameChar}
                 }
-                ConfigurationObject.Add("Misc", MiscConfig)
+            ConfigurationObject.Add("Misc", MiscConfig)
+            Return ConfigurationObject
+        End Function
+
+        ''' <summary>
+        ''' Creates the kernel configuration file
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        ''' <exception cref="Exceptions.ConfigException"></exception>
+        Public Function CreateConfig() As Boolean
+            Return CreateConfig(GetKernelPath(KernelPathType.Configuration))
+        End Function
+
+        ''' <summary>
+        ''' Creates the kernel configuration file with custom path
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        ''' <exception cref="Exceptions.ConfigException"></exception>
+        Function CreateConfig(ConfigPath As String) As Boolean
+            Try
+                ThrowOnInvalidPath(ConfigPath)
+                Dim ConfigurationObject As JObject = GetNewConfigObject()
 
                 'Save Config
                 File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))

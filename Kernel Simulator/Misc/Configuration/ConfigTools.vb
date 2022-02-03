@@ -46,60 +46,53 @@ Namespace Misc.Configuration
         Public Function RepairConfig() As Boolean
             'Variables
             Dim FixesNeeded As Boolean
+            Dim PristineConfigObject As JObject = GetNewConfigObject()
 
             'General sections
-            Dim ExpectedSections As Integer = 10
-            Dim ExpectedGeneralKeys As Integer = 21
-            Dim ExpectedColorsKeys As Integer = 37
-            Dim ExpectedHardwareKeys As Integer = 4
-            Dim ExpectedLoginKeys As Integer = 11
-            Dim ExpectedShellKeys As Integer = 16
-            Dim ExpectedFilesystemKeys As Integer = 11
-            Dim ExpectedNetworkKeys As Integer = 61
-            Dim ExpectedMiscKeys As Integer = 50
-
-            'Screensaver keys and sections
-            Dim ExpectedScreensaverKeys As Integer = 4
-            Dim ExpectedScreensavers As Integer = 27
-            Dim ExpectedScreensaverSections As Integer = ExpectedScreensavers + ExpectedScreensaverKeys
+            Dim ExpectedSections As Integer = PristineConfigObject.Count
+            Dim ExpectedGeneralKeys As Integer = PristineConfigObject("General").Count
+            Dim ExpectedColorsKeys As Integer = PristineConfigObject("Colors").Count
+            Dim ExpectedHardwareKeys As Integer = PristineConfigObject("Hardware").Count
+            Dim ExpectedLoginKeys As Integer = PristineConfigObject("Login").Count
+            Dim ExpectedShellKeys As Integer = PristineConfigObject("Shell").Count
+            Dim ExpectedFilesystemKeys As Integer = PristineConfigObject("Filesystem").Count
+            Dim ExpectedNetworkKeys As Integer = PristineConfigObject("Network").Count
+            Dim ExpectedScreensaverKeys As Integer = PristineConfigObject("Screensaver").Count
+            Dim ExpectedSplashKeys As Integer = PristineConfigObject("Splash").Count
+            Dim ExpectedMiscKeys As Integer = PristineConfigObject("Misc").Count
 
             'Individual screensaver keys
-            Dim ExpectedScreensaverColorMixKeys As Integer = 12
-            Dim ExpectedScreensaverDiscoKeys As Integer = 14
-            Dim ExpectedScreensaverGlitterColorKeys As Integer = 11
-            Dim ExpectedScreensaverLinesKeys As Integer = 13
-            Dim ExpectedScreensaverDissolveKeys As Integer = 11
-            Dim ExpectedScreensaverBouncingBlockKeys As Integer = 13
-            Dim ExpectedScreensaverBouncingTextKeys As Integer = 14
-            Dim ExpectedScreensaverProgressClockKeys As Integer = 68
-            Dim ExpectedScreensaverLighterKeys As Integer = 13
-            Dim ExpectedScreensaverWipeKeys As Integer = 13
-            Dim ExpectedScreensaverMatrixKeys As Integer = 1
-            Dim ExpectedScreensaverGlitterMatrixKeys As Integer = 3
-            Dim ExpectedScreensaverFaderKeys As Integer = 11
-            Dim ExpectedScreensaverFaderBackKeys As Integer = 9
-            Dim ExpectedScreensaverBeatFaderKeys As Integer = 14
-            Dim ExpectedScreensaverTypoKeys As Integer = 8
-            Dim ExpectedScreensaverMarqueeKeys As Integer = 15
-            Dim ExpectedScreensaverLinotypoKeys As Integer = 12
-            Dim ExpectedScreensaverTypewriterKeys As Integer = 6
-            Dim ExpectedScreensaverFlashColorKeys As Integer = 12
-            Dim ExpectedScreensaverSpotWriteKeys As Integer = 4
-            Dim ExpectedScreensaverRampKeys As Integer = 37
-            Dim ExpectedScreensaverStackBoxKeys As Integer = 12
-            Dim ExpectedScreensaverSnakerKeys As Integer = 12
-            Dim ExpectedScreensaverBarRotKeys As Integer = 33
-            Dim ExpectedScreensaverFireworksKeys As Integer = 12
-            Dim ExpectedScreensaverFigletKeys As Integer = 13
-
-            'Splash keys and sections
-            Dim ExpectedSplashKeys As Integer = 0
-            Dim ExpectedSplashes As Integer = 2
-            Dim ExpectedSplashSections As Integer = ExpectedSplashes + ExpectedSplashKeys
+            Dim ExpectedScreensaverColorMixKeys As Integer = PristineConfigObject("Screensaver")("ColorMix").Count
+            Dim ExpectedScreensaverDiscoKeys As Integer = PristineConfigObject("Screensaver")("Disco").Count
+            Dim ExpectedScreensaverGlitterColorKeys As Integer = PristineConfigObject("Screensaver")("GlitterColor").Count
+            Dim ExpectedScreensaverLinesKeys As Integer = PristineConfigObject("Screensaver")("Lines").Count
+            Dim ExpectedScreensaverDissolveKeys As Integer = PristineConfigObject("Screensaver")("Dissolve").Count
+            Dim ExpectedScreensaverBouncingBlockKeys As Integer = PristineConfigObject("Screensaver")("BouncingBlock").Count
+            Dim ExpectedScreensaverBouncingTextKeys As Integer = PristineConfigObject("Screensaver")("BouncingText").Count
+            Dim ExpectedScreensaverProgressClockKeys As Integer = PristineConfigObject("Screensaver")("ProgressClock").Count
+            Dim ExpectedScreensaverLighterKeys As Integer = PristineConfigObject("Screensaver")("Lighter").Count
+            Dim ExpectedScreensaverWipeKeys As Integer = PristineConfigObject("Screensaver")("Wipe").Count
+            Dim ExpectedScreensaverMatrixKeys As Integer = PristineConfigObject("Screensaver")("Matrix").Count
+            Dim ExpectedScreensaverGlitterMatrixKeys As Integer = PristineConfigObject("Screensaver")("GlitterMatrix").Count
+            Dim ExpectedScreensaverFaderKeys As Integer = PristineConfigObject("Screensaver")("Fader").Count
+            Dim ExpectedScreensaverFaderBackKeys As Integer = PristineConfigObject("Screensaver")("FaderBack").Count
+            Dim ExpectedScreensaverBeatFaderKeys As Integer = PristineConfigObject("Screensaver")("BeatFader").Count
+            Dim ExpectedScreensaverTypoKeys As Integer = PristineConfigObject("Screensaver")("Typo").Count
+            Dim ExpectedScreensaverMarqueeKeys As Integer = PristineConfigObject("Screensaver")("Marquee").Count
+            Dim ExpectedScreensaverLinotypoKeys As Integer = PristineConfigObject("Screensaver")("Linotypo").Count
+            Dim ExpectedScreensaverTypewriterKeys As Integer = PristineConfigObject("Screensaver")("Typewriter").Count
+            Dim ExpectedScreensaverFlashColorKeys As Integer = PristineConfigObject("Screensaver")("FlashColor").Count
+            Dim ExpectedScreensaverSpotWriteKeys As Integer = PristineConfigObject("Screensaver")("SpotWrite").Count
+            Dim ExpectedScreensaverRampKeys As Integer = PristineConfigObject("Screensaver")("Ramp").Count
+            Dim ExpectedScreensaverStackBoxKeys As Integer = PristineConfigObject("Screensaver")("StackBox").Count
+            Dim ExpectedScreensaverSnakerKeys As Integer = PristineConfigObject("Screensaver")("Snaker").Count
+            Dim ExpectedScreensaverBarRotKeys As Integer = PristineConfigObject("Screensaver")("BarRot").Count
+            Dim ExpectedScreensaverFireworksKeys As Integer = PristineConfigObject("Screensaver")("Fireworks").Count
+            Dim ExpectedScreensaverFigletKeys As Integer = PristineConfigObject("Screensaver")("Figlet").Count
 
             'Individual splash keys
-            Dim ExpectedSplashSimpleKeys As Integer = 1
-            Dim ExpectedSplashProgressKeys As Integer = 2
+            Dim ExpectedSplashSimpleKeys As Integer = PristineConfigObject("Splash")("Simple").Count
+            Dim ExpectedSplashProgressKeys As Integer = PristineConfigObject("Splash")("Progress").Count
 
             'Check for missing sections
             If ConfigToken.Count <> ExpectedSections Then
@@ -107,13 +100,13 @@ Namespace Misc.Configuration
                 FixesNeeded = True
             End If
             If ConfigToken("Screensaver") IsNot Nothing Then
-                If ConfigToken("Screensaver").Count <> ExpectedScreensaverSections Then
+                If ConfigToken("Screensaver").Count <> ExpectedScreensaverKeys Then
                     Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Splash") IsNot Nothing Then
-                If ConfigToken("Splash").Count <> ExpectedSplashSections Then
+                If ConfigToken("Splash").Count <> ExpectedSplashKeys Then
                     Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
