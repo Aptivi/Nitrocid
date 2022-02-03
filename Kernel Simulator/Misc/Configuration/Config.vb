@@ -786,7 +786,7 @@ Namespace Misc.Configuration
                     {"Next ramp rot interval", BarRotNextRampDelay},
                     {"Upper left corner character for ramp bar", BarRotUpperLeftCornerChar},
                     {"Upper right corner character for ramp bar", BarRotUpperRightCornerChar},
-                    {"Lower left corner character for ramp bar", BarRotLowerRightCornerChar},
+                    {"Lower left corner character for ramp bar", BarRotLowerLeftCornerChar},
                     {"Lower right corner character for ramp bar", BarRotLowerRightCornerChar},
                     {"Upper frame character for ramp bar", BarRotUpperFrameChar},
                     {"Lower frame character for ramp bar", BarRotLowerFrameChar},
