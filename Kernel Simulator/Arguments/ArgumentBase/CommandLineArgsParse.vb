@@ -22,9 +22,9 @@ Namespace Arguments.ArgumentBase
     Module CommandLineArgsParse
 
         Public AvailableCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", False, 0, New CommandLine_TestInteractiveArgument)},
-                                                                                 {"debug", New ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", False, 0, New CommandLine_DebugArgument)},
-                                                                                 {"args", New ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", False, 0, New CommandLine_ArgsArgument)},
-                                                                                 {"help", New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, New CommandLine_HelpArgument)}}
+                                                                                     {"debug", New ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", False, 0, New CommandLine_DebugArgument)},
+                                                                                     {"args", New ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", False, 0, New CommandLine_ArgsArgument)},
+                                                                                     {"help", New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, New CommandLine_HelpArgument)}}
 
         ''' <summary>
         ''' Parses the command line arguments

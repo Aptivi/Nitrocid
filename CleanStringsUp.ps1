@@ -12,6 +12,11 @@ Get-Content KSJsonifyLocales\Translations\eng.txt | ForEach-Object {
       $Sel2 = Select-String -Path $Sel -Pattern ("Shell, """ + $_ + """, ") -SimpleMatch;
       if ($Sel2 -ne $null) { 
         echo $_
+      } else {
+        $Sel2 = Select-String -Path $Sel -Pattern ("Args, """ + $_ + """, ") -SimpleMatch;
+        if ($Sel2 -ne $null) { 
+          echo $_
+        }
       }
     }
     if ($Sel3 -ne $null) {
@@ -30,7 +35,8 @@ Get-Content KSJsonifyLocales\Translations\eng.txt | ForEach-Object {
     $Sel3 = Select-String -Path $Sel -Pattern ("Shell, """ + $_ + """, ") -SimpleMatch;
     $Sel4 = Select-String -Path $SelJson -Pattern ("                ""Description"": """ + ($_ -replace """", "\""") + """") -SimpleMatch;
     $Sel5 = Select-String -Path $SelJson -Pattern ("                ""Name"": """ + ($_ -replace """", "\""") + """,") -SimpleMatch;
-    if($Sel2 -eq $null -and $Sel3 -eq $null -and $Sel4 -eq $null -and $Sel5 -eq $null) {
+    $Sel6 = Select-String -Path $Sel -Pattern ("Args, """ + $_ + """, ") -SimpleMatch;
+    if($Sel2 -eq $null -and $Sel3 -eq $null -and $Sel4 -eq $null -and $Sel5 -eq $null -and $Sel6 -eq $null) {
       $LineIndex
     }
     $LineIndex += 1
