@@ -1037,7 +1037,7 @@ Namespace Misc.Configuration
                 AutoDownloadUpdate = If(ConfigToken("General")?("Automatically download updates"), True)
                 EventDebug = If(ConfigToken("General")?("Enable event debugging"), False)
                 NewWelcomeStyle = If(ConfigToken("General")?("New welcome banner"), True)
-                EnableSplash = If(ConfigToken("General")?("Stylish splash screen"), False)
+                EnableSplash = If(ConfigToken("General")?("Stylish splash screen"), True)
                 SplashName = If(ConfigToken("General")?("Splash name"), "Simple")
                 BannerFigletFont = If(ConfigToken("General")?("Banner figlet font"), "Banner")
 
