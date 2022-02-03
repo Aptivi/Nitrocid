@@ -52,7 +52,7 @@ Namespace Shell.Shells
                             FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                             FtpTrace.LogIP = FTPLoggerIP
                             FtpCurrentDirectory = HomePath
-                            Kernel.KernelEventManager.RaiseFTPShellInitialized()
+                            KernelEventManager.RaiseFTPShellInitialized()
                             SwitchCancellationHandler(ShellType.FTPShell)
                             FtpInitialized = True
                         End If
@@ -104,12 +104,12 @@ Namespace Shell.Shells
                             Wdbg(DebugLevel.I, "Normal shell")
                             FtpCommand = Console.ReadLine()
                         End If
-                        Kernel.KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
+                        KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
 
                         'Parse command
                         If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
                             GetLine(FtpCommand, False, "", ShellType.FTPShell)
-                            Kernel.KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
+                            KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                         End If
                     Catch ex As Exception
                         WStkTrc(ex)

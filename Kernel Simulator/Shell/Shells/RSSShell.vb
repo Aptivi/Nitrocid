@@ -100,7 +100,7 @@ Begin:
                         SetInputColor()
 
                         'Prompt for command
-                        Kernel.KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
+                        KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
                         Dim WrittenCommand As String = Console.ReadLine
                         GetLine(WrittenCommand, False, "", ShellType.RSSShell)
                     End SyncLock

@@ -68,7 +68,7 @@ Namespace Shell.Shells
                     SetInputColor()
 
                     'Prompt for command
-                    Kernel.Kernel.KernelEventManager.RaiseZipShellInitialized()
+                    KernelEventManager.RaiseZipShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
                     GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
                 End SyncLock

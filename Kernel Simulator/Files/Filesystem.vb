@@ -68,7 +68,7 @@ Namespace Files
                 CurrDir = Parser.FullName.Replace("\", "/")
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseCurrentDirectoryChanged()
+                KernelEventManager.RaiseCurrentDirectoryChanged()
                 Return True
             Else
                 Throw New DirectoryNotFoundException(DoTranslation("Directory {0} not found").FormatString(dir))
@@ -446,21 +446,21 @@ Namespace Files
                     CopyDirectory(Source, Destination)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseDirectoryCopied(Source, Destination)
+                    KernelEventManager.RaiseDirectoryCopied(Source, Destination)
                     Return True
                 ElseIf FileExists(Source) And FolderExists(Destination) Then
                     Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                     File.Copy(Source, Destination + "/" + FileName, True)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
+                    KernelEventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
                     Return True
                 ElseIf FileExists(Source) Then
                     Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                     File.Copy(Source, Destination, True)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileCopied(Source, Destination)
+                    KernelEventManager.RaiseFileCopied(Source, Destination)
                     Return True
                 Else
                     Wdbg(DebugLevel.E, "Source or destination are invalid.")
@@ -556,7 +556,7 @@ Namespace Files
                 Directory.CreateDirectory(NewDirectory)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseDirectoryCreated(NewDirectory)
+                KernelEventManager.RaiseDirectoryCreated(NewDirectory)
                 Return True
             ElseIf ThrowIfDirectoryExists Then
                 Throw New IOException(DoTranslation("Directory {0} already exists.").FormatString(NewDirectory))
@@ -582,7 +582,7 @@ Namespace Files
                     Wdbg(DebugLevel.I, "File closed")
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileCreated(NewFile)
+                    KernelEventManager.RaiseFileCreated(NewFile)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -615,7 +615,7 @@ Namespace Files
                     Wdbg(DebugLevel.I, "File closed")
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileCreated(NewFile)
+                    KernelEventManager.RaiseFileCreated(NewFile)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -649,21 +649,21 @@ Namespace Files
                     Directory.Move(Source, Destination)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseDirectoryMoved(Source, Destination)
+                    KernelEventManager.RaiseDirectoryMoved(Source, Destination)
                     Return True
                 ElseIf FileExists(Source) And FolderExists(Destination) Then
                     Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                     File.Move(Source, Destination + "/" + FileName)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
+                    KernelEventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
                     Return True
                 ElseIf FileExists(Source) Then
                     Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                     File.Move(Source, Destination)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseFileMoved(Source, Destination)
+                    KernelEventManager.RaiseFileMoved(Source, Destination)
                     Return True
                 Else
                     Wdbg(DebugLevel.E, "Source or destination are invalid.")
@@ -689,7 +689,7 @@ Namespace Files
                 Directory.Delete(Dir, True)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseDirectoryRemoved(Target)
+                KernelEventManager.RaiseDirectoryRemoved(Target)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -710,7 +710,7 @@ Namespace Files
                 File.Delete(Dir)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseFileRemoved(Target)
+                KernelEventManager.RaiseFileRemoved(Target)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -804,7 +804,7 @@ Namespace Files
                 File.SetAttributes(FilePath, Attributes)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseFileAttributeAdded(FilePath, Attributes)
+                KernelEventManager.RaiseFileAttributeAdded(FilePath, Attributes)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
@@ -830,7 +830,7 @@ Namespace Files
                 File.SetAttributes(FilePath, Attrib)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
+                KernelEventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)

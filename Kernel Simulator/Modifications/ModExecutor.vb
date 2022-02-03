@@ -24,7 +24,7 @@ Namespace Modifications
         ''' </summary>
         ''' <param name="cmd">A mod command with arguments</param>
         Sub ExecuteModCommand(cmd As String)
-            Kernel.KernelEventManager.RaisePreExecuteModCommand(cmd)
+            KernelEventManager.RaisePreExecuteModCommand(cmd)
 
             'Variables
             Dim parts As String() = cmd.SplitEncloseDoubleQuotes(" ")
@@ -81,7 +81,7 @@ Namespace Modifications
             Next
 
             'Raise event
-            Kernel.KernelEventManager.RaisePostExecuteModCommand(cmd)
+            KernelEventManager.RaisePostExecuteModCommand(cmd)
             Wdbg(DebugLevel.I, "Command executed successfully.")
         End Sub
 

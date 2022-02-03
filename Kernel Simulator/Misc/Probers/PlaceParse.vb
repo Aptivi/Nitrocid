@@ -33,7 +33,7 @@ Namespace Misc.Probers
         ''' <returns>A string that has the parsed placeholders</returns>
         Public Function ProbePlaces(text As String) As String
 
-            Kernel.KernelEventManager.RaisePlaceholderParsing(text)
+            KernelEventManager.RaisePlaceholderParsing(text)
             Try
                 Wdbg(DebugLevel.I, "Parsing text for placeholders...")
                 If text.Contains("<user>") Then
@@ -188,7 +188,7 @@ Namespace Misc.Probers
                         text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
                     Loop
                 End If
-                Kernel.KernelEventManager.RaisePlaceholderParsed(text)
+                KernelEventManager.RaisePlaceholderParsed(text)
             Catch ex As Exception
                 WStkTrc(ex)
                 Write(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)

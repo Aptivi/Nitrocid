@@ -73,7 +73,7 @@ Namespace Shell.Shells
                     SetInputColor()
 
                     'Prompt for command
-                    Kernel.KernelEventManager.RaiseTextShellInitialized()
+                    KernelEventManager.RaiseTextShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
                     GetLine(WrittenCommand, False, "", ShellType.JsonShell)
                 End SyncLock

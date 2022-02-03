@@ -45,7 +45,7 @@ Namespace Network.FTP.Transfer
             If FtpConnected Then
                 Try
                     'Show a message to download
-                    Kernel.KernelEventManager.RaiseFTPPreDownload(File)
+                    KernelEventManager.RaiseFTPPreDownload(File)
                     Wdbg(DebugLevel.I, "Downloading file {0}...", File)
 
                     'Try to download 3 times
@@ -54,12 +54,12 @@ Namespace Network.FTP.Transfer
 
                     'Show a message that it's downloaded
                     Wdbg(DebugLevel.I, "Downloaded file {0}.", File)
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(File, Result.IsSuccess)
+                    KernelEventManager.RaiseFTPPostDownload(File, Result.IsSuccess)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
                     Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message)
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(File, False)
+                    KernelEventManager.RaiseFTPPostDownload(File, False)
                 End Try
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -85,7 +85,7 @@ Namespace Network.FTP.Transfer
             If FtpConnected Then
                 Try
                     'Show a message to download
-                    Kernel.KernelEventManager.RaiseFTPPreDownload(Folder)
+                    KernelEventManager.RaiseFTPPreDownload(Folder)
                     Wdbg(DebugLevel.I, "Downloading folder {0}...", Folder)
 
                     'Try to download folder
@@ -112,7 +112,7 @@ Namespace Network.FTP.Transfer
                             End If
                             Failed = True
                         End If
-                        Kernel.KernelEventManager.RaiseFTPPostDownload(Result.Name, Not Failed)
+                        KernelEventManager.RaiseFTPPostDownload(Result.Name, Not Failed)
                     Next
 
                     'Show a message that it's downloaded
@@ -121,12 +121,12 @@ Namespace Network.FTP.Transfer
                     Else
                         Wdbg(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder)
                     End If
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(Folder, Not Failed)
+                    KernelEventManager.RaiseFTPPostDownload(Folder, Not Failed)
                     Return Not Failed
                 Catch ex As Exception
                     WStkTrc(ex)
                     Wdbg(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message)
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(Folder, False)
+                    KernelEventManager.RaiseFTPPostDownload(Folder, False)
                 End Try
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -152,7 +152,7 @@ Namespace Network.FTP.Transfer
         Public Function FTPUploadFile(File As String, LocalFile As String) As Boolean
             If FtpConnected Then
                 'Show a message to download
-                Kernel.KernelEventManager.RaiseFTPPreUpload(File)
+                KernelEventManager.RaiseFTPPreUpload(File)
                 Wdbg(DebugLevel.I, "Uploading file {0}...", LocalFile)
                 Wdbg(DebugLevel.I, "Where in the remote: {0}", File)
 
@@ -160,7 +160,7 @@ Namespace Network.FTP.Transfer
                 Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
                 Dim Success As Boolean = ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, True, FtpVerify.Retry, FileProgress)
                 Wdbg(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success)
-                Kernel.KernelEventManager.RaiseFTPPostUpload(File, Success)
+                KernelEventManager.RaiseFTPPostUpload(File, Success)
                 Return Success
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -186,7 +186,7 @@ Namespace Network.FTP.Transfer
         Public Function FTPUploadFolder(Folder As String, LocalFolder As String) As Boolean
             If FtpConnected Then
                 'Show a message to download
-                Kernel.KernelEventManager.RaiseFTPPreUpload(Folder)
+                KernelEventManager.RaiseFTPPreUpload(Folder)
                 Wdbg(DebugLevel.I, "Uploading folder {0}...", Folder)
 
                 'Try to upload
@@ -213,7 +213,7 @@ Namespace Network.FTP.Transfer
                         End If
                         Failed = True
                     End If
-                    Kernel.KernelEventManager.RaiseFTPPostUpload(Result.Name, Not Failed)
+                    KernelEventManager.RaiseFTPPostUpload(Result.Name, Not Failed)
                 Next
 
                 'Show a message that it's downloaded
@@ -222,7 +222,7 @@ Namespace Network.FTP.Transfer
                 Else
                     Wdbg(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder)
                 End If
-                Kernel.KernelEventManager.RaiseFTPPostUpload(Folder, Not Failed)
+                KernelEventManager.RaiseFTPPostUpload(Folder, Not Failed)
                 Return Not Failed
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -239,7 +239,7 @@ Namespace Network.FTP.Transfer
             If FtpConnected Then
                 Try
                     'Show a message to download
-                    Kernel.KernelEventManager.RaiseFTPPreDownload(File)
+                    KernelEventManager.RaiseFTPPreDownload(File)
                     Wdbg(DebugLevel.I, "Downloading {0}...", File)
 
                     'Try to download 3 times
@@ -252,12 +252,12 @@ Namespace Network.FTP.Transfer
 
                     'Show a message that it's downloaded
                     Wdbg(DebugLevel.I, "Downloaded {0}.", File)
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(File, Downloaded)
+                    KernelEventManager.RaiseFTPPostDownload(File, Downloaded)
                     Return DownloadedContent.ToString
                 Catch ex As Exception
                     WStkTrc(ex)
                     Wdbg(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message)
-                    Kernel.KernelEventManager.RaiseFTPPostDownload(File, False)
+                    KernelEventManager.RaiseFTPPostDownload(File, False)
                 End Try
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))

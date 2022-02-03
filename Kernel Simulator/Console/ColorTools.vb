@@ -275,7 +275,7 @@ Namespace ConsoleBase
             LoadBack()
 
             'Raise event
-            Kernel.KernelEventManager.RaiseColorReset()
+            KernelEventManager.RaiseColorReset()
         End Sub
 
         ''' <summary>
@@ -512,15 +512,15 @@ Namespace ConsoleBase
                     MakePermanent()
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseColorSet()
+                    KernelEventManager.RaiseColorSet()
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
-                    Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
+                    KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
                     Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
                 End Try
             Else
-                Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
+                KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
                 Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
             End If
             Return False

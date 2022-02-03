@@ -28,7 +28,7 @@ Namespace Network.SFTP.Transfer
             If SFTPConnected Then
                 Try
                     'Show a message to download
-                    Kernel.KernelEventManager.RaiseSFTPPreDownload(File)
+                    KernelEventManager.RaiseSFTPPreDownload(File)
                     Wdbg(DebugLevel.I, "Downloading file {0}...", File)
 
                     'Try to download
@@ -37,11 +37,11 @@ Namespace Network.SFTP.Transfer
 
                     'Show a message that it's downloaded
                     Wdbg(DebugLevel.I, "Downloaded file {0}.", File)
-                    Kernel.KernelEventManager.RaiseSFTPPostDownload(File)
+                    KernelEventManager.RaiseSFTPPostDownload(File)
                     Return True
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message)
-                    Kernel.KernelEventManager.RaiseSFTPDownloadError(File, ex)
+                    KernelEventManager.RaiseSFTPDownloadError(File, ex)
                 End Try
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -58,18 +58,18 @@ Namespace Network.SFTP.Transfer
             If SFTPConnected Then
                 Try
                     'Show a message to download
-                    Kernel.KernelEventManager.RaiseSFTPPreUpload(File)
+                    KernelEventManager.RaiseSFTPPreUpload(File)
                     Wdbg(DebugLevel.I, "Uploading file {0}...", File)
 
                     'Try to upload
                     Dim UploadFileStream As New IO.FileStream($"{SFTPCurrDirect}/{File}", IO.FileMode.Open)
                     ClientSFTP.UploadFile(UploadFileStream, $"{SFTPCurrentRemoteDir}/{File}")
                     Wdbg(DebugLevel.I, "Uploaded file {0}", File)
-                    Kernel.KernelEventManager.RaiseSFTPPostUpload(File)
+                    KernelEventManager.RaiseSFTPPostUpload(File)
                     Return True
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message)
-                    Kernel.KernelEventManager.RaiseSFTPUploadError(File, ex)
+                    KernelEventManager.RaiseSFTPUploadError(File, ex)
                 End Try
             Else
                 Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))

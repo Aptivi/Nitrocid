@@ -55,7 +55,7 @@ Namespace Network.RemoteDebug
                         Found = True
                         DebugDevices(i).ClientSocket.Disconnect(True)
                         DebugDevices.RemoveAt(i)
-                        Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
+                        KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                     End If
                 End If
             Next

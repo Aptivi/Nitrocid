@@ -79,11 +79,11 @@ Namespace Misc.Notifications
                     'Update the old notifications list
                     Wdbg(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count)
                     OldNotificationsList = New List(Of Notification)(NotifRecents)
-                    Kernel.KernelEventManager.RaiseNotificationsReceived(NewNotificationsList)
+                    KernelEventManager.RaiseNotificationsReceived(NewNotificationsList)
 
                     'Iterate through new notifications
                     For Each NewNotification As Notification In NewNotificationsList
-                        Kernel.KernelEventManager.RaiseNotificationReceived(NewNotification)
+                        KernelEventManager.RaiseNotificationReceived(NewNotification)
 
                         'Populate title and description
                         Dim Title, Desc As String
@@ -205,7 +205,7 @@ Namespace Misc.Notifications
             Wdbg(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif))
             If Not NotifRecents.Contains(notif) Then
                 NotifRecents.Add(notif)
-                Kernel.KernelEventManager.RaiseNotificationSent(notif)
+                KernelEventManager.RaiseNotificationSent(notif)
             End If
         End Sub
 
@@ -217,7 +217,7 @@ Namespace Misc.Notifications
             For Each notif As Notification In notifs
                 NotifySend(notif)
             Next
-            Kernel.KernelEventManager.RaiseNotificationsSent(notifs)
+            KernelEventManager.RaiseNotificationsSent(notifs)
         End Sub
 
         ''' <summary>
@@ -228,7 +228,7 @@ Namespace Misc.Notifications
             Try
                 NotifRecents.RemoveAt(ind)
                 Wdbg(DebugLevel.I, "Removed index {0} from notification list", ind)
-                Kernel.KernelEventManager.RaiseNotificationDismissed()
+                KernelEventManager.RaiseNotificationDismissed()
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Error trying to dismiss notification: {0}", ex.Message)

@@ -64,7 +64,7 @@ Namespace Arguments
                 Else
                     If InjMode Then
                         ArgsInjected = True
-                        Kernel.Kernel.KernelEventManager.RaiseArgumentsInjected(EnteredArguments)
+                        KernelEventManager.RaiseArgumentsInjected(EnteredArguments)
                         Write(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
                     ElseIf EnteredArguments.Count <> 0 Then
                         Write(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))

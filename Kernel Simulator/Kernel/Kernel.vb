@@ -153,7 +153,7 @@ Namespace Kernel
                     Else
                         ReportProgress(DoTranslation("Running in safe mode. Skipping stage..."), 0, ColTypes.Neutral)
                     End If
-                    Kernel.KernelEventManager.RaiseStartKernel()
+                    KernelEventManager.RaiseStartKernel()
 
                     'Phase 4: Log-in
                     ReportNewStage(4, DoTranslation("- Stage 4: Log in"))

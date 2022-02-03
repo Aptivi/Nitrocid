@@ -929,10 +929,10 @@ Namespace Misc.Configuration
 
                 'Save Config
                 File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
-                Kernel.KernelEventManager.RaiseConfigSaved()
+                KernelEventManager.RaiseConfigSaved()
                 Return True
             Catch ex As Exception
-                Kernel.KernelEventManager.RaiseConfigSaveError(ex)
+                KernelEventManager.RaiseConfigSaveError(ex)
                 WStkTrc(ex)
                 Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
             End Try
@@ -1678,14 +1678,14 @@ Namespace Misc.Configuration
                 RepairConfig()
 
                 'Raise event and return true
-                Kernel.KernelEventManager.RaiseConfigRead()
+                KernelEventManager.RaiseConfigRead()
                 Return True
             Catch nre As NullReferenceException
                 'Rare, but repair config if an NRE is caught.
                 Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message)
                 RepairConfig()
             Catch ex As Exception
-                Kernel.KernelEventManager.RaiseConfigReadError(ex)
+                KernelEventManager.RaiseConfigReadError(ex)
                 WStkTrc(ex)
                 NotifyConfigError = True
                 Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)

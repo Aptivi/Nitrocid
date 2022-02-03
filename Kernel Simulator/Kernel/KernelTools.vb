@@ -102,7 +102,7 @@ Namespace Kernel
                 Description = String.Format(Description, Variables)
 
                 'Fire an event
-                Kernel.KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
 
                 'Make a dump file
                 GeneratePanicDump(Description, ErrorType, Exc)
@@ -123,7 +123,7 @@ Namespace Kernel
                             Write(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}."), True, ColTypes.Warning, ErrorType)
                         End If
                         'Print normally
-                        Kernel.KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                        KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                         Write(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                         If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Continuable)
                         Console.ReadKey()
@@ -261,16 +261,16 @@ Namespace Kernel
             Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
             Select Case PowerMode
                 Case PowerMode.Shutdown
-                    Kernel.KernelEventManager.RaisePreShutdown()
+                    KernelEventManager.RaisePreShutdown()
                     Write(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
                     ResetEverything()
-                    Kernel.KernelEventManager.RaisePostShutdown()
+                    KernelEventManager.RaisePostShutdown()
                     Environment.Exit(0)
                 Case PowerMode.Reboot, PowerMode.RebootSafe
-                    Kernel.KernelEventManager.RaisePreReboot()
+                    KernelEventManager.RaisePreReboot()
                     Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
                     ResetEverything()
-                    Kernel.KernelEventManager.RaisePostReboot()
+                    KernelEventManager.RaisePostReboot()
                     Console.Clear()
                     RebootRequested = True
                     LogoutRequested = True

@@ -98,7 +98,7 @@ Namespace Shell.ShellBase
                 CancelRequested = False
                 Exit Sub
             Catch ex As Exception
-                Kernel.KernelEventManager.RaiseCommandError(RequestedCommand, ex)
+                KernelEventManager.RaiseCommandError(RequestedCommand, ex)
                 WStkTrc(ex)
                 DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
             End Try

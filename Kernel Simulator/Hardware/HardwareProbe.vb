@@ -29,7 +29,7 @@ Namespace Hardware
         ''' </summary>
         Public Sub StartProbing()
             'We will probe hardware
-            Kernel.KernelEventManager.RaiseHardwareProbing()
+            KernelEventManager.RaiseHardwareProbing()
             Try
                 AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
                 AddHandler HardwareParsed, AddressOf WriteWhatProbed
@@ -47,7 +47,7 @@ Namespace Hardware
             End Try
 
             'Raise event
-            Kernel.KernelEventManager.RaiseHardwareProbed()
+            KernelEventManager.RaiseHardwareProbed()
         End Sub
 
         ''' <summary>

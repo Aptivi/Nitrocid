@@ -85,7 +85,7 @@ Namespace Network.RPC
                     If Not Malformed Then
                         Wdbg(DebugLevel.I, "Sending response to device...")
                         RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
-                        Kernel.KernelEventManager.RaiseRPCCommandSent(Cmd, Arg, IP, Port)
+                        KernelEventManager.RaiseRPCCommandSent(Cmd, Arg, IP, Port)
                     End If
                 End If
             Else
@@ -105,7 +105,7 @@ Namespace Network.RPC
                     MessageBuffer = RPCListen.Receive(RemoteEndpoint)
                     Message = Text.Encoding.Default.GetString(MessageBuffer)
                     Wdbg("RPC: Received message {0}", Message)
-                    Kernel.KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
+                    KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
 
                     'Iterate through every confirmation message
                     If Message.StartsWith("ShutdownConfirm") Then
@@ -152,7 +152,7 @@ Namespace Network.RPC
                     Else
                         Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message)
                         WStkTrc(ex)
-                        Kernel.KernelEventManager.RaiseRPCCommandError(Message, ex, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
+                        KernelEventManager.RaiseRPCCommandError(Message, ex, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
                     End If
                 End Try
             End While

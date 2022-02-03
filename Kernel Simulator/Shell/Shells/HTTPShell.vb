@@ -59,12 +59,12 @@ Namespace Shell.Shells
                         'Prompt for command
                         Wdbg(DebugLevel.I, "Normal shell")
                         Dim HttpCommand As String = Console.ReadLine()
-                        Kernel.KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
+                        KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
 
                         'Parse command
                         If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
                             GetLine(HttpCommand, False, "", ShellType.HTTPShell)
-                            Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
+                            KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
                         End If
                     Catch ex As Exception
                         WStkTrc(ex)

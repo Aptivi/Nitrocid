@@ -29,7 +29,7 @@ Namespace Scripting
         Public Sub Execute(ScriptPath As String, ScriptArguments As String)
             Try
                 'Raise event
-                Kernel.KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments)
+                KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments)
 
                 'Open the script file for reading
                 Dim FileStream As New StreamReader(ScriptPath)
@@ -90,9 +90,9 @@ Namespace Scripting
                         Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                     End If
                 End While
-                Kernel.KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
+                KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
             Catch ex As Exception
-                Kernel.KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
+                KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
                 Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try

@@ -71,12 +71,12 @@ Namespace Shell.Shells
 
                             'Wait for command
                             Wdbg(DebugLevel.I, "Waiting for command")
-                            Kernel.KernelEventManager.RaiseShellInitialized()
+                            KernelEventManager.RaiseShellInitialized()
                             Dim strcommand As String = Console.ReadLine()
 
                             If Not InSaver Then
                                 'Fire event of PreRaiseCommand
-                                Kernel.KernelEventManager.RaisePreExecuteCommand(strcommand)
+                                KernelEventManager.RaisePreExecuteCommand(strcommand)
 
                                 'Check for a type of command
                                 If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
@@ -103,7 +103,7 @@ Namespace Shell.Shells
                                     Next
 
                                     'Fire an event of PostExecuteCommand
-                                    Kernel.KernelEventManager.RaisePostExecuteCommand(strcommand)
+                                    KernelEventManager.RaisePostExecuteCommand(strcommand)
                                 End If
                             End If
                         Catch ex As Exception

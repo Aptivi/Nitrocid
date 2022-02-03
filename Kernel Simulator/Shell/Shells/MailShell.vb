@@ -50,7 +50,7 @@ Namespace Shell.Shells
 
             'Add handler for IMAP and SMTP
             SwitchCancellationHandler(ShellType.MailShell)
-            Kernel.KernelEventManager.RaiseIMAPShellInitialized()
+            KernelEventManager.RaiseIMAPShellInitialized()
 
             While Not Bail
                 SyncLock MailCancelSync
