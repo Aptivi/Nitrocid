@@ -41,10 +41,10 @@ Namespace Misc.Timers
             Dim LapsText As String = DoTranslation("Lap")
             Dim HalfWidth As Integer = Console.WindowWidth / 2
             Dim HalfHeight As Integer = Console.WindowHeight / 2
-            Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
+            Dim TimeLeftPosition As Integer = HalfWidth / 0.8 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
             Dim TimeTopPosition As Integer = HalfHeight - 2
-            Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
-            Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
+            Dim LapsCurrentLapLeftPosition As Integer = 4
+            Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 6
 
             'Populate the keys text variable
             Dim KeysText As String = "[ENTER] " + DoTranslation("Start or stop") + " | [L] " + DoTranslation("Lap") + " | [R] " + DoTranslation("Reset") + " | [ESC] " + DoTranslation("Exit")
@@ -58,6 +58,9 @@ Namespace Misc.Timers
             'Print the time interval and the current lap
             WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, LapColor)
             WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, True, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult))
+
+            'Print the border
+            MakeBorder()
 
             While KeysKeypress <> ConsoleKey.Escape
                 'Wait for a keypress
@@ -110,6 +113,7 @@ Namespace Misc.Timers
                         Console.SetCursorPosition(0, TimeTopPosition)
                         ClearLineToRight()
                         WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, False, LapColor)
+                        MakeBorder()
                     Case ConsoleKey.Escape
                         If LappedStopwatch.IsRunning Then LappedStopwatch.Reset()
                         If Stopwatch.IsRunning Then Stopwatch.Reset()
@@ -133,12 +137,12 @@ Namespace Misc.Timers
             Dim LapsText As String = DoTranslation("Lap")
             Dim HalfWidth As Integer = Console.WindowWidth / 2
             Dim HalfHeight As Integer = Console.WindowHeight / 2
-            Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
+            Dim TimeLeftPosition As Integer = HalfWidth / 0.8 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
             Dim TimeTopPosition As Integer = HalfHeight - 2
-            Dim LapsCurrentLapLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
-            Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
-            Dim LapsLapsListLeftPosition As Integer = (HalfWidth * 0.5 - LapsText.Length) / 2
-            Dim LapsLapsListTopPosition As Integer = 2
+            Dim LapsCurrentLapLeftPosition As Integer = 4
+            Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 6
+            Dim LapsLapsListLeftPosition As Integer = 4
+            Dim LapsLapsListTopPosition As Integer = 3
 
             While StopwatchUpdate.IsAlive
                 Try
@@ -148,7 +152,7 @@ Namespace Misc.Timers
 
                     'Update the laps list if new lap is acknowledged
                     If NewLapAcknowledged Then
-                        Dim LapsListEndBorder As Integer = Console.WindowHeight - 7
+                        Dim LapsListEndBorder As Integer = Console.WindowHeight - 10
                         Dim LapsListBuilder As New StringBuilder
                         Dim BorderDifference As Integer = Laps.Count - LapsListEndBorder
                         If BorderDifference < 0 Then BorderDifference = 0
@@ -163,6 +167,21 @@ Namespace Misc.Timers
                     Exit While
                 End Try
             End While
+        End Sub
+
+        ''' <summary>
+        ''' Makes the display border
+        ''' </summary>
+        Sub MakeBorder()
+            Dim KeysTextTopPosition As Integer = Console.WindowHeight - 2
+            Dim HalfWidth As Integer = Console.WindowWidth / 2
+            WriteWhere("═".Repeat(Console.WindowWidth), 0, KeysTextTopPosition - 2, True, ColTypes.Gray)
+            WriteWhere("═".Repeat(Console.WindowWidth), 0, 1, True, ColTypes.Gray)
+            For Height = 2 To KeysTextTopPosition - 2
+                WriteWhere("║", CInt(HalfWidth / 2), Height, True, ColTypes.Gray)
+            Next
+            WriteWhere("╩", CInt(HalfWidth / 2), KeysTextTopPosition - 2, True, ColTypes.Gray)
+            WriteWhere("╦", CInt(HalfWidth / 2), 1, True, ColTypes.Gray)
         End Sub
 
     End Module
