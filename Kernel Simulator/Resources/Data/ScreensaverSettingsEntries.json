@@ -141,6 +141,12 @@
                 "Description": "Whether to use the Beats Per Minute unit to write the next color."
             },
             {
+                "Name": "Enable Black and White Mode",
+                "Type": "SBoolean",
+                "Variable": "DiscoEnableFedMode",
+                "Description": "Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images."
+            },
+            {
                 "Name": "Minimum red color level",
                 "Type": "SInt",
                 "Variable": "DiscoMinimumRedColorLevel",

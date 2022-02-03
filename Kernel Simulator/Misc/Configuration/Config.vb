@@ -344,6 +344,7 @@ Namespace Misc.Configuration
                     {"Delay in Milliseconds", DiscoDelay},
                     {"Use Beats Per Minute", DiscoUseBeatsPerMinute},
                     {"Cycle Colors", DiscoCycleColors},
+                    {"Enable Black and White Mode", DiscoEnableFedMode},
                     {"Minimum red color level", DiscoMinimumRedColorLevel},
                     {"Minimum green color level", DiscoMinimumGreenColorLevel},
                     {"Minimum blue color level", DiscoMinimumBlueColorLevel},
@@ -1184,6 +1185,7 @@ Namespace Misc.Configuration
                 DiscoCycleColors = If(ConfigToken("Screensaver")?("Disco")?("Cycle Colors"), False)
                 DiscoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 100)
                 DiscoUseBeatsPerMinute = If(ConfigToken("Screensaver")?("Disco")?("Use Beats Per Minute"), False)
+                DiscoEnableFedMode = If(ConfigToken("Screensaver")?("Disco")?("Enable Black and White Mode"), False)
                 DiscoMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Disco")?("Minimum red color level"), 0)
                 DiscoMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Disco")?("Minimum green color level"), 0)
                 DiscoMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Disco")?("Minimum blue color level"), 0)

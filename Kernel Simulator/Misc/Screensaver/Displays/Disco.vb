@@ -38,6 +38,7 @@ Namespace Misc.Screensaver.Displays
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
             Dim CurrentColor As Integer = 0
             Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
+            Dim FedColors As ConsoleColors() = {ConsoleColors.Black, ConsoleColors.White}
             Dim random As New Random()
 
             'Screensaver logic
@@ -52,37 +53,48 @@ Namespace Misc.Screensaver.Displays
                     'Select the background color
                     Dim esc As Char = GetEsc()
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
-                    If DiscoTrueColor Then
-                        If Not DiscoCycleColors Then
-                            Dim RedColorNum As Integer = random.Next(255)
-                            Dim GreenColorNum As Integer = random.Next(255)
-                            Dim BlueColorNum As Integer = random.Next(255)
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                            Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                            SetConsoleColor(ColorStorage, True)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", DiscoEnableFedMode)
+                    If Not DiscoEnableFedMode Then
+                        If DiscoTrueColor Then
+                            If Not DiscoCycleColors Then
+                                Dim RedColorNum As Integer = random.Next(255)
+                                Dim GreenColorNum As Integer = random.Next(255)
+                                Dim BlueColorNum As Integer = random.Next(255)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                                Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                                SetConsoleColor(ColorStorage, True)
+                            Else
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
+                                Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
+                                SetConsoleColor(ColorStorage, True)
+                            End If
+                        ElseIf Disco255Colors Then
+                            If Not DiscoCycleColors Then
+                                Dim color As Integer = random.Next(255)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
+                                SetConsoleColor(New Color(color), True)
+                            Else
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
+                                SetConsoleColor(New Color(CurrentColor), True)
+                            End If
                         Else
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
-                            Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
-                            SetConsoleColor(ColorStorage, True)
-                        End If
-                    ElseIf Disco255Colors Then
-                        If Not DiscoCycleColors Then
-                            Dim color As Integer = random.Next(255)
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
-                            SetConsoleColor(New Color(color), True)
-                        Else
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
-                            SetConsoleColor(New Color(CurrentColor), True)
+                            If Not DiscoCycleColors Then
+                                Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            Else
+                                MaximumColors = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 15, DiscoMaximumColorLevel, 15)
+                                Console.BackgroundColor = colors(CurrentColor)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            End If
                         End If
                     Else
-                        If Not DiscoCycleColors Then
-                            Console.BackgroundColor = colors(random.Next(colors.Length - 1))
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                        If CurrentColor = ConsoleColors.Black Then
+                            CurrentColor = ConsoleColors.White
                         Else
-                            MaximumColors = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 15, DiscoMaximumColorLevel, 15)
-                            Console.BackgroundColor = colors(CurrentColor)
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            CurrentColor = ConsoleColors.Black
                         End If
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
+                        SetConsoleColor(New Color(CurrentColor), True)
                     End If
 
                     'Make the disco effect!

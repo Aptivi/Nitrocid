@@ -65,7 +65,7 @@ Namespace Misc.Configuration
 
             'Individual screensaver keys
             Dim ExpectedScreensaverColorMixKeys As Integer = 12
-            Dim ExpectedScreensaverDiscoKeys As Integer = 13
+            Dim ExpectedScreensaverDiscoKeys As Integer = 14
             Dim ExpectedScreensaverGlitterColorKeys As Integer = 11
             Dim ExpectedScreensaverLinesKeys As Integer = 13
             Dim ExpectedScreensaverDissolveKeys As Integer = 11

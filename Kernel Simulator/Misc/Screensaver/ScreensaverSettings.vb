@@ -91,7 +91,11 @@ Namespace Misc.Screensaver
         ''' <summary>
         ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
         ''' </summary>
-        Public DiscoUseBeatsPerMinute As Boolean = False
+        Public DiscoUseBeatsPerMinute As Boolean
+        ''' <summary>
+        ''' [Disco] Uses the black and white cycle to produce the same effect as the legacy "fed" screensaver introduced back in v0.0.1
+        ''' </summary>
+        Public DiscoEnableFedMode As Boolean
         ''' <summary>
         ''' [Disco] The minimum red color level (true color)
         ''' </summary>
