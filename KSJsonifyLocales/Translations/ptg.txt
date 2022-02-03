@@ -867,7 +867,6 @@ Limpa para mudar de direção
 Quantas limpezas a serem feitas antes de mudar de direção aleatoriamente?
 Etapa finalizada em
 A inicialização interna terminou em
-Arquivo referenciado {0} não encontrado. Este mod pode não funcionar corretamente sem este arquivo.
 Mod começando
 Nome do comando:
 Definição de comando:

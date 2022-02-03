@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "په تصادفي ډول د سمت بدلولو دمخه څومره مسح کول؟",
     "Stage finished in": "مرحله پای ته ورسیده",
     "Internal initialization finished in": "داخلي ابتکار په کې پای ته ورسید",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "راجع شوې دوتنه {0} ونه موندل شوه. دا ماډل ممکن د دې فایل پرته په سمه توګه کار ونکړي.",
     "Starting mod": "د موډل پیل کول",
     "Command name:": "د قوماندې نوم:",
     "Command definition:": "د قوماندې تعریف:",

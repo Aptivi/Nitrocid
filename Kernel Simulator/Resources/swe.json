@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Hur många våtservetter ska du göra innan du slumpmässigt byter riktning?",
     "Stage finished in": "Scenen slutade i",
     "Internal initialization finished in": "Intern initialisering avslutad år",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Den refererade filen {0} hittades inte. Denna mod fungerar kanske inte ordentligt utan den här filen.",
     "Starting mod": "Startar mod",
     "Command name:": "Kommandonamn:",
     "Command definition:": "Kommando definition:",

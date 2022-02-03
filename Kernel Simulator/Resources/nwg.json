@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Hvor mange kluter skal du gjøre før du endrer retning tilfeldig?",
     "Stage finished in": "Scenen avsluttet i",
     "Internal initialization finished in": "Intern initialisering ferdig i",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Referert fil {0} ikke funnet. Denne moden fungerer kanskje ikke ordentlig uten denne filen.",
     "Starting mod": "Starter mod",
     "Command name:": "Kommandonavn:",
     "Command definition:": "Kommando definisjon:",

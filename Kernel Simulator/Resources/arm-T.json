@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Քանի՞ անձեռոցիկ պետք է անել նախքան պատահական ուղղությունը փոխելը:",
     "Stage finished in": "Փուլն ավարտված է",
     "Internal initialization finished in": "Ներքին սկզբնավորումն ավարտված է",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Հղված ֆայլը {0} չի գտնվել: Այս ռեժիմը կարող է ճիշտ չաշխատել առանց այս ֆայլի:",
     "Starting mod": "Մեկնարկող ռեժիմ",
     "Command name:": "Հրամանի անունը.",
     "Command definition:": "Հրամանի սահմանում.",

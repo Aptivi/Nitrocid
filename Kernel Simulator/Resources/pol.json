@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Ile wyciera? nale?y wykona? przed losow? zmian? kierunku?",
     "Stage finished in": "Etap uko?czony za",
     "Internal initialization finished in": "Inicjalizacja wewn?trzna zako?czona za",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Nie znaleziono pliku odniesienia {0}. Ten mod mo?e nie dzia?a? poprawnie bez tego pliku.",
     "Starting mod": "Tryb startowy",
     "Command name:": "Nazwa polecenia:",
     "Command definition:": "Definicja polecenia:",

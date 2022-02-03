@@ -867,7 +867,6 @@ Tovalloletes per canviar de direcció
 Quantes tovalloletes per fer abans de canviar de direcció a l'atzar?
 Etapa acabada a
 S'ha acabat la inicialització interna
-No s'ha trobat el fitxer de referència {0}. És possible que aquest mod no funcioni correctament sense aquest fitxer.
 Mod inicial
 Nom de l'ordre:
 Definició de l'ordre:

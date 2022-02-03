@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Yo'nalishni tasodifiy o'zgartirishdan oldin qancha ro'molcha qilish kerak?",
     "Stage finished in": "Sahna tugadi",
     "Internal initialization finished in": "Ichki ishga tushirish tugadi",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "{0} havola qilingan fayl topilmadi. Ushbu fayl ushbu rejimsiz to'g'ri ishlamasligi mumkin.",
     "Starting mod": "Tartibni boshlash",
     "Command name:": "Buyruq nomi:",
     "Command definition:": "Buyruq ta'rifi:",

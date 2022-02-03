@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "كم عدد المناديل التي يجب القيام بها قبل تغيير الاتجاه بشكل عشوائي؟",
     "Stage finished in": "انتهت المرحلة",
     "Internal initialization finished in": "انتهى التهيئة الداخلية في",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "الملف المشار إليه {0} غير موجود. قد لا يعمل هذا الوضع بشكل صحيح بدون هذا الملف.",
     "Starting mod": "بدء وزارة الدفاع",
     "Command name:": "اسم الأمر:",
     "Command definition:": "تعريف الأمر:",

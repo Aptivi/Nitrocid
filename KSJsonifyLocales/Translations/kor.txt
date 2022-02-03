@@ -867,7 +867,6 @@ banghyang-eul bakkuneun dakk-eum
 banghyang-eul im-uilo byeongyeonghagi jeon-e myeoch beon-ui waipeuleul suhaenghaeyahabnikka?
 mudae wanlyo
 naebu chogihwa wanlyo
-chamjo doen pail {0}eul (leul) chaj-eul su eobs-seubnida. i modeuneun-i pail-i eobs-eumyeon jedaelo jagdonghaji anh-eul su issseubnida.
 modeu sijag
 myeonglyeong-eo ileum :
 myeonglyeong jeong-ui :

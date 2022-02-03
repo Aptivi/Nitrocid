@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "¿Cuántas toallitas hacer antes de cambiar de dirección al azar?",
     "Stage finished in": "Etapa terminada en",
     "Internal initialization finished in": "La inicialización interna finalizó en",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "No se encontró el archivo de referencia {0}. Es posible que este mod no funcione correctamente sin este archivo.",
     "Starting mod": "Mod de inicio",
     "Command name:": "Nombre del comando:",
     "Command definition:": "Definición de comando:",

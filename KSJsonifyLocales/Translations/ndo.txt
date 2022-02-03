@@ -867,7 +867,6 @@ Lap untuk mengubah arah
 Berapa banyak tisu yang harus dilakukan sebelum mengubah arah secara acak?
 Panggung selesai di
 Inisialisasi internal selesai di
-File referensi {0} tidak ditemukan. Mod ini mungkin tidak berfungsi dengan baik tanpa file ini.
 Mulai mod
 Nama perintah:
 Definisi perintah:

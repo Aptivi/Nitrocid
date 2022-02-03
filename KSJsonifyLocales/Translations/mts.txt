@@ -867,7 +867,6 @@ Imsaħ biex tbiddel id-direzzjoni
 Kemm timsaħ x'tagħmel qabel ma tbiddel id-direzzjoni b'mod każwali?
 Stadju lest ġewwa
 L-inizjalizzazzjoni interna spiċċat fl
-Il-fajl referenzjat {0} ma nstabx. Dan il-mod jista 'ma jaħdimx sewwa mingħajr dan il-fajl.
 Tibda mod
 Isem tal-kmand:
 Definizzjoni tal-kmand:

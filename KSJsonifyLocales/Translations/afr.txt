@@ -867,7 +867,6 @@ Wipes om van rigting te verander
 Hoeveel wipes om te doen voordat jy lukraak van rigting verander?
 Verhoog voltooi in
 Interne inisialisering voltooi in
-Verwysde lêer {0} nie gevind nie. Hierdie mod kan dalk nie behoorlik werk sonder hierdie lêer nie.
 Begin mod
 Opdrag naam:
 Opdrag definisie:

@@ -867,7 +867,6 @@ Servetky dlya zminy napryamku
 Skilʹky vytyranʹ potribno zrobyty, persh nizh vypadkovo zminyty napryamok?
 Etap zakincheno v
 Vnutrishnya initsializatsiya zavershena v
-Fayl posylannya {0} ne znaydeno. Tsey mod mozhe ne pratsyuvaty nalezhnym chynom bez tsʹoho faylu.
 Pochatkovyy mod
 Nazva komandy:
 Vyznachennya komandy:

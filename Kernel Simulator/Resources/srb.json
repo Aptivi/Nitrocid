@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Koliko brisa?a treba obaviti pre nego ?to slu?ajno promenite smer kretanja?",
     "Stage finished in": "Scena je zavr?ena u",
     "Internal initialization finished in": "Interna inicijalizacija je zavr?ena u",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Referentna datoteka {0} nije prona?ena. Ovaj mod mo?da nec?e raditi ispravno bez ove datoteke.",
     "Starting mod": "Pokretanje mod",
     "Command name:": "Naziv naredbe:",
     "Command definition:": "Definicija naredbe:",

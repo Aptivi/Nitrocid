@@ -867,7 +867,6 @@ disha badalane ke lie ponchhe
 betarateeb dhang se disha badalane se pahale kitane vaips karane chaahie?
 stej samaapt
 aantarik aarambheekaran samaapt hua
-sandarbhit fail {0} nahin milee. ho sakata hai ki yah mod is phail ke bina theek se kaam na kare.
 praarambhik mod
 kamaand ka naam:
 kamaand paribhaasha:

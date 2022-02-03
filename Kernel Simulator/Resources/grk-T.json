@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Πόσα μαντηλάκια πρέπει να κάνετε πριν αλλάξετε κατεύθυνση τυχαία;",
     "Stage finished in": "Η σκηνή ολοκληρώθηκε μέσα",
     "Internal initialization finished in": "Ολοκληρώθηκε η εσωτερική προετοιμασία",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Το αρχείο αναφοράς {0} δεν βρέθηκε. Αυτό το mod ενδέχεται να μην λειτουργεί σωστά χωρίς αυτό το αρχείο.",
     "Starting mod": "Εκκίνηση mod",
     "Command name:": "Όνομα εντολής:",
     "Command definition:": "Ορισμός εντολών:",

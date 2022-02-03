@@ -867,7 +867,6 @@ Maramice za promenu pravca
 Koliko brisa?a treba obaviti pre nego ?to slu?ajno promenite smer kretanja?
 Scena je zavr?ena u
 Interna inicijalizacija je zavr?ena u
-Referentna datoteka {0} nije prona?ena. Ovaj mod mo?da nec?e raditi ispravno bez ove datoteke.
 Pokretanje mod
 Naziv naredbe:
 Definicija naredbe:

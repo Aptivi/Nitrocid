@@ -867,7 +867,6 @@ Kluter for å endre retning
 Hvor mange kluter skal du gjøre før du endrer retning tilfeldig?
 Scenen avsluttet i
 Intern initialisering ferdig i
-Referert fil {0} ikke funnet. Denne moden fungerer kanskje ikke ordentlig uten denne filen.
 Starter mod
 Kommandonavn:
 Kommando definisjon:

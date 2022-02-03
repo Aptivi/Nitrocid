@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Скільки витирань потрібно зробити, перш ніж випадково змінити напрямок?",
     "Stage finished in": "Етап закінчено в",
     "Internal initialization finished in": "Внутрішня ініціалізація завершена в",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Файл посилання {0} не знайдено. Цей мод може не працювати належним чином без цього файлу.",
     "Starting mod": "Початковий мод",
     "Command name:": "Назва команди:",
     "Command definition:": "Визначення команди:",

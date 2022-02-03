@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "İstiqamətini təsadüfi dəyişdirmədən əvvəl nə qədər salfetlər etmək lazımdır?",
     "Stage finished in": "Mərhələ bitdi",
     "Internal initialization finished in": "Daxili başlatma tamamlandı",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "İstinad olunan {0} fayl tapılmadı. Bu fayl bu fayl olmadan düzgün işləməyə bilər.",
     "Starting mod": "Mod başlayır",
     "Command name:": "Komanda adı:",
     "Command definition:": "Komanda tərifi:",

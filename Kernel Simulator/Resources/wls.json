@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Sawl cadachau i'w gwneud cyn newid cyfeiriad ar hap?",
     "Stage finished in": "Gorffennodd y llwyfan yn",
     "Internal initialization finished in": "Gorffennwyd ymgychwyn mewnol yn",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Ffeil gyfeiriedig {0} heb ei darganfod. Efallai na fydd y mod hwn yn gweithio'n iawn heb y ffeil hon.",
     "Starting mod": "Mod cychwyn",
     "Command name:": "Enw gorchymyn:",
     "Command definition:": "Diffiniad gorchymyn:",

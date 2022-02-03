@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Yönü rastgele değiştirmeden önce kaç mendil yapmalı?",
     "Stage finished in": "Etap tamamlandı",
     "Internal initialization finished in": "Dahili başlatma tamamlandı",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Başvurulan dosya {0} bulunamadı. Bu mod, bu dosya olmadan düzgün çalışmayabilir.",
     "Starting mod": "Başlangıç ​​modu",
     "Command name:": "Komut adı:",
     "Command definition:": "Komut tanımı:",

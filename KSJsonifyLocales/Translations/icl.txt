@@ -867,7 +867,6 @@ Mistókst að vista núverandi möppu: {0}
 Hversu margar þurrkar á að gera áður en skipt er um stefnu af handahófi?
 Sviðinu lauk í
 Innri frumstillingu lauk í
-Tilvísunarskrá {0} fannst ekki. Þetta mod gæti ekki virkað rétt án þessarar skráar.
 Byrjar mod
 Skipunarheiti:
 Skipunarskilgreining:

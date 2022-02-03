@@ -867,7 +867,6 @@ Wipes ji bo guhertina rê
 Berî guheztina rêgezek bêserûber çend paqijan bikin?
 Qonax bi dawî bû
 Destpêkirina navxweyî di qediya
-Pelê referanskirî {0} nehat dîtin. Dibe ku ev mod bêyî vê pelê bi rêkûpêk nexebite.
 Modê dest pê dike
 Navê fermanê:
 Pênaseya fermanê:

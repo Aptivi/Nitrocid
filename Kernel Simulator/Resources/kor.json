@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "banghyang-eul im-uilo byeongyeonghagi jeon-e myeoch beon-ui waipeuleul suhaenghaeyahabnikka?",
     "Stage finished in": "mudae wanlyo",
     "Internal initialization finished in": "naebu chogihwa wanlyo",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "chamjo doen pail {0}eul (leul) chaj-eul su eobs-seubnida. i modeuneun-i pail-i eobs-eumyeon jedaelo jagdonghaji anh-eul su issseubnida.",
     "Starting mod": "modeu sijag",
     "Command name:": "myeonglyeong-eo ileum :",
     "Command definition:": "myeonglyeong jeong-ui :",

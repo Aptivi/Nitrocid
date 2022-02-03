@@ -867,7 +867,6 @@ Maramice za promjenu smjera
 Koliko brisanja treba napraviti prije nasumičnog mijenjanja smjera?
 Scena završena
 Interna inicijalizacija je završena
-Referentna datoteka {0} nije pronađena. Ovaj mod možda neće raditi ispravno bez ove datoteke.
 start mod
 Naziv komande:
 Definicija naredbe:

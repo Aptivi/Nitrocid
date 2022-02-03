@@ -867,7 +867,6 @@ Ngilangke kanggo ngganti arah
 Pira tisu sing kudu ditindakake sadurunge ganti arah kanthi acak?
 Tahap rampung ing
 Inisialisasi internal rampung ing
-File sing dirujuk {0} ora ditemokake. Mod iki bisa uga ora bisa mlaku tanpa file iki.
 Miwiti mod
 Jeneng prentah:
 Definisi perintah:

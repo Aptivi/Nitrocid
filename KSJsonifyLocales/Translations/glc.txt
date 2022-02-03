@@ -867,7 +867,6 @@ Toallitas para cambiar de dirección
 Cantas toallitas hai que facer antes de cambiar de dirección ao azar?
 Etapa rematada en
 Finalizou a inicialización interna en
-Non se atopou o ficheiro referenciado {0}. É posible que este mod non funcione correctamente sen este ficheiro.
 Mod de inicio
 Nome do comando:
 Definición do comando:

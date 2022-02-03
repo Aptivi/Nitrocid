@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "এলোমেলোভাবে দিক পরিবর্তন করার আগে কয়টি ওয়াইপ করবেন?",
     "Stage finished in": "মঞ্চ শেষ",
     "Internal initialization finished in": "অভ্যন্তরীণ সূচনা শেষ হয়েছে",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "রেফারেন্সযুক্ত ফাইল {0} found পাওয়া যায় নি। এই মোড এই ফাইলটি ছাড়া সঠিকভাবে কাজ করতে পারে না।",
     "Starting mod": "মোড শুরু হচ্ছে",
     "Command name:": "আদেশের নাম:",
     "Command definition:": "আদেশের সংজ্ঞা:",

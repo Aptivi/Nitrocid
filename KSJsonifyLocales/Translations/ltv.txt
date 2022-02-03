@@ -867,7 +867,6 @@ Salvetes virziena maiņai
 Cik daudz salvetes jāizdara, pirms nejauši maina virzienu?
 Posms pabeigts
 Iekšējā inicializācija ir pabeigta
-Atsauces fails {0} nav atrasts. Šis modulis var nedarboties pareizi bez šī faila.
 Sāk mod
 Komandas nosaukums:
 Komandas definīcija:

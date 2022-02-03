@@ -867,7 +867,6 @@ Yön değiştirmek için mendil
 Yönü rastgele değiştirmeden önce kaç mendil yapmalı?
 Etap tamamlandı
 Dahili başlatma tamamlandı
-Başvurulan dosya {0} bulunamadı. Bu mod, bu dosya olmadan düzgün çalışmayabilir.
 Başlangıç ​​modu
 Komut adı:
 Komut tanımı:

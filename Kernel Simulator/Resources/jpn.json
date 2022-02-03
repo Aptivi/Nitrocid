@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Randamu ni hōkōwokaeru mae ni nankai waipu suru hitsuyō ga arimasu ka?",
     "Stage finished in": "Sutēji shūryō",
     "Internal initialization finished in": "naibu shokka ga shūryō shimashita",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "sanshō fairu {0} ga mitsukarimasen. Kono mod wa, kono fairu ga nai to tadashiku dōsa shinai kanōsei ga arimasu.",
     "Starting mod": "Kaishi mod",
     "Command name:": "komando-mei:",
     "Command definition:": "Komando teigi:",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Колико брисача треба обавити пре него што случајно промените смер кретања?",
     "Stage finished in": "Сцена је завршена у",
     "Internal initialization finished in": "Интерна иницијализација је завршена у",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Референтна датотека {0} није пронађена. Овај мод можда неће радити исправно без ове датотеке.",
     "Starting mod": "Покретање мод",
     "Command name:": "Назив наредбе:",
     "Command definition:": "Дефиниција наредбе:",

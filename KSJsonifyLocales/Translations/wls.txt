@@ -867,7 +867,6 @@ Cadachau i newid cyfeiriad
 Sawl cadachau i'w gwneud cyn newid cyfeiriad ar hap?
 Gorffennodd y llwyfan yn
 Gorffennwyd ymgychwyn mewnol yn
-Ffeil gyfeiriedig {0} heb ei darganfod. Efallai na fydd y mod hwn yn gweithio'n iawn heb y ffeil hon.
 Mod cychwyn
 Enw gorchymyn:
 Diffiniad gorchymyn:

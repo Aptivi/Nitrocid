@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "방향을 임의로 변경하기 전에 몇 번의 와이프를 수행해야합니까?",
     "Stage finished in": "무대 완료",
     "Internal initialization finished in": "내부 초기화 완료",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "참조 된 파일 {0}을 (를) 찾을 수 없습니다. 이 모드는이 파일이 없으면 제대로 작동하지 않을 수 있습니다.",
     "Starting mod": "모드 시작",
     "Command name:": "명령어 이름 :",
     "Command definition:": "명령 정의 :",

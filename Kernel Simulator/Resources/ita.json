@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Quante passate da fare prima di cambiare direzione a caso?",
     "Stage finished in": "Fase finita tra",
     "Internal initialization finished in": "Inizializzazione interna terminata tra",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "File di riferimento {0} non trovato. Questa mod potrebbe non funzionare correttamente senza questo file.",
     "Starting mod": "Modalità di avvio",
     "Command name:": "Nome del comando:",
     "Command definition:": "Definizione del comando:",

@@ -867,7 +867,6 @@ Salviette per cambiare direzione
 Quante passate da fare prima di cambiare direzione a caso?
 Fase finita tra
 Inizializzazione interna terminata tra
-File di riferimento {0} non trovato. Questa mod potrebbe non funzionare correttamente senza questo file.
 Modalità di avvio
 Nome del comando:
 Definizione del comando:

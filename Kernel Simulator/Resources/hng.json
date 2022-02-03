@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Hány törlőkendőt kell megtenni, mielőtt véletlenszerűen irányt váltana?",
     "Stage finished in": "A színpad befejeződött",
     "Internal initialization finished in": "A belső inicializálás befejeződött",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "A hivatkozott fájl ({0}) nem található. Előfordulhat, hogy ez a mod nem működik megfelelően a fájl nélkül.",
     "Starting mod": "Indító mod",
     "Command name:": "Parancs neve:",
     "Command definition:": "Parancs definíció:",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Сколько вайпов нужно сделать перед случайным изменением направления?",
     "Stage finished in": "Этап завершился в",
     "Internal initialization finished in": "Внутренняя инициализация завершена через",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Ссылочный файл {0} не найден. Без этого файла этот мод может работать некорректно.",
     "Starting mod": "Запуск мода",
     "Command name:": "Имя команды:",
     "Command definition:": "Определение команды:",

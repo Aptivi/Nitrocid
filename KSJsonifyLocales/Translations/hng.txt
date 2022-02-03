@@ -867,7 +867,6 @@ Törlőkendők az irányváltáshoz
 Hány törlőkendőt kell megtenni, mielőtt véletlenszerűen irányt váltana?
 A színpad befejeződött
 A belső inicializálás befejeződött
-A hivatkozott fájl ({0}) nem található. Előfordulhat, hogy ez a mod nem működik megfelelően a fájl nélkül.
 Indító mod
 Parancs neve:
 Parancs definíció:

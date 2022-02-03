@@ -867,7 +867,6 @@ Siye pou chanje direksyon
 Konbyen ti sèvyèt pou fè anvan ou chanje direksyon owaza?
 Etap fini an
 Inisyalizasyon entèn fini an
-Dosye referansye {0} pa jwenn. Mod sa a pa ta ka mache byen san dosye sa a.
 Kòmanse mod
 Non kòmand:
 Definisyon lòd:

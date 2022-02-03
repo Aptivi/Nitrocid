@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Kuinka monta pyyhettä on tehtävä ennen suunnan vaihtamista satunnaisesti?",
     "Stage finished in": "Vaihe valmis vuonna",
     "Internal initialization finished in": "Sisäinen alustus valmis vuonna",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Viitattua tiedostoa {0} ei löydy. Tämä mod ei ehkä toimi oikein ilman tätä tiedostoa.",
     "Starting mod": "Käynnistetään mod",
     "Command name:": "Komennon nimi:",
     "Command definition:": "Komennon määritelmä:",

@@ -867,7 +867,6 @@ Cari qovluğu saxlamaq alınmadı: {0}
 İstiqamətini təsadüfi dəyişdirmədən əvvəl nə qədər salfetlər etmək lazımdır?
 Mərhələ bitdi
 Daxili başlatma tamamlandı
-İstinad olunan {0} fayl tapılmadı. Bu fayl bu fayl olmadan düzgün işləməyə bilər.
 Mod başlayır
 Komanda adı:
 Komanda tərifi:

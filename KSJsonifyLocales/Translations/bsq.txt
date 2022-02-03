@@ -867,7 +867,6 @@ Norabidea aldatzeko toailatxoak
 Zenbat toailatxo egin behar dira norabidea ausaz aldatu aurretik?
 Etapa amaituta
 Barne hasieraketa amaitu zen
-Ez da {0} aipatutako fitxategia aurkitu. Mod honek agian ez du behar bezala funtzionatuko fitxategi hau gabe.
 Mod hasita
 Komandoaren izena:
 Komandoaren definizioa:

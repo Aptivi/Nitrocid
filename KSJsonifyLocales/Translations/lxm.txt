@@ -867,7 +867,6 @@ Wipes fir Richtung ze änneren
 Wéi vill Wëschen ze maachen ier Dir zoufälleg Richtung ännert?
 Etapp fäerdeg an
 Intern Initialiséierung fäerdeg an
-Referenzéiert Datei {0} net fonnt. Dëse Mod funktionnéiert vläicht net richteg ouni dës Datei.
 Start Mod
 Kommando Numm:
 Kommando Definitioun:

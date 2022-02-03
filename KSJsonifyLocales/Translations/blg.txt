@@ -867,7 +867,6 @@ Kŭrpichki za promyana na posokata
 Kolko kŭrpichki da napravite, predi da smenite posokata na sluchaen printsip?
 Etapŭt priklyuchi v
 Vŭtreshnata initsializatsiya zavŭrshi v
-Referentniyat faĭl {0} ne e nameren. Tozi mod mozhe da ne raboti pravilno bez tozi faĭl.
 Startirane na mod
 Ime na komandata:
 Definitsiya na komandata:

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Kemm timsaħ x'tagħmel qabel ma tbiddel id-direzzjoni b'mod każwali?",
     "Stage finished in": "Stadju lest ġewwa",
     "Internal initialization finished in": "L-inizjalizzazzjoni interna spiċċat fl",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Il-fajl referenzjat {0} ma nstabx. Dan il-mod jista 'ma jaħdimx sewwa mingħajr dan il-fajl.",
     "Starting mod": "Tibda mod",
     "Command name:": "Isem tal-kmand:",
     "Command definition:": "Definizzjoni tal-kmand:",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Skol'ko vaypov nuzhno sdelat' pered sluchaynym izmeneniyem napravleniya?",
     "Stage finished in": "Etap zavershilsya v",
     "Internal initialization finished in": "Vnutrennyaya initsializatsiya zavershena cherez",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Ssylochnyy fayl {0} ne nayden. Bez etogo fayla etot mod mozhet rabotat' nekorrektno.",
     "Starting mod": "Zapusk moda",
     "Command name:": "Imya komandy:",
     "Command definition:": "Opredeleniye komandy:",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Zenbat toailatxo egin behar dira norabidea ausaz aldatu aurretik?",
     "Stage finished in": "Etapa amaituta",
     "Internal initialization finished in": "Barne hasieraketa amaitu zen",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Ez da {0} aipatutako fitxategia aurkitu. Mod honek agian ez du behar bezala funtzionatuko fitxategi hau gabe.",
     "Starting mod": "Mod hasita",
     "Command name:": "Komandoaren izena:",
     "Command definition:": "Komandoaren definizioa:",

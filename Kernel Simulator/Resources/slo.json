@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Koľko utierok urobiť pred náhodnou zmenou smeru?",
     "Stage finished in": "Fáza skončila v",
     "Internal initialization finished in": "Interná inicializácia dokončená v",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Odkazovaný súbor {0} sa nenašiel. Bez tohto súboru tento mod nemusí fungovať správne.",
     "Starting mod": "Začína sa mod",
     "Command name:": "Názov príkazu:",
     "Command definition:": "Definícia príkazu:",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Koliko brisanja treba napraviti prije nasumičnog mijenjanja smjera?",
     "Stage finished in": "Scena završena",
     "Internal initialization finished in": "Interna inicijalizacija je završena",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Referentna datoteka {0} nije pronađena. Ovaj mod možda neće raditi ispravno bez ove datoteke.",
     "Starting mod": "start mod",
     "Command name:": "Naziv komande:",
     "Command definition:": "Definicija naredbe:",

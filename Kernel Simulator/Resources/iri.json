@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Cé mhéad wipes le déanamh sula n-athraíonn tú treo go randamach?",
     "Stage finished in": "Críochnaithe an stáitse i",
     "Internal initialization finished in": "Críochnaíodh tosaithe inmheánach i",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Níor aimsíodh comhad tagartha {0}. B’fhéidir nach n-oibreodh an mod seo i gceart gan an comhad seo.",
     "Starting mod": "Mod ag tosú",
     "Command name:": "Ainm an ordaithe:",
     "Command definition:": "Sainmhíniú ordaithe:",

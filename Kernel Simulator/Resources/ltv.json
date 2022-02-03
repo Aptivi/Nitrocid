@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Cik daudz salvetes jāizdara, pirms nejauši maina virzienu?",
     "Stage finished in": "Posms pabeigts",
     "Internal initialization finished in": "Iekšējā inicializācija ir pabeigta",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Atsauces fails {0} nav atrasts. Šis modulis var nedarboties pareizi bez šī faila.",
     "Starting mod": "Sāk mod",
     "Command name:": "Komandas nosaukums:",
     "Command definition:": "Komandas definīcija:",

@@ -867,7 +867,6 @@ Waipu de hōkō tenkan
 Randamu ni hōkōwokaeru mae ni nankai waipu suru hitsuyō ga arimasu ka?
 Sutēji shūryō
 naibu shokka ga shūryō shimashita
-sanshō fairu {0} ga mitsukarimasen. Kono mod wa, kono fairu ga nai to tadashiku dōsa shinai kanōsei ga arimasu.
 Kaishi mod
 komando-mei:
 Komando teigi:

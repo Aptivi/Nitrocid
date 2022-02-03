@@ -867,7 +867,6 @@ wipes to change direction
  'ow many wipes to do before changin' direction randomly?
 stage finished in
 internal initialization finished in
-referenced file {0} not found. This here mod might not work properly without this here file.
  startin' mod
 command name:
 command definition:

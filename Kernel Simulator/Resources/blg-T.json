@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Колко кърпички да направите, преди да смените посоката на случаен принцип?",
     "Stage finished in": "Етапът приключи в",
     "Internal initialization finished in": "Вътрешната инициализация завърши в",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Референтният файл {0} не е намерен. Този мод може да не работи правилно без този файл.",
     "Starting mod": "Стартиране на мод",
     "Command name:": "Име на командата:",
     "Command definition:": "Дефиниция на командата:",

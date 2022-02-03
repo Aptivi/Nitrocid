@@ -867,7 +867,6 @@ Wipes chun treo a athrú
 Cé mhéad wipes le déanamh sula n-athraíonn tú treo go randamach?
 Críochnaithe an stáitse i
 Críochnaíodh tosaithe inmheánach i
-Níor aimsíodh comhad tagartha {0}. B’fhéidir nach n-oibreodh an mod seo i gceart gan an comhad seo.
 Mod ag tosú
 Ainm an ordaithe:
 Sainmhíniú ordaithe:

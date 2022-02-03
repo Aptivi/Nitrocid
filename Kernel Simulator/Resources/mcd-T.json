@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Колку бришења треба да направите пред случајно да ја смените насоката?",
     "Stage finished in": "Етапата заврши во",
     "Internal initialization finished in": "Внатрешната иницијализација заврши во",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Референцираната датотека {0} не е пронајдена. Овој мод можеби нема да работи правилно без оваа датотека.",
     "Starting mod": "Стартување на мод",
     "Command name:": "Име на командата:",
     "Command definition:": "Дефиниција на команда:",

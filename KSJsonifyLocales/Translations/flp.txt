@@ -867,7 +867,6 @@ Punasan upang baguhin ang direksyon
 Ilan ang dapat gawin upang punasan bago baguhin ang direksyon nang sapalaran?
 Natapos ang entablado sa
 Natapos ang panloob na pagpapasimula sa
-Ang referensiyang file na {0} ay hindi nahanap. Ang mod na ito ay maaaring hindi gumana nang maayos nang wala ang file na ito.
 Simula mod
 Pangalan ng utos:
 Kahulugan ng utos:

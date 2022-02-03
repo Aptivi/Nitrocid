@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "在随机改变方向之前要进行多少次擦拭？",
     "Stage finished in": "阶段结束",
     "Internal initialization finished in": "内部初始化完成",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "未找到引用的文件 {0}。如果没有这个文件，这个 mod 可能无法正常工作。",
     "Starting mod": "启动模式",
     "Command name:": "命令名称：",
     "Command definition:": "命令定义：",

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Бағытты кездейсоқ өзгертпес бұрын қанша сүрту керек?",
     "Stage finished in": "Сахна аяқталды",
     "Internal initialization finished in": "Ішкі инициализация аяқталды",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "{0} сілтеме жасалған файл табылмады. Бұл файлсыз бұл режим дұрыс жұмыс істемеуі мүмкін.",
     "Starting mod": "Модульді іске қосу",
     "Command name:": "Пәрмен атауы:",
     "Command definition:": "Команданың анықтамасы:",

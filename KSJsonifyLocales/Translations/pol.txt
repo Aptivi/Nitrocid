@@ -867,7 +867,6 @@ Chusteczki do zmiany kierunku
 Ile wyciera? nale?y wykona? przed losow? zmian? kierunku?
 Etap uko?czony za
 Inicjalizacja wewn?trzna zako?czona za
-Nie znaleziono pliku odniesienia {0}. Ten mod mo?e nie dzia?a? poprawnie bez tego pliku.
 Tryb startowy
 Nazwa polecenia:
 Definicja polecenia:

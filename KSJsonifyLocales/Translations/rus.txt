@@ -867,7 +867,6 @@ Salfetki dlya izmeneniya napravleniya
 Skol'ko vaypov nuzhno sdelat' pered sluchaynym izmeneniyem napravleniya?
 Etap zavershilsya v
 Vnutrennyaya initsializatsiya zavershena cherez
-Ssylochnyy fayl {0} ne nayden. Bez etogo fayla etot mod mozhet rabotat' nekorrektno.
 Zapusk moda
 Imya komandy:
 Opredeleniye komandy:

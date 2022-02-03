@@ -867,7 +867,6 @@ Lap untuk menukar arah
 Berapa banyak tisu yang perlu dilakukan sebelum menukar arah secara rawak?
 Pentas selesai dalam
 Permulaan dalaman selesai pada
-Fail yang dirujuk {0} tidak dijumpai. Mod ini mungkin tidak berfungsi dengan baik tanpa fail ini.
 Memulakan mod
 Nama arahan:
 Definisi arahan:

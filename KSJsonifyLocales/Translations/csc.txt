@@ -867,7 +867,6 @@ Salviette per cambià di direzzione
 Quante salviette da fà prima di cambià di direzzione à casu?
 Stage finitu in
 Inizializazione interna finita in
-U schedariu riferitu {0} ùn hè micca statu truvatu. Questa mod puderia micca funzionà currettamente senza stu fugliale.
 Principià mod
 Nome di cumanda:
 Definizione di cumandamentu:

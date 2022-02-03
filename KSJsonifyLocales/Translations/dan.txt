@@ -867,7 +867,6 @@ Doekjes om van richting te veranderen
 Hoeveel doekjes moet je doen voordat je willekeurig van richting verandert?
 Stage geëindigd in
 Interne initialisatie voltooid in
-Verwezen bestand {0} niet gevonden. Deze mod werkt mogelijk niet goed zonder dit bestand.
 Startmodus
 Commando naam:
 Commando definitie:

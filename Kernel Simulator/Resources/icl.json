@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Hversu margar þurrkar á að gera áður en skipt er um stefnu af handahófi?",
     "Stage finished in": "Sviðinu lauk í",
     "Internal initialization finished in": "Innri frumstillingu lauk í",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Tilvísunarskrá {0} fannst ekki. Þetta mod gæti ekki virkað rétt án þessarar skráar.",
     "Starting mod": "Byrjar mod",
     "Command name:": "Skipunarheiti:",
     "Command definition:": "Skipunarskilgreining:",

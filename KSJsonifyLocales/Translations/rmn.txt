@@ -867,7 +867,6 @@ Salvarea directorului curent nu a reu?it: {0}
 Câte ?erve?ele de f?cut înainte de a schimba direc?ia la întâmplare?
 Etapa terminat? în
 Ini?ializarea intern? s-a încheiat în
-Fi?ierul de referin?? {0} nu a fost g?sit. Este posibil ca acest mod s? nu func?ioneze corect f?r? acest fi?ier.
 Incepând mod
 Numele comenzii:
 Defini?ia comenzii:

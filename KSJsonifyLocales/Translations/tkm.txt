@@ -867,7 +867,6 @@ Ugry üýtgetmek üçin süpürgiç
 Tötänleýin ugry üýtgetmezden ozal näçe süpürgiç etmeli?
 Tapgyr tamamlandy
 Içerki başlangyç gutardy
-Salgylanan faýl {0} tapylmady. Bu mod bu faýl bolmasa dogry işlemän biler.
 Başlangyç mod
 Buýruk ady:
 Buýruk kesgitlemesi:

@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "Có bao nhiêu lần lau phải làm trước khi đổi hướng ngẫu nhiên?",
     "Stage finished in": "Giai đoạn kết thúc trong",
     "Internal initialization finished in": "Khởi tạo nội bộ đã hoàn thành trong",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "Tệp được tham chiếu {0} không được tìm thấy. Bản mod này có thể không hoạt động bình thường nếu không có tệp này.",
     "Starting mod": "Bắt đầu mod",
     "Command name:": "Tên lệnh:",
     "Command definition:": "Định nghĩa lệnh:",

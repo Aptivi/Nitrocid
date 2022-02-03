@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "ランダムに方向を変える前に何回ワイプする必要がありますか?",
     "Stage finished in": "ステージ終了",
     "Internal initialization finished in": "内部初期化が終了しました",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "参照ファイル {0} が見つかりません。この mod は、このファイルがないと正しく動作しない可能性があります。",
     "Starting mod": "開始 mod",
     "Command name:": "コマンド名:",
     "Command definition:": "コマンド定義:",

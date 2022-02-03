@@ -867,7 +867,6 @@ Maramčinja za promena na nasokata
 Kolku brišenja treba da napravite pred slučajno da ja smenite nasokata?
 Etapata završi vo
 Vnatrešnata inicijalizacija završi vo
-Referenciranata datoteka {0} ne e pronajdena. Ovoj mod možebi nema da raboti pravilno bez ovaa datoteka.
 Startuvanje na mod
 Ime na komandata:
 Definicija na komanda:

@@ -867,7 +867,6 @@ Pyyhkeet vaihtaa suuntaa
 Kuinka monta pyyhettä on tehtävä ennen suunnan vaihtamista satunnaisesti?
 Vaihe valmis vuonna
 Sisäinen alustus valmis vuonna
-Viitattua tiedostoa {0} ei löydy. Tämä mod ei ehkä toimi oikein ilman tätä tiedostoa.
 Käynnistetään mod
 Komennon nimi:
 Komennon määritelmä:

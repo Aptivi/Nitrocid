@@ -867,7 +867,6 @@ Pagpahid aron mausab ang direksyon
 Pila ka pagpahid ang buhaton sa dili pa mag-ilis sa direksyon nga random?
 Natapos ang entablado sa
 Ang internal nga pagsugod nahuman sa
-Ang gi-refer nga payl {0} wala makit-an. Mahimong dili molihok kini nga mod kung wala kini nga file.
 Pagsugod sa mod
 Ngalan sa sugo:
 Kahulugan sa sugo:

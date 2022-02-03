@@ -871,7 +871,6 @@
     "How many wipes to do before changing direction randomly?": "अनियमित रूपमा दिशा परिवर्तन गर्नु अघि कतिवटा वाइपहरू गर्नुपर्छ?",
     "Stage finished in": "स्टेज मा समाप्त भयो",
     "Internal initialization finished in": "आन्तरिक प्रारम्भमा समाप्त भयो",
-    "Referenced file {0} not found. This mod might not work properly without this file.": "सन्दर्भ फाइल {0} फेला परेन। यो मोडले यो फाइल बिना राम्रोसँग काम नगर्न सक्छ।",
     "Starting mod": "मोड सुरु गर्दै",
     "Command name:": "आदेश नाम:",
     "Command definition:": "आदेश परिभाषा:",

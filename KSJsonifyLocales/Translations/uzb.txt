@@ -867,7 +867,6 @@ Yo'nalishni o'zgartirish uchun salfetkalar
 Yo'nalishni tasodifiy o'zgartirishdan oldin qancha ro'molcha qilish kerak?
 Sahna tugadi
 Ichki ishga tushirish tugadi
-{0} havola qilingan fayl topilmadi. Ushbu fayl ushbu rejimsiz to'g'ri ishlamasligi mumkin.
 Tartibni boshlash
 Buyruq nomi:
 Buyruq ta'rifi:

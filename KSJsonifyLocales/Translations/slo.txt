@@ -867,7 +867,6 @@ Utierky na zmenu smeru
 Koľko utierok urobiť pred náhodnou zmenou smeru?
 Fáza skončila v
 Interná inicializácia dokončená v
-Odkazovaný súbor {0} sa nenašiel. Bez tohto súboru tento mod nemusí fungovať správne.
 Začína sa mod
 Názov príkazu:
 Definícia príkazu:
