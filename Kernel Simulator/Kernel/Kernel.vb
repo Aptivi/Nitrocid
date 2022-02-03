@@ -108,7 +108,7 @@ Namespace Kernel
                     CheckErrored()
 
                     'Stage 1: Initialize the system
-                    ReportNewStage(1, "System initialization")
+                    ReportNewStage(1, DoTranslation("- Stage 1: System initialization"))
                     If RDebugAutoStart And DebugMode Then
                         ReportProgress(DoTranslation("Starting the remote debugger..."), 3, ColTypes.Neutral)
                         StartRDebugThread()
@@ -139,14 +139,14 @@ Namespace Kernel
 #End If
 
                     'Phase 2: Probe hardware
-                    ReportNewStage(2, "Hardware detection")
+                    ReportNewStage(2, DoTranslation("- Stage 2: Hardware detection"))
                     If Not QuietHardwareProbe Then ReportProgress(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15, ColTypes.Progress)
                     StartProbing()
                     If Not EnableSplash And Not QuietKernel Then ListHardware()
                     CheckErrored()
 
                     'Phase 3: Parse Mods and Screensavers
-                    ReportNewStage(3, "Mods and screensavers detection")
+                    ReportNewStage(3, DoTranslation("- Stage 3: Mods and screensavers detection"))
                     Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
                     If Not SafeMode Then
                         If StartKernelMods Then StartMods()
@@ -156,7 +156,7 @@ Namespace Kernel
                     Kernel.KernelEventManager.RaiseStartKernel()
 
                     'Phase 4: Log-in
-                    ReportNewStage(4, "Log in")
+                    ReportNewStage(4, DoTranslation("- Stage 4: Log in"))
                     InitializeSystemAccount()
                     ReportProgress(DoTranslation("System account initialized"), 5, ColTypes.Neutral)
                     InitializeUsers()
@@ -165,7 +165,7 @@ Namespace Kernel
                     ReportProgress(DoTranslation("Permissions loaded"), 5, ColTypes.Neutral)
 
                     'Reset console state and stop stage timer
-                    ReportNewStage(5, "Done!")
+                    ReportNewStage(5, "")
 
                     'Show the closing screen
                     ReportProgress(DoTranslation("Welcome!"), 100, ColTypes.Success)

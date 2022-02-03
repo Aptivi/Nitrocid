@@ -587,9 +587,9 @@ Namespace Kernel
             If StageNumber >= 1 And StageNumber <= 4 Then
                 If Not EnableSplash And Not QuietKernel Then
                     Console.WriteLine()
-                    WriteSeparator(DoTranslation($"- Stage {StageNumber}: {StageText}"), False, ColTypes.Stage)
+                    WriteSeparator(StageText, False, ColTypes.Stage)
                 End If
-                Wdbg(DebugLevel.I, $"- Kernel stage {StageNumber}: {StageText}")
+                Wdbg(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}")
             End If
         End Sub
 
