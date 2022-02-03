@@ -69,8 +69,11 @@ Namespace Misc.Timers
                 WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
             End If
 
+            'Print the border
+            WriteWhere("═".Repeat(Console.WindowWidth), 0, KeysTextTopPosition - 2, True, ColTypes.Gray)
+
+            'Wait for a keypress
             While KeysKeypress <> ConsoleKey.Escape
-                'Wait for a keypress
                 KeysKeypress = Console.ReadKey(True).Key
 
                 'Check for a keypress
@@ -82,16 +85,16 @@ Namespace Misc.Timers
                         TimerStarted = Date.Now
                         If Not TimerUpdate.IsAlive Then TimerUpdate.Start()
                     Case ConsoleKey.T
-                        'User requested to specif the timeout in milliseconds
+                        'User requested to specify the timeout in milliseconds
                         If Not Timer.Enabled Then
-                            WriteWhere(DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", 2, KeysTextTopPosition - 2, False, ColTypes.Question, TimerInterval)
+                            WriteWhere(DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", 2, KeysTextTopPosition - 4, False, ColTypes.Question, TimerInterval)
                             SetInputColor()
 
                             'Try to parse the interval
                             Dim UnparsedInterval As String = Console.ReadLine()
                             If Not Double.TryParse(UnparsedInterval, TimerInterval) Then
                                 'Not numeric.
-                                WriteWhere(DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 2, False, ColTypes.Error)
+                                WriteWhere(DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, False, ColTypes.Error)
                                 ClearLineToRight()
                                 Console.ReadKey()
                             Else
@@ -106,7 +109,7 @@ Namespace Misc.Timers
                             End If
 
                             'Clean up
-                            Console.SetCursorPosition(0, KeysTextTopPosition - 2)
+                            Console.SetCursorPosition(0, KeysTextTopPosition - 4)
                             ClearLineToRight()
                         End If
                     Case ConsoleKey.Escape
@@ -186,7 +189,7 @@ Namespace Misc.Timers
 
             'Now, get the normal time left and top position and update the values according to timer type
             TimeLeftPosition = HalfWidth - (RemainingTimeText.Length / 2)
-            TimeTopPosition = HalfHeight - 2
+            TimeTopPosition = HalfHeight - 3
             If EnableFigletTimer Then
                 TimeLeftPosition = FigletTimeLeftPosition
                 TimeTopPosition = FigletTimeTopPosition
