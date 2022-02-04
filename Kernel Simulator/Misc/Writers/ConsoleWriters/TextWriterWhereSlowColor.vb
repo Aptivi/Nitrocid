@@ -49,7 +49,7 @@ Namespace Misc.Writers.ConsoleWriters
                         Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                         For Each ParagraphChar As Char In MessageParagraph
                             Thread.Sleep(MsEachLetter)
-                            If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            If Console.CursorLeft = Console.WindowWidth Then
                                 Console.CursorTop += 1
                                 Console.CursorLeft = Left
                             End If

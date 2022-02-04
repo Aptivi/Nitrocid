@@ -44,7 +44,7 @@ Namespace Misc.Writers.ConsoleWriters
                         'We can now check to see if we're writing a letter past the console window width
                         Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                         For Each ParagraphChar As Char In MessageParagraph
-                            If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            If Console.CursorLeft = Console.WindowWidth Then
                                 If Console.CursorTop = Console.BufferHeight - 1 Then
                                     'We've reached the end of buffer. Write the line to scroll.
                                     Console.WriteLine()
