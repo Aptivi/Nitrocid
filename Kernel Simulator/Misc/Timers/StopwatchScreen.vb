@@ -41,7 +41,7 @@ Namespace Misc.Timers
             Dim LapsText As String = DoTranslation("Lap")
             Dim HalfWidth As Integer = Console.WindowWidth / 2
             Dim HalfHeight As Integer = Console.WindowHeight / 2
-            Dim TimeLeftPosition As Integer = HalfWidth / 0.8 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
+            Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
             Dim TimeTopPosition As Integer = HalfHeight - 2
             Dim LapsCurrentLapLeftPosition As Integer = 4
             Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 6
@@ -137,7 +137,7 @@ Namespace Misc.Timers
             Dim LapsText As String = DoTranslation("Lap")
             Dim HalfWidth As Integer = Console.WindowWidth / 2
             Dim HalfHeight As Integer = Console.WindowHeight / 2
-            Dim TimeLeftPosition As Integer = HalfWidth / 0.8 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
+            Dim TimeLeftPosition As Integer = HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2
             Dim TimeTopPosition As Integer = HalfHeight - 2
             Dim LapsCurrentLapLeftPosition As Integer = 4
             Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 6
@@ -178,10 +178,10 @@ Namespace Misc.Timers
             WriteWhere("═".Repeat(Console.WindowWidth), 0, KeysTextTopPosition - 2, True, ColTypes.Gray)
             WriteWhere("═".Repeat(Console.WindowWidth), 0, 1, True, ColTypes.Gray)
             For Height = 2 To KeysTextTopPosition - 2
-                WriteWhere("║", CInt(HalfWidth / 2), Height, True, ColTypes.Gray)
+                WriteWhere("║", HalfWidth, Height, True, ColTypes.Gray)
             Next
-            WriteWhere("╩", CInt(HalfWidth / 2), KeysTextTopPosition - 2, True, ColTypes.Gray)
-            WriteWhere("╦", CInt(HalfWidth / 2), 1, True, ColTypes.Gray)
+            WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, True, ColTypes.Gray)
+            WriteWhere("╦", HalfWidth, 1, True, ColTypes.Gray)
         End Sub
 
     End Module
