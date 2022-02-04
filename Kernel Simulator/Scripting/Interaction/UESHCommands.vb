@@ -84,13 +84,13 @@ Namespace Scripting.Interaction
                         Write(Question, True, ColTypes.Question)
                         Write("<{0}> ", False, ColTypes.Input, AnswersStr)
                     Case ChoiceOutputType.Modern
-                        Write(Question + vbNewLine, True, ColTypes.Question)
+                        Write(Question + NewLine, True, ColTypes.Question)
                         For AnswerIndex As Integer = 0 To answers.Length - 1
                             Dim AnswerInstance As String = answers(AnswerIndex)
                             Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
                             Write($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
                         Next
-                        Write(vbNewLine + ">> ", False, ColTypes.Input)
+                        Write(NewLine + ">> ", False, ColTypes.Input)
                     Case ChoiceOutputType.Table
                         Dim ChoiceHeader As String() = {DoTranslation("Possible answers"), DoTranslation("Answer description")}
                         Dim ChoiceData(answers.Length - 1, 1) As String
@@ -100,7 +100,7 @@ Namespace Scripting.Interaction
                             ChoiceData(AnswerIndex, 1) = AnswersTitles(AnswerIndex)
                         Next
                         WriteTable(ChoiceHeader, ChoiceData, 2)
-                        Write(vbNewLine + ">> ", False, ColTypes.Input)
+                        Write(NewLine + ">> ", False, ColTypes.Input)
                 End Select
 
                 'Wait for an answer
@@ -151,7 +151,7 @@ Namespace Scripting.Interaction
                 End If
 
                 'Ask a question
-                Write(Question + vbNewLine, True, ColTypes.Question)
+                Write(Question + NewLine, True, ColTypes.Question)
                 For AnswerIndex As Integer = 0 To answers.Length - 1
                     Dim AnswerInstance As String = answers(AnswerIndex)
                     Dim AnswerTitle As String = AnswersTitles(AnswerIndex)

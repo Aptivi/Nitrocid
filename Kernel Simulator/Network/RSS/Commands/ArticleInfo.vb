@@ -40,7 +40,7 @@ Namespace Network.RSS.Commands
                         Write(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
                     End If
                 Next
-                Write(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
+                Write(NewLine + Article.ArticleDescription, True, ColTypes.Neutral)
             End If
         End Sub
 

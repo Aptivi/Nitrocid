@@ -36,7 +36,7 @@ Namespace Shell.Commands
         End Sub
 
         Public Overrides Sub HelpHelper()
-            Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+            Write(DoTranslation("where <$variable> is any variable that will be used to store response") + NewLine +
               DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
         End Sub
 

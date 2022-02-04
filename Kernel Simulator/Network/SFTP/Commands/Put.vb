@@ -29,10 +29,10 @@ Namespace Network.SFTP.Commands
             'Begin the uploading process
             If SFTPUploadFile(ListArgs(0)) Then
                 Console.WriteLine()
-                Write(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
+                Write(NewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
             Else
                 Console.WriteLine()
-                Write(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
+                Write(NewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
             End If
         End Sub
 

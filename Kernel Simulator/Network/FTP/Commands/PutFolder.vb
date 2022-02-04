@@ -30,10 +30,10 @@ Namespace Network.FTP.Commands
             Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPUploadFolder(RemoteFolder, LocalFolder), FTPUploadFolder(RemoteFolder))
             If Result Then
                 Console.WriteLine()
-                Write(vbNewLine + DoTranslation("Uploaded folder {0}"), True, ColTypes.Success, ListArgs(0))
+                Write(NewLine + DoTranslation("Uploaded folder {0}"), True, ColTypes.Success, ListArgs(0))
             Else
                 Console.WriteLine()
-                Write(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
+                Write(NewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
             End If
         End Sub
 

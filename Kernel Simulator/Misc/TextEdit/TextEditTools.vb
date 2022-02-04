@@ -80,7 +80,7 @@ Namespace Misc.TextEdit
                 Wdbg(DebugLevel.I, "Trying to save file...")
                 TextEdit_FileStream.SetLength(0)
                 Wdbg(DebugLevel.I, "Length set to 0.")
-                Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(TextEdit_FileLines.ToArray.Join(vbNewLine))
+                Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(TextEdit_FileLines.ToArray.Join(NewLine))
                 Wdbg(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
                 TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
                 TextEdit_FileStream.Flush()

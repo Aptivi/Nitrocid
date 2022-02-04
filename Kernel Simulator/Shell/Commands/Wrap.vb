@@ -32,7 +32,7 @@ Namespace Shell.Commands
                     Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                     Dim WrapOutput As String = WrapOutputStream.ReadToEnd
                     WriteWrapped(WrapOutput, False, ColTypes.Neutral)
-                    If Not WrapOutput.EndsWith(vbNewLine) Then Console.WriteLine()
+                    If Not WrapOutput.EndsWith(NewLine) Then Console.WriteLine()
                     WrapOutputStream.Close()
                     File.Delete(WrapOutputPath)
                 Else

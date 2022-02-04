@@ -48,7 +48,7 @@ Namespace Shell.Commands
         End Sub
 
         Public Overrides Sub HelpHelper()
-            Write(DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+            Write(DoTranslation("where <$variable> is any variable that will be used to store response") + NewLine +
                   DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
             Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
             Write("  -multiple: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicate that the answer can take more than one character"), True, ColTypes.ListValue)

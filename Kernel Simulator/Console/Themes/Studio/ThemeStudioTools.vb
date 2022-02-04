@@ -346,7 +346,7 @@ Namespace ConsoleBase.Themes.Studio
         ''' </summary>
         Sub PreparePreview()
             Console.Clear()
-            Write(DoTranslation("Here's how your theme will look like:") + vbNewLine, True, ColTypes.Neutral)
+            Write(DoTranslation("Here's how your theme will look like:") + NewLine, True, ColTypes.Neutral)
 
             'Print every possibility of color types
             'Input color
@@ -498,7 +498,7 @@ Namespace ConsoleBase.Themes.Studio
             Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableValueColor)
 
             'Pause until a key is pressed
-            Write(vbNewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)
+            Write(NewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)
             Console.ReadKey()
         End Sub
 

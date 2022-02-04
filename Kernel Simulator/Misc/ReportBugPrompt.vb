@@ -30,10 +30,10 @@ Namespace Misc
 
             'First, select what kind of bug you're reporting
             While [Step] = 1
-                Write(DoTranslation("Thank you for raising a ticket to us! Select what kind of request do you have.") + vbNewLine, True, ColTypes.Neutral)
+                Write(DoTranslation("Thank you for raising a ticket to us! Select what kind of request do you have.") + NewLine, True, ColTypes.Neutral)
                 Write(" 1) " + DoTranslation("A problem"), True, ColTypes.Option)
                 Write(" 2) " + DoTranslation("A feature request"), True, ColTypes.Option)
-                Write(" 3) " + DoTranslation("A question") + vbNewLine, True, ColTypes.Option)
+                Write(" 3) " + DoTranslation("A question") + NewLine, True, ColTypes.Option)
                 Write(">> ", False, ColTypes.Input)
                 If Integer.TryParse(Console.ReadLine, AnswerKind) Then
                     Wdbg(DebugLevel.I, "Answer: {0}", AnswerKind)
@@ -56,7 +56,7 @@ Namespace Misc
 
             'Second, type what feature you need to raise a ticket on
             While [Step] = 2
-                Write(DoTranslation("Type a feature that you want to raise a ticket on.") + vbNewLine, True, ColTypes.Neutral)
+                Write(DoTranslation("Type a feature that you want to raise a ticket on.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
                 AnswerFeature = Console.ReadLine
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerFeature)
@@ -72,7 +72,7 @@ Namespace Misc
 
             'Third, type your idea, question or problem
             While [Step] = 3
-                Write(DoTranslation("Ask a question, jot your idea, or report a problem.") + vbNewLine, True, ColTypes.Neutral)
+                Write(DoTranslation("Ask a question, jot your idea, or report a problem.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
                 AnswerRequest = Console.ReadLine
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerRequest)

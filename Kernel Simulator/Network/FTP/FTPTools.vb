@@ -143,7 +143,7 @@ Namespace Network.FTP
                 Next
                 WriteTable(ProfHeaders, ProfData, 2, ColTypes.Option)
                 While Not profanswered
-                    Write(vbNewLine + ">> ", False, ColTypes.Input)
+                    Write(NewLine + ">> ", False, ColTypes.Input)
                     profanswer = Console.ReadLine
                     Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
                     If IsNumeric(profanswer) Then
@@ -153,7 +153,7 @@ Namespace Network.FTP
                             profanswered = True
                         Catch ex As Exception
                             Wdbg(DebugLevel.I, "Profile invalid")
-                            Write(DoTranslation("Invalid profile selection.") + vbNewLine, True, ColTypes.Error)
+                            Write(DoTranslation("Invalid profile selection.") + NewLine, True, ColTypes.Error)
                             WStkTrc(ex)
                         End Try
                     End If

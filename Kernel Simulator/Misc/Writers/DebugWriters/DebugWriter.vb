@@ -168,16 +168,16 @@ Namespace Misc.Writers.DebugWriters
         ''' <param name="Ex">An exception</param>
         Public Sub WStkTrc(Ex As Exception)
             If DebugMode Then
-                'These two vbNewLines are padding for accurate stack tracing.
+                'These two NewLines are padding for accurate stack tracing.
                 Dim Inner As Exception = Ex.InnerException
                 Dim InnerNumber As Integer = 1
                 Dim NewStackTraces As New List(Of String) From {
-                $"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}"
+                $"{NewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{NewLine}{Ex.StackTrace}{NewLine}"
             }
 
                 'Get all the inner exceptions
                 Do Until Inner Is Nothing
-                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
+                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{NewLine}{Inner.StackTrace}{NewLine}")
                     InnerNumber += 1
                     Inner = Inner.InnerException
                 Loop

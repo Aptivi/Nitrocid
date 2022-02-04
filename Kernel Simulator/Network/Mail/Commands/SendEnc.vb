@@ -49,7 +49,7 @@ Namespace Network.Mail.Commands
                     BodyLine = Console.ReadLine
                     If Not BodyLine.ToUpper = "EOF" Then
                         Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
-                        Body.TextBody += BodyLine + vbNewLine
+                        Body.TextBody += BodyLine + NewLine
                         Wdbg(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length)
                     End If
                 End While

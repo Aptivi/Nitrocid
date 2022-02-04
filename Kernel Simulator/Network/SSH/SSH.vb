@@ -58,9 +58,9 @@ Namespace Network.SSH
             Dim Answer As Integer
             While True
                 'Ask for authentication method
-                Write(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Question)
+                Write(DoTranslation("How do you want to authenticate?") + NewLine, True, ColTypes.Question)
                 Write("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
-                Write("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
+                Write("2) " + DoTranslation("Password") + NewLine, True, ColTypes.Option)
                 Write(">> ", False, ColTypes.Input)
                 If Integer.TryParse(Console.ReadLine, Answer) Then
                     'Check for answer
@@ -220,7 +220,7 @@ Namespace Network.SSH
                 Write(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, ex.Message)
             Finally
                 Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
-                Write(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+                Write(NewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
                 DisconnectionRequested = False
 
                 'Remove handler for SSH
@@ -270,7 +270,7 @@ Namespace Network.SSH
                 KernelEventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
             Finally
                 Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
-                Write(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+                Write(NewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
                 DisconnectionRequested = False
                 KernelEventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
 

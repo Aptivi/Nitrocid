@@ -27,9 +27,9 @@ Namespace Network.FTP.Commands
             If FtpConnected Then
                 Write(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
                 If FTPCopyItem(ListArgs(0), ListArgs(1)) Then
-                    Write(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Success)
+                    Write(NewLine + DoTranslation("Copied successfully"), True, ColTypes.Success)
                 Else
-                    Write(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
+                    Write(NewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
                 End If
             Else
                 Write(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)

@@ -165,7 +165,7 @@ Namespace Shell.ShellBase
                     Next
 
                     'The mod commands
-                    DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Mod commands:") + If(ShowCommandsCount And ShowModCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, ModCommandList.Count)
+                    DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("Mod commands:") + If(ShowCommandsCount And ShowModCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, ModCommandList.Count)
                     If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No mod commands."), True, ColTypes.Warning)
                     For Each cmd As String In ModCommandList.Keys
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
@@ -173,7 +173,7 @@ Namespace Shell.ShellBase
                     Next
 
                     'The alias commands
-                    DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Alias commands:") + If(ShowCommandsCount And ShowShellAliasesCount, " [{0}]", ""), True, ColTypes.ListTitle, AliasedCommandList.Count)
+                    DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("Alias commands:") + If(ShowCommandsCount And ShowShellAliasesCount, " [{0}]", ""), True, ColTypes.ListTitle, AliasedCommandList.Count)
                     If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No alias commands."), True, ColTypes.Warning)
                     For Each cmd As String In AliasedCommandList.Keys
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
@@ -182,7 +182,7 @@ Namespace Shell.ShellBase
 
                     'A tip for you all
                     If CommandType = ShellType.Shell Then
-                        DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Tip)
+                        DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Tip)
                     End If
                 Else
                     'The built-in commands

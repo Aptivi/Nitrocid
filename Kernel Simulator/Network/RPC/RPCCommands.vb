@@ -74,7 +74,7 @@ Namespace Network.RPC
                         Case "Shutdown", "Reboot", "RebootSafe", "Lock", "SaveScr", "Exec", "Acknowledge", "Ping"
                             'Populate the byte message to send the confirmation to
                             Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                            ByteMsg = Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + vbNewLine)
+                            ByteMsg = Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + NewLine)
                         Case Else
                             'Rare case reached. Drop it.
                             Wdbg(DebugLevel.E, "Malformed request. {0}", Cmd)
@@ -127,14 +127,14 @@ Namespace Network.RPC
                         If LoggedIn Then
                             Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
                             Console.WriteLine()
-                            GetLine(Message.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
+                            GetLine(Message.Replace("ExecConfirm, ", "").Replace(NewLine, ""))
                         Else
                             Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
                         End If
                     ElseIf Message.StartsWith("AckConfirm") Then
-                        Wdbg(DebugLevel.I, "{0} says ""Hello.""", Message.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
+                        Wdbg(DebugLevel.I, "{0} says ""Hello.""", Message.Replace("AckConfirm, ", "").Replace(NewLine, ""))
                     ElseIf Message.StartsWith("PingConfirm") Then
-                        Dim IPAddr As String = Message.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
+                        Dim IPAddr As String = Message.Replace("PingConfirm, ", "").Replace(NewLine, "")
                         Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr)
                         NotifySend(New Notification(DoTranslation("Ping!"),
                                                     DoTranslation("{0} pinged you.").FormatString(IPAddr),

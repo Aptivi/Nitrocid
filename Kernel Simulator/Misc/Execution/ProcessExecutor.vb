@@ -120,7 +120,7 @@ Namespace Misc.Execution
             Catch ex As Exception
                 KernelEventManager.RaiseProcessError(File + Args, ex)
                 WStkTrc(ex)
-                Write(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, File)
+                Write(DoTranslation("Error trying to execute command") + " {2}." + NewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, File)
             End Try
             Return -1
         End Function

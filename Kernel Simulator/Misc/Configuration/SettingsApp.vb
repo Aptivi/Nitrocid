@@ -39,7 +39,7 @@ Namespace Misc.Configuration
                 Console.Clear()
                 'List sections
                 WriteSeparator(DoTranslation("Welcome to Settings!"), True)
-                Write(vbNewLine + DoTranslation("Select section:") + vbNewLine, True, ColTypes.Neutral)
+                Write(NewLine + DoTranslation("Select section:") + NewLine, True, ColTypes.Neutral)
                 For SectionIndex As Integer = 0 To MaxSections - 1
                     Dim Section As JProperty = SettingsToken.ToList(SectionIndex)
                     If SettingsType <> SettingsType.Normal Then
@@ -150,7 +150,7 @@ Namespace Misc.Configuration
                 While Not SectionFinished
                     Console.Clear()
                     WriteSeparator(DoTranslation(Section + " Settings..."), True)
-                    Write(vbNewLine + DoTranslation(SectionDescription) + vbNewLine, True, ColTypes.Neutral)
+                    Write(NewLine + DoTranslation(SectionDescription) + NewLine, True, ColTypes.Neutral)
 
                     'List options
                     For SectionIndex As Integer = 0 To MaxOptions - 1
@@ -178,7 +178,7 @@ Namespace Misc.Configuration
                         End If
                     Next
                     Console.WriteLine()
-                    Write(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxOptions + 1)
+                    Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxOptions + 1)
                     Wdbg(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions)
 
                     'Prompt user and check for input
@@ -213,7 +213,7 @@ Namespace Misc.Configuration
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message)
                 WriteSeparator("???", True)
-                Write(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
+                Write(NewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
                 Write("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
                 Write("X) " + ex.Message, True, ColTypes.Error)
                 Console.ReadKey()
@@ -266,7 +266,7 @@ Namespace Misc.Configuration
 
                     'Make an introductory banner
                     WriteSeparator(DoTranslation(Section + " Settings...") + " > " + DoTranslation(KeyName), True)
-                    Write(vbNewLine + DoTranslation(KeyDescription), True, ColTypes.Neutral)
+                    Write(NewLine + DoTranslation(KeyDescription), True, ColTypes.Neutral)
 
                     'See how to get the value
                     If Not KeyType = SettingsKeyType.SUnknown Then
@@ -328,9 +328,9 @@ Namespace Misc.Configuration
                     If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And
                    Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And
                    Not KeyType = SettingsKeyType.SChar Then
-                        Write(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
+                        Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
                     ElseIf KeyType = SettingsKeyType.SList Then
-                        Write(vbNewLine + " q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+                        Write(NewLine + " q) " + DoTranslation("Save Changes...") + NewLine, True, ColTypes.Option, MaxKeyOptions + 1)
                     End If
 
                     'Print debugging info
@@ -502,7 +502,7 @@ Namespace Misc.Configuration
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message)
                 WriteSeparator(DoTranslation(Section + " Settings...") + " > ???", True)
-                Write(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
+                Write(NewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
                 Write("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
                 Write("X) " + ex.Message, True, ColTypes.Error)
                 Console.ReadKey()

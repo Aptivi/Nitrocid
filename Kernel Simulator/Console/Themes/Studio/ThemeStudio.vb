@@ -34,7 +34,7 @@ Namespace ConsoleBase.Themes.Studio
             While Not StudioExiting
                 Wdbg(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions)
                 Console.Clear()
-                Write(DoTranslation("Making a new theme ""{0}"".") + vbNewLine, True, ColTypes.Neutral, ThemeName)
+                Write(DoTranslation("Making a new theme ""{0}"".") + NewLine, True, ColTypes.Neutral, ThemeName)
 
                 'List options
                 Write("1) " + DoTranslation("Input color") + ": [{0}] ", True, ColTypes.Option, SelectedInputColor.PlainSequence)

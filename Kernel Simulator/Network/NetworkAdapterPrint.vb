@@ -113,19 +113,19 @@ Namespace Network
         ''' <param name="AdapterNumber">Reference adapter number</param>
         Sub PrintAdapterIPv4Info(NInterface As NetworkInterface, Properties As IPv4InterfaceProperties, Statistics As IPv4InterfaceStatistics, AdapterNumber As Long)
             If ExtensiveAdapterInformation Then
-                Write(DoTranslation("IPv4 information:") + vbNewLine +
-                  DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
-                  DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
-                  DoTranslation("Maximum Transmission Unit: {2} Units") + vbNewLine +
-                  DoTranslation("DHCP Enabled:") + " {3}" + vbNewLine +
-                  DoTranslation("Non-unicast packets:") + " {4}/{5}" + vbNewLine +
-                  DoTranslation("Unicast packets:") + " {6}/{7}" + vbNewLine +
+                Write(DoTranslation("IPv4 information:") + NewLine +
+                  DoTranslation("Adapter Number:") + " {0}" + NewLine +
+                  DoTranslation("Adapter Name:") + " {1}" + NewLine +
+                  DoTranslation("Maximum Transmission Unit: {2} Units") + NewLine +
+                  DoTranslation("DHCP Enabled:") + " {3}" + NewLine +
+                  DoTranslation("Non-unicast packets:") + " {4}/{5}" + NewLine +
+                  DoTranslation("Unicast packets:") + " {6}/{7}" + NewLine +
                   DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", True, ColTypes.Neutral,
                   AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
                   Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
             Else
-                Write(DoTranslation("IPv4 information:") + vbNewLine +
-                  DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+                Write(DoTranslation("IPv4 information:") + NewLine +
+                  DoTranslation("Adapter Number:") + " {0}" + NewLine +
                   DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
                   AdapterNumber, NInterface.Description)
             End If
@@ -139,14 +139,14 @@ Namespace Network
         ''' <param name="AdapterNumber">Reference adapter number</param>
         Sub PrintAdapterIPv6Info(NInterface As NetworkInterface, Properties As IPv6InterfaceProperties, AdapterNumber As Long)
             If ExtensiveAdapterInformation Then
-                Write(DoTranslation("IPv6 information:") + vbNewLine +
-                  DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
-                  DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
+                Write(DoTranslation("IPv6 information:") + NewLine +
+                  DoTranslation("Adapter Number:") + " {0}" + NewLine +
+                  DoTranslation("Adapter Name:") + " {1}" + NewLine +
                   DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
                   AdapterNumber, NInterface.Description, Properties.Mtu)
             Else
-                Write(DoTranslation("IPv6 information:") + vbNewLine +
-                  DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+                Write(DoTranslation("IPv6 information:") + NewLine +
+                  DoTranslation("Adapter Number:") + " {0}" + NewLine +
                   DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
                   AdapterNumber, NInterface.Description)
             End If
@@ -158,13 +158,13 @@ Namespace Network
         ''' <param name="IPv4Stat">IPv4 general statistics</param>
         ''' <param name="IPv6Stat">IPv6 general statistics</param>
         Sub PrintGeneralNetInfo(IPv4Stat As IPGlobalStatistics, IPv6Stat As IPGlobalStatistics)
-            Write(DoTranslation("General IPv6 properties") + vbNewLine +
-              DoTranslation("Packets (inbound):") + " {0}/{1}" + vbNewLine +
-              DoTranslation("Packets (outbound):") + " {2}/{3}" + vbNewLine +
-              DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + vbNewLine +
-              DoTranslation("General IPv4 properties") + vbNewLine +
-              DoTranslation("Packets (inbound):") + " {7}/{8}" + vbNewLine +
-              DoTranslation("Packets (outbound):") + " {9}/{10}" + vbNewLine +
+            Write(DoTranslation("General IPv6 properties") + NewLine +
+              DoTranslation("Packets (inbound):") + " {0}/{1}" + NewLine +
+              DoTranslation("Packets (outbound):") + " {2}/{3}" + NewLine +
+              DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + NewLine +
+              DoTranslation("General IPv4 properties") + NewLine +
+              DoTranslation("Packets (inbound):") + " {7}/{8}" + NewLine +
+              DoTranslation("Packets (outbound):") + " {9}/{10}" + NewLine +
               DoTranslation("Errors in received packets:") + " {11}/{12}/{13}", True, ColTypes.Neutral,
               IPv6Stat.ReceivedPackets, IPv6Stat.ReceivedPacketsDelivered, IPv6Stat.OutputPacketRequests, IPv6Stat.OutputPacketsDiscarded, IPv6Stat.ReceivedPacketsWithAddressErrors,
               IPv6Stat.ReceivedPacketsWithHeadersErrors, IPv6Stat.ReceivedPacketsWithUnknownProtocol, IPv4Stat.ReceivedPackets, IPv4Stat.ReceivedPacketsDelivered, IPv4Stat.OutputPacketRequests,

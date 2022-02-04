@@ -37,11 +37,11 @@ Namespace Misc.Reflection
             EvalCP.ReferencedAssemblies.Add("System.DirectoryServices.dll")
             EvalCP.ReferencedAssemblies.Add("System.Xml.dll")
             EvalCP.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Dim EvalCode As String = "Imports System" & vbNewLine &
-                                     "Public Class Eval" & vbNewLine &
-                                     "Public Shared Function Evaluate()" & vbNewLine &
-                                     "Return " & Var & vbNewLine &
-                                     "End Function" & vbNewLine &
+            Dim EvalCode As String = "Imports System" & NewLine &
+                                     "Public Class Eval" & NewLine &
+                                     "Public Shared Function Evaluate()" & NewLine &
+                                     "Return " & Var & NewLine &
+                                     "End Function" & NewLine &
                                      "End Class"
             Dim cr As CompilerResults = EvalP.CompileAssemblyFromSource(EvalCP, EvalCode)
             If cr.Errors.Count > 0 Then
