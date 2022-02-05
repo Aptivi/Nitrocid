@@ -17,7 +17,7 @@
 .\" This manpage is created specially for Debian. It will eventually be universal.
 .\"
 
-.TH ks 1 "10 Dec 2021" "0.0.20.0-Man1.0" "Kernel Simulator"
+.TH ks 1 "5 Feb 2022" "0.0.20.0-Man1.1" "Kernel Simulator"
 .SH NAME
 ks \- simulates our future-planned kernel 
 .SH SYNOPSIS
@@ -28,9 +28,6 @@ ks is the launcher for Kernel Simulator, which simulates our kernel that will be
 It only takes an argument of the executable arguments, which will be described below in the next section. Actually, there are two types of arguments:
 .SH SYSTEM ARGUMENTS
 In Kernel Simulator, when it starts, it checks for command line arguments to see if they are passed or not, and if so, will execute the following:
-.TP 4
-.B testMod
-Compiles a specified mod file to check for errors. It takes the path to the mod as well as the file name as an argument. If the scripts are not being compiled, it will exit with error code 1. Else, returns error code 0.
 .TP 4
 .B testInteractive
 Initializes the test shell where you can test several features of the kernel or the programs that are shipped inside the simulated system. When you exit the shell, it exits the application.
@@ -65,9 +62,6 @@ In Kernel Simulator, when it starts, it checks for the pre-boot command line arg
 .TP 4
 .B bypasssizedetection
 Bypasses the console size detection (checks to see if the console is a 80x24 form) and starts KS right away, although it gives you a chance to resize the window.
-.TP 4
-.B linuxcompatibility
-Starts up KS in Linux compatibility mode (only for Windows)
 .TP 4
 .B reset
 Resets the configuration

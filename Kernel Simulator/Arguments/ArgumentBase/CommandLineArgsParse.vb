@@ -58,7 +58,6 @@ Namespace Arguments.ArgumentBase
                 End If
             Catch ex As Exception
                 Write(DoTranslation("Error while parsing real command-line arguments: {0}") + NewLine + "{1}", True, ColTypes.Error, ex.Message, ex.StackTrace)
-                If Args.Contains("testMod") Then Environment.Exit(1)
             End Try
         End Sub
 
