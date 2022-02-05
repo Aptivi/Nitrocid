@@ -56,7 +56,7 @@ Namespace Kernel
                     'Check for terminal (macOS only). This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that
                     'has incompatibilities with VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit
                     'the program early when this stock terminal is spotted.
-                    '
+                    '---
                     'More information regarding this check: The blacklisted terminals will not be able to run Kernel Simulator properly, because they have broken
                     'support for colors and possibly more features. For example, we have Apple_Terminal that has no support for 255 and true colors; it only
                     'supports 16 colors setting by VT sequences and nothing can change that, although it's fully XTerm compliant.
@@ -77,17 +77,17 @@ Namespace Kernel
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
-                NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
-                If NetworkAvailable Then
-                    If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
-                        Dim pdbdown As New WebClient
-                        Try
-                            pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-                        Catch ex As Exception
-                            NotifyDebugDownloadError = True
-                        End Try
+                    NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
+                    If NetworkAvailable Then
+                        If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
+                            Dim pdbdown As New WebClient
+                            Try
+                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                            Catch ex As Exception
+                                NotifyDebugDownloadError = True
+                            End Try
+                        End If
                     End If
-                End If
 #End If
 
                     'Check for console size

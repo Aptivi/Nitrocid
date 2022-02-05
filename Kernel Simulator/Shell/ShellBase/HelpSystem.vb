@@ -156,7 +156,7 @@ Namespace Shell.ShellBase
                     DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("General commands:") + If(ShowCommandsCount And ShowShellCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, CommandList.Count)
 
                     'Check the command list count and print not implemented. This is an extremely rare situation.
-                    If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
+                    If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
                     For Each cmd As String In CommandList.Keys
                         If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator)) Then
                             DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
@@ -166,7 +166,7 @@ Namespace Shell.ShellBase
 
                     'The mod commands
                     DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("Mod commands:") + If(ShowCommandsCount And ShowModCommandsCount, " [{0}]", ""), True, ColTypes.ListTitle, ModCommandList.Count)
-                    If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No mod commands."), True, ColTypes.Warning)
+                    If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("No mod commands."), True, ColTypes.Warning)
                     For Each cmd As String In ModCommandList.Keys
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
                         DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, ModCommandList(cmd))
@@ -174,7 +174,7 @@ Namespace Shell.ShellBase
 
                     'The alias commands
                     DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("Alias commands:") + If(ShowCommandsCount And ShowShellAliasesCount, " [{0}]", ""), True, ColTypes.ListTitle, AliasedCommandList.Count)
-                    If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No alias commands."), True, ColTypes.Warning)
+                    If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("No alias commands."), True, ColTypes.Warning)
                     For Each cmd As String In AliasedCommandList.Keys
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
                         DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(AliasedCommandList(cmd)).GetTranslatedHelpEntry)
