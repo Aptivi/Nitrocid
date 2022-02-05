@@ -41,7 +41,7 @@
       <dependency id="MailKit" version="3.1.1" />
       <dependency id="Extensification" version="2021.9.1" />
       <dependency id="Inxi.NET" version="2021.4.0.1" />
-      <dependency id="HtmlAgilityPack" version="1.11.41" />
+      <dependency id="HtmlAgilityPack" version="1.11.42" />
       <dependency id="Crc32.NET" version="1.2.0" />
       <dependency id="Figgle" version="0.4.0" />
       <dependency id="ManagedWeatherMap" version="1.0.0" />
@@ -113,7 +113,7 @@
       <Version>36.1.0</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.41</Version>
+      <Version>1.11.42</Version>
     </PackageReference>
     <PackageReference Include="Inxi.NET">
       <Version>2021.4.0.1</Version>

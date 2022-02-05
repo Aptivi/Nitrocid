@@ -24,6 +24,9 @@ Imports KS.Modifications
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.TimeDate
+#If SPECIFIER = "REL" Then
+Imports KS.Network
+#End If
 Imports System.IO
 Imports System.Reflection.Assembly
 
