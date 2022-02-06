@@ -16,6 +16,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Launchers and Manpages", "Launchers and Manpages", "{F319014C-BA17-4399-9BB9-CEFDB0AC5743}"
+	ProjectSection(SolutionItems) = preProject
+		Kernel Simulator\ks-converter.1 = Kernel Simulator\ks-converter.1
+		Kernel Simulator\ks-converter.cmd = Kernel Simulator\ks-converter.cmd
+		Kernel Simulator\ks-converter.sh = Kernel Simulator\ks-converter.sh
+		Kernel Simulator\ks-jl.1 = Kernel Simulator\ks-jl.1
+		Kernel Simulator\ks-jl.cmd = Kernel Simulator\ks-jl.cmd
+		Kernel Simulator\ks-jl.sh = Kernel Simulator\ks-jl.sh
+		Kernel Simulator\ks.1 = Kernel Simulator\ks.1
+		Kernel Simulator\ks.cmd = Kernel Simulator\ks.cmd
+		Kernel Simulator\ks.desktop = Kernel Simulator\ks.desktop
+		Kernel Simulator\ks.sh = Kernel Simulator\ks.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
