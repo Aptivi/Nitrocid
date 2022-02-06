@@ -40,7 +40,6 @@ Namespace Network.Mail
         Public Mail_GPGPromptStyle As String = ""
         Public Mail_Debug As Boolean
         Public Mail_AutoDetectServer As Boolean = True
-        Public Mail_UseLegacyDetector As Boolean = True
 
         ''' <summary>
         ''' Mail server type
@@ -178,229 +177,33 @@ Namespace Network.Mail
         ''' <param name="Address">E-mail address</param>
         ''' <returns>Server address. Otherwise, null.</returns>
         Public Function ServerDetect(Address As String, Type As ServerType) As String
-            If Not Mail_UseLegacyDetector Then
-                'Get the mail server dynamically
-                Dim DynamicConfiguration As ClientConfig = Tools.GetIspConfig(Address)
-                Dim ReturnedMailAddress As String = ""
-                Dim ReturnedMailPort As Integer
-                Select Case Type
-                    Case ServerType.IMAP
-                        Dim ImapServers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "imap")
-                        If ImapServers.Count > 0 Then
-                            Dim ImapServer As IncomingServer = ImapServers(0)
-                            ReturnedMailAddress = ImapServer.Hostname
-                            ReturnedMailPort = ImapServer.Port
-                        End If
-                    Case ServerType.POP3
-                        Dim Pop3Servers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "pop3")
-                        If Pop3Servers.Count > 0 Then
-                            Dim Pop3Server As IncomingServer = Pop3Servers(0)
-                            ReturnedMailAddress = Pop3Server.Hostname
-                            ReturnedMailPort = Pop3Server.Port
-                        End If
-                    Case ServerType.SMTP
-                        Dim SmtpServer As OutgoingServer = DynamicConfiguration.EmailProvider.OutgoingServer
-                        ReturnedMailAddress = SmtpServer?.Hostname
-                        ReturnedMailPort = SmtpServer.Port
-                    Case Else
-                        Return ""
-                End Select
-                Return $"{ReturnedMailAddress}:{ReturnedMailPort}"
-            Else
-                'TODO: This version will not be maintained and will likely be removed before the release of 0.0.20.0.
-                If Address.EndsWith("@gmail.com") Or Address.EndsWith("@googlemail.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.gmail.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.gmail.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.gmail.com:995"
-                    Else
-                        Return ""
+            'Get the mail server dynamically
+            Dim DynamicConfiguration As ClientConfig = Tools.GetIspConfig(Address)
+            Dim ReturnedMailAddress As String = ""
+            Dim ReturnedMailPort As Integer
+            Select Case Type
+                Case ServerType.IMAP
+                    Dim ImapServers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "imap")
+                    If ImapServers.Count > 0 Then
+                        Dim ImapServer As IncomingServer = ImapServers(0)
+                        ReturnedMailAddress = ImapServer.Hostname
+                        ReturnedMailPort = ImapServer.Port
                     End If
-                ElseIf Address.EndsWith("@aol.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.aol.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.aol.com:465"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.aol.com:995"
-                    Else
-                        Return ""
+                Case ServerType.POP3
+                    Dim Pop3Servers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "pop3")
+                    If Pop3Servers.Count > 0 Then
+                        Dim Pop3Server As IncomingServer = Pop3Servers(0)
+                        ReturnedMailAddress = Pop3Server.Hostname
+                        ReturnedMailPort = Pop3Server.Port
                     End If
-                ElseIf Address.EndsWith("@outlook.com") Or Address.EndsWith("@hotmail.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap-mail.outlook.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp-mail.outlook.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop3.live.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@office365.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "outlook.office365.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.office365.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "outlook.office365.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@btinternet.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "mail.btinternet.com:993"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "mail.btinternet.com:465"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "mail.btinternet.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@yahoo.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.mail.yahoo.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.mail.yahoo.com"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.mail.yahoo.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@yahoo.co.uk") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.mail.yahoo.co.uk"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.mail.yahoo.co.uk"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.mail.yahoo.co.uk:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@yahoo.au") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.mail.yahoo.au"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.mail.yahoo.au"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.mail.yahoo.au:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@verizon.net") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.aol.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.verizon.net:465"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.verizon.net:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@att.net") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.mail.att.net"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "outbound.att.net:465"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "inbound.att.net:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@o2online.de") Then
-                    If Type = ServerType.IMAP Then
-                        Return "mail.o2online.de"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.o2online.de"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.o2online.de:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@t-online.de") Then
-                    If Type = ServerType.IMAP Then
-                        Return "secureimap.t-online.de"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "securesmtp.t-online.de:465"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "securepop.t-online.de:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@1und1.de") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.1und1.de"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.1und1.de:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.1und1.de:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@ionos.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.ionos.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.ionos.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.ionos.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@zoho.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.zoho.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.zoho.com"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.zoho.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@ntlworld.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.virginmedia.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.virginmedia.com"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop3.virginmedia.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@mail.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.mail.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.mail.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.mail.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@fastmail.fm") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.fastmail.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.fastmail.com:587"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.fastmail.com:995"
-                    Else
-                        Return ""
-                    End If
-                ElseIf Address.EndsWith("@gmx.com") Then
-                    If Type = ServerType.IMAP Then
-                        Return "imap.gmx.com"
-                    ElseIf Type = ServerType.SMTP Then
-                        Return "smtp.gmx.com"
-                    ElseIf Type = ServerType.POP3 Then
-                        Return "pop.gmx.com:995"
-                    Else
-                        Return ""
-                    End If
-                End If
-                Return ""
-            End If
+                Case ServerType.SMTP
+                    Dim SmtpServer As OutgoingServer = DynamicConfiguration.EmailProvider.OutgoingServer
+                    ReturnedMailAddress = SmtpServer?.Hostname
+                    ReturnedMailPort = SmtpServer.Port
+                Case Else
+                    Return ""
+            End Select
+            Return $"{ReturnedMailAddress}:{ReturnedMailPort}"
         End Function
 
         ''' <summary>

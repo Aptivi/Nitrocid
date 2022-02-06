@@ -295,8 +295,7 @@ Namespace Misc.Configuration
                     {"FTP connection timeout", FtpConnectTimeout},
                     {"FTP data connection timeout", FtpDataConnectTimeout},
                     {"FTP IP versions", FtpProtocolVersions},
-                    {"Notify on remote debug connection error", NotifyOnRemoteDebugConnectionError},
-                    {"Use legacy mail detection", Mail_UseLegacyDetector}
+                    {"Notify on remote debug connection error", NotifyOnRemoteDebugConnectionError}
                 }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -1165,7 +1164,6 @@ Namespace Misc.Configuration
                 FtpDataConnectTimeout = If(Integer.TryParse(ConfigToken("Network")?("FTP data connection timeout"), 0), ConfigToken("Network")?("FTP data connection timeout"), 15000)
                 FtpProtocolVersions = If(ConfigToken("Network")?("FTP IP versions") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("FTP IP versions"), FtpProtocolVersions), FtpProtocolVersions, FtpIpVersion.ANY), FtpIpVersion.ANY)
                 NotifyOnRemoteDebugConnectionError = If(ConfigToken("Network")?("Notify on remote debug connection error"), True)
-                Mail_UseLegacyDetector = If(ConfigToken("Network")?("Use legacy mail detection"), True)
 
                 'Screensaver Section
                 DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
