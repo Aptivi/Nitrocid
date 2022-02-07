@@ -161,9 +161,6 @@ Namespace Login
         ''' </summary>
         ''' <param name="usernamerequested">A username that is about to be logged in</param>
         Public Sub ShowPasswordPrompt(usernamerequested As String)
-            'Error handler
-            On Error Resume Next
-
             'Prompts user to enter a user's password
             While True
                 'Check to see if reboot is requested
