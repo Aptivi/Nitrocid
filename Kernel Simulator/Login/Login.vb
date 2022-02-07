@@ -25,10 +25,6 @@ Namespace Login
 
         'Variables
         ''' <summary>
-        ''' Current username
-        ''' </summary>
-        Public CurrentUser As UserInfo
-        ''' <summary>
         ''' Username prompt
         ''' </summary>
         Public UsernamePrompt As String
@@ -40,6 +36,19 @@ Namespace Login
         ''' List of usernames and passwords
         ''' </summary>
         Friend Users As New Dictionary(Of String, String)()
+        ''' <summary>
+        ''' Current username
+        ''' </summary>
+        Private CurrentUserInfo As UserInfo
+
+        ''' <summary>
+        ''' Current username
+        ''' </summary>
+        Public ReadOnly Property CurrentUser As UserInfo
+            Get
+                Return CurrentUserInfo
+            End Get
+        End Property
 
         ''' <summary>
         ''' Prompts user for login information
@@ -234,7 +243,7 @@ Namespace Login
             LoggedIn = True
 
             'Sign in to user.
-            CurrentUser = New UserInfo(signedInUser)
+            CurrentUserInfo = New UserInfo(signedInUser)
             If LockMode = True Then LockMode = False
             Wdbg(DebugLevel.I, "Lock released.")
             ShowMOTDOnceFlag = True
