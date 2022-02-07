@@ -806,7 +806,9 @@
     <None Include="ks.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ks.desktop" />
+    <None Include="ks.desktop">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ks.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
