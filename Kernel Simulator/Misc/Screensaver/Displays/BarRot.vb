@@ -126,6 +126,10 @@ Namespace Misc.Screensaver.Displays
 
                     'Set the console color and fill the ramp!
                     Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If BarRot.CancellationPending Then Exit Do
+                        If ResizeSyncing Then Exit Do
+
                         'Populate the variables for sub-gradients
                         Dim RampSubgradientRedColorNumFrom As Integer = RedColorNumFrom
                         Dim RampSubgradientGreenColorNumFrom As Integer = GreenColorNumFrom
@@ -190,6 +194,7 @@ Namespace Misc.Screensaver.Displays
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
                         SleepNoBlock(BarRotDelay, BarRot)
                     Loop
+
                     SleepNoBlock(BarRotNextRampDelay, BarRot)
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
