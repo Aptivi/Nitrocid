@@ -36,13 +36,13 @@ Namespace Kernel
         'Variables
         Public MOTDMessage, MAL As String
         Public HostName As String = "kernel"
-        Public DefConsoleOut As TextWriter
         Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 2"
         Public ReadOnly NewLine As String = Environment.NewLine
         Public ReadOnly KernelEventManager As New Events
         Public ReadOnly ExecutableDir As String = Environment.CurrentDirectory
         Friend StageTimer As New Stopwatch
+        Friend DefConsoleOut As TextWriter
 
         ''' <summary>
         ''' Entry point
