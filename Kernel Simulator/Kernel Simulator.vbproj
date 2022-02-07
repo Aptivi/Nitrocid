@@ -137,6 +137,8 @@
     <PackageReference Include="SSH.NET">
       <Version>2020.0.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
@@ -836,9 +838,6 @@
     <None Include="Resources\cbn.json" />
     <None Include="Resources\cnt-T.json" />
     <None Include="Resources\cnt.json" />
-    <None Include="Resources\Data\SplashSettingsEntries.json" />
-    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
-    <None Include="Resources\Data\SettingsEntries.json" />
     <None Include="Resources\grk-T.json" />
     <None Include="Resources\grk.json" />
     <None Include="Resources\guj-T.json" />
@@ -862,8 +861,6 @@
     <None Include="Resources\pir.json" />
     <None Include="Resources\psh.json" />
     <None Include="Resources\snd.json" />
-    <None Include="Resources\Themes\Breeze.json" />
-    <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\bsq.json" />
     <None Include="Resources\ccw.json" />
     <None Include="Resources\chi-T.json" />
@@ -910,9 +907,28 @@
     <None Include="Resources\srb.json" />
     <None Include="Resources\swa.json" />
     <None Include="Resources\swe.json" />
+    <None Include="Resources\tkm.json" />
+    <None Include="Resources\tky.json" />
+    <None Include="Resources\ukr-T.json" />
+    <None Include="Resources\ukr.json" />
+    <None Include="Resources\urd.json" />
+    <None Include="Resources\uzb.json" />
+    <None Include="Resources\vtn.json" />
+    <None Include="Resources\wls.json" />
+    <None Include="Resources\yrb.json" />
+    <None Include="Resources\zul.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data\ConsoleColorsData.json" />
+    <None Include="Resources\Data\SplashSettingsEntries.json" />
+    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
+    <None Include="Resources\Data\SettingsEntries.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Themes\Breeze.json" />
+    <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\Themes\BrandingBlue.json" />
     <None Include="Resources\Themes\BrandingPurple.json" />
-    <None Include="Resources\Data\ConsoleColorsData.json" />
     <None Include="Resources\Themes\AyuDark.json" />
     <None Include="Resources\Themes\AyuLight.json" />
     <None Include="Resources\Themes\AyuMirage.json" />
@@ -930,8 +946,6 @@
     <None Include="Resources\Themes\Wood.json" />
     <None Include="Resources\Themes\YellowBG.json" />
     <None Include="Resources\Themes\YellowFG.json" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Themes\3Y-Diamond.json" />
     <None Include="Resources\Themes\BedOS.json" />
     <None Include="Resources\Themes\BlackOnWhite.json" />
@@ -949,23 +963,11 @@
     <None Include="Resources\Themes\TealerOS.json" />
     <None Include="Resources\Themes\Ubuntu.json" />
     <None Include="Resources\Themes\TrafficLight.json" />
-    <None Include="Resources\tkm.json" />
-    <None Include="Resources\tky.json" />
-    <None Include="Resources\ukr-T.json" />
-    <None Include="Resources\ukr.json" />
-    <None Include="Resources\urd.json" />
-    <None Include="Resources\uzb.json" />
-    <None Include="Resources\vtn.json" />
+    <None Include="Resources\Themes\Windows95.json" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Themes\Windows95.json" />
-    <None Include="Resources\wls.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\yrb.json" />
-    <None Include="Resources\zul.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
