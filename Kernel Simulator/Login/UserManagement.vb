@@ -26,10 +26,6 @@ Namespace Login
 
         'Variables
         ''' <summary>
-        ''' The users token
-        ''' </summary>
-        Public UsersToken As JArray
-        ''' <summary>
         ''' Include anonymous users in list
         ''' </summary>
         Public IncludeAnonymous As Boolean
@@ -37,6 +33,10 @@ Namespace Login
         ''' Include disabled users in list
         ''' </summary>
         Public IncludeDisabled As Boolean
+        ''' <summary>
+        ''' The users token
+        ''' </summary>
+        Friend UsersToken As JArray
 
         ''' <summary>
         ''' A user property
