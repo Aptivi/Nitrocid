@@ -224,7 +224,7 @@ Namespace Login
         ''' Signs in to the username
         ''' </summary>
         ''' <param name="signedInUser">A specified username</param>
-        Public Sub SignIn(signedInUser As String)
+        Friend Sub SignIn(signedInUser As String)
             'Release lock
             If LockMode Then
                 Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...")
