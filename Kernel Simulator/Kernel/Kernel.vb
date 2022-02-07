@@ -37,12 +37,20 @@ Namespace Kernel
         Public MOTDMessage, MAL As String
         Public HostName As String = "kernel"
         Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 2"
         Public ReadOnly NewLine As String = Environment.NewLine
         Public ReadOnly KernelEventManager As New Events
         Public ReadOnly ExecutableDir As String = Environment.CurrentDirectory
         Friend StageTimer As New Stopwatch
         Friend DefConsoleOut As TextWriter
+
+        '#ifdef'd variables
+#If SPECIFIER = "REL" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
+#ElseIf SPECIFIER = "RC" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate"
+#ElseIf SPECIFIER = "DEV" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Developer Preview"
+#End If
 
         ''' <summary>
         ''' Entry point
