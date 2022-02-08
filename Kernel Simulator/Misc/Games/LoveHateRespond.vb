@@ -19,8 +19,12 @@
 Imports KS.Network
 
 Namespace Misc.Games
-    Module LoveHateRespond
+    Public Module LoveHateRespond
 
+        ''' <summary>
+        ''' How many users to add to the love/hate comment room?
+        ''' </summary>
+        Public LoveOrHateUsersCount As Integer = 20
         ReadOnly LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting."),
                                                            DoTranslation("Everyone will support your video for this."),
                                                            DoTranslation("I gave you the special file in your e-mail for your next video."),
@@ -76,7 +80,7 @@ Namespace Misc.Games
             Write(DoTranslation("Downloading names..."), True, ColTypes.Progress)
             If Names.Length = 0 Then Names = DownloadString("https://raw.githubusercontent.com/smashew/NameDatabases/master/NamesDatabases/first%20names/us.txt").SplitNewLines
             If Surnames.Length = 0 Then Surnames = DownloadString("https://raw.githubusercontent.com/smashew/NameDatabases/master/NamesDatabases/surnames/us.txt").SplitNewLines
-            For NameNum As Integer = 1 To 20
+            For NameNum As Integer = 1 To LoveOrHateUsersCount
                 Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
                 Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
                 Users.Add($"{GeneratedName} {GeneratedSurname}", RandomDriver.Next(2))

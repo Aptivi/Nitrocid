@@ -1325,6 +1325,12 @@
                 "Type": "SChar",
                 "Variable": "ProgressRightFrameChar",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Users count for love or hate comments",
+                "Type": "SInt",
+                "Variable": "LoveOrHateUsersCount",
+                "Description": "How many users to be in the love or hate comment room?"
             }
         ]
     }

@@ -912,7 +912,8 @@ Namespace Misc.Configuration
                     {"Upper frame character for progress bars", ProgressUpperFrameChar},
                     {"Lower frame character for progress bars", ProgressLowerFrameChar},
                     {"Left frame character for progress bars", ProgressLeftFrameChar},
-                    {"Right frame character for progress bars", ProgressRightFrameChar}
+                    {"Right frame character for progress bars", ProgressRightFrameChar},
+                    {"Users count for love or hate comments", LoveOrHateUsersCount}
                 }
             ConfigurationObject.Add("Misc", MiscConfig)
             Return ConfigurationObject
@@ -1684,6 +1685,7 @@ Namespace Misc.Configuration
                 ProgressLowerFrameChar = If(ConfigToken("Misc")?("Lower frame character for progress bars"), "═")
                 ProgressLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for progress bars"), "║")
                 ProgressRightFrameChar = If(ConfigToken("Misc")?("Right frame character for progress bars"), "║")
+                LoveOrHateUsersCount = If(Integer.TryParse(ConfigToken("Misc")?("Users count for love or hate comments"), 0), ConfigToken("Misc")?("Users count for love or hate comments"), 20)
 
                 'Check to see if the config needs fixes
                 RepairConfig()
