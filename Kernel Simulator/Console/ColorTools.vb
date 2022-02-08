@@ -174,6 +174,10 @@ Namespace ConsoleBase
             ''' Selected option
             ''' </summary>
             SelectedOption
+            ''' <summary>
+            ''' Alternative option
+            ''' </summary>
+            AlternativeOption
         End Enum
 
         ''' <summary>
@@ -228,6 +232,7 @@ Namespace ConsoleBase
         Public TableHeaderColor As New Color(ConsoleColors.White)
         Public TableValueColor As New Color(ConsoleColors.Gray)
         Public SelectedOptionColor As New Color(ConsoleColors.Yellow)
+        Public AlternativeOptionColor As New Color(ConsoleColors.DarkGreen)
 
         ''' <summary>
         ''' Resets all colors to default
@@ -272,6 +277,7 @@ Namespace ConsoleBase
             TableHeaderColor = DefInfo.ThemeTableHeaderColor
             TableValueColor = DefInfo.ThemeTableValueColor
             SelectedOptionColor = DefInfo.ThemeSelectedOptionColor
+            AlternativeOptionColor = DefInfo.ThemeAlternativeOptionColor
             LoadBack()
 
             'Raise event
@@ -332,6 +338,7 @@ Namespace ConsoleBase
             ConfigToken("Colors")("Table Header Color") = TableHeaderColor.PlainSequenceEnclosed
             ConfigToken("Colors")("Table Value Color") = TableValueColor.PlainSequenceEnclosed
             ConfigToken("Colors")("Selected Option Color") = SelectedOptionColor.PlainSequenceEnclosed
+            ConfigToken("Colors")("Alternative Option Color") = AlternativeOptionColor.PlainSequenceEnclosed
             File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
         End Sub
 
@@ -375,6 +382,7 @@ Namespace ConsoleBase
         ''' <param name="TableHeaderColor">Table header color</param>
         ''' <param name="TableValueColor">Table value color</param>
         ''' <param name="SelectedOptionColor">Selected option color</param>
+        ''' <param name="AlternativeOptionColor">Alternative option color</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="InvalidOperationException"></exception>
         ''' <exception cref="Exceptions.ColorException"></exception>
@@ -384,7 +392,7 @@ Namespace ConsoleBase
                               NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
                               SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
                               LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
-                              TableValueColor As String, SelectedOptionColor As String) As Boolean
+                              TableValueColor As String, SelectedOptionColor As String, AlternativeOptionColor As String) As Boolean
             'Check colors for null and set them to "def" if found
             If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
             If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -423,6 +431,7 @@ Namespace ConsoleBase
             If String.IsNullOrEmpty(TableHeaderColor) Then TableHeaderColor = "def"
             If String.IsNullOrEmpty(TableValueColor) Then TableValueColor = "def"
             If String.IsNullOrEmpty(SelectedOptionColor) Then SelectedOptionColor = "def"
+            If String.IsNullOrEmpty(AlternativeOptionColor) Then AlternativeOptionColor = "def"
 
             'Set colors
             If ColoredShell = True Then
@@ -463,7 +472,8 @@ Namespace ConsoleBase
                 If TableSeparatorColor = "def" Then TableSeparatorColor = New Color(ConsoleColors.DarkGray).PlainSequence
                 If TableHeaderColor = "def" Then TableHeaderColor = New Color(ConsoleColors.White).PlainSequence
                 If TableValueColor = "def" Then TableValueColor = New Color(ConsoleColors.Gray).PlainSequence
-                If SelectedOptionColor = "def" Then OptionColor = New Color(ConsoleColors.Yellow).PlainSequence
+                If SelectedOptionColor = "def" Then SelectedOptionColor = New Color(ConsoleColors.Yellow).PlainSequence
+                If AlternativeOptionColor = "def" Then AlternativeOptionColor = New Color(ConsoleColors.DarkGreen).PlainSequence
                 If BackgroundColor = "def" Then
                     BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                     LoadBack()
@@ -508,6 +518,7 @@ Namespace ConsoleBase
                     ColorTools.TableHeaderColor = New Color(TableHeaderColor)
                     ColorTools.TableValueColor = New Color(TableValueColor)
                     ColorTools.SelectedOptionColor = New Color(SelectedOptionColor)
+                    ColorTools.AlternativeOptionColor = New Color(AlternativeOptionColor)
                     LoadBack()
                     MakePermanent()
 
@@ -632,6 +643,8 @@ Namespace ConsoleBase
                         SetConsoleColor(TableValueColor, Background)
                     Case ColTypes.SelectedOption
                         SetConsoleColor(SelectedOptionColor, Background)
+                    Case ColTypes.AlternativeOption
+                        SetConsoleColor(AlternativeOptionColor, Background)
                     Case Else
                         Exit Select
                 End Select

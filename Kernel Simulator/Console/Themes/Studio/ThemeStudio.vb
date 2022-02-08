@@ -28,7 +28,7 @@ Namespace ConsoleBase.Themes.Studio
             KernelEventManager.RaiseThemeStudioStarted()
             Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
             Dim Response As String
-            Dim MaximumOptions As Integer = 37 + 9 'Colors + options
+            Dim MaximumOptions As Integer = 38 + 9 'Colors + options
             Dim StudioExiting As Boolean
 
             While Not StudioExiting
@@ -74,18 +74,19 @@ Namespace ConsoleBase.Themes.Studio
                 Write("35) " + DoTranslation("Table header color") + ": [{0}] ", True, ColTypes.Option, SelectedTableHeaderColor.PlainSequence)
                 Write("36) " + DoTranslation("Table value color") + ": [{0}] ", True, ColTypes.Option, SelectedTableValueColor.PlainSequence)
                 Write("37) " + DoTranslation("Selected option color") + ": [{0}] ", True, ColTypes.Option, SelectedSelectedOptionColor.PlainSequence)
+                Write("38) " + DoTranslation("Alternative option color") + ": [{0}] ", True, ColTypes.Option, SelectedAlternativeOptionColor.PlainSequence)
                 Console.WriteLine()
 
                 'List saving and loading options
-                Write("38) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
-                Write("39) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
-                Write("40) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
-                Write("41) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
-                Write("42) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
-                Write("43) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
-                Write("44) " + DoTranslation("Load Current Colors"), True, ColTypes.Option)
-                Write("45) " + DoTranslation("Preview..."), True, ColTypes.Option)
-                Write("46) " + DoTranslation("Exit"), True, ColTypes.Option)
+                Write("39) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.AlternativeOption)
+                Write("40) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.AlternativeOption)
+                Write("41) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.AlternativeOption)
+                Write("42) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.AlternativeOption)
+                Write("43) " + DoTranslation("Load Theme From File..."), True, ColTypes.AlternativeOption)
+                Write("44) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.AlternativeOption)
+                Write("45) " + DoTranslation("Load Current Colors"), True, ColTypes.AlternativeOption)
+                Write("46) " + DoTranslation("Preview..."), True, ColTypes.AlternativeOption)
+                Write("47) " + DoTranslation("Exit"), True, ColTypes.AlternativeOption)
                 Console.WriteLine()
 
                 'Prompt user
@@ -251,23 +252,27 @@ Namespace ConsoleBase.Themes.Studio
                                 SelectedColorInstance = SelectedSelectedOptionColor
                                 Dim ColorWheelReturn As String = ColorWheel(SelectedColorInstance.Type = ColorType.TrueColor, If(SelectedColorInstance.Type = ColorType._255Color, SelectedColorInstance.PlainSequence, ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B)
                                 SelectedSelectedOptionColor = New Color(ColorWheelReturn)
-                            Case 38 'Save theme to current directory
+                            Case 38 'Selected option color
+                                SelectedColorInstance = SelectedAlternativeOptionColor
+                                Dim ColorWheelReturn As String = ColorWheel(SelectedColorInstance.Type = ColorType.TrueColor, If(SelectedColorInstance.Type = ColorType._255Color, SelectedColorInstance.PlainSequence, ConsoleColors.White), SelectedColorInstance.R, SelectedColorInstance.G, SelectedColorInstance.B)
+                                SelectedAlternativeOptionColor = New Color(ColorWheelReturn)
+                            Case 39 'Save theme to current directory
                                 SaveThemeToCurrentDirectory(ThemeName)
-                            Case 39 'Save theme to another directory...
+                            Case 40 'Save theme to another directory...
                                 Wdbg(DebugLevel.I, "Prompting user for directory name...")
                                 Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                                 Dim DirectoryName As String = Console.ReadLine
                                 DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                                 Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                                 SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
-                            Case 40 'Save theme to current directory as...
+                            Case 41 'Save theme to current directory as...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
                                 Dim AltThemeName As String = Console.ReadLine
                                 AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 SaveThemeToCurrentDirectory(AltThemeName)
-                            Case 41 'Save theme to another directory as...
+                            Case 42 'Save theme to another directory as...
                                 Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
                                 Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                                 Dim DirectoryName As String = Console.ReadLine
@@ -279,25 +284,25 @@ Namespace ConsoleBase.Themes.Studio
                                 AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
-                            Case 42 'Load Theme From File...
+                            Case 43 'Load Theme From File...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
                                 Dim AltThemeName As String = Console.ReadLine + ".json"
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 LoadThemeFromFile(AltThemeName)
-                            Case 43 'Load Theme From Prebuilt Themes...
+                            Case 44 'Load Theme From Prebuilt Themes...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
                                 Dim AltThemeName As String = Console.ReadLine
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 LoadThemeFromResource(AltThemeName)
-                            Case 44 'Load Current Colors
+                            Case 45 'Load Current Colors
                                 Wdbg(DebugLevel.I, "Loading current colors...")
                                 LoadThemeFromCurrentColors()
-                            Case 45 'Preview...
+                            Case 46 'Preview...
                                 Wdbg(DebugLevel.I, "Printing text with colors of theme...")
                                 PreparePreview()
-                            Case 46 'Exit
+                            Case 47 'Exit
                                 Wdbg(DebugLevel.I, "Exiting studio...")
                                 StudioExiting = True
                         End Select

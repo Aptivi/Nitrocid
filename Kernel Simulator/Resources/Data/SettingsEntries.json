@@ -316,6 +316,11 @@
                 "Name": "Selected option color",
                 "Type": "SColor",
                 "Variable": "SelectedOptionColor"
+            },
+            {
+                "Name": "Alternative option color",
+                "Type": "SColor",
+                "Variable": "AlternativeOptionColor"
             }
         ]
     },

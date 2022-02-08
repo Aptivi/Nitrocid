@@ -204,6 +204,7 @@ Namespace ConsoleBase.Themes
                     TableHeaderColor = ThemeInfo.ThemeTableHeaderColor
                     TableValueColor = ThemeInfo.ThemeTableValueColor
                     SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
+                    AlternativeOptionColor = ThemeInfo.ThemeAlternativeOptionColor
                     LoadBack()
                     MakePermanent()
 

@@ -170,50 +170,17 @@ Namespace ConsoleBase.Themes
         ''' Selected option color set by theme
         ''' </summary>
         Public ReadOnly Property ThemeSelectedOptionColor As Color
+        ''' <summary>
+        ''' Alternative option color set by theme
+        ''' </summary>
+        Public ReadOnly Property ThemeAlternativeOptionColor As Color
 
         ''' <summary>
         ''' Generates a new theme info from KS resources
         ''' </summary>
         ''' <param name="ThemeResourceName">Theme name (must match resource name)</param>
         Public Sub New(ThemeResourceName As String)
-            Dim ThemeResourceJson As JToken = JToken.Parse(My.Resources.ResourceManager.GetString(ThemeResourceName))
-            ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
-            ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
-            ThemeContKernelErrorColor = New Color(ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
-            ThemeUncontKernelErrorColor = New Color(ThemeResourceJson.SelectToken("UncontKernelErrorColor").ToString)
-            ThemeHostNameShellColor = New Color(ThemeResourceJson.SelectToken("HostNameShellColor").ToString)
-            ThemeUserNameShellColor = New Color(ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
-            ThemeBackgroundColor = New Color(ThemeResourceJson.SelectToken("BackgroundColor").ToString)
-            ThemeNeutralTextColor = New Color(ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
-            ThemeListEntryColor = New Color(ThemeResourceJson.SelectToken("ListEntryColor").ToString)
-            ThemeListValueColor = New Color(ThemeResourceJson.SelectToken("ListValueColor").ToString)
-            ThemeStageColor = New Color(ThemeResourceJson.SelectToken("StageColor").ToString)
-            ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
-            ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
-            ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
-            ThemeBannerColor = New Color(ThemeResourceJson.SelectToken("BannerColor").ToString)
-            ThemeNotificationTitleColor = New Color(ThemeResourceJson.SelectToken("NotificationTitleColor").ToString)
-            ThemeNotificationDescriptionColor = New Color(ThemeResourceJson.SelectToken("NotificationDescriptionColor").ToString)
-            ThemeNotificationProgressColor = New Color(ThemeResourceJson.SelectToken("NotificationProgressColor").ToString)
-            ThemeNotificationFailureColor = New Color(ThemeResourceJson.SelectToken("NotificationFailureColor").ToString)
-            ThemeQuestionColor = New Color(ThemeResourceJson.SelectToken("QuestionColor").ToString)
-            ThemeSuccessColor = New Color(ThemeResourceJson.SelectToken("SuccessColor").ToString)
-            ThemeUserDollarColor = New Color(ThemeResourceJson.SelectToken("UserDollarColor").ToString)
-            ThemeTipColor = New Color(ThemeResourceJson.SelectToken("TipColor").ToString)
-            ThemeSeparatorTextColor = New Color(ThemeResourceJson.SelectToken("SeparatorTextColor").ToString)
-            ThemeSeparatorColor = New Color(ThemeResourceJson.SelectToken("SeparatorColor").ToString)
-            ThemeListTitleColor = New Color(ThemeResourceJson.SelectToken("ListTitleColor").ToString)
-            ThemeDevelopmentWarningColor = New Color(ThemeResourceJson.SelectToken("DevelopmentWarningColor").ToString)
-            ThemeStageTimeColor = New Color(ThemeResourceJson.SelectToken("StageTimeColor").ToString)
-            ThemeProgressColor = New Color(ThemeResourceJson.SelectToken("ProgressColor").ToString)
-            ThemeBackOptionColor = New Color(ThemeResourceJson.SelectToken("BackOptionColor").ToString)
-            ThemeLowPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("LowPriorityBorderColor").ToString)
-            ThemeMediumPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("MediumPriorityBorderColor").ToString)
-            ThemeHighPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("HighPriorityBorderColor").ToString)
-            ThemeTableSeparatorColor = New Color(ThemeResourceJson.SelectToken("TableSeparatorColor").ToString)
-            ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
-            ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
-            ThemeSelectedOptionColor = New Color(ThemeResourceJson.SelectToken("SelectedOptionColor").ToString)
+            Me.New(JToken.Parse(My.Resources.ResourceManager.GetString(ThemeResourceName)))
         End Sub
 
         ''' <summary>
@@ -221,7 +188,14 @@ Namespace ConsoleBase.Themes
         ''' </summary>
         ''' <param name="ThemeFileStream">Theme file stream reader</param>
         Public Sub New(ThemeFileStream As StreamReader)
-            Dim ThemeResourceJson As JToken = JToken.Parse(ThemeFileStream.ReadToEnd)
+            Me.New(JToken.Parse(ThemeFileStream.ReadToEnd))
+        End Sub
+
+        ''' <summary>
+        ''' Generates a new theme info from theme resource JSON
+        ''' </summary>
+        ''' <param name="ThemeResourceJson">Theme resource JSON</param>
+        Protected Sub New(ThemeResourceJson As JToken)
             ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
             ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
             ThemeContKernelErrorColor = New Color(ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
@@ -259,6 +233,7 @@ Namespace ConsoleBase.Themes
             ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
             ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
             ThemeSelectedOptionColor = New Color(ThemeResourceJson.SelectToken("SelectedOptionColor").ToString)
+            ThemeAlternativeOptionColor = New Color(ThemeResourceJson.SelectToken("AlternativeOptionColor").ToString)
         End Sub
 
     End Class

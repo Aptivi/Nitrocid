@@ -35,5 +35,6 @@
     "TableSeparatorColor": "8",
     "TableHeaderColor": "7",
     "TableValueColor": "7",
-    "SelectedOptionColor": "8"
+    "SelectedOptionColor": "8",
+    "AlternativeOptionColor": "8"
 }

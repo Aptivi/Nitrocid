@@ -49,11 +49,11 @@ Namespace Misc.Configuration
                     End If
                 Next
                 Console.WriteLine()
-                Write(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.BackOption, MaxSections + 1)
-                Write(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 2)
-                Write(" {0}) " + DoTranslation("Save Settings As"), True, ColTypes.BackOption, MaxSections + 3)
-                Write(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.BackOption, MaxSections + 4)
-                Write(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 5)
+                Write(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.AlternativeOption, MaxSections + 1)
+                Write(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.AlternativeOption, MaxSections + 2)
+                Write(" {0}) " + DoTranslation("Save Settings As"), True, ColTypes.AlternativeOption, MaxSections + 3)
+                Write(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.AlternativeOption, MaxSections + 4)
+                Write(" {0}) " + DoTranslation("Exit"), True, ColTypes.AlternativeOption, MaxSections + 5)
 
                 'Prompt user and check for input
                 Console.WriteLine()

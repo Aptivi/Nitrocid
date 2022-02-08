@@ -168,7 +168,8 @@ Namespace Misc.Configuration
                     {"Table Separator Color", TableSeparatorColor.PlainSequenceEnclosed},
                     {"Table Header Color", TableHeaderColor.PlainSequenceEnclosed},
                     {"Table Value Color", TableValueColor.PlainSequenceEnclosed},
-                    {"Selected Option Color", SelectedOptionColor.PlainSequenceEnclosed}
+                    {"Selected Option Color", SelectedOptionColor.PlainSequenceEnclosed},
+                    {"Alternative Option Color", AlternativeOptionColor.PlainSequenceEnclosed}
                 }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -1025,6 +1026,7 @@ Namespace Misc.Configuration
                     TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White).ToString)
                     TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray).ToString)
                     SelectedOptionColor = New Color(If(ConfigToken("Colors")?("Selected Option Color"), ConsoleColors.Yellow).ToString)
+                    AlternativeOptionColor = New Color(If(ConfigToken("Colors")?("Alternative Option Color"), ConsoleColors.DarkGreen).ToString)
                     LoadBack()
                 End If
 

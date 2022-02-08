@@ -35,5 +35,6 @@
     "TableSeparatorColor": "0",
     "TableHeaderColor": "0",
     "TableValueColor": "0",
-    "SelectedOptionColor": "0"
+    "SelectedOptionColor": "0",
+    "AlternativeOptionColor": "0"
 }
