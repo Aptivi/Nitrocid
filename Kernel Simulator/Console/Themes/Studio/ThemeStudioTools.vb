@@ -298,6 +298,50 @@ Namespace ConsoleBase.Themes.Studio
         End Sub
 
         ''' <summary>
+        ''' Loads theme from current colors and places it to the studio
+        ''' </summary>
+        Sub LoadThemeFromCurrentColors()
+            'Place information to the studio
+            SelectedInputColor = InputColor
+            SelectedLicenseColor = LicenseColor
+            SelectedContKernelErrorColor = ContKernelErrorColor
+            SelectedUncontKernelErrorColor = UncontKernelErrorColor
+            SelectedHostNameShellColor = HostNameShellColor
+            SelectedUserNameShellColor = UserNameShellColor
+            SelectedBackgroundColor = BackgroundColor
+            SelectedNeutralTextColor = NeutralTextColor
+            SelectedListEntryColor = ListEntryColor
+            SelectedListValueColor = ListValueColor
+            SelectedStageColor = StageColor
+            SelectedErrorColor = ErrorColor
+            SelectedWarningColor = WarningColor
+            _SelectedOptionColor = OptionColor
+            SelectedBannerColor = BannerColor
+            SelectedNotificationTitleColor = NotificationTitleColor
+            SelectedNotificationDescriptionColor = NotificationDescriptionColor
+            SelectedNotificationProgressColor = NotificationProgressColor
+            SelectedNotificationFailureColor = NotificationFailureColor
+            SelectedQuestionColor = QuestionColor
+            SelectedSuccessColor = SuccessColor
+            SelectedUserDollarColor = UserDollarColor
+            SelectedTipColor = TipColor
+            SelectedSeparatorTextColor = SeparatorTextColor
+            SelectedSeparatorColor = SeparatorColor
+            SelectedListTitleColor = ListTitleColor
+            SelectedDevelopmentWarningColor = DevelopmentWarningColor
+            SelectedStageTimeColor = StageTimeColor
+            SelectedProgressColor = ProgressColor
+            SelectedBackOptionColor = BackOptionColor
+            SelectedLowPriorityBorderColor = LowPriorityBorderColor
+            SelectedMediumPriorityBorderColor = MediumPriorityBorderColor
+            SelectedHighPriorityBorderColor = HighPriorityBorderColor
+            SelectedTableSeparatorColor = TableSeparatorColor
+            SelectedTableHeaderColor = TableHeaderColor
+            SelectedTableValueColor = TableValueColor
+            SelectedSelectedOptionColor = SelectedOptionColor
+        End Sub
+
+        ''' <summary>
         ''' Gets the full theme JSON object
         ''' </summary>
         ''' <returns>A JSON object</returns>

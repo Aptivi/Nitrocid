@@ -28,7 +28,7 @@ Namespace ConsoleBase.Themes.Studio
             KernelEventManager.RaiseThemeStudioStarted()
             Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
             Dim Response As String
-            Dim MaximumOptions As Integer = 37 + 8 'Colors + options
+            Dim MaximumOptions As Integer = 37 + 9 'Colors + options
             Dim StudioExiting As Boolean
 
             While Not StudioExiting
@@ -83,8 +83,9 @@ Namespace ConsoleBase.Themes.Studio
                 Write("41) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
                 Write("42) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
                 Write("43) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
-                Write("44) " + DoTranslation("Preview..."), True, ColTypes.Option)
-                Write("45) " + DoTranslation("Exit"), True, ColTypes.Option)
+                Write("44) " + DoTranslation("Load Current Colors"), True, ColTypes.Option)
+                Write("45) " + DoTranslation("Preview..."), True, ColTypes.Option)
+                Write("46) " + DoTranslation("Exit"), True, ColTypes.Option)
                 Console.WriteLine()
 
                 'Prompt user
@@ -290,10 +291,13 @@ Namespace ConsoleBase.Themes.Studio
                                 Dim AltThemeName As String = Console.ReadLine
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 LoadThemeFromResource(AltThemeName)
-                            Case 44 'Preview...
+                            Case 44 'Load Current Colors
+                                Wdbg(DebugLevel.I, "Loading current colors...")
+                                LoadThemeFromCurrentColors()
+                            Case 45 'Preview...
                                 Wdbg(DebugLevel.I, "Printing text with colors of theme...")
                                 PreparePreview()
-                            Case 45 'Exit
+                            Case 46 'Exit
                                 Wdbg(DebugLevel.I, "Exiting studio...")
                                 StudioExiting = True
                         End Select
