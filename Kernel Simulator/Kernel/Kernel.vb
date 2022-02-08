@@ -50,6 +50,8 @@ Namespace Kernel
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate"
 #ElseIf SPECIFIER = "DEV" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Developer Preview"
+#Else
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Unsupported Release"
 #End If
 
         ''' <summary>
@@ -84,7 +86,7 @@ Namespace Kernel
                     ParsePreBootCMDArguments(Args)
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
+#If SPECIFIER = "REL" Then
                     NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
                     If NetworkAvailable Then
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
@@ -143,10 +145,10 @@ Namespace Kernel
                     End If
 
                     'Check for kernel updates
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
-                If CheckUpdateStart Then
-                    CheckKernelUpdates()
-                End If
+#If SPECIFIER = "REL" Then
+                    If CheckUpdateStart Then
+                        CheckKernelUpdates()
+                    End If
 #End If
 
                     'Phase 2: Probe hardware
