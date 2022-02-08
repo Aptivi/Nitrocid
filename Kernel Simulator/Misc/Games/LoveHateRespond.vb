@@ -79,7 +79,7 @@ Namespace Misc.Games
             For NameNum As Integer = 1 To 20
                 Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
                 Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
-                Users.Add($"{GeneratedName} {GeneratedSurname}", RandomDriver.Next(1))
+                Users.Add($"{GeneratedName} {GeneratedSurname}", RandomDriver.Next(2))
             Next
 
             'Game logic
