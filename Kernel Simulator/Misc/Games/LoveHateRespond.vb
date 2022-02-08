@@ -110,22 +110,22 @@ Namespace Misc.Games
                         Select Case Type
                             Case CommentType.Love
                                 Wdbg(DebugLevel.I, "Apologized to love comment")
-                                Write(DoTranslation("Apologized to love comment. Not good enough."), True, ColTypes.Neutral)
+                                Write("[-1] " + DoTranslation("Apologized to love comment. Not good enough."), True, ColTypes.Neutral)
                                 Score -= 1
                             Case CommentType.Hate
                                 Wdbg(DebugLevel.I, "Apologized to hate comment")
-                                Write(DoTranslation("You've apologized to a hate comment! Excellent!"), True, ColTypes.Neutral)
+                                Write("[+1] " + DoTranslation("You've apologized to a hate comment! Excellent!"), True, ColTypes.Neutral)
                                 Score += 1
                         End Select
                     Case "t" 'Thank
                         Select Case Type
                             Case CommentType.Love
                                 Wdbg(DebugLevel.I, "Thanked love comment")
-                                Write(DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
+                                Write("[+1] " + DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
                                 Score += 1
                             Case CommentType.Hate
                                 Wdbg(DebugLevel.I, "Thanked hate comment")
-                                Write(DoTranslation("You just thanked the hater for the hate comment!"), True, ColTypes.Neutral)
+                                Write("[-1] " + DoTranslation("You just thanked the hater for the hate comment!"), True, ColTypes.Neutral)
                                 Score -= 1
                         End Select
                     Case "q" 'Quit
