@@ -18,6 +18,7 @@
 
 Imports System.CodeDom.Compiler
 Imports System.Reflection
+Imports Microsoft.VisualBasic
 
 Namespace Misc.Reflection
     Public Module StringEvaluators

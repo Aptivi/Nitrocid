@@ -21,6 +21,7 @@ Imports System.Threading
 Imports KS.Misc.Execution
 Imports KS.Scripting
 Imports KS.Shell.Commands
+Imports Microsoft.VisualBasic.Interaction
 
 Namespace Shell
     Public Module Shell

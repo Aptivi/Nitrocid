@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Extensification.IntegerExts
+Imports KS.Misc.Reflection
 
 Namespace Misc.TextEdit.Commands
     Class TextEdit_DelLineCommand
@@ -25,7 +26,7 @@ Namespace Misc.TextEdit.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Count = 1 Then
-                If IsNumeric(ListArgs(0)) Then
+                If IsStringNumeric(ListArgs(0)) Then
                     If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
                         TextEdit_RemoveLine(ListArgs(0))
                         Write(DoTranslation("Removed line."), True, ColTypes.Success)
@@ -37,7 +38,7 @@ Namespace Misc.TextEdit.Commands
                     Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
                 End If
             ElseIf ListArgs?.Count > 1 Then
-                If IsNumeric(ListArgs(0)) And IsNumeric(ListArgs(1)) Then
+                If IsStringNumeric(ListArgs(0)) And IsStringNumeric(ListArgs(1)) Then
                     If CInt(ListArgs(0)) <= TextEdit_FileLines.Count And CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                         Dim LineNumberStart As Integer = ListArgs(0)
                         Dim LineNumberEnd As Integer = ListArgs(1)

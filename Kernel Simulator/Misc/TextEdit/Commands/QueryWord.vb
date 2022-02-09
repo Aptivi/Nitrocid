@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
 Imports Extensification.IntegerExts
 
 Namespace Misc.TextEdit.Commands
@@ -25,7 +26,7 @@ Namespace Misc.TextEdit.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Count = 2 Then
-                If IsNumeric(ListArgs(1)) Then
+                If IsStringNumeric(ListArgs(1)) Then
                     If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                         Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWord(ListArgs(0), ListArgs(1))
                         For Each WordIndex As Integer In QueriedChars.Keys
@@ -45,7 +46,7 @@ Namespace Misc.TextEdit.Commands
                     Next
                 End If
             ElseIf ListArgs?.Count > 2 Then
-                If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(2)) Then
+                If IsStringNumeric(ListArgs(1)) And IsStringNumeric(ListArgs(2)) Then
                     If CInt(ListArgs(1)) <= TextEdit_FileLines.Count And CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
                         Dim LineNumberStart As Integer = ListArgs(1)
                         Dim LineNumberEnd As Integer = ListArgs(2)

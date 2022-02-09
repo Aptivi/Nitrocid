@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Microsoft.VisualBasic.Interaction
+Imports Microsoft.VisualBasic
+
 Namespace TestShell.Commands
     Class Test_TestEventCommand
         Inherits CommandExecutor

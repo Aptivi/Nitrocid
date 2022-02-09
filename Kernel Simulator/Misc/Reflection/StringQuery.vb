@@ -16,22 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Network.Mail.Transfer
-Imports KS.Misc.Reflection
+Namespace Misc.Reflection
+    Public Module StringQuery
 
-Namespace Network.Mail.Commands
-    Class Mail_ReadEncCommand
-        Inherits CommandExecutor
-        Implements ICommand
+        Public Function IsStringNumeric(Expression As String) As Boolean
+            Return Integer.TryParse(Expression, 0)
+        End Function
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
-            If IsStringNumeric(ListArgs(0)) Then
-                MailPrintMessage(ListArgs(0), True)
-            Else
-                Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
-            End If
-        End Sub
-
-    End Class
+    End Module
 End Namespace

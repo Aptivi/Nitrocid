@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace ConsoleBase
     Public Module ColorWheelOpen
 
@@ -225,7 +227,7 @@ Namespace ConsoleBase
                         Dim ColorNum As String = Console.ReadLine
                         Console.CursorVisible = False
                         Wdbg(DebugLevel.I, "Got response: {0}", ColorNum)
-                        If IsNumeric(ColorNum) Then
+                        If IsStringNumeric(ColorNum) Then
                             Wdbg(DebugLevel.I, "Numeric! Checking range...")
                             If ColorNum >= 0 And ColorNum <= 255 Then
                                 Wdbg(DebugLevel.I, "In range!")
@@ -303,7 +305,7 @@ Namespace ConsoleBase
                         Dim ColorNum As String = Console.ReadLine
                         Console.CursorVisible = False
                         Wdbg(DebugLevel.I, "Got response: {0}", ColorNum)
-                        If IsNumeric(ColorNum) Then
+                        If IsStringNumeric(ColorNum) Then
                             Wdbg(DebugLevel.I, "Numeric! Checking range...")
                             If ColorNum >= 0 And ColorNum <= 255 Then
                                 Wdbg(DebugLevel.I, "In range! Changing color level to {0}...", ColorNum)

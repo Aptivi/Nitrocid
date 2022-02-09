@@ -18,6 +18,7 @@
 
 Imports System.ComponentModel
 Imports Extensification.ListExts
+Imports Microsoft.VisualBasic.VBMath
 
 Namespace Misc.Screensaver.Displays
     Module SnakerDisplay

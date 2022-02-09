@@ -19,6 +19,8 @@
 Imports System.Net.Security
 Imports Newtonsoft.Json.Linq
 Imports KS.Network.FTP.Transfer
+Imports KS.Misc.Reflection
+Imports Microsoft.VisualBasic.Conversion
 
 Namespace Network.FTP
     Public Module FTPTools
@@ -146,7 +148,7 @@ Namespace Network.FTP
                     Write(NewLine + ">> ", False, ColTypes.Input)
                     profanswer = Console.ReadLine
                     Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
-                    If IsNumeric(profanswer) Then
+                    If IsStringNumeric(profanswer) Then
                         Try
                             Wdbg(DebugLevel.I, "Profile selected")
                             profsel = profiles(Val(profanswer) - 1)
@@ -270,8 +272,8 @@ Namespace Network.FTP
                     Write(">> ", False, ColTypes.Input)
                     Answer = Console.ReadLine
                     Wdbg(DebugLevel.I, "Response: {0}", Answer)
-                    If IsNumeric(Answer) Then
-                        Wdbg(DebugLevel.I, "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
+                    If IsStringNumeric(Answer) Then
+                        Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...")
                         Dim AnswerInt As Integer = Answer
                         If AnswerInt <= SpeedDialLines.Count Then
                             Answering = False
@@ -289,7 +291,7 @@ Namespace Network.FTP
                             Write(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Error, SpeedDialLines.Count)
                         End If
                     Else
-                        Wdbg(DebugLevel.W, "Response isn't numeric. IsNumeric(Answer) returned false.")
+                        Wdbg(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.")
                         Write(DoTranslation("The selection is not a number. Try again."), True, ColTypes.Error)
                     End If
                 End While

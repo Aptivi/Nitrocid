@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Extensification.IntegerExts
+Imports KS.Misc.Reflection
 
 Namespace Misc.TextEdit.Commands
     Class TextEdit_DelWordCommand
@@ -25,7 +26,7 @@ Namespace Misc.TextEdit.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Count = 2 Then
-                If IsNumeric(ListArgs(1)) Then
+                If IsStringNumeric(ListArgs(1)) Then
                     If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                         TextEdit_DeleteWord(ListArgs(0), ListArgs(1))
                         Write(DoTranslation("Word deleted."), True, ColTypes.Success)
@@ -37,7 +38,7 @@ Namespace Misc.TextEdit.Commands
                     Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(1))
                 End If
             ElseIf ListArgs?.Count > 2 Then
-                If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(2)) Then
+                If IsStringNumeric(ListArgs(1)) And IsStringNumeric(ListArgs(2)) Then
                     If CInt(ListArgs(1)) <= TextEdit_FileLines.Count And CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
                         Dim LineNumberStart As Integer = ListArgs(1)
                         Dim LineNumberEnd As Integer = ListArgs(2)

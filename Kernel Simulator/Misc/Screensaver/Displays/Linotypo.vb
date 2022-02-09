@@ -19,6 +19,7 @@
 Imports System.ComponentModel
 Imports System.IO
 Imports System.Text
+Imports Microsoft.VisualBasic.VBMath
 
 Namespace Misc.Screensaver.Displays
     Public Module LinotypoDisplay

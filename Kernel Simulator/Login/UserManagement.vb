@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports KS.Misc.Encryption
+Imports Microsoft.VisualBasic.Strings
 
 Namespace Login
     Public Module UserManagement

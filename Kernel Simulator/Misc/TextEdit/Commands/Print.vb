@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Extensification.IntegerExts
+Imports KS.Misc.Reflection
 
 Namespace Misc.TextEdit.Commands
     Class TextEdit_PrintCommand
@@ -29,8 +30,8 @@ Namespace Misc.TextEdit.Commands
                 If ListArgs?.Length = 1 Then
                     'We've only provided one line number
                     Wdbg(DebugLevel.I, "Line number provided: {0}", ListArgs(0))
-                    Wdbg(DebugLevel.I, "Is it numeric? {0}", ListArgs(0).IsNumeric)
-                    If ListArgs(0).IsNumeric Then
+                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgs(0)))
+                    If IsStringNumeric(ListArgs(0)) Then
                         LineNumber = ListArgs(0)
                         Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
                         If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
@@ -48,8 +49,8 @@ Namespace Misc.TextEdit.Commands
                 Else
                     'We've provided two line numbers in the range
                     Wdbg(DebugLevel.I, "Line numbers provided: {0}, {1}", ListArgs(0), ListArgs(1))
-                    Wdbg(DebugLevel.I, "Is it numeric? {0}", ListArgs(0).IsNumeric, ListArgs(1).IsNumeric)
-                    If ListArgs(0).IsNumeric And ListArgs(1).IsNumeric Then
+                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgs(0)), IsStringNumeric(ListArgs(1)))
+                    If IsStringNumeric(ListArgs(0)) And IsStringNumeric(ListArgs(1)) Then
                         Dim LineNumberStart As Integer = ListArgs(0)
                         Dim LineNumberEnd As Integer = ListArgs(1)
                         LineNumberStart.SwapIfSourceLarger(LineNumberEnd)

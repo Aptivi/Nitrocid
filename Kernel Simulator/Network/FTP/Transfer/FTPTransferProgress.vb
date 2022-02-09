@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Microsoft.VisualBasic.Strings
+
 Namespace Network.FTP.Transfer
     Public Module FTPTransferProgress
 

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace ConsoleBase.Themes.Studio
     Module ThemeStudio
 
@@ -96,7 +98,7 @@ Namespace ConsoleBase.Themes.Studio
                 Wdbg(DebugLevel.I, "Got response: {0}", Response)
 
                 'Check for response integrity
-                If IsNumeric(Response) Then
+                If IsStringNumeric(Response) Then
                     Wdbg(DebugLevel.I, "Response is numeric.")
                     Dim NumericResponse As Integer = Response
                     Wdbg(DebugLevel.I, "Checking response...")

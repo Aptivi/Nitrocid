@@ -173,7 +173,7 @@
     <Import Include="KS.Shell" />
     <Import Include="KS.Shell.ShellBase" />
     <Import Include="MadMilkman.Ini" />
-    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Constants" />
     <Import Include="Newtonsoft.Json" />
     <Import Include="Renci.SshNet" />
     <Import Include="System" />
@@ -327,6 +327,7 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\Reflection\StringQuery.vb" />
     <Compile Include="Misc\ReportBugPrompt.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverCompiler.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverTools.vb" />

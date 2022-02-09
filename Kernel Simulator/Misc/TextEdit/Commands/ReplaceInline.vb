@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Extensification.IntegerExts
+Imports KS.Misc.Reflection
 
 Namespace Misc.TextEdit.Commands
     Class TextEdit_ReplaceInlineCommand
@@ -25,7 +26,7 @@ Namespace Misc.TextEdit.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Count = 3 Then
-                If ListArgs(2).IsNumeric Then
+                If IsStringNumeric(ListArgs(2)) Then
                     If CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
                         TextEdit_Replace(ListArgs(0), ListArgs(1), ListArgs(2))
                         Write(DoTranslation("String replaced."), True, ColTypes.Success)
@@ -37,7 +38,7 @@ Namespace Misc.TextEdit.Commands
                     Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(2))
                 End If
             ElseIf ListArgs?.Count > 3 Then
-                If IsNumeric(ListArgs(2)) And IsNumeric(ListArgs(3)) Then
+                If IsStringNumeric(ListArgs(2)) And IsStringNumeric(ListArgs(3)) Then
                     If CInt(ListArgs(2)) <= TextEdit_FileLines.Count And CInt(ListArgs(3)) <= TextEdit_FileLines.Count Then
                         Dim LineNumberStart As Integer = ListArgs(2)
                         Dim LineNumberEnd As Integer = ListArgs(3)

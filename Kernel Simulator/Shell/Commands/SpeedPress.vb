@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Games
+Imports KS.Misc.Reflection
 
 Namespace Shell.Commands
     Class SpeedPressCommand
@@ -30,7 +31,7 @@ Namespace Shell.Commands
             If ListSwitchesOnly.Contains("-m") Then Difficulty = SpeedPressDifficulty.Medium
             If ListSwitchesOnly.Contains("-h") Then Difficulty = SpeedPressDifficulty.Hard
             If ListSwitchesOnly.Contains("-v") Then Difficulty = SpeedPressDifficulty.VeryHard
-            If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso ListArgsOnly(0).IsNumeric Then
+            If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso IsStringNumeric(ListArgsOnly(0)) Then
                 Difficulty = SpeedPressDifficulty.Custom
                 CustomTimeout = ListArgsOnly(0)
             End If

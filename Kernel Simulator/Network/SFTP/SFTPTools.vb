@@ -18,6 +18,7 @@
 
 Imports Newtonsoft.Json.Linq
 Imports KS.Network.SSH
+Imports KS.Misc.Reflection
 
 Namespace Network.SFTP
     Public Module SFTPTools
@@ -125,8 +126,8 @@ Namespace Network.SFTP
                         Write(">> ", False, ColTypes.Input)
                         Answer = Console.ReadLine
                         Wdbg(DebugLevel.I, "Response: {0}", Answer)
-                        If IsNumeric(Answer) Then
-                            Wdbg(DebugLevel.I, "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
+                        If IsStringNumeric(Answer) Then
+                            Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...")
                             Dim AnswerInt As Integer = Answer
                             If AnswerInt <= SpeedDialLines.Count Then
                                 Answering = False
@@ -144,7 +145,7 @@ Namespace Network.SFTP
                                 Write(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Error, SpeedDialLines.Count)
                             End If
                         Else
-                            Wdbg(DebugLevel.W, "Response isn't numeric. IsNumeric(Answer) returned false.")
+                            Wdbg(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.")
                             Write(DoTranslation("The selection is not a number. Try again."), True, ColTypes.Error)
                         End If
                     End While

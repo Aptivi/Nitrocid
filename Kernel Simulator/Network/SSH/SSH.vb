@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Renci.SshNet.Common
+Imports Microsoft.VisualBasic.Interaction
 
 Namespace Network.SSH
     Public Module SSH

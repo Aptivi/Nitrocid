@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text.RegularExpressions
+Imports Microsoft.VisualBasic.Interaction
 
 Namespace ConsoleBase
     Public Module ConsoleExtensions

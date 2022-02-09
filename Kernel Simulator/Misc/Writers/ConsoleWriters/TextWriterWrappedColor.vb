@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace Misc.Writers.ConsoleWriters
     Public Module TextWriterWrappedColor
 
@@ -130,7 +132,7 @@ Namespace Misc.Writers.ConsoleWriters
 #End If
                 Try
                     'Try to write to console
-                    Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                    Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
                     Console.ForegroundColor = color
 
                     'Write wrapped output

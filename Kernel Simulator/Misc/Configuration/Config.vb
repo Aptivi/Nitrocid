@@ -46,6 +46,7 @@ Imports KS.Scripting.Interaction
 Imports KS.TestShell
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
+Imports Microsoft.VisualBasic.Interaction
 
 Namespace Misc.Configuration
     Public Module Config

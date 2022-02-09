@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Misc.Reflection
 
 Namespace Misc.Writers.ConsoleWriters
     Public Module TextWriterSlowColor
@@ -131,7 +132,7 @@ Namespace Misc.Writers.ConsoleWriters
             SyncLock WriteLock
 #End If
                 Try
-                    Console.BackgroundColor = If(BackgroundColor.PlainSequence.IsNumeric AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                    Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
                     Console.ForegroundColor = color
 
                     'Write text slowly

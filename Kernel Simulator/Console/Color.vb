@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace ConsoleBase
     Public Class Color
 
@@ -87,7 +89,7 @@ Namespace ConsoleBase
                 Else
                     Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
                 End If
-            ElseIf IsNumeric(ColorSpecifier) Then
+            ElseIf IsStringNumeric(ColorSpecifier) Then
                 ColorSpecifier = ColorSpecifier.Replace("""", "")
                 Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
                 PlainSequence = ColorSpecifier

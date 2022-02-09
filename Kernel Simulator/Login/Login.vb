@@ -19,6 +19,7 @@
 Imports KS.Misc.Encryption
 Imports KS.Misc.Screensaver
 Imports KS.Network.RSS
+Imports Microsoft.VisualBasic.Strings
 
 Namespace Login
     Public Module Login

@@ -109,7 +109,7 @@ Namespace Misc.Screensaver.Displays
                                     'Do the actual writing
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
                                     Console.SetCursorPosition(0, Row)
-                                    Console.Write(StrDup(Column, " "))
+                                    Console.Write(" ".Repeat(Column))
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Column)
                                 Next
                                 SleepNoBlock(WipeDelay, Wipe)
@@ -127,7 +127,7 @@ Namespace Misc.Screensaver.Displays
                                     'Do the actual writing
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting position to {0}", Column - 1, Row)
                                     Console.SetCursorPosition(Column - 1, Row)
-                                    Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
+                                    Console.Write(" ".Repeat(Console.WindowWidth - Column + 1))
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth - Column + 1)
                                 Next
                                 SleepNoBlock(WipeDelay, Wipe)
@@ -141,7 +141,7 @@ Namespace Misc.Screensaver.Displays
                                 'Do the actual writing
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
                                 Console.SetCursorPosition(0, Row)
-                                Console.Write(StrDup(Console.WindowWidth, " "))
+                                Console.Write(" ".Repeat(Console.WindowWidth))
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
@@ -153,7 +153,7 @@ Namespace Misc.Screensaver.Displays
 
                                 'Do the actual writing
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
-                                Console.Write(StrDup(Console.WindowWidth, " "))
+                                Console.Write(" ".Repeat(Console.WindowWidth))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                             Console.SetCursorPosition(0, 0)

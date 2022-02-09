@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.Mail.Directory
+Imports KS.Misc.Reflection
 
 Namespace Network.Mail.Commands
     Class Mail_ListCommand
@@ -25,8 +26,8 @@ Namespace Network.Mail.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Length > 0 Then
-                Wdbg(DebugLevel.I, "Page is numeric? {0}", ListArgs(0).IsNumeric)
-                If ListArgs(0).IsNumeric Then
+                Wdbg(DebugLevel.I, "Page is numeric? {0}", IsStringNumeric(ListArgs(0)))
+                If IsStringNumeric(ListArgs(0)) Then
                     MailListMessages(ListArgs(0))
                 Else
                     Write(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)

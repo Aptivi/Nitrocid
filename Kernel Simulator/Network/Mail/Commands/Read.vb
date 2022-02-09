@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.Mail.Transfer
+Imports KS.Misc.Reflection
 
 Namespace Network.Mail.Commands
     Class Mail_ReadCommand
@@ -24,8 +25,8 @@ Namespace Network.Mail.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Wdbg(DebugLevel.I, "Message number is numeric? {0}", ListArgs(0).IsNumeric)
-            If ListArgs(0).IsNumeric Then
+            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
+            If IsStringNumeric(ListArgs(0)) Then
                 MailPrintMessage(ListArgs(0))
             Else
                 Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)

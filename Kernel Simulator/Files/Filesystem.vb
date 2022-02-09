@@ -22,6 +22,7 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports KS.Misc.Configuration
+Imports Microsoft.VisualBasic.Strings
 
 Namespace Files
     Public Module Filesystem

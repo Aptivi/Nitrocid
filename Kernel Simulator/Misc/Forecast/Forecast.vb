@@ -15,7 +15,10 @@
 '
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 Imports Core
+Imports KS.Misc.Reflection
+Imports Microsoft.VisualBasic.Strings
 
 Namespace Misc.Forecast
     Public Module Forecast
@@ -78,7 +81,7 @@ Namespace Misc.Forecast
             Dim WeatherInfo As ForecastInfo
             Dim WeatherSpecifier As String = "°"
             Dim WindSpeedSpecifier As String = "m.s"
-            If IsNumeric(CityID) Then
+            If IsStringNumeric(CityID) Then
                 WeatherInfo = GetWeatherInfo(CLng(CityID), APIKey)
             Else
                 WeatherInfo = GetWeatherInfo(CityID, APIKey)

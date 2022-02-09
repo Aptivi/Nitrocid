@@ -18,6 +18,7 @@
 
 Imports System.Reflection
 Imports System.Text
+Imports Microsoft.VisualBasic.Strings
 
 Namespace Network.SFTP.Filesystem
     Module SFTPFilesystem

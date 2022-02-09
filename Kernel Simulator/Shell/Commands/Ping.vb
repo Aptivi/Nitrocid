@@ -18,6 +18,7 @@
 
 Imports System.Net.NetworkInformation
 Imports KS.Network
+Imports KS.Misc.Reflection
 
 Namespace Shell.Commands
     Class PingCommand
@@ -28,7 +29,7 @@ Namespace Shell.Commands
             'If the pinged address is actually a number of times
             Dim PingTimes As Integer = 4
             Dim StepsToSkip As Integer = 0
-            If IsNumeric(ListArgs(0)) Then
+            If IsStringNumeric(ListArgs(0)) Then
                 Wdbg(DebugLevel.I, "ListArgs(0) is numeric. Assuming number of times: {0}", ListArgs(0))
                 PingTimes = ListArgs(0)
                 StepsToSkip = 1

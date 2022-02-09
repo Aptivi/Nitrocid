@@ -62,7 +62,7 @@ Namespace Misc.Configuration
                 Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 Console.WriteLine()
 
-                Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
+                Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsStringNumeric(AnswerString))
                 If Integer.TryParse(AnswerString, AnswerInt) Then
                     Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...")
                     If AnswerInt >= 1 And AnswerInt <= MaxSections Then
@@ -187,7 +187,7 @@ Namespace Misc.Configuration
                     Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                     Console.WriteLine()
 
-                    Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
+                    Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsStringNumeric(AnswerString))
                     If Integer.TryParse(AnswerString, AnswerInt) Then
                         Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...")
                         If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
@@ -380,7 +380,7 @@ Namespace Misc.Configuration
                     End If
 
                     'Check for input
-                    Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
+                    Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsStringNumeric(AnswerString))
                     If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
                         Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
                         If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
@@ -537,7 +537,7 @@ Namespace Misc.Configuration
                 SettingsNumber = Console.ReadLine
 
                 'Parse the input and go to setting
-                If SettingsNumber.IsNumeric Then
+                If IsStringNumeric(SettingsNumber) Then
                     Dim ChosenSettingIndex As Integer = CInt(SettingsNumber) - 1
                     Dim ChosenSetting As String = Results(ChosenSettingIndex)
                     Dim SectionIndex As Integer = CInt(ChosenSetting.AsSpan.Slice(1, ChosenSetting.IndexOf("/") - 1).ToString) - 1
