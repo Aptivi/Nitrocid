@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU：1つ以上のCPUコアのプローブに失敗しました。とにかく情報を表示しています...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM：1つ以上のRAMチップのプローブに失敗しました。とにかく情報を表示しています...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD：1つまたは複数のハードドライブのプローブに失敗しました。とにかく情報を表示しています...",
-    "CPU: Total number of processors: {0}": "CPU：プロセッサーの合計数：{0}",
     "Enter the admin password for maintenance.": "メンテナンス用の管理者パスワードを入力します。",
     "Kernel Error while booting: {0}": "起動中のカーネルエラー：{0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ダブルパニック：再起動時間が最大許容{0}エラーの再起動時間を超えています。カーネルのバグを見つけました。",

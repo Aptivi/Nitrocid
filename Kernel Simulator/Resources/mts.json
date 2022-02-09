@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Wieħed jew aktar mill-qlub tas-CPU naqsu milli jiġu investigati. Li turi informazzjoni xorta waħda ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Ċippa RAM waħda jew aktar naqset milli tiġi investigata. Li turi informazzjoni xorta waħda ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Wieħed jew aktar mill-hard drives ma rnexxilhomx jiġu investigati. Li turi informazzjoni xorta waħda ...",
-    "CPU: Total number of processors: {0}": "CPU: Numru totali ta 'proċessuri: {0}",
     "Enter the admin password for maintenance.": "Daħħal il-password tal-amministratur għall-manutenzjoni.",
     "Kernel Error while booting: {0}": "Żball tal-Kernel waqt l-ibbutjar: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANIKU DOPPJU: Il-Ħin tar-Reboot jeċċedi l-ħin massimu permess ta '{0} żball reboot time. Sibt bug tal-qalba.",

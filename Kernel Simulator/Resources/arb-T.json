@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "وحدة المعالجة المركزية: فشل تحقيق واحد أو أكثر من مراكز وحدة المعالجة المركزية. عرض المعلومات على أي حال ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "ذاكرة الوصول العشوائي: فشلت واحدة أو أكثر من رقائق ذاكرة الوصول العشوائي في التحقيق. عرض المعلومات على أي حال ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "الأقراص الصلبة: فشل محرك أقراص واحد أو أكثر في التحقيق. عرض المعلومات على أي حال ...",
-    "CPU: Total number of processors: {0}": "وحدة المعالجة المركزية: إجمالي عدد المعالجات: {0}",
     "Enter the admin password for maintenance.": "أدخل كلمة مرور المسؤول للصيانة.",
     "Kernel Error while booting: {0}": "خطأ Kernel أثناء التشغيل: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOUBLE PANIC: وقت إعادة التشغيل يتجاوز الحد الأقصى المسموح به لوقت إعادة تشغيل الخطأ {0}. لقد وجدت علة نواة.",

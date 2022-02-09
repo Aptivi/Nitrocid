@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Usa o daghan pa sa mga cores sa CPU napakyas sa pagsusi. Nagpakita gihapon og impormasyon...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Usa o daghan pa sa RAM chips napakyas sa pagsusi. Nagpakita gihapon og impormasyon...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Usa o daghan pa sa mga hard drive napakyas sa pagsusi. Nagpakita gihapon og impormasyon...",
-    "CPU: Total number of processors: {0}": "CPU: Kinatibuk-ang gidaghanon sa mga processor: {0}",
     "Enter the admin password for maintenance.": "Pagsulod sa admin password alang sa maintenance.",
     "Kernel Error while booting: {0}": "Kernel Error samtang nag-boot: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOBLE PANIC: Reboot Time milapas sa pinakataas nga gitugot nga {0} error reboot time. Nakakita ka ug kernel bug.",

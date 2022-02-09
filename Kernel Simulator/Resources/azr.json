@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: CPU nüvələrindən biri və ya daha çoxu yoxlanılmadı. Hər halda məlumat göstərilir ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: RAM çiplərindən bir və ya bir neçəsi yoxlanılmadı. Hər halda məlumat göstərilir ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Bir və ya daha çox sabit disk yoxlanılmadı. Hər halda məlumat göstərilir ...",
-    "CPU: Total number of processors: {0}": "CPU: Ümumi prosessorların sayı: {0}",
     "Enter the admin password for maintenance.": "Baxım üçün admin parolunu daxil edin.",
     "Kernel Error while booting: {0}": "Önyükləmə zamanı Kernel Xətası: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "İKİ PANİK: Yenidən başlama vaxtı icazə verilən maksimum {0} səhv yenidən başlatma müddətini keçir. Bir kernel böcəyi tapdınız.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: processordıñ bir nemese jaña yadrosı tekserilmeydi. Aqparat bäribir körsetilwde ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "JJQ: bir nemese jaña jedel jadı çïpteri tekserilmeydi. Aqparat bäribir körsetilwde ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: bir nemese basqa qattı dïsk tekserilmeydi. Aqparat bäribir körsetilwde ...",
-    "CPU: Total number of processors: {0}": "CPU: processorlardıñ jalpı sanı: {0}",
     "Enter the admin password for maintenance.": "Texnïkalıq qızmet körsetw üşin äkimşi qupïya sözin engiziñiz.",
     "Kernel Error while booting: {0}": "Jüktew kezinde yadro ​​qatesi: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "QOS PANÏK: Qayta jüktew waqıtı ayaqtaldı {0} qateni qayta jüktew merziminen asıp ketti. Siz yadro ​​qatesin taptıñız.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Methwyd â phrofi un neu fwy o'r creiddiau CPU. Yn dangos gwybodaeth beth bynnag ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Methwyd â phrofi un neu fwy o'r sglodion RAM. Yn dangos gwybodaeth beth bynnag ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Methwyd â phrofi un neu fwy o'r gyriannau caled. Yn dangos gwybodaeth beth bynnag ...",
-    "CPU: Total number of processors: {0}": "CPU: Cyfanswm nifer y proseswyr: {0}",
     "Enter the admin password for maintenance.": "Rhowch y cyfrinair gweinyddol ar gyfer cynnal a chadw.",
     "Kernel Error while booting: {0}": "Gwall cnewyllyn wrth roi hwb: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANIC DWBL: Mae'r Amser Ailgychwyn yn fwy na'r amser ailgychwyn gwall a ganiateir {0}. Fe ddaethoch o hyd i nam cnewyllyn.",

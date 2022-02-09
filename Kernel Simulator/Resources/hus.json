@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: An kasa bincika ɗaya ko fiye na na'urorin CPU. Ana nuna bayanai ta wata hanya...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: An kasa bincika ɗaya ko fiye na kwakwalwan RAM ɗin. Ana nuna bayanai ta wata hanya...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: An kasa bincika ɗaya ko fiye na rumbun kwamfutarka. Ana nuna bayanai ta wata hanya...",
-    "CPU: Total number of processors: {0}": "CPU: Jimlar adadin masu sarrafawa: {0}",
     "Enter the admin password for maintenance.": "Shigar da kalmar wucewa ta admin don kiyayewa.",
     "Kernel Error while booting: {0}": "Kuskuren Kernel yayin yin taya: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "TSORON BIYU: Lokacin sake kunnawa ya wuce iyakar lokacin da aka yi kuskure {0} lokacin sake kunnawa. Kun sami kwaro na kwaya.",

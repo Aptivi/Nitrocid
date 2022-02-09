@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "ਸੀਪੀਯੂ: ਇੱਕ ਜਾਂ ਵਧੇਰੇ ਸੀਪੀਯੂ ਕੋਰ ਦੀ ਜਾਂਚ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ. ਕਿਵੇਂ ਵੀ ਜਾਣਕਾਰੀ ਦਿਖਾ ਰਿਹਾ ਹੈ ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "ਰੈਮ: ਰੈਮ ਚਿੱਪਾਂ ਵਿੱਚੋਂ ਇੱਕ ਜਾਂ ਵਧੇਰੇ ਦੀ ਜਾਂਚ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ. ਕਿਵੇਂ ਵੀ ਜਾਣਕਾਰੀ ਦਿਖਾ ਰਿਹਾ ਹੈ ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "ਐਚ ਡੀ ਡੀ: ਇੱਕ ਜਾਂ ਵਧੇਰੇ ਹਾਰਡ ਡਰਾਈਵਾਂ ਦੀ ਪੜਤਾਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ. ਕਿਵੇਂ ਵੀ ਜਾਣਕਾਰੀ ਦਿਖਾ ਰਿਹਾ ਹੈ ...",
-    "CPU: Total number of processors: {0}": "ਸੀ ਪੀ ਯੂ: ਪ੍ਰੋਸੈਸਰਾਂ ਦੀ ਕੁੱਲ ਸੰਖਿਆ: {0}",
     "Enter the admin password for maintenance.": "ਦੇਖਭਾਲ ਲਈ ਐਡਮਿਨ ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ.",
     "Kernel Error while booting: {0}": "ਬੂਟ ਕਰਨ ਵੇਲੇ ਕਰਨਲ ਗਲਤੀ: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ਡਬਲ ਪੈਨਿਕ: ਰੀਬੂਟ ਟਾਈਮ ਅਧਿਕਤਮ ਆਗਿਆ ਪ੍ਰਾਪਤ {0} ਗਲਤੀ ਦੇ ਮੁੜ ਚਾਲੂ ਸਮੇਂ ਤੋਂ ਵੱਧ ਗਿਆ ਹੈ. ਤੁਹਾਨੂੰ ਇੱਕ ਕਰਨਲ ਬੱਗ ਮਿਲਿਆ ਹੈ.",

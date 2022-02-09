@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": " cpu: one or more o' the cpu cores failed to be probed. Showin' information anyway...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": " ram: one or more o' the ram chips failed to be probed. Showin' information anyway...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": " 'dd: one or more o' the 'ard drives failed to be probed. Showin' information anyway...",
-    "CPU: Total number of processors: {0}": " cpu: total number o' processors: {0}",
     "Enter the admin password for maintenance.": "enter the admin password fer maintenance.",
     "Kernel Error while booting: {0}": " kernel error while booting: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "double panic: reboot time exceeds maximum allowed {0} error reboot time. Ye found a kernel bug.",

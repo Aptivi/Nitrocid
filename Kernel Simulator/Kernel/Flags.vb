@@ -197,10 +197,6 @@ Namespace Kernel
         ''' </summary>
         Public SuppressUnauthorizedMessages As Boolean = True
         ''' <summary>
-        ''' Whether to use the legacy hardware listing (pre-0.0.20.0 era)
-        ''' </summary>
-        Public UseLegacyHardwareListing As Boolean = True
-        ''' <summary>
         ''' Print the line numbers while listing file contents
         ''' </summary>
         Public PrintLineNumbers As Boolean

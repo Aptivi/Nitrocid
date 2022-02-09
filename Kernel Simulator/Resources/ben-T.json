@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "সিপিইউ: এক বা একাধিক সিপিইউ অনুসন্ধান করা যায়নি। যাইহোক তথ্য দেখানো হচ্ছে ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "র‌্যাম: এক বা একাধিক র‌্যাম চিপ অনুসন্ধান করা যায়নি। যাইহোক তথ্য দেখানো হচ্ছে ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "এইচডিডি: এক বা একাধিক হার্ড ড্রাইভ অনুসন্ধান করা যায়নি। যাইহোক তথ্য দেখানো হচ্ছে ...",
-    "CPU: Total number of processors: {0}": "সিপিইউ: প্রসেসরের মোট সংখ্যা: {0}",
     "Enter the admin password for maintenance.": "রক্ষণাবেক্ষণের জন্য প্রশাসকের পাসওয়ার্ড লিখুন।",
     "Kernel Error while booting: {0}": "বুট করার সময় কার্নেল ত্রুটি: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ডাবল প্যানিক: রিবুট সময়টি সর্বাধিক অনুমোদিত {0} ত্রুটি পুনরায় বুট করার সময়কে ছাড়িয়ে যায়। আপনি একটি কার্নেল বাগ খুঁজে পেয়েছেন।",

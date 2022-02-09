@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "SVE: Een of meer van die SVE-kerns kon nie ondersoek word nie. Wys tans inligting in elk geval...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Een of meer van die RAM-skyfies kon nie ondersoek word nie. Wys tans inligting in elk geval...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Een of meer van die hardeskywe kon nie ondersoek word nie. Wys tans inligting in elk geval...",
-    "CPU: Total number of processors: {0}": "SVE: Totale aantal verwerkers: {0}",
     "Enter the admin password for maintenance.": "Voer die administrateurwagwoord vir onderhoud in.",
     "Kernel Error while booting: {0}": "Kernelfout tydens selflaai: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DUBBEL PANIEK: Herlaaityd oorskry maksimum toegelate {0} foutherlaaityd. Jy het 'n kernfout gevind.",

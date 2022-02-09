@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "Процесор: Едно или повеќе од јадрата на процесорот не успеа да се испита. Во секој случај се прикажуваат информации...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Еден или повеќе од RAM-чиповите не успеа да се испита. Во секој случај се прикажуваат информации...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Еден или повеќе од хард дисковите не успеа да се испита. Во секој случај се прикажуваат информации...",
-    "CPU: Total number of processors: {0}": "Процесор: вкупен број на процесори: {0}",
     "Enter the admin password for maintenance.": "Внесете ја административната лозинка за одржување.",
     "Kernel Error while booting: {0}": "Грешка во јадрото при подигнување: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ДВОЈНА ПАНИКА: Времето на рестартирање го надминува максималното дозволено време за рестартирање на грешка од {0}. Најдовте грешка во јадрото.",

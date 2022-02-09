@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Unul sau mai multe nuclee ale procesorului nu au fost probate. Afi?area informa?iilor oricum ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: una sau mai multe dintre cipurile RAM nu au fost probate. Afi?area informa?iilor oricum ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Unul sau mai multe dintre hard disk-urile nu au fost probate. Afi?area informa?iilor oricum ...",
-    "CPU: Total number of processors: {0}": "CPU: Num?r total de procesoare: {0}",
     "Enter the admin password for maintenance.": "Introduce?i parola de administrare pentru �ntre?inere.",
     "Kernel Error while booting: {0}": "Eroare a nucleului la pornire: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANIC DOUBLE: Timpul de repornire dep??e?te durata maxim? permis? {0} de repornire a erorii. A?i g?sit o eroare a kernel-ului.",

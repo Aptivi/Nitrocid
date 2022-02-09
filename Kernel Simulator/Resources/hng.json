@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Egy vagy több CPU magot nem sikerült megvizsgálni. Mindenesetre információ megjelenítése...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Egy vagy több RAM chipet nem sikerült megvizsgálni. Mindenesetre információ megjelenítése...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Egy vagy több merevlemezt nem sikerült megvizsgálni. Mindenesetre információ megjelenítése...",
-    "CPU: Total number of processors: {0}": "CPU: Processzorok teljes száma: {0}",
     "Enter the admin password for maintenance.": "Adja meg az adminisztrátori jelszót a karbantartáshoz.",
     "Kernel Error while booting: {0}": "Kernelhiba indításkor: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "KETTŐS PÁNIK: Az újraindítási idő meghaladja a maximálisan engedélyezett {0} hiba újraindítási idejét. Kernelhibát találtál.",

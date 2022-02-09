@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "Procesor: co najmniej jeden z rdzeni procesora nie zosta? zbadany. Mimo to pokazywanie informacji ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Jeden lub wi?cej uk?ad?w RAM nie zosta?o zbadanych. Mimo to pokazywanie informacji ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Jeden lub wi?cej dysk?w twardych nie zosta?o sondowanych. Mimo to pokazywanie informacji ...",
-    "CPU: Total number of processors: {0}": "Procesor: ??czna liczba procesor?w: {0}",
     "Enter the admin password for maintenance.": "Wprowad? has?o administratora w celu konserwacji.",
     "Kernel Error while booting: {0}": "B??d j?dra podczas uruchamiania: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOUBLE PANIC: Czas restartu przekracza maksymalny dozwolony czas restartu b??du {0}. Znalaz?e? b??d j?dra.",

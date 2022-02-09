@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Едно или повече от процесорните ядра не са били изследвани. Все пак се показва информация...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Един или повече от RAM чиповете не успяха да бъдат изследвани. Все пак се показва информация...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "Твърди диск: Един или повече от твърдите дискове не успяха да бъдат изследвани. Все пак се показва информация...",
-    "CPU: Total number of processors: {0}": "ЦП: Общ брой процесори: {0}",
     "Enter the admin password for maintenance.": "Въведете администраторска парола за поддръжка.",
     "Kernel Error while booting: {0}": "Грешка в ядрото при зареждане: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ДВОЙНА ПАНИКА: Времето за рестартиране надвишава максимално разрешеното време за рестартиране на грешка {0}. Открихте грешка в ядрото.",

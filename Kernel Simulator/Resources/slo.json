@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Jedno alebo viac jadier CPU sa nepodarilo testovať. Zobrazujú sa informácie napriek tomu ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Jeden alebo viac čipov RAM sa nepodarilo testovať. Zobrazujú sa informácie napriek tomu ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Jeden alebo viac pevných diskov sa nepodarilo otestovať. Zobrazujú sa informácie napriek tomu ...",
-    "CPU: Total number of processors: {0}": "CPU: Celkový počet procesorov: {0}",
     "Enter the admin password for maintenance.": "Z dôvodu údržby zadajte heslo správcu.",
     "Kernel Error while booting: {0}": "Chyba jadra pri zavádzaní systému: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOUBLE PANIC: Čas reštartu prekračuje maximálny povolený čas {0} chyby reštartu chyby. Našli ste chybu jadra.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: процессордың бір немесе бірнеше ядросы тексерілмеді. Ақпарат бәрібір көрсетілуде ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "ЖЖҚ: бір немесе бірнеше жедел жады чиптері тексерілмеді. Ақпарат бәрібір көрсетілуде ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: бір немесе бірнеше қатты диск тексерілмеді. Ақпарат бәрібір көрсетілуде ...",
-    "CPU: Total number of processors: {0}": "CPU: процессорлардың жалпы саны: {0}",
     "Enter the admin password for maintenance.": "Техникалық қызмет көрсету үшін әкімші құпия сөзін енгізіңіз.",
     "Kernel Error while booting: {0}": "Жүктеу кезінде ядро ​​қатесі: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ҚОС ПАНИК: Қайта жүктеу уақыты рұқсат етілген {0} қатені қайта жүктеу уақытынан асып кетті. Сіз ядро ​​қатесін таптыңыз.",

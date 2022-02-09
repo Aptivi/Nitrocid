@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...",
-    "CPU: Total number of processors: {0}": "CPU: Número total de processadores: {0}",
     "Enter the admin password for maintenance.": "Digite a senha do administrador para manutenção.",
     "Kernel Error while booting: {0}": "Erro de kernel durante a inicialização: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU：一个或多个CPU内核无法探测。仍在显示信息...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM：无法探测一个或多个RAM芯片。仍在显示信息...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD：无法探测一个或多个硬盘驱动器。仍在显示信息...",
-    "CPU: Total number of processors: {0}": "CPU：处理器总数：{0}",
     "Enter the admin password for maintenance.": "输入管理员密码进行维护。",
     "Kernel Error while booting: {0}": "引导时出现内核错误：{0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "双重恐慌：重新启动时间超过了允许的最大{0}错误重新启动时间。您发现了一个内核错误。",

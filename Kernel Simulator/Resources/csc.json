@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Unu o più di i nuclei CPU ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Unu o più di i chips RAM ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Unu o più di i discu duru ùn sò micca stati pruvati. Mustrà infurmazione quantunque ...",
-    "CPU: Total number of processors: {0}": "CPU: Numaru tutale di processori: {0}",
     "Enter the admin password for maintenance.": "Inserite a password di amministratore per a manutenzione.",
     "Kernel Error while booting: {0}": "Errore di u Kernel durante u boot: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOPPIA PANICA: U tempu di riavviu supera u tempu massimu permessu di {0} errore di riavviamentu. Avete trovu un bug di kernel.",

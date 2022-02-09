@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU : hana isang-ui CPU ko-eoleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM : hana isang-ui RAM chib-eul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD : hana isang-ui hadeu deulaibeuleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...",
-    "CPU: Total number of processors: {0}": "CPU : chong peuloseseo su : {0}",
     "Enter the admin password for maintenance.": "yuji gwanlileul wihae gwanlija bimilbeonholeul iblyeoghasibsio.",
     "Kernel Error while booting: {0}": "buting jung keoneol olyu : {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ijung paenig : jaebuting sigan-i choedae heoyong {0} olyu jaebuting sigan-eul chogwahabnida. keoneol beogeuleul balgyeonhaessseubnida.",

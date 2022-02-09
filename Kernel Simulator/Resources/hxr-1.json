@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "cpu: 0n3 0r m0r3 0f 7h3 cpu c0r35 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "r4m: 0n3 0r m0r3 0f 7h3 r4m ch1p5 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "hdd: 0n3 0r m0r3 0f 7h3 h4rd dr1v35 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...",
-    "CPU: Total number of processors: {0}": "cpu: 7074l numb3r 0f pr0c3550r5: {0}",
     "Enter the admin password for maintenance.": "3n73r 7h3 4dm1n p455w0rd f0r m41n73n4nc3.",
     "Kernel Error while booting: {0}": "k3rn3l 3rr0r wh1l3 b0071n6: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "d0ubl3 p4n1c: r3b007 71m3 3xc33d5 m4x1mum 4ll0w3d {0} 3rr0r r3b007 71m3. y0u f0und 4 k3rn3l bu6.",

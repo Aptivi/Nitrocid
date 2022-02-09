@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "सीपीयू: सीपीयू कोर का एक या एक से अधिक परीक्षण किया जाना विफल रहा। वैसे भी जानकारी दिखा रहा है ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: RAM चिप्स में से एक या अधिक जांच करने में विफल रहा। वैसे भी जानकारी दिखा रहा है ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: एक या अधिक हार्ड ड्राइव की जांच करने में विफल रहा। वैसे भी जानकारी दिखा रहा है ...",
-    "CPU: Total number of processors: {0}": "CPU: प्रोसेसर की कुल संख्या: {0}",
     "Enter the admin password for maintenance.": "रखरखाव के लिए व्यवस्थापक पासवर्ड दर्ज करें।",
     "Kernel Error while booting: {0}": "बूट करते समय कर्नेल त्रुटि: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "दोहरा PANIC: रिबूट समय अधिकतम अनुमत {0} त्रुटि रिबूट समय से अधिक है। आपको एक कर्नेल बग मिला।",

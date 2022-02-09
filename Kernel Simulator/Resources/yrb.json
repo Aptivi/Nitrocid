@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "Sipiyu: Ọkan tabi diẹ ẹ sii ti awọn ohun kohun Sipiyu kuna lati ṣe iwadii. Nfihan alaye lọnakọna ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "Ramu: Ọkan tabi diẹ ẹ sii ti awọn eerun Ramu kuna lati ṣe iwadii. Nfihan alaye lọnakọna ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Ọkan tabi diẹ ẹ sii ti awọn dirafu lile kuna lati ṣe iwadii. Nfihan alaye lọnakọna ...",
-    "CPU: Total number of processors: {0}": "Sipiyu: Nọmba apapọ awọn ero isise: {0}",
     "Enter the admin password for maintenance.": "Tẹ ọrọ igbaniwọle abojuto fun itọju.",
     "Kernel Error while booting: {0}": "Aṣiṣe Kernel lakoko gbigbe: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANIC Ilọpo meji: Akoko atunbere ti o pọju ti o gba laaye {0} akoko atunbere aṣiṣe. O ri kokoro ekuro kan.",

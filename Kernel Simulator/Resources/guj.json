@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: એક અથવા વધુ CPU કોરો ચકાસવામાં નિષ્ફળ ગયા. કોઈપણ રીતે માહિતી બતાવી રહ્યું છે ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: એક અથવા વધુ RAM ચિપ્સ તપાસવામાં નિષ્ફળ રહી. કોઈપણ રીતે માહિતી બતાવી રહ્યું છે ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: એક અથવા વધુ હાર્ડ ડ્રાઈવો તપાસવામાં નિષ્ફળ રહી. કોઈપણ રીતે માહિતી બતાવી રહ્યું છે ...",
-    "CPU: Total number of processors: {0}": "CPU: પ્રોસેસરની કુલ સંખ્યા: {0}",
     "Enter the admin password for maintenance.": "જાળવણી માટે એડમિન પાસવર્ડ દાખલ કરો.",
     "Kernel Error while booting: {0}": "બુટ કરતી વખતે કર્નલ ભૂલ: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ડબલ ગભરાટ: રીબૂટ સમય મહત્તમ મંજૂર {0} ભૂલ રીબુટ સમય કરતાં વધી ગયો. તમને કર્નલ ભૂલ મળી.",

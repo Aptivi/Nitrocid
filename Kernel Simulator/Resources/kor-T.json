@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU : 하나 이상의 CPU 코어를 검사하지 못했습니다. 어쨌든 정보 표시 중 ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM : 하나 이상의 RAM 칩을 검사하지 못했습니다. 어쨌든 정보 표시 중 ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD : 하나 이상의 하드 드라이브를 검사하지 못했습니다. 어쨌든 정보 표시 중 ...",
-    "CPU: Total number of processors: {0}": "CPU : 총 프로세서 수 : {0}",
     "Enter the admin password for maintenance.": "유지 관리를 위해 관리자 비밀번호를 입력하십시오.",
     "Kernel Error while booting: {0}": "부팅 중 커널 오류 : {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "이중 패닉 : 재부팅 시간이 최대 허용 {0} 오류 재부팅 시간을 초과합니다. 커널 버그를 발견했습니다.",

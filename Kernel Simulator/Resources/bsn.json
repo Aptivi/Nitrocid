@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Jedna ili više jezgri procesora nisu ispitane. U svakom slučaju prikazuju se informacije ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Jedan ili više RAM čipova nije ispitano. U svakom slučaju prikazuju se informacije ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Jedan ili više tvrdih diskova nije ispitano. U svakom slučaju prikazuju se informacije ...",
-    "CPU: Total number of processors: {0}": "CPU: Ukupan broj procesora: {0}",
     "Enter the admin password for maintenance.": "Unesite administratorsku lozinku za održavanje.",
     "Kernel Error while booting: {0}": "Greška jezgre pri pokretanju: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DVOSTRUKA PANIKA: Vrijeme ponovnog pokretanja premašuje maksimalno dozvoljeno {0} vrijeme ponovnog pokretanja greške. Pronašli ste grešku kernela.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "سی پی یو: ایک یا زیادہ سی پی یو کور تحقیقات میں ناکام رہے۔ بہر حال معلومات دکھا رہا ہے...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: ایک یا زیادہ RAM چپس کی جانچ پڑتال کرنے میں ناکام۔ بہر حال معلومات دکھا رہا ہے...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: ایک یا ایک سے زیادہ ہارڈ ڈرائیوز کی جانچ پڑتال میں ناکام ہوگئیں۔ بہر حال معلومات دکھا رہا ہے...",
-    "CPU: Total number of processors: {0}": "CPU: پروسیسرز کی کل تعداد: {0}",
     "Enter the admin password for maintenance.": "دیکھ بھال کے لیے ایڈمن پاس ورڈ درج کریں۔",
     "Kernel Error while booting: {0}": "بوٹ کرتے وقت دانا کی خرابی: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ڈبل گھبراہٹ: ریبوٹ کا وقت زیادہ سے زیادہ اجازت شدہ {0} خرابی ریبوٹ وقت سے زیادہ ہے۔ آپ کو ایک کرنل بگ ملا۔",

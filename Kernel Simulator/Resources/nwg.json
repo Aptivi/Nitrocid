@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: En eller flere av CPU-kjernene kunne ikke sonderes. Viser informasjon uansett ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: En eller flere av RAM-brikkene kunne ikke sonderes. Viser informasjon uansett ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: En eller flere av harddiskene kunne ikke sonderes. Viser informasjon uansett ...",
-    "CPU: Total number of processors: {0}": "CPU: Totalt antall prosessorer: {0}",
     "Enter the admin password for maintenance.": "Skriv inn administratorpassordet for vedlikehold.",
     "Kernel Error while booting: {0}": "Kernefeil under oppstart: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOBBEL PANIKK: Omstartstid overstiger maksimalt tillatt {0} feil omstartstid. Du fant en kjernefeil.",

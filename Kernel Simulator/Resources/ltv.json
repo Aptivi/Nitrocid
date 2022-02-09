@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: vienu vai vairākus CPU kodolus neizdevās pārbaudīt. Tik un tā tiek rādīta informācija...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: vienu vai vairākas RAM mikroshēmas neizdevās pārbaudīt. Tik un tā tiek rādīta informācija...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: neizdevās pārbaudīt vienu vai vairākus cietos diskus. Tik un tā tiek rādīta informācija...",
-    "CPU: Total number of processors: {0}": "CPU: kopējais procesoru skaits: {0}",
     "Enter the admin password for maintenance.": "Ievadiet administratora paroli apkopei.",
     "Kernel Error while booting: {0}": "Kodola kļūda sāknēšanas laikā: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DUBULTĀ PANIKA: Atsāknēšanas laiks pārsniedz maksimālo atļauto {0} kļūdas atsāknēšanas laiku. Jūs atradāt kodola kļūdu.",

@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: 1Tsu ijō no CPU koa no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "Ramu: 1Tsu ijō no ramu chippu no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "Hado: 1Tsu matawa fukusū no hādodoraibu no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji shite imasu...",
-    "CPU: Total number of processors: {0}": "CPU: Purosessā no gōkei-sū: {0} ",
     "Enter the admin password for maintenance.": "Mentenansu-yō no kanrisha pasuwādo o nyūryoku shimasu. ",
     "Kernel Error while booting: {0}": "Kidō-chū no kāneruerā: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "Daburupanikku: Sakidō jikan ga saidaikyoyō {0} erā no sakidō jikan o koete imasu. Kāneru no bagu o mitsukemashita.",

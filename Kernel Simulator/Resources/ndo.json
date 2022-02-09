@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Satu atau lebih inti CPU gagal diselidiki. Bagaimanapun juga, menampilkan informasi ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Satu atau lebih chip RAM gagal diselidiki. Bagaimanapun juga, menampilkan informasi ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Satu atau lebih hard drive gagal diperiksa. Bagaimanapun juga, menampilkan informasi ...",
-    "CPU: Total number of processors: {0}": "CPU: Jumlah total prosesor: {0}",
     "Enter the admin password for maintenance.": "Masukkan kata sandi admin untuk pemeliharaan.",
     "Kernel Error while booting: {0}": "Kesalahan Kernel saat boot: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANEN GANDA: Waktu Reboot melebihi maksimum waktu kesalahan booting {0} yang diizinkan. Anda menemukan bug kernel.",

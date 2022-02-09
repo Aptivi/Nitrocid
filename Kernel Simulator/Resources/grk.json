@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Énas í perissóteroi apó tous pyrínes tis CPU apétychan na dierevnithoún. Emfánisi pliroforión pántos...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Éna í perissótera apó ta tsip RAM apétychan na dierevnithoún. Emfánisi pliroforión pántos...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "Sklirós dískos: Énas í perissóteroi apó tous skliroús dískous apétychan na dierevnithoún. Emfánisi pliroforión pántos...",
-    "CPU: Total number of processors: {0}": "CPU: Synolikós arithmós epexergastón: {0}",
     "Enter the admin password for maintenance.": "Eisagágete ton kodikó prósvasis diacheiristí gia syntírisi.",
     "Kernel Error while booting: {0}": "Sfálma pyrína katá tin ekkínisi: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DIPLOS PANIKOS: O chrónos epanekkínisis ypervaínei ton mégisto epitrepómeno chróno epanekkínisis sfálmatos {0}. Vríkate éna sfálma pyrína.",

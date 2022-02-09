@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: یو یا څو د CPU کورونه په تحقیق کې پاتې راغلل. په هرصورت معلومات ښیې ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: یو یا څو د رام چپس په څیړنه کې پاتې راغلل. په هرصورت معلومات ښیې ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: یو یا څو هارډ ډرایو په تحقیقاتو کې پاتې راغلل. په هرصورت معلومات ښیې ...",
-    "CPU: Total number of processors: {0}": "CPU: د پروسیسرونو ټول شمیر: {0}",
     "Enter the admin password for maintenance.": "د ساتنې لپاره د اډمین پاسورډ دننه کړئ.",
     "Kernel Error while booting: {0}": "د بوټ کولو په وخت کې د کرنل تېروتنه: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "دوه ګونی ډار: د ریبوټ وخت د اعظمي اجازه ورکړل شوي {0} غلطۍ د ریبوټ وخت څخه ډیر دی. تاسو د کرنل بګ وموندل.",

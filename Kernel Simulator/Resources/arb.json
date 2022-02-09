@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "wahdat almuealajat almarkaziat: fashal tahqiq wahid 'aw 'akthar min marakiz wahdat almuealajat almarkaziati. earad almaelumat ealaa 'ayi hal ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "dhakirat alwusul aleashwayiy: fashilat wahidatan 'aw 'akthar min raqayiq dhakirat alwusul aleashwayiyi fi altahqiq. earad almaelumat ealaa 'ayi hal ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "al'aqras alslbt: fashal muhrik 'aqras wahid 'aw 'akthar fi altahqiq. earad almaelumat ealaa 'ayi hal ...",
-    "CPU: Total number of processors: {0}": "wahdat almuealajat almarkaziat: 'iijmali eadad almuealajat: {0}",
     "Enter the admin password for maintenance.": "'udkhul kalimat murur almaswuwl lilsiyanati.",
     "Kernel Error while booting: {0}": "khata Kernel 'athna' altshghyl: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "aldhuer almzdwj: waqt 'iieadat altashghil yatajawaz alhadu al'aqsaa almasmuh bih liwaqt 'iieadat tashghil alkhata {0}. laqad wajadat eilat nawatin.",

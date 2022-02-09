@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Bir yoki bir nechta protsessor yadrolari tekshirilmadi. Ma�lumotlar baribir ko�rsatilmoqda ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Bir yoki bir nechta RAM chiplari tekshirilmadi. Ma�lumotlar baribir ko�rsatilmoqda ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: Qattiq disklarning bir yoki bir nechtasini sinab bo'lmadi. Ma�lumotlar baribir ko�rsatilmoqda ...",
-    "CPU: Total number of processors: {0}": "CPU: Protsessorlarning umumiy soni: {0}",
     "Enter the admin password for maintenance.": "Xizmat ko'rsatish uchun ma'mur parolini kiriting.",
     "Kernel Error while booting: {0}": "Yuklashda yadro xatosi: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DOUBLE PANIC: Qayta ishga tushirish vaqti ruxsat etilgan maksimal ruxsat etilgan {0} vaqtdan oshib ketdi. Siz yadro xatosini topdingiz.",

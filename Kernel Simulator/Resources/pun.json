@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "sīpīyū: Ika jāṁ vadhērē sīpīyū kōra dī jān̄ca vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "Raima: Raima cipāṁ vicōṁ ika jāṁ vadhērē dī jān̄ca vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "Aica ḍī ḍī: Ika jāṁ vadhērē hāraḍa ḍarā'īvāṁ dī paṛatāla karana vica asaphala rihā. Kivēṁ vī jāṇakārī dikhā rihā hai...",
-    "CPU: Total number of processors: {0}": "Sī pī yū: Prōsaisarāṁ dī kula sakhi'ā: {0}",
     "Enter the admin password for maintenance.": "Dēkhabhāla la'ī aiḍamina pāsavaraḍa daraja karō.",
     "Kernel Error while booting: {0}": "Būṭa karana vēlē karanala galatī: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "Ḍabala painika: Rībūṭa ṭā'īma adhikatama āgi'ā prāpata {0} galatī dē muṛa cālū samēṁ tōṁ vadha gi'ā hai. Tuhānū ika karanala baga mili'ā hai.",

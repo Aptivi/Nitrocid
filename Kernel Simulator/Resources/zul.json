@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "I-CPU: I-CPU eyodwa noma eziningi zehlulekile ukuhlolwa. Ibonisa imininingwane noma kunjalo ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "I-RAM: I-RAM eyodwa noma eziningi ze-RAM zehlulekile ukuphenywa. Ibonisa imininingwane noma kunjalo ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "I-HDD: Idrayivu eyodwa noma eziningi ezihlulekile ukungaphenywa. Ibonisa imininingwane noma kunjalo ...",
-    "CPU: Total number of processors: {0}": "I-CPU: Ingqikithi yenombolo yama-processor: {0}",
     "Enter the admin password for maintenance.": "Faka iphasiwedi yomlawuli yesondlo.",
     "Kernel Error while booting: {0}": "Iphutha le-Kernel ngenkathi ibhutha: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "I-DANIBLE PANIC: Isikhathi sokuqalisa kabusha sidlula isikhathi esivunyelwe {0} sephutha sokuqalisa kabusha isikhathi. Uthole isiphazamisi se-kernel.",

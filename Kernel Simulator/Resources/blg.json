@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Edno ili poveche ot protsesornite yadra ne sa bili izsledvani. Vse pak se pokazva informatsiya...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Edin ili poveche ot RAM chipovete ne uspyakha da bŭdat izsledvani. Vse pak se pokazva informatsiya...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "Tvŭrdi disk: Edin ili poveche ot tvŭrdite diskove ne uspyakha da bŭdat izsledvani. Vse pak se pokazva informatsiya...",
-    "CPU: Total number of processors: {0}": "TSP: Obsht broĭ protsesori: {0}",
     "Enter the admin password for maintenance.": "Vŭvedete administratorska parola za poddrŭzhka.",
     "Kernel Error while booting: {0}": "Greshka v yadroto pri zarezhdane: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DVOĬNA PANIKA: Vremeto za restartirane nadvishava maksimalno razreshenoto vreme za restartirane na greshka {0}. Otkrikhte greshka v yadroto.",

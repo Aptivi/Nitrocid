@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: vel unus ex CPU defecit exquirat quaenam sit millia metretas. Notitia usquam showing ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: unus vel magis of RAM defecit exquirat quaenam sit eu. Notitia usquam showing ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: ferreus agitet unus vel plures ex defecit exquirat quaenam sit. Notitia usquam showing ...",
-    "CPU: Total number of processors: {0}": "CPU: Romanum processors numerus {0}",
     "Enter the admin password for maintenance.": "Intra admin password tutela est.",
     "Kernel Error while booting: {0}": "Error in kernel patuissent {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "GEMINUS CONTURBATIO: Reboot excedit Tempus maximus permissus {0} in tempore errorem reboot. Et inventus est kernel bug.",

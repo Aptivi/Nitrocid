@@ -344,12 +344,6 @@
                 "Type": "SBoolean",
                 "Variable": "VerboseHardwareProbe",
                 "Description": "Make hardware probing messages a bit talkative."
-            },
-            {
-                "Name": "Use legacy hardware listing",
-                "Type": "SBoolean",
-                "Variable": "UseLegacyHardwareListing",
-                "Description": "Uses the legacy way of listing the hardware on startup."
             }
         ]
     },

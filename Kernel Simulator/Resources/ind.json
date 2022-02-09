@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "raim: ek ya adhik raim chips kee jaanch mein asaphal raha. vaise bhee jaanakaaree dikha raha hai ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "echadeedee: ek ya adhik haard draiv kee jaanch mein viphal raha. vaise bhee jaanakaaree dikha raha hai ...",
-    "CPU: Total number of processors: {0}": "seepeeyoo: prosesar kee kul sankhya: {0}",
     "Enter the admin password for maintenance.": "rakharakhaav ke lie vyavasthaapak paasavard darj karen.",
     "Kernel Error while booting: {0}": "booting ke dauraan karnel truti: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "dabal painik: reeboot taim adhikatam sveekrt {0} truti riboot samay se adhik hai. aapako karnel bag mila.",

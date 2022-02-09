@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: CPU ýadrosynyň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: RAM çipleriniň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: gaty diskleriň bir ýa-da birnäçesi barlanyp bilmedi. Her niçigem bolsa maglumat görkezmek ...",
-    "CPU: Total number of processors: {0}": "CPU: Prosessorlaryň umumy sany: {0}",
     "Enter the admin password for maintenance.": "Bejeriş üçin administratoryň parolyny giriziň.",
     "Kernel Error while booting: {0}": "Bootüklemekde ýadro ýalňyşlygy: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DUBBLE PANIC: Gaýtadan açmak wagty rugsat berlen iň ýokary {0} säwlikden ýokary. Ernadro näsazlygyny tapdyňyz.",

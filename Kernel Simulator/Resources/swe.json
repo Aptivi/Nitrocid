@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: En eller flera av CPU-kärnorna misslyckades att undersökas. Visar information ändå ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: En eller flera av RAM-chipsen kunde inte sonderas. Visar information ändå ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: En eller flera hårddiskar kunde inte sonderas. Visar information ändå ...",
-    "CPU: Total number of processors: {0}": "CPU: Totalt antal processorer: {0}",
     "Enter the admin password for maintenance.": "Ange administratörslösenordet för underhåll.",
     "Kernel Error while booting: {0}": "Kärnfel vid uppstart: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "DUBBEL PANIC: Omstartstid överstiger maximalt tillåten {0} felåterställningstid. Du hittade en kärnfel.",

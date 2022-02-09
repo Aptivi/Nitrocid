@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: ne vdalosya pereviryty odyn abo kilʹka mikroskhem RAM. Pokaz informatsiyi vse odno...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: ne vdalosya pereviryty odyn abo kilʹka zhorstkykh dyskiv. Pokaz informatsiyi vse odno...",
-    "CPU: Total number of processors: {0}": "TSP: Zahalʹna kilʹkistʹ protsesoriv: {0}",
     "Enter the admin password for maintenance.": "Vveditʹ parolʹ administratora dlya obsluhovuvannya.",
     "Kernel Error while booting: {0}": "Pomylka yadra pid chas zavantazhennya: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PODVIYNA PANIKA: chas perezavantazhennya perevyshchuye maksymalʹno dozvolenyy chas perezavantazhennya pomylky {0}. Vy znayshly pomylku yadra.",

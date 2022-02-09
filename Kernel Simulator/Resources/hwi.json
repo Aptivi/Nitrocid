@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "CPU: Hoʻokahi a ʻoi paha o nā kumu nui CPU i hoʻokolokolo ʻia. Ke hōʻike nei i ka ʻike ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: Hoʻokahi a ʻoi aku paha o nā ʻāpana RAM i hoʻokolokolo ʻia. Ke hōʻike nei i ka ʻike ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: ʻAʻole i hoʻokolokolo ʻia hoʻokahi a ʻoi aku paha o nā paʻa paʻa. Ke hōʻike nei i ka ʻike ...",
-    "CPU: Total number of processors: {0}": "CPU: Huina nui o nā unu lawelawe: {0}",
     "Enter the admin password for maintenance.": "E hoʻokomo i ka ʻōlelo huna no ka mālama ʻana.",
     "Kernel Error while booting: {0}": "Kuʻia ʻo Kernel i ke kiʻi ʻana: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "PANI DOUBLE: Hoʻihoʻi i ka manawa hou i ʻoi aku ka nui o ka manawa i ʻae ʻia {0} i ka manawa hou. Ua loaʻa iā ʻoe kahi pā ʻāluna.",

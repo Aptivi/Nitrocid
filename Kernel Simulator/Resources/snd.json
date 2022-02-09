@@ -11,7 +11,6 @@
     "CPU: One or more of the CPU cores failed to be probed. Showing information anyway...": "سي پي يو: هڪ يا وڌيڪ سي پي يو ڪور جي تحقيق ٿيڻ ۾ ناڪام ٿي. هر حال ۾ معلومات ڏيکاري رهيو آهي ...",
     "RAM: One or more of the RAM chips failed to be probed. Showing information anyway...": "RAM: ھڪڙي يا وڌيڪ RAM چپس جي تحقيق ٿيڻ ۾ ناڪام ٿي. هر حال ۾ معلومات ڏيکاري رهيو آهي ...",
     "HDD: One or more of the hard drives failed to be probed. Showing information anyway...": "HDD: هڪ يا وڌيڪ هارڊ ڊرائيو جاچ ٿيڻ ۾ ناڪام ٿي ويا. هر حال ۾ معلومات ڏيکاري رهيو آهي ...",
-    "CPU: Total number of processors: {0}": "CPU: پروسيسرز جو ڪل تعداد: {0}",
     "Enter the admin password for maintenance.": "سنڀالڻ لاءِ ايڊمن پاسورڊ داخل ڪريو.",
     "Kernel Error while booting: {0}": "بوٽ ڪرڻ دوران ڪرنل غلطي: {0}",
     "DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.": "ڊبل پينڪ: ريبوٽ جو وقت وڌ کان وڌ اجازت ڏنل {0} غلطي ريبوٽ وقت کان وڌيڪ آهي. توهان کي هڪ kernel بگ مليو.",
