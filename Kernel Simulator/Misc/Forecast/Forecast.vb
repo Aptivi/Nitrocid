@@ -18,7 +18,6 @@
 
 Imports Core
 Imports KS.Misc.Reflection
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Misc.Forecast
     Public Module Forecast
@@ -97,12 +96,12 @@ Namespace Misc.Forecast
                 WeatherSpecifier += "F"
                 WindSpeedSpecifier = "mph"
             End If
-            Write(DoTranslation("Temperature: {0}") + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.Temperature, 2))
-            Write(DoTranslation("Feels like: {0}") + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.FeelsLike, 2))
-            Write(DoTranslation("Wind speed: {0}") + " {1}", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2), WindSpeedSpecifier)
-            Write(DoTranslation("Wind direction: {0}") + "°", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindDirection, 2))
-            Write(DoTranslation("Pressure: {0}") + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
-            Write(DoTranslation("Humidity: {0}") + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
+            Write(DoTranslation("Temperature: {0}") + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.Temperature.ToString("N2"))
+            Write(DoTranslation("Feels like: {0}") + WeatherSpecifier, True, ColTypes.Neutral, WeatherInfo.FeelsLike.ToString("N2"))
+            Write(DoTranslation("Wind speed: {0}") + " {1}", True, ColTypes.Neutral, WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier)
+            Write(DoTranslation("Wind direction: {0}") + "°", True, ColTypes.Neutral, WeatherInfo.WindDirection.ToString("N2"))
+            Write(DoTranslation("Pressure: {0}") + " hPa", True, ColTypes.Neutral, WeatherInfo.Pressure.ToString("N2"))
+            Write(DoTranslation("Humidity: {0}") + "%", True, ColTypes.Neutral, WeatherInfo.Humidity.ToString("N2"))
         End Sub
 
     End Module

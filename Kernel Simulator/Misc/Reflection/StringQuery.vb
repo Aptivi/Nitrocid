@@ -19,6 +19,10 @@
 Namespace Misc.Reflection
     Public Module StringQuery
 
+        ''' <summary>
+        ''' Is the string numeric?
+        ''' </summary>
+        ''' <param name="Expression">The expression</param>
         Public Function IsStringNumeric(Expression As String) As Boolean
             Return Integer.TryParse(Expression, 0)
         End Function

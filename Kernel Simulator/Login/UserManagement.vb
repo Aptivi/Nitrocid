@@ -20,7 +20,6 @@ Imports System.IO
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports KS.Misc.Encryption
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Login
     Public Module UserManagement
@@ -193,7 +192,7 @@ Namespace Login
         Public Function AddUser(newUser As String, Optional newPassword As String = "") As Boolean
             'Adds user
             Wdbg(DebugLevel.I, "Creating user {0}...", newUser)
-            If InStr(newUser, " ") > 0 Then
+            If newUser.Contains(" ") Then
                 Wdbg(DebugLevel.W, "There are spaces in username.")
                 Throw New Exceptions.UserCreationException(DoTranslation("Spaces are not allowed."))
             ElseIf newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
@@ -233,7 +232,7 @@ Namespace Login
         ''' <exception cref="Exceptions.UserManagementException"></exception>
         ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         Public Function RemoveUser(user As String) As Boolean
-            If InStr(user, " ") > 0 Then
+            If user.Contains(" ") Then
                 Wdbg(DebugLevel.W, "There are spaces in username.")
                 Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed."))
             ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then

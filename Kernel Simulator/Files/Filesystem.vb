@@ -22,7 +22,6 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports KS.Misc.Configuration
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Files
     Public Module Filesystem
@@ -1186,8 +1185,8 @@ Namespace Files
             'Open the file stream
             Dim NewlineStyle As FilesystemNewlineStyle = Filesystem.NewlineStyle
             Dim TextFileStream As New FileStream(TextFile, FileMode.Open, FileAccess.Read)
-            Dim CarriageReturnCode As Integer = AscW(GetLineEndingString(FilesystemNewlineStyle.CR)(0))
-            Dim LineFeedCode As Integer = AscW(GetLineEndingString(FilesystemNewlineStyle.LF)(0))
+            Dim CarriageReturnCode As Integer = GetAsciiCode(GetLineEndingString(FilesystemNewlineStyle.CR), 0)
+            Dim LineFeedCode As Integer = GetAsciiCode(GetLineEndingString(FilesystemNewlineStyle.LF), 0)
             Dim CarriageReturnSpotted As Boolean
             Dim LineFeedSpotted As Boolean
             Dim ExitOnSpotted As Boolean

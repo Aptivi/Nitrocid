@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Microsoft.VisualBasic.Strings
-
 Namespace Shell.Commands
     Class ChPwdCommand
         Inherits CommandExecutor
@@ -25,7 +23,7 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-                If InStr(ListArgs(3), " ") > 0 Then
+                If ListArgs(3).Contains(" ") Then
                     Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
                 ElseIf ListArgs(3) = ListArgs(2) Then
                     ChangePassword(ListArgs(0), ListArgs(1), ListArgs(2))

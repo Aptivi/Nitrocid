@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Misc.Writers.DebugWriters
     Public Module DebugManager
@@ -38,7 +37,7 @@ Namespace Misc.Writers.DebugWriters
                     For l As Integer = 0 To Lines.Length - 1 'Remove the first 5 lines from stream.
                         DebugStreamWriter.WriteLine(Lines(l))
                     Next
-                    Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
+                    Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} bytes.", OldSize)
                 End If
             Catch ex As Exception
                 WStkTrc(ex)

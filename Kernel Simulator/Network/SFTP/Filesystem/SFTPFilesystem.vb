@@ -18,7 +18,6 @@
 
 Imports System.Reflection
 Imports System.Text
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Network.SFTP.Filesystem
     Module SFTPFilesystem
@@ -69,7 +68,7 @@ Namespace Network.SFTP.Filesystem
                             If ShowDetails Then
                                 FileSize = DirListSFTP.Length
                                 ModDate = DirListSFTP.LastWriteTime
-                                EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                                EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString((FileSize / 1024).ToString("N2"), ModDate.ToString))
                             End If
                         ElseIf DirListSFTP.IsDirectory Then
                             EntryBuilder.Append("/")

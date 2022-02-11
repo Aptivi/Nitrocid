@@ -19,7 +19,6 @@
 Imports KS.Misc.Encryption
 Imports KS.Misc.Screensaver
 Imports KS.Network.RSS
-Imports Microsoft.VisualBasic.Strings
 
 Namespace Login
     Public Module Login
@@ -139,7 +138,7 @@ Namespace Login
                     Dim answeruser As String = Console.ReadLine()
 
                     'Parse input
-                    If InStr(answeruser, " ") > 0 Then
+                    If answeruser.Contains(" ") Then
                         Wdbg(DebugLevel.W, "Spaces found in username.")
                         Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
                         KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)

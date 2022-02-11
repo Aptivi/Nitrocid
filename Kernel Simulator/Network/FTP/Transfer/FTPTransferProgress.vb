@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Microsoft.VisualBasic.Strings
-
 Namespace Network.FTP.Transfer
     Public Module FTPTransferProgress
 
@@ -41,7 +39,7 @@ Namespace Network.FTP.Transfer
                 ConsoleOriginalPosition_LEFT = Console.CursorLeft
                 ConsoleOriginalPosition_TOP = Console.CursorTop
                 If progressFlag = True And Percentage.Progress <> 100 Then
-                    Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                    Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
                     ClearLineToRight()
                 End If
                 Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
@@ -60,7 +58,7 @@ Namespace Network.FTP.Transfer
                 ConsoleOriginalPosition_TOP = Console.CursorTop
                 If progressFlag = True And Percentage.Progress <> 100 Then
                     Write("- [{0}/{1}] {2}: ", False, ColTypes.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath)
-                    Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                    Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
                     ClearLineToRight()
                 End If
                 Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
