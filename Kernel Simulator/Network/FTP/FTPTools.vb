@@ -20,7 +20,6 @@ Imports System.Net.Security
 Imports Newtonsoft.Json.Linq
 Imports KS.Network.FTP.Transfer
 Imports KS.Misc.Reflection
-Imports Microsoft.VisualBasic.Conversion
 
 Namespace Network.FTP
     Public Module FTPTools
@@ -125,51 +124,52 @@ Namespace Network.FTP
         Dim profiles As List(Of FtpProfile) = ClientFTP.AutoDetect(FTPFirstProfileOnly)
         Dim profsel As New FtpProfile
         Wdbg(DebugLevel.I, "Profile count: {0}", profiles.Count)
-        If profiles.Count > 1 Then 'More than one profile
-            If FtpUseFirstProfile Then
-                profsel = profiles(0)
-            Else
-                Dim profanswer As Char
-                Dim profanswered As Boolean
-                Dim ProfHeaders As String() = {"#", DoTranslation("Host Name"), DoTranslation("Username"), DoTranslation("Data Type"), DoTranslation("Encoding"), DoTranslation("Encryption"), DoTranslation("Protocols")}
-                Dim ProfData(profiles.Count - 1, 6) As String
-                Write(DoTranslation("More than one profile found. Select one:"), True, ColTypes.Neutral)
-                For i As Integer = 0 To profiles.Count - 1
-                    ProfData(i, 0) = i + 1
-                    ProfData(i, 1) = profiles(i).Host
-                    ProfData(i, 2) = profiles(i).Credentials.UserName
-                    ProfData(i, 3) = profiles(i).DataConnection.ToString
-                    ProfData(i, 4) = profiles(i).Encoding.EncodingName
-                    ProfData(i, 5) = profiles(i).Encryption.ToString
-                    ProfData(i, 6) = profiles(i).Protocols.ToString
-                Next
-                WriteTable(ProfHeaders, ProfData, 2, ColTypes.Option)
-                While Not profanswered
-                    Write(NewLine + ">> ", False, ColTypes.Input)
-                    profanswer = Console.ReadLine
-                    Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
-                    If IsStringNumeric(profanswer) Then
-                        Try
-                            Wdbg(DebugLevel.I, "Profile selected")
-                            profsel = profiles(Val(profanswer) - 1)
-                            profanswered = True
-                        Catch ex As Exception
-                            Wdbg(DebugLevel.I, "Profile invalid")
-                            Write(DoTranslation("Invalid profile selection.") + NewLine, True, ColTypes.Error)
-                            WStkTrc(ex)
-                        End Try
-                    End If
-                End While
+            If profiles.Count > 1 Then 'More than one profile
+                If FtpUseFirstProfile Then
+                    profsel = profiles(0)
+                Else
+                    Dim profanswer As String
+                    Dim profanswered As Boolean
+                    Dim ProfHeaders As String() = {"#", DoTranslation("Host Name"), DoTranslation("Username"), DoTranslation("Data Type"), DoTranslation("Encoding"), DoTranslation("Encryption"), DoTranslation("Protocols")}
+                    Dim ProfData(profiles.Count - 1, 6) As String
+                    Write(DoTranslation("More than one profile found. Select one:"), True, ColTypes.Neutral)
+                    For i As Integer = 0 To profiles.Count - 1
+                        ProfData(i, 0) = i + 1
+                        ProfData(i, 1) = profiles(i).Host
+                        ProfData(i, 2) = profiles(i).Credentials.UserName
+                        ProfData(i, 3) = profiles(i).DataConnection.ToString
+                        ProfData(i, 4) = profiles(i).Encoding.EncodingName
+                        ProfData(i, 5) = profiles(i).Encryption.ToString
+                        ProfData(i, 6) = profiles(i).Protocols.ToString
+                    Next
+                    WriteTable(ProfHeaders, ProfData, 2, ColTypes.Option)
+                    While Not profanswered
+                        Write(NewLine + ">> ", False, ColTypes.Input)
+                        profanswer = Console.ReadLine
+                        Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
+                        If IsStringNumeric(profanswer) Then
+                            Try
+                                Wdbg(DebugLevel.I, "Profile selected")
+                                Dim AnswerNumber As Integer = profanswer
+                                profsel = profiles(AnswerNumber - 1)
+                                profanswered = True
+                            Catch ex As Exception
+                                Wdbg(DebugLevel.I, "Profile invalid")
+                                Write(DoTranslation("Invalid profile selection.") + NewLine, True, ColTypes.Error)
+                                WStkTrc(ex)
+                            End Try
+                        End If
+                    End While
+                End If
+            ElseIf profiles.Count = 1 Then
+                profsel = profiles(0) 'Select first profile
+            Else 'Failed trying to get profiles
+                Write(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), True, ColTypes.Error, ClientFTP.Host)
+                Exit Sub
             End If
-        ElseIf profiles.Count = 1 Then
-            profsel = profiles(0) 'Select first profile
-        Else 'Failed trying to get profiles
-            Write(DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), True, ColTypes.Error, ClientFTP.Host)
-            Exit Sub
-        End If
 
-        'Connect
-        Write(DoTranslation("Trying to connect to {0} with profile {1}..."), True, ColTypes.Neutral, ClientFTP.Host, profiles.IndexOf(profsel))
+            'Connect
+            Write(DoTranslation("Trying to connect to {0} with profile {1}..."), True, ColTypes.Neutral, ClientFTP.Host, profiles.IndexOf(profsel))
         Wdbg(DebugLevel.I, "Connecting to {0} with {1}...", ClientFTP.Host, profiles.IndexOf(profsel))
         ClientFTP.Connect(profsel)
 

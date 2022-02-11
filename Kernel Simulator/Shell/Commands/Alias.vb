@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Microsoft.VisualBasic.Conversion
-
 Namespace Shell.Commands
     Class AliasCommand
         Inherits CommandExecutor
@@ -26,13 +24,13 @@ Namespace Shell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Length > 3 Then
                 If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
-                    ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellType), ListArgs(1))), ListArgs(2), ListArgs(3))
+                    ManageAlias(ListArgs(0), [Enum].Parse(GetType(ShellType), ListArgs(1)), ListArgs(2), ListArgs(3))
                 Else
                     Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
                 End If
             ElseIf ListArgs?.Length = 3 Then
                 If ListArgs(0) = "rem" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
-                    ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellType), ListArgs(1))), ListArgs(2))
+                    ManageAlias(ListArgs(0), [Enum].Parse(GetType(ShellType), ListArgs(1)), ListArgs(2))
                 Else
                     Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
                 End If
