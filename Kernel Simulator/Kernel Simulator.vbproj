@@ -789,7 +789,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="ks-jl.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
