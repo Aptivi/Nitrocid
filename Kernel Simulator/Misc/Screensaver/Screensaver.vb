@@ -85,6 +85,10 @@ Namespace Misc.Screensaver
                             CountedTime = 0
                         End If
                         OldCursorLeft = Console.CursorLeft
+                        If CountedTime > ScrnTimeout Then
+                            'This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
+                            Exit For
+                        End If
                     Next
                     If Not RebootRequested Then
                         Wdbg(DebugLevel.W, "Screen time has reached.")
