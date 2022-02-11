@@ -21,7 +21,6 @@ Imports System.Threading
 Imports KS.Misc.Execution
 Imports KS.Scripting
 Imports KS.Shell.Commands
-Imports Microsoft.VisualBasic.Interaction
 
 Namespace Shell
     Public Module Shell
@@ -37,7 +36,7 @@ Namespace Shell
         ''' <summary>
         ''' Specifies where to lookup for executables in these paths. Same as in PATH implementation.
         ''' </summary>
-        Public PathsToLookup As String = Environ("PATH")
+        Public PathsToLookup As String = Environment.GetEnvironmentVariable("PATH")
         ''' <summary>
         ''' Path lookup delimiter, depending on the operating system
         ''' </summary>

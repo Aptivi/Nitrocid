@@ -46,7 +46,6 @@ Imports KS.Scripting.Interaction
 Imports KS.TestShell
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
-Imports Microsoft.VisualBasic.Interaction
 
 Namespace Misc.Configuration
     Public Module Config
@@ -1070,7 +1069,7 @@ Namespace Misc.Configuration
                 Wdbg(DebugLevel.I, "Parsing shell section...")
                 SimHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
                 CurrDir = If(ConfigToken("Shell")?("Current Directory"), HomePath)
-                PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
+                PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environment.GetEnvironmentVariable("PATH"))
                 ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
                 FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
                 MailShellPromptStyle = If(ConfigToken("Shell")?("Mail Prompt Style"), "")

@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text.RegularExpressions
-Imports Microsoft.VisualBasic.Interaction
 
 Namespace ConsoleBase
     Public Module ConsoleExtensions
@@ -102,7 +101,7 @@ Namespace ConsoleBase
         ''' Polls $TERM_PROGRAM to get terminal emulator
         ''' </summary>
         Public Function GetTerminalEmulator() As String
-            Return Environ("TERM_PROGRAM")
+            Return Environment.GetEnvironmentVariable("TERM_PROGRAM")
         End Function
 
     End Module
