@@ -66,8 +66,7 @@ Namespace ManPages
                         Dim TodoConstant As String = "TODO"
                         If ManLine.StartsWith("~~-") And ManLine.Contains(TodoConstant) Then
                             Wdbg(DebugLevel.I, "TODO found on this line: {0}", ManLine)
-                            Dim TodoIndex As Integer = InStr(ManLine, TodoConstant)
-                            Todos.Add(ManLine.Substring(TodoIndex + TodoConstant.Length + 1))
+                            Todos.Add(ManLine)
                         End If
 
                         'Check the manual metadata
