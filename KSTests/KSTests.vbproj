@@ -94,7 +94,6 @@
     <Compile Include="Misc\PlaceholderActionTests.vb" />
     <Compile Include="Misc\JsonShellInitializationTests.vb" />
     <Compile Include="Misc\TextEditorInitializationTests.vb" />
-    <Compile Include="Misc\StringEvaluatorActionTests.vb" />
     <Compile Include="Misc\ConfigManagementTests.vb" />
     <Compile Include="Modifications\BlacklistManipulationTests.vb" />
     <Compile Include="Shell\UESHVariableTests.vb" />

@@ -31,7 +31,6 @@ This section covers what you need to run Kernel Simulator. Please refer to the t
 | Linux   | Supported distros  | Mono 5.10 or later | Konsole, GNOME Terminal             | Required
 | macOS   | macOS Catalina     | Mono Runtime       | iTerm2 (Terminal.app not supported) | Required
 
-* mono-vbnc is required for string evaluation functions
 * Terminal.app has broken support for 255 and true colors. We discourage using it.
 
 ### Recommended requirements
@@ -41,8 +40,6 @@ This section covers what you need to run Kernel Simulator. Please refer to the t
 | Windows | Windows 10 or 11   | .NET Framework 4.8 | Improved cmd.exe, ConEmu            | Required
 | Linux   | Supported distros  | Mono 6.0 or later  | Konsole, GNOME Terminal             | Required
 | macOS   | macOS Catalina     | Mono Runtime       | iTerm2 (Terminal.app not supported) | Required
-
-* mono-vbnc is required for string evaluation functions
 
 ## How to install
 
