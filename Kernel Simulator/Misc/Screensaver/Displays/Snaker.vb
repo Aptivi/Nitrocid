@@ -18,7 +18,6 @@
 
 Imports System.ComponentModel
 Imports Extensification.ListExts
-Imports Microsoft.VisualBasic.VBMath
 
 Namespace Misc.Screensaver.Displays
     Module SnakerDisplay
@@ -189,7 +188,7 @@ Namespace Misc.Screensaver.Displays
                             Next
 
                             'Change the snake direction
-                            Dim PossibilityToChange As Single = Rnd()
+                            Dim PossibilityToChange As Single = RandomDriver.NextDouble
                             Dim SnakePreviousX As Integer = SnakeCurrentX
                             Dim SnakePreviousY As Integer = SnakeCurrentY
                             If CInt(PossibilityToChange) = 1 Then
