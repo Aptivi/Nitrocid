@@ -311,6 +311,10 @@ Namespace Kernel
             StopMods()
             Wdbg(DebugLevel.I, "Mods stopped")
 
+            'Clear all arguments
+            EnteredArguments.Clear()
+            Wdbg(DebugLevel.I, "Arguments cleared")
+
             'Disable Debugger
             If DebugMode Then
                 Wdbg(DebugLevel.I, "Shutting down debugger")
