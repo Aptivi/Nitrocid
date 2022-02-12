@@ -789,6 +789,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
+    <None Include="ks-converter.1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-jl.1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ks-jl.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
