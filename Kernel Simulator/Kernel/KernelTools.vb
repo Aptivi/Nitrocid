@@ -388,7 +388,7 @@ Namespace Kernel
             If ParseCommandLineArguments Then ParseCMDArguments(Args)
 
             'Check arguments
-            If ArgsOnBoot And Not EnableSplash Then
+            If ArgsOnBoot Then
                 StageTimer.Stop()
                 PromptArgs()
                 StageTimer.Start()
