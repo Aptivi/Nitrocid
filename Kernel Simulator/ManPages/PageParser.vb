@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Text
-Imports Microsoft.VisualBasic.Strings
 
 Namespace ManPages
     Module PageParser
