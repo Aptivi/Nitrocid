@@ -238,10 +238,15 @@ Namespace Network.RemoteDebug
                     Catch ex As Exception
                         Dim SE As SocketException = CType(ex.InnerException, SocketException)
                         If SE IsNot Nothing Then
-                            Dim SocketIP As String = DebugDevices(DeviceIndex)?.ClientIP
                             If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
-                                Wdbg(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString)
-                                WStkTrc(ex)
+                                If DebugDevices.Count > DeviceIndex Then
+                                    Dim SocketIP As String = DebugDevices(DeviceIndex)?.ClientIP
+                                    Wdbg(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString)
+                                    WStkTrc(ex)
+                                Else
+                                    Wdbg(DebugLevel.E, "Error from unknown host: {0}", SE.SocketErrorCode.ToString)
+                                    WStkTrc(ex)
+                                End If
                             End If
                         Else
                             Wdbg(DebugLevel.E, "Unknown error of remote debug: {0}: {1}", ex.GetType.FullName, ex.Message)
