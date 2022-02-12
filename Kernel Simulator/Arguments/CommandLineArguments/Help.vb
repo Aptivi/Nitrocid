@@ -23,7 +23,17 @@ Namespace Arguments.CommandLineArguments
         Implements IArgument
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+            'Command-line arguments
+            Write(DoTranslation("Command-line arguments:"), True, ColTypes.ListTitle)
             ShowArgsHelp(ArgumentType.CommandLineArgs)
+            Console.WriteLine()
+
+            'Pre-boot command-line arguments
+            Write(DoTranslation("Pre-boot command-line arguments:"), True, ColTypes.ListTitle)
+            ShowArgsHelp(ArgumentType.PreBootCommandLineArgs)
+            Console.WriteLine()
+
+            'Either start the kernel or exit it
             Write(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
             If Console.ReadKey(True).Key = ConsoleKey.Escape Then
                 Environment.Exit(0)
