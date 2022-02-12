@@ -28,9 +28,9 @@ Namespace Shell.Commands
             Dim Address As String = AddressDelimiter(0)
             If AddressDelimiter.Length > 1 Then
                 Dim Port As Integer = AddressDelimiter(1)
-                InitializeSSH(Address, Port, ListArgs(1), ConnectionType.Command, ListArgs(2))
+                InitializeSSH(Address, Port, ListArgs(1), ConnectionType.Command, ListArgsOnly(2))
             Else
-                InitializeSSH(Address, 22, ListArgs(1), ConnectionType.Command, ListArgs(2))
+                InitializeSSH(Address, 22, ListArgs(1), ConnectionType.Command, ListArgsOnly(2))
             End If
         End Sub
 
