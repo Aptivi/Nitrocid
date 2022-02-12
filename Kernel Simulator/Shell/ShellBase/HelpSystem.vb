@@ -158,7 +158,8 @@ Namespace Shell.ShellBase
                     'Check the command list count and print not implemented. This is an extremely rare situation.
                     If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
                     For Each cmd As String In CommandList.Keys
-                        If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator)) Then
+                        If ((Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
+                            (Maintenance And Not CommandList(cmd).NoMaintenance Or Not Maintenance) Then
                             DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
                             DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
                         End If
@@ -187,7 +188,8 @@ Namespace Shell.ShellBase
                 Else
                     'The built-in commands
                     For Each cmd As String In CommandList.Keys
-                        If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Then
+                        If ((Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
+                            (Maintenance And Not CommandList(cmd).NoMaintenance Or Not Maintenance) Then
                             DecisiveWrite(CommandType, DebugDeviceSocket, "{0}, ", False, ColTypes.ListEntry, cmd)
                         End If
                     Next
