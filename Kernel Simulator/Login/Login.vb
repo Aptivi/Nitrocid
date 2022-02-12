@@ -180,7 +180,7 @@ Namespace Login
                 End If
 
                 'Get the password from dictionary
-                Dim UserPassword As String = Users.Item(usernamerequested)
+                Dim UserPassword As String = Users(usernamerequested)
 
                 'Check if there's a password
                 If Not UserPassword = GetEmptyHash(Algorithms.SHA256) Then 'No password

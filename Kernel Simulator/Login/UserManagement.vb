@@ -484,16 +484,20 @@ Namespace Login
 
             'Fourth, write root password
             While [Step] = 4
-                Write(DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), True, ColTypes.Neutral)
-                Write(">> ", False, ColTypes.Input)
-                AnswerRootPassword = ReadLineNoInput()
-                Console.WriteLine()
-                Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
-                If String.IsNullOrWhiteSpace(AnswerPassword) Then
-                    Wdbg(DebugLevel.W, "Password is not valid. Returning...")
-                    Write(DoTranslation("You must write the administrator password."), True, ColTypes.Error)
-                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                    Console.ReadKey()
+                If Users("root") = GetEmptyHash(Algorithms.SHA256) Then
+                    Write(DoTranslation("Write the administrator password. Make sure that you don't use this account unless you really know what you're doing."), True, ColTypes.Neutral)
+                    Write(">> ", False, ColTypes.Input)
+                    AnswerRootPassword = ReadLineNoInput()
+                    Console.WriteLine()
+                    Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
+                    If String.IsNullOrWhiteSpace(AnswerPassword) Then
+                        Wdbg(DebugLevel.W, "Password is not valid. Returning...")
+                        Write(DoTranslation("You must write the administrator password."), True, ColTypes.Error)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Console.ReadKey()
+                    Else
+                        [Step] += 1
+                    End If
                 Else
                     [Step] += 1
                 End If
@@ -502,9 +506,15 @@ Namespace Login
             'Finally, create an account and change root password
             AddUser(AnswerUsername, AnswerPassword)
             If AnswerType = 1 Then AddPermission(PermissionType.Administrator, AnswerUsername)
-            AnswerRootPassword = GetEncryptedString(AnswerRootPassword, Algorithms.SHA256)
-            SetUserProperty("root", UserProperty.Password, AnswerRootPassword)
-            Users.Item("root") = AnswerRootPassword
+
+            'Actually change the root password if specified
+            If Not String.IsNullOrEmpty(AnswerRootPassword) Then
+                AnswerRootPassword = GetEncryptedString(AnswerRootPassword, Algorithms.SHA256)
+                SetUserProperty("root", UserProperty.Password, AnswerRootPassword)
+                Users.Item("root") = AnswerRootPassword
+            End If
+
+            'Write a congratulating message
             Write(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
         End Sub
 
