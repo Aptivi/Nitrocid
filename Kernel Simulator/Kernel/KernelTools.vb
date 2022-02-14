@@ -328,6 +328,9 @@ Namespace Kernel
 
             'Disable safe mode
             SafeMode = False
+
+            'Reset the screensaver timeout thread
+            Screensaver.Timeout = New Thread(AddressOf HandleTimeout) With {.Name = "Screensaver timeout thread", .IsBackground = True}
         End Sub
 
         ''' <summary>
@@ -406,7 +409,7 @@ Namespace Kernel
             PopulateBlockedDevices()
 
             'Start screensaver timeout
-            If Not Screensaver.Timeout.IsBusy Then Screensaver.Timeout.RunWorkerAsync()
+            If Not Screensaver.Timeout.IsAlive Then Screensaver.Timeout.Start()
 
             'Load all events and reminders
             LoadEvents()

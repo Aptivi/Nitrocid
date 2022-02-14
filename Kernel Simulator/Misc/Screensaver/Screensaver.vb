@@ -32,7 +32,6 @@ Namespace Misc.Screensaver
         Public InSaver As Boolean
         Public ScreensaverDebug As Boolean
         Public DefSaverName As String = "matrix"
-        Public WithEvents Timeout As New NamedBackgroundWorker("Screensaver timeout thread")
         Public ScrnTimeout As Integer = 300000
         Public PasswordLock As Boolean = True
         Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
@@ -70,11 +69,12 @@ Namespace Misc.Screensaver
                                                                        {"windowslogo", WindowsLogo},
                                                                        {"wipe", Wipe}}
         Friend SaverAutoReset As New AutoResetEvent(False)
+        Friend Timeout As New Thread(AddressOf HandleTimeout) With {.Name = "Screensaver timeout thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
         ''' </summary>
-        Sub HandleTimeout(sender As Object, e As DoWorkEventArgs) Handles Timeout.DoWork
+        Sub HandleTimeout()
             Dim CountedTime As Integer
             Dim OldCursorLeft As Integer = Console.CursorLeft
             While True
