@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module DissolveDisplay
 
-        Public Dissolve As New Thread(AddressOf Dissolve_DoWork) With {.Name = "Dissolve screensaver thread", .IsBackground = True}
+        Public Dissolve As New KernelThread("Dissolve screensaver thread", True, AddressOf Dissolve_DoWork)
 
         ''' <summary>
         ''' Handles the code of Dissolve

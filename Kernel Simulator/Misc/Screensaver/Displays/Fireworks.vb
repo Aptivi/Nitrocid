@@ -22,7 +22,7 @@ Imports Extensification.IntegerExts
 Namespace Misc.Screensaver.Displays
     Module FireworksDisplay
 
-        Public Fireworks As New Thread(AddressOf Fireworks_DoWork) With {.Name = "Fireworks screensaver thread", .IsBackground = True}
+        Public Fireworks As New KernelThread("Fireworks screensaver thread", True, AddressOf Fireworks_DoWork)
 
         ''' <summary>
         ''' Handles the code of Fireworks

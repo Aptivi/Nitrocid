@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module RampDisplay
 
-        Public Ramp As New Thread(AddressOf Ramp_DoWork) With {.Name = "Ramp screensaver thread", .IsBackground = True}
+        Public Ramp As New KernelThread("Ramp screensaver thread", True, AddressOf Ramp_DoWork)
 
         Sub Ramp_DoWork()
             Try

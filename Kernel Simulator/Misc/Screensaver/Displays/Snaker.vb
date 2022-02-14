@@ -22,7 +22,7 @@ Imports Extensification.ListExts
 Namespace Misc.Screensaver.Displays
     Module SnakerDisplay
 
-        Public Snaker As New Thread(AddressOf Snaker_DoWork) With {.Name = "Snaker screensaver thread", .IsBackground = True}
+        Public Snaker As New KernelThread("Snaker screensaver thread", True, AddressOf Snaker_DoWork)
 
         ''' <summary>
         ''' Handles the code of Snaker

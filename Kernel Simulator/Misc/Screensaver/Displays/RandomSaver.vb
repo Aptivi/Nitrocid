@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module RandomSaverDisplay
 
-        Public RandomSaver As New Thread(AddressOf RandomSaver_DoWork) With {.Name = "RandomSaver screensaver thread", .IsBackground = True}
+        Public RandomSaver As New KernelThread("RandomSaver screensaver thread", True, AddressOf RandomSaver_DoWork)
 
         ''' <summary>
         ''' Handles the code of RandomSaver

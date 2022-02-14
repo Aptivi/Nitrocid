@@ -22,7 +22,7 @@ Imports KS.TimeDate
 Namespace Misc.Screensaver.Displays
     Module ProgressClockDisplay
 
-        Public ProgressClock As New Thread(AddressOf ProgressClock_DoWork) With {.Name = "ProgressClock screensaver thread", .IsBackground = True}
+        Public ProgressClock As New KernelThread("ProgressClock screensaver thread", True, AddressOf ProgressClock_DoWork)
 
         ''' <summary>
         ''' Handles the code of Progress Clock

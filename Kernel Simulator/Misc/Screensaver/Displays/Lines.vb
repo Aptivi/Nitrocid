@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module LinesDisplay
 
-        Public Lines As New Thread(AddressOf Lines_DoWork) With {.Name = "Lines screensaver thread", .IsBackground = True}
+        Public Lines As New KernelThread("Lines screensaver thread", True, AddressOf Lines_DoWork)
 
         ''' <summary>
         ''' Handles the code of Lines

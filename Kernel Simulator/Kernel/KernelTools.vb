@@ -329,9 +329,6 @@ Namespace Kernel
             'Disable safe mode
             SafeMode = False
 
-            'Reset the screensaver timeout thread
-            Screensaver.Timeout = New Thread(AddressOf HandleTimeout) With {.Name = "Screensaver timeout thread", .IsBackground = True}
-
             'Reset the time/date change thread
             TimeDateChange = New Thread(AddressOf TimeDateChange_DoWork) With {.Name = "Time/date updater thread", .IsBackground = True}
         End Sub

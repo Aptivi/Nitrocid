@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module WindowsLogoDisplay
 
-        Public WindowsLogo As New Thread(AddressOf WindowsLogo_DoWork) With {.Name = "WindowsLogo screensaver thread", .IsBackground = True}
+        Public WindowsLogo As New KernelThread("WindowsLogo screensaver thread", True, AddressOf WindowsLogo_DoWork)
 
         ''' <summary>
         ''' Handles the code of WindowsLogo

@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module FlashColorDisplay
 
-        Public FlashColor As New Thread(AddressOf FlashColor_DoWork) With {.Name = "FlashColor screensaver thread", .IsBackground = True}
+        Public FlashColor As New KernelThread("FlashColor screensaver thread", True, AddressOf FlashColor_DoWork)
 
         ''' <summary>
         ''' Handles the code of Flash Colors

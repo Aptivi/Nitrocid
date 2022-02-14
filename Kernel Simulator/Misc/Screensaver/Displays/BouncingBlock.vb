@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module BouncingBlockDisplay
 
-        Public BouncingBlock As New Thread(AddressOf BouncingBlock_DoWork) With {.Name = "BouncingBlock screensaver thread", .IsBackground = True}
+        Public BouncingBlock As New KernelThread("BouncingBlock screensaver thread", True, AddressOf BouncingBlock_DoWork)
 
         ''' <summary>
         ''' Handles the code of Bouncing Block

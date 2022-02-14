@@ -23,7 +23,7 @@ Imports System.Text
 Namespace Misc.Screensaver.Displays
     Public Module LinotypoDisplay
 
-        Friend Linotypo As New Thread(AddressOf Linotypo_DoWork) With {.Name = "Linotypo screensaver thread", .IsBackground = True}
+        Friend Linotypo As New KernelThread("Linotypo screensaver thread", True, AddressOf Linotypo_DoWork)
 
         ''' <summary>
         ''' Handles the code of Linotypo

@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module BeatFaderDisplay
 
-        Public BeatFader As New Thread(AddressOf BeatFader_DoWork) With {.Name = "BeatFader screensaver thread", .IsBackground = True}
+        Public BeatFader As New KernelThread("BeatFader screensaver thread", True, AddressOf BeatFader_DoWork)
 
         ''' <summary>
         ''' Handles the code of FaderBack

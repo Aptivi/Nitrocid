@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module BarRotDisplay
 
-        Public BarRot As New Thread(AddressOf BarRot_DoWork) With {.Name = "BarRot screensaver thread", .IsBackground = True}
+        Public BarRot As New KernelThread("BarRot screensaver thread", True, AddressOf BarRot_DoWork)
 
         Sub BarRot_DoWork()
             Try

@@ -23,7 +23,7 @@ Imports KS.Misc.Writers.FancyWriters.Tools
 Namespace Misc.Screensaver.Displays
     Module FigletDisplay
 
-        Public Figlet As New Thread(AddressOf Figlet_DoWork) With {.Name = "Figlet screensaver thread", .IsBackground = True}
+        Public Figlet As New KernelThread("Figlet screensaver thread", True, AddressOf Figlet_DoWork)
 
         ''' <summary>
         ''' Handles the code of Figlet

@@ -23,7 +23,7 @@ Imports System.Text
 Namespace Misc.Screensaver.Displays
     Module TypewriterDisplay
 
-        Public Typewriter As New Thread(AddressOf Typewriter_DoWork) With {.Name = "Typewriter screensaver thread", .IsBackground = True}
+        Public Typewriter As New KernelThread("Typewriter screensaver thread", True, AddressOf Typewriter_DoWork)
 
         Sub Typewriter_DoWork()
             Try

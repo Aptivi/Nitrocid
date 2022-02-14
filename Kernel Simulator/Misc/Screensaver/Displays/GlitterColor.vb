@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module GlitterColorDisplay
 
-        Public GlitterColor As New Thread(AddressOf GlitterColor_DoWork) With {.Name = "GlitterColor screensaver thread", .IsBackground = True}
+        Public GlitterColor As New KernelThread("GlitterColor screensaver thread", True, AddressOf GlitterColor_DoWork)
 
         ''' <summary>
         ''' Handles the code of Glitter Colors

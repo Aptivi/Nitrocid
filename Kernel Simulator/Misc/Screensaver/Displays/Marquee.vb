@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module MarqueeDisplay
 
-        Public Marquee As New Thread(AddressOf Marquee_DoWork) With {.Name = "Marquee screensaver thread", .IsBackground = True}
+        Public Marquee As New KernelThread("Marquee screensaver thread", True, AddressOf Marquee_DoWork)
 
         ''' <summary>
         ''' Handles the code of Marquee

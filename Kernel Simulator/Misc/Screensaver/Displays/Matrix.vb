@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module MatrixDisplay
 
-        Public Matrix As New Thread(AddressOf Matrix_DoWork) With {.Name = "Matrix screensaver thread", .IsBackground = True}
+        Public Matrix As New KernelThread("Matrix screensaver thread", True, AddressOf Matrix_DoWork)
 
         ''' <summary>
         ''' Handles the code of Matrix

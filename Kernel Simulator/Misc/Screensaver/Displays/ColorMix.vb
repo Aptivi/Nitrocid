@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module ColorMixDisplay
 
-        Public ColorMix As New Thread(AddressOf ColorMix_DoWork) With {.Name = "ColorMix screensaver thread", .IsBackground = True}
+        Public ColorMix As New KernelThread("ColorMix screensaver thread", True, AddressOf ColorMix_DoWork)
 
         ''' <summary>
         ''' Handles the code of ColorMix

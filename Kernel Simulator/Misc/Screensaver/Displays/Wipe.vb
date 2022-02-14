@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module WipeDisplay
 
-        Public Wipe As New Thread(AddressOf Wipe_DoWork) With {.Name = "Wipe screensaver thread", .IsBackground = True}
+        Public Wipe As New KernelThread("Wipe screensaver thread", True, AddressOf Wipe_DoWork)
 
         Sub Wipe_DoWork()
             Try

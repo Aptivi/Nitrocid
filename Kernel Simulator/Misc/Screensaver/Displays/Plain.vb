@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module PlainDisplay
 
-        Public Plain As New Thread(AddressOf Plain_DoWork) With {.Name = "Plain screensaver thread", .IsBackground = True}
+        Public Plain As New KernelThread("Plain screensaver thread", True, AddressOf Plain_DoWork)
 
         ''' <summary>
         ''' Handles the code of Plain

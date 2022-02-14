@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module DiscoDisplay
 
-        Public WithEvents Disco As New Thread(AddressOf Disco_DoWork) With {.Name = "Disco screensaver thread", .IsBackground = True}
+        Public WithEvents Disco As New KernelThread("Disco screensaver thread", True, AddressOf Disco_DoWork)
 
         ''' <summary>
         ''' Handles the code of Disco

@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module LighterDisplay
 
-        Public Lighter As New Thread(AddressOf Lighter_DoWork) With {.Name = "Lighter screensaver thread", .IsBackground = True}
+        Public Lighter As New KernelThread("Lighter screensaver thread", True, AddressOf Lighter_DoWork)
 
         ''' <summary>
         ''' Handles the code of Lighter

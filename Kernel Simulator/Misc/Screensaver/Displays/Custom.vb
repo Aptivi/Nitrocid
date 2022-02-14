@@ -22,7 +22,7 @@ Imports KS.Misc.Screensaver.Customized
 Namespace Misc.Screensaver.Displays
     Public Module CustomDisplay
 
-        Public Custom As New Thread(AddressOf Custom_DoWork) With {.Name = "Custom screensaver thread", .IsBackground = True}
+        Public Custom As New KernelThread("Custom screensaver thread", True, AddressOf Custom_DoWork)
 
         ''' <summary>
         ''' Handles custom screensaver code

@@ -37,38 +37,38 @@ Namespace Misc.Screensaver
         Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
 
         'Private variables
-        Friend Screensavers As New Dictionary(Of String, Thread) From {{"barrot", BarRot},
-                                                                       {"beatfader", BeatFader},
-                                                                       {"bouncingblock", BouncingBlock},
-                                                                       {"bouncingtext", BouncingText},
-                                                                       {"colormix", ColorMix},
-                                                                       {"disco", Disco},
-                                                                       {"dissolve", Dissolve},
-                                                                       {"fader", Fader},
-                                                                       {"faderback", FaderBack},
-                                                                       {"figlet", Figlet},
-                                                                       {"fireworks", Fireworks},
-                                                                       {"flashcolor", FlashColor},
-                                                                       {"glittercolor", GlitterColor},
-                                                                       {"glittermatrix", GlitterMatrix},
-                                                                       {"lighter", Lighter},
-                                                                       {"lines", Lines},
-                                                                       {"linotypo", Linotypo},
-                                                                       {"marquee", Marquee},
-                                                                       {"matrix", Matrix},
-                                                                       {"plain", Plain},
-                                                                       {"progressclock", ProgressClock},
-                                                                       {"ramp", Ramp},
-                                                                       {"random", RandomSaver},
-                                                                       {"snaker", Snaker},
-                                                                       {"spotwrite", SpotWrite},
-                                                                       {"stackbox", StackBox},
-                                                                       {"typewriter", Typewriter},
-                                                                       {"typo", Typo},
-                                                                       {"windowslogo", WindowsLogo},
-                                                                       {"wipe", Wipe}}
+        Friend Screensavers As New Dictionary(Of String, KernelThread) From {{"barrot", BarRot},
+                                                                             {"beatfader", BeatFader},
+                                                                             {"bouncingblock", BouncingBlock},
+                                                                             {"bouncingtext", BouncingText},
+                                                                             {"colormix", ColorMix},
+                                                                             {"disco", Disco},
+                                                                             {"dissolve", Dissolve},
+                                                                             {"fader", Fader},
+                                                                             {"faderback", FaderBack},
+                                                                             {"figlet", Figlet},
+                                                                             {"fireworks", Fireworks},
+                                                                             {"flashcolor", FlashColor},
+                                                                             {"glittercolor", GlitterColor},
+                                                                             {"glittermatrix", GlitterMatrix},
+                                                                             {"lighter", Lighter},
+                                                                             {"lines", Lines},
+                                                                             {"linotypo", Linotypo},
+                                                                             {"marquee", Marquee},
+                                                                             {"matrix", Matrix},
+                                                                             {"plain", Plain},
+                                                                             {"progressclock", ProgressClock},
+                                                                             {"ramp", Ramp},
+                                                                             {"random", RandomSaver},
+                                                                             {"snaker", Snaker},
+                                                                             {"spotwrite", SpotWrite},
+                                                                             {"stackbox", StackBox},
+                                                                             {"typewriter", Typewriter},
+                                                                             {"typo", Typo},
+                                                                             {"windowslogo", WindowsLogo},
+                                                                             {"wipe", Wipe}}
         Friend SaverAutoReset As New AutoResetEvent(False)
-        Friend Timeout As New Thread(AddressOf HandleTimeout) With {.Name = "Screensaver timeout thread", .IsBackground = True}
+        Friend Timeout As New KernelThread("Screensaver timeout thread", True, AddressOf HandleTimeout)
 
         ''' <summary>
         ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
@@ -112,7 +112,7 @@ Namespace Misc.Screensaver
                     Screensavers(saver).Start()
                     Wdbg(DebugLevel.I, "{0} started", saver)
                     Console.ReadKey()
-                    Screensavers(saver).Abort()
+                    Screensavers(saver).Stop()
                     SaverAutoReset.WaitOne()
                 ElseIf CustomSavers.ContainsKey(saver) Then
                     'Only one custom screensaver can be used.
@@ -120,8 +120,7 @@ Namespace Misc.Screensaver
                     Custom.Start()
                     Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                     Console.ReadKey()
-                    Custom.Abort()
-                    Custom = New Thread(AddressOf Custom_DoWork) With {.Name = "Custom screensaver thread", .IsBackground = True}
+                    Custom.Stop()
                     SaverAutoReset.WaitOne()
                 Else
                     Write(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)

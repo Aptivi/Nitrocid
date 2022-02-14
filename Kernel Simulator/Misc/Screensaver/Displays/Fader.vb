@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module FaderDisplay
 
-        Public Fader As New Thread(AddressOf Fader_DoWork) With {.Name = "Fader screensaver thread", .IsBackground = True}
+        Public Fader As New KernelThread("Fader screensaver thread", True, AddressOf Fader_DoWork)
 
         ''' <summary>
         ''' Handles the code of Fader

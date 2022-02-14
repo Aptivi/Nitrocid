@@ -23,7 +23,7 @@ Imports System.Text
 Namespace Misc.Screensaver.Displays
     Module SpotWriteDisplay
 
-        Public SpotWrite As New Thread(AddressOf SpotWrite_DoWork) With {.Name = "SpotWrite screensaver thread", .IsBackground = True}
+        Public SpotWrite As New KernelThread("SpotWrite screensaver thread", True, AddressOf SpotWrite_DoWork)
 
         Sub SpotWrite_DoWork()
             Try

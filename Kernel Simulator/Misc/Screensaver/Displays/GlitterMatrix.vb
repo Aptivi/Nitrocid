@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module GlitterMatrixDisplay
 
-        Public GlitterMatrix As New Thread(AddressOf GlitterMatrix_DoWork) With {.Name = "GlitterMatrix screensaver thread", .IsBackground = True}
+        Public GlitterMatrix As New KernelThread("GlitterMatrix screensaver thread", True, AddressOf GlitterMatrix_DoWork)
 
         ''' <summary>
         ''' Handles the code of Glitter Matrix

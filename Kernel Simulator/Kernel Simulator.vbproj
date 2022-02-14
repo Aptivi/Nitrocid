@@ -396,6 +396,7 @@
     <Compile Include="Misc\TextEdit\TextEditShellCommon.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\TextLocation.vb" />
+    <Compile Include="Misc\Threading\KernelThread.vb" />
     <Compile Include="Misc\Threading\ThreadManager.vb" />
     <Compile Include="Misc\Timers\LapDisplayInfo.vb" />
     <Compile Include="Misc\Timers\TimerScreen.vb" />

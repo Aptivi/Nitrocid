@@ -22,7 +22,7 @@ Imports Extensification.IntegerExts
 Namespace Misc.Screensaver.Displays
     Module StackBoxDisplay
 
-        Public StackBox As New Thread(AddressOf StackBox_DoWork) With {.Name = "StackBox screensaver thread", .IsBackground = True}
+        Public StackBox As New KernelThread("StackBox screensaver thread", True, AddressOf StackBox_DoWork)
 
         ''' <summary>
         ''' Handles the code of StackBox

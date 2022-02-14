@@ -21,7 +21,7 @@ Imports System.Threading
 Namespace Misc.Screensaver.Displays
     Module TypoDisplay
 
-        Public Typo As New Thread(AddressOf Typo_DoWork) With {.Name = "Typo screensaver thread", .IsBackground = True}
+        Public Typo As New KernelThread("Typo screensaver thread", True, AddressOf Typo_DoWork)
 
         Sub Typo_DoWork()
             Try
