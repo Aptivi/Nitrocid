@@ -3,7 +3,7 @@
         {
             "src": [
                 {
-                    "files": [ "**/**.vbproj" ],
+                    "files": [ "Kernel Simulator/**.vbproj" ],
                     "src": ".."
                 }
             ],
@@ -29,6 +29,10 @@
             }
         ],
         "dest": "../docs",
+        "globalMetadata": {
+            "_appTitle": "Kernel Simulator API - Eofla Internals",
+            "_enableSearch": true
+        },
         "globalMetadataFiles": [],
         "fileMetadataFiles": [],
         "template": [ "default" ],

@@ -381,7 +381,7 @@ Namespace Kernel
             End If
 
             'Parse real command-line arguments
-            If ParseCommandLineArguments Then ParseCMDArguments(Args)
+            If ParseCommandLineArguments Then ParseArguments(Args.ToList, ArgumentType.CommandLineArgs)
 
             'Check arguments
             If ArgsOnBoot Then
@@ -391,7 +391,7 @@ Namespace Kernel
             End If
             If ArgsInjected Then
                 ArgsInjected = False
-                ParseArguments()
+                ParseArguments(EnteredArguments, ArgumentType.KernelArgs)
             End If
 
             'Load splash

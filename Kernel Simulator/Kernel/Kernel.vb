@@ -83,7 +83,7 @@ Namespace Kernel
                     If Not IsOnUnix() Then Initialize255()
 
                     'Check for pre-boot arguments
-                    ParsePreBootCMDArguments(Args)
+                    ParseArguments(Args.ToList, ArgumentType.PreBootCommandLineArgs)
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER = "REL" Then

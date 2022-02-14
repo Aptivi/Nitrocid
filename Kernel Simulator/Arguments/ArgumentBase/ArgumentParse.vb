@@ -16,20 +16,41 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Arguments.KernelArguments
+
 Namespace Arguments.ArgumentBase
-    Module ArgumentParse
+    Public Module ArgumentParse
+
+        Public ReadOnly AvailableArgs As New Dictionary(Of String, ArgumentInfo) From {{"quiet", New ArgumentInfo("quiet", ArgumentType.KernelArgs, "Starts the kernel quietly", "", False, 0, New QuietArgument)},
+                                                                                       {"cmdinject", New ArgumentInfo("cmdinject", ArgumentType.KernelArgs, "Injects a command to start up in the next login", "[commands]", False, 0, New CmdInjectArgument)},
+                                                                                       {"debug", New ArgumentInfo("debug", ArgumentType.KernelArgs, "Enables debug mode", "", False, 0, New DebugArgument)},
+                                                                                       {"maintenance", New ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", "", False, 0, New MaintenanceArgument)},
+                                                                                       {"safe", New ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", "", False, 0, New SafeArgument)},
+                                                                                       {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)}}
 
         ''' <summary>
         ''' Parses specified arguments
         ''' </summary>
-        Public Sub ParseArguments()
+        ''' <param name="ArgumentsInput">Input Arguments</param>
+        ''' <param name="ArgumentType">Argument type</param>
+        Public Sub ParseArguments(ArgumentsInput As List(Of String), ArgumentType As ArgumentType)
             'Check for the arguments written by the user
             Try
-                For i As Integer = 0 To EnteredArguments.Count - 1
-                    Dim Argument As String = EnteredArguments(i)
-                    If AvailableArgs.Keys.Contains(Argument) Then
+                'Select the argument dictionary
+                Dim Arguments As Dictionary(Of String, ArgumentInfo) = AvailableArgs
+                Select Case ArgumentType
+                    Case ArgumentType.PreBootCommandLineArgs
+                        Arguments = AvailablePreBootCMDLineArgs
+                    Case ArgumentType.CommandLineArgs
+                        Arguments = AvailableCMDLineArgs
+                End Select
+
+                'Parse them now
+                For i As Integer = 0 To ArgumentsInput.Count - 1
+                    Dim Argument As String = ArgumentsInput(i)
+                    If Arguments.Keys.Contains(Argument) Then
                         'Variables
-                        Dim ArgumentInfo As New ProvidedArgumentArgumentsInfo(Argument, ArgumentType.KernelArgs)
+                        Dim ArgumentInfo As New ProvidedArgumentArgumentsInfo(Argument, ArgumentType)
                         Dim FullArgs() As String = ArgumentInfo.FullArgumentsList
                         Dim Args() As String = ArgumentInfo.ArgumentsList
                         Dim Switches() As String = ArgumentInfo.SwitchesList
@@ -37,8 +58,8 @@ Namespace Arguments.ArgumentBase
                         Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
                         'If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                        If (AvailableArgs(Argument).ArgumentsRequired And RequiredArgumentsProvided) Or Not AvailableArgs(Argument).ArgumentsRequired Then
-                            Dim ArgumentBase As ArgumentExecutor = AvailableArgs(Argument).ArgumentBase
+                        If (Arguments(Argument).ArgumentsRequired And RequiredArgumentsProvided) Or Not Arguments(Argument).ArgumentsRequired Then
+                            Dim ArgumentBase As ArgumentExecutor = Arguments(Argument).ArgumentBase
                             ArgumentBase.Execute(strArgs, FullArgs, Args, Switches)
                         Else
                             Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)

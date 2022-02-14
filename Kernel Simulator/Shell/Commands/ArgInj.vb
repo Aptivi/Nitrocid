@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments
+Imports KS.Arguments.ArgumentBase
 
 Namespace Shell.Commands
     Class ArgInjCommand

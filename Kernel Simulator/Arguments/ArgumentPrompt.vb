@@ -17,19 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
-Imports KS.Arguments.KernelArguments
 
 Namespace Arguments
-    Module ArgumentPrompt
+    Public Module ArgumentPrompt
 
         'Variables
-        Public EnteredArguments As New List(Of String)
-        Public AvailableArgs As New Dictionary(Of String, ArgumentInfo) From {{"quiet", New ArgumentInfo("quiet", ArgumentType.KernelArgs, "Starts the kernel quietly", "", False, 0, New QuietArgument)},
-                                                                              {"cmdinject", New ArgumentInfo("cmdinject", ArgumentType.KernelArgs, "Injects a command to start up in the next login", "[commands]", False, 0, New CmdInjectArgument)},
-                                                                              {"debug", New ArgumentInfo("debug", ArgumentType.KernelArgs, "Enables debug mode", "", False, 0, New DebugArgument)},
-                                                                              {"maintenance", New ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", "", False, 0, New MaintenanceArgument)},
-                                                                              {"safe", New ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", "", False, 0, New SafeArgument)},
-                                                                              {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)}}
+        Friend EnteredArguments As New List(Of String)
 
         ''' <summary>
         ''' Prompts user for arguments
@@ -68,7 +61,7 @@ Namespace Arguments
                         Write(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
                     ElseIf EnteredArguments.Count <> 0 Then
                         Write(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
-                        ParseArguments()
+                        ParseArguments(EnteredArguments, ArgumentType.KernelArgs)
                     End If
                 End If
             End While
