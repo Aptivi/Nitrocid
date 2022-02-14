@@ -16,58 +16,55 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module BarRotDisplay
 
-        Public WithEvents BarRot As New NamedBackgroundWorker("BarRot screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public BarRot As New Thread(AddressOf BarRot_DoWork) With {.Name = "BarRot screensaver thread", .IsBackground = True}
 
-        Sub BarRot_DoWork(sender As Object, e As DoWorkEventArgs) Handles BarRot.DoWork
-            'Sanity checks for color levels
-            BarRotMinimumRedColorLevelStart = If(BarRotMinimumRedColorLevelStart >= 0 And BarRotMinimumRedColorLevelStart <= 255, BarRotMinimumRedColorLevelStart, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (Start): {0}", BarRotMinimumRedColorLevelStart)
-            BarRotMinimumGreenColorLevelStart = If(BarRotMinimumGreenColorLevelStart >= 0 And BarRotMinimumGreenColorLevelStart <= 255, BarRotMinimumGreenColorLevelStart, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (Start): {0}", BarRotMinimumGreenColorLevelStart)
-            BarRotMinimumBlueColorLevelStart = If(BarRotMinimumBlueColorLevelStart >= 0 And BarRotMinimumBlueColorLevelStart <= 255, BarRotMinimumBlueColorLevelStart, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (Start): {0}", BarRotMinimumBlueColorLevelStart)
-            BarRotMaximumRedColorLevelStart = If(BarRotMaximumRedColorLevelStart >= 0 And BarRotMaximumRedColorLevelStart <= 255, BarRotMaximumRedColorLevelStart, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (Start): {0}", BarRotMaximumRedColorLevelStart)
-            BarRotMaximumGreenColorLevelStart = If(BarRotMaximumGreenColorLevelStart >= 0 And BarRotMaximumGreenColorLevelStart <= 255, BarRotMaximumGreenColorLevelStart, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (Start): {0}", BarRotMaximumGreenColorLevelStart)
-            BarRotMaximumBlueColorLevelStart = If(BarRotMaximumBlueColorLevelStart >= 0 And BarRotMaximumBlueColorLevelStart <= 255, BarRotMaximumBlueColorLevelStart, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (Start): {0}", BarRotMaximumBlueColorLevelStart)
-            BarRotMinimumRedColorLevelEnd = If(BarRotMinimumRedColorLevelEnd >= 0 And BarRotMinimumRedColorLevelEnd <= 255, BarRotMinimumRedColorLevelEnd, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (End): {0}", BarRotMinimumRedColorLevelEnd)
-            BarRotMinimumGreenColorLevelEnd = If(BarRotMinimumGreenColorLevelEnd >= 0 And BarRotMinimumGreenColorLevelEnd <= 255, BarRotMinimumGreenColorLevelEnd, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (End): {0}", BarRotMinimumGreenColorLevelEnd)
-            BarRotMinimumBlueColorLevelEnd = If(BarRotMinimumBlueColorLevelEnd >= 0 And BarRotMinimumBlueColorLevelEnd <= 255, BarRotMinimumBlueColorLevelEnd, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (End): {0}", BarRotMinimumBlueColorLevelEnd)
-            BarRotMaximumRedColorLevelEnd = If(BarRotMaximumRedColorLevelEnd >= 0 And BarRotMaximumRedColorLevelEnd <= 255, BarRotMaximumRedColorLevelEnd, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (End): {0}", BarRotMaximumRedColorLevelEnd)
-            BarRotMaximumGreenColorLevelEnd = If(BarRotMaximumGreenColorLevelEnd >= 0 And BarRotMaximumGreenColorLevelEnd <= 255, BarRotMaximumGreenColorLevelEnd, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (End): {0}", BarRotMaximumGreenColorLevelEnd)
-            BarRotMaximumBlueColorLevelEnd = If(BarRotMaximumBlueColorLevelEnd >= 0 And BarRotMaximumBlueColorLevelEnd <= 255, BarRotMaximumBlueColorLevelEnd, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (End): {0}", BarRotMaximumBlueColorLevelEnd)
+        Sub BarRot_DoWork()
+            Try
+                'Sanity checks for color levels
+                BarRotMinimumRedColorLevelStart = If(BarRotMinimumRedColorLevelStart >= 0 And BarRotMinimumRedColorLevelStart <= 255, BarRotMinimumRedColorLevelStart, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (Start): {0}", BarRotMinimumRedColorLevelStart)
+                BarRotMinimumGreenColorLevelStart = If(BarRotMinimumGreenColorLevelStart >= 0 And BarRotMinimumGreenColorLevelStart <= 255, BarRotMinimumGreenColorLevelStart, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (Start): {0}", BarRotMinimumGreenColorLevelStart)
+                BarRotMinimumBlueColorLevelStart = If(BarRotMinimumBlueColorLevelStart >= 0 And BarRotMinimumBlueColorLevelStart <= 255, BarRotMinimumBlueColorLevelStart, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (Start): {0}", BarRotMinimumBlueColorLevelStart)
+                BarRotMaximumRedColorLevelStart = If(BarRotMaximumRedColorLevelStart >= 0 And BarRotMaximumRedColorLevelStart <= 255, BarRotMaximumRedColorLevelStart, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (Start): {0}", BarRotMaximumRedColorLevelStart)
+                BarRotMaximumGreenColorLevelStart = If(BarRotMaximumGreenColorLevelStart >= 0 And BarRotMaximumGreenColorLevelStart <= 255, BarRotMaximumGreenColorLevelStart, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (Start): {0}", BarRotMaximumGreenColorLevelStart)
+                BarRotMaximumBlueColorLevelStart = If(BarRotMaximumBlueColorLevelStart >= 0 And BarRotMaximumBlueColorLevelStart <= 255, BarRotMaximumBlueColorLevelStart, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (Start): {0}", BarRotMaximumBlueColorLevelStart)
+                BarRotMinimumRedColorLevelEnd = If(BarRotMinimumRedColorLevelEnd >= 0 And BarRotMinimumRedColorLevelEnd <= 255, BarRotMinimumRedColorLevelEnd, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (End): {0}", BarRotMinimumRedColorLevelEnd)
+                BarRotMinimumGreenColorLevelEnd = If(BarRotMinimumGreenColorLevelEnd >= 0 And BarRotMinimumGreenColorLevelEnd <= 255, BarRotMinimumGreenColorLevelEnd, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (End): {0}", BarRotMinimumGreenColorLevelEnd)
+                BarRotMinimumBlueColorLevelEnd = If(BarRotMinimumBlueColorLevelEnd >= 0 And BarRotMinimumBlueColorLevelEnd <= 255, BarRotMinimumBlueColorLevelEnd, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (End): {0}", BarRotMinimumBlueColorLevelEnd)
+                BarRotMaximumRedColorLevelEnd = If(BarRotMaximumRedColorLevelEnd >= 0 And BarRotMaximumRedColorLevelEnd <= 255, BarRotMaximumRedColorLevelEnd, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (End): {0}", BarRotMaximumRedColorLevelEnd)
+                BarRotMaximumGreenColorLevelEnd = If(BarRotMaximumGreenColorLevelEnd >= 0 And BarRotMaximumGreenColorLevelEnd <= 255, BarRotMaximumGreenColorLevelEnd, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (End): {0}", BarRotMaximumGreenColorLevelEnd)
+                BarRotMaximumBlueColorLevelEnd = If(BarRotMaximumBlueColorLevelEnd >= 0 And BarRotMaximumBlueColorLevelEnd <= 255, BarRotMaximumBlueColorLevelEnd, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (End): {0}", BarRotMaximumBlueColorLevelEnd)
 
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If BarRot.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                     'Select a color range for the ramp
@@ -127,7 +124,6 @@ Namespace Misc.Screensaver.Displays
                     'Set the console color and fill the ramp!
                     Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If BarRot.CancellationPending Then Exit Do
                         If ResizeSyncing Then Exit Do
 
                         'Populate the variables for sub-gradients
@@ -163,7 +159,6 @@ Namespace Misc.Screensaver.Displays
                         Dim RampSubgradientStepsMade As Integer = 0
                         Do Until RampSubgradientStepsMade = RampFrameSpaces
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If BarRot.CancellationPending Then Exit Do
                             If ResizeSyncing Then Exit Do
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
                             Console.Write(" "c)
@@ -201,16 +196,12 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(BarRotDelay, BarRot)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles BarRot.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

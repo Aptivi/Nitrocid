@@ -16,86 +16,83 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module RampDisplay
 
-        Public WithEvents Ramp As New NamedBackgroundWorker("Ramp screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Ramp As New Thread(AddressOf Ramp_DoWork) With {.Name = "Ramp screensaver thread", .IsBackground = True}
 
-        Sub Ramp_DoWork(sender As Object, e As DoWorkEventArgs) Handles Ramp.DoWork
-            'Sanity checks for color levels
-            If RampTrueColor Or Ramp255Colors Then
-                RampMinimumRedColorLevelStart = If(RampMinimumRedColorLevelStart >= 0 And RampMinimumRedColorLevelStart <= 255, RampMinimumRedColorLevelStart, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (Start): {0}", RampMinimumRedColorLevelStart)
-                RampMinimumGreenColorLevelStart = If(RampMinimumGreenColorLevelStart >= 0 And RampMinimumGreenColorLevelStart <= 255, RampMinimumGreenColorLevelStart, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (Start): {0}", RampMinimumGreenColorLevelStart)
-                RampMinimumBlueColorLevelStart = If(RampMinimumBlueColorLevelStart >= 0 And RampMinimumBlueColorLevelStart <= 255, RampMinimumBlueColorLevelStart, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (Start): {0}", RampMinimumBlueColorLevelStart)
-                RampMinimumColorLevelStart = If(RampMinimumColorLevelStart >= 0 And RampMinimumColorLevelStart <= 255, RampMinimumColorLevelStart, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (Start): {0}", RampMinimumColorLevelStart)
-                RampMaximumRedColorLevelStart = If(RampMaximumRedColorLevelStart >= 0 And RampMaximumRedColorLevelStart <= 255, RampMaximumRedColorLevelStart, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (Start): {0}", RampMaximumRedColorLevelStart)
-                RampMaximumGreenColorLevelStart = If(RampMaximumGreenColorLevelStart >= 0 And RampMaximumGreenColorLevelStart <= 255, RampMaximumGreenColorLevelStart, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (Start): {0}", RampMaximumGreenColorLevelStart)
-                RampMaximumBlueColorLevelStart = If(RampMaximumBlueColorLevelStart >= 0 And RampMaximumBlueColorLevelStart <= 255, RampMaximumBlueColorLevelStart, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (Start): {0}", RampMaximumBlueColorLevelStart)
-                RampMaximumColorLevelStart = If(RampMaximumColorLevelStart >= 0 And RampMaximumColorLevelStart <= 255, RampMaximumColorLevelStart, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (Start): {0}", RampMaximumColorLevelStart)
-                RampMinimumRedColorLevelEnd = If(RampMinimumRedColorLevelEnd >= 0 And RampMinimumRedColorLevelEnd <= 255, RampMinimumRedColorLevelEnd, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (End): {0}", RampMinimumRedColorLevelEnd)
-                RampMinimumGreenColorLevelEnd = If(RampMinimumGreenColorLevelEnd >= 0 And RampMinimumGreenColorLevelEnd <= 255, RampMinimumGreenColorLevelEnd, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (End): {0}", RampMinimumGreenColorLevelEnd)
-                RampMinimumBlueColorLevelEnd = If(RampMinimumBlueColorLevelEnd >= 0 And RampMinimumBlueColorLevelEnd <= 255, RampMinimumBlueColorLevelEnd, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (End): {0}", RampMinimumBlueColorLevelEnd)
-                RampMinimumColorLevelEnd = If(RampMinimumColorLevelEnd >= 0 And RampMinimumColorLevelEnd <= 255, RampMinimumColorLevelEnd, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (End): {0}", RampMinimumColorLevelEnd)
-                RampMaximumRedColorLevelEnd = If(RampMaximumRedColorLevelEnd >= 0 And RampMaximumRedColorLevelEnd <= 255, RampMaximumRedColorLevelEnd, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (End): {0}", RampMaximumRedColorLevelEnd)
-                RampMaximumGreenColorLevelEnd = If(RampMaximumGreenColorLevelEnd >= 0 And RampMaximumGreenColorLevelEnd <= 255, RampMaximumGreenColorLevelEnd, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (End): {0}", RampMaximumGreenColorLevelEnd)
-                RampMaximumBlueColorLevelEnd = If(RampMaximumBlueColorLevelEnd >= 0 And RampMaximumBlueColorLevelEnd <= 255, RampMaximumBlueColorLevelEnd, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (End): {0}", RampMaximumBlueColorLevelEnd)
-                RampMaximumColorLevelEnd = If(RampMaximumColorLevelEnd >= 0 And RampMaximumColorLevelEnd <= 255, RampMaximumColorLevelEnd, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (End): {0}", RampMaximumColorLevelEnd)
-            Else
-                RampMinimumColorLevelStart = If(RampMinimumColorLevelStart >= 0 And RampMinimumColorLevelStart <= 15, RampMinimumColorLevelStart, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (Start): {0}", RampMinimumColorLevelStart)
-                RampMaximumColorLevelStart = If(RampMaximumColorLevelStart >= 0 And RampMaximumColorLevelStart <= 15, RampMaximumColorLevelStart, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (Start): {0}", RampMaximumColorLevelStart)
-                RampMinimumColorLevelEnd = If(RampMinimumColorLevelEnd >= 0 And RampMinimumColorLevelEnd <= 15, RampMinimumColorLevelEnd, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (End): {0}", RampMinimumColorLevelEnd)
-                RampMaximumColorLevelEnd = If(RampMaximumColorLevelEnd >= 0 And RampMaximumColorLevelEnd <= 15, RampMaximumColorLevelEnd, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (End): {0}", RampMaximumColorLevelEnd)
-            End If
-
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim RedColorNumFrom As Integer = RandomDriver.Next(RampMinimumRedColorLevelStart, RampMaximumRedColorLevelStart)
-            Dim GreenColorNumFrom As Integer = RandomDriver.Next(RampMinimumGreenColorLevelStart, RampMaximumGreenColorLevelStart)
-            Dim BlueColorNumFrom As Integer = RandomDriver.Next(RampMinimumBlueColorLevelStart, RampMaximumBlueColorLevelStart)
-            Dim ColorNumFrom As Integer = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
-            Dim RedColorNumTo As Integer = RandomDriver.Next(RampMinimumRedColorLevelEnd, RampMaximumRedColorLevelEnd)
-            Dim GreenColorNumTo As Integer = RandomDriver.Next(RampMinimumGreenColorLevelEnd, RampMaximumGreenColorLevelEnd)
-            Dim BlueColorNumTo As Integer = RandomDriver.Next(RampMinimumBlueColorLevelEnd, RampMaximumBlueColorLevelEnd)
-            Dim ColorNumTo As Integer = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-
-            'Screensaver logic
-            Do While True
-                'Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
-                Console.CursorVisible = False
-                If Ramp.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+        Sub Ramp_DoWork()
+            Try
+                'Sanity checks for color levels
+                If RampTrueColor Or Ramp255Colors Then
+                    RampMinimumRedColorLevelStart = If(RampMinimumRedColorLevelStart >= 0 And RampMinimumRedColorLevelStart <= 255, RampMinimumRedColorLevelStart, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (Start): {0}", RampMinimumRedColorLevelStart)
+                    RampMinimumGreenColorLevelStart = If(RampMinimumGreenColorLevelStart >= 0 And RampMinimumGreenColorLevelStart <= 255, RampMinimumGreenColorLevelStart, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (Start): {0}", RampMinimumGreenColorLevelStart)
+                    RampMinimumBlueColorLevelStart = If(RampMinimumBlueColorLevelStart >= 0 And RampMinimumBlueColorLevelStart <= 255, RampMinimumBlueColorLevelStart, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (Start): {0}", RampMinimumBlueColorLevelStart)
+                    RampMinimumColorLevelStart = If(RampMinimumColorLevelStart >= 0 And RampMinimumColorLevelStart <= 255, RampMinimumColorLevelStart, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (Start): {0}", RampMinimumColorLevelStart)
+                    RampMaximumRedColorLevelStart = If(RampMaximumRedColorLevelStart >= 0 And RampMaximumRedColorLevelStart <= 255, RampMaximumRedColorLevelStart, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (Start): {0}", RampMaximumRedColorLevelStart)
+                    RampMaximumGreenColorLevelStart = If(RampMaximumGreenColorLevelStart >= 0 And RampMaximumGreenColorLevelStart <= 255, RampMaximumGreenColorLevelStart, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (Start): {0}", RampMaximumGreenColorLevelStart)
+                    RampMaximumBlueColorLevelStart = If(RampMaximumBlueColorLevelStart >= 0 And RampMaximumBlueColorLevelStart <= 255, RampMaximumBlueColorLevelStart, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (Start): {0}", RampMaximumBlueColorLevelStart)
+                    RampMaximumColorLevelStart = If(RampMaximumColorLevelStart >= 0 And RampMaximumColorLevelStart <= 255, RampMaximumColorLevelStart, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (Start): {0}", RampMaximumColorLevelStart)
+                    RampMinimumRedColorLevelEnd = If(RampMinimumRedColorLevelEnd >= 0 And RampMinimumRedColorLevelEnd <= 255, RampMinimumRedColorLevelEnd, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (End): {0}", RampMinimumRedColorLevelEnd)
+                    RampMinimumGreenColorLevelEnd = If(RampMinimumGreenColorLevelEnd >= 0 And RampMinimumGreenColorLevelEnd <= 255, RampMinimumGreenColorLevelEnd, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (End): {0}", RampMinimumGreenColorLevelEnd)
+                    RampMinimumBlueColorLevelEnd = If(RampMinimumBlueColorLevelEnd >= 0 And RampMinimumBlueColorLevelEnd <= 255, RampMinimumBlueColorLevelEnd, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (End): {0}", RampMinimumBlueColorLevelEnd)
+                    RampMinimumColorLevelEnd = If(RampMinimumColorLevelEnd >= 0 And RampMinimumColorLevelEnd <= 255, RampMinimumColorLevelEnd, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (End): {0}", RampMinimumColorLevelEnd)
+                    RampMaximumRedColorLevelEnd = If(RampMaximumRedColorLevelEnd >= 0 And RampMaximumRedColorLevelEnd <= 255, RampMaximumRedColorLevelEnd, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (End): {0}", RampMaximumRedColorLevelEnd)
+                    RampMaximumGreenColorLevelEnd = If(RampMaximumGreenColorLevelEnd >= 0 And RampMaximumGreenColorLevelEnd <= 255, RampMaximumGreenColorLevelEnd, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (End): {0}", RampMaximumGreenColorLevelEnd)
+                    RampMaximumBlueColorLevelEnd = If(RampMaximumBlueColorLevelEnd >= 0 And RampMaximumBlueColorLevelEnd <= 255, RampMaximumBlueColorLevelEnd, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (End): {0}", RampMaximumBlueColorLevelEnd)
+                    RampMaximumColorLevelEnd = If(RampMaximumColorLevelEnd >= 0 And RampMaximumColorLevelEnd <= 255, RampMaximumColorLevelEnd, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (End): {0}", RampMaximumColorLevelEnd)
                 Else
+                    RampMinimumColorLevelStart = If(RampMinimumColorLevelStart >= 0 And RampMinimumColorLevelStart <= 15, RampMinimumColorLevelStart, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (Start): {0}", RampMinimumColorLevelStart)
+                    RampMaximumColorLevelStart = If(RampMaximumColorLevelStart >= 0 And RampMaximumColorLevelStart <= 15, RampMaximumColorLevelStart, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (Start): {0}", RampMaximumColorLevelStart)
+                    RampMinimumColorLevelEnd = If(RampMinimumColorLevelEnd >= 0 And RampMinimumColorLevelEnd <= 15, RampMinimumColorLevelEnd, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (End): {0}", RampMinimumColorLevelEnd)
+                    RampMaximumColorLevelEnd = If(RampMaximumColorLevelEnd >= 0 And RampMaximumColorLevelEnd <= 15, RampMaximumColorLevelEnd, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (End): {0}", RampMaximumColorLevelEnd)
+                End If
+
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim RedColorNumFrom As Integer = RandomDriver.Next(RampMinimumRedColorLevelStart, RampMaximumRedColorLevelStart)
+                Dim GreenColorNumFrom As Integer = RandomDriver.Next(RampMinimumGreenColorLevelStart, RampMaximumGreenColorLevelStart)
+                Dim BlueColorNumFrom As Integer = RandomDriver.Next(RampMinimumBlueColorLevelStart, RampMaximumBlueColorLevelStart)
+                Dim ColorNumFrom As Integer = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
+                Dim RedColorNumTo As Integer = RandomDriver.Next(RampMinimumRedColorLevelEnd, RampMaximumRedColorLevelEnd)
+                Dim GreenColorNumTo As Integer = RandomDriver.Next(RampMinimumGreenColorLevelEnd, RampMaximumGreenColorLevelEnd)
+                Dim BlueColorNumTo As Integer = RandomDriver.Next(RampMinimumBlueColorLevelEnd, RampMaximumBlueColorLevelEnd)
+                Dim ColorNumTo As Integer = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
+
+                'Screensaver logic
+                Do While True
+                    'Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
+                    Console.CursorVisible = False
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                     'Select a color range for the ramp
@@ -171,7 +168,6 @@ Namespace Misc.Screensaver.Displays
                         SetConsoleColor(RampCurrentColorInstance, True)
                         Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Ramp.CancellationPending Then Exit Do
                             If ResizeSyncing Then Exit Do
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
                             Console.Write(" "c)
@@ -201,7 +197,6 @@ Namespace Misc.Screensaver.Displays
                         SetConsoleColor(RampCurrentColorInstance, True)
                         Do Until Convert.ToInt32(RampCurrentColor) = ColorNumTo
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Ramp.CancellationPending Then Exit Do
                             If ResizeSyncing Then Exit Do
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
                             Console.Write(" "c)
@@ -227,16 +222,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(RampDelay, Ramp)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Ramp.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(RampDelay, Ramp)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

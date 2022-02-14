@@ -16,62 +16,59 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports Extensification.IntegerExts
 
 Namespace Misc.Screensaver.Displays
     Module FireworksDisplay
 
-        Public WithEvents Fireworks As New NamedBackgroundWorker("Fireworks screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Fireworks As New Thread(AddressOf Fireworks_DoWork) With {.Name = "Fireworks screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Fireworks
         ''' </summary>
-        Sub Fireworks_DoWork(sender As Object, e As DoWorkEventArgs) Handles Fireworks.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Sub Fireworks_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
 
-            'Sanity checks for color levels
-            If FireworksTrueColor Or Fireworks255Colors Then
-                FireworksMinimumRedColorLevel = If(FireworksMinimumRedColorLevel >= 0 And FireworksMinimumRedColorLevel <= 255, FireworksMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FireworksMinimumRedColorLevel)
-                FireworksMinimumGreenColorLevel = If(FireworksMinimumGreenColorLevel >= 0 And FireworksMinimumGreenColorLevel <= 255, FireworksMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FireworksMinimumGreenColorLevel)
-                FireworksMinimumBlueColorLevel = If(FireworksMinimumBlueColorLevel >= 0 And FireworksMinimumBlueColorLevel <= 255, FireworksMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FireworksMinimumBlueColorLevel)
-                FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 255, FireworksMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
-                FireworksMaximumRedColorLevel = If(FireworksMaximumRedColorLevel >= 0 And FireworksMaximumRedColorLevel <= 255, FireworksMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FireworksMaximumRedColorLevel)
-                FireworksMaximumGreenColorLevel = If(FireworksMaximumGreenColorLevel >= 0 And FireworksMaximumGreenColorLevel <= 255, FireworksMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FireworksMaximumGreenColorLevel)
-                FireworksMaximumBlueColorLevel = If(FireworksMaximumBlueColorLevel >= 0 And FireworksMaximumBlueColorLevel <= 255, FireworksMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FireworksMaximumBlueColorLevel)
-                FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 255, FireworksMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
-            Else
-                FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 15, FireworksMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
-                FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 15, FireworksMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Fireworks.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                'Sanity checks for color levels
+                If FireworksTrueColor Or Fireworks255Colors Then
+                    FireworksMinimumRedColorLevel = If(FireworksMinimumRedColorLevel >= 0 And FireworksMinimumRedColorLevel <= 255, FireworksMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FireworksMinimumRedColorLevel)
+                    FireworksMinimumGreenColorLevel = If(FireworksMinimumGreenColorLevel >= 0 And FireworksMinimumGreenColorLevel <= 255, FireworksMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FireworksMinimumGreenColorLevel)
+                    FireworksMinimumBlueColorLevel = If(FireworksMinimumBlueColorLevel >= 0 And FireworksMinimumBlueColorLevel <= 255, FireworksMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FireworksMinimumBlueColorLevel)
+                    FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 255, FireworksMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
+                    FireworksMaximumRedColorLevel = If(FireworksMaximumRedColorLevel >= 0 And FireworksMaximumRedColorLevel <= 255, FireworksMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FireworksMaximumRedColorLevel)
+                    FireworksMaximumGreenColorLevel = If(FireworksMaximumGreenColorLevel >= 0 And FireworksMaximumGreenColorLevel <= 255, FireworksMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FireworksMaximumGreenColorLevel)
+                    FireworksMaximumBlueColorLevel = If(FireworksMaximumBlueColorLevel >= 0 And FireworksMaximumBlueColorLevel <= 255, FireworksMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FireworksMaximumBlueColorLevel)
+                    FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 255, FireworksMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
                 Else
+                    FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 15, FireworksMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
+                    FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 15, FireworksMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     'Variables
                     Dim HalfHeight As Integer = Console.WindowHeight / 2
                     Dim LaunchPositionX As Integer = RandomDriver.Next(Console.WindowWidth)
@@ -112,7 +109,6 @@ Namespace Misc.Screensaver.Displays
                         Dim CurrentY As Integer = LaunchPositionY
                         Do Until CurrentX >= IgnitePositionX And CurrentY <= IgnitePositionY
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Fireworks.CancellationPending Then Exit Do
                             If ResizeSyncing Then Exit Do
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY)
                             Console.SetCursorPosition(CurrentX, CurrentY)
@@ -134,7 +130,6 @@ Namespace Misc.Screensaver.Displays
                     If Not ResizeSyncing Then
                         For Radius As Integer = 0 To FireworkRadius
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Fireworks.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
 
                             'Variables
@@ -181,15 +176,12 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Fireworks.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

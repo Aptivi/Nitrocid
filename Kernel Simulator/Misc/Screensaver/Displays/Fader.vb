@@ -16,52 +16,49 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module FaderDisplay
 
-        Public WithEvents Fader As New NamedBackgroundWorker("Fader screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Fader As New Thread(AddressOf Fader_DoWork) With {.Name = "Fader screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Fader
         ''' </summary>
-        Sub Fader_DoWork(sender As Object, e As DoWorkEventArgs) Handles Fader.DoWork
-            'Sanity checks for color levels
-            FaderMinimumRedColorLevel = If(FaderMinimumRedColorLevel >= 0 And FaderMinimumRedColorLevel <= 255, FaderMinimumRedColorLevel, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FaderMinimumRedColorLevel)
-            FaderMinimumGreenColorLevel = If(FaderMinimumGreenColorLevel >= 0 And FaderMinimumGreenColorLevel <= 255, FaderMinimumGreenColorLevel, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FaderMinimumGreenColorLevel)
-            FaderMinimumBlueColorLevel = If(FaderMinimumBlueColorLevel >= 0 And FaderMinimumBlueColorLevel <= 255, FaderMinimumBlueColorLevel, 0)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FaderMinimumBlueColorLevel)
-            FaderMaximumRedColorLevel = If(FaderMaximumRedColorLevel >= 0 And FaderMaximumRedColorLevel <= 255, FaderMaximumRedColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FaderMaximumRedColorLevel)
-            FaderMaximumGreenColorLevel = If(FaderMaximumGreenColorLevel >= 0 And FaderMaximumGreenColorLevel <= 255, FaderMaximumGreenColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FaderMaximumGreenColorLevel)
-            FaderMaximumBlueColorLevel = If(FaderMaximumBlueColorLevel >= 0 And FaderMaximumBlueColorLevel <= 255, FaderMaximumBlueColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FaderMaximumBlueColorLevel)
+        Sub Fader_DoWork()
+            Try
+                'Sanity checks for color levels
+                FaderMinimumRedColorLevel = If(FaderMinimumRedColorLevel >= 0 And FaderMinimumRedColorLevel <= 255, FaderMinimumRedColorLevel, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FaderMinimumRedColorLevel)
+                FaderMinimumGreenColorLevel = If(FaderMinimumGreenColorLevel >= 0 And FaderMinimumGreenColorLevel <= 255, FaderMinimumGreenColorLevel, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FaderMinimumGreenColorLevel)
+                FaderMinimumBlueColorLevel = If(FaderMinimumBlueColorLevel >= 0 And FaderMinimumBlueColorLevel <= 255, FaderMinimumBlueColorLevel, 0)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FaderMinimumBlueColorLevel)
+                FaderMaximumRedColorLevel = If(FaderMaximumRedColorLevel >= 0 And FaderMaximumRedColorLevel <= 255, FaderMaximumRedColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FaderMaximumRedColorLevel)
+                FaderMaximumGreenColorLevel = If(FaderMaximumGreenColorLevel >= 0 And FaderMaximumGreenColorLevel <= 255, FaderMaximumGreenColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FaderMaximumGreenColorLevel)
+                FaderMaximumBlueColorLevel = If(FaderMaximumBlueColorLevel >= 0 And FaderMaximumBlueColorLevel <= 255, FaderMaximumBlueColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FaderMaximumBlueColorLevel)
 
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
-            Dim GreenColorNum As Integer = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
-            Dim BlueColorNum As Integer = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(FaderBackgroundColor), True)
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+                'Preparations
+                SetConsoleColor(New Color(FaderBackgroundColor), True)
+                Console.Clear()
+                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Fader.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
@@ -85,7 +82,6 @@ Namespace Misc.Screensaver.Displays
                     Dim CurrentColorBlueIn As Integer = 0
                     For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Fader.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
                         SleepNoBlock(FaderDelay, Fader)
@@ -104,7 +100,6 @@ Namespace Misc.Screensaver.Displays
                     'Fade out
                     For CurrentStep As Integer = 1 To FaderMaxSteps
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Fader.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
                         SleepNoBlock(FaderDelay, Fader)
@@ -125,16 +120,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(FaderDelay, Fader)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Fader.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(FaderDelay, Fader)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

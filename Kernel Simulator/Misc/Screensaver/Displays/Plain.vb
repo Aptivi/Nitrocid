@@ -16,36 +16,31 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module PlainDisplay
 
-        Public WithEvents Plain As New NamedBackgroundWorker("Plain screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Plain As New Thread(AddressOf Plain_DoWork) With {.Name = "Plain screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Plain
         ''' </summary>
-        Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-            Console.CursorVisible = False
-            Do While True
-                If Plain.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                End If
-                SleepNoBlock(10, Plain)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Plain.RunWorkerCompleted
-            HandleSaverError(e.Error)
+        Sub Plain_DoWork()
+            Try
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
+                Console.CursorVisible = False
+                Do While True
+                    SleepNoBlock(10, Plain)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

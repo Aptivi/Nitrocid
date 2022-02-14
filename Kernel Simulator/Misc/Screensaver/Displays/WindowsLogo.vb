@@ -16,36 +16,33 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module WindowsLogoDisplay
 
-        Public WithEvents WindowsLogo As New NamedBackgroundWorker("WindowsLogo screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WindowsLogo As New Thread(AddressOf WindowsLogo_DoWork) With {.Name = "WindowsLogo screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of WindowsLogo
         ''' </summary>
-        Sub WindowsLogo_DoWork(sender As Object, e As DoWorkEventArgs) Handles WindowsLogo.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim Drawn As Boolean
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub WindowsLogo_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim Drawn As Boolean
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.Clear()
+                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If WindowsLogo.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     If ResizeSyncing Then
                         Drawn = False
 
@@ -136,15 +133,12 @@ Namespace Misc.Screensaver.Displays
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn!")
                         End If
                     End If
-                End If
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles WindowsLogo.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

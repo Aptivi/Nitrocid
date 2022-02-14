@@ -16,61 +16,58 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module MarqueeDisplay
 
-        Public WithEvents Marquee As New NamedBackgroundWorker("Marquee screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Marquee As New Thread(AddressOf Marquee_DoWork) With {.Name = "Marquee screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Marquee
         ''' </summary>
-        Sub Marquee_DoWork(sender As Object, e As DoWorkEventArgs) Handles Marquee.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub Marquee_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(MarqueeBackgroundColor), True)
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-            MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
+                'Preparations
+                SetConsoleColor(New Color(MarqueeBackgroundColor), True)
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
+                MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
 
-            'Sanity checks for color levels
-            If MarqueeTrueColor Or Marquee255Colors Then
-                MarqueeMinimumRedColorLevel = If(MarqueeMinimumRedColorLevel >= 0 And MarqueeMinimumRedColorLevel <= 255, MarqueeMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", MarqueeMinimumRedColorLevel)
-                MarqueeMinimumGreenColorLevel = If(MarqueeMinimumGreenColorLevel >= 0 And MarqueeMinimumGreenColorLevel <= 255, MarqueeMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", MarqueeMinimumGreenColorLevel)
-                MarqueeMinimumBlueColorLevel = If(MarqueeMinimumBlueColorLevel >= 0 And MarqueeMinimumBlueColorLevel <= 255, MarqueeMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", MarqueeMinimumBlueColorLevel)
-                MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 255, MarqueeMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
-                MarqueeMaximumRedColorLevel = If(MarqueeMaximumRedColorLevel >= 0 And MarqueeMaximumRedColorLevel <= 255, MarqueeMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MarqueeMaximumRedColorLevel)
-                MarqueeMaximumGreenColorLevel = If(MarqueeMaximumGreenColorLevel >= 0 And MarqueeMaximumGreenColorLevel <= 255, MarqueeMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MarqueeMaximumGreenColorLevel)
-                MarqueeMaximumBlueColorLevel = If(MarqueeMaximumBlueColorLevel >= 0 And MarqueeMaximumBlueColorLevel <= 255, MarqueeMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MarqueeMaximumBlueColorLevel)
-                MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 255, MarqueeMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
-            Else
-                MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 15, MarqueeMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
-                MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 15, MarqueeMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Marquee.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                'Sanity checks for color levels
+                If MarqueeTrueColor Or Marquee255Colors Then
+                    MarqueeMinimumRedColorLevel = If(MarqueeMinimumRedColorLevel >= 0 And MarqueeMinimumRedColorLevel <= 255, MarqueeMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", MarqueeMinimumRedColorLevel)
+                    MarqueeMinimumGreenColorLevel = If(MarqueeMinimumGreenColorLevel >= 0 And MarqueeMinimumGreenColorLevel <= 255, MarqueeMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", MarqueeMinimumGreenColorLevel)
+                    MarqueeMinimumBlueColorLevel = If(MarqueeMinimumBlueColorLevel >= 0 And MarqueeMinimumBlueColorLevel <= 255, MarqueeMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", MarqueeMinimumBlueColorLevel)
+                    MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 255, MarqueeMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
+                    MarqueeMaximumRedColorLevel = If(MarqueeMaximumRedColorLevel >= 0 And MarqueeMaximumRedColorLevel <= 255, MarqueeMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MarqueeMaximumRedColorLevel)
+                    MarqueeMaximumGreenColorLevel = If(MarqueeMaximumGreenColorLevel >= 0 And MarqueeMaximumGreenColorLevel <= 255, MarqueeMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MarqueeMaximumGreenColorLevel)
+                    MarqueeMaximumBlueColorLevel = If(MarqueeMaximumBlueColorLevel >= 0 And MarqueeMaximumBlueColorLevel <= 255, MarqueeMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MarqueeMaximumBlueColorLevel)
+                    MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 255, MarqueeMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
                 Else
+                    MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 15, MarqueeMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
+                    MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 15, MarqueeMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     Console.Clear()
 
                     'Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
@@ -105,7 +102,6 @@ Namespace Misc.Screensaver.Displays
                     Do Until CurrentLeftOtherEnd = 0
                         SleepNoBlock(MarqueeDelay, Marquee)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Marquee.CancellationPending Then Exit Do
                         If ResizeSyncing Then Exit Do
                         If MarqueeUseConsoleAPI Then Console.Clear()
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd)
@@ -150,16 +146,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(MarqueeDelay, Marquee)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Marquee.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(MarqueeDelay, Marquee)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

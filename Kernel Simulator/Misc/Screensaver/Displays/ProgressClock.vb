@@ -16,117 +16,114 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports KS.TimeDate
 
 Namespace Misc.Screensaver.Displays
     Module ProgressClockDisplay
 
-        Public WithEvents ProgressClock As New NamedBackgroundWorker("ProgressClock screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public ProgressClock As New Thread(AddressOf ProgressClock_DoWork) With {.Name = "ProgressClock screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Progress Clock
         ''' </summary>
-        Sub ProgressClock_DoWork(sender As Object, e As DoWorkEventArgs) Handles ProgressClock.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-            'Sanity checks for color levels
-            If ProgressClockTrueColor Or ProgressClock255Colors Then
-                ProgressClockMinimumRedColorLevel = If(ProgressClockMinimumRedColorLevel >= 0 And ProgressClockMinimumRedColorLevel <= 255, ProgressClockMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", ProgressClockMinimumRedColorLevel)
-                ProgressClockMinimumGreenColorLevel = If(ProgressClockMinimumGreenColorLevel >= 0 And ProgressClockMinimumGreenColorLevel <= 255, ProgressClockMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", ProgressClockMinimumGreenColorLevel)
-                ProgressClockMinimumBlueColorLevel = If(ProgressClockMinimumBlueColorLevel >= 0 And ProgressClockMinimumBlueColorLevel <= 255, ProgressClockMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", ProgressClockMinimumBlueColorLevel)
-                ProgressClockMinimumColorLevel = If(ProgressClockMinimumColorLevel >= 0 And ProgressClockMinimumColorLevel <= 255, ProgressClockMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ProgressClockMinimumColorLevel)
-                ProgressClockMaximumRedColorLevel = If(ProgressClockMaximumRedColorLevel >= 0 And ProgressClockMaximumRedColorLevel <= 255, ProgressClockMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", ProgressClockMaximumRedColorLevel)
-                ProgressClockMaximumGreenColorLevel = If(ProgressClockMaximumGreenColorLevel >= 0 And ProgressClockMaximumGreenColorLevel <= 255, ProgressClockMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", ProgressClockMaximumGreenColorLevel)
-                ProgressClockMaximumBlueColorLevel = If(ProgressClockMaximumBlueColorLevel >= 0 And ProgressClockMaximumBlueColorLevel <= 255, ProgressClockMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", ProgressClockMaximumBlueColorLevel)
-                ProgressClockMaximumColorLevel = If(ProgressClockMaximumColorLevel >= 0 And ProgressClockMaximumColorLevel <= 255, ProgressClockMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ProgressClockMaximumColorLevel)
-                ProgressClockMinimumRedColorLevelHours = If(ProgressClockMinimumRedColorLevelHours >= 0 And ProgressClockMinimumRedColorLevelHours <= 255, ProgressClockMinimumRedColorLevelHours, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (hours): {0}", ProgressClockMinimumRedColorLevelHours)
-                ProgressClockMinimumGreenColorLevelHours = If(ProgressClockMinimumGreenColorLevelHours >= 0 And ProgressClockMinimumGreenColorLevelHours <= 255, ProgressClockMinimumGreenColorLevelHours, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (hours): {0}", ProgressClockMinimumGreenColorLevelHours)
-                ProgressClockMinimumBlueColorLevelHours = If(ProgressClockMinimumBlueColorLevelHours >= 0 And ProgressClockMinimumBlueColorLevelHours <= 255, ProgressClockMinimumBlueColorLevelHours, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (hours): {0}", ProgressClockMinimumBlueColorLevelHours)
-                ProgressClockMinimumColorLevelHours = If(ProgressClockMinimumColorLevelHours >= 0 And ProgressClockMinimumColorLevelHours <= 255, ProgressClockMinimumColorLevelHours, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (hours): {0}", ProgressClockMinimumColorLevelHours)
-                ProgressClockMaximumRedColorLevelHours = If(ProgressClockMaximumRedColorLevelHours >= 0 And ProgressClockMaximumRedColorLevelHours <= 255, ProgressClockMaximumRedColorLevelHours, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (hours): {0}", ProgressClockMaximumRedColorLevelHours)
-                ProgressClockMaximumGreenColorLevelHours = If(ProgressClockMaximumGreenColorLevelHours >= 0 And ProgressClockMaximumGreenColorLevelHours <= 255, ProgressClockMaximumGreenColorLevelHours, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (hours): {0}", ProgressClockMaximumGreenColorLevelHours)
-                ProgressClockMaximumBlueColorLevelHours = If(ProgressClockMaximumBlueColorLevelHours >= 0 And ProgressClockMaximumBlueColorLevelHours <= 255, ProgressClockMaximumBlueColorLevelHours, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (hours): {0}", ProgressClockMaximumBlueColorLevelHours)
-                ProgressClockMaximumColorLevelHours = If(ProgressClockMaximumColorLevelHours >= 0 And ProgressClockMaximumColorLevelHours <= 255, ProgressClockMaximumColorLevelHours, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (hours): {0}", ProgressClockMaximumColorLevelHours)
-                ProgressClockMinimumRedColorLevelMinutes = If(ProgressClockMinimumRedColorLevelMinutes >= 0 And ProgressClockMinimumRedColorLevelMinutes <= 255, ProgressClockMinimumRedColorLevelMinutes, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (minutes): {0}", ProgressClockMinimumRedColorLevelMinutes)
-                ProgressClockMinimumGreenColorLevelMinutes = If(ProgressClockMinimumGreenColorLevelMinutes >= 0 And ProgressClockMinimumGreenColorLevelMinutes <= 255, ProgressClockMinimumGreenColorLevelMinutes, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (minutes): {0}", ProgressClockMinimumGreenColorLevelMinutes)
-                ProgressClockMinimumBlueColorLevelMinutes = If(ProgressClockMinimumBlueColorLevelMinutes >= 0 And ProgressClockMinimumBlueColorLevelMinutes <= 255, ProgressClockMinimumBlueColorLevelMinutes, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (minutes): {0}", ProgressClockMinimumBlueColorLevelMinutes)
-                ProgressClockMinimumColorLevelMinutes = If(ProgressClockMinimumColorLevelMinutes >= 0 And ProgressClockMinimumColorLevelMinutes <= 255, ProgressClockMinimumColorLevelMinutes, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (minutes): {0}", ProgressClockMinimumColorLevelMinutes)
-                ProgressClockMaximumRedColorLevelMinutes = If(ProgressClockMaximumRedColorLevelMinutes >= 0 And ProgressClockMaximumRedColorLevelMinutes <= 255, ProgressClockMaximumRedColorLevelMinutes, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (minutes): {0}", ProgressClockMaximumRedColorLevelMinutes)
-                ProgressClockMaximumGreenColorLevelMinutes = If(ProgressClockMaximumGreenColorLevelMinutes >= 0 And ProgressClockMaximumGreenColorLevelMinutes <= 255, ProgressClockMaximumGreenColorLevelMinutes, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (minutes): {0}", ProgressClockMaximumGreenColorLevelMinutes)
-                ProgressClockMaximumBlueColorLevelMinutes = If(ProgressClockMaximumBlueColorLevelMinutes >= 0 And ProgressClockMaximumBlueColorLevelMinutes <= 255, ProgressClockMaximumBlueColorLevelMinutes, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (minutes): {0}", ProgressClockMaximumBlueColorLevelMinutes)
-                ProgressClockMaximumColorLevelMinutes = If(ProgressClockMaximumColorLevelMinutes >= 0 And ProgressClockMaximumColorLevelMinutes <= 255, ProgressClockMaximumColorLevelMinutes, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (minutes): {0}", ProgressClockMaximumColorLevelMinutes)
-                ProgressClockMinimumRedColorLevelSeconds = If(ProgressClockMinimumRedColorLevelSeconds >= 0 And ProgressClockMinimumRedColorLevelSeconds <= 255, ProgressClockMinimumRedColorLevelSeconds, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (seconds): {0}", ProgressClockMinimumRedColorLevelSeconds)
-                ProgressClockMinimumGreenColorLevelSeconds = If(ProgressClockMinimumGreenColorLevelSeconds >= 0 And ProgressClockMinimumGreenColorLevelSeconds <= 255, ProgressClockMinimumGreenColorLevelSeconds, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (seconds): {0}", ProgressClockMinimumGreenColorLevelSeconds)
-                ProgressClockMinimumBlueColorLevelSeconds = If(ProgressClockMinimumBlueColorLevelSeconds >= 0 And ProgressClockMinimumBlueColorLevelSeconds <= 255, ProgressClockMinimumBlueColorLevelSeconds, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (seconds): {0}", ProgressClockMinimumBlueColorLevelSeconds)
-                ProgressClockMinimumColorLevelSeconds = If(ProgressClockMinimumColorLevelSeconds >= 0 And ProgressClockMinimumColorLevelSeconds <= 255, ProgressClockMinimumColorLevelSeconds, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (seconds): {0}", ProgressClockMinimumColorLevelSeconds)
-                ProgressClockMaximumRedColorLevelSeconds = If(ProgressClockMaximumRedColorLevelSeconds >= 0 And ProgressClockMaximumRedColorLevelSeconds <= 255, ProgressClockMaximumRedColorLevelSeconds, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (seconds): {0}", ProgressClockMaximumRedColorLevelSeconds)
-                ProgressClockMaximumGreenColorLevelSeconds = If(ProgressClockMaximumGreenColorLevelSeconds >= 0 And ProgressClockMaximumGreenColorLevelSeconds <= 255, ProgressClockMaximumGreenColorLevelSeconds, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (seconds): {0}", ProgressClockMaximumGreenColorLevelSeconds)
-                ProgressClockMaximumBlueColorLevelSeconds = If(ProgressClockMaximumBlueColorLevelSeconds >= 0 And ProgressClockMaximumBlueColorLevelSeconds <= 255, ProgressClockMaximumBlueColorLevelSeconds, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (seconds): {0}", ProgressClockMaximumBlueColorLevelSeconds)
-                ProgressClockMaximumColorLevelSeconds = If(ProgressClockMaximumColorLevelSeconds >= 0 And ProgressClockMaximumColorLevelSeconds <= 255, ProgressClockMaximumColorLevelSeconds, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (seconds): {0}", ProgressClockMaximumColorLevelSeconds)
-            Else
-                ProgressClockMinimumColorLevel = If(ProgressClockMinimumColorLevel >= 0 And ProgressClockMinimumColorLevel <= 15, ProgressClockMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ProgressClockMinimumColorLevel)
-                ProgressClockMaximumColorLevel = If(ProgressClockMaximumColorLevel >= 0 And ProgressClockMaximumColorLevel <= 15, ProgressClockMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ProgressClockMaximumColorLevel)
-                ProgressClockMinimumColorLevelHours = If(ProgressClockMinimumColorLevelHours >= 0 And ProgressClockMinimumColorLevelHours <= 15, ProgressClockMinimumColorLevelHours, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (hours): {0}", ProgressClockMinimumColorLevelHours)
-                ProgressClockMaximumColorLevelHours = If(ProgressClockMaximumColorLevelHours >= 0 And ProgressClockMaximumColorLevelHours <= 15, ProgressClockMaximumColorLevelHours, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (hours): {0}", ProgressClockMaximumColorLevelHours)
-                ProgressClockMinimumColorLevelMinutes = If(ProgressClockMinimumColorLevelMinutes >= 0 And ProgressClockMinimumColorLevelMinutes <= 15, ProgressClockMinimumColorLevelMinutes, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (minutes): {0}", ProgressClockMinimumColorLevelMinutes)
-                ProgressClockMaximumColorLevelMinutes = If(ProgressClockMaximumColorLevelMinutes >= 0 And ProgressClockMaximumColorLevelMinutes <= 15, ProgressClockMaximumColorLevelMinutes, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (minutes): {0}", ProgressClockMaximumColorLevelMinutes)
-                ProgressClockMinimumColorLevelSeconds = If(ProgressClockMinimumColorLevelSeconds >= 0 And ProgressClockMinimumColorLevelSeconds <= 15, ProgressClockMinimumColorLevelSeconds, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (seconds): {0}", ProgressClockMinimumColorLevelSeconds)
-                ProgressClockMaximumColorLevelSeconds = If(ProgressClockMaximumColorLevelSeconds >= 0 And ProgressClockMaximumColorLevelSeconds <= 15, ProgressClockMaximumColorLevelSeconds, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (seconds): {0}", ProgressClockMaximumColorLevelSeconds)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                Console.Clear()
-                If ProgressClock.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+        Sub ProgressClock_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+                'Sanity checks for color levels
+                If ProgressClockTrueColor Or ProgressClock255Colors Then
+                    ProgressClockMinimumRedColorLevel = If(ProgressClockMinimumRedColorLevel >= 0 And ProgressClockMinimumRedColorLevel <= 255, ProgressClockMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", ProgressClockMinimumRedColorLevel)
+                    ProgressClockMinimumGreenColorLevel = If(ProgressClockMinimumGreenColorLevel >= 0 And ProgressClockMinimumGreenColorLevel <= 255, ProgressClockMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", ProgressClockMinimumGreenColorLevel)
+                    ProgressClockMinimumBlueColorLevel = If(ProgressClockMinimumBlueColorLevel >= 0 And ProgressClockMinimumBlueColorLevel <= 255, ProgressClockMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", ProgressClockMinimumBlueColorLevel)
+                    ProgressClockMinimumColorLevel = If(ProgressClockMinimumColorLevel >= 0 And ProgressClockMinimumColorLevel <= 255, ProgressClockMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ProgressClockMinimumColorLevel)
+                    ProgressClockMaximumRedColorLevel = If(ProgressClockMaximumRedColorLevel >= 0 And ProgressClockMaximumRedColorLevel <= 255, ProgressClockMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", ProgressClockMaximumRedColorLevel)
+                    ProgressClockMaximumGreenColorLevel = If(ProgressClockMaximumGreenColorLevel >= 0 And ProgressClockMaximumGreenColorLevel <= 255, ProgressClockMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", ProgressClockMaximumGreenColorLevel)
+                    ProgressClockMaximumBlueColorLevel = If(ProgressClockMaximumBlueColorLevel >= 0 And ProgressClockMaximumBlueColorLevel <= 255, ProgressClockMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", ProgressClockMaximumBlueColorLevel)
+                    ProgressClockMaximumColorLevel = If(ProgressClockMaximumColorLevel >= 0 And ProgressClockMaximumColorLevel <= 255, ProgressClockMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ProgressClockMaximumColorLevel)
+                    ProgressClockMinimumRedColorLevelHours = If(ProgressClockMinimumRedColorLevelHours >= 0 And ProgressClockMinimumRedColorLevelHours <= 255, ProgressClockMinimumRedColorLevelHours, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (hours): {0}", ProgressClockMinimumRedColorLevelHours)
+                    ProgressClockMinimumGreenColorLevelHours = If(ProgressClockMinimumGreenColorLevelHours >= 0 And ProgressClockMinimumGreenColorLevelHours <= 255, ProgressClockMinimumGreenColorLevelHours, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (hours): {0}", ProgressClockMinimumGreenColorLevelHours)
+                    ProgressClockMinimumBlueColorLevelHours = If(ProgressClockMinimumBlueColorLevelHours >= 0 And ProgressClockMinimumBlueColorLevelHours <= 255, ProgressClockMinimumBlueColorLevelHours, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (hours): {0}", ProgressClockMinimumBlueColorLevelHours)
+                    ProgressClockMinimumColorLevelHours = If(ProgressClockMinimumColorLevelHours >= 0 And ProgressClockMinimumColorLevelHours <= 255, ProgressClockMinimumColorLevelHours, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (hours): {0}", ProgressClockMinimumColorLevelHours)
+                    ProgressClockMaximumRedColorLevelHours = If(ProgressClockMaximumRedColorLevelHours >= 0 And ProgressClockMaximumRedColorLevelHours <= 255, ProgressClockMaximumRedColorLevelHours, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (hours): {0}", ProgressClockMaximumRedColorLevelHours)
+                    ProgressClockMaximumGreenColorLevelHours = If(ProgressClockMaximumGreenColorLevelHours >= 0 And ProgressClockMaximumGreenColorLevelHours <= 255, ProgressClockMaximumGreenColorLevelHours, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (hours): {0}", ProgressClockMaximumGreenColorLevelHours)
+                    ProgressClockMaximumBlueColorLevelHours = If(ProgressClockMaximumBlueColorLevelHours >= 0 And ProgressClockMaximumBlueColorLevelHours <= 255, ProgressClockMaximumBlueColorLevelHours, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (hours): {0}", ProgressClockMaximumBlueColorLevelHours)
+                    ProgressClockMaximumColorLevelHours = If(ProgressClockMaximumColorLevelHours >= 0 And ProgressClockMaximumColorLevelHours <= 255, ProgressClockMaximumColorLevelHours, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (hours): {0}", ProgressClockMaximumColorLevelHours)
+                    ProgressClockMinimumRedColorLevelMinutes = If(ProgressClockMinimumRedColorLevelMinutes >= 0 And ProgressClockMinimumRedColorLevelMinutes <= 255, ProgressClockMinimumRedColorLevelMinutes, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (minutes): {0}", ProgressClockMinimumRedColorLevelMinutes)
+                    ProgressClockMinimumGreenColorLevelMinutes = If(ProgressClockMinimumGreenColorLevelMinutes >= 0 And ProgressClockMinimumGreenColorLevelMinutes <= 255, ProgressClockMinimumGreenColorLevelMinutes, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (minutes): {0}", ProgressClockMinimumGreenColorLevelMinutes)
+                    ProgressClockMinimumBlueColorLevelMinutes = If(ProgressClockMinimumBlueColorLevelMinutes >= 0 And ProgressClockMinimumBlueColorLevelMinutes <= 255, ProgressClockMinimumBlueColorLevelMinutes, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (minutes): {0}", ProgressClockMinimumBlueColorLevelMinutes)
+                    ProgressClockMinimumColorLevelMinutes = If(ProgressClockMinimumColorLevelMinutes >= 0 And ProgressClockMinimumColorLevelMinutes <= 255, ProgressClockMinimumColorLevelMinutes, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (minutes): {0}", ProgressClockMinimumColorLevelMinutes)
+                    ProgressClockMaximumRedColorLevelMinutes = If(ProgressClockMaximumRedColorLevelMinutes >= 0 And ProgressClockMaximumRedColorLevelMinutes <= 255, ProgressClockMaximumRedColorLevelMinutes, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (minutes): {0}", ProgressClockMaximumRedColorLevelMinutes)
+                    ProgressClockMaximumGreenColorLevelMinutes = If(ProgressClockMaximumGreenColorLevelMinutes >= 0 And ProgressClockMaximumGreenColorLevelMinutes <= 255, ProgressClockMaximumGreenColorLevelMinutes, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (minutes): {0}", ProgressClockMaximumGreenColorLevelMinutes)
+                    ProgressClockMaximumBlueColorLevelMinutes = If(ProgressClockMaximumBlueColorLevelMinutes >= 0 And ProgressClockMaximumBlueColorLevelMinutes <= 255, ProgressClockMaximumBlueColorLevelMinutes, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (minutes): {0}", ProgressClockMaximumBlueColorLevelMinutes)
+                    ProgressClockMaximumColorLevelMinutes = If(ProgressClockMaximumColorLevelMinutes >= 0 And ProgressClockMaximumColorLevelMinutes <= 255, ProgressClockMaximumColorLevelMinutes, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (minutes): {0}", ProgressClockMaximumColorLevelMinutes)
+                    ProgressClockMinimumRedColorLevelSeconds = If(ProgressClockMinimumRedColorLevelSeconds >= 0 And ProgressClockMinimumRedColorLevelSeconds <= 255, ProgressClockMinimumRedColorLevelSeconds, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level (seconds): {0}", ProgressClockMinimumRedColorLevelSeconds)
+                    ProgressClockMinimumGreenColorLevelSeconds = If(ProgressClockMinimumGreenColorLevelSeconds >= 0 And ProgressClockMinimumGreenColorLevelSeconds <= 255, ProgressClockMinimumGreenColorLevelSeconds, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level (seconds): {0}", ProgressClockMinimumGreenColorLevelSeconds)
+                    ProgressClockMinimumBlueColorLevelSeconds = If(ProgressClockMinimumBlueColorLevelSeconds >= 0 And ProgressClockMinimumBlueColorLevelSeconds <= 255, ProgressClockMinimumBlueColorLevelSeconds, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level (seconds): {0}", ProgressClockMinimumBlueColorLevelSeconds)
+                    ProgressClockMinimumColorLevelSeconds = If(ProgressClockMinimumColorLevelSeconds >= 0 And ProgressClockMinimumColorLevelSeconds <= 255, ProgressClockMinimumColorLevelSeconds, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (seconds): {0}", ProgressClockMinimumColorLevelSeconds)
+                    ProgressClockMaximumRedColorLevelSeconds = If(ProgressClockMaximumRedColorLevelSeconds >= 0 And ProgressClockMaximumRedColorLevelSeconds <= 255, ProgressClockMaximumRedColorLevelSeconds, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level (seconds): {0}", ProgressClockMaximumRedColorLevelSeconds)
+                    ProgressClockMaximumGreenColorLevelSeconds = If(ProgressClockMaximumGreenColorLevelSeconds >= 0 And ProgressClockMaximumGreenColorLevelSeconds <= 255, ProgressClockMaximumGreenColorLevelSeconds, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level (seconds): {0}", ProgressClockMaximumGreenColorLevelSeconds)
+                    ProgressClockMaximumBlueColorLevelSeconds = If(ProgressClockMaximumBlueColorLevelSeconds >= 0 And ProgressClockMaximumBlueColorLevelSeconds <= 255, ProgressClockMaximumBlueColorLevelSeconds, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level (seconds): {0}", ProgressClockMaximumBlueColorLevelSeconds)
+                    ProgressClockMaximumColorLevelSeconds = If(ProgressClockMaximumColorLevelSeconds >= 0 And ProgressClockMaximumColorLevelSeconds <= 255, ProgressClockMaximumColorLevelSeconds, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (seconds): {0}", ProgressClockMaximumColorLevelSeconds)
                 Else
+                    ProgressClockMinimumColorLevel = If(ProgressClockMinimumColorLevel >= 0 And ProgressClockMinimumColorLevel <= 15, ProgressClockMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ProgressClockMinimumColorLevel)
+                    ProgressClockMaximumColorLevel = If(ProgressClockMaximumColorLevel >= 0 And ProgressClockMaximumColorLevel <= 15, ProgressClockMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ProgressClockMaximumColorLevel)
+                    ProgressClockMinimumColorLevelHours = If(ProgressClockMinimumColorLevelHours >= 0 And ProgressClockMinimumColorLevelHours <= 15, ProgressClockMinimumColorLevelHours, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (hours): {0}", ProgressClockMinimumColorLevelHours)
+                    ProgressClockMaximumColorLevelHours = If(ProgressClockMaximumColorLevelHours >= 0 And ProgressClockMaximumColorLevelHours <= 15, ProgressClockMaximumColorLevelHours, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (hours): {0}", ProgressClockMaximumColorLevelHours)
+                    ProgressClockMinimumColorLevelMinutes = If(ProgressClockMinimumColorLevelMinutes >= 0 And ProgressClockMinimumColorLevelMinutes <= 15, ProgressClockMinimumColorLevelMinutes, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (minutes): {0}", ProgressClockMinimumColorLevelMinutes)
+                    ProgressClockMaximumColorLevelMinutes = If(ProgressClockMaximumColorLevelMinutes >= 0 And ProgressClockMaximumColorLevelMinutes <= 15, ProgressClockMaximumColorLevelMinutes, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (minutes): {0}", ProgressClockMaximumColorLevelMinutes)
+                    ProgressClockMinimumColorLevelSeconds = If(ProgressClockMinimumColorLevelSeconds >= 0 And ProgressClockMinimumColorLevelSeconds <= 15, ProgressClockMinimumColorLevelSeconds, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level (seconds): {0}", ProgressClockMinimumColorLevelSeconds)
+                    ProgressClockMaximumColorLevelSeconds = If(ProgressClockMaximumColorLevelSeconds >= 0 And ProgressClockMaximumColorLevelSeconds <= 15, ProgressClockMaximumColorLevelSeconds, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level (seconds): {0}", ProgressClockMaximumColorLevelSeconds)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
+                    Console.Clear()
                     'Prepare colors
                     Dim RedColorNumHours, GreenColorNumHours, BlueColorNumHours As Integer
                     Dim RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes As Integer
@@ -248,16 +245,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(ProgressClockDelay, ProgressClock)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles ProgressClock.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(ProgressClockDelay, ProgressClock)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

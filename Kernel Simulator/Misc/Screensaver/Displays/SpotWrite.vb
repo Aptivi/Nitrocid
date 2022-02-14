@@ -16,34 +16,32 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
     Module SpotWriteDisplay
 
-        Public WithEvents SpotWrite As New NamedBackgroundWorker("SpotWrite screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public SpotWrite As New Thread(AddressOf SpotWrite_DoWork) With {.Name = "SpotWrite screensaver thread", .IsBackground = True}
 
-        Sub SpotWrite_DoWork(sender As Object, e As DoWorkEventArgs) Handles SpotWrite.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim TypeWrite As String = SpotWriteWrite
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub SpotWrite_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim TypeWrite As String = SpotWriteWrite
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(SpotWriteTextColor))
-            Console.Clear()
+                'Preparations
+                SetConsoleColor(New Color(SpotWriteTextColor))
+                Console.Clear()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If SpotWrite.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
+
                     'SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
                     Wdbg(DebugLevel.I, "Checking ""{0}"" to see if it's a file path", SpotWriteWrite)
                     If TryParsePath(SpotWriteWrite) AndAlso FileExists(SpotWriteWrite) Then
@@ -55,7 +53,6 @@ Namespace Misc.Screensaver.Displays
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If SpotWrite.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
@@ -70,7 +67,6 @@ Namespace Misc.Screensaver.Displays
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If SpotWrite.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
@@ -100,11 +96,9 @@ Namespace Misc.Screensaver.Displays
                         For SentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim Sentence As String = IncompleteSentences(SentenceIndex)
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If SpotWrite.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
                             For Each StruckChar As Char In Sentence
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If SpotWrite.CancellationPending Then Exit For
                                 If ResizeSyncing Then Exit For
 
                                 'If we're at the end of the page, clear the screen
@@ -133,16 +127,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(SpotWriteDelay, SpotWrite)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles SpotWrite.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(SpotWriteDelay, SpotWrite)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

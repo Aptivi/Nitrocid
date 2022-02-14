@@ -16,36 +16,34 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module TypoDisplay
 
-        Public WithEvents Typo As New NamedBackgroundWorker("Typo screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Typo As New Thread(AddressOf Typo_DoWork) With {.Name = "Typo screensaver thread", .IsBackground = True}
 
-        Sub Typo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typo.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CpmSpeedMin As Integer = TypoWritingSpeedMin * 5
-            Dim CpmSpeedMax As Integer = TypoWritingSpeedMax * 5
-            Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
-            Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
-            Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub Typo_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CpmSpeedMin As Integer = TypoWritingSpeedMin * 5
+                Dim CpmSpeedMax As Integer = TypoWritingSpeedMax * 5
+                Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
+                Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
+                Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(TypoTextColor))
-            Console.Clear()
+                'Preparations
+                SetConsoleColor(New Color(TypoTextColor))
+                Console.Clear()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Typo.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
+
                     'Prepare display (make a paragraph indentation)
                     Console.WriteLine()
                     Console.Write("    ")
@@ -54,7 +52,6 @@ Namespace Misc.Screensaver.Displays
                     'Get struck character and write it
                     For Each StruckChar As Char In TypoWrite
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Typo.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
 
                         'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
@@ -121,16 +118,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(TypoDelay, Typo)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Typo.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(TypoDelay, Typo)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

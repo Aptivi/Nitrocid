@@ -16,60 +16,57 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module ColorMixDisplay
 
-        Public WithEvents ColorMix As New NamedBackgroundWorker("ColorMix screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public ColorMix As New Thread(AddressOf ColorMix_DoWork) With {.Name = "ColorMix screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of ColorMix
         ''' </summary>
-        Sub ColorMix_DoWork(sender As Object, e As DoWorkEventArgs) Handles ColorMix.DoWork
-            'Variables
-            Dim colorrand As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub ColorMix_DoWork()
+            Try
+                'Variables
+                Dim colorrand As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
+                'Preparations
+                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
 
-            'Sanity checks for color levels
-            If ColorMixTrueColor Or ColorMix255Colors Then
-                ColorMixMinimumRedColorLevel = If(ColorMixMinimumRedColorLevel >= 0 And ColorMixMinimumRedColorLevel <= 255, ColorMixMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", ColorMixMinimumRedColorLevel)
-                ColorMixMinimumGreenColorLevel = If(ColorMixMinimumGreenColorLevel >= 0 And ColorMixMinimumGreenColorLevel <= 255, ColorMixMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", ColorMixMinimumGreenColorLevel)
-                ColorMixMinimumBlueColorLevel = If(ColorMixMinimumBlueColorLevel >= 0 And ColorMixMinimumBlueColorLevel <= 255, ColorMixMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", ColorMixMinimumBlueColorLevel)
-                ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 255, ColorMixMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ColorMixMinimumColorLevel)
-                ColorMixMaximumRedColorLevel = If(ColorMixMaximumRedColorLevel >= 0 And ColorMixMaximumRedColorLevel <= 255, ColorMixMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", ColorMixMaximumRedColorLevel)
-                ColorMixMaximumGreenColorLevel = If(ColorMixMaximumGreenColorLevel >= 0 And ColorMixMaximumGreenColorLevel <= 255, ColorMixMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", ColorMixMaximumGreenColorLevel)
-                ColorMixMaximumBlueColorLevel = If(ColorMixMaximumBlueColorLevel >= 0 And ColorMixMaximumBlueColorLevel <= 255, ColorMixMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", ColorMixMaximumBlueColorLevel)
-                ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 255, ColorMixMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)
-            Else
-                ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 16, ColorMixMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ColorMixMinimumColorLevel)
-                ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 16, ColorMixMaximumColorLevel, 16)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If ColorMix.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                'Sanity checks for color levels
+                If ColorMixTrueColor Or ColorMix255Colors Then
+                    ColorMixMinimumRedColorLevel = If(ColorMixMinimumRedColorLevel >= 0 And ColorMixMinimumRedColorLevel <= 255, ColorMixMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", ColorMixMinimumRedColorLevel)
+                    ColorMixMinimumGreenColorLevel = If(ColorMixMinimumGreenColorLevel >= 0 And ColorMixMinimumGreenColorLevel <= 255, ColorMixMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", ColorMixMinimumGreenColorLevel)
+                    ColorMixMinimumBlueColorLevel = If(ColorMixMinimumBlueColorLevel >= 0 And ColorMixMinimumBlueColorLevel <= 255, ColorMixMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", ColorMixMinimumBlueColorLevel)
+                    ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 255, ColorMixMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ColorMixMinimumColorLevel)
+                    ColorMixMaximumRedColorLevel = If(ColorMixMaximumRedColorLevel >= 0 And ColorMixMaximumRedColorLevel <= 255, ColorMixMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", ColorMixMaximumRedColorLevel)
+                    ColorMixMaximumGreenColorLevel = If(ColorMixMaximumGreenColorLevel >= 0 And ColorMixMaximumGreenColorLevel <= 255, ColorMixMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", ColorMixMaximumGreenColorLevel)
+                    ColorMixMaximumBlueColorLevel = If(ColorMixMaximumBlueColorLevel >= 0 And ColorMixMaximumBlueColorLevel <= 255, ColorMixMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", ColorMixMaximumBlueColorLevel)
+                    ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 255, ColorMixMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)
                 Else
+                    ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 16, ColorMixMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ColorMixMinimumColorLevel)
+                    ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 16, ColorMixMaximumColorLevel, 16)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     'Set colors
                     If ColorMixTrueColor Then
                         Dim RedColorNum As Integer = colorrand.Next(ColorMixMinimumRedColorLevel, ColorMixMaximumRedColorLevel)
@@ -103,16 +100,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(ColorMixDelay, ColorMix)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles ColorMix.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(ColorMixDelay, ColorMix)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

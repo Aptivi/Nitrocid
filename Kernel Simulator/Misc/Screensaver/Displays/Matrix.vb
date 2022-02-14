@@ -16,35 +16,32 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module MatrixDisplay
 
-        Public WithEvents Matrix As New NamedBackgroundWorker("Matrix screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Matrix As New Thread(AddressOf Matrix_DoWork) With {.Name = "Matrix screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Matrix
         ''' </summary>
-        Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
-            'Variables
-            Dim random As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub Matrix_DoWork()
+            Try
+                'Variables
+                Dim random As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.Green
-            Console.Clear()
+                'Preparations
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.Green
+                Console.Clear()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Matrix.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
                         Console.Write(CStr(random.Next(2)))
@@ -57,16 +54,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(MatrixDelay, Matrix)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Matrix.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(MatrixDelay, Matrix)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

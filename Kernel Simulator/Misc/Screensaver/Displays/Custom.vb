@@ -16,53 +16,47 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports KS.Misc.Screensaver.Customized
 
 Namespace Misc.Screensaver.Displays
     Public Module CustomDisplay
 
-        Public WithEvents Custom As New NamedBackgroundWorker("Custom screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Custom As New Thread(AddressOf Custom_DoWork) With {.Name = "Custom screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles custom screensaver code
         ''' </summary>
-        Sub Custom_DoWork(sender As Object, e As DoWorkEventArgs) Handles Custom.DoWork
-            'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
-            '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
-            '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
-            '                           Substitute: TextWriterColor.Write() with System.Console.WriteLine() or System.Console.Write().
-            'Preparations
-            Console.CursorVisible = False
+        Sub Custom_DoWork()
+            Try
+                'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
+                '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
+                '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
+                '                           Substitute: TextWriterColor.Write() with System.Console.WriteLine() or System.Console.Write().
+                'Preparations
+                Console.CursorVisible = False
 
-            'Screensaver logic
-            Wdbg(DebugLevel.I, "Entered CustomSaver.PreDisplay().")
-            CustomSaver.PreDisplay()
-            Wdbg(DebugLevel.I, "Exited CustomSaver.PreDisplay().")
-            Do While True
-                If Custom.CancellationPending = True Then
-                    Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
-                    Wdbg(DebugLevel.I, "Entered CustomSaver.PostDisplay().")
-                    CustomSaver.PostDisplay()
-                    Wdbg(DebugLevel.I, "Exited CustomSaver.PostDisplay().")
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Wdbg(DebugLevel.I, "Entered CustomSaver.PreDisplay().")
+                CustomSaver.PreDisplay()
+                Wdbg(DebugLevel.I, "Exited CustomSaver.PreDisplay().")
+                Do While True
                     Wdbg(DebugLevel.I, "Entered CustomSaver.ScrnSaver().")
                     CustomSaver.ScrnSaver()
                     Wdbg(DebugLevel.I, "Exited CustomSaver.ScrnSaver().")
-                End If
-                If Not CustomSaver.DelayForEachWrite = Nothing Then
-                    SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
-                End If
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Custom.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    If Not CustomSaver.DelayForEachWrite = Nothing Then
+                        SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
+                    End If
+                Loop
+            Catch taex As ThreadAbortException
+                Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
+                Wdbg(DebugLevel.I, "Entered CustomSaver.PostDisplay().")
+                CustomSaver.PostDisplay()
+                Wdbg(DebugLevel.I, "Exited CustomSaver.PostDisplay().")
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

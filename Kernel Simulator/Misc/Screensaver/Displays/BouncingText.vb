@@ -16,65 +16,62 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module BouncingTextDisplay
 
-        Public WithEvents BouncingText As New NamedBackgroundWorker("BouncingText screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public BouncingText As New Thread(AddressOf BouncingText_DoWork) With {.Name = "BouncingText screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Bouncing Text
         ''' </summary>
-        Sub BouncingText_DoWork(sender As Object, e As DoWorkEventArgs) Handles BouncingText.DoWork
-            'Variables
-            Dim Direction As String = "BottomRight"
-            Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-            Dim BouncingColor As Color
+        Sub BouncingText_DoWork()
+            Try
+                'Variables
+                Dim Direction As String = "BottomRight"
+                Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+                Dim BouncingColor As Color
 
-            'Preparations
-            SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
-            SetConsoleColor(New Color(BouncingTextForegroundColor))
-            Console.Clear()
-            RowText = Console.WindowHeight / 2
-            ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
-            ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+                'Preparations
+                SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
+                SetConsoleColor(New Color(BouncingTextForegroundColor))
+                Console.Clear()
+                RowText = Console.WindowHeight / 2
+                ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
+                ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
 
-            'Sanity checks for color levels
-            If BouncingTextTrueColor Or BouncingText255Colors Then
-                BouncingTextMinimumRedColorLevel = If(BouncingTextMinimumRedColorLevel >= 0 And BouncingTextMinimumRedColorLevel <= 255, BouncingTextMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingTextMinimumRedColorLevel)
-                BouncingTextMinimumGreenColorLevel = If(BouncingTextMinimumGreenColorLevel >= 0 And BouncingTextMinimumGreenColorLevel <= 255, BouncingTextMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingTextMinimumGreenColorLevel)
-                BouncingTextMinimumBlueColorLevel = If(BouncingTextMinimumBlueColorLevel >= 0 And BouncingTextMinimumBlueColorLevel <= 255, BouncingTextMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingTextMinimumBlueColorLevel)
-                BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 255, BouncingTextMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
-                BouncingTextMaximumRedColorLevel = If(BouncingTextMaximumRedColorLevel >= 0 And BouncingTextMaximumRedColorLevel <= 255, BouncingTextMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingTextMaximumRedColorLevel)
-                BouncingTextMaximumGreenColorLevel = If(BouncingTextMaximumGreenColorLevel >= 0 And BouncingTextMaximumGreenColorLevel <= 255, BouncingTextMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingTextMaximumGreenColorLevel)
-                BouncingTextMaximumBlueColorLevel = If(BouncingTextMaximumBlueColorLevel >= 0 And BouncingTextMaximumBlueColorLevel <= 255, BouncingTextMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingTextMaximumBlueColorLevel)
-                BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 255, BouncingTextMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
-            Else
-                BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 15, BouncingTextMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
-                BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 15, BouncingTextMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If BouncingText.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                'Sanity checks for color levels
+                If BouncingTextTrueColor Or BouncingText255Colors Then
+                    BouncingTextMinimumRedColorLevel = If(BouncingTextMinimumRedColorLevel >= 0 And BouncingTextMinimumRedColorLevel <= 255, BouncingTextMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingTextMinimumRedColorLevel)
+                    BouncingTextMinimumGreenColorLevel = If(BouncingTextMinimumGreenColorLevel >= 0 And BouncingTextMinimumGreenColorLevel <= 255, BouncingTextMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingTextMinimumGreenColorLevel)
+                    BouncingTextMinimumBlueColorLevel = If(BouncingTextMinimumBlueColorLevel >= 0 And BouncingTextMinimumBlueColorLevel <= 255, BouncingTextMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingTextMinimumBlueColorLevel)
+                    BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 255, BouncingTextMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
+                    BouncingTextMaximumRedColorLevel = If(BouncingTextMaximumRedColorLevel >= 0 And BouncingTextMaximumRedColorLevel <= 255, BouncingTextMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingTextMaximumRedColorLevel)
+                    BouncingTextMaximumGreenColorLevel = If(BouncingTextMaximumGreenColorLevel >= 0 And BouncingTextMaximumGreenColorLevel <= 255, BouncingTextMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingTextMaximumGreenColorLevel)
+                    BouncingTextMaximumBlueColorLevel = If(BouncingTextMaximumBlueColorLevel >= 0 And BouncingTextMaximumBlueColorLevel <= 255, BouncingTextMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingTextMaximumBlueColorLevel)
+                    BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 255, BouncingTextMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
                 Else
+                    BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 15, BouncingTextMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
+                    BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 15, BouncingTextMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     Console.Clear()
 
 #Disable Warning BC42104
@@ -146,9 +143,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(BouncingTextDelay, BouncingText)
-            Loop
+                    SleepNoBlock(BouncingTextDelay, BouncingText)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
         ''' <summary>
@@ -170,13 +171,6 @@ Namespace Misc.Screensaver.Displays
             End If
             Return ColorInstance
         End Function
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles BouncingText.RunWorkerCompleted
-            HandleSaverError(e.Error)
-        End Sub
 
     End Module
 End Namespace

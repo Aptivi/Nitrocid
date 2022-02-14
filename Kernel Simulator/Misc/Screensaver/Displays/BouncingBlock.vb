@@ -16,67 +16,64 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module BouncingBlockDisplay
 
-        Public WithEvents BouncingBlock As New NamedBackgroundWorker("BouncingBlock screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public BouncingBlock As New Thread(AddressOf BouncingBlock_DoWork) With {.Name = "BouncingBlock screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Bouncing Block
         ''' </summary>
-        Sub BouncingBlock_DoWork(sender As Object, e As DoWorkEventArgs) Handles BouncingBlock.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim Direction As String = "BottomRight"
-            Dim RowBlock, ColumnBlock As Integer
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub BouncingBlock_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim Direction As String = "BottomRight"
+                Dim RowBlock, ColumnBlock As Integer
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
-            SetConsoleColor(New Color(BouncingBlockForegroundColor))
-            Console.Clear()
-            RowBlock = Console.WindowHeight / 2
-            ColumnBlock = Console.WindowWidth / 2
-
-            'Sanity checks for color levels
-            If BouncingBlockTrueColor Or BouncingBlock255Colors Then
-                BouncingBlockMinimumRedColorLevel = If(BouncingBlockMinimumRedColorLevel >= 0 And BouncingBlockMinimumRedColorLevel <= 255, BouncingBlockMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingBlockMinimumRedColorLevel)
-                BouncingBlockMinimumGreenColorLevel = If(BouncingBlockMinimumGreenColorLevel >= 0 And BouncingBlockMinimumGreenColorLevel <= 255, BouncingBlockMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingBlockMinimumGreenColorLevel)
-                BouncingBlockMinimumBlueColorLevel = If(BouncingBlockMinimumBlueColorLevel >= 0 And BouncingBlockMinimumBlueColorLevel <= 255, BouncingBlockMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingBlockMinimumBlueColorLevel)
-                BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 255, BouncingBlockMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
-                BouncingBlockMaximumRedColorLevel = If(BouncingBlockMaximumRedColorLevel >= 0 And BouncingBlockMaximumRedColorLevel <= 255, BouncingBlockMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingBlockMaximumRedColorLevel)
-                BouncingBlockMaximumGreenColorLevel = If(BouncingBlockMaximumGreenColorLevel >= 0 And BouncingBlockMaximumGreenColorLevel <= 255, BouncingBlockMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingBlockMaximumGreenColorLevel)
-                BouncingBlockMaximumBlueColorLevel = If(BouncingBlockMaximumBlueColorLevel >= 0 And BouncingBlockMaximumBlueColorLevel <= 255, BouncingBlockMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingBlockMaximumBlueColorLevel)
-                BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 255, BouncingBlockMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
-            Else
-                BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 15, BouncingBlockMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
-                BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 15, BouncingBlockMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
+                'Preparations
                 SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
                 SetConsoleColor(New Color(BouncingBlockForegroundColor))
                 Console.Clear()
-                If BouncingBlock.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                RowBlock = Console.WindowHeight / 2
+                ColumnBlock = Console.WindowWidth / 2
+
+                'Sanity checks for color levels
+                If BouncingBlockTrueColor Or BouncingBlock255Colors Then
+                    BouncingBlockMinimumRedColorLevel = If(BouncingBlockMinimumRedColorLevel >= 0 And BouncingBlockMinimumRedColorLevel <= 255, BouncingBlockMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingBlockMinimumRedColorLevel)
+                    BouncingBlockMinimumGreenColorLevel = If(BouncingBlockMinimumGreenColorLevel >= 0 And BouncingBlockMinimumGreenColorLevel <= 255, BouncingBlockMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingBlockMinimumGreenColorLevel)
+                    BouncingBlockMinimumBlueColorLevel = If(BouncingBlockMinimumBlueColorLevel >= 0 And BouncingBlockMinimumBlueColorLevel <= 255, BouncingBlockMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingBlockMinimumBlueColorLevel)
+                    BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 255, BouncingBlockMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
+                    BouncingBlockMaximumRedColorLevel = If(BouncingBlockMaximumRedColorLevel >= 0 And BouncingBlockMaximumRedColorLevel <= 255, BouncingBlockMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingBlockMaximumRedColorLevel)
+                    BouncingBlockMaximumGreenColorLevel = If(BouncingBlockMaximumGreenColorLevel >= 0 And BouncingBlockMaximumGreenColorLevel <= 255, BouncingBlockMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingBlockMaximumGreenColorLevel)
+                    BouncingBlockMaximumBlueColorLevel = If(BouncingBlockMaximumBlueColorLevel >= 0 And BouncingBlockMaximumBlueColorLevel <= 255, BouncingBlockMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingBlockMaximumBlueColorLevel)
+                    BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 255, BouncingBlockMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
                 Else
+                    BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 15, BouncingBlockMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
+                    BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 15, BouncingBlockMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
+                    SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
+                    SetConsoleColor(New Color(BouncingBlockForegroundColor))
+                    Console.Clear()
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
 
                     'Change the color
@@ -162,16 +159,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(BouncingBlockDelay, BouncingBlock)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles BouncingBlock.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(BouncingBlockDelay, BouncingBlock)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

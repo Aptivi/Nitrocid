@@ -16,38 +16,35 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
     Module TypewriterDisplay
 
-        Public WithEvents Typewriter As New NamedBackgroundWorker("Typewriter screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Typewriter As New Thread(AddressOf Typewriter_DoWork) With {.Name = "Typewriter screensaver thread", .IsBackground = True}
 
-        Sub Typewriter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typewriter.DoWork
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CpmSpeedMin As Integer = TypewriterWritingSpeedMin * 5
-            Dim CpmSpeedMax As Integer = TypewriterWritingSpeedMax * 5
-            Dim TypeWrite As String = TypewriterWrite
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        Sub Typewriter_DoWork()
+            Try
+                'Variables
+                Dim RandomDriver As New Random()
+                Dim CpmSpeedMin As Integer = TypewriterWritingSpeedMin * 5
+                Dim CpmSpeedMax As Integer = TypewriterWritingSpeedMax * 5
+                Dim TypeWrite As String = TypewriterWrite
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(TypewriterTextColor))
-            Console.Clear()
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
+                'Preparations
+                SetConsoleColor(New Color(TypewriterTextColor))
+                Console.Clear()
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Typewriter.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     'Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
                     Wdbg(DebugLevel.I, "Checking ""{0}"" to see if it's a file path", TypewriterWrite)
                     If TryParsePath(TypewriterWrite) AndAlso FileExists(TypewriterWrite) Then
@@ -59,7 +56,6 @@ Namespace Misc.Screensaver.Displays
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Typewriter.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
@@ -74,7 +70,6 @@ Namespace Misc.Screensaver.Displays
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Typewriter.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
@@ -104,11 +99,9 @@ Namespace Misc.Screensaver.Displays
                         For SentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim Sentence As String = IncompleteSentences(SentenceIndex)
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Typewriter.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
                             For Each StruckChar As Char In Sentence
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If Typewriter.CancellationPending Then Exit For
                                 If ResizeSyncing Then Exit For
 
                                 'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
@@ -155,16 +148,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(TypewriterDelay, Typewriter)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Typewriter.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(TypewriterDelay, Typewriter)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

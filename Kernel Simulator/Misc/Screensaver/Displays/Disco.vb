@@ -16,40 +16,36 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module DiscoDisplay
 
-        Public WithEvents Disco As New NamedBackgroundWorker("Disco screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public WithEvents Disco As New Thread(AddressOf Disco_DoWork) With {.Name = "Disco screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Disco
         ''' </summary>
-        Sub Disco_DoWork(sender As Object, e As DoWorkEventArgs) Handles Disco.DoWork
-            'Variables
-            Dim MaximumColors As Integer = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 255, DiscoMaximumColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors)
-            Dim MaximumColorsR As Integer = If(DiscoMaximumRedColorLevel >= 0 And DiscoMaximumRedColorLevel <= 255, DiscoMaximumRedColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR)
-            Dim MaximumColorsG As Integer = If(DiscoMaximumGreenColorLevel >= 0 And DiscoMaximumGreenColorLevel <= 255, DiscoMaximumGreenColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG)
-            Dim MaximumColorsB As Integer = If(DiscoMaximumBlueColorLevel >= 0 And DiscoMaximumBlueColorLevel <= 255, DiscoMaximumBlueColorLevel, 255)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
-            Dim CurrentColor As Integer = 0
-            Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
-            Dim FedColors As ConsoleColors() = {ConsoleColors.Black, ConsoleColors.White}
-            Dim random As New Random()
+        Sub Disco_DoWork()
+            Try
+                'Variables
+                Dim MaximumColors As Integer = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 255, DiscoMaximumColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors)
+                Dim MaximumColorsR As Integer = If(DiscoMaximumRedColorLevel >= 0 And DiscoMaximumRedColorLevel <= 255, DiscoMaximumRedColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR)
+                Dim MaximumColorsG As Integer = If(DiscoMaximumGreenColorLevel >= 0 And DiscoMaximumGreenColorLevel <= 255, DiscoMaximumGreenColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG)
+                Dim MaximumColorsB As Integer = If(DiscoMaximumBlueColorLevel >= 0 And DiscoMaximumBlueColorLevel <= 255, DiscoMaximumBlueColorLevel, 255)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
+                Dim CurrentColor As Integer = 0
+                Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
+                Dim FedColors As ConsoleColors() = {ConsoleColors.Black, ConsoleColors.White}
+                Dim random As New Random()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
 
-                'Make the disco light!
-                If Disco.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
                     'Select the background color
                     Dim esc As Char = GetEsc()
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
@@ -137,25 +133,22 @@ Namespace Misc.Screensaver.Displays
                             CurrentColor += 1
                         End If
                     End If
-                End If
 
-                'Check to see if we're dealing with beats per minute
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
-                If DiscoUseBeatsPerMinute Then
-                    Dim BeatInterval As Integer = 60000 / DiscoDelay
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
-                    SleepNoBlock(BeatInterval, Disco)
-                Else
-                    SleepNoBlock(DiscoDelay, Disco)
-                End If
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Disco.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    'Check to see if we're dealing with beats per minute
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
+                    If DiscoUseBeatsPerMinute Then
+                        Dim BeatInterval As Integer = 60000 / DiscoDelay
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
+                        SleepNoBlock(BeatInterval, Disco)
+                    Else
+                        SleepNoBlock(DiscoDelay, Disco)
+                    End If
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

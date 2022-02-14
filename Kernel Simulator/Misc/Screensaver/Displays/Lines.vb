@@ -16,56 +16,53 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
     Module LinesDisplay
 
-        Public WithEvents Lines As New NamedBackgroundWorker("Lines screensaver thread") With {.WorkerSupportsCancellation = True}
+        Public Lines As New Thread(AddressOf Lines_DoWork) With {.Name = "Lines screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Lines
         ''' </summary>
-        Sub Lines_DoWork(sender As Object, e As DoWorkEventArgs) Handles Lines.DoWork
-            'Variables
-            Dim random As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Sub Lines_DoWork()
+            Try
+                'Variables
+                Dim random As New Random()
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Sanity checks for color levels
-            If LinesTrueColor Or Lines255Colors Then
-                LinesMinimumRedColorLevel = If(LinesMinimumRedColorLevel >= 0 And LinesMinimumRedColorLevel <= 255, LinesMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", LinesMinimumRedColorLevel)
-                LinesMinimumGreenColorLevel = If(LinesMinimumGreenColorLevel >= 0 And LinesMinimumGreenColorLevel <= 255, LinesMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", LinesMinimumGreenColorLevel)
-                LinesMinimumBlueColorLevel = If(LinesMinimumBlueColorLevel >= 0 And LinesMinimumBlueColorLevel <= 255, LinesMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", LinesMinimumBlueColorLevel)
-                LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 255, LinesMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
-                LinesMaximumRedColorLevel = If(LinesMaximumRedColorLevel >= 0 And LinesMaximumRedColorLevel <= 255, LinesMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", LinesMaximumRedColorLevel)
-                LinesMaximumGreenColorLevel = If(LinesMaximumGreenColorLevel >= 0 And LinesMaximumGreenColorLevel <= 255, LinesMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", LinesMaximumGreenColorLevel)
-                LinesMaximumBlueColorLevel = If(LinesMaximumBlueColorLevel >= 0 And LinesMaximumBlueColorLevel <= 255, LinesMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", LinesMaximumBlueColorLevel)
-                LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 255, LinesMaximumColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
-            Else
-                LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 15, LinesMinimumColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
-                LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 15, LinesMaximumColorLevel, 15)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
-            End If
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Lines.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
+                'Sanity checks for color levels
+                If LinesTrueColor Or Lines255Colors Then
+                    LinesMinimumRedColorLevel = If(LinesMinimumRedColorLevel >= 0 And LinesMinimumRedColorLevel <= 255, LinesMinimumRedColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", LinesMinimumRedColorLevel)
+                    LinesMinimumGreenColorLevel = If(LinesMinimumGreenColorLevel >= 0 And LinesMinimumGreenColorLevel <= 255, LinesMinimumGreenColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", LinesMinimumGreenColorLevel)
+                    LinesMinimumBlueColorLevel = If(LinesMinimumBlueColorLevel >= 0 And LinesMinimumBlueColorLevel <= 255, LinesMinimumBlueColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", LinesMinimumBlueColorLevel)
+                    LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 255, LinesMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
+                    LinesMaximumRedColorLevel = If(LinesMaximumRedColorLevel >= 0 And LinesMaximumRedColorLevel <= 255, LinesMaximumRedColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", LinesMaximumRedColorLevel)
+                    LinesMaximumGreenColorLevel = If(LinesMaximumGreenColorLevel >= 0 And LinesMaximumGreenColorLevel <= 255, LinesMaximumGreenColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", LinesMaximumGreenColorLevel)
+                    LinesMaximumBlueColorLevel = If(LinesMaximumBlueColorLevel >= 0 And LinesMaximumBlueColorLevel <= 255, LinesMaximumBlueColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", LinesMaximumBlueColorLevel)
+                    LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 255, LinesMaximumColorLevel, 255)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
                 Else
+                    LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 15, LinesMinimumColorLevel, 0)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
+                    LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 15, LinesMaximumColorLevel, 15)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
+                End If
+
+                'Screensaver logic
+                Do While True
+                    Console.CursorVisible = False
                     'Select a color
                     Dim esc As Char = GetEsc()
                     If LinesTrueColor Then
@@ -109,16 +106,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(LinesDelay, Lines)
-            Loop
-        End Sub
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Lines.RunWorkerCompleted
-            HandleSaverError(e.Error)
+                    SleepNoBlock(LinesDelay, Lines)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
     End Module

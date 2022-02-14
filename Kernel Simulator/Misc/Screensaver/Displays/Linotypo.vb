@@ -16,75 +16,72 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
+Imports System.Threading
 Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
     Public Module LinotypoDisplay
 
-        Friend WithEvents Linotypo As New NamedBackgroundWorker("Linotypo screensaver thread") With {.WorkerSupportsCancellation = True}
+        Friend Linotypo As New Thread(AddressOf Linotypo_DoWork) With {.Name = "Linotypo screensaver thread", .IsBackground = True}
 
         ''' <summary>
         ''' Handles the code of Linotypo
         ''' </summary>
-        Sub Linotypo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Linotypo.DoWork
-            'Preparations
-            SetConsoleColor(New Color(LinotypoTextColor))
-            Console.Clear()
-            Console.CursorVisible = False
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Sub Linotypo_DoWork()
+            Try
+                'Preparations
+                SetConsoleColor(New Color(LinotypoTextColor))
+                Console.Clear()
+                Console.CursorVisible = False
+                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Sanity checks
-            If LinotypoTextColumns <= 0 Then
-                'We can't do zero columns! We would print nothing!
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "{0} columns is impossible to print. Setting to 1...", LinotypoTextColumns)
-                LinotypoTextColumns = 1
-            ElseIf LinotypoTextColumns > 3 Then
-                'We can't exceed three columns as we would like to make the lines readable in all the columns, especially in small terminals (80x24)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting to 3 to make small terminals happy...")
-                LinotypoTextColumns = 3
-            End If
-            If LinotypoEtaoinThreshold <= 0 Then
-                'We can't have a negative threshold!
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "{0} characters is impossible to handle. Setting to 1...", LinotypoEtaoinThreshold)
-                LinotypoEtaoinThreshold = 1
-            ElseIf LinotypoEtaoinThreshold > 8 Then
-                'Writers usually spot errors after less than or equal to eight characters written.
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting to 8...")
-                LinotypoEtaoinThreshold = 8
-            End If
+                'Sanity checks
+                If LinotypoTextColumns <= 0 Then
+                    'We can't do zero columns! We would print nothing!
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "{0} columns is impossible to print. Setting to 1...", LinotypoTextColumns)
+                    LinotypoTextColumns = 1
+                ElseIf LinotypoTextColumns > 3 Then
+                    'We can't exceed three columns as we would like to make the lines readable in all the columns, especially in small terminals (80x24)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting to 3 to make small terminals happy...")
+                    LinotypoTextColumns = 3
+                End If
+                If LinotypoEtaoinThreshold <= 0 Then
+                    'We can't have a negative threshold!
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "{0} characters is impossible to handle. Setting to 1...", LinotypoEtaoinThreshold)
+                    LinotypoEtaoinThreshold = 1
+                ElseIf LinotypoEtaoinThreshold > 8 Then
+                    'Writers usually spot errors after less than or equal to eight characters written.
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting to 8...")
+                    LinotypoEtaoinThreshold = 8
+                End If
 
-            'Some variables
-            Dim RandomDriver As New Random()
-            Dim CpmSpeedMin As Integer = LinotypoWritingSpeedMin * 5
-            Dim CpmSpeedMax As Integer = LinotypoWritingSpeedMax * 5
-            Dim MaxCharacters As Integer = ((Console.WindowWidth - 2) / LinotypoTextColumns) - 3
-            Dim CurrentColumn As Integer = 1
-            Dim CurrentColumnRowConsole As Integer = Console.CursorLeft
-            Dim ColumnRowConsoleThreshold As Integer = Console.WindowWidth / LinotypoTextColumns
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMin, CpmSpeedMin)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMax, CpmSpeedMax)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, LinotypoTextColumns)
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Width threshold: {0}", ColumnRowConsoleThreshold)
+                'Some variables
+                Dim RandomDriver As New Random()
+                Dim CpmSpeedMin As Integer = LinotypoWritingSpeedMin * 5
+                Dim CpmSpeedMax As Integer = LinotypoWritingSpeedMax * 5
+                Dim MaxCharacters As Integer = ((Console.WindowWidth - 2) / LinotypoTextColumns) - 3
+                Dim CurrentColumn As Integer = 1
+                Dim CurrentColumnRowConsole As Integer = Console.CursorLeft
+                Dim ColumnRowConsoleThreshold As Integer = Console.WindowWidth / LinotypoTextColumns
+                Dim CurrentWindowWidth As Integer = Console.WindowWidth
+                Dim CurrentWindowHeight As Integer = Console.WindowHeight
+                Dim ResizeSyncing As Boolean
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMin, CpmSpeedMin)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMax, CpmSpeedMax)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, LinotypoTextColumns)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Width threshold: {0}", ColumnRowConsoleThreshold)
 
-            'Strikes
-            Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
-            Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
-            Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
-            Dim LinotypeLayout(,) As String = {{"e", "t", "a", "o", "i", "n", " "}, {"s", "h", "r", "d", "l", "u", " "},
+                'Strikes
+                Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
+                Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
+                Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
+                Dim LinotypeLayout(,) As String = {{"e", "t", "a", "o", "i", "n", " "}, {"s", "h", "r", "d", "l", "u", " "},
                                                {"c", "m", "f", "w", "y", "p", " "}, {"v", "b", "g", "k", "q", "j", " "},
                                                {"x", "z", " ", " ", " ", " ", " "}, {" ", " ", " ", " ", " ", " ", " "}}
 
-            'Logic. As always.
-            Do While True
-                If Linotypo.CancellationPending = True Then
-                    HandleSaverCancel()
-                    Exit Do
-                Else
+                'Logic. As always.
+                Do While True
                     'Variables
                     Dim CountingCharacters As Boolean
                     Dim CharacterCounter As Integer
@@ -103,7 +100,6 @@ Namespace Misc.Screensaver.Displays
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In LinotypeWrite.SplitNewLines
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Linotypo.CancellationPending Then Exit For
                         If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
@@ -136,7 +132,6 @@ Namespace Misc.Screensaver.Displays
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Linotypo.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
@@ -159,7 +154,6 @@ Namespace Misc.Screensaver.Displays
                         For IncompleteSentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim IncompleteSentence As String = IncompleteSentences(IncompleteSentenceIndex)
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If Linotypo.CancellationPending Then Exit For
                             If ResizeSyncing Then Exit For
 
                             'Check if we need to indent a sentence
@@ -183,7 +177,6 @@ Namespace Misc.Screensaver.Displays
                             'Process the incomplete sentences
                             For StruckCharIndex As Integer = 0 To IncompleteSentence.Length - 1
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If Linotypo.CancellationPending Then Exit For
                                 If ResizeSyncing Then Exit For
 
                                 'Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
@@ -367,9 +360,13 @@ Namespace Misc.Screensaver.Displays
                     ResizeSyncing = False
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
-                End If
-                SleepNoBlock(LinotypoDelay, Linotypo)
-            Loop
+                    SleepNoBlock(LinotypoDelay, Linotypo)
+                Loop
+            Catch taex As ThreadAbortException
+                HandleSaverCancel()
+            Catch ex As Exception
+                HandleSaverError(ex)
+            End Try
         End Sub
 
         ''' <summary>
@@ -427,13 +424,6 @@ Namespace Misc.Screensaver.Displays
             ''' </summary>
             RandomChars
         End Enum
-
-        ''' <summary>
-        ''' Checks for any screensaver error
-        ''' </summary>
-        Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Linotypo.RunWorkerCompleted
-            HandleSaverError(e.Error)
-        End Sub
 
     End Module
 End Namespace
