@@ -26,7 +26,7 @@ Namespace TimeDate
         'Variables
         Public KernelDateTime As New Date
         Public KernelDateTimeUtc As New Date
-        Public WithEvents TimeDateChange As New NamedBackgroundWorker("Time/date updater thread")
+        Friend TimeDateChange As New Thread(AddressOf TimeDateChange_DoWork) With {.Name = "Time/date updater thread", .IsBackground = True}
 
         ''' <summary>
         ''' Specifies the time/date format type.
@@ -45,21 +45,16 @@ Namespace TimeDate
         ''' <summary>
         ''' Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
         ''' </summary>
-        Sub TimeDateChange_DoWork(sender As Object, e As DoWorkEventArgs) Handles TimeDateChange.DoWork
+        Sub TimeDateChange_DoWork()
             Dim oldWid, oldTop As Integer
             Do While True
                 Dim TimeString As String = $"{RenderDate()} - {RenderTime()}"
-                If TimeDateChange.CancellationPending = True Then
-                    e.Cancel = True
-                    Exit Do
-                Else
-                    KernelDateTime = Date.Now
-                    KernelDateTimeUtc = Date.UtcNow
-                    If CornerTimeDate = True And Not InSaver Then
-                        oldWid = Console.WindowWidth - TimeString.Length - 1
-                        oldTop = Console.WindowTop
-                        WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)
-                    End If
+                KernelDateTime = Date.Now
+                KernelDateTimeUtc = Date.UtcNow
+                If CornerTimeDate = True And Not InSaver Then
+                    oldWid = Console.WindowWidth - TimeString.Length - 1
+                    oldTop = Console.WindowTop
+                    WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)
                 End If
                 Thread.Sleep(1000)
                 If oldWid <> 0 Then WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, True, ColTypes.Neutral)
@@ -70,11 +65,10 @@ Namespace TimeDate
         ''' Updates the KernelDateTime so it reflects the current time, and runs the updater.
         ''' </summary>
         Sub InitTimeDate()
-            If Not TimeDateChange.IsBusy Then
+            If Not TimeDateChange.IsAlive Then
                 KernelDateTime = Date.Now
                 KernelDateTimeUtc = Date.UtcNow
-                TimeDateChange.WorkerSupportsCancellation = True
-                TimeDateChange.RunWorkerAsync()
+                TimeDateChange.Start()
             End If
         End Sub
 
