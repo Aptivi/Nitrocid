@@ -33,17 +33,17 @@ Module ConverterTools
 
         'Populate our dictionary with old paths
         If IsOnUnix() Then
-            OldPaths.Add("Configuration", Environ("HOME") + $"{AppendedPath}/kernelConfig.ini")
-            OldPaths.Add("Aliases", Environ("HOME") + $"{AppendedPath}/aliases.csv")
-            OldPaths.Add("Users", Environ("HOME") + $"{AppendedPath}/users.csv")
-            OldPaths.Add("FTPSpeedDial", Environ("HOME") + $"{AppendedPath}/ftp_speeddial.csv")
-            OldPaths.Add("BlockedDevices", Environ("HOME") + $"{AppendedPath}/blocked_devices.csv")
+            OldPaths.Add("Configuration", Environment.GetEnvironmentVariable("HOME") + $"{AppendedPath}/kernelConfig.ini")
+            OldPaths.Add("Aliases", Environment.GetEnvironmentVariable("HOME") + $"{AppendedPath}/aliases.csv")
+            OldPaths.Add("Users", Environment.GetEnvironmentVariable("HOME") + $"{AppendedPath}/users.csv")
+            OldPaths.Add("FTPSpeedDial", Environment.GetEnvironmentVariable("HOME") + $"{AppendedPath}/ftp_speeddial.csv")
+            OldPaths.Add("BlockedDevices", Environment.GetEnvironmentVariable("HOME") + $"{AppendedPath}/blocked_devices.csv")
         Else
-            OldPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/kernelConfig.ini")
-            OldPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/aliases.csv")
-            OldPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
-            OldPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/ftp_speeddial.csv")
-            OldPaths.Add("BlockedDevices", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/blocked_devices.csv")
+            OldPaths.Add("Configuration", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/kernelConfig.ini")
+            OldPaths.Add("Aliases", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/aliases.csv")
+            OldPaths.Add("Users", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
+            OldPaths.Add("FTPSpeedDial", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/ftp_speeddial.csv")
+            OldPaths.Add("BlockedDevices", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/blocked_devices.csv")
         End If
 
         'Return it.
@@ -59,17 +59,17 @@ Module ConverterTools
 
         'Populate our dictionary with old paths
         If IsOnUnix() Then
-            NewPaths.Add("Configuration", Environ("HOME") + "/KernelConfig.json")
-            NewPaths.Add("Aliases", Environ("HOME") + "/Aliases.json")
-            NewPaths.Add("Users", Environ("HOME") + "/Users.json")
-            NewPaths.Add("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
-            NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
+            NewPaths.Add("Configuration", Environment.GetEnvironmentVariable("HOME") + "/KernelConfig.json")
+            NewPaths.Add("Aliases", Environment.GetEnvironmentVariable("HOME") + "/Aliases.json")
+            NewPaths.Add("Users", Environment.GetEnvironmentVariable("HOME") + "/Users.json")
+            NewPaths.Add("FTPSpeedDial", Environment.GetEnvironmentVariable("HOME") + "/FTP_SpeedDial.json")
+            NewPaths.Add("DebugDevNames", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         Else
-            NewPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
-            NewPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
-            NewPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
-            NewPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
-            NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
+            NewPaths.Add("Configuration", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
+            NewPaths.Add("Aliases", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/Aliases.json")
+            NewPaths.Add("Users", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/Users.json")
+            NewPaths.Add("FTPSpeedDial", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
+            NewPaths.Add("DebugDevNames", Environment.GetEnvironmentVariable("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         End If
 
         'Return it.
@@ -81,9 +81,9 @@ Module ConverterTools
     ''' </summary>
     Function GetHomeDirectory() As String
         If IsOnUnix() Then
-            Return Environ("HOME")
+            Return Environment.GetEnvironmentVariable("HOME")
         Else
-            Return Environ("USERPROFILE")
+            Return Environment.GetEnvironmentVariable("USERPROFILE")
         End If
     End Function
 

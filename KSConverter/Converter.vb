@@ -23,6 +23,7 @@ Imports FluentFTP
 Imports KS.Misc.Configuration
 Imports KS.Misc.Platform
 Imports KS.Misc.Writers.FancyWriters
+Imports KS.Misc.Writers.ConsoleWriters
 Imports KS.Network
 Imports KS.Shell.ShellBase
 
