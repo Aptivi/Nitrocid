@@ -906,7 +906,6 @@ Vsegda po tsentru
 Napishite lyuboy tekst, kotoryy khotite pokazat'.
 Vsegda li tekst, otobrazhayemyy v ramke, nakhoditsya po tsentru.
 Ne nayden argument {0} dlya in"yektsii.
-Argument komandnoy stroki {0} ne nayden.
 V zastavke voznikla oshibka pri otobrazhenii: {0}. Nazhmite lyubuyu klavishu dlya vykhoda.
 Predvaritel'nyy prosmotr ...
 Vot kak budet vyglyadet' vasha tema:

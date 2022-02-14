@@ -906,7 +906,6 @@ Altyd gesentreer
 Skryf enige teks wat jy wil wys.
 Of die teks wat op die markiestent gewys word altyd gesentreer is.
 Argument {0} nie gevind om in te spuit nie.
-Opdragreëlargument {0} nie gevind nie.
 Skermbeskermer het 'n fout ondervind tydens die vertoon van: {0}. Druk enige knop om uit te gaan.
 Voorskou...
 So sal jou tema lyk:

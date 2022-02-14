@@ -906,7 +906,6 @@ Koyaushe a tsakiya
 Rubuta kowane rubutu da kake son nunawa.
 Ko rubutun da aka nuna akan marquee koyaushe yana tsakiya ne.
 Ba a samo hujjar {0} don yin allura ba.
-Ba a samo hujjar layin umarni {0} ba.
 Mai adana allo ya sami kuskure yayin nunawa: {0}. Danna kowane maɓalli don fita.
 Dubawa...
 Ga yadda jigon ku zai kasance:

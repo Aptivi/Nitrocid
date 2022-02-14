@@ -906,7 +906,6 @@ Siempre centrado
 Escriba el texto que desee que se muestre.
 Si el texto que se muestra en el recuadro siempre está centrado.
 No se encontró el argumento {0} para inyectar.
-No se encontró el argumento de la línea de comando {0}.
 El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualquier tecla para salir.
 Avance...
 Así es como se verá su tema:

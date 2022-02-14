@@ -906,7 +906,6 @@ sarbadā kēndrika
 Āpanāra pradarśita kōna'ō pāṭhya likhuna.
 Mārkē pradarśita pāṭhyaṭi sarbadā kēndrībhūta kinā.
 Inajēkṭa karatē ārgumēnṭa to {0} pā'ōẏā yāẏa ni.
-Kamānḍa lā'ina ārgumēnṭa {0} pā'ōẏā yāẏa ni.
 skrīnasēbhāra pradarśana karāra samaẏa ēkaṭi truṭi anubhaba karēchē: {0}. Thēkē prasthāna karāra jan'ya kōnō ki ṭipuna.
 Pūrbarūpa...
 Āpanāra thimaṭi kēmana pradarśita habē tā ēkhānē:

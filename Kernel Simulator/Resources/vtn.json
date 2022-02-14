@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Viết bất kỳ văn bản nào bạn muốn hiển thị.",
     "Whether the text shown on the marquee is always centered.": "Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.",
     "Argument {0} not found to inject.": "Đối số {0} không được tìm thấy để đưa vào.",
-    "Command line argument {0} not found.": "Không tìm thấy đối số dòng lệnh {0}.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.",
     "Preview...": "Xem trước ...",
     "Here's how your theme will look like:": "Đây là cách chủ đề của bạn sẽ trông như thế nào:",

@@ -906,7 +906,6 @@ Sentiasa berpusat
 Tulis teks yang anda mahu ditunjukkan.
 Sama ada teks yang ditunjukkan pada tenda sentiasa berpusat.
 Hujah {0} tidak dijumpai untuk disuntik.
-Argumen baris perintah {0} tidak dijumpai.
 Penjaga Skrin mengalami ralat semasa memaparkan: {0}. Tekan sebarang kekunci untuk keluar.
 Pratonton ...
 Begini rupa tema anda:

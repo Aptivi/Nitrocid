@@ -906,7 +906,6 @@ hamesha kendrit
 koee bhee paath likhen jise aap dikhaana chaahate hain.
 kya maarkee par dikhaaya gaya tekst hamesha kendrit hota hai.
 tark {0} injekshan lagaane ke lie nahin mila.
-kamaand lain tark {0} nahin mila.
 skreenasevar ko pradarshit karate samay ek truti ka anubhav hua: {0}. baahar nikalane ke lie koee bhee kunjee dabaen.
 poorvaavalokan...
 yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:

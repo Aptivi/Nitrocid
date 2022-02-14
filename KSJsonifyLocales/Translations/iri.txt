@@ -906,7 +906,6 @@ I gcónaí dírithe
 Scríobh téacs ar bith is mian leat a thaispeántar.
 Cibé an bhfuil an téacs a thaispeántar ar an marquee dírithe i gcónaí.
 Ní bhfuarthas argóint {0} mar instealladh.
-Níor aimsíodh argóint líne ordaithe {0}.
 Tharla earráid agus sábhálaí scáileáin agus é ag taispeáint: {0}. Brúigh eochair ar bith chun imeacht.
 Réamhamharc ...
 Seo an chuma a bheidh ar do théama:

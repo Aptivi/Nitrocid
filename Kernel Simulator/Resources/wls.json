@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Ysgrifennwch unrhyw destun rydych chi am ei ddangos.",
     "Whether the text shown on the marquee is always centered.": "P'un a yw'r testun a ddangosir ar y babell fawr bob amser wedi'i ganoli.",
     "Argument {0} not found to inject.": "Ni ddarganfuwyd bod dadl {0} yn chwistrellu.",
-    "Command line argument {0} not found.": "Dadl llinell orchymyn {0} heb ei darganfod.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Profodd arbedwr gwall wrth arddangos: {0}. Pwyswch unrhyw allwedd i adael.",
     "Preview...": "Rhagolwg ...",
     "Here's how your theme will look like:": "Dyma sut olwg fydd ar eich thema:",

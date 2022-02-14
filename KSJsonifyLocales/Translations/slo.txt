@@ -906,7 +906,6 @@ Vždy na stred
 Napíšte ľubovoľný text, ktorý chcete zobraziť.
 To, či je text zobrazený na ráme vždy zarovnaný na stred.
 Argument {0} sa nenašiel pre injekciu.
-Argument príkazového riadku {0} sa nenašiel.
 Pri zobrazovaní šetriča obrazovky sa vyskytla chyba: {0}. Stlačte hocaké tlačidlo pre ukončenie.
 Náhľad...
 Takto bude vyzerať vaša téma:

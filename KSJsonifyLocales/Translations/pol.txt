@@ -906,7 +906,6 @@ Zawsze wy?rodkowany
 Napisz dowolny tekst, kt?ry chcesz pokaza?.
 Czy tekst wy?wietlany na markizie jest zawsze wy?rodkowany.
 Nie znaleziono argumentu {0} do wstrzykni?cia.
-Nie znaleziono argumentu wiersza polece? {0}.
 Wygaszacz ekranu napotka? b??d podczas wy?wietlania: {0}. Naci?nij dowolny klawisz aby zamkn??.
 Zapowied?...
 Oto jak b?dzie wygl?da? Tw?j motyw:

@@ -906,7 +906,6 @@ Always centered
 Write any text you want shown.
 Whether the text shown on the marquee is always centered.
 Argument {0} not found to inject.
-Command line argument {0} not found.
 Screensaver experienced an error while displaying: {0}. Press any key to exit.
 Preview...
 Here's how your theme will look like:

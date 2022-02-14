@@ -906,7 +906,6 @@ Dejjem iċċentrat
 Ikteb kwalunkwe test li trid tidher.
 Jekk it-test muri fuq il-marquee huwiex dejjem iċċentrat.
 L-argument {0} ma nstabx biex jinjetta.
-L-argument tal-linja tal-kmand {0} ma nstabx.
 Screensaver esperjenza żball waqt li wera: {0}. Agħfas kwalunkwe ċavetta biex toħroġ.
 Preview ...
 Hawnhekk se tidher it-tema tiegħek:

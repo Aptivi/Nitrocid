@@ -906,7 +906,6 @@ Toujou santre
 Ekri nenpòt tèks ou vle montre.
 Kit se tèks yo montre sou chapant lan toujou santre.
 Agiman {0} pa jwenn pou enjekte.
-Liy kòmand agiman {0} pa jwenn.
 Ekran sove gen yon erè pandan y ap montre: {0}. Peze nenpòt ki kle sòti.
 Preview ...
 Men ki jan tèm ou pral sanble:

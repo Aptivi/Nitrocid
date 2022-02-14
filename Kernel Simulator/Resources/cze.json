@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Schrijf elke tekst die u wilt laten zien.",
     "Whether the text shown on the marquee is always centered.": "Of de tekst op het selectiekader altijd gecentreerd is.",
     "Argument {0} not found to inject.": "Argument {0} niet gevonden om te injecteren.",
-    "Command line argument {0} not found.": "Opdrachtregelargument {0} niet gevonden.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op een willekeurige toets om af te sluiten.",
     "Preview...": "Voorbeeld...",
     "Here's how your theme will look like:": "Zo ziet je thema eruit:",

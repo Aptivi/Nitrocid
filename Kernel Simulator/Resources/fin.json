@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Kirjoita haluamasi teksti.",
     "Whether the text shown on the marquee is always centered.": "Onko teltassa näkyvä teksti aina keskitetty.",
     "Argument {0} not found to inject.": "Argumenttia {0} ei havaittu pistävän.",
-    "Command line argument {0} not found.": "Komentoriviargumenttia {0} ei löydy.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Näytönsäästäjässä tapahtui virhe näytettäessä: {0}. Paina mitä tahansa näppäintä poistuaksesi.",
     "Preview...": "Esikatselu ...",
     "Here's how your theme will look like:": "Teemasi näyttää tältä:",

@@ -906,7 +906,6 @@ Mereu centrat
 Scrie?i orice text dori?i s? fie afi?at.
 Dac? textul afi?at pe marcaj este întotdeauna centrat.
 Argumentul {0} nu a fost g?sit pentru a fi injectat.
-Argumentul liniei de comand? {0} nu a fost g?sit.
 Screensaver a întâmpinat o eroare la afi?area: {0}. Apas? orice tast? pentru a ie?i.
 Previzualizare...
 Iat? cum va ar?ta tema dvs.:

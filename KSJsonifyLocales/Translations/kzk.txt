@@ -906,7 +906,6 @@ Tüsi men pişimi bar bölgişti basıp şığaradı
 Körsetkiñiz kelgen kez kelgen mätindi jazıñız.
 Mätin mätini ortalıq ortalıqta ma.
 {0} argwmenti ïnekcïyalanbadı.
-Pärmen jolınıñ argwmenti {0} tabılmadı.
 Ékran saqtağıştı körsetw kezinde qate payda boldı: {0}. Şığw üşin kez kelgen perneni jiberiñiz.
 Aldın ala qaraw ...
 Kelesidey boladı:

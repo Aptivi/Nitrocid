@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Skriv hvilken tekst du vil ha vist.",
     "Whether the text shown on the marquee is always centered.": "Om teksten som vises på teltet alltid er sentrert.",
     "Argument {0} not found to inject.": "Argumentet {0} ble ikke funnet å injisere.",
-    "Command line argument {0} not found.": "Kommandolinjeargumentet {0} ble ikke funnet.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Skjermsparer opplevde en feil under visning: {0}. Trykk hvilken som helst knapp for å avslutte.",
     "Preview...": "Forhåndsvisning ...",
     "Here's how your theme will look like:": "Slik ser temaet ditt ut:",

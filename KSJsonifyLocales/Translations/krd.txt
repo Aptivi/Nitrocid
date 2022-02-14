@@ -906,7 +906,6 @@ Her tim navend
 Tiştek ku hûn dixwazin nîşan bidin binivîsin.
 Ma nivîsa ku li ser marqeyê tê xuyang kirin her gav navend e.
 Argumenta {0} ji bo derzîkirinê nehat dîtin.
-Argumana rêza fermanê {0} nehat dîtin.
 Di dema pêşandanê de screensaver xeletiyek dît: {0}. Ji bo derketinê tu bişkojkê bikirtînin.
 Pêşnerîn...
 Li vir mijara we dê çawa xuya bike:

@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Scrivi il testo che vuoi mostrare.",
     "Whether the text shown on the marquee is always centered.": "Se il testo mostrato sul riquadro di selezione è sempre centrato.",
     "Argument {0} not found to inject.": "Argomento {0} non trovato da iniettare.",
-    "Command line argument {0} not found.": "Argomento della riga di comando {0} non trovato.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qualsiasi tasto per uscire.",
     "Preview...": "Anteprima...",
     "Here's how your theme will look like:": "Ecco come sarà il tuo tema:",

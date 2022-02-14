@@ -906,7 +906,6 @@ Palaging nakasentro
 Sumulat ng anumang teksto na nais mong ipakita.
 Kung ang teksto na ipinapakita sa marquee ay laging nakasentro.
 Ang pangangatwiran {0} ay hindi nahanap upang mag-iniksyon.
-Hindi nakita ang argument ng linya ng utos {0}.
 Naranasan ng isang error ang Screensaver habang ipinapakita ang: {0}. Pindutin ang anumang key upang lumabas.
 Pag-preview ...
 Narito kung paano magiging hitsura ang iyong tema:

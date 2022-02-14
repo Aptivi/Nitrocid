@@ -906,7 +906,6 @@ Uvijek centrirano
 Napišite bilo koji tekst koji želite prikazati.
 Je li tekst prikazan na okviru za izbor uvijek centriran.
 Nije pronađen argument {0} za ubrizgavanje.
-Argument komandne linije {0} nije pronađen.
 Došlo je do greške pri čuvanju zaslona prilikom prikaza: {0}. Pritisnite bilo koji taster za izlaz.
 Pregled ...
 Evo kako će vaša tema izgledati:

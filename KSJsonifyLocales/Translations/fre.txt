@@ -906,7 +906,6 @@ Toujours centré
 Écrivez le texte que vous souhaitez afficher.
 Si le texte affiché sur le rectangle de sélection est toujours centré.
 Argument {0} introuvable pour l'injection.
-Argument de ligne de commande {0} introuvable.
 L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuyez sur une touche pour quitter.
 Aperçu...
 Voici à quoi ressemblera votre thème :

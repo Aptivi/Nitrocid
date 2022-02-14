@@ -906,7 +906,6 @@ tatamahwar daymana
 aktub 'aya nasin turid 'iizharahu.
 ma 'iidha kan alnasu almaerud fi alshaashat alaismiat yatimu tawsituh daymana 'am la.
 alwasita {0} ghayr mawjudat lil'iidkhali.
-lam yatima aleuthur ealaa wasitat satr al'awamir {0}.
 wajahat shashat altawaquf khataan 'athna' eardi: {0}. adght ay zirr lilkhuruwji.
 mueayanatu...
 'iilayk kayf sayabdu almazhar alkhasu bika:

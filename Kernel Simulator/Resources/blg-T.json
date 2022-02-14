@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Напишете всеки текст, който искате да бъде показан.",
     "Whether the text shown on the marquee is always centered.": "Дали текстът, показан в полето, винаги е центриран.",
     "Argument {0} not found to inject.": "Аргумент {0} не е намерен за инжектиране.",
-    "Command line argument {0} not found.": "Аргументът на командния ред {0} не е намерен.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "При скрийнсейвъра възникна грешка при показване: {0}. Натиснете произволен клавиш, за да излезете.",
     "Preview...": "Визуализация...",
     "Here's how your theme will look like:": "Ето как ще изглежда вашата тема:",

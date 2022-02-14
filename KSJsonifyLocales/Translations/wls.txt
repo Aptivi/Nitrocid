@@ -906,7 +906,6 @@ Bob amser wedi'i ganoli
 Ysgrifennwch unrhyw destun rydych chi am ei ddangos.
 P'un a yw'r testun a ddangosir ar y babell fawr bob amser wedi'i ganoli.
 Ni ddarganfuwyd bod dadl {0} yn chwistrellu.
-Dadl llinell orchymyn {0} heb ei darganfod.
 Profodd arbedwr gwall wrth arddangos: {0}. Pwyswch unrhyw allwedd i adael.
 Rhagolwg ...
 Dyma sut olwg fydd ar eich thema:

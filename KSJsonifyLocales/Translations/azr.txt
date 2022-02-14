@@ -906,7 +906,6 @@ Həmişə mərkəzlidir
 Göstərilən istənilən mətni yazın.
 Zolaqda göstərilən mətnin həmişə mərkəzdə olub-olmaması.
 {0} mübahisəsi enjekte edilmədi.
-Komanda satırı arqumenti {0} tapılmadı.
 Ekran qoruyucusu göstərərkən bir səhv yaşandı: {0}. Çıxmaq üçün istənilən düyməyə basın.
 Önizləmə ...
 Mövzunuz necə olacaq:

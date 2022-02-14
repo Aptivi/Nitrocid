@@ -910,7 +910,6 @@
     "Write any text you want shown.": "表示したいテキストを入力してください。",
     "Whether the text shown on the marquee is always centered.": "マーキーに表示されるテキストを常に中央揃えにするかどうか。",
     "Argument {0} not found to inject.": "挿入する引数 {0} が見つかりません。",
-    "Command line argument {0} not found.": "コマンド ライン引数 {0} が見つかりません。",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "スクリーンセーバーで表示中にエラーが発生しました: {0}。終了するには、任意のキーを押してください。",
     "Preview...": "プレビュー...",
     "Here's how your theme will look like:": "テーマは次のようになります。",

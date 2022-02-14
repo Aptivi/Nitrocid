@@ -906,7 +906,6 @@ Luôn luôn tập trung
 Viết bất kỳ văn bản nào bạn muốn hiển thị.
 Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.
 Đối số {0} không được tìm thấy để đưa vào.
-Không tìm thấy đối số dòng lệnh {0}.
 Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.
 Xem trước ...
 Đây là cách chủ đề của bạn sẽ trông như thế nào:

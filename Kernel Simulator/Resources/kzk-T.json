@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Көрсеткіңіз келетін кез келген мәтінді жазыңыз.",
     "Whether the text shown on the marquee is always centered.": "Маркада көрсетілген мәтін әрқашан орталықта ма.",
     "Argument {0} not found to inject.": "{0} аргументі инъекцияланбады.",
-    "Command line argument {0} not found.": "Пәрмен жолының аргументі {0} табылмады.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Экран сақтағышты көрсету кезінде қате пайда болды: {0}. Шығу үшін кез келген пернені басыңыз.",
     "Preview...": "Алдын ала қарау ...",
     "Here's how your theme will look like:": "Міне сіздің тақырыбыңыз келесідей болады:",

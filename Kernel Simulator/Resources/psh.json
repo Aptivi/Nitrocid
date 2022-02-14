@@ -910,7 +910,6 @@
     "Write any text you want shown.": "هر هغه متن ولیکئ چې تاسو یې ښودل غواړئ.",
     "Whether the text shown on the marquee is always centered.": "آیا په مارکی کې ښودل شوی متن تل په مرکز کې وي.",
     "Argument {0} not found to inject.": "دلیل {0} د انجیکشن لپاره ونه موندل شو.",
-    "Command line argument {0} not found.": "د کمانډ لاین دلیل {0} ونه موندل شو.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "سکرین سیور د ښودلو پر مهال یوه تېروتنه وکړه: {0}. د وتلو لپاره کوم کیلي فشار ورکړئ.",
     "Preview...": "مخکتنه...",
     "Here's how your theme will look like:": "دلته ستاسو موضوع به څنګه ښکاري:",

@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Skriv vilken text du vill visa.",
     "Whether the text shown on the marquee is always centered.": "Om texten som visas på partytältet alltid är centrerad.",
     "Argument {0} not found to inject.": "Argumentet {0} hittades inte att injiceras.",
-    "Command line argument {0} not found.": "Argumentet för kommandoraden {0} hittades inte.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Skärmsläckaren upplevde ett fel när den visade: {0}. Tryck på valfri tangent för att avsluta.",
     "Preview...": "Förhandsvisning...",
     "Here's how your theme will look like:": "Så här ser ditt tema ut:",

@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Idatzi erakutsi nahi duzun testua.",
     "Whether the text shown on the marquee is always centered.": "Markesinean agertzen den testua beti zentratuta dagoen ala ez adierazten du.",
     "Argument {0} not found to inject.": "{0} argumentua ez da injektatzeko aurkitu.",
-    "Command line argument {0} not found.": "Ez da aurkitu {0} komando-lerroko argumentua.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Pantaila-babesleak errore bat izan du bistaratzean: {0}. Sakatu edozein tekla irteteko.",
     "Preview...": "Aurrebista ...",
     "Here's how your theme will look like:": "Hona hemen itxura izango duen gaia:",

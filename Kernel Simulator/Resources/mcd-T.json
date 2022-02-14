@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Напишете кој било текст што сакате да се прикаже.",
     "Whether the text shown on the marquee is always centered.": "Дали текстот прикажан на маркетот е секогаш центриран.",
     "Argument {0} not found to inject.": "Аргументот {0} не е пронајден за инјектирање.",
-    "Command line argument {0} not found.": "Аргументот на командната линија {0} не е пронајден.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Заштитникот на екранот доживеа грешка при прикажувањето: {0}. Притиснете кое било копче за да излезете.",
     "Preview...": "Преглед...",
     "Here's how your theme will look like:": "Еве како ќе изгледа вашата тема:",

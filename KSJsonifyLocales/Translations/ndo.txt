@@ -906,7 +906,6 @@ Selalu terpusat
 Tulis teks yang ingin ditampilkan.
 Apakah teks yang ditampilkan di tenda selalu berada di tengah.
 Argumen {0} tidak ditemukan untuk disuntikkan.
-Argumen baris perintah {0} tidak ditemukan.
 Screensaver mengalami kesalahan saat menampilkan: {0}. Tekan sembarang tombol untuk keluar.
 Pratinjau...
 Begini tampilan tema Anda:

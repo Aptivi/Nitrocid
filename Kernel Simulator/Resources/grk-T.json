@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Γράψτε όποιο κείμενο θέλετε να εμφανίζεται.",
     "Whether the text shown on the marquee is always centered.": "Εάν το κείμενο που εμφανίζεται στη μαρκίζα είναι πάντα κεντραρισμένο.",
     "Argument {0} not found to inject.": "Το όρισμα {0} δεν βρέθηκε για ένεση.",
-    "Command line argument {0} not found.": "Το όρισμα γραμμής εντολών {0} δεν βρέθηκε.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Η προφύλαξη οθόνης παρουσίασε σφάλμα κατά την εμφάνιση: {0}. Πατήστε οποιοδήποτε πλήκτρο για να εξέλθετε.",
     "Preview...": "Προεπισκόπηση...",
     "Here's how your theme will look like:": "Δείτε πώς θα μοιάζει το θέμα σας:",

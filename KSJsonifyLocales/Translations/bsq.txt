@@ -906,7 +906,6 @@ Beti zentratuta
 Idatzi erakutsi nahi duzun testua.
 Markesinean agertzen den testua beti zentratuta dagoen ala ez adierazten du.
 {0} argumentua ez da injektatzeko aurkitu.
-Ez da aurkitu {0} komando-lerroko argumentua.
 Pantaila-babesleak errore bat izan du bistaratzean: {0}. Sakatu edozein tekla irteteko.
 Aurrebista ...
 Hona hemen itxura izango duen gaia:

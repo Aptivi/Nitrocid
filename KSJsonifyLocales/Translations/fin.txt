@@ -906,7 +906,6 @@ Aina keskitetty
 Kirjoita haluamasi teksti.
 Onko teltassa näkyvä teksti aina keskitetty.
 Argumenttia {0} ei havaittu pistävän.
-Komentoriviargumenttia {0} ei löydy.
 Näytönsäästäjässä tapahtui virhe näytettäessä: {0}. Paina mitä tahansa näppäintä poistuaksesi.
 Esikatselu ...
 Teemasi näyttää tältä:

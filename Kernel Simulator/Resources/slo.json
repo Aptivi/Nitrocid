@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Napíšte ľubovoľný text, ktorý chcete zobraziť.",
     "Whether the text shown on the marquee is always centered.": "To, či je text zobrazený na ráme vždy zarovnaný na stred.",
     "Argument {0} not found to inject.": "Argument {0} sa nenašiel pre injekciu.",
-    "Command line argument {0} not found.": "Argument príkazového riadku {0} sa nenašiel.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Pri zobrazovaní šetriča obrazovky sa vyskytla chyba: {0}. Stlačte hocaké tlačidlo pre ukončenie.",
     "Preview...": "Náhľad...",
     "Here's how your theme will look like:": "Takto bude vyzerať vaša téma:",

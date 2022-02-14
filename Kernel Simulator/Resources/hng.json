@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Írjon bármilyen szöveget, amelyet megjeleníteni szeretne.",
     "Whether the text shown on the marquee is always centered.": "A kijelölőn megjelenő szöveg mindig középen van-e.",
     "Argument {0} not found to inject.": "A(z) {0} argumentum nem található beilleszthető.",
-    "Command line argument {0} not found.": "A(z) {0} parancssori argumentum nem található.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "A képernyővédő hibát észlelt a következő megjelenítése közben: {0}. Nyomd meg bármely gombot a kilépéshez.",
     "Preview...": "Előnézet...",
     "Here's how your theme will look like:": "Így fog kinézni a témája:",

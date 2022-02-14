@@ -906,7 +906,6 @@ Kugxile njalo
 Bhala noma yimuphi umbhalo ofuna ukuboniswa.
 Ukuthi umbhalo oboniswe emakethe uhlala ugxile yini.
 Ukungqubuzana {0} akutholakali ukujova.
-Ukungqubuzana komugqa womyalo {0} akutholakali.
 Isilondolozi sesikrini sihlangabezane nephutha ngenkathi sibonisa: {0}. Cindezela noma yimuphi ukhiye ukuphuma.
 Hlola kuqala ...
 Nakhu ukuthi itimu yakho izobukeka kanjani:

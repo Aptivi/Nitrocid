@@ -906,7 +906,6 @@ Vinagi tsentriran
 Napishete vseki tekst, koĭto iskate da bŭde pokazan.
 Dali tekstŭt, pokazan v poleto, vinagi e tsentriran.
 Argument {0} ne e nameren za inzhektirane.
-Argumentŭt na komandniya red {0} ne e nameren.
 Pri skriĭnseĭvŭra vŭznikna greshka pri pokazvane: {0}. Natisnete proizvolen klavish, za da izlezete.
 Vizualizatsiya...
 Eto kak shte izglezhda vashata tema:

@@ -906,7 +906,6 @@ Immer zentriert
 Schreiben Sie einen beliebigen Text, der angezeigt werden soll.
 Ob der auf dem Laufschriftrahmen angezeigte Text immer zentriert ist.
 Argument {0} zum Einfügen nicht gefunden.
-Befehlszeilenargument {0} nicht gefunden.
 Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verlassen eine beliebige Taste drücken.
 Vorschau...
 So sieht Ihr Theme aus:

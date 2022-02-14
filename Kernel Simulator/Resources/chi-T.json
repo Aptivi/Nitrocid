@@ -910,7 +910,6 @@
     "Write any text you want shown.": "写下您想要显示的任何文本。",
     "Whether the text shown on the marquee is always centered.": "选取框上显示的文本是否始终居中。",
     "Argument {0} not found to inject.": "未找到要注入的参数 {0}。",
-    "Command line argument {0} not found.": "找不到命令行参数 {0}。",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "屏幕保护程序在显示：{0} 时遇到错误。按任何一个键退出。",
     "Preview...": "预习...",
     "Here's how your theme will look like:": "以下是您的主题的外观：",

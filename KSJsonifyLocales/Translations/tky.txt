@@ -906,7 +906,6 @@ Her zaman ortalanmış
 Gösterilmesini istediğiniz herhangi bir metni yazın.
 Seçim çerçevesi üzerinde gösterilen metnin her zaman ortalanıp ortalanmadığı.
 {0} bağımsız değişkeni enjekte edilmedi.
-{0} komut satırı bağımsız değişkeni bulunamadı.
 Ekran koruyucu şunu görüntülerken bir hatayla karşılaştı: {0}. Çıkmak için herhangi bir tuşa basın.
 Ön izleme...
 İşte temanız nasıl görünecek:

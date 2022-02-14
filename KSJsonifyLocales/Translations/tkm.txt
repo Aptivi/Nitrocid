@@ -906,7 +906,6 @@ Elmydama merkezleşdirilen
 Görkezmek isleýän tekstiňizi ýazyň.
 Markada görkezilen tekst elmydama merkezleşdirilenmi.
 Argument {0 sanjym tapylmady.
-Buýruk setiri argumenti {0} tapylmady.
 Ekran saklaýjysy görkezilende ýalňyşlyk başdan geçirdi: {0}. Çykmak üçin islendik düwmä basyň.
 Öňünden syn ...
 Ine, mowzugyňyzyň görnüşi:

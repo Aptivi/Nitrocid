@@ -906,7 +906,6 @@ hangsang jungsim
 pyosihalyeoneun tegseuteuleul jagseonghasibsio.
 seontaeg yungwag-e pyosidoen tegseuteuga hangsang jung-ang-e issneunji yeobu.
 sab-ib hal insu {0}eul (leul) chaj-eul su eobs-seubnida.
-myeonglyeong jul insu {0}eul (leul) chaj-eul su eobs-seubnida.
 seukeulin seibeoeseo {0}eul (leul) pyosihaneun dong-an olyuga balsaenghaessseubnida. jonglyohalyeomyeon amu kina nuleusibsio.
 sisa...
 temaneun da-eumgwa gatseubnida.

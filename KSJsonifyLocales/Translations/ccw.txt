@@ -906,7 +906,6 @@ Zokhazikika nthawi zonse
 Lembani mawu omwe mukufuna kuwonetsedwa.
 Kaya mawu omwe akuwonetsedwa pamakomo nthawi zonse amakhala ozungulira.
 Kutsutsana {0} sikupezeka.
-Mtsutso wa mzere wa malamulo {0} sunapezeke.
 Screensaver adakumana ndi vuto pamene akuwonetsa: {0}. Dinani batani lililonse kuti mutuluke.
 Onetsani ...
 Umu ndi momwe mutu wanu udzawonekere:

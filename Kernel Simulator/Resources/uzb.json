@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Ko'rsatishni istagan har qanday matnni yozing.",
     "Whether the text shown on the marquee is always centered.": "Martada ko'rsatilgan matn har doim markazda bo'ladimi.",
     "Argument {0} not found to inject.": "{0} argumentini kiritish uchun topilmadi.",
-    "Command line argument {0} not found.": "Buyruqning argumenti {0} topilmadi.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Ekran himoyachisi quyidagilarni ko'rsatishda xatolikka duch keldi: {0}. Chiqish uchun istalgan tugmani bosing.",
     "Preview...": "Oldindan ko�rib chiqish ...",
     "Here's how your theme will look like:": "Mana sizning mavzuingiz qanday bo'ladi:",

@@ -906,7 +906,6 @@ tsuneni chūōsoroe
 Hyōji shitai tekisuto o nyūryoku shite kudasai.
 Mākī ni hyōji sa reru tekisuto o tsuneni chūōsoroe ni suru ka dō ka.
 Sōnyū suru hikisū {0} ga mitsukarimasen.
-Komando rain hikisū {0} ga mitsukarimasen.
 sukurīnsēbā de hyōji-chū ni erā ga hassei shimashita: {0}. Shūryō suru ni wa, nin'i no kī o oshite kudasai.
 Purebyū...
 Tēma wa tsugi no yō ni narimasu.

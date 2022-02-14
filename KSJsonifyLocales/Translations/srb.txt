@@ -906,7 +906,6 @@ Uvek centrirano
 Napi?ite bilo koji tekst koji ?elite da se prika?e.
 Da li je tekst prikazan u ?alteru uvek centriran.
 Nije prona?en argument za ubrizgavanje {0}.
-Argument naredbenog retka {0} nije prona?en.
 ?uvar ekrana je do?iveo gre?ku pri prikazivanju: {0}. Pritisnite bilo koji taster da biste iza?li.
 Pregled ...
 Evo kako c?e izgledati va?a tema:

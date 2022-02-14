@@ -906,7 +906,6 @@ Inazingatia kila wakati
 Andika maandishi yoyote unayotaka kuonyeshwa.
 Ikiwa maandishi yaliyoonyeshwa kwenye jumba huwekwa katikati kila wakati.
 Hoja {0} haipatikani kuingiza.
-Hoja ya mstari wa amri {0} haipatikani.
 Screensaver ilipata hitilafu wakati wa kuonyesha: {0}. Bonyeza kitufe chochote ili utoke.
 Chungulia kwanza ...
 Hivi ndivyo mada yako itaonekana kama:

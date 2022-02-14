@@ -906,7 +906,6 @@ Alltid centrerad
 Skriv vilken text du vill visa.
 Om texten som visas på partytältet alltid är centrerad.
 Argumentet {0} hittades inte att injiceras.
-Argumentet för kommandoraden {0} hittades inte.
 Skärmsläckaren upplevde ett fel när den visade: {0}. Tryck på valfri tangent för att avsluta.
 Förhandsvisning...
 Så här ser ditt tema ut:

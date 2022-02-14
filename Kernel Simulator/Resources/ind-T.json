@@ -910,7 +910,6 @@
     "Write any text you want shown.": "कोई भी पाठ लिखें जिसे आप दिखाना चाहते हैं।",
     "Whether the text shown on the marquee is always centered.": "क्या मार्की पर दिखाया गया टेक्स्ट हमेशा केंद्रित होता है।",
     "Argument {0} not found to inject.": "तर्क {0} इंजेक्शन लगाने के लिए नहीं मिला।",
-    "Command line argument {0} not found.": "कमांड लाइन तर्क {0} नहीं मिला।",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "स्क्रीनसेवर को प्रदर्शित करते समय एक त्रुटि का अनुभव हुआ: {0}. बाहर निकलने के लिए कोई भी कुंजी दबाएँ।",
     "Preview...": "पूर्वावलोकन...",
     "Here's how your theme will look like:": "यहां बताया गया है कि आपकी थीम कैसी दिखेगी:",

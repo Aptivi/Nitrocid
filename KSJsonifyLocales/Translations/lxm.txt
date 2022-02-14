@@ -906,7 +906,6 @@ Dréckt e Separator mat Faarf a Format Ënnerstëtzung
 Schreift all Text Dir wëllt gewisen.
 Ob den Text op der Marquee ëmmer zentréiert ass.
 Argument {0} net fonnt fir ze sprëtzen.
-Kommandozeilargument {0} net fonnt.
 Screensaver huet e Feeler erlieft beim Affichage: {0}. Dréckt all Schlëssel fir ze verloossen.
 Virschau...
 Hei ass wéi Äert Thema ausgesäit:

@@ -906,7 +906,6 @@ Ti dojukọ nigbagbogbo
 Kọ eyikeyi ọrọ ti o fẹ han.
 Boya ọrọ ti o han lori marquee nigbagbogbo wa ni aarin.
 Ariyanjiyan {0} ko ri lati ṣe abẹrẹ.
-Ariyanjiyan laini aṣẹ {0} ko si.
 Iboju iboju ni iriri aṣiṣe nigba fifihan: {0}. Tẹ bọtini eyikeyi lati jade.
 Awotẹlẹ ...
 Eyi ni bii akori rẹ yoo dabi:

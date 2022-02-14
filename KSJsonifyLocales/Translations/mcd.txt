@@ -906,7 +906,6 @@ Sekogaš centriran
 Napišete koj bilo tekst što sakate da se prikaže.
 Dali tekstot prikažan na marketot e sekogaš centriran.
 Argumentot {0} ne e pronajden za injektiranje.
-Argumentot na komandnata linija {0} ne e pronajden.
 Zaštitnikot na ekranot doživea greška pri prikažuvanjeto: {0}. Pritisnete koe bilo kopče za da izlezete.
 Pregled...
 Eve kako ḱe izgleda vašata tema:

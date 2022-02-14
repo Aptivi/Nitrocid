@@ -906,7 +906,6 @@ Sempre centratu
 Scrivite qualsiasi testu chì vulete esse mostratu.
 Sia chì u testu mustratu nantu à u tendone sia sempre centratu.
 Argumentu {0} micca truvatu per injectà.
-Argumentu di linea di cummanda {0} micca truvatu.
 U Screensaver hà cunnisciutu un errore mentre mostrava: {0}. Pulsà qualsiasi chjave per surtite.
 Preview ...
 Eccu cumu serà u vostru tema:

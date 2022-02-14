@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Gösterilmesini istediğiniz herhangi bir metni yazın.",
     "Whether the text shown on the marquee is always centered.": "Seçim çerçevesi üzerinde gösterilen metnin her zaman ortalanıp ortalanmadığı.",
     "Argument {0} not found to inject.": "{0} bağımsız değişkeni enjekte edilmedi.",
-    "Command line argument {0} not found.": "{0} komut satırı bağımsız değişkeni bulunamadı.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Ekran koruyucu şunu görüntülerken bir hatayla karşılaştı: {0}. Çıkmak için herhangi bir tuşa basın.",
     "Preview...": "Ön izleme...",
     "Here's how your theme will look like:": "İşte temanız nasıl görünecek:",

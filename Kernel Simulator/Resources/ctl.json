@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Escriviu el text que vulgueu que es mostri.",
     "Whether the text shown on the marquee is always centered.": "Si el text que es mostra a l’envelat està sempre centrat.",
     "Argument {0} not found to inject.": "No s'ha trobat l'argument {0} per injectar.",
-    "Command line argument {0} not found.": "No s'ha trobat l'argument de línia d'ordres {0}.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "El protector de pantalla ha experimentat un error en mostrar: {0}. Premeu qualsevol tecla per sortir.",
     "Preview...": "Vista prèvia...",
     "Here's how your theme will look like:": "A continuació, es mostrarà el vostre tema:",

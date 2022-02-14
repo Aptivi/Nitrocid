@@ -906,7 +906,6 @@ Kanunay nakasentro
 Isulat ang bisan unsang teksto nga gusto nimo ipakita.
 Kung ang teksto nga gipakita sa marquee kanunay nga nakasentro.
 Ang argumento {0} wala makit-an nga nag-inject.
-Ang argumento sa command line {0} wala makit-an.
 Screensaver nakasinati og sayop samtang nagpakita: {0}. Pindota ang bisan unsang yawe aron makagawas.
 Preview...
 Mao kini ang hitsura sa imong tema:

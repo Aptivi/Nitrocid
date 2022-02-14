@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Tulis teks yang ingin ditampilkan.",
     "Whether the text shown on the marquee is always centered.": "Apakah teks yang ditampilkan di tenda selalu berada di tengah.",
     "Argument {0} not found to inject.": "Argumen {0} tidak ditemukan untuk disuntikkan.",
-    "Command line argument {0} not found.": "Argumen baris perintah {0} tidak ditemukan.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Screensaver mengalami kesalahan saat menampilkan: {0}. Tekan sembarang tombol untuk keluar.",
     "Preview...": "Pratinjau...",
     "Here's how your theme will look like:": "Begini tampilan tema Anda:",

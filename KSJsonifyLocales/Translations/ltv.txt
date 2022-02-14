@@ -906,7 +906,6 @@ Vienmēr centrēts
 Uzrakstiet jebkuru tekstu, kuru vēlaties parādīt.
 Vai uz telts redzamais teksts vienmēr ir centrēts.
 Arguments {0} netika atrasts, lai ievadītu.
-Komandrindas arguments {0} nav atrasts.
 Parādot ekrānsaudzētāju, radās kļūda: {0}. Lai izietu, nospiediet jebkuru taustiņu.
 Priekšskatīt...
 Lūk, kā izskatīsies jūsu motīvs:

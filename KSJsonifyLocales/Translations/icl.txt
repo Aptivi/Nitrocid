@@ -906,7 +906,6 @@ Alltaf í miðju
 Skrifaðu hvaða texta sem þú vilt sýna.
 Hvort textinn sem sýndur er á tjaldinu sé alltaf fyrir miðju.
 Rök {0} fannst ekki til að sprauta.
-Skipanalínubreyting {0} fannst ekki.
 Villa kom upp í skjávara þegar hann sýndi: {0}. Ýttu á hvaða takka sem er til að hætta.
 Forskoðun...
 Svona mun þemað þitt líta út:

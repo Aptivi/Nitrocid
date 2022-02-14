@@ -906,7 +906,6 @@ Har doim markazda
 Ko'rsatishni istagan har qanday matnni yozing.
 Martada ko'rsatilgan matn har doim markazda bo'ladimi.
 {0} argumentini kiritish uchun topilmadi.
-Buyruqning argumenti {0} topilmadi.
 Ekran himoyachisi quyidagilarni ko'rsatishda xatolikka duch keldi: {0}. Chiqish uchun istalgan tugmani bosing.
 Oldindan ko‘rib chiqish ...
 Mana sizning mavzuingiz qanday bo'ladi:

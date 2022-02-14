@@ -906,7 +906,6 @@ Sempre centrat
 Escriviu el text que vulgueu que es mostri.
 Si el text que es mostra a l’envelat està sempre centrat.
 No s'ha trobat l'argument {0} per injectar.
-No s'ha trobat l'argument de línia d'ordres {0}.
 El protector de pantalla ha experimentat un error en mostrar: {0}. Premeu qualsevol tecla per sortir.
 Vista prèvia...
 A continuació, es mostrarà el vostre tema:

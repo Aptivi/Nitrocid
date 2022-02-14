@@ -910,7 +910,6 @@
     "Write any text you want shown.": "اكتب أي نص تريد إظهاره.",
     "Whether the text shown on the marquee is always centered.": "ما إذا كان النص المعروض في الشاشة الاسمية يتم توسيطه دائمًا أم لا.",
     "Argument {0} not found to inject.": "الوسيطة {0} غير موجودة للإدخال.",
-    "Command line argument {0} not found.": "لم يتم العثور على وسيطة سطر الأوامر {0}.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "واجهت شاشة التوقف خطأ أثناء عرض: {0}. اضغط اي زر للخروج.",
     "Preview...": "معاينة...",
     "Here's how your theme will look like:": "إليك كيف سيبدو المظهر الخاص بك:",

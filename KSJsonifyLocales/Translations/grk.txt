@@ -906,7 +906,6 @@ Pánta sto kéntro
 Grápste ópoio keímeno thélete na emfanízetai.
 Eán to keímeno pou emfanízetai sti markíza eínai pánta kentrarisméno.
 To órisma {0} den vréthike gia énesi.
-To órisma grammís entolón {0} den vréthike.
 I profýlaxi othónis parousíase sfálma katá tin emfánisi: {0}. Patíste opoiodípote plíktro gia na exélthete.
 Proepiskópisi...
 Deíte pós tha moiázei to théma sas:

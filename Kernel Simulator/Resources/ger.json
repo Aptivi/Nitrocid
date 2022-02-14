@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Schreiben Sie einen beliebigen Text, der angezeigt werden soll.",
     "Whether the text shown on the marquee is always centered.": "Ob der auf dem Laufschriftrahmen angezeigte Text immer zentriert ist.",
     "Argument {0} not found to inject.": "Argument {0} zum Einfügen nicht gefunden.",
-    "Command line argument {0} not found.": "Befehlszeilenargument {0} nicht gefunden.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verlassen eine beliebige Taste drücken.",
     "Preview...": "Vorschau...",
     "Here's how your theme will look like:": "So sieht Ihr Theme aus:",

@@ -906,7 +906,6 @@ Had iyo jeer udub dhexaad
 Qor qoraal kasta oo aad rabto inaad tusto.
 Haddii qoraalka lagu muujiyey marquee markasta udub dhexaad u yahay.
 Doodda {0} lama helin in la duro.
-Doodda xariiqda taliska {0} lama helin.
 Sawir-qaadaha ayaa khalad la kulmay intii uu soo bandhigayay: {0}. Riix fure kasta si aad uga baxdo.
 Hordhac ...
 Waa tan sida mawduucaagu u ekaan doono:

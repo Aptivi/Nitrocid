@@ -906,7 +906,6 @@ Zavzhdy po tsentru
 Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty.
 Chy zavzhdy tekst, pokazanyy na ramtsi, vidtsentrovanyy.
 Arhument {0} ne znaydeno dlya vvedennya.
-Arhument komandnoho ryadka {0} ne znaydeno.
 Pid chas vidobrazhennya zastavky stalasya pomylka: {0}. Natysnitʹ budʹ-yaku klavishu, shchob vyyty.
 Poperedniy perehlyad...
 Osʹ yak bude vyhlyadaty vasha tema:

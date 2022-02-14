@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Напишіть будь-який текст, який хочете показати.",
     "Whether the text shown on the marquee is always centered.": "Чи завжди текст, показаний на рамці, відцентрований.",
     "Argument {0} not found to inject.": "Аргумент {0} не знайдено для введення.",
-    "Command line argument {0} not found.": "Аргумент командного рядка {0} не знайдено.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Під час відображення заставки сталася помилка: {0}. Натисніть будь-яку клавішу, щоб вийти.",
     "Preview...": "Попередній перегляд...",
     "Here's how your theme will look like:": "Ось як буде виглядати ваша тема:",

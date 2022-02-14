@@ -906,7 +906,6 @@ Tansah pusaté
 Tulis teks sing pengin ditampilake.
 Apa teks sing ditampilake ing marquee mesthi dipusatake.
 Argumen {0} ora ditemokake kanggo nyuntikake.
-Argumen baris perintah {0} ora ditemokake.
 Screensaver ngalami kesalahan nalika nampilake: {0}. Pencet tombol apa wae kanggo metu.
 Pratinjau ...
 Mangkene carane tema sampeyan bakal katon:

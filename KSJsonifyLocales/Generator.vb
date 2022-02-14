@@ -23,6 +23,7 @@ Imports KS.ConsoleBase
 Imports KS.Files
 Imports KS.Languages
 Imports KS.Misc.Platform
+Imports KS.Misc.Writers.ConsoleWriters
 
 Module LocaleGenerator
 

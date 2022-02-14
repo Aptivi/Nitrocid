@@ -906,7 +906,6 @@ Mindig középen
 Írjon bármilyen szöveget, amelyet megjeleníteni szeretne.
 A kijelölőn megjelenő szöveg mindig középen van-e.
 A(z) {0} argumentum nem található beilleszthető.
-A(z) {0} parancssori argumentum nem található.
 A képernyővédő hibát észlelt a következő megjelenítése közben: {0}. Nyomd meg bármely gombot a kilépéshez.
 Előnézet...
 Így fog kinézni a témája:

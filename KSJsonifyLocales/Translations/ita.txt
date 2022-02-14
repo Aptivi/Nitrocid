@@ -906,7 +906,6 @@ Sempre centrato
 Scrivi il testo che vuoi mostrare.
 Se il testo mostrato sul riquadro di selezione è sempre centrato.
 Argomento {0} non trovato da iniettare.
-Argomento della riga di comando {0} non trovato.
 Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qualsiasi tasto per uscire.
 Anteprima...
 Ecco come sarà il tuo tema:

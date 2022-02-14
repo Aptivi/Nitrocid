@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Napišite bilo koji tekst koji želite prikazati.",
     "Whether the text shown on the marquee is always centered.": "Je li tekst prikazan na okviru za izbor uvijek centriran.",
     "Argument {0} not found to inject.": "Nije pronađen argument {0} za ubrizgavanje.",
-    "Command line argument {0} not found.": "Argument komandne linije {0} nije pronađen.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Došlo je do greške pri čuvanju zaslona prilikom prikaza: {0}. Pritisnite bilo koji taster za izlaz.",
     "Preview...": "Pregled ...",
     "Here's how your theme will look like:": "Evo kako će vaša tema izgledati:",

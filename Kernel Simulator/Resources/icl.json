@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Skrifaðu hvaða texta sem þú vilt sýna.",
     "Whether the text shown on the marquee is always centered.": "Hvort textinn sem sýndur er á tjaldinu sé alltaf fyrir miðju.",
     "Argument {0} not found to inject.": "Rök {0} fannst ekki til að sprauta.",
-    "Command line argument {0} not found.": "Skipanalínubreyting {0} fannst ekki.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Villa kom upp í skjávara þegar hann sýndi: {0}. Ýttu á hvaða takka sem er til að hætta.",
     "Preview...": "Forskoðun...",
     "Here's how your theme will look like:": "Svona mun þemað þitt líta út:",

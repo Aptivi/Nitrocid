@@ -906,7 +906,6 @@ Altijd gecentreerd
 Schrijf elke tekst die u wilt laten zien.
 Of de tekst op het selectiekader altijd gecentreerd is.
 Argument {0} niet gevonden om te injecteren.
-Opdrachtregelargument {0} niet gevonden.
 Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op een willekeurige toets om af te sluiten.
 Voorbeeld...
 Zo ziet je thema eruit:

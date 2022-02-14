@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Hyōji shitai tekisuto o nyūryoku shite kudasai.",
     "Whether the text shown on the marquee is always centered.": "Mākī ni hyōji sa reru tekisuto o tsuneni chūōsoroe ni suru ka dō ka.",
     "Argument {0} not found to inject.": "Sōnyū suru hikisū {0} ga mitsukarimasen.",
-    "Command line argument {0} not found.": "Komando rain hikisū {0} ga mitsukarimasen.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "sukurīnsēbā de hyōji-chū ni erā ga hassei shimashita: {0}. Shūryō suru ni wa, nin'i no kī o oshite kudasai.",
     "Preview...": "Purebyū...",
     "Here's how your theme will look like:": "Tēma wa tsugi no yō ni narimasu.",

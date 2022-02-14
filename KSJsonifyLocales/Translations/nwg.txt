@@ -906,7 +906,6 @@ Alltid sentrert
 Skriv hvilken tekst du vil ha vist.
 Om teksten som vises på teltet alltid er sentrert.
 Argumentet {0} ble ikke funnet å injisere.
-Kommandolinjeargumentet {0} ble ikke funnet.
 Skjermsparer opplevde en feil under visning: {0}. Trykk hvilken som helst knapp for å avslutte.
 Forhåndsvisning ...
 Slik ser temaet ditt ut:

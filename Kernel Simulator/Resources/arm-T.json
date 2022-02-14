@@ -910,7 +910,6 @@
     "Write any text you want shown.": "Գրեք ցանկացած տեքստ, որը ցանկանում եք ցուցադրել:",
     "Whether the text shown on the marquee is always centered.": "Արդյո՞ք երեսպատման վրա ցուցադրված տեքստը միշտ կենտրոնացված է:",
     "Argument {0} not found to inject.": "{0} արգումենտը չի գտնվել ներարկման համար:",
-    "Command line argument {0} not found.": "{0} հրամանի տողի արգումենտը չի գտնվել:",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "Էկրանապահին սխալ առաջացավ՝ ցուցադրելիս՝ {0}: Դուրս գալու համար սեղմեք ցանկացած ստեղն:",
     "Preview...": "Նախադիտում...",
     "Here's how your theme will look like:": "Ահա թե ինչպիսի տեսք կունենա ձեր թեման.",

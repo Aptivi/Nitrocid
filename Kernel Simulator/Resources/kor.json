@@ -910,7 +910,6 @@
     "Write any text you want shown.": "pyosihalyeoneun tegseuteuleul jagseonghasibsio.",
     "Whether the text shown on the marquee is always centered.": "seontaeg yungwag-e pyosidoen tegseuteuga hangsang jung-ang-e issneunji yeobu.",
     "Argument {0} not found to inject.": "sab-ib hal insu {0}eul (leul) chaj-eul su eobs-seubnida.",
-    "Command line argument {0} not found.": "myeonglyeong jul insu {0}eul (leul) chaj-eul su eobs-seubnida.",
     "Screensaver experienced an error while displaying: {0}. Press any key to exit.": "seukeulin seibeoeseo {0}eul (leul) pyosihaneun dong-an olyuga balsaenghaessseubnida. jonglyohalyeomyeon amu kina nuleusibsio.",
     "Preview...": "sisa...",
     "Here's how your theme will look like:": "temaneun da-eumgwa gatseubnida.",

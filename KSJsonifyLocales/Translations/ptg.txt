@@ -906,7 +906,6 @@ Sempre centrado
 Escreva qualquer texto que você deseja mostrar.
 Se o texto mostrado no letreiro está sempre centralizado.
 Argumento {0} não encontrado para injetar.
-Argumento da linha de comando {0} não encontrado.
 O protetor de tela encontrou um erro ao exibir: {0}. Aperte qualquer tecla para sair.
 Pré-visualizar ...
 Veja como será o seu tema:

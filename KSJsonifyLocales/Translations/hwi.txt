@@ -906,7 +906,6 @@ Kukuna mau
 Kākau i nā huaʻōlelo āu e makemake ai e hōʻike.
 Inā ke kikowaena o ka ʻōlelo i hōʻike ʻia ma ka marquee.
 Kaha hoʻopaʻapaʻa {0} ʻaʻole i loaʻa e hoʻopili.
-ʻAʻole i loaʻa ka paio laina kauoha {0}.
 Ua ʻike ʻo Screensaver i kahi hemahema i ka hōʻike ʻana: {0}. Kaomi i nā kī no ka puka.
 Preview ...
 Eia pehea ke ʻano o kāu kumuhana:
