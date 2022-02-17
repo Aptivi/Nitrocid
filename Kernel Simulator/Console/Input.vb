@@ -52,8 +52,10 @@ Namespace ConsoleBase
                     If Not Final.Length = 0 Then
                         Final = Final.Remove(Final.Length - 1)
                         If Not MaskChar = vbNullChar Then
-                            Console.Write(GetEsc() + "D") 'Cursor backwards by one character
-                            Console.Write(GetEsc() + "[1X") 'Remove a character
+                            Dim OldCursorLeft As Integer = Console.CursorLeft
+                            Console.CursorLeft = OldCursorLeft - 1
+                            Console.Write(" ")
+                            Console.CursorLeft = OldCursorLeft - 1
                         End If
                     End If
                 Else
