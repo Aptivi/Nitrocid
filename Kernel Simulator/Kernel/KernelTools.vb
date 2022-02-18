@@ -294,6 +294,10 @@ Namespace Kernel
             UserPermissions.Clear()
             Reminders.Clear()
             CalendarEvents.Clear()
+            ArgsOnBoot = False
+            SafeMode = False
+            QuietKernel = False
+            Maintenance = False
             _Progress = 0
             _ProgressText = ""
             _KernelBooted = False
