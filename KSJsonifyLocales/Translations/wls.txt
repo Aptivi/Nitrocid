@@ -983,3 +983,675 @@ Pwyswch unrhyw allwedd i ddarllen y dudalen â llaw ...
 Mae angen gwaith ar y dudalen â llaw hon ar gyfer:
 Tudalen law {0} heb ei darganfod.
 Llawlyfr mod
+Dadleuon cnewyllyn sydd ar gael:
+Pwyswch "q" os ydych chi wedi gorffen.
+Gellir gwahanu dadleuon cnewyllyn lluosog â choma heb fylchau, er enghraifft:
+Gellir gwahanu gorchmynion chwistrellu lluosog â cholonau â bylchau, er enghraifft:
+Nid yw'r arg {0} y gofynnwyd amdani wedi'i chanfod.
+Gwall na ellir ei adennill yn y ddadl:
+Yn amgryptio llinyn gan ddefnyddio SHA512
+Yn amgryptio llinyn gan ddefnyddio SHA384
+Amgryptio llinyn gan ddefnyddio SHA256
+Amgryptio llinyn gan ddefnyddio SHA1
+Amgryptio llinyn gan ddefnyddio MD5
+lle bydd arbedwr adeiledig
+Mod rhan yn ddim.
+Ni chaniateir atal mods yn y modd diogel.
+Mod wedi cychwyn yn barod!
+Nid yw Mod wedi dechrau eto!
+Defnydd gorchymyn:
+Enw ffeil rhan:
+Llwybr ffeil rhan:
+Gwall wrth geisio cychwyn arbedwr sgrin:
+Math llwybr annilys.
+Math llwybr cnewyllyn annilys.
+Methodd y cychwyn blaenorol
+Nid yw golygydd JSON wedi agor ffrwd ffeil eto.
+Nid yw'r eiddo y tu mewn i'r ffeil JSON wedi'i ganfod.
+Eiddo wedi'i dynnu.
+Yn ychwanegu eiddo newydd ar ddiwedd y ffeil JSON
+Yn tynnu eiddo o'r ffeil JSON
+Yn gadael plisgyn JSON
+Yn gadael plisgyn JSON heb gadw'r newidiadau
+Yn cadw'r ffeil JSON
+Yn agor plisgyn JSON
+Yn argraffu'r ffeil JSON
+Ysbaid ramp nesaf
+Yn actifadu cefnogaeth lliw 255 ar gyfer Ramp.
+Yn actifadu cefnogaeth wir liw ar gyfer Ramp.
+Sawl milieiliad i aros cyn llenwi'r ramp nesaf?
+Lliw teitl yr hysbysiad
+Lliw disgrifiad hysbysiad
+Lliw cynnydd hysbysiad
+Lliw methiant hysbysiad
+Lliw cwestiwn
+Lliw llwyddiant
+Defnyddiwr lliw doler
+Lliw awgrym
+Lliw testun gwahanydd
+Lliw gwahanydd
+Lliw teitl y rhestr
+Lliw rhybudd datblygu
+Lliw amser llwyfan
+Lliw cynnydd
+Lliw opsiwn cefn
+Tynnu ffin hysbysu
+Yn cwmpasu'r hysbysiad gyda'r ffin.
+Cysylltwch â gwerthwr y mod i uwchraddio'r mod i'r fersiwn gydnaws.
+Lliw ffin â blaenoriaeth isel
+Lliw ffin â blaenoriaeth ganolig
+Lliw ffin â blaenoriaeth uchel
+Yn anfon hysbysiad cynnydd i brofi'r derbynnydd
+Yn profi'r olwyn lliw
+Yn dangos amser cnewyllyn lleol
+Yn dangos dyddiad cnewyllyn lleol
+Yn dangos dyddiad ac amser cnewyllyn lleol
+Yn dangos amser cnewyllyn UTC
+Yn dangos dyddiad cnewyllyn UTC
+Yn dangos dyddiad ac amser cnewyllyn UTC
+llwybr MOTD
+llwybr MAL
+Pa ffeil yw'r ffeil testun MOTD? Ysgrifennwch lwybr absoliwt i'r ffeil testun.
+Pa ffeil yw ffeil testun MAL? Ysgrifennwch lwybr absoliwt i'r ffeil testun.
+Mods ar y rhestr ddu
+Ysgrifennwch enwau ffeiliau'r mods na fyddant yn rhedeg wrth gychwyn. Pan fyddwch chi wedi gorffen, ysgrifennwch "q". Ysgrifennwch arwydd minws wrth ymyl y llwybr i ddileu mod sy'n bodoli eisoes.
+Mae Mod {0} ar y rhestr ddu.
+Yn ail-lwytho pob mods
+Yn ychwanegu mod at y rhestr ddu
+Yn tynnu mod o'r rhestr ddu
+Amser a dyddiad yn UTC: {0}
+Nid yw'r gorchymyn plisgyn JSON penodedig wedi'i ganfod.
+Dangos gwybodaeth app yn ystod cychwyn
+Dosrannu dadleuon llinell orchymyn
+Dangos amseroedd gorffen y llwyfan
+Cychwyn addasiadau cnewyllyn ar gist
+Dangos yr amser presennol cyn mewngofnodi
+Rhowch wybod am unrhyw nam yn ystod y cychwyn
+Yn dangos gwybodaeth gryno am y cais ar y cychwyn.
+Yn dosrannu'r dadleuon llinell orchymyn ar gychwyn.
+Yn dangos faint o amser gymerodd y cnewyllyn i orffen llwyfan.
+Cychwynnwch yr addasiadau cnewyllyn ar y cychwyn yn awtomatig.
+Yn dangos yr amser presennol, parth amser, a dyddiad cyn mewngofnodi.
+Os oes nam bach yn ystod cist cnewyllyn, hysbysu'r defnyddiwr amdano.
+Arddull anogwr enw defnyddiwr
+Arddull anogwr cyfrinair
+Dangos MAL wrth fewngofnodi
+Ysgrifennwch sut rydych chi am i'ch anogwr mewngofnodi fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Ysgrifennwch sut rydych chi am i'ch anogwr cyfrinair fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Yn dangos Neges y Dydd ar ôl dangos sgrin mewngofnodi.
+Profwch Arddull Ysgoglyd Cregyn
+JSON Shell Arddull Anog
+Profi gorchmynion chwistrellu
+Yn archwilio'r gorchmynion chwistrellu ar ddechrau'r plisgyn cnewyllyn.
+Dangos manylion ffeil yn y rhestr
+Yn dangos manylion cryno'r ffeil wrth restru ffeiliau
+Dangos manylion ffeil yn y rhestr FTP
+Arddull anogwr enw defnyddiwr ar gyfer FTP
+Arddull anogwr cyfrinair ar gyfer FTP
+Defnyddiwch y proffil FTP cyntaf
+Ychwanegu cysylltiadau newydd i ddeialu cyflymder FTP
+Ceisiwch ddilysu tystysgrifau FTP diogel
+Dangos FTP MOTD ar gysylltiad
+Derbyniwch dystysgrifau FTP annilys bob amser
+Yn dangos manylion y ffeil FTP tra'n rhestru cyfeiriaduron o bell.
+Yn defnyddio'r proffil FTP cyntaf i gysylltu â FTP.
+Os caiff ei alluogi, mae'n ychwanegu cysylltiad newydd i'r deialu cyflymder FTP.
+Yn ceisio dilysu'r tystysgrifau FTP. Ni argymhellir ei ddiffodd.
+Yn dangos neges FTP y dydd wrth fewngofnodi.
+Derbyniwch dystysgrifau FTP annilys bob amser. Ni argymhellir ei droi ymlaen gan y gallai achosi risgiau diogelwch.
+Arddull anogwr enw defnyddiwr ar gyfer post
+Arddull anogwr cyfrinair ar gyfer post
+Arddull anogwr IMAP ar gyfer post
+Arddull prydlon SMTP ar gyfer post
+Canfod gweinydd post yn awtomatig
+Galluogi dadfygio post
+Hysbysu ar gyfer negeseuon e-bost newydd
+Arddull anogwr cyfrinair GPG ar gyfer post
+Anfon cyfwng ping IMAP
+Anfon cyfwng ping SMTP
+Fformat testun post
+Ysgrifennwch sut rydych chi am i'ch anogwr gweinydd IMAP fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Ysgrifennwch sut rydych chi am i'ch anogwr gweinydd SMTP fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Canfod y gweinydd post yn awtomatig yn seiliedig ar y cyfeiriad a roddwyd.
+Yn galluogi dadfygio gweinydd post.
+Yn eich hysbysu am unrhyw negeseuon e-bost newydd.
+Ysgrifennwch sut rydych chi am i'ch anogwr cyfrinair GPG fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Sawl milieiliad i anfon y ping IMAP?
+Sawl milieiliad i anfon y ping SMTP?
+Yn rheoli sut y bydd testun y post yn cael ei ddangos.
+Testun plaen
+Testun wedi'i lifo
+Testun HTML
+Testun cyfoethog
+Testun cyfoethog cywasgedig
+Testun cyfoethog
+Cychwyn dadfygio o bell yn awtomatig wrth gychwyn
+Fformat neges dadfygio o bell
+Os ydych chi am i ddadfygio o bell gychwyn ar y cychwyn, galluogwch hwn.
+Yn pennu fformat y neges dadfygio o bell. {0} am enw, {1} am neges.
+Arddull URL porthiant RSS
+Adnewyddu porthiant RSS yn awtomatig
+Cyfnod porthiant RSS adnewyddu'n awtomatig
+Ysgrifennwch sut rydych chi am i'ch anogwr gweinydd porthiant RSS fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Sawl milieiliad i adnewyddu'r porthwr RSS?
+Dangos manylion ffeil yn rhestr SFTP
+Arddull anogwr enw defnyddiwr ar gyfer SFTP
+Ychwanegu cysylltiadau newydd i ddeialu cyflymder SFTP
+Yn dangos manylion y ffeil SFTP tra'n rhestru cyfeiriaduron o bell.
+Os caiff ei alluogi, mae'n ychwanegu cysylltiad newydd i'r deialu cyflymder SFTP.
+Goramser ping
+Dangos gwybodaeth addasydd helaeth
+Dangos gwybodaeth rhwydwaith cyffredinol
+Lawrlwytho testun canrannol
+Uwchlwytho testun canrannol
+Sawl milieiliad i aros cyn datgan terfyn amser?
+Yn argraffu'r wybodaeth addasydd helaeth, megis gwybodaeth pecyn.
+Yn dangos y wybodaeth gyffredinol am y rhwydwaith.
+Ysgrifennwch sut rydych chi am i'ch testun canrannol uwchlwytho fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu. {0} ar gyfer maint a uwchlwythwyd, {1} ar gyfer maint targed, {2} ar gyfer canran.
+Ysgrifennwch sut rydych chi am i'ch testun canrannol lawrlwytho fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu. {0} ar gyfer maint wedi'i lawrlwytho, {1} ar gyfer maint targed, {2} ar gyfer canran.
+Gofynnwch am gyfrinair ar ôl cloi
+Ar ôl cloi'r sgrin, gofynnwch am gyfrinair
+Isafswm lefel lliw coch
+Isafswm lefel lliw gwyrdd
+Isafswm lefel lliw glas
+Lefel lliw lleiaf
+Lefel lliw coch uchaf
+Uchafswm lefel lliw gwyrdd
+Lefel lliw glas uchaf
+Lefel lliw uchaf
+Isafswm lefel lliw coch. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Isafswm lefel lliw gwyrdd. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Isafswm lefel lliw glas. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Lefel lliw lleiaf. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255 am 255 o liwiau neu 16 am 16 lliw.
+Lefel lliw coch uchaf. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Uchafswm lefel lliw gwyrdd. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Lefel lliw glas uchaf. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255.
+Lefel lliw uchaf. Y gwerth lleiaf a dderbynnir yw 0 a'r gwerth mwyaf a dderbynnir yw 255 am 255 o liwiau neu 16 am 16 lliw.
+Lliw blaendir
+Cymeriad llinell
+Cymeriad i ffurfio llinell. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad cornel chwith uchaf am far oriau
+Cymeriad cornel chwith uchaf ar gyfer bar munudau
+Cymeriad cornel chwith uchaf ar gyfer bar eiliadau
+Cymeriad cornel dde uchaf ar gyfer bar oriau
+Cymeriad cornel dde uchaf ar gyfer bar munudau
+Cymeriad cornel dde uchaf ar gyfer bar eiliadau
+Cymeriad cornel chwith isaf am far oriau
+Cymeriad cornel chwith isaf ar gyfer bar munudau
+Cymeriad cornel chwith isaf ar gyfer bar eiliadau
+Cymeriad cornel dde isaf am far oriau
+Cymeriad cornel dde isaf ar gyfer bar munudau
+Cymeriad cornel dde isaf ar gyfer bar eiliadau
+Cymeriad ffrâm uchaf ar gyfer bar oriau
+Cymeriad ffrâm uchaf ar gyfer bar munudau
+Cymeriad ffrâm uchaf ar gyfer bar eiliadau
+Cymeriad ffrâm is ar gyfer bar oriau
+Cymeriad ffrâm is ar gyfer bar munudau
+Cymeriad ffrâm is ar gyfer bar eiliadau
+Gadael cymeriad ffrâm am far oriau
+Gadael cymeriad ffrâm am funudau bar
+Cymeriad ffrâm chwith ar gyfer bar eiliadau
+Cymeriad ffrâm dde ar gyfer bar oriau
+Cymeriad ffrâm dde ar gyfer bar munudau
+Cymeriad ffrâm dde ar gyfer bar eiliadau
+Testun gwybodaeth am oriau
+Testun gwybodaeth am gofnodion
+Testun gwybodaeth am eiliadau
+Isafswm lefel lliw coch am oriau
+Isafswm lefel lliw gwyrdd am oriau
+Isafswm lefel lliw glas am oriau
+Lefel lliw lleiaf am oriau
+Lefel lliw coch uchaf am oriau
+Uchafswm lefel lliw gwyrdd am oriau
+Lefel lliw glas uchaf am oriau
+Lefel lliw uchaf am oriau
+Isafswm lefel lliw coch am funudau
+Isafswm lefel lliw gwyrdd am funudau
+Isafswm lefel lliw glas am funudau
+Lefel lliw lleiaf am funudau
+Lefel lliw coch uchaf am funudau
+Uchafswm lefel lliw gwyrdd am funudau
+Lefel lliw glas uchaf am funudau
+Lefel lliw uchaf am funudau
+Isafswm lefel lliw coch am eiliadau
+Isafswm lefel lliw gwyrdd am eiliadau
+Isafswm lefel lliw glas am eiliadau
+Isafswm lefel lliw am eiliadau
+Lefel lliw coch uchaf am eiliadau
+Uchafswm lefel lliw gwyrdd am eiliadau
+Lefel lliw glas uchaf am eiliadau
+Lefel lliw uchaf am eiliadau
+Cymeriad sy'n debyg i'r gornel chwith uchaf. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad sy'n debyg i'r gornel chwith isaf. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad sy'n debyg i'r ffrâm uchaf. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad sy'n debyg i'r ffrâm isaf. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad sy'n debyg i'r ffrâm chwith. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Cymeriad sy'n debyg i'r ffrâm gywir. Gwnewch yn siŵr eich bod chi'n mewnbynnu un nod yn unig.
+Ysgrifennwch sut mae testun eich gwybodaeth ar gyfer yr awr gyfredol yn dangos. {0} am yr awr gyfredol y tu allan i 24 awr.
+Ysgrifennwch sut mae testun eich gwybodaeth ar gyfer y funud gyfredol yn dangos. {0} am funud gyfredol allan o 60 munud.
+Ysgrifennwch sut mae testun eich gwybodaeth ar gyfer yr eiliad gyfredol yn dangos. {0} am eiliad gyfredol allan o 60 eiliad.
+Lliw testun
+Cymeriad cornel chwith uchaf ar gyfer bar ramp
+Cymeriad cornel dde uchaf ar gyfer bar ramp
+Cymeriad cornel chwith isaf ar gyfer bar ramp
+Cymeriad cornel dde isaf ar gyfer bar ramp
+Cymeriad ffrâm uchaf ar gyfer bar ramp
+Cymeriad ffrâm is ar gyfer bar ramp
+Cymeriad ffrâm chwith ar gyfer bar ramp
+Cymeriad ffrâm dde ar gyfer bar ramp
+Isafswm lefel lliw coch ar gyfer lliw cychwyn
+Isafswm lefel lliw gwyrdd ar gyfer lliw cychwyn
+Isafswm lefel lliw glas ar gyfer lliw cychwyn
+Lefel lliw isaf ar gyfer lliw cychwyn
+Lefel lliw coch uchaf ar gyfer lliw cychwyn
+Lefel lliw gwyrdd uchaf ar gyfer lliw cychwyn
+Lefel lliw glas uchaf ar gyfer lliw cychwyn
+Lefel lliw uchaf ar gyfer lliw cychwyn
+Isafswm lefel lliw coch ar gyfer lliw diwedd
+Isafswm lefel lliw gwyrdd ar gyfer lliw terfynol
+Isafswm lefel lliw glas ar gyfer lliw diwedd
+Lefel lliw isaf ar gyfer lliw diwedd
+Lefel lliw coch uchaf ar gyfer lliw diwedd
+Lefel lliw gwyrdd uchaf ar gyfer lliw terfynol
+Lefel lliw glas uchaf ar gyfer lliw diwedd
+Lefel lliw uchaf ar gyfer lliw diwedd
+Isafswm nifer y Datryswr
+Uchafswm nifer y Datryswr
+Mewnbwn sioe Datryswr
+Cymeriad cornel chwith uchaf ar gyfer ffin hysbysu
+Cymeriad cornel dde uchaf ar gyfer ffin hysbysu
+Cymeriad cornel chwith isaf ar gyfer ffin hysbysu
+Cymeriad cornel dde isaf ar gyfer ffin hysbysu
+Cymeriad ffrâm uchaf ar gyfer ffin hysbysu
+Cymeriad ffrâm is ar gyfer ffin hysbysu
+Cymeriad ffrâm chwith ar gyfer ffin hysbysu
+Cymeriad ffrâm dde ar gyfer ffin hysbysu
+Arddull gwybodaeth tudalen â llaw
+A ddylid dangos yr hyn sydd wedi'i ysgrifennu yn yr anogwr mewnbwn.
+Beth yw'r nifer lleiaf i'w ddewis?
+Beth yw'r nifer uchaf i'w ddewis?
+Ysgrifennwch sut rydych chi am i'ch gwybodaeth manpage fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu. {0} ar gyfer teitl â llaw, {1} ar gyfer adolygu.
+Nid yw priodwedd {0} i'w gael ar unrhyw un o'r modiwlau.
+Mae'r adran hon yn rhestru'r gosodiadau arbedwr sgrin cyffredinol. Ar gyfer gosodiadau arbedwr sgrin unigol, gadewch Gosodiadau ac agorwch Gosodiadau Arbedwr Sgrin.
+Cychwyn olwyn lliw yn y modd lliw gwir
+Os caiff ei nodi, bydd yn arddangos baner cychwyn wedi'i haddasu gyda chefnogaeth dalfan. Gallwch ddefnyddio {0} ar gyfer fersiwn cnewyllyn.
+Pa amrywiad o'r iaith gyfredol sy'n cael ei ddefnyddio i newid enwau'r mis, calendr, ac ati?
+Yn actifadu'r gefnogaeth 255 lliw.
+Yn actifadu'r gefnogaeth wir liw.
+Gair wedi'i ddileu yn llinell {0}.
+Disodlwyd y llinyn yn llinell {0}.
+Wedi dileu rhif llinell {0}.
+Atal negeseuon anawdurdodedig
+Yn cuddio'r neges annifyr os yw'r swyddogaeth rhestru yn ceisio agor ffolder heb awdurdod
+Gwybodaeth gweinydd FTP
+Cyfeiriad gweinydd:
+Porth gweinydd:
+Math o weinydd:
+Math o system gweinydd:
+Modd amgryptio gweinydd:
+Math o gysylltiad data gweinydd:
+System gweinydd:
+Math o ddata lawrlwytho gweinydd:
+Math o ddata uwchlwytho gweinydd:
+Rhaid i chi gysylltu â gweinydd cyn cyflawni'r weithred hon.
+Rhowch ffeil bell i gael ei stwnsio.
+Rhowch gyfeiriadur o bell i gael ei stwnsio.
+Rhowch gyfeiriadur anghysbell.
+Stwnsio ailadroddus ar gyfer FTP
+A ddylid stwnsio cyfeiriadur yn rheolaidd. Sylwch nad yw pob gweinydd FTP yn cefnogi hynny.
+Cyflymder cloc prosesydd:
+Cefnogaeth prosesydd SSE2:
+Cyfanswm nifer y proseswyr:
+Maint disg:
+Cyfanswm cof:
+Cerdyn graffeg:
+Model disg:
+Uchafswm nifer yr e-byst mewn un dudalen
+Diwylliant yr iaith bresennol
+Os ydych yn siŵr eich bod wedi agor yr adran gywir, gwiriwch y neges hon:
+Gosodiadau Amrywiol...
+Gosodiadau Lliwiau...
+Yn gweithredu gorchymyn gweinydd FTP
+Rhowch gyfeiriad gweinydd POP3 a phorth (<cyfeiriad> neu <cyfeiriad>:[port]):
+Arddull prydlon POP3 ar gyfer post
+Anfonwch egwyl ping POP3
+Ysgrifennwch sut rydych chi am i'ch anogwr gweinydd POP3 fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu.
+Sawl milieiliad i anfon y ping POP3?
+Defnyddiwch POP3
+A ddylid defnyddio POP3. Bydd analluogi hyn yn defnyddio SMTP.
+Amgryptio llinyn gan ddefnyddio CRC32
+Yn agor y cleient post
+o bost a drosglwyddwyd...
+Mae gosodiadau'r arbedwr sgrin hon ar gael yma.
+Profi ymarferoldeb y bwrdd
+Yn golygu'r llinell benodedig
+Yn ychwanegu'r llinellau newydd ar ddiwedd y ffeil
+Rhowch y testun rydych chi am ei atodi i ddiwedd y ffeil. Pan fyddwch chi wedi gorffen, ysgrifennwch "EOF" ar ei linell ei hun.
+Enw Gwesteiwr
+Enw defnyddiwr
+Math o Ddata
+Amgodio
+Amgryptio
+Protocolau
+Dangos cynnydd trosglwyddo post
+Cynnydd trosglwyddo post
+Cynnydd trosglwyddo post (sengl)
+Os caiff ei alluogi, bydd y plisgyn post yn dangos sawl beit a drosglwyddir wrth lawrlwytho post.
+Ysgrifennwch sut rydych chi am i'ch arddull cynnydd trosglwyddo post fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu. {0} ar gyfer maint a drosglwyddwyd a {1} ar gyfer cyfanswm maint.
+Ysgrifennwch sut rydych chi am i'ch arddull cynnydd trosglwyddo post fod. Gadewch yn wag i ddefnyddio arddull rhagosodedig. Dalfannau yn cael eu dosrannu. {0} ar gyfer maint a drosglwyddwyd.
+Cylchfa Amser:
+Heddiw yw {0}
+Yr amser presennol yw {0}
+Lliw gwahanydd bwrdd
+Lliw pennawd bwrdd
+Tabl gwerth lliw
+Atebion posib
+Nid yw ffeil Mod wedi'i nodi.
+Ceisio gosod mod sydd eisoes wedi'i osod. Wrthi'n diweddaru'r mod...
+Methodd y gosodiad am
+Mae'r ffeil mod a ddarperir yn anghydnaws.
+Methodd dadosod ar gyfer
+Yn agor URL
+Argraffu rhifau llinellau ar argraffu cynnwys ffeil
+Yn gwneud i'r gorchymyn \"cat\" argraffu rhifau llinellau'r ffeil.
+Fersiwn wedi'i drawslythrennu
+Fersiwn wedi'i gyfieithu
+Yn diystyru pob hysbysiad
+Wrthi'n llwytho i lawr...
+Wrthi'n uwchlwytho...
+Dangos hysbysiad ar gyfer cynnydd llwytho i lawr
+Dangos hysbysiad ar gyfer cynnydd lanlwytho
+Yn dangos yr hysbysiad yn dangos y cynnydd llwytho i lawr.
+Yn dangos yr hysbysiad yn dangos y cynnydd llwytho i fyny.
+Gwirio i weld a yw'r llinyn cyfieithadwy yn bodoli yn yr adnoddau CA
+Llinyn a geir yn yr adnoddau lleoleiddio.
+Llinyn heb ei ganfod yn yr adnoddau lleoleiddio.
+Yn cychwyn y cnewyllyn yn dawel
+Yn chwistrellu gorchymyn i gychwyn yn y mewngofnodi nesaf
+Yn cychwyn y cnewyllyn yn y modd diogel, gan analluogi pob mods
+Fel modd diogel, ond hefyd yn analluogi aml-ddefnyddiwr a rhywfaint o addasu
+Nid oedd digon o ddadleuon.
+Lliw cornel chwith uchaf ar gyfer bar ramp
+Lliw cornel dde uchaf ar gyfer bar ramp
+Lliw cornel chwith isaf ar gyfer bar ramp
+Lliw cornel dde isaf ar gyfer bar ramp
+Lliw ffrâm uchaf ar gyfer bar ramp
+Lliw ffrâm is ar gyfer bar ramp
+Lliw ffrâm chwith ar gyfer bar ramp
+Lliw ffrâm cywir ar gyfer bar ramp
+Defnyddiwch liwiau border ar gyfer bar ramp
+Defnyddiwch liwiau'r ffin ar gyfer y bar ramp. Os yw'n anabl, bydd yn cynhyrchu bar llwyd.
+Yn cychwyn y gragen HTTP
+Yn gadael cragen HTTP ac yn dychwelyd i'r cnewyllyn
+Yn gosod y safle HTTP. Rhaid iddo fod yn URI dilys.
+Yn cael yr ymateb gan y gweinydd HTTP gan ddefnyddio'r cais penodedig
+Yn dileu cynnwys o weinydd HTTP
+Roedd gwall yn y plisgyn HTTP:
+Neges HTTP: Nid yw'r gorchymyn y gofynnwyd amdano {0} wedi'i ganfod. Gweler 'help' am restr o orchmynion sydd ar gael a nodir ar gragen HTTP.
+Yn cael y llinyn o'r gweinydd HTTP gan ddefnyddio'r cais penodedig
+Cael {0}...
+Mae fformat URI y wefan yn annilys.
+Gosod safle i
+Nid oes angen ailgychwyn lliwiau, ond mae angen ailgychwyn y rhan fwyaf o'r gosodiadau.
+Dim cymorth ar gyfer dadl "{0}".
+Pwyswch A ar sylwadau casineb i ymddiheuro. Pwyswch T ar sylwadau cariad i ddiolch. Pwyswch Q i roi'r gorau iddi.
+Rydych chi wedi ymddiheuro i sylw casineb! Ardderchog!
+Ymddiheurodd i garu sylw. Ddim yn ddigon da.
+Rydych chi newydd ddiolch i'r casineb am y sylw casineb!
+Anhawster rhagosodedig ar gyfer SpeedPress
+Goramser bysellwasg ar gyfer SpeedPress
+Dewiswch yr anhawster sydd orau gennych.
+Sawl milieiliad i aros am y bysellwasg cyn y terfyn amser? (Mewn anhawster arferiad)
+Yn disodli gair neu ymadrodd ag un arall gan ddefnyddio ymadroddion rheolaidd
+Yn disodli gair neu ymadrodd ag un arall mewn llinell gan ddefnyddio ymadroddion rheolaidd
+Yn cwestiynu gair mewn llinell benodedig neu bob llinell gan ddefnyddio ymadroddion rheolaidd
+Dod o hyd i Gosodiad
+Ysgrifennwch beth ydych chi eisiau chwilio amdano.
+Does dim byd i'w ganfod. Gwnewch yn siŵr eich bod wedi ysgrifennu'r gosodiad yn gywir.
+Yn pacio ffeil leol i'r archif
+Methu pacio dim byd.
+Ateb disgrifiad
+Porthladd gwesteiwr
+I gael rhagor o wybodaeth am delerau ac amodau defnyddio'r meddalwedd hwn, ewch i
+Math allbwn dewis diofyn
+Yn gwirio'r holl osodiadau KS i weld a yw'r newidynnau wedi'u hysgrifennu'n gywir
+Mae gan y cofnodion cyfluniad hyn newidynnau neu gyfrifiadau annilys ac mae angen eu gosod:
+Ffeil {0} heb ei chanfod
+Yn creu arae amrywiol gyda'r gwerthoedd a ddarperir
+Ysgrifennwch rif y gosodiad i fynd iddo. Mae unrhyw gymeriad arall yn golygu mynd yn ôl.
+Yn gwirio'r holl rifau llinellau testun lleoleiddio i weld a ydyn nhw i gyd yn gyfartal
+Camgymhariad llinell yn
+Rhowch rif defnyddiwr.
+Cynnwys defnyddwyr dienw
+Cynnwys defnyddwyr anabl
+Yn cynnwys y defnyddwyr dienw yn y rhestr
+Yn cynnwys y defnyddwyr anabl yn y rhestr
+Trefnwch y rhestr
+Trefnu'r rhestr system ffeiliau yn broffesiynol.
+Yn darparu dewis dethol
+Gorchmynion Shell heb eu gweithredu !!!
+Dangoswch y pennawd RSS diweddaraf wrth fewngofnodi
+URL pennawd RSS
+Bob mewngofnodi, bydd yn dangos y pennawd RSS diweddaraf o'r URL pennawd a ddewiswyd.
+URL pennawd RSS i'w ddefnyddio wrth ddangos y pennawd diweddaraf. Dyma'ch hoff borthiant fel arfer.
+Y newyddion diweddaraf:
+Wedi methu cael y newyddion diweddaraf.
+Lliw opsiwn a ddewiswyd
+Dangos olion stac ar wall cnewyllyn
+Os oes unrhyw wall cnewyllyn, dewiswch a ddylid argraffu olrhain y pentwr i'r consol ai peidio.
+Gellir llwytho mod, ond gall y rhybuddion hyn effeithio ar y ffordd y mae'r mod yn gweithio:
+Gellir llwytho arbedwr sgrin, ond gall y rhybuddion hyn effeithio ar y ffordd y mae'r arbedwr sgrin yn gweithio:
+Cadw Gosodiadau Fel
+Llwytho Gosodiadau O
+Ble ydych chi am gadw'r gosodiadau cnewyllyn cyfredol?
+Methu â chadw gosodiadau cnewyllyn ar ben y ffeil bresennol.
+O ble ydych chi am lwytho'r gosodiadau cnewyllyn cyfredol?
+Gwirio i weld a yw'r tannau cyfieithadwy yn bodoli yn yr adnoddau CA
+Yn cyfuno'r ddwy ffeil testun neu fwy yn y ffeil allbwn.
+Wedi methu cyfuno ffeiliau.
+Terfyn amser nôl porthiant RSS
+Sawl milieiliad i aros cyn i borthiant RSS ddod i ben?
+Llenwch y blychau
+Ydyn ni'n tynnu llun y blwch yn ei gyfanrwydd neu ydyn ni'n tynnu llun y ffin yn unig?
+Oedi cam mewn milieiliadau
+Sawl milieiliad i aros cyn tynnu llun y cam nesaf?
+Ysbaid pydredd ramp nesaf
+Sawl milieiliad i aros cyn pydru un pen y ramp nesaf?
+Gwiriwch y cwota dadfygio
+Ydyn ni'n gwirio a oes angen i'r system ddadfygio wirio am gwota cyn ysgrifennu at y dadfygiwr?
+Sawl milieiliad gymerodd hi i gysgu mewn gwirionedd?
+Wedi methu ag ychwanegu digwyddiad.
+Wedi methu â dileu digwyddiad.
+Ni ddarparwyd digon o ddadleuon i ychwanegu digwyddiad.
+Ni ddarparwyd digon o ddadleuon i ddileu digwyddiad.
+Ni ddarparwyd digon o ddadleuon ar gyfer trin digwyddiadau.
+Wedi methu ag ychwanegu neu ddileu nodyn atgoffa.
+Dim digon o ddadleuon wedi'u darparu i ychwanegu neu ddileu nodyn atgoffa.
+Ni ddarparwyd digon o ddadleuon ar gyfer trin nodiadau atgoffa.
+Nodyn atgoffa di-deitl
+Digwyddiad di-deitl
+Nawr mae'n ddiwrnod digwyddiad!
+Peidiwch â cholli hwn!
+Gweithred annilys.
+Stopwats syml
+Cychwyn neu stopio
+Glin
+Ail gychwyn
+Amserydd syml
+Dechreuwch (ail)gyfrif i lawr
+Gosod cyfwng
+Nid yw terfyn amser a nodir yn rhifol.
+Nodwch y terfyn amser mewn milieiliadau
+Arbedwch bob digwyddiad a/neu nodyn atgoffa yn ddinistriol
+Os yw wedi'i alluogi, yn dileu pob digwyddiad a/neu nodyn atgoffa cyn cadw pob un ohonynt gan ddefnyddio'r gorchymyn calendr.
+Dilyswch ymdrechion ailgynnig ar gyfer trosglwyddiad FTP
+Goramser cysylltiad FTP
+Goramser cysylltiad data FTP
+Fersiynau FTP IP
+Sawl gwaith i wirio'r uwchlwythiad a'r llwytho i lawr a rhoi cynnig arall arni os bydd y dilysiad yn methu cyn i'r lawrlwythiad fethu yn ei gyfanrwydd?
+Sawl milieiliad i aros cyn terfyn amser cysylltiad FTP?
+Sawl milieiliad i aros cyn terfyn amser cysylltiad data FTP?
+Dewiswch y fersiwn o'r Protocol Rhyngrwyd y mae'r gweinydd FTP yn ei gefnogi ac y mae'r cleient FTP yn ei ddefnyddio.
+Ceisio cychwyn RPC tra ei fod eisoes wedi dechrau.
+Cymeriad cornel chwith uchaf ar gyfer olwyn lliw RGB
+Cymeriad cornel dde uchaf ar gyfer olwyn lliw RGB
+Cymeriad cornel chwith isaf ar gyfer olwyn lliw RGB
+Cymeriad cornel dde isaf ar gyfer olwyn lliw RGB
+Cymeriad ffrâm uchaf ar gyfer olwyn lliw RGB
+Cymeriad ffrâm is ar gyfer olwyn lliw RGB
+Cymeriad ffrâm chwith ar gyfer olwyn lliw RGB
+Cymeriad ffrâm iawn ar gyfer olwyn lliw RGB
+Yn dod o hyd i ffeil yn y cyfeiriadur penodedig neu yn y cyfeiriadur cyfredol
+Yn trosi'r terfyniadau llinell i fformat ar gyfer y platfform presennol neu i fformat arferol penodedig
+Cyfanswm maint yn y ffolder:
+Dangos cyfanswm maint yn y rhestr
+Os yw wedi'i alluogi, mae'n dangos cyfanswm maint y ffolder yn y rhestr, yn dibynnu ar sut i gyfrifo maint y ffolder yn ôl y ffurfweddiad.
+Rydych chi'n gyfoes!
+Fformatio JSON rhagosodedig ar gyfer plisgyn JSON
+Yn dewis y fformat JSON rhagosodedig (hardd neu finiog) i'r plisgyn JSON ei gadw.
+Wedi lawrlwytho'r diweddariad yn llwyddiannus!
+Dadlwythwch ddiweddariadau yn awtomatig
+Os oes unrhyw ddiweddariad, bydd y cnewyllyn yn ei lawrlwytho'n awtomatig.
+Radiws ffrwydrad tân gwyllt
+Sawl bloc (hyd at 10) yw radiws y ffrwydrad ar gyfer y tân gwyllt pan gaiff ei gynnau?
+Mae gan y gorchymyn hwn y switshis isod sy'n newid sut mae'n gweithio:
+Yn argraffu'r rhifau llinell sy'n dilyn y llinell sy'n cael ei hargraffu
+Yn atal argraffu'r rhifau llinell
+Defnyddiwch y fersiwn wedi'i drawslythrennu bob amser
+Defnyddiwch y fersiwn wedi'i chyfieithu bob amser
+Gorfodi newid iaith
+Nodwch y gall yr ateb gymryd mwy nag un nod
+Nodwch y gall yr ateb gymryd dim ond un nod
+Argraffwch y cwestiwn a'r atebion mewn un llinell
+Argraffwch y cwestiwn a'r atebion mewn dwy linell
+Argraffwch y cwestiwn a'r atebion yn y ffordd fodern
+Argraffwch y cwestiwn a'r atebion mewn tabl
+Yn dangos manylion y ffeil yn y rhestr
+Yn atal y negeseuon blin "gwrthodwyd caniatâd".
+Yn dangos yr holl barthau amser
+Yn dechrau'r gêm mewn anhawster hawdd
+Yn dechrau'r gêm mewn anhawster canolig
+Yn dechrau'r gêm mewn anhawster caled
+Yn dechrau'r gêm mewn anhawster caled iawn
+Yn dechrau'r gêm mewn anhawster arferiad. Sylwch y dylid ysgrifennu'r terfyn amser arferol mewn milieiliadau fel dadl.
+Yn dangos gwybodaeth y system
+Yn dangos y wybodaeth caledwedd
+Yn dangos y wybodaeth defnyddiwr
+Yn dangos neges y dydd
+Yn dangos neges y diwrnod ar ôl mewngofnodi
+Yn dangos yr holl wybodaeth
+Yn creu cyfeiriadur sy'n cynnwys cynnwys y ffeil ZIP
+Yn dangos yr holl ddinasoedd sydd ar gael
+Cywasgu cyflym
+Dim cywasgu
+Peidiwch â chreu cyfeiriadur sylfaenol yn yr archif
+Uned mewn ticiau
+Yn datgysylltu o'r gweinydd yn warthus
+Yn dangos bod y llwybr targed yn absoliwt
+Yn cadw'r ffeil JSON, gan ei harddu yn y broses
+Yn cadw'r ffeil JSON, gan ei lleihau yn y broses
+Yn cael yr arddull terfynu llinell o ffeil testun
+Yn clirio pob digwyddiad tanio
+Galluogi dadfygio digwyddiadau
+Yn galluogi dadfygio ar gyfer y system digwyddiad cnewyllyn
+Ffont figlet
+Ysgrifennwch ffont figlet sy'n cael ei gynnal gan y llyfrgell Figgle. Ymgynghorwch â dogfennaeth y llyfrgell am ragor o wybodaeth
+Wedi methu gosod iaith addasedig {0}.
+Nid yw'r ffeil metadata sydd ei hangen i osod yr iaith addasedig yn bodoli.
+Nid yw'r wybodaeth metadata sydd ei hangen i osod yr iaith bersonol yn darparu'r lleoleiddiadau angenrheidiol sydd eu hangen.
+Wedi methu â dadosod iaith addasedig {0}.
+Nid yw'r ffeil metadata sydd ei hangen i ddadosod yr iaith addasedig yn bodoli.
+Nid yw'r wybodaeth metadata sydd ei hangen i ddadosod yr iaith addasedig yn darparu'r lleoleiddiadau angenrheidiol sydd eu hangen.
+Nid yw hyd y Saesneg yn cyfateb i hyd y tocyn iaith a ddarperir.
+Mae'r iaith eisoes yn bodoli ac ni ellir ei throsysgrifo.
+Wedi methu â dadosod iaith addasedig. Mae'n debyg nad yw'n bodoli.
+Wedi methu gosod ieithoedd personol.
+Wedi methu â dadosod ieithoedd personol.
+Wedi methu â dadosod ieithoedd personol. Gweler yr eithriad mewnol am ragor o wybodaeth.
+Ysgrifennwch gyfrinair y gweinyddwr. Gwnewch yn siŵr nad ydych chi'n defnyddio'r cyfrif hwn oni bai eich bod chi'n gwybod yn iawn beth rydych chi'n ei wneud.
+Rhaid i chi ysgrifennu cyfrinair y gweinyddwr.
+Gwybodaeth am drwydded
+Rheoli eich ieithoedd
+Iaith heb ei chanfod neu mae gan y ffeil nodau annilys.
+Nid yw iaith wedi'i nodi.
+Mae rheoli iaith wedi'i analluogi yn y modd diogel.
+Enw byr iaith:
+Enw llawn yr iaith:
+Iaith trosglwyddadwy:
+Iaith bersonol:
+Baner groeso newydd
+Sgrîn sblash chwaethus
+Yn dangos y faner groeso newydd wedi'i rendro gan Figlet
+Yn galluogi'r sgrin sblash stylish wrth gychwyn. Sylwch y bydd yn analluogi anogwr dadl a phrawf cragen cyn-gist.
+Enw sblash
+Enw sblash o'r sblashes sydd ar gael ar waith yn y cnewyllyn.
+Cynhyrchwyd MOTD rhagosodedig.
+Cynhyrchwyd MAL rhagosodedig.
+Cychwyn cyfrif system
+Defnyddwyr wedi'u cychwyn
+Caniatadau wedi'u llwytho
+Croeso!
+Wrthi'n cychwyn y dadfygiwr o bell...
+Gwall cysylltiad dadfygiwr o bell
+Hysbysu ar wall cysylltiad dadfygio o bell
+Os caiff ei alluogi, bydd yn defnyddio'r system hysbysu i hysbysu'r gwesteiwr o wall cysylltiad dadfygio o bell. Fel arall, bydd yn defnyddio'r ysgrifen consol rhagosodedig.
+Ffont figlet ar gyfer amserydd
+Galluogi Figlet ar gyfer amserydd
+Os yw wedi'i alluogi, bydd yn defnyddio figlet ar gyfer amserydd. Sylwch fod angen sgrin consol fawr arno er mwyn gwneud yr amser yn iawn gyda Figlet wedi'i alluogi.
+Gwall wrth ddosrannu dadleuon llinell orchymyn cyn cychwyn: {0}
+Yn ailosod y cnewyllyn i osodiadau'r ffatri
+Yn osgoi canfod maint y consol
+Mae'n debyg eich bod yn osgoi canfod maint y consol. Efallai na fydd pethau'n gweithio'n iawn ar sgriniau bach.
+I gael profiad gwell, newidiwch faint ffenestr eich consol tra'n dal i fod ar y sgrin hon. Pwyswch unrhyw allwedd i barhau...
+Mae eich consol yn rhy fach i redeg yn iawn:
+Ffont ffilet baner
+Yn argraffu llinyn i'r consol gan ddefnyddio math o liw a phrint llinell gyda chefnogaeth Figlet
+Yn argraffu llinyn i'r consol gan ddefnyddio math o liw a phrint llinell gyda fformat a chefnogaeth Figlet
+Yn dileu neges yn barhaol
+Yn dileu pob neges gan y derbynnydd yn barhaol
+Dadwneud dileu neges
+Dadwneud dileu pob neges oddi wrth y derbynnydd
+Ni weithredir dadwneud dileu ar gyfer POP3.
+Dangoswch y gorchmynion sy'n cyfrif ar help
+Dangoswch y gorchmynion plisgyn sy'n cyfrif ar help
+Dangoswch y gorchmynion mod yn cyfrif ar help
+Dangoswch y cyfrif arallenwau ar help
+Yn dangos y gorchmynion yn cyfrif yn y rhestr gorchmynion, a reolir gan y tri switsh cyfrif sioe ar gyfer gwahanol fathau o orchmynion.
+Yn gweithredu gorchmynion unwaith y bydd mynegiadau UESH wedi'u bodloni
+Ni ddaethpwyd o hyd i'r cyflwr yn yr ymadrodd.
+Mae cyflwr {0} yn gofyn am {1} arg. Wedi cael {2}.
+Mae angen gosod y cyflwr yn y canol.
+Mae angen gosod y cyflwr yn y dechrau.
+Gwall wrth ddosrannu mynegiant oherwydd gwall cystrawen.
+Wedi methu bodloni'r amod. Mwy o wybodaeth yma:
+Cymeriad mwgwd cyfrinair
+Cymeriad sy'n cuddio'r cyfrinair. Gadewch yn wag am fwy o ddiogelwch.
+Yn gadael y gragen os yw'n rhedeg ar is-blisgyn
+Methu lladd y gragen fam!
+Methu allgofnodi o'r is-blisgyn.
+Ffeil heb ei nodi. Cragen yn gadael...
+Mae gosodiadau ar gyfer y sgrin sblash hon ar gael yma.
+Lliw bar cynnydd
+Yn agor gosodiadau'r arbedwr sgrin
+Yn agor y gosodiadau sblash
+Yn rhestru'r newidynnau UESH sydd ar gael
+Lleoliad testun cynnydd
+Dewiswch eich lleoliad testun cynnydd dewisol.
+Dim ond y rhifau y gallwch chi eu hysgrifennu.
+Pwyswch "q" i adael.
+Wrthi'n lawrlwytho enwau...
+Oherwydd anawsterau technegol, ni allwn restru priodweddau addaswyr ar systemau Unix.
+Yn galluogi modd dadfygio
+Awgrymiadau ar gyfer dadleuon
+Galluogi Modd Du a Gwyn
+Yn gwneud y disgo yn ddu a gwyn. Bydd yn brifo'ch llygaid yn fawr os yw'n rhy gyflym, felly nid yw'n cael ei argymell os ydych chi'n profi trawiad o ddelweddau cyflym.
+Mae'n debyg eich bod yn rhedeg fersiwn nas cefnogir. Mae'n ddoeth iawn peidio â defnyddio'r fersiwn hon.
+Llwytho Lliwiau Cyfredol
+Lliw opsiwn amgen
+Mae defnyddwyr yn cyfrif am sylwadau cariad neu gasineb
+Faint o ddefnyddwyr i fod yn yr ystafell sylwadau cariad neu gasineb?
+Rhestru'r ieithoedd sydd ar gael
+Ieithoedd sydd ar gael:
+Dadleuon llinell orchymyn:
+Dadleuon llinell orchymyn cyn cychwyn:
+Yn agor dogfennaeth mod API ar gyfer strwythur y cod ffynhonnell yn ei ffurf fwyaf cyfredol

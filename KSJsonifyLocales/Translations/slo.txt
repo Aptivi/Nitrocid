@@ -983,3 +983,675 @@ Stránku manuálu si prečítate stlačením ľubovoľného klávesu ...
 Táto stránka s manuálom potrebuje prácu pre:
 Manuálna stránka {0} nebola nájdená.
 Mod manuál
+Dostupné argumenty jadra:
+Ak ste skončili, stlačte "q".
+Viaceré argumenty jadra možno oddeliť čiarkami bez medzier, napríklad:
+Viaceré vložené príkazy možno oddeliť dvojbodkami s medzerami, napríklad:
+Požadovaný argument {0} sa nenašiel.
+Neopraviteľná chyba v argumente:
+Šifruje reťazec pomocou SHA512
+Šifruje reťazec pomocou SHA384
+Šifruje reťazec pomocou SHA256
+Zašifruje reťazec pomocou SHA1
+Zašifruje reťazec pomocou MD5
+kde bude builtinsaver
+Mod časť je o ničom.
+Zastavenie modov nie je povolené v núdzovom režime.
+Mod už bol spustený!
+Mod ešte nezačal!
+Použitie príkazov:
+Názov súboru časti:
+Cesta k súboru časti:
+Chyba pri pokuse o spustenie šetriča obrazovky:
+Neplatný typ cesty.
+Neplatný typ cesty jadra.
+Predchádzajúce spustenie zlyhalo
+Editor JSON ešte neotvoril prúd súborov.
+Vlastnosť v súbore JSON sa nenašla.
+Odstránená vlastnosť.
+Pridá novú vlastnosť na koniec súboru JSON
+Odstráni vlastnosť zo súboru JSON
+Ukončí prostredie JSON
+Opustí shell JSON bez uloženia zmien
+Uloží súbor JSON
+Otvorí shell JSON
+Vytlačí súbor JSON
+Ďalší interval rampy
+Aktivuje podporu 255 farieb pre Ramp.
+Aktivuje podporu skutočných farieb pre Ramp.
+Koľko milisekúnd čakať, kým sa vyplní ďalšia rampa?
+Farba nadpisu upozornenia
+Farba popisu oznámenia
+Farba priebehu upozornenia
+Farba upozornenia na zlyhanie
+Farba otázky
+Farba úspechu
+Používateľská farba dolára
+Farba hrotu
+Farba textu oddeľovača
+Farba oddeľovača
+Farba názvu zoznamu
+Vývojová výstražná farba
+Farba času fázy
+Farba pokroku
+Farba zadnej možnosti
+Nakresliť okraj upozornenia
+Prekrýva oznámenie s okrajom.
+Ak chcete aktualizovať mod na kompatibilnú verziu, kontaktujte predajcu modu.
+Farba okraja s nízkou prioritou
+Farba okraja so strednou prioritou
+Farba okraja s vysokou prioritou
+Odošle upozornenie o priebehu na testovanie prijímača
+Testuje farebné koliesko
+Zobrazuje miestny čas jadra
+Zobrazuje dátum miestneho jadra
+Zobrazuje dátum a čas miestneho jadra
+Zobrazuje čas jadra UTC
+Zobrazuje dátum jadra UTC
+Zobrazuje dátum a čas jadra UTC
+Cesta MOTD
+Cesta MAL
+Ktorý súbor je textový súbor MOTD? Napíšte absolútnu cestu k textovému súboru.
+Ktorý súbor je textový súbor MAL? Napíšte absolútnu cestu k textovému súboru.
+Mody na čiernej listine
+Napíšte názvy súborov modov, ktoré sa nespustia pri štarte. Keď skončíte, napíšte „q“. Napíšte znamienko mínus vedľa cesty na odstránenie existujúceho modu.
+Mod {0} je na čiernej listine.
+Znova načíta všetky mody
+Pridá mod na čiernu listinu
+Odstráni mod z čiernej listiny
+Čas a dátum v UTC: {0}
+Zadaný príkaz prostredia JSON sa nenašiel.
+Počas spúšťania zobraziť informácie o aplikácii
+Analyzujte argumenty príkazového riadka
+Zobraziť časy ukončenia etapy
+Spustite úpravy jadra pri zavádzaní systému
+Pred prihlásením zobraziť aktuálny čas
+Upozornite na akúkoľvek poruchu počas spúšťania
+Zobrazuje stručné informácie o aplikácii pri štarte.
+Pri zavádzaní analyzuje argumenty príkazového riadka.
+Ukazuje, koľko času trvalo jadru dokončenie fázy.
+Automaticky spustiť úpravy jadra pri zavádzaní systému.
+Zobrazuje aktuálny čas, časové pásmo a dátum pred prihlásením.
+Ak sa počas zavádzania jadra vyskytne menšia chyba, upozorní na to používateľa.
+Štýl výzvy používateľského mena
+Štýl výzvy na zadanie hesla
+Zobraziť MAL pri prihlásení
+Napíšte, ako chcete, aby bola vaša výzva na prihlásenie. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Napíšte, ako chcete, aby bola výzva na zadanie hesla. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Po zobrazení prihlasovacej obrazovky zobrazí správu dňa.
+Štýl výzvy na testovanie shellu
+Štýl výzvy JSON Shell
+Sonda vstrekla príkazy
+Skúša vložené príkazy na začiatku shellu jadra.
+Zobraziť podrobnosti súboru v zozname
+Zobrazuje krátke podrobnosti o súbore pri výpise súborov
+Zobraziť podrobnosti o súbore v zozname FTP
+Štýl výzvy používateľského mena pre FTP
+Štýl výzvy na zadanie hesla pre FTP
+Použite prvý FTP profil
+Pridajte nové pripojenia do rýchlej voľby FTP
+Skúste overiť zabezpečené FTP certifikáty
+Zobraziť FTP MOTD pri pripojení
+Vždy akceptujte neplatné FTP certifikáty
+Zobrazuje podrobnosti o súbore FTP pri vypisovaní vzdialených adresárov.
+Používa prvý profil FTP na pripojenie k FTP.
+Ak je povolené, pridá nové pripojenie do rýchlej voľby FTP.
+Pokúsi sa overiť certifikáty FTP. Vypnutie sa neodporúča.
+Zobrazuje správu FTP dňa pri prihlásení.
+Vždy akceptujte neplatné FTP certifikáty. Jeho zapnutie sa neodporúča, pretože môže predstavovať bezpečnostné riziko.
+Štýl výzvy používateľského mena pre poštu
+Štýl výzvy na zadanie hesla pre poštu
+Štýl výzvy IMAP pre poštu
+Štýl výzvy SMTP pre poštu
+Automaticky zistiť poštový server
+Povoliť ladenie pošty
+Upozorniť na nové e-mailové správy
+Štýl výzvy na zadanie hesla GPG pre poštu
+Interval odoslania IMAP ping
+Interval odoslania SMTP ping
+Formát textu pošty
+Napíšte, ako chcete, aby bola výzva na serveri IMAP. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Napíšte, ako chcete, aby bola výzva na serveri SMTP. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Automaticky zistiť poštový server na základe zadanej adresy.
+Umožňuje ladenie poštového servera.
+Upozorní vás na všetky nové e-mailové správy.
+Napíšte, ako chcete, aby bola výzva na zadanie hesla GPG. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Koľko milisekúnd sa má odoslať IMAP ping?
+Koľko milisekúnd odoslať SMTP ping?
+Určuje, ako sa bude zobrazovať text e-mailu.
+Obyčajný text
+Plynulý text
+HTML text
+Obohatený text
+Komprimovaný formátovaný text
+Bohatý text
+Automaticky spustiť vzdialené ladenie pri štarte
+Formát správy vzdialeného ladenia
+Ak chcete, aby sa vzdialené ladenie spustilo pri štarte, povoľte to.
+Určuje formát správy vzdialeného ladenia. {0} pre meno, {1} pre správu.
+Štýl výzvy URL informačného kanála RSS
+Automatické obnovenie RSS kanála
+Interval automatického obnovovania RSS kanála
+Napíšte, ako chcete, aby bola výzva na serveri informačného kanála RSS. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Koľko milisekúnd na obnovenie informačného kanála RSS?
+Zobraziť podrobnosti súboru v zozname SFTP
+Štýl výzvy používateľského mena pre SFTP
+Pridajte nové pripojenia do rýchlej voľby SFTP
+Zobrazuje podrobnosti o súbore SFTP pri uvádzaní vzdialených adresárov.
+Ak je povolené, pridá nové pripojenie do rýchlej voľby SFTP.
+Časový limit pingu vypršal
+Zobraziť rozsiahle informácie o adaptéri
+Zobraziť všeobecné informácie o sieti
+Stiahnite si percentuálny text
+Nahrajte percentuálny text
+Koľko milisekúnd čakať pred vyhlásením časového limitu?
+Vytlačí rozsiahle informácie o adaptéri, ako sú napríklad informácie o pakete.
+Zobrazuje všeobecné informácie o sieti.
+Napíšte, ako chcete, aby bol text s percentami nahrávania. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované. {0} pre odovzdanú veľkosť, {1} pre cieľovú veľkosť, {2} pre percento.
+Napíšte, ako chcete, aby bol text percenta stiahnutia. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované. {0} pre prevzatú veľkosť, {1} pre cieľovú veľkosť, {2} pre percento.
+Po uzamknutí si vyžiadajte heslo
+Po uzamknutí obrazovky požiadajte o heslo
+Minimálna úroveň červenej farby
+Minimálna úroveň zelenej farby
+Minimálna úroveň modrej farby
+Minimálna úroveň farby
+Maximálna úroveň červenej farby
+Maximálna úroveň zelenej farby
+Maximálna úroveň modrej farby
+Maximálna úroveň farby
+Minimálna úroveň červenej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Minimálna úroveň zelenej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Minimálna úroveň modrej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Minimálna úroveň farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255 pre 255 farieb alebo 16 pre 16 farieb.
+Maximálna úroveň červenej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Maximálna úroveň zelenej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Maximálna úroveň modrej farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255.
+Maximálna úroveň farby. Minimálna akceptovaná hodnota je 0 a maximálna akceptovaná hodnota je 255 pre 255 farieb alebo 16 pre 16 farieb.
+Farba popredia
+Riadkový znak
+Znak na vytvorenie čiary. Uistite sa, že ste zadali iba jeden znak.
+Znak v ľavom hornom rohu pre lištu hodín
+Znak v ľavom hornom rohu pre lištu minút
+Znak v ľavom hornom rohu pre sekundový pruh
+Znak v pravom hornom rohu pre lištu hodín
+Znak v pravom hornom rohu pre lištu minút
+Znak v pravom hornom rohu pre sekundovú lištu
+Znak v ľavom dolnom rohu pre panel hodín
+Znak v ľavom dolnom rohu pre lištu minút
+Znak v ľavom dolnom rohu pre sekundovú lištu
+Znak v pravom dolnom rohu pre lištu hodín
+Znak v pravom dolnom rohu pre lištu minút
+Znak v pravom dolnom rohu pre sekundovú lištu
+Znak horného rámu pre lištu hodín
+Znak horného rámu pre pruh minút
+Znak horného rámu pre sekundový pruh
+Znak nižšieho rámca pre panel hodín
+Znak nižšieho rámca pre pruh minút
+Znak nižšieho rámca pre sekundový pruh
+Znak ľavého rámu pre panel hodín
+Znak ľavého rámu pre pruh minút
+Znak ľavého rámu pre sekundový pruh
+Znak pravého rámu pre panel hodín
+Znak pravého rámu pre pruh minút
+Znak pravého rámu pre sekundový pruh
+Informačný text na hodiny
+Informačný text na minúty
+Informačný text na sekundy
+Minimálna úroveň červenej farby na hodiny
+Minimálna úroveň zelenej farby na hodiny
+Minimálna úroveň modrej farby na hodiny
+Minimálna úroveň farby na hodiny
+Maximálna úroveň červenej farby na hodiny
+Maximálna úroveň zelenej farby na hodiny
+Maximálna úroveň modrej farby na hodiny
+Maximálna úroveň farby na hodiny
+Minimálna úroveň červenej farby na minúty
+Minimálna úroveň zelenej farby na minúty
+Minimálna úroveň modrej farby na minúty
+Minimálna úroveň farby na minúty
+Maximálna úroveň červenej farby na minúty
+Maximálna úroveň zelenej farby na minúty
+Maximálna úroveň modrej farby na minúty
+Maximálna úroveň farby na minúty
+Minimálna úroveň červenej farby na sekundy
+Minimálna úroveň zelenej farby na niekoľko sekúnd
+Minimálna úroveň modrej farby na niekoľko sekúnd
+Minimálna úroveň farby na sekundy
+Maximálna úroveň červenej farby na sekundy
+Maximálna úroveň zelenej farby na niekoľko sekúnd
+Maximálna úroveň modrej farby na sekundy
+Maximálna úroveň farby na sekundy
+Postava, ktorá pripomína ľavý horný roh. Uistite sa, že ste zadali iba jeden znak.
+Postava, ktorá pripomína ľavý dolný roh. Uistite sa, že ste zadali iba jeden znak.
+Postava, ktorá pripomína horný rám. Uistite sa, že ste zadali iba jeden znak.
+Postava, ktorá pripomína spodný rám. Uistite sa, že ste zadali iba jeden znak.
+Postava, ktorá pripomína ľavý rám. Uistite sa, že ste zadali iba jeden znak.
+Postava, ktorá pripomína správny rám. Uistite sa, že ste zadali iba jeden znak.
+Napíšte, ako sa zobrazuje informačný text pre aktuálnu hodinu. {0} za aktuálnu hodinu z 24 hodín.
+Napíšte, ako sa zobrazuje informačný text pre aktuálnu minútu. {0} za aktuálnu minútu zo 60 minút.
+Napíšte, ako sa zobrazuje váš informačný text pre aktuálnu sekundu. {0} za aktuálnu sekundu zo 60 sekúnd.
+Farba textu
+Znak ľavého horného rohu pre lištu rampy
+Znak v pravom hornom rohu pre lištu rampy
+Znak v ľavom dolnom rohu pre lištu rampy
+Znak v pravom dolnom rohu pre lištu rampy
+Znak horného rámu pre rampu
+Znak spodného rámu pre rampu
+Znak ľavého rámu pre lištu rampy
+Pravý znak rámu pre rampu
+Minimálna úroveň červenej farby pre počiatočnú farbu
+Minimálna úroveň zelenej farby pre počiatočnú farbu
+Minimálna úroveň modrej farby pre počiatočnú farbu
+Minimálna úroveň farby pre počiatočnú farbu
+Maximálna úroveň červenej farby pre počiatočnú farbu
+Maximálna úroveň zelenej farby pre počiatočnú farbu
+Maximálna úroveň modrej farby pre počiatočnú farbu
+Maximálna úroveň farby pre počiatočnú farbu
+Minimálna úroveň červenej farby pre koncovú farbu
+Minimálna úroveň zelenej farby pre konečnú farbu
+Minimálna úroveň modrej farby pre koncovú farbu
+Minimálna úroveň farby pre konečnú farbu
+Maximálna úroveň červenej farby pre koncovú farbu
+Maximálna úroveň zelenej farby pre koncovú farbu
+Maximálna úroveň modrej farby pre koncovú farbu
+Maximálna úroveň farby pre konečnú farbu
+Minimálny počet riešiteľov
+Maximálny počet riešiteľov
+Zobraziť vstup riešiteľa
+Znak v ľavom hornom rohu pre okraj upozornenia
+Znak v pravom hornom rohu pre okraj upozornenia
+Znak v ľavom dolnom rohu pre okraj upozornenia
+Znak v pravom dolnom rohu pre okraj upozornenia
+Znak horného rámčeka pre okraj upozornenia
+Znak nižšieho rámca pre okraj upozornenia
+Znak ľavého rámčeka pre okraj upozornenia
+Znak pravého rámčeka pre okraj upozornenia
+Štýl informácií o manuálnej stránke
+Či sa má zobraziť, čo je napísané vo vstupnej výzve.
+Aký je minimálny počet na výber?
+Aký je maximálny počet na výber?
+Napíšte, ako chcete, aby boli informácie o vašej manuálovej stránke. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované. {0} pre názov manuálu, {1} pre revíziu.
+Vlastnosť {0} sa nenachádza v žiadnom z modulov.
+V tejto časti sú uvedené všeobecné nastavenia šetriča obrazovky. Pre individuálne nastavenia šetriča obrazovky ukončite Nastavenia a otvorte Nastavenia šetriča obrazovky.
+Spustite farebné koliesko v režime skutočných farieb
+Ak je zadaný, zobrazí sa prispôsobený banner pri spustení s podporou zástupných symbolov. Pre verziu jadra môžete použiť {0}.
+Ktorý variant aktuálneho jazyka sa používa na zmenu názvov mesiacov, kalendára atď.?
+Aktivuje podporu 255 farieb.
+Aktivuje podporu skutočných farieb.
+Slovo bolo odstránené v riadku {0}.
+Reťazec nahradený v riadku {0}.
+Odstránené číslo riadku {0}.
+Potlačiť neoprávnené správy
+Skryje nepríjemnú správu, ak sa funkcia výpisu pokúsi otvoriť neoprávnený priečinok
+Informácie o serveri FTP
+Adresa servera:
+Port servera:
+Typ servera:
+Typ serverového systému:
+Režim šifrovania servera:
+Typ dátového pripojenia servera:
+Serverový systém:
+Typ údajov na stiahnutie servera:
+Typ údajov nahrávania servera:
+Pred vykonaním tejto operácie sa musíte pripojiť k serveru.
+Zadajte vzdialený súbor, ktorý sa má hašovať.
+Zadajte vzdialený adresár, ktorý sa má hašovať.
+Zadajte vzdialený adresár.
+Rekurzívne hashovanie pre FTP
+Či sa má adresár rekurzívne hashovať. Upozorňujeme, že nie všetky servery FTP to podporujú.
+Frekvencia procesora:
+Podpora procesora SSE2:
+Celkový počet procesorov:
+Veľkosť disku:
+Celková pamäť:
+Grafická karta:
+Model disku:
+Maximálny počet e-mailov na jednej stránke
+Kultúra súčasného jazyka
+Ak ste si istí, že ste otvorili správnu sekciu, pozrite si túto správu:
+Rôzne nastavenia...
+Nastavenia farieb...
+Vykoná príkaz FTP servera
+Zadajte adresu servera POP3 a port (<adresa> alebo <adresa>:[port]):
+Štýl výzvy POP3 pre poštu
+Interval odoslania POP3 pingu
+Napíšte, ako chcete, aby bola výzva na serveri POP3. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované.
+Koľko milisekúnd sa má odoslať POP3 ping?
+Použite POP3
+Či použiť POP3. Ak to zakážete, použije sa SMTP.
+Zašifruje reťazec pomocou CRC32
+Otvorí poštového klienta
+prenesená pošta...
+Nastavenia tohto šetriča obrazovky sú k dispozícii tu.
+Testuje funkčnosť tabuľky
+Upraví zadaný riadok
+Pridá nové riadky na koniec súboru
+Zadajte text, ktorý chcete pridať na koniec súboru. Keď skončíte, napíšte „EOF“ na samostatný riadok.
+Meno hosťa
+Používateľské meno
+Dátový typ
+Kódovanie
+Šifrovanie
+Protokoly
+Zobraziť priebeh prenosu pošty
+Priebeh prenosu pošty
+Priebeh prenosu pošty (jediný)
+Ak je povolená, e-mailový shell zobrazí, koľko bajtov sa prenieslo pri sťahovaní pošty.
+Napíšte, aký chcete mať štýl priebehu prenosu pošty. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované. {0} pre prenesenú veľkosť a {1} pre celkovú veľkosť.
+Napíšte, aký chcete mať štýl priebehu prenosu pošty. Ak chcete použiť predvolený štýl, nechajte pole prázdne. Zástupné symboly sú analyzované. {0} pre prenesenú veľkosť.
+Časové pásmo:
+Dnes je {0}
+Aktuálny čas je {0}
+Farba oddeľovača tabuľky
+Farba hlavičky tabuľky
+Farba tabuľkovej hodnoty
+Možné odpovede
+Mod súbor nie je zadaný.
+Pokúšam sa nainštalovať už nainštalovaný mod. Aktualizuje sa mod...
+Inštalácia zlyhala pre
+Poskytnutý súbor mod je nekompatibilný.
+Odinštalovanie zlyhalo pre
+Otvorí adresu URL
+Vytlačte čísla riadkov na obsah tlačového súboru
+Spôsobí, že príkaz \"cat\" vytlačí čísla riadkov súboru.
+Prepísaná verzia
+Preložená verzia
+Zatvorí všetky upozornenia
+Sťahuje sa...
+Nahráva sa...
+Zobraziť upozornenie na priebeh sťahovania
+Zobraziť upozornenie na priebeh nahrávania
+Zobrazuje upozornenie o priebehu sťahovania.
+Zobrazuje upozornenie o priebehu nahrávania.
+Skontroluje, či preložiteľný reťazec existuje v zdrojoch KS
+Reťazec nájdený v zdrojoch lokalizácie.
+Reťazec sa nenašiel v zdrojoch lokalizácie.
+Spustí jadro ticho
+Vloží príkaz na spustenie pri nasledujúcom prihlásení
+Spustí jadro v núdzovom režime a deaktivuje všetky mody
+Rovnako ako núdzový režim, ale tiež zakáže viacerých používateľov a niektoré prispôsobenia
+Nebolo dosť argumentov.
+Farba ľavého horného rohu lišty rampy
+Farba pravého horného rohu lišty rampy
+Farba ľavého dolného rohu lišty rampy
+Farba pravého dolného rohu lišty rampy
+Farba horného rámu pre rampu
+Spodná farba rámu pre rampu
+Farba ľavého rámu pre rampu
+Pravá farba rámu pre rampu
+Použite farby okrajov pre lištu rampy
+Použite farby okrajov pre lištu rampy. Ak je zakázané, vygeneruje sa sivý pruh.
+Spustí prostredie HTTP
+Opustí shell HTTP a vráti sa do jadra
+Nastaví web HTTP. Musí to byť platný identifikátor URI.
+Získa odpoveď zo servera HTTP pomocou zadanej požiadavky
+Odstráni obsah zo servera HTTP
+V prostredí HTTP sa vyskytla chyba:
+Správa HTTP: Požadovaný príkaz {0} sa nenašiel. Pozrite si 'help' pre zoznam dostupných príkazov špecifikovaných v HTTP shell.
+Získa reťazec zo servera HTTP pomocou zadanej požiadavky
+Získava sa {0}...
+Formát URI stránky je neplatný.
+Nastavenie stránky na
+Farby nevyžadujú reštart, ale väčšina nastavení vyžaduje reštart.
+Žiadna pomoc pre argument „{0}“.
+Ak sa chcete ospravedlniť, stlačte A pri nenávistných komentároch. Ak chcete poďakovať, stlačte T na milostných komentároch. Stlačte Q, aby ste hru ukončili.
+Ospravedlnili ste sa za nenávistný komentár! Výborne!
+Ospravedlnil som sa za komentár lásky. Nie je dosť dobrý.
+Práve ste poďakovali neprajníkovi za nenávistný komentár!
+Predvolená obtiažnosť pre SpeedPress
+Časový limit stlačenia klávesu pre SpeedPress
+Vyberte si preferovanú obtiažnosť.
+Koľko milisekúnd čakať na stlačenie klávesu pred vypršaním časového limitu? (Vo vlastnej náročnosti)
+Nahrádza slovo alebo frázu iným pomocou regulárnych výrazov
+Nahradí slovo alebo frázu iným v riadku pomocou regulárnych výrazov
+Dopytuje slovo v zadanom riadku alebo vo všetkých riadkoch pomocou regulárnych výrazov
+Nájdite nastavenie
+Napíšte, čo chcete hľadať.
+Nič sa nenašlo. Uistite sa, že ste nastavenie napísali správne.
+Zbalí lokálny súbor do archívu
+Nedá sa nič zbaliť.
+Popis odpovede
+Hostiteľský port
+Ďalšie informácie o podmienkach používania tohto softvéru nájdete na stránke
+Predvolený typ výstupu
+Skontroluje všetky nastavenia KS, či sú premenné zapísané správne
+Tieto konfiguračné položky majú neplatné premenné alebo enumerácie a je potrebné ich opraviť:
+Súbor {0} sa nenašiel
+Vytvorí pole premenných so zadanými hodnotami
+Napíšte číslo nastavenia, na ktoré chcete prejsť. Akýkoľvek iný znak znamená vrátiť sa späť.
+Skontroluje všetky čísla riadkov lokalizačného textu, aby zistil, či sú všetky rovnaké
+Nezhoda riadkov v
+Zadajte číslo používateľa.
+Zahrnúť anonymných používateľov
+Zahrnúť zdravotne postihnutých používateľov
+Zahŕňa anonymných používateľov v zozname
+Zahŕňa zdravotne postihnutých používateľov do zoznamu
+Zoradiť zoznam
+Profesionálne triedi zoznam súborových systémov.
+Poskytuje možnosť výberu
+Príkazy shellu nie sú implementované!!!
+Zobrazte najnovší nadpis RSS pri prihlásení
+Adresa URL nadpisu RSS
+Pri každom prihlásení sa zobrazí najnovší nadpis RSS z vybranej adresy URL nadpisu.
+Adresa URL nadpisu RSS, ktorá sa má použiť pri zobrazovaní najnovšieho nadpisu. Toto je zvyčajne vaše obľúbené krmivo.
+Najnovšie správy:
+Nepodarilo sa získať najnovšie správy.
+Farba zvolenej možnosti
+Zobraziť stopu zásobníka pri chybe jadra
+Ak sa vyskytne nejaká chyba jadra, vyberte, či sa má alebo nemá vytlačiť stopa zásobníka do konzoly.
+Mod je možné načítať, ale tieto upozornenia môžu ovplyvniť spôsob, akým mod funguje:
+Šetrič obrazovky je možné načítať, ale tieto upozornenia môžu ovplyvniť spôsob, akým šetrič obrazovky funguje:
+Uložiť nastavenia ako
+Načítať nastavenia z
+Kam chcete uložiť aktuálne nastavenia jadra?
+Nie je možné uložiť nastavenia jadra nad existujúci súbor.
+Odkiaľ chcete načítať aktuálne nastavenia jadra?
+Skontroluje, či v zdrojoch KS existujú preložiteľné reťazce
+Skombinuje dva alebo viac textových súborov do výstupného súboru.
+Súbory sa nepodarilo spojiť.
+Časový limit načítania informačného kanála RSS vypršal
+Koľko milisekúnd je potrebné počkať, kým uplynie časový limit načítania informačného kanála RSS?
+Vyplňte políčka
+Nakreslíme rámček ako celok alebo nakreslíme iba okraj?
+Oneskorenie fázy v milisekundách
+Koľko milisekúnd čakať pred nakreslením ďalšej fázy?
+Ďalší interval rotácie rampy
+Koľko milisekúnd je potrebné počkať, kým sa jeden koniec ďalšej rampy pokazí?
+Skontrolujte kvótu ladenia
+Skontrolujeme, či ladiaci systém potrebuje skontrolovať kvótu pred zápisom do ladiaceho nástroja?
+Koľko milisekúnd skutočne trvalo zaspať?
+Pridanie udalosti zlyhalo.
+Udalosť sa nepodarilo odstrániť.
+Na pridanie udalosti nebol poskytnutý dostatok argumentov.
+Nebol poskytnutý dostatok argumentov na odstránenie udalosti.
+Nie je k dispozícii dostatok argumentov na manipuláciu s udalosťami.
+Pridanie alebo odstránenie pripomienky zlyhalo.
+Na pridanie alebo odstránenie pripomienky nebol poskytnutý dostatok argumentov.
+Na manipuláciu s pripomenutím nebol poskytnutý dostatok argumentov.
+Pripomenutie bez názvu
+Udalosť bez názvu
+Teraz je deň udalostí!
+Toto si nenechajte ujsť!
+Neplatná akcia.
+Jednoduché stopky
+Spustiť alebo zastaviť
+Lap
+Resetovať
+Jednoduchý časovač
+Začnite (znovu) odpočítavať
+Nastavte interval
+Uvedený časový limit nie je číselný.
+Zadajte časový limit v milisekundách
+Uložte všetky udalosti a / alebo pripomienky deštruktívne
+Ak je povolené, vymaže všetky udalosti a/alebo pripomienky pred ich uložením pomocou príkazu kalendára.
+Overte opakované pokusy o prenos FTP
+Časový limit pripojenia FTP vypršal
+Časový limit dátového pripojenia FTP vypršal
+FTP verzie IP
+Koľkokrát overiť nahrávanie a sťahovanie a zopakovať to, ak overenie zlyhá, kým sťahovanie zlyhá ako celok?
+Koľko milisekúnd je potrebné počkať, kým vyprší časový limit pripojenia FTP?
+Koľko milisekúnd je potrebné počkať, kým vyprší časový limit dátového pripojenia FTP?
+Vyberte verziu internetového protokolu, ktorú FTP server podporuje a ktorú FTP klient používa.
+Pokúšate sa spustiť RPC, kým už je spustené.
+Znak v ľavom hornom rohu pre farebné koliesko RGB
+Znak v pravom hornom rohu pre farebné koliesko RGB
+Znak v ľavom dolnom rohu pre farebné koliesko RGB
+Znak v pravom dolnom rohu pre farebné koliesko RGB
+Znak horného rámu pre farebné koliesko RGB
+Znak nižšieho rámu pre farebné koliesko RGB
+Znak ľavého rámu pre farebné koliesko RGB
+Pravý znak rámu pre farebné koliesko RGB
+Nájde súbor v zadanom adresári alebo v aktuálnom adresári
+Konvertuje konce riadkov na formát pre aktuálnu platformu alebo na určený vlastný formát
+Celková veľkosť v priečinku:
+Zobraziť celkovú veľkosť v zozname
+Ak je povolené, zobrazuje celkovú veľkosť priečinka v zozname v závislosti od toho, ako vypočítať veľkosti priečinkov podľa konfigurácie.
+Máte aktuálne informácie!
+Predvolené formátovanie JSON pre prostredie JSON
+Vyberie predvolené formátovanie JSON (skrášlené alebo minimizované) pre prostredie JSON, ktoré sa má uložiť.
+Aktualizácia bola úspešne stiahnutá!
+Automaticky sťahovať aktualizácie
+Ak existuje nejaká aktualizácia, jadro ju automaticky stiahne.
+Polomer výbuchu ohňostroja
+Koľko blokov (do 10) je polomer výbuchu ohňostroja pri zapálení?
+Tento príkaz má nižšie uvedené prepínače, ktoré menia spôsob jeho fungovania:
+Vytlačí čísla riadkov, ktoré nasledujú za tlačeným riadkom
+Zabraňuje vytlačeniu čísel riadkov
+Vždy používajte prepísanú verziu
+Vždy používajte preloženú verziu
+Vynútiť prepínanie jazyka
+Označte, že odpoveď môže mať viac ako jeden znak
+Označte, že odpoveď môže mať iba jeden znak
+Vytlačte otázku a odpovede v jednom riadku
+Vytlačte otázku a odpovede v dvoch riadkoch
+Vytlačte si otázku a odpovede moderným spôsobom
+Vytlačte otázku a odpovede v tabuľke
+Zobrazuje podrobnosti súboru v zozname
+Potláča nepríjemné správy „povolenie odmietnuté“.
+Zobrazuje všetky časové pásma
+Spustí hru s ľahkou obtiažnosťou
+Spustí hru v strednej obtiažnosti
+Spustí hru s ťažkou obtiažnosťou
+Spustí hru vo veľmi ťažkej obtiažnosti
+Spustí hru vo vlastnej obtiažnosti. Upozorňujeme, že vlastný časový limit v milisekundách by sa mal zapísať ako argument.
+Zobrazuje systémové informácie
+Zobrazuje informácie o hardvéri
+Zobrazuje informácie o používateľovi
+Zobrazuje správu dňa
+Zobrazuje správu dňa po prihlásení
+Zobrazuje všetky informácie
+Vytvorí adresár, ktorý obsahuje obsah súboru ZIP
+Zobrazuje všetky dostupné mestá
+Rýchla kompresia
+Žiadna kompresia
+Nevytvárajte základný adresár v archíve
+Jednotka v kliešťoch
+Nehanebne sa odpojí od servera
+Označuje, že cieľová cesta je absolútna
+Uloží súbor JSON a zároveň ho skrášli
+Uloží súbor JSON, pričom ho v procese minifikuje
+Získa štýl ukončenia riadku z textového súboru
+Vymaže všetky spustené udalosti
+Povoliť ladenie udalostí
+Umožňuje ladenie systému udalostí jadra
+Figúrkové písmo
+Napíšte figlet font, ktorý je podporovaný knižnicou Figgle. Ďalšie informácie nájdete v dokumentácii knižnice
+Nepodarilo sa nainštalovať vlastný jazyk {0}.
+Súbor metadát potrebný na inštaláciu vlastného jazyka neexistuje.
+Informácie o metadátach potrebné na inštaláciu vlastného jazyka neposkytujú potrebné lokalizácie.
+Nepodarilo sa odinštalovať vlastný jazyk {0}.
+Súbor metadát potrebný na odinštalovanie vlastného jazyka neexistuje.
+Informácie o metadátach potrebné na odinštalovanie vlastného jazyka neposkytujú potrebné lokalizácie.
+Dĺžka anglického jazyka sa nezhoduje s dĺžkou poskytnutého jazykového tokenu.
+Jazyk už existuje a nie je možné ho prepísať.
+Nepodarilo sa odinštalovať vlastný jazyk. S najväčšou pravdepodobnosťou neexistuje.
+Nepodarilo sa nainštalovať vlastné jazyky.
+Nepodarilo sa odinštalovať vlastné jazyky.
+Nepodarilo sa odinštalovať vlastné jazyky. Viac informácií nájdete vo vnútornej výnimke.
+Napíšte heslo správcu. Uistite sa, že tento účet nepoužívate, pokiaľ naozaj neviete, čo robíte.
+Musíte napísať heslo správcu.
+Informácie o licencii
+Spravujte svoje jazyky
+Jazyk sa nenašiel alebo súbor obsahuje neplatné znaky.
+Jazyk nie je špecifikovaný.
+Správa jazykov je v núdzovom režime zakázaná.
+Krátky názov jazyka:
+Celý názov jazyka:
+Prepisovateľný jazyk:
+Vlastný jazyk:
+Nový uvítací banner
+Štýlová úvodná obrazovka
+Zobrazuje nový uvítací banner vykreslený figúrkou
+Umožňuje pri spustení štýlovú úvodnú obrazovku. Všimnite si prosím, že to deaktivuje argument prompt a otestuje shell pred zavedením.
+Úvodný názov
+Úvodný názov z dostupných splashov implementovaných v jadre.
+Vygenerované predvolené MOTD.
+Vygenerovaný predvolený MAL.
+Systémový účet inicializovaný
+Používatelia boli inicializovaní
+Načítané povolenia
+Vitajte!
+Spúšťa sa vzdialený debugger...
+Chyba pripojenia vzdialeného ladiaceho programu
+Upozorniť na chybu pripojenia vzdialeného ladenia
+Ak je povolené, použije systém upozornení na upozornenie hostiteľa na chybu pripojenia vzdialeného ladenia. V opačnom prípade sa použije predvolené písanie konzoly.
+Font Figlet pre časovač
+Povoliť Figlet pre časovač
+Ak je povolené, použije sa ako časovač figlet. Upozorňujeme, že na správne vykreslenie času so zapnutým Figletom potrebuje veľkú obrazovku konzoly.
+Chyba pri analýze argumentov príkazového riadka pred spustením: {0}
+Resetuje jadro na výrobné nastavenia
+Obchádza zisťovanie veľkosti konzoly
+Zdá sa, že obchádzate zisťovanie veľkosti konzoly. Na malých obrazovkách nemusia veci fungovať správne.
+Ak chcete získať lepší zážitok, zmeňte veľkosť okna konzoly, kým ste stále na tejto obrazovke. Pre pokračovanie stlačte ľubovolnú klávesu...
+Vaša konzola je príliš malá na to, aby fungovala správne:
+Bannerové figúrkové písmo
+Vytlačí reťazec na konzolu pomocou farebného typu a čiarovej tlače s podporou Figlet
+Vytlačí reťazec do konzoly pomocou farebného typu a čiarovej tlače s podporou formátu a Figlet
+Natrvalo odstráni správu
+Natrvalo odstráni všetky správy od príjemcu
+Zruší odstránenie správy
+Zruší odstránenie všetkých správ od príjemcu
+Späť vymazanie nie je implementované pre POP3.
+Ukážte, že príkazy počítajú s pomocou
+Ukážte príkazy shellu počítať s pomocou
+Ukážte, že príkazy mod počítajú s pomocou
+Ukážte, že aliasy počítajú s pomocou
+Zobrazuje počet príkazov v zozname príkazov, ovládaný tromi prepínačmi zobrazenia počtu pre rôzne druhy príkazov.
+Po splnení výrazov UESH vykoná príkazy
+Podmienka sa vo výraze nenašla.
+Podmienka {0} vyžaduje {1} argumentov. Mám {2}.
+Podmienku je potrebné umiestniť do stredu.
+Podmienku treba položiť už na začiatku.
+Chyba pri analýze výrazu v dôsledku chyby syntaxe.
+Nepodarilo sa splniť podmienku. Viac info tu:
+Znak masky hesla
+Znak, ktorý maskuje heslo. Pre väčšiu bezpečnosť nechajte prázdne.
+Opustí shell, ak je spustený v subshell
+Nemôže zabiť matku shell!
+Nedá sa odhlásiť z podshellu.
+Súbor nie je zadaný. Opúšťa sa shell...
+Nastavenia pre túto úvodnú obrazovku sú k dispozícii tu.
+Farba indikátora priebehu
+Otvorí nastavenia šetriča obrazovky
+Otvorí úvodné nastavenia
+Zobrazí zoznam dostupných premenných UESH
+Umiestnenie textu priebehu
+Vyberte preferované umiestnenie textu priebehu.
+Môžete písať iba čísla.
+Stlačením "q" opustíte.
+Sťahujú sa mená...
+Kvôli technickým problémom nemôžeme uviesť vlastnosti adaptéra na systémoch Unix.
+Povolí režim ladenia
+Výzvy k argumentom
+Povoliť čiernobiely režim
+Robí diskotéku čiernobielou. Ak to bude príliš rýchle, bude to naozaj bolieť oči, takže sa neodporúča, ak máte záchvaty rýchlych obrázkov.
+Zdá sa, že ste používali nepodporovanú verziu. Dôrazne sa odporúča nepoužívať túto verziu.
+Načítať aktuálne farby
+Alternatívna možnosť farby
+Používatelia sa počítajú za láskyplné alebo nenávistné komentáre
+Koľko používateľov má byť v miestnosti s komentármi o láske alebo nenávisti?
+Uvádza dostupné jazyky
+Dostupné jazyky:
+Argumenty príkazového riadka:
+Argumenty príkazového riadka pred spustením:
+Otvorí dokumentáciu mod API pre štruktúru zdrojového kódu v jeho najaktuálnejšej podobe

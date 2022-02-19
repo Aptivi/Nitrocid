@@ -983,3 +983,675 @@ Premeu qualsevol tecla per llegir la pàgina del manual ...
 Aquesta pàgina del manual necessita treballar per a:
 No s'ha trobat la pàgina del manual {0}.
 Manual de modificacions
+Arguments del nucli disponibles:
+Premeu "q" si heu acabat.
+Es poden separar diversos arguments del nucli amb comes sense espais, per exemple:
+Es poden separar diverses ordres injectades amb dos punts amb espais, per exemple:
+No s'ha trobat l'argument sol·licitat {0}.
+Error irrecuperable a l'argument:
+Xifra una cadena mitjançant SHA512
+Xifra una cadena mitjançant SHA384
+Xifra una cadena mitjançant SHA256
+Xifra una cadena mitjançant SHA1
+Xifra una cadena amb MD5
+on hi haurà l'estalvi integrat
+La part mod no és res.
+No es permet l'aturada de modificacions en mode segur.
+El mod ja ha començat!
+El mod encara no ha començat!
+Ús de comandaments:
+Nom del fitxer de la part:
+Ruta del fitxer de la part:
+Error en intentar iniciar l'estalvi de pantalla:
+Tipus de camí no vàlid.
+Tipus de camí del nucli no vàlid.
+L'arrencada anterior ha fallat
+L'editor JSON encara no ha obert un flux de fitxers.
+No s'ha trobat la propietat dins del fitxer JSON.
+S'ha eliminat la propietat.
+Afegeix una propietat nova al final del fitxer JSON
+Elimina una propietat del fitxer JSON
+Surt de l'intèrpret d'ordres JSON
+Surt de l'intèrpret d'ordres JSON sense desar els canvis
+Desa el fitxer JSON
+Obre l'intèrpret d'ordres JSON
+Imprimeix el fitxer JSON
+Següent interval de rampa
+Activa el suport de 255 colors per a Ramp.
+Activa el suport de color real per a Ramp.
+Quants mil·lisegons cal esperar abans d'omplir la següent rampa?
+Color del títol de la notificació
+Color de descripció de la notificació
+Color de progrés de la notificació
+Color d'error de notificació
+Pregunta color
+Color d'èxit
+Color dòlar d'usuari
+Color de punta
+Color del text del separador
+Color del separador
+Color del títol de la llista
+Color d'advertència de desenvolupament
+Color del temps de l'escenari
+Color de progrés
+Color de l'opció posterior
+Dibuixa la vora de notificació
+Cobreix la notificació amb la frontera.
+Poseu-vos en contacte amb el venedor del mod per actualitzar el mod a la versió compatible.
+Color de vora de baixa prioritat
+Color de la vora de prioritat mitjana
+Color de vora d'alta prioritat
+Envia una notificació de progrés per provar el receptor
+Prova la roda de colors
+Mostra l'hora del nucli local
+Mostra la data del nucli local
+Mostra la data i l'hora del nucli local
+Mostra l'hora del nucli UTC
+Mostra la data del nucli UTC
+Mostra la data i l'hora del nucli UTC
+Camí MOTD
+Camí MAL
+Quin fitxer és el fitxer de text MOTD? Escriu una ruta absoluta al fitxer de text.
+Quin fitxer és el fitxer de text MAL? Escriu una ruta absoluta al fitxer de text.
+Mods a la llista negra
+Escriu els noms de fitxer dels mods que no s'executaran a l'inici. Quan hagis acabat, escriu "q". Escriu un signe menys al costat del camí per eliminar un mod existent.
+El mod {0} està a la llista negra.
+Torna a carregar tots els mods
+Afegeix un mod a la llista negra
+Elimina un mod de la llista negra
+Hora i data en UTC: {0}
+No s'ha trobat l'ordre de shell JSON especificada.
+Mostra la informació de l'aplicació durant l'arrencada
+Analitza els arguments de la línia d'ordres
+Mostra els horaris de finalització de l'etapa
+Inicieu les modificacions del nucli a l'arrencada
+Mostra l'hora actual abans d'iniciar sessió
+Notificar qualsevol error durant l'arrencada
+Mostra informació breu sobre l'aplicació a l'arrencada.
+Analitza els arguments de la línia d'ordres a l'arrencada.
+Mostra quant de temps va trigar el nucli a acabar una etapa.
+Inicieu automàticament les modificacions del nucli a l'arrencada.
+Mostra l'hora, la zona horària i la data actuals abans d'iniciar la sessió.
+Si hi ha una falla menor durant l'arrencada del nucli, aviseu-ne l'usuari.
+Estil d'indicació del nom d'usuari
+Estil de sol·licitud de contrasenya
+Mostra MAL en iniciar sessió
+Escriviu com voleu que sigui el vostre missatge d'inici de sessió. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Escriu com vols que sigui la sol·licitud de contrasenya. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Mostra el missatge del dia després de mostrar la pantalla d'inici de sessió.
+Estil d'indicació de Shell de prova
+Estil d'indicació de Shell JSON
+Sonda d'ordres injectades
+Sondeja les ordres injectades a l'inici de l'intèrpret d'ordres del nucli.
+Mostra els detalls del fitxer a la llista
+Mostra els detalls breus del fitxer mentre s'enumeren els fitxers
+Mostra els detalls del fitxer a la llista FTP
+Estil de sol·licitud de nom d'usuari per a FTP
+Estil de sol·licitud de contrasenya per a FTP
+Utilitzeu el primer perfil FTP
+Afegiu connexions noves al marcatge ràpid FTP
+Intenteu validar els certificats FTP segurs
+Mostra FTP MOTD en connexió
+Accepteu sempre certificats FTP no vàlids
+Mostra els detalls del fitxer FTP mentre s'enumeren directoris remots.
+Utilitza el primer perfil FTP per connectar-se a FTP.
+Si està activat, afegeix una nova connexió al marcatge ràpid FTP.
+Intenta validar els certificats FTP. No es recomana apagar-lo.
+Mostra el missatge FTP del dia en iniciar sessió.
+Accepteu sempre certificats FTP no vàlids. No es recomana activar-lo, ja que pot comportar riscos per a la seguretat.
+Estil de sol·licitud del nom d'usuari per al correu
+Estil de sol·licitud de contrasenya per al correu
+Estil d'indicació IMAP per al correu
+Estil d'indicació SMTP per al correu
+Detecta automàticament el servidor de correu
+Activa la depuració de correu
+Notificar missatges de correu nous
+Estil de sol·licitud de contrasenya GPG per al correu
+Envia l'interval de ping IMAP
+Envia l'interval de ping SMTP
+Format de text de correu
+Escriviu com voleu que sigui la sol·licitud del vostre servidor IMAP. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Escriviu com voleu que sigui el missatge del vostre servidor SMTP. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Detecta automàticament el servidor de correu en funció de l'adreça proporcionada.
+Habilita la depuració del servidor de correu.
+Us avisa de qualsevol missatge de correu nou.
+Escriviu com voleu que sigui la vostra sol·licitud de contrasenya GPG. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Quants mil·lisegons per enviar el ping IMAP?
+Quants mil·lisegons per enviar el ping SMTP?
+Controla com es mostrarà el text del correu.
+Text simple
+Text fluït
+Text HTML
+Text enriquit
+Text ric comprimit
+Text ric
+Inicia automàticament la depuració remota a l'inici
+Format de missatge de depuració remota
+Si voleu que la depuració remota s'iniciï a l'arrencada, activeu-ho.
+Especifica el format del missatge de depuració remota. {0} per al nom, {1} per al missatge.
+Estil d'indicació de l'URL del canal RSS
+Actualització automàtica del canal RSS
+Interval d'actualització automàtica del canal RSS
+Escriviu com voleu que sigui el missatge del vostre servidor de fonts RSS. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Quants mil·lisegons per actualitzar el canal RSS?
+Mostra els detalls del fitxer a la llista SFTP
+Estil de sol·licitud de nom d'usuari per a SFTP
+Afegiu connexions noves al marcatge ràpid SFTP
+Mostra els detalls del fitxer SFTP mentre s'enumeren directoris remots.
+Si està activat, afegeix una connexió nova al marcatge ràpid SFTP.
+Temps d'espera de ping
+Mostra informació àmplia sobre l'adaptador
+Mostra informació general de la xarxa
+Descarrega el text percentual
+Penja text percentual
+Quants mil·lisegons cal esperar abans de declarar el temps d'espera?
+Imprimeix la informació extensa de l'adaptador, com ara la informació del paquet.
+Mostra la informació general sobre la xarxa.
+Escriu com vols que sigui el text del percentatge de càrrega. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició. {0} per a la mida penjada, {1} per a la mida objectiu, {2} per al percentatge.
+Escriu com vols que sigui el text del percentatge de baixada. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició. {0} per a la mida baixada, {1} per a la mida objectiu, {2} per al percentatge.
+Demaneu la contrasenya després del bloqueig
+Després de bloquejar la pantalla, demaneu la contrasenya
+Nivell mínim de color vermell
+Nivell mínim de color verd
+Nivell mínim de color blau
+Nivell de color mínim
+Nivell màxim de color vermell
+Nivell màxim de color verd
+Nivell màxim de color blau
+Nivell de color màxim
+Nivell mínim de color vermell. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell mínim de color verd. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell mínim de color blau. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell de color mínim. El valor mínim acceptat és 0 i el valor màxim acceptat és 255 per a 255 colors o 16 per a 16 colors.
+Nivell màxim de color vermell. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell màxim de color verd. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell màxim de color blau. El valor mínim acceptat és 0 i el valor màxim acceptat és 255.
+Nivell de color màxim. El valor mínim acceptat és 0 i el valor màxim acceptat és 255 per a 255 colors o 16 per a 16 colors.
+Color de primer pla
+Caràcter de línia
+Un personatge per formar una línia. Assegureu-vos d'introduir només un caràcter.
+Caràcter de la cantonada superior esquerra de la barra d'hores
+Caràcter de la cantonada superior esquerra per a la barra de minuts
+Caràcter de la cantonada superior esquerra per a la barra de segons
+Caràcter de la cantonada superior dreta de la barra d'hores
+Caràcter de la cantonada superior dreta per a la barra de minuts
+Caràcter de la cantonada superior dreta per a la barra de segons
+Caràcter de la cantonada inferior esquerra per a la barra d'hores
+Caràcter de la cantonada inferior esquerra per a la barra de minuts
+Caràcter de la cantonada inferior esquerra per a la barra de segons
+Caràcter de la cantonada inferior dreta de la barra d'hores
+Caràcter de la cantonada inferior dreta per a la barra de minuts
+Caràcter de la cantonada inferior dreta per a la barra de segons
+Caràcter del marc superior per a la barra d'hores
+Caràcter del marc superior per a la barra de minuts
+Caràcter del marc superior per a la barra de segons
+Caràcter de marc inferior per a la barra d'hores
+Caràcter de fotograma inferior per a la barra de minuts
+Caràcter de fotograma inferior per a la barra de segons
+Caràcter del marc esquerre per a la barra d'hores
+Caràcter del marc esquerre per a la barra de minuts
+Caràcter del marc esquerre per a la barra de segons
+Caràcter de marc dret per a la barra d'hores
+Caràcter de marc dret per a la barra de minuts
+Caràcter del marc dret per a la barra de segons
+Text informatiu per hores
+Text informatiu durant minuts
+Text informatiu durant segons
+Nivell mínim de color vermell durant hores
+Nivell mínim de color verd durant hores
+Nivell mínim de color blau durant hores
+Nivell de color mínim durant hores
+Nivell màxim de color vermell durant hores
+Nivell màxim de color verd durant hores
+Nivell màxim de color blau durant hores
+Nivell de color màxim durant hores
+Nivell mínim de color vermell durant minuts
+Nivell mínim de color verd durant minuts
+Nivell mínim de color blau durant minuts
+Nivell de color mínim durant minuts
+Nivell màxim de color vermell durant minuts
+Nivell màxim de color verd durant minuts
+Nivell màxim de color blau durant minuts
+Nivell de color màxim durant minuts
+Nivell mínim de color vermell durant segons
+Nivell mínim de color verd durant segons
+Nivell mínim de color blau durant segons
+Nivell de color mínim durant segons
+Nivell màxim de color vermell durant segons
+Nivell màxim de color verd durant segons
+Nivell màxim de color blau durant segons
+Nivell de color màxim durant segons
+Un personatge que s'assembla a la cantonada superior esquerra. Assegureu-vos d'introduir només un caràcter.
+Un personatge que s'assembla a la cantonada inferior esquerra. Assegureu-vos d'introduir només un caràcter.
+Un personatge que s'assembla al marc superior. Assegureu-vos d'introduir només un caràcter.
+Un personatge que s'assembla al marc inferior. Assegureu-vos d'introduir només un caràcter.
+Un personatge que s'assembla al marc esquerre. Assegureu-vos d'introduir només un caràcter.
+Un personatge que s'assembla al marc correcte. Assegureu-vos d'introduir només un caràcter.
+Escriu com es mostra el text informatiu de l'hora actual. {0} per a l'hora actual de les 24 hores.
+Escriu com es mostra el text informatiu del minut actual. {0} per al minut actual de 60 minuts.
+Escriu com es mostra el text informatiu del segon actual. {0} per al segon actual de 60 segons.
+Color del text
+Caràcter de la cantonada superior esquerra per a la barra de rampa
+Caràcter de la cantonada superior dreta per a la barra de rampa
+Caràcter de la cantonada inferior esquerra per a la barra de rampa
+Caràcter de la cantonada inferior dreta per a la barra de rampa
+Caràcter del marc superior per a la barra de rampa
+Caràcter de bastidor inferior per a la barra de rampa
+Caràcter de marc esquerre per a la barra de rampa
+Caràcter de marc dret per a la barra de rampa
+Nivell mínim de color vermell per al color inicial
+Nivell mínim de color verd per al color inicial
+Nivell mínim de color blau per al color inicial
+Nivell de color mínim per al color inicial
+Nivell màxim de color vermell per al color inicial
+Nivell màxim de color verd per al color inicial
+Nivell màxim de color blau per al color inicial
+Nivell de color màxim per al color inicial
+Nivell mínim de color vermell per al color final
+Nivell mínim de color verd per al color final
+Nivell mínim de color blau per al color final
+Nivell de color mínim per al color final
+Nivell màxim de color vermell per al color final
+Nivell màxim de color verd per al color final
+Nivell màxim de color blau per al color final
+Nivell de color màxim per al color final
+Nombre mínim del solucionador
+Nombre màxim de solucionador
+El solucionador mostra l'entrada
+Caràcter de la cantonada superior esquerra per a la vora de notificació
+Caràcter de la cantonada superior dreta per a la vora de notificació
+Caràcter de la cantonada inferior esquerra per a la vora de notificació
+Caràcter de la cantonada inferior dreta per a la vora de notificació
+Caràcter de marc superior per a la vora de notificació
+Caràcter de marc inferior per a la vora de notificació
+Caràcter de marc esquerre per a la vora de notificació
+Caràcter de marc dret per a la vora de notificació
+Estil d'informació de pàgina manual
+Indica si s'ha de mostrar el que està escrit a l'indicador d'entrada.
+Quin és el nombre mínim per triar?
+Quin és el nombre màxim per triar?
+Escriu com vols que sigui la informació de la teva pàgina de manual. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició. {0} per al títol del manual, {1} per a la revisió.
+La propietat {0} no es troba en cap dels mòduls.
+Aquesta secció mostra la configuració general de l'estalvi de pantalla. Per a la configuració individual de l'estalvi de pantalla, sortiu de la configuració i obriu la configuració de l'estalvi de pantalla.
+Inicieu la roda de colors en mode de color real
+Si s'especifica, mostrarà un bàner d'inici personalitzat amb suport de marcador de posició. Podeu utilitzar {0} per a la versió del nucli.
+Quina variant de l'idioma actual s'utilitza per canviar els noms dels mesos, el calendari, etc.?
+Activa el suport de 255 colors.
+Activa el suport de color real.
+S'ha suprimit la paraula a la línia {0}.
+S'ha substituït la cadena a la línia {0}.
+S'ha eliminat el número de línia {0}.
+Suprimeix missatges no autoritzats
+Amaga el missatge molest si la funció de llista intenta obrir una carpeta no autoritzada
+Informació del servidor FTP
+Adreça del servidor:
+Port del servidor:
+Tipus de servidor:
+Tipus de sistema de servidor:
+Mode de xifratge del servidor:
+Tipus de connexió de dades del servidor:
+Sistema servidor:
+Tipus de dades de baixada del servidor:
+Tipus de dades de càrrega del servidor:
+Us heu de connectar a un servidor abans de realitzar aquesta operació.
+Introduïu un fitxer remot que s'ha d'haver.
+Introduïu un directori remot per utilitzar la funció resum.
+Introduïu un directori remot.
+Hashing recursiu per a FTP
+Si s'ha de fer hash recursivament un directori. Tingueu en compte que no tots els servidors FTP ho admeten.
+Velocitat de rellotge del processador:
+Suport del processador SSE2:
+Nombre total de processadors:
+Mida del disc:
+Memòria total:
+Targeta gràfica:
+Model de disc:
+Nombre màxim de correus electrònics en una pàgina
+Cultura de la llengua actual
+Si esteu segur que heu obert la secció correcta, comproveu aquest missatge:
+Configuració diversa...
+Configuració de colors...
+Executa una ordre del servidor FTP
+Introduïu l'adreça i el port del servidor POP3 (<adreça> o <adreça>:[port]):
+Estil d'indicació POP3 per al correu
+Envia l'interval de ping POP3
+Escriviu com voleu que sigui el missatge del vostre servidor POP3. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició.
+Quants mil·lisegons per enviar el ping POP3?
+Utilitzeu POP3
+Si s'utilitza POP3. Si desactiveu això, utilitzarà SMTP.
+Xifra una cadena mitjançant CRC32
+Obre el client de correu
+de correu transferit...
+La configuració d'aquest salvapantalles està disponible aquí.
+Prova la funcionalitat de la taula
+Edita la línia especificada
+Afegeix les noves línies al final del fitxer
+Introduïu el text que voleu afegir al final del fitxer. Quan hàgiu acabat, escriviu "EOF" a la seva pròpia línia.
+Nom de l'amfitrió
+Nom d'usuari
+Tipus de dades
+Codificació
+Encriptació
+Protocols
+Mostra el progrés de la transferència de correu
+Progrés de la transferència de correu
+Progrés de la transferència de correu (únic)
+Si està activat, l'intèrpret d'ordres de correu mostrarà quants bytes s'han transmès en baixar el correu.
+Escriu com vols que sigui el teu estil de progrés de transferència de correu. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició. {0} per a la mida transferida i {1} per a la mida total.
+Escriu com vols que sigui el teu estil de progrés de transferència de correu. Deixa en blanc per utilitzar l'estil predeterminat. S'analitzen els marcadors de posició. {0} per a la mida transferida.
+Fus horari:
+Avui és {0}
+L'hora actual és {0}
+Color del separador de taula
+Color de la capçalera de la taula
+Color del valor de la taula
+Possibles respostes
+El fitxer de modificació no està especificat.
+S'està intentant instal·lar un mod ja instal·lat. S'està actualitzant el mod...
+La instal·lació ha fallat
+El fitxer mod proporcionat és incompatible.
+Ha fallat la desinstal·lació
+Obre un URL
+Imprimeix números de línia en el contingut del fitxer d'impressió
+Fa que l'ordre \"cat\" imprimeixi els números de línia del fitxer.
+Versió transliterada
+Versió traduïda
+Ignora totes les notificacions
+S'està baixant...
+S'està carregant...
+Mostra la notificació del progrés de la baixada
+Mostra la notificació del progrés de la càrrega
+Mostra la notificació que mostra el progrés de la descàrrega.
+Mostra la notificació que mostra el progrés de la càrrega.
+Comprova si la cadena traduïble existeix als recursos de KS
+S'ha trobat una cadena als recursos de localització.
+No s'ha trobat la cadena als recursos de localització.
+Inicia el nucli en silenci
+Injecta una ordre per iniciar-se al següent inici de sessió
+Inicia el nucli en mode segur, desactivant totes les modificacions
+Com el mode segur, però també desactiva el multiusuari i una mica de personalització
+No hi havia prou arguments.
+Color de la cantonada superior esquerra per a la barra de rampa
+Color de la cantonada superior dreta per a la barra de rampa
+Color de la cantonada inferior esquerra per a la barra de rampa
+Color de la cantonada inferior dreta per a la barra de rampa
+Color del marc superior per a la barra de rampa
+Color del marc inferior per a la barra de rampa
+Color del marc esquerre per a la barra de rampa
+Color del marc dret per a la barra de rampa
+Utilitzeu colors de vora per a la barra de rampa
+Utilitzeu els colors de la vora per a la barra de rampa. Si està desactivat, generarà una barra grisa.
+Inicia l'intèrpret d'ordres HTTP
+Surt de l'intèrpret d'ordres HTTP i torna al nucli
+Estableix el lloc HTTP. Ha de ser un URI vàlid.
+Obté la resposta del servidor HTTP mitjançant la sol·licitud especificada
+Suprimeix contingut del servidor HTTP
+Hi ha hagut un error a l'intèrpret d'ordres HTTP:
+Missatge HTTP: l'ordre sol·licitada {0} no s'ha trobat. Vegeu "ajuda" per obtenir una llista de les ordres disponibles especificades a l'intèrpret d'ordres HTTP.
+Obté la cadena del servidor HTTP mitjançant la sol·licitud especificada
+S'està rebent {0}...
+El format de l'URI del lloc no és vàlid.
+Configuració del lloc a
+Els colors no requereixen un reinici, però la majoria de la configuració requereix un reinici.
+No hi ha ajuda per a l'argument "{0}".
+Premeu A als comentaris d'odi per demanar disculpes. Premeu T als comentaris d'amor per donar les gràcies. Premeu Q per sortir del joc.
+T'has demanat disculpes per un comentari d'odi! Excel · lent!
+Es va disculpar pel comentari d'amor. No prou bo.
+Acabes d'agrair l'odiador pel comentari d'odi!
+Dificultat per defecte per a SpeedPress
+Temps d'espera de premsa de tecla per a SpeedPress
+Seleccioneu la vostra dificultat preferida.
+Quants mil·lisegons cal esperar que premeu la tecla abans del temps d'espera? (En dificultat personalitzada)
+Substitueix una paraula o frase per una altra utilitzant expressions regulars
+Substitueix una paraula o frase per una altra en una línia utilitzant expressions regulars
+Consulta una paraula en una línia especificada o totes les línies mitjançant expressions regulars
+Trobeu una configuració
+Escriu què vols cercar.
+No es troba res. Assegureu-vos que heu escrit la configuració correctament.
+Empaqueta un fitxer local a l'arxiu
+No puc empaquetar res.
+Resposta descripció
+Port amfitrió
+Per obtenir més informació sobre els termes i condicions d'ús d'aquest programari, visiteu
+Tipus de sortida per defecte
+Comprova tots els paràmetres de KS per veure si les variables estan escrites correctament
+Aquestes entrades de configuració tenen variables o enumeracions no vàlides i s'han de solucionar:
+No s'ha trobat el fitxer {0}
+Crea una matriu de variables amb els valors proporcionats
+Escriu el número de la configuració al qual vols anar. Qualsevol altre personatge vol dir tornar enrere.
+Comprova tots els números de línia de text de localització per veure si tots són iguals
+La línia no coincideix
+Introduïu un número d'usuari.
+Inclou usuaris anònims
+Inclou usuaris amb discapacitat
+Inclou els usuaris anònims a la llista
+Inclou els usuaris discapacitats a la llista
+Ordena la llista
+Ordena la llista del sistema de fitxers de manera professional.
+Proporciona una opció de selecció
+Les ordres de Shell no s'han implementat!!!
+Mostra el darrer títol RSS en iniciar sessió
+URL del títol RSS
+Cada inici de sessió, mostrarà el darrer títol RSS de l'URL del títol seleccionat.
+URL del títol RSS que s'utilitzarà quan es mostri el títol més recent. Normalment aquest és el vostre canal preferit.
+Últimes notícies:
+No s'han pogut rebre les últimes notícies.
+Color de l'opció seleccionada
+Mostra el seguiment de la pila a l'error del nucli
+Si hi ha algun error del nucli, trieu si voleu imprimir o no la traça de la pila a la consola.
+Es pot carregar la modificació, però aquests avisos poden afectar la manera com funciona:
+Es pot carregar l'estalvi de pantalla, però aquests advertiments poden afectar el funcionament de l'estalvi de pantalla:
+Desa la configuració com a
+Carrega la configuració de
+On voleu desar la configuració actual del nucli?
+No es pot desar la configuració del nucli a sobre del fitxer existent.
+Des d'on voleu carregar la configuració actual del nucli?
+Comprova si les cadenes traduïbles existeixen als recursos de KS
+Combina els dos fitxers de text o més al fitxer de sortida.
+No s'han pogut combinar els fitxers.
+Temps d'espera de recuperació del canal RSS
+Quants mil·lisegons cal esperar abans que el feed RSS arribi al temps d'espera?
+Ompliu les caixes
+Dibuixem la caixa com un tot o dibuixem només la vora?
+Retard d'etapa en mil·lisegons
+Quants mil·lisegons cal esperar abans de dibuixar la següent etapa?
+Següent interval de podridura de rampa
+Quants mil·lisegons cal esperar abans de podrir-se l'un dels extrems de la següent rampa?
+Comproveu la quota de depuració
+Comprovem si el sistema de depuració ha de comprovar la quota abans d'escriure al depurador?
+Quants mil·lisegons han trigat realment a dormir?
+No s'ha pogut afegir un esdeveniment.
+No s'ha pogut eliminar un esdeveniment.
+No s'han proporcionat prou arguments per afegir un esdeveniment.
+No s'han proporcionat prou arguments per eliminar un esdeveniment.
+No es proporcionen prou arguments per a la manipulació d'esdeveniments.
+No s'ha pogut afegir o eliminar un recordatori.
+No s'han proporcionat prou arguments per afegir o eliminar un recordatori.
+No es proporcionen prou arguments per a la manipulació dels recordatoris.
+Recordatori sense títol
+Esdeveniment sense títol
+Ara és un dia d'esdeveniments!
+No us perdeu això!
+Acció no vàlida.
+Un cronòmetre senzill
+Començar o aturar
+Volta
+Restableix
+Un simple temporitzador
+Comença (re)compte enrere
+Estableix l'interval
+El temps d'espera indicat no és numèric.
+Especifiqueu el temps d'espera en mil·lisegons
+Desa tots els esdeveniments i/o recordatoris de manera destructiva
+Si està activat, esborra tots els esdeveniments i/o recordatoris abans de desar-los tots amb l'ordre del calendari.
+Verifiqueu els intents de reintent de transmissió per FTP
+Temps d'espera de connexió FTP
+Temps d'espera de connexió de dades FTP
+Versions IP FTP
+Quantes vegades cal verificar la càrrega i la baixada i tornar-ho a provar si la verificació falla abans que la descàrrega falli en conjunt?
+Quants mil·lisegons cal esperar abans que s'acabi el temps d'espera de la connexió FTP?
+Quants mil·lisegons cal esperar abans que s'acabi el temps d'espera de la connexió de dades FTP?
+Trieu la versió del protocol d'Internet que admet el servidor FTP i que utilitza el client FTP.
+S'està intentant iniciar RPC mentre ja s'ha iniciat.
+Caràcter de la cantonada superior esquerra per a la roda de colors RGB
+Caràcter de la cantonada superior dreta per a la roda de colors RGB
+Caràcter de la cantonada inferior esquerra per a la roda de colors RGB
+Caràcter de la cantonada inferior dreta per a la roda de colors RGB
+Caràcter del marc superior per a la roda de colors RGB
+Caràcter del marc inferior per a la roda de colors RGB
+Caràcter del marc esquerre per a la roda de colors RGB
+Caràcter de marc dret per a la roda de colors RGB
+Troba un fitxer al directori especificat o al directori actual
+Converteix els finals de línia al format de la plataforma actual o al format personalitzat especificat
+Mida total de la carpeta:
+Mostra la mida total a la llista
+Si està activat, mostra la mida total de la carpeta a la llista, depenent de com es calculin les mides de la carpeta segons la configuració.
+Estàs al dia!
+Format JSON predeterminat per a l'intèrpret d'ordres JSON
+Selecciona el format JSON predeterminat (embellit o minificat) perquè l'intèrpret d'ordres JSON es desi.
+S'ha baixat l'actualització correctament!
+Descarregar actualitzacions automàticament
+Si hi ha alguna actualització, el nucli la baixarà automàticament.
+Radi d'explosió de focs artificials
+Quants blocs (fins a 10) té el radi d'explosió del foc artificial quan s'encén?
+Aquesta ordre té els interruptors següents que canvien el seu funcionament:
+Imprimeix els números de línia que segueixen la línia que s'imprimeix
+Impedeix la impressió dels números de línia
+Feu servir sempre la versió transliterada
+Feu servir sempre la versió traduïda
+Força el canvi d'idioma
+Indica que la resposta pot tenir més d'un caràcter
+Indica que la resposta només pot tenir un caràcter
+Imprimeix la pregunta i les respostes en una línia
+Imprimeix la pregunta i les respostes en dues línies
+Imprimeix la pregunta i les respostes de manera moderna
+Imprimeix la pregunta i les respostes en una taula
+Mostra els detalls del fitxer a la llista
+Suprimeix els molestos missatges de "permís denegat".
+Mostra totes les zones horàries
+Comença el joc en dificultat fàcil
+Comença el joc en dificultat mitjana
+Comença el joc en dificultat difícil
+Comença el joc en dificultat molt dura
+Comença el joc en dificultat personalitzada. Tingueu en compte que el temps d'espera personalitzat en mil·lisegons s'ha d'escriure com a argument.
+Mostra la informació del sistema
+Mostra la informació del maquinari
+Mostra la informació de l'usuari
+Mostra el missatge del dia
+Mostra el missatge del dia després de la sessió
+Mostra tota la informació
+Crea un directori que conté el contingut del fitxer ZIP
+Mostra totes les ciutats disponibles
+Compressió ràpida
+Sense compressió
+No creeu un directori base a l'arxiu
+Unitat en paparres
+Es desconnecta del servidor de manera vergonyós
+Indica que el camí objectiu és absolut
+Desa el fitxer JSON, embellint-lo en el procés
+Desa el fitxer JSON, minimitzant-lo en el procés
+Obté l'estil de final de línia del fitxer de text
+Esborra tots els esdeveniments disparats
+Activa la depuració d'esdeveniments
+Habilita la depuració del sistema d'esdeveniments del nucli
+Font Figlet
+Escriu un tipus de lletra figlet que sigui compatible amb la biblioteca Figgle. Consulteu la documentació de la biblioteca per a més informació
+No s'ha pogut instal·lar l'idioma personalitzat {0}.
+El fitxer de metadades necessari per instal·lar l'idioma personalitzat no existeix.
+La informació de metadades necessària per instal·lar l'idioma personalitzat no proporciona les localitzacions necessàries.
+No s'ha pogut desinstal·lar l'idioma personalitzat {0}.
+El fitxer de metadades necessari per desinstal·lar l'idioma personalitzat no existeix.
+La informació de metadades necessària per desinstal·lar l'idioma personalitzat no proporciona les localitzacions necessàries necessàries.
+La longitud de l'idioma anglès no coincideix amb la longitud del testimoni d'idioma proporcionat.
+L'idioma ja existeix i no es pot sobreescriure.
+No s'ha pogut desinstal·lar l'idioma personalitzat. El més probable és que no existeixi.
+No s'han pogut instal·lar els idiomes personalitzats.
+No s'han pogut desinstal·lar els idiomes personalitzats.
+No s'han pogut desinstal·lar els idiomes personalitzats. Consulteu l'excepció interna per obtenir més informació.
+Escriu la contrasenya de l'administrador. Assegureu-vos que no feu servir aquest compte tret que sàpigues realment què estàs fent.
+Heu d'escriure la contrasenya de l'administrador.
+Informació de la llicència
+Gestiona els teus idiomes
+No s'ha trobat l'idioma o el fitxer té caràcters no vàlids.
+L'idioma no està especificat.
+La gestió de l'idioma està desactivada en mode segur.
+Nom breu de la llengua:
+Nom complet de l'idioma:
+Idioma transliterable:
+Idioma personalitzat:
+Nou banner de benvinguda
+Elegant pantalla de presentació
+Mostra el nou bàner de benvinguda representat per Figlet
+Activa l'elegant pantalla de presentació a l'inici. Tingueu en compte que desactivarà l'indicador d'argument i el pre-arrencada de l'intèrpret d'ordres de prova.
+Nom de Splash
+Nom de splash de les splashes disponibles implementades al nucli.
+MOTD predeterminat generat.
+MAL predeterminat generat.
+S'ha inicialitzat el compte del sistema
+Usuaris inicialitzats
+Permisos carregats
+Benvingut!
+S'està iniciant el depurador remot...
+Error de connexió del depurador remot
+Notifiqueu un error de connexió de depuració remota
+Si està activat, utilitzarà el sistema de notificacions per notificar a l'amfitrió l'error de connexió de depuració remota. En cas contrari, utilitzarà l'escriptura per defecte de la consola.
+Font Figlet per al temporitzador
+Habiliteu Figlet per al temporitzador
+Si està activat, utilitzarà figlet per al temporitzador. Tingueu en compte que necessita una gran pantalla de consola per representar l'hora correctament amb Figlet habilitat.
+Error en analitzar els arguments de la línia d'ordres abans de l'arrencada: {0}
+Restableix el nucli a la configuració de fàbrica
+Omet la detecció de la mida de la consola
+Sembla que estàs obviant la detecció de la mida de la consola. És possible que les coses no funcionin correctament en pantalles petites.
+Per tenir una millor experiència, canvieu la mida de la finestra de la consola mentre continueu en aquesta pantalla. Premeu qualsevol tecla per continuar...
+La vostra consola és massa petita per funcionar correctament:
+Tipus de lletra de banner figlet
+Imprimeix una cadena a la consola utilitzant tipus de color i impressió de línia amb suport de Figlet
+Imprimeix una cadena a la consola utilitzant tipus de color i impressió de línia amb format i suport de Figlet
+Elimina permanentment un missatge
+Elimina permanentment tots els missatges del destinatari
+Desfés l'eliminació d'un missatge
+Desfés l'eliminació de tots els missatges del destinatari
+L'eliminació de desfer no està implementada per a POP3.
+Mostra les ordres que compten amb ajuda
+Mostra que les ordres de l'intèrpret d'ordres compten amb ajuda
+Mostra les ordres de modificacions que compten amb ajuda
+Mostra el compte d'àlies amb ajuda
+Mostra el recompte d'ordres a la llista d'ordres, controlada pels tres interruptors de recompte per a diferents tipus d'ordres.
+Executa ordres un cop es compleixen les expressions UESH
+La condició no s'ha trobat a l'expressió.
+La condició {0} requereix {1} arguments. Teniu {2}.
+La condició s'ha de col·locar al mig.
+La condició s'ha de posar al principi.
+S'ha produït un error en analitzar l'expressió a causa d'un error de sintaxi.
+No s'ha pogut complir la condició. Més informació aquí:
+Caràcter de màscara de contrasenya
+Un personatge que emmascara la contrasenya. Deixa en blanc per a més seguretat.
+Surt del shell si s'executa al subshell
+No es pot matar la closca mare!
+No es pot tancar la sessió de la subshell.
+Fitxer no especificat. S'està sortint del shell...
+La configuració d'aquesta pantalla de presentació està disponible aquí.
+Color de la barra de progrés
+Obre la configuració del salvapantalles
+Obre la configuració de splash
+Llista les variables UESH disponibles
+Ubicació del text de progrés
+Seleccioneu la vostra ubicació de text de progrés preferida.
+Només pots escriure els números.
+Premeu "q" per sortir.
+S'estan baixant els noms...
+A causa de dificultats tècniques, no podem enumerar les propietats de l'adaptador als sistemes Unix.
+Activa el mode de depuració
+Demana arguments
+Activa el mode blanc i negre
+Fa la discoteca en blanc i negre. Realment et farà mal als ulls si va ser massa ràpid, així que no es recomana si estàs experimentant una convulsió d'imatges ràpides.
+Sembla que estàveu executant una versió no compatible. És molt recomanable no utilitzar aquesta versió.
+Carrega els colors actuals
+Color d'opció alternativa
+Els usuaris compten pels comentaris d'amor o d'odi
+Quants usuaris hi haurà a la sala de comentaris d'amor o odi?
+Llista els idiomes disponibles
+Idiomes disponibles:
+Arguments de la línia d'ordres:
+Arguments de la línia d'ordres abans de l'arrencada:
+Obre la documentació de l'API de modificacions per a l'estructura del codi font en la seva forma més actual

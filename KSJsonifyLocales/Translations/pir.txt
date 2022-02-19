@@ -983,3 +983,675 @@ check yer internet connection an' try again.
  this here manual page needs work fer:
 manual page {0} not found.
  mod manual
+Available kernel arguments:
+press "q" if ye be done.
+ multiple kernel arguments can be separated with commas without spaces, fer example:
+multiple injected commands can be separated with colons with spaces, fer example:
+the requested argument {0} be not found.
+ unrecoverable error in argument:
+encrypts a strin' usin' sha512
+encrypts a strin' usin' sha384
+encrypts a strin' usin' sha256
+encrypts a strin' usin' sha1
+encrypts a strin' usin' md5
+where builtinsaver be
+mod part be nothin'.
+ stoppin' mods not allowed on safe mode.
+ mod 'as already been started!
+mod 'asn't started yet!
+command usage:
+part file name:
+part file path:
+error when tryin' to start screensaver:
+invalid path type.
+ invalid kernel path type.
+ previous boot failed
+the json editor 'asn't opened a file stream yet.
+ the property inside the json file isn't found.
+ removed property.
+ adds a new property at the end o' the json file
+removes a property from the json file
+exits the json shell
+exits the json shell without savin' the changes
+saves the json file
+opens the json shell
+prints the json file
+next ramp interval
+activates 255 color support fer ramp.
+ activates true color support fer ramp.
+ 'ow many milliseconds to wait before fillin' in the next ramp?
+notification title color
+notification description color
+notification progress color
+notification failure color
+question color
+success color
+user dollarrr color
+tip color
+separator text color
+separator color
+list title color
+development warnin' color
+stage time color
+progress color
+aft option color
+draw notification border
+covers the notification with the border.
+ contact the vendor o' the mod to upgrade the mod to the compatible version.
+ low priority border color
+medium priority border color
+'igh priority border color
+sends a progress notification to test the receiver
+tests the color wheel
+shows local kernel time
+shows local kernel date
+shows local kernel date an' time
+shows utc kernel time
+shows utc kernel date
+shows utc kernel date an' time
+motd path
+mal path
+which file be the motd text file? write an absolute path to the text file.
+ which file be the mal text file? write an absolute path to the text file.
+ blacklisted mods
+write the filenames o' the mods that there will not run on startup. When ye be finished, write "q". Write a minus sign next to the path to remove an existin' mod.
+ mod {0} be blacklisted.
+ reloads all mods
+adds a mod to the blacklist
+removes a mod from the blacklist
+time an' date in utc: {0}
+the specified json shell command be not found.
+ show app information durin' boot
+parse command-line arguments
+show stage finish times
+start kernel modifications on boot
+show current time before login
+notify fer any fault durin' boot
+shows brief information about the application on boot.
+ parses the command-line arguments on boot.
+ shows 'ow much time did the kernel take to finish a stage.
+ automatically start the kernel modifications on boot.
+ shows the current time, time zone, an' date before loggin' in.
+ if there be a minor fault durin' kernel boot, notifies the user about it.
+ username prompt style
+password prompt style
+show mal on log-in
+write 'ow ye want yer login prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ write 'ow ye want yer password prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ shows message o' the day after displayin' login screen.
+ test shell prompt style
+json shell prompt style
+probe injected commands
+probes the injected commands at the start o' the kernel shell.
+ show file details in list
+shows the brief file details while listin' files
+show file details in ftp list
+username prompt style fer ftp
+password prompt style fer ftp
+use first ftp profile
+add new connections to ftp speed dial
+try to validate secure ftp certificates
+show ftp motd on connection
+always accept invalid ftp certificates
+shows the ftp file details while listin' remote directories.
+ uses the first ftp profile to connect to ftp.
+ if enabled, adds a new connection to the ftp speed dial.
+ tries to validate the ftp certificates. Turnin' it off be not recommended.
+ shows the ftp message o' the day on login.
+ always accept invalid ftp certificates. Turnin' it on be not recommended as it may pose security risks.
+ username prompt style fer mail
+password prompt style fer mail
+imap prompt style fer mail
+smtp prompt style fer mail
+automatically detect mail server
+enable mail debug
+notify fer new mail messages
+gpg password prompt style fer mail
+send imap pin' interval
+send smtp pin' interval
+mail text format
+write 'ow ye want yer imap server prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ write 'ow ye want yer smtp server prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ automatically detect the mail server based on the given address.
+ enables mail server debug.
+ notifies ye fer any new mail messages.
+ write 'ow ye want yer gpg password prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ 'ow many milliseconds to send the imap ping?
+'ow many milliseconds to send the smtp ping?
+controls 'ow the mail text be shown.
+ plain text
+flowed text
+'tml text
+enriched text
+compressed rich text
+rich text
+automatically start remote debug on startup
+remote debug message format
+if ye want remote debug to start on boot, enable this here.
+ specifies the remote debug message format. {0} fer name, {1} fer message.
+ rss feed url prompt style
+auto refresh rss feed
+auto refresh rss feed interval
+write 'ow ye want yer rss feed server prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ 'ow many milliseconds to refresh the rss feed?
+show file details in sftp list
+username prompt style fer sftp
+add new connections to sftp speed dial
+shows the sftp file details while listin' remote directories.
+ if enabled, adds a new connection to the sftp speed dial.
+ pin' timeout
+show extensive adapter info
+show general network information
+download percentage text
+upload percentage text
+'ow many milliseconds to wait before declarin' timeout?
+prints the extensive adapter information, such as packet information.
+ shows the general information about network.
+ write 'ow ye want yer upload percentage text to be. Set sail blank to use default style. Placeholders be parsed. {0} fer uploaded size, {1} fer target size, {2} fer percentage.
+ write 'ow ye want yer download percentage text to be. Set sail blank to use default style. Placeholders be parsed. {0} fer downloaded size, {1} fer target size, {2} fer percentage.
+ ask fer password after lockin'
+after lockin' the screen, ask fer password
+minimum red color level
+minimum green color level
+minimum blue color level
+minimum color level
+maximum red color level
+maximum green color level
+maximum blue color level
+maximum color level
+minimum red color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ minimum green color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ minimum blue color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ minimum color level. The minimum accepted value be 0 an' the maximum accepted value be 255 fer 255 colors or 16 fer 16 colors.
+ maximum red color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ maximum green color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ maximum blue color level. The minimum accepted value be 0 an' the maximum accepted value be 255.
+ maximum color level. The minimum accepted value be 0 an' the maximum accepted value be 255 fer 255 colors or 16 fer 16 colors.
+ foreground color
+line character
+a character to form a line. Be sure to only input one character.
+ upper left corner character fer 'ours barrr
+upper left corner character fer minutes barrr
+upper left corner character fer seconds barrr
+upper right corner character fer 'ours barrr
+upper right corner character fer minutes barrr
+upper right corner character fer seconds barrr
+lower left corner character fer 'ours barrr
+lower left corner character fer minutes barrr
+lower left corner character fer seconds barrr
+lower right corner character fer 'ours barrr
+lower right corner character fer minutes barrr
+lower right corner character fer seconds barrr
+upper frame character fer 'ours barrr
+upper frame character fer minutes barrr
+upper frame character fer seconds barrr
+lower frame character fer 'ours barrr
+lower frame character fer minutes barrr
+lower frame character fer seconds barrr
+left frame character fer 'ours barrr
+left frame character fer minutes barrr
+left frame character fer seconds barrr
+right frame character fer 'ours barrr
+right frame character fer minutes barrr
+right frame character fer seconds barrr
+information text fer 'ours
+information text fer minutes
+information text fer seconds
+minimum red color level fer 'ours
+minimum green color level fer 'ours
+minimum blue color level fer 'ours
+minimum color level fer 'ours
+maximum red color level fer 'ours
+maximum green color level fer 'ours
+maximum blue color level fer 'ours
+maximum color level fer 'ours
+minimum red color level fer minutes
+minimum green color level fer minutes
+minimum blue color level fer minutes
+minimum color level fer minutes
+maximum red color level fer minutes
+maximum green color level fer minutes
+maximum blue color level fer minutes
+maximum color level fer minutes
+minimum red color level fer seconds
+minimum green color level fer seconds
+minimum blue color level fer seconds
+minimum color level fer seconds
+maximum red color level fer seconds
+maximum green color level fer seconds
+maximum blue color level fer seconds
+maximum color level fer seconds
+a character that there resembles the upper left corner. Be sure to only input one character.
+ a character that there resembles the lower left corner. Be sure to only input one character.
+ a character that there resembles the upper frame. Be sure to only input one character.
+ a character that there resembles the lower frame. Be sure to only input one character.
+ a character that there resembles port frame. Be sure to only input one character.
+ a character that there resembles starboard frame. Be sure to only input one character.
+ write 'ow yer information text fer the current 'our shows. {0} fer current 'our out o' 24 'ours.
+ write 'ow yer information text fer the current minute shows. {0} fer current minute out o' 60 minutes.
+ write 'ow yer information text fer the current second shows. {0} fer current second out o' 60 seconds.
+ text color
+upper left corner character fer ramp barrr
+upper right corner character fer ramp barrr
+lower left corner character fer ramp barrr
+lower right corner character fer ramp barrr
+upper frame character fer ramp barrr
+lower frame character fer ramp barrr
+left frame character fer ramp barrr
+right frame character fer ramp barrr
+minimum red color level fer start color
+minimum green color level fer start color
+minimum blue color level fer start color
+minimum color level fer start color
+maximum red color level fer start color
+maximum green color level fer start color
+maximum blue color level fer start color
+maximum color level fer start color
+minimum red color level fer end color
+minimum green color level fer end color
+minimum blue color level fer end color
+minimum color level fer end color
+maximum red color level fer end color
+maximum green color level fer end color
+maximum blue color level fer end color
+maximum color level fer end color
+solver minimum number
+solver maximum number
+solver show input
+upper left corner character fer notification border
+upper right corner character fer notification border
+lower left corner character fer notification border
+lower right corner character fer notification border
+upper frame character fer notification border
+lower frame character fer notification border
+left frame character fer notification border
+right frame character fer notification border
+manual page information style
+whether to show what's written in the input prompt.
+ what be the minimum number to choose?
+what be the maximum number to choose?
+write 'ow ye want yer manpage information to be. Set sail blank to use default style. Placeholders be parsed. {0} fer manual title, {1} fer revision.
+ property {0} be not found on any o' the modules.
+ this here section lists the general screensaver settings. Fer individual screensaver settings, exit settings an' open screensaver settings.
+ start color wheel in true color mode
+if specified, it will display customized startup banner with placeholder support. Ye can use {0} fer kernel version.
+ which variant o' the current language be bein' used to change the month names, calendar, etc.?
+activates the 255 color support.
+ activates the true color support.
+ word deleted in line {0}.
+ strin' replaced in line {0}.
+ removed line number {0}.
+ suppress unauthorized messages
+'ides the annoyin' message if the listin' function tries to open an unauthorized folder
+ftp server information
+server address:
+server port:
+server type:
+server system type:
+server encryption mode:
+server data connection type:
+server system:
+server download data type:
+server upload data type:
+ye must connect to a server before performin' this here operation.
+ enter a remote file to be 'ashed.
+ enter a remote directory to be 'ashed.
+ enter a remote directory.
+ recursive 'ashin' fer ftp
+whether to recursively 'ash a directory. Please note that there not all the ftp servers support that there.
+ processor clock speed:
+processor sse2 support:
+total number o' processors:
+disk size:
+total memory:
+graphics card:
+disk model:
+maximum number o' e-mails in one page
+culture o' the current language
+if ye be sure that there ye've opened starboard section, check this here message out:
+misc settings...
+ colors settings...
+ executes an ftp server command
+enter pop3 server address an' port (<address> or <address>:[port]): 
+pop3 prompt style fer mail
+send pop3 pin' interval
+write 'ow ye want yer pop3 server prompt to be. Set sail blank to use default style. Placeholders be parsed.
+ 'ow many milliseconds to send the pop3 ping?
+use pop3
+whether to use pop3. Disablin' this here will use smtp.
+ encrypts a strin' usin' crc32
+opens the mail client
+o' mail transferred...
+ settings fer this here screensaver be available 'ere.
+ tests the table functionality
+edits the specified line
+adds the new lines at the end o' the file
+enter the text that there ye want to append to the end o' the file. When ye be done, write "eof" on its own line.
+ 'ost name
+username
+data type
+encodin'
+encryption
+protocols
+show mail transfer progress
+mail transfer progress
+mail transfer progress (single)
+if enabled, the mail shell will show 'ow many bytes transmitted when downloadin' mail.
+ write 'ow ye want yer mail transfer progress style to be. Set sail blank to use default style. Placeholders be parsed. {0} fer transferred size an' {1} fer total size.
+ write 'ow ye want yer mail transfer progress style to be. Set sail blank to use default style. Placeholders be parsed. {0} fer transferred size.
+ time zone:
+today be {0}
+current time be {0}
+table separator color
+table 'eader color
+table value color
+possible answers
+mod file be not specified.
+ tryin' to install an already-installed mod. Updatin' mod...
+ installation failed fer
+the mod file provided be incompatible.
+ uninstallation failed fer
+opens a url
+print line numbers on printin' file contents
+makes the \"cat\" command print the file's line numbers.
+ transliterated version
+translated version
+dismisses all notifications
+downloadin'...
+ uploadin'...
+ show notification fer download progress
+show notification fer upload progress
+shows the notification showin' the download progress.
+ shows the notification showin' the upload progress.
+ checks to see if the translatable strin' exists in the ks resources
+strin' found in the localization resources.
+ strin' not found in the localization resources.
+ starts the kernel quietly
+injects a command to start to the sky in the next login
+starts the kernel in safe mode, disablin' all mods
+like safe mode, but also disables multi-user an' some customization
+there been not enough arguments.
+ upper left corner color fer ramp barrr
+upper right corner color fer ramp barrr
+lower left corner color fer ramp barrr
+lower right corner color fer ramp barrr
+upper frame color fer ramp barrr
+lower frame color fer ramp barrr
+left frame color fer ramp barrr
+right frame color fer ramp barrr
+use border colors fer ramp barrr
+use the border colors fer the ramp barrr. If disabled, will generate a grey barrr.
+ starts the 'ttp shell
+exits 'ttp shell an' returns to kernel
+sets the 'ttp site. Must be a valid uri.
+ gets the response from the 'ttp server usin' the specified offer
+deletes content from 'ttp server
+there been an error in the 'ttp shell:
+'ttp message: the requested command {0} be not found. See 'help' fer a list o' available commands specified on 'ttp shell.
+ gets the strin' from the 'ttp server usin' the specified offer
+gettin' {0}...
+ the site uri format be invalid.
+ settin' site to
+colors don't require a restart, but most o' the settings require a restart.
+ no 'elp fer argument "{0}".
+ press a on 'ate comments to apologize. Press t on love comments to thank. Press q to quit the game.
+ ye've apologized to a 'ate comment! excellent!
+apologized to love comment. Not jolly enough.
+ ye just thanked the 'ater fer the 'ate comment!
+default difficulty fer speedpress
+keypress timeout fer speedpress
+select yer preferred difficulty.
+ 'ow many milliseconds to wait fer the keypress before the timeout? (in custom difficulty)
+replaces a word or phrase with another one usin' regularrr expressions
+replaces a word or phrase with another one in a line usin' regularrr expressions
+queries a word in a specified line or all lines usin' regularrr expressions
+find a settin'
+write what do ye want to search fer.
+ nothin' be found. Make sure that there ye've written the settin' correctly.
+ packs a local file to the archive
+can't pack nothin'.
+ answer description
+'ost port
+fer more information about the terms an' conditions o' usin' this here software, visit
+default choice output type
+checks all the ks settings to see if the variables be written correctly
+these configuration entries 'ave invalid variables or enumerations an' need to be fixed:
+file {0} not found
+creates a variable array with the provided values
+write the number o' the settin' to go to. Any other character means go aft.
+ checks all the localization text line numbers to see if they be all equal
+line mismatch in
+please enter a user number.
+ include anonymous users
+include disabled users
+includes the anonymous users in the list
+includes the disabled users in the list
+sort the list
+sorts the filesystem list professionally.
+ provides a selection choice
+shell commands not implemented!!!
+show latest rss 'eadline on login
+rss 'eadline url
+each login, it will show the latest rss 'eadline from the selected 'eadline url.
+ rss 'eadline url to be used when showin' the latest 'eadline. This here be usually yer favorite feed.
+ latest news:
+failed to get the latest news.
+ selected option color
+show stack trace on kernel error
+if there be any kernel error, choose whether or not to print the stack trace to the console.
+ mod can be loaded, but these warnings may impact the way the mod works:
+screensaver can be loaded, but these warnings may impact the way the screensaver works:
+save settings as
+load settings from
+where do ye want to save the current kernel settings?
+can't save kernel settings atop existin' file.
+ where do ye want to load the current kernel settings from?
+checks to see if the translatable strings exist in the ks resources
+combines the two text files or more into the output file.
+ failed to combine files.
+ rss feed fetch timeout
+'ow many milliseconds to wait before rss feed fetch timeout?
+fill the boxes
+do we draw the box as a 'ole or do we draw only the border?
+stage delay in milliseconds
+'ow many milliseconds to wait before drawin' the next stage?
+next ramp rot interval
+'ow many milliseconds to wait before rottin' the next ramp's one end?
+check debug quota
+do we check if the debug system needs to check fer quota before writin' to the debugger?
+'ow many milliseconds did it really take to sleep?
+failed to add an event.
+ failed to remove an event.
+ not enough arguments provided to add an event.
+ not enough arguments provided to remove an event.
+ not enough arguments provided fer event manipulation.
+ failed to add or remove a reminder.
+ not enough arguments provided to add or remove a reminder.
+ not enough arguments provided fer reminder manipulation.
+ untitled reminder
+untitled event
+now it be an event day!
+don't miss this here!
+invalid action.
+ a simple stopwatch
+start or avast
+lap
+reset
+a simple timer
+start (re)countin' down
+set interval
+indicated timeout be not numeric.
+ specify the timeout in milliseconds
+save all events an'/or reminders destructively
+if enabled, deletes all events an'/or reminders before savin' all o' them usin' the calendarrr command.
+ verify retry attempts fer ftp transmission
+ftp connection timeout
+ftp data connection timeout
+ftp ip versions
+'ow many times to verify the upload an' download an' retry if the verification fails before the download fails as a 'ole?
+'ow many milliseconds to wait before the ftp connection timeout?
+'ow many milliseconds to wait before the ftp data connection timeout?
+choose the version o' internet protocol that there the ftp server supports an' that there the ftp client uses.
+ tryin' to start rpc while it be already started.
+ upper left corner character fer rgb color wheel
+upper right corner character fer rgb color wheel
+lower left corner character fer rgb color wheel
+lower right corner character fer rgb color wheel
+upper frame character fer rgb color wheel
+lower frame character fer rgb color wheel
+left frame character fer rgb color wheel
+right frame character fer rgb color wheel
+finds a file in the specified directory or in the current directory
+converts the line endings to format fer the current platform or to specified custom format
+total size in folder:
+show total size in list
+if enabled, shows the total folder size in list, dependin' on 'ow to calculate the folder sizes accordin' to the configuration.
+ ye be to the sky to date!
+default json formattin' fer json shell
+selects the default json formattin' (beautified or minified) fer the json shell to save.
+ downloaded the update successfully!
+automatically download updates
+if there be any update, the kernel will automatically download it.
+ firework rocketing firebomb, thar she blows radius
+'ow many blocks (up to 10) be the rocketing firebomb, thar she blows radius fer the firework when ignited?
+this here command 'as the below switches that there change 'ow it works:
+prints the line numbers that there follow the line bein' printed
+prevents printin' the line numbers
+always use the transliterated version
+always use the translated version
+force switchin' language
+indicate that there the answer can take more than one character
+indicate that there the answer can take just one character
+print the question an' the answers in one line
+print the question an' the answers in two lines
+print the question an' the answers in the modern way
+print the question an' the answers in a table
+shows the file details in the list
+suppresses the annoyin' "permission denied" messages
+shows all the time zones
+starts the game in easy difficulty
+starts the game in medium difficulty
+starts the game in 'ard difficulty
+starts the game in very 'ard difficulty
+starts the game in custom difficulty. Please note that there the custom timeout in milliseconds should be written as argument.
+ shows the system information
+shows the 'ardware information
+shows the user information
+shows the message o' the day
+shows the message o' the day after login
+shows all information
+creates a directory that there contains the contents o' the zip file
+shows all the available cities
+fast compression
+no compression
+don't create base directory in archive
+unit in ticks
+disconnects from server disgracefully
+indicates that there the target path be absolute
+saves the json file, beautifyin' it in the process
+saves the json file, minifyin' it in the process
+gets the line endin' style from text file
+clears all fired events
+enable event debuggin'
+enables debuggin' fer the kernel event system
+figlet font
+write a figlet font that there be supported by the figgle library. Consult the library documentation fer more information
+failed to install custom language {0}.
+ the metadata file needed to install the custom language doesn't exist.
+ the metadata information needed to install the custom language doesn't provide the necessary localizations needed.
+ failed to uninstall custom language {0}.
+ the metadata file needed to uninstall the custom language doesn't exist.
+ the metadata information needed to uninstall the custom language doesn't provide the necessary localizations needed.
+ length o' the English language doesn't match the length o' the language token provided.
+ the language already exists an' can't be overwritten.
+ failed to uninstall custom language. It most likely doesn't exist.
+ failed to install custom languages.
+ failed to uninstall custom languages.
+ failed to uninstall custom languages. See the inner exception fer more info.
+ write the administrator password. Make sure that there ye don't use this here account unless ye really know what ye be doin'.
+ ye must write the administrator password.
+ license information
+manage yer languages
+language not found or file 'as invalid characters.
+ language be not specified.
+ language management be disabled in safe mode.
+ language short name:
+language full name:
+language transliterable:
+custom language:
+new ye be welcome banner
+stylish splash screen
+shows the new figlet-rendered ye be welcome banner
+enables the stylish splash screen on startup. Please note that there it will disable argument prompt an' test shell pre-boot.
+ splash name
+splash name from the available splashes implemented in the kernel.
+ generated default motd.
+ generated default mal.
+ system account initialized
+users initialized
+permissions loaded
+ye be welcome!
+startin' the remote debugger...
+ remote debugger connection error
+notify on remote debug connection error
+if enabled, will use the notification system to notify the 'ost o' remote debug connection error. Otherwise, will use the default console writin'.
+ figlet font fer timer
+enable figlet fer timer
+if enabled, will use figlet fer timer. Please note that there it needs a big console screen in order to render the time properly with figlet enabled.
+ error while parsin' pre-boot command-line arguments: {0}
+resets the kernel to the factory settings
+bypasses the console size detection
+looks like ye be bypassin' the console size detection. Things may not work properly on small screens.
+ to 'ave a better experience, resize yer console window while still bein' on this here screen. Press any key to continue...
+ yer console be too small to run properly:
+banner figlet font
+prints a strin' to console usin' color type an' line print with figlet support
+prints a strin' to console usin' color type an' line print with format an' figlet support
+permanently removes a message
+permanently removes all messages from recipient
+undos removin' a message
+undos removin' all messages from recipient
+undo deletion be not implemented fer pop3.
+ show the commands count on 'elp
+show the shell commands count on 'elp
+show the mod commands count on 'elp
+show the aliases count on 'elp
+shows the commands count in the command list, controlled by the three count show switches fer different kinds o' commands.
+ executes commands once the uesh expressions be satisfied
+the condition been not found in the expression.
+ condition {0} requires {1} arguments. Got {2}.
+ the condition needs to be placed in the middle.
+ the condition needs to be placed in the beginnin'.
+ error parsin' expression due to syntax error.
+ failed to satisfy condition. More info 'ere:
+password mask character
+a character that there masks the password. Set sail blank fer more security.
+ exits the shell if runnin' on subshell
+can not kill the mother shell!
+cannot log out from the subshell.
+ file not specified. Exitin' shell...
+ settings fer this here splash screen be available 'ere.
+ progress barrr color
+opens the screensaver settings
+opens the splash settings
+lists available uesh variables
+progress text location
+select yer preferred progress text location.
+ ye can only write the numbers.
+ press "q" to exit.
+ downloadin' names...
+ due to technical difficulties, we be unable to list adapter properties on unix systems.
+ enables debug mode
+prompts fer arguments
+enable black an' white mode
+makes the disco black an' white. Will really 'urt yer eyes if it been too fast, so not recommended if ye be experiencin' a seizure o' fast images.
+ looks such as yerself was runnin' an unsupported version. It be 'ighly advisable not to use this here version.
+ load current colors
+alternative option color
+users count fer love or 'ate comments
+'ow many users to be in the love or 'ate comment room?
+lists available languages
+available languages:
+command-line arguments:
+pre-boot command-line arguments:
+opens the mod api documentation fer the structure o' the source code in its most current form

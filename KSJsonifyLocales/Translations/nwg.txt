@@ -983,3 +983,675 @@ Trykk på hvilken som helst tast for å lese den manuelle siden ...
 Denne manuelle siden trenger arbeid for:
 Manuell side {0} ble ikke funnet.
 Mod manual
+Tilgjengelige kjerneargumenter:
+Trykk "q" hvis du er ferdig.
+Flere kjerneargumenter kan skilles med kommaer uten mellomrom, for eksempel:
+Flere injiserte kommandoer kan separeres med kolon med mellomrom, for eksempel:
+Det forespurte argumentet {0} ble ikke funnet.
+Ugjenopprettelig feil i argument:
+Krypterer en streng ved hjelp av SHA512
+Krypterer en streng ved hjelp av SHA384
+Krypterer en streng ved hjelp av SHA256
+Krypterer en streng ved hjelp av SHA1
+Krypterer en streng ved hjelp av MD5
+hvor innebygd sparer vil være
+Moddel er ingenting.
+Stoppe mods er ikke tillatt i sikker modus.
+Mod er allerede startet!
+Mod har ikke startet ennå!
+Kommandobruk:
+Del filnavn:
+Del filbane:
+Feil ved forsøk på å starte skjermsparer:
+Ugyldig banetype.
+Ugyldig kjernebanetype.
+Forrige oppstart mislyktes
+JSON-editoren har ikke åpnet en filstrøm ennå.
+Egenskapen i JSON-filen ble ikke funnet.
+Fjernet eiendom.
+Legger til en ny egenskap på slutten av JSON-filen
+Fjerner en egenskap fra JSON-filen
+Går ut av JSON-skallet
+Går ut av JSON-skallet uten å lagre endringene
+Lagrer JSON-filen
+Åpner JSON-skallet
+Skriver ut JSON-filen
+Neste rampeintervall
+Aktiverer støtte for 255 farger for rampe.
+Aktiverer ekte fargestøtte for Ramp.
+Hvor mange millisekunder skal du vente før du fyller ut neste rampe?
+Varslingstittelfarge
+Farge på meldingsbeskrivelse
+Farge på varslingsfremdrift
+Farge på meldingsfeil
+Spørsmålets farge
+Suksessfarge
+Bruker dollar farge
+Spissen farge
+Separator tekstfarge
+Separator farge
+Listetittelfarge
+Farge for utviklingsvarsel
+Farge på scenetid
+Fremgang farge
+Farge på ryggalternativet
+Tegn varslingsgrense
+Dekker varslingen med grensen.
+Kontakt leverandøren av moden for å oppgradere moden til den kompatible versjonen.
+Lav prioritet kantfarge
+Middels prioritet kantfarge
+Høy prioritet kantfarge
+Sender et fremdriftsvarsel for å teste mottakeren
+Tester fargehjulet
+Viser lokal kjernetid
+Viser lokal kjernedato
+Viser lokal kjerne dato og klokkeslett
+Viser UTC-kjernetid
+Viser UTC-kjernedato
+Viser UTC-kjernens dato og klokkeslett
+MOTD-bane
+MAL-sti
+Hvilken fil er MOTD-tekstfilen? Skriv en absolutt bane til tekstfilen.
+Hvilken fil er MAL-tekstfilen? Skriv en absolutt bane til tekstfilen.
+Svartelistede mods
+Skriv filnavnene til modsene som ikke vil kjøre ved oppstart. Når du er ferdig, skriv "q". Skriv et minustegn ved siden av banen for å fjerne en eksisterende mod.
+Mod {0} er svartelistet.
+Laster alle mods på nytt
+Legger til en mod til svartelisten
+Fjerner en mod fra svartelisten
+Tid og dato i UTC: {0}
+Den angitte JSON-skallkommandoen ble ikke funnet.
+Vis appinformasjon under oppstart
+Parse kommandolinjeargumenter
+Vis scenens slutttider
+Start kjernemodifikasjoner ved oppstart
+Vis gjeldende tid før pålogging
+Gi beskjed om eventuelle feil under oppstart
+Viser kort informasjon om programmet ved oppstart.
+Analyserer kommandolinjeargumentene ved oppstart.
+Viser hvor lang tid det tok for kjernen å fullføre et stadium.
+Start kjernemodifikasjonene automatisk ved oppstart.
+Viser gjeldende tid, tidssone og dato før du logger på.
+Hvis det er en mindre feil under oppstart av kjernen, varsler brukeren om det.
+Brukernavn-ledetekststil
+Passordledetekststil
+Vis MAL ved innlogging
+Skriv hvordan du vil at påloggingsforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Skriv hvordan du vil at passordforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Viser dagens melding etter visning av påloggingsskjermen.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Probe injiserte kommandoer
+Undersøker de injiserte kommandoene ved starten av kjerneskallet.
+Vis fildetaljer i listen
+Viser de korte fildetaljene mens du viser filer
+Vis fildetaljer i FTP-listen
+Brukernavn-ledetekststil for FTP
+Passordledetekststil for FTP
+Bruk første FTP-profil
+Legg til nye tilkoblinger til FTP-hurtigvalg
+Prøv å validere sikre FTP-sertifikater
+Vis FTP MOTD ved tilkobling
+Godta alltid ugyldige FTP-sertifikater
+Viser FTP-fildetaljer mens du viser eksterne kataloger.
+Bruker den første FTP-profilen for å koble til FTP.
+Hvis aktivert, legger du til en ny tilkobling til FTP-kortnummeret.
+Prøver å validere FTP-sertifikatene. Det anbefales ikke å slå den av.
+Viser dagens FTP-melding ved pålogging.
+Godta alltid ugyldige FTP-sertifikater. Det anbefales ikke å slå den på, da det kan utgjøre sikkerhetsrisiko.
+Brukernavn-ledetekststil for e-post
+Passordforespørselstil for e-post
+IMAP-ledetekststil for e-post
+SMTP-ledetekststil for e-post
+Oppdag e-postserver automatisk
+Aktiver e-postfeilsøking
+Varsle for nye e-postmeldinger
+GPG-passordforespørselstil for e-post
+Send IMAP-pingintervall
+Send SMTP-pingintervall
+Mail tekstformat
+Skriv hvordan du vil at IMAP-servermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Skriv hvordan du vil at SMTP-servermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Oppdag e-postserveren automatisk basert på den oppgitte adressen.
+Aktiverer feilsøking av e-postserver.
+Varsler deg om nye e-postmeldinger.
+Skriv hvordan du vil at GPG-passordforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Hvor mange millisekunder skal du sende IMAP-pinget?
+Hvor mange millisekunder skal du sende SMTP-pinget?
+Styrer hvordan e-postteksten skal vises.
+Ren tekst
+Flytende tekst
+HTML-tekst
+Beriket tekst
+Komprimert rik tekst
+Rik tekst
+Start ekstern feilsøking automatisk ved oppstart
+Meldingsformat for ekstern feilsøking
+Hvis du vil at ekstern feilsøking skal starte ved oppstart, aktiver dette.
+Angir formatet for ekstern feilsøkingsmelding. {0} for navn, {1} for melding.
+RSS-feed URL-forespørselstil
+Oppdater RSS-feed automatisk
+Automatisk oppdatering av RSS-feedintervall
+Skriv hvordan du vil at RSS-feedservermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Hvor mange millisekunder skal du oppdatere RSS-feeden?
+Vis fildetaljer i SFTP-listen
+Brukernavn-ledetekststil for SFTP
+Legg til nye tilkoblinger til SFTP-hurtigvalg
+Viser SFTP-fildetaljer mens du viser eksterne kataloger.
+Hvis aktivert, legger du til en ny tilkobling til SFTP-kortnummeret.
+Tidsavbrudd for ping
+Vis omfattende adapterinformasjon
+Vis generell nettverksinformasjon
+Last ned tekst i prosent
+Last opp tekst i prosent
+Hvor mange millisekunder skal man vente før man erklærer tidsavbrudd?
+Skriver ut omfattende adapterinformasjon, for eksempel pakkeinformasjon.
+Viser generell informasjon om nettverket.
+Skriv hvordan du vil at opplastingsprosentteksten skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for opplastet størrelse, {1} for målstørrelse, {2} for prosentandel.
+Skriv hvordan du vil at nedlastingsprosentteksten skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for nedlastet størrelse, {1} for målstørrelse, {2} for prosentandel.
+Be om passord etter låsing
+Etter å ha låst skjermen, be om passord
+Minimum rød fargenivå
+Minimum grønn fargenivå
+Minimum blå fargenivå
+Minimum fargenivå
+Maksimalt rødt fargenivå
+Maksimalt grønt fargenivå
+Maksimalt blått fargenivå
+Maksimalt fargenivå
+Minimum rød fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Minimum grønn fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Minimum blåfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Minimum fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger.
+Maksimalt rødt fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt grønt fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimal blåfargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255.
+Maksimalt fargenivå. Minimum akseptert verdi er 0 og maksimum akseptert verdi er 255 for 255 farger eller 16 for 16 farger.
+Forgrunnsfarge
+Linjekarakter
+Et tegn for å danne en linje. Pass på å bare skrive inn ett tegn.
+Øvre venstre hjørnetegnet for timelinjen
+Øvre venstre hjørnetegnet for minuttlinjen
+Øvre venstre hjørne tegn for sekunder bar
+Øvre høyre hjørnetegnet for timelinjen
+Tegn øverst til høyre for minuttlinjen
+Øvre høyre hjørne tegn for sekunder bar
+Nedre venstre hjørnetegnet for timers bar
+Tegn i nedre venstre hjørne for minuttlinjen
+Tegn i nedre venstre hjørne for sekundlinjen
+Tegn i nedre høyre hjørne for timelinjen
+Tegn i nedre høyre hjørne for minuttlinjen
+Tegn i nedre høyre hjørne for sekundlinjen
+Øvre rammekarakter for timers bar
+Øvre rammekarakter for minuttlinje
+Øvre rammekarakter for sekunder bar
+Nedre rammekarakter for timers bar
+Nedre rammekarakter for minuttlinje
+Nedre rammetegn for sekunder bar
+Venstre rammekarakter for timelinjen
+Venstre rammetegn for minuttlinjen
+Venstre rammetegnet for sekundlinjen
+Høyre rammekarakter for timeslinje
+Høyre rammetegn for minuttlinjen
+Høyre rammekarakter for sekunderlinje
+Informasjonstekst for timer
+Informasjonstekst i minutter
+Informasjonstekst i sekunder
+Minimum rød fargenivå i timer
+Minimum grønt fargenivå i timer
+Minimum blå fargenivå i timer
+Minimum fargenivå i timer
+Maksimalt rødt fargenivå i timer
+Maksimalt grønt fargenivå i timer
+Maksimalt blått fargenivå i timer
+Maksimalt fargenivå i timer
+Minimum rød fargenivå i minutter
+Minimum grønt fargenivå i minutter
+Minimum blåfargenivå i minutter
+Minimum fargenivå i minutter
+Maksimalt rødt fargenivå i minutter
+Maksimalt grønt fargenivå i minutter
+Maksimalt blått fargenivå i minutter
+Maksimalt fargenivå i minutter
+Minimum rød fargenivå i sekunder
+Minimum grønt fargenivå i sekunder
+Minimum blåfargenivå i sekunder
+Minimum fargenivå i sekunder
+Maksimalt rødt fargenivå i sekunder
+Maksimalt grønt fargenivå i sekunder
+Maksimalt blått fargenivå i sekunder
+Maksimalt fargenivå i sekunder
+Et tegn som ligner det øvre venstre hjørnet. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner det nedre venstre hjørnet. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den øvre rammen. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den nedre rammen. Pass på å bare skrive inn ett tegn.
+Et tegn som ligner den venstre rammen. Pass på å bare skrive inn ett tegn.
+En karakter som ligner den høyre rammen. Pass på å bare skrive inn ett tegn.
+Skriv hvordan informasjonsteksten for gjeldende time viser. {0} for gjeldende time av 24 timer.
+Skriv hvordan informasjonsteksten for gjeldende minutt viser. {0} for gjeldende minutt av 60 minutter.
+Skriv hvordan informasjonsteksten for gjeldende sekund viser. {0} for gjeldende sekund av 60 sekunder.
+Tekstfarge
+Øvre venstre hjørnetegnet for rampestang
+Øvre høyre hjørnetegnet for rampestang
+Nedre venstre hjørnetegnet for rampestang
+Nedre høyre hjørnetegnet for rampestang
+Øvre rammekarakter for rampestang
+Nedre rammekarakter for rampestang
+Venstre rammekarakter for rampestang
+Høyre rammekarakter for rampestang
+Minimum rød fargenivå for startfarge
+Minimum grønt fargenivå for startfarge
+Minimum blåfargenivå for startfarge
+Minimum fargenivå for startfarge
+Maksimalt rødt fargenivå for startfarge
+Maksimalt grønt fargenivå for startfarge
+Maksimalt blått fargenivå for startfarge
+Maksimalt fargenivå for startfarge
+Minimum rød fargenivå for sluttfarge
+Minimum grønt fargenivå for sluttfarge
+Minimum blåfargenivå for sluttfarge
+Minimum fargenivå for sluttfarge
+Maksimalt rødt fargenivå for sluttfarge
+Maksimalt grønt fargenivå for sluttfarge
+Maksimalt blått fargenivå for sluttfarge
+Maksimalt fargenivå for sluttfarge
+Løser minimum antall
+Løser maksimalt antall
+Løser viser input
+Øvre venstre hjørnetegnet for varslingskant
+Øvre høyre hjørnetegnet for varslingskant
+Tegn i nedre venstre hjørne for varslingskant
+Tegn i nedre høyre hjørne for varslingskant
+Øvre rammetegn for varslingskant
+Nedre rammetegn for varslingskant
+Venstre rammetegn for varslingskant
+Høyre rammetegn for varslingskant
+Manuell sideinformasjonsstil
+Om det skal vises hva som er skrevet i inndatameldingen.
+Hva er minimumsantallet å velge?
+Hva er det maksimale antallet å velge?
+Skriv hvordan du vil at mansideinformasjonen din skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for manuell tittel, {1} for revisjon.
+Egenskapen {0} finnes ikke på noen av modulene.
+Denne delen viser de generelle skjermsparerinnstillingene. For individuelle skjermsparerinnstillinger, gå ut av Innstillinger og åpne Skjermsparerinnstillinger.
+Start fargehjulet i sann fargemodus
+Hvis spesifisert, vil den vise tilpasset oppstartsbanner med plassholderstøtte. Du kan bruke {0} for kjerneversjon.
+Hvilken variant av det gjeldende språket brukes til å endre månedsnavn, kalender osv.?
+Aktiverer støtten for 255 farger.
+Aktiverer ekte fargestøtte.
+Ord slettet i linje {0}.
+Streng erstattet i linje {0}.
+Fjernet linjenummer {0}.
+Undertrykk uautoriserte meldinger
+Skjuler den irriterende meldingen hvis oppføringsfunksjonen prøver å åpne en uautorisert mappe
+FTP-serverinformasjon
+Server adresse:
+Serverport:
+Servertype:
+Serversystemtype:
+Serverkrypteringsmodus:
+Serverdatatilkoblingstype:
+Serversystem:
+Datatype for servernedlasting:
+Datatype for tjeneropplasting:
+Du må koble til en server før du utfører denne operasjonen.
+Skriv inn en ekstern fil som skal hashes.
+Skriv inn en ekstern katalog som skal hashes.
+Skriv inn en ekstern katalog.
+Rekursiv hashing for FTP
+Om en katalog skal hash rekursivt. Vær oppmerksom på at ikke alle FTP-servere støtter dette.
+Prosessor klokkehastighet:
+Prosessor SSE2-støtte:
+Totalt antall prosessorer:
+Diskstørrelse:
+Totalt minne:
+Grafikkort:
+Diskmodell:
+Maksimalt antall e-poster på én side
+Det nåværende språkets kultur
+Hvis du er sikker på at du har åpnet den riktige delen, sjekk denne meldingen:
+Diverse innstillinger...
+Fargeinnstillinger...
+Utfører en FTP-serverkommando
+Skriv inn POP3-serveradresse og port (<adresse> eller <adresse>:[port]):
+POP3-ledetekststil for e-post
+Send POP3-pingintervall
+Skriv hvordan du vil at POP3-servermeldingen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.
+Hvor mange millisekunder skal du sende POP3-pinget?
+Bruk POP3
+Om du skal bruke POP3. Deaktivering av dette vil bruke SMTP.
+Krypterer en streng ved hjelp av CRC32
+Åpner e-postklienten
+av post overført...
+Innstillinger for denne skjermspareren er tilgjengelig her.
+Tester tabellfunksjonaliteten
+Redigerer den angitte linjen
+Legger til de nye linjene på slutten av filen
+Skriv inn teksten du vil legge til på slutten av filen. Når du er ferdig, skriv "EOF" på sin egen linje.
+Vertsnavn
+Brukernavn
+Data-type
+Koding
+Kryptering
+Protokoller
+Vis fremdriften for e-postoverføring
+E-postoverføringsfremdrift
+E-postoverføringsfremgang (enkelt)
+Hvis aktivert, vil e-postskallet vise hvor mange byte som ble overført ved nedlasting av e-post.
+Skriv hvordan du vil at fremdriftsstilen for e-postoverføring skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for overført størrelse og {1} for total størrelse.
+Skriv hvordan du vil at fremdriftsstilen for e-postoverføring skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres. {0} for overført størrelse.
+Tidssone:
+I dag er det {0}
+Gjeldende tid er {0}
+Farge på bordskiller
+Farge på tabelloverskriften
+Tabell verdi farge
+Mulige svar
+Mod-fil er ikke spesifisert.
+Prøver å installere en allerede installert mod. Oppdaterer mod...
+Installasjonen mislyktes for
+Modfilen som følger med er inkompatibel.
+Avinstallering mislyktes for
+Åpner en URL
+Skriv ut linjenumre på utskriftsfilinnhold
+Får kommandoen \"cat\" til å skrive ut filens linjenumre.
+Translitterert versjon
+Oversatt versjon
+Avviser alle varsler
+Laster ned...
+Laster opp ...
+Vis varsel for nedlastingsfremgang
+Vis varsel for opplastingsfremgang
+Viser varselet som viser nedlastingsfremdriften.
+Viser varselet som viser opplastingsfremdriften.
+Sjekker om den oversettbare strengen finnes i KS-ressursene
+Streng funnet i lokaliseringsressursene.
+Finner ikke streng i lokaliseringsressursene.
+Starter kjernen stille
+Setter inn en kommando for å starte opp ved neste pålogging
+Starter kjernen i sikker modus, og deaktiverer alle mods
+Som sikker modus, men deaktiverer også multi-user og noe tilpasning
+Det var ikke nok argumenter.
+Øvre venstre hjørne farge for rampestang
+Øvre høyre hjørne farge for rampestang
+Nedre venstre hjørne farge for rampestang
+Nedre høyre hjørne farge for rampestang
+Farge på øvre ramme for rampestang
+Farge på nedre ramme for rampestang
+Venstre rammefarge for rampestang
+Høyre rammefarge for rampestang
+Bruk kantfarger for rampestang
+Bruk kantfargene for rampelinjen. Hvis den er deaktivert, genereres en grå linje.
+Starter HTTP-skallet
+Avslutter HTTP-skall og går tilbake til kjernen
+Angir HTTP-nettstedet. Må være en gyldig URI.
+Henter svaret fra HTTP-serveren ved å bruke den angitte forespørselen
+Sletter innhold fra HTTP-serveren
+Det var en feil i HTTP-skallet:
+HTTP-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for en liste over tilgjengelige kommandoer spesifisert på HTTP-skall.
+Henter strengen fra HTTP-serveren ved å bruke den angitte forespørselen
+Henter {0}...
+Nettstedets URI-format er ugyldig.
+Setter nettstedet til
+Farger krever ikke omstart, men de fleste innstillingene krever omstart.
+Ingen hjelp for argumentet "{0}".
+Trykk A på hatkommentarer for å be om unnskyldning. Trykk T på kjærlighetskommentarer for å takke. Trykk på Q for å avslutte spillet.
+Du har beklaget en hatkommentar! Utmerket!
+Beklaget å elske kommentaren. Ikke god nok.
+Du takket nettopp hateren for hatkommentaren!
+Standard vanskelighetsgrad for SpeedPress
+Tastetrykk tidsavbrudd for SpeedPress
+Velg ønsket vanskelighetsgrad.
+Hvor mange millisekunder skal man vente på tastetrykk før tidsavbruddet? (I tilpasset vanskelighetsgrad)
+Erstatter et ord eller en setning med et annet ved å bruke regulære uttrykk
+Erstatter et ord eller en setning med et annet på en linje ved hjelp av regulære uttrykk
+Spør etter et ord i en spesifisert linje eller alle linjer ved hjelp av regulære uttrykk
+Finn en innstilling
+Skriv hva du vil søke etter.
+Ingenting er funnet. Kontroller at du har skrevet innstillingen riktig.
+Pakker en lokal fil til arkivet
+Kan ikke pakke noe.
+Svarbeskrivelse
+Host Port
+For mer informasjon om vilkårene og betingelsene for bruk av denne programvaren, besøk
+Standard utgangstype for valg
+Sjekker alle KS-innstillingene for å se om variablene er skrevet riktig
+Disse konfigurasjonsoppføringene har ugyldige variabler eller oppregninger og må fikses:
+Finner ikke filen {0}
+Oppretter en variabel matrise med de angitte verdiene
+Skriv nummeret til innstillingen du vil gå til. Enhver annen karakter betyr gå tilbake.
+Kontrollerer alle lokaliseringstekstlinjenumrene for å se om alle er like
+Linje uoverensstemmelse i
+Vennligst skriv inn et brukernummer.
+Inkluder anonyme brukere
+Inkluder funksjonshemmede brukere
+Inkluderer de anonyme brukerne i listen
+Inkluderer funksjonshemmede brukere i listen
+Sorter listen
+Sorterer filsystemlisten profesjonelt.
+Gir et utvalg valg
+Shell-kommandoer er ikke implementert!!!
+Vis siste RSS-overskrift ved pålogging
+RSS-overskrifts-URL
+Hver pålogging vil vise den siste RSS-overskriften fra den valgte overskriftens URL.
+RSS-overskrifts-URL som skal brukes når den siste overskriften vises. Dette er vanligvis favorittfeeden din.
+Siste nytt:
+Kunne ikke få siste nytt.
+Valgt alternativ farge
+Vis stabelsporing på kjernefeil
+Hvis det er en kjernefeil, velg om du vil skrive ut stabelsporet til konsollen eller ikke.
+Mod kan lastes inn, men disse advarslene kan påvirke måten moden fungerer på:
+Skjermsparer kan lastes inn, men disse advarslene kan påvirke måten skjermspareren fungerer på:
+Lagre innstillinger som
+Last inn innstillinger fra
+Hvor vil du lagre de gjeldende kjerneinnstillingene?
+Kan ikke lagre kjerneinnstillinger på toppen av eksisterende fil.
+Hvor vil du laste de gjeldende kjerneinnstillingene fra?
+Sjekker om de oversettbare strengene finnes i KS-ressursene
+Kombinerer de to tekstfilene eller flere til utdatafilen.
+Kunne ikke kombinere filer.
+Tidsavbrudd for henting av RSS-feed
+Hvor mange millisekunder skal vente før RSS-feed henter tidsavbrudd?
+Fyll boksene
+Tegner vi boksen som en helhet eller tegner vi bare kanten?
+Etappeforsinkelse i millisekunder
+Hvor mange millisekunder skal du vente før du tegner neste trinn?
+Neste rampe råteintervall
+Hvor mange millisekunder skal man vente før den ene enden av neste rampe råtner?
+Sjekk feilsøkingskvoten
+Sjekker vi om feilsøkingssystemet må sjekke for kvote før vi skriver til feilsøkeren?
+Hvor mange millisekunder tok det egentlig å sove?
+Kunne ikke legge til et arrangement.
+Kunne ikke fjerne en aktivitet.
+Ikke nok argumenter for å legge til en hendelse.
+Ikke nok argumenter for å fjerne en hendelse.
+Ikke nok argumenter for hendelsesmanipulasjon.
+Kunne ikke legge til eller fjerne en påminnelse.
+Ikke nok argumenter til å legge til eller fjerne en påminnelse.
+Ikke nok argumenter for påminnelsesmanipulasjon.
+Unavngitt påminnelse
+Hendelse uten navn
+Nå er det en begivenhetsdag!
+Ikke gå glipp av dette!
+Ugyldig handling.
+En enkel stoppeklokke
+Start eller stopp
+Runde
+Nullstille
+En enkel timer
+Begynn å (på nytt) telle ned
+Still inn intervall
+Indikert tidsavbrudd er ikke numerisk.
+Spesifiser tidsavbruddet i millisekunder
+Lagre alle hendelser og/eller påminnelser destruktivt
+Hvis aktivert, sletter du alle hendelser og/eller påminnelser før du lagrer dem alle ved hjelp av kalenderkommandoen.
+Bekreft forsøk på nytt for FTP-overføring
+Tidsavbrudd for FTP-tilkobling
+Tidsavbrudd for FTP-datatilkobling
+FTP IP-versjoner
+Hvor mange ganger skal du bekrefte opplastingen og laste ned og prøve på nytt hvis verifiseringen mislykkes før nedlastingen mislykkes som helhet?
+Hvor mange millisekunder å vente før FTP-tilkoblingen tidsavbrudd?
+Hvor mange millisekunder å vente før FTP-datatilkoblingen tidsavbrudd?
+Velg versjonen av Internett-protokollen som FTP-serveren støtter og som FTP-klienten bruker.
+Prøver å starte RPC mens den allerede er startet.
+Øvre venstre hjørnetegnet for RGB-fargehjul
+Øvre høyre hjørnetegnet for RGB-fargehjul
+Tegn i nedre venstre hjørne for RGB-fargehjul
+Tegn i nedre høyre hjørne for RGB-fargehjul
+Øvre rammekarakter for RGB-fargehjul
+Nedre rammekarakter for RGB-fargehjul
+Venstre rammekarakter for RGB-fargehjul
+Høyre rammekarakter for RGB-fargehjul
+Finner en fil i den angitte katalogen eller i den gjeldende katalogen
+Konverterer linjeavslutningene til format for gjeldende plattform eller til spesifisert tilpasset format
+Total størrelse i mappe:
+Vis total størrelse i listen
+Hvis aktivert, viser den totale mappestørrelsen i listen, avhengig av hvordan du beregner mappestørrelsene i henhold til konfigurasjonen.
+Du er oppdatert!
+Standard JSON-formatering for JSON-skall
+Velger standard JSON-formatering (forskjønnet eller forminsket) for JSON-skallet som skal lagres.
+Lastet ned oppdateringen!
+Last ned oppdateringer automatisk
+Hvis det er noen oppdatering, vil kjernen automatisk laste den ned.
+Fyrverkeri eksplosjonsradius
+Hvor mange blokker (opptil 10) er eksplosjonsradiusen for fyrverkeriet når det tennes?
+Denne kommandoen har bryterne nedenfor som endrer hvordan den fungerer:
+Skriver ut linjenumrene som følger linjen som skrives ut
+Hindrer utskrift av linjenumrene
+Bruk alltid den translittererte versjonen
+Bruk alltid den oversatte versjonen
+Tvinge å bytte språk
+Angi at svaret kan inneholde mer enn ett tegn
+Angi at svaret kan ta bare ett tegn
+Skriv ut spørsmålet og svarene på én linje
+Skriv ut spørsmålet og svarene på to linjer
+Skriv ut spørsmålet og svarene på en moderne måte
+Skriv ut spørsmålet og svarene i en tabell
+Viser fildetaljene i listen
+Undertrykker de irriterende "tillatelse nektet"-meldinger
+Viser alle tidssonene
+Starter spillet i lett vanskelighetsgrad
+Starter spillet i middels vanskelighetsgrad
+Starter spillet i vanskelig vanskelighetsgrad
+Starter spillet i svært vanskelig vanskelighetsgrad
+Starter spillet i tilpasset vanskelighetsgrad. Vær oppmerksom på at den egendefinerte tidsavbruddet i millisekunder skal skrives som argument.
+Viser systeminformasjonen
+Viser maskinvareinformasjon
+Viser brukerinformasjonen
+Viser dagens budskap
+Viser meldingen for dagen etter pålogging
+Viser all informasjon
+Oppretter en katalog som inneholder innholdet i ZIP-filen
+Viser alle tilgjengelige byer
+Rask kompresjon
+Ingen kompresjon
+Ikke lag grunnkatalogen i arkivet
+Enhet i flått
+Kobler fra serveren skammelig
+Indikerer at målbanen er absolutt
+Lagrer JSON-filen og forskjønner den i prosessen
+Lagrer JSON-filen og forminsker den i prosessen
+Henter linjeavslutningsstilen fra tekstfil
+Fjerner alle utløste hendelser
+Aktiver hendelsesfeilsøking
+Aktiverer feilsøking for kjernehendelsessystemet
+Figlet font
+Skriv en figlet-font som støttes av Figgle-biblioteket. Se bibliotekets dokumentasjon for mer informasjon
+Kunne ikke installere tilpasset språk {0}.
+Metadatafilen som trengs for å installere det tilpassede språket eksisterer ikke.
+Metadatainformasjonen som trengs for å installere det tilpassede språket, gir ikke de nødvendige lokaliseringene som trengs.
+Kunne ikke avinstallere tilpasset språk {0}.
+Metadatafilen som trengs for å avinstallere det tilpassede språket, eksisterer ikke.
+Metadatainformasjonen som trengs for å avinstallere det tilpassede språket, gir ikke de nødvendige lokaliseringene som trengs.
+Lengden på det engelske språket samsvarer ikke med lengden på språktokenet som er oppgitt.
+Språket finnes allerede og kan ikke overskrives.
+Kunne ikke avinstallere tilpasset språk. Det finnes mest sannsynlig ikke.
+Kunne ikke installere egendefinerte språk.
+Kunne ikke avinstallere egendefinerte språk.
+Kunne ikke avinstallere egendefinerte språk. Se det indre unntaket for mer info.
+Skriv administratorpassordet. Pass på at du ikke bruker denne kontoen med mindre du virkelig vet hva du gjør.
+Du må skrive administratorpassordet.
+Lisensinformasjon
+Administrer språkene dine
+Finner ikke språk eller filen har ugyldige tegn.
+Språk er ikke spesifisert.
+Språkadministrasjon er deaktivert i sikker modus.
+Kort navn på språk:
+Språk fullt navn:
+Språk som kan translitteres:
+Egendefinert språk:
+Nytt velkomstbanner
+Stilig splash-skjerm
+Viser det nye velkomstbanneret som er gjengitt med Figlet
+Aktiverer den stilige splash-skjermen ved oppstart. Vær oppmerksom på at det vil deaktivere argumentmelding og testshell før oppstart.
+Splash navn
+Splash-navn fra de tilgjengelige splashene implementert i kjernen.
+Generert standard MOTD.
+Generert standard MAL.
+Systemkontoen er initialisert
+Brukere initialisert
+Tillatelser er lastet inn
+Velkommen!
+Starter den eksterne debuggeren...
+Tilkoblingsfeil for ekstern debugger
+Varsle om ekstern feilsøkingstilkoblingsfeil
+Hvis aktivert, vil varslingssystemet bruke til å varsle verten om en ekstern feilsøkingstilkoblingsfeil. Ellers vil du bruke standard konsollskriving.
+Figlet-font for timer
+Aktiver Figlet for timer
+Hvis aktivert, bruker figlet for timer. Vær oppmerksom på at den trenger en stor konsollskjerm for å gjengi tiden riktig med Figlet aktivert.
+Feil under parsing av kommandolinjeargumenter før oppstart: {0}
+Tilbakestiller kjernen til fabrikkinnstillingene
+Omgår konsollstørrelsesdeteksjonen
+Det ser ut til at du omgår konsollstørrelsesdeteksjonen. Ting fungerer kanskje ikke ordentlig på små skjermer.
+For å få en bedre opplevelse, endre størrelsen på konsollvinduet mens du fortsatt er på denne skjermen. Press hvilken som helst tast for å fortsette...
+Konsollen din er for liten til å fungere ordentlig:
+Banner-figlefont
+Skriver ut en streng til konsollen ved hjelp av fargetype og linjetrykk med Figlet-støtte
+Skriver ut en streng til konsollen ved hjelp av fargetype og linjeutskrift med format og Figlet-støtte
+Fjerner en melding permanent
+Fjerner alle meldinger fra mottakeren permanent
+Angre fjerning av en melding
+Angre fjerning av alle meldinger fra mottakeren
+Angre sletting er ikke implementert for POP3.
+Vis kommandoene stole på hjelp
+Vis skallkommandoene stole på hjelp
+Vis mod-kommandoene stole på hjelp
+Vis at aliasene stoler på hjelp
+Viser kommandoantallet i kommandolisten, kontrollert av de tre tellevisningsbryterne for forskjellige typer kommandoer.
+Utfører kommandoer når UESH-uttrykkene er oppfylt
+Tilstanden ble ikke funnet i uttrykket.
+Betingelse {0} krever {1} argumenter. Fikk {2}.
+Tilstanden må plasseres i midten.
+Tilstanden må plasseres i begynnelsen.
+Feil ved analyse av uttrykk på grunn av syntaksfeil.
+Klarte ikke å tilfredsstille tilstanden. Mer info her:
+Passordmasketegn
+Et tegn som maskerer passordet. La stå tomt for mer sikkerhet.
+Går ut av skallet hvis det kjøres på subshell
+Kan ikke drepe morskallet!
+Kan ikke logge ut fra subshell.
+Filen er ikke spesifisert. Går ut av skallet...
+Innstillinger for denne splash-skjermen er tilgjengelige her.
+Farge på fremdriftslinjen
+Åpner skjermsparerinnstillingene
+Åpner sprutinnstillingene
+Viser tilgjengelige UESH-variabler
+Sted for fremdriftstekst
+Velg ønsket sted for fremdriftstekst.
+Du kan bare skrive tallene.
+Trykk "q" for å avslutte.
+Laster ned navn...
+På grunn av tekniske problemer kan vi ikke vise adapteregenskaper på Unix-systemer.
+Aktiverer feilsøkingsmodus
+Ber om argumenter
+Aktiver svart-hvitt-modus
+Gjør diskoteket svart-hvitt. Vil virkelig skade øynene dine hvis det var for raskt, så det anbefales ikke hvis du opplever et anfall av raske bilder.
+Det ser ut til at du kjørte en versjon som ikke støttes. Det er sterkt tilrådelig å ikke bruke denne versjonen.
+Last inn gjeldende farger
+Alternativ farge
+Brukere teller for kjærlighets- eller hatkommentarer
+Hvor mange brukere skal være i kommentarrommet for hat eller kjærlighet?
+Viser tilgjengelige språk
+Tilgjengelige språk:
+Kommandolinjeargumenter:
+Kommandolinjeargumenter før oppstart:
+Åpner mod API-dokumentasjonen for strukturen til kildekoden i sin nyeste form

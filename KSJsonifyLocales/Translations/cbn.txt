@@ -983,3 +983,675 @@ Pindota ang bisan unsang yawe aron mabasa ang manwal nga panid...
 Kini nga manwal nga panid nanginahanglan trabaho alang sa:
 Manwal nga panid {0} wala makit-an.
 Mod manual
+Magamit nga mga argumento sa kernel:
+Pindota ang "q" kung nahuman ka.
+Daghang mga argumento sa kernel mahimong ibulag gamit ang mga koma nga walay mga espasyo, pananglitan:
+Ang daghang mga injected command mahimong ibulag sa mga colon nga adunay mga luna, pananglitan:
+Ang gipangayo nga argumento {0} wala makit-an.
+Dili mabawi nga sayup sa argumento:
+Gi-encrypt ang usa ka string gamit ang SHA512
+Gi-encrypt ang usa ka string gamit ang SHA384
+Gi-encrypt ang usa ka string gamit ang SHA256
+Gi-encrypt ang usa ka string gamit ang SHA1
+Gi-encrypt ang usa ka hilo gamit ang MD5
+asa ang builtinsaver
+Mod nga bahin walay bisan unsa.
+Ang paghunong sa mga mod dili gitugotan sa luwas nga paagi.
+Gisugdan na ang mod!
+Wala pa magsugod ang mod!
+Paggamit sa sugo:
+Ngalan sa file sa bahin:
+Part file path:
+Sayop sa pagsulay sa pagsugod sa screensaver:
+Dili balido nga tipo sa agianan.
+Dili balido nga matang sa dalan sa kernel.
+Napakyas ang miaging boot
+Ang editor sa JSON wala pa magbukas sa usa ka file stream.
+Ang kabtangan sa sulod sa JSON file dili makit-an.
+Gikuha nga kabtangan.
+Nagdugang usa ka bag-ong kabtangan sa katapusan sa JSON file
+Pagtangtang sa usa ka kabtangan gikan sa JSON file
+Migawas sa JSON shell
+Mogawas sa shell sa JSON nga wala gitipigan ang mga pagbag-o
+Gitipigan ang JSON file
+Gibuksan ang shell sa JSON
+Giimprinta ang JSON file
+Sunod nga rampa interval
+Gi-aktibo ang 255 nga kolor nga suporta alang sa Ramp.
+Gi-aktibo ang tinuod nga suporta sa kolor alang sa Ramp.
+Pila ka millisecond ang maghulat una pun-on ang sunod nga rampa?
+Kolor sa titulo sa pahibalo
+Kolor sa paghulagway sa pahibalo
+Kolor sa pag-uswag sa pahibalo
+Kolor sa kapakyasan sa pagpahibalo
+Kolor sa pangutana
+Kolor sa kalampusan
+Ang kolor sa dolyar sa tiggamit
+Kolor sa tip
+Kolor sa teksto sa separator
+Kolor sa separator
+Ilista ang kolor sa titulo
+Pag-uswag nga kolor sa pasidaan
+Kolor sa yugto sa panahon
+Kolor sa pag-uswag
+Balik nga kapilian nga kolor
+Pagdibuho sa utlanan sa pahibalo
+Gitabonan ang pahibalo sa utlanan.
+Kontaka ang vendor sa mod aron ma-upgrade ang mod ngadto sa compatible nga bersyon.
+Ubos nga prayoridad nga kolor sa utlanan
+Medium priority nga kolor sa utlanan
+Taas nga prayoridad nga kolor sa utlanan
+Nagpadala ug pahibalo sa pag-uswag aron sulayan ang tigdawat
+Gisulayan ang color wheel
+Nagpakita sa lokal nga oras sa kernel
+Nagpakita sa lokal nga petsa sa kernel
+Nagpakita sa lokal nga petsa ug oras sa kernel
+Nagpakita sa oras sa kernel sa UTC
+Nagpakita sa petsa sa kernel sa UTC
+Nagpakita sa petsa ug oras sa kernel sa UTC
+MOTD nga dalan
+MAL nga dalan
+Unsang file ang MOTD text file? Pagsulat ug hingpit nga dalan sa text file.
+Unsa nga file ang MAL text file? Pagsulat ug hingpit nga dalan sa text file.
+Gi-blacklist nga mga mod
+Isulat ang mga filename sa mga mods nga dili modagan sa pagsugod. Kung nahuman ka, isulat ang "q". Pagsulat og minus sign sunod sa dalan aron matangtang ang kasamtangan nga mod.
+Ang mod {0} gi-blacklist.
+I-reload ang tanan nga mga mod
+Nagdugang ug mod sa blacklist
+Pagtangtang sa usa ka mod gikan sa blacklist
+Oras ug petsa sa UTC: {0}
+Ang gipiho nga JSON shell command wala makit-an.
+Ipakita ang impormasyon sa app sa panahon sa boot
+I-parse ang mga argumento sa command-line
+Ipakita ang mga oras sa pagtapos sa entablado
+Pagsugod sa mga pagbag-o sa kernel sa boot
+Ipakita ang kasamtangan nga oras sa dili pa mag-login
+Pahibalo alang sa bisan unsang sayup sa panahon sa boot
+Nagpakita ug mubo nga impormasyon bahin sa aplikasyon sa boot.
+Gi-parse ang mga argumento sa command-line sa boot.
+Nagpakita kung pila ka oras ang gikuha sa kernel aron mahuman ang usa ka yugto.
+Awtomatikong pagsugod sa mga pagbag-o sa kernel sa boot.
+Nagpakita sa kasamtangan nga oras, time zone, ug petsa sa wala pa mag-log in.
+Kung adunay gamay nga sayup sa panahon sa kernel boot, ipahibalo ang tiggamit bahin niini.
+Estilo sa pag-aghat sa username
+Estilo sa pag-aghat sa password
+Ipakita ang MAL sa pag-log-in
+Isulat kung giunsa nimo gusto ang imong pag-login prompt. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Isulat kung giunsa nimo gusto ang imong password nga prompt. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Nagpakita sa Mensahe sa Adlaw pagkahuman gipakita ang screen sa pag-login.
+Pagsulay sa Shell Prompt Style
+JSON Shell Prompt Style
+Probe injected nga mga sugo
+Pagsusi sa gi-inject nga mga sugo sa pagsugod sa kernel shell.
+Ipakita ang mga detalye sa file sa lista
+Nagpakita sa mubo nga mga detalye sa file samtang naglista sa mga file
+Ipakita ang mga detalye sa file sa lista sa FTP
+Username prompt nga estilo alang sa FTP
+Estilo sa pag-aghat sa password alang sa FTP
+Gamita ang unang FTP profile
+Pagdugang bag-ong mga koneksyon sa FTP speed dial
+Sulayi ang pag-validate sa luwas nga mga sertipiko sa FTP
+Ipakita ang FTP MOTD sa koneksyon
+Kanunay dawata ang dili balido nga mga sertipiko sa FTP
+Nagpakita sa mga detalye sa FTP file samtang naglista sa mga hilit nga direktoryo.
+Gigamit ang unang FTP profile aron makonektar sa FTP.
+Kung mahimo, magdugang og bag-ong koneksyon sa FTP speed dial.
+Pagsulay sa pag-validate sa mga sertipiko sa FTP. Ang pagpalong niini dili girekomendar.
+Nagpakita sa FTP nga mensahe sa adlaw sa pag-login.
+Kanunay dawata ang dili balido nga mga sertipiko sa FTP. Dili girekomenda nga i-on kini tungod kay mahimo’g adunay peligro sa seguridad.
+Estilo sa pag-aghat sa username alang sa mail
+Estilo sa pag-aghat sa password alang sa mail
+IMAP prompt nga estilo para sa mail
+SMTP prompt nga estilo alang sa mail
+Awtomatikong makit-an ang mail server
+I-enable ang mail debug
+Pahibalo alang sa bag-ong mga mensahe sa mail
+GPG password prompt estilo alang sa mail
+Ipadala ang IMAP ping interval
+Ipadala ang SMTP ping interval
+Format sa text sa mail
+Isulat kung unsa ang gusto nimo nga ang imong IMAP server prompt mahimong. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Isulat kung giunsa nimo gusto nga ang imong SMTP server prompt mahimong. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Awtomatikong makit-an ang mail server base sa gihatag nga adres.
+Makapahimo sa mail server debug.
+Nagpahibalo kanimo alang sa bisan unsang bag-ong mga mensahe sa mail.
+Isulat kung unsa ang gusto nimo nga ang imong GPG password prompt. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Pila ka millisecond ang ipadala sa IMAP ping?
+Pila ka millisecond ang ipadala sa SMTP ping?
+Gikontrol kung giunsa ipakita ang teksto sa mail.
+Plain nga teksto
+Nagdagayday nga teksto
+HTML nga teksto
+Gipadato nga teksto
+Gi-compress nga adunahan nga teksto
+Daghang teksto
+Awtomatikong magsugod sa hilit nga debug sa pagsugod
+Ang format sa mensahe sa remote debug
+Kung gusto nimo nga magsugod ang hilit nga debug sa boot, i-enable kini.
+Gipiho ang layo nga debug nga format sa mensahe. {0} para sa ngalan, {1} para sa mensahe.
+Estilo sa pag-aghat sa RSS feed URL
+Awtomatikong pag-refresh sa RSS feed
+Awtomatikong pag-refresh sa RSS feed interval
+Isulat kung unsa ang gusto nimo nga ang imong RSS feed server maaghat. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Pila ka millisecond ang i-refresh ang RSS feed?
+Ipakita ang mga detalye sa file sa lista sa SFTP
+Estilo sa pag-aghat sa username alang sa SFTP
+Pagdugang bag-ong mga koneksyon sa SFTP speed dial
+Nagpakita sa mga detalye sa SFTP file samtang naglista sa mga hilit nga direktoryo.
+Kung mahimo, magdugang og bag-ong koneksyon sa SFTP speed dial.
+Ping timeout
+Ipakita ang daghang impormasyon sa adapter
+Ipakita ang kinatibuk-ang impormasyon sa network
+Pag-download sa porsyento nga teksto
+Pag-upload sa porsyento nga teksto
+Pila ka millisecond ang maghulat sa dili pa ideklarar ang timeout?
+Nag-imprinta sa daghang impormasyon sa adapter, sama sa impormasyon sa pakete.
+Nagpakita sa kinatibuk-ang impormasyon bahin sa network.
+Isulat kung giunsa nimo gusto ang imong porsyento sa pag-upload nga teksto. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder. {0} alang sa gi-upload nga gidak-on, {1} alang sa gipunting nga gidak-on, {2} alang sa porsyento.
+Isulat kung giunsa nimo gusto ang imong porsyento sa pag-download nga teksto. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder. {0} alang sa gi-download nga gidak-on, {1} alang sa gipunting nga gidak-on, {2} alang sa porsyento.
+Pangayo og password human ma-lock
+Human ma-lock ang screen, pangayo og password
+Minimum nga pula nga lebel sa kolor
+Minimum nga lebel sa berde nga kolor
+Minimum nga asul nga lebel sa kolor
+Minimum nga lebel sa kolor
+Maximum nga pula nga lebel sa kolor
+Labing kataas nga lebel sa berde nga kolor
+Labing taas nga lebel sa asul nga kolor
+Maximum nga lebel sa kolor
+Minimum nga pula nga lebel sa kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Minimum nga lebel sa berde nga kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Minimum nga asul nga lebel sa kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Minimum nga lebel sa kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255 alang sa 255 nga mga kolor o 16 alang sa 16 nga mga kolor.
+Maximum nga pula nga lebel sa kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Labing kataas nga lebel sa berde nga kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Labing taas nga lebel sa asul nga kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255.
+Maximum nga lebel sa kolor. Ang minimum nga gidawat nga kantidad mao ang 0 ug ang labing taas nga gidawat nga kantidad mao ang 255 alang sa 255 nga mga kolor o 16 alang sa 16 nga mga kolor.
+Kolor sa atubangan
+Linya nga karakter
+Usa ka karakter aron maporma ang usa ka linya. Siguroha nga mag-input lang og usa ka karakter.
+Ibabaw nga wala nga suok nga karakter alang sa mga oras nga bar
+Ibabaw nga wala nga suok nga karakter alang sa mga minuto nga bar
+Ibabaw nga wala nga suok nga karakter alang sa mga segundo bar
+Ibabaw nga tuo nga suok nga karakter alang sa mga oras nga bar
+Ibabaw nga tuo nga suok nga karakter alang sa mga minuto nga bar
+Ibabaw nga tuo nga suok nga karakter alang sa mga segundo bar
+Ubos sa wala nga suok nga karakter alang sa mga oras nga bar
+Ubos sa wala nga suok nga karakter alang sa mga minuto nga bar
+Ubos nga wala nga suok nga karakter alang sa mga segundo bar
+Ubos nga tuo nga suok nga karakter alang sa mga oras nga bar
+Ubos nga tuo nga suok nga karakter alang sa mga minuto nga bar
+Ubos nga tuo nga suok nga karakter alang sa mga segundo bar
+Ibabaw nga frame nga karakter alang sa mga oras nga bar
+Ibabaw nga bayanan nga karakter alang sa mga minuto nga bar
+Ibabaw nga frame nga karakter alang sa mga segundo bar
+Ubos nga karakter sa frame alang sa mga oras nga bar
+Ubos nga karakter sa frame alang sa mga minuto nga bar
+Ubos nga karakter sa frame alang sa mga segundo bar
+Wala nga frame nga karakter alang sa mga oras nga bar
+Wala nga frame nga karakter alang sa mga minuto nga bar
+Wala nga frame nga karakter alang sa mga segundo bar
+Tuo nga frame nga karakter alang sa mga oras nga bar
+Tuo nga frame nga karakter alang sa mga minuto nga bar
+Tuo nga frame nga karakter alang sa mga segundo bar
+Teksto sa impormasyon sulod sa mga oras
+Teksto sa impormasyon sulod sa mga minuto
+Teksto sa impormasyon sulod sa mga segundo
+Minimum nga pula nga lebel sa kolor sulod sa mga oras
+Minimum nga lebel sa berde nga kolor sulod sa mga oras
+Minimum nga asul nga lebel sa kolor sulod sa mga oras
+Minimum nga lebel sa kolor sulod sa mga oras
+Maximum nga pula nga lebel sa kolor sulod sa mga oras
+Labing kataas nga lebel sa berde nga kolor sa mga oras
+Maximum nga asul nga lebel sa kolor sulod sa mga oras
+Maximum nga lebel sa kolor sulod sa mga oras
+Minimum nga lebel sa pula nga kolor sulod sa mga minuto
+Minimum nga lebel sa berde nga kolor sulod sa mga minuto
+Minimum nga asul nga lebel sa kolor sulod sa mga minuto
+Minimum nga lebel sa kolor sulod sa mga minuto
+Maximum nga pula nga lebel sa kolor sulod sa mga minuto
+Labing taas nga lebel sa berde nga kolor sa mga minuto
+Labing kataas nga lebel sa asul nga kolor sa mga minuto
+Maximum nga lebel sa kolor sulod sa mga minuto
+Minimum nga lebel sa pula nga kolor sa mga segundo
+Minimum nga lebel sa berde nga kolor sa mga segundo
+Minimum nga asul nga lebel sa kolor sa mga segundo
+Minimum nga lebel sa kolor sa mga segundo
+Pinakataas nga lebel sa pula nga kolor sa mga segundo
+Pinakataas nga lebel sa berde nga kolor sa mga segundo
+Labing kataas nga lebel sa asul nga kolor sa mga segundo
+Labing kataas nga lebel sa kolor sa mga segundo
+Usa ka karakter nga susama sa ibabaw nga wala nga suok. Siguroha nga mag-input lang og usa ka karakter.
+Usa ka karakter nga susama sa ubos sa wala nga suok. Siguroha nga mag-input lang og usa ka karakter.
+Usa ka karakter nga susama sa ibabaw nga bayanan. Siguroha nga mag-input lang og usa ka karakter.
+Usa ka karakter nga susama sa ubos nga bayanan. Siguroha nga mag-input lang og usa ka karakter.
+Usa ka karakter nga susama sa wala nga frame. Siguroha nga mag-input lang og usa ka karakter.
+Usa ka karakter nga susama sa husto nga frame. Siguroha nga mag-input lang og usa ka karakter.
+Isulat kung giunsa gipakita ang imong teksto sa impormasyon alang sa karon nga oras. {0} alang sa kasamtangan nga oras gikan sa 24 ka oras.
+Isulat kung giunsa gipakita ang imong teksto sa impormasyon alang sa karon nga minuto. {0} alang sa kasamtangang minuto sa 60 ka minuto.
+Isulat kung giunsa ang imong teksto sa impormasyon alang sa karon nga ikaduha nagpakita. {0} alang sa kasamtangan nga segundo sa 60 ka segundo.
+Kolor sa teksto
+Ibabaw nga wala nga suok nga karakter alang sa ramp bar
+Ibabaw nga tuo nga suok nga karakter para sa ramp bar
+Ubos nga wala nga suok nga karakter alang sa ramp bar
+Ubos nga tuo nga suok nga karakter alang sa ramp bar
+Upper frame nga karakter para sa ramp bar
+Ubos nga karakter sa frame para sa ramp bar
+Wala nga frame nga karakter para sa ramp bar
+Tuo nga frame nga karakter para sa ramp bar
+Minimum nga pula nga lebel sa kolor alang sa pagsugod sa kolor
+Minimum nga lebel sa berde nga kolor alang sa pagsugod sa kolor
+Minimum nga asul nga lebel sa kolor alang sa pagsugod sa kolor
+Minimum nga lebel sa kolor alang sa pagsugod sa kolor
+Pinakataas nga lebel sa pula nga kolor alang sa pagsugod sa kolor
+Labing kataas nga lebel sa berde nga kolor alang sa pagsugod sa kolor
+Labing kataas nga lebel sa asul nga kolor alang sa pagsugod sa kolor
+Maximum nga lebel sa kolor alang sa pagsugod sa kolor
+Minimum nga pula nga lebel sa kolor alang sa katapusan nga kolor
+Minimum nga berde nga lebel sa kolor alang sa katapusan nga kolor
+Minimum nga asul nga lebel sa kolor alang sa katapusan nga kolor
+Minimum nga lebel sa kolor alang sa katapusan nga kolor
+Pinakataas nga lebel sa pula nga kolor alang sa katapusan nga kolor
+Labing kataas nga lebel sa berde nga kolor alang sa katapusan nga kolor
+Pinakataas nga lebel sa asul nga kolor alang sa katapusan nga kolor
+Maximum nga lebel sa kolor alang sa katapusan nga kolor
+Solver minimum nga gidaghanon
+Solver maximum nga gidaghanon
+Solver ipakita input
+Ibabaw nga wala nga suok nga karakter alang sa utlanan sa pagpahibalo
+Ibabaw nga tuo nga suok nga karakter alang sa utlanan sa pagpahibalo
+Ubos sa wala nga suok nga karakter alang sa utlanan sa pagpahibalo
+Ubos nga tuo nga suok nga karakter alang sa utlanan sa pagpahibalo
+Ibabaw nga bayanan nga karakter alang sa utlanan sa pagpahibalo
+Ubos nga karakter sa frame alang sa utlanan sa pagpahibalo
+Wala nga frame nga karakter para sa pahibalo nga utlanan
+Tuo nga frame nga karakter para sa pahibalo nga utlanan
+Estilo sa impormasyon sa manwal nga panid
+Kung ipakita kung unsa ang nasulat sa input prompt.
+Unsa ang minimum nga numero nga pilion?
+Unsa ang maximum nga gidaghanon sa pagpili?
+Isulat kung unsa ang gusto nimo sa imong impormasyon sa manpage. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder. {0} para sa manwal nga titulo, {1} para sa rebisyon.
+Ang kabtangan {0} wala makit-an sa bisan unsang mga module.
+Kini nga seksyon naglista sa kinatibuk-ang mga setting sa screensaver. Para sa tagsa-tagsa ka mga setting sa screensaver, exit sa Settings ug ablihi ang Screensaver Settings.
+Pagsugod sa color wheel sa tinuod nga color mode
+Kung gipiho, kini magpakita sa customized nga startup banner nga adunay suporta sa placeholder. Mahimo nimong gamiton ang {0} alang sa bersyon sa kernel.
+Unsang variant sa kasamtangang pinulongan ang gigamit sa pag-ilis sa mga ngalan sa bulan, kalendaryo, ug uban pa?
+Gi-aktibo ang 255 nga suporta sa kolor.
+Gi-aktibo ang tinuod nga suporta sa kolor.
+Ang pulong gitangtang sa linya {0}.
+Giilisan ang string sa linya {0}.
+Gitangtang ang numero sa linya {0}.
+Sugpo ang dili awtorisadong mga mensahe
+Gitagoan ang makalagot nga mensahe kung ang function sa paglista mosulay sa pag-abli sa usa ka dili awtorisado nga folder
+Impormasyon sa FTP server
+Address sa server:
+Port sa server:
+Matang sa server:
+Uri sa sistema sa server:
+Mode sa pag-encrypt sa server:
+Uri sa koneksyon sa data sa server:
+Sistema sa server:
+Uri sa datos sa pag-download sa server:
+Ang tipo sa datos sa pag-upload sa server:
+Kinahanglan ka magkonektar sa usa ka server sa dili pa ipahigayon kini nga operasyon.
+Pagsulod ug hilit nga file aron ma-hash.
+Pagsulod ug hilit nga direktoryo aron ma-hash.
+Pagsulod ug hilit nga direktoryo.
+Recursive hashing alang sa FTP
+Kung i-recursively hash ang usa ka direktoryo. Palihug timan-i nga dili tanan nga FTP server nagsuporta niana.
+Katulin sa orasan sa processor:
+Suporta sa SSE2 sa processor:
+Kinatibuk-ang gidaghanon sa mga processor:
+Gidak-on sa disk:
+Kinatibuk-ang memorya:
+Mga graphic card:
+Modelo sa disk:
+Maximum nga gidaghanon sa mga e-mail sa usa ka panid
+Kultura sa kasamtangang pinulongan
+Kung sigurado ka nga naablihan nimo ang husto nga seksyon, susiha kini nga mensahe:
+Lainlaing Setting...
+Mga Setting sa Kolor...
+Nagpatuman sa usa ka FTP server nga sugo
+Pagsulod sa POP3 server address ug port (<address> o <address>: [port]):
+POP3 prompt nga estilo para sa mail
+Ipadala ang POP3 ping interval
+Isulat kung unsa ang gusto nimo nga ang imong POP3 server prompt. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder.
+Pila ka millisecond ang ipadala sa POP3 ping?
+Gamita ang POP3
+Kung gamiton ang POP3. Ang pag-disable niini mogamit sa SMTP.
+Gi-encrypt ang usa ka hilo gamit ang CRC32
+Gibuksan ang mail client
+sa mail nga gibalhin...
+Ang mga setting alang niini nga screensaver anaa dinhi.
+Gisulayan ang pagpaandar sa lamesa
+Gi-edit ang espesipikong linya
+Idugang ang bag-ong mga linya sa katapusan sa file
+Pagsulod sa teksto nga gusto nimong idugang sa katapusan sa file. Kung nahuman na ka, isulat ang "EOF" sa kaugalingon nga linya.
+Ngalan sa tagbalay
+Username
+Type sa Data
+Pag-encode
+Encryption
+Mga protocol
+Ipakita ang pag-uswag sa pagbalhin sa mail
+Pag-uswag sa pagbalhin sa mail
+Pag-uswag sa pagbalhin sa mail (single)
+Kung mahimo, ang mail shell magpakita kung pila ka byte ang gipasa sa pag-download sa mail.
+Isulat kung unsa ang gusto nimo nga istilo sa pag-uswag sa imong pagbalhin sa mail. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder. {0} alang sa gibalhin nga gidak-on ug {1} alang sa kinatibuk-ang gidak-on.
+Isulat kung unsa ang gusto nimo nga istilo sa pag-uswag sa imong pagbalhin sa mail. Biyai nga blangko aron magamit ang default nga istilo. Gi-parse ang mga placeholder. {0} para sa gibalhin nga gidak-on.
+Time Zone:
+Karon kay {0}
+Ang karon nga oras kay {0}
+Kolor sa separator sa lamesa
+Kolor sa ulohan sa lamesa
+Kolor sa bili sa lamesa
+Posibleng mga tubag
+Ang mod file wala gitino.
+Pagsulay sa pag-instalar sa na-install na mod. Gi-update ang mod...
+Napakyas ang pag-instalar alang sa
+Ang mod file nga gihatag dili uyon.
+Napakyas ang pag-uninstall alang sa
+Nagbukas ug URL
+I-print ang mga numero sa linya sa pag-imprinta sa mga sulod sa file
+Naghimo sa \"cat\" nga sugo nga mag-print sa mga numero sa linya sa file.
+Transliterated nga bersyon
+Gihubad nga bersyon
+Gisalikway ang tanan nga mga pahibalo
+Nag-download...
+Nag-upload...
+Ipakita ang pahibalo alang sa pag-uswag sa pag-download
+Ipakita ang pahibalo alang sa pag-uswag sa pag-upload
+Nagpakita sa pahibalo nga nagpakita sa pag-uswag sa pag-download.
+Nagpakita sa pahibalo nga nagpakita sa pag-uswag sa pag-upload.
+Susihon kung ang mahubad nga string anaa sa mga kapanguhaan sa KS
+Ang string nga makit-an sa mga kapanguhaan sa lokalisasyon.
+Wala makit-an ang string sa mga kapanguhaan sa lokalisasyon.
+Gisugdan ang kernel sa hilom
+Nag-inject og command aron magsugod sa sunod nga login
+Nagsugod ang kernel sa luwas nga paagi, nga gi-disable ang tanan nga mga mod
+Sama sa luwas nga mode, apan gi-disable usab ang multi-user ug pipila nga pag-customize
+Walay igo nga mga argumento.
+Kolor sa ibabaw nga wala nga suok para sa ramp bar
+Kolor sa ibabaw nga tuo nga suok para sa ramp bar
+Kolor sa ubos sa wala nga suok para sa ramp bar
+Kolor sa ubos nga tuo nga suok para sa ramp bar
+Ibabaw nga kolor sa frame para sa ramp bar
+Ubos nga kolor sa frame para sa ramp bar
+Wala nga kolor sa frame para sa ramp bar
+Tuo nga kolor sa frame para sa ramp bar
+Gamita ang mga kolor sa border para sa ramp bar
+Gamita ang mga kolor sa utlanan para sa ramp bar. Kon disabled, makamugna og gray nga bar.
+Nagsugod sa HTTP shell
+Migawas sa HTTP shell ug mibalik sa kernel
+Nagtakda sa HTTP nga site. Kinahanglan usa ka balido nga URI.
+Nakuha ang tubag gikan sa HTTP server gamit ang piho nga hangyo
+Pagtangtang sa sulud gikan sa HTTP server
+Adunay usa ka sayup sa HTTP shell:
+HTTP nga mensahe: Ang gipangayo nga sugo {0} wala makit-an. Tan-awa ang 'tabang' alang sa usa ka lista sa magamit nga mga sugo nga gipiho sa HTTP shell.
+Nakuha ang string gikan sa HTTP server gamit ang espesipikong hangyo
+Nakuha ang {0}...
+Ang format sa URI sa site dili balido.
+Pagbutang sa site sa
+Ang mga kolor wala magkinahanglan og restart, apan kadaghanan sa mga setting nagkinahanglan og restart.
+Walay tabang alang sa argumento "{0}".
+Pindota ang A sa mga komento sa pagdumot aron mangayo og pasaylo. Pindota ang T sa love comments para magpasalamat. Pindota ang Q aron mohunong sa dula.
+Nangayo ka ug pasaylo sa usa ka pagdumot nga komento! Maayo kaayo!
+Nangayo og pasaylo sa love comment. Dili igo nga maayo.
+Gipasalamatan ra nimo ang nagdumot sa komento sa pagdumot!
+Default nga kalisud alang sa SpeedPress
+Keypress timeout para sa SpeedPress
+Pilia ang imong gusto nga kalisud.
+Pila ka millisecond ang maghulat sa keypress sa dili pa ang timeout? (Sa naandan nga kalisud)
+Ilisan ang pulong o prase sa lain gamit ang regular nga mga ekspresyon
+Ilisan ang pulong o hugpong sa pulong sa lain sa linya gamit ang regular nga mga ekspresyon
+Pagpangutana sa usa ka pulong sa usa ka piho nga linya o tanan nga linya gamit ang regular nga mga ekspresyon
+Pangitag Setting
+Isulat kung unsa ang gusto nimo pangitaon.
+Walay makit-an. Siguruha nga husto ang imong pagsulat sa setting.
+Nag-pack sa usa ka lokal nga file sa archive
+Dili makaputos sa bisan unsa.
+Tubag nga paghulagway
+Host Port
+Alang sa dugang nga impormasyon bahin sa mga termino ug kondisyon sa paggamit niini nga software, bisitaha
+Default nga pagpili nga tipo sa output
+Susihon ang tanan nga mga setting sa KS aron makita kung husto ba ang pagkasulat sa mga variable
+Kini nga mga entri sa pag-configure adunay dili balido nga mga variable o enumerasyon ug kinahanglan nga ayohon:
+Ang payl {0} wala makit-an
+Naghimo usa ka variable array nga adunay gihatag nga mga kantidad
+Isulat ang numero sa setting nga adtoan. Ang bisan unsang lain nga karakter nagpasabut nga mobalik.
+Susihon ang tanan nga mga numero sa linya sa teksto sa lokalisasyon aron makita kung parehas ba silang tanan
+Dili tugma sa linya
+Palihug pagsulod ug user number.
+Ilakip ang mga wala mailhi nga tiggamit
+Ilakip ang mga disabled nga tiggamit
+Naglakip sa wala mailhi nga tiggamit sa lista
+Naglakip sa mga disabled nga tiggamit sa lista
+Paghan-ay sa lista
+Pagsunud sa lista sa filesystem nga propesyonal.
+Naghatag usa ka kapilian sa pagpili
+Shell commands wala gipatuman!!!
+Ipakita ang pinakabag-o nga ulohan sa RSS sa pag-login
+URL sa ulohan sa RSS
+Matag login, kini magpakita sa pinakabag-o nga RSS headline gikan sa pinili nga headline URL.
+RSS headline URL nga gamiton kung ipakita ang pinakabag-o nga ulohan. Kasagaran kini ang imong paborito nga feed.
+Pinakabag-ong balita:
+Napakyas sa pagkuha sa pinakabag-o nga balita.
+Gipili nga kolor nga kapilian
+Ipakita ang stack trace sa kernel error
+Kung adunay bisan unsang sayup sa kernel, pilia kung i-print ba o dili ang stack trace sa console.
+Ang mod mahimong ma-load, apan kini nga mga pasidaan mahimong makaapekto sa paagi sa paglihok sa mod:
+Mahimong i-load ang screensaver, apan kini nga mga pasidaan mahimong makaapekto sa paagi sa paglihok sa screensaver:
+I-save ang Mga Setting Ingon
+I-load ang Mga Setting Gikan sa
+Asa nimo gusto i-save ang kasamtangan nga mga setting sa kernel?
+Dili makatipig sa mga setting sa kernel sa ibabaw sa kasamtangan nga file.
+Asa nimo gusto i-load ang kasamtangan nga mga setting sa kernel gikan?
+Susihon kung ang mga mahubad nga mga kuwerdas anaa sa mga kapanguhaan sa KS
+Gihiusa ang duha ka mga text file o daghan pa sa output file.
+Napakyas sa paghiusa sa mga file.
+Ang RSS feed nag-timeout
+Pila ka millisecond ang maghulat sa dili pa makuha ang oras sa RSS feed?
+Pun-a ang mga kahon
+Gidrowing ba nato ang kahon sa kinatibuk-an o ang utlanan lamang ang atong gidrowing?
+Paglangan sa yugto sa millisecond
+Pila ka millisecond ang maghulat sa dili pa magdrowing sa sunod nga yugto?
+Sunod nga ramp rot interval
+Pila ka millisecond ang maghulat sa dili pa madunot ang sunod nga rampa sa usa ka tumoy?
+Susiha ang debug quota
+Gisusi ba namo kung ang sistema sa debug kinahanglan nga susihon ang quota sa dili pa mosulat sa debugger?
+Pila ka millisecond ang gikinahanglan aron makatulog?
+Napakyas sa pagdugang og panghitabo.
+Napakyas sa pagtangtang sa usa ka panghitabo.
+Dili igo nga mga argumento nga gihatag aron makadugang usa ka panghitabo.
+Dili igo nga mga argumento nga gihatag aron matangtang ang usa ka panghitabo.
+Dili igo nga mga argumento nga gihatag alang sa pagmaniobra sa panghitabo.
+Napakyas sa pagdugang o pagtangtang sa usa ka pahinumdom.
+Dili igo nga mga argumento nga gihatag sa pagdugang o pagtangtang sa usa ka pahinumdom.
+Dili igo nga mga argumento nga gihatag alang sa pagmaniobra sa pahinumdom.
+Pahinumdom nga walay ulohan
+Walay ulohan nga panghitabo
+Karon kini usa ka adlaw sa panghitabo!
+Ayaw kalimti kini!
+Dili balido nga aksyon.
+Usa ka yano nga stopwatch
+Pagsugod o paghunong
+Sabakan
+I-reset
+Usa ka yano nga timer
+Pagsugod (re) pag-ihap
+Ibutang ang interval
+Ang gipakita nga timeout dili numeric.
+Tinoa ang timeout sa milliseconds
+I-save ang tanan nga mga panghitabo ug/o mga pahinumdom nga makadaot
+Kung mahimo, tangtangon ang tanan nga mga panghitabo ug/o mga pahinumdom sa dili pa i-save ang tanan gamit ang mando sa kalendaryo.
+Tinoa ang pagsulay pag-usab alang sa FTP transmission
+Ang oras sa koneksyon sa FTP
+FTP data connection timeout
+FTP IP nga mga bersyon
+Pila ka beses aron ma-verify ang pag-upload ug pag-download ug pagsulay pag-usab kung mapakyas ang pag-verify sa wala pa mapakyas ang pag-download sa kinatibuk-an?
+Pila ka millisecond ang maghulat sa dili pa ang FTP connection timeout?
+Pila ka millisecond ang maghulat sa dili pa ang FTP data connection timeout?
+Pilia ang bersyon sa Internet Protocol nga gisuportahan sa FTP server ug nga gigamit sa FTP client.
+Pagsulay sa pagsugod sa RPC samtang kini nagsugod na.
+Ibabaw nga wala nga suok nga kinaiya alang sa RGB color wheel
+Ibabaw nga tuo nga suok nga karakter alang sa RGB color wheel
+Ubos nga wala nga suok nga karakter alang sa RGB color wheel
+Ubos nga tuo nga suok nga karakter alang sa RGB color wheel
+Upper frame nga karakter alang sa RGB color wheel
+Ubos nga bayanan nga karakter alang sa RGB color wheel
+Wala nga frame nga karakter alang sa RGB color wheel
+Tuo nga frame nga karakter alang sa RGB color wheel
+Pangitag file sa espesipikong direktoryo o sa kasamtangang direktoryo
+Gi-convert ang mga linya sa katapusan sa pag-format alang sa kasamtangan nga plataporma o sa piho nga custom nga format
+Kinatibuk-ang gidak-on sa folder:
+Ipakita ang kinatibuk-ang gidak-on sa lista
+Kung mahimo, ipakita ang kinatibuk-ang gidak-on sa folder sa lista, depende kung giunsa pagkalkula ang mga gidak-on sa folder sumala sa configuration.
+Nagbag-o ka!
+Default nga JSON formatting para sa JSON shell
+Gipili ang default nga JSON formatting (gipanindot o gimino) para sa JSON shell nga i-save.
+Malampuson nga na-download ang update!
+Awtomatikong i-download ang mga update
+Kung adunay bisan unsang pag-update, ang kernel awtomatiko nga mag-download niini.
+Radius sa pagbuto sa pabuto
+Pila ka bloke (hangtod sa 10) ang explosion radius alang sa pabuto kung magdilaab?
+Kini nga mando adunay sa ubos nga mga switch nga nagbag-o kung giunsa kini molihok:
+I-print ang mga numero sa linya nga nagsunod sa linya nga giimprinta
+Gipugngan ang pag-imprinta sa mga numero sa linya
+Kanunay gamita ang transliterated nga bersyon
+Gamita kanunay ang gihubad nga bersyon
+Puwersa ang pagbalhin sa pinulongan
+Ipakita nga ang tubag mahimong magkuha ug labaw sa usa ka karakter
+Ipasabut nga ang tubag mahimong usa ra ka karakter
+I-print ang pangutana ug ang mga tubag sa usa ka linya
+I-print ang pangutana ug ang mga tubag sa duha ka linya
+I-print ang pangutana ug ang mga tubag sa modernong paagi
+I-print ang pangutana ug ang mga tubag sa usa ka lamesa
+Nagpakita sa mga detalye sa file sa lista
+Gipugngan ang makalagot nga "permission denied" nga mga mensahe
+Nagpakita sa tanang time zone
+Pagsugod sa dula sa dali nga kalisud
+Nagsugod sa dula sa medium nga kalisud
+Nagsugod sa dula sa lisud nga kalisud
+Nagsugod sa dula sa lisud kaayo nga kalisud
+Nagsugod sa dula sa naandan nga kalisud. Palihug timan-i nga ang custom timeout sa milliseconds kinahanglang isulat isip argumento.
+Nagpakita sa impormasyon sa sistema
+Nagpakita sa impormasyon sa hardware
+Nagpakita sa impormasyon sa tiggamit
+Nagpakita sa mensahe sa adlaw
+Nagpakita sa mensahe sa adlaw pagkahuman sa pag-login
+Nagpakita sa tanang impormasyon
+Naghimo usa ka direktoryo nga adunay sulud sa ZIP file
+Nagpakita sa tanan nga magamit nga mga lungsod
+Kusog nga kompresiyon
+Walay compression
+Ayaw paghimo og base nga direktoryo sa archive
+Unit sa ticks
+Makadisgrasya ang pagdiskonekta sa server
+Nagpakita nga ang target nga agianan hingpit
+Gitipigan ang JSON file, gipanindot kini sa proseso
+Gitipigan ang file sa JSON, giminusan kini sa proseso
+Nakuha ang estilo sa pagtapos sa linya gikan sa text file
+Pagtangtang sa tanan nga gipabuto nga mga panghitabo
+I-enable ang pag-debug sa panghitabo
+Makapahimo sa pag-debug alang sa kernel nga sistema sa panghitabo
+Font sa figlet
+Pagsulat ug figlet font nga gisuportahan sa Figgle library. Konsultaha ang dokumentasyon sa librarya para sa dugang impormasyon
+Napakyas pag-instalar sa naandang pinulongan {0}.
+Ang metadata file nga gikinahanglan sa pag-instalar sa custom nga pinulongan wala maglungtad.
+Ang impormasyon sa metadata nga gikinahanglan sa pag-instalar sa custom nga pinulongan wala maghatag sa gikinahanglang lokalisasyon nga gikinahanglan.
+Napakyas sa pagtangtang sa naandang pinulongan {0}.
+Ang metadata file nga gikinahanglan aron ma-uninstall ang custom nga pinulongan wala maglungtad.
+Ang impormasyon sa metadata nga gikinahanglan aron ma-uninstall ang custom nga lengguwahe wala maghatag sa gikinahanglang lokalisasyon nga gikinahanglan.
+Ang gitas-on sa pinulongang English dili motakdo sa gitas-on sa gihatag nga token sa pinulongan.
+Ang lengguwahe anaa na ug dili ma-overwrite.
+Napakyas sa pag-uninstall sa custom nga pinulongan. Lagmit wala kini.
+Napakyas sa pag-instalar sa custom nga mga pinulongan.
+Napakyas sa pag-uninstall sa custom nga mga pinulongan.
+Napakyas sa pag-uninstall sa custom nga mga pinulongan. Tan-awa ang sulod nga eksepsiyon alang sa dugang impormasyon.
+Isulat ang password sa tagdumala. Siguruha nga dili nimo gamiton kini nga account gawas kung nahibal-an nimo kung unsa ang imong gibuhat.
+Kinahanglan nimong isulat ang password sa tagdumala.
+Impormasyon sa lisensya
+Pagdumala sa imong mga pinulongan
+Ang lengguwahe wala makit-an o ang file adunay dili balido nga mga karakter.
+Wala gipiho ang pinulongan.
+Ang pagdumala sa pinulongan gi-disable sa safe mode.
+Mubo nga ngalan sa pinulongan:
+Bug-os nga ngalan sa pinulongan:
+Mahubad nga pinulongan:
+Kinaiya nga pinulongan:
+Bag-ong welcome banner
+Estilo nga splash screen
+Nagpakita sa bag-ong gihubad nga Figlet nga welcome banner
+Makapahimo sa estaylis nga splash screen sa pagsugod. Palihug timan-i nga kini mag-disable sa argument prompt ug pagsulay sa shell pre-boot.
+Splash ngalan
+Ang ngalan sa splash gikan sa magamit nga mga splashes nga gipatuman sa kernel.
+Nahimo nga default MOTD.
+Nahimo nga default MAL.
+Gisugdan ang account sa sistema
+Gisugdan ang mga tiggamit
+Gikarga ang mga permiso
+Welcome!
+Pagsugod sa hilit nga debugger...
+Kasaypanan sa koneksyon sa remote debugger
+Pahibalo sa hilit nga debug koneksyon sayop
+Kung mahimo, gamiton ang sistema sa pagpahibalo aron mapahibalo ang host sa sayup nga koneksyon sa hilit nga debug. Kung dili, gamiton ang default nga pagsulat sa console.
+Figlet font para sa timer
+I-enable ang Figlet para sa timer
+Kung mahimo, gamiton ang figlet para sa timer. Palihug timan-i nga kini nagkinahanglan og usa ka dako nga console screen aron sa paghatag sa oras sa husto nga paagi sa Figlet enabled.
+Sayop samtang nag-parse sa pre-boot command-line nga mga argumento: {0}
+I-reset ang kernel sa mga setting sa pabrika
+Gilaktawan ang pagkakita sa gidak-on sa console
+Morag gilaktawan nimo ang pagkakita sa gidak-on sa console. Ang mga butang mahimong dili molihok sa husto sa gagmay nga mga screen.
+Aron makabaton og mas maayo nga kasinatian, usba ang imong console window samtang anaa pa niini nga screen. Pindota ang bisan unsang yawe aron magpadayon...
+Gamay ra kaayo ang imong console aron makadagan sa husto:
+Banner figlet nga font
+Nag-imprenta og usa ka hilo aron sa paghupay gamit ang tipo sa kolor ug pag-imprinta sa linya nga adunay suporta sa Figlet
+Nag-imprenta og usa ka hilo aron sa paghupay gamit ang tipo sa kolor ug pag-imprinta sa linya nga adunay format ug suporta sa Figlet
+Permanenteng tangtangon ang usa ka mensahe
+Permanenteng tangtangon ang tanang mensahe gikan sa nakadawat
+I-undos ang pagtangtang sa usa ka mensahe
+I-undos ang pagtangtang sa tanang mensahe gikan sa nakadawat
+Ang pag-undo sa pagtangtang wala gipatuman para sa POP3.
+Ipakita ang mga sugo nga nagsalig sa tabang
+Ipakita ang mga sugo sa kabhang nga nagsalig sa tabang
+Ipakita ang mod nga mga sugo sa pagsalig sa tabang
+Ipakita ang mga alyas nga nagsalig sa tabang
+Nagpakita sa pag-ihap sa mga sugo sa listahan sa sugo, nga kontrolado sa tulo ka ihap nga mga switch sa pagpakita alang sa lain-laing matang sa mga sugo.
+Nagpatuman sa mga mando kung matagbaw na ang mga ekspresyon sa UESH
+Ang kahimtang wala makit-an sa ekspresyon.
+Kondisyon {0} nagkinahanglan og {1} argumento. Nakuha ang {2}.
+Ang kondisyon kinahanglan ibutang sa tunga.
+Ang kondisyon kinahanglan ibutang sa sinugdanan.
+Error sa pag-parse sa ekspresyon tungod sa syntax error.
+Napakyas sa pagtagbaw sa kondisyon. Dugang impormasyon dinhi:
+Karakter nga maskara sa password
+Usa ka karakter nga nagtago sa password. Biyai nga blangko para sa dugang seguridad.
+Mogawas sa kabhang kung nagdagan sa subshell
+Dili makapatay sa inahan nga kabhang!
+Dili maka log out sa subshell.
+Wala gipiho ang file. Paggawas sa shell...
+Ang mga setting alang niini nga splash screen magamit dinhi.
+Kolor sa progress bar
+Gibuksan ang mga setting sa screensaver
+Gibuksan ang mga setting sa splash
+Mga lista nga magamit nga mga variable sa UESH
+Pag-uswag nga lokasyon sa teksto
+Pilia ang imong gusto nga lokasyon sa teksto sa pag-uswag.
+Mahimo ra nimo isulat ang mga numero.
+Pindota ang "q" aron makagawas.
+Nag-download sa mga ngalan...
+Tungod sa mga kalisud sa teknikal, dili namo malista ang mga kabtangan sa adapter sa mga sistema sa Unix.
+Makapahimo sa debug mode
+Pag-aghat alang sa mga argumento
+I-enable ang Itom ug Puti nga Mode
+Naghimo sa disco nga itom ug puti. Masakitan gyud ang imong mga mata kung kini paspas kaayo, mao nga dili girekomenda kung nakasinati ka usa ka pag-atake sa mga paspas nga mga imahe.
+Morag nagpadagan ka og dili suportadong bersyon. Labing maayo nga dili gamiton kini nga bersyon.
+I-load ang Kasamtangang mga Kolor
+Alternatibong kapilian nga kolor
+Giisip sa mga tiggamit ang gugma o pagdumot nga mga komento
+Pila ka mga tiggamit ang naa sa lawak sa komento sa gugma o pagdumot?
+Naglista sa magamit nga mga pinulongan
+Anaa nga mga pinulongan:
+Mga argumento sa command-line:
+Pre-boot command-line nga mga argumento:
+Gibuksan ang dokumentasyon sa mod API alang sa istruktura sa source code sa pinakabag-o nga porma niini

@@ -983,3 +983,675 @@ Natysnitʹ budʹ-yaku klavishu, shchob prochytaty storinku posibnyka...
 Tsya storinka posibnyka potrebuye roboty dlya:
 Storinku posibnyka {0} ne znaydeno.
 Kerivnytstvo po modu
+Dostupni arhumenty yadra:
+Natysnitʹ "q", yakshcho vy zakinchyly.
+Kilʹka arhumentiv yadra mozhna rozdilyty komamy bez probiliv, napryklad:
+Kilʹka vvedenykh komand mozhna rozdilyty dvokrapkamy z probilamy, napryklad:
+Zapytuvanyy arhument {0} ne znaydeno.
+Nevypravna pomylka v arhumenti:
+Shyfruye ryadok za dopomohoyu SHA512
+Shyfruye ryadok za dopomohoyu SHA384
+Shyfruye ryadok za dopomohoyu SHA256
+Shyfruye ryadok za dopomohoyu SHA1
+Shyfruye ryadok za dopomohoyu MD5
+de bude vbudovana zastavka
+Chastyna modu - nichoho.
+Zupynka modiv zaboronena v bezpechnomu rezhymi.
+Mod uzhe zapushcheno!
+Mod shche ne pochavsya!
+Vykorystannya komandy:
+Nazva faylu chastyny:
+Shlyakh do faylu chastyny:
+Pomylka pid chas sproby zapustyty zastavku:
+Nediysnyy typ shlyakhu.
+Nediysnyy typ shlyakhu do yadra.
+Poperednye zavantazhennya ne vdalosya
+Redaktor JSON shche ne vidkryv potik fayliv.
+Vlastyvistʹ u fayli JSON ne znaydeno.
+Vylucheno mayno.
+Dodaye novu vlastyvistʹ v kinetsʹ faylu JSON
+Vydalyaye vlastyvistʹ z faylu JSON
+Vykhodytʹ z obolonky JSON
+Vykhodytʹ z obolonky JSON bez zberezhennya zmin
+Zberihaye fayl JSON
+Vidkryvaye obolonku JSON
+Drukuye fayl JSON
+Nastupnyy interval narostannya
+Aktyvuye pidtrymku 255 kolʹoriv dlya Ramp.
+Aktyvuye pidtrymku realʹnoho kolʹoru dlya Ramp.
+Skilʹky milisekund chekaty, persh nizh zapovnyty nastupnu rampu?
+Kolir zaholovka spovishchennya
+Kolir opysu spovishchennya
+Kolir perebihu spovishchenʹ
+Kolir povidomlennya pro pomylku
+Kolir pytannya
+Kolir uspikhu
+Kolir dolara korystuvacha
+Kolir nakonechnyka
+Kolir tekstu rozdilʹnyka
+Kolir rozdilʹnyka
+Kolir zaholovka spysku
+Kolir poperedzhennya rozvytku
+Kolir stsenichnoho chasu
+Kolir prohresu
+Kolir zadnʹoho variantu
+Namalyuyte mezhu spovishchenʹ
+Pokryvaye spovishchennya kordonom.
+Zvʺyazhitʹsya z postachalʹnykom moda, shchob onovyty mod do sumisnoyi versiyi.
+Kolir ramky z nyzʹkym priorytetom
+Kolir ramky serednʹoho priorytetu
+Kolir mezhi vysokoho priorytetu
+Nadsylaye spovishchennya pro khid dlya perevirky pryymacha
+Testuye kolirnyy kruh
+Pokazuye mistsevyy chas yadra
+Pokazuye lokalʹnu datu yadra
+Pokazuye lokalʹnu datu ta chas yadra
+Pokazuye chas yadra UTC
+Pokazuye datu yadra UTC
+Pokazuye datu ta chas yadra UTC
+Shlyakh MOTD
+Shlyakh MAL
+Yakyy fayl ye tekstovym faylom MOTD? Napyshitʹ absolyutnyy shlyakh do tekstovoho faylu.
+Yakyy fayl ye tekstovym faylom MAL? Napyshitʹ absolyutnyy shlyakh do tekstovoho faylu.
+Mody v chornomu spysku
+Napyshitʹ imena fayliv modiv, yaki ne zapuskatymutʹsya pid chas zapusku. Koly vy zakinchyte, napyshitʹ «q». Napyshitʹ znak minus bilya shlyakhu, shchob vydalyty isnuyuchyy mod.
+Mod {0} u chornomu spysku.
+Perezavantazhuye vsi mody
+Dodaye mod do chornoho spysku
+Vydalyaye mod z chornoho spysku
+Chas i data v UTC: {0}
+Vkazana komanda obolonky JSON ne znaydena.
+Pokazuvaty informatsiyu pro prohramu pid chas zavantazhennya
+Proanalizuyte arhumenty komandnoho ryadka
+Pokazaty chas zakinchennya etapu
+Pochnitʹ modyfikatsiyu yadra pid chas zavantazhennya
+Pokazaty potochnyy chas pered vkhodom
+Povidomte pro budʹ-yaki nespravnosti pid chas zavantazhennya
+Pokazuye korotku informatsiyu pro prohramu pid chas zavantazhennya.
+Pid chas zavantazhennya analizuye arhumenty komandnoho ryadka.
+Pokazuye, skilʹky chasu znadobylosya yadru, shchob zavershyty etap.
+Avtomatychno zapuskaty modyfikatsiyi yadra pid chas zavantazhennya.
+Pokazuye potochnyy chas, chasovyy poyas i datu pered vkhodom v systemu.
+Yakshcho pid chas zavantazhennya yadra ye neznachna pomylka, povidomlyaye pro tse korystuvacha.
+Stylʹ pidkazky imeni korystuvacha
+Stylʹ pidkazky parolya
+Pokazaty MAL pid chas vkhodu
+Napyshitʹ, yak vy khochete, shchob vasha pidkazka vkhodu bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Napyshitʹ, yak vy khochete, shchob pidkazka vvedennya parolya bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Pokazuye povidomlennya dnya pislya vidobrazhennya ekrana vkhodu.
+Testovyy stylʹ pidkazky obolonky
+Stylʹ pidkazky obolonky JSON
+Zonduvaty vvedeni komandy
+Pereviryaye vvedeni komandy na pochatku obolonky yadra.
+Pokazaty detali faylu v spysku
+Pokazuye korotku informatsiyu pro fayl pid chas pereliku fayliv
+Pokazaty detali faylu v spysku FTP
+Stylʹ pidkazky imeni korystuvacha dlya FTP
+Stylʹ zapytu parolya dlya FTP
+Vykorystovuyte pershyy profilʹ FTP
+Dodayte novi pidklyuchennya do FTP shvydkoho naboru
+Sprobuyte pereviryty bezpechni sertyfikaty FTP
+Pokazaty FTP MOTD pid chas pidklyuchennya
+Zavzhdy pryymayte nediysni sertyfikaty FTP
+Pokazuye detali faylu FTP pid chas pereliku viddalenykh katalohiv.
+Vykorystovuye pershyy profilʹ FTP dlya pidklyuchennya do FTP.
+Yakshcho vvimkneno, dodaye nove pidklyuchennya do FTP shvydkoho naboru.
+Namahayetʹsya pereviryty sertyfikaty FTP. Vymykaty yoho ne rekomenduyetʹsya.
+Pokazuye FTP-povidomlennya dnya pid chas vkhodu.
+Zavzhdy pryymayte nediysni sertyfikaty FTP. Ne rekomenduyetʹsya vmykaty yoho, oskilʹky tse mozhe stanovyty zahrozu bezpetsi.
+Stylʹ pidkazky imeni korystuvacha dlya poshty
+Stylʹ zapytu parolya dlya poshty
+Stylʹ pidkazky IMAP dlya poshty
+Stylʹ pidkazky SMTP dlya poshty
+Avtomatychne vyznachennya poshtovoho servera
+Uvimknuty nalahodzhennya poshty
+Spovishchaty pro novi povidomlennya
+Stylʹ pidkazky parolya GPG dlya poshty
+Nadislaty interval ping IMAP
+Nadislaty interval ping SMTP
+Tekstovyy format poshty
+Napyshitʹ, yak vy khochete, shchob pidkazka servera IMAP bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Napyshitʹ, yak vy khochete, shchob pidkazka servera SMTP bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Avtomatychno vyznachaty poshtovyy server na osnovi vkazanoyi adresy.
+Vmykaye nalahodzhennya poshtovoho servera.
+Spovishchaye pro budʹ-yaki novi povidomlennya.
+Napyshitʹ, yak vy khochete, shchob pidkazka parolya GPG bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Skilʹky milisekund nadsylaty zapyt IMAP?
+Skilʹky milisekund nadsylaty SMTP ping?
+Keruye tym, yak bude vidobrazhatysya tekst lysta.
+Prostyy tekst
+Potik tekstu
+HTML tekst
+Zbahachenyy tekst
+Stysnutyy formatovanyy tekst
+Rozshyrenyy tekst
+Avtomatychno zapuskaty viddalene nalahodzhennya pid chas zapusku
+Format povidomlennya viddalenoho nalahodzhennya
+Yakshcho vy khochete, shchob viddalene nalahodzhennya pochynalosya pid chas zavantazhennya, uvimknitʹ tse.
+Vyznachaye format povidomlennya viddalenoho nalahodzhennya. {0} dlya imeni, {1} dlya povidomlennya.
+Stylʹ zapytu URL-adresy kanalu RSS
+Avtomatychne onovlennya RSS-kanal
+Avtomatychne onovlennya intervalu RSS-kanalu
+Napyshitʹ, yak vy khochete, shchob zapyt servera RSS-kanaliv buv. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Skilʹky milisekund potribno onovyty RSS-kanal?
+Pokazaty detali faylu v spysku SFTP
+Stylʹ pidkazky imeni korystuvacha dlya SFTP
+Dodayte novi pidklyuchennya do shvydkoho naboru SFTP
+Pokazuye detali faylu SFTP pid chas pereliku viddalenykh katalohiv.
+Yakshcho vvimkneno, dodaye nove pidklyuchennya do shvydkoho naboru SFTP.
+Taym-aut ping
+Pokazaty dokladnu informatsiyu pro adapter
+Pokazaty zahalʹnu informatsiyu pro merezhu
+Zavantazhyty vidsotkovyy tekst
+Zavantazhte vidsotkovyy tekst
+Skilʹky milisekund potribno chekaty, persh nizh oholoshuvaty taym-aut?
+Drukuye rozshyrenu informatsiyu pro adapter, napryklad informatsiyu pro pakety.
+Pokazuye zahalʹnu informatsiyu pro merezhu.
+Napyshitʹ, yak vy khochete vyhlyadaty tekst u vidsotkakh zavantazhennya. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya zavantazhenoho rozmiru, {1} dlya tsilʹovoho rozmiru, {2} dlya vidsotka.
+Napyshitʹ, yak vy khochete vyhlyadaty tekst vidsotka zavantazhennya. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya zavantazhenoho rozmiru, {1} dlya tsilʹovoho rozmiru, {2} dlya vidsotka.
+Zapytayte parolʹ pislya blokuvannya
+Pislya blokuvannya ekrana zapytayte parolʹ
+Minimalʹnyy rivenʹ chervonoho kolʹoru
+Minimalʹnyy rivenʹ zelenoho kolʹoru
+Minimalʹnyy rivenʹ synʹoho kolʹoru
+Minimalʹnyy rivenʹ kolʹoru
+Maksymalʹnyy rivenʹ chervonoho kolʹoru
+Maksymalʹnyy rivenʹ zelenoho kolʹoru
+Maksymalʹnyy rivenʹ synʹoho kolʹoru
+Maksymalʹnyy rivenʹ kolʹoru
+Minimalʹnyy rivenʹ chervonoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Minimalʹnyy rivenʹ zelenoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Minimalʹnyy rivenʹ synʹoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Minimalʹnyy rivenʹ kolʹoru. Minimalʹne dopustyme znachennya — 0, a maksymalʹne — 255 dlya 255 kolʹoriv abo 16 dlya 16 kolʹoriv.
+Maksymalʹnyy rivenʹ chervonoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Maksymalʹnyy rivenʹ zelenoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Maksymalʹnyy rivenʹ synʹoho kolʹoru. Minimalʹne pryynyate znachennya — 0, a maksymalʹne — 255.
+Maksymalʹnyy rivenʹ kolʹoru. Minimalʹne dopustyme znachennya — 0, a maksymalʹne — 255 dlya 255 kolʹoriv abo 16 dlya 16 kolʹoriv.
+Kolir perednʹoho planu
+Symvol liniyi
+Symvol dlya formuvannya ryadka. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Symvol u verkhnʹomu livomu kuti dlya hodynnyka
+Symvol u verkhnʹomu livomu kuti dlya paneli khvylyn
+Symvol u verkhnʹomu livomu kuti dlya sekundnoho ryadka
+Symvol u verkhnʹomu pravomu kuti dlya hodynnyka
+Symvol u verkhnʹomu pravomu kuti dlya paneli khvylyn
+Symvol u verkhnʹomu pravomu kuti dlya sekundnoho ryadka
+Symvol u nyzhnʹomu livomu kuti dlya hodynnyka
+Symvol u nyzhnʹomu livomu kuti dlya paneli khvylyn
+Symvol u nyzhnʹomu livomu kuti dlya sekundnoho ryadka
+Symvol u nyzhnʹomu pravomu kuti dlya hodynnyka
+Symvol u nyzhnʹomu pravomu kuti dlya paneli khvylyn
+Symvol u nyzhnʹomu pravomu kuti dlya sekundnoho ryadka
+Symvol verkhnʹoyi ramky dlya hodynnyka
+Symvol verkhnʹoyi ramky dlya khvylynnoho ryadka
+Symvol verkhnʹoyi ramky dlya sekundnoho ryadka
+Symvol nyzhnʹoyi ramky dlya hodynnyka
+Symvol nyzhnʹoho kadru dlya khvylynnoho ryadka
+Symvol nyzhnʹoho kadru dlya sekundnoho ryadka
+Symvol livoho kadru dlya hodynnyka
+Symvol livoho kadru dlya paneli khvylyn
+Symvol livoho kadru dlya sekundnoyi smuhy
+Symvol pravoho kadru dlya hodynnyka
+Symvol pravoho kadru dlya paneli khvylyn
+Symvol pravoho kadru dlya sekundnoho ryadka
+Informatsiynyy tekst na hodyny
+Informatsiynyy tekst za khvylyny
+Informatsiynyy tekst za sekundy
+Minimalʹnyy rivenʹ chervonoho kolʹoru protyahom hodyn
+Minimalʹnyy rivenʹ zelenoho kolʹoru protyahom hodyn
+Minimalʹnyy rivenʹ synʹoho kolʹoru protyahom hodyn
+Minimalʹnyy rivenʹ kolʹoru protyahom hodyn
+Maksymalʹnyy rivenʹ chervonoho kolʹoru protyahom hodyn
+Maksymalʹnyy rivenʹ zelenoho kolʹoru protyahom hodyn
+Maksymalʹnyy rivenʹ synʹoho kolʹoru protyahom hodyn
+Maksymalʹnyy rivenʹ kolʹoru protyahom hodyn
+Minimalʹnyy rivenʹ chervonoho kolʹoru protyahom khvylyn
+Minimalʹnyy rivenʹ zelenoho kolʹoru protyahom khvylyn
+Minimalʹnyy rivenʹ synʹoho kolʹoru protyahom khvylyn
+Minimalʹnyy rivenʹ kolʹoru protyahom khvylyn
+Maksymalʹnyy rivenʹ chervonoho kolʹoru protyahom khvylyn
+Maksymalʹnyy rivenʹ zelenoho kolʹoru protyahom khvylyn
+Maksymalʹnyy rivenʹ synʹoho kolʹoru protyahom khvylyn
+Maksymalʹnyy rivenʹ kolʹoru protyahom khvylyn
+Minimalʹnyy rivenʹ chervonoho kolʹoru protyahom sekund
+Minimalʹnyy rivenʹ zelenoho kolʹoru protyahom sekund
+Minimalʹnyy rivenʹ synʹoho kolʹoru protyahom sekund
+Minimalʹnyy rivenʹ kolʹoru protyahom sekund
+Maksymalʹnyy rivenʹ chervonoho kolʹoru protyahom sekund
+Maksymalʹnyy rivenʹ zelenoho kolʹoru protyahom sekund
+Maksymalʹnyy rivenʹ synʹoho kolʹoru protyahom sekund
+Maksymalʹnyy rivenʹ kolʹoru protyahom sekund
+Symvol, yakyy nahaduye verkhniy livyy kut. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Symvol, yakyy nahaduye nyzhniy livyy kut. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Symvol, shcho nahaduye verkhnyu ramku. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Symvol, shcho nahaduye nyzhnyu ramku. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Symvol, shcho nahaduye livu ramku. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Personazh, shcho nahaduye pravylʹnyy kadr. Obovʺyazkovo vveditʹ lyshe odyn symvol.
+Napyshitʹ, yak vidobrazhayetʹsya vash informatsiynyy tekst za potochnu hodynu. {0} za potochnu hodynu z 24 hodyn.
+Napyshitʹ, yak vidobrazhayetʹsya vash informatsiynyy tekst za potochnu khvylynu. {0} za potochnu khvylynu z 60 khvylyn.
+Napyshitʹ, yak vidobrazhayetʹsya vash informatsiynyy tekst za potochnu sekundu. {0} dlya potochnoyi sekundy z 60 sekund.
+Kolir tekstu
+Symvol verkhnʹoho livoho kuta dlya smuhy rampy
+Symvol u verkhnʹomu pravomu kuti dlya rampy
+Symvol u nyzhnʹomu livomu kuti dlya paneli rampy
+Symvol u nyzhnʹomu pravomu kuti dlya paneli rampy
+Symvol verkhnʹoyi ramky dlya rampy
+Symvol nyzhnʹoyi ramky dlya rampy
+Symvol livoyi ramky dlya rampy
+Symvol pravoyi ramky dlya rampy
+Minimalʹnyy rivenʹ chervonoho kolʹoru dlya pochatkovoho kolʹoru
+Minimalʹnyy rivenʹ zelenoho kolʹoru dlya pochatkovoho kolʹoru
+Minimalʹnyy rivenʹ synʹoho kolʹoru dlya pochatkovoho kolʹoru
+Minimalʹnyy rivenʹ kolʹoru dlya pochatkovoho kolʹoru
+Maksymalʹnyy rivenʹ chervonoho kolʹoru dlya pochatkovoho kolʹoru
+Maksymalʹnyy rivenʹ zelenoho kolʹoru dlya pochatkovoho kolʹoru
+Maksymalʹnyy rivenʹ synʹoho kolʹoru dlya pochatkovoho kolʹoru
+Maksymalʹnyy rivenʹ kolʹoru dlya pochatkovoho kolʹoru
+Minimalʹnyy rivenʹ chervonoho kolʹoru dlya kintsevoho kolʹoru
+Minimalʹnyy rivenʹ zelenoho kolʹoru dlya kintsevoho kolʹoru
+Minimalʹnyy rivenʹ synʹoho kolʹoru dlya kintsevoho kolʹoru
+Minimalʹnyy rivenʹ kolʹoru dlya kintsevoho kolʹoru
+Maksymalʹnyy rivenʹ chervonoho kolʹoru dlya kintsevoho kolʹoru
+Maksymalʹnyy rivenʹ zelenoho kolʹoru dlya kintsevoho kolʹoru
+Maksymalʹnyy rivenʹ synʹoho kolʹoru dlya kintsevoho kolʹoru
+Maksymalʹnyy rivenʹ kolʹoru dlya kintsevoho kolʹoru
+Minimalʹna kilʹkistʹ rozvʺyazuvacha
+Maksymalʹna kilʹkistʹ rozvʺyazuvacha
+Rozvʺyazuvach pokazuye vkhidni dani
+Symvol u verkhnʹomu livomu kuti dlya ramky spovishchenʹ
+Symvol u verkhnʹomu pravomu kuti dlya ramky spovishchenʹ
+Symvol u nyzhnʹomu livomu kuti dlya ramky spovishchennya
+Symvol u nyzhnʹomu pravomu kuti dlya mezhi spovishchenʹ
+Symvol verkhnʹoyi ramky dlya ramky spovishchennya
+Symvol nyzhnʹoyi ramky dlya ramky spovishchennya
+Symvol livoyi ramky dlya ramky spovishchennya
+Symvol pravoyi ramky dlya ramky spovishchennya
+Stylʹ informatsiyi storinky vruchnu
+Chy pokazuvaty te, shcho napysano u pidkaztsi vvedennya.
+Yaku minimalʹnu kilʹkistʹ vybraty?
+Yaku maksymalʹnu kilʹkistʹ vybraty?
+Napyshitʹ, yak vy khochete, shchob informatsiya na vashiy tsiy storintsi bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya nazvy vruchnu, {1} dlya redaktsiyi.
+Vlastyvistʹ {0} ne znaydeno v zhodnomu z moduliv.
+U tsʹomu rozdili navedeno zahalʹni nalashtuvannya zastavky. Dlya okremykh nalashtuvanʹ zastavky vyyditʹ iz «Nalashtuvannya» ta vidkryyte «Nalashtuvannya zastavky».
+Zapustitʹ kolirne koleso v rezhymi realʹnoho kolʹoru
+Yakshcho vkazano, vidobrazhatymetʹsya nalashtovanyy baner zapusku z pidtrymkoyu zapovnyuvacha. Vy mozhete vykorystovuvaty {0} dlya versiyi yadra.
+Yakyy variant potochnoyi movy vykorystovuyetʹsya dlya zminy nazv misyatsiv, kalendarya toshcho?
+Aktyvuye pidtrymku 255 kolʹoriv.
+Aktyvuye pidtrymku realʹnoho kolʹoru.
+Slovo vydaleno v ryadku {0}.
+Ryadok zamineno v ryadku {0}.
+Vydaleno nomer ryadka {0}.
+Prydushennya nesanktsionovanykh povidomlenʹ
+Prykhovuye drativlyve povidomlennya, yakshcho funktsiya spysku namahayetʹsya vidkryty neavtoryzovanu papku
+Informatsiya pro FTP-server
+Adresa servera:
+Port servera:
+Typ servera:
+Typ systemy servera:
+Rezhym shyfruvannya servera:
+Typ pidklyuchennya do servera:
+Serverna systema:
+Typ danykh zavantazhennya servera:
+Typ danykh zavantazhennya na server:
+Pered vykonannyam tsiyeyi operatsiyi neobkhidno pidklyuchytysya do servera.
+Vveditʹ viddalenyy fayl, yakyy potribno kheshuvaty.
+Vveditʹ viddalenyy kataloh dlya kheshuvannya.
+Vveditʹ viddalenyy kataloh.
+Rekursyvne kheshuvannya dlya FTP
+Chy potribno rekursyvno kheshuvaty kataloh. Zvernitʹ uvahu, shcho ne vsi FTP-servery pidtrymuyutʹ tse.
+Taktova chastota protsesora:
+Pidtrymka protsesora SSE2:
+Zahalʹna kilʹkistʹ protsesoriv:
+Rozmir dyska:
+Zahalʹna pam'yatʹ:
+videokarta:
+Modelʹ dyska:
+Maksymalʹna kilʹkistʹ elektronnykh lystiv na odniy storintsi
+Kulʹtura suchasnoyi movy
+Yakshcho vy vpevneni, shcho vidkryly pravylʹnyy rozdil, perehlyanʹte tse povidomlennya:
+Rizni nalashtuvannya...
+Nalashtuvannya kolʹoriv...
+Vykonuye komandu FTP-servera
+Vveditʹ adresu ta port servera POP3 (<adresa> abo <adresa>:[port]):
+Stylʹ pidkazok POP3 dlya poshty
+Interval nadsylannya POP3
+Napyshitʹ, yak vy khochete, shchob pidkazka servera POP3 bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
+Skilʹky milisekund nadsylaty zapyt POP3?
+Vykorystovuyte POP3
+Chy vykorystovuvaty POP3. Yakshcho vymknuty tse, bude vykorystovuvatysya SMTP.
+Shyfruye ryadok za dopomohoyu CRC32
+Vidkryvaye poshtovyy kliyent
+poshty peredano...
+Nalashtuvannya tsiyeyi zastavky dostupni tut.
+Testuye funktsionalʹnistʹ tablytsi
+Redahuye vkazanyy ryadok
+Dodaye novi ryadky v kinetsʹ faylu
+Vveditʹ tekst, yakyy potribno dodaty v kinetsʹ faylu. Koly vy zakinchyte, napyshitʹ «EOF» u okremomu ryadku.
+Im'ya khosta
+Im'ya korystuvacha
+Typ danykh
+Koduvannya
+Shyfruvannya
+protokoly
+Pokazaty khid peredachi poshty
+Khid peredachi poshty
+Khid peredachi poshty (odyn)
+Yakshcho vvimkneno, poshtova obolonka pokazhe, skilʹky baytiv bulo peredano pid chas zavantazhennya poshty.
+Napyshitʹ, yakym vy khochete vyhlyadaty vash stylʹ peredachi poshty. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya peredanoho rozmiru ta {1} dlya zahalʹnoho rozmiru.
+Napyshitʹ, yakym vy khochete vyhlyadaty vash stylʹ peredachi poshty. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya peredanoho rozmiru.
+Chasovyy poyas:
+Sʹohodni {0}
+Potochnyy chas: {0}
+Kolir rozdilʹnyka tablytsi
+Kolir zaholovka tablytsi
+Kolir znachenʹ tablytsi
+Mozhlyvi vidpovidi
+Fayl modu ne vkazano.
+Sproba vstanovyty vzhe vstanovlenyy mod. Onovlennya modu...
+Pomylka vstanovlennya
+Nadanyy fayl modu nesumisnyy.
+Ne vdalosya vydalyty
+Vidkryvaye URL-adresu
+Nadrukuyte nomery ryadkiv na drukovanomu vmisti faylu
+Zmushuye komandu \"cat\" drukuvaty nomery ryadkiv faylu.
+Transliterovana versiya
+Perekladena versiya
+Vidkhylyaye vsi spovishchennya
+Zavantazhennya...
+Zavantazhennya...
+Pokazaty spovishchennya pro khid zavantazhennya
+Pokazaty spovishchennya pro khid zavantazhennya
+Pokazuye spovishchennya pro khid zavantazhennya.
+Pokazuye spovishchennya pro khid zavantazhennya.
+Pereviryaye, chy isnuye perekladenyy ryadok u resursakh KS
+Ryadok znaydeno v resursakh lokalizatsiyi.
+Ryadok ne znaydeno v resursakh lokalizatsiyi.
+Tykho zapuskaye yadro
+Vvodytʹ komandu dlya zapusku pid chas nastupnoho vkhodu
+Zapuskaye yadro ​​v bezpechnomu rezhymi, vidklyuchayuchy vsi mody
+Yak i bezpechnyy rezhym, ale takozh vymykaye bahatokorystuvatsʹkyy rezhym i deyaki nalashtuvannya
+Arhumentiv ne vystachalo.
+Kolir verkhnʹoho livoho kuta dlya rampy
+Kolir verkhnʹoho pravoho kuta dlya rampy
+Kolir nyzhnʹoho livoho kuta dlya rampy
+Kolir nyzhnʹoho pravoho kuta dlya rampy
+Kolir verkhnʹoyi ramy dlya rampy
+Kolir nyzhnʹoyi ramy dlya rampy
+Kolir livoyi ramky dlya rampy
+Pravyy kolir ramky dlya rampy
+Vykorystovuyte kolʹory mezh dlya paneli rampy
+Vykorystovuyte kolʹory mezh dlya smuhy rampy. Yakshcho vymkneno, bude stvoryuvatysya sira smuha.
+Zapuskaye obolonku HTTP
+Vykhodytʹ z obolonky HTTP i povertayetʹsya do yadra
+Vstanovlyuye HTTP-sayt. Povynen buty diysnym URI.
+Otrymuye vidpovidʹ vid servera HTTP za dopomohoyu vkazanoho zapytu
+Vydalyaye vmist iz HTTP-servera
+Stalasya pomylka v obolontsi HTTP:
+Povidomlennya HTTP: zapytanu komandu {0} ne znaydeno. Perehlyanʹte «dovidku», shchob otrymaty spysok dostupnykh komand, zaznachenykh v obolontsi HTTP.
+Oderzhuye ryadok iz servera HTTP za dopomohoyu vkazanoho zapytu
+Otrymannya {0}...
+Format URI saytu nediysnyy.
+Nalashtuvannya saytu na
+Kolʹory ne vymahayutʹ perezavantazhennya, ale bilʹshistʹ nalashtuvanʹ vymahayutʹ perezavantazhennya.
+Nemaye dopomohy dlya arhumentu "{0}".
+Shchob poprosyty vybachennya, natysnitʹ A na komentaryakh, shcho vyklykayutʹ nenavystʹ. Natysnitʹ T na lyubovnykh komentaryakh, shchob podyakuvaty. Natysnitʹ Q, shchob vyyty z hry.
+Vy vybachylysya za nenavysnyy komentar! Chudovo!
+Proshu vybachennya za lyubovnyy komentar. Nedostatnʹo dobre.
+Vy shchoyno podyakuvaly kheyteru za komentar nenavysti!
+Skladnistʹ za zamovchuvannyam dlya SpeedPress
+Taym-aut natyskannya klavishi dlya SpeedPress
+Vyberitʹ bazhanu skladnistʹ.
+Skilʹky milisekund chekaty natyskannya klavishi do taym-autu? (U spetsialʹnomu skladi)
+Zaminyuye slovo chy frazu inshym za dopomohoyu rehulyarnykh vyraziv
+Zaminyuye slovo chy frazu inshym u ryadku za dopomohoyu rehulyarnykh vyraziv
+Zapytuye slovo u vkazanomu ryadku abo v usikh ryadkakh za dopomohoyu rehulyarnykh vyraziv
+Znayty nalashtuvannya
+Napyshitʹ, shcho vy khochete shukaty.
+Nichoho ne znaydeno. Perekonaytesya, shcho vy pravylʹno zapysaly nalashtuvannya.
+Pakuye lokalʹnyy fayl do arkhivu
+Ne mozhu nichoho zapakuvaty.
+Opys vidpovidi
+Port khosta
+Shchob otrymaty dodatkovu informatsiyu pro umovy vykorystannya tsʹoho prohramnoho zabezpechennya, vidvidayte veb-storinku
+Typ vykhodu za zamovchuvannyam
+Pereviryaye vsi nalashtuvannya KS, shchob pereviryty, chy zminni zapysani pravylʹno
+Tsi zapysy konfihuratsiyi mayutʹ nediysni zminni abo pererakhuvannya, i yikh potribno vypravyty:
+Fayl {0} ne znaydeno
+Stvoryuye masyv zminnykh iz nadanymy znachennyamy
+Napyshitʹ nomer nalashtuvannya, do yakoho potribno pereyty. Budʹ-yakyy inshyy symvol oznachaye povernennya.
+Pereviryaye vsi nomery ryadkiv tekstu lokalizatsiyi, shchob pereviryty, chy vsi vony rivni
+Nevidpovidnistʹ ryadkiv v
+Budʹ laska, vveditʹ nomer korystuvacha.
+Vklyuchyty anonimnykh korystuvachiv
+Vklyuchyty korystuvachiv z obmezhenymy mozhlyvostyamy
+Vklyuchaye anonimnykh korystuvachiv u spysok
+Vklyuchaye v spysok korystuvachiv z obmezhenymy mozhlyvostyamy
+Vidsortuyte spysok
+Profesiyno sortuye spysok faylovoyi systemy.
+Nadaye mozhlyvistʹ vyboru
+Komandy obolonky ne realizovani!!!
+Pokazuvaty ostanniy zaholovok RSS pid chas vkhodu
+URL-adresa zaholovka RSS
+Pid chas kozhnoho vkhodu vin pokazuvatyme ostanniy zaholovok RSS iz vybranoyi URL-adresy zaholovka.
+URL-adresa zaholovka RSS, yaka bude vykorystovuvatysya pid chas pokazu ostannʹoho zaholovka. Zazvychay tse vasha ulyublena strichka.
+Ostanni novyny:
+Ne vdalosya otrymaty ostanni novyny.
+Vybranyy variant kolʹoru
+Pokazaty trasuvannya steka pry pomyltsi yadra
+Yakshcho ye pomylka yadra, vyberitʹ, chy potribno drukuvaty trasuvannya steka na konsoli.
+Mod mozhna zavantazhyty, ale tsi poperedzhennya mozhutʹ vplynuty na robotu moda:
+Zastavku mozhna zavantazhyty, ale tsi poperedzhennya mozhutʹ vplynuty na robotu zastavky:
+Zberehty nalashtuvannya yak
+Zavantazhyty nalashtuvannya z
+De vy khochete zberehty potochni nalashtuvannya yadra?
+Ne vdayetʹsya zberehty nalashtuvannya yadra poverkh nayavnoho faylu.
+Zvidky vy khochete zavantazhyty potochni nalashtuvannya yadra?
+Pereviryaye, chy isnuyutʹ perekladeni ryadky v resursakh KS
+Obʺyednuye dva tekstovi fayly abo bilʹshe u vykhidnyy fayl.
+Ne vdalosya obʺyednaty fayly.
+Chas ochikuvannya otrymannya RSS-kanalu
+Skilʹky milisekund potribno chekaty do chasu ochikuvannya otrymannya RSS-kanalu?
+Zapovnitʹ korobky
+My malyuyemo korobku v tsilomu chy malyuyemo tilʹky kordon?
+Zatrymka etapu v milisekundakh
+Skilʹky milisekund potribno chekaty, persh nizh namalyuvaty nastupnyy etap?
+Nastupnyy interval hnyttya narostu
+Skilʹky milisekund chekaty, persh nizh z·hnyvaty odyn kinetsʹ nastupnoyi rampy?
+Perevirte kvotu nalahodzhennya
+Chy pereviryayemo my, chy potribno systemi nalahodzhennya pereviryaty kvotu, persh nizh pysaty v nalahodzhuvach?
+Skilʹky milisekund naspravdi znadobylosya dlya snu?
+Ne vdalosya dodaty podiyu.
+Ne vdalosya vydalyty podiyu.
+Nedostatnʹo arhumentiv, shchob dodaty podiyu.
+Nedostatnʹo arhumentiv dlya vydalennya podiyi.
+Nedostatnʹo arhumentiv dlya manipulyuvannya podiyamy.
+Ne vdalosya dodaty abo vydalyty nahaduvannya.
+Nedostatnʹo arhumentiv, shchob dodaty abo vydalyty nahaduvannya.
+Nedostatnʹo arhumentiv dlya manipulyatsiyi z nahaduvannyam.
+Nahaduvannya bez nazvy
+Podiya bez nazvy
+Teper tse denʹ podiy!
+Ne propustitʹ tse!
+Nediysna diya.
+Prostyy sekundomir
+Pochnitʹ abo zupynitʹ
+Kolina
+Skynuty
+Prostyy taymer
+Pochnitʹ (povtornyy) vidlik
+Vstanovyty interval
+Vkazanyy chas ochikuvannya ne ye chyslovym.
+Vkazhitʹ chas ochikuvannya v milisekundakh
+Zberihaty vsi podiyi ta/abo nahaduvannya destruktyvno
+Yakshcho vvimkneno, vydalyaye vsi podiyi ta/abo nahaduvannya, persh nizh zberehty yikh za dopomohoyu komandy kalendarya.
+Perevirte povtorni sproby peredachi po FTP
+Chas ochikuvannya pidklyuchennya FTP
+Chas ochikuvannya zʺyednannya danykh FTP
+IP-versiyi FTP
+Skilʹky raziv pereviryaty zavantazhennya ta zavantazhennya ta povtoryty sprobu, yakshcho perevirka ne vdalasya, persh nizh zavantazhennya zavershytʹsya nevdalo?
+Skilʹky milisekund potribno chekaty do chasu ochikuvannya FTP-zʺyednannya?
+Skilʹky milisekund potribno chekaty do zakinchennya chasu ochikuvannya pidklyuchennya FTP?
+Vyberitʹ versiyu Internet-protokolu, yaku pidtrymuye FTP-server i yaku vykorystovuye FTP-kliyent.
+Sproba zapustyty RPC, koly vin uzhe zapushchenyy.
+Symvol u verkhnʹomu livomu kuti dlya kolirnoho kola RGB
+Symvol u verkhnʹomu pravomu kuti dlya kolirnoho kola RGB
+Symvol u nyzhnʹomu livomu kuti dlya kolirnoho kola RGB
+Symvol u nyzhnʹomu pravomu kuti dlya kolirnoho kola RGB
+Symvol verkhnʹoyi ramky dlya kolirnoho kola RGB
+Symvol nyzhnʹoyi ramky dlya kolirnoho kola RGB
+Symvol livoyi ramky dlya kolirnoho kola RGB
+Symvol pravoyi ramky dlya kolirnoho kola RGB
+Znakhodytʹ fayl u vkazanomu katalozi abo v potochnomu katalozi
+Peretvoryuye zakinchennya ryadkiv u format dlya potochnoyi platformy abo do vkazanoho spetsialʹnoho formatu
+Zahalʹnyy rozmir u paptsi:
+Pokazaty zahalʹnyy rozmir u spysku
+Yakshcho vvimkneno, pokazuye zahalʹnyy rozmir papky v spysku zalezhno vid toho, yak rozrakhuvaty rozmiry papky vidpovidno do konfihuratsiyi.
+Vy v kursi!
+Formatuvannya JSON za zamovchuvannyam dlya obolonky JSON
+Vybyraye formatuvannya JSON za zamovchuvannyam (prykrashene abo minimizovane) dlya zberezhennya obolonky JSON.
+Onovlennya uspishno zavantazheno!
+Avtomatychno zavantazhuvaty onovlennya
+Yakshcho ye onovlennya, yadro ​​avtomatychno zavantazhytʹ yoho.
+Radius vybukhu feyerverku
+Skilʹky blokiv (do 10) maye radius vybukhu feyerverku pry zapalenni?
+Tsya komanda maye peremykachi nyzhche, yaki zminyuyutʹ yiyi robotu:
+Drukuye nomery ryadkiv, yaki sliduyutʹ za ryadkom, shcho drukuyetʹsya
+Zapobihaye druku nomeriv ryadkiv
+Zavzhdy vykorystovuyte transliterovanu versiyu
+Zavzhdy vykorystovuyte perekladenu versiyu
+Prymusove peremykannya movy
+Vkazhitʹ, shcho vidpovidʹ mozhe mistyty bilʹshe odnoho symvolu
+Vkazhitʹ, shcho vidpovidʹ mozhe pryymaty lyshe odyn symvol
+Rozdrukuyte pytannya ta vidpovidi v odnomu ryadku
+Rozdrukuyte zapytannya ta vidpovidi v dva ryadky
+Rozdrukuyte zapytannya ta vidpovidi suchasnym sposobom
+Rozdrukuyte zapytannya ta vidpovidi v tablytsi
+Pokazuye detali faylu v spysku
+Pryhnichuye drativlyvi povidomlennya "vidmovleno v dozvoli".
+Pokazuye vsi chasovi poyasy
+Pochynaye hru z lehkoyu skladnistyu
+Pochynaye hru na serednʹomu rivni skladnosti
+Pochynaye hru u vazhkiy skladnosti
+Pochynaye hru z duzhe vazhkoyu skladnistyu
+Pochynaye hru na spetsialʹnomu rivni skladnosti. Zvernitʹ uvahu, shcho spetsialʹnyy taym-aut u milisekundakh slid zapysaty yak arhument.
+Pokazuye informatsiyu pro systemu
+Pokazuye informatsiyu pro obladnannya
+Pokazuye informatsiyu pro korystuvacha
+Pokazuye povidomlennya dnya
+Pokazuye povidomlennya dnya pislya vkhodu
+Pokazuye vsyu informatsiyu
+Stvoryuye kataloh, yakyy mistytʹ vmist ZIP-faylu
+Pokazuye vsi dostupni mista
+Shvydke stysnennya
+Bez kompresiyi
+Ne stvoryuyte bazovyy kataloh v arkhivi
+Odynytsya v klishchakh
+Hanebno vidklyuchayetʹsya vid servera
+Vkazuye, shcho tsilʹovyy shlyakh ye absolyutnym
+Zberihaye fayl JSON, pokrashchuyuchy yoho v protsesi
+Zberihaye fayl JSON, minimizuyuchy yoho v protsesi
+Oderzhuye stylʹ zakinchennya ryadka z tekstovoho faylu
+Ochyshchaye vsi zapushcheni podiyi
+Uvimknuty nalahodzhennya podiy
+Vmykaye nalahodzhennya dlya systemy podiy yadra
+Filetkovyy shryft
+Napyshitʹ shryft figlet, yakyy pidtrymuyetʹsya bibliotekoyu Figgle. Dlya otrymannya dodatkovoyi informatsiyi zvernitʹsya do bibliotechnoyi dokumentatsiyi
+Ne vdalosya vstanovyty spetsialʹnu movu {0}.
+Fayl metadanykh, neobkhidnyy dlya vstanovlennya spetsialʹnoyi movy, ne isnuye.
+Informatsiya metadanykh, neobkhidna dlya vstanovlennya spetsialʹnoyi movy, ne zabezpechuye neobkhidnykh lokalizatsiy.
+Ne vdalosya vydalyty spetsialʹnu movu {0}.
+Fayl metadanykh, neobkhidnyy dlya vydalennya spetsialʹnoyi movy, ne isnuye.
+Informatsiya metadanykh, neobkhidna dlya vydalennya spetsialʹnoyi movy, ne zabezpechuye neobkhidnykh lokalizatsiy.
+Dovzhyna anhliysʹkoyi movy ne vidpovidaye dovzhyni nadanoho movnoho markera.
+Mova vzhe isnuye, i yiyi ne mozhna perezapysaty.
+Ne vdalosya vydalyty spetsialʹnu movu. Yoho, shvydshe za vse, ne isnuye.
+Ne vdalosya vstanovyty spetsialʹni movy.
+Ne vdalosya vydalyty spetsialʹni movy.
+Ne vdalosya vydalyty spetsialʹni movy. Dlya otrymannya dodatkovoyi informatsiyi dyv. vnutrishniy vynyatok.
+Vveditʹ parolʹ administratora. Perekonaytesya, shcho vy ne vykorystovuyete tsey oblikovyy zapys, yakshcho vy diysno ne znayete, shcho robyte.
+Vy povynni vvesty parolʹ administratora.
+Informatsiya pro litsenziyu
+Keruyte svoyimy movamy
+Ne znaydeno movy abo fayl mistytʹ nediysni symvoly.
+Mova ne vkazana.
+U bezpechnomu rezhymi keruvannya movoyu vymkneno.
+Korotka nazva movy:
+Povna nazva movy:
+Mova transliterovana:
+Spetsialʹna mova:
+Novyy vitalʹnyy baner
+Stylʹna zastavka
+Pokazuye novyy pryvitalʹnyy baner, vidtvorenyy u fihleti
+Vmykaye stylʹnyy zastavku pid chas zapusku. Zauvazhte, shcho tse vymkne pidkazku arhumentiv i perevirytʹ obolonku pered zavantazhennyam.
+Im'ya splesku
+Im'ya spleshu z dostupnykh spleshey, realizovanykh v yadri.
+Z·henerovanyy za zamovchuvannyam MOTD.
+Z·henerovanyy za zamovchuvannyam MAL.
+Systemnyy oblikovyy zapys initsializovano
+Korystuvachi initsializovani
+Dozvoly zavantazheno
+Laskavo prosymo!
+Zapusk viddalenoho nalahodzhuvacha...
+Pomylka pidklyuchennya viddalenoho nalahodzhuvacha
+Povidomyty pro pomylku pidklyuchennya viddalenoho nalahodzhennya
+Yakshcho vvimkneno, vykorystovuvatyme systemu spovishchenʹ, shchob spovistyty khost pro pomylku pidklyuchennya viddalenoho nalahodzhennya. V inshomu vypadku bude vykorystovuvatysya zapys konsoli za zamovchuvannyam.
+Filetkovyy shryft dlya taymera
+Uvimknitʹ Figlet dlya taymera
+Yakshcho vvimkneno, vykorystovuvatyme figlet yak taymer. Zvernitʹ uvahu, shcho dlya pravylʹnoho vidobrazhennya chasu z uvimknenym Figlet potriben velykyy ekran konsoli.
+Pomylka pid chas analizu arhumentiv komandnoho ryadka pered zavantazhennyam: {0}
+Skydaye yadro ​​do zavodsʹkykh nalashtuvanʹ
+Obkhodytʹ vyznachennya rozmiru konsoli
+Skhozhe, vy obkhodyte vyznachennya rozmiru konsoli. Na malenʹkykh ekranakh vse mozhe pratsyuvaty nepravylʹno.
+Shchob pokrashchyty robotu, zminitʹ rozmir vikna konsoli, perebuvayuchy na tsʹomu ekrani. Natysnitʹ budʹ-yaku knopku, shchob prodovzhyty...
+Vasha konsolʹ zamala dlya pravylʹnoyi roboty:
+Baner figlet shryft
+Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta druku ryadkiv iz pidtrymkoyu Filet
+Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk iz pidtrymkoyu formatu ta filet
+Nazavzhdy vydalyaye povidomlennya
+Nazavzhdy vydalyaye vsi povidomlennya vid oderzhuvacha
+Skasuvannya vydalennya povidomlennya
+Skasuye vydalennya vsikh povidomlenʹ vid oderzhuvacha
+Skasuvannya vydalennya ne realizovano dlya POP3.
+Pokazaty komandy rozrakhovuvaty na dopomohu
+Pokazaty, shcho komandy obolonky rozrakhovuyutʹ na dopomohu
+Pokazaty, shcho komandy moda rozrakhovuyutʹ na dopomohu
+Pokazaty psevdonimy, rozrakhovuvaty na dopomohu
+Pokazuye kilʹkistʹ komand u spysku komand, shcho keruyetʹsya trʹoma peremykachamy count show dlya riznykh vydiv komand.
+Vykonuye komandy pislya vykonannya vyraziv UESH
+Umovu u vyrazi ne znaydeno.
+Umova {0} vymahaye {1} arhumentiv. Otrymano {2}.
+Umovu potribno postavyty poseredyni.
+Umovu potribno postavyty na pochatku.
+Pomylka analizu vyrazu cherez syntaksychnu pomylku.
+Ne vdalosya zadovolʹnyty umovu. Bilʹshe informatsiyi tut:
+Symvol masky parolya
+Symvol, yakyy maskuye parolʹ. Zalyshte porozhnim dlya bilʹshoyi bezpeky.
+Vykhodytʹ z obolonky, yakshcho pratsyuye na pidobolontsi
+Ne mozhna vbyty materynsʹku obolonku!
+Ne vdayetʹsya vyyty z pidobolochky.
+Fayl ne vkazano. Vykhid z obolonky...
+Nalashtuvannya dlya tsʹoho zastavky dostupni tut.
+Kolir indykatora prohresu
+Vidkryvaye nalashtuvannya zastavky
+Vidkryvaye nalashtuvannya splesku
+Perelichuye dostupni zminni UESH
+Roztashuvannya tekstu vykonannya
+Vyberitʹ bazhane roztashuvannya tekstu prohresu.
+Vy mozhete napysaty tilʹky chysla.
+Natysnitʹ "q", shchob vyyty.
+Zavantazhennya imen...
+Cherez tekhnichni trudnoshchi my ne mozhemo pererakhuvaty vlastyvosti adaptera v systemakh Unix.
+Vmykaye rezhym nalahodzhennya
+Pidkazky arhumentiv
+Uvimknitʹ chorno-bilyy rezhym
+Robytʹ dyskoteku chorno-biloyu. Tse spravdi poshkodytʹ vashi ochi, yakshcho tse bulo zanadto shvydko, tomu ne rekomenduyetʹsya, yakshcho vy vidchuvayete zakhoplennya shvydkykh zobrazhenʹ.
+Skhozhe, vy vykorystovuvaly nepidtrymuvanu versiyu. Nastiyno bazhano ne vykorystovuvaty tsyu versiyu.
+Zavantazhyty potochni kolʹory
+Alʹternatyvnyy variant kolʹoru
+Korystuvachi vrakhovuyutʹ komentari z lyubovʺyu chy nenavystyu
+Skilʹky korystuvachiv maye buty v kimnati komentariv lyubovi chy nenavysti?
+Perelichuye dostupni movy
+Dostupni movy:
+Arhumenty komandnoho ryadka:
+Arhumenty komandnoho ryadka pered zavantazhennyam:
+Vidkryvaye dokumentatsiyu API mod dlya struktury vykhidnoho kodu v naynovishiy formi

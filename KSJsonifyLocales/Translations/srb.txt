@@ -983,3 +983,675 @@ Pritisnite bilo koji taster da biste pro?itali stranicu sa priru?nikom ...
 Ova stranica sa priru?nikom treba da radi za:
 Stranica sa priru?nikom {0} nije prona?ena.
 Mod manual
+Dostupni argumenti kernela:
+Pritisnite "k" ako ste završili.
+Više argumenata kernela može se odvojiti zarezima bez razmaka, na primer:
+Više ubaenih komandi se mogu razdvojiti dvotokama sa razmacima, na primer:
+Traženi argument {0} nije pronaen.
+Nepopravljiva greška u argumentu:
+Šifruje string koristeci SHA512
+Šifruje string koristeci SHA384
+Šifruje string koristeci SHA256
+Šifruje string koristeci SHA1
+Šifruje string koristeci MD5
+gde ce biti ugraeni uvar
+Mod deo nije ništa.
+Zaustavljanje modova nije dozvoljeno u bezbednom režimu.
+Mod je vec pokrenut!
+Mod još nije poeo!
+Upotreba komande:
+Naziv datoteke dela:
+Putanja datoteke dela:
+Greška pri pokušaju pokretanja uvara ekrana:
+Nevažeci tip putanje.
+Nevažeci tip putanje kernela.
+Prethodno pokretanje nije uspelo
+JSON ureiva još nije otvorio tok datoteka.
+Svojstvo unutar JSON datoteke nije pronaeno.
+Uklonjeno svojstvo.
+Dodaje novo svojstvo na kraj JSON datoteke
+Uklanja svojstvo iz JSON datoteke
+Izlazi iz JSON ljuske
+Izlazi iz JSON ljuske bez uvanja promena
+uva JSON datoteku
+Otvara JSON ljusku
+Štampa JSON datoteku
+Sledeci interval rampe
+Aktivira podršku za 255 boja za Ramp.
+Aktivira podršku za prave boje za Ramp.
+Koliko milisekundi treba ekati pre nego što popunite sledecu rampu?
+Boja naslova obaveštenja
+Boja opisa obaveštenja
+Boja napretka obaveštenja
+Boja neuspešnog obaveštenja
+Boja pitanja
+Boja uspeha
+Boja korisnikog dolara
+Boja vrha
+Boja teksta separatora
+Boja separatora
+Boja naslova liste
+Boja upozorenja o razvoju
+Boja scenskog vremena
+Boja napretka
+Boja pozadinske opcije
+Nacrtajte ivicu obaveštenja
+Pokriva obaveštenje granicom.
+Kontaktirajte prodavca moda da nadogradite mod na kompatibilnu verziju.
+Boja ivice niskog prioriteta
+Boja ivice srednjeg prioriteta
+Boja ivice visokog prioriteta
+Šalje obaveštenje o napretku radi testiranja prijemnika
+Testira toak boja
+Prikazuje lokalno vreme kernela
+Prikazuje lokalni datum kernela
+Prikazuje datum i vreme lokalnog kernela
+Prikazuje UTC vreme kernela
+Prikazuje UTC datum kernela
+Prikazuje datum i vreme UTC kernela
+MOTD put
+MAL put
+Koja je datoteka MOTD tekstualna datoteka? Napišite apsolutnu putanju do tekstualne datoteke.
+Koja je datoteka MAL tekstualna datoteka? Napišite apsolutnu putanju do tekstualne datoteke.
+Modovi na crnoj listi
+Napišite imena datoteka modova koji se nece pokrenuti pri pokretanju. Kada završite, napišite "k". Napišite znak minus pored putanje da biste uklonili postojeci mod.
+Mod {0} je na crnoj listi.
+Ponovo uitava sve modove
+Dodaje mod na crnu listu
+Uklanja mod sa crne liste
+Vreme i datum u UTC: {0}
+Navedena komanda JSON ljuske nije pronaena.
+Prikaži informacije o aplikaciji tokom pokretanja
+Parsirajte argumente komandne linije
+Prikaži vreme završetka faze
+Pokrenite modifikacije kernela pri pokretanju
+Prikaži trenutno vreme pre prijavljivanja
+Obavestite o grešci tokom pokretanja
+Prikazuje kratke informacije o aplikaciji pri pokretanju.
+Rašlanjuje argumente komandne linije pri pokretanju.
+Pokazuje koliko je vremena kernelu trebalo da završi fazu.
+Automatski pokrenite modifikacije kernela pri pokretanju.
+Prikazuje trenutno vreme, vremensku zonu i datum pre prijavljivanja.
+Ako postoji manja greška tokom pokretanja kernela, obaveštava korisnika o tome.
+Stil upita za korisniko ime
+Stil upita za lozinku
+Prikaži MAL pri prijavljivanju
+Napišite kako želite da izgleda vaš upit za prijavu. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Napišite kako želite da bude vaš upit za lozinku. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Prikazuje poruku dana nakon prikaza ekrana za prijavu.
+Test Shell Prompt Stile
+JSON Shell Prompt Stile
+Komande ubrizgane sondom
+Ispituje ubaene komande na poetku ljuske kernela.
+Prikaži detalje datoteke na listi
+Prikazuje kratke detalje o fajlu dok se navode datoteke
+Prikaži detalje datoteke na FTP listi
+Stil upita za korisniko ime za FTP
+Stil upita za lozinku za FTP
+Koristite prvi FTP profil
+Dodajte nove veze na FTP brzo biranje
+Pokušajte da potvrdite bezbedne FTP sertifikate
+Prikaži FTP MOTD na vezi
+Uvek prihvatite nevažece FTP sertifikate
+Prikazuje detalje FTP datoteke dok navodi udaljene direktorijume.
+Koristi prvi FTP profil za povezivanje na FTP.
+Ako je omoguceno, dodaje novu vezu na FTP brzo biranje.
+Pokušava da potvrdi FTP sertifikate. Iskljuivanje se ne preporuuje.
+Prikazuje FTP poruku dana prilikom prijavljivanja.
+Uvek prihvatite nevažece FTP sertifikate. Ukljuivanje se ne preporuuje jer može predstavljati bezbednosne rizike.
+Stil upita za korisniko ime za poštu
+Stil upita za lozinku za poštu
+IMAP stil upita za poštu
+Stil SMTP prompta za poštu
+Automatsko otkrivanje servera pošte
+Omoguci otklanjanje grešaka pošte
+Obavesti o novim porukama pošte
+GPG stil upita za lozinku za poštu
+Pošaljite IMAP ping interval
+Pošaljite SMTP ping interval
+Format teksta pošte
+Napišite kako želite da bude odzivnik vašeg IMAP servera. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Napišite kako želite da bude odzivnik vašeg SMTP servera. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Automatski otkrijte server pošte na osnovu date adrese.
+Omogucava otklanjanje grešaka na serveru pošte.
+Obaveštava vas o svim novim porukama pošte.
+Napišite kako želite da bude vaš upit za lozinku za GPG. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Koliko milisekundi treba poslati IMAP ping?
+Koliko milisekundi poslati SMTP ping?
+Kontroliše kako ce se tekst e-pošte prikazati.
+Obian tekst
+Tekuci tekst
+HTML tekst
+Obogaceni tekst
+Kompresovani obogaceni tekst
+Bogati tekst
+Automatski pokrenite udaljeno otklanjanje grešaka pri pokretanju
+Format poruke za udaljeno otklanjanje grešaka
+Ako želite da se daljinsko otklanjanje grešaka pokrene pri pokretanju, omogucite ovo.
+Odreuje format poruke za udaljeno otklanjanje grešaka. {0} za ime, {1} za poruku.
+Stil upita URL adrese RSS fida
+Automatsko osvežavanje RSS fida
+Interval automatskog osvežavanja RSS fida
+Napišite kako želite da bude vaš RSS feed server prompt. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Koliko milisekundi treba da osvežite RSS feed?
+Prikaži detalje datoteke u SFTP listi
+Stil upita za korisniko ime za SFTP
+Dodajte nove veze na SFTP brzo biranje
+Prikazuje detalje o SFTP datoteci dok navodi udaljene direktorijume.
+Ako je omoguceno, dodaje novu vezu na SFTP brzo biranje.
+Ping timeout
+Prikažite opširne informacije o adapteru
+Prikaži opšte informacije o mreži
+Preuzmite procentualni tekst
+Otpremanje procentualnog teksta
+Koliko milisekundi treba ekati pre nego što proglasite vremensko ogranienje?
+Štampa opsežne informacije o adapteru, kao što su informacije o paketu.
+Prikazuje opšte informacije o mreži.
+Napišite kakav želite da bude vaš tekst za procenat otpremanja. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni. {0} za otpremljenu veliinu, {1} za ciljnu veliinu, {2} za procenat.
+Napišite kakav želite da bude vaš tekst o procentu preuzimanja. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni. {0} za preuzetu veliinu, {1} za ciljnu veliinu, {2} za procenat.
+Zatražite lozinku nakon zakljuavanja
+Nakon zakljuavanja ekrana, zatražite lozinku
+Minimalni nivo crvene boje
+Minimalni nivo zelene boje
+Minimalni nivo plave boje
+Minimalni nivo boje
+Maksimalni nivo crvene boje
+Maksimalni nivo zelene boje
+Maksimalni nivo plave boje
+Maksimalni nivo boje
+Minimalni nivo crvene boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Minimalni nivo zelene boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Minimalni nivo plave boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Minimalni nivo boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255 za 255 boja ili 16 za 16 boja.
+Maksimalni nivo crvene boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Maksimalni nivo zelene boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Maksimalni nivo plave boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255.
+Maksimalni nivo boje. Minimalna prihvacena vrednost je 0, a maksimalna prihvacena vrednost je 255 za 255 boja ili 16 za 16 boja.
+Pozadinska boja
+Linijski karakter
+Znak za formiranje linije. Obavezno unesite samo jedan znak.
+Znak u gornjem levom uglu za traku sati
+Znak u gornjem levom uglu za traku minuta
+Znak u gornjem levom uglu za traku sa sekundama
+Znak u gornjem desnom uglu za traku sa satima
+Znak u gornjem desnom uglu za traku minuta
+Znak u gornjem desnom uglu za traku sa sekundama
+Znak u donjem levom uglu za traku sa satima
+Znak u donjem levom uglu za traku minuta
+Znak u donjem levom uglu za traku sa sekundama
+Znak u donjem desnom uglu za traku sa satima
+Znak u donjem desnom uglu za traku minuta
+Znak u donjem desnom uglu za traku sa sekundama
+Znak gornjeg okvira za traku sati
+Znak gornjeg okvira za traku minuta
+Znak gornjeg okvira za traku sa sekundama
+Znak donjeg okvira za traku sati
+Znak donjeg okvira za traku minuta
+Znak donjeg okvira za traku sa sekundama
+Znak levog okvira za traku sati
+Znak levog okvira za traku minuta
+Znak levog okvira za traku sa sekundama
+Desni okvir za traku sati
+Desni okvir za traku minuta
+Desni okvir za traku sa sekundama
+Informativni tekst satima
+Informativni tekst za minute
+Informativni tekst za sekunde
+Minimalni nivo crvene boje satima
+Minimalni nivo zelene boje satima
+Minimalni nivo plave boje satima
+Minimalni nivo boje satima
+Maksimalni nivo crvene boje satima
+Maksimalni nivo zelene boje satima
+Maksimalni nivo plave boje satima
+Maksimalni nivo boje satima
+Minimalni nivo crvene boje za nekoliko minuta
+Minimalni nivo zelene boje za nekoliko minuta
+Minimalni nivo plave boje za nekoliko minuta
+Minimalni nivo boje za nekoliko minuta
+Maksimalni nivo crvene boje za nekoliko minuta
+Maksimalni nivo zelene boje za nekoliko minuta
+Maksimalni nivo plave boje za nekoliko minuta
+Maksimalni nivo boje za nekoliko minuta
+Minimalni nivo crvene boje za sekunde
+Minimalni nivo zelene boje za sekunde
+Minimalni nivo plave boje za sekunde
+Minimalni nivo boje za sekunde
+Maksimalni nivo crvene boje za sekunde
+Maksimalni nivo zelene boje za sekunde
+Maksimalni nivo plave boje za sekunde
+Maksimalni nivo boje za sekunde
+Lik koji podseca na gornji levi ugao. Obavezno unesite samo jedan znak.
+Lik koji podseca na donji levi ugao. Obavezno unesite samo jedan znak.
+Lik koji podseca na gornji okvir. Obavezno unesite samo jedan znak.
+Lik koji podseca na donji okvir. Obavezno unesite samo jedan znak.
+Lik koji podseca na levi okvir. Obavezno unesite samo jedan znak.
+Lik koji podseca na pravi okvir. Obavezno unesite samo jedan znak.
+Napišite kako se prikazuje vaš informativni tekst za trenutni sat. {0} za trenutni sat od 24 sata.
+Napišite kako se prikazuje vaš informativni tekst za trenutni minut. {0} za trenutni minut od 60 minuta.
+Napišite kako se prikazuje vaš informativni tekst za trenutnu sekundu. {0} za trenutnu sekundu od 60 sekundi.
+Boja teksta
+Znak u gornjem levom uglu za traku rampe
+Znak u gornjem desnom uglu za traku rampe
+Znak donjeg levog ugla za traku rampe
+Znak donjeg desnog ugla za traku rampe
+Karakter gornjeg okvira za šipku rampe
+Karakter donjeg okvira za šipku rampe
+Znak levog okvira za traku rampe
+Desni znak okvira za traku rampe
+Minimalni nivo crvene boje za poetnu boju
+Minimalni nivo zelene boje za poetnu boju
+Minimalni nivo plave boje za poetnu boju
+Minimalni nivo boje za poetnu boju
+Maksimalni nivo crvene boje za poetnu boju
+Maksimalni nivo zelene boje za poetnu boju
+Maksimalni nivo plave boje za poetnu boju
+Maksimalni nivo boje za poetnu boju
+Minimalni nivo crvene boje za krajnju boju
+Minimalni nivo zelene boje za krajnju boju
+Minimalni nivo plave boje za krajnju boju
+Minimalni nivo boje za krajnju boju
+Maksimalni nivo crvene boje za krajnju boju
+Maksimalni nivo zelene boje za krajnju boju
+Maksimalni nivo plave boje za krajnju boju
+Maksimalni nivo boje za krajnju boju
+Minimalni broj rešavaa
+Maksimalan broj rešavaa
+Rešava prikaži ulaz
+Znak u gornjem levom uglu za ivicu obaveštenja
+Znak u gornjem desnom uglu za ivicu obaveštenja
+Znak u donjem levom uglu za ivicu obaveštenja
+Znak u donjem desnom uglu za ivicu obaveštenja
+Znak gornjeg okvira za ivicu obaveštenja
+Znak donjeg okvira za ivicu obaveštenja
+Znak levog okvira za ivicu obaveštenja
+Desni znak okvira za ivicu obaveštenja
+Runi stil informacija o stranici
+Da li da se pokaže šta je napisano u upitu za unos.
+Koji je minimalni broj za odabir?
+Koji je maksimalan broj za odabir?
+Napišite kako želite da budu informacije o vašoj man stranici. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni. {0} za runi naslov, {1} za reviziju.
+Svojstvo {0} nije pronaeno ni na jednom modulu.
+Ovaj odeljak navodi opšta podešavanja uvara ekrana. Za pojedinana podešavanja uvara ekrana, izaite iz Podešavanja i otvorite Podešavanja uvara ekrana.
+Pokrenite toak boja u režimu prave boje
+Ako je navedeno, prikazace prilagoeni baner za pokretanje sa podrškom za uvanje mesta. Možete koristiti {0} za verziju kernela.
+Koja varijanta trenutnog jezika se koristi za promenu naziva meseci, kalendara itd.?
+Aktivira podršku za 255 boja.
+Aktivira podršku prave boje.
+Re je obrisana u redu {0}.
+String zamenjen u redu {0}.
+Uklonjen je broj reda {0}.
+Suzbijte neovlašcene poruke
+Sakriva dosadnu poruku ako funkcija listinga pokuša da otvori neovlašceni folder
+Informacije o FTP serveru
+Adresa servera:
+Server port:
+Tip servera:
+Tip serverskog sistema:
+Režim šifrovanja servera:
+Tip veze sa serverom za prenos podataka:
+Serverski sistem:
+Tip podataka za preuzimanje servera:
+Tip podataka za otpremanje servera:
+Morate se povezati sa serverom pre nego što izvršite ovu operaciju.
+Unesite udaljenu datoteku za heširanje.
+Unesite udaljeni direktorijum koji ce biti heširan.
+Unesite udaljeni direktorijum.
+Rekurzivno heširanje za FTP
+Da li treba rekurzivno heširati direktorijum. Imajte na umu da to ne podržavaju svi FTP serveri.
+Radni takt procesora:
+Podrška za procesor SSE2:
+Ukupan broj procesora:
+Veliina diska:
+Ukupna memorija:
+Grafika kartica:
+Model diska:
+Maksimalan broj e-poruka na jednoj stranici
+Kultura sadašnjeg jezika
+Ako ste sigurni da ste otvorili pravi odeljak, pogledajte ovu poruku:
+Razna podešavanja...
+Podešavanja boja...
+Izvršava komandu FTP servera
+Unesite adresu i port POP3 servera (<adresa> ili <adresa>:[port]):
+POP3 stil upita za poštu
+Pošaljite POP3 ping interval
+Napišite kako želite da bude odzivnik vašeg POP3 servera. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni.
+Koliko milisekundi treba poslati POP3 ping?
+Koristite POP3
+Da li da koristite POP3. Ako ovo onemogucite, koristice se SMTP.
+Šifruje string koristeci CRC32
+Otvara klijent pošte
+pošte preneta...
+Podešavanja za ovaj skrinsejver su dostupna ovde.
+Testira funkcionalnost tabele
+Ureuje navedenu liniju
+Dodaje nove redove na kraj datoteke
+Unesite tekst koji želite da dodate na kraj datoteke. Kada završite, napišite "EOF" na svom redu.
+Ime domacina
+Korisniko ime
+Tip podataka
+Kodiranje
+Šifrovanje
+Protokoli
+Prikaži napredak prenosa pošte
+Napredak prenosa pošte
+Napredak prenosa pošte (pojedinano)
+Ako je omoguceno, poštanska školjka ce pokazati koliko je bajtova preneto prilikom preuzimanja pošte.
+Napišite kako želite da bude vaš stil napredovanja prenosa pošte. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni. {0} za prenetu veliinu i {1} za ukupnu veliinu.
+Napišite kako želite da bude vaš stil napredovanja prenosa pošte. Ostavite prazno da biste koristili podrazumevani stil. uvari mesta su rašlanjeni. {0} za prenetu veliinu.
+Vremenska zona:
+Danas je {0}
+Trenutno vreme je {0}
+Boja separatora tabele
+Boja zaglavlja tabele
+Boja vrednosti tabele
+Moguci odgovori
+Mod datoteka nije navedena.
+Pokušavam da instaliram vec instalirani mod. Ažuriranje moda...
+Instalacija nije uspela za
+Dostavljena mod datoteka je nekompatibilna.
+Deinstalacija nije uspela za
+Otvara URL
+Štampajte brojeve redova na sadržaju datoteke za štampanje
+ini da komanda \"cat\" štampa brojeve redova datoteke.
+Transliterisana verzija
+Prevedena verzija
+Odbacuje sva obaveštenja
+Preuzimanje...
+Otpremanje...
+Prikaži obaveštenje o toku preuzimanja
+Prikaži obaveštenje za napredak otpremanja
+Prikazuje obaveštenje koje pokazuje napredak preuzimanja.
+Prikazuje obaveštenje koje pokazuje napredak otpremanja.
+Proverava da li string za prevoenje postoji u KS resursima
+String pronaen u resursima za lokalizaciju.
+Niz nije pronaen u resursima za lokalizaciju.
+Tiho pokrece kernel
+Ubacuje komandu za pokretanje prilikom sledeceg prijavljivanja
+Pokrece kernel u bezbednom režimu, onemogucujuci sve modove
+Poput bezbednog režima, ali takoe onemogucava višekorisnika i neka prilagoavanja
+Nije bilo dovoljno argumenata.
+Boja gornjeg levog ugla za traku rampe
+Boja gornjeg desnog ugla za traku rampe
+Boja donjeg levog ugla za traku rampe
+Boja donjeg desnog ugla za traku rampe
+Boja gornjeg okvira za šipku rampe
+Boja donjeg okvira za šipku rampe
+Boja levog okvira za traku rampe
+Desna boja okvira za rampu
+Koristite boje ivica za traku rampe
+Koristite boje ivica za traku rampe. Ako je onemoguceno, generisace sivu traku.
+Pokrece HTTP ljusku
+Izlazi iz HTTP ljuske i vraca se u kernel
+Postavlja HTTP lokaciju. Mora biti važeci URI.
+Dobija odgovor od HTTP servera koristeci navedeni zahtev
+Briše sadržaj sa HTTP servera
+Došlo je do greške u HTTP ljusci:
+HTTP poruka: Zahtevana komanda {0} nije pronaena. Pogledajte „pomoc“ za listu dostupnih komandi navedenih u HTTP ljusci.
+Dobija string sa HTTP servera koristeci navedeni zahtev
+Preuzimanje {0}...
+Format URI sajta je nevažeci.
+Podešavanje lokacije na
+Boje ne zahtevaju ponovno pokretanje, ali vecina podešavanja zahteva ponovno pokretanje.
+Nema pomoci za argument „{0}“.
+Pritisnite A na komentarima mržnje da se izvinite. Pritisnite T na ljubavnim komentarima da se zahvalite. Pritisnite K da biste napustili igru.
+Izvinili ste se zbog komentara mržnje! Odlino!
+Izvinjavam se zbog ljubavnog komentara. Nije dovoljno dobro.
+Upravo si se zahvalio hejteru na komentaru mržnje!
+Podrazumevana težina za SpeedPress
+Vremensko ogranienje pritiska tastera za SpeedPress
+Izaberite željenu težinu.
+Koliko milisekundi treba ekati na pritisak tastera pre isteka vremena? (U prilagoenoj težini)
+Zamenjuje re ili frazu drugom koristeci regularne izraze
+Zamenjuje re ili frazu drugom u redu koristeci regularne izraze
+Upituje re u odreenom redu ili svim redovima koristeci regularne izraze
+Pronaite podešavanje
+Napišite šta želite da tražite.
+Ništa nije pronaeno. Uverite se da ste ispravno napisali podešavanje.
+Pakuje lokalnu datoteku u arhivu
+Ne mogu ništa da spakujem.
+Opis odgovora
+Host Port
+Za više informacija o uslovima i odredbama korišcenja ovog softvera, posetite
+Podrazumevani tip izlaza izbora
+Proverava sva KS podešavanja da vidi da li su promenljive ispravno napisane
+Ovi unosi konfiguracije imaju nevažece promenljive ili nabrajanja i treba ih popraviti:
+Datoteka {0} nije pronaena
+Kreira niz promenljivih sa datim vrednostima
+Napišite broj postavke na koju želite da idete. Bilo koji drugi znak znai povratak.
+Proverava sve brojeve redova teksta lokalizacije da vidi da li su svi jednaki
+Nepodudaranje linija u
+Unesite korisniki broj.
+Ukljuite anonimne korisnike
+Ukljuite korisnike sa invaliditetom
+Ukljuuje anonimne korisnike na listu
+Ukljuuje korisnike sa invaliditetom na listu
+Sortiraj listu
+Profesionalno sortira listu sistema datoteka.
+Omogucava izbor izbora
+Shell komande nisu implementirane!!!
+Prikaži najnoviji RSS naslov pri prijavljivanju
+URL naslova RSS-a
+Svako prijavljivanje ce prikazati najnoviji RSS naslov sa izabranog URL-a naslova.
+URL naslova RSS koji ce se koristiti kada se prikazuje najnoviji naslov. Ovo je obino vaš omiljeni feed.
+Najnovije vesti:
+Dobijanje najnovijih vesti nije uspelo.
+Boja izabrane opcije
+Prikaži pracenje steka na grešci kernela
+Ako postoji greška kernela, izaberite da li želite da odštampate pracenje steka na konzoli.
+Mod se može uitati, ali ova upozorenja mogu uticati na nain na koji mod funkcioniše:
+uvar ekrana može da se uita, ali ova upozorenja mogu uticati na nain na koji uvar ekrana radi:
+Sauvaj podešavanja kao
+Uitaj podešavanja iz
+Gde želite da sauvate trenutna podešavanja kernela?
+Ne mogu da sauvam podešavanja kernela na vrhu postojece datoteke.
+Odakle želite da uitate trenutna podešavanja kernela?
+Proverava da li postoje prevodivi stringovi u KS resursima
+Kombinuje dve tekstualne datoteke ili više u izlaznu datoteku.
+Kombinovanje datoteka nije uspelo.
+Vremensko ogranienje za preuzimanje RSS fida
+Koliko milisekundi treba ekati pre isteka vremena za preuzimanje RSS fida?
+Popunite kutije
+Da li kutiju crtamo u celini ili crtamo samo ivicu?
+Kašnjenje faze u milisekundama
+Koliko milisekundi treba ekati pre nego što nacrtate sledecu fazu?
+Sledeci interval truljenja rampe
+Koliko milisekundi treba saekati pre nego što pokvarite jedan kraj sledece rampe?
+Proverite kvotu za otklanjanje grešaka
+Da li proveravamo da li sistem za otklanjanje grešaka treba da proveri kvotu pre pisanja u program za otklanjanje grešaka?
+Koliko je milisekundi zaista bilo potrebno za spavanje?
+Dodavanje dogaaja nije uspelo.
+Uklanjanje dogaaja nije uspelo.
+Nema dovoljno argumenata za dodavanje dogaaja.
+Nema dovoljno argumenata za uklanjanje dogaaja.
+Nema dovoljno argumenata za manipulaciju dogaajima.
+Dodavanje ili uklanjanje podsetnika nije uspelo.
+Nema dovoljno argumenata za dodavanje ili uklanjanje podsetnika.
+Nema dovoljno argumenata za manipulaciju podsetnicima.
+Podsetnik bez naslova
+Dogaaj bez naslova
+Sada je dan dogaaja!
+Ne propustite ovo!
+Nevažeca radnja.
+Jednostavna štoperica
+Pokreni ili zaustavi
+Krilo
+Resetovati
+Jednostavan tajmer
+Ponite (ponovno) odbrojavati
+Podesite interval
+Oznaeno vremensko ogranienje nije numeriko.
+Navedite vremensko ogranienje u milisekundama
+Sauvajte sve dogaaje i/ili podsetnike destruktivno
+Ako je omoguceno, briše sve dogaaje i/ili podsetnike pre nego što ih sauvate pomocu komande kalendara.
+Proverite pokušaje ponovnog pokušaja za FTP prenos
+Vremensko ogranienje FTP veze
+Vremensko ogranienje FTP veze za prenos podataka
+FTP IP verzije
+Koliko puta da verifikujete otpremanje i preuzimanje i pokušajte ponovo ako verifikacija ne uspe pre nego što preuzimanje ne uspe u celini?
+Koliko milisekundi treba ekati pre isteka FTP veze?
+Koliko milisekundi treba ekati pre isteka FTP veze za prenos podataka?
+Izaberite verziju Internet protokola koju FTP server podržava i koju FTP klijent koristi.
+Pokušavam da pokrenem RPC dok je vec pokrenut.
+Znak u gornjem levom uglu za RGB toak boja
+Znak u gornjem desnom uglu za RGB toak boja
+Znak u donjem levom uglu za RGB toak boja
+Znak u donjem desnom uglu za RGB toak boja
+Znak gornjeg okvira za RGB toak boja
+Karakter donjeg okvira za RGB toak boja
+Znak levog okvira za RGB toak boja
+Znak desnog okvira za RGB toak boja
+Pronalazi datoteku u navedenom direktorijumu ili u trenutnom direktorijumu
+Konvertuje završetke linija u format za trenutnu platformu ili u odreeni prilagoeni format
+Ukupna veliina u fascikli:
+Prikaži ukupnu veliinu na listi
+Ako je omoguceno, prikazuje ukupnu veliinu fascikle na listi, u zavisnosti od toga kako izraunati veliine fascikle prema konfiguraciji.
+Vi ste u toku!
+Podrazumevano JSON formatiranje za JSON školjku
+Bira podrazumevano JSON formatiranje (ulepšano ili minimizirano) za uvanje JSON školjke.
+Preuzeto ažuriranje!
+Automatski preuzimajte ažuriranja
+Ako postoji ažuriranje, kernel ce ga automatski preuzeti.
+Radijus eksplozije vatrometa
+Koliko blokova (do 10) je radijus eksplozije za vatromet kada se zapali?
+Ova komanda ima sledece prekidae koji menjaju nain na koji funkcioniše:
+Štampa brojeve redova koji prate red koji se štampa
+Spreava štampanje brojeva redova
+Uvek koristite transliterovanu verziju
+Uvek koristite prevedenu verziju
+Prisilno menjanje jezika
+Oznaite da odgovor može uzeti više od jednog znaka
+Oznaite da odgovor može uzeti samo jedan znak
+Odštampajte pitanje i odgovore u jednom redu
+Odštampajte pitanje i odgovore u dva reda
+Odštampajte pitanje i odgovore na savremen nain
+Odštampajte pitanje i odgovore u tabeli
+Prikazuje detalje datoteke na listi
+Suzbija dosadne poruke „dozvola odbijena“.
+Prikazuje sve vremenske zone
+Poinje igru sa lakim poteškocama
+Poinje igru srednje težine
+Poinje igru u teškoj teškoci
+Poinje igru u veoma teškoj teškoci
+Poinje igru u prilagoenoj težini. Imajte na umu da prilagoeno vremensko ogranienje u milisekundama treba da bude napisano kao argument.
+Prikazuje informacije o sistemu
+Prikazuje informacije o hardveru
+Prikazuje informacije o korisniku
+Prikazuje poruku dana
+Prikazuje poruku dana nakon prijavljivanja
+Prikazuje sve informacije
+Kreira direktorijum koji sadrži sadržaj ZIP datoteke
+Prikazuje sve dostupne gradove
+Brza kompresija
+Nema kompresije
+Ne kreirajte osnovni direktorijum u arhivi
+Jedinica u krpeljima
+Sramotno prekida vezu sa serverom
+Oznaava da je ciljna putanja apsolutna
+uva JSON datoteku, ulepšavajuci je tokom procesa
+uva JSON datoteku, minimizirajuci je u procesu
+Dobija stil završetka linije iz tekstualne datoteke
+Briše sve pokrenute dogaaje
+Omogucite otklanjanje grešaka u dogaajima
+Omogucava otklanjanje grešaka za sistem dogaaja kernela
+Font Figlet
+Napišite figlet font koji podržava Figgle biblioteka. Za više informacija pogledajte biblioteku dokumentaciju
+Instaliranje prilagoenog jezika {0} nije uspelo.
+Datoteka metapodataka potrebna za instaliranje prilagoenog jezika ne postoji.
+Informacije o metapodacima potrebne za instaliranje prilagoenog jezika ne pružaju potrebne potrebne lokalizacije.
+Deinstaliranje prilagoenog jezika {0} nije uspelo.
+Datoteka metapodataka potrebna za deinstaliranje prilagoenog jezika ne postoji.
+Informacije o metapodacima potrebne za deinstaliranje prilagoenog jezika ne pružaju potrebne potrebne lokalizacije.
+Dužina engleskog jezika ne odgovara dužini datog jezikog tokena.
+Jezik vec postoji i ne može se prepisati.
+Deinstaliranje prilagoenog jezika nije uspelo. Najverovatnije ne postoji.
+Instaliranje prilagoenih jezika nije uspelo.
+Deinstaliranje prilagoenih jezika nije uspelo.
+Deinstaliranje prilagoenih jezika nije uspelo. Pogledajte unutrašnji izuzetak za više informacija.
+Napišite administratorsku lozinku. Uverite se da ne koristite ovaj nalog osim ako zaista znate šta radite.
+Morate napisati lozinku administratora.
+Informacije o licenci
+Upravljajte svojim jezicima
+Jezik nije pronaen ili datoteka ima nevažece znakove.
+Jezik nije naveden.
+Upravljanje jezikom je onemoguceno u bezbednom režimu.
+Kratak naziv jezika:
+Jezik puno ime:
+Transliterabilan jezik:
+Prilagoeni jezik:
+Novi baner dobrodošlice
+Moderan uvodni ekran
+Prikazuje novi baner dobrodošlice koji je prikazan u Figletu
+Omogucava elegantan poetni ekran pri pokretanju. Imajte na umu da ce onemoguciti prompt za argumente i testirati ljusku pre pokretanja.
+Splash name
+Ime splash-a iz dostupnih splash-ova implementiranih u kernelu.
+Generisano podrazumevano MOTD.
+Generisano podrazumevano MAL.
+Sistemski nalog je inicijalizovan
+Korisnici su inicijalizovani
+Dozvole su uitane
+Dobrodošli!
+Pokretanje udaljenog programa za otklanjanje grešaka...
+Greška u vezi sa daljinskim otklanjanjem grešaka
+Obavestite o grešci veze za udaljeno otklanjanje grešaka
+Ako je omoguceno, koristice sistem obaveštenja da obavesti domacina o grešci veze za udaljeno otklanjanje grešaka. U suprotnom, koristice podrazumevano pisanje na konzoli.
+Figlet font za tajmer
+Omogucite Figlet za tajmer
+Ako je omoguceno, koristice figlet za tajmer. Imajte na umu da mu je potreban veliki ekran konzole da bi se pravilno prikazalo vreme sa omogucenim Figletom.
+Greška pri rašlanjivanju argumenata komandne linije pre pokretanja: {0}
+Resetuje kernel na fabrika podešavanja
+Zaobilazi detekciju veliine konzole
+Izgleda da zaobilazite detekciju veliine konzole. Stvari možda nece raditi ispravno na malim ekranima.
+Da biste imali bolje iskustvo, promenite veliinu prozora konzole dok ste još uvek na ovom ekranu. Pritisnite bilo koje dugme da biste nastavili...
+Vaša konzola je premala da bi ispravno radila:
+Baner figlet font
+Štampa string na konzoli koristeci tip boje i štampanje linije sa podrškom za Figlet
+Štampa string na konzoli koristeci tip boje i štampanje linija sa podrškom za format i Figlet
+Trajno uklanja poruku
+Trajno uklanja sve poruke od primaoca
+Poništava uklanjanje poruke
+Poništava uklanjanje svih poruka od primaoca
+Opozovi brisanje nije primenjeno za POP3.
+Prikaži komande raunaju na pomoc
+Prikaži komande ljuske raunaju na pomoc
+Prikaži mod komande raunaju na pomoc
+Pokažite pseudonime raunajte na pomoc
+Prikazuje broj komandi na listi komandi, kontrolisan pomocu tri prekidaa za prikaz broja za razliite vrste komandi.
+Izvršava komande kada su UESH izrazi zadovoljeni
+Uslov nije pronaen u izrazu.
+Uslov {0} zahteva {1} argumenata. Dobio sam {2}.
+Uslov treba staviti u sredinu.
+Uslov treba postaviti na poetku.
+Greška pri rašlanjivanju izraza zbog sintaksike greške.
+Neuspešno ispunjavanje uslova. Više informacija ovde:
+Znak maske lozinke
+Znak koji maskira lozinku. Ostavite prazno za vecu sigurnost.
+Izlazi iz ljuske ako radi na podljusci
+Ne mogu ubiti majinu školjku!
+Ne mogu da se odjavim iz podljuske.
+Datoteka nije navedena. Izlazak iz školjke...
+Podešavanja za ovaj poetni ekran su dostupna ovde.
+Boja trake napretka
+Otvara podešavanja uvara ekrana
+Otvara podešavanja prskanja
+Navodi dostupne UESH promenljive
+Lokacija teksta napretka
+Izaberite željenu lokaciju teksta napretka.
+Možete napisati samo brojeve.
+Pritisnite "k" da izaete.
+Preuzimanje imena...
+Zbog tehnikih poteškoca, ne možemo da navedemo svojstva adaptera na Unik sistemima.
+Omogucava režim za otklanjanje grešaka
+Podatke za argumente
+Omogucite crno-beli režim
+Diskoteku ini crno-belom. Zaista ce vam povrediti oi ako je bilo prebrzo, pa se ne preporuuje ako doživite napad brzih slika.
+Izgleda da ste koristili nepodržanu verziju. Veoma je preporuljivo da ne koristite ovu verziju.
+Uitaj trenutne boje
+Boja alternativne opcije
+Korisnici se raunaju na komentare ljubavi ili mržnje
+Koliko korisnika treba da bude u sobi za komentare ljubavi ili mržnje?
+Navodi dostupne jezike
+Dostupni jezici:
+Argumenti komandne linije:
+Argumenti komandne linije pre pokretanja:
+Otvara mod API dokumentaciju za strukturu izvornog koda u njegovom najnovijem obliku

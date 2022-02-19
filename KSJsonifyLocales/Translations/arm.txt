@@ -983,3 +983,675 @@ DZerrnarki ejy kardalu hamar seghmek’ ts’ankats’ats steghn...
 Ays dzerrnarki ejy ashkhatank’i karik’ uni hetevyali hamar.
 DZerrnarki ejy {0} ch’i gtnvel:
 Mod dzerrnark
+Hasaneli mijuki p’astarkner.
+Yet’e ​​avartel yek’, seghmek’ «q»:
+Bazmat’iv mijuki argumentner kareli e bazhanel storaketnerov arrants’ bats’atneri, orinak՝
+Bazmat’iv nerarkvats hramannery kareli e arrandznats’nel yerku ketov՝ bats’atnerov, orinak՝
+Pahanjvogh argumenty {0} ch’i gtnvel:
+Anverakangneli skhal argumentum.
+Gaghtnagrum e toghy SHA512-i mijots’ov
+Gaghtnagrum e toghy SHA384-i mijots’ov
+Gaghtnagrum e toghy SHA256-i mijots’ov
+Gaghtnagrum e toghy SHA1-i mijots’ov
+Gaghtnagrum e toghy MD5-i mijots’ov
+vortegh klini buildinsaver-y
+Mod masy voch’inch’ e:
+Anvtang rrezhimum rrezhimneri dadarets’umy ch’i t’uylatrvum:
+Mod-n arden sksvel e:
+Mod-y derr ch’i sksvel:
+Hramani ogtagortsumy.
+Masi fayli anvanumy.
+Masi fayli ughin.
+Skhal՝ ekranapahich’y gortsarkelis.
+Anvaver chanaparhi tesak:
+Mijuki ughu anvaver tesak:
+Nakhord berrnakhts’iky dzakhoghvets’
+JSON khmbagrich’y derr ch’i bats’el fayli hosk’:
+JSON fayli sep’akanut’yuny ch’i gtnvel:
+Herrats’vats guyk’.
+Avelats’num e nor hatkut’yun JSON fayli verjum
+Herrats’num e hatkut’yuny JSON faylits’
+Durs e galis JSON keghevits’
+Durs e galis JSON vahanakits’՝ arrants’ p’vop’vokhut’yunnery pahelu
+Pahpanum e JSON fayly
+Bats’um e JSON keghevy
+Tpum e JSON fayly
+Hajord t’ek’ahart’aki mijakayk’y
+Aktivats’num e 255 guyni ajakts’ut’yun Ramp-i hamar:
+Aktivats’num e Ramp-i irakan guyneri ajakts’ut’yuny:
+K’ani՞ milivayrkyan spasel hajord t’ek’ahart’aky lts’neluts’ arraj:
+Tsanuts’man vernagri guyny
+Tsanuts’man nkaragrut’yan guyny
+Tsanuts’man arrajynt’ats’i guyny
+Tsanuts’man dzakhoghman guyny
+Harts’i guyn
+Hajoghut’yan guyn
+Ogtagortsoghi dolari guyny
+Hushi guyny
+Taranjatogh tek’sti guyny
+Bazhanarar guyn
+Ts’anki vernagri guyny
+Zargats’man nakhazgushats’man guyny
+Bemi zhamanaki guyny
+Arrajynt’ats’i guyny
+Hetevi tarberaki guyny
+Nkarel tsanuts’man yezragitsy
+Tsatskum e tsanuts’umy yezragtsov:
+Kapvek’ rrezhimi vacharroghi het՝ rrezhimy hamategheli tarberakin t’armats’nelu hamar:
+Ts’atsr arrajnahert’ yezragtsi guyny
+Mijin arrajnahert’ yezragtsi guyny
+Bardzr arrajnahert’ yezragtseri guyny
+Stats’voghy p’vordzarkelu hamar ugharkum e arrajynt’ats’i tsanuts’um
+P’vordzarkum e gunayin anivy
+Ts’uyts’ e talis teghakan mijuki zhamanaky
+Ts’uyts’ e talis teghakan mijuki amsat’ivy
+Ts’uyts’ e talis teghakan mijuki amsat’ivy yev zhamy
+Ts’uyts’ e talis UTC mijuki zhamanaky
+Ts’uyts’ e talis UTC mijuki amsat’ivy
+Ts’uyts’ e talis UTC mijuki amsat’ivy yev zhamy
+MOTD chanaparh
+MAL chanaparh
+VO՞r fayln e MOTD tek’stayin fayly: Grek’ bats’ardzak chanaparh depi tek’stayin fayl:
+VO՞r fayln e MAL tek’stayin fayly: Grek’ bats’ardzak chanaparh depi tek’stayin fayl:
+Sev ts’uts’aki rrezhimner
+Grek’ ayn rrezhimneri fayleri anunnery, voronk’ ch’en gortsarkvi gortsarkman zhamanak: Yerb avartek’, grek’ «q»: Goyut’yun unets’vogh rrezhimy herrats’nelu chanaparhi koghk’in grek’ minus nshan:
+Mod {0}-y sev ts’uts’akum e:
+Verberrnum e bolor rrezhimnery
+Sev ts’uts’akum mod e avelats’num
+Herrats’num e rrezhimy sev ts’uts’akits’
+Zhamy yev amsat’ivy UTC-um՝ {0}
+Nshvats JSON shell hramany ch’i gtnvel:
+Ts’uts’adrel havelvatsi teghekatvut’yuny berrnman zhamanak
+Verlutsel hramani toghi p’astarknery
+Ts’uyts’ tal bemi avarti zhamery
+Sksek’ mijuki p’vop’vokhut’yunnery boot-um
+Ts’uyts’ tal ynt’ats’ik zhamanaky mutk’its’ arraj
+Teghekats’rek’ berrnman ynt’ats’k’um ts’ankats’ats ansark’ut’yan masin
+Ts’uyts’ e talis hakirch teghekatvut’yun havelvatsi masin boot-um:
+Verlutsum e hramani toghi p’astarknery boot-um:
+Ts’uyts’ e talis, t’e vork’an zhamanak e pahanjvel mijuky p’uln avartelu hamar:
+Avtomat kerpov sksel mijuki p’vop’vokhut’yunnery boot-um:
+Ts’uyts’ e talis ynt’ats’ik zhamy, zhamayin gotin yev amsat’ivy՝ nakhk’an mutk’ gortsely:
+Yet’e ​​mijuki berrnman zhamanak annshan ansark’ut’yun ka, ayd masin teghekats’rek’ ogtatirojy:
+Ogtvoghi anvan hushman vochy
+Gaghtnabarri hushman vochy
+Ts’uyts’ tal MAL-y mutk’ gortselis
+Grek’, t’e inch’pes yek’ uzum, vor dzer mutk’i hushumy lini: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+Grek’, t’e inch’pes yek’ uzum, vor lini dzer gaghtnabarry: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+Ts’uyts’ e talis orva haghordagrut’yuny mutk’i ekrany ts’uts’adreluts’ heto:
+Test Shell-i hushman vochy
+JSON Shell hushman voch
+Zondov nerarkvats hramanner
+Hetazotum e nerarkvats hramannery mijuki keghevi skzbum:
+Ts’uts’adrel fayli manramasnery ts’ankum
+Ts’uyts’ e talis fayli hamarrot manramasnery faylery ts’uts’akagrelis
+Ts’uyts’ tal fayli manramasnery FTP ts’uts’akum
+Ogtvoghi anvan hushman vochy FTP-i hamar
+Gaghtnabarri hushman vochy FTP-i hamar
+Ogtagortsek’ arrajin FTP profily
+Avelats’rek’ nor kaper FTP arag havak’man hamar
+P’vordzek’ vaverats’nel anvtang FTP vkayakannery
+Ts’uyts’ tal FTP MOTD miats’man zhamanak
+Misht yndunek’ anvaver FTP vkayakanner
+Ts’uyts’ e talis FTP fayli manramasnery herravor direktorianeri ts’ankum:
+Ogtagortsum e arrajin FTP profily FTP-in mianalu hamar:
+Yet’e ​​miats’vats e, avelats’num e nor kap FTP arag havak’voghin:
+P’vordzum e vaverats’nel FTP vkayakannery: Ayn anjately khorhurd ch’i trvum:
+Ts’uyts’ e talis orva FTP haghordagrut’yuny mutk’ gortselu zhamanak:
+Misht yndunek’ anvaver FTP vkayakanner: Ayn miats’nely khorhurd ch’i trvum, k’ani vor da karogh e anvtangut’yan vtangner arrajats’nel:
+Ogtvoghi anvan hushman voch p’vosti hamar
+P’vosti hamar gaghtnabarri hushman vochy
+IMAP hushman voch p’vosti hamar
+SMTP hushman voch p’vosti hamar
+P’vosti serveri avtomat haytnaberum
+Miats’nel p’vosti vripazertsumy
+Teghekats’nel nor p’vosti haghordagrut’yunneri masin
+GPG gaghtnabarri hushman voch p’vosti hamar
+Ugharkek’ IMAP ping mijakayk’y
+Ugharkek’ SMTP ping yndmijum
+P’vosti tek’sti dzevach’ap’
+Grek’, t’e inch’pisin e dzer IMAP serveri hushumy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+Grek’, t’e inch’pisin e dzer SMTP serveri hushumy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+Avtomat kerpov haytnaberel p’vosti servery՝ himnvelov tvyal hasts’ev vra:
+Miats’num e p’vosti serveri vripazertsumy:
+Tsanuts’um e dzez ts’ankats’ats nor p’vosti haghordagrut’yunneri hamar:
+Grek’, t’e inch’pes yek’ uzum, vor lini dzer GPG gaghtnabarry: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+K’ani՞ milivayrkyan ugharkel IMAP ping:
+K’ani՞ milivayrkyan ugharkel SMTP ping:
+Karravarum e, t’e inch’pes kts’uts’adrvi p’vosti tek’sty:
+Parz tek’st
+Hosogh tek’st
+HTML tek’st
+Harstats’vats tek’st
+Seghmvats harust tek’st
+Harust tek’st
+Avtomat kerpov sksel herraka kargaberumy gortsarkman zhamanak
+Herraka kargaberman haghordagrut’yan dzevach’ap’y
+Yet’e ​​ts’ankanum yek’, vor herraka kargaberumy sksvi berrnman zhamanak, miats’rek’ sa:
+Nshum e herraka kargaberman haghordagrut’yan dzevach’ap’y: {0} anvan hamar, {1} haghordagrut’yan hamar:
+RSS feed URL-i hushman vochy
+Avtomat t’armats’nel RSS hosk’y
+Avtomat t’armats’man RSS hosk’i yndmijum
+Grek’, t’e inch’pisin e dzer RSS snuts’man serveri hushumy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+K’ani՞ milivayrkyan t’armats’nel RSS hosk’y:
+Ts’uyts’ tal fayli manramasnery SFTP ts’uts’akum
+SFTP-i ogtanuni hushman vochy
+Avelats’rek’ nor kaper SFTP arag havak’man hamar
+Ts’uyts’ e talis SFTP fayli manramasnery herravor direktorianeri ts’ankum:
+Yet’e ​​miats’vats e, nor kap e avelats’num SFTP arag havak’ich’in:
+Ping-i zhamanaki avarty
+Ts’uyts’ tal adapterneri laynatsaval teghekut’yunnery
+Ts’uyts’ tal ts’ants’i yndhanur teghekatvut’yuny
+Nerberrnek’ tokosayin tek’sty
+Verberrnek’ tokosayin tek’st
+K’ani՞ milivayrkyan petk’ e spasel nakhk’an zhamanaki avarty haytararely:
+Tpum e adapterneri laynatsaval teghekut’yunnery, inch’pisik’ yen p’at’et’i teghekatvut’yuny:
+Ts’uyts’ e talis ts’ants’i masin yndhanur teghekatvut’yuny:
+Grek’, t’e inch’pisin e dzer verberrnman tokosayin tek’sty: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen: {0} verberrnvats ch’ap’i hamar, {1} npatakayin ch’ap’i hamar, {2} tokosi hamar:
+Grek’, t’e inch’pisin e dzer nerberrnman tokosayin tek’sty: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen: {0} nerberrnvats ch’ap’i hamar, {1} npatakayin ch’ap’i hamar, {2} tokosi hamar:
+Koghpeluts’ heto gaghtnabarr khndrek’
+Ekrany koghpeluts’ heto gaghtnabarr khndrek’
+Karmir guyni nvazaguyn makardak
+Kanach’ guyni nvazaguyn makardak
+Kapuyt guyni nvazaguyn makardak
+Nvazaguyn guyni makardak
+Karmir guyni arravelaguyn makardaky
+Kanach’ guyni arravelaguyn makardaky
+Kapuyt guyni arravelaguyn makardaky
+Guyni arravelaguyn makardak
+Karmir guyni nvazaguyn makardak: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Kanach’ guyni nvazaguyn makardak: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Kapuyt guyni nvazaguyn makardak: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Nvazaguyn guyni makardak: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255 255 guyneri hamar kam 16՝ 16 guyneri hamar:
+Karmir guyni arravelaguyn makardaky: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Kanach’ guyni arravelaguyn makardaky: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Kapuyt guyni arravelaguyn makardaky: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255:
+Guyni arravelaguyn makardak: Nvazaguyn yndunvats arzhek’y 0 e, isk arravelaguyn yndunvats arzhek’y՝ 255 255 guyneri hamar kam 16՝ 16 guyneri hamar:
+Arrajin plani guyny
+Gtsayin bnuyt’
+Gits kazmelu kerpar: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Verevi dzakh ankyuni nishy zhameri barum
+Verevi dzakh ankyuni nishy ropeneri gtsi hamar
+Verevi dzakh ankyuni nishy vayrkyanneri toghum
+Verevi aj ankyuni nishy zhameri barum
+Verevi aj ankyuni nishy ropeneri gtsi hamar
+Verevi aj ankyuni nishy vayrkyanneri toghum
+Storin dzakh ankyuni nishy zhameri toghum
+Storin dzakh ankyuni nishy ropeneri gtsi hamar
+Storin dzakh ankyuni nishy vayrkyanneri hamar
+Storin aj ankyuni nishy zhameri gtsi hamar
+Nerk’evi aj ankyuni nishy ropeneri gtsi hamar
+Storin aj ankyuni nishy vayrkyanneri gtsi hamar
+Shrjanaki verin nishy zhameri barum
+Shrjanaki verin nishy ropeneri gtsi hamar
+Shrjanaki verin nishy vayrkyanneri gtsi hamar
+Storin shrjanaki nishy zhameri barum
+Storin kadri nishy ropeneri barum
+Storin kadri nishy vayrkyanneri hamar
+Shrjanaki dzakh nishy zhameri barum
+Dzakh shrjanaki nishy ropeneri barum
+Dzakh shrjanaki nishy vayrkyanneri gtsi hamar
+Shrjanaki aj nishy zhameri barum
+Shrjanaki aj nishy ropeneri barum
+Shrjanaki aj nishy vayrkyanneri gtsi hamar
+Teghekatvakan tek’st zhamerov
+Teghekatvakan tek’st ropenerov
+Teghekatvakan tek’st vayrkyannerov
+Karmir guyni nvazaguyn makardaky zhamerov
+Kanach’ guyni nvazaguyn makardaky zhamerov
+Kapuyt guyni nvazaguyn makardaky zhamerov
+Guyni nvazaguyn makardaky zhamerov
+Karmir guyni arravelaguyn makardaky zhamerov
+Kanach’ guyni arravelaguyn makardaky zhamerov
+Kapuyt guyni arravelaguyn makardaky zhamerov
+Guyni arravelaguyn makardaky zhamerov
+Karmir guyni nvazaguyn makardaky ropenerov
+Kanach’ guyni nvazaguyn makardaky ropenerov
+Kapuyt guyni nvazaguyn makardaky ropenerov
+Guyni nvazaguyn makardaky ropenerov
+Karmir guyni arravelaguyn makardaky ropenerov
+Kanach’ guyni arravelaguyn makardaky ropenerov
+Kapuyt guyni arravelaguyn makardaky ropenerov
+Guyni arravelaguyn makardaky ropenerov
+Karmir guyni nvazaguyn makardaky vayrkyannerov
+Kanach’ guyni nvazaguyn makardaky vayrkyannerov
+Kapuyt guyni nvazaguyn makardaky vayrkyannerov
+Guyni nvazaguyn makardaky vayrkyannerov
+Karmir guyni arravelaguyn makardaky vayrkyannerov
+Kanach’ guyni arravelaguyn makardaky vayrkyannerov
+Kapuyt guyni arravelaguyn makardaky vayrkyannerov
+Guyni arravelaguyn makardaky vayrkyannerov
+Nish, vory hishets’num e verin dzakh ankyuny: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Nish, vory hishets’num e storin dzakh ankyuny: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Nish, vory nman e verin shrjanakin: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Nish, vory nman e storin shrjanakin: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Nish, vory nman e dzakh shrjanakin: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Kerpar, vory nman e chisht shrjanakin: Hamozvek’, vor mutk’agrek’ miayn mek nish:
+Grek’, t’e inch’pes e ts’uts’adrvum dzer teghekatvakan tek’sty ynt’ats’ik zhami hamar: {0} 24 zhamits’ ynt’ats’ik zhami hamar:
+Grek’, t’e inch’pes e ts’uts’adrvum dzer teghekatvakan tek’sty ynt’ats’ik ropev hamar: {0} 60 ropevts’ ynt’ats’ik ropev hamar:
+Grek’, t’e inch’pes e ts’uts’adrvum ynt’ats’ik yerkrordi dzer teghekatvakan tek’sty: {0} 60 vayrkyanits’ ynt’ats’ik vayrkyani hamar:
+Tek’sti guyny
+Verin dzakh ankyuni nishy t’ek’ahart’aki hamar
+Verin aj ankyuni nishy t’ek’ahart’aki hamar
+Storin dzakh ankyuni nishy t’ek’ahart’aki hamar
+Storin aj ankyuni nishy t’ek’ahart’aki hamar
+Verin shrjanaki nishy t’ek’ahart’aki hamar
+Storin shrjanaki nishy t’ek’ahart’aki hamar
+Dzakh shrjanaki nishy t’ek’ahart’aki hamar
+Shrjanaki aj nishy t’ek’ahart’aki hamar
+Karmir guyni nvazaguyn makardaky meknarkayin guyni hamar
+Kanach’ guyni nvazaguyn makardaky meknarkayin guyni hamar
+Kapuyt guyni nvazaguyn makardaky meknarkayin guyni hamar
+Guyni nvazaguyn makardaky meknarkayin guyni hamar
+Karmir guyni arravelaguyn makardaky meknarki guyni hamar
+Kanach’ guyni arravelaguyn makardaky meknarkayin guyni hamar
+Meknarkayin guyni arravelaguyn kapuyt guyni makardaky
+Guyni arravelaguyn makardaky meknarki guyni hamar
+Karmir guyni nvazaguyn makardaky verjnakan guyni hamar
+Kanach’ guyni nvazaguyn makardaky verjnakan guyni hamar
+Kapuyt guyni nvazaguyn makardaky verjnakan guyni hamar
+Guyni nvazaguyn makardaky verjnakan guyni hamar
+Karmir guyni arravelaguyn makardaky verjnakan guyni hamar
+Arravelaguyn kanach’ guyni makardaky verjnakan guyni hamar
+Arravelaguyn kapuyt guyni makardaky verjnakan guyni hamar
+Guyni arravelaguyn makardaky verjnakan guyni hamar
+Lutsoghi nvazaguyn t’ivy
+Lutsogh arravelaguyn t’ivy
+Lutsich’y ts’uyts’ e talis mutk’agrumy
+Verin dzakh ankyuni nish tsanuts’man yezragtsi hamar
+Tsanuts’man yezragtsi verin aj ankyuni nishy
+Storin dzakh ankyuni nishy tsanuts’man yezragtsi hamar
+Storin aj ankyuni nishy tsanuts’man yezragtsi hamar
+Shrjanaki verin nishy tsanuts’man yezragtsi hamar
+Storin shrjanaki nish tsanuts’man yezragtsi hamar
+Dzakh shrjanaki nish tsanuts’man yezragtsi hamar
+Aj shrjanaki nish tsanuts’man yezragtsi hamar
+DZerrnarki eji teghekatvut’yan vochy
+Ts’uyts’ tal, t’e inch’ e grvats mutk’agrman hushum:
+VO՞rn e yntrelu nvazaguyn t’ivy:
+VO՞rn e yntrelu arravelaguyn t’ivy:
+Grek’, t’e inch’pes yek’ ts’ankanum, vor lini dzer manpage teghekatvut’yuny: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen: {0}՝ dzerrk’ov vernagri hamar, {1}՝ veranayman hamar:
+{0} hatkut’yuny ch’i gtnvel modulnerits’ voreve mekum:
+Ays bazhnum t’varkvats yen Ekranapahi yndhanur kargavorumnery: Ekranapahi anhatakan ​​kargavorumneri hamar durs yekek’ Kargavorumnerits’ yev bats’ek’ Ekranapahi kargavorumnery:
+Gortsarkek’ gunavor anivy irakan guyni rrezhimum
+Yet’e ​​nshvats e, ayn kts’uts’adri harmarets’vats meknarkayin droshak՝ teghapahi ajakts’ut’yamb: Duk’ karogh yek’ ogtagortsel {0} mijuki tarberaki hamar:
+Ynt’ats’ik lezvi vo՞r tarberakn e ogtagortsvum amisneri anunnery, orats’uyts’y yev ayln p’vokhelu hamar:
+Aktivats’num e 255 guyni ajakts’ut’yuny:
+Aktivats’num e irakan guyni ajakts’ut’yuny:
+Barry jnjvel e {0} toghum:
+Toghy p’vokharinvel e {0} toghum:
+Herrats’vel e toghi hamary {0}:
+CHeghk’ek’ ch’artonvats haghordagrut’yunnery
+T’ak’ts’num e anhangstats’nogh haghordagrut’yuny, yet’e ts’uts’akman gortsarruyt’y p’vordzum e bats’el ch’t’uylatrvats t’ght’apanak
+FTP serveri teghekatvut’yun
+Serveri hasts’e:
+Serveri navahangist.
+Serveri tesaky:
+Serveri hamakargi tesaky.
+Serveri kodavorman rrezhim.
+Serveri tvyalneri kapi tesaky.
+Serverayin hamakarg.
+Serveri nerberrnman tvyalneri tesaky.
+Serveri verberrnman tvyalneri tesaky՝
+Ays gortsoghut’yunn irakanats’neluts’ arraj duk’ petk’ e mianak’ serverin:
+Mutk’agrek’ herraka fayl, vory petk’ e heshvi:
+Mutk’agrek’ herraka grats’uts’ak, vory petk’ e hashvi:
+Mutk’agrek’ herravor grats’uts’ak:
+FTP-i hamar rrekursiv heshing
+Ardyo՞k’ grats’uts’aky rrekursiv hashshelu hamar: Khndrum yenk’ nkati unenal, vor voch’ bolor FTP servernern yen da ajakts’um:
+Prots’esori zhamats’uyts’i aragut’yuny.
+Prots’esori SSE2 ajakts’ut’yun.
+Prots’esorneri yndhanur k’anaky.
+Skavarraki ch’ap’y.
+Yndhanur hishoghut’yun.
+Grafikakan k’art.
+Skavarraki model.
+Mek ejum elektronayin namakneri arravelaguyn k’anaky
+Nerkayis lezvi mshakuyt’y
+Yet’e ​​vstah yek’, vor bats’el yek’ chisht bazhiny, stugek’ ays haghordagrut’yuny.
+Tarber kargavorumner...
+Guyneri kargavorumner...
+Irakanats’num e FTP serveri hramany
+Mutk’agrek’ POP3 serveri hasts’en yev porty (<hasts’e> kam <hasts’e>:[port]):
+POP3 hushman voch p’vosti hamar
+Ugharkek’ POP3 ping yndmijum
+Grek’, t’e inch’pisin e dzer POP3 serveri hushumy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen:
+K’ani՞ milivayrkyan ugharkel POP3 ping:
+Ogtagortsek’ POP3
+Ardyok’ ogtagortsel POP3-y: Sa anjatelu depk’um kogtagortsvi SMTP:
+Kodavorum e toghy՝ ogtagortselov CRC32
+Bats’um e p’vosti hachakhordy
+p’vokhants’vats p’vosti...
+Ays Ekranapahi kargavorumnery hasaneli yen aystegh:
+P’vordzarkum e aghyusaki funkts’ionalut’yuny
+Khmbagrum e nshvats toghy
+Avelats’num e nor toghery fayli verjum
+Mutk’agrek’ tek’sty, vory ts’ankanum yek’ avelats’nel fayli verjum: Avarteluts’ heto ir toghum grek’ «EOF»:
+Hyurynkaloghi anuny
+Ogtagortsoghi anuny
+Tvyalneri tesaky
+Kodavorum
+Kodavorumy
+Ardzanagrut’yunner
+Ts’uyts’ tal p’vosti p’vokhants’man arrajynt’ats’y
+P’vosti p’vokhants’man arrajynt’ats’
+P’vosti p’vokhants’man arrajynt’ats’ (mek)
+Yet’e ​​miats’vats e, p’vosti keghevy ts’uyts’ kta, t’e k’ani bayt’ e p’vokhants’vel p’vosty nerberrnelis:
+Grek’, t’e inch’pisin e dzer p’vosti p’vokhants’man arrajynt’ats’i vochy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen: {0} p’vokhants’vats ch’ap’i hamar yev {1} yndhanur ch’ap’i hamar:
+Grek’, t’e inch’pisin e dzer p’vosti p’vokhants’man arrajynt’ats’i vochy: Nakhnakan vochy ogtagortselu hamar t’voghek’ datark: Teghapahnery verlutsvats yen: {0} p’vokhants’vats ch’ap’i hamar:
+Zhamayin goti:
+Aysor {0} e
+Ynt’ats’ik zhamanaky {0} e
+Seghani bazhanarar guyny
+Seghani vernagri guyny
+Seghani arzhek’i guyny
+Hnaravor pataskhanner
+Mod fayly nshvats ch’e:
+P’vordzum yenk’ teghadrel arden teghadrvats rrezhim: RRezhimi t’armats’um...
+Teghadrumy dzakhoghvets’
+Tramadrvats mod fayln anhamategheli e:
+Apateghadrumy dzakhoghvets’
+Bats’um e URL
+Tpel togheri hamarnery tpagrakan fayli bovandakut’yan vra
+Stipum e \"cat\" hramany tpel fayli togheri hamarnery:
+Tarradardzvats tarberak
+T’argmanvats tarberak
+Antesum e bolor tsanuts’umnery
+Nerberrnvum e...
+Verberrnvum e...
+Ts’uyts’ tal nerberrnman arrajynt’ats’i masin tsanuts’umy
+Ts’uyts’ tal tsanuts’umy verberrnman arrajynt’ats’i hamar
+Ts’uyts’ e talis nerberrnman arrajynt’ats’y ts’uyts’ tvogh tsanuts’umy:
+Ts’uyts’ e talis tsanuts’umy, vory ts’uyts’ e talis verberrnman arrajynt’ats’y:
+Stugum e՝ ardyok’ t’argmanvogh toghy goyut’yun uni KS rresursnerum
+Teghaynats’man rresursnerum haytnabervats togh:
+Toghy ch’i gtnvel teghaynats’man rresursnerum:
+Hangist sksum e mijuky
+Nerarkum e hraman՝ hajord mutk’um gortsarkelu hamar
+Gortsarkum e mijuky anvtang rrezhimov՝ anjatelov bolor rrezhimnery
+Havanum e anvtang rrezhimy, bayts’ nayev anjatum e bazmaki ogtatereri ogtagortsumy yev voroshaki harmarets’um
+Bavarar p’astarkner ch’kayin.
+Verin dzakh ankyuni guyny t’ek’ahart’aki hamar
+Verin aj ankyuni guyny t’ek’ahart’aki hamar
+Storin dzakh ankyuni guyny t’ek’ahart’aki hamar
+Storin aj ankyuni guyny t’ek’ahart’aki hamar
+Verin shrjanaki guyny t’ek’ahart’aki hamar
+Storin shrjanaki guyny t’ek’ahart’aki hamar
+Dzakh shrjanaki guyny t’ek’ahart’aki hamar
+Shrjanaki chisht guyny t’ek’ahart’aki hamar
+Ogtagortsek’ yezragtseri guynery t’ek’ahart’aki hamar
+Ogtagortsek’ yezragtseri guynery t’ek’ahart’aki hamar: Yet’e ​​anjatvats e, ksteghtsvi mokhraguyn gits:
+Sksum e HTTP keghevy
+Durs e galis HTTP shell-its’ yev veradarrnum mijuk
+Sahmanum e HTTP kayk’y: Petk’ e lini vaver URI:
+Stanum e pataskhan HTTP serverits’՝ ogtagortselov nshvats harts’umy
+Jnjum e bovandakut’yuny HTTP serverits’
+HTTP vahanakum skhal e teghi unets’el.
+HTTP haghordagrut’yun. {0} pahanjvogh hramany ch’i gtnvel: Tes «ognut’yun»՝ HTTP shell-um nshvats hasaneli hramanneri ts’anki hamar:
+Stanum e toghy HTTP serverits’՝ ogtagortselov nshvats harts’umy
+Stats’vum e {0}...
+Kayk’i URI dzevach’ap’n anvaver e:
+Kayk’i kargavorumy
+Guynery veragortsarkum ch’en pahanjum, sakayn kargavorumneri mets masy pahanjum e veragortsarkum:
+«{0}» argumenti hamar ognut’yun ch’ka:
+Neroghut’yun khndrelu hamar seghmek’ A atelut’yan meknabanut’yunneri vra: Seghmek’ T sirayin meknabanut’yunneri vra shnorhakalut’yun haytnelu hamar: Seghmek’ Q՝ khaghits’ durs galu hamar:
+Duk’ neroghut’yun khndrets’ik’ atelut’yan parunakogh meknabanut’yan hamar: Gerazants’!
+Neroghut’yun khndrets’ sirayin meknabanut’yan hamar: Bavakanin lav ch’e:
+Duk’ parzapes shnorhakalut’yun haytnets’ik’ atoghin atelut’yan meknabanut’yan hamar:
+SpeedPress-i kankhadrvats dzhvarut’yuny
+SpeedPress-i hamar steghnashari seghmman zhamanaki yndhatum
+Yntrek’ dzer nakhyntrats dzhvarut’yuny:
+K’ani՞ milivayrkyan petk’ e spasel steghnashari seghmmany minch’ev zhamanaki avarty: (Mak’sayin dzhvarut’yamb)
+Barry kam artahaytut’yuny p’vokharinum e mek aylov՝ ogtagortselov kanonavor artahaytut’yunner
+Barry kam artahaytut’yuny p’vokharinum e mek ayl toghov, ogtagortselov kanonavor artahaytut’yunner
+Harts’um e barry nshvats toghum kam bolor togherum՝ ogtagortselov kanonavor artahaytut’yunner
+Gtek’ kargavorum
+Grek’, t’e inch’ yek’ uzum voronel:
+Voch’inch’ ch’i gtnvel. Hamozvek’, vor duk’ chisht yek’ grel kargavorumnery:
+Teghakan fayly p’at’et’avorum e arkhivum
+Ch’i kareli voch’inch’ p’at’et’avorel:
+Pataskhani nkaragrut’yun
+Hyurynkalogh navahangist
+Ays tsragrashari ogtagortsman paymanneri yev paymanneri masin lrats’uts’ich’ teghekut’yunneri hamar ayts’elek’
+Nakhnakan yntrut’yan yelk’i tesaky
+Stugum e KS-i bolor kargavorumnery՝ tesnelu, t’e ardyok’ p’vop’vokhakannery chisht yen grvats
+Ays kazmadzevman grarrumnern unen anvaver p’vop’vokhakanner kam t’varkumner yev petk’ e shtkven.
+Fayly {0} ch’i gtnvel
+Tramadrvats arzhek’nerov steghtsum e p’vop’vokhakan zangvats
+Grek’ ayn parametri hamary, vorin petk’ e gnal: Ts’ankats’ats ayl kerpar nshanakum e het gnal:
+Stugum e teghaynats’man bolor tek’stayin togheri hamarnery՝ tesnelu, t’e ardyok’ drank’ bolory havasar yen
+Gtsi anhamapataskhanut’yun
+Khndrum yenk’ mutk’agrel ogtvoghi hamary:
+Nerarrek’ ananun ogtvoghnerin
+Nerarrek’ hashmandam ogtvoghnerin
+Nerarrum e ts’ankum ananun ogtvoghnerin
+Ts’uts’akum yndgrkum e hashmandam ogtvoghnerin
+Tesakavorel ts’uts’aky
+Masnagitakan ​​dasavorum e faylayin hamakargi ts’uts’aky:
+Apahovum e yntrut’yan yntrut’yun
+Shell hramannery ch’en irakanats’vel!!!
+Ts’uyts’ tal verjin RSS vernagiry mutk’i zhamanak
+RSS vernagri URL
+Yurak’anch’yur mutk’, ayn ts’uyts’ kta RSS-i verjin vernagiry yntrvats vernagri URL-its’:
+RSS vernagri URL-y, vory petk’ e ogtagortsvi verjin vernagiry ts’uts’adrelis: Sa sovorabar dzer sirats lrahosn e:
+Verjin norut’yunner:
+Ch’hajoghvets’ stanal verjin norut’yunnery:
+Yntrvats tarberaki guyny
+Ts’uyts’ tal mijuki hetk’y mijuki vra
+Yet’e ​​mijuki voreve skhal ka, yntrek’՝ tpel stak’i hetk’y vahanaki vra, t’e voch’:
+Mod-y karogh e berrnvel, bayts’ ays nakhazgushats’umnery karogh yen azdel rrezhimi ashkhatank’i vra.
+Ekranapahy karogh e berrnvel, sakayn ays nakhazgushats’umnery karogh yen azdel ekranapahch’i ashkhatank’i vra.
+Pahpanel kargavorumnery vorpes
+Berrnel kargavorumnery From
+Vorte՞gh yek’ ts’ankanum pahpanel mijuki ynt’ats’ik kargavorumnery:
+Hnaravor ch’e pahpanel mijuki kargavorumnery goyut’yun unets’vogh fayli verevum:
+Vorteghi՞ts’ yek’ ts’ankanum berrnel mijuki ynt’ats’ik kargavorumnery:
+Stugum e՝ ardyok’ t’argmanvogh toghery goyut’yun unen KS rresursnerum
+Hamateghum e yerku kam aveli tek’stayin fayler yelk’ayin fayli mej:
+Ch’hajoghvets’ miavorel faylery:
+RSS hosk’i berrnman zhamkety sparrvel e
+K’ani՞ milivayrkyan petk’ e spasel RSS hosk’i berrnman zhamanaki avartits’ arraj:
+Lrats’rek’ tup’ery
+Ardyo՞k’ menk’ gtsum yenk’ tup’y vorpes amboghjut’yun, t’e՞ gtsum yenk’ miayn yezragitsy:
+P’uli hetadzgumy milivayrkyannerov
+K’ani՞ milivayrkyan spasel hajord p’uly nkareluts’ arraj:
+Hajord t’ek’ahart’aki p’tman mijakayk’y
+K’ani՞ milivayrkyan petk’ e spasel, nakhk’an hajord t’ek’ahart’aki mi tsayry p’tely:
+Stugek’ vripazertsman k’votan
+Ardyo՞k’ menk’ stugum yenk’, ardyok’ vripazertsman hamakargy petk’ e stugi k’votan nakhk’an vripazertsoghin grely:
+K’ani՞ milivayrkyan e irakanum k’nelu hamar:
+Ch’hajoghvets’ avelats’nel mijots’arrum:
+Ch’hajoghvets’ herrats’nel mijots’arrumy:
+Iradardzut’yun avelats’nelu hamar bavarar p’astarkner ch’en tramadrvel:
+Iradardzut’yuny herrats’nelu hamar bavarar p’astarkner ch’en tramadrvel:
+Mijots’arrumneri manipulyats’iayi hamar bavarar p’astarkner ch’en tramadrvel:
+Ch’hajoghvets’ avelats’nel kam herrats’nel hishets’um:
+Hishets’um avelats’nelu kam herrats’nelu hamar bavarar p’astarkner ch’en tramadrvel:
+Hishets’man manipulyats’iayi hamar bavarar p’astarkner ch’en tramadrvel:
+Anvernagir hishets’um
+Anvernagir mijots’arrum
+Ayzhm mijots’arrman or e:
+Bats’ mi t’vogh sa!
+Anvaver gortsoghut’yun:
+Parz vayrkyanach’ap’
+Sksel kam dadarets’nel
+Tsots’
+Verakangnel
+Parz zhamanakach’ap’
+Sksek’ (ver) hethashvel
+Sahmanel yndmijum
+Nshvats zhamanaki avarty t’vayin ch’e:
+Nshek’ zhamkety milivayrkyannerov
+Pahpanek’ bolor iradardzut’yunnery yev/kam hishets’umnery kortsanarar kerpov
+Yet’e ​​miats’vats e, jnjum e bolor iradardzut’yunnery yev/kam hishets’umnery, nakhk’an drank’ pahely, ogtagortselov orats’uyts’i hramany:
+Stugek’ FTP p’vokhants’man krknaki p’vordzery
+FTP kapi zhamketi avart
+FTP tvyalneri miats’man zhamanaki avarty
+FTP IP tarberaknery
+K’ani՞ angam stugel verberrnumy yev nerberrnumy yev norits’ p’vordzel, yet’e stugumy dzakhoghvi minch’ev nerberrnumn amboghjut’yamb dzakhoghvi:
+K’ani՞ milivayrkyan spasel FTP kapi zhamketi avartits’ arraj:
+K’ani՞ milivayrkyan spasel minch’ev FTP tvyalneri miats’man zhamketi avarty:
+Yntrek’ Internet Protocol-i tarberaky, vorn ajakts’um e FTP servery yev vorn ogtagortsum e FTP hachakhordy:
+P’vordzum yenk’ gortsarkel RPC-n, minch’ ayn arden meknarkvats e:
+Verin dzakh ankyuni nish RGB guyni anivi hamar
+Verin aj ankyuni nish RGB gunayin anivi hamar
+Nerk’evi dzakh ankyuni nish RGB gunavor anivi hamar
+Nerk’evi aj ankyuni nish RGB gunavor anivi hamar
+Shrjanaki verin nish RGB guyni anivi hamar
+Nerk’evi shrjanaki nish RGB gunavor anivi hamar
+Dzakh shrjanaki nish RGB gunavor anivi hamar
+RGB guyni anivi aj shrjanaki nishy
+Gtnum e fayl nshvats grats’uts’akum kam ynt’ats’ik grats’uts’akum
+P’vokhakerpum e togheri verjavorut’yunnery ynt’ats’ik platformi dzevach’ap’i kam hatuk hatuk dzevach’ap’i
+T’ght’apanaki yndhanur ch’ap’y.
+Ts’uts’adrel yndhanur ch’ap’y ts’ankum
+Yet’e ​​miats’vats e, ts’uyts’ e talis t’ght’apanaki yndhanur ch’ap’y ts’ankum՝ kakhvats nranits’, t’e inch’pes kareli e hashvarkel t’ght’apanakneri ch’ap’ery՝ yst kazmadzevi:
+Duk’ ardiakan yek’:
+Kankhadrvats JSON dzevach’ap’um JSON shell-i hamar
+Yntrum e lrrelyayn JSON dzevach’ap’umy (geghets’kvats kam p’vok’rats’vats) JSON keghevi pahpanman hamar:
+T’armats’umy hajoghut’yamb nerberrnvets’:
+Avtomat nerberrnel t’armats’umnery
+Yet’e ​​voreve t’armats’um lini, mijukn ayn avtomat kerpov knerberrni:
+Hravarrut’yan payt’yuni sharravigh
+K’ani՞ blok e (minch’ev 10) payt’yuni sharravighy hravarrut’yan hamar, yerb brrnkvum e:
+Ays hramann uni hetevyal anjatich’nery, voronk’ p’vokhum yen ayn, t’e inch’pes e ayn ashkhatum.
+Tpum e tpvogh toghin hajordogh togheri hamarnery
+Kankhum e togheri hamarneri tpumy
+Misht ogtagortsek’ tarradardzvats tarberaky
+Misht ogtagortsek’ t’argmanvats tarberaky
+Harkadir p’vokharkman lezun
+Nshek’, vor pataskhany karogh e tevel mekits’ aveli nish
+Nshek’, vor pataskhany karogh e verts’nel yndameny mek nish
+Harts’n u pataskhannery tpek’ mek toghov
+Harts’n u pataskhannery tpek’ yerku toghov
+Harts’n u pataskhannery tpek’ zhamanakakits’ dzevov
+Harts’n u pataskhannery tpek’ aghyusakum
+Ts’uts’adrum e fayli manramasnery ts’ankum
+Chnshum e nyardaynats’nogh «t’uyltvut’yuny merzhvats» haghordagrut’yunnery
+Ts’uyts’ e talis bolor zhamayin gotinery
+Khaghy sksum e hesht dzhvarut’yamb
+Khaghy sksum e mijin dzhvarut’yamb
+Sksum e khaghy tsanr dzhvarut’yamb
+Khaghy sksum e shat dzhvarut’yamb
+Sksum e khaghy hatuk dzhvarut’yamb: Khndrum yenk’ nkati unenal, vor milivayrkyannerov hatuk zhamanaki verjy petk’ e grvi vorpes argument:
+Ts’uyts’ e talis hamakargi teghekatvut’yuny
+Ts’uyts’ e talis aparatayin teghekatvut’yuny
+Ts’uyts’ e talis ogtatiroj tvyalnery
+Ts’uyts’ e talis orva ugherdzy
+Ts’uyts’ e talis mutk’ gortselu orva haghordagrut’yuny
+Ts’uyts’ e talis amboghj teghekatvut’yuny
+Steghtsum e grats’uts’ak, vory parunakum e ZIP fayli bovandakut’yuny
+Ts’uyts’ e talis bolor hasaneli k’aghak’nery
+Arag seghmum
+Voch’ mi seghmum
+Mi steghtsek’ himnakan grats’uts’aky arkhivum
+Miavory ticks-um
+Khaytarrak kerpov anjatvum e serverits’
+Nshum e, vor npatakayin ughin bats’ardzak e
+Pahpanum e JSON fayly՝ ayd ynt’ats’k’um geghets’kats’nelov ayn
+Pahpanum e JSON fayly՝ gortsynt’ats’um nvazets’nelov ayn
+Stanum e toghi avarti vochy tek’stayin faylits’
+Mak’rum e krakvats bolor iradardzut’yunnery
+Miats’nel iradardzut’yan vripazertsumy
+Miats’num e vripazertsumy mijuki iradardzut’yunneri hamakargi hamar
+Figlet tarratesak
+Grek’ figlet tarratesak, vorn ajakts’vum e Figgle gradarani koghmits’: Lrats’uts’ich’ teghekut’yunneri hamar dimek’ gradarani p’astat’ght’erin
+Ch’hajoghvets’ teghadrel hatuk lezun՝ {0}:
+Hatuk lezun teghadrelu hamar anhrazhesht metatvyalneri fayly goyut’yun ch’uni:
+Hatuk lezun teghadrelu hamar anhrazhesht metatvyalneri teghekatvut’yuny ch’i apahovum anhrazhesht teghaynats’umnery:
+Ch’hajoghvets’ apateghadrel hatuk lezun՝ {0}:
+Hatuk lezun herrats’nelu hamar anhrazhesht metatvyalneri fayly goyut’yun ch’uni:
+Hatuk lezun herrats’nelu hamar anhrazhesht metatvyalneri teghekut’yunnery ch’en apahovum anhrazhesht teghaynats’umnery:
+Anglereni yerkarut’yuny ch’i hamynknum tramadrvats lezvi nshani yerkarut’yan het:
+Lezun arden goyut’yun uni yev ch’i karogh veragrvel:
+Ch’hajoghvets’ herrats’nel hatuk lezun: Ayn, amenayn havanakanut’yamb, goyut’yun ch’uni:
+Ch’hajoghvets’ teghadrel hatuk lezunery:
+Ch’hajoghvets’ herrats’nel hatuk lezunery:
+Ch’hajoghvets’ herrats’nel hatuk lezunery: Lrats’uts’ich’ teghekut’yunneri hamar tes nerk’in bats’arrut’yuny:
+Grek’ administratori gaghtnabarry: Hamozvek’, vor ch’ek’ ogtagortsum ays hashivy, yet’e iskapes ch’gitek’, t’e inch’ yek’ anum:
+Duk’ petk’ e grek’ administratori gaghtnabarry:
+Lits’enziayi masin teghekatvut’yun
+Karravarek’ dzer lezunery
+Lezun ch’i gtnvel kam fayly anvaver nisher uni:
+Lezun nshvats ch’e:
+Lezvi karravarumn anjatvats e anvtang rrezhimum:
+Lezvi karch anun.
+Lezun lriv anvanumy.
+Lezun tarradardzeli.
+Hatuk lezu.
+Nor voghjuyni pastarr
+Noraoch shoghshoghats’vogh ekran
+Ts’uyts’ e talis nor Figlet-i koghmits’ nerkayats’vats voghjuyni droshaky
+Miats’num e noradzev ekrany gortsarkman zhamanak: Khndrum yenk’ nkati unenal, vor ayn kanjati argumenti hushumy yev kp’vordzarki shell-i nakhnakan berrnumy:
+Splash anuny
+Splash-i anuny mijukum irakanats’vogh arrka shaghvatsk’nerits’:
+Steghtsvel e lrrelyayn MOTD:
+Steghtsvel e lrrelyayn MAL:
+Hamakargi hashivy skzbnavorvel e
+Ogtagortsoghnery skzbnavorvel yen
+T’uyltvut’yunnery berrnvats yen
+Bari galust
+Herrakarravarvogh vripazertsich’i gortsarkum...
+Herraka kargaberich’i miats’man skhal
+Teghekats’nel herraka kargaberman miats’man skhali masin
+Yet’e ​​miats’vats e, kogtagortsi tsanuts’man hamakargy՝ herraka kargaberman miats’man skhali masin haghordavarin teghekats’nelu hamar: Hakarrak depk’um, kogtagortsi lrrelyayn vahanaki grut’yuny:
+Figlet tarratesak zhmch’p’i hamar
+Miats’nel Figlet-y zhamanakach’ap’i hamar
+Yet’e ​​miats’vats e, kogtagortsi figlet-y zhamanakach’ap’i hamar: Khndrum yenk’ nkati unenal, vor dra hamar anhrazhesht e mets vahanaki ekran՝ Figlet-y miats’vats zhamanakov chisht ts’uts’adrelu hamar:
+Skhal՝ hramani toghi nakhnakan berrnman argumentnery verlutselis՝ {0}
+Verakangnum e mijuky gortsaranayin parametrerin
+Shrjants’um e vahanaki ch’ap’i haytnaberumy
+Kartses t’e duk’ shrjants’um yek’ vahanaki ch’ap’i haytnaberumy: P’vok’r ekranneri vra irery karogh yen chisht ch’ashkhatel:
+Aveli lav p’vordz unenalu hamar p’vokhek’ dzer vahanaki patuhani ch’ap’y minch’ derr ays ekranin yek’: Sharunakelu hamar seghmek’ ts’ankats’ats steghn...
+DZer konsoly ch’ap’azants’ p’vok’r e chisht ashkhatelu hamar.
+Banneri figlet tarratesak
+Tpum e toghy konsolum՝ ogtagortselov gunayin tesaky yev gtsayin tpagrut’yuny՝ Figlet ajakts’ut’yamb
+Tpum e toghy konsolum՝ ogtagortselov gunayin tesaky yev gtsayin tpagrut’yuny՝ dzevach’ap’ov yev Figlet ajakts’ut’yamb
+Yndmisht herrats’num e haghordagrut’yuny
+Yndmisht herrats’num e bolor haghordagrut’yunnery stats’voghits’
+CH’egharkel haghordagrut’yuny herrats’nely
+CH’egharkum՝ bolor haghordagrut’yunnery stats’voghits’ herrats’nelov
+Hetarkel jnjumy ch’i irakanats’vum POP3-i hamar:
+Ts’uyts’ tal hramannery, voronk’ hashvi yen arrnvum ognut’yan vra
+Ts’uyts’ tal keghevi hramannery, voronk’ huys unen ognut’yan vra
+Ts’uyts’ tvek’ mod hramannery, voronk’ huys unen ognut’yan vra
+Ts’uyts’ tal aylanunnery, voronk’ huys unen ognut’yan vra
+Ts’uyts’ e talis hramanneri k’anaky hramanneri ts’ankum, vory verahskvum e tarber tesaki hramanneri hamar yerek’ t’vi ts’uts’adrman anjatich’nerov:
+Katarum e hramanner, yerb UESH artahaytut’yunnery bavararvats yen
+Artahaytut’yan mej paymany ch’i gtnvel.
+{0} paymany pahanjum e {1} argument: Stats’el e {2}:
+Paymann anhrazhesht e teghadrel mejteghum.
+Paymann anhrazhesht e skzbum dnel:
+Artahaytut’yan verlutsut’yan skhal՝ sharahyusakan skhali patcharrov:
+Ch’hajoghvets’ bavararel paymany: Lrats’uts’ich’ teghekut’yunner aystegh՝
+Gaghtnabarri dimaki nish
+Nish, vory k’vogharkum e gaghtnabarry: Aveli apahovut’yan hamar datark t’voghek’:
+Durs e galis keghevits’, yet’e ashkhatum e yent’ashellum
+Hnaravor ch’e spanel mayrakan keghevy:
+Hnaravor ch’e durs gal yent’ap’eghkits’:
+Fayly nshvats ch’e: Durs galov patyanits’...
+Ays sp’rrvats ekrani kargavorumnery hasaneli yen aystegh:
+Arrajynt’ats’i gtsi guyny
+Bats’um e Ekranapahi kargavorumnery
+Bats’um e ts’voghman kargavorumnery
+Ts’uts’akum e hasaneli UESH p’vop’vokhakannery
+Arrajynt’ats’ tek’sti gtnvelu vayry
+Yntrek’ dzer nakhyntrats arrajynt’ats’i tek’stayin vayry:
+Karogh yek’ grel miayn t’very.
+Durs galu hamar seghmek’ «q»:
+Anunneri nerberrnum...
+Tekhnikakan dzhvarut’yunneri patcharrov menk’ ch’enk’ karogh t’varkel adapterneri hatkut’yunnery Unix hamakargerum:
+Miats’num e vripazertsman rrezhimy
+P’astarkneri hushumner
+Miats’nel sev yev spitak rrezhimy
+Diskoteky dardznum e sev yev spitak: Iskapes kvnasi dzer ach’k’ery, yet’e ayn shat arag lini, usti khorhurd ch’i trvum, yet’e duk’ arag patkerneri nopa yek’ zgum:
+Kartses t’e duk’ ch’ajakts’vogh tarberak yek’ gortsarkel: Khstoren khorhurd e trvum ch’ogtagortsel ays tarberaky:
+Nerberrnek’ ynt’ats’ik guynery
+Aylyntrank’ayin tarberaki guyn
+Ogtaterery hashvi yen arrnum siro kam atelut’yan meknabanut’yunnery
+K’ani՞ ogtater petk’ e lini siro kam atelut’yan meknabanut’yunneri senyakum:
+Ts’uts’akum e hasaneli lezunery
+Hasaneli lezuner.
+Hramani toghi p’astarkner.
+Pre-boot hramani toghi p’astarkner.
+Bats’um e mod API-i p’astat’ght’ery skzbnakan kodi karruts’vatsk’i hamar ir amenaardi dzevov

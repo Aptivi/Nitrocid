@@ -983,3 +983,675 @@ Druk op een willekeurige toets om de handleiding te lezen...
 Deze handleiding heeft werk nodig voor:
 Handleiding pagina {0} niet gevonden.
 Mod-handleiding
+Beschikbare kernelargumenten:
+Druk op "q" als je klaar bent.
+Meerdere kernelargumenten kunnen worden gescheiden met komma's zonder spaties, bijvoorbeeld:
+Meerdere geïnjecteerde opdrachten kunnen worden gescheiden door dubbele punten met spaties, bijvoorbeeld:
+Het gevraagde argument {0} is niet gevonden.
+Onherstelbare fout in argument:
+Codeert een string met SHA512
+Codeert een string met SHA384
+Codeert een string met SHA256
+Versleutelt een string met SHA1
+Codeert een string met MD5
+waar ingebouwde saver zal zijn
+Mod-gedeelte is niets.
+Het stoppen van mods is niet toegestaan ​​in de veilige modus.
+Mod is al gestart!
+Mod is nog niet begonnen!
+Gebruik van de opdracht:
+Bestandsnaam onderdeel:
+Pad bestandsbestand:
+Fout bij het starten van de screensaver:
+Ongeldig padtype.
+Ongeldig type kernelpad.
+Vorige opstarten mislukt
+De JSON-editor heeft nog geen bestandsstream geopend.
+De eigenschap in het JSON-bestand is niet gevonden.
+Eigendom verwijderd.
+Voegt een nieuwe eigenschap toe aan het einde van het JSON-bestand
+Verwijdert een eigenschap uit het JSON-bestand
+Sluit de JSON-shell af
+Sluit de JSON-shell af zonder de wijzigingen op te slaan
+Slaat het JSON-bestand op
+Opent de JSON-shell
+Drukt het JSON-bestand af
+Volgende hellingsinterval
+Activeert 255 kleurenondersteuning voor Ramp.
+Activeert ondersteuning voor ware kleuren voor Ramp.
+Hoeveel milliseconden wachten voordat de volgende helling wordt ingevuld?
+Kleur van meldingstitel
+Kleur van meldingsbeschrijving
+Kleur van melding voortgang
+Kleur melding fout
+Vraag kleur
+Succes kleur
+Gebruiker dollar kleur
+Kleur punt
+Tekstkleur scheidingsteken
+Kleur van scheidingsteken
+Kleur van lijsttitel
+Ontwikkeling waarschuwingskleur
+Stage tijd kleur
+Voortgangskleur
+Terug optie kleur
+Meldingsrand tekenen
+Omvat de melding met de rand.
+Neem contact op met de leverancier van de mod om de mod te upgraden naar de compatibele versie.
+Randkleur met lage prioriteit
+Randkleur met gemiddelde prioriteit
+Randkleur met hoge prioriteit
+Stuurt een voortgangsmelding om de ontvanger te testen
+Test het kleurenwiel
+Toont lokale kerneltijd
+Toont lokale kerneldatum
+Toont lokale kernel datum en tijd
+Toont UTC-kerneltijd
+Toont UTC-kerneldatum
+Toont de datum en tijd van de UTC-kernel
+MOTD-pad
+MAL-pad
+Welk bestand is het MOTD-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
+Welk bestand is het MAL-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
+Mods op de zwarte lijst
+Schrijf de bestandsnamen van de mods die niet worden uitgevoerd bij het opstarten. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een ​​bestaande mod te verwijderen.
+Mod {0} staat op de zwarte lijst.
+Herlaadt alle mods
+Voegt een mod toe aan de zwarte lijst
+Verwijdert een mod van de zwarte lijst
+Tijd en datum in UTC: {0}
+De opgegeven JSON-shellopdracht is niet gevonden.
+App-informatie tonen tijdens opstarten
+Opdrachtregelargumenten ontleden
+Eindtijden etappe weergeven
+Start kernel-modificaties bij het opstarten
+Toon huidige tijd voor inloggen
+Melden voor elke fout tijdens het opstarten
+Toont korte informatie over de toepassing bij het opstarten.
+Parseert de opdrachtregelargumenten bij het opstarten.
+Toont hoeveel tijd de kernel nodig had om een ​​fase te voltooien.
+Start automatisch de kernelwijzigingen bij het opstarten.
+Toont de huidige tijd, tijdzone en datum voordat u zich aanmeldt.
+Als er een kleine fout optreedt tijdens het opstarten van de kernel, wordt de gebruiker hiervan op de hoogte gesteld.
+Stijl voor gebruikersnaam prompt
+Stijl voor wachtwoordprompt
+Toon MAL bij inloggen
+Schrijf hoe u wilt dat uw aanmeldingsprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Schrijf hoe u wilt dat uw wachtwoordprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Toont Bericht van de Dag na het weergeven van het inlogscherm.
+Test Shell Prompt Stijl
+JSON Shell-promptstijl
+Probe-geïnjecteerde opdrachten
+Onderzoekt de geïnjecteerde opdrachten aan het begin van de kernelshell.
+Toon bestandsdetails in lijst
+Toont de korte bestandsdetails tijdens het weergeven van bestanden
+Bestandsdetails weergeven in FTP-lijst
+Gebruikersnaam prompt stijl voor FTP
+Stijl voor wachtwoordprompt voor FTP
+Eerste FTP-profiel gebruiken
+Nieuwe verbindingen toevoegen aan FTP-snelkiesnummer
+Probeer beveiligde FTP-certificaten te valideren
+Toon FTP MOTD bij verbinding
+Accepteer altijd ongeldige FTP-certificaten
+Toont de details van het FTP-bestand bij het weergeven van externe mappen.
+Gebruikt het eerste FTP-profiel om verbinding te maken met FTP.
+Voegt, indien ingeschakeld, een nieuwe verbinding toe aan het FTP-snelkiesnummer.
+Probeert de FTP-certificaten te valideren. Uitzetten is niet aan te raden.
+Toont het FTP-bericht van de dag bij het inloggen.
+Accepteer altijd ongeldige FTP-certificaten. Het wordt niet aanbevolen om het in te schakelen, omdat dit beveiligingsrisico's kan opleveren.
+Stijl voor gebruikersnaam prompt voor e-mail
+Stijl voor wachtwoordprompt voor e-mail
+IMAP-promptstijl voor e-mail
+SMTP-promptstijl voor e-mail
+Mailserver automatisch detecteren
+Foutopsporing voor e-mail inschakelen
+Melden voor nieuwe e-mailberichten
+GPG-wachtwoordpromptstijl voor e-mail
+IMAP-ping-interval verzenden
+Stuur SMTP-ping-interval
+Tekstindeling e-mail
+Schrijf hoe u wilt dat uw IMAP-serverprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Schrijf hoe u wilt dat uw SMTP-serverprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Detecteer automatisch de mailserver op basis van het opgegeven adres.
+Schakelt foutopsporing op de mailserver in.
+Brengt u op de hoogte van nieuwe e-mailberichten.
+Schrijf hoe u wilt dat uw GPG-wachtwoord wordt gevraagd. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Hoeveel milliseconden om de IMAP-ping te verzenden?
+Hoeveel milliseconden om de SMTP-ping te verzenden?
+Bepaalt hoe de e-mailtekst wordt weergegeven.
+Platte tekst
+Vloeiende tekst
+HTML-tekst
+Verrijkte tekst
+Gecomprimeerde tekst met opmaak
+Rijke text
+Automatisch foutopsporing op afstand starten bij opstarten
+Berichtindeling voor foutopsporing op afstand
+Als u foutopsporing op afstand wilt starten bij het opstarten, schakelt u dit in.
+Specificeert de berichtindeling voor foutopsporing op afstand. {0} voor naam, {1} voor bericht.
+RSS-feed URL-promptstijl
+RSS-feed automatisch vernieuwen
+Interval RSS-feed automatisch vernieuwen
+Schrijf hoe u wilt dat de prompt van uw RSS-feedserver is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Hoeveel milliseconden om de RSS-feed te vernieuwen?
+Toon bestandsdetails in SFTP-lijst
+Stijl voor gebruikersnaam prompt voor SFTP
+Nieuwe verbindingen toevoegen aan SFTP-snelkiesnummers
+Toont de details van het SFTP-bestand bij het weergeven van externe mappen.
+Voegt, indien ingeschakeld, een nieuwe verbinding toe aan het SFTP-snelkiesnummer.
+Time-out voor ping
+Toon uitgebreide adapterinfo
+Algemene netwerkinformatie weergeven
+Percentage tekst downloaden
+Upload percentage tekst
+Hoeveel milliseconden moet ik wachten voordat de time-out wordt aangegeven?
+Drukt de uitgebreide adapterinformatie af, zoals pakketinformatie.
+Toont de algemene informatie over het netwerk.
+Schrijf hoe u wilt dat uw uploadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor geüploade grootte, {1} voor doelgrootte, {2} voor percentage.
+Schrijf hoe u wilt dat uw downloadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor gedownloade grootte, {1} voor doelgrootte, {2} voor percentage.
+Wachtwoord vragen na vergrendeling
+Vraag na het vergrendelen van het scherm om een ​​wachtwoord
+Minimaal rood kleurniveau
+Minimaal groen kleurniveau
+Minimaal blauw kleurniveau
+Minimaal kleurniveau
+Maximaal rood kleurniveau
+Maximaal groen kleurniveau
+Maximaal blauw kleurniveau
+Maximaal kleurniveau
+Minimaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Minimaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.
+Maximaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.
+Maximaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.
+Voorgrondkleur
+Lijnteken
+Een teken om een ​​lijn te vormen. Zorg ervoor dat u slechts één teken invoert.
+Teken in de linkerbovenhoek voor de urenbalk
+Teken in de linkerbovenhoek voor minutenbalk
+Teken in de linkerbovenhoek voor secondenbalk
+Teken in de rechterbovenhoek voor de urenbalk
+Teken in de rechterbovenhoek voor minutenbalk
+Teken in de rechterbovenhoek voor secondenbalk
+Teken in de linkerbenedenhoek voor de urenbalk
+Teken in de linkerbenedenhoek voor minutenbalk
+Teken in de linkerbenedenhoek voor secondenbalk
+Teken in de rechterbenedenhoek voor de urenbalk
+Teken in de rechterbenedenhoek voor minutenbalk
+Teken in de rechterbenedenhoek voor secondenbalk
+Bovenste framekarakter voor urenbalk
+Bovenste framekarakter voor minutenbalk
+Bovenste frameteken voor secondenbalk
+Onderste framekarakter voor urenbalk
+Onderste framekarakter voor minutenbalk
+Onderste framekarakter voor secondenbalk
+Teken in linkerframe voor urenbalk
+Teken in linkerframe voor minutenbalk
+Teken in linkerframe voor secondenbalk
+Rechter frameteken voor urenbalk
+Rechter frameteken voor minutenbalk
+Rechterframeteken voor secondenbalk
+Informatietekst voor uren
+Informatietekst voor minuten
+Informatietekst voor seconden
+Minimaal rood kleurniveau gedurende uren
+Minimaal groen kleurniveau voor uren
+Minimaal blauw kleurniveau voor uren
+Minimaal kleurniveau voor uren
+Maximaal rood kleurniveau gedurende uren
+Maximaal groen kleurniveau voor uren
+Maximaal blauw kleurniveau gedurende uren
+Maximaal kleurniveau voor uren
+Minimaal rood kleurniveau gedurende minuten
+Minimaal groen kleurniveau gedurende minuten
+Minimaal blauw kleurniveau gedurende minuten
+Minimaal kleurniveau voor minuten
+Maximaal rood kleurniveau gedurende minuten
+Maximaal groen kleurniveau gedurende minuten
+Maximaal blauw kleurniveau gedurende minuten
+Maximaal kleurniveau voor minuten
+Minimaal rood kleurniveau voor seconden
+Minimaal groen kleurniveau voor seconden
+Minimaal blauw kleurniveau voor seconden
+Minimaal kleurniveau voor seconden
+Maximaal rood kleurniveau voor seconden
+Maximaal groen kleurniveau voor seconden
+Maximaal blauw kleurniveau voor seconden
+Maximaal kleurniveau voor seconden
+Een teken dat lijkt op de linkerbovenhoek. Zorg ervoor dat u slechts één teken invoert.
+Een teken dat lijkt op de linkerbenedenhoek. Zorg ervoor dat u slechts één teken invoert.
+Een personage dat lijkt op het bovenframe. Zorg ervoor dat u slechts één teken invoert.
+Een personage dat lijkt op het onderste frame. Zorg ervoor dat u slechts één teken invoert.
+Een teken dat lijkt op het linkerframe. Zorg ervoor dat u slechts één teken invoert.
+Een personage dat lijkt op het juiste frame. Zorg ervoor dat u slechts één teken invoert.
+Schrijf op hoe uw informatietekst voor het huidige uur wordt weergegeven. {0} voor het huidige uur buiten 24 uur.
+Schrijf op hoe uw informatietekst voor de huidige minuut wordt weergegeven. {0} voor de huidige minuut van de 60 minuten.
+Schrijf op hoe uw informatietekst voor de huidige seconde eruitziet. {0} voor huidige seconde van 60 seconden.
+Tekst kleur
+Teken in de linkerbovenhoek voor hellingbalk
+Teken in rechterbovenhoek voor hellingbalk
+Teken in de linkerbenedenhoek voor hellingbalk
+Teken in rechterbenedenhoek voor hellingbalk
+Bovenste framekarakter voor hellingsbalk
+Onderste framekarakter voor hellingbalk
+Linker framekarakter voor hellingsbalk
+Rechter framekarakter voor hellingsbalk
+Minimaal rood kleurniveau voor startkleur
+Minimaal groen kleurniveau voor startkleur
+Minimaal blauw kleurniveau voor startkleur
+Minimum kleurniveau voor startkleur
+Maximaal rood kleurniveau voor startkleur
+Maximaal groen kleurniveau voor startkleur
+Maximaal blauw kleurniveau voor startkleur
+Maximaal kleurniveau voor startkleur
+Minimaal rood kleurniveau voor eindkleur
+Minimaal groen kleurniveau voor eindkleur
+Minimaal blauw kleurniveau voor eindkleur
+Minimum kleurniveau voor eindkleur
+Maximaal rood kleurniveau voor eindkleur
+Maximaal groen kleurniveau voor eindkleur
+Maximaal blauw kleurniveau voor eindkleur
+Maximaal kleurniveau voor eindkleur
+Oplosser minimum aantal
+Oplosser maximum aantal
+Oplosser toon invoer
+Teken in de linkerbovenhoek voor meldingsrand
+Teken in de rechterbovenhoek voor meldingsrand
+Teken in de linkerbenedenhoek voor meldingsrand
+Teken in de rechterbenedenhoek voor meldingsrand
+Bovenste frameteken voor meldingsrand
+Onderste framekarakter voor meldingsrand
+Teken in linkerframe voor meldingsrand
+Rechterkaderteken voor meldingsrand
+Stijl handmatige pagina-informatie
+Of er moet worden weergegeven wat er in de invoerprompt staat.
+Wat is het minimum aantal om te kiezen?
+Wat is het maximale aantal om te kiezen?
+Schrijf hoe u wilt dat uw manpage-informatie is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor handmatige titel, {1} voor revisie.
+Eigenschap {0} is niet gevonden op een van de modules.
+In dit gedeelte worden de algemene schermbeveiligingsinstellingen vermeld. Voor individuele screensaver-instellingen, verlaat u Instellingen en opent u Screensaver-instellingen.
+Start kleurenwiel in ware kleurenmodus
+Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. U kunt {0} gebruiken voor de kernelversie.
+Welke variant van de huidige taal wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
+Activeert de 255 kleurenondersteuning.
+Activeert de ondersteuning voor ware kleuren.
+Woord verwijderd in regel {0}.
+String vervangen in regel {0}.
+Regelnummer {0} verwijderd.
+Onderdruk ongeautoriseerde berichten
+Verbergt het vervelende bericht als de lijstfunctie een niet-geautoriseerde map probeert te openen
+FTP-serverinformatie
+Server adres:
+Server poort:
+Server type:
+Type serversysteem:
+Servercoderingsmodus:
+Type servergegevensverbinding:
+Serversysteem:
+Gegevenstype serverdownload:
+Gegevenstype serverupload:
+U moet verbinding maken met een server voordat u deze bewerking uitvoert.
+Voer een extern bestand in dat moet worden gehasht.
+Voer een externe map in die moet worden gehasht.
+Voer een externe map in.
+Recursieve hashing voor FTP
+Of een directory recursief moet worden gehasht. Houd er rekening mee dat niet alle FTP-servers dat ondersteunen.
+Processor kloksnelheid:
+Processor SSE2 ondersteuning:
+Totaal aantal verwerkers:
+Schijfgrootte:
+Totaal geheugen:
+Grafische kaart:
+Schijfmodel:
+Maximaal aantal e-mails op één pagina
+Cultuur van de huidige taal
+Als je zeker weet dat je de juiste sectie hebt geopend, bekijk dan dit bericht:
+Diverse instellingen...
+Kleuren Instellingen...
+Voert een FTP-serveropdracht uit
+Voer het POP3-serveradres en de poort in (<adres> of <adres>:[poort]):
+POP3-promptstijl voor e-mail
+POP3-ping-interval verzenden
+Schrijf hoe u wilt dat uw POP3-serverprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
+Hoeveel milliseconden om de POP3-ping te verzenden?
+Gebruik POP3
+Of u POP3 wilt gebruiken. Als u dit uitschakelt, wordt SMTP gebruikt.
+Codeert een string met CRC32
+Opent de e-mailclient
+van post overgedragen...
+Instellingen voor deze screensaver zijn hier beschikbaar.
+Test de tabelfunctionaliteit
+Bewerkt de opgegeven regel
+Voegt de nieuwe regels toe aan het einde van het bestand
+Voer de tekst in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je "EOF" op zijn eigen regel.
+Hostnaam
+gebruikersnaam
+Data type
+codering
+Encryptie
+Protocollen
+Voortgang van e-mailoverdracht weergeven
+Voortgang e-mailoverdracht
+Voortgang e-mailoverdracht (enkel)
+Indien ingeschakeld, zal de mailshell laten zien hoeveel bytes zijn verzonden bij het downloaden van mail.
+Schrijf hoe u wilt dat uw voortgangsstijl voor e-mailoverdracht is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor overgedragen grootte en {1} voor totale grootte.
+Schrijf hoe u wilt dat uw voortgangsstijl voor e-mailoverdracht is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor overgedragen formaat.
+Tijdzone:
+Vandaag is het {0}
+De huidige tijd is {0}
+Kleur tafelscheiding
+Kleur tabelkop
+Tabel waarde kleur
+Mogelijke antwoorden
+Mod-bestand is niet gespecificeerd.
+Ik probeer een reeds geïnstalleerde mod te installeren. Modus bijwerken...
+Installatie mislukt voor
+Het geleverde mod-bestand is incompatibel.
+Verwijderen mislukt voor
+Opent een URL
+Regelnummers afdrukken bij het afdrukken van bestandsinhoud
+Zorgt ervoor dat de opdracht \"cat\" de regelnummers van het bestand afdrukt.
+getranslitereerde versie
+vertaalde versie
+Sluit alle meldingen af
+downloaden...
+Uploaden...
+Melding weergeven voor downloadvoortgang
+Toon melding voor upload voortgang
+Toont de melding met de voortgang van het downloaden.
+Toont de melding waarin de uploadvoortgang wordt weergegeven.
+Controleert of de vertaalbare tekenreeks bestaat in de KS-bronnen
+Tekenreeks gevonden in de lokalisatiebronnen.
+Tekenreeks niet gevonden in de lokalisatiebronnen.
+Start de kernel stil
+Injecteert een commando om op te starten bij de volgende login
+Start de kernel in de veilige modus, waarbij alle mods worden uitgeschakeld
+Zoals de veilige modus, maar schakelt ook multi-user en enige aanpassing uit
+Er waren niet genoeg argumenten.
+Kleur linkerbovenhoek voor hellingbalk
+Kleur rechtsboven voor hellingbalk
+Kleur linkerbenedenhoek voor hellingbalk
+Kleur rechtsonder voor hellingbalk
+Kleur bovenframe voor oprijbalk
+Onderste framekleur voor oprijbalk
+Linker framekleur voor oprijbalk
+Rechter framekleur voor oprijbalk
+Gebruik randkleuren voor hellingsbalk
+Gebruik de randkleuren voor de hellingsbalk. Indien uitgeschakeld, wordt een grijze balk gegenereerd.
+Start de HTTP-shell
+Sluit HTTP-shell af en keert terug naar kernel
+Stelt de HTTP-site in. Moet een geldige URI zijn.
+Krijgt het antwoord van de HTTP-server met behulp van het opgegeven verzoek
+Verwijdert inhoud van HTTP-server
+Er is een fout opgetreden in de HTTP-shell:
+HTTP-bericht: het gevraagde commando {0} is niet gevonden. Zie 'help' voor een lijst met beschikbare commando's gespecificeerd op HTTP-shell.
+Haalt de string op van de HTTP-server met behulp van het opgegeven verzoek
+Krijg {0}...
+De indeling van de site-URI is ongeldig.
+Site instellen op
+Kleuren vereisen geen herstart, maar de meeste instellingen vereisen een herstart.
+Geen hulp voor argument "{0}".
+Druk op A bij haatreacties om je excuses aan te bieden. Druk op T op liefdescommentaar om te bedanken. Druk op Q om het spel af te sluiten.
+Je hebt je excuses aangeboden voor een haatcommentaar! Excellent!
+Excuses voor liefdescommentaar. Niet goed genoeg.
+Je hebt zojuist de hater bedankt voor de haatcommentaar!
+Standaard moeilijkheidsgraad voor SpeedPress
+Time-out toetsaanslag voor SpeedPress
+Selecteer de moeilijkheidsgraad van uw voorkeur.
+Hoeveel milliseconden wachten op de toetsaanslag voor de time-out? (In aangepaste moeilijkheidsgraad)
+Vervangt een woord of zin door een ander woord met behulp van reguliere expressies
+Vervangt een woord of zin door een ander woord in een regel met behulp van reguliere expressies
+Zoekt een woord in een opgegeven regel of alle regels op met behulp van reguliere expressies
+Zoek een instelling
+Schrijf op waarnaar je wilt zoeken.
+Er wordt niets gevonden. Zorg ervoor dat u de instelling correct hebt geschreven.
+Pakt een lokaal bestand in het archief in
+Ik kan niets inpakken.
+Beschrijving van het antwoord:
+Hostpoort
+Ga voor meer informatie over de gebruiksvoorwaarden van deze software naar
+Standaard keuze uitvoertype
+Controleert alle KS-instellingen om te zien of de variabelen correct zijn geschreven
+Deze configuratie-items bevatten ongeldige variabelen of opsommingen en moeten worden opgelost:
+Bestand {0} niet gevonden
+Creëert een variabele array met de opgegeven waarden
+Schrijf het nummer van de instelling om naar toe te gaan. Elk ander karakter betekent teruggaan.
+Controleert alle regelnummers van de lokalisatietekst om te zien of ze allemaal gelijk zijn
+Regel komt niet overeen in
+Voer een gebruikersnummer in.
+Anonieme gebruikers opnemen
+Gehandicapte gebruikers opnemen
+Bevat de anonieme gebruikers in de lijst
+Bevat de uitgeschakelde gebruikers in de lijst
+Sorteer de lijst
+Sorteert de bestandssysteemlijst professioneel.
+Biedt een selectiekeuze
+Shell-commando's niet geïmplementeerd!!!
+Toon laatste RSS-kop bij inloggen
+URL van RSS-kop
+Elke keer dat u inlogt, wordt de laatste RSS-kop van de geselecteerde kop-URL weergegeven.
+RSS-kop-URL die moet worden gebruikt bij het weergeven van de laatste kop. Dit is meestal je favoriete feed.
+Laatste nieuws:
+Het laatste nieuws is niet ontvangen.
+Geselecteerde optiekleur
+Toon stacktracering op kernelfout
+Als er een kernelfout is, kiest u of u de stacktracering naar de console wilt afdrukken of niet.
+Mod kan worden geladen, maar deze waarschuwingen kunnen van invloed zijn op de manier waarop de mod werkt:
+Screensaver kan worden geladen, maar deze waarschuwingen kunnen van invloed zijn op de manier waarop de screensaver werkt:
+Instellingen opslaan als
+Instellingen laden van
+Waar wil je de huidige kernelinstellingen opslaan?
+Kan kernelinstellingen niet opslaan bovenop een bestaand bestand.
+Waar wil je de huidige kernelinstellingen vandaan laden?
+Controles om te zien of de vertaalbare strings bestaan ​​in de KS-resources
+Combineert de twee tekstbestanden of meer in het uitvoerbestand.
+Kan bestanden niet combineren.
+Time-out voor ophalen van RSS-feed
+Hoeveel milliseconden wachten voordat de time-out voor het ophalen van de RSS-feed?
+Vul de dozen
+Tekenen we de doos als geheel of tekenen we alleen de rand?
+Stagevertraging in milliseconden
+Hoeveel milliseconden wachten voordat de volgende fase wordt getekend?
+Volgende hellingrot-interval
+Hoeveel milliseconden moet je wachten voordat het ene uiteinde van de volgende helling verrot?
+Quotum voor foutopsporing controleren
+Controleren we of het debug-systeem moet controleren op quota voordat we naar de debugger schrijven?
+Hoeveel milliseconden duurde het echt om te slapen?
+Kan geen evenement toevoegen.
+Kan een evenement niet verwijderen.
+Er zijn niet genoeg argumenten opgegeven om een ​​evenement toe te voegen.
+Er zijn niet genoeg argumenten opgegeven om een ​​gebeurtenis te verwijderen.
+Er zijn niet genoeg argumenten gegeven voor het manipuleren van gebeurtenissen.
+Kan een herinnering niet toevoegen of verwijderen.
+Er zijn niet genoeg argumenten opgegeven om een ​​herinnering toe te voegen of te verwijderen.
+Er zijn niet genoeg argumenten gegeven voor het manipuleren van herinneringen.
+Naamloze herinnering
+Naamloos evenement
+Nu is het een evenementendag!
+Mis dit niet!
+Ongeldige actie.
+Een eenvoudige stopwatch
+Start of stop
+Ronde
+Resetten
+Een eenvoudige timer
+Begin met (her)aftellen
+Interval instellen
+De aangegeven time-out is niet numeriek.
+Specificeer de time-out in milliseconden
+Bewaar alle gebeurtenissen en/of herinneringen destructief
+Indien ingeschakeld, worden alle gebeurtenissen en/of herinneringen verwijderd voordat ze allemaal worden opgeslagen met behulp van de kalenderopdracht.
+Verifieer de nieuwe pogingen voor FTP-verzending
+Time-out FTP-verbinding
+Time-out FTP-gegevensverbinding
+FTP IP-versies
+Hoe vaak moet ik de upload en download verifiëren en opnieuw proberen als de verificatie mislukt voordat de download als geheel mislukt?
+Hoeveel milliseconden wachten tot de FTP-verbindingstime-out?
+Hoeveel milliseconden wachten tot de time-out van de FTP-gegevensverbinding?
+Kies de versie van Internet Protocol die de FTP-server ondersteunt en die de FTP-client gebruikt.
+Ik probeer RPC te starten terwijl het al is gestart.
+Teken in de linkerbovenhoek voor RGB-kleurenwiel
+Teken in rechterbovenhoek voor RGB-kleurenwiel
+Teken in de linkerbenedenhoek voor RGB-kleurenwiel
+Teken in de rechterbenedenhoek voor RGB-kleurenwiel
+Bovenste framekarakter voor RGB-kleurenwiel
+Onderste framekarakter voor RGB-kleurenwiel
+Teken in linkerframe voor RGB-kleurenwiel
+Rechterframe-teken voor RGB-kleurenwiel
+Vindt een bestand in de opgegeven map of in de huidige map
+Converteert de regeleindes naar opmaak voor het huidige platform of naar gespecificeerde aangepaste opmaak
+Totale grootte in map:
+Toon totale grootte in lijst
+Indien ingeschakeld, wordt de totale mapgrootte in de lijst weergegeven, afhankelijk van hoe de mapgrootte volgens de configuratie moet worden berekend.
+Je bent op de hoogte!
+Standaard JSON-opmaak voor JSON-shell
+Selecteert de standaard JSON-opmaak (verfraaid of verkleind) voor de JSON-shell om op te slaan.
+Update succesvol gedownload!
+Updates automatisch downloaden
+Als er een update is, zal de kernel deze automatisch downloaden.
+Explosiestraal vuurwerk
+Hoeveel blokken (maximaal 10) is de explosieradius voor het vuurwerk wanneer het wordt aangestoken?
+Deze opdracht heeft de onderstaande schakelaars die de manier waarop het werkt veranderen:
+Drukt de regelnummers af die volgen op de regel die wordt afgedrukt
+Voorkomt dat de regelnummers worden afgedrukt
+Gebruik altijd de getranscribeerde versie
+Gebruik altijd de vertaalde versie
+Schakelen van taal forceren
+Geef aan dat het antwoord meer dan één teken kan bevatten
+Geef aan dat het antwoord slechts één teken kan bevatten
+Print de vraag en de antwoorden op één regel
+Print de vraag en de antwoorden in twee regels
+Print de vraag en de antwoorden op de moderne manier
+Print de vraag en de antwoorden in een tabel
+Toont de bestandsdetails in de lijst
+Onderdrukt de vervelende "toestemming geweigerd"-berichten
+Toont alle tijdzones
+Start het spel in gemakkelijke moeilijkheidsgraad
+Start het spel met gemiddelde moeilijkheidsgraad
+Start het spel in moeilijkheidsgraad
+Start het spel in zeer moeilijke moeilijkheidsgraad
+Start het spel in aangepaste moeilijkheidsgraad. Houd er rekening mee dat de aangepaste time-out in milliseconden als argument moet worden geschreven.
+Toont de systeeminformatie
+Toont de hardware-informatie
+Toont de gebruikersinformatie
+Toont de boodschap van de dag
+Toont het bericht van de dag na inloggen
+Toont alle informatie
+Creëert een map die de inhoud van het ZIP-bestand bevat
+Toont alle beschikbare steden
+Snelle compressie
+Geen compressie
+Maak geen basismap in archief
+Eenheid in teken
+Verbreekt de verbinding met de server op schandelijke wijze
+Geeft aan dat het doelpad absoluut is
+Slaat het JSON-bestand op en verfraait het tijdens het proces
+Slaat het JSON-bestand op en verkleint het tijdens het proces
+Haalt de stijl van het einde van de regel uit het tekstbestand
+Wist alle ontslagen gebeurtenissen
+Foutopsporing bij gebeurtenissen inschakelen
+Schakelt foutopsporing in voor het kernelgebeurtenissysteem
+Lettertype Figlet
+Schrijf een figlet-lettertype dat wordt ondersteund door de Figgle-bibliotheek. Raadpleeg de bibliotheekdocumentatie voor meer informatie
+Kan aangepaste taal {0} niet installeren.
+Het metagegevensbestand dat nodig is om de aangepaste taal te installeren, bestaat niet.
+De metagegevens die nodig zijn om de aangepaste taal te installeren, bieden niet de benodigde lokalisaties.
+Kan aangepaste taal {0} niet verwijderen.
+Het metadatabestand dat nodig is om de aangepaste taal te verwijderen, bestaat niet.
+De metagegevens die nodig zijn om de aangepaste taal te verwijderen, bieden niet de benodigde lokalisaties.
+De lengte van de Engelse taal komt niet overeen met de lengte van de opgegeven taaltoken.
+De taal bestaat al en kan niet worden overschreven.
+Kan aangepaste taal niet verwijderen. Die bestaat hoogstwaarschijnlijk niet.
+Kan aangepaste talen niet installeren.
+Kan aangepaste talen niet verwijderen.
+Kan aangepaste talen niet verwijderen. Zie de innerlijke uitzondering voor meer info.
+Schrijf het beheerderswachtwoord. Zorg ervoor dat u dit account niet gebruikt, tenzij u echt weet wat u doet.
+U moet het beheerderswachtwoord schrijven.
+Licentie-informatie
+Beheer uw talen
+Taal niet gevonden of bestand bevat ongeldige tekens.
+Taal is niet gespecificeerd.
+Taalbeheer is uitgeschakeld in de veilige modus.
+Taal korte naam:
+Volledige naam taal:
+Taal translitereerbaar:
+Aangepaste taal:
+Nieuwe welkomstbanner
+Stijlvol opstartscherm
+Toont de nieuwe door Figlet weergegeven welkomstbanner
+Schakelt het stijlvolle opstartscherm in bij het opstarten. Houd er rekening mee dat het de argumentprompt en het pre-boot testen van de shell zal uitschakelen.
+Splash-naam
+Splash-naam van de beschikbare splashes die in de kernel zijn geïmplementeerd.
+Gegenereerde standaard MOTD.
+Gegenereerde standaard MAL.
+Systeemaccount geïnitialiseerd
+Gebruikers geïnitialiseerd
+Machtigingen geladen
+Welkom!
+De debugger op afstand starten...
+Verbindingsfout met externe debugger
+Melden bij verbindingsfout voor foutopsporing op afstand
+Indien ingeschakeld, wordt het meldingssysteem gebruikt om de host op de hoogte te stellen van een verbindingsfout voor foutopsporing op afstand. Anders wordt het standaard schrijven van de console gebruikt.
+Figlet-lettertype voor timer
+Schakel Figlet in voor timer
+Indien ingeschakeld, wordt figlet gebruikt voor timer. Houd er rekening mee dat het een groot consolescherm nodig heeft om de tijd correct weer te geven met Figlet ingeschakeld.
+Fout bij het parseren van pre-boot opdrachtregelargumenten: {0}
+Zet de kernel terug naar de fabrieksinstellingen
+Omzeilt de detectie van de consolegrootte
+Het lijkt erop dat je de detectie van de consolegrootte omzeilt. Het kan zijn dat dingen niet goed werken op kleine schermen.
+Voor een betere ervaring, verander je het formaat van je consolevenster terwijl je nog op dit scherm bent. Druk op een willekeurige toets om door te gaan...
+Uw console is te klein om goed te werken:
+Lettertype spandoek
+Drukt een string af naar console met behulp van kleurtype en lijnafdruk met Figlet-ondersteuning
+Drukt een string af naar console met behulp van kleurtype en lijnafdruk met formaat en Figlet-ondersteuning
+Verwijdert een bericht permanent
+Verwijdert permanent alle berichten van de ontvanger
+Het verwijderen van een bericht ongedaan maken
+Verwijdering van alle berichten van de ontvanger ongedaan maken
+Verwijdering ongedaan maken is niet geïmplementeerd voor POP3.
+Toon de commando's rekenen op hulp
+Toon de shell-commando's rekenen op hulp
+Toon de mod-commando's rekenen op hulp
+Toon de aliassen rekenen op hulp
+Toont het aantal commando's in de commandolijst, bestuurd door de drie count show-schakelaars voor verschillende soorten commando's.
+Voert opdrachten uit zodra aan de UESH-expressies is voldaan
+De voorwaarde is niet gevonden in de expressie.
+Voorwaarde {0} vereist {1} argumenten. Heb {2}.
+De voorwaarde moet in het midden worden geplaatst.
+De voorwaarde moet in het begin worden geplaatst.
+Fout bij parseren van expressie vanwege syntaxisfout.
+Voldeed niet aan de voorwaarde. Meer info hier:
+Wachtwoord masker karakter
+Een teken dat het wachtwoord maskeert. Laat leeg voor meer veiligheid.
+Verlaat de shell als deze op subshell draait
+Kan de moederschelp niet doden!
+Kan niet uitloggen uit de subshell.
+Bestand niet gespecificeerd. Uitgaande schelp...
+Instellingen voor dit opstartscherm zijn hier beschikbaar.
+Kleur voortgangsbalk
+Opent de schermbeveiligingsinstellingen
+Opent de splash-instellingen
+Geeft beschikbare UESH-variabelen weer
+Locatie van voortgangstekst
+Selecteer de gewenste voortgangstekstlocatie.
+U kunt alleen de cijfers schrijven.
+Druk op "q" om af te sluiten.
+Namen downloaden...
+Wegens technische problemen kunnen we geen adaptereigenschappen weergeven op Unix-systemen.
+Schakelt debug-modus in
+Vragen om argumenten
+Zwart-witmodus inschakelen
+Maakt de disco zwart-wit. Het doet echt pijn aan je ogen als het te snel gaat, dus niet aanbevolen als je last hebt van snelle beelden.
+Het lijkt erop dat u een niet-ondersteunde versie gebruikt. Het is ten zeerste aan te raden deze versie niet te gebruiken.
+Huidige kleuren laden
+Alternatieve optie kleur
+Gebruikers tellen voor liefdes- of haatreacties
+Hoeveel gebruikers moeten er in de ruimte voor liefdes- of haatcommentaar zijn?
+Geeft beschikbare talen weer
+Beschikbare talen:
+Opdrachtregelargumenten:
+Pre-boot opdrachtregelargumenten:
+Opent de mod API-documentatie voor de structuur van de broncode in de meest actuele vorm

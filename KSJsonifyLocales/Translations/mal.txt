@@ -983,3 +983,675 @@ Tekan sebarang kekunci untuk membaca halaman manual ...
 Halaman manual ini memerlukan kerja untuk:
 Halaman manual {0} tidak dijumpai.
 Manual mod
+Argumen kernel yang tersedia:
+Tekan "q" jika anda sudah selesai.
+Argumen kernel berbilang boleh dipisahkan dengan koma tanpa ruang, sebagai contoh:
+Berbilang arahan yang disuntik boleh dipisahkan dengan titik bertindih dengan ruang, contohnya:
+Argumen yang diminta {0} tidak ditemui.
+Ralat yang tidak dapat dipulihkan dalam hujah:
+Menyulitkan rentetan menggunakan SHA512
+Menyulitkan rentetan menggunakan SHA384
+Menyulitkan rentetan menggunakan SHA256
+Menyulitkan rentetan menggunakan SHA1
+Menyulitkan rentetan menggunakan MD5
+di mana builtinsaver akan berada
+Bahagian mod bukan apa-apa.
+Menghentikan mod tidak dibenarkan pada mod selamat.
+Mod telah pun dimulakan!
+Mod belum bermula lagi!
+Penggunaan arahan:
+Nama fail bahagian:
+Bahagian laluan fail:
+Ralat semasa cuba memulakan screensaver:
+Jenis laluan tidak sah.
+Jenis laluan kernel tidak sah.
+But sebelumnya gagal
+Editor JSON belum membuka strim fail lagi.
+Sifat dalam fail JSON tidak ditemui.
+Harta yang dialih keluar.
+Menambah sifat baharu pada penghujung fail JSON
+Mengalih keluar harta daripada fail JSON
+Keluar dari shell JSON
+Keluar dari shell JSON tanpa menyimpan perubahan
+Menyimpan fail JSON
+Membuka cangkerang JSON
+Mencetak fail JSON
+Selang tanjakan seterusnya
+Mengaktifkan sokongan 255 warna untuk Ramp.
+Mengaktifkan sokongan warna sebenar untuk Ramp.
+Berapa milisaat perlu menunggu sebelum mengisi tanjakan seterusnya?
+Warna tajuk pemberitahuan
+Warna penerangan pemberitahuan
+Warna kemajuan pemberitahuan
+Warna kegagalan pemberitahuan
+Warna soalan
+Warna kejayaan
+Warna dolar pengguna
+Warna petua
+Warna teks pemisah
+Warna pemisah
+Senaraikan warna tajuk
+Warna amaran pembangunan
+Warna masa peringkat
+Warna kemajuan
+Warna pilihan belakang
+Lukis sempadan pemberitahuan
+Meliputi pemberitahuan dengan sempadan.
+Hubungi vendor mod untuk menaik taraf mod kepada versi yang serasi.
+Warna sempadan keutamaan rendah
+Warna sempadan keutamaan sederhana
+Warna sempadan keutamaan tinggi
+Menghantar pemberitahuan kemajuan untuk menguji penerima
+Menguji roda warna
+Menunjukkan masa kernel tempatan
+Menunjukkan tarikh kernel tempatan
+Menunjukkan tarikh dan masa kernel tempatan
+Menunjukkan masa kernel UTC
+Menunjukkan tarikh kernel UTC
+Menunjukkan tarikh dan masa kernel UTC
+Laluan MOTD
+laluan MAL
+Fail manakah ialah fail teks MOTD? Tulis laluan mutlak ke fail teks.
+Fail manakah ialah fail teks MAL? Tulis laluan mutlak ke fail teks.
+Mod disenaraihitamkan
+Tulis nama fail mod yang tidak akan dijalankan semasa permulaan. Apabila anda selesai, tulis "q". Tulis tanda tolak di sebelah laluan untuk mengalih keluar mod sedia ada.
+Mod {0} disenaraihitamkan.
+Muat semula semua mod
+Menambah mod pada senarai hitam
+Mengalih keluar mod daripada senarai hitam
+Masa dan tarikh dalam UTC: {0}
+Perintah shell JSON yang ditentukan tidak dijumpai.
+Tunjukkan maklumat apl semasa but
+Menghuraikan hujah baris arahan
+Tunjukkan masa penamat pentas
+Mulakan pengubahsuaian kernel semasa but
+Tunjukkan masa semasa sebelum log masuk
+Maklumkan sebarang kerosakan semasa but
+Menunjukkan maklumat ringkas tentang aplikasi semasa but.
+Menghuraikan hujah baris arahan semasa but.
+Menunjukkan berapa lama masa yang diambil oleh kernel untuk menyelesaikan satu peringkat.
+Mulakan pengubahsuaian kernel secara automatik semasa but.
+Menunjukkan masa semasa, zon masa dan tarikh sebelum log masuk.
+Jika terdapat kerosakan kecil semasa but kernel, maklumkan pengguna mengenainya.
+Gaya gesaan nama pengguna
+Gaya gesaan kata laluan
+Tunjukkan MAL semasa log masuk
+Tulis bagaimana anda mahu gesaan log masuk anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Tulis bagaimana anda mahu kata laluan anda digesa. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Menunjukkan Mesej Hari ini selepas memaparkan skrin log masuk.
+Uji Gaya Prompt Shell
+Gaya Prompt Shell JSON
+Arahan yang disuntik siasatan
+Siasat arahan yang disuntik pada permulaan shell kernel.
+Tunjukkan butiran fail dalam senarai
+Menunjukkan butiran fail ringkas semasa menyenaraikan fail
+Tunjukkan butiran fail dalam senarai FTP
+Gaya gesaan nama pengguna untuk FTP
+Gaya gesaan kata laluan untuk FTP
+Gunakan profil FTP pertama
+Tambahkan sambungan baharu pada dail laju FTP
+Cuba sahkan sijil FTP selamat
+Tunjukkan FTP MOTD pada sambungan
+Sentiasa terima sijil FTP yang tidak sah
+Menunjukkan butiran fail FTP semasa menyenaraikan direktori jauh.
+Menggunakan profil FTP pertama untuk menyambung ke FTP.
+Jika didayakan, tambahkan sambungan baharu pada dail laju FTP.
+Cuba untuk mengesahkan sijil FTP. Mematikannya tidak disyorkan.
+Menunjukkan mesej FTP hari itu semasa log masuk.
+Sentiasa terima sijil FTP yang tidak sah. Menghidupkannya adalah tidak disyorkan kerana ia mungkin menimbulkan risiko keselamatan.
+Gaya gesaan nama pengguna untuk mel
+Gaya gesaan kata laluan untuk mel
+Gaya gesaan IMAP untuk mel
+Gaya gesaan SMTP untuk mel
+Mengesan pelayan mel secara automatik
+Dayakan nyahpepijat mel
+Maklumkan untuk mesej mel baharu
+Gaya gesaan kata laluan GPG untuk mel
+Hantar selang ping IMAP
+Hantar selang ping SMTP
+Format teks mel
+Tulis bagaimana anda mahu gesaan pelayan IMAP anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Tulis bagaimana anda mahu gesaan pelayan SMTP anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Mengesan pelayan mel secara automatik berdasarkan alamat yang diberikan.
+Mendayakan nyahpepijat pelayan mel.
+Memaklumi anda untuk sebarang mesej mel baharu.
+Tulis bagaimana anda mahu kata laluan GPG anda digesa. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Berapa milisaat untuk menghantar ping IMAP?
+Berapa milisaat untuk menghantar ping SMTP?
+Mengawal cara teks mel akan ditunjukkan.
+Teks kosong
+Teks mengalir
+teks HTML
+Teks diperkaya
+Teks kaya yang dimampatkan
+Teks kaya
+Mulakan nyahpepijat jauh secara automatik semasa permulaan
+Format mesej nyahpepijat jauh
+Jika anda mahu nyahpepijat jauh bermula semasa but, dayakan ini.
+Menentukan format mesej nyahpepijat jauh. {0} untuk nama, {1} untuk mesej.
+Gaya gesaan URL suapan RSS
+Muat semula automatik suapan RSS
+Selang suapan RSS automatik muat semula
+Tulis bagaimana anda mahu gesaan pelayan suapan RSS anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Berapa milisaat untuk memuat semula suapan RSS?
+Tunjukkan butiran fail dalam senarai SFTP
+Gaya gesaan nama pengguna untuk SFTP
+Tambahkan sambungan baharu pada dail laju SFTP
+Menunjukkan butiran fail SFTP semasa menyenaraikan direktori jauh.
+Jika didayakan, tambahkan sambungan baharu pada dail laju SFTP.
+Ping tamat masa
+Tunjukkan maklumat penyesuai yang luas
+Tunjukkan maklumat rangkaian umum
+Muat turun teks peratusan
+Muat naik teks peratusan
+Berapa milisaat perlu menunggu sebelum mengisytiharkan tamat masa?
+Mencetak maklumat penyesuai yang luas, seperti maklumat paket.
+Menunjukkan maklumat umum tentang rangkaian.
+Tulis bagaimana anda mahu teks peratusan muat naik anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dimuat naik, {1} untuk saiz sasaran, {2} untuk peratusan.
+Tulis bagaimana anda mahu teks peratusan muat turun anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dimuat turun, {1} untuk saiz sasaran, {2} untuk peratusan.
+Minta kata laluan selepas dikunci
+Selepas mengunci skrin, minta kata laluan
+Tahap warna merah minimum
+Tahap warna hijau minimum
+Tahap warna biru minimum
+Tahap warna minimum
+Tahap warna merah maksimum
+Tahap warna hijau maksimum
+Tahap warna biru maksimum
+Tahap warna maksimum
+Tahap warna merah minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna hijau minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna biru minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255 untuk 255 warna atau 16 untuk 16 warna.
+Tahap warna merah maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna hijau maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna biru maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
+Tahap warna maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255 untuk 255 warna atau 16 untuk 16 warna.
+Warna latar depan
+Watak garisan
+Watak untuk membentuk garisan. Pastikan anda hanya memasukkan satu aksara.
+Watak sudut kiri atas untuk bar jam
+Aksara sudut kiri atas untuk bar minit
+Aksara sudut kiri atas untuk bar saat
+Watak penjuru kanan sebelah atas untuk bar jam
+Aksara sudut kanan atas untuk bar minit
+Aksara sudut kanan atas untuk bar saat
+Aksara sudut kiri bawah untuk bar jam
+Aksara sudut kiri bawah untuk bar minit
+Aksara sudut kiri bawah untuk bar saat
+Aksara sudut kanan bawah untuk bar jam
+Aksara sudut kanan bawah untuk bar minit
+Aksara sudut kanan bawah untuk bar saat
+Watak bingkai atas untuk bar jam
+Aksara bingkai atas untuk bar minit
+Aksara bingkai atas untuk bar saat
+Aksara bingkai bawah untuk bar jam
+Aksara bingkai bawah untuk bar minit
+Aksara bingkai bawah untuk bar saat
+Watak bingkai kiri untuk bar jam
+Watak bingkai kiri untuk bar minit
+Watak bingkai kiri untuk bar saat
+Watak bingkai kanan untuk bar jam
+Watak bingkai kanan untuk bar minit
+Watak bingkai kanan untuk bar saat
+Teks maklumat selama berjam-jam
+Teks maklumat untuk minit
+Teks maklumat untuk beberapa saat
+Tahap warna merah minimum selama berjam-jam
+Tahap warna hijau minimum selama berjam-jam
+Tahap warna biru minimum selama berjam-jam
+Tahap warna minimum untuk jam
+Tahap warna merah maksimum selama berjam-jam
+Tahap warna hijau maksimum selama berjam-jam
+Tahap warna biru maksimum selama berjam-jam
+Tahap warna maksimum selama berjam-jam
+Tahap warna merah minimum selama beberapa minit
+Tahap warna hijau minimum untuk beberapa minit
+Tahap warna biru minimum untuk beberapa minit
+Tahap warna minimum untuk beberapa minit
+Tahap warna merah maksimum selama beberapa minit
+Tahap warna hijau maksimum selama beberapa minit
+Tahap warna biru maksimum selama beberapa minit
+Tahap warna maksimum untuk beberapa minit
+Tahap warna merah minimum untuk beberapa saat
+Tahap warna hijau minimum untuk beberapa saat
+Tahap warna biru minimum untuk beberapa saat
+Tahap warna minimum untuk beberapa saat
+Tahap warna merah maksimum untuk beberapa saat
+Tahap warna hijau maksimum untuk beberapa saat
+Tahap warna biru maksimum untuk beberapa saat
+Tahap warna maksimum untuk beberapa saat
+Watak yang menyerupai sudut kiri atas. Pastikan anda hanya memasukkan satu aksara.
+Watak yang menyerupai sudut kiri bawah. Pastikan anda hanya memasukkan satu aksara.
+Watak yang menyerupai bingkai atas. Pastikan anda hanya memasukkan satu aksara.
+Watak yang menyerupai bingkai bawah. Pastikan anda hanya memasukkan satu aksara.
+Watak yang menyerupai bingkai kiri. Pastikan anda hanya memasukkan satu aksara.
+Watak yang menyerupai bingkai yang betul. Pastikan anda hanya memasukkan satu aksara.
+Tulis bagaimana teks maklumat anda untuk jam semasa ditunjukkan. {0} untuk jam semasa daripada 24 jam.
+Tulis bagaimana teks maklumat anda untuk minit semasa ditunjukkan. {0} untuk minit semasa daripada 60 minit.
+Tulis bagaimana teks maklumat anda untuk detik semasa ditunjukkan. {0} untuk saat semasa daripada 60 saat.
+Warna teks
+Aksara sudut kiri atas untuk bar tanjakan
+Watak sudut kanan atas untuk bar tanjakan
+Aksara sudut kiri bawah untuk bar tanjakan
+Aksara sudut kanan bawah untuk bar tanjakan
+Watak bingkai atas untuk bar tanjakan
+Aksara bingkai bawah untuk bar tanjakan
+Watak bingkai kiri untuk bar tanjakan
+Watak bingkai kanan untuk bar tanjakan
+Tahap warna merah minimum untuk warna permulaan
+Tahap warna hijau minimum untuk warna permulaan
+Tahap warna biru minimum untuk warna permulaan
+Tahap warna minimum untuk warna permulaan
+Tahap warna merah maksimum untuk warna permulaan
+Tahap warna hijau maksimum untuk warna permulaan
+Tahap warna biru maksimum untuk warna permulaan
+Tahap warna maksimum untuk warna permulaan
+Tahap warna merah minimum untuk warna akhir
+Tahap warna hijau minimum untuk warna akhir
+Tahap warna biru minimum untuk warna akhir
+Tahap warna minimum untuk warna akhir
+Tahap warna merah maksimum untuk warna akhir
+Tahap warna hijau maksimum untuk warna akhir
+Tahap warna biru maksimum untuk warna akhir
+Tahap warna maksimum untuk warna akhir
+Nombor minimum penyelesai
+Penyelesai nombor maksimum
+Penyelesai menunjukkan input
+Aksara sudut kiri atas untuk sempadan pemberitahuan
+Aksara sudut kanan atas untuk sempadan pemberitahuan
+Aksara sudut kiri bawah untuk sempadan pemberitahuan
+Aksara sudut kanan bawah untuk sempadan pemberitahuan
+Aksara bingkai atas untuk sempadan pemberitahuan
+Aksara bingkai bawah untuk sempadan pemberitahuan
+Watak bingkai kiri untuk sempadan pemberitahuan
+Watak bingkai kanan untuk sempadan pemberitahuan
+Gaya maklumat halaman manual
+Sama ada mahu menunjukkan perkara yang ditulis dalam gesaan input.
+Apakah nombor minimum untuk dipilih?
+Apakah nombor maksimum untuk dipilih?
+Tulis bagaimana anda mahu maklumat halaman manual anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk tajuk manual, {1} untuk semakan.
+Harta {0} tidak ditemui pada mana-mana modul.
+Bahagian ini menyenaraikan tetapan penyelamat skrin umum. Untuk tetapan penyelamat skrin individu, keluar dari Tetapan dan buka Tetapan Penyelamat Skrin.
+Mulakan roda warna dalam mod warna sebenar
+Jika dinyatakan, ia akan memaparkan sepanduk permulaan tersuai dengan sokongan pemegang tempat. Anda boleh menggunakan {0} untuk versi kernel.
+Varian bahasa semasa yang manakah digunakan untuk menukar nama bulan, kalendar, dsb.?
+Mengaktifkan sokongan 255 warna.
+Mengaktifkan sokongan warna sebenar.
+Perkataan dipadamkan dalam baris {0}.
+Rentetan diganti dalam baris {0}.
+Nombor baris {0} dialih keluar.
+Sekat mesej yang tidak dibenarkan
+Menyembunyikan mesej yang menjengkelkan jika fungsi penyenaraian cuba membuka folder yang tidak dibenarkan
+Maklumat pelayan FTP
+Alamat pelayan:
+Port pelayan:
+Jenis pelayan:
+Jenis sistem pelayan:
+Mod penyulitan pelayan:
+Jenis sambungan data pelayan:
+Sistem pelayan:
+Jenis data muat turun pelayan:
+Jenis data muat naik pelayan:
+Anda mesti menyambung ke pelayan sebelum melakukan operasi ini.
+Masukkan fail jauh untuk dicincang.
+Masukkan direktori jauh untuk dicincang.
+Masukkan direktori jauh.
+Pencincangan rekursif untuk FTP
+Sama ada hendak mencincang direktori secara rekursif. Sila ambil perhatian bahawa tidak semua pelayan FTP menyokongnya.
+Kelajuan jam pemproses:
+Sokongan SSE2 pemproses:
+Jumlah bilangan pemproses:
+Saiz cakera:
+Jumlah ingatan:
+Kad grafik:
+Model cakera:
+Bilangan maksimum e-mel dalam satu halaman
+Budaya bahasa semasa
+Jika anda pasti bahawa anda telah membuka bahagian yang betul, semak mesej ini:
+Tetapan Pelbagai...
+Tetapan Warna...
+Melaksanakan arahan pelayan FTP
+Masukkan alamat dan port pelayan POP3 (<alamat> atau <alamat>:[port]):
+Gaya gesaan POP3 untuk mel
+Hantar selang ping POP3
+Tulis bagaimana anda mahu gesaan pelayan POP3 anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.
+Berapa milisaat untuk menghantar ping POP3?
+Gunakan POP3
+Sama ada hendak menggunakan POP3. Melumpuhkan ini akan menggunakan SMTP.
+Menyulitkan rentetan menggunakan CRC32
+Membuka klien mel
+mel yang dipindahkan...
+Tetapan untuk penyelamat skrin ini tersedia di sini.
+Menguji kefungsian jadual
+Mengedit baris yang ditentukan
+Menambah baris baharu pada penghujung fail
+Masukkan teks yang ingin anda tambahkan pada penghujung fail. Apabila anda selesai, tulis "EOF" pada barisnya sendiri.
+Nama Hos
+Nama pengguna
+Jenis data
+Pengekodan
+Penyulitan
+Protokol
+Tunjukkan kemajuan pemindahan mel
+Kemajuan pemindahan mel
+Kemajuan pemindahan mel (tunggal)
+Jika didayakan, cangkerang mel akan menunjukkan bilangan bait yang dihantar semasa memuat turun mel.
+Tulis bagaimana anda mahukan gaya kemajuan pemindahan mel anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dipindahkan dan {1} untuk jumlah saiz.
+Tulis bagaimana anda mahukan gaya kemajuan pemindahan mel anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan. {0} untuk saiz yang dipindahkan.
+Zon masa:
+Hari ini ialah {0}
+Masa semasa ialah {0}
+Warna pemisah meja
+Warna pengepala jadual
+Warna nilai jadual
+Jawapan yang mungkin
+Fail mod tidak dinyatakan.
+Cuba memasang mod yang sudah dipasang. Mengemas kini mod...
+Pemasangan gagal untuk
+Fail mod yang disediakan tidak serasi.
+Penyahpasangan gagal untuk
+Membuka URL
+Cetak nombor baris untuk mencetak kandungan fail
+Membuat arahan \"cat\" mencetak nombor baris fail.
+Versi transliterasi
+Versi terjemahan
+Tolak semua pemberitahuan
+Memuat turun...
+Memuat naik...
+Tunjukkan pemberitahuan untuk kemajuan muat turun
+Tunjukkan pemberitahuan untuk kemajuan muat naik
+Menunjukkan pemberitahuan yang menunjukkan kemajuan muat turun.
+Menunjukkan pemberitahuan yang menunjukkan kemajuan muat naik.
+Semak untuk melihat sama ada rentetan yang boleh diterjemahkan wujud dalam sumber KS
+Rentetan ditemui dalam sumber penyetempatan.
+Rentetan tidak ditemui dalam sumber penyetempatan.
+Memulakan kernel dengan senyap
+Menyuntik arahan untuk memulakan dalam log masuk seterusnya
+Memulakan kernel dalam mod selamat, melumpuhkan semua mod
+Seperti mod selamat, tetapi juga melumpuhkan berbilang pengguna dan beberapa penyesuaian
+Tidak ada hujah yang cukup.
+Warna sudut kiri atas untuk bar tanjakan
+Warna penjuru kanan sebelah atas untuk palang jalan
+Warna sudut kiri bawah untuk bar tanjakan
+Warna sudut kanan bawah untuk palang jalan
+Warna bingkai atas untuk bar tanjakan
+Warna bingkai bawah untuk bar tanjakan
+Warna bingkai kiri untuk bar tanjakan
+Warna bingkai kanan untuk bar tanjakan
+Gunakan warna sempadan untuk bar ramp
+Gunakan warna sempadan untuk bar tanjakan. Jika dilumpuhkan, akan menjana bar kelabu.
+Memulakan shell HTTP
+Keluar dari shell HTTP dan kembali ke kernel
+Menetapkan tapak HTTP. Mestilah URI yang sah.
+Mendapat respons daripada pelayan HTTP menggunakan permintaan yang ditentukan
+Memadamkan kandungan daripada pelayan HTTP
+Terdapat ralat dalam cangkerang HTTP:
+Mesej HTTP: Perintah yang diminta {0} tidak ditemui. Lihat 'bantuan' untuk senarai arahan tersedia yang dinyatakan pada cangkerang HTTP.
+Mendapat rentetan daripada pelayan HTTP menggunakan permintaan yang ditentukan
+Mendapat {0}...
+Format URI tapak adalah tidak sah.
+Menetapkan tapak kepada
+Warna tidak memerlukan mulakan semula, tetapi kebanyakan tetapan memerlukan mulakan semula.
+Tiada bantuan untuk hujah "{0}".
+Tekan A pada komen benci untuk memohon maaf. Tekan T pada komen cinta untuk berterima kasih. Tekan Q untuk berhenti permainan.
+Anda telah meminta maaf atas komen benci! Cemerlang!
+Minta maaf atas komen cinta. Tidak cukup baik.
+Anda hanya mengucapkan terima kasih kepada pembenci atas komen benci!
+Kesukaran lalai untuk SpeedPress
+Tekan kekunci tamat masa untuk SpeedPress
+Pilih kesukaran pilihan anda.
+Berapa milisaat untuk menunggu penekanan kekunci sebelum tamat masa? (Dalam kesukaran tersuai)
+Menggantikan perkataan atau frasa dengan perkataan lain menggunakan ungkapan biasa
+Menggantikan perkataan atau frasa dengan yang lain dalam baris menggunakan ungkapan biasa
+Menyoal perkataan dalam baris tertentu atau semua baris menggunakan ungkapan biasa
+Cari Tetapan
+Tulis apa yang anda ingin cari.
+Tiada apa yang ditemui. Pastikan anda telah menulis tetapan dengan betul.
+Pek fail tempatan ke arkib
+Tidak boleh mengemas apa-apa.
+Jawab penerangan
+Pelabuhan Hos
+Untuk maklumat lanjut tentang terma dan syarat menggunakan perisian ini, lawati
+Jenis output pilihan lalai
+Semak semua tetapan KS untuk melihat sama ada pembolehubah ditulis dengan betul
+Entri konfigurasi ini mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki:
+Fail {0} tidak ditemui
+Mencipta tatasusunan pembolehubah dengan nilai yang disediakan
+Tulis nombor tetapan untuk pergi ke. Sebarang watak lain bermakna kembali.
+Menyemak semua nombor baris teks penyetempatan untuk melihat sama ada semuanya sama
+Baris tidak padan masuk
+Sila masukkan nombor pengguna.
+Sertakan pengguna tanpa nama
+Sertakan pengguna kurang upaya
+Termasuk pengguna tanpa nama dalam senarai
+Termasuk pengguna kurang upaya dalam senarai
+Isih senarai
+Isih senarai sistem fail secara profesional.
+Menyediakan pilihan pilihan
+Perintah Shell tidak dilaksanakan!!!
+Tunjukkan tajuk RSS terkini semasa log masuk
+URL tajuk RSS
+Setiap log masuk, ia akan menunjukkan tajuk RSS terkini daripada URL tajuk yang dipilih.
+URL tajuk RSS untuk digunakan apabila memaparkan tajuk terkini. Ini biasanya suapan kegemaran anda.
+Berita terkini:
+Gagal mendapat berita terkini.
+Warna pilihan yang dipilih
+Tunjukkan surih tindanan pada ralat kernel
+Jika terdapat sebarang ralat kernel, pilih sama ada untuk mencetak surih tindanan ke konsol atau tidak.
+Mod boleh dimuatkan, tetapi amaran ini mungkin memberi kesan kepada cara mod berfungsi:
+Screensaver boleh dimuatkan, tetapi amaran ini mungkin memberi kesan kepada cara screensaver berfungsi:
+Simpan Tetapan Sebagai
+Muatkan Tetapan Daripada
+Di manakah anda ingin menyimpan tetapan kernel semasa?
+Tidak dapat menyimpan tetapan kernel di atas fail sedia ada.
+Dari mana anda mahu memuatkan tetapan kernel semasa?
+Semak untuk melihat sama ada rentetan yang boleh diterjemahkan wujud dalam sumber KS
+Menggabungkan dua fail teks atau lebih ke dalam fail output.
+Gagal menggabungkan fail.
+Tamat masa pengambilan suapan RSS
+Berapa milisaat untuk menunggu sebelum suapan RSS tamat masa pengambilan?
+Isi kotak
+Adakah kita melukis kotak secara keseluruhan atau kita hanya melukis sempadan?
+Kelewatan peringkat dalam milisaat
+Berapa milisaat perlu menunggu sebelum melukis peringkat seterusnya?
+Selang reput tanjakan seterusnya
+Berapa milisaat untuk menunggu sebelum mereputkan satu hujung tanjakan seterusnya?
+Semak kuota nyahpepijat
+Adakah kita menyemak sama ada sistem nyahpepijat perlu menyemak kuota sebelum menulis kepada penyahpepijat?
+Berapa milisaat yang diperlukan untuk tidur?
+Gagal menambah acara.
+Gagal mengalih keluar acara.
+Tidak cukup hujah yang disediakan untuk menambah acara.
+Tidak cukup hujah yang disediakan untuk mengalih keluar acara.
+Tidak cukup hujah yang disediakan untuk manipulasi acara.
+Gagal menambah atau mengalih keluar peringatan.
+Tidak cukup hujah yang disediakan untuk menambah atau mengalih keluar peringatan.
+Tidak cukup hujah yang disediakan untuk manipulasi peringatan.
+Peringatan tanpa tajuk
+Peristiwa tanpa tajuk
+Sekarang adalah hari acara!
+Jangan terlepas ini!
+Tindakan tidak sah.
+Jam randik yang mudah
+Mula atau berhenti
+pusingan
+Tetapkan semula
+Pemasa yang mudah
+Mulakan (semula) mengira mundur
+Tetapkan selang
+Tamat masa yang ditunjukkan bukan angka.
+Tentukan tamat masa dalam milisaat
+Simpan semua acara dan/atau peringatan secara merosakkan
+Jika didayakan, padamkan semua acara dan/atau peringatan sebelum menyimpan kesemuanya menggunakan arahan kalendar.
+Sahkan percubaan cuba semula untuk penghantaran FTP
+tamat masa sambungan FTP
+tamat masa sambungan data FTP
+Versi IP FTP
+Berapa kali untuk mengesahkan muat naik dan memuat turun dan mencuba semula jika pengesahan gagal sebelum muat turun gagal secara keseluruhan?
+Berapa milisaat untuk menunggu sebelum tamat masa sambungan FTP?
+Berapa milisaat untuk menunggu sebelum tamat masa sambungan data FTP?
+Pilih versi Internet Protocol yang disokong oleh pelayan FTP dan yang digunakan oleh klien FTP.
+Cuba untuk memulakan RPC semasa ia sudah dimulakan.
+Aksara sudut kiri atas untuk roda warna RGB
+Watak sudut kanan atas untuk roda warna RGB
+Aksara sudut kiri bawah untuk roda warna RGB
+Aksara sudut kanan bawah untuk roda warna RGB
+Watak bingkai atas untuk roda warna RGB
+Watak bingkai bawah untuk roda warna RGB
+Watak bingkai kiri untuk roda warna RGB
+Watak bingkai kanan untuk roda warna RGB
+Mencari fail dalam direktori yang ditentukan atau dalam direktori semasa
+Menukar penghujung baris kepada format untuk platform semasa atau kepada format tersuai yang ditentukan
+Jumlah saiz dalam folder:
+Tunjukkan jumlah saiz dalam senarai
+Jika didayakan, tunjukkan jumlah saiz folder dalam senarai, bergantung pada cara mengira saiz folder mengikut konfigurasi.
+Anda terkini!
+Pemformatan JSON lalai untuk shell JSON
+Memilih pemformatan JSON lalai (dipercantik atau diperkecil) untuk disimpan oleh shell JSON.
+Berjaya memuat turun kemas kini!
+Muat turun kemas kini secara automatik
+Jika terdapat sebarang kemas kini, kernel akan memuat turunnya secara automatik.
+Jejari letupan bunga api
+Berapakah bilangan blok (sehingga 10) jejari letupan untuk bunga api apabila dinyalakan?
+Perintah ini mempunyai suis di bawah yang mengubah cara ia berfungsi:
+Mencetak nombor baris yang mengikuti garisan yang dicetak
+Menghalang mencetak nombor baris
+Sentiasa gunakan versi transliterasi
+Sentiasa gunakan versi terjemahan
+Paksa menukar bahasa
+Nyatakan bahawa jawapan boleh mengambil lebih daripada satu aksara
+Nyatakan bahawa jawapan boleh mengambil hanya satu aksara
+Cetak soalan dan jawapan dalam satu baris
+Cetak soalan dan jawapan dalam dua baris
+Cetak soalan dan jawapan dengan cara moden
+Cetak soalan dan jawapan dalam jadual
+Menunjukkan butiran fail dalam senarai
+Menyekat mesej "kebenaran ditolak" yang menjengkelkan
+Menunjukkan semua zon waktu
+Memulakan permainan dalam kesukaran yang mudah
+Memulakan permainan dalam kesukaran sederhana
+Memulakan permainan dalam kesukaran yang sukar
+Memulakan permainan dalam kesukaran yang sangat sukar
+Memulakan permainan dalam kesukaran tersuai. Sila ambil perhatian bahawa tamat masa tersuai dalam milisaat harus ditulis sebagai hujah.
+Menunjukkan maklumat sistem
+Menunjukkan maklumat perkakasan
+Menunjukkan maklumat pengguna
+Menunjukkan mesej hari itu
+Menunjukkan mesej hari selepas log masuk
+Menunjukkan semua maklumat
+Mencipta direktori yang mengandungi kandungan fail ZIP
+Menunjukkan semua bandar yang ada
+Mampatan pantas
+Tiada pemampatan
+Jangan buat direktori asas dalam arkib
+Unit dalam kutu
+Terputus sambungan dari pelayan secara memalukan
+Menunjukkan bahawa laluan sasaran adalah mutlak
+Menyimpan fail JSON, mencantikkannya dalam proses
+Menyimpan fail JSON, mengecilkannya dalam proses
+Mendapat gaya penamat baris daripada fail teks
+Membersihkan semua acara yang dipecat
+Dayakan penyahpepijatan acara
+Mendayakan penyahpepijatan untuk sistem acara kernel
+Fon figlet
+Tulis fon figlet yang disokong oleh perpustakaan Figgle. Rujuk dokumentasi perpustakaan untuk maklumat lanjut
+Gagal memasang bahasa tersuai {0}.
+Fail metadata yang diperlukan untuk memasang bahasa tersuai tidak wujud.
+Maklumat metadata yang diperlukan untuk memasang bahasa tersuai tidak menyediakan penyetempatan yang diperlukan.
+Gagal menyahpasang bahasa tersuai {0}.
+Fail metadata yang diperlukan untuk menyahpasang bahasa tersuai tidak wujud.
+Maklumat metadata yang diperlukan untuk menyahpasang bahasa tersuai tidak menyediakan penyetempatan yang diperlukan.
+Panjang bahasa Inggeris tidak sepadan dengan panjang token bahasa yang disediakan.
+Bahasa itu sudah wujud dan tidak boleh ditimpa.
+Gagal menyahpasang bahasa tersuai. Kemungkinan besar ia tidak wujud.
+Gagal memasang bahasa tersuai.
+Gagal menyahpasang bahasa tersuai.
+Gagal menyahpasang bahasa tersuai. Lihat pengecualian dalaman untuk mendapatkan maklumat lanjut.
+Tulis kata laluan pentadbir. Pastikan anda tidak menggunakan akaun ini melainkan anda benar-benar tahu perkara yang anda lakukan.
+Anda mesti menulis kata laluan pentadbir.
+Maklumat lesen
+Urus bahasa anda
+Bahasa tidak ditemui atau fail mempunyai aksara yang tidak sah.
+Bahasa tidak dinyatakan.
+Pengurusan bahasa dilumpuhkan dalam mod selamat.
+Nama pendek bahasa:
+Nama penuh bahasa:
+Bahasa boleh diterjemahkan:
+Bahasa tersuai:
+Sepanduk selamat datang baru
+Skrin percikan yang bergaya
+Menunjukkan sepanduk alu-aluan yang diberikan oleh Figlet baharu
+Mendayakan skrin percikan yang bergaya pada permulaan. Sila ambil perhatian bahawa ia akan melumpuhkan gesaan argumen dan pra-but shell ujian.
+Nama percikan
+Nama percikan daripada percikan tersedia yang dilaksanakan dalam kernel.
+MOTD lalai dijana.
+MAL lalai dijana.
+Akaun sistem dimulakan
+Pengguna dimulakan
+Kebenaran dimuatkan
+Selamat datang!
+Memulakan penyahpepijat jauh...
+Ralat sambungan penyahpepijat jauh
+Beritahu tentang ralat sambungan nyahpepijat jauh
+Jika didayakan, akan menggunakan sistem pemberitahuan untuk memberitahu hos tentang ralat sambungan nyahpepijat jauh. Jika tidak, akan menggunakan penulisan konsol lalai.
+Fon figlet untuk pemasa
+Dayakan Figlet untuk pemasa
+Jika didayakan, akan menggunakan figlet untuk pemasa. Sila ambil perhatian bahawa ia memerlukan skrin konsol yang besar untuk memaparkan masa dengan betul dengan Figlet didayakan.
+Ralat semasa menghuraikan argumen baris perintah pra-but: {0}
+Menetapkan semula kernel kepada tetapan kilang
+Melangkau pengesanan saiz konsol
+Nampaknya anda memintas pengesanan saiz konsol. Perkara mungkin tidak berfungsi dengan betul pada skrin kecil.
+Untuk mendapatkan pengalaman yang lebih baik, ubah saiz tetingkap konsol anda semasa masih berada di skrin ini. Tekan mana-mana butang untuk meneruskan...
+Konsol anda terlalu kecil untuk dijalankan dengan betul:
+Fon figlet sepanduk
+Mencetak rentetan ke konsol menggunakan jenis warna dan cetakan garisan dengan sokongan Figlet
+Mencetak rentetan ke konsol menggunakan jenis warna dan cetakan garisan dengan format dan sokongan Figlet
+Mengalih keluar mesej secara kekal
+Mengalih keluar semua mesej daripada penerima secara kekal
+Buat asal mengalih keluar mesej
+Buat asal mengalih keluar semua mesej daripada penerima
+Buat asal pemadaman tidak dilaksanakan untuk POP3.
+Tunjukkan arahan bergantung pada bantuan
+Tunjukkan arahan shell bergantung pada bantuan
+Tunjukkan arahan mod bergantung pada bantuan
+Tunjukkan alias bergantung pada bantuan
+Menunjukkan kiraan arahan dalam senarai arahan, dikawal oleh suis paparan tiga kiraan untuk pelbagai jenis arahan.
+Melaksanakan arahan setelah ungkapan UESH berpuas hati
+Keadaan itu tidak ditemui dalam ungkapan.
+Syarat {0} memerlukan {1} argumen. Mendapat {2}.
+Keadaan itu perlu diletakkan di tengah-tengah.
+Syaratnya perlu diletakkan pada awalnya.
+Ralat menghuraikan ungkapan kerana ralat sintaks.
+Gagal memenuhi syarat. Maklumat lanjut di sini:
+Watak topeng kata laluan
+Watak yang menutup kata laluan. Biarkan kosong untuk lebih keselamatan.
+Keluar dari shell jika berjalan pada subshell
+Tidak boleh membunuh tempurung ibu!
+Tidak boleh log keluar daripada subkulit.
+Fail tidak dinyatakan. Keluar dari shell...
+Tetapan untuk skrin percikan ini tersedia di sini.
+Warna bar kemajuan
+Membuka tetapan penyelamat skrin
+Membuka tetapan percikan
+Menyenaraikan pembolehubah UESH yang tersedia
+Lokasi teks kemajuan
+Pilih lokasi teks kemajuan pilihan anda.
+Anda hanya boleh menulis nombor.
+Tekan "q" untuk keluar.
+Memuat turun nama...
+Disebabkan oleh kesukaran teknikal, kami tidak dapat menyenaraikan sifat penyesuai pada sistem Unix.
+Mendayakan mod nyahpepijat
+Gesaan untuk hujah
+Dayakan Mod Hitam dan Putih
+Menjadikan disko hitam dan putih. Benar-benar akan menyakitkan mata anda jika terlalu pantas, jadi tidak disyorkan jika anda mengalami rampasan imej pantas.
+Nampaknya anda menjalankan versi yang tidak disokong. Sangat dinasihatkan untuk tidak menggunakan versi ini.
+Muatkan Warna Semasa
+Warna pilihan alternatif
+Pengguna mengira komen suka atau benci
+Berapa ramai pengguna untuk berada dalam bilik komen cinta atau benci?
+Menyenaraikan bahasa yang tersedia
+Bahasa yang tersedia:
+Argumen baris arahan:
+Argumen baris arahan pra-but:
+Membuka dokumentasi API mod untuk struktur kod sumber dalam bentuk terkininya

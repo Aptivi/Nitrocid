@@ -983,3 +983,675 @@ Nusqawlıq betin oqw üşin kez kelgen perneni basıñız ...
 Bul nusqawlıq bet jumıs üşin qajet:
 Qolmen jasalğan bet {0} tabılmadı.
 Mod nusqawlığı
+Qoljetimdi yadro ​​argwmentteri:
+Ayaqtasañız, «q» tüymesin basıñız.
+Birneşe yadro ​​argwmentterin bos orınsız ütirmen bölwge boladı, mısalı:
+Birneşe engizilgen pärmenderdi bos orındar bar qos nüktelermen bölwge boladı, mısalı:
+Suralğan {0} argwmenti tabılmadı.
+Argwmenttegi qalpına keltirilmeytin qate:
+SHA512 kömegimen joldı şïfrlaydı
+SHA384 kömegimen joldı şïfrlaydı
+SHA256 kömegimen joldı şïfrlaydı
+SHA1 kömegimen joldı şïfrlaydı
+MD5 kömegimen joldı şïfrlaydı
+qurastırwşı qay jerde boladı
+Mod böligi eşteñe emes.
+Qawipsiz rejïmde rejïmderdi toqtatwğa ruqsat etilmeydi.
+Mod qazirdiñ özinde iske qosıldı!
+Mod äli bastalğan joq!
+Pärmendi qoldanw:
+Bölşek fayl atawı:
+Bölşek fayl jolı:
+Ékran saqtağıştı iske qosw äreketi kezindegi qate:
+Jol türi jaramsız.
+Jaramsız yadro ​​jolı türi.
+Aldıñğı jüktew sätsiz ayaqtaldı
+JSON öñdegişi äli fayl ağının aşpadı.
+JSON faylınıñ işindegi sïpat tabılmadı.
+Joyılğan mülik.
+JSON faylınıñ soñına jaña sïpattı qosadı
+JSON faylınan sïpattı joyadı
+JSON qabığınan şığadı
+Özgeristerdi saqtamay JSON qabığınan şığadı
+JSON faylın saqtaydı
+JSON qabığın aşadı
+JSON faylın basıp şığaradı
+Kelesi rampa aralığı
+Ramp üşin 255 tüsti qoldawdı iske qosadı.
+Ramp üşin şınayı tüsti qoldawdı iske qosadı.
+Kelesi rampanı toltırmas burın qanşa mïllïsekwnd kütw kerek?
+Xabarlandırw taqırıbınıñ tüsi
+Xabarlandırw sïpattamasınıñ tüsi
+Xabarlandırwdıñ orındalw tüsi
+Sätsizdik twralı xabarlandırw tüsi
+Suraqtıñ tüsi
+Sättilik tüsi
+Paydalanwşı dollarınıñ tüsi
+Uştıñ tüsi
+Bölgiş mätin tüsi
+Bölgiş tüsi
+Tizim taqırıbınıñ tüsi
+Damw twralı eskertw tüsi
+Saxnalıq waqıt tüsi
+Progress tüsi
+Artqı opcïya tüsi
+Xabarlandırw şekarasın sızıñız
+Xabarlamanı şekaramen jabadı.
+Modtı üylesimdi nusqağa jañartw üşin mod jetkizwşisine xabarlasıñız.
+Tömen basımdıqtı jïek tüsi
+Ortaşa basımdılıq jïek tüsi
+Joğarı basımdılıq jïek tüsi
+Resïverdi tekserw üşin orındalw barısı twralı xabarlandırw jiberedi
+Tüs döñgelegin tekseredi
+Jergilikti yadro ​​waqıtın körsetedi
+Jergilikti yadro ​​künin körsetedi
+Jergilikti yadro ​​küni men waqıtın körsetedi
+UTC yadrosınıñ waqıtın körsetedi
+UTC yadrosınıñ künin körsetedi
+UTC yadrosınıñ küni men waqıtın körsetedi
+MOTD jolı
+MAL jolı
+MOTD mätindik faylı qanday fayl? Mätindik faylğa absolyutti joldı jazıñız.
+MAL mätindik faylı qay fayl? Mätindik faylğa absolyutti joldı jazıñız.
+Qara tizimge engizilgen modter
+Iske qosw kezinde iske qosılmaytın modwlderdiñ fayl atawların jazıñız. Ayaqtağan kezde «q» dep jazıñız. Bar rejïmdi joyu üşin joldıñ janına mïnws belgisin jazıñız.
+{0} modı qara tizimge engizilgen.
+Barlıq modterdi qayta jükteydi
+Qara tizimge mod qosadı
+Modtı qara tizimnen joyadı
+UTC boyınşa waqıt pen kün: {0}
+Körsetilgen JSON qabıq pärmeni tabılmadı.
+Jüktew kezinde qoldanba twralı aqparattı körsetiñiz
+Pärmen jolı argwmentterin taldaw
+Kezeñniñ ayaqtalw waqıtın körsetiñiz
+Jüktew kezinde yadro ​​modïfïkacïyaların bastañız
+Jüyege kirw aldında ağımdağı waqıttı körsetiñiz
+Jüktew kezinde kez kelgen aqaw twralı xabarlañız
+Jüktew kezinde qoldanba twralı qısqaşa aqparattı körsetedi.
+Jüktew kezinde pärmen jolı argwmentterin taldaydı.
+Kezeñdi ayaqtaw üşin yadroğa qanşa waqıt ketkenin körsetedi.
+Jüktew kezinde yadro ​​modïfïkacïyaların avtomattı türde bastañız.
+Jüyege kirer aldında ağımdağı waqıttı, waqıt beldewin jäne kündi körsetedi.
+Yadronı jüktew kezinde kişigirim aqawlıq orın alsa, bul twralı paydalanwşığa xabarlaydı.
+Paydalanwşı atın suraw stïli
+Qupïya söz suraw stïli
+Jüyege kirw kezinde MAL körsetiñiz
+Jüyege kirw nusqawınıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+Qupïya söz surawıñız qalay bolğanın jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+Jüyege kirw ékranın körsetkennen keyin künniñ xabarlamasın körsetedi.
+Sınaq Shell şaqırw stïli
+JSON Shell şaqırw stïli
+Ïnekcïyalıq pärmenderdi tekserw
+Yadro qabığınıñ basındağı engizilgen pärmenderdi zertteydi.
+Tizimde fayl mälimetterin körsetw
+Fayldardı tizimdew kezinde qısqaşa fayl mälimetterin körsetedi
+FTP tiziminde fayl mälimetterin körsetw
+FTP üşin paydalanwşı atın suraw stïli
+FTP üşin qupïya söz suraw stïli
+Birinşi FTP profïlin paydalanıñız
+FTP jıldam terwge jaña qosılımdardı qosıñız
+Qawipsiz FTP sertïfïkattarın tekserip köriñiz
+Qosılımda FTP MOTD körsetiñiz
+Ärqaşan jaramsız FTP sertïfïkattarın qabıldañız
+Qaşıqtağı katalogtardı tizimdew kezinde FTP faylınıñ mälimetterin körsetedi.
+FTP jelisine qosılw üşin birinşi FTP profïlin paydalanadı.
+Qosılğan bolsa, FTP jıldam terwge jaña qosılım qosadı.
+FTP sertïfïkattarın tekserwge tırısadı. Onı öşirw usınılmaydı.
+Jüyege kirw kezinde künniñ FTP xabarlamasın körsetedi.
+Ärqaşan jaramsız FTP sertïfïkattarın qabıldañız. Onı qosw usınılmaydı, sebebi ol qawipsizdikke qawip töndirwi mümkin.
+Poştağa arnalğan paydalanwşı atın suraw stïli
+Poşta üşin qupïya söz suraw stïli
+Poştağa arnalğan IMAP şaqırw stïli
+Poştağa arnalğan SMTP şaqırw stïli
+Poşta serverin avtomattı türde anıqtaw
+Poştanı tüzetwdi qosıñız
+Jaña poşta xabarları twralı xabarlañız
+Poştağa arnalğan GPG qupïya sözin suraw stïli
+IMAP pïng aralığın jiberw
+SMTP pïng aralığın jiberw
+Poşta mätininiñ pişimi
+IMAP server surawınıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+SMTP server surawınıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+Berilgen mekenjay negizinde poşta serverin avtomattı türde anıqtaw.
+Poşta serverin jöndewdi qosadı.
+Kez kelgen jaña poşta xabarları twralı xabarlaydı.
+GPG qupïya söz surawınıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+IMAP pïngin jiberw üşin qanşa mïllïsekwnd qajet?
+SMTP pïngin jiberw üşin qanşa mïllïsekwnd qajet?
+Poşta mätininiñ qalay körsetiletinin basqaradı.
+Qarapayım mätin
+Ağındı mätin
+HTML mätini
+Jetildirilgen mätin
+Qısılğan pişimdelgen mätin
+Bay mätin
+Iske qosw kezinde qaşıqtan jöndewdi avtomattı türde bastañız
+Qaşıqtan jöndew xabarınıñ pişimi
+Qaşıqtan jöndewdi jüktew kezinde iske qoswdı qalasañız, onı qosıñız.
+Qaşıqtağı jöndew xabarınıñ pişimin körsetedi. atı üşin {0}, xabar üşin {1}.
+RSS arnasınıñ URL suraw stïli
+RSS arnasın avtomattı jañartw
+RSS arnasınıñ avtomattı jañartw aralığı
+RSS arna serveriniñ surawı qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+RSS arnasın jañartw üşin qanşa mïllïsekwnd qajet?
+SFTP tiziminde fayl mälimetterin körsetw
+SFTP üşin paydalanwşı atı suraw stïli
+SFTP jıldam terwge jaña qosılımdardı qosıñız
+Qaşıqtağı katalogtardı tizimdew kezinde SFTP faylınıñ mälimetterin körsetedi.
+Qosılğan bolsa, SFTP jıldam terwge jaña qosılım qosadı.
+Pïng kütw waqıtı
+Adapter twralı tolıq aqparattı körsetiñiz
+Jalpı jeli aqparatın körsetw
+Payızdıq mätindi jüktep alıñız
+Payızdıq mätindi jüktep salw
+Kütw waqıtın jarïyalamas burın qanşa mïllïsekwnd kütw kerek?
+Paket aqparatı sïyaqtı keñ adapter aqparatın basıp şığaradı.
+Jeli twralı jalpı aqparattı körsetedi.
+Jüktep salwdıñ payızdıq mätini qalay bolğanın jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı. Jüktep salınğan ölşem üşin {0}, maqsattı ölşem üşin {1}, payız üşin {2}.
+Jüktep alw payızınıñ mätini qalay bolğanın jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı. Jüktep alınğan ölşem üşin {0}, maqsattı ölşem üşin {1}, payız üşin {2}.
+Qulıptawdan keyin qupïya sözdi surañız
+Ékrandı qulıptağannan keyin qupïya sözdi surañız
+Eñ az qızıl tüs deñgeyi
+Eñ az jasıl tüs deñgeyi
+Eñ tömengi kök tüs deñgeyi
+Eñ tömengi tüs deñgeyi
+Eñ joğarı qızıl tüs deñgeyi
+Jasıl tüstiñ maksïmaldı deñgeyi
+Maksïmaldı kök tüs deñgeyi
+Maksïmaldı tüs deñgeyi
+Eñ az qızıl tüs deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Eñ az jasıl tüs deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Eñ tömengi kök tüs deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Eñ tömengi tüs deñgeyi. Eñ az qabıldanğan män 0 jäne eñ joğarı qabıldanğan män 255 tüs üşin 255 nemese 16 tüs üşin 16.
+Eñ joğarı qızıl tüs deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Jasıl tüstiñ maksïmaldı deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Maksïmaldı kök tüs deñgeyi. Eñ az qabıldanğan män – 0, al eñ köp qabıldanğan män – 255.
+Maksïmaldı tüs deñgeyi. Eñ az qabıldanğan män 0 jäne eñ joğarı qabıldanğan män 255 tüs üşin 255 nemese 16 tüs üşin 16.
+Aldıñğı fon tüsi
+Sızıq tañba
+Sızıq qurwğa arnalğan tañba. Tek bir tañbanı engizwdi umıtpañız.
+Sağat jolağı üşin joğarğı sol jaq burıştağı tañbası
+Mïnwt jolağı üşin joğarğı sol jaq burıştağı tañbası
+Sekwndtar jolağı üşin joğarğı sol jaq burıştağı tañba
+Sağat jolağı üşin joğarğı oñ jaq burıştağı tañbası
+Mïnwt jolağı üşin joğarğı oñ jaq burıştağı tañba
+Sekwnd jolağı üşin joğarğı oñ jaq burıştağı tañba
+Sağat jolağı üşin tömengi sol jaq burıştağı tañbası
+Mïnwt jolağı üşin tömengi sol jaq burıştağı tañba
+Tömengi sol jaq burıştağı tañba sekwndtar jolağı üşin
+Sağat jolağı üşin tömengi oñ jaq burıştağı tañba
+Mïnwt jolağı üşin tömengi oñ jaq burıştağı tañba
+Tömengi oñ jaq burıştağı tañba sekwndtar jolağı üşin
+Sağat jolağı üşin joğarğı jaqtaw tañbası
+Mïnwt jolağı üşin joğarğı jaqtaw tañbası
+Sekwnd jolağı üşin joğarğı jaqtaw tañbası
+Sağat jolağı üşin tömengi jaqtaw tañbası
+Mïnwt jolağı üşin tömengi jaqtaw tañbası
+Jaqtaw tañbasın sekwndtar jolağı üşin tömendetiñiz
+Sağat jolağı üşin jaqtawdıñ sol jaq tañbası
+Mïnwt jolağı üşin jaqtawdıñ sol jaq tañbası
+Sekwndtar jolağı üşin sol jaqtağı jaqtaw tañbası
+Sağat jolağı üşin oñ jaqtağı jaqtaw tañbası
+Mïnwt jolağı üşin oñ jaqtağı jaqtaw tañbası
+Sekwnd jolağı üşin oñ jaqtağı jaqtaw tañbası
+Sağattarğa arnalğan aqparattıq mätin
+Mïnwttarğa arnalğan aqparattıq mätin
+Aqparattıq mätin sekwndtar
+Sağat boyı eñ az qızıl tüs deñgeyi
+Birneşe sağat boyı jasıl tüstiñ mïnïmaldı deñgeyi
+Sağattarğa arnalğan eñ az kök tüs deñgeyi
+Sağattarğa arnalğan mïnïmaldı tüs deñgeyi
+Sağattıq qızıl tüstiñ maksïmaldı deñgeyi
+Sağattar boyı jasıl tüstiñ maksïmaldı deñgeyi
+Sağattar boyı eñ joğarı kök tüs deñgeyi
+Sağat üşin maksïmaldı tüs deñgeyi
+Mïnwttardağı qızıl tüstiñ mïnïmaldı deñgeyi
+Mïnwttardağı jasıl tüstiñ mïnïmaldı deñgeyi
+Mïnwttarğa arnalğan kök tüstiñ mïnïmaldı deñgeyi
+Mïnwttarğa arnalğan eñ tömengi tüs deñgeyi
+Mïnwttarğa eñ joğarı qızıl tüs deñgeyi
+Mïnwttarğa arnalğan maksïmaldı jasıl tüs deñgeyi
+Mïnwttarğa arnalğan maksïmaldı kök tüs deñgeyi
+Mïnwttarğa arnalğan maksïmaldı tüs deñgeyi
+Sekwndtar üşin eñ az qızıl tüs deñgeyi
+Sekwndtar üşin eñ az jasıl tüs deñgeyi
+Sekwndtar üşin eñ az kök tüs deñgeyi
+Sekwndtar üşin eñ tömengi tüs deñgeyi
+Sekwndtardağı qızıl tüstiñ maksïmaldı deñgeyi
+Sekwndtardağı jasıl tüstiñ maksïmaldı deñgeyi
+Sekwndtar üşin eñ joğarı kök tüs deñgeyi
+Sekwndtar üşin maksïmaldı tüs deñgeyi
+Joğarğı sol jaq burışqa uqsaytın tañba. Tek bir tañbanı engizwdi umıtpañız.
+Tömengi sol jaq burışqa uqsaytın tañba. Tek bir tañbanı engizwdi umıtpañız.
+Joğarğı jaqtawğa uqsaytın tañba. Tek bir tañbanı engizwdi umıtpañız.
+Tömengi jaqtawğa uqsaytın tañba. Tek bir tañbanı engizwdi umıtpañız.
+Sol jaqtağı jaqtawğa uqsaytın tañba. Tek bir tañbanı engizwdi umıtpañız.
+Durıs kadrğa uqsaytın keyipker. Tek bir tañbanı engizwdi umıtpañız.
+Ağımdağı sağattıñ aqparattıq mätini qalay körsetiletinin jazıñız. 24 sağattıñ ağımdağı sağatı üşin {0}.
+Ağımdağı mïnwttıñ aqparattıq mätini qalay körsetiletinin jazıñız. {0} 60 mïnwttıñ ağımdağı mïnwtına.
+Ağımdağı ekinşi aqparat mätini qalay körsetiletinin jazıñız. 60 sekwndtıñ ağımdağı sekwndı üşin {0}.
+Mätin tüsi
+Rampalıq jolaq üşin joğarğı sol jaq burış tañbası
+Rampalıq jolaq üşin joğarğı oñ jaq burış tañbası
+Rampalıq jolaq üşin tömengi sol jaq burış tañbası
+Rampalıq jolaq üşin tömengi oñ jaq burış tañbası
+Rampalıq jolaq üşin joğarğı jaqtaw tañbası
+Rampalıq jolaq üşin tömengi jaqtaw tañbası
+Rampalıq jolaq üşin sol jaqtağı tañba
+Rampalıq jolaq üşin oñ jaqtaw belgisi
+Bastapqı tüs üşin eñ az qızıl tüs deñgeyi
+Bastapqı tüs üşin mïnïmaldı jasıl tüs deñgeyi
+Bastapqı tüs üşin eñ tömengi kök tüs deñgeyi
+Bastapqı tüs üşin eñ tömengi tüs deñgeyi
+Bastapqı tüs üşin eñ joğarı qızıl tüs deñgeyi
+Bastapqı tüs üşin maksïmaldı jasıl tüs deñgeyi
+Bastapqı tüs üşin eñ joğarı kök tüs deñgeyi
+Bastapqı tüs üşin maksïmaldı tüs deñgeyi
+Soñğı tüs üşin eñ az qızıl tüs deñgeyi
+Soñğı tüs üşin mïnïmaldı jasıl tüs deñgeyi
+Soñğı tüs üşin eñ tömengi kök tüs deñgeyi
+Soñğı tüs üşin eñ tömengi tüs deñgeyi
+Soñğı tüs üşin eñ joğarı qızıl tüs deñgeyi
+Soñğı tüs üşin maksïmaldı jasıl tüs deñgeyi
+Soñğı tüs üşin maksïmaldı kök tüs deñgeyi
+Soñğı tüs üşin maksïmaldı tüs deñgeyi
+Şeşwşi mïnïmaldı sanı
+Şeşwşi maksïmaldı sanı
+Şeşwşi şow kirisi
+Xabarlandırw jïegi üşin joğarğı sol jaq burış tañbası
+Xabarlandırw şekarasınıñ joğarğı oñ jaq burışındağı tañbası
+Xabarlandırw jïegi üşin tömengi sol jaq burış tañbası
+Xabarlandırw jïegi üşin tömengi oñ jaq burış tañbası
+Xabarlandırw jïegi üşin joğarğı jaqtaw tañbası
+Xabarlandırw jïegi üşin tömengi jaqtaw tañbası
+Xabarlandırw jïegi üşin jaqtawdıñ sol jaq tañbası
+Xabarlandırw jïegi üşin oñ jaqtaw tañbası
+Qolmen bet aqparat stïli
+Engizw şaqırwında ne jazılğanın körsetw kerek pe.
+Tañdaw üşin eñ az san qanday?
+Tañdawğa bolatın eñ köp san qanday?
+Öziñizdiñ bet aqparatıñızdıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı. Qolmen taqırıp üşin {0}, tüzetw üşin {1}.
+{0} sïpatı eşbir modwlde tabılmadı.
+Bul bölimde jalpı ékran saqtağış parametrleri tizimi berilgen. Jeke ékran saqtağış parametrleri üşin "Parametrler" tarmağınan şığıp, Ékran saqtağış parametrlerin aşıñız.
+Tüs döñgelegin şınayı tüs rejïminde bastañız
+Körsetilse, ol toltırğış qoldawımen teñşelgen iske qosw bannerin körsetedi. Siz yadro ​​nusqası üşin {0} paydalana alasız.
+Ay atawların, küntizbeni jäne t.b. özgertw üşin qazirgi tildiñ qay nusqası qoldanıladı?
+255 tüsti qoldawdı iske qosadı.
+Şınayı tüs qoldawın iske qosadı.
+Söz {0}-jolda joyıldı.
+Jol {0}-jolda awıstırıldı.
+{0} jol nömiri joyıldı.
+Ruqsat etilmegen xabarlamalardı basw
+Lïstïng fwnkcïyası ruqsat etilmegen qaltanı aşwğa ärekettense, titirkendirgiş xabardı jasıradı
+FTP serveriniñ aqparatı
+Server mekenjayı:
+Server portı:
+Server türi:
+Server jüyesiniñ türi:
+Serverdi şïfrlaw rejïmi:
+Server derekterine qosılw türi:
+Server jüyesi:
+Serverdi jüktep alw derekteriniñ türi:
+Server jüktep salw derekteriniñ türi:
+Bul äreketti orındamas burın serverge qosılwıñız kerek.
+Xéşteletin qaşıqtağı fayldı engiziñiz.
+Xéşteletin qaşıqtağı katalogtı engiziñiz.
+Qaşıqtağı katalogtı engiziñiz.
+FTP üşin rekwrsïvti xéştew
+Katalogtı rekwrsïvti xéştew kerek pe. Barlıq FTP serverleri munı qoldamaytının eskeriñiz.
+Processordıñ sağat jıldamdığı:
+SSE2 processorın qoldaw:
+Processorlardıñ jalpı sanı:
+Dïsk ölşemi:
+Jalpı jadı:
+Grafïkalıq karta:
+Dïsk ülgisi:
+Bir bettegi élektrondıq xattardıñ maksïmaldı sanı
+Qazirgi tildiñ mädenïeti
+Eger siz durıs bölimdi aşqanıñızğa senimdi bolsañız, mına xabarlamanı tekseriñiz:
+Ärtürli parametrler...
+Tüster parametrleri...
+FTP serveriniñ pärmenin orındaydı
+POP3 server mekenjayın jäne porttı engiziñiz (<mekenjay> nemese <adres>:[port]):
+Poştağa arnalğan POP3 suraw stïli
+POP3 pïng aralığın jiberw
+POP3 server surawınıñ qalay bolwın qalaytınıñızdı jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı.
+POP3 pïngin jiberw üşin qanşa mïllïsekwnd qajet?
+POP3 paydalanıñız
+POP3 paydalanw kerek pe. Bunı öşirw SMTP paydalanadı.
+CRC32 kömegimen joldı şïfrlaydı
+Poşta klïentin aşadı
+jiberilgen poşta...
+Bul ékran saqtağışınıñ parametrleri osı jerde qoljetimdi.
+Kesteniñ fwnkcïonaldığın tekseredi
+Körsetilgen joldı öñdeydi
+Fayldıñ soñına jaña joldardı qosadı
+Fayldıñ soñına qosqıñız keletin mätindi engiziñiz. Ayaqtağan kezde, öz jolına «EOF» dep jazıñız.
+Xost atawı
+Paydalanwşı atı
+Derekter türi
+Kodtaw
+Şïfrlaw
+Protokoldar
+Poştanı tasımaldaw barısın körsetw
+Poştanı tasımaldaw barısı
+Poştanı tasımaldaw barısı (bir ret)
+Qosılğan bolsa, poşta qabığı poştanı jüktep alw kezinde qanşa bayt jiberilgenin körsetedi.
+Poştanı tasımaldawdıñ orındalw mäneri qalay bolwı kerek ekenin jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı. Tasımaldanğan ölşem üşin {0} jäne jalpı ölşem üşin {1}.
+Poştanı tasımaldawdıñ orındalw mäneri qalay bolwı kerek ekenin jazıñız. Ädepki mänerdi paydalanw üşin bos qaldırıñız. Toltırğıştar taldanadı. Tasımaldanğan ölşem üşin {0}.
+Waqıt beldewi:
+Bügin {0}
+Ağımdağı waqıt: {0}
+Kesteni bölgiş tüsi
+Keste taqırıbınıñ tüsi
+Keste mäniniñ tüsi
+Mümkin jawaptar
+Mod faylı körsetilmegen.
+Ornatılğan rejïmdi ornatw äreketi. Mod jañartılwda...
+Ornatw sätsiz ayaqtaldı
+Berilgen mod faylı üylesimsiz.
+üşin joyu orındalmadı
+URL mekenjayın aşadı
+Fayl mazmunın basıp şığarwda jol nömirlerin basıp şığarw
+\"Cat\" pärmeni fayldıñ jol nömirlerin basıp şığaradı.
+Translïteracïyalanğan nusqası
+Awdarılğan nusqası
+Barlıq xabarlandırwlardı qabıldamaydı
+Jüktep alınwda...
+Jüktep salınwda...
+Jüktep alw barısı twralı xabarlandırwdı körsetw
+Jüktep salw barısı twralı xabarlandırwdı körsetw
+Jüktep alw barısın körsetetin xabarlandırwdı körsetedi.
+Jüktep salw barısın körsetetin xabarlandırwdı körsetedi.
+Awdarılatın joldıñ KS reswrstarında bar-joğın tekseredi
+Jol lokalïzacïya reswrstarında tabıldı.
+Lokalïzacïya reswrstarında jol tabılmadı.
+Yadronı tınış bastaydı
+Kelesi kirwde iske qosw pärmenin engizedi
+Barlıq rejïmderdi öşirip, yadronı qawipsiz rejïmde iske qosadı
+Qawipsiz rejïm sïyaqtı, sonımen qatar köp paydalanwşını jäne keybir teñşewdi öşiredi
+Argwmentter jetkiliksiz boldı.
+Rampalıq jolaq üşin joğarğı sol jaq burıştıñ tüsi
+Rampalıq jolaq üşin joğarğı oñ jaq burıştıñ tüsi
+Rampalıq jolaq üşin tömengi sol jaq burış tüsi
+Rampalıq jolaq üşin tömengi oñ jaq burış tüsi
+Rampanıñ üstiñgi jaqtawınıñ tüsi
+Rampalıq jolaq üşin tömengi jaqtaw tüsi
+Rampanıñ sol jaq jaqtawınıñ tüsi
+Rampalıq jolaq üşin oñ jaqtaw tüsi
+Rampalıq jolaq üşin jïek tüsterin paydalanıñız
+Rampalıq jolaq üşin jïek tüsterin paydalanıñız. Öşirilgen bolsa, sur jolaq payda boladı.
+HTTP qabığın bastaydı
+HTTP qabığınan şığıp, yadroğa oraladı
+HTTP saytın ornatadı. Jaramdı URI bolwı kerek.
+Körsetilgen surawdı paydalanıp HTTP serverinen jawaptı aladı
+HTTP serverinen mazmundı joyadı
+HTTP qabığında qate orın aldı:
+HTTP xabarı: suralğan {0} pärmeni tabılmadı. HTTP qabığında körsetilgen qol jetimdi pärmender tizimin «anıqtama» böliminen qarañız.
+Körsetilgen surawdı paydalanıp HTTP serverinen joldı aladı
+{0} alınwda...
+Sayttıñ URI pişimi jaramsız.
+Sayttı ornatw
+Tüster qayta iske qoswdı qajet etpeydi, biraq parametrlerdiñ köpşiligi qayta iske qoswdı qajet etedi.
+"{0}" argwmentine kömek joq.
+Keşirim suraw üşin jek köretin pikirlerde A tüymesin basıñız. Alğıs aytw üşin maxabbat pikirlerinde T tüymesin basıñız. Oyınnan şığw üşin Q tüymesin basıñız.
+Siz jek köretin pikir üşin keşirim suradıñız! Öte jaqsı!
+Maxabbat pikiri üşin keşirim suradım. Jetkilikti jaqsı emes.
+Siz jäy ğana jek köretin pikiri üşin xeterge alğıs ayttıñız!
+SpeedPress üşin ädepki qïındıq
+SpeedPress üşin perneni basw kütw waqıtı
+Qalağan qïındıqtı tañdañız.
+Kütw bitkenge deyin perneni basw üşin qanşa mïllïsekwnd kütw kerek? (Arnawlı qïındıqta)
+Turaqtı tirkester arqılı sözdi nemese söz tirkesin basqa sözben awıstıradı
+Turaqtı söz tirkesterin paydalanıp, joldağı sözdi nemese söz tirkesin basqa sözben awıstıradı
+Turaqtı örnekterdi paydalanıp körsetilgen joldağı nemese barlıq joldardağı sözdi suraydı
+Parametrdi tabıñız
+Neni izdegiñiz keletinin jazıñız.
+Eşteñe tabılmadı. Parametrdi durıs jazğanıñızğa köz jetkiziñiz.
+Jergilikti fayldı murağatqa jïnaydı
+Eşteñeni jïnay almaydı.
+Jawap sïpattaması
+Xost portı
+Osı bağdarlamalıq quraldı paydalanw şarttarı men şarttarı twralı qosımşa aqparat alw üşin mına saytqa kiriñiz
+Ädepki tañdaw şığıs türi
+Aynımalı mänderdiñ durıs jazılğanın körw üşin barlıq KS parametrlerin tekseredi
+Bul konfïgwracïya jazbalarında jaramsız aynımalılar nemese nömirler bar jäne olardı tüzetw qajet:
+{0} faylı tabılmadı
+Berilgen mändermen aynımalı massïv jasaydı
+Baratın parametrdiñ nömirin jazıñız. Kez kelgen basqa keyipker keri qaytwdı bildiredi.
+Barlıq lokalïzacïya mätin jolınıñ nömirleriniñ barlığı birdey ekenin tekserw üşin tekseredi
+Joldıñ säykessizdigi
+Paydalanwşı nömirin engiziñiz.
+Anonïmdi paydalanwşılardı qosıñız
+Mügedek paydalanwşılardı qosıñız
+Tizimdegi anonïmdi paydalanwşılardı qamtïdı
+Tizimge mümkindigi şektewli paydalanwşılardı qosadı
+Tizimdi surıptañız
+Fayldıq jüye tizimin käsibï türde surıptaydı.
+Tañdaw tañdawın qamtamasız etedi
+Shell komandaları orındalmadı!!!
+Jüyege kirwde soñğı RSS taqırıbın körsetiñiz
+RSS taqırıbınıñ URL mekenjayı
+Ärbir kirw, ol tañdalğan taqırıptıñ URL mekenjayınan soñğı RSS taqırıbın körsetedi.
+Soñğı taqırıptı körsetw kezinde paydalanılatın RSS taqırıbınıñ URL mekenjayı. Bul ädette sizdiñ süyikti arnañız.
+Soñğı jañalıqtar:
+Soñğı jañalıqtardı alw mümkin bolmadı.
+Tañdalğan opcïya tüsi
+Yadro qatesi boyınşa stek izin körsetw
+Qanday da bir yadro ​​qatesi bolsa, stek izin konsolge basıp şığarw nemese basıp şığarwdı tañdañız.
+Modtı jüktewge boladı, biraq bul eskertwler mod jumısına äser etwi mümkin:
+Ékran saqtağıştı jüktewge boladı, biraq bul eskertwler ékran saqtağışınıñ jumıs istew jolına äser etwi mümkin:
+Parametrlerdi basqaşa saqtaw
+Parametrlerdi mına jerden jükteñiz
+Ağımdağı yadro ​​parametrlerin qayda saqtağıñız keledi?
+Bar fayldıñ üstine yadro ​​parametrlerin saqtaw mümkin emes.
+Ağımdağı yadro ​​parametrlerin qaydan jüktegiñiz keledi?
+Awdarılatın joldardıñ KS reswrstarında bar-joğın tekserw üşin tekseredi
+Eki nemese odan da köp mätindik fayldardı şığıs faylına biriktiredi.
+Fayldardı biriktirw mümkin bolmadı.
+RSS arnasın alw kütw waqıtı
+RSS arnasın alw kütw waqıtı bitkenşe qanşa mïllïsekwnd kütw kerek?
+Jäşikterdi toltırıñız
+Qoraptı tutastay salamız ba, älde tek şekaranı salamız ba?
+Mïllïsekwndtağı kezeñ kidirisi
+Kelesi kezeñdi sızw aldında qanşa mïllïsekwnd kütw kerek?
+Kelesi rampanıñ şirik aralığı
+Kelesi rampanıñ bir uşın şirip ketkenşe qanşa mïllïsekwnd kütw kerek?
+Tüzetw kvotasın tekseriñiz
+Otladçïkke jazbas burın otladka jüyesi kvota bar-joğın tekserw kerek pe?
+Uyqığa şınımen qanşa mïllïsekwnd qajet boldı?
+Oqïğa qosılmadı.
+Oqïğa joyılmadı.
+Oqïğa qosw üşin dälelder jetkiliksiz.
+Oqïğanı joyu üşin dälelder jetkiliksiz.
+Oqïğalardı manïpwlyacïyalaw üşin jetkilikti dälelder joq.
+Eske salğıştı qosw nemese joyu mümkin bolmadı.
+Eske salğıştı qosw nemese joyu üşin jetkilikti dälelder joq.
+Eske salğıştı öñdew üşin jetkilikti dälelder joq.
+Atawsız eske salğış
+Atawsız oqïğa
+Endi bul oqïğa küni!
+Munı jiberip almañız!
+Jaramsız äreket.
+Qarapayım sekwndomer
+Bastaw nemese toqtatw
+Aynaq
+Qalpına keltirw
+Qarapayım taymer
+Keri keri sanawdı bastañız
+Aralıq ornatw
+Körsetilgen kütw waqıtı sandıq emes.
+Kütw waqıtın mïllïsekwndpen körsetiñiz
+Barlıq oqïğalardı jäne/nemese eske salğıştardı joyqın türde saqtañız
+Qosılğan bolsa, küntizbe pärmenin paydalanıp, olardıñ barlığın saqtaw aldında barlıq oqïğalardı jäne/nemese eske salğıştardı joyadı.
+FTP jiberw äreketin qaytalañız
+FTP qosılımınıñ kütw waqıtı
+FTP derekter qosılımınıñ kütw waqıtı
+FTP IP nusqaları
+Jüktep salwdı qanşa ret tekserw kerek jäne jüktep alw tutastay sätsiz ayaqtalmay turıp, tekserw sätsiz ayaqtalsa, jüktep alıp, qaytalap köriñiz?
+FTP qosılımınıñ kütw waqıtı bitkenşe qanşa mïllïsekwnd kütw kerek?
+FTP derekter qosılımınıñ kütw waqıtı bitkenşe qanşa mïllïsekwnd kütw kerek?
+FTP serveri qoldaytın jäne FTP klïenti paydalanatın Ïnternet protokolınıñ nusqasın tañdañız.
+RPC iske qosılğan kezde iske qosw äreketi.
+RGB tüs döñgelegi üşin joğarğı sol jaq burış tañbası
+RGB tüs döñgelegi üşin joğarğı oñ jaq burış tañbası
+RGB tüs döñgelegi üşin tömengi sol jaq burış tañbası
+RGB tüs döñgelegi üşin tömengi oñ jaq burış tañbası
+RGB tüs döñgelegi üşin joğarğı jaqtaw tañbası
+RGB tüs döñgelegi üşin tömengi jaqtaw tañbası
+RGB tüs döñgelegi üşin jaqtawdıñ sol jaq tañbası
+RGB tüs döñgelegi üşin oñ jaqtaw belgisi
+Körsetilgen katalogta nemese ağımdağı katalogta fayldı tabadı
+Joldıñ soñın ağımdağı platforma pişimine nemese körsetilgen teñşeletin pişimge türlendiredi
+Qaltadağı jalpı ölşem:
+Tizimde jalpı ölşemdi körsetw
+Qosılğan bolsa, konfïgwracïyağa säykes qalta ölşemderin eseptew ädisine baylanıstı tizimdegi jalpı qalta ölşemin körsetedi.
+Siz jañarğansız!
+JSON qabığı üşin ädepki JSON pişimi
+Saqtaw üşin JSON qabığı üşin ädepki JSON pişimdewin (ädemilengen nemese kişireytilgen) tañdaydı.
+Jañartw sätti jükteldi!
+Jañartwlardı avtomattı türde jüktep alıñız
+Qanday da bir jañartw bolsa, yadro ​​onı avtomattı türde jüktep aladı.
+Feyerverktiñ jarılıs radïwsı
+Ot janğan kezdegi otşaşw üşin jarılıs radïwsı qanşa bloktı (10-ğa deyin) quraydı?
+Bul pärmende onıñ jumısın özgertetin tömendegi qosqıştar bar:
+Basıp şığarılatın joldan keyingi jol nömirlerin basıp şığaradı
+Jol nömirlerin basıp şığarwdı boldırmaydı
+Ärqaşan translïteracïyalanğan nusqasın paydalanıñız
+Ärqaşan awdarılğan nusqanı paydalanıñız
+Tildi küştep awıstırw
+Jawaptıñ birneşe tañbadan turwı mümkin ekenin körsetiñiz
+Jawap tek bir tañbadan turwı mümkin ekenin körsetiñiz
+Suraq pen jawaptardı bir jolğa basıp şığarıñız
+Suraq pen jawaptardı eki jolğa basıp şığarıñız
+Suraq pen jawaptardı zamanawï ädispen basıp şığarıñız
+Suraq pen jawaptardı kestege basıp şığarıñız
+Tizimde fayl mälimetterin körsetedi
+Titirkendirgiş «ruqsat berilmedi» xabarların basadı
+Barlıq waqıt beldewlerin körsetedi
+Oyındı oñay qïındıqpen bastaydı
+Oyındı ortaşa qïındıqta bastaydı
+Oyındı qïın jağdayda bastaydı
+Oyındı öte qïın jağdayda bastaydı
+Oyındı arnayı qïındıqta bastaydı. Mïllïsekwndtağı retteletin kütw waqıtı argwment retinde jazılwı kerek ekenin eskeriñiz.
+Jüye aqparatın körsetedi
+Apparattıq qural twralı aqparattı körsetedi
+Paydalanwşı twralı aqparattı körsetedi
+Künniñ xabarın körsetedi
+Jüyege kirgennen keyingi künniñ xabarlamasın körsetedi
+Barlıq aqparattı körsetedi
+ZIP faylınıñ mazmunın qamtïtın katalogtı jasaydı
+Barlıq qoljetimdi qalalardı körsetedi
+Jıldam qısw
+Qısw joq
+Murağatta negizgi katalog jasamañız
+Kenedegi birlik
+Serverden uyatsız ajıratadı
+Maqsattı joldıñ absolyutti ekenin körsetedi
+JSON faylın saqtay otırıp, onı proceste ädemileydi
+JSON faylın saqtay otırıp, onı proceste kişireytedi
+Mätindik fayldan joldıñ ayaqtalw mänerin aladı
+Barlıq öşirilgen oqïğalardı öşiredi
+Oqïğanı tüzetwdi qosıñız
+Yadro oqïğası jüyesi üşin jöndewdi qosadı
+Figlet şrïfti
+Figgle kitapxanası qoldaytın fïglet qaripin jazıñız. Qosımşa aqparat alw üşin kitapxana qujattamasın qarañız
+{0} paydalanwşı tilin ornatw sätsiz ayaqtaldı.
+Paydalanwşı tilin ornatw üşin qajetti metaderekter faylı joq.
+Paydalanwşı tilin ornatw üşin qajetti metaderekter aqparatı qajetti lokalïzacïyalardı qamtamasız etpeydi.
+{0} paydalanwşı tilin joyu mümkin bolmadı.
+Paydalanwşı tilin joyu üşin qajetti metaderekter faylı joq.
+Paydalanwşı tilin joyu üşin qajetti metaderekter aqparatı qajetti lokalïzacïyalardı qamtamasız etpeydi.
+Ağılşın tiliniñ uzındığı berilgen til tañbalawışınıñ uzındığına säykes kelmeydi.
+Til burınnan bar jäne onı qayta jazw mümkin emes.
+Arnawlı tildi joyu mümkin bolmadı. Ol joq şığar.
+Paydalanwşı tilderin ornatw sätsiz ayaqtaldı.
+Arnawlı tilderdi joyu mümkin bolmadı.
+Arnawlı tilderdi joyu mümkin bolmadı. Qosımşa aqparat alw üşin işki erekşelikti qarañız.
+Äkimşi qupïya sözin jazıñız. Ne istep jatqanıñızdı bilmeyinşe, bul eseptik jazbanı paydalanbağanıñızğa köz jetkiziñiz.
+Äkimşi qupïya sözin jazwıñız kerek.
+Lïcenzïya twralı aqparat
+Tilderiñizdi basqarıñız
+Til tabılmadı nemese faylda jaramsız tañbalar bar.
+Til körsetilmegen.
+Tildi basqarw qawipsiz rejïmde öşirilgen.
+Tildiñ qısqaşa atawı:
+Tildiñ tolıq atawı:
+Translïteracïyalanatın til:
+Arnawlı til:
+Jaña sälemdesw banneri
+Stïldi ékran
+Jaña Figlet-körsetilgen sälemdesw bannerin körsetedi
+Iske qosw kezinde stïldi ékrandı qosadı. Onıñ argwment şaqırwın öşiretinin jäne qabıqşanı aldın ala jüktewdi sınaytının eskeriñiz.
+Splash atawı
+Yadroda iske asırılğan qoljetimdi şaşırawlardıñ atawı.
+Jasalğan ädepki MOTD.
+Jasalğan ädepki MAL.
+Jüye tirkelgisi iske qosıldı
+Paydalanwşılar ïnïcïalïzacïyalandı
+Ruqsattar jükteldi
+Qoş keldiñiz!
+Qaşıqtağı jöndew quralı iske qosılwda...
+Qaşıqtağı otladçïk qosılım qatesi
+Qaşıqtan jöndew qosılımınıñ qatesi twralı xabarlañız
+Qosılğan bolsa, xosttı qaşıqtan jöndew qosılımınıñ qatesi twralı xabarlaw üşin xabarlandırw jüyesin paydalanadı. Äytpese, ädepki konsol jazwın paydalanadı.
+Taymerge arnalğan Figlet şrïfti
+Taymer üşin Figlet qosıñız
+Qosılğan bolsa, taymer üşin fïglet paydalanadı. Figlet qosılğan kezde waqıttı durıs körsetw üşin oğan ülken konsol ékranı qajet ekenin eskeriñiz.
+Jüktewge deyingi pärmen jolı argwmentterin taldaw kezindegi qate: {0}
+Yadronı zawıttıq parametrlerge qaytaradı
+Konsol ölşemin anıqtawdı aynalıp ötedi
+Konsol ölşemin anıqtawdı aynalıp ötip jatqan sïyaqtısız. Kişkentay ékrandarda närseler durıs jumıs istemewi mümkin.
+Jaqsıraq täjirïbe alw üşin osı ékranda bolğan kezde konsol terezesiniñ ölşemin özgertiñiz. Jalğastırw üşin kez kelgen perneni basıñız...
+Konsol durıs jumıs istew üşin tım kişkentay:
+Banner fïglet şrïfti
+Tüs türin jäne Figlet qoldawımen joldı basıp şığarw arqılı konsolge joldı basıp şığaradı
+Pişim jäne Figlet qoldawı bar tüsti türi men joldı basıp şığarw arqılı konsolge joldı basıp şığaradı
+Xabarlamanı birjola joyadı
+Barlıq xabarlardı alwşıdan birjola joyadı
+Xabardı joyudı boldırmaydı
+Alwşıdan barlıq xabarlardı joyudı boldırmaydı
+Joyudı boldırmaw POP3 üşin orındalmağan.
+Kömekke senetin pärmenderdi körsetiñiz
+Qabıq komandalarınıñ kömekke senetinin körsetiñiz
+Mod pärmenderiniñ kömekke senetinin körsetiñiz
+Kömekke senetin bürkenşik attardı körsetiñiz
+Är türli pärmen türlerin körsetw üşin üş sanaw qosqışı arqılı basqarılatın pärmender tiziminde pärmender sanın körsetedi.
+UESH örnekteri orındalğannan keyin pärmenderdi orındaydı
+Şart örnekte tabılmadı.
+{0} şartı üşin {1} argwment qajet. {2} aldı.
+Şarttı ortağa qoyu kerek.
+Şarttı basında qoyu kerek.
+Sïntaksïstik qatege baylanıstı örnekti taldaw qatesi.
+Şarttı qanağattandırw mümkin bolmadı. Qosımşa aqparat mına jerden:
+Qupïya söz maskasınıñ belgisi
+Qupïya sözdi bürkeytin tañba. Qosımşa qawipsizdik üşin bos qaldırıñız.
+Işki qabıqşada jumıs isteytin bolsa, qabıqtan şığadı
+Ana qabığın öltirwge bolmaydı!
+Işki qabıqtan şığw mümkin emes.
+Fayl körsetilmegen. Qabıqtan şığwda...
+Bul ékrannıñ parametrleri osı jerde qol jetimdi.
+Orındalw jolağı tüsi
+Ékran saqtağış parametrlerin aşadı
+Splash parametrlerin aşadı
+Qol jetimdi UESH aynımalılarınıñ tizimi
+Mätinniñ orındalw barısı
+Qalağan orındalw mätininiñ ornın tañdañız.
+Siz tek sandardı jaza alasız.
+Şığw üşin «q» tüymesin basıñız.
+Atawlar jüktep alınwda...
+Texnïkalıq qïındıqtarğa baylanıstı Unix jüyelerindegi adapter sïpattarın tizimdey almaymız.
+Tüzetw rejïmin qosadı
+Argwmentterge şaqırw
+Qara jäne aq rejïmin qosıñız
+Dïskotekanı aq-qara etedi. Eger ol tım jıldam bolsa, köziñizdi qattı zaqımdaydı, sondıqtan jıldam keskinderdi basıp jatsañız, usınılmaydı.
+Qoldaw körsetilmeytin nusqanı iske qosıp jatqan sïyaqtısız. Bul nusqanı paydalanbağan jön.
+Ağımdağı tüsterdi jükteñiz
+Balamalı tüs opcïyası
+Paydalanwşılar maxabbat nemese jek köretin pikirlerdi sanaydı
+Ğaşıqtar nemese jek köretin pikirler bölmesinde qanşa paydalanwşı bolwı kerek?
+Qol jetimdi tilderdi tizimdeydi
+Qoljetimdi tilder:
+Pärmen jolı argwmentteri:
+Aldın ala jüktew pärmen jolı argwmentteri:
+Bastapqı kod qurılımı üşin mod API qujattamasın onıñ eñ ağımdağı pişininde aşadı

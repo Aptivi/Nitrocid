@@ -983,3 +983,675 @@ Ji bo xwendina rûpela manualê, bişkojkê bikirtînin...
 Ev rûpela manual ji bo xebatê hewce dike:
 Rûpela Manual {0} nehat dîtin.
 manual Mod
+Argumanên kernelê yên berdest:
+Heke we qedand "q" bikirtînin.
+Gelek argumanên kernelê dikarin bi kommayên bêyî valahiyê werin veqetandin, mînak:
+Gelek fermanên derzîkirî dikarin bi kolonên bi valahiyê werin veqetandin, mînakî:
+Argumana tê xwestin {0} nayê dîtin.
+Di argumanê de xeletiya ku nayê vegerandin:
+Bi karanîna SHA512 rêzek şîfre dike
+Bi karanîna SHA384 rêzek şîfre dike
+Bi karanîna SHA256 rêzek şîfre dike
+Bi karanîna SHA1 rêzek şîfre dike
+Bi karanîna MD5 rêzek şîfre dike
+ku buildinsaver dê li ku derê be
+Beşa modê ne tiştek e.
+Rawestandina modên li ser moda ewle nayê destûr kirin.
+Mod jixwe dest pê kiriye!
+Mod hîn dest pê nekiriye!
+Bikaranîna fermanê:
+Navê pelê beşê:
+Rêya pelê ya beşê:
+Çewtî dema ku hewl dide ku dîmendera dest pê bike:
+Cureyê rê nederbasdar.
+Cureyê rêça kernelê nederbasdar.
+Boota berê têk çû
+Edîtorê JSON hîna pelê pelê venekiriye.
+Taybetmendiya hundurê pelê JSON nayê dîtin.
+Taybetmendî rakirin.
+Taybetmendiyek nû li dawiya pelê JSON zêde dike
+Taybetmendiyek ji pelê JSON derdixe
+Ji şêlê JSON derdikeve
+Bêyî tomarkirina guhertinan ji şêlê JSON derdikeve
+Pelê JSON xilas dike
+Şela JSON vedike
+Pelê JSON çap dike
+Navbera rampê ya paşîn
+Piştgiriya 255 rengî ji bo Ramp çalak dike.
+Piştgiriya rengê rastîn ji bo Ramp çalak dike.
+Berî dagirtina rampeya din çend milî çirkeyan bisekinin?
+Rengê sernavê agahiyê
+Rengê danasîna ragihandinê
+Rengê pêşkeftina ragihandinê
+Rengê têkçûna ragihandinê
+Rengê pirsê
+Rengê serkeftinê
+Rengê dolarê bikarhêner
+Rengê tîp
+Rengê nivîsa veqetandî
+Rengê veqetandinê
+Rengê sernavê navnîş bike
+Rengê hişyariya pêşveçûnê
+Rengê dema qonaxê
+Rengê pêşveçûnê
+Rengê vebijarka paşîn
+Sînorê ragihandinê xêz bikin
+Daxuyaniyê bi sînor vedigire.
+Bi firoşkarê modê re têkilî daynin da ku modê bi guhertoya lihevhatî nûve bikin.
+Rengê sînorê pêşanî kêm
+Rengê sînorê pêşanî navîn
+Rengê sînorê pêşanî bilind
+Agahdariya pêşveçûnê dişîne da ku wergirê biceribîne
+Çerxa rengan diceribîne
+Dema kernelê ya herêmî nîşan dide
+Dîroka kernelê ya herêmî nîşan dide
+Dîrok û demjimêra kernelê ya herêmî nîşan dide
+Wextê kernel UTC nîşan dide
+Dîroka kernel UTC nîşan dide
+Dîrok û demjimêra kernel UTC nîşan dide
+riya MOTD
+riya MAL
+Kîjan pel pelê nivîsê MOTD ye? Ji pelê nivîsê re rêyek bêkêmasî binivîsin.
+Kîjan pel pela nivîsê MAL e? Ji pelê nivîsê re rêyek bêkêmasî binivîsin.
+Modên lîsteya reş
+Navên pelên modên ku dê di destpêkê de nemeşin binivîsin. Dema ku hûn qedandin, "q" binivîsin. Li kêleka rê nîşanek minus binivîsin ku moda heyî jêbirin.
+Mod {0} di lîsteya reş de ye.
+Hemî moda ji nû ve bar dike
+Modeyek li navnîşa reş zêde dike
+Modek ji navnîşa reş derdixe
+Dem û tarîx bi UTC: {0}
+Fermana şêlê JSON ya diyarkirî nayê dîtin.
+Di dema bootkirinê de agahdariya serîlêdanê nîşan bide
+Argumanên rêzika fermanê parse bikin
+Demên qedandina qonaxê nîşan bidin
+Guherandinên kernelê li ser bootê dest pê bikin
+Berî têketinê dema niha nîşan bide
+Di dema bootkirinê de ji bo xeletiyek agahdar bikin
+Li ser bootê di derheqê serîlêdanê de agahdariya kurt nîşan dide.
+Argumanên rêzika fermanê li ser bootê pars dike.
+Nîşan dide ku kernel çiqas dem girt da ku qonaxek biqedîne.
+Guherandinên kernelê di bootê de bixweber dest pê bikin.
+Berî têketinê dema niha, qada demjimêr û tarîxê nîşan dide.
+Heke di dema bootkirina kernelê de xeletiyek piçûk hebe, bikarhêner li ser wê agahdar dike.
+Şêweya bileziya navê bikarhêner
+Şêweya bilezkirina şîfreyê
+Di têketinê de MAL nîşan bide
+Binivîsin ku hûn çawa dixwazin ku têketina we çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Binivîsin ku hûn dixwazin şîfreya we çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Piştî ku dîmendera têketinê nîşan dide, Peyama Rojê nîşan dide.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Fermanên lêpirsînê derzî kirin
+Di destpêka kernelê de fermanên derzîkirî lêkolîn dike.
+Di navnîşê de hûrguliyên pelê nîşan bide
+Dema ku pelan navnîş dike hûrguliyên pelê yên kurt nîşan dide
+Di navnîşa FTP de hûrguliyên pelê nîşan bide
+Şêweya bileziya navê bikarhêner ji bo FTP
+Ji bo FTP şêwaza bilez a şîfreyê
+Pêşîn profîla FTP bikar bînin
+Têkiliyên nû li lêdana bilez a FTP zêde bikin
+Biceribînin ku sertîfîkayên FTP-ya ewledar rast bikin
+Li ser girêdanê FTP MOTD nîşan bidin
+Her dem sertîfîkayên nederbasdar FTP qebûl bikin
+Dema ku pelrêçên dûr navnîş dike hûrguliyên pelê FTP nîşan dide.
+Ji bo girêdana bi FTP-ê re profîla FTP-ê ya yekem bikar tîne.
+Ger çalak be, pêwendiyek nû li lêdana bilez a FTP zêde dike.
+Hewl dide ku sertîfîkayên FTP-ê rast bike. Rakirina wê nayê pêşniyar kirin.
+Di têketinê de peyama FTP ya rojê nîşan dide.
+Her dem sertîfîkayên nederbasdar FTP qebûl bikin. Vekirina wê nayê pêşniyar kirin ji ber ku dibe ku xetereyên ewlehiyê çêbike.
+Şêweya bileziya navê bikarhêner ji bo nameyê
+Ji bo e-nameyê şêwaza bilez a şîfreyê
+Ji bo e-nameyê şêwaza bilez a IMAP
+Ji bo nameyê şêwaza bilez a SMTP
+Pêşkêşkara nameyê bixweber tespît bike
+Debugkirina e-nameyê çalak bike
+Ji bo peyamên nameya nû agahdar bikin
+Ji bo e-nameyê şêwaza şîfreya şîfreya GPG
+Navbera ping a IMAP-ê bişînin
+Navbera ping a SMTP bişînin
+Forma nivîsê ya e-nameyê
+Binivîsin ka hûn çawa dixwazin alaqeya servera IMAP-a we çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Binivîsin ka hûn çawa dixwazin nameya servera weya SMTP çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Li ser bingeha navnîşana hatî dayîn servera nameyê bixweber kifş bike.
+Debugkirina servera e-nameyê çalak dike.
+Ji bo her peyamên nameya nû we agahdar dike.
+Binivîsin ka hûn dixwazin şîfreya weya GPG çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Çend millisecond ji bo şandina ping IMAP?
+Çend millisecond ji bo şandina ping SMTP?
+Kontrol dike ka dê nivîsa e-nameyê çawa were xuyang kirin.
+Nivîsara sade
+Nivîsa herikî
+Nivîsara HTML
+Nivîsa dewlemendkirî
+Nivîsa dewlemend a pêçandî
+Nivîsa dewlemend
+Di destpêkê de debugkirina ji dûr ve bixweber dest pê bike
+Forma peyama debugkirina dûr
+Ger hûn dixwazin debugkirina ji dûr ve di bootê de dest pê bike, vê yekê çalak bikin.
+Formata peyama debugkirina ji dûr ve diyar dike. {0} ji bo nav, {1} ji bo peyamê.
+Şêweya bilez a URL-ya RSS-ê
+Xweseriya nûvekirina RSS-ê
+Navbera xwarina RSS-ê nûvekirina otomatîkî
+Binivîsin ka hûn çawa dixwazin alaqeya servera weya RSS-ê çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Çend millisecond ji nûvekirina feed RSS?
+Di navnîşa SFTP de hûrguliyên pelê nîşan bide
+Şêweya bileziya navê bikarhêner ji bo SFTP
+Têkiliyên nû li jimareya bilez a SFTP zêde bikin
+Dema ku pelrêçên dûr navnîş dike hûrguliyên pelê SFTP nîşan dide.
+Ger çalak be, pêwendiyek nû li lêdana bilez a SFTP zêde dike.
+Dema ping
+Agahdariya adapterê berfireh nîşan bide
+Agahdariya torê ya giştî nîşan bide
+Nivîsara sedî dakêşin
+Ji sedî nivîsê barkirin
+Çend milî çirkeyan em li bendê bin berî ragihandina dema derbasbûnê?
+Agahdariya berfireh a adapterê, wekî agahdariya pakêtê çap dike.
+Agahdariya gelemperî li ser torê nîşan dide.
+Binivîsin ka hûn dixwazin nivîsa weya ji sedî barkirinê çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin. {0} ji bo mezinahiya barkirî, {1} ji bo mezinahiya armanc, {2} ji bo sedî.
+Binivîsin ka hûn dixwazin nivîsara rêjeya dakêşana we çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin. {0} ji bo mezinahiya dakêşandî, {1} ji bo mezinahiya armanc, {2} ji bo sedî.
+Piştî girtina şîfreyê bipirsin
+Piştî girtina ekranê, şîfreyê bipirsin
+Kêmtirîn asta rengê sor
+Kêmtirîn asta rengê kesk
+Kêmtirîn asta rengê şîn
+Asta rengê herî kêm
+Asta rengê sor ya herî zêde
+Asta rengê kesk ya herî zêde
+Asta rengê şîn a herî zêde
+Asta rengê herî zêde
+Kêmtirîn asta rengê sor. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Kêmtirîn asta rengê kesk. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Kêmtirîn asta rengê şîn. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Asta rengê herî kêm. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 ji bo 255 rengan an 16 ji bo 16 rengan e.
+Asta rengê sor ya herî zêde. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Asta rengê kesk ya herî zêde. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Asta rengê şîn a herî zêde. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 e.
+Asta rengê herî zêde. Nirxa pejirandî ya herî kêm 0 e û nirxa pejirandî ya herî zêde 255 ji bo 255 rengan an 16 ji bo 16 rengan e.
+Rengê pêşîn
+Karaktera rêzê
+Karaktera ku rêzek çêbike. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera goşeya çepê ya jorîn ji bo barê demjimêran
+Karaktera goşeya çepê ya jorîn ji bo barê hûrdemê
+Karaktera goşeya çepê ya jorîn ji bo barê çirkeyan
+Karaktera goşeya rastê ya jorîn ji bo barê demjimêran
+Karaktera goşeya rastê ya jorîn ji bo barê hûrdemê
+Karaktera goşeya rastê ya jorîn ji bo barê çirkeyan
+Karaktera goşeya çepê ya jêrîn ji bo barê demjimêran
+Karaktera goşeya çepê ya jêrîn ji bo barê hûrdemê
+Karaktera goşeya çepê ya jêrîn ji bo barê çirkeyan
+Karaktera goşeya rastê ya jêrîn ji bo barê demjimêran
+Karaktera goşeya rastê ya jêrîn ji bo barê hûrdemê
+Karaktera goşeya rastê ya jêrîn ji bo barê çirkeyan
+Karaktera çarçoweya jorîn ji bo barê demjimêran
+Karaktera çarçoweya jorîn ji bo barê hûrdemê
+Karaktera çarçoweya jorîn ji bo barê çirkeyan
+Karaktera çarçoveya jêrîn ji bo barê demjimêran
+Karaktera çarçoweya jêrîn ji bo barê hûrdemê
+Karaktera çarçoweya jêrîn ji bo barê saniyeyan
+Karaktera çarçoweya çepê ji bo barê demjimêran
+Karaktera çarçoweya çepê ji bo barê hûrdemê
+Karaktera çarçoweya çepê ji bo barê çirkeyan
+Karaktera çarçoweya rast ji bo barê demjimêran
+Karaktera çarçoweya rast ji bo barê hûrdemê
+Karaktera çarçoweya rastê ji bo barê saniyeyan
+Nivîsara agahdariyê bi saetan
+Nivîsara agahdariyê ji bo deqeyan
+Nivîsara agahdariyê ji bo çirkeyan
+Ji bo saetan asta rengê sor ya herî kêm
+Bi saetan asta rengê kesk ya herî kêm
+Ji bo demjimêran asta rengê şîn a herî kêm
+Ji bo saetan asta rengê herî kêm
+Ji bo demjimêran asta rengê sor ya herî zêde
+Asta rengê kesk ya herî zêde bi saetan
+Ji bo demjimêran asta rengê şîn a herî zêde
+Ji bo demjimêran asta rengê herî zêde
+Kêmtirîn asta rengê sor ji bo deqeyan
+Kêmtirîn asta rengê kesk ji bo deqeyan
+Kêmtirîn asta rengê şîn ji bo hûrdem
+Ji bo hûrdeman asta rengê herî kêm
+Ji bo hûrdeman asta rengê sor ya herî zêde
+Ji bo hûrdeman asta rengê kesk ya herî zêde
+Ji bo hûrdeman asta rengê şîn a herî zêde
+Ji bo hûrdeman asta rengê herî zêde
+Kêmtirîn asta rengê sor ji bo seconds
+Kêmtirîn asta rengê kesk ji bo seconds
+Kêmtirîn asta rengê şîn ji bo çirkeyan
+Ji bo çirkeyan asta rengê herî kêm
+Ji bo çirkeyan asta rengê sor ya herî zêde
+Ji bo çirkeyan asta rengê kesk ya herî zêde
+Ji bo çirkeyan asta rengê şîn a herî zêde
+Ji bo çirkeyan asta rengê herî zêde
+Karaktera ku dişibe quncika çepê ya jorîn. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera ku dişibe quncika çepê ya jêrîn. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera ku dişibe çarçoveya jorîn. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera ku dişibe çarçoveya jêrîn. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera ku dişibe çarçoveya çepê. Bawer bikin ku tenê yek karakterek têkevin.
+Karaktera ku dişibe çarçoveya rast. Bawer bikin ku tenê yek karakterek têkevin.
+Binivîsin ka nivîsa agahdariya we ya demjimêra heyî çawa nîşan dide. {0} ji bo saeta heyî ji 24 saetan.
+Binivîsin ka nivîsa agahdariya we ya ji bo hûrdema heyî çawa nîşan dide. {0} ji bo deqeya niha ji 60 hûrdeman.
+Binivîsin ka nivîsa agahdariya we ji bo duyemîn duyemîn çawa nîşan dide. {0} ji bo duyemîn ji 60 çirkeyan.
+Rengê nivîsê
+Karaktera goşeya çepê ya jorîn ji bo bara rampê
+Karaktera goşeya rastê ya jorîn ji bo bara rampê
+Karaktera goşeya çepê ya jêrîn ji bo bara rampê
+Karaktera goşeya rastê ya jêrîn ji bo bara rampê
+Karaktera çarçoweya jorîn ji bo bara rampê
+Karaktera çarçoweya jêrîn ji bo barê rampê
+Karaktera çarçoweya çepê ji bo bara rampê
+Karaktera çarçoveyek rast ji bo bara rampê
+Ji bo rengê destpêkê asta rengê sor ya hindiktirîn
+Ji bo rengê destpêkê asta rengê kesk ya hindiktirîn
+Kêmtirîn asta rengê şîn ji bo rengê destpêkê
+Ji bo rengê destpêkê asta rengê herî kêm
+Ji bo rengê destpêkê asta rengê sor ya herî zêde
+Ji bo rengê destpêkê asta rengê kesk ya herî zêde
+Ji bo rengê destpêkê asta rengê şîn a herî zêde
+Ji bo rengê destpêkê asta rengê herî zêde
+Kêmtirîn asta rengê sor ji bo rengê dawiyê
+Ji bo rengê dawîn asta rengê kesk ya hindiktirîn
+Ji bo rengê dawîn asta rengê şîn a herî kêm
+Asta rengê herî kêm ji bo rengê dawiyê
+Ji bo rengê dawiyê asta rengê sor ya herî zêde
+Ji bo rengê dawiyê asta rengê kesk ya herî zêde
+Ji bo rengê dawiyê asta rengê şîn a herî zêde
+Asta rengê herî zêde ji bo rengê dawiyê
+Hejmara herî kêm ya çareserker
+Hejmara herî zêde çareserker
+Input nîşana çareserker
+Karaktera goşeya çepê ya jorîn ji bo sînorê ragihandinê
+Karaktera goşeya rastê ya jorîn ji bo sînorê ragihandinê
+Karaktera goşeya çepê ya jêrîn ji bo sînorê ragihandinê
+Karaktera goşeya rastê ya jêrîn ji bo sînorê ragihandinê
+Karaktera çarçoveya jorîn ji bo sînorê ragihandinê
+Karaktera çarçoveya jêrîn ji bo sînorê ragihandinê
+Karaktera çarçoveya çepê ji bo sînorê ragihandinê
+Karaktera çarçoveya rastê ji bo sînorê ragihandinê
+Şêweya agahdariya rûpela manual
+Ma dê çi di xêza têketinê de hatî nivîsandin nîşan bide.
+Ji bo hilbijartina herî kêm hejmara çend e?
+Hejmara herî zêde ya ku hilbijêrin çi ye?
+Binivîsin ka hûn dixwazin agahdariya manpage we çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin. {0} ji bo sernavê manual, {1} ji bo guhertoya.
+Taybetmendiya {0} li ser yek ji modulan nayê dîtin.
+Ev beş mîhengên screensaver giştî navnîş dike. Ji bo mîhengên dîmendera ferdî, ji Mîhengan derkevin û Mîhengên Dîmenderparêzê vekin.
+Di moda rengê rastîn de çerxa rengîn dest pê bikin
+Ger were destnîşan kirin, ew ê pankarta destpêkê ya xwerû bi piştgiriya cîhgir nîşan bide. Hûn dikarin ji bo guhertoya kernelê {0} bikar bînin.
+Kîjan guhertoya zimanê heyî ji bo guherandina navên meh, salname û hwd tê bikar anîn?
+Piştgiriya rengê 255 çalak dike.
+Piştgiriya rengê rastîn çalak dike.
+Peyv di rêza {0} de hat jêbirin.
+Di rêza {0} de rêz hat guhertin.
+Hejmara rêza {0} hat rakirin.
+Mesajên bêdestûr bişopînin
+Ger fonksiyona navnîşê hewl bide ku peldankek bêdestûr veke, peyama acizker vedişêre
+Agahdariya servera FTP
+Navnîşana serverê:
+Porta serverê:
+Cureyê serverê:
+Cureyê pergala serverê:
+Moda şîfrekirina serverê:
+Cureyê girêdana daneya serverê:
+Sîstema serverê:
+Cureya daneya dakêşana serverê:
+Tîpa daneya barkirina serverê:
+Berî ku hûn vê operasyonê bikin, divê hûn bi serverek ve girêdin.
+Dosyayek ji dûr ve têkevin ku were haş kirin.
+Têkeve pelrêçeka dûr a ku were haş kirin.
+Peldanka dûr têkevin.
+Ji bo FTP-ê Haşkirina Recursive
+Ka pelrêçek bi rengek vegerî were haş kirin. Ji kerema xwe not bikin ku ne hemî serverên FTP wê piştgirî dikin.
+Leza demjimêra pêvajoyê:
+Piştgiriya Processor SSE2:
+Hejmara giştî ya pêvajoyê:
+Mezinahiya dîskê:
+Bîra tevahî:
+Karta grafîkê:
+Modela dîskê:
+Hejmara herî zêde ya e-nameyê di yek rûpelê de
+Çanda zimanê heyî
+Heke hûn pê ewle ne ku we beşa rast vekiriye, vê peyamê kontrol bikin:
+Mîhengên Cihê...
+Mîhengên Rengan...
+Fermanek servera FTP-ê pêk tîne
+Navnîşana servera POP3 û portê binivîse (<navnîşan> an <navnîşan>:[port]):
+Ji bo nameyê şêwaza bilez a POP3
+Navbera ping a POP3 bişînin
+Binivîsin ka hûn çawa dixwazin nameya servera xweya POP3 çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin.
+Çend milî çirkeyan ji bo şandina POP3 ping?
+POP3 bikar bînin
+Ma POP3 bikar bînin an na. Neçalakkirina vê dê SMTP bikar bîne.
+Bi karanîna CRC32 rêzek şîfre dike
+Muwekîlê nameyê vedike
+nameya ku hatî veguheztin...
+Mîhengên vê screensaverê li vir hene.
+Karbidestiya tabloyê diceribîne
+Rêza diyarkirî biguherîne
+Li dawiya pelê rêzên nû zêde dike
+Nivîsara ku hûn dixwazin li dawiya pelê zêde bikin têkevin. Dema ku we qediya, li ser xeta xwe "EOF" binivîsin.
+Navê mêvandar
+Navê bikarhêner
+Type Data
+Encoding
+Şîfrekirin
+Protokolên
+Pêşveçûna veguhestina e-nameyê nîşan bide
+Pêşveçûna veguhestina posteyê
+Pêşveçûna veguhestina nameyan (yekane)
+Ger çalak be, şêlê nameyê dê nîşan bide ku dema dakêşana e-nameyê çend byte hatine şandin.
+Binivîsin ka hûn dixwazin şêwaza pêşkeftina veguhastina e-nameyê çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin. {0} ji bo mezinahiya veguhestî û {1} ji bo mezinahiya giştî.
+Binivîsin ka hûn dixwazin şêwaza pêşkeftina veguhastina e-nameyê çawa be. Vala bihêlin da ku şêwaza xwerû bikar bînin. Cihparêz têne pars kirin. {0} ji bo mezinahiya veguhestî.
+Qada demê:
+îro {0} e
+Dema niha {0} e
+Rengê veqetandina sifrê
+Rengê serê sifrê
+Rengê nirxa sifrê
+Bersivên gengaz
+Pelê modê nehatiye diyar kirin.
+Hewl dide ku modek jixwe sazkirî saz bike. Modê nûvekirin...
+Sazkirin ji bo têk çû
+Pelê modê ya ku hatî peyda kirin nehevaheng e.
+Rakirina bi ser neket
+URLek vedike
+Li ser naveroka pelê çapkirinê jimareyên rêzê çap bikin
+Fermana \"cat\" dike ku jimareyên rêza pelê çap bike.
+Guhertoya veguherîn
+Guhertoya wergerandin
+Hemî ragihandinan red dike
+Daxistin...
+Barkirin...
+Agahdariyê ji bo pêşveçûna dakêşandinê nîşan bide
+Ji bo pêşveçûna barkirinê agahiyê nîşan bide
+Agahdariya ku pêşveçûna dakêşandinê nîşan dide nîşan dide.
+Agahdariya ku pêşveçûna barkirinê nîşan dide nîşan dide.
+Kontrol dike ku bibîne ka rêzika wergerker di çavkaniyên KS de heye yan na
+String di çavkaniyên herêmî de hate dîtin.
+String di çavkaniyên herêmî de nehat dîtin.
+Kernelê bi bêdengî dest pê dike
+Fermanek derdixe da ku di têketina paşîn de dest pê bike
+Kernelê di moda ewle de dest pê dike, hemî moda neçalak dike
+Mîna moda ewledar e, lê di heman demê de pir-bikarhêner û hin kesanekirinê jî asteng dike
+Arguman têrê nekir.
+Rengê goşeya çepê ya jorîn ji bo bara rampê
+Rengê goşeya rastê ya jorîn ji bo bara rampê
+Ji bo barê rampê rengê goşeya çepê ya jêrîn
+Ji bo barê rampê rengê goşeya rastê ya jêrîn
+Rengê çarçoweya jorîn ji bo barê rampê
+Rengê çarçoveya jêrîn ji bo bara rampê
+Rengê çarçoweya çepê ji bo barê rampê
+Rengê çarçoweya rast ji bo barê rampê
+Ji bo barê rampê rengên sînor bikar bînin
+Ji bo barê rampê rengên sînor bikar bînin. Ger neçalak be, dê barek gewr çêbike.
+HTTP shell dest pê dike
+Ji şêlê HTTP derdikeve û vedigere kernelê
+Malpera HTTP saz dike. Divê URI derbasdar be.
+Bi karanîna daxwaznameya diyarkirî bersivê ji servera HTTP digire
+Naveroka ji servera HTTP jêdibe
+Di şêlê HTTP de xeletiyek hebû:
+Peyama HTTP: Fermana tê xwestin {0} nayê dîtin. Ji bo navnîşek fermanên berdest ên ku li ser şêlê HTTP hatine destnîşan kirin 'alîkarî' bibînin.
+Bi karanîna daxwaznameya diyarkirî rêzika ji servera HTTP digire
+Distînin {0}...
+Forma URI ya malperê nederbasdar e.
+Sazkirina malperê ji bo
+Rengan ji nû ve destpêkirinê hewce nake, lê piraniya mîhengan ji nû ve destpêkirinê hewce dike.
+Ji bo argumana "{0}" alîkarî tune.
+Li ser şîroveyên nefretê A çap bikin da ku lêborînê bixwazin. Li ser şîroveyên evînê T çap bikin ku spas bikin. Q çap bikin da ku dev ji lîstikê berdin.
+Te ji şîroveyeke nefretê lêborîn xwest! Pirrbidilî!
+Ji şîroveya hezkirinê lêborîn xwest. Ne bes e.
+We tenê ji bo şîroveya nefretê spasiya nefretê kir!
+Zehmetiya xwerû ji bo SpeedPress
+Ji bo SpeedPress dema keypress
+Zehmetiya xweya bijartî hilbijêrin.
+Çend milî çirkeyên ku li benda bişkojka bişkojka berî dema bidawîbûnê? (Di zehmetiya xwerû de)
+Bi karanîna bêjeyên birêkûpêk peyvek an hevokek din diguhezîne
+Di rêzekê de bi karanîna birêkûpêk peyvek an hevokek din diguhezîne
+Di rêzek diyarkirî de an jî hemî rêzan bi karanîna bêjeyên rêkûpêk pirsê dike
+Mîhengek bibînin
+Tiştê ku hûn dixwazin lê bigerin binivîsin.
+Tiştek nayê dîtin. Bawer bikin ku we mîhengê rast nivîsandiye.
+Pelek herêmî li arşîvê pak dike
+Nikare tiştekî pak bike.
+Bersiv şirove
+Host Port
+Ji bo bêtir agahdarî li ser şert û mercên karanîna vê nermalavê, biçin
+Hilbijartina standard cureyê encam
+Hemî mîhengên KS-ê kontrol dike da ku bibîne ka guhêrbar rast hatine nivîsandin
+Van navnîşên vesazkirinê guhêrbar an hejmartinên nederbasdar hene û pêdivî ye ku bêne sererast kirin:
+Pela {0} nehat dîtin
+Bi nirxên dabînkirî re rêzek guhêrbar diafirîne
+Hejmara mîhengê ku hûn biçin binivîsin. Her karakterek din tê wateya vegerê.
+Hemî hejmarên rêzika nivîsê ya herêmîbûnê kontrol dike da ku bibîne ka ew hemî wekhev in
+Lihevnebûna rêzê di nav de
+Ji kerema xwe hejmarek bikarhêner binivîse.
+Bikarhênerên nenas tê de
+Bikarhênerên astengdar tê de
+Di navnîşê de bikarhênerên nenas tê de
+Bikarhênerên astengdar di navnîşê de vedihewîne
+Lîsteyê sort bikin
+Lîsteya pergala pelan bi profesyonelî rêz dike.
+Hilbijartina hilbijartinê peyda dike
+Fermanên Shell nehatin bicihanîn!!!
+Sernivîsa RSS ya herî dawî li ser têketinê nîşan bide
+URL sernivîsa RSS
+Her têketinê, ew ê sernivîsa RSS ya herî paşîn ji navnîşana sernavê URL-ya bijartî nîşan bide.
+URL-ya sernivîsa RSS ya ku dema sernivîsa herî dawî nîşan dide were bikar anîn. Ev bi gelemperî xwarina weya bijare ye.
+Nûçeyên herî dawî:
+Nekarî nûçeyên herî dawî werbigire.
+Rengê vebijarka hilbijartî
+Li ser xeletiya kernelê şopa stackê nîşan bide
+Ger xeletiyek kernelê hebe, hilbijêrin ka şopa stakê li konsolê çap bikin an na.
+Mod dikare were barkirin, lê dibe ku ev hişyarî li awayê xebata modê bandor bikin:
+Screensaver dikare were barkirin, lê dibe ku ev hişyarî bandorê li awayê xebitandina dîmenderê bikin:
+Save Settings As
+Load Settings From
+Hûn dixwazin mîhengên kernelê yên heyî li ku derê hilînin?
+Nikare mîhengên kernelê li ser pelê heyî hilîne.
+Hûn dixwazin mîhengên kernelê yên heyî ji ku derê bar bikin?
+Kontrol dike ku bibîne ka rêzikên wergerker di çavkaniyên KS de hene
+Du pelên nivîsê an bêtir di pelê derketinê de berhev dike.
+Pelan bi hev re nehat.
+Wextê girtina RSS-ê derbas dibe
+Çend millisecond ku meriv li bendê bimîne berî ku dema girtina RSS-ê biqede?
+Sindoqan dagirin
+Ma em sindoqê bi tevahî xêz dikin an tenê sînor xêz dikin?
+Derengiya qonaxê di milîçirkeyan de
+Berî xêzkirina qonaxa din çend milî çirkeyan bisekinin?
+Navbera rotîna rampê ya paşîn
+Çend millisecond ku meriv li bendê bimîne berî ku dawiya rampa din xera bike?
+Kotaya debugê kontrol bikin
+Ma em kontrol dikin ka pêdivî ye ku pergala debugê berî ku ji debugger re binivîsîne ji bo kotayê kontrol bike?
+Bi rastî çend milî çirkeyan xew girt?
+Bûyerek lê zêde nekir.
+Rakirina bûyerek bi ser neket.
+Ji bo lê zêdekirina bûyerek têra argumanan nayên peyda kirin.
+Ji bo rakirina bûyerek têr argûman nayên peyda kirin.
+Ji bo manîpulasyona bûyerê argûmanên têr nayên peyda kirin.
+Zêdekirin an jêbirina bîranînê bi ser neket.
+Ji bo zêdekirin an jêbirina bîranînekê têra argumanan nayên peyda kirin.
+Ji bo manîpulasyona bîranînê argûman têr nînin.
+Bîranînek bê sernav
+Bûyerek bê sernav
+Niha rojek bûyerek e!
+Vê ji bîr nekin!
+Çalakiya nederbasdar.
+A kronometre sade
+Destpêk an rawestin
+Himbêz
+Reset
+Demjimêrek hêsan
+Dest bi (ji nû ve) jimartinê kirin
+Navbera Set
+Wextê destnîşankirî ne hejmarî ye.
+Demjimêr di milîçirkeyan de diyar bikin
+Hemî bûyer û / an bîranînan bi rengek wêranker hilînin
+Ger çalak be, berî ku hemî bûyeran bi karanîna fermana salnameyê hilîne, hemî bûyer û/an bîranînan jê dike.
+Ji bo veguheztina FTP-ê hewlên dubare biceribînin
+Wextê girêdana FTP
+Wextê pêwendiya daneya FTP
+Guhertoyên IP-ê yên FTP
+Ger verastkirin berî ku dakêşandin bi tevahî têk neçe çend caran verastkirin û dakêşandin û ji nû ve biceribîne?
+Çend milî çirkeyan li benda dema pêwendiya FTP-ê bisekinin?
+Çend milî çirkeyan li benda dema pêwendiya daneya FTP-ê bisekinin?
+Guhertoya Protokola Înternetê ya ku servera FTP piştgirî dike û ku xerîdar FTP bikar tîne hilbijêrin.
+Hewl didin ku RPC dest pê bikin dema ku ew jixwe dest pê kiriye.
+Karaktera goşeya çepê ya jorîn ji bo çerxa rengê RGB
+Karaktera goşeya rastê ya jorîn ji bo çerxa rengê RGB
+Karaktera goşeya çepê ya jêrîn ji bo çerxa rengê RGB
+Karaktera goşeya rastê ya jêrîn ji bo çerxa rengê RGB
+Karaktera çarçoveya jorîn ji bo çerxa rengê RGB
+Karaktera çarçoveya jêrîn ji bo çerxa rengê RGB
+Karaktera çarçoveya çepê ji bo çerxa rengê RGB
+Karaktera çarçoweya rast ji bo çerxa rengê RGB
+Di pelrêça diyarkirî an di pelrêça heyî de pelek dibîne
+Dawiyên rêzê ji bo platforma heyî an jî li forma xwerû ya diyarkirî diguherîne
+Mezinahiya tevahî di peldankê de:
+Mezinahiya tevahî di navnîşê de nîşan bide
+Ger çalak be, mezinahiya peldankê ya tevahî di navnîşê de nîşan dide, li gorî meriv çawa mezinahiyên peldankê li gorî veavakirinê hesab dike.
+Tu rojane yî!
+Formatkirina JSON-a xwerû ji bo şêlê JSON
+Ji bo şêlê JSON-ê ku were hilanîn, formata JSON-a xwerû (xemilandin an piçûkkirin) hildibijêre.
+Nûvekirin bi serkeftî dakêşand!
+Jixweber nûvekirinan dakêşin
+Ger nûvekirinek hebe, dê kernel bixweber dakêşîne.
+Radyoya teqîna agirkujiyê
+Dema ku dişewite tîrêjê teqînê çend blokan e (heta 10)?
+Vê fermanê guhezên jêrîn hene ku çawa dixebite diguhezîne:
+Hejmarên rêzikên ku li dû rêza ku têne çap kirin çap dike
+Pêşî li çapkirina hejmarên rêzê digire
+Her dem guhertoya veguhastî bikar bînin
+Her tim guhertoya wergerandî bikar bînin
+Bi zorê veguhertina ziman
+Nîşan bidin ku bersiv dikare ji yek tîpan zêdetir bigire
+Nîşan bidin ku bersiv dikare tenê karakterek bigire
+Pirs û bersivan di yek rêzê de çap bikin
+Pirs û bersivan di du rêzan de çap bikin
+Pirs û bersivan bi awayê nûjen çap bikin
+Pirs û bersivan di tabloyekê de çap bikin
+Di navnîşê de hûrguliyên pelê nîşan dide
+Peyamên acizker ên "destûr hatine redkirin" ditepisîne
+Hemî deverên demjimêr nîşan dide
+Lîstik bi dijwariya hêsan dest pê dike
+Lîstik bi dijwariya navîn dest pê dike
+Di dijwariya dijwar de lîstikê dest pê dike
+Lîstik bi dijwariyek pir dijwar dest pê dike
+Di dijwariya xwerû de lîstikê dest pê dike. Ji kerema xwe not bikin ku dema xwerû ya di milîçirkeyan de divê wekî arguman were nivîsandin.
+Agahdariya pergalê nîşan dide
+Agahdariya hardware nîşan dide
+Agahdariya bikarhêner nîşan dide
+Peyama rojê nîşan dide
+Peyama roja piştî têketinê nîşan dide
+Hemî agahdarî nîşan dide
+Peldanokek ku naveroka pelê ZIP dihewîne diafirîne
+Hemî bajarên berdest nîşan dide
+Compression Fast
+No compression
+Di arşîvê de pelrêça bingehîn çênekin
+Yekîneya di tîkan de
+Bi rezîltî ji serverê qut dibe
+Nîşan dide ku riya armanc mutleq e
+Pelê JSON diparêze, di pêvajoyê de wê xweş dike
+Pelê JSON diparêze, di pêvajoyê de kêm dike
+Ji pelê nivîsê şêwaza dawiya rêzê distîne
+Hemî bûyerên şewitandinê paqij dike
+Rastkirina bûyerê çalak bike
+Ji bo pergala bûyera kernelê verastkirinê çalak dike
+Font Figlet
+Fontek figlet ku ji hêla pirtûkxaneya Figgle ve tê piştgirî kirin binivîsin. Ji bo bêtir agahdarî bi belgeya pirtûkxaneyê bişêwirin
+Sazkirina zimanê xwerû {0} bi ser neket.
+Pelê metadata ku ji bo sazkirina zimanê xwerû hewce ye tune.
+Agahdariya metadata ku ji bo sazkirina zimanê xwerû hewce dike, herêmîbûnên pêwîst peyda nake.
+Rakirina zimanê xwerû {0} bi ser neket.
+Pelê metadata ku ji bo rakirina zimanê xwerû hewce ye tune.
+Agahdariya metadata ku ji bo rakirina zimanê xwerû hewce ye, herêmîbûnên pêwîst peyda nake.
+Dirêjahiya zimanê Îngilîzî bi dirêjahiya tokena zimanî ya pêşkêşkirî re nagire.
+Ziman jixwe heye û nayê nivîsandin.
+Rakirina zimanê xwerû bi ser neket. Bi îhtîmaleke mezin ew tune.
+Sazkirina zimanên xwerû bi ser neket.
+Rakirina zimanên xwerû bi ser neket.
+Rakirina zimanên xwerû bi ser neket. Ji bo bêtir agahdarî îstîsna hundurîn bibînin.
+Şîfreya rêveberê binivîse. Bawer bikin ku hûn vê hesabê bikar neynin heya ku hûn bi rastî nizanin ka hûn çi dikin.
+Divê hûn şîfreya rêveberê binivîsin.
+Agahiyên License de
+Zimanên xwe îdare bikin
+Ziman nehat dîtin an jî dosya xwedî karakterên nederbasdar e.
+Ziman ne diyar e.
+Rêveberiya ziman di moda ewle de neçalak e.
+Kurtenavê ziman:
+Navê tevahî ziman:
+Zimanek wergêr:
+Zimanê taybet:
+Pankarta nû ya bi xêr hatî
+Ekrana splashê ya xweşik
+Pankarta xêrhatina nû ya Figlet-rendered nîşan dide
+Di dema destpêkirinê de ekrana splash ya xweşik çalak dike. Ji kerema xwe not bikin ku ew ê tavilê argumana neçalak bike û pêş-bootê şêlê biceribîne.
+Navê splash
+Navê splash ji pêlên berdest ên ku di kernelê de hatine bicîh kirin.
+MOTD-a xwerû hatî çêkirin.
+MAL-a xwerû hatî çêkirin.
+Hesabê pergalê dest pê kir
+Bikarhêner dest pê kirin
+Destûr barkirin
+Bi xêr hatî!
+Debugera ji dûr ve dest pê dike...
+Çewtiya girêdana debugera dûr
+Li ser xeletiya girêdana debugkirina ji dûr ve agahdar bikin
+Ger çalak be, dê pergala ragihandinê bikar bîne da ku mêvandarê xeletiya girêdana debugkirina dûr agahdar bike. Wekî din, dê nivîsandina konsolê ya xwerû bikar bîne.
+Font Figlet ji bo demjimêr
+Ji bo demjimêrê Figlet çalak bike
+Ger çalak be, dê figlet ji bo demjimêr bikar bîne. Ji kerema xwe ji bîr mekin ku ew pêdivî bi ekranek konsolê ya mezin heye da ku bi Figlet-a çalak re dem bi rêkûpêk pêşkêş bike.
+Di parkirina argumanên rêzika fermanê yên pêş-boot de çewtî: {0}
+Kernelê li mîhengên kargehê vedigire
+Vedîtina mezinahiya konsolê derbas dike
+Wusa dixuye ku hûn tespîtkirina mezinahiya konsolê derbas dikin. Dibe ku tişt li ser ekranên piçûk rast nexebitin.
+Ji bo ku bibin xwedî ezmûnek çêtir, dema ku hîn jî li ser vê ekranê bin, pencereya konsolê xwe mezin bikin. Ji bo berdewamkirinê bişkojkê bikirtînin...
+Konsolê we pir piçûk e ku meriv bi rêkûpêk bixebite:
+Font figlet banner
+Bi piştgiriya Figlet re rêzek li ser konsolê çap dike
+Bi format û piştgiriya Figlet re rêzek li ser konsolê çap dike
+Bi domdarî peyamek jê dike
+Bi domdarî hemî peyaman ji wergir radike
+Rakirina peyamek betal dike
+Rakirina hemî peyaman ji wergir radike
+Rakirina jêbirinê ji bo POP3 nayê pêkanîn.
+Fermanên ku li ser alîkariyê têne hesibandin nîşan bidin
+Fermanên şêlê li ser alîkariyê têne hesibandin nîşan bidin
+Emrên modê yên ku li ser alîkariyê têne hesibandin nîşan bidin
+Navnavên ku li ser alîkariyê têne hesibandin nîşan bidin
+Di navnîşa fermanan de hejmartina fermanan nîşan dide, ku ji hêla sê jimareyên nîşangirên ji bo celebên fermanan ve têne kontrol kirin.
+Dema ku bêjeyên UESH têr bûn fermanan pêk tîne
+Di îfadeyê de şert nehat dîtin.
+Ji şertê {0} {1} argumanan hewce dike. Got {2}.
+Pêdivî ye ku şert di navîn de were danîn.
+Pêdivî ye ku şert di destpêkê de were danîn.
+Ji ber xeletiya hevoksaziyê di parkirina îfadeyê de çewtî.
+Nekarî şertê têr bike. Agahiyên bêtir li vir:
+Karaktera maskeya şîfreyê
+Karaktera ku şîfreyê mask dike. Ji bo bêtir ewlehiyê vala bihêlin.
+Ger li ser bineşelê bixebite ji şêlê derdikeve
+Nikare şêla dayikê bikuje!
+Nikare ji binxetê derkeve.
+Pelê ne diyar. Derketina şêlê...
+Mîhengên vê ekrana splash li vir hene.
+Rengê barê pêşveçûnê
+Mîhengên screensaverê vedike
+Mîhengên splash vedike
+Guherbarên UESH yên berdest navnîş dike
+Cihê nivîsê pêşveçûyîn
+Cihê nivîsa pêşkeftina xweya bijare hilbijêrin.
+Hûn dikarin tenê hejmaran binivîsin.
+Ji bo derketinê "q" bikirtînin.
+Daxistina navan...
+Ji ber zehmetiyên teknîkî, em nekarin taybetmendiyên adapterê li ser pergalên Unix navnîş bikin.
+Moda çewtiyê çalak dike
+Ji bo argumanan pêşniyar dike
+Moda Reş û Spî çalak bike
+Dîskoyê reş û spî dike. Ger ew pir zû bû dê bi rastî çavên we biêşîne, ji ber vê yekê heke hûn bi desteserkirina wêneyên bilez re rû bi rû bimînin nayê pêşniyar kirin.
+Wusa dixuye ku we guhertoyek nepiştgir dimeşand. Pir tê pêşniyar kirin ku hûn vê versiyonê bikar neynin.
+Rengên Niha Barkirin
+Rengê vebijarka alternatîf
+Bikarhêner ji bo şîroveyên hezkirin an nefret têne hesibandin
+Çend bikarhêner dikarin li odeya şîroveyê ya hezkirin an nefretê bin?
+Zimanên berdest navnîş dike
+Zimanên berdest:
+Argumanên rêzika fermanê:
+Argumanên rêzika fermanê yên pêş-boot:
+Belgeyên mod API-ê ji bo avahiya koda çavkaniyê di forma xweya herî heyî de vedike

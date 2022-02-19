@@ -983,3 +983,675 @@ Press any key to read the manual page...
 This manual page needs work for:
 Manual page {0} not found.
 Mod manual
+Available kernel arguments:
+Press "q" if you're done.
+Multiple kernel arguments can be separated with commas without spaces, for example:
+Multiple injected commands can be separated with colons with spaces, for example:
+The requested argument {0} is not found.
+Unrecoverable error in argument:
+Encrypts a string using SHA512
+Encrypts a string using SHA384
+Encrypts a string using SHA256
+Encrypts a string using SHA1
+Encrypts a string using MD5
+where builtinsaver will be
+Mod part is nothing.
+Stopping mods not allowed on safe mode.
+Mod has already been started!
+Mod hasn't started yet!
+Command usage:
+Part file name:
+Part file path:
+Error when trying to start screensaver:
+Invalid path type.
+Invalid kernel path type.
+Previous boot failed
+The JSON editor hasn't opened a file stream yet.
+The property inside the JSON file isn't found.
+Removed property.
+Adds a new property at the end of the JSON file
+Removes a property from the JSON file
+Exits the JSON shell
+Exits the JSON shell without saving the changes
+Saves the JSON file
+Opens the JSON shell
+Prints the JSON file
+Next ramp interval
+Activates 255 color support for Ramp.
+Activates true color support for Ramp.
+How many milliseconds to wait before filling in the next ramp?
+Notification title color
+Notification description color
+Notification progress color
+Notification failure color
+Question color
+Success color
+User dollar color
+Tip color
+Separator text color
+Separator color
+List title color
+Development warning color
+Stage time color
+Progress color
+Back option color
+Draw notification border
+Covers the notification with the border.
+Contact the vendor of the mod to upgrade the mod to the compatible version.
+Low priority border color
+Medium priority border color
+High priority border color
+Sends a progress notification to test the receiver
+Tests the color wheel
+Shows local kernel time
+Shows local kernel date
+Shows local kernel date and time
+Shows UTC kernel time
+Shows UTC kernel date
+Shows UTC kernel date and time
+MOTD path
+MAL path
+Which file is the MOTD text file? Write an absolute path to the text file.
+Which file is the MAL text file? Write an absolute path to the text file.
+Blacklisted mods
+Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
+Mod {0} is blacklisted.
+Reloads all mods
+Adds a mod to the blacklist
+Removes a mod from the blacklist
+Time and date in UTC: {0}
+The specified JSON shell command is not found.
+Show app information during boot
+Parse command-line arguments
+Show stage finish times
+Start kernel modifications on boot
+Show current time before login
+Notify for any fault during boot
+Shows brief information about the application on boot.
+Parses the command-line arguments on boot.
+Shows how much time did the kernel take to finish a stage.
+Automatically start the kernel modifications on boot.
+Shows the current time, time zone, and date before logging in.
+If there is a minor fault during kernel boot, notifies the user about it.
+Username prompt style
+Password prompt style
+Show MAL on log-in
+Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed.
+Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed.
+Shows Message of the Day after displaying login screen.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Probe injected commands
+Probes the injected commands at the start of the kernel shell.
+Show file details in list
+Shows the brief file details while listing files
+Show file details in FTP list
+Username prompt style for FTP
+Password prompt style for FTP
+Use first FTP profile
+Add new connections to FTP speed dial
+Try to validate secure FTP certificates
+Show FTP MOTD on connection
+Always accept invalid FTP certificates
+Shows the FTP file details while listing remote directories.
+Uses the first FTP profile to connect to FTP.
+If enabled, adds a new connection to the FTP speed dial.
+Tries to validate the FTP certificates. Turning it off is not recommended.
+Shows the FTP message of the day on login.
+Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks.
+Username prompt style for mail
+Password prompt style for mail
+IMAP prompt style for mail
+SMTP prompt style for mail
+Automatically detect mail server
+Enable mail debug
+Notify for new mail messages
+GPG password prompt style for mail
+Send IMAP ping interval
+Send SMTP ping interval
+Mail text format
+Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed.
+Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed.
+Automatically detect the mail server based on the given address.
+Enables mail server debug.
+Notifies you for any new mail messages.
+Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed.
+How many milliseconds to send the IMAP ping?
+How many milliseconds to send the SMTP ping?
+Controls how the mail text will be shown.
+Plain text
+Flowed text
+HTML text
+Enriched text
+Compressed rich text
+Rich text
+Automatically start remote debug on startup
+Remote debug message format
+If you want remote debug to start on boot, enable this.
+Specifies the remote debug message format. {0} for name, {1} for message.
+RSS feed URL prompt style
+Auto refresh RSS feed
+Auto refresh RSS feed interval
+Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed.
+How many milliseconds to refresh the RSS feed?
+Show file details in SFTP list
+Username prompt style for SFTP
+Add new connections to SFTP speed dial
+Shows the SFTP file details while listing remote directories.
+If enabled, adds a new connection to the SFTP speed dial.
+Ping timeout
+Show extensive adapter info
+Show general network information
+Download percentage text
+Upload percentage text
+How many milliseconds to wait before declaring timeout?
+Prints the extensive adapter information, such as packet information.
+Shows the general information about network.
+Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage.
+Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage.
+Ask for password after locking
+After locking the screen, ask for password
+Minimum red color level
+Minimum green color level
+Minimum blue color level
+Minimum color level
+Maximum red color level
+Maximum green color level
+Maximum blue color level
+Maximum color level
+Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.
+Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.
+Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.
+Foreground color
+Line character
+A character to form a line. Be sure to only input one character.
+Upper left corner character for hours bar
+Upper left corner character for minutes bar
+Upper left corner character for seconds bar
+Upper right corner character for hours bar
+Upper right corner character for minutes bar
+Upper right corner character for seconds bar
+Lower left corner character for hours bar
+Lower left corner character for minutes bar
+Lower left corner character for seconds bar
+Lower right corner character for hours bar
+Lower right corner character for minutes bar
+Lower right corner character for seconds bar
+Upper frame character for hours bar
+Upper frame character for minutes bar
+Upper frame character for seconds bar
+Lower frame character for hours bar
+Lower frame character for minutes bar
+Lower frame character for seconds bar
+Left frame character for hours bar
+Left frame character for minutes bar
+Left frame character for seconds bar
+Right frame character for hours bar
+Right frame character for minutes bar
+Right frame character for seconds bar
+Information text for hours
+Information text for minutes
+Information text for seconds
+Minimum red color level for hours
+Minimum green color level for hours
+Minimum blue color level for hours
+Minimum color level for hours
+Maximum red color level for hours
+Maximum green color level for hours
+Maximum blue color level for hours
+Maximum color level for hours
+Minimum red color level for minutes
+Minimum green color level for minutes
+Minimum blue color level for minutes
+Minimum color level for minutes
+Maximum red color level for minutes
+Maximum green color level for minutes
+Maximum blue color level for minutes
+Maximum color level for minutes
+Minimum red color level for seconds
+Minimum green color level for seconds
+Minimum blue color level for seconds
+Minimum color level for seconds
+Maximum red color level for seconds
+Maximum green color level for seconds
+Maximum blue color level for seconds
+Maximum color level for seconds
+A character that resembles the upper left corner. Be sure to only input one character.
+A character that resembles the lower left corner. Be sure to only input one character.
+A character that resembles the upper frame. Be sure to only input one character.
+A character that resembles the lower frame. Be sure to only input one character.
+A character that resembles the left frame. Be sure to only input one character.
+A character that resembles the right frame. Be sure to only input one character.
+Write how your information text for the current hour shows. {0} for current hour out of 24 hours.
+Write how your information text for the current minute shows. {0} for current minute out of 60 minutes.
+Write how your information text for the current second shows. {0} for current second out of 60 seconds.
+Text color
+Upper left corner character for ramp bar
+Upper right corner character for ramp bar
+Lower left corner character for ramp bar
+Lower right corner character for ramp bar
+Upper frame character for ramp bar
+Lower frame character for ramp bar
+Left frame character for ramp bar
+Right frame character for ramp bar
+Minimum red color level for start color
+Minimum green color level for start color
+Minimum blue color level for start color
+Minimum color level for start color
+Maximum red color level for start color
+Maximum green color level for start color
+Maximum blue color level for start color
+Maximum color level for start color
+Minimum red color level for end color
+Minimum green color level for end color
+Minimum blue color level for end color
+Minimum color level for end color
+Maximum red color level for end color
+Maximum green color level for end color
+Maximum blue color level for end color
+Maximum color level for end color
+Solver minimum number
+Solver maximum number
+Solver show input
+Upper left corner character for notification border
+Upper right corner character for notification border
+Lower left corner character for notification border
+Lower right corner character for notification border
+Upper frame character for notification border
+Lower frame character for notification border
+Left frame character for notification border
+Right frame character for notification border
+Manual page information style
+Whether to show what's written in the input prompt.
+What is the minimum number to choose?
+What is the maximum number to choose?
+Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision.
+Property {0} is not found on any of the modules.
+This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.
+Start color wheel in true color mode
+If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version.
+Which variant of the current language is being used to change the month names, calendar, etc.?
+Activates the 255 color support.
+Activates the true color support.
+Word deleted in line {0}.
+String replaced in line {0}.
+Removed line number {0}.
+Suppress unauthorized messages
+Hides the annoying message if the listing function tries to open an unauthorized folder
+FTP server information
+Server address:
+Server port:
+Server type:
+Server system type:
+Server encryption mode:
+Server data connection type:
+Server system:
+Server download data type:
+Server upload data type:
+You must connect to a server before performing this operation.
+Enter a remote file to be hashed.
+Enter a remote directory to be hashed.
+Enter a remote directory.
+Recursive hashing for FTP
+Whether to recursively hash a directory. Please note that not all the FTP servers support that.
+Processor clock speed:
+Processor SSE2 support:
+Total number of processors:
+Disk size:
+Total memory:
+Graphics card:
+Disk model:
+Maximum number of e-mails in one page
+Culture of the current language
+If you're sure that you've opened the right section, check this message out:
+Misc Settings...
+Colors Settings...
+Executes an FTP server command
+Enter POP3 server address and port (<address> or <address>:[port]): 
+POP3 prompt style for mail
+Send POP3 ping interval
+Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
+How many milliseconds to send the POP3 ping?
+Use POP3
+Whether to use POP3. Disabling this will use SMTP.
+Encrypts a string using CRC32
+Opens the mail client
+of mail transferred...
+Settings for this screensaver are available here.
+Tests the table functionality
+Edits the specified line
+Adds the new lines at the end of the file
+Enter the text that you want to append to the end of the file. When you're done, write "EOF" on its own line.
+Host Name
+Username
+Data Type
+Encoding
+Encryption
+Protocols
+Show mail transfer progress
+Mail transfer progress
+Mail transfer progress (single)
+If enabled, the mail shell will show how many bytes transmitted when downloading mail.
+Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size.
+Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size.
+Time Zone:
+Today is {0}
+Current time is {0}
+Table separator color
+Table header color
+Table value color
+Possible answers
+Mod file is not specified.
+Trying to install an already-installed mod. Updating mod...
+Installation failed for
+The mod file provided is incompatible.
+Uninstallation failed for
+Opens a URL
+Print line numbers on printing file contents
+Makes the \"cat\" command print the file's line numbers.
+Transliterated version
+Translated version
+Dismisses all notifications
+Downloading...
+Uploading...
+Show notification for download progress
+Show notification for upload progress
+Shows the notification showing the download progress.
+Shows the notification showing the upload progress.
+Checks to see if the translatable string exists in the KS resources
+String found in the localization resources.
+String not found in the localization resources.
+Starts the kernel quietly
+Injects a command to start up in the next login
+Starts the kernel in safe mode, disabling all mods
+Like safe mode, but also disables multi-user and some customization
+There was not enough arguments.
+Upper left corner color for ramp bar
+Upper right corner color for ramp bar
+Lower left corner color for ramp bar
+Lower right corner color for ramp bar
+Upper frame color for ramp bar
+Lower frame color for ramp bar
+Left frame color for ramp bar
+Right frame color for ramp bar
+Use border colors for ramp bar
+Use the border colors for the ramp bar. If disabled, will generate a grey bar.
+Starts the HTTP shell
+Exits HTTP shell and returns to kernel
+Sets the HTTP site. Must be a valid URI.
+Gets the response from the HTTP server using the specified request
+Deletes content from HTTP server
+There was an error in the HTTP shell:
+HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell.
+Gets the string from the HTTP server using the specified request
+Getting {0}...
+The site URI format is invalid.
+Setting site to
+Colors don't require a restart, but most of the settings require a restart.
+No help for argument "{0}".
+Press A on hate comments to apologize. Press T on love comments to thank. Press Q to quit the game.
+You've apologized to a hate comment! Excellent!
+Apologized to love comment. Not good enough.
+You just thanked the hater for the hate comment!
+Default difficulty for SpeedPress
+Keypress timeout for SpeedPress
+Select your preferred difficulty.
+How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)
+Replaces a word or phrase with another one using regular expressions
+Replaces a word or phrase with another one in a line using regular expressions
+Queries a word in a specified line or all lines using regular expressions
+Find a Setting
+Write what do you want to search for.
+Nothing is found. Make sure that you've written the setting correctly.
+Packs a local file to the archive
+Can't pack nothing.
+Answer description
+Host Port
+For more information about the terms and conditions of using this software, visit
+Default choice output type
+Checks all the KS settings to see if the variables are written correctly
+These configuration entries have invalid variables or enumerations and need to be fixed:
+File {0} not found
+Creates a variable array with the provided values
+Write the number of the setting to go to. Any other character means go back.
+Checks all the localization text line numbers to see if they're all equal
+Line mismatch in
+Please enter a user number.
+Include anonymous users
+Include disabled users
+Includes the anonymous users in the list
+Includes the disabled users in the list
+Sort the list
+Sorts the filesystem list professionally.
+Provides a selection choice
+Shell commands not implemented!!!
+Show latest RSS headline on login
+RSS headline URL
+Each login, it will show the latest RSS headline from the selected headline URL.
+RSS headline URL to be used when showing the latest headline. This is usually your favorite feed.
+Latest news:
+Failed to get the latest news.
+Selected option color
+Show stack trace on kernel error
+If there is any kernel error, choose whether or not to print the stack trace to the console.
+Mod can be loaded, but these warnings may impact the way the mod works:
+Screensaver can be loaded, but these warnings may impact the way the screensaver works:
+Save Settings As
+Load Settings From
+Where do you want to save the current kernel settings?
+Can't save kernel settings on top of existing file.
+Where do you want to load the current kernel settings from?
+Checks to see if the translatable strings exist in the KS resources
+Combines the two text files or more into the output file.
+Failed to combine files.
+RSS feed fetch timeout
+How many milliseconds to wait before RSS feed fetch timeout?
+Fill the boxes
+Do we draw the box as a whole or do we draw only the border?
+Stage delay in milliseconds
+How many milliseconds to wait before drawing the next stage?
+Next ramp rot interval
+How many milliseconds to wait before rotting the next ramp's one end?
+Check debug quota
+Do we check if the debug system needs to check for quota before writing to the debugger?
+How many milliseconds did it really take to sleep?
+Failed to add an event.
+Failed to remove an event.
+Not enough arguments provided to add an event.
+Not enough arguments provided to remove an event.
+Not enough arguments provided for event manipulation.
+Failed to add or remove a reminder.
+Not enough arguments provided to add or remove a reminder.
+Not enough arguments provided for reminder manipulation.
+Untitled reminder
+Untitled event
+Now it's an event day!
+Don't miss this!
+Invalid action.
+A simple stopwatch
+Start or stop
+Lap
+Reset
+A simple timer
+Start (re)counting down
+Set interval
+Indicated timeout is not numeric.
+Specify the timeout in milliseconds
+Save all events and/or reminders destructively
+If enabled, deletes all events and/or reminders before saving all of them using the calendar command.
+Verify retry attempts for FTP transmission
+FTP connection timeout
+FTP data connection timeout
+FTP IP versions
+How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?
+How many milliseconds to wait before the FTP connection timeout?
+How many milliseconds to wait before the FTP data connection timeout?
+Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses.
+Trying to start RPC while it's already started.
+Upper left corner character for RGB color wheel
+Upper right corner character for RGB color wheel
+Lower left corner character for RGB color wheel
+Lower right corner character for RGB color wheel
+Upper frame character for RGB color wheel
+Lower frame character for RGB color wheel
+Left frame character for RGB color wheel
+Right frame character for RGB color wheel
+Finds a file in the specified directory or in the current directory
+Converts the line endings to format for the current platform or to specified custom format
+Total size in folder:
+Show total size in list
+If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.
+You're up to date!
+Default JSON formatting for JSON shell
+Selects the default JSON formatting (beautified or minified) for the JSON shell to save.
+Downloaded the update successfully!
+Automatically download updates
+If there is any update, the kernel will automatically download it.
+Firework explosion radius
+How many blocks (up to 10) is the explosion radius for the firework when ignited?
+This command has the below switches that change how it works:
+Prints the line numbers that follow the line being printed
+Prevents printing the line numbers
+Always use the transliterated version
+Always use the translated version
+Force switching language
+Indicate that the answer can take more than one character
+Indicate that the answer can take just one character
+Print the question and the answers in one line
+Print the question and the answers in two lines
+Print the question and the answers in the modern way
+Print the question and the answers in a table
+Shows the file details in the list
+Suppresses the annoying "permission denied" messages
+Shows all the time zones
+Starts the game in easy difficulty
+Starts the game in medium difficulty
+Starts the game in hard difficulty
+Starts the game in very hard difficulty
+Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.
+Shows the system information
+Shows the hardware information
+Shows the user information
+Shows the message of the day
+Shows the message of the day after login
+Shows all information
+Creates a directory that contains the contents of the ZIP file
+Shows all the available cities
+Fast compression
+No compression
+Don't create base directory in archive
+Unit in ticks
+Disconnects from server disgracefully
+Indicates that the target path is absolute
+Saves the JSON file, beautifying it in the process
+Saves the JSON file, minifying it in the process
+Gets the line ending style from text file
+Clears all fired events
+Enable event debugging
+Enables debugging for the kernel event system
+Figlet font
+Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
+Failed to install custom language {0}.
+The metadata file needed to install the custom language doesn't exist.
+The metadata information needed to install the custom language doesn't provide the necessary localizations needed.
+Failed to uninstall custom language {0}.
+The metadata file needed to uninstall the custom language doesn't exist.
+The metadata information needed to uninstall the custom language doesn't provide the necessary localizations needed.
+Length of the English language doesn't match the length of the language token provided.
+The language already exists and can't be overwritten.
+Failed to uninstall custom language. It most likely doesn't exist.
+Failed to install custom languages.
+Failed to uninstall custom languages.
+Failed to uninstall custom languages. See the inner exception for more info.
+Write the administrator password. Make sure that you don't use this account unless you really know what you're doing.
+You must write the administrator password.
+License information
+Manage your languages
+Language not found or file has invalid characters.
+Language is not specified.
+Language management is disabled in safe mode.
+Language short name:
+Language full name:
+Language transliterable:
+Custom language:
+New welcome banner
+Stylish splash screen
+Shows the new Figlet-rendered welcome banner
+Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot.
+Splash name
+Splash name from the available splashes implemented in the kernel.
+Generated default MOTD.
+Generated default MAL.
+System account initialized
+Users initialized
+Permissions loaded
+Welcome!
+Starting the remote debugger...
+Remote debugger connection error
+Notify on remote debug connection error
+If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing.
+Figlet font for timer
+Enable Figlet for timer
+If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
+Error while parsing pre-boot command-line arguments: {0}
+Resets the kernel to the factory settings
+Bypasses the console size detection
+Looks like you're bypassing the console size detection. Things may not work properly on small screens.
+To have a better experience, resize your console window while still being on this screen. Press any key to continue...
+Your console is too small to run properly:
+Banner figlet font
+Prints a string to console using color type and line print with Figlet support
+Prints a string to console using color type and line print with format and Figlet support
+Permanently removes a message
+Permanently removes all messages from recipient
+Undos removing a message
+Undos removing all messages from recipient
+Undo deletion is not implemented for POP3.
+Show the commands count on help
+Show the shell commands count on help
+Show the mod commands count on help
+Show the aliases count on help
+Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
+Executes commands once the UESH expressions are satisfied
+The condition was not found in the expression.
+Condition {0} requires {1} arguments. Got {2}.
+The condition needs to be placed in the middle.
+The condition needs to be placed in the beginning.
+Error parsing expression due to syntax error.
+Failed to satisfy condition. More info here:
+Password mask character
+A character that masks the password. Leave blank for more security.
+Exits the shell if running on subshell
+Can not kill the mother shell!
+Cannot log out from the subshell.
+File not specified. Exiting shell...
+Settings for this splash screen are available here.
+Progress bar color
+Opens the screensaver settings
+Opens the splash settings
+Lists available UESH variables
+Progress text location
+Select your preferred progress text location.
+You can only write the numbers.
+Press "q" to exit.
+Downloading names...
+Due to technical difficulties, we're unable to list adapter properties on Unix systems.
+Enables debug mode
+Prompts for arguments
+Enable Black and White Mode
+Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images.
+Looks like you were running an unsupported version. It's highly advisable not to use this version.
+Load Current Colors
+Alternative option color
+Users count for love or hate comments
+How many users to be in the love or hate comment room?
+Lists available languages
+Available languages:
+Command-line arguments:
+Pre-boot command-line arguments:
+Opens the mod API documentation for the structure of the source code in its most current form

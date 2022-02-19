@@ -450,7 +450,7 @@ yudif almustakhdimin
 yudif 'asma' mustaearatan 'iilaa al'awamir
 'iidkhal alwasayit 'iilaa alnawa (ylzim 'iieadat altashghili)
 yughayir asm almudif
-yughayir MAL � MOTD baed tasjil aldukhul
+yughayir MAL � MOTD baed tasjil aldukhul
 yughayir MOTD , risalat alyawm
 yughayir asm almustakhdim
 'iidarat al'udhunat lilmustakhdamin
@@ -473,7 +473,7 @@ fashil naql almilafi 'aw aldilili: {0}
 taeadhar aleuthur ealaa milafin yutabiq alsilsila "{0}": {1}
 fashal tanzil almilafi {0}.
 fashal sard almilafaat albaeidati: {0}
-hal 'ant muta'akid 'anak turid hadhf {0} <y / n>�
+hal 'ant muta'akid 'anak turid hadhf {0} <y / n>�
 jar hadhf {0} ...
 {0} ghayr mawjud fi alkhadimi.
 tamat 'iizalat kafat rasayil albarid almursalat biwasita {0} binajahi.
@@ -856,7 +856,7 @@ atijah farz nizam almilafaat
 yatahakam fi kayfiat farz almilafaati.
 yatahakam fi atijah farz nizam almilafaat sawa' kan tsaedyana 'aw tnazlyana.
 auktub maratan 'ukhraa takhir fi mili thaniatan
-kam mili thaniatan tantazir qabl kitabat alnasi maratan 'ukhraa�
+kam mili thaniatan tantazir qabl kitabat alnasi maratan 'ukhraa�
 aktub 'aya nasin turid 'iizharahu. yueadu dhalik 'afdala.
 alhadu al'adnaa lisureat alkitabat fi WPM
 'aqsaa sureat lilkitabat fi WPM
@@ -960,7 +960,7 @@ eadad aleamud
 hada taebiat alkhati
 aihtimal wade hadin limal' alkhati bialnisbat almiawia
 nawe taebiat alkhati
-kam myli thaniat yajib alaintizar qabl kitabat alnasi fi alshaashat aljadidat maratan 'ukhraa�
+kam myli thaniat yajib alaintizar qabl kitabat alnasi fi alshaashat aljadidat maratan 'ukhraa�
 'aemidat alnasi almurad tibaeatiha.
 kam eadad al'ahruf alati yajib kitabatuha qabl tashghil "taebiat alsatri"?
 ahtimaliat tibaeat namudhaj taebiat alkhati fi jamie al'ahruf aliastihlaliat bialnisbat almiawia
@@ -983,3 +983,675 @@ adghat ealaa 'ayi miftah liqira'at safhat aldalil ...
 tahtaj safhat aldalil hadhih 'iilaa aleamal min 'ajli:
 alsafhat alyadawia {0} ghayr mawjudatin.
 dalil wizarat aldifae
+wasitat kernel almutawafirati:
+adghat ealaa "q" 'iidha kunt qad antahaytu.
+yumkin fasl wasitat kernel almutaeadidat bifasilat bidun masafat , ealaa sabil almithali:
+yumkin fasl al'awamir almahqunat almutaeadidat binuqtatayn bimasafat , ealaa sabil almithali:
+lam yatima aleuthur ealaa alwasitat almatluba {0}.
+khata ghayr qabil liliastirdad fi alwasitati:
+yushfar silsilatan biastikhdam SHA512
+yushfar silsilatan biastikhdam SHA384
+yushfar silsilatan biastikhdam SHA256
+yushfar silsilatan biastikhdam SHA1
+yushfar silsilatan biastikhdam MD5
+hayth sayakun buildinsaver
+juz' wizarat aldifae la shay'.
+la yusmh bi'iiqaf altaedilat fi alwade alamana.
+tama bialfiel bad' wizarat aldifaei!
+wizarat aldifae lam tabda biedu!
+aistikhdam al'amra:
+aism milafi aljuz'i:
+masar milafi aljuz'i:
+khataan eind muhawalat bad' shashat altawaquf:
+nawe almasar ghayr salihi.
+nawe masar kernel ghayr salihi.
+fashil altamhid alsaabiq
+lam yaftah muharir JSON tadafuq almilafaat hataa alan.
+lam yatima aleuthur ealaa alkhasiyat dakhil milafi JSON.
+almumtalakat alati tamat 'iizalataha.
+yudif khasiyatan jadidatan fi nihayat milafi JSON
+yuzil khasiyatan min milafi JSON
+yakhruj min ghilaf JSON
+yakhruj min ghilaf JSON bidun hifz altaghyirat
+yahfaz milaff JSON
+yaftah ghilaf JSON
+yatbae milafa JSON
+alfasil alzamaniu lilmunhadar altaali
+yanshut daem 255 lwnan li Ramp.
+yanshut daem al'alwan alhaqiqii la Ramp.
+kam mili thaniat yajib aliantizar qabl mil' almunhadar altaali?
+lawn eunwan al'iikhtar
+lawn wasf al'iikhtar
+lawn taqadum al'iikhtar
+lawn fashal al'iikhtar
+lawn alsuwal
+lawn alnajah
+lawn dular almustakhdam
+lawn alhafa
+lawn alnasi alfasil
+lawn alfasil
+lawn eunwan alqayima
+lawn tahdhir altanmia
+lawn waqt almasrah
+lawn altaqadum
+lawn alkhiar alkhalfii
+rasm hudud al'iikhtar
+yughatiy al'iishear mae alhududi.
+aitasal bibayie altaedil litarqiat altaedil 'iilaa al'iisdar almutawafiqi.
+lawn hadin dhu 'awlawiat munkhafida
+lawn hadi al'awlawiat almutawasita
+lawn hadin dhu 'awlawiat ealia
+yursil 'ikhtaran bialtaqadum liakhtibar jihaz aliastiqbal
+yakhtabir eajalat al'alwan
+yazhar waqt kernel almahaliy
+yuzhir tarikh alnawat almahaliya
+yuzhir tarikh wawaqt kernel almahaliy
+yazhar UTC kernel time
+yazhar UTC kernel date
+yaerid tarikh wawaqt nawat UTC
+masar MOTD
+masar MAL
+'ayu milafin hu milafu nisiyin MOTD? aktub msaran mtlqan lilmilafi alnasiy.
+'ayu milafin hu milafu nisiyin MAL? aktub msaran mtlqan lilmilafi alnasiy.
+taedil alqayimat alsawda'
+aktub 'asma' milafaat altaedilat alati lan taemal eind bad' altashghili. eind aliantiha' , aktub "q". auktub ealamat altarh bijanib almasar li'iizalat taedil mawjudi.
+alwade {0} mudraj fi alqayimat alsawda'a.
+yueid tahmil jamie altaedilat
+yudif taedil 'iilaa alqayimat alsawda'
+yuzil altaedil min alqayimat alsawda'
+alwaqt waltaarikh bialtawqit alealamii almunasaqi: {0}
+lam yatima aleuthur ealaa 'amr JSON shell almuhadadu.
+'iizhar maelumat altatbiq 'athna' altamhid
+tahlil wasaytat satr al'awamir
+'iizhar 'awqat aintiha' almarhala
+abda taedilat kernel eind altashghil
+'iizhar alwaqt alhalii qabl tasjil aldukhul
+yakhtur ean 'ayi khata 'athna' altamhid
+yuzhir maelumat mujazatan hawl altatbiq fi altamhidi.
+yuazie wasitat satr al'awamir fi altamhidi.
+yuadih miqdar alwaqt aladhi aistaghraqath alnawat li'iinha' almarhalati.
+abda tlqayyan taedilat kernel eind altashghili.
+yaerad alwaqt alhalia walmintiqat alzamaniat waltaarikh qabl tasjil aldukhuli.
+'iidha kan hunak khata basit 'athna' tamhid kernel , faqum bi'iielam almustakhdam bihi.
+aism almustakhdim muajah alnamat
+'uslub muajah kalimat almurur
+'iizhar MAL eind tasjil aldukhul
+aiktub kayf turid 'an takun mutalabat tasjil aldukhul alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibati.
+aiktub kayf turid 'an takun mutalabatan kalimat almurur alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibatu.
+yaerid risalat alyawm baed eard shashat tasjil aldukhuli.
+aikhtibar namat muajah shil
+namat muajah JSON Shell
+daqaq fi al'awamir almahquna
+yasbur al'awamir almahqunat fi bidayat ghilaf alnawati.
+'iizhar tafasil almilafi fi alqayima
+yuzhir tafasil almilafi almukhtasarat 'athna' sard almilafaat
+'iizhar tafasil almilafi fi qayimat FTP
+namat muajah asm almustakhdim la FTP
+namat muajah kalimat almurur liburutukul naql almilafaat
+astakhdim milafa taerif FTP al'awal
+'iidafat aitisalat jadidat 'iilaa altalab alsarie FTP
+hawal altahaquq min sihat shahadat FTP alamna
+eard FTP MOTD eind aliatisal
+qabul shahadat FTP ghayr alsaalihat dayman
+yaerid tafasil milafin FTP 'athna' sard aldalayil albaeidati.
+yustakhdam milafa taerif FTP al'awal liliatisal bi FTP.
+fi halat altamkin , yudif atsalaan jdydan 'iilaa talab FTP alsariea.
+yuhawil altahaquq min sihat shahadat FTP. la yunsah bi'iiqaf tashghilihi.
+yazhir risalat FTP lilyawm eind tasjil aldukhuli.
+qabul shahadat FTP ghayr alsaalihat dayman. la yusaa bitashghilih li'anah qad yushakil makhatir 'amniatan.
+asm almustakhdim muajah namat albarid
+kalimat almurur namat muajah lilbarid
+namat muajah IMAP lilbarid
+'uslub muajah SMTP lilbarid
+aiktishaf khadim albarid tlqayyan
+tafeil tashih 'akhta' albarid
+yakhtur birasayil albarid aljadida
+namat muajah kalimat murur GPG lilbarid
+'iirsal alfasil alzamanii ping la IMAP
+'iirsal alfasil alzamanii bingh SMTP
+tansiq nasi albarid
+aktub kayf turid 'an takun mutalabat khadim IMAP. atrukh farighan liastikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
+aktub kayf turid 'an takun mutalabat khadim SMTP. atrukh farighan liastikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
+aiktishaf khadim albarid tlqayyan bna'an ealaa aleunwan almuhadadi.
+litamkin tashih 'akhta' khadim albirid.
+yakhturuk bi'ayi rasayil barid jadidatin.
+aiktub kayf turid 'an takun mutalabatan kalimat murur GPG alkhasat bika. atrukh farighan liaistikhdam alnamat aliaiftiradi. yatimu tahlil aleanasir alnaayibatu.
+kam eadad almalli thaniatan li'iirsal 'amr ping eabr IMAP؟
+kam milli thaniatan li'iirsal akhtibar atisal SMTP؟
+yatahakam fi kayfiat eard nasi albirid.
+nasu eadi
+nasu mutadafiq
+nasu HTML
+nasun ghaniun
+nasun munasaq madghut
+alnasu alghaniu
+bad' altashih ean bued tilqayiya eind bad' altashghil
+tansiq risalat altashih ean bued
+'iidha kunt turid bad' altashih ean bued eind altamhid , faqum bitamkin hadha.
+yuhadid tansiq risalat altashih ean buedi. {0} liliasm , {1} lilrisalati.
+mujiz wib RSS namat muajah
+tahdith tilqayiy likhulasat RSS
+alfasil alzamaniu litaghdhiat RSS liltahdith altalqayiyi
+aiktub kayf turid 'an takun mutalabat khadim mujaz RSS. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
+kam milli thaniatan litahdith mujaz RSS؟
+'iizhar tafasil almilafi fi qayimat SFTP
+namat muajah asm almustakhdim la SFTP
+'adifi atisalat jadidat 'iilaa altalab alsarie liburutukul SFTP
+yaerid tafasil milafin SFTP 'athna' sard al'adilat albaeidati.
+fi halat altamkin , yudif atsalaan jdydan 'iilaa altalab alsarie liburutukul SFTP.
+tanbih antiha' alwaqt
+'iizhar maelumat muhawil shamila
+'iizhar maelumat alshabakat aleama
+tahmil nasi alnisbat almiawia
+tahmil nasi alnisbat almiawia
+kam mili thaniat yajib aliantizar qabl 'iielan almuhlati?
+yatbae maelumat almuhawil alshaamilat , mithl maelumat alhuzmati.
+yuzhir almaelumat aleamat hawl alshabakati.
+auktub kayf turid 'an takun nisbat tahmil alnas. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhajm aladhi tama tahmiluh , {1} lilhajm almustahdaf , {2} bialnisbat almiawiati.
+aiktub kayf turid 'an takun nisbat tanzil alnas. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhajm aladhi tama tanziluh , {1} lilhajm almustahdaf , {2} bialnisbat almiawiati.
+aitlub kalimat almurur baed alqufl
+baed qufl alshaashat , atlub kalimat almurur
+alhadu al'adnaa limustawaa allawn al'ahmar
+'adnaa mustawa lilawn al'akhdar
+alhadu al'adnaa limustawaa allawn al'azraq
+alhadu al'adnaa limustawaa allawn
+alhadu al'aqsaa limustawaa allawn al'ahmar
+alhadu al'aqsaa limustawaa allawn al'akhdar
+alhadu al'aqsaa limustawaa allawn al'azraq
+alhadu al'aqsaa limustawaa allawn
+alhadu al'adnaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+'adnaa mustawan lilawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+alhadu al'adnaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+alhadu al'adnaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan.
+alhadu al'aqsaa limustawaa allawn al'ahmaru. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+alhadu al'aqsaa limustawaa allawn al'akhdari. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+alhadu al'aqsaa limustawaa allawn al'azraqa. alhadu al'adnaa lilqimat almaqbulat hu 0 walhadu al'aqsaa lilqimat almaqbulat hu 255.
+alhadu al'aqsaa limustawaa alluwn. 'adnaa qimat maqbulat hi 0 wa'aqsaa qimat maqbulat hi 255 li 255 lwnan 'aw 16 li 16 lwnan.
+lawn almuqadima
+harf alkhati
+harf litashkil khata. ta'akad min 'iidkhal harf wahid faqat.
+harf alzaawiat alyusraa aleulya lisharit alsaaeat
+harf alzaawiat alyusraa aleulya lisharit aldaqayiq
+harf alzaawiat alyusraa aleulya lisharit althawani
+harf alzaawiat alyumnaa aleulya lisharit alsaaeat
+harf alzaawiat alyumnaa aleulya lisharit aldaqayiq
+harf alzaawiat alyumnaa aleulya lisharit althawani
+harf alzaawiat alyusraa alsufliat lisharit alsaaeat
+harf alzaawiat alyusraa alsufliat lisharit aldaqayiq
+harf alzaawiat alyusraa alsufliat lisharit althawani
+harf alzaawiat alyumnaa alsuflaa lisharit alsaaeat
+harf alzaawiat alyumnaa alsuflaa lisharit aldaqayiq
+harf alzaawiat alyumnaa alsuflaa lisharit althawani
+harf al'iitar aleulwii lisharit alsaaeat
+harf al'iitar aleulwii lisharit aldaqayiq
+harf al'iitar aleulwii lisharit althawani
+harif al'iitar alsuflii lisharit alsaaeat
+harif al'iitar alsuflii lisharit aldaqayiq
+harif al'iitar alsuflii lisharit althawani
+harf al'iitar al'aysar lisharit alsaaeat
+harf al'iitar al'aysar lisharit aldaqayiq
+harf al'iitar al'aysar lisharit althawani
+harf al'iitar al'ayman lisharit alsaaeat
+harf al'iitar al'ayman lisharit aldaqayiq
+harf al'iitar al'ayman lisharit althawani
+nasu maelumat lisaeat
+nasu maelumat lildaqayiq
+nasu almaelumat lilthawani
+alhadu al'adnaa limustawaa allawn al'ahmar lisaeat
+'adnaa mustawan lilawn al'akhdar lisaeat
+alhadu al'adnaa limustawaa allawn al'azraq lisaeat
+'adnaa mustawan lilawn lisaeat
+alhadu al'aqsaa limustawaa allawn al'ahmar lisaeat
+alhadu al'aqsaa limustawaa allawn al'akhdar lisaeat
+alhadu al'aqsaa limustawaa allawn al'azraq lisaeat
+alhadu al'aqsaa limustawaa allawn lisaeat
+alhadu al'adnaa limustawaa allawn al'ahmar lildaqayiq
+'adnaa mustawa lilawn al'akhdar lidaqayiq
+alhadu al'adnaa limustawaa allawn al'azraq lildaqayiq
+'adnaa mustawan lilawn lidaqayiq
+alhadu al'aqsaa limustawaa allawn al'ahmar lildaqayiq
+alhadu al'aqsaa limustawaa allawn al'akhdar lildaqayiq
+alhadu al'aqsaa limustawaa allawn al'azraq lildaqayiq
+alhadu al'aqsaa limustawaa allawn lidaqayiq
+alhadu al'adnaa limustawaa allawn al'ahmar lilthawani
+'adnaa mustawa lilawn al'akhdar lilthawani
+alhadu al'adnaa limustawaa allawn al'azraq lilthawani
+alhadu al'adnaa limustawaa allawn lilthawani
+alhadu al'aqsaa limustawaa allawn al'ahmar lilthawani
+alhadu al'aqsaa limustawaa allawn al'akhdar lilthawani
+alhadu al'aqsaa limustawaa allawn al'azraq lilthawani
+alhadu al'aqsaa limustawaa allawn lilthawani
+harf yushbih alzaawiat alyusraa aleulya. ta'akad min 'iidkhal harf wahid faqat.
+harf yushbih alzaawiat alyusraa alsufliata. ta'akad min 'iidkhal harf wahid faqat.
+shakhsiat tushbih al'iitar alealawii. ta'akad min 'iidkhal harf wahid faqat.
+harf yushbih al'iitar alsufli. ta'akad min 'iidkhal harf wahid faqat.
+harf yushbih al'iitar al'aysari. ta'akad min 'iidkhal harf wahid faqat.
+shakhsiat tushbih al'iitar alsahiha. ta'akad min 'iidkhal harf wahid faqat.
+aktub kayf yuzhir nasu almaelumat alkhasat bik lilsaaeat alhaliati. {0} lilsaaeat alhaliat min 'asl 24 saeatin.
+aiktub kayf yuzhir nasu almaelumat alkhasat bik lildaqiqat alhaliati. {0} lildaqiqat alhaliat min 'asl 60 daqiqatin.
+aiktub kayf nasu almaelumat alkhasat bik lileurud althaaniat alhaliati. {0} lilthaaniat alhaliat min 'asl 60 thaniatin.
+lawn alkhati
+harf alzaawiat alyusraa aleulwiat lisharit almunhadar
+harf alzaawiat alyumnaa aleulya lisharit almunhadar
+harf alzaawiat alyusraa alsufliat lisharit almunhadar
+harf alzaawiat alyumnaa alsufliat lisharit almunhadar
+harf al'iitar aleulwii lisharit almunhadar
+harif al'iitar alsuflii lisharit almunhadar
+harf al'iitar al'aysar lisharit almunhadar
+harf al'iitar al'ayman lisharit almunhadar
+alhadu al'adnaa limustawaa allawn al'ahmar lilawn albidaya
+alhadu al'adnaa limustawaa allawn al'akhdar lilawn albidaya
+alhadu al'adnaa limustawaa allawn al'azraq lilawn albidaya
+alhadu al'adnaa limustawaa allawn libad' allawn
+alhadu al'aqsaa limustawaa allawn al'ahmar lilawn albidaya
+alhadu al'aqsaa limustawaa allawn al'akhdar lilawn albidaya
+alhadu al'aqsaa limustawaa allawn al'azraq lilawn albidaya
+alhadu al'aqsaa limustawaa allawn libad' allawn
+alhadu al'adnaa limustawaa allawn al'ahmar lilawn alnihayiyi
+alhadu al'adnaa limustawaa allawn al'akhdar lilawn alnihayiyi
+alhadu al'adnaa limustawaa allawn al'azraq lilawn alnihaya
+alhadu al'adnaa limustawaa allawn lilawn alnihayiyi
+alhadu al'aqsaa limustawaa allawn al'ahmar lilawn alnihayiyi
+alhadu al'aqsaa limustawaa allawn al'akhdar lilawn alnihayiyi
+alhadu al'aqsaa limustawaa allawn al'azraq lilawn alnihaya
+alhadu al'aqsaa limustawaa allawn lilawn alnihayiyi
+alhadu al'adnaa lieadad Solver
+alhadu al'aqsaa lieadad Solver
+'iidkhal eard Solver
+harf alzaawiat alyusraa aleulya lihadi al'iikhtar
+harf alzaawiat alyumnaa aleulya lihadi al'iikhtar
+harf alzaawiat alyusraa alsufliat lihadi al'iikhtar
+harf alzaawiat alyumnaa alsuflaa lihadi al'iikhtar
+harf al'iitar aleulwii lihadi al'iikhtar
+harf al'iitar alsuflii lihadi al'iikhtar
+harf al'iitar al'aysar lihadi al'iikhtar
+harf al'iitar al'ayman lihadi al'iikhtar
+'uslub maelumat alsafhat alyadawii
+ma 'iidha kan sayatimu 'iizhar ma hu maktub fi muajah al'iidkhal 'am la.
+ma hu 'aqalu eadad liliakhtiari?
+ma hu aleadad al'aqsaa liliakhtiari?
+aiktub kayf turid 'an takun maelumat safhatuka. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhusul ealaa aleunwan alyadawii , {1} lilmurajaeati.
+lam yatima aleuthur ealaa alkhasiya {0} fi 'ayin min alwahadat alnamatiati.
+yasrud hadha alqism 'iiedadat shashat altawaquf aleamati. li'iiedadat shashat altawaquf alfardiat , akhruj min al'iiedadat waftah 'iiedadat shashat altawaquf.
+abda eajalat al'alwan fi wade al'alwan alhaqiqii
+'iidha tama tahdiduh , fasayaerad shiear bad' altashghil almukhasas mae daem aleunsur alnaayibi. yumkinuk astikhdam {0} li'iisdar kernel.
+'ayu mutaghayir min allughat alhaliat yatimu astikhdamuh litaghyir 'asma' al'ashhur waltaqwim wama 'iilaa dhalika?
+yanshut daem 255 lwnan.
+yanshut daem allawn alhaqiqii.
+tama hadhf alkalimat fi alsatr {0}.
+tama astibdal alsilsilat fi alsatr {0}.
+tamat 'iizalat raqm alsatr {0}.
+qum bi'iiqaf alrasayil ghayr almusarah biha
+yukhfi alrisalat almuzeijat 'iidha hawalat wazifat alqayimat fath mujalad ghayr musarah bih
+maelumat khadim FTP
+eunwan almustaqbali:
+manafadh alkhadimi:
+nawe alkhadimi:
+nawe nizam alkhadimi:
+wade tashfir alkhadimi:
+nawe atisal bayanat alkhadimi:
+nizam alkhadimi:
+nawe bayanat tanzil alkhadimi:
+nawe bayanat tahmil alkhadimi:
+yajib ealayk aliatisal bialkhadim qabl 'iijra' hadhih aleamaliati.
+'adkhul mlfan beydan litatima tajziatuhu.
+'adkhil dalil baeid litatima tajziatuhu.
+'adkhil dalil baeid.
+altajziat aleawdiat liburutukul naql almilafaat
+ma 'iidha kan sayatimu tajziat aldalil bishakl mutakariri. yurjaa mulahazat 'anah laysat kulu khawadim FTP tadeam dhalika.
+sureat saeat almuealaji:
+daem almuealij SSE2:
+aleadad al'iijmaliu lilmuealajati:
+hajm alqirsu:
+aldhaakirat alajmaliatu:
+bitaqat musawiratin:
+tiraz alqirsu:
+'aqsaa eadad min rasayil albarid al'iiliktrunii fi safhat wahida
+thaqafat allughat alhalia
+'iidha kunt mtakdan min 'anak fataht alqism alsahih , fatahaqaq min hadhih alrisalati:
+'iiedadat mutanawiea ...
+'iiedadat al'alwan ...
+yunafidh 'amr khadim FTP
+'adkhul eunwan wamanafidh khadim POP3 (<aleunwani> 'aw <aleunwani>: [almunfadhi]):
+namat muajah POP3 lilbarid
+'iirsal alfasil alzamanii bingh POP3
+aktub kayf turid 'an takun mutalabat khadim POP3. atrukh farighan liastikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
+kam eadad almalli thaniatan li'iirsal 'amr ping eabr burutukul POP3؟
+astakhdim burutukul POP3
+ma 'iidha kan yajib astikhdam POP3. taetil hadha sayustakhdam SMTP.
+yushfar silsilatan biastikhdam CRC32
+yaftah eamil albarid
+min naql albarid ...
+'iiedadat shashat altawaquf hadhih mutawafirat huna.
+aikhtibarat wazayif aljadwal
+yuharir alsatr almuhadad
+yudif al'astur aljadidat fi nihayat almilafi
+'adkhal alnasu aladhi turid 'iilhaqah binihayat almilafa. eind aliantiha' , aktub "EOF" ealaa alsatr alkhasi biha.
+asm almudif
+aism almustakhdam
+nawe albayanat
+altashfir
+altashfir
+alburutukulat
+'iizhar taqadum naql albarid
+taqadum naql albarid
+taqadum naql albarid (firdi)
+fi halat altamkin , sayaerid ghilaf albarid eadad wahadat albayit alati yatimu 'iirsaluha eind tanzil albirid.
+aiktub kayf turid 'an yakun 'uslub taqadum naql albarid alkhasi bika. atrukh farighan liaistikhdam alnamat aliaiftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhajm almanqul w {1} lilhajm al'iijmalii.
+aiktub kayf turid 'an yakun 'uslub taqadum naql albarid alkhasi bika. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhajm almanquli.
+wahdat zamaniatun:
+alyawm hu {0}
+alwaqt alhaliu hu {0}
+lawn fasil aljadwal
+lawn ras aljadwal
+lawn qimat aljadwal
+'iijabat mumkina
+lam yatima tahdid milafi Mod.
+muhawalat tathbit taedil muthabat bialfieli. jar tahdith alwade ...
+fashil altathbit l
+milafun mod almutawafir ghayr mutawafiqin.
+fashil 'iilgha' altathbit l
+yaftah eunwan URL
+tibaeat 'arqam al'astur eind tibaeat muhtawayat almilafi
+yajeal al'amr \ "cat \" yatbae 'arqam 'astur almilafa.
+nuskhat mutarjama
+nuskhat mutarjama
+yarfud jamie al'iikhtarat
+jaraa altahmili...
+jar altahmil ...
+'iizhar al'iikhtar litaqadum altanzil
+'iizhar al'iikhtar min 'ajl taqadum altahmil
+yuzhir al'iikhtar aladhi yuadih taqadum altanzili.
+yuzhar al'iikhtar aladhi yuzhir taqadum altahmili.
+liltahaquq mimaa 'iidha kanat alsilsilat alqabilat liltarjamat mawjudat fi mawarid KS
+tama aleuthur ealaa silsilat fi mawarid altarjamati.
+lam yatima aleuthur ealaa silsilat fi mawarid altarjamati.
+yabda alnawat bihudu'
+yaqum bi'iidkhal 'amr libad' altashghil fi tasjil aldukhul altaali
+yabda alnawat fi alwade alamin , mimaa yuadiy 'iilaa taetil jamie altaedilat
+mithl alwade alamin , walakin aydan yueatil taeadud almustakhdimin wabaed altakhsis
+lam yakun hunak ma yakfi min alhujaju.
+lawn alzaawiat alyusraa aleulya lisharit almunhadar
+lawn alzaawiat alyumnaa aleulya lisharit almunhadar
+lawn alzaawiat alyusraa alsufliat lisharit almunhadar
+lawn alzaawiat alyumnaa alsufliat lisharit almunhadar
+lawn al'iitar aleulwii lisharit almunhadar
+lawn al'iitar alsuflii lisharit almunhadar
+lawn al'iitar al'aysar lisharit almunhadar
+lawn al'iitar al'ayman lisharit almunhadar
+astakhdim 'alwan alhudud lisharit almunhadar
+astakhdim 'alwan alhudud lisharit almunhadiri. 'iidha tama taetiluh , fasayatimu 'iinsha' sharit ramadi.
+yabda qadhifat HTTP
+yakhruj HTTP shell wayaeud 'iilaa kernel
+yeyn mawqie HTTP. yajib 'an yakun URI salhan.
+yahsul ealaa aliastijabat min khadim HTTP biastikhdam altalab almuhadad
+yahdhaf almuhtawaa min khadim HTTP
+hadath khataan fi ghilaf HTTP:
+risalat HTTP: al'amr almatlub {0} ghayr mawjuda. rajie "taelimati" lilhusul ealaa qayimat bial'awamir almutahat almuhadadat fi ghilaf HTTP.
+yahsul ealaa alsilsilat min khadim HTTP biastikhdam altalab almuhadad
+alhusul ealaa {0} ...
+tansiq URI lilmawqie ghayr salihi.
+taeyin almawqie 'iilaa
+la tatatalab al'alwan 'iieadat altashghil , lakina muezam al'iiedadat tatatalab 'iieadat altashghili.
+la tujad musaeadat lilwasita "{0}".
+adghatt A ealaa altaeliqat alkarahiat lilaietidhari. adghat T ealaa taeliqat alhubi lilshukri. adghat ealaa Q li'iinha' alluebati.
+laqad aetadhart ean taeliq yakrahu! mumtazi!
+aietadhar ean alhubi altaeliqi. lays jayidan bima fih alkifayatu.
+'ant faqat shakart alkarah ealaa altaeliq alkarahiata!
+alsueubat aliaftiradiat li SpeedPress
+muhlat aldaght ealaa miftah SpeedPress
+hadad mustawaa alsueubat almufadal ladayk.
+kam milli thaniat liaintizar aldaght ealaa almiftah qabl aintiha' almuhlati? (fi alsueubat almukhasasati)
+yustabdil kalimatan 'aw eibaratan bi'ukhraa biaistikhdam altaeabir alnamatia
+yustabdil kalimatan 'aw eibaratan bi'ukhraa fi satr biaistikhdam altaebirat aleadia
+alaistielam ean kalimat fi satr muhadad 'aw kuli al'astur biaistikhdam altaebirat aleadia
+aibhath ean makan
+aiktub ma turid albahth eanhu.
+lam yatima aleuthur ealaa shay'i. ta'akad min kitabat al'iiedad bishakl sahihin.
+hazm milafun mahaliyun lil'arshif
+la yumkin 'an tahzim 'aya shay'in.
+wasaf al'iijaba
+aistidafat almina'
+limazid min almaelumat hawl shurut wa'ahkam aistikhdam hadha albarnamaj , qum biziara
+nawe 'iikhraj aliakhtiar aliaftiradii
+yatahaqaq min jamie 'iiedadat KS limaerifat ma 'iidha kanat almutaghayirat maktubatan bishakl sahih
+tahtawi 'iidkhalat altakwin hadhih ealaa mutaghayirat 'aw taedadat ghayr salihat watahtaj 'iilaa al'iislahi:
+almilafu {0} ghayr mawjud
+yunshi masfufat mutaghayirat bialqiam almutawafira
+auktub raqm al'iiedad aladhi turid alaintiqal 'iilayhi. 'aya shakhsiat 'ukhraa taeni aleawdata.
+liltahaquq min jamie 'arqam 'astur nasi altarjamat limaerifat ma 'iidha kanat jamieuha mutasawiatan
+eadam tatabuq alkhati fi
+alraja' 'iidkhal raqm almustakhdimi.
+qum bitadmin almustakhdimin almajhulin
+tadmin almustakhdimin almueawaqin
+yashmal almustakhdimin almajhulin fi alqayima
+yashmal almustakhdimin almueawaqin fi alqayima
+rutab alqayima
+yufriz qayimat nizam almilafaat bishakl ahtirafi.
+yuafir aikhtiar alaikhtiar
+'awamir shill lam tunafidh !!!
+eard 'ahdath eunwan RSS eind tasjil aldukhul
+eunwan URL laeunwan RSS
+fi kuli tasjil dukhul , sayuerid 'ahdath eunwan RSS min eunwan URL alrayiysi almuhadadu.
+eunwan URL laeunwan RSS liastikhdamih eind eard 'ahdath eunwani. hadhih hi eadatan khulasatuk almufadalatu.
+'ahdath al'akhbari:
+fashil fi alhusul ealaa akhar al'akhbari.
+lawn alkhiar almuhadad
+'iizhar tatabue almukdas ealaa khata kernel
+'iidha kan hunak 'ayu khata fi kernel , aikhtar ma 'iidha kunt turid tibaeat tatabue almukdas 'iilaa wahdat altahakum 'am la.
+yumkin tahmil altaedil , lakina hadhih altahdhirat qad tuathir ealaa tariqat eamal altaedili:
+yumkin tahmil shashat altawaquf , walakina hadhih altahdhirat qad tuathir ealaa tariqat eamal shashat altawaquf:
+hifz al'iiedadat biasm
+tahmil al'iiedadat min
+'ayn turid hifz 'iiedadat kernel alhaliati?
+la yumkin hifz 'iiedadat kernel 'aelaa almilafi almawjudi.
+min 'ayn turid tahmil 'iiedadat kernel alhaliati?
+yatahaqaq limaerifat ma 'iidha kanat alsalasil alqabilat liltarjamat mawjudatan fi mawarid KS
+yudmaj milafayn nisiyayn 'aw 'akthar fi milafi al'iikhraji.
+fashil fi damj almilafaati.
+antahat muhlat 'iihdar mujaz RSS
+kam milli thaniat yajib aliantizar qabl antiha' muhlat jalb mujaz RSS؟
+amla alsanadiq
+hal narsum alsunduq kakulin 'am narsum alhudud faqat?
+takhir almarhalat bialmili thania
+kam mili thaniatan tantazir qabl rasm almarhalat altaaliati?
+fatrat taefun almunhadar altaalia
+kam mili thaniat yajib aliantizar qabl tueafin nihayat almunhadar altaali?
+tahaqaq min hisat altashih
+hal natahaqaq mimaa 'iidha kan nizam altashih yahtaj 'iilaa altahaquq min alhisat alnisbiat qabl alkitabat 'iilaa musahah al'akhta'i?
+kam mili thaniatan astaghraqt felaan lilnuwm?
+fashil fi 'iidafat hadthi.
+fashal 'iizalat alhadathi.
+lam yatima tawfir wasitat kafiat li'iidafat hadthi.
+lam yatima tawfir wasitat kafiat li'iizalat hadthi.
+lam yatima tawfir alhujaj alkafiat liltalaeub bialhadathi.
+fashil fi 'iidafat 'aw 'iizalat tadhkiri.
+lam yatima tawfir wasitat kafiat li'iidafat tadhkir 'aw 'iizalatihi.
+lam yatima tawfir alhujaj alkafiat liltalaeub bialtadhkiri.
+tadhkir bidun eunwan
+hadath bila eunwan
+alan hu yawm hadatha!
+la tufawit hadha!
+eamil ghayr salihi.
+saeat tawqit basita
+aibda 'aw tawaqif
+hajar
+'iieadat dabt
+jihaz tawqit basit
+bad' ('iieadati) aleadi altanazulii
+dabt alfasil alzamanii
+almuhlat almushar 'iilayha laysat raqmiatan.
+hadad almuhlat bialmalli thaniatan
+hifz jamie al'ahdath w / 'aw altadhkirat bishakl mudamir
+fi halat altamkin , yahdhif jamie al'ahdath w / 'aw altadhkirat qabl hifziha jmyean biastikhdam 'amr altaqwimi.
+tahaqaq min muhawalat 'iieadat almuhawalat li'iirsal FTP
+muhlat atisal FTP
+muhlat atisal bayanat FTP
+'iisdarat FTP IP
+kam maratan yatimu altahaquq min altahmil waltanzil wa'iieadat almuhawalat 'iidha fashil altahaquq qabl fashal altanzil kakulin?
+kam milli thaniat yajib antizaruha qabl antiha' muhlat atisal FTP؟
+kam milli thaniat yajib antizaruha qabl antiha' muhlat atisal bayanat FTP؟
+akhtar 'iisdar burutukul al'iintirnit aladhi yadeamuh khadim FTP waladhi yastakhdimuh eamil FTP.
+muhawalat bad' RPC 'athna' bad' tashghilih bialfieli.
+harf alzaawiat alyusraa aleulwiat lieajalat al'alwan RGB
+harf alzaawiat alyumnaa aleulya lieajalat 'alwan RGB
+harf alzaawiat alyusraa alsufliat lieajalat 'alwan RGB
+harf alzaawiat alyumnaa alsufliat lieajalat 'alwan RGB
+harf al'iitar aleulwii lieajalat 'alwan RGB
+harf al'iitar alsuflii lieajalat al'alwan RGB
+harf al'iitar al'aysar lieajalat 'alwan RGB
+harf al'iitar al'ayman lieajalat 'alwan RGB
+yabhath ean milafin fi aldalil almuhadad 'aw fi aldalil alhalii
+yuhawil nihayat al'astur 'iilaa tansiq lilnizam al'asasii alhalii 'aw 'iilaa tansiq mukhasas muhadad
+alhajm al'iijmaliu fi almujaladi:
+'iizhar alhajm al'iijmalii fi alqayima
+fi halat altamkin , yaerid alhajm al'iijmaliu lilmujalad fi alqayimat , aetmadan ealaa kayfiat hisab 'ahjam almujalad wfqan liltakwini.
+'ant muhdithu!
+tansiq JSON aliaftiradii liqadhifat JSON
+yuhadid tansiq JSON aliaftiradii (jmil 'aw musaghara) lisudfat JSON lihifziha.
+tama tanzil altahdith binajahi!
+qum bitanzil altahdithat tlqayyan
+'iidha kan hunak 'ayu tahdith , fasayaqum kernel bitanzilih tlqayyan.
+nisf qatar ainfijar al'aleab alnaaria
+kam eadad alkutal (hataa 10) nisf qatar alainfijar lil'aleab alnaariat eind alaishtieal?
+yahtawi hadha al'amr ealaa almafatih altaaliat alati tughayir tariqat eamalihi:
+yatbae 'arqam al'astur alati tali alsatr aljari tibaeatah
+yamnae tibaeat 'arqam al'astur
+aistakhdim dayiman alnuskhat almutarjima
+aistakhdim dayiman alnuskhat almutarjima
+quat tabdil allugha
+'ashar 'iilaa 'ana al'iijabat yumkin 'an tastaghriq 'akthar min harf
+'ashar 'iilaa 'ana al'iijabat yumkin 'an tastaghriq hrfan wahdan faqat
+aitabe alsuwal wal'iijabat fi satr wahid
+atabe alsuwaal wal'iijabat fi satrayn
+atabe alsuwaal wal'ajwibat bialtariqat alhaditha
+atabe alsuwal wal'ajwibat fi jadwal
+yuzhir tafasil almilafi fi alqayima
+mane rasayil "rafd al'iidhni" almuzeija
+yazhar kulu almanatiq alzamania
+tabda alluebat fi sueubat sahla
+tabda alluebat bimustawaaan mutawasit ​​alsueuba
+yabda alluebat bisueubat baligha
+tabda alluebat fi sueubat baligha
+tabda alluebat bisueubat mukhasasatan. alraja' mulahazat 'anah yajib kitabat almuhlat almukhasasat bialmalli thaniatan kawasitati.
+yuzhir maelumat alnizam
+yuzhir maelumat aljihaz
+yuzhir maelumat almustakhdam
+yazhar risalat alyawm
+yazhir risalat alyawm baed tasjil aldukhul
+yazhir kulu almaelumat
+yunshi dlylaan yahtawi ealaa muhtawayat milafi ZIP
+yuzhir kulu almudun almutaha
+daght sarie
+la yujad daght
+la taqum bi'iinsha' dalil 'asasiin fi al'arshif
+wahdat fi alqarad
+qatae aliatisal bialkhadim bishakl mukhziin
+yushir 'iilaa 'ana almasar alhadaf mutlaq
+yahfaz milafa JSON , wayujmiluh fi hadhih aleamalia
+yahfaz milafa JSON , wayusghiruh fi aleamalia
+yahsul ealaa namat nihayat alsatr min milafi nisiy
+mash jamie al'ahdath alati tama 'iitlaquha
+tafeil tashih 'akhta' alhadath
+tamakan min tashih 'akhta' nizam 'ahdath kernel
+khatu Figlet
+aktub khata alshakl aladhi tadeamuh maktabat Figgle. rajie wathayiq almaktabat limazid min almaelumat
+fashal tathbit lughat mukhasasa {0}.
+milafu albayanat alwasfiat almatlub litathbit allughat almukhasasat ghayr mawjudi.
+la tuafir maelumat albayanat alwasfiat allaazimat litathbit allughat almukhasasat altarjumat almatlubat almatlubata.
+fashil 'iilgha' tathbit allughat almukhasasa {0}.
+milafu albayanat alwasfiat almatlub li'iilgha' tathbit allughat almukhasasat ghayr mawjudi.
+la tuafir maelumat albayanat alwasfiat almatlubat li'iilgha' tathbit allughat almukhasasat altatwieat almahaliyat almatlubata.
+la yatatabaq tul allughat al'iinjiliziat mae tul ramz allughat almuqadami.
+allughat mawjudat bialfiel wala yumkin alkitabat fawqaha.
+fashil 'iilgha' tathbit allughat almukhasasati. ealaa al'arjah ghayr mawjudi.
+fashal tathbit allughat almukhasasati.
+fashil 'iilgha' tathbit allughat almukhasasati.
+fashil 'iilgha' tathbit allughat almukhasasati. rajie alaistithna' aldaakhilia limazid min almaelumati.
+aktub kalimat murur almaswuwla. ta'akad min eadam astikhdam hadha alhisab 'iilaa 'iidha kunt taerif hqan ma tafealuhu.
+yajib ealayk kitabat kalimat murur almaswuwli.
+maelumat altarkhis
+'iidarat allughat alkhasat bik
+lam yatima aleuthur ealaa allughat 'aw 'ana almilafa yahtawi ealaa 'ahruf ghayr salihatin.
+lam yatima tahdid allughati.
+tama taetil 'iidarat allughat fi alwade alamana.
+aliasm almukhtasar lilughati:
+aliasm alkamil lilughati:
+lughat qabilat liltarjamati:
+lughat mukhasasatun:
+lafitat tarhib jadida
+shashat dafqat 'aniqa
+yaerid lafitat altarhib aljadidat alati tama taqdimuha fayjlit
+tumakin shashat albidayat al'aniqat eind bad' altashghili. yurjaa mulahazat 'anah sayatimu taetil muajah alwasitat wakhtibar altamhid almusbaq lilqadhifati.
+aism albidaya
+asm albidayat min albuqae almutawafirat almutabaqat fi kernel.
+wulidat aliaftiradiu MOTD.
+tama 'iinsha' MAL aliaftiradi.
+tamat tahyiat hisab alnizam
+tamat tahyiat almustakhdimin
+'udhunat muhamala
+marhaba!
+jar bad' musahah al'akhta' ean bued ...
+khata aitisal almusahah ean bued
+yakhtur ealaa khata aitisal altashih ean bued
+fi halat altamkin , sayatimu aistikhdam nizam al'iielam li'iielam almudif bikhata aitisal tashih al'akhta' ean bued. khilaf dhalik , sawf tustakhdim kitabat wahdat altahakum alaiftiradiati.
+alkhati Figlet lilmuaqat
+tamkin Figlet lilmuaqat
+fi halat altamkin , sayatimu aistikhdam alshakl alsaghir lilmuaqat. yurjaa mulahazat 'anah yahtaj 'iilaa shashat wahdat tahakum kabirat lieard alwaqt bishakl sahih mae tamkin Figlet.
+khata 'athna' tahlil wasaytat satr al'awamir qabl altamhidi: {0}
+yueid taeyin alnawat 'iilaa 'iiedadat almasnae
+tajawaz alkashf ean hajm wahdat altahakum
+yabdu 'anak tatajawaz aiktishaf hajm wahdat altahakumi. qad la taemal al'ashya' bishakl sahih ealaa alshaashat alsaghirati.
+lilhusul ealaa tajribat 'afdal , qum bitaghyir hajm nafidhat wahdat altahakum alkhasat bik 'athna' altawajud ealaa hadhih alshaashati. adghat ealaa 'aa zirin lilaistimrari...
+wahdat altahakum alkhasat bik saghirat jdan bihayth la yumkin tashghiluha bishakl sahihin:
+khatu rayat alshakl
+yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn waltibaeat alkhatiat bidaem Figlet
+yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn waltibaeat alkhatiat biastikhdam altansiq wadaem Figlet
+yuzil risalatan bishakl dayim
+yuzil bishakl dayim jamie alrasayil min almustalam
+yatarajae ean 'iizalat risala
+yatarajae ean 'iizalat jamie alrasayil min almustalam
+lam yatima tanfidh altarajue ean alhadhf la POP3.
+'azhar 'ana al'awamir taetamid ealaa almusaeada
+'azhir 'ana 'awamir shell taetamid ealaa almusaeada
+'azhar 'ana 'awamir altaedil taetamid ealaa almusaeada
+'iizhar alaietimad ealaa al'asma' almustaearat ealaa almusaeada
+'iizhar eadad al'awamir fi qayimat al'awamir , alati yatimu altahakum fiha biwasitat mafatih eard aleadi althalathat li'anwae mukhtalifat min al'awamir.
+yunafadh al'awamir bimujarad 'iirda' taebirat UESH
+lam yatima aleuthur ealaa alshart fi altaebiri.
+yatatalab alshart {0} wasitat {1}. hasalat ealaa {2}.
+yajib 'an tudae alhalat fi almuntasafi.
+yajib wade alshart fi albidayati.
+khataan fi tahlil altaebir bisabab khata fi bina' aljumlati.
+fashil fi talbiat alshartu. mazid min almaelumat huna:
+shakhsiat qinae kalimat almurur
+harf yukhfi kalimat almururi. atrukh farighan limazid min al'amani.
+yakhruj min alghilaf 'iidha kan yaemal ealaa qishrat fareia
+la yumkin 'an taqtal qadhifat al'um!
+la yumkin tasjil alkhuruj min almajmueat alfareiati.
+almilafu ghayr muhadadi. qadhifat alkhuruj ...
+tatawafar 'iiedadat shashat albidayat hadhih huna.
+lawn sharit altaqadum
+yaftah 'iiedadat shashat altawaquf
+yaftah 'iiedadat albidaya
+yasrud mutaghayirat UESH almutaha
+taqadam mawqie alnasi
+hadad mawqie nasi altaqadum almufadal ladayka.
+yumkinuk faqat kitabat al'arqami.
+aidghat ealaa "q" lilkhuruwji.
+jari tahmil al'asma' ...
+nzran liwujud sueubat faniyat , la yumkinuna sard khasayis almuhawil ealaa 'anzimat Unix.
+litamkin wade altashih
+yutalib bialhujaj
+qum bitamkin wade al'aswad wal'abyad
+yajeal aldiysku 'abyad wa'aswada. sawf tudhi eaynayk hqan 'iidha kanat sarieatan jdan , lidha la yunsah biha 'iidha kunt tueani min nawbat min alsuwar alsarieati.
+yabdu 'anak kunt tashghal 'isdaran ghayr madeumin. yunsh bishidat bieadam astikhdam hadha al'iisdari.
+tahmil al'alwan alhalia
+lawn alkhiar albadil
+yahsab almustakhdimun litaeliqat alhubi 'aw alkarahia
+kam eadad almustakhdimin fi ghurfat altaeliq lilhubi 'aw alkarahiati?
+yasrud allughat almutaha
+allughat almutawafirati:
+wasayit satr al'awamir:
+wasaytat satr 'awamir ma qabl altamhidi:
+yaftah wathayiq API almueadalat lihaykal altaelimat albarmajiat almasdar fi 'ahdath 'ashkaliha

@@ -983,3 +983,675 @@ Bonyeza kitufe chochote kusoma ukurasa wa mwongozo ..
 Ukurasa huu wa mwongozo unahitaji kufanya kazi kwa:
 Ukurasa wa mwongozo {0} haupatikani.
 Mwongozo wa mod
+Hoja za kernel zinazopatikana:
+Bonyeza "q" ikiwa umemaliza.
+Hoja nyingi za kernel zinaweza kutengwa na koma bila nafasi, kwa mfano:
+Amri nyingi zilizoingizwa zinaweza kutengwa na koloni zilizo na nafasi, kwa mfano:
+Hoja iliyoombwa {0} haipatikani.
+Hitilafu isiyoweza kurekebishwa katika hoja:
+Husimba mfuatano kwa njia fiche kwa kutumia SHA512
+Husimba mfuatano kwa njia fiche kwa kutumia SHA384
+Husimba mfuatano kwa njia fiche kwa kutumia SHA256
+Husimba mfuatano kwa njia fiche kwa kutumia SHA1
+Husimba mfuatano kwa njia fiche kwa kutumia MD5
+wapi kihifadhi kitakuwa
+Sehemu ya Mod sio kitu.
+Kusimamisha mods hairuhusiwi kwenye hali salama.
+Mod tayari imeanzishwa!
+Mod bado hajaanza!
+Matumizi ya amri:
+Sehemu ya jina la faili:
+Njia ya faili ya sehemu:
+Hitilafu wakati wa kujaribu kuanzisha skrini:
+Aina ya njia batili.
+Aina ya njia ya kernel si sahihi.
+Uanzishaji uliotangulia haukufaulu
+Kihariri cha JSON bado hakijafungua utiririshaji wa faili.
+Sifa iliyo ndani ya faili ya JSON haipatikani.
+Mali iliyoondolewa.
+Inaongeza sifa mpya mwishoni mwa faili ya JSON
+Huondoa kipengee kutoka kwa faili ya JSON
+Huondoka kwenye ganda la JSON
+Huondoka kwenye ganda la JSON bila kuhifadhi mabadiliko
+Huhifadhi faili ya JSON
+Hufungua ganda la JSON
+Huchapisha faili ya JSON
+Muda unaofuata wa ngazi
+Huwasha usaidizi wa rangi 255 kwa Njia panda.
+Huwasha usaidizi wa rangi halisi kwa Njia panda.
+Ni milisekunde ngapi za kusubiri kabla ya kujaza ngazi inayofuata?
+Rangi ya kichwa cha arifa
+Rangi ya maelezo ya arifa
+Rangi ya maendeleo ya arifa
+Rangi ya kutofaulu kwa arifa
+Rangi ya swali
+Rangi ya mafanikio
+Rangi ya dola ya mtumiaji
+Rangi ya ncha
+Rangi ya maandishi ya kitenganishi
+Rangi ya kitenganishi
+Rangi ya kichwa cha orodha
+Rangi ya onyo la maendeleo
+Rangi ya wakati wa hatua
+Rangi ya maendeleo
+Rangi ya chaguo la nyuma
+Chora mpaka wa arifa
+Inashughulikia arifa na mpaka.
+Wasiliana na muuzaji wa mod ili kuboresha mod hadi toleo linalolingana.
+Rangi ya mpaka ya kipaumbele cha chini
+Rangi ya mpaka ya kipaumbele cha kati
+Rangi ya mpaka ya kipaumbele
+Hutuma arifa ya maendeleo ili kujaribu mpokeaji
+Hujaribu gurudumu la rangi
+Inaonyesha wakati wa kernel ya ndani
+Inaonyesha tarehe ya kernel ya ndani
+Inaonyesha tarehe na wakati wa kernel ya ndani
+Inaonyesha wakati wa kernel ya UTC
+Inaonyesha tarehe ya UTC kernel
+Inaonyesha tarehe na wakati wa kernel ya UTC
+Njia ya MOTD
+Njia ya MAL
+Je, ni faili gani ya maandishi ya MOTD? Andika njia kamili ya faili ya maandishi.
+Je, ni faili gani ya maandishi ya MAL? Andika njia kamili ya faili ya maandishi.
+Mods zilizoorodheshwa
+Andika majina ya faili ya mods ambazo hazitafanya kazi wakati wa kuanza. Unapomaliza, andika "q". Andika alama ya minus kando ya njia ili kuondoa mod iliyopo.
+Mod {0} imeorodheshwa.
+Hupakia upya mods zote
+Inaongeza mod kwenye orodha iliyoidhinishwa
+Huondoa mod kutoka kwa orodha iliyoidhinishwa
+Saa na tarehe katika UTC: {0}
+Amri ya shell ya JSON iliyobainishwa haipatikani.
+Onyesha maelezo ya programu wakati wa kuwasha
+Changanua hoja za mstari wa amri
+Onyesha nyakati za kumaliza hatua
+Anzisha marekebisho ya kernel kwenye buti
+Onyesha wakati wa sasa kabla ya kuingia
+Arifu kwa hitilafu yoyote wakati wa kuwasha
+Inaonyesha maelezo mafupi kuhusu programu kwenye buti.
+Huchanganua hoja za safu ya amri kwenye buti.
+Inaonyesha muda gani punje ilichukua kumaliza hatua.
+Anzisha marekebisho ya kernel kiotomatiki kwenye buti.
+Huonyesha saa ya sasa, saa za eneo, na tarehe kabla ya kuingia.
+Ikiwa kuna hitilafu ndogo wakati wa kuwasha kernel, hujulisha mtumiaji kuihusu.
+Mtindo wa kuuliza jina la mtumiaji
+Mtindo wa kuuliza nenosiri
+Onyesha MAL kwenye kuingia
+Andika jinsi unavyotaka onyesho lako la kuingia liwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Andika jinsi unavyotaka onyesho la nenosiri lako liwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Inaonyesha Ujumbe wa Siku baada ya kuonyesha skrini ya kuingia.
+Mtindo wa haraka wa Shell
+Mtindo wa haraka wa JSON Shell
+Chunguza amri zilizoingizwa
+Huchunguza amri zilizodungwa mwanzoni mwa ganda la kernel.
+Onyesha maelezo ya faili kwenye orodha
+Inaonyesha maelezo mafupi ya faili wakati wa kuorodhesha faili
+Onyesha maelezo ya faili katika orodha ya FTP
+Mtindo wa kuuliza jina la mtumiaji kwa FTP
+Mtindo wa kuuliza nenosiri kwa FTP
+Tumia wasifu wa kwanza wa FTP
+Ongeza miunganisho mipya kwenye upigaji kasi wa FTP
+Jaribu kuthibitisha vyeti salama vya FTP
+Onyesha FTP MOTD kwenye muunganisho
+Daima ukubali vyeti batili vya FTP
+Inaonyesha maelezo ya faili ya FTP huku ikiorodhesha saraka za mbali.
+Hutumia wasifu wa kwanza wa FTP kuunganisha kwenye FTP.
+Ikiwashwa, huongeza muunganisho mpya kwenye upigaji kasi wa FTP.
+Inajaribu kuthibitisha vyeti vya FTP. Kuzima haipendekezi.
+Inaonyesha ujumbe wa FTP wa siku kwenye kuingia.
+Daima ukubali vyeti batili vya FTP. Kukiwasha hakupendekezwi kwani kunaweza kuhatarisha usalama.
+Mtindo wa swali la jina la mtumiaji kwa barua
+Mtindo wa kuuliza nenosiri kwa barua
+Mtindo wa haraka wa IMAP kwa barua
+Mtindo wa haraka wa SMTP kwa barua
+Gundua seva ya barua kiotomatiki
+Washa utatuzi wa barua
+Arifu kwa ujumbe mpya wa barua
+Mtindo wa kuuliza nenosiri la GPG kwa barua
+Tuma muda wa ping wa IMAP
+Tuma muda wa ping SMTP
+Umbizo la maandishi ya barua
+Andika jinsi unavyotaka kidokezo cha seva yako ya IMAP kiwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Andika jinsi unavyotaka kidokezo cha seva yako ya SMTP kiwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Gundua seva ya barua kiotomatiki kulingana na anwani uliyopewa.
+Huwasha utatuzi wa seva ya barua.
+Inakujulisha kwa ujumbe wowote mpya wa barua.
+Andika jinsi unavyotaka neno lako la siri la GPG liwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Ni milisekunde ngapi za kutuma ping ya IMAP?
+Ni milisekunde ngapi za kutuma ping ya SMTP?
+Hudhibiti jinsi maandishi ya barua yataonyeshwa.
+Maandishi wazi
+Maandishi yaliyotiririka
+maandishi ya HTML
+Maandishi yaliyoboreshwa
+Maandishi tajiri yaliyobanwa
+Nakala tajiri
+Anzisha utatuzi wa mbali kiotomatiki unapoanzisha
+Umbizo la ujumbe wa utatuzi wa mbali
+Ikiwa unataka utatuzi wa mbali uanze kwenye buti, wezesha hii.
+Hubainisha umbizo la ujumbe wa utatuzi wa mbali. {0} kwa jina, {1} kwa ujumbe.
+Mtindo wa haraka wa URL ya mipasho ya RSS
+Onyesha upya kiotomatiki mlisho wa RSS
+Onyesha upya kiotomatiki muda wa mlisho wa RSS
+Andika jinsi unavyotaka kidokezo cha seva yako ya RSS kiwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Je, ni milisekunde ngapi za kuonyesha upya mlisho wa RSS?
+Onyesha maelezo ya faili katika orodha ya SFTP
+Mtindo wa kuuliza jina la mtumiaji kwa SFTP
+Ongeza miunganisho mipya kwenye upigaji kasi wa SFTP
+Inaonyesha maelezo ya faili ya SFTP huku ikiorodhesha saraka za mbali.
+Ikiwashwa, huongeza muunganisho mpya kwenye upigaji kasi wa SFTP.
+Muda wa ping umekwisha
+Onyesha maelezo ya kina ya adapta
+Onyesha maelezo ya jumla ya mtandao
+Pakua maandishi ya asilimia
+Pakia maandishi ya asilimia
+Je, ni milisekunde ngapi za kusubiri kabla ya kutangaza muda umekwisha?
+Huchapisha maelezo ya kina ya adapta, kama vile maelezo ya pakiti.
+Inaonyesha maelezo ya jumla kuhusu mtandao.
+Andika jinsi ungependa asilimia ya maandishi yako ya upakiaji yawe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa. {0} kwa ukubwa uliopakiwa, {1} kwa ukubwa unaolengwa, {2} kwa asilimia.
+Andika jinsi ungependa asilimia yako ya upakuaji yawe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa. {0} kwa ukubwa uliopakuliwa, {1} kwa ukubwa unaolengwa, {2} kwa asilimia.
+Uliza nenosiri baada ya kufunga
+Baada ya kufunga skrini, uliza nenosiri
+Kiwango cha chini cha rangi nyekundu
+Kiwango cha chini cha rangi ya kijani kibichi
+Kiwango cha chini cha rangi ya bluu
+Kiwango cha chini cha rangi
+Kiwango cha juu cha rangi nyekundu
+Kiwango cha juu cha rangi ya kijani
+Kiwango cha juu cha rangi ya bluu
+Kiwango cha juu cha rangi
+Kiwango cha chini cha rangi nyekundu. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha chini cha rangi ya kijani kibichi. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha chini cha rangi ya bluu. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha chini cha rangi. Thamani ya chini inayokubalika ni 0 na kiwango cha juu kinachokubalika ni 255 kwa rangi 255 au 16 kwa rangi 16.
+Kiwango cha juu cha rangi nyekundu. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha juu cha rangi ya kijani. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha juu cha rangi ya bluu. Thamani ya chini inayokubalika ni 0 na thamani ya juu inayokubalika ni 255.
+Kiwango cha juu cha rangi. Thamani ya chini inayokubalika ni 0 na kiwango cha juu kinachokubalika ni 255 kwa rangi 255 au 16 kwa rangi 16.
+Rangi ya mbele
+Tabia ya mstari
+Tabia ya kuunda mstari. Hakikisha umeingiza herufi moja pekee.
+Mhusika wa kona ya juu kushoto kwa upau wa saa
+Mhusika wa kona ya juu kushoto kwa upau wa dakika
+Herufi ya kona ya juu kushoto kwa upau wa sekunde
+Herufi ya kona ya juu kulia kwa upau wa saa
+Mhusika wa kona ya juu kulia kwa upau wa dakika
+Herufi ya kona ya juu kulia kwa upau wa sekunde
+Herufi ya kona ya chini kushoto kwa upau wa saa
+herufi ya kona ya chini kushoto kwa upau wa dakika
+herufi ya kona ya chini kushoto kwa upau wa sekunde
+herufi ya kona ya chini kulia kwa upau wa saa
+herufi ya kona ya chini kulia kwa upau wa dakika
+herufi ya kona ya chini kulia kwa upau wa sekunde
+Kibambo cha fremu ya juu kwa upau wa saa
+Kibambo cha fremu ya juu kwa upau wa dakika
+Kibambo cha fremu ya juu kwa upau wa sekunde
+Herufi ya chini ya fremu kwa upau wa saa
+Herufi ya chini ya fremu kwa upau wa dakika
+Herufi ya chini ya fremu kwa upau wa sekunde
+Herufi ya fremu ya kushoto kwa upau wa saa
+Herufi ya fremu ya kushoto kwa upau wa dakika
+Herufi ya fremu ya kushoto kwa upau wa sekunde
+herufi ya kulia ya fremu kwa upau wa saa
+herufi ya kulia ya fremu kwa upau wa dakika
+Kibambo cha fremu ya kulia kwa upau wa sekunde
+Nakala ya habari kwa masaa
+Nakala ya habari kwa dakika
+Nakala ya habari kwa sekunde
+Kiwango cha chini cha rangi nyekundu kwa masaa
+Kiwango cha chini cha rangi ya kijani kwa masaa
+Kiwango cha chini cha rangi ya bluu kwa saa
+Kiwango cha chini cha rangi kwa masaa
+Kiwango cha juu cha rangi nyekundu kwa saa
+Kiwango cha juu cha rangi ya kijani kwa masaa
+Kiwango cha juu cha rangi ya bluu kwa saa
+Kiwango cha juu cha rangi kwa saa
+Kiwango cha chini cha rangi nyekundu kwa dakika
+Kiwango cha chini cha rangi ya kijani kwa dakika
+Kiwango cha chini cha rangi ya bluu kwa dakika
+Kiwango cha chini cha rangi kwa dakika
+Kiwango cha juu cha rangi nyekundu kwa dakika
+Kiwango cha juu cha rangi ya kijani kwa dakika
+Kiwango cha juu cha rangi ya bluu kwa dakika
+Kiwango cha juu cha rangi kwa dakika
+Kiwango cha chini cha rangi nyekundu kwa sekunde
+Kiwango cha chini cha rangi ya kijani kwa sekunde
+Kiwango cha chini cha rangi ya bluu kwa sekunde
+Kiwango cha chini cha rangi kwa sekunde
+Kiwango cha juu cha rangi nyekundu kwa sekunde
+Kiwango cha juu cha rangi ya kijani kwa sekunde
+Kiwango cha juu cha rangi ya bluu kwa sekunde
+Kiwango cha juu cha rangi kwa sekunde
+Tabia inayofanana na kona ya juu kushoto. Hakikisha umeingiza herufi moja pekee.
+Tabia inayofanana na kona ya chini kushoto. Hakikisha umeingiza herufi moja pekee.
+Tabia inayofanana na sura ya juu. Hakikisha umeingiza herufi moja pekee.
+Tabia inayofanana na sura ya chini. Hakikisha umeingiza herufi moja pekee.
+Tabia inayofanana na fremu ya kushoto. Hakikisha umeingiza herufi moja pekee.
+Tabia inayofanana na sura inayofaa. Hakikisha umeingiza herufi moja pekee.
+Andika jinsi maandishi ya maelezo yako ya saa ya sasa yanavyoonekana. {0} kwa saa ya sasa kati ya saa 24.
+Andika jinsi maandishi ya maelezo yako ya dakika ya sasa yanavyoonyesha. {0} kwa dakika ya sasa kati ya dakika 60.
+Andika jinsi maandishi yako ya habari kwa sekunde ya sasa yanavyoonyesha. {0} kwa sekunde ya sasa kati ya sekunde 60.
+Rangi ya maandishi
+Herufi ya kona ya juu kushoto ya upau wa njia panda
+Herufi ya kona ya juu kulia ya upau wa njia panda
+Herufi ya kona ya chini kushoto kwa upau wa njia panda
+Herufi ya kona ya chini kulia ya upau wa njia panda
+Herufi ya juu ya upau wa njia panda
+Herufi ya chini ya fremu ya upau wa njia panda
+Herufi ya fremu ya kushoto ya upau wa njia panda
+Herufi ya kulia ya upau wa njia panda
+Kiwango cha chini cha rangi nyekundu kwa rangi ya mwanzo
+Kiwango cha chini cha rangi ya kijani kwa rangi ya mwanzo
+Kiwango cha chini cha rangi ya bluu kwa rangi ya mwanzo
+Kiwango cha chini cha rangi kwa rangi ya mwanzo
+Kiwango cha juu cha rangi nyekundu kwa rangi ya mwanzo
+Kiwango cha juu cha rangi ya kijani kwa rangi ya mwanzo
+Kiwango cha juu cha rangi ya bluu kwa rangi ya mwanzo
+Kiwango cha juu cha rangi kwa rangi ya mwanzo
+Kiwango cha chini cha rangi nyekundu kwa rangi ya mwisho
+Kiwango cha chini cha rangi ya kijani kwa rangi ya mwisho
+Kiwango cha chini cha rangi ya bluu kwa rangi ya mwisho
+Kiwango cha chini cha rangi kwa rangi ya mwisho
+Kiwango cha juu cha rangi nyekundu kwa rangi ya mwisho
+Kiwango cha juu cha rangi ya kijani kwa rangi ya mwisho
+Kiwango cha juu cha rangi ya bluu kwa rangi ya mwisho
+Kiwango cha juu cha rangi kwa rangi ya mwisho
+Nambari ya chini ya kisuluhishi
+Nambari ya juu zaidi ya kisuluhishi
+Ingizo la onyesho la kisuluhishi
+Herufi ya kona ya juu kushoto ya mpaka wa arifa
+Herufi ya kona ya juu kulia ya mpaka wa arifa
+Herufi ya kona ya chini kushoto kwa mpaka wa arifa
+Herufi ya kona ya chini kulia kwa mpaka wa arifa
+Kibambo cha fremu ya juu kwa mpaka wa arifa
+Herufi ya chini ya fremu kwa mpaka wa arifa
+Kibambo cha fremu cha kushoto cha mpaka wa arifa
+Kibambo cha fremu ya kulia kwa mpaka wa arifa
+Mtindo wa habari wa ukurasa wa mwongozo
+Iwapo itaonyesha kilichoandikwa kwenye kidokezo cha ingizo.
+Ni nambari gani ya chini ya kuchagua?
+Ni nambari gani ya juu zaidi ya kuchagua?
+Andika jinsi unavyotaka maelezo yako ya ukurasa wa manpage yawe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa. {0} kwa kichwa mwenyewe, {1} kwa ajili ya marekebisho.
+Sifa {0} haipatikani kwenye moduli zozote.
+Sehemu hii inaorodhesha mipangilio ya jumla ya kihifadhi skrini. Kwa mipangilio mahususi ya kihifadhi skrini, funga Mipangilio na ufungue Mipangilio ya Kiokoa skrini.
+Anzisha gurudumu la rangi katika hali halisi ya rangi
+Ikibainishwa, itaonyesha bendera ya kuanzia iliyobinafsishwa yenye usaidizi wa kishikilia nafasi. Unaweza kutumia {0} kwa toleo la kernel.
+Ni lahaja gani kati ya lugha ya sasa inatumika kubadilisha majina ya mwezi, kalenda, n.k.?
+Huwasha usaidizi wa rangi 255.
+Huwasha usaidizi wa rangi halisi.
+Neno limefutwa kwenye mstari {0}.
+Mfuatano umebadilishwa katika mstari {0}.
+Nambari ya laini iliyoondolewa {0}.
+Zuia ujumbe ambao haujaidhinishwa
+Huficha ujumbe wa kuudhi ikiwa kitendakazi cha kuorodhesha kinajaribu kufungua folda isiyoidhinishwa
+Maelezo ya seva ya FTP
+Anuani ya server:
+Mlango wa seva:
+Aina ya seva:
+Aina ya mfumo wa seva:
+Hali ya usimbaji wa seva:
+Aina ya muunganisho wa data ya seva:
+Mfumo wa seva:
+Aina ya data ya upakuaji wa seva:
+Aina ya data ya upakiaji wa seva:
+Lazima uunganishe kwa seva kabla ya kufanya operesheni hii.
+Ingiza faili ya mbali ili kuharakishwa.
+Ingiza saraka ya mbali ili kuharakishwa.
+Ingiza saraka ya mbali.
+Hashing inayojirudia kwa FTP
+Kama kwa kujirudia hash saraka. Tafadhali kumbuka kuwa sio seva zote za FTP zinazounga mkono hilo.
+Kasi ya saa ya kichakataji:
+Usaidizi wa processor SSE2:
+Jumla ya idadi ya wasindikaji:
+Ukubwa wa diski:
+Jumla ya kumbukumbu:
+Kadi ya picha:
+Muundo wa diski:
+Idadi ya juu zaidi ya barua pepe katika ukurasa mmoja
+Utamaduni wa lugha ya sasa
+Ikiwa una uhakika kuwa umefungua sehemu inayofaa, angalia ujumbe huu:
+Mipangilio Nyingine...
+Mipangilio ya Rangi...
+Hutekeleza amri ya seva ya FTP
+Weka anwani ya seva ya POP3 na mlango (<address> au <address>:[port]):
+Mtindo wa haraka wa POP3 kwa barua
+Tuma muda wa ping wa POP3
+Andika jinsi unavyotaka kidokezo cha seva yako ya POP3 kiwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa.
+Ni milisekunde ngapi za kutuma ping ya POP3?
+Tumia POP3
+Kama itatumia POP3. Kuzima hii kutatumia SMTP.
+Husimba mfuatano kwa njia fiche kwa kutumia CRC32
+Hufungua kiteja cha barua pepe
+ya barua iliyohamishwa...
+Mipangilio ya hifadhi hii ya skrini inapatikana hapa.
+Hujaribu utendakazi wa jedwali
+Huhariri mstari uliobainishwa
+Huongeza mistari mipya mwishoni mwa faili
+Ingiza maandishi ambayo ungependa kuambatanisha hadi mwisho wa faili. Unapomaliza, andika "EOF" kwenye mstari wake mwenyewe.
+Jina la mwenyeji
+Jina la mtumiaji
+Aina ya Data
+Usimbaji
+Usimbaji fiche
+Itifaki
+Onyesha maendeleo ya uhamishaji barua
+Maendeleo ya uhamishaji barua
+Maendeleo ya uhamisho wa barua pepe (moja)
+Ikiwashwa, shell ya barua itaonyesha ni baiti ngapi zinazotumwa wakati wa kupakua barua.
+Andika jinsi unavyotaka mtindo wako wa maendeleo ya uhamishaji barua uwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa. {0} kwa ukubwa uliohamishwa na {1} kwa saizi ya jumla.
+Andika jinsi unavyotaka mtindo wako wa maendeleo ya uhamishaji barua uwe. Acha wazi ili kutumia mtindo chaguomsingi. Vishika nafasi vimechanganuliwa. {0} kwa ukubwa uliohamishwa.
+Saa za Eneo:
+Leo ni {0}
+Wakati wa sasa ni {0}
+Rangi ya kitenganishi cha jedwali
+Rangi ya kichwa cha jedwali
+Rangi ya thamani ya jedwali
+Majibu yanayowezekana
+Faili ya Mod haijabainishwa.
+Inajaribu kusakinisha mod ambayo tayari imesakinishwa. Inasasisha muundo...
+Usakinishaji haukufaulu kwa
+Faili ya mod iliyotolewa haioani.
+Imeshindwa kusanidua
+Hufungua URL
+Chapisha nambari za laini kwenye yaliyomo kwenye faili ya uchapishaji
+Hufanya amri ya \"paka\" kuchapisha nambari za laini za faili.
+Toleo lililotafsiriwa
+Toleo lililotafsiriwa
+Huondoa arifa zote
+Inapakua...
+Inapakia...
+Onyesha arifa ya maendeleo ya upakuaji
+Onyesha arifa ya maendeleo ya upakiaji
+Inaonyesha arifa inayoonyesha maendeleo ya upakuaji.
+Inaonyesha arifa inayoonyesha maendeleo ya upakiaji.
+Hukagua ili kuona kama mfuatano unaoweza kutafsiriwa upo katika rasilimali za KS
+Mfuatano uliopatikana katika rasilimali za ujanibishaji.
+Mfuatano haupatikani katika rasilimali za ujanibishaji.
+Huanzisha punje kimya kimya
+Huingiza amri ili kuanza katika uingiaji unaofuata
+Huanzisha kernel katika hali salama, ikizima mods zote
+Kama hali salama, lakini pia huzima watumiaji wengi na ubinafsishaji fulani
+Hakukuwa na mabishano ya kutosha.
+Rangi ya kona ya juu kushoto ya upau wa njia panda
+Rangi ya kona ya juu kulia kwa upau wa njia panda
+Rangi ya kona ya chini kushoto kwa upau wa njia panda
+Rangi ya kona ya chini kulia kwa upau wa njia panda
+Rangi ya fremu ya juu kwa upau wa njia panda
+Rangi ya fremu ya chini kwa upau wa njia panda
+Rangi ya fremu ya kushoto ya upau wa njia panda
+Rangi ya fremu ya kulia kwa upau wa njia panda
+Tumia rangi za mpaka kwa upau wa njia panda
+Tumia rangi za mpaka kwa upau wa njia panda. Ikiwa imezimwa, itazalisha upau wa kijivu.
+Huanzisha shell ya HTTP
+Huondoka kwenye ganda la HTTP na kurudi kwenye kernel
+Inaweka tovuti ya HTTP. Lazima iwe URI halali.
+Hupata jibu kutoka kwa seva ya HTTP kwa kutumia ombi lililobainishwa
+Inafuta maudhui kutoka kwa seva ya HTTP
+Kulikuwa na hitilafu katika ganda la HTTP:
+Ujumbe wa HTTP: Amri iliyoombwa {0} haipatikani. Tazama 'msaada' kwa orodha ya amri zinazopatikana zilizobainishwa kwenye ganda la HTTP.
+Hupata mfuatano kutoka kwa seva ya HTTP kwa kutumia ombi maalum
+Inapata {0}...
+Umbizo la tovuti ya URI si sahihi.
+Kuweka tovuti kwa
+Rangi hazihitaji kuanzisha upya, lakini mipangilio mingi inahitaji kuanzisha upya.
+Hakuna msaada kwa hoja "{0}".
+Bonyeza A kuhusu maoni ya chuki ili kuomba msamaha. Bonyeza T kwenye maoni ya upendo ili kuwashukuru. Bonyeza Q ili kuacha mchezo.
+Umeomba msamaha kwa maoni ya chuki! Bora kabisa!
+Aliomba msamaha kwa maoni ya kupenda. Si nzuri ya kutosha.
+Umemshukuru mwenye chuki kwa maoni ya chuki!
+Ugumu chaguo-msingi kwa SpeedPress
+Muda wa kubonyeza kitufe umeisha kwa SpeedPress
+Chagua ugumu unaopendelea.
+Ni milisekunde ngapi za kusubiri kibonyezo kabla ya muda kuisha? (Katika ugumu maalum)
+Hubadilisha neno au kifungu na kingine kwa kutumia maneno ya kawaida
+Hubadilisha neno au kifungu na kingine katika mstari kwa kutumia maneno ya kawaida
+Huuliza neno katika mstari maalum au mistari yote kwa kutumia maneno ya kawaida
+Tafuta Mpangilio
+Andika unachotaka kutafuta.
+Hakuna kitu kinachopatikana. Hakikisha kuwa umeandika mpangilio kwa usahihi.
+Hupakia faili ya ndani kwenye kumbukumbu
+Haiwezi kupakia chochote.
+Jibu maelezo
+Bandari ya mwenyeji
+Kwa habari zaidi kuhusu sheria na masharti ya kutumia programu hii, tembelea
+Chaguo-msingi la pato la aina
+Hukagua mipangilio yote ya KS ili kuona ikiwa vigeuzo vimeandikwa kwa usahihi
+Maingizo haya ya usanidi yana vigezo au hesabu zisizo sahihi na yanahitaji kurekebishwa:
+Faili {0} haijapatikana
+Huunda safu tofauti iliyo na maadili yaliyotolewa
+Andika nambari ya mpangilio wa kwenda. Tabia nyingine yoyote inamaanisha kurudi nyuma.
+Hukagua nambari zote za mstari wa maandishi ya ujanibishaji ili kuona kama zote ni sawa
+Kutolingana kwa mstari
+Tafadhali weka nambari ya mtumiaji.
+Jumuisha watumiaji wasiojulikana
+Jumuisha watumiaji walemavu
+Inajumuisha watumiaji wasiojulikana kwenye orodha
+Inajumuisha watumiaji walemavu kwenye orodha
+Panga orodha
+Hupanga orodha ya mfumo wa faili kitaalamu.
+Inatoa chaguo la uteuzi
+Amri za Shell hazijatekelezwa !!!
+Onyesha kichwa cha hivi punde cha RSS unapoingia
+URL ya kichwa cha habari cha RSS
+Kila kuingia, kutaonyesha kichwa cha habari cha hivi punde zaidi cha RSS kutoka kwa URL ya kichwa kilichochaguliwa.
+URL ya kichwa cha habari cha RSS itatumika wakati wa kuonyesha kichwa cha hivi punde. Kwa kawaida hii ndiyo mipasho unayoipenda zaidi.
+Habari mpya kabisa:
+Imeshindwa kupata habari za hivi punde.
+Rangi ya chaguo iliyochaguliwa
+Onyesha ufuatiliaji wa rafu kwenye hitilafu ya kernel
+Ikiwa kuna hitilafu yoyote ya kernel, chagua ikiwa utachapisha au kutochapisha ufuatiliaji wa rafu kwenye kiweko.
+Mod inaweza kupakiwa, lakini maonyo haya yanaweza kuathiri jinsi mod inavyofanya kazi:
+Kiokoa skrini kinaweza kupakiwa, lakini maonyo haya yanaweza kuathiri jinsi skrini inavyofanya kazi:
+Hifadhi Mipangilio Kama
+Pakia Mipangilio Kutoka
+Unataka kuhifadhi wapi mipangilio ya kernel ya sasa?
+Haiwezi kuhifadhi mipangilio ya kernel juu ya faili iliyopo.
+Je! unataka kupakia mipangilio ya kernel ya sasa kutoka wapi?
+Hukagua ili kuona kama mifuatano inayoweza kutafsiriwa ipo katika rasilimali za KS
+Inachanganya faili mbili za maandishi au zaidi kwenye faili ya towe.
+Imeshindwa kuchanganya faili.
+Muda wa kuleta mipasho ya RSS umekwisha
+Je, ni milisekunde ngapi za kusubiri kabla ya kuisha kwa mipasho ya RSS?
+Jaza masanduku
+Tunachora sanduku kwa ujumla au tunachora mpaka tu?
+Kuchelewa kwa hatua kwa milisekunde
+Je, ni milisekunde ngapi za kusubiri kabla ya kuchora hatua inayofuata?
+Kipindi kinachofuata cha kuoza kwa njia panda
+Je, ni milisekunde ngapi za kusubiri kabla ya kuoza upande mmoja wa njia panda inayofuata?
+Angalia mgao wa utatuzi
+Je, tunaangalia kama mfumo wa utatuzi unahitaji kuangalia kiasi kabla ya kumwandikia kitatuzi?
+Je, ilichukua milisekunde ngapi kulala?
+Imeshindwa kuongeza tukio.
+Imeshindwa kuondoa tukio.
+Hakuna hoja za kutosha zinazotolewa ili kuongeza tukio.
+Hakuna hoja za kutosha zinazotolewa ili kuondoa tukio.
+Hakuna hoja za kutosha zinazotolewa kwa upotoshaji wa tukio.
+Imeshindwa kuongeza au kuondoa kikumbusho.
+Hakuna hoja za kutosha zinazotolewa ili kuongeza au kuondoa kikumbusho.
+Hakuna hoja za kutosha zinazotolewa kwa upotoshaji wa kikumbusho.
+Kikumbusho kisicho na jina
+Tukio lisilo na jina
+Sasa ni siku ya tukio!
+Usikose hii!
+Kitendo batili.
+Stopwatch rahisi
+Anza au acha
+Lap
+Weka upya
+Kipima saa rahisi
+Anza (re) kuhesabu chini
+Weka muda
+Muda ulioonyeshwa umekwisha si nambari.
+Bainisha muda umekwisha katika milisekunde
+Hifadhi matukio yote na/au vikumbusho kwa njia ya uharibifu
+Ikiwashwa, hufuta matukio yote na/au vikumbusho kabla ya kuyahifadhi yote kwa kutumia amri ya kalenda.
+Thibitisha majaribio ya kujaribu tena kwa usambazaji wa FTP
+Muda wa muunganisho wa FTP umekwisha
+Muda wa muunganisho wa data wa FTP umekwisha
+Matoleo ya IP ya FTP
+Ni mara ngapi za kuthibitisha upakiaji na upakuaji na ujaribu tena ikiwa uthibitishaji hautafaulu kabla ya upakuaji kufeli kwa ujumla?
+Je, ni milisekunde ngapi za kusubiri kabla ya muunganisho wa FTP kuisha?
+Je, ni milisekunde ngapi za kusubiri kabla ya muunganisho wa data wa FTP kuisha?
+Chagua toleo la Itifaki ya Mtandao ambayo seva ya FTP inakubali na ambayo mteja wa FTP hutumia.
+Inajaribu kuanzisha RPC wakati tayari imeanza.
+Herufi ya kona ya juu kushoto ya gurudumu la rangi ya RGB
+Herufi ya kona ya juu kulia kwa gurudumu la rangi la RGB
+Herufi ya kona ya chini kushoto kwa gurudumu la rangi la RGB
+Herufi ya kona ya chini kulia kwa gurudumu la rangi la RGB
+Kibambo cha fremu ya juu kwa gurudumu la rangi la RGB
+Tabia ya fremu ya chini kwa gurudumu la rangi ya RGB
+Kibambo cha fremu ya kushoto kwa gurudumu la rangi la RGB
+Herufi ya kulia ya gurudumu la rangi ya RGB
+Hupata faili katika saraka maalum au katika saraka ya sasa
+Hubadilisha miisho ya mstari kuwa umbizo la jukwaa la sasa au umbizo maalum lililobainishwa
+Jumla ya saizi kwenye folda:
+Onyesha ukubwa wa jumla katika orodha
+Ikiwashwa, inaonyesha jumla ya ukubwa wa folda kwenye orodha, kulingana na jinsi ya kukokotoa ukubwa wa folda kulingana na usanidi.
+Umesasishwa!
+Uumbizaji chaguomsingi wa JSON kwa ganda la JSON
+Huchagua uumbizaji chaguomsingi wa JSON (uliopambwa au kupunguzwa) ili ganda la JSON lihifadhi.
+Imepakua sasisho!
+Pakua masasisho kiotomatiki
+Ikiwa kuna sasisho lolote, kernel itapakua kiotomatiki.
+Radi ya mlipuko wa fataki
+Je, ni vitalu vingapi (hadi 10) ambapo radius ya mlipuko wa fataki inapowashwa?
+Amri hii ina swichi hapa chini zinazobadilisha jinsi inavyofanya kazi:
+Huchapisha nambari za mstari zinazofuata mstari unaochapishwa
+Huzuia uchapishaji wa nambari za mstari
+Tumia toleo lililotafsiriwa kila wakati
+Tumia toleo lililotafsiriwa kila wakati
+Lazimisha kubadili lugha
+Onyesha kuwa jibu linaweza kuchukua zaidi ya herufi moja
+Onyesha kwamba jibu linaweza kuchukua mhusika mmoja tu
+Chapisha swali na majibu katika mstari mmoja
+Chapisha swali na majibu katika mistari miwili
+Chapisha swali na majibu kwa njia ya kisasa
+Chapisha swali na majibu kwenye jedwali
+Inaonyesha maelezo ya faili kwenye orodha
+Hukandamiza ujumbe wa kuudhi wa "ruhusa iliyokataliwa".
+Inaonyesha saa za eneo zote
+Huanza mchezo kwa ugumu rahisi
+Huanza mchezo kwa ugumu wa wastani
+Huanza mchezo kwa shida
+Huanza mchezo kwa shida sana
+Huanzisha mchezo kwa ugumu maalum. Tafadhali kumbuka kuwa muda maalum wa kuisha katika milisekunde unapaswa kuandikwa kama hoja.
+Inaonyesha habari ya mfumo
+Inaonyesha maelezo ya maunzi
+Inaonyesha habari ya mtumiaji
+Inaonyesha ujumbe wa siku
+Inaonyesha ujumbe wa siku baada ya kuingia
+Inaonyesha habari zote
+Huunda saraka ambayo ina yaliyomo kwenye faili ya ZIP
+Inaonyesha miji yote inayopatikana
+Ukandamizaji wa haraka
+Hakuna mbano
+Usiunde saraka ya msingi kwenye kumbukumbu
+Kitengo katika kupe
+Inatenganisha kutoka kwa seva kwa njia ya aibu
+Inaonyesha kuwa njia inayolengwa ni kamili
+Huhifadhi faili ya JSON, na kuipamba katika mchakato
+Huhifadhi faili ya JSON, ikiifanya iwe ndogo katika mchakato
+Hupata mtindo wa kumalizia mstari kutoka kwa faili ya maandishi
+Hufuta matukio yote yaliyofutwa kazi
+Washa utatuzi wa tukio
+Huwasha utatuzi wa mfumo wa tukio la kernel
+Fonti ya kielelezo
+Andika fonti ya figlet ambayo inatumika na maktaba ya Figgle. Angalia hati za maktaba kwa habari zaidi
+Imeshindwa kusakinisha lugha maalum {0}.
+Faili ya metadata inayohitajika kusakinisha lugha maalum haipo.
+Taarifa ya metadata inayohitajika ili kusakinisha lugha maalum haitoi ujanibishaji unaohitajika.
+Imeshindwa kusanidua lugha maalum {0}.
+Faili ya metadata inayohitajika ili kuondoa lugha maalum haipo.
+Taarifa ya metadata inayohitajika ili kuondoa lugha maalum haitoi ujanibishaji unaohitajika.
+Urefu wa lugha ya Kiingereza haulingani na urefu wa tokeni ya lugha iliyotolewa.
+Lugha tayari ipo na haiwezi kufutwa.
+Imeshindwa kusanidua lugha maalum. Uwezekano mkubwa zaidi haipo.
+Imeshindwa kusakinisha lugha maalum.
+Imeshindwa kusanidua lugha maalum.
+Imeshindwa kusanidua lugha maalum. Tazama ubaguzi wa ndani kwa maelezo zaidi.
+Andika nenosiri la msimamizi. Hakikisha kuwa hutumii akaunti hii isipokuwa kama unajua unachofanya.
+Lazima uandike nenosiri la msimamizi.
+Taarifa za leseni
+Dhibiti lugha zako
+Lugha haijapatikana au faili ina vibambo batili.
+Lugha haijabainishwa.
+Udhibiti wa lugha umezimwa katika hali salama.
+Jina fupi la lugha:
+Lugha jina kamili:
+Lugha inayoweza kutafsirika:
+Lugha maalum:
+Bango jipya la kukaribisha
+Skrini maridadi ya Splash
+Inaonyesha bango jipya la kukaribisha linalotolewa na Figlet
+Huwasha skrini maridadi inapowashwa. Tafadhali kumbuka kuwa italemaza hoja ya haraka na kujaribu kuwasha awali kwa ganda.
+Jina la Splash
+Jina la Splash kutoka kwa vinyunyizio vinavyopatikana vinavyotekelezwa kwenye kernel.
+MOTD chaguo-msingi inayozalishwa.
+Imezalishwa chaguomsingi ya MAL.
+Akaunti ya mfumo imeanzishwa
+Watumiaji wameanzishwa
+Ruhusa zimepakiwa
+Karibu!
+Inaanzisha kitatuzi cha mbali...
+Hitilafu ya muunganisho wa kitatuzi cha mbali
+Arifu kwenye hitilafu ya muunganisho wa utatuzi wa mbali
+Ikiwashwa, itatumia mfumo wa arifa kuarifu mwenyeji wa hitilafu ya muunganisho wa utatuzi wa mbali. Vinginevyo, itatumia maandishi ya kiweko chaguo-msingi.
+Fonti ya kielelezo cha kipima muda
+Washa Figlet kwa kipima muda
+Ikiwashwa, itatumia figlet kwa kipima muda. Tafadhali kumbuka kuwa inahitaji skrini kubwa ya kiweko ili kutoa wakati ipasavyo na Figlet ikiwa imewashwa.
+Hitilafu wakati wa kuchanganua hoja za mstari wa amri wa kuwasha awali: {0}
+Huweka upya kernel kwa mipangilio ya kiwanda
+Hupita ugunduzi wa saizi ya kiweko
+Inaonekana unakwepa utambuzi wa saizi ya kiweko. Huenda mambo yasifanye kazi ipasavyo kwenye skrini ndogo.
+Ili kupata matumizi bora zaidi, rekebisha ukubwa wa dirisha la kiweko chako ukiwa bado kwenye skrini hii. Bonyeza kitufe chochote ili kuendelea...
+Console yako ni ndogo sana kufanya kazi vizuri:
+Fonti ya figlet ya bango
+Huchapisha mfuatano ili kuwasha kwa kutumia aina ya rangi na uchapishaji wa mstari kwa usaidizi wa Figlet
+Huchapisha mfuatano ili kuwasha kwa kutumia aina ya rangi na uchapishaji wa mstari wenye umbizo na usaidizi wa Figlet
+Huondoa ujumbe kabisa
+Huondoa barua pepe zote kutoka kwa mpokeaji
+Tendua kuondoa ujumbe
+Tendua kuondoa barua pepe zote kutoka kwa mpokeaji
+Ufutaji wa kutendua haujatekelezwa kwa POP3.
+Onyesha hesabu ya amri kwenye usaidizi
+Onyesha hesabu ya maagizo ya ganda kwenye usaidizi
+Onyesha hesabu ya amri za mod kwenye usaidizi
+Onyesha hesabu za lakabu kwenye usaidizi
+Inaonyesha idadi ya amri katika orodha ya amri, inayodhibitiwa na swichi tatu za hesabu za aina tofauti za amri.
+Hutekeleza amri mara tu maneno ya UESH yanaporidhika
+Hali hiyo haikupatikana katika usemi huo.
+Hali {0} inahitaji {1} hoja. Nimepata {2}.
+Hali inahitaji kuwekwa katikati.
+Hali inahitaji kuwekwa mwanzoni.
+Hitilafu katika kuchanganua usemi kwa sababu ya hitilafu ya sintaksia.
+Imeshindwa kukidhi hali. Habari zaidi hapa:
+Herufi ya kinyago cha nenosiri
+Herufi inayoficha nenosiri. Acha wazi kwa usalama zaidi.
+Hutoka kwenye ganda ikiwa inaendeshwa kwenye ganda ndogo
+Huwezi kuua ganda la mama!
+Haiwezi kutoka kwenye ganda ndogo.
+Faili haijabainishwa. Inatoka kwa ganda...
+Mipangilio ya skrini hii ya Splash inapatikana hapa.
+Rangi ya upau wa maendeleo
+Hufungua mipangilio ya kihifadhi skrini
+Hufungua mipangilio ya splash
+Orodha zinazopatikana za UESH
+Mahali pa maandishi
+Chagua eneo la maandishi ya maendeleo unayopendelea.
+Unaweza tu kuandika nambari.
+Bonyeza "q" ili kuondoka.
+Inapakua majina...
+Kwa sababu ya matatizo ya kiufundi, hatuwezi kuorodhesha sifa za adapta kwenye mifumo ya Unix.
+Huwasha hali ya utatuzi
+Vishawishi kwa hoja
+Washa Hali Nyeusi na Nyeupe
+Hufanya disco kuwa nyeusi na nyeupe. Itaumiza sana macho yako ikiwa ilikuwa ya haraka sana, kwa hivyo haipendekezwi ikiwa unakabiliwa na mshtuko wa picha za haraka.
+Inaonekana ulikuwa unatumia toleo lisilotumika. Inashauriwa sana kutotumia toleo hili.
+Pakia Rangi za Sasa
+Rangi ya chaguo mbadala
+Watumiaji huhesabu maoni ya upendo au chuki
+Je, ni watumiaji wangapi wa kuwa katika chumba cha maoni ya mapenzi au chuki?
+Orodha ya lugha zinazopatikana
+Lugha zinazopatikana:
+Hoja za mstari wa amri:
+Hoja za mstari wa amri wa kuwasha awali:
+Hufungua hati za API ya muundo wa muundo wa msimbo wa chanzo katika umbo lake la sasa

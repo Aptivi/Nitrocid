@@ -983,3 +983,675 @@ Kılavuz sayfasını okumak için herhangi bir tuşa basın...
 Bu kılavuz sayfasının aşağıdakiler için çalışması gerekiyor:
 Manuel sayfa {0} bulunamadı.
 mod kılavuzu
+Kullanılabilir çekirdek argümanları:
+Bitirdiyseniz "q" tuşuna basın.
+Birden çok çekirdek bağımsız değişkeni, boşluk olmadan virgülle ayrılabilir, örneğin:
+Birden çok enjekte edilen komut, boşluklu iki nokta üst üste ile ayrılabilir, örneğin:
+İstenen {0} bağımsız değişkeni bulunamadı.
+Argümanda kurtarılamaz hata:
+SHA512 kullanarak bir dizeyi şifreler
+SHA384 kullanarak bir dizeyi şifreler
+SHA256 kullanarak bir dizeyi şifreler
+SHA1 kullanarak bir dizeyi şifreler
+MD5 kullanarak bir dizeyi şifreler
+yerleşik koruyucu nerede olacak
+Mod kısmı bir şey değil.
+Güvenli modda modların durdurulmasına izin verilmez.
+Mod zaten başlatıldı!
+Mod daha başlamadı!
+Komut kullanımı:
+Parça dosya adı:
+Parça dosya yolu:
+Ekran koruyucuyu başlatmaya çalışırken hata oluştu:
+Geçersiz yol türü.
+Geçersiz çekirdek yolu türü.
+Önceki önyükleme başarısız oldu
+JSON düzenleyicisi henüz bir dosya akışı açmadı.
+JSON dosyasının içindeki özellik bulunamadı.
+Kaldırılan mülk.
+JSON dosyasının sonuna yeni bir özellik ekler
+JSON dosyasından bir özelliği kaldırır
+JSON kabuğundan çıkar
+Değişiklikleri kaydetmeden JSON kabuğundan çıkar
+JSON dosyasını kaydeder
+JSON kabuğunu açar
+JSON dosyasını yazdırır
+Sonraki rampa aralığı
+Rampa için 255 renk desteğini etkinleştirir.
+Rampa için gerçek renk desteğini etkinleştirir.
+Bir sonraki rampayı doldurmadan önce kaç milisaniye beklenmeli?
+Bildirim başlığı rengi
+Bildirim açıklama rengi
+Bildirim ilerleme rengi
+Bildirim hatası rengi
+soru rengi
+Başarı rengi
+kullanıcı dolar rengi
+uç rengi
+Ayırıcı metin rengi
+ayırıcı renk
+Liste başlığı rengi
+Geliştirme uyarı rengi
+Sahne zamanı rengi
+ilerleme rengi
+Geri seçenek rengi
+Bildirim kenarlığı çiz
+Bildirimi kenarlıkla kaplar.
+Modu uyumlu sürüme yükseltmek için modun satıcısıyla iletişime geçin.
+Düşük öncelikli kenarlık rengi
+Orta öncelikli kenarlık rengi
+Yüksek öncelikli kenarlık rengi
+Alıcıyı test etmek için bir ilerleme bildirimi gönderir
+Renk tekerleğini test eder
+Yerel çekirdek zamanını gösterir
+Yerel çekirdek tarihini gösterir
+Yerel çekirdek tarihini ve saatini gösterir
+UTC çekirdek zamanını gösterir
+UTC çekirdek tarihini gösterir
+UTC çekirdek tarihini ve saatini gösterir
+MOTD yolu
+MAL yolu
+MOTD metin dosyası hangi dosyadır? Metin dosyasına mutlak bir yol yazın.
+MAL metin dosyası hangi dosyadır? Metin dosyasına mutlak bir yol yazın.
+Kara listeye alınan modlar
+Açılışta çalışmayacak olan modların dosya isimlerini yazınız. Bitirdiğinizde "q" yazın. Mevcut bir modu kaldırmak için yolun yanına bir eksi işareti yazın.
+{0} modu kara listeye alındı.
+Tüm modları yeniden yükler
+Kara listeye bir mod ekler
+Kara listeden bir modu kaldırır
+UTC'de saat ve tarih: {0}
+Belirtilen JSON kabuk komutu bulunamadı.
+Önyükleme sırasında uygulama bilgilerini göster
+Komut satırı bağımsız değişkenlerini ayrıştır
+Aşama bitiş zamanlarını göster
+Önyüklemede çekirdek değişikliklerini başlat
+Giriş yapmadan önce şimdiki zamanı göster
+Önyükleme sırasında herhangi bir hata için bildir
+Önyüklemede uygulama hakkında kısa bilgi gösterir.
+Önyüklemede komut satırı bağımsız değişkenlerini ayrıştırır.
+Çekirdeğin bir aşamayı ne kadar sürede bitirdiğini gösterir.
+Önyüklemede çekirdek değişikliklerini otomatik olarak başlatın.
+Oturum açmadan önce geçerli saati, saat dilimini ve tarihi gösterir.
+Çekirdek önyüklemesi sırasında küçük bir hata varsa, kullanıcıyı bu konuda bilgilendirir.
+Kullanıcı adı istemi stili
+Şifre istemi stili
+Girişte MAL'yi göster
+Giriş isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+Parola isteminizin nasıl olmasını istiyorsanız öyle yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+Giriş ekranı görüntülendikten sonra Günün Mesajını gösterir.
+Kabuk İstemi Stilini Test Et
+JSON Kabuk İstemi Stili
+Prob enjekte edilen komutlar
+Çekirdek kabuğunun başlangıcında enjekte edilen komutları araştırır.
+Dosya ayrıntılarını listede göster
+Dosyaları listelerken kısa dosya ayrıntılarını gösterir
+FTP listesinde dosya ayrıntılarını göster
+FTP için kullanıcı adı istemi stili
+FTP için parola istemi stili
+İlk FTP profilini kullan
+FTP hızlı aramaya yeni bağlantılar ekleyin
+Güvenli FTP sertifikalarını doğrulamayı deneyin
+Bağlantıda FTP MOTD'yi göster
+Her zaman geçersiz FTP sertifikalarını kabul et
+Uzak dizinleri listelerken FTP dosya ayrıntılarını gösterir.
+FTP'ye bağlanmak için ilk FTP profilini kullanır.
+Etkinleştirilirse, FTP hızlı aramaya yeni bir bağlantı ekler.
+FTP sertifikalarını doğrulamaya çalışır. Kapatılması önerilmez.
+Oturum açıldığında günün FTP mesajını gösterir.
+Her zaman geçersiz FTP sertifikalarını kabul edin. Güvenlik riskleri oluşturabileceğinden açılması önerilmez.
+Posta için kullanıcı adı istemi stili
+Posta için parola istemi stili
+Posta için IMAP bilgi istemi stili
+Posta için SMTP komut istemi stili
+Posta sunucusunu otomatik olarak algıla
+Posta hata ayıklamasını etkinleştir
+Yeni posta mesajları için bildir
+Posta için GPG parola istemi stili
+IMAP ping aralığı gönder
+SMTP ping aralığı gönder
+Posta metin biçimi
+IMAP sunucusu isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+SMTP sunucu isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+Verilen adrese göre posta sunucusunu otomatik olarak algıla.
+Posta sunucusu hata ayıklamasını etkinleştirir.
+Yeni posta mesajları için sizi bilgilendirir.
+GPG şifre isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+IMAP pingi göndermek için kaç milisaniye?
+SMTP pingi göndermek için kaç milisaniye?
+Posta metninin nasıl gösterileceğini kontrol eder.
+düz metin
+akıcı metin
+HTML metni
+Zenginleştirilmiş metin
+Sıkıştırılmış zengin metin
+Zengin metin
+Başlangıçta uzaktan hata ayıklamayı otomatik olarak başlat
+Uzaktan hata ayıklama mesajı formatı
+Uzaktan hata ayıklamanın önyüklemede başlamasını istiyorsanız, bunu etkinleştirin.
+Uzaktan hata ayıklama iletisi biçimini belirtir. ad için {0}, mesaj için {1}.
+RSS beslemesi URL bilgi istemi stili
+RSS beslemesini otomatik yenile
+Otomatik yenileme RSS besleme aralığı
+RSS besleme sunucusu isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+RSS beslemesini yenilemek için kaç milisaniye?
+SFTP listesinde dosya ayrıntılarını göster
+SFTP için kullanıcı adı istemi stili
+SFTP hızlı aramaya yeni bağlantılar ekleyin
+Uzak dizinleri listelerken SFTP dosya ayrıntılarını gösterir.
+Etkinleştirilirse, SFTP hızlı aramaya yeni bir bağlantı ekler.
+gecikme, zaman aşımı
+Kapsamlı adaptör bilgilerini göster
+Genel ağ bilgilerini göster
+Yüzde metnini indir
+Yüzde metni yükle
+Zaman aşımı bildirilmeden önce kaç milisaniye beklenmeli?
+Paket bilgileri gibi kapsamlı adaptör bilgilerini yazdırır.
+Ağ hakkında genel bilgileri gösterir.
+Yükleme yüzdesi metninizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. yüklenen boyut için {0}, hedef boyut için {1}, yüzde için {2}.
+İndirme yüzdesi metninizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. İndirilen boyut için {0}, hedef boyut için {1}, yüzde için {2}.
+Kilitledikten sonra şifre isteyin
+Ekranı kilitledikten sonra şifre isteyin
+Minimum kırmızı renk seviyesi
+Minimum yeşil renk seviyesi
+Minimum mavi renk seviyesi
+Minimum renk seviyesi
+Maksimum kırmızı renk seviyesi
+Maksimum yeşil renk seviyesi
+Maksimum mavi renk seviyesi
+Maksimum renk seviyesi
+Minimum kırmızı renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Minimum yeşil renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Minimum mavi renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Minimum renk seviyesi. Kabul edilen minimum değer 0 ve 255 renk için maksimum kabul edilen değer 255 veya 16 renk için 16'dır.
+Maksimum kırmızı renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Maksimum yeşil renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Maksimum mavi renk seviyesi. Kabul edilen minimum değer 0 ve maksimum kabul edilen değer 255'tir.
+Maksimum renk seviyesi. Kabul edilen minimum değer 0 ve 255 renk için maksimum kabul edilen değer 255 veya 16 renk için 16'dır.
+Ön plan rengi
+çizgi karakteri
+Bir çizgi oluşturacak bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Saat çubuğu için sol üst köşe karakteri
+Dakika çubuğu için sol üst köşe karakteri
+Saniye çubuğu için sol üst köşe karakteri
+Saat çubuğu için sağ üst köşe karakteri
+Dakika çubuğu için sağ üst köşe karakteri
+Saniye çubuğu için sağ üst köşe karakteri
+Saat çubuğu için sol alt köşe karakteri
+Dakika çubuğu için sol alt köşe karakteri
+Saniye çubuğu için sol alt köşe karakteri
+Saat çubuğu için sağ alt köşe karakteri
+Dakika çubuğu için sağ alt köşe karakteri
+Saniye çubuğu için sağ alt köşe karakteri
+Saat çubuğu için üst çerçeve karakteri
+Dakika çubuğu için üst çerçeve karakteri
+Saniye çubuğu için üst çerçeve karakteri
+Saat çubuğu için alt çerçeve karakteri
+Dakika çubuğu için alt çerçeve karakteri
+Saniye çubuğu için alt çerçeve karakteri
+Saat çubuğu için sol çerçeve karakteri
+Dakika çubuğu için sol çerçeve karakteri
+Saniye çubuğu için sol çerçeve karakteri
+Saat çubuğu için sağ çerçeve karakteri
+Dakika çubuğu için sağ çerçeve karakteri
+Saniye çubuğu için sağ çerçeve karakteri
+Saatler için bilgi metni
+Dakikalar için bilgi metni
+Saniyeler için bilgi metni
+Saatler için minimum kırmızı renk seviyesi
+Saatler için minimum yeşil renk seviyesi
+Saatler için minimum mavi renk seviyesi
+Saatler için minimum renk seviyesi
+Saatlerce maksimum kırmızı renk seviyesi
+Saatlerce maksimum yeşil renk seviyesi
+Saatlerce maksimum mavi renk seviyesi
+Saatlerce maksimum renk seviyesi
+Dakikalar için minimum kırmızı renk seviyesi
+Dakikalar için minimum yeşil renk seviyesi
+Dakikalar için minimum mavi renk seviyesi
+Dakikalar için minimum renk seviyesi
+Dakikalar için maksimum kırmızı renk seviyesi
+Dakikalar için maksimum yeşil renk seviyesi
+Dakikalar için maksimum mavi renk seviyesi
+Dakikalar için maksimum renk seviyesi
+Saniye için minimum kırmızı renk seviyesi
+Saniye için minimum yeşil renk seviyesi
+Saniye için minimum mavi renk seviyesi
+Saniyeler için minimum renk seviyesi
+Saniye için maksimum kırmızı renk seviyesi
+Saniye için maksimum yeşil renk seviyesi
+Saniye için maksimum mavi renk seviyesi
+Saniye için maksimum renk seviyesi
+Sol üst köşeye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Sol alt köşeye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Üst çerçeveye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Alt çerçeveye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Sol çerçeveye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Sağ çerçeveye benzeyen bir karakter. Yalnızca bir karakter girdiğinizden emin olun.
+Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24 saat içinde geçerli saat için {0}.
+Mevcut dakika için bilgi metninizin nasıl gösterildiğini yazın. 60 dakika içinde geçerli dakika için {0}.
+Mevcut saniye için bilgi metninizin nasıl göründüğünü yazın. 60 saniyenin geçerli saniyesi için {0}.
+Metin rengi
+Rampa çubuğu için sol üst köşe karakteri
+Rampa çubuğu için sağ üst köşe karakteri
+Rampa çubuğu için sol alt köşe karakteri
+Rampa çubuğu için sağ alt köşe karakteri
+Rampa çubuğu için üst çerçeve karakteri
+Rampa çubuğu için alt çerçeve karakteri
+Rampa çubuğu için sol çerçeve karakteri
+Rampa çubuğu için sağ çerçeve karakteri
+Başlangıç ​​rengi için minimum kırmızı renk seviyesi
+Başlangıç ​​rengi için minimum yeşil renk seviyesi
+Başlangıç ​​rengi için minimum mavi renk seviyesi
+Başlangıç ​​rengi için minimum renk seviyesi
+Başlangıç ​​rengi için maksimum kırmızı renk seviyesi
+Başlangıç ​​rengi için maksimum yeşil renk seviyesi
+Başlangıç ​​rengi için maksimum mavi renk seviyesi
+Başlangıç ​​rengi için maksimum renk seviyesi
+Bitiş rengi için minimum kırmızı renk seviyesi
+Bitiş rengi için minimum yeşil renk seviyesi
+Bitiş rengi için minimum mavi renk seviyesi
+Bitiş rengi için minimum renk seviyesi
+Bitiş rengi için maksimum kırmızı renk seviyesi
+Bitiş rengi için maksimum yeşil renk seviyesi
+Bitiş rengi için maksimum mavi renk seviyesi
+Bitiş rengi için maksimum renk seviyesi
+Çözücü minimum sayısı
+Çözücü maksimum sayısı
+Çözücü gösterisi girişi
+Bildirim kenarlığı için sol üst köşe karakteri
+Bildirim kenarlığı için sağ üst köşe karakteri
+Bildirim kenarlığı için sol alt köşe karakteri
+Bildirim kenarlığı için sağ alt köşe karakteri
+Bildirim kenarlığı için üst çerçeve karakteri
+Bildirim kenarlığı için alt çerçeve karakteri
+Bildirim kenarlığı için sol çerçeve karakteri
+Bildirim kenarlığı için sağ çerçeve karakteri
+Manuel sayfa bilgi stili
+Giriş isteminde yazılanların gösterilip gösterilmeyeceği.
+Seçilecek minimum sayı nedir?
+Seçilecek maksimum sayı nedir?
+Manpage bilgilerinizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. manuel başlık için {0}, revizyon için {1}.
+{0} özelliği hiçbir modülde bulunamadı.
+Bu bölüm, genel ekran koruyucu ayarlarını listeler. Bireysel ekran koruyucu ayarları için Ayarlar'dan çıkın ve Ekran Koruyucu Ayarları'nı açın.
+Renk tekerleğini gerçek renk modunda başlatın
+Belirtilirse, yer tutucu desteğiyle özelleştirilmiş başlangıç ​​başlığını görüntüler. Çekirdek sürümü için {0} kullanabilirsiniz.
+Ay adlarını, takvimi vb. değiştirmek için geçerli dilin hangi türevi kullanılıyor?
+255 renk desteğini etkinleştirir.
+Gerçek renk desteğini etkinleştirir.
+{0} satırındaki kelime silindi.
+Dize {0} satırında değiştirildi.
+Kaldırılan satır numarası {0}.
+Yetkisiz mesajları engelle
+Listeleme işlevi yetkisiz bir klasör açmaya çalışırsa can sıkıcı mesajı gizler
+FTP sunucusu bilgileri
+Sunucu adresi:
+Sunucu portu:
+Sunucu tipi:
+Sunucu sistem türü:
+Sunucu şifreleme modu:
+Sunucu veri bağlantı türü:
+Sunucu sistemi:
+Sunucu indirme veri türü:
+Sunucu yükleme veri türü:
+Bu işlemi gerçekleştirmeden önce bir sunucuya bağlanmalısınız.
+Karma oluşturulacak bir uzak dosya girin.
+Karma oluşturulacak bir uzak dizini girin.
+Uzak bir dizine girin.
+FTP için özyinelemeli karma
+Bir dizinin özyinelemeli olarak hash edilip edilmeyeceği. Lütfen tüm FTP sunucularının bunu desteklemediğini unutmayın.
+İşlemci saat hızı:
+İşlemci SSE2 desteği:
+Toplam işlemci sayısı:
+Disk boyutu:
+Toplam hafıza:
+Grafik kartı:
+Disk modeli:
+Bir sayfada maksimum e-posta sayısı
+Mevcut dilin kültürü
+Doğru bölümü açtığınızdan eminseniz şu mesajı kontrol edin:
+Diğer ayarlar...
+Renk Ayarları...
+Bir FTP sunucusu komutu yürütür
+POP3 sunucu adresini ve bağlantı noktasını girin (<adres> veya <adres>:[port]):
+Posta için POP3 bilgi istemi stili
+POP3 ping aralığı gönder
+POP3 sunucusu isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
+POP3 pingini göndermek için kaç milisaniye?
+POP3'ü kullan
+POP3 kullanılıp kullanılmayacağı. Bunu devre dışı bırakmak SMTP'yi kullanır.
+CRC32 kullanarak bir dizeyi şifreler
+Posta istemcisini açar
+aktarılan posta sayısı...
+Bu ekran koruyucunun ayarları burada mevcuttur.
+Tablo işlevselliğini test eder
+Belirtilen satırı düzenler
+Dosyanın sonuna yeni satırlar ekler
+Dosyanın sonuna eklemek istediğiniz metni girin. İşiniz bittiğinde kendi satırına "EOF" yazın.
+Ana Bilgisayar Adı
+Kullanıcı adı
+Veri tipi
+kodlama
+şifreleme
+protokoller
+Posta aktarım ilerlemesini göster
+Posta aktarımı ilerleme durumu
+Posta aktarımı ilerlemesi (tek)
+Etkinleştirilirse, posta kabuğu, posta indirilirken kaç bayt iletildiğini gösterir.
+Posta aktarım ilerleme tarzınızın nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. Aktarılan boyut için {0} ve toplam boyut için {1}.
+Posta aktarım ilerleme tarzınızın nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. {0} aktarılan boyut için.
+Saat dilimi:
+Bugün {0}
+Geçerli saat: {0}
+Tablo ayırıcı rengi
+Tablo başlığı rengi
+Tablo değeri rengi
+Olası cevaplar
+Mod dosyası belirtilmemiş.
+Önceden yüklenmiş bir modu yüklemeye çalışıyorum. Mod güncelleniyor...
+Yükleme başarısız oldu
+Sağlanan mod dosyası uyumsuz.
+Kaldırma işlemi için başarısız oldu
+Bir URL açar
+Dosya içeriğini yazdırırken satır numaralarını yazdır
+\"cat\" komutunun dosyanın satır numaralarını yazdırmasını sağlar.
+Çevrilmiş versiyon
+çevrilmiş versiyon
+Tüm bildirimleri kapatır
+İndiriliyor...
+yükleniyor...
+İndirme ilerlemesi için bildirimi göster
+Yükleme ilerlemesi için bildirimi göster
+İndirme ilerlemesini gösteren bildirimi gösterir.
+Yükleme ilerlemesini gösteren bildirimi gösterir.
+KS kaynaklarında çevrilebilir dize olup olmadığını kontrol eder
+Yerelleştirme kaynaklarında bulunan dize.
+Yerelleştirme kaynaklarında dize bulunamadı.
+Çekirdeği sessizce başlatır
+Bir sonraki oturum açmada başlamak için bir komut enjekte eder
+Çekirdeği güvenli modda başlatarak tüm modları devre dışı bırakır
+Güvenli mod gibi, ancak aynı zamanda çok kullanıcılı ve bazı özelleştirmeleri devre dışı bırakır
+Yeterli argüman yoktu.
+Rampa çubuğu için sol üst köşe rengi
+Rampa çubuğu için sağ üst köşe rengi
+Rampa çubuğu için sol alt köşe rengi
+Rampa çubuğu için sağ alt köşe rengi
+Rampa çubuğu için üst çerçeve rengi
+Rampa çubuğu için alt çerçeve rengi
+Rampa çubuğu için sol çerçeve rengi
+Rampa çubuğu için sağ çerçeve rengi
+Rampa çubuğu için kenarlık renklerini kullanın
+Rampa çubuğu için kenarlık renklerini kullanın. Devre dışı bırakılırsa, gri bir çubuk oluşturur.
+HTTP kabuğunu başlatır
+HTTP kabuğundan çıkar ve çekirdeğe döner
+HTTP sitesini ayarlar. Geçerli bir URI olmalıdır.
+Belirtilen isteği kullanarak HTTP sunucusundan yanıt alır
+İçeriği HTTP sunucusundan siler
+HTTP kabuğunda bir hata oluştu:
+HTTP mesajı: İstenen {0} komutu bulunamadı. HTTP kabuğunda belirtilen kullanılabilir komutların listesi için 'yardım'a bakın.
+Belirtilen isteği kullanarak dizeyi HTTP sunucusundan alır
+{0} alınıyor...
+Site URI biçimi geçersiz.
+site ayarlanıyor
+Renkler için yeniden başlatma gerekmez, ancak ayarların çoğu yeniden başlatma gerektirir.
+"{0}" bağımsız değişkeni için yardım yok.
+Özür dilemek için nefret yorumlarında A'ya basın. Teşekkür etmek için aşk yorumlarında T'ye basın. Oyundan çıkmak için Q tuşuna basın.
+Bir nefret yorumu için özür diledin! Harika!
+Yorumu sevdiğim için özür dilerim. Yeterince iyi değil.
+Az önce nefret yorumu için nefret eden kişiye teşekkür ettin!
+SpeedPress için varsayılan zorluk
+SpeedPress için tuşa basma zaman aşımı
+Tercih ettiğiniz zorluğu seçin.
+Zaman aşımından önce tuşa basılması için kaç milisaniye beklenmelidir? (özel zorlukta)
+Normal ifadeler kullanarak bir kelimeyi veya tümceyi başka bir kelimeyle değiştirir
+Normal ifadeler kullanarak bir satırdaki bir kelimeyi veya ifadeyi başka bir kelimeyle değiştirir
+Normal ifadeler kullanarak belirli bir satırdaki veya tüm satırlardaki bir kelimeyi sorgular
+Bir Ayar Bul
+Ne aramak istediğinizi yazın.
+Hiçbir şey bulunamadı. Ayarı doğru yazdığınızdan emin olun.
+Arşive yerel bir dosya paketler
+Hiçbir şey paketleyemem.
+Cevap açıklaması
+Ana bilgisayar bağlantı noktası
+Bu yazılımı kullanmanın hüküm ve koşulları hakkında daha fazla bilgi için, adresini ziyaret edin.
+Varsayılan seçim çıktı türü
+Değişkenlerin doğru yazılıp yazılmadığını görmek için tüm KS ayarlarını kontrol eder
+Bu yapılandırma girişlerinde geçersiz değişkenler veya numaralandırmalar var ve bunların düzeltilmesi gerekiyor:
+{0} dosyası bulunamadı
+Sağlanan değerlerle değişken bir dizi oluşturur
+Gidilecek ayarın numarasını yazın. Diğer herhangi bir karakter geri dönmek anlamına gelir.
+Hepsinin eşit olup olmadığını görmek için tüm yerelleştirme metin satır numaralarını kontrol eder
+Hat uyuşmazlığı
+Lütfen bir kullanıcı numarası girin.
+Anonim kullanıcıları dahil et
+Engelli kullanıcıları dahil et
+Listedeki anonim kullanıcıları içerir
+Engelli kullanıcıları listeye dahil eder
+Listeyi sırala
+Dosya sistemi listesini profesyonelce sıralar.
+Bir seçim seçeneği sunar
+Kabuk komutları uygulanmadı!!!
+Girişte en son RSS başlığını göster
+RSS başlık URL'si
+Her oturum açma, seçilen başlık URL'sinden en son RSS başlığını gösterecektir.
+En son başlık gösterilirken kullanılacak RSS başlık URL'si. Bu genellikle favori beslemenizdir.
+Son Haberler:
+En son haberler alınamadı.
+Seçilen seçenek rengi
+Çekirdek hatasında yığın izini göster
+Herhangi bir çekirdek hatası varsa, yığın izinin konsola yazdırılıp yazdırılmayacağını seçin.
+Mod yüklenebilir, ancak bu uyarılar modun çalışma şeklini etkileyebilir:
+Ekran koruyucu yüklenebilir, ancak bu uyarılar ekran koruyucunun çalışma şeklini etkileyebilir:
+Ayarları Farklı Kaydet
+Ayarları Yükle
+Mevcut çekirdek ayarlarını nereye kaydetmek istiyorsunuz?
+Çekirdek ayarları mevcut dosyanın üzerine kaydedilemez.
+Mevcut çekirdek ayarlarını nereden yüklemek istiyorsunuz?
+KS kaynaklarında çevrilebilir dizelerin bulunup bulunmadığını kontrol eder
+İki metin dosyasını veya daha fazlasını çıktı dosyasında birleştirir.
+Dosyalar birleştirilemedi.
+RSS beslemesi getirme zaman aşımı
+RSS beslemesi getirme zaman aşımından önce kaç milisaniye beklenmeli?
+kutuları doldurun
+Kutuyu bir bütün olarak mı çiziyoruz yoksa sadece kenarlığı mı çiziyoruz?
+Milisaniye cinsinden aşama gecikmesi
+Bir sonraki aşamayı çizmeden önce kaç milisaniye beklenmeli?
+Sonraki rampa dönüş aralığı
+Bir sonraki rampanın bir ucunu çürümeden önce kaç milisaniye beklenmeli?
+Hata ayıklama kotasını kontrol edin
+Hata ayıklayıcıya yazmadan önce hata ayıklama sisteminin kotayı kontrol etmesi gerekip gerekmediğini kontrol ediyor muyuz?
+Gerçekten uyuması kaç milisaniye sürdü?
+Etkinlik eklenemedi.
+Bir etkinlik kaldırılamadı.
+Etkinlik eklemek için yeterli bağımsız değişken sağlanmadı.
+Bir etkinliği kaldırmak için yeterli bağımsız değişken sağlanmadı.
+Olay işleme için yeterli argüman sağlanmadı.
+Bir hatırlatıcı eklenemedi veya kaldırılamadı.
+Bir hatırlatıcı eklemek veya kaldırmak için yeterli argüman sağlanmadı.
+Hatırlatma manipülasyonu için yeterli argüman sağlanmadı.
+Adsız hatırlatıcı
+Adsız etkinlik
+Şimdi bir etkinlik günü!
+Bunu kaçırmayın!
+Geçersiz eylem.
+Basit bir kronometre
+Başlat veya durdur
+Kucak
+Sıfırla
+Basit bir zamanlayıcı
+(tekrar) geri sayıma başlayın
+Aralığı ayarla
+Belirtilen zaman aşımı sayısal değil.
+Zaman aşımını milisaniye cinsinden belirtin
+Tüm etkinlikleri ve/veya hatırlatıcıları yıkıcı bir şekilde kaydedin
+Etkinleştirilirse, takvim komutunu kullanarak hepsini kaydetmeden önce tüm etkinlikleri ve/veya hatırlatıcıları siler.
+FTP iletimi için yeniden deneme denemelerini doğrulayın
+FTP bağlantısı zaman aşımı
+FTP veri bağlantısı zaman aşımı
+FTP IP sürümleri
+Yükleme bir bütün olarak başarısız olmadan önce doğrulama başarısız olursa, yükleme ve indirmeyi doğrulamak ve yeniden denemek için kaç kez gerekir?
+FTP bağlantı zaman aşımından önce kaç milisaniye beklenmeli?
+FTP veri bağlantısı zaman aşımından önce kaç milisaniye beklenmeli?
+FTP sunucusunun desteklediği ve FTP istemcisinin kullandığı İnternet Protokolü sürümünü seçin.
+Zaten başlamışken RPC'yi başlatmaya çalışmak.
+RGB renk tekerleği için sol üst köşe karakteri
+RGB renk tekerleği için sağ üst köşe karakteri
+RGB renk tekerleği için sol alt köşe karakteri
+RGB renk tekerleği için sağ alt köşe karakteri
+RGB renk tekerleği için üst çerçeve karakteri
+RGB renk tekerleği için alt çerçeve karakteri
+RGB renk tekerleği için sol çerçeve karakteri
+RGB renk tekerleği için sağ çerçeve karakteri
+Belirtilen dizinde veya geçerli dizinde bir dosya bulur
+Satır sonlarını geçerli platform için formata veya belirtilen özel formata dönüştürür
+Klasördeki toplam boyut:
+Listedeki toplam boyutu göster
+Etkinleştirilirse, yapılandırmaya göre klasör boyutlarının nasıl hesaplanacağına bağlı olarak listedeki toplam klasör boyutunu gösterir.
+Güncelsin!
+JSON kabuğu için varsayılan JSON biçimlendirmesi
+JSON kabuğunun kaydedeceği varsayılan JSON biçimlendirmesini (güzelleştirilmiş veya küçültülmüş) seçer.
+Güncelleme başarıyla indirildi!
+Güncellemeleri otomatik olarak indir
+Herhangi bir güncelleme varsa, çekirdek onu otomatik olarak indirecektir.
+havai fişek patlama yarıçapı
+Ateşlendiğinde havai fişek için patlama yarıçapı kaç blok (10'a kadar)?
+Bu komut, çalışma şeklini değiştiren aşağıdaki anahtarlara sahiptir:
+Yazdırılmakta olan satırı takip eden satır numaralarını yazdırır
+Satır numaralarının yazdırılmasını engeller
+Daima harf çevirisi yapılmış sürümü kullanın
+Her zaman çevrilmiş sürümü kullanın
+Anahtarlama dilini zorla
+Cevabın birden fazla karakter alabileceğini belirtin
+Cevabın sadece bir karakter alabileceğini belirtin
+Soruyu ve cevapları tek satırda yazdırın
+Soruyu ve cevapları iki satıra yazdır
+Soruyu ve cevapları modern bir şekilde yazdırın
+Soruyu ve cevapları bir tabloya yazdırın
+Listedeki dosya ayrıntılarını gösterir
+Can sıkıcı "izin reddedildi" mesajlarını bastırır
+Tüm zaman dilimlerini gösterir
+Oyunu kolay zorlukta başlatır
+Oyunu orta zorlukta başlatır
+Oyunu zor zorlukta başlatır
+Oyunu çok zor bir zorlukta başlatıyor
+Oyunu özel zorluk seviyesinde başlatır. Lütfen milisaniye cinsinden özel zaman aşımının argüman olarak yazılması gerektiğini unutmayın.
+Sistem bilgilerini gösterir
+Donanım bilgilerini gösterir
+Kullanıcı bilgilerini gösterir
+Günün mesajını gösterir
+Giriş yaptıktan sonra günün mesajını gösterir
+Tüm bilgileri gösterir
+ZIP dosyasının içeriğini içeren bir dizin oluşturur
+Mevcut tüm şehirleri gösterir
+Hızlı sıkıştırma
+Sıkıştırma yok
+Arşivde temel dizin oluşturmayın
+Kenelerdeki birim
+Utanç verici bir şekilde sunucuyla bağlantıyı kesiyor
+Hedef yolun mutlak olduğunu gösterir
+JSON dosyasını işlem sırasında güzelleştirerek kaydeder
+JSON dosyasını süreçte küçülterek kaydeder
+Metin dosyasından satır bitiş stilini alır
+Tüm tetiklenen olayları temizler
+Olay hata ayıklamasını etkinleştir
+Çekirdek olay sistemi için hata ayıklamayı etkinleştirir
+Figlet yazı tipi
+Figgle kitaplığı tarafından desteklenen bir figlet yazı tipi yazın. Daha fazla bilgi için kütüphane belgelerine bakın
+{0} özel dili yüklenemedi.
+Özel dili yüklemek için gereken meta veri dosyası mevcut değil.
+Özel dili yüklemek için gereken meta veri bilgileri, gerekli yerelleştirmeleri sağlamaz.
+{0} özel dili kaldırılamadı.
+Özel dili kaldırmak için gereken meta veri dosyası mevcut değil.
+Özel dili kaldırmak için gereken meta veri bilgileri, gerekli yerelleştirmeleri sağlamaz.
+İngilizce dilinin uzunluğu, sağlanan dil belirtecinin uzunluğuyla eşleşmiyor.
+Dil zaten var ve üzerine yazılamaz.
+Özel dil kaldırılamadı. Büyük olasılıkla mevcut değil.
+Özel diller yüklenemedi.
+Özel diller kaldırılamadı.
+Özel diller kaldırılamadı. Daha fazla bilgi için iç özel duruma bakın.
+Yönetici parolasını yazın. Ne yaptığınızı gerçekten bilmiyorsanız bu hesabı kullanmadığınızdan emin olun.
+Yönetici şifresini yazmalısınız.
+Lisans bilgisi
+Dillerinizi yönetin
+Dil bulunamadı veya dosyada geçersiz karakterler var.
+Dil belirtilmemiş.
+Güvenli modda dil yönetimi devre dışı bırakılır.
+Dil kısa adı:
+Dil tam adı:
+Dil çevrilebilir:
+Özel dil:
+Yeni hoş geldiniz afişi
+Şık açılış ekranı
+Figlet tarafından oluşturulmuş yeni karşılama afişini gösterir
+Başlangıçta şık açılış ekranını etkinleştirir. Lütfen argüman istemini devre dışı bırakacağını ve kabuk önyüklemesini test edeceğini unutmayın.
+Sıçrama adı
+Çekirdekte uygulanan mevcut sıçramalardan gelen sıçrama adı.
+Oluşturulan varsayılan MOTD.
+Oluşturulan varsayılan MAL.
+Sistem hesabı başlatıldı
+Kullanıcılar başlatıldı
+İzinler yüklendi
+Hoş geldin!
+Uzaktan hata ayıklayıcı başlatılıyor...
+Uzak hata ayıklayıcı bağlantı hatası
+Uzaktan hata ayıklama bağlantı hatasını bildir
+Etkinleştirilirse, ana bilgisayara uzaktan hata ayıklama bağlantı hatası bildirmek için bildirim sistemini kullanır. Aksi takdirde, varsayılan konsol yazısını kullanacaktır.
+Zamanlayıcı için figlet yazı tipi
+Zamanlayıcı için Figlet'i etkinleştir
+Etkinleştirilirse, zamanlayıcı için figlet kullanır. Figlet etkinken zamanı doğru bir şekilde işlemek için büyük bir konsol ekranına ihtiyaç duyduğunu lütfen unutmayın.
+Önyükleme öncesi komut satırı bağımsız değişkenleri ayrıştırılırken hata oluştu: {0}
+Çekirdeği fabrika ayarlarına sıfırlar
+Konsol boyutu algılamasını atlar
+Görünüşe göre konsol boyutu algılamayı atlıyorsunuz. Küçük ekranlarda işler düzgün çalışmayabilir.
+Daha iyi bir deneyim yaşamak için konsol pencerenizi bu ekrandayken yeniden boyutlandırın. Devam etmek için herhangi bir tuşa basın...
+Konsolunuz düzgün çalışamayacak kadar küçük:
+Afiş figlet yazı tipi
+Figlet desteğiyle renkli tip ve çizgi baskı kullanarak konsola bir dizi yazdırır
+Biçim ve Figlet desteğiyle renk türü ve satır yazdırma kullanarak konsola bir dize yazdırır
+Bir mesajı kalıcı olarak kaldırır
+Alıcıdan gelen tüm mesajları kalıcı olarak kaldırır
+Bir mesajı kaldırmayı geri alma
+Alıcıdan tüm mesajları kaldırmayı geri alır
+POP3 için silmeyi geri alma uygulanmaz.
+Yardıma bağlı komutların sayısını göster
+Yardıma bağlı kabuk komutlarının sayısını göster
+Yardıma bağlı mod komutlarının sayısını göster
+Takma adların yardıma bağlılığını göster
+Farklı komut türleri için üç sayım gösteri anahtarı tarafından kontrol edilen komut listesindeki komut sayısını gösterir.
+UESH ifadeleri karşılandığında komutları yürütür
+Koşul ifadede bulunamadı.
+{0} koşulu, {1} bağımsız değişken gerektirir. {2} var.
+Durumun ortasına yerleştirilmesi gerekir.
+Koşul başlangıçta yerleştirilmelidir.
+Sözdizimi hatası nedeniyle ifade ayrıştırılırken hata oluştu.
+Koşul yerine getirilemedi. Daha fazla bilgi burada:
+Şifre maskesi karakteri
+Parolayı maskeleyen bir karakter. Daha fazla güvenlik için boş bırakın.
+Alt kabukta çalışıyorsa kabuktan çıkar
+Anne kabuğunu öldüremezsiniz!
+Alt kabuktan çıkış yapılamıyor.
+Dosya belirtilmedi. Kabuktan çıkılıyor...
+Bu açılış ekranının ayarları burada mevcuttur.
+İlerleme çubuğu rengi
+Ekran koruyucu ayarlarını açar
+Sıçrama ayarlarını açar
+Kullanılabilir UESH değişkenlerini listeler
+İlerleme metni konumu
+Tercih ettiğiniz ilerleme metni konumunu seçin.
+Sadece sayıları yazabilirsiniz.
+Çıkmak için "q" tuşuna basın.
+İsimler indiriliyor...
+Teknik zorluklar nedeniyle, Unix sistemlerinde adaptör özelliklerini listeleyemiyoruz.
+Hata ayıklama modunu etkinleştirir
+Argümanlar için istemler
+Siyah Beyaz Modu Etkinleştir
+Diskoyu siyah beyaz yapar. Çok hızlı olursa gözlerinize gerçekten zarar verir, bu nedenle hızlı görüntü nöbeti yaşıyorsanız önerilmez.
+Desteklenmeyen bir sürüm çalıştırdığınız anlaşılıyor. Bu sürümü kullanmamanız şiddetle tavsiye edilir.
+Geçerli Renkleri Yükle
+Alternatif seçenek rengi
+Kullanıcılar aşk veya nefret yorumları için sayılır
+Aşk veya nefret yorum odasında kaç kullanıcı olacak?
+Kullanılabilir dilleri listeler
+Mevcut diller:
+Komut satırı argümanları:
+Önyükleme öncesi komut satırı bağımsız değişkenleri:
+Kaynak kodun yapısı için mod API belgelerini en güncel haliyle açar

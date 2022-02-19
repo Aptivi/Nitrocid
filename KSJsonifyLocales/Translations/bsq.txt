@@ -983,3 +983,675 @@ Sakatu edozein tekla eskuliburu orria irakurtzeko ...
 Eskuliburu orri honek hauetarako lan egin behar du:
 Ez da aurkitu {0} eskuliburu orria.
 Mod eskuliburua
+Nukleoaren argumentuak erabilgarri:
+Sakatu "q" amaitu baduzu.
+Nukleoko argumentu anitz zuriunerik gabeko komaz bereiz daitezke, adibidez:
+Injektatutako komando anitz bi puntuekin bereiz daitezke zuriuneekin, adibidez:
+Ez da {0} eskatutako argumentua aurkitu.
+Berreskuraezina den errorea argumentuan:
+SHA512 erabiliz kate bat enkriptatzen du
+SHA384 erabiliz kate bat enkriptatzen du
+SHA256 erabiliz kate bat enkriptatzen du
+SHA1 erabiliz kate bat enkriptatzen du
+Kate bat enkriptatzen du MD5 erabiliz
+non egongo den builtinsaver
+Mod zatia ez da ezer.
+Modu seguruan ezin da modak gelditzea.
+Modua hasi da dagoeneko!
+Modua oraindik ez da hasi!
+Komandoaren erabilera:
+Zatiaren fitxategiaren izena:
+Zatiaren fitxategiaren bidea:
+Errore bat gertatu da pantaila-babeslea abiarazten saiatzean:
+Bide-mota baliogabea.
+Nukleoaren bide-mota baliogabea.
+Aurreko abioak huts egin du
+JSON editoreak ez du fitxategi-korronterik ireki oraindik.
+JSON fitxategiaren barruko propietatea ez da aurkitu.
+Kendutako jabetza.
+JSON fitxategiaren amaieran propietate berri bat gehitzen du
+JSON fitxategitik propietate bat kentzen du
+JSON shell-etik irteten da
+JSON shell-etik irteten da aldaketak gorde gabe
+JSON fitxategia gordetzen du
+JSON shell-a irekitzen du
+JSON fitxategia inprimatzen du
+Hurrengo arrapala tartea
+Ramp-erako 255 koloreko euskarria aktibatzen du.
+Benetako kolorearen euskarria aktibatzen du Ramp-en.
+Zenbat milisegundo itxaron behar da hurrengo arrapala bete aurretik?
+Jakinarazpenaren izenburuaren kolorea
+Jakinarazpenaren deskribapenaren kolorea
+Jakinarazpenen aurrerapenaren kolorea
+Jakinarazpenaren hutsegite kolorea
+Galderaren kolorea
+Arrakasta kolorea
+Erabiltzailearen dolarraren kolorea
+Puntaren kolorea
+Testu bereizlearen kolorea
+Bereizlearen kolorea
+Zerrendaren izenburuaren kolorea
+Garapen abisuaren kolorea
+Eszenako denbora kolorea
+Aurrerapen kolorea
+Atzeko aukeraren kolorea
+Marraztu jakinarazpen-ertza
+Jakinarazpena mugarekin estaltzen du.
+Jarri harremanetan modaren saltzailearekin mod-a bertsio bateragarrira eguneratzeko.
+Lehentasun txikiko ertzaren kolorea
+Lehentasun ertaineko ertzaren kolorea
+Lehentasun handiko ertzaren kolorea
+Aurrerapen jakinarazpena bidaltzen du hargailua probatzeko
+Kolore-gurpila probatzen du
+Nukleoaren tokiko ordua erakusten du
+Tokiko nukleoaren data erakusten du
+Tokiko nukleoaren data eta ordua erakusten ditu
+UTC nukleoaren ordua erakusten du
+UTC nukleoaren data erakusten du
+UTC nukleoaren data eta ordua erakusten ditu
+MOTD bidea
+MAL bidea
+Zein da MOTD testu fitxategia? Idatzi testu-fitxategirako bide absolutua.
+Zein fitxategi da MAL testu fitxategia? Idatzi testu-fitxategirako bide absolutua.
+Zerrenda beltzean dauden modak
+Idatzi abiaraztean abiaraziko ez diren moden fitxategi-izenak. Amaitzen duzunean, idatzi "q". Idatzi minus ikurra bidearen ondoan dagoen mod bat kentzeko.
+{0} mod zerrenda beltzean dago.
+Mod guztiak birkargatzen ditu
+Zerrenda beltzean mod bat gehitzen du
+Zerrenda beltzeko mod bat kentzen du
+Ordua eta data UTC-n: {0}
+Zehaztutako JSON shell komandoa ez da aurkitu.
+Erakutsi aplikazioaren informazioa abiaraztean
+Analizatu komando-lerroko argumentuak
+Erakutsi etapa amaierako orduak
+Hasi nukleoaren aldaketak abioan
+Erakutsi uneko ordua saioa hasi aurretik
+Jakinarazi edozein akats abioan zehar
+Abioan aplikazioari buruzko informazio laburra erakusten du.
+Komando-lerroko argumentuak abiaraztean analizatzen ditu.
+Nukleoak etapa bat amaitzeko zenbat denbora behar izan duen erakusten du.
+Abiarazi automatikoki nukleoaren aldaketak abiaraztean.
+Saioa hasi aurretik uneko ordua, ordu-eremua eta data erakusten ditu.
+Nukleoa abiaraztean akats txiki bat badago, erabiltzaileari horren berri emango dio.
+Erabiltzaile izenaren gonbita estiloa
+Pasahitza galdetzeko estiloa
+Erakutsi MAL saioa hastean
+Idatzi nola nahi duzun zure saioa hasteko gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Idatzi nola nahi duzun pasahitza-eskaera izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Saioa hasteko pantaila bistaratu ondoren Eguneko Mezua erakusten du.
+Test Shell Prompt estiloa
+JSON Shell Prompt estiloa
+Zundaketa injektatutako komandoak
+Kernelaren shellaren hasieran injektatutako komandoak aztertzen ditu.
+Erakutsi fitxategiaren xehetasunak zerrendan
+Fitxategien xehetasun laburrak erakusten ditu fitxategiak zerrendatzen dituen bitartean
+Erakutsi fitxategien xehetasunak FTP zerrendan
+Erabiltzaile-izenaren gonbita estiloa FTPrako
+FTPrako pasahitza galdetzeko estiloa
+Erabili lehen FTP profila
+Gehitu konexio berriak FTP markatze bizkorrari
+Saiatu FTP ziurtagiri seguruak baliozkotzen
+Erakutsi FTP MOTD konexioan
+Onartu beti FTP ziurtagiri baliogabeak
+FTP fitxategiaren xehetasunak erakusten ditu urruneko direktorioa zerrendatzen diren bitartean.
+FTP-ra konektatzeko lehen FTP profila erabiltzen du.
+Gaituta badago, konexio berri bat gehitzen dio FTP markatze bizkorrari.
+FTP ziurtagiriak balioztatzen saiatzen da. Ez da gomendagarria itzaltzea.
+Saioa hastean eguneko FTP mezua erakusten du.
+Onartu beti FTP ziurtagiri baliogabeak. Ez da gomendagarria aktibatzea, segurtasun arriskuak ekar ditzakeelako.
+Erabiltzaile-izena postarako gonbidapen-estiloa
+Postarako pasahitza galdetzeko estiloa
+IMAP gonbita-estiloa postarako
+Postarako SMTP gonbita estiloa
+Automatikoki detektatu posta zerbitzaria
+Gaitu posta arazketa
+Jakinarazi posta-mezu berriengatik
+Postarako GPG pasahitza galdetzeko estiloa
+Bidali IMAP ping tartea
+Bidali SMTP ping tartea
+Posta-testu formatua
+Idatzi nola nahi duzun zure IMAP zerbitzariaren gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Idatzi nola nahi duzun zure SMTP zerbitzariaren gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Automatikoki detektatu posta zerbitzaria emandako helbidean oinarrituta.
+Posta-zerbitzariaren arazketa gaitzen du.
+Posta-mezu berrien berri ematen dizu.
+Idatzi nola nahi duzun zure GPG pasahitz-gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Zenbat milisegundo IMAP ping-a bidaltzeko?
+Zenbat milisegundo SMTP ping-a bidaltzeko?
+Posta-testua nola erakutsiko den kontrolatzen du.
+Testu soila
+Testu jarioa
+HTML testua
+Testu aberastua
+Testu aberatsa konprimitua
+Testu aberatsa
+Abiarazi automatikoki urruneko arazketa abiaraztean
+Urruneko arazketa-mezu formatua
+Abioan urruneko arazketa abiaraztea nahi baduzu, gaitu hau.
+Urruneko arazketa-mezuen formatua zehazten du. {0} izenerako, {1} mezurako.
+RSS jarioaren URL gonbita estiloa
+Automatikoki freskatu RSS jarioa
+Automatikoki freskatu RSS jarioaren tartea
+Idatzi nola nahi duzun zure RSS jarioaren zerbitzariaren gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Zenbat milisegundo RSS iturria freskatzeko?
+Erakutsi fitxategiaren xehetasunak SFTP zerrendan
+Erabiltzaile-izenen gonbidapen-estiloa SFTPrako
+Gehitu konexio berriak SFTP markaketa bizkorrari
+SFTP fitxategiaren xehetasunak erakusten ditu urruneko direktorioa zerrendatzen diren bitartean.
+Gaituta badago, konexio berri bat gehitzen dio SFTP markatze bizkorrari.
+Ping denbora-muga
+Erakutsi egokigailuaren informazio zabala
+Erakutsi sarearen informazio orokorra
+Deskargatu ehuneko testua
+Kargatu ehuneko testua
+Zenbat milisegundo itxaron behar da denbora-muga deklaratu aurretik?
+Egokigailuaren informazio zabala inprimatzen du, hala nola paketeen informazioa.
+Sareari buruzko informazio orokorra erakusten du.
+Idatzi nola nahi duzun kargatzeko ehuneko testua izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira. {0} kargatutako tamainarako, {1} helburuko tamainarako, {2} ehunekorako.
+Idatzi nola nahi duzun deskargatzeko ehuneko testua izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira. {0} deskargatutako tamainarako, {1} helburuko tamainarako, {2} ehunekorako.
+Eskatu pasahitza blokeatu ondoren
+Pantaila blokeatu ondoren, eskatu pasahitza
+Gutxieneko kolore gorri maila
+Gutxieneko kolore berde maila
+Gutxieneko kolore urdin maila
+Gutxieneko kolore-maila
+Kolore gorriaren gehienezko maila
+Kolore berdearen gehienezko maila
+Kolore urdinaren gehienezko maila
+Kolore-maila maximoa
+Gutxieneko kolore gorri maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Gutxieneko kolore berde maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Gutxieneko kolore urdin maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Gutxieneko kolore-maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255 255 koloretarako edo 16 16 koloretarako.
+Kolore gorriaren gehienezko maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Kolore berdearen gehienezko maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Kolore urdinaren gehienezko maila. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255.
+Kolore-maila maximoa. Onartutako gutxieneko balioa 0 da eta gehienez onartutako balioa 255 255 koloretarako edo 16 16 koloretarako.
+Lehen planoko kolorea
+Lerroko karakterea
+Lerro bat osatzeko karaktere bat. Ziurtatu karaktere bakarra sartzen duzula.
+Goiko ezkerreko izkinako karakterea orduen barrarako
+Goiko ezkerreko izkinako karakterea minutu barrarako
+Goiko ezkerreko izkinako karakterea segundo barrarako
+Goiko eskuineko izkinan karakterea orduen barrarako
+Goiko eskuineko izkinako karakterea minutu barrarako
+Goiko eskuineko izkinako karakterea segundo barrarako
+Beheko ezkerreko izkinan karakterea orduen barrarako
+Beheko ezkerreko izkinako karakterea minutu barrarako
+Beheko ezkerreko izkinako karakterea segundo barrarako
+Beheko eskuineko izkinan karakterea orduen barrarako
+Beheko eskuineko izkinan karakterea minutu barrarako
+Beheko eskuineko izkinan karakterea segundo barrarako
+Goiko markoaren karakterea orduen barrarako
+Goiko markoaren karakterea minutu barrarako
+Goiko markoaren karakterea segundo barrarako
+Beheko markoaren karakterea orduen barrarako
+Beheko markoaren karakterea minutu barrarako
+Beheko markoaren karakterea segundo barrarako
+Ezkerreko markoaren karakterea orduen barrarako
+Ezkerreko marko karakterea minutu barrarako
+Ezkerreko markoaren karakterea segundo barrarako
+Eskuineko marko karakterea orduen barrarako
+Eskuineko marko karakterea minutu barrarako
+Eskuineko marko karakterea segundo barrarako
+Informazio testua orduetarako
+Informazio testua minutuetarako
+Informazio testua segundotan
+Gutxieneko kolore gorri-maila orduetan
+Gutxieneko kolore berdearen maila orduetan
+Gutxieneko kolore urdinaren maila orduetarako
+Gutxieneko kolore-maila orduetarako
+Kolore gorriaren gehienezko maila orduetan
+Kolore berdearen gehienezko maila orduetan
+Kolore urdinaren gehienezko maila orduetan
+Gehienezko kolore-maila orduetan
+Gutxieneko kolore gorri-maila minutuz
+Gutxieneko kolore berdearen maila minutuz
+Kolore urdinaren gutxieneko maila minutuz
+Gutxieneko kolore-maila minutuz
+Kolore gorriaren gehienezko maila minututan
+Kolore berdearen gehienezko maila minutuz
+Kolore urdinaren gehienezko maila minutuz
+Kolore maila maximoa minutuz
+Kolore gorriaren gutxieneko maila segundotan
+Gutxieneko kolore berdearen maila segundotan
+Kolore urdinaren gutxieneko maila segundotan
+Gutxieneko kolore-maila segundotan
+Kolore gorriaren gehienezko maila segundotan
+Kolore berdearen gehienezko maila segundotan
+Kolore urdinaren gehienezko maila segundotan
+Kolore-maila maximoa segundotan
+Goiko ezkerreko izkinan antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Beheko ezkerreko izkinan antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Goiko markoaren antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Beheko markoaren antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Ezkerreko markoaren antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Eskuineko markoaren antza duen pertsonaia. Ziurtatu karaktere bakarra sartzen duzula.
+Idatzi nola erakusten duen uneko orduko informazio-testua. {0} 24 ordutik uneko ordurako.
+Idatzi nola erakusten duen uneko minutuko informazio-testua. {0} 60 minutuko uneko minuturako.
+Idatzi nola erakusten duen uneko segunduko informazio-testua. {0} 60 segundoko uneko segundorako.
+Testuaren kolorea
+Arrapala barrarako goiko ezkerreko izkinako karakterea
+Arrapala barrarako goiko eskuineko izkinako karakterea
+Arrapala barrarako beheko ezkerreko izkinako karakterea
+Arrapala barrarako beheko eskuineko izkinako karakterea
+Goiko markoaren karakterea arrapala barrarako
+Arrapala barrarako beheko markoaren karakterea
+Arrapala barrarako ezkerreko marko karakterea
+Arrapala barrarako eskuineko marko karakterea
+Hasierako kolorerako gutxieneko kolore gorri maila
+Hasierako kolore berdearen gutxieneko maila
+Hasierako kolorerako gutxieneko kolore urdin maila
+Hasierako kolorearen gutxieneko kolore-maila
+Hasierako kolorearen gehienezko kolore gorri maila
+Hasierako kolorearen gehieneko berde-maila
+Kolore urdinaren gehienezko maila hasierako kolorerako
+Hasierako kolorearen gehienezko kolore-maila
+Gutxieneko kolore gorri maila amaierako kolorerako
+Gutxieneko kolore berdearen maila amaierako kolorerako
+Gutxieneko kolore urdin maila amaierako kolorerako
+Gutxieneko kolore-maila amaierako kolorerako
+Kolore gorriaren gehienezko maila amaierako kolorerako
+Amaierako kolore berdearen gehienezko maila
+Kolore urdinaren gehienezko maila amaierako kolorerako
+Amaierako kolorearen gehienezko kolore-maila
+Ebazteko gutxieneko zenbakia
+Ebazteko gehienezko kopurua
+Ebazlea erakutsi sarrera
+Jakinarazpenen ertzaren goiko ezkerreko izkinako karakterea
+Goiko eskuineko izkinako karakterea jakinarazpenen ertzarako
+Jakinarazpenen ertzaren beheko ezkerreko izkinako karakterea
+Jakinarazpenen ertzaren beheko eskuineko izkinako karakterea
+Goiko marko karakterea jakinarazpenen ertzetarako
+Beheko marko karakterea jakinarazpenen ertzetarako
+Ezkerreko marko karakterea jakinarazpenen ertzeko
+Jakinarazpenen ertzaren eskuineko marko karakterea
+Eskuzko orrialdearen informazio-estiloa
+Sarrerako galdetegian idatzitakoa erakutsi behar den ala ez.
+Zein da aukeratzeko gutxieneko kopurua?
+Zein da aukeratzeko gehieneko kopurua?
+Idatzi nola nahi duzun zure man-orriaren informazioa. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira. {0} eskuzko izenbururako, {1} berrikusteko.
+{0} propietatea ez da inongo modulutan aurkitzen.
+Atal honek pantaila-babeslearen ezarpen orokorrak zerrendatzen ditu. Pantaila-babeslearen ezarpen indibidualetarako, irten Ezarpenak eta ireki Pantaila-babeslearen ezarpenak.
+Hasi kolore-gurpila benetako kolore moduan
+Zehazten bada, abiarazteko banner pertsonalizatua erakutsiko du leku-marken laguntzarekin. {0} erabil dezakezu nukleoaren bertsiorako.
+Egungo hizkuntzaren zein aldaera erabiltzen ari da hilabeteen izenak, egutegia, etab. aldatzeko?
+255 koloreko euskarria aktibatzen du.
+Benetako kolorearen euskarria aktibatzen du.
+{0} lerroko hitza ezabatu da.
+Katea ordezkatu da {0} lerroan.
+{0} lerro-zenbakia kendu da.
+Ezabatu baimenik gabeko mezuak
+Mezu gogaikarria ezkutatzen du zerrenda funtzioak baimenik gabeko karpeta bat irekitzen saiatzen bada
+FTP zerbitzariaren informazioa
+Zerbitzariaren helbidea:
+Zerbitzariaren ataka:
+Zerbitzari mota:
+Zerbitzari-sistema mota:
+Zerbitzariaren zifratze modua:
+Zerbitzariaren datu-konexio mota:
+Zerbitzari-sistema:
+Zerbitzaria deskargatzeko datu mota:
+Zerbitzariaren kargatzeko datu mota:
+Eragiketa hau egin aurretik zerbitzari batera konektatu behar zara.
+Sartu urruneko fitxategi bat hash egiteko.
+Sartu hash-a izateko urruneko direktorio bat.
+Sartu urruneko direktorio bat.
+FTPrako hashing errekurtsiboa
+Direktorio bat modu errekurtsiboan hash egin ala ez. Kontuan izan FTP zerbitzari guztiek ez dutela hori onartzen.
+Prozesadorearen erlojuaren abiadura:
+Prozesadore SSE2 euskarria:
+Prozesadore kopurua guztira:
+Diskoaren tamaina:
+Memoria osoa:
+Txartel grafikoa:
+Disko eredua:
+Gehienezko e-mail-kopurua orrialde batean
+Egungo hizkuntzaren kultura
+Atal egokia ireki duzula ziur bazaude, begiratu mezu hau:
+Ezarpen desberdinak...
+Koloreen ezarpenak...
+FTP zerbitzariaren komando bat exekutatzen du
+Sartu POP3 zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
+Postarako POP3 gonbita estiloa
+Bidali POP3 ping tartea
+Idatzi nola nahi duzun zure POP3 zerbitzariaren gonbita izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira.
+Zenbat milisegundo POP3 ping-a bidaltzeko?
+Erabili POP3
+POP3 erabili ala ez. Hau desgaituz gero, SMTP erabiliko da.
+Kate bat enkriptatzen du CRC32 erabiliz
+Posta-bezeroa irekitzen du
+transferitutako posta...
+Pantaila-babesle honen ezarpenak hemen daude eskuragarri.
+Taularen funtzionaltasuna probatzen du
+Zehaztutako lerroa editatzen du
+Lerro berriak gehitzen ditu fitxategiaren amaieran
+Sartu fitxategiaren amaieran erantsi nahi duzun testua. Amaitutakoan, idatzi "EOF" bere lerroan.
+Ostalariaren izena
+Erabiltzaile izena
+Datu mota
+Kodeketa
+Enkriptatzea
+Protokoloak
+Erakutsi posta-transferentziaren aurrerapena
+Posta transferentziaren aurrerapena
+Posta transferentziaren aurrerapena (bakarra)
+Gaituta badago, posta shell-ak mezua deskargatzean zenbat byte transmititu diren erakutsiko du.
+Idatzi nola nahi duzun zure posta-transferentziaren aurrerapen-estiloa izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira. {0} transferitutako tamainarako eta {1} guztizko tamainarako.
+Idatzi nola nahi duzun zure posta-transferentziaren aurrerapen-estiloa izatea. Utzi hutsik estilo lehenetsia erabiltzeko. Leku-markak analizatzen dira. {0} transferitutako tamainarako.
+Ordu eremu:
+Gaur {0} da
+Uneko ordua {0} da
+Taula bereizlearen kolorea
+Taularen goiburuko kolorea
+Taularen balioaren kolorea
+Erantzun posibleak
+Mod fitxategia ez dago zehaztuta.
+Dagoeneko instalatutako mod bat instalatzen saiatzen. Modua eguneratzen...
+Instalazioak huts egin du
+Emandako mod fitxategia bateraezina da.
+Ezin izan da desinstalatu
+URL bat irekitzen du
+Inprimatu lerro-zenbakiak fitxategien edukietan
+\"cat\" komandoak fitxategiaren lerro-zenbakiak inprimatzen ditu.
+Bertsio transliteratua
+Itzulitako bertsioa
+Jakinarazpen guztiak baztertzen ditu
+Deskargatzen...
+Kargatzen...
+Erakutsi deskargaren aurrerapenaren jakinarazpena
+Erakutsi jakinarazpena kargatzen aurrera egiteko
+Deskargaren aurrerapena erakusten duen jakinarazpena erakusten du.
+Kargatzearen aurrerapena erakusten duen jakinarazpena erakusten du.
+KS baliabideetan kate itzulgarria dagoen egiaztatzen du
+Lokalizazio baliabideetan aurkitutako katea.
+Ez da katea aurkitu lokalizazio-baliabideetan.
+Nukleoa lasai abiarazten du
+Komando bat sartzen du hurrengo saioa hasteko
+Nukleoa modu seguruan abiarazten du, mod guztiak desgaituz
+Modu segurua bezala, baina erabiltzaile anitzeko eta zenbait pertsonalizazio ere desgaitzen ditu
+Ez zegoen nahikoa argudio.
+Arrapala barrarako goiko ezkerreko izkinan kolorea
+Arrapala barrarako goiko eskuineko izkinan kolorea
+Arrapala barrarako beheko ezkerreko izkinan kolorea
+Arrapala barrarako beheko eskuineko izkinan kolorea
+Goiko markoaren kolorea arrapala barrarako
+Arrapala barrarako beheko markoaren kolorea
+Arrapala barrarako ezkerreko markoaren kolorea
+Markoaren eskuineko kolorea arrapala barrarako
+Erabili ertz-koloreak arrapala barrarako
+Erabili ertzaren koloreak arrapala barrarako. Desgaituta badago, barra gris bat sortuko da.
+HTTP shell-a abiarazten du
+HTTP shell-etik irten eta nukleora itzultzen da
+HTTP gunea ezartzen du. Baliozko URI bat izan behar du.
+HTTP zerbitzariaren erantzuna jasotzen du zehaztutako eskaera erabiliz
+HTTP zerbitzaritik edukia ezabatzen du
+Errore bat gertatu da HTTP shell-ean:
+HTTP mezua: eskatutako {0} komandoa ez da aurkitu. Ikus 'laguntza' HTTP shell-en zehaztutako komando erabilgarrien zerrendarako.
+HTTP zerbitzaritik katea lortzen du zehaztutako eskaera erabiliz
+{0} lortzen...
+Gunearen URI formatua ez da baliozkoa.
+gunea ezartzea
+Koloreek ez dute berrabiarazi behar, baina ezarpen gehienek berrabiarazi behar dute.
+Ez dago laguntzarik "{0}" argumentuarentzat.
+Sakatu A gorrotoaren iruzkinetan barkamena eskatzeko. Sakatu T maitasun iruzkinetan eskerrak emateko. Sakatu Q jokoa irteteko.
+Gorrotozko iruzkin baten barkamena eskatu duzu! Bikain!
+Barkamena eskatu maitasunaren iruzkinagatik. Ez aski ona.
+Eskerrak eman diozu gorrotoari gorrotoaren iruzkinagatik!
+SpeedPress-en lehenetsitako zailtasuna
+Teklak sakatzearen denbora-muga SpeedPress-erako
+Aukeratu nahi duzun zailtasuna.
+Zenbat milisegundo itxaron behar da tekla sakatu arte denbora-muga baino lehen? (Ohiturazko zailtasunean)
+Hitz edo esaldi bat beste batekin ordezkatzen du esamolde erregularrak erabiliz
+Hitz edo esaldi bat lerro bateko beste batekin ordezkatzen du, esamolde erregularrak erabiliz
+Adierazpen erregularrak erabiliz hitz bat edo lerro zehatz batean edo lerro guztietan kontsulta egiten du
+Bilatu ezarpen bat
+Idatzi zer bilatu nahi duzun.
+Ez da ezer aurkitzen. Ziurtatu ezarpena behar bezala idatzi duzula.
+Fitxategi lokal bat artxiboan paketatzen du
+Ezin da ezer ontziratu.
+Erantzunaren deskribapena
+Ostalari portua
+Software hau erabiltzeko baldintza eta baldintzei buruzko informazio gehiago lortzeko, bisitatu
+Aukera lehenetsitako irteera mota
+KS ezarpen guztiak egiaztatzen ditu aldagaiak ondo idatzita dauden ikusteko
+Konfigurazio-sarrera hauek aldagai edo enumerazio baliogabeak dituzte eta konpondu behar dira:
+Ez da {0} fitxategia aurkitu
+Emandako balioekin matrize aldagai bat sortzen du
+Idatzi nora joan nahi duzun ezarpenaren zenbakia. Beste edozein pertsonaiak atzera egitea esan nahi du.
+Kokapen testu-lerroen zenbaki guztiak egiaztatzen ditu denak berdinak diren ikusteko
+Lerroak ez datoz bat
+Mesedez, idatzi erabiltzaile-zenbaki bat.
+Sartu erabiltzaile anonimoak
+Sartu erabiltzaile ezinduak
+Erabiltzaile anonimoak sartzen ditu zerrendan
+Desgaitutako erabiltzaileak sartzen ditu zerrendan
+Ordenatu zerrenda
+Fitxategi-sistemaren zerrenda profesionalki ordenatzen du.
+Hautaketa aukera eskaintzen du
+Shell komandoak ez dira inplementatu!!!
+Erakutsi azken RSS izenburua saioa hastean
+RSS izenburuaren URLa
+Saio-hasiera bakoitzean, hautatutako tituluaren URLko azken RSS izenburua erakutsiko du.
+Azken izenburua erakustean erabili beharreko RSS izenburuaren URLa. Hau izan ohi da zure jario gogokoena.
+Azken berriak:
+Ezin izan dira azken berriak jaso.
+Aukeratutako kolorea
+Erakutsi pila-arrastoa nukleoaren errorean
+Nukleoaren errorerik badago, aukeratu pila-traza kontsolan inprimatu nahi duzun ala ez.
+Mod kargatu daiteke, baina abisu hauek modaren funtzionamenduan eragina izan dezakete:
+Pantaila-babeslea kargatu daiteke, baina abisu hauek pantaila-babeslearen funtzionamenduan eragina izan dezakete:
+Gorde ezarpenak honela
+Kargatu ezarpenak honetatik
+Non gorde nahi dituzu egungo nukleoaren ezarpenak?
+Ezin dira gorde nukleoaren ezarpenak lehendik dagoen fitxategiaren gainean.
+Nondik kargatu nahi dituzu egungo nukleoaren ezarpenak?
+KS baliabideetan kate itzulgarriak dauden egiaztatzen du
+Bi testu fitxategiak edo gehiago konbinatzen ditu irteerako fitxategian.
+Ezin izan dira fitxategiak konbinatu.
+RSS jarioa lortzeko denbora-muga
+Zenbat milisegundo itxaron behar da RSS jarioa lortzeko denbora-muga aurretik?
+Bete kutxak
+Kaxa bere osotasunean marrazten dugu ala ertza bakarrik marrazten dugu?
+Etapa atzerapena milisegundotan
+Zenbat milisegundo itxaron behar da hurrengo etapa marraztu aurretik?
+Hurrengo arrapala usteldura tartea
+Zenbat milisegundo itxaron behar da hurrengo arrapalaren mutur bat usteltzeko?
+Egiaztatu arazketa-kuota
+Egiaztatu al dugu arazketa-sistemak kuota egiaztatu behar duen arazketara idatzi aurretik?
+Zenbat milisegundo behar izan ditu benetan lo egiteko?
+Ezin izan da gertaerarik gehitu.
+Ezin izan da gertaera bat kendu.
+Ez da nahikoa argumentu eman gertaera bat gehitzeko.
+Ez da nahikoa argumentu eman gertaera bat kentzeko.
+Gertaerak manipulatzeko behar adina argudiorik ez.
+Ezin izan da abisua gehitu edo kendu.
+Ez da nahikoa argudio eman abisua gehitzeko edo kentzeko.
+Ez da nahikoa argudio eman abisuak manipulatzeko.
+Izenbururik gabeko abisua
+Izenbururik gabeko ekitaldia
+Orain ekitaldi eguna da!
+Ez galdu hau!
+Ekintza baliogabea.
+Kronometro sinple bat
+Hasi edo gelditu
+Itzulia
+Berrezarri
+Tenporizadore sinple bat
+Hasi (berriz)kontatzen
+Ezarri tartea
+Adierazitako denbora-muga ez da zenbakizkoa.
+Zehaztu denbora-muga milisegundotan
+Gorde gertaera eta/edo abisu guztiak modu suntsitzailean
+Gaituta badago, gertaera eta/edo abisu guztiak ezabatzen ditu egutegiko komandoa erabiliz guztiak gorde aurretik.
+Egiaztatu berriro saiakerak FTP transmisiorako
+FTP konexioaren denbora-muga
+FTP datu-konexioaren denbora-muga
+FTP IP bertsioak
+Zenbat aldiz egiaztatu kargatu eta deskargatu eta berriro saiatu egiaztapenak huts egiten badu deskargak huts egin baino lehen?
+Zenbat milisegundo itxaron behar da FTP konexioaren denbora-muga baino lehen?
+Zenbat milisegundo itxaron behar da FTP datu-konexioaren denbora-muga baino lehen?
+Aukeratu FTP zerbitzariak onartzen duen eta FTP bezeroak erabiltzen duen Internet Protokoloaren bertsioa.
+RPC abiarazten saiatzen ari den bitartean.
+Goiko ezkerreko izkinako karakterea RGB kolore-gurpilerako
+Goiko eskuineko izkinako karakterea RGB kolore-gurpilerako
+RGB kolore-gurpilerako beheko ezkerreko izkinan karakterea
+RGB kolore-gurpilerako beheko eskuineko izkinan karakterea
+Goiko markoaren karakterea RGB kolore-gurpilerako
+Beheko markoaren karakterea RGB kolore-gurpilerako
+Ezkerreko markoaren karakterea RGB kolore-gurpilerako
+Eskuineko markoaren karakterea RGB kolore-gurpilerako
+Fitxategi bat aurkitzen du zehaztutako direktorioan edo uneko direktorioan
+Lerro amaierak uneko plataformarako formatuan edo zehaztutako formatu pertsonalizatuan bihurtzen ditu
+Karpetaren tamaina osoa:
+Erakutsi guztizko tamaina zerrendan
+Gaituta badago, karpeta-tamaina osoa erakusten du zerrendan, konfigurazioaren arabera karpeta-tamainak kalkulatzeko moduaren arabera.
+Eguneratuta zaude!
+JSON shell-erako JSON formatu lehenetsia
+JSON shell-ak gordetzeko JSON formatu lehenetsia hautatzen du (apainduta edo txikituta).
+Deskargatu da eguneratzea!
+Deskargatu eguneraketak automatikoki
+Eguneratzerik badago, nukleoak automatikoki deskargatuko du.
+Su artifizialaren eztanda-erradioa
+Zenbat bloke (10 gehienez) da su artifizialaren eztanda-erradioa piztean?
+Komando honek funtzionamendua aldatzen duten beheko etengailuak ditu:
+Inprimatzen ari den lerroari jarraitzen dioten lerro-zenbakiak inprimatzen ditu
+Lerro-zenbakiak inprimatzea eragozten du
+Erabili beti transliteratutako bertsioa
+Erabili beti itzulitako bertsioa
+Behartu hizkuntza aldatzea
+Adierazi erantzunak karaktere bat baino gehiago har ditzakeela
+Adierazi erantzunak karaktere bakarra har dezakeela
+Inprimatu galdera eta erantzunak lerro batean
+Inprimatu galdera eta erantzunak bi lerrotan
+Inprimatu galdera eta erantzunak modu modernoan
+Inprimatu galdera eta erantzunak taula batean
+Fitxategiaren xehetasunak zerrendan erakusten ditu
+"Ukatutako baimena" mezu gogaikarria kentzen du
+Ordu-eremu guztiak erakusten ditu
+Zailtasun errazean hasten da jokoa
+Zailtasun ertainean hasten du jokoa
+Zailtasun gogorrean hasten da jokoa
+Oso zailtasun gogorrean hasten da jokoa
+Zailtasun pertsonalizatuan hasten da jokoa. Kontuan izan milisegundoko denbora-muga pertsonalizatua argumentu gisa idatzi behar dela.
+Sistemaren informazioa erakusten du
+Hardwarearen informazioa erakusten du
+Erabiltzailearen informazioa erakusten du
+Eguneko mezua erakusten du
+Saioa hasi ondorengo eguneko mezua erakusten du
+Informazio guztia erakusten du
+ZIP fitxategiaren edukia duen direktorio bat sortzen du
+Eskuragarri dauden hiri guztiak erakusten ditu
+Konpresio azkarra
+Konpresiorik ez
+Ez sortu oinarrizko direktorioa artxiboan
+Unitatea akainetan
+Zerbitzaritik deskonektatzen da lotsagarri
+Helburuko bidea absolutua dela adierazten du
+JSON fitxategia gordetzen du, prozesuan edertuz
+JSON fitxategia gordetzen du, prozesuan txikituz
+Testu-fitxategitik lerro amaierako estiloa lortzen du
+Tiratutako gertaera guztiak garbitzen ditu
+Gaitu gertaeren arazketa
+Kerneleko gertaeren sistemaren arazketa gaitzen du
+Figlet letra-tipoa
+Idatzi Figgle liburutegiak onartzen duen figlet letra-tipoa. Informazio gehiagorako kontsultatu liburutegiko dokumentazioa
+Ezin izan da instalatu {0} hizkuntza pertsonalizatua.
+Hizkuntza pertsonalizatua instalatzeko beharrezkoa den metadatu fitxategia ez dago.
+Hizkuntza pertsonalizatua instalatzeko beharrezkoak diren metadatuen informazioak ez du beharrezko lokalizaziorik ematen.
+Ezin izan da {0} hizkuntza pertsonalizatua desinstalatu.
+Hizkuntza pertsonalizatua desinstalatzeko beharrezkoa den metadatu fitxategia ez dago.
+Hizkuntza pertsonalizatua desinstalatzeko beharrezkoak diren metadatuen informazioak ez du beharrezko lokalizaziorik ematen.
+Ingeles hizkuntzaren luzera ez dator bat emandako hizkuntza-tokenaren luzera.
+Hizkuntza jada existitzen da eta ezin da gainidatzi.
+Ezin izan da hizkuntza pertsonalizatua desinstalatu. Seguruenik ez da existitzen.
+Ezin izan dira hizkuntza pertsonalizatuak instalatu.
+Ezin izan dira hizkuntza pertsonalizatuak desinstalatu.
+Ezin izan dira hizkuntza pertsonalizatuak desinstalatu. Ikusi barneko salbuespena informazio gehiagorako.
+Idatzi administratzailearen pasahitza. Ziurtatu ez duzula kontu hau erabiltzen benetan zer egiten ari zaren jakin ezean.
+Administratzailearen pasahitza idatzi behar duzu.
+Lizentziari buruzko informazioa
+Kudeatu zure hizkuntzak
+Ez da hizkuntza aurkitu edo fitxategiak karaktere baliogabeak ditu.
+Hizkuntza ez dago zehaztuta.
+Hizkuntza-kudeaketa modu seguruan desgaituta dago.
+Hizkuntza izen laburra:
+Hizkuntzaren izen osoa:
+Hizkuntza transliteragarria:
+Hizkuntza pertsonalizatua:
+Ongi etorri pankarta berria
+Splash pantaila dotorea
+Figlet-ek errendatutako ongietorri pankarta berria erakusten du
+Abiarazteko pantaila dotorea gaitzen du. Kontuan izan argumentuaren gonbita eta probako shell-a abiaraztea desgaituko duela.
+Splash izena
+Nukleoan inplementatutako zipriztin erabilgarrietatik splash izena.
+Sortutako MOTD lehenetsia.
+Sortutako MAL lehenetsia.
+Sistemaren kontua hasieratu da
+Erabiltzaileak hasieratu dira
+Baimenak kargatu dira
+Ongi etorri!
+Urruneko arazketa abiarazten...
+Urruneko araztearen konexio-errorea
+Jakinarazi urruneko arazketa-konexio-errorea
+Gaituta badago, jakinarazpen-sistema erabiliko du ostalariari urruneko arazketa-konexio-errorearen berri emateko. Bestela, kontsolaren idazketa lehenetsia erabiliko du.
+Figlet letra-tipoa tenporizadorerako
+Gaitu Figlet tenporizadorerako
+Gaituta badago, figlet erabiliko da tenporizadorerako. Kontuan izan kontsola pantaila handi bat behar duela denbora behar bezala errendatzeko, Figlet gaituta dagoela.
+Errore bat gertatu da abioaren aurreko komando-lerroko argumentuak analizatzean: {0}
+Nukleoa fabrikako ezarpenetara berrezartzen du
+Kontsolaren tamainaren hautematea saihesten du
+Kontsolaren tamainaren hautematea saihesten ari zarela dirudi. Baliteke gauzak ondo ez funtzionatzea pantaila txikietan.
+Esperientzia hobea izateko, aldatu zure kontsolaren leihoaren tamaina pantaila honetan zauden bitartean. Sakatu edozein tekla jarraitzeko...
+Zure kontsola txikiegia da behar bezala exekutatzeko:
+Banner figlet letra-tipoa
+Kate bat inprimatzen du kontsolarako kolore mota eta lerro inprimatua Figlet euskarria erabiliz
+Kate bat inprimatzen du kontsolarako kolore-mota eta lerro-inprimaketa erabiliz formatua eta Figlet euskarria erabiliz
+Mezu bat behin betiko kentzen du
+Behin betiko kentzen ditu hartzaileari mezu guztiak
+Desegin mezu bat kentzea
+Desegin hartzaileari mezu guztiak kentzea
+Desegin ezabatzea ez dago inplementatu POP3rako.
+Erakutsi komandoak laguntzaren arabera
+Erakutsi shell-eko komandoak laguntzarekin zenbatzen diren
+Erakutsi mod komandoak laguntzaren arabera
+Erakutsi ezizenen kopurua laguntzan
+Komando-zerrendan komandoen zenbaketa erakusten du, komando mota desberdinetarako hiru zenbaketen bidez kontrolatuta.
+Komandoak exekutatzen ditu UESH adierazpenak betetzen direnean
+Baldintza ez zen esapidean aurkitu.
+{0} baldintzak {1} argumentu behar ditu. {2} lortu.
+Baldintza erdian jarri behar da.
+Baldintza hasieran jarri behar da.
+Errore bat gertatu da espresioa analizatzean, sintaxi-erroreagatik.
+Ezin izan da baldintza bete. Informazio gehiago hemen:
+Pasahitz maskara karakterea
+Pasahitza ezkutatzen duen karaktere bat. Utzi hutsik segurtasun gehiago izateko.
+Shell-etik irteten da azpishellan exekutatzen bada
+Ezin da ama oskola hil!
+Ezin da azpishell-etik saioa amaitu.
+Fitxategia ez da zehaztu. Shell irteten...
+Pantaila honen ezarpenak eskuragarri daude hemen.
+Aurrerapen-barraren kolorea
+Pantaila-babeslearen ezarpenak irekitzen ditu
+Splash ezarpenak irekitzen ditu
+UESH aldagai eskuragarriak zerrendatzen ditu
+Aurrerapen testuaren kokapena
+Hautatu nahiago duzun aurrerapen testuaren kokapena.
+Zenbakiak bakarrik idatzi ditzakezu.
+Sakatu "q" irteteko.
+Izenak deskargatzen...
+Zailtasun teknikoak direla eta, ezin ditugu Unix sistemetako egokitzaileen propietateak zerrendatu.
+Arazte modua gaitzen du
+Argudioak egiteko gonbita
+Gaitu zuri-beltzeko modua
+Diskotea zuri-beltzean egiten du. Benetan min egingo dizu begiak azkarregia bada, beraz, ez da gomendagarria irudi bizkorren atzematea jasaten ari bazara.
+Onartu gabeko bertsio bat exekutatzen ari zinela dirudi. Oso gomendagarria da bertsio hau ez erabiltzea.
+Kargatu uneko koloreak
+Aukera alternatiboaren kolorea
+Erabiltzaileek maitasun edo gorroto iruzkinak zenbatzen dituzte
+Zenbat erabiltzaile egon maitasunaren edo gorrotoaren iruzkinen gelan?
+Eskuragarri dauden hizkuntzak zerrendatzen ditu
+Eskuragarri dauden hizkuntzak:
+Komando-lerroko argumentuak:
+Abiarazi aurretik komando-lerroko argumentuak:
+Iturburu-kodearen egiturarako mod API dokumentazioa irekitzen du bere formarik berrienean

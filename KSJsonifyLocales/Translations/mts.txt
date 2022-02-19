@@ -983,3 +983,675 @@ Agħfas kwalunkwe ċavetta biex taqra l-paġna tal-manwal ...
 Din il-paġna tal-manwal teħtieġ xogħol għal:
 Paġna tal-manwal {0} ma nstabitx.
 Manwal tal-mod
+Argumenti tal-qalba disponibbli:
+Agħfas "q" jekk lest.
+Argumenti multipli tal-qalba jistgħu jiġu sseparati b'virgoli mingħajr spazji, pereżempju:
+Kmandi multipli injettati jistgħu jiġu separati b'koloni bi spazji, pereżempju:
+L-argument mitlub {0} ma jinstabx.
+Żball li ma jistax jiġi rkuprat fl-argument:
+Jikkodifika string billi tuża SHA512
+Jikkodifika string billi juża SHA384
+Jikkodifika string billi juża SHA256
+Jikkodifika string billi juża SHA1
+Jikkodifika string billi tuża MD5
+fejn se jkun builtinsaver
+Parti mod hija xejn.
+It-twaqqif tal-mods mhux permess fuq il-mod sikur.
+Il-mod diġà nbeda!
+Il-mod għadu ma bedax!
+Użu tal-kmand:
+Isem tal-fajl tal-parti:
+Mogħdija tal-fajl tal-parti:
+Żball meta tipprova tibda screensaver:
+Tip ta' passaġġ mhux validu.
+Tip ta' passaġġ tal-qalba mhux validu.
+Boot preċedenti falliet
+L-editur JSON għadu ma fetaħx fluss ta' fajls.
+Il-proprjetà ġewwa l-fajl JSON ma tinstabx.
+Proprjetà mneħħija.
+Iżżid proprjetà ġdida fl-aħħar tal-fajl JSON
+Tneħħi proprjetà mill-fajl JSON
+Joħroġ mill-qoxra JSON
+Joħroġ mill-qoxra JSON mingħajr ma jsalva l-bidliet
+Issejvja l-fajl JSON
+Jiftaħ il-qoxra JSON
+Tipprintja l-fajl JSON
+Intervall tar-rampa li jmiss
+Jattiva 255 appoġġ tal-kulur għal Ramp.
+Jattiva l-appoġġ tal-kulur veru għal Ramp.
+Kemm-il millisekondi trid tistenna qabel ma timla r-rampa li jmiss?
+Kulur tat-titlu tan-notifika
+Kulur tad-deskrizzjoni tan-notifika
+Kulur tal-progress tan-notifika
+Kulur tal-falliment tan-notifika
+Kulur tal-mistoqsija
+Kulur ta 'suċċess
+Kulur tad-dollaru tal-utent
+Kulur tal-ponta
+Kulur tat-test separatur
+Kulur separatur
+Lista tal-kulur tat-titlu
+Kulur ta 'twissija ta' żvilupp
+Kulur tal-ħin tal-palk
+Kulur tal-progress
+Kulur tal-għażla lura
+Iġbed fruntiera tan-notifika
+Ikopri n-notifika mal-fruntiera.
+Ikkuntattja lill-bejjiegħ tal-mod biex taġġorna l-mod għall-verżjoni kompatibbli.
+Kulur tal-fruntiera ta 'prijorità baxxa
+Kulur tal-fruntiera ta' prijorità medja
+Kulur tal-fruntiera ta 'prijorità għolja
+Tibgħat notifika ta' progress biex tittestja r-riċevitur
+Jittestja r-rota tal-kulur
+Juri l-ħin tal-kernel lokali
+Juri d-data tal-kernel lokali
+Juri d-data u l-ħin tal-kernel lokali
+Juri l-ħin tal-kernel UTC
+Juri d-data tal-qalba UTC
+Juri d-data u l-ħin tal-kernel UTC
+mogħdija MOTD
+mogħdija MAL
+Liema fajl huwa l-fajl tat-test MOTD? Ikteb mogħdija assoluta għall-fajl tat-test.
+Liema fajl huwa l-fajl tat-test MAL? Ikteb mogħdija assoluta għall-fajl tat-test.
+Mods fil-lista sewda
+Ikteb l-ismijiet tal-fajls tal-mods li mhux se jaħdmu mal-istartjar. Meta tkun lestejt, ikteb "q". Ikteb sinjal minus ħdejn il-mogħdija biex tneħħi mod eżistenti.
+Mod {0} hija lista sewda.
+Reloads kollha mods
+Iżżid mod mal-lista sewda
+Tneħħi mod mil-lista sewda
+Ħin u data f'UTC: {0}
+Il-kmand tal-shell JSON speċifikat ma jinstabx.
+Uri l-informazzjoni tal-app waqt il-boot
+Parse argumenti tal-linja tal-kmand
+Uri l-ħinijiet tal-finitura tal-istadju
+Ibda modifiki tal-qalba fuq il-boot
+Uri l-ħin attwali qabel il-login
+Avża għal kwalunkwe ħsara waqt il-boot
+Juri informazzjoni qasira dwar l-applikazzjoni fuq il-but.
+Teżamina l-argumenti tal-linja tal-kmand fuq il-boot.
+Juri kemm dam il-qalba biex itemm stadju.
+Ibda awtomatikament il-modifiki tal-kernel fuq il-boot.
+Juri l-ħin attwali, iż-żona tal-ħin, u d-data qabel ma tidħol.
+Jekk ikun hemm ħsara minuri waqt il-boot tal-kernel, jinnotifika lill-utent dwarha.
+Stil fil-pront tal-isem tal-utent
+Stil fil-pront tal-password
+Uri MAL meta tidħol
+Ikteb kif trid li jkun il-pront tal-login tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Ikteb kif trid tkun il-pront tal-password tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Juri l-Messaġġ tal-Jum wara li juri l-iskrin tal-login.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Kmandi injettati ta' sonda
+Jissonda l-kmandi injettati fil-bidu tal-qoxra tal-qalba.
+Uri d-dettalji tal-fajl fil-lista
+Juri d-dettalji fil-qosor tal-fajl waqt li telenka l-fajls
+Uri d-dettalji tal-fajl fil-lista FTP
+Stil fil-pront tal-isem tal-utent għall-FTP
+Stil fil-pront tal-password għall-FTP
+Uża l-ewwel profil FTP
+Żid konnessjonijiet ġodda ma 'speed dial FTP
+Ipprova tivvalida ċertifikati FTP siguri
+Uri FTP MOTD fuq il-konnessjoni
+Dejjem aċċetta ċertifikati FTP invalidi
+Juri d-dettalji tal-fajl FTP waqt li telenka direttorji remoti.
+Juża l-ewwel profil FTP biex jgħaqqad ma 'FTP.
+Jekk ikun attivat, iżid konnessjoni ġdida mal-arloġġ tal-veloċità tal-FTP.
+Jipprova jivvalida ċ-ċertifikati FTP. It-tifi mhux rakkomandat.
+Juri l-messaġġ FTP tal-ġurnata mal-login.
+Dejjem aċċetta ċertifikati FTP invalidi. Li tixgħel mhux rakkomandat peress li tista' toħloq riskji għas-sigurtà.
+Stil fil-pront tal-isem tal-utent għall-posta
+Stil fil-pront tal-password għall-posta
+Stil fil-pront IMAP għall-posta
+Stil fil-pront SMTP għall-posta
+Issib awtomatikament server tal-posta
+Ippermetti d-debug tal-posta
+Notifika għal messaġġi ġodda tal-posta
+Stil fil-pront tal-password tal-GPG għall-posta
+Ibgħat l-intervall tal-ping IMAP
+Ibgħat SMTP ping interval
+Format tat-test tal-posta
+Ikteb kif trid li jkun il-pront tas-server IMAP tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Ikteb kif trid li jkun il-pront tas-server SMTP tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Issib awtomatikament is-server tal-posta abbażi tal-indirizz mogħti.
+Jippermetti d-debug tas-server tal-posta.
+Javżak għal xi messaġġi ġodda tal-posta.
+Ikteb kif trid tkun il-pront tal-password tal-GPG tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Kemm-il millisekondi biex tibgħat il-ping IMAP?
+Kemm-il millisekondi biex tibgħat il-ping SMTP?
+Jikkontrolla kif se jintwera t-test tal-posta.
+Test sempliċi
+Test imqassam
+Test HTML
+Test arrikkit
+Test rikk kompressat
+Test għani
+Ibda awtomatikament id-debug remot mal-istartjar
+Format tal-messaġġ tad-debug mill-bogħod
+Jekk trid tibda debug mill-bogħod fuq il-but, ppermetti dan.
+Jispeċifika l-format remot tal-messaġġ tad-debug. {0} għall-isem, {1} għall-messaġġ.
+RSS feed URL stil fil-pront
+Aġġorna awtomatikament RSS feed
+Aġġorna awtomatikament l-intervall tal-għalf RSS
+Ikteb kif trid li jkun il-pront tas-server tal-għalf RSS tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Kemm millisekondi biex jġedded l-RSS feed?
+Uri d-dettalji tal-fajl fil-lista SFTP
+Stil fil-pront tal-isem tal-utent għal SFTP
+Żid konnessjonijiet ġodda ma' dial tal-veloċità SFTP
+Juri d-dettalji tal-fajl SFTP waqt li telenka direttorji remoti.
+Jekk ikun attivat, iżid konnessjoni ġdida mal-arloġġ tal-veloċità tal-SFTP.
+Ping timeout
+Uri informazzjoni estensiva dwar l-adapter
+Uri informazzjoni ġenerali tan-netwerk
+Niżżel it-test perċentwali
+Ittella' test perċentwali
+Kemm-il millisekondi trid tistenna qabel ma tiddikjara l-timeout?
+Tipprintja l-informazzjoni estensiva tal-adapter, bħall-informazzjoni tal-pakkett.
+Juri l-informazzjoni ġenerali dwar in-netwerk.
+Ikteb kif trid li jkun it-test tal-perċentwali tat-tlugħ tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed. {0} għad-daqs imtella', {1} għad-daqs fil-mira, {2} għall-perċentwali.
+Ikteb kif trid li jkun it-test tal-perċentwali tat-tniżżil tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed. {0} għad-daqs imniżżel, {1} għad-daqs fil-mira, {2} għall-perċentwali.
+Itlob għall-password wara l-illokkjar
+Wara li tissakkar l-iskrin, staqsi għall-password
+Livell minimu ta' kulur aħmar
+Livell minimu ta' kulur aħdar
+Livell minimu ta' kulur blu
+Livell minimu tal-kulur
+Livell massimu ta' kulur aħmar
+Livell massimu tal-kulur aħdar
+Livell massimu tal-kulur blu
+Livell massimu tal-kulur
+Livell minimu ta' kulur aħmar. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell minimu ta' kulur aħdar. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell minimu ta' kulur blu. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell minimu tal-kulur. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255 għal 255 kulur jew 16 għal 16-il kulur.
+Livell massimu ta' kulur aħmar. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell massimu tal-kulur aħdar. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell massimu tal-kulur blu. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255.
+Livell massimu tal-kulur. Il-valur minimu aċċettat huwa 0 u l-valur massimu aċċettat huwa 255 għal 255 kulur jew 16 għal 16-il kulur.
+Kulur tat-tagħrif miksub
+Karattru tal-linja
+Karattru biex jifforma linja. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru tar-rokna tax-xellug ta' fuq għal bar ta' sigħat
+Karattru tal-kantuniera ta' fuq tax-xellug għal minuti bar
+Karattru tar-rokna ta' fuq tax-xellug għal bar tas-sekondi
+Karattru tal-kantuniera ta' fuq tal-lemin għal bar tas-sigħat
+Karattru tal-kantuniera ta' fuq tal-lemin għal minuti bar
+Karattru tal-kantuniera ta' fuq tal-lemin għal bar tas-sekondi
+Karattru tar-rokna tax-xellug t'isfel għal sigħat bar
+Karattru tar-rokna tax-xellug t'isfel għal minuti bar
+Karattru tar-rokna tax-xellug t'isfel għal bar tas-sekondi
+Karattru tar-rokna t'isfel tal-lemin għal bar tas-sigħat
+Karattru tar-rokna t'isfel tal-lemin għal minuti bar
+Karattru tar-rokna t'isfel tal-lemin għal bar tas-sekondi
+Karattru tal-qafas ta' fuq għal bar tas-sigħat
+Karattru tal-qafas ta' fuq għal bar minuti
+Karattru tal-qafas ta' fuq għal bar tas-sekondi
+Karattru tal-qafas t'isfel għal bar tas-sigħat
+Karattru tal-qafas aktar baxx għal bar minuti
+Karattru tal-frejm t'isfel għall-bar tas-sekondi
+Karattru tal-qafas tax-xellug għal sigħat bar
+Karattru tal-qafas tax-xellug għal bar minuti
+Karattru tal-qafas tax-xellug għall-bar tas-sekondi
+Karattru tal-qafas tal-lemin għal bar ta 'sigħat
+Karattru tal-qafas tal-lemin għal minuti bar
+Karattru tal-qafas tal-lemin għall-bar tas-sekondi
+Test ta' informazzjoni għal sigħat
+Test ta' informazzjoni għal minuti
+Test ta' informazzjoni għal sekondi
+Livell minimu ta' kulur aħmar għal sigħat
+Livell minimu ta' kulur aħdar għal sigħat
+Livell minimu ta' kulur blu għal sigħat
+Livell minimu tal-kulur għal sigħat
+Livell massimu ta' kulur aħmar għal sigħat
+Livell massimu ta' kulur aħdar għal sigħat
+Livell massimu tal-kulur blu għal sigħat
+Livell massimu tal-kulur għal sigħat
+Livell minimu ta' kulur aħmar għal minuti
+Livell minimu ta' kulur aħdar għal minuti
+Livell minimu ta' kulur blu għal minuti
+Livell minimu tal-kulur għal minuti
+Livell massimu ta' kulur aħmar għal minuti
+Livell massimu ta' kulur aħdar għal minuti
+Livell massimu tal-kulur blu għal minuti
+Livell massimu tal-kulur għal minuti
+Livell minimu ta' kulur aħmar għal sekondi
+Livell minimu ta' kulur aħdar għal sekondi
+Livell minimu ta' kulur blu għal sekondi
+Livell minimu tal-kulur għal sekondi
+Livell massimu ta' kulur aħmar għal sekondi
+Livell massimu tal-kulur aħdar għal sekondi
+Livell massimu tal-kulur blu għal sekondi
+Livell massimu tal-kulur għal sekondi
+Karattru li jixbah ir-rokna ta’ fuq tax-xellug. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru li jixbah ir-rokna t'isfel tax-xellug. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru li jixbah il-qafas ta’ fuq. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru li jixbah il-qafas t'isfel. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru li jixbah il-qafas tax-xellug. Kun żgur li ddaħħal karattru wieħed biss.
+Karattru li jixbah il-qafas it-tajjeb. Kun żgur li ddaħħal karattru wieħed biss.
+Ikteb kif juri t-test tal-informazzjoni tiegħek għas-siegħa kurrenti. {0} għal siegħa kurrenti minn 24 siegħa.
+Ikteb kif juri t-test tal-informazzjoni tiegħek għall-minuta kurrenti. {0} għal minuta kurrenti minn 60 minuta.
+Ikteb kif juri t-test tal-informazzjoni tiegħek għat-tieni attwali. {0} għat-tieni attwali minn 60 sekonda.
+Kulur tat-test
+Karattru tal-kantuniera ta' fuq tax-xellug għall-bar tar-rampa
+Karattru tal-kantuniera ta' fuq tal-lemin għall-bar tar-rampa
+Karattru tal-kantuniera t'isfel tax-xellug għall-bar tar-rampa
+Karattru tal-kantuniera t'isfel tal-lemin għall-bar tar-rampa
+Karattru tal-qafas ta 'fuq għall-bar tar-rampa
+Karattru tal-qafas t'isfel għall-bar tar-rampa
+Karattru tal-qafas tax-xellug għall-bar tar-rampa
+Karattru tal-qafas tal-lemin għall-bar tar-rampa
+Livell minimu ta' kulur aħmar għall-kulur tal-bidu
+Livell minimu ta' kulur aħdar għall-kulur tal-bidu
+Livell minimu tal-kulur blu għall-kulur tal-bidu
+Livell minimu tal-kulur għall-kulur tal-bidu
+Livell massimu tal-kulur aħmar għall-kulur tal-bidu
+Livell massimu tal-kulur aħdar għall-kulur tal-bidu
+Livell massimu tal-kulur blu għall-kulur tal-bidu
+Livell massimu tal-kulur għall-kulur tal-bidu
+Livell minimu ta' kulur aħmar għall-kulur tat-tarf
+Livell minimu ta' kulur aħdar għall-kulur tat-tarf
+Livell minimu tal-kulur blu għall-kulur tat-tarf
+Livell minimu tal-kulur għall-kulur tat-tarf
+Livell massimu tal-kulur aħmar għall-kulur tat-tarf
+Livell massimu tal-kulur aħdar għall-kulur tat-tarf
+Livell massimu tal-kulur blu għall-kulur tat-tarf
+Livell massimu tal-kulur għall-kulur tat-tarf
+Numru minimu ta' solver
+Numru massimu ta' solver
+Solver juru input
+Karattru tal-kantuniera ta' fuq tax-xellug għall-fruntiera tan-notifika
+Karattru tal-kantuniera ta' fuq tal-lemin għall-fruntiera tan-notifika
+Karattru tar-rokna t'isfel tax-xellug għall-fruntiera tan-notifika
+Karattru tar-rokna t'isfel tal-lemin għall-fruntiera tan-notifika
+Karattru tal-qafas ta' fuq għall-fruntiera tan-notifika
+Karattru tal-qafas ta' isfel għall-fruntiera tan-notifika
+Karattru tal-qafas tax-xellug għall-fruntiera tan-notifika
+Karattru tal-qafas tal-lemin għall-fruntiera tan-notifika
+Stil ta 'informazzjoni tal-paġna manwali
+Jekk turix x'inhu miktub fil-pront tad-dħul.
+X'inhu n-numru minimu li tagħżel?
+X'inhu n-numru massimu li tagħżel?
+Ikteb kif trid tkun l-informazzjoni tal-manpage tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed. {0} għal titolu manwali, {1} għal reviżjoni.
+Proprjetà {0} ma tinsab fuq l-ebda wieħed mill-moduli.
+Din it-taqsima telenka s-settings ġenerali tal-screensaver. Għas-settings individwali tal-iscreensaver, oħroġ mill-Settings u iftaħ is-Settings tal-Iscreensaver.
+Ibda r-rota tal-kulur fil-modalità tal-kulur veru
+Jekk speċifikat, se juri banner tal-istartjar personalizzat b'appoġġ ta 'placeholder. Tista' tuża {0} għall-verżjoni tal-kernel.
+Liema varjant tal-lingwa attwali qed tintuża biex tbiddel l-ismijiet tax-xahar, il-kalendarju, eċċ.?
+Jattiva l-appoġġ tal-kulur 255.
+Jattiva l-appoġġ tal-kulur veru.
+Kelma mħassra fil-linja {0}.
+String mibdul fil-linja {0}.
+Neħħa n-numru tal-linja {0}.
+Jrażżnu messaġġi mhux awtorizzati
+Jaħbi l-messaġġ tedjanti jekk il-funzjoni tal-elenkar tipprova tiftaħ folder mhux awtorizzat
+Informazzjoni tas-server FTP
+Indirizz tas-server:
+Port tas-server:
+Tip ta' server:
+Tip ta' sistema ta' server:
+Modalità ta' kriptaġġ tas-server:
+Tip ta' konnessjoni tad-dejta tas-server:
+Sistema tas-server:
+Tip ta' data tat-tniżżil tas-server:
+Tip ta' data tat-tlugħ tas-server:
+Int trid tikkonnettja ma 'server qabel ma twettaq din l-operazzjoni.
+Daħħal fajl remot li għandu jiġi hashed.
+Daħħal direttorju remot li għandu jiġi hashed.
+Daħħal direttorju remot.
+Hashing rikorsiv għall-FTP
+Jekk tirrekursivament hash direttorju. Jekk jogħġbok innota li mhux is-servers FTP kollha jappoġġjaw dan.
+Veloċità tal-arloġġ tal-proċessur:
+Appoġġ għall-proċessur SSE2:
+Numru totali ta' proċessuri:
+Daqs tad-diska:
+Memorja totali:
+Karta grafika:
+Mudell tad-diska:
+Numru massimu ta' e-mails f'paġna waħda
+Kultura tal-lingwa attwali
+Jekk int żgur li ftaħt is-sezzjoni t-tajba, iċċekkja dan il-messaġġ:
+Settings varji...
+Settings tal-kuluri...
+Teżegwixxi kmand ta' server FTP
+Daħħal l-indirizz tas-server POP3 u l-port (<indirizz> jew <indirizz>:[port]):
+Stil fil-pront POP3 għall-posta
+Ibgħat POP3 ping interval
+Ikteb kif trid li jkun il-pront tas-server POP3 tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed.
+Kemm millisekondi biex tibgħat il-ping POP3?
+Uża POP3
+Jekk tużax POP3. Id-diżattivazzjoni ta' dan se tuża SMTP.
+Jikkodifika string billi juża CRC32
+Jiftaħ il-klijent tal-posta
+tal-posta trasferita...
+Is-settings għal dan l-iscreensaver huma disponibbli hawn.
+Jittestja l-funzjonalità tal-mejda
+Teditja l-linja speċifikata
+Iżżid il-linji l-ġodda fl-aħħar tal-fajl
+Daħħal it-test li trid tehmeż fl-aħħar tal-fajl. Meta tkun lest, ikteb "EOF" fuq il-linja tagħha stess.
+Isem Ospitanti
+Isem tal-utent
+Tip ta' Data
+Kodifikazzjoni
+Encryption
+Protokolli
+Uri l-progress tat-trasferiment tal-posta
+Progress tat-trasferiment tal-posta
+Progress tat-trasferiment tal-posta (wieħed)
+Jekk tkun attivata, il-qoxra tal-posta turi kemm-il bytes trasmessi meta tniżżel il-posta.
+Ikteb kif trid li jkun l-istil tal-progress tat-trasferiment tal-posta tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed. {0} għad-daqs trasferit u {1} għad-daqs totali.
+Ikteb kif trid li jkun l-istil tal-progress tat-trasferiment tal-posta tiegħek. Ħalli vojt biex tuża stil default. Placeholders huma parsed. {0} għad-daqs trasferit.
+Żona tal-ħin:
+Illum {0}
+Il-ħin attwali huwa {0}
+Kulur separatur tal-mejda
+Kulur tal-header tat-tabella
+Kulur tal-valur tal-mejda
+Tweġibiet possibbli
+Mod fajl mhuwiex speċifikat.
+Jipprova jinstalla mod diġà installat. Naġġorna l-mod...
+L-installazzjoni falliet għal
+Il-fajl mod ipprovdut huwa inkompatibbli.
+Id-diżinstallazzjoni falliet għal
+Jiftaħ URL
+Stampa numri tal-linja fuq il-kontenut tal-fajl tal-istampar
+Jagħmel il-kmand \"qattus\" jistampa n-numri tal-linja tal-fajl.
+Verżjoni translitterata
+Verżjoni tradotta
+Tiċħad in-notifiki kollha
+Niżżel...
+Qed ittella'...
+Uri notifika għall-progress tat-tniżżil
+Uri notifika għall-progress tat-tlugħ
+Juri n-notifika li turi l-progress tat-tniżżil.
+Juri n-notifika li turi l-progress tat-tlugħ.
+Iċċekkja biex tara jekk is-sekwenza li tista' tiġi tradotta teżistix fir-riżorsi tal-KS
+String misjuba fir-riżorsi tal-lokalizzazzjoni.
+String ma nstabx fir-riżorsi tal-lokalizzazzjoni.
+Jibda l-qalba bil-kwiet
+Injetta kmand biex tibda fil-login li jmiss
+Jibda l-kernel f'mod sikur, billi jiskonnettja l-mods kollha
+Bħal mod sigur, iżda wkoll tiddiżattiva multi-utent u xi customization
+Ma kienx hemm biżżejjed argumenti.
+Kulur tal-kantuniera ta 'fuq tax-xellug għall-bar tar-rampa
+Kulur tal-kantuniera ta 'fuq tal-lemin għall-bar tar-rampa
+Kulur tal-kantuniera t'isfel tax-xellug għall-bar tar-rampa
+Kulur tal-kantuniera t'isfel tal-lemin għall-bar tar-rampa
+Kulur tal-qafas ta 'fuq għall-bar tar-rampa
+Kulur tal-qafas t'isfel għall-bar tar-rampa
+Kulur tal-qafas tax-xellug għall-bar tar-rampa
+Kulur tal-frejm tal-lemin għall-bar tar-rampa
+Uża kuluri tal-fruntiera għall-bar tar-rampa
+Uża l-kuluri tal-fruntiera għall-bar tar-rampa. Jekk b'diżabilità, se jiġġenera bar griż.
+Jibda l-qoxra HTTP
+Joħroġ mill-qoxra HTTP u jirritorna għall-qalba
+Issettja s-sit HTTP. Għandu jkun URI validu.
+Iġib ir-rispons mis-server HTTP billi juża t-talba speċifikata
+Tħassar il-kontenut mis-server HTTP
+Kien hemm żball fil-qoxra HTTP:
+Messaġġ HTTP: Il-kmand mitlub {0} ma jinstabx. Ara 'għajnuna' għal lista ta' kmandi disponibbli speċifikati fuq HTTP shell.
+Iġib is-sekwenza mis-server HTTP billi tuża t-talba speċifikata
+Qed nikseb {0}...
+Il-format tal-URI tas-sit mhuwiex validu.
+Issettjar sit għal
+Il-kuluri ma jeħtiġux bidu mill-ġdid, iżda ħafna mis-settings jeħtieġu bidu mill-ġdid.
+Ebda għajnuna għall-argument "{0}".
+Agħfas A fuq kummenti ta' mibegħda biex tiskuża ruħek. Agħfas T fuq kummenti tal-imħabba biex tirringrazzja. Agħfas Q biex tieqaf mil-logħba.
+Skużajt għal kumment ta' mibegħda! Eċċellenti!
+Skużat ruħha għall-kumment tal-imħabba. Mhux tajjeb biżżejjed.
+Int biss irringrazzjat lill-hater tal-kumment ta' mibegħda!
+Diffikultà default għal SpeedPress
+Timeout tal-pressjoni tat-tasti għal SpeedPress
+Agħżel id-diffikultà preferuta tiegħek.
+Kemm-il millisekondi trid tistenna l-tastiera qabel il-timeout? (F'diffikultà tad-dwana)
+Jissostitwixxi kelma jew frażi b'oħra bl-użu ta' espressjonijiet regolari
+Jissostitwixxi kelma jew frażi b'oħra f'linja bl-użu ta' espressjonijiet regolari
+Jistaqsi kelma f'linja speċifikata jew il-linji kollha bl-użu ta' espressjonijiet regolari
+Sib Setting
+Ikteb xi trid tfittex.
+Ma jinstab xejn. Kun żgur li ktibt is-setting b'mod korrett.
+Jippakkja fajl lokali fl-arkivju
+Ma nistax jippakkja xejn.
+Deskrizzjoni tat-tweġiba
+Port Ospitanti
+Għal aktar informazzjoni dwar it-termini u l-kundizzjonijiet tal-użu ta’ dan is-software, żur
+Tip ta 'output ta' għażla default
+Iċċekkja s-settings kollha tal-KS biex tara jekk il-varjabbli humiex miktuba b'mod korrett
+Dawn l-entrati tal-konfigurazzjoni għandhom varjabbli jew enumerazzjonijiet invalidi u jeħtieġ li jiġu ffissati:
+Il-fajl {0} ma nstabx
+Joħloq firxa varjabbli bil-valuri pprovduti
+Ikteb in-numru tas-setting biex tmur. Kwalunkwe karattru ieħor ifisser mur lura.
+Iċċekkja n-numri kollha tal-linja tat-test tal-lokalizzazzjoni biex tara jekk humiex kollha ugwali
+Linea nuqqas ta' qbil in
+Jekk jogħġbok daħħal numru tal-utent.
+Inkludi utenti anonimi
+Inkludi utenti b'diżabilità
+Jinkludi l-utenti anonimi fil-lista
+Jinkludi l-utenti b'diżabilità fil-lista
+Issortja l-lista
+Issortja l-lista tas-sistema tal-fajls professjonalment.
+Jipprovdi għażla ta 'għażla
+Kmandi tal-shell mhux implimentati!!!
+Uri l-aħħar headline RSS fuq il-login
+URL tal-intestatura RSS
+Kull login, se juri l-aħħar intestatura RSS mill-URL tal-intestatura magħżula.
+URL tat-titlu RSS li għandu jintuża meta turi l-aħħar intestatura. Dan huwa normalment l-għalf favorit tiegħek.
+L-aħħar aħbarijiet:
+Naqas milli tikseb l-aħħar aħbarijiet.
+Għażla magħżula kulur
+Uri traċċa tal-munzell fuq żball tal-qalba
+Jekk ikun hemm xi żball fil-qalba, agħżel jekk tipprintjax it-traċċa tal-munzell fuq il-console jew le.
+Il-mod jista 'jiġi mgħobbi, iżda dawn it-twissijiet jistgħu jkollhom impatt fuq il-mod kif jaħdem il-mod:
+Screensaver jista' jitgħabba, iżda dawn it-twissijiet jistgħu jkollhom impatt fuq il-mod kif jaħdem l-screensaver:
+Save Settings As
+Tagħbija Settings Minn
+Fejn trid tissejvja s-settings attwali tal-kernel?
+Ma tistax tissejvja s-settings tal-kernel fuq il-fajl eżistenti.
+Minn fejn trid tagħbija s-settings attwali tal-kernel?
+Iċċekkja biex tara jekk is-sekwenzi li jistgħu jiġu tradotti jeżistux fir-riżorsi tal-KS
+Tgħaqqad iż-żewġ fajls tat-test jew aktar fil-fajl tal-output.
+Naqas milli jgħaqqad il-fajls.
+RSS feed fetch timeout
+Kemm-il millisekondi trid tistenna qabel l-RSS feed fetch timeout?
+Imla l-kaxxi
+Niġbdu l-kaxxa kollha kemm hi jew niġbdu biss il-fruntiera?
+Dewmien tal-istadju f'millisekondi
+Kemm-il millisekondi trid tistenna qabel tfassal l-istadju li jmiss?
+Intervall ta' taħsir tar-rampa li jmiss
+Kemm-il millisekondi għandek tistenna qabel it-taħsir tar-rampa li jmiss?
+Iċċekkja l-kwota tad-debug
+Niċċekkjaw jekk is-sistema tad-debug teħtieġx tiċċekkja għal kwota qabel ma niktbu lid-debugger?
+Kemm ħadet millisekondi biex torqod?
+Naqas milli żżid avveniment.
+Naqas milli tneħħi avveniment.
+Mhux biżżejjed argumenti pprovduti biex iżżid avveniment.
+Mhux biżżejjed argumenti pprovduti biex jitneħħa avveniment.
+Mhux biżżejjed argumenti pprovduti għall-manipulazzjoni tal-avveniment.
+Naqas milli żżid jew tneħħi tfakkira.
+Mhux biżżejjed argumenti pprovduti biex iżżid jew tneħħi tfakkira.
+Mhux biżżejjed argumenti pprovduti għall-manipulazzjoni tat-tfakkira.
+Tifkira bla titolu
+Avveniment bla titolu
+Issa huwa jum ta' avveniment!
+Titlifx dan!
+Azzjoni invalida.
+Stopwatch sempliċi
+Ibda jew tieqaf
+Ħoġor
+Irrisettja
+Timer sempliċi
+Ibda (mill-ġdid) l-għadd
+Issettja l-intervall
+Il-ħin ta' skadenza indikat mhuwiex numeriku.
+Speċifika l-timeout f'millisekondi
+Issejvja l-avvenimenti u/jew it-tfakkiriet kollha b'mod distruttiv
+Jekk attivata, tħassar l-avvenimenti u/jew it-tfakkiriet kollha qabel issalvahom kollha billi tuża l-kmand tal-kalendarju.
+Ivverifika tentattivi mill-ġdid għat-trażmissjoni FTP
+Timeout tal-konnessjoni FTP
+Timeout tal-konnessjoni tad-data FTP
+Verżjonijiet IP FTP
+Kemm-il darba tivverifika l-upload u tniżżel u terġa 'pprova jekk il-verifika tfalli qabel ma t-tniżżil tfalli kollha kemm hi?
+Kemm-il millisekondi trid tistenna qabel iż-żmien tal-konnessjoni tal-FTP?
+Kemm-il millisekondi trid tistenna qabel iż-żmien tal-konnessjoni tad-dejta tal-FTP?
+Agħżel il-verżjoni tal-Protokoll tal-Internet li jappoġġja s-server FTP u li juża l-klijent FTP.
+Jipprova jibda RPC waqt li jkun diġà beda.
+Karattru tal-kantuniera ta 'fuq tax-xellug għar-rota tal-kulur RGB
+Karattru tal-kantuniera ta 'fuq tal-lemin għar-rota tal-kulur RGB
+Karattru tal-kantuniera t'isfel tax-xellug għar-rota tal-kulur RGB
+Karattru tal-kantuniera t'isfel tal-lemin għar-rota tal-kulur RGB
+Karattru tal-qafas ta 'fuq għar-rota tal-kulur RGB
+Karattru tal-qafas t'isfel għar-rota tal-kulur RGB
+Karattru tal-qafas tax-xellug għar-rota tal-kulur RGB
+Karattru tal-qafas tal-lemin għar-rota tal-kulur RGB
+Isib fajl fid-direttorju speċifikat jew fid-direttorju kurrenti
+Jikkonverti t-truf tal-linja f'format għall-pjattaforma attwali jew f'format personalizzat speċifikat
+Daqs totali fil-folder:
+Uri d-daqs totali fil-lista
+Jekk attivata, turi d-daqs totali tal-folder fil-lista, skont kif tikkalkula d-daqsijiet tal-folder skont il-konfigurazzjoni.
+Int aġġornat!
+Formatting JSON default għall-qoxra JSON
+Jagħżel l-ifformattjar JSON default (imsebbaħ jew minifikat) għall-qoxra JSON biex issalva.
+Niżżel l-aġġornament b'suċċess!
+Niżżel l-aġġornamenti awtomatikament
+Jekk ikun hemm xi aġġornament, il-qalba se tniżżlu awtomatikament.
+Raġġ tal-isplużjoni tal-logħob tan-nar
+Kemm-il blokk (sa 10) huwa r-raġġ tal-isplużjoni għall-logħob tan-nar meta jinxtegħel?
+Dan il-kmand għandu l-iswiċċijiet hawn taħt li jbiddlu kif jaħdem:
+Tipprintja n-numri tal-linja li jsegwu l-linja li qed tiġi stampata
+Jipprevjeni l-istampar tan-numri tal-linja
+Dejjem uża l-verżjoni translitterata
+Dejjem uża l-verżjoni tradotta
+Forza swiċċjar tal-lingwa
+Indika li t-tweġiba tista' tieħu aktar minn karattru wieħed
+Indika li t-tweġiba tista’ tieħu karattru wieħed biss
+Stampa l-mistoqsija u t-tweġibiet f'linja waħda
+Stampa l-mistoqsija u t-tweġibiet f'żewġ linji
+Stampa l-mistoqsija u t-tweġibiet bil-mod modern
+Stampa l-mistoqsija u t-tweġibiet f'tabella
+Juri d-dettalji tal-fajl fil-lista
+Jrażżan il-messaġġi annoying "permess miċħud".
+Juri ż-żoni tal-ħin kollha
+Jibda l-logħba f'diffikultà faċli
+Jibda l-logħba f'diffikultà medja
+Jibda l-logħba f'diffikultà iebsa
+Jibda l-logħba f'diffikultà diffiċli ħafna
+Jibda l-logħba f'diffikultà tad-dwana. Jekk jogħġbok innota li l-timeout tad-dwana f'millisekondi għandu jinkiteb bħala argument.
+Juri l-informazzjoni tas-sistema
+Juri l-informazzjoni tal-ħardwer
+Juri l-informazzjoni tal-utent
+Juri l-messaġġ tal-ġurnata
+Juri l-messaġġ tal-ġurnata wara l-login
+Juri l-informazzjoni kollha
+Joħloq direttorju li fih il-kontenut tal-fajl ZIP
+Juri l-ibliet kollha disponibbli
+Kompressjoni mgħaġġla
+L-ebda kompressjoni
+Toħloqx direttorju bażi fl-arkivju
+Unità fil-qurdien
+Skonnettja mis-server b'mod għajb
+Jindika li l-mogħdija fil-mira hija assoluta
+Issejvja l-fajl JSON, isebbħuh fil-proċess
+Issejvja l-fajl JSON, billi jimminimizzah fil-proċess
+Iġib l-istil tat-tmiem tal-linja mill-fajl tat-test
+Jikklerja l-avvenimenti kollha sparati
+Ippermetti l-debugging tal-avvenimenti
+Jippermetti d-debugging għas-sistema tal-avvenimenti tal-kernel
+Font Figlet
+Ikteb font figlet li hija appoġġjata mil-librerija Figgle. Ikkonsulta d-dokumentazzjoni tal-librerija għal aktar informazzjoni
+Naqas milli tinstalla lingwa personalizzata {0}.
+Il-fajl tal-metadejta meħtieġ biex tiġi installata l-lingwa personalizzata ma jeżistix.
+L-informazzjoni tal-metadata meħtieġa biex tiġi installata l-lingwa personalizzata ma tipprovdix il-lokalizzazzjonijiet meħtieġa meħtieġa.
+Naqas milli tiddiżinstalla l-lingwa personalizzata {0}.
+Il-fajl tal-metadejta meħtieġ biex tiġi diżinstallata l-lingwa personalizzata ma jeżistix.
+L-informazzjoni tal-metadejta meħtieġa biex tiġi diżinstallata l-lingwa personalizzata ma tipprovdix il-lokalizzazzjonijiet meħtieġa meħtieġa.
+It-tul tal-lingwa Ingliża ma jaqbilx mat-tul tat-token tal-lingwa pprovduta.
+Il-lingwa diġà teżisti u ma tistax tiġi miktuba mill-ġdid.
+Naqas milli tiddiżinstalla lingwa personalizzata. X'aktarx ma teżistix.
+Naqset milli tinstalla lingwi tad-dwana.
+Naqas milli tneħħa l-lingwi tad-dwana.
+Naqas milli tneħħa l-lingwi tad-dwana. Ara l-eċċezzjoni ta 'ġewwa għal aktar informazzjoni.
+Ikteb il-password tal-amministratur. Kun żgur li ma tużax dan il-kont sakemm ma tkunx taf verament x'qed tagħmel.
+Trid tikteb il-password tal-amministratur.
+Informazzjoni dwar il-liċenzja
+Immaniġġja l-lingwi tiegħek
+Lingwa ma nstabitx jew il-fajl għandu karattri invalidi.
+Il-lingwa mhix speċifikata.
+Il-ġestjoni tal-lingwa hija diżattivata fil-modalità sigura.
+Isem fil-qosor tal-lingwa:
+Isem sħiħ tal-lingwa:
+Lingwa trasliterabbli:
+Lingwa apposta:
+Banner ġdid ta 'merħba
+Splash screen stylish
+Juri l-banner ta' merħba ġdid mogħti minn Figlet
+Jippermetti l-iskrin tat-tifrix stylish mal-istartjar. Jekk jogħġbok innota li se tiddiżattiva argument prompt u test shell pre-boot.
+Splash isem
+Splash isem mit-titjir disponibbli implimentati fil-qalba.
+MOTD default iġġenerat.
+MAL default iġġenerat.
+Kont tas-sistema inizjalizzat
+Utenti inizjalizzati
+Permessi mgħobbija
+Merħba!
+Nibda d-debugger remot...
+Żball fil-konnessjoni tad-debugger mill-bogħod
+Notifika dwar żball ta' konnessjoni ta' debug remot
+Jekk ppermettiet, se tuża s-sistema ta 'notifika biex tinnotifika lill-host ta' żball ta 'konnessjoni ta' debug remot. Inkella, se tuża l-kitba default console.
+Font Figlet għal timer
+Ippermetti Figlet għal timer
+Jekk attivata, se tuża figlet għal timer. Jekk jogħġbok innota li jeħtieġ skrin kbir tal-console sabiex tirrendi l-ħin kif suppost b'Figlet attivat.
+Żball waqt l-analiżi tal-argumenti tal-linja tal-kmand ta' qabel il-boot: {0}
+Resets il-qalba għas-settings tal-fabbrika
+Tevita l-iskoperta tad-daqs tal-console
+Jidher li qed tevita l-iskoperta tad-daqs tal-console. L-affarijiet jistgħu ma jaħdmux sew fuq skrins żgħar.
+Biex ikollok esperjenza aħjar, biddel id-daqs tat-tieqa tal-console tiegħek waqt li tkun għadha fuq dan l-iskrin. Agħfas kwalunkwe ċavetta biex tkompli...
+Il-console tiegħek hija żgħira wisq biex taħdem sew:
+Tipa figlet tal-banner
+Tipprintja spag għall-console bl-użu tat-tip tal-kulur u l-istampar tal-linja b'appoġġ Figlet
+Tipprintja string għal console billi tuża tip ta 'kulur u stampar tal-linja b'format u appoġġ Figlet
+Tneħħi messaġġ b'mod permanenti
+Tneħħi b'mod permanenti l-messaġġi kollha mir-riċevitur
+Ħoll it-tneħħija ta' messaġġ
+Ħoll it-tneħħija tal-messaġġi kollha mir-riċevitur
+It-tħassir tal-irtirar mhuwiex implimentat għal POP3.
+Uri l-kmandi jgħoddu fuq l-għajnuna
+Uri l-kmandi tal-qoxra jgħoddu fuq l-għajnuna
+Uri l-kmandi mod jgħoddu fuq l-għajnuna
+Uri l-psewdonimi jgħoddu fuq l-għajnuna
+Juri l-għadd tal-kmandi fil-lista tal-kmand, ikkontrollat ​​mit-tliet swiċċijiet tal-ispettaklu tal-għadd għal tipi differenti ta 'kmandi.
+Teżegwixxi kmandi ladarba l-espressjonijiet UESH huma sodisfatti
+Il-kundizzjoni ma nstabitx fl-espressjoni.
+Kundizzjoni {0} teħtieġ {1} argumenti. Ghandek {2}.
+Il-kundizzjoni trid titqiegħed fin-nofs.
+Il-kundizzjoni trid titqiegħed fil-bidu.
+Żball fl-analiżi tal-espressjoni minħabba żball ta' sintassi.
+Naqas milli jissodisfa l-kundizzjoni. Aktar informazzjoni hawn:
+Karattru tal-maskra tal-password
+Karattru li jaħbi l-password. Ħalli vojt għal aktar sigurtà.
+Joħroġ mill-qoxra jekk taħdem fuq is-subshell
+Ma tistax toqtol il-qoxra omm!
+Ma tistax toħroġ mis-subshell.
+Fajl mhux speċifikat. Qoxra tal-ħruġ...
+Is-settings għal din l-iskrin tat-tixrid huma disponibbli hawn.
+Kulur tal-bar tal-progress
+Jiftaħ is-settings tal-iscreensaver
+Jiftaħ is-settings tat-tixrid
+Jelenka l-varjabbli UESH disponibbli
+Post tat-test tal-progress
+Agħżel il-post preferut tat-test tal-progress tiegħek.
+Tista' tikteb in-numri biss.
+Agħfas "q" biex toħroġ.
+Niżżel l-ismijiet...
+Minħabba diffikultajiet tekniċi, aħna ma nistgħux nilnukaw il-proprjetajiet tal-adapter fuq sistemi Unix.
+Jippermetti l-mod debug
+Prompts għall-argumenti
+Ippermetti l-Modalità Iswed u Abjad
+Jagħmel id-disko iswed u abjad. Verament iweġġgħu għajnejk jekk kien mgħaġġel wisq, għalhekk mhux rakkomandat jekk qed tesperjenza qabda ta 'immaġini veloċi.
+Jidher li kont qed tħaddem verżjoni mhux appoġġjata. Huwa rakkomandabbli ħafna li ma tużax din il-verżjoni.
+Tagħbija Kuluri Kurrenti
+Għażla alternattiva tal-kulur
+L-utenti jgħoddu għall-kummenti ta’ mħabba jew ta’ mibegħda
+Kemm utenti għandhom ikunu fil-kamra tal-kummenti tal-imħabba jew tal-mibegħda?
+Jelenka l-lingwi disponibbli
+Lingwi disponibbli:
+Argumenti tal-linja tal-kmand:
+Argumenti tal-linja tal-kmand qabel il-boot:
+Jiftaħ id-dokumentazzjoni mod API għall-istruttura tal-kodiċi sors fil-forma l-aktar attwali tagħha

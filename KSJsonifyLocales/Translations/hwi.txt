@@ -983,3 +983,675 @@ Kaomi i nā kī e heluhelu ai i ka ʻaoʻao manual ...
 Pono kēia ʻaoʻao manual e hana no:
 ʻAʻole i loaʻa ka ʻaoʻao manual.
 Manual manual
+Loaʻa nā kumu hoʻopaʻapaʻa kernel:
+E kaomi "q" inā pau ʻoe.
+Hiki ke hoʻokaʻawale ʻia nā ʻōlelo hoʻopaʻapaʻa kernel me nā koma me ka ʻole o nā hakahaka, no ka laʻana:
+Hiki ke hoʻokaʻawale ʻia nā kauoha injected me nā kolona me nā hakahaka, no ka laʻana:
+ʻAʻole i loaʻa ka manaʻo i noi ʻia {0}.
+Ke kuhi hewa ʻole i ka hoʻopaʻapaʻa:
+Hoʻopili i kahi kaula me SHA512
+Hoʻopili i kahi kaula me SHA384
+Hoʻopili i kahi kaula me SHA256
+Hoʻopili i kahi kaula me SHA1
+Hoʻopili i kahi kaula me MD5
+kahi e loaʻa ai ka builtinsaver
+ʻAʻohe ʻāpana mod.
+ʻAʻole ʻae ʻia ke kāpae ʻana i nā mods ma ke ʻano palekana.
+Ua hoʻomaka mua ʻia ka mod!
+ʻAʻole i hoʻomaka ka mod!
+Hoʻohana kauoha:
+inoa waihona hapa:
+Māhele waihona ala:
+Ua hewa ke ho'āʻo nei e hoʻomaka i ka pale pale:
+Hewa ke ʻano ala.
+Hewa ke ʻano ala kernel.
+Ua hāʻule ka pahu mua
+ʻAʻole i wehe ka mea hoʻoponopono JSON i kahi kahawai faila.
+ʻAʻole ʻike ʻia ka waiwai i loko o ka faila JSON.
+Wehe ʻia ka waiwai.
+Hoʻohui i kahi waiwai hou ma ka hope o ka faila JSON
+Wehe i kahi waiwai mai ka waihona JSON
+Haʻalele i ka pūpū JSON
+Haʻalele i ka pūpū JSON me ka mālama ʻole i nā loli
+Mālama i ka faila JSON
+Wehe i ka pūpū JSON
+Paʻi i ka faila JSON
+Aʻe kaʻawale ramp
+Ho'ā i ke kākoʻo kala 255 no Ramp.
+Ho'ā i ke kākoʻo kala maoli no Ramp.
+ʻEhia mau milliseconds e kali ai ma mua o ka hoʻopiha ʻana i ka ramp aʻe?
+Ka waihoʻoluʻu poʻo inoa
+kala wehewehe hoʻolaha
+Ke kala holomua hoʻolaha
+Ka waihoʻoluʻu hāʻule ʻole
+kala nīnau
+kala lanakila
+kala kala kala hoʻohana
+kala kala
+kala kikokiko hoʻokaʻawale
+kala hoʻokaʻawale
+kala inoa papa inoa
+kala hoʻolaha hoʻomohala
+Ke kala kala
+kala holomua
+kala koho hope
+E kaha i ka palena hoʻolaha
+Uhi i ka hoolaha me ka palena.
+E hoʻokaʻaʻike i ka mea kūʻai aku o ka mod e hoʻonui i ka mod i ka mana kūpono.
+kala palena palena haʻahaʻa
+Ka waihoʻoluʻu palena koʻikoʻi
+kala palena palena kiʻekiʻe
+Hoʻouna i kahi hoʻolaha holomua e hoʻāʻo i ka mea hoʻokipa
+Hoʻāʻo i ka huila kala
+Hōʻike i ka manawa kernel kūloko
+Hōʻike i ka lā kernel kūloko
+Hōʻike i ka lā a me ka manawa kernel kūloko
+Hōʻike i ka manawa kernel UTC
+Hōʻike i ka lā kernel UTC
+Hōʻike i ka lā a me ka manawa kernel UTC
+Alanui MOTD
+ala MAL
+ʻO wai ka faila ka waihona kikokikona MOTD? Kākau i kahi ala pololei i ka waihona kikokikona.
+ʻO wai ka waihona ʻōlelo MAL? Kākau i kahi ala pololei i ka waihona kikokikona.
+Nā mods papa inoa ʻeleʻele
+E kākau i nā inoa inoa o nā mods e holo ʻole i ka hoʻomaka. Ke pau ʻoe, e kākau iā "q". Kākau i kahi hōʻailona hōʻemi ma ka ʻaoʻao o ke ala e wehe ai i kahi mod i loaʻa.
+Ua papa inoa ʻeleʻele ka mod {0}.
+Hoʻouka hou i nā mods a pau
+Hoʻohui i kahi mod i ka papa inoa ʻeleʻele
+Wehe i kahi mod mai ka papa inoa ʻeleʻele
+Ka manawa a me ka lā ma UTC: {0}
+ʻAʻole ʻike ʻia ke kauoha shell JSON.
+Hōʻike i ka ʻike app i ka wā e hoʻomaka ai
+Hoʻokaʻawale i nā manaʻo hoʻopaʻapaʻa laina kauoha
+Hōʻike i nā manawa hoʻopau pae
+E hoʻomaka i nā hoʻololi kernel ma ka boot
+Hōʻike i ka manawa o kēia manawa ma mua o ke komo ʻana
+E hoʻomaopopo no kekahi hewa i ka wā e hoʻomaka ai
+Hōʻike i ka ʻike pōkole e pili ana i ka noi ma ka boot.
+Hoʻopili i nā manaʻo hoʻopaʻapaʻa laina kauoha ma ka boot.
+Hōʻike i ka lōʻihi o ka manawa a ka kernel e hoʻopau ai i kahi pae.
+E hoʻomaka koke i nā hoʻololi kernel ma ka boot.
+Hōʻike i ka manawa o kēia manawa, ka palena manawa, a me ka lā ma mua o ke komo ʻana.
+Inā he hapa liʻiliʻi i ka wā kernel boot, e hoʻomaopopo i ka mea hoʻohana e pili ana iā ia.
+Ke ʻano wikiwiki o ka inoa mea hoʻohana
+Kāhua ʻōlelo huna
+E hōʻike iā MAL ma ke komo ʻana
+E kākau i ke ʻano āu e makemake ai e hoʻopaʻa inoa. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+E kākau i ke ʻano āu e makemake ai i kāu ʻōlelo huna. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+Hōʻike i ka memo o ka lā ma hope o ka hōʻike ʻana i ka pale kau inoa.
+Ho'āʻo Shell Prompt Style
+JSON Shell Prompt Style
+ʻO nā kauoha i hoʻokomo ʻia
+E ʻimi i nā kauoha i hoʻokomo ʻia ma ka hoʻomaka ʻana o ka pūpū kernel.
+Hōʻike i nā kikoʻī waihona ma ka papa inoa
+Hōʻike i nā kikoʻī waihona pōkole i ka wā e hoʻopaʻa inoa ai i nā faila
+Hōʻike i nā kikoʻī faila ma ka papa inoa FTP
+Kaila hoʻomaka o ka mea hoʻohana no FTP
+ʻO ke ʻano ʻōlelo huna no FTP
+E hoʻohana i ka ʻaoʻao FTP mua
+Hoʻohui i nā pilina hou i ke kelepona wikiwiki FTP
+E ho'āʻo e hōʻoia i nā palapala hōʻoia FTP paʻa
+Hōʻike i ka FTP MOTD ma ka pilina
+E ʻae mau i nā palapala FTP kūpono ʻole
+Hōʻike i nā kikoʻī faila FTP i ka wā e papa inoa ana i nā papa kuhikuhi mamao.
+Hoʻohana i ka ʻaoʻao FTP mua e hoʻopili iā FTP.
+Inā hiki, hoʻohui i kahi pilina hou i ke kelepona wikiwiki FTP.
+Ke ho'āʻo nei e hōʻoia i nā palapala hōʻoia FTP. ʻAʻole ʻōlelo ʻia ka hoʻopau ʻana.
+Hōʻike i ka memo FTP o ka lā ma ke komo ʻana.
+E ʻae mau i nā palapala FTP kūpono ʻole. ʻAʻole ʻōlelo ʻia ka hoʻā ʻana no ka mea hiki ke pilikia i ka palekana.
+Ke ʻano hoʻomaka o ka mea hoʻohana no ka leka uila
+ʻO ke ʻano ʻōlelo huna no ka leka uila
+ʻO ke ʻano wikiwiki IMAP no ka leka uila
+ʻO ke ʻano wikiwiki SMTP no ka leka uila
+ʻIke ʻakomi i ke kikowaena leka uila
+E ho'ā i ka debug leka uila
+Hoʻomaopopo no nā memo leka hou
+ʻO ke ʻano ʻōlelo huna huna GPG no ka leka uila
+E hoʻouna i ka wā ping IMAP
+E hoʻouna i ka manawa ping SMTP
+ʻAno kikokikona leka uila
+E kākau i ke ʻano āu e makemake ai i ka wikiwiki o kāu kikowaena IMAP. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+E kākau i ke ʻano āu e makemake ai i ka wikiwiki o kāu kikowaena SMTP. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+ʻIke 'akomi i ke kikowaena leka ma muli o ka helu wahi i hāʻawi ʻia.
+Hāʻawi i ka debug server mail.
+Hoʻomaopopo iā ʻoe no nā leka leka hou.
+E kākau pehea ʻoe e makemake ai i kāu ʻōlelo huna huna GPG. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+Ehia mau milliseconds e hoʻouna i ka ping IMAP?
+ʻEhia mau milliseconds e hoʻouna i ka ping SMTP?
+Hoʻomalu i ke ʻano e hōʻike ʻia ai ke kikokikona leka uila.
+He kikokikona maʻamau
+Kahe kikokikona
+kikokikona HTML
+kikokikona hoʻonaʻauao
+kikokikona waiwai paʻa
+kikokikona waiwai
+Hoʻomaka 'akomi i ka debug mamao ma ka hoʻomaka
+Hōʻano memo debug mamao
+Inā makemake ʻoe e hoʻomaka ka debug mamao ma ka boot, e hoʻā i kēia.
+Hōʻike i ke ʻano memo debug mamao. {0} no ka inoa, {1} no ka memo.
+ʻO ke ʻano wikiwiki URL hānai RSS
+Hoʻohou hou i ka hānai RSS
+Hōʻano hou ʻakomi i ka wā hānai RSS
+E kākau i ke ʻano āu e makemake ai i ka wikiwiki o kāu kikowaena hānai RSS. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+ʻEhia mau milliseconds e hōʻano hou i ka hānai RSS?
+Hōʻike i nā kikoʻī waihona ma ka papa inoa SFTP
+Kaila hoʻomaka o ka mea hoʻohana no SFTP
+Hoʻohui i nā pilina hou i ke kelepona wikiwiki SFTP
+Hōʻike i nā kikoʻī faila SFTP i ka wā e papa inoa ana i nā papa kuhikuhi mamao.
+Inā hiki, hoʻohui i kahi pilina hou i ke kelepona wikiwiki SFTP.
+Ping manawa pau
+Hōʻike i ka ʻike mea hoʻopili
+Hōʻike i ka ʻike pūnaewele maʻamau
+Hoʻoiho i ka pākēneka kikokikona
+Hoʻouka pākēneka kikokikona
+ʻEhia mau milliseconds e kali ma mua o ka haʻi ʻana i ka pau ʻana?
+Paʻi i ka ʻike hoʻopili nui, e like me ka ʻike packet.
+Hōʻike i ka ʻike maʻamau e pili ana i ka pūnaewele.
+E kākau i ke ʻano āu e makemake ai i kāu kikokikona hoʻouka ʻana. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi. {0} no ka nui i hoʻouka ʻia, {1} no ka nui i manaʻo ʻia, {2} no ka pākēneka.
+E kākau i ke ʻano āu e makemake ai e hoʻoiho i ka pākēneka kikokikona. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi. {0} no ka nui i hoʻoili ʻia, {1} no ka nui i manaʻo ʻia, {2} no ka pākēneka.
+E noi i ka ʻōlelo huna ma hope o ka laka ʻana
+Ma hope o ka laka ʻana i ka pale, e noi i ka ʻōlelo huna
+pae kala ʻulaʻula liʻiliʻi
+pae kala ʻōmaʻomaʻo liʻiliʻi
+pae kala polū liʻiliʻi
+pae kala liʻiliʻi
+Ka pae kala ʻulaʻula kiʻekiʻe
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe
+Ka pae kala polū kiʻekiʻe
+pae kala kiʻekiʻe
+pae kala ʻulaʻula liʻiliʻi. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+pae kala ʻōmaʻomaʻo liʻiliʻi. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+pae kala polū liʻiliʻi. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+pae kala liʻiliʻi. ʻO ka waiwai liʻiliʻi i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255 no nā kala 255 a i ʻole 16 no nā kala 16.
+Ka pae kala ʻulaʻula kiʻekiʻe. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+Ka pae kala polū kiʻekiʻe. ʻO ka helu haʻahaʻa i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255.
+pae kala kiʻekiʻe. ʻO ka waiwai liʻiliʻi i ʻae ʻia ʻo 0 a ʻo ka waiwai nui i ʻae ʻia ʻo 255 no nā kala 255 a i ʻole 16 no nā kala 16.
+kala kala mua
+ʻAno laina
+He ʻano e hana i kahi laina. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+ʻO ke ʻano kihi hema hema no ka pā hola
+ʻO ke ʻano kihi hema hema no ka pahu minuke
+ʻO ke ʻano kihi hema hema no ka pā kekona
+ʻO ke ʻano kihi ʻākau i luna no ka pā hola
+ʻO ke ʻano kihi ʻākau i luna no ka pahu minuke
+ʻO ke ʻano kihi ʻākau i luna no ka pā kekona
+ʻO ke ʻano kihi hema hema no ka pā hola
+ʻO ke ʻano kihi hema hema no ka pahu minuke
+ʻAno kihi hema haʻahaʻa no ka pā kekona
+ʻAno kihi ʻākau haʻahaʻa no ka pā hola
+ʻO ke ʻano kihi ʻākau haʻahaʻa no ka pahu minuke
+ʻAno kihi ʻākau haʻahaʻa no ka pā kekona
+ʻAno kiʻi luna no ka pā hola
+ʻO ke kiʻi kiʻi luna no ka pahu minuke
+ʻAno kiʻi luna no ka pā kekona
+ʻAno haʻahaʻa no ka pahu hola
+ʻAno haʻahaʻa no ka pahu minuke
+ʻAno kiʻi haʻahaʻa no ka pā kekona
+ʻO ke ʻano kīʻaha hema no ka pā hola
+ʻO ke ʻano kīʻaha hema no ka pahu minuke
+ʻAno kiʻi hema no ka pā kekona
+ʻO ke ʻano kiʻi pololei no ka pā hola
+ʻO ke ʻano kiʻi pololei no ka pahu minuke
+ʻO ke ʻano kiʻi ʻākau no ka pā kekona
+He kikokikona ʻike no nā hola
+He kikokikona ʻike no nā minuke
+kikokikona ʻike no kekona
+Ka pae kala ʻulaʻula liʻiliʻi no nā hola
+ʻO ka pae kala ʻōmaʻomaʻo liʻiliʻi no nā hola
+ʻO ka pae kala polū liʻiliʻi no nā hola
+pae kala liʻiliʻi no nā hola
+ʻO ka pae kala ʻulaʻula kiʻekiʻe no nā hola
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe no nā hola
+Ka pae kala polū kiʻekiʻe no nā hola
+Ka pae kala kiʻekiʻe no nā hola
+ʻO ka pae kala ʻulaʻula liʻiliʻi no nā minuke
+ʻO ka pae kala ʻōmaʻomaʻo liʻiliʻi no nā minuke
+ʻO ka pae kala polū liʻiliʻi no nā minuke
+pae kala liʻiliʻi no nā minuke
+ʻO ka pae kala ʻulaʻula kiʻekiʻe no nā minuke
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe no nā minuke
+ʻO ka pae kala polū kiʻekiʻe no nā minuke
+ʻO ka pae kala kiʻekiʻe no nā minuke
+Ka pae kala ʻulaʻula liʻiliʻi no kekona
+ʻO ka pae kala ʻōmaʻomaʻo liʻiliʻi no kekona
+Ka pae kala polū liʻiliʻi no kekona
+pae kala liʻiliʻi no kekona
+Ka pae kala ʻulaʻula kiʻekiʻe no kekona
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe no kekona
+Ka pae kala polū kiʻekiʻe no kekona
+Ka pae kala kiʻekiʻe no kekona
+He ʻano like me ke kihi hema hema. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+He ʻano like me ke kihi hema hema. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+He ʻano like me ke kiʻi luna. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+He ʻano like me ke kiʻi haʻahaʻa. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+He ʻano like me ke kiʻi hema. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+He ʻano e like me ke kiʻi kūpono. E hōʻoia e hoʻokomo i hoʻokahi wale nō kiʻi.
+E kākau i ke ʻano o kāu kikokikona ʻike no ka hola o kēia manawa. {0} no ka hola o kēia manawa ma waho o 24 hola.
+E kākau pehea e hōʻike ai kāu kikokikona ʻike no ka minuke o kēia manawa. {0} no nā minuke o kēia manawa mai 60 mau minuke.
+E kākau pehea e hōʻike ai kāu kikokikona ʻike no ka lua o kēia manawa. {0} no ka lua o kēia manawa mai 60 kekona.
+kala kikokiko
+ʻO ke ʻano kihi hema o luna no ka pā ramp
+ʻO ke ʻano kihi ʻākau o luna no ka pā ramp
+ʻO ke ʻano kihi hema haʻahaʻa no ka pā ramp
+ʻO ke ʻano kihi ʻākau haʻahaʻa no ka pā ramp
+ʻO ke ʻano o ke kiʻi luna no ka pā ala
+ʻO ke ʻano kiʻi haʻahaʻa no ka pā ala
+ʻO ke ʻano kīʻaha hema no ka pā ala
+ʻO ke ʻano kiʻi ʻākau no ka pā ramp
+Ka pae kala ʻulaʻula liʻiliʻi no ke kala hoʻomaka
+ʻO ka pae kala ʻōmaʻomaʻo liʻiliʻi no ke kala hoʻomaka
+ʻO ka pae kala polū liʻiliʻi no ke kala hoʻomaka
+pae kala liʻiliʻi no ke kala hoʻomaka
+Ka pae kala ʻulaʻula kiʻekiʻe no ke kala hoʻomaka
+Ka pae kala ʻōmaʻomaʻo kiʻekiʻe no ke kala hoʻomaka
+Ka pae kala polū kiʻekiʻe no ke kala hoʻomaka
+Ka pae kala kiʻekiʻe no ke kala hoʻomaka
+Ka pae kala ʻulaʻula liʻiliʻi no ke kala hope
+ʻO ka pae kala ʻōmaʻomaʻo liʻiliʻi no ke kala hope
+Ka pae kala polū liʻiliʻi no ke kala hope
+pae kala liʻiliʻi no ke kala hope
+Ka pae kala ʻulaʻula kiʻekiʻe no ke kala hope
+ʻO ka pae kala ʻōmaʻomaʻo kiʻekiʻe no ke kala hope
+Ka pae kala polū kiʻekiʻe no ke kala hope
+Ka pae kala kiʻekiʻe no ke kala hope
+Helu liʻiliʻi loa
+Helu helu kiʻekiʻe loa
+Hōʻike hoʻokomo hoʻonā
+ʻO ke ʻano kihi hema hema no ka palena hoʻolaha
+ʻAno kihi ʻākau luna no ka palena hoʻolaha
+ʻAno kihi hema hema no ka palena hoʻolaha
+ʻAno kihi ʻākau haʻahaʻa no ka palena hoʻolaha
+ʻAno kiʻi luna no ka palena hoʻolaha
+ʻAno kiʻi haʻahaʻa no ka palena hoʻolaha
+ʻAno kiʻi hema no ka palena hoʻolaha
+ʻAno kiʻi pololei no ka palena hoʻolaha
+Kaila ʻike palapala lima
+E hōʻike paha i ka mea i kākau ʻia ma ka ʻōkuhi hoʻokomo.
+He aha ka helu liʻiliʻi e koho ai?
+He aha ka helu kiʻekiʻe e koho ai?
+E kākau pehea ʻoe e makemake ai i kāu ʻike manpage. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi. {0} no ka inoa lima, {1} no ka hooponopono.
+ʻAʻole loaʻa ka waiwai {0} ma kekahi o nā modula.
+Hōʻike kēia ʻāpana i nā hoʻonohonoho pale pale maʻamau. No nā hoʻonohonoho pale pale hoʻokahi, e haʻalele i nā Settings a wehe i nā Settings Screensaver.
+E hoʻomaka i ka huila kala ma ke ʻano kala maoli
+Inā hōʻike ʻia, e hōʻike ʻia ka hae hoʻomaka maʻamau me ke kākoʻo placeholder. Hiki iā ʻoe ke hoʻohana iā {0} no ka mana kernel.
+He aha ke ʻano o ka ʻōlelo i kēia manawa e hoʻololi ʻia ai nā inoa mahina, kalena, a pēlā aku?
+Ho'ā i ke kākoʻo kala 255.
+Ho'ā i ke kākoʻo kala maoli.
+Holoi ʻia ka huaʻōlelo ma ka laina {0}.
+Ua pani ʻia ke kaula ma ka laina {0}.
+Wehe ʻia ka helu laina {0}.
+Kāohi i nā memo ʻae ʻole
+Hūnā i ka memo hoʻonāukiuki inā hoʻāʻo ka hana papa inoa e wehe i kahi waihona ʻae ʻole
+ʻIke kikowaena FTP
+Helu kikowaena:
+awa kikowaena:
+ʻAno kikowaena:
+ʻAno ʻōnaehana kikowaena:
+ʻano hoʻopunahele kikowaena:
+ʻAno pili ʻikepili kikowaena:
+Pūnaehana kikowaena:
+ʻAno ʻikepili hoʻoili kikowaena:
+ʻAno ʻikepili hoʻoili kikowaena:
+Pono ʻoe e hoʻopili i kahi kikowaena ma mua o ka hana ʻana i kēia hana.
+E hoʻokomo i kahi faila mamao e hashed.
+E hoʻokomo i kahi papa kuhikuhi mamao e hashed.
+E hoʻokomo i kahi papa kuhikuhi mamao.
+Hashing hou no FTP
+Inā paha e hoʻihoʻi hou i kahi papa kuhikuhi. E ʻoluʻolu, ʻaʻole kākoʻo nā kikowaena FTP āpau i kēlā.
+Ka wikiwiki o ka uaki:
+Kākoʻo SSE2 kaʻina hana:
+Huina helu o na mea hana:
+Nui kopae:
+Huina memo:
+Kāleka kiʻi:
+kŘkohu disk:
+Ka nui o nā leka uila ma ka ʻaoʻao hoʻokahi
+Moʻomeheu o ka ʻōlelo o kēia wā
+Inā maopopo ʻoe ua wehe ʻoe i ka ʻāpana kūpono, e nānā i kēia memo:
+Nā hoʻonohonoho ʻokoʻa...
+Nā koho kala...
+Hoʻokō i kahi kauoha kikowaena FTP
+E hoʻokomo i ka helu wahi kikowaena POP3 a me ke awa (<address> a i ʻole <address>:[port]):
+ʻO ke ʻano wikiwiki POP3 no ka leka uila
+E hoʻouna i ka wā ping POP3
+E kākau i ke ʻano āu e makemake ai i ka wikiwiki o kāu kikowaena POP3. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi.
+ʻEhia mau milliseconds e hoʻouna i ka ping POP3?
+E hoʻohana i ka POP3
+E hoʻohana paha i ka POP3. Ke hoʻopau ʻia kēia e hoʻohana iā SMTP.
+Hoʻopili i kahi kaula me CRC32
+Wehe i ka mea kūʻai leka uila
+o ka leka uila i hooiliia...
+Loaʻa nā hoʻonohonoho no kēia pale pale ma aneʻi.
+Hoʻāʻo i ka hana papaʻaina
+Hoʻoponopono i ka laina i kuhikuhi ʻia
+Hoʻohui i nā laina hou ma ka hope o ka faila
+E hoʻokomo i ka kikokikona āu e makemake ai e hoʻohui i ka hope o ka faila. Ke pau ʻoe, e kākau iā "EOF" ma kāna laina ponoʻī.
+Inoa Hookipa
+inoa hoʻohana
+ʻAno ʻIkepili
+Hoʻopili
+Hoʻopili
+Nā Kūlana
+Hōʻike i ka holomua hoʻoili leka uila
+Ka holomua o ka hoʻoili leka
+Ka holomua o ka hoʻoili leka (hoʻokahi)
+Inā hiki ke hoʻohana ʻia, e hōʻike ana ka pūpū leka i ka nui o nā byte i hoʻouna ʻia i ka wā e hoʻoiho ai i ka leka uila.
+E kākau i ke ʻano āu e makemake ai i ke ʻano holomua o ka hoʻoili leka uila. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi. {0} no ka nui i hooiliia a me {1} no ka nui holookoa.
+E kākau i ke ʻano āu e makemake ai i ke ʻano holomua o ka hoʻoili leka uila. E waiho hakahaka no ka hoʻohana ʻana i ke ʻano paʻamau. Hoʻopili ʻia nā mea hoʻopaʻa wahi. {0} no ka nui i hoʻoili ʻia.
+Wahi manawa:
+ʻO {0} kēia lā
+ʻO {0} ka manawa o kēia manawa
+kala hoʻokaʻawale papaʻaina
+kala poʻomanaʻo papa
+kala waiwai papa
+Hiki i nā pane
+ʻAʻole i kuhikuhi ʻia ka faila mod.
+Ke ho'āʻo nei e hoʻokomo i kahi mod i hoʻokomo mua ʻia. Ke hōʻano hou nei i ke ʻano...
+ʻAʻole i hoʻokomo ʻia no
+ʻAʻole kūpono ka faila mod i hāʻawi ʻia.
+ʻAʻole hiki ke wehe ʻia no
+Wehe i kahi URL
+E paʻi i nā helu laina ma ke paʻi ʻana i nā waihona waihona
+E paʻi i ke kauoha \"cat\" i nā helu laina o ka faila.
+Mana unuhi
+Unuhi ʻia
+Hoʻopau i nā hoʻolaha āpau
+Hoʻoiho ʻia...
+Ke hoʻouka nei...
+Hōʻike i ka hoʻolaha no ka holomua download
+Hōʻike i ka hoʻolaha no ka holomua hoʻouka ʻana
+Hōʻike i ka hoʻolaha e hōʻike ana i ka holomua download.
+Hōʻike i ka hoʻolaha e hōʻike ana i ka holomua hoʻouka.
+E ʻike inā aia ke kaula unuhi ma nā kumuwaiwai KS
+Loaʻa ke kaula i nā kumuwaiwai localization.
+ʻAʻole ʻike ʻia ke kaula i nā kumuwaiwai localization.
+Hoʻomaka mālie i ka kernel
+Hoʻokomo i kahi kauoha e hoʻomaka i ke komo ʻana aʻe
+Hoʻomaka i ka kernel ma ke ʻano palekana, hoʻopau i nā mods āpau
+E like me ke ʻano palekana, akā hoʻopau pū kekahi i nā mea hoʻohana lehulehu a me kekahi hana maʻamau
+ʻAʻole lawa nā hoʻopaʻapaʻa.
+ʻO ka waihoʻoluʻu kihi hema o luna no ka pā ramp
+ʻO ka waihoʻoluʻu kihi ʻākau i luna no ka pā ramp
+Ka waihoʻoluʻu kihi hema haʻahaʻa no ka pahu ala
+Ka waihoʻoluʻu kihi ʻākau haʻahaʻa no ka pā ramp
+Ka waihoʻoluʻu kiʻi luna no ka pā ala
+Ka waihoʻoluʻu kiʻi haʻahaʻa no ka pā ala
+Ka waihoʻoluʻu kiʻi hema no ka pā ala
+Ka waihoʻoluʻu kiʻi ʻākau no ka pā ramp
+E hoʻohana i nā kala palena no ka lāki
+E hoʻohana i nā waihoʻoluʻu palena no ka pā ramp. Inā hoʻopau ʻia, e hoʻopuka i kahi pā hina.
+Hoʻomaka ka pūpū HTTP
+Haʻalele ʻo HTTP shell a hoʻi i ka kernel
+Hoʻonohonoho i ka pūnaewele HTTP. Pono he URI kūpono.
+Loaʻa ka pane mai ka server HTTP me ka hoʻohana ʻana i ka noi i kuhikuhi ʻia
+Holoi i ka ʻike mai ka kikowaena HTTP
+Aia kekahi hewa ma ka pūpū HTTP:
+Memo HTTP: ʻAʻole i loaʻa ke kauoha i noi ʻia {0}. E ʻike i ke 'kōkua' no ka papa inoa o nā kauoha i ʻike ʻia ma ka shell HTTP.
+Loaʻa i ke kaula mai ka server HTTP me ka hoʻohana ʻana i ka noi i kuhikuhi ʻia
+Loaʻa iā {0}...
+He kūpono ʻole ka hōpili URI pūnaewele.
+Ke hoʻonohonoho ʻana i ka pūnaewele i
+ʻAʻole pono nā kala i ka hoʻomaka hou ʻana, akā ʻo ka hapa nui o nā hoʻonohonoho pono e hoʻomaka hou.
+ʻAʻohe kōkua no ka hoʻopaʻapaʻa "{0}".
+E kaomi iā A ma nā ʻōlelo inaina e kala mai. E kaomi iā T ma nā ʻōlelo aloha e mahalo. E kaomi iā Q e haʻalele i ka pāʻani.
+Ua kala mai ʻoe i ka manaʻo hoʻowahāwahā! Maikaʻi!
+E kala mai i ke aloha ʻōlelo. ʻAʻole lawa ka maikaʻi.
+Ua mahalo wale ʻoe i ka inaina no ka ʻōlelo inaina!
+Paʻakikī paʻamau no SpeedPress
+Paʻa kī kī no ka SpeedPress
+E koho i kāu pilikia i makemake ʻia.
+ʻEhia mau milliseconds e kali ai no ke kī kī ma mua o ka pau ʻana o ka manawa? (Ma ka pilikia maʻamau)
+Hoʻololi i kekahi huaʻōlelo a ʻōlelo paha me kekahi me ka hoʻohana ʻana i nā ʻōlelo maʻamau
+Hoʻololi i kekahi huaʻōlelo a ʻōlelo paha me kekahi ma ka laina me ka hoʻohana ʻana i nā ʻōlelo maʻamau
+Nīnau i kekahi huaʻōlelo ma kahi laina i ʻōlelo ʻia a i ʻole nā ​​laina āpau me ka hoʻohana ʻana i nā ʻōlelo maʻamau
+E huli i kahi hoʻonohonoho
+Kākau i ka mea āu e makemake ai e ʻimi.
+ʻAʻohe mea i loaʻa. E hōʻoia ua kākau pololei ʻoe i ka hoʻonohonoho.
+Hoʻopili i kahi faila kūloko i ka waihona
+ʻAʻole hiki ke ʻeke i kekahi mea.
+Pane wehewehe
+Awa hookipa
+No ka ʻike hou aku e pili ana i nā ʻōlelo a me nā kūlana o ka hoʻohana ʻana i kēia polokalamu, e kipa
+ʻAno hoʻopuka koho paʻamau
+Nānā i nā hoʻonohonoho KS a pau e ʻike inā ua kākau pololei ʻia nā mea hoʻololi
+Loaʻa i kēia mau mea hoʻokomo hoʻonohonoho i nā ʻano like ʻole a i ʻole nā ​​helu helu a pono e hoʻopaʻa ʻia:
+ʻAʻole i loaʻa ka waihona {0}.
+Hoʻokumu i kahi ʻano hoʻololi me nā waiwai i hāʻawi ʻia
+Kākau i ka helu o ka hoʻonohonoho e hele ai. ʻO ke ʻano ʻē aʻe ke ʻano o ka hoʻi.
+Nānā i nā helu laina kikokikona hoʻokaʻawale e ʻike inā like lākou a pau
+Kūlike ʻole ka laina i loko
+E ʻoluʻolu e hoʻokomo i kahi helu mea hoʻohana.
+Hoʻohui i nā mea hoʻohana inoa ʻole
+Hoʻohui i nā mea hoʻohana kīnā
+Hoʻokomo ʻia nā mea hoʻohana inoa ʻole i ka papa inoa
+Hoʻokomo ʻia nā mea hoʻohana kīnā i ka papa inoa
+Hoʻokaʻawale i ka papa inoa
+Hoʻokaʻawale i ka papa inoa waihona waihona ma ka ʻoihana.
+Hāʻawi i kahi koho koho
+ʻAʻole i hoʻokō ʻia nā kauoha Shell!!!
+Hōʻike i ka poʻomanaʻo RSS hou loa ma ke komo ʻana
+URL poʻomanaʻo RSS
+ʻO kēlā me kēia komo ʻana, e hōʻike ia i ka poʻomanaʻo RSS hou loa mai ka URL poʻomanaʻo i koho ʻia.
+E hoʻohana ʻia ka URL poʻomanaʻo RSS i ka wā e hōʻike ana i ka poʻomanaʻo hou loa. ʻO kēia kāu hānai punahele.
+Nūhou hou loa:
+ʻAʻole i loaʻa ka nūhou hou loa.
+kala koho koho
+E hōʻike i ka hōʻiliʻili ʻili ma ka hewa kernel
+Inā loaʻa kekahi hewa kernel, e koho inā e paʻi a ʻaʻole paha i ka hōʻiliʻili hoʻopaʻa i ka console.
+Hiki ke hoʻouka ʻia ka mod, akā hiki ke hoʻopili kēia mau ʻōlelo aʻo i ke ʻano o ka hana ʻana o ka mod:
+Hiki ke hoʻouka ʻia ka pale pale, akā hiki ke hoʻopili kēia mau ʻōlelo aʻo i ke ʻano o ka hana ʻana o ka pale pale:
+E mālama i nā ʻōkuhi e like me
+Hoʻouka i nā ʻōkuhi mai
+Ma hea ʻoe e makemake ai e mālama i nā hoʻonohonoho kernel o kēia manawa?
+ʻAʻole hiki ke mālama i nā hoʻonohonoho kernel ma luna o ka faila.
+Ma hea ʻoe e hoʻouka ai i nā hoʻonohonoho kernel o kēia manawa?
+E ʻike inā loaʻa nā kaula unuhi ma nā kumuwaiwai KS
+Hoʻohui i nā faila kikokikona ʻelua a ʻoi aku paha i loko o ka faila puka.
+ʻAʻole hiki ke hoʻohui i nā faila.
+Hoʻopau manawa kiʻi hānai RSS
+ʻEhia mau milliseconds e kali ai ma mua o ka pau ʻana o ka manawa lawe hānai RSS?
+Hoʻopiha i nā pahu
+E kaha mākou i ka pahu holoʻokoʻa a i ʻole e huki wale i ka palena?
+Hoʻopaneʻe ka pae i nā milliseconds
+ʻEhia mau milliseconds e kali ma mua o ke kaha kiʻi ʻana i ka pae aʻe?
+ʻO ka wā aʻe o ka pohō ramp
+ʻEhia mau milliseconds e kali ai ma mua o ka popopo ʻana i ka hopena hoʻokahi o ke ala?
+E nānā i ka helu debug
+Ke nānā nei mākou inā pono ka ʻōnaehana debug e nānā i ka quota ma mua o ke kākau ʻana i ka debugger?
+Ehia mau milliseconds i moe ai?
+ʻAʻole hiki ke hoʻohui i kahi hanana.
+ʻAʻole hiki ke wehe i kahi hanana.
+ʻAʻole lawa nā hoʻopaʻapaʻa i hāʻawi ʻia e hoʻohui i kahi hanana.
+ʻAʻole lawa nā hoʻopaʻapaʻa i hāʻawi ʻia e wehe i kahi hanana.
+ʻAʻole lawa nā hoʻopaʻapaʻa i hāʻawi ʻia no ka hoʻoponopono hanana hanana.
+ʻAʻole hiki ke hoʻohui a wehe paha i kahi hoʻomanaʻo.
+ʻAʻole lawa nā hoʻopaʻapaʻa i hāʻawi ʻia e hoʻohui a wehe paha i kahi hoʻomanaʻo.
+ʻAʻole lawa nā manaʻo hoʻopaʻapaʻa i hāʻawi ʻia no ka hoʻoponopono hoʻomanaʻo.
+Hoʻomanaʻo inoa ʻole
+hanana inoa ʻole
+He lā hanana kēia!
+Mai poina i kēia!
+Hana hewa ʻole.
+He wati maʻalahi
+Hoʻomaka a hoʻōki
+Lap
+Hoʻoponopono hou
+He manawa maʻalahi
+E hoʻomaka (re) helu i lalo
+E hoʻopaʻa i waena
+ʻAʻole helu ka manawa hoʻopau i hōʻike ʻia.
+E wehewehe i ka manawa hoʻopau i nā milliseconds
+E mālama i nā hanana āpau a/a i ʻole nā ​​hoʻomanaʻo hoʻomanaʻo
+Inā hiki, holoi i nā hanana a/a i ʻole nā ​​mea hoʻomanaʻo ma mua o ka mālama ʻana iā lākou a pau me ke kauoha alemanaka.
+E hōʻoia i ka hoʻāʻo hou ʻana no ka hoʻoili FTP
+Hoʻopau manawa pili FTP
+Hoʻopau manawa pili ʻikepili FTP
+Nā mana FTP IP
+ʻEhia mau manawa e hōʻoia i ka hoʻouka ʻana a hoʻoiho a hoʻāʻo hou inā hāʻule ka hōʻoia ma mua o ka pau ʻole o ka hoʻoiho ʻana?
+ʻEhia mau milliseconds e kali ma mua o ka pau ʻana o ka pilina FTP?
+ʻEhia mau milliseconds e kali ai ma mua o ka pau ʻana o ka manawa pili ʻikepili FTP?
+E koho i ka mana o ka Internet Protocol i kākoʻo ʻia e ke kikowaena FTP a i hoʻohana ʻia e ka mea kūʻai FTP.
+Ke ho'āʻo nei e hoʻomaka i ka RPC oiai ua hoʻomaka.
+ʻO ke ʻano kihi hema hema no ka huila kala RGB
+ʻO ke ʻano kihi ʻākau luna no ka huila kala RGB
+ʻAno kihi hema hema no ka huila kala RGB
+ʻAno kihi ʻākau haʻahaʻa no ka huila kala RGB
+ʻAno kiʻi luna no ka huila kala RGB
+ʻO ke ʻano kiʻi haʻahaʻa no ka huila kala RGB
+ʻO ke ʻano kīʻaha hema no ka huila kala RGB
+ʻAno kiʻi pololei no ka huila kala RGB
+Loaʻa i kahi faila ma ka papa kuhikuhi i kuhikuhi ʻia a i ʻole ma ka papa kuhikuhi o kēia manawa
+Hoʻololi i ka pau ʻana o ka laina i ka hōpili no ka paepae o kēia manawa a i ʻole ka hōʻano maʻamau i ʻōlelo ʻia
+Huina nui ma ka waihona:
+Hōʻike i ka nui nui ma ka papa inoa
+Inā hiki, e hōʻike i ka nui o ka waihona ma ka papa inoa, e pili ana i ka helu ʻana i ka nui o ka waihona e like me ka hoʻonohonoho.
+He mea hou ʻoe!
+Hoʻopalapala JSON paʻamau no ka pūpū JSON
+Koho i ka hōpili JSON paʻamau (nani a hoʻemi ʻia) no ka pūpū JSON e mālama ai.
+Ua hoʻoiho maikaʻi ʻia ka mea hou!
+Hoʻoiho ʻakomi i nā mea hou
+Inā loaʻa kekahi mea hou, e hoʻoiho koke ka kernel iā ia.
+ʻO ka radius pahū ahi
+ʻEhia mau poloka (a hiki i ka 10) ka radius pahū no ke ahi ke ʻā?
+Aia kēia kauoha i nā hoʻololi i lalo e hoʻololi i ka hana ʻana:
+Paʻi i nā helu laina e hahai ana i ka laina i paʻi ʻia
+Kāohi i ka paʻi ʻana i nā helu laina
+E hoʻohana mau i ka mana unuhi
+E hoʻohana mau i ka mana unuhi
+Hoʻololi ikaika i ka ʻōlelo
+E hōʻike i ka pane hiki ke lawe i nā ʻano ʻoi aku ma mua o hoʻokahi
+E hōʻike i ka pane hiki ke lawe i hoʻokahi wale nō ʻano
+E paʻi i ka nīnau a me nā pane ma ka laina hoʻokahi
+E paʻi i ka nīnau a me nā pane ma nā laina ʻelua
+E paʻi i ka nīnau a me nā pane ma ke ʻano hou
+E paʻi i ka nīnau a me nā hāʻina ma ka pākaukau
+Hōʻike i nā kikoʻī faila ma ka papa inoa
+Kāohi i nā memo "ʻae ʻia" hoʻonāukiuki
+Hōʻike i nā ʻāpana manawa āpau
+Hoʻomaka i ka pāʻani me ka paʻakikī maʻalahi
+Hoʻomaka i ka pāʻani me ka paʻakikī
+Hoʻomaka ka pāʻani me ka paʻakikī paʻakikī
+Hoʻomaka i ka pāʻani me ka paʻakikī loa
+Hoʻomaka i ka pāʻani me ka paʻakikī maʻamau. E ʻoluʻolu e kākau ʻia ka manawa hoʻopau maʻamau i milliseconds ma ke ʻano he hoʻopaʻapaʻa.
+Hōʻike i ka ʻike pūnaewele
+Hōʻike i ka ʻike ʻenehana
+Hōʻike i ka ʻike mea hoʻohana
+Hōʻike i ka leka o ka lā
+Hōʻike i ka memo o ka lā ma hope o ke komo ʻana
+Hōʻike i nā ʻike āpau
+Hoʻokumu i kahi papa kuhikuhi i loaʻa nā ʻike o ka faila ZIP
+Hōʻike i nā kūlanakauhale a pau i loaʻa
+Hoʻopiʻi wikiwiki
+ʻAʻohe kaomi
+Mai hana i ka papa kuhikuhi kumu ma ka waihona
+ʻĀpana ma nā ticks
+Hoʻokaʻawale ʻia mai ke kikowaena me ka hilahila
+E hōʻike ana he paʻa loa ke ala i manaʻo ʻia
+Mālama i ka faila JSON, hoʻonani iā ​​ia i ke kaʻina hana
+Mālama i ka faila JSON, e hoʻemi ana i ke kaʻina hana
+Loaʻa i ke ʻano hoʻopau laina mai ka waihona kikokikona
+Holoi i nā hanana a pau i puhi ʻia
+E ho'ā i ka hoʻopololei hanana
+Ho'ā i ka debugging no ka ʻōnaehana hanana kernel
+Kiʻi kikokikona
+Kākau i kahi font figlet i kākoʻo ʻia e ka waihona Figgle. E nānā i ka palapala waihona no ka ʻike hou aku
+ʻAʻole hiki ke hoʻokomo i ka ʻōlelo maʻamau {0}.
+ʻAʻole loaʻa ka faila metadata e hoʻokomo i ka ʻōlelo maʻamau.
+ʻAʻole hāʻawi ka ʻike metadata e pono ai e hoʻokomo i ka ʻōlelo maʻamau i nā wahi e pono ai.
+ʻAʻole hiki ke wehe i ka ʻōlelo maʻamau {0}.
+ʻAʻole i loaʻa ka faila metadata no ka wehe ʻana i ka ʻōlelo maʻamau.
+ʻAʻole hāʻawi ka ʻike metadata no ka wehe ʻana i ka ʻōlelo maʻamau i nā wahi e pono ai.
+ʻAʻole kūlike ka lōʻihi o ka ʻōlelo Pelekania me ka lōʻihi o ka hōʻailona ʻōlelo i hāʻawi ʻia.
+Aia ka ʻōlelo a ʻaʻole hiki ke kākau hou ʻia.
+ʻAʻole hiki ke wehe i ka ʻōlelo maʻamau. ʻAʻole paha.
+ʻAʻole i hoʻokomo i nā ʻōlelo maʻamau.
+ʻAʻole hiki ke wehe i nā ʻōlelo maʻamau.
+ʻAʻole hiki ke wehe i nā ʻōlelo maʻamau. E ʻike i ka ʻokoʻa o loko no ka ʻike hou aku.
+Kākau i ka ʻōlelo huna luna. E hōʻoia ʻaʻole ʻoe e hoʻohana i kēia moʻokāki ke ʻole ʻoe e ʻike maoli i kāu mea e hana nei.
+Pono ʻoe e kākau i ka ʻōlelo huna luna.
+ʻIke laikini
+E mālama i kāu mau ʻōlelo
+ʻAʻole i ʻike ʻia ka ʻōlelo a i ʻole nā ​​​​huaʻōlelo kūpono ʻole i ka faila.
+ʻAʻole i kuhikuhi ʻia ka ʻōlelo.
+Ua pio ka hoʻokele ʻōlelo ma ke ʻano palekana.
+inoa pōkole ʻōlelo:
+inoa piha ʻōlelo:
+Hiki ke unuhi ʻia ka ʻōlelo:
+ʻŌlelo maʻamau:
+Hae hookipa hou
+Paʻi paʻi ʻano
+Hōʻike i ka hae hoʻokipa hou i hāʻawi ʻia e Figlet
+Hāʻawi i ka pale paʻi kaila i ka hoʻomaka ʻana. E ʻoluʻolu e hoʻopau ia i ka hoʻopaʻapaʻa wikiwiki a hoʻāʻo i ka shell pre-boot.
+Ka inoa palaki
+Splash inoa mai nā splashes i loaʻa i hoʻokomo ʻia ma ka kernel.
+Hana ʻia ka MOTD paʻamau.
+Hana ʻia ka MAL paʻamau.
+Hoʻomaka ka moʻokāki pūnaewele
+Hoʻomaka nā mea hoʻohana
+Hoʻouka ʻia nā ʻae
+Welina!
+E hoʻomaka ana i ka debugger mamao...
+Kuʻia ka hoʻokuʻi ʻana i ka mea hoʻoheheʻe mamao
+Hoʻomaopopo i ka hewa pili debug mamao
+Inā hiki, e hoʻohana i ka ʻōnaehana hoʻolaha e haʻi aku i ka pūʻali no ka hewa pili debug mamao. A i ʻole, e hoʻohana i ka palapala console paʻamau.
+ʻO ka font Figlet no ka manawa
+E ho'ā iā Figlet no ka manawa
+Inā hiki, e hoʻohana i ka figlet no ka manawa. E ʻoluʻolu e pono ia i kahi pale console nui i mea e hāʻawi pono ai i ka manawa me Figlet hiki.
+Kupa i ka wā e hoʻopaʻa ana i nā manaʻo hoʻopaʻapaʻa laina kauoha mua: {0}
+Hoʻihoʻi hou i ka kernel i nā hoʻonohonoho hale hana
+Kaalo i ka ʻike nui o ka console
+Me he mea lā ke kaalo nei ʻoe i ka ʻike nui o ka console. ʻAʻole hiki ke hana pono nā mea ma nā pale liʻiliʻi.
+No ka loaʻa ʻana o kahi ʻike maikaʻi aʻe, e hoʻololi i ka nui o kāu pukaaniani console oiai e noho ana ma kēia pale. E kaomi i kekahi kī e hoʻomau...
+He liʻiliʻi loa kāu console e holo pono ai:
+Momo figlet hae
+Paʻi i kahi kaula e hōʻoluʻolu me ka hoʻohana ʻana i ke ʻano kala a me ka paʻi laina me ke kākoʻo Figlet
+Paʻi i kahi kaula e hōʻoluʻolu me ka hoʻohana ʻana i ke ʻano kala a me ka paʻi laina me ke ʻano a me ke kākoʻo Figlet
+Wehe mau i kahi memo
+Wehe mau i nā memo a pau mai ka mea loaʻa
+Wehe i ka wehe ʻana i kahi memo
+Wehe i ka wehe ʻana i nā memo a pau mai ka mea loaʻa
+ʻAʻole hoʻokō ʻia ka wehe ʻana i ka holoi ʻana no POP3.
+Hōʻike i nā kauoha i ke kōkua
+Hōʻike i nā kauoha shell e helu i ke kōkua
+Hōʻike i nā kauoha mod e helu i ke kōkua
+Hōʻike i nā inoa inoa i ke kōkua
+Hōʻike i ka helu o nā kauoha ma ka papa kauoha, i hoʻomalu ʻia e nā helu ʻekolu hōʻike hoʻololi no nā ʻano kauoha like ʻole.
+Hoʻokō i nā kauoha ke hoʻokō ʻia nā ʻōlelo UESH
+ʻAʻole i loaʻa ke kūlana ma ka ʻōlelo.
+Pono ke kūlana {0} i {1} mau mana'o. Loaʻa iā {2}.
+Pono e kau ʻia ke kūlana ma waena.
+Pono ke kūlana i ka hoʻomaka.
+Ua hewa ke koho ʻana i ka ʻōlelo ma muli o ka hewa syntax.
+ʻAʻole hoʻokō i ke kūlana. ʻIke hou aku ma aneʻi:
+ʻAno huna huna huna
+He mea huna i ka ʻōlelo huna. E waiho hakahaka no ka palekana hou aku.
+Haʻalele i ka pūpū inā e holo ana ma luna o ka ʻili
+ʻAʻole hiki ke pepehi i ka pūpū makuahine!
+ʻAʻole hiki ke haʻalele i ka ʻōpū.
+ʻAʻole i kuhikuhi ʻia ka faila. Ke haʻalele nei i ka pūpū...
+Loaʻa nā hoʻonohonoho no kēia pale splash maanei.
+kala kala holomua
+Wehe i nā hoʻonohonoho pale pale
+Wehe i nā hoʻonohonoho splash
+E papa inoa i nā mea hoʻololi UESH i loaʻa
+Kahi kikokikona holomua
+E koho i kāu wahi kikokikona holomua.
+Hiki iā ʻoe ke kākau i nā helu.
+E kaomi i ka "q" e puka.
+Ke hoʻoiho nei i nā inoa...
+Ma muli o nā pilikia ʻenehana, ʻaʻole hiki iā mākou ke papa inoa i nā waiwai adapter ma nā ʻōnaehana Unix.
+Hoʻā i ke ʻano debug
+Nā paipai no ka hoʻopaʻapaʻa
+E ho'ā i ke ʻano ʻeleʻele a me ke keʻokeʻo
+Hana ʻeleʻele a keʻokeʻo ke disco. E hōʻeha maoli i kou mau maka inā wikiwiki loa, no laila ʻaʻole ʻōlelo ʻia inā e ʻike ʻoe i ka hopu ʻana i nā kiʻi wikiwiki.
+Me he mea lā ke holo nei ʻoe i kahi mana kākoʻo ʻole. ʻAʻole pono e hoʻohana i kēia mana.
+Hoʻouka i nā kala o kēia manawa
+kala koho ʻokoʻa
+Hoʻohana nā mea hoʻohana i nā manaʻo aloha a inaina paha
+ʻEhia mau mea hoʻohana i loko o ke keʻena manaʻo aloha a inaina paha?
+Papa inoa i nā ʻōlelo i loaʻa
+Nā ʻōlelo i loaʻa:
+Nā hoʻopaʻapaʻa laina kauoha:
+Nā hoʻopaʻapaʻa laina kauoha mua:
+Wehe i ka palapala mod API no ke ʻano o ke code kumu i kona ʻano o kēia manawa

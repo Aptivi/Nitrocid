@@ -983,3 +983,675 @@ Pressione qualquer tecla para ler a página do manual ...
 Esta página do manual precisa ser trabalhada para:
 Página do manual {0} não encontrada.
 Manual do Mod
+Argumentos de kernel disponíveis:
+Pressione "q" se tiver terminado.
+Vários argumentos do kernel podem ser separados por vírgulas sem espaços, por exemplo:
+Vários comandos injetados podem ser separados por dois pontos com espaços, por exemplo:
+O argumento solicitado {0} não foi encontrado.
+Erro irrecuperável no argumento:
+Criptografa uma string usando SHA512
+Criptografa uma string usando SHA384
+Criptografa uma string usando SHA256
+Criptografa uma string usando SHA1
+Criptografa uma string usando MD5
+onde o builtinsaver estará
+A parte do mod não é nada.
+Parar mods não é permitido no modo de segurança.
+O mod já foi iniciado!
+O mod ainda não começou!
+Uso do comando:
+Nome do arquivo da peça:
+Caminho do arquivo da peça:
+Erro ao tentar iniciar o protetor de tela:
+Tipo de caminho inválido.
+Tipo de caminho do kernel inválido.
+Falha na inicialização anterior
+O editor JSON ainda não abriu um fluxo de arquivos.
+A propriedade dentro do arquivo JSON não foi encontrada.
+Propriedade removida.
+Adiciona uma nova propriedade no final do arquivo JSON
+Remove uma propriedade do arquivo JSON
+Sai do shell JSON
+Sai do shell JSON sem salvar as alterações
+Salva o arquivo JSON
+Abre o shell JSON
+Imprime o arquivo JSON
+Próximo intervalo de rampa
+Ativa o suporte de 255 cores para Ramp.
+Ativa o suporte a cores verdadeiras para Ramp.
+Quantos milissegundos esperar antes de preencher a próxima rampa?
+Cor do título da notificação
+Cor da descrição da notificação
+Cor do progresso da notificação
+Cor de falha de notificação
+Cor da pergunta
+Cor de sucesso
+Cor do dólar do usuário
+Cor da ponta
+Cor do texto do separador
+Cor do separador
+Cor do título da lista
+Cor de aviso de desenvolvimento
+Cor do palco
+Cor do progresso
+Cor da opção de volta
+Desenhar borda de notificação
+Cobre a notificação com a borda.
+Entre em contato com o fornecedor do mod para atualizar o mod para a versão compatível.
+Cor da borda de baixa prioridade
+Cor da borda de prioridade média
+Cor da borda de alta prioridade
+Envia uma notificação de progresso para testar o receptor
+Testa a roda de cores
+Mostra a hora local do kernel
+Mostra a data do kernel local
+Mostra a data e hora do kernel local
+Mostra a hora do kernel UTC
+Mostra a data do kernel UTC
+Mostra a data e hora do kernel UTC
+Caminho MOTD
+caminho MAL
+Qual arquivo é o arquivo de texto MOTD? Escreva um caminho absoluto para o arquivo de texto.
+Qual arquivo é o arquivo de texto MAL? Escreva um caminho absoluto para o arquivo de texto.
+Mods na lista negra
+Escreva os nomes dos arquivos dos mods que não serão executados na inicialização. Quando terminar, escreva "q". Escreva um sinal de menos ao lado do caminho para remover um mod existente.
+Mod {0} está na lista negra.
+Recarrega todos os mods
+Adiciona um mod à lista negra
+Remove um mod da lista negra
+Hora e data em UTC: {0}
+O comando shell JSON especificado não foi encontrado.
+Mostrar informações do aplicativo durante a inicialização
+Analisar argumentos de linha de comando
+Mostrar os tempos de término do estágio
+Iniciar modificações do kernel na inicialização
+Mostrar hora atual antes do login
+Notificar qualquer falha durante a inicialização
+Mostra informações breves sobre o aplicativo na inicialização.
+Analisa os argumentos da linha de comando na inicialização.
+Mostra quanto tempo o kernel levou para terminar um estágio.
+Inicie automaticamente as modificações do kernel na inicialização.
+Mostra a hora atual, fuso horário e data antes do login.
+Se houver uma pequena falha durante a inicialização do kernel, notifica o usuário sobre isso.
+Estilo de prompt de nome de usuário
+Estilo de solicitação de senha
+Mostrar MAL no login
+Escreva como você deseja que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Escreva como você deseja que seu prompt de senha seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Mostra a Mensagem do Dia após a exibição da tela de login.
+Estilo de prompt de shell de teste
+Estilo de prompt do shell JSON
+Comandos injetados no probe
+Testa os comandos injetados no início do shell do kernel.
+Mostrar detalhes do arquivo na lista
+Mostra os breves detalhes do arquivo ao listar os arquivos
+Mostrar detalhes do arquivo na lista de FTP
+Estilo de prompt de nome de usuário para FTP
+Estilo de prompt de senha para FTP
+Use o primeiro perfil de FTP
+Adicionar novas conexões à discagem rápida de FTP
+Tente validar certificados FTP seguros
+Mostrar FTP MOTD na conexão
+Sempre aceite certificados FTP inválidos
+Mostra os detalhes do arquivo FTP ao listar os diretórios remotos.
+Usa o primeiro perfil de FTP para se conectar ao FTP.
+Se ativado, adiciona uma nova conexão à discagem rápida do FTP.
+Tenta validar os certificados FTP. Desligá-lo não é recomendado.
+Mostra a mensagem FTP do dia no login.
+Sempre aceite certificados FTP inválidos. Ativá-lo não é recomendado, pois pode representar riscos de segurança.
+Estilo de prompt de nome de usuário para e-mail
+Estilo de prompt de senha para e-mail
+Estilo de prompt IMAP para e-mail
+Estilo de prompt SMTP para e-mail
+Detectar automaticamente o servidor de e-mail
+Ativar depuração de e-mail
+Notificar para novas mensagens de correio
+Estilo de prompt de senha GPG para e-mail
+Enviar intervalo de ping IMAP
+Enviar intervalo de ping SMTP
+Formato de texto de correio
+Escreva como você deseja que o prompt do servidor IMAP seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Escreva como você deseja que o prompt do servidor SMTP seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Detecte automaticamente o servidor de e-mail com base no endereço fornecido.
+Habilita a depuração do servidor de correio.
+Notifica você sobre quaisquer novas mensagens de e-mail.
+Escreva como você deseja que seu prompt de senha GPG seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Quantos milissegundos para enviar o ping IMAP?
+Quantos milissegundos para enviar o ping SMTP?
+Controla como o texto do e-mail será mostrado.
+Texto simples
+Texto fluído
+Texto HTML
+Texto enriquecido
+Rich text compactado
+Rich text
+Iniciar depuração remota automaticamente na inicialização
+Formato de mensagem de depuração remota
+Se você deseja que a depuração remota inicie na inicialização, habilite isso.
+Especifica o formato da mensagem de depuração remota. {0} para nome, {1} para mensagem.
+Estilo de prompt de URL de feed RSS
+Atualização automática do feed RSS
+Intervalo de feed RSS de atualização automática
+Escreva como você deseja que o prompt do servidor de feed RSS seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Quantos milissegundos para atualizar o feed RSS?
+Mostrar detalhes do arquivo na lista SFTP
+Estilo de prompt de nome de usuário para SFTP
+Adicionar novas conexões à discagem rápida SFTP
+Mostra os detalhes do arquivo SFTP ao listar os diretórios remotos.
+Se ativado, adiciona uma nova conexão à discagem rápida SFTP.
+Tempo limite de ping
+Mostrar informações abrangentes do adaptador
+Mostrar informações gerais da rede
+Baixar texto de porcentagem
+Carregar texto de porcentagem
+Quantos milissegundos esperar antes de declarar o tempo limite?
+Imprime as informações abrangentes do adaptador, como informações sobre o pacote.
+Mostra as informações gerais sobre a rede.
+Escreva como você deseja que seu texto de porcentagem de upload seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho carregado, {1} para tamanho de destino, {2} para porcentagem.
+Escreva como você deseja que seu texto de porcentagem de download seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho baixado, {1} para tamanho de destino, {2} para porcentagem.
+Pedir senha após o bloqueio
+Após bloquear a tela, peça a senha
+Nível mínimo de cor vermelha
+Nível mínimo de cor verde
+Nível mínimo de cor azul
+Nível mínimo de cor
+Nível máximo de cor vermelha
+Nível máximo de cor verde
+Nível máximo de cor azul
+Nível máximo de cor
+Nível mínimo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível mínimo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Nível máximo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
+Nível máximo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.
+Cor do primeiro plano
+Caractere de linha
+Um caractere para formar uma linha. Certifique-se de inserir apenas um caractere.
+Caractere do canto superior esquerdo da barra de horas
+Caractere do canto superior esquerdo para a barra de minutos
+Caractere do canto superior esquerdo para a barra de segundos
+Caractere do canto superior direito da barra de horas
+Caractere do canto superior direito da barra de minutos
+Caractere do canto superior direito para a barra de segundos
+Caractere do canto inferior esquerdo para a barra de horas
+Caractere do canto inferior esquerdo para a barra de minutos
+Caractere do canto inferior esquerdo para a barra de segundos
+Caractere do canto inferior direito da barra de horas
+Caractere do canto inferior direito da barra de minutos
+Caractere do canto inferior direito para a barra de segundos
+Caractere do quadro superior para a barra de horas
+Caractere do quadro superior para a barra de minutos
+Caractere do quadro superior para a barra de segundos
+Caractere de quadro inferior para barra de horas
+Caractere de quadro inferior para a barra de minutos
+Caractere de quadro inferior para a barra de segundos
+Caractere do quadro esquerdo para a barra de horas
+Caractere do quadro esquerdo para a barra de minutos
+Caractere do quadro esquerdo para a barra de segundos
+Caractere de quadro direito para a barra de horas
+Caractere de quadro direito para a barra de minutos
+Caractere do quadro direito para a barra de segundos
+Texto informativo por horas
+Texto informativo por minutos
+Texto informativo por segundos
+Nível mínimo de cor vermelha por horas
+Nível mínimo de cor verde por horas
+Nível mínimo de cor azul por horas
+Nível mínimo de cor por horas
+Nível máximo de cor vermelha por horas
+Nível máximo de cor verde por horas
+Nível máximo de cor azul por horas
+Nível máximo de cor por horas
+Nível mínimo de cor vermelha por minutos
+Nível mínimo de cor verde por minutos
+Nível mínimo de cor azul por minutos
+Nível mínimo de cor por minutos
+Nível máximo de cor vermelha por minutos
+Nível máximo de cor verde por minutos
+Nível máximo de cor azul por minutos
+Nível máximo de cor por minutos
+Nível mínimo de cor vermelha por segundos
+Nível mínimo de cor verde por segundos
+Nível mínimo de cor azul por segundos
+Nível mínimo de cor por segundos
+Nível máximo de cor vermelha por segundos
+Nível máximo de cor verde por segundos
+Nível máximo de cor azul por segundos
+Nível máximo de cor por segundos
+Um caractere que se assemelha ao canto superior esquerdo. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao canto inferior esquerdo. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro superior. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro inferior. Certifique-se de inserir apenas um caractere.
+Um caractere que se assemelha ao quadro esquerdo. Certifique-se de inserir apenas um caractere.
+Um personagem que se assemelha ao quadro certo. Certifique-se de inserir apenas um caractere.
+Escreva como seu texto informativo para a hora atual é exibido. {0} para a hora atual de 24 horas.
+Escreva como seu texto informativo para o minuto atual é exibido. {0} para o minuto atual de 60 minutos.
+Escreva como seu texto informativo para o segundo atual é exibido. {0} para o segundo atual de 60 segundos.
+Cor do texto
+Caractere do canto superior esquerdo para barra de rampa
+Caractere do canto superior direito para barra de rampa
+Caractere de canto inferior esquerdo para barra de rampa
+Caractere do canto inferior direito da barra de rampa
+Caractere de quadro superior para barra de rampa
+Caractere de quadro inferior para barra de rampa
+Caractere de quadro esquerdo para barra de rampa
+Caractere de quadro direito para barra de rampa
+Nível mínimo de cor vermelha para a cor inicial
+Nível mínimo de cor verde para a cor inicial
+Nível mínimo de cor azul para a cor inicial
+Nível mínimo de cor para cor inicial
+Nível máximo de cor vermelha para a cor inicial
+Nível máximo de cor verde para a cor inicial
+Nível máximo de cor azul para a cor inicial
+Nível máximo de cor para a cor inicial
+Nível mínimo de cor vermelha para a cor final
+Nível mínimo de cor verde para a cor final
+Nível mínimo de cor azul para a cor final
+Nível mínimo de cor para a cor final
+Nível máximo de cor vermelha para a cor final
+Nível máximo de cor verde para a cor final
+Nível máximo de cor azul para a cor final
+Nível máximo de cor para a cor final
+Número mínimo do solucionador
+Número máximo do solucionador
+Entrada de exibição do solucionador
+Caractere do canto superior esquerdo para borda de notificação
+Caractere do canto superior direito para borda de notificação
+Caractere do canto inferior esquerdo para borda de notificação
+Caractere do canto inferior direito para borda de notificação
+Caractere de quadro superior para borda de notificação
+Caractere de quadro inferior para borda de notificação
+Caractere de quadro esquerdo para borda de notificação
+Caractere de quadro direito para borda de notificação
+Estilo de informação de página manual
+Se deve mostrar o que está escrito no prompt de entrada.
+Qual é o número mínimo para escolher?
+Qual é o número máximo para escolher?
+Escreva como você deseja que as informações da sua página de manual sejam. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para título do manual, {1} para revisão.
+A propriedade {0} não foi encontrada em nenhum dos módulos.
+Esta seção lista as configurações gerais do protetor de tela. Para configurações individuais do protetor de tela, saia das Configurações e abra Configurações do protetor de tela.
+Inicie a roda de cores no modo true color
+Se especificado, ele exibirá um banner de inicialização personalizado com suporte a espaço reservado. Você pode usar {0} para a versão do kernel.
+Qual variante do idioma atual está sendo usada para alterar os nomes dos meses, calendário, etc.?
+Ativa o suporte a 255 cores.
+Ativa o suporte a cores verdadeiras.
+Palavra excluída na linha {0}.
+String substituída na linha {0}.
+Número de linha removido {0}.
+Suprimir mensagens não autorizadas
+Esconde a mensagem irritante se a função de listagem tentar abrir uma pasta não autorizada
+Informações do servidor FTP
+Endereço do servidor:
+Porta do servidor:
+Tipo de servidor:
+Tipo de sistema do servidor:
+Modo de criptografia do servidor:
+Tipo de conexão de dados do servidor:
+Sistema do servidor:
+Tipo de dados de download do servidor:
+Tipo de dados de upload do servidor:
+Você deve se conectar a um servidor antes de realizar esta operação.
+Insira um arquivo remoto a ser hash.
+Insira um diretório remoto a ser hash.
+Insira um diretório remoto.
+Hash recursivo para FTP
+Se o hash recursivamente de um diretório. Observe que nem todos os servidores FTP suportam isso.
+Velocidade do clock do processador:
+Suporte ao processador SSE2:
+Número total de processadores:
+Tamanho do disco:
+Memória total:
+Placa de vídeo:
+Modelo de disco:
+Número máximo de e-mails em uma página
+Cultura do idioma atual
+Se você tiver certeza de que abriu a seção correta, confira esta mensagem:
+Configurações diversas...
+Configurações de cores...
+Executa um comando do servidor FTP
+Digite o endereço e a porta do servidor POP3 (<endereço> ou <endereço>:[porta]):
+Estilo de prompt POP3 para e-mail
+Enviar intervalo de ping POP3
+Escreva como você deseja que o prompt do servidor POP3 seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
+Quantos milissegundos para enviar o ping POP3?
+Usar POP3
+Se deve usar POP3. Desabilitar isso usará SMTP.
+Criptografa uma string usando CRC32
+Abre o cliente de e-mail
+de correio transferido...
+As configurações para este protetor de tela estão disponíveis aqui.
+Testa a funcionalidade da tabela
+Edita a linha especificada
+Adiciona as novas linhas no final do arquivo
+Digite o texto que deseja anexar ao final do arquivo. Quando terminar, escreva "EOF" em sua própria linha.
+Nome de anfitrião
+Nome do usuário
+Tipo de dados
+Codificação
+Criptografia
+Protocolos
+Mostrar o progresso da transferência de e-mail
+Progresso da transferência de correio
+Progresso da transferência de correio (único)
+Se ativado, o shell de correio mostrará quantos bytes foram transmitidos durante o download do correio.
+Escreva como você deseja que seu estilo de progresso de transferência de correio seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para tamanho transferido e {1} para tamanho total.
+Escreva como você deseja que seu estilo de progresso de transferência de correio seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para o tamanho transferido.
+Fuso horário:
+Hoje é {0}
+A hora atual é {0}
+Cor do separador de tabela
+Cor do cabeçalho da tabela
+Cor do valor da tabela
+Possíveis respostas
+O arquivo mod não foi especificado.
+Tentando instalar um mod já instalado. Atualizando mod...
+Falha na instalação para
+O arquivo mod fornecido é incompatível.
+Falha na desinstalação para
+Abre um URL
+Imprimir números de linha no conteúdo do arquivo de impressão
+Faz com que o comando \"cat\" imprima os números de linha do arquivo.
+Versão transliterada
+Versão traduzida
+Dispensa todas as notificações
+Baixando...
+Enviando...
+Mostrar notificação para o progresso do download
+Mostrar notificação para o progresso do upload
+Mostra a notificação mostrando o progresso do download.
+Mostra a notificação mostrando o progresso do upload.
+Verifica se a string traduzível existe nos recursos KS
+String encontrada nos recursos de localização.
+String não encontrada nos recursos de localização.
+Inicia o kernel silenciosamente
+Injeta um comando para iniciar no próximo login
+Inicia o kernel em modo de segurança, desabilitando todos os mods
+Como o modo de segurança, mas também desabilita o multiusuário e algumas personalizações
+Não havia argumentos suficientes.
+Cor do canto superior esquerdo da barra de rampa
+Cor do canto superior direito da barra de rampa
+Cor do canto inferior esquerdo da barra de rampa
+Cor do canto inferior direito da barra de rampa
+Cor do quadro superior para barra de rampa
+Cor do quadro inferior para barra de rampa
+Cor do quadro esquerdo para barra de rampa
+Cor da moldura certa para a barra de rampa
+Use cores de borda para barra de rampa
+Use as cores da borda para a barra de rampa. Se desabilitado, irá gerar uma barra cinza.
+Inicia o shell HTTP
+Sai do shell HTTP e retorna ao kernel
+Define o site HTTP. Deve ser um URI válido.
+Obtém a resposta do servidor HTTP usando a solicitação especificada
+Exclui conteúdo do servidor HTTP
+Ocorreu um erro no shell HTTP:
+Mensagem HTTP: O comando solicitado {0} não foi encontrado. Consulte 'ajuda' para obter uma lista de comandos disponíveis especificados no shell HTTP.
+Obtém a string do servidor HTTP usando a solicitação especificada
+Obtendo {0}...
+O formato de URI do site é inválido.
+Configurando o site para
+As cores não exigem uma reinicialização, mas a maioria das configurações exige uma reinicialização.
+Sem ajuda para o argumento "{0}".
+Pressione A nos comentários de ódio para se desculpar. Pressione T nos comentários de amor para agradecer. Pressione Q para sair do jogo.
+Você se desculpou com um comentário de ódio! Excelente!
+Desculpe-me por amar o comentário. Não esta bom o suficiente.
+Você acabou de agradecer ao hater pelo comentário de ódio!
+Dificuldade padrão para SpeedPress
+Tempo limite de pressionamento de tecla para SpeedPress
+Selecione sua dificuldade preferida.
+Quantos milissegundos esperar pelo pressionamento da tecla antes do tempo limite? (Na dificuldade personalizada)
+Substitui uma palavra ou frase por outra usando expressões regulares
+Substitui uma palavra ou frase por outra em uma linha usando expressões regulares
+Consulta uma palavra em uma linha especificada ou em todas as linhas usando expressões regulares
+Encontrar uma configuração
+Escreva o que deseja pesquisar.
+Nada é encontrado. Certifique-se de ter escrito a configuração corretamente.
+Empacota um arquivo local para o arquivo
+Não pode embalar nada.
+Descrição da resposta
+Porta do host
+Para obter mais informações sobre os termos e condições de uso deste software, visite
+Tipo de saída de escolha padrão
+Verifica todas as configurações do KS para ver se as variáveis ​​estão escritas corretamente
+Essas entradas de configuração têm variáveis ​​ou enumerações inválidas e precisam ser corrigidas:
+Arquivo {0} não encontrado
+Cria um array de variáveis ​​com os valores fornecidos
+Escreva o número da configuração para onde ir. Qualquer outro caractere significa voltar.
+Verifica todos os números de linha de texto de localização para ver se são todos iguais
+Incompatibilidade de linha em
+Insira um número de usuário.
+Incluir usuários anônimos
+Incluir usuários com deficiência
+Inclui os usuários anônimos na lista
+Inclui os usuários com deficiência na lista
+Ordenar a lista
+Classifica a lista de sistemas de arquivos profissionalmente.
+Fornece uma escolha de seleção
+Comandos Shell não implementados!!!
+Mostrar o título RSS mais recente no login
+URL do título RSS
+A cada login, ele mostrará o título RSS mais recente do URL do título selecionado.
+URL do título RSS a ser usado ao mostrar o título mais recente. Este é geralmente o seu feed favorito.
+Últimas notícias:
+Falha ao receber as últimas notícias.
+Cor da opção selecionada
+Mostrar rastreamento de pilha no erro do kernel
+Se houver algum erro de kernel, escolha se deseja ou não imprimir o rastreamento de pilha no console.
+O mod pode ser carregado, mas esses avisos podem afetar a maneira como o mod funciona:
+O protetor de tela pode ser carregado, mas esses avisos podem afetar a maneira como o protetor de tela funciona:
+Salvar configurações como
+Carregar configurações de
+Onde você deseja salvar as configurações atuais do kernel?
+Não é possível salvar as configurações do kernel em cima do arquivo existente.
+De onde você deseja carregar as configurações atuais do kernel?
+Verifica se as strings traduzíveis existem nos recursos KS
+Combina os dois arquivos de texto ou mais no arquivo de saída.
+Falha ao combinar arquivos.
+Tempo limite de busca de feed RSS
+Quantos milissegundos esperar antes do tempo limite de busca do feed RSS?
+Encha as caixas
+Desenhamos a caixa como um todo ou desenhamos apenas a borda?
+Atraso de estágio em milissegundos
+Quantos milissegundos esperar antes de desenhar o próximo estágio?
+Próximo intervalo de podridão de rampa
+Quantos milissegundos esperar antes de apodrecer uma extremidade da próxima rampa?
+Verifique a cota de depuração
+Verificamos se o sistema de depuração precisa verificar a cota antes de gravar no depurador?
+Quantos milissegundos foram realmente necessários para dormir?
+Falha ao adicionar um evento.
+Falha ao remover um evento.
+Não foram fornecidos argumentos suficientes para adicionar um evento.
+Não há argumentos suficientes fornecidos para remover um evento.
+Não há argumentos suficientes fornecidos para manipulação de eventos.
+Falha ao adicionar ou remover um lembrete.
+Não foram fornecidos argumentos suficientes para adicionar ou remover um lembrete.
+Não há argumentos suficientes fornecidos para manipulação de lembretes.
+Lembrete sem título
+Evento sem título
+Agora é dia de evento!
+Não perca isso!
+Ação inválida.
+Um simples cronômetro
+Iniciar ou parar
+Colo
+Redefinir
+Um temporizador simples
+Comece a (re)contagem regressiva
+Definir intervalo
+O tempo limite indicado não é numérico.
+Especifique o tempo limite em milissegundos
+Salve todos os eventos e/ou lembretes de forma destrutiva
+Se ativado, exclui todos os eventos e/ou lembretes antes de salvá-los usando o comando calendar.
+Verifique as novas tentativas de transmissão FTP
+Tempo limite de conexão FTP
+Tempo limite de conexão de dados FTP
+Versões de IP de FTP
+Quantas vezes verificar o upload e download e tentar novamente se a verificação falhar antes que o download falhe como um todo?
+Quantos milissegundos esperar antes do tempo limite da conexão FTP?
+Quantos milissegundos esperar antes do tempo limite da conexão de dados FTP?
+Escolha a versão do Internet Protocol que o servidor FTP suporta e que o cliente FTP usa.
+Tentando iniciar o RPC enquanto ele já foi iniciado.
+Caractere do canto superior esquerdo para roda de cores RGB
+Caractere do canto superior direito para roda de cores RGB
+Caractere do canto inferior esquerdo para roda de cores RGB
+Caractere do canto inferior direito para roda de cores RGB
+Caractere de quadro superior para roda de cores RGB
+Caractere de quadro inferior para roda de cores RGB
+Caractere de quadro esquerdo para roda de cores RGB
+Caractere de quadro direito para roda de cores RGB
+Localiza um arquivo no diretório especificado ou no diretório atual
+Converte as terminações de linha para o formato da plataforma atual ou para o formato personalizado especificado
+Tamanho total na pasta:
+Mostrar tamanho total na lista
+Se ativado, mostra o tamanho total da pasta na lista, dependendo de como calcular os tamanhos das pastas de acordo com a configuração.
+Você está em dia!
+Formatação JSON padrão para shell JSON
+Seleciona a formatação JSON padrão (embelezada ou reduzida) para o shell JSON salvar.
+Baixei a atualização com sucesso!
+Baixar atualizações automaticamente
+Se houver alguma atualização, o kernel fará o download automaticamente.
+Raio de explosão de fogos de artifício
+Quantos blocos (até 10) é o raio de explosão do fogo de artifício quando aceso?
+Este comando tem as opções abaixo que alteram como ele funciona:
+Imprime os números de linha que seguem a linha que está sendo impressa
+Impede a impressão dos números de linha
+Sempre use a versão transliterada
+Sempre use a versão traduzida
+Forçar troca de idioma
+Indique que a resposta pode ter mais de um caractere
+Indique que a resposta pode levar apenas um caractere
+Imprima a pergunta e as respostas em uma linha
+Imprima a pergunta e as respostas em duas linhas
+Imprima a pergunta e as respostas da maneira moderna
+Imprima a pergunta e as respostas em uma tabela
+Mostra os detalhes do arquivo na lista
+Suprime as mensagens irritantes de "permissão negada"
+Mostra todos os fusos horários
+Inicia o jogo na dificuldade fácil
+Inicia o jogo em dificuldade média
+Inicia o jogo na dificuldade difícil
+Inicia o jogo na dificuldade muito difícil
+Inicia o jogo na dificuldade personalizada. Observe que o tempo limite personalizado em milissegundos deve ser escrito como argumento.
+Mostra as informações do sistema
+Mostra as informações de hardware
+Mostra as informações do usuário
+Mostra a mensagem do dia
+Mostra a mensagem do dia após o login
+Mostra todas as informações
+Cria um diretório que contém o conteúdo do arquivo ZIP
+Mostra todas as cidades disponíveis
+Compressão rápida
+Sem compressão
+Não crie diretório base no arquivo
+Unidade em ticks
+Desconecta-se do servidor vergonhosamente
+Indica que o caminho de destino é absoluto
+Salva o arquivo JSON, embelezando-o no processo
+Salva o arquivo JSON, minimizando-o no processo
+Obtém o estilo de finalização de linha do arquivo de texto
+Limpa todos os eventos disparados
+Ativar depuração de eventos
+Habilita a depuração para o sistema de eventos do kernel
+Fonte Figlet
+Escreva uma fonte figlet compatível com a biblioteca Figgle. Consulte a documentação da biblioteca para obter mais informações
+Falha ao instalar o idioma personalizado {0}.
+O arquivo de metadados necessário para instalar o idioma personalizado não existe.
+As informações de metadados necessárias para instalar o idioma personalizado não fornecem as localizações necessárias.
+Falha ao desinstalar o idioma personalizado {0}.
+O arquivo de metadados necessário para desinstalar o idioma personalizado não existe.
+As informações de metadados necessárias para desinstalar o idioma personalizado não fornecem as localizações necessárias.
+O comprimento do idioma inglês não corresponde ao comprimento do token de idioma fornecido.
+O idioma já existe e não pode ser substituído.
+Falha ao desinstalar o idioma personalizado. Muito provavelmente não existe.
+Falha ao instalar idiomas personalizados.
+Falha ao desinstalar idiomas personalizados.
+Falha ao desinstalar idiomas personalizados. Consulte a exceção interna para obter mais informações.
+Escreva a senha do administrador. Certifique-se de não usar esta conta a menos que realmente saiba o que está fazendo.
+Você deve escrever a senha do administrador.
+Informações de licença
+Gerencie seus idiomas
+Idioma não encontrado ou arquivo com caracteres inválidos.
+O idioma não é especificado.
+O gerenciamento de idioma está desabilitado no modo de segurança.
+Nome curto do idioma:
+Nome completo do idioma:
+Idioma transliterável:
+Idioma personalizado:
+Novo banner de boas-vindas
+Tela inicial elegante
+Mostra o novo banner de boas-vindas renderizado pelo Figlet
+Ativa a elegante tela inicial na inicialização. Observe que ele desabilitará o prompt de argumento e testará a pré-inicialização do shell.
+Nome inicial
+Nome do splash dos splashes disponíveis implementados no kernel.
+MOTD padrão gerado.
+MAL padrão gerado.
+Conta do sistema inicializada
+Usuários inicializados
+Permissões carregadas
+Bem vinda!
+Iniciando o depurador remoto...
+Erro de conexão do depurador remoto
+Notificar sobre erro de conexão de depuração remota
+Se ativado, usará o sistema de notificação para notificar o host sobre um erro de conexão de depuração remota. Caso contrário, usará a escrita padrão do console.
+Fonte Figlet para temporizador
+Ativar Figlet para temporizador
+Se habilitado, usará figlet para timer. Observe que ele precisa de uma grande tela de console para renderizar a hora corretamente com o Figlet ativado.
+Erro ao analisar argumentos de linha de comando de pré-inicialização: {0}
+Redefine o kernel para as configurações de fábrica
+Ignora a detecção de tamanho do console
+Parece que você está ignorando a detecção de tamanho do console. As coisas podem não funcionar corretamente em telas pequenas.
+Para ter uma experiência melhor, redimensione a janela do console enquanto ainda estiver nesta tela. Pressione qualquer tecla para continuar...
+Seu console é muito pequeno para funcionar corretamente:
+Fonte de figlet de banner
+Imprime uma string no console usando tipo de cor e impressão de linha com suporte a Figlet
+Imprime uma string no console usando tipo de cor e impressão de linha com suporte a formato e Figlet
+Remove permanentemente uma mensagem
+Remove permanentemente todas as mensagens do destinatário
+Desfazer a remoção de uma mensagem
+Desfaz a remoção de todas as mensagens do destinatário
+Desfazer exclusão não é implementado para POP3.
+Mostrar a contagem de comandos na ajuda
+Mostrar a contagem de comandos do shell na ajuda
+Mostrar os comandos mod contam com ajuda
+Mostrar a contagem de aliases com ajuda
+Mostra a contagem de comandos na lista de comandos, controlada pelos três switches count show para diferentes tipos de comandos.
+Executa comandos quando as expressões UESH são satisfeitas
+A condição não foi encontrada na expressão.
+A condição {0} requer {1} argumentos. Obteve {2}.
+A condição precisa ser colocada no meio.
+A condição precisa ser colocada no início.
+Erro ao analisar a expressão devido a um erro de sintaxe.
+Falha ao satisfazer a condição. Mais informações aqui:
+Caractere de máscara de senha
+Um caractere que mascara a senha. Deixe em branco para maior segurança.
+Sai do shell se estiver executando no subshell
+Não pode matar a concha mãe!
+Não é possível sair do subshell.
+Arquivo não especificado. Saindo do escudo...
+As configurações para esta tela inicial estão disponíveis aqui.
+Cor da barra de progresso
+Abre as configurações do protetor de tela
+Abre as configurações de splash
+Lista as variáveis ​​UESH disponíveis
+Localização do texto do progresso
+Selecione seu local de texto de progresso preferido.
+Você só pode escrever os números.
+Pressione "q" para sair.
+Baixando nomes...
+Devido a dificuldades técnicas, não podemos listar as propriedades do adaptador em sistemas Unix.
+Ativa o modo de depuração
+Solicita argumentos
+Ativar o modo preto e branco
+Torna a discoteca a preto e branco. Vai realmente machucar seus olhos se for muito rápido, então não é recomendado se você estiver tendo uma apreensão de imagens rápidas.
+Parece que você estava executando uma versão não compatível. É altamente recomendável não usar esta versão.
+Carregar cores atuais
+Opção de cor alternativa
+Os usuários contam para comentários de amor ou ódio
+Quantos usuários devem estar na sala de comentários de amor ou ódio?
+Lista os idiomas disponíveis
+Idiomas disponíveis:
+Argumentos de linha de comando:
+Argumentos de linha de comando de pré-inicialização:
+Abre a documentação da API do mod para a estrutura do código-fonte em sua forma mais atual

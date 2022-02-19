@@ -983,3 +983,675 @@ Nyomja meg bármelyik gombot a kézikönyv oldalának elolvasásához...
 Ezen a kézikönyvoldalon dolgozni kell:
 A(z) {0} kézi oldal nem található.
 Mod kézikönyv
+Elérhető kernel argumentumok:
+Nyomja meg a "q" gombot, ha végzett.
+Több kernel argumentum elválasztható vesszővel szóközök nélkül, például:
+Több beadott parancs kettősponttal és szóközzel választható el, például:
+A kért {0} argumentum nem található.
+Helyrehozhatatlan hiba az argumentumban:
+Titkosítja a karakterláncot az SHA512 használatával
+Titkosítja a karakterláncot az SHA384 használatával
+SHA256 segítségével titkosítja a karakterláncot
+SHA1 használatával titkosítja a karakterláncot
+Titkosítja a karakterláncot MD5 használatával
+hol lesz a beépített mentés
+A mod rész semmi.
+A modok leállítása nem engedélyezett csökkentett módban.
+A mod már elindult!
+A mod még nem indult el!
+Parancshasználat:
+Alkatrész fájl neve:
+Alkatrész fájl elérési útja:
+Hiba a képernyővédő indításakor:
+Érvénytelen útvonaltípus.
+Érvénytelen kernelútvonal-típus.
+Az előző rendszerindítás nem sikerült
+A JSON-szerkesztő még nem nyitott meg egy fájlfolyamot.
+A JSON-fájlban lévő tulajdonság nem található.
+Tulajdonság eltávolítva.
+Új tulajdonságot ad hozzá a JSON-fájl végéhez
+Eltávolít egy tulajdonságot a JSON-fájlból
+Kilép a JSON-héjból
+A változtatások mentése nélkül kilép a JSON-héjból
+Menti a JSON fájlt
+Megnyitja a JSON-héjat
+Kinyomtatja a JSON-fájlt
+Következő rámpaintervallum
+Aktiválja a 255 szín támogatását a Rámpához.
+Aktiválja a valódi színek támogatását a Rámpához.
+Hány milliszekundumot kell várni a következő rámpa kitöltése előtt?
+Az értesítés címének színe
+Értesítés leírásának színe
+Az értesítési folyamat színe
+Értesítési hiba színe
+Kérdés színe
+A siker színe
+Felhasználói dollár szín
+Tipp színe
+Elválasztó szöveg színe
+Elválasztó szín
+Lista cím színe
+Fejlesztésre figyelmeztető szín
+Színpadi idő színe
+Haladás színe
+Hátsó opció színe
+Rajzoljon értesítési szegélyt
+Lefedi az értesítést a szegéllyel.
+Lépjen kapcsolatba a mod szállítójával, hogy frissítse a modot a kompatibilis verzióra.
+Alacsony prioritású szegélyszín
+Közepes prioritású szegélyszín
+Magas prioritású szegélyszín
+Értesítést küld a folyamatról a vevő teszteléséhez
+Teszteli a színkört
+A helyi kernelidőt mutatja
+A helyi kernel dátumát mutatja
+Mutatja a helyi kernel dátumát és idejét
+UTC kernelidőt mutat
+Mutatja az UTC kernel dátumát
+Mutatja az UTC kernel dátumát és idejét
+MOTD útvonal
+MAL útvonal
+Melyik fájl a MOTD szövegfájl? Írjon egy abszolút elérési utat a szövegfájlhoz.
+Melyik fájl a MAL szövegfájl? Írjon egy abszolút elérési utat a szövegfájlhoz.
+Feketelistás modok
+Írja be azoknak a modoknak a fájlnevét, amelyek indításkor nem fognak futni. Ha végzett, írjon "q"-t. Írjon egy mínusz jelet az elérési út mellé egy meglévő mod eltávolításához.
+A(z) {0} mod feketelistán van.
+Újratölti az összes modot
+Hozzáad egy modot a feketelistához
+Eltávolítja a modot a feketelistáról
+Idő és dátum UTC-ben: {0}
+A megadott JSON shell parancs nem található.
+Alkalmazásinformációk megjelenítése rendszerindításkor
+Parancssori argumentumok elemzése
+A szakasz befejezési időpontjainak megjelenítése
+Indítsa el a kernel módosításait rendszerindításkor
+Az aktuális idő megjelenítése bejelentkezés előtt
+Értesítsen bármilyen hibát a rendszerindítás során
+Rövid információkat jelenít meg az alkalmazásról a rendszerindításkor.
+A rendszerindításkor elemzi a parancssori argumentumokat.
+Megmutatja, mennyi időbe telt a kernelnek egy szakasz befejezéséhez.
+A rendszermag módosításainak automatikus indítása rendszerindításkor.
+Megjeleníti az aktuális időt, időzónát és dátumot a bejelentkezés előtt.
+Ha kisebb hiba lép fel a kernel indításakor, értesítse erről a felhasználót.
+Felhasználónév-kérési stílus
+Jelszókérési stílus
+A MAL megjelenítése bejelentkezéskor
+Írja be, hogy milyen legyen a bejelentkezési üzenet. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Írja be, hogy milyen jelszót szeretne kérni. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Megjeleníti a Nap üzenetét a bejelentkezési képernyő megjelenítése után.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Próba injektált parancsok
+Megvizsgálja a beadott parancsokat a kernel shell elején.
+A fájl részleteinek megjelenítése a listában
+A fájlok listázása közben a fájl rövid részleteit mutatja
+A fájl részleteinek megjelenítése az FTP-listában
+Felhasználónév-kérési stílus FTP-hez
+Jelszókérési stílus FTP-hez
+Használja az első FTP-profilt
+Új kapcsolatok hozzáadása az FTP gyorstárcsázáshoz
+Próbálja meg érvényesíteni a biztonságos FTP-tanúsítványokat
+FTP MOTD megjelenítése a csatlakozásnál
+Mindig fogadjon el érvénytelen FTP-tanúsítványokat
+Megmutatja az FTP fájl részleteit a távoli könyvtárak listázása közben.
+Az első FTP-profilt használja az FTP-hez való csatlakozáshoz.
+Ha engedélyezve van, új kapcsolatot ad az FTP gyorstárcsázóhoz.
+Megpróbálja érvényesíteni az FTP-tanúsítványokat. A kikapcsolása nem ajánlott.
+Megjeleníti az adott nap FTP üzenetét bejelentkezéskor.
+Mindig fogadjon el érvénytelen FTP-tanúsítványokat. A bekapcsolása nem javasolt, mivel biztonsági kockázatot jelenthet.
+Felhasználónév-kérési stílus levelekhez
+Jelszókérési stílus levelekhez
+IMAP prompt stílus levelekhez
+SMTP prompt stílus levelekhez
+A levelezőszerver automatikus felismerése
+Levelezési hibakeresés engedélyezése
+Értesítés az új e-mailekről
+GPG jelszóprompt stílus levelekhez
+IMAP ping intervallum küldése
+SMTP ping intervallum küldése
+Levél szöveges formátuma
+Írja be, hogy milyen legyen az IMAP-kiszolgáló promptja. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Írja be, hogy milyen legyen az SMTP-kiszolgáló promptja. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+A levelezőszerver automatikus felismerése a megadott cím alapján.
+Engedélyezi a levelezőszerver hibakeresését.
+Értesít minden új e-mail üzenetről.
+Írja be, hogy milyen legyen a GPG jelszó kérése. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Hány ezredmásodpercben kell elküldeni az IMAP-pinget?
+Hány ezredmásodpercben kell elküldeni az SMTP pinget?
+Szabályozza, hogy a levél szövege hogyan jelenjen meg.
+Egyszerű szöveg
+Folytatott szöveg
+HTML szöveg
+Dúsított szöveg
+Tömörített rich text
+Gazdag szöveg
+A távoli hibakeresés automatikus indítása indításkor
+Távoli hibakeresési üzenet formátuma
+Ha azt szeretné, hogy a távoli hibakeresés elinduljon rendszerindításkor, engedélyezze ezt.
+Meghatározza a távoli hibakeresési üzenet formátumát. {0} a névhez, {1} az üzenethez.
+RSS feed URL prompt stílus
+RSS hírfolyam automatikus frissítése
+Automatikus frissítés RSS feed intervallum
+Írja be, hogy milyennek szeretné az RSS-hírcsatorna-szerver promptját. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Hány ezredmásodpercben kell frissíteni az RSS-hírcsatornát?
+A fájl részleteinek megjelenítése az SFTP-listában
+Felhasználónév-kérési stílus az SFTP-hez
+Új kapcsolatok hozzáadása az SFTP gyorstárcsázáshoz
+Megjeleníti az SFTP-fájl részleteit, miközben listázza a távoli könyvtárakat.
+Ha engedélyezve van, új kapcsolatot ad az SFTP gyorstárcsázóhoz.
+Ping időtúllépés
+Mutasson részletes adapterinformációkat
+Általános hálózati információk megjelenítése
+Százalékos szöveg letöltése
+Szöveg feltöltése százalékban
+Hány ezredmásodpercet kell várni az időtúllépés bejelentése előtt?
+Kinyomtatja a kiterjedt adapterinformációkat, például a csomaginformációkat.
+Általános információkat jelenít meg a hálózatról.
+Írja be, hogy milyen legyen a feltöltési százalékos szöveg. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént. {0} a feltöltött mérethez, {1} a célmérethez, {2} a százalékhoz.
+Írja be, hogy milyen legyen a letöltési százalékos szöveg. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént. {0} a letöltött mérethez, {1} a célmérethez, {2} a százalékhoz.
+Zárás után kérjen jelszót
+A képernyő lezárása után kérjen jelszót
+Minimális vörös színszint
+Minimális zöld színszint
+Minimális kék színszint
+Minimális színszint
+Maximális vörös színszint
+Maximális zöld színszint
+Maximális kék színszint
+Maximális színszint
+Minimális vörös színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Minimális zöld színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Minimális kék színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Minimális színszint. A minimális elfogadott érték 0, a maximális elfogadott érték 255 szín esetén 255 vagy 16 szín esetén 16.
+Maximális vörös színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Maximális zöld színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Maximális kék színszint. A legkisebb elfogadott érték 0, a maximális elfogadott érték 255.
+Maximális színszint. A minimális elfogadott érték 0, a maximális elfogadott érték 255 szín esetén 255 vagy 16 szín esetén 16.
+Előtér színe
+Vonal karakter
+Egy karakter, amely egy sort alkot. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Bal felső sarok karakter az órasávhoz
+Bal felső sarok karakter a percsávhoz
+A bal felső sarok karaktere a másodpercsávhoz
+Jobb felső sarok karakter az órasávhoz
+A jobb felső sarok karakter a percsávhoz
+A jobb felső sarok karaktere a másodpercsávhoz
+Bal alsó sarok karakter az órasávhoz
+Bal alsó sarok karakter a percsávhoz
+Bal alsó sarok karakter a másodpercsávhoz
+Jobb alsó sarok karakter az órasávhoz
+Jobb alsó sarok karakter a percsávhoz
+Jobb alsó sarok karakter a másodpercsávhoz
+Felső keret karakter az órasávhoz
+Felső keret karakter a percsávhoz
+Felső keret karakter a másodpercsávhoz
+Alsó keret karakter az órasávhoz
+Alsó keret karakter a percsávhoz
+Alsó keretkarakter a másodpercsávhoz
+Bal oldali keret karakter az órasávhoz
+Bal oldali keretkarakter a percsávhoz
+Bal oldali keretkarakter a másodpercsávhoz
+Jobb keret karakter az órasávhoz
+A jobb oldali keret karakter a percsávhoz
+Jobb oldali keretkarakter a másodpercsávhoz
+Információs szöveg órákon át
+Tájékoztató szöveg percekig
+Információs szöveg másodpercig
+Minimális vörös színszint órákig
+Minimális zöld színszint órákig
+Minimális kék színszint órákon át
+Minimális színszint órákig
+Maximális vörös színszint órákig
+Maximális zöld színszint órákig
+Maximális kék színszint órákon át
+Maximális színszint órákig
+Minimális vörös színszint percekig
+Minimális zöld színszint percekig
+Minimális kék színszint percekig
+Minimális színszint percekig
+Maximális vörös színszint percekig
+Maximális zöld színszint percekig
+Maximális kék színszint percekig
+Maximális színszint percekre
+Minimális vörös színszint másodpercig
+Minimális zöld színszint másodpercig
+Minimális kék színszint másodpercig
+Minimális színszint másodpercig
+Maximális piros színszint másodpercig
+Maximális zöld színszint másodpercig
+Maximális kék színszint másodpercig
+Maximális színszint másodpercig
+Egy karakter, amely a bal felső sarokhoz hasonlít. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Egy karakter, amely a bal alsó sarokhoz hasonlít. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+A felső kerethez hasonló karakter. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Az alsó keretre hasonlító karakter. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Egy karakter, amely hasonlít a bal oldali keretre. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Egy karakter, amely hasonlít a megfelelő keretre. Ügyeljen arra, hogy csak egy karaktert adjon meg.
+Írja meg, hogyan jelenik meg az aktuális órára vonatkozó információs szöveg. {0} az aktuális órára a 24 órából.
+Írja meg, hogyan jelenik meg az aktuális perc információs szövege. {0} az aktuális percre a 60 percből.
+Írja meg, hogyan jelenik meg az aktuális másodperc információs szövege. {0} az aktuális másodpercben a 60 másodpercből.
+Szöveg szín
+Bal felső sarok karakter a rámpasávhoz
+Jobb felső sarok karakter a rámpasávhoz
+Bal alsó sarok karakter a rámpasávhoz
+Jobb alsó sarok karakter a rámpasávhoz
+Felső keret karakter a rámpasávhoz
+Alsó keret karakter a rámpasávhoz
+Bal oldali keretkarakter a rámpasávhoz
+Jobb oldali keret karakter a rámpasávhoz
+Minimális piros színszint a kezdő színhez
+Minimális zöld színszint a kezdő színhez
+Minimális kék színszint a kezdőszínhez
+Minimális színszint a kezdő színhez
+Maximális piros színszint a kezdő színhez
+A kezdő szín maximális zöld színszintje
+A kezdőszín maximális kék színszintje
+Maximális színszint a kezdő színhez
+Minimális vörös színszint a végszínhez
+Minimális zöld színszint a végszínhez
+Minimális kék színszint a végszínhez
+Minimális színszint a végszínhez
+Maximális vörös színszint a végszínhez
+Maximális zöld színszint a végszínhez
+Maximális kék színszint a végszínhez
+Maximális színszint a végszínhez
+Megoldó minimális száma
+Megoldó maximális száma
+Megoldó show bemenet
+A bal felső sarok karaktere az értesítési szegélyhez
+A jobb felső sarok karaktere az értesítési szegélyhez
+A bal alsó sarok karaktere az értesítési szegélyhez
+A jobb alsó sarok karaktere az értesítési szegélyhez
+Felső keretkarakter az értesítési szegélyhez
+Alsó keretkarakter az értesítési szegélyhez
+Bal oldali keretkarakter az értesítési szegélyhez
+Jobb oldali keretkarakter az értesítési szegélyhez
+Kézi oldalinformációs stílus
+Megjelenik-e, hogy mi van a beviteli promptban.
+Mekkora minimális számot kell választani?
+Mekkora lehet a maximálisan választható szám?
+Írja meg, milyennek szeretné látni a manoldali információkat. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént. {0} a kézi címhez, {1} az átdolgozáshoz.
+A(z) {0} tulajdonság egyik modulon sem található.
+Ez a rész a képernyővédő általános beállításait sorolja fel. Az egyes képernyővédő-beállításokhoz lépjen ki a Beállításokból, és nyissa meg a Képernyővédő beállításait.
+Indítsa el a színkört valódi szín módban
+Ha meg van adva, akkor testreszabott indítási szalaghirdetés jelenik meg helyőrző támogatással. A kernelverzióhoz használhatja a {0}-t.
+Az aktuális nyelv melyik változata használatos a hónapnevek, a naptár stb. módosításához?
+Aktiválja a 255 szín támogatását.
+Aktiválja a valódi színtámogatást.
+Szó törölve a(z) {0}. sorban.
+Karakterlánc lecserélve a(z) {0} sorban.
+A(z) {0} sorszám eltávolítva.
+Tiltsa le a jogosulatlan üzeneteket
+Elrejti a bosszantó üzenetet, ha a listázási funkció nem engedélyezett mappát próbál megnyitni
+FTP szerver információ
+Szerver címe:
+Szerver port:
+Szerver típusa:
+Szerver rendszer típusa:
+Szerver titkosítási módja:
+Szerver adatkapcsolat típusa:
+Szerver rendszer:
+Szerver letöltési adattípusa:
+Szerver feltöltési adattípusa:
+A művelet végrehajtása előtt csatlakoznia kell egy szerverhez.
+Adja meg a kivonatolni kívánt távoli fájlt.
+Adjon meg egy távoli könyvtárat a kivonatoláshoz.
+Adjon meg egy távoli könyvtárat.
+Rekurzív kivonatolás FTP-hez
+Meghatározza, hogy rekurzívan kivonatolja-e a könyvtárat. Kérjük, vegye figyelembe, hogy nem minden FTP-kiszolgáló támogatja ezt.
+Processzor órajele:
+Processzor SSE2 támogatás:
+Processzorok teljes száma:
+Lemez mérete:
+Teljes memória:
+Grafikus kártya:
+Lemez modell:
+E-mailek maximális száma egy oldalon
+A jelenlegi nyelv kultúrája
+Ha biztos abban, hogy a megfelelő részt nyitotta meg, nézze meg ezt az üzenetet:
+Egyéb beállítások...
+Színbeállítások...
+FTP-kiszolgáló parancsot hajt végre
+Írja be a POP3 szerver címét és portját (<cím> vagy <cím>:[port]):
+POP3 prompt stílus levelekhez
+POP3 ping intervallum küldése
+Írja be, hogyan szeretné megjeleníteni a POP3-kiszolgáló promptját. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént.
+Hány ezredmásodpercben kell elküldeni a POP3 pinget?
+Használja a POP3-at
+Használja-e a POP3-at. Ennek letiltása SMTP-t használ.
+CRC32 használatával titkosítja a karakterláncot
+Megnyitja a levelezőklienst
+átvitt levélből...
+A képernyővédő beállításai itt érhetők el.
+Teszteli a tábla működését
+Szerkeszti a megadott sort
+Az új sorokat hozzáadja a fájl végéhez
+Írja be a szöveget, amelyet hozzá szeretne fűzni a fájl végéhez. Ha végzett, írja be az „EOF” szót a saját sorába.
+Gazda neve
+Felhasználónév
+Adattípus
+Kódolás
+Titkosítás
+Protokollok
+A levéltovábbítás folyamatának megjelenítése
+A levéltovábbítás folyamata
+A levéltovábbítás folyamata (egyszeri)
+Ha engedélyezve van, a levelezőhéj megmutatja, hogy hány bájtot továbbított a levél letöltésekor.
+Írja meg, milyen legyen a levéltovábbítás folyamatának stílusa. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént. {0} az átvitt mérethez és {1} a teljes mérethez.
+Írja meg, milyen legyen a levéltovábbítás folyamatának stílusa. Hagyja üresen az alapértelmezett stílus használatához. A helyőrzők elemzése megtörtént. {0} az átvitt mérethez.
+Időzóna:
+Ma {0} van
+A jelenlegi idő: {0}
+Táblázat elválasztó szín
+A táblázat fejlécének színe
+A táblázat értékének színe
+Lehetséges válaszok
+A mod fájl nincs megadva.
+Megpróbál telepíteni egy már telepített modot. Mod frissítése...
+A telepítés sikertelen volt a következőnél
+A megadott mod fájl nem kompatibilis.
+Az eltávolítás sikertelen volt a következőnél
+Megnyit egy URL-t
+Sorszámok nyomtatása a nyomtatási fájl tartalmára
+A \"cat\" paranccsal kinyomtatja a fájl sorszámait.
+Átírt változat
+Lefordított változat
+Elutasít minden értesítést
+Letöltés...
+Feltöltés...
+Értesítés megjelenítése a letöltés folyamatáról
+Értesítés megjelenítése a feltöltés folyamatáról
+Megjeleníti a letöltés folyamatát bemutató értesítést.
+Megjeleníti a feltöltés folyamatát bemutató értesítést.
+Ellenőrzi, hogy a lefordítható karakterlánc létezik-e a KS-erőforrásokban
+Karakterlánc található a lokalizációs erőforrásokban.
+Karakterlánc nem található a lokalizációs erőforrásokban.
+Csendesen elindítja a kernelt
+Parancsot fecskendez be a következő bejelentkezéskor induláshoz
+Elindítja a kernelt csökkentett módban, letiltva minden modot
+Mint a csökkentett mód, de letiltja a többfelhasználós módot és bizonyos testreszabásokat is
+Nem volt elég érv.
+A bal felső sarok színe a rámpasávhoz
+A jobb felső sarok színe a rámpasávhoz
+Bal alsó sarok színe a rámpasávhoz
+A jobb alsó sarok színe a rámpasávhoz
+Felső keret színe a rámpaléchez
+Alsó keretszín a rámpaléchez
+Bal oldali keret színe a rámpasávhoz
+A rámpasáv megfelelő keretszíne
+Használjon szegélyszíneket a rámpasávhoz
+Használja a szegélyszíneket a rámpasávhoz. Ha le van tiltva, szürke sávot generál.
+Elindítja a HTTP shellt
+Kilép a HTTP shellből, és visszatér a kernelhez
+Beállítja a HTTP webhelyet. Érvényes URI-nek kell lennie.
+Lekéri a választ a HTTP-kiszolgálótól a megadott kérés használatával
+Törli a tartalmat a HTTP szerverről
+Hiba történt a HTTP shellben:
+HTTP-üzenet: A kért {0} parancs nem található. Tekintse meg a 'súgót' a HTTP shellben megadott elérhető parancsok listájáért.
+Lekéri a karakterláncot a HTTP-kiszolgálótól a megadott kérés használatával
+{0} letöltése...
+A webhely URI formátuma érvénytelen.
+A webhely beállítása erre:
+A színek nem igényelnek újraindítást, de a legtöbb beállítás újraindítást igényel.
+Nincs segítség a(z) "{0}" argumentumhoz.
+Bocsánatkéréshez nyomja meg az A gombot a gyűlöletkeltő megjegyzéseknél. Nyomja meg a T gombot a szerelmes megjegyzéseknél, hogy megköszönjem. Nyomja meg a Q gombot a játékból való kilépéshez.
+Elnézést kértél egy gyűlöletkeltő megjegyzésért! Kiváló!
+Elnézést kérek a kedves megjegyzésért. Nem elég jó.
+Csak megköszönted a gyűlölködőnek a gyűlölködő megjegyzést!
+A SpeedPress alapértelmezett nehézsége
+A SpeedPress gombnyomási időtúllépése
+Válassza ki a kívánt nehézséget.
+Hány milliszekundumot kell várni a gombnyomásra az időtúllépés előtt? (Egyedi nehézségi fokozatban)
+Szabályos kifejezések használatával lecserél egy szót vagy kifejezést egy másikra
+Szabályos kifejezések használatával lecserél egy szót vagy kifejezést egy másikra a sorban
+Lekérdez egy szót egy megadott sorban vagy az összes sorban reguláris kifejezések használatával
+Keressen egy beállítást
+Írd meg, hogy mit szeretnél keresni.
+Semmi sem található. Győződjön meg arról, hogy helyesen írta be a beállítást.
+Helyi fájlt csomagol az archívumba
+Nem lehet bepakolni semmit.
+Válasz leírása
+Gazda port
+A szoftver használatának feltételeivel kapcsolatos további információkért látogasson el a webhelyre
+Alapértelmezett választás kimeneti típusa
+Ellenőrzi az összes KS beállítást, hogy ellenőrizze, hogy a változók helyesen vannak-e beírva
+Ezek a konfigurációs bejegyzések érvénytelen változókat vagy felsorolásokat tartalmaznak, ezért javítani kell:
+A(z) {0} fájl nem található
+Létrehoz egy változótömböt a megadott értékekkel
+Írja be a kívánt beállítás számát. Minden más karakter visszalépést jelent.
+Ellenőrzi az összes lokalizációs szöveg sorszámát, hogy lássa, mindegyik egyenlő-e
+Vonalhiba be
+Kérjük, adjon meg egy felhasználói számot.
+Névtelen felhasználók felvétele
+Fogyatékkal élő felhasználók felvétele
+Tartalmazza a névtelen felhasználókat a listában
+Tartalmazza a letiltott felhasználókat a listában
+Rendezze a listát
+Professzionálisan rendezi a fájlrendszer listát.
+Választási lehetőséget biztosít
+A shell parancsok nincsenek végrehajtva!!!
+A legújabb RSS címsor megjelenítése bejelentkezéskor
+RSS címsor URL-je
+Minden bejelentkezéskor megjelenik a kiválasztott címsor URL-jének legújabb RSS-címe.
+Az RSS címsor URL-je, amelyet a legújabb címsor megjelenítésekor kell használni. Általában ez a kedvenc hírfolyamod.
+Legfrissebb hírek:
+Nem sikerült megszerezni a legfrissebb híreket.
+Kiválasztott opció színe
+Veremkövetés megjelenítése kernelhibán
+Ha kernelhiba van, válassza ki, hogy kinyomtatja-e a verem nyomkövetését a konzolra.
+A mod betölthető, de ezek a figyelmeztetések befolyásolhatják a mod működését:
+A képernyővédő betölthető, de ezek a figyelmeztetések befolyásolhatják a képernyővédő működését:
+Beállítások mentése másként
+Beállítások betöltése innen
+Hová szeretné menteni a jelenlegi kernelbeállításokat?
+A kernelbeállítások nem menthetők a meglévő fájl tetejére.
+Honnan szeretné betölteni az aktuális kernelbeállításokat?
+Ellenőrzi, hogy a lefordítható karakterláncok léteznek-e a KS-erőforrásokban
+A két vagy több szövegfájlt egyesíti a kimeneti fájlba.
+Nem sikerült egyesíteni a fájlokat.
+Az RSS-hírcsatorna letöltésének időtúllépése
+Hány ezredmásodpercet kell várni, mielőtt az RSS-hírcsatorna lekérése időtúllépést szenvedne?
+Töltse ki a dobozokat
+A doboz egészét rajzoljuk meg, vagy csak a szegélyt?
+Fokozat késleltetés ezredmásodpercben
+Hány milliszekundumot kell várni a következő szakasz megrajzolásához?
+Következő rámpa rothadás intervallum
+Hány ezredmásodpercet kell várni, mielőtt a következő rámpa egyik vége elkorhadna?
+Ellenőrizze a hibakeresési kvótát
+Ellenőrizzük, hogy a hibakereső rendszernek ellenőriznie kell-e a kvótát, mielőtt írna a hibakeresőnek?
+Tényleg hány ezredmásodperc kellett aludni?
+Nem sikerült hozzáadni egy eseményt.
+Nem sikerült eltávolítani egy eseményt.
+Nincs elég argumentum egy esemény hozzáadásához.
+Nincs elég argumentum egy esemény eltávolításához.
+Nincs elég érv az eseménymanipulációhoz.
+Nem sikerült emlékeztetőt hozzáadni vagy eltávolítani.
+Nincs elég argumentum egy emlékeztető hozzáadásához vagy eltávolításához.
+Nincs elég érv az emlékeztetők manipulálásához.
+Névtelen emlékeztető
+Névtelen esemény
+Most eseménynap van!
+Ezt ne hagyd ki!
+Érvénytelen művelet.
+Egyszerű stopper
+Indítsa el vagy állítsa le
+Lap
+Visszaállítás
+Egy egyszerű időzítő
+Kezdje el a visszaszámlálást
+Állítsa be az intervallumot
+A jelzett időtúllépés nem numerikus.
+Adja meg az időtúllépést ezredmásodpercben
+Mentsen el minden eseményt és/vagy emlékeztetőt pusztító módon
+Ha engedélyezve van, törli az összes eseményt és/vagy emlékeztetőt, mielőtt az összeset elmenti a naptár paranccsal.
+Ellenőrizze az FTP átviteli próbálkozásokat
+FTP kapcsolat időtúllépés
+FTP adatkapcsolat időtúllépés
+FTP IP verziók
+Hányszor kell ellenőrizni a feltöltést, a letöltést és újrapróbálni, ha az ellenőrzés sikertelen, mielőtt a letöltés összességében meghiúsulna?
+Hány ezredmásodpercet kell várni az FTP-kapcsolat időtúllépéséig?
+Hány ezredmásodpercet kell várni az FTP-adatkapcsolat időtúllépéséig?
+Válassza ki az Internet Protokoll azon verzióját, amelyet az FTP-kiszolgáló támogat, és amelyet az FTP-kliens használ.
+Megpróbálja elindítani az RPC-t, miközben az már elindult.
+A bal felső sarok karaktere az RGB színkörhöz
+A jobb felső sarok karaktere az RGB színkörhöz
+Bal alsó sarok karakter az RGB színkörhöz
+Jobb alsó sarok karakter az RGB színkörhöz
+Felső keret karakter az RGB színkörhöz
+Alsó keret karakter az RGB színkörhöz
+Bal oldali keret karakter az RGB színkörhöz
+Jobb keret karakter az RGB színkörhöz
+Megkeres egy fájlt a megadott könyvtárban vagy az aktuális könyvtárban
+A sorvégződéseket az aktuális platform formátumára vagy meghatározott egyéni formátumra konvertálja
+Teljes méret a mappában:
+Teljes méret megjelenítése a listában
+Ha engedélyezve van, megjeleníti a teljes mappaméretet a listában, attól függően, hogy hogyan számítja ki a mappaméreteket a konfigurációnak megfelelően.
+Naprakész vagy!
+Alapértelmezett JSON-formátum a JSON-héjhoz
+Kiválasztja az alapértelmezett JSON-formátumot (szépített vagy kicsinyített) a mentendő JSON-héjhoz.
+Sikeresen letöltötte a frissítést!
+A frissítések automatikus letöltése
+Ha van frissítés, a kernel automatikusan letölti azt.
+A tűzijáték robbanási sugara
+Hány blokk (legfeljebb 10) a tűzijáték robbanási sugara meggyújtott állapotban?
+Ez a parancs az alábbi kapcsolókkal rendelkezik, amelyek megváltoztatják a működését:
+Kinyomtatja a nyomtatott sort követő sorszámokat
+Megakadályozza a sorszámok kinyomtatását
+Mindig az átírt változatot használja
+Mindig a lefordított verziót használja
+Nyelvváltás kényszerítése
+Jelezze, hogy a válasz egynél több karakterből állhat
+Jelezze, hogy a válasz csak egy karakterből állhat
+Nyomtassa ki a kérdést és a válaszokat egy sorban!
+Nyomtassa ki két sorban a kérdést és a válaszokat!
+Nyomtassa ki a kérdést és a válaszokat modern módon
+Nyomtassa ki táblázatba a kérdést és a válaszokat!
+Megjeleníti a fájl részleteit a listában
+Elnyomja a bosszantó "engedély megtagadva" üzeneteket
+Megjeleníti az összes időzónát
+Elindítja a játékot könnyű nehézségi fokozatban
+Közepes nehézségi fokozatban indítja el a játékot
+Elindítja a játékot nehéz nehézségi fokon
+Nagyon nehéz nehézségekkel kezdi a játékot
+Elindítja a játékot egyéni nehézségi fokozatban. Kérjük, vegye figyelembe, hogy az egyéni időtúllépést ezredmásodpercben kell argumentumként írni.
+Megjeleníti a rendszerinformációkat
+Megmutatja a hardver információkat
+Megjeleníti a felhasználói információkat
+Megmutatja a nap üzenetét
+A bejelentkezés utáni nap üzenetét mutatja
+Minden információt megjelenít
+Létrehoz egy könyvtárat, amely tartalmazza a ZIP fájl tartalmát
+Megjeleníti az összes elérhető várost
+Gyors tömörítés
+Nincs tömörítés
+Ne hozzon létre alapkönyvtárat az archívumban
+Egység a kullancsokban
+Szégyenteljesen lekapcsol a szerverről
+Azt jelzi, hogy a cél elérési útja abszolút
+Menti a JSON-fájlt, és közben megszépíti
+Menti a JSON-fájlt, és a folyamat során kicsinyíti azt
+Lekéri a sorvégi stílust a szöveges fájlból
+Törli az összes aktivált eseményt
+Eseményhibakeresés engedélyezése
+Lehetővé teszi a kernel eseményrendszerének hibakeresését
+Figlet betűtípus
+Írjon egy figlet betűtípust, amelyet a Figgle könyvtár támogat. További információkért tekintse meg a könyvtár dokumentációját
+Nem sikerült telepíteni a(z) {0} egyéni nyelvet.
+Az egyéni nyelv telepítéséhez szükséges metaadatfájl nem létezik.
+Az egyéni nyelv telepítéséhez szükséges metaadat-információk nem biztosítják a szükséges lokalizációkat.
+Nem sikerült eltávolítani a(z) {0} egyéni nyelvet.
+Az egyéni nyelv eltávolításához szükséges metaadatfájl nem létezik.
+Az egyéni nyelv eltávolításához szükséges metaadat-információk nem biztosítják a szükséges lokalizációkat.
+Az angol nyelv hossza nem egyezik a megadott nyelvi token hosszával.
+A nyelv már létezik, és nem írható felül.
+Nem sikerült eltávolítani az egyéni nyelvet. Valószínűleg nem is létezik.
+Nem sikerült telepíteni az egyéni nyelveket.
+Nem sikerült eltávolítani az egyéni nyelveket.
+Nem sikerült eltávolítani az egyéni nyelveket. További információért lásd a belső kivételt.
+Írja be a rendszergazdai jelszót. Győződjön meg arról, hogy csak akkor használja ezt a fiókot, ha valóban tudja, mit csinál.
+Meg kell írnia a rendszergazdai jelszót.
+Licenc információk
+Kezelje nyelveit
+A nyelv nem található, vagy a fájl érvénytelen karaktereket tartalmaz.
+A nyelv nincs megadva.
+A nyelvkezelés csökkentett módban le van tiltva.
+Nyelvi rövid név:
+Nyelv teljes név:
+Átírható nyelv:
+Egyéni nyelv:
+Új üdvözlő banner
+Stílusos splash képernyő
+Megjeleníti az új Figlet által megjelenített üdvözlő szalaghirdetést
+Lehetővé teszi a stílusos indítóképernyőt indításkor. Kérjük, vegye figyelembe, hogy ez letiltja az argumentumpromptot és a rendszerindítás előtti teszthéjat.
+Splash név
+Splash név a kernelben megvalósított elérhető fröccsenésekből.
+Létrehozott alapértelmezett MOTD.
+Létrehozott alapértelmezett MAL.
+A rendszerfiók inicializálva
+A felhasználók inicializálva
+Engedélyek betöltve
+Üdvözöljük!
+A távoli hibakereső indítása...
+Távoli hibakereső csatlakozási hiba
+Távoli hibakeresési kapcsolati hiba értesítése
+Ha engedélyezve van, az értesítési rendszerrel értesíti a gazdagépet a távoli hibakeresési kapcsolati hibáról. Ellenkező esetben az alapértelmezett konzolírást fogja használni.
+Figlet betűtípus az időzítőhöz
+Figlet engedélyezése az időzítőhöz
+Ha engedélyezve van, az időzítőként a figlet-et fogja használni. Kérjük, vegye figyelembe, hogy nagy konzolképernyőre van szüksége ahhoz, hogy megfelelően jelenítse meg az időt, ha a Figlet engedélyezve van.
+Hiba a rendszerindítás előtti parancssori argumentumok elemzése során: {0}
+Visszaállítja a kernelt a gyári beállításokra
+Megkerüli a konzolméret észlelését
+Úgy tűnik, hogy megkerüli a konzolméret-észlelést. Előfordulhat, hogy a dolgok nem működnek megfelelően kis képernyőkön.
+A jobb élmény érdekében módosítsa a konzolablak méretét, miközben továbbra is ezen a képernyőn van. Nyomjon meg egy gombot a folytatáshoz...
+A konzol túl kicsi a megfelelő működéshez:
+Banner figlet betűtípus
+Karakterláncot nyomtat a konzolra színtípussal és vonalnyomtatással Figlet támogatással
+Karakterláncot nyomtat a konzolra színtípussal és vonalnyomtatással formátummal és Figlet támogatással
+Véglegesen eltávolítja az üzenetet
+Véglegesen eltávolítja az összes üzenetet a címzetttől
+Üzenet eltávolításának visszavonása
+Visszavonás az összes üzenet eltávolítása a címzetttől
+A törlés visszavonása nincs megvalósítva a POP3 esetében.
+Mutassa meg a parancsokat, amelyek segítségre számíthatnak
+A shell parancsok megjelenítése számíthat a segítségre
+A mod parancsok megjelenítése számíthat a segítségre
+Az álnevek megjelenítése számíthat a segítségre
+Megjeleníti a parancsok számát a parancslistában, amelyet a különböző típusú parancsokhoz tartozó három count show kapcsoló vezérel.
+Parancsokat hajt végre, ha az UESH-kifejezések teljesülnek
+A feltétel nem található a kifejezésben.
+A(z) {0} feltételhez {1} argumentum szükséges. Megvan a következő: {2}.
+A feltételt középre kell helyezni.
+A feltételt az elejére kell helyezni.
+Hiba a kifejezés elemzésekor szintaktikai hiba miatt.
+Nem sikerült kielégíteni a feltételt. További információ itt:
+Jelszómaszk karakter
+Egy karakter, amely elfedi a jelszót. Hagyja üresen a nagyobb biztonság érdekében.
+Kilép a shellből, ha alhéjon fut
+Nem lehet megölni az anyahéjat!
+Nem lehet kijelentkezni az alhéjból.
+A fájl nincs megadva. Kilépés a shellből...
+A kezdőképernyő beállításai itt érhetők el.
+A folyamatjelző sáv színe
+Megnyitja a képernyővédő beállításait
+Megnyitja a splash beállításokat
+Felsorolja az elérhető UESH-változókat
+Előrehaladási szöveg helye
+Válassza ki a kívánt előrehaladási szöveg helyét.
+Csak számokat írhat.
+Nyomja meg a "q" gombot a kilépéshez.
+Nevek letöltése...
+Technikai nehézségek miatt nem tudjuk felsorolni az adapter tulajdonságait Unix rendszereken.
+Engedélyezi a hibakeresési módot
+Érvekre kér
+Fekete-fehér mód engedélyezése
+Fekete-fehérré varázsolja a diszkót. Nagyon megsérti a szemét, ha túl gyors volt, ezért nem ajánlott, ha gyors képek rohamát tapasztalja.
+Úgy tűnik, nem támogatott verziót futtattál. Nagyon tanácsos nem ezt a verziót használni.
+Az aktuális színek betöltése
+Alternatív opció színe
+A felhasználók számítanak a szeretet vagy gyűlölet megjegyzéseire
+Hány felhasználó legyen a szerelem vagy gyűlölet kommentszobájában?
+Felsorolja az elérhető nyelveket
+Elérhető nyelvek:
+Parancssori argumentumok:
+Indítás előtti parancssori argumentumok:
+Megnyitja a mod API-dokumentációt a forráskód szerkezetéhez a legfrissebb formájában

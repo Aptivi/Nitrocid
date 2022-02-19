@@ -983,3 +983,675 @@ Druk enige sleutel om die handleiding bladsy te lees...
 Hierdie handleiding bladsy benodig werk vir:
 Handleidingbladsy {0} nie gevind nie.
 Mod handleiding
+Beskikbare kernargumente:
+Druk "q" as jy klaar is.
+Veelvuldige kernargumente kan met kommas sonder spasies geskei word, byvoorbeeld:
+Veelvuldige ingespuite opdragte kan geskei word met dubbelpunte met spasies, byvoorbeeld:
+Die versoekte argument {0} is nie gevind nie.
+Onherstelbare fout in argument:
+Enkripteer 'n string met SHA512
+Enkripteer 'n string met SHA384
+Enkripteer 'n string met SHA256
+Enkripteer 'n string met SHA1
+Enkripteer 'n string met MD5
+waar ingeboude besparer sal wees
+Mod deel is niks.
+Stopmods word nie in veilige modus toegelaat nie.
+Mod is reeds begin!
+Mod het nog nie begin nie!
+Opdrag gebruik:
+Deel lêer naam:
+Deel lêer pad:
+Fout tydens probeer om skermbewaarder te begin:
+Ongeldige padtipe.
+Ongeldige kernpadtipe.
+Vorige selflaai het misluk
+Die JSON-redigeerder het nog nie 'n lêerstroom oopgemaak nie.
+Die eiendom binne die JSON-lêer word nie gevind nie.
+Verwyder eiendom.
+Voeg 'n nuwe eiendom aan die einde van die JSON-lêer by
+Verwyder 'n eienskap uit die JSON-lêer
+Verlaat die JSON-dop
+Verlaat die JSON-dop sonder om die veranderinge te stoor
+Stoor die JSON-lêer
+Maak die JSON-dop oop
+Druk die JSON-lêer
+Volgende oprit-interval
+Aktiveer 255 kleur ondersteuning vir oprit.
+Aktiveer ware kleur ondersteuning vir Ramp.
+Hoeveel millisekondes om te wag voordat jy die volgende oprit invul?
+Kennisgewing titel kleur
+Kennisgewing beskrywing kleur
+Kennisgewing vordering kleur
+Kennisgewing mislukking kleur
+Vraag kleur
+Sukses kleur
+Gebruikers dollar kleur
+Tip kleur
+Skei tekskleur
+Skei kleur
+Lys titel kleur
+Ontwikkelingswaarskuwingskleur
+Verhoog tyd kleur
+Vordering kleur
+Rug opsie kleur
+Teken kennisgewinggrens
+Dek die kennisgewing met die grens.
+Kontak die verkoper van die mod om die mod op te gradeer na die versoenbare weergawe.
+Lae prioriteit randkleur
+Medium prioriteit randkleur
+Hoë prioriteit randkleur
+Stuur 'n vorderingkennisgewing om die ontvanger te toets
+Toets die kleurwiel
+Toon plaaslike kerntyd
+Toon plaaslike kerndatum
+Toon plaaslike kerndatum en -tyd
+Toon UTC-kerntyd
+Toon UTC-kerndatum
+Toon UTC-kerndatum en -tyd
+MOTD pad
+MAL pad
+Watter lêer is die MOTD-tekslêer? Skryf 'n absolute pad na die tekslêer.
+Watter lêer is die MAL-tekslêer? Skryf 'n absolute pad na die tekslêer.
+Mods op die swartlys
+Skryf die lêername van die mods wat nie sal loop met opstart nie. Wanneer jy klaar is, skryf "q". Skryf 'n minusteken langs die pad om 'n bestaande mod te verwyder.
+Modus {0} is op die swartlys.
+Herlaai alle mods
+Voeg 'n mod by die swartlys
+Verwyder 'n mod van die swartlys
+Tyd en datum in UTC: {0}
+Die gespesifiseerde JSON-dop-opdrag is nie gevind nie.
+Wys inligting oor die toepassing tydens selflaai
+Ontleed opdragreëlargumente
+Wys verhoog se eindtye
+Begin kernwysigings tydens selflaai
+Wys huidige tyd voor aanmelding
+Stel in kennis vir enige fout tydens selflaai
+Wys kort inligting oor die toepassing tydens selflaai.
+Ontleed die opdragreëlargumente tydens selflaai.
+Toon hoeveel tyd die kern geneem het om 'n stadium te voltooi.
+Begin outomaties die kernwysigings tydens selflaai.
+Wys die huidige tyd, tydsone en datum voordat jy aanmeld.
+As daar 'n geringe fout tydens kernselflaai is, stel die gebruiker daarvan in kennis.
+Gebruikersnaampromptstyl
+Wagwoordpromptstyl
+Wys MAL by aanmelding
+Skryf hoe jy wil hê dat jou aanmeldprompt moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Skryf hoe jy wil hê dat jou wagwoordprompt moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Wys Boodskap van die Dag nadat die aanmeldskerm vertoon is.
+Toets Shell Prompt Style
+JSON Shell Prompt Styl
+Ondersoek ingespuite opdragte
+Ondersoek die ingespuite opdragte aan die begin van die kerndop.
+Wys lêerbesonderhede in lys
+Wys die kort lêerbesonderhede terwyl jy lêers lys
+Wys lêerbesonderhede in FTP-lys
+Gebruikersnaampromptstyl vir FTP
+Wagwoordpromptstyl vir FTP
+Gebruik eerste FTP-profiel
+Voeg nuwe verbindings by FTP-spoedskakel
+Probeer om veilige FTP-sertifikate te bekragtig
+Wys FTP MOTD op verbinding
+Aanvaar altyd ongeldige FTP-sertifikate
+Wys die FTP-lêerbesonderhede terwyl u afgeleë dopgehou lys.
+Gebruik die eerste FTP-profiel om aan FTP te koppel.
+As dit geaktiveer is, voeg 'n nuwe verbinding by die FTP-spoedskakel.
+Probeer om die FTP-sertifikate te bekragtig. Dit word nie aanbeveel om dit af te skakel nie.
+Wys die FTP-boodskap van die dag by aanmelding.
+Aanvaar altyd ongeldige FTP-sertifikate. Dit word nie aanbeveel om dit aan te skakel nie, aangesien dit sekuriteitsrisiko's kan inhou.
+Gebruikersnaam-aanvraagstyl vir pos
+Wagwoordpromptstyl vir pos
+IMAP-vragstyl vir pos
+SMTP-aanvraagstyl vir pos
+Bespeur outomaties posbediener
+Aktiveer posontfouting
+Stel in kennis vir nuwe e-posboodskappe
+GPG-wagwoordpromptstyl vir pos
+Stuur IMAP-ping-interval
+Stuur SMTP-ping-interval
+Pos teks formaat
+Skryf hoe jy wil hê dat jou IMAP-bediener se boodskap moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Skryf hoe jy wil hê dat jou SMTP-bediener se versoek moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Bespeur die posbediener outomaties op grond van die gegewe adres.
+Aktiveer posbedienerontfouting.
+Stel jou in kennis vir enige nuwe e-posboodskappe.
+Skryf hoe jy wil hê jou GPG-wagwoordprompt moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Hoeveel millisekondes om die IMAP-ping te stuur?
+Hoeveel millisekondes om die SMTP-ping te stuur?
+Beheer hoe die posteks gewys sal word.
+Gewone teks
+Gevloeide teks
+HTML teks
+Verrykte teks
+Saamgeperste ryk teks
+Ryk teks
+Begin outomaties afgeleë ontfouting by opstart
+Afgeleë ontfout boodskap formaat
+Aktiveer dit as jy wil hê dat afstandontfouting met selflaai moet begin.
+Spesifiseer die afstandontfoutboodskapformaat. {0} vir naam, {1} vir boodskap.
+RSS-feed URL-aanvraagstyl
+Herlaai RSS-stroom outomaties
+Outo-herlaai RSS-stroominterval
+Skryf hoe jy wil hê jou RSS-toevoerbediener moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Hoeveel millisekondes om die RSS-stroom te verfris?
+Wys lêerbesonderhede in SFTP-lys
+Gebruikersnaampromptstyl vir SFTP
+Voeg nuwe verbindings by SFTP-spoedskakel
+Wys die SFTP-lêerbesonderhede terwyl u afgeleë dopgehou lys.
+As dit geaktiveer is, voeg 'n nuwe verbinding by die SFTP-spoedskakel.
+Ping-uitteltyd
+Wys uitgebreide adapterinligting
+Wys algemene netwerkinligting
+Laai persentasie teks af
+Laai persentasie teks op
+Hoeveel millisekondes om te wag voordat uitteltyd verklaar word?
+Druk die uitgebreide adapterinligting, soos pakkieinligting.
+Toon die algemene inligting oor netwerk.
+Skryf hoe jy wil hê jou oplaai persentasie teks moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed. {0} vir opgelaaide grootte, {1} vir teikengrootte, {2} vir persentasie.
+Skryf hoe jy wil hê jou aflaai persentasie teks moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed. {0} vir afgelaaide grootte, {1} vir teikengrootte, {2} vir persentasie.
+Vra vir wagwoord na sluiting
+Nadat u die skerm gesluit het, vra vir wagwoord
+Minimum rooi kleurvlak
+Minimum groen kleurvlak
+Minimum blou kleurvlak
+Minimum kleurvlak
+Maksimum rooi kleurvlak
+Maksimum groen kleurvlak
+Maksimum blou kleurvlak
+Maksimum kleurvlak
+Minimum rooi kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Minimum groen kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Minimum blou kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Minimum kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255 vir 255 kleure of 16 vir 16 kleure.
+Maksimum rooi kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Maksimum groen kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Maksimum blou kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255.
+Maksimum kleurvlak. Die minimum aanvaarde waarde is 0 en die maksimum aanvaarde waarde is 255 vir 255 kleure of 16 vir 16 kleure.
+Voorgrond kleur
+Lyn karakter
+'n Karakter om 'n lyn te vorm. Maak seker dat jy net een karakter invoer.
+Karakter in die boonste linkerhoek vir ure bar
+Karakter in die boonste linkerhoek vir minutebalk
+Karakter in die boonste linkerhoek vir sekondesbalk
+Regs boonste hoek karakter vir ure bar
+Regs boonste hoek karakter vir minute bar
+Regs boonste hoek karakter vir sekondesbalk
+Onderste linkerhoek karakter vir ure bar
+Karakter in die onderste linkerhoek vir minutebalk
+Karakter in die onderste linkerhoek vir sekondesbalk
+Regs onderste hoek karakter vir ure bar
+Regs onderste hoek karakter vir minute bar
+Regs onderste hoek karakter vir sekondesbalk
+Boonste raam karakter vir ure bar
+Boonste raamkarakter vir minutebalk
+Boonste raamkarakter vir sekondesbalk
+Laer raam karakter vir ure bar
+Onderste raamkarakter vir minutebalk
+Onderste raamkarakter vir sekondesbalk
+Linkerraamkarakter vir urebalk
+Linkerraamkarakter vir minutebalk
+Linkerraamkarakter vir sekondesbalk
+Regter raam karakter vir ure bar
+Regterraamkarakter vir minutebalk
+Regsraamkarakter vir sekondesbalk
+Inligtingsteks vir ure
+Inligtingsteks vir minute
+Inligtingsteks vir sekondes
+Minimum rooi kleurvlak vir ure
+Minimum groen kleurvlak vir ure
+Minimum blou kleurvlak vir ure
+Minimum kleurvlak vir ure
+Maksimum rooi kleurvlak vir ure
+Maksimum groen kleurvlak vir ure
+Maksimum blou kleurvlak vir ure
+Maksimum kleurvlak vir ure
+Minimum rooi kleurvlak vir minute
+Minimum groen kleurvlak vir minute
+Minimum blou kleurvlak vir minute
+Minimum kleurvlak vir minute
+Maksimum rooi kleurvlak vir minute
+Maksimum groen kleurvlak vir minute
+Maksimum blou kleurvlak vir minute
+Maksimum kleurvlak vir minute
+Minimum rooi kleurvlak vir sekondes
+Minimum groen kleurvlak vir sekondes
+Minimum blou kleurvlak vir sekondes
+Minimum kleurvlak vir sekondes
+Maksimum rooi kleurvlak vir sekondes
+Maksimum groen kleurvlak vir sekondes
+Maksimum blou kleurvlak vir sekondes
+Maksimum kleurvlak vir sekondes
+'n Karakter wat soos die boonste linkerhoek lyk. Maak seker dat jy net een karakter invoer.
+'n Karakter wat soos die onderste linkerhoek lyk. Maak seker dat jy net een karakter invoer.
+’n Karakter wat soos die boonste raam lyk. Maak seker dat jy net een karakter invoer.
+’n Karakter wat soos die onderste raam lyk. Maak seker dat jy net een karakter invoer.
+’n Karakter wat soos die linkerraam lyk. Maak seker dat jy net een karakter invoer.
+’n Karakter wat soos die regte raam lyk. Maak seker dat jy net een karakter invoer.
+Skryf hoe jou inligtingsteks vir die huidige uur wys. {0} vir huidige uur uit 24 uur.
+Skryf hoe jou inligtingsteks vir die huidige minuut wys. {0} vir huidige minuut uit 60 minute.
+Skryf hoe jou inligtingsteks vir die huidige tweede wys. {0} vir huidige sekonde uit 60 sekondes.
+Teks kleur
+Karakter in die boonste linkerhoek vir opritbalk
+Regs boonste hoek karakter vir opritbalk
+Karakter in die onderste linkerhoek vir opritbalk
+Regs onderste hoek karakter vir opritbalk
+Boonste raamkarakter vir opritstaaf
+Onderste raamkarakter vir opritstaaf
+Linkerraamkarakter vir opritbalk
+Regterraamkarakter vir opritbalk
+Minimum rooi kleurvlak vir beginkleur
+Minimum groen kleurvlak vir beginkleur
+Minimum blou kleurvlak vir beginkleur
+Minimum kleurvlak vir beginkleur
+Maksimum rooi kleurvlak vir beginkleur
+Maksimum groen kleurvlak vir beginkleur
+Maksimum blou kleurvlak vir beginkleur
+Maksimum kleurvlak vir beginkleur
+Minimum rooi kleurvlak vir eindkleur
+Minimum groen kleurvlak vir eindkleur
+Minimum blou kleurvlak vir eindkleur
+Minimum kleurvlak vir eindkleur
+Maksimum rooi kleurvlak vir eindkleur
+Maksimum groen kleurvlak vir eindkleur
+Maksimum blou kleurvlak vir eindkleur
+Maksimum kleurvlak vir eindkleur
+Oplosser minimum getal
+Maksimum getal oplosser
+Oplosser wys insette
+Karakter in die boonste linkerhoek vir kennisgewinggrens
+Regs boonste hoek karakter vir kennisgewing grens
+Karakter in die onderste linkerhoek vir kennisgewinggrens
+Regs onderste hoek karakter vir kennisgewing grens
+Boonste raamkarakter vir kennisgewinggrens
+Onderste raamkarakter vir kennisgewinggrens
+Linkerraamkarakter vir kennisgewinggrens
+Regsraamkarakter vir kennisgewinggrens
+Handleiding bladsy inligting styl
+Of om te wys wat in die invoerboodskap geskryf is.
+Wat is die minimum aantal om te kies?
+Wat is die maksimum aantal om te kies?
+Skryf hoe jy wil hê jou manpage-inligting moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed. {0} vir handmatige titel, {1} vir hersiening.
+Eiendom {0} word nie op enige van die modules gevind nie.
+Hierdie afdeling lys die algemene skermbewaarder-instellings. Vir individuele skermbewaarderinstellings, verlaat Instellings en maak Skermbeskermerinstellings oop.
+Begin kleurwiel in ware kleurmodus
+Indien gespesifiseer, sal dit pasgemaakte opstartbanier met plekhouer-ondersteuning vertoon. Jy kan {0} vir kernweergawe gebruik.
+Watter variant van die huidige taal word gebruik om die maandname, kalender, ens. te verander?
+Aktiveer die 255 kleur ondersteuning.
+Aktiveer die ware kleur ondersteuning.
+Woord uitgevee in reël {0}.
+String vervang in reël {0}.
+Verwyder reëlnommer {0}.
+Onderdruk ongemagtigde boodskappe
+Versteek die irriterende boodskap as die lysfunksie probeer om 'n ongemagtigde vouer oop te maak
+FTP-bediener inligting
+Bedieneradres:
+Bedienerpoort:
+Bediener tipe:
+Bediener stelsel tipe:
+Bediener-enkripsiemodus:
+Bedienerdataverbindingtipe:
+Bediener stelsel:
+Bediener aflaai data tipe:
+Bedieneroplaai datatipe:
+Jy moet aan 'n bediener koppel voordat jy hierdie bewerking uitvoer.
+Voer 'n afgeleë lêer in wat gehash moet word.
+Voer 'n afgeleë gids in om gehash te word.
+Voer 'n afgeleë gids in.
+Rekursiewe hashing vir FTP
+Of u 'n gids rekursief moet hash. Neem asseblief kennis dat nie al die FTP-bedieners dit ondersteun nie.
+Verwerker klok spoed:
+Verwerker SSE2 ondersteuning:
+Totale aantal verwerkers:
+Skyfgrootte:
+Totale geheue:
+Grafiese kaart:
+Skyf model:
+Maksimum aantal e-posse op een bladsy
+Kultuur van die huidige taal
+As jy seker is dat jy die regte afdeling oopgemaak het, kyk na hierdie boodskap:
+Diverse instellings...
+Kleurinstellings...
+Voer 'n FTP-bediener opdrag uit
+Voer POP3-bedieneradres en poort in (<adres> of <adres>:[poort]):
+POP3-vragstyl vir pos
+Stuur POP3-ping-interval
+Skryf hoe jy wil hê dat jou POP3-bediener se boodskap moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed.
+Hoeveel millisekondes om die POP3-ping te stuur?
+Gebruik POP3
+Of om POP3 te gebruik. As u dit deaktiveer, sal SMTP gebruik word.
+Enkripteer 'n string met CRC32
+Maak die poskliënt oop
+van pos oorgedra...
+Instellings vir hierdie skermbewaarder is hier beskikbaar.
+Toets die tabelfunksionaliteit
+Wysig die gespesifiseerde reël
+Voeg die nuwe reëls aan die einde van die lêer by
+Voer die teks in wat jy aan die einde van die lêer wil byvoeg. Wanneer jy klaar is, skryf "EOF" op sy eie reël.
+Gasheernaam
+Gebruikersnaam
+Datatipe
+Enkodering
+Enkripsie
+Protokolle
+Wys posoordragvordering
+Pos oordrag vordering
+Posoordragvordering (enkel)
+As dit geaktiveer is, sal die posdop wys hoeveel grepe versend is wanneer pos afgelaai word.
+Skryf hoe jy wil hê jou posoordrag-vorderingstyl moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed. {0} vir oorgedra grootte en {1} vir totale grootte.
+Skryf hoe jy wil hê jou posoordrag-vorderingstyl moet wees. Laat leeg om verstekstyl te gebruik. Plekhouers word ontleed. {0} vir oorgedrade grootte.
+Tydsone:
+Vandag is {0}
+Huidige tyd is {0}
+Tabel skei kleur
+Tabelkopkleur
+Tabelwaarde kleur
+Moontlike antwoorde
+Mod-lêer is nie gespesifiseer nie.
+Probeer om 'n reeds geïnstalleerde mod te installeer. Dateer tans mod op...
+Installasie het misluk vir
+Die mod-lêer wat verskaf is, is onversoenbaar.
+Deïnstallering het misluk vir
+Maak 'n URL oop
+Druk reëlnommers op druklêerinhoud
+Laat die \"kat\"-opdrag die lêer se reëlnommers druk.
+Getranslitereerde weergawe
+Vertaalde weergawe
+Maak alle kennisgewings toe
+Laai tans af...
+Laai tans op...
+Wys kennisgewing vir aflaaivordering
+Wys kennisgewing vir oplaaivordering
+Wys die kennisgewing wat die aflaaivordering wys.
+Wys die kennisgewing wat die oplaaivordering wys.
+Kontroleer of die vertaalbare string in die KS-hulpbronne bestaan
+String gevind in die lokalisering hulpbronne.
+String nie in die lokaliseringshulpbronne gevind nie.
+Begin die kern stilweg
+Spuit 'n opdrag in om by die volgende aanmelding te begin
+Begin die kern in veilige modus, wat alle mods deaktiveer
+Soos veilige modus, maar deaktiveer ook multi-gebruiker en 'n mate van aanpassing
+Daar was nie genoeg argumente nie.
+Kleur van die boonste linkerhoek vir opritbalk
+Regs boonste hoekkleur vir opritbalk
+Onderste linkerhoekkleur vir opritbalk
+Onderste regterhoek kleur vir opritbalk
+Boonste raamkleur vir opritstaaf
+Onderste raamkleur vir opritstaaf
+Linkerraamkleur vir opritbalk
+Regter raamkleur vir opritstaaf
+Gebruik randkleure vir opritbalk
+Gebruik die randkleure vir die opritbalk. Indien gedeaktiveer, sal 'n grys balk genereer.
+Begin die HTTP-dop
+Verlaat HTTP-dop en keer terug na kern
+Stel die HTTP-werf. Moet 'n geldige URI wees.
+Kry die antwoord vanaf die HTTP-bediener deur die gespesifiseerde versoek te gebruik
+Vee inhoud van HTTP-bediener uit
+Daar was 'n fout in die HTTP-dop:
+HTTP-boodskap: Die versoekte opdrag {0} is nie gevind nie. Sien 'hulp' vir 'n lys van beskikbare opdragte gespesifiseer op HTTP-dop.
+Kry die string vanaf die HTTP-bediener deur die gespesifiseerde versoek te gebruik
+Kry tans {0}...
+Die werf-URI-formaat is ongeldig.
+Stel werf na
+Kleure vereis nie 'n herbegin nie, maar die meeste van die instellings vereis 'n herbegin.
+Geen hulp vir argument "{0}" nie.
+Druk A op haatkommentaar om verskoning te vra. Druk T op liefdeskommentaar om te bedank. Druk Q om die speletjie te verlaat.
+Jy het om verskoning gevra vir 'n haatopmerking! Uitstekend!
+Om verskoning gevra om lief te hê vir kommentaar. Nie goed genoeg nie.
+Jy het net die hater bedank vir die haat kommentaar!
+Verstek moeilikheid vir SpeedPress
+Sleuteldruk-timeout vir SpeedPress
+Kies jou voorkeur moeilikheidsgraad.
+Hoeveel millisekondes om te wag vir die sleuteldruk voor die uitteltyd? (In persoonlike moeilikheid)
+Vervang 'n woord of frase met 'n ander een deur gereelde uitdrukkings te gebruik
+Vervang 'n woord of frase met 'n ander een in 'n reël deur gereelde uitdrukkings te gebruik
+Doen navrae na 'n woord in 'n gespesifiseerde reël of alle reëls deur gebruik te maak van gereelde uitdrukkings
+Vind 'n instelling
+Skryf waarna jy wil soek.
+Niks word gevind nie. Maak seker dat jy die instelling korrek geskryf het.
+Pak 'n plaaslike lêer na die argief
+Kan niks inpak nie.
+Antwoord beskrywing
+Gasheerpoort
+Vir meer inligting oor die bepalings en voorwaardes van die gebruik van hierdie sagteware, besoek
+Verstek keuse uitset tipe
+Gaan al die KS-instellings na om te sien of die veranderlikes korrek geskryf is
+Hierdie konfigurasie-inskrywings het ongeldige veranderlikes of opsommings en moet reggestel word:
+Lêer {0} nie gevind nie
+Skep 'n veranderlike skikking met die verskafde waardes
+Skryf die nommer van die instelling om na te gaan. Enige ander karakter beteken gaan terug.
+Gaan al die lokalisering teksreëlnommers na om te sien of hulle almal gelyk is
+Lyn wanpas in
+Voer asseblief 'n gebruikernommer in.
+Sluit anonieme gebruikers in
+Sluit gestremde gebruikers in
+Sluit die anonieme gebruikers in die lys in
+Sluit die gestremde gebruikers in die lys in
+Sorteer die lys
+Sorteer die lêerstelsellys professioneel.
+Bied 'n keuse keuse
+Shell-opdragte nie geïmplementeer nie!!!
+Wys nuutste RSS-opskrif by aanmelding
+RSS-opskrif-URL
+Elke aanmelding sal die nuutste RSS-opskrif vanaf die geselekteerde kop-URL wys.
+RSS-opskrif-URL wat gebruik moet word wanneer die nuutste opskrif gewys word. Dit is gewoonlik jou gunsteling voer.
+Jongste nuus:
+Kon nie die jongste nuus kry nie.
+Geselekteerde opsie kleur
+Wys stapelspoor op kernfout
+As daar 'n kernfout is, kies of u die stapelspoor na die konsole wil druk of nie.
+Mod kan gelaai word, maar hierdie waarskuwings kan 'n impak hê op die manier waarop die mod werk:
+Skermbeveiliging kan gelaai word, maar hierdie waarskuwings kan 'n impak hê op die manier waarop die skermbewaarder werk:
+Stoor instellings as
+Laai instellings vanaf
+Waar wil jy die huidige kerninstellings stoor?
+Kan nie kerninstellings bo-op bestaande lêer stoor nie.
+Waarvandaan wil jy die huidige kerninstellings laai?
+Kontroleer om te sien of die vertaalbare stringe in die KS-hulpbronne bestaan
+Kombineer die twee tekslêers of meer in die uitvoerlêer.
+Kon nie lêers kombineer nie.
+RSS-stroom haal uitteltyd
+Hoeveel millisekondes om te wag voordat RSS-stroom uitteltyd gaan haal?
+Vul die bokse
+Teken ons die boks as 'n geheel of teken ons net die grens?
+Stadiumvertraging in millisekondes
+Hoeveel millisekondes om te wag voordat die volgende fase geteken word?
+Volgende oprit vrot interval
+Hoeveel millisekondes om te wag voordat die volgende oprit se een kant verrot word?
+Gaan ontfoutingskwota na
+Gaan ons na of die ontfoutstelsel moet kyk vir kwota voordat ons aan die ontfouter skryf?
+Hoeveel millisekondes het dit regtig geneem om te slaap?
+Kon nie 'n geleentheid byvoeg nie.
+Kon nie 'n geleentheid verwyder nie.
+Nie genoeg argumente verskaf om 'n gebeurtenis by te voeg nie.
+Nie genoeg argumente verskaf om 'n gebeurtenis te verwyder nie.
+Nie genoeg argumente verskaf vir gebeurtenismanipulasie nie.
+Kon nie 'n onthounota byvoeg of verwyder nie.
+Nie genoeg argumente verskaf om 'n herinnering by te voeg of te verwyder nie.
+Nie genoeg argumente verskaf vir herinneringsmanipulasie nie.
+Ongetitelde herinnering
+Titellose gebeurtenis
+Nou is dit 'n geleentheidsdag!
+Moet dit nie mis nie!
+Ongeldige handeling.
+'n Eenvoudige stophorlosie
+Begin of stop
+Skoot
+Stel terug
+'n Eenvoudige timer
+Begin (her) aftel
+Stel interval
+Aangewese uitteltyd is nie numeries nie.
+Spesifiseer die uitteltyd in millisekondes
+Stoor alle gebeurtenisse en/of aanmanings vernietigend
+As dit geaktiveer is, vee alle gebeurtenisse en/of onthounotas uit voordat u almal stoor met die kalenderopdrag.
+Verifieer herprobeerpogings vir FTP-oordrag
+FTP-verbinding uitteltyd
+FTP-dataverbinding-uitteltyd
+FTP IP weergawes
+Hoeveel keer om die oplaai te verifieer en af ​​te laai en weer te probeer as die verifikasie misluk voordat die aflaai as geheel misluk?
+Hoeveel millisekondes om te wag voor die FTP-verbinding uitteltyd?
+Hoeveel millisekondes om te wag voor die FTP-dataverbinding-uitteltyd?
+Kies die weergawe van Internet Protocol wat die FTP-bediener ondersteun en wat die FTP-kliënt gebruik.
+Probeer om RPC te begin terwyl dit reeds begin het.
+Karakter in die boonste linkerhoek vir RGB-kleurwiel
+Regs boonste hoek karakter vir RGB kleurwiel
+Karakter in die onderste linkerhoek vir RGB-kleurwiel
+Karakter in die onderste regterhoek vir RGB-kleurwiel
+Boonste raamkarakter vir RGB-kleurwiel
+Onderste raamkarakter vir RGB-kleurwiel
+Linkerraamkarakter vir RGB-kleurwiel
+Regterraamkarakter vir RGB-kleurwiel
+Soek 'n lêer in die gespesifiseerde gids of in die huidige gids
+Skakel die lyneindes om na formaat vir die huidige platform of na gespesifiseerde pasgemaakte formaat
+Totale grootte in vouer:
+Wys totale grootte in lys
+Indien geaktiveer, wys die totale vouergrootte in lys, afhangend van hoe om die vouergroottes volgens die konfigurasie te bereken.
+Jy is op datum!
+Verstek JSON-formatering vir JSON-dop
+Kies die verstek JSON-formatering (verfraai of verklein) vir die JSON-dop om te stoor.
+Het die opdatering suksesvol afgelaai!
+Laai opdaterings outomaties af
+As daar enige opdatering is, sal die kern dit outomaties aflaai.
+Vuurwerk ontploffingsradius
+Hoeveel blokke (tot 10) is die ontploffingsradius vir die vuurwerk wanneer dit aangesteek word?
+Hierdie opdrag het die onderstaande skakelaars wat verander hoe dit werk:
+Druk die reëlnommers wat volg op die reël wat gedruk word
+Voorkom die druk van die reëlnommers
+Gebruik altyd die getranslitereerde weergawe
+Gebruik altyd die vertaalde weergawe
+Dwing om taal te verander
+Dui aan dat die antwoord meer as een karakter kan neem
+Dui aan dat die antwoord net een karakter kan neem
+Druk die vraag en die antwoorde in een reël
+Druk die vraag en die antwoorde in twee reëls
+Druk die vraag en die antwoorde op die moderne manier
+Druk die vraag en die antwoorde in 'n tabel
+Wys die lêerbesonderhede in die lys
+Onderdruk die irriterende "toestemming geweier" boodskappe
+Wys al die tydsones
+Begin die speletjie in maklike moeilikheidsgraad
+Begin die speletjie in medium moeilikheidsgraad
+Begin die spel in moeilike moeilikheidsgraad
+Begin die spel in baie moeilike probleme
+Begin die speletjie in persoonlike moeilikheidsgraad. Neem asseblief kennis dat die pasgemaakte uitteltyd in millisekondes as argument geskryf moet word.
+Wys die stelselinligting
+Wys die hardeware-inligting
+Wys die gebruiker inligting
+Wys die boodskap van die dag
+Wys die boodskap van die dag na aanmelding
+Toon alle inligting
+Skep 'n gids wat die inhoud van die zip-lêer bevat
+Toon al die beskikbare stede
+Vinnige kompressie
+Geen kompressie nie
+Moenie die basisgids in die argief skep nie
+Eenheid in bosluise
+Ontkoppel skandelik van bediener af
+Dui aan dat die teikenpad absoluut is
+Stoor die JSON-lêer en verfraai dit in die proses
+Stoor die JSON-lêer en verklein dit in die proses
+Kry die reëleindstyl vanaf tekslêer
+Vee alle afgevuurde gebeurtenisse uit
+Aktiveer gebeurtenisontfouting
+Aktiveer ontfouting vir die kerngebeurtenisstelsel
+Vlietjie font
+Skryf 'n figlet-font wat deur die Figgle-biblioteek ondersteun word. Raadpleeg die biblioteekdokumentasie vir meer inligting
+Kon nie gepasmaakte taal {0} installeer nie.
+Die metadatalêer wat nodig is om die pasgemaakte taal te installeer, bestaan ​​nie.
+Die metadata-inligting wat nodig is om die pasgemaakte taal te installeer, verskaf nie die nodige lokaliserings wat nodig is nie.
+Kon nie gepasmaakte taal {0} deïnstalleer nie.
+Die metadatalêer wat nodig is om die pasgemaakte taal te deïnstalleer, bestaan ​​nie.
+Die metadata-inligting wat nodig is om die pasgemaakte taal te deïnstalleer, verskaf nie die nodige lokaliserings wat nodig is nie.
+Lengte van die Engelse taal stem nie ooreen met die lengte van die taaltoken wat verskaf is nie.
+Die taal bestaan ​​reeds en kan nie oorgeskryf word nie.
+Kon nie gepasmaakte taal deïnstalleer nie. Dit bestaan ​​heel waarskynlik nie.
+Kon nie gepasmaakte tale installeer nie.
+Kon nie gepasmaakte tale deïnstalleer nie.
+Kon nie gepasmaakte tale deïnstalleer nie. Sien die innerlike uitsondering vir meer inligting.
+Skryf die administrateur wagwoord. Maak seker dat jy nie hierdie rekening gebruik nie, tensy jy regtig weet wat jy doen.
+Jy moet die administrateur wagwoord skryf.
+Lisensie inligting
+Bestuur jou tale
+Taal nie gevind nie of lêer het ongeldige karakters.
+Taal word nie gespesifiseer nie.
+Taalbestuur is in veilige modus gedeaktiveer.
+Taal kort naam:
+Taal volle naam:
+Taal transliteerbaar:
+Pasgemaakte taal:
+Nuwe welkom banier
+Stylvolle plonsskerm
+Wys die nuwe Vlietjie-weergegee verwelkomingsbanier
+Aktiveer die stylvolle plonsskerm by opstart. Neem asseblief kennis dat dit argumentaansporing sal deaktiveer en die dop voorlaai sal toets.
+Splash naam
+Splash naam van die beskikbare spatsels wat in die kern geïmplementeer is.
+Gegenereerde verstek MOTD.
+Gegenereerde verstek MAL.
+Stelselrekening geïnisialiseer
+Gebruikers geïnisialiseer
+Toestemmings gelaai
+Welkom!
+Begin tans die afstandontfouter...
+Afgeleë ontfouterverbindingsfout
+Stel in kennis van 'n afgeleë ontfoutverbindingsfout
+Indien geaktiveer, sal die kennisgewingstelsel gebruik om die gasheer in kennis te stel van 'n afstandontfoutverbindingsfout. Andersins, sal die verstek konsole skryfwerk gebruik.
+Vlietjie font vir timer
+Aktiveer Figlet vir timer
+Indien geaktiveer, sal figlet vir timer gebruik. Neem asseblief kennis dat dit 'n groot konsoleskerm nodig het om die tyd behoorlik weer te gee met Figlet geaktiveer.
+Fout tydens die ontleding van pre-boot command-line arguments: {0}
+Stel die kern terug na die fabrieksinstellings
+Omseil die konsole grootte opsporing
+Dit lyk of jy die konsolegrootte-bespeuring omseil. Dinge werk dalk nie behoorlik op klein skerms nie.
+Om 'n beter ervaring te hê, verander die grootte van jou konsolevenster terwyl jy steeds op hierdie skerm is. Druk enige sleutel om voort te gaan...
+Jou konsole is te klein om behoorlik te werk:
+Banier-vygie-lettertipe
+Druk 'n string na konsole met behulp van kleurtipe en lyndruk met Figlet-ondersteuning
+Druk 'n string na konsole met behulp van kleurtipe en lyndruk met formaat en Figlet-ondersteuning
+Verwyder 'n boodskap permanent
+Verwyder alle boodskappe permanent van die ontvanger
+Ontdoen verwydering van 'n boodskap
+Ontdoen verwydering van alle boodskappe van ontvanger
+Ontdoen uitvee is nie vir POP3 geïmplementeer nie.
+Wys die opdragte reken op hulp
+Wys die dop opdragte reken op hulp
+Wys die mod-opdragte reken op hulp
+Wys die aliasse reken op hulp
+Toon die opdragtelling in die opdraglys, beheer deur die drietelling wysskakelaars vir verskillende soorte opdragte.
+Voer opdragte uit sodra die UESH-uitdrukkings bevredig is
+Die toestand is nie in die uitdrukking gevind nie.
+Voorwaarde {0} vereis {1} argumente. Het {2}.
+Die toestand moet in die middel geplaas word.
+Die toestand moet in die begin geplaas word.
+Kon nie uitdrukking ontleed as gevolg van sintaksfout.
+Kon nie aan toestand voldoen nie. Meer inligting hier:
+Wagwoordmaskerkarakter
+'n Karakter wat die wagwoord verberg. Laat leeg vir meer sekuriteit.
+Verlaat die dop as dit op subshell loop
+Kan nie die moederskulp doodmaak nie!
+Kan nie uit die subdop afmeld nie.
+Lêer nie gespesifiseer nie. Verlaat tans dop …
+Instellings vir hierdie plonsskerm is hier beskikbaar.
+Vorderingbalkkleur
+Maak die skermbewaarder-instellings oop
+Maak die spat-instellings oop
+Lys beskikbare UESH veranderlikes
+Vorderende teksligging
+Kies jou voorkeur vorderingsteksligging.
+Jy kan net die nommers skryf.
+Druk "q" om uit te gaan.
+Laai tans name af...
+Weens tegniese probleme kan ons nie adaptereienskappe op Unix-stelsels lys nie.
+Aktiveer ontfoutmodus
+Vra vir argumente
+Aktiveer swart en wit modus
+Maak die disco swart en wit. Sal jou oë regtig seermaak as dit te vinnig was, so dit word nie aanbeveel as jy 'n beslaglegging van vinnige beelde ervaar nie.
+Dit lyk of jy 'n ongesteunde weergawe gebruik het. Dit is hoogs raadsaam om nie hierdie weergawe te gebruik nie.
+Laai huidige kleure
+Alternatiewe opsie kleur
+Gebruikers tel vir liefde of haat kommentaar
+Hoeveel gebruikers om in die liefde- of haat-kommentaarkamer te wees?
+Lys beskikbare tale
+Beskikbare tale:
+Opdragreëlargumente:
+Pre-boot command-line arguments:
+Maak die mod API-dokumentasie oop vir die struktuur van die bronkode in sy mees huidige vorm

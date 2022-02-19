@@ -983,3 +983,675 @@ Danna kowane maɓalli don karanta shafin hannu...
 Wannan shafin na hannu yana buƙatar aiki don:
 Ba a samo shafin hannu {0} ba.
 Mod manual
+Akwai dalilai na kwaya:
+Danna "q" idan kun gama.
+Ana iya raba gardamar kwaya da yawa tare da waƙafi ba tare da sarari ba, misali:
+Ana iya raba umarni da allura da yawa tare da colons tare da sarari, misali:
+Ba a samo hujjar da aka nema {0} ba.
+Kuskuren da ba a iya murmurewa a cikin gardama:
+Yana ɓoye kirtani ta amfani da SHA512
+Yana ɓoye kirtani ta amfani da SHA384
+Yana ɓoye kirtani ta amfani da SHA256
+Yana ɓoye kirtani ta amfani da SHA1
+Yana ɓoye kirtani ta amfani da MD5
+inda buildinsaver zai kasance
+Mod part ba kome ba ne.
+Ba a yarda da dakatar da mods akan yanayin aminci ba.
+An riga an fara mod!
+Mod bai fara ba tukuna!
+Amfani da umarni:
+Sunan fayil ɗin sashi:
+Hanyar fayil ɗin sashe:
+Kuskure lokacin ƙoƙarin fara sabar allo:
+Nau'in hanya mara inganci.
+Nau'in hanyar kwaya mara inganci.
+Tafiyar da ta gabata ta kasa
+Editan JSON bai buɗe rafin fayil ba tukuna.
+Ba a samo kayan da ke cikin fayil ɗin JSON ba.
+Dukiyar da aka cire.
+Yana ƙara sabon kadara a ƙarshen fayil ɗin JSON
+Yana cire dukiya daga fayil ɗin JSON
+Yana fita daga harsashi JSON
+Yana fita daga harsashi JSON ba tare da adana canje-canje ba
+Ajiye fayil ɗin JSON
+Yana buɗe harsashi JSON
+Yana buga fayil ɗin JSON
+Tazara ta gaba
+Yana kunna tallafin launi 255 don Ramp.
+Yana kunna goyan bayan launi na gaskiya don Ramp.
+millisecond nawa ne za a jira kafin a cika babban ramp na gaba?
+Launin taken sanarwa
+Kalar bayanin sanarwa
+Launin ci gaban sanarwar
+Launin gazawar sanarwar
+Launin tambaya
+Launin nasara
+Launin dalar mai amfani
+Launi na tip
+Launin rubutu mai rarrabewa
+Launi mai rarrabewa
+Lissafin launi
+Launin faɗakarwa na haɓakawa
+Launi lokacin mataki
+Launin ci gaba
+Launin zaɓi na baya
+Zana iyakar sanarwa
+Yana rufe sanarwar tare da iyaka.
+Tuntuɓi mai siyar da na'ura don haɓaka na'urar zuwa sigar da ta dace.
+Ƙananan fifiko launi launi
+Matsakaicin fifiko launi iyaka
+Babban fifiko launi launi
+Yana aika sanarwar ci gaba don gwada mai karɓa
+Gwada dabaran launi
+Yana nuna lokacin kwaya na gida
+Yana nuna ranar kwaya ta gida
+Yana nuna kwanan wata kernel na gida da lokaci
+Yana nuna lokacin kernel UTC
+Yana nuna ranar kwaya ta UTC
+Yana nuna kwanan wata da lokaci UTC kernel
+Hanyar MOTD
+Hanyar MAL
+Wane fayil ne fayil ɗin rubutu MOTD? Rubuta cikakkiyar hanya zuwa fayil ɗin rubutu.
+Wane fayil ne fayil ɗin rubutu MAL? Rubuta cikakkiyar hanya zuwa fayil ɗin rubutu.
+Mods masu baƙaƙe
+Rubuta sunayen fayil na mods waɗanda ba za su yi aiki a farawa ba. Idan kun gama, rubuta "q". Rubuta alamar cirewa kusa da hanyar don cire yanayin da ke akwai.
+Mod {0} yana cikin jerin baƙaƙe.
+Yana sake loda duk mods
+Yana ƙara na'ura zuwa jerin baƙaƙe
+Yana kawar da na'ura daga lissafin baƙaƙe
+Lokaci da kwanan wata a cikin UTC: {0}
+Ba a samo takamaiman umarnin harsashi na JSON ba.
+Nuna bayanan app yayin taya
+Fassara hujjojin layin umarni
+Nuna lokutan ƙare mataki
+Fara gyare-gyaren kernel akan taya
+Nuna lokacin yanzu kafin shiga
+Sanar da kowane laifi yayin taya
+Yana nuna taƙaitaccen bayani game da aikace-aikacen akan boot.
+Yana rarraba gardamar layin umarni akan boot.
+Yana nuna tsawon lokacin da kwaya ta ɗauka don kammala mataki.
+Fara gyare-gyaren kwaya ta atomatik akan taya.
+Yana nuna lokaci na yanzu, yankin lokaci, da kwanan wata kafin shiga.
+Idan akwai ƙaramin laifi yayin taya kernel, yana sanar da mai amfani game da shi.
+Salon kiran sunan mai amfani
+Salon faɗakar da kalmar wucewa
+Nuna MAL akan shiga
+Rubuta yadda kuke son faɗakarwar ku ta kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+Rubuta yadda kuke son faɗakarwar kalmar sirri ta zama. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+Yana Nuna Saƙon Ranar bayan nuna allon shiga.
+Gwajin Saurin Saurin Shell
+JSON Shell Prompt Style
+Bincika umarnin allura
+Yana bincika umarnin allura a farkon harsashin kwaya.
+Nuna bayanan fayil a jeri
+Yana nuna taƙaitaccen bayanan fayil yayin jera fayiloli
+Nuna bayanan fayil a cikin jerin FTP
+Salon kiran sunan mai amfani don FTP
+Salon faɗakar da kalmar wucewa don FTP
+Yi amfani da bayanan FTP na farko
+Ƙara sababbin haɗi zuwa bugun kiran sauri na FTP
+Gwada tabbatar da amintattun takaddun shaida na FTP
+Nuna FTP MOTD akan haɗi
+Koyaushe karɓar takaddun shaida na FTP mara inganci
+Yana nuna bayanan fayil ɗin FTP yayin jera kundayen adireshi masu nisa.
+Yana amfani da bayanin martaba na FTP na farko don haɗawa zuwa FTP.
+Idan an kunna, yana ƙara sabon haɗi zuwa bugun kiran sauri na FTP.
+Yana ƙoƙarin tabbatar da takaddun shaida na FTP. Ba a ba da shawarar kashe shi ba.
+Yana nuna saƙon FTP na ranar akan shiga.
+Koyaushe karɓar takaddun shaida na FTP mara inganci. Ba a ba da shawarar kunna shi ba saboda yana iya haifar da haɗarin tsaro.
+Salon kiran sunan mai amfani don wasiku
+Salon faɗakar da kalmar wucewa don wasiku
+Salon gaggawa na IMAP don wasiku
+Salon faɗakarwa na SMTP don wasiku
+Gano sabar saƙo ta atomatik
+Kunna kuskuren saƙo
+Sanar da sabbin saƙonnin wasiku
+Salon faɗakar da kalmar wucewa ta GPG don wasiku
+Aika tazara ta IMAP ping
+Aika SMTP tazarar ping
+Tsarin rubutu na saƙo
+Rubuta yadda kuke son saƙon sabar IMAP ɗin ku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+Rubuta yadda kuke son saƙon sabar ku ta SMTP ta kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+Gano sabar saƙo ta atomatik bisa ga adireshin da aka bayar.
+Yana kunna kuskuren uwar garken imel.
+Yana sanar da ku ga kowane sabon saƙon wasiku.
+Rubuta yadda kuke son faɗakarwar kalmar sirri ta GPG ta zama. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+millise seconds nawa don aika ping ɗin IMAP?
+millise seconds nawa don aika ping ɗin SMTP?
+Yana sarrafa yadda za a nuna rubutun saƙon.
+A sarari rubutu
+Rubutu mai gudana
+HTML rubutu
+Ingantattun rubutu
+Rubutun arziki manne
+Rubutun arziki
+Fara kuskuren nesa ta atomatik akan farawa
+Tsarin saƙon kuskure mai nisa
+Idan kuna son cire kuskuren nesa don farawa akan taya, kunna wannan.
+Yana ƙayyade tsarin saƙon kuskure na nesa. {0} don suna, {1} don saƙo.
+Salon faɗakarwar RSS feed URL
+Sabunta ciyarwar RSS ta atomatik
+Tazarar ciyarwar RSS ta atomatik
+Rubuta yadda kuke son saƙon sabar sabar RSS ta zama. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+millise seconds nawa ne don sabunta ciyarwar RSS?
+Nuna bayanan fayil a cikin jerin SFTP
+Salon kiran sunan mai amfani don SFTP
+Ƙara sababbin haɗi zuwa bugun kiran sauri na SFTP
+Yana nuna cikakkun bayanan fayil ɗin SFTP yayin jera kundayen adireshi masu nisa.
+Idan an kunna, yana ƙara sabon haɗi zuwa bugun kiran sauri na SFTP.
+Ping ya ƙare
+Nuna faffadan bayanin adaftar
+Nuna bayanan cibiyar sadarwa gabaɗaya
+Zazzage rubutun kashi
+Loda kaso na rubutu
+millisecond nawa za a jira kafin ayyana lokacin ƙarewa?
+Yana buga faffadan bayanan adafta, kamar bayanin fakiti.
+Yana nuna cikakken bayani game da hanyar sadarwa.
+Rubuta yadda kuke son adadin adadin rubutun ku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri. {0} don girman da aka ɗora, {1} don girman manufa, {2} don kashi.
+Rubuta yadda kuke son rubutun kashi na zazzage ku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri. {0} don girman da aka zazzage, {1} don girman manufa, {2} don kashi.
+Nemi kalmar sirri bayan kullewa
+Bayan kulle allon, nemi kalmar sirri
+Matsayin launi mafi ƙarancin ja
+Mafi ƙarancin matakin launi
+Mafi ƙarancin matakin launin shuɗi
+Matsayin launi mafi ƙarancin
+Matsakaicin matakin launi ja
+Matsakaicin matakin launi kore
+Matsakaicin matakin launi shuɗi
+Matsakaicin matakin launi
+Matsayin launi mafi ƙarancin ja. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Mafi ƙarancin matakin launi. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Mafi ƙarancin matakin launin shuɗi. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Matsayin launi mafi ƙarancin. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255 don launuka 255 ko 16 don launuka 16.
+Matsakaicin matakin launi ja. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Matsakaicin matakin launi kore. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Matsakaicin matakin launi shuɗi. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255.
+Matsakaicin matakin launi. Matsakaicin ƙimar da aka karɓa shine 0 kuma matsakaicin ƙimar da aka karɓa shine 255 don launuka 255 ko 16 don launuka 16.
+Launi na gaba
+Halin layi
+Hali don samar da layi. Tabbatar shigar da harafi ɗaya kawai.
+Halin kusurwar sama na hagu na sa'o'i mashaya
+Halin kusurwar sama na hagu na sandar mintuna
+Halin kusurwar sama na hagu na sandar daƙiƙa
+Halin kusurwar saman dama na sa'o'i mashaya
+Halin kusurwar sama na dama na sandar mintuna
+Halin kusurwa na sama na dama don sandar daƙiƙa
+Halin kusurwar ƙasan hagu na sa'o'i mashaya
+Halin kusurwar ƙasan hagu na sandar mintuna
+Halin kusurwar ƙasa na hagu don sandar daƙiƙa
+Ƙarƙashin kusurwar dama na sa'o'i mashaya
+Ƙarƙashin kusurwar dama na mashigin mintuna
+Halin kusurwar dama na ƙasa don sandar daƙiƙa
+Halin firam na sama na sa'o'i mashaya
+Halin firam na sama na sandar mintuna
+Halin firam na sama don sandar daƙiƙa
+Ƙarƙashin halayen firam na sa'o'i mashaya
+Ƙarƙashin halayen firam don mashaya na mintuna
+Ƙarƙashin halayen firam don sandar daƙiƙa
+Hagu firam na sa'o'i mashaya
+Halin firam ɗin hagu na sandar mintuna
+Halin firam ɗin hagu na sandar daƙiƙa guda
+Halin firam ɗin dama na sandar sa'o'i
+Halin firam ɗin dama na sandar mintuna
+Halin firam ɗin dama na sandar daƙiƙai
+Rubutun bayanai na sa'o'i
+Rubutun bayanai na mintuna
+Rubutun bayanai na daƙiƙa
+Matsayin launi mafi ƙarancin ja na sa'o'i
+Mafi ƙarancin matakin launi na tsawon sa'o'i
+Mafi ƙarancin matakin launin shuɗi na sa'o'i
+Matsayin launi mafi ƙarancin sa'o'i
+Matsakaicin matakin launi ja na sa'o'i
+Matsakaicin matakin launin kore na sa'o'i
+Matsakaicin matakin launin shuɗi na sa'o'i
+Matsakaicin matakin launi na sa'o'i
+Matsayin launi mafi ƙarancin ja na mintuna
+Mafi ƙarancin matakin launi na tsawon mintuna
+Mafi ƙarancin matakin launin shuɗi na mintuna
+Mafi ƙarancin matakin launi na mintuna
+Matsakaicin matakin launi ja na mintuna
+Matsakaicin matakin launin kore na mintuna
+Matsakaicin matakin launin shuɗi na mintuna
+Matsakaicin matakin launi na mintuna
+Matsayin launi mafi ƙarancin ja na daƙiƙa
+Mafi ƙarancin matakin launi na tsawon daƙiƙa
+Mafi ƙarancin matakin launin shuɗi na daƙiƙa
+Ƙananan matakin launi na daƙiƙa
+Matsakaicin matakin launi ja na daƙiƙa
+Matsakaicin matakin launin kore na daƙiƙa
+Matsakaicin matakin launin shuɗi na daƙiƙa
+Matsakaicin matakin launi na daƙiƙa
+Halin da yayi kama da kusurwar hagu na sama. Tabbatar shigar da harafi ɗaya kawai.
+Halin da yayi kama da ƙananan kusurwar hagu. Tabbatar shigar da harafi ɗaya kawai.
+Halin da yayi kama da firam na sama. Tabbatar shigar da harafi ɗaya kawai.
+Halin da yayi kama da ƙananan firam. Tabbatar shigar da harafi ɗaya kawai.
+Halin da yayi kama da firam ɗin hagu. Tabbatar shigar da harafi ɗaya kawai.
+Halin da yayi kama da firam ɗin dama. Tabbatar shigar da harafi ɗaya kawai.
+Rubuta yadda rubutun bayanin ku na awa na yanzu ke nunawa. {0} na awa na yanzu cikin awanni 24.
+Rubuta yadda rubutun bayanin ku na minti na yanzu ke nunawa. {0} na minti na yanzu cikin mintuna 60.
+Rubuta yadda rubutun bayanin ku na na biyu na yanzu yake nunawa. {0} na daƙiƙa na yanzu cikin daƙiƙa 60.
+Launin rubutu
+Halin kusurwar sama na hagu don sandar ramp
+Halin kusurwa na sama na dama don sandar ramp
+Halin kusurwar ƙasan hagu don sandar ramp
+Ƙarƙashin kusurwar dama don sandar ramp
+Halin firam na sama don sandar ramp
+Ƙarƙashin halayen firam don mashaya
+Halin firam na hagu don sandar ramp
+Halin firam ɗin dama don sandar ramp
+Matsayin launi mafi ƙarancin ja don fara launi
+Mafi ƙarancin matakin launi don fara launi
+Mafi ƙarancin matakin launin shuɗi don fara launi
+Ƙananan matakin launi don fara launi
+Matsakaicin matakin launi ja don fara launi
+Matsakaicin matakin launin kore don fara launi
+Matsakaicin matakin launin shuɗi don fara launi
+Matsakaicin matakin launi don fara launi
+Matsayin launi mafi ƙarancin ja don launi na ƙarshe
+Mafi ƙarancin matakin launin kore don launi na ƙarshe
+Mafi ƙarancin matakin launin shuɗi don launi na ƙarshe
+Ƙananan matakin launi don launi na ƙarshe
+Matsakaicin matakin launi ja don launi na ƙarshe
+Matsakaicin matakin launin kore don launi na ƙarshe
+Matsakaicin matakin launin shuɗi don launi na ƙarshe
+Matsakaicin matakin launi don launi na ƙarshe
+Mai warware mafi ƙarancin lamba
+Matsakaicin lamba mai warwarewa
+Nuna shigarwar mai warwarewa
+Halin kusurwar sama na hagu don iyakar sanarwa
+Halin kusurwa na sama na dama don iyakar sanarwa
+Halin kusurwar ƙasan hagu don iyakar sanarwa
+Halin ƙananan kusurwar dama don iyakar sanarwa
+Halayen firam na sama don iyakar sanarwa
+Ƙarƙashin halayen firam don iyakar sanarwa
+Halin firam ɗin hagu don iyakar sanarwa
+Halin firam ɗin dama don iyakar sanarwa
+Salon bayanin shafi na hannu
+Ko don nuna abin da aka rubuta a cikin saurin shigarwa.
+Menene mafi ƙarancin lamba don zaɓar?
+Menene iyakar adadin da za a zaɓa?
+Rubuta yadda kuke son bayanin manpage ɗinku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri. {0} don taken hannu, {1} don bita.
+Ba a samo kadarorin {0} akan kowane ɗayan samfuran ba.
+Wannan sashe yana lissafin saitunan saitunan allo gaba ɗaya. Don saitunan saitin allo, fita Saituna kuma buɗe Saitunan Tsara allo.
+Fara dabaran launi a yanayin launi na gaskiya
+Idan an ƙayyade, zai nuna keɓantaccen banner na farawa tare da tallafin mai riƙewa. Kuna iya amfani da {0} don sigar kernel.
+Wanne bambance-bambancen harshe ne ake amfani dashi don canza sunayen wata, kalanda, da sauransu?
+Yana kunna goyon bayan launi 255.
+Yana kunna goyon bayan launi na gaskiya.
+An goge kalma a layi {0}.
+An maye gurbin igiya a layi {0}.
+An cire lambar layi {0}.
+Mashe saƙonni mara izini
+Yana ɓoye saƙon mai ban haushi idan aikin lissafin yayi ƙoƙarin buɗe babban fayil mara izini
+Bayanin uwar garken FTP
+Adireshin uwar garken:
+tashar jiragen ruwa:
+Nau'in uwar garken:
+Nau'in tsarin sabar:
+Yanayin ɓoyayyen sabar:
+Nau'in haɗin bayanan uwar garken:
+Tsarin uwar garken:
+Nau'in zazzagewar uwar garke:
+Nau'in loda bayanan uwar garken:
+Dole ne ku haɗa zuwa uwar garken kafin yin wannan aikin.
+Shigar da fayil mai nisa don a haɗe.
+Shigar da kundin adireshi mai nisa don zaɓe.
+Shigar da shugabanci mai nisa.
+Recursive hashing don FTP
+Ko za a yi recursively hash directory. Lura cewa ba duk sabar FTP ke goyan bayan hakan ba.
+Gudun agogo mai sarrafawa:
+Goyan bayan Processor SSE2:
+Jimlar adadin na'urori masu sarrafawa:
+Girman diski:
+Jimlar ƙwaƙwalwar ajiya:
+Katin zane:
+Samfurin Disk:
+Matsakaicin adadin imel a cikin shafi ɗaya
+Al'adun harshen yanzu
+Idan kun tabbata kun buɗe sashin da ya dace, duba wannan saƙon:
+Saituna daban-daban...
+Saitunan Launuka...
+Yana aiwatar da umarnin uwar garken FTP
+Shigar da adireshin uwar garken POP3 da tashar jiragen ruwa (<adireshi> ko <adireshi>: [tashar jiragen ruwa]):
+POP3 salon faɗakarwa don wasiku
+Aika POP3 tazarar ping
+Rubuta yadda kuke son faɗakarwar uwar garken POP3 ku ta kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri.
+millise seconds nawa don aika ping POP3?
+Yi amfani da POP3
+Ko don amfani da POP3. Kashe wannan zai yi amfani da SMTP.
+Yana ɓoye kirtani ta amfani da CRC32
+Yana buɗe abokin ciniki na wasiku
+mail transfer...
+Ana samun saituna don wannan allo a nan.
+Yana gwada aikin tebur
+Yana gyara ƙayyadadden layin
+Yana ƙara sabbin layin a ƙarshen fayil ɗin
+Shigar da rubutun da kake son haɗawa zuwa ƙarshen fayil ɗin. Idan kun gama, rubuta "EOF" akan layinsa.
+Sunan Mai watsa shiri
+Sunan mai amfani
+Nau'in Bayanai
+Rufewa
+Rufewa
+Ka'idoji
+Nuna ci gaban canja wurin wasiku
+Ci gaban canja wurin wasiku
+Ci gaban canja wurin wasiku (guda ɗaya)
+Idan an kunna, harsashin saƙon zai nuna adadin bytes da ake watsawa yayin zazzage saƙo.
+Rubuta yadda kuke son salon ci gaban canja wurin wasiku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri. {0} don girman da aka canjawa wuri da {1} don jimlar girman.
+Rubuta yadda kuke son salon ci gaban canja wurin wasiku ya kasance. Bar fanko don amfani da tsarin tsoho. Ana tantance masu riƙe wuri. {0} don girman da aka canjawa wuri.
+Yankin Lokaci:
+Yau ne {0}
+Lokacin yanzu shine {0}
+launi mai raba tebur
+Launin taken tebur
+launi darajar tebur
+Amsoshi masu yiwuwa
+Ba a ƙayyade fayil ɗin Mod ba.
+Ƙoƙarin shigar da mod ɗin da aka riga aka shigar. Ana sabunta yanayin...
+An kasa shigarwa don
+Mod fayil ɗin da aka bayar bai dace ba.
+An kasa cirewa don
+Yana buɗe URL
+Buga lambobin layi akan bugu abun ciki na fayil
+Yana sanya umarnin \"cat" buga lambobin layin fayil ɗin.
+Sigar da aka fassara
+Fassara sigar
+Korar duk sanarwar
+Ana saukewa...
+Ana lodawa...
+Nuna sanarwar don ci gaban zazzagewa
+Nuna sanarwar don ci gaban lodawa
+Yana nuna sanarwar da ke nuna ci gaban zazzagewar.
+Yana nuna sanarwar da ke nuna ci gaban lodawa.
+Bincika don ganin ko igiyar da ake iya fassarawa tana cikin albarkatun KS
+An samo kirtani a cikin albarkatun yanki.
+Ba a sami kirtani a cikin albarkatun yanki ba.
+Fara kwaya a hankali
+Inject da umarni don farawa a shiga na gaba
+Yana farawa kernel a cikin yanayin aminci, yana kashe duk mods
+Kamar yanayin aminci, amma kuma yana hana masu amfani da yawa da wasu keɓancewa
+Babu isassun gardama.
+Launin kusurwar sama na hagu don sandar ramp
+Launi na saman kusurwar dama don sandar ramp
+Ƙananan launi na kusurwar hagu don mashaya mai tsalle
+Launin kusurwar dama na ƙasa don sandar ramp
+Launin firam na sama don sandar ramp
+Ƙananan launi na firam don sandar ramp
+Launin firam na hagu don sandar ramp
+Launin firam na dama don sandar ramp
+Yi amfani da launuka masu iyaka don sandar ramp
+Yi amfani da launukan kan iyaka don sandar ramp ɗin. Idan an kashe, zai haifar da mashaya mai launin toka.
+Fara harsashi HTTP
+Yana fita harsashi HTTP kuma ya koma kernel
+Yana saita rukunin yanar gizon HTTP. Dole ne ya zama ingantaccen URI.
+Yana samun amsa daga uwar garken HTTP ta amfani da takamaiman buƙata
+Yana share abun ciki daga uwar garken HTTP
+An sami kuskure a cikin harsashin HTTP:
+Saƙon HTTP: Ba a samo umarnin da aka nema ba. Dubi 'taimako' don lissafin samammun umarni da aka kayyade akan harsashi HTTP.
+Yana samun kirtani daga uwar garken HTTP ta amfani da ƙayyadadden buƙata
+Ana samun {0}...
+Tsarin URI na rukunin yanar gizon ba shi da inganci.
+Saita site zuwa
+Launuka baya buƙatar sake kunnawa, amma yawancin saitunan suna buƙatar sake kunnawa.
+Babu taimako don jayayya "{0}".
+Danna A akan maganganun ƙiyayya don neman afuwa. Danna T akan sharhin soyayya don godiya. Danna Q don barin wasan.
+Kun ba da hakuri ga maganganun ƙiyayya! Madalla!
+A nemi afuwar soyayya comment. Bai isa ba.
+Kun dai godewa mai kiyayya da kalaman kiyayya!
+Matsalolin tsoho don SpeedPress
+Lokacin latsa maɓalli don SpeedPress
+Zaɓi wahalar da kuka fi so.
+Milli seconds nawa ne don jira latsa maɓalli kafin lokacin ƙarewa? (A cikin wahala ta al'ada)
+Yana maye gurbin kalma ko jumla da wata ta amfani da maganganu na yau da kullun
+Yana maye gurbin kalma ko magana da wata a cikin layi ta amfani da maganganu na yau da kullun
+Tambayoyin kalma a cikin takamaiman layi ko duk layi ta amfani da maganganu na yau da kullun
+Nemo Saiti
+Rubuta abin da kuke son nema.
+Ba a sami komai ba. Tabbatar cewa kun rubuta saitin daidai.
+Fakitin fayil na gida zuwa rumbun adana bayanai
+Ba za a iya shirya komai ba.
+Bayanin amsa
+Mai watsa shiri Port
+Don ƙarin bayani game da sharuɗɗan amfani da wannan software, ziyarci
+Nau'in fitarwa na ainihi
+Yana duba duk saitunan KS don ganin ko an rubuta masu canji daidai
+Waɗannan shigarwar ɗin saitin suna da ƙididdiga marasa inganci ko ƙididdiga kuma suna buƙatar gyarawa:
+Ba a samo fayil ɗin {0} ba
+Yana ƙirƙira jeri mai canzawa tare da ƙimar da aka bayar
+Rubuta lambar saitin don zuwa. Duk wani hali yana nufin komawa baya.
+Yana duba duk lambobin layin rubutu don ganin ko duk sun yi daidai
+Rashin daidaiton layi a ciki
+Da fatan za a shigar da lambar mai amfani.
+Haɗa masu amfani da ba a san su ba
+Haɗa nakasassu masu amfani
+Ya haɗa da masu amfani da ba a san su ba a cikin lissafin
+Ya haɗa da nakasassu masu amfani a cikin lissafin
+Tsara lissafin
+Yana tsara lissafin tsarin fayil da fasaha.
+Yana ba da zaɓin zaɓi
+Ba a aiwatar da umarnin Shell ba !!!
+Nuna sabon kanun labarai na RSS akan shiga
+URL kanun labarai
+Kowane shiga, zai nuna sabon kanun labarai na RSS daga URL ɗin da aka zaɓa.
+URL na kanun labarai na RSS da za a yi amfani dashi lokacin nuna sabon kanun labarai. Wannan yawanci shine abincin da kuka fi so.
+Sabbin labarai:
+An kasa samun sabbin labarai.
+Zaɓaɓɓen launi na zaɓi
+Nuna alamar tari akan kuskuren kwaya
+Idan akwai kuskuren kwaya, zaɓi ko don buga alamar tari zuwa na'ura mai kwakwalwa ko a'a.
+Ana iya lodawa Mod, amma waɗannan gargaɗin na iya yin tasiri ga yadda mod ɗin ke aiki:
+Ana iya lodawa mai ajiyar allo, amma waɗannan gargaɗin na iya yin tasiri ga yadda mai adana allo ke aiki:
+Ajiye Saituna Kamar
+Load Saituna Daga
+A ina kuke son adana saitunan kwaya na yanzu?
+Ba za a iya ajiye saitunan kernel a saman fayil ɗin da ke akwai ba.
+Daga ina kuke son loda saitunan kernel na yanzu daga?
+Bincika don ganin ko igiyoyin da ake iya fassarawa sun wanzu a albarkatun KS
+Haɗa fayilolin rubutu guda biyu ko fiye cikin fayil ɗin fitarwa.
+An kasa haɗa fayiloli.
+ciyarwar RSS ya ƙare
+Miliyoyin daƙiƙa nawa ne za a jira kafin ciyarwar RSS ta ƙare?
+Cika akwatunan
+Shin muna zana akwatin gaba ɗaya ko kuma muna zana iyaka kawai?
+Jinkirin mataki a cikin millise seconds
+millise seconds nawa ne za a jira kafin zana mataki na gaba?
+Tazarar juzu'i na gaba
+millise seconds nawa ne za a jira kafin a ruɓe ƙarshen ramp ɗin na gaba?
+Bincika adadin gyara kuskure
+Shin muna bincika idan tsarin lalata yana buƙatar bincika keɓaɓɓu kafin rubutawa ga mai gyara?
+millisecond nawa ne ya ɗauki barci da gaske?
+An kasa ƙara wani taron.
+An kasa cire wani lamari.
+Ba a bayar da isassun hujjoji don ƙara wani abu ba.
+Ba a bayar da isassun hujjoji don cire abin da ya faru ba.
+Babu isassun hujjoji da aka bayar don magudin taron.
+An kasa ƙarawa ko cire tunatarwa.
+Ba a bayar da isassun hujjoji don ƙara ko cire mai tuni ba.
+Babu isassun hujjoji da aka tanadar don magudin tunatarwa.
+Tunatarwa mara taken
+Taron mara taken
+Yanzu shi ne ranar aukuwa!
+Kar ku rasa wannan!
+Ayyukan da ba daidai ba.
+Agogon agogon gudu mai sauƙi
+Fara ko tsayawa
+Cin duri
+Sake saitin
+Mai ƙidayar lokaci mai sauƙi
+Fara (sake) kirga ƙasa
+Saita tazara
+Ƙayyadaddun lokaci ba adadi ba ne.
+Ƙayyade lokacin ƙarewa a cikin millise seconds
+Ajiye duk abubuwan da suka faru da/ko masu tuni masu lalacewa
+Idan an kunna, yana share duk abubuwan da suka faru da/ko masu tuni kafin adana su duka ta amfani da umarnin kalanda.
+Tabbatar da sake gwada ƙoƙarin watsa FTP
+Lokacin haɗin FTP
+FTP haɗin bayanan lokacin ƙarewa
+FTP IP versions
+Sau nawa don tabbatar da ƙaddamarwa da zazzagewa da sake gwadawa idan tabbatarwar ta gaza kafin saukarwar ta gaza gabaɗaya?
+millisecond nawa ne za a jira kafin lokacin haɗin FTP ya ƙare?
+milliseconds nawa ne za a jira kafin lokacin gama bayanan FTP?
+Zaɓi nau'in ka'idar Intanet wanda uwar garken FTP ke goyan bayan kuma wanda abokin ciniki na FTP ke amfani da shi.
+Ƙoƙarin farawa RPC yayin da ya riga ya fara.
+Halin kusurwar sama na hagu don dabaran launi na RGB
+Halin kusurwar sama na dama don dabaran launi na RGB
+Halin kusurwar ƙasan hagu don dabaran launi na RGB
+Ƙarƙashin kusurwar dama don dabaran launi na RGB
+Halin firam na sama don dabaran launi na RGB
+Ƙarƙashin halayen firam don dabaran launi na RGB
+Halin firam ɗin hagu don dabaran launi na RGB
+Halin firam ɗin dama don dabaran launi na RGB
+Nemo fayil a cikin ƙayyadadden adireshi ko a cikin kundin adireshi na yanzu
+Yana canza ƙarshen layi zuwa tsara don dandamali na yanzu ko zuwa ƙayyadadden tsari na al'ada
+Jimlar girman cikin babban fayil:
+Nuna jimlar girman cikin jeri
+Idan an kunna, yana nuna jimlar girman babban fayil a cikin jeri, ya danganta da yadda ake lissafin girman babban fayil bisa ga tsari.
+Kuna da sabuntawa!
+Tsohuwar Tsarin JSON na JSON harsashi
+Yana zaɓar tsarin JSON tsoho (kyauta ko rage) don harsashin JSON don adanawa.
+An sauke sabuntawa cikin nasara!
+Zazzage sabuntawa ta atomatik
+Idan akwai sabuntawa, kwaya za ta sauke ta atomatik.
+radius fashewar wuta
+Tubalan nawa (har zuwa 10) ke fashewar radius don aikin wuta lokacin da aka kunna?
+Wannan umarni yana da maɓalli na ƙasa waɗanda ke canza yadda yake aiki:
+Yana buga lambobin layin da ke bin layin da ake bugawa
+Yana hana buga lambobin layi
+Yi amfani da sigar da aka fassara koyaushe
+Yi amfani da fassarar fassarar koyaushe
+Tilasta sauya harshe
+Nuna cewa amsar na iya ɗaukar haruffa fiye da ɗaya
+Nuna cewa amsar na iya ɗaukar hali ɗaya kawai
+Buga tambaya da amsoshi a layi daya
+Buga tambaya da amsoshi a layi biyu
+Buga tambaya da amsoshi ta hanyar zamani
+Buga tambaya da amsoshi a cikin tebur
+Yana nuna bayanan fayil a lissafin
+Yana hana saƙonnin "an hana" izini
+Yana nuna duk yankunan lokaci
+Fara wasan cikin sauƙi
+Fara wasan cikin matsakaicin wahala
+Fara wasan cikin wahala
+Fara wasan cikin wahala sosai
+Fara wasan cikin wahala na al'ada. Lura cewa lokacin al'ada a cikin milli seconds yakamata a rubuta shi azaman gardama.
+Yana nuna bayanan tsarin
+Yana nuna bayanan hardware
+Yana nuna bayanan mai amfani
+Yana nuna saƙon ranar
+Yana nuna saƙon ranar bayan shiga
+Yana nuna duk bayanai
+Ƙirƙirar kundin adireshi wanda ya ƙunshi abubuwan da ke cikin fayil ɗin ZIP
+Yana nuna duk garuruwan da ake da su
+Saurin matsawa
+Babu matsawa
+Kar a ƙirƙiri tushen kundin adireshi a cikin rumbun adana bayanai
+Raka'a a cikin ticks
+Yana cire haɗin daga uwar garken cikin wulakanci
+Yana nuna cewa hanyar da aka yi niyya cikakkiya ce
+Yana adana fayil ɗin JSON, yana ƙawata shi a cikin tsari
+Ajiye fayil ɗin JSON, rage shi a cikin tsari
+Yana samun salon kawo ƙarshen layi daga fayil ɗin rubutu
+Yana share duk abubuwan da aka kora
+Kunna kuskuren taron
+Yana ba da damar yin gyara don tsarin taron kwaya
+Font mai launi
+Rubuta rubutun figlet wanda ɗakin karatu na Figgle ke tallafawa. Tuntuɓi takaddun ɗakin karatu don ƙarin bayani
+An kasa shigar da harshe na al'ada {0}.
+Fayil ɗin metadata da ake buƙata don shigar da yaren al'ada babu shi.
+Bayanan metadata da ake buƙata don shigar da yaren al'ada baya samar da wuraren da ake buƙata.
+An kasa cire harshen al'ada {0}.
+Fayil ɗin metadata da ake buƙata don cire harshe na al'ada babu shi.
+Bayanan metadata da ake buƙata don cire harshe na al'ada baya samar da mahimman wuraren da ake buƙata.
+Tsawon harshen Ingilishi bai yi daidai da tsawon alamar harshen da aka bayar ba.
+Harshen ya riga ya wanzu kuma ba za a iya sake rubuta shi ba.
+An kasa cire yaren al'ada. Wataƙila babu shi.
+Ba a yi nasarar shigar da harsunan al'ada ba.
+An kasa cire harsunan al'ada.
+An kasa cire harsunan al'ada. Dubi banda na ciki don ƙarin bayani.
+Rubuta kalmar sirrin mai gudanarwa. Tabbatar cewa ba ku amfani da wannan asusun sai dai idan kun san ainihin abin da kuke yi.
+Dole ne ku rubuta kalmar sirrin mai gudanarwa.
+Bayanin lasisi
+Sarrafa harsunanku
+Ba a samo harshe ba ko fayil yana da haruffa marasa inganci.
+Ba a ƙayyade harshe ba.
+An kashe sarrafa harshe a yanayin aminci.
+Sunan gajeriyar harshe:
+Cikakken sunan harshe:
+Harshe mai iya fassarawa:
+Yaren al'ada:
+Sabuwar tutar maraba
+Allon fantsama mai salo
+Yana nuna sabon tutar maraba da aka yi da Filet
+Yana kunna salo mai salo na fantsama a farawa. Da fatan za a lura cewa zai kashe hanzarin gardama da gwada harsashi pre-boot.
+Fassarar sunan
+Sunan fantsama daga samammun fashewar da aka aiwatar a cikin kwaya.
+An ƙirƙira tsoho MOTD.
+An ƙirƙira tsoho MAL.
+An fara lissafin tsarin
+An fara amfani da masu amfani
+An cika izini
+Barka da zuwa!
+Fara mai gyara nesa...
+Kuskuren haɗin kai mai nisa
+Sanarwa akan kuskuren haɗin kuskure na nesa
+Idan an kunna, za'a yi amfani da tsarin sanarwa don sanar da mai masaukin kuskuren haɗin yanar gizo mai nisa. In ba haka ba, za a yi amfani da tsoho rubutun na'ura mai kwakwalwa.
+Siffar font don mai ƙidayar lokaci
+Kunna Filet don mai ƙidayar lokaci
+Idan an kunna, za a yi amfani da figlet don mai ƙidayar lokaci. Lura cewa yana buƙatar babban allon wasan bidiyo don ba da lokacin da kyau tare da kunna Figlet.
+Kuskure yayin nazarin muhawarar layin umarni na farko: {0}
+Yana sake saita kernel zuwa saitunan masana'anta
+Yana ƙetare gano girman na'ura wasan bidiyo
+Da alama kuna ƙetare gano girman na'ura wasan bidiyo. Wataƙila abubuwa ba za su yi aiki daidai ba akan ƙananan allo.
+Don samun ƙwarewa mafi kyau, canza girman taga na'ura wasan bidiyo yayin da kuke kan wannan allon. Danna kowane maɓalli don ci gaba...
+Na'urar wasan bidiyo na ku ya yi ƙanƙanta don yin aiki da kyau:
+Banner figlet font
+Yana buga kirtani don ta'aziyya ta amfani da nau'in launi da buga layi tare da tallafin Filet
+Yana buga kirtani don ta'aziyya ta amfani da nau'in launi da buga layi tare da tsari da goyan bayan Figlet
+Yana cire sako na dindindin
+Yana cire duk saƙonnin daga mai karɓa na dindindin
+Murke cire sako
+Murke cire duk saƙonni daga mai karɓa
+Ba a aiwatar da sharewar don POP3 ba.
+Nuna umarni sun dogara da taimako
+Nuna umarnin harsashi ya dogara da taimako
+Nuna umarnin mod ɗin yana ƙidayar taimako
+Nuna laƙabi suna ƙidayar taimako
+Yana nuna ƙidayar umarni a cikin jerin umarni, waɗanda ƙididdiga uku ke sarrafa su don nau'ikan umarni daban-daban.
+Yana aiwatar da umarni da zarar an gamsu maganganun UESH
+Ba a sami yanayin a cikin magana ba.
+Sharadi {0} yana buƙatar muhawara {1}. Ya samu {2}.
+Ana buƙatar sanya yanayin a tsakiya.
+Ana buƙatar sanya yanayin a farkon.
+Kuskuren tantance magana saboda kuskuren daidaitawa.
+An kasa gamsar da sharadi. Karin bayani a nan:
+Halin mashin kalmar sirri
+Halin da ke rufe kalmar sirri. Bar komai don ƙarin tsaro.
+Yana fita daga harsashi idan yana gudana akan ƙaramin harsashi
+Ba za a iya kashe uwar harsashi!
+Ba za a iya fita daga ƙaramin harsashi ba.
+Ba a ƙayyade fayil ba. Ana fita harsashi...
+Saituna don wannan allon fantsama suna nan.
+Launin ci gaba
+Yana buɗe saitunan allo
+Yana buɗe saitunan fantsama
+Jerin akwai masu canjin UESH
+Wurin rubutu na ci gaba
+Zaɓi wurin rubutun ci gaba da kuka fi so.
+Kuna iya rubuta lambobin kawai.
+Danna "q" don fita.
+Ana sauke sunaye...
+Saboda matsalolin fasaha, ba za mu iya lissafin kaddarorin adaftar a tsarin Unix ba.
+Yana kunna yanayin gyara kuskure
+Neman jayayya
+Kunna Yanayin Baƙi da Fari
+Yana sanya disco baki da fari. Zai cutar da idanunku da gaske idan ya yi sauri sosai, don haka ba a ba da shawarar ba idan kuna fuskantar kama hotuna masu sauri.
+Ga alama kuna gudanar da sigar mara tallafi. Yana da kyau a daina amfani da wannan sigar.
+Load da Launuka na Yanzu
+Madadin launi na zaɓi
+Masu amfani suna ƙidaya don kalaman soyayya ko ƙiyayya
+Masu amfani nawa ne za su kasance a cikin ɗakin sharhi na soyayya ko ƙiyayya?
+Lissafin samuwa harsuna
+Akwai harsuna:
+Hujjar layin umarni:
+Hujjojin layin umarni na riga-kafi:
+Yana buɗe takaddun API ɗin mod don tsarin lambar tushe a mafi yawan sigar sa na yanzu

@@ -983,3 +983,675 @@ Appuyez sur n'importe quelle touche pour lire la page de manuel...
 Cette page de manuel a besoin de travail pour :
 Page de manuel {0} introuvable.
 Mode d'emploi
+Arguments de noyau disponibles :
+Appuyez sur "q" si vous avez terminé.
+Plusieurs arguments du noyau peuvent être séparés par des virgules sans espaces, par exemple :
+Plusieurs commandes injectées peuvent être séparées par des deux-points avec des espaces, par exemple :
+L'argument demandé {0} est introuvable.
+Erreur irrécupérable dans l'argument :
+Crypte une chaîne à l'aide de SHA512
+Crypte une chaîne à l'aide de SHA384
+Crypte une chaîne à l'aide de SHA256
+Crypte une chaîne à l'aide de SHA1
+Crypte une chaîne à l'aide de MD5
+où sera builtinsaver
+La partie mod n'est rien.
+L'arrêt des mods n'est pas autorisé en mode sans échec.
+Le mod a déjà été lancé !
+Le mod n'a pas encore commencé !
+Utilisation de la commande :
+Nom du fichier pièce :
+Chemin d'accès au fichier partiel :
+Erreur lors de la tentative de démarrage de l'économiseur d'écran :
+Type de chemin non valide.
+Type de chemin d'accès au noyau non valide.
+Le démarrage précédent a échoué
+L'éditeur JSON n'a pas encore ouvert de flux de fichiers.
+La propriété à l'intérieur du fichier JSON est introuvable.
+Propriété supprimée.
+Ajoute une nouvelle propriété à la fin du fichier JSON
+Supprime une propriété du fichier JSON
+Quitte le shell JSON
+Quitte le shell JSON sans enregistrer les modifications
+Enregistre le fichier JSON
+Ouvre le shell JSON
+Imprime le fichier JSON
+Prochain intervalle de rampe
+Active la prise en charge de 255 couleurs pour Ramp.
+Active la prise en charge des couleurs vraies pour Ramp.
+Combien de millisecondes attendre avant de remplir la rampe suivante ?
+Couleur du titre de la notification
+Couleur de la description des notifications
+Couleur de progression des notifications
+Couleur d'échec de notification
+Couleur des questions
+Couleur du succès
+Couleur du dollar de l'utilisateur
+Couleur de la pointe
+Couleur du texte du séparateur
+Couleur du séparateur
+Couleur du titre de la liste
+Couleur d'avertissement de développement
+Couleur de l'heure de la scène
+Couleur de progression
+Couleur de l'option arrière
+Dessiner la bordure de notification
+Couvre la notification avec la bordure.
+Contactez le vendeur du mod pour mettre à niveau le mod vers la version compatible.
+Couleur de bordure de faible priorité
+Couleur de bordure de priorité moyenne
+Couleur de bordure prioritaire
+Envoie une notification de progression pour tester le récepteur
+Teste la roue des couleurs
+Affiche l'heure du noyau local
+Affiche la date du noyau local
+Affiche la date et l'heure du noyau local
+Affiche l'heure UTC du noyau
+Affiche la date du noyau UTC
+Affiche la date et l'heure UTC du noyau
+Chemin MOTD
+Chemin MAL
+Quel fichier est le fichier texte MOTD ? Écrivez un chemin absolu vers le fichier texte.
+Quel fichier est le fichier texte MAL ? Écrivez un chemin absolu vers le fichier texte.
+Mods sur liste noire
+Écrivez les noms de fichiers des mods qui ne s'exécuteront pas au démarrage. Lorsque vous avez terminé, écrivez "q". Écrivez un signe moins à côté du chemin pour supprimer un mod existant.
+Le mod {0} est sur liste noire.
+Recharge tous les mods
+Ajoute un mod à la liste noire
+Supprime un mod de la liste noire
+Heure et date en UTC : {0}
+La commande shell JSON spécifiée est introuvable.
+Afficher les informations de l'application au démarrage
+Analyser les arguments de ligne de commande
+Afficher les heures d'arrivée des étapes
+Démarrer les modifications du noyau au démarrage
+Afficher l'heure actuelle avant la connexion
+Avertir de tout défaut lors du démarrage
+Affiche de brèves informations sur l'application au démarrage.
+Analyse les arguments de la ligne de commande au démarrage.
+Indique combien de temps le noyau a mis pour terminer une étape.
+Démarre automatiquement les modifications du noyau au démarrage.
+Affiche l'heure actuelle, le fuseau horaire et la date avant la connexion.
+S'il y a une erreur mineure lors du démarrage du noyau, en informe l'utilisateur.
+Style d'invite de nom d'utilisateur
+Style d'invite de mot de passe
+Afficher MAL à la connexion
+Écrivez comment vous voulez que votre invite de connexion soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Écrivez comment vous voulez que votre invite de mot de passe soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Affiche le message du jour après avoir affiché l'écran de connexion.
+Tester le style d'invite du shell
+Style d'invite de shell JSON
+Sonder les commandes injectées
+Sonde les commandes injectées au démarrage du shell du noyau.
+Afficher les détails du fichier dans la liste
+Affiche les brefs détails du fichier lors de la liste des fichiers
+Afficher les détails du fichier dans la liste FTP
+Style d'invite de nom d'utilisateur pour FTP
+Style d'invite de mot de passe pour FTP
+Utiliser le premier profil FTP
+Ajouter de nouvelles connexions à la numérotation abrégée FTP
+Essayez de valider les certificats FTP sécurisés
+Afficher FTP MOTD à la connexion
+Toujours accepter les certificats FTP invalides
+Affiche les détails du fichier FTP lors de la liste des répertoires distants.
+Utilise le premier profil FTP pour se connecter au FTP.
+Si activé, ajoute une nouvelle connexion au numéro abrégé FTP.
+Essaie de valider les certificats FTP. Il n'est pas recommandé de le désactiver.
+Affiche le message FTP du jour lors de la connexion.
+Acceptez toujours les certificats FTP invalides. Il n'est pas recommandé de l'activer car cela peut poser des risques pour la sécurité.
+Style d'invite de nom d'utilisateur pour le courrier
+Style d'invite de mot de passe pour le courrier
+Style d'invite IMAP pour le courrier
+Style d'invite SMTP pour le courrier
+Détecter automatiquement le serveur de messagerie
+Activer le débogage du courrier
+Avertir pour les nouveaux messages électroniques
+Style d'invite de mot de passe GPG pour le courrier
+Envoyer l'intervalle de ping IMAP
+Envoyer l'intervalle de ping SMTP
+Format du texte du courrier
+Écrivez comment vous voulez que votre invite de serveur IMAP soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Écrivez comment vous voulez que votre invite de serveur SMTP soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Détecter automatiquement le serveur de messagerie en fonction de l'adresse donnée.
+Active le débogage du serveur de messagerie.
+Vous avertit de tout nouveau message électronique.
+Écrivez comment vous voulez que votre invite de mot de passe GPG soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Combien de millisecondes pour envoyer le ping IMAP ?
+Combien de millisecondes pour envoyer le ping SMTP ?
+Contrôle la manière dont le texte de l'e-mail sera affiché.
+Texte brut
+Texte enchaîné
+Texte HTML
+Texte enrichi
+Texte enrichi compressé
+Texte riche
+Démarrer automatiquement le débogage à distance au démarrage
+Format du message de débogage à distance
+Si vous voulez que le débogage à distance démarre au démarrage, activez-le.
+Spécifie le format du message de débogage distant. {0} pour le nom, {1} pour le message.
+Style d'invite d'URL de flux RSS
+Actualisation automatique du flux RSS
+Intervalle d'actualisation automatique du flux RSS
+Écrivez comment vous voulez que votre invite de serveur de flux RSS soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Combien de millisecondes pour actualiser le flux RSS ?
+Afficher les détails du fichier dans la liste SFTP
+Style d'invite de nom d'utilisateur pour SFTP
+Ajouter de nouvelles connexions à la numérotation abrégée SFTP
+Affiche les détails du fichier SFTP lors de la liste des répertoires distants.
+Si activé, ajoute une nouvelle connexion à la numérotation abrégée SFTP.
+Délai d'expiration du ping
+Afficher des informations détaillées sur l'adaptateur
+Afficher les informations générales sur le réseau
+Télécharger le texte du pourcentage
+Télécharger le texte du pourcentage
+Combien de millisecondes attendre avant de déclarer le timeout ?
+Imprime les informations détaillées sur l'adaptateur, telles que les informations sur les paquets.
+Affiche les informations générales sur le réseau.
+Écrivez comment vous voulez que votre texte de pourcentage de téléchargement soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille téléchargée, {1} pour la taille cible, {2} pour le pourcentage.
+Écrivez comment vous voulez que votre texte de pourcentage de téléchargement soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille téléchargée, {1} pour la taille cible, {2} pour le pourcentage.
+Demander le mot de passe après le verrouillage
+Après avoir verrouillé l'écran, demandez le mot de passe
+Niveau de couleur rouge minimum
+Niveau minimum de couleur verte
+Niveau de couleur bleu minimum
+Niveau de couleur minimal
+Niveau de couleur rouge maximum
+Niveau maximum de couleur verte
+Niveau de couleur bleu maximum
+Niveau de couleur maximal
+Niveau de couleur rouge minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau minimum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur bleu minimum. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur minimal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs.
+Niveau maximum de couleur rouge. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau maximum de couleur verte. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau maximum de couleur bleue. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.
+Niveau de couleur maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255 pour 255 couleurs ou 16 pour 16 couleurs.
+Couleur de premier plan
+Caractère de ligne
+Un caractère pour former une ligne. Assurez-vous de ne saisir qu'un seul caractère.
+Caractère du coin supérieur gauche pour la barre des heures
+Caractère du coin supérieur gauche pour la barre des minutes
+Caractère du coin supérieur gauche pour la barre des secondes
+Caractère du coin supérieur droit pour la barre des heures
+Caractère du coin supérieur droit pour la barre des minutes
+Caractère du coin supérieur droit pour la barre des secondes
+Caractère du coin inférieur gauche pour la barre des heures
+Caractère du coin inférieur gauche pour la barre des minutes
+Caractère du coin inférieur gauche pour la barre des secondes
+Caractère du coin inférieur droit pour la barre des heures
+Caractère du coin inférieur droit pour la barre des minutes
+Caractère du coin inférieur droit pour la barre des secondes
+Caractère de cadre supérieur pour la barre des heures
+Caractère de cadre supérieur pour la barre des minutes
+Caractère du cadre supérieur pour la barre des secondes
+Caractère de cadre inférieur pour la barre des heures
+Caractère de cadre inférieur pour la barre des minutes
+Caractère de cadre inférieur pour la barre des secondes
+Caractère de cadre gauche pour la barre des heures
+Caractère de cadre gauche pour la barre des minutes
+Caractère de cadre gauche pour la barre des secondes
+Caractère du cadre droit pour la barre des heures
+Caractère de cadre droit pour la barre des minutes
+Caractère du cadre droit pour la barre des secondes
+Texte d'information pour les heures
+Texte d'information pour les minutes
+Texte d'information pendant les secondes
+Niveau de couleur rouge minimum pendant des heures
+Niveau de couleur verte minimum pendant des heures
+Niveau de couleur bleu minimum pendant des heures
+Niveau de couleur minimum pendant des heures
+Niveau de couleur rouge maximum pendant des heures
+Niveau de couleur vert maximum pendant des heures
+Niveau de couleur bleu maximum pendant des heures
+Niveau de couleur maximum pendant des heures
+Niveau de couleur rouge minimum pendant minutes
+Niveau de couleur vert minimum pendant minutes
+Niveau de couleur bleu minimum pendant minutes
+Niveau de couleur minimum pendant minutes
+Niveau de couleur rouge maximum pendant des minutes
+Niveau maximum de couleur verte pendant des minutes
+Niveau de couleur bleu maximum pendant quelques minutes
+Niveau de couleur maximal pendant quelques minutes
+Niveau de couleur rouge minimum pendant quelques secondes
+Niveau de couleur vert minimum pendant quelques secondes
+Niveau de couleur bleu minimum pendant quelques secondes
+Niveau de couleur minimum pendant quelques secondes
+Niveau de couleur rouge maximum pendant quelques secondes
+Niveau maximum de couleur verte pendant quelques secondes
+Niveau de couleur bleu maximum pendant quelques secondes
+Niveau de couleur maximal pendant quelques secondes
+Un caractère qui ressemble au coin supérieur gauche. Assurez-vous de ne saisir qu'un seul caractère.
+Un caractère qui ressemble au coin inférieur gauche. Assurez-vous de ne saisir qu'un seul caractère.
+Un personnage qui ressemble au cadre supérieur. Assurez-vous de ne saisir qu'un seul caractère.
+Un personnage qui ressemble au cadre inférieur. Assurez-vous de ne saisir qu'un seul caractère.
+Un caractère qui ressemble au cadre de gauche. Assurez-vous de ne saisir qu'un seul caractère.
+Un personnage qui ressemble au cadre droit. Assurez-vous de ne saisir qu'un seul caractère.
+Écrivez comment votre texte d'information pour l'heure actuelle s'affiche. {0} pour l'heure actuelle sur 24 heures.
+Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute actuelle sur 60 minutes.
+Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 secondes.
+Couleur du texte
+Caractère du coin supérieur gauche pour la barre de rampe
+Caractère du coin supérieur droit pour la barre de rampe
+Caractère du coin inférieur gauche pour la barre de rampe
+Caractère du coin inférieur droit pour la barre de rampe
+Caractère de cadre supérieur pour barre de rampe
+Caractère de cadre inférieur pour barre de rampe
+Caractère de cadre gauche pour la barre de rampe
+Caractère de cadre droit pour la barre de rampe
+Niveau de couleur rouge minimum pour la couleur de départ
+Niveau de couleur vert minimum pour la couleur de départ
+Niveau de couleur bleu minimum pour la couleur de départ
+Niveau de couleur minimum pour la couleur de départ
+Niveau de couleur rouge maximum pour la couleur de départ
+Niveau de couleur vert maximum pour la couleur de départ
+Niveau de couleur bleu maximum pour la couleur de départ
+Niveau de couleur maximum pour la couleur de départ
+Niveau de couleur rouge minimum pour la couleur finale
+Niveau de couleur vert minimum pour la couleur finale
+Niveau de bleu minimum pour la couleur finale
+Niveau de couleur minimum pour la couleur finale
+Niveau de couleur rouge maximum pour la couleur finale
+Niveau de couleur vert maximum pour la couleur finale
+Niveau maximum de bleu pour la couleur finale
+Niveau de couleur maximum pour la couleur finale
+Nombre minimum de solveur
+Nombre maximum de solveur
+Solveur afficher l'entrée
+Caractère du coin supérieur gauche pour la bordure de notification
+Caractère du coin supérieur droit pour la bordure de notification
+Caractère du coin inférieur gauche pour la bordure de notification
+Caractère du coin inférieur droit pour la bordure de notification
+Caractère de cadre supérieur pour la bordure de notification
+Caractère de cadre inférieur pour la bordure de notification
+Caractère de cadre gauche pour la bordure de notification
+Caractère de cadre droit pour la bordure de notification
+Style des informations de la page de manuel
+Indique s'il faut afficher ce qui est écrit dans l'invite de saisie.
+Quel est le nombre minimum à choisir ?
+Quel est le nombre maximum à choisir ?
+Écrivez comment vous voulez que les informations de votre page de manuel soient. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour le titre du manuel, {1} pour la révision.
+La propriété {0} n'est trouvée sur aucun des modules.
+Cette section répertorie les paramètres généraux de l'économiseur d'écran. Pour les paramètres individuels de l'économiseur d'écran, quittez Paramètres et ouvrez Paramètres de l'économiseur d'écran.
+Démarrer la roue chromatique en mode couleurs vraies
+Si spécifié, il affichera une bannière de démarrage personnalisée avec prise en charge des espaces réservés. Vous pouvez utiliser {0} pour la version du noyau.
+Quelle variante de la langue actuelle est utilisée pour modifier les noms de mois, le calendrier, etc. ?
+Active la prise en charge de 255 couleurs.
+Active la prise en charge des couleurs vraies.
+Mot supprimé à la ligne {0}.
+Chaîne remplacée à la ligne {0}.
+Suppression de la ligne numéro {0}.
+Supprimer les messages non autorisés
+Masque le message ennuyeux si la fonction de liste essaie d'ouvrir un dossier non autorisé
+Informations sur le serveur FTP
+Adresse du serveur:
+Port de serveur:
+Type de serveur:
+Type de système serveur :
+Mode de chiffrement du serveur :
+Type de connexion de données serveur :
+Système serveur :
+Type de données de téléchargement du serveur :
+Type de données de téléchargement du serveur :
+Vous devez vous connecter à un serveur avant d'effectuer cette opération.
+Entrez un fichier distant à hacher.
+Entrez un répertoire distant à hacher.
+Entrez un répertoire distant.
+Hachage récursif pour FTP
+Indique s'il faut hacher récursivement un répertoire. Veuillez noter que tous les serveurs FTP ne le prennent pas en charge.
+Fréquence d'horloge du processeur :
+Prise en charge du processeur SSE2 :
+Nombre total de processeurs :
+Taille du disque :
+Mémoire totale:
+Carte graphique:
+Modèle de disque :
+Nombre maximum d'e-mails sur une page
+Culture de la langue actuelle
+Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
+Paramètres divers...
+Paramètres de couleurs...
+Exécute une commande de serveur FTP
+Saisissez l'adresse et le port du serveur POP3 (<adresse> ou <adresse> :[port]) :
+Style d'invite POP3 pour le courrier
+Envoyer l'intervalle de ping POP3
+Écrivez comment vous voulez que votre invite de serveur POP3 soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
+Combien de millisecondes pour envoyer le ping POP3 ?
+Utiliser POP3
+Que ce soit pour utiliser POP3. Désactiver cela utilisera SMTP.
+Crypte une chaîne en utilisant CRC32
+Ouvre le client de messagerie
+du courrier transféré...
+Les paramètres de cet économiseur d'écran sont disponibles ici.
+Teste la fonctionnalité du tableau
+Modifie la ligne spécifiée
+Ajoute les nouvelles lignes à la fin du fichier
+Entrez le texte que vous souhaitez ajouter à la fin du fichier. Lorsque vous avez terminé, écrivez "EOF" sur sa propre ligne.
+Nom d'hôte
+Nom d'utilisateur
+Type de données
+Codage
+Chiffrement
+Protocoles
+Afficher la progression du transfert de courrier
+Progression du transfert de courrier
+Progression du transfert de courrier (unique)
+S'il est activé, le shell de messagerie affichera le nombre d'octets transmis lors du téléchargement du courrier.
+Écrivez comment vous voulez que votre style de progression de transfert de courrier soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille transférée et {1} pour la taille totale.
+Écrivez comment vous voulez que votre style de progression de transfert de courrier soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille transférée.
+Fuseau horaire:
+Aujourd'hui, c'est {0}
+L'heure actuelle est {0}
+Couleur du séparateur de tableau
+Couleur de l'en-tête du tableau
+Couleur de la valeur du tableau
+Des réponses possibles
+Le fichier de mod n'est pas spécifié.
+Essayer d'installer un mod déjà installé. Mise à jour du module...
+Échec de l'installation pour
+Le fichier mod fourni est incompatible.
+La désinstallation a échoué pour
+Ouvre une URL
+Imprimer les numéros de ligne lors de l'impression du contenu du fichier
+Fait en sorte que la commande \"cat\" imprime les numéros de ligne du fichier.
+Version translittérée
+Version traduite
+Ignore toutes les notifications
+Téléchargement...
+Téléchargement...
+Afficher une notification pour la progression du téléchargement
+Afficher une notification pour la progression du téléchargement
+Affiche la notification indiquant la progression du téléchargement.
+Affiche la notification indiquant la progression du téléchargement.
+Vérifie si la chaîne traduisible existe dans les ressources KS
+Chaîne trouvée dans les ressources de localisation.
+Chaîne introuvable dans les ressources de localisation.
+Démarre le noyau en silence
+Injecte une commande pour démarrer à la prochaine connexion
+Démarre le noyau en mode sans échec, en désactivant tous les mods
+Comme le mode sans échec, mais désactive également le multi-utilisateur et certaines personnalisations
+Il n'y avait pas assez d'arguments.
+Couleur du coin supérieur gauche de la barre de rampe
+Couleur du coin supérieur droit de la barre de rampe
+Couleur du coin inférieur gauche de la barre de rampe
+Couleur du coin inférieur droit de la barre de rampe
+Couleur du cadre supérieur pour la barre de rampe
+Couleur du cadre inférieur pour barre de rampe
+Couleur du cadre gauche pour la barre de rampe
+Couleur du cadre droit pour la barre de rampe
+Utiliser les couleurs de bordure pour la barre de rampe
+Utilisez les couleurs de bordure pour la barre de rampe. Si désactivé, générera une barre grise.
+Démarre le shell HTTP
+Quitte le shell HTTP et retourne au noyau
+Définit le site HTTP. Doit être un URI valide.
+Obtient la réponse du serveur HTTP à l'aide de la requête spécifiée
+Supprime le contenu du serveur HTTP
+Une erreur s'est produite dans le shell HTTP :
+Message HTTP : La commande demandée {0} est introuvable. Voir 'help' pour une liste des commandes disponibles spécifiées sur le shell HTTP.
+Obtient la chaîne du serveur HTTP à l'aide de la requête spécifiée
+Obtenir {0}...
+Le format URI du site n'est pas valide.
+Paramétrer le site sur
+Les couleurs ne nécessitent pas de redémarrage, mais la plupart des paramètres nécessitent un redémarrage.
+Aucune aide pour l'argument "{0}".
+Appuyez sur A sur les commentaires haineux pour vous excuser. Appuyez sur T sur les commentaires d'amour pour remercier. Appuyez sur Q pour quitter le jeu.
+Vous vous êtes excusé pour un commentaire haineux ! Excellent!
+Excusé d'aimer le commentaire. Pas assez bon.
+Vous venez de remercier le haineux pour le commentaire haineux !
+Difficulté par défaut pour SpeedPress
+Délai d'expiration de la touche pour SpeedPress
+Sélectionnez votre difficulté préférée.
+Combien de millisecondes attendre l'appui sur la touche avant l'expiration du délai ? (En difficulté personnalisée)
+Remplace un mot ou une phrase par un autre en utilisant des expressions régulières
+Remplace un mot ou une phrase par un autre dans une ligne à l'aide d'expressions régulières
+Interroge un mot dans une ligne spécifiée ou toutes les lignes à l'aide d'expressions régulières
+Trouver un paramètre
+Écrivez ce que vous voulez rechercher.
+Rien n'est trouvé. Assurez-vous que vous avez correctement écrit le paramètre.
+Emballe un fichier local dans l'archive
+Je ne peux rien emballer.
+Description de la réponse
+Port hôte
+Pour plus d'informations sur les termes et conditions d'utilisation de ce logiciel, visitez
+Type de sortie de choix par défaut
+Vérifie tous les paramètres KS pour voir si les variables sont écrites correctement
+Ces entrées de configuration contiennent des variables ou des énumérations non valides et doivent être corrigées :
+Fichier {0} introuvable
+Crée un tableau de variables avec les valeurs fournies
+Écrivez le numéro du paramètre à atteindre. Tout autre caractère signifie retour en arrière.
+Vérifie tous les numéros de ligne de texte de localisation pour voir s'ils sont tous égaux
+Incompatibilité de ligne dans
+Veuillez entrer un numéro d'utilisateur.
+Inclure les utilisateurs anonymes
+Inclure les utilisateurs désactivés
+Inclut les utilisateurs anonymes dans la liste
+Inclut les utilisateurs désactivés dans la liste
+Trier la liste
+Trie la liste des systèmes de fichiers de manière professionnelle.
+Fournit un choix de sélection
+Commandes Shell non implémentées !!!
+Afficher le dernier titre RSS lors de la connexion
+URL du titre RSS
+À chaque connexion, il affichera le dernier titre RSS à partir de l'URL du titre sélectionné.
+URL du titre RSS à utiliser lors de l'affichage du dernier titre. Il s'agit généralement de votre flux préféré.
+Dernières nouvelles:
+Impossible d'obtenir les dernières nouvelles.
+Couleur de l'option sélectionnée
+Afficher la trace de la pile en cas d'erreur du noyau
+S'il y a une erreur de noyau, choisissez d'imprimer ou non la trace de la pile sur la console.
+Le mod peut être chargé, mais ces avertissements peuvent avoir un impact sur le fonctionnement du mod :
+L'économiseur d'écran peut être chargé, mais ces avertissements peuvent avoir un impact sur le fonctionnement de l'économiseur d'écran :
+Enregistrer les paramètres sous
+Charger les paramètres depuis
+Où voulez-vous enregistrer les paramètres actuels du noyau ?
+Impossible d'enregistrer les paramètres du noyau sur le fichier existant.
+D'où voulez-vous charger les paramètres actuels du noyau ?
+Vérifie si les chaînes traduisibles existent dans les ressources KS
+Combine les deux fichiers texte ou plus dans le fichier de sortie.
+Impossible de combiner les fichiers.
+Expiration du délai de récupération du flux RSS
+Combien de millisecondes attendre avant l'expiration du délai de récupération du flux RSS ?
+Remplissez les cases
+Dessine-t-on la boîte dans son ensemble ou dessine-t-on seulement la bordure ?
+Délai d'étape en millisecondes
+Combien de millisecondes attendre avant de dessiner l'étape suivante ?
+Prochain intervalle de pourriture de la rampe
+Combien de millisecondes attendre avant de pourrir une extrémité de la rampe suivante ?
+Vérifier le quota de débogage
+Vérifions-nous si le système de débogage doit vérifier le quota avant d'écrire dans le débogueur ?
+Combien de millisecondes a-t-il vraiment fallu pour dormir ?
+Impossible d'ajouter un événement.
+Échec de la suppression d'un événement.
+Pas assez d'arguments fournis pour ajouter un événement.
+Pas assez d'arguments fournis pour supprimer un événement.
+Pas assez d'arguments fournis pour la manipulation d'événements.
+Échec de l'ajout ou de la suppression d'un rappel.
+Pas assez d'arguments fournis pour ajouter ou supprimer un rappel.
+Pas assez d'arguments fournis pour la manipulation des rappels.
+Rappel sans titre
+Événement sans titre
+C'est maintenant un jour d'événement!
+Ne manquez pas ça !
+Action invalide.
+Un simple chronomètre
+Démarrer ou arrêter
+Genoux
+Réinitialiser
+Une simple minuterie
+Commencer à (re)compter à rebours
+Définir l'intervalle
+Le délai d'attente indiqué n'est pas numérique.
+Spécifiez le délai d'attente en millisecondes
+Enregistrer tous les événements et/ou rappels de manière destructive
+Si activé, supprime tous les événements et/ou rappels avant de tous les enregistrer à l'aide de la commande calendrier.
+Vérifier les nouvelles tentatives de transmission FTP
+Délai de connexion FTP
+Délai d'expiration de la connexion de données FTP
+Versions IP FTP
+Combien de fois vérifier le chargement et le téléchargement et réessayer si la vérification échoue avant que le téléchargement échoue dans son ensemble ?
+Combien de millisecondes attendre avant l'expiration de la connexion FTP ?
+Combien de millisecondes attendre avant l'expiration de la connexion de données FTP ?
+Choisissez la version du protocole Internet prise en charge par le serveur FTP et utilisée par le client FTP.
+Tentative de démarrage de RPC alors qu'il est déjà lancé.
+Caractère du coin supérieur gauche pour la roue chromatique RVB
+Caractère du coin supérieur droit pour la roue chromatique RVB
+Caractère du coin inférieur gauche pour la roue chromatique RVB
+Caractère du coin inférieur droit pour la roue chromatique RVB
+Caractère du cadre supérieur pour la roue chromatique RVB
+Caractère du cadre inférieur pour la roue chromatique RVB
+Caractère de cadre gauche pour la roue chromatique RVB
+Caractère de cadre droit pour la roue chromatique RVB
+Recherche un fichier dans le répertoire spécifié ou dans le répertoire courant
+Convertit les fins de ligne au format de la plate-forme actuelle ou au format personnalisé spécifié
+Taille totale dans le dossier :
+Afficher la taille totale dans la liste
+Si activé, affiche la taille totale des dossiers dans la liste, en fonction de la façon de calculer les tailles des dossiers en fonction de la configuration.
+Vous êtes à jour !
+Formatage JSON par défaut pour le shell JSON
+Sélectionne la mise en forme JSON par défaut (embellie ou minifiée) pour le shell JSON à enregistrer.
+J'ai téléchargé la mise à jour avec succès !
+Télécharger automatiquement les mises à jour
+S'il y a une mise à jour, le noyau la téléchargera automatiquement.
+Rayon d'explosion du feu d'artifice
+Combien de blocs (jusqu'à 10) est le rayon d'explosion du feu d'artifice lorsqu'il est allumé ?
+Cette commande a les commutateurs ci-dessous qui changent son fonctionnement :
+Imprime les numéros de ligne qui suivent la ligne en cours d'impression
+Empêche l'impression des numéros de ligne
+Utilisez toujours la version translittérée
+Utilisez toujours la version traduite
+Forcer le changement de langue
+Indiquez que la réponse peut prendre plus d'un caractère
+Indiquez que la réponse ne peut prendre qu'un seul caractère
+Imprimer la question et les réponses sur une seule ligne
+Imprimez la question et les réponses sur deux lignes
+Imprimez la question et les réponses de manière moderne
+Imprimer la question et les réponses dans un tableau
+Affiche les détails du fichier dans la liste
+Supprime les messages ennuyeux "autorisation refusée"
+Affiche tous les fuseaux horaires
+Démarre le jeu en difficulté facile
+Commence le jeu en difficulté moyenne
+Démarre le jeu en difficulté difficile
+Démarre le jeu en difficulté très difficile
+Démarre le jeu en difficulté personnalisée. Veuillez noter que le délai d'attente personnalisé en millisecondes doit être écrit en argument.
+Affiche les informations système
+Affiche les informations sur le matériel
+Affiche les informations de l'utilisateur
+Affiche le message du jour
+Affiche le message du jour après la connexion
+Affiche toutes les informations
+Crée un répertoire qui contient le contenu du fichier ZIP
+Affiche toutes les villes disponibles
+Compression rapide
+Pas de compression
+Ne pas créer de répertoire de base dans l'archive
+Unité en ticks
+Se déconnecte honteusement du serveur
+Indique que le chemin cible est absolu
+Enregistre le fichier JSON, l'embellissant dans le processus
+Enregistre le fichier JSON, en le minimisant dans le processus
+Obtient le style de fin de ligne à partir du fichier texte
+Efface tous les événements déclenchés
+Activer le débogage des événements
+Active le débogage pour le système d'événements du noyau
+Police Figlet
+Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d'informations
+Échec de l'installation de la langue personnalisée {0}.
+Le fichier de métadonnées nécessaire à l'installation de la langue personnalisée n'existe pas.
+Les informations de métadonnées nécessaires pour installer la langue personnalisée ne fournissent pas les localisations nécessaires.
+Échec de la désinstallation de la langue personnalisée {0}.
+Le fichier de métadonnées nécessaire pour désinstaller la langue personnalisée n'existe pas.
+Les informations de métadonnées nécessaires pour désinstaller la langue personnalisée ne fournissent pas les localisations nécessaires.
+La longueur de la langue anglaise ne correspond pas à la longueur du jeton de langue fourni.
+La langue existe déjà et ne peut pas être écrasée.
+Échec de la désinstallation de la langue personnalisée. Il n'existe probablement pas.
+Échec de l'installation des langues personnalisées.
+Échec de la désinstallation des langues personnalisées.
+Échec de la désinstallation des langues personnalisées. Voir l'exception interne pour plus d'informations.
+Écrivez le mot de passe administrateur. Assurez-vous de ne pas utiliser ce compte à moins de savoir vraiment ce que vous faites.
+Vous devez écrire le mot de passe administrateur.
+Informations sur la licence
+Gérez vos langues
+Langue introuvable ou le fichier contient des caractères non valides.
+La langue n'est pas précisée.
+La gestion de la langue est désactivée en mode sans échec.
+Nom abrégé de la langue :
+Nom complet de la langue :
+Langue translittérable :
+Langue personnalisée :
+Nouvelle bannière de bienvenue
+Écran de démarrage élégant
+Affiche la nouvelle bannière de bienvenue rendue par Figlet
+Active l'écran de démarrage élégant au démarrage. Veuillez noter que cela désactivera l'invite d'arguments et testera le pré-démarrage du shell.
+Nom de l'éclaboussure
+Nom du splash parmi les splash disponibles implémentés dans le noyau.
+MOTD par défaut généré.
+MAL par défaut généré.
+Compte système initialisé
+Utilisateurs initialisés
+Autorisations chargées
+Bienvenue!
+Démarrage du débogueur distant...
+Erreur de connexion au débogueur distant
+Notifier en cas d'erreur de connexion de débogage à distance
+Si activé, utilisera le système de notification pour informer l'hôte de l'erreur de connexion de débogage à distance. Sinon, utilisera l'écriture de console par défaut.
+Police Figlet pour la minuterie
+Activer Figlet pour la minuterie
+Si activé, utilisera figlet pour la minuterie. Veuillez noter qu'il a besoin d'un grand écran de console pour afficher correctement l'heure avec Figlet activé.
+Erreur lors de l'analyse des arguments de ligne de commande de pré-démarrage : {0}
+Réinitialise le noyau aux paramètres d'usine
+Contourne la détection de la taille de la console
+On dirait que vous contournez la détection de la taille de la console. Les choses peuvent ne pas fonctionner correctement sur les petits écrans.
+Pour avoir une meilleure expérience, redimensionnez la fenêtre de votre console tout en étant toujours sur cet écran. Appuyez sur n'importe quelle touche pour continuer...
+Votre console est trop petite pour fonctionner correctement :
+Police figlet de la bannière
+Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le support Figlet
+Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le format et la prise en charge de Figlet
+Supprime définitivement un message
+Supprime définitivement tous les messages du destinataire
+Annuler la suppression d'un message
+Annule la suppression de tous les messages du destinataire
+Annuler la suppression n'est pas implémenté pour POP3.
+Afficher le nombre de commandes dans l'aide
+Afficher le nombre de commandes shell dans l'aide
+Afficher les commandes de mod comptent sur l'aide
+Afficher le nombre d'alias dans l'aide
+Affiche le nombre de commandes dans la liste de commandes, contrôlé par les trois commutateurs d'affichage de nombre pour différents types de commandes.
+Exécute les commandes une fois que les expressions UESH sont satisfaites
+La condition n'a pas été trouvée dans l'expression.
+La condition {0} nécessite {1} arguments. J'ai {2}.
+La condition doit être placée au milieu.
+La condition doit être placée au début.
+Erreur lors de l'analyse de l'expression en raison d'une erreur de syntaxe.
+Échec de satisfaction de la condition. Plus d'infos ici:
+Caractère de masque de mot de passe
+Un caractère qui masque le mot de passe. Laissez vide pour plus de sécurité.
+Quitte le shell s'il est exécuté sur un sous-shell
+Impossible de tuer la coquille mère !
+Impossible de se déconnecter du sous-shell.
+Fichier non spécifié. Sortie de coque...
+Les paramètres de cet écran de démarrage sont disponibles ici.
+Couleur de la barre de progression
+Ouvre les paramètres de l'économiseur d'écran
+Ouvre les paramètres de démarrage
+Répertorie les variables UESH disponibles
+Emplacement du texte de progression
+Sélectionnez votre emplacement de texte de progression préféré.
+Vous ne pouvez écrire que les chiffres.
+Appuyez sur "q" pour quitter.
+Téléchargement des noms...
+En raison de difficultés techniques, nous ne sommes pas en mesure de répertorier les propriétés de l'adaptateur sur les systèmes Unix.
+Active le mode débogage
+Demande d'arguments
+Activer le mode noir et blanc
+Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c'était trop rapide, donc déconseillé si vous rencontrez une crise d'images rapides.
+Il semble que vous exécutiez une version non prise en charge. Il est fortement déconseillé d'utiliser cette version.
+Charger les couleurs actuelles
+Couleur d'option alternative
+Les utilisateurs comptent pour les commentaires d'amour ou de haine
+Combien d'utilisateurs doivent être dans la salle des commentaires d'amour ou de haine ?
+Répertorie les langues disponibles
+Langues disponibles:
+Arguments de ligne de commande :
+Arguments de ligne de commande de pré-démarrage :
+Ouvre la documentation de l'API mod pour la structure du code source dans sa forme la plus actuelle

@@ -983,3 +983,675 @@ Lue käyttöopas painamalla mitä tahansa näppäintä ...
 Tämä ohjekirja -sivu vaatii työtä:
 Manuaalista sivua {0} ei löydy.
 Mod käsikirja
+Käytettävissä olevat ytimen argumentit:
+Paina "q", jos olet valmis.
+Useat ytimen argumentit voidaan erottaa pilkuilla ilman välilyöntejä, esimerkiksi:
+Useat syötetyt komennot voidaan erottaa kaksoispisteillä ja välilyönneillä, esimerkiksi:
+Pyydettyä argumenttia {0} ei löydy.
+Peruuttamaton virhe argumentissa:
+Salaa merkkijonon SHA512:lla
+Salaa merkkijonon SHA384:llä
+Salaa merkkijonon SHA256:lla
+Salaa merkkijonon SHA1:n avulla
+Salaa merkkijonon MD5:llä
+missä sisäänrakennettu säästäjä tulee olemaan
+Mod osa ei ole mitään.
+Modioiden pysäyttäminen ei ole sallittu vikasietotilassa.
+Mod on jo aloitettu!
+Mod ei ole vielä alkanut!
+Komennon käyttö:
+Osatiedoston nimi:
+Osatiedoston polku:
+Virhe yritettäessä käynnistää näytönsäästäjä:
+Virheellinen polkutyyppi.
+Virheellinen ytimen polkutyyppi.
+Edellinen käynnistys epäonnistui
+JSON-editori ei ole vielä avannut tiedostovirtaa.
+JSON-tiedoston sisällä olevaa omaisuutta ei löydy.
+Poistettu omaisuus.
+Lisää uuden ominaisuuden JSON-tiedoston loppuun
+Poistaa ominaisuuden JSON-tiedostosta
+Poistuu JSON-kuoresta
+Poistuu JSON-kuoresta tallentamatta muutoksia
+Tallentaa JSON-tiedoston
+Avaa JSON-kuoren
+Tulostaa JSON-tiedoston
+Seuraava ramppiväli
+Aktivoi 255 värin tuen rampille.
+Aktivoi Rampin todellisen värin tuen.
+Kuinka monta millisekuntia on odotettava ennen seuraavan rampin täyttämistä?
+Ilmoituksen otsikon väri
+Ilmoituksen kuvauksen väri
+Ilmoituksen edistymisen väri
+Ilmoitusvirheen väri
+Kysymyksen väri
+Menestyksen väri
+Käyttäjän dollarin väri
+Kärjen väri
+Erottimen tekstin väri
+Erottimen väri
+Luettelon otsikon väri
+Kehityksen varoitusväri
+Lavaajan väri
+Edistymisen väri
+Takaosan väri
+Piirrä ilmoitusraja
+Peittää ilmoituksen rajalla.
+Ota yhteyttä modin myyjään päivittääksesi modin yhteensopivaan versioon.
+Matalan prioriteetin reunaväri
+Keskipitkän prioriteetin reunaväri
+Korkean prioriteetin reunaväri
+Lähettää edistymisilmoituksen vastaanottimen testaamiseksi
+Testaa väripyörää
+Näyttää paikallisen ytimen ajan
+Näyttää paikallisen ytimen päivämäärän
+Näyttää paikallisen ytimen päivämäärän ja kellonajan
+Näyttää UTC-ytimen ajan
+Näyttää UTC-ytimen päivämäärän
+Näyttää UTC-ytimen päivämäärän ja kellonajan
+MOTD polku
+MAL-polku
+Mikä tiedosto on MOTD-tekstitiedosto? Kirjoita absoluuttinen polku tekstitiedostoon.
+Mikä tiedosto on MAL-tekstitiedosto? Kirjoita absoluuttinen polku tekstitiedostoon.
+Mustalla listalla olevat modit
+Kirjoita niiden modien tiedostonimet, jotka eivät toimi käynnistyksen yhteydessä. Kun olet valmis, kirjoita "q". Kirjoita miinusmerkki polun viereen poistaaksesi olemassa olevan modin.
+Mod {0} on mustalla listalla.
+Lataa kaikki modit uudelleen
+Lisää modin mustalle listalle
+Poistaa modin mustalta listalta
+Aika ja päivämäärä UTC:ssä: {0}
+Määritettyä JSON-komentotulkkikomentoa ei löydy.
+Näytä sovelluksen tiedot käynnistyksen aikana
+Jäsennä komentorivin argumentit
+Näytä vaiheen päättymisajat
+Aloita ytimen muutokset käynnistyksen yhteydessä
+Näytä nykyinen aika ennen kirjautumista
+Ilmoita mahdollisista vioista käynnistyksen aikana
+Näyttää lyhyet tiedot sovelluksesta käynnistyksen yhteydessä.
+Jäsentää komentorivin argumentit käynnistyksen yhteydessä.
+Näyttää, kuinka kauan ytimeltä kesti vaiheen loppuun saattaminen.
+Käynnistä ytimen muutokset automaattisesti käynnistyksen yhteydessä.
+Näyttää nykyisen kellonajan, aikavyöhykkeen ja päivämäärän ennen sisäänkirjautumista.
+Jos ytimen käynnistyksen aikana ilmenee pieni vika, ilmoita siitä käyttäjälle.
+Käyttäjätunnuskehotteen tyyli
+Salasanakehotteen tyyli
+Näytä MAL sisäänkirjautumisen yhteydessä
+Kirjoita, miten haluat kirjautumiskehotteesi olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Kirjoita, miten haluat salasanakehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Näyttää päivän viestin sisäänkirjautumisnäytön näyttämisen jälkeen.
+Testaa Shellin kehotteen tyyliä
+JSON Shell -kehotteen tyyli
+Anturin syötetyt komennot
+Tunnistaa syötetyt komennot ytimen kuoren alussa.
+Näytä tiedoston tiedot luettelossa
+Näyttää lyhyet tiedostotiedot samalla kun luet tiedostoja
+Näytä tiedoston tiedot FTP-luettelossa
+FTP:n käyttäjänimen kehotteen tyyli
+Salasanakehotteen tyyli FTP:lle
+Käytä ensimmäistä FTP-profiilia
+Lisää uusia yhteyksiä FTP-pikavalintaan
+Yritä vahvistaa suojatut FTP-varmenteet
+Näytä FTP MOTD yhteyden yhteydessä
+Hyväksy aina virheelliset FTP-varmenteet
+Näyttää FTP-tiedoston tiedot samalla kun luetellaan etähakemistoja.
+Käyttää ensimmäistä FTP-profiilia muodostaakseen yhteyden FTP:hen.
+Jos käytössä, lisää uuden yhteyden FTP-pikavalintaan.
+Yrittää vahvistaa FTP-varmenteet. Sen sammuttamista ei suositella.
+Näyttää päivän FTP-viestin sisäänkirjautumisen yhteydessä.
+Hyväksy aina virheelliset FTP-varmenteet. Sen käynnistämistä ei suositella, koska se voi aiheuttaa turvallisuusriskejä.
+Sähköpostin käyttäjänimen kehotteen tyyli
+Sähköpostin salasanakehotteen tyyli
+IMAP-kehotetyyli postille
+SMTP-kehotetyyli sähköpostille
+Tunnista sähköpostipalvelin automaattisesti
+Ota sähköpostin virheenkorjaus käyttöön
+Ilmoita uusista sähköpostiviesteistä
+GPG-salasanakehotetyyli sähköpostille
+Lähetä IMAP-ping-väli
+Lähetä SMTP-ping-väli
+Sähköpostin tekstimuoto
+Kirjoita, miten haluat IMAP-palvelinkehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Kirjoita, miten haluat SMTP-palvelinkehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Tunnista sähköpostipalvelin automaattisesti annetun osoitteen perusteella.
+Ottaa käyttöön sähköpostipalvelimen virheenkorjauksen.
+Ilmoittaa uusista sähköpostiviesteistä.
+Kirjoita, millaisena haluat GPG-salasanakehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Kuinka monta millisekuntia lähettää IMAP-ping?
+Kuinka monta millisekuntia lähettää SMTP-ping?
+Määrittää, miten sähköpostin teksti näytetään.
+Pelkkää tekstiä
+Vuotavaa tekstiä
+HTML tekstiä
+Rikastettu teksti
+Pakattu rich teksti
+Rikas teksti
+Käynnistä etävirheenkorjaus automaattisesti käynnistyksen yhteydessä
+Etävirheenkorjausviestimuoto
+Jos haluat etävirheenkorjauksen alkavan käynnistyksen yhteydessä, ota tämä käyttöön.
+Määrittää etädebug-viestin muodon. {0} nimelle, {1} viestille.
+RSS-syötteen URL-kehotteen tyyli
+Päivitä automaattisesti RSS-syöte
+Automaattinen päivityksen RSS-syötteen aikaväli
+Kirjoita, miten haluat RSS-syötepalvelinkehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Kuinka monessa millisekunnissa RSS-syöte päivitetään?
+Näytä tiedoston tiedot SFTP-luettelossa
+SFTP:n käyttäjänimen kehotteen tyyli
+Lisää uusia yhteyksiä SFTP-pikavalintaan
+Näyttää SFTP-tiedoston tiedot samalla kun luetellaan etähakemistoja.
+Jos käytössä, lisää uuden yhteyden SFTP-pikavalintaan.
+Ping-aikakatkaisu
+Näytä laajat sovitintiedot
+Näytä yleiset verkkotiedot
+Lataa prosenttiteksti
+Lataa prosenttiteksti
+Kuinka monta millisekuntia on odotettava ennen aikakatkaisun ilmoittamista?
+Tulostaa laajat sovitintiedot, kuten pakettitiedot.
+Näyttää yleiset tiedot verkosta.
+Kirjoita, millainen haluat latausprosenttitekstisi olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään. {0} lähetetylle koolle, {1} kohdekoolle, {2} prosentille.
+Kirjoita, millainen haluat latausprosenttitekstisi olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään. {0} ladattavalle koolle, {1} kohdekoolle, {2} prosentille.
+Pyydä salasanaa lukituksen jälkeen
+Kun olet lukinnut näytön, kysy salasanaa
+Punaisen värin vähimmäistaso
+Vihreän värin vähimmäistaso
+Sinisen värin vähimmäistaso
+Vähimmäisväritaso
+Punaisen värin enimmäistaso
+Vihreän värin enimmäistaso
+Sinisen värin enimmäistaso
+Suurin väritaso
+Punaisen värin vähimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Vihreän värin vähimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Sinisen värin vähimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Vähimmäisväritaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255 255 värille tai 16 16 värille.
+Punaisen värin enimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Vihreän värin enimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Sinisen värin enimmäistaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255.
+Suurin väritaso. Pienin hyväksytty arvo on 0 ja suurin hyväksytty arvo on 255 255 värille tai 16 16 värille.
+Etualan väri
+Viivan merkki
+Hahmo muodostaa rivin. Muista syöttää vain yksi merkki.
+Tuntipalkin vasemmassa yläkulmassa oleva merkki
+Minuuttipalkin vasemmassa yläkulmassa oleva merkki
+Sekuntipalkin vasemman yläkulman merkki
+Oikea yläkulma tuntipalkin merkki
+Oikean yläkulman merkki minuuttipalkin kohdalla
+Sekuntipalkin oikean yläkulman merkki
+Tuntipalkin vasemmassa alakulmassa oleva merkki
+Minuuttipalkin vasemmassa alakulmassa oleva merkki
+Sekuntipalkin vasemman alakulman merkki
+Oikean alakulman merkki tuntipalkin kohdalla
+Oikean alakulman merkki minuuttipalkin kohdalla
+Oikean alakulman merkki sekuntipalkkia varten
+Ylempi kehysmerkki tuntipalkin kohdalla
+Yläkehyksen merkki minuuttipalkin kohdalla
+Ylemmän kehyksen merkki sekuntipalkissa
+Tuntipalkin alempi kehysmerkki
+Pienennä kehysmerkkiä minuuttipalkin kohdalla
+Pienennä kehyksen merkkiä sekuntipalkissa
+Tuntipalkin vasen kehysmerkki
+Vasen kehysmerkki minuuttipalkin kohdalla
+Vasen kehysmerkki sekuntipalkin kohdalla
+Oikea kehysmerkki tuntipalkkiin
+Oikea kehysmerkki minuuttipalkin kohdalla
+Oikea kehysmerkki sekuntipalkissa
+Tietoteksti tunteja
+Tietoteksti minuuttien ajan
+Tietoteksti sekuntia
+Punaisen värin vähimmäistaso tuntikausia
+Vihreän värin vähimmäistaso tuntikausia
+Sinisen värin vähimmäistaso tuntikausia
+Vähimmäisväritaso tunteja
+Punaisen värin enimmäistaso tuntikausia
+Vihreän värin enimmäistaso tunteja
+Sinisen värin enimmäistaso tuntikausia
+Maksimiväritaso tunteja
+Punaisen värin vähimmäistaso minuuttien ajan
+Vihreän värin vähimmäistaso minuuttien ajan
+Sinisen värin vähimmäistaso minuuttien ajan
+Vähimmäisväritaso minuutteja
+Punaisen värin enimmäistaso minuuttien ajan
+Vihreän värin enimmäistaso minuuttien ajan
+Sinisen värin enimmäistaso minuuttien ajan
+Maksimiväritaso minuuteille
+Punaisen värin vähimmäistaso sekunteina
+Vihreän värin vähimmäistaso sekunneiksi
+Sinisen värin vähimmäistaso sekunteina
+Vähimmäisväritaso sekunneille
+Punaisen värin enimmäistaso sekunneissa
+Vihreän värin enimmäistaso sekunneissa
+Sinisen värin enimmäistaso sekunneiksi
+Maksimiväritaso sekunneille
+Hahmo, joka muistuttaa vasenta yläkulmaa. Muista syöttää vain yksi merkki.
+Hahmo, joka muistuttaa vasenta alakulmaa. Muista syöttää vain yksi merkki.
+Hahmo, joka muistuttaa yläkehystä. Muista syöttää vain yksi merkki.
+Hahmo, joka muistuttaa alakehystä. Muista syöttää vain yksi merkki.
+Hahmo, joka muistuttaa vasenta kehystä. Muista syöttää vain yksi merkki.
+Hahmo, joka muistuttaa oikeaa kehystä. Muista syöttää vain yksi merkki.
+Kirjoita, kuinka kuluvan tunnin tietotekstisi näkyy. {0} nykyiselle tunnille 24 tunnin aikana.
+Kirjoita kuinka kuluvan minuutin tietotekstisi näkyy. {0} nykyiselle minuutille 60 minuutista.
+Kirjoita, kuinka nykyisen sekunnin tietotekstisi näkyy. {0} nykyiselle sekunnille 60 sekunnista.
+Tekstin väri
+Vasemman yläkulman merkki ramppipalkin kohdalla
+Oikean yläkulman merkki ramppipalkin kohdalla
+Ramppipalkin vasemman alakulman merkki
+Oikean alakulman merkki ramppipalkin kohdalla
+Yläkehysmerkki ramppipalkille
+Ramppipalkin alempi kehysmerkki
+Ramppipalkin vasen kehysmerkki
+Oikea kehysmerkki ramppipalkin kohdalla
+Aloitusvärin punaisen värin vähimmäistaso
+Vihreän värin vähimmäistaso aloitusvärille
+Sinisen värin vähimmäistaso aloitusvärille
+Aloitusvärin vähimmäisväritaso
+Aloitusvärin punaisen värin enimmäistaso
+Vihreän värin enimmäistaso aloitusvärille
+Sinisen värin enimmäistaso aloitusvärille
+Aloitusvärin enimmäisväritaso
+Punaisen värin vähimmäistaso loppuvärille
+Vihreän värin vähimmäistaso loppuvärille
+Sinisen värin vähimmäistaso loppuvärille
+Loppuvärin vähimmäisväritaso
+Punaisen värin enimmäistaso loppuvärille
+Vihreän värin enimmäistaso loppuvärille
+Sinisen värin enimmäistaso loppuvärille
+Loppuvärin enimmäisväritaso
+Ratkaisijan vähimmäismäärä
+Ratkaisijoiden enimmäismäärä
+Ratkaisija näyttää syöte
+Vasemman yläkulman merkki ilmoitusreunukselle
+Oikean yläkulman merkki ilmoitusreunukselle
+Vasemman alakulman merkki ilmoitusreunukselle
+Oikean alakulman merkki ilmoitusreunukselle
+Ylempi kehysmerkki ilmoitusreunukselle
+Alempi kehysmerkki ilmoitusreunukselle
+Ilmoitusreunuksen vasen kehysmerkki
+Ilmoitusreunuksen oikea kehysmerkki
+Manuaalinen sivun tietotyyli
+Näytetäänkö syöttökehotteeseen kirjoitetut tiedot.
+Mikä on vähimmäismäärä valita?
+Mikä on suurin valittavissa oleva määrä?
+Kirjoita, millaisena haluat manpage-tietosi olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään. {0} manuaaliselle otsikolle, {1} versiolle.
+Ominaisuutta {0} ei löydy mistään moduuleista.
+Tässä osiossa luetellaan näytönsäästäjän yleiset asetukset. Jos haluat nähdä yksittäisiä näytönsäästäjäasetuksia, sulje Asetukset ja avaa Näytönsäästäjäasetukset.
+Aloita väripyörä tosiväritilassa
+Jos määritetty, se näyttää mukautetun käynnistysbannerin paikkamerkkituella. Voit käyttää ytimen versiota {0}.
+Mitä nykyisen kielen versiota käytetään kuukausien nimien, kalenterin jne. muuttamiseen?
+Aktivoi 255 värin tuen.
+Aktivoi todellisen värituen.
+Sana poistettu riviltä {0}.
+Merkkijono korvattu rivillä {0}.
+Poistettu rivinumero {0}.
+Estä luvattomat viestit
+Piilottaa ärsyttävän viestin, jos listaustoiminto yrittää avata luvattoman kansion
+FTP-palvelimen tiedot
+Palvelimen osoite:
+Palvelimen portti:
+Palvelimen tyyppi:
+Palvelinjärjestelmätyyppi:
+Palvelimen salaustila:
+Palvelimen datayhteyden tyyppi:
+Palvelinjärjestelmä:
+Palvelimen lataustietotyyppi:
+Palvelimen lähetystietotyyppi:
+Sinun on muodostettava yhteys palvelimeen ennen tämän toiminnon suorittamista.
+Anna tiivistettävä etätiedosto.
+Anna tiivistettävä etähakemisto.
+Syötä etähakemisto.
+Rekursiivinen hajautus FTP:lle
+Hajautetaanko hakemisto rekursiivisesti. Huomaa, että kaikki FTP-palvelimet eivät tue sitä.
+Prosessorin kellonopeus:
+Prosessorin SSE2 tuki:
+Prosessorien kokonaismäärä:
+Levyn koko:
+Muisti yhteensä:
+Näytönohjain:
+Levyn malli:
+Sähköpostien enimmäismäärä yhdellä sivulla
+Nykykielen kulttuuri
+Jos olet varma, että olet avannut oikean osion, katso tämä viesti:
+Muut asetukset...
+Väriasetukset...
+Suorittaa FTP-palvelinkomennon
+Anna POP3-palvelimen osoite ja portti (<osoite> tai <osoite>:[portti]):
+POP3-kehotetyyli sähköpostille
+Lähetä POP3-ping-väli
+Kirjoita, miten haluat POP3-palvelimen kehotteen olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään.
+Kuinka monta millisekuntia POP3-ping lähetetään?
+Käytä POP3:a
+Käytetäänkö POP3:a. Tämän poistaminen käytöstä käyttää SMTP:tä.
+Salaa merkkijonon CRC32:lla
+Avaa sähköpostiohjelman
+siirretystä postista...
+Tämän näytönsäästäjän asetukset ovat saatavilla täältä.
+Testaa taulukon toimivuutta
+Muokkaa määritettyä riviä
+Lisää uudet rivit tiedoston loppuun
+Kirjoita teksti, jonka haluat liittää tiedoston loppuun. Kun olet valmis, kirjoita "EOF" omalle rivilleen.
+Isäntänimi
+Käyttäjätunnus
+Tietotyyppi
+Koodaus
+Salaus
+Protokollat
+Näytä postinsiirron edistyminen
+Postin siirto edistyy
+Postinsiirron edistyminen (yksittäinen)
+Jos tämä on käytössä, sähköpostin kuori näyttää, kuinka monta tavua lähetettiin postia ladattaessa.
+Kirjoita, millainen haluat postinsiirron edistymistyylin olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään. {0} siirrettävälle koolle ja {1} kokonaiskoolle.
+Kirjoita, millainen haluat postinsiirron edistymistyylin olevan. Jätä tyhjäksi, jos haluat käyttää oletustyyliä. Paikkamerkit jäsennetään. {0} siirrettävälle koolle.
+Aikavyöhyke:
+Tänään on {0}
+Nykyinen aika on {0}
+Taulukon erottimen väri
+Taulukon otsikon väri
+Taulukon arvo väri
+Mahdollisia vastauksia
+Mod-tiedostoa ei ole määritetty.
+Yritetään asentaa jo asennettu mod. Päivitetään moda...
+Asennus epäonnistui kohteelle
+Toimitettu mod-tiedosto ei ole yhteensopiva.
+Asennuksen poisto epäonnistui kohteelle
+Avaa URL-osoitteen
+Tulosta rivinumerot tulostustiedoston sisältöön
+Saa \"cat\"-komennon tulostamaan tiedoston rivinumerot.
+Translitteroitu versio
+Käännetty versio
+Hylkää kaikki ilmoitukset
+Ladataan...
+Ladataan...
+Näytä ilmoitus latauksen edistymisestä
+Näytä ilmoitus latauksen edistymisestä
+Näyttää ilmoituksen latauksen edistymisestä.
+Näyttää ilmoituksen latauksen edistymisestä.
+Tarkistaa, onko käännettävä merkkijono olemassa KS-resursseissa
+Merkkijono löytyi lokalisointiresursseista.
+Merkkijonoa ei löydy lokalisointiresursseista.
+Käynnistää ytimen hiljaa
+Antaa komennon käynnistyäkseen seuraavan sisäänkirjautumisen yhteydessä
+Käynnistää ytimen vikasietotilassa ja poistaa kaikki modit käytöstä
+Kuten vikasietotila, mutta poistaa myös usean käyttäjän ja osan mukauttamisesta
+Argumentteja ei riittänyt.
+Ramppipalkin vasemman yläkulman väri
+Oikean yläkulman väri ramppipalkkiin
+Ramppipalkin vasemman alakulman väri
+Ramppipalkin oikean alakulman väri
+Ramppitangon yläkehyksen väri
+Ramppipalkin alakehyksen väri
+Ramppipalkin vasemman kehyksen väri
+Oikea rungon väri ramppipalkkiin
+Käytä ramppipalkin reunavärejä
+Käytä ramppipalkin reunavärejä. Jos se ei ole käytössä, luo harmaan palkin.
+Käynnistää HTTP-kuoren
+Poistuu HTTP-kuoresta ja palaa ytimeen
+Asettaa HTTP-sivuston. Täytyy olla kelvollinen URI.
+Saa vastauksen HTTP-palvelimelta määritetyn pyynnön avulla
+Poistaa sisältöä HTTP-palvelimelta
+HTTP-kuoressa oli virhe:
+HTTP-viesti: Pyydettyä komentoa {0} ei löydy. Katso ohjeesta luettelo HTTP-kuoressa määritetyistä käytettävissä olevista komennoista.
+Hakee merkkijonon HTTP-palvelimelta määritetyn pyynnön avulla
+Haetaan {0}...
+Sivuston URI-muoto on virheellinen.
+Sivuston asettaminen
+Värit eivät vaadi uudelleenkäynnistystä, mutta useimmat asetukset vaativat uudelleenkäynnistyksen.
+Ei apua argumentille "{0}".
+Paina A vihakommenttien kohdalla pyytääksesi anteeksi. Paina T rakkauskommenteissa kiittääksesi. Paina Q lopettaaksesi pelin.
+Olet pyytänyt anteeksi vihakommenttia! Erinomainen!
+Anteeksi rakastunut kommentti. Ei tarpeeksi hyvä.
+Kiitit juuri vihaajaa vihakommentista!
+SpeedPressin oletusvaikeus
+SpeedPressin näppäinpainalluksen aikakatkaisu
+Valitse haluamasi vaikeusaste.
+Kuinka monta millisekuntia pitää odottaa näppäimen painallusta ennen aikakatkaisua? (Oma vaikeusaste)
+Korvaa sanan tai lauseen toisella säännöllisten lausekkeiden avulla
+Korvaa sanan tai lauseen toisella rivillä käyttämällä säännöllisiä lausekkeita
+Kyselee sanaa tietyltä riviltä tai kaikilta riveiltä säännöllisten lausekkeiden avulla
+Etsi asetus
+Kirjoita mitä haluat etsiä.
+Mitään ei löydy. Varmista, että olet kirjoittanut asetuksen oikein.
+Pakkaa paikallisen tiedoston arkistoon
+Ei voi pakata mitään.
+Vastauksen kuvaus
+Isäntäportti
+Lisätietoja tämän ohjelmiston käyttöehdoista on osoitteessa
+Oletusvalintatulostustyyppi
+Tarkistaa kaikki KS-asetukset nähdäkseen, onko muuttujat kirjoitettu oikein
+Näissä määritysmerkinnöissä on virheellisiä muuttujia tai luetteloita, ja ne on korjattava:
+Tiedostoa {0} ei löydy
+Luo muuttujataulukon annetuilla arvoilla
+Kirjoita sen asetuksen numero, johon haluat siirtyä. Mikä tahansa muu hahmo tarkoittaa palaamista.
+Tarkistaa kaikki lokalisointitekstin rivinumerot nähdäkseen, ovatko ne kaikki samat
+Rivi ei täsmää
+Anna käyttäjänumero.
+Sisällytä nimettömät käyttäjät
+Sisällytä vammaiset käyttäjät
+Sisältää luetteloon nimettömät käyttäjät
+Sisältää vammaiset käyttäjät luetteloon
+Lajittele luettelo
+Lajittelee tiedostojärjestelmäluettelon ammattimaisesti.
+Tarjoaa valintavaihtoehdon
+Shell-komentoja ei ole toteutettu!!!
+Näytä uusin RSS-otsikko kirjautumisen yhteydessä
+RSS-otsikon URL-osoite
+Jokaisella kirjautumisella näkyy uusin RSS-otsikko valitusta otsikon URL-osoitteesta.
+RSS-otsikon URL-osoite, jota käytetään uusimman otsikon näyttämiseen. Tämä on yleensä suosikkisyötteesi.
+Uusimmat uutiset:
+Uusimpien uutisten saaminen epäonnistui.
+Valitun vaihtoehdon väri
+Näytä pinon jäljitys ytimen virheestä
+Jos ytimessä on virhe, valitse, tulostetaanko pinon jäljitys konsoliin vai ei.
+Modi voidaan ladata, mutta nämä varoitukset voivat vaikuttaa modin toimintaan:
+Näytönsäästäjä voidaan ladata, mutta nämä varoitukset voivat vaikuttaa näytönsäästäjän toimintaan:
+Tallenna asetukset nimellä
+Lataa asetukset kohteesta
+Mihin haluat tallentaa nykyiset ytimen asetukset?
+Ytimen asetuksia ei voi tallentaa olemassa olevan tiedoston päälle.
+Mistä haluat ladata nykyiset ytimen asetukset?
+Tarkistaa, onko käännettäviä merkkijonoja KS-resursseissa
+Yhdistää kaksi tekstitiedostoa tai enemmän tulostiedostoksi.
+Tiedostojen yhdistäminen epäonnistui.
+RSS-syötteen noudon aikakatkaisu
+Kuinka monta millisekuntia on odotettava, ennen kuin RSS-syötteen noudon aikakatkaisu?
+Täytä laatikot
+Piirretäänkö laatikko kokonaisuudessaan vai piirretäänkö vain reuna?
+Vaiheviive millisekunteina
+Kuinka monta millisekuntia on odotettava ennen seuraavan vaiheen piirtämistä?
+Seuraava rampin rotaatioväli
+Kuinka monta millisekuntia on odotettava ennen kuin seuraavan rampin toinen pää mätänee?
+Tarkista virheenkorjauskiintiö
+Tarkistammeko, tarvitseeko virheenkorjausjärjestelmän tarkistaa kiintiö ennen kirjoittamista debuggeriin?
+Kuinka monta millisekuntia nukahtaminen todella kesti?
+Tapahtuman lisääminen epäonnistui.
+Tapahtuman poistaminen epäonnistui.
+Ei tarpeeksi argumentteja tapahtuman lisäämiseen.
+Ei tarpeeksi argumentteja tapahtuman poistamiseksi.
+Tapahtuman manipuloinnille ei annettu tarpeeksi argumentteja.
+Muistutuksen lisääminen tai poistaminen epäonnistui.
+Ei tarpeeksi argumentteja muistutuksen lisäämiseen tai poistamiseen.
+Ei tarpeeksi argumentteja muistutusten käsittelyyn.
+Nimetön muistutus
+Nimetön tapahtuma
+Nyt on tapahtumapäivä!
+Älä missaa tätä!
+Virheellinen toiminto.
+Yksinkertainen sekuntikello
+Aloita tai lopeta
+Kierros
+Nollaa
+Yksinkertainen ajastin
+Aloita (uudelleen)laskenta alaspäin
+Aseta intervalli
+Ilmoitettu aikakatkaisu ei ole numeerinen.
+Määritä aikakatkaisu millisekunteina
+Tallenna kaikki tapahtumat ja/tai muistutukset tuhoisasti
+Jos tämä on käytössä, poistaa kaikki tapahtumat ja/tai muistutukset ennen kuin tallentaa ne kaikki kalenterikomennolla.
+Tarkista FTP-lähetyksen uudelleenyritykset
+FTP-yhteyden aikakatkaisu
+FTP-datayhteyden aikakatkaisu
+FTP IP -versiot
+Kuinka monta kertaa lataus on tarkistettava ja lataus ja yritettävä uudelleen, jos vahvistus epäonnistuu ennen kuin lataus epäonnistuu kokonaisuudessaan?
+Kuinka monta millisekuntia on odotettava ennen FTP-yhteyden aikakatkaisua?
+Kuinka monta millisekuntia on odotettava ennen FTP-datayhteyden aikakatkaisua?
+Valitse Internet-protokollan versio, jota FTP-palvelin tukee ja jota FTP-asiakas käyttää.
+Yritetään käynnistää RPC, kun se on jo alkanut.
+Vasemman yläkulman merkki RGB-väripyörälle
+Oikean yläkulman merkki RGB-väripyörälle
+RGB-väripyörän vasemman alakulman merkki
+Oikean alakulman merkki RGB-väripyörälle
+Yläkehyksen merkki RGB-väriympyrään
+Alempi kehysmerkki RGB-väripyörälle
+Vasen kehysmerkki RGB-väripyörälle
+Oikea kehysmerkki RGB-väriympyrään
+Etsii tiedoston määritetystä hakemistosta tai nykyisestä hakemistosta
+Muuntaa rivinpäätteet nykyisen alustan muotoon tai määritettyyn mukautettuun muotoon
+Koko kansiossa:
+Näytä kokonaiskoko luettelossa
+Jos käytössä, näyttää kansion kokonaiskoon luettelossa riippuen siitä, kuinka kansiokoot lasketaan kokoonpanon mukaan.
+Olet ajan tasalla!
+JSON-kuoren oletusmuotoilu
+Valitsee tallennettavan JSON-kuoren oletus-JSON-muotoilun (kaunistettu tai pienennetty).
+Päivityksen lataus onnistui!
+Lataa päivitykset automaattisesti
+Jos päivityksiä on, ydin lataa sen automaattisesti.
+Ilotulitteen räjähdyssäde
+Kuinka monta lohkoa (enintään 10) on ilotulitteen räjähdyssäde, kun se sytytetään?
+Tässä komennossa on seuraavat kytkimet, jotka muuttavat sen toimintaa:
+Tulostaa tulostettavaa riviä seuraavat rivinumerot
+Estää rivinumeroiden tulostamisen
+Käytä aina translitteroitua versiota
+Käytä aina käännöstä
+Pakota vaihtamaan kieltä
+Ilmoita, että vastauksessa voi olla enemmän kuin yksi merkki
+Ilmoita, että vastauksessa voi olla vain yksi merkki
+Tulosta kysymys ja vastaukset yhdelle riville
+Tulosta kysymys ja vastaukset kahdella rivillä
+Tulosta kysymys ja vastaukset nykyaikaisella tavalla
+Tulosta kysymys ja vastaukset taulukkoon
+Näyttää tiedoston tiedot luettelossa
+Estää ärsyttävät "lupa estetty" -viestit
+Näyttää kaikki aikavyöhykkeet
+Aloita pelin helpolla vaikeudella
+Aloita pelin keskivaikeudella
+Aloita pelin kovassa vaikeudessa
+Aloittaa pelin erittäin vaikeissa olosuhteissa
+Aloita pelin mukautetulla vaikeusasteella. Huomaa, että mukautettu aikakatkaisu millisekunteina tulee kirjoittaa argumenttina.
+Näyttää järjestelmätiedot
+Näyttää laitteistotiedot
+Näyttää käyttäjätiedot
+Näyttää päivän viestin
+Näyttää sisäänkirjautumisen jälkeisen päivän viestin
+Näyttää kaikki tiedot
+Luo hakemiston, joka sisältää ZIP-tiedoston sisällön
+Näyttää kaikki käytettävissä olevat kaupungit
+Nopea pakkaus
+Ei pakkausta
+Älä luo perushakemistoa arkistoon
+Yksikkö punkeissa
+Katkaisee yhteyden palvelimeen häpeällisesti
+Osoittaa, että kohdepolku on absoluuttinen
+Tallentaa JSON-tiedoston kaunistaen sitä prosessin aikana
+Tallentaa JSON-tiedoston ja pienentää sitä prosessin aikana
+Hakee rivinpäätteen tyylin tekstitiedostosta
+Tyhjentää kaikki käynnistyneet tapahtumat
+Ota tapahtuman virheenkorjaus käyttöön
+Mahdollistaa ytimen tapahtumajärjestelmän virheenkorjauksen
+Figlet fontti
+Kirjoita figlet-fontti, jota Figgle-kirjasto tukee. Katso lisätietoja kirjaston dokumentaatiosta
+Muokatun kielen {0} asentaminen epäonnistui.
+Mukautetun kielen asentamiseen tarvittavaa metatietotiedostoa ei ole olemassa.
+Mukautetun kielen asentamiseen tarvittavat metatietotiedot eivät tarjoa tarvittavia lokalisointeja.
+Muokatun kielen {0} poistaminen epäonnistui.
+Muokatun kielen asennuksen poistamiseen tarvittavaa metatietotiedostoa ei ole olemassa.
+Mukautetun kielen asennuksen poistamiseen tarvittavat metatietotiedot eivät tarjoa tarvittavia lokalisointeja.
+Englannin kielen pituus ei vastaa toimitetun kielitunnuksen pituutta.
+Kieli on jo olemassa, eikä sitä voi korvata.
+Muokatun kielen asennuksen poistaminen epäonnistui. Sitä ei todennäköisesti ole olemassa.
+Mukautettujen kielten asentaminen epäonnistui.
+Mukautettujen kielten asennuksen poistaminen epäonnistui.
+Mukautettujen kielten asennuksen poistaminen epäonnistui. Katso lisätietoja sisäisestä poikkeuksesta.
+Kirjoita järjestelmänvalvojan salasana. Varmista, että et käytä tätä tiliä, ellet todella tiedä mitä olet tekemässä.
+Sinun on kirjoitettava järjestelmänvalvojan salasana.
+Lisenssitiedot
+Hallitse kieliäsi
+Kieltä ei löydy tai tiedostossa on virheellisiä merkkejä.
+Kieltä ei ole määritetty.
+Kielenhallinta on poistettu käytöstä vikasietotilassa.
+Kielen lyhyt nimi:
+Kieli koko nimi:
+Kieli translitteroitava:
+Mukautettu kieli:
+Uusi tervetuliaisbanneri
+Tyylikäs aloitusnäyttö
+Näyttää uuden Figlet-renderöimän tervetuliaisbannerin
+Ottaa käyttöön tyylikkään aloitusnäytön käynnistyksen yhteydessä. Huomaa, että se poistaa argumenttikehotteen käytöstä ja testaa shellin esikäynnistyksen.
+Splash nimi
+Splash-nimi käytettävissä olevista ytimeen toteutetuista roiskeista.
+Luotu oletus MOTD.
+Luotu oletus-MAL.
+Järjestelmätili alustettu
+Käyttäjät alustettu
+Käyttöoikeudet ladattu
+Tervetuloa!
+Käynnistetään etädebuggeria...
+Etädebuggerin yhteysvirhe
+Ilmoita etädebug-yhteysvirheestä
+Jos tämä on käytössä, se ilmoittaa isännälle etädebug-yhteysvirheestä ilmoitusjärjestelmän avulla. Muussa tapauksessa käyttää oletusarvoista konsolikirjoitusta.
+Figlet-fontti ajastimelle
+Ota Figlet käyttöön ajastimelle
+Jos tämä on käytössä, ajastimessa käytetään figlet-toimintoa. Huomaa, että se tarvitsee suuren konsolin näytön renderöidäkseen ajan oikein Figletin ollessa käytössä.
+Virhe jäsennettäessä käynnistystä edeltäviä komentoriviargumentteja: {0}
+Palauttaa ytimen tehdasasetuksiin
+Ohittaa konsolin koon tunnistuksen
+Näyttää siltä, ​​että ohitat konsolin koon tunnistuksen. Asiat eivät välttämättä toimi kunnolla pienillä näytöillä.
+Saat paremman käyttökokemuksen muuttamalla konsoliikkunan kokoa ollessasi edelleen tällä näytöllä. Paina mitä tahansa näppäintä jatkaaksesi...
+Konsoli on liian pieni toimiakseen kunnolla:
+Bannerin figlet-fontti
+Tulostaa merkkijonon konsoliin käyttämällä värityyppiä ja viivatulostusta Figlet-tuella
+Tulostaa merkkijonon konsoliin käyttämällä värityyppiä ja viivatulostusta formaatilla ja Figlet-tuella
+Poistaa viestin pysyvästi
+Poistaa pysyvästi kaikki viestit vastaanottajalta
+Kumoa viestin poistaminen
+Kumoukset poistavat kaikki viestit vastaanottajalta
+Kumoa poistoa ei ole otettu käyttöön POP3:ssa.
+Näytä komennot luottavat apuun
+Näytä komentotulkkikomennot luottavat apuun
+Näytä mod-komennot luottavat apuun
+Näytä aliakset, jotka tarvitsevat apua
+Näyttää komentojen määrän komentoluettelossa, jota ohjataan kolmella erityyppisten komentojen count show -kytkimellä.
+Suorittaa komennot, kun UESH-lausekkeet täyttyvät
+Ehtoa ei löytynyt lausekkeesta.
+Ehto {0} vaatii {1} argumenttia. Sain {2}.
+Ehto on asetettava keskelle.
+Ehto on asetettava alkuun.
+Virhe lausekkeen jäsentämisessä syntaksivirheen vuoksi.
+Ehtoa ei voitu täyttää. Lisätietoa täältä:
+Salasanan maskimerkki
+Merkki, joka peittää salasanan. Jätä tyhjäksi lisätäksesi turvallisuutta.
+Poistuu komentotulkista, jos se suoritetaan alikärjessä
+Ei voi tappaa äiti kuori!
+Ei voi kirjautua ulos alakuoresta.
+Tiedostoa ei ole määritetty. Poistutaan kuoresta...
+Tämän aloitusnäytön asetukset ovat saatavilla täältä.
+Edistymispalkin väri
+Avaa näytönsäästäjän asetukset
+Avaa splash-asetukset
+Luetteloi käytettävissä olevat UESH-muuttujat
+Edistystekstin sijainti
+Valitse haluamasi edistymistekstin sijainti.
+Voit kirjoittaa vain numeroita.
+Poistu painamalla "q".
+Ladataan nimiä...
+Teknisten ongelmien vuoksi emme pysty luetteloimaan Unix-järjestelmien sovittimen ominaisuuksia.
+Ottaa käyttöön virheenkorjaustilan
+Kehottaa väitteitä
+Ota mustavalkotila käyttöön
+Tekee diskosta mustavalkoisen. Satuttaa todella silmiäsi, jos se oli liian nopea, joten ei suositella, jos kohtaat nopeita kuvia.
+Näyttää siltä, ​​että käytössäsi oli versio, jota ei tueta. On erittäin suositeltavaa olla käyttämättä tätä versiota.
+Lataa nykyiset värit
+Vaihtoehtoinen värivaihtoehto
+Käyttäjät arvostavat rakkaus- tai vihakommentteja
+Kuinka monta käyttäjää rakastaa tai vihaa -kommenttihuoneessa?
+Listaa käytettävissä olevat kielet
+Käytettävissä olevat kielet:
+Komentoriviargumentit:
+Käynnistystä edeltävät komentorivin argumentit:
+Avaa mod API -dokumentaation lähdekoodin rakenteesta sen uusimmassa muodossa

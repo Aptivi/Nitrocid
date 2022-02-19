@@ -983,3 +983,675 @@ Patíste opoiodípote plíktro gia na diavásete ti selída tou encheiridíou...
 Aftí i selída encheiridíou chreiázetai douleiá gia:
 I mi aftómati selída {0} den vréthike.
 Encheirídio mod
+Diathésima orísmata pyrína:
+Patíste "q" eán teleiósete.
+Pollá orísmata pyrína boroún na diachoristoún me kómmata chorís kená, gia parádeigma:
+Pollaplés entolés me énesi boroún na diachoristoún me áno kai káto teleíes me kená, gia parádeigma:
+To zitoúmeno órisma {0} den vréthike.
+Mi anaktísimo sfálma sto órisma:
+Kryptografeí mia symvoloseirá chrisimopoióntas SHA512
+Kryptografeí mia symvoloseirá chrisimopoióntas SHA384
+Kryptografeí mia symvoloseirá chrisimopoióntas SHA256
+Kryptografeí mia symvoloseirá chrisimopoióntas SHA1
+Kryptografeí mia symvoloseirá chrisimopoióntas MD5
+ópou tha vrísketai to buildinsaver
+To kommáti tou mod den eínai típota.
+I diakopí ton mods den epitrépetai se asfalí leitourgía.
+To Mod échei ídi xekinísei!
+To Mod den échei xekinísei akóma!
+Chrísi entolón:
+Ónoma archeíou mérous:
+Diadromí archeíou mérous:
+Sfálma katá tin prospátheia ekkínisis tis profýlaxis othónis:
+Mi énkyros týpos diadromís.
+Mi énkyros týpos diadromís pyrína.
+I proigoúmeni ekkínisi apétyche
+To prógramma epexergasías JSON den échei anoíxei akóma roí archeíou.
+I idiótita mésa sto archeío JSON den vréthike.
+Katargíthike i idioktisía.
+Prosthétei mia néa idiótita sto télos tou archeíou JSON
+Katargeí mia idiótita apó to archeío JSON
+Éxodos apó to kélyfos JSON
+Éxodos apó to kélyfos JSON chorís apothíkefsi ton allagón
+Apothikévei to archeío JSON
+Anoígei to kélyfos JSON
+Ektypónei to archeío JSON
+Epómeno diástima rámpas
+Energopoieí tin ypostírixi 255 chromáton gia Ramp.
+Energopoieí tin ypostírixi alithinón chromáton gia Ramp.
+Pósa chiliostá tou defteroléptou na periménete prin gemísete tin epómeni rámpa?
+Chróma títlou eidopoíisis
+Chróma perigrafís eidopoíisis
+Chróma proódou eidopoíisis
+Chróma apotychías eidopoíisis
+Chróma erótisis
+Chróma epitychías
+Chróma dolaríou chrísti
+Chróma mýtis
+Diachoristikó chróma keiménou
+Chróma diachorismoú
+Chróma títlou lístas
+Chróma proeidopoíisis anáptyxis
+Chróma chrónou skinís
+Chróma proódou
+Chróma epilogís píso
+Schedíasi perigrámmatos eidopoíisis
+Kalýptei tin eidopoíisi me to perígramma.
+Epikoinoníste me ton promitheftí tou mod gia na anavathmísete to mod sti symvatí ékdosi.
+Chróma perigrámmatos chamilís proteraiótitas
+Chróma perigrámmatos mésis proteraiótitas
+Chróma perigrámmatos ypsilís proteraiótitas
+Stélnei mia eidopoíisi proódou gia dokimí tou dékti
+Dokimázei ton trochó chrómatos
+Emfanízei topikí óra pyrína
+Emfanízei tin imerominía tou topikoú pyrína
+Emfanízei tin imerominía kai tin óra tou topikoú pyrína
+Emfanízei tin óra tou pyrína UTC
+Emfanízei tin imerominía tou pyrína UTC
+Emfanízei tin imerominía kai tin óra tou pyrína UTC
+monopáti MOTD
+monopáti MAL
+Poio archeío eínai to archeío keiménou MOTD? Grápste mia apólyti diadromí pros to archeío keiménou.
+Poio archeío eínai to archeío keiménou MAL? Grápste mia apólyti diadromí pros to archeío keiménou.
+Montádes sti mávri lísta
+Grápste ta onómata archeíon ton mods pou den tha ekteloúntai katá tin ekkínisi. Ótan teleiósete, grápste "q". Grápste éna sýmvolo meíon dípla sti diadromí gia na afairésete éna ypárchon mod.
+To Mod {0} vrísketai sti mávri lísta.
+Fortónei xaná óla ta mods
+Prosthétei éna mod sti mávri lísta
+Afaireí éna mod apó ti mávri lísta
+Óra kai imerominía se UTC: {0}
+I kathorisméni entolí kelýfous JSON den vréthike.
+Emfánisi pliroforión efarmogís katá tin ekkínisi
+Análysi orismáton grammís entolón
+Emfánisi orón termatismoú skinís
+Xekiníste tis tropopoiíseis tou pyrína katá tin ekkínisi
+Emfánisi tis tréchousas óras prin apó ti sýndesi
+Eidopoiíste gia opoiodípote sfálma katá tin ekkínisi
+Emfanízei sýntomes pliroforíes schetiká me tin efarmogí katá tin ekkínisi.
+Analýei ta orísmata tis grammís entolón katá tin ekkínisi.
+Deíchnei póso chróno chreiástike o pyrínas gia na teleiósei éna stádio.
+Aftómati énarxi ton tropopoiíseon tou pyrína katá tin ekkínisi.
+Emfanízei tin tréchousa óra, zóni óras kai imerominía prin apó ti sýndesi.
+Eán ypárchei éna mikró sfálma katá tin ekkínisi tou pyrína, eidopoieí ton chrísti schetiká.
+Styl protropís onómatos chrísti
+Styl protropís kodikoú prósvasis
+Emfánisi MAL katá ti sýndesi
+Grápste pós thélete na eínai i protropí sýndesís sas. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Grápste pós thélete na eínai to mínyma tou kodikoú prósvasís sas. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Emfanízei to mínyma tis iméras metá tin emfánisi tis othónis sýndesis.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Entolés me énchysi anichneftí
+Anichnévei tis entolés pou eiságontai stin archí tou kelýfous tou pyrína.
+Emfánisi leptomereión archeíou sti lísta
+Emfanízei tis sýntomes leptoméreies tou archeíou katá tin katachórisi archeíon
+Emfánisi leptomereión archeíou sti lísta FTP
+Styl protropís onómatos chrísti gia FTP
+Styl protropís kodikoú prósvasis gia FTP
+Chrisimopoiíste to próto profíl FTP
+Prosthéste nées syndéseis stin tacheía klísi FTP
+Prospathíste na epikyrósete asfalí pistopoiitiká FTP
+Emfánisi FTP MOTD sti sýndesi
+Na apodécheste pánta mi énkyra pistopoiitiká FTP
+Emfanízei tis leptoméreies tou archeíou FTP enó parathétei tous apomakrysménous katalógous.
+Chrisimopoieí to próto profíl FTP gia sýndesi sto FTP.
+Eán eínai energopoiiméno, prosthétei mia néa sýndesi stin tacheía klísi FTP.
+Prospatheí na epikyrósei ta pistopoiitiká FTP. I apenergopoíisí tou den synistátai.
+Emfanízei to mínyma FTP tis iméras katá ti sýndesi.
+Na apodécheste pánta mi énkyra pistopoiitiká FTP. I energopoíisí tou den synistátai kathós boreí na enkymoneí kindýnous gia tin asfáleia.
+Styl protropís onómatos chrísti gia allilografía
+Styl protropís kodikoú prósvasis gia allilografía
+Styl protropís IMAP gia allilografía
+Styl protropís SMTP gia allilografía
+Aftómatos entopismós diakomistí allilografías
+Energopoíisi entopismoú sfalmáton allilografías
+Eidopoíisi gia néa minýmata allilografías
+Styl protropís kodikoú prósvasis GPG gia allilografía
+Apostolí diastímatos ping IMAP
+Apostolí diastímatos ping SMTP
+Morfí keiménou allilografías
+Grápste pós thélete na eínai i protropí tou diakomistí IMAP. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Grápste pós thélete na eínai i protropí tou diakomistí SMTP. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Aftómati aníchnefsi tou diakomistí allilografías me vási ti dedoméni diéfthynsi.
+Energopoieí ton entopismó sfalmáton diakomistí allilografías.
+Sas eidopoieí gia tychón néa minýmata allilografías.
+Grápste pós thélete na eínai i protropí kodikoú prósvasis GPG. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Pósa chiliostá tou defteroléptou na steílete to ping IMAP?
+Pósa chiliostá tou defteroléptou gia na steílete to ping SMTP?
+Elénchei pós tha emfanízetai to keímeno allilografías.
+Apló keímeno
+Keímeno me roí
+Keímeno HTML
+Emploutisméno keímeno
+Sympiesméno ploúsio keímeno
+Ploúsio keímeno
+Aftómati énarxi apomakrysménou entopismoú sfalmáton katá tin ekkínisi
+Morfí minýmatos apomakrysménou entopismoú sfalmáton
+Eán thélete o apomakrysménos entopismós sfalmáton na xekinísei katá tin ekkínisi, energopoiíste to.
+Kathorízei ti morfí tou minýmatos apomakrysménou entopismoú sfalmáton. {0} gia ónoma, {1} gia mínyma.
+Styl protropís diéfthynsis URL roís RSS
+Aftómati ananéosi roís RSS
+Aftómati ananéosi diástima trofodosías RSS
+Grápste pós thélete na eínai i protropí tou diakomistí trofodosías RSS. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Pósa chiliostá tou defteroléptou gia na ananeósete ti roí RSS?
+Emfánisi leptomereión archeíou sti lísta SFTP
+Styl protropís onómatos chrísti gia SFTP
+Prosthéste nées syndéseis sti grígori klísi SFTP
+Emfanízei tis leptoméreies tou archeíou SFTP enó parathétei tous apomakrysménous katalógous.
+Eán eínai energopoiiméno, prosthétei mia néa sýndesi stin tacheía klísi SFTP.
+Chronikó ório ping
+Emfánisi ektenón pliroforión prosarmogéa
+Emfánisi genikón pliroforión diktýou
+Lípsi posostoú keiménou
+Metafórtosi posostoú keiménou
+Pósa chiliostá tou defteroléptou na periménete prin dilósete to timeout?
+Ektypónei tis ekteneís pliroforíes prosarmogéa, ópos pliroforíes pakéton.
+Emfanízei tis genikés pliroforíes gia to díktyo.
+Grápste pós thélete na eínai to keímeno tou posostoú metafórtosis. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai. {0} gia metafortoméno mégethos, {1} gia mégethos stóchou, {2} gia posostó.
+Grápste pós thélete na eínai to keímeno tou posostoú lípsis. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai. {0} gia to mégethos lípsis, {1} gia to mégethos stóchou, {2} gia to posostó.
+Zitíste kodikó prósvasis metá to kleídoma
+Afoú kleidósete tin othóni, zitíste kodikó prósvasis
+Eláchisto epípedo kókkinou chrómatos
+Eláchisto epípedo prásinou chrómatos
+Eláchisto epípedo ble chrómatos
+Eláchisto epípedo chrómatos
+Mégisto epípedo kókkinou chrómatos
+Mégisto epípedo prásinou chrómatos
+Mégisto epípedo ble chrómatos
+Mégisto epípedo chrómatos
+Eláchisto epípedo kókkinou chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Eláchisto epípedo prásinou chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Eláchisto epípedo ble chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Eláchisto epípedo chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255 gia 255 chrómata í 16 gia 16 chrómata.
+Mégisto epípedo kókkinou chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Mégisto epípedo prásinou chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Mégisto epípedo ble chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255.
+Mégisto epípedo chrómatos. I eláchisti apodektí timí eínai 0 kai i mégisti apodektí timí eínai 255 gia 255 chrómata í 16 gia 16 chrómata.
+Chróma prótou plánou
+Grammikós charaktíras
+Énas charaktíras gia na schimatísei mia grammí. Frontíste na eiságete móno énan charaktíra.
+Charaktíras epáno aristerí gonía gia grammí orón
+Charaktíras epáno aristerí gonía gia grammí leptón
+Charaktíras epáno aristerí gonía gia grammí defterolépton
+Charaktíras epáno dexiá gonía gia grammí orón
+Charaktíras epáno dexiá gonía gia grammí leptón
+Charaktíras epáno dexiá gonía gia grammí defterolépton
+Káto aristerí gonía charaktíras gia grammí orón
+Charaktíras káto aristerís gonías gia grammí leptón
+Káto aristerí gonía charaktíra gia ti grammí defterolépton
+Charaktíras káto dexiá gonía gia grammí orón
+Charaktíras káto dexiá gonía gia grammí leptón
+Charaktíras káto dexiá gonía gia ti grammí defterolépton
+Charaktíras áno karé gia grammí orón
+Charaktíras áno karé gia grammí leptón
+Charaktíras áno karé gia grammí defterolépton
+Charaktíras káto karé gia grammí orón
+Chamilóteros charaktíras karé gia grammí leptón
+Chamilóteros charaktíras karé gia grammí defterolépton
+Aristerós charaktíras karé gia grammí orón
+Aristerós charaktíras plaisíou gia grammí leptón
+Aristerós charaktíras karé gia grammí defterolépton
+Charaktíras dexioú plaisíou gia grammí orón
+Charaktíras dexioú plaisíou gia grammí leptón
+Dexiós charaktíras karé gia grammí defterolépton
+Enimerotikó keímeno gia óres
+Pliroforiakó keímeno gia leptá
+Keímeno pliroforión gia defterólepta
+Eláchisto epípedo kókkinou chrómatos gia óres
+Eláchisto epípedo prásinou chrómatos gia óres
+Eláchisto epípedo ble chrómatos gia óres
+Eláchisto epípedo chrómatos gia óres
+Mégisto epípedo kókkinou chrómatos gia óres
+Mégisto epípedo prásinou chrómatos gia óres
+Mégisto epípedo ble chrómatos gia óres
+Mégisto epípedo chrómatos gia óres
+Eláchisto epípedo kókkinou chrómatos gia leptá
+Eláchisto epípedo prásinou chrómatos gia leptá
+Eláchisto epípedo ble chrómatos gia leptá
+Eláchisto epípedo chrómatos gia leptá
+Mégisto epípedo kókkinou chrómatos gia leptá
+Mégisto epípedo prásinou chrómatos gia leptá
+Mégisto epípedo ble chrómatos gia leptá
+Mégisto epípedo chrómatos gia leptá
+Eláchisto epípedo kókkinou chrómatos gia defterólepta
+Eláchisto epípedo prásinou chrómatos gia defterólepta
+Eláchisto epípedo ble chrómatos gia defterólepta
+Eláchisto epípedo chrómatos gia defterólepta
+Mégisto epípedo kókkinou chrómatos gia defterólepta
+Mégisto epípedo prásinou chrómatos gia defterólepta
+Mégisto epípedo ble chrómatos gia defterólepta
+Mégisto epípedo chrómatos gia defterólepta
+Énas charaktíras pou moiázei me tin epáno aristerí gonía. Frontíste na eiságete móno énan charaktíra.
+Énas charaktíras pou moiázei me tin káto aristerí gonía. Frontíste na eiságete móno énan charaktíra.
+Énas charaktíras pou moiázei me to páno plaísio. Frontíste na eiságete móno énan charaktíra.
+Énas charaktíras pou moiázei me to káto plaísio. Frontíste na eiságete móno énan charaktíra.
+Énas charaktíras pou moiázei me to aristeró plaísio. Frontíste na eiságete móno énan charaktíra.
+Énas charaktíras pou moiázei me to sostó karé. Frontíste na eiságete móno énan charaktíra.
+Grápste pós emfanízetai to keímeno pliroforión gia tin tréchousa óra. {0} gia tin tréchousa óra apó tis 24 óres.
+Grápste pós emfanízetai to keímeno pliroforión gia to tréchon leptó. {0} gia to tréchon leptó apó ta 60 leptá.
+Grápste pós emfanízetai to keímeno pliroforión gia to tréchon déftero. {0} gia to tréchon defterólepto apó ta 60 defterólepta.
+Chróma keiménou
+Charaktíras páno aristerí gonía gia rámpa rámpas
+Charaktíras epáno dexiá gonía gia rámpa rámpas
+Charaktíras káto aristerís gonías gia rámpa rámpas
+Charaktíras káto dexiá gonía gia rámpa rámpas
+Charaktíras áno plaisíou gia rámpa rámpas
+Charaktíras káto plaisíou gia rámpa rámpas
+Charaktíras aristeroú plaisíou gia bára rámpas
+Charaktíras dexioú plaisíou gia bára rámpas
+Eláchisto epípedo kókkinou chrómatos gia to chróma énarxis
+Eláchisto epípedo prásinou chrómatos gia to chróma énarxis
+Eláchisto epípedo ble chrómatos gia to chróma énarxis
+Eláchisto epípedo chrómatos gia to chróma énarxis
+Mégisto epípedo kókkinou chrómatos gia to chróma énarxis
+Mégisto epípedo prásinou chrómatos gia to chróma énarxis
+Mégisto epípedo ble chrómatos gia to chróma énarxis
+Mégisto epípedo chrómatos gia to chróma énarxis
+Eláchisto epípedo kókkinou chrómatos gia to telikó chróma
+Eláchisto epípedo prásinou chrómatos gia to telikó chróma
+Eláchisto epípedo ble chrómatos gia to telikó chróma
+Eláchisto epípedo chrómatos gia to telikó chróma
+Mégisto epípedo kókkinou chrómatos gia to telikó chróma
+Mégisto epípedo prásinou chrómatos gia to telikó chróma
+Mégisto epípedo ble chrómatos gia to telikó chróma
+Mégisto epípedo chrómatos gia to telikó chróma
+Eláchistos arithmós epílysis
+Mégistos arithmós epílysis
+Eísodos emfánisis epílysis
+Charaktíras páno aristerí gonía gia perígramma eidopoiíseon
+Charaktíras epáno dexiá gonía gia perígramma eidopoiíseon
+Charaktíras káto aristerís gonías gia perígramma eidopoiíseon
+Charaktíras káto dexiá gonía gia perígramma eidopoiíseon
+Charaktíras áno plaisíou gia perígramma eidopoiíseon
+Charaktíras káto plaisíou gia to perígramma eidopoiíseon
+Charaktíras aristeroú plaisíou gia to perígramma eidopoiíseon
+Charaktíras dexioú plaisíou gia to perígramma eidopoiíseon
+Cheirokínito styl pliroforión selídas
+Eán tha emfanisteí aftó pou gráfetai sti grammí entolón eisagogís.
+Poios eínai o eláchistos arithmós gia epilogí?
+Poios eínai o mégistos arithmós gia epilogí?
+Grápste pós thélete na eínai oi pliroforíes tis manpage sas. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai. {0} gia mi aftómato títlo, {1} gia anatheórisi.
+I idiótita {0} den vrísketai se kamía apó tis leitourgikés monádes.
+Aftí i enótita parathétei tis genikés rythmíseis tis profýlaxis othónis. Gia memonoménes rythmíseis profýlaxis othónis, vgeíte apó tis Rythmíseis kai anoíxte tis Rythmíseis profýlaxis othónis.
+Xekiníste ton trochó chrómatos se leitourgía pragmatikoú chrómatos
+Eán orízetai, tha emfanízei prosarmosméno banner ekkínisis me ypostírixi krátisis thésis. Boreíte na chrisimopoiísete to {0} gia tin ékdosi tou pyrína.
+Poia parallagí tis tréchousas glóssas chrisimopoieítai gia tin allagí ton onomáton ton minón, tou imerologíou k.lp.?
+Energopoieí tin ypostírixi 255 chromáton.
+Energopoieí tin ypostírixi alithinoú chrómatos.
+I léxi diagráfike sti grammí {0}.
+I symvoloseirá antikatastáthike sti grammí {0}.
+Katargíthike o arithmós grammís {0}.
+Katargíste ta mi exousiodotiména minýmata
+Apokrýptei to enochlitikó mínyma eán i synártisi katachórisis prospathísei na anoíxei énan mi exousiodotiméno fákelo
+Pliroforíes diakomistí FTP
+Diéfthynsi diakomistí:
+Thýra diakomistí:
+Týpos diakomistí:
+Týpos systímatos diakomistí:
+Leitourgía kryptográfisis diakomistí:
+Týpos sýndesis dedoménon diakomistí:
+Sýstima diakomistí:
+Týpos dedoménon lípsis diakomistí:
+Týpos dedoménon metafórtosis diakomistí:
+Prépei na syndetheíte se diakomistí prin ektelésete aftín ti leitourgía.
+Eisagágete éna apomakrysméno archeío gia katakermatismó.
+Eisagágete énan apomakrysméno katálogo pou tha katakermatisteí.
+Eisagágete énan apomakrysméno katálogo.
+Anadromikós katakermatismós gia FTP
+An tha katakermatisteí anadromiká énas katálogos. Lávete ypópsi óti den to ypostirízoun óloi oi diakomistés FTP.
+Tachýtita rologioú epexergastí:
+Ypostírixi epexergastí SSE2:
+Synolikós arithmós epexergastón:
+Mégethos dískou:
+Synolikí mními:
+Kárta grafikón:
+Montélo dískou:
+Mégistos arithmós e-mail se mía selída
+Politismós tis tréchousas glóssas
+Eán eíste vévaioi óti échete anoíxei ti sostí enótita, elénxte aftó to mínyma:
+Diáfores rythmíseis...
+Rythmíseis chromáton...
+Ekteleí mia entolí diakomistí FTP
+Eisagágete ti diéfthynsi kai ti thýra diakomistí POP3 (<diéfthynsi> í <diéfthynsi>:[thýra]):
+Styl protropís POP3 gia allilografía
+Apostolí diastímatos ping POP3
+Grápste pós thélete na eínai to mínyma tou diakomistí POP3. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai.
+Pósa chiliostá tou defteroléptou gia na steílete to POP3 ping?
+Chrisimopoiíste to POP3
+Eán tha chrisimopoiísete to POP3. I apenergopoíisi aftoú tha chrisimopoiísei to SMTP.
+Kryptografeí mia symvoloseirá chrisimopoióntas to CRC32
+Anoígei to prógramma-peláti allilografías
+tis allilografías pou metaférthike...
+Oi rythmíseis gia aftín tin profýlaxi othónis eínai diathésimes edó.
+Dokimázei ti leitourgikótita tou pínaka
+Epexergázetai tin kathorisméni grammí
+Prosthétei tis nées grammés sto télos tou archeíou
+Eisagágete to keímeno pou thélete na prosartísete sto télos tou archeíou. Ótan teleióseis, grápse «EOF» sti dikí tou grammí.
+Ónoma kentrikoú ypologistí
+Ónoma chrísti
+Týpos dedoménon
+Kodikopoíisi
+Kryptográfisi
+Protókolla
+Emfánisi proódou metaforás allilografías
+Próodos metaforás allilografías
+Próodos metaforás allilografías (monó)
+Eán eínai energopoiiméno, to kélyfos allilografías tha deíchnei pósa byte metadóthikan katá ti lípsi allilografías.
+Grápste pós thélete na eínai to styl proódou tis metaforás allilografías sas. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai. {0} gia metaferómeno mégethos kai {1} gia synolikó mégethos.
+Grápste pós thélete na eínai to styl proódou tis metaforás allilografías sas. Afíste to kenó gia na chrisimopoiísete to proepilegméno styl. Ta sýmvola thésis analýontai. {0} gia metaferómeno mégethos.
+Zóni óras:
+Símera eínai {0}
+I tréchousa óra eínai {0}
+Chróma diachoristikoú trapezioú
+Chróma kefalídas pínaka
+Chróma timís pínaka
+Pithanés apantíseis
+To archeío mod den échei kathoristeí.
+Prospathó na enkatastíso éna ídi enkatestiméno mod. Enimérosi mod...
+I enkatástasi apétyche gia
+To archeío mod pou paréchetai den eínai symvató.
+I apenkatástasi apétyche gia
+Anoígei mia diéfthynsi URL
+Ektypóste arithmoús grammón sta periechómena tou archeíou ektýposis
+Kánei tin entolí \"cat\" na ektypónei tous arithmoús grammís tou archeíou.
+Metagramméni ékdosi
+Metafrasméni ékdosi
+Aporríptei óles tis eidopoiíseis
+Lípsi...
+Metafórtosi...
+Emfánisi eidopoíisis gia tin próodo tis lípsis
+Emfánisi eidopoíisis gia tin próodo tis metafórtosis
+Emfanízei tin eidopoíisi pou deíchnei tin próodo tis lípsis.
+Emfanízei tin eidopoíisi pou deíchnei tin próodo tis metafórtosis.
+Elénchei gia na dei eán i metafrásimi symvoloseirá ypárchei stous pórous KS
+Vréthike symvoloseirá stous pórous topikís prosarmogís.
+I symvoloseirá den vréthike stous pórous topikís prosarmogís.
+Xekiná ton pyrína athóryva
+Eiságei mia entolí gia ekkínisi stin epómeni sýndesi
+Xekiná ton pyrína se asfalí leitourgía, apenergopoióntas óla ta mods
+Ópos kai i asfalís leitourgía, allá epísis apenergopoieí tin pollaplí chrísi kai kápoia prosarmogí
+Den ypírchan arketá epicheirímata.
+Epáno aristerí gonía chrómatos gia rámpa rámpas
+Chróma páno dexiá gonía gia bára rámpas
+Chróma káto aristerís gonías gia rámpa rámpas
+Chróma káto dexiá gonía gia rámpa rámpas
+Chróma áno plaisíou gia rámpa rámpas
+Káto chróma plaisíou gia rámpa rámpas
+Chróma aristeroú plaisíou gia rámpa rámpas
+Dexí chróma plaisíou gia rámpa rámpas
+Chrisimopoiíste chrómata perigrámmatos gia ti grammí rámpas
+Chrisimopoiíste ta chrómata perigrámmatos gia ti grammí rámpas. Eán eínai apenergopoiiméno, tha dimiourgísei mia nkri grammí.
+Xekiná to kélyfos HTTP
+Éxodos apó to kélyfos HTTP kai epistréfei ston pyrína
+Orízei ton istótopo HTTP. Prépei na eínai énkyro URI.
+Lamvánei tin apántisi apó ton diakomistí HTTP chrisimopoióntas to kathorisméno aítima
+Diagráfei periechómeno apó diakomistí HTTP
+Parousiástike éna sfálma sto kélyfos HTTP:
+Mínyma HTTP: I zitoúmeni entolí {0} den vréthike. Anatréxte sti «voítheia» gia mia lísta me tis diathésimes entolés pou kathorízontai sto kélyfos HTTP.
+Lamvánei ti symvoloseirá apó ton diakomistí HTTP chrisimopoióntas to kathorisméno aítima
+Lípsi {0}...
+I morfí URI tou istótopou den eínai énkyri.
+Rýthmisi topothesías se
+Ta chrómata den apaitoún epanekkínisi, allá oi perissóteres rythmíseis apaitoún epanekkínisi.
+Den ypárchei voítheia gia to órisma "{0}".
+Patíste A se schólia mísous gia na zitísete syngnómi. Patíste T sta erotiká schólia gia na efcharistísete. Patíste Q gia na stamatísete to paichnídi.
+Zísate syngnómi gia éna schólio mísous! Exochos!
+Zítise syngnómi gia to erotikó schólio. Den eínai arketá kaló.
+Mólis efcharistísate ton misití gia to schólio mísous!
+Proepilegméni dyskolía gia to SpeedPress
+Líxi chronikoú oríou patímatos gia SpeedPress
+Epiléxte ti dyskolía pou protimáte.
+Pósa chiliostá tou defteroléptou na periménete gia to pátima tou plíktrou prin apó to chronikó ório? (Se prosarmosméni dyskolía)
+Antikathistá mia léxi í frási me mia álli chrisimopoióntas kanonikés ekfráseis
+Antikathistá mia léxi í frási me mia álli se mia grammí chrisimopoióntas kanonikés ekfráseis
+Ypovállei erótima se mia léxi se mia kathorisméni grammí í se óles tis grammés chrisimopoióntas kanonikés ekfráseis
+Vreíte mia rýthmisi
+Grápste ti thélete na anazitísete.
+Den vréthike típota. Vevaiotheíte óti échete grápsei sostá ti rýthmisi.
+Syskevázei éna topikó archeío sto archeío
+Den boró na syskeváso típota.
+Perigrafí apántisis
+Limáni ypodochís
+Gia perissóteres pliroforíes schetiká me tous órous kai tis proüpothéseis chrísis aftoú tou logismikoú, episkeftheíte
+Proepilegméni epilogí týpou exódou
+Elénchei óles tis rythmíseis KS gia na dei eán oi metavlités eínai gramménes sostá
+Aftés oi katachoríseis diamórfosis échoun mi énkyres metavlités í aparithmíseis kai prépei na diorthothoún:
+To archeío {0} den vréthike
+Dimiourgeí énan pínaka metavlitón me tis parechómenes timés
+Grápste ton arithmó tis rýthmisis stin opoía thélete na metaveíte. Opoiosdípote állos charaktíras simaínei epistrofí.
+Elénchei ólous tous arithmoús ton grammón keiménou topikís prosarmogís gia na dei an eínai óloi ísoi
+Anantistoichía grammís mésa
+Eisagágete énan arithmó chrísti.
+Symperilávete anónymous chrístes
+Symperilávete chrístes me eidikés anánkes
+Perilamvánei tous anónymous chrístes sti lísta
+Perilamvánei tous chrístes me eidikés anánkes sti lísta
+Taxinómisi tis lístas
+Taxinomeí epangelmatiká ti lísta systimáton archeíon.
+Paréchei mia epilogí epilogís
+Oi entolés Shell den efarmózontai!!!
+Emfánisi tis teleftaías epikefalídas RSS katá ti sýndesi
+URL epikefalídas RSS
+Káthe sýndesi, tha emfanízei tin teleftaía epikefalída RSS apó tin epilegméni diéfthynsi URL epikefalídas.
+URL epikefalídas RSS pou tha chrisimopoiitheí katá tin emfánisi tis teleftaías epikefalídas. Aftí eínai syníthos i agapiméni sas roí.
+Teleftaía néa:
+Apotychía lípsis ton teleftaíon eidíseon.
+Epilegméno chróma epilogís
+Emfánisi sfálmatos íchnous stoívas ston pyrína
+Eán ypárchei kápoio sfálma pyrína, epiléxte eán tha ektypósete í óchi to íchnos stoívas stin konsóla.
+To Mod boreí na fortotheí, allá aftés oi proeidopoiíseis endéchetai na epireásoun ton trópo leitourgías tou mod:
+I profýlaxi othónis boreí na fortotheí, allá aftés oi proeidopoiíseis endéchetai na epireásoun ton trópo leitourgías tis profýlaxis othónis:
+Apothíkefsi rythmíseon os
+Fórtosi rythmíseon apó
+Poú thélete na apothikéfsete tis tréchouses rythmíseis tou pyrína?
+Den eínai dynatí i apothíkefsi ton rythmíseon tou pyrína páno apó to ypárchon archeío.
+Apó poú thélete na fortósete tis tréchouses rythmíseis tou pyrína?
+Elénchei gia na dei eán oi metafrásimes symvoloseirés ypárchoun stous pórous KS
+Syndyázei ta dýo archeía keiménou í perissótera sto archeío exódou.
+Apotychía syndyasmoú archeíon.
+Líxi chronikoú oríou anáktisis roís RSS
+Pósa chiliostá tou defteroléptou na periménete prin apó to chronikó ório anáktisis roís RSS?
+Sympliróste ta koutiá
+Schediázoume to plaísio sto sýnoló tou í schediázoume móno to perígramma?
+Kathystérisi stadíou se chiliostá tou defteroléptou
+Pósa chiliostá tou defteroléptou na periménete prin schediásete to epómeno stádio?
+Epómeno diástima sípsis rámpas
+Pósa chiliostá tou defteroléptou na periménete prin sapísete to éna ákro tis epómenis rámpas?
+Elénxte to ório entopismoú sfalmáton
+Elénchoume an to sýstima entopismoú sfalmáton prépei na elénxei gia ório prin grápsei sto prógramma entopismoú sfalmáton?
+Pósa chiliostá tou defteroléptou chreiástikan pragmatiká gia na koimitheí?
+Apotychía prosthíkis symvántos.
+Apotychía katárgisis enós symvántos.
+Den paréchontai arketá orísmata gia tin prosthíki enós symvántos.
+Den paréchontai arketá orísmata gia tin katárgisi enós symvántos.
+Den paréchontai arketá epicheirímata gia cheiragógisi symvánton.
+Apotychía prosthíkis í afaíresis ypenthýmisis.
+Den paréchontai arketá orísmata gia tin prosthíki í tin afaíresi ypenthýmisis.
+Den paréchontai arketá epicheirímata gia cheirismó ypenthýmisis.
+Ypenthýmisi chorís títlo
+Ekdílosi chorís títlo
+Tóra eínai iméra ekdílosis!
+Min to chásete aftó!
+Mi énkyri enérgeia.
+Éna apló chronómetro
+Énarxi í diakopí
+Ankaliá
+Epanaforá
+Éna apló chronómetro
+Archíste na (xana)metráte antístrofa
+Orismós diastímatos
+To endeiknyómeno chronikó ório den eínai arithmitikó.
+Kathoríste to chronikó ório se chiliostá tou defteroléptou
+Apothikéfste óla ta symvánta í/kai ypenthymíseis katastrofiká
+Eán eínai energopoiiméno, diagráfei óla ta symvánta í/kai ypenthymíseis prin ta apothikéfsei óla chrisimopoióntas tin entolí imerologíou.
+Epalithéfste tis prospátheies epanálipsis gia metádosi FTP
+Chronikó ório sýndesis FTP
+Chronikó ório sýndesis dedoménon FTP
+Ekdóseis IP FTP
+Póses forés na epalithéfsete ti metafórtosi kai ti lípsi kai na prospathísete xaná eán i epalíthefsi apotýchei prin apotýchei i lípsi synoliká?
+Pósa chiliostá tou defteroléptou na periménete prin to chronikó ório tis sýndesis FTP?
+Pósa chiliostá tou defteroléptou na periménete prin apó to chronikó ório tis sýndesis dedoménon FTP?
+Epiléxte tin ékdosi tou Protokóllou Diadiktýou pou ypostirízei o diakomistís FTP kai pou chrisimopoieí o pelátis FTP.
+Prospátheia ekkínisis tou RPC enó échei ídi xekinísei.
+Charaktíras epáno aristerí gonía gia trochó chrómatos RGB
+Charaktíras epáno dexiá gonía gia trochó chrómatos RGB
+Charaktíras káto aristerís gonías gia trochó chrómatos RGB
+Charaktíras káto dexiá gonía gia trochó chrómatos RGB
+Charaktíras áno plaisíou gia trochó chrómatos RGB
+Charaktíras káto plaisíou gia trochó chrómatos RGB
+Charaktíras aristeroú plaisíou gia trochó chrómatos RGB
+Charaktíras dexioú plaisíou gia trochó chrómatos RGB
+Vrískei éna archeío ston kathorisméno katálogo í ston tréchonta katálogo
+Metatrépei tis katalíxeis ton grammón se morfí gia tin tréchousa platfórma í se kathorisméni prosarmosméni morfí
+Synolikó mégethos se fákelo:
+Emfánisi synolikoú megéthous sti lísta
+Eán eínai energopoiiméno, emfanízei to synolikó mégethos fakélou sti lísta, análoga me ton trópo ypologismoú ton megethón fakélon sýmfona me ti diamórfosi.
+Eísai enimeroménos!
+Proepilegméni morfopoíisi JSON gia to kélyfos JSON
+Epilégei tin proepilegméni morfopoíisi JSON (veltioméni í elachistopoiiméni) gia apothíkefsi tou kelýfous JSON.
+I enimérosi égine me epitychía!
+Aftómati lípsi enimeróseon
+Eán ypárchei kápoia enimérosi, o pyrínas tha ti katevásei aftómata.
+Aktína ékrixis pyrotechnimáton
+Pósa blok (éos 10) eínai i aktína ékrixis gia to pyrotéchnima ótan anaflégetai?
+Aftí i entolí échei tous parakáto diakóptes pou allázoun ton trópo leitourgías:
+Ektypónei tous arithmoús grammón pou akolouthoún ti grammí pou ektypónetai
+Apotrépei tin ektýposi ton arithmón grammís
+Na chrisimopoieíte pánta ti metagramméni ékdosi
+Na chrisimopoieíte pánta ti metafrasméni ékdosi
+Anankastikí enallagí glóssas
+Ypodeíxte óti i apántisi boreí na párei perissóterous apó énan charaktíres
+Ypodeíxte óti i apántisi boreí na párei móno énan charaktíra
+Ektypóste tin erótisi kai tis apantíseis se mía grammí
+Ektypóste tin erótisi kai tis apantíseis se dýo grammés
+Ektypóste tin erótisi kai tis apantíseis me ton sýnchrono trópo
+Ektypóste tin erótisi kai tis apantíseis se pínaka
+Emfanízei tis leptoméreies tou archeíou sti lísta
+Katastéllei ta enochlitiká minýmata "den epitrépetai i ádeia".
+Emfanízei óles tis zónes óras
+Xekiná to paichnídi me éfkoli dyskolía
+Xekiná to paichnídi me métria dyskolía
+Xekiná to paichnídi me sklirí dyskolía
+Xekiná to paichnídi me polý dýskoli dyskolía
+Xekiná to paichnídi me prosarmosméni dyskolía. Lávete ypópsi óti to prosarmosméno chronikó ório líxis se chiliostá tou defteroléptou prépei na grafteí os órisma.
+Emfanízei tis pliroforíes systímatos
+Emfanízei tis pliroforíes ylikoú
+Emfanízei tis pliroforíes chrísti
+Deíchnei to mínyma tis iméras
+Emfanízei to mínyma tis epómenis iméras metá ti sýndesi
+Emfanízei óles tis pliroforíes
+Dimiourgeí énan katálogo pou periéchei ta periechómena tou archeíou ZIP
+Emfanízei óles tis diathésimes póleis
+Grígori sympíesi
+Chorís sympíesi
+Min dimiourgeíte vasikó katálogo sto archeío
+Monáda se krótones
+Aposyndéetai apó ton diakomistí epaíschynta
+Ypodeiknýei óti i diadromí stóchos eínai apólyti
+Apothikévei to archeío JSON, oraiopoióntas to sti diadikasía
+Apothikévei to archeío JSON, elachistopoióntas to sti diadikasía
+Lamvánei to styl líxis grammís apó archeío keiménou
+Diagráfei óla ta energopoiiména symvánta
+Energopoíisi entopismoú sfalmáton symvánton
+Energopoieí ton entopismó sfalmáton gia to sýstima symvánton pyrína
+Grammatoseirá Figlet
+Grápste mia grammatoseirá figlet pou na ypostirízetai apó ti vivliothíki Figgle. Symvoulefteíte tin tekmiríosi tis vivliothíkis gia perissóteres pliroforíes
+Apotychía enkatástasis prosarmosménis glóssas {0}.
+To archeío metadedoménon pou apaiteítai gia tin enkatástasi tis prosarmosménis glóssas den ypárchei.
+Oi pliroforíes metadedoménon pou apaitoúntai gia tin enkatástasi tis prosarmosménis glóssas den paréchoun tis aparaítites topikés rythmíseis pou apaitoúntai.
+Apétyche i apenkatástasi tis prosarmosménis glóssas {0}.
+To archeío metadedoménon pou apaiteítai gia tin apenkatástasi tis prosarmosménis glóssas den ypárchei.
+Oi pliroforíes metadedoménon pou apaitoúntai gia tin apenkatástasi tis prosarmosménis glóssas den paréchoun tis aparaítites topikés rythmíseis pou apaitoúntai.
+To míkos tis anglikís glóssas den tairiázei me to míkos tou glossikoú diakritikoú pou paréchetai.
+I glóssa ypárchei ídi kai den boreí na antikatastatheí.
+Apotychía apenkatástasis prosarmosménis glóssas. To pithanótero eínai na min ypárchei.
+Apotychía enkatástasis prosarmosménon glossón.
+Apotychía apenkatástasis prosarmosménon glossón.
+Apotychía apenkatástasis prosarmosménon glossón. Deíte tin esoterikí exaíresi gia perissóteres pliroforíes.
+Grápste ton kodikó prósvasis diacheiristí. Vevaiotheíte óti den chrisimopoieíte aftón ton logariasmó ektós kai an gnorízete pragmatiká ti kánete.
+Prépei na grápsete ton kodikó prósvasis diacheiristí.
+Pliroforíes ádeias chrísis
+Diacheiristeíte tis glósses sas
+I glóssa den vréthike í to archeío échei mi énkyrous charaktíres.
+I glóssa den prosdiorízetai.
+I diacheírisi glóssas eínai apenergopoiiméni se asfalí leitourgía.
+Sýntomo ónoma glóssas:
+Glóssa plíres ónoma:
+Metagrafí glóssas:
+Prosarmosméni glóssa:
+Néo panó kalosorísmatos
+Kompsí othóni pitsilísmatos
+Emfanízei to néo banner kalosorísmatos me apódosi Figlet
+Energopoieí tin kompsí othóni ekkínisis katá tin ekkínisi. Lávete ypópsi óti tha apenergopoiísei tin protropí orismáton kai tha dokimásei tin proekkínisi tou kelýfous.
+Ónoma pitsilísmatos
+Ónoma splash apó tis diathésimes pitsiliés pou ylopoioúntai ston pyrína.
+Dimiourgíthike proepilegméni MOTD.
+Dimiourgíthike proepilegméno MAL.
+Archikopoiíthike o logariasmós systímatos
+Oi chrístes archikopoiíthikan
+Ta dikaiómata fortóthikan
+Kalos IRTHATE!
+Ekkínisi tou apomakrysménou entopismoú sfalmáton...
+Sfálma sýndesis apomakrysménou entopismoú sfalmáton
+Eidopoíisi gia sfálma sýndesis apomakrysménou entopismoú sfalmáton
+Eán eínai energopoiiméno, tha chrisimopoiísei to sýstima eidopoiíseon gia na eidopoiísei ton kentrikó ypologistí gia sfálma sýndesis apomakrysménou entopismoú sfalmáton. Diaforetiká, tha chrisimopoiitheí i proepilegméni engrafí konsólas.
+Grammatoseirá Figlet gia chronodiakópti
+Energopoiíste to Figlet gia chronómetro
+Eán eínai energopoiiméno, tha chrisimopoiísei to figlet gia chronómetro. Lávete ypópsi óti chreiázetai mia megáli othóni konsólas gia na apodósei sostá ton chróno me to Figlet energopoiiméno.
+Sfálma katá tin análysi orismáton grammís entolón prin apó tin ekkínisi: {0}
+Epanaférei ton pyrína stis ergostasiakés rythmíseis
+Parakámptei ton entopismó megéthous konsólas
+Faínetai óti parakámptete ton entopismó megéthous konsólas. Ta prágmata boreí na min leitourgoún sostá se mikrés othónes.
+Gia na échete kalýteri empeiría, alláxte to mégethos tou parathýrou tis konsólas sas enó vrískeste se aftín tin othóni. Patíste opoiodípote koumpí gia na synechísete...
+I konsóla sas eínai polý mikrí gia na leitourgeí sostá:
+Grammatoseirá figlet banner
+Ektypónei mia symvoloseirá stin konsóla chrisimopoióntas týpo chrómatos kai grammikí ektýposi me ypostírixi Figlet
+Ektypónei mia symvoloseirá stin konsóla chrisimopoióntas týpo chrómatos kai grammí ektýposis me ypostírixi format kai Figlet
+Katargeí oristiká éna mínyma
+Katargeí oristiká óla ta minýmata apó ton paralípti
+Anaíresi katárgisis minýmatos
+Anaíresi katárgisis ólon ton minymáton apó ton paralípti
+I anaíresi diagrafís den efarmózetai gia to POP3.
+Emfánisi ton entolón pou vasízontai sti voítheia
+Emfánisi ton entolón tou kelýfous vasízontai sti voítheia
+Emfánisi ton entolón mod vasízontai sti voítheia
+Deíxte ta psevdónyma vasízontai sti voítheia
+Emfanízei to plíthos entolón sti lísta entolón, pou elénchetai apó tous treis diakóptes emfánisis katamétrisis gia diaforetiká eídi entolón.
+Ekteleí entolés mólis ikanopoiithoún oi ekfráseis UESH
+I synthíki den vréthike stin ékfrasi.
+I synthíki {0} apaiteí {1} orísmata. Píra {2}.
+I synthíki prépei na topothetitheí sti mési.
+I synthíki prépei na topothetitheí stin archí.
+Sfálma análysis ékfrasis lógo syntaktikoú sfálmatos.
+Apotychía ikanopoíisis synthíkis. Perissóteres pliroforíes edó:
+charaktíras máskas kodikoú prósvasis
+Énas charaktíras pou kalýptei ton kodikó prósvasis. Afíste to kenó gia perissóteri asfáleia.
+Éxodos apó to kélyfos eán ekteleítai se ypokélyfos
+Den boreí na skotósei to mitrikó kélyfos!
+Den eínai dynatí i éxodos apó to ypokélyfos.
+To archeío den prosdiorízetai. Éxodos apó to kélyfos...
+Oi rythmíseis gia aftín tin othóni ekkínisis eínai diathésimes edó.
+Chróma grammís proódou
+Anoígei tis rythmíseis tis profýlaxis othónis
+Anoígei tis rythmíseis ektóxefsis
+Emfanízei tis diathésimes metavlités UESH
+Thési keiménou proódou
+Epiléxte tin protimómeni thési keiménou proódou.
+Boreíte na grápsete móno tous arithmoús.
+Patíste "q" gia éxodo.
+Lípsi onomáton...
+Lógo technikón dyskolión, den boroúme na anaféroume tis idiótites prosarmogéa se systímata Unix.
+Energopoieí ti leitourgía entopismoú sfalmáton
+Protropés gia epicheirímata
+Energopoíisi asprómavris leitourgías
+Kánei ti ntísko asprómavri. Tha vlápsei pragmatiká ta mátia sas eán ítan polý grígoro, epoménos den synistátai eán antimetopízete mia krísi grígoron eikónon.
+Faínetai óti ekteloúsate mia mi ypostirizómeni ékdosi. Synistátai idiaítera na min chrisimopoiísete aftín tin ékdosi.
+Fórtosi trechónton chromáton
+Enallaktikí epilogí chrómatos
+Oi chrístes metroún gia schólia agápis í mísous
+Pósoi chrístes prépei na vrískontai stin aíthousa scholíon agápis í mísous?
+Emfanízei tis diathésimes glósses
+Diathésimes glósses:
+Orísmata grammís entolón:
+Orísmata grammís entolón proekkínisis:
+Anoígei tin tekmiríosi tou mod API gia ti domí tou pigaíou kódika stin pio prósfati morfí tou

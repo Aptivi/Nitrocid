@@ -3,19 +3,19 @@
         "name": "Afrikaans",
         "transliterable": false
     },
-    "arb-T": {
-        "name": "Arabic",
-        "transliterable": true
-    },
     "arb": {
         "name": "Arabic",
         "transliterable": true
     },
-    "arm-T": {
-        "name": "Armenian",
+    "arb-T": {
+        "name": "Arabic",
         "transliterable": true
     },
     "arm": {
+        "name": "Armenian",
+        "transliterable": true
+    },
+    "arm-T": {
         "name": "Armenian",
         "transliterable": true
     },
@@ -23,64 +23,64 @@
         "name": "Azerbaijani",
         "transliterable": false
     },
-    "ben-T": {
-        "name": "Bangla",
-        "transliterable": true
-    },
     "ben": {
         "name": "Bangla",
         "transliterable": true
     },
-    "bsq": {
-        "name": "Basque",
-        "transliterable": false
-    },
-    "bsn": {
-        "name": "Bosnian",
-        "transliterable": false
-    },
-    "blg-T": {
-        "name": "Bulgarian",
+    "ben-T": {
+        "name": "Bangla",
         "transliterable": true
     },
     "blg": {
         "name": "Bulgarian",
         "transliterable": true
     },
-    "ctl": {
-        "name": "Catalan",
+    "blg-T": {
+        "name": "Bulgarian",
+        "transliterable": true
+    },
+    "bsn": {
+        "name": "Bosnian",
+        "transliterable": false
+    },
+    "bsq": {
+        "name": "Basque",
+        "transliterable": false
+    },
+    "cbn": {
+        "name": "Cuban",
         "transliterable": false
     },
     "ccw": {
         "name": "Chichewa",
         "transliterable": false
     },
-    "chi-T": {
-        "name": "Chinese",
-        "transliterable": true
-    },
     "chi": {
         "name": "Chinese",
         "transliterable": true
     },
-    "cnt-T": {
-        "name": "Chinese (Traditional)",
+    "chi-T": {
+        "name": "Chinese",
         "transliterable": true
     },
     "cnt": {
         "name": "Chinese (Traditional)",
         "transliterable": true
     },
-    "csc": {
-        "name": "Corsican",
-        "transliterable": false
+    "cnt-T": {
+        "name": "Chinese (Traditional)",
+        "transliterable": true
     },
     "cro": {
         "name": "Croatian",
         "transliterable": false
     },
-    "cbn": {
-        "name": "Cuban",
+    "csc": {
+        "name": "Corsican",
+        "transliterable": false
+    },
+    "ctl": {
+        "name": "Catalan",
         "transliterable": false
     },
     "cze": {
@@ -119,21 +119,37 @@
         "name": "Galician",
         "transliterable": false
     },
+    "grk": {
+        "name": "Greek",
+        "transliterable": true
+    },
     "grk-T": {
         "name": "Greek",
         "transliterable": true
     },
-    "grk": {
-        "name": "Greek",
+    "guj": {
+        "name": "Gujarati",
         "transliterable": true
     },
     "guj-T": {
         "name": "Gujarati",
         "transliterable": true
     },
-    "guj": {
-        "name": "Gujarati",
-        "transliterable": true
+    "hng": {
+        "name": "Hungarian",
+        "transliterable": false
+    },
+    "hti": {
+        "name": "Haitian",
+        "transliterable": false
+    },
+    "hus": {
+        "name": "Hausa",
+        "transliterable": false
+    },
+    "hwi": {
+        "name": "Hawaiian",
+        "transliterable": false
     },
     "hxr-1": {
         "name": "H4X0R Level 1",
@@ -147,37 +163,17 @@
         "name": "H4X0R Level 3",
         "transliterable": false
     },
-    "hti": {
-        "name": "Haitian",
+    "icl": {
+        "name": "Icelandic",
         "transliterable": false
-    },
-    "hwi": {
-        "name": "Hawaiian",
-        "transliterable": false
-    },
-    "hus": {
-        "name": "Hausa",
-        "transliterable": false
-    },
-    "ind-T": {
-        "name": "Hindi",
-        "transliterable": true
     },
     "ind": {
         "name": "Hindi",
         "transliterable": true
     },
-    "hng": {
-        "name": "Hungarian",
-        "transliterable": false
-    },
-    "icl": {
-        "name": "Icelandic",
-        "transliterable": false
-    },
-    "ndo": {
-        "name": "Indonesian",
-        "transliterable": false
+    "ind-T": {
+        "name": "Hindi",
+        "transliterable": true
     },
     "iri": {
         "name": "Irish",
@@ -187,36 +183,36 @@
         "name": "Italian",
         "transliterable": false
     },
-    "jpn-T": {
-        "name": "Japanese",
-        "transliterable": true
-    },
     "jpn": {
         "name": "Japanese",
-        "transliterable": true
+        "transliterable": false
     },
     "jvn": {
         "name": "Javanese",
         "transliterable": false
     },
-    "kzk-T": {
-        "name": "Kazakh",
-        "transliterable": true
-    },
-    "kzk": {
-        "name": "Kazakh",
+    "kor": {
+        "name": "Korean",
         "transliterable": true
     },
     "kor-T": {
         "name": "Korean",
         "transliterable": true
     },
-    "kor": {
-        "name": "Korean",
-        "transliterable": true
-    },
     "krd": {
         "name": "Kurdish",
+        "transliterable": false
+    },
+    "kzk": {
+        "name": "Kazakh",
+        "transliterable": true
+    },
+    "kzk-T": {
+        "name": "Kazakh",
+        "transliterable": true
+    },
+    "lol": {
+        "name": "LOLCAT",
         "transliterable": false
     },
     "ltn": {
@@ -227,44 +223,40 @@
         "name": "Latvian",
         "transliterable": false
     },
-    "lol": {
-        "name": "LOLCAT",
-        "transliterable": false
-    },
     "lxm": {
         "name": "Luxembourgish",
         "transliterable": false
-    },
-    "mcd-T": {
-        "name": "Macedonian",
-        "transliterable": true
-    },
-    "mcd": {
-        "name": "Macedonian",
-        "transliterable": true
     },
     "mal": {
         "name": "Malay",
         "transliterable": false
     },
+    "mcd": {
+        "name": "Macedonian",
+        "transliterable": true
+    },
+    "mcd-T": {
+        "name": "Macedonian",
+        "transliterable": true
+    },
     "mts": {
         "name": "Maltese",
         "transliterable": false
     },
-    "npl-T": {
-        "name": "Nepali",
-        "transliterable": true
+    "ndo": {
+        "name": "Indonesian",
+        "transliterable": false
     },
     "npl": {
         "name": "Nepali",
         "transliterable": true
     },
+    "npl-T": {
+        "name": "Nepali",
+        "transliterable": true
+    },
     "nwg": {
         "name": "Norwegian",
-        "transliterable": false
-    },
-    "psh": {
-        "name": "Pashto",
         "transliterable": false
     },
     "pir": {
@@ -275,15 +267,19 @@
         "name": "Polish",
         "transliterable": false
     },
+    "psh": {
+        "name": "Pashto",
+        "transliterable": false
+    },
     "ptg": {
         "name": "Portuguese",
         "transliterable": false
     },
-    "pun-T": {
+    "pun": {
         "name": "Punjabi",
         "transliterable": true
     },
-    "pun": {
+    "pun-T": {
         "name": "Punjabi",
         "transliterable": true
     },
@@ -291,20 +287,20 @@
         "name": "Romanian",
         "transliterable": false
     },
-    "rus-T": {
-        "name": "Russian",
-        "transliterable": true
-    },
     "rus": {
         "name": "Russian",
         "transliterable": true
     },
-    "snd": {
-        "name": "Sindhi",
-        "transliterable": false
+    "rus-T": {
+        "name": "Russian",
+        "transliterable": true
     },
     "slo": {
         "name": "Slovak",
+        "transliterable": false
+    },
+    "snd": {
+        "name": "Sindhi",
         "transliterable": false
     },
     "som": {
@@ -315,11 +311,11 @@
         "name": "Spanish",
         "transliterable": false
     },
-    "srb-T": {
+    "srb": {
         "name": "Serbian",
         "transliterable": true
     },
-    "srb": {
+    "srb-T": {
         "name": "Serbian",
         "transliterable": true
     },
@@ -339,11 +335,11 @@
         "name": "Turkish",
         "transliterable": false
     },
-    "ukr-T": {
+    "ukr": {
         "name": "Ukrainian",
         "transliterable": true
     },
-    "ukr": {
+    "ukr-T": {
         "name": "Ukrainian",
         "transliterable": true
     },

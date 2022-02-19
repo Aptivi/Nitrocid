@@ -983,3 +983,675 @@ Naci?nij dowolny klawisz, aby przeczyta? stron? podr?cznika...
 Ta strona podr?cznika wymaga pracy dla:
 Nie znaleziono strony podr?cznika {0}.
 Instrukcja mod
+Dostpne argumenty jdra:
+Nacinij "q", jeli skoczysz.
+Wiele argumentów jdra mona oddzieli przecinkami bez spacji, na przykad:
+Wiele wstrzyknitych polece mona oddzieli dwukropkami ze spacjami, na przykad:
+dany argument {0} nie zosta znaleziony.
+Nieodwracalny bd w argumencie:
+Szyfruje cig znaków za pomoc SHA512
+Szyfruje cig znaków za pomoc SHA384
+Szyfruje cig znaków za pomoc SHA256
+Szyfruje cig za pomoc SHA1
+Szyfruje cig znaków za pomoc MD5
+gdzie bdzie wbudowany wygaszacz
+Cz modowa to nic.
+Zatrzymywanie modów nie jest dozwolone w trybie awaryjnym.
+Mod ju uruchomiony!
+Mod jeszcze si nie rozpocz!
+Uycie polece:
+Nazwa pliku czci:
+cieka do pliku czci:
+Bd podczas próby uruchomienia wygaszacza ekranu:
+Nieprawidowy typ cieki.
+Nieprawidowy typ cieki jdra.
+Poprzedni rozruch nie powiód si
+Edytor JSON nie otworzy jeszcze strumienia plików.
+Nie znaleziono waciwoci w pliku JSON.
+Usunita waciwo.
+Dodaje now waciwo na kocu pliku JSON
+Usuwa waciwo z pliku JSON
+Wychodzi z powoki JSON
+Wychodzi z powoki JSON bez zapisywania zmian
+Zapisuje plik JSON
+Otwiera powok JSON
+Drukuje plik JSON
+Nastpny interwa rampy
+Aktywuje obsug 255 kolorów dla Ramp.
+Aktywuje obsug prawdziwego koloru dla Ramp.
+Ile milisekund czeka przed wypenieniem kolejnej rampy?
+Kolor tytuu powiadomienia
+Kolor opisu powiadomienia
+Kolor postpu powiadomie
+Kolor awarii powiadomienia
+Kolor pytania
+Kolor sukcesu
+Kolor dolara uytkownika
+Kolor kocówki
+Kolor tekstu separatora
+Kolor separatora
+Kolor tytuu listy
+Kolor ostrzeenia o rozwoju
+Kolor czasu na scenie
+Kolor postpu
+Kolor opcji tyu
+Narysuj ramk powiadomienia
+Zakrywa zgoszenie ramk.
+Skontaktuj si z dostawc moda, aby zaktualizowa mod do kompatybilnej wersji.
+Kolor obramowania o niskim priorytecie
+Kolor obramowania o rednim priorytecie
+Kolor obramowania o wysokim priorytecie
+Wysya powiadomienie o postpie w celu przetestowania odbiornika
+Testuje koo kolorów
+Pokazuje lokalny czas jdra
+Pokazuje lokaln dat jdra
+Pokazuje lokaln dat i godzin jdra
+Pokazuje czas jdra UTC
+Pokazuje dat jdra UTC
+Pokazuje dat i godzin jdra UTC
+cieka MOTD
+cieka MAL
+Który plik to plik tekstowy MOTD? Napisz bezwzgldn ciek do pliku tekstowego.
+Który plik jest plikiem tekstowym MAL? Napisz bezwzgldn ciek do pliku tekstowego.
+Mody na czarnej licie
+Napisz nazwy plików modów, które nie bd dziaa podczas uruchamiania. Kiedy skoczysz, napisz „q”. Wpisz znak minus obok cieki, aby usun istniejcy mod.
+Mod {0} jest na czarnej licie.
+Odwiea wszystkie mody
+Dodaje mod do czarnej listy
+Usuwa mod z czarnej listy
+Godzina i data w UTC: {0}
+Nie znaleziono okrelonego polecenia powoki JSON.
+Poka informacje o aplikacji podczas uruchamiania
+Parsuj argumenty wiersza polece
+Poka czasy zakoczenia etapu
+Rozpocznij modyfikacje jdra przy starcie
+Poka aktualny czas przed zalogowaniem
+Powiadamiaj o wszelkich usterkach podczas rozruchu
+Pokazuje krótkie informacje o aplikacji podczas uruchamiania.
+Analizuje argumenty wiersza polece podczas rozruchu.
+Pokazuje, ile czasu zajo jdru ukoczenie etapu.
+Automatycznie uruchom modyfikacje jdra przy starcie.
+Pokazuje aktualny czas, stref czasow i dat przed zalogowaniem.
+Jeli podczas uruchamiania jdra wystpi drobny bd, powiadamia o tym uytkownika.
+Styl monitu o nazw uytkownika
+Styl monitu o haso
+Poka MAL przy logowaniu
+Napisz, jak ma wyglda monit logowania. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Napisz, jak ma wyglda monit o haso. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Po wywietleniu ekranu logowania pokazuje wiadomo dnia.
+Testuj styl monitu powoki
+Styl monitu powoki JSON
+Sonda wstrzykiwane polecenia
+Sonduje wstrzykiwane polecenia na pocztku powoki jdra.
+Poka szczegóy pliku na licie
+Pokazuje krótkie szczegóy pliku podczas wywietlania listy plików
+Poka szczegóy pliku na licie FTP
+Styl monitu o nazw uytkownika dla FTP
+Styl monitowania o haso dla FTP
+Uyj pierwszego profilu FTP
+Dodaj nowe poczenia do szybkiego wybierania FTP
+Spróbuj zweryfikowa bezpieczne certyfikaty FTP
+Poka MOTD FTP przy poczeniu
+Zawsze akceptuj nieprawidowe certyfikaty FTP
+Pokazuje szczegóy pliku FTP podczas wywietlania zdalnych katalogów.
+Uywa pierwszego profilu FTP do czenia si z FTP.
+Jeli ta opcja jest wczona, dodaje nowe poczenie do szybkiego wybierania FTP.
+Próbuje zweryfikowa certyfikaty FTP. Nie zaleca si jego wyczania.
+Pokazuje wiadomo FTP z dnia przy logowaniu.
+Zawsze akceptuj nieprawidowe certyfikaty FTP. Wczenie go nie jest zalecane, poniewa moe stanowi zagroenie dla bezpieczestwa.
+Styl monitu o nazw uytkownika dla poczty
+Styl monitu o haso dla poczty
+Styl monitu IMAP dla poczty
+Styl monitu SMTP dla poczty
+Automatycznie wykryj serwer pocztowy
+Wcz debugowanie poczty
+Powiadamiaj o nowych wiadomociach e-mail
+Styl monitu o haso GPG dla poczty
+Wylij interwa ping IMAP
+Wylij interwa ping SMTP
+Format tekstu poczty
+Napisz, jak ma wyglda monit serwera IMAP. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Napisz, jak ma wyglda monit serwera SMTP. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Automatycznie wykryj serwer pocztowy na podstawie podanego adresu.
+Wcza debugowanie serwera poczty.
+Powiadamia o nowych wiadomociach e-mail.
+Napisz, jak ma wyglda monit o haso do GPG. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Ile milisekund ma wysa ping IMAP?
+Ile milisekund naley wysa ping SMTP?
+Kontroluje sposób wywietlania tekstu wiadomoci.
+Zwyky tekst
+Tekst pynny
+tekst HTML
+Tekst wzbogacony
+Skompresowany tekst sformatowany
+Tekst sformatowany
+Automatycznie rozpocznij zdalne debugowanie przy starcie
+Format wiadomoci debugowania zdalnego
+Jeli chcesz, aby zdalne debugowanie uruchamiao si podczas rozruchu, wcz to.
+Okrela format komunikatu debugowania zdalnego. {0} dla nazwy, {1} dla wiadomoci.
+Styl monitu o adres URL kanau RSS
+Automatyczne odwieanie kanau RSS
+Interwa automatycznego odwieania kanau RSS
+Napisz, jak ma wyglda monit serwera kanaów RSS. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Ile milisekund ma odwiey kana RSS?
+Poka szczegóy pliku na licie SFTP
+Styl monitu o nazw uytkownika dla SFTP
+Dodaj nowe poczenia do szybkiego wybierania SFTP
+Wywietla szczegóy pliku SFTP podczas wywietlania katalogów zdalnych.
+Jeli wczone, dodaje nowe poczenie do szybkiego wybierania SFTP.
+Limit czasu ping
+Poka obszerne informacje o adapterze
+Poka ogólne informacje o sieci
+Pobierz tekst procentowy
+Przelij tekst procentowy
+Ile milisekund naley odczeka przed zadeklarowaniem limitu czasu?
+Drukuje szczegóowe informacje o adapterze, takie jak informacje o pakietach.
+Wywietla ogólne informacje o sieci.
+Napisz, jak chcesz, aby tekst by przesyany. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane. {0} dla przesanego rozmiaru, {1} dla rozmiaru docelowego, {2} dla wartoci procentowej.
+Napisz, jaki ma by tekst procentowy pobierania. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane. {0} dla rozmiaru pobranego, {1} dla rozmiaru docelowego, {2} dla procentu.
+Po zablokowaniu zapytaj o haso
+Po zablokowaniu ekranu zapytaj o haso
+Minimalny poziom koloru czerwonego
+Minimalny poziom koloru zielonego
+Minimalny poziom koloru niebieskiego
+Minimalny poziom koloru
+Maksymalny poziom koloru czerwonego
+Maksymalny poziom koloru zielonego
+Maksymalny poziom koloru niebieskiego
+Maksymalny poziom koloru
+Minimalny poziom koloru czerwonego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Minimalny poziom koloru zielonego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Minimalny poziom koloru niebieskiego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Minimalny poziom koloru. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255 dla 255 kolorów lub 16 dla 16 kolorów.
+Maksymalny poziom koloru czerwonego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Maksymalny poziom koloru zielonego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Maksymalny poziom koloru niebieskiego. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255.
+Maksymalny poziom koloru. Minimalna akceptowana warto to 0, a maksymalna akceptowana warto to 255 dla 255 kolorów lub 16 dla 16 kolorów.
+Kolor pierwszego planu
+Znak linii
+Znak tworzcy lini. Pamitaj, aby wprowadzi tylko jeden znak.
+Znak w lewym górnym rogu paska godzin
+Znak w lewym górnym rogu paska minut
+Znak w lewym górnym rogu paska sekund
+Znak w prawym górnym rogu paska godzin
+Znak w prawym górnym rogu paska minut
+Znak w prawym górnym rogu paska sekund
+Znak w lewym dolnym rogu paska godzin
+Znak w lewym dolnym rogu paska minut
+Znak w lewym dolnym rogu dla paska sekund
+Znak w prawym dolnym rogu dla paska godzin
+Znak w prawym dolnym rogu paska minut
+Znak w prawym dolnym rogu dla paska sekund
+Znak górnej ramki dla paska godzin
+Znak górnej ramki dla paska minut
+Znak górnej ramki dla paska sekund
+Znak dolnej ramki dla paska godzin
+Znak dolnej ramki dla paska minut
+Znak dolnej ramki dla paska sekund
+Znak lewej ramki dla paska godzin
+Znak lewej ramki dla paska minut
+Znak lewej ramki dla paska sekund
+Znak prawej ramki na pasku godzin
+Znak prawej ramki dla paska minut
+Znak prawej ramki dla paska sekund
+Tekst informacyjny dla godzin
+Tekst informacyjny dla minut
+Tekst informacyjny na sekundy
+Minimalny poziom koloru czerwonego dla godzin
+Minimalny poziom zielonego koloru dla godzin
+Minimalny poziom koloru niebieskiego przez godziny
+Minimalny poziom koloru na godziny
+Maksymalny poziom koloru czerwonego przez godziny
+Maksymalny poziom koloru zielonego przez godziny
+Maksymalny poziom koloru niebieskiego przez godziny
+Maksymalny poziom koloru przez godziny
+Minimalny poziom koloru czerwonego przez minuty
+Minimalny poziom koloru zielonego przez minuty
+Minimalny poziom koloru niebieskiego przez minuty
+Minimalny poziom koloru przez minuty
+Maksymalny poziom koloru czerwonego przez minuty
+Maksymalny poziom koloru zielonego przez minuty
+Maksymalny poziom koloru niebieskiego przez minuty
+Maksymalny poziom koloru przez minuty
+Minimalny poziom koloru czerwonego przez sekundy
+Minimalny poziom zielonego koloru przez sekundy
+Minimalny poziom koloru niebieskiego przez sekundy
+Minimalny poziom koloru przez sekundy
+Maksymalny poziom koloru czerwonego przez sekundy
+Maksymalny poziom koloru zielonego przez sekundy
+Maksymalny poziom koloru niebieskiego przez sekundy
+Maksymalny poziom koloru przez sekundy
+Posta przypominajca lewy górny róg. Pamitaj, aby wprowadzi tylko jeden znak.
+Znak przypominajcy lewy dolny róg. Pamitaj, aby wprowadzi tylko jeden znak.
+Posta przypominajca górn ramk. Pamitaj, aby wprowadzi tylko jeden znak.
+Posta przypominajca doln ramk. Pamitaj, aby wprowadzi tylko jeden znak.
+Znak przypominajcy lew ramk. Pamitaj, aby wprowadzi tylko jeden znak.
+Posta przypominajca praw ramk. Pamitaj, aby wprowadzi tylko jeden znak.
+Napisz, jak wyglda tekst informacji dla biecej godziny. {0} dla biecej godziny z 24 godzin.
+Napisz, jak wyglda tekst informacji z biecej minuty. {0} dla biecej minuty z 60 minut.
+Napisz, jak wyglda Twój tekst informacyjny dla biecej sekundy. {0} dla biecej sekundy z 60 sekund.
+Kolor tekstu
+Znak w lewym górnym rogu paska rampy
+Znak w prawym górnym rogu paska rampy
+Znak w lewym dolnym rogu paska rampy
+Znak w prawym dolnym rogu paska rampy
+Znak górnej ramki dla paska rampy
+Znak dolnej ramki dla paska rampy
+Znak lewej ramki dla paska rampy
+Znak prawej ramki dla paska rampy
+Minimalny poziom koloru czerwonego dla koloru pocztkowego
+Minimalny poziom koloru zielonego dla koloru pocztkowego
+Minimalny poziom koloru niebieskiego dla koloru pocztkowego
+Minimalny poziom koloru dla koloru pocztkowego
+Maksymalny poziom koloru czerwonego dla koloru pocztkowego
+Maksymalny poziom koloru zielonego dla koloru pocztkowego
+Maksymalny poziom koloru niebieskiego dla koloru pocztkowego
+Maksymalny poziom koloru dla koloru pocztkowego
+Minimalny poziom koloru czerwonego dla koloru kocowego
+Minimalny poziom koloru zielonego dla koloru kocowego
+Minimalny poziom koloru niebieskiego dla koloru kocowego
+Minimalny poziom koloru dla koloru kocowego
+Maksymalny poziom koloru czerwonego dla koloru kocowego
+Maksymalny poziom koloru zielonego dla koloru kocowego
+Maksymalny poziom koloru niebieskiego dla koloru kocowego
+Maksymalny poziom koloru dla koloru kocowego
+Minimalna liczba rozwizywania
+Maksymalna liczba solvera
+Solver poka dane wejciowe
+Znak w lewym górnym rogu dla ramki powiadomienia
+Znak w prawym górnym rogu dla ramki powiadomienia
+Znak w lewym dolnym rogu dla ramki powiadomienia
+Znak w prawym dolnym rogu dla ramki powiadomienia
+Znak górnej ramki dla ramki powiadomienia
+Znak dolnej ramki dla ramki powiadomienia
+Lewy znak ramki dla ramki powiadomienia
+Znak prawej ramki dla obramowania powiadomienia
+Styl informacji o stronie instrukcji
+Czy pokaza, co jest napisane w monicie wejciowym.
+Jaka jest minimalna liczba do wyboru?
+Jaka jest maksymalna liczba do wyboru?
+Napisz, jak chcesz, aby informacje na Twojej stronie podrcznika byy. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane. {0} dla tytuu podrcznika, {1} dla wersji.
+Nie znaleziono waciwoci {0} w adnym z moduów.
+W tej sekcji wymieniono ogólne ustawienia wygaszacza ekranu. W przypadku indywidualnych ustawie wygaszacza ekranu wyjd z Ustawie i otwórz Ustawienia wygaszacza ekranu.
+Uruchom koo kolorów w trybie prawdziwego koloru
+Jeli zostanie okrelony, wywietli dostosowany baner startowy z obsug symboli zastpczych. Moesz uy {0} dla wersji jdra.
+Który wariant aktualnego jzyka jest uywany do zmiany nazw miesicy, kalendarza itp.?
+Aktywuje obsug 255 kolorów.
+Aktywuje wsparcie dla prawdziwych kolorów.
+Sowo usunite w wierszu {0}.
+Cig zastpiony w wierszu {0}.
+Usunito numer wiersza {0}.
+Pomijaj nieautoryzowane wiadomoci
+Ukrywa irytujc wiadomo, jeli funkcja aukcji próbuje otworzy nieautoryzowany folder
+Informacje o serwerze FTP
+Adres serwera:
+Port serwera:
+Rodzaj serwera:
+Typ systemu serwerowego:
+Tryb szyfrowania serwera:
+Typ poczenia danych serwera:
+System serwerowy:
+Typ danych do pobrania z serwera:
+Typ przesyanych danych na serwer:
+Przed wykonaniem tej operacji musisz poczy si z serwerem.
+Wprowad zdalny plik do zaszyfrowania.
+Wprowad zdalny katalog do zaszyfrowania.
+Wprowad zdalny katalog.
+Rekurencyjne haszowanie dla FTP
+Czy rekursywnie haszowa katalog. Naley pamita, e nie wszystkie serwery FTP obsuguj t funkcj.
+Taktowanie procesora:
+Obsuga procesora SSE2:
+Cakowita liczba procesorów:
+Rozmiar dysku:
+Cakowita pami:
+Karta graficzna:
+Model dysku:
+Maksymalna liczba e-maili na jednej stronie
+Kultura obecnego jzyka
+Jeli masz pewno, e otworzye waciw sekcj, sprawd t wiadomo:
+Róne ustawienia...
+Ustawienia kolorów...
+Wykonuje polecenie serwera FTP
+Wprowad adres i port serwera POP3 (<adres> lub <adres>:[port]):
+Styl monitu POP3 dla poczty
+Wylij interwa ping POP3
+Napisz, jak ma wyglda monit serwera POP3. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane.
+Ile milisekund ma wysa ping POP3?
+Uyj POP3
+Czy uywa POP3. Wyczenie tego spowoduje uycie SMTP.
+Szyfruje cig znaków za pomoc CRC32
+Otwiera klienta poczty
+przesanych poczty...
+Ustawienia tego wygaszacza ekranu s dostpne tutaj.
+Testuje funkcjonalno stou
+Edytuje okrelon lini
+Dodaje nowe linie na kocu pliku
+Wprowad tekst, który chcesz doczy na kocu pliku. Kiedy skoczysz, wpisz „EOF” w osobnym wierszu.
+Nazwa hosta
+Nazwa uytkownika
+Typ danych
+Kodowanie
+Szyfrowanie
+Protokoy
+Poka postp przesyania poczty
+Postp przesyania poczty
+Postp przesyania poczty (pojedynczy)
+Jeli ta opcja jest wczona, powoka poczty pokae, ile bajtów przesano podczas pobierania poczty.
+Napisz, jaki ma by styl postpu przesyania poczty. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane. {0} dla przesyanego rozmiaru i {1} dla cakowitego rozmiaru.
+Napisz, jaki ma by styl postpu przesyania poczty. Pozostaw puste, aby uy stylu domylnego. Symbole zastpcze s analizowane. {0} dla przeniesionego rozmiaru.
+Strefa czasowa:
+Dzisiaj jest {0}
+Aktualna godzina to {0}
+Kolor separatora tabeli
+Kolor nagówka tabeli
+Kolor wartoci tabeli
+Moliwe odpowiedzi
+Nie okrelono pliku mod.
+Próbuj zainstalowa ju zainstalowany mod. Aktualizuj mod...
+Instalacja nie powioda si dla
+Dostarczony plik mod jest niezgodny.
+Odinstalowanie nie powiodo si dla
+Otwiera adres URL
+Drukuj numery wierszy przy drukowaniu zawartoci pliku
+Sprawia, e polecenie \"cat\" drukuje numery wierszy pliku.
+Wersja transliterowana
+Wersja przetumaczona
+Odrzuca wszystkie powiadomienia
+ciganie...
+Przesyanie...
+Poka powiadomienie o postpie pobierania
+Poka powiadomienie o postpie przesyania
+Wywietla powiadomienie pokazujce postp pobierania.
+Wywietla powiadomienie pokazujce postp przesyania.
+Sprawdza, czy cig znaków, który mona przetumaczy, istnieje w zasobach KS
+Cig znaleziony w zasobach lokalizacji.
+Nie znaleziono cigu w zasobach lokalizacji.
+Uruchamia jdro po cichu
+Wstrzykuje polecenie uruchomienia przy nastpnym logowaniu
+Uruchamia jdro w trybie awaryjnym, wyczajc wszystkie mody
+Podobnie jak w trybie awaryjnym, ale wycza take wielu uytkowników i niektóre dostosowania
+Zabrako argumentów.
+Kolor lewego górnego rogu paska rampy
+Kolor prawego górnego rogu paska rampy
+Kolor lewego dolnego rogu paska rampy
+Kolor prawego dolnego rogu paska rampy
+Kolor górnej ramy dla rampy
+Kolor dolnej ramki paska rampy
+Kolor lewej ramki paska rampy
+Kolor prawej ramki dla paska rampy
+Uyj kolorów obramowania dla paska rampy
+Uyj kolorów obramowania dla paska rampy. Jeli wyczone, wygeneruje szary pasek.
+Uruchamia powok HTTP
+Wychodzi z powoki HTTP i wraca do jdra
+Ustawia witryn HTTP. Musi by prawidowym identyfikatorem URI.
+Pobiera odpowied z serwera HTTP przy uyciu okrelonego dania
+Usuwa zawarto z serwera HTTP
+Wystpi bd w powoce HTTP:
+Komunikat HTTP: dane polecenie {0} nie zostao znalezione. Zobacz 'help', aby zobaczy list dostpnych polece okrelonych w powoce HTTP.
+Pobiera cig znaków z serwera HTTP przy uyciu okrelonego dania
+Pobieram {0}...
+Format URI witryny jest nieprawidowy.
+Ustawienie witryny na
+Kolory nie wymagaj ponownego uruchomienia, ale wikszo ustawie wymaga ponownego uruchomienia.
+Brak pomocy dla argumentu „{0}”.
+Nacinij A przy komentarzach szerzcych nienawi, aby przeprosi. Nacinij T na komentarzach miosnych, aby podzikowa. Nacinij Q, aby wyj z gry.
+Przeprosie za nienawistny komentarz! wietny!
+Przeprosi za komentarz mioci. Nie wystarczajco dobre.
+Wanie podzikowae hejterowi za nienawistny komentarz!
+Domylna trudno dla SpeedPress
+Limit czasu nacinicia klawisza dla SpeedPress
+Wybierz preferowany poziom trudnoci.
+Ile milisekund czeka na nacinicie klawisza przed upywem limitu czasu? (Na niestandardowym poziomie trudnoci)
+Zamienia sowo lub fraz na inne za pomoc wyrae regularnych
+Zamienia sowo lub fraz na inne w linii za pomoc wyrae regularnych
+Zapyta o sowo w okrelonym wierszu lub we wszystkich wierszach za pomoc wyrae regularnych
+Znajd ustawienie
+Napisz, czego chcesz szuka.
+Nic nie znaleziono. Upewnij si, e poprawnie wpisae ustawienie.
+Pakuje plik lokalny do archiwum
+Nie mog nic spakowa.
+Opis odpowiedzi
+Port hosta
+Aby uzyska wicej informacji na temat warunków korzystania z tego oprogramowania, odwied
+Domylny typ wyjcia wyboru
+Sprawdza wszystkie ustawienia KS, aby sprawdzi, czy zmienne s zapisane poprawnie
+Te wpisy konfiguracji maj nieprawidowe zmienne lub wyliczenia i naley je poprawi:
+Nie znaleziono pliku {0}
+Tworzy tablic zmiennych z podanymi wartociami
+Wpisz numer ustawienia, do którego chcesz przej. Kada inna posta oznacza powrót.
+Sprawdza wszystkie numery wierszy tekstu lokalizacji, aby sprawdzi, czy wszystkie s równe
+Niezgodno linii w
+Wprowad numer uytkownika.
+Uwzgldnij anonimowych uytkowników
+Uwzgldnij niepenosprawnych uytkowników
+Zawiera anonimowych uytkowników na licie
+Uwzgldnia niepenosprawnych uytkowników na licie
+Sortuj list
+Profesjonalnie sortuje list systemów plików.
+Zapewnia wybór wyboru
+Polecenia powoki nie zaimplementowane!!!
+Poka najnowszy nagówek RSS przy logowaniu
+URL nagówka RSS
+Przy kadym logowaniu zostanie wywietlony najnowszy nagówek RSS z wybranego adresu URL nagówka.
+Adres URL nagówka RSS, który ma by uywany podczas wywietlania najnowszego nagówka. To jest zazwyczaj Twój ulubiony kana.
+Najnowsze wiadomoci:
+Nie udao si uzyska najnowszych wiadomoci.
+Wybrany kolor opcji
+Poka lad stosu w przypadku bdu jdra
+Jeli wystpi jakikolwiek bd jdra, zdecyduj, czy chcesz wydrukowa lad stosu na konsoli.
+Mod mona zaadowa, ale te ostrzeenia mog wpyn na sposób dziaania modu:
+Mona zaadowa wygaszacz ekranu, ale ponisze ostrzeenia mog wpyn na sposób dziaania wygaszacza ekranu:
+Zapisz ustawienia jako
+Zaaduj ustawienia z
+Gdzie chcesz zapisa biece ustawienia jdra?
+Nie mona zapisa ustawie jdra na istniejcym pliku.
+Skd chcesz zaadowa aktualne ustawienia jdra?
+Sprawdza, czy dostpne do tumaczenia cigi istniej w zasobach KS
+czy dwa lub wicej plików tekstowych w plik wyjciowy.
+Nie udao si poczy plików.
+Limit czasu pobierania kanau RSS
+Ile milisekund trzeba czeka przed przekroczeniem limitu czasu pobierania kanau RSS?
+Wypenij pola
+Czy rysujemy pudeko jako cao, czy rysujemy tylko granic?
+Opónienie etapu w milisekundach
+Ile milisekund czeka przed narysowaniem kolejnego etapu?
+Nastpny interwa rotacji rampy
+Ile milisekund czeka, zanim zgnije jeden koniec nastpnej rampy?
+Sprawd limit debugowania
+Czy sprawdzamy, czy system debugowania musi sprawdza limity przed zapisaniem do debugera?
+Ile milisekund naprawd zajo spanie?
+Nie udao si doda wydarzenia.
+Nie udao si usun wydarzenia.
+Podano za mao argumentów, aby doda wydarzenie.
+Podano za mao argumentów, aby usun wydarzenie.
+Nie podano wystarczajcych argumentów do manipulacji zdarzeniami.
+Nie udao si doda lub usun przypomnienia.
+Podano za mao argumentów, aby doda lub usun przypomnienie.
+Nie podano wystarczajcych argumentów do manipulacji przypomnieniem.
+Przypomnienie bez tytuu
+Wydarzenie bez tytuu
+Teraz jest dzie wydarze!
+Nie przegap tego!
+Nieprawidowa czynno.
+Prosty stoper
+Rozpocznij lub zatrzymaj
+Okrenie
+Resetowanie
+Prosty zegar
+Rozpocznij (ponowne) odliczanie
+Ustaw interwa
+Wskazany limit czasu nie jest liczbowy.
+Okrel limit czasu w milisekundach
+Zapisz wszystkie wydarzenia i/lub przypomnienia destrukcyjnie
+Jeli ta opcja jest wczona, usuwa wszystkie zdarzenia i/lub przypomnienia przed zapisaniem ich wszystkich za pomoc polecenia kalendarza.
+Sprawd ponowne próby transmisji FTP
+Limit czasu poczenia FTP
+Limit czasu poczenia danych FTP
+Wersje FTP IP
+Ile razy naley zweryfikowa przesyanie i pobieranie oraz ponowi prób, jeli weryfikacja nie powiedzie si, zanim pobieranie nie powiedzie si w caoci?
+Ile milisekund naley odczeka przed przekroczeniem limitu czasu poczenia FTP?
+Ile milisekund naley odczeka przed upywem limitu czasu poczenia danych FTP?
+Wybierz wersj protokou internetowego obsugiwan przez serwer FTP i uywan przez klienta FTP.
+Próbuj uruchomi RPC, gdy ju si rozpoczo.
+Znak w lewym górnym rogu dla koa kolorów RGB
+Znak w prawym górnym rogu dla koa kolorów RGB
+Znak w lewym dolnym rogu dla koa kolorów RGB
+Znak w prawym dolnym rogu dla koa kolorów RGB
+Znak górnej ramki dla koa kolorów RGB
+Znak dolnej ramki dla koa kolorów RGB
+Znak lewej ramki dla koa kolorów RGB
+Znak prawej ramki dla koa kolorów RGB
+Znajduje plik w okrelonym katalogu lub w biecym katalogu
+Konwertuje koce linii na format dla biecej platformy lub na okrelony format niestandardowy
+Cakowity rozmiar w folderze:
+Poka cakowity rozmiar na licie
+Jeli ta opcja jest wczona, pokazuje cakowity rozmiar folderu na licie, w zalenoci od tego, jak obliczy rozmiary folderów zgodnie z konfiguracj.
+Jeste na bieco!
+Domylne formatowanie JSON dla powoki JSON
+Wybiera domylne formatowanie JSON (upikszone lub zminimalizowane) dla powoki JSON do zapisania.
+Pobrano aktualizacj pomylnie!
+Automatycznie pobieraj aktualizacje
+Jeli jest jaka aktualizacja, jdro automatycznie j pobierze.
+Promie wybuchu fajerwerków
+Ile bloków (do 10) wynosi promie wybuchu fajerwerków po podpaleniu?
+To polecenie ma ponisze przeczniki, które zmieniaj sposób jego dziaania:
+Drukuje numery wierszy, które nastpuj po wierszu, który jest drukowany
+Zapobiega drukowaniu numerów linii
+Zawsze uywaj transliterowanej wersji
+Zawsze uywaj przetumaczonej wersji
+Wymu zmian jzyka
+Wska, e odpowied moe mie wicej ni jeden znak
+Wska, e odpowied moe mie tylko jeden znak
+Wydrukuj pytanie i odpowiedzi w jednym wierszu
+Wydrukuj pytanie i odpowiedzi w dwóch wierszach
+Wydrukuj pytanie i odpowiedzi w nowoczesny sposób
+Wydrukuj pytanie i odpowiedzi w tabeli
+Pokazuje szczegóy pliku na licie
+Ukrywa irytujce komunikaty o odmowie uprawnie
+Pokazuje wszystkie strefy czasowe
+Rozpoczyna gr na atwym poziomie trudnoci
+Rozpoczyna gr na rednim poziomie trudnoci
+Rozpoczyna gr na wysokim poziomie trudnoci
+Rozpoczyna gr na bardzo wysokim poziomie trudnoci
+Rozpoczyna gr na niestandardowym poziomie trudnoci. Naley pamita, e niestandardowy limit czasu w milisekundach powinien by zapisany jako argument.
+Pokazuje informacje o systemie
+Pokazuje informacje o sprzcie
+Pokazuje informacje o uytkowniku
+Pokazuje wiadomo dnia
+Pokazuje wiadomo dnia po zalogowaniu
+Pokazuje wszystkie informacje
+Tworzy katalog zawierajcy zawarto pliku ZIP
+Pokazuje wszystkie dostpne miasta
+Szybka kompresja
+Brak kompresji
+Nie twórz katalogu podstawowego w archiwum
+Jednostka w kleszczach
+Haniebnie rozcza si z serwerem
+Wskazuje, e cieka docelowa jest bezwzgldna
+Zapisuje plik JSON, upikszajc go w procesie
+Zapisuje plik JSON, minimalizujc go w procesie
+Pobiera styl zakoczenia linii z pliku tekstowego
+Czyci wszystkie wystrzelone zdarzenia
+Wcz debugowanie zdarze
+Wcza debugowanie systemu zdarze jdra
+Czcionka figurki
+Napisz czcionk figlet obsugiwan przez bibliotek Figgle. Wicej informacji znajdziesz w dokumentacji biblioteki
+Nie udao si zainstalowa niestandardowego jzyka {0}.
+Plik metadanych potrzebny do zainstalowania jzyka niestandardowego nie istnieje.
+Informacje o metadanych potrzebne do zainstalowania jzyka niestandardowego nie zapewniaj wymaganych lokalizacji.
+Nie udao si odinstalowa jzyka niestandardowego {0}.
+Plik metadanych potrzebny do odinstalowania jzyka niestandardowego nie istnieje.
+Informacje o metadanych potrzebne do odinstalowania jzyka niestandardowego nie zapewniaj wymaganych lokalizacji.
+Dugo jzyka angielskiego nie jest zgodna z dugoci dostarczonego tokena jzykowego.
+Jzyk ju istnieje i nie mona go zastpi.
+Nie udao si odinstalowa jzyka niestandardowego. Najprawdopodobniej nie istnieje.
+Nie udao si zainstalowa jzyków niestandardowych.
+Nie udao si odinstalowa jzyków niestandardowych.
+Nie udao si odinstalowa jzyków niestandardowych. Zobacz wewntrzny wyjtek, aby uzyska wicej informacji.
+Wpisz haso administratora. Upewnij si, e nie uywasz tego konta, chyba e naprawd wiesz, co robisz.
+Musisz wpisa haso administratora.
+Informacje o licencji
+Zarzdzaj swoimi jzykami
+Nie znaleziono jzyka lub plik zawiera nieprawidowe znaki.
+Nie okrelono jzyka.
+Zarzdzanie jzykiem jest wyczone w trybie awaryjnym.
+Skrócona nazwa jzyka:
+Pena nazwa jzyka:
+Transliteracja jzyka:
+Jzyk niestandardowy:
+Nowy baner powitalny
+Stylowy ekran powitalny
+Pokazuje nowy baner powitalny renderowany za pomoc Figlet
+Wcza stylowy ekran powitalny podczas uruchamiania. Naley pamita, e spowoduje to wyczenie monitu o podanie argumentów i przetestowanie przed uruchomieniem powoki.
+Nazwa powitalna
+Splash nazwa z dostpnych splashów zaimplementowanych w jdrze.
+Wygenerowano domylny MOTD.
+Wygenerowano domylne MAL.
+Zainicjowano konto systemowe
+Zainicjowano uytkowników
+Zaadowano uprawnienia
+Witam!
+Uruchamianie zdalnego debugera...
+Bd poczenia zdalnego debugera
+Powiadom o bdzie poczenia zdalnego debugowania
+Jeli ta opcja jest wczona, uyje systemu powiadomie do powiadomienia hosta o bdzie poczenia zdalnego debugowania. W przeciwnym razie uyje domylnego zapisu konsoli.
+Czcionka Figlet dla timera
+Wcz Figlet dla timera
+Jeli wczone, uyje figleta jako timera. Naley pamita, e potrzebuje duego ekranu konsoli, aby poprawnie renderowa czas z wczonym Figletem.
+Bd podczas analizowania argumentów wiersza polece przed uruchomieniem: {0}
+Resetuje jdro do ustawie fabrycznych
+Pomija wykrywanie rozmiaru konsoli
+Wyglda na to, e omijasz wykrywanie rozmiaru konsoli. Rzeczy mog nie dziaa poprawnie na maych ekranach.
+Aby uzyska lepsze wraenia, zmie rozmiar okna konsoli, pozostajc na tym ekranie. Nacinij dowolny klawisz, aby kontynuowa...
+Twoja konsola jest za maa, aby dziaa poprawnie:
+Czcionka figlet baneru
+Wypisuje cig do konsoli przy uyciu koloru i linii druku z obsug Figlet
+Wywietla cig do konsoli przy uyciu typu koloru i druku liniowego z obsug formatu i Figlet
+Trwale usuwa wiadomo
+Trwale usuwa wszystkie wiadomoci od odbiorcy
+Cofa usuwanie wiadomoci
+Cofa usunicie wszystkich wiadomoci od odbiorcy
+Cofnij usuwanie nie jest zaimplementowane dla POP3.
+Poka komendy licz na pomoc
+Poka komendy powoki licz na pomoc
+Poka komendy modów licz na pomoc
+Poka aliasy licz na pomoc
+Pokazuje liczb polece na licie polece, kontrolowan przez trzy przeczniki count show dla rónych rodzajów polece.
+Wykonuje polecenia po spenieniu wyrae UESH
+Warunek nie zosta znaleziony w wyraeniu.
+Warunek {0} wymaga {1} argumentów. Mam {2}.
+Warunek musi by umieszczony porodku.
+Warunek naley umieci na pocztku.
+Bd podczas analizowania wyraenia z powodu bdu skadni.
+Nie udao si speni warunku. Wicej informacji tutaj:
+Znak maski hasa
+Znak maskujcy haso. Pozostaw puste dla wikszego bezpieczestwa.
+Wychodzi z powoki, jeli dziaa na podpowoce
+Nie mona zabi powoki matki!
+Nie mona wylogowa si z podpowoki.
+Nie okrelono pliku. Wychodzenie z powoki...
+Ustawienia tego ekranu powitalnego s dostpne tutaj.
+Kolor paska postpu
+Otwiera ustawienia wygaszacza ekranu
+Otwiera ustawienia powitania
+Wywietla list dostpnych zmiennych UESH
+Lokalizacja tekstu postpu
+Wybierz preferowan lokalizacj tekstu postpu.
+Moesz pisa tylko liczby.
+Nacinij "q", aby wyj.
+Pobieranie nazw...
+Z powodu trudnoci technicznych nie moemy wywietli listy waciwoci adaptera w systemach Unix.
+Wcza tryb debugowania
+Monity o argumenty
+Wcz tryb czarno-biay
+Sprawia, e dyskoteka jest czarno-biaa. Naprawd zaszkodzi Twoim oczom, jeli bdzie zbyt szybki, wic nie jest to zalecane, jeli dowiadczasz napadu szybkich obrazów.
+Wyglda na to, e korzystasz z nieobsugiwanej wersji. Zdecydowanie odradzamy korzystanie z tej wersji.
+Zaaduj biece kolory
+Alternatywny kolor opcji
+Uytkownicy licz na komentarze miosne lub nienawidzce
+Ilu uytkowników ma znajdowa si w pokoju komentujcym mio lub nienawi?
+Wywietla list dostpnych jzyków
+Dostpne jzyki:
+Argumenty wiersza polece:
+Argumenty wiersza polecenia przed uruchomieniem:
+Otwiera dokumentacj mod API dotyczc struktury kodu ródowego w jego najbardziej aktualnej formie

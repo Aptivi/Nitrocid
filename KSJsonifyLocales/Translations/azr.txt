@@ -983,3 +983,675 @@ Təlimat səhifəsini oxumaq üçün hər hansı bir düyməni basın ...
 Bu dərslik səhifəsi üçün işləmək lazımdır:
 Manual səhifə {0} tapılmadı.
 Mod təlimatı
+Mövcud kernel arqumentləri:
+Bitirmisinizsə, "q" düyməsini basın.
+Çoxlu nüvə arqumentləri boşluq olmadan vergüllə ayrıla bilər, məsələn:
+Bir neçə yeridilmiş əmrlər boşluqlarla iki nöqtə ilə ayrıla bilər, məsələn:
+Tələb olunan {0} arqumenti tapılmadı.
+Arqumentdə bərpa olunmayan xəta:
+SHA512 istifadə edərək sətri şifrələyir
+SHA384 istifadə edərək sətri şifrələyir
+SHA256 istifadə edərək sətri şifrələyir
+SHA1 istifadə edərək sətri şifrələyir
+MD5 istifadə edərək sətri şifrələyir
+qurulan qoruyucu harada olacaq
+Mod hissəsi heç bir şey deyil.
+Təhlükəsiz rejimdə modların dayandırılmasına icazə verilmir.
+Mod artıq işə salınıb!
+Mod hələ başlamamışdır!
+Əmr istifadəsi:
+Hissə fayl adı:
+Parça fayl yolu:
+Ekran qoruyucunu işə salmaq istəyərkən xəta baş verdi:
+Yanlış yol növü.
+Yanlış nüvə yolu növü.
+Əvvəlki yükləmə uğursuz oldu
+JSON redaktoru hələ fayl axını açmamışdır.
+JSON faylının daxilindəki əmlak tapılmadı.
+Silinmiş əmlak.
+JSON faylının sonuna yeni xüsusiyyət əlavə edir
+JSON faylından xassəni silir
+JSON qabığından çıxır
+Dəyişiklikləri yadda saxlamadan JSON qabığından çıxır
+JSON faylını saxlayır
+JSON qabığını açır
+JSON faylını çap edir
+Növbəti eniş intervalı
+Ramp üçün 255 rəng dəstəyini aktivləşdirir.
+Ramp üçün əsl rəng dəstəyini aktivləşdirir.
+Növbəti enişi doldurmazdan əvvəl neçə millisaniyə gözləmək lazımdır?
+Bildiriş başlığının rəngi
+Bildiriş təsvirinin rəngi
+Bildiriş tərəqqi rəngi
+Bildiriş uğursuzluğu rəngi
+Sualın rəngi
+Uğur rəngi
+İstifadəçinin dollar rəngi
+Ucu rəngi
+Ayırıcı mətn rəngi
+Ayırıcı rəng
+Siyahı başlığının rəngi
+İnkişaf xəbərdarlığı rəngi
+Səhnə vaxtı rəngi
+Tərəqqi rəngi
+Arxa seçim rəngi
+Bildiriş haşiyəsini çəkin
+Haşiyə ilə bildiriş əhatə edir.
+Modu uyğun versiyaya yüksəltmək üçün modun satıcısı ilə əlaqə saxlayın.
+Aşağı prioritet haşiyə rəngi
+Orta prioritet haşiyə rəngi
+Yüksək prioritet haşiyə rəngi
+Qəbuledicini sınamaq üçün irəliləyiş bildirişi göndərir
+Rəng çarxını sınaqdan keçirir
+Yerli nüvə vaxtını göstərir
+Yerli nüvə tarixini göstərir
+Yerli nüvə tarixi və vaxtını göstərir
+UTC nüvə vaxtını göstərir
+UTC nüvə tarixini göstərir
+UTC nüvəsinin tarixi və vaxtını göstərir
+MOTD yolu
+MAL yolu
+MOTD mətn faylı hansı fayldır? Mətn faylına mütləq yol yazın.
+MAL mətn faylı hansı fayldır? Mətn faylına mütləq yol yazın.
+Qara siyahıya salınmış modlar
+Başlanğıcda işləməyəcək modların fayl adlarını yazın. Bitirdikdən sonra "q" yazın. Mövcud modu silmək üçün yolun yanında mənfi işarə yazın.
+Mod {0} qara siyahıya salınıb.
+Bütün modları yenidən yükləyir
+Qara siyahıya mod əlavə edir
+Modu qara siyahıdan çıxarır
+UTC ilə vaxt və tarix: {0}
+Göstərilən JSON qabığı əmri tapılmadı.
+Yükləmə zamanı proqram məlumatlarını göstərin
+Komanda xətti arqumentlərini təhlil edin
+Mərhələnin bitmə vaxtını göstərin
+Yükləmə zamanı nüvə modifikasiyasına başlayın
+Girişdən əvvəl cari vaxtı göstərin
+Yükləmə zamanı hər hansı bir nasazlıq üçün bildirin
+Yükləmə zamanı tətbiq haqqında qısa məlumatı göstərir.
+Yükləmə zamanı komanda xətti arqumentlərini təhlil edir.
+Mərhələni bitirmək üçün nüvənin nə qədər vaxt sərf etdiyini göstərir.
+Yükləmə zamanı nüvə modifikasiyasına avtomatik başlayın.
+Girişdən əvvəl cari vaxtı, saat qurşağını və tarixi göstərir.
+Kernel açılışı zamanı kiçik bir nasazlıq olarsa, bu barədə istifadəçini xəbərdar edir.
+İstifadəçi adı sorğu tərzi
+Parol sorğusu üslubu
+Girişdə MAL-ı göstərin
+Giriş sorğunuzun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+Parol sorğunuzun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+Giriş ekranını göstərdikdən sonra Günün Mesajını göstərir.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Enjekte edilmiş əmrləri yoxlayın
+Kernel qabığının başlanğıcında yeridilmiş əmrləri yoxlayır.
+Siyahıda fayl təfərrüatlarını göstərin
+Faylları siyahıya alarkən qısa fayl təfərrüatlarını göstərir
+FTP siyahısında fayl təfərrüatlarını göstərin
+FTP üçün istifadəçi adı sorğu tərzi
+FTP üçün parol sorğu tərzi
+İlk FTP profilindən istifadə edin
+FTP sürətli yığımına yeni bağlantılar əlavə edin
+Təhlükəsiz FTP sertifikatlarını doğrulamağa çalışın
+Bağlantıda FTP MOTD-ni göstərin
+Həmişə etibarsız FTP sertifikatlarını qəbul edin
+Uzaq qovluqları siyahıya alarkən FTP faylı təfərrüatlarını göstərir.
+FTP-yə qoşulmaq üçün ilk FTP profilindən istifadə edir.
+Aktiv edilərsə, FTP sürətli yığımına yeni bağlantı əlavə edir.
+FTP sertifikatlarını doğrulamağa çalışır. Onu söndürmək tövsiyə edilmir.
+Giriş zamanı günün FTP mesajını göstərir.
+Həmişə etibarsız FTP sertifikatlarını qəbul edin. Təhlükəsizlik riskləri yarada biləcəyi üçün onu yandırmaq tövsiyə edilmir.
+Poçt üçün istifadəçi adı sorğu tərzi
+Poçt üçün parol sorğu tərzi
+Poçt üçün IMAP sorğu stili
+Poçt üçün SMTP sorğu stili
+Poçt serverini avtomatik aşkar edin
+E-poçt debugunu aktivləşdirin
+Yeni poçt mesajları üçün bildiriş göndərin
+Poçt üçün GPG parol sorğu tərzi
+IMAP ping intervalını göndərin
+SMTP ping intervalını göndərin
+Poçt mətni formatı
+IMAP server sorğunuzun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+SMTP server sorğusunun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+Verilmiş ünvana əsasən poçt serverini avtomatik aşkar edin.
+Poçt serverinin debugunu aktivləşdirir.
+İstənilən yeni poçt mesajı üçün sizi xəbərdar edir.
+GPG parol sorğunuzun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+IMAP pingini neçə millisaniyə göndərmək lazımdır?
+SMTP pingini neçə millisaniyə göndərmək lazımdır?
+Poçt mətninin necə göstəriləcəyinə nəzarət edir.
+Sadə mətn
+Akışlı mətn
+HTML mətni
+Zənginləşdirilmiş mətn
+Sıxılmış zəngin mətn
+Zəngin mətn
+Başlanğıcda avtomatik olaraq uzaqdan debug etməyə başlayın
+Uzaqdan sazlama mesajı formatı
+Əgər siz uzaqdan debugun açılışda başlamasını istəyirsinizsə, bunu aktivləşdirin.
+Uzaqdan sazlama mesajı formatını müəyyən edir. ad üçün {0}, mesaj üçün {1}.
+RSS lenti URL sorğu tərzi
+RSS lentini avtomatik yeniləyin
+Avtomatik yeniləmə RSS feed intervalı
+RSS feed serverinizin sorğusunun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+RSS lentini yeniləmək üçün neçə millisaniyədir?
+SFTP siyahısında fayl təfərrüatlarını göstərin
+SFTP üçün istifadəçi adı sorğu tərzi
+SFTP sürətli yığımına yeni bağlantılar əlavə edin
+Uzaq qovluqları siyahıya alarkən SFTP faylı təfərrüatlarını göstərir.
+Aktiv edilərsə, SFTP sürətli yığımına yeni bağlantı əlavə edir.
+Ping fasiləsi
+Geniş adapter məlumatını göstərin
+Ümumi şəbəkə məlumatını göstərin
+Faiz mətnini yükləyin
+Faiz mətnini yükləyin
+Taymout elan etməzdən əvvəl neçə millisaniyə gözləmək lazımdır?
+Paket məlumatı kimi geniş adapter məlumatını çap edir.
+Şəbəkə haqqında ümumi məlumatları göstərir.
+Yükləmə faiz mətninizin necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir. Yüklənmiş ölçü üçün {0}, hədəf ölçü üçün {1}, faiz üçün {2}.
+Endirmə faizi mətninizin necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir. Endirilmiş ölçü üçün {0}, hədəf ölçü üçün {1}, faiz üçün {2}.
+Kilidləndikdən sonra parol soruşun
+Ekranı kilidlədikdən sonra parol soruşun
+Minimum qırmızı rəng səviyyəsi
+Minimum yaşıl rəng səviyyəsi
+Minimum mavi rəng səviyyəsi
+Minimum rəng səviyyəsi
+Maksimum qırmızı rəng səviyyəsi
+Maksimum yaşıl rəng səviyyəsi
+Maksimum mavi rəng səviyyəsi
+Maksimum rəng səviyyəsi
+Minimum qırmızı rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Minimum yaşıl rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Minimum mavi rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Minimum rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255 rəng üçün 255 və ya 16 rəng üçün 16-dır.
+Maksimum qırmızı rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Maksimum yaşıl rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Maksimum mavi rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255-dir.
+Maksimum rəng səviyyəsi. Minimum qəbul edilən dəyər 0, maksimum qəbul edilən dəyər isə 255 rəng üçün 255 və ya 16 rəng üçün 16-dır.
+Ön plan rəngi
+Xətt xarakteri
+Xətt yaratmaq üçün xarakter. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Saat çubuğu üçün yuxarı sol künc simvolu
+Dəqiqə çubuğu üçün yuxarı sol künc simvolu
+Saniyə çubuğu üçün yuxarı sol künc simvolu
+Saat çubuğu üçün yuxarı sağ künc simvolu
+Dəqiqə çubuğu üçün yuxarı sağ künc simvolu
+Saniyə çubuğu üçün yuxarı sağ künc simvolu
+Saat çubuğu üçün aşağı sol künc simvolu
+Dəqiqə çubuğu üçün aşağı sol künc simvolu
+Saniyələr çubuğu üçün aşağı sol künc simvolu
+Saat çubuğu üçün aşağı sağ künc simvolu
+Dəqiqə çubuğu üçün aşağı sağ künc simvolu
+Saniyə çubuğu üçün aşağı sağ künc simvolu
+Saat çubuğu üçün yuxarı çərçivə simvolu
+Dəqiqə çubuğu üçün yuxarı çərçivə simvolu
+Saniyə çubuğu üçün yuxarı çərçivə simvolu
+Saat çubuğu üçün çərçivə simvolunu aşağı salın
+Dəqiqə çubuğu üçün çərçivə simvolunu aşağı salın
+Saniyə çubuğu üçün çərçivə simvolunu aşağı salın
+Saat çubuğu üçün sol çərçivə simvolu
+Dəqiqə çubuğu üçün sol çərçivə simvolu
+Saniyə zolağı üçün sol çərçivə simvolu
+Saat çubuğu üçün sağ çərçivə simvolu
+Dəqiqə çubuğu üçün sağ çərçivə simvolu
+Saniyə çubuğu üçün sağ çərçivə simvolu
+Saatlarla məlumat mətni
+Dəqiqələr üçün məlumat mətni
+Saniyələr üçün məlumat mətni
+Saatlar üçün minimum qırmızı rəng səviyyəsi
+Saatlar üçün minimum yaşıl rəng səviyyəsi
+Saatlar üçün minimum mavi rəng səviyyəsi
+Saatlar üçün minimum rəng səviyyəsi
+Saatlar üçün maksimum qırmızı rəng səviyyəsi
+Saatlarla maksimum yaşıl rəng səviyyəsi
+Saatlarla maksimum mavi rəng səviyyəsi
+Saatlar üçün maksimum rəng səviyyəsi
+Dəqiqələr üçün minimum qırmızı rəng səviyyəsi
+Dəqiqələr üçün minimum yaşıl rəng səviyyəsi
+Dəqiqələr üçün minimum mavi rəng səviyyəsi
+Dəqiqələr üçün minimum rəng səviyyəsi
+Dəqiqələr üçün maksimum qırmızı rəng səviyyəsi
+Dəqiqələr üçün maksimum yaşıl rəng səviyyəsi
+dəqiqələr üçün maksimum mavi rəng səviyyəsi
+Dəqiqələr üçün maksimum rəng səviyyəsi
+Saniyələr üçün minimum qırmızı rəng səviyyəsi
+Saniyələr üçün minimum yaşıl rəng səviyyəsi
+Saniyələr üçün minimum mavi rəng səviyyəsi
+Saniyələr üçün minimum rəng səviyyəsi
+Saniyələr üçün maksimum qırmızı rəng səviyyəsi
+Saniyələr üçün maksimum yaşıl rəng səviyyəsi
+Saniyələr üçün maksimum mavi rəng səviyyəsi
+Saniyələr üçün maksimum rəng səviyyəsi
+Yuxarı sol küncə bənzəyən simvol. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Aşağı sol küncə bənzəyən simvol. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Üst çərçivəyə bənzəyən xarakter. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Aşağı çərçivəyə bənzəyən simvol. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Sol çərçivəyə bənzəyən simvol. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Düzgün çərçivəyə bənzəyən bir xarakter. Yalnız bir simvol daxil etdiyinizə əmin olun.
+Cari saat üçün məlumat mətninizin necə göründüyünü yazın. 24 saatdan cari saat üçün {0}.
+Cari dəqiqə üçün məlumat mətninizin necə göstərildiyini yazın. 60 dəqiqədən cari dəqiqə üçün {0}.
+Cari ikinci üçün məlumat mətninizin necə göstərildiyini yazın. 60 saniyədən cari saniyə üçün {0}.
+Mətnin rəngi
+Eniş çubuğu üçün yuxarı sol künc simvolu
+Eniş çubuğu üçün yuxarı sağ künc simvolu
+Eniş çubuğu üçün aşağı sol künc simvolu
+Eniş çubuğu üçün aşağı sağ künc simvolu
+Ramp çubuğu üçün yuxarı çərçivə simvolu
+Ramp çubuğu üçün aşağı çərçivə simvolu
+Eniş çubuğu üçün sol çərçivə simvolu
+Ramp çubuğu üçün sağ çərçivə simvolu
+Başlanğıc rəngi üçün minimum qırmızı rəng səviyyəsi
+Başlanğıc rəngi üçün minimum yaşıl rəng səviyyəsi
+Başlanğıc rəngi üçün minimum mavi rəng səviyyəsi
+Başlanğıc rəngi üçün minimum rəng səviyyəsi
+Başlanğıc rəngi üçün maksimum qırmızı rəng səviyyəsi
+Başlanğıc rəngi üçün maksimum yaşıl rəng səviyyəsi
+Başlanğıc rəngi üçün maksimum mavi rəng səviyyəsi
+Başlanğıc rəngi üçün maksimum rəng səviyyəsi
+Son rəng üçün minimum qırmızı rəng səviyyəsi
+Son rəng üçün minimum yaşıl rəng səviyyəsi
+Son rəng üçün minimum mavi rəng səviyyəsi
+Son rəng üçün minimum rəng səviyyəsi
+Son rəng üçün maksimum qırmızı rəng səviyyəsi
+Son rəng üçün maksimum yaşıl rəng səviyyəsi
+Son rəng üçün maksimum mavi rəng səviyyəsi
+Son rəng üçün maksimum rəng səviyyəsi
+Həlledici minimum sayı
+Həlledicinin maksimum sayı
+Həlledici şou girişi
+Bildiriş haşiyəsi üçün yuxarı sol künc simvolu
+Bildiriş haşiyəsi üçün yuxarı sağ künc simvolu
+Bildiriş haşiyəsi üçün aşağı sol künc simvolu
+Bildiriş haşiyəsi üçün aşağı sağ künc simvolu
+Bildiriş haşiyəsi üçün yuxarı çərçivə simvolu
+Bildiriş haşiyəsi üçün aşağı çərçivə simvolu
+Bildiriş haşiyəsi üçün sol çərçivə simvolu
+Bildiriş haşiyəsi üçün sağ çərçivə simvolu
+Manual səhifə məlumat üslubu
+Daxiletmə sorğusunda yazılanların göstərilib-göstərilməməsi.
+Seçmək üçün minimum sayı nədir?
+Seçmək üçün maksimum sayı nədir?
+Manpage məlumatınızın necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir. Manual başlıq üçün {0}, düzəliş üçün {1}.
+{0} mülkü modulların heç birində tapılmayıb.
+Bu bölmədə ümumi ekran qoruyucu parametrləri sadalanır. Fərdi ekran qoruyucu parametrləri üçün Parametrlərdən çıxın və Ekran Qoruyucu Parametrlərini açın.
+Həqiqi rəng rejimində rəng çarxına başlayın
+Göstərilərsə, o, yer tutucu dəstəyi ilə fərdiləşdirilmiş başlanğıc bannerini göstərəcək. Siz nüvə versiyası üçün {0} istifadə edə bilərsiniz.
+Ay adlarını, təqvimi və s. dəyişdirmək üçün cari dilin hansı variantından istifadə olunur?
+255 rəng dəstəyini aktivləşdirir.
+Əsl rəng dəstəyini aktivləşdirir.
+Söz {0} sətirində silindi.
+Sətir {0} sətirində dəyişdirildi.
+{0} sətir nömrəsi silindi.
+İcazəsiz mesajları sıxışdırın
+Siyahı funksiyası icazəsiz qovluğu açmağa çalışarsa, bezdirici mesajı gizlədir
+FTP server məlumatı
+Server ünvanı:
+Server portu:
+Server növü:
+Server sistem növü:
+Server şifrələmə rejimi:
+Server məlumat bağlantısı növü:
+Server sistemi:
+Server yükləmə məlumat növü:
+Server yükləmə məlumat növü:
+Bu əməliyyatı yerinə yetirməzdən əvvəl serverə qoşulmalısınız.
+Hashing ediləcək uzaq faylı daxil edin.
+Hash ediləcək uzaq kataloqu daxil edin.
+Uzaq bir kataloq daxil edin.
+FTP üçün rekursiv hashing
+Kataloqun rekursiv hash edilib-edilməməsi. Nəzərə alın ki, bütün FTP serverləri bunu dəstəkləmir.
+Prosessorun saat tezliyi:
+Prosessor SSE2 dəstəyi:
+Prosessorların ümumi sayı:
+Disk ölçüsü:
+Ümumi yaddaş:
+Qrafik kartı:
+Disk modeli:
+Bir səhifədə e-poçtların maksimum sayı
+Mövcud dilin mədəniyyəti
+Düzgün bölməni açdığınızdan əminsinizsə, bu mesajı yoxlayın:
+Müxtəlif Parametrlər...
+Rəng Parametrləri...
+FTP server əmrini yerinə yetirir
+POP3 server ünvanını və portunu daxil edin (<ünvan> və ya <ünvan>:[port]):
+Poçt üçün POP3 sorğu stili
+POP3 ping intervalını göndərin
+POP3 server sorğunuzun necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir.
+POP3 pingini neçə millisaniyə göndərmək olar?
+POP3 istifadə edin
+POP3-dən istifadə edib-etməmək. Bunu söndürmək SMTP-dən istifadə edəcək.
+CRC32 istifadə edərək sətri şifrələyir
+Poçt müştərisini açır
+poçtun köçürülməsi...
+Bu ekran qoruyucu üçün parametrlər burada mövcuddur.
+Cədvəlin funksionallığını yoxlayır
+Göstərilən xətti redaktə edir
+Faylın sonuna yeni sətirlər əlavə edir
+Faylın sonuna əlavə etmək istədiyiniz mətni daxil edin. Bitirdikdən sonra öz sətirinə "EOF" yazın.
+Host Adı
+İstifadəçi adı
+Məlumat növü
+Kodlaşdırma
+Şifrələmə
+Protokollar
+Poçt köçürmə gedişatını göstərin
+Poçt transferinin gedişi
+Poçt köçürmə gedişatı (tək)
+Aktivləşdirilərsə, poçt qabığı poçtu endirərkən neçə baytın ötürüldüyünü göstərəcək.
+Poçt köçürmə tərəqqi tərzinizin necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir. Köçürülən ölçü üçün {0} və ümumi ölçü üçün {1}.
+Poçt köçürmə tərəqqi tərzinizin necə olmasını istədiyinizi yazın. Standart üslubdan istifadə etmək üçün boş buraxın. Yer tutucular təhlil edilir. köçürülmüş ölçü üçün {0}.
+Saat qurşağı:
+Bu gün {0}
+Cari vaxt: {0}
+Cədvəl ayırıcı rəng
+Cədvəl başlığının rəngi
+Cədvəl dəyər rəngi
+Mümkün cavablar
+Mod faylı göstərilməyib.
+Artıq quraşdırılmış modu quraşdırmağa çalışır. Mod yenilənir...
+üçün quraşdırma uğursuz oldu
+Təqdim olunan mod faylı uyğun gəlmir.
+üçün silmək uğursuz oldu
+URL açır
+Fayl məzmununu çap etmək üçün sətir nömrələrini çap edin
+\"cat\" əmrini faylın sətir nömrələrini çap etməyə məcbur edir.
+Transliterasiya edilmiş versiya
+Tərcümə edilmiş versiya
+Bütün bildirişləri rədd edir
+Endirilir...
+Yüklənir...
+Yükləmənin gedişi üçün bildiriş göstərin
+Yükləmə gedişi üçün bildiriş göstərin
+Yükləmənin gedişatını göstərən bildirişi göstərir.
+Yükləmə prosesini göstərən bildirişi göstərir.
+Tərcümə edilə bilən sətirin KS resurslarında olub olmadığını yoxlayır
+Sətir lokalizasiya resurslarında tapıldı.
+Lokallaşdırma resurslarında sətir tapılmadı.
+Kerneli sakitcə işə salır
+Növbəti girişdə işə başlamaq üçün əmr daxil edir
+Bütün modları deaktiv edərək, nüvəni təhlükəsiz rejimdə işə salır
+Təhlükəsiz rejim kimi, həm də çox istifadəçini və bəzi fərdiləşdirməni söndürür
+Kifayət qədər arqument yox idi.
+Ramp çubuğu üçün yuxarı sol künc rəngi
+Ramp çubuğu üçün yuxarı sağ künc rəngi
+Eniş çubuğu üçün aşağı sol künc rəngi
+Ramp çubuğu üçün aşağı sağ künc rəngi
+Ramp çubuğu üçün yuxarı çərçivə rəngi
+Ramp çubuğu üçün aşağı çərçivə rəngi
+Eniş çubuğu üçün sol çərçivə rəngi
+Ramp çubuğu üçün sağ çərçivə rəngi
+Ramp bar üçün haşiyə rənglərindən istifadə edin
+Ramp çubuğu üçün haşiyə rənglərindən istifadə edin. Deaktiv edilərsə, boz çubuq yaradacaq.
+HTTP qabığını işə salır
+HTTP qabığından çıxır və nüvəyə qayıdır
+HTTP saytını təyin edir. Etibarlı URI olmalıdır.
+Göstərilən sorğudan istifadə edərək HTTP serverindən cavab alır
+HTTP serverindən məzmunu silir
+HTTP qabığında xəta baş verdi:
+HTTP mesajı: Tələb olunan {0} əmri tapılmadı. HTTP qabığında müəyyən edilmiş mövcud əmrlərin siyahısı üçün "kömək" bölməsinə baxın.
+Göstərilən sorğudan istifadə edərək HTTP serverindən sətri alır
+{0} əldə edilir...
+Saytın URI formatı yanlışdır.
+Saytın qurulması
+Rənglərin yenidən başlaması tələb olunmur, lakin parametrlərin çoxu yenidən başlamağı tələb edir.
+"{0}" arqumenti üçün kömək yoxdur.
+Üzr istəmək üçün nifrət şərhlərində A düyməsini basın. Təşəkkür etmək üçün sevgi şərhlərində T düyməsini basın. Oyundan çıxmaq üçün Q düyməsini basın.
+Nifrət şərhinə görə üzr istəmisiniz! Əla!
+Sevgi şərhinə görə üzr istədi. Kifayət qədər yaxşı deyil.
+Siz sadəcə olaraq nifrət şərhinə görə nifrət edənə təşəkkür etdiniz!
+SpeedPress üçün standart çətinlik
+SpeedPress üçün düymələrin vaxt aşımı
+Tercih etdiyiniz çətinliyi seçin.
+Taymoutdan əvvəl düymənin basılmasını neçə millisaniyə gözləmək lazımdır? (Fərdi çətinlikdə)
+Normal ifadələrdən istifadə edərək söz və ya ifadəni başqası ilə əvəz edir
+Normal ifadələrdən istifadə edərək sətirdə söz və ya ifadəni başqası ilə əvəz edir
+Müəyyən bir sətirdəki sözü və ya bütün sətirləri müntəzəm ifadələrdən istifadə edərək sorğulayır
+Parametr tapın
+Nə axtarmaq istədiyinizi yazın.
+Heç nə tapılmır. Parametrləri düzgün yazdığınızdan əmin olun.
+Lokal faylı arxivə yığır
+Heç bir şeyi qablaşdıra bilməz.
+Cavab təsviri
+Host Port
+Bu proqram təminatından istifadə qaydaları və şərtləri haqqında ətraflı məlumat üçün ziyarət edin
+Defolt seçim çıxış növü
+Dəyişənlərin düzgün yazıldığını yoxlamaq üçün bütün KS parametrlərini yoxlayır
+Bu konfiqurasiya qeydlərində etibarsız dəyişənlər və ya siyahılar var və onları düzəltmək lazımdır:
+{0} faylı tapılmadı
+Təqdim olunan dəyərlərlə dəyişən massivi yaradır
+Getmək üçün parametrin nömrəsini yazın. Hər hansı digər xarakter geri qayıtmaq deməkdir.
+Onların hamısının bərabər olub olmadığını görmək üçün bütün lokallaşdırma mətn sətir nömrələrini yoxlayır
+Xətt uyğunsuzluğu
+Zəhmət olmasa istifadəçi nömrəsi daxil edin.
+Anonim istifadəçiləri daxil edin
+Əlil istifadəçiləri daxil edin
+Siyahıya anonim istifadəçilər daxildir
+Siyahıya əlil istifadəçilər daxildir
+Siyahını çeşidləyin
+Fayl sistemi siyahısını peşəkar şəkildə çeşidləyir.
+Seçim seçimini təmin edir
+Shell əmrləri yerinə yetirilmir!!!
+Girişdə ən son RSS başlığını göstərin
+RSS başlıq URL
+Hər giriş, seçilmiş başlıq URL-dən ən son RSS başlığını göstərəcək.
+Ən son başlığı göstərərkən istifadə ediləcək RSS başlıq URL-i. Bu, adətən sizin sevimli yeminizdir.
+Son xəbərlər:
+Ən son xəbərləri əldə etmək alınmadı.
+Seçilmiş seçim rəngi
+Kernel xətasında yığın izini göstərin
+Hər hansı bir nüvə xətası varsa, yığın izini konsolda çap edib-etməməyi seçin.
+Mod yüklənə bilər, lakin bu xəbərdarlıqlar modun işinə təsir edə bilər:
+Ekran qoruyucu yüklənə bilər, lakin bu xəbərdarlıqlar ekran qoruyucunun işinə təsir edə bilər:
+Parametrləri Saxla
+Parametrləri Yükləyin
+Cari nüvə parametrlərini harada saxlamaq istəyirsiniz?
+Kernel parametrlərini mövcud faylın üstündə saxlamaq mümkün deyil.
+Cari nüvə parametrlərini haradan yükləmək istəyirsiniz?
+KS resurslarında tərcümə edilə bilən sətirlərin olub olmadığını yoxlayır
+İki və ya daha çox mətn faylını çıxış faylına birləşdirir.
+Faylları birləşdirmək alınmadı.
+RSS lentinin alınması vaxtı aşımı
+RSS lentini gətirmə vaxtı bitənə qədər neçə millisaniyə gözləmək lazımdır?
+Qutuları doldurun
+Biz qutunu bütöv şəkildə çəkirik, yoxsa yalnız haşiyəni çəkirik?
+Milisaniyələrdə mərhələ gecikməsi
+Növbəti mərhələni çəkməzdən əvvəl neçə millisaniyə gözləmək lazımdır?
+Növbəti rampa çürümə intervalı
+Növbəti enişin bir ucunu çürütməzdən əvvəl neçə millisaniyə gözləmək lazımdır?
+Sazlama kvotasını yoxlayın
+Sazlayıcıya yazmadan əvvəl sazlama sisteminin kvotanı yoxlamalı olub olmadığını yoxlayırıq?
+Həqiqətən yatmaq üçün neçə millisaniyə lazım idi?
+Tədbir əlavə etmək alınmadı.
+Tədbiri silmək alınmadı.
+Tədbir əlavə etmək üçün kifayət qədər arqument təqdim edilməyib.
+Tədbiri silmək üçün kifayət qədər arqument təqdim edilməyib.
+Hadisənin manipulyasiyası üçün kifayət qədər arqument təqdim edilməyib.
+Xatırladıcı əlavə etmək və ya silmək alınmadı.
+Xatırladıcı əlavə etmək və ya silmək üçün kifayət qədər arqument təqdim edilməyib.
+Xatırlatma manipulyasiyası üçün kifayət qədər arqument təqdim edilməyib.
+Başlıqsız xatırlatma
+Başlıqsız hadisə
+İndi bir hadisə günüdür!
+Bunu qaçırmayın!
+Etibarsız əməliyyat.
+Sadə saniyəölçən
+Başlayın və ya dayandırın
+dövrə
+Sıfırlayın
+Sadə bir taymer
+Geri saymağa (yenidən) başlayın
+Aralıq təyin edin
+Göstərilən vaxt aşımı rəqəmsal deyil.
+Zaman aşımını millisaniyələrlə təyin edin
+Bütün hadisələri və/və ya xatırlatmaları dağıdıcı şəkildə saxlayın
+Aktivləşdirilərsə, təqvim əmrindən istifadə edərək hamısını yadda saxlamazdan əvvəl bütün hadisələri və/yaxud xatırlatmaları silər.
+FTP ötürülməsi üçün təkrar cəhdləri yoxlayın
+FTP bağlantısı fasiləsi
+FTP məlumat bağlantısı fasiləsi
+FTP IP versiyaları
+Yükləməni neçə dəfə yoxlamaq və bütövlükdə yükləmə uğursuz olana qədər yoxlama uğursuz olarsa, endirmək və yenidən cəhd etmək lazımdır?
+FTP bağlantısı vaxt aşımına qədər neçə millisaniyə gözləmək lazımdır?
+FTP məlumat bağlantısı vaxt aşımına qədər neçə millisaniyə gözləmək lazımdır?
+FTP serverinin dəstəklədiyi və FTP müştərisinin istifadə etdiyi İnternet Protokolunun versiyasını seçin.
+Artıq işə salınmış halda RPC başlamağa çalışır.
+RGB rəng çarxı üçün yuxarı sol künc simvolu
+RGB rəng çarxı üçün yuxarı sağ künc simvolu
+RGB rəng çarxı üçün aşağı sol künc simvolu
+RGB rəng çarxı üçün aşağı sağ künc simvolu
+RGB rəng çarxı üçün yuxarı çərçivə simvolu
+RGB rəng çarxı üçün aşağı çərçivə simvolu
+RGB rəng çarxı üçün sol çərçivə simvolu
+RGB rəng çarxı üçün sağ çərçivə simvolu
+Göstərilən kataloqda və ya cari qovluqda fayl tapır
+Sətir sonlarını cari platforma üçün formata və ya müəyyən edilmiş xüsusi formata çevirir
+Qovluqdakı ümumi ölçü:
+Siyahıda ümumi ölçüsü göstərin
+Aktivdirsə, konfiqurasiyaya uyğun olaraq qovluq ölçülərinin necə hesablanmasından asılı olaraq siyahıda ümumi qovluq ölçüsünü göstərir.
+Siz yenilənirsiniz!
+JSON qabığı üçün defolt JSON formatı
+Yadda saxlamaq üçün JSON qabığı üçün defolt JSON formatını (gözəlləşdirilmiş və ya kiçildilmiş) seçir.
+Güncəlləmə uğurla endirildi!
+Yeniləmələri avtomatik yükləyin
+Hər hansı bir yeniləmə olarsa, nüvə onu avtomatik olaraq endirəcəkdir.
+Atəşfəşanlığın partlama radiusu
+Alovlananda atəşfəşanlıq üçün partlayış radiusu neçə blokdur (10-a qədər)?
+Bu əmrin işləmə qaydasını dəyişdirən aşağıdakı açarları var:
+Çap olunan xətti izləyən sətir nömrələrini çap edir
+Sətir nömrələrinin çapının qarşısını alır
+Həmişə transliterasiya edilmiş versiyadan istifadə edin
+Həmişə tərcümə edilmiş versiyadan istifadə edin
+Dili dəyişdirməyə məcbur edin
+Cavabın birdən çox simvol tuta biləcəyini göstərin
+Cavabın yalnız bir simvol ala biləcəyini göstərin
+Sualı və cavabları bir sətirdə çap edin
+Sualı və cavabları iki sətirdə çap edin
+Sualı və cavabları müasir şəkildə çap edin
+Sualı və cavabları cədvəldə çap edin
+Siyahıda fayl təfərrüatlarını göstərir
+Zəhlətökən "icazə rədd edildi" mesajlarını basdırır
+Bütün vaxt zonalarını göstərir
+Oyuna asan çətinliklə başlayır
+Oyuna orta çətinliklə başlayır
+Oyuna ağır çətinliklə başlayır
+Oyuna çox ağır çətinliklə başlayır
+Oyuna xüsusi çətinliklə başlayır. Nəzərə alın ki, millisaniyələrdə fərdi vaxt aşımı arqument kimi yazılmalıdır.
+Sistem məlumatlarını göstərir
+Aparat məlumatlarını göstərir
+İstifadəçi məlumatlarını göstərir
+Günün mesajını göstərir
+Girişdən sonrakı günün mesajını göstərir
+Bütün məlumatları göstərir
+ZIP faylının məzmununu ehtiva edən qovluq yaradır
+Bütün mövcud şəhərləri göstərir
+Sürətli sıxılma
+Sıxılma yoxdur
+Arxivdə əsas kataloq yaratmayın
+Gənələrdə vahid
+Biabırçı şəkildə serverlə əlaqəni kəsir
+Hədəf yolunun mütləq olduğunu göstərir
+JSON faylını saxlayır, prosesdə onu gözəlləşdirir
+JSON faylını saxlayır, prosesdə onu kiçildir
+Mətn faylından sətir sonu üslubunu alır
+Bütün atılan hadisələri təmizləyir
+Hadisənin sazlanmasını aktivləşdirin
+Kernel hadisə sistemi üçün sazlamanı aktivləşdirir
+Figlet şrifti
+Figgle kitabxanası tərəfindən dəstəklənən figlet şriftini yazın. Əlavə məlumat üçün kitabxana sənədlərinə müraciət edin
+Fərdi dili quraşdırmaq alınmadı {0}.
+Fərdi dili quraşdırmaq üçün lazım olan metadata faylı mövcud deyil.
+Fərdi dili quraşdırmaq üçün lazım olan metadata məlumatı lazımi lokalizasiyaları təmin etmir.
+Fərdi dili {0} silmək alınmadı.
+Fərdi dili silmək üçün lazım olan metadata faylı mövcud deyil.
+Fərdi dili silmək üçün lazım olan metadata məlumatı lazımi lokalizasiyaları təmin etmir.
+İngilis dilinin uzunluğu təqdim olunan dil işarəsinin uzunluğuna uyğun gəlmir.
+Dil artıq mövcuddur və üzərinə yazıla bilməz.
+Fərdi dili silmək alınmadı. Çox güman ki, mövcud deyil.
+Fərdi dilləri quraşdırmaq alınmadı.
+Fərdi dilləri silmək alınmadı.
+Fərdi dilləri silmək alınmadı. Əlavə məlumat üçün daxili istisnaya baxın.
+Administrator parolunu yazın. Həqiqətən nə etdiyinizi bilmirsinizsə, bu hesabı istifadə etmədiyinizə əmin olun.
+Administrator parolunu yazmalısınız.
+Lisenziya məlumatları
+Dillərinizi idarə edin
+Dil tapılmadı və ya faylda yanlış simvollar var.
+Dil göstərilməyib.
+Təhlükəsiz rejimdə dil idarəetməsi deaktiv edilib.
+Dilin qısa adı:
+Dilin tam adı:
+Transliterasiya edilə bilən dil:
+Fərdi dil:
+Yeni xoş banner
+Qəşəng sıçrayış ekranı
+Figlet tərəfindən hazırlanmış yeni salamlama bannerini göstərir
+Başlanğıcda qəşəng sıçrayış ekranını aktivləşdirir. Nəzərə alın ki, o, arqument sorğusunu söndürəcək və qabığın yüklənməsini sınaqdan keçirəcək.
+Splash adı
+Kerneldə həyata keçirilən mövcud sıçrayışlardan sıçrayış adı.
+Yaradılmış defolt MOTD.
+Yaradılmış defolt MAL.
+Sistem hesabı işə salındı
+İstifadəçilər işə salındı
+İcazələr yükləndi
+Xoş gəldiniz!
+Uzaqdan sazlayıcı işə salınır...
+Uzaqdan sazlayıcı ilə əlaqə xətası
+Uzaqdan debug bağlantısı xətası haqqında xəbərdar edin
+Aktivləşdirilərsə, uzaqdan sazlama bağlantısı xətası barədə hostu xəbərdar etmək üçün bildiriş sistemindən istifadə edəcək. Əks halda, standart konsol yazısını istifadə edəcək.
+Taymer üçün Figlet şrifti
+Taymer üçün Figlet-i aktivləşdirin
+Aktiv edilərsə, taymer üçün figlet istifadə edəcək. Nəzərə alın ki, Figlet işə salındıqda vaxtı düzgün göstərmək üçün ona böyük konsol ekranı lazımdır.
+Yükləmədən əvvəl komanda xətti arqumentlərini təhlil edərkən xəta baş verdi: {0}
+Kerneli zavod parametrlərinə qaytarır
+Konsol ölçüsünün aşkarlanmasından yan keçir
+Deyəsən, konsol ölçüsünün aşkarlanmasından yan keçmisiniz. Kiçik ekranlarda işlər düzgün işləməyə bilər.
+Daha yaxşı təcrübə əldə etmək üçün hələ də bu ekranda olarkən konsol pəncərənizin ölçüsünü dəyişin. Davam etmək üçün hər hansı düyməyə bas...
+Konsolunuz düzgün işləmək üçün çox kiçikdir:
+Banner figlet şrifti
+Rəng növündən və Figlet dəstəyi ilə xətt çapından istifadə edərək sətri konsola çap edir
+Format və Figlet dəstəyi ilə rəng növü və xətt çapından istifadə edərək konsola sətir çap edir
+Mesajı həmişəlik silir
+Alıcıdan bütün mesajları həmişəlik silir
+Mesajın silinməsini ləğv edir
+Alıcıdan bütün mesajların silinməsini ləğv edir
+Silinməni geri qaytarma POP3 üçün həyata keçirilmir.
+Əmrlərin köməyə hesablandığını göstərin
+Shell əmrlərinin köməyə etibar etdiyini göstərin
+Mod əmrlərinin köməyə etibar etdiyini göstərin
+Ləqəblərin kömək üçün hesablandığını göstərin
+Fərqli əmr növləri üçün üç sayma şou açarı tərəfindən idarə olunan əmrlər siyahısında əmrlərin sayını göstərir.
+UESH ifadələri təmin edildikdən sonra əmrləri yerinə yetirir
+Şərt ifadədə tapılmadı.
+{0} şərti {1} arqument tələb edir. {2} əldə etdim.
+Şərti ortada qoymaq lazımdır.
+Şərti başlanğıcda qoymaq lazımdır.
+Sintaksis xətası səbəbindən ifadənin təhlili xətası.
+Şərti təmin etmək alınmadı. Ətraflı məlumat burada:
+Parol maskası xarakteri
+Şifrəni maskalayan simvol. Daha çox təhlükəsizlik üçün boş buraxın.
+Alt qabıqda işləyərkən qabıqdan çıxır
+Ana qabığını öldürə bilməz!
+Alt qabıqdan çıxmaq mümkün deyil.
+Fayl göstərilməyib. Qabıqdan çıxır...
+Bu ekran üçün parametrlər burada mövcuddur.
+Tərəqqi çubuğunun rəngi
+Ekran qoruyucu parametrlərini açır
+Splash parametrlərini açır
+Mövcud UESH dəyişənlərini sadalayır
+Mətn yerinin inkişafı
+Tercih etdiyiniz irəliləyiş mətn yerini seçin.
+Yalnız rəqəmləri yaza bilərsiniz.
+Çıxmaq üçün "q" düyməsini basın.
+Adlar endirilir...
+Texniki çətinliklərə görə biz Unix sistemlərində adapter xassələrini sadalaya bilmirik.
+Sazlama rejimini aktivləşdirir
+Arqumentlər üçün təkliflər
+Qara və Ağ rejimini aktivləşdirin
+Diskotekanı ağ-qara edir. Çox sürətli olsaydı, həqiqətən də gözlərinizə zərər verər, buna görə də sürətli şəkillərin tutulması ilə qarşılaşırsınızsa, tövsiyə edilmir.
+Deyəsən, dəstəklənməyən versiya işlədirdiniz. Bu versiyadan istifadə etməmək çox tövsiyə olunur.
+Cari Rəngləri Yükləyin
+Alternativ rəng seçimi
+İstifadəçilər sevgi və ya nifrət şərhlərini hesablayırlar
+Sevgi və ya nifrət şərh otağında neçə istifadəçi olmalıdır?
+Mövcud dilləri sadalayır
+Mövcud dillər:
+Komanda xətti arqumentləri:
+Yükləmədən əvvəl komanda xətti arqumentləri:
+Mənbə kodunun strukturu üçün mod API sənədlərini ən cari formada açır

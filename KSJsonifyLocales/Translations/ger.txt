@@ -983,3 +983,675 @@ Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...
 Diese Handbuchseite benötigt Arbeit für:
 Handbuchseite {0} nicht gefunden.
 Mod-Handbuch
+Verfügbare Kernel-Argumente:
+Drücken Sie "q", wenn Sie fertig sind.
+Mehrere Kernel-Argumente können mit Kommas ohne Leerzeichen getrennt werden, zum Beispiel:
+Mehrere eingefügte Befehle können durch Doppelpunkte mit Leerzeichen getrennt werden, zum Beispiel:
+Das angeforderte Argument {0} wurde nicht gefunden.
+Nicht behebbarer Fehler im Argument:
+Verschlüsselt eine Zeichenfolge mit SHA512
+Verschlüsselt eine Zeichenfolge mit SHA384
+Verschlüsselt eine Zeichenfolge mit SHA256
+Verschlüsselt eine Zeichenfolge mit SHA1
+Verschlüsselt eine Zeichenfolge mit MD5
+wo builtinsaver sein wird
+Mod-Teil ist nichts.
+Mods stoppen ist im abgesicherten Modus nicht erlaubt.
+Mod wurde bereits gestartet!
+Mod hat noch nicht begonnen!
+Befehlsverwendung:
+Dateiname des Teils:
+Dateipfad des Teils:
+Fehler beim Versuch, den Bildschirmschoner zu starten:
+Ungültiger Pfadtyp.
+Ungültiger Kernel-Pfadtyp.
+Vorheriger Start fehlgeschlagen
+Der JSON-Editor hat noch keinen Dateistream geöffnet.
+Die Eigenschaft in der JSON-Datei wurde nicht gefunden.
+Entferntes Eigentum.
+Fügt eine neue Eigenschaft am Ende der JSON-Datei hinzu
+Entfernt eine Eigenschaft aus der JSON-Datei
+Beendet die JSON-Shell
+Beendet die JSON-Shell, ohne die Änderungen zu speichern
+Speichert die JSON-Datei
+Öffnet die JSON-Shell
+Druckt die JSON-Datei
+Nächstes Rampenintervall
+Aktiviert die 255-Farben-Unterstützung für Ramp.
+Aktiviert True-Color-Unterstützung für Ramp.
+Wie viele Millisekunden warten, bevor die nächste Rampe ausgefüllt wird?
+Farbe des Benachrichtigungstitels
+Farbe der Benachrichtigungsbeschreibung
+Fortschrittsfarbe der Benachrichtigung
+Farbe für Benachrichtigungsfehler
+Frage Farbe
+Erfolgsfarbe
+Benutzer-Dollar-Farbe
+Farbe der Spitze
+Farbe des Trenntextes
+Farbe des Trennzeichens
+Farbe des Listentitels
+Entwicklungswarnfarbe
+Farbe der Bühnenzeit
+Fortschrittsfarbe
+Farbe der hinteren Option
+Benachrichtigungsrahmen zeichnen
+Deckt die Benachrichtigung mit dem Rahmen ab.
+Wenden Sie sich an den Anbieter des Mods, um den Mod auf die kompatible Version zu aktualisieren.
+Randfarbe mit niedriger Priorität
+Randfarbe mit mittlerer Priorität
+Randfarbe mit hoher Priorität
+Sendet eine Fortschrittsbenachrichtigung, um den Empfänger zu testen
+Testet das Farbrad
+Zeigt die lokale Kernelzeit an
+Zeigt das Datum des lokalen Kernels an
+Zeigt Datum und Uhrzeit des lokalen Kernels an
+Zeigt die UTC-Kernelzeit an
+Zeigt das UTC-Kernel-Datum an
+Zeigt Datum und Uhrzeit des UTC-Kernels an
+MOTD-Pfad
+MAL-Pfad
+Welche Datei ist die MOTD-Textdatei? Schreiben Sie einen absoluten Pfad zur Textdatei.
+Welche Datei ist die MAL-Textdatei? Schreiben Sie einen absoluten Pfad zur Textdatei.
+Mods auf der schwarzen Liste
+Schreiben Sie die Dateinamen der Mods, die beim Start nicht ausgeführt werden. Wenn Sie fertig sind, schreiben Sie "q". Schreiben Sie ein Minuszeichen neben den Pfad, um einen vorhandenen Mod zu entfernen.
+Mod {0} ist auf der schwarzen Liste.
+Lädt alle Mods neu
+Fügt einen Mod zur Blacklist hinzu
+Entfernt einen Mod von der Blacklist
+Uhrzeit und Datum in UTC: {0}
+Der angegebene JSON-Shell-Befehl wurde nicht gefunden.
+App-Informationen während des Bootens anzeigen
+Befehlszeilenargumente parsen
+Etappenendzeiten anzeigen
+Kernel-Modifikationen beim Booten starten
+Aktuelle Uhrzeit vor dem Login anzeigen
+Benachrichtigung bei Fehlern während des Startvorgangs
+Zeigt kurze Informationen über die Anwendung beim Booten an.
+Analysiert die Befehlszeilenargumente beim Booten.
+Zeigt an, wie viel Zeit der Kernel benötigt hat, um eine Stufe zu beenden.
+Starten Sie automatisch die Kernel-Modifikationen beim Booten.
+Zeigt vor der Anmeldung die aktuelle Uhrzeit, Zeitzone und das Datum an.
+Wenn beim Booten des Kernels ein geringfügiger Fehler auftritt, wird der Benutzer darüber benachrichtigt.
+Stil der Eingabeaufforderung für den Benutzernamen
+Stil der Passwortabfrage
+MAL beim Einloggen anzeigen
+Schreiben Sie, wie Ihre Anmeldeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Schreiben Sie, wie Ihre Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Zeigt die Nachricht des Tages nach dem Anzeigen des Anmeldebildschirms.
+Shell-Eingabeaufforderungsstil testen
+JSON-Shell-Eingabeaufforderungsstil
+Testen Sie injizierte Befehle
+Prüft die eingefügten Befehle beim Start der Kernel-Shell.
+Dateidetails in der Liste anzeigen
+Zeigt die kurzen Dateidetails beim Auflisten von Dateien an
+Dateidetails in der FTP-Liste anzeigen
+Stil der Eingabeaufforderung für den Benutzernamen für FTP
+Stil der Passwortabfrage für FTP
+Erstes FTP-Profil verwenden
+Neue Verbindungen zur FTP-Kurzwahl hinzufügen
+Versuchen Sie, sichere FTP-Zertifikate zu validieren
+FTP-MOTD bei Verbindung anzeigen
+Akzeptieren Sie immer ungültige FTP-Zertifikate
+Zeigt die FTP-Dateidetails an, während entfernte Verzeichnisse aufgelistet werden.
+Verwendet das erste FTP-Profil, um sich mit FTP zu verbinden.
+Fügt bei Aktivierung eine neue Verbindung zur FTP-Kurzwahl hinzu.
+Versucht, die FTP-Zertifikate zu validieren. Das Ausschalten wird nicht empfohlen.
+Zeigt beim Login die FTP-Meldung des Tages an.
+Akzeptieren Sie immer ungültige FTP-Zertifikate. Das Einschalten wird nicht empfohlen, da dies Sicherheitsrisiken darstellen kann.
+Eingabeaufforderungsstil für den Benutzernamen für E-Mails
+Stil der Passwortabfrage für E-Mails
+IMAP-Eingabeaufforderungsstil für E-Mail
+Stil der SMTP-Eingabeaufforderung für E-Mails
+Mailserver automatisch erkennen
+E-Mail-Debug aktivieren
+Bei neuen E-Mail-Nachrichten benachrichtigen
+GPG-Passwortaufforderungsstil für E-Mail
+IMAP-Ping-Intervall senden
+SMTP-Ping-Intervall senden
+Mail-Textformat
+Schreiben Sie, wie Ihre IMAP-Server-Eingabeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Schreiben Sie, wie Ihre Eingabeaufforderung für den SMTP-Server aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Automatische Erkennung des Mailservers anhand der angegebenen Adresse.
+Aktiviert Mailserver-Debug.
+Benachrichtigt Sie über neue E-Mail-Nachrichten.
+Schreiben Sie, wie Ihre GPG-Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Wie viele Millisekunden soll der IMAP-Ping gesendet werden?
+Wie viele Millisekunden zum Senden des SMTP-Pings?
+Steuert, wie der Mailtext angezeigt wird.
+Klartext
+Fließender Text
+HTML-Text
+Angereicherter Text
+Komprimierter Rich-Text
+Reichhaltiger Text
+Remote-Debug automatisch beim Start starten
+Format der Remote-Debug-Meldung
+Wenn Sie möchten, dass das Remote-Debug beim Booten gestartet wird, aktivieren Sie dies.
+Gibt das Format der Remote-Debug-Meldung an. {0} für Name, {1} für Nachricht.
+URL-Aufforderungsstil für RSS-Feeds
+RSS-Feed automatisch aktualisieren
+RSS-Feed-Intervall für automatische Aktualisierung
+Schreiben Sie, wie die Eingabeaufforderung Ihres RSS-Feed-Servers aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Wie viele Millisekunden zum Aktualisieren des RSS-Feeds?
+Dateidetails in der SFTP-Liste anzeigen
+Eingabeaufforderungsstil für den Benutzernamen für SFTP
+Neue Verbindungen zur SFTP-Kurzwahl hinzufügen
+Zeigt die Details der SFTP-Datei an, während Remote-Verzeichnisse aufgelistet werden.
+Fügt bei Aktivierung eine neue Verbindung zur SFTP-Kurzwahl hinzu.
+Ping-Zeitüberschreitung
+Zeigt umfangreiche Adapterinformationen an
+Allgemeine Netzwerkinformationen anzeigen
+Prozentsatztext herunterladen
+Prozenttext hochladen
+Wie viele Millisekunden soll gewartet werden, bevor ein Timeout deklariert wird?
+Druckt die umfangreichen Adapterinformationen, z. B. Paketinformationen.
+Zeigt allgemeine Informationen zum Netzwerk an.
+Schreiben Sie, wie Ihr prozentualer Upload-Text aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für die hochgeladene Größe, {1} für die Zielgröße, {2} für den Prozentsatz.
+Schreiben Sie, wie Ihr Download-Prozentsatztext aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für heruntergeladene Größe, {1} für Zielgröße, {2} für Prozentsatz.
+Nach dem Sperren nach dem Passwort fragen
+Fragen Sie nach dem Sperren des Bildschirms nach dem Passwort
+Minimaler roter Farbpegel
+Minimaler grüner Farbpegel
+Minimaler blauer Farbpegel
+Minimales Farbniveau
+Maximale rote Farbstufe
+Maximale grüne Farbstufe
+Maximale blaue Farbstufe
+Maximale Farbstufe
+Minimaler roter Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Minimaler grüner Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Minimaler blauer Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Minimales Farbniveau. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben.
+Maximale rote Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Maximale grüne Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Maximale blaue Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255.
+Maximale Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben.
+Vordergrundfarbe
+Liniencharakter
+Ein Zeichen zum Bilden einer Linie. Achten Sie darauf, nur ein Zeichen einzugeben.
+Zeichen in der oberen linken Ecke für die Stundenleiste
+Zeichen in der oberen linken Ecke für den Minutenbalken
+Zeichen in der oberen linken Ecke für die Sekundenleiste
+Zeichen in der oberen rechten Ecke für die Stundenleiste
+Zeichen in der oberen rechten Ecke für den Minutenbalken
+Zeichen in der oberen rechten Ecke für den Sekundenbalken
+Unteres linkes Eckzeichen für Stundenbalken
+Unteres linkes Eckzeichen für Minutenbalken
+Unteres linkes Eckzeichen für Sekundenbalken
+Zeichen in der unteren rechten Ecke für die Stundenleiste
+Zeichen in der unteren rechten Ecke für den Minutenbalken
+Unteres rechtes Eckzeichen für Sekundenbalken
+Oberes Rahmenzeichen für Stundenbalken
+Oberes Rahmenzeichen für Minutenbalken
+Oberes Rahmenzeichen für Sekundenbalken
+Unteres Rahmenzeichen für Stundenbalken
+Unteres Rahmenzeichen für Minutenbalken
+Unteres Rahmenzeichen für Sekundenbalken
+Zeichen des linken Rahmens für die Stundenleiste
+Zeichen des linken Rahmens für den Minutenbalken
+Linkes Rahmenzeichen für Sekundenbalken
+Rechtes Rahmenzeichen für Stundenbalken
+Rechtes Rahmenzeichen für Minutenbalken
+Rechtes Rahmenzeichen für Sekundenbalken
+Informationstext für Stunden
+Informationstext für Minuten
+Informationstext für Sekunden
+Minimaler roter Farbpegel für Stunden
+Minimaler grüner Farbpegel für Stunden
+Minimaler blauer Farbpegel für Stunden
+Minimaler Farbpegel für Stunden
+Maximaler roter Farbpegel für Stunden
+Maximaler grüner Farbpegel für Stunden
+Maximaler blauer Farbpegel für Stunden
+Maximaler Farbpegel für Stunden
+Minimaler roter Farbpegel für Minuten
+Minimaler grüner Farbpegel für Minuten
+Minimaler blauer Farbpegel für Minuten
+Minimaler Farbpegel für Minuten
+Maximaler roter Farbpegel für Minuten
+Maximaler grüner Farbpegel für Minuten
+Maximaler blauer Farbpegel für Minuten
+Maximaler Farbpegel für Minuten
+Minimaler roter Farbpegel für Sekunden
+Minimaler grüner Farbpegel für Sekunden
+Minimaler blauer Farbpegel für Sekunden
+Minimaler Farbpegel für Sekunden
+Maximale rote Farbstufe für Sekunden
+Maximaler grüner Farbpegel für Sekunden
+Maximaler blauer Farbpegel für Sekunden
+Maximale Farbstufe für Sekunden
+Ein Zeichen, das der oberen linken Ecke ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Ein Zeichen, das der unteren linken Ecke ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Ein Zeichen, das dem oberen Rahmen ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Ein Zeichen, das dem unteren Rahmen ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Ein Zeichen, das dem linken Rahmen ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Ein Zeichen, das dem rechten Rahmen ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
+Schreiben Sie, wie Ihr Informationstext für die aktuelle Stunde aussieht. {0} für die aktuelle Stunde von 24 Stunden.
+Schreiben Sie, wie Ihr Informationstext zur aktuellen Minute aussieht. {0} für die aktuelle Minute von 60 Minuten.
+Schreiben Sie, wie Ihr Informationstext zur aktuellen Sekunde aussieht. {0} für aktuelle Sekunde von 60 Sekunden.
+Textfarbe
+Zeichen in der oberen linken Ecke für Rampenleiste
+Zeichen in der oberen rechten Ecke für Rampenleiste
+Unteres linkes Eckzeichen für Rampenleiste
+Zeichen in der unteren rechten Ecke für Rampenleiste
+Oberer Rahmencharakter für Rampenstange
+Unterer Rahmencharakter für Rampenstange
+Zeichen des linken Rahmens für Rampenleiste
+Rechter Rahmencharakter für Rampenstange
+Minimaler roter Farbpegel für die Startfarbe
+Minimaler grüner Farbpegel für die Startfarbe
+Minimaler blauer Farbpegel für die Startfarbe
+Minimaler Farbpegel für Startfarbe
+Maximaler roter Farbpegel für die Startfarbe
+Maximaler grüner Farbpegel für die Startfarbe
+Maximaler blauer Farbpegel für die Startfarbe
+Maximale Farbstufe für Startfarbe
+Minimaler roter Farbpegel für die Endfarbe
+Minimaler grüner Farbpegel für die Endfarbe
+Minimaler blauer Farbpegel für die Endfarbe
+Minimaler Farbpegel für die Endfarbe
+Maximaler roter Farbpegel für die Endfarbe
+Maximaler grüner Farbpegel für die Endfarbe
+Maximaler blauer Farbpegel für die Endfarbe
+Maximale Farbstufe für Endfarbe
+Solver-Mindestzahl
+Solver-Maximalzahl
+Solver-Show-Eingabe
+Zeichen in der oberen linken Ecke für den Benachrichtigungsrand
+Zeichen in der oberen rechten Ecke für den Benachrichtigungsrahmen
+Unteres linkes Eckzeichen für Benachrichtigungsrahmen
+Zeichen in der unteren rechten Ecke für den Benachrichtigungsrand
+Oberes Rahmenzeichen für Benachrichtigungsrahmen
+Unteres Rahmenzeichen für Benachrichtigungsrahmen
+Linkes Rahmenzeichen für Benachrichtigungsrahmen
+Rechtes Rahmenzeichen für Benachrichtigungsrahmen
+Handbuchseiten-Informationsstil
+Ob angezeigt werden soll, was in der Eingabeaufforderung geschrieben steht.
+Was ist die Mindestanzahl zur Auswahl?
+Was ist die maximale Anzahl zu wählen?
+Schreiben Sie, wie Ihre Manpage-Informationen aussehen sollen. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für Handbuchtitel, {1} für Überarbeitung.
+Eigenschaft {0} wurde in keinem der Module gefunden.
+Dieser Abschnitt listet die allgemeinen Bildschirmschonereinstellungen auf. Beenden Sie für individuelle Bildschirmschonereinstellungen die Einstellungen und öffnen Sie die Bildschirmschonereinstellungen.
+Starten Sie das Farbrad im Echtfarbenmodus
+Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können {0} für die Kernel-Version verwenden.
+Welche Variante der aktuellen Sprache wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
+Aktiviert die 255-Farben-Unterstützung.
+Aktiviert die True-Color-Unterstützung.
+Wort in Zeile {0} gelöscht.
+Zeichenfolge in Zeile {0} ersetzt.
+Zeilennummer {0} entfernt.
+Unerlaubte Nachrichten unterdrücken
+Blendet die lästige Meldung aus, wenn die Auflistungsfunktion versucht, einen nicht autorisierten Ordner zu öffnen
+Informationen zum FTP-Server
+Serveradresse:
+Server Port:
+Server Typ:
+Serversystemtyp:
+Serververschlüsselungsmodus:
+Verbindungstyp für Serverdaten:
+Serversystem:
+Server-Download-Datentyp:
+Datentyp des Server-Uploads:
+Sie müssen eine Verbindung zu einem Server herstellen, bevor Sie diesen Vorgang ausführen.
+Geben Sie eine Remote-Datei ein, die gehasht werden soll.
+Geben Sie ein Remote-Verzeichnis ein, das gehasht werden soll.
+Geben Sie ein Remote-Verzeichnis ein.
+Rekursives Hashing für FTP
+Ob ein Verzeichnis rekursiv gehasht werden soll. Bitte beachten Sie, dass dies nicht von allen FTP-Servern unterstützt wird.
+Prozessortaktrate:
+Prozessor SSE2-Unterstützung:
+Gesamtzahl der Prozessoren:
+Festplattengröße:
+Gesamtspeicher:
+Grafikkarte:
+Festplattenmodell:
+Maximale Anzahl von E-Mails auf einer Seite
+Kultur der aktuellen Sprache
+Wenn Sie sicher sind, dass Sie den richtigen Abschnitt geöffnet haben, sehen Sie sich diese Nachricht an:
+Verschiedene Einstellungen...
+Farbeinstellungen...
+Führt einen FTP-Serverbefehl aus
+Geben Sie die Adresse und den Port des POP3-Servers ein (<Adresse> oder <Adresse>:[Port]):
+POP3-Eingabeaufforderungsstil für E-Mails
+POP3-Ping-Intervall senden
+Schreiben Sie, wie die Eingabeaufforderung Ihres POP3-Servers aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
+Wie viele Millisekunden soll der POP3-Ping gesendet werden?
+Verwenden Sie POP3
+Ob POP3 verwendet werden soll. Wenn Sie dies deaktivieren, wird SMTP verwendet.
+Verschlüsselt einen String mit CRC32
+Öffnet den Mailclient
+der E-Mail übertragen ...
+Einstellungen für diesen Bildschirmschoner sind hier verfügbar.
+Testet die Tabellenfunktion
+Bearbeitet die angegebene Zeile
+Fügt die neuen Zeilen am Ende der Datei hinzu
+Geben Sie den Text ein, den Sie an das Ende der Datei anhängen möchten. Wenn Sie fertig sind, schreiben Sie „EOF“ in eine eigene Zeile.
+Hostname
+Nutzername
+Datentyp
+Codierung
+Verschlüsselung
+Protokolle
+Fortschritt der E-Mail-Übertragung anzeigen
+Fortschritt der E-Mail-Übertragung
+E-Mail-Übertragungsfortschritt (einzeln)
+Wenn diese Option aktiviert ist, zeigt die Mail-Shell an, wie viele Bytes beim Herunterladen von E-Mails übertragen werden.
+Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für die übertragene Größe und {1} für die Gesamtgröße.
+Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für übertragene Größe.
+Zeitzone:
+Heute ist {0}
+Aktuelle Zeit ist {0}
+Farbe der Tabellentrenner
+Farbe der Tabellenüberschrift
+Farbe des Tabellenwerts
+Mögliche Antworten
+Mod-Datei ist nicht angegeben.
+Versuch, einen bereits installierten Mod zu installieren. Mod aktualisieren...
+Installation fehlgeschlagen für
+Die bereitgestellte Mod-Datei ist nicht kompatibel.
+Deinstallation fehlgeschlagen für
+Öffnet eine URL
+Zeilennummern beim Drucken von Dateiinhalten drucken
+Lässt den \"cat\"-Befehl die Zeilennummern der Datei drucken.
+Transliterierte Fassung
+Übersetzte Fassung
+Schließt alle Benachrichtigungen
+Wird heruntergeladen...
+Hochladen...
+Benachrichtigung zum Download-Fortschritt anzeigen
+Benachrichtigung zum Upload-Fortschritt anzeigen
+Zeigt die Benachrichtigung über den Download-Fortschritt an.
+Zeigt die Benachrichtigung über den Upload-Fortschritt an.
+Überprüft, ob die übersetzbare Zeichenfolge in den KS-Ressourcen vorhanden ist
+Zeichenfolge in den Lokalisierungsressourcen gefunden.
+Zeichenfolge nicht in den Lokalisierungsressourcen gefunden.
+Startet den Kernel leise
+Fügt einen Befehl zum Starten bei der nächsten Anmeldung ein
+Startet den Kernel im abgesicherten Modus und deaktiviert alle Mods
+Wie der abgesicherte Modus, deaktiviert aber auch den Mehrbenutzermodus und einige Anpassungen
+Es gab nicht genug Argumente.
+Farbe der oberen linken Ecke für Rampenleiste
+Farbe der oberen rechten Ecke für Rampenleiste
+Farbe der unteren linken Ecke für Rampenleiste
+Farbe der unteren rechten Ecke für Rampenleiste
+Obere Rahmenfarbe für Rampenstange
+Untere Rahmenfarbe für Rampenstange
+Linke Rahmenfarbe für Rampenstange
+Rechte Rahmenfarbe für Rampenstange
+Verwenden Sie Rahmenfarben für die Rampenleiste
+Verwenden Sie die Rahmenfarben für die Rampenleiste. Wenn deaktiviert, wird ein grauer Balken erzeugt.
+Startet die HTTP-Shell
+Beendet die HTTP-Shell und kehrt zum Kernel zurück
+Legt die HTTP-Site fest. Muss ein gültiger URI sein.
+Ruft die Antwort vom HTTP-Server mithilfe der angegebenen Anforderung ab
+Löscht Inhalte vom HTTP-Server
+In der HTTP-Shell ist ein Fehler aufgetreten:
+HTTP-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Siehe „Hilfe“ für eine Liste der verfügbaren Befehle, die auf der HTTP-Shell angegeben sind.
+Ruft die Zeichenfolge mithilfe der angegebenen Anforderung vom HTTP-Server ab
+{0} erhalten...
+Das Format des Website-URI ist ungültig.
+Website einstellen auf
+Farben erfordern keinen Neustart, aber die meisten Einstellungen erfordern einen Neustart.
+Keine Hilfe für Argument "{0}".
+Drücken Sie A bei Hasskommentaren, um sich zu entschuldigen. Drücken Sie T bei Liebeskommentaren, um sich zu bedanken. Drücken Sie Q, um das Spiel zu beenden.
+Du hast dich bei einem Hasskommentar entschuldigt! Exzellent!
+Entschuldigung für Liebeskommentar. Nicht gut genug.
+Du hast dem Hater gerade für den Hasskommentar gedankt!
+Standardschwierigkeit für SpeedPress
+Tastendruck-Timeout für SpeedPress
+Wählen Sie Ihren bevorzugten Schwierigkeitsgrad.
+Wie viele Millisekunden soll vor dem Timeout auf den Tastendruck gewartet werden? (In benutzerdefinierter Schwierigkeit)
+Ersetzt ein Wort oder einen Satz durch einen anderen unter Verwendung regulärer Ausdrücke
+Ersetzt ein Wort oder einen Satz durch ein anderes in einer Zeile unter Verwendung regulärer Ausdrücke
+Fragt ein Wort in einer angegebenen Zeile oder in allen Zeilen mit regulären Ausdrücken ab
+Finden Sie eine Einstellung
+Schreiben Sie, wonach Sie suchen möchten.
+Es wird nichts gefunden. Stellen Sie sicher, dass Sie die Einstellung richtig geschrieben haben.
+Packt eine lokale Datei in das Archiv
+Kann nichts packen.
+Antwortbeschreibung
+Host-Port
+Weitere Informationen zu den Nutzungsbedingungen dieser Software finden Sie unter
+Ausgangstyp der Standardauswahl
+Überprüft alle KS-Einstellungen, um zu sehen, ob die Variablen korrekt geschrieben sind
+Diese Konfigurationseinträge haben ungültige Variablen oder Aufzählungen und müssen behoben werden:
+Datei {0} nicht gefunden
+Erstellt ein Variablenarray mit den bereitgestellten Werten
+Schreiben Sie die Nummer der Einstellung, zu der Sie gehen möchten. Jedes andere Zeichen bedeutet zurück.
+Überprüft alle Lokalisierungstextzeilennummern, um festzustellen, ob sie alle gleich sind
+Zeilenkonflikt ein
+Bitte geben Sie eine Benutzernummer ein.
+Schließen Sie anonyme Benutzer ein
+Schließen Sie behinderte Benutzer ein
+Schließt die anonymen Benutzer in die Liste ein
+Schließt die deaktivierten Benutzer in die Liste ein
+Sortieren Sie die Liste
+Sortiert die Dateisystemliste professionell.
+Bietet eine Auswahlmöglichkeit
+Shell-Befehle nicht implementiert!!!
+Neueste RSS-Überschrift beim Login anzeigen
+URL der RSS-Überschrift
+Bei jeder Anmeldung wird die neueste RSS-Schlagzeile der ausgewählten Schlagzeilen-URL angezeigt.
+RSS-Schlagzeilen-URL, die verwendet werden soll, wenn die neueste Schlagzeile angezeigt wird. Dies ist normalerweise Ihr Lieblings-Feed.
+Neuesten Nachrichten:
+Die neuesten Nachrichten konnten nicht abgerufen werden.
+Ausgewählte Optionsfarbe
+Stack-Trace bei Kernel-Fehler anzeigen
+Wenn ein Kernelfehler auftritt, wählen Sie aus, ob der Stack-Trace auf der Konsole gedruckt werden soll oder nicht.
+Der Mod kann geladen werden, aber diese Warnungen können sich auf die Funktionsweise des Mods auswirken:
+Der Bildschirmschoner kann geladen werden, aber diese Warnungen können die Funktionsweise des Bildschirmschoners beeinflussen:
+Einstellungen speichern unter
+Einstellungen laden von
+Wo möchten Sie die aktuellen Kernel-Einstellungen speichern?
+Die Kernel-Einstellungen können nicht über der vorhandenen Datei gespeichert werden.
+Woher möchten Sie die aktuellen Kernel-Einstellungen laden?
+Überprüft, ob die übersetzbaren Zeichenfolgen in den KS-Ressourcen vorhanden sind
+Kombiniert die zwei oder mehr Textdateien in der Ausgabedatei.
+Dateien konnten nicht kombiniert werden.
+Zeitüberschreitung beim RSS-Feed-Abruf
+Wie viele Millisekunden soll gewartet werden, bis das Zeitlimit für den Abruf des RSS-Feeds überschritten wird?
+Füllen Sie die Kästchen
+Zeichnen wir die Box als Ganzes oder zeichnen wir nur die Umrandung?
+Stufenverzögerung in Millisekunden
+Wie viele Millisekunden soll gewartet werden, bevor die nächste Stufe gezeichnet wird?
+Nächstes Ramp-Rot-Intervall
+Wie viele Millisekunden warten, bis das eine Ende der nächsten Rampe verrottet?
+Überprüfen Sie das Debug-Kontingent
+Prüfen wir, ob das Debug-System nach Kontingenten suchen muss, bevor es in den Debugger schreibt?
+Wie viele Millisekunden dauerte es wirklich, um einzuschlafen?
+Ereignis konnte nicht hinzugefügt werden.
+Ein Ereignis konnte nicht entfernt werden.
+Es wurden nicht genügend Argumente bereitgestellt, um ein Ereignis hinzuzufügen.
+Es wurden nicht genügend Argumente bereitgestellt, um ein Ereignis zu entfernen.
+Es wurden nicht genügend Argumente für die Ereignismanipulation bereitgestellt.
+Eine Erinnerung konnte nicht hinzugefügt oder entfernt werden.
+Es wurden nicht genügend Argumente angegeben, um eine Erinnerung hinzuzufügen oder zu entfernen.
+Nicht genügend Argumente für Mahnungsmanipulationen geliefert.
+Unbenannte Erinnerung
+Unbenannte Veranstaltung
+Jetzt ist ein Eventtag!
+Verpassen Sie das nicht!
+Ungültige Aktion.
+Eine einfache Stoppuhr
+Starten oder stoppen
+Runde
+Zurücksetzen
+Ein einfacher Timer
+Beginnen Sie (erneut) mit dem Herunterzählen
+Intervall einstellen
+Das angegebene Timeout ist nicht numerisch.
+Geben Sie das Timeout in Millisekunden an
+Speichern Sie alle Ereignisse und/oder Erinnerungen destruktiv
+Wenn aktiviert, werden alle Ereignisse und/oder Erinnerungen gelöscht, bevor sie alle mit dem Kalenderbefehl gespeichert werden.
+Überprüfen Sie die Wiederholungsversuche für die FTP-Übertragung
+Timeout der FTP-Verbindung
+Timeout für FTP-Datenverbindung
+FTP-IP-Versionen
+Wie oft muss der Upload und Download überprüft und erneut versucht werden, wenn die Überprüfung fehlschlägt, bevor der Download als Ganzes fehlschlägt?
+Wie viele Millisekunden bis zum Timeout der FTP-Verbindung warten?
+Wie viele Millisekunden bis zum Timeout der FTP-Datenverbindung warten?
+Wählen Sie die Version des Internetprotokolls aus, die der FTP-Server unterstützt und die der FTP-Client verwendet.
+Versuch, RPC zu starten, während es bereits gestartet ist.
+Zeichen in der oberen linken Ecke für das RGB-Farbrad
+Zeichen in der oberen rechten Ecke für das RGB-Farbrad
+Zeichen in der unteren linken Ecke für das RGB-Farbrad
+Zeichen in der unteren rechten Ecke für das RGB-Farbrad
+Zeichen des oberen Rahmens für das RGB-Farbrad
+Unterer Rahmencharakter für RGB-Farbrad
+Zeichen des linken Rahmens für das RGB-Farbrad
+Rechtes Rahmenzeichen für RGB-Farbrad
+Findet eine Datei im angegebenen Verzeichnis oder im aktuellen Verzeichnis
+Konvertiert die Zeilenenden in das Format für die aktuelle Plattform oder in das angegebene benutzerdefinierte Format
+Gesamtgröße im Ordner:
+Gesamtgröße in Liste anzeigen
+Wenn aktiviert, wird die Gesamtordnergröße in der Liste angezeigt, je nachdem, wie die Ordnergrößen gemäß der Konfiguration berechnet werden.
+Sie sind auf dem Laufenden!
+Standardmäßige JSON-Formatierung für die JSON-Shell
+Wählt die standardmäßige JSON-Formatierung (verschönert oder minimiert) für die zu speichernde JSON-Shell aus.
+Update erfolgreich heruntergeladen!
+Updates automatisch herunterladen
+Wenn es ein Update gibt, lädt der Kernel es automatisch herunter.
+Explosionsradius von Feuerwerk
+Wie viele Blöcke (bis zu 10) beträgt der Explosionsradius für das Feuerwerk, wenn es gezündet wird?
+Dieser Befehl hat die folgenden Schalter, die seine Funktionsweise ändern:
+Druckt die Zeilennummern, die der zu druckenden Zeile folgen
+Verhindert das Drucken der Zeilennummern
+Verwenden Sie immer die transliterierte Version
+Verwenden Sie immer die übersetzte Version
+Sprachumschaltung erzwingen
+Geben Sie an, dass die Antwort mehr als ein Zeichen umfassen kann
+Geben Sie an, dass die Antwort nur ein Zeichen umfassen darf
+Geben Sie die Frage und die Antworten in einer Zeile aus
+Geben Sie die Frage und die Antworten in zwei Zeilen aus
+Drucken Sie die Frage und die Antworten auf moderne Weise aus
+Drucken Sie die Frage und die Antworten in einer Tabelle aus
+Zeigt die Dateidetails in der Liste an
+Unterdrückt die lästigen "Erlaubnis verweigert"-Meldungen
+Zeigt alle Zeitzonen an
+Startet das Spiel im einfachen Schwierigkeitsgrad
+Startet das Spiel im mittleren Schwierigkeitsgrad
+Startet das Spiel im Schwierigkeitsgrad „Schwer“.
+Startet das Spiel im sehr schweren Schwierigkeitsgrad
+Startet das Spiel im benutzerdefinierten Schwierigkeitsgrad. Bitte beachten Sie, dass das benutzerdefinierte Timeout in Millisekunden als Argument geschrieben werden sollte.
+Zeigt die Systeminformationen an
+Zeigt die Hardwareinformationen an
+Zeigt die Benutzerinformationen an
+Zeigt die Botschaft des Tages
+Zeigt die Nachricht des Tages nach dem Login an
+Zeigt alle Informationen an
+Erstellt ein Verzeichnis, das den Inhalt der ZIP-Datei enthält
+Zeigt alle verfügbaren Städte an
+Schnelle Komprimierung
+Keine Komprimierung
+Kein Basisverzeichnis im Archiv erstellen
+Einheit in Ticks
+Trennt sich schändlich vom Server
+Gibt an, dass der Zielpfad absolut ist
+Speichert die JSON-Datei und verschönert sie dabei
+Speichert die JSON-Datei und minimiert sie dabei
+Ruft den Zeilenendestil aus der Textdatei ab
+Löscht alle ausgelösten Ereignisse
+Ereignisdebugging aktivieren
+Aktiviert das Debuggen für das Kernel-Ereignissystem
+Figlet-Schriftart
+Schreiben Sie eine Figlet-Schriftart, die von der Figgle-Bibliothek unterstützt wird. Weitere Informationen finden Sie in der Bibliotheksdokumentation
+Fehler beim Installieren der benutzerdefinierten Sprache {0}.
+Die zum Installieren der benutzerdefinierten Sprache erforderliche Metadatendatei ist nicht vorhanden.
+Die zum Installieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit.
+Die benutzerdefinierte Sprache {0} konnte nicht deinstalliert werden.
+Die zum Deinstallieren der benutzerdefinierten Sprache erforderliche Metadatendatei ist nicht vorhanden.
+Die zum Deinstallieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit.
+Die Länge der englischen Sprache stimmt nicht mit der Länge des bereitgestellten Sprachtokens überein.
+Die Sprache existiert bereits und kann nicht überschrieben werden.
+Benutzerdefinierte Sprache konnte nicht deinstalliert werden. Es existiert höchstwahrscheinlich nicht.
+Benutzerdefinierte Sprachen konnten nicht installiert werden.
+Benutzerdefinierte Sprachen konnten nicht deinstalliert werden.
+Benutzerdefinierte Sprachen konnten nicht deinstalliert werden. Weitere Informationen finden Sie in der inneren Ausnahme.
+Schreiben Sie das Administratorkennwort. Stellen Sie sicher, dass Sie dieses Konto nur verwenden, wenn Sie wirklich wissen, was Sie tun.
+Sie müssen das Administratorkennwort eingeben.
+Lizenzinformationen
+Verwalten Sie Ihre Sprachen
+Sprache nicht gefunden oder Datei enthält ungültige Zeichen.
+Sprache ist nicht angegeben.
+Die Sprachverwaltung ist im abgesicherten Modus deaktiviert.
+Kurzbezeichnung der Sprache:
+Vollständiger Name der Sprache:
+Sprache transliterierbar:
+Benutzerdefinierte Sprache:
+Neues Willkommensbanner
+Stilvoller Splash-Screen
+Zeigt das neue Figlet-gerenderte Willkommensbanner
+Aktiviert den eleganten Begrüßungsbildschirm beim Start. Bitte beachten Sie, dass die Eingabeaufforderung für Argumente deaktiviert und der Pre-Boot der Shell getestet wird.
+Splash-Name
+Splash-Name aus den verfügbaren Splashes, die im Kernel implementiert sind.
+Generierte Standard-MOTD.
+Generierte Standard-MAL.
+Systemkonto initialisiert
+Benutzer initialisiert
+Berechtigungen geladen
+Herzlich willkommen!
+Starten des Remote-Debuggers...
+Remote-Debugger-Verbindungsfehler
+Bei Remote-Debug-Verbindungsfehler benachrichtigen
+Wenn aktiviert, wird das Benachrichtigungssystem verwendet, um den Host über Remote-Debug-Verbindungsfehler zu informieren. Andernfalls wird die Standardkonsolenschreibweise verwendet.
+Figlet-Schriftart für Timer
+Aktivieren Sie Figlet für den Timer
+Wenn aktiviert, wird Figlet als Timer verwendet. Bitte beachten Sie, dass es einen großen Konsolenbildschirm benötigt, um die Zeit mit aktiviertem Figlet richtig darzustellen.
+Fehler beim Analysieren von Preboot-Befehlszeilenargumenten: {0}
+Setzt den Kernel auf die Werkseinstellungen zurück
+Umgeht die Erkennung der Konsolengröße
+Sieht so aus, als würden Sie die Erkennung der Konsolengröße umgehen. Auf kleinen Bildschirmen funktionieren die Dinge möglicherweise nicht richtig.
+Um ein besseres Erlebnis zu haben, ändern Sie die Größe Ihres Konsolenfensters, während Sie sich noch auf diesem Bildschirm befinden. Drücken Sie eine beliebige Taste, um fortzufahren...
+Ihre Konsole ist zu klein, um ordnungsgemäß ausgeführt zu werden:
+Banner-Filet-Schriftart
+Druckt eine Zeichenkette an die Konsole unter Verwendung von Farbtyp und Zeilendruck mit Figlet-Unterstützung
+Druckt eine Zeichenkette an die Konsole unter Verwendung von Farbtyp und Zeilendruck mit Format- und Figlet-Unterstützung
+Entfernt eine Nachricht dauerhaft
+Entfernt dauerhaft alle Nachrichten vom Empfänger
+Macht das Entfernen einer Nachricht rückgängig
+Macht das Entfernen aller Nachrichten vom Empfänger rückgängig
+Löschen rückgängig machen ist für POP3 nicht implementiert.
+Zeigen Sie die Befehle an, die auf Hilfe zählen
+Zeigen Sie die Anzahl der Shell-Befehle in der Hilfe an
+Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen
+Zeigen Sie die Anzahl der Aliase in der Hilfe an
+Zeigt die Anzahl der Befehle in der Befehlsliste an, gesteuert durch die drei Count-Show-Schalter für verschiedene Arten von Befehlen.
+Führt Befehle aus, sobald die UESH-Ausdrücke erfüllt sind
+Die Bedingung wurde im Ausdruck nicht gefunden.
+Bedingung {0} erfordert {1} Argumente. {2} erhalten.
+Die Bedingung muss in der Mitte platziert werden.
+Die Bedingung muss an den Anfang gestellt werden.
+Fehler beim Analysieren des Ausdrucks aufgrund eines Syntaxfehlers.
+Bedingung konnte nicht erfüllt werden. Mehr Infos hier:
+Passwortmaskenzeichen
+Ein Zeichen, das das Kennwort maskiert. Für mehr Sicherheit leer lassen.
+Beendet die Shell, wenn sie auf einer Subshell ausgeführt wird
+Kann die Mutterschale nicht töten!
+Abmeldung von der Subshell nicht möglich.
+Datei nicht angegeben. Schale verlassen...
+Einstellungen für diesen Begrüßungsbildschirm sind hier verfügbar.
+Farbe des Fortschrittsbalkens
+Öffnet die Bildschirmschonereinstellungen
+Öffnet die Splash-Einstellungen
+Listet verfügbare UESH-Variablen auf
+Position des Fortschrittstexts
+Wählen Sie Ihre bevorzugte Position für Fortschrittstexte aus.
+Sie können nur die Zahlen schreiben.
+Drücken Sie zum Beenden "q".
+Namen werden heruntergeladen...
+Aufgrund technischer Schwierigkeiten können wir keine Adaptereigenschaften auf Unix-Systemen auflisten.
+Aktiviert den Debug-Modus
+Fordert zu Argumenten auf
+Aktivieren Sie den Schwarz-Weiß-Modus
+Macht die Disco schwarz auf weiß. Wird Ihre Augen wirklich verletzen, wenn es zu schnell war, also nicht empfohlen, wenn Sie einen Anfall von schnellen Bildern erleben.
+Sieht so aus, als hätten Sie eine nicht unterstützte Version ausgeführt. Es wird dringend empfohlen, diese Version nicht zu verwenden.
+Aktuelle Farben laden
+Alternative Option Farbe
+Benutzer zählen für Liebes- oder Hasskommentare
+Wie viele Benutzer sollen im Love or Hate-Kommentarraum sein?
+Listet verfügbare Sprachen auf
+Verfügbare Sprachen:
+Kommandozeilenargumente:
+Pre-Boot-Befehlszeilenargumente:
+Öffnet die Mod-API-Dokumentation für die Struktur des Quellcodes in seiner aktuellsten Form

@@ -983,3 +983,675 @@ Tryck på valfri knapp för att läsa den manuella sidan ...
 Denna manuella sida behöver arbete för:
 Manuell sida {0} hittades inte.
 Mod manuell
+Tillgängliga kärnargument:
+Tryck på "q" om du är klar.
+Flera kärnargument kan separeras med kommatecken utan mellanslag, till exempel:
+Flera injicerade kommandon kan separeras med kolon med mellanslag, till exempel:
+Det begärda argumentet {0} hittades inte.
+Oåterställbart fel i argument:
+Krypterar en sträng med SHA512
+Krypterar en sträng med SHA384
+Krypterar en sträng med SHA256
+Krypterar en sträng med SHA1
+Krypterar en sträng med MD5
+var inbyggd besparing kommer att vara
+Moddel är ingenting.
+Stoppa mods är inte tillåtna i säkert läge.
+Mod har redan startat!
+Mod har inte börjat än!
+Kommandoanvändning:
+Del filnamn:
+Del filsökväg:
+Fel vid försök att starta skärmsläckare:
+Ogiltig sökvägstyp.
+Ogiltig sökvägstyp för kärnan.
+Föregående start misslyckades
+JSON-redigeraren har inte öppnat en filström ännu.
+Egenskapen i JSON-filen hittades inte.
+Borttagen egendom.
+Lägger till en ny egenskap i slutet av JSON-filen
+Tar bort en egenskap från JSON-filen
+Lämnar JSON-skalet
+Lämnar JSON-skalet utan att spara ändringarna
+Sparar JSON-filen
+Öppnar JSON-skalet
+Skriver ut JSON-filen
+Nästa rampintervall
+Aktiverar stöd för 255 färger för Ramp.
+Aktiverar stöd för äkta färg för Ramp.
+Hur många millisekunder ska man vänta innan man fyller på nästa ramp?
+Aviseringens titelfärg
+Färg på meddelandebeskrivning
+Färg för meddelandeförlopp
+Färg på meddelandefel
+Frågefärg
+Framgångsfärg
+Användarens dollarfärg
+Spets färg
+Separator textfärg
+Separator färg
+Listtitelfärg
+Utvecklingsvarningsfärg
+Scentid färg
+Progress färg
+Baksida alternativ färg
+Rita meddelandegräns
+Täcker anmälan med gränsen.
+Kontakta leverantören av modden för att uppgradera moden till den kompatibla versionen.
+Kantfärg med låg prioritet
+Kantfärg med medelhög prioritet
+Hög prioriterad kantfärg
+Skickar ett förloppsmeddelande för att testa mottagaren
+Testar färghjulet
+Visar lokal kärntid
+Visar lokalt kärndatum
+Visar lokal kärnans datum och tid
+Visar UTC-kärntid
+Visar UTC-kärndatum
+Visar UTC-kärnan datum och tid
+MOTD sökväg
+MAL-väg
+Vilken fil är MOTD-textfilen? Skriv en absolut sökväg till textfilen.
+Vilken fil är MAL-textfilen? Skriv en absolut sökväg till textfilen.
+Svartlistade mods
+Skriv filnamnen på de mods som inte kommer att köras vid uppstart. När du är klar skriver du "q". Skriv ett minustecken bredvid sökvägen för att ta bort en befintlig mod.
+Mod {0} är svartlistad.
+Laddar om alla moddar
+Lägger till en mod till den svarta listan
+Tar bort en mod från svartlistan
+Tid och datum i UTC: {0}
+Det angivna JSON-skalkommandot hittades inte.
+Visa appinformation under uppstart
+Analysera kommandoradsargument
+Visa scenens sluttider
+Starta kärnmodifieringar vid uppstart
+Visa aktuell tid före inloggning
+Meddela för eventuella fel under uppstart
+Visar kort information om programmet vid uppstart.
+Analyserar kommandoradsargumenten vid uppstart.
+Visar hur lång tid det tog för kärnan att avsluta ett steg.
+Starta kärnmodifieringarna automatiskt vid uppstart.
+Visar aktuell tid, tidszon och datum innan du loggar in.
+Om det finns ett mindre fel under kärnstart, meddela användaren om det.
+Användarnamnspromptstil
+Lösenordspromptstil
+Visa MAL vid inloggning
+Skriv hur du vill att din inloggningsfråga ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Skriv hur du vill att din lösenordsfråga ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Visar dagens meddelande efter att ha visat inloggningsskärmen.
+Testa skalpromptstil
+JSON Shell Prompt Style
+Probe injicerade kommandon
+Söker de injicerade kommandona i början av kärnskalet.
+Visa fildetaljer i listan
+Visar korta fildetaljer medan filer listas
+Visa fildetaljer i FTP-listan
+Användarnamnspromptstil för FTP
+Lösenordspromptstil för FTP
+Använd första FTP-profilen
+Lägg till nya anslutningar till FTP-kortnummer
+Försök att validera säkra FTP-certifikat
+Visa FTP MOTD vid anslutning
+Acceptera alltid ogiltiga FTP-certifikat
+Visar FTP-fildetaljerna medan du listar fjärrkataloger.
+Använder den första FTP-profilen för att ansluta till FTP.
+Om det är aktiverat läggs en ny anslutning till FTP-kortnumret.
+Försöker validera FTP-certifikaten. Att stänga av den rekommenderas inte.
+Visar dagens FTP-meddelande vid inloggning.
+Acceptera alltid ogiltiga FTP-certifikat. Att slå på det rekommenderas inte eftersom det kan utgöra säkerhetsrisker.
+Användarnamnspromptstil för e-post
+Lösenordspromptstil för e-post
+IMAP-promptstil för e-post
+SMTP-promptstil för e-post
+Upptäck e-postserver automatiskt
+Aktivera e-postfelsökning
+Meddela för nya e-postmeddelanden
+GPG-lösenordspromptstil för e-post
+Skicka IMAP-pingintervall
+Skicka SMTP-pingintervall
+Mail textformat
+Skriv hur du vill att din IMAP-serverprompt ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Skriv hur du vill att din SMTP-serverprompt ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Upptäck automatiskt e-postservern baserat på den angivna adressen.
+Aktiverar felsökning av e-postserver.
+Meddelar dig om nya e-postmeddelanden.
+Skriv hur du vill att din GPG-lösenordsfråga ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Hur många millisekunder ska IMAP-pinget skickas?
+Hur många millisekunder ska SMTP-pingen skickas?
+Styr hur e-posttexten ska visas.
+Oformatterad text
+Flödande text
+HTML-text
+Berikad text
+Komprimerad rik text
+Rik text
+Starta fjärrfelsökning automatiskt vid start
+Fjärrfelsökningsmeddelandeformat
+Om du vill att fjärrfelsökning ska starta vid uppstart, aktivera detta.
+Anger formatet för fjärrfelsökningsmeddelandet. {0} för namn, {1} för meddelande.
+RSS-flöde URL-promptstil
+Uppdatera RSS-flöde automatiskt
+Automatisk uppdatering av RSS-flödesintervall
+Skriv hur du vill att din RSS-feedserverprompt ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Hur många millisekunder ska man uppdatera RSS-flödet?
+Visa fildetaljer i SFTP-listan
+Användarnamnspromptstil för SFTP
+Lägg till nya anslutningar till SFTP-kortnummer
+Visar SFTP-fildetaljer medan du listar fjärrkataloger.
+Om det är aktiverat läggs en ny anslutning till SFTP-kortnumret.
+Ping timeout
+Visa omfattande adapterinformation
+Visa allmän nätverksinformation
+Ladda ner procenttext
+Ladda upp procenttext
+Hur många millisekunder ska man vänta innan man deklarerar timeout?
+Skriver ut den omfattande adapterinformationen, såsom paketinformation.
+Visar allmän information om nätverket.
+Skriv hur du vill att din uppladdningsprocenttext ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras. {0} för uppladdad storlek, {1} för målstorlek, {2} för procent.
+Skriv hur du vill att din nedladdningsprocenttext ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras. {0} för nedladdad storlek, {1} för målstorlek, {2} för procent.
+Be om lösenord efter låsning
+Efter att ha låst skärmen, fråga efter lösenord
+Minsta röda färgnivå
+Minsta gröna färgnivå
+Minsta blå färgnivå
+Lägsta färgnivå
+Maximal röd färgnivå
+Maximal grön färgnivå
+Maximal blå färgnivå
+Maximal färgnivå
+Minsta röda färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Minsta gröna färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Minsta blå färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Lägsta färgnivå. Det minsta accepterade värdet är 0 och det högsta tillåtna värdet är 255 för 255 färger eller 16 för 16 färger.
+Maximal röd färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Maximal grön färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Maximal blå färgnivå. Det minsta accepterade värdet är 0 och det högsta accepterade värdet är 255.
+Maximal färgnivå. Det minsta accepterade värdet är 0 och det högsta tillåtna värdet är 255 för 255 färger eller 16 för 16 färger.
+Förgrundsfärg
+Linjekaraktär
+Ett tecken för att bilda en linje. Se till att bara mata in ett tecken.
+Tecken i övre vänstra hörnet för timmars bar
+Tecken i övre vänstra hörnet för minutfältet
+Tecken i övre vänstra hörnet för sekundfältet
+Tecken i övre högra hörnet för timmars bar
+Tecken i övre högra hörnet för minutfältet
+Tecken i övre högra hörnet för sekundfältet
+Nedre vänstra hörnets tecken för timmars bar
+Nedre vänstra hörnets tecken för minutfältet
+Nedre vänstra hörnets tecken för sekundfältet
+Nedre högra hörnets tecken för timmars bar
+Nedre högra hörnets tecken för minutfältet
+Nedre högra hörnets tecken för sekundfältet
+Övre ramkaraktär för timmars bar
+Övre ramtecken för minutstapel
+Övre ramtecken för sekundstapel
+Nedre ramkaraktär för timmars bar
+Nedre ramtecken för minutstapel
+Nedre ramtecken för sekundstapel
+Vänster ramtecken för timmars bar
+Vänster ramtecken för minutraden
+Vänster ramtecken för sekundfältet
+Höger ramtecken för timmars bar
+Höger ramtecken för minutstapel
+Höger ramtecken för sekundstapel
+Informationstext för timmar
+Informationstext i minuter
+Informationstext i sekunder
+Minsta röda färgnivå i timmar
+Minsta gröna färgnivå i timmar
+Minsta blå färgnivå i timmar
+Minsta färgnivå i timmar
+Maximal röd färgnivå i timmar
+Maximal grön färgnivå i timmar
+Maximal blå färgnivå i timmar
+Maximal färgnivå i timmar
+Minsta röda färgnivå i minuter
+Minsta gröna färgnivå i minuter
+Minsta blå färgnivå i minuter
+Minsta färgnivå i minuter
+Maximal röd färgnivå i minuter
+Maximal grön färgnivå i minuter
+Maximal blå färgnivå i minuter
+Maximal färgnivå i minuter
+Minsta röda färgnivå i sekunder
+Minsta gröna färgnivå i sekunder
+Minsta blå färgnivå i sekunder
+Minsta färgnivå i sekunder
+Maximal röd färgnivå i sekunder
+Maximal grön färgnivå i sekunder
+Maximal blå färgnivå i sekunder
+Maximal färgnivå i sekunder
+Ett tecken som liknar det övre vänstra hörnet. Se till att bara mata in ett tecken.
+Ett tecken som liknar det nedre vänstra hörnet. Se till att bara mata in ett tecken.
+En karaktär som liknar den övre ramen. Se till att bara mata in ett tecken.
+En karaktär som liknar den nedre ramen. Se till att bara mata in ett tecken.
+En karaktär som liknar den vänstra ramen. Se till att bara mata in ett tecken.
+En karaktär som liknar den högra ramen. Se till att bara mata in ett tecken.
+Skriv hur din informationstext för den aktuella timmen visar. {0} för aktuell timme av 24 timmar.
+Skriv hur din informationstext för den aktuella minuten visar. {0} för aktuell minut av 60 minuter.
+Skriv hur din informationstext för den aktuella sekunden visar. {0} för aktuell sekund av 60 sekunder.
+Text färg
+Tecken i övre vänstra hörnet för rampstång
+Tecken i övre högra hörnet för rampstång
+Nedre vänstra hörnets tecken för rampstång
+Nedre högra hörnets tecken för rampstång
+Övre ramkaraktär för rampstång
+Nedre ramkaraktär för rampstång
+Vänster ramkaraktär för rampstång
+Höger ramkaraktär för rampstång
+Minsta röda färgnivå för startfärg
+Minsta gröna färgnivå för startfärg
+Minsta blå färgnivå för startfärg
+Minsta färgnivå för startfärg
+Maximal röd färgnivå för startfärg
+Maximal grön färgnivå för startfärg
+Maximal blå färgnivå för startfärg
+Maximal färgnivå för startfärg
+Minsta röda färgnivå för slutfärg
+Minsta gröna färgnivå för slutfärg
+Minsta blå färgnivå för slutfärg
+Lägsta färgnivå för slutfärg
+Maximal röd färgnivå för slutfärg
+Maximal grön färgnivå för slutfärg
+Maximal blå färgnivå för slutfärg
+Maximal färgnivå för slutfärg
+Minsta antal lösare
+Lösare maximalt antal
+Solver visa input
+Tecken i övre vänstra hörnet för meddelandekant
+Tecken i övre högra hörnet för meddelandekant
+Nedre vänstra hörnets tecken för meddelandekant
+Nedre högra hörnets tecken för meddelandekant
+Övre ramtecken för meddelandekant
+Nedre ramtecken för meddelandekant
+Vänster ramtecken för meddelandekant
+Höger ramtecken för meddelandekant
+Manuell sidinformationsstil
+Om man ska visa vad som står i inmatningsuppmaningen.
+Vilket är det minsta antalet att välja?
+Vilket är det maximala antalet att välja?
+Skriv hur du vill att din manpageinformation ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras. {0} för manuell titel, {1} för revision.
+Egenskapen {0} hittades inte i någon av modulerna.
+Det här avsnittet listar de allmänna skärmsläckarinställningarna. För individuella skärmsläckarinställningar, avsluta Inställningar och öppna Skärmsläckarinställningar.
+Starta färghjulet i äkta färgläge
+Om det anges kommer det att visa anpassad startbanner med platshållarstöd. Du kan använda {0} för kärnversionen.
+Vilken variant av det aktuella språket används för att ändra månadsnamn, kalender etc.?
+Aktiverar stödet för 255 färger.
+Aktiverar stödet för äkta färg.
+Ord raderade på rad {0}.
+Sträng ersatt på rad {0}.
+Radnummer {0} togs bort.
+Undertryck obehöriga meddelanden
+Döljer det irriterande meddelandet om listningsfunktionen försöker öppna en otillåten mapp
+FTP-serverinformation
+Server adress:
+Server Port:
+Servertyp:
+Serversystemtyp:
+Serverkrypteringsläge:
+Serverdataanslutningstyp:
+Serversystem:
+Datatyp för servernedladdning:
+Serveruppladdningsdatatyp:
+Du måste ansluta till en server innan du utför denna åtgärd.
+Ange en fjärrfil som ska hashas.
+Ange en fjärrkatalog som ska hashas.
+Ange en fjärrkatalog.
+Rekursiv hashning för FTP
+Om en katalog ska hashas rekursivt. Observera att inte alla FTP-servrar stöder det.
+Processorns klockhastighet:
+Processor SSE2-stöd:
+Totalt antal processorer:
+Diskstorlek:
+Totalt minne:
+Grafikkort:
+Diskmodell:
+Maximalt antal e-postmeddelanden på en sida
+Det nuvarande språkets kultur
+Om du är säker på att du har öppnat rätt avsnitt, kolla in det här meddelandet:
+Övriga inställningar...
+Färginställningar...
+Utför ett FTP-serverkommando
+Ange POP3-serveradress och port (<adress> eller <adress>:[port]):
+POP3-promptstil för e-post
+Skicka POP3-pingintervall
+Skriv hur du vill att din POP3-serverprompt ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras.
+Hur många millisekunder ska du skicka POP3-pingen?
+Använd POP3
+Om man ska använda POP3. Om du inaktiverar detta kommer SMTP att användas.
+Krypterar en sträng med CRC32
+Öppnar e-postklienten
+av post överförd...
+Inställningar för denna skärmsläckare är tillgängliga här.
+Testar tabellens funktionalitet
+Redigerar den angivna raden
+Lägger till de nya raderna i slutet av filen
+Skriv in texten som du vill lägga till i slutet av filen. När du är klar, skriv "EOF" på sin egen rad.
+Värdnamn
+Användarnamn
+Data typ
+Kodning
+Kryptering
+Protokoll
+Visa förlopp för e-postöverföring
+E-postöverföringsförlopp
+E-postöverföringsförlopp (enkel)
+Om det är aktiverat kommer e-postskalet att visa hur många byte som överförs vid nedladdning av e-post.
+Skriv hur du vill att din e-postöverföringsförloppsstil ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras. {0} för överförd storlek och {1} för total storlek.
+Skriv hur du vill att din e-postöverföringsförloppsstil ska vara. Lämna tomt om du vill använda standardformatet. Platshållare analyseras. {0} för överförd storlek.
+Tidszon:
+Idag är det {0}
+Aktuell tid är {0}
+Tabellavskiljarens färg
+Färg på tabellhuvudet
+Tabellvärdesfärg
+Möjliga svar
+Modfilen är inte specificerad.
+Försöker installera en redan installerad mod. Uppdaterar mod...
+Installationen misslyckades för
+Modfilen som tillhandahålls är inkompatibel.
+Avinstallationen misslyckades för
+Öppnar en URL
+Skriv ut radnummer på utskriftsfilens innehåll
+Får kommandot \"cat\" att skriva ut filens radnummer.
+Translittererad version
+Översatt version
+Avvisar alla aviseringar
+Laddar ner...
+Laddar upp...
+Visa avisering för nedladdningsförlopp
+Visa avisering för uppladdningsförlopp
+Visar aviseringen som visar nedladdningsförloppet.
+Visar aviseringen som visar uppladdningsförloppet.
+Kontrollerar om den översättbara strängen finns i KS-resurserna
+Sträng som finns i lokaliseringsresurserna.
+Strängen hittades inte i lokaliseringsresurserna.
+Startar kärnan tyst
+Injicerar ett kommando för att starta vid nästa inloggning
+Startar kärnan i felsäkert läge och inaktiverar alla moddar
+Gillar säkert läge, men inaktiverar också flera användare och viss anpassning
+Det fanns inte tillräckligt med argument.
+Färg på övre vänstra hörnet för rampstång
+Färg på övre högra hörnet för rampstång
+Nedre vänstra hörnets färg för rampstång
+Nedre högra hörnets färg för rampstång
+Färg på övre ram för rampstång
+Nedre ramfärg för rampstång
+Vänster ramfärg för rampstång
+Höger ramfärg för rampstång
+Använd kantfärger för rampstång
+Använd kantfärgerna för rampstången. Om den är inaktiverad genereras en grå stapel.
+Startar HTTP-skalet
+Lämnar HTTP-skalet och återgår till kärnan
+Ställer in HTTP-webbplatsen. Måste vara en giltig URI.
+Får svaret från HTTP-servern med den angivna begäran
+Tar bort innehåll från HTTP-servern
+Det uppstod ett fel i HTTP-skalet:
+HTTP-meddelande: Det begärda kommandot {0} hittades inte. Se "hjälp" för en lista över tillgängliga kommandon som anges i HTTP-skalet.
+Hämtar strängen från HTTP-servern med den angivna begäran
+Hämtar {0}...
+Webbplatsens URI-format är ogiltigt.
+Ställer in webbplatsen till
+Färger kräver ingen omstart, men de flesta av inställningarna kräver omstart.
+Ingen hjälp för argumentet "{0}".
+Tryck på A på hatkommentarer för att be om ursäkt. Tryck på T på kärlekskommentarer för att tacka. Tryck på Q för att avsluta spelet.
+Du har bett om ursäkt för en hatkommentar! Excellent!
+Ber om ursäkt för att älska kommentaren. Inte bra nog.
+Du tackade just hataren för hatkommentaren!
+Standardsvårighet för SpeedPress
+Tidsgräns för tangenttryckning för SpeedPress
+Välj önskad svårighetsgrad.
+Hur många millisekunder ska man vänta på knapptryckningen innan timeout går ut? (I anpassad svårighetsgrad)
+Ersätter ett ord eller en fras med ett annat med hjälp av reguljära uttryck
+Ersätter ett ord eller en fras med ett annat på en rad med hjälp av reguljära uttryck
+Frågar efter ett ord på en angiven rad eller alla rader med hjälp av reguljära uttryck
+Hitta en inställning
+Skriv vad du vill söka efter.
+Ingenting hittas. Se till att du har skrivit inställningen korrekt.
+Packar en lokal fil till arkivet
+Kan inte packa någonting.
+Svarsbeskrivning
+Värdport
+För mer information om villkoren för användning av denna programvara, besök
+Standardutmatningstyp
+Kontrollerar alla KS-inställningar för att se om variablerna är korrekt skrivna
+Dessa konfigurationsposter har ogiltiga variabler eller uppräkningar och måste fixas:
+Filen {0} hittades inte
+Skapar en variabel matris med de angivna värdena
+Skriv numret på den inställning du vill gå till. Alla andra tecken betyder gå tillbaka.
+Kontrollerar alla textradnummer för lokalisering för att se om de alla är lika
+Linjefel matchar in
+Ange ett användarnummer.
+Inkludera anonyma användare
+Inkludera funktionshindrade användare
+Inkluderar de anonyma användarna i listan
+Inkluderar funktionshindrade användare i listan
+Sortera listan
+Sorterar filsystemlistan professionellt.
+Ger ett urval val
+Skalkommandon inte implementerade!!!
+Visa senaste RSS-rubriken vid inloggning
+RSS-rubrik URL
+Varje inloggning kommer att visa den senaste RSS-rubriken från den valda rubrikens URL.
+RSS-rubrik-URL som ska användas när den senaste rubriken visas. Detta är vanligtvis ditt favoritflöde.
+Senaste nytt:
+Det gick inte att få de senaste nyheterna.
+Vald alternativ färg
+Visa stackspårning vid kärnfel
+Om det finns något kärnfel, välj om du vill skriva ut stackspåren till konsolen eller inte.
+Mod kan laddas, men dessa varningar kan påverka hur moden fungerar:
+Skärmsläckare kan laddas, men dessa varningar kan påverka hur skärmsläckaren fungerar:
+Spara inställningar som
+Ladda inställningar från
+Var vill du spara de nuvarande kärninställningarna?
+Kan inte spara kärninställningar ovanpå befintlig fil.
+Var vill du ladda de nuvarande kärninställningarna från?
+Kontrollerar om de översättbara strängarna finns i KS-resurserna
+Kombinerar de två textfilerna eller fler till utdatafilen.
+Det gick inte att kombinera filer.
+Timeout för hämtning av RSS-flöde
+Hur många millisekunder ska man vänta innan RSS-flödet hämtar timeout?
+Fyll lådorna
+Ritar vi rutan som helhet eller ritar vi bara gränsen?
+Stegfördröjning i millisekunder
+Hur många millisekunder ska man vänta innan man ritar nästa steg?
+Nästa ramprötaintervall
+Hur många millisekunder ska man vänta innan nästa ramps ena ände ruttnar?
+Kontrollera felsökningskvoten
+Kontrollerar vi om felsökningssystemet behöver kolla efter kvot innan vi skriver till felsökaren?
+Hur många millisekunder tog det egentligen att sova?
+Det gick inte att lägga till en händelse.
+Det gick inte att ta bort en händelse.
+Det finns inte tillräckligt med argument för att lägga till en händelse.
+Det finns inte tillräckligt med argument för att ta bort en händelse.
+Det finns inte tillräckligt med argument för händelsemanipulation.
+Det gick inte att lägga till eller ta bort en påminnelse.
+Det finns inte tillräckligt med argument för att lägga till eller ta bort en påminnelse.
+Det finns inte tillräckligt med argument för att manipulera påminnelser.
+Namnlös påminnelse
+Namnlös händelse
+Nu är det en evenemangsdag!
+Missa inte detta!
+Ogiltig åtgärd.
+Ett enkelt stoppur
+Starta eller stoppa
+Knä
+Återställa
+En enkel timer
+Börja (om)räkna ner
+Ställ in intervall
+Indikerad timeout är inte numerisk.
+Ange timeout i millisekunder
+Spara alla händelser och/eller påminnelser destruktivt
+Om aktiverat, raderar alla händelser och/eller påminnelser innan du sparar dem alla med kalenderkommandot.
+Verifiera försök igen för FTP-överföring
+Timeout för FTP-anslutningen
+Timeout för FTP-dataanslutning
+FTP IP-versioner
+Hur många gånger ska man verifiera uppladdningen och ladda ner och försöka igen om verifieringen misslyckas innan nedladdningen misslyckas som helhet?
+Hur många millisekunder ska man vänta innan FTP-anslutningen timeout?
+Hur många millisekunder ska man vänta innan FTP-dataanslutningen timeout?
+Välj den version av Internet Protocol som FTP-servern stöder och som FTP-klienten använder.
+Försöker starta RPC medan den redan har startat.
+Tecken i övre vänstra hörnet för RGB-färghjul
+Tecken i övre högra hörnet för RGB-färghjul
+Nedre vänstra hörnets tecken för RGB-färghjul
+Nedre högra hörnets tecken för RGB-färghjul
+Övre ramkaraktär för RGB-färghjul
+Nedre ramkaraktär för RGB-färghjul
+Vänster ramkaraktär för RGB-färghjul
+Höger ramtecken för RGB-färghjul
+Hittar en fil i den angivna katalogen eller i den aktuella katalogen
+Konverterar radändelserna till format för den aktuella plattformen eller till specificerat anpassat format
+Total storlek i mapp:
+Visa total storlek i listan
+Om aktiverat, visar den totala mappstorleken i listan, beroende på hur man beräknar mappstorlekarna enligt konfigurationen.
+Du är uppdaterad!
+Standard JSON-formatering för JSON-skal
+Väljer standard JSON-formatering (förskönad eller förminskad) för JSON-skalet att spara.
+Laddade ned uppdateringen!
+Ladda ner uppdateringar automatiskt
+Om det finns någon uppdatering kommer kärnan automatiskt att ladda ner den.
+Fyrverkeri explosionsradie
+Hur många block (upp till 10) är explosionsradien för fyrverkeriet när det antänds?
+Det här kommandot har växlarna nedan som ändrar hur det fungerar:
+Skriver ut radnumren som följer efter raden som skrivs ut
+Förhindrar utskrift av radnummer
+Använd alltid den translittererade versionen
+Använd alltid den översatta versionen
+Tvinga byte av språk
+Ange att svaret kan innehålla mer än ett tecken
+Ange att svaret bara kan ta ett tecken
+Skriv ut frågan och svaren på en rad
+Skriv ut frågan och svaren på två rader
+Skriv ut frågan och svaren på ett modernt sätt
+Skriv ut frågan och svaren i en tabell
+Visar fildetaljerna i listan
+Undertrycker de irriterande "permission denied"-meddelandena
+Visar alla tidszoner
+Startar spelet i lätt svårighetsgrad
+Startar spelet i medelsvårighet
+Startar spelet i hård svårighet
+Startar spelet i mycket svår svårighet
+Startar spelet i anpassad svårighetsgrad. Observera att den anpassade timeouten i millisekunder ska skrivas som argument.
+Visar systeminformationen
+Visar hårdvaruinformation
+Visar användarinformationen
+Visar dagens budskap
+Visar meddelandet för dagen efter inloggning
+Visar all information
+Skapar en katalog som innehåller innehållet i ZIP-filen
+Visar alla tillgängliga städer
+Snabb kompression
+Ingen kompression
+Skapa inte baskatalogen i arkivet
+Enhet i fästingar
+Kopplar från servern skamligt
+Indikerar att målvägen är absolut
+Sparar JSON-filen och förskönar den under processen
+Sparar JSON-filen och förminskar den under processen
+Hämtar radslutformatet från textfilen
+Rensar alla utlösta händelser
+Aktivera händelsefelsökning
+Aktiverar felsökning för kärnhändelsesystemet
+Fillet typsnitt
+Skriv ett figlet-font som stöds av Figgle-biblioteket. Se bibliotekets dokumentation för mer information
+Det gick inte att installera anpassat språk {0}.
+Metadatafilen som behövs för att installera det anpassade språket finns inte.
+Metadatainformationen som behövs för att installera det anpassade språket ger inte de nödvändiga lokaliseringarna som behövs.
+Det gick inte att avinstallera anpassat språk {0}.
+Metadatafilen som behövs för att avinstallera det anpassade språket finns inte.
+Metadatainformationen som behövs för att avinstallera det anpassade språket ger inte de nödvändiga lokaliseringarna som behövs.
+Längden på det engelska språket stämmer inte överens med längden på den angivna språktoken.
+Språket finns redan och kan inte skrivas över.
+Det gick inte att avinstallera anpassat språk. Det finns med största sannolikhet inte.
+Det gick inte att installera anpassade språk.
+Det gick inte att avinstallera anpassade språk.
+Det gick inte att avinstallera anpassade språk. Se det inre undantaget för mer info.
+Skriv administratörslösenordet. Se till att du inte använder det här kontot om du inte riktigt vet vad du gör.
+Du måste skriva administratörslösenordet.
+Licensinformation
+Hantera dina språk
+Språket hittades inte eller filen har ogiltiga tecken.
+Språket är inte specificerat.
+Språkhantering är inaktiverat i säkert läge.
+Språkets kortnamn:
+Språkets fullständiga namn:
+Språk translitterbart:
+Anpassat språk:
+Ny välkomstbanner
+Snygg stänkskärm
+Visar den nya Figlet-renderade välkomstbannern
+Aktiverar den snygga startskärmen vid start. Observera att det kommer att inaktivera argumentprompten och testa skalet före start.
+Splash namn
+Splash-namn från de tillgängliga stänken implementerade i kärnan.
+Genererad standard MOTD.
+Genererad standard MAL.
+Systemkontot har initierats
+Användare initierades
+Behörigheter har laddats
+Välkommen!
+Startar fjärrfelsökaren...
+Anslutningsfel för fjärrfelsökning
+Meddela vid anslutningsfel vid fjärrfelsökning
+Om den är aktiverad, kommer att använda meddelandesystemet för att meddela värden om fjärrfelsökningsanslutningsfel. Annars kommer den att använda standard konsolskrivning.
+Figlet teckensnitt för timer
+Aktivera Figlet för timer
+Om aktiverat kommer figlet att användas som timer. Observera att den behöver en stor konsolskärm för att rendera tiden korrekt med Figlet aktiverat.
+Fel vid analys av kommandoradsargument före start: {0}
+Återställer kärnan till fabriksinställningarna
+Förbigår konsolstorleksdetekteringen
+Det verkar som att du kringgår identifieringen av konsolstorlek. Saker kanske inte fungerar korrekt på små skärmar.
+För att få en bättre upplevelse, ändra storlek på konsolfönstret medan du fortfarande är på den här skärmen. Tryck på valfri tangent för att fortsätta...
+Din konsol är för liten för att fungera korrekt:
+Teckensnitt för bannerfiglet
+Skriver ut en sträng till konsolen med färgtyp och linjetryck med Figlet-stöd
+Skriver ut en sträng till konsolen med färgtyp och linjetryck med format och Figlet-stöd
+Tar bort ett meddelande permanent
+Tar permanent bort alla meddelanden från mottagaren
+Ångra borttagning av ett meddelande
+Ångra tar bort alla meddelanden från mottagaren
+Ångra borttagning är inte implementerad för POP3.
+Visa att kommandona räknar med hjälp
+Visa skalkommandon räkna med hjälp
+Visa mod-kommandon räknar med hjälp
+Visa att aliasen räknar med hjälp
+Visar antalet kommandon i kommandolistan, styrt av de tre räknevisa växlarna för olika typer av kommandon.
+Utför kommandon när UESH-uttrycken är uppfyllda
+Tillståndet hittades inte i uttrycket.
+Villkor {0} kräver {1} argument. Fick {2}.
+Villkoret måste placeras i mitten.
+Villkoret måste placeras i början.
+Fel vid analys av uttryck på grund av syntaxfel.
+Det gick inte att uppfylla skicket. Mer info här:
+Lösenordsmask tecken
+Ett tecken som maskerar lösenordet. Lämna tomt för mer säkerhet.
+Lämnar skalet om det körs på subshell
+Kan inte döda moderskalet!
+Det går inte att logga ut från underskalet.
+Filen inte specificerad. Avslutar skal...
+Inställningar för denna startskärm är tillgängliga här.
+Förloppsindikatorns färg
+Öppnar skärmsläckarinställningarna
+Öppnar stänkinställningarna
+Listar tillgängliga UESH-variabler
+Plats för förloppstext
+Välj önskad plats för förloppstext.
+Du kan bara skriva siffrorna.
+Tryck på "q" för att avsluta.
+Laddar ned namn...
+På grund av tekniska svårigheter kan vi inte lista adapteregenskaper på Unix-system.
+Aktiverar felsökningsläge
+Uppmanar argument
+Aktivera svartvitt läge
+Gör diskot svartvitt. Kommer verkligen att skada dina ögon om det var för snabbt, så rekommenderas inte om du upplever ett anfall av snabba bilder.
+Det verkar som att du körde en version som inte stöds. Det är starkt tillrådligt att inte använda denna version.
+Ladda aktuella färger
+Alternativ färg
+Användare räknas för kärleks- eller hatkommentarer
+Hur många användare ska vara i kommentarsrummet för hat eller kärlek?
+Listar tillgängliga språk
+Tillgängliga språk:
+Kommandoradsargument:
+Pre-boot kommandoradsargument:
+Öppnar mod API-dokumentationen för källkodens struktur i dess senaste form

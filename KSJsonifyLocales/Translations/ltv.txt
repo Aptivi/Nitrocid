@@ -983,3 +983,675 @@ Nospiediet jebkuru taustiņu, lai izlasītu rokasgrāmatas lapu...
 Šī rokasgrāmatas lapa ir jāstrādā, lai:
 Manuālā lapa {0} nav atrasta.
 Mod rokasgrāmata
+Pieejamie kodola argumenti:
+Ja esat pabeidzis, nospiediet taustiņu "q".
+Vairākus kodola argumentus var atdalīt ar komatiem bez atstarpēm, piemēram:
+Vairākas ievadītās komandas var atdalīt ar koliem ar atstarpēm, piemēram:
+Pieprasītais arguments {0} nav atrasts.
+Neatkopjama argumenta kļūda:
+Šifrē virkni, izmantojot SHA512
+Šifrē virkni, izmantojot SHA384
+Šifrē virkni, izmantojot SHA256
+Šifrē virkni, izmantojot SHA1
+Šifrē virkni, izmantojot MD5
+kur būs iebūvētais taupītājs
+Mod daļa nav nekas.
+Drošajā režīmā modifikācijas apturēšana nav atļauta.
+Mods jau ir sākts!
+Mod vēl nav sācies!
+Komandu lietojums:
+Daļas faila nosaukums:
+Daļas faila ceļš:
+Kļūda, mēģinot palaist ekrānsaudzētāju:
+Nederīgs ceļa veids.
+Nederīgs kodola ceļa veids.
+Iepriekšējā sāknēšana neizdevās
+JSON redaktors vēl nav atvēris faila straumi.
+Rekvizīts JSON failā nav atrasts.
+Noņemts īpašums.
+JSON faila beigās pievieno jaunu rekvizītu
+No JSON faila tiek noņemts rekvizīts
+Iziet no JSON čaulas
+Iziet no JSON čaulas, nesaglabājot izmaiņas
+Saglabā JSON failu
+Atver JSON čaulu
+Izdrukā JSON failu
+Nākamais rampas intervāls
+Aktivizē 255 krāsu atbalstu rampai.
+Aktivizē patieso krāsu atbalstu rampai.
+Cik milisekundes jāgaida pirms nākamās rampas aizpildīšanas?
+Paziņojuma virsraksta krāsa
+Paziņojuma apraksta krāsa
+Paziņojuma progresa krāsa
+Paziņojuma kļūdas krāsa
+Jautājuma krāsa
+Veiksmes krāsa
+Lietotāja dolāra krāsa
+Padomu krāsa
+Atdalītāja teksta krāsa
+Atdalītāja krāsa
+Saraksta virsraksta krāsa
+Attīstības brīdinājuma krāsa
+Skatuves laika krāsa
+Progresa krāsa
+Aizmugures opcijas krāsa
+Uzzīmējiet paziņojumu apmali
+Nosedz paziņojumu ar apmali.
+Sazinieties ar modifikācijas pārdevēju, lai modificētu modi uz saderīgu versiju.
+Zemas prioritātes apmales krāsa
+Vidējas prioritātes apmales krāsa
+Augstas prioritātes apmales krāsa
+Nosūta progresa paziņojumu, lai pārbaudītu uztvērēju
+Pārbauda krāsu apli
+Parāda lokālo kodola laiku
+Parāda lokālā kodola datumu
+Parāda lokālā kodola datumu un laiku
+Parāda UTC kodola laiku
+Parāda UTC kodola datumu
+Parāda UTC kodola datumu un laiku
+MOTD ceļš
+MAL ceļš
+Kurš fails ir MOTD teksta fails? Uzrakstiet absolūto ceļu uz teksta failu.
+Kurš fails ir MAL teksta fails? Uzrakstiet absolūto ceļu uz teksta failu.
+Melnajā sarakstā iekļautās modifikācijas
+Ierakstiet to modifikāciju failu nosaukumus, kas nedarbosies startēšanas laikā. Kad esat pabeidzis, ierakstiet "q". Ierakstiet mīnusa zīmi blakus ceļam, lai noņemtu esošu modifikāciju.
+Mod. {0} ir iekļauts melnajā sarakstā.
+Pārlādē visas modifikācijas
+Pievieno modi melnajam sarakstam
+Noņem modi no melnā saraksta
+Laiks un datums UTC: {0}
+Norādītā JSON čaulas komanda nav atrasta.
+Rādīt lietotnes informāciju sāknēšanas laikā
+Parsējiet komandrindas argumentus
+Rādīt posma finiša laikus
+Sāciet kodola modifikācijas sāknēšanas laikā
+Rādīt pašreizējo laiku pirms pieteikšanās
+Paziņojiet par jebkādām kļūmēm sāknēšanas laikā
+Parāda īsu informāciju par lietojumprogrammu sāknēšanas laikā.
+Parsē komandrindas argumentus sāknēšanas laikā.
+Parāda, cik daudz laika kodolam bija nepieciešams, lai pabeigtu posmu.
+Automātiski sāciet kodola modifikācijas sāknēšanas laikā.
+Pirms pieteikšanās parāda pašreizējo laiku, laika joslu un datumu.
+Ja kodola sāknēšanas laikā rodas neliela kļūme, brīdiniet par to lietotāju.
+Lietotājvārda uzvednes stils
+Paroles uzvednes stils
+Rādīt MAL, piesakoties
+Uzrakstiet, kā vēlaties, lai jūsu pieteikšanās uzvedne būtu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Uzrakstiet, kāda ir jūsu paroles uzvedne. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Parāda dienas ziņojumu pēc pieteikšanās ekrāna parādīšanas.
+Pārbaudīt čaulas uzvednes stilu
+JSON Shell uzvednes stils
+Zondes ievadītās komandas
+Pārbauda ievadītās komandas kodola čaulas sākumā.
+Rādīt faila informāciju sarakstā
+Failu uzskaitīšanas laikā parāda īsu faila informāciju
+Rādīt faila informāciju FTP sarakstā
+FTP lietotājvārda uzvednes stils
+FTP paroles uzvednes stils
+Izmantojiet pirmo FTP profilu
+Pievienojiet jaunus savienojumus FTP ātrajam numuram
+Mēģiniet pārbaudīt drošus FTP sertifikātus
+Rādīt FTP MOTD savienojuma laikā
+Vienmēr pieņemiet nederīgus FTP sertifikātus
+Parāda FTP faila informāciju, vienlaikus uzskaitot attālos direktorijus.
+Izmanto pirmo FTP profilu, lai izveidotu savienojumu ar FTP.
+Ja ir iespējots, FTP ātrā numura sastādīšanai tiek pievienots jauns savienojums.
+Mēģina apstiprināt FTP sertifikātus. Nav ieteicams to izslēgt.
+Parāda dienas FTP ziņojumu pieteikšanās laikā.
+Vienmēr pieņemiet nederīgus FTP sertifikātus. Nav ieteicams to ieslēgt, jo tas var radīt drošības riskus.
+Lietotājvārda uzvednes stils pastam
+Paroles uzvednes stils pastam
+IMAP uzvednes stils pastam
+SMTP uzvednes stils pastam
+Automātiski noteikt pasta serveri
+Iespējot pasta atkļūdošanu
+Paziņot par jauniem pasta ziņojumiem
+GPG paroles uzvednes stils pastam
+Sūtīt IMAP ping intervālu
+Sūtīt SMTP ping intervālu
+Pasta teksta formāts
+Uzrakstiet, kā vēlaties, lai jūsu IMAP servera uzvedne būtu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Uzrakstiet, kā vēlaties, lai jūsu SMTP servera uzvedne būtu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Automātiski noteikt pasta serveri, pamatojoties uz norādīto adresi.
+Iespējo pasta servera atkļūdošanu.
+Paziņo par jauniem pasta ziņojumiem.
+Uzrakstiet, kāda ir jūsu GPG paroles uzvedne. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Cik milisekundes jānosūta IMAP ping?
+Cik milisekundes jānosūta SMTP ping?
+Kontrolē, kā tiks rādīts pasta teksts.
+Vienkāršs teksts
+Plūstošs teksts
+HTML teksts
+Bagātināts teksts
+Saspiests bagātināts teksts
+Bagātīgs teksts
+Startēšanas laikā automātiski sāciet attālo atkļūdošanu
+Attālās atkļūdošanas ziņojuma formāts
+Ja vēlaties, lai sāknēšanas laikā tiktu sākta attālā atkļūdošana, iespējojiet šo.
+Norāda attālās atkļūdošanas ziņojuma formātu. {0} vārdam, {1} ziņojumam.
+RSS plūsmas URL uzvednes stils
+Automātiski atsvaidzināt RSS plūsmu
+Automātiskās atsvaidzināšanas RSS plūsmas intervāls
+Uzrakstiet, kā vēlaties, lai jūsu RSS plūsmas servera uzvedne būtu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Cik milisekundēs atsvaidzināt RSS plūsmu?
+Rādīt faila informāciju SFTP sarakstā
+SFTP lietotājvārda uzvednes stils
+Pievienojiet jaunus savienojumus SFTP ātrajam numuram
+Parāda SFTP faila informāciju, vienlaikus uzskaitot attālos direktorijus.
+Ja tas ir iespējots, SFTP ātrajam numuram tiek pievienots jauns savienojums.
+Ping noildze
+Rādīt plašu adaptera informāciju
+Rādīt vispārīgu tīkla informāciju
+Lejupielādēt procentuālo tekstu
+Augšupielādēt procentuālo tekstu
+Cik milisekundes jāgaida pirms taimauta paziņošanas?
+Drukā plašu adaptera informāciju, piemēram, pakešu informāciju.
+Parāda vispārīgu informāciju par tīklu.
+Uzrakstiet, kāds ir jūsu augšupielādes procentuālais teksts. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti. {0} augšupielādes izmēram, {1} mērķa lielumam, {2} procentuālajam izmēram.
+Uzrakstiet, kādu vēlaties lejupielādēt procentuālo tekstu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti. {0} lejupielādes lielumam, {1} mērķa lielumam, {2} procentiem.
+Pēc bloķēšanas jautājiet paroli
+Pēc ekrāna bloķēšanas jautājiet paroli
+Minimālais sarkanās krāsas līmenis
+Minimālais zaļās krāsas līmenis
+Minimālais zilās krāsas līmenis
+Minimālais krāsu līmenis
+Maksimālais sarkanās krāsas līmenis
+Maksimālais zaļās krāsas līmenis
+Maksimālais zilās krāsas līmenis
+Maksimālais krāsu līmenis
+Minimālais sarkanās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Minimālais zaļās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Minimālais zilās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Minimālais krāsu līmenis. Minimālā pieņemamā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255 255 krāsām vai 16 16 krāsām.
+Maksimālais sarkanās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Maksimālais zaļās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Maksimālais zilās krāsas līmenis. Minimālā pieņemtā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255.
+Maksimālais krāsu līmenis. Minimālā pieņemamā vērtība ir 0 un maksimālā pieņemtā vērtība ir 255 255 krāsām vai 16 16 krāsām.
+Priekšplāna krāsa
+Līnijas raksturs
+Rakstzīme, lai izveidotu līniju. Noteikti ievadiet tikai vienu rakstzīmi.
+Augšējā kreisā stūra rakstzīme stundu joslai
+Augšējā kreisā stūra rakstzīme minūšu joslai
+Augšējā kreisā stūra rakstzīme sekunžu joslai
+Augšējā labā stūra rakstzīme stundu joslai
+Augšējā labā stūra rakstzīme minūšu joslai
+Augšējā labā stūra rakstzīme sekunžu joslai
+Apakšējā kreisā stūra rakstzīme stundu joslai
+Apakšējā kreisā stūra rakstzīme minūšu joslai
+Apakšējā kreisā stūra rakstzīme sekunžu joslai
+Apakšējā labā stūra rakstzīme stundu joslai
+Apakšējā labā stūra rakstzīme minūšu joslai
+Apakšējā labā stūra rakstzīme sekunžu joslai
+Augšējā kadra rakstzīme stundu joslai
+Augšējā kadra rakstzīme minūšu joslai
+Augšējā kadra rakstzīme sekunžu joslai
+Apakšējā kadra rakstzīme stundu joslai
+Apakšējā kadra rakstzīme minūšu joslai
+Apakšējā kadra rakstzīme sekunžu joslai
+Kreisā kadra rakstzīme stundu joslai
+Kreisā kadra rakstzīme minūšu joslai
+Sekunžu joslas kreisā kadra rakstzīme
+Stundu joslas pareizais kadra rakstzīmes
+Labā kadra rakstzīme minūšu joslai
+Sekunžu joslas labā kadra rakstzīme
+Informācijas teksts stundām
+Informācijas teksts minūtēm
+Informācijas teksts sekundēm
+Minimālais sarkanās krāsas līmenis stundām
+Minimālais zaļās krāsas līmenis stundām
+Minimālais zilās krāsas līmenis stundām
+Minimālais krāsu līmenis stundām
+Maksimālais sarkanās krāsas līmenis stundām
+Maksimālais zaļās krāsas līmenis stundām
+Maksimālais zilās krāsas līmenis stundām
+Maksimālais krāsu līmenis stundām
+Minimālais sarkanās krāsas līmenis minūtes
+Minimālais zaļās krāsas līmenis minūtes
+Minimālais zilās krāsas līmenis minūtes
+Minimālais krāsu līmenis minūtēm
+Maksimālais sarkanās krāsas līmenis minūtēs
+Maksimālais zaļās krāsas līmenis minūtēs
+Maksimālais zilās krāsas līmenis minūtēs
+Maksimālais krāsu līmenis minūtēs
+Minimālais sarkanās krāsas līmenis sekundēs
+Minimālais zaļās krāsas līmenis sekundēs
+Minimālais zilās krāsas līmenis sekundēs
+Minimālais krāsu līmenis sekundēs
+Maksimālais sarkanās krāsas līmenis sekundēs
+Maksimālais zaļās krāsas līmenis sekundēs
+Maksimālais zilās krāsas līmenis sekundēs
+Maksimālais krāsu līmenis sekundēs
+Rakstzīme, kas atgādina augšējo kreiso stūri. Noteikti ievadiet tikai vienu rakstzīmi.
+Varonis, kas atgādina apakšējo kreiso stūri. Noteikti ievadiet tikai vienu rakstzīmi.
+Rakstzīme, kas atgādina augšējo kadru. Noteikti ievadiet tikai vienu rakstzīmi.
+Rakstzīme, kas atgādina apakšējo kadru. Noteikti ievadiet tikai vienu rakstzīmi.
+Varonis, kas atgādina kreiso kadru. Noteikti ievadiet tikai vienu rakstzīmi.
+Varonis, kas atgādina pareizo kadru. Noteikti ievadiet tikai vienu rakstzīmi.
+Uzrakstiet, kā tiek rādīts jūsu pašreizējās stundas informācijas teksts. {0} par pašreizējo stundu no 24 stundām.
+Uzrakstiet, kā tiek rādīts jūsu pašreizējās minūtes informācijas teksts. {0} par pašreizējo minūti no 60 minūtēm.
+Uzrakstiet, kā tiek rādīts jūsu pašreizējās sekundes informācijas teksts. {0} par pašreizējo sekundi no 60 sekundēm.
+Teksta krāsa
+Augšējā kreisā stūra rakstzīme rampas joslai
+Augšējā labā stūra rakstzīme rampas joslai
+Apakšējā kreisā stūra rakstzīme rampas joslai
+Apakšējā labā stūra rakstzīme rampas joslai
+Rampas joslas augšējā rāmja rakstzīme
+Apakšējā rāmja rakstzīme rampas joslai
+Kreisā rāmja rakstzīme rampas joslai
+Labais rāmja rakstzīme rampas joslai
+Minimālais sarkanās krāsas līmenis sākuma krāsai
+Minimālais zaļās krāsas līmenis sākuma krāsai
+Minimālais zilās krāsas līmenis sākuma krāsai
+Minimālais krāsas līmenis sākuma krāsai
+Maksimālais sarkanās krāsas līmenis sākuma krāsai
+Maksimālais zaļās krāsas līmenis sākuma krāsai
+Maksimālais zilās krāsas līmenis sākuma krāsai
+Maksimālais krāsu līmenis sākuma krāsai
+Minimālais sarkanās krāsas līmenis beigu krāsai
+Minimālais zaļās krāsas līmenis beigu krāsai
+Minimālais zilās krāsas līmenis beigu krāsai
+Minimālais krāsu līmenis gala krāsai
+Maksimālais sarkanās krāsas līmenis beigu krāsai
+Maksimālais zaļās krāsas līmenis beigu krāsai
+Maksimālais zilās krāsas līmenis beigu krāsai
+Maksimālais krāsu līmenis gala krāsai
+Risinātāja minimālais skaits
+Risinātāja maksimālais skaits
+Risinātāja šova ievade
+Augšējā kreisā stūra rakstzīme paziņojumu apmalei
+Augšējā labā stūra rakstzīme paziņojumu apmalei
+Apakšējā kreisā stūra rakstzīme paziņojumu apmalei
+Apakšējā labā stūra rakstzīme paziņojumu apmalei
+Augšējā rāmja rakstzīme paziņojumu apmalei
+Apakšējā rāmja rakstzīme paziņojumu apmalei
+Kreisā rāmja rakstzīme paziņojumu apmalei
+Labā rāmja rakstzīme paziņojumu apmalei
+Manuāls lapas informācijas stils
+Vai rādīt ievades uzvednē rakstīto.
+Kāds ir minimālais skaits, ko izvēlēties?
+Kāds ir maksimālais skaits, ko izvēlēties?
+Uzrakstiet, kā vēlaties, lai informācija būtu jūsu žurnāla lapā. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti. {0} manuālam nosaukumam, {1} pārskatīšanai.
+Rekvizīts {0} nav atrasts nevienā no moduļiem.
+Šajā sadaļā ir uzskaitīti vispārīgie ekrānsaudzētāja iestatījumi. Lai skatītu atsevišķus ekrānsaudzētāja iestatījumus, izejiet no Iestatījumi un atveriet ekrānsaudzētāja iestatījumi.
+Sāciet krāsu ratu īsto krāsu režīmā
+Ja norādīts, tiks parādīts pielāgots starta reklāmkarogs ar viettura atbalstu. Kodola versijai varat izmantot {0}.
+Kurš pašreizējās valodas variants tiek izmantots, lai mainītu mēnešu nosaukumus, kalendāru utt.?
+Aktivizē 255 krāsu atbalstu.
+Aktivizē patieso krāsu atbalstu.
+Vārds ir izdzēsts rindā {0}.
+Virkne ir aizstāta rindā {0}.
+Noņemts rindas numurs {0}.
+Izslēdziet nesankcionētus ziņojumus
+Slēpj kaitinošo ziņojumu, ja saraksta funkcija mēģina atvērt nesankcionētu mapi
+FTP servera informācija
+Servera adrese:
+Servera ports:
+Servera tips:
+Servera sistēmas tips:
+Servera šifrēšanas režīms:
+Servera datu savienojuma veids:
+Serveru sistēma:
+Servera lejupielādes datu tips:
+Servera augšupielādes datu tips:
+Pirms šīs darbības veikšanas ir jāizveido savienojums ar serveri.
+Ievadiet attālo failu, kas jājauc.
+Ievadiet attālo direktoriju jaukšanai.
+Ievadiet attālo direktoriju.
+Rekursīva FTP jaukšana
+Vai rekursīvi jaukt direktoriju. Lūdzu, ņemiet vērā, ka ne visi FTP serveri to atbalsta.
+Procesora pulksteņa ātrums:
+Procesora SSE2 atbalsts:
+Kopējais procesoru skaits:
+Diska izmērs:
+Kopējā atmiņa:
+Grafikas karte:
+Diska modelis:
+Maksimālais e-pastu skaits vienā lapā
+Pašreizējās valodas kultūra
+Ja esat pārliecināts, ka esat atvēris pareizo sadaļu, pārbaudiet šo ziņojumu:
+Dažādi iestatījumi...
+Krāsu iestatījumi...
+Izpilda FTP servera komandu
+Ievadiet POP3 servera adresi un portu (<adrese> vai <adrese>:[ports]):
+POP3 uzvednes stils pastam
+Sūtīt POP3 ping intervālu
+Uzrakstiet, kā vēlaties, lai jūsu POP3 servera uzvedne būtu. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti.
+Cik milisekundes jānosūta POP3 ping?
+Izmantojiet POP3
+Vai izmantot POP3. Atspējojot to, tiks izmantots SMTP.
+Šifrē virkni, izmantojot CRC32
+Atver pasta klientu
+no pārsūtītā pasta...
+Šī ekrānsaudzētāja iestatījumi ir pieejami šeit.
+Pārbauda tabulas funkcionalitāti
+Rediģē norādīto rindiņu
+Pievieno jaunas rindiņas faila beigās
+Ievadiet tekstu, ko vēlaties pievienot faila beigām. Kad esat pabeidzis, ierakstiet "EOF" savā rindā.
+Saimniekdatora nosaukums
+Lietotājvārds
+Datu tips
+Kodēšana
+Šifrēšana
+Protokoli
+Rādīt pasta pārsūtīšanas gaitu
+Pasta pārsūtīšanas gaita
+Pasta pārsūtīšanas progress (viens)
+Ja tas ir iespējots, pasta apvalks parādīs, cik baitu ir pārsūtīts, lejupielādējot pastu.
+Uzrakstiet, kāds ir jūsu pasta pārsūtīšanas norises stils. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti. {0} pārsūtītajam izmēram un {1} kopējam izmēram.
+Uzrakstiet, kāds ir jūsu pasta pārsūtīšanas norises stils. Atstājiet tukšu, lai izmantotu noklusējuma stilu. Vietturi ir parsēti. {0} pārsūtītajam izmēram.
+Laika zona:
+Šodien ir {0}
+Pašreizējais laiks ir {0}
+Tabulas atdalītāju krāsa
+Tabulas galvenes krāsa
+Tabulas vērtību krāsa
+Iespējamās atbildes
+Mod fails nav norādīts.
+Mēģina instalēt jau instalētu mod. Notiek moduļa atjaunināšana...
+Instalēšana neizdevās
+Norādītais mod fails nav saderīgs.
+Atinstalēšana neizdevās
+Atver URL
+Drukājiet rindiņu numurus uz drukas faila satura
+Liec komandai \"cat\" izdrukāt faila rindu numurus.
+Transliterētā versija
+Tulkotā versija
+Noraida visus paziņojumus
+Notiek lejupielāde...
+Notiek augšupielāde...
+Rādīt paziņojumu par lejupielādes norisi
+Rādīt paziņojumu par augšupielādes gaitu
+Parāda paziņojumu, kas parāda lejupielādes norisi.
+Parāda paziņojumu, kas parāda augšupielādes norisi.
+Pārbauda, ​​vai tulkojamā virkne pastāv KS resursos
+Virkne atrasta lokalizācijas resursos.
+Virkne lokalizācijas resursos nav atrasta.
+Klusi iedarbina kodolu
+Ievada komandu palaišanai nākamajā pieteikšanās reizē
+Startē kodolu drošajā režīmā, atspējojot visas modifikācijas
+Tāpat kā drošais režīms, bet arī atspējo vairāku lietotāju un dažus pielāgojumus
+Argumentu nebija pietiekami daudz.
+Augšējā kreisā stūra krāsa rampas joslai
+Augšējā labā stūra krāsa rampas joslai
+Apakšējā kreisā stūra krāsa rampas joslai
+Apakšējā labā stūra krāsa rampas joslai
+Rampas joslas augšējā rāmja krāsa
+Apakšējā rāmja krāsa rampas joslai
+Kreisā rāmja krāsa rampas joslai
+Pareizā rāmja krāsa rampas joslai
+Izmantojiet apmales krāsas rampas joslai
+Izmantojiet apmales krāsas rampas joslai. Ja tas ir atspējots, tiks izveidota pelēka josla.
+Sāk HTTP čaulu
+Iziet no HTTP čaulas un atgriežas kodolā
+Iestata HTTP vietni. Jābūt derīgam URI.
+Saņem atbildi no HTTP servera, izmantojot norādīto pieprasījumu
+Dzēš saturu no HTTP servera
+HTTP čaulā radās kļūda:
+HTTP ziņojums: pieprasītā komanda {0} nav atrasta. Skatiet 'palīdzību', lai iegūtu HTTP čaulā norādīto pieejamo komandu sarakstu.
+Iegūst virkni no HTTP servera, izmantojot norādīto pieprasījumu
+Notiek {0}...
+Vietnes URI formāts nav derīgs.
+Vietnes iestatīšana uz
+Krāsām nav nepieciešama restartēšana, taču lielākajai daļai iestatījumu ir nepieciešama restartēšana.
+Nav palīdzības par argumentu "{0}".
+Nospiediet A pie naida komentāriem, lai atvainotos. Nospiediet T pie mīlestības komentāriem, lai pateiktos. Nospiediet Q, lai izietu no spēles.
+Jūs atvainojāties par naida komentāru! Lieliski!
+Atvainojos, ka mīlu komentāru. Nav pietiekami labs.
+Jūs tikko pateicāties nīdējam par naida komentāru!
+SpeedPress noklusējuma grūtības
+Taustiņu nospiešanas taimauts funkcijai SpeedPress
+Izvēlieties vēlamo grūtības pakāpi.
+Cik milisekundes gaidīt taustiņu nospiešanu pirms taimauta? (Pielāgotā grūtībās)
+Aizstāj vārdu vai frāzi ar citu, izmantojot regulāras izteiksmes
+Aizstāj vārdu vai frāzi ar citu rindā, izmantojot regulāras izteiksmes
+Vaicā vārdu noteiktā rindā vai visās rindās, izmantojot regulāras izteiksmes
+Atrodiet iestatījumu
+Uzrakstiet, ko vēlaties meklēt.
+Nekas nav atrasts. Pārliecinieties, vai esat pareizi uzrakstījis iestatījumu.
+Iepako lokālo failu arhīvā
+Nevar neko iepakot.
+Atbildes apraksts
+Uzņēmēja osta
+Lai iegūtu papildinformāciju par šīs programmatūras lietošanas noteikumiem un nosacījumiem, apmeklējiet vietni
+Noklusējuma izvēles izvades veids
+Pārbauda visus KS iestatījumus, lai redzētu, vai mainīgie ir ierakstīti pareizi
+Šajos konfigurācijas ierakstos ir nederīgi mainīgie vai uzskaitījumi, un tie ir jālabo:
+Fails {0} nav atrasts
+Izveido mainīgo masīvu ar norādītajām vērtībām
+Uzrakstiet iestatījuma numuru, uz kuru doties. Jebkurš cits raksturs nozīmē atgriezties.
+Pārbauda visus lokalizācijas teksta rindiņu numurus, lai redzētu, vai tie visi ir vienādi
+Līnijas neatbilstība
+Lūdzu, ievadiet lietotāja numuru.
+Iekļaut anonīmus lietotājus
+Iekļaut lietotājus ar invaliditāti
+Sarakstā ir iekļauti anonīmie lietotāji
+Sarakstā ir iekļauti lietotāji ar invaliditāti
+Kārtot sarakstu
+Profesionāli sakārto failu sistēmu sarakstu.
+Nodrošina atlases izvēli
+Shell komandas nav ieviestas!!!
+Rādīt jaunāko RSS virsrakstu, piesakoties
+RSS virsraksta URL
+Katrā pieteikšanās reizē tiks parādīts jaunākais RSS virsraksts no atlasītā virsraksta URL.
+RSS virsraksta URL, kas jāizmanto, rādot jaunāko virsrakstu. Parasti šī ir jūsu iecienītākā plūsma.
+Jaunākās ziņas:
+Neizdevās iegūt jaunākās ziņas.
+Atlasītā opcijas krāsa
+Rādīt steka izsekošanu kodola kļūdas gadījumā
+Ja ir kāda kodola kļūda, izvēlieties, vai drukāt steka izsekošanu konsolē.
+Mod var ielādēt, taču šie brīdinājumi var ietekmēt moduļa darbību:
+Ekrānsaudzētāju var ielādēt, taču šie brīdinājumi var ietekmēt ekrānsaudzētāja darbību:
+Saglabāt iestatījumus kā
+Ielādēt iestatījumus no
+Kur vēlaties saglabāt pašreizējos kodola iestatījumus?
+Nevar saglabāt kodola iestatījumus esošā faila augšdaļā.
+No kurienes vēlaties ielādēt pašreizējos kodola iestatījumus?
+Pārbauda, ​​vai KS resursos pastāv tulkojamās virknes
+Apvieno divus vai vairākus teksta failus izvades failā.
+Neizdevās apvienot failus.
+RSS plūsmas ielādes taimauts
+Cik milisekundes jāgaida, pirms tiek ielādēta RSS plūsmas noildze?
+Aizpildiet kastes
+Vai mēs zīmējam kastīti kopumā vai zīmējam tikai apmali?
+Posma aizkave milisekundēs
+Cik milisekundes jāgaida pirms nākamā posma zīmēšanas?
+Nākamais rampas puves intervāls
+Cik milisekundes jāgaida, pirms tiek sabojāts nākamās rampas viens gals?
+Pārbaudiet atkļūdošanas kvotu
+Vai pirms rakstīšanas atkļūdotājam mēs pārbaudām, vai atkļūdošanas sistēmai ir jāpārbauda kvota?
+Cik milisekundes patiešām bija vajadzīgas, lai gulētu?
+Neizdevās pievienot notikumu.
+Neizdevās noņemt notikumu.
+Nav pietiekami daudz argumentu, lai pievienotu notikumu.
+Nav pietiekami daudz argumentu, lai noņemtu notikumu.
+Par notikumu manipulācijām nav sniegts pietiekami daudz argumentu.
+Neizdevās pievienot vai noņemt atgādinājumu.
+Nav pietiekami daudz argumentu, lai pievienotu vai noņemtu atgādinājumu.
+Nav pietiekami daudz argumentu atgādinājuma manipulācijām.
+Atgādinājums bez nosaukuma
+Pasākums bez nosaukuma
+Tagad ir pasākuma diena!
+Nepalaidiet garām šo!
+Nederīga darbība.
+Vienkāršs hronometrs
+Sākt vai apturēt
+Aplis
+Atiestatīt
+Vienkāršs taimeris
+Sāciet (atkārtoti) skaitīt uz leju
+Iestatiet intervālu
+Norādītais taimauts nav skaitlisks.
+Norādiet taimautu milisekundēs
+Saglabājiet visus notikumus un/vai atgādinājumus destruktīvi
+Ja iespējots, dzēš visus notikumus un/vai atgādinājumus pirms to visu saglabāšanas, izmantojot kalendāra komandu.
+Pārbaudiet FTP pārsūtīšanas mēģinājumus
+FTP savienojuma taimauts
+FTP datu savienojuma taimauts
+FTP IP versijas
+Cik reižu verificēt augšupielādi un lejupielādēt un mēģināt vēlreiz, ja verifikācija neizdodas, pirms neizdodas lejupielādēt kopumā?
+Cik milisekundes jāgaida pirms FTP savienojuma taimauta?
+Cik milisekundes jāgaida pirms FTP datu savienojuma taimauta?
+Izvēlieties interneta protokola versiju, kuru atbalsta FTP serveris un kuru izmanto FTP klients.
+Mēģina palaist RPC, kamēr tas jau ir sākts.
+Augšējā kreisā stūra rakstzīme RGB krāsu aplim
+Augšējā labā stūra rakstzīme RGB krāsu aplim
+Apakšējā kreisā stūra rakstzīme RGB krāsu aplim
+Apakšējā labā stūra rakstzīme RGB krāsu ratam
+Augšējā rāmja rakstzīme RGB krāsu ratam
+Apakšējā rāmja rakstzīme RGB krāsu ratam
+Kreisā rāmja rakstzīme RGB krāsu ratam
+RGB krāsu apļa pareizais kadra raksturs
+Atrod failu norādītajā direktorijā vai pašreizējā direktorijā
+Pārvērš rindu galotnes pašreizējās platformas formātā vai noteiktā pielāgotā formātā
+Kopējais izmērs mapē:
+Rādīt kopējo izmēru sarakstā
+Ja ir iespējots, sarakstā tiek rādīts kopējais mapes lielums atkarībā no tā, kā aprēķināt mapes izmērus atbilstoši konfigurācijai.
+Jūs esat lietas kursā!
+Noklusējuma JSON formatējums JSON apvalkam
+Atlasa noklusējuma JSON formatējumu (izlabotu vai samazinātu), lai saglabātu JSON čaulu.
+Atjauninājums ir veiksmīgi lejupielādēts!
+Automātiski lejupielādēt atjauninājumus
+Ja ir kāds atjauninājums, kodols to automātiski lejupielādēs.
+Uguņošanas sprādziena rādiuss
+Cik bloku (līdz 10) ir uguņošanas sprādziena rādiuss, kad tas ir aizdedzināts?
+Šai komandai ir šādi slēdži, kas maina tās darbību:
+Izdrukā rindu numurus, kas seko drukātajai rindai
+Neļauj drukāt rindu numurus
+Vienmēr izmantojiet transliterēto versiju
+Vienmēr izmantojiet tulkoto versiju
+Piespiedu pārslēgšanas valoda
+Norādiet, ka atbildei var būt vairāk nekā viena rakstzīme
+Norādiet, ka atbildei var būt tikai viena rakstzīme
+Izdrukājiet jautājumu un atbildes vienā rindā
+Izdrukājiet jautājumu un atbildes divās rindās
+Izdrukājiet jautājumu un atbildes mūsdienīgā veidā
+Izdrukājiet jautājumu un atbildes tabulā
+Parāda faila informāciju sarakstā
+Novērš kaitinošos ziņojumus “atļauja liegta”.
+Parāda visas laika joslas
+Sāk spēli vieglā grūtībās
+Sāk spēli ar vidēju grūtības pakāpi
+Sāk spēli smagās grūtībās
+Sāk spēli ļoti smagās grūtībās
+Sāk spēli pielāgotā grūtībās. Lūdzu, ņemiet vērā, ka pielāgotais taimauts milisekundēs ir jāraksta kā arguments.
+Parāda sistēmas informāciju
+Parāda aparatūras informāciju
+Parāda lietotāja informāciju
+Parāda dienas vēstījumu
+Parāda dienas ziņojumu pēc pieteikšanās
+Parāda visu informāciju
+Izveido direktoriju, kurā ir ZIP faila saturs
+Parāda visas pieejamās pilsētas
+Ātra saspiešana
+Nav kompresijas
+Neveidojiet arhīvā bāzes direktoriju
+Vienība ērcēs
+Apkaunojoši atvienojas no servera
+Norāda, ka mērķa ceļš ir absolūts
+Saglabā JSON failu, uzlabojot to šajā procesā
+Saglabā JSON failu, samazinot to procesā
+Iegūst rindiņas beigu stilu no teksta faila
+Notīra visus aktivizētos notikumus
+Iespējot notikumu atkļūdošanu
+Iespējo kodola notikumu sistēmas atkļūdošanu
+Figlet fonts
+Uzrakstiet Figlet fontu, ko atbalsta Figgle bibliotēka. Plašāku informāciju skatiet bibliotēkas dokumentācijā
+Neizdevās instalēt pielāgoto valodu {0}.
+Pielāgotās valodas instalēšanai nepieciešamais metadatu fails nepastāv.
+Metadatu informācija, kas nepieciešama pielāgotās valodas instalēšanai, nenodrošina vajadzīgās lokalizācijas.
+Neizdevās atinstalēt pielāgoto valodu {0}.
+Pielāgotās valodas atinstalēšanai nepieciešamais metadatu fails nepastāv.
+Metadatu informācija, kas nepieciešama pielāgotās valodas atinstalēšanai, nenodrošina vajadzīgās lokalizācijas.
+Angļu valodas garums neatbilst sniegtās valodas pilnvaras garumam.
+Valoda jau pastāv, un to nevar pārrakstīt.
+Neizdevās atinstalēt pielāgoto valodu. Visticamāk, tas neeksistē.
+Neizdevās instalēt pielāgotas valodas.
+Neizdevās atinstalēt pielāgotās valodas.
+Neizdevās atinstalēt pielāgotās valodas. Lai iegūtu plašāku informāciju, skatiet iekšējo izņēmumu.
+Ierakstiet administratora paroli. Neizmantojiet šo kontu, ja vien tiešām nezināt, ko darāt.
+Jums jāieraksta administratora parole.
+Informācija par licenci
+Pārvaldiet savas valodas
+Valoda nav atrasta vai failā ir nederīgas rakstzīmes.
+Valoda nav norādīta.
+Valodas pārvaldība ir atspējota drošajā režīmā.
+Valodas īsais nosaukums:
+Valodas pilns nosaukums:
+Transliterējama valoda:
+Pielāgota valoda:
+Jauns sveiciena reklāmkarogs
+Stilīgs uzplaiksnījuma ekrāns
+Parāda jauno Figlet renderēto sveiciena reklāmkarogu
+Iespējo stilīgu uzplaiksnījumu ekrānu startēšanas laikā. Lūdzu, ņemiet vērā, ka tas atspējos argumentu uzvedni un pārbaudīs apvalku pirms sāknēšanas.
+Splash nosaukums
+Splash nosaukums no pieejamajiem šļakatām, kas ieviestas kodolā.
+Ģenerēts noklusējuma MOTD.
+Ģenerēts noklusējuma MAL.
+Sistēmas konts inicializēts
+Lietotāji inicializēti
+Atļaujas ielādētas
+Laipni lūdzam!
+Tiek startēts attālais atkļūdotājs...
+Attālā atkļūdotāja savienojuma kļūda
+Paziņot par attālās atkļūdošanas savienojuma kļūdu
+Ja iespējots, tiks izmantota paziņojumu sistēma, lai informētu saimniekdatoru par attālās atkļūdošanas savienojuma kļūdu. Pretējā gadījumā tiks izmantota noklusējuma konsoles rakstīšana.
+Figlet fonts taimeram
+Taimerim iespējot Figlet
+Ja iespējots, taimeris izmantos figlet. Lūdzu, ņemiet vērā, ka tam ir nepieciešams liels konsoles ekrāns, lai pareizi renderētu laiku ar iespējotu Figlet.
+Kļūda, analizējot komandrindas argumentus pirms palaišanas: {0}
+Atiestata kodola rūpnīcas iestatījumus
+Apiet konsoles izmēra noteikšanu
+Šķiet, ka jūs apiet konsoles izmēra noteikšanu. Lietas var nedarboties pareizi mazos ekrānos.
+Lai iegūtu labāku pieredzi, mainiet konsoles loga izmērus, joprojām atrodoties šajā ekrānā. Nospiediet jebkuru taustiņu lai turpinātu...
+Jūsu konsole ir pārāk maza, lai tā darbotos pareizi:
+Banera figlet fonts
+Drukā virkni konsolē, izmantojot krāsu tipu un līniju druku ar Figlet atbalstu
+Drukā virkni konsolē, izmantojot krāsu tipu un līniju druku ar formātu un Figlet atbalstu
+Neatgriezeniski noņem ziņojumu
+Neatgriezeniski noņem visus ziņojumus no adresāta
+Ziņojuma noņemšanas atsaukšana
+Atsauc visus ziņojumus no adresāta
+Dzēšanas atsaukšana nav ieviesta POP3.
+Parādiet komandas, kurām nepieciešama palīdzība
+Rādīt čaulas komandas paļaujas uz palīdzību
+Parādiet mod komandu palīdzību
+Parādiet, ka pseidonīmi var palīdzēt
+Rāda komandu skaitu komandu sarakstā, ko kontrolē trīs dažādu veidu komandu skaita rādīšanas slēdži.
+Izpilda komandas, kad UESH izteiksmes ir izpildītas
+Stāvoklis izteiksmē netika atrasts.
+Nosacījumam {0} nepieciešami {1} argumenti. Saņēmu {2}.
+Nosacījums ir jāievieto vidū.
+Nosacījums ir jāievieto sākumā.
+Parsējot izteiksmi, radās kļūda sintakses kļūdas dēļ.
+Neizdevās izpildīt nosacījumu. Vairāk info šeit:
+Paroles maskas raksturs
+Rakstzīme, kas maskē paroli. Lai nodrošinātu lielāku drošību, atstājiet lauku tukšu.
+Iziet no čaulas, ja darbojas apakščaulā
+Nevar nogalināt mātes čaulu!
+Nevar iziet no apakščaulas.
+Fails nav norādīts. No čaulas iziet...
+Šī uzplaiksnījuma ekrāna iestatījumi ir pieejami šeit.
+Progresa joslas krāsa
+Atver ekrānsaudzētāja iestatījumus
+Atver šļakatu iestatījumus
+Uzskaita pieejamos UESH mainīgos
+Progresa teksta atrašanās vieta
+Atlasiet vēlamo progresa teksta atrašanās vietu.
+Jūs varat rakstīt tikai ciparus.
+Nospiediet "q", lai izietu.
+Notiek nosaukumu lejupielāde...
+Tehnisku grūtību dēļ mēs nevaram uzskaitīt adaptera rekvizītus Unix sistēmās.
+Iespējo atkļūdošanas režīmu
+Uzvednes uz argumentiem
+Iespējot melnbalto režīmu
+Padara diskotēku melnbaltu. Ja tas ir pārāk ātrs, tas patiešām sāpinās acis, tāpēc nav ieteicams, ja rodas ātra attēlu lēkme.
+Šķiet, ka izmantojat neatbalstītu versiju. Ļoti vēlams neizmantot šo versiju.
+Ielādēt pašreizējās krāsas
+Alternatīva opcija krāsa
+Lietotāji ņem vērā mīlestības vai naida komentārus
+Cik lietotāju ir mīlestības vai naida komentāru telpā?
+Pieejamo valodu saraksts
+Pieejamās valodas:
+Komandrindas argumenti:
+Komandrindas argumenti pirms palaišanas:
+Atver mod API dokumentāciju avota koda struktūrai tās jaunākajā formā

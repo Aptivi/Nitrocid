@@ -983,3 +983,675 @@ Qo'llanma sahifasini o'qish uchun istalgan tugmani bosing ...
 Ushbu qo'llanma sahifasi quyidagilar uchun ishlashi kerak:
 Qo'l sahifasi {0} topilmadi.
 Mod qo'llanma
+Mavjud yadro argumentlari:
+Ishingiz tugagach, “q” tugmasini bosing.
+Bir nechta yadro argumentlarini bo'sh joysiz vergul bilan ajratish mumkin, masalan:
+Bir nechta kiritilgan buyruqlarni bo'shliqlar bilan ikki nuqta bilan ajratish mumkin, masalan:
+{0} soralgan argument topilmadi.
+Argumentdagi tuzatib bo'lmaydigan xato:
+SHA512 yordamida satrni shifrlaydi
+SHA384 yordamida satrni shifrlaydi
+SHA256 yordamida satrni shifrlaydi
+SHA1 yordamida satrni shifrlaydi
+MD5 yordamida qatorni shifrlaydi
+Buildinsaver qaerda bo'ladi
+Mod qismi hech narsa emas.
+Xavfsiz rejimda modlarni to'xtatishga ruxsat berilmaydi.
+Mod allaqachon ishga tushirilgan!
+Mod hali boshlanmagan!
+Buyruqdan foydalanish:
+Qism fayl nomi:
+Qism fayl yo'li:
+Ekran pardasini ishga tushirishda xatolik yuz berdi:
+Yo‘l turi noto‘g‘ri.
+Yaroqsiz yadro yoli turi.
+Oldingi yuklash muvaffaqiyatsiz tugadi
+JSON muharriri hali fayl oqimini ochmagan.
+JSON fayli ichidagi xususiyat topilmadi.
+O'chirilgan mulk.
+JSON faylining oxiriga yangi xususiyat qo'shadi
+JSON faylidan xususiyatni olib tashlaydi
+JSON qobig'idan chiqadi
+O'zgarishlarni saqlamasdan JSON qobig'idan chiqadi
+JSON faylini saqlaydi
+JSON qobig'ini ochadi
+JSON faylini chop etadi
+Keyingi rampa oralig'i
+Ramp uchun 255 rang qo'llab-quvvatlashni faollashtiradi.
+Ramp uchun haqiqiy rang qo'llab-quvvatlashini faollashtiradi.
+Keyingi rampani to'ldirishdan oldin qancha millisekund kutish kerak?
+Bildirishnoma sarlavhasi rangi
+Bildirishnoma tavsifi rangi
+Bildirishnomaning borishi rangi
+Xatolik bildirishnomasining rangi
+Savol rangi
+Muvaffaqiyat rangi
+Foydalanuvchi dollar rangi
+Maslahat rangi
+Ajratuvchi matn rangi
+Ajratuvchi rang
+Royxat sarlavhasi rangi
+Rivojlanish haqida ogohlantirish rangi
+Sahna vaqti rangi
+Jarayon rangi
+Orqa variant rangi
+Bildirishnoma chegarasini chizish
+Bildirishnomani chegara bilan qamrab oladi.
+Modni mos versiyaga yangilash uchun mod sotuvchisiga murojaat qiling.
+Kam ustuvor chegara rangi
+Orta ustuvor chegara rangi
+Yuqori ustuvor chegara rangi
+Qabul qilgichni sinab ko'rish uchun jarayon haqida bildirishnoma yuboradi
+Rang g'ildiragini sinab ko'radi
+Mahalliy yadro vaqtini ko'rsatadi
+Mahalliy yadro sanasini ko'rsatadi
+Mahalliy yadro sanasi va vaqtini ko'rsatadi
+UTC yadro vaqtini ko'rsatadi
+UTC yadro sanasini ko'rsatadi
+UTC yadro sanasi va vaqtini ko'rsatadi
+MOTD yo'li
+MAL yo'li
+MOTD matn fayli qaysi fayl? Matn fayliga mutlaq yo'lni yozing.
+MAL matn fayli qaysi fayl? Matn fayliga mutlaq yo'lni yozing.
+Qora ro'yxatga kiritilgan mods
+Ishga tushganda ishlamaydigan modlarning fayl nomlarini yozing. Ishingiz tugagach, "q" ni yozing. Mavjud modni olib tashlash uchun yo'lning yoniga minus belgisini yozing.
+Mod {0} qora royxatga kiritilgan.
+Barcha modlarni qayta yuklaydi
+Qora ro'yxatga mod qo'shadi
+Modni qora ro'yxatdan o'chiradi
+UTCdagi vaqt va sana: {0}
+Belgilangan JSON qobiq buyrug'i topilmadi.
+Yuklash paytida ilova ma'lumotlarini ko'rsatish
+Buyruqlar qatori argumentlarini tahlil qilish
+Bosqich tugash vaqtini ko'rsating
+Yuklashda yadro modifikatsiyalarini boshlang
+Kirishdan oldin joriy vaqtni ko'rsatish
+Yuklash paytida har qanday nosozlik haqida xabar bering
+Yuklashda dastur haqida qisqacha ma'lumotni ko'rsatadi.
+Yuklashda buyruq qatori argumentlarini tahlil qiladi.
+Yadro bosqichni tugatish uchun qancha vaqt ketganini ko'rsatadi.
+Yuklashda yadro modifikatsiyalarini avtomatik ravishda ishga tushiring.
+Tizimga kirishdan oldin joriy vaqt, vaqt mintaqasi va sanani ko'rsatadi.
+Agar yadro yuklashda kichik xatolik yuzaga kelsa, bu haqda foydalanuvchini xabardor qiladi.
+Foydalanuvchi nomini so'rash uslubi
+Parol so'rash uslubi
+Tizimga kirishda MALni ko'rsating
+Kirish so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+Parol so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+Kirish ekrani ko'rsatilgandan keyin kun xabarini ko'rsatadi.
+Shell prompt uslubini sinab ko'ring
+JSON Shell Prompt Style
+AOK qilingan buyruqlarni tekshirish
+Yadro qobig'ining boshida kiritilgan buyruqlarni tekshiradi.
+Ro'yxatda fayl tafsilotlarini ko'rsatish
+Fayllar ro'yxatida qisqacha fayl tafsilotlarini ko'rsatadi
+FTP ro'yxatida fayl tafsilotlarini ko'rsatish
+FTP uchun foydalanuvchi nomini so'rash uslubi
+FTP uchun parol so'rash uslubi
+Birinchi FTP profilidan foydalaning
+FTP tez terish xizmatiga yangi ulanishlarni qo'shing
+Xavfsiz FTP sertifikatlarini tekshirishga harakat qiling
+Ulanishda FTP MOTD-ni ko'rsatish
+Har doim noto'g'ri FTP sertifikatlarini qabul qiling
+Masofaviy kataloglar ro'yxatida FTP fayli tafsilotlarini ko'rsatadi.
+FTP ga ulanish uchun birinchi FTP profilidan foydalanadi.
+Agar yoqilgan bo'lsa, FTP tez terish xizmatiga yangi ulanish qo'shiladi.
+FTP sertifikatlarini tekshirishga harakat qiladi. Uni o'chirish tavsiya etilmaydi.
+Kirish paytida kunning FTP xabarini ko'rsatadi.
+Har doim noto'g'ri FTP sertifikatlarini qabul qiling. Uni yoqish tavsiya etilmaydi, chunki u xavfsizlikka xavf tug'dirishi mumkin.
+Pochta uchun foydalanuvchi nomi so'rovi uslubi
+Pochta uchun parol so'rash uslubi
+Pochta uchun IMAP so'rov uslubi
+Pochta uchun SMTP taklif uslubi
+Pochta serverini avtomatik aniqlash
+Pochtani tuzatishni yoqish
+Yangi pochta xabarlari haqida xabar bering
+Pochta uchun GPG parol so'rash uslubi
+IMAP ping intervalini yuborish
+SMTP ping intervalini yuborish
+Pochta matn formati
+IMAP server so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+SMTP server so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+Ko'rsatilgan manzil asosida pochta serverini avtomatik aniqlash.
+Pochta serverini tuzatishni yoqadi.
+Har qanday yangi pochta xabarlari haqida sizni xabardor qiladi.
+GPG parol so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+IMAP pingini necha millisekundda yuborish kerak?
+SMTP pingini yuborish uchun necha millisekund kerak?
+Pochta matni qanday ko'rsatilishini boshqaradi.
+Oddiy matn
+Oqilgan matn
+HTML matn
+Boyitilgan matn
+Siqilgan boy matn
+Boy matn
+Ishga tushganda avtomatik ravishda masofaviy disk raskadrovkani boshlang
+Masofaviy disk raskadrovka xabari formati
+Agar siz yuklashda masofaviy disk raskadrovka boshlanishini istasangiz, buni yoqing.
+Masofaviy disk raskadrovka xabari formatini belgilaydi. ism uchun {0}, xabar uchun {1}.
+RSS tasmasi URL so'rov uslubi
+RSS tasmasini avtomatik yangilash
+RSS tasmasini avtomatik yangilash oralig'i
+RSS tasma serveri so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+RSS tasmasini yangilash uchun necha millisekund kerak?
+SFTP ro'yxatida fayl tafsilotlarini ko'rsatish
+SFTP uchun foydalanuvchi nomi so'rovi uslubi
+SFTP tez terish xizmatiga yangi ulanishlarni qo'shing
+Masofaviy kataloglar ro'yxatida SFTP fayli tafsilotlarini ko'rsatadi.
+Agar yoqilgan bo'lsa, SFTP tez terish xizmatiga yangi ulanish qo'shiladi.
+Ping vaqti tugaydi
+Keng adapter ma'lumotlarini ko'rsatish
+Umumiy tarmoq ma'lumotlarini ko'rsatish
+Matnni foizli yuklab olish
+Matnni foizli yuklash
+Vaqt tugashini e'lon qilishdan oldin qancha millisekund kutish kerak?
+Paket ma'lumotlari kabi keng qamrovli adapter ma'lumotlarini chop etadi.
+Tarmoq haqida umumiy ma'lumotlarni ko'rsatadi.
+Yuklash foiz matni qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi. Yuklangan olcham uchun {0}, maqsadli olcham uchun {1}, foiz uchun {2}.
+Yuklab olish foizi matni qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi. Yuklab olingan olcham uchun {0}, maqsadli olcham uchun {1}, foiz uchun {2}.
+Bloklashdan keyin parol so'rang
+Ekranni qulflagandan so'ng, parol so'rang
+Minimal qizil rang darajasi
+Minimal yashil rang darajasi
+Minimal ko'k rang darajasi
+Minimal rang darajasi
+Maksimal qizil rang darajasi
+Yashil rangning maksimal darajasi
+Maksimal ko'k rang darajasi
+Maksimal rang darajasi
+Minimal qizil rang darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Minimal yashil rang darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Minimal ko'k rang darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Minimal rang darajasi. Qabul qilingan minimal qiymat 0, maksimal qabul qilingan qiymat 255 rang uchun 255 yoki 16 rang uchun 16.
+Maksimal qizil rang darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Yashil rangning maksimal darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Maksimal ko'k rang darajasi. Minimal qabul qilingan qiymat 0, maksimal qabul qilingan qiymat esa 255.
+Maksimal rang darajasi. Qabul qilingan minimal qiymat 0, maksimal qabul qilingan qiymat 255 rang uchun 255 yoki 16 rang uchun 16.
+Old fon rangi
+Chiziq belgisi
+Chiziq hosil qilish uchun belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Soatlar satri uchun yuqori chap burchak belgisi
+Daqiqalar satri uchun yuqori chap burchak belgisi
+soniya satri uchun yuqori chap burchak belgisi
+Soatlar paneli uchun yuqori o'ng burchak belgisi
+Daqiqalar satri uchun yuqori o'ng burchak belgisi
+Yuqori o'ng burchak belgisi soniya satri uchun
+Soatlar paneli uchun pastki chap burchak belgisi
+Daqiqa satri uchun pastki chap burchak belgisi
+Pastki chap burchak belgisi soniya satri uchun
+Soatlar paneli uchun pastki o'ng burchak belgisi
+Daqiqa satri uchun pastki o'ng burchak belgisi
+Pastki o'ng burchak belgisi soniya satri uchun
+Soatlar satri uchun yuqori ramka belgisi
+Daqiqa satri uchun ramkaning yuqori belgisi
+soniya satri uchun yuqori ramka belgisi
+Soatlar paneli uchun pastki ramka belgisi
+Daqiqa satri uchun pastki ramka belgisi
+Kadr belgisini soniyalar qatori uchun pastga tushiring
+Soatlar paneli uchun chap ramka belgisi
+Daqiqa satri uchun chap ramka belgisi
+Chap freym belgisi soniya satri uchun
+Soatlar paneli uchun o'ng ramka belgisi
+Daqiqa satri uchun o'ng ramka belgisi
+soniya satri uchun o'ng ramka belgisi
+Ma'lumot matni soatlab
+Daqiqalar uchun ma'lumot matni
+Bir soniya uchun ma'lumot matni
+Bir necha soat davomida minimal qizil rang darajasi
+Bir necha soat davomida minimal yashil rang darajasi
+Bir necha soat davomida minimal ko'k rang darajasi
+Bir necha soat davomida minimal rang darajasi
+Bir necha soat davomida qizil rangning maksimal darajasi
+Bir necha soat davomida maksimal yashil rang darajasi
+Bir necha soat davomida maksimal ko'k rang darajasi
+Bir necha soat davomida maksimal rang darajasi
+Minimal qizil rang darajasi daqiqalar uchun
+Minimal yashil rang darajasi daqiqalar uchun
+Minimal ko'k rang darajasi daqiqalar uchun
+Minimal rang darajasi daqiqalar uchun
+Bir necha daqiqa davomida qizil rangning maksimal darajasi
+Bir necha daqiqa davomida yashil rangning maksimal darajasi
+Bir necha daqiqa davomida maksimal ko'k rang darajasi
+Bir necha daqiqa davomida maksimal rang darajasi
+Bir soniya uchun minimal qizil rang darajasi
+Bir soniya uchun minimal yashil rang darajasi
+Bir soniya uchun minimal ko'k rang darajasi
+Bir soniya uchun minimal rang darajasi
+Bir soniya uchun maksimal qizil rang darajasi
+Bir soniya uchun maksimal yashil rang darajasi
+Bir soniya uchun maksimal ko'k rang darajasi
+Bir soniya uchun maksimal rang darajasi
+Yuqori chap burchakka o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Pastki chap burchakka o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Yuqori ramkaga o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Pastki ramkaga o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Chap ramkaga o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+To'g'ri ramkaga o'xshash belgi. Faqat bitta belgini kiritishingizga ishonch hosil qiling.
+Joriy soat uchun ma'lumot matningiz qanday ko'rsatilishini yozing. 24 soatdan joriy soat uchun {0}.
+Joriy daqiqa uchun ma'lumot matningiz qanday ko'rsatilishini yozing. 60 daqiqadan joriy daqiqa uchun {0}.
+Joriy ikkinchi ma'lumot matningiz qanday ko'rsatilishini yozing. 60 soniyadan joriy soniya uchun {0}.
+Matn rangi
+Ramp paneli uchun yuqori chap burchak belgisi
+Rampa paneli uchun yuqori o'ng burchak belgisi
+Rampa paneli uchun pastki chap burchak belgisi
+Rampa paneli uchun pastki o'ng burchak belgisi
+Rampa paneli uchun yuqori ramka belgisi
+Rampa paneli uchun pastki ramka belgisi
+Rampa paneli uchun chap ramka belgisi
+Rampa paneli uchun o'ng ramka belgisi
+Boshlanish rangi uchun minimal qizil rang darajasi
+Boshlanish rangi uchun minimal yashil rang darajasi
+Boshlang'ich rang uchun minimal ko'k rang darajasi
+Boshlash rangi uchun minimal rang darajasi
+Boshlanish rangi uchun maksimal qizil rang darajasi
+Boshlanish rangi uchun maksimal yashil rang darajasi
+Boshlanish rangi uchun maksimal ko'k rang darajasi
+Boshlanish rangi uchun maksimal rang darajasi
+Yakuniy rang uchun minimal qizil rang darajasi
+Yakuniy rang uchun minimal yashil rang darajasi
+Yakuniy rang uchun minimal ko'k rang darajasi
+Yakuniy rang uchun minimal rang darajasi
+Yakuniy rang uchun maksimal qizil rang darajasi
+Yakuniy rang uchun maksimal yashil rang darajasi
+Yakuniy rang uchun maksimal ko'k rang darajasi
+Yakuniy rang uchun maksimal rang darajasi
+Yechishning minimal soni
+Yechishning maksimal soni
+Yechish ko'rsatish kiritish
+Bildirishnoma chegarasi uchun yuqori chap burchak belgisi
+Bildirishnoma chegarasi uchun yuqori o'ng burchak belgisi
+Bildirishnoma chegarasi uchun pastki chap burchak belgisi
+Bildirishnoma chegarasi uchun pastki o'ng burchak belgisi
+Bildirishnoma chegarasi uchun yuqori ramka belgisi
+Bildirishnoma chegarasi uchun pastki ramka belgisi
+Bildirishnoma chegarasi uchun chap ramka belgisi
+Bildirishnoma chegarasi uchun o'ng ramka belgisi
+Qo'lda sahifa ma'lumotlari uslubi
+Kirish so'rovida nima yozilganligini ko'rsatish kerakmi.
+Tanlash uchun minimal raqam qancha?
+Tanlash uchun maksimal raqam qancha?
+Manpage ma'lumotlaringiz qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi. Qollanma sarlavhasi uchun {0}, tahrir uchun {1}.
+{0} xususiyati modullarning hech birida topilmadi.
+Ushbu bo'limda ekran pardasining umumiy sozlamalari keltirilgan. Shaxsiy ekran pardasi sozlamalari uchun Sozlamalardan chiqing va Ekran pardasi sozlamalarini oching.
+Haqiqiy rang rejimida rang g'ildiragini boshlang
+Belgilangan bo'lsa, u to'ldiruvchini qo'llab-quvvatlaydigan moslashtirilgan ishga tushirish bannerini ko'rsatadi. Yadro versiyasi uchun {0} dan foydalanishingiz mumkin.
+Oy nomlari, taqvim va hokazolarni o'zgartirish uchun joriy tilning qaysi variantidan foydalanilmoqda?
+255 rangni qo'llab-quvvatlashni faollashtiradi.
+Haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+{0}-qatordagi soz ochirildi.
+{0}-qatorda satr almashtirildi.
+{0} qator raqami olib tashlandi.
+Ruxsatsiz xabarlarni bostirish
+Ro'yxat funksiyasi ruxsatsiz papkani ochishga harakat qilsa, zerikarli xabarni yashiradi
+FTP server ma'lumotlari
+Server manzil:
+Server porti:
+Server turi:
+Server tizimi turi:
+Server shifrlash rejimi:
+Serverga ulanish turi:
+Server tizimi:
+Serverni yuklab olish uchun ma'lumotlar turi:
+Server yuklash ma'lumotlar turi:
+Ushbu operatsiyani bajarishdan oldin siz serverga ulanishingiz kerak.
+Xeshlanadigan masofaviy faylni kiriting.
+Xeshlangan masofaviy katalogni kiriting.
+Masofaviy katalogni kiriting.
+FTP uchun rekursiv xeshlash
+Katalogni rekursiv xeshlash kerakmi. Shuni yodda tutingki, barcha FTP serverlari buni qo'llab-quvvatlamaydi.
+Protsessorning soat tezligi:
+SSE2 protsessorini qo'llab-quvvatlash:
+Protsessorlarning umumiy soni:
+Disk hajmi:
+Umumiy xotira:
+Grafik karta:
+Disk modeli:
+Bir sahifadagi elektron xatlarning maksimal soni
+Hozirgi til madaniyati
+To'g'ri bo'limni ochganingizga ishonchingiz komil bo'lsa, ushbu xabarni tekshiring:
+Boshqa sozlamalar...
+Rang sozlamalari...
+FTP server buyrug'ini bajaradi
+POP3 server manzili va portini kiriting (<adres> yoki <adres>:[port]):
+Pochta uchun POP3 so'rov uslubi
+POP3 ping intervalini yuboring
+POP3 server so'rovi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi.
+POP3 pingini necha millisekundda yuborish kerak?
+POP3 dan foydalaning
+POP3 dan foydalanish kerakmi. Buni ochirib qoyish SMTP dan foydalanadi.
+CRC32 yordamida qatorni shifrlaydi
+Pochta mijozini ochadi
+o'tkazilgan pochta ...
+Ushbu ekran pardasi sozlamalari bu yerda mavjud.
+Jadval funksionalligini tekshiradi
+Belgilangan qatorni tahrirlaydi
+Fayl oxiriga yangi qatorlarni qo'shadi
+Fayl oxiriga qo'shmoqchi bo'lgan matnni kiriting. Ishingiz tugagach, o'z qatoriga "EOF" yozing.
+Xost nomi
+Foydalanuvchi nomi
+Ma'lumotlar turi
+Kodlash
+Shifrlash
+Protokollar
+Pochta uzatish jarayonini ko'rsatish
+Pochta uzatish jarayoni
+Pochta uzatish jarayoni (bitta)
+Agar yoqilgan bo'lsa, pochta qobig'i pochtani yuklab olishda qancha bayt uzatilganligini ko'rsatadi.
+Pochta o'tkazmasining borish uslubi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi. Otkazilgan olcham uchun {0} va umumiy olcham uchun {1}.
+Pochta o'tkazmasining borish uslubi qanday bo'lishini yozing. Standart uslubdan foydalanish uchun bo'sh qoldiring. To'ldiruvchilar tahlil qilinadi. Otkazilgan olcham uchun {0}.
+Vaqt zonasi:
+Bugun: {0}
+Joriy vaqt: {0}
+Jadvalni ajratuvchi rang
+Jadval sarlavhasi rangi
+Jadval qiymati rangi
+Mumkin javoblar
+Mod fayli ko'rsatilmagan.
+Allaqachon o'rnatilgan modni o'rnatishga harakat qilmoqda. Mod yangilanmoqda...
+Ornatish amalga oshmadi
+Taqdim etilgan mod fayli mos kelmaydi.
+Ochirish amalga oshmadi
+URL manzilini ochadi
+Fayl tarkibini chop etishda qator raqamlarini chop eting
+\"mushuk\" buyrug'i faylning satr raqamlarini chop etishga majbur qiladi.
+Transliteratsiya qilingan versiya
+Tarjima qilingan versiya
+Barcha bildirishnomalarni rad etadi
+Yuklab olinmoqda...
+Yuklanmoqda...
+Yuklab olish jarayoni haqida bildirishnomani ko'rsatish
+Yuklash jarayoni haqida bildirishnomani ko‘rsatish
+Yuklab olish jarayonini ko'rsatadigan bildirishnomani ko'rsatadi.
+Yuklash jarayonini ko'rsatadigan bildirishnomani ko'rsatadi.
+KS resurslarida tarjima qilinadigan satr mavjudligini tekshiradi
+String mahalliylashtirish manbalarida topilgan.
+Lokalizatsiya resurslarida string topilmadi.
+Yadroni jimgina ishga tushiradi
+Keyingi kirishda ishga tushirish buyrug'ini kiritadi
+Yadroni xavfsiz rejimda ishga tushiradi, barcha modlarni o'chirib qo'yadi
+Xavfsiz rejim kabi, lekin ko'p foydalanuvchi va ba'zi sozlashlarni ham o'chiradi
+Bahslar yetarli emas edi.
+Rampa paneli uchun yuqori chap burchak rangi
+Rampa paneli uchun yuqori o'ng burchak rangi
+Rampa paneli uchun pastki chap burchak rangi
+Rampa paneli uchun pastki o'ng burchak rangi
+Rampa paneli uchun yuqori ramka rangi
+Rampa paneli uchun pastki ramka rangi
+Rampa paneli uchun chap ramka rangi
+Rampa paneli uchun o'ng ramka rangi
+Rampa paneli uchun chegara ranglarini ishlating
+Rampa paneli uchun chegara ranglarini ishlating. Agar o'chirilgan bo'lsa, kulrang chiziq hosil qiladi.
+HTTP qobig'ini ishga tushiradi
+HTTP qobig'idan chiqadi va yadroga qaytadi
+HTTP saytini o'rnatadi. Yaroqli URI bolishi kerak.
+Belgilangan so'rov yordamida HTTP serveridan javob oladi
+HTTP serveridan tarkibni o'chiradi
+HTTP qobig'ida xatolik yuz berdi:
+HTTP xabari: {0} soralgan buyruq topilmadi. HTTP qobig'ida ko'rsatilgan mavjud buyruqlar ro'yxati uchun "yordam" ga qarang.
+Belgilangan so'rov yordamida HTTP serveridan qatorni oladi
+{0} olinmoqda...
+Saytning URI formati yaroqsiz.
+Saytni sozlash
+Ranglar qayta ishga tushirishni talab qilmaydi, lekin sozlamalarning aksariyati qayta ishga tushirishni talab qiladi.
+“{0}” argumenti uchun yordam yo‘q.
+Kechirim so'rash uchun nafratlangan izohlarda A tugmasini bosing. Rahmat qilish uchun sevgi izohlarida T tugmasini bosing. O'yindan chiqish uchun Q tugmasini bosing.
+Siz nafratlangan fikr uchun uzr so'radingiz! Ajoyib!
+Sevgi sharhi uchun uzr so'radi. Etarlicha yaxshi emas.
+Siz shunchaki nafratlangan izoh uchun nafratchiga rahmat aytdingiz!
+SpeedPress uchun standart qiyinchilik
+SpeedPress uchun tugmani bosish vaqti tugashi
+O'zingiz yoqtirgan qiyinchilikni tanlang.
+Vaqt tugashidan oldin tugma bosilishini necha millisekund kutish kerak? (Maxsus qiyinchilikda)
+Oddiy iboralar yordamida so'z yoki iborani boshqasiga almashtiradi
+Oddiy iboralar yordamida qatordagi so‘z yoki iborani boshqasiga almashtiradi
+Muntazam iboralar yordamida belgilangan qator yoki barcha qatorlardagi so‘zni so‘raydi
+Sozlamani toping
+Nimani qidirmoqchi ekanligingizni yozing.
+Hech narsa topilmadi. Sozlamani to'g'ri yozganingizga ishonch hosil qiling.
+Mahalliy faylni arxivga joylashtiradi
+Hech narsa yig'ib bo'lmaydi.
+Javob tavsifi
+Xost porti
+Ushbu dasturdan foydalanish shartlari va qoidalari haqida ko'proq ma'lumot olish uchun tashrif buyuring
+Standart tanlov chiqish turi
+O'zgaruvchilar to'g'ri yozilganligini tekshirish uchun barcha KS sozlamalarini tekshiradi
+Ushbu konfiguratsiya yozuvlarida noto'g'ri o'zgaruvchilar yoki raqamlar mavjud va ularni tuzatish kerak:
+{0} fayli topilmadi
+Taqdim etilgan qiymatlar bilan o'zgaruvchan massiv yaratadi
+O'tish uchun sozlama raqamini yozing. Boshqa har qanday belgi orqaga qaytishni anglatadi.
+Lokalizatsiya matnining barcha satr raqamlari teng yoki yoqligini tekshiradi
+Chiziqning mos kelmasligi
+Iltimos, foydalanuvchi raqamini kiriting.
+Anonim foydalanuvchilarni qo'shing
+Nogiron foydalanuvchilarni qo'shing
+Ro'yxatdagi anonim foydalanuvchilarni o'z ichiga oladi
+Ro'yxatdagi nogiron foydalanuvchilarni o'z ichiga oladi
+Ro'yxatni tartiblang
+Fayl tizimi ro'yxatini professional tarzda tartiblaydi.
+Tanlovni tanlash imkoniyatini beradi
+Shell buyruqlari bajarilmadi!!!
+Kirishda so'nggi RSS sarlavhasini ko'rsatish
+RSS sarlavhasi URL
+Har bir login, tanlangan sarlavha URL manzilidan so'nggi RSS sarlavhasini ko'rsatadi.
+RSS sarlavha URL manzili oxirgi sarlavhani ko'rsatishda foydalaniladi. Bu odatda sizning sevimli tasmangiz.
+So'nggi yangiliklar:
+Oxirgi yangiliklar olinmadi.
+Tanlangan variant rangi
+Yadro xatosida stek izini ko'rsatish
+Agar yadro xatosi bo'lsa, konsolda stek izini chop etish yoki chop etmaslikni tanlang.
+Modni yuklash mumkin, ammo bu ogohlantirishlar modning ishlashiga ta'sir qilishi mumkin:
+Ekran pardasini yuklash mumkin, ammo bu ogohlantirishlar ekran pardasi ishlashiga tasir qilishi mumkin:
+Sozlamalarni boshqa saqlash
+Sozlamalarni bu yerdan yuklash
+Joriy yadro sozlamalarini qayerda saqlamoqchisiz?
+Yadro sozlamalarini mavjud fayl ustiga saqlab bo‘lmadi.
+Joriy yadro sozlamalarini qayerdan yuklamoqchisiz?
+KS resurslarida tarjima qilinadigan satrlar mavjudligini tekshiradi
+Ikki yoki undan ortiq matnli fayllarni chiqish fayliga birlashtiradi.
+Fayllarni birlashtirib bo‘lmadi.
+RSS tasmasini olish vaqti tugashi
+RSS tasmasi yuklanishi kutilguncha qancha millisekund kutish kerak?
+Qutilarni to'ldiring
+Biz qutini yaxlit chizamizmi yoki faqat chegara chizamizmi?
+Millisekundlarda bosqich kechikishi
+Keyingi bosqichni chizishdan oldin qancha millisekund kutish kerak?
+Keyingi rampa chirish oralig'i
+Keyingi rampaning bir uchini chirishdan oldin necha millisekund kutish kerak?
+Nosozliklarni tuzatish kvotasini tekshiring
+Nosozliklarni tuzatuvchiga yozishdan oldin disk raskadrovka tizimi kvotani tekshirishi kerakligini tekshiramizmi?
+Haqiqatan ham uxlash uchun qancha millisekund kerak bo'ldi?
+Tadbir qo‘shib bo‘lmadi.
+Tadbirni olib tashlab bo‘lmadi.
+Hodisa kiritish uchun yetarli argumentlar keltirilmagan.
+Hodisani olib tashlash uchun yetarli dalillar keltirilmagan.
+Voqealarni manipulyatsiya qilish uchun yetarli dalillar keltirilmagan.
+Eslatma qo‘shib yoki olib tashlab bo‘lmadi.
+Eslatma qoshish yoki ochirish uchun yetarli argumentlar taqdim etilmaydi.
+Eslatmani manipulyatsiya qilish uchun yetarli dalillar keltirilmagan.
+Nomsiz eslatma
+Nomsiz hodisa
+Endi bu voqea kuni!
+Buni o'tkazib yubormang!
+Yaroqsiz harakat.
+Oddiy sekundomer
+Boshlash yoki to'xtatish
+Lap
+Qayta o'rnatish
+Oddiy taymer
+Qayta hisoblashni boshlang
+Intervalni o'rnatish
+Belgilangan vaqt tugashi raqamli emas.
+Vaqt tugashini millisekundlarda belgilang
+Barcha voqealar va/yoki eslatmalarni halokatli tarzda saqlang
+Agar yoqilgan bo'lsa, kalendar buyrug'i yordamida hammasini saqlashdan oldin barcha voqealar va/yoki eslatmalarni o'chiradi.
+FTP uzatish uchun qayta urinishlarni tekshiring
+FTP ulanish vaqti tugaydi
+FTP ma'lumotlariga ulanish vaqti tugaydi
+FTP IP versiyalari
+Yuklashni necha marta tekshirish va yuklab olish umuman bajarilmaguncha tekshirish muvaffaqiyatsiz tugasa, yuklab olish va qayta urinib ko'rish kerakmi?
+FTP ulanish vaqti tugaguncha qancha millisekund kutish kerak?
+FTP ma'lumotlariga ulanish vaqti tugaguncha qancha millisekund kutish kerak?
+FTP serveri qo'llab-quvvatlaydigan va FTP mijozi foydalanadigan Internet protokoli versiyasini tanlang.
+RPC allaqachon ishga tushirilganda uni ishga tushirishga urinish.
+RGB rang g'ildiragi uchun yuqori chap burchak belgisi
+RGB rang g'ildiragi uchun yuqori o'ng burchak belgisi
+RGB rang g'ildiragi uchun pastki chap burchak belgisi
+RGB rang g'ildiragi uchun pastki o'ng burchak belgisi
+RGB rang g'ildiragi uchun yuqori ramka belgisi
+RGB rang g'ildiragi uchun pastki ramka belgisi
+RGB rang g'ildiragi uchun chap ramka belgisi
+RGB rang g'ildiragi uchun o'ng ramka belgisi
+Belgilangan katalogdagi yoki joriy katalogdagi faylni topadi
+Chiziq oxirlarini joriy platforma formatiga yoki belgilangan maxsus formatga o'zgartiradi
+Jilddagi umumiy hajm:
+Ro'yxatda umumiy hajmni ko'rsatish
+Agar yoqilgan bo'lsa, konfiguratsiyaga muvofiq jild o'lchamlarini qanday hisoblash mumkinligiga qarab, ro'yxatdagi umumiy jild hajmini ko'rsatadi.
+Siz yangilangansiz!
+JSON qobig'i uchun standart JSON formatlash
+Saqlash uchun JSON qobig'i uchun standart JSON formatini tanlaydi (chiroyli yoki kichiklashtirilgan).
+Yangilanish muvaffaqiyatli yuklab olindi!
+Yangilanishlarni avtomatik ravishda yuklab oling
+Agar biron bir yangilanish bo'lsa, yadro uni avtomatik ravishda yuklab oladi.
+Feyerverkning portlash radiusi
+Olovli olov yoqilganda portlash radiusi necha blok (10 tagacha)?
+Bu buyruq qanday ishlashini o'zgartiradigan quyidagi kalitlarga ega:
+Chop etilayotgan qatordan keyingi qator raqamlarini chop etadi
+Satr raqamlarini chop etishni oldini oladi
+Har doim transliteratsiya qilingan versiyadan foydalaning
+Har doim tarjima qilingan versiyadan foydalaning
+Majburiy almashtirish tili
+Javob bir nechta belgilarni olishi mumkinligini ko'rsating
+Javob faqat bitta belgini olishi mumkinligini ko'rsating
+Savol va javoblarni bir qatorga chop eting
+Savol va javoblarni ikki qatorga chop eting
+Savol va javoblarni zamonaviy usulda chop eting
+Savol va javoblarni jadvalga chop eting
+Ro'yxatdagi fayl tafsilotlarini ko'rsatadi
+Zerikarli "ruxsat rad etilgan" xabarlarini bostiradi
+Barcha vaqt zonalarini ko'rsatadi
+O'yinni oson qiyinchilikda boshlaydi
+O'yinni o'rtacha qiyinchilikda boshlaydi
+O'yinni qiyinchilik bilan boshlaydi
+O'yinni juda qiyin qiyinchilikda boshlaydi
+O'yinni maxsus qiyinchilikda boshlaydi. Shuni esda tutingki, millisekundlardagi maxsus kutish vaqti argument sifatida yozilishi kerak.
+Tizim ma'lumotlarini ko'rsatadi
+Uskuna ma'lumotlarini ko'rsatadi
+Foydalanuvchi ma'lumotlarini ko'rsatadi
+Kunning xabarini ko'rsatadi
+Kirishdan keyingi kunning xabarini ko'rsatadi
+Barcha ma'lumotlarni ko'rsatadi
+ZIP faylning mazmunini o'z ichiga olgan katalog yaratadi
+Barcha mavjud shaharlarni ko'rsatadi
+Tez siqish
+Siqish yo'q
+Arxivda asosiy katalog yaratmang
+Shomildagi birlik
+Serverdan sharmandalik bilan uziladi
+Maqsadli yo'l mutlaq ekanligini ko'rsatadi
+JSON faylini saqlaydi va jarayon davomida uni chiroyli qiladi
+JSON faylini saqlaydi, jarayonda uni kichraytiradi
+Matn faylidan qator tugatish uslubini oladi
+Barcha o'chirilgan hodisalarni tozalaydi
+Voqealarni tuzatishni yoqish
+Yadro hodisalari tizimi uchun nosozliklarni tuzatishni yoqadi
+Figlet shrifti
+Figgle kutubxonasi tomonidan qo'llab-quvvatlanadigan figlet shriftini yozing. Qo'shimcha ma'lumot uchun kutubxona hujjatlariga murojaat qiling
+{0} maxsus tilini ornatib bolmadi.
+Maxsus tilni ornatish uchun zarur bolgan metadata fayli mavjud emas.
+Maxsus tilni o'rnatish uchun zarur bo'lgan metadata ma'lumotlari kerakli lokalizatsiyani ta'minlamaydi.
+{0} maxsus tilini olib tashlab bolmadi.
+Maxsus tilni ochirish uchun zarur bolgan metadata fayli mavjud emas.
+Maxsus tilni ochirish uchun zarur bolgan metadata malumotlari kerakli lokalizatsiyani taminlamaydi.
+Ingliz tilining uzunligi taqdim etilgan til tokenining uzunligiga mos kelmaydi.
+Til allaqachon mavjud va uni qayta yozish mumkin emas.
+Maxsus tilni olib tashlab bo‘lmadi. Katta ehtimol bilan u mavjud emas.
+Maxsus tillarni o‘rnatib bo‘lmadi.
+Maxsus tillarni ochirib bolmadi.
+Maxsus tillarni ochirib bolmadi. Qo'shimcha ma'lumot uchun ichki istisnoga qarang.
+Administrator parolini yozing. Agar nima qilayotganingizni bilmasangiz, bu hisobdan foydalanmasligingizga ishonch hosil qiling.
+Administrator parolini yozishingiz kerak.
+Litsenziya ma'lumotlari
+Tillaringizni boshqaring
+Til topilmadi yoki faylda yaroqsiz belgilar mavjud.
+Til belgilanmagan.
+Til boshqaruvi xavfsiz rejimda o'chirilgan.
+Tilning qisqa nomi:
+Tilning toliq nomi:
+Transliteratsiya qilinadigan til:
+Maxsus til:
+Yangi xush kelibsiz banner
+Zamonaviy ekran
+Figlet tomonidan yaratilgan yangi xush kelibsiz bannerini ko'rsatadi
+Ishga tushganda zamonaviy ekranni yoqadi. Iltimos, esda tutingki, u argument so'rovini o'chirib qo'yadi va qobiqni oldindan yuklashni sinab ko'radi.
+Splash nomi
+Yadroda joriy qilingan mavjud splashlardan olingan splash nomi.
+Yaratilgan standart MOTD.
+Birlamchi MAL yaratilgan.
+Tizim hisobi ishga tushirildi
+Foydalanuvchilar ishga tushirildi
+Ruxsatlar yuklandi
+Xush kelibsiz!
+Masofaviy tuzatuvchi ishga tushmoqda...
+Masofaviy tuzatuvchi ulanish xatosi
+Masofaviy disk raskadrovka ulanishi xatosi haqida xabar bering
+Agar yoqilgan bo'lsa, uy egasiga masofaviy disk raskadrovka ulanish xatosi haqida xabar berish uchun bildirishnoma tizimidan foydalanadi. Aks holda, standart konsol yozuvidan foydalaniladi.
+Taymer uchun Figlet shrift
+Taymer uchun Figlet-ni yoqing
+Agar yoqilgan bo'lsa, taymer uchun figletdan foydalanadi. E'tibor bering, Figlet yoqilgan holda vaqtni to'g'ri ko'rsatish uchun unga katta konsol ekrani kerak.
+Yuklashdan oldingi buyruq qatori argumentlarini tahlil qilishda xatolik yuz berdi: {0}
+Yadroni zavod sozlamalariga qaytaradi
+Konsol o'lchamini aniqlashni chetlab o'tadi
+Siz konsol olchamini aniqlashni chetlab otayotganga oxshaysiz. Kichkina ekranlarda narsalar to'g'ri ishlamasligi mumkin.
+Yaxshiroq taassurot qoldirish uchun ushbu ekranda turganingizda konsol oynasining olchamini ozgartiring. Davom etish uchun istalgan tugmani bosing...
+Konsolingiz togri ishlash uchun juda kichik:
+Banner figlet shrifti
+Rang turi va Figlet qo'llab-quvvatlashi bilan chiziqli chop etish yordamida konsolga satrni chop etadi
+Rang turi va format va Figlet yordami bilan chiziqli chop etish yordamida konsolga satrni chop etadi
+Xabarni butunlay o'chirib tashlaydi
+Qabul qiluvchidan barcha xabarlarni butunlay o'chirib tashlaydi
+Xabarni olib tashlashni bekor qiladi
+Qabul qiluvchidan barcha xabarlarni olib tashlashni bekor qiladi
+Ochirishni bekor qilish POP3 uchun amalga oshirilmagan.
+Buyruqlar yordamga ishonishini ko'rsating
+Shell buyruqlari yordamga ishonishini ko'rsating
+Mod buyruqlari yordamga ishonishini ko'rsating
+Taxalluslar yordamga ishonishini ko'rsating
+Buyruqlar ro'yxatidagi buyruqlar sonini ko'rsatadi, har xil turdagi buyruqlar uchun uchta hisoblash ko'rsatish kalitlari tomonidan boshqariladi.
+UESH ifodalari qanoatlansa, buyruqlarni bajaradi
+Shart ifodada topilmadi.
+{0}-shart uchun {1} ta argument kerak. {2} oldim.
+Shartni o'rtaga qo'yish kerak.
+Shartni boshida joylashtirish kerak.
+Sintaksis xatosi tufayli ifodani tahlil qilishda xato.
+Shartni qondirib bo'lmadi. Batafsil malumot bu yerda:
+Parol niqobi belgisi
+Parolni niqoblovchi belgi. Ko'proq xavfsizlik uchun bo'sh qoldiring.
+Agar pastki qobiqda ishlayotgan bo'lsa, qobiqdan chiqadi
+Ona qobig'ini o'ldirish mumkin emas!
+Subshell tizimidan chiqish mumkin emas.
+Fayl belgilanmagan. Shell chiqmoqda...
+Bu ekranning sozlamalari shu yerda mavjud.
+Harakat paneli rangi
+Ekran pardasi sozlamalarini ochadi
+Splash sozlamalarini ochadi
+Mavjud UESH o'zgaruvchilari ro'yxati
+Matn joylashuvi
+O'zingiz yoqtirgan jarayon matn manzilini tanlang.
+Siz faqat raqamlarni yozishingiz mumkin.
+Chiqish uchun “q” tugmasini bosing.
+Ismlar yuklab olinmoqda...
+Texnik qiyinchiliklar tufayli biz Unix tizimlarida adapter xususiyatlarini sanab bo'lmadi.
+Nosozliklarni tuzatish rejimini yoqadi
+Argumentlar uchun takliflar
+Qora va oq rejimini yoqing
+Diskotekani qora va oq rangga aylantiradi. Agar u juda tez bo'lsa, ko'zingizga jiddiy zarar yetkazadi, shuning uchun agar siz tez suratlar tutilishini boshdan kechirayotgan bo'lsangiz, tavsiya etilmaydi.
+Siz qollab-quvvatlanmaydigan versiyani ishga tushirganga oxshaysiz. Ushbu versiyadan foydalanmaslik tavsiya etiladi.
+Joriy ranglarni yuklash
+Muqobil rang varianti
+Foydalanuvchilar sevgi yoki nafrat haqidagi fikrlarni hisoblashadi
+Qancha foydalanuvchilar sevgi yoki nafrat fikr bildirish xonasida bo'lishlari kerak?
+Mavjud tillar ro'yxati
+Mavjud tillar:
+Buyruqlar qatori argumentlari:
+Yuklashdan oldin buyruq qatori argumentlari:
+Manba kodining tuzilishi uchun mod API hujjatlarini eng joriy shaklda ochadi

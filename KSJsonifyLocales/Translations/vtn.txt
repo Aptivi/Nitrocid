@@ -983,3 +983,675 @@ Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...
 Trang hướng dẫn này cần hoạt động cho:
 Không tìm thấy trang thủ công {0}.
 Hướng dẫn mod
+Các đối số hạt nhân có sẵn:
+Nhấn "q" nếu bạn hoàn tất.
+Nhiều đối số hạt nhân có thể được phân tách bằng dấu phẩy không có dấu cách, ví dụ:
+Nhiều lệnh được đưa vào có thể được phân tách bằng dấu hai chấm có dấu cách, ví dụ:
+Đối số được yêu cầu {0} không được tìm thấy.
+Lỗi không thể khôi phục trong đối số:
+Mã hóa một chuỗi bằng SHA512
+Mã hóa một chuỗi bằng SHA384
+Mã hóa một chuỗi bằng SHA256
+Mã hóa một chuỗi bằng SHA1
+Mã hóa một chuỗi bằng MD5
+Builtinsaver sẽ ở đâu
+Phần mod là không có gì.
+Không cho phép dừng các bản mod ở chế độ an toàn.
+Mod đã được bắt đầu!
+Mod vẫn chưa bắt đầu!
+Sử dụng lệnh:
+Tên tệp phần:
+Đường dẫn tệp một phần:
+Lỗi khi cố gắng khởi động trình bảo vệ màn hình:
+Loại đường dẫn không hợp lệ.
+Loại đường dẫn nhân không hợp lệ.
+Khởi động trước không thành công
+Trình chỉnh sửa JSON chưa mở luồng tệp.
+Không tìm thấy thuộc tính bên trong tệp JSON.
+Đã xóa thuộc tính.
+Thêm thuộc tính mới vào cuối tệp JSON
+Xóa một thuộc tính khỏi tệp JSON
+Thoát khỏi trình bao JSON
+Thoát khỏi trình bao JSON mà không lưu các thay đổi
+Lưu tệp JSON
+Mở trình bao JSON
+In tệp JSON
+Khoảng đoạn đường nối tiếp theo
+Kích hoạt hỗ trợ 255 màu cho Ramp.
+Kích hoạt hỗ trợ màu thực cho Ramp.
+Phải đợi bao nhiêu mili giây trước khi điền vào đoạn đường nối tiếp theo?
+Màu tiêu đề thông báo
+Màu mô tả thông báo
+Màu tiến trình thông báo
+Màu thông báo lỗi
+Màu câu hỏi
+Màu thành công
+Màu đô la của người dùng
+Mẹo màu
+Màu văn bản phân tách
+Màu phân cách
+Màu tiêu đề danh sách
+Màu cảnh báo phát triển
+Màu thời gian sân khấu
+Màu tiến độ
+Màu tùy chọn quay lại
+Vẽ đường viền thông báo
+Che thông báo bằng đường viền.
+Liên hệ với nhà cung cấp mod để nâng cấp mod lên phiên bản tương thích.
+Màu đường viền có mức độ ưu tiên thấp
+Màu đường viền ưu tiên trung bình
+Màu đường viền ưu tiên cao
+Gửi thông báo tiến độ để kiểm tra người nhận
+Kiểm tra bánh xe màu
+Hiển thị thời gian hạt nhân cục bộ
+Hiển thị ngày hạt nhân cục bộ
+Hiển thị ngày và giờ hạt nhân cục bộ
+Hiển thị thời gian hạt nhân UTC
+Hiển thị ngày hạt nhân UTC
+Hiển thị ngày và giờ hạt nhân UTC
+Đường dẫn MOTD
+Đường dẫn MAL
+Tệp văn bản MOTD là tệp nào? Viết một đường dẫn tuyệt đối đến tệp văn bản.
+Tệp văn bản MAL là tệp nào? Viết một đường dẫn tuyệt đối đến tệp văn bản.
+Các mod trong danh sách đen
+Viết tên tệp của các mod sẽ không chạy khi khởi động. Khi bạn hoàn thành, hãy viết "q". Viết một dấu trừ bên cạnh đường dẫn để xóa một mod hiện có.
+Mod {0} được đưa vào danh sách đen.
+Tải lại tất cả các mod
+Thêm một mod vào danh sách đen
+Xóa một mod khỏi danh sách đen
+Ngày và giờ theo UTC: {0}
+Không tìm thấy lệnh shell JSON được chỉ định.
+Hiển thị thông tin ứng dụng trong khi khởi động
+Phân tích cú pháp các đối số dòng lệnh
+Hiển thị thời gian kết thúc giai đoạn
+Bắt đầu sửa đổi hạt nhân khi khởi động
+Hiển thị thời gian hiện tại trước khi đăng nhập
+Thông báo cho bất kỳ lỗi nào trong quá trình khởi động
+Hiển thị thông tin ngắn gọn về ứng dụng khi khởi động.
+Phân tích cú pháp các đối số dòng lệnh khi khởi động.
+Cho biết nhân đã mất bao nhiêu thời gian để hoàn thành một giai đoạn.
+Tự động bắt đầu sửa đổi hạt nhân khi khởi động.
+Hiển thị thời gian, múi giờ và ngày hiện tại trước khi đăng nhập.
+Nếu có một lỗi nhỏ trong quá trình khởi động hạt nhân, hãy thông báo cho người dùng về nó.
+Kiểu nhắc tên người dùng
+Kiểu nhắc mật khẩu
+Hiển thị MAL khi đăng nhập
+Viết cách bạn muốn lời nhắc đăng nhập của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Viết cách bạn muốn lời nhắc mật khẩu của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Hiển thị Thông báo trong ngày sau khi hiển thị màn hình đăng nhập.
+Test Shell Prompt Style
+JSON Shell Prompt Style
+Thăm dò các lệnh đã tiêm
+Thăm dò các lệnh được đưa vào khi bắt đầu vỏ hạt nhân.
+Hiển thị chi tiết tệp trong danh sách
+Hiển thị chi tiết tệp ngắn gọn trong khi liệt kê tệp
+Hiển thị chi tiết tệp trong danh sách FTP
+Kiểu nhắc tên người dùng cho FTP
+Kiểu nhắc mật khẩu cho FTP
+Sử dụng hồ sơ FTP đầu tiên
+Thêm kết nối mới vào quay số nhanh FTP
+Cố gắng xác thực chứng chỉ FTP an toàn
+Hiển thị FTP MOTD khi kết nối
+Luôn chấp nhận chứng chỉ FTP không hợp lệ
+Hiển thị chi tiết tệp FTP trong khi liệt kê các thư mục từ xa.
+Sử dụng cấu hình FTP đầu tiên để kết nối với FTP.
+Nếu được bật, hãy thêm một kết nối mới vào quay số nhanh FTP.
+Cố gắng xác thực chứng chỉ FTP. Không nên tắt nó đi.
+Hiển thị thông báo FTP trong ngày khi đăng nhập.
+Luôn chấp nhận chứng chỉ FTP không hợp lệ. Không nên bật tính năng này vì nó có thể gây ra rủi ro về bảo mật.
+Kiểu nhắc tên người dùng cho thư
+Kiểu nhắc mật khẩu cho thư
+Kiểu nhắc IMAP cho thư
+Kiểu nhắc SMTP cho thư
+Tự động phát hiện máy chủ thư
+Bật gỡ lỗi thư
+Thông báo cho các tin nhắn e-mail mới
+Kiểu nhắc mật khẩu GPG cho thư
+Gửi khoảng thời gian ping IMAP
+Gửi khoảng thời gian ping SMTP
+Định dạng văn bản thư
+Viết cách bạn muốn lời nhắc máy chủ IMAP của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Viết cách bạn muốn lời nhắc máy chủ SMTP của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Tự động phát hiện máy chủ thư dựa trên địa chỉ đã cho.
+Bật gỡ lỗi máy chủ thư.
+Thông báo cho bạn nếu có bất kỳ thư mới nào.
+Viết cách bạn muốn lời nhắc mật khẩu GPG của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Bao nhiêu mili giây để gửi ping IMAP?
+Bao nhiêu mili giây để gửi ping SMTP?
+Kiểm soát cách hiển thị văn bản thư.
+Văn bản thô
+Văn bản có dòng
+Văn bản HTML
+Văn bản phong phú
+Văn bản đa dạng thức được nén
+Văn bản đa dạng thức
+Tự động bắt đầu gỡ lỗi từ xa khi khởi động
+Định dạng thông báo gỡ lỗi từ xa
+Nếu bạn muốn gỡ lỗi từ xa bắt đầu khi khởi động, hãy bật tính năng này.
+Chỉ định định dạng thông báo gỡ lỗi từ xa. {0} cho tên, {1} cho tin nhắn.
+Kiểu nhắc URL nguồn cấp dữ liệu RSS
+Tự động làm mới nguồn cấp dữ liệu RSS
+Tự động làm mới khoảng thời gian nguồn cấp dữ liệu RSS
+Viết cách bạn muốn lời nhắc máy chủ nguồn cấp dữ liệu RSS của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Bao nhiêu mili giây để làm mới nguồn cấp dữ liệu RSS?
+Hiển thị chi tiết tệp trong danh sách SFTP
+Kiểu nhắc tên người dùng cho SFTP
+Thêm kết nối mới vào quay số nhanh SFTP
+Hiển thị chi tiết tệp SFTP trong khi liệt kê các thư mục từ xa.
+Nếu được bật, hãy thêm một kết nối mới vào quay số nhanh SFTP.
+Ping hết thời gian
+Hiển thị thông tin bộ điều hợp mở rộng
+Hiển thị thông tin mạng chung
+Tải xuống văn bản phần trăm
+Tải lên văn bản phần trăm
+Phải đợi bao nhiêu mili giây trước khi tuyên bố thời gian chờ?
+In thông tin bộ điều hợp mở rộng, chẳng hạn như thông tin gói.
+Hiển thị thông tin chung về mạng.
+Viết văn bản phần trăm tải lên của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã tải lên, {1} cho kích thước mục tiêu, {2} cho phần trăm.
+Viết văn bản phần trăm tải xuống của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã tải xuống, {1} cho kích thước mục tiêu, {2} cho phần trăm.
+Yêu cầu mật khẩu sau khi khóa
+Sau khi khóa màn hình, hãy hỏi mật khẩu
+Mức màu đỏ tối thiểu
+Mức màu xanh lá cây tối thiểu
+Mức màu xanh lam tối thiểu
+Mức màu tối thiểu
+Mức màu đỏ tối đa
+Mức màu xanh lục tối đa
+Mức màu xanh lam tối đa
+Mức màu tối đa
+Mức màu đỏ tối thiểu. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu xanh lá cây tối thiểu. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu xanh lam tối thiểu. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu tối thiểu. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255 đối với 255 màu hoặc 16 đối với 16 màu.
+Mức màu đỏ tối đa. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu xanh lá cây tối đa. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu xanh lam tối đa. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255.
+Mức màu tối đa. Giá trị được chấp nhận tối thiểu là 0 và giá trị được chấp nhận tối đa là 255 đối với 255 màu hoặc 16 đối với 16 màu.
+Màu nền
+Ký tự dòng
+Một ký tự để tạo thành một dòng. Đảm bảo chỉ nhập một ký tự.
+Ký tự góc trên bên trái cho thanh giờ
+Ký tự góc trên bên trái cho thanh phút
+Ký tự góc trên bên trái cho thanh giây
+Ký tự góc trên bên phải cho thanh giờ
+Ký tự góc trên bên phải cho thanh phút
+Ký tự góc trên bên phải cho thanh giây
+Ký tự góc dưới bên trái cho thanh giờ
+Ký tự góc dưới bên trái cho thanh phút
+Ký tự góc dưới bên trái cho thanh giây
+Ký tự góc dưới bên phải cho thanh giờ
+Ký tự góc dưới bên phải cho thanh phút
+Ký tự góc dưới bên phải cho thanh giây
+Ký tự khung trên cho thanh giờ
+Ký tự khung trên cho thanh phút
+Ký tự khung trên cho thanh giây
+Ký tự khung dưới cho thanh giờ
+Ký tự khung dưới cho thanh phút
+Ký tự khung dưới cho thanh giây
+Ký tự khung bên trái cho thanh giờ
+Ký tự khung bên trái cho thanh phút
+Ký tự khung bên trái cho thanh giây
+Ký tự khung bên phải cho thanh giờ
+Ký tự khung bên phải cho thanh phút
+Ký tự khung bên phải cho thanh giây
+Văn bản thông tin trong nhiều giờ
+Văn bản thông tin trong vài phút
+Văn bản thông tin trong giây
+Mức độ màu đỏ tối thiểu trong nhiều giờ
+Mức màu xanh lá cây tối thiểu trong nhiều giờ
+Mức màu xanh lam tối thiểu trong nhiều giờ
+Mức màu tối thiểu trong nhiều giờ
+Mức độ màu đỏ tối đa trong nhiều giờ
+Mức độ màu xanh lá cây tối đa trong nhiều giờ
+Mức màu xanh lam tối đa trong nhiều giờ
+Mức độ màu tối đa trong nhiều giờ
+Mức màu đỏ tối thiểu trong vài phút
+Mức màu xanh lá cây tối thiểu trong vài phút
+Mức màu xanh lam tối thiểu trong vài phút
+Mức màu tối thiểu trong vài phút
+Mức màu đỏ tối đa trong vài phút
+Mức màu xanh lục tối đa trong vài phút
+Mức màu xanh lam tối đa trong vài phút
+Mức màu tối đa trong vài phút
+Mức màu đỏ tối thiểu cho giây
+Mức màu xanh lá cây tối thiểu trong giây
+Mức màu xanh lam tối thiểu cho giây
+Mức màu tối thiểu cho giây
+Mức màu đỏ tối đa trong vài giây
+Mức màu xanh lục tối đa trong giây
+Mức màu xanh lam tối đa trong vài giây
+Mức màu tối đa trong giây
+Một ký tự giống với góc trên bên trái. Đảm bảo chỉ nhập một ký tự.
+Một ký tự giống với góc dưới bên trái. Đảm bảo chỉ nhập một ký tự.
+Một ký tự giống với khung trên. Đảm bảo chỉ nhập một ký tự.
+Một ký tự giống với khung bên dưới. Đảm bảo chỉ nhập một ký tự.
+Một ký tự giống với khung bên trái. Đảm bảo chỉ nhập một ký tự.
+Một ký tự giống với khung bên phải. Đảm bảo chỉ nhập một ký tự.
+Viết văn bản thông tin của bạn cho giờ hiện tại hiển thị như thế nào. {0} cho giờ hiện tại trong 24 giờ.
+Viết văn bản thông tin của bạn cho phút hiện tại hiển thị như thế nào. {0} cho phút hiện tại trong số 60 phút.
+Viết văn bản thông tin của bạn cho giây hiện tại hiển thị như thế nào. {0} cho giây hiện tại trong tổng số 60 giây.
+Văn bản màu
+Ký tự góc trên bên trái cho thanh đoạn đường nối
+Ký tự góc trên bên phải cho thanh đoạn đường nối
+Ký tự góc dưới bên trái cho thanh đoạn đường nối
+Ký tự góc dưới bên phải cho thanh đoạn đường nối
+Ký tự khung trên cho thanh đoạn đường nối
+Ký tự khung dưới cho thanh đoạn đường nối
+Ký tự khung bên trái cho thanh đoạn đường nối
+Ký tự khung bên phải cho thanh đoạn đường nối
+Mức màu đỏ tối thiểu cho màu bắt đầu
+Mức màu xanh lá cây tối thiểu cho màu bắt đầu
+Mức màu xanh lam tối thiểu cho màu bắt đầu
+Mức màu tối thiểu cho màu bắt đầu
+Mức màu đỏ tối đa cho màu bắt đầu
+Mức màu xanh lục tối đa cho màu bắt đầu
+Mức màu xanh lam tối đa cho màu bắt đầu
+Mức màu tối đa cho màu bắt đầu
+Mức màu đỏ tối thiểu cho màu cuối
+Mức màu xanh lá cây tối thiểu cho màu cuối
+Mức màu xanh lam tối thiểu cho màu cuối cùng
+Mức màu tối thiểu cho màu cuối cùng
+Mức màu đỏ tối đa cho màu cuối
+Mức màu xanh lục tối đa cho màu cuối cùng
+Mức màu xanh lam tối đa cho màu cuối cùng
+Mức màu tối đa cho màu cuối cùng
+Số tối thiểu của bộ giải
+Số lượng tối đa của bộ giải
+Đầu vào hiển thị bộ giải
+Ký tự góc trên bên trái cho đường viền thông báo
+Ký tự góc trên bên phải cho đường viền thông báo
+Ký tự góc dưới bên trái cho đường viền thông báo
+Ký tự góc dưới bên phải cho đường viền thông báo
+Ký tự khung trên cho đường viền thông báo
+Ký tự khung dưới cho đường viền thông báo
+Ký tự khung bên trái cho đường viền thông báo
+Ký tự khung bên phải cho đường viền thông báo
+Kiểu thông tin trang thủ công
+Có hiển thị những gì được viết trong lời nhắc đầu vào hay không.
+Số lượng tối thiểu để chọn là gì?
+Số lượng tối đa để chọn là bao nhiêu?
+Viết thông tin trang chủ của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho tiêu đề thủ công, {1} để sửa đổi.
+Thuộc tính {0} không được tìm thấy trên bất kỳ mô-đun nào.
+Phần này liệt kê các cài đặt bảo vệ màn hình chung. Đối với các cài đặt bảo vệ màn hình riêng lẻ, hãy thoát Cài đặt và mở Cài đặt trình bảo vệ màn hình.
+Bắt đầu bánh xe màu ở chế độ màu thực
+Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng {0} cho phiên bản hạt nhân.
+Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
+Kích hoạt hỗ trợ 255 màu.
+Kích hoạt hỗ trợ màu sắc trung thực.
+Đã xóa từ trong dòng {0}.
+Chuỗi được thay thế trong dòng {0}.
+Đã xóa số dòng {0}.
+Chặn các tin nhắn trái phép
+Ẩn thông báo khó chịu nếu chức năng danh sách cố gắng mở một thư mục trái phép
+Thông tin máy chủ FTP
+Địa chỉ máy chủ:
+Cổng máy chủ:
+Loại máy chủ:
+Loại hệ thống máy chủ:
+Chế độ mã hóa máy chủ:
+Kiểu kết nối dữ liệu máy chủ:
+Hệ thống máy chủ:
+Loại dữ liệu tải xuống máy chủ:
+Loại dữ liệu tải lên máy chủ:
+Bạn phải kết nối với máy chủ trước khi thực hiện thao tác này.
+Nhập tệp từ xa sẽ được băm.
+Nhập một thư mục từ xa để được băm.
+Nhập một thư mục từ xa.
+Băm đệ quy cho FTP
+Có nên băm một cách đệ quy một thư mục hay không. Xin lưu ý rằng không phải tất cả các máy chủ FTP đều hỗ trợ điều đó.
+Tốc độ đồng hồ của bộ xử lý:
+Hỗ trợ bộ xử lý SSE2:
+Tổng số bộ xử lý:
+Kích thước đĩa:
+Tổng bộ nhớ:
+Card đồ họa:
+Mô hình đĩa:
+Số lượng e-mail tối đa trong một trang
+Văn hóa của ngôn ngữ hiện tại
+Nếu bạn chắc chắn rằng bạn đã mở đúng phần, hãy kiểm tra thông báo này:
+Cài đặt Khác ...
+Cài đặt Màu sắc ...
+Thực thi một lệnh máy chủ FTP
+Nhập địa chỉ máy chủ POP3 và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
+Kiểu lời nhắc POP3 cho thư
+Gửi khoảng thời gian ping POP3
+Viết cách bạn muốn lời nhắc máy chủ POP3 của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
+Bao nhiêu mili giây để gửi ping POP3?
+Sử dụng POP3
+Có sử dụng POP3 hay không. Tắt tính năng này sẽ sử dụng SMTP.
+Mã hóa một chuỗi bằng CRC32
+Mở ứng dụng thư
+trong tổng số thư được chuyển ...
+Cài đặt cho trình bảo vệ màn hình này có sẵn tại đây.
+Kiểm tra chức năng của bảng
+Chỉnh sửa dòng được chỉ định
+Thêm các dòng mới vào cuối tệp
+Nhập văn bản bạn muốn thêm vào cuối tệp. Khi bạn hoàn tất, hãy viết "EOF" trên dòng riêng của nó.
+Tên máy chủ
+tên tài khoản
+Loại dữ liệu
+Mã hóa
+Mã hóa
+Các giao thức
+Hiển thị tiến trình chuyển thư
+Tiến trình chuyển thư
+Tiến trình chuyển thư (đơn)
+Nếu được bật, trình bao thư sẽ hiển thị bao nhiêu byte được truyền khi tải thư xuống.
+Viết như thế nào bạn muốn kiểu tiến trình chuyển thư của bạn. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã chuyển và {1} cho tổng kích thước.
+Viết như thế nào bạn muốn kiểu tiến trình chuyển thư của bạn. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho kích thước đã chuyển.
+Múi giờ:
+Hôm nay là {0}
+Giờ hiện tại là {0}
+Màu phân cách bảng
+Màu tiêu đề bảng
+Màu giá trị bảng
+Câu trả lời có thể
+Tệp mod không được chỉ định.
+Đang cố gắng cài đặt một mod đã được cài đặt sẵn. Đang cập nhật mod ...
+Cài đặt không thành công cho
+Tệp mod được cung cấp không tương thích.
+Gỡ cài đặt không thành công cho
+Mở một URL
+In số dòng trên nội dung tệp in
+Làm cho lệnh \ "cat \" in số dòng của tệp.
+Phiên bản chuyển ngữ
+Phiên bản đã dịch
+Loại bỏ tất cả các thông báo
+Đang tải xuống ...
+Đang tải lên ...
+Hiển thị thông báo về tiến trình tải xuống
+Hiển thị thông báo về tiến trình tải lên
+Hiển thị thông báo hiển thị tiến trình tải xuống.
+Hiển thị thông báo hiển thị tiến trình tải lên.
+Kiểm tra xem chuỗi có thể dịch được tồn tại trong tài nguyên KS hay không
+Chuỗi được tìm thấy trong tài nguyên bản địa hóa.
+Không tìm thấy chuỗi trong tài nguyên bản địa hóa.
+Khởi động hạt nhân một cách lặng lẽ
+Chèn lệnh để khởi động trong lần đăng nhập tiếp theo
+Khởi động hạt nhân ở chế độ an toàn, tắt tất cả các mod
+Giống như chế độ an toàn, nhưng cũng vô hiệu hóa nhiều người dùng và một số tùy chỉnh
+Không có đủ đối số.
+Màu góc trên bên trái cho thanh đoạn đường nối
+Màu góc trên bên phải cho thanh đoạn đường nối
+Màu góc dưới bên trái cho thanh đoạn đường nối
+Màu góc dưới bên phải cho thanh đoạn đường nối
+Màu khung trên cho thanh đoạn đường nối
+Màu khung dưới cho thanh đoạn nối
+Màu khung bên trái cho thanh đoạn đường nối
+Màu khung bên phải cho thanh đoạn nối
+Sử dụng màu đường viền cho thanh đoạn nối
+Sử dụng màu viền cho thanh đường nối. Nếu bị vô hiệu hóa, sẽ tạo ra một thanh màu xám.
+Bắt đầu HTTP shell
+Thoát khỏi HTTP shell và quay trở lại kernel
+Đặt trang web HTTP. Phải là một URI hợp lệ.
+Nhận phản hồi từ máy chủ HTTP bằng cách sử dụng yêu cầu được chỉ định
+Xóa nội dung khỏi máy chủ HTTP
+Đã xảy ra lỗi trong HTTP shell:
+Thông báo HTTP: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết danh sách các lệnh có sẵn được chỉ định trên HTTP shell.
+Lấy chuỗi từ máy chủ HTTP bằng cách sử dụng yêu cầu đã chỉ định
+Bắt {0} ...
+Định dạng URI của trang web không hợp lệ.
+Đặt trang web thành
+Màu sắc không yêu cầu khởi động lại, nhưng hầu hết các cài đặt yêu cầu khởi động lại.
+Không có trợ giúp cho đối số "{0}".
+Nhấn A trên bình luận thù địch để xin lỗi. Nhấn T vào bình luận tình yêu để cảm ơn. Nhấn Q để thoát trò chơi.
+Bạn đã xin lỗi vì một nhận xét thù địch! Thông minh!
+Xin lỗi vì tình yêu bình luận. Không đủ tốt.
+Bạn vừa cảm ơn người ghét vì nhận xét đáng ghét!
+Độ khó mặc định cho SpeedPress
+Thời gian chờ khi nhấn phím cho SpeedPress
+Chọn khó khăn ưa thích của bạn.
+Phải đợi bao nhiêu mili giây để nhấn phím trước khi hết thời gian? (Trong độ khó tùy chỉnh)
+Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác bằng cách sử dụng biểu thức chính quy
+Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng bằng cách sử dụng biểu thức chính quy
+Truy vấn một từ trong một dòng cụ thể hoặc tất cả các dòng bằng cách sử dụng biểu thức chính quy
+Tìm một cài đặt
+Viết những gì bạn muốn tìm kiếm.
+Không có gì được tìm thấy. Đảm bảo rằng bạn đã viết cài đặt chính xác.
+Đóng gói một tệp cục bộ vào kho lưu trữ
+Không thể đóng gói gì cả.
+Mô tả câu trả lời
+Tổ cổng
+Để biết thêm thông tin về các điều khoản và điều kiện sử dụng phần mềm này, hãy truy cập
+Loại đầu ra lựa chọn mặc định
+Kiểm tra tất cả các cài đặt KS để xem các biến có được viết đúng không
+Các mục cấu hình này có các biến hoặc bảng liệt kê không hợp lệ và cần được sửa:
+Tệp {0} không được tìm thấy
+Tạo một mảng biến với các giá trị được cung cấp
+Viết số của cài đặt sẽ chuyển đến. Bất kỳ ký tự nào khác có nghĩa là quay trở lại.
+Kiểm tra tất cả các số dòng văn bản bản địa hóa để xem chúng có bằng nhau không
+Dòng không khớp trong
+Vui lòng nhập số người dùng.
+Bao gồm những người dùng ẩn danh
+Bao gồm những người dùng bị khuyết tật
+Bao gồm những người dùng ẩn danh trong danh sách
+Bao gồm những người dùng bị khuyết tật trong danh sách
+Sắp xếp danh sách
+Sắp xếp danh sách hệ thống tập tin một cách chuyên nghiệp.
+Cung cấp sự lựa chọn
+Lệnh Shell không được thực hiện !!!
+Hiển thị tiêu đề RSS mới nhất khi đăng nhập
+URL dòng tiêu đề RSS
+Mỗi lần đăng nhập, nó sẽ hiển thị dòng tiêu đề RSS mới nhất từ ​​URL dòng tiêu đề đã chọn.
+URL dòng tiêu đề RSS sẽ được sử dụng khi hiển thị dòng tiêu đề mới nhất. Đây thường là nguồn cấp dữ liệu yêu thích của bạn.
+Tin mới nhất:
+Không nhận được tin tức mới nhất.
+Màu tùy chọn đã chọn
+Hiển thị dấu vết ngăn xếp trên lỗi hạt nhân
+Nếu có bất kỳ lỗi hạt nhân nào, hãy chọn có in dấu vết ngăn xếp vào bảng điều khiển hay không.
+Mod có thể được tải, nhưng những cảnh báo này có thể ảnh hưởng đến cách hoạt động của mod:
+Trình bảo vệ màn hình có thể được tải, nhưng những cảnh báo này có thể ảnh hưởng đến cách trình bảo vệ màn hình hoạt động:
+Lưu cài đặt thành
+Tải cài đặt từ
+Bạn muốn lưu cài đặt hạt nhân hiện tại ở đâu?
+Không thể lưu cài đặt hạt nhân trên tệp hiện có.
+Bạn muốn tải cài đặt hạt nhân hiện tại từ đâu?
+Kiểm tra xem các chuỗi có thể dịch được có tồn tại trong tài nguyên KS hay không
+Kết hợp hai tệp văn bản trở lên vào tệp đầu ra.
+Không thể kết hợp các tệp.
+Hết thời gian chờ tìm nạp nguồn cấp dữ liệu RSS
+Phải đợi bao nhiêu mili giây trước khi hết thời gian chờ tìm nạp nguồn cấp dữ liệu RSS?
+Điền vào các hộp
+Chúng ta vẽ toàn bộ cái hộp hay chỉ vẽ đường viền?
+Giai đoạn trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi vẽ giai đoạn tiếp theo?
+Khoảng thời gian quay đoạn đường nối tiếp theo
+Phải đợi bao nhiêu mili giây trước khi làm mục nát một đầu của đoạn đường nối tiếp theo?
+Kiểm tra hạn ngạch gỡ lỗi
+Chúng ta có kiểm tra xem hệ thống gỡ lỗi có cần kiểm tra hạn ngạch trước khi ghi vào trình gỡ lỗi không?
+Nó thực sự mất bao nhiêu mili giây để ngủ?
+Không thêm được sự kiện.
+Không thể xóa sự kiện.
+Không cung cấp đủ đối số để thêm một sự kiện.
+Không cung cấp đủ đối số để xóa một sự kiện.
+Không cung cấp đủ đối số cho thao tác sự kiện.
+Không thể thêm hoặc xóa lời nhắc.
+Không cung cấp đủ đối số để thêm hoặc xóa lời nhắc.
+Không cung cấp đủ đối số cho thao tác nhắc nhở.
+Lời nhắc không có tiêu đề
+Sự kiện không có tiêu đề
+Bây giờ là một ngày sự kiện!
+Đừng bỏ lỡ điều này!
+Hành động không hợp lệ.
+Một chiếc đồng hồ bấm giờ đơn giản
+Bắt đầu hoặc dừng lại
+Lap
+Cài lại
+Một bộ đếm thời gian đơn giản
+Bắt đầu (lại) đếm ngược
+Đặt khoảng thời gian
+Thời gian chờ được chỉ định không phải là số.
+Chỉ định thời gian chờ tính bằng mili giây
+Lưu tất cả các sự kiện và / hoặc lời nhắc một cách triệt tiêu
+Nếu được bật, hãy xóa tất cả các sự kiện và / hoặc lời nhắc trước khi lưu tất cả chúng bằng lệnh lịch.
+Xác minh các lần thử lại để truyền FTP
+Kết nối FTP hết thời gian chờ
+Kết nối dữ liệu FTP hết thời gian chờ
+Các phiên bản FTP IP
+Bao nhiêu lần để xác minh tải lên và tải xuống và thử lại nếu xác minh không thành công trước khi tải xuống toàn bộ?
+Phải đợi bao nhiêu mili giây trước khi hết thời gian chờ kết nối FTP?
+Phải đợi bao nhiêu mili giây trước khi hết thời gian chờ kết nối dữ liệu FTP?
+Chọn phiên bản Giao thức Internet mà máy chủ FTP hỗ trợ và máy khách FTP sử dụng.
+Đang cố gắng khởi động RPC khi nó đã được khởi động.
+Ký tự góc trên bên trái cho bánh xe màu RGB
+Ký tự góc trên bên phải cho bánh xe màu RGB
+Ký tự góc dưới bên trái cho bánh xe màu RGB
+Ký tự góc dưới bên phải cho bánh xe màu RGB
+Ký tự khung trên cho bánh xe màu RGB
+Ký tự khung dưới cho bánh xe màu RGB
+Ký tự khung bên trái cho bánh xe màu RGB
+Ký tự khung bên phải cho bánh xe màu RGB
+Tìm một tệp trong thư mục được chỉ định hoặc trong thư mục hiện tại
+Chuyển đổi phần cuối của dòng thành định dạng cho nền tảng hiện tại hoặc thành định dạng tùy chỉnh được chỉ định
+Tổng kích thước trong thư mục:
+Hiển thị tổng kích thước trong danh sách
+Nếu được bật, sẽ hiển thị tổng kích thước thư mục trong danh sách, tùy thuộc vào cách tính kích thước thư mục theo cấu hình.
+Bạn đã cập nhật!
+Định dạng JSON mặc định cho trình bao JSON
+Chọn định dạng JSON mặc định (làm đẹp hoặc thu nhỏ) cho trình bao JSON để lưu.
+Đã tải xuống bản cập nhật thành công!
+Tự động tải xuống các bản cập nhật
+Nếu có bất kỳ bản cập nhật nào, hạt nhân sẽ tự động tải xuống.
+Bán kính nổ pháo hoa
+Bán kính nổ của pháo hoa khi bắt lửa là bao nhiêu khối (tối đa 10)?
+Lệnh này có các công tắc bên dưới thay đổi cách nó hoạt động:
+In các số dòng tiếp theo dòng đang được in
+Ngăn in số dòng
+Luôn sử dụng phiên bản đã chuyển ngữ
+Luôn sử dụng phiên bản đã dịch
+Buộc chuyển đổi ngôn ngữ
+Cho biết rằng câu trả lời có thể có nhiều hơn một ký tự
+Cho biết rằng câu trả lời chỉ có một ký tự
+In câu hỏi và câu trả lời trong một dòng
+In câu hỏi và câu trả lời trong hai dòng
+In câu hỏi và câu trả lời theo cách hiện đại
+In câu hỏi và câu trả lời trong bảng
+Hiển thị chi tiết tệp trong danh sách
+Loại bỏ các thông báo "quyền bị từ chối" gây phiền nhiễu
+Hiển thị tất cả các múi giờ
+Bắt đầu trò chơi với độ khó dễ dàng
+Bắt đầu trò chơi ở độ khó trung bình
+Bắt đầu trò chơi một cách khó khăn
+Bắt đầu trò chơi trong độ khó rất khó
+Bắt đầu trò chơi với độ khó tùy chỉnh. Xin lưu ý rằng thời gian chờ tùy chỉnh tính bằng mili giây nên được viết dưới dạng đối số.
+Hiển thị thông tin hệ thống
+Hiển thị thông tin phần cứng
+Hiển thị thông tin người dùng
+Hiển thị thông điệp trong ngày
+Hiển thị thông báo của ngày sau khi đăng nhập
+Hiển thị tất cả thông tin
+Tạo một thư mục chứa nội dung của tệp ZIP
+Hiển thị tất cả các thành phố có sẵn
+Nén nhanh
+Không nén
+Không tạo thư mục cơ sở trong kho lưu trữ
+Đơn vị tính bằng tích tắc
+Ngắt kết nối khỏi máy chủ một cách đáng xấu hổ
+Cho biết rằng đường dẫn mục tiêu là tuyệt đối
+Lưu tệp JSON, làm đẹp nó trong quá trình này
+Lưu tệp JSON, giảm thiểu nó trong quá trình này
+Nhận kiểu kết thúc dòng từ tệp văn bản
+Xóa tất cả các sự kiện đã kích hoạt
+Bật gỡ lỗi sự kiện
+Cho phép gỡ lỗi cho hệ thống sự kiện hạt nhân
+Phông chữ Figlet
+Viết một phông chữ figlet được hỗ trợ bởi thư viện Figgle. Tham khảo tài liệu thư viện để biết thêm thông tin
+Không cài đặt được ngôn ngữ tùy chỉnh {0}.
+Tệp siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không tồn tại.
+Thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết.
+Không gỡ cài đặt được ngôn ngữ tùy chỉnh {0}.
+Tệp siêu dữ liệu cần thiết để gỡ cài đặt ngôn ngữ tùy chỉnh không tồn tại.
+Thông tin siêu dữ liệu cần thiết để gỡ cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết.
+Độ dài của ngôn ngữ tiếng Anh không khớp với độ dài của mã thông báo ngôn ngữ được cung cấp.
+Ngôn ngữ đã tồn tại và không thể bị ghi đè.
+Không gỡ cài đặt được ngôn ngữ tùy chỉnh. Nó rất có thể không tồn tại.
+Không cài đặt được các ngôn ngữ tùy chỉnh.
+Không gỡ cài đặt được các ngôn ngữ tùy chỉnh.
+Không gỡ cài đặt được các ngôn ngữ tùy chỉnh. Xem ngoại lệ bên trong để biết thêm thông tin.
+Viết mật khẩu quản trị viên. Đảm bảo rằng bạn không sử dụng tài khoản này trừ khi bạn thực sự biết mình đang làm gì.
+Bạn phải viết mật khẩu quản trị viên.
+Thông tin giấy phép
+Quản lý ngôn ngữ của bạn
+Không tìm thấy ngôn ngữ hoặc tệp có ký tự không hợp lệ.
+Ngôn ngữ không được chỉ định.
+Quản lý ngôn ngữ bị tắt ở chế độ an toàn.
+Tên viết tắt của ngôn ngữ:
+Tên đầy đủ của ngôn ngữ:
+Ngôn ngữ có thể chuyển ngữ:
+Ngôn ngữ tùy chỉnh:
+Biểu ngữ chào mừng mới
+Màn hình giật gân thời trang
+Hiển thị biểu ngữ chào mừng mới do Figlet kết xuất
+Bật màn hình giật gân phong cách khi khởi động. Xin lưu ý rằng nó sẽ vô hiệu hóa lời nhắc đối số và kiểm tra khởi động trước trình bao.
+Splash tên
+Splash tên từ các Splash có sẵn được triển khai trong kernel.
+Đã tạo MOTD mặc định.
+Đã tạo MAL mặc định.
+Tài khoản hệ thống được khởi tạo
+Người dùng đã khởi tạo
+Quyền đã được tải
+Chào mừng!
+Khởi động trình gỡ lỗi từ xa ...
+Lỗi kết nối trình gỡ lỗi từ xa
+Thông báo về lỗi kết nối gỡ lỗi từ xa
+Nếu được bật, sẽ sử dụng hệ thống thông báo để thông báo cho máy chủ lưu trữ về lỗi kết nối gỡ lỗi từ xa. Nếu không, sẽ sử dụng bảng điều khiển viết mặc định.
+Phông chữ Figlet cho bộ đếm thời gian
+Bật Figlet cho bộ đếm thời gian
+Nếu được bật, sẽ sử dụng figlet cho bộ đếm thời gian. Xin lưu ý rằng nó cần một màn hình điều khiển lớn để hiển thị thời gian chính xác khi bật Figlet.
+Lỗi khi phân tích cú pháp các đối số dòng lệnh trước khi khởi động: {0}
+Đặt lại hạt nhân về cài đặt gốc
+Bỏ qua phát hiện kích thước bảng điều khiển
+Có vẻ như bạn đang bỏ qua phần phát hiện kích thước bảng điều khiển. Mọi thứ có thể không hoạt động bình thường trên màn hình nhỏ.
+Để có trải nghiệm tốt hơn, hãy thay đổi kích thước cửa sổ bảng điều khiển của bạn khi vẫn ở trên màn hình này. Bấm phím bất kỳ để tiếp tục...
+Bảng điều khiển của bạn quá nhỏ để chạy bình thường:
+Phông chữ tượng nhỏ biểu ngữ
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với sự hỗ trợ của Figlet
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với định dạng và hỗ trợ Figlet
+Xóa tin nhắn vĩnh viễn
+Xóa vĩnh viễn tất cả tin nhắn khỏi người nhận
+Hoàn tác xóa một tin nhắn
+Hoàn tác xóa tất cả tin nhắn khỏi người nhận
+Hoàn tác xóa không được triển khai cho POP3.
+Hiển thị các lệnh đếm trên trợ giúp
+Hiển thị các lệnh shell đếm trên trợ giúp
+Hiển thị số lệnh mod khi được trợ giúp
+Hiển thị số bí danh khi được trợ giúp
+Hiển thị số lệnh trong danh sách lệnh, được điều khiển bởi ba công tắc hiển thị số đếm cho các loại lệnh khác nhau.
+Thực hiện các lệnh khi các biểu thức UESH được thỏa mãn
+Điều kiện không được tìm thấy trong biểu thức.
+Điều kiện {0} yêu cầu {1} đối số. Có {2}.
+Điều kiện cần được đặt ở giữa.
+Điều kiện cần được đặt ngay từ đầu.
+Lỗi phân tích cú pháp biểu thức do lỗi cú pháp.
+Không đáp ứng được điều kiện. Thông tin thêm tại đây:
+Ký tự mặt nạ mật khẩu
+Một ký tự che mật khẩu. Để trống để bảo mật hơn.
+Thoát khỏi shell nếu chạy trên subshell
+Không thể giết mẹ vỏ!
+Không thể đăng xuất khỏi vỏ con.
+Tệp không được chỉ định. Đang thoát khỏi trình bao ...
+Cài đặt cho màn hình giật gân này có sẵn tại đây.
+Màu thanh tiến trình
+Mở cài đặt bảo vệ màn hình
+Mở cài đặt giật gân
+Liệt kê các biến UESH có sẵn
+Tiến trình vị trí văn bản
+Chọn vị trí văn bản tiến trình ưa thích của bạn.
+Bạn chỉ có thể viết các con số.
+Nhấn "q" để thoát.
+Đang tải xuống tên ...
+Do sự cố kỹ thuật, chúng tôi không thể liệt kê các thuộc tính bộ điều hợp trên hệ thống Unix.
+Bật chế độ gỡ lỗi
+Lời nhắc cho các đối số
+Bật chế độ đen trắng
+Làm cho vũ trường có màu đen và trắng. Sẽ thực sự làm tổn thương mắt của bạn nếu nó quá nhanh, vì vậy không nên sử dụng nếu bạn đang gặp phải tình trạng thu giữ hình ảnh nhanh.
+Có vẻ như bạn đang chạy một phiên bản không được hỗ trợ. Bạn không nên sử dụng phiên bản này.
+Tải màu hiện tại
+Màu tùy chọn thay thế
+Người dùng tính cho các bình luận yêu thích hoặc ghét bỏ
+Có bao nhiêu người dùng trong phòng bình luận yêu hoặc ghét?
+Liệt kê các ngôn ngữ có sẵn
+Ngon ngu co san:
+Đối số dòng lệnh:
+Các đối số dòng lệnh trước khi khởi động:
+Mở tài liệu API mod cho cấu trúc của mã nguồn ở dạng mới nhất

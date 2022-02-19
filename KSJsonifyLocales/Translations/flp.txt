@@ -983,3 +983,675 @@ Pindutin ang anumang key upang basahin ang manu-manong pahina ...
 Ang manu-manong pahina na ito ay kailangang gumana para sa:
 Hindi nahanap ang manu-manong pahina {0}.
 Manwal ng mod
+Magagamit na mga argumento ng kernel:
+Pindutin ang "q" kung tapos ka na.
+Ang maramihang mga argumento ng kernel ay maaaring paghiwalayin ng mga kuwit na walang mga puwang, halimbawa:
+Maaaring paghiwalayin ang maraming injected na command gamit ang mga colon na may mga puwang, halimbawa:
+Ang hiniling na argumento {0} ay hindi nahanap.
+Hindi mababawi na error sa argumento:
+Nag-e-encrypt ng string gamit ang SHA512
+Nag-e-encrypt ng string gamit ang SHA384
+Nag-e-encrypt ng string gamit ang SHA256
+Nag-e-encrypt ng string gamit ang SHA1
+Nag-e-encrypt ng string gamit ang MD5
+kung saan magiging builtinsaver
+Ang mod na bahagi ay wala.
+Hindi pinapayagan ang paghinto ng mga mod sa safe mode.
+Nasimulan na ang mod!
+Hindi pa nagsisimula ang mod!
+Paggamit ng command:
+Pangalan ng file ng bahagi:
+Part file path:
+Error kapag sinusubukang simulan ang screensaver:
+Di-wastong uri ng path.
+Di-wastong uri ng kernel path.
+Nabigo ang nakaraang boot
+Hindi pa nagbubukas ng file stream ang JSON editor.
+Ang property sa loob ng JSON file ay hindi nahanap.
+Inalis ang ari-arian.
+Nagdaragdag ng bagong property sa dulo ng JSON file
+Nag-aalis ng property mula sa JSON file
+Lumabas sa shell ng JSON
+Lumabas sa shell ng JSON nang hindi nai-save ang mga pagbabago
+Sine-save ang JSON file
+Binubuksan ang shell ng JSON
+Ini-print ang JSON file
+Susunod na pagitan ng rampa
+Ina-activate ang 255 color support para sa Ramp.
+Ina-activate ang totoong kulay na suporta para sa Ramp.
+Ilang millisecond ang maghihintay bago punan ang susunod na ramp?
+Kulay ng pamagat ng notification
+Kulay ng paglalarawan ng notification
+Kulay ng pag-unlad ng notification
+Kulay ng pagkabigo ng notification
+Kulay ng tanong
+Kulay ng tagumpay
+Kulay ng dolyar ng gumagamit
+Kulay ng tip
+Kulay ng text ng separator
+Kulay ng separator
+Kulay ng pamagat ng listahan
+Kulay ng babala sa pag-unlad
+Kulay ng oras ng entablado
+Kulay ng pag-unlad
+Kulay ng opsyon sa likod
+Gumuhit ng hangganan ng notification
+Sinasaklaw ang notification gamit ang hangganan.
+Makipag-ugnayan sa vendor ng mod para i-upgrade ang mod sa katugmang bersyon.
+Mababang priority na kulay ng hangganan
+Katamtamang priority na kulay ng hangganan
+Mataas na priyoridad na kulay ng hangganan
+Nagpapadala ng abiso sa pag-unlad upang subukan ang tatanggap
+Sinusubukan ang color wheel
+Ipinapakita ang lokal na oras ng kernel
+Ipinapakita ang lokal na petsa ng kernel
+Ipinapakita ang lokal na petsa at oras ng kernel
+Ipinapakita ang oras ng kernel ng UTC
+Ipinapakita ang petsa ng kernel ng UTC
+Ipinapakita ang petsa at oras ng UTC kernel
+landas ng MOTD
+landas ng MAL
+Aling file ang MOTD text file? Sumulat ng ganap na landas sa text file.
+Aling file ang MAL text file? Sumulat ng ganap na landas sa text file.
+Mga naka-blacklist na mod
+Isulat ang mga filename ng mga mod na hindi tatakbo sa startup. Kapag tapos ka na, isulat ang "q". Sumulat ng minus sign sa tabi ng path upang alisin ang isang umiiral na mod.
+Naka-blacklist ang mod {0}.
+Nire-reload ang lahat ng mods
+Nagdaragdag ng mod sa blacklist
+Nag-aalis ng mod mula sa blacklist
+Oras at petsa sa UTC: {0}
+Ang tinukoy na JSON shell command ay hindi nahanap.
+Ipakita ang impormasyon ng app habang nag-boot
+I-parse ang mga argumento ng command-line
+Ipakita ang mga oras ng pagtatapos ng entablado
+Simulan ang mga pagbabago sa kernel sa boot
+Ipakita ang kasalukuyang oras bago mag-login
+Ipaalam para sa anumang pagkakamali sa panahon ng boot
+Nagpapakita ng maikling impormasyon tungkol sa application sa boot.
+Pina-parse ang mga argumento ng command-line sa boot.
+Ipinapakita kung gaano katagal ang kernel bago matapos ang isang yugto.
+Awtomatikong simulan ang mga pagbabago sa kernel sa boot.
+Ipinapakita ang kasalukuyang oras, time zone, at petsa bago mag-log in.
+Kung mayroong isang maliit na pagkakamali sa panahon ng kernel boot, aabisuhan ang gumagamit tungkol dito.
+Estilo ng prompt ng username
+Estilo ng prompt ng password
+Ipakita ang MAL sa pag-log-in
+Isulat kung paano mo gustong maging ang iyong prompt sa pag-login. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Isulat kung paano mo gustong maging prompt ang iyong password. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Ipinapakita ang Mensahe ng Araw pagkatapos ipakita ang screen ng pag-login.
+Subukan ang Shell Prompt Style
+JSON Shell Prompt Style
+Probe injected commands
+Sinusuri ang mga injected command sa simula ng kernel shell.
+Ipakita ang mga detalye ng file sa listahan
+Ipinapakita ang maikling mga detalye ng file habang naglilista ng mga file
+Ipakita ang mga detalye ng file sa listahan ng FTP
+Estilo ng prompt ng username para sa FTP
+Istilo ng prompt ng password para sa FTP
+Gamitin ang unang FTP profile
+Magdagdag ng mga bagong koneksyon sa FTP speed dial
+Subukang patunayan ang mga secure na FTP certificate
+Ipakita ang FTP MOTD sa koneksyon
+Palaging tanggapin ang mga di-wastong FTP certificate
+Ipinapakita ang mga detalye ng FTP file habang naglilista ng mga malayuang direktoryo.
+Ginagamit ang unang FTP profile para kumonekta sa FTP.
+Kung pinagana, magdagdag ng bagong koneksyon sa FTP speed dial.
+Sinusubukang patunayan ang mga sertipiko ng FTP. Ang pag-off nito ay hindi inirerekomenda.
+Ipinapakita ang FTP na mensahe ng araw sa pag-login.
+Palaging tanggapin ang mga di-wastong FTP certificate. Ang pag-on nito ay hindi inirerekomenda dahil maaari itong magdulot ng mga panganib sa seguridad.
+Estilo ng prompt ng username para sa mail
+Estilo ng pag-prompt ng password para sa mail
+IMAP prompt style para sa mail
+SMTP prompt style para sa mail
+Awtomatikong makita ang mail server
+Paganahin ang pag-debug ng mail
+Abisuhan para sa mga bagong mensaheng mail
+Estilo ng prompt ng password ng GPG para sa mail
+Magpadala ng IMAP ping interval
+Magpadala ng SMTP ping interval
+Format ng teksto ng mail
+Isulat kung paano mo gustong maging prompt ang iyong IMAP server. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Isulat kung paano mo gustong maging prompt ang iyong SMTP server. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Awtomatikong makita ang mail server batay sa ibinigay na address.
+Pinapagana ang pag-debug ng mail server.
+Inaabisuhan ka para sa anumang mga bagong mensaheng mail.
+Isulat kung paano mo gustong maging prompt ang iyong password sa GPG. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Ilang millisecond ang ipapadala ang IMAP ping?
+Ilang millisecond ang ipapadala ang SMTP ping?
+Kinokontrol kung paano ipapakita ang text ng mail.
+Plain text
+Dumaloy na text
+HTML na teksto
+Pinagyamang teksto
+Naka-compress na rich text
+Rich text
+Awtomatikong simulan ang remote debug sa startup
+Remote debug na format ng mensahe
+Kung gusto mong magsimula ang malayuang pag-debug sa boot, paganahin ito.
+Tinutukoy ang malayuang debug na format ng mensahe. {0} para sa pangalan, {1} para sa mensahe.
+Estilo ng prompt ng RSS feed URL
+Awtomatikong i-refresh ang RSS feed
+Awtomatikong i-refresh ang pagitan ng RSS feed
+Isulat kung paano mo gustong maging prompt ang iyong RSS feed server. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Ilang millisecond ang ire-refresh ang RSS feed?
+Ipakita ang mga detalye ng file sa listahan ng SFTP
+Estilo ng prompt ng username para sa SFTP
+Magdagdag ng mga bagong koneksyon sa SFTP speed dial
+Ipinapakita ang mga detalye ng SFTP file habang naglilista ng mga malayuang direktoryo.
+Kung pinagana, magdaragdag ng bagong koneksyon sa speed dial ng SFTP.
+Timeout ng ping
+Magpakita ng malawak na impormasyon ng adapter
+Ipakita ang pangkalahatang impormasyon sa network
+I-download ang porsyento ng teksto
+Mag-upload ng porsyento ng teksto
+Ilang millisecond ang maghihintay bago magdeklara ng timeout?
+Nagpi-print ng malawak na impormasyon ng adapter, tulad ng packet information.
+Ipinapakita ang pangkalahatang impormasyon tungkol sa network.
+Isulat kung paano mo gustong maging text ang porsyento ng iyong pag-upload. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder. {0} para sa na-upload na laki, {1} para sa target na laki, {2} para sa porsyento.
+Isulat kung paano mo gustong maging ang iyong porsyento ng pag-download ng teksto. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder. {0} para sa na-download na laki, {1} para sa target na laki, {2} para sa porsyento.
+Humingi ng password pagkatapos i-lock
+Pagkatapos i-lock ang screen, humingi ng password
+Pinakamababang antas ng pulang kulay
+Pinakamababang antas ng berdeng kulay
+Pinakamababang antas ng kulay asul
+Minimum na antas ng kulay
+Pinakamataas na antas ng pulang kulay
+Pinakamataas na antas ng berdeng kulay
+Pinakamataas na antas ng kulay asul
+Pinakamataas na antas ng kulay
+Pinakamababang antas ng pulang kulay. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Pinakamababang antas ng berdeng kulay. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Pinakamababang antas ng kulay asul. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Minimum na antas ng kulay. Ang pinakamababang tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255 para sa 255 mga kulay o 16 para sa 16 na mga kulay.
+Pinakamataas na antas ng pulang kulay. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Pinakamataas na antas ng berdeng kulay. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Pinakamataas na antas ng kulay asul. Ang minimum na tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255.
+Pinakamataas na antas ng kulay. Ang pinakamababang tinatanggap na halaga ay 0 at ang pinakamataas na tinatanggap na halaga ay 255 para sa 255 mga kulay o 16 para sa 16 na mga kulay.
+Kulay ng harapan
+Linya ng character
+Isang karakter upang bumuo ng isang linya. Tiyaking mag-input lamang ng isang character.
+Kaliwang sulok sa itaas na character para sa mga oras na bar
+Kaliwang sulok sa itaas na character para sa bar ng minuto
+Kaliwang sulok sa itaas na character para sa bar ng mga segundo
+Sa itaas na kanang sulok ng character para sa mga oras na bar
+Sa itaas na kanang sulok na character para sa bar ng minuto
+Sa itaas na kanang sulok na character para sa bar ng mga segundo
+Karakter sa ibabang kaliwang sulok para sa bar ng mga oras
+Karakter sa ibabang kaliwang sulok para sa bar ng minuto
+Karakter sa ibabang kaliwang sulok para sa bar ng mga segundo
+Karakter sa ibabang kanang sulok para sa mga oras na bar
+Karakter sa ibabang kanang sulok para sa bar ng minuto
+Karakter sa ibabang kanang sulok para sa bar ng mga segundo
+Upper frame na character para sa mga oras na bar
+Upper frame na character para sa minutong bar
+Upper frame na character para sa bar ng mga segundo
+Lower frame character para sa mga oras na bar
+Ibaba ang character ng frame para sa bar ng minuto
+Ibaba ang character ng frame para sa bar ng mga segundo
+Kaliwang frame character para sa mga oras na bar
+Kaliwang character ng frame para sa bar ng minuto
+Kaliwang frame character para sa bar ng mga segundo
+Tamang frame character para sa mga oras na bar
+Tamang frame na character para sa minutong bar
+Kanang frame character para sa bar ng mga segundo
+Teksto ng impormasyon para sa mga oras
+Teksto ng impormasyon para sa ilang minuto
+Teksto ng impormasyon para sa mga segundo
+Pinakamababang antas ng pulang kulay para sa mga oras
+Pinakamababang antas ng berdeng kulay para sa mga oras
+Minimum na asul na antas ng kulay para sa mga oras
+Minimum na antas ng kulay para sa mga oras
+Pinakamataas na antas ng pulang kulay para sa mga oras
+Pinakamataas na antas ng berdeng kulay para sa mga oras
+Pinakamataas na antas ng asul na kulay para sa mga oras
+Pinakamataas na antas ng kulay para sa mga oras
+Pinakamababang antas ng pulang kulay para sa ilang minuto
+Pinakamababang antas ng berdeng kulay para sa ilang minuto
+Minimum na asul na antas ng kulay para sa ilang minuto
+Pinakamababang antas ng kulay para sa ilang minuto
+Pinakamataas na antas ng pulang kulay sa loob ng ilang minuto
+Pinakamataas na antas ng berdeng kulay sa loob ng ilang minuto
+Pinakamataas na antas ng kulay asul sa loob ng ilang minuto
+Pinakamataas na antas ng kulay para sa ilang minuto
+Pinakamababang antas ng pulang kulay para sa mga segundo
+Pinakamababang antas ng berdeng kulay para sa mga segundo
+Minimum na asul na antas ng kulay para sa mga segundo
+Pinakamababang antas ng kulay para sa mga segundo
+Pinakamataas na antas ng pulang kulay para sa mga segundo
+Pinakamataas na antas ng berdeng kulay para sa mga segundo
+Pinakamataas na antas ng asul na kulay para sa mga segundo
+Pinakamataas na antas ng kulay para sa mga segundo
+Isang character na kahawig sa itaas na kaliwang sulok. Tiyaking mag-input lamang ng isang character.
+Isang character na kahawig sa ibabang kaliwang sulok. Tiyaking mag-input lamang ng isang character.
+Isang character na kahawig ng itaas na frame. Tiyaking mag-input lamang ng isang character.
+Isang character na kahawig ng lower frame. Tiyaking mag-input lamang ng isang character.
+Isang character na kahawig ng kaliwang frame. Tiyaking mag-input lamang ng isang character.
+Isang character na kahawig ng tamang frame. Tiyaking mag-input lamang ng isang character.
+Isulat kung paano ipinapakita ang iyong teksto ng impormasyon para sa kasalukuyang oras. {0} para sa kasalukuyang oras sa labas ng 24 na oras.
+Isulat kung paano ipinapakita ang iyong teksto ng impormasyon para sa kasalukuyang minuto. {0} para sa kasalukuyang minuto sa 60 minuto.
+Isulat kung paano ipinapakita ang iyong teksto ng impormasyon para sa kasalukuyang pangalawang. {0} para sa kasalukuyang segundo sa 60 segundo.
+Kulay ng teksto
+Kaliwang sulok sa itaas na character para sa ramp bar
+Sa itaas na kanang sulok na character para sa ramp bar
+Karakter sa ibabang kaliwang sulok para sa ramp bar
+Karakter sa ibabang kanang sulok para sa ramp bar
+Upper frame na character para sa ramp bar
+Lower frame character para sa ramp bar
+Kaliwang frame na character para sa ramp bar
+Tamang frame na character para sa ramp bar
+Pinakamababang antas ng pulang kulay para sa panimulang kulay
+Pinakamababang antas ng berdeng kulay para sa panimulang kulay
+Minimum na asul na antas ng kulay para sa panimulang kulay
+Pinakamababang antas ng kulay para sa panimulang kulay
+Pinakamataas na antas ng pulang kulay para sa panimulang kulay
+Pinakamataas na antas ng berdeng kulay para sa panimulang kulay
+Pinakamataas na antas ng kulay asul para sa panimulang kulay
+Pinakamataas na antas ng kulay para sa panimulang kulay
+Pinakamababang antas ng pulang kulay para sa kulay ng pagtatapos
+Pinakamababang antas ng berdeng kulay para sa kulay ng pagtatapos
+Pinakamababang antas ng kulay asul para sa kulay ng pagtatapos
+Pinakamababang antas ng kulay para sa kulay ng pagtatapos
+Pinakamataas na antas ng pulang kulay para sa kulay ng pagtatapos
+Pinakamataas na antas ng berdeng kulay para sa kulay ng pagtatapos
+Pinakamataas na antas ng kulay asul para sa kulay ng pagtatapos
+Pinakamataas na antas ng kulay para sa kulay ng pagtatapos
+Pinakamababang numero ng Solver
+Pinakamataas na numero ng Solver
+Solver ipakita ang input
+Kaliwang sulok sa itaas na character para sa hangganan ng notification
+Sa itaas na kanang sulok na character para sa hangganan ng notification
+Karakter sa ibabang kaliwang sulok para sa hangganan ng notification
+Karakter sa ibabang kanang sulok para sa hangganan ng notification
+Upper frame na character para sa hangganan ng notification
+Lower frame character para sa hangganan ng notification
+Kaliwang frame na character para sa hangganan ng notification
+Tamang frame na character para sa hangganan ng notification
+Manu-manong istilo ng impormasyon ng pahina
+Kung ipapakita kung ano ang nakasulat sa input prompt.
+Ano ang pinakamababang numero na pipiliin?
+Ano ang maximum na bilang na pipiliin?
+Isulat kung paano mo gustong maging ang impormasyon ng iyong manpage. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder. {0} para sa manu-manong pamagat, {1} para sa rebisyon.
+Ang ari-arian {0} ay hindi matatagpuan sa alinman sa mga module.
+Inililista ng seksyong ito ang mga pangkalahatang setting ng screensaver. Para sa mga indibidwal na setting ng screensaver, lumabas sa Mga Setting at buksan ang Mga Setting ng Screensaver.
+Simulan ang color wheel sa true color mode
+Kung tinukoy, magpapakita ito ng customized na startup banner na may suporta sa placeholder. Maaari mong gamitin ang {0} para sa bersyon ng kernel.
+Aling variant ng kasalukuyang wika ang ginagamit para baguhin ang mga pangalan ng buwan, kalendaryo, atbp.?
+I-activate ang 255 color support.
+I-activate ang totoong kulay na suporta.
+Tinanggal ang salita sa linyang {0}.
+Pinalitan ang string sa linyang {0}.
+Inalis ang numero ng linya {0}.
+Pigilan ang mga hindi awtorisadong mensahe
+Itinatago ang nakakainis na mensahe kung sinusubukan ng listing function na magbukas ng hindi awtorisadong folder
+Impormasyon sa FTP server
+Address ng server:
+Port ng server:
+Uri ng server:
+Uri ng system ng server:
+Mode ng pag-encrypt ng server:
+Uri ng koneksyon ng data ng server:
+Sistema ng server:
+Uri ng data ng pag-download ng server:
+Uri ng data ng pag-upload ng server:
+Dapat kang kumonekta sa isang server bago isagawa ang operasyong ito.
+Maglagay ng malayuang file na iha-hash.
+Maglagay ng malayuang direktoryo na iha-hash.
+Magpasok ng malayong direktoryo.
+Recursive hashing para sa FTP
+Kung recursively hash ang isang direktoryo. Pakitandaan na hindi lahat ng FTP server ay sinusuportahan iyon.
+Bilis ng orasan ng processor:
+Suporta ng processor SSE2:
+Kabuuang bilang ng mga processor:
+Laki ng disk:
+Kabuuang memorya:
+Graphics card:
+Modelo ng disk:
+Pinakamataas na bilang ng mga e-mail sa isang pahina
+Kultura ng kasalukuyang wika
+Kung sigurado kang nabuksan mo ang tamang seksyon, tingnan ang mensaheng ito:
+Misc Setting...
+Mga Setting ng Kulay...
+Nagsasagawa ng utos ng FTP server
+Ilagay ang POP3 server address at port (<address> o <address>:[port]):
+POP3 prompt style para sa mail
+Magpadala ng POP3 ping interval
+Isulat kung paano mo gustong maging prompt ang iyong POP3 server. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder.
+Ilang millisecond ang ipapadala ang POP3 ping?
+Gamitin ang POP3
+Kung gagamitin ang POP3. Ang hindi pagpapagana nito ay gagamit ng SMTP.
+Nag-e-encrypt ng string gamit ang CRC32
+Binubuksan ang mail client
+ng mail na inilipat...
+Available dito ang mga setting para sa screensaver na ito.
+Sinusuri ang functionality ng talahanayan
+Ine-edit ang tinukoy na linya
+Nagdaragdag ng mga bagong linya sa dulo ng file
+Ilagay ang text na gusto mong idagdag sa dulo ng file. Kapag tapos ka na, isulat ang "EOF" sa sarili nitong linya.
+Pangalan ng host
+Username
+Uri ng datos
+Pag-encode
+Pag-encrypt
+Mga Protocol
+Ipakita ang pag-usad ng paglilipat ng mail
+Pag-unlad ng paglilipat ng mail
+Pag-usad ng mail transfer (solo)
+Kung pinagana, ipapakita ng mail shell kung gaano karaming mga byte ang naipadala kapag nagda-download ng mail.
+Isulat kung paano mo gustong maging istilo ng pag-unlad ng iyong paglilipat ng mail. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder. {0} para sa inilipat na laki at {1} para sa kabuuang laki.
+Isulat kung paano mo gustong maging istilo ng pag-unlad ng iyong paglilipat ng mail. Iwanang blangko upang gamitin ang default na istilo. Na-parse ang mga placeholder. {0} para sa inilipat na laki.
+Time Zone:
+Ngayon ay {0}
+Ang kasalukuyang oras ay {0}
+Kulay ng separator ng talahanayan
+Kulay ng header ng talahanayan
+Kulay ng halaga ng talahanayan
+Mga posibleng sagot
+Hindi tinukoy ang mod file.
+Sinusubukang mag-install ng naka-install na mod. Ina-update ang mod...
+Nabigo ang pag-install para sa
+Ang mod file na ibinigay ay hindi tugma.
+Nabigo ang pag-uninstall para sa
+Nagbubukas ng URL
+Mag-print ng mga numero ng linya sa pag-print ng mga nilalaman ng file
+Ginagawang print ng command na \"cat\" ang mga numero ng linya ng file.
+Transliterated na bersyon
+Isinalin na bersyon
+Dini-dismiss ang lahat ng notification
+Dina-download...
+Ina-upload...
+Ipakita ang notification para sa pag-usad ng pag-download
+Ipakita ang abiso para sa pag-usad ng pag-upload
+Ipinapakita ang notification na nagpapakita ng pag-usad ng pag-download.
+Ipinapakita ang notification na nagpapakita ng pag-usad ng pag-upload.
+Sinusuri upang makita kung ang maisasalin na string ay umiiral sa mga mapagkukunan ng KS
+String na matatagpuan sa mga mapagkukunan ng lokalisasyon.
+Hindi nakita ang string sa mga mapagkukunan ng lokalisasyon.
+Sinimulan ang kernel nang tahimik
+Nag-inject ng command para magsimula sa susunod na login
+Sinisimulan ang kernel sa safe mode, hindi pinapagana ang lahat ng mods
+Tulad ng safe mode, ngunit hindi rin pinapagana ang multi-user at ilang pag-customize
+Walang sapat na mga argumento.
+Kulay sa itaas na kaliwang sulok para sa ramp bar
+Kulay sa itaas na kanang sulok para sa ramp bar
+Kulay sa ibabang kaliwang sulok para sa ramp bar
+Kulay sa kanang sulok sa ibaba para sa ramp bar
+Kulay ng itaas na frame para sa ramp bar
+Mas mababang kulay ng frame para sa ramp bar
+Kulay ng kaliwang frame para sa ramp bar
+Kanang kulay ng frame para sa ramp bar
+Gumamit ng mga kulay ng hangganan para sa ramp bar
+Gamitin ang mga kulay ng hangganan para sa ramp bar. Kung hindi pinagana, bubuo ng kulay abong bar.
+Sinisimulan ang HTTP shell
+Lumabas sa HTTP shell at bumalik sa kernel
+Itinatakda ang HTTP site. Dapat ay isang wastong URI.
+Nakukuha ang tugon mula sa HTTP server gamit ang tinukoy na kahilingan
+Tinatanggal ang nilalaman mula sa HTTP server
+Nagkaroon ng error sa HTTP shell:
+Mensahe ng HTTP: Hindi nahanap ang hiniling na command na {0}. Tingnan ang 'tulong' para sa isang listahan ng mga available na command na tinukoy sa HTTP shell.
+Nakukuha ang string mula sa HTTP server gamit ang tinukoy na kahilingan
+Kinukuha ang {0}...
+Di-wasto ang format ng URI ng site.
+Pagtatakda ng site sa
+Ang mga kulay ay hindi nangangailangan ng pag-restart, ngunit karamihan sa mga setting ay nangangailangan ng pag-restart.
+Walang tulong para sa argumentong "{0}".
+Pindutin ang A sa mapoot na komento para humingi ng paumanhin. Pindutin ang T sa love comments para magpasalamat. Pindutin ang Q upang ihinto ang laro.
+Humingi ka ng paumanhin sa isang mapoot na komento! Magaling!
+Humingi ng paumanhin sa love comment. Hindi sapat.
+Nagpasalamat ka lang sa hater sa hate comment!
+Default na kahirapan para sa SpeedPress
+Timeout ng keypress para sa SpeedPress
+Piliin ang iyong ginustong kahirapan.
+Ilang millisecond ang maghihintay para sa pagpindot ng key bago mag-timeout? (Sa custom na kahirapan)
+Pinapalitan ang isang salita o parirala ng isa pa gamit ang mga regular na expression
+Pinapalitan ang isang salita o parirala ng isa pa sa isang linya gamit ang mga regular na expression
+Nagtatanong ng salita sa isang tinukoy na linya o lahat ng linya gamit ang mga regular na expression
+Maghanap ng Setting
+Isulat kung ano ang gusto mong hanapin.
+Walang mahanap. Tiyaking naisulat mo nang tama ang setting.
+Nag-pack ng isang lokal na file sa archive
+Hindi makapag-impake ng wala.
+Sagutin ang paglalarawan
+Host Port
+Para sa higit pang impormasyon tungkol sa mga tuntunin at kundisyon ng paggamit ng software na ito, bisitahin ang
+Default na pagpipiliang uri ng output
+Sinusuri ang lahat ng mga setting ng KS upang makita kung ang mga variable ay nakasulat nang tama
+Ang mga configuration entry na ito ay may mga di-wastong variable o enumerasyon at kailangang ayusin:
+Hindi nahanap ang file na {0}.
+Lumilikha ng isang variable na array na may mga ibinigay na halaga
+Isulat ang numero ng setting na pupuntahan. Anumang ibang karakter ay nangangahulugang bumalik.
+Sinusuri ang lahat ng mga numero ng linya ng teksto ng lokalisasyon upang makita kung pantay ang lahat
+Hindi tugma ang linya
+Mangyaring magpasok ng numero ng gumagamit.
+Isama ang mga hindi kilalang user
+Isama ang mga user na may kapansanan
+Kasama ang mga hindi kilalang user sa listahan
+Kasama ang mga hindi pinaganang user sa listahan
+Pagbukud-bukurin ang listahan
+Pinag-uuri-uriin ang listahan ng filesystem nang propesyonal.
+Nagbibigay ng pagpipilian sa pagpili
+Hindi ipinatupad ang mga utos ng Shell!!!
+Ipakita ang pinakabagong RSS headline sa pag-login
+URL ng headline ng RSS
+Bawat login, ipapakita nito ang pinakabagong RSS headline mula sa napiling URL ng headline.
+RSS headline URL na gagamitin kapag ipinapakita ang pinakabagong headline. Kadalasan ito ang paborito mong feed.
+Pinakabagong balita:
+Nabigong makuha ang pinakabagong balita.
+Napiling kulay ng opsyon
+Ipakita ang stack trace sa kernel error
+Kung mayroong anumang error sa kernel, piliin kung ipi-print o hindi ang stack trace sa console.
+Maaaring i-load ang mod, ngunit maaaring makaapekto ang mga babalang ito sa paraan ng paggana ng mod:
+Maaaring i-load ang screensaver, ngunit maaaring makaapekto ang mga babalang ito sa paraan ng paggana ng screensaver:
+I-save ang Mga Setting Bilang
+I-load ang Mga Setting Mula sa
+Saan mo gustong i-save ang kasalukuyang mga setting ng kernel?
+Hindi ma-save ang mga setting ng kernel sa itaas ng kasalukuyang file.
+Saan mo gustong i-load ang kasalukuyang mga setting ng kernel?
+Sinusuri upang makita kung ang mga maisasalin na string ay umiiral sa mga mapagkukunan ng KS
+Pinagsasama ang dalawang text file o higit pa sa output file.
+Nabigong pagsamahin ang mga file.
+timeout ng pagkuha ng RSS feed
+Ilang millisecond ang maghihintay bago mag-timeout ang RSS feed?
+Punan ang mga kahon
+Iginuhit ba natin ang kahon sa kabuuan o ang hangganan lamang ang iginuhit natin?
+Stage delay sa millisecond
+Ilang millisecond ang maghihintay bago iguhit ang susunod na yugto?
+Susunod na ramp rot interval
+Ilang milliseconds ang maghihintay bago mabulok ang isang dulo ng susunod na ramp?
+Suriin ang quota sa pag-debug
+Sinusuri ba natin kung kailangang suriin ng debug system ang quota bago sumulat sa debugger?
+Ilang milliseconds talaga ang kailangan bago matulog?
+Nabigong magdagdag ng kaganapan.
+Nabigong alisin ang isang kaganapan.
+Hindi sapat na argumento ang ibinigay para magdagdag ng kaganapan.
+Hindi sapat na argumento ang ibinigay upang alisin ang isang kaganapan.
+Hindi sapat na argumento ang ibinigay para sa pagmamanipula ng kaganapan.
+Nabigong magdagdag o mag-alis ng paalala.
+Hindi sapat na argumento ang ibinigay para magdagdag o mag-alis ng paalala.
+Hindi sapat na mga argumento ang ibinigay para sa pagmamanipula ng paalala.
+Walang pamagat na paalala
+Walang pamagat na kaganapan
+Ngayon ay isang araw ng kaganapan!
+Huwag palampasin ito!
+Di-wastong pagkilos.
+Isang simpleng stopwatch
+Magsimula o huminto
+Lap
+I-reset
+Isang simpleng timer
+Simulan ang (muling) pagbilang
+Itakda ang pagitan
+Ang nakasaad na timeout ay hindi numero.
+Tukuyin ang timeout sa millisecond
+I-save ang lahat ng mga kaganapan at/o mga paalala nang mapanirang
+Kung pinagana, tatanggalin ang lahat ng mga kaganapan at/o mga paalala bago i-save ang lahat ng mga ito gamit ang utos ng kalendaryo.
+I-verify muli ang mga pagtatangka para sa FTP transmission
+Timeout ng koneksyon sa FTP
+Timeout ng koneksyon ng data ng FTP
+Mga bersyon ng FTP IP
+Ilang beses i-verify ang pag-upload at pag-download at subukang muli kung nabigo ang pag-verify bago mabigo ang pag-download sa kabuuan?
+Ilang millisecond ang hihintayin bago mag-timeout ang FTP connection?
+Ilang millisecond ang hihintayin bago ang timeout ng koneksyon ng data ng FTP?
+Piliin ang bersyon ng Internet Protocol na sinusuportahan ng FTP server at ginagamit ng FTP client.
+Sinusubukang simulan ang RPC habang nagsisimula na ito.
+Kaliwang sulok sa itaas na character para sa RGB color wheel
+Sa itaas na kanang sulok na character para sa RGB color wheel
+Karakter sa ibabang kaliwang sulok para sa RGB color wheel
+Ibabang kanang sulok na character para sa RGB color wheel
+Upper frame na character para sa RGB color wheel
+Lower frame character para sa RGB color wheel
+Kaliwang frame character para sa RGB color wheel
+Tamang frame character para sa RGB color wheel
+Nakahanap ng file sa tinukoy na direktoryo o sa kasalukuyang direktoryo
+Kino-convert ang mga dulo ng linya sa format para sa kasalukuyang platform o sa tinukoy na custom na format
+Kabuuang laki sa folder:
+Ipakita ang kabuuang sukat sa listahan
+Kung naka-enable, ipinapakita ang kabuuang laki ng folder sa listahan, depende sa kung paano kalkulahin ang mga laki ng folder ayon sa configuration.
+Ikaw ay napapanahon!
+Default na JSON formatting para sa JSON shell
+Pinipili ang default na pag-format ng JSON (pinaganda o pinaliit) para i-save ng JSON shell.
+Matagumpay na na-download ang update!
+Awtomatikong mag-download ng mga update
+Kung mayroong anumang pag-update, awtomatikong ida-download ito ng kernel.
+Radius ng pagsabog ng firework
+Ilang bloke (hanggang 10) ang explosion radius para sa firework kapag nag-apoy?
+Ang command na ito ay may mga switch sa ibaba na nagbabago kung paano ito gumagana:
+Ini-print ang mga numero ng linya na sumusunod sa linyang ini-print
+Pinipigilan ang pag-print ng mga numero ng linya
+Palaging gamitin ang transliterated na bersyon
+Palaging gamitin ang isinalin na bersyon
+Puwersang lumipat ng wika
+Ipahiwatig na ang sagot ay maaaring tumagal ng higit sa isang karakter
+Ipahiwatig na ang sagot ay maaaring tumagal lamang ng isang karakter
+I-print ang tanong at ang mga sagot sa isang linya
+I-print ang tanong at ang mga sagot sa dalawang linya
+I-print ang tanong at ang mga sagot sa makabagong paraan
+I-print ang tanong at ang mga sagot sa isang talahanayan
+Ipinapakita ang mga detalye ng file sa listahan
+Pinipigilan ang mga nakakainis na "permission denied" na mga mensahe
+Ipinapakita ang lahat ng time zone
+Nagsisimula ang laro sa madaling kahirapan
+Magsisimula ang laro sa katamtamang kahirapan
+Nagsisimula ang laro sa mahirap na kahirapan
+Nagsisimula ang laro sa napakahirap na kahirapan
+Nagsisimula ang laro sa custom na kahirapan. Pakitandaan na ang custom na timeout sa millisecond ay dapat isulat bilang argumento.
+Ipinapakita ang impormasyon ng system
+Ipinapakita ang impormasyon ng hardware
+Ipinapakita ang impormasyon ng gumagamit
+Ipinapakita ang mensahe ng araw
+Ipinapakita ang mensahe ng araw pagkatapos ng pag-login
+Ipinapakita ang lahat ng impormasyon
+Lumilikha ng isang direktoryo na naglalaman ng mga nilalaman ng ZIP file
+Ipinapakita ang lahat ng magagamit na mga lungsod
+Mabilis na compression
+Walang compression
+Huwag lumikha ng base na direktoryo sa archive
+Unit sa mga ticks
+Nadidiskonekta sa server nang disgracefully
+Isinasaad na ang target na landas ay ganap
+Sine-save ang JSON file, pinapaganda ito sa proseso
+Sine-save ang JSON file, pinapaliit ito sa proseso
+Nakukuha ang istilo ng pagtatapos ng linya mula sa text file
+I-clear ang lahat ng pinaputok na kaganapan
+Paganahin ang pag-debug ng kaganapan
+Pinapagana ang pag-debug para sa kernel event system
+Font ng figlet
+Sumulat ng figlet font na sinusuportahan ng Figgle library. Kumonsulta sa dokumentasyon ng aklatan para sa higit pang impormasyon
+Nabigong i-install ang custom na wika {0}.
+Ang metadata file na kailangan para i-install ang custom na wika ay hindi umiiral.
+Ang impormasyon ng metadata na kailangan para i-install ang custom na wika ay hindi nagbibigay ng mga kinakailangang localization na kailangan.
+Nabigong i-uninstall ang custom na wika {0}.
+Ang metadata file na kailangan para i-uninstall ang custom na wika ay hindi umiiral.
+Ang impormasyon ng metadata na kailangan para i-uninstall ang custom na wika ay hindi nagbibigay ng mga kinakailangang localization na kailangan.
+Ang haba ng wikang Ingles ay hindi tumutugma sa haba ng ibinigay na token ng wika.
+Umiiral na ang wika at hindi na ma-overwrite.
+Nabigong i-uninstall ang custom na wika. Malamang na wala ito.
+Nabigong mag-install ng mga custom na wika.
+Nabigong i-uninstall ang mga custom na wika.
+Nabigong i-uninstall ang mga custom na wika. Tingnan ang panloob na pagbubukod para sa higit pang impormasyon.
+Isulat ang password ng administrator. Tiyaking hindi mo ginagamit ang account na ito maliban kung talagang alam mo kung ano ang iyong ginagawa.
+Dapat mong isulat ang password ng administrator.
+Impormasyon sa lisensya
+Pamahalaan ang iyong mga wika
+Hindi nahanap ang wika o may mga hindi wastong character ang file.
+Hindi tinukoy ang wika.
+Ang pamamahala sa wika ay hindi pinagana sa safe mode.
+maikling pangalan ng wika:
+Buong pangalan ng wika:
+Naisasalin ang wika:
+Custom na wika:
+Bagong welcome banner
+Naka-istilong splash screen
+Ipinapakita ang bagong welcome banner na na-render ng Figlet
+Pinapagana ang naka-istilong splash screen sa startup. Pakitandaan na hindi nito papaganahin ang prompt ng argumento at test shell pre-boot.
+Splash pangalan
+Splash name mula sa mga available na splashes na ipinatupad sa kernel.
+Binuo ang default na MOTD.
+Binuo ng default na MAL.
+Nasimulan ang system account
+Nagsimula ang mga user
+Na-load ang mga pahintulot
+Maligayang pagdating!
+Sinisimulan ang remote debugger...
+Error sa koneksyon sa remote debugger
+I-notify sa error sa koneksyon sa malayuang pag-debug
+Kung naka-enable, gagamitin ang notification system para abisuhan ang host ng error sa koneksyon sa malayuang pag-debug. Kung hindi, gagamitin ang default na pagsusulat ng console.
+Figlet font para sa timer
+Paganahin ang Figlet para sa timer
+Kung pinagana, gagamit ng figlet para sa timer. Pakitandaan na kailangan nito ng malaking console screen upang mai-render nang maayos ang oras na pinagana ang Figlet.
+Error habang nag-parse ng mga pre-boot na command-line na argumento: {0}
+Nire-reset ang kernel sa mga factory setting
+Nilalampasan ang pagtukoy ng laki ng console
+Mukhang nilalagpasan mo ang pagtukoy ng laki ng console. Maaaring hindi gumana nang maayos ang mga bagay sa maliliit na screen.
+Para magkaroon ng mas magandang karanasan, i-resize ang iyong console window habang nasa screen na ito. Pindutin ang anumang key upang magpatuloy...
+Masyadong maliit ang iyong console para tumakbo nang maayos:
+Font ng banner figlet
+Nagpi-print ng string sa console gamit ang uri ng kulay at line print na may suporta sa Figlet
+Nagpi-print ng string sa console gamit ang uri ng kulay at line print na may format at suporta sa Figlet
+Permanenteng nag-aalis ng mensahe
+Permanenteng inaalis ang lahat ng mensahe mula sa tatanggap
+I-undo ang pag-alis ng mensahe
+I-undo ang pag-alis ng lahat ng mensahe mula sa tatanggap
+Hindi ipinapatupad ang pag-undo ng pagtanggal para sa POP3.
+Ipakita ang mga utos na umaasa sa tulong
+Ipakita ang mga shell command na umaasa sa tulong
+Ipakita ang mga mod command na umaasa sa tulong
+Ipakita ang mga alias na umaasa sa tulong
+Ipinapakita ang bilang ng mga command sa listahan ng command, na kinokontrol ng tatlong count show switch para sa iba't ibang uri ng mga command.
+Nagsasagawa ng mga utos kapag nasiyahan ang mga expression ng UESH
+Ang kundisyon ay hindi natagpuan sa expression.
+Ang kundisyon {0} ay nangangailangan ng {1} argumento. Nakakuha ng {2}.
+Ang kondisyon ay kailangang ilagay sa gitna.
+Ang kundisyon ay kailangang ilagay sa simula.
+Error sa pag-parse ng expression dahil sa syntax error.
+Nabigong matugunan ang kundisyon. Higit pang impormasyon dito:
+Karakter ng mask ng password
+Isang character na nagtatakip sa password. Iwanang blangko para sa higit pang seguridad.
+Lalabas sa shell kung tumatakbo sa subshell
+Hindi maaaring patayin ang ina shell!
+Hindi makapag-log out mula sa subshell.
+Hindi tinukoy ang file. Lumalabas sa shell...
+Available dito ang mga setting para sa splash screen na ito.
+Kulay ng progress bar
+Binubuksan ang mga setting ng screensaver
+Binubuksan ang mga setting ng splash
+Naglilista ng mga available na variable ng UESH
+Progress text lokasyon
+Piliin ang iyong gustong lokasyon ng text ng pag-unlad.
+Maaari mo lamang isulat ang mga numero.
+Pindutin ang "q" upang lumabas.
+Dina-download ang mga pangalan...
+Dahil sa mga teknikal na paghihirap, hindi namin magawang ilista ang mga katangian ng adaptor sa mga Unix system.
+Pinapagana ang debug mode
+Mga senyales para sa mga argumento
+Paganahin ang Black and White Mode
+Ginagawang black and white ang disco. Talagang sasakit ang iyong mga mata kung ito ay masyadong mabilis, kaya hindi inirerekomenda kung nakakaranas ka ng pag-agaw ng mga mabilis na larawan.
+Mukhang nagpapatakbo ka ng hindi sinusuportahang bersyon. Lubos na ipinapayong huwag gamitin ang bersyong ito.
+I-load ang Mga Kasalukuyang Kulay
+Kulay ng alternatibong opsyon
+Binibilang ng mga gumagamit ang mga komento ng pag-ibig o poot
+Ilang user ang malalagay sa love or hate comment room?
+Naglilista ng mga magagamit na wika
+Mga magagamit na wika:
+Mga argumento sa command-line:
+Mga argumento sa command-line na pre-boot:
+Binubuksan ang dokumentasyon ng mod API para sa istruktura ng source code sa pinakabagong anyo nito

@@ -983,3 +983,675 @@ Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...
 Oju -iwe Afowoyi nilo iṣẹ fun:
 Oju -iwe Afowoyi {0} ko ri.
 Afowoyi Mod
+Awọn ariyanjiyan kernel ti o wa:
+Tẹ "q" ti o ba ti ṣetan.
+Awọn ariyanjiyan ekuro pupọ le jẹ iyatọ pẹlu aami idẹsẹ laisi awọn aaye, fun apẹẹrẹ:
+Awọn aṣẹ itasi pupọ ni a le pinya pẹlu awọn ile-iṣọ pẹlu awọn alafo, fun apẹẹrẹ:
+A ko ri ariyanjiyan ti a beere {0}.
+Aṣiṣe ti ko ṣe atunṣe ni ariyanjiyan:
+Encrypts okun kan nipa lilo SHA512
+Encrypts okun kan nipa lilo SHA384
+Encrypts okun kan nipa lilo SHA256
+Encrypts a okun lilo SHA1
+Encrypts a okun lilo MD5
+ibi ti builtinsaver yoo jẹ
+Mod apakan jẹ ohunkohun.
+Idaduro awọn mods ko gba laaye lori ipo ailewu.
+Mod ti bẹrẹ tẹlẹ!
+Mod ko ti bẹrẹ sibẹsibẹ!
+Lilo aṣẹ:
+Orukọ faili apakan:
+Ọna faili apakan:
+Aṣiṣe nigba igbiyanju lati bẹrẹ ipamọ iboju:
+Iru ọna ti ko tọ.
+Iru ipa ọna ekuro ti ko tọ.
+Bata iṣaaju kuna
+Olootu JSON ko tii ṣi ṣiṣan faili kan sibẹsibẹ.
+Ohun-ini inu faili JSON ko rii.
+Ohun ini ti a yọ kuro.
+Ṣe afikun ohun-ini tuntun ni ipari faili JSON
+Yọ ohun-ini kuro lati faili JSON
+Jade kuro ni ikarahun JSON
+Jade kuro ni ikarahun JSON laisi fifipamọ awọn ayipada
+Fi faili JSON pamọ
+Ṣi ikarahun JSON
+Ṣe atẹjade faili JSON
+Next rampu aarin
+Ṣiṣẹ atilẹyin awọ 255 fun Ramp.
+Mu atilẹyin awọ otitọ ṣiṣẹ fun Ramp.
+Awọn milliseconds melo ni lati duro ṣaaju ki o kun ni rampu ti nbọ?
+Awọ akọle iwifunni
+Awọ apejuwe iwifunni
+Awọ ilọsiwaju iwifunni
+Awọ ikuna iwifunni
+Awọ ibeere
+Awọ aṣeyọri
+User dola awọ
+Tips awọ
+Separator ọrọ awọ
+Iyapa awọ
+Akojọ awọ akọle
+Development ikilo awọ
+Awọ ipele akoko
+Awọ ilọsiwaju
+Pada aṣayan awọ
+Fa aala iwifunni
+Ni wiwa iwifunni pẹlu aala.
+Kan si ataja ti moodi lati ṣe igbesoke mod si ẹya ibaramu.
+Low ayo aala awọ
+Alabọde ayo aala awọ
+Ga ni ayo aala awọ
+Fi ifitonileti ilọsiwaju ranṣẹ lati ṣe idanwo olugba
+Idanwo kẹkẹ awọ
+Ṣe afihan akoko ekuro agbegbe
+Ṣe afihan ọjọ ekuro agbegbe
+Ṣe afihan ọjọ ati akoko ekuro agbegbe
+Ṣe afihan akoko ekuro UTC
+Ṣe afihan ọjọ ekuro UTC
+Ṣe afihan ọjọ ekuro UTC ati akoko
+MOTD ọna
+ọna MAL
+Faili wo ni MOTD ọrọ faili? Kọ ọna pipe si faili ọrọ naa.
+Faili wo ni faili ọrọ MAL? Kọ ọna pipe si faili ọrọ naa.
+Blacklist Mods
+Kọ awọn orukọ faili ti awọn mods ti kii yoo ṣiṣẹ ni ibẹrẹ. Nigbati o ba pari, kọ "q". Kọ ami iyokuro kan lẹgbẹẹ ọna lati yọ mod ti o wa tẹlẹ kuro.
+Mod {0} jẹ akojọ dudu.
+Tun gbee si gbogbo awọn mods
+Ṣe afikun moodi si akojọ dudu
+Yọ a moodi lati blacklist
+Akoko ati ọjọ ni UTC: {0}
+Aṣẹ ikarahun JSON ti a pato ko rii.
+Ṣe afihan alaye app lakoko bata
+Sọ awọn ariyanjiyan laini aṣẹ
+Ṣe afihan awọn akoko ipari ipele
+Bẹrẹ awọn iyipada kernel lori bata
+Ṣe afihan akoko lọwọlọwọ ṣaaju wiwọle
+Fi leti fun eyikeyi aṣiṣe lakoko bata
+Ṣe afihan alaye kukuru nipa ohun elo lori bata.
+Pa awọn ariyanjiyan laini aṣẹ lori bata.
+Ṣe afihan iye akoko ti ekuro gba lati pari ipele kan.
+Ni adaṣe bẹrẹ awọn iyipada ekuro lori bata.
+Ṣe afihan akoko lọwọlọwọ, agbegbe aago, ati ọjọ ṣaaju ki o to wọle.
+Ti aṣiṣe kekere kan ba wa lakoko bata kernel, sọ fun olumulo nipa rẹ.
+Orukọ olumulo ara ara
+Ọrọigbaniwọle tọ ara
+Ṣe afihan MAL lori wiwọle
+Kọ bi o ṣe fẹ ki itọsi wiwọle rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro.
+Kọ bi o ṣe fẹ ki ọrọ igbaniwọle rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro.
+Fihan Ifiranṣẹ ti Ọjọ lẹhin iṣafihan iboju iwọle.
+Idanwo Shell Tọ Style
+JSON ikarahun Tọ ara
+Ṣewadii awọn aṣẹ itasi
+Ṣiṣayẹwo awọn aṣẹ itasi ni ibẹrẹ ikarahun ekuro.
+Ṣe afihan awọn alaye faili ni atokọ
+Ṣe afihan awọn alaye faili kukuru lakoko titojọ awọn faili
+Ṣe afihan awọn alaye faili ni atokọ FTP
+Orukọ olumulo ara fun FTP
+Ọrọ igbaniwọle tọ ara fun FTP
+Lo profaili FTP akọkọ
+Ṣafikun awọn isopọ tuntun si ipe kiakia FTP
+Gbiyanju lati fọwọsi awọn iwe-ẹri FTP to ni aabo
+Ṣe afihan FTP MOTD lori asopọ
+Nigbagbogbo gba awọn iwe-ẹri FTP ti ko tọ
+Ṣe afihan awọn alaye faili FTP lakoko ṣiṣe atokọ awọn ilana latọna jijin.
+Nlo profaili FTP akọkọ lati sopọ si FTP.
+Ti o ba ti ṣiṣẹ, ṣe afikun asopọ tuntun si ipe kiakia FTP.
+Gbiyanju lati fọwọsi awọn iwe-ẹri FTP. Pipa a ko ṣe iṣeduro.
+Ṣe afihan ifiranṣẹ FTP ti ọjọ lori wiwọle.
+Nigbagbogbo gba awọn iwe-ẹri FTP ti ko tọ. Titan-an ko ṣe iṣeduro nitori o le fa awọn eewu aabo.
+Orukọ olumulo ara fun mail
+Ọrọ igbaniwọle tọ ara fun meeli
+IMAP ara kiakia fun meeli
+SMTP ara kiakia fun meeli
+Ṣe iwari olupin meeli ni aladaaṣe
+Mu yokokoro meeli ṣiṣẹ
+Fi leti fun awọn ifiranṣẹ meeli titun
+GPG ọrọ igbaniwọle tọ ara fun meeli
+Firanṣẹ aarin IMAP Pingi
+Firanṣẹ aarin Pingi SMTP
+Ọna kika ọrọ meeli
+Kọ bi o ṣe fẹ ki itọsi olupin IMAP rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro.
+Kọ bi o ṣe fẹ ki olupin olupin SMTP rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro.
+Ṣe iwari olupin meeli laifọwọyi da lori adirẹsi ti a fun.
+Muu ṣiṣẹ yokokoro olupin meeli.
+Ọ leti fun awọn ifiranṣẹ imeeli titun eyikeyi.
+Kọ bi o ṣe fẹ ki ọrọ igbaniwọle GPG rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. Awọn ti o ni ibi ti ṣe itupalẹ.
+Awọn iṣẹju-aaya melo ni lati fi IMAP ping ranṣẹ?
+Awọn iṣẹju-aaya melo ni lati fi SMTP Pingi ranṣẹ?
+Ṣakoso bi ọrọ meeli yoo ṣe han.
+Ọrọ itele
+Ọrọ ti nṣàn
+HTML ọrọ
+Ọrọ ti o ni ilọsiwaju
+Fisinuirindigbindigbin ọrọ ọrọ
+Ọrọ ọlọrọ
+Ni adaṣe bẹrẹ yokokoro latọna jijin ni ibẹrẹ
+Ọna kika ifiranṣẹ aṣiṣe yokokoro
+Ti o ba fẹ yokokoro latọna jijin lati bẹrẹ lori bata, mu eyi ṣiṣẹ.
+Ni pato ọna kika ifiranṣẹ yokokoro latọna jijin. {0} fun orukọ, {1} fun ifiranṣẹ.
+Awọn kikọ sii RSS URL kiakia
+Sọ ifunni RSS ni adaṣe
+Isọdọtun kikọ sii RSS ni aifọwọyi
+Kọ bi o ṣe fẹ ki itọsi olupin kikọ sii RSS rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro.
+Awọn iṣẹju-aaya melo ni lati sọ kikọ RSS sọtun?
+Ṣe afihan awọn alaye faili ni atokọ SFTP
+Orukọ olumulo ara fun SFTP
+Ṣafikun awọn asopọ tuntun si ipe kiakia SFTP
+Ṣe afihan awọn alaye faili SFTP lakoko ṣiṣe atokọ awọn ilana latọna jijin.
+Ti o ba ti ṣiṣẹ, ṣe afikun asopọ tuntun si ipe kiakia SFTP.
+Ping akoko ipari
+Ṣe afihan alaye ti nmu badọgba lọpọlọpọ
+Ṣe afihan alaye nẹtiwọki gbogbogbo
+Ṣe igbasilẹ ọrọ ogorun
+Po si ogorun ọrọ
+Awọn iṣẹju-aaya melo ni lati duro ṣaaju ki o to kede akoko ipari?
+Ṣe atẹjade alaye ohun ti nmu badọgba lọpọlọpọ, gẹgẹbi alaye soso.
+Ṣe afihan alaye gbogbogbo nipa nẹtiwọọki.
+Kọ bi o ṣe fẹ ki ọrọ idawọle rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro. {0} fun iwọn ti a kojọpọ, {1} fun iwọn ibi-afẹde, {2} fun ipin ogorun.
+Kọ bi o ṣe fẹ ki ọrọ ipin ogorun igbasilẹ rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. A ṣe itupalẹ awọn oniduro. {0} fun iwọn gbigbasile, {1} fun iwọn ibi-afẹde, {2} fun ipin ogorun.
+Beere fun ọrọigbaniwọle lẹhin titiipa
+Lẹhin titii iboju, beere fun ọrọ igbaniwọle
+Iwọn awọ pupa to kere julọ
+Iwọn awọ alawọ ewe to kere julọ
+Iwọn awọ buluu to kere julọ
+Iwọn awọ ti o kere julọ
+O pọju ipele awọ pupa
+Iwọn awọ alawọ ewe ti o pọju
+Iwọn awọ bulu ti o pọju
+Iwọn awọ ti o pọju
+Iwọn awọ pupa to kere julọ. Iwọn itẹwọgba ti o kere ju jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ alawọ ewe to kere julọ. Iwọn itẹwọgba to kere julọ jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ buluu to kere julọ. Iwọn itẹwọgba to kere julọ jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ ti o kere julọ. Iwọn ti o kere julọ ti o gba jẹ 0 ati pe iye ti o pọju jẹ 255 fun awọn awọ 255 tabi 16 fun awọn awọ 16.
+O pọju ipele awọ pupa. Iwọn itẹwọgba to kere julọ jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ alawọ ewe ti o pọju. Iwọn itẹwọgba to kere julọ jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ bulu ti o pọju. Iwọn itẹwọgba to kere julọ jẹ 0 ati pe iye ti o pọ julọ jẹ 255.
+Iwọn awọ ti o pọju. Iwọn ti o kere julọ ti o gba jẹ 0 ati pe iye ti o pọju jẹ 255 fun awọn awọ 255 tabi 16 fun awọn awọ 16.
+Awọ iwaju
+Iwa laini
+A kikọ lati fẹlẹfẹlẹ kan ti ila. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+Oke apa osi ohun kikọ fun wakati bar
+Ohun kikọ igun apa osi oke fun igi iṣẹju
+Ohun kikọ igun apa osi oke fun igi aaya
+Oke ọtun igun ohun kikọ fun wakati bar
+Ohun kikọ igun apa ọtun oke fun igi iṣẹju
+Ohun kikọ igun apa ọtun oke fun igi iṣẹju-aaya
+Isalẹ osi igun ohun kikọ fun wakati bar
+Isalẹ osi igun kikọ fun awọn iṣẹju bar
+Isalẹ osi ohun kikọ fun aaya bar
+Isalẹ ọtun igun ohun kikọ fun wakati bar
+Ohun kikọ igun apa ọtun isalẹ fun igi iṣẹju
+Isalẹ ọtun igun ohun kikọ fun aaya bar
+Oke fireemu kikọ fun wakati bar
+Oke fireemu kikọ fun awọn iṣẹju bar
+Oke fireemu kikọ fun aaya bar
+Isalẹ fireemu kikọ fun wakati bar
+Isalẹ fireemu kikọ fun awọn iṣẹju bar
+Isalẹ fireemu kikọ fun aaya bar
+Osi fireemu kikọ fun wakati bar
+Osi fireemu kikọ fun awọn iṣẹju bar
+Osi fireemu kikọ fun aaya bar
+Ọtun fireemu kikọ fun wakati bar
+Ọtun fireemu kikọ fun awọn iṣẹju bar
+Ọtun fireemu kikọ fun aaya bar
+Ọrọ alaye fun awọn wakati
+Ọrọ alaye fun awọn iṣẹju
+Ọrọ alaye fun iṣẹju-aaya
+Iwọn awọ pupa to kere julọ fun awọn wakati
+Iwọn awọ alawọ ewe ti o kere julọ fun awọn wakati
+Iwọn awọ bulu to kere julọ fun awọn wakati
+Iwọn awọ ti o kere julọ fun awọn wakati
+Iwọn awọ pupa to pọju fun awọn wakati
+Iwọn awọ alawọ ewe ti o pọju fun awọn wakati
+Iwọn awọ bulu ti o pọju fun awọn wakati
+Iwọn awọ ti o pọju fun awọn wakati
+Iwọn awọ pupa to kere julọ fun awọn iṣẹju
+Iwọn awọ alawọ ewe ti o kere julọ fun awọn iṣẹju
+Iwọn awọ bulu ti o kere ju fun awọn iṣẹju
+Iwọn awọ ti o kere julọ fun awọn iṣẹju
+Iwọn awọ pupa to pọju fun awọn iṣẹju
+Iwọn awọ alawọ ewe ti o pọju fun awọn iṣẹju
+Iwọn awọ bulu ti o pọju fun awọn iṣẹju
+Iwọn awọ ti o pọju fun awọn iṣẹju
+Iwọn awọ pupa to kere julọ fun iṣẹju-aaya
+Iwọn awọ alawọ ewe ti o kere ju fun iṣẹju-aaya
+Iwọn awọ bulu ti o kere ju fun iṣẹju-aaya
+Iwọn awọ ti o kere julọ fun iṣẹju-aaya
+Iwọn awọ pupa to pọju fun iṣẹju-aaya
+Iwọn awọ alawọ ewe ti o pọju fun iṣẹju-aaya
+Iwọn awọ bulu ti o pọju fun iṣẹju-aaya
+Iwọn awọ ti o pọju fun iṣẹju-aaya
+Ohun kikọ ti o jọ igun apa osi oke. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+Ohun kikọ ti o jọ igun apa osi isalẹ. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+A kikọ ti o resembles oke fireemu. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+A kikọ ti o resembles isalẹ fireemu. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+A kikọ ti o resembles osi fireemu. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+A kikọ ti o resembles awọn ọtun fireemu. Rii daju lati tẹ ohun kikọ kan wọle nikan.
+Kọ bii ọrọ alaye rẹ fun wakati lọwọlọwọ ṣe fihan. {0} fun wakati lọwọlọwọ lati wakati 24.
+Kọ bi ọrọ alaye rẹ ṣe fihan fun iṣẹju to wa. {0} fun iseju lọwọlọwọ ninu 60 iṣẹju.
+Kọ bii ọrọ alaye rẹ fun awọn ifihan keji lọwọlọwọ. {0} fun iṣẹju-aaya lọwọlọwọ ninu 60 iṣẹju-aaya.
+Awọ ọrọ
+Ohun kikọ igun apa osi fun igi rampu
+Ohun kikọ igun apa ọtun oke fun igi rampu
+Ohun kikọ igun osi isalẹ fun igi rampu
+Ohun kikọ igun apa ọtun isalẹ fun igi rampu
+Oke fireemu kikọ fun rampu bar
+Isalẹ fireemu kikọ fun rampu bar
+Osi fireemu kikọ fun rampu bar
+Ọtun fireemu kikọ fun rampu bar
+Iwọn awọ pupa to kere julọ fun awọ ibẹrẹ
+Iwọn awọ alawọ ewe to kere julọ fun awọ ibẹrẹ
+Ipele awọ bulu to kere julọ fun awọ ibẹrẹ
+Iwọn awọ ti o kere julọ fun awọ ibẹrẹ
+Iwọn awọ pupa to pọju fun awọ ibẹrẹ
+Iwọn awọ alawọ ewe ti o pọju fun awọ ibẹrẹ
+Iwọn awọ bulu ti o pọju fun awọ ibẹrẹ
+Iwọn awọ ti o pọju fun awọ ibẹrẹ
+Iwọn awọ pupa to kere julọ fun awọ ipari
+Iwọn awọ alawọ ewe to kere julọ fun awọ ipari
+Ipele awọ bulu to kere julọ fun awọ ipari
+Iwọn awọ ti o kere julọ fun awọ ipari
+Iwọn awọ pupa to pọju fun awọ ipari
+Iwọn awọ alawọ ewe ti o pọju fun awọ ipari
+Iwọn awọ bulu ti o pọju fun awọ ipari
+Iwọn awọ ti o pọju fun awọ ipari
+Olupin nọmba to kere julọ
+Olupin o pọju nọmba
+Iṣafihan ifihan olutaja
+Ohun kikọ igun apa osi fun aala iwifunni
+Ohun kikọ igun apa ọtun oke fun aala iwifunni
+Ohun kikọ igun osi isalẹ fun aala iwifunni
+Ohun kikọ igun apa ọtun isalẹ fun aala iwifunni
+Oke fireemu kikọ fun aala iwifunni
+Isalẹ fireemu kikọ fun aala iwifunni
+Osi fireemu kikọ fun aala iwifunni
+Ohun kikọ fireemu ọtun fun aala iwifunni
+Afọwọṣe alaye oju-iwe
+Boya lati ṣafihan ohun ti a kọ sinu itọsi titẹ sii.
+Kini nọmba to kere julọ lati yan?
+Kini nọmba ti o pọju lati yan?
+Kọ bi o ṣe fẹ ki alaye manpage rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. Awọn ti o ni ibi ti ṣe itupalẹ. {0} fun akọle afọwọṣe, {1} fun atunyẹwo.
+Ohun-ini {0} ko ri lori eyikeyi awọn modulu naa.
+Abala yii ṣe atokọ awọn eto ipamọ iboju gbogbogbo. Fun awọn eto fifipamọ iboju kọọkan, jade ni Eto ati ṣii Eto Ipamọ iboju.
+Bẹrẹ kẹkẹ awọ ni ipo awọ otitọ
+Ti o ba jẹ pato, yoo ṣe afihan asia ibẹrẹ ti adani pẹlu atilẹyin aaye. O le lo {0} fun ẹya kernel.
+Iyatọ ti ede ti o wa lọwọlọwọ ni a nlo lati yi awọn orukọ oṣu pada, kalẹnda, ati bẹbẹ lọ?
+Mu atilẹyin awọ 255 ṣiṣẹ.
+Mu atilẹyin awọ otitọ ṣiṣẹ.
+Ọrọ ti paarẹ ni laini {0}.
+Okun rọpo ni ila {0}.
+Nọmba ila ti a yọ kuro {0}.
+Pa awọn ifiranṣẹ laigba aṣẹ
+Fi ifiranṣẹ didanubi pamọ ti iṣẹ atokọ ba gbiyanju lati ṣii folda laigba aṣẹ
+FTP alaye olupin
+Adirẹsi olupin:
+Ibudo olupin:
+Iru olupin:
+Iru eto olupin:
+Ipo fifi ẹnọ kọ nkan olupin:
+Iru asopọ data olupin:
+Eto olupin:
+Iru data igbasilẹ olupin:
+Iru data ikojọpọ olupin:
+O gbọdọ sopọ si olupin ṣaaju ṣiṣe iṣẹ yii.
+Tẹ faili latọna jijin sii lati jẹ hashed.
+Tẹ ilana ilana jijin lati wa ni hashed.
+Tẹ ilana ọna jijin sii.
+Recursive hashing fun FTP
+Boya lati recursively hash a liana. Jọwọ ṣe akiyesi pe kii ṣe gbogbo awọn olupin FTP ṣe atilẹyin iyẹn.
+Iyara aago isise:
+isise SSE2 atilẹyin:
+Apapọ nọmba ti awọn ero isise:
+Iwọn disk:
+Lapapọ iranti:
+Kaadi eya aworan:
+Awoṣe Disiki:
+O pọju nọmba ti e-maili ninu ọkan iwe
+Asa ti isiyi ede
+Ti o ba da ọ loju pe o ti ṣii apakan ọtun, ṣayẹwo ifiranṣẹ yii:
+Awọn Eto Oriṣiriṣi...
+Eto awọn awọ...
+Ṣiṣẹ aṣẹ olupin FTP kan
+Tẹ adirẹsi olupin POP3 sii ati ibudo (<adirẹsi> tabi <adirẹsi>:[port]):
+POP3 ara kiakia fun meeli
+Firanṣẹ aarin ping POP3
+Kọ bi o ṣe fẹ ki itọsi olupin POP3 rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. Awọn ti o ni ibi ti ṣe itupalẹ.
+Awọn iṣẹju-aaya melo ni lati fi POP3 ping ranṣẹ?
+Lo POP3
+Boya lati lo POP3. Pa eyi yoo lo SMTP.
+Encrypts a okun lilo CRC32
+Ṣii alabara meeli
+ti mail ti o ti gbe...
+Eto fun iboju iboju yii wa nibi.
+Idanwo iṣẹ-ṣiṣe tabili
+Satunkọ awọn pàtó kan ila
+Ṣafikun awọn ila tuntun ni opin faili naa
+Tẹ ọrọ sii ti o fẹ fikun si opin faili naa. Nigbati o ba ti pari, kọ "EOF" lori laini tirẹ.
+Orukọ ogun
+Orukọ olumulo
+Data Iru
+fifi koodu
+ìsekóòdù
+Ilana
+Ṣe afihan ilọsiwaju gbigbe meeli
+Ilọsiwaju gbigbe ifiweranṣẹ
+Ilọsiwaju gbigbe meeli (ẹyọkan)
+Ti o ba ti ṣiṣẹ, ikarahun meeli yoo fihan iye awọn baiti ti o tan kaakiri nigbati o ṣe igbasilẹ meeli.
+Kọ bi o ṣe fẹ ki ara ilọsiwaju gbigbe meeli rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. Awọn ti o ni ibi ti ṣe itupalẹ. {0} fun iwọn gbigbe ati {1} fun iwọn lapapọ.
+Kọ bi o ṣe fẹ ki ara ilọsiwaju gbigbe meeli rẹ jẹ. Fi òfo silẹ lati lo ara aiyipada. Awọn ti o ni ibi ti ṣe itupalẹ. {0} fun iwọn gbigbe.
+Agbegbe Aago:
+Loni ni {0}
+Akoko lọwọlọwọ ni {0}
+Table separator awọ
+Table awọ akọsori
+Table iye awọ
+Awọn idahun to ṣee ṣe
+Mod faili ko pato.
+Ngbiyanju lati fi sori ẹrọ moodi ti a ti fi sii tẹlẹ. Modimu imudojuiwọn...
+Fifi sori kuna fun
+Faili mod ti a pese ko ni ibamu.
+Yiyokuro kuna fun
+Ṣii URL kan
+Tẹ awọn nọmba ila lori titẹ awọn akoonu faili
+Ṣe aṣẹ \"ologbo" titẹ awọn nọmba laini faili naa.
+Itumọ ti ikede
+Ẹya ti a tumọ
+Kọ gbogbo awọn iwifunni silẹ
+Gbigbasilẹ...
+Nkojọpọ...
+Ṣe afihan ifitonileti fun ilọsiwaju igbasilẹ
+Ṣe afihan ifitonileti fun ilọsiwaju ikojọpọ
+Ṣe afihan ifitonileti ti nfihan ilọsiwaju igbasilẹ naa.
+Ṣe afihan ifitonileti ti n fihan ilọsiwaju ikojọpọ.
+Ṣayẹwo lati rii boya okun ti o tumọ naa wa ninu awọn orisun KS
+Okun ri ninu awọn orisun isọdibilẹ.
+Okun ko ri ni awọn orisun isọdibilẹ.
+Bẹrẹ ekuro ni idakẹjẹ
+Fi aṣẹ silẹ lati bẹrẹ ni wiwọle atẹle
+Bẹrẹ ekuro ni ipo ailewu, pa gbogbo awọn mods kuro
+Bii ipo ailewu, ṣugbọn tun ṣe alaabo olumulo pupọ ati diẹ ninu isọdi
+Ko si awọn ariyanjiyan to.
+Awọ igun apa osi oke fun igi rampu
+Awọ igun apa ọtun oke fun igi rampu
+Isalẹ osi igun awọ fun rampu bar
+Isalẹ ọtun igun awọ fun rampu bar
+Oke fireemu awọ fun rampu bar
+Isalẹ fireemu awọ fun rampu bar
+Osi fireemu awọ fun rampu bar
+Ọtun fireemu awọ fun rampu bar
+Lo awọn awọ aala fun igi rampu
+Lo awọn awọ aala fun igi rampu. Ti o ba jẹ alaabo, yoo ṣe ina igi grẹy kan.
+Bẹrẹ ikarahun HTTP
+Jade ikarahun HTTP ati ki o pada si ekuro
+Ṣeto aaye HTTP. Gbọdọ jẹ URI to wulo.
+Ngba esi lati ọdọ olupin HTTP ni lilo ibeere ti a pato
+Npa akoonu rẹ kuro lati olupin HTTP
+Aṣiṣe kan wa ninu ikarahun HTTP:
+Ifiranṣẹ HTTP: Aṣẹ ti o beere {0} ko ri. Wo 'iranlọwọ' fun atokọ ti awọn aṣẹ to wa ti a sọ pato lori ikarahun HTTP.
+Ngba okun naa lati ọdọ olupin HTTP ni lilo ibeere ti a pato
+Ngba {0}...
+Ọna kika URI aaye naa ko wulo.
+Ṣiṣeto aaye si
+Awọn awọ ko nilo atunbẹrẹ, ṣugbọn pupọ julọ awọn eto nilo atunbẹrẹ.
+Ko si iranlọwọ fun ariyanjiyan "{0}".
+Tẹ A lori awọn asọye ikorira lati gafara. Tẹ T lori awọn asọye ifẹ lati dupẹ lọwọ. Tẹ Q lati da ere naa silẹ.
+O ti tọrọ gafara fun asọye ikorira! O tayọ!
+Aforiji lati nifẹ ọrọìwòye. Ko dara to.
+O kan dupẹ lọwọ apanirun fun asọye ikorira naa!
+Isoro aiyipada fun SpeedPress
+Akoko titẹ bọtini fun SpeedPress
+Yan iṣoro ti o fẹ.
+Awọn milliseconds melo ni lati duro fun titẹ bọtini ṣaaju akoko ipari? (Ninu iṣoro aṣa)
+Rọpo ọrọ tabi gbolohun kan pẹlu miiran nipa lilo awọn ikosile deede
+Rọpo ọrọ tabi gbolohun pẹlu miiran ni ila kan nipa lilo awọn ikosile deede
+Awọn ibeere ọrọ kan ni laini kan tabi gbogbo awọn laini ni lilo awọn ikosile deede
+Wa Eto kan
+Kọ ohun ti o fẹ lati wa fun.
+Ko si ohun ti a ri. Rii daju pe o ti kọ eto naa ni deede.
+Ṣe akopọ faili agbegbe kan si ile-ipamọ
+Ko le gbe ohunkohun.
+Apejuwe idahun
+Ibudo ogun
+Fun alaye diẹ sii nipa awọn ofin ati ipo ti lilo sọfitiwia yii, ṣabẹwo
+Aiyipada wun o wu iru
+Ṣayẹwo gbogbo awọn eto KS lati rii boya awọn oniyipada ti kọ ni deede
+Awọn titẹ sii iṣeto ni wọnyi ni awọn oniyipada ti ko tọ tabi awọn iṣiro ati pe o nilo lati wa titi:
+A ko ri faili {0}
+Ṣẹda a oniyipada orun pẹlu awọn iye ti a pese
+Kọ nọmba eto lati lọ si. Eyikeyi miiran ti ohun kikọ silẹ tumo si pada.
+Ṣayẹwo gbogbo awọn nọmba laini ọrọ isọdi lati rii boya gbogbo wọn ba dọgba
+Laini ibaamu ni
+Jọwọ tẹ nọmba olumulo kan sii.
+Fi awọn olumulo ailorukọ sii
+Fi awọn olumulo alaabo kun
+Pẹlu awọn olumulo ailorukọ ninu atokọ naa
+Pẹlu awọn olumulo alaabo ninu atokọ naa
+To akojọ naa
+Ṣeto atokọ eto faili ni alamọdaju.
+Pese yiyan aṣayan
+Awọn aṣẹ Shell ko ni imuse !!!
+Ṣe afihan akọle RSS tuntun lori wiwọle
+URL akọle RSS
+Wiwọle kọọkan, yoo ṣe afihan akọle RSS tuntun lati URL akọle ti o yan.
+URL akọle RSS lati ṣee lo nigbati o nfihan akọle tuntun. Eyi nigbagbogbo jẹ kikọ sii ayanfẹ rẹ.
+Awọn irohin tuntun:
+O kuna lati gba awọn iroyin tuntun.
+Awọ aṣayan ti a yan
+Ṣe afihan itọpa akopọ lori aṣiṣe ekuro
+Ti aṣiṣe ekuro eyikeyi ba wa, yan boya tabi rara lati tẹ itọpa akopọ si console.
+Mod le ṣe kojọpọ, ṣugbọn awọn ikilọ wọnyi le ni ipa lori ọna mod naa:
+Ipamọ iboju le jẹ kojọpọ, ṣugbọn awọn ikilọ wọnyi le ni ipa ni ọna ti iboju n ṣiṣẹ:
+Fi Eto pamọ Bi
+Fifuye Eto Lati
+Nibo ni o fẹ lati fipamọ awọn eto ekuro lọwọlọwọ?
+Ko le fi awọn eto kernel pamọ sori oke faili ti o wa tẹlẹ.
+Nibo ni o fẹ lati kojọpọ awọn eto ekuro lọwọlọwọ lati?
+Ṣayẹwo lati rii boya awọn gbolohun ọrọ ti o tumọ wa ninu awọn orisun KS
+Papọ awọn faili ọrọ meji tabi diẹ sii sinu faili ti o wu jade.
+Kuna lati darapo awọn faili.
+Kikọ sii RSS bu akoko kuro
+Awọn milliseconds melo ni lati duro ṣaaju ki kikọ sii RSS mu akoko kuro?
+Kun awọn apoti
+Ṣe a ya apoti naa lapapọ tabi ṣe a ya nikan ni aala?
+Idaduro ipele ni milliseconds
+Awọn milliseconds melo ni lati duro ṣaaju yiya ipele atẹle?
+Next rampu rot aarin
+Awọn milliseconds melo ni lati duro ṣaaju ki o to yiyi rampu ti o tẹle ni opin kan?
+Ṣayẹwo ipin yokokoro
+Njẹ a ṣayẹwo boya eto yokokoro nilo lati ṣayẹwo fun ipin ṣaaju ki o to kọwe si olutọpa naa?
+Awọn milliseconds melo ni o gba lati sun gaan?
+Kuna lati fi iṣẹlẹ kan kun.
+Kuna lati yọ iṣẹlẹ kuro.
+Ko si awọn ariyanjiyan to ti pese lati ṣafikun iṣẹlẹ kan.
+Ko si awọn ariyanjiyan ti o to lati yọ iṣẹlẹ kuro.
+Ko si awọn ariyanjiyan to ti pese fun ifọwọyi iṣẹlẹ.
+Kuna lati ṣafikun tabi yọ olurannileti kuro.
+Ko si awọn ariyanjiyan to ti pese lati ṣafikun tabi yọ olurannileti kuro.
+Ko si awọn ariyanjiyan to ti pese fun ifọwọyi olurannileti.
+Olurannileti ti ko ni akole
+Untitled iṣẹlẹ
+Bayi o jẹ ọjọ iṣẹlẹ kan!
+Maṣe padanu eyi!
+Iṣe ti ko tọ.
+Agogo iṣẹju-aaya ti o rọrun
+Bẹrẹ tabi da duro
+Ipele
+Tunto
+Aago ti o rọrun
+Bẹrẹ (tun) kika isalẹ
+Ṣeto aarin
+Itọkasi akoko ipari kii ṣe oni-nọmba.
+Pato akoko ipari ni awọn iṣẹju-aaya
+Ṣafipamọ gbogbo awọn iṣẹlẹ ati/tabi awọn olurannileti ni iparun
+Ti o ba ṣiṣẹ, paarẹ gbogbo awọn iṣẹlẹ ati/tabi awọn olurannileti ṣaaju fifipamọ gbogbo wọn nipa lilo aṣẹ kalẹnda.
+Daju awọn igbiyanju igbiyanju fun gbigbe FTP
+Aago asopọ FTP
+Aago asopọ data FTP
+FTP IP awọn ẹya
+Igba melo ni lati rii daju ikojọpọ ati igbasilẹ ati tun gbiyanju ti ijẹrisi ba kuna ṣaaju ki igbasilẹ naa kuna lapapọ?
+Awọn milliseconds melo ni lati duro ṣaaju akoko asopọ FTP bi?
+Awọn milliseconds melo ni lati duro ṣaaju akoko asopọ data FTP bi?
+Yan ẹya ti Ilana Intanẹẹti ti olupin FTP ṣe atilẹyin ati ti alabara FTP nlo.
+Gbiyanju lati bẹrẹ RPC lakoko ti o ti bẹrẹ tẹlẹ.
+Ohun kikọ igun apa osi oke fun kẹkẹ awọ RGB
+Ohun kikọ igun apa ọtun oke fun kẹkẹ awọ RGB
+Ohun kikọ igun apa osi isalẹ fun kẹkẹ awọ RGB
+Isalẹ ọtun igun ohun kikọ fun RGB awọ kẹkẹ
+Oke fireemu kikọ fun RGB awọ kẹkẹ
+Isalẹ fireemu kikọ fun RGB awọ kẹkẹ
+Osi fireemu kikọ fun RGB awọ kẹkẹ
+Ọtun fireemu kikọ fun RGB awọ kẹkẹ
+Wa faili kan ninu ilana ti a ti sọ tabi ni ilana lọwọlọwọ
+Ṣe iyipada awọn ipari ila si ọna kika fun iru ẹrọ lọwọlọwọ tabi si ọna kika aṣa pato
+Lapapọ iwọn ninu folda:
+Ṣe afihan iwọn lapapọ ninu atokọ
+Ti o ba ṣiṣẹ, fihan iwọn folda lapapọ ninu atokọ, da lori bii o ṣe le ṣe iṣiro awọn iwọn folda ni ibamu si iṣeto.
+O ti wa ni imudojuiwọn!
+Ayipada JSON kika fun JSON ikarahun
+Yan ọna kika JSON aiyipada (ẹwa tabi dinku) fun ikarahun JSON lati fipamọ.
+Ṣe igbasilẹ imudojuiwọn ni aṣeyọri!
+Ṣe igbasilẹ awọn imudojuiwọn ni adaṣe
+Ti imudojuiwọn eyikeyi ba wa, ekuro yoo ṣe igbasilẹ laifọwọyi.
+Firework bugbamu rediosi
+Awọn bulọọki melo ni (to 10) ni rediosi bugbamu fun iṣẹ ina nigbati o ba tan?
+Aṣẹ yii ni awọn iyipada isalẹ ti o yipada bi o ti n ṣiṣẹ:
+Ṣe atẹjade awọn nọmba ila ti o tẹle laini ti a tẹ
+Idilọwọ titẹ awọn nọmba laini
+Nigbagbogbo lo awọn transliterated version
+Nigbagbogbo lo ẹya ti a tumọ
+Fi agbara mu yiyipada ede
+Tọkasi pe idahun le gba ju ẹyọkan lọ
+Tọkasi pe idahun le gba ohun kikọ kan
+Tẹ ibeere naa ati awọn idahun si laini kan
+Tẹ ibeere naa ati awọn idahun si awọn ila meji
+Tẹjade ibeere ati awọn idahun ni ọna ode oni
+Tẹ ibeere naa ati awọn idahun sinu tabili kan
+Ṣe afihan awọn alaye faili ninu atokọ naa
+Suppresses awọn didanubi "iyọọda sẹ" awọn ifiranṣẹ
+Ṣe afihan gbogbo awọn agbegbe akoko
+Bẹrẹ ere naa ni iṣoro irọrun
+Bẹrẹ awọn ere ni alabọde isoro
+Bẹrẹ ere ni iṣoro lile
+Bẹrẹ ere naa ni iṣoro lile pupọ
+Bẹrẹ ere naa ni iṣoro aṣa. Jọwọ ṣe akiyesi pe akoko asiko aṣa ni milliseconds yẹ ki o kọ bi ariyanjiyan.
+Ṣe afihan alaye eto
+Ṣe afihan alaye hardware
+Ṣe afihan alaye olumulo
+Ṣe afihan ifiranṣẹ ti ọjọ naa
+Ṣe afihan ifiranṣẹ ti ọjọ lẹhin wiwọle
+Ṣe afihan gbogbo alaye
+Ṣẹda ilana ti o ni awọn akoonu inu faili ZIP naa ninu
+Ṣe afihan gbogbo awọn ilu ti o wa
+Yara funmorawon
+Ko si funmorawon
+Maṣe ṣẹda ilana ipilẹ ni ile-ipamọ
+Unit ni ticks
+Ge asopọ lati olupin ni itiju
+Tọkasi pe ọna ibi-afẹde jẹ pipe
+Fi faili JSON pamọ, ṣe ẹwa ninu ilana naa
+Fi faili JSON pamọ, dinku rẹ ninu ilana naa
+Ngba ara ipari laini lati faili ọrọ
+Pa gbogbo awọn iṣẹlẹ ti o ti yọ kuro
+Jeki iṣẹlẹ n ṣatunṣe aṣiṣe
+Mu ṣiṣẹ n ṣatunṣe aṣiṣe fun eto iṣẹlẹ ekuro
+Fillet font
+Kọ fonti figlet ti o ni atilẹyin nipasẹ ile-ikawe Figgle. Kan si awọn iwe ikawe fun alaye diẹ sii
+Kuna lati fi ede aṣa sori ẹrọ {0}.
+Faili metadata nilo lati fi ede aṣa sori ẹrọ ko si.
+Alaye metadata nilo lati fi ede aṣa sori ẹrọ ko pese awọn isọdi agbegbe to nilo.
+Kuna lati yọ ede aṣa kuro {0}.
+Faili metadata nilo lati yọ ede aṣa kuro ko si.
+Alaye metadata nilo lati yọ ede aṣa kuro ko pese awọn isọdi agbegbe to nilo.
+Gigun ti ede Gẹẹsi ko baramu gigun ti ami ede ti a pese.
+Ede naa ti wa tẹlẹ ko si le tun kọ.
+Kuna lati yọ ede aṣa kuro. O ṣeese julọ ko si.
+Kuna lati fi awọn ede aṣa sori ẹrọ.
+Kuna lati mu awọn ede aṣa kuro.
+Kuna lati mu awọn ede aṣa kuro. Wo iyasọtọ inu fun alaye diẹ sii.
+Kọ ọrọigbaniwọle alakoso. Rii daju pe o ko lo akọọlẹ yii ayafi ti o ba mọ ohun ti o n ṣe gaan.
+O gbọdọ kọ ọrọ igbaniwọle alakoso.
+Alaye iwe-aṣẹ
+Ṣakoso awọn ede rẹ
+Ede ko ri tabi faili ni awọn ohun kikọ ti ko tọ.
+Ede ko ni pato.
+Isakoso ede jẹ alaabo ni ipo ailewu.
+Orukọ kukuru ede:
+Orukọ kikun ede:
+Itumọ ede:
+Èdè àdáni:
+New kaabo asia
+Iboju asesejade aṣa
+Ṣe afihan asia kaabo ti a ṣe Filet tuntun
+Mu iboju asesejade aṣa ṣiṣẹ ni ibẹrẹ. Jọwọ ṣe akiyesi pe yoo mu ifọrọhan ariyanjiyan kuro ati idanwo ikarahun iṣaaju-bata.
+Asesejade orukọ
+Orukọ asesejade lati awọn itọjade ti o wa ti a ṣe imuse ninu ekuro.
+MOTD aiyipada ti ipilẹṣẹ.
+Ti ipilẹṣẹ aiyipada MAL.
+Eto iroyin initialized
+Awọn olumulo ti ipilẹṣẹ
+Awọn igbanilaaye ti kojọpọ
+Kaabo!
+Bibẹrẹ olutọpa latọna jijin...
+Latọna jijin asopo ohun aṣiṣe
+Fi leti lori aṣiṣe asopọ yokokoro latọna jijin
+Ti o ba ti ṣiṣẹ, yoo lo eto ifitonileti lati sọ fun agbalejo ti aṣiṣe asopọ yokokoro latọna jijin. Bibẹẹkọ, yoo lo kikọ console aiyipada.
+Filet font fun aago
+Mu Filet ṣiṣẹ fun aago
+Ti o ba ti ṣiṣẹ, yoo lo figlet fun aago. Jọwọ ṣe akiyesi pe o nilo iboju console nla lati le mu akoko naa ṣiṣẹ daradara pẹlu Figlet ṣiṣẹ.
+Aṣiṣe lakoko ti o n ṣe itupalẹ awọn ariyanjiyan laini aṣẹ-tẹlẹ: {0}
+Tun ekuro pada si awọn eto ile-iṣẹ
+Fori wiwa iwọn console
+O dabi ẹni pe o n kọja wiwa iwọn console naa. Awọn nkan le ma ṣiṣẹ daradara lori awọn iboju kekere.
+Lati ni iriri to dara julọ, tun iwọn window console rẹ nigba ti o wa loju iboju yii. Tẹ bọtini eyikeyi lati tẹsiwaju...
+console rẹ ti kere ju lati ṣiṣẹ daradara:
+Banner figlet font
+Ṣe atẹjade okun kan si console nipa lilo iru awọ ati titẹ laini pẹlu atilẹyin Figlet
+Ṣe atẹjade okun kan si console nipa lilo iru awọ ati sita laini pẹlu ọna kika ati atilẹyin Figlet
+Yiyọ ifiranṣẹ kuro patapata
+Yọ gbogbo awọn ifiranṣẹ kuro ni gbogbo igba lati ọdọ olugba
+Mu yiyọ ifiranṣẹ kuro
+Mu yiyọ gbogbo awọn ifiranṣẹ kuro lati ọdọ olugba
+Yiyọ piparẹ ko ni imuse fun POP3.
+Ṣe afihan awọn aṣẹ ti o da lori iranlọwọ
+Ṣe afihan awọn aṣẹ ikarahun da lori iranlọwọ
+Ṣe afihan awọn aṣẹ mod ka lori iranlọwọ
+Ṣe afihan awọn inagijẹ ka lori iranlọwọ
+Ṣe afihan kika awọn aṣẹ ni atokọ aṣẹ, ti iṣakoso nipasẹ awọn iyipada ifihan kika mẹta fun awọn iru awọn aṣẹ.
+Ṣiṣe awọn aṣẹ ni kete ti awọn ikosile UESH ti ni itẹlọrun
+A ko ri ipo naa ninu ikosile naa.
+Ipo {0} nbeere {1} ariyanjiyan. gba {2}.
+Ipo naa nilo lati gbe si aarin.
+Ipo naa nilo lati gbe ni ibẹrẹ.
+Aṣiṣe titọ ọrọ sisọ nitori aṣiṣe sintasi.
+Kuna lati ni itẹlọrun ipo. Alaye diẹ sii nibi:
+Ọrọigbaniwọle boju kikọ
+A kikọ ti o boju-boju awọn ọrọigbaniwọle. Fi aaye silẹ fun aabo diẹ sii.
+Jade ni ikarahun ti o ba nṣiṣẹ lori subshell
+Ko le pa iya ikarahun!
+Ko le jade lati inu ikarahun.
+Faili ko pato. Ti njade ikarahun...
+Awọn eto fun iboju asesejade yii wa nibi.
+Ilọsiwaju bar awọ
+Ṣii awọn eto ipamọ iboju
+Ṣii awọn eto asesejade
+Awọn atokọ ti o wa awọn oniyipada UESH
+Ipo ọrọ ilọsiwaju
+Yan ipo ọrọ ilọsiwaju ti o fẹ.
+O le kọ awọn nọmba nikan.
+Tẹ "q" lati jade.
+Gbigba awọn orukọ silẹ...
+Nitori awọn iṣoro imọ-ẹrọ, a ko lagbara lati ṣe atokọ awọn ohun-ini ohun ti nmu badọgba lori awọn eto Unix.
+Mu ipo yokokoro ṣiṣẹ
+Awọn ibere fun awọn ariyanjiyan
+Mu Ipo Dudu ati Funfun ṣiṣẹ
+Ṣe disco dudu ati funfun. Yoo ṣe ipalara oju rẹ gaan ti o ba yara ju, nitorinaa kii ṣe iṣeduro ti o ba ni iriri ijagba ti awọn aworan yara.
+O dabi pe o nṣiṣẹ ẹya ti ko ni atilẹyin. O ni imọran pupọ lati maṣe lo ẹya yii.
+Fifuye lọwọlọwọ Awọn awọ
+Awọ aṣayan yiyan
+Awọn olumulo ka fun ife tabi korira comments
+Awọn olumulo melo ni lati wa ninu ifẹ tabi korira yara asọye?
+Awọn akojọ awọn ede to wa
+Awọn ede ti o wa:
+Awọn ariyanjiyan laini aṣẹ:
+Awọn ariyanjiyan laini aṣẹ-tẹlẹ-bata:
+Ṣii iwe mod API fun ilana ti koodu orisun ni fọọmu lọwọlọwọ julọ rẹ

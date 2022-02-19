@@ -983,3 +983,675 @@ Nazhmite lyubuyu klavishu, chtoby prochitat' stranitsu rukovodstva ...
 Eta stranitsa rukovodstva nuzhdayetsya v dorabotke dlya:
 Stranitsa rukovodstva {0} ne naydena.
 Rukovodstvo po modu
+Dostupnyye argumenty yadra:
+Nazhmite «q», yesli vy zakonchili.
+Neskol'ko argumentov yadra mozhno razdelit' zapyatymi bez probelov, naprimer:
+Neskol'ko vvedennykh komand mogut byt' razdeleny dvoyetochiyami s probelami, naprimer:
+Zaproshennyy argument {0} ne nayden.
+Neispravimaya oshibka v argumente:
+Shifruyet stroku s pomoshch'yu SHA512.
+Shifruyet stroku s pomoshch'yu SHA384.
+Shifruyet stroku s pomoshch'yu SHA256.
+Shifruyet stroku s pomoshch'yu SHA1
+Shifruyet stroku s pomoshch'yu MD5
+gde budet vstroyennaya zastavka
+Mod chast' nichego.
+Ostanovka modov ne razreshena v bezopasnom rezhime.
+Mod uzhe zapushchen!
+Mod yeshche ne zapushchen!
+Ispol'zovaniye komandy:
+Imya fayla detali:
+Put' k faylu detali:
+Oshibka pri popytke zapuska skrinseyvera:
+Nedopustimyy tip puti.
+Nedopustimyy tip puti yadra.
+Predydushchaya zagruzka ne udalas'
+Redaktor JSON yeshche ne otkryl faylovyy potok.
+Svoystvo vnutri fayla JSON ne naydeno.
+Udalennoye svoystvo.
+Dobavlyayet novoye svoystvo v konets fayla JSON.
+Udalyayet svoystvo iz fayla JSON
+Vykhod iz obolochki JSON
+Vykhod iz obolochki JSON bez sokhraneniya izmeneniy
+Sokhranyayet fayl JSON
+Otkryvayet obolochku JSON
+Pechatayet fayl JSON
+Sleduyushchiy interval rampy
+Aktiviruyet podderzhku 255 tsvetov dlya Ramp.
+Aktiviruyet podderzhku istinnogo tsveta dlya Ramp.
+Skol'ko millisekund zhdat' pered zapolneniyem sleduyushchego pandusa?
+Tsvet zagolovka uvedomleniya
+Tsvet opisaniya uvedomleniya
+Tsvet vypolneniya uvedomleniya
+Tsvet otkaza uvedomleniya
+Tsvet voprosa
+Tsvet uspekha
+Tsvet dollara pol'zovatelya
+Tsvet nakonechnika
+Tsvet teksta razdelitelya
+Tsvet razdelitelya
+Tsvet zagolovka spiska
+Tsvet preduprezhdeniya razvitiya
+Tsvet vremeni stseny
+Tsvet progressa
+Tsvet varianta spinki
+Narisovat' granitsu uvedomleniya
+Zakryvayet uvedomleniye ramkoy.
+Svyazhites' s prodavtsom moda, chtoby obnovit' mod do sovmestimoy versii.
+Tsvet granitsy s nizkim prioritetom
+Tsvet granitsy so srednim prioritetom
+Tsvet granitsy s vysokim prioritetom
+Otpravlyayet uvedomleniye o khode testirovaniya priyemnika
+Testiruyet tsvetovoy krug
+Pokazyvayet lokal'noye vremya yadra
+Pokazyvayet lokal'nuyu datu yadra
+Pokazyvayet datu i vremya lokal'nogo yadra
+Pokazyvayet vremya yadra UTC
+Pokazyvayet datu yadra UTC
+Pokazyvayet datu i vremya yadra UTC
+put' MOTD
+MAL-put'
+Kakoy fayl yavlyayetsya tekstovym faylom MOTD? Napishite absolyutnyy put' k tekstovomu faylu.
+Kakoy fayl yavlyayetsya tekstovym faylom MAL? Napishite absolyutnyy put' k tekstovomu faylu.
+Chernyy spisok modov
+Napishite imena faylov modov, kotoryye ne budut zapuskat'sya pri zapuske. Kogda vy zakonchite, napishite «q». Napishite znak minus ryadom s putem, chtoby udalit' sushchestvuyushchiy mod.
+Mod {0} zanesen v chernyy spisok.
+Perezagruzhayet vse mody
+Dobavlyayet mod v chernyy spisok
+Udalyayet mod iz chernogo spiska
+Vremya i data v formate UTC: {0}
+Ukazannaya komanda obolochki JSON ne naydena.
+Pokazyvat' informatsiyu o prilozhenii vo vremya zagruzki
+Razobrat' argumenty komandnoy stroki
+Pokazat' vremya okonchaniya etapa
+Zapusk modifikatsiy yadra pri zagruzke
+Pokazyvat' tekushcheye vremya pered vkhodom v sistemu
+Uvedomlyat' o lyubykh oshibkakh vo vremya zagruzki
+Pokazyvayet kratkuyu informatsiyu o prilozhenii pri zagruzke.
+Razbirayet argumenty komandnoy stroki pri zagruzke.
+Pokazyvayet, skol'ko vremeni potrebovalos' yadru dlya zaversheniya etapa.
+Avtomaticheski zapuskat' modifikatsii yadra pri zagruzke.
+Pokazyvayet tekushcheye vremya, chasovoy poyas i datu pered vkhodom v sistemu.
+Yesli vo vremya zagruzki yadra voznikayet neznachitel'naya oshibka, uvedomlyayet ob etom pol'zovatelya.
+Stil' podskazki imeni pol'zovatelya
+Stil' podskazki parolya
+Pokazyvat' MAL pri vkhode v sistemu
+Napishite, kak vy khotite, chtoby vashe priglasheniye dlya vkhoda bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Napishite, kakim vy khotite, chtoby vash parol' byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Pokazyvayet soobshcheniye dnya posle otobrazheniya ekrana vkhoda v sistemu.
+Stil' priglasheniya testovoy obolochki
+Stil' priglasheniya obolochki JSON
+Komandy, vvodimyye zondom
+Proveryayet vvedennyye komandy v nachale obolochki yadra.
+Pokazat' detali fayla v spiske
+Pokazyvayet kratkiye svedeniya o fayle pri perechislenii faylov
+Pokazat' svedeniya o fayle v spiske FTP
+Stil' zaprosa imeni pol'zovatelya dlya FTP
+Stil' zaprosa parolya dlya FTP
+Ispol'zovat' pervyy profil' FTP
+Dobavit' novyye podklyucheniya k bystromu naboru FTP
+Poprobuyte proverit' bezopasnyye FTP-sertifikaty
+Pokazyvat' FTP MOTD pri podklyuchenii
+Vsegda prinimat' nedeystvitel'nyye FTP-sertifikaty
+Pokazyvayet svedeniya o FTP-fayle pri perechislenii udalennykh katalogov.
+Ispol'zuyet pervyy profil' FTP dlya podklyucheniya k FTP.
+Yesli vklyucheno, dobavlyayet novoye podklyucheniye k bystromu naboru FTP.
+Pytayetsya proverit' sertifikaty FTP. Otklyuchat' yego ne rekomenduyetsya.
+Pokazyvayet FTP-soobshcheniye dnya pri vkhode v sistemu.
+Vsegda prinimayte nedeystvitel'nyye sertifikaty FTP. Vklyuchat' yego ne rekomenduyetsya, tak kak eto mozhet predstavlyat' ugrozu bezopasnosti.
+Stil' podskazki imeni pol'zovatelya dlya pochty
+Stil' zaprosa parolya dlya pochty
+Stil' zaprosa IMAP dlya pochty
+Stil' priglasheniya SMTP dlya pochty
+Avtomaticheski opredelyat' pochtovyy server
+Vklyuchit' otladku pochty
+Uvedomlyat' o novykh pochtovykh soobshcheniyakh
+Stil' zaprosa parolya GPG dlya pochty
+Interval otpravki IMAP-pinga
+Otpravit' interval proverki svyazi SMTP
+Format teksta pochty
+Napishite, kak vy khotite, chtoby vash server IMAP byl podskazkoy. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Napishite, kakim dolzhno byt' priglasheniye vashego SMTP-servera. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Avtomaticheski opredelyat' pochtovyy server na osnove zadannogo adresa.
+Vklyuchayet otladku pochtovogo servera.
+Uvedomlyayet vas o lyubykh novykh pochtovykh soobshcheniyakh.
+Napishite, kakim vy khotite, chtoby vash parol' GPG byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Skol'ko millisekund otpravlyat' ping IMAP?
+Skol'ko millisekund otpravlyat' SMTP ping?
+Upravlyayet tem, kak budet otobrazhat'sya tekst soobshcheniya.
+Prostoy tekst
+Peretekayushchiy tekst
+HTML-tekst
+Rasshirennyy tekst
+Szhatyy formatirovannyy tekst
+Bogatyy tekst
+Avtomaticheski zapuskat' udalennuyu otladku pri zapuske
+Format soobshcheniya udalennoy otladki
+Yesli vy khotite, chtoby udalennaya otladka zapuskalas' pri zagruzke, vklyuchite eto.
+Ukazyvayet format soobshcheniya udalennoy otladki. {0} dlya imeni, {1} dlya soobshcheniya.
+Stil' priglasheniya URL-adresa RSS-kanala
+Avtoobnovleniye RSS-kanala
+Interval avtomaticheskogo obnovleniya RSS-kanala
+Napishite, kak vy khotite, chtoby vashe priglasheniye servera RSS-kanalov bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Skol'ko millisekund obnovlyat' RSS-kanal?
+Pokazat' svedeniya o fayle v spiske SFTP
+Stil' zaprosa imeni pol'zovatelya dlya SFTP
+Dobavit' novyye podklyucheniya k bystromu naboru SFTP
+Pokazyvayet svedeniya o fayle SFTP pri perechislenii udalennykh katalogov.
+Yesli vklyucheno, dobavlyayet novoye podklyucheniye k bystromu naboru SFTP.
+Taym-aut pinga
+Pokazat' podrobnuyu informatsiyu ob adaptere
+Pokazat' obshchuyu informatsiyu o seti
+Skachat' protsentnyy tekst
+Zagruzit' protsentnyy tekst
+Skol'ko millisekund zhdat', prezhde chem ob"yavit' taym-aut?
+Pechatayet podrobnuyu informatsiyu ob adaptere, naprimer informatsiyu o paketakh.
+Pokazyvayet obshchuyu informatsiyu o seti.
+Napishite, kak vy khotite, chtoby vash tekst protsenta zagruzki byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya zagruzhennogo razmera, {1} dlya tselevogo razmera, {2} dlya protsenta.
+Napishite, kak vy khotite, chtoby vash tekst protsenta zagruzki byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya zagruzhennogo razmera, {1} dlya tselevogo razmera, {2} dlya protsenta.
+Zaprashivat' parol' posle blokirovki
+Posle blokirovki ekrana zaprosite parol'
+Minimal'nyy uroven' krasnogo tsveta
+Minimal'nyy uroven' zelenogo tsveta
+Minimal'nyy uroven' sinego tsveta
+Minimal'nyy uroven' tsveta
+Maksimal'nyy uroven' krasnogo tsveta
+Maksimal'nyy uroven' zelenogo tsveta
+Maksimal'nyy uroven' sinego tsveta
+Maksimal'nyy uroven' tsveta
+Minimal'nyy uroven' krasnogo tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Minimal'nyy uroven' zelenogo tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Minimal'nyy uroven' sinego tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Minimal'nyy uroven' tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255 dlya 255 tsvetov ili 16 dlya 16 tsvetov.
+Maksimal'nyy uroven' krasnogo tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Maksimal'nyy uroven' zelenogo tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Maksimal'nyy uroven' sinego tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255.
+Maksimal'nyy uroven' tsveta. Minimal'noye dopustimoye znacheniye ravno 0, a maksimal'no dopustimoye znacheniye ravno 255 dlya 255 tsvetov ili 16 dlya 16 tsvetov.
+Tsvet perednego plana
+Lineynyy personazh
+Simvol dlya formirovaniya linii. Obyazatel'no vvodite tol'ko odin simvol.
+Verkhniy levyy ugol simvola dlya chasovoy paneli
+Verkhniy levyy uglovoy simvol dlya stroki minut
+Verkhniy levyy uglovoy simvol dlya shkaly sekund
+Verkhniy pravyy ugol simvola dlya chasovoy paneli
+Verkhniy pravyy uglovoy simvol dlya stroki minut
+Simvol v pravom verkhnem uglu dlya sekundnoy shkaly
+Simvol nizhnego levogo ugla dlya chasovoy paneli
+Nizhniy levyy uglovoy simvol dlya minutnoy shkaly
+Nizhniy levyy uglovoy simvol dlya shkaly sekund
+Simvol nizhnego pravogo ugla dlya chasovoy paneli
+Nizhniy pravyy uglovoy simvol dlya stroki minut
+Nizhniy pravyy uglovoy simvol dlya shkaly sekund
+Simvol verkhney ramki dlya chasovoy shkaly
+Simvol verkhney ramki dlya stroki minut
+Simvol verkhney ramki dlya sekundnoy shkaly
+Simvol nizhney ramki dlya chasovoy paneli
+Simvol nizhnego kadra dlya stroki minut
+Simvol nizhnego kadra dlya sekundnoy shkaly
+Simvol levoy ramki dlya chasovoy paneli
+Simvol levoy ramki dlya minutnoy shkaly
+Simvol levogo kadra dlya sekundnoy shkaly
+Simvol pravoy ramki dlya chasovoy paneli
+Simvol pravoy ramki dlya minutnoy shkaly
+Simvol pravoy ramki dlya sekundnoy shkaly
+Informatsionnyy tekst dlya chasov
+Informatsionnyy tekst dlya protokola
+Informatsionnyy tekst dlya sekund
+Minimal'nyy uroven' krasnogo tsveta dlya chasov
+Minimal'nyy uroven' zelenogo tsveta dlya chasov
+Minimal'nyy uroven' sinego tsveta dlya chasov
+Minimal'nyy uroven' tsveta dlya chasov
+Maksimal'nyy uroven' krasnogo tsveta v techeniye neskol'kikh chasov
+Maksimal'nyy uroven' zelenogo tsveta v techeniye neskol'kikh chasov
+Maksimal'nyy uroven' sinego tsveta v techeniye neskol'kikh chasov
+Maksimal'nyy uroven' tsveta v techeniye neskol'kikh chasov
+Minimal'nyy uroven' krasnogo tsveta dlya minut
+Minimal'nyy uroven' zelenogo tsveta dlya minut
+Minimal'nyy uroven' sinego tsveta dlya minut
+Minimal'nyy uroven' tsveta za minuty
+Maksimal'nyy uroven' krasnogo tsveta v techeniye minut
+Maksimal'nyy uroven' zelenogo tsveta v techeniye neskol'kikh minut
+Maksimal'nyy uroven' sinego tsveta v techeniye neskol'kikh minut
+Maksimal'nyy uroven' tsveta za minuty
+Minimal'nyy uroven' krasnogo tsveta za sekundy
+Minimal'nyy uroven' zelenogo tsveta za sekundy
+Minimal'nyy uroven' sinego tsveta za sekundy
+Minimal'nyy uroven' tsveta za sekundy
+Maksimal'nyy uroven' krasnogo tsveta v sekundakh
+Maksimal'nyy uroven' zelenogo tsveta v sekundakh
+Maksimal'nyy uroven' sinego tsveta v sekundakh
+Maksimal'nyy uroven' tsveta za sekundy
+Simvol, napominayushchiy verkhniy levyy ugol. Obyazatel'no vvodite tol'ko odin simvol.
+Simvol, napominayushchiy nizhniy levyy ugol. Obyazatel'no vvodite tol'ko odin simvol.
+Personazh, napominayushchiy verkhnyuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
+Personazh, napominayushchiy nizhnyuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
+Personazh, napominayushchiy levuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
+Personazh, napominayushchiy pravuyu ramku. Obyazatel'no vvodite tol'ko odin simvol.
+Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchiy chas. {0} za tekushchiy chas iz 24 chasov.
+Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu minutu. {0} za tekushchuyu minutu iz 60 minut.
+Napishite, kak otobrazhayetsya vash informatsionnyy tekst na tekushchuyu sekundu. {0} dlya tekushchey sekundy iz 60 sekund.
+Tsvet teksta
+Verkhniy levyy uglovoy simvol dlya pandusa
+Verkhniy pravyy ugol simvola dlya pandusa
+Nizhniy levyy uglovoy simvol dlya pandusa
+Nizhniy pravyy uglovoy simvol dlya pandusa
+Simvol verkhney ramki dlya rampy
+Simvol nizhnego kadra dlya pandusa
+Simvol levogo kadra dlya rampy
+Simvol pravoy ramki dlya rampy
+Minimal'nyy uroven' krasnogo tsveta dlya nachal'nogo tsveta
+Minimal'nyy uroven' zelenogo tsveta dlya nachal'nogo tsveta
+Minimal'nyy uroven' sinego tsveta dlya nachal'nogo tsveta
+Minimal'nyy uroven' tsveta dlya nachal'nogo tsveta
+Maksimal'nyy uroven' krasnogo tsveta dlya nachal'nogo tsveta
+Maksimal'nyy uroven' zelenogo tsveta dlya nachal'nogo tsveta
+Maksimal'nyy uroven' sinego tsveta dlya nachal'nogo tsveta
+Maksimal'nyy uroven' tsveta dlya nachal'nogo tsveta
+Minimal'nyy uroven' krasnogo tsveta dlya konechnogo tsveta
+Minimal'nyy uroven' zelenogo tsveta dlya konechnogo tsveta
+Minimal'nyy uroven' sinego tsveta dlya konechnogo tsveta
+Minimal'nyy uroven' tsveta dlya konechnogo tsveta
+Maksimal'nyy uroven' krasnogo tsveta dlya konechnogo tsveta
+Maksimal'nyy uroven' zelenogo tsveta dlya konechnogo tsveta
+Maksimal'nyy uroven' sinego tsveta dlya konechnogo tsveta
+Maksimal'nyy uroven' tsveta dlya konechnogo tsveta
+Minimal'nyy nomer reshatelya
+Maksimal'noye kolichestvo reshatelya
+Reshatel' pokazyvayet vvod
+Simvol verkhnego levogo ugla dlya granitsy uvedomleniya
+Verkhniy pravyy ugol simvola dlya granitsy uvedomleniya
+Nizhniy levyy uglovoy simvol dlya granitsy uvedomleniya
+Simvol nizhnego pravogo ugla dlya granitsy uvedomleniya
+Simvol verkhney ramki dlya granitsy uvedomleniya
+Nizhniy simvol ramki dlya granitsy uvedomleniya
+Simvol levoy ramki dlya granitsy uvedomleniya
+Simvol pravoy ramki dlya granitsy uvedomleniya
+Stil' informatsii o stranitse vruchnuyu
+Pokazyvat' li to, chto napisano v podskazke vvoda.
+Kakoye minimal'noye kolichestvo vybrat'?
+Kakoye maksimal'noye chislo vybrat'?
+Napishite, kakoy vy khotite videt' informatsiyu na svoyey stranitse rukovodstva. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya zagolovka rukovodstva, {1} dlya redaktsii.
+Svoystvo {0} ne naydeno ni v odnom iz moduley.
+V etom razdele perechisleny obshchiye nastroyki ekrannoy zastavki. Dlya nastroyki otdel'nykh zastavok vyydite iz «Nastroyki» i otkroyte «Nastroyki zastavki».
+Zapustit' tsvetovoy krug v rezhime istinnogo tsveta
+Yesli ukazano, on budet otobrazhat' nastraivayemyy banner zapuska s podderzhkoy zapolniteley. Vy mozhete ispol'zovat' {0} dlya versii yadra.
+Kakoy variant tekushchego yazyka ispol'zuyetsya dlya izmeneniya nazvaniy mesyatsev, kalendarya i t. d.?
+Aktiviruyet podderzhku 255 tsvetov.
+Aktiviruyet podderzhku istinnogo tsveta.
+Slovo udaleno v stroke {0}.
+Stroka zamenena v stroke {0}.
+Udalen nomer stroki {0}.
+Podavit' nesanktsionirovannyye soobshcheniya
+Skryvayet razdrazhayushcheye soobshcheniye, yesli funktsiya listinga pytayetsya otkryt' neavtorizovannuyu papku
+Informatsiya o FTP-servere
+Adres servera:
+Port servera:
+Tip servera:
+Tip servernoy sistemy:
+Rezhim shifrovaniya servera:
+Tip podklyucheniya k serveru dannykh:
+Servernaya sistema:
+Tip dannykh zagruzki servera:
+Tip dannykh zagruzki servera:
+Pered vypolneniyem etoy operatsii neobkhodimo podklyuchit'sya k serveru.
+Vvedite udalennyy fayl dlya kheshirovaniya.
+Vvedite udalennyy katalog dlya kheshirovaniya.
+Vvedite udalennyy katalog.
+Rekursivnoye kheshirovaniye dlya FTP
+Sleduyet li rekursivno kheshirovat' katalog. Obratite vnimaniye, chto ne vse FTP-servery podderzhivayut eto.
+Taktovaya chastota protsessora:
+Podderzhka protsessora SSE2:
+Obshcheye kolichestvo protsessorov:
+Razmer diska:
+Obshchiy ob"yem pamyati:
+Videokarta:
+Model' diska:
+Maksimal'noye kolichestvo pisem na odnoy stranitse
+Kul'tura tekushchego yazyka
+Yesli vy uvereny, chto otkryli nuzhnyy razdel, prover'te eto soobshcheniye:
+Raznyye nastroyki...
+Nastroyki tsvetov...
+Vypolnyayet komandu FTP-servera
+Vvedite adres servera POP3 i port (<adres> ili <adres>:[port]):
+Stil' priglasheniya POP3 dlya pochty
+Otpravlyat' interval pinga POP3
+Napishite, kak vy khotite, chtoby vashe priglasheniye servera POP3 bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
+Skol'ko millisekund otpravlyat' ping POP3?
+Ispol'zovat' POP3
+Ispol'zovat' li POP3. Otklyucheniye etogo budet ispol'zovat' SMTP.
+Shifruyet stroku s pomoshch'yu CRC32
+Otkryvayet pochtovyy kliyent
+pochty peredano...
+Nastroyki etoy zastavki dostupny zdes'.
+Proveryayet funktsional'nost' tablitsy
+Redaktiruyet ukazannuyu stroku
+Dobavlyayet novyye stroki v konets fayla
+Vvedite tekst, kotoryy vy khotite dobavit' v konets fayla. Kogda vy zakonchite, napishite «EOF» v otdel'noy stroke.
+Imya khosta
+Imya pol'zovatelya
+Tip dannykh
+Kodirovaniye
+Shifrovaniye
+Protokoly
+Pokazat' khod peredachi pochty
+Khod peredachi pochty
+Progress peredachi pochty (odin)
+Yesli vklyucheno, pochtovaya obolochka budet pokazyvat', skol'ko bayt peredano pri zagruzke pochty.
+Napishite, kak vy khotite, chtoby vash stil' peredachi pochty byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya peredannogo razmera i {1} dlya obshchego razmera.
+Napishite, kak vy khotite, chtoby vash stil' peredachi pochty byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya peredannogo razmera.
+Chasovoy poyas:
+Segodnya {0}
+Tekushcheye vremya: {0}
+Tsvet razdelitelya tablitsy
+Tsvet zagolovka tablitsy
+Tsvet tablichnogo znacheniya
+Vozmozhnyye otvety
+Fayl moda ne ukazan.
+Pytayus' ustanovit' uzhe ustanovlennyy mod. Obnovleniye moda...
+Ustanovka ne udalas' dlya
+Predostavlennyy fayl moda nesovmestim.
+Ne udalos' udalit'
+Otkryvayet URL
+Pechatat' nomera strok pri pechati soderzhimogo fayla
+Zastavlyayet komandu «koshka» pechatat' nomera strok fayla.
+Transliterirovannaya versiya
+Perevedennaya versiya
+Zakryvayet vse uvedomleniya
+Zagruzka...
+Zagruzka...
+Pokazat' uvedomleniye o khode zagruzki
+Pokazat' uvedomleniye o khode zagruzki
+Pokazyvayet uvedomleniye, pokazyvayushcheye khod zagruzki.
+Pokazyvayet uvedomleniye, pokazyvayushcheye khod zagruzki.
+Proveryayet, sushchestvuyet li perevodimaya stroka v resursakh KS.
+Stroka naydena v resursakh lokalizatsii.
+Stroka ne naydena v resursakh lokalizatsii.
+Tikho zapuskayet yadro
+Vvodit komandu dlya zapuska pri sleduyushchem vkhode v sistemu
+Zapuskayet yadro ​​v bezopasnom rezhime, otklyuchaya vse mody
+Kak bezopasnyy rezhim, no takzhe otklyuchayet mnogopol'zovatel'skiy rezhim i nekotoryye nastroyki.
+Ne khvatilo argumentov.
+Tsvet verkhnego levogo ugla dlya rampy
+Tsvet verkhnego pravogo ugla dlya rampy
+Tsvet nizhnego levogo ugla dlya rampy
+Tsvet nizhnego pravogo ugla dlya rampy
+Tsvet verkhney ramki dlya pandusa
+Tsvet nizhney ramki dlya pandusa
+Tsvet levoy ramki dlya pandusa
+Pravil'nyy tsvet ramki dlya pandusa
+Ispol'zuyte tsveta granits dlya pandusa
+Ispol'zuyte tsveta granits dlya paneli rampy. Yesli otklyucheno, budet generirovat'sya seraya polosa.
+Zapuskayet HTTP-obolochku
+Vykhodit iz obolochki HTTP i vozvrashchayetsya v yadro
+Ustanavlivayet HTTP-sayt. Dolzhen byt' dopustimym URI.
+Poluchayet otvet ot HTTP-servera, ispol'zuya ukazannyy zapros
+Udalyayet kontent s HTTP-servera
+Proizoshla oshibka v HTTP-obolochke:
+Soobshcheniye HTTP: zaproshennaya komanda {0} ne naydena. Sm. «pomoshch'» dlya polucheniya spiska dostupnykh komand, ukazannykh v obolochke HTTP.
+Poluchayet stroku s HTTP-servera, ispol'zuya ukazannyy zapros
+Polucheniye {0}...
+Nedopustimyy format URI sayta.
+Nastroyka sayta na
+Tsveta ne trebuyut perezagruzki, no dlya bol'shinstva nastroyek trebuyetsya perezagruzka.
+Net pomoshchi dlya argumenta "{0}".
+Nazhmite A na nenavistnykh kommentariyakh, chtoby izvinit'sya. Nazhmite T na lyubovnykh kommentariyakh, chtoby poblagodarit'. Nazhmite Q, chtoby vyyti iz igry.
+Vy izvinilis' za gnevnyy kommentariy! Otlichno!
+Izvinyayus' za lyubimyy kommentariy. Ne dostatochno khorosh.
+Vy tol'ko chto poblagodarili kheytera za kheyterskiy kommentariy!
+Slozhnost' po umolchaniyu dlya SpeedPress
+Vremya ozhidaniya nazhatiya klavishi dlya SpeedPress
+Vyberite zhelayemuyu slozhnost'.
+Skol'ko millisekund zhdat' nazhatiya klavishi do istecheniya vremeni ozhidaniya? (V pol'zovatel'skoy slozhnosti)
+Zamenyayet slovo ili frazu drugim s pomoshch'yu regulyarnykh vyrazheniy
+Zamenyayet slovo ili frazu drugim v stroke s pomoshch'yu regulyarnykh vyrazheniy
+Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh s ispol'zovaniyem regulyarnykh vyrazheniy.
+Naydite nastroyku
+Napishite, chto vy khotite nayti.
+Nichego ne naydeno. Ubedites', chto vy pravil'no zapisali nastroyku.
+Zapakovyvayet lokal'nyy fayl v arkhiv
+Ne mogu nichego upakovat'.
+Opisaniye otveta
+Khost-port
+Dlya polucheniya dopolnitel'noy informatsii ob usloviyakh ispol'zovaniya etogo programmnogo obespecheniya posetite
+Tip vyvoda po umolchaniyu
+Proveryayet vse nastroyki KS na pravil'nost' napisaniya peremennykh
+Eti zapisi konfiguratsii soderzhat nedopustimyye peremennyye ili perechisleniya i dolzhny byt' ispravleny:
+Fayl {0} ne nayden
+Sozdayet massiv peremennykh s predostavlennymi znacheniyami
+Napishite nomer nastroyki, k kotoroy nuzhno pereyti. Lyuboy drugoy simvol oznachayet vozvrat.
+Proveryayet vse nomera strok teksta lokalizatsii, chtoby uvidet', vse li oni ravny.
+Nesootvetstviye strok v
+Pozhaluysta, vvedite nomer pol'zovatelya.
+Vklyuchit' anonimnykh pol'zovateley
+Vklyuchit' pol'zovateley s ogranichennymi vozmozhnostyami
+Vklyuchayet anonimnykh pol'zovateley v spisok
+Vklyuchayet otklyuchennykh pol'zovateley v spisok
+Sortirovat' spisok
+Professional'no sortiruyet spisok faylovykh sistem.
+Predostavlyayet vozmozhnost' vybora
+Komandy obolochki ne realizovany!!!
+Pokazyvat' posledniy zagolovok RSS pri vkhode v sistemu
+URL zagolovka RSS
+Pri kazhdom vkhode v sistemu budet otobrazhat'sya posledniy zagolovok RSS s vybrannogo URL-adresa zagolovka.
+URL-adres zagolovka RSS, kotoryy budet ispol'zovat'sya pri pokaze poslednego zagolovka. Obychno eto vash lyubimyy kanal.
+Posledniye novosti:
+Ne udalos' poluchit' posledniye novosti.
+Tsvet vybrannogo varianta
+Pokazat' trassirovku steka pri oshibke yadra
+Yesli yest' kakaya-libo oshibka yadra, vyberite, sleduyet li vyvodit' trassirovku steka na konsol'.
+Mod mozhno zagruzit', no eti preduprezhdeniya mogut povliyat' na rabotu moda:
+Zastavka mozhet byt' zagruzhena, no eti preduprezhdeniya mogut povliyat' na rabotu zastavki:
+Sokhranit' nastroyki kak
+Zagruzit' nastroyki iz
+Gde vy khotite sokhranit' tekushchiye nastroyki yadra?
+Ne udayetsya sokhranit' nastroyki yadra poverkh sushchestvuyushchego fayla.
+Otkuda vy khotite zagruzit' tekushchiye nastroyki yadra?
+Proveryayet, sushchestvuyut li perevodimyye stroki v resursakh KS.
+Ob"yedinyayet dva ili boleye tekstovykh fayla v vykhodnoy fayl.
+Ne udalos' ob"yedinit' fayly.
+Taym-aut polucheniya RSS-kanala
+Skol'ko millisekund zhdat' do taym-auta zagruzki RSS-kanala?
+Zapolnite korobki
+Risuyem li my korobku tselikom ili risuyem tol'ko granitsu?
+Zaderzhka etapa v millisekundakh
+Skol'ko millisekund zhdat' pered otrisovkoy sleduyushchego etapa?
+Sleduyushchiy interval gniyeniya rampy
+Skol'ko millisekund zhdat', prezhde chem sgniyet odin konets sleduyushchego pandusa?
+Proverit' kvotu otladki
+Proveryayem li my, dolzhna li sistema otladki proveryat' nalichiye kvoty pered zapis'yu v otladchik?
+Skol'ko millisekund deystvitel'no potrebovalos', chtoby zasnut'?
+Ne udalos' dobavit' sobytiye.
+Ne udalos' udalit' sobytiye.
+Nedostatochno argumentov dlya dobavleniya sobytiya.
+Nedostatochno argumentov dlya udaleniya sobytiya.
+Nedostatochno argumentov dlya manipulirovaniya sobytiyami.
+Ne udalos' dobavit' ili udalit' napominaniye.
+Nedostatochno argumentov dlya dobavleniya ili udaleniya napominaniya.
+Nedostatochno argumentov dlya upravleniya napominaniyem.
+Napominaniye bez nazvaniya
+Meropriyatiye bez nazvaniya
+Segodnya den' sobytiy!
+Ne propustite eto!
+Nedopustimoye deystviye.
+Prostoy sekundomer
+Nachat' ili ostanovit'
+Koleni
+Perezagruzit'
+Prostoy taymer
+Nachat' (povtorno) obratnyy otschet
+Ustanovit' interval
+Ukazannyy taym-aut ne yavlyayetsya chislovym.
+Ukazhite vremya ozhidaniya v millisekundakh
+Sokhranyayte vse sobytiya i/ili napominaniya destruktivno
+Yesli vklyucheno, udalyayet vse sobytiya i/ili napominaniya pered ikh sokhraneniyem s pomoshch'yu komandy kalendarya.
+Proverka povtornykh popytok peredachi po FTP
+Taym-aut FTP-soyedineniya
+Vremya ozhidaniya FTP-soyedineniya dlya peredachi dannykh
+IP-versii FTP
+Skol'ko raz nuzhno proverit' zagruzku i zagruzku i povtorit' popytku, yesli proverka ne udalas', prezhde chem zagruzka ne budet vypolnena v tselom?
+Skol'ko millisekund zhdat' do istecheniya vremeni ozhidaniya FTP-soyedineniya?
+Skol'ko millisekund zhdat' do istecheniya vremeni ozhidaniya FTP-soyedineniya dlya peredachi dannykh?
+Vyberite versiyu Internet-protokola, podderzhivayemuyu FTP-serverom i ispol'zuyemuyu FTP-kliyentom.
+Popytka zapustit' RPC, kogda on uzhe zapushchen.
+Simvol verkhnego levogo ugla dlya tsvetovogo kolesa RGB
+Verkhniy pravyy ugol simvola dlya tsvetovogo kolesa RGB
+Simvol nizhnego levogo ugla dlya tsvetovogo kolesa RGB
+Simvol nizhnego pravogo ugla dlya tsvetovogo kolesa RGB
+Simvol verkhney ramki dlya tsvetovogo kolesa RGB
+Simvol nizhnego kadra dlya tsvetovogo kolesa RGB
+Simvol levoy ramki dlya tsvetovogo kolesa RGB
+Simvol pravoy ramki dlya tsvetovogo kolesa RGB
+Nakhodit fayl v ukazannom kataloge ili v tekushchem kataloge
+Preobrazuyet okonchaniya strok v format dlya tekushchey platformy ili v ukazannyy pol'zovatel'skiy format.
+Obshchiy razmer v papke:
+Pokazat' obshchiy razmer v spiske
+Yesli vklyucheno, pokazyvayet obshchiy razmer papki v spiske, v zavisimosti ot togo, kak rasschitat' razmery papki v sootvetstvii s konfiguratsiyey.
+Vy v kurse!
+Formatirovaniye JSON po umolchaniyu dlya obolochki JSON
+Vybirayet formatirovaniye JSON po umolchaniyu (uluchshennoye ili umen'shennoye) dlya sokhraneniya obolochki JSON.
+Obnovleniye uspeshno skachano!
+Avtomaticheski zagruzhat' obnovleniya
+Yesli yest' kakoye-libo obnovleniye, yadro ​​avtomaticheski zagruzit yego.
+Radius vzryva feyyerverka
+Skol'ko blokov (do 10) sostavlyayet radius vzryva feyyerverka pri podzhiganii?
+Eta komanda imeyet sleduyushchiye pereklyuchateli, kotoryye izmenyayut yeye rabotu:
+Pechatayet nomera strok, kotoryye sleduyut za pechatayemoy strokoy
+Zapreshchayet pechatat' nomera strok
+Vsegda ispol'zuyte transliterirovannuyu versiyu
+Vsegda ispol'zuyte perevedennuyu versiyu
+Prinuditel'noye pereklyucheniye yazyka
+Ukazhite, chto otvet mozhet soderzhat' boleye odnogo simvola
+Ukazhite, chto otvet mozhet sostoyat' tol'ko iz odnogo simvola
+Vyvesti vopros i otvety v odnu stroku
+Raspechatayte vopros i otvety v dve stroki
+Raspechatayte vopros i otvety sovremennym sposobom
+Raspechatayte vopros i otvety v vide tablitsy
+Pokazyvayet detali fayla v spiske
+Podavlyayet nadoyedlivyye soobshcheniya ob otkaze v dostupe
+Pokazyvayet vse chasovyye poyasa
+Nachinayet igru na legkom urovne slozhnosti.
+Nachinayet igru na sredney slozhnosti
+Nachinayet igru na vysokom urovne slozhnosti
+Nachinayet igru na ochen' vysokoy slozhnosti
+Zapuskayet igru na pol'zovatel'skoy slozhnosti. Obratite vnimaniye, chto pol'zovatel'skoye vremya ozhidaniya v millisekundakh dolzhno byt' ukazano v kachestve argumenta.
+Pokazyvayet sistemnuyu informatsiyu
+Pokazyvayet informatsiyu ob oborudovanii
+Pokazyvayet informatsiyu o pol'zovatele
+Pokazyvayet soobshcheniye dnya
+Pokazyvayet soobshcheniye na sleduyushchiy den' posle vkhoda v sistemu
+Pokazyvayet vsyu informatsiyu
+Sozdayet katalog, soderzhashchiy soderzhimoye ZIP-fayla.
+Pokazyvayet vse dostupnyye goroda
+Bystroye szhatiye
+Bez szhatiya
+Ne sozdavat' bazovyy katalog v arkhive
+Yedinitsa v tikakh
+Pozorno otklyuchayetsya ot servera
+Ukazyvayet, chto tselevoy put' yavlyayetsya absolyutnym
+Sokhranyayet fayl JSON, ukrashaya yego v protsesse
+Sokhranyayet fayl JSON, minimiziruya yego v protsesse
+Poluchayet stil' okonchaniya stroki iz tekstovogo fayla
+Ochishchayet vse zapushchennyye sobytiya
+Vklyuchit' otladku sobytiy
+Vklyuchayet otladku dlya sistemy sobytiy yadra.
+Figlet shrift
+Napishite shrift figlet, kotoryy podderzhivayetsya bibliotekoy Figgle. Obratites' k dokumentatsii biblioteki dlya polucheniya dopolnitel'noy informatsii.
+Ne udalos' ustanovit' pol'zovatel'skiy yazyk {0}.
+Fayl metadannykh, neobkhodimyy dlya ustanovki pol'zovatel'skogo yazyka, ne sushchestvuyet.
+Svedeniya o metadannykh, neobkhodimyye dlya ustanovki pol'zovatel'skogo yazyka, ne obespechivayut neobkhodimoy lokalizatsii.
+Ne udalos' udalit' pol'zovatel'skiy yazyk {0}.
+Fayl metadannykh, neobkhodimyy dlya udaleniya pol'zovatel'skogo yazyka, ne sushchestvuyet.
+Informatsiya metadannykh, neobkhodimaya dlya udaleniya pol'zovatel'skogo yazyka, ne obespechivayet neobkhodimykh lokalizatsiy.
+Dlina angliyskogo yazyka ne sootvetstvuyet dline predostavlennogo markera yazyka.
+YAzyk uzhe sushchestvuyet i ne mozhet byt' perezapisan.
+Ne udalos' udalit' pol'zovatel'skiy yazyk. Yego skoreye vsego ne sushchestvuyet.
+Ne udalos' ustanovit' pol'zovatel'skiye yazyki.
+Ne udalos' udalit' pol'zovatel'skiye yazyki.
+Ne udalos' udalit' pol'zovatel'skiye yazyki. Sm. vnutrenneye isklyucheniye dlya polucheniya dopolnitel'noy informatsii.
+Napishite parol' administratora. Ubedites', chto vy ne ispol'zuyete etu uchetnuyu zapis', yesli vy deystvitel'no ne znayete, chto delayete.
+Vy dolzhny napisat' parol' administratora.
+Informatsiya o litsenzii
+Upravlyayte svoimi yazykami
+YAzyk ne nayden ili fayl soderzhit nedopustimyye simvoly.
+YAzyk ne ukazan.
+Upravleniye yazykami otklyucheno v bezopasnom rezhime.
+Kratkoye nazvaniye yazyka:
+Polnoye nazvaniye yazyka:
+Transliteriruyemyy yazyk:
+Pol'zovatel'skiy yazyk:
+Novyy privetstvennyy banner
+Stil'naya zastavka
+Pokazyvayet novyy privetstvennyy banner Figlet.
+Vklyuchayet stil'nuyu zastavku pri zapuske. Obratite vnimaniye, chto eto otklyuchit priglasheniye argumenta i predvaritel'nuyu zagruzku testovoy obolochki.
+Nazvaniye zastavki
+Imya zastavki iz dostupnykh zastavok, realizovannykh v yadre.
+Sozdan MOTD po umolchaniyu.
+Sozdan MAL po umolchaniyu.
+Sistemnaya uchetnaya zapis' initsializirovana
+Initsializirovannyye pol'zovateli
+Razresheniya zagruzheny
+Dobro pozhalovat'!
+Zapusk udalennogo otladchika...
+Oshibka podklyucheniya udalennogo otladchika
+Uvedomlyat' ob oshibke podklyucheniya udalennoy otladki
+Yesli vklyucheno, budet ispol'zovat' sistemu uvedomleniy dlya uvedomleniya khosta ob oshibke podklyucheniya udalennoy otladki. V protivnom sluchaye budet ispol'zovat'sya zapis' konsoli po umolchaniyu.
+Figlet shrift dlya taymera
+Vklyuchit' Figlet dlya taymera
+Yesli vklyucheno, budet ispol'zovat' figlet dlya taymera. Obratite vnimaniye, chto dlya pravil'nogo otobrazheniya vremeni s vklyuchennym Figlet trebuyetsya bol'shoy ekran konsoli.
+Oshibka pri sintaksicheskom analize argumentov komandnoy stroki pered zagruzkoy: {0}
+Sbrasyvayet yadro ​​k zavodskim nastroykam
+Obkhodit opredeleniye razmera konsoli
+Pokhozhe, vy obkhodite opredeleniye razmera konsoli. Na malen'kikh ekranakh vse mozhet rabotat' nepravil'no.
+Dlya bol'shego udobstva izmenite razmer okna konsoli, ostavayas' na etom ekrane. Nazhmite lyubuyu klavishu chtoby prodolzhit'...
+Vasha konsol' slishkom mala dlya pravil'noy raboty:
+Bannernyy shrift
+Vyvodit stroku na konsol', ispol'zuya tsvetnoy tip i lineynuyu pechat' s podderzhkoy Figlet.
+Vyvodit stroku na konsol', ispol'zuya tsvetnoy tip i lineynuyu pechat' s podderzhkoy formata i Figlet.
+Navsegda udalit' soobshcheniye
+Navsegda udalit' vse soobshcheniya ot poluchatelya
+Otmenyayet udaleniye soobshcheniya
+Otmenyayet udaleniye vsekh soobshcheniy ot poluchatelya
+Otmena udaleniya ne realizovana dlya POP3.
+Pokazat' kolichestvo komand v spravke
+Pokazat' kolichestvo komand obolochki v spravke
+Pokazat' kolichestvo komand moda v spravke
+Pokazat' kolichestvo psevdonimov v spravke
+Pokazyvayet kolichestvo komand v spiske komand, upravlyayemoye tremya pereklyuchatelyami schetchika dlya razlichnykh tipov komand.
+Vypolnyayet komandy posle vypolneniya vyrazheniy UESH.
+Usloviye ne naydeno v vyrazhenii.
+Usloviye {0} trebuyet {1} argumentov. Poluchil {2}.
+Usloviye nuzhno postavit' poseredine.
+Usloviye nuzhno postavit' v nachale.
+Oshibka razbora vyrazheniya iz-za sintaksicheskoy oshibki.
+Ne udalos' vypolnit' usloviye. Podrobneye zdes':
+Simvol maski parolya
+Simvol, kotoryy maskiruyet parol'. Ostav'te pustym dlya bol'shey bezopasnosti.
+Vykhod iz obolochki pri rabote na podobolochke
+Ne mogu ubit' materinskuyu obolochku!
+Ne udayetsya vyyti iz podobolochki.
+Fayl ne ukazan. Vykhod iz obolochki...
+Nastroyki dlya etoy zastavki dostupny zdes'.
+Tsvet indikatora vypolneniya
+Otkryvayet nastroyki zastavki
+Otkryvayet nastroyki zastavki
+Spisok dostupnykh peremennykh UESH
+Raspolozheniye teksta progressa
+Vyberite predpochitayemoye mestopolozheniye teksta progressa.
+Mozhno tol'ko tsifry napisat'.
+Nazhmite «q», chtoby vyyti.
+Zagruzka imen...
+Iz-za tekhnicheskikh trudnostey my ne mozhem perechislit' svoystva adaptera v sistemakh Unix.
+Vklyuchayet rezhim otladki
+Podskazki dlya argumentov
+Vklyuchit' cherno-belyy rezhim
+Delayet diskoteku cherno-beloy. Budet ochen' bol'no vashim glazam, yesli eto budet slishkom bystro, poetomu ne rekomenduyetsya, yesli vy ispytyvayete pripadok bystrykh izobrazheniy.
+Pokhozhe, vy ispol'zovali nepodderzhivayemuyu versiyu. Krayne ne rekomenduyetsya ispol'zovat' etu versiyu.
+Zagruzit' tekushchiye tsveta
+Tsvet al'ternativnogo varianta
+Pol'zovateli uchityvayut lyubov' ili nenavist' v kommentariyakh
+Skol'ko pol'zovateley dolzhno byt' v komnate kommentariyev lyubvi ili nenavisti?
+Spisok dostupnykh yazykov
+Dostupnyye yazyki:
+Argumenty komandnoy stroki:
+Argumenty komandnoy stroki pered zagruzkoy:
+Otkryvayet dokumentatsiyu API moda dlya struktury iskhodnogo koda v yego samoy posledney forme.

@@ -983,3 +983,675 @@ Ap?sa?i orice tast? pentru a citi pagina manualului ...
 Aceast? pagin? manual? trebuie s? func?ioneze pentru:
 Pagina manual? {0} nu a fost g?sit?.
 Manual de mod
+Argumentele nucleului disponibile:
+Apsai „q” dac ai terminat.
+Mai multe argumente ale nucleului pot fi separate prin virgule fr spaii, de exemplu:
+Comenzile injectate multiple pot fi separate cu dou puncte cu spaii, de exemplu:
+Argumentul solicitat {0} nu a fost gsit.
+Eroare irecuperabil în argument:
+Cripteaz un ir folosind SHA512
+Cripteaz un ir folosind SHA384
+Cripteaz un ir folosind SHA256
+Cripteaz un ir folosind SHA1
+Cripteaz un ir folosind MD5
+unde va fi builtinsaver
+Partea de mod este nimic.
+Oprirea modurilor nu este permis în modul sigur.
+Modul a fost deja pornit!
+Mod înc nu a început!
+Utilizarea comenzii:
+Numele fiierului piesei:
+Calea fiierului parte:
+Eroare la încercarea de a porni screensaverul:
+Tip de cale nevalid.
+Tip de cale de kernel nevalid.
+Pornirea anterioar a euat
+Editorul JSON nu a deschis înc un flux de fiiere.
+Proprietatea din fiierul JSON nu este gsit.
+Proprietate eliminat.
+Adaug o nou proprietate la sfâritul fiierului JSON
+Elimin o proprietate din fiierul JSON
+Iese din shell-ul JSON
+Iese din shell-ul JSON fr a salva modificrile
+Salveaz fiierul JSON
+Deschide shell-ul JSON
+Tiprete fiierul JSON
+Urmtorul interval de ramp
+Activeaz suportul pentru 255 de culori pentru Ramp.
+Activeaz suportul pentru culori reale pentru Ramp.
+Câte milisecunde trebuie s ateptai înainte de a umple urmtoarea ramp?
+Culoarea titlului notificrii
+Culoarea descrierii notificrilor
+Culoarea progresului notificrii
+Culoarea eecului de notificare
+Culoarea întrebrii
+Culoare de succes
+Culoarea dolarului utilizatorului
+Culoarea vârfului
+Culoarea textului separator
+Culoarea separatorului
+Culoarea titlului listei
+Culoare de avertizare de dezvoltare
+Culoarea timpului scenei
+Culoare de progres
+Culoarea opiunii spate
+Desenai chenarul de notificare
+Acoper notificarea cu grania.
+Contactai furnizorul modului pentru a actualiza modulul la versiunea compatibil.
+Culoarea chenarului cu prioritate redus
+Culoarea chenarului cu prioritate medie
+Culoarea chenarului cu prioritate ridicat
+Trimite o notificare de progres pentru a testa receptorul
+Testeaz roata de culori
+Afieaz ora nucleului local
+Afieaz data nucleului local
+Afieaz data i ora nucleului local
+Afieaz ora UTC a nucleului
+Afieaz data nucleului UTC
+Afieaz data i ora nucleului UTC
+calea MOTD
+Calea MAL
+Ce fiier este fiierul text MOTD? Scriei o cale absolut ctre fiierul text.
+Ce fiier este fiierul text MAL? Scriei o cale absolut ctre fiierul text.
+Moduri incluse pe lista neagr
+Scriei numele de fiiere ale modurilor care nu vor rula la pornire. Când ai terminat, scriei „q”. Scriei un semn minus lâng cale pentru a elimina un mod existent.
+Mod {0} este pe lista neagr.
+Reîncarc toate modurile
+Adaug un mod la lista neagr
+Elimin un mod din lista neagr
+Ora i data în UTC: {0}
+Comanda shell JSON specificat nu a fost gsit.
+Afiai informaii despre aplicaie în timpul pornirii
+Analizai argumentele liniei de comand
+Arat orele de încheiere a etapei
+Pornii modificrile kernelului la pornire
+Afiai ora curent înainte de autentificare
+Notificai pentru orice defeciune în timpul pornirii
+Afieaz informaii scurte despre aplicaie la pornire.
+Analizeaz argumentele liniei de comand la pornire.
+Afieaz cât timp i-a luat nucleului pentru a termina o etap.
+Pornii automat modificrile kernelului la pornire.
+Afieaz ora curent, fusul orar i data înainte de a v conecta.
+Dac exist o eroare minor în timpul pornirii nucleului, anun utilizatorul despre aceasta.
+Stilul prompt al numelui de utilizator
+Stilul prompt al parolei
+Afiai MAL la conectare
+Scriei cum dorii s fie solicitarea dvs. de conectare. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Scriei cum dorii s fie solicitarea parolei. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Afieaz mesajul zilei dup afiarea ecranului de conectare.
+Testeaz stilul promptului Shell
+Stil de promptare JSON Shell
+Probe comenzi injectate
+Sondeaz comenzile injectate la începutul shell-ului kernelului.
+Afiai detaliile fiierului în list
+Afieaz detaliile scurte ale fiierului în timp ce listai fiierele
+Afiai detaliile fiierului în lista FTP
+Stilul prompt al numelui de utilizator pentru FTP
+Stilul de solicitare a parolei pentru FTP
+Utilizai primul profil FTP
+Adugai conexiuni noi la apelarea rapid FTP
+Încercai s validai certificatele FTP securizate
+Afiai MOTD FTP la conexiune
+Acceptai întotdeauna certificate FTP nevalide
+Afieaz detaliile fiierului FTP în timp ce listeaz directoarele de la distan.
+Utilizeaz primul profil FTP pentru a se conecta la FTP.
+Dac este activat, adaug o nou conexiune la apelarea rapid FTP.
+Încearc s valideze certificatele FTP. Dezactivarea acestuia nu este recomandat.
+Afieaz mesajul FTP al zilei la conectare.
+Acceptai întotdeauna certificate FTP nevalide. Pornirea acestuia nu este recomandat, deoarece poate prezenta riscuri de securitate.
+Stilul prompt al numelui de utilizator pentru e-mail
+Stilul de solicitare a parolei pentru e-mail
+Stilul prompt IMAP pentru e-mail
+Stilul prompt SMTP pentru e-mail
+Detecteaz automat serverul de e-mail
+Activai depanarea e-mailului
+Notificare pentru mesaje de e-mail noi
+Stilul de solicitare a parolei GPG pentru e-mail
+Trimitei intervalul de ping IMAP
+Trimitei intervalul de ping SMTP
+Format text mail
+Scriei cum dorii s fie promptul serverului IMAP. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Scriei cum dorii s fie promptul serverului dvs. SMTP. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Detecteaz automat serverul de e-mail pe baza adresei date.
+Activeaz depanarea serverului de e-mail.
+V anun pentru orice mesaj e-mail nou.
+Scriei cum dorii s fie solicitarea parolei dvs. GPG. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Câte milisecunde pentru a trimite ping-ul IMAP?
+Câte milisecunde pentru a trimite ping-ul SMTP?
+Controleaz modul în care va fi afiat textul e-mailului.
+Text simplu
+Text fluid
+text HTML
+Text îmbogit
+Text îmbogit comprimat
+Text bogat
+Pornii automat depanarea de la distan la pornire
+Formatul mesajului de depanare la distan
+Dac dorii ca depanarea de la distan s înceap la pornire, activai aceasta.
+Specific formatul mesajului de depanare la distan. {0} pentru nume, {1} pentru mesaj.
+Stilul de solicitare URL a fluxului RSS
+Actualizeaz automat fluxul RSS
+Interval de reîmprosptare automat a fluxului RSS
+Scriei cum dorii s fie promptul serverului de feed RSS. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Câte milisecunde pentru a reîmprospta fluxul RSS?
+Afiai detaliile fiierului în lista SFTP
+Stilul prompt al numelui de utilizator pentru SFTP
+Adugai noi conexiuni la apelarea rapid SFTP
+Afieaz detaliile fiierului SFTP în timp ce listeaz directoarele de la distan.
+Dac este activat, adaug o nou conexiune la apelarea rapid SFTP.
+Ping timeout
+Afiai informaii detaliate despre adaptor
+Afiai informaii generale despre reea
+Descrcai text procentual
+Încrcai text procentual
+Câte milisecunde trebuie s ateptai înainte de a declara timeout?
+Imprim informaii extinse despre adaptor, cum ar fi informaii despre pachet.
+Afieaz informaii generale despre reea.
+Scriei cum dorii s fie textul procentual de încrcare. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai. {0} pentru dimensiunea încrcat, {1} pentru dimensiunea int, {2} pentru procent.
+Scriei cum dorii s fie textul procentual de descrcare. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai. {0} pentru dimensiunea descrcat, {1} pentru dimensiunea int, {2} pentru procent.
+Cerei parola dup blocare
+Dup blocarea ecranului, cerei parola
+Nivel minim de culoare roie
+Nivel minim de culoare verde
+Nivel minim de culoare albastr
+Nivel minim de culoare
+Nivel maxim de culoare roie
+Nivel maxim de culoare verde
+Nivel maxim de culoare albastr
+Nivel maxim de culoare
+Nivel minim de culoare roie. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel minim de culoare verde. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel minim de culoare albastr. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel minim de culoare. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Nivel maxim de culoare roie. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel maxim de culoare verde. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel maxim de culoare albastr. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255.
+Nivel maxim de culoare. Valoarea minim acceptat este 0, iar valoarea maxim acceptat este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Culoarea primului plan
+caracter de linie
+Un caracter pentru a forma o linie. Asigurai-v c introducei un singur caracter.
+Caracter din colul din stânga sus pentru bara de ore
+Caracter din colul din stânga sus pentru bara de minute
+Caracter din colul din stânga sus pentru bara de secunde
+Caracter din colul din dreapta sus pentru bara de ore
+Caracter din colul din dreapta sus pentru bara de minute
+Caracter din colul din dreapta sus pentru bara de secunde
+Caracter din colul din stânga jos pentru bara de ore
+Caracter din colul din stânga jos pentru bara de minute
+Caracter din colul din stânga jos pentru bara de secunde
+Caracter din colul din dreapta jos pentru bara de ore
+Caracter din colul din dreapta jos pentru bara de minute
+Caracter din colul din dreapta jos pentru bara de secunde
+Caracter de cadru superior pentru bara de ore
+Caracter de cadru superior pentru bara de minute
+Caracter de cadru superior pentru bara de secunde
+Caracter de cadru inferior pentru bara de ore
+Caracter de cadru inferior pentru bara de minute
+Caracter de cadru inferior pentru bara de secunde
+Caracter de cadru din stânga pentru bara de ore
+Caracter de cadru din stânga pentru bara de minute
+Caracter de cadru din stânga pentru bara de secunde
+Caracter cadru din dreapta pentru bara de ore
+Caracter cadru din dreapta pentru bara de minute
+Caracter cadru din dreapta pentru bara de secunde
+Text informativ pentru ore
+Text informativ timp de minute
+Text informativ pentru câteva secunde
+Nivel minim de culoare roie pentru ore
+Nivel minim de culoare verde pentru ore
+Nivel minim de culoare albastr pentru ore
+Nivel minim de culoare pentru ore
+Nivel maxim de culoare roie pentru ore
+Nivel maxim de culoare verde pentru ore
+Nivel maxim de culoare albastr pentru ore
+Nivel maxim de culoare pentru ore
+Nivel minim de culoare roie pentru câteva minute
+Nivel minim de culoare verde pentru minute
+Nivel minim de culoare albastr timp de minute
+Nivel minim de culoare pentru minute
+Nivel maxim de culoare roie timp de minute
+Nivel maxim de culoare verde pentru minute
+Nivel maxim de culoare albastr timp de minute
+Nivel maxim de culoare pentru minute
+Nivel minim de culoare roie pentru secunde
+Nivel minim de culoare verde pentru secunde
+Nivel minim de culoare albastr pentru secunde
+Nivel minim de culoare pentru secunde
+Nivel maxim de culoare roie pentru secunde
+Nivel maxim de culoare verde pentru secunde
+Nivel maxim de culoare albastr pentru secunde
+Nivel maxim de culoare pentru secunde
+Un personaj care seamn cu colul din stânga sus. Asigurai-v c introducei un singur caracter.
+Un personaj care seamn cu colul din stânga jos. Asigurai-v c introducei un singur caracter.
+Un personaj care seamn cu cadrul de sus. Asigurai-v c introducei un singur caracter.
+Un personaj care seamn cu cadrul inferior. Asigurai-v c introducei un singur caracter.
+Un personaj care seamn cu cadrul din stânga. Asigurai-v c introducei un singur caracter.
+Un personaj care seamn cu cadrul potrivit. Asigurai-v c introducei un singur caracter.
+Scriei cum arat textul dvs. informativ pentru ora curent. {0} pentru ora curent din 24 de ore.
+Scriei cum se arat textul dvs. informativ pentru minutul curent. {0} pentru minutul curent din 60 de minute.
+Scriei cum arat textul dvs. informativ pentru secunda curent. {0} pentru secunda curent din 60 de secunde.
+Culoarea textului
+Caracter din colul din stânga sus pentru bara de ramp
+Caracter din colul din dreapta sus pentru bara de ramp
+Caracter din colul din stânga jos pentru bara de ramp
+Caracter din colul din dreapta jos pentru bara de ramp
+Caracter de cadru superior pentru bara de ramp
+Caracter de cadru inferior pentru bara de ramp
+Caracter de cadru din stânga pentru bara de ramp
+Caracter cadru din dreapta pentru bara de ramp
+Nivel minim de culoare roie pentru culoarea de pornire
+Nivel minim de culoare verde pentru culoarea de pornire
+Nivel minim de culoare albastr pentru culoarea de început
+Nivelul minim de culoare pentru culoarea de început
+Nivel maxim de culoare roie pentru culoarea de pornire
+Nivel maxim de culoare verde pentru culoarea de pornire
+Nivel maxim de culoare albastr pentru culoarea de pornire
+Nivel maxim de culoare pentru culoarea de pornire
+Nivel minim de culoare roie pentru culoarea final
+Nivel minim de culoare verde pentru culoarea final
+Nivel minim de culoare albastr pentru culoarea final
+Nivel minim de culoare pentru culoarea final
+Nivel maxim de culoare roie pentru culoarea final
+Nivel maxim de culoare verde pentru culoarea final
+Nivel maxim de culoare albastr pentru culoarea final
+Nivel maxim de culoare pentru culoarea final
+Numrul minim de rezolvare
+Numrul maxim de rezolvare
+Rezolvatorul arat intrarea
+Caracter din colul din stânga sus pentru chenarul de notificare
+Caracter din colul din dreapta sus pentru chenarul de notificare
+Caracter din colul din stânga jos pentru chenarul de notificare
+Caracter din colul din dreapta jos pentru chenarul de notificare
+Caracter de cadru superior pentru chenarul de notificare
+Caracter de cadru inferior pentru chenarul de notificare
+Caracter de cadru din stânga pentru chenarul de notificare
+Caracter cadru din dreapta pentru chenarul de notificare
+Stilul manual de informaii despre pagin
+Dac s arate ceea ce este scris în promptul de intrare.
+Care este numrul minim de ales?
+Care este numrul maxim de ales?
+Scriei cum dorii s fie informaiile paginii de manual. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai. {0} pentru titlul manual, {1} pentru revizuire.
+Proprietatea {0} nu se gsete pe niciunul dintre module.
+Aceast seciune listeaz setrile generale ale screensaverului. Pentru setrile individuale ale screensaverului, ieii din Setri i deschidei Setri Screensaver.
+Pornii roata de culori în modul de culoare adevrat
+Dac este specificat, va afia un banner de pornire personalizat cu suport pentru substitueni. Putei utiliza {0} pentru versiunea de kernel.
+Ce variant a limbii curente este folosit pentru a schimba numele lunii, calendarul etc.?
+Activeaz suportul pentru 255 de culori.
+Activeaz suportul adevrat al culorilor.
+Cuvântul a fost ters în rândul {0}.
+ir înlocuit pe linia {0}.
+Numrul rândului {0} a fost eliminat.
+Suprimai mesajele neautorizate
+Ascunde mesajul enervant dac funcia de listare încearc s deschid un folder neautorizat
+Informaii despre serverul FTP
+Adresa serverului:
+Port server:
+Tip server:
+Tip de sistem server:
+Mod de criptare server:
+Tip conexiune de date server:
+Sistem server:
+Tip de date de descrcare de server:
+Tip de date de încrcare pe server:
+Trebuie s v conectai la un server înainte de a efectua aceast operaiune.
+Introducei un fiier de la distan pentru a fi hashing.
+Introducei un director de la distan pentru a fi hashing.
+Introducei un director la distan.
+Hashing recursiv pentru FTP
+Dac se hasheaz recursiv un director. V rugm s reinei c nu toate serverele FTP accept acest lucru.
+Viteza de ceas a procesorului:
+Suport procesor SSE2:
+Numrul total de procesoare:
+Dimensiunea discului:
+Memorie totala:
+Plac grafic:
+Model de disc:
+Numr maxim de e-mailuri pe o singur pagin
+Cultura limbii actuale
+Dac eti sigur c ai deschis seciunea corect, verific acest mesaj:
+Setri diverse...
+Setri de culori...
+Execut o comand de server FTP
+Introducei adresa i portul serverului POP3 (<adres> sau <adres>:[port]):
+Stilul prompt POP3 pentru e-mail
+Trimitei intervalul de ping POP3
+Scriei cum dorii s fie promptul serverului dvs. POP3. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai.
+Câte milisecunde pentru a trimite ping-ul POP3?
+Folosii POP3
+Dac s utilizai POP3. Dezactivarea acestui lucru va folosi SMTP.
+Cripteaz un ir folosind CRC32
+Deschide clientul de e-mail
+de coresponden transferat...
+Setrile pentru acest screensaver sunt disponibile aici.
+Testeaz funcionalitatea tabelului
+Editeaz linia specificat
+Adaug noile linii la sfâritul fiierului
+Introducei textul pe care dorii s îl ataai la sfâritul fiierului. Când ai terminat, scriei „EOF” pe propria linie.
+Nume gazd
+Nume de utilizator
+Tip de date
+Codificare
+Criptare
+Protocoale
+Afieaz progresul transferului de e-mail
+Progresul transferului de e-mail
+Progresul transferului de e-mail (singur)
+Dac este activat, shell-ul de e-mail va arta câi octei transmii la descrcarea e-mailului.
+Scriei cum dorii s fie stilul de progres al transferului de e-mail. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai. {0} pentru dimensiunea transferat i {1} pentru dimensiunea total.
+Scriei cum dorii s fie stilul de progres al transferului de e-mail. Lsai necompletat pentru a utiliza stilul implicit. Substituenii sunt analizai. {0} pentru dimensiunea transferat.
+Fus orar:
+Astzi este {0}
+Ora curent este {0}
+Culoarea separatorului de mas
+Culoarea antetului tabelului
+Culoarea valorii tabelului
+Raspunsuri posibile
+Fiierul mod nu este specificat.
+Încercarea de a instala un mod deja instalat. Se actualizeaz modul...
+Instalarea a euat pentru
+Fiierul mod furnizat este incompatibil.
+Dezinstalarea a euat pentru
+Deschide o adres URL
+Tiprii numerele de rând pe coninutul fiierului de tiprire
+Face comanda \"cat\" s imprime numerele de linie ale fiierului.
+Versiune transliterat
+Versiune tradus
+Respinge toate notificrile
+Descrcarea...
+Se încarc...
+Afiai notificarea pentru progresul descrcrii
+Afiai notificarea pentru progresul încrcrii
+Afieaz notificarea care arat progresul descrcrii.
+Afieaz notificarea care arat progresul încrcrii.
+Verific dac irul translabil exist în resursele KS
+ir gsit în resursele de localizare.
+irul nu a fost gsit în resursele de localizare.
+Pornete nucleul în linite
+Injecteaz o comand pentru a porni la urmtoarea autentificare
+Pornete nucleul în modul sigur, dezactivând toate modurile
+Precum modul sigur, dar dezactiveaz i multi-utilizator i unele personalizri
+Nu au fost suficiente argumente.
+Culoarea colului din stânga sus pentru bara de ramp
+Culoarea colului din dreapta sus pentru bara de ramp
+Culoarea colului din stânga jos pentru bara de ramp
+Culoarea colului din dreapta jos pentru bara de ramp
+Culoarea cadrului superioar pentru bara de ramp
+Culoarea inferioar a cadrului pentru bara de ramp
+Culoarea cadrului din stânga pentru bara de ramp
+Culoarea drept a cadrului pentru bara de ramp
+Folosii culorile marginilor pentru bara de ramp
+Utilizai culorile marginilor pentru bara de ramp. Dac este dezactivat, va genera o bar gri.
+Pornete shell-ul HTTP
+Iese din shell HTTP i revine la kernel
+Seteaz site-ul HTTP. Trebuie s fie un URI valid.
+Obine rspunsul de la serverul HTTP folosind cererea specificat
+terge coninutul de pe serverul HTTP
+A aprut o eroare în shell-ul HTTP:
+Mesaj HTTP: comanda solicitat {0} nu a fost gsit. Consultai „ajutor” pentru o list de comenzi disponibile specificate pe shell HTTP.
+Obine irul de pe serverul HTTP folosind cererea specificat
+Se obine {0}...
+Formatul URI al site-ului este nevalid.
+Setarea site-ului la
+Culorile nu necesit o repornire, dar majoritatea setrilor necesit o repornire.
+Niciun ajutor pentru argumentul „{0}”.
+Apsai A pe comentariile de ur pentru a v cere scuze. Apsai T pe comentariile de dragoste pentru a mulumi. Apsai Q pentru a prsi jocul.
+i-ai cerut scuze pentru un comentariu de ur! Excelent!
+Mi-am cerut scuze pentru comentariul de dragoste. Nu indeajuns de bun.
+Tocmai i-ai mulumit urtorului pentru comentariul de ur!
+Dificultate implicit pentru SpeedPress
+Timeout pentru apsarea tastelor pentru SpeedPress
+Selectai dificultatea preferat.
+Câte milisecunde trebuie s ateptai apsarea tastei înainte de expirarea timpului? (În dificultate personalizat)
+Înlocuiete un cuvânt sau o expresie cu altul folosind expresii regulate
+Înlocuiete un cuvânt sau o expresie cu un altul dintr-o linie folosind expresii regulate
+Interogeaz un cuvânt dintr-o linie specificat sau pe toate liniile folosind expresii regulate
+Gsii o setare
+Scrie ce vrei s caui.
+Nu se gsete nimic. Asigurai-v c ai scris corect setarea.
+Ambaleaz un fiier local în arhiv
+Nu pot împacheta nimic.
+Descrierea rspunsului
+Port gazd
+Pentru mai multe informaii despre termenii i condiiile de utilizare a acestui software, vizitai
+Tip de ieire de alegere implicit
+Verific toate setrile KS pentru a vedea dac variabilele sunt scrise corect
+Aceste intrri de configurare au variabile sau enumerari nevalide i trebuie remediate:
+Fiierul {0} nu a fost gsit
+Creeaz o matrice variabil cu valorile furnizate
+Scriei numrul setrii la care s mergei. Orice alt caracter înseamn întoarcerea.
+Verific toate numerele liniilor de text de localizare pentru a vedea dac toate sunt egale
+Linie nepotrivit în
+V rugm s introducei un numr de utilizator.
+Includei utilizatori anonimi
+Includei utilizatorii cu dizabiliti
+Include utilizatorii anonimi în list
+Include utilizatorii cu dizabiliti în list
+Sortai lista
+Sorteaz lista sistemului de fiiere în mod profesional.
+Ofer o alegere de selecie
+Comenzile Shell nu sunt implementate!!!
+Afiai cel mai recent titlu RSS la conectare
+Adresa URL a titlului RSS
+La fiecare conectare, va afia cel mai recent titlu RSS de la adresa URL a titlului selectat.
+Adresa URL a titlului RSS care trebuie utilizat atunci când se afieaz cel mai recent titlu. Acesta este de obicei feedul tu preferat.
+Cele mai recente tiri:
+Nu s-au putut obine cele mai recente tiri.
+Culoarea opiunii selectate
+Afiai urmrirea stivei la eroarea nucleului
+Dac exist vreo eroare de nucleu, alegei dac s imprimai sau nu urmrirea stivei pe consol.
+Modul poate fi încrcat, dar aceste avertismente pot afecta modul în care funcioneaz modul:
+Screensaver-ul poate fi încrcat, dar aceste avertismente pot afecta modul în care funcioneaz screensaver-ul:
+Salvai setrile ca
+Încrcai setrile de la
+Unde dorii s salvai setrile curente ale nucleului?
+Nu se pot salva setrile kernelului deasupra fiierului existent.
+De unde dorii s încrcai setrile curente ale nucleului?
+Verific dac irurile traducibile exist în resursele KS
+Combin cele dou fiiere text sau mai multe în fiierul de ieire.
+Nu s-au putut combina fiierele.
+Timeout pentru preluarea fluxului RSS
+Câte milisecunde trebuie ateptate înainte ca fluxul RSS s ajung la expirarea timpului?
+Umple casetele
+Desenm cutia în întregime sau desenm doar chenarul?
+Întârziere de etap în milisecunde
+Câte milisecunde de ateptat înainte de a desena urmtoarea etap?
+Urmtorul interval de putregai la ramp
+Câte milisecunde de ateptat înainte de a putrezi captul urmtorului ramp?
+Verificai cota de depanare
+Verificm dac sistemul de depanare trebuie s verifice cota înainte de a scrie în depanator?
+Câte milisecunde a fost nevoie cu adevrat pentru a dormi?
+Nu s-a putut aduga un eveniment.
+Nu s-a putut elimina un eveniment.
+Nu sunt furnizate suficiente argumente pentru a aduga un eveniment.
+Nu sunt furnizate suficiente argumente pentru a elimina un eveniment.
+Nu exist suficiente argumente pentru manipularea evenimentului.
+Nu s-a putut aduga sau elimina un memento.
+Nu au fost furnizate suficiente argumente pentru a aduga sau elimina un memento.
+Nu exist suficiente argumente pentru manipularea mementourilor.
+Memento fr titlu
+Eveniment fr titlu
+Acum este o zi de eveniment!
+Nu rata asta!
+Aciune nevalid.
+Un simplu cronometru
+Pornii sau oprii
+Poala
+Resetai
+Un simplu cronometru
+Începei (re)numrtoarea invers
+Setai intervalul
+Timeout indicat nu este numeric.
+Specificai timpul de expirare în milisecunde
+Salvai toate evenimentele i/sau mementourile în mod distructiv
+Dac este activat, terge toate evenimentele i/sau mementourile înainte de a le salva pe toate folosind comanda calendar.
+Verificai încercrile de reîncercare pentru transmiterea FTP
+Timeout conexiune FTP
+Timeout pentru conexiunea de date FTP
+Versiuni FTP IP
+De câte ori s verificai încrcarea i descrcarea i reîncercai dac verificarea eueaz înainte ca descrcarea s eueze în ansamblu?
+Câte milisecunde trebuie ateptate înainte de expirarea timpului de conexiune FTP?
+Câte milisecunde trebuie ateptate înainte de expirarea conexiunii de date FTP?
+Alegei versiunea de Internet Protocol pe care o accept serverul FTP i pe care o folosete clientul FTP.
+Încercai s pornii RPC cât timp este deja pornit.
+Caracter din colul din stânga sus pentru roata de culori RGB
+Caracter din colul din dreapta sus pentru roata de culori RGB
+Caracter din colul din stânga jos pentru roata de culori RGB
+Caracter din colul din dreapta jos pentru roata de culori RGB
+Caracter de cadru superior pentru roata de culori RGB
+Caracter de cadru inferior pentru roata de culori RGB
+Caracter de cadru din stânga pentru roata de culori RGB
+Caracter cadru din dreapta pentru roata de culori RGB
+Gsete un fiier în directorul specificat sau în directorul curent
+Convertete sfâriturile de linie în formatul pentru platforma curent sau în formatul personalizat specificat
+Dimensiunea total în folder:
+Afiai dimensiunea total în list
+Dac este activat, afieaz dimensiunea total a folderului în list, în funcie de modul în care se calculeaz dimensiunile folderului în funcie de configuraie.
+Eti la curent!
+Formatare JSON implicit pentru shell JSON
+Selecteaz formatarea JSON implicit (înfrumuseat sau redus) pentru salvarea shell-ului JSON.
+Actualizarea a fost descrcat cu succes!
+Descrcai automat actualizri
+Dac exist vreo actualizare, nucleul o va descrca automat.
+Raza exploziei focului de artificii
+Câte blocuri (pân la 10) este raza exploziei pentru focul de artificii atunci când este aprins?
+Aceast comand are urmtoarele comutatoare care schimb modul în care funcioneaz:
+Imprim numerele de linie care urmeaz liniei imprimate
+Împiedic imprimarea numerelor de rând
+Utilizai întotdeauna versiunea transliterat
+Utilizai întotdeauna versiunea tradus
+Forai schimbarea limbii
+Indicai c rspunsul poate lua mai mult de un caracter
+Indicai c rspunsul poate lua doar un caracter
+Tiprii întrebarea i rspunsurile într-un singur rând
+Tiprii întrebarea i rspunsurile pe dou rânduri
+Tiprii întrebarea i rspunsurile în mod modern
+Tiprii întrebarea i rspunsurile într-un tabel
+Afieaz detaliile fiierului în list
+Suprim mesajele enervante „permisiune refuzat”.
+Afieaz toate fusurile orare
+Începe jocul în dificultate uoar
+Începe jocul la dificultate medie
+Începe jocul în dificultate grea
+Începe jocul în dificultate foarte grea
+Începe jocul în dificultate personalizat. V rugm s reinei c timeout-ul personalizat în milisecunde ar trebui s fie scris ca argument.
+Afieaz informaiile despre sistem
+Afieaz informaiile hardware
+Afieaz informaiile despre utilizator
+Afieaz mesajul zilei
+Afieaz mesajul zilei dup conectare
+Afieaz toate informaiile
+Creeaz un director care conine coninutul fiierului ZIP
+Afieaz toate oraele disponibile
+Compresie rapid
+Fr compresie
+Nu creai directorul de baz în arhiv
+Unitate în cpue
+Se deconecteaz de la server în mod ruinos
+Indic faptul c calea int este absolut
+Salveaz fiierul JSON, înfrumuseându-l în acest proces
+Salveaz fiierul JSON, minimizându-l în acest proces
+Obine stilul de sfârit de linie din fiierul text
+terge toate evenimentele declanate
+Activai depanarea evenimentelor
+Activeaz depanarea pentru sistemul de evenimente kernel
+Font Figlet
+Scriei un font figlet care este acceptat de biblioteca Figgle. Consultai documentaia bibliotecii pentru mai multe informaii
+Nu s-a putut instala limba personalizat {0}.
+Fiierul de metadate necesar pentru a instala limba personalizat nu exist.
+Informaiile despre metadate necesare pentru a instala limba personalizat nu ofer localizrile necesare.
+Nu s-a putut dezinstala limba personalizat {0}.
+Fiierul de metadate necesar pentru a dezinstala limba personalizat nu exist.
+Informaiile despre metadate necesare pentru a dezinstala limba personalizat nu ofer localizrile necesare.
+Lungimea limbii engleze nu se potrivete cu lungimea simbolului de limb furnizat.
+Limba exist deja i nu poate fi suprascris.
+Nu s-a putut dezinstala limba personalizat. Cel mai probabil nu exist.
+Nu s-au instalat limbi personalizate.
+Nu s-au putut dezinstala limbi personalizate.
+Nu s-au putut dezinstala limbi personalizate. Consultai excepia interioar pentru mai multe informaii.
+Scriei parola de administrator. Asigurai-v c nu utilizai acest cont decât dac tii cu adevrat ce facei.
+Trebuie s scriei parola de administrator.
+Informaii despre licen
+Gestionai-v limbile
+Limba nu a fost gsit sau fiierul are caractere nevalide.
+Limba nu este specificat.
+Gestionarea limbii este dezactivat în modul sigur.
+Nume scurt de limb:
+Limba nume complet:
+Limba transliterabila:
+Limb personalizat:
+Nou banner de bun venit
+Ecran de splash elegant
+Afieaz noul banner de bun venit redat de Figlet
+Activeaz ecranul de splash elegant la pornire. V rugm s reinei c va dezactiva argumentul prompt i va testa shell pre-boot.
+Splash nume
+Numele splash din splash-urile disponibile implementate în kernel.
+MOTD implicit generat.
+MAL implicit generat.
+Contul de sistem a fost iniializat
+Utilizatori iniializai
+Permisiunile au fost încrcate
+Bine ati venit!
+Se pornete depanatorul de la distan...
+Eroare de conectare la depanatorul de la distan
+Notificai despre eroarea conexiunii de depanare la distan
+Dac este activat, va folosi sistemul de notificare pentru a notifica gazda despre eroarea conexiunii de depanare la distan. În caz contrar, va folosi scrierea implicit în consol.
+Font Figlet pentru cronometru
+Activai Figlet pentru cronometru
+Dac este activat, va folosi figlet pentru cronometru. V rugm s reinei c are nevoie de un ecran mare de consol pentru a reda timpul corect cu Figlet activat.
+Eroare la analizarea argumentelor din linia de comand înainte de pornire: {0}
+Reseteaz nucleul la setrile din fabric
+Ocolete detectarea dimensiunii consolei
+Se pare c ocolii detectarea dimensiunii consolei. Este posibil ca lucrurile s nu funcioneze corect pe ecranele mici.
+Pentru a avea o experien mai bun, redimensionai fereastra consolei în timp ce v aflai în continuare pe acest ecran. Apsai orice tast pentru a continua...
+Consola dvs. este prea mic pentru a rula corect:
+Font banner figlet
+Imprim un ir pe consol folosind tipul de culoare i tiprirea liniilor cu suport Figlet
+Imprim un ir pe consol folosind tipul de culoare i tiprirea liniilor cu format i suport Figlet
+Elimina definitiv un mesaj
+Elimin definitiv toate mesajele de la destinatar
+Anuleaz eliminarea unui mesaj
+Anuleaz eliminarea tuturor mesajelor de la destinatar
+Anularea tergerii nu este implementat pentru POP3.
+Afiai comenzile care conteaz pe ajutor
+Arat c comenzile shell conteaz pe ajutor
+Afiai comenzile de mod se bazeaz pe ajutor
+Artai numerele de nume pe ajutor
+Afieaz numrul de comenzi din lista de comenzi, controlat de cele trei comutatoare de afiare a numrului pentru diferite tipuri de comenzi.
+Execut comenzi odat ce expresiile UESH sunt satisfcute
+Condiia nu a fost gsit în expresie.
+Condiia {0} necesit {1} argumente. Am primit {2}.
+Condiia trebuie plasat la mijloc.
+Condiia trebuie pus la început.
+Eroare la analizarea expresiei din cauza unei erori de sintax.
+Condiia nu a fost îndeplinit. Mai multe informatii aici:
+Caracter de masc de parol
+Un personaj care mascheaz parola. Lsai necompletat pentru mai mult siguran.
+Iese din shell dac ruleaz pe subshell
+Nu se poate ucide coaja mamei!
+Nu se poate deconecta din subshell.
+Fiierul nu este specificat. Se ies din shell...
+Setrile pentru acest ecran de introducere sunt disponibile aici.
+Culoarea barei de progres
+Deschide setrile screensaverului
+Deschide setrile splash
+Enumer variabilele UESH disponibile
+Locaia textului de progres
+Selectai locaia preferat a textului de progres.
+Poi scrie doar numerele.
+Apsai „q” pentru a iei.
+Se descarc nume...
+Din cauza dificultilor tehnice, nu putem enumera proprietile adaptorului pe sistemele Unix.
+Activeaz modul de depanare
+Îndemnuri pentru argumente
+Activai modul Alb-negru
+Face discoteca alb-negru. V va rni cu adevrat ochii dac a fost prea rapid, aa c nu este recomandat dac avei o criz de imagini rapide.
+Se pare c rulai o versiune neacceptat. Este foarte recomandabil s nu folosii aceast versiune.
+Încrcai culorile curente
+Opiune alternativ de culoare
+Utilizatorii conteaz pentru comentariile de dragoste sau de ur
+Câi utilizatori s fie în camera de comentarii de dragoste sau ur?
+Enumer limbile disponibile
+Limbi disponibile:
+Argumente de linie de comand:
+Argumente din linia de comand înainte de pornire:
+Deschide documentaia mod API pentru structura codului surs în forma sa cea mai actual

@@ -983,3 +983,675 @@ Peze nenpòt kle pou li paj manyèl la ...
 Paj manyèl sa a bezwen travay pou:
 Paj Manyèl {0} pa jwenn.
 Mod manyèl
+Agiman nwayo ki disponib:
+Peze "q" si w fini.
+Plizyè agiman nwayo ka separe ak vigil san espas, pou egzanp:
+Plizyè kòmandman sou fòm piki yo ka separe ak kolon ak espas, pou egzanp:
+Agiman yo mande {0} yo pa jwenn.
+Erè ki pa ka repare nan agiman:
+Ankripte yon fisèl lè l sèvi avèk SHA512
+Ankripte yon fisèl lè l sèvi avèk SHA384
+Ankripte yon fisèl lè l sèvi avèk SHA256
+Ankripte yon fisèl lè l sèvi avèk SHA1
+Ankripte yon fisèl lè l sèvi avèk MD5
+kote builtinsaver pral ye
+Pati mod pa anyen.
+Sispann mods pa pèmèt sou mòd san danje.
+Mod te deja kòmanse!
+Mod poko kòmanse!
+Itilizasyon lòd:
+Non dosye pati:
+Chemen dosye pati:
+Erè lè w ap eseye kòmanse screensaver:
+Kalite chemen ki pa valab.
+Kalite chemen nwayo ki pa valab.
+Bòt anvan an echwe
+Editè JSON a poko louvri yon kouran dosye.
+Pwopriyete anndan fichye JSON a pa jwenn.
+Retire pwopriyete.
+Ajoute yon nouvo pwopriyete nan fen dosye JSON la
+Retire yon pwopriyete nan fichye JSON la
+Sòti koki JSON la
+Sòti koki JSON la san yo pa sove chanjman yo
+Sove fichye JSON la
+Louvri koki JSON la
+Enprime fichye JSON la
+Pwochen entèval ranp
+Aktive 255 sipò koulè pou Ranp.
+Aktive sipò koulè vre pou Ranp.
+Konbyen milisgond pou tann anvan ou ranpli pwochen ranp lan?
+Koulè tit notifikasyon
+Koulè deskripsyon notifikasyon
+Koulè pwogrè notifikasyon
+Koulè echèk notifikasyon
+Kesyon koulè
+Siksè koulè
+Itilizatè koulè dola
+Koulè pwent
+Koulè tèks séparateur
+Koulè séparateur
+Lis koulè tit
+Koulè avètisman devlopman
+Etap tan koulè
+Koulè pwogrè
+Koulè opsyon tounen
+Trase fwontyè notifikasyon
+Kouvri notifikasyon an ak fwontyè a.
+Kontakte machann mod la pou ajou mod la nan vèsyon konpatib la.
+Koulè fwontyè priyorite ki ba
+Koulè fwontyè priyorite mwayen
+Segondè priyorite koulè fwontyè
+Voye yon notifikasyon pwogrè pou teste reseptè a
+Tès wou koulè a
+Montre tan nwayo lokal yo
+Montre dat nwayo lokal yo
+Montre dat ak lè nwayo lokal yo
+Montre UTC tan nwayo
+Montre dat nwayo UTC
+Montre dat ak lè nwayo UTC
+chemen MOTD
+MAL chemen
+Ki dosye ki se dosye tèks MOTD? Ekri yon chemen absoli nan dosye tèks la.
+Ki dosye ki se dosye tèks MAL la? Ekri yon chemen absoli nan dosye tèks la.
+Mods ki nan lis nwa
+Ekri non fichye mods yo ki pa pral kouri sou demaraj. Lè w fini, ekri "q". Ekri yon siy mwens akote chemen an pou retire yon mod ki egziste deja.
+Mod {0} nan lis nwa a.
+Rechaje tout mod
+Ajoute yon mod nan lis nwa a
+Retire yon mod nan lis nwa a
+Lè ak dat nan UTC: {0}
+Yo pa jwenn lòd nan koki JSON espesifye.
+Montre enfòmasyon sou aplikasyon an pandan demaraj la
+Analize agiman liy kòmand yo
+Montre etap fini fwa
+Kòmanse modifikasyon nwayo sou bòt la
+Montre tan aktyèl la anvan ou konekte
+Notifye pou nenpòt fay pandan demaraj
+Montre enfòmasyon kout sou aplikasyon an sou bòt la.
+Analize agiman liy kòmand yo sou bòt.
+Montre konbyen tan nwayo a te pran pou fini yon etap.
+Otomatikman kòmanse modifikasyon nwayo yo sou bòt.
+Montre lè aktyèl la, zòn lè, ak dat anvan ou konekte.
+Si gen yon ti defo pandan demaraj nwayo a, notifye itilizatè a sou li.
+Style rapid non itilizatè
+Modpas rapid style
+Montre MAL lè w konekte
+Ekri ki jan ou vle èd memwa konekte ou a. Kite vid pou itilize style default. Placeholders yo analize.
+Ekri ki jan ou vle modpas ou ye. Kite vid pou itilize style default. Placeholders yo analize.
+Montre Mesaj Jounen an apre li fin parèt ekran login.
+Tès Shell Pwompt Style
+JSON Shell Pwompt Style
+Sonde kòmandman sou fòm piki
+Sonde kòmandman yo sou fòm piki nan kòmansman koki nwayo a.
+Montre detay dosye yo nan lis la
+Montre detay sou dosye a tou kout pandan lis fichye yo
+Montre detay dosye yo nan lis FTP
+Style rapid non itilizatè pou FTP
+Modpas rapid style pou FTP
+Sèvi ak premye pwofil FTP
+Ajoute nouvo koneksyon sou nimewo vitès FTP
+Eseye valide sètifika FTP an sekirite
+Montre FTP MOTD sou koneksyon
+Toujou aksepte sètifika FTP ki pa valab
+Montre detay sou fichye ftp la pandan y ap lis anyè aleka.
+Sèvi ak premye pwofil FTP pou konekte ak FTP.
+Si li aktive, ajoute yon nouvo koneksyon nan nimewo a vitès FTP.
+Eseye valide sètifika ftp yo. Fèmen li pa rekòmande.
+Montre mesaj ftp jounen an lè w konekte.
+Toujou aksepte sètifika FTP ki pa valab. Li pa rekòmande vire li paske li ka poze risk sekirite.
+Style rapid non itilizatè pou lapòs
+Modpas rapid style pou lapòs
+IMAP rapid style pou lapòs
+SMTP rapid style pou lapòs
+Detekte otomatikman sèvè lapòs
+Pèmèt debug lapòs
+Notifye pou nouvo mesaj lapòs
+GPG modpas rapid style pou lapòs
+Voye entèval ping IMAP
+Voye entèval ping SMTP
+Fòma tèks lapòs
+Ekri ki jan ou vle èd memwa sèvè IMAP ou a. Kite vid pou itilize style default. Placeholders yo analize.
+Ekri ki jan ou vle èd memwa sèvè SMTP ou a. Kite vid pou itilize style default. Placeholders yo analize.
+Otomatikman detekte sèvè lapòs la ki baze sou adrès yo bay la.
+Pèmèt debug sèvè lapòs.
+Notifye w pou nenpòt nouvo mesaj lapòs.
+Ekri ki jan ou vle modpas GPG ou ye. Kite vid pou itilize style default. Placeholders yo analize.
+Konbyen milisgond pou voye ping IMAP la?
+Konbyen milisgond pou voye ping SMTP la?
+Kontwole kijan yo pral montre tèks lapòs la.
+Tèks senp
+Tèks koule
+Tèks HTML
+Tèks anrichi
+Konprese tèks rich
+Tèks rich
+Otomatikman kòmanse debogaj aleka sou demaraj
+Fòma mesaj debug aleka
+Si ou vle debug aleka kòmanse sou bòt, pèmèt sa a.
+Espesifye fòma mesaj debug aleka. {0} pou non, {1} pou mesaj.
+RSS feed URL rapid style
+Oto rafrechi RSS flux
+Oto rafrechi RSS entèval manje
+Ekri ki jan ou vle èd memwa sèvè feed RSS ou a. Kite vid pou itilize style default. Placeholders yo analize.
+Konbyen milisgond pou rafrechi flux RSS la?
+Montre detay sou dosye a nan lis SFTP
+Style rapid non itilizatè pou SFTP
+Ajoute nouvo koneksyon sou nimewo vitès SFTP
+Montre detay sou fichye SFTP la pandan y ap lis anyè aleka.
+Si li aktive, ajoute yon nouvo koneksyon sou nimewo vitès SFTP la.
+Ping timeout
+Montre anpil enfòmasyon adaptè
+Montre enfòmasyon jeneral rezo a
+Telechaje pousantaj tèks
+Telechaje pousantaj tèks
+Konbyen milisgond pou tann anvan ou deklare delè?
+Enprime anpil enfòmasyon adaptè a, tankou enfòmasyon pake.
+Montre enfòmasyon jeneral sou rezo a.
+Ekri ki jan ou vle tèks pousantaj téléchargement ou ye. Kite vid pou itilize style default. Placeholders yo analize. {0} pou gwosè telechaje, {1} pou gwosè sib, {2} pou pousantaj.
+Ekri ki jan ou vle tèks pousantaj download ou a. Kite vid pou itilize style default. Placeholders yo analize. {0} pou gwosè telechaje, {1} pou gwosè sib, {2} pou pousantaj.
+Mande modpas apre bloke
+Apre bloke ekran an, mande modpas
+Nivo minimòm koulè wouj
+Nivo minimòm koulè vèt
+Minimòm nivo koulè ble
+Nivo koulè minimòm
+Maksimòm nivo koulè wouj
+Maksimòm nivo koulè vèt
+Maksimòm nivo koulè ble
+Maksimòm nivo koulè
+Nivo minimòm koulè wouj. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Nivo minimòm koulè vèt. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Nivo minimòm koulè ble. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Nivo koulè minimòm. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255 pou 255 koulè oswa 16 pou 16 koulè.
+Maksimòm nivo koulè wouj. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Maksimòm nivo koulè vèt. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Maksimòm nivo koulè ble. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255.
+Maksimòm nivo koulè. Valè minimòm aksepte se 0 ak valè maksimòm aksepte se 255 pou 255 koulè oswa 16 pou 16 koulè.
+Koulè premye plan
+Liy karaktè
+Yon karaktè pou fòme yon liy. Asire w ou sèlman antre yon karaktè.
+Anwo karaktè kwen gòch pou ba èdtan
+Anwo karaktè kwen gòch pou ba minit
+Karaktè kwen anwo gòch pou ba segonn
+Anwo karaktè kwen dwat pou ba èdtan
+Karaktè kwen anwo dwa pou ba minit
+Karaktè kwen anwo dwa pou ba segonn
+Anba karaktè kwen gòch pou ba èdtan
+Anba karaktè kwen gòch pou ba minit
+Anba karaktè kwen gòch pou ba segonn
+Anba karaktè kwen dwat pou ba èdtan
+Anba karaktè kwen dwat pou ba minit
+Anba karaktè kwen dwat pou ba segonn
+Anwo karaktè ankadreman pou ba èdtan
+Anwo karaktè ankadreman pou ba minit
+Anwo karaktè ankadreman pou ba segonn
+Pi ba karaktè ankadreman pou ba èdtan
+Pi ba karaktè ankadreman pou ba minit
+Pi ba karaktè ankadreman pou ba segonn
+Gòch karaktè ankadreman pou ba èdtan
+Gòch karaktè ankadreman pou ba minit
+Gòch karaktè ankadreman pou ba segonn
+Dwa karaktè ankadreman pou ba èdtan
+Dwa karaktè ankadreman pou ba minit
+Dwa karaktè ankadreman pou ba segonn
+Tèks enfòmasyon pou èdtan
+Tèks enfòmasyon pou minit
+Tèks enfòmasyon pou segonn
+Nivo minimòm koulè wouj pou èdtan
+Nivo minimòm koulè vèt pou èdtan
+Minimòm nivo koulè ble pou èdtan
+Nivo koulè minimòm pou èdtan
+Maksimòm nivo koulè wouj pou èdtan
+Maksimòm nivo koulè vèt pou èdtan
+Maksimòm nivo koulè ble pou èdtan
+Maksimòm nivo koulè pou èdtan
+Nivo minimòm koulè wouj pou minit
+Nivo minimòm koulè vèt pou minit
+Minimòm nivo koulè ble pou minit
+Nivo koulè minimòm pou minit
+Maksimòm nivo koulè wouj pou minit
+Maksimòm nivo koulè vèt pou minit
+Maksimòm nivo koulè ble pou minit
+Maksimòm nivo koulè pou minit
+Minimòm nivo koulè wouj pou segonn
+Minimòm nivo koulè vèt pou segonn
+Minimòm nivo koulè ble pou segonn
+Nivo koulè minimòm pou segonn
+Maksimòm nivo koulè wouj pou segonn
+Maksimòm nivo koulè vèt pou segonn
+Maksimòm nivo koulè ble pou segonn
+Maksimòm nivo koulè pou segonn
+Yon karaktè ki sanble ak kwen anwo gòch la. Asire w ou sèlman antre yon karaktè.
+Yon karaktè ki sanble ak kwen ki pi ba gòch la. Asire w ou sèlman antre yon karaktè.
+Yon karaktè ki sanble ak ankadreman anwo a. Asire w ou sèlman antre yon karaktè.
+Yon karaktè ki sanble ak ankadreman ki pi ba a. Asire w ou sèlman antre yon karaktè.
+Yon karaktè ki sanble ak ankadreman gòch la. Asire w ou sèlman antre yon karaktè.
+Yon karaktè ki sanble ak ankadreman an dwa. Asire w ou sèlman antre yon karaktè.
+Ekri ki jan tèks enfòmasyon ou a pou lè aktyèl la montre. {0} pou lè aktyèl sou 24 èdtan.
+Ekri ki jan tèks enfòmasyon ou pou minit aktyèl la montre. {0} pou minit aktyèl sou 60 minit.
+Ekri ki jan tèks enfòmasyon ou pou dezyèm aktyèl la montre. {0} pou dezyèm kounye a sou 60 segonn.
+Koulè tèks la
+Karaktè kwen anwo gòch pou ba ranp
+Karaktè kwen anwo dwat pou ba ranp
+Anba karaktè kwen gòch pou ba ranp
+Anba karaktè kwen dwat pou ba ranp
+Anwo karaktè ankadreman pou ba ranp
+Pi ba karaktè ankadreman pou ba ranp
+Karaktè ankadreman gòch pou ba ranp
+Dwa karaktè ankadreman pou ba ranp
+Nivo minimòm koulè wouj pou kòmanse koulè
+Minimòm nivo koulè vèt pou koulè kòmanse
+Nivo minimòm koulè ble pou kòmanse koulè
+Nivo koulè minimòm pou koulè kòmanse
+Maksimòm nivo koulè wouj pou koulè kòmanse
+Maksimòm nivo koulè vèt pou koulè kòmanse
+Maksimòm nivo koulè ble pou koulè kòmanse
+Maksimòm nivo koulè pou kòmanse koulè
+Minimòm nivo koulè wouj pou koulè fen
+Minimòm nivo koulè vèt pou koulè fen
+Minimòm nivo koulè ble pou koulè fen
+Nivo koulè minimòm pou koulè fen
+Maksimòm nivo koulè wouj pou koulè fen
+Maksimòm nivo koulè vèt pou koulè fen
+Maksimòm nivo koulè ble pou koulè fen
+Nivo koulè maksimòm pou koulè fen
+Solveur nimewo minimòm
+Solveur maksimòm kantite
+Solveur montre D'
+Karaktè kwen anwo gòch pou fwontyè notifikasyon
+Karaktè kwen anwo dwa pou fwontyè notifikasyon
+Anba karaktè kwen gòch pou fwontyè notifikasyon
+Anba karaktè kwen dwat pou fwontyè notifikasyon
+Anwo karaktè ankadreman pou fwontyè notifikasyon
+Pi ba karaktè ankadreman pou fwontyè notifikasyon
+Karaktè ankadreman gòch pou fwontyè notifikasyon
+Dwa karaktè ankadreman pou fwontyè notifikasyon
+Manyèl paj enfòmasyon style
+Kit pou montre sa ki ekri nan èd memwa a.
+Ki kantite minimòm pou chwazi?
+Ki kantite maksimòm pou chwazi?
+Ekri ki jan ou vle enfòmasyon manpage ou a. Kite vid pou itilize style default. Placeholders yo analize. {0} pou tit manyèl, {1} pou revizyon.
+Pwopriyete {0} pa jwenn sou okenn nan modil yo.
+Seksyon sa a bay lis paramèt jeneral ekran écran. Pou konfigirasyon ekran endividyèl, sòti Anviwònman epi ouvri Anviwònman Screensaver.
+Kòmanse wou koulè nan mòd koulè vre
+Si yo espesifye, li pral montre banyè demaraj Customized ak sipò kontenèr. Ou ka itilize {0} pou vèsyon nwayo.
+Ki variantes nan lang aktyèl la ap itilize pou chanje non mwa yo, kalandriye, elatriye?
+Aktive sipò nan 255 koulè.
+Aktive sipò nan koulè vre.
+Mo efase nan liy {0}.
+Chaîne ranplase nan liy {0}.
+Retire nimewo liy {0}.
+Siprime mesaj san otorizasyon
+Kache mesaj anmèdan an si fonksyon lis la ap eseye louvri yon katab san otorizasyon
+Enfòmasyon sou sèvè ftp
+Adrès sèvè:
+Pò sèvè:
+Kalite sèvè:
+Kalite sistèm sèvè:
+Mòd chifreman sèvè:
+Kalite koneksyon done sèvè:
+Sistèm sèvè:
+Kalite done telechaje sèvè:
+Kalite done telechaje sèvè:
+Ou dwe konekte ak yon sèvè anvan ou fè operasyon sa a.
+Antre nan yon dosye aleka yo dwe hache.
+Antre nan yon anyè aleka yo dwe hache.
+Antre nan yon anyè aleka.
+Rekursif hachage pou FTP
+Kit pou hache yon anyè yon fason recursiv. Tanpri sonje ke se pa tout serveurs FTP yo sipòte sa.
+Vitès revèy processeur:
+Sipò pou processeur SSE2:
+Kantite total processeurs:
+Gwosè disk:
+Memwa total:
+Kat grafik:
+Disk modèl:
+Maksimòm kantite imèl nan yon paj
+Kilti lang aktyèl la
+Si w sèten ou te louvri seksyon ki dwat la, tcheke mesaj sa a:
+Anviwònman divès...
+Anviwònman koulè...
+Egzekite yon lòd sèvè FTP
+Antre adrès sèvè POP3 ak pò (<adrès> oswa <adrès>:[pò]):
+POP3 rapid style pou lapòs
+Voye entèval ping POP3
+Ekri ki jan ou vle èd memwa sèvè POP3 ou a. Kite vid pou itilize style default. Placeholders yo analize.
+Konbyen milisgond pou voye ping POP3 la?
+Sèvi ak POP3
+Kit pou itilize POP3. Enfim sa a pral itilize SMTP.
+Ankripte yon fisèl lè l sèvi avèk CRC32
+Louvri kliyan lapòs la
+nan lapòs transfere...
+Anviwònman pou ekran sa a disponib isit la.
+Tès fonksyonalite tab la
+Edite liy espesifye a
+Ajoute nouvo liy yo nan fen dosye a
+Antre tèks ou vle ajoute nan fen dosye a. Lè w fini, ekri "EOF" sou liy pwòp li yo.
+Non lame
+Non itilizatè
+Kalite Done
+Kodaj
+Ankripteman
+Pwotokòl
+Montre pwogrè transfè lapòs
+Pwogrè transfè lapòs
+Pwogrè transfè lapòs (yon sèl)
+Si li aktive, kokiy lapòs la pral montre konbyen byte transmèt lè w ap telechaje lapòs.
+Ekri ki jan ou vle style pwogrè transfè lapòs ou a. Kite vid pou itilize style default. Placeholders yo analize. {0} pou gwosè transfere ak {1} pou gwosè total.
+Ekri ki jan ou vle style pwogrè transfè lapòs ou a. Kite vid pou itilize style default. Placeholders yo analize. {0} pou gwosè transfere.
+Zòn Tan:
+Jodi a se {0}
+Lè aktyèl la se {0}
+Koulè séparateur tab la
+Koulè header tab la
+Tablo valè koulè
+Repons posib
+Mod fichye pa espesifye.
+Eseye enstale yon mod ki deja enstale. Mete ajou mod...
+Enstalasyon echwe pou
+Fichye mod yo bay la enkonpatib.
+Dezenstalasyon echwe pou
+Ouvè yon URL
+Ekri nimewo liy yo sou enprime sa ki nan dosye a
+Fè kòmandman \"chat\" enprime nimewo liy dosye a.
+Transliteration vèsyon
+Vèsyon tradui
+Anile tout notifikasyon yo
+Telechaje...
+Téléchargement...
+Montre notifikasyon pou pwogrè telechaje a
+Montre notifikasyon pou pwogrè téléchargement
+Montre notifikasyon ki montre pwogrè telechaje a.
+Montre notifikasyon an ki montre pwogrè telechaje a.
+Tcheke pou wè si kòd tradui a egziste nan resous KS yo
+Chaîne jwenn nan resous lokalizasyon yo.
+Chaîne pa jwenn nan resous lokalizasyon yo.
+Kòmanse nwayo a tou dousman
+Enjekte yon lòd pou kòmanse nan pwochen koneksyon an
+Kòmanse nwayo a nan mòd san danje, enfim tout mod
+Tankou mòd san danje, men tou, enfim milti-itilizatè ak kèk personnalisation
+Pa te gen ase diskisyon.
+Koulè kwen anwo gòch pou ba ranp
+Koulè kwen anwo dwa pou ba ranp
+Anba kwen gòch koulè pou ranp bar
+Anba kwen dwat koulè pou ranp bar
+Koulè ankadreman anwo pou ba ranp
+Koulè ankadreman pi ba pou ba ranp
+Koulè ankadreman gòch pou ba ranp
+Dwa ankadreman koulè pou ranp bar
+Sèvi ak koulè fwontyè pou bar ranp
+Sèvi ak koulè fwontyè yo pou ba ranp lan. Si enfim, ap jenere yon ba gri.
+Kòmanse koki HTTP a
+Sòti HTTP shell epi retounen nan nwayo
+Mete sit HTTP a. Dwe gen yon URI valab.
+Jwenn repons lan nan sèvè HTTP a lè l sèvi avèk demann espesifye a
+Efase kontni nan sèvè HTTP
+Te gen yon erè nan koki HTTP a:
+Mesaj HTTP: Yo pa jwenn kòmandman yo mande {0}. Gade 'èd' pou yon lis kòmandman ki disponib espesifye sou koki HTTP.
+Jwenn fisèl ki soti nan sèvè HTTP a lè l sèvi avèk demann espesifye a
+Jwenn {0}...
+Fòma URI sit la pa valab.
+Mete sou sit la
+Koulè pa mande pou yon rekòmanse, men pifò nan paramèt yo mande pou yon rekòmanse.
+Pa gen èd pou agiman "{0}".
+Peze A sou kòmantè rayi pou mande eskiz. Peze T sou kòmantè lanmou pou remèsye. Peze Q pou kite jwèt la.
+Ou te eskize pou yon kòmantè rayi! Ekselan!
+Eskize pou renmen kòmantè. Pa bon ase.
+Ou jis remèsye rayi a pou kòmantè rayi a!
+Difikilte default pou SpeedPress
+Keypress timeout pou SpeedPress
+Chwazi difikilte ou pi pito.
+Konbyen milisgond pou tann pou peze kle a anvan delè a? (Nan difikilte koutim)
+Ranplase yon mo oswa yon fraz ak yon lòt lè l sèvi avèk ekspresyon regilye
+Ranplase yon mo oswa yon fraz ak yon lòt nan yon liy lè l sèvi avèk ekspresyon regilye
+Kesyone yon mo nan yon liy espesifik oswa tout liy lè l sèvi avèk ekspresyon regilye
+Jwenn yon Anviwònman
+Ekri kisa ou vle chèche.
+Pa gen anyen ki jwenn. Asire w ke ou te ekri anviwònman an kòrèkteman.
+Pake yon dosye lokal nan achiv la
+Pa ka pake anyen.
+Repons deskripsyon
+Port lame
+Pou plis enfòmasyon sou tèm ak kondisyon pou itilize lojisyèl sa a, vizite
+Kalite pwodiksyon chwa defo
+Tcheke tout paramèt KS yo pou wè si varyab yo ekri kòrèkteman
+Antre konfigirasyon sa yo gen varyab envalid oswa enimerasyon epi yo bezwen fikse:
+Fichye {0} pa jwenn
+Kreye yon etalaj varyab ak valè yo bay yo
+Ekri nimewo a nan anviwònman an pou ale nan. Nenpòt lòt karaktè vle di tounen.
+Tcheke tout nimewo liy tèks lokalizasyon yo pou wè si yo tout egal
+Liy dezakò nan
+Tanpri antre yon nimewo itilizatè.
+Mete itilizatè anonim yo
+Mete itilizatè ki andikape yo
+Gen ladan itilizatè yo anonim nan lis la
+Gen ladan itilizatè yo ki andikape nan lis la
+Ranje lis la
+Triye lis sistèm fichye a pwofesyonèl.
+Bay yon chwa seleksyon
+Kòmandman Shell pa aplike!!!
+Montre dènye tit RSS sou koneksyon
+URL tit RSS
+Chak koneksyon, li pral montre dènye tit RSS ki soti nan URL la tit chwazi.
+URL tit RSS yo dwe itilize lè w ap montre dènye tit la. Sa a se nòmalman manje pi renmen ou.
+Dènye nouvèl:
+Echwe pou jwenn dènye nouvèl la.
+Chwazi koulè opsyon
+Montre pile tras sou erè nwayo
+Si gen nenpòt erè nwayo, chwazi si wi ou non pou enprime tras pil la nan konsole a.
+Mod yo ka chaje, men avètisman sa yo ka afekte fason mod la ap travay:
+Ekran ka chaje, men avètisman sa yo ka gen enpak sou fason ekran an fonksyone:
+Sove Anviwònman Kòm
+Chaje Anviwònman Soti nan
+Ki kote ou vle sove paramèt nwayo aktyèl yo?
+Pa ka sove paramèt nwayo yo sou dosye ki egziste deja.
+Ki kote ou vle chaje paramèt nwayo aktyèl yo?
+Tcheke pou wè si kòd tradui yo egziste nan resous KS yo
+Konbine de dosye tèks yo oswa plis nan dosye pwodiksyon an.
+Echwe pou konbine fichye yo.
+Flux RSS chache delè
+Konbyen milisgond pou tann anvan flux RSS chache delè?
+Ranpli bwat yo
+Èske nou desine bwat la kòm yon antye oswa nou trase sèlman fwontyè a?
+Etap reta nan milisgond
+Konbyen milisgond pou tann anvan ou trase pwochen etap la?
+Pwochen entèval ranp pouri
+Konbyen milisgond pou tann anvan ou fin pouri pwochen ranp lan?
+Tcheke kota debug
+Èske nou tcheke si sistèm debug la bezwen tcheke pou kota anvan ekri nan debugger la?
+Konbyen milisgond li vrèman pran pou dòmi?
+Echwe pou ajoute yon evènman.
+Echwe pou retire yon evènman.
+Pa gen ase agiman yo bay pou ajoute yon evènman.
+Pa gen ase agiman yo bay pou retire yon evènman.
+Pa gen ase agiman bay pou manipilasyon evènman an.
+Echwe pou ajoute oswa retire yon rapèl.
+Pa gen ase agiman yo bay pou ajoute oswa retire yon rapèl.
+Pa gen ase agiman bay pou manipilasyon rapèl.
+Rapèl san tit
+Evènman san tit
+Kounye a li se yon jou evènman!
+Pa rate sa!
+Aksyon envalid.
+Yon kronomèt senp
+Kòmanse oswa sispann
+Wis
+Reyajiste
+Yon revèy senp
+Kòmanse (re)konte desann
+Mete entèval
+Delè ki endike a pa nimerik.
+Espesifye delè a an milisgond
+Sove tout evènman ak/oswa rapèl yo destriktif
+Si li aktive, efase tout evènman ak/oswa rapèl anvan ou sove tout lè l sèvi avèk lòd kalandriye a.
+Verifye tantativ pou transmisyon FTP
+FTP koneksyon delè
+FTP done koneksyon tan
+FTP IP vèsyon
+Konbyen fwa pou verifye telechaje a epi telechaje epi eseye repete si verifikasyon an echwe anvan telechajman an echwe kòm yon antye?
+Konbyen milisgond pou tann anvan tan koneksyon FTP la?
+Konbyen milisgond pou tann anvan tan koneksyon done FTP la?
+Chwazi vèsyon Pwotokòl Entènèt ke sèvè ftp la sipòte e ke kliyan ftp la itilize.
+Eseye kòmanse RPC pandan li deja kòmanse.
+Anwo karaktè kwen gòch pou wou koulè RGB
+Karaktè kwen anwo dwa pou wou koulè RGB
+Anba karaktè kwen gòch pou wou koulè RGB
+Anba karaktè kwen dwat pou wou koulè RGB
+Anwo karaktè ankadreman pou wou koulè RGB
+Pi ba karaktè ankadreman pou wou koulè RGB
+Karaktè ankadreman gòch pou wou koulè RGB
+Dwa karaktè ankadreman pou wou koulè RGB
+Jwenn yon fichye nan anyè espesifye a oswa nan anyè aktyèl la
+Konvèti tèminezon liy yo nan fòma pou platfòm aktyèl la oswa nan fòma koutim espesifye
+Gwosè total nan katab:
+Montre gwosè total nan lis la
+Si li aktive, montre gwosè katab total la nan lis la, tou depann de ki jan yo kalkile gwosè katab yo dapre konfigirasyon an.
+Ou ajou!
+Default JSON fòma pou koki JSON
+Chwazi fòma JSON defo (anbeli oswa minified) pou koki JSON pou sove.
+Telechaje aktyalizasyon a avèk siksè!
+Telechaje mizajou otomatikman
+Si gen nenpòt aktyalizasyon, nwayo a pral telechaje li otomatikman.
+Fedatifis eksplozyon reyon
+Konbyen blòk (jiska 10) se reyon eksplozyon an pou fedatifis la lè limen?
+Kòmand sa a gen switch ki anba yo ki chanje fason li fonksyone:
+Enprime nimewo liy ki swiv liy yo ap enprime a
+Anpeche enprime nimewo liy yo
+Toujou itilize vèsyon an transliterati
+Toujou itilize vèsyon an tradui
+Fòs chanje lang
+Endike ke repons lan ka pran plis pase yon karaktè
+Endike ke repons lan ka pran yon sèl karaktè
+Enprime kesyon an ak repons yo sou yon sèl liy
+Enprime kesyon an ak repons yo sou de liy
+Enprime kesyon an ak repons yo nan yon fason modèn
+Enprime kesyon an ak repons yo nan yon tablo
+Montre detay dosye yo nan lis la
+Siprime mesaj yo anmèdan "pèmisyon refize".
+Montre tout zòn tan yo
+Kòmanse jwèt la nan difikilte fasil
+Kòmanse jwèt la nan mwayen difikilte
+Kòmanse jwèt la nan difikilte difisil
+Kòmanse jwèt la nan difikilte trè difisil
+Kòmanse jwèt la nan difikilte koutim. Tanpri sonje ke tan koutim nan milisgond yo ta dwe ekri kòm agiman.
+Montre enfòmasyon sistèm lan
+Montre enfòmasyon pyès ki nan konpitè
+Montre enfòmasyon itilizatè a
+Montre mesaj jounen an
+Montre mesaj la nan jou apre koneksyon an
+Montre tout enfòmasyon
+Kreye yon anyè ki gen sa ki nan fichye ZIP la
+Montre tout vil ki disponib yo
+Vit konpresyon
+Pa gen konpresyon
+Pa kreye anyè baz nan achiv
+Inite nan tik
+Dekonekte soti nan sèvè yon fason wont
+Endike ke chemen an sib se absoli
+Sove fichye JSON a, anbeli li nan pwosesis la
+Sove fichye JSON a, minifying li nan pwosesis la
+Jwenn style la fini liy nan dosye tèks
+Efase tout evènman ki te tire
+Pèmèt evènman debogaj
+Pèmèt debogaj pou sistèm evènman nwayo a
+Figlet font
+Ekri yon font figlet ki sipòte pa bibliyotèk Figgle la. Konsilte dokiman bibliyotèk la pou plis enfòmasyon
+Echwe pou enstale lang koutim {0}.
+Fichye metadata ki nesesè pou enstale lang koutim lan pa egziste.
+Enfòmasyon metadata ki nesesè pou enstale lang koutim lan pa bay lokalizasyon ki nesesè yo.
+Echwe pou dezenstale lang koutim {0}.
+Fichye metadata ki nesesè pou dezenstale lang koutim lan pa egziste.
+Enfòmasyon metadata ki nesesè pou dezenstale langaj koutim lan pa bay lokalizasyon ki nesesè yo.
+Longè lang angle a pa matche ak longè siy lang yo bay la.
+Lang lan deja egziste epi li pa ka ranplase.
+Echwe pou dezenstale lang koutim. Li gen plis chans pa egziste.
+Echwe pou enstale lang koutim.
+Echwe pou dezenstale lang koutim yo.
+Echwe pou dezenstale lang koutim yo. Gade eksepsyon anndan an pou plis enfòmasyon.
+Ekri modpas administratè a. Asire w ke ou pa sèvi ak kont sa a sof si ou reyèlman konnen sa w ap fè.
+Ou dwe ekri modpas administratè a.
+Enfòmasyon sou lisans
+Jere lang ou yo
+Lang pa jwenn oswa fichye a gen karaktè envalid.
+Lang pa espesifye.
+Jesyon lang yo enfim nan mòd san danje.
+Lang kout non:
+Lang non konplè:
+Lang transliterab:
+Lang koutim:
+Nouvo banyè akeyi
+Élégance ekran Splash
+Montre nouvo banyè akeyi Figlet-rann
+Pèmèt ekran an Splash élégance sou demaraj. Tanpri sonje ke li pral enfim agiman rapid ak tès koki pre-demaraj.
+Splash non
+Splash non soti nan splash yo ki disponib aplike nan nwayo a.
+Jenere MOTD default.
+Jenere default MAL.
+Kont sistèm inisyalize
+Itilizatè yo inisyalize
+Otorizasyon chaje
+Byenvini!
+Kòmanse debogaj a distans...
+Erè koneksyon debugger adistans
+Notifye sou erè koneksyon debug aleka
+Si li pèmèt, yo pral sèvi ak sistèm notifikasyon an pou notifye lame a nan erè koneksyon debug aleka. Sinon, yo pral sèvi ak ekri nan konsole default.
+Figlet font pou revèy
+Pèmèt Figlet pou revèy
+Si li aktive, pral sèvi ak figlet pou revèy. Tanpri sonje ke li bezwen yon ekran konsole gwo yo nan lòd yo rann tan an byen ak Figlet pèmèt.
+Erè pandan y ap analize agiman liy lòd anvan demaraj: {0}
+Reyajiste nwayo a nan paramèt faktori yo
+Bypasse deteksyon nan gwosè konsole
+Sanble w ap kontourne deteksyon gwosè konsole a. Bagay yo ka pa mache byen sou ti ekran yo.
+Pou gen yon pi bon eksperyans, redimensionner fenèt konsole ou a pandan w ap toujou sou ekran sa a. Peze nenpòt kle pou kontinye...
+Konsole ou a twò piti pou li kouri byen:
+Banner figlet font
+Enprime yon fisèl nan konsole lè l sèvi avèk kalite koulè ak enprime liy ak sipò Figlet
+Enprime yon fisèl pou konsole lè l sèvi avèk kalite koulè ak enprime liy ak fòma ak sipò Figlet
+Pèmanans retire yon mesaj
+Pèmanans retire tout mesaj nan men moun k ap resevwa yo
+Anile retire yon mesaj
+Anile yo retire tout mesaj nan men moun k ap resevwa yo
+Anfèt efase pa aplike pou POP3.
+Montre kòmandman yo konte sou èd
+Montre kòmandman koki yo konte sou èd
+Montre kòmandman mod yo konte sou èd
+Montre alyas yo konte sou èd
+Montre kòmandman yo konte nan lis la kòmand, kontwole pa twa konte yo montre switch pou diferan kalite kòmandman.
+Egzekite kòmandman yon fwa ekspresyon UESH yo satisfè
+Kondisyon an pa te jwenn nan ekspresyon an.
+Kondisyon {0} mande pou {1} agiman. Gen {2}.
+Kondisyon an bezwen mete nan mitan an.
+Kondisyon an bezwen mete nan kòmansman an.
+Erè nan analiz ekspresyon akòz erè sentaks.
+Echwe pou satisfè kondisyon. Plis enfòmasyon isit la:
+Modpas mask karaktè
+Yon karaktè ki maske modpas la. Kite vid pou plis sekirite.
+Sòti koki a si kouri sou subshell
+Pa ka touye kokiy manman an!
+Pa ka dekonekte nan subshell la.
+Fichye pa espesifye. Soti kokiy...
+Anviwònman pou ekran Splash sa a disponib isit la.
+Koulè ba pwogrè
+Louvri paramèt ekran an
+Louvri paramèt Splash yo
+Lis varyab UESH ki disponib
+Kote tèks pwogrè
+Chwazi kote ou pi renmen tèks pwogrè.
+Ou ka sèlman ekri nimewo yo.
+Peze "q" pou sòti.
+Telechaje non...
+Akòz difikilte teknik, nou pa kapab lis pwopriyete adaptè sou sistèm Unix.
+Pèmèt mòd debug
+Envit pou agiman
+Pèmèt mòd nwa ak blan
+Fè disko la nwa ak blan. Pral reyèlman fè mal je ou si li te twò vit, kidonk pa rekòmande si w ap fè eksperyans yon kriz imaj vit.
+Sanble ou t ap kouri yon vèsyon ki pa sipòte. Li trè rekòmande pou pa itilize vèsyon sa a.
+Chaje Koulè Kouran
+Koulè opsyon altènatif
+Itilizatè yo konte pou kòmantè renmen oswa rayi
+Konbyen itilizatè yo dwe nan chanm nan kòmantè renmen oswa rayi?
+Lis lang ki disponib yo
+Lang ki disponib:
+Agiman liy kòmand:
+Agiman liy lòd anvan demaraj:
+Louvri dokiman API mod pou estrikti kòd sous la nan fòm ki pi aktyèl la
