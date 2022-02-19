@@ -257,9 +257,6 @@
     <Content Include="Translations\ita.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Translations\jpn-T.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Translations\jpn.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

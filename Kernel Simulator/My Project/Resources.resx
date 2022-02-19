@@ -292,9 +292,6 @@
   <data name="jpn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jpn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="jpn_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jpn-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="jvn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jvn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

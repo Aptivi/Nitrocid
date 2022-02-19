@@ -62,7 +62,7 @@ Namespace Languages
                                                                                    {"ndo", New LanguageInfo("ndo", "Indonesian", False)},
                                                                                    {"iri", New LanguageInfo("iri", "Irish", False)},
                                                                                    {"ita", New LanguageInfo("ita", "Italian", False)},
-                                                                                   {"jpn", New LanguageInfo("jpn", "Japanese", True)}, {"jpn-T", New LanguageInfo("jpn-T", "Japanese", True)},
+                                                                                   {"jpn", New LanguageInfo("jpn", "Japanese", False)},
                                                                                    {"jvn", New LanguageInfo("jvn", "Javanese", False)},
                                                                                    {"kzk", New LanguageInfo("kzk", "Kazakh", True)}, {"kzk-T", New LanguageInfo("kzk-T", "Kazakh", True)},
                                                                                    {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
@@ -135,7 +135,7 @@ Namespace Languages
                             Console.OutputEncoding = Text.Encoding.GetEncoding(936)
                             Console.InputEncoding = Text.Encoding.GetEncoding(936)
                             Wdbg(DebugLevel.I, "Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
-                        Case "jpn-T"
+                        Case "jpn"
                             Console.OutputEncoding = Text.Encoding.GetEncoding(932)
                             Console.InputEncoding = Text.Encoding.GetEncoding(932)
                             Wdbg(DebugLevel.I, "Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
