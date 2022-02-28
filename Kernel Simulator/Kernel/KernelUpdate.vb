@@ -41,7 +41,7 @@ Namespace Kernel
         Protected Friend Sub New(UpdateToken As JToken)
             Dim UpdateVer As New Version(UpdateToken.First.SelectToken("tag_name").ToString.ReplaceAll({"v", "-alpha", "-beta"}, ""))
             Dim CurrentVer As New Version(KernelVersion)
-            Dim UpdateURL As String = UpdateToken.First.SelectToken("html_url")
+            Dim UpdateURL As String = UpdateToken.First.SelectToken("assets")(0)("browser_download_url")
             Dim UpdateURI As New Uri(UpdateURL)
             Wdbg(DebugLevel.I, "Update version: {0}", UpdateVer.ToString)
             Wdbg(DebugLevel.I, "Update URL: {0}", UpdateURL)

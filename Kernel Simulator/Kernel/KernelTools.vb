@@ -475,7 +475,7 @@ Namespace Kernel
                     ReportProgress(DoTranslation("Found new version: "), 10, ColTypes.ListEntry)
                     ReportProgress(AvailableUpdate.UpdateVersion.ToString, 10, ColTypes.ListValue)
                     If AutoDownloadUpdate Then
-                        DownloadFile(AvailableUpdate.UpdateURL.ToString, Path.Combine(Environment.CurrentDirectory, "update.zip"))
+                        DownloadFile(AvailableUpdate.UpdateURL.ToString, Path.Combine(Environment.CurrentDirectory, "update.rar"))
                         ReportProgress(DoTranslation("Downloaded the update successfully!"), 10, ColTypes.Success)
                     Else
                         ReportProgress(DoTranslation("You can download it at: "), 10, ColTypes.ListEntry)

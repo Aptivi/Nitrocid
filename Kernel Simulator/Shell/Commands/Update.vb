@@ -23,7 +23,7 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
 #If SPECIFIER = "REL" Then
-        CheckKernelUpdates()
+            CheckKernelUpdates()
 #Else
             Write(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
 #End If
