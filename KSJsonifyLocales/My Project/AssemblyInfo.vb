@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Converts bare text files for KS localizations to a parsable format for KS")>
 <Assembly: AssemblyCompany("EoflaOE")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2021")>
+<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

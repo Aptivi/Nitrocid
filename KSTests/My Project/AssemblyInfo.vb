@@ -5,7 +5,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Unit tests for Kernel Simulator")>
 <Assembly: AssemblyCompany("EoflaOE")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2020-2021")>
+<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018-2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
