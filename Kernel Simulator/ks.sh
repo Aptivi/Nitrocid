@@ -17,9 +17,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-if [ -e "/usr/lib/ks/Kernel Simulator.exe" ] then
+if [ -e "/usr/lib/ks/Kernel Simulator.exe" ]; then
 	mono "/usr/lib/ks/Kernel Simulator.exe" $@
-elif [ -e "./Kernel Simulator.exe" ] then
+elif [ -e "./Kernel Simulator.exe" ]; then
 	mono "./Kernel Simulator.exe" $@
 else
 	echo "Unable to find the entry point."
