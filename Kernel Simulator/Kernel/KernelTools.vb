@@ -43,7 +43,7 @@ Namespace Kernel
 
         'Variables
         Public BannerFigletFont As String = "Banner"
-        Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
+        Friend RPCPowerListener As New KernelThread("RPC Power Listener Thread", True, AddressOf PowerManage)
         Friend LastKernelErrorException As Exception
         Friend InstanceChecked As Boolean
 
@@ -334,7 +334,7 @@ Namespace Kernel
             SafeMode = False
 
             'Reset the time/date change thread
-            TimeDateChange = New Thread(AddressOf TimeDateChange_DoWork) With {.Name = "Time/date updater thread", .IsBackground = True}
+            TimeDateChange = New KernelThread("Time/date updater thread", True, AddressOf TimeDateChange_DoWork)
         End Sub
 
         ''' <summary>

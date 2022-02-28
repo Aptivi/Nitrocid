@@ -73,6 +73,15 @@ Namespace Misc.Threading
         End Sub
 
         ''' <summary>
+        ''' Starts the kernel thread
+        ''' </summary>
+        ''' <param name="Parameter">The parameter class instance containing multiple parameters, or a usual single parameter</param>
+        Public Sub Start(Parameter As Object)
+            Wdbg(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, BaseThread.ManagedThreadId)
+            BaseThread.Start(Parameter)
+        End Sub
+
+        ''' <summary>
         ''' Stops the kernel thread
         ''' </summary>
         Public Sub [Stop]()

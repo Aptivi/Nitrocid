@@ -68,7 +68,7 @@ Namespace Misc.Screensaver
                                                                              {"windowslogo", WindowsLogo},
                                                                              {"wipe", Wipe}}
         Friend SaverAutoReset As New AutoResetEvent(False)
-        Friend Timeout As New KernelThread("Screensaver timeout thread", True, AddressOf HandleTimeout)
+        Friend Timeout As New KernelThread("Screensaver timeout thread", False, AddressOf HandleTimeout)
 
         ''' <summary>
         ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches

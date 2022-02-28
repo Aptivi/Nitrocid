@@ -27,7 +27,7 @@ Namespace Misc.Timers
     Public Module TimerScreen
 
         Public TimerFigletFont As String = "Small"
-        Friend TimerUpdate As New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
+        Friend TimerUpdate As New KernelThread("Timer Remaining Time Updater", True, AddressOf UpdateTimerElapsedDisplay)
         Friend TimerStarted As Date
         Friend WithEvents Timer As New Timer
 
@@ -116,8 +116,7 @@ Namespace Misc.Timers
                         'Stop the timer
                         Timer.Stop()
                         Timer.Dispose()
-                        If TimerUpdate.IsAlive Then TimerUpdate.Abort()
-                        TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
+                        If TimerUpdate.IsAlive Then TimerUpdate.Stop()
                 End Select
             End While
 
@@ -125,7 +124,6 @@ Namespace Misc.Timers
             Timer = New Timer
             Console.Clear()
             Console.CursorVisible = True
-            TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
         End Sub
 
         ''' <summary>
@@ -139,8 +137,7 @@ Namespace Misc.Timers
             Dim TimeLeftPosition As Integer = 0
             Dim TimeTopPosition As Integer = 0
             UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
-            If TimerUpdate.IsAlive Then TimerUpdate.Abort()
-            TimerUpdate = New Thread(AddressOf UpdateTimerElapsedDisplay) With {.IsBackground = True}
+            If TimerUpdate.IsAlive Then TimerUpdate.Stop()
             If EnableFigletTimer Then
                 WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Success)
             Else

@@ -23,7 +23,7 @@ Namespace Misc.Timers
     Public Module StopwatchScreen
 
         Friend Laps As New List(Of LapDisplayInfo)
-        Friend StopwatchUpdate As New Thread(AddressOf UpdateStopwatchElapsedDisplay) With {.IsBackground = True}
+        Friend StopwatchUpdate As New KernelThread("Stopwatch ETA Updater", True, AddressOf UpdateStopwatchElapsedDisplay)
         Friend LapColor As Color = NeutralTextColor
         Friend Stopwatch As New Stopwatch
         Friend LappedStopwatch As New Stopwatch
@@ -72,8 +72,7 @@ Namespace Misc.Timers
                         If Not StopwatchUpdate.IsAlive Then
                             StopwatchUpdate.Start()
                         Else
-                            StopwatchUpdate.Abort()
-                            StopwatchUpdate = New Thread(AddressOf UpdateStopwatchElapsedDisplay) With {.IsBackground = True}
+                            StopwatchUpdate.Stop()
                         End If
                         If LappedStopwatch.IsRunning Then LappedStopwatch.Stop() Else LappedStopwatch.Start()
                         If Stopwatch.IsRunning Then Stopwatch.Stop() Else Stopwatch.Start()
@@ -93,8 +92,7 @@ Namespace Misc.Timers
                         End If
                     Case ConsoleKey.R
                         If StopwatchUpdate.IsAlive Then
-                            StopwatchUpdate.Abort()
-                            StopwatchUpdate = New Thread(AddressOf UpdateStopwatchElapsedDisplay) With {.IsBackground = True}
+                            StopwatchUpdate.Stop()
                         End If
                         If LappedStopwatch.IsRunning Then LappedStopwatch.Reset()
                         If Stopwatch.IsRunning Then Stopwatch.Reset()
@@ -118,7 +116,7 @@ Namespace Misc.Timers
                         If LappedStopwatch.IsRunning Then LappedStopwatch.Reset()
                         If Stopwatch.IsRunning Then Stopwatch.Reset()
                         LapColor = NeutralTextColor
-                        If StopwatchUpdate.IsAlive Then StopwatchUpdate.Abort()
+                        If StopwatchUpdate.IsAlive Then StopwatchUpdate.Stop()
                 End Select
             End While
 
@@ -126,7 +124,6 @@ Namespace Misc.Timers
             Laps.Clear()
             Console.Clear()
             Console.CursorVisible = True
-            StopwatchUpdate = New Thread(AddressOf UpdateStopwatchElapsedDisplay) With {.IsBackground = True}
         End Sub
 
         ''' <summary>

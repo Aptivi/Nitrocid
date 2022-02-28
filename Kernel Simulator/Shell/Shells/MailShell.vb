@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
 Imports KS.Network.Mail.Transfer
 Imports KS.Network.Mail
 
@@ -35,15 +34,15 @@ Namespace Shell.Shells
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             'Send ping to keep the connection alive
-            Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
+            Dim IMAP_NoOp As New KernelThread("IMAP Keep Connection", False, AddressOf IMAPKeepConnection)
             IMAP_NoOp.Start()
             Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()")
             If Not Mail_UsePop3 Then
-                Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
+                Dim SMTP_NoOp As New KernelThread("SMTP Keep Connection", False, AddressOf SMTPKeepConnection)
                 SMTP_NoOp.Start()
                 Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
             Else
-                Dim POP3_NoOp As New Thread(AddressOf POP3KeepConnection) With {.Name = "POP3 Keep Connection"}
+                Dim POP3_NoOp As New KernelThread("POP3 Keep Connection", False, AddressOf POP3KeepConnection)
                 POP3_NoOp.Start()
                 Wdbg(DebugLevel.I, "Made new thread about POP3KeepConnection()")
             End If

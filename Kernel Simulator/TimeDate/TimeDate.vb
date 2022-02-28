@@ -25,7 +25,7 @@ Namespace TimeDate
         'Variables
         Public KernelDateTime As New Date
         Public KernelDateTimeUtc As New Date
-        Friend TimeDateChange As New Thread(AddressOf TimeDateChange_DoWork) With {.Name = "Time/date updater thread", .IsBackground = True}
+        Friend TimeDateChange As New KernelThread("Time/date updater thread", True, AddressOf TimeDateChange_DoWork)
 
         ''' <summary>
         ''' Specifies the time/date format type.

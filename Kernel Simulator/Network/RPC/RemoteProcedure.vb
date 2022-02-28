@@ -26,7 +26,7 @@ Namespace Network.RPC
         Public RPCListen As UdpClient
         Public RPCPort As Integer = 12345
         Public RPCEnabled As Boolean = True
-        Friend RPCThread As New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
+        Friend RPCThread As New KernelThread("RPC Thread", True, AddressOf ReceiveCommand)
 
         ''' <summary>
         ''' Whether the RPC started
@@ -78,10 +78,9 @@ Namespace Network.RPC
         ''' </summary>
         Sub StopRPC()
             If RPCStarted Then
-                RPCThread.Abort()
+                RPCThread.Stop()
                 RPCListen?.Close()
                 RPCListen = Nothing
-                RPCThread = New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
                 Wdbg(DebugLevel.I, "RPC stopped.")
             Else
                 Wdbg(DebugLevel.E, "RPC hasn't started yet!")

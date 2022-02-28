@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
 Imports KS.Network.RSS.Commands
 Imports KS.Network.RSS.Instance
 
@@ -39,7 +38,7 @@ Namespace Network.RSS
         Public RSSRefreshFeeds As Boolean = True
         Public RSSRefreshInterval As Integer = 60000
         Public RSSKeepAlive As Boolean
-        Friend RSSRefresher As New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
+        Friend RSSRefresher As New KernelThread("RSS Feed Refresher", False, AddressOf RefreshFeeds)
         Friend RSSFeedLink As String
 
     End Module

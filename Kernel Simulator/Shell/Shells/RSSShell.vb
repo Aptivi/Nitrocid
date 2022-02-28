@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
 Imports KS.Network.RSS.Instance
 Imports KS.Network.RSS
 
@@ -112,10 +111,9 @@ Begin:
                 Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
             Else
                 Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
-                If RSSRefreshFeeds Then RSSRefresher.Abort()
+                If RSSRefreshFeeds Then RSSRefresher.Stop()
                 RSSFeedLink = ""
                 RSSFeedInstance = Nothing
-                RSSRefresher = New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
             End If
 
             'Remove handler for RSS shell

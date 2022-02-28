@@ -23,7 +23,7 @@ Namespace Misc.Execution
 
         Friend ProcessData As String = ""
         Friend NewDataSpotted As Boolean
-        Friend NewDataDetector As New Thread(AddressOf DetectNewData)
+        Friend NewDataDetector As New KernelThread("New data detection for process", False, AddressOf DetectNewData)
 
         ''' <summary>
         ''' Thread parameters for ExecuteProcess()
@@ -105,8 +105,7 @@ Namespace Misc.Execution
                 End While
 
                 'Stop the new data detector
-                NewDataDetector.Abort()
-                NewDataDetector = New Thread(AddressOf DetectNewData)
+                NewDataDetector.Stop()
                 ProcessData = ""
 
                 'Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
