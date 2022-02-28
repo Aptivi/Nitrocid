@@ -49,7 +49,9 @@ Namespace Kernel
             'Install the values
             UpdateVersion = UpdateVer
             Me.UpdateURL = UpdateURI
-            Updated = UpdateVersion > CurrentVer
+
+            'If the updated version is lower or equal to the current version, consider the kernel up-to-date.
+            Updated = UpdateVersion <= CurrentVer
         End Sub
 
     End Class
