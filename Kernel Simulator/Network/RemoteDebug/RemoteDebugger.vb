@@ -186,8 +186,10 @@ Namespace Network.RemoteDebug
                         Message = Message.Replace(vbCr, vbNullChar)
                         Message = Message.Replace(vbLf, vbNullChar)
 
-                        'Don't post message if it starts with a null character.
-                        If Not Message.StartsWith(vbNullChar) Then
+                        'Don't post message if it starts with a null character. On Unix, the nullchar detection always returns false even if it seems
+                        'that the message starts with the actual character, not the null character, so detect nullchar by getting the first character
+                        'from the message and comparing it to the null char ASCII number, which is 0.
+                        If Not Convert.ToInt32(Message(0)) = 0 Then
                             'Fix the value of the message
                             Message = Message.Replace(vbNullChar, "")
 
