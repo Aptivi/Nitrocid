@@ -25,7 +25,7 @@ Namespace Network.RemoteDebug.Commands
         Implements IRemoteDebugCommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-            SocketStreamWriter.WriteLine(CurrentUser)
+            SocketStreamWriter.WriteLine(CurrentUser.Username)
         End Sub
 
     End Class
