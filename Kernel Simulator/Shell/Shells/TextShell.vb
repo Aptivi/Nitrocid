@@ -76,7 +76,9 @@ Namespace Shell.Shells
                     'Prompt for command
                     KernelEventManager.RaiseTextShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
+                    KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     GetLine(WrittenCommand, False, "", ShellType.TextShell)
+                    KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 End SyncLock
             End While
 

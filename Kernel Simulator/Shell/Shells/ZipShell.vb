@@ -70,7 +70,9 @@ Namespace Shell.Shells
                     'Prompt for command
                     KernelEventManager.RaiseZipShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
+                    KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
+                    KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                 End SyncLock
             End While
 

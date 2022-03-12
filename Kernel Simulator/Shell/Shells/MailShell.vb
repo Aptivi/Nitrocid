@@ -73,7 +73,9 @@ Namespace Shell.Shells
 
                     'Listen for a command
                     Dim cmd As String = Console.ReadLine
+                    KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
                     GetLine(cmd, False, "", ShellType.MailShell)
+                    KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
                 End SyncLock
             End While
 
