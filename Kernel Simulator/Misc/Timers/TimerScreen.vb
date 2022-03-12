@@ -101,6 +101,7 @@ Namespace Misc.Timers
                                 'Update the remaining time
                                 Dim RemainingString As String = GetRemainingTimeFromNow(TimerInterval)
                                 UpdateRemainingPositions(RemainingString, TimeLeftPosition, TimeTopPosition)
+                                ClearRemainingTimeDisplay(RemainingString)
                                 If EnableFigletTimer Then
                                     WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
                                 Else
@@ -136,7 +137,12 @@ Namespace Misc.Timers
             Dim ElapsedText As String = New TimeSpan().ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
             Dim TimeLeftPosition As Integer = 0
             Dim TimeTopPosition As Integer = 0
+
+            'Prepare the display
             UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
+            ClearRemainingTimeDisplay(ElapsedText)
+
+            'Actually display it
             If TimerUpdate.IsAlive Then TimerUpdate.Stop()
             If EnableFigletTimer Then
                 WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Success)
@@ -159,7 +165,12 @@ Namespace Misc.Timers
                     Dim UntilText As String = Until.ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
                     Dim TimeLeftPosition As Integer = 0
                     Dim TimeTopPosition As Integer = 0
+
+                    'Prepare the display
                     UpdateRemainingPositions(UntilText, TimeLeftPosition, TimeTopPosition)
+                    ClearRemainingTimeDisplay(UntilText)
+
+                    'Actually display the remaining time
                     If EnableFigletTimer Then
                         WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
                     Else
@@ -190,6 +201,24 @@ Namespace Misc.Timers
             If EnableFigletTimer Then
                 TimeLeftPosition = FigletTimeLeftPosition
                 TimeTopPosition = FigletTimeTopPosition
+            End If
+        End Sub
+
+        Private Sub ClearRemainingTimeDisplay(RemainingTimeText As String)
+            'Some initial variables
+            Dim FigletFont As FiggleFont = GetFigletFont(TimerFigletFont)
+            Dim HalfHeight As Integer = Console.WindowHeight / 2
+
+            'Get the Figlet time left and top position
+            Dim FigletTimeTopPosition As Integer = HalfHeight - (GetFigletHeight(RemainingTimeText, FigletFont) / 2)
+            Dim FigletTimeBottomPosition As Integer = HalfHeight + (GetFigletHeight(RemainingTimeText, FigletFont) / 2)
+
+            'If figlet is enabled, clear the display
+            If EnableFigletTimer Then
+                For FigletTimePosition As Integer = FigletTimeTopPosition To FigletTimeBottomPosition
+                    Console.CursorTop = FigletTimePosition
+                    ClearLineToRight()
+                Next
             End If
         End Sub
 
