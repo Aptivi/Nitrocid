@@ -29,6 +29,8 @@ Namespace Misc.Timers
         Public TimerFigletFont As String = "Small"
         Friend TimerUpdate As New KernelThread("Timer Remaining Time Updater", True, AddressOf UpdateTimerElapsedDisplay)
         Friend TimerStarted As Date
+        Friend FigletTimeOldWidth As Integer
+        Friend FigletTimeOldWidthEnd As Integer
         Friend WithEvents Timer As New Timer
 
         ''' <summary>
@@ -52,6 +54,10 @@ Namespace Misc.Timers
             Dim TimeLeftPosition As Integer = 0
             Dim TimeTopPosition As Integer = 0
             UpdateRemainingPositions(CurrentRemainingString, TimeLeftPosition, TimeTopPosition)
+
+            'Update the old positions
+            FigletTimeOldWidth = HalfWidth - (GetFigletWidth(CurrentRemainingString, FigletFont) / 2)
+            FigletTimeOldWidthEnd = HalfWidth + (GetFigletWidth(CurrentRemainingString, FigletFont) / 2)
 
             'Populate the keys text variable
             Dim KeysText As String = "[ENTER] " + DoTranslation("Start (re)counting down") + " | [T] " + DoTranslation("Set interval") + " | [ESC] " + DoTranslation("Exit")
@@ -101,7 +107,7 @@ Namespace Misc.Timers
                                 'Update the remaining time
                                 Dim RemainingString As String = GetRemainingTimeFromNow(TimerInterval)
                                 UpdateRemainingPositions(RemainingString, TimeLeftPosition, TimeTopPosition)
-                                ClearRemainingTimeDisplay(RemainingString)
+                                ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd)
                                 If EnableFigletTimer Then
                                     WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, True, FigletFont, ColTypes.Neutral)
                                 Else
@@ -140,7 +146,7 @@ Namespace Misc.Timers
 
             'Prepare the display
             UpdateRemainingPositions(ElapsedText, TimeLeftPosition, TimeTopPosition)
-            ClearRemainingTimeDisplay(ElapsedText)
+            ClearRemainingTimeDisplay(ElapsedText, FigletTimeOldWidth, FigletTimeOldWidthEnd)
 
             'Actually display it
             If TimerUpdate.IsAlive Then TimerUpdate.Stop()
@@ -168,7 +174,7 @@ Namespace Misc.Timers
 
                     'Prepare the display
                     UpdateRemainingPositions(UntilText, TimeLeftPosition, TimeTopPosition)
-                    ClearRemainingTimeDisplay(UntilText)
+                    ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd)
 
                     'Actually display the remaining time
                     If EnableFigletTimer Then
@@ -204,12 +210,15 @@ Namespace Misc.Timers
             End If
         End Sub
 
-        Private Sub ClearRemainingTimeDisplay(RemainingTimeText As String)
+        Private Sub ClearRemainingTimeDisplay(RemainingTimeText As String, FigletOldWidth As Integer, FigletOldWidthEnd As Integer)
             'Some initial variables
             Dim FigletFont As FiggleFont = GetFigletFont(TimerFigletFont)
+            Dim HalfWidth As Integer = Console.WindowWidth / 2
             Dim HalfHeight As Integer = Console.WindowHeight / 2
 
             'Get the Figlet time left and top position
+            Dim FigletTimeLeftPosition As Integer = HalfWidth - (GetFigletWidth(RemainingTimeText, FigletFont) / 2)
+            Dim FigletTimeLeftEndPosition As Integer = HalfWidth + (GetFigletWidth(RemainingTimeText, FigletFont) / 2)
             Dim FigletTimeTopPosition As Integer = HalfHeight - (GetFigletHeight(RemainingTimeText, FigletFont) / 2)
             Dim FigletTimeBottomPosition As Integer = HalfHeight + (GetFigletHeight(RemainingTimeText, FigletFont) / 2)
 
@@ -217,9 +226,20 @@ Namespace Misc.Timers
             If EnableFigletTimer Then
                 For FigletTimePosition As Integer = FigletTimeTopPosition To FigletTimeBottomPosition
                     Console.CursorTop = FigletTimePosition
-                    ClearLineToRight()
+                    For Position As Integer = FigletOldWidth To FigletTimeLeftPosition
+                        Console.CursorLeft = Position
+                        Write(" ", False, NeutralTextColor, BackgroundColor)
+                    Next
+                    For Position As Integer = FigletOldWidthEnd To FigletTimeLeftEndPosition
+                        Console.CursorLeft = Position
+                        Write(" ", False, NeutralTextColor, BackgroundColor)
+                    Next
                 Next
             End If
+
+            'Update the old positions
+            FigletTimeOldWidth = HalfWidth - (GetFigletWidth(RemainingTimeText, FigletFont) / 2)
+            FigletTimeOldWidthEnd = HalfWidth + (GetFigletWidth(RemainingTimeText, FigletFont) / 2)
         End Sub
 
     End Module
