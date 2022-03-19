@@ -226,11 +226,11 @@ Namespace Misc.Timers
             If EnableFigletTimer Then
                 For FigletTimePosition As Integer = FigletTimeTopPosition To FigletTimeBottomPosition
                     Console.CursorTop = FigletTimePosition
-                    For Position As Integer = FigletOldWidth To FigletTimeLeftPosition
+                    For Position As Integer = FigletOldWidth - 1 To FigletTimeLeftPosition - 1
                         Console.CursorLeft = Position
                         Write(" ", False, NeutralTextColor, BackgroundColor)
                     Next
-                    For Position As Integer = FigletOldWidthEnd To FigletTimeLeftEndPosition
+                    For Position As Integer = FigletOldWidthEnd To FigletTimeLeftEndPosition + 1
                         Console.CursorLeft = Position
                         Write(" ", False, NeutralTextColor, BackgroundColor)
                     Next
