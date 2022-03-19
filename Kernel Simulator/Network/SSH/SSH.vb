@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports Renci.SshNet.Common
+Imports KS.Misc.Reflection
 
 Namespace Network.SSH
     Public Module SSH
@@ -209,7 +210,7 @@ Namespace Network.SSH
                 'Wait until disconnection
                 While SSHClient.IsConnected
                     Threading.Thread.Sleep(1)
-                    If DisconnectionRequested Then
+                    If DisconnectionRequested Or SSHS.GetType.GetField("_input", Reflection.BindingFlags.NonPublic Or Reflection.BindingFlags.Instance).GetValue(SSHS) Is Nothing Then
                         SSHS.Stop()
                         SSHClient.Disconnect()
                     End If
