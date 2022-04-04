@@ -92,7 +92,7 @@ Namespace Kernel
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                             Dim pdbdown As New WebClient
                             Try
-                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
                             Catch ex As Exception
                                 NotifyDebugDownloadError = True
                             End Try
