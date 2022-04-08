@@ -438,130 +438,145 @@ Namespace Misc.Configuration
 
                     'Check for input
                     Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsStringNumeric(AnswerString))
-                    If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
-                        Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
-                        If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
-                            Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt)
-                            KeyFinished = True
-                            Select Case AnswerInt
-                                Case 1 'True
-                                    Wdbg(DebugLevel.I, "Setting to True...")
-                                    SetValue(KeyVar, True)
-                                Case 2 'False
-                                    Wdbg(DebugLevel.I, "Setting to False...")
-                                    SetValue(KeyVar, False)
-                            End Select
-                        ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
-                            Wdbg(DebugLevel.I, "User requested exit. Returning...")
-                            KeyFinished = True
-                        Else
-                            Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                            Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
-                            Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                            Console.ReadKey()
-                        End If
-                    ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
-                           (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
-                        Wdbg(DebugLevel.I, "Answer is numeric and key is of the {0} type.", KeyType)
-                        Dim AnswerIndex As Integer = AnswerInt - 1
-                        If AnswerInt = MaxKeyOptions + 1 And KeyType = SettingsKeyType.SSelection Then 'Go Back...
-                            Wdbg(DebugLevel.I, "User requested exit. Returning...")
-                            KeyFinished = True
-                        ElseIf KeyType = SettingsKeyType.SSelection And AnswerInt > 0 And Selections IsNot Nothing Then
-                            Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt)
-                            KeyFinished = True
-                            SetValue(KeyVar, Selections(AnswerIndex))
-                        ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
-                               (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
-                            If KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions Then
-                                If Not SelectionEnum Then
-                                    Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                    If Integer.TryParse(AnswerString, AnswerInt) Then
+                        'The answer is numeric! Now, check for types
+                        Select Case KeyType
+                            Case SettingsKeyType.SBoolean
+                                Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
+                                If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
+                                    Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt)
                                     KeyFinished = True
-                                    SetValue(KeyVar, SelectFrom(AnswerInt - 1))
+                                    Select Case AnswerInt
+                                        Case 1 'True
+                                            Wdbg(DebugLevel.I, "Setting to True...")
+                                            SetValue(KeyVar, True)
+                                        Case 2 'False
+                                            Wdbg(DebugLevel.I, "Setting to False...")
+                                            SetValue(KeyVar, False)
+                                    End Select
+                                ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                    KeyFinished = True
                                 Else
+                                    Wdbg(DebugLevel.W, "Option is not valid. Returning...")
+                                    Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                                    Console.ReadKey()
+                                End If
+                            Case SettingsKeyType.SSelection
+                                Wdbg(DebugLevel.I, "Answer is numeric and key is of the selection type.")
+                                Dim AnswerIndex As Integer = AnswerInt - 1
+                                If AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                    KeyFinished = True
+                                ElseIf AnswerInt > 0 Then
+                                    If Selections IsNot Nothing Then
+                                        Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt)
+                                        KeyFinished = True
+                                        SetValue(KeyVar, Selections(AnswerIndex))
+                                    ElseIf Not AnswerInt > MaxKeyOptions Then
+                                        If Not SelectionEnum Then
+                                            Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                                            KeyFinished = True
+                                            SetValue(KeyVar, SelectFrom(AnswerInt - 1))
+                                        Else
+                                            Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                                            KeyFinished = True
+                                            SetValue(KeyVar, AnswerInt)
+                                        End If
+                                    Else
+                                        Wdbg(DebugLevel.W, "Answer is not valid.")
+                                        Write(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
+                                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                                        Console.ReadKey()
+                                    End If
+                                ElseIf AnswerInt = 0 And Not SelectionEnumZeroBased Then
+                                    Wdbg(DebugLevel.W, "Zero is not allowed.")
+                                    Write(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
+                                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                                    Console.ReadKey()
+                                Else
+                                    Wdbg(DebugLevel.W, "Negative values are disallowed.")
+                                    Write(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
+                                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                                    Console.ReadKey()
+                                End If
+                            Case SettingsKeyType.SInt
+                                Wdbg(DebugLevel.I, "Answer is numeric and key is of the integer type.")
+                                Dim AnswerIndex As Integer = AnswerInt - 1
+                                If AnswerInt >= 0 Then
                                     Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                     KeyFinished = True
                                     SetValue(KeyVar, AnswerInt)
+                                Else
+                                    Wdbg(DebugLevel.W, "Negative values are disallowed.")
+                                    Write(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
+                                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                                    Console.ReadKey()
                                 End If
-                            ElseIf KeyType = SettingsKeyType.SInt Then
+                            Case SettingsKeyType.SIntSlider
                                 Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                 KeyFinished = True
                                 SetValue(KeyVar, AnswerInt)
-                            ElseIf KeyType = SettingsKeyType.SSelection Then
+                        End Select
+                    Else
+                        Select Case KeyType
+                            Case SettingsKeyType.SString, SettingsKeyType.SLongString, SettingsKeyType.SMaskedString, SettingsKeyType.SChar
+                                Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString)
+
+                                'Check to see if written answer is empty
+                                If String.IsNullOrWhiteSpace(AnswerString) Then
+                                    Wdbg(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue)
+                                    AnswerString = KeyValue
+                                End If
+
+                                'Check to see if the user intended to clear the variable to make it consist of nothing
+                                If AnswerString.ToLower = "/clear" Then
+                                    Wdbg(DebugLevel.I, "User requested clear.")
+                                    AnswerString = ""
+                                End If
+
+                                'Set the value
+                                KeyFinished = True
+                                SetValue(KeyVar, AnswerString)
+                            Case SettingsKeyType.SList
+                                Dim FinalDelimiter As String
+                                Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
+                                KeyFinished = True
+                                If ListJoinString Is Nothing Then
+                                    FinalDelimiter = GetValue(ListJoinStringVariable)
+                                Else
+                                    FinalDelimiter = ListJoinString
+                                End If
+                                SetValue(KeyVar, String.Join(FinalDelimiter, TargetList))
+                            Case SettingsKeyType.SVariant
+                                SetValue(KeyVar, VariantValue)
+                                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                KeyFinished = True
+                            Case SettingsKeyType.SColor
+                                If GetField(KeyVar).FieldType = GetType(Color) Then
+                                    SetValue(KeyVar, New Color(ColorValue.ToString))
+                                Else
+                                    SetValue(KeyVar, ColorValue.ToString)
+                                End If
+                                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                KeyFinished = True
+                            Case SettingsKeyType.SUnknown
+                                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                KeyFinished = True
+                            Case Else
                                 Wdbg(DebugLevel.W, "Answer is not valid.")
-                                Write(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
+                                Write(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
                                 Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                                 Console.ReadKey()
-                            End If
-                        ElseIf AnswerInt = 0 And Not SelectionEnumZeroBased Then
-                            Wdbg(DebugLevel.W, "Zero is not allowed.")
-                            Write(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
-                            Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                            Console.ReadKey()
-                        Else
-                            Wdbg(DebugLevel.W, "Negative values are disallowed.")
-                            Write(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
-                            Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                            Console.ReadKey()
-                        End If
-                    ElseIf Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SIntSlider Then
-                        Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
-                        KeyFinished = True
-                        SetValue(KeyVar, AnswerInt)
-                    ElseIf KeyType = SettingsKeyType.SUnknown Then
-                        Wdbg(DebugLevel.I, "User requested exit. Returning...")
-                        KeyFinished = True
-                    ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Or KeyType = SettingsKeyType.SMaskedString Or KeyType = SettingsKeyType.SChar Then
-                        Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString)
-
-                        'Check to see if written answer is empty
-                        If String.IsNullOrWhiteSpace(AnswerString) Then
-                            Wdbg(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue)
-                            AnswerString = KeyValue
-                        End If
-
-                        'Check to see if the user intended to clear the variable to make it consist of nothing
-                        If AnswerString.ToLower = "/clear" Then
-                            Wdbg(DebugLevel.I, "User requested clear.")
-                            AnswerString = ""
-                        End If
-
-                        'Set the value
-                        KeyFinished = True
-                        SetValue(KeyVar, AnswerString)
-                    ElseIf KeyType = SettingsKeyType.SList Then
-                        Dim FinalDelimiter As String
-                        Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
-                        KeyFinished = True
-                        If ListJoinString Is Nothing Then
-                            FinalDelimiter = GetValue(ListJoinStringVariable)
-                        Else
-                            FinalDelimiter = ListJoinString
-                        End If
-                        SetValue(KeyVar, String.Join(FinalDelimiter, TargetList))
-                    ElseIf KeyType = SettingsKeyType.SVariant Then
-                        SetValue(KeyVar, VariantValue)
-                        Wdbg(DebugLevel.I, "User requested exit. Returning...")
-                        KeyFinished = True
-                    ElseIf KeyType = SettingsKeyType.SColor Then
-                        If GetField(KeyVar).FieldType = GetType(Color) Then
-                            SetValue(KeyVar, New Color(ColorValue.ToString))
-                        Else
-                            SetValue(KeyVar, ColorValue.ToString)
-                        End If
-                        Wdbg(DebugLevel.I, "User requested exit. Returning...")
-                        KeyFinished = True
-                    Else
-                        Wdbg(DebugLevel.W, "Answer is not valid.")
-                        Write(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
-                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                        Console.ReadKey()
+                        End Select
                     End If
 #Enable Warning BC42104
                 End While
             Catch ex As Exception
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message)
+                WStkTrc(ex)
                 WriteSeparator(DoTranslation(Section + " Settings...") + " > ???", True)
                 Write(NewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
                 Write("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
