@@ -27,51 +27,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ColorMixMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -148,51 +164,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DiscoMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -230,51 +262,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinesMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -301,51 +349,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "GlitterColorMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -388,51 +452,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingTextMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -458,51 +538,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "DissolveMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -539,51 +635,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BouncingBlockMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -804,195 +916,259 @@
             },
             {
                 "Name": "Minimum red color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumRedColorLevelHours",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumGreenColorLevelHours",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumBlueColorLevelHours",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumColorLevelHours",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumRedColorLevelHours",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumGreenColorLevelHours",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumBlueColorLevelHours",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level for hours",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumColorLevelHours",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum red color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumRedColorLevelMinutes",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumGreenColorLevelMinutes",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumBlueColorLevelMinutes",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumColorLevelMinutes",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumRedColorLevelMinutes",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumGreenColorLevelMinutes",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumBlueColorLevelMinutes",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level for minutes",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumColorLevelMinutes",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum red color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumRedColorLevelSeconds",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumGreenColorLevelSeconds",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumBlueColorLevelSeconds",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumColorLevelSeconds",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumRedColorLevelSeconds",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumGreenColorLevelSeconds",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumBlueColorLevelSeconds",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level for seconds",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumColorLevelSeconds",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "ProgressClockMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1030,51 +1206,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LighterMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1112,39 +1304,51 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1183,15 +1387,19 @@
             },
             {
                 "Name": "Probability of typo in percent",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "TypoMissStrikePossibility",
-                "Description": "Probability of typo in percent"
+                "Description": "Probability of typo in percent",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Probability of miss in percent",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "TypoMissPossibility",
-                "Description": "Probability of miss in percent"
+                "Description": "Probability of miss in percent",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Text color",
@@ -1234,51 +1442,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "WipeMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1328,51 +1552,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "MarqueeMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
 
         ]
@@ -1400,39 +1640,51 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FaderBackMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1476,51 +1728,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BeatFaderMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
 
         ]
@@ -1561,27 +1829,35 @@
             },
             {
                 "Name": "Probability of typo in percent",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoMissStrikePossibility",
-                "Description": "Probability of typo in percent"
+                "Description": "Probability of typo in percent",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Column Count",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoTextColumns",
-                "Description": "The text columns to be printed."
+                "Description": "The text columns to be printed.",
+                "MinimumValue": 1,
+                "MaximumValue": 3
             },
             {
                 "Name": "Line Fill Threshold",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoEtaoinThreshold",
-                "Description": "How many characters to write before triggering the \"line fill\"?"
+                "Description": "How many characters to write before triggering the \"line fill\"?",
+                "MinimumValue": 1,
+                "MaximumValue": 8
             },
             {
                 "Name": "Line Fill Capping Probability in percent",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoEtaoinCappingPossibility",
-                "Description": "Possibility that the line fill pattern will be printed in all caps in percent"
+                "Description": "Possibility that the line fill pattern will be printed in all caps in percent",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Line Fill Type",
@@ -1596,9 +1872,11 @@
             },
             {
                 "Name": "Probability of miss in percent",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoMissPossibility",
-                "Description": "Probability of miss in percent"
+                "Description": "Probability of miss in percent",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Text color",
@@ -1676,51 +1954,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FlashColorMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -1830,99 +2124,131 @@
             },
             {
                 "Name": "Minimum red color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumRedColorLevelStart",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumGreenColorLevelStart",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumBlueColorLevelStart",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumColorLevelStart",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumRedColorLevelStart",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumGreenColorLevelStart",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumBlueColorLevelStart",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumColorLevelStart",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum red color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumRedColorLevelEnd",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumGreenColorLevelEnd",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumBlueColorLevelEnd",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMinimumColorLevelEnd",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumRedColorLevelEnd",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumGreenColorLevelEnd",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumBlueColorLevelEnd",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "RampMaximumColorLevelEnd",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Upper left corner color for ramp bar",
@@ -1995,51 +2321,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "StackBoxMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Fill the boxes",
@@ -2078,51 +2420,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "SnakerMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -2203,75 +2561,99 @@
             },
             {
                 "Name": "Minimum red color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumRedColorLevelStart",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumGreenColorLevelStart",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumBlueColorLevelStart",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumRedColorLevelStart",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumGreenColorLevelStart",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for start color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumBlueColorLevelStart",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum red color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumRedColorLevelEnd",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumGreenColorLevelEnd",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMinimumBlueColorLevelEnd",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumRedColorLevelEnd",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumGreenColorLevelEnd",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level for end color",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "BarRotMaximumBlueColorLevelEnd",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Upper left corner color for ramp bar",
@@ -2344,57 +2726,75 @@
             },
             {
                 "Name": "Firework explosion radius",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksRadius",
-                "Description": "How many blocks (up to 10) is the explosion radius for the firework when ignited?"
+                "Description": "How many blocks (up to 10) is the explosion radius for the firework when ignited?",
+                "MinimumValue": 1,
+                "MaximumValue": 10
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FireworksMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     },
@@ -2433,51 +2833,67 @@
             },
             {
                 "Name": "Minimum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMinimumRedColorLevel",
-                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMinimumGreenColorLevel",
-                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMinimumBlueColorLevel",
-                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Minimum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMinimumColorLevel",
-                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum red color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMaximumRedColorLevel",
-                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum green color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMaximumGreenColorLevel",
-                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum blue color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMaximumBlueColorLevel",
-                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             },
             {
                 "Name": "Maximum color level",
-                "Type": "SInt",
+                "Type": "SIntSlider",
                 "Variable": "FigletMaximumColorLevel",
-                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
             }
         ]
     }

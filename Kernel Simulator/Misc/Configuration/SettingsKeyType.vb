@@ -42,7 +42,7 @@ Namespace Misc.Configuration
         ''' </summary>
         SLongString
         ''' <summary>
-        ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
+        ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="List(Of T)"/>
         ''' </summary>
         SSelection
         ''' <summary>
@@ -65,5 +65,9 @@ Namespace Misc.Configuration
         ''' The value is of <see cref="Char"/> and only accepts one character.
         ''' </summary>
         SChar
+        ''' <summary>
+        ''' The value is of <see cref="Integer"/>, but has a slider which has a minimum and maximum value. Useful for numbers which are limited.
+        ''' </summary>
+        SIntSlider
     End Enum
 End Namespace

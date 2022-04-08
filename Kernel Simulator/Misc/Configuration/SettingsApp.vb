@@ -55,23 +55,27 @@ Namespace Misc.Configuration
                 Write(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.AlternativeOption, MaxSections + 4)
                 Write(" {0}) " + DoTranslation("Exit"), True, ColTypes.AlternativeOption, MaxSections + 5)
 
-                'Prompt user and check for input
+                'Prompt user
                 Console.WriteLine()
                 Write("> ", False, ColTypes.Input)
                 AnswerString = Console.ReadLine
                 Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 Console.WriteLine()
 
+                'Check for input
                 Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsStringNumeric(AnswerString))
                 If Integer.TryParse(AnswerString, AnswerInt) Then
                     Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...")
                     If AnswerInt >= 1 And AnswerInt <= MaxSections Then
+                        'The selected answer is a section
                         Dim SelectedSection As JProperty = SettingsToken.ToList(AnswerInt - 1)
                         Wdbg(DebugLevel.I, "Opening section {0}...", SelectedSection.Name)
                         OpenSection(SelectedSection.Name, SettingsToken)
-                    ElseIf AnswerInt = MaxSections + 1 Then 'Find a Setting
+                    ElseIf AnswerInt = MaxSections + 1 Then
+                        'The selected answer is "Find a Setting"
                         VariableFinder(SettingsToken)
-                    ElseIf AnswerInt = MaxSections + 2 Then 'Save Settings
+                    ElseIf AnswerInt = MaxSections + 2 Then
+                        'The selected answer is "Save Settings"
                         Wdbg(DebugLevel.I, "Saving settings...")
                         Try
                             CreateConfig()
@@ -81,7 +85,8 @@ Namespace Misc.Configuration
                             WStkTrc(ex)
                             Console.ReadKey()
                         End Try
-                    ElseIf AnswerInt = MaxSections + 3 Then 'Save Settings As
+                    ElseIf AnswerInt = MaxSections + 3 Then
+                        'The selected answer is "Save Settings As"
                         Write(DoTranslation("Where do you want to save the current kernel settings?"), True, ColTypes.Question)
                         Dim Location As String = NeutralizePath(Console.ReadLine)
                         If Not FileExists(Location) Then
@@ -96,7 +101,8 @@ Namespace Misc.Configuration
                             Write(DoTranslation("Can't save kernel settings on top of existing file."), True, ColTypes.Error)
                             Console.ReadKey()
                         End If
-                    ElseIf AnswerInt = MaxSections + 4 Then 'Load Settings From
+                    ElseIf AnswerInt = MaxSections + 4 Then
+                        'The selected answer is "Load Settings From"
                         Write(DoTranslation("Where do you want to load the current kernel settings from?"), True, ColTypes.Question)
                         Dim Location As String = NeutralizePath(Console.ReadLine)
                         If FileExists(Location) Then
@@ -112,11 +118,13 @@ Namespace Misc.Configuration
                             Write(DoTranslation("File not found."), True, ColTypes.Error)
                             Console.ReadKey()
                         End If
-                    ElseIf AnswerInt = MaxSections + 5 Then 'Exit
+                    ElseIf AnswerInt = MaxSections + 5 Then
+                        'The selected answer is "Exit"
                         Wdbg(DebugLevel.W, "Exiting...")
                         PromptFinished = True
                         Console.Clear()
                     Else
+                        'Invalid selection
                         Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                         Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
                         Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -228,27 +236,40 @@ Namespace Misc.Configuration
         ''' <param name="SettingsToken">Settings token</param>
         Sub OpenKey(Section As String, KeyNumber As Integer, SettingsToken As JToken)
             Try
+                'Section and key
                 Dim SectionTokenGeneral As JToken = SettingsToken(Section)
                 Dim SectionToken As JToken = SectionTokenGeneral("Keys")
                 Dim KeyToken As JToken = SectionToken.ToList(KeyNumber - 1)
                 Dim MaxKeyOptions As Integer = 0
+
+                'Key properties
                 Dim KeyName As String = KeyToken("Name")
                 Dim KeyDescription As String = KeyToken("Description")
                 Dim KeyType As SettingsKeyType = [Enum].Parse(GetType(SettingsKeyType), KeyToken("Type"))
                 Dim KeyVar As String = KeyToken("Variable")
-                Dim KeyVarProperty As String = KeyToken("VariableProperty")
                 Dim KeyValue As Object = ""
                 Dim KeyDefaultValue As Object = ""
                 Dim KeyFinished As Boolean
+
+                'Integer slider properties
+                Dim IntSliderMinimumValue As Integer = If(KeyToken("MinimumValue"), 0)
+                Dim IntSliderMaximumValue As Integer = If(KeyToken("MaximumValue"), 100)
+
+                'Selection properties
+                Dim KeyVarProperty As String = KeyToken("VariableProperty")
                 Dim SelectionEnum As Boolean = If(KeyToken("IsEnumeration"), False)
                 Dim SelectionEnumAssembly As String = KeyToken("EnumerationAssembly")
                 Dim SelectionEnumInternal As Boolean = If(KeyToken("EnumerationInternal"), False)
                 Dim SelectionEnumZeroBased As Boolean = If(KeyToken("EnumerationZeroBased"), False)
+
+                'Variant properties
                 Dim VariantValue As Object = ""
                 Dim VariantValueFromExternalPrompt As Boolean
+
+                'Color properties
                 Dim ColorValue As Object = ""
-                Dim AnswerString As String = ""
-                Dim AnswerInt As Integer
+
+                'List properties
                 Dim ListJoinString As String = KeyToken("Delimiter")
                 Dim ListJoinStringVariable As String = KeyToken("DelimiterVariable")
                 Dim ListFunctionName As String = KeyToken("SelectionFunctionName")
@@ -260,6 +281,10 @@ Namespace Misc.Configuration
                 Dim Selections As Object
                 Dim NeutralizePaths As Boolean = If(KeyToken("IsValuePath"), False)
                 Dim NeutralizeRootPath As String = If(ListIsPathCurrentPath, CurrDir, GetKernelPath(ListValuePathType))
+
+                'Inputs
+                Dim AnswerString As String = ""
+                Dim AnswerInt As Integer
 
                 While Not KeyFinished
                     Console.Clear()
@@ -326,8 +351,8 @@ Namespace Misc.Configuration
 
                     'Add an option to go back.
                     If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And
-                   Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And
-                   Not KeyType = SettingsKeyType.SChar Then
+                       Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And
+                       Not KeyType = SettingsKeyType.SChar And Not KeyType = SettingsKeyType.SIntSlider Then
                         Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
                     ElseIf KeyType = SettingsKeyType.SList Then
                         Write(NewLine + " q) " + DoTranslation("Save Changes...") + NewLine, True, ColTypes.Option, MaxKeyOptions + 1)
@@ -364,16 +389,48 @@ Namespace Misc.Configuration
                                 End If
                             Loop
                         Else
-                            Write(If(KeyType = SettingsKeyType.SUnknown Or KeyType = SettingsKeyType.SMaskedString, "> ", "[{0}] > "), False, ColTypes.Input, KeyDefaultValue)
+                            'Make a prompt
+                            If KeyType = SettingsKeyType.SUnknown Or KeyType = SettingsKeyType.SMaskedString Then
+                                Write("> ", False, ColTypes.Input)
+                            ElseIf Not KeyType = SettingsKeyType.SIntSlider Then
+                                Write("[{0}] > ", False, ColTypes.Input, KeyDefaultValue)
+                            End If
+
+                            'Select how to present input
                             If KeyType = SettingsKeyType.SLongString Then
                                 AnswerString = ReadLineLong()
                             ElseIf KeyType = SettingsKeyType.SMaskedString Then
                                 AnswerString = ReadLineNoInput()
                             ElseIf KeyType = SettingsKeyType.SChar Then
                                 AnswerString = Console.ReadKey().KeyChar
+                            ElseIf KeyType = SettingsKeyType.SIntSlider Then
+                                Dim PressedKey As ConsoleKey
+                                Dim CurrentValue As Integer = KeyDefaultValue
+                                Console.CursorVisible = False
+                                Do Until PressedKey = ConsoleKey.Enter
+                                    'Draw the progress bar
+                                    WriteProgress(100 * (CurrentValue / IntSliderMaximumValue), 4, Console.WindowHeight - 4)
+
+                                    'Show the current value
+                                    WriteWhere(DoTranslation("Current value:") + " {0} / {1} - {2}" + GetEsc() + "[0K", 5, Console.WindowHeight - 5, False, ColTypes.Neutral, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue)
+
+                                    'Parse the user input
+                                    PressedKey = Console.ReadKey().Key
+                                    Select Case PressedKey
+                                        Case ConsoleKey.LeftArrow
+                                            If CurrentValue > IntSliderMinimumValue Then CurrentValue -= 1
+                                        Case ConsoleKey.RightArrow
+                                            If CurrentValue < IntSliderMaximumValue Then CurrentValue += 1
+                                        Case ConsoleKey.Enter
+                                            AnswerString = CurrentValue
+                                            Console.CursorVisible = True
+                                    End Select
+                                Loop
                             Else
                                 AnswerString = Console.ReadLine
                             End If
+
+                            'Neutralize answer path if required
                             If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                             Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                         End If
@@ -404,7 +461,7 @@ Namespace Misc.Configuration
                             Console.ReadKey()
                         End If
                     ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
-                       (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
+                           (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
                         Wdbg(DebugLevel.I, "Answer is numeric and key is of the {0} type.", KeyType)
                         Dim AnswerIndex As Integer = AnswerInt - 1
                         If AnswerInt = MaxKeyOptions + 1 And KeyType = SettingsKeyType.SSelection Then 'Go Back...
@@ -415,7 +472,7 @@ Namespace Misc.Configuration
                             KeyFinished = True
                             SetValue(KeyVar, Selections(AnswerIndex))
                         ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
-                           (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
+                               (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
                             If KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions Then
                                 If Not SelectionEnum Then
                                     Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
@@ -447,6 +504,10 @@ Namespace Misc.Configuration
                             Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                         End If
+                    ElseIf Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SIntSlider Then
+                        Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                        KeyFinished = True
+                        SetValue(KeyVar, AnswerInt)
                     ElseIf KeyType = SettingsKeyType.SUnknown Then
                         Wdbg(DebugLevel.I, "User requested exit. Returning...")
                         KeyFinished = True
