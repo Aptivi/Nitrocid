@@ -18,6 +18,7 @@
 
 Imports Figgle
 Imports KS.Misc.Writers.FancyWriters.Tools
+Imports Extensification.Legacy.StringExts
 
 Namespace TestShell.Commands
     Class Test_PrintFigletFCommand
