@@ -19,6 +19,7 @@
 Imports KS.Arguments.ArgumentBase
 Imports KS.Hardware
 Imports KS.Misc.Splash
+Imports KS.Misc.Notifications
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
 Imports KS.Network.RemoteDebug

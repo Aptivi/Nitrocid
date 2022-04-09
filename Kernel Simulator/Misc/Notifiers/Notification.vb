@@ -23,6 +23,8 @@ Namespace Misc.Notifications
     Public Class Notification
 
         Private _Progress As Integer
+        Private _CustomBeepTimes As Integer = 1
+        Private _NotificationBorderColor As Color
 
         ''' <summary>
         ''' Notification title
@@ -67,6 +69,89 @@ Namespace Misc.Notifications
             End Set
         End Property
 
+        '--> For Custom Priority Notifications
+
+        ''' <summary>
+        ''' Beep times (for custom priority notfications)
+        ''' </summary>
+        Property CustomBeepTimes As Integer
+            Get
+                Return _CustomBeepTimes
+            End Get
+            Set
+                If Value <= 0 Then
+                    _CustomBeepTimes = 0
+                Else
+                    _CustomBeepTimes = Value
+                End If
+            End Set
+        End Property
+
+        ''' <summary>
+        ''' Custom color (for custom priority notfications)
+        ''' </summary>
+        Property CustomColor As Color = LowPriorityBorderColor
+
+        ''' <summary>
+        ''' Custom title color (for custom priority notfications)
+        ''' </summary>
+        Property CustomTitleColor As Color = NotificationTitleColor
+
+        ''' <summary>
+        ''' Custom description color (for custom priority notfications)
+        ''' </summary>
+        Property CustomDescriptionColor As Color = NotificationDescriptionColor
+
+        ''' <summary>
+        ''' Custom progress color (for custom priority notfications)
+        ''' </summary>
+        Property CustomProgressColor As Color = NotificationProgressColor
+
+        ''' <summary>
+        ''' Custom progress failure color (for custom priority notfications)
+        ''' </summary>
+        Property CustomProgressFailureColor As Color = NotificationFailureColor
+
+        ''' <summary>
+        ''' Upper left corner character for custom priority notification
+        ''' </summary>
+        Property CustomUpperLeftCornerChar As String = "╔"
+
+        ''' <summary>
+        ''' Upper right corner character for custom priority notification
+        ''' </summary>
+        Property CustomUpperRightCornerChar As String = "╗"
+
+        ''' <summary>
+        ''' Lower left corner character for custom priority notification
+        ''' </summary>
+        Property CustomLowerLeftCornerChar As String = "╚"
+
+        ''' <summary>
+        ''' Lower right corner character for custom priority notification
+        ''' </summary>
+        Property CustomLowerRightCornerChar As String = "╝"
+
+        ''' <summary>
+        ''' Upper frame character for custom priority notification
+        ''' </summary>
+        Property CustomUpperFrameChar As String = "═"
+
+        ''' <summary>
+        ''' Lower frame character for custom priority notification
+        ''' </summary>
+        Property CustomLowerFrameChar As String = "═"
+
+        ''' <summary>
+        ''' Left frame character for custom priority notification
+        ''' </summary>
+        Property CustomLeftFrameChar As String = "║"
+
+        ''' <summary>
+        ''' Right frame character for custom priority notification
+        ''' </summary>
+        Property CustomRightFrameChar As String = "║"
+
         ''' <summary>
         ''' Whether the progress has been compeleted successfully or with failure
         ''' </summary>
@@ -77,9 +162,18 @@ Namespace Misc.Notifications
         End Property
 
         ''' <summary>
-        ''' The notification border color
+        ''' The notification border color. Must be null for custom priority notifications.
         ''' </summary>
         Property NotificationBorderColor As Color
+            Get
+                Return _NotificationBorderColor
+            End Get
+            Set
+                If Not Priority = NotifPriority.Custom Then
+                    _NotificationBorderColor = Value
+                End If
+            End Set
+        End Property
 
         ''' <summary>
         ''' Creates a new notification

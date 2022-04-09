@@ -50,6 +50,10 @@ Namespace Misc.Notifications
             ''' High priority. Three beeps.
             ''' </summary>
             High = 3
+            ''' <summary>
+            ''' Custom priority. Custom colors, beeps, etc.
+            ''' </summary>
+            Custom = 4
         End Enum
 
         ''' <summary>
@@ -87,7 +91,6 @@ Namespace Misc.Notifications
 
                         'Populate title and description
                         Dim Title, Desc As String
-                        Dim NotifyBorderColor As ColTypes = ColTypes.LowPriorityBorder
                         Wdbg(DebugLevel.I, "Title: {0}", NewNotification.Title)
                         Wdbg(DebugLevel.I, "Desc: {0}", NewNotification.Desc)
                         Title = NewNotification.Title.Truncate(36)
@@ -98,46 +101,74 @@ Namespace Misc.Notifications
                         Wdbg(DebugLevel.I, "Truncated desc length: {0}", Desc.Length)
 
                         'Set the border color
+                        Wdbg(DebugLevel.I, "Priority: {0}", NewNotification.Priority)
+                        Dim NotifyBorderColor As Color = LowPriorityBorderColor
+                        Dim NotifyTitleColor As Color = NotificationTitleColor
+                        Dim NotifyDescColor As Color = NotificationDescriptionColor
+                        Dim NotifyProgressColor As Color = NotificationProgressColor
+                        Dim NotifyProgressFailureColor As Color = NotificationFailureColor
                         Select Case NewNotification.Priority
                             Case NotifPriority.Medium
-                                NotifyBorderColor = ColTypes.MediumPriorityBorder
+                                NotifyBorderColor = MediumPriorityBorderColor
                             Case NotifPriority.High
-                                NotifyBorderColor = ColTypes.HighPriorityBorder
+                                NotifyBorderColor = HighPriorityBorderColor
+                            Case NotifPriority.Custom
+                                NotifyBorderColor = NewNotification.CustomColor
+                                NotifyTitleColor = NewNotification.CustomTitleColor
+                                NotifyDescColor = NewNotification.CustomDescriptionColor
+                                NotifyProgressColor = NewNotification.CustomProgressColor
+                                NotifyProgressFailureColor = NewNotification.CustomProgressFailureColor
                         End Select
+                        If NewNotification.NotificationBorderColor IsNot Nothing Then
+                            NotifyBorderColor = NewNotification.NotificationBorderColor
+                        End If
 
                         'Write notification to console
                         Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", Console.WindowWidth - 40, Console.WindowTop, Console.WindowTop + 1, Console.WindowTop + 2)
                         WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
-                        WriteWhere(Title + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.NotificationTitle)
-                        WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.NotificationDescription)
-                        WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.NotificationProgress)
+                        WriteWhere(Title + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, NotifyTitleColor)
+                        WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, NotifyDescColor)
+                        WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.Neutral)
 
                         'Optionally, draw a border
                         If DrawBorderNotification Then
-                            If NewNotification.NotificationBorderColor IsNot Nothing Then
-                                WriteWhere(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NewNotification.NotificationBorderColor)
-                                WriteWhere(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NewNotification.NotificationBorderColor)
-                            Else
-                                WriteWhere(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
-                                WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
-                                WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
-                                WriteWhere(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
+                            'Prepare the variables
+                            Dim CurrentNotifyUpperLeftCornerChar As String = NotifyUpperLeftCornerChar
+                            Dim CurrentNotifyUpperRightCornerChar As String = NotifyUpperRightCornerChar
+                            Dim CurrentNotifyLowerLeftCornerChar As String = NotifyLowerLeftCornerChar
+                            Dim CurrentNotifyLowerRightCornerChar As String = NotifyLowerRightCornerChar
+                            Dim CurrentNotifyUpperFrameChar As String = NotifyUpperFrameChar
+                            Dim CurrentNotifyLowerFrameChar As String = NotifyLowerFrameChar
+                            Dim CurrentNotifyLeftFrameChar As String = NotifyLeftFrameChar
+                            Dim CurrentNotifyRightFrameChar As String = NotifyRightFrameChar
+
+                            'Get custom corner characters
+                            If NewNotification.Priority = NotifPriority.Custom Then
+                                CurrentNotifyUpperLeftCornerChar = NewNotification.CustomUpperLeftCornerChar
+                                CurrentNotifyUpperRightCornerChar = NewNotification.CustomUpperRightCornerChar
+                                CurrentNotifyLowerLeftCornerChar = NewNotification.CustomLowerLeftCornerChar
+                                CurrentNotifyLowerRightCornerChar = NewNotification.CustomLowerRightCornerChar
+                                CurrentNotifyUpperFrameChar = NewNotification.CustomUpperFrameChar
+                                CurrentNotifyLowerFrameChar = NewNotification.CustomLowerFrameChar
+                                CurrentNotifyLeftFrameChar = NewNotification.CustomLeftFrameChar
+                                CurrentNotifyRightFrameChar = NewNotification.CustomRightFrameChar
                             End If
+
+                            'Just draw the border!
+                            WriteWhere(CurrentNotifyUpperLeftCornerChar + CurrentNotifyUpperFrameChar.Repeat(38) + CurrentNotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
+                            WriteWhere(CurrentNotifyLowerLeftCornerChar + CurrentNotifyLowerFrameChar.Repeat(38) + CurrentNotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
                         End If
 
                         'Beep according to priority
-                        Wdbg(DebugLevel.I, "Priority: {0}", NewNotification.Priority)
-                        For i As Integer = 1 To NewNotification.Priority
+                        Dim BeepTimes As Integer = NewNotification.Priority
+                        If NewNotification.Priority = NotifPriority.Custom Then BeepTimes = NewNotification.CustomBeepTimes
+                        For i As Integer = 1 To BeepTimes
                             Console.Beep()
                         Next
 
@@ -148,11 +179,11 @@ Namespace Misc.Notifications
                                 Wdbg(DebugLevel.I, "Where to store progress: {0},{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
                                 Wdbg(DebugLevel.I, "Progress: {0}", NewNotification.Progress)
                                 WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
-                                WriteWhere(ProgressTitle + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.NotificationTitle, NewNotification.Progress)
-                                WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.NotificationDescription)
-                                WriteWhere("*".Repeat(NewNotification.Progress * 100 / 100 * (38 / 100)), Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.NotificationProgress)
+                                WriteWhere(ProgressTitle + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, NotifyTitleColor, NewNotification.Progress)
+                                WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, NotifyDescColor)
+                                WriteWhere("*".Repeat(NewNotification.Progress * 100 / 100 * (38 / 100)), Console.WindowWidth - 40, Console.WindowTop + 3, True, NotifyProgressColor)
                                 Thread.Sleep(1)
-                                If NewNotification.ProgressFailed Then WriteWhere(ProgressTitle + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.NotificationFailure, NewNotification.Progress)
+                                If NewNotification.ProgressFailed Then WriteWhere(ProgressTitle + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, NotifyProgressFailureColor, NewNotification.Progress)
                             Loop
                         End If
 
