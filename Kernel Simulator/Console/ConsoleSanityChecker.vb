@@ -40,6 +40,19 @@ Namespace ConsoleBase
                                                              "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html")
                 End If
             End If
+
+            'Second: Check if the terminal type is "dumb". Explanation below:
+            '---
+            'The "dumb" terminals usually are not useful for interactive applications, since they only provide the stdout and stderr streams without
+            'support for console cursor manipulation, which Kernel Simulator heavily depends on. These terminals are used for streaming output to the
+            'appropriate variable, like the frontend applications that rely on console applications and their outputs to do their job (for example,
+            'Brasero, a disk burning program, uses wodim, xorriso, and such applications to do its very intent of burning a blank CD-ROM. All these
+            'backend applications are console programs).
+            If GetTerminalType() = "dumb" Then
+                Throw New InsaneConsoleDetectedException("Kernel Simulator makes use of inputs and cursor manipulation, but the ""dumb"" terminals have no support for such tasks." + NewLine +
+                                                         "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than ""dumb""." + NewLine +
+                                                         "                   We recommend using the ""vt100"" terminal emulators to get the most out of Kernel Simulator.")
+            End If
         End Sub
 
     End Module
