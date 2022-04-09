@@ -631,14 +631,6 @@ Namespace Misc.Configuration
         ''' <summary>
         ''' Finds a setting with the matching pattern
         ''' </summary>
-        Public Function FindSetting(Pattern As String, Screensaver As Boolean) As List(Of String)
-            Dim SettingsToken As JToken = JToken.Parse(If(Screensaver, My.Resources.ScreensaverSettingsEntries, My.Resources.SettingsEntries))
-            Return FindSetting(Pattern, SettingsToken)
-        End Function
-
-        ''' <summary>
-        ''' Finds a setting with the matching pattern
-        ''' </summary>
         Public Function FindSetting(Pattern As String, SettingsToken As JToken) As List(Of String)
             Dim Results As New List(Of String)
 
@@ -706,37 +698,6 @@ Namespace Misc.Configuration
 
             'Return the results
             Return Results
-        End Function
-
-        ''' <summary>
-        ''' Sets the value of a variable to the new value dynamically
-        ''' </summary>
-        ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        ''' <param name="VariableValue">New value of variable</param>
-        <Obsolete("Use SetValue(String, Object) instead.")>
-        Public Sub SetConfigValueField(Variable As String, VariableValue As Object)
-            SetValue(Variable, VariableValue)
-        End Sub
-
-        ''' <summary>
-        ''' Gets the value of a variable dynamically 
-        ''' </summary>
-        ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        ''' <returns>Value of a variable</returns>
-        <Obsolete("Use GetValue(String) instead.")>
-        Public Function GetConfigValueField(Variable As String) As Object
-            Return GetValue(Variable)
-        End Function
-
-        ''' <summary>
-        ''' Gets the value of a property in the type of a variable dynamically
-        ''' </summary>
-        ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        ''' <param name="Property">Property name from within the variable type</param>
-        ''' <returns>Value of a property</returns>
-        <Obsolete("Use GetPropertyValueInVariable(String, String) instead.")>
-        Public Function GetConfigPropertyValueInVariableField(Variable As String, [Property] As String) As Object
-            Return GetPropertyValueInVariable(Variable, [Property])
         End Function
 
         ''' <summary>
