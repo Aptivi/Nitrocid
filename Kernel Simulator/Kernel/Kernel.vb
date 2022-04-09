@@ -19,17 +19,17 @@
 Imports KS.Arguments.ArgumentBase
 Imports KS.Hardware
 Imports KS.Misc.Splash
-Imports KS.Misc.Notifications
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.TimeDate
+Imports System.IO
+Imports System.Reflection.Assembly
+
 #If SPECIFIER = "REL" Then
 Imports KS.Network
 #End If
-Imports System.IO
-Imports System.Reflection.Assembly
 
 Namespace Kernel
     Public Module Kernel
@@ -111,7 +111,7 @@ Namespace Kernel
                         Loop
                     Else
                         Write(DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + NewLine +
-                          DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), True, ColTypes.Warning)
+                              DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), True, ColTypes.Warning)
                         Console.ReadKey(True)
                         CheckingForConsoleSize = True
                     End If

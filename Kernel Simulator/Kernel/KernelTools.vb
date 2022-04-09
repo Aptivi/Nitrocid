@@ -330,6 +330,9 @@ Namespace Kernel
             SMTP_Client.Disconnect(True)
             POP3_Client.Disconnect(True)
 
+            'Unload all splashes
+            UnloadSplashes()
+
             'Disable safe mode
             SafeMode = False
 
@@ -359,6 +362,9 @@ Namespace Kernel
 
             'Check for multiple instances of KS
             If InstanceChecked = False Then MultiInstance()
+
+            'Initialize splashes
+            LoadSplashes()
 
             'Create config file and then read it
             InitializeConfig()

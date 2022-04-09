@@ -77,5 +77,9 @@ Namespace Files
         ''' Custom languages folder
         ''' </summary>
         CustomLanguages
+        ''' <summary>
+        ''' Custom splashes folder
+        ''' </summary>
+        CustomSplashes
     End Enum
 End Namespace

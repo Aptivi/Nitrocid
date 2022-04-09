@@ -66,6 +66,7 @@ Namespace Files
             KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
             KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
             KernelPaths.AddIfNotFound("CustomLanguages", HomePath + "/KSLanguages/")
+            KernelPaths.AddIfNotFound("CustomSplashes", HomePath + "/KSSplashes/")
         End Sub
 
         ''' <summary>

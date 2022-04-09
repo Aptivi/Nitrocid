@@ -47,6 +47,10 @@ Namespace Misc.Splash
         ''' </summary>
         ReadOnly Property SplashName As String
         ''' <summary>
+        ''' Splash displays progress
+        ''' </summary>
+        ReadOnly Property SplashDisplaysProgress As Boolean
+        ''' <summary>
         ''' The opening screen. Should be synchronous.
         ''' </summary>
         Sub Opening()

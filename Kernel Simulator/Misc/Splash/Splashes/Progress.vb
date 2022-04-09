@@ -36,6 +36,12 @@ Namespace Misc.Splash.Splashes
         'Property implementations
         Property SplashClosing As Boolean Implements ISplash.SplashClosing
 
+        ReadOnly Property SplashDisplaysProgress As Boolean Implements ISplash.SplashDisplaysProgress
+            Get
+                Return Info.DisplaysProgress
+            End Get
+        End Property
+
         ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
             Get
                 Return Info.ProgressWritePositionX
