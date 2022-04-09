@@ -24,12 +24,10 @@ Namespace ConsoleBase
         ''' <summary>
         ''' Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         ''' </summary>
-        ''' <returns></returns>
         Public ReadOnly Property PlainSequence As String
         ''' <summary>
         ''' Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
         ''' </summary>
-        ''' <returns></returns>
         Public ReadOnly Property PlainSequenceEnclosed As String
         ''' <summary>
         ''' Parsable VT sequence (Foreground)
@@ -46,13 +44,15 @@ Namespace ConsoleBase
         ''' <summary>
         ''' The green color value
         ''' </summary>
-        ''' <returns></returns>
         Public ReadOnly Property G As Integer
         ''' <summary>
         ''' The blue color value
         ''' </summary>
-        ''' <returns></returns>
         Public ReadOnly Property B As Integer
+        ''' <summary>
+        ''' Hexadecimal representation of the color
+        ''' </summary>
+        Public ReadOnly Property Hex As String
         ''' <summary>
         ''' Color type
         ''' </summary>
@@ -69,17 +69,24 @@ Namespace ConsoleBase
         ''' <summary>
         ''' Makes a new instance of color class from specifier.
         ''' </summary>
-        ''' <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
+        ''' <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
         ''' <exception cref="Exceptions.ColorException"></exception>
         Public Sub New(ColorSpecifier As String)
+            'Remove stray double quotes
+            ColorSpecifier = ColorSpecifier.Replace("""", "")
+
+            'Now, parse the output
             If ColorSpecifier.Contains(";") Then
-                ColorSpecifier = ColorSpecifier.Replace("""", "")
+                'Split the VT sequence into three parts
                 Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
                 If ColorSpecifierArray.Length = 3 Then
+                    'We got the RGB values! Form the sequences
                     PlainSequence = $"{ColorSpecifierArray(0)};{ColorSpecifierArray(1)};{ColorSpecifierArray(2)}"
                     PlainSequenceEnclosed = $"{ColorSpecifierArray(0)};{ColorSpecifierArray(1)};{ColorSpecifierArray(2)}".EncloseByDoubleQuotes
                     VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
                     VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
+
+                    'Populate color properties
                     Type = ColorType.TrueColor
                     IsBright = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
                     IsDark = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 < 255 / 2
@@ -90,21 +97,44 @@ Namespace ConsoleBase
                     Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
                 End If
             ElseIf IsStringNumeric(ColorSpecifier) Then
-                ColorSpecifier = ColorSpecifier.Replace("""", "")
+                'Form the sequences using the information from the color details
                 Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
                 PlainSequence = ColorSpecifier
                 PlainSequenceEnclosed = ColorSpecifier
                 VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
                 VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
+
+                'Populate color properties
                 Type = ColorType._255Color
                 IsBright = ColorsInfo.IsBright
                 IsDark = ColorsInfo.IsDark
                 R = ColorsInfo.R
                 G = ColorsInfo.G
                 B = ColorsInfo.B
+            ElseIf ColorSpecifier.StartsWith("#") Then
+                Dim ColorDecimal As Integer = Convert.ToInt32(ColorSpecifier.RemoveLetter(0), 16)
+
+                'Convert the RGB values to numbers
+                R = CByte((ColorDecimal And &HFF0000) >> &H10)
+                G = CByte((ColorDecimal And &HFF00) >> 8)
+                B = CByte(ColorDecimal And &HFF)
+
+                'We got the RGB values! Form the sequences
+                PlainSequence = $"{R};{G};{B}"
+                PlainSequenceEnclosed = $"{R};{G};{B}".EncloseByDoubleQuotes
+                VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
+                VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
+
+                'Populate color properties
+                Type = ColorType.TrueColor
+                IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
+                IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / 2
             Else
                 Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
             End If
+
+            'Populate the hexadecimal representation of the color
+            Hex = $"#{R:X2}{G:X2}{B:X2}"
         End Sub
 
         ''' <summary>
@@ -119,12 +149,17 @@ Namespace ConsoleBase
             PlainSequenceEnclosed = $"{R};{G};{B}".EncloseByDoubleQuotes
             VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
             VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
+
+            'Populate color properties
             Type = ColorType.TrueColor
             IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
             IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / 2
             Me.R = R
             Me.G = G
             Me.B = B
+
+            'Populate the hexadecimal representation of the color
+            Hex = $"#{R:X2}{G:X2}{B:X2}"
         End Sub
 
         ''' <summary>
@@ -133,17 +168,23 @@ Namespace ConsoleBase
         ''' <param name="ColorNum">The color number</param>
         ''' <exception cref="Exceptions.ColorException"></exception>
         Public Sub New(ColorNum As Integer)
+            'Form the sequences using the information from the color details
             Dim ColorsInfo As New ConsoleColorsInfo(ColorNum)
             PlainSequence = ColorNum
             PlainSequenceEnclosed = ColorNum
             VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
             VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
+
+            'Populate color properties
             Type = ColorType._255Color
             IsBright = ColorsInfo.IsBright
             IsDark = ColorsInfo.IsDark
             R = ColorsInfo.R
             G = ColorsInfo.G
             B = ColorsInfo.B
+
+            'Populate the hexadecimal representation of the color
+            Hex = $"#{R:X2}{G:X2}{B:X2}"
         End Sub
 
     End Class

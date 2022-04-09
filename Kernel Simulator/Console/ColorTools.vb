@@ -732,5 +732,44 @@ Namespace ConsoleBase
             End Try
         End Function
 
+        ''' <summary>
+        ''' Converts from the hexadecimal representation of a color to the RGB sequence
+        ''' </summary>
+        ''' <param name="Hex">A hexadecimal representation of a color (#AABBCC for example)</param>
+        ''' <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
+        Public Function ConvertFromHexToRGB(Hex As String) As String
+            If Hex.StartsWith("#") Then
+                Dim ColorDecimal As Integer = Convert.ToInt32(Hex.RemoveLetter(0), 16)
+                Dim R As Integer = CByte((ColorDecimal And &HFF0000) >> &H10)
+                Dim G As Integer = CByte((ColorDecimal And &HFF00) >> 8)
+                Dim B As Integer = CByte(ColorDecimal And &HFF)
+                Return $"{R};{G};{B}"
+            Else
+                Throw New Exceptions.ColorException(DoTranslation("Invalid hex color specifier."))
+            End If
+        End Function
+
+        ''' <summary>
+        ''' Converts from the RGB sequence of a color to the hexadecimal representation
+        ''' </summary>
+        ''' <param name="RGBSequence">&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
+        ''' <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
+        Public Function ConvertFromRGBToHex(RGBSequence As String) As String
+            If RGBSequence.Contains(";") Then
+                'Split the VT sequence into three parts
+                Dim ColorSpecifierArray() As String = RGBSequence.Split(";")
+                If ColorSpecifierArray.Length = 3 Then
+                    Dim R As Integer = ColorSpecifierArray(0)
+                    Dim G As Integer = ColorSpecifierArray(1)
+                    Dim B As Integer = ColorSpecifierArray(2)
+                    Return $"#{R:X2}{G:X2}{B:X2}"
+                Else
+                    Throw New Exceptions.ColorException(DoTranslation("Invalid RGB color specifier."))
+                End If
+            Else
+                Throw New Exceptions.ColorException(DoTranslation("Invalid RGB color specifier."))
+            End If
+        End Function
+
     End Module
 End Namespace

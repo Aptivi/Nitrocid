@@ -130,7 +130,8 @@ Namespace ConsoleBase
                     WriteWhere(" ".Repeat(PercentRepeat(CurrentColorB, 255, 6)), 3, Console.WindowHeight - 3, True, New Color(ConsoleColors.Black), New Color(0, 0, 255))
 
                     'Show example
-                    Write(NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}"))
+                    Dim PreviewColor As New Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}")
+                    Write(NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", True, PreviewColor, PreviewColor.Hex)
 
                     'Read and get response
                     Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
@@ -276,7 +277,8 @@ Namespace ConsoleBase
                     WriteWhere(" >", Console.CursorLeft + 32, Console.CursorTop, False, ColTypes.Gray)
 
                     'Show prompt
-                    Write(NewLine + NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color(CurrentColor))
+                    Dim PreviewColor As New Color(CurrentColor)
+                    Write(NewLine + NewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. ({0})", True, PreviewColor, PreviewColor.Hex)
 
                     'Read and get response
                     Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
