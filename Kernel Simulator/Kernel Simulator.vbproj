@@ -217,6 +217,7 @@
     <Compile Include="Console\ColorWheelOpen.vb" />
     <Compile Include="Console\ConsoleColorsInfo.vb" />
     <Compile Include="Console\ConsoleExtensions.vb" />
+    <Compile Include="Console\ConsoleSanityChecker.vb" />
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\ColorSetErrorReasons.vb" />
     <Compile Include="Console\Themes\ThemeInfo.vb" />
@@ -231,6 +232,7 @@
     <Compile Include="Kernel\EventsManager.vb" />
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions\HTTPShellException.vb" />
+    <Compile Include="Kernel\Exceptions\InsaneConsoleDetectedException.vb" />
     <Compile Include="Kernel\Exceptions\KernelErrorException.vb" />
     <Compile Include="Kernel\Exceptions\InvalidPathException.vb" />
     <Compile Include="Kernel\Exceptions\InvalidKernelPathException.vb" />

@@ -204,7 +204,7 @@ Namespace Network.SSH
 
                 'Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 Wdbg(DebugLevel.I, "Opening shell...")
-                Dim SSHS As Renci.SshNet.Shell = SSHClient.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError, If(IsOnUnix(), Environment.GetEnvironmentVariable("TERM"), "vt100"), Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight, New Dictionary(Of Common.TerminalModes, UInteger))
+                Dim SSHS As Renci.SshNet.Shell = SSHClient.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError, If(IsOnUnix(), GetTerminalType(), "vt100"), Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight, New Dictionary(Of Common.TerminalModes, UInteger))
                 SSHS.Start()
 
                 'Wait until disconnection

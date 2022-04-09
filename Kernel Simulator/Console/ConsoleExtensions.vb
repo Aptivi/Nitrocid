@@ -109,5 +109,12 @@ Namespace ConsoleBase
             Return Environment.GetEnvironmentVariable("TERM_PROGRAM")
         End Function
 
+        ''' <summary>
+        ''' Polls $TERM to get terminal type (vt100, dumb, ...)
+        ''' </summary>
+        Public Function GetTerminalType() As String
+            Return Environment.GetEnvironmentVariable("TERM")
+        End Function
+
     End Module
 End Namespace
