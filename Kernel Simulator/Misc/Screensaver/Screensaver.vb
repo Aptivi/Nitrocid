@@ -49,6 +49,7 @@ Namespace Misc.Screensaver
                                                                              {"figlet", Figlet},
                                                                              {"fireworks", Fireworks},
                                                                              {"flashcolor", FlashColor},
+                                                                             {"flashtext", FlashText},
                                                                              {"glittercolor", GlitterColor},
                                                                              {"glittermatrix", GlitterMatrix},
                                                                              {"lighter", Lighter},

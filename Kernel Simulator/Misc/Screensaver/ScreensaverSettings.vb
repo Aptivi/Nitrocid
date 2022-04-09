@@ -1663,5 +1663,59 @@ Namespace Misc.Screensaver
         ''' </summary>
         Public FigletMaximumColorLevel As Integer = 255
 
+        '-> FlashText
+        ''' <summary>
+        ''' [FlashText] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public FlashText255Colors As Boolean
+        ''' <summary>
+        ''' [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public FlashTextTrueColor As Boolean = True
+        ''' <summary>
+        ''' [FlashText] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public FlashTextDelay As Integer = 20
+        ''' <summary>
+        ''' [FlashText] Text for FlashText. Shorter is better.
+        ''' </summary>
+        Public FlashTextWrite As String = "Kernel Simulator"
+        ''' <summary>
+        ''' [FlashText] Screensaver background color
+        ''' </summary>
+        Public FlashTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        ''' <summary>
+        ''' [FlashText] The minimum red color level (true color)
+        ''' </summary>
+        Public FlashTextMinimumRedColorLevel As Integer = 0
+        ''' <summary>
+        ''' [FlashText] The minimum green color level (true color)
+        ''' </summary>
+        Public FlashTextMinimumGreenColorLevel As Integer = 0
+        ''' <summary>
+        ''' [FlashText] The minimum blue color level (true color)
+        ''' </summary>
+        Public FlashTextMinimumBlueColorLevel As Integer = 0
+        ''' <summary>
+        ''' [FlashText] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public FlashTextMinimumColorLevel As Integer = 0
+        ''' <summary>
+        ''' [FlashText] The maximum red color level (true color)
+        ''' </summary>
+        Public FlashTextMaximumRedColorLevel As Integer = 255
+        ''' <summary>
+        ''' [FlashText] The maximum green color level (true color)
+        ''' </summary>
+        Public FlashTextMaximumGreenColorLevel As Integer = 255
+        ''' <summary>
+        ''' [FlashText] The maximum blue color level (true color)
+        ''' </summary>
+        Public FlashTextMaximumBlueColorLevel As Integer = 255
+        ''' <summary>
+        ''' [FlashText] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public FlashTextMaximumColorLevel As Integer = 0
+
     End Module
 End Namespace
