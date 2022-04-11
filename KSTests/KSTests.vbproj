@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Argument\ArgumentInfoInitializationTests.vb" />
     <Compile Include="Argument\ArgumentTest.vb" />
+    <Compile Include="Console\ColorQueryingTests.vb" />
     <Compile Include="Console\Color255QueryingTests.vb" />
     <Compile Include="Console\ColorInitializationTests.vb" />
     <Compile Include="Console\ConsoleColorsInfoInitializationTests.vb" />

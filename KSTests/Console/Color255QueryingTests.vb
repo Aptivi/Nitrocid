@@ -24,7 +24,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests querying 255-color data from JSON (parses only needed data by KS)
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestQueryColorDataFromJson()
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestQueryColorDataFromJson()
         For ColorIndex As Integer = 0 To 255
             Dim ColorData As JObject = ColorDataJson(ColorIndex)
             ColorData("colorId").ToString().ShouldBe(ColorIndex)
@@ -37,7 +37,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests getting an escape character
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestGetEsc()
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetEsc()
         GetEsc.ShouldBe(Convert.ToChar(&H1B))
     End Sub
 

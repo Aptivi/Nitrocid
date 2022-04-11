@@ -771,5 +771,19 @@ Namespace ConsoleBase
             End If
         End Function
 
+        ''' <summary>
+        ''' Converts from the RGB sequence of a color to the hexadecimal representation
+        ''' </summary>
+        ''' <param name="R">The red level</param>
+        ''' <param name="G">The green level</param>
+        ''' <param name="B">The blue level</param>
+        ''' <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
+        Public Function ConvertFromRGBToHex(R As Integer, G As Integer, B As Integer) As String
+            If R < 0 Or R > 255 Then Throw New Exceptions.ColorException(DoTranslation("Invalid red color specifier."))
+            If G < 0 Or G > 255 Then Throw New Exceptions.ColorException(DoTranslation("Invalid green color specifier."))
+            If B < 0 Or B > 255 Then Throw New Exceptions.ColorException(DoTranslation("Invalid blue color specifier."))
+            Return $"#{R:X2}{G:X2}{B:X2}"
+        End Function
+
     End Module
 End Namespace

@@ -33,6 +33,7 @@ Imports KS.ConsoleBase
         ConsoleColorsInfoInstance.G.ShouldBe(218)
         ConsoleColorsInfoInstance.B.ShouldBe(218)
         ConsoleColorsInfoInstance.IsBright.ShouldBeTrue
+        ConsoleColorsInfoInstance.IsDark.ShouldBeFalse
     End Sub
 
     ''' <summary>
@@ -48,6 +49,7 @@ Imports KS.ConsoleBase
         ConsoleColorsInfoInstance.G.ShouldBe(28)
         ConsoleColorsInfoInstance.B.ShouldBe(28)
         ConsoleColorsInfoInstance.IsBright.ShouldBeFalse
+        ConsoleColorsInfoInstance.IsDark.ShouldBeTrue
     End Sub
 
 End Class

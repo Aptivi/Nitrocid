@@ -62,6 +62,11 @@ Imports KS.ConsoleBase.Themes
         ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull
     End Sub
 
     ''' <summary>
@@ -115,6 +120,11 @@ Imports KS.ConsoleBase.Themes
             ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
             ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
             ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull
         Next
     End Sub
 
@@ -159,6 +169,11 @@ Imports KS.ConsoleBase.Themes
         ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableSeparatorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableHeaderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTableValueColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSelectedOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeAlternativeOptionColor.ShouldNotBeNull
     End Sub
 
 End Class

@@ -42,6 +42,8 @@ Imports KS.ConsoleBase
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(255)
         ColorInstance.IsBright.ShouldBeTrue
+        ColorInstance.IsDark.ShouldBeFalse
+        ColorInstance.Hex.ShouldBe("#FF00FF")
     End Sub
 
     ''' <summary>
@@ -66,6 +68,34 @@ Imports KS.ConsoleBase
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(63)
         ColorInstance.IsBright.ShouldBeTrue
+        ColorInstance.IsDark.ShouldBeFalse
+        ColorInstance.Hex.ShouldBe("#5E003F")
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing color instance from true color
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeColorInstanceFromHex()
+        'Create instance
+        Dim ColorInstance As New Color("#0F0F0F")
+
+        'Check for null
+        ColorInstance.ShouldNotBeNull
+        ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty
+
+        'Check for property correctness
+        ColorInstance.PlainSequence.ShouldBe("15;15;15")
+        ColorInstance.Type.ShouldBe(ColorType.TrueColor)
+        ColorInstance.VTSequenceBackground.ShouldBe(GetEsc() + "[48;2;15;15;15m")
+        ColorInstance.VTSequenceForeground.ShouldBe(GetEsc() + "[38;2;15;15;15m")
+        ColorInstance.R.ShouldBe(15)
+        ColorInstance.G.ShouldBe(15)
+        ColorInstance.B.ShouldBe(15)
+        ColorInstance.IsBright.ShouldBeFalse
+        ColorInstance.IsDark.ShouldBeTrue
+        ColorInstance.Hex.ShouldBe("#0F0F0F")
     End Sub
 
 End Class
