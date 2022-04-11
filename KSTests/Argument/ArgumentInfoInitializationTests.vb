@@ -20,6 +20,8 @@ Imports KS.Arguments.ArgumentBase
 
 <TestClass()> Public Class ArgumentInfoInitializationTests
 
+    Shared ArgumentInstance As ArgumentExecutor
+
     ''' <summary>
     ''' Tests initializing ArgumentInfo instance from a command line argument
     ''' </summary>
@@ -39,6 +41,45 @@ Imports KS.Arguments.ArgumentBase
         ArgumentInstance.MinimumArguments.ShouldBe(0)
         ArgumentInstance.Obsolete.ShouldBeFalse
         ArgumentInstance.Type.ShouldBe(ArgumentType.CommandLineArgs)
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing the argument instance from base
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeArgumentFromBase()
+        'Create instance
+        ArgumentInstance = New ArgumentTest()
+
+        'Check for null
+        ArgumentInstance.ShouldNotBeNull
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing the argument instance from base
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecution()
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("", {}, {}, {})))
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing the argument instance from base
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithArguments()
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, {})))
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing the argument instance from base
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithSwitches()
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s", {"-s"}, {}, {"-s"})))
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing the argument instance from base
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithArgumentsAndSwitches()
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s Hello!", {"-s", "Hello!"}, {"Hello!"}, {"-s"})))
     End Sub
 
 End Class
