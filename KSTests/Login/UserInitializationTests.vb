@@ -24,6 +24,7 @@
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeUsers()
         InitializeUsers()
         ListAllUsers(True, True).ShouldNotBeEmpty
+        ListAllUsers().ShouldNotBeEmpty
     End Sub
 
 End Class

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Newtonsoft.Json.Linq
+
 <TestClass()> Public Class UserManagementTests
 
     ''' <summary>
@@ -31,6 +33,14 @@
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestChangeUser()
         ChangeUsername("Account2", "Account3").ShouldBeTrue
+    End Sub
+
+    ''' <summary>
+    ''' Tests username change
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetUserProperty()
+        GetUserProperty("Account3", UserProperty.Username).ShouldBe("Account3")
+        CType(GetUserProperty("Account3", UserProperty.Permissions), JArray).ShouldBeEmpty
     End Sub
 
     ''' <summary>
