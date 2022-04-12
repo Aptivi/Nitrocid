@@ -71,6 +71,14 @@ Imports KS.Shell
     End Sub
 
     ''' <summary>
+    ''' Tests making file
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeJsonFile()
+        CurrDir = HomePath
+        MakeJsonFile("/NewFile.json").ShouldBeTrue
+    End Sub
+
+    ''' <summary>
     ''' Tests moving directory to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
@@ -99,6 +107,16 @@ Imports KS.Shell
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+    End Sub
+
+    ''' <summary>
+    ''' Tests attribute removal implementation
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveAttribute()
+        Dim ExpectedAttributes As FileAttributes = FileAttributes.Encrypted Or FileAttributes.Directory
+        Dim InitialAttributes As FileAttributes = FileAttributes.Encrypted Or FileAttributes.Directory Or FileAttributes.Hidden
+        InitialAttributes.RemoveAttribute(FileAttributes.Hidden)
+        InitialAttributes.ShouldBe(ExpectedAttributes)
     End Sub
 
     ''' <summary>
@@ -165,6 +183,17 @@ Imports KS.Shell
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestReadAllLinesNoBlock()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
+        LinesTestText.ShouldBeOfType(GetType(String()))
+        LinesTestText.ShouldNotBeNull
+        LinesTestText.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
+    ''' Tests reading all lines
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestReadContents()
+        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim LinesTestText As String() = ReadContents(PathToTestText)
         LinesTestText.ShouldBeOfType(GetType(String()))
         LinesTestText.ShouldNotBeNull
         LinesTestText.ShouldNotBeEmpty
@@ -275,6 +304,19 @@ Imports KS.Shell
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestCreateList()
         Dim CreatedList As List(Of FileSystemInfo) = CreateList(HomePath)
         CreatedList.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
+    ''' Tests combining files
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestCombineFiles()
+        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim PathToTestTextToBeCombined As String = Path.GetFullPath("TestText.txt")
+        Dim Combined As String() = CombineFiles(PathToTestText, {PathToTestTextToBeCombined})
+        Combined.ShouldBeOfType(GetType(String()))
+        Combined.ShouldNotBeNull
+        Combined.ShouldNotBeEmpty
+        Combined.Length.ShouldBeGreaterThan(1)
     End Sub
 
 End Class

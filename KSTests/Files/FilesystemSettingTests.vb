@@ -17,6 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Configuration
+Imports KS.Kernel.Flags
+Imports Newtonsoft.Json.Linq
 
 <TestClass()> Public Class FilesystemSettingTests
 
@@ -34,10 +36,13 @@ Imports KS.Misc.Configuration
     ''' Tests setting size parse mode
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetSizeParseMode()
+        Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
         SetSizeParseMode(True).ShouldBeTrue
+        FullParseMode.ShouldBeTrue
+        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe(True)
         SetSizeParseMode(False).ShouldBeTrue
-        SetSizeParseMode(1).ShouldBeTrue
-        SetSizeParseMode(0).ShouldBeTrue
+        FullParseMode.ShouldBeFalse
+        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe(False)
     End Sub
 
     ''' <summary>

@@ -22,6 +22,26 @@ Imports KS.Misc.Platform
 <TestClass()> Public Class FilesystemQueryingTests
 
     ''' <summary>
+    ''' Tests checking if file exists
+    ''' </summary>
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestFileExists()
+        Dim TargetFile As String = Path.GetFullPath("TestText.txt")
+        Dim TargetFile2 As String = Path.GetFullPath("TestTexts.txt")
+        FileExists(TargetFile).ShouldBeTrue
+        FileExists(TargetFile2).ShouldBeFalse
+    End Sub
+
+    ''' <summary>
+    ''' Tests checking if directory exists
+    ''' </summary>
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestDirectoryExists()
+        Dim TargetDirectory As String = Path.GetFullPath("EmptyFiles")
+        Dim TargetDirectory2 As String = Path.GetFullPath("EmptyFile")
+        FolderExists(TargetDirectory).ShouldBeTrue
+        FolderExists(TargetDirectory2).ShouldBeFalse
+    End Sub
+
+    ''' <summary>
     ''' Tests getting the kernel path for each entry
     ''' </summary>
     <TestMethod()> <TestCategory("Querying")> Public Sub TestGetKernelPaths()
