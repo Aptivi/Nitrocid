@@ -89,8 +89,10 @@
     <Compile Include="Languages\LocalizationSettingTests.vb" />
     <Compile Include="Login\UserPermissionManagementTests.vb" />
     <Compile Include="Login\UserManagementTests.vb" />
+    <Compile Include="Misc\ReminderManagementTests.vb" />
     <Compile Include="Misc\FieldManagementTests.vb" />
     <Compile Include="Misc\EncryptionActionTests.vb" />
+    <Compile Include="Misc\EventManagementTests.vb" />
     <Compile Include="Misc\MOTDSettingTests.vb" />
     <Compile Include="Misc\MOTDManagementTests.vb" />
     <Compile Include="Misc\JsonActionTests.vb" />
