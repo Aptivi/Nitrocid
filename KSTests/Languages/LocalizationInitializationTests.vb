@@ -23,6 +23,25 @@ Imports KS.Languages
 <TestClass()> Public Class LocalizationInitializationTests
 
     ''' <summary>
+    ''' Tests creating the new instance of the language information
+    ''' </summary>
+    <TestMethod> <TestCategory("Initialization")> Public Sub TestCreateNewLanguageInfoInstance()
+        Dim InfoInstance As New LanguageInfo("arb", "Arabic", True)
+
+        'Check for null
+        InfoInstance.ShouldNotBeNull
+        InfoInstance.LanguageResource.ShouldNotBeNull
+        InfoInstance.Cultures.ShouldNotBeNull
+
+        'Check for property correctness
+        InfoInstance.Transliterable.ShouldBeTrue
+        InfoInstance.Custom.ShouldBeFalse
+        InfoInstance.FullLanguageName.ShouldBe("Arabic")
+        InfoInstance.ThreeLetterLanguageName.ShouldBe("arb")
+        InfoInstance.Cultures.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
     ''' Tests translation dictionary preparation for a language
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForOneLanguage()
