@@ -42,22 +42,7 @@ Namespace Misc.Encryption
             Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
             If FileExists(FileName) Then
                 Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
-                Select Case HashType
-                    Case Algorithms.SHA512
-                        ExpectedHashLength = 128
-                    Case Algorithms.SHA384
-                        ExpectedHashLength = 96
-                    Case Algorithms.SHA256
-                        ExpectedHashLength = 64
-                    Case Algorithms.SHA1
-                        ExpectedHashLength = 40
-                    Case Algorithms.MD5
-                        ExpectedHashLength = 32
-                    Case Algorithms.CRC32
-                        ExpectedHashLength = 8
-                    Case Else
-                        Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
-                End Select
+                ExpectedHashLength = GetExpectedHashLength(HashType)
 
                 'Verify the hash
                 If FileExists(HashesFile) Then
@@ -125,22 +110,7 @@ Namespace Misc.Encryption
             Wdbg(DebugLevel.I, "File name: {0}", FileName)
             If FileExists(FileName) Then
                 Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
-                Select Case HashType
-                    Case Algorithms.SHA512
-                        ExpectedHashLength = 128
-                    Case Algorithms.SHA384
-                        ExpectedHashLength = 96
-                    Case Algorithms.SHA256
-                        ExpectedHashLength = 64
-                    Case Algorithms.SHA1
-                        ExpectedHashLength = 40
-                    Case Algorithms.MD5
-                        ExpectedHashLength = 32
-                    Case Algorithms.CRC32
-                        ExpectedHashLength = 8
-                    Case Else
-                        Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
-                End Select
+                ExpectedHashLength = GetExpectedHashLength(HashType)
 
                 'Verify the hash
                 If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
@@ -183,22 +153,7 @@ Namespace Misc.Encryption
             Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
             If FileExists(FileName) Then
                 Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
-                Select Case HashType
-                    Case Algorithms.SHA512
-                        ExpectedHashLength = 128
-                    Case Algorithms.SHA384
-                        ExpectedHashLength = 96
-                    Case Algorithms.SHA256
-                        ExpectedHashLength = 64
-                    Case Algorithms.SHA1
-                        ExpectedHashLength = 40
-                    Case Algorithms.MD5
-                        ExpectedHashLength = 32
-                    Case Algorithms.CRC32
-                        ExpectedHashLength = 8
-                    Case Else
-                        Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
-                End Select
+                ExpectedHashLength = GetExpectedHashLength(HashType)
 
                 'Verify the hash
                 If FileExists(HashesFile) Then
@@ -264,22 +219,7 @@ Namespace Misc.Encryption
             Wdbg(DebugLevel.I, "File name: {0}", FileName)
             If FileExists(FileName) Then
                 Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
-                Select Case HashType
-                    Case Algorithms.SHA512
-                        ExpectedHashLength = 128
-                    Case Algorithms.SHA384
-                        ExpectedHashLength = 96
-                    Case Algorithms.SHA256
-                        ExpectedHashLength = 64
-                    Case Algorithms.SHA1
-                        ExpectedHashLength = 40
-                    Case Algorithms.MD5
-                        ExpectedHashLength = 32
-                    Case Algorithms.CRC32
-                        ExpectedHashLength = 8
-                    Case Else
-                        Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
-                End Select
+                ExpectedHashLength = GetExpectedHashLength(HashType)
 
                 'Calculate the file hash
                 ActualHash = GetEncryptedFile(FileName, HashType).ToUpper
@@ -302,6 +242,30 @@ Namespace Misc.Encryption
             Else
                 Throw New FileNotFoundException("File {0} not found.".FormatString(FileName))
             End If
+        End Function
+
+        ''' <summary>
+        ''' Gets the expected hash length
+        ''' </summary>
+        ''' <param name="HashType">An encryption algorithm</param>
+        ''' <returns>The expected hash length</returns>
+        Public Function GetExpectedHashLength(HashType As Algorithms) As Integer
+            Select Case HashType
+                Case Algorithms.SHA512
+                    Return 128
+                Case Algorithms.SHA384
+                    Return 96
+                Case Algorithms.SHA256
+                    Return 64
+                Case Algorithms.SHA1
+                    Return 40
+                Case Algorithms.MD5
+                    Return 32
+                Case Algorithms.CRC32
+                    Return 8
+                Case Else
+                    Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
+            End Select
         End Function
 
     End Module
