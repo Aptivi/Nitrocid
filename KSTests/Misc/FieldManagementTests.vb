@@ -17,10 +17,18 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Reflection
+Imports Figgle
 Imports KS.Languages
 Imports KS.Misc.Reflection
 
 <TestClass()> Public Class FieldManagementTests
+
+    ''' <summary>
+    ''' Tests checking field
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestCheckField()
+        CheckField("HiddenFiles").ShouldBeTrue
+    End Sub
 
     ''' <summary>
     ''' Tests getting value
@@ -48,9 +56,27 @@ Imports KS.Misc.Reflection
     End Sub
 
     ''' <summary>
+    ''' Tests getting properties
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetProperties()
+        Dim Properties As Dictionary(Of String, Object) = GetProperties(GetType(FiggleFonts))
+        Properties.ShouldNotBeNull
+        Properties.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
+    ''' Tests getting properties
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetPropertiesNoEvaluation()
+        Dim Properties As Dictionary(Of String, Type) = GetPropertiesNoEvaluation(GetType(FiggleFonts))
+        Properties.ShouldNotBeNull
+        Properties.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
     ''' Tests getting property value from variable
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigPropertyValueInVariableField()
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetPropertyValueInVariable()
         Dim Value As String = GetPropertyValueInVariable(NameOf(CurrentCult), NameOf(CurrentCult.Name))
         Value.ShouldNotBeNullOrEmpty
     End Sub
