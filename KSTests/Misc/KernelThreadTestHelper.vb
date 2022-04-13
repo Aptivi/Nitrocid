@@ -16,15 +16,30 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc.Reflection
+Imports System.Threading
 
-<TestClass()> Public Class MethodManagementTests
+Public Module KernelThreadTestHelper
 
     ''' <summary>
-    ''' Tests getting method
+    ''' [Kernel thread test] Write hello to console
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetMethod()
-        GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull
+    Sub WriteHello()
+        Console.WriteLine("Hello world!")
+        Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+        While True
+            Thread.Sleep(1)
+        End While
     End Sub
 
-End Class
+    ''' <summary>
+    ''' [Kernel thread test] Write hello to console with argument
+    ''' </summary>
+    Sub WriteHelloWithArgument(Name As String)
+        Console.WriteLine("Hello, {0}!", Name)
+        Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+        While True
+            Thread.Sleep(1)
+        End While
+    End Sub
+
+End Module

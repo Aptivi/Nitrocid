@@ -89,6 +89,8 @@
     <Compile Include="Languages\LocalizationSettingTests.vb" />
     <Compile Include="Login\UserPermissionManagementTests.vb" />
     <Compile Include="Login\UserManagementTests.vb" />
+    <Compile Include="Misc\KernelThreadTestHelper.vb" />
+    <Compile Include="Misc\KernelThreadTests.vb" />
     <Compile Include="Misc\MethodManagementTests.vb" />
     <Compile Include="Misc\ReminderManagementTests.vb" />
     <Compile Include="Misc\FieldManagementTests.vb" />
