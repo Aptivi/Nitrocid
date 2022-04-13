@@ -29,4 +29,28 @@ Imports KS.Network
         PingAddress("www.google.com").Status.ShouldBe(IPStatus.Success)
     End Sub
 
+    ''' <summary>
+    ''' Tests pinging with custom timeout
+    ''' </summary>
+    <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddressCustomTimeout()
+        PingAddress("www.google.com", 60000).Status.ShouldBe(IPStatus.Success)
+    End Sub
+
+    ''' <summary>
+    ''' Tests pinging with custom timeout and buffer
+    ''' </summary>
+    <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddressCustomTimeoutAndBuffer()
+        PingAddress("www.google.com", 60000, {"K", "S"}).Status.ShouldBe(IPStatus.Success)
+    End Sub
+
+    ''' <summary>
+    ''' Tests pinging with custom timeout and buffer
+    ''' </summary>
+    <TestMethod()> <TestCategory("Action")> Public Sub TestGetFilenameFromUrl()
+        Dim Url As String = "https://www.fabrikam.com/downloads/file.bin?apikey=FAAD64328FE82D"
+        Dim FileNameFromUrl As String = GetFilenameFromUrl(Url)
+        FileNameFromUrl.ShouldNotBeNullOrEmpty
+        FileNameFromUrl.ShouldBe("file.bin")
+    End Sub
+
 End Class
