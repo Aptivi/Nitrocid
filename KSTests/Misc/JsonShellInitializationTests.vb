@@ -29,6 +29,9 @@ Imports KS.Misc.JsonShell
         JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue
         JsonShell_AddNewProperty("$", "HowText", "How are you today?")
         JsonShell_FileToken("HowText").ShouldNotBeNull
+        JsonShell_GetProperty("HelloText").ShouldNotBeNull
+        JsonShell_SerializeToString("HelloText").ShouldNotBeNullOrEmpty
+        JsonShell_RemoveProperty("HowText")
         JsonShell_SaveFile(False).ShouldBeTrue
         JsonShell_CloseTextFile.ShouldBeTrue
     End Sub
