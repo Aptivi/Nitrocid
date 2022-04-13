@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.ConsoleBase
 Imports KS.Misc.Notifications
 
 <TestClass()> Public Class NotificationTests
@@ -25,6 +26,29 @@ Imports KS.Misc.Notifications
     ''' </summary>
     <TestMethod()> Public Sub TestNotifyCreate()
         Dim Notif As New Notification("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal)
+        Notif.ShouldNotBeNull
+    End Sub
+
+    ''' <summary>
+    ''' Tests custom notification creation
+    ''' </summary>
+    <TestMethod()> Public Sub TestNotifyCreateCustom()
+        Dim Notif As New Notification("This is the title.", "This is the description.", NotifPriority.Custom, NotifType.Normal) With {
+            .CustomBeepTimes = 5,
+            .CustomColor = New Color(4),
+            .CustomDescriptionColor = New Color(4),
+            .CustomTitleColor = New Color(4),
+            .CustomProgressColor = New Color(4),
+            .CustomProgressFailureColor = New Color(4),
+            .CustomLeftFrameChar = "|",
+            .CustomRightFrameChar = "|",
+            .CustomUpperFrameChar = "-",
+            .CustomLowerFrameChar = "-",
+            .CustomUpperLeftCornerChar = "+",
+            .CustomUpperRightCornerChar = "+",
+            .CustomLowerLeftCornerChar = "+",
+            .CustomLowerRightCornerChar = "+"
+        }
         Notif.ShouldNotBeNull
     End Sub
 
