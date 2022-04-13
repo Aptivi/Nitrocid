@@ -36,7 +36,7 @@ Imports KS.Misc.Calendar.Reminders
     ''' Tests adding the reminder
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveReminder()
-        AddReminder(New Date(2022, 2, 22), 1)
+        RemoveReminder(New Date(2022, 2, 22), 1)
         Reminders.ShouldNotBeNull
         Reminders.ShouldBeEmpty
     End Sub
