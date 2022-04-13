@@ -22,6 +22,13 @@ Imports Newtonsoft.Json.Linq
 <TestClass()> Public Class ConfigManagementTests
 
     ''' <summary>
+    ''' Tests creates a new JSON object containing the kernel settings of all kinds
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetNewConfigObject()
+        GetNewConfigObject.ShouldNotBeNull
+    End Sub
+
+    ''' <summary>
     ''' Tests config repair (Actually, it checks to see if any of the config entries is missing. If any one of them is missing, unit test fails.)
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRepairConfig()
@@ -58,6 +65,16 @@ Imports Newtonsoft.Json.Linq
         Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver, "Matrix")
         SetConfigValue(ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2)
         Token("Delay in Milliseconds").ToObject(Of Integer).ShouldBe(2)
+    End Sub
+
+    ''' <summary>
+    ''' Tests checking the settings variables
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestCheckSettingsVariables()
+        Dim SettingsVariables As Dictionary(Of String, Boolean) = CheckSettingsVariables()
+        SettingsVariables.ShouldNotBeNull
+        SettingsVariables.ShouldNotBeEmpty
+        SettingsVariables.Values.ShouldNotContain(False)
     End Sub
 
 End Class
