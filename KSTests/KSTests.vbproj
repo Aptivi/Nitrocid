@@ -134,6 +134,7 @@
     <Compile Include="Network\SpeedDialManagementTests.vb" />
     <Compile Include="Shell\CommandManagerActionTests.vb" />
     <Compile Include="TimeDate\TimeConversionTests.vb" />
+    <Compile Include="TimeDate\TimeQueryingTests.vb" />
     <Compile Include="TimeDate\TimeInitializationTests.vb" />
     <Compile Include="Kernel\KernelMiscTests.vb" />
     <Compile Include="Misc\NotificationTests.vb" />
