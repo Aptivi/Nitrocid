@@ -40,7 +40,7 @@ Imports KS.Network
     ''' Tests pinging with custom timeout and buffer
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddressCustomTimeoutAndBuffer()
-        PingAddress("www.google.com", 60000, {"K", "S"}).Status.ShouldBe(IPStatus.Success)
+        PingAddress("www.google.com", 60000, Text.Encoding.Default.GetBytes("KS")).Status.ShouldBe(IPStatus.Success)
     End Sub
 
     ''' <summary>
