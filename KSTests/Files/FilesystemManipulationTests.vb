@@ -115,7 +115,7 @@ Imports KS.Shell
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveAttribute()
         Dim ExpectedAttributes As FileAttributes = FileAttributes.Encrypted Or FileAttributes.Directory
         Dim InitialAttributes As FileAttributes = FileAttributes.Encrypted Or FileAttributes.Directory Or FileAttributes.Hidden
-        InitialAttributes.RemoveAttribute(FileAttributes.Hidden)
+        InitialAttributes = InitialAttributes.RemoveAttribute(FileAttributes.Hidden)
         InitialAttributes.ShouldBe(ExpectedAttributes)
     End Sub
 

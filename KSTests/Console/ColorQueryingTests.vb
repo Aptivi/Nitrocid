@@ -62,6 +62,18 @@ Imports KS.ConsoleBase
         TryParseColor(400, 400, 4).ShouldBeFalse
         Debug.WriteLine("Trying rgb 400, 400, 400...")
         TryParseColor(400, 400, 400).ShouldBeFalse
+        Debug.WriteLine("Trying rgb -4, 4, 4...")
+        TryParseColor(-4, 4, 4).ShouldBeFalse
+        Debug.WriteLine("Trying rgb 4, -4, 4...")
+        TryParseColor(4, -4, 4).ShouldBeFalse
+        Debug.WriteLine("Trying rgb 4, 4, -4...")
+        TryParseColor(4, 4, -4).ShouldBeFalse
+        Debug.WriteLine("Trying rgb 4, -4, -4...")
+        TryParseColor(4, -4, -4).ShouldBeFalse
+        Debug.WriteLine("Trying rgb -4, -4, 4...")
+        TryParseColor(-4, -4, 4).ShouldBeFalse
+        Debug.WriteLine("Trying rgb -4, 4, -4...")
+        TryParseColor(-4, 4, -4).ShouldBeFalse
         Debug.WriteLine("Trying rgb -4, -4, -4...")
         TryParseColor(-4, -4, -4).ShouldBeFalse
     End Sub
