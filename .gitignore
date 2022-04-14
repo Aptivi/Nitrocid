@@ -290,3 +290,7 @@ node_modules/
 # Visual Studio 6 workspace options file
 *.opt
 
+# DocGen assets
+docs/
+DocGen/api/
+DocGen/obj/
