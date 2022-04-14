@@ -104,6 +104,12 @@
     <Compile Include="Misc\TextEditorInitializationTests.vb" />
     <Compile Include="Misc\ConfigManagementTests.vb" />
     <Compile Include="Modifications\BlacklistManipulationTests.vb" />
+    <Compile Include="Shell\ShellTest.vb" />
+    <Compile Include="Shell\ShellExecutorInitializationTests.vb" />
+    <Compile Include="Shell\CommandInfoInitializationTests.vb" />
+    <Compile Include="Shell\CommandExecutorInitializationTests.vb" />
+    <Compile Include="Shell\CommandManagerQueryingTests.vb" />
+    <Compile Include="Shell\CommandTest.vb" />
     <Compile Include="Shell\UESHVariableTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
