@@ -44,6 +44,7 @@ Imports KS.Misc.Configuration
         If FileExists(HomePath + "/Documents/TestText.txt") Then File.Delete(HomePath + "/Documents/TestText.txt")
         If FileExists(HomePath + "/Documents/Text.txt") Then File.Delete(HomePath + "/Documents/Text.txt")
         If FileExists(HomePath + "/NewFile.txt") Then File.Delete(HomePath + "/NewFile.txt")
+        If FileExists(HomePath + "/NewFile.json") Then File.Delete(HomePath + "/NewFile.json")
         If FileExists(HomePath + "/1mb-test.csv") Then File.Delete(HomePath + "/1mb-test.csv")
         If FolderExists(HomePath + "/TestMovedDir2") Then Directory.Delete(HomePath + "/TestMovedDir2", True)
         If FolderExists(HomePath + "/NewDirectory") Then Directory.Delete(HomePath + "/NewDirectory", True)
