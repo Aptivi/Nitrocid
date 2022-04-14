@@ -145,6 +145,11 @@ Namespace ConsoleBase
         ''' <param name="B">The blue level</param>
         ''' <exception cref="Exceptions.ColorException"></exception>
         Public Sub New(R As Integer, G As Integer, B As Integer)
+            If R < 0 Or R > 255 Then Throw New Exceptions.ColorException("Invalid red color specifier.")
+            If G < 0 Or G > 255 Then Throw New Exceptions.ColorException("Invalid green color specifier.")
+            If B < 0 Or B > 255 Then Throw New Exceptions.ColorException("Invalid blue color specifier.")
+
+            'Populate sequences
             PlainSequence = $"{R};{G};{B}"
             PlainSequenceEnclosed = $"{R};{G};{B}".EncloseByDoubleQuotes
             VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
