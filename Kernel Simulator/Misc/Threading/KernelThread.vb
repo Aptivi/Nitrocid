@@ -85,16 +85,19 @@ Namespace Misc.Threading
         ''' Stops the kernel thread
         ''' </summary>
         Public Sub [Stop]()
-            Wdbg(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId)
+            Dim ThreadName As String = BaseThread.Name
+            Dim Background As Boolean = BaseThread.IsBackground
+            Dim ThreadID As Integer = BaseThread.ManagedThreadId
+            Wdbg(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", ThreadName, ThreadID)
             BaseThread.Abort()
 
             'Remake the thread to avoid illegal state exceptions
             If IsParameterized Then
-                BaseThread = New Thread(ThreadDelegateParameterized) With {.Name = BaseThread.Name, .IsBackground = BaseThread.IsBackground}
+                BaseThread = New Thread(ThreadDelegateParameterized) With {.Name = ThreadName, .IsBackground = Background}
             Else
-                BaseThread = New Thread(ThreadDelegate) With {.Name = BaseThread.Name, .IsBackground = BaseThread.IsBackground}
+                BaseThread = New Thread(ThreadDelegate) With {.Name = ThreadName, .IsBackground = Background}
             End If
-            Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId)
+            Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, ThreadID)
         End Sub
 
         ''' <summary>
