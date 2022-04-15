@@ -24,7 +24,7 @@ Namespace Shell.ShellBase
         Friend CurrentShellType As ShellType = ShellType.Shell
         Friend LastShellType As ShellType = ShellType.Shell
         Friend CancelSync, EditorCancelSync, FTPCancelSync, HTTPCancelSync, JsonShellCancelSync, MailCancelSync, RssShellCancelSync,
-           SFTPCancelSync, TestCancelSync, ZipShellCancelSync As New Object
+               SFTPCancelSync, TestCancelSync, ZipShellCancelSync, HexEditorCancelSync As New Object
 
         Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
             SyncLock CancelSync
@@ -144,6 +144,18 @@ Namespace Shell.ShellBase
                     Console.SetOut(StreamWriter.Null)
                     e.Cancel = True
                     HTTPCommandThread.Abort()
+                End If
+            End SyncLock
+        End Sub
+
+        Sub HexEditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+            SyncLock HexEditorCancelSync
+                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                    Console.WriteLine()
+                    DefConsoleOut = Console.Out
+                    Console.SetOut(StreamWriter.Null)
+                    e.Cancel = True
+                    HexEditorCommandThread.Abort()
                 End If
             End SyncLock
         End Sub

@@ -65,5 +65,9 @@ Namespace Shell.ShellBase
         ''' HTTP shell
         ''' </summary>
         HTTPShell
+        ''' <summary>
+        ''' Hex shell
+        ''' </summary>
+        HexShell
     End Enum
 End Namespace

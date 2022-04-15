@@ -306,6 +306,20 @@
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Configuration\SettingsKeyType.vb" />
     <Compile Include="Misc\Configuration\SettingsType.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\AddByte.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\AddBytes.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Clear.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\DelByte.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\DelBytes.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Exit.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\ExitNoSave.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Help.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Print.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\QueryByte.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Replace.vb" />
+    <Compile Include="Misc\Editors\HexEdit\Commands\Save.vb" />
+    <Compile Include="Misc\Editors\HexEdit\HexEditShellCommon.vb" />
+    <Compile Include="Misc\Editors\HexEdit\HexEditTools.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
@@ -582,6 +596,7 @@
     <Compile Include="Shell\Commands\ChMotd.vb" />
     <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
     <Compile Include="Shell\Commands\Combine.vb" />
+    <Compile Include="Shell\Commands\HexEdit.vb" />
     <Compile Include="Shell\Commands\If.vb" />
     <Compile Include="Shell\Commands\Find.vb" />
     <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
@@ -706,6 +721,7 @@
     <Compile Include="Shell\Shells\RSSShell.vb" />
     <Compile Include="Shell\Shells\JsonShell.vb" />
     <Compile Include="Shell\Shells\HTTPShell.vb" />
+    <Compile Include="Shell\Shells\HexShell.vb" />
     <Compile Include="Shell\Shells\ZipShell.vb" />
     <Compile Include="Shell\Shells\TestShell.vb" />
     <Compile Include="Shell\Shells\TextShell.vb" />
@@ -1007,9 +1023,7 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Misc\Editors\HexEdit\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)...</PreBuildEvent>

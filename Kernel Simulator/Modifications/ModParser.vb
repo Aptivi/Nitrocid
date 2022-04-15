@@ -23,6 +23,7 @@ Imports KS.Misc.JsonShell
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -225,6 +226,11 @@ Namespace Modifications
                                         Wdbg(DebugLevel.W, "Command {0} conflicts with available HTTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                         Command += $"-{script.Name}-{script.ModPart}"
                                     End If
+                                Case ShellType.HexShell
+                                    If HexEdit_Commands.ContainsKey(Command) Or HexEdit_ModCommands.Contains(Command) Then
+                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available hex shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                        Command += $"-{script.Name}-{script.ModPart}"
+                                    End If
                             End Select
 
                             'See if mod can be added to command list
@@ -292,6 +298,11 @@ Namespace Modifications
                                         If Not HTTPModCommands.Contains(Command) Then HTTPModCommands.Add(Command)
                                         script.Commands.RenameKey(ActualCommand, Command)
                                         HTTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
+                                    Case ShellType.HexShell
+                                        Wdbg(DebugLevel.I, "Adding command {0} for hex shell...", Command)
+                                        If Not HexEdit_ModCommands.Contains(Command) Then HexEdit_ModCommands.Add(Command)
+                                        script.Commands.RenameKey(ActualCommand, Command)
+                                        HexEdit_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 End Select
                             End If
                         Next

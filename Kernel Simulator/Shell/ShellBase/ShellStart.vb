@@ -54,6 +54,8 @@ Namespace Shell.ShellBase
                         ShellExecute = New JsonShell()
                     Case ShellType.HTTPShell
                         ShellExecute = New HTTPShell()
+                    Case ShellType.HexShell
+                        ShellExecute = New HexShell()
                 End Select
             End If
 
@@ -92,6 +94,8 @@ Namespace Shell.ShellBase
                     ShellExecute = New JsonShell()
                 Case ShellType.HTTPShell
                     ShellExecute = New HTTPShell()
+                Case ShellType.HexShell
+                    ShellExecute = New HexShell()
             End Select
 
             'Add a new executor and put it to the shell stack to indicate that we have a new shell (a visitor)!

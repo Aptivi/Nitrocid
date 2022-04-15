@@ -503,6 +503,12 @@
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
+                "Name": "Hex Edit Prompt Style",
+                "Type": "SString",
+                "Variable": "HexEdit_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
                 "Name": "Probe injected commands",
                 "Type": "SBoolean",
                 "Variable": "ProbeInjectedCommands",

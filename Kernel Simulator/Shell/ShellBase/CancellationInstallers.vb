@@ -40,6 +40,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.JsonShell
                     AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -51,6 +52,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.MailShell
                     AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -62,6 +64,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.RSSShell
                     AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -73,6 +76,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.SFTPShell
                     AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -84,6 +88,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.Shell
                     AddHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -95,6 +100,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.TestShell
                     AddHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -106,6 +112,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.TextShell
                     AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -117,6 +124,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.ZIPShell
                     AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -128,6 +136,7 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
                 Case ShellType.HTTPShell
                     AddHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -139,6 +148,19 @@ Namespace Shell.ShellBase
                     RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
+                Case ShellType.HexShell
+                    AddHandler Console.CancelKeyPress, AddressOf HexEditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf TestCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                    RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
                 Case Else
                     Return False
             End Select

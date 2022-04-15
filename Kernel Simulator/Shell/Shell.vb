@@ -89,6 +89,7 @@ Namespace Shell
                                                                                  {"gettimeinfo", New CommandInfo("gettimeinfo", ShellType.Shell, "Gets the date and time information", {"<date>"}, True, 1, New GetTimeInfoCommand)},
                                                                                  {"get", New CommandInfo("get", ShellType.Shell, "Downloads a file to current working directory", {"<URL> [username]"}, True, 1, New Get_Command)},
                                                                                  {"help", New CommandInfo("help", ShellType.Shell, "Help page", {"[command]"}, False, 0, New HelpCommand)},
+                                                                                 {"hexedit", New CommandInfo("hexedit", ShellType.Shell, "Edits a binary file", {"<file>"}, True, 1, New HexEditCommand)},
                                                                                  {"http", New CommandInfo("http", ShellType.Shell, "Starts the HTTP shell", {}, False, 0, New HttpCommand)},
                                                                                  {"hwinfo", New CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", {"<HardwareType>"}, True, 1, New HwInfoCommand, False, True, False, False, False)},
                                                                                  {"if", New CommandInfo("if", ShellType.Shell, "Executes commands once the UESH expressions are satisfied", {"<uesh-expression> <command>"}, True, 2, New IfCommand)},

@@ -155,6 +155,10 @@ Namespace Kernel
         Public Event LanguagesUninstalled()
         Public Event LanguagesInstallError(Exception As Exception)
         Public Event LanguagesUninstallError(Exception As Exception)
+        Public Event HexShellInitialized()
+        Public Event HexPreExecuteCommand(Command As String)
+        Public Event HexPostExecuteCommand(Command As String)
+        Public Event HexCommandError(Command As String, Exception As Exception)
 
         ''' <summary>
         ''' Makes the mod respond to the event of kernel start
@@ -2297,6 +2301,74 @@ Namespace Kernel
                 Next
             Next
         End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Hex shell initialized
+        ''' </summary>
+        Public Sub RespondHexShellInitialized() Handles Me.HexShellInitialized
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexShellInitialized()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("HexShellInitialized")
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Hex pre-command execution
+        ''' </summary>
+        Public Sub RespondHexPreExecuteCommand(Command As String) Handles Me.HexPreExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("HexPreExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Hex post-command execution
+        ''' </summary>
+        Public Sub RespondHexPostExecuteCommand(Command As String) Handles Me.HexPostExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("HexPostExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Hex command error
+        ''' </summary>
+        Public Sub RespondHexCommandError(Command As String, Exception As Exception) Handles Me.HexCommandError
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event HexCommandError()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("HexCommandError", Command, Exception)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
 
         'These subs are for raising events
         ''' <summary>
@@ -3306,6 +3378,38 @@ Namespace Kernel
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...")
             FiredEvents.Add("LanguagesUninstallError (" + CStr(FiredEvents.Count) + ")", {})
             RaiseEvent LanguagesUninstallError(Exception)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Hex shell initialized
+        ''' </summary>
+        Public Sub RaiseHexShellInitialized()
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexShellInitialized() and responding in RespondHexShellInitialized()...")
+            FiredEvents.Add("HexShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            RaiseEvent HexShellInitialized()
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Hex pre-command execution
+        ''' </summary>
+        Public Sub RaiseHexPreExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexPreExecuteCommand() and responding in RespondHexPreExecuteCommand()...")
+            FiredEvents.Add("HexPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent HexPreExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Hex post-command execution
+        ''' </summary>
+        Public Sub RaiseHexPostExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexPostExecuteCommand() and responding in RespondHexPostExecuteCommand()...")
+            FiredEvents.Add("HexPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent HexPostExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Hex command error
+        ''' </summary>
+        Public Sub RaiseHexCommandError(Command As String, Exception As Exception)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...")
+            FiredEvents.Add("HexCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+            RaiseEvent HexCommandError(Command, Exception)
         End Sub
 
     End Class

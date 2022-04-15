@@ -66,6 +66,10 @@ Namespace Shell.ShellBase
         ''' HTTP start command thread
         ''' </summary>
         Public HTTPCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "HTTP Shell Command Thread"}
+        ''' <summary>
+        ''' Hex editor start command thread
+        ''' </summary>
+        Public HexEditorCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Hex Editor Shell Command Thread"}
 
     End Module
 End Namespace

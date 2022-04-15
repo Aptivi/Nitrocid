@@ -18,6 +18,7 @@
 
 Imports KS.Misc.JsonShell
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -61,6 +62,8 @@ Namespace Shell.ShellBase
                     Return ZipShell_Commands.ContainsKey(Command)
                 Case ShellType.HTTPShell
                     Return HTTPCommands.ContainsKey(Command)
+                Case ShellType.HexShell
+                    Return HexEdit_Commands.ContainsKey(Command)
                 Case Else
                     Return False
             End Select
@@ -83,7 +86,8 @@ Namespace Shell.ShellBase
                    Test_Commands.ContainsKey(Command) Or
                    TextEdit_Commands.ContainsKey(Command) Or
                    ZipShell_Commands.ContainsKey(Command) Or
-                   HTTPCommands.ContainsKey(Command)
+                   HTTPCommands.ContainsKey(Command) Or
+                   HexEdit_Commands.ContainsKey(Command)
         End Function
 
     End Module

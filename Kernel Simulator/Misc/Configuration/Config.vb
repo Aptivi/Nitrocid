@@ -28,6 +28,7 @@ Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
@@ -212,6 +213,7 @@ Namespace Misc.Configuration
                     {"Zip Shell Prompt Style", ZipShell_PromptStyle},
                     {"Test Shell Prompt Style", Test_PromptStyle},
                     {"JSON Shell Prompt Style", JsonShell_PromptStyle},
+                    {"Hex Edit Prompt Style", HexEdit_PromptStyle},
                     {"Probe injected commands", ProbeInjectedCommands},
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
@@ -1079,6 +1081,7 @@ Namespace Misc.Configuration
                 ZipShell_PromptStyle = If(ConfigToken("Shell")?("Zip Shell Prompt Style"), "")
                 Test_PromptStyle = If(ConfigToken("Shell")?("Test Shell Prompt Style"), "")
                 JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
+                HexEdit_PromptStyle = If(ConfigToken("Shell")?("Hex Edit Prompt Style"), "")
                 ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
                 ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
                 DefaultChoiceOutputType = If(ConfigToken("Shell")?("Default choice output type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Shell")?("Default choice output type"), DefaultChoiceOutputType), DefaultChoiceOutputType, ChoiceOutputType.Modern), ChoiceOutputType.Modern)

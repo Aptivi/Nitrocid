@@ -1,0 +1,95 @@
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'
+'    This file is part of Kernel Simulator
+'
+'    Kernel Simulator is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    Kernel Simulator is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Imports System.IO
+Imports System.Threading
+Imports KS.Misc.HexEdit
+
+Namespace Shell.Shells
+    Public Class HexShell
+        Inherits ShellExecutor
+        Implements IShell
+
+        Public Overrides ReadOnly Property ShellType As ShellType Implements IShell.ShellType
+            Get
+                Return ShellType.HexShell
+            End Get
+        End Property
+
+        Public Overrides Property Bail As Boolean Implements IShell.Bail
+
+        Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
+            'Add handler for Hex editor shell
+            SwitchCancellationHandler(ShellType.HexShell)
+
+            'Get file path
+            Dim FilePath As String = ""
+            If ShellArgs.Length > 0 Then
+                FilePath = ShellArgs(0)
+            Else
+                Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
+                Bail = True
+            End If
+
+            'Actual shell logic
+            While Not Bail
+                SyncLock EditorCancelSync
+                    'Open file if not open
+                    If HexEdit_FileStream Is Nothing Then
+                        Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
+                        If Not HexEdit_OpenBinaryFile(FilePath) Then
+                            Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                            Exit While
+                        End If
+                        HexEdit_AutoSave.Start()
+                    End If
+
+                    'Prepare for prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
+                    If HexEdit_PromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(HexEdit_WasHexEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(HexEdit_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+                    SetInputColor()
+
+                    'Prompt for command
+                    KernelEventManager.RaiseHexShellInitialized()
+                    Dim WrittenCommand As String = Console.ReadLine
+                    KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)
+                    GetLine(WrittenCommand, False, "", ShellType.HexShell)
+                    KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
+                End SyncLock
+            End While
+
+            'Close file
+            HexEdit_CloseBinaryFile()
+            HexEdit_AutoSave.Abort()
+            HexEdit_AutoSave = New Thread(AddressOf HexEdit_HandleAutoSaveBinaryFile) With {.Name = "Hex Edit Autosave Thread"}
+
+            'Remove handler for Hex editor shell
+            SwitchCancellationHandler(LastShellType)
+        End Sub
+
+    End Class
+End Namespace

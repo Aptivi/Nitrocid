@@ -33,6 +33,7 @@ Namespace Shell.ShellBase
         Public RSSShellAliases As New Dictionary(Of String, String)
         Public JsonShellAliases As New Dictionary(Of String, String)
         Public HTTPShellAliases As New Dictionary(Of String, String)
+        Public HexShellAliases As New Dictionary(Of String, String)
         Friend AliasesToBeRemoved As New Dictionary(Of String, ShellType)
 
         ''' <summary>
@@ -94,6 +95,10 @@ Namespace Shell.ShellBase
                     Case "HTTP"
                         If Not HTTPShellAliases.ContainsKey(AliasCmd) Then
                             HTTPShellAliases.Add(AliasCmd, ActualCmd)
+                        End If
+                    Case "Hex"
+                        If Not HexShellAliases.ContainsKey(AliasCmd) Then
+                            HexShellAliases.Add(AliasCmd, ActualCmd)
                         End If
                     Case Else
                         Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
@@ -229,6 +234,17 @@ Namespace Shell.ShellBase
                     {"Type", "HTTP"}
                 }
                 If Not DoesAliasExist(HTTPShellAliases.Keys(i), ShellType.HTTPShell) Then AliasNameToken.Add(AliasObject)
+            Next
+
+            'Hex shell aliases
+            For i As Integer = 0 To HexShellAliases.Count - 1
+                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type HTTP...", HexShellAliases.Keys(i), HexShellAliases.Values(i))
+                Dim AliasObject As New JObject From {
+                    {"Alias", HexShellAliases.Keys(i)},
+                    {"Command", HexShellAliases.Values(i)},
+                    {"Type", "HTTP"}
+                }
+                If Not DoesAliasExist(HexShellAliases.Keys(i), ShellType.HexShell) Then AliasNameToken.Add(AliasObject)
             Next
 
             'Save changes
@@ -376,6 +392,8 @@ Namespace Shell.ShellBase
                             If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "JSON" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                         Case ShellType.HTTPShell
                             If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "HTTP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                        Case ShellType.HexShell
+                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Hex" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                     End Select
                 Next
             Next
@@ -445,6 +463,10 @@ Namespace Shell.ShellBase
                     For Each AliasName As JObject In AliasNameToken
                         If AliasName("Alias") = TargetAlias And AliasName("Type") = "HTTP" Then Return True
                     Next
+                Case ShellType.HexShell
+                    For Each AliasName As JObject In AliasNameToken
+                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Hex" Then Return True
+                    Next
                 Case Else
                     Wdbg(DebugLevel.E, "Type {0} not found.", Type)
                     Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
@@ -480,6 +502,8 @@ Namespace Shell.ShellBase
                     Return JsonShellAliases
                 Case ShellType.HTTPShell
                     Return HTTPShellAliases
+                Case ShellType.HexShell
+                    Return HexShellAliases
             End Select
         End Function
 

@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Threading
 Imports KS.Misc.JsonShell
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
@@ -130,6 +131,8 @@ Namespace Shell.ShellBase
                     Return JsonShell_Commands
                 Case ShellType.HTTPShell
                     Return HTTPCommands
+                Case ShellType.HexShell
+                    Return HexEdit_Commands
                 Case Else
                     Return Shell.Commands
             End Select

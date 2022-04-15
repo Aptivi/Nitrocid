@@ -19,6 +19,7 @@
 Imports System.IO
 Imports KS.Misc.JsonShell
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
@@ -44,6 +45,7 @@ Namespace Shell.ShellBase
         Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
         Public JsonShell_ModDefs As New Dictionary(Of String, String)
         Public HTTPModDefs As New Dictionary(Of String, String)
+        Public HexEdit_ModHelpEntries As New Dictionary(Of String, String)
 
         ''' <summary>
         ''' Shows the help of a command, or command list if nothing is specified
@@ -117,6 +119,10 @@ Namespace Shell.ShellBase
                     CommandList = HTTPCommands
                     ModCommandList = HTTPModDefs
                     AliasedCommandList = HTTPShellAliases
+                Case ShellType.HexShell
+                    CommandList = HexEdit_Commands
+                    ModCommandList = HexEdit_ModHelpEntries
+                    AliasedCommandList = HexShellAliases
             End Select
 
             'Check to see if command exists

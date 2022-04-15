@@ -25,6 +25,7 @@ Imports KS.Misc.JsonShell
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
+Imports KS.Misc.HexEdit
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -184,6 +185,9 @@ Namespace Modifications
                     HTTPModCommands.Clear()
                     HTTPModDefs.Clear()
                     Wdbg(DebugLevel.I, "Mod commands for HTTP shell cleared.")
+                    HexEdit_ModCommands.Clear()
+                    HexEdit_ModHelpEntries.Clear()
+                    Wdbg(DebugLevel.I, "Mod commands for hex shell cleared.")
 
                     'Clear the custom screensavers
                     CustomSavers.Clear()
@@ -273,6 +277,10 @@ Namespace Modifications
                                                     Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
                                                     HTTPModCommands.Remove(CommandInfo.Command)
                                                     HTTPModDefs.Remove(CommandInfo.Command)
+                                                Case ShellType.HexShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from hex shell...", CommandInfo.Command)
+                                                    HexEdit_ModCommands.Remove(CommandInfo.Command)
+                                                    HexEdit_ModHelpEntries.Remove(CommandInfo.Command)
                                             End Select
                                         Next
                                     End If
