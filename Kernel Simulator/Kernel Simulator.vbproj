@@ -315,16 +315,16 @@
     <Compile Include="Misc\Games\Solver.vb" />
     <Compile Include="Misc\Games\SpeedPress.vb" />
     <Compile Include="Misc\Games\Speller.vb" />
-    <Compile Include="Misc\JsonShell\Commands\AddProperty.vb" />
-    <Compile Include="Misc\JsonShell\Commands\Clear.vb" />
-    <Compile Include="Misc\JsonShell\Commands\DelProperty.vb" />
-    <Compile Include="Misc\JsonShell\Commands\Exit.vb" />
-    <Compile Include="Misc\JsonShell\Commands\ExitNoSave.vb" />
-    <Compile Include="Misc\JsonShell\Commands\Help.vb" />
-    <Compile Include="Misc\JsonShell\Commands\Print.vb" />
-    <Compile Include="Misc\JsonShell\Commands\Save.vb" />
-    <Compile Include="Misc\JsonShell\JsonShellCommon.vb" />
-    <Compile Include="Misc\JsonShell\JsonTools.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\AddProperty.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\Clear.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\DelProperty.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\Exit.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\ExitNoSave.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\Help.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\Print.vb" />
+    <Compile Include="Misc\Editors\JsonShell\Commands\Save.vb" />
+    <Compile Include="Misc\Editors\JsonShell\JsonShellCommon.vb" />
+    <Compile Include="Misc\Editors\JsonShell\JsonTools.vb" />
     <Compile Include="Misc\Reflection\MethodManager.vb" />
     <Compile Include="Misc\Notifiers\Notification.vb" />
     <Compile Include="Misc\Notifiers\Notifications.vb" />
@@ -380,27 +380,27 @@
     <Compile Include="Misc\Splash\SplashManager.vb" />
     <Compile Include="Misc\Splash\SplashReport.vb" />
     <Compile Include="Misc\Splash\SplashSettings.vb" />
-    <Compile Include="Misc\TextEdit\Commands\AddLines.vb" />
-    <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Clear.vb" />
-    <Compile Include="Misc\TextEdit\Commands\EditLine.vb" />
-    <Compile Include="Misc\TextEdit\Commands\DelCharNum.vb" />
-    <Compile Include="Misc\TextEdit\Commands\DelLine.vb" />
-    <Compile Include="Misc\TextEdit\Commands\DelWord.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Exit.vb" />
-    <Compile Include="Misc\TextEdit\Commands\ExitNoSave.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Help.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Print.vb" />
-    <Compile Include="Misc\TextEdit\Commands\QueryChar.vb" />
-    <Compile Include="Misc\TextEdit\Commands\QueryWordRegex.vb" />
-    <Compile Include="Misc\TextEdit\Commands\QueryWord.vb" />
-    <Compile Include="Misc\TextEdit\Commands\ReplaceRegex.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Replace.vb" />
-    <Compile Include="Misc\TextEdit\Commands\ReplaceInlineRegex.vb" />
-    <Compile Include="Misc\TextEdit\Commands\ReplaceInline.vb" />
-    <Compile Include="Misc\TextEdit\Commands\Save.vb" />
-    <Compile Include="Misc\TextEdit\TextEditShellCommon.vb" />
-    <Compile Include="Misc\TextEdit\TextEditTools.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\AddLines.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\AddLine.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Clear.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\EditLine.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\DelCharNum.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\DelLine.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\DelWord.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Exit.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\ExitNoSave.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Help.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Print.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\QueryChar.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\QueryWordRegex.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\QueryWord.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceRegex.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Replace.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceInlineRegex.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceInline.vb" />
+    <Compile Include="Misc\Editors\TextEdit\Commands\Save.vb" />
+    <Compile Include="Misc\Editors\TextEdit\TextEditShellCommon.vb" />
+    <Compile Include="Misc\Editors\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\TextLocation.vb" />
     <Compile Include="Misc\Threading\KernelThread.vb" />
     <Compile Include="Misc\Threading\ThreadManager.vb" />
@@ -1007,7 +1007,9 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Misc\Editors\HexEdit\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)...</PreBuildEvent>
