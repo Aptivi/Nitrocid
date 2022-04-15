@@ -302,30 +302,8 @@ Namespace Shell.ShellBase
                     Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}"), SourceAlias)
                 Else
                     Wdbg(DebugLevel.W, "Aliasing {0} to {1}", SourceAlias, Destination)
-                    Select Case Type
-                        Case ShellType.Shell
-                            Aliases.Add(SourceAlias, Destination)
-                        Case ShellType.RemoteDebugShell
-                            RemoteDebugAliases.Add(SourceAlias, Destination)
-                        Case ShellType.FTPShell
-                            FTPShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.SFTPShell
-                            SFTPShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.MailShell
-                            MailShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.TextShell
-                            TextShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.TestShell
-                            TestShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.ZIPShell
-                            ZIPShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.RSSShell
-                            RSSShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.JsonShell
-                            JsonShellAliases.Add(SourceAlias, Destination)
-                        Case ShellType.HTTPShell
-                            HTTPShellAliases.Add(SourceAlias, Destination)
-                    End Select
+                    Dim TargetAliasList = GetAliasesListFromType(Type)
+                    TargetAliasList.Add(SourceAlias, Destination)
                     Return True
                 End If
             Else
@@ -345,52 +323,17 @@ Namespace Shell.ShellBase
         ''' <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
         Public Function RemoveAlias(TargetAlias As String, Type As ShellType) As Boolean
             'Variables
-            Dim TargetAliasList = Aliases
-            Dim TargetAliasType As ShellType = ShellType.Shell
-
-            'Iterate through type to select appropriate alias list
-            Select Case Type
-                Case ShellType.RemoteDebugShell
-                    TargetAliasList = RemoteDebugAliases
-                    TargetAliasType = ShellType.RemoteDebugShell
-                Case ShellType.FTPShell
-                    TargetAliasList = FTPShellAliases
-                    TargetAliasType = ShellType.FTPShell
-                Case ShellType.SFTPShell
-                    TargetAliasList = SFTPShellAliases
-                    TargetAliasType = ShellType.SFTPShell
-                Case ShellType.MailShell
-                    TargetAliasList = MailShellAliases
-                    TargetAliasType = ShellType.MailShell
-                Case ShellType.TextShell
-                    TargetAliasList = TextShellAliases
-                    TargetAliasType = ShellType.TextShell
-                Case ShellType.TestShell
-                    TargetAliasList = TestShellAliases
-                    TargetAliasType = ShellType.TestShell
-                Case ShellType.ZIPShell
-                    TargetAliasList = ZIPShellAliases
-                    TargetAliasType = ShellType.ZIPShell
-                Case ShellType.RSSShell
-                    TargetAliasList = RSSShellAliases
-                    TargetAliasType = ShellType.RSSShell
-                Case ShellType.JsonShell
-                    TargetAliasList = JsonShellAliases
-                    TargetAliasType = ShellType.JsonShell
-                Case ShellType.HTTPShell
-                    TargetAliasList = HTTPShellAliases
-                    TargetAliasType = ShellType.HTTPShell
-            End Select
+            Dim TargetAliasList = GetAliasesListFromType(Type)
 
             'Do the action!
             If TargetAliasList.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = TargetAliasList(TargetAlias)
                 Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 TargetAliasList.Remove(TargetAlias)
-                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", TargetAliasType)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", Type)
                 Return True
             Else
-                Wdbg(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, TargetAliasType.ToString)
+                Wdbg(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
             Return False
@@ -507,6 +450,37 @@ Namespace Shell.ShellBase
                     Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
             End Select
             Return False
+        End Function
+
+        ''' <summary>
+        ''' Gets the aliases list from the shell type
+        ''' </summary>
+        ''' <param name="ShellType">Selected shell type</param>
+        Public Function GetAliasesListFromType(ShellType As ShellType) As Dictionary(Of String, String)
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return Aliases
+                Case ShellType.RemoteDebugShell
+                    Return RemoteDebugAliases
+                Case ShellType.FTPShell
+                    Return FTPShellAliases
+                Case ShellType.SFTPShell
+                    Return SFTPShellAliases
+                Case ShellType.MailShell
+                    Return MailShellAliases
+                Case ShellType.TextShell
+                    Return TextShellAliases
+                Case ShellType.TestShell
+                    Return TestShellAliases
+                Case ShellType.ZIPShell
+                    Return ZIPShellAliases
+                Case ShellType.RSSShell
+                    Return RSSShellAliases
+                Case ShellType.JsonShell
+                    Return JsonShellAliases
+                Case ShellType.HTTPShell
+                    Return HTTPShellAliases
+            End Select
         End Function
 
     End Module
