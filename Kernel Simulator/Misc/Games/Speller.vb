@@ -33,7 +33,7 @@ Namespace Misc.Games
             Write(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Tip)
             If Words.Count = 0 Then
                 Wdbg(DebugLevel.I, "Downloading words...")
-                Words.AddRange(DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").SplitNewLines.ToList)
+                Words.AddRange(DownloadString("https://cdn.jsdelivr.net/gh/sindresorhus/word-list/words.txt").SplitNewLines.ToList)
             End If
             While True
                 RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count))
