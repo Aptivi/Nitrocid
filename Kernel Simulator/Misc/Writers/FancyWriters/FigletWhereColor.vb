@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Figgle
+Imports KS.Misc.Reflection
 
 Namespace Misc.Writers.FancyWriters
     Public Module FigletWhereColor
@@ -33,7 +34,7 @@ Namespace Misc.Writers.FancyWriters
         Public Sub WriteFigletWherePlain(Text As String, Left As Integer, Top As Integer, [Return] As Boolean, FigletFont As FiggleFont, ParamArray Vars() As Object)
             Try
                 'Format string as needed
-                If Not Vars.Length = 0 Then Text = String.Format(Text, Vars)
+                If Not Vars.Length = 0 Then Text = FormatString(Text, Vars)
 
                 'Write the font
                 Text = FigletFont.Render(Text)

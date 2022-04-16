@@ -347,6 +347,7 @@
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\Reflection\StringManipulate.vb" />
     <Compile Include="Misc\Reflection\StringQuery.vb" />
     <Compile Include="Misc\ReportBugPrompt.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverCompiler.vb" />

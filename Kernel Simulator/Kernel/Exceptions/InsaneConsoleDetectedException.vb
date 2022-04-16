@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace Kernel.Exceptions
     ''' <summary>
     ''' Thrown when the console is insane
@@ -37,7 +39,7 @@ Namespace Kernel.Exceptions
         End Sub
         Public Sub New(message As String, ParamArray vars() As Object)
             MyBase.New($"Insane console detected! See the {NameOf(InsanityReason)} property for more information.")
-            InsanityReason = String.Format(message, vars)
+            InsanityReason = FormatString(message, vars)
         End Sub
         Public Sub New(message As String, e As Exception)
             MyBase.New($"Insane console detected! See the {NameOf(InsanityReason)} property for more information.", e)
@@ -45,7 +47,7 @@ Namespace Kernel.Exceptions
         End Sub
         Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
             MyBase.New($"Insane console detected! See the {NameOf(InsanityReason)} property for more information.", e)
-            InsanityReason = String.Format(message, vars)
+            InsanityReason = FormatString(message, vars)
         End Sub
 
     End Class

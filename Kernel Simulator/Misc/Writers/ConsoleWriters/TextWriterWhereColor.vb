@@ -35,7 +35,7 @@ Namespace Misc.Writers.ConsoleWriters
 #End If
                 Try
                     'Format the message as necessary
-                    If Not vars.Length = 0 Then msg = String.Format(msg, vars)
+                    If Not vars.Length = 0 Then msg = FormatString(msg, vars)
 
                     'Write text in another place. By the way, we check the text for newlines and console width excess
                     Dim OldLeft As Integer = Console.CursorLeft

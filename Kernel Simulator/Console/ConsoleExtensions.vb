@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
 Imports System.Text.RegularExpressions
 
 Namespace ConsoleBase
@@ -84,7 +85,7 @@ Namespace ConsoleBase
             Text = FilterVTSequences(Text)
 
             'Third, print the text, return to the old position, and return the filtered positions
-            Text = String.Format(Text, Vars)
+            Text = FormatString(Text, Vars)
             Console.Write(Text)
             Left = Console.CursorLeft
             Top = Console.CursorTop

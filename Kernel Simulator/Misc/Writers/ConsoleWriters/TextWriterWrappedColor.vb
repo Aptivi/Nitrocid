@@ -35,7 +35,7 @@ Namespace Misc.Writers.ConsoleWriters
                 Dim OldTop As Integer
                 Try
                     'Format string as needed
-                    If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                    If Not vars.Length = 0 Then Text = FormatString(Text, vars)
 
                     OldTop = Console.CursorTop
                     For Each TextChar As Char In Text.ToString.ToCharArray

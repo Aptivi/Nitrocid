@@ -38,7 +38,7 @@ Namespace Misc.Writers.ConsoleWriters
 #End If
                 Try
                     'Format string as needed
-                    If Not vars.Length = 0 Then msg = String.Format(msg, vars)
+                    If Not vars.Length = 0 Then msg = FormatString(msg, vars)
 
                     'Write text in another place slowly
                     Dim OldLeft As Integer = Console.CursorLeft

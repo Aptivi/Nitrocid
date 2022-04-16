@@ -27,6 +27,7 @@ Imports KS.Misc.Calendar.Events
 Imports KS.Misc.Calendar.Reminders
 Imports KS.Misc.Configuration
 Imports KS.Misc.Notifications
+Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
@@ -99,7 +100,7 @@ Namespace Kernel
                 End If
 
                 'Format the "Description" string variable
-                Description = String.Format(Description, Variables)
+                Description = FormatString(Description, Variables)
 
                 'Fire an event
                 KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)

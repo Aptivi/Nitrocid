@@ -18,28 +18,26 @@
 
 Imports KS.Misc.Reflection
 
-Namespace Kernel.Exceptions
+<TestClass()> Public Class ReflectionActionTests
+
     ''' <summary>
-    ''' Thrown when there is a remote debugger device not found error
+    ''' Tests checking to see if the string is numeric
     ''' </summary>
-    Public Class RemoteDebugDeviceNotFoundException
-        Inherits Exception
+    <TestMethod()> <TestCategory("Action")> Public Sub TestIsStringNumeric()
+        IsStringNumeric("64").ShouldBeTrue
+        IsStringNumeric("64.5").ShouldBeTrue
+        IsStringNumeric("64-5").ShouldBeFalse
+        IsStringNumeric("Alsalaam 3lekom").ShouldBeFalse
+        IsStringNumeric("").ShouldBeFalse
+    End Sub
 
-        Public Sub New()
-            MyBase.New()
-        End Sub
-        Public Sub New(message As String)
-            MyBase.New(message)
-        End Sub
-        Public Sub New(message As String, ParamArray vars() As Object)
-            MyBase.New(FormatString(message, vars))
-        End Sub
-        Public Sub New(message As String, e As Exception)
-            MyBase.New(message, e)
-        End Sub
-        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
-            MyBase.New(FormatString(message, vars), e)
-        End Sub
+    ''' <summary>
+    ''' Tests formatting the string
+    ''' </summary>
+    <TestMethod()> <TestCategory("Action")> Public Sub TestFormatString()
+        FormatString("Hello, {0}!", "Alex").ShouldBe("Hello, Alex!")
+        FormatString("We have 0x{0:X2} faults!", 15).ShouldBe("We have 0x0F faults!")
+        FormatString("Destroy {0 ships!", 3).ShouldBe("Destroy {0 ships!")
+    End Sub
 
-    End Class
-End Namespace
+End Class

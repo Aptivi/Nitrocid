@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+
 Namespace Kernel.Exceptions
     ''' <summary>
     ''' Thrown when there is an error in SFTP network
@@ -30,13 +32,13 @@ Namespace Kernel.Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(message As String, ParamArray vars() As Object)
-            MyBase.New(String.Format(message, vars))
+            MyBase.New(FormatString(message, vars))
         End Sub
         Public Sub New(message As String, e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
-            MyBase.New(String.Format(message, vars), e)
+            MyBase.New(FormatString(message, vars), e)
         End Sub
 
     End Class
