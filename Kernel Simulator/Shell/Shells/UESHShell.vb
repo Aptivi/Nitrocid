@@ -78,37 +78,8 @@ Namespace Shell.Shells
                                 'Fire an event of PreExecuteCommand
                                 KernelEventManager.RaisePreExecuteCommand(strcommand)
 
-                                'Check to see if the command is a comment
-                                If Not (strcommand = Nothing Or strcommand?.StartsWithAnyOf({" ", "#"})) Then
-                                    'Check for a type of command
-                                    Dim Done As Boolean = False
-                                    Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
-                                    For Each Command As String In Commands
-                                        Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
-
-                                        'Iterate through mod commands
-                                        Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, strcommand)
-                                        If ModCommands.Contains(Parts(0)) Then
-                                            Done = True
-                                            Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
-                                            ExecuteModCommand(Command)
-                                        End If
-
-                                        'Iterate through alias commands
-                                        Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, strcommand)
-                                        If Aliases.Keys.Contains(Parts(0)) Then
-                                            Done = True
-                                            Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
-                                            ExecuteAlias(Command, ShellType)
-                                        End If
-
-                                        'Execute the built-in command
-                                        If Done = False Then
-                                            Wdbg(DebugLevel.I, "Executing built-in command")
-                                            GetLine(Command)
-                                        End If
-                                    Next
-                                End If
+                                'Get the command
+                                GetLine(strcommand)
 
                                 'Fire an event of PostExecuteCommand
                                 KernelEventManager.RaisePostExecuteCommand(strcommand)

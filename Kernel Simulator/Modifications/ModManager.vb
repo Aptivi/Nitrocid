@@ -535,5 +535,38 @@ Namespace Modifications
             Next
         End Sub
 
+        ''' <summary>
+        ''' Lists the mod commands based on the shell
+        ''' </summary>
+        ''' <param name="ShellType">Selected shell type</param>
+        Public Function ListModCommands(ShellType As ShellType) As ArrayList
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return ModCommands
+                Case ShellType.RemoteDebugShell
+                    Return DebugModCmds
+                Case ShellType.FTPShell
+                    Return FTPModCommands
+                Case ShellType.SFTPShell
+                    Return SFTPModCommands
+                Case ShellType.MailShell
+                    Return MailModCommands
+                Case ShellType.TextShell
+                    Return TextEdit_ModCommands
+                Case ShellType.TestShell
+                    Return Test_ModCommands
+                Case ShellType.ZIPShell
+                    Return ZipShell_ModCommands
+                Case ShellType.RSSShell
+                    Return RSSModCommands
+                Case ShellType.JsonShell
+                    Return JsonShell_ModCommands
+                Case ShellType.HTTPShell
+                    Return HTTPModCommands
+                Case ShellType.HexShell
+                    Return HexEdit_ModCommands
+            End Select
+        End Function
+
     End Module
 End Namespace
