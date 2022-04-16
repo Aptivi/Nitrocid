@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports Renci.SshNet.Common
-Imports KS.Misc.Reflection
 
 Namespace Network.SSH
     Public Module SSH
