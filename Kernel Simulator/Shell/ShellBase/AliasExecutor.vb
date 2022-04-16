@@ -31,7 +31,7 @@ Namespace Shell.ShellBase
             Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
             Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, AliasesList(FirstWordCmd))
             Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-            Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellType.Shell, Nothing)
+            Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellType, Nothing)
             StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
             StartCommandThread.Start(Params)
             StartCommandThread.Join()
