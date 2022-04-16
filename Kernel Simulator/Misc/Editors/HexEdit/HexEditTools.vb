@@ -151,12 +151,16 @@ Namespace Misc.HexEdit
         ''' <param name="ByteNumber">The byte number</param>
         Public Sub HexEdit_DeleteByte(ByteNumber As Long)
             If HexEdit_FileStream IsNot Nothing Then
+                Dim FileBytesList As List(Of Byte) = HexEdit_FileBytes.ToList
                 Dim ByteIndex As Long = ByteNumber - 1
                 Wdbg(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, ByteNumber)
                 Wdbg(DebugLevel.I, "File length: {0}", HexEdit_FileBytes.LongLength)
+
+                'Actually remove a byte
                 If ByteNumber <= HexEdit_FileBytes.LongLength Then
-                    HexEdit_FileBytes.Remove(HexEdit_FileBytes(ByteIndex))
+                    FileBytesList.RemoveAt(ByteIndex)
                     Wdbg(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, HexEdit_FileBytes.LongLength)
+                    HexEdit_FileBytes = FileBytesList.ToArray
                 Else
                     Throw New ArgumentOutOfRangeException(NameOf(ByteNumber), ByteNumber, DoTranslation("The specified byte number may not be larger than the file size."))
                 End If
@@ -183,15 +187,19 @@ Namespace Misc.HexEdit
                 StartByteNumber.SwapIfSourceLarger(EndByteNumber)
                 Dim StartByteNumberIndex As Long = StartByteNumber - 1
                 Dim EndByteNumberIndex As Long = EndByteNumber - 1
+                Dim FileBytesList As List(Of Byte) = HexEdit_FileBytes.ToList
                 Wdbg(DebugLevel.I, "Start byte number: {0}, end: {1}", StartByteNumber, EndByteNumber)
                 Wdbg(DebugLevel.I, "Got start byte index: {0}", StartByteNumberIndex)
                 Wdbg(DebugLevel.I, "Got end byte index: {0}", EndByteNumberIndex)
                 Wdbg(DebugLevel.I, "File length: {0}", HexEdit_FileBytes.LongLength)
+
+                'Actually remove the bytes
                 If StartByteNumber <= HexEdit_FileBytes.LongLength And EndByteNumber <= HexEdit_FileBytes.LongLength Then
                     For ByteNumber As Long = EndByteNumber To StartByteNumber Step -1
-                        HexEdit_FileBytes.Remove(HexEdit_FileBytes(ByteNumber - 1))
+                        FileBytesList.RemoveAt(ByteNumber - 1)
                     Next
                     Wdbg(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEdit_FileBytes.LongLength)
+                    HexEdit_FileBytes = FileBytesList.ToArray
                 ElseIf StartByteNumber > HexEdit_FileBytes.LongLength Then
                     Throw New ArgumentOutOfRangeException(NameOf(StartByteNumber), StartByteNumber, DoTranslation("The specified start byte number may not be larger than the file size."))
                 ElseIf EndByteNumber > HexEdit_FileBytes.LongLength Then
