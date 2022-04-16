@@ -323,9 +323,9 @@ Namespace Network
                     DownloadNotif.Progress = e.ProgressPercentage
                 Else
                     If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
-                        WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
                     Else
-                        WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
                     End If
                     ClearLineToRight()
                 End If
@@ -357,9 +357,9 @@ Namespace Network
                     UploadNotif.Progress = e.ProgressPercentage
                 Else
                     If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
-                        WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
                     Else
-                        WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                        WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
                     End If
                     ClearLineToRight()
                 End If
