@@ -75,7 +75,7 @@ Namespace Shell.Shells
                             Dim strcommand As String = Console.ReadLine()
 
                             If Not InSaver Then
-                                'Fire event of PreRaiseExecuteCommand
+                                'Fire an event of PreExecuteCommand
                                 KernelEventManager.RaisePreExecuteCommand(strcommand)
 
                                 'Check to see if the command is a comment
@@ -108,10 +108,10 @@ Namespace Shell.Shells
                                             GetLine(Command)
                                         End If
                                     Next
-
-                                    'Fire an event of PostExecuteCommand
-                                    KernelEventManager.RaisePostExecuteCommand(strcommand)
                                 End If
+
+                                'Fire an event of PostExecuteCommand
+                                KernelEventManager.RaisePostExecuteCommand(strcommand)
                             End If
                         Catch ex As Exception
                             WStkTrc(ex)
