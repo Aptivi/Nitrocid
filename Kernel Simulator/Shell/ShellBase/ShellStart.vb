@@ -28,40 +28,10 @@ Namespace Shell.ShellBase
         ''' </summary>
         ''' <param name="ShellType">The shell type</param>
         Public Sub StartShell(ShellType As ShellType, ParamArray ShellArgs() As Object)
-            Dim ShellExecute As ShellExecutor = New UESHShell()
-
-            'Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
-            'Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
             If ShellStack.Count >= 1 Then
-                Select Case ShellType
-                    Case ShellType.Shell
-                        ShellExecute = New UESHShell()
-                    Case ShellType.FTPShell
-                        ShellExecute = New FTPShell()
-                    Case ShellType.MailShell
-                        ShellExecute = New MailShell()
-                    Case ShellType.SFTPShell
-                        ShellExecute = New SFTPShell()
-                    Case ShellType.TextShell
-                        ShellExecute = New TextShell()
-                    Case ShellType.TestShell
-                        ShellExecute = New Shells.TestShell()
-                    Case ShellType.ZIPShell
-                        ShellExecute = New ZipShell()
-                    Case ShellType.RSSShell
-                        ShellExecute = New RSSShell()
-                    Case ShellType.JsonShell
-                        ShellExecute = New JsonShell()
-                    Case ShellType.HTTPShell
-                        ShellExecute = New HTTPShell()
-                    Case ShellType.HexShell
-                        ShellExecute = New HexShell()
-                End Select
+                'The shell stack has a mother shell. Start another shell.
+                StartShellForced(ShellType, ShellArgs)
             End If
-
-            'Add a new executor and put it to the shell stack to indicate that we have a new shell (a visitor)!
-            ShellStack.Add(ShellExecute)
-            ShellExecute.InitializeShell(ShellArgs)
         End Sub
 
         ''' <summary>
@@ -69,34 +39,9 @@ Namespace Shell.ShellBase
         ''' </summary>
         ''' <param name="ShellType">The shell type</param>
         Sub StartShellForced(ShellType As ShellType, ParamArray ShellArgs() As Object)
-            Dim ShellExecute As ShellExecutor = New UESHShell()
-
             'Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
             'Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
-            Select Case ShellType
-                Case ShellType.Shell
-                    ShellExecute = New UESHShell()
-                Case ShellType.FTPShell
-                    ShellExecute = New FTPShell()
-                Case ShellType.MailShell
-                    ShellExecute = New MailShell()
-                Case ShellType.SFTPShell
-                    ShellExecute = New SFTPShell()
-                Case ShellType.TextShell
-                    ShellExecute = New TextShell()
-                Case ShellType.TestShell
-                    ShellExecute = New Shells.TestShell()
-                Case ShellType.ZIPShell
-                    ShellExecute = New ZipShell()
-                Case ShellType.RSSShell
-                    ShellExecute = New RSSShell()
-                Case ShellType.JsonShell
-                    ShellExecute = New JsonShell()
-                Case ShellType.HTTPShell
-                    ShellExecute = New HTTPShell()
-                Case ShellType.HexShell
-                    ShellExecute = New HexShell()
-            End Select
+            Dim ShellExecute As ShellExecutor = GetShellExecutor(ShellType)
 
             'Add a new executor and put it to the shell stack to indicate that we have a new shell (a visitor)!
             ShellStack.Add(ShellExecute)
@@ -133,6 +78,37 @@ Namespace Shell.ShellBase
             'Remove these shells from the stack
             ShellStack.RemoveAll(Function(x) x.Bail = True)
         End Sub
+
+        ''' <summary>
+        ''' Gets the shell executor based on the shell type
+        ''' </summary>
+        ''' <param name="ShellType">The requested shell type</param>
+        Function GetShellExecutor(ShellType As ShellType) As ShellExecutor
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return New UESHShell()
+                Case ShellType.FTPShell
+                    Return New FTPShell()
+                Case ShellType.MailShell
+                    Return New MailShell()
+                Case ShellType.SFTPShell
+                    Return New SFTPShell()
+                Case ShellType.TextShell
+                    Return New TextShell()
+                Case ShellType.TestShell
+                    Return New Shells.TestShell()
+                Case ShellType.ZIPShell
+                    Return New ZipShell()
+                Case ShellType.RSSShell
+                    Return New RSSShell()
+                Case ShellType.JsonShell
+                    Return New JsonShell()
+                Case ShellType.HTTPShell
+                    Return New HTTPShell()
+                Case ShellType.HexShell
+                    Return New HexShell()
+            End Select
+        End Function
 
     End Module
 End Namespace

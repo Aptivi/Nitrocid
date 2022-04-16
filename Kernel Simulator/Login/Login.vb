@@ -255,7 +255,7 @@ Namespace Login
 
             'Initialize shell
             Wdbg(DebugLevel.I, "Shell is being initialized...")
-            StartShell(ShellType.Shell)
+            StartShellForced(ShellType.Shell)
             PurgeShells()
         End Sub
 
