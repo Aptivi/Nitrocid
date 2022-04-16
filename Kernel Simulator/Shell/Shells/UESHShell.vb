@@ -75,11 +75,12 @@ Namespace Shell.Shells
                             Dim strcommand As String = Console.ReadLine()
 
                             If Not InSaver Then
-                                'Fire event of PreRaiseCommand
+                                'Fire event of PreRaiseExecuteCommand
                                 KernelEventManager.RaisePreExecuteCommand(strcommand)
 
-                                'Check for a type of command
-                                If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
+                                'Check to see if the command is a comment
+                                If Not (strcommand = Nothing Or strcommand?.StartsWithAnyOf({" ", "#"})) Then
+                                    'Check for a type of command
                                     Dim Done As Boolean = False
                                     Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                                     For Each Command As String In Commands
