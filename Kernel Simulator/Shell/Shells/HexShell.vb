@@ -45,6 +45,8 @@ Namespace Shell.Shells
                 Write(DoTranslation("File not specified. Exiting shell..."), True, ColTypes.Error)
                 Bail = True
             End If
+            Write(DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + NewLine +
+                  DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), True, ColTypes.Warning)
 
             'Actual shell logic
             While Not Bail
