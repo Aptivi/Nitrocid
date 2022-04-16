@@ -68,6 +68,9 @@ Begin:
                         'Make a new RSS feed instance
                         Try
                             If OldRSSFeedLink <> RSSFeedLink Then
+                                If RSSFeedLink = "select" Then
+                                    OpenFeedSelector()
+                                End If
                                 RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
                                 RSSFeedLink = RSSFeedInstance.FeedUrl
                             End If

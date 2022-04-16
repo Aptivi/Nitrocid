@@ -20,7 +20,9 @@ Imports HtmlAgilityPack
 Imports System.Threading
 Imports System.Xml
 Imports KS.Misc.Notifications
+Imports KS.Misc.Reflection
 Imports KS.Network.RSS.Instance
+Imports Newtonsoft.Json.Linq
 
 Namespace Network.RSS
     Public Module RSSTools
@@ -208,6 +210,150 @@ Namespace Network.RSS
                     Write(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
                 End Try
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Opens the feed selector
+        ''' </summary>
+        Sub OpenFeedSelector()
+            Dim StepNumber As Integer = 1
+            Dim FeedListJsonText As String
+            Dim FeedListJson As JToken
+            Dim FeedListJsonCountries() As JToken = {}
+            Dim FeedListJsonNewsSources() As JToken = {}
+            Dim FeedListJsonNewsSourceFeeds() As JToken = {}
+            Dim SelectedCountryIndex As Integer = 0
+            Dim SelectedNewsSourceIndex As Integer
+            Dim SelectedNewsSourceFeedIndex As Integer
+            Dim FinalFeedUrl As String = ""
+
+            'Try to get the feed list
+            Try
+                Write(DoTranslation("Downloading feed list..."), True, ColTypes.Progress)
+                FeedListJsonText = DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json")
+                FeedListJson = JToken.Parse(FeedListJsonText)
+                FeedListJsonCountries = FeedListJson.SelectTokens("*").ToArray
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to get feed list: {0}", ex.Message)
+                WStkTrc(ex)
+                Write(DoTranslation("Failed to download feed list."), True, ColTypes.Error)
+            End Try
+
+            'Country selection
+            While StepNumber = 1
+                'If the JSON token is actually full, show the list of countries
+                Console.Clear()
+                WriteWhere(DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, False, ColTypes.Neutral)
+                Write(NewLine + NewLine + "   < ", False, ColTypes.Gray)
+                WriteWhere($"{FeedListJsonCountries(SelectedCountryIndex)("name")} [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]", CInt((Console.CursorLeft + 38 - $"{FeedListJsonCountries(SelectedCountryIndex)("name")} [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]".Length) / 2), Console.CursorTop, True, ColTypes.Option)
+                WriteWhere(" >", Console.CursorLeft + 32, Console.CursorTop, False, ColTypes.Gray)
+                Write(NewLine + NewLine + DoTranslation("This country has {0} news sources."), True, ColTypes.Neutral, FeedListJsonCountries(SelectedCountryIndex)("newSources").Count)
+
+                'Read and get response
+                Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
+                Wdbg(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString)
+                If ConsoleResponse.Key = ConsoleKey.LeftArrow Then
+                    'Decrement country index by 1
+                    Wdbg(DebugLevel.I, "Decrementing number...")
+                    If SelectedCountryIndex = 0 Then
+                        Wdbg(DebugLevel.I, "Reached zero! Back to country index {0}.", FeedListJsonCountries.Length - 1)
+                        SelectedCountryIndex = FeedListJsonCountries.Length - 1
+                    Else
+                        SelectedCountryIndex -= 1
+                        Wdbg(DebugLevel.I, "Decremented to {0}", SelectedCountryIndex)
+                    End If
+                ElseIf ConsoleResponse.Key = ConsoleKey.RightArrow Then
+                    'Increment country index by 1
+                    If SelectedCountryIndex = FeedListJsonCountries.Length - 1 Then
+                        Wdbg(DebugLevel.I, "Reached maximum country number! Back to zero.")
+                        SelectedCountryIndex = 0
+                    Else
+                        SelectedCountryIndex += 1
+                        Wdbg(DebugLevel.I, "Incremented to {0}", SelectedCountryIndex)
+                    End If
+                ElseIf ConsoleResponse.Key = ConsoleKey.Enter Then
+                    'Go to the next step
+                    Wdbg(DebugLevel.I, "Selected country: {0}", FeedListJsonCountries(SelectedCountryIndex)("name"))
+                    FeedListJsonNewsSources = FeedListJsonCountries(SelectedCountryIndex)("newSources").ToArray
+                    Console.WriteLine()
+                    StepNumber += 1
+                End If
+            End While
+
+            'News source selection
+            Write(DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + NewLine, True, ColTypes.Neutral)
+            For SourceIndex As Integer = 0 To FeedListJsonNewsSources.Length - 1
+                Dim NewsSource As JToken = FeedListJsonNewsSources(SourceIndex)
+                Write("{0}) {1}", True, ColTypes.Option, SourceIndex + 1, NewsSource("site")("title"))
+            Next
+            Console.WriteLine()
+            While StepNumber = 2
+                'Print input
+                Wdbg(DebugLevel.W, "{0} news sources.", FeedListJsonNewsSources.Length)
+                Write(">> ", False, ColTypes.Input)
+
+                'Read and parse the answer
+                Dim AnswerStr As String = Console.ReadLine()
+                If IsStringNumeric(AnswerStr) Then
+                    'Got a numeric string! Check to see if we're in range before parsing it to index
+                    Dim AnswerInt As Integer = AnswerStr
+                    Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt)
+                    If AnswerInt > 0 And AnswerInt <= FeedListJsonNewsSources.Length Then
+                        Wdbg(DebugLevel.W, "Answer is in range.")
+                        SelectedNewsSourceIndex = AnswerInt - 1
+                        FeedListJsonNewsSourceFeeds = FeedListJsonNewsSources(SelectedNewsSourceIndex)("feedUrls").ToArray
+                        Console.WriteLine()
+                        StepNumber += 1
+                    Else
+                        Wdbg(DebugLevel.W, "Answer is out of range.")
+                        Write(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Error, FeedListJsonNewsSources.Length)
+                    End If
+                Else
+                    Wdbg(DebugLevel.W, "Answer is not numeric.")
+                    Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                End If
+            End While
+
+            'News feed selection
+            Write(DoTranslation("Select a feed for your favorite news source. Press ENTER to confirm your selection.") + NewLine, True, ColTypes.Neutral)
+            For SourceFeedIndex As Integer = 0 To FeedListJsonNewsSourceFeeds.Length - 1
+                Dim NewsSourceFeed As JToken = FeedListJsonNewsSourceFeeds(SourceFeedIndex)
+                Dim NewsSourceTitle As String = NewsSourceFeed("title")
+                If String.IsNullOrEmpty(NewsSourceTitle) Then
+                    'Some feeds like the French nouvelobs.com (Obs) don't have their feed title, so take it from the site title instead
+                    NewsSourceTitle = FeedListJsonNewsSources(SelectedNewsSourceIndex)("site")("title")
+                End If
+                Write("{0}) {1}: {2}", True, ColTypes.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed("url"))
+            Next
+            Console.WriteLine()
+            While StepNumber = 3
+                'Print input
+                Wdbg(DebugLevel.W, "{0} news source feeds.", FeedListJsonNewsSourceFeeds.Length)
+                Write(">> ", False, ColTypes.Input)
+
+                'Read and parse the answer
+                Dim AnswerStr As String = Console.ReadLine()
+                If IsStringNumeric(AnswerStr) Then
+                    'Got a numeric string! Check to see if we're in range before parsing it to index
+                    Dim AnswerInt As Integer = AnswerStr
+                    Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt)
+                    If AnswerInt > 0 And AnswerInt <= FeedListJsonNewsSourceFeeds.Length Then
+                        Wdbg(DebugLevel.W, "Answer is in range.")
+                        SelectedNewsSourceFeedIndex = AnswerInt - 1
+                        FinalFeedUrl = FeedListJsonNewsSourceFeeds(SelectedNewsSourceFeedIndex)("url")
+                        StepNumber += 1
+                    Else
+                        Wdbg(DebugLevel.W, "Answer is out of range.")
+                        Write(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Error, FeedListJsonNewsSourceFeeds.Length)
+                    End If
+                Else
+                    Wdbg(DebugLevel.W, "Answer is not numeric.")
+                    Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                End If
+            End While
+
+            'Actually change the feed
+            RSSFeedLink = FinalFeedUrl
         End Sub
 
     End Module

@@ -145,6 +145,7 @@ The packing and distribution procedures are now easier by executing this script 
 | Fabian Neuschmidt  | [Breezy Theme](https://github.com/fneu/breezy)
 | TechRepublic       | Articles RSS feed URL
 | smashew            | [Name databases](https://github.com/smashew/NameDatabases)
+| yavuz              | [RSS feed list by country](https://github.com/yavuz/news-feed-list-of-countries/)
 | All contributors   | Contribution
 
 ## Open Source Libraries

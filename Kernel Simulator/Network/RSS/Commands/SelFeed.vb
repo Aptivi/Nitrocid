@@ -16,21 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Shell.Commands
-    Class RssCommand
+Namespace Network.RSS.Commands
+    Class RSS_SelFeedCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If Not ListArgs?.Length = 0 Then
-                If Not ListSwitchesOnly.Length = 0 AndAlso ListSwitchesOnly(0) = "-select" Then
-                    StartShell(ShellType.RSSShell, "select")
-                Else
-                    StartShell(ShellType.RSSShell, ListArgs(0))
-                End If
-            Else
-                StartShell(ShellType.RSSShell)
-            End If
+            OpenFeedSelector()
         End Sub
 
     End Class
