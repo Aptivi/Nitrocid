@@ -78,8 +78,8 @@ Namespace Misc.Games
 
             'Download the names list
             Write(DoTranslation("Downloading names..."), True, ColTypes.Progress)
-            If Names.Length = 0 Then Names = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/first%20names/us.txt").SplitNewLines
-            If Surnames.Length = 0 Then Surnames = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/surnames/us.txt").SplitNewLines
+            If Names.Length = 0 Then Names = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/first%20names/all.txt").SplitNewLines
+            If Surnames.Length = 0 Then Surnames = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/surnames/all.txt").SplitNewLines
             For NameNum As Integer = 1 To LoveOrHateUsersCount
                 Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
                 Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
