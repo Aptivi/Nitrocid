@@ -24,7 +24,7 @@ Namespace Misc.Reflection
         ''' </summary>
         ''' <param name="Expression">The expression</param>
         Public Function IsStringNumeric(Expression As String) As Boolean
-            Return Integer.TryParse(Expression, 0)
+            Return Double.TryParse(Expression, 0)
         End Function
 
     End Module
