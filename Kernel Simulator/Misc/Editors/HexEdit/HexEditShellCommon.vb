@@ -24,7 +24,7 @@ Namespace Misc.HexEdit
     Public Module HexEditShellCommon
 
         'Variables
-        Public ReadOnly HexEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addbyte", New CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte with Hex at the end of the file", {"<byte>"}, True, 1, New HexEdit_AddByteCommand)},
+        Public ReadOnly HexEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addbyte", New CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte at the end of the file", {"<byte>"}, True, 1, New HexEdit_AddByteCommand)},
                                                                                          {"addbytes", New CommandInfo("addbytes", ShellType.HexShell, "Adds the new bytes at the end of the file", {}, False, 0, New HexEdit_AddBytesCommand)},
                                                                                          {"clear", New CommandInfo("clear", ShellType.HexShell, "Clears the binary file", {}, False, 0, New HexEdit_ClearCommand)},
                                                                                          {"delbyte", New CommandInfo("delbyte", ShellType.HexShell, "Deletes a byte using the byte number", {"<bytenumber>"}, True, 1, New HexEdit_DelByteCommand)},

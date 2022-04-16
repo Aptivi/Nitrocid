@@ -336,8 +336,8 @@ Namespace Kernel
             'Disable safe mode
             SafeMode = False
 
-            'Reset the time/date change thread
-            TimeDateChange = New KernelThread("Time/date updater thread", True, AddressOf TimeDateChange_DoWork)
+            'Stop the time/date change thread
+            TimeDateChange.Stop()
         End Sub
 
         ''' <summary>
