@@ -21,7 +21,6 @@ Imports KS.Network.RemoteDebug
 Imports System.IO
 Imports FluentFTP
 Imports KS.Misc.Configuration
-Imports KS.Misc.Platform
 Imports KS.Misc.Writers.FancyWriters
 Imports KS.Misc.Writers.ConsoleWriters
 Imports KS.Network
@@ -33,13 +32,8 @@ Module Converter
     ''' Main entry point
     ''' </summary>
     Sub Main()
-        'Check for terminal (macOS only). Go to Kernel.vb on Kernel Simulator for more info.
-        If IsOnMacOS() Then
-            If GetTerminalEmulator() = "Apple_Terminal" Then
-                Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
-                Environment.Exit(5)
-            End If
-        End If
+        'Check console
+        CheckConsole()
 
         Try
             'Initialize all needed variables
