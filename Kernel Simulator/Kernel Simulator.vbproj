@@ -636,7 +636,7 @@
     <Compile Include="Shell\Commands\LoveHate.vb" />
     <Compile Include="Shell\Commands\LsDbgDev.vb" />
     <Compile Include="Shell\Commands\Mail.vb" />
-    <Compile Include="Shell\Commands\MathBee.vb" />
+    <Compile Include="Shell\Commands\Solver.vb" />
     <Compile Include="Shell\Commands\Md.vb" />
     <Compile Include="Shell\Commands\MkFile.vb" />
     <Compile Include="Shell\Commands\MkTheme.vb" />

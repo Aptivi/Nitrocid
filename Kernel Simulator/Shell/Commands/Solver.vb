@@ -19,7 +19,7 @@
 Imports KS.Misc.Games
 
 Namespace Shell.Commands
-    Class MathBeeCommand
+    Class SolverCommand
         Inherits CommandExecutor
         Implements ICommand
 

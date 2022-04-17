@@ -106,7 +106,7 @@ Namespace Shell
                                                                                  {"lsdbgdev", New CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", {}, False, 0, New LsDbgDevCommand, True, True)},
                                                                                  {"lsvars", New CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", {}, False, 0, New LsVarsCommand, False, True)},
                                                                                  {"mail", New CommandInfo("mail", ShellType.Shell, "Opens the mail client", {"[emailAddress]"}, False, 0, New MailCommand)},
-                                                                                 {"mathbee", New CommandInfo("mathbee", ShellType.Shell, "See if you can solve mathematical equations on time", {}, False, 0, New MathBeeCommand)},
+                                                                                 {"solver", New CommandInfo("solver", ShellType.Shell, "See if you can solve mathematical equations on time", {}, False, 0, New SolverCommand)},
                                                                                  {"md", New CommandInfo("md", ShellType.Shell, "Creates a directory", {"<directory>"}, True, 1, New MdCommand)},
                                                                                  {"mkfile", New CommandInfo("mkfile", ShellType.Shell, "Makes a new file", {"<file>"}, True, 1, New MkFileCommand)},
                                                                                  {"mktheme", New CommandInfo("mktheme", ShellType.Shell, "Makes a new theme", {"<themeName>"}, True, 1, New MkThemeCommand)},
