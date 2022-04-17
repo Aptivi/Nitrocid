@@ -253,7 +253,8 @@ Namespace Misc.HexEdit
                         Dim ProjectedByteChar As Char = Convert.ToChar(CurrentByte)
                         Wdbg(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar)
                         Dim RenderedByteChar As Char = "."c
-                        If Not Char.IsWhiteSpace(ProjectedByteChar) Then
+                        If Not Char.IsWhiteSpace(ProjectedByteChar) And Not Char.IsControl(ProjectedByteChar) And
+                           Not Char.IsHighSurrogate(ProjectedByteChar) And Not Char.IsLowSurrogate(ProjectedByteChar) Then
                             'The renderer will actually render the character, not as a dot.
                             Wdbg(DebugLevel.I, "Char is not a whitespace.")
                             RenderedByteChar = ProjectedByteChar
