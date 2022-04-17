@@ -47,7 +47,7 @@ Namespace Network.RSS.Instance
         ''' <param name="ArticleVariables"></param>
         Public Sub New(ArticleTitle As String, ArticleLink As String, ArticleDescription As String, ArticleVariables As Dictionary(Of String, XmlNode))
             Me.ArticleTitle = ArticleTitle.Trim
-            Me.ArticleLink = ArticleLink
+            Me.ArticleLink = ArticleLink.Trim
             Me.ArticleDescription = ArticleDescription.Trim
             Me.ArticleVariables = ArticleVariables
         End Sub

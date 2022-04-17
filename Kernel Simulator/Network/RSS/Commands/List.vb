@@ -27,7 +27,7 @@ Namespace Network.RSS.Commands
             For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
                 Write("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
                 Write(Article.ArticleLink, True, ColTypes.ListValue)
-                Write("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
+                Write("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.SplitNewLines(0).Truncate(200))
             Next
         End Sub
 
