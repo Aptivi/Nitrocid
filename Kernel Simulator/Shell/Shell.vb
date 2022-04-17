@@ -171,6 +171,9 @@ Namespace Shell
         ''' <param name="ShellType">Shell type</param>
         ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
         Public Sub GetLine(FullCommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
+            'Check for sanity
+            If String.IsNullOrEmpty(FullCommand) Then FullCommand = ""
+
             'Variables
             Dim OutputTextWriter As StreamWriter
             Dim OutputStream As FileStream
