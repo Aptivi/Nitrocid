@@ -35,6 +35,10 @@ Namespace Network.RSS
         ''' RSS headline URL
         ''' </summary>
         Public RssHeadlineUrl As String = "https://www.techrepublic.com/rssfeeds/articles/"
+        ''' <summary>
+        ''' Cached feed list JSON
+        ''' </summary>
+        Private FeedListJsonText As String = ""
 
         ''' <summary>
         ''' Make instances of RSS Article from feed node and type
@@ -217,7 +221,6 @@ Namespace Network.RSS
         ''' </summary>
         Sub OpenFeedSelector()
             Dim StepNumber As Integer = 1
-            Dim FeedListJsonText As String
             Dim FeedListJson As JToken
             Dim FeedListJsonCountries() As JToken = {}
             Dim FeedListJsonNewsSources() As JToken = {}
@@ -230,7 +233,7 @@ Namespace Network.RSS
             'Try to get the feed list
             Try
                 Write(DoTranslation("Downloading feed list..."), True, ColTypes.Progress)
-                FeedListJsonText = DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json")
+                If String.IsNullOrEmpty(FeedListJsonText) Then FeedListJsonText = DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json")
                 FeedListJson = JToken.Parse(FeedListJsonText)
                 FeedListJsonCountries = FeedListJson.SelectTokens("*").ToArray
             Catch ex As Exception
