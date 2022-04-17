@@ -50,7 +50,7 @@ Namespace Shell.Shells
 
             'Actual shell logic
             While Not Bail
-                SyncLock EditorCancelSync
+                SyncLock HexEditorCancelSync
                     'Open file if not open
                     If HexEdit_FileStream Is Nothing Then
                         Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
