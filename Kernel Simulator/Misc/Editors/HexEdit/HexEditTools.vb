@@ -237,8 +237,7 @@ Namespace Misc.HexEdit
                     '   0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                     '   0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                     '... and so on.
-                    Dim ByteIterationEachSixteen As Integer = 1 + Math.Truncate(StartByte / 16)
-                    WriteWhere($"0x{16 * ByteIterationEachSixteen:X8}", 0, Console.CursorTop, False, ColTypes.ListEntry)
+                    Write($"0x{StartByte - 1:X8}", False, ColTypes.ListEntry)
                     Dim ByteWritePositionX As Integer = Console.CursorLeft + 2
                     Dim ByteCharWritePositionX As Integer = 61 + (ByteWritePositionX - 12)
                     Dim ByteNumberEachSixteen As Integer = 1
@@ -246,7 +245,6 @@ Namespace Misc.HexEdit
                         'Write the byte and the contents
                         Wdbg(DebugLevel.I, "Byte write position: {0}", ByteWritePositionX)
                         Wdbg(DebugLevel.I, "Byte char write position: {0}", ByteCharWritePositionX)
-                        Wdbg(DebugLevel.I, "Byte iteration each sixteen: {0}", ByteIterationEachSixteen)
                         Wdbg(DebugLevel.I, "Byte number each sixteen: {0}", ByteNumberEachSixteen)
                         Dim CurrentByte As Byte = HexEdit_FileBytes(CurrentByteNumber - 1)
                         Wdbg(DebugLevel.I, "Byte: {0}", CurrentByte)
@@ -269,9 +267,7 @@ Namespace Misc.HexEdit
                         'Check to see if we've exceeded 16 bytes
                         If ByteNumberEachSixteen > 16 Then
                             'OK, let's increase the byte iteration and get the next line ready
-                            ByteIterationEachSixteen += 1
-                            Write("", True, ColTypes.Neutral)
-                            WriteWhere($"0x{16 * ByteIterationEachSixteen:X8}", 0, Console.CursorTop, False, ColTypes.ListEntry)
+                            Write(NewLine + $"0x{CurrentByteNumber:X8}", False, ColTypes.ListEntry)
                             ByteWritePositionX = Console.CursorLeft + 2
                             ByteCharWritePositionX = 61 + (ByteWritePositionX - 12)
                             ByteNumberEachSixteen = 1
