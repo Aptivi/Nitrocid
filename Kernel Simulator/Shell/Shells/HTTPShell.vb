@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
 Imports KS.Network.HTTP
 
 Namespace Shell.Shells
@@ -33,44 +34,45 @@ Namespace Shell.Shells
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             While Not Bail
-                SyncLock HTTPCancelSync
-                    Try
-                        'Prompt for command
-                        If DefConsoleOut IsNot Nothing Then
-                            Console.SetOut(DefConsoleOut)
-                        End If
-                        Wdbg(DebugLevel.I, "Preparing prompt...")
-                        If HTTPConnected Then
-                            Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
-                            If HTTPShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
+                Try
+                    'Prompt for command
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "Preparing prompt...")
+                    If HTTPConnected Then
+                        Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
+                        If HTTPShellPromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
                         Else
-                            Write("> ", False, ColTypes.Gray)
+                            Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
                         End If
+                    Else
+                        Write("> ", False, ColTypes.Gray)
+                    End If
 
-                        'Set input color
-                        SetInputColor()
+                    'Set input color
+                    SetInputColor()
 
-                        'Prompt for command
-                        Wdbg(DebugLevel.I, "Normal shell")
-                        Dim HttpCommand As String = Console.ReadLine()
-                        KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
+                    'Prompt for command
+                    Wdbg(DebugLevel.I, "Normal shell")
+                    Dim HttpCommand As String = Console.ReadLine()
+                    KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
 
-                        'Parse command
-                        If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
-                            GetLine(HttpCommand, False, "", ShellType.HTTPShell)
-                            KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
-                        End If
-                    Catch ex As Exception
-                        WStkTrc(ex)
-                        Throw New Exceptions.HTTPShellException(DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message)
-                    End Try
-                End SyncLock
+                    'Parse command
+                    If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        GetLine(HttpCommand, False, "", ShellType.HTTPShell)
+                        KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
+                    End If
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Throw New Exceptions.HTTPShellException(DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message)
+                End Try
             End While
 
             'Exiting, so reset the site

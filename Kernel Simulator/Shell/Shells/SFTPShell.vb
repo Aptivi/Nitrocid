@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
 Imports KS.Network.SFTP
 
 Namespace Shell.Shells
@@ -38,79 +39,78 @@ Namespace Shell.Shells
             If Connects Then Address = ShellArgs(0)
 
             'Actual shell logic
-            Dim SFTPStrCmd As String = ""
+            Dim SFTPStrCmd As String
             Dim SFTPInitialized As Boolean
             While Not Bail
-                SyncLock SFTPCancelSync
-                    Try
-                        'Complete initialization
-                        If SFTPInitialized = False Then
-                            Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
-                            SFTPCurrDirect = HomePath
-                            KernelEventManager.RaiseSFTPShellInitialized()
-                            SwitchCancellationHandler(ShellType.SFTPShell)
-                            SFTPInitialized = True
-                        End If
+                Try
+                    'Complete initialization
+                    If SFTPInitialized = False Then
+                        Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
+                        SFTPCurrDirect = HomePath
+                        KernelEventManager.RaiseSFTPShellInitialized()
+                        SFTPInitialized = True
+                    End If
 
-                        'Check if the shell is going to exit
-                        If Bail Then
-                            Wdbg(DebugLevel.W, "Exiting shell...")
-                            SFTPConnected = False
-                            ClientSFTP?.Disconnect()
-                            SFTPSite = ""
-                            SFTPCurrDirect = ""
-                            SFTPCurrentRemoteDir = ""
-                            SFTPUser = ""
-                            SFTPPass = ""
-                            SFTPInitialized = False
-                            SwitchCancellationHandler(LastShellType)
-                            Exit Sub
-                        End If
+                    'Check if the shell is going to exit
+                    If Bail Then
+                        Wdbg(DebugLevel.W, "Exiting shell...")
+                        SFTPConnected = False
+                        ClientSFTP?.Disconnect()
+                        SFTPSite = ""
+                        SFTPCurrDirect = ""
+                        SFTPCurrentRemoteDir = ""
+                        SFTPUser = ""
+                        SFTPPass = ""
+                        SFTPInitialized = False
+                        Exit Sub
+                    End If
 
-                        'Prompt for command
-                        If DefConsoleOut IsNot Nothing Then
-                            Console.SetOut(DefConsoleOut)
-                        End If
-                        If Not Connects Then
-                            Wdbg(DebugLevel.I, "Preparing prompt...")
-                            If SFTPConnected Then
-                                Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
-                                If SFTPShellPromptStyle = "" Then
-                                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
-                                Else
-                                    Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
-                                    ParsedPromptStyle.ConvertVTSequences
-                                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                                End If
+                    'Prompt for command
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    If Not Connects Then
+                        Wdbg(DebugLevel.I, "Preparing prompt...")
+                        If SFTPConnected Then
+                            Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                            If SFTPShellPromptStyle = "" Then
+                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
                             Else
-                                Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                                Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
+                                ParsedPromptStyle.ConvertVTSequences
+                                Write(ParsedPromptStyle, False, ColTypes.Gray)
                             End If
-                        End If
-
-                        'Set input color
-                        SetInputColor()
-
-                        'Try to connect if IP address is specified.
-                        If Connects Then
-                            Wdbg(DebugLevel.I, $"Currently connecting to {Address} by ""sftp (address)""...")
-                            SFTPStrCmd = $"connect {Address}"
-                            Connects = False
                         Else
-                            Wdbg(DebugLevel.I, "Normal shell")
-                            SFTPStrCmd = Console.ReadLine()
+                            Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
                         End If
-                        KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+                    End If
 
-                        'Parse command
-                        If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
-                            GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
-                            KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
-                        End If
-                    Catch ex As Exception
-                        WStkTrc(ex)
-                        Throw New Exceptions.SFTPShellException(DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message)
-                    End Try
-                End SyncLock
+                    'Set input color
+                    SetInputColor()
+
+                    'Try to connect if IP address is specified.
+                    If Connects Then
+                        Wdbg(DebugLevel.I, $"Currently connecting to {Address} by ""sftp (address)""...")
+                        SFTPStrCmd = $"connect {Address}"
+                        Connects = False
+                    Else
+                        Wdbg(DebugLevel.I, "Normal shell")
+                        SFTPStrCmd = Console.ReadLine()
+                    End If
+                    KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+
+                    'Parse command
+                    If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
+                        GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
+                        KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
+                    End If
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Throw New Exceptions.SFTPShellException(DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message)
+                End Try
             End While
         End Sub
 

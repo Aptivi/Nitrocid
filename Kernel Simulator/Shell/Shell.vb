@@ -211,16 +211,16 @@ Namespace Shell
                         Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"))
                         If Command.Contains(">>>") Then
                             Wdbg(DebugLevel.I, "Output redirection found with append.")
-                            DefConsoleOut = Console.Out
                             Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
+                            DefConsoleOut = Console.Out
                             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
                             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
                             Console.SetOut(OutputTextWriter)
                             Command = Command.Replace(" >>> " + OutputFileName, "")
                         ElseIf Command.Contains(">>") Then
                             Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
-                            DefConsoleOut = Console.Out
                             Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
+                            DefConsoleOut = Console.Out
                             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
                             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
                             Console.SetOut(OutputTextWriter)

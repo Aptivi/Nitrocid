@@ -18,6 +18,7 @@
 
 Imports KS.Network.RSS.Instance
 Imports KS.Network.RSS
+Imports System.Threading
 
 Namespace Shell.Shells
     Public Class RSSShell
@@ -33,8 +34,7 @@ Namespace Shell.Shells
         Public Overrides Property Bail As Boolean Implements IShell.Bail
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-            'Add handler for RSS shell
-            SwitchCancellationHandler(ShellType.RSSShell)
+            'Handle the RSS feed link provided by user
             Dim OldRSSFeedLink As String = ""
             Dim FeedUrl As String = ""
             If ShellArgs.Length > 0 Then
@@ -43,28 +43,32 @@ Namespace Shell.Shells
             RSSFeedLink = FeedUrl
 
             While Not Bail
+                Try
 Begin:
-                If String.IsNullOrWhiteSpace(RSSFeedLink) Then
-                    Do While String.IsNullOrWhiteSpace(RSSFeedLink)
-                        Try
-                            If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
-                                Write(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
-                            Else
-                                Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
-                            End If
-                            RSSFeedLink = Console.ReadLine
-                            RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
-                            RSSFeedLink = RSSFeedInstance.FeedUrl
-                            OldRSSFeedLink = RSSFeedLink
-                        Catch ex As Exception
-                            Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
-                            WStkTrc(ex)
-                            Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
-                            RSSFeedLink = ""
-                        End Try
-                    Loop
-                Else
-                    SyncLock RssShellCancelSync
+                    If String.IsNullOrWhiteSpace(RSSFeedLink) Then
+                        Do While String.IsNullOrWhiteSpace(RSSFeedLink)
+                            Try
+                                If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
+                                    Write(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
+                                Else
+                                    Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
+                                End If
+                                RSSFeedLink = Console.ReadLine
+                                RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
+                                RSSFeedLink = RSSFeedInstance.FeedUrl
+                                OldRSSFeedLink = RSSFeedLink
+                            Catch taex As ThreadAbortException
+                                CancelRequested = False
+                                Bail = True
+                                Exit While
+                            Catch ex As Exception
+                                Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
+                                WStkTrc(ex)
+                                Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
+                                RSSFeedLink = ""
+                            End Try
+                        Loop
+                    Else
                         'Make a new RSS feed instance
                         Try
                             If OldRSSFeedLink <> RSSFeedLink Then
@@ -75,6 +79,10 @@ Begin:
                                 RSSFeedLink = RSSFeedInstance.FeedUrl
                             End If
                             OldRSSFeedLink = RSSFeedLink
+                        Catch taex As ThreadAbortException
+                            CancelRequested = False
+                            Bail = True
+                            Exit While
                         Catch ex As Exception
                             Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
                             WStkTrc(ex)
@@ -107,8 +115,15 @@ Begin:
                         KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                         GetLine(WrittenCommand, False, "", ShellType.RSSShell)
                         KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
-                    End SyncLock
-                End If
+                    End If
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                    Continue While
+                End Try
             End While
 
             'Disconnect the session
@@ -120,9 +135,6 @@ Begin:
                 RSSFeedLink = ""
                 RSSFeedInstance = Nothing
             End If
-
-            'Remove handler for RSS shell
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class

@@ -294,6 +294,10 @@ Namespace Kernel
         ''' Checking for the console size (minimum req. 80x24)
         ''' </summary>
         Friend CheckingForConsoleSize As Boolean = True
+        ''' <summary>
+        ''' Is the cancellation handler installed?
+        ''' </summary>
+        Friend CancellationHandlerInstalled As Boolean
 
     End Module
 End Namespace

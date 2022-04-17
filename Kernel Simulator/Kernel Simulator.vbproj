@@ -692,7 +692,6 @@
     <Compile Include="Shell\Commands\ZipShell.vb" />
     <Compile Include="Shell\ShellBase\AliasExecutor.vb" />
     <Compile Include="Shell\ShellBase\CancellationHandlers.vb" />
-    <Compile Include="Shell\ShellBase\CancellationInstallers.vb" />
     <Compile Include="Shell\ShellBase\ShellExecutor.vb" />
     <Compile Include="Shell\ShellBase\CommandExecutor.vb" />
     <Compile Include="Shell\ShellBase\CommandManager.vb" />

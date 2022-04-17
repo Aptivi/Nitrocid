@@ -46,37 +46,32 @@ Namespace Shell.Shells
                 POP3_NoOp.Start()
                 Wdbg(DebugLevel.I, "Made new thread about POP3KeepConnection()")
             End If
-
-            'Add handler for IMAP and SMTP
-            SwitchCancellationHandler(ShellType.MailShell)
             KernelEventManager.RaiseIMAPShellInitialized()
 
             While Not Bail
-                SyncLock MailCancelSync
-                    'Populate messages
-                    PopulateMessages()
-                    If Mail_NotifyNewMail Then InitializeHandlers()
+                'Populate messages
+                PopulateMessages()
+                If Mail_NotifyNewMail Then InitializeHandlers()
 
-                    'Initialize prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
-                    If MailShellPromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Mail_Authentication.UserName) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
+                'Initialize prompt
+                If DefConsoleOut IsNot Nothing Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+                Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
+                If MailShellPromptStyle = "" Then
+                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Mail_Authentication.UserName) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                Else
+                    Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
                         ParsedPromptStyle.ConvertVTSequences
                         Write(ParsedPromptStyle, False, ColTypes.Gray)
                     End If
-                    SetInputColor()
+                SetInputColor()
 
-                    'Listen for a command
-                    Dim cmd As String = Console.ReadLine
-                    KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
-                    GetLine(cmd, False, "", ShellType.MailShell)
-                    KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
-                End SyncLock
+                'Listen for a command
+                Dim cmd As String = Console.ReadLine
+                KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
+                GetLine(cmd, False, "", ShellType.MailShell)
+                KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
             End While
 
             'Disconnect the session
@@ -90,9 +85,6 @@ Namespace Shell.Shells
                 SMTP_Client.Disconnect(True)
                 POP3_Client.Disconnect(True)
             End If
-
-            'Restore handler
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class

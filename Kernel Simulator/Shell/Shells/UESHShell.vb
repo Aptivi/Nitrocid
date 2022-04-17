@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells
@@ -32,64 +33,62 @@ Namespace Shell.Shells
         Public Overrides Property Bail As Boolean Implements IShell.Bail
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-            'Let CTRL+C cancel running command
-            SwitchCancellationHandler(ShellType.Shell)
-
             While Not Bail
-                SyncLock CancelSync
-                    If LogoutRequested Then
-                        Wdbg(DebugLevel.I, "Requested log out: {0}", LogoutRequested)
-                        LogoutRequested = False
-                        LoggedIn = False
+                If LogoutRequested Then
+                    Wdbg(DebugLevel.I, "Requested log out: {0}", LogoutRequested)
+                    LogoutRequested = False
+                    LoggedIn = False
+                    Bail = True
+                ElseIf Not InSaver Then
+                    Try
+                        'Try to probe injected commands
+                        Wdbg(DebugLevel.I, "Probing injected commands...")
+                        If CommandFlag = True Then
+                            CommandFlag = False
+                            If ProbeInjectedCommands Then
+                                For Each cmd In InjectedCommands
+                                    GetLine(cmd, True)
+                                Next
+                            End If
+                        End If
+
+                        'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
+                        Console.CursorVisible = True
+
+                        'Write a prompt
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
+                        End If
+                        CommandPromptWrite()
+
+                        'Set an input color
+                        Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
+                        SetInputColor()
+
+                        'Wait for command
+                        Wdbg(DebugLevel.I, "Waiting for command")
+                        KernelEventManager.RaiseShellInitialized()
+                        Dim strcommand As String = Console.ReadLine()
+
+                        If Not InSaver Then
+                            'Fire an event of PreExecuteCommand
+                            KernelEventManager.RaisePreExecuteCommand(strcommand)
+
+                            'Get the command
+                            GetLine(strcommand)
+
+                            'Fire an event of PostExecuteCommand
+                            KernelEventManager.RaisePostExecuteCommand(strcommand)
+                        End If
+                    Catch taex As ThreadAbortException
+                        CancelRequested = False
                         Bail = True
-                    ElseIf Not InSaver Then
-                        Try
-                            'Try to probe injected commands
-                            Wdbg(DebugLevel.I, "Probing injected commands...")
-                            If CommandFlag = True Then
-                                CommandFlag = False
-                                If ProbeInjectedCommands Then
-                                    For Each cmd In InjectedCommands
-                                        GetLine(cmd, True)
-                                    Next
-                                End If
-                            End If
-
-                            'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
-                            Console.CursorVisible = True
-
-                            'Write a prompt
-                            If DefConsoleOut IsNot Nothing Then
-                                Console.SetOut(DefConsoleOut)
-                            End If
-                            CommandPromptWrite()
-
-                            'Set an input color
-                            Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
-                            SetInputColor()
-
-                            'Wait for command
-                            Wdbg(DebugLevel.I, "Waiting for command")
-                            KernelEventManager.RaiseShellInitialized()
-                            Dim strcommand As String = Console.ReadLine()
-
-                            If Not InSaver Then
-                                'Fire an event of PreExecuteCommand
-                                KernelEventManager.RaisePreExecuteCommand(strcommand)
-
-                                'Get the command
-                                GetLine(strcommand)
-
-                                'Fire an event of PostExecuteCommand
-                                KernelEventManager.RaisePostExecuteCommand(strcommand)
-                            End If
-                        Catch ex As Exception
-                            WStkTrc(ex)
-                            Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-                            Continue While
-                        End Try
-                    End If
-                End SyncLock
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                        Continue While
+                    End Try
+                End If
             End While
         End Sub
 

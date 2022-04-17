@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
 Imports KS.TestShell
 
 Namespace Shell.Shells
@@ -33,41 +34,38 @@ Namespace Shell.Shells
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             'Show the welcome message
-            SwitchCancellationHandler(ShellType.TestShell)
             Console.WriteLine()
             WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
 
             'Actual shell logic
             While Not Bail
-                SyncLock TestCancelSync
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
+                If DefConsoleOut IsNot Nothing Then
+                    Console.SetOut(DefConsoleOut)
+                End If
 
-                    'Write the custom prompt style for the test shell
-                    Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
-                    If Test_PromptStyle = "" Then
-                        Write("(t)> ", False, ColTypes.Input)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
+                'Write the custom prompt style for the test shell
+                Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
+                If Test_PromptStyle = "" Then
+                    Write("(t)> ", False, ColTypes.Input)
+                Else
+                    Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
+                    ParsedPromptStyle.ConvertVTSequences
+                    Write(ParsedPromptStyle, False, ColTypes.Gray)
+                End If
 
-                    'Parse the command
-                    Dim FullCmd As String = Console.ReadLine
-                    Try
-                        GetLine(FullCmd, False, "", ShellType.TestShell)
-                    Catch ex As Exception
-                        Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
-                        Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
-                        WStkTrc(ex)
-                    End Try
-                End SyncLock
+                'Parse the command
+                Dim FullCmd As String = Console.ReadLine
+                Try
+                    GetLine(FullCmd, False, "", ShellType.TestShell)
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    Write(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
+                    Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             End While
-
-            'Restore the cancellation handler
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class

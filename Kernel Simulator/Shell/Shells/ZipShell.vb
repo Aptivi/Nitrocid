@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.IO.Compression
+Imports System.Threading
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells
@@ -34,8 +35,7 @@ Namespace Shell.Shells
         Public Overrides Property Bail As Boolean Implements IShell.Bail
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-            'Add handler for ZIP shell
-            SwitchCancellationHandler(ShellType.ZIPShell)
+            'Set current directory for ZIP shell
             ZipShell_CurrentDirectory = CurrDir
 
             'Get file path
@@ -48,7 +48,7 @@ Namespace Shell.Shells
             End If
 
             While Not Bail
-                SyncLock ZipShellCancelSync
+                Try
                     'Open file if not open
                     If ZipShell_FileStream Is Nothing Then ZipShell_FileStream = New FileStream(ZipFile, FileMode.Open)
                     If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
@@ -73,7 +73,14 @@ Namespace Shell.Shells
                     KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
                     KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
-                End SyncLock
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                    Continue While
+                End Try
             End While
 
             'Close file stream
@@ -82,9 +89,6 @@ Namespace Shell.Shells
             ZipShell_CurrentArchiveDirectory = ""
             ZipShell_ZipArchive = Nothing
             ZipShell_FileStream = Nothing
-
-            'Remove handler for ZIP shell
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class

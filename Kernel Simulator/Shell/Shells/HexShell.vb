@@ -34,9 +34,6 @@ Namespace Shell.Shells
         Public Overrides Property Bail As Boolean Implements IShell.Bail
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-            'Add handler for Hex editor shell
-            SwitchCancellationHandler(ShellType.HexShell)
-
             'Get file path
             Dim FilePath As String = ""
             If ShellArgs.Length > 0 Then
@@ -50,12 +47,13 @@ Namespace Shell.Shells
 
             'Actual shell logic
             While Not Bail
-                SyncLock HexEditorCancelSync
+                Try
                     'Open file if not open
                     If HexEdit_FileStream Is Nothing Then
                         Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
                         If Not HexEdit_OpenBinaryFile(FilePath) Then
                             Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                            Bail = True
                             Exit While
                         End If
                         HexEdit_AutoSave.Start()
@@ -81,16 +79,20 @@ Namespace Shell.Shells
                     KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)
                     GetLine(WrittenCommand, False, "", ShellType.HexShell)
                     KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
-                End SyncLock
+                Catch taex As ThreadAbortException
+                    CancelRequested = False
+                    Bail = True
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Write(DoTranslation("There was an error in the shell.") + NewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                    Continue While
+                End Try
             End While
 
             'Close file
             HexEdit_CloseBinaryFile()
             HexEdit_AutoSave.Abort()
             HexEdit_AutoSave = New Thread(AddressOf HexEdit_HandleAutoSaveBinaryFile) With {.Name = "Hex Edit Autosave Thread"}
-
-            'Remove handler for Hex editor shell
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class

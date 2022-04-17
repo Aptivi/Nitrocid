@@ -352,6 +352,9 @@ Namespace Kernel
             If Not ReminderThread.IsAlive Then ReminderThread.Start()
             If Not EventThread.IsAlive Then EventThread.Start()
 
+            'Install cancellation handler
+            If Not CancellationHandlerInstalled Then AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+
             'Initialize aliases
             InitAliases()
 

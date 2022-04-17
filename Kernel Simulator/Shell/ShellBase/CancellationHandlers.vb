@@ -27,7 +27,7 @@ Namespace Shell.ShellBase
                SFTPCancelSync, TestCancelSync, ZipShellCancelSync, HexEditorCancelSync As New Object
 
         Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock CancelSync
+            SyncLock GetCancelSyncLock(ShellStack(ShellStack.Count - 1).ShellType)
                 If e.SpecialKey = ConsoleSpecialKey.ControlC Then
                     CancelRequested = True
                     Console.WriteLine()
@@ -36,129 +36,37 @@ Namespace Shell.ShellBase
                     e.Cancel = True
                     StartCommandThread.Abort()
                     ProcessStartCommandThread.Abort()
+                    Console.SetOut(DefConsoleOut)
                 End If
             End SyncLock
         End Sub
 
-        Sub EditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock EditorCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    TextEdit_CommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub ZipShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock ZipShellCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    ZipShell_CommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub FTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock FTPCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    FTPStartCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub MailCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock MailCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    MailStartCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub RssShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock RssShellCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    RSSCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub SFTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock SFTPCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    SFTPStartCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub TestCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock TestCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    TStartCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub JsonShell_CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock JsonShellCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    JsonShell_CommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub HTTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock HTTPCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    HTTPCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
-
-        Sub HexEditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-            SyncLock HexEditorCancelSync
-                If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-                    Console.WriteLine()
-                    DefConsoleOut = Console.Out
-                    Console.SetOut(StreamWriter.Null)
-                    e.Cancel = True
-                    HexEditorCommandThread.Abort()
-                End If
-            End SyncLock
-        End Sub
+        Function GetCancelSyncLock(ShellType As ShellType) As Object
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return CancelSync
+                Case ShellType.FTPShell
+                    Return FTPCancelSync
+                Case ShellType.MailShell
+                    Return MailCancelSync
+                Case ShellType.SFTPShell
+                    Return SFTPCancelSync
+                Case ShellType.TextShell
+                    Return EditorCancelSync
+                Case ShellType.TestShell
+                    Return TestCancelSync
+                Case ShellType.ZIPShell
+                    Return ZipShellCancelSync
+                Case ShellType.RSSShell
+                    Return RssShellCancelSync
+                Case ShellType.JsonShell
+                    Return JsonShellCancelSync
+                Case ShellType.HTTPShell
+                    Return HTTPCancelSync
+                Case ShellType.HexShell
+                    Return HexEditorCancelSync
+            End Select
+        End Function
 
     End Module
 End Namespace

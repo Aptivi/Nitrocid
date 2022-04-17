@@ -34,9 +34,6 @@ Namespace Shell.Shells
         Public Overrides Property Bail As Boolean Implements IShell.Bail
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
-            'Add handler for JSON shell
-            SwitchCancellationHandler(ShellType.JsonShell)
-
             'Get file path
             Dim FilePath As String = ""
             If ShellArgs.Length > 0 Then
@@ -47,45 +44,40 @@ Namespace Shell.Shells
             End If
 
             While Not Bail
-                SyncLock JsonShellCancelSync
-                    'Open file if not open
-                    If JsonShell_FileStream Is Nothing Then
-                        Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
-                        If Not JsonShell_OpenJsonFile(FilePath) Then
-                            Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
-                            Exit While
-                        End If
-                        JsonShell_AutoSave.Start()
+                'Open file if not open
+                If JsonShell_FileStream Is Nothing Then
+                    Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
+                    If Not JsonShell_OpenJsonFile(FilePath) Then
+                        Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                        Exit While
                     End If
+                    JsonShell_AutoSave.Start()
+                End If
 
-                    'Prepare for prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
-                    If JsonShell_PromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                'Prepare for prompt
+                If DefConsoleOut IsNot Nothing Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+                Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
+                If JsonShell_PromptStyle = "" Then
+                    Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                Else
+                    Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
+                    ParsedPromptStyle.ConvertVTSequences
+                    Write(ParsedPromptStyle, False, ColTypes.Gray)
+                End If
+                SetInputColor()
 
-                    'Prompt for command
-                    KernelEventManager.RaiseTextShellInitialized()
-                    Dim WrittenCommand As String = Console.ReadLine
-                    GetLine(WrittenCommand, False, "", ShellType.JsonShell)
-                End SyncLock
+                'Prompt for command
+                KernelEventManager.RaiseTextShellInitialized()
+                Dim WrittenCommand As String = Console.ReadLine
+                GetLine(WrittenCommand, False, "", ShellType.JsonShell)
             End While
 
             'Close file
             JsonShell_CloseTextFile()
             JsonShell_AutoSave.Abort()
             JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
-
-            'Remove handler for JSON shell
-            SwitchCancellationHandler(LastShellType)
         End Sub
 
     End Class
