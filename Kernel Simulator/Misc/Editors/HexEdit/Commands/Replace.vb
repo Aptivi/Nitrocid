@@ -22,7 +22,9 @@ Namespace Misc.HexEdit.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            HexEdit_Replace(ListArgs(0), ListArgs(1))
+            Dim ByteFrom As Byte = Convert.ToByte(ListArgs(0), 16)
+            Dim ByteWith As Byte = Convert.ToByte(ListArgs(1), 16)
+            HexEdit_Replace(ByteFrom, ByteWith)
             Write(DoTranslation("Byte replaced."), True, ColTypes.Success)
         End Sub
 
