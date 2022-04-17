@@ -605,6 +605,7 @@
     <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
     <Compile Include="Shell\Commands\LangMan.vb" />
     <Compile Include="Shell\Commands\Exit.vb" />
+    <Compile Include="Shell\Commands\KeyInfo.vb" />
     <Compile Include="Shell\Commands\LsVars.vb" />
     <Compile Include="Shell\Commands\Select.vb" />
     <Compile Include="Shell\Commands\Choice.vb" />
