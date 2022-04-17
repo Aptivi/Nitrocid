@@ -345,14 +345,39 @@ Namespace Misc.HexEdit
         ''' <param name="FromByte">Byte to be replaced</param>
         ''' <param name="WithByte">Byte to replace with</param>
         Public Sub HexEdit_Replace(FromByte As Byte, WithByte As Byte)
+            HexEdit_Replace(FromByte, WithByte, 1, HexEdit_FileBytes.LongLength)
+        End Sub
+
+        ''' <summary>
+        ''' Replaces every occurence of a byte with the replacement
+        ''' </summary>
+        ''' <param name="FromByte">Byte to be replaced</param>
+        ''' <param name="WithByte">Byte to replace with</param>
+        Public Sub HexEdit_Replace(FromByte As Byte, WithByte As Byte, Start As Long)
+            HexEdit_Replace(FromByte, WithByte, Start, HexEdit_FileBytes.LongLength)
+        End Sub
+
+        ''' <summary>
+        ''' Replaces every occurence of a byte with the replacement
+        ''' </summary>
+        ''' <param name="FromByte">Byte to be replaced</param>
+        ''' <param name="WithByte">Byte to replace with</param>
+        Public Sub HexEdit_Replace(FromByte As Byte, WithByte As Byte, StartByte As Long, EndByte As Long)
             If HexEdit_FileStream IsNot Nothing Then
                 Wdbg(DebugLevel.I, "Source: {0}, Target: {1}", FromByte, WithByte)
-                For ByteIndex As Integer = 0 To HexEdit_FileBytes.Count - 1
-                    If HexEdit_FileBytes(ByteIndex) = FromByte Then
-                        Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in byte {2}", FromByte, WithByte, ByteIndex + 1)
-                        HexEdit_FileBytes(ByteIndex) = WithByte
-                    End If
-                Next
+                Wdbg(DebugLevel.I, "File Bytes: {0}", HexEdit_FileBytes.LongLength)
+                If StartByte <= HexEdit_FileBytes.LongLength And EndByte <= HexEdit_FileBytes.LongLength Then
+                    For ByteNumber As Long = StartByte To EndByte
+                        If HexEdit_FileBytes(ByteNumber - 1) = FromByte Then
+                            Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in byte {2}", FromByte, WithByte, ByteNumber)
+                            HexEdit_FileBytes(ByteNumber - 1) = WithByte
+                        End If
+                    Next
+                ElseIf StartByte > HexEdit_FileBytes.LongLength Then
+                    Write(DoTranslation("The specified start byte number may not be larger than the file size."), True, ColTypes.Error)
+                ElseIf EndByte > HexEdit_FileBytes.LongLength Then
+                    Write(DoTranslation("The specified end byte number may not be larger than the file size."), True, ColTypes.Error)
+                End If
             Else
                 Throw New InvalidOperationException(DoTranslation("The hex editor hasn't opened a file stream yet."))
             End If
