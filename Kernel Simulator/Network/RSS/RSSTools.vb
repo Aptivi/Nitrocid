@@ -284,7 +284,8 @@ Namespace Network.RSS
             Write(DoTranslation("Select your favorite news source by writing the number. Press ENTER to confirm your selection.") + NewLine, True, ColTypes.Neutral)
             For SourceIndex As Integer = 0 To FeedListJsonNewsSources.Length - 1
                 Dim NewsSource As JToken = FeedListJsonNewsSources(SourceIndex)
-                Write("{0}) {1}", True, ColTypes.Option, SourceIndex + 1, NewsSource("site")("title"))
+                Dim NewsSourceTitle As String = NewsSource("site")("title").ToString().Trim
+                Write("{0}) {1}", True, ColTypes.Option, SourceIndex + 1, NewsSourceTitle)
             Next
             Console.WriteLine()
             While StepNumber = 2
@@ -323,6 +324,7 @@ Namespace Network.RSS
                     'Some feeds like the French nouvelobs.com (Obs) don't have their feed title, so take it from the site title instead
                     NewsSourceTitle = FeedListJsonNewsSources(SelectedNewsSourceIndex)("site")("title")
                 End If
+                NewsSourceTitle = NewsSourceTitle.Trim()
                 Write("{0}) {1}: {2}", True, ColTypes.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed("url"))
             Next
             Console.WriteLine()

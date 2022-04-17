@@ -142,8 +142,8 @@ Namespace Network.RSS.Instance
 
             'Install the variables to a new instance
             _FeedUrl = FeedUrl
-            _FeedTitle = FeedTitle
-            _FeedDescription = FeedDescription
+            _FeedTitle = FeedTitle.Trim
+            _FeedDescription = FeedDescription.Trim
             If _FeedArticles.Count <> 0 And Articles.Count <> 0 Then
                 If Not _FeedArticles(0).Equals(Articles(0)) Then
                     _FeedArticles = Articles
