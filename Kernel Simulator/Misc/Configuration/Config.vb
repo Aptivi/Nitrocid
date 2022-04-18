@@ -840,6 +840,24 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Figlet", FigletConfig)
 
+            'FlashText config json object
+            Dim FlashTextConfig As New JObject From {
+                    {"Activate 255 Color Mode", FlashText255Colors},
+                    {"Activate True Color Mode", FlashTextTrueColor},
+                    {"Delay in Milliseconds", FlashTextDelay},
+                    {"Text Shown", FlashTextWrite},
+                    {"Background color", If(New Color(FlashTextBackgroundColor).Type = ColorType.TrueColor, FlashTextBackgroundColor.EncloseByDoubleQuotes, FlashTextBackgroundColor)},
+                    {"Minimum red color level", FlashTextMinimumRedColorLevel},
+                    {"Minimum green color level", FlashTextMinimumGreenColorLevel},
+                    {"Minimum blue color level", FlashTextMinimumBlueColorLevel},
+                    {"Minimum color level", FlashTextMinimumColorLevel},
+                    {"Maximum red color level", FlashTextMaximumRedColorLevel},
+                    {"Maximum green color level", FlashTextMaximumGreenColorLevel},
+                    {"Maximum blue color level", FlashTextMaximumBlueColorLevel},
+                    {"Maximum color level", FlashTextMaximumColorLevel}
+                }
+            ScreensaverConfig.Add("FlashText", FlashTextConfig)
+
             'Noise config json object
             Dim NoiseConfig As New JObject From {
                     {"New Screen Delay in Milliseconds", NoiseNewScreenDelay},
@@ -1632,6 +1650,21 @@ Namespace Misc.Configuration
                 FigletMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 255)
                 FigletMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 255)
                 FigletMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 255)
+
+                '> FlashText
+                FlashText255Colors = If(ConfigToken("Screensaver")?("FlashText")?("Activate 255 Color Mode"), False)
+                FlashTextTrueColor = If(ConfigToken("Screensaver")?("FlashText")?("Activate True Color Mode"), True)
+                FlashTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FlashText")?("Delay in Milliseconds"), 10)
+                FlashTextWrite = If(ConfigToken("Screensaver")?("FlashText")?("Text Shown"), "Kernel Simulator")
+                FlashTextBackgroundColor = New Color(If(ConfigToken("Screensaver")?("FlashText")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
+                FlashTextMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Minimum red color level"), 0)
+                FlashTextMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Minimum green color level"), 0)
+                FlashTextMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Minimum blue color level"), 0)
+                FlashTextMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Minimum color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Minimum color level"), 0)
+                FlashTextMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Maximum red color level"), 255)
+                FlashTextMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Maximum green color level"), 255)
+                FlashTextMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Maximum blue color level"), 255)
+                FlashTextMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashText")?("Maximum color level"), 0), ConfigToken("Screensaver")?("FlashText")?("Maximum color level"), 255)
 
                 '> Noise
                 NoiseNewScreenDelay = If(ConfigToken("Screensaver")?("Noise")?("New Screen Delay in Milliseconds"), 5000)
