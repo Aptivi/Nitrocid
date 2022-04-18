@@ -54,9 +54,14 @@ Namespace Shell.Shells
                 End If
 
                 'Parse the command
+                KernelEventManager.RaiseTestShellInitialized()
                 Dim FullCmd As String = Console.ReadLine
                 Try
-                    GetLine(FullCmd, False, "", ShellType.TestShell)
+                    If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseTestPreExecuteCommand(FullCmd)
+                        GetLine(FullCmd, False, "", ShellType.TestShell)
+                        KernelEventManager.RaiseTestPostExecuteCommand(FullCmd)
+                    End If
                 Catch taex As ThreadAbortException
                     CancelRequested = False
                     Bail = True

@@ -70,9 +70,11 @@ Namespace Shell.Shells
                     'Prompt for command
                     KernelEventManager.RaiseZipShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
-                    KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
-                    GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
-                    KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
+                    If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
+                        GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
+                        KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
+                    End If
                 Catch taex As ThreadAbortException
                     CancelRequested = False
                     Bail = True

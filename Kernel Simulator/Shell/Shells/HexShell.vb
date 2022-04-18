@@ -76,9 +76,11 @@ Namespace Shell.Shells
                     'Prompt for command
                     KernelEventManager.RaiseHexShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
-                    KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)
-                    GetLine(WrittenCommand, False, "", ShellType.HexShell)
-                    KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
+                    If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)
+                        GetLine(WrittenCommand, False, "", ShellType.HexShell)
+                        KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
+                    End If
                 Catch taex As ThreadAbortException
                     CancelRequested = False
                     Bail = True

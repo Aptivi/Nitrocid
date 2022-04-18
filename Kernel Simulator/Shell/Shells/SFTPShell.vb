@@ -97,10 +97,10 @@ Namespace Shell.Shells
                         Wdbg(DebugLevel.I, "Normal shell")
                         SFTPStrCmd = Console.ReadLine()
                     End If
-                    KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
 
                     'Parse command
                     If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
                         GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
                         KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If

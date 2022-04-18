@@ -102,10 +102,10 @@ Namespace Shell.Shells
                         Wdbg(DebugLevel.I, "Normal shell")
                         FtpCommand = Console.ReadLine()
                     End If
-                    KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
 
                     'Parse command
                     If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
                         GetLine(FtpCommand, False, "", ShellType.FTPShell)
                         KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                     End If

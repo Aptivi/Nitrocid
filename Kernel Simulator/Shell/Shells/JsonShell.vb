@@ -69,9 +69,13 @@ Namespace Shell.Shells
                 SetInputColor()
 
                 'Prompt for command
-                KernelEventManager.RaiseTextShellInitialized()
+                KernelEventManager.RaiseJsonShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
-                GetLine(WrittenCommand, False, "", ShellType.JsonShell)
+                If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
+                    KernelEventManager.RaiseJsonPreExecuteCommand(WrittenCommand)
+                    GetLine(WrittenCommand, False, "", ShellType.JsonShell)
+                    KernelEventManager.RaiseJsonPostExecuteCommand(WrittenCommand)
+                End If
             End While
 
             'Close file

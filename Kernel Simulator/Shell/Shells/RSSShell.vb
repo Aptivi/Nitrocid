@@ -112,9 +112,11 @@ Begin:
                         'Prompt for command
                         KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
                         Dim WrittenCommand As String = Console.ReadLine
-                        KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.RSSShell)
-                        KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
+                        If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
+                            KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
+                            GetLine(WrittenCommand, False, "", ShellType.RSSShell)
+                            KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
+                        End If
                     End If
                 Catch taex As ThreadAbortException
                     CancelRequested = False

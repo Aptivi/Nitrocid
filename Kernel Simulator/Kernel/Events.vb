@@ -159,6 +159,14 @@ Namespace Kernel
         Public Event HexPreExecuteCommand(Command As String)
         Public Event HexPostExecuteCommand(Command As String)
         Public Event HexCommandError(Command As String, Exception As Exception)
+        Public Event TestShellInitialized()
+        Public Event TestPreExecuteCommand(Command As String)
+        Public Event TestPostExecuteCommand(Command As String)
+        Public Event TestCommandError(Command As String, Exception As Exception)
+        Public Event JsonShellInitialized()
+        Public Event JsonPreExecuteCommand(Command As String)
+        Public Event JsonPostExecuteCommand(Command As String)
+        Public Event JsonCommandError(Command As String, Exception As Exception)
 
         ''' <summary>
         ''' Makes the mod respond to the event of kernel start
@@ -2369,6 +2377,142 @@ Namespace Kernel
                 Next
             Next
         End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Json shell initialized
+        ''' </summary>
+        Public Sub RespondJsonShellInitialized() Handles Me.JsonShellInitialized
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonShellInitialized()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("JsonShellInitialized")
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Json pre-command execution
+        ''' </summary>
+        Public Sub RespondJsonPreExecuteCommand(Command As String) Handles Me.JsonPreExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("JsonPreExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Json post-command execution
+        ''' </summary>
+        Public Sub RespondJsonPostExecuteCommand(Command As String) Handles Me.JsonPostExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("JsonPostExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Json command error
+        ''' </summary>
+        Public Sub RespondJsonCommandError(Command As String, Exception As Exception) Handles Me.JsonCommandError
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event JsonCommandError()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("JsonCommandError", Command, Exception)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Test shell initialized
+        ''' </summary>
+        Public Sub RespondTestShellInitialized() Handles Me.TestShellInitialized
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestShellInitialized()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("TestShellInitialized")
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Test pre-command execution
+        ''' </summary>
+        Public Sub RespondTestPreExecuteCommand(Command As String) Handles Me.TestPreExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("TestPreExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Test post-command execution
+        ''' </summary>
+        Public Sub RespondTestPostExecuteCommand(Command As String) Handles Me.TestPostExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("TestPostExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of Test command error
+        ''' </summary>
+        Public Sub RespondTestCommandError(Command As String, Exception As Exception) Handles Me.TestCommandError
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event TestCommandError()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("TestCommandError", Command, Exception)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
 
         'These subs are for raising events
         ''' <summary>
@@ -3410,6 +3554,70 @@ Namespace Kernel
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...")
             FiredEvents.Add("HexCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
             RaiseEvent HexCommandError(Command, Exception)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Json shell initialized
+        ''' </summary>
+        Public Sub RaiseJsonShellInitialized()
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event JsonShellInitialized() and responding in RespondJsonShellInitialized()...")
+            FiredEvents.Add("JsonShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            RaiseEvent JsonShellInitialized()
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Json pre-command execution
+        ''' </summary>
+        Public Sub RaiseJsonPreExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event JsonPreExecuteCommand() and responding in RespondJsonPreExecuteCommand()...")
+            FiredEvents.Add("JsonPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent JsonPreExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Json post-command execution
+        ''' </summary>
+        Public Sub RaiseJsonPostExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event JsonPostExecuteCommand() and responding in RespondJsonPostExecuteCommand()...")
+            FiredEvents.Add("JsonPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent JsonPostExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Json command error
+        ''' </summary>
+        Public Sub RaiseJsonCommandError(Command As String, Exception As Exception)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event JsonCommandError() and responding in RespondJsonCommandError()...")
+            FiredEvents.Add("JsonCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+            RaiseEvent JsonCommandError(Command, Exception)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Test shell initialized
+        ''' </summary>
+        Public Sub RaiseTestShellInitialized()
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestShellInitialized() and responding in RespondTestShellInitialized()...")
+            FiredEvents.Add("TestShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            RaiseEvent TestShellInitialized()
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Test pre-command execution
+        ''' </summary>
+        Public Sub RaiseTestPreExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestPreExecuteCommand() and responding in RespondTestPreExecuteCommand()...")
+            FiredEvents.Add("TestPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent TestPreExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Test post-command execution
+        ''' </summary>
+        Public Sub RaiseTestPostExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestPostExecuteCommand() and responding in RespondTestPostExecuteCommand()...")
+            FiredEvents.Add("TestPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent TestPostExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of Test command error
+        ''' </summary>
+        Public Sub RaiseTestCommandError(Command As String, Exception As Exception)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...")
+            FiredEvents.Add("TestCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+            RaiseEvent TestCommandError(Command, Exception)
         End Sub
 
     End Class

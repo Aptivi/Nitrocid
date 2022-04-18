@@ -69,9 +69,11 @@ Namespace Shell.Shells
 
                 'Listen for a command
                 Dim cmd As String = Console.ReadLine
-                KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
-                GetLine(cmd, False, "", ShellType.MailShell)
-                KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
+                If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"})) Then
+                    KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
+                    GetLine(cmd, False, "", ShellType.MailShell)
+                    KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
+                End If
             End While
 
             'Disconnect the session
