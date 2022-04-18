@@ -57,6 +57,7 @@ Namespace Misc.Screensaver
                                                                              {"linotypo", Linotypo},
                                                                              {"marquee", Marquee},
                                                                              {"matrix", Matrix},
+                                                                             {"noise", Noise},
                                                                              {"plain", Plain},
                                                                              {"progressclock", ProgressClock},
                                                                              {"ramp", Ramp},

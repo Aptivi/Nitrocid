@@ -358,6 +358,7 @@
     <Compile Include="Misc\Screensaver\Displays\Fireworks.vb" />
     <Compile Include="Misc\Screensaver\Displays\Figlet.vb" />
     <Compile Include="Misc\Screensaver\Displays\FlashText.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Noise.vb" />
     <Compile Include="Misc\Screensaver\Displays\RandomSaver.vb" />
     <Compile Include="Misc\Screensaver\Displays\Snaker.vb" />
     <Compile Include="Misc\Screensaver\Displays\StackBox.vb" />

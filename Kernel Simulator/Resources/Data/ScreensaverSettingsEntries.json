@@ -2994,5 +2994,24 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    "Noise": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "New Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "NoiseNewScreenDelay",
+                "Description": "How many milliseconds to wait before writing in the new screen?"
+            },
+            {
+                "Name": "Noise density",
+                "Type": "SIntSlider",
+                "Variable": "NoiseDensity",
+                "Description": "The greater the percentage, the noisier the signal",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 }

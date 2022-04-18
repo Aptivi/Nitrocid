@@ -1717,5 +1717,15 @@ Namespace Misc.Screensaver
         ''' </summary>
         Public FlashTextMaximumColorLevel As Integer = 0
 
+        '-> Noise
+        ''' <summary>
+        ''' [Noise] How many milliseconds to wait before making the new screen?
+        ''' </summary>
+        Public NoiseNewScreenDelay As Integer = 5000
+        ''' <summary>
+        ''' [Noise] The noise density in percent
+        ''' </summary>
+        Public NoiseDensity As Integer = 40
+
     End Module
 End Namespace

@@ -840,6 +840,13 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Figlet", FigletConfig)
 
+            'Noise config json object
+            Dim NoiseConfig As New JObject From {
+                    {"New Screen Delay in Milliseconds", NoiseNewScreenDelay},
+                    {"Noise density", NoiseDensity}
+                }
+            ScreensaverConfig.Add("Noise", NoiseConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1625,6 +1632,10 @@ Namespace Misc.Configuration
                 FigletMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum green color level"), 255)
                 FigletMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum blue color level"), 255)
                 FigletMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Figlet")?("Maximum color level"), 255)
+
+                '> Noise
+                NoiseNewScreenDelay = If(ConfigToken("Screensaver")?("Noise")?("New Screen Delay in Milliseconds"), 5000)
+                NoiseDensity = If(ConfigToken("Screensaver")?("Noise")?("Noise density"), 40)
 
                 'Splash Section - Splash-specific settings go below:
                 '> Simple
