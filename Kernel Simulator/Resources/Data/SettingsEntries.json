@@ -1048,6 +1048,18 @@
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
             },
             {
+                "Name": "Enable hex editor autosave",
+                "Type": "SBoolean",
+                "Variable": "HexEdit_AutoSaveFlag",
+                "Description": "Turns on or off the hex editor autosave feature."
+            },
+            {
+                "Name": "Hex editor autosave interval",
+                "Type": "SInt",
+                "Variable": "HexEdit_AutoSaveInterval",
+                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+            },
+            {
                 "Name": "Wrap list outputs",
                 "Type": "SBoolean",
                 "Variable": "WrapListOutputs",
