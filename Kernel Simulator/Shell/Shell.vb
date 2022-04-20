@@ -282,9 +282,10 @@ Namespace Shell
                                     Else
                                         Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs)
                                         Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
-                                        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = $"{ShellType} Command Thread"}
+                                        Dim StartCommandThread As KernelThread = ShellStack(ShellStack.Count - 1).ShellCommandThread
                                         StartCommandThread.Start(Params)
-                                        StartCommandThread.Join()
+                                        StartCommandThread.Wait()
+                                        StartCommandThread.Stop()
                                     End If
                                 ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
                                     'If we're in the UESH shell, parse the script file or executable file

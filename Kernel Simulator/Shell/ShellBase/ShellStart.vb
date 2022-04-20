@@ -21,7 +21,7 @@ Imports KS.Shell.Shells
 Namespace Shell.ShellBase
     Public Module ShellStart
 
-        Friend ShellStack As New List(Of ShellExecutor)
+        Friend ShellStack As New List(Of ShellInfo)
 
         ''' <summary>
         ''' Starts the shell
@@ -43,8 +43,12 @@ Namespace Shell.ShellBase
             'Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
             Dim ShellExecute As ShellExecutor = GetShellExecutor(ShellType)
 
-            'Add a new executor and put it to the shell stack to indicate that we have a new shell (a visitor)!
-            ShellStack.Add(ShellExecute)
+            'Make a new instance of shell information
+            Dim ShellCommandThread As New KernelThread($"{ShellType} Command Thread", False, AddressOf ExecuteCommand)
+            Dim ShellInfo As New ShellInfo(ShellType, ShellExecute, ShellCommandThread)
+
+            'Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
+            ShellStack.Add(ShellInfo)
             ShellExecute.InitializeShell(ShellArgs)
         End Sub
 
@@ -54,7 +58,7 @@ Namespace Shell.ShellBase
         Public Sub KillShell()
             'We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
             If ShellStack.Count >= 2 Then
-                ShellStack(ShellStack.Count - 1).Bail = True
+                ShellStack(ShellStack.Count - 1).ShellExecutor.Bail = True
                 PurgeShells()
             Else
                 Throw New InvalidOperationException(DoTranslation("Can not kill the mother shell!"))
@@ -66,7 +70,7 @@ Namespace Shell.ShellBase
         ''' </summary>
         Sub KillShellForced()
             If ShellStack.Count >= 1 Then
-                ShellStack(ShellStack.Count - 1).Bail = True
+                ShellStack(ShellStack.Count - 1).ShellExecutor.Bail = True
                 PurgeShells()
             End If
         End Sub
@@ -76,7 +80,7 @@ Namespace Shell.ShellBase
         ''' </summary>
         Public Sub PurgeShells()
             'Remove these shells from the stack
-            ShellStack.RemoveAll(Function(x) x.Bail = True)
+            ShellStack.RemoveAll(Function(x) x.ShellExecutor.Bail = True)
         End Sub
 
         ''' <summary>

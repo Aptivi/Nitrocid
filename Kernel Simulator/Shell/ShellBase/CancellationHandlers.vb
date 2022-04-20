@@ -34,7 +34,8 @@ Namespace Shell.ShellBase
                     DefConsoleOut = Console.Out
                     Console.SetOut(StreamWriter.Null)
                     e.Cancel = True
-                    StartCommandThread.Abort()
+                    Dim StartCommandThread As KernelThread = ShellStack(ShellStack.Count - 1).ShellCommandThread
+                    StartCommandThread.Stop()
                     ProcessStartCommandThread.Abort()
                     Console.SetOut(DefConsoleOut)
                 End If

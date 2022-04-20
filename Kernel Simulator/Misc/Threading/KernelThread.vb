@@ -30,6 +30,16 @@ Namespace Misc.Threading
         Private ReadOnly IsParameterized As Boolean
 
         ''' <summary>
+        ''' The name of the thread
+        ''' </summary>
+        Public ReadOnly Property Name() As String
+
+        ''' <summary>
+        ''' Is the thread a background thread?
+        ''' </summary>
+        Public ReadOnly Property IsBackground() As Boolean
+
+        ''' <summary>
         ''' Is the kernel thread alive?
         ''' </summary>
         Public ReadOnly Property IsAlive() As Boolean
@@ -48,6 +58,8 @@ Namespace Misc.Threading
             BaseThread = New Thread(Executor) With {.Name = ThreadName, .IsBackground = Background}
             IsParameterized = False
             ThreadDelegate = Executor
+            Name = ThreadName
+            IsBackground = Background
             Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId)
         End Sub
 
@@ -61,6 +73,8 @@ Namespace Misc.Threading
             BaseThread = New Thread(Executor) With {.Name = ThreadName, .IsBackground = Background}
             IsParameterized = True
             ThreadDelegateParameterized = Executor
+            Name = ThreadName
+            IsBackground = Background
             Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId)
         End Sub
 
@@ -85,19 +99,16 @@ Namespace Misc.Threading
         ''' Stops the kernel thread
         ''' </summary>
         Public Sub [Stop]()
-            Dim ThreadName As String = BaseThread.Name
-            Dim Background As Boolean = BaseThread.IsBackground
-            Dim ThreadID As Integer = BaseThread.ManagedThreadId
-            Wdbg(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", ThreadName, ThreadID)
+            Wdbg(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId)
             BaseThread.Abort()
 
             'Remake the thread to avoid illegal state exceptions
             If IsParameterized Then
-                BaseThread = New Thread(ThreadDelegateParameterized) With {.Name = ThreadName, .IsBackground = Background}
+                BaseThread = New Thread(ThreadDelegateParameterized) With {.Name = Name, .IsBackground = IsBackground}
             Else
-                BaseThread = New Thread(ThreadDelegate) With {.Name = ThreadName, .IsBackground = Background}
+                BaseThread = New Thread(ThreadDelegate) With {.Name = Name, .IsBackground = IsBackground}
             End If
-            Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, ThreadID)
+            Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId)
         End Sub
 
         ''' <summary>

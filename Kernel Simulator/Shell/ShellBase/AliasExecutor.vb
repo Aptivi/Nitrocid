@@ -32,9 +32,10 @@ Namespace Shell.ShellBase
             Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, AliasesList(FirstWordCmd))
             Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
             Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellType, Nothing)
-            StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
+            Dim StartCommandThread As KernelThread = ShellStack(ShellStack.Count - 1).ShellCommandThread
             StartCommandThread.Start(Params)
-            StartCommandThread.Join()
+            StartCommandThread.Wait()
+            StartCommandThread.Stop()
         End Sub
 
         ''' <summary>
