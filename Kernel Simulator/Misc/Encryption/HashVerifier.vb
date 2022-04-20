@@ -53,7 +53,7 @@ Namespace Misc.Encryption
                         Dim StringLine As String = HashStream.ReadLine
                         If StringLine.StartsWith("- ") Then
                             Wdbg(DebugLevel.I, "Hashes file is of KS format")
-                            If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
+                            If (StringLine.StartsWith("- " + FileName) Or StringLine.StartsWith("- " + Path.GetFileName(FileName))) And StringLine.EndsWith($"({HashType})") Then
                                 Dim HashSplit() As String = StringLine.Split(" "c)
                                 ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                                 ActualHash = ActualHash.ToUpper
@@ -164,7 +164,7 @@ Namespace Misc.Encryption
                         Dim StringLine As String = HashStream.ReadLine
                         If StringLine.StartsWith("- ") Then
                             Wdbg(DebugLevel.I, "Hashes file is of KS format")
-                            If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
+                            If (StringLine.StartsWith("- " + FileName) Or StringLine.StartsWith("- " + Path.GetFileName(FileName))) And StringLine.EndsWith($"({HashType})") Then
                                 Dim HashSplit() As String = StringLine.Split(" "c)
                                 ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                                 ActualHash = GetEncryptedFile(FileName, HashType).ToUpper
