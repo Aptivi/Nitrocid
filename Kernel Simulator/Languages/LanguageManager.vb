@@ -26,79 +26,29 @@ Namespace Languages
 
         'PLEASE NOTE: "zul" language is Zulu and "swa" is Swahili for compatibility with Windows and Linux platforms. Windows considers "zul" as
         '             isiZulu and "swa" as Kiswahili, while Linux considers "zul" as Zulu and "swa" as Swahili.
-        Friend InstalledLanguages As New Dictionary(Of String, LanguageInfo) From {{"afr", New LanguageInfo("afr", "Afrikaans", False)},
-                                                                                   {"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
-                                                                                   {"arm", New LanguageInfo("arm", "Armenian", True)}, {"arm-T", New LanguageInfo("arm-T", "Armenian", True)},
-                                                                                   {"azr", New LanguageInfo("azr", "Azerbaijani", False)},
-                                                                                   {"ben", New LanguageInfo("ben", "Bangla", True)}, {"ben-T", New LanguageInfo("ben-T", "Bangla", True)},
-                                                                                   {"bsq", New LanguageInfo("bsq", "Basque", False)},
-                                                                                   {"bsn", New LanguageInfo("bsn", "Bosnian", False)},
-                                                                                   {"blg", New LanguageInfo("blg", "Bulgarian", True)}, {"blg-T", New LanguageInfo("blg-T", "Bulgarian", True)},
-                                                                                   {"ctl", New LanguageInfo("ctl", "Catalan", False)},
+        Friend InstalledLanguages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
                                                                                    {"chi", New LanguageInfo("chi", "Chinese", True)}, {"chi-T", New LanguageInfo("chi-T", "Chinese", True)},
                                                                                    {"cnt", New LanguageInfo("cnt", "Chinese (Traditional)", True)}, {"cnt-T", New LanguageInfo("cnt-T", "Chinese (Traditional)", True)},
-                                                                                   {"csc", New LanguageInfo("csc", "Corsican", False)},
-                                                                                   {"cro", New LanguageInfo("cro", "Croatian", False)},
-                                                                                   {"cbn", New LanguageInfo("cbn", "Cuban", False)},
                                                                                    {"cze", New LanguageInfo("cze", "Czech", False)},
-                                                                                   {"dan", New LanguageInfo("dan", "Danish", False)},
                                                                                    {"dtc", New LanguageInfo("dtc", "Dutch", False)},
                                                                                    {"eng", New LanguageInfo("eng", "English", False)},
-                                                                                   {"fin", New LanguageInfo("fin", "Finnish", False)},
-                                                                                   {"flp", New LanguageInfo("flp", "Filipino", False)},
                                                                                    {"fre", New LanguageInfo("fre", "French", False)},
                                                                                    {"ger", New LanguageInfo("ger", "German", False)},
-                                                                                   {"glc", New LanguageInfo("glc", "Galician", False)},
-                                                                                   {"grk", New LanguageInfo("grk", "Greek", True)}, {"grk-T", New LanguageInfo("grk-T", "Greek", True)},
-                                                                                   {"guj", New LanguageInfo("guj", "Gujarati", True)}, {"guj-T", New LanguageInfo("guj-T", "Gujarati", True)},
                                                                                    {"hxr-1", New LanguageInfo("hxr-1", "H4X0R Level 1", False)},
                                                                                    {"hxr-2", New LanguageInfo("hxr-2", "H4X0R Level 2", False)},
                                                                                    {"hxr-3", New LanguageInfo("hxr-3", "H4X0R Level 3", False)},
-                                                                                   {"hwi", New LanguageInfo("hwi", "Hawaiian", False)},
                                                                                    {"ind", New LanguageInfo("ind", "Hindi", True)}, {"ind-T", New LanguageInfo("ind-T", "Hindi", True)},
-                                                                                   {"hng", New LanguageInfo("hng", "Hungarian", False)},
-                                                                                   {"hus", New LanguageInfo("hus", "Hausa", False)},
-                                                                                   {"icl", New LanguageInfo("icl", "Icelandic", False)},
-                                                                                   {"ndo", New LanguageInfo("ndo", "Indonesian", False)},
-                                                                                   {"iri", New LanguageInfo("iri", "Irish", False)},
                                                                                    {"ita", New LanguageInfo("ita", "Italian", False)},
                                                                                    {"jpn", New LanguageInfo("jpn", "Japanese", False)},
-                                                                                   {"jvn", New LanguageInfo("jvn", "Javanese", False)},
-                                                                                   {"kzk", New LanguageInfo("kzk", "Kazakh", True)}, {"kzk-T", New LanguageInfo("kzk-T", "Kazakh", True)},
                                                                                    {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
-                                                                                   {"krd", New LanguageInfo("krd", "Kurdish", False)},
-                                                                                   {"ltn", New LanguageInfo("ltn", "Latin", False)},
-                                                                                   {"ltv", New LanguageInfo("ltv", "Latvian", False)},
                                                                                    {"lol", New LanguageInfo("lol", "LOLCAT", False)},
-                                                                                   {"lxm", New LanguageInfo("lxm", "Luxembourgish", False)},
-                                                                                   {"mcd", New LanguageInfo("mcd", "Macedonian", True)}, {"mcd-T", New LanguageInfo("mcd-T", "Macedonian", True)},
-                                                                                   {"mal", New LanguageInfo("mal", "Malay", False)},
-                                                                                   {"mts", New LanguageInfo("mts", "Maltese", False)},
-                                                                                   {"npl", New LanguageInfo("npl", "Nepali", True)}, {"npl-T", New LanguageInfo("npl-T", "Nepali", True)},
-                                                                                   {"nwg", New LanguageInfo("nwg", "Norwegian", False)},
-                                                                                   {"psh", New LanguageInfo("psh", "Pashto", False)},
                                                                                    {"pir", New LanguageInfo("pir", "Pirate Speak", False)},
-                                                                                   {"pol", New LanguageInfo("pol", "Polish", False)},
                                                                                    {"ptg", New LanguageInfo("ptg", "Portuguese", False)},
-                                                                                   {"pun", New LanguageInfo("pun", "Punjabi", True)}, {"pun-T", New LanguageInfo("pun-T", "Punjabi", True)},
-                                                                                   {"rmn", New LanguageInfo("rmn", "Romanian", False)},
                                                                                    {"rus", New LanguageInfo("rus", "Russian", True)}, {"rus-T", New LanguageInfo("rus-T", "Russian", True)},
-                                                                                   {"snd", New LanguageInfo("snd", "Sindhi", False)},
-                                                                                   {"slo", New LanguageInfo("slo", "Slovak", False)},
-                                                                                   {"som", New LanguageInfo("som", "Somali", False)},
                                                                                    {"spa", New LanguageInfo("spa", "Spanish", False)},
-                                                                                   {"srb", New LanguageInfo("srb", "Serbian", True)}, {"srb-T", New LanguageInfo("srb-T", "Serbian", True)},
-                                                                                   {"swa", New LanguageInfo("swa", "Swahili", False)},
-                                                                                   {"swe", New LanguageInfo("swe", "Swedish", False)},
-                                                                                   {"tkm", New LanguageInfo("tkm", "Turkmen", False)},
                                                                                    {"tky", New LanguageInfo("tky", "Turkish", False)},
                                                                                    {"ukr", New LanguageInfo("ukr", "Ukrainian", True)}, {"ukr-T", New LanguageInfo("ukr-T", "Ukrainian", True)},
-                                                                                   {"urd", New LanguageInfo("urd", "Urdu", False)},
-                                                                                   {"uzb", New LanguageInfo("uzb", "Uzbek", False)},
-                                                                                   {"vtn", New LanguageInfo("vtn", "Vietnamese", False)},
-                                                                                   {"wls", New LanguageInfo("wls", "Welsh", False)},
-                                                                                   {"yrb", New LanguageInfo("yrb", "Yoruba", False)},
-                                                                                   {"zul", New LanguageInfo("zul", "Zulu", False)}}
+                                                                                   {"vtn", New LanguageInfo("vtn", "Vietnamese", False)}}
 
         ''' <summary>
         ''' The installed languages list.
@@ -127,10 +77,6 @@ Namespace Languages
                             Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
                             Console.InputEncoding = Text.Encoding.GetEncoding(1256)
                             Wdbg(DebugLevel.I, "Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
-                        Case "ben-T"
-                            Console.OutputEncoding = Text.Encoding.GetEncoding(57003)
-                            Console.InputEncoding = Text.Encoding.GetEncoding(57003)
-                            Wdbg(DebugLevel.I, "Encoding set successfully for Bengali to {0}.", Console.OutputEncoding.EncodingName)
                         Case "chi-T"
                             Console.OutputEncoding = Text.Encoding.GetEncoding(936)
                             Console.InputEncoding = Text.Encoding.GetEncoding(936)
@@ -143,22 +89,10 @@ Namespace Languages
                             Console.OutputEncoding = Text.Encoding.GetEncoding(949)
                             Console.InputEncoding = Text.Encoding.GetEncoding(949)
                             Wdbg(DebugLevel.I, "Encoding set successfully for Korean to {0}.", Console.OutputEncoding.EncodingName)
-                        Case "pun-T"
-                            Console.OutputEncoding = Text.Encoding.GetEncoding(57011)
-                            Console.InputEncoding = Text.Encoding.GetEncoding(57011)
-                            Wdbg(DebugLevel.I, "Encoding set successfully for Punjabi to {0}.", Console.OutputEncoding.EncodingName)
                         Case "rus-T"
                             Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                             Console.InputEncoding = Text.Encoding.GetEncoding(866)
                             Wdbg(DebugLevel.I, "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
-                        Case "srb-T"
-                            Console.OutputEncoding = Text.Encoding.GetEncoding(21025)
-                            Console.InputEncoding = Text.Encoding.GetEncoding(21025)
-                            Wdbg(DebugLevel.I, "Encoding set successfully for Serbian to {0}.", Console.OutputEncoding.EncodingName)
-                        Case "dan"
-                            Console.OutputEncoding = Text.Encoding.GetEncoding(865)
-                            Console.InputEncoding = Text.Encoding.GetEncoding(865)
-                            Wdbg(DebugLevel.I, "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
                         Case "vtn"
                             Console.OutputEncoding = Text.Encoding.GetEncoding(1258)
                             Console.InputEncoding = Text.Encoding.GetEncoding(1258)

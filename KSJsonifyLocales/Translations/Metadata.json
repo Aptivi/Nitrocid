@@ -1,8 +1,4 @@
 {
-    "afr": {
-        "name": "Afrikaans",
-        "transliterable": false
-    },
     "arb": {
         "name": "Arabic",
         "transliterable": true
@@ -10,50 +6,6 @@
     "arb-T": {
         "name": "Arabic",
         "transliterable": true
-    },
-    "arm": {
-        "name": "Armenian",
-        "transliterable": true
-    },
-    "arm-T": {
-        "name": "Armenian",
-        "transliterable": true
-    },
-    "azr": {
-        "name": "Azerbaijani",
-        "transliterable": false
-    },
-    "ben": {
-        "name": "Bangla",
-        "transliterable": true
-    },
-    "ben-T": {
-        "name": "Bangla",
-        "transliterable": true
-    },
-    "blg": {
-        "name": "Bulgarian",
-        "transliterable": true
-    },
-    "blg-T": {
-        "name": "Bulgarian",
-        "transliterable": true
-    },
-    "bsn": {
-        "name": "Bosnian",
-        "transliterable": false
-    },
-    "bsq": {
-        "name": "Basque",
-        "transliterable": false
-    },
-    "cbn": {
-        "name": "Cuban",
-        "transliterable": false
-    },
-    "ccw": {
-        "name": "Chichewa",
-        "transliterable": false
     },
     "chi": {
         "name": "Chinese",
@@ -71,24 +23,8 @@
         "name": "Chinese (Traditional)",
         "transliterable": true
     },
-    "cro": {
-        "name": "Croatian",
-        "transliterable": false
-    },
-    "csc": {
-        "name": "Corsican",
-        "transliterable": false
-    },
-    "ctl": {
-        "name": "Catalan",
-        "transliterable": false
-    },
     "cze": {
         "name": "Czech",
-        "transliterable": false
-    },
-    "dan": {
-        "name": "Danish",
         "transliterable": false
     },
     "dtc": {
@@ -99,56 +35,12 @@
         "name": "English",
         "transliterable": false
     },
-    "fin": {
-        "name": "Finnish",
-        "transliterable": false
-    },
-    "flp": {
-        "name": "Filipino",
-        "transliterable": false
-    },
     "fre": {
         "name": "French",
         "transliterable": false
     },
     "ger": {
         "name": "German",
-        "transliterable": false
-    },
-    "glc": {
-        "name": "Galician",
-        "transliterable": false
-    },
-    "grk": {
-        "name": "Greek",
-        "transliterable": true
-    },
-    "grk-T": {
-        "name": "Greek",
-        "transliterable": true
-    },
-    "guj": {
-        "name": "Gujarati",
-        "transliterable": true
-    },
-    "guj-T": {
-        "name": "Gujarati",
-        "transliterable": true
-    },
-    "hng": {
-        "name": "Hungarian",
-        "transliterable": false
-    },
-    "hti": {
-        "name": "Haitian",
-        "transliterable": false
-    },
-    "hus": {
-        "name": "Hausa",
-        "transliterable": false
-    },
-    "hwi": {
-        "name": "Hawaiian",
         "transliterable": false
     },
     "hxr-1": {
@@ -163,10 +55,6 @@
         "name": "H4X0R Level 3",
         "transliterable": false
     },
-    "icl": {
-        "name": "Icelandic",
-        "transliterable": false
-    },
     "ind": {
         "name": "Hindi",
         "transliterable": true
@@ -175,20 +63,12 @@
         "name": "Hindi",
         "transliterable": true
     },
-    "iri": {
-        "name": "Irish",
-        "transliterable": false
-    },
     "ita": {
         "name": "Italian",
         "transliterable": false
     },
     "jpn": {
         "name": "Japanese",
-        "transliterable": false
-    },
-    "jvn": {
-        "name": "Javanese",
         "transliterable": false
     },
     "kor": {
@@ -199,92 +79,16 @@
         "name": "Korean",
         "transliterable": true
     },
-    "krd": {
-        "name": "Kurdish",
-        "transliterable": false
-    },
-    "kzk": {
-        "name": "Kazakh",
-        "transliterable": true
-    },
-    "kzk-T": {
-        "name": "Kazakh",
-        "transliterable": true
-    },
     "lol": {
         "name": "LOLCAT",
-        "transliterable": false
-    },
-    "ltn": {
-        "name": "Latin",
-        "transliterable": false
-    },
-    "ltv": {
-        "name": "Latvian",
-        "transliterable": false
-    },
-    "lxm": {
-        "name": "Luxembourgish",
-        "transliterable": false
-    },
-    "mal": {
-        "name": "Malay",
-        "transliterable": false
-    },
-    "mcd": {
-        "name": "Macedonian",
-        "transliterable": true
-    },
-    "mcd-T": {
-        "name": "Macedonian",
-        "transliterable": true
-    },
-    "mts": {
-        "name": "Maltese",
-        "transliterable": false
-    },
-    "ndo": {
-        "name": "Indonesian",
-        "transliterable": false
-    },
-    "npl": {
-        "name": "Nepali",
-        "transliterable": true
-    },
-    "npl-T": {
-        "name": "Nepali",
-        "transliterable": true
-    },
-    "nwg": {
-        "name": "Norwegian",
         "transliterable": false
     },
     "pir": {
         "name": "Pirate Speak",
         "transliterable": false
     },
-    "pol": {
-        "name": "Polish",
-        "transliterable": false
-    },
-    "psh": {
-        "name": "Pashto",
-        "transliterable": false
-    },
     "ptg": {
         "name": "Portuguese",
-        "transliterable": false
-    },
-    "pun": {
-        "name": "Punjabi",
-        "transliterable": true
-    },
-    "pun-T": {
-        "name": "Punjabi",
-        "transliterable": true
-    },
-    "rmn": {
-        "name": "Romanian",
         "transliterable": false
     },
     "rus": {
@@ -295,40 +99,8 @@
         "name": "Russian",
         "transliterable": true
     },
-    "slo": {
-        "name": "Slovak",
-        "transliterable": false
-    },
-    "snd": {
-        "name": "Sindhi",
-        "transliterable": false
-    },
-    "som": {
-        "name": "Somali",
-        "transliterable": false
-    },
     "spa": {
         "name": "Spanish",
-        "transliterable": false
-    },
-    "srb": {
-        "name": "Serbian",
-        "transliterable": true
-    },
-    "srb-T": {
-        "name": "Serbian",
-        "transliterable": true
-    },
-    "swa": {
-        "name": "Swahili",
-        "transliterable": false
-    },
-    "swe": {
-        "name": "Swedish",
-        "transliterable": false
-    },
-    "tkm": {
-        "name": "Turkmen",
         "transliterable": false
     },
     "tky": {
@@ -343,28 +115,8 @@
         "name": "Ukrainian",
         "transliterable": true
     },
-    "urd": {
-        "name": "Urdu",
-        "transliterable": false
-    },
-    "uzb": {
-        "name": "Uzbek",
-        "transliterable": false
-    },
     "vtn": {
         "name": "Vietnamese",
-        "transliterable": false
-    },
-    "wls": {
-        "name": "Welsh",
-        "transliterable": false
-    },
-    "yrb": {
-        "name": "Yoruba",
-        "transliterable": false
-    },
-    "zul": {
-        "name": "Zulu",
         "transliterable": false
     }
 }
