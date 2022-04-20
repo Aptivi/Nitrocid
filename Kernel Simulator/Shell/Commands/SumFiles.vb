@@ -26,18 +26,19 @@ Namespace Shell.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim folder As String = NeutralizePath(ListArgs(1))
+            Dim folder As String = NeutralizePath(ListArgsOnly(1))
             Dim out As String = ""
+            Dim UseRelative As Boolean = ListSwitchesOnly.Contains("-relative")
             Dim FileBuilder As New StringBuilder
-            If Not ListArgs.Length < 3 Then
-                out = NeutralizePath(ListArgs(2))
+            If Not ListArgsOnly.Length < 3 Then
+                out = NeutralizePath(ListArgsOnly(2))
             End If
             If FolderExists(folder) Then
                 For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
                     file = NeutralizePath(file)
                     WriteSeparator(file, True)
                     Dim AlgorithmEnum As Algorithms
-                    If ListArgs(0) = "all" Then
+                    If ListArgsOnly(0) = "all" Then
                         For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
                             AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
                             Dim spent As New Stopwatch
@@ -45,16 +46,24 @@ Namespace Shell.Commands
                             Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
                             Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
                             Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                            FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                            If UseRelative Then
+                                FileBuilder.AppendLine($"- {ListArgsOnly(1)}: {encrypted} ({AlgorithmEnum})")
+                            Else
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                            End If
                             spent.Stop()
                         Next
-                    ElseIf [Enum].TryParse(ListArgs(0), AlgorithmEnum) Then
+                    ElseIf [Enum].TryParse(ListArgsOnly(0), AlgorithmEnum) Then
                         Dim spent As New Stopwatch
                         spent.Start() 'Time when you're on a breakpoint is counted
                         Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
                         Write(encrypted, True, ColTypes.Neutral)
                         Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                        FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                        If UseRelative Then
+                            FileBuilder.AppendLine($"- {ListArgsOnly(1)}: {encrypted} ({AlgorithmEnum})")
+                        Else
+                            FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                        End If
                         spent.Stop()
                     Else
                         Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
