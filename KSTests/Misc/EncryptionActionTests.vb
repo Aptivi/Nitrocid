@@ -101,23 +101,19 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.CRC32, "D394D7F0", FileHashCRC32)
-            Dim ResultMD5 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6", FileHashMD5)
-            Dim ResultSHA1 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657", FileHashSHA1)
-            Dim ResultSHA256 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA256, "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", FileHashSHA256)
-            Dim ResultSHA384 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA384, "92CBCB3F982C7EC24EED668175D4FE7C73D9BBCBECA659EDDE6D6E56B798D64C808F86C7E13FA6BE03464AE2D145BB60", FileHashSHA384)
-            Dim ResultSHA512 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA512, "6DF635C184D4B131B0243D4F2BD66925A61B82A5093F573920F42D7B8474D6332FD2886920F3CA36D9206C73DD59C8F1EEA18501E6FEF15FDDA664B1ABB0E361", FileHashSHA512)
-            File.Delete(HomePath + "/TestSum.txt")
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.CRC32, "D394D7F0", FileHashCRC32)
+        Dim ResultMD5 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6", FileHashMD5)
+        Dim ResultSHA1 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657", FileHashSHA1)
+        Dim ResultSHA256 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA256, "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", FileHashSHA256)
+        Dim ResultSHA384 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA384, "92CBCB3F982C7EC24EED668175D4FE7C73D9BBCBECA659EDDE6D6E56B798D64C808F86C7E13FA6BE03464AE2D145BB60", FileHashSHA384)
+        Dim ResultSHA512 As Boolean = VerifyHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA512, "6DF635C184D4B131B0243D4F2BD66925A61B82A5093F573920F42D7B8474D6332FD2886920F3CA36D9206C73DD59C8F1EEA18501E6FEF15FDDA664B1ABB0E361", FileHashSHA512)
+        File.Delete(HomePath + "/TestSum.txt")
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -130,22 +126,18 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32.txt", FileHashCRC32)
-            Dim ResultMD5 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5.txt", FileHashMD5)
-            Dim ResultSHA1 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1.txt", FileHashSHA1)
-            Dim ResultSHA256 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256.txt", FileHashSHA256)
-            Dim ResultSHA384 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384.txt", FileHashSHA384)
-            Dim ResultSHA512 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512.txt", FileHashSHA512)
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32.txt", FileHashCRC32)
+        Dim ResultMD5 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5.txt", FileHashMD5)
+        Dim ResultSHA1 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1.txt", FileHashSHA1)
+        Dim ResultSHA256 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256.txt", FileHashSHA256)
+        Dim ResultSHA384 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384.txt", FileHashSHA384)
+        Dim ResultSHA512 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512.txt", FileHashSHA512)
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -158,22 +150,18 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32KS.txt", FileHashCRC32)
-            Dim ResultMD5 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5KS.txt", FileHashMD5)
-            Dim ResultSHA1 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1KS.txt", FileHashSHA1)
-            Dim ResultSHA256 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256KS.txt", FileHashSHA256)
-            Dim ResultSHA384 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384KS.txt", FileHashSHA384)
-            Dim ResultSHA512 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512KS.txt", FileHashSHA512)
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32KS.txt", FileHashCRC32)
+        Dim ResultMD5 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5KS.txt", FileHashMD5)
+        Dim ResultSHA1 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1KS.txt", FileHashSHA1)
+        Dim ResultSHA256 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256KS.txt", FileHashSHA256)
+        Dim ResultSHA384 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384KS.txt", FileHashSHA384)
+        Dim ResultSHA512 As Boolean = VerifyHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512KS.txt", FileHashSHA512)
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -190,23 +178,19 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(HomePath + "/TestSum.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.CRC32, "D394D7F0")
-            Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6")
-            Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657")
-            Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA256, "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA")
-            Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA384, "92CBCB3F982C7EC24EED668175D4FE7C73D9BBCBECA659EDDE6D6E56B798D64C808F86C7E13FA6BE03464AE2D145BB60")
-            Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA512, "6DF635C184D4B131B0243D4F2BD66925A61B82A5093F573920F42D7B8474D6332FD2886920F3CA36D9206C73DD59C8F1EEA18501E6FEF15FDDA664B1ABB0E361")
-            File.Delete(HomePath + "/TestSum.txt")
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.CRC32, "D394D7F0")
+        Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6")
+        Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657")
+        Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA256, "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA")
+        Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA384, "92CBCB3F982C7EC24EED668175D4FE7C73D9BBCBECA659EDDE6D6E56B798D64C808F86C7E13FA6BE03464AE2D145BB60")
+        Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHash(HomePath + "/TestSum.txt", Algorithms.SHA512, "6DF635C184D4B131B0243D4F2BD66925A61B82A5093F573920F42D7B8474D6332FD2886920F3CA36D9206C73DD59C8F1EEA18501E6FEF15FDDA664B1ABB0E361")
+        File.Delete(HomePath + "/TestSum.txt")
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -219,22 +203,18 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32.txt")
-            Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5.txt")
-            Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1.txt")
-            Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256.txt")
-            Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384.txt")
-            Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512.txt")
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32.txt")
+        Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5.txt")
+        Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1.txt")
+        Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256.txt")
+        Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384.txt")
+        Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512.txt")
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -247,22 +227,18 @@ Imports KS.Misc.Encryption
         Dim FileHashSHA256 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256)
         Dim FileHashSHA384 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384)
         Dim FileHashSHA512 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512)
-        Try
-            Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32KS.txt")
-            Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5KS.txt")
-            Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1KS.txt")
-            Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256KS.txt")
-            Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384KS.txt")
-            Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512KS.txt")
-            ResultCRC32.ShouldBeTrue
-            ResultMD5.ShouldBeTrue
-            ResultSHA1.ShouldBeTrue
-            ResultSHA256.ShouldBeTrue
-            ResultSHA384.ShouldBeTrue
-            ResultSHA512.ShouldBeTrue
-        Catch ex As Exception
-            Assert.Fail(ex.Message)
-        End Try
+        Dim ResultCRC32 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32, Environment.CurrentDirectory + "/TestVerifyCRC32KS.txt")
+        Dim ResultMD5 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5, Environment.CurrentDirectory + "/TestVerifyMD5KS.txt")
+        Dim ResultSHA1 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1, Environment.CurrentDirectory + "/TestVerifySHA1KS.txt")
+        Dim ResultSHA256 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA256, Environment.CurrentDirectory + "/TestVerifySHA256KS.txt")
+        Dim ResultSHA384 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA384, Environment.CurrentDirectory + "/TestVerifySHA384KS.txt")
+        Dim ResultSHA512 As Boolean = VerifyUncalculatedHashFromHashesFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA512, Environment.CurrentDirectory + "/TestVerifySHA512KS.txt")
+        ResultCRC32.ShouldBeTrue
+        ResultMD5.ShouldBeTrue
+        ResultSHA1.ShouldBeTrue
+        ResultSHA256.ShouldBeTrue
+        ResultSHA384.ShouldBeTrue
+        ResultSHA512.ShouldBeTrue
     End Sub
 
     <TestMethod> <TestCategory("Action")> Public Sub TestGetEmptyHash()
