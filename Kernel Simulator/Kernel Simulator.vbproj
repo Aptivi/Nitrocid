@@ -241,6 +241,7 @@
     <Compile Include="Kernel\Exceptions\LanguageParseException.vb" />
     <Compile Include="Kernel\Exceptions\LanguageUninstallException.vb" />
     <Compile Include="Kernel\Exceptions\LanguageInstallException.vb" />
+    <Compile Include="Kernel\Exceptions\NoSuchThemeException.vb" />
     <Compile Include="Kernel\Exceptions\NoSuchReflectionPropertyException.vb" />
     <Compile Include="Kernel\Exceptions\NoSuchReflectionVariableException.vb" />
     <Compile Include="Kernel\Exceptions\UESHConditionParseException.vb" />
