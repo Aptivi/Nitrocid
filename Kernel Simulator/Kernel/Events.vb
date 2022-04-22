@@ -51,6 +51,7 @@ Namespace Kernel
         Public Event PostReloadConfig()
         Public Event PlaceholderParsing(Target As String)
         Public Event PlaceholderParsed(Target As String)
+        Public Event PlaceholderParseError(Target As String, Exception As Exception)
         Public Event GarbageCollected()
         Public Event FTPShellInitialized()
         Public Event FTPPreExecuteCommand(Command As String)
@@ -534,6 +535,23 @@ Namespace Kernel
                         Dim script As IScript = PartInfo.PartScript
                         WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
                         script.InitEvents("PlaceholderParsed", Target)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of a placeholder parse error
+        ''' </summary>
+        Public Sub RespondPlaceholderParseError(Target As String, Exception As Exception) Handles Me.PlaceholderParseError
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParseError()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("PlaceholderParseError", Target, Exception)
                     Catch ex As Exception
                         WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
                         WStkTrcConditional(EventDebug, ex)
@@ -2690,6 +2708,14 @@ Namespace Kernel
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
             FiredEvents.Add("PlaceholderParsed (" + CStr(FiredEvents.Count) + ")", {Target})
             RaiseEvent PlaceholderParsed(Target)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of a placeholder parse error
+        ''' </summary>
+        Public Sub RaisePlaceholderParseError(Target As String, Exception As Exception)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event PlaceholderParseError() and responding in RespondPlaceholderParseError()...")
+            FiredEvents.Add("PlaceholderParseError (" + CStr(FiredEvents.Count) + ")", {Target, Exception})
+            RaiseEvent PlaceholderParseError(Target, Exception)
         End Sub
         ''' <summary>
         ''' Raise an event of garbage collection finish

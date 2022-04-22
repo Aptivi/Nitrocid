@@ -234,6 +234,7 @@
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions\HTTPShellException.vb" />
     <Compile Include="Kernel\Exceptions\InsaneConsoleDetectedException.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidPlaceholderException.vb" />
     <Compile Include="Kernel\Exceptions\KernelErrorException.vb" />
     <Compile Include="Kernel\Exceptions\InvalidPathException.vb" />
     <Compile Include="Kernel\Exceptions\InvalidKernelPathException.vb" />
