@@ -308,8 +308,13 @@ Namespace Shell
                                             WStkTrc(ex)
                                         End Try
                                     ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", Command)
-                                        Execute(TargetFile, scriptArgs.Join(" "))
+                                        Try
+                                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", Command)
+                                            Execute(TargetFile, scriptArgs.Join(" "))
+                                        Catch ex As Exception
+                                            Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
+                                            WStkTrc(ex)
+                                        End Try
                                     Else
                                         Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd)
                                         Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, Command)

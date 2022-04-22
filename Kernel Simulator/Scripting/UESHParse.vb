@@ -93,8 +93,9 @@ Namespace Scripting
                 KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
             Catch ex As Exception
                 KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
-                Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
+                Wdbg(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message)
                 WStkTrc(ex)
+                Throw New Exceptions.UESHScriptException(DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message)
             End Try
         End Sub
 
