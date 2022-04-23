@@ -53,22 +53,27 @@ Namespace Shell.Shells
                     If ZipShell_FileStream Is Nothing Then ZipShell_FileStream = New FileStream(ZipFile, FileMode.Open)
                     If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
 
-                    'Prepare for prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
-                    If ZipShell_PromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Prepare for prompt
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
+                        End If
+                        Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
+                        If ZipShell_PromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                        SetInputColor()
 
-                    'Prompt for command
-                    KernelEventManager.RaiseZipShellInitialized()
+                        'Raise the event
+                        KernelEventManager.RaiseZipShellInitialized()
+                    End SyncLock
+
+                    'Prompt for the command
                     Dim WrittenCommand As String = Console.ReadLine
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)

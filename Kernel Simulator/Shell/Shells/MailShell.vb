@@ -53,19 +53,22 @@ Namespace Shell.Shells
                 PopulateMessages()
                 If Mail_NotifyNewMail Then InitializeHandlers()
 
-                'Initialize prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
-                If MailShellPromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Mail_Authentication.UserName) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
+                'See UESHShell.vb for more info
+                SyncLock GetCancelSyncLock(ShellType)
+                    'Initialize prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
+                    If MailShellPromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Mail_Authentication.UserName) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
                         ParsedPromptStyle.ConvertVTSequences
                         Write(ParsedPromptStyle, False, ColTypes.Gray)
                     End If
-                SetInputColor()
+                    SetInputColor()
+                End SyncLock
 
                 'Listen for a command
                 Dim cmd As String = Console.ReadLine

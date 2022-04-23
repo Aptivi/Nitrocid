@@ -70,28 +70,33 @@ Namespace Shell.Shells
                         Exit Sub
                     End If
 
-                    'Prompt for command
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    If Not Connects Then
-                        Wdbg(DebugLevel.I, "Preparing prompt...")
-                        If FtpConnected Then
-                            Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
-                            If FTPShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
-                        Else
-                            Write("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Restore console state
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
                         End If
-                    End If
 
-                    'Set input color
-                    SetInputColor()
+                        'Prompt for command
+                        If Not Connects Then
+                            Wdbg(DebugLevel.I, "Preparing prompt...")
+                            If FtpConnected Then
+                                Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
+                                If FTPShellPromptStyle = "" Then
+                                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
+                                Else
+                                    Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
+                                    ParsedPromptStyle.ConvertVTSequences
+                                    Write(ParsedPromptStyle, False, ColTypes.Gray)
+                                End If
+                            Else
+                                Write("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
+                            End If
+                        End If
+
+                        'Set input color
+                        SetInputColor()
+                    End SyncLock
 
                     'Try to connect if IP address is specified.
                     If Connects Then

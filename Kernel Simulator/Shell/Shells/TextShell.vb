@@ -57,22 +57,27 @@ Namespace Shell.Shells
                         TextEdit_AutoSave.Start()
                     End If
 
-                    'Prepare for prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
-                    If TextEdit_PromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Prepare for prompt
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
+                        End If
+                        Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
+                        If TextEdit_PromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                        SetInputColor()
+
+                        'Raise the event
+                        KernelEventManager.RaiseTextShellInitialized()
+                    End SyncLock
 
                     'Prompt for command
-                    KernelEventManager.RaiseTextShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)

@@ -54,22 +54,27 @@ Namespace Shell.Shells
                     JsonShell_AutoSave.Start()
                 End If
 
-                'Prepare for prompt
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
-                If JsonShell_PromptStyle = "" Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
-                SetInputColor()
+                'See UESHShell.vb for more info
+                SyncLock GetCancelSyncLock(ShellType)
+                    'Prepare for prompt
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
+                    Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
+                    If JsonShell_PromptStyle = "" Then
+                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+                    SetInputColor()
+
+                    'Raise the event
+                    KernelEventManager.RaiseJsonShellInitialized()
+                End SyncLock
 
                 'Prompt for command
-                KernelEventManager.RaiseJsonShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
                 If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                     KernelEventManager.RaiseJsonPreExecuteCommand(WrittenCommand)

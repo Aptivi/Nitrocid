@@ -542,6 +542,7 @@ Namespace ConsoleBase
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
         Public Function SetInputColor() As Boolean
+            Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
             If ColoredShell = True Then
                 SetConsoleColor(InputColor)
                 SetConsoleColor(BackgroundColor, True)

@@ -52,24 +52,33 @@ Namespace Shell.Shells
                             End If
                         End If
 
-                        'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
-                        Console.CursorVisible = True
+                        'We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
+                        'thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
+                        'would either be incomplete or not printed to the console at all. As a side effect, we wouldn't fire the shell initialization event
+                        'despite us calling the RaiseShellInitialized() routine, causing some mods that rely on this event to believe that the shell was still
+                        'waiting for the command.
+                        SyncLock GetCancelSyncLock(ShellType)
+                            'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
+                            Console.CursorVisible = True
 
-                        'Write a prompt
-                        If DefConsoleOut IsNot Nothing Then
-                            Console.SetOut(DefConsoleOut)
-                        End If
-                        CommandPromptWrite()
+                            'Write a prompt
+                            If DefConsoleOut IsNot Nothing Then
+                                Console.SetOut(DefConsoleOut)
+                            End If
+                            CommandPromptWrite()
 
-                        'Set an input color
-                        Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
-                        SetInputColor()
+                            'Set an input color
+                            SetInputColor()
+
+                            'Raise shell initialization event
+                            KernelEventManager.RaiseShellInitialized()
+                        End SyncLock
 
                         'Wait for command
                         Wdbg(DebugLevel.I, "Waiting for command")
-                        KernelEventManager.RaiseShellInitialized()
                         Dim strcommand As String = Console.ReadLine()
 
+                        'Now, parse the line as necessary
                         If Not InSaver Then
                             'Fire an event of PreExecuteCommand
                             KernelEventManager.RaisePreExecuteCommand(strcommand)

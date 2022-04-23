@@ -95,22 +95,27 @@ Begin:
                         If Not RSSKeepAlive And Not RSSRefresher.IsAlive And RSSRefreshFeeds Then RSSRefresher.Start()
                         Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
 
-                        'Prepare for prompt
-                        If DefConsoleOut IsNot Nothing Then
-                            Console.SetOut(DefConsoleOut)
-                        End If
-                        Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
-                        If RSSShellPromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
-                        End If
-                        SetInputColor()
+                        'See UESHShell.vb for more info
+                        SyncLock GetCancelSyncLock(ShellType)
+                            'Prepare for prompt
+                            If DefConsoleOut IsNot Nothing Then
+                                Console.SetOut(DefConsoleOut)
+                            End If
+                            Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
+                            If RSSShellPromptStyle = "" Then
+                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
+                            Else
+                                Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
+                                ParsedPromptStyle.ConvertVTSequences
+                                Write(ParsedPromptStyle, False, ColTypes.Gray)
+                            End If
+                            SetInputColor()
+
+                            'Raise the event
+                            KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
+                        End SyncLock
 
                         'Prompt for command
-                        KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
                         Dim WrittenCommand As String = Console.ReadLine
                         If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                             KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)

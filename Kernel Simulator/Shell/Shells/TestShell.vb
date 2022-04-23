@@ -39,22 +39,27 @@ Namespace Shell.Shells
 
             'Actual shell logic
             While Not Bail
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
+                'See UESHShell.vb for more info
+                SyncLock GetCancelSyncLock(ShellType)
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
+                    End If
 
-                'Write the custom prompt style for the test shell
-                Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
-                If Test_PromptStyle = "" Then
-                    Write("(t)> ", False, ColTypes.Input)
-                Else
-                    Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                    ParsedPromptStyle.ConvertVTSequences
-                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                End If
+                    'Write the custom prompt style for the test shell
+                    Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
+                    If Test_PromptStyle = "" Then
+                        Write("(t)> ", False, ColTypes.Input)
+                    Else
+                        Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
+                        ParsedPromptStyle.ConvertVTSequences
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    End If
+
+                    'Raise the event
+                    KernelEventManager.RaiseTestShellInitialized()
+                End SyncLock
 
                 'Parse the command
-                KernelEventManager.RaiseTestShellInitialized()
                 Dim FullCmd As String = Console.ReadLine
                 Try
                     If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"})) Then

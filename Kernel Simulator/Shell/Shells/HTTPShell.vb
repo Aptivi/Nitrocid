@@ -35,26 +35,32 @@ Namespace Shell.Shells
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             While Not Bail
                 Try
-                    'Prompt for command
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "Preparing prompt...")
-                    If HTTPConnected Then
-                        Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
-                        If HTTPShellPromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Prompt for command
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
                         End If
-                    Else
-                        Write("> ", False, ColTypes.Gray)
-                    End If
+                        Wdbg(DebugLevel.I, "Preparing prompt...")
+                        If HTTPConnected Then
+                            Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
+                            If HTTPShellPromptStyle = "" Then
+                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
+                            Else
+                                Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
+                                ParsedPromptStyle.ConvertVTSequences
+                                Write(ParsedPromptStyle, False, ColTypes.Gray)
+                            End If
+                        Else
+                            Write("> ", False, ColTypes.Gray)
+                        End If
 
-                    'Set input color
-                    SetInputColor()
+                        'Set input color
+                        SetInputColor()
+
+                        'Raise the event
+                        KernelEventManager.RaiseHTTPShellInitialized()
+                    End SyncLock
 
                     'Prompt for command
                     Wdbg(DebugLevel.I, "Normal shell")

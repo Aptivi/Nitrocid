@@ -59,22 +59,29 @@ Namespace Shell.Shells
                         HexEdit_AutoSave.Start()
                     End If
 
-                    'Prepare for prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
-                    If HexEdit_PromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(HexEdit_WasHexEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(HexEdit_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Restore the console state
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
+                        End If
+
+                        'Prepare for prompt
+                        Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
+                        If HexEdit_PromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(HexEdit_WasHexEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(HexEdit_PromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                        SetInputColor()
+
+                        'Raise the event
+                        KernelEventManager.RaiseHexShellInitialized()
+                    End SyncLock
 
                     'Prompt for command
-                    KernelEventManager.RaiseHexShellInitialized()
                     Dim WrittenCommand As String = Console.ReadLine
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)

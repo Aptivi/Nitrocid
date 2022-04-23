@@ -65,28 +65,31 @@ Namespace Shell.Shells
                         Exit Sub
                     End If
 
-                    'Prompt for command
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    If Not Connects Then
-                        Wdbg(DebugLevel.I, "Preparing prompt...")
-                        If SFTPConnected Then
-                            Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
-                            If SFTPShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
-                        Else
-                            Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Prompt for command
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
                         End If
-                    End If
+                        If Not Connects Then
+                            Wdbg(DebugLevel.I, "Preparing prompt...")
+                            If SFTPConnected Then
+                                Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                                If SFTPShellPromptStyle = "" Then
+                                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                                Else
+                                    Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
+                                    ParsedPromptStyle.ConvertVTSequences
+                                    Write(ParsedPromptStyle, False, ColTypes.Gray)
+                                End If
+                            Else
+                                Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                            End If
+                        End If
 
-                    'Set input color
-                    SetInputColor()
+                        'Set input color
+                        SetInputColor()
+                    End SyncLock
 
                     'Try to connect if IP address is specified.
                     If Connects Then
