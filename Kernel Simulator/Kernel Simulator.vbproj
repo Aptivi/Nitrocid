@@ -327,6 +327,7 @@
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
+    <Compile Include="Misc\Games\Snaker.vb" />
     <Compile Include="Misc\Reflection\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />
@@ -610,6 +611,7 @@
     <Compile Include="Shell\Commands\LangMan.vb" />
     <Compile Include="Shell\Commands\Exit.vb" />
     <Compile Include="Shell\Commands\KeyInfo.vb" />
+    <Compile Include="Shell\Commands\Snaker.vb" />
     <Compile Include="Shell\Commands\LsVars.vb" />
     <Compile Include="Shell\Commands\Select.vb" />
     <Compile Include="Shell\Commands\Choice.vb" />
