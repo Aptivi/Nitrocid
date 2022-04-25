@@ -75,5 +75,10 @@ Namespace Shell.Commands
             End If
         End Sub
 
+        Public Overrides Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -relative: ", False, ColTypes.ListEntry) : Write(DoTranslation("Uses relative path instead of absolute"), True, ColTypes.ListValue)
+        End Sub
+
     End Class
 End Namespace
