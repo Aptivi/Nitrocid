@@ -1655,3 +1655,55 @@ Available languages:
 Command-line arguments:
 Pre-boot command-line arguments:
 Opens the mod API documentation for the structure of the source code in its most current form
+Current value:
+Invalid hex color specifier.
+Invalid RGB color specifier.
+Invalid red color specifier.
+Invalid green color specifier.
+Invalid blue color specifier.
+Adds a new byte at the end of the file
+Adds the new bytes at the end of the file
+Clears the binary file
+Deletes a byte using the byte number
+Deletes the range of bytes
+Exits the hex editor and save unsaved changes
+Exits the hex editor
+Prints the contents of the file with byte numbers to the console
+Queries a byte in a specified range of bytes or all bytes
+Replaces a byte with another one
+Byte replaced.
+The hex editor hasn't opened a file stream yet.
+Enter a byte on its own line that you want to append to the end of the file. When you're done, write "EOF" on its own line.
+Not a valid byte.
+The specified byte number may not be larger than the file size.
+Byte deleted.
+The byte number is not numeric.
+The specified start byte number may not be larger than the file size.
+The specified end byte number may not be larger than the file size.
+Deleted bytes.
+Hex Edit Prompt Style
+Edits a binary file
+Selects the feed from the existing feed list from online sources
+Downloading feed list...
+Failed to download feed list.
+Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection.
+This country has {0} news sources.
+Select your favorite news source by writing the number. Press ENTER to confirm your selection.
+Select a feed for your favorite news source. Press ENTER to confirm your selection.
+Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.
+DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!
+Gets key information for a pressed key. Useful for debugging
+Enter a key or a combination of keys to display its information.
+Pressed key
+Pressed key character
+Pressed modifiers
+Keyboard shortcut
+Enable hex editor autosave
+Hex editor autosave interval
+Turns on or off the hex editor autosave feature.
+Noise density
+How many milliseconds to wait before writing in the new screen?
+The greater the percentage, the noisier the signal
+The script is malformed. Check the script and resolve any errors: {0}
+The snake game!
+Uses relative path instead of absolute

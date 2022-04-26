@@ -1655,3 +1655,55 @@ Idiomas Disponibles:
 Argumentos de la línea de comandos:
 Argumentos de línea de comandos previos al arranque:
 Abre la documentación de la API mod para la estructura del código fuente en su forma más actual
+Valor actual:
+Especificador de color hexadecimal no válido.
+Especificador de color RGB no válido.
+Especificador de color rojo no válido.
+Especificador de color verde no válido.
+Especificador de color azul no válido.
+Agrega un nuevo byte al final del archivo
+Agrega los nuevos bytes al final del archivo.
+Borra el archivo binario
+Elimina un byte usando el número de byte
+Elimina el rango de bytes
+Sale del editor hexadecimal y guarda los cambios no guardados
+Sale del editor hexadecimal
+Imprime el contenido del archivo con números de byte a la consola
+Consulta un byte en un rango específico de bytes o todos los bytes
+Reemplaza un byte por otro
+Byte reemplazado.
+El editor hexadecimal aún no ha abierto una secuencia de archivos.
+Ingrese un byte en su propia línea que desee agregar al final del archivo. Cuando termines, escribe "EOF" en su propia línea.
+No es un byte válido.
+El número de bytes especificado no puede ser mayor que el tamaño del archivo.
+Byte eliminado.
+El número de byte no es numérico.
+El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo.
+El número de byte final especificado no puede ser mayor que el tamaño del archivo.
+Bytes eliminados.
+Estilo de solicitud de edición hexadecimal
+Edita un archivo binario
+Selecciona el feed de la lista de feeds existente de fuentes en línea
+Descargando lista de fuentes...
+No se pudo descargar la lista de feeds.
+Seleccione su país presionando las teclas de flecha izquierda o flecha derecha. Presione ENTER para confirmar su selección.
+Este país tiene {0} fuentes de noticias.
+Seleccione su fuente de noticias favorita escribiendo el número. Presione ENTER para confirmar su selección.
+Seleccione un feed para su fuente de noticias favorita. Presione ENTER para confirmar su selección.
+Tenga en cuenta que la edición de archivos binarios con este shell es experimental y puede provocar la corrupción o pérdida de datos si no se usa correctamente.
+¡NO LANZAS EL SHELL A MENOS QUE SEPAS LO QUE ESTÁS HACIENDO!
+Obtiene información clave para una tecla presionada. Útil para la depuración
+Introduzca una clave o una combinación de teclas para mostrar su información.
+tecla presionada
+Carácter de tecla pulsada
+Modificadores presionados
+Atajo de teclado
+Habilitar guardado automático del editor hexadecimal
+Intervalo de guardado automático del editor hexadecimal
+Activa o desactiva la función de guardado automático del editor hexadecimal.
+Densidad de ruido
+¿Cuántos milisegundos hay que esperar antes de escribir en la nueva pantalla?
+Cuanto mayor sea el porcentaje, más ruidosa será la señal
+El guión está mal formado. Verifique el script y resuelva cualquier error: {0}
+¡El juego de la serpiente!
+Utiliza ruta relativa en lugar de absoluta

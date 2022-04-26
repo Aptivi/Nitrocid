@@ -1655,3 +1655,55 @@ Verfügbare Sprachen:
 Kommandozeilenargumente:
 Pre-Boot-Befehlszeilenargumente:
 Öffnet die Mod-API-Dokumentation für die Struktur des Quellcodes in seiner aktuellsten Form
+Aktueller Wert:
+Ungültiger Hex-Farbbezeichner.
+Ungültiger RGB-Farbbezeichner.
+Ungültiger roter Farbbezeichner.
+Ungültiger grüner Farbbezeichner.
+Ungültiger blauer Farbbezeichner.
+Fügt am Ende der Datei ein neues Byte hinzu
+Fügt die neuen Bytes am Ende der Datei hinzu
+Löscht die Binärdatei
+Löscht ein Byte anhand der Bytenummer
+Löscht den Bereich von Bytes
+Beendet den Hex-Editor und speichert ungespeicherte Änderungen
+Beendet den Hex-Editor
+Gibt den Inhalt der Datei mit Bytenummern an die Konsole aus
+Fragt ein Byte in einem angegebenen Bereich von Bytes oder alle Bytes ab
+Ersetzt ein Byte durch ein anderes
+Bytes ersetzt.
+Der Hex-Editor hat noch keinen Dateistream geöffnet.
+Geben Sie in einer eigenen Zeile ein Byte ein, das Sie an das Ende der Datei anhängen möchten. Wenn Sie fertig sind, schreiben Sie „EOF“ in eine eigene Zeile.
+Kein gültiges Byte.
+Die angegebene Bytezahl darf nicht größer als die Dateigröße sein.
+Bytes gelöscht.
+Die Bytenummer ist nicht numerisch.
+Die angegebene Startbytezahl darf nicht größer als die Dateigröße sein.
+Die angegebene Endbytezahl darf nicht größer als die Dateigröße sein.
+Gelöschte Bytes.
+Eingabeaufforderungsstil Hex bearbeiten
+Bearbeitet eine Binärdatei
+Wählt den Feed aus der bestehenden Feed-Liste aus Online-Quellen aus
+Feedliste wird heruntergeladen...
+Feedliste konnte nicht heruntergeladen werden.
+Wählen Sie Ihr Land aus, indem Sie die Pfeiltaste nach links oder die Pfeiltaste nach rechts drücken. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
+Dieses Land hat {0} Nachrichtenquellen.
+Wählen Sie Ihre bevorzugte Nachrichtenquelle aus, indem Sie die Nummer eingeben. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
+Wählen Sie einen Feed für Ihre bevorzugte Nachrichtenquelle aus. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
+Bitte beachten Sie, dass das Bearbeiten von Binärdateien mit dieser Shell experimentell ist und bei unsachgemäßer Verwendung zu Datenbeschädigung oder Datenverlust führen kann.
+STARTEN SIE DIE SHELL NICHT, WENN SIE NICHT WISSEN, WAS SIE TUN!
+Ruft Tasteninformationen für eine gedrückte Taste ab. Nützlich zum Debuggen
+Geben Sie eine Taste oder eine Tastenkombination ein, um deren Informationen anzuzeigen.
+Taste gedrückt
+Gedrücktes Tastenzeichen
+Gedrückte Modifikatoren
+Tastaturkürzel
+Aktivieren Sie die automatische Speicherung des Hex-Editors
+Intervall für automatisches Speichern des Hex-Editors
+Schaltet die Funktion zum automatischen Speichern des Hex-Editors ein oder aus.
+Rauschdichte
+Wie viele Millisekunden warten, bevor in den neuen Bildschirm geschrieben wird?
+Je größer der Prozentsatz, desto verrauschter das Signal
+Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie alle Fehler: {0}
+Das Schlangenspiel!
+Verwendet einen relativen Pfad anstelle eines absoluten

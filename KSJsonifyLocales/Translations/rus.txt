@@ -1655,3 +1655,55 @@ Dostupnyye yazyki:
 Argumenty komandnoy stroki:
 Argumenty komandnoy stroki pered zagruzkoy:
 Otkryvayet dokumentatsiyu API moda dlya struktury iskhodnogo koda v yego samoy posledney forme.
+Tekushchaya stoimost':
+Nevernyy shestnadtsaterichnyy spetsifikator tsveta.
+Nedopustimyy spetsifikator tsveta RGB.
+Nedopustimyy spetsifikator krasnogo tsveta.
+Nedopustimyy spetsifikator zelenogo tsveta.
+Nedopustimyy spetsifikator sinego tsveta.
+Dobavlyayet novyy bayt v konets fayla
+Dobavlyayet novyye bayty v konets fayla
+Ochishchayet binarnyy fayl
+Udalyayet bayt, ispol'zuya nomer bayta
+Udalyayet diapazon baytov
+Vykhod iz shestnadtsaterichnogo redaktora i sokhraneniye nesokhranennykh izmeneniy
+Vykhod iz shestnadtsaterichnogo redaktora
+Vyvodit v konsol' soderzhimoye fayla s nomerami baytov
+Zaprashivayet bayt v ukazannom diapazone baytov ili vse bayty
+Zamenyayet bayt drugim
+Bayt zamenen.
+Shestnadtsaterichnyy redaktor yeshche ne otkryl faylovyy potok.
+Vvedite bayt v otdel'noy stroke, kotoryy vy khotite dobavit' v konets fayla. Kogda vy zakonchite, napishite «EOF» v otdel'noy stroke.
+Nedopustimyy bayt.
+Ukazannyy nomer bayta ne mozhet byt' bol'she, chem razmer fayla.
+Bayt udalen.
+Nomer bayta ne chislovoy.
+Ukazannyy nomer nachal'nogo bayta ne mozhet byt' bol'she razmera fayla.
+Ukazannyy nomer konechnogo bayta ne mozhet byt' bol'she razmera fayla.
+Udalennyye bayty.
+Shestnadtsaterichnyy stil' podskazki redaktirovaniya
+Redaktiruyet binarnyy fayl
+Vybirayet kanal iz sushchestvuyushchego spiska kanalov iz onlayn-istochnikov.
+Zagruzka spiska kanalov...
+Ne udalos' zagruzit' spisok kanalov.
+Vyberite svoyu stranu, nazhimaya klavishi so strelkoy vlevo ili vpravo. Nazhmite ENTER, chtoby podtverdit' svoy vybor.
+V etoy strane yest' {0} istochnikov novostey.
+Vyberite svoy lyubimyy istochnik novostey, napisav nomer. Nazhmite ENTER, chtoby podtverdit' svoy vybor.
+Vyberite kanal dlya vashego lyubimogo istochnika novostey. Nazhmite ENTER, chtoby podtverdit' svoy vybor.
+Obratite vnimaniye, chto redaktirovaniye dvoichnykh faylov s pomoshch'yu etoy obolochki yavlyayetsya eksperimental'nym i mozhet privesti k povrezhdeniyu ili potere dannykh pri nepravil'nom ispol'zovanii.
+NE ZAPUSKAYTE OBOLOCHKU, YESLI NE ZNAYETE, CHTO DELAYETE!
+Poluchayet klyuchevuyu informatsiyu dlya nazhatoy klavishi. Polezno dlya otladki
+Vvedite klyuch ili kombinatsiyu klavish, chtoby otobrazit' informatsiyu o nem.
+Nazhataya klavisha
+Nazhatyy klyuchevoy simvol
+Pressovannyye modifikatory
+Sochetaniye klavish
+Vklyuchit' avtosokhraneniye v shestnadtsaterichnom redaktore
+Interval avtosokhraneniya shestnadtsaterichnogo redaktora
+Vklyuchayet ili vyklyuchayet funktsiyu avtosokhraneniya shestnadtsaterichnogo redaktora.
+Plotnost' shuma
+Skol'ko millisekund zhdat', prezhde chem pisat' na novom ekrane?
+Chem bol'she protsent, tem shumneye signal
+Skript imeyet nepravil'nyy format. Prover'te stsenariy i ustranite vse oshibki: {0}
+Zmeinaya igra!
+Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo

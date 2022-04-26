@@ -1655,3 +1655,55 @@ Beschikbare talen:
 Opdrachtregelargumenten:
 Pre-boot opdrachtregelargumenten:
 Opent de mod API-documentatie voor de structuur van de broncode in de meest actuele vorm
+Huidige waarde:
+Ongeldige hexadecimale kleurspecificatie.
+Ongeldige RGB-kleurspecificatie.
+Ongeldige rode kleurspecificatie.
+Ongeldige groene kleurspecificatie.
+Ongeldige blauwe kleurspecificatie.
+Voegt een nieuwe byte toe aan het einde van het bestand
+Voegt de nieuwe bytes toe aan het einde van het bestand
+Wist het binaire bestand
+Verwijdert een byte met behulp van het bytenummer
+Verwijdert het bereik van bytes
+Sluit de hex-editor af en sla niet-opgeslagen wijzigingen op
+Sluit de hex-editor af
+Drukt de inhoud van het bestand met bytenummers af naar de console
+Vraagt ​​een byte op in een gespecificeerd bereik van bytes of alle bytes
+Vervangt een byte door een andere
+Byte vervangen.
+De hex-editor heeft nog geen bestandsstream geopend.
+Voer een byte op zijn eigen regel in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je "EOF" op zijn eigen regel.
+Geen geldige byte.
+Het opgegeven bytenummer mag niet groter zijn dan de bestandsgrootte.
+Byte verwijderd.
+Het bytenummer is niet numeriek.
+Het opgegeven startbytenummer mag niet groter zijn dan de bestandsgrootte.
+Het opgegeven eindbytenummer mag niet groter zijn dan de bestandsgrootte.
+Byte verwijderd.
+Hex-promptstijl bewerken
+Bewerkt een binair bestand
+Selecteert de feed uit de bestaande feedlijst van online bronnen
+Feedlijst downloaden...
+Kan feedlijst niet downloaden.
+Selecteer uw land door op de pijl naar links of de pijl naar rechts te drukken. Druk op ENTER om uw keuze te bevestigen.
+Dit land heeft {0} nieuwsbronnen.
+Selecteer uw favoriete nieuwsbron door het nummer te schrijven. Druk op ENTER om uw keuze te bevestigen.
+Selecteer een feed voor uw favoriete nieuwsbron. Druk op ENTER om uw keuze te bevestigen.
+Houd er rekening mee dat het bewerken van binaire bestanden met deze shell experimenteel is en kan leiden tot gegevensbeschadiging of gegevensverlies als het niet correct wordt gebruikt.
+LANCEER DE SHELL NIET TENZIJ U WEET WAT U DOET!
+Krijgt belangrijke informatie voor een ingedrukte toets. Nuttig voor debuggen
+Voer een toets of een combinatie van toetsen in om de informatie weer te geven.
+Ingedrukte toets
+Ingedrukt toetsteken
+Geperste modificaties
+Toetsenbord sneltoets
+Hex-editor automatisch opslaan inschakelen
+Hex editor autosave interval
+Schakelt de functie voor automatisch opslaan van de hex-editor in of uit.
+Ruisdichtheid
+Hoeveel milliseconden wachten voordat u in het nieuwe scherm schrijft?
+Hoe groter het percentage, hoe luidruchtiger het signaal
+Het script is misvormd. Controleer het script en los eventuele fouten op: {0}
+Het slangenspel!
+Gebruikt relatief pad in plaats van absoluut

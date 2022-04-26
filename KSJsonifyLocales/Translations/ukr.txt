@@ -1655,3 +1655,55 @@ Dostupni movy:
 Arhumenty komandnoho ryadka:
 Arhumenty komandnoho ryadka pered zavantazhennyam:
 Vidkryvaye dokumentatsiyu API mod dlya struktury vykhidnoho kodu v naynovishiy formi
+Potochne znachennya:
+Nediysnyy shistnadtsyatkovyy spetsyfikator kolʹoru.
+Nediysnyy spetsyfikator kolʹoru RGB.
+Nediysnyy spetsyfikator chervonoho kolʹoru.
+Nediysnyy spetsyfikator zelenoho kolʹoru.
+Nediysnyy spetsyfikator synʹoho kolʹoru.
+Dodaye novyy bayt v kinetsʹ faylu
+Dodaye novi bayty v kinetsʹ faylu
+Ochyshchaye dviykovyy fayl
+Vydalyaye bayt, vykorystovuyuchy nomer bayta
+Vydalyaye diapazon baytiv
+Vykhodytʹ iz shistnadtsyatkovoho redaktora ta zberihaye nezberezheni zminy
+Vykhodytʹ iz shistnadtsyatkovoho redaktora
+Vyvodytʹ na konsolʹ vmist faylu z nomeramy baytiv
+Zapytuye bayt u vyznachenomu diapazoni baytiv abo vsikh baytakh
+Zaminyuye bayt inshym
+Bayt zamineno.
+Shistnadtsyatkovyy redaktor shche ne vidkryv potik fayliv.
+Vveditʹ bayt u okremomu ryadku, yakyy potribno dodaty v kinetsʹ faylu. Koly vy zakinchyte, napyshitʹ «EOF» u okremomu ryadku.
+Nediysnyy bayt.
+Vkazanyy nomer bayta ne mozhe buty bilʹshym za rozmir faylu.
+Bayt vydaleno.
+Nomer bayta ne ye chyslovym.
+Vkazanyy nomer pochatkovoho bayta ne mozhe buty bilʹshym za rozmir faylu.
+Vkazanyy nomer kintsevoho bayta ne mozhe buty bilʹshym za rozmir faylu.
+Vydaleni bayty.
+Shistnadtsyatkovyy stylʹ pidkazky redahuvannya
+Redahuye dviykovyy fayl
+Vybyraye kanal iz nayavnoho spysku kanaliv iz onlayn-dzherel
+Zavantazhennya spysku kanaliv...
+Ne vdalosya zavantazhyty spysok kanaliv.
+Vyberitʹ svoyu krayinu, natyskayuchy klavishi zi strilkoyu vlivo abo vpravo. Natysnitʹ ENTER, shchob pidtverdyty sviy vybir.
+U tsiy krayini ye {0} dzherel novyn.
+Vyberitʹ ulyublene dzherelo novyn, napysavshy nomer. Natysnitʹ ENTER, shchob pidtverdyty sviy vybir.
+Vyberitʹ kanal dlya svoho ulyublenoho dzherela novyn. Natysnitʹ ENTER, shchob pidtverdyty sviy vybir.
+Zvernitʹ uvahu, shcho redahuvannya dviykovykh fayliv za dopomohoyu tsiyeyi obolonky ye eksperymentalʹnym i mozhe pryzvesty do poshkodzhennya danykh abo vtraty danykh, yakshcho yikh ne vykorystovuvaty nalezhnym chynom.
+NE ZAPUSKAYTE SHELL, KHISHCHO VY ZNAYETE, SHCHO ROBYTE!
+Otrymuye klyuchovu informatsiyu dlya natysnutoyi klavishi. Korysno dlya nalahodzhennya
+Vveditʹ klyuch abo kombinatsiyu klavish, shchob vidobrazyty yoho informatsiyu.
+Natysnuta klavisha
+Natysnutyy klyuchovyy symvol
+Presovani modyfikatory
+Kombinatsiya klavish
+Uvimknuty avtozberezhennya shistnadtsyatkovoho redaktora
+Interval avtozberezhennya shistnadtsyatkovoho redaktora
+Vmykaye abo vymykaye funktsiyu avtozberezhennya shistnadtsyatkovoho redaktora.
+Shchilʹnistʹ shumu
+Skilʹky milisekund chekaty, persh nizh pysaty na novomu ekrani?
+Chym bilʹshe vidsotok, tym shumnishyy syhnal
+Stsenariy nepravylʹno sformovanyy. Perevirte stsenariy i vypravte vsi pomylky: {0}
+Hra zmiyka!
+Vykorystovuye vidnosnyy shlyakh zamistʹ absolyutnoho

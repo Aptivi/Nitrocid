@@ -1655,3 +1655,55 @@ Langues disponibles:
 Arguments de ligne de commande :
 Arguments de ligne de commande de pré-démarrage :
 Ouvre la documentation de l'API mod pour la structure du code source dans sa forme la plus actuelle
+Valeur actuelle:
+Spécificateur de couleur hexadécimal non valide.
+Spécificateur de couleur RVB non valide.
+Spécificateur de couleur rouge non valide.
+Spécificateur de couleur verte non valide.
+Spécificateur de couleur bleue non valide.
+Ajoute un nouvel octet à la fin du fichier
+Ajoute les nouveaux octets à la fin du fichier
+Efface le fichier binaire
+Supprime un octet en utilisant le numéro d'octet
+Supprime la plage d'octets
+Quitte l'éditeur hexadécimal et enregistre les modifications non enregistrées
+Quitte l'éditeur hexadécimal
+Imprime le contenu du fichier avec les numéros d'octets sur la console
+Interroge un octet dans une plage d'octets spécifiée ou tous les octets
+Remplace un octet par un autre
+Octet remplacé.
+L'éditeur hexadécimal n'a pas encore ouvert de flux de fichiers.
+Entrez un octet sur sa propre ligne que vous souhaitez ajouter à la fin du fichier. Lorsque vous avez terminé, écrivez "EOF" sur sa propre ligne.
+Pas un octet valide.
+Le nombre d'octets spécifié ne doit pas être supérieur à la taille du fichier.
+Octet supprimé.
+Le numéro d'octet n'est pas numérique.
+Le nombre d'octets de début spécifié ne doit pas être supérieur à la taille du fichier.
+Le nombre d'octets de fin spécifié ne doit pas être supérieur à la taille du fichier.
+Octets supprimés.
+Style d'invite de modification hexadécimale
+Edite un fichier binaire
+Sélectionne le flux dans la liste de flux existante à partir de sources en ligne
+Téléchargement de la liste des flux...
+Échec du téléchargement de la liste de flux.
+Sélectionnez votre pays en appuyant sur les touches fléchées vers la gauche ou vers la droite. Appuyez sur ENTER pour confirmer votre sélection.
+Ce pays compte {0} sources d'informations.
+Sélectionnez votre source d'information préférée en écrivant le numéro. Appuyez sur ENTER pour confirmer votre sélection.
+Sélectionnez un flux pour votre source d'actualités préférée. Appuyez sur ENTER pour confirmer votre sélection.
+Veuillez noter que l'édition de fichiers binaires à l'aide de ce shell est expérimentale et peut entraîner une corruption ou une perte de données s'il n'est pas utilisé correctement.
+NE LANCEZ PAS LE SHELL SI VOUS NE SAVEZ PAS CE QUE VOUS FAITES !
+Obtient des informations clés pour une touche enfoncée. Utile pour le débogage
+Entrez une clé ou une combinaison de touches pour afficher ses informations.
+Touche enfoncée
+Caractère de la touche enfoncée
+Modificateurs pressés
+Raccourci clavier
+Activer l'enregistrement automatique de l'éditeur hexadécimal
+Intervalle d'enregistrement automatique de l'éditeur hexadécimal
+Active ou désactive la fonction de sauvegarde automatique de l'éditeur hexadécimal.
+Densité de bruit
+Combien de millisecondes attendre avant d'écrire dans le nouvel écran ?
+Plus le pourcentage est élevé, plus le signal est bruyant
+Le script est mal formé. Vérifiez le script et résolvez les éventuelles erreurs : {0}
+Le jeu du serpent !
+Utilise un chemin relatif au lieu d'absolu

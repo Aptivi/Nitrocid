@@ -1655,3 +1655,55 @@ Dostupné jazyky:
 Argumenty příkazového řádku:
 Argumenty příkazového řádku před spuštěním:
 Otevře dokumentaci mod API pro strukturu zdrojového kódu v jeho nejaktuálnější podobě
+Současná cena:
+Neplatný hexadecimální specifikátor barvy.
+Neplatný specifikátor barev RGB.
+Neplatný specifikátor červené barvy.
+Neplatný specifikátor zelené barvy.
+Neplatný specifikátor modré barvy.
+Přidá nový bajt na konec souboru
+Přidá nové bajty na konec souboru
+Vymaže binární soubor
+Smaže bajt pomocí čísla bajtu
+Odstraní rozsah bajtů
+Ukončí hexadecimální editor a uloží neuložené změny
+Ukončí hex editor
+Vytiskne obsah souboru s čísly bajtů do konzoly
+Dotazuje se na bajt v zadaném rozsahu bajtů nebo na všechny bajty
+Nahradí bajt jiným
+Byte nahrazen.
+Hexadecimální editor ještě neotevřel proud souborů.
+Zadejte bajt na vlastní řádek, který chcete připojit na konec souboru. Až budete hotovi, napište „EOF“ na vlastní řádek.
+Neplatný bajt.
+Zadané číslo bajtu nesmí být větší než velikost souboru.
+Byte smazán.
+Číslo bajtu není číselné.
+Zadané počáteční číslo bajtu nesmí být větší než velikost souboru.
+Zadané koncové číslo bajtu nesmí být větší než velikost souboru.
+Smazané bajty.
+Hexadecimální styl výzvy k úpravě
+Upraví binární soubor
+Vybere zdroj ze stávajícího seznamu zdrojů z online zdrojů
+Stahování seznamu zdrojů...
+Stažení seznamu zdrojů se nezdařilo.
+Vyberte svou zemi stisknutím šipky vlevo nebo šipky vpravo. Stiskněte ENTER pro potvrzení vašeho výběru.
+Tato země má {0} zdrojů zpráv.
+Napsáním čísla vyberte svůj oblíbený zpravodajský zdroj. Stiskněte ENTER pro potvrzení vašeho výběru.
+Vyberte zdroj pro svůj oblíbený zpravodajský zdroj. Stiskněte ENTER pro potvrzení vašeho výběru.
+Vezměte prosím na vědomí, že úpravy binárních souborů pomocí tohoto shellu jsou experimentální a mohou vést k poškození dat nebo ztrátě dat, pokud nejsou používány správně.
+NESPUŠTĚJTE SHELL, POKUD NEVÍTE, CO DĚLÁTE!
+Získá klíčové informace pro stisknutou klávesu. Užitečné pro ladění
+Zadejte klíč nebo kombinaci kláves pro zobrazení jeho informací.
+Stisknutá klávesa
+Znak stisknuté klávesy
+Lisované modifikátory
+Klávesová zkratka
+Povolit automatické ukládání hex editoru
+Interval automatického ukládání hexadecimálního editoru
+Zapíná nebo vypíná funkci automatického ukládání hex editoru.
+Hustota hluku
+Kolik milisekund čekat před zápisem na novou obrazovku?
+Čím větší procento, tím hlučnější signál
+Skript je poškozen. Zkontrolujte skript a vyřešte případné chyby: {0}
+Hra had!
+Používá relativní cestu namísto absolutní

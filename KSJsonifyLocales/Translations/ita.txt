@@ -1655,3 +1655,55 @@ Lingue disponibili:
 Argomenti della riga di comando:
 Argomenti della riga di comando di pre-avvio:
 Apre la documentazione dell'API mod per la struttura del codice sorgente nella sua forma più recente
+Valore corrente:
+Identificatore di colore esadecimale non valido.
+Identificatore di colore RGB non valido.
+Identificatore di colore rosso non valido.
+Identificatore di colore verde non valido.
+Identificatore di colore blu non valido.
+Aggiunge un nuovo byte alla fine del file
+Aggiunge i nuovi byte alla fine del file
+Cancella il file binario
+Elimina un byte utilizzando il numero di byte
+Elimina l'intervallo di byte
+Esce dall'editor esadecimale e salva le modifiche non salvate
+Esce dall'editor esadecimale
+Stampa il contenuto del file con i numeri di byte sulla console
+Interroga un byte in un intervallo di byte specificato o tutti i byte
+Sostituisce un byte con un altro
+Byte sostituito.
+L'editor esadecimale non ha ancora aperto un flusso di file.
+Immettere un byte sulla propria riga che si desidera aggiungere alla fine del file. Quando hai finito, scrivi "EOF" sulla propria riga.
+Byte non valido.
+Il numero di byte specificato potrebbe non essere maggiore della dimensione del file.
+Byte cancellato.
+Il numero di byte non è numerico.
+Il numero di byte iniziale specificato potrebbe non essere maggiore della dimensione del file.
+Il numero di byte finale specificato potrebbe non essere maggiore della dimensione del file.
+Byte cancellati.
+Stile del prompt di modifica esadecimale
+Modifica un file binario
+Seleziona il feed dall'elenco di feed esistente da fonti online
+Download elenco feed in corso...
+Impossibile scaricare l'elenco dei feed.
+Seleziona il tuo paese premendo i tasti freccia sinistra o freccia destra. Premere INVIO per confermare la selezione.
+Questo paese ha {0} fonti di notizie.
+Seleziona la tua fonte di notizie preferita scrivendo il numero. Premere INVIO per confermare la selezione.
+Seleziona un feed per la tua fonte di notizie preferita. Premere INVIO per confermare la selezione.
+Tieni presente che la modifica di file binari utilizzando questa shell è sperimentale e può causare il danneggiamento o la perdita di dati se non utilizzata correttamente.
+NON LANCIARE IL SHELL A MENO CHE NON SAI COSA STAI FACENDO!
+Ottiene le informazioni chiave per un tasto premuto. Utile per il debug
+Immettere una chiave o una combinazione di tasti per visualizzarne le informazioni.
+Tasto premuto
+Carattere chiave premuto
+Modificatori premuti
+Scorciatoia da tastiera
+Abilita il salvataggio automatico dell'editor esadecimale
+Intervallo di salvataggio automatico dell'editor esadecimale
+Attiva o disattiva la funzione di salvataggio automatico dell'editor esadecimale.
+Densità del rumore
+Quanti millisecondi devono aspettare prima di scrivere nella nuova schermata?
+Maggiore è la percentuale, più rumoroso è il segnale
+La sceneggiatura non è corretta. Controlla lo script e risolvi eventuali errori: {0}
+Il gioco del serpente!
+Usa il percorso relativo anziché assoluto

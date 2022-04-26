@@ -1655,3 +1655,55 @@ available languages:
 command-line arguments:
 pre-boot command-line arguments:
 opens the mod api documentation fer the structure o' the source code in its most current form
+Current value:
+invalid 'ex color specifier.
+ invalid rgb color specifier.
+ invalid red color specifier.
+ invalid green color specifier.
+ invalid blue color specifier.
+ adds a new byte at the end o' the file
+adds the new bytes at the end o' the file
+clears the binary file
+deletes a byte usin' the byte number
+deletes the range o' bytes
+exits the 'ex editor an' save unsaved changes
+exits the 'ex editor
+prints the contents o' the file with byte numbers to the console
+queries a byte in a specified range o' bytes or all bytes
+replaces a byte with another one
+byte replaced.
+ the 'ex editor 'asn't opened a file stream yet.
+ enter a byte on its own line that there ye want to append to the end o' the file. When ye be done, write "eof" on its own line.
+ not a valid byte.
+ the specified byte number may not be larger than the file size.
+ byte deleted.
+ the byte number be not numeric.
+ the specified start byte number may not be larger than the file size.
+ the specified end byte number may not be larger than the file size.
+ deleted bytes.
+ 'ex edit prompt style
+edits a binary file
+selects the feed from the existin' feed list from online sources
+downloadin' feed list...
+ failed to download feed list.
+ select yer country by pressin' the arrow left or arrow right keys. Press enter to confirm yer selection.
+ this here country 'as {0} news sources.
+ select yer favorite news source by writin' the number. Press enter to confirm yer selection.
+ select a feed fer yer favorite news source. Press enter to confirm yer selection.
+ please note that there editin' binary files usin' this here shell be experimental an' may lead to data corruption or data loss if not used properly.
+ don't launch the shell unless ye know what ye be doing!
+gets key information fer a pressed key. Useful fer debuggin'
+enter a key or a combination o' keys to display its information.
+ pressed key
+pressed key character
+pressed modifiers
+keyboard shortcut
+enable 'ex editor autosave
+'ex editor autosave interval
+turns on or off the 'ex editor autosave feature.
+ noise density
+'ow many milliseconds to wait before writin' in the new screen?
+the greater the percentage, the noisier the signal
+the script be malformed. Check the script an' resolve any errors: {0}
+the snake game!
+uses relative path instead o' absolute

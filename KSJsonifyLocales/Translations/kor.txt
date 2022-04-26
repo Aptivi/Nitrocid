@@ -1655,3 +1655,55 @@ sayong ganeunghan eon-eo:
 myeonglyeongjul insu:
 sajeon buting myeonglyeongjul insu:
 choesin hyeongsig-ui soseu kodeu gujo-e daehan mod API munseoleul yeobnida.
+hyeonjae gachi:
+16jinsu saegsang jijeongjaga jalmosdoeeossseubnida.
+jalmosdoen RGB saegsang jijeongjaibnida.
+jalmosdoen ppalgansaeg jijeongjaibnida.
+jalmosdoen nogsaeg jijeongjaibnida.
+jalmosdoen palansaeg jijeongjaibnida.
+pail kkeut-e sae baiteuleul chugahabnida.
+pail kkeut-e sae baiteuleul chugahabnida.
+baineoli pail-eul jiubnida.
+baiteu beonholeul sayonghayeo baiteuleul sagjehabnida.
+baiteu beom-wileul sagjehabnida.
+16jinsu pyeonjibgileul jonglyohago jeojanghaji anh-eun byeongyeong sahang-eul jeojanghabnida.
+16jinsu pyeonjibgileul jonglyohabnida.
+baiteu beonhoga issneun pail naeyong-eul konsol-e inswaehabnida.
+jijeongdoen baiteu beom-wi ttoneun modeun baiteuui baiteuleul kwolihabnida.
+baiteuleul daleun baiteulo gyoche
+baiteuga gyochedoeeossseubnida.
+16jinsu pyeonjibgineun ajig pail seuteulim-eul yeolji anh-assseubnida.
+pail kkeut-e chugahal baiteuleul han jul-e iblyeoghabnida. wanlyodoemyeon han jul-e "EOF"leul jagseonghabnida.
+yuhyohan baiteuga anibnida.
+jijeongdoen baiteu suneun pail keugiboda keul su eobs-seubnida.
+baiteuga sagjedoeeossseubnida.
+baiteu beonhoneun susjaga anibnida.
+jijeongdoen sijag baiteu suneun pail keugiboda keul su eobs-seubnida.
+jijeongdoen kkeut baiteu suneun pail keugiboda keul su eobs-seubnida.
+sagjedoen baiteu-ibnida.
+16jinsu pyeonjib peulompeuteu seutail
+baineoli pail-eul pyeonjibhabnida.
+onlain soseuui gijon pideu moglog-eseo pideuleul seontaeghabnida.
+pideu moglog daunlodeu jung...
+pideu moglog-eul daunlodeuhaji moshaessseubnida.
+oenjjog hwasalpyo ttoneun oleunjjog hwasalpyo kileul nulleo guggaleul seontaeghabnida. ENTERleul nulleo seontaeg-eul hwag-inhasibsio.
+i gugga-eneun {0}gaeui nyuseu maechega issseubnida.
+beonholeul sseoseo joh-ahaneun nyuseu maecheleul seontaeghasibsio. ENTERleul nulleo seontaeg-eul hwag-inhasibsio.
+joh-ahaneun nyuseu soseuui pideuleul seontaeghabnida. ENTERleul nulleo seontaeg-eul hwag-inhasibsio.
+i syel-eul sayonghayeo baineoli pail-eul pyeonjibhaneun geos-eun silheomjeog-imyeo jedaelo sayonghaji anh-eumyeon deiteo sonsang-ina deiteo sonsil-i balsaenghal su issseubnida.
+dangsin-ihagoissneun il-eul moleuneun han swel-eul sijaghaji masibsio!
+nuleun kie daehan ki jeongboleul gajyeoobnida. dibeoging-e yuyong
+ki ttoneun ki johab-eul iblyeoghayeo haedang jeongboleul pyosihabnida.
+nuleun ki
+nuleun ki munja
+nullin susig-eo
+kibodeu danchugki
+16jinsu pyeonjibgi jadong jeojang hwalseonghwa
+16jinsu pyeonjibgi jadong jeojang gangyeog
+16jin pyeonjibgi jadong jeojang gineung-eul kyeogeona kkeubnida.
+so-eum mildo
+sae hwamyeon-e sseugi jeon-e myeoch millicholeul gidalyeoya habnikka?
+baegbun-yul-i keulsulog sinhoga deo sikkeuleobseubnida.
+seukeulibteu hyeongsig-i jalmosdoeeossseubnida. seukeulibteuleul hwag-inhago olyuleul haegyeolhabnida. {0}
+baem geim!
+jeoldae gyeonglo daesin sangdae gyeonglo sayong

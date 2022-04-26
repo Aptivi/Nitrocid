@@ -1655,3 +1655,55 @@ Mevcut diller:
 Komut satırı argümanları:
 Önyükleme öncesi komut satırı bağımsız değişkenleri:
 Kaynak kodun yapısı için mod API belgelerini en güncel haliyle açar
+Mevcut değer:
+Geçersiz onaltılık renk belirteci.
+Geçersiz RGB renk belirteci.
+Geçersiz kırmızı renk belirteci.
+Geçersiz yeşil renk belirteci.
+Geçersiz mavi renk belirteci.
+Dosyanın sonuna yeni bir bayt ekler
+Yeni baytları dosyanın sonuna ekler
+İkili dosyayı temizler
+Bayt numarasını kullanarak bir baytı siler
+Bayt aralığını siler
+Onaltılık düzenleyiciden çıkar ve kaydedilmemiş değişiklikleri kaydeder
+altıgen düzenleyiciden çıkar
+Dosyanın içeriğini bayt numaralarıyla konsola yazdırır
+Belirli bir bayt aralığında veya tüm baytlarda bir baytı sorgular
+Bir baytı başka bir baytla değiştirir
+Bayt değiştirildi.
+Onaltılı düzenleyici henüz bir dosya akışı açmadı.
+Dosyanın sonuna eklemek istediğiniz kendi satırına bir bayt girin. İşiniz bittiğinde kendi satırına "EOF" yazın.
+Geçerli bir bayt değil.
+Belirtilen bayt sayısı dosya boyutundan büyük olamaz.
+Bayt silindi.
+Bayt numarası sayısal değildir.
+Belirtilen başlangıç ​​bayt numarası dosya boyutundan büyük olamaz.
+Belirtilen bitiş bayt numarası dosya boyutundan büyük olamaz.
+Silinen baytlar.
+Onaltılı Düzenleme İstemi Stili
+Bir ikili dosyayı düzenler
+Çevrimiçi kaynaklardan mevcut besleme listesinden beslemeyi seçer
+Yayın listesi indiriliyor...
+Yayın listesi indirilemedi.
+Sol ok veya sağ ok tuşlarına basarak ülkenizi seçin. Seçiminizi onaylamak için ENTER'a basın.
+Bu ülkenin {0} haber kaynağı var.
+Numarayı yazarak favori haber kaynağınızı seçin. Seçiminizi onaylamak için ENTER'a basın.
+Favori haber kaynağınız için bir besleme seçin. Seçiminizi onaylamak için ENTER'a basın.
+Lütfen bu kabuğu kullanarak ikili dosyaları düzenlemenin deneysel olduğunu ve doğru kullanılmadığında veri bozulmasına veya veri kaybına yol açabileceğini unutmayın.
+NE YAPTIĞINIZI BİLMİYORSANIZ SHELL'İ ÇALIŞTIRMAYIN!
+Basılan bir tuş için anahtar bilgileri alır. Hata ayıklama için kullanışlıdır
+Bilgilerini görüntülemek için bir tuş veya tuş kombinasyonu girin.
+basılan tuş
+Basılan tuş karakteri
+preslenmiş değiştiriciler
+Klavye kısayolu
+Onaltılı düzenleyici otomatik kaydetmeyi etkinleştir
+Hex düzenleyici otomatik kaydetme aralığı
+Onaltılı düzenleyici otomatik kaydetme özelliğini açar veya kapatır.
+Gürültü yoğunluğu
+Yeni ekrana yazmadan önce kaç milisaniye beklenmeli?
+Yüzde ne kadar büyük olursa, sinyal o kadar gürültülü olur
+Komut dosyası hatalı biçimlendirilmiş. Komut dosyasını kontrol edin ve hataları çözün: {0}
+Yılan oyunu!
+Mutlak yerine göreli yolu kullanır

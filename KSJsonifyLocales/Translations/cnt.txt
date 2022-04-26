@@ -1655,3 +1655,55 @@ kěyòng yǔyán:
 Mìnglìng xíng cānshù:
 Yù yǐndǎo mìnglìng xíng cānshù:
 Yǐ zuìxīn xíngshì dǎkāi yuán dàimǎ jiégòu de mod API wéndàng
+Dāngqián zhí:
+Shíliù jìn zhì yánsè shuōmíng fú wúxiào.
+Wúxiào de RGB yánsè shuōmíng fú.
+Wúxiào de hóngsè shuōmíng fú.
+Wúxiào de lǜsè shuōmíng fú.
+Lán sè yánsè shuōmíng fú wúxiào.
+Zài wénjiàn mòwěi tiānjiā yīgè xīn zì jié
+zài wénjiàn mòwěi tiānjiā xīn zì jié
+qīngchú èr jìn zhì wénjiàn
+shǐyòng zì jié hào shānchú yīgè zì jié
+shānchú zì jié fànwéi
+tuìchū shíliù jìn zhì biānjí qì bìng bǎocún wèi bǎocún de gēnggǎi
+tuìchū shíliù jìn zhì biānjí qì
+jiāng dài yǒu zì jié shǔ de wénjiàn nèiróng dǎyìn dào kòngzhì tái
+cháxún zhǐdìng zì jié fànwéi nèi de yīgè zì jié huò suǒyǒu zì jié
+yòng lìng yīgè zì jié tìhuàn yīgè zì jié
+zì jié tìhuàn.
+Shíliù jìn zhì biānjí qì shàngwèi dǎkāi wénjiàn liú.
+Zài dāndú de xíng zhōng shūrù yào fùjiā dào wénjiàn mòwěi de zì jié. Wánchéng hòu, zài zìjǐ de xíng shàng xiě shàng “EOF”.
+Bùshì yǒuxiào zì jié.
+Zhǐdìng de zì jié shǔ bùdé dàyú wénjiàn dàxiǎo.
+Zì jié yǐ shānchú.
+Zì jié shǔ bùshì shùzì.
+Zhǐdìng de qǐ shǐ zì jié shǔ bùdé dàyú wénjiàn dàxiǎo.
+Zhǐdìng de jiéshùzì jié shǔ bùdé dàyú wénjiàn dàxiǎo.
+Shānchú de zì jié.
+Shíliù jìn zhì biānjí tíshì yàngshì
+biānjí èr jìn zhì wénjiàn
+cóng zàixiàn zīyuán de xiànyǒu tíyào lièbiǎo zhòng xuǎnzé tíyào
+zhèngzài xiàzài Feed lièbiǎo...
+Wúfǎ xiàzài Feed lièbiǎo.
+Àn xiàng zuǒ huò xiàng yòu jiàntóu jiàn xuǎnzé nín suǒzài de guójiā/dìqū. Àn ENTER quèrèn nín de xuǎnzé.
+Zhège guójiā yǒu {0} gè xīnwén láiyuán.
+Tōngguò xiě xià shù zì lái xuǎnzé nín zuì xǐhuān de xīnwén láiyuán. Àn ENTER quèrèn nín de xuǎnzé.
+Wèi nín zuì xǐhuān de xīnwén láiyuán xuǎnzé yīgè tíyào. Àn ENTER quèrèn nín de xuǎnzé.
+Qǐng zhùyì, shǐyòng cǐ shell biānjí èr jìn zhì wénjiàn shì shíyàn xìng de, rúguǒ shǐyòng bùdāng, kěnéng huì dǎozhì shùjù sǔnhuài huò shùjù diūshī.
+Chúfēi nín zhīdào zìjǐ zài zuò shénme, fǒuzé bùyào qǐdòng wàiké!
+Huòqǔ àn xià de jiàn de jiàn xìnxī. Duì tiáoshì hěn yǒuyòng
+shūrù yīgè jiàn huò zǔhé jiàn yǐ xiǎnshì qí xìnxī.
+Àn xià de jiàn
+ànjiàn zìfú
+àn xià xiūshì fú
+jiànpán kuàijié jiàn
+qǐyòng shíliù jìn zhì biānjí qì zìdòng bǎocún
+shíliù jìn zhì biānjí qì zìdòng bǎocún jiàngé
+dǎkāi huò guānbì shíliù jìn zhì biānjí qì zìdòng bǎocún gōngnéng.
+Zàoshēng mìdù
+zài xīn píngmù zhōng xiě rù zhīqián yào děngdài duōshǎo háomiǎo?
+Bǎifēnbǐ yuè dà, xìnhào yuè cáozá
+jiǎoběn géshì bù zhèngquè. Jiǎnchá jiǎoběn bìng jiějué suǒyǒu cuòwù:{0}
+Shé yóuxì!
+Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng

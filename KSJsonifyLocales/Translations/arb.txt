@@ -1655,3 +1655,55 @@ allughat almutawafirati:
 wasayit satr al'awamir:
 wasaytat satr 'awamir ma qabl altamhidi:
 yaftah wathayiq API almueadalat lihaykal altaelimat albarmajiat almasdar fi 'ahdath 'ashkaliha
+alqimat alhaliatu:
+muhadad allawn alsudasii ghayr salihi.
+muhadad lawn RGB ghayr salihi.
+muhadad allawn al'ahmar ghayr salihi.
+muhadad allawn al'akhdar ghayr salihi.
+muhadad allawn al'azraq ghayr salihi.
+yudif bayit jadid fi nihayat almilafi
+yudif wahadat albayit aljadidat fi nihayat almilafi
+yamsah almilafu althunayiyu
+yahdhaf bayat biastikhdam raqm albayt
+yahdhif nitaq albayt
+yakhruj min muharar sita eishri wayahfaz altaghyirat ghayr almahfuza
+yakhruj min muharir sita eishri
+yatbae muhtawayat almilafi bi'arqam bayat ealaa wahdat altahakum
+liliaistielam ean bayt fi nitaq muhadad min albayit 'aw kuli albayt
+yastabdil albayt bakhr
+astibdal albayt.
+lam yaftah almuharir alsudasiu tadafuq milafin hataa alan.
+'adkhil bayat fi alsatr alkhasi bih aladhi turid 'iilhaqah binihayat almilafa. eind aliantiha' , aktub "EOF" ealaa alsatr alkhasi baha.
+bayat ghayr salihin.
+la yajuz 'an yakun raqm albayit almuhadad 'akbar min hajm almilafa.
+bayat mahdhuf.
+raqm albayt lays rqmyan.
+yajib 'alaa yakun raqm bayt albidayat almuhadad 'akbar min hajm almilafa.
+yajib 'alaa yakun raqm bayat alnihayat almuhadad 'akbar min hajm almilafa.
+albayt almahdhufatu.
+namat muajah tahrir sudasiun eashriun
+yaqum bitahrir milafin thunayiyin
+tahdid altaghdhiat min qayimat altaghdhiat almawjudat min almasadir eabr al'iintirnit
+jar tanzil qayimat alkhulasa ...
+fashal tanzil qayimat altaghdhiati.
+hadad baladak bialdaght ealaa miftah alsahm al'aysar 'aw alsahm al'ayman. adghat ealaa ENTER litakid aikhtiariki.
+hadha albalad ladayh {0} masadir 'iikhbariatun.
+hadad masdar al'akhbar almufadal ladayk ean tariq kitabat alraqmi. adghat ealaa ENTER litakid aikhtiariki.
+hudid mujaz limasdar al'akhbar almufadal ladayk. adghat ealaa ENTER litakid aikhtiariki.
+yurjaa mulahazat 'ana tahrir almilafaat althunayiyat biaistikhdam hadhih alsudfat hu tajribiun waqad yuadiy 'iilaa talafi albayanat 'aw fiqdan albayanat 'iidha lam yatima astikhdamuh bishakl sahihin.
+la tutliq alqadhifat 'iilaa 'iidha kunt taerif ma tafealuhu!
+yahsul ealaa almaelumat al'asasiat limiftah madghutin. mufid fi altashih
+'adkhul mftahan 'aw majmueat mafatih lieard almaelumat alkhasat bihi.
+miftah madghut
+miftah tama aldaght ealayh
+almueadalat almadghuta
+akhtisar lawhat almafatih
+tafeil alhifz altalqayiyi lilmuharir alsudasii
+alfasil alzamaniu lilhifz altalqayiyi limuharir Hex
+litashghil 'aw 'iiqaf tashghil mayzat alhifz altalqayiyi lilmuharir alsidasii.
+kathafat aldawda'
+kam mili thaniat yajib aliaintizar qabl alkitabat fi alshaashat aljadidati?
+kulama zadat alnisbat almiawiat , zadat dawda' al'iishara
+alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}
+luebat althuebani!
+yastakhdim almasar alnisbiu bdlaan min almasar almutlaq

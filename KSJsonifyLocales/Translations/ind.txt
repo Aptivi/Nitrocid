@@ -1655,3 +1655,55 @@ upalabdh bhaasha:
 kamaand lain tark:
 pree-boot kamaand-lain tark:
 apane sabase vartamaan roop mein srot kod kee sanrachana ke lie mod epeeaee dastaavej kholata hai
+vartamaan mooly:
+amaany heks rang vinirdeshak.
+amaany rgb rang vinirdeshak.
+amaany laal rang vinirdeshak.
+amaany hara rang vinirdeshak.
+amaany neela rang vinirdeshak.
+fail ke ant mein ek naya bait jodata hai
+fail ke ant mein nae bait jodata hai
+bainaree fail ko saaf karata hai
+bait sankhya ka upayog karake ek bait ko hataata hai
+baits kee seema hataata hai
+heks sampaadak se baahar nikalata hai aur saheje nahin gae parivartanon ko sahejata hai
+heks sampaadak se baahar nikalata hai
+fail kee saamagree ko bait sankhyaon ke saath kansol par print karata hai
+baits ya sabhee baits kee ek nirdisht shrenee mein ek bait ko kveree karata hai
+ek bait ko doosare se badal deta hai
+bait badala gaya.
+heks sampaadak ne abhee tak koee fail streem nahin kholee hai.
+apanee lain par ek bait darj karen jise aap fail ke ant mein jodana chaahate hain. jab aapaka kaam ho jae, to usakee apanee lain par "aiof" likhen.
+maany bait nahin hai.
+nirdisht bait sankhya fail aakaar se badee nahin ho sakatee hai.
+bait hata dee gaee.
+bait sankhya sankhyaatmak nahin hai.
+nirdisht praarambh bait sankhya fail aakaar se badee nahin ho sakatee hai.
+nirdisht ant bait sankhya fail aakaar se badee nahin ho sakatee hai.
+hatae gae baits.
+heks sheeghr shailee sampaadit karen
+ek bainaree fail sampaadit karata hai
+onalain sroton se maujooda feed soochee se feed ka chayan karata hai
+feed soochee daunalod ho rahee hai...
+feed soochee daunalod karane mein viphal.
+baen teer ya daen teer kunjiyon ko dabaakar apane desh ka chayan karen. apane chayan kee pushti karane ke lie aintair dabaen.
+is desh mein {0} samaachaar srot hain.
+nambar likhakar apane pasandeeda samaachaar srot ka chayan karen. apane chayan kee pushti karane ke lie aintair dabaen.
+apane pasandeeda samaachaar srot ke lie ek feed chunen. apane chayan kee pushti karane ke lie aintair dabaen.
+krpaya dhyaan den ki is shel ka upayog karake bainaree failon ka sampaadan prayogaatmak hai aur yadi theek se upayog nahin kiya gaya to deta bhrashtaachaar ya deta haani ho sakatee hai.
+jab tak aap yah nahin jaanate ki aap kya kar rahe hain, tab tak shel lonch na karen!
+dabae gae kunjee ke lie mahatvapoorn jaanakaaree praapt karata hai. dibaging ke lie upayogee
+isakee jaanakaaree pradarshit karane ke lie ek kunjee ya kunjiyon ka sanyojan darj karen.
+dabaee gaee kunjee
+dabaaya gaya mukhy paatr
+dabae gae sanshodhak
+kunjeepatal sankshipt reeti
+heks sampaadak svatah sahejana saksham karen
+heks sampaadak svatah sahejana antaraal
+heks sampaadak svat: sahejana suvidha ko chaaloo ya band karata hai.
+shor ghanatv
+naee skreen mein likhane se pahale kitane mileesekand prateeksha karanee hai?
+pratishat jitana adhik hoga, signal utana hee shor hoga
+skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}
+saamp ka khel!
+nirapeksh ke bajaay saapeksh path ka upayog karata hai
