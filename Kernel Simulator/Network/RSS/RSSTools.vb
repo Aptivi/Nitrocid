@@ -249,8 +249,14 @@ Namespace Network.RSS
                 Console.Clear()
                 WriteWhere(DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, False, ColTypes.Neutral)
                 Write(NewLine + NewLine + "   < ", False, ColTypes.Gray)
-                WriteWhere($"{FeedListJsonCountries(SelectedCountryIndex)("name")} [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]", CInt((Console.CursorLeft + 38 - $"{FeedListJsonCountries(SelectedCountryIndex)("name")} [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]".Length) / 2), Console.CursorTop, True, ColTypes.Option)
-                WriteWhere(" >", Console.CursorLeft + 32, Console.CursorTop, False, ColTypes.Gray)
+
+                'The cursor positions for the arrow elements
+                Dim MaxLength As Integer = FeedListJsonCountries.Max(Function(x) x("name").ToString.Length)
+                Dim ItemName As String = $"{FeedListJsonCountries(SelectedCountryIndex)("name")} [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]"
+                Dim ArrowLeftXPosition As Integer = Console.CursorLeft + MaxLength + $" [{FeedListJsonCountries(SelectedCountryIndex)("iso")}]".Length
+                Dim ItemNameXPosition As Integer = Console.CursorLeft + ((ArrowLeftXPosition - Console.CursorLeft) / 2) - (ItemName.Length / 2)
+                WriteWhere(ItemName, ItemNameXPosition, Console.CursorTop, True, ColTypes.Option)
+                WriteWhere(" >", ArrowLeftXPosition, Console.CursorTop, False, ColTypes.Gray)
                 Write(NewLine + NewLine + DoTranslation("This country has {0} news sources."), True, ColTypes.Neutral, FeedListJsonCountries(SelectedCountryIndex)("newSources").Count)
 
                 'Read and get response
