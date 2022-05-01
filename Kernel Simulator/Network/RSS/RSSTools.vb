@@ -236,7 +236,7 @@ Namespace Network.RSS
                 Write(DoTranslation("Downloading feed list..."), True, ColTypes.Progress)
                 If String.IsNullOrEmpty(FeedListJsonText) Then FeedListJsonText = DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json")
                 FeedListJson = JToken.Parse(FeedListJsonText)
-                FeedListJsonCountries = FeedListJson.SelectTokens("*").ToArray
+                FeedListJsonCountries = FeedListJson.SelectTokens("*").Where(Function(c) c("newSources").Count >= 1).ToArray
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to get feed list: {0}", ex.Message)
                 WStkTrc(ex)
