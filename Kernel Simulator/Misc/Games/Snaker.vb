@@ -280,8 +280,11 @@ Namespace Misc.Games
             'Show the stage for few seconds before wiping
             If Simulation Then SleepNoBlock(SnakerStageDelay, SnakerDisplay.Snaker) Else Thread.Sleep(SnakerStageDelay)
 
-            'Reset mass
+            'Reset mass and console display
             SnakeMassPositions.Clear()
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
         End Sub
 
     End Module
