@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "百分比越大，信号越嘈杂",
     "The script is malformed. Check the script and resolve any errors: {0}": "脚本格式不正确。检查脚本并解决所有错误：{0}",
     "The snake game!": "蛇游戏！",
-    "Uses relative path instead of absolute": "使用相对路径而不是绝对路径"
+    "Uses relative path instead of absolute": "使用相对路径而不是绝对路径",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 邮件被禁用。 如果您真的想要 POP3 邮件，请重新编译支持 POP3 的应用程序。"
   }
 }

@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "7h3 6r3473r 7h3 p3rc3n7463, 7h3 n01513r 7h3 516n4l",
     "The script is malformed. Check the script and resolve any errors: {0}": "7h3 5cr1p7 15 m4lf0rm3d. ch3ck 7h3 5cr1p7 4nd r350lv3 4ny 3rr0r5: {0}",
     "The snake game!": "7h3 5n4k3 64m3!",
-    "Uses relative path instead of absolute": "u535 r3l471v3 p47h 1n5734d 0f 4b50lu73"
+    "Uses relative path instead of absolute": "u535 r3l471v3 p47h 1n5734d 0f 4b50lu73",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "p0p3 m41l 15 d154bl3d. 1f y0u r34lly w4n7 p0p3 m41l, r3-c0mp1l3 7h3 4ppl1c4710n w17h p0p3 5upp0r7."
   }
 }

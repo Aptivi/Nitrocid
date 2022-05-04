@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Chem bol'she protsent, tem shumneye signal",
     "The script is malformed. Check the script and resolve any errors: {0}": "Skript imeyet nepravil'nyy format. Prover'te stsenariy i ustranite vse oshibki: {0}",
     "The snake game!": "Zmeinaya igra!",
-    "Uses relative path instead of absolute": "Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo"
+    "Uses relative path instead of absolute": "Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "Pochta POP3 otklyuchena. Yesli vam deystvitel'no nuzhna pochta POP3, perekompiliruyte prilozheniye s podderzhkoy POP3."
   }
 }

@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Tỷ lệ phần trăm càng lớn, tín hiệu càng ồn",
     "The script is malformed. Check the script and resolve any errors: {0}": "Tập lệnh không đúng định dạng. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào: {0}",
     "The snake game!": "Trò chơi rắn!",
-    "Uses relative path instead of absolute": "Sử dụng đường dẫn tương đối thay vì tuyệt đối"
+    "Uses relative path instead of absolute": "Sử dụng đường dẫn tương đối thay vì tuyệt đối",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "Thư POP3 bị tắt. Nếu bạn thực sự muốn thư POP3, hãy biên dịch lại ứng dụng với hỗ trợ POP3."
   }
 }

@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "pratishat jitana adhik hoga, signal utana hee shor hoga",
     "The script is malformed. Check the script and resolve any errors: {0}": "skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}",
     "The snake game!": "saamp ka khel!",
-    "Uses relative path instead of absolute": "nirapeksh ke bajaay saapeksh path ka upayog karata hai"
+    "Uses relative path instead of absolute": "nirapeksh ke bajaay saapeksh path ka upayog karata hai",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "pop3 mel aksham hai. yadi aap vaastav mein pop3 mel chaahate hain, to pop3 samarthan ke saath eplikeshan ko phir se sankalit karen."
   }
 }

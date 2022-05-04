@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "the greater the percentage, the noisier the signal",
     "The script is malformed. Check the script and resolve any errors: {0}": "the script be malformed. Check the script an' resolve any errors: {0}",
     "The snake game!": "the snake game!",
-    "Uses relative path instead of absolute": "uses relative path instead o' absolute"
+    "Uses relative path instead of absolute": "uses relative path instead o' absolute",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "Pop3 mail be disabled. If ye really want pop3 mail, re-compile the application with pop3 support."
   }
 }

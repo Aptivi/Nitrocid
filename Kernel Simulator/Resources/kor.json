@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "baegbun-yul-i keulsulog sinhoga deo sikkeuleobseubnida.",
     "The script is malformed. Check the script and resolve any errors: {0}": "seukeulibteu hyeongsig-i jalmosdoeeossseubnida. seukeulibteuleul hwag-inhago olyuleul haegyeolhabnida. {0}",
     "The snake game!": "baem geim!",
-    "Uses relative path instead of absolute": "jeoldae gyeonglo daesin sangdae gyeonglo sayong"
+    "Uses relative path instead of absolute": "jeoldae gyeonglo daesin sangdae gyeonglo sayong",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 meil-eul sayonghal su eobs-seubnida. jeongmallo POP3 meil-eul wonhamyeon POP3 jiwon-eulo aepeullikeisyeon-eul dasi keompailhasibsio."
   }
 }

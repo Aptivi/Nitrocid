@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "kulama zadat alnisbat almiawiat , zadat dawda' al'iishara",
     "The script is malformed. Check the script and resolve any errors: {0}": "alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}",
     "The snake game!": "luebat althuebani!",
-    "Uses relative path instead of absolute": "yastakhdim almasar alnisbiu bdlaan min almasar almutlaq"
+    "Uses relative path instead of absolute": "yastakhdim almasar alnisbiu bdlaan min almasar almutlaq",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "tama taetil barid POP3. 'iidha kunt turid hqan barid POP3 , fa'aeidu tajmie altatbiq biastikhdam daem POP3."
   }
 }

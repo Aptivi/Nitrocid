@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "प्रतिशत जितना अधिक होगा, सिग्नल उतना ही शोर होगा",
     "The script is malformed. Check the script and resolve any errors: {0}": "स्क्रिप्ट विकृत है। स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें: {0}",
     "The snake game!": "सांप का खेल!",
-    "Uses relative path instead of absolute": "निरपेक्ष के बजाय सापेक्ष पथ का उपयोग करता है"
+    "Uses relative path instead of absolute": "निरपेक्ष के बजाय सापेक्ष पथ का उपयोग करता है",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 मेल अक्षम है। यदि आप वास्तव में POP3 मेल चाहते हैं, तो POP3 समर्थन के साथ एप्लिकेशन को फिर से संकलित करें।"
   }
 }

@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Чим більше відсоток, тим шумніший сигнал",
     "The script is malformed. Check the script and resolve any errors: {0}": "Сценарій неправильно сформований. Перевірте сценарій і виправте всі помилки: {0}",
     "The snake game!": "Гра змійка!",
-    "Uses relative path instead of absolute": "Використовує відносний шлях замість абсолютного"
+    "Uses relative path instead of absolute": "Використовує відносний шлях замість абсолютного",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "Пошта POP3 вимкнена. Якщо вам дійсно потрібна пошта POP3, перекомпілюйте програму з підтримкою POP3."
   }
 }

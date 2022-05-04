@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Čím větší procento, tím hlučnější signál",
     "The script is malformed. Check the script and resolve any errors: {0}": "Skript je poškozen. Zkontrolujte skript a vyřešte případné chyby: {0}",
     "The snake game!": "Hra had!",
-    "Uses relative path instead of absolute": "Používá relativní cestu namísto absolutní"
+    "Uses relative path instead of absolute": "Používá relativní cestu namísto absolutní",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "Pošta POP3 je zakázána. Pokud opravdu chcete poštu POP3, znovu zkompilujte aplikaci s podporou POP3."
   }
 }

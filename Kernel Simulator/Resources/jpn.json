@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "パーセンテージが大きいほど、信号のノイズが大きくなります",
     "The script is malformed. Check the script and resolve any errors: {0}": "スクリプトの形式が正しくありません。スクリプトを確認し、エラーを解決します：{0}",
     "The snake game!": "ヘビゲーム！",
-    "Uses relative path instead of absolute": "絶対パスではなく相対パスを使用"
+    "Uses relative path instead of absolute": "絶対パスではなく相対パスを使用",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3メールが無効になっています。 POP3メールが本当に必要な場合は、POP3サポートを使用してアプリケーションを再コンパイルしてください。"
   }
 }

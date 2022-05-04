@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Plus le pourcentage est élevé, plus le signal est bruyant",
     "The script is malformed. Check the script and resolve any errors: {0}": "Le script est mal formé. Vérifiez le script et résolvez les éventuelles erreurs : {0}",
     "The snake game!": "Le jeu du serpent !",
-    "Uses relative path instead of absolute": "Utilise un chemin relatif au lieu d'absolu"
+    "Uses relative path instead of absolute": "Utilise un chemin relatif au lieu d'absolu",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "La messagerie POP3 est désactivée. Si vous voulez vraiment du courrier POP3, recompilez l'application avec le support POP3."
   }
 }

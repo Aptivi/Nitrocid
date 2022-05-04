@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "كلما زادت النسبة المئوية ، زادت ضوضاء الإشارة",
     "The script is malformed. Check the script and resolve any errors: {0}": "النص غير صحيح. افحص النص البرمجي وأصلح أية أخطاء: {0}",
     "The snake game!": "لعبة الثعبان!",
-    "Uses relative path instead of absolute": "يستخدم المسار النسبي بدلاً من المسار المطلق"
+    "Uses relative path instead of absolute": "يستخدم المسار النسبي بدلاً من المسار المطلق",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "تم تعطيل بريد POP3. إذا كنت تريد حقًا بريد POP3 ، فأعد تجميع التطبيق باستخدام دعم POP3."
   }
 }

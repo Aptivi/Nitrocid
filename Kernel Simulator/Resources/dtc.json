@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Hoe groter het percentage, hoe luidruchtiger het signaal",
     "The script is malformed. Check the script and resolve any errors: {0}": "Het script is misvormd. Controleer het script en los eventuele fouten op: {0}",
     "The snake game!": "Het slangenspel!",
-    "Uses relative path instead of absolute": "Gebruikt relatief pad in plaats van absoluut"
+    "Uses relative path instead of absolute": "Gebruikt relatief pad in plaats van absoluut",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3-mail is uitgeschakeld. Als u echt POP3-mail wilt, moet u de toepassing opnieuw compileren met POP3-ondersteuning."
   }
 }

@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "Bǎifēnbǐ yuè dà, xìnhào yuè cáozá",
     "The script is malformed. Check the script and resolve any errors: {0}": "jiǎoběn géshì bù zhèngquè. Jiǎnchá jiǎoběn bìng jiějué suǒyǒu cuòwù:{0}",
     "The snake game!": "Shé yóuxì!",
-    "Uses relative path instead of absolute": "Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng"
+    "Uses relative path instead of absolute": "Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 yóujiàn bèi jìnyòng. Rúguǒ nín zhēn de xiǎng yào POP3 yóujiàn, qǐng chóngxīn biānyì zhīchí POP3 de yìngyòng chéngxù."
   }
 }

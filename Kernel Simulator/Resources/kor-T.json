@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "백분율이 클수록 신호가 더 시끄럽습니다.",
     "The script is malformed. Check the script and resolve any errors: {0}": "스크립트 형식이 잘못되었습니다. 스크립트를 확인하고 오류를 해결합니다. {0}",
     "The snake game!": "뱀 게임!",
-    "Uses relative path instead of absolute": "절대 경로 대신 상대 경로 사용"
+    "Uses relative path instead of absolute": "절대 경로 대신 상대 경로 사용",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 메일을 사용할 수 없습니다. 정말로 POP3 메일을 원하면 POP3 지원으로 애플리케이션을 다시 컴파일하십시오."
   }
 }

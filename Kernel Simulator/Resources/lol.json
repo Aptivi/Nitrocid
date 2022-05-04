@@ -1710,6 +1710,7 @@
     "The greater the percentage, the noisier the signal": "TEH GREATR TEH PERSENTAGE, TEH NOISIR TEH SIGNAL",
     "The script is malformed. Check the script and resolve any errors: {0}": "TEH SCRIPT IZ MALFORMD. CHECK TEH SCRIPT AN RESOLVE ANY ERRORS: {0}",
     "The snake game!": "TEH SNAEK GAME!",
-    "Uses relative path instead of absolute": "USEZ RELATIV PATH INSTEAD OV ABSOLUTE"
+    "Uses relative path instead of absolute": "USEZ RELATIV PATH INSTEAD OV ABSOLUTE",
+    "POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.": "POP3 MAIL IZ DISABLD. IF U RLY WANTS POP3 MAIL, RE-COMPILE TEH APPLICASHUN WIF POP3 SUPPORT."
   }
 }
