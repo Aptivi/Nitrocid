@@ -1707,3 +1707,4 @@ Maggiore è la percentuale, più rumoroso è il segnale
 La sceneggiatura non è corretta. Controlla lo script e risolvi eventuali errori: {0}
 Il gioco del serpente!
 Usa il percorso relativo anziché assoluto
+La posta POP3 è disabilitata. Se vuoi davvero la posta POP3, ricompila l'applicazione con il supporto POP3.

@@ -1707,3 +1707,4 @@ Hoe groter het percentage, hoe luidruchtiger het signaal
 Het script is misvormd. Controleer het script en los eventuele fouten op: {0}
 Het slangenspel!
 Gebruikt relatief pad in plaats van absoluut
+POP3-mail is uitgeschakeld. Als u echt POP3-mail wilt, moet u de toepassing opnieuw compileren met POP3-ondersteuning.

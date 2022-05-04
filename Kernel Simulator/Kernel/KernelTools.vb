@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
+Imports MailKit.Net.Pop3
 Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
@@ -329,7 +330,9 @@ Namespace Kernel
             'Disconnect from mail
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
-            POP3_Client.Disconnect(True)
+#If POP3Feature Then
+            POP3_Client?.Disconnect(True)
+#End If
 
             'Unload all splashes
             UnloadSplashes()
@@ -354,6 +357,11 @@ Namespace Kernel
 
             'Install cancellation handler
             If Not CancellationHandlerInstalled Then AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+
+            'Initialize POP3 mail if we're not on Mono
+#If POP3Feature Then
+            If Not IsOnMonoRuntime() Then POP3_Client = New Pop3Client
+#End If
 
             'Initialize aliases
             InitAliases()
@@ -638,6 +646,10 @@ Namespace Kernel
 
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
             CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG")
+#End If
+
+#If POP3Feature Then
+            CompilerVars.Add("POP3Feature")
 #End If
 
             'Return the compiler vars

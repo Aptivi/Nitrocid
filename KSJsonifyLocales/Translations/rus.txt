@@ -1707,3 +1707,4 @@ Chem bol'she protsent, tem shumneye signal
 Skript imeyet nepravil'nyy format. Prover'te stsenariy i ustranite vse oshibki: {0}
 Zmeinaya igra!
 Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo
+Pochta POP3 otklyuchena. Yesli vam deystvitel'no nuzhna pochta POP3, perekompiliruyte prilozheniye s podderzhkoy POP3.

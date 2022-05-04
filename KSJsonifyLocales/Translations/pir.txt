@@ -1707,3 +1707,4 @@ the greater the percentage, the noisier the signal
 the script be malformed. Check the script an' resolve any errors: {0}
 the snake game!
 uses relative path instead o' absolute
+Pop3 mail be disabled. If ye really want pop3 mail, re-compile the application with pop3 support.

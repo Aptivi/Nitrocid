@@ -1707,3 +1707,4 @@ baegbun-yul-i keulsulog sinhoga deo sikkeuleobseubnida.
 seukeulibteu hyeongsig-i jalmosdoeeossseubnida. seukeulibteuleul hwag-inhago olyuleul haegyeolhabnida. {0}
 baem geim!
 jeoldae gyeonglo daesin sangdae gyeonglo sayong
+POP3 meil-eul sayonghal su eobs-seubnida. jeongmallo POP3 meil-eul wonhamyeon POP3 jiwon-eulo aepeullikeisyeon-eul dasi keompailhasibsio.

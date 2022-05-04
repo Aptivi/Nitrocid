@@ -1707,3 +1707,4 @@ pratishat jitana adhik hoga, signal utana hee shor hoga
 skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}
 saamp ka khel!
 nirapeksh ke bajaay saapeksh path ka upayog karata hai
+pop3 mel aksham hai. yadi aap vaastav mein pop3 mel chaahate hain, to pop3 samarthan ke saath eplikeshan ko phir se sankalit karen.

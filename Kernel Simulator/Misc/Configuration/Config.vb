@@ -1181,7 +1181,7 @@ Namespace Misc.Configuration
                 Mail_MaxMessagesInPage = If(Integer.TryParse(ConfigToken("Network")?("Maximum number of e-mails in one page"), 0), ConfigToken("Network")?("Maximum number of e-mails in one page"), 10)
                 Mail_POP3PromptStyle = If(ConfigToken("Network")?("POP3 prompt style for mail"), "")
                 Mail_POP3PingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send POP3 ping interval"), 0), ConfigToken("Network")?("Send POP3 ping interval"), 30000)
-                Mail_UsePop3 = If(ConfigToken("Network")?("Use POP3"), False)
+                If Not IsOnMonoRuntime() Then Mail_UsePop3 = If(ConfigToken("Network")?("Use POP3"), False)
                 Mail_ShowProgress = If(ConfigToken("Network")?("Show mail transfer progress"), False)
                 Mail_ProgressStyle = If(ConfigToken("Network")?("Mail transfer progress"), "")
                 Mail_ProgressStyleSingle = If(ConfigToken("Network")?("Mail transfer progress (single)"), "")

@@ -1707,3 +1707,4 @@ Je größer der Prozentsatz, desto verrauschter das Signal
 Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie alle Fehler: {0}
 Das Schlangenspiel!
 Verwendet einen relativen Pfad anstelle eines absoluten
+POP3-Mail ist deaktiviert. Wenn Sie wirklich POP3-Mail wünschen, kompilieren Sie die Anwendung mit POP3-Unterstützung neu.

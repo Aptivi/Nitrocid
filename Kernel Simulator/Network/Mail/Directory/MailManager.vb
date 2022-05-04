@@ -71,6 +71,7 @@ Namespace Network.Mail.Directory
                             MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
                         End SyncLock
                     Else
+#If POP3Feature Then
                         SyncLock POP3_Client.SyncRoot
                             Dim Msg As MimeMessage
                             Msg = POP3_Client.GetMessage(i)
@@ -78,6 +79,9 @@ Namespace Network.Mail.Directory
                             MsgSubject = Msg.Subject
                             MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
                         End SyncLock
+#Else
+                        Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
+#End If
                     End If
                     Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
 
@@ -136,9 +140,13 @@ Namespace Network.Mail.Directory
                     End If
                 End SyncLock
             Else
+#If POP3Feature Then
                 SyncLock POP3_Client.SyncRoot
                     POP3_Client.DeleteMessage(Message)
                 End SyncLock
+#Else
+                Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
+#End If
             End If
             Return True
         End Function

@@ -44,7 +44,7 @@ Namespace Network.Mail.Transfer
         ''' [SMTP] Tries to keep the connection going
         ''' </summary>
         Sub SMTPKeepConnection()
-            'Every 30 seconds, send a ping to IMAP server
+            'Every 30 seconds, send a ping to SMTP server
             While SMTP_Client.IsConnected
                 Thread.Sleep(Mail_SmtpPingInterval)
                 If SMTP_Client.IsConnected Then
@@ -62,7 +62,8 @@ Namespace Network.Mail.Transfer
         ''' [POP3] Tries to keep the connection going
         ''' </summary>
         Sub POP3KeepConnection()
-            'Every 30 seconds, send a ping to IMAP server
+#If POP3Feature Then
+            'Every 30 seconds, send a ping to POP3 server
             While POP3_Client.IsConnected
                 Thread.Sleep(Mail_POP3PingInterval)
                 If POP3_Client.IsConnected Then
@@ -74,6 +75,7 @@ Namespace Network.Mail.Transfer
                     Thread.CurrentThread.Abort()
                 End If
             End While
+#End If
         End Sub
 
     End Module

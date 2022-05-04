@@ -1707,3 +1707,4 @@ Tỷ lệ phần trăm càng lớn, tín hiệu càng ồn
 Tập lệnh không đúng định dạng. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào: {0}
 Trò chơi rắn!
 Sử dụng đường dẫn tương đối thay vì tuyệt đối
+Thư POP3 bị tắt. Nếu bạn thực sự muốn thư POP3, hãy biên dịch lại ứng dụng với hỗ trợ POP3.

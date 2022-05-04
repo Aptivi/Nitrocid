@@ -1707,3 +1707,4 @@ kulama zadat alnisbat almiawiat , zadat dawda' al'iishara
 alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}
 luebat althuebani!
 yastakhdim almasar alnisbiu bdlaan min almasar almutlaq
+tama taetil barid POP3. 'iidha kunt turid hqan barid POP3 , fa'aeidu tajmie altatbiq biastikhdam daem POP3.

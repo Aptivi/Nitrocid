@@ -1707,3 +1707,4 @@ Kolik milisekund čekat před zápisem na novou obrazovku?
 Skript je poškozen. Zkontrolujte skript a vyřešte případné chyby: {0}
 Hra had!
 Používá relativní cestu namísto absolutní
+Pošta POP3 je zakázána. Pokud opravdu chcete poštu POP3, znovu zkompilujte aplikaci s podporou POP3.

@@ -1707,3 +1707,4 @@ Quanto maior a porcentagem, mais ruidoso o sinal
 O roteiro está malformado. Verifique o script e resolva quaisquer erros: {0}
 O jogo da cobra!
 Usa caminho relativo em vez de absoluto
+O correio POP3 está desabilitado. Se você realmente deseja correio POP3, recompile o aplicativo com suporte a POP3.

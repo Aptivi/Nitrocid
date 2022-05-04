@@ -54,5 +54,12 @@ Namespace Misc.Platform
             End If
         End Function
 
+        ''' <summary>
+        ''' Are we running KS on Mono?
+        ''' </summary>
+        Public Function IsOnMonoRuntime() As Boolean
+            Return Type.GetType("Mono.Runtime") IsNot Nothing
+        End Function
+
     End Module
 End Namespace

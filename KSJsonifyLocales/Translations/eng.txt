@@ -1707,3 +1707,4 @@ The greater the percentage, the noisier the signal
 The script is malformed. Check the script and resolve any errors: {0}
 The snake game!
 Uses relative path instead of absolute
+POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.

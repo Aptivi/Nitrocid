@@ -1707,3 +1707,4 @@ Chym bilʹshe vidsotok, tym shumnishyy syhnal
 Stsenariy nepravylʹno sformovanyy. Perevirte stsenariy i vypravte vsi pomylky: {0}
 Hra zmiyka!
 Vykorystovuye vidnosnyy shlyakh zamistʹ absolyutnoho
+Poshta POP3 vymknena. Yakshcho vam diysno potribna poshta POP3, perekompilyuyte prohramu z pidtrymkoyu POP3.

@@ -62,7 +62,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>

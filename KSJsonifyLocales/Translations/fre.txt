@@ -1707,3 +1707,4 @@ Plus le pourcentage est élevé, plus le signal est bruyant
 Le script est mal formé. Vérifiez le script et résolvez les éventuelles erreurs : {0}
 Le jeu du serpent !
 Utilise un chemin relatif au lieu d'absolu
+La messagerie POP3 est désactivée. Si vous voulez vraiment du courrier POP3, recompilez l'application avec le support POP3.
