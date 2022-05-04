@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>KS</id>
-    <version>0.0.21.1</version>
+    <version>0.0.21.2</version>
     <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
 
     <title>Kernel Simulator</title>
