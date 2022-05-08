@@ -97,7 +97,7 @@ Namespace Misc.Splash
                         Wdbg(DebugLevel.I, "- Progress Report Write Position Y: {0}", ProgressReportWritePositionY)
                         Wdbg(DebugLevel.I, "Installing splash...")
                         Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY, SplashInstance)
-                        InstalledSplashes.Add(Name, InstalledSplash)
+                        InstalledSplashes.AddOrModify(Name, InstalledSplash)
                     Else
                         Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath)
                     End If
