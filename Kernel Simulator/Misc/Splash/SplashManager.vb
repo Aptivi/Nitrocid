@@ -25,7 +25,7 @@ Namespace Misc.Splash
     Public Module SplashManager
 
         Public SplashName As String = "Simple"
-        Friend SplashThread As New Thread(Sub() CurrentSplash.Display())
+        Friend SplashThread As New KernelThread("Kernel Splash Thread", False, Sub() CurrentSplash.Display())
         Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
                                                                                  {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
                                                                                  {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)}}
@@ -156,7 +156,8 @@ Namespace Misc.Splash
             If EnableSplash Then
                 Console.CursorVisible = False
                 CurrentSplash.Opening()
-                If Not SplashThread.IsAlive Then SplashThread.Start()
+                SplashThread.Stop()
+                SplashThread.Start()
             End If
         End Sub
 
@@ -166,7 +167,7 @@ Namespace Misc.Splash
         Sub CloseSplash()
             If EnableSplash Then
                 CurrentSplash.Closing()
-                SplashThread = New Thread(Sub() CurrentSplash.Display())
+                SplashThread.Stop()
                 Console.CursorVisible = True
             End If
             _KernelBooted = True
