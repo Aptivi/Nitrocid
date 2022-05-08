@@ -39,11 +39,12 @@ Namespace Misc.Screensaver.Customized
                 If Path.GetExtension(file) = ".dll" Then
                     'Try loading the screensaver
                     Try
-                        Wdbg(DebugLevel.W, "{0} is a valid screensaver. Generating...", file)
+                        Wdbg(DebugLevel.W, "{0} is probably a valid screensaver. Generating...", file)
                         CustomSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
-                        DoneFlag = True
+                        Wdbg(DebugLevel.W, "Is {0} actually a valid screensaver? {1}", file, CustomSaver IsNot Nothing)
+                        If CustomSaver IsNot Nothing Then DoneFlag = True
                     Catch ex As ReflectionTypeLoadException
-                        Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0}: {1}", file, ex.Message)
+                        Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0} because of reflection failure: {1}", file, ex.Message)
                         WStkTrc(ex)
                         ReportProgress(DoTranslation("Screensaver can't be loaded because of the following: "), 0, ColTypes.Error)
                         For Each LoaderException As Exception In ex.LoaderExceptions
@@ -51,6 +52,9 @@ Namespace Misc.Screensaver.Customized
                             WStkTrc(LoaderException)
                             ReportProgress(LoaderException.Message, 0, ColTypes.Error)
                         Next
+                    Catch ex As Exception
+                        Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0}: {1}", file, ex.Message)
+                        WStkTrc(ex)
                     End Try
 
                     'Now, initialize the screensaver
