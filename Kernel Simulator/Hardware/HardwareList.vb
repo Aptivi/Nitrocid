@@ -119,26 +119,26 @@ Namespace Hardware
                 If FieldValueDict IsNot Nothing Then
                     For Each HardwareKey As String In FieldValueDict.Keys
                         Write("- {0}: ", True, ColTypes.ListEntry, HardwareKey)
-                        For Each HardwareValueFieldInfo As FieldInfo In FieldValueDict(HardwareKey).GetType.GetFields
-                            Write("  - {0}: ", False, ColTypes.ListEntry, HardwareValueFieldInfo.Name)
-                            If Field.Name = "HDD" And HardwareValueFieldInfo.Name = "Partitions" Then
+                        For Each HardwareValuePropertyInfo As PropertyInfo In FieldValueDict(HardwareKey).GetType.GetProperties
+                            Write("  - {0}: ", False, ColTypes.ListEntry, HardwareValuePropertyInfo.Name)
+                            If Field.Name = "HDD" And HardwareValuePropertyInfo.Name = "Partitions" Then
                                 Console.WriteLine()
-                                Dim Partitions As IDictionary = TryCast(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), IDictionary)
+                                Dim Partitions As IDictionary = TryCast(HardwareValuePropertyInfo.GetValue(FieldValueDict(HardwareKey)), IDictionary)
                                 If Partitions IsNot Nothing Then
                                     For Each PartitionKey As String In Partitions.Keys
                                         Write("    - {0}: ", True, ColTypes.ListEntry, PartitionKey)
-                                        For Each PartitionValueFieldInfo As FieldInfo In Partitions(PartitionKey).GetType.GetFields
-                                            Write("      - {0}: ", False, ColTypes.ListEntry, PartitionValueFieldInfo.Name)
-                                            Write(PartitionValueFieldInfo.GetValue(Partitions(PartitionKey)), True, ColTypes.ListValue)
+                                        For Each PartitionValuePropertyInfo As PropertyInfo In Partitions(PartitionKey).GetType.GetProperties
+                                            Write("      - {0}: ", False, ColTypes.ListEntry, PartitionValuePropertyInfo.Name)
+                                            Write(PartitionValuePropertyInfo.GetValue(Partitions(PartitionKey)), True, ColTypes.ListValue)
                                         Next
                                     Next
                                 Else
                                     Write(DoTranslation("Partitions not parsed to list."), True, ColTypes.Error)
                                 End If
-                            ElseIf Field.Name = "CPU" And HardwareValueFieldInfo.Name = "Flags" Then
-                                Write(String.Join(", ", TryCast(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), String())), True, ColTypes.ListValue)
+                            ElseIf Field.Name = "CPU" And HardwareValuePropertyInfo.Name = "Flags" Then
+                                Write(String.Join(", ", TryCast(HardwareValuePropertyInfo.GetValue(FieldValueDict(HardwareKey)), String())), True, ColTypes.ListValue)
                             Else
-                                Write(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), True, ColTypes.ListValue)
+                                Write(HardwareValuePropertyInfo.GetValue(FieldValueDict(HardwareKey)), True, ColTypes.ListValue)
                             End If
                         Next
                     Next
