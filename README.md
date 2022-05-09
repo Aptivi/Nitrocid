@@ -8,7 +8,7 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
-WARNING: Second-generation versions of KS is not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
+WARNING: Second-generation versions of KS are not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
 
 ## Build Status
 
