@@ -93,6 +93,8 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 
 ## How to Build
 
+NOTE: `KS.DotNetSdk.sln` is not ready yet, so builds using .NET SDK are expected to fail.
+
 This section covers how to build Kernel Simulator on your system. Please scroll down to your platform below.
 
 ### Visual Studio 2017+
@@ -114,14 +116,14 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 4. When the main menu opens, choose `Check out from Version Control` and then `Git`.
 5. Write on the URL `https://github.com/EoflaOE/Kernel-Simulator.git` and press `Test` to verify your connectivity.
 6. Press Clone, and git will download the repo, then Rider will open up. It might take a few minutes depending on your Internet connection.
-7. You will get some errors about the inability to resolve `My.Computer`. Ignore these, as they won't interrupt the compilation.
+7. Make sure that you're building `Kernel Simulator.sln` as `KS.DotNetSdk.sln` is not ready yet
 8. Click on the hammer button to build, the bug button (breakpoints enabled), or the Run button (breakpoints disabled - CTRL+F5 on VS). When the Edit configuration screen appears, tick the checkbox named `Use External Console`.
 9. If you used the hammer button, then open your file explorer, go to the build directory, and double-click on the executable file.
 
 ### MonoDevelop
 
 1. Install Mono Runtime, `libmono-microsoft-visualbasic10.0-cil`, and MonoDevelop.
-2. After installation, extract the source code, open MonoDevelop, and click on `Open...`
+2. After installation, extract the source code, open MonoDevelop, and click on `Open...` to navigate to `Kernel Simulator.sln`
 3. Click on the `Build` menu bar, and click on build button to compile.
 4. In your file manager, go to the build directory and then double-click on the executable file.
 
