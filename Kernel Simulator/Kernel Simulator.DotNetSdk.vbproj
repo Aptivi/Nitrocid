@@ -1,0 +1,286 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- KS Nuget Information -->
+    <PackageId>KS</PackageId>
+    <Authors>EoflaOE</Authors>
+    <Title>Kernel Simulator</Title>
+    <PackageDescription>Simulates our future-planned kernel</PackageDescription>
+    <PackageTags>kernel;simulator;vb.net</PackageTags>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageOutputPath>KSBuild</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <!-- KS Nuget Information End -->
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KS</RootNamespace>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
+    <StartupObject>KS.Kernel.Kernel</StartupObject>
+    <AssemblyName>Kernel Simulator</AssemblyName>
+    <Description>Simulates our future kernel</Description>
+    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
+    <MyType>Console</MyType>
+    <OutputPath>KSBuild\</OutputPath>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <GenerateManifests>false</GenerateManifests>
+    <Version>0.0.21.2</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Addresstigator">
+      <Version>0.1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Crc32.NET">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Extensification">
+      <Version>2022.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Extensification.Legacy">
+      <Version>2022.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Figgle">
+      <Version>0.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="FluentFTP">
+      <Version>37.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.42</Version>
+    </PackageReference>
+    <PackageReference Include="Inxi.NET">
+      <Version>2022.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="MadMilkman.Ini">
+      <Version>1.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="MailKit">
+      <Version>3.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="ManagedWeatherMap">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2020.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Extensification.DictionaryExts" />
+    <Import Include="Extensification.StringExts" />
+    <Import Include="FluentFTP" />
+    <Import Include="FluentFTP.Helpers" />
+    <Import Include="KS.ConsoleBase" />
+    <Import Include="KS.ConsoleBase.Themes" />
+    <Import Include="KS.ConsoleBase.Themes.Studio" />
+    <Import Include="KS.Files" />
+    <Import Include="KS.Kernel" />
+    <Import Include="KS.Languages" />
+    <Import Include="KS.Login" />
+    <Import Include="KS.Misc.Platform" />
+    <Import Include="KS.Misc.Probers" />
+    <Import Include="KS.Misc.Threading" />
+    <Import Include="KS.Misc.Writers.ConsoleWriters" />
+    <Import Include="KS.Misc.Writers.DebugWriters" />
+    <Import Include="KS.Misc.Writers.FancyWriters" />
+    <Import Include="KS.Shell" />
+    <Import Include="KS.Shell.ShellBase" />
+    <Import Include="MadMilkman.Ini" />
+    <Import Include="Microsoft.VisualBasic.Constants" />
+    <Import Include="Newtonsoft.Json" />
+    <Import Include="Renci.SshNet" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Net" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data\ConsoleColorsData.json" />
+    <None Include="Resources\Data\SplashSettingsEntries.json" />
+    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
+    <None Include="Resources\Data\SettingsEntries.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="ks-converter.1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-jl.1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-jl.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-jl.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-converter.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks-converter.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks.1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks.desktop">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ks.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Themes\Aquatic.json" />
+    <None Include="Resources\Themes\Bloody.json" />
+    <None Include="Resources\Themes\Blue Power.json" />
+    <None Include="Resources\Themes\Bluesome.json" />
+    <None Include="Resources\Themes\Dawn Aurora.json" />
+    <None Include="Resources\Themes\Fire.json" />
+    <None Include="Resources\Themes\Grape Kiwi.json" />
+    <None Include="Resources\Themes\Grape.json" />
+    <None Include="Resources\Themes\Grays.json" />
+    <None Include="Resources\Themes\Green Mix.json" />
+    <None Include="Resources\Themes\Grink.json" />
+    <None Include="Resources\Themes\Lemon.json" />
+    <None Include="Resources\Themes\Light Planks.json" />
+    <None Include="Resources\Themes\Materialistic.json" />
+    <None Include="Resources\Themes\Mint Gum.json" />
+    <None Include="Resources\Themes\Mint.json" />
+    <None Include="Resources\Themes\Mintback.json" />
+    <None Include="Resources\Themes\Mintish.json" />
+    <None Include="Resources\Themes\Planted Wood.json" />
+    <None Include="Resources\Themes\Purlow.json" />
+    <None Include="Resources\Themes\Red Breeze.json" />
+    <None Include="Resources\Themes\Reddish.json" />
+    <None Include="Resources\Themes\Tealed.json" />
+    <None Include="Resources\Themes\Breeze.json" />
+    <None Include="Resources\Themes\BreezeDark.json" />
+    <None Include="Resources\Themes\BrandingBlue.json" />
+    <None Include="Resources\Themes\BrandingPurple.json" />
+    <None Include="Resources\Themes\AyuDark.json" />
+    <None Include="Resources\Themes\AyuLight.json" />
+    <None Include="Resources\Themes\AyuMirage.json" />
+    <None Include="Resources\Themes\Metallic.json" />
+    <None Include="Resources\Themes\NeonBreeze.json" />
+    <None Include="Resources\Themes\Neutralized.json" />
+    <None Include="Resources\Themes\Orange Sea.json" />
+    <None Include="Resources\Themes\Pastel 1.json" />
+    <None Include="Resources\Themes\Pastel 2.json" />
+    <None Include="Resources\Themes\Pastel 3.json" />
+    <None Include="Resources\Themes\SolarizedDark.json" />
+    <None Include="Resources\Themes\SolarizedLight.json" />
+    <None Include="Resources\Themes\Windows11.json" />
+    <None Include="Resources\Themes\Windows11Light.json" />
+    <None Include="Resources\Themes\Wood.json" />
+    <None Include="Resources\Themes\YellowBG.json" />
+    <None Include="Resources\Themes\YellowFG.json" />
+    <None Include="Resources\Themes\3Y-Diamond.json" />
+    <None Include="Resources\Themes\BedOS.json" />
+    <None Include="Resources\Themes\BlackOnWhite.json" />
+    <None Include="Resources\Themes\Bluespire.json" />
+    <None Include="Resources\Themes\Debian.json" />
+    <None Include="Resources\Themes\Default.json" />
+    <None Include="Resources\Themes\GrayOnYellow.json" />
+    <None Include="Resources\Themes\GTASA.json" />
+    <None Include="Resources\Themes\Hacker.json" />
+    <None Include="Resources\Themes\LinuxColoredDef.json" />
+    <None Include="Resources\Themes\LinuxUncolored.json" />
+    <None Include="Resources\Themes\NFSHP-Cop.json" />
+    <None Include="Resources\Themes\NFSHP-Racer.json" />
+    <None Include="Resources\Themes\RedConsole.json" />
+    <None Include="Resources\Themes\TealerOS.json" />
+    <None Include="Resources\Themes\Ubuntu.json" />
+    <None Include="Resources\Themes\TrafficLight.json" />
+    <None Include="Resources\Themes\Windows95.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
