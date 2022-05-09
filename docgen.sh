@@ -49,13 +49,16 @@ fi
 
 # Pack documentation
 echo Packing documentation...
-"$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-doc.rar "docs/" >> ~/tmp/buildandpack.log
+"$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-doc.rar "docs/" > ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
 fi
 
 # Inform success
+rm -rf "DocGen/api" >> ~/tmp/buildandpack.log
+rm -rf "DocGen/obj" >> ~/tmp/buildandpack.log
+rm -rf "docs" >> ~/tmp/buildandpack.log
 mv ~/tmp/$ksversion-doc.rar .
 echo Build and pack successful.
 exit 0

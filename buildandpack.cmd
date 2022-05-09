@@ -67,6 +67,9 @@ rmdir /S /Q "KSTests\KSTest" >> %temp%/buildandpack.log 2>&1
 rmdir /S /Q "KSTests\obj\" >> %temp%/buildandpack.log 2>&1
 rmdir /S /Q "KSJsonifyLocales\obj\" >> %temp%/buildandpack.log 2>&1
 rmdir /S /Q "KSConverter\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "DocGen\api\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "DocGen\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "docs\" >> %temp%/buildandpack.log 2>&1
 echo Packing source using rar...
 "%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 -x.git -x.vs %temp%/%ksversion%-src.rar >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packsrctar

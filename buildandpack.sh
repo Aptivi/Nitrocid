@@ -76,12 +76,15 @@ fi
 
 # Pack source
 echo Packing source...
-rm -r "Kernel Simulator/KSBuild" >> ~/tmp/buildandpack.log
-rm -r "Kernel Simulator/obj" >> ~/tmp/buildandpack.log
-rm -r "KSTests/KSTest" >> ~/tmp/buildandpack.log
-rm -r "KSTests/obj" >> ~/tmp/buildandpack.log
-rm -r "KSJsonifyLocales/obj" >> ~/tmp/buildandpack.log
-rm -r "KSConverter/obj" >> ~/tmp/buildandpack.log
+rm -rf "Kernel Simulator/KSBuild" >> ~/tmp/buildandpack.log
+rm -rf "Kernel Simulator/obj" >> ~/tmp/buildandpack.log
+rm -rf "KSTests/KSTest" >> ~/tmp/buildandpack.log
+rm -rf "KSTests/obj" >> ~/tmp/buildandpack.log
+rm -rf "KSJsonifyLocales/obj" >> ~/tmp/buildandpack.log
+rm -rf "KSConverter/obj" >> ~/tmp/buildandpack.log
+rm -rf "DocGen/api" >> ~/tmp/buildandpack.log
+rm -rf "DocGen/obj" >> ~/tmp/buildandpack.log
+rm -rf "docs" >> ~/tmp/buildandpack.log
 "$rarpath" a -ep1 -r -m5 -x.git -x.vs ~/tmp/$ksversion-src.rar >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Packing source using rar failed.

@@ -35,19 +35,22 @@ goto :finished
 
 :build
 echo Building Kernel Simulator Documentation...
-%ProgramData%\chocolatey\bin\docfx.exe "DocGen\docfx.json" >> %temp%/buildandpack.log 2>&1
+%ProgramData%\chocolatey\bin\docfx.exe "DocGen\docfx.json" > %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :pack
 echo There was an error trying to build documentation (%errorlevel%).
 goto :finished
 
 :pack
-echo Packing binary...
+echo Packing documentation...
 "%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-doc.rar "docs\" >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :finalize
 echo There was an error trying to pack documentation (%errorlevel%).
 goto :finished
 
 :finalize
+rmdir /S /Q "DocGen\api\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "DocGen\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "docs\" >> %temp%/buildandpack.log 2>&1
 move %temp%\%ksversion%-doc.rar >> %temp%/buildandpack.log 2>&1
 echo Build and pack successful.
 goto :finished
