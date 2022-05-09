@@ -35,6 +35,7 @@ Namespace Shell.Shells
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             'Handle the RSS feed link provided by user
+            Dim BailFromEnter As Boolean = False
             Dim OldRSSFeedLink As String = ""
             Dim FeedUrl As String = ""
             If ShellArgs.Length > 0 Then
@@ -42,86 +43,88 @@ Namespace Shell.Shells
             End If
             RSSFeedLink = FeedUrl
 
-            While Not Bail
-                Try
-Begin:
-                    If String.IsNullOrWhiteSpace(RSSFeedLink) Then
-                        Do While String.IsNullOrWhiteSpace(RSSFeedLink)
-                            Try
-                                If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
-                                    Write(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
-                                Else
-                                    Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
-                                End If
-                                RSSFeedLink = Console.ReadLine
-                                RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
-                                RSSFeedLink = RSSFeedInstance.FeedUrl
-                                OldRSSFeedLink = RSSFeedLink
-                            Catch taex As ThreadAbortException
-                                CancelRequested = False
-                                Bail = True
-                                Exit While
-                            Catch ex As Exception
-                                Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
-                                WStkTrc(ex)
-                                Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
-                                RSSFeedLink = ""
-                            End Try
-                        Loop
-                    Else
-                        'Make a new RSS feed instance
+            Do Until BailFromEnter
+                If String.IsNullOrWhiteSpace(RSSFeedLink) Then
+                    Do While String.IsNullOrWhiteSpace(RSSFeedLink)
                         Try
-                            If OldRSSFeedLink <> RSSFeedLink Then
-                                If RSSFeedLink = "select" Then
-                                    OpenFeedSelector()
-                                End If
-                                RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
-                                RSSFeedLink = RSSFeedInstance.FeedUrl
+                            If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
+                                Write(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
+                            Else
+                                Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
                             End If
+                            RSSFeedLink = Console.ReadLine
+                            RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
+                            RSSFeedLink = RSSFeedInstance.FeedUrl
                             OldRSSFeedLink = RSSFeedLink
+                            BailFromEnter = True
                         Catch taex As ThreadAbortException
                             CancelRequested = False
+                            BailFromEnter = True
                             Bail = True
-                            Exit While
                         Catch ex As Exception
-                            Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
+                            Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
                             WStkTrc(ex)
                             Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                             RSSFeedLink = ""
-                            GoTo Begin
                         End Try
-
-                        'Send ping to keep the connection alive
-                        If Not RSSKeepAlive And Not RSSRefresher.IsAlive And RSSRefreshFeeds Then RSSRefresher.Start()
-                        Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
-
-                        'See UESHShell.vb for more info
-                        SyncLock GetCancelSyncLock(ShellType)
-                            'Prepare for prompt
-                            If DefConsoleOut IsNot Nothing Then
-                                Console.SetOut(DefConsoleOut)
+                    Loop
+                Else
+                    'Make a new RSS feed instance
+                    Try
+                        If OldRSSFeedLink <> RSSFeedLink Then
+                            If RSSFeedLink = "select" Then
+                                OpenFeedSelector()
                             End If
-                            Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
-                            If RSSShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
-                            SetInputColor()
-
-                            'Raise the event
-                            KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
-                        End SyncLock
-
-                        'Prompt for command
-                        Dim WrittenCommand As String = Console.ReadLine
-                        If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
-                            KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
-                            GetLine(WrittenCommand, False, "", ShellType.RSSShell)
-                            KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
+                            RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
+                            RSSFeedLink = RSSFeedInstance.FeedUrl
                         End If
+                        OldRSSFeedLink = RSSFeedLink
+                        BailFromEnter = True
+                    Catch taex As ThreadAbortException
+                        CancelRequested = False
+                        BailFromEnter = True
+                        Bail = True
+                    Catch ex As Exception
+                        Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
+                        WStkTrc(ex)
+                        Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
+                        RSSFeedLink = ""
+                    End Try
+                End If
+            Loop
+
+            While Not Bail
+                Try
+                    'Send ping to keep the connection alive
+                    If Not RSSKeepAlive And Not RSSRefresher.IsAlive And RSSRefreshFeeds Then RSSRefresher.Start()
+                    Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
+
+                    'See UESHShell.vb for more info
+                    SyncLock GetCancelSyncLock(ShellType)
+                        'Prepare for prompt
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
+                        End If
+                        Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
+                        If RSSShellPromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                        SetInputColor()
+
+                        'Raise the event
+                        KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)
+                    End SyncLock
+
+                    'Prompt for command
+                    Dim WrittenCommand As String = Console.ReadLine
+                    If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
+                        GetLine(WrittenCommand, False, "", ShellType.RSSShell)
+                        KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                     End If
                 Catch taex As ThreadAbortException
                     CancelRequested = False
