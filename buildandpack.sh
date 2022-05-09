@@ -51,7 +51,7 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$msbuildpath" -t:restore > ~/tmp/buildandpack.log
+"$msbuildpath" "Kernel Simulator.sln" -t:restore > ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -59,7 +59,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$msbuildpath" -p:Configuration=Release >> ~/tmp/buildandpack.log
+"$msbuildpath" "Kernel Simulator.sln" -p:Configuration=Release >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1

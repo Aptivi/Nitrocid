@@ -1,18 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- KS NuGet Information -->
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <StartupObject>KS.Kernel.Kernel</StartupObject>
-    <RootNamespace>KS</RootNamespace>
-    <AssemblyName>Kernel Simulator</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
     <Version>0.0.21.4</Version>
     <Authors>EoflaOE</Authors>
@@ -34,27 +23,52 @@
     <RepositoryType>git</RepositoryType>
     <!-- Dependencies set up -->
     <Dependencies>
-      <dependency id="MadMilkman.Ini" version="1.0.6.0" />
-      <dependency id="FluentFTP" version="37.0.2" />
-      <dependency id="Newtonsoft.Json" version="13.0.1" />
-      <dependency id="SSH.NET" version="2020.0.1" />
-      <dependency id="MailKit" version="3.2.0" />
+      <dependency id="Addresstigator" version="0.1.0.1" />
+      <dependency id="Crc32.NET" version="1.2.0" />
       <dependency id="Extensification" version="2022.0.0" />
       <dependency id="Extensification.Legacy" version="2022.0.0" />
-      <dependency id="Inxi.NET" version="2022.1.0.1" />
-      <dependency id="HtmlAgilityPack" version="1.11.42" />
-      <dependency id="Crc32.NET" version="1.2.0" />
       <dependency id="Figgle" version="0.4.0" />
+      <dependency id="FluentFTP" version="37.0.2" />
+      <dependency id="HtmlAgilityPack" version="1.11.42" />
+      <dependency id="Inxi.NET" version="2022.1.0.1" />
+      <dependency id="MadMilkman.Ini" version="1.0.6.0" />
+      <dependency id="MailKit" version="3.2.0" />
       <dependency id="ManagedWeatherMap" version="1.0.0" />
-      <dependency id="Addresstigator" version="0.1.0.1" />
+      <dependency id="Newtonsoft.Json" version="13.0.1" />
+      <dependency id="SSH.NET" version="2020.0.1" />
     </Dependencies>
-    <!-- KS Nuget Information End -->
   </PropertyGroup>
+  <!-- KS NuGet Information End -->
+  
+  <!-- KS General Information -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>KS.Kernel.Kernel</StartupObject>
+    <RootNamespace>KS</RootNamespace>
+    <AssemblyName>Kernel Simulator</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Console</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <OptionCompare>Binary</OptionCompare>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
+    <OutputPath>KSBuild\</OutputPath>
+  </PropertyGroup>
+  <!-- KS General Information End -->
+  
+  <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
     <DebugType>full</DebugType>
@@ -67,7 +81,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
@@ -76,27 +89,9 @@
     <Prefer32Bit>true</Prefer32Bit>
     <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup>
-    <OptionExplicit>On</OptionExplicit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
-  </PropertyGroup>
+  <!-- KS Platform Information End -->
+  
+  <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Addresstigator">
       <Version>0.1.0.1</Version>
@@ -142,6 +137,9 @@
       <Version>2020.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <!-- KS Dependencies Information End -->
+
+  <!-- KS Reference Information -->
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -156,6 +154,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
+  <!-- KS Reference Information End -->
+
+  <!-- KS Import Information -->
   <ItemGroup>
     <Import Include="Extensification.DictionaryExts" />
     <Import Include="Extensification.StringExts" />
@@ -189,6 +190,9 @@
     <Import Include="System.Net" />
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
+  <!-- KS Import Information End -->
+
+  <!-- KS Source Information -->
   <ItemGroup>
     <Compile Include="Arguments\ArgumentBase\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentBase\PreBootCommandLineArgs.vb" />
@@ -465,11 +469,6 @@
     <Compile Include="Modifications\ModInfo.vb" />
     <Compile Include="Modifications\ModManager.vb" />
     <Compile Include="Modifications\ModParser.vb" />
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Network\FTP\Commands\Cdr.vb" />
     <Compile Include="Network\FTP\Commands\Cdl.vb" />
     <Compile Include="Network\FTP\Commands\Connect.vb" />
@@ -711,16 +710,6 @@
     <Compile Include="Kernel\Kernel.vb" />
     <Compile Include="Login\Login.vb" />
     <Compile Include="Login\UserManagement.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Settings.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="Shell\ShellBase\HelpSystem.vb" />
     <Compile Include="Shell\ShellBase\IShell.vb" />
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
@@ -809,16 +798,10 @@
     <Compile Include="TimeDate\TimeDateRenderersUtc.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />
   </ItemGroup>
+  <!-- KS Source Information End -->
+
+  <!-- KS Launchers and Manpages -->
   <ItemGroup>
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.manifest" />
     <None Include="ks-converter.1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -849,16 +832,11 @@
     <None Include="ks.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="My Project\app.manifest" />
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="My Project\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <CustomToolNamespace>My</CustomToolNamespace>
-      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
-    </None>
+  </ItemGroup>
+  <!-- KS Launchers and Manpages End -->
+
+  <!-- KS Themes -->
+  <ItemGroup>
     <None Include="Resources\Themes\Aquatic.json" />
     <None Include="Resources\Themes\Bloody.json" />
     <None Include="Resources\Themes\Blue Power.json" />
@@ -882,14 +860,6 @@
     <None Include="Resources\Themes\Red Breeze.json" />
     <None Include="Resources\Themes\Reddish.json" />
     <None Include="Resources\Themes\Tealed.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data\ConsoleColorsData.json" />
-    <None Include="Resources\Data\SplashSettingsEntries.json" />
-    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
-    <None Include="Resources\Data\SettingsEntries.json" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Themes\Breeze.json" />
     <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\Themes\BrandingBlue.json" />
@@ -930,19 +900,61 @@
     <None Include="Resources\Themes\TrafficLight.json" />
     <None Include="Resources\Themes\Windows95.json" />
   </ItemGroup>
+  <!-- KS Themes End -->
+
+  <!-- KS Data -->
+  <ItemGroup>
+    <None Include="Resources\Data\ConsoleColorsData.json" />
+    <None Include="Resources\Data\SplashSettingsEntries.json" />
+    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
+    <None Include="Resources\Data\SettingsEntries.json" />
+  </ItemGroup>
+  <!-- KS Data End -->
+
+  <!-- KS Manifest -->
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- KS Manifest End -->
+
+  <!-- KS Package Files -->
   <ItemGroup>
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
+  <!-- KS Package Files End -->
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>echo Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)...</PreBuildEvent>
-  </PropertyGroup>
 </Project>

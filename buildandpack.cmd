@@ -38,14 +38,14 @@ goto :finished
 :download
 echo MSBuild found in %msbuildpath%
 echo Downloading packages...
-"%msbuildpath%" -t:restore > %temp%/buildandpack.log 2>&1
+"%msbuildpath%" "Kernel Simulator.sln" -t:restore > %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
 echo Building Kernel Simulator...
-"%msbuildpath%" -p:Configuration=Release >> %temp%/buildandpack.log 2>&1
+"%msbuildpath%" "Kernel Simulator.sln" -p:Configuration=Release >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packbin
 echo There was an error trying to build (%errorlevel%).
 goto :finished
