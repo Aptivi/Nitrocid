@@ -18,7 +18,7 @@ REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script builds KS documentation and packs the artifacts. Use when you have VS installed.
-set ksversion=0.0.21.3
+set ksversion=0.0.21.4
 
 echo Make sure you have the following:
 echo   - Visual Studio 2017+
