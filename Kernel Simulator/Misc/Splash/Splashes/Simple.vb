@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Threading
+
 Namespace Misc.Splash.Splashes
     Class SplashSimple
         Implements ISplash
@@ -94,6 +96,7 @@ Namespace Misc.Splash.Splashes
 
             'Loop until closing
             While Not SplashClosing
+                Thread.Sleep(1)
             End While
             Wdbg(DebugLevel.I, "Splash done.")
         End Sub
