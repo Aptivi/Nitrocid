@@ -62,6 +62,10 @@ Namespace Misc.Writers.ConsoleWriters
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
                             End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            End If
                         End If
                     Next
                     If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
@@ -118,6 +122,10 @@ Namespace Misc.Writers.ConsoleWriters
                             If LinesMade = WindowHeight - 1 Then
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
+                            End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                             End If
                         End If
                     Next
@@ -176,6 +184,10 @@ Namespace Misc.Writers.ConsoleWriters
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
                             End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            End If
                         End If
                     Next
                     If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
@@ -231,6 +243,10 @@ Namespace Misc.Writers.ConsoleWriters
                             If LinesMade = WindowHeight - 1 Then
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
+                            End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                             End If
                         End If
                     Next
@@ -291,6 +307,10 @@ Namespace Misc.Writers.ConsoleWriters
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
                             End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            End If
                         End If
                     Next
                     If ColorTools.BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
@@ -349,6 +369,10 @@ Namespace Misc.Writers.ConsoleWriters
                             If LinesMade = WindowHeight - 1 Then
                                 If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                                 LinesMade = 0
+                            End If
+                        Else
+                            If KeyAvailable Then
+                                If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
                             End If
                         End If
                     Next
