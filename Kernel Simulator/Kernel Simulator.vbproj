@@ -3,7 +3,7 @@
   <!-- KS NuGet Information -->
   <PropertyGroup>
     <PackageId>KS</PackageId>
-    <Version>0.0.21.4</Version>
+    <Version>0.0.21.5</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
