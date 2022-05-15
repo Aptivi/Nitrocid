@@ -1576,7 +1576,7 @@ Namespace Misc.Configuration
                 '> Snaker
                 Snaker255Colors = If(ConfigToken("Screensaver")?("Snaker")?("Activate 255 Color Mode"), False)
                 SnakerTrueColor = If(ConfigToken("Screensaver")?("Snaker")?("Activate True Color Mode"), True)
-                SnakerDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 10)
+                SnakerDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 100)
                 SnakerStageDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Stage delay in milliseconds"), 0), ConfigToken("Screensaver")?("Snaker")?("Stage delay in milliseconds"), 5000)
                 SnakerMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum red color level"), 0)
                 SnakerMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum green color level"), 0)

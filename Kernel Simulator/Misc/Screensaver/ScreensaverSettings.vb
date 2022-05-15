@@ -1387,7 +1387,7 @@ Namespace Misc.Screensaver
         ''' <summary>
         ''' [Snaker] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Public SnakerDelay As Integer = 10
+        Public SnakerDelay As Integer = 100
         ''' <summary>
         ''' [Snaker] How many milliseconds to wait before making the next stage?
         ''' </summary>
