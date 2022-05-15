@@ -39,7 +39,6 @@
     </Dependencies>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
-  
   <!-- KS General Information -->
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
@@ -63,7 +62,6 @@
     <OutputPath>KSBuild\</OutputPath>
   </PropertyGroup>
   <!-- KS General Information End -->
-  
   <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -90,7 +88,6 @@
     <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
-  
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Addresstigator">
@@ -129,7 +126,7 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
-    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.1.0">
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.2.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -138,7 +135,6 @@
     </PackageReference>
   </ItemGroup>
   <!-- KS Dependencies Information End -->
-
   <!-- KS Reference Information -->
   <ItemGroup>
     <Reference Include="System" />
@@ -155,7 +151,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <!-- KS Reference Information End -->
-
   <!-- KS Import Information -->
   <ItemGroup>
     <Import Include="Extensification.DictionaryExts" />
@@ -191,7 +186,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <!-- KS Import Information End -->
-
   <!-- KS Source Information -->
   <ItemGroup>
     <Compile Include="Arguments\ArgumentBase\ArgumentParse.vb" />
@@ -799,7 +793,6 @@
     <Compile Include="TimeDate\TimeZones.vb" />
   </ItemGroup>
   <!-- KS Source Information End -->
-
   <!-- KS Launchers and Manpages -->
   <ItemGroup>
     <None Include="ks-converter.1">
@@ -834,7 +827,6 @@
     </None>
   </ItemGroup>
   <!-- KS Launchers and Manpages End -->
-
   <!-- KS Themes -->
   <ItemGroup>
     <None Include="Resources\Themes\Aquatic.json" />
@@ -901,7 +893,6 @@
     <None Include="Resources\Themes\Windows95.json" />
   </ItemGroup>
   <!-- KS Themes End -->
-
   <!-- KS Data -->
   <ItemGroup>
     <None Include="Resources\Data\ConsoleColorsData.json" />
@@ -910,7 +901,6 @@
     <None Include="Resources\Data\SettingsEntries.json" />
   </ItemGroup>
   <!-- KS Data End -->
-
   <!-- KS Manifest -->
   <ItemGroup>
     <None Include="app.manifest" />
@@ -947,7 +937,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Manifest End -->
-
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
@@ -955,6 +944,5 @@
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <!-- KS Package Files End -->
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
