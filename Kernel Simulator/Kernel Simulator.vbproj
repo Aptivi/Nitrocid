@@ -285,6 +285,7 @@
     <Compile Include="Kernel\KernelErrorType.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Kernel\KernelUpdate.vb" />
+    <Compile Include="Kernel\KernelUpdateInfo.vb" />
     <Compile Include="Kernel\PowerMode.vb" />
     <Compile Include="Languages\CultureManager.vb" />
     <Compile Include="Languages\LanguageInfo.vb" />
