@@ -18,12 +18,12 @@
 
 Imports KS.ConsoleBase
 
-<TestClass()> Public Class ConsoleColorsInfoInitializationTests
+<TestFixture> Public Class ConsoleColorsInfoInitializationTests
 
     ''' <summary>
     ''' Tests initializing an instance of ConsoleColorsInfo from a bright color
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeConsoleColorsInfoInstanceBright()
+    <Test, Description("Initialization")> Public Sub TestInitializeConsoleColorsInfoInstanceBright()
         'Create instance
         Dim ConsoleColorsInfoInstance As New ConsoleColorsInfo(ConsoleColors.Grey85)
 
@@ -39,7 +39,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests initializing an instance of ConsoleColorsInfo from a dark color
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeConsoleColorsInfoInstanceDark()
+    <Test, Description("Initialization")> Public Sub TestInitializeConsoleColorsInfoInstanceDark()
         'Create instance
         Dim ConsoleColorsInfoInstance As New ConsoleColorsInfo(ConsoleColors.Grey11)
 

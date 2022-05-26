@@ -16,12 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<TestClass()> Public Class UserInitializationTests
+<TestFixture> Public Class UserInitializationTests
 
     ''' <summary>
     ''' Tests user initialization
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeUsers()
+    <Test, Description("Initialization")> Public Sub TestInitializeUsers()
         InitializeUsers()
         ListAllUsers(True, True).ShouldNotBeEmpty
         ListAllUsers().ShouldNotBeEmpty

@@ -18,12 +18,12 @@
 
 Imports KS.Shell.ShellBase
 
-<TestClass()> Public Class CommandManagerQueryingTests
+<TestFixture> Public Class CommandManagerQueryingTests
 
     ''' <summary>
     ''' Tests getting list of commands from specific shell type
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetCommandListFromSpecificShell()
+    <Test, Description("Querying")> Public Sub TestGetCommandListFromSpecificShell()
         Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType.Shell)
         Debug.WriteLine(format:="Commands from Shell: {0} commands", Commands.Count)
         Debug.WriteLine(format:=String.Join(", ", Commands))
@@ -34,7 +34,7 @@ Imports KS.Shell.ShellBase
     ''' <summary>
     ''' Tests getting list of commands from all shells
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetCommandListFromAllShells()
+    <Test, Description("Querying")> Public Sub TestGetCommandListFromAllShells()
         For Each ShellTypeName As String In [Enum].GetNames(GetType(ShellType))
             Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands([Enum].Parse(GetType(ShellType), ShellTypeName))
             Debug.WriteLine(format:="Commands from {0}: {1} commands", ShellTypeName, Commands.Count)

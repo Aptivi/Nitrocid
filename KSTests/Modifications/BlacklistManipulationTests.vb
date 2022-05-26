@@ -18,12 +18,12 @@
 
 Imports KS.Modifications
 
-<TestClass()> Public Class BlacklistManipulationTests
+<TestFixture> Public Class BlacklistManipulationTests
 
     ''' <summary>
     ''' Tests adding a mod to the blacklist
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddModToBlacklist()
+    <Test, Description("Management")> Public Sub TestAddModToBlacklist()
         AddModToBlacklist("MaliciousMod.dll")
         GetBlacklistedMods.ShouldContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
     End Sub
@@ -31,7 +31,7 @@ Imports KS.Modifications
     ''' <summary>
     ''' Tests removing a mod from the blacklist
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveModFromBlacklist()
+    <Test, Description("Management")> Public Sub TestRemoveModFromBlacklist()
         RemoveModFromBlacklist("MaliciousMod.dll")
         GetBlacklistedMods.ShouldNotContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
     End Sub

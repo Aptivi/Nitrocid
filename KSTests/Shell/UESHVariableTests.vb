@@ -18,12 +18,12 @@
 
 Imports KS.Scripting
 
-<TestClass()> Public Class UESHVariableTests
+<TestFixture> Public Class UESHVariableTests
 
     ''' <summary>
     ''' Tests initializing, setting, and getting $variable
     ''' </summary>
-    <TestMethod> <TestCategory("Action")> Public Sub TestVariables()
+    <Test, Description("Action")> Public Sub TestVariables()
         InitializeVariable("$test_var")
         GetVariables.ShouldNotBeEmpty
         SetVariable("$test_var", "test").ShouldBeTrue

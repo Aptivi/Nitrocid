@@ -19,13 +19,12 @@
 Imports System.IO
 Imports KS.Misc.Configuration
 
-<TestClass()> Public Class InitTest
+<SetUpFixture> Public Class InitTest
 
     ''' <summary>
     ''' Initialize everything that is required before starting unit tests
     ''' </summary>
-    ''' <param name="Context">Test context</param>
-    <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
+    <OneTimeSetUp> Public Shared Sub ReadyEverything()
         InitPaths()
         If Not FileExists(GetKernelPath(KernelPathType.Configuration)) Then
             CreateConfig()
@@ -40,7 +39,7 @@ Imports KS.Misc.Configuration
     ''' <summary>
     ''' Clean up everything that the unit tests made
     ''' </summary>
-    <AssemblyCleanup()> Public Shared Sub CleanEverything()
+    <OneTimeTearDown> Public Shared Sub CleanEverything()
         If FileExists(HomePath + "/Documents/TestText.txt") Then File.Delete(HomePath + "/Documents/TestText.txt")
         If FileExists(HomePath + "/Documents/Text.txt") Then File.Delete(HomePath + "/Documents/Text.txt")
         If FileExists(HomePath + "/NewFile.txt") Then File.Delete(HomePath + "/NewFile.txt")

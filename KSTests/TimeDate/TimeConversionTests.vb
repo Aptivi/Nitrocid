@@ -18,12 +18,12 @@
 
 Imports KS.TimeDate
 
-<TestClass()> Public Class TimeConversionTests
+<TestFixture> Public Class TimeConversionTests
 
     ''' <summary>
     ''' Tests converting the date to Unix time (seconds since 1970/1/1)
     ''' </summary>
-    <TestMethod()> <TestCategory("Conversion")> Public Sub TestDateToUnix()
+    <Test, Description("Conversion")> Public Sub TestDateToUnix()
         'Convert the target date (for example: ‎September ‎20, ‎2014, ‏‎8:04:34 AM) to Unix
         Dim TargetDate As New Date(2014, 9, 20, 5, 4, 34, DateTimeKind.Utc)
         Dim ExpectedUnixTime As Double = 1411189474
@@ -34,7 +34,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests converting the Unix time (seconds since 1970/1/1) to date
     ''' </summary>
-    <TestMethod()> <TestCategory("Conversion")> Public Sub TestUnixToDate()
+    <Test, Description("Conversion")> Public Sub TestUnixToDate()
         'Convert the target date (for example: ‎September ‎20, ‎2014, ‏‎8:04:34 AM) to Unix
         Dim TargetUnixTime As Double = 1411189474
         Dim ExpectedDate As New Date(2014, 9, 20, 5, 4, 34, DateTimeKind.Utc)

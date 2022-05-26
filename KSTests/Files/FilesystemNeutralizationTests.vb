@@ -16,12 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<TestClass()> Public Class FilesystemNeutralizationTests
+<TestFixture> Public Class FilesystemNeutralizationTests
 
     ''' <summary>
     ''' Tests path neutralization on a folder in home directory
     ''' </summary>
-    <TestMethod()> <TestCategory("Neutralization")> Public Sub TestNeutralizePaths()
+    <Test, Description("Neutralization")> Public Sub TestNeutralizePaths()
         CurrDir = HomePath
         Dim TestPath As String = "Documents"
         Dim ExpectedPath As String = HomePath + "/" + TestPath
@@ -32,7 +32,7 @@
     ''' <summary>
     ''' Tests path neutralization on a folder in a custom directory
     ''' </summary>
-    <TestMethod()> <TestCategory("Neutralization")> Public Sub TestNeutralizePathsCustom()
+    <Test, Description("Neutralization")> Public Sub TestNeutralizePathsCustom()
         Dim TestPath As String = "sources.list"
         Dim TargetPath As String = "/etc/apt"
         Dim NeutPath As String = NeutralizePath(TestPath, TargetPath)

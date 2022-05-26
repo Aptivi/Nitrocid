@@ -18,14 +18,14 @@
 
 Imports KS.Arguments.ArgumentBase
 
-<TestClass()> Public Class ArgumentInfoInitializationTests
+<TestFixture> Public Class ArgumentInfoInitializationTests
 
     Shared ArgumentInstance As ArgumentExecutor
 
     ''' <summary>
     ''' Tests initializing ArgumentInfo instance from a command line argument
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeArgumentInfoInstanceFromCommandLineArg()
+    <Test, Description("Initialization")> Public Sub TestInitializeArgumentInfoInstanceFromCommandLineArg()
         'Create instance
         Dim ArgumentInstance As New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, Nothing)
 
@@ -46,7 +46,7 @@ Imports KS.Arguments.ArgumentBase
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeArgumentFromBase()
+    <Test, Description("Initialization")> Public Sub TestInitializeArgumentFromBase()
         'Create instance
         ArgumentInstance = New ArgumentTest()
 
@@ -57,28 +57,28 @@ Imports KS.Arguments.ArgumentBase
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecution()
+    <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecution()
         Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("", {}, {}, {})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithArguments()
+    <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecutionWithArguments()
         Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, {})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithSwitches()
+    <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecutionWithSwitches()
         Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s", {"-s"}, {}, {"-s"})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedArgumentExecutionWithArgumentsAndSwitches()
+    <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecutionWithArgumentsAndSwitches()
         Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s Hello!", {"-s", "Hello!"}, {"Hello!"}, {"-s"})))
     End Sub
 

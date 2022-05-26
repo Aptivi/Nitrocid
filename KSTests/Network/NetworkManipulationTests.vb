@@ -21,12 +21,12 @@ Imports KS.Misc.Configuration
 Imports KS.Network
 
 'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
-<TestClass()> Public Class NetworkManipulationTests
+<TestFixture> Public Class NetworkManipulationTests
 
     ''' <summary>
     ''' Tests hostname change
     ''' </summary>
-    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestChangeHostname()
+    <Test, Description("Manipulation")> Public Sub TestChangeHostname()
         ChangeHostname("NewHost").ShouldBeTrue
         HostName.ShouldBe("NewHost")
         GetConfigValue(ConfigCategory.Login, GetConfigCategory(ConfigCategory.Login), "Host Name").ShouldBe("NewHost")

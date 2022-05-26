@@ -19,12 +19,12 @@
 Imports System.IO
 Imports KS.Misc.JsonShell
 
-<TestClass()> Public Class JsonShellInitializationTests
+<TestFixture> Public Class JsonShellInitializationTests
 
     ''' <summary>
     ''' Tests opening, saving, and closing a JSON file
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestOpenSaveCloseJsonFile()
+    <Test, Description("Initialization")> Public Sub TestOpenSaveCloseJsonFile()
         Dim PathToTestJson As String = Path.GetFullPath("TestJson.json")
         JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue
         JsonShell_AddNewProperty("$", "HowText", "How are you today?")

@@ -18,14 +18,14 @@
 
 Imports KS.Shell.ShellBase
 
-<TestClass()> Public Class CommandExecutorInitializationTests
+<TestFixture> Public Class CommandExecutorInitializationTests
 
     Shared CommandInstance As CommandExecutor
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeCommandExecutorFromBase()
+    <Test, Description("Initialization")> Public Sub TestInitializeCommandExecutorFromBase()
         'Create instance
         CommandInstance = New CommandTest()
 
@@ -36,28 +36,28 @@ Imports KS.Shell.ShellBase
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedCommandExecution()
+    <Test, Description("Initialization")> Public Sub TestInitializedCommandExecution()
         Should.NotThrow(New Action(Sub() CommandInstance.Execute("", {}, {}, {})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedCommandExecutionWithArguments()
+    <Test, Description("Initialization")> Public Sub TestInitializedCommandExecutionWithArguments()
         Should.NotThrow(New Action(Sub() CommandInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, {})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedCommandExecutionWithSwitches()
+    <Test, Description("Initialization")> Public Sub TestInitializedCommandExecutionWithSwitches()
         Should.NotThrow(New Action(Sub() CommandInstance.Execute("-s", {"-s"}, {}, {"-s"})))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedCommandExecutionWithArgumentsAndSwitches()
+    <Test, Description("Initialization")> Public Sub TestInitializedCommandExecutionWithArgumentsAndSwitches()
         Should.NotThrow(New Action(Sub() CommandInstance.Execute("-s Hello!", {"-s", "Hello!"}, {"Hello!"}, {"-s"})))
     End Sub
 

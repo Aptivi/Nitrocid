@@ -18,26 +18,26 @@
 
 Imports KS.Network
 
-<TestClass()> Public Class SpeedDialManagementTests
+<TestFixture> Public Class SpeedDialManagementTests
 
     ''' <summary>
     ''' Tests adding FTP speed dial entry
     ''' </summary>
-    <TestMethod> <TestCategory("Management")> Public Sub TestAddEntryToFTPSpeedDial()
+    <Test, Description("Management")> Public Sub TestAddEntryToFTPSpeedDial()
         AddEntryToSpeedDial("ftp.riken.jp", "21", "anonymous", SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests adding SFTP speed dial entry
     ''' </summary>
-    <TestMethod> <TestCategory("Management")> Public Sub TestAddEntryToSFTPSpeedDial()
+    <Test, Description("Management")> Public Sub TestAddEntryToSFTPSpeedDial()
         AddEntryToSpeedDial("test.rebex.net", "22", "demo", SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests listing FTP speed dial entries
     ''' </summary>
-    <TestMethod> <TestCategory("Management")> Public Sub TestListFTPSpeedDialEntries()
+    <Test, Description("Management")> Public Sub TestListFTPSpeedDialEntries()
         ListSpeedDialEntries(SpeedDialType.FTP).ShouldNotBeEmpty
         Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.FTP).Keys))
     End Sub
@@ -45,7 +45,7 @@ Imports KS.Network
     ''' <summary>
     ''' Tests listing SFTP speed dial entries
     ''' </summary>
-    <TestMethod> <TestCategory("Management")> Public Sub TestListSFTPSpeedDialEntries()
+    <Test, Description("Management")> Public Sub TestListSFTPSpeedDialEntries()
         ListSpeedDialEntries(SpeedDialType.SFTP).ShouldNotBeEmpty
         Debug.WriteLine(String.Join(" | ", ListSpeedDialEntries(SpeedDialType.SFTP).Keys))
     End Sub

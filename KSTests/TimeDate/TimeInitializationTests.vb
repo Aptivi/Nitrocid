@@ -18,12 +18,12 @@
 
 Imports KS.TimeDate
 
-<TestClass()> Public Class TimeInitializationTests
+<TestFixture> Public Class TimeInitializationTests
 
     ''' <summary>
     ''' Tests initializing current times in all timezones
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestGetTimeZones()
+    <Test, Description("Initialization")> Public Sub TestGetTimeZones()
         KernelDateTime = Date.Now
         KernelDateTimeUtc = Date.UtcNow
         Dim TimeZones As Dictionary(Of String, Date) = GetTimeZones()

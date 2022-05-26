@@ -20,12 +20,12 @@ Imports KS
 Imports Newtonsoft.Json.Linq
 Imports KS.Languages
 
-<TestClass()> Public Class LocalizationInitializationTests
+<TestFixture> Public Class LocalizationInitializationTests
 
     ''' <summary>
     ''' Tests creating the new instance of the language information
     ''' </summary>
-    <TestMethod> <TestCategory("Initialization")> Public Sub TestCreateNewLanguageInfoInstance()
+    <Test, Description("Initialization")> Public Sub TestCreateNewLanguageInfoInstance()
         Dim InfoInstance As New LanguageInfo("arb", "Arabic", True)
 
         'Check for null
@@ -44,7 +44,7 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests translation dictionary preparation for a language
     ''' </summary>
-    <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForOneLanguage()
+    <Test, Description("Initialization")> Public Sub TestPrepareDictForOneLanguage()
         Dim ExpectedLength As Integer = JObject.Parse(KS.My.Resources.spa).SelectToken("Localizations").Count
         Dim ActualLength As Integer = PrepareDict("spa").Values.Count
         ActualLength.ShouldBe(ExpectedLength)
@@ -53,7 +53,7 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests translation dictionary preparation for all languages
     ''' </summary>
-    <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForAllLanguages()
+    <Test, Description("Initialization")> Public Sub TestPrepareDictForAllLanguages()
         For Each Lang As String In Languages.Languages.Keys
             Dim ExpectedLength As Integer = JObject.Parse(KS.My.Resources.ResourceManager.GetString(Lang.Replace("-", "_"))).SelectToken("Localizations").Count
             Dim ActualLength As Integer = PrepareDict(Lang).Values.Count

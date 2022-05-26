@@ -19,12 +19,12 @@
 Imports System.IO
 Imports KS.Misc.Platform
 
-<TestClass()> Public Class FilesystemQueryingTests
+<TestFixture> Public Class FilesystemQueryingTests
 
     ''' <summary>
     ''' Tests checking if file exists
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestFileExists()
+    <Test, Description("Querying")> Public Sub TestFileExists()
         Dim TargetFile As String = Path.GetFullPath("TestText.txt")
         Dim TargetFile2 As String = Path.GetFullPath("TestTexts.txt")
         FileExists(TargetFile).ShouldBeTrue
@@ -34,7 +34,7 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests checking if directory exists
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestDirectoryExists()
+    <Test, Description("Querying")> Public Sub TestDirectoryExists()
         Dim TargetDirectory As String = Path.GetFullPath("EmptyFiles")
         Dim TargetDirectory2 As String = Path.GetFullPath("EmptyFile")
         FolderExists(TargetDirectory).ShouldBeTrue
@@ -44,7 +44,7 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests getting the kernel path for each entry
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetKernelPaths()
+    <Test, Description("Querying")> Public Sub TestGetKernelPaths()
         For Each PathType As KernelPathType In [Enum].GetValues(GetType(KernelPathType))
             Debug.WriteLine($"Path type: {PathType}")
             Dim TargetKernelPath As String = GetKernelPath(PathType)
@@ -56,7 +56,7 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests trying to parse the path name
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParsePath()
+    <Test, Description("Querying")> Public Sub TestTryParsePath()
         If IsOnWindows() Then
             TryParsePath("C:\Windows").ShouldBeTrue
             TryParsePath("C:\Windows<>").ShouldBeFalse
@@ -69,7 +69,7 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests trying to parse the file name
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseFileName()
+    <Test, Description("Querying")> Public Sub TestTryParseFileName()
         TryParseFileName("Windows").ShouldBeTrue
         TryParseFileName("Windows/System32\").ShouldBeFalse
     End Sub
@@ -77,7 +77,7 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests trying to get the line ending from text file
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetLineEndingFromFile()
+    <Test, Description("Querying")> Public Sub TestGetLineEndingFromFile()
         Dim ExpectedStyle As FilesystemNewlineStyle = FilesystemNewlineStyle.LF
         Dim ActualStyle As FilesystemNewlineStyle = GetLineEndingFromFile(Path.GetFullPath("TestText.txt"))
         ActualStyle.ShouldBe(ExpectedStyle)

@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Reflection
 
-<TestClass()> Public Class MethodManagementTests
+<TestFixture> Public Class MethodManagementTests
 
     ''' <summary>
     ''' Tests getting method
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetMethod()
+    <Test, Description("Management")> Public Sub TestGetMethod()
         GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull
     End Sub
 

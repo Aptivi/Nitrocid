@@ -16,16 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<TestClass()> Public Class UserPermissionManagementTests
+<TestFixture> Public Class UserPermissionManagementTests
 
-    <ClassInitialize> Public Shared Sub AddNecessaryUser(Context As TestContext)
+    <SetUp> Public Shared Sub AddNecessaryUser()
         AddUser("Account")
     End Sub
 
     ''' <summary>
     ''' Tests adding permissions to user
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddUserPerm()
+    <Test, Description("Management")> Public Sub TestAddUserPerm()
         AddPermission(PermissionType.Administrator, "Account").ShouldBeTrue
         AddPermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
@@ -33,7 +33,7 @@
     ''' <summary>
     ''' Tests removing permissions from user
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUserPerm()
+    <Test, Description("Management")> Public Sub TestRemoveUserPerm()
         RemovePermission(PermissionType.Administrator, "Account").ShouldBeTrue
         RemovePermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
@@ -41,11 +41,11 @@
     ''' <summary>
     ''' Tests loading permissions
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestLoadPermissions()
+    <Test, Description("Management")> Public Sub TestLoadPermissions()
         LoadPermissions.ShouldBeTrue
     End Sub
 
-    <ClassCleanup> Public Shared Sub RemoveNecessaryUser()
+    <TearDown> Public Shared Sub RemoveNecessaryUser()
         RemoveUser("Account")
     End Sub
 

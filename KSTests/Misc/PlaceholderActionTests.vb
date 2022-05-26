@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Probers
 
-<TestClass()> Public Class PlaceholderActionTests
+<TestFixture> Public Class PlaceholderActionTests
 
     ''' <summary>
     ''' Tests parsing placeholders
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestParsePlaceholders()
+    <Test, Description("Action")> Public Sub TestParsePlaceholders()
         Dim UnparsedStrings As New List(Of String)
         Dim ParsedStrings As New List(Of String) From {
             ProbePlaces("Hostname is <host>"),

@@ -20,12 +20,12 @@ Imports KS.Misc.Configuration
 Imports KS.Kernel.Flags
 Imports Newtonsoft.Json.Linq
 
-<TestClass()> Public Class FilesystemSettingTests
+<TestFixture> Public Class FilesystemSettingTests
 
     ''' <summary>
     ''' Tests current directory setting
     ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetCurrDir()
+    <Test, Description("Setting")> Public Sub TestSetCurrDir()
         CurrDir = HomePath
         Dim Path As String = HomePath + "/Documents"
         SetCurrDir(Path).ShouldBeTrue
@@ -35,7 +35,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests setting size parse mode
     ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetSizeParseMode()
+    <Test, Description("Setting")> Public Sub TestSetSizeParseMode()
         Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
         SetSizeParseMode(True).ShouldBeTrue
         FullParseMode.ShouldBeTrue
@@ -48,7 +48,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests saving the current directory value
     ''' </summary>
-    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSaveCurrDir()
+    <Test, Description("Manipulation")> Public Sub TestSaveCurrDir()
         CurrDir = HomePath
         SaveCurrDir()
         GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(HomePath)

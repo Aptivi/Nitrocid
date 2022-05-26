@@ -18,14 +18,14 @@
 
 Imports KS.Shell.ShellBase
 
-<TestClass()> Public Class ShellExecutorInitializationTests
+<TestFixture> Public Class ShellExecutorInitializationTests
 
     Shared ShellInstance As ShellExecutor
 
     ''' <summary>
     ''' Tests initializing the shell instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeShellExecutorFromBase()
+    <Test, Description("Initialization")> Public Sub TestInitializeShellExecutorFromBase()
         'Create instance
         ShellInstance = New ShellTest()
 
@@ -36,7 +36,7 @@ Imports KS.Shell.ShellBase
     ''' <summary>
     ''' Tests initializing the shell instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedShellExecution()
+    <Test, Description("Initialization")> Public Sub TestInitializedShellExecution()
         Should.NotThrow(New Action(Sub() ShellInstance.InitializeShell()))
         ShellInstance.Bail.ShouldBeTrue
     End Sub
@@ -44,7 +44,7 @@ Imports KS.Shell.ShellBase
     ''' <summary>
     ''' Tests initializing the shell instance from base
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializedShellExecutionWithArguments()
+    <Test, Description("Initialization")> Public Sub TestInitializedShellExecutionWithArguments()
         Should.NotThrow(New Action(Sub() ShellInstance.InitializeShell("Hello", "World")))
         ShellInstance.Bail.ShouldBeTrue
     End Sub

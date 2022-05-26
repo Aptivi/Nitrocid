@@ -18,12 +18,12 @@
 
 Imports KS.Languages
 
-<TestClass()> Public Class LocalizationQueryingTests
+<TestFixture> Public Class LocalizationQueryingTests
 
     ''' <summary>
     ''' Tests getting cultures from current language
     ''' </summary>
-    <TestMethod> <TestCategory("Querying")> Public Sub TestGetCulturesFromCurrentLang()
+    <Test, Description("Querying")> Public Sub TestGetCulturesFromCurrentLang()
         GetCulturesFromCurrentLang.ShouldNotBeNull
         GetCulturesFromCurrentLang.ShouldNotBeEmpty
     End Sub
@@ -31,7 +31,7 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests getting cultures from specific language
     ''' </summary>
-    <TestMethod> <TestCategory("Querying")> Public Sub TestGetCulturesFromLang()
+    <Test, Description("Querying")> Public Sub TestGetCulturesFromLang()
         GetCulturesFromLang("spa").ShouldNotBeNull
         GetCulturesFromLang("spa").ShouldNotBeEmpty
     End Sub
@@ -39,7 +39,7 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests getting cultures from specific language
     ''' </summary>
-    <TestMethod> <TestCategory("Querying")> Public Sub TestListLanguages()
+    <Test, Description("Querying")> Public Sub TestListLanguages()
         ListLanguages("arb").ShouldNotBeNull
         ListLanguages("arb").ShouldNotBeEmpty
         ListLanguages("arb").Count.ShouldBe(2)

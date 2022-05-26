@@ -18,7 +18,7 @@
 
 Imports KS.Misc.Threading
 
-<TestClass()> Public Class KernelThreadTests
+<TestFixture> Public Class KernelThreadTests
 
     Shared TargetThread As KernelThread
     Shared TargetParameterizedThread As KernelThread
@@ -26,35 +26,35 @@ Imports KS.Misc.Threading
     ''' <summary>
     ''' Tests initializing kernel thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeKernelThread()
+    <Test, Description("Initialization")> Public Sub TestInitializeKernelThread()
         TargetThread = New KernelThread("Unit test thread #1", True, AddressOf WriteHello)
     End Sub
 
     ''' <summary>
     ''' Tests initializing kernel parameterized thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeKernelParameterizedThread()
+    <Test, Description("Initialization")> Public Sub TestInitializeKernelParameterizedThread()
         TargetParameterizedThread = New KernelThread("Unit test thread #2", True, AddressOf WriteHelloWithArgument)
     End Sub
 
     ''' <summary>
     ''' Tests starting kernel thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestStartKernelThread()
+    <Test, Description("Initialization")> Public Sub TestStartKernelThread()
         TargetThread.Start()
     End Sub
 
     ''' <summary>
     ''' Tests starting kernel parameterized thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestStartKernelParameterizedThread()
+    <Test, Description("Initialization")> Public Sub TestStartKernelParameterizedThread()
         TargetParameterizedThread.Start("Agustin")
     End Sub
 
     ''' <summary>
     ''' Tests stopping kernel thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestStopKernelThread()
+    <Test, Description("Initialization")> Public Sub TestStopKernelThread()
         Threading.Thread.Sleep(300)
         TargetThread.Stop()
         TargetThread.ShouldNotBeNull
@@ -63,7 +63,7 @@ Imports KS.Misc.Threading
     ''' <summary>
     ''' Tests stopping kernel parameterized thread
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestStopKernelParameterizedThread()
+    <Test, Description("Initialization")> Public Sub TestStopKernelParameterizedThread()
         Threading.Thread.Sleep(300)
         TargetParameterizedThread.Stop()
         TargetParameterizedThread.ShouldNotBeNull

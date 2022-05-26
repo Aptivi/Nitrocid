@@ -18,12 +18,12 @@
 
 Imports KS.TimeDate
 
-<TestClass()> Public Class TimeQueryingTests
+<TestFixture> Public Class TimeQueryingTests
 
     ''' <summary>
     ''' Tests getting remaining time from now
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetRemainingTimeFromNow()
+    <Test, Description("Querying")> Public Sub TestGetRemainingTimeFromNow()
         Dim RemainingTime As String = GetRemainingTimeFromNow(1000)
         RemainingTime.ShouldNotBeNullOrEmpty
         RemainingTime.ShouldBe("0.00:00:01.000")

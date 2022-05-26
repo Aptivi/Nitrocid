@@ -18,12 +18,12 @@
 
 Imports KS.ConsoleBase
 
-<TestClass()> Public Class ColorQueryingTests
+<TestFixture> Public Class ColorQueryingTests
 
     ''' <summary>
     ''' Tests trying to parse the color from hex
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseColorFromHex()
+    <Test, Description("Querying")> Public Sub TestTryParseColorFromHex()
         Debug.WriteLine("Trying #0F0F0F...")
         TryParseColor("#0F0F0F").ShouldBeTrue
         Debug.WriteLine("Trying #0G0G0G...")
@@ -33,7 +33,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to parse the color from color numbers
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseColorFromColorNum()
+    <Test, Description("Querying")> Public Sub TestTryParseColorFromColorNum()
         Debug.WriteLine("Trying colornum 26...")
         TryParseColor(26).ShouldBeTrue
         Debug.WriteLine("Trying colornum 260...")
@@ -45,7 +45,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to parse the color from RGB
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseColorFromRGB()
+    <Test, Description("Querying")> Public Sub TestTryParseColorFromRGB()
         Debug.WriteLine("Trying rgb 4, 4, 4...")
         TryParseColor(4, 4, 4).ShouldBeTrue
         Debug.WriteLine("Trying rgb 400, 4, 4...")
@@ -81,7 +81,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to convert from hex to RGB
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestConvertFromHexToRGB()
+    <Test, Description("Querying")> Public Sub TestConvertFromHexToRGB()
         Debug.WriteLine("Converting #0F0F0F...")
         ConvertFromHexToRGB("#0F0F0F").ShouldBe("15;15;15")
     End Sub
@@ -89,7 +89,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to convert from RGB sequence to hex
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestConvertFromRGBSequenceToHex()
+    <Test, Description("Querying")> Public Sub TestConvertFromRGBSequenceToHex()
         Debug.WriteLine("Converting 15;15;15...")
         ConvertFromRGBToHex("15;15;15").ShouldBe("#0F0F0F")
     End Sub
@@ -97,7 +97,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to convert from RGB numbers to hex
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestConvertFromRGBNumbersToHex()
+    <Test, Description("Querying")> Public Sub TestConvertFromRGBNumbersToHex()
         Debug.WriteLine("Converting 15, 15, 15...")
         ConvertFromRGBToHex(15, 15, 15).ShouldBe("#0F0F0F")
     End Sub

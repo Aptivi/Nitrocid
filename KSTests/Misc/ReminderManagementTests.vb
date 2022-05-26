@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Calendar.Reminders
 
-<TestClass()> Public Class ReminderManagementTests
+<TestFixture> Public Class ReminderManagementTests
 
     ''' <summary>
     ''' Tests adding the reminder
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddReminder()
+    <Test, Description("Management")> Public Sub TestAddReminder()
         AddReminder(New Date(2022, 2, 22), "Kernel Simulator second-gen release")
         Reminders.ShouldNotBeNull
         Reminders.ShouldNotBeEmpty
@@ -35,7 +35,7 @@ Imports KS.Misc.Calendar.Reminders
     ''' <summary>
     ''' Tests adding the reminder
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveReminder()
+    <Test, Description("Management")> Public Sub TestRemoveReminder()
         RemoveReminder(New Date(2022, 2, 22), 1)
         Reminders.ShouldNotBeNull
         Reminders.ShouldBeEmpty

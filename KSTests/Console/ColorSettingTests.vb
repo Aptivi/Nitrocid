@@ -18,12 +18,12 @@
 
 Imports KS.ConsoleBase
 
-<TestClass()> Public Class ColorSettingTests
+<TestFixture> Public Class ColorSettingTests
 
     ''' <summary>
     ''' Tests setting colors
     ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetColors()
+    <Test, Description("Setting")> Public Sub TestSetColors()
         SetColors(ConsoleColors.White,       'Input Color
                   ConsoleColors.White,       'License Color
                   ConsoleColors.Yellow,      'Continuable Kernel Error Color

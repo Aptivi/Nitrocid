@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Screensaver
 
-<TestClass()> Public Class ScreensaverSettingTests
+<TestFixture> Public Class ScreensaverSettingTests
 
     ''' <summary>
     ''' Tests setting default screensaver
     ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetDefaultScreensaver()
+    <Test, Description("Setting")> Public Sub TestSetDefaultScreensaver()
         SetDefaultScreensaver("matrix")
         DefSaverName.ShouldBe("matrix")
     End Sub

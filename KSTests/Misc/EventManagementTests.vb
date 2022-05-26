@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Calendar.Events
 
-<TestClass()> Public Class EventManagementTests
+<TestFixture> Public Class EventManagementTests
 
     ''' <summary>
     ''' Tests adding the event
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddEvent()
+    <Test, Description("Management")> Public Sub TestAddEvent()
         AddEvent(New Date(2022, 2, 22), "Kernel Simulator second-gen release")
         CalendarEvents.ShouldNotBeNull
         CalendarEvents.ShouldNotBeEmpty
@@ -35,7 +35,7 @@ Imports KS.Misc.Calendar.Events
     ''' <summary>
     ''' Tests adding the event
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveEvent()
+    <Test, Description("Management")> Public Sub TestRemoveEvent()
         RemoveEvent(New Date(2022, 2, 22), 1)
         CalendarEvents.ShouldNotBeNull
         CalendarEvents.ShouldBeEmpty

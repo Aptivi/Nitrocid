@@ -18,12 +18,12 @@
 
 Imports KS.Languages
 
-<TestClass()> Public Class LocalizationSettingTests
+<TestFixture> Public Class LocalizationSettingTests
 
     ''' <summary>
     ''' Tests updating the culture
     ''' </summary>
-    <TestMethod> <TestCategory("Setting")> Public Sub TestUpdateCulture()
+    <Test, Description("Setting")> Public Sub TestUpdateCulture()
         CurrentLanguage = "spa"
         Dim ExpectedCulture As String = "Spanish"
         UpdateCulture()
@@ -33,7 +33,7 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests updating the culture using custom culture
     ''' </summary>
-    <TestMethod> <TestCategory("Setting")> Public Sub TestUpdateCultureCustom()
+    <Test, Description("Setting")> Public Sub TestUpdateCultureCustom()
         CurrentLanguage = "spa"
         Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
         UpdateCulture(ExpectedCulture)
@@ -43,14 +43,14 @@ Imports KS.Languages
     ''' <summary>
     ''' Tests language setting
     ''' </summary>
-    <TestMethod> <TestCategory("Setting")> Public Sub TestSetLang()
+    <Test, Description("Setting")> Public Sub TestSetLang()
         SetLang("spa").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Restores the language
     ''' </summary>
-    <TestCleanup> Public Sub RestoreLanguage()
+    <TearDown> Public Sub RestoreLanguage()
         SetLang("eng")
     End Sub
 

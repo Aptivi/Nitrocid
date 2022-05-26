@@ -18,12 +18,12 @@
 
 Imports KS.ConsoleBase
 
-<TestClass()> Public Class ColorInitializationTests
+<TestFixture> Public Class ColorInitializationTests
 
     ''' <summary>
     ''' Tests initializing color instance from 255 colors
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeColorInstanceFrom255Colors()
+    <Test, Description("Initialization")> Public Sub TestInitializeColorInstanceFrom255Colors()
         'Create instance
         Dim ColorInstance As New Color(13)
 
@@ -49,7 +49,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests initializing color instance from true color
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeColorInstanceFromTrueColor()
+    <Test, Description("Initialization")> Public Sub TestInitializeColorInstanceFromTrueColor()
         'Create instance
         Dim ColorInstance As New Color("94;0;63")
 
@@ -75,7 +75,7 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests initializing color instance from true color
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeColorInstanceFromHex()
+    <Test, Description("Initialization")> Public Sub TestInitializeColorInstanceFromHex()
         'Create instance
         Dim ColorInstance As New Color("#0F0F0F")
 

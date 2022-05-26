@@ -18,19 +18,19 @@
 
 Imports KS.Shell.ShellBase
 
-<TestClass()> Public Class CommandManagerActionTests
+<TestFixture> Public Class CommandManagerActionTests
 
     ''' <summary>
     ''' Tests seeing if the command is found in specific shell (test case: Normal shell, help command)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestIsCommandFoundInSpecificShell()
+    <Test, Description("Action")> Public Sub TestIsCommandFoundInSpecificShell()
         IsCommandFound("help", ShellType.Shell).ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests seeing if the command is found in all the shells (test case: connect command)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestIsCommandFoundInAllTheShells()
+    <Test, Description("Action")> Public Sub TestIsCommandFoundInAllTheShells()
         IsCommandFound("connect").ShouldBeTrue
     End Sub
 

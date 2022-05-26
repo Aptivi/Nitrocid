@@ -22,12 +22,12 @@ Imports KS.Misc.Beautifiers
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
-<TestClass()> Public Class JsonActionTests
+<TestFixture> Public Class JsonActionTests
 
     ''' <summary>
     ''' Tests beautifying the JSON text
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestBeautifyJsonText()
+    <Test, Description("Action")> Public Sub TestBeautifyJsonText()
         Dim Beautified As String = BeautifyJsonText(JsonConvert.SerializeObject(ColorDataJson))
         Beautified.ShouldNotBeEmpty
         Beautified.ShouldBe(JsonConvert.SerializeObject(ColorDataJson, Formatting.Indented))
@@ -36,7 +36,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests beautifying the JSON text
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestBeautifyJsonFile()
+    <Test, Description("Action")> Public Sub TestBeautifyJsonFile()
         Dim SourcePath As String = Path.GetFullPath("Hacker.json")
         Dim Beautified As String = BeautifyJson(SourcePath)
         Beautified.ShouldNotBeEmpty
@@ -46,7 +46,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests minifying the JSON text
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestMinifyJsonText()
+    <Test, Description("Action")> Public Sub TestMinifyJsonText()
         Dim Minified As String = MinifyJsonText(JsonConvert.SerializeObject(ColorDataJson))
         Minified.ShouldNotBeEmpty
         Minified.ShouldBe(JsonConvert.SerializeObject(ColorDataJson, Formatting.None))
@@ -55,7 +55,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests minifying the JSON text
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestMinifyJsonFile()
+    <Test, Description("Action")> Public Sub TestMinifyJsonFile()
         Dim SourcePath As String = Path.GetFullPath("Hacker.json")
         Dim Minified As String = MinifyJson(SourcePath)
         Minified.ShouldNotBeEmpty

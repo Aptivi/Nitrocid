@@ -18,12 +18,12 @@
 
 Imports KS.Shell.ShellBase
 
-<TestClass()> Public Class CommandInfoInitializationTests
+<TestFixture> Public Class CommandInfoInitializationTests
 
     ''' <summary>
     ''' Tests initializing CommandInfo instance from a command line Command
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeCommandInfoInstanceFromCommandLineArg()
+    <Test, Description("Initialization")> Public Sub TestInitializeCommandInfoInstanceFromCommandLineArg()
         'Create instance
         Dim CommandInstance As New CommandInfo("help", ShellType.Shell, "Help page", {""}, False, 0, Nothing)
 

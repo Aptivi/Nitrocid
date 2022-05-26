@@ -18,12 +18,12 @@
 
 Imports KS.Kernel
 
-<TestClass()> Public Class KernelMiscTests
+<TestFixture> Public Class KernelMiscTests
 
     ''' <summary>
     ''' Tests update fetching
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestFetchKernelUpdates()
+    <Test, Description("Misc")> Public Sub TestFetchKernelUpdates()
         Dim Updates As KernelUpdate = FetchKernelUpdates()
         Updates.ShouldNotBeNull
     End Sub
@@ -31,7 +31,7 @@ Imports KS.Kernel
     ''' <summary>
     ''' Tests raising an event and adding it to the fired events list
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestRaiseEvent()
+    <Test, Description("Misc")> Public Sub TestRaiseEvent()
         KernelEventManager.RaiseStartKernel()
         ListAllFiredEvents().ShouldContainKey("KernelStarted (" + CStr(ListAllFiredEvents().Count - 1) + ")")
     End Sub

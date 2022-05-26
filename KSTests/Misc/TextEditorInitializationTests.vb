@@ -19,12 +19,12 @@
 Imports System.IO
 Imports KS.Misc.TextEdit
 
-<TestClass()> Public Class TextEditorInitializationTests
+<TestFixture> Public Class TextEditorInitializationTests
 
     ''' <summary>
     ''' Tests opening, saving, and closing text file
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestOpenSaveCloseTextFile()
+    <Test, Description("Initialization")> Public Sub TestOpenSaveCloseTextFile()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue
         TextEdit_FileLines.Add("Hello!")

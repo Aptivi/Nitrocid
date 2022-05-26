@@ -20,12 +20,12 @@ Imports System.IO
 Imports Extensification.StringExts
 Imports KS.ConsoleBase.Themes
 
-<TestClass()> Public Class ThemeInfoInitializationTests
+<TestFixture> Public Class ThemeInfoInitializationTests
 
     ''' <summary>
     ''' Tests initializing an instance of ThemeInfo from KS resources
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeThemeInfoFromResources()
+    <Test, Description("Initialization")> Public Sub TestInitializeThemeInfoFromResources()
         'Create instance
         Dim ThemeInfoInstance As New ThemeInfo("Hacker")
 
@@ -72,7 +72,7 @@ Imports KS.ConsoleBase.Themes
     ''' <summary>
     ''' Tests initializing an instance of ThemeInfo from all KS resources
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeThemeInfoFromAllResources()
+    <Test, Description("Initialization")> Public Sub TestInitializeThemeInfoFromAllResources()
         For Each ResourceName As String In Themes.Keys
 
             'Special naming cases
@@ -131,7 +131,7 @@ Imports KS.ConsoleBase.Themes
     ''' <summary>
     ''' Tests initializing an instance of ThemeInfo from file
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeThemeInfoFromFile()
+    <Test, Description("Initialization")> Public Sub TestInitializeThemeInfoFromFile()
         'Create instance
         Dim SourcePath As String = Path.GetFullPath("Hacker.json")
         Dim ThemeInfoInstance As New ThemeInfo(New StreamReader(SourcePath))

@@ -20,33 +20,33 @@ Imports System.Net.NetworkInformation
 Imports KS.Network
 
 'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
-<TestClass()> Public Class NetworkActionTests
+<TestFixture> Public Class NetworkActionTests
 
     ''' <summary>
     ''' Tests pinging
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddress()
+    <Test, Description("Action")> Public Sub TestPingAddress()
         PingAddress("www.google.com").Status.ShouldBe(IPStatus.Success)
     End Sub
 
     ''' <summary>
     ''' Tests pinging with custom timeout
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddressCustomTimeout()
+    <Test, Description("Action")> Public Sub TestPingAddressCustomTimeout()
         PingAddress("www.google.com", 60000).Status.ShouldBe(IPStatus.Success)
     End Sub
 
     ''' <summary>
     ''' Tests pinging with custom timeout and buffer
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddressCustomTimeoutAndBuffer()
+    <Test, Description("Action")> Public Sub TestPingAddressCustomTimeoutAndBuffer()
         PingAddress("www.google.com", 60000, Text.Encoding.Default.GetBytes("KS")).Status.ShouldBe(IPStatus.Success)
     End Sub
 
     ''' <summary>
     ''' Tests pinging with custom timeout and buffer
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestGetFilenameFromUrl()
+    <Test, Description("Action")> Public Sub TestGetFilenameFromUrl()
         Dim Url As String = "https://www.fabrikam.com/downloads/file.bin?apikey=FAAD64328FE82D"
         Dim FileNameFromUrl As String = GetFilenameFromUrl(Url)
         FileNameFromUrl.ShouldNotBeNullOrEmpty

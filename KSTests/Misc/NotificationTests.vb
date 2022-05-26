@@ -19,12 +19,12 @@
 Imports KS.ConsoleBase
 Imports KS.Misc.Notifications
 
-<TestClass()> Public Class NotificationTests
+<TestFixture> Public Class NotificationTests
 
     ''' <summary>
     ''' Tests notification creation
     ''' </summary>
-    <TestMethod()> Public Sub TestNotifyCreate()
+    <Test> Public Sub TestNotifyCreate()
         Dim Notif As New Notification("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal)
         Notif.ShouldNotBeNull
     End Sub
@@ -32,7 +32,7 @@ Imports KS.Misc.Notifications
     ''' <summary>
     ''' Tests custom notification creation
     ''' </summary>
-    <TestMethod()> Public Sub TestNotifyCreateCustom()
+    <Test> Public Sub TestNotifyCreateCustom()
         Dim Notif As New Notification("This is the title.", "This is the description.", NotifPriority.Custom, NotifType.Normal) With {
             .CustomBeepTimes = 5,
             .CustomColor = New Color(4),
@@ -55,7 +55,7 @@ Imports KS.Misc.Notifications
     ''' <summary>
     ''' Tests notification sending
     ''' </summary>
-    <TestMethod> Public Sub TestNotifySend()
+    <Test> Public Sub TestNotifySend()
         Dim Notif As New Notification("Notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
         NotifySend(Notif)
         NotifRecents.ShouldNotBeEmpty
@@ -64,7 +64,7 @@ Imports KS.Misc.Notifications
     ''' <summary>
     ''' Tests notifications sending
     ''' </summary>
-    <TestMethod> Public Sub TestNotifySendRange()
+    <Test> Public Sub TestNotifySendRange()
         Dim Notif1 As New Notification("High notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
         Dim Notif2 As New Notification("Medium notification title", "This is a medium priority notification", NotifPriority.Medium, NotifType.Normal)
         Dim Notif3 As New Notification("Low notification title", "This is a low priority notification", NotifPriority.Low, NotifType.Normal)
@@ -76,7 +76,7 @@ Imports KS.Misc.Notifications
     ''' <summary>
     ''' Tests notification dismiss
     ''' </summary>
-    <TestMethod> Public Sub TestNotifyDismiss()
+    <Test> Public Sub TestNotifyDismiss()
         Dim Notif As New Notification("Redundant title", "This is a redundant notification", NotifPriority.Low, NotifType.Normal)
         NotifySend(Notif)
         NotifDismiss(NotifRecents.Count - 1).ShouldBeTrue

@@ -19,12 +19,12 @@
 Imports System.IO
 Imports KS.Misc.Encryption
 
-<TestClass()> Public Class EncryptionActionTests
+<TestFixture> Public Class EncryptionActionTests
 
     ''' <summary>
     ''' Tests string encryption
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedString()
+    <Test, Description("Action")> Public Sub TestGetEncryptedString()
         Dim TextHash As String = "Test hashing."
         Dim TextHashCRC32 As String = GetEncryptedString(TextHash, Algorithms.CRC32)
         Dim TextHashMD5 As String = GetEncryptedString(TextHash, Algorithms.MD5)
@@ -43,7 +43,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests file encryption
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingStream()
+    <Test, Description("Action")> Public Sub TestGetEncryptedFileUsingStream()
         Dim FileStreamHash As FileStream = File.Create(HomePath + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
         FileStreamHash.Flush()
@@ -67,7 +67,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests file encryption
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingPath()
+    <Test, Description("Action")> Public Sub TestGetEncryptedFileUsingPath()
         Dim FileStreamHash As FileStream = File.Create(HomePath + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
@@ -90,7 +90,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromHash()
+    <Test, Description("Action")> Public Sub TestVerifyHashFromHash()
         Dim FileStreamHash As FileStream = File.Create(HomePath + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
@@ -119,7 +119,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification from hashes file
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromFileStdFormat()
+    <Test, Description("Action")> Public Sub TestVerifyHashFromFileStdFormat()
         Dim FileHashCRC32 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32)
         Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
         Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
@@ -143,7 +143,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification from hashes file
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromFileKSFormat()
+    <Test, Description("Action")> Public Sub TestVerifyHashFromFileKSFormat()
         Dim FileHashCRC32 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32)
         Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
         Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
@@ -167,7 +167,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification for an uncalculated file
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyUncalculatedHashFromHash()
+    <Test, Description("Action")> Public Sub TestVerifyUncalculatedHashFromHash()
         Dim FileStreamHash As FileStream = File.Create(HomePath + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
@@ -196,7 +196,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification from hashes file for an uncalculated file
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyUncalculatedHashFromFileStdFormat()
+    <Test, Description("Action")> Public Sub TestVerifyUncalculatedHashFromFileStdFormat()
         Dim FileHashCRC32 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32)
         Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
         Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
@@ -220,7 +220,7 @@ Imports KS.Misc.Encryption
     ''' <summary>
     ''' Tests hash verification from hashes file for an uncalculated file
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyUncalculatedHashFromFileKSFormat()
+    <Test, Description("Action")> Public Sub TestVerifyUncalculatedHashFromFileKSFormat()
         Dim FileHashCRC32 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.CRC32)
         Dim FileHashMD5 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.MD5)
         Dim FileHashSHA1 As String = GetEncryptedFile(Environment.CurrentDirectory + "/TestText.txt", Algorithms.SHA1)
@@ -241,7 +241,7 @@ Imports KS.Misc.Encryption
         ResultSHA512.ShouldBeTrue
     End Sub
 
-    <TestMethod> <TestCategory("Action")> Public Sub TestGetEmptyHash()
+    <Test, Description("Action")> Public Sub TestGetEmptyHash()
         Dim EmptyCRC32 As String = GetEmptyHash(Algorithms.CRC32)
         Dim EmptyMD5 As String = GetEmptyHash(Algorithms.MD5)
         Dim EmptySHA1 As String = GetEmptyHash(Algorithms.SHA1)

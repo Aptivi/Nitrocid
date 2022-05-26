@@ -18,33 +18,33 @@
 
 Imports KS.Network.RemoteDebug
 
-<TestClass()> Public Class RemoteDebugManagementTests
+<TestFixture> Public Class RemoteDebugManagementTests
 
     ''' <summary>
     ''' Tests adding device to json
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddDeviceToJson()
+    <Test, Description("Management")> Public Sub TestAddDeviceToJson()
         AddDeviceToJson("123.123.123.123").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests setting device property
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestDeviceSetProperty()
+    <Test, Description("Management")> Public Sub TestDeviceSetProperty()
         SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests getting device property
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetDeviceProperty()
+    <Test, Description("Management")> Public Sub TestGetDeviceProperty()
         CStr(GetDeviceProperty("123.123.123.123", DeviceProperty.Name)).ShouldBe("TestUser")
     End Sub
 
     ''' <summary>
     ''' Removes a test device created by <see cref="TestAddDeviceToJson()"/>
     ''' </summary>
-    <ClassCleanup()> Public Shared Sub TestRemoveTestDevice()
+    <TearDown> Public Shared Sub TestRemoveTestDevice()
         RemoveDeviceFromJson("123.123.123.123").ShouldBeTrue
     End Sub
 

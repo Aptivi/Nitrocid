@@ -18,19 +18,19 @@
 
 Imports KS.ConsoleBase
 
-<TestClass()> Public Class ConsoleQueryingTests
+<TestFixture> Public Class ConsoleQueryingTests
 
     ''' <summary>
     ''' Tests getting how many times to repeat the character to represent the appropriate percentage level for the specified number.
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestPercentRepeatTargeted()
+    <Test, Description("Querying")> Public Sub TestPercentRepeatTargeted()
         PercentRepeatTargeted(25, 200, 100).ShouldBe(12)
     End Sub
 
     ''' <summary>
     ''' Tests filtering the VT sequences that matches the regex
     ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestFilterVTSequences()
+    <Test, Description("Querying")> Public Sub TestFilterVTSequences()
         FilterVTSequences($"Hello!{GetEsc()}[38;5;43m").ShouldBe("Hello!")
     End Sub
 

@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Splash.Splashes
-Imports System.Threading
 Imports System.IO
 Imports System.Reflection
 

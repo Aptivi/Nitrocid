@@ -19,12 +19,12 @@
 Imports System.Globalization
 Imports KS.TimeDate
 
-<TestClass()> Public Class TimeActionTests
+<TestFixture> Public Class TimeActionTests
 
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDate()
+    <Test, Description("Action")> Public Sub TestRenderKernelDate()
         KernelDateTime = Date.Now
         RenderDate.ShouldNotBeNullOrEmpty
     End Sub
@@ -32,7 +32,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specific format type
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateType()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateType()
         KernelDateTime = Date.Now
         RenderDate(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDate(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -41,7 +41,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetCult).ShouldNotBeNullOrEmpty
@@ -50,7 +50,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture and format type
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -60,7 +60,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateUtc()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateUtc()
         KernelDateTimeUtc = Date.UtcNow
         RenderDateUtc.ShouldNotBeNullOrEmpty
     End Sub
@@ -68,7 +68,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specific format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateUtcType()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateUtcType()
         KernelDateTimeUtc = Date.UtcNow
         RenderDateUtc(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDateUtc(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -77,7 +77,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateUtcCult()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDateUtc(TargetCult).ShouldNotBeNullOrEmpty
@@ -86,7 +86,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture and format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelDateUtcCultType()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDateUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -96,7 +96,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDate()
+    <Test, Description("Action")> Public Sub TestRenderCustomDate()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDate(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -104,7 +104,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateType()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDate(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDate(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -113,7 +113,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -122,7 +122,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -132,7 +132,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateUtc()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateUtc()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDateUtc(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -140,7 +140,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateUtcType()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateUtcType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDateUtc(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDateUtc(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -149,7 +149,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateUtcCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDateUtc(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -158,7 +158,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomDateUtcCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDateUtc(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -168,7 +168,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTime()
+    <Test, Description("Action")> Public Sub TestRenderKernelTime()
         KernelDateTime = Date.Now
         RenderTime.ShouldNotBeNullOrEmpty
     End Sub
@@ -176,7 +176,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeType()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeType()
         KernelDateTime = Date.Now
         RenderTime(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTime(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -185,7 +185,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetCult).ShouldNotBeNullOrEmpty
@@ -194,7 +194,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -204,7 +204,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeUtc()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeUtc()
         KernelDateTimeUtc = Date.UtcNow
         RenderTimeUtc.ShouldNotBeNullOrEmpty
     End Sub
@@ -212,7 +212,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time with specific format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeUtcType()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeUtcType()
         KernelDateTimeUtc = Date.UtcNow
         RenderTimeUtc(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTimeUtc(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -221,7 +221,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeUtcCult()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTimeUtc(TargetCult).ShouldNotBeNullOrEmpty
@@ -230,7 +230,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel time with specified culture and format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelTimeUtcCultType()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTimeUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -240,7 +240,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTime()
+    <Test, Description("Action")> Public Sub TestRenderCustomTime()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTime(TargetTime).ShouldNotBeNullOrEmpty
     End Sub
@@ -248,7 +248,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeType()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTime(TargetTime, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTime(TargetTime, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -257,7 +257,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeCult()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetTime, TargetCult).ShouldNotBeNullOrEmpty
@@ -266,7 +266,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeCultType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -276,7 +276,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeUtc()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeUtc()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTimeUtc(TargetTime).ShouldNotBeNullOrEmpty
     End Sub
@@ -284,7 +284,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeUtcType()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeUtcType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTimeUtc(TargetTime, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTimeUtc(TargetTime, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -293,7 +293,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeUtcCult()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTimeUtc(TargetTime, TargetCult).ShouldNotBeNullOrEmpty
@@ -302,7 +302,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom time with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomTimeUtcCultType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTimeUtc(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -312,7 +312,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernel()
+    <Test, Description("Action")> Public Sub TestRenderKernel()
         KernelDateTime = Date.Now
         Render.ShouldNotBeNullOrEmpty
     End Sub
@@ -320,7 +320,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelType()
+    <Test, Description("Action")> Public Sub TestRenderKernelType()
         KernelDateTime = Date.Now
         Render(FormatType.Long).ShouldNotBeNullOrEmpty
         Render(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -329,7 +329,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetCult).ShouldNotBeNullOrEmpty
@@ -338,7 +338,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -348,7 +348,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelUtc()
+    <Test, Description("Action")> Public Sub TestRenderKernelUtc()
         KernelDateTimeUtc = Date.UtcNow
         RenderUtc.ShouldNotBeNullOrEmpty
     End Sub
@@ -356,7 +356,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specific format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelUtcType()
+    <Test, Description("Action")> Public Sub TestRenderKernelUtcType()
         KernelDateTimeUtc = Date.UtcNow
         RenderUtc(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderUtc(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -365,7 +365,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderKernelUtcCult()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderUtc(TargetCult).ShouldNotBeNullOrEmpty
@@ -374,7 +374,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering kernel date with specified culture and format type (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderKernelUtcCultType()
         KernelDateTimeUtc = Date.UtcNow
         Dim TargetCult As New CultureInfo("es-ES")
         RenderUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -384,7 +384,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustom()
+    <Test, Description("Action")> Public Sub TestRenderCustom()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Render(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -392,7 +392,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomType()
+    <Test, Description("Action")> Public Sub TestRenderCustomType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Render(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         Render(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -401,7 +401,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -410,7 +410,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -420,7 +420,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomUtc()
+    <Test, Description("Action")> Public Sub TestRenderCustomUtc()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderUtc(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -428,7 +428,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomUtcType()
+    <Test, Description("Action")> Public Sub TestRenderCustomUtcType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderUtc(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderUtc(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -437,7 +437,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomUtcCult()
+    <Test, Description("Action")> Public Sub TestRenderCustomUtcCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderUtc(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -446,7 +446,7 @@ Imports KS.TimeDate
     ''' <summary>
     ''' Tests rendering custom date with specified culture (UTC)
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomUtcCultType()
+    <Test, Description("Action")> Public Sub TestRenderCustomUtcCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderUtc(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty

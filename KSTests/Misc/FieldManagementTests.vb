@@ -21,19 +21,19 @@ Imports Figgle
 Imports KS.Languages
 Imports KS.Misc.Reflection
 
-<TestClass()> Public Class FieldManagementTests
+<TestFixture> Public Class FieldManagementTests
 
     ''' <summary>
     ''' Tests checking field
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestCheckField()
+    <Test, Description("Management")> Public Sub TestCheckField()
         CheckField("HiddenFiles").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests getting value
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetValue()
+    <Test, Description("Management")> Public Sub TestGetValue()
         Dim Value As String = GetValue("HiddenFiles")
         Value.ShouldNotBeNullOrEmpty
     End Sub
@@ -41,7 +41,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests setting value
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestSetValue()
+    <Test, Description("Management")> Public Sub TestSetValue()
         SetValue("HiddenFiles", False)
         Dim Value As String = GetValue("HiddenFiles")
         Value.ShouldBe("False")
@@ -50,7 +50,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests getting variable
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigField()
+    <Test, Description("Management")> Public Sub TestGetConfigField()
         Dim Field As FieldInfo = GetField("HiddenFiles")
         Field.Name.ShouldBe("HiddenFiles")
     End Sub
@@ -58,7 +58,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests getting properties
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetProperties()
+    <Test, Description("Management")> Public Sub TestGetProperties()
         Dim Properties As Dictionary(Of String, Object) = GetProperties(GetType(FiggleFonts))
         Properties.ShouldNotBeNull
         Properties.ShouldNotBeEmpty
@@ -67,7 +67,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests getting properties
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetPropertiesNoEvaluation()
+    <Test, Description("Management")> Public Sub TestGetPropertiesNoEvaluation()
         Dim Properties As Dictionary(Of String, Type) = GetPropertiesNoEvaluation(GetType(FiggleFonts))
         Properties.ShouldNotBeNull
         Properties.ShouldNotBeEmpty
@@ -76,7 +76,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests getting property value from variable
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetPropertyValueInVariable()
+    <Test, Description("Management")> Public Sub TestGetPropertyValueInVariable()
         Dim Value As String = GetPropertyValueInVariable(NameOf(CurrentCult), NameOf(CurrentCult.Name))
         Value.ShouldNotBeNullOrEmpty
     End Sub

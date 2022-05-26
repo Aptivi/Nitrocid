@@ -18,12 +18,12 @@
 
 Imports KS.Misc.Reflection
 
-<TestClass()> Public Class ReflectionActionTests
+<TestFixture> Public Class ReflectionActionTests
 
     ''' <summary>
     ''' Tests checking to see if the string is numeric
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestIsStringNumeric()
+    <Test, Description("Action")> Public Sub TestIsStringNumeric()
         IsStringNumeric("64").ShouldBeTrue
         IsStringNumeric("64.5").ShouldBeTrue
         IsStringNumeric("64-5").ShouldBeFalse
@@ -34,7 +34,7 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests formatting the string
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestFormatString()
+    <Test, Description("Action")> Public Sub TestFormatString()
         FormatString("Hello, {0}!", "Alex").ShouldBe("Hello, Alex!")
         FormatString("We have 0x{0:X2} faults!", 15).ShouldBe("We have 0x0F faults!")
         FormatString("Destroy {0 ships!", 3).ShouldBe("Destroy {0 ships!")

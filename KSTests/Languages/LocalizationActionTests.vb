@@ -18,12 +18,12 @@
 
 Imports KS.Languages
 
-<TestClass()> Public Class LocalizationActionTests
+<TestFixture> Public Class LocalizationActionTests
 
     ''' <summary>
     ''' Tests string translation
     ''' </summary>
-    <TestMethod()> <TestCategory("Action")> Public Sub TestTranslate()
+    <Test, Description("Action")> Public Sub TestTranslate()
         Dim ExpectedTranslation As String = "Apagando ..."
         Dim ActualTranslation As String = DoTranslation("Shutting down...", "spa")
         ActualTranslation.ShouldBe(ExpectedTranslation)

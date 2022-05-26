@@ -18,12 +18,12 @@
 
 Imports Newtonsoft.Json.Linq
 
-<TestClass()> Public Class UserManagementTests
+<TestFixture> Public Class UserManagementTests
 
     ''' <summary>
     ''' Tests user addition
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddUser()
+    <Test, Description("Management")> Public Sub TestAddUser()
         AddUser("Account1").ShouldBeTrue
         AddUser("Account2", "password").ShouldBeTrue
     End Sub
@@ -31,14 +31,14 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests username change
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestChangeUser()
+    <Test, Description("Management")> Public Sub TestChangeUser()
         ChangeUsername("Account2", "Account3").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests username change
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestGetUserProperty()
+    <Test, Description("Management")> Public Sub TestGetUserProperty()
         GetUserProperty("Account3", UserProperty.Username).ShouldBe("Account3")
         CType(GetUserProperty("Account3", UserProperty.Permissions), JArray).ShouldBeEmpty
     End Sub
@@ -46,7 +46,7 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests removing user
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUser()
+    <Test, Description("Management")> Public Sub TestRemoveUser()
         RemoveUser("Account1").ShouldBeTrue
         RemoveUser("Account3").ShouldBeTrue
     End Sub
