@@ -1030,7 +1030,7 @@
                 "Variable": "PreferredUnit",
                 "IsEnumeration": true,
                 "EnumerationInternal": false,
-                "Enumeration": "Core.UnitMeasurement",
+                "Enumeration": "ManagedWeatherMap.Core.UnitMeasurement",
                 "EnumerationAssembly": "ManagedWeatherMap",
                 "EnumerationZeroBased": false,
                 "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command)"
