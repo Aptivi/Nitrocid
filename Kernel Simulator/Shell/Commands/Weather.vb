@@ -27,7 +27,7 @@ Namespace Shell.Commands
             Dim ListMode As Boolean
             If ListSwitchesOnly.Contains("-list") Then ListMode = True
             If ListMode Then
-                Dim Cities As Dictionary(Of Long, String) = Core.Forecast.ListAllCities()
+                Dim Cities As Dictionary(Of Long, String) = ManagedWeatherMap.Core.Forecast.ListAllCities()
                 WriteList(Cities)
             Else
                 Dim APIKey As String = Forecast.ApiKey

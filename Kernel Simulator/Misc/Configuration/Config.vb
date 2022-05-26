@@ -18,7 +18,7 @@
 
 Imports System.Globalization
 Imports System.IO
-Imports Core
+Imports ManagedWeatherMap.Core
 Imports KS.ManPages
 Imports KS.Misc.Forecast
 Imports KS.Misc.Games

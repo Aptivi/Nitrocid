@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Core
+Imports ManagedWeatherMap.Core
 Imports KS.Misc.Reflection
 
 Namespace Misc.Forecast
@@ -31,7 +31,7 @@ Namespace Misc.Forecast
         ''' <param name="CityID">City ID</param>
         ''' <returns>A class containing properties of weather information</returns>
         Public Function GetWeatherInfo(CityID As Long) As ForecastInfo
-            Return Core.Forecast.GetWeatherInfo(CityID:=CityID, ApiKey, PreferredUnit)
+            Return ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityID:=CityID, ApiKey, PreferredUnit)
         End Function
 
         ''' <summary>
@@ -41,7 +41,7 @@ Namespace Misc.Forecast
         ''' <param name="APIKey">API key</param>
         ''' <returns>A class containing properties of weather information</returns>
         Public Function GetWeatherInfo(CityID As Long, APIKey As String) As ForecastInfo
-            Return Core.Forecast.GetWeatherInfo(CityID:=CityID, APIKey, PreferredUnit)
+            Return ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityID:=CityID, APIKey, PreferredUnit)
         End Function
 
         ''' <summary>
@@ -50,7 +50,7 @@ Namespace Misc.Forecast
         ''' <param name="CityName">City name</param>
         ''' <returns>A class containing properties of weather information</returns>
         Public Function GetWeatherInfo(CityName As String) As ForecastInfo
-            Return Core.Forecast.GetWeatherInfo(CityName:=CityName, ApiKey, PreferredUnit)
+            Return ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityName:=CityName, ApiKey, PreferredUnit)
         End Function
 
         ''' <summary>
@@ -60,7 +60,7 @@ Namespace Misc.Forecast
         ''' <param name="APIKey">API key</param>
         ''' <returns>A class containing properties of weather information</returns>
         Public Function GetWeatherInfo(CityName As String, APIKey As String) As ForecastInfo
-            Return Core.Forecast.GetWeatherInfo(CityName:=CityName, APIKey, PreferredUnit)
+            Return ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityName:=CityName, APIKey, PreferredUnit)
         End Function
 
         ''' <summary>
