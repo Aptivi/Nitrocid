@@ -46,7 +46,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <GenerateManifests>false</GenerateManifests>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Version>0.0.21.5</Version>
+    <Version>0.0.22.0</Version>
   </PropertyGroup>
   <!-- KS General Information End -->
 
