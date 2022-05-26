@@ -23,17 +23,17 @@
     <RepositoryType>git</RepositoryType>
     <!-- Dependencies set up -->
     <Dependencies>
-      <dependency id="Addresstigator" version="0.1.0.1" />
+      <dependency id="Addresstigator" version="0.1.0.2" />
       <dependency id="Crc32.NET" version="1.2.0" />
-      <dependency id="Extensification" version="2022.0.0" />
-      <dependency id="Extensification.Legacy" version="2022.0.0" />
+      <dependency id="Extensification" version="2022.1.0" />
+      <dependency id="Extensification.Legacy" version="2022.1.0" />
       <dependency id="Figgle" version="0.4.0" />
       <dependency id="FluentFTP" version="37.0.2" />
       <dependency id="HtmlAgilityPack" version="1.11.42" />
       <dependency id="Inxi.NET" version="2022.1.0.1" />
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
       <dependency id="MailKit" version="3.2.0" />
-      <dependency id="ManagedWeatherMap" version="1.0.0" />
+      <dependency id="ManagedWeatherMap" version="1.0.1" />
       <dependency id="Newtonsoft.Json" version="13.0.1" />
       <dependency id="SSH.NET" version="2020.0.1" />
     </Dependencies>
