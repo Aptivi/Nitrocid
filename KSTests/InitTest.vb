@@ -34,6 +34,10 @@ Imports KS.Misc.Configuration
         End If
         InitializeConfigToken()
         LoadUserToken()
+
+        'NUnit sets current directory to a wrong directory, so set it to the test context directory
+        Dim TestAssemblyDir As String = TestContext.CurrentContext.TestDirectory
+        Environment.CurrentDirectory = TestAssemblyDir
     End Sub
 
     ''' <summary>

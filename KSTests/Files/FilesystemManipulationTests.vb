@@ -39,7 +39,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCopyFileToDirectory()
         CurrDir = HomePath
-        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
@@ -49,7 +49,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCopyFileToFile()
         CurrDir = HomePath
-        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
@@ -94,7 +94,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMoveFileToDirectory()
         CurrDir = HomePath
-        Dim SourcePath As String = Path.GetFullPath("TestMove.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestData/TestMove.txt")
         Dim TargetPath As String = "/Documents"
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
@@ -105,7 +105,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestMoveFileToFile()
         CurrDir = HomePath
         Dim SourcePath As String = "/Documents/TestMove.txt"
-        Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
+        Dim TargetPath As String = Path.GetFullPath("TestData/TestMove.txt")
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
@@ -142,7 +142,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestSearchFileForString()
         CurrDir = HomePath
-        Dim TargetPath As String = Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
         Matches.ShouldNotBeNull
         Matches.ShouldNotBeEmpty
@@ -153,7 +153,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestSearchFileForStringRegexp()
         CurrDir = HomePath
-        Dim TargetPath As String = Path.GetFullPath("TestText.txt")
+        Dim TargetPath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim Matches As List(Of String) = SearchFileForStringRegexp(TargetPath, New Regex("test"))
         Matches.ShouldNotBeNull
         Matches.ShouldNotBeEmpty
@@ -164,7 +164,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestAddAttribute()
         CurrDir = HomePath
-        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
@@ -173,7 +173,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestDeleteAttribute()
         CurrDir = HomePath
-        Dim SourcePath As String = Path.GetFullPath("TestText.txt")
+        Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
@@ -181,7 +181,7 @@ Imports KS.Shell
     ''' Tests reading all lines without roadblocks
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestReadAllLinesNoBlock()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim PathToTestText As String = Path.GetFullPath("TestData/TestText.txt")
         Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
         LinesTestText.ShouldBeOfType(GetType(String()))
         LinesTestText.ShouldNotBeNull
@@ -192,7 +192,7 @@ Imports KS.Shell
     ''' Tests reading all lines
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestReadContents()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim PathToTestText As String = Path.GetFullPath("TestData/TestText.txt")
         Dim LinesTestText As String() = ReadContents(PathToTestText)
         LinesTestText.ShouldBeOfType(GetType(String()))
         LinesTestText.ShouldNotBeNull
@@ -310,8 +310,8 @@ Imports KS.Shell
     ''' Tests combining files
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCombineFiles()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-        Dim PathToTestTextToBeCombined As String = Path.GetFullPath("TestText.txt")
+        Dim PathToTestText As String = Path.GetFullPath("TestData/TestText.txt")
+        Dim PathToTestTextToBeCombined As String = Path.GetFullPath("TestData/TestText.txt")
         Dim Combined As String() = CombineFiles(PathToTestText, {PathToTestTextToBeCombined})
         Combined.ShouldBeOfType(GetType(String()))
         Combined.ShouldNotBeNull

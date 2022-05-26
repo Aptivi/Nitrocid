@@ -25,7 +25,7 @@ Imports KS.Shell.ShellBase
     ''' <summary>
     ''' Tests initializing the shell instance from base
     ''' </summary>
-    <Test, Description("Initialization")> Public Sub TestInitializeShellExecutorFromBase()
+    <Test, Description("Initialization"), SetUp> Public Sub TestInitializeShellExecutorFromBase()
         'Create instance
         ShellInstance = New ShellTest()
 

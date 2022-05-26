@@ -25,7 +25,7 @@ Imports KS.Misc.TextEdit
     ''' Tests opening, saving, and closing text file
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestOpenSaveCloseTextFile()
-        Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
+        Dim PathToTestText As String = Path.GetFullPath("TestData/TestText.txt")
         TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue
         TextEdit_FileLines.Add("Hello!")
         TextEdit_SaveTextFile(False).ShouldBeTrue

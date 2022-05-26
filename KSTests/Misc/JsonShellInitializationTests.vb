@@ -25,7 +25,7 @@ Imports KS.Misc.JsonShell
     ''' Tests opening, saving, and closing a JSON file
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestOpenSaveCloseJsonFile()
-        Dim PathToTestJson As String = Path.GetFullPath("TestJson.json")
+        Dim PathToTestJson As String = Path.GetFullPath("TestData/TestJson.json")
         JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue
         JsonShell_AddNewProperty("$", "HowText", "How are you today?")
         JsonShell_FileToken("HowText").ShouldNotBeNull

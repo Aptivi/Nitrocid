@@ -37,7 +37,7 @@ Imports Newtonsoft.Json.Linq
     ''' Tests beautifying the JSON text
     ''' </summary>
     <Test, Description("Action")> Public Sub TestBeautifyJsonFile()
-        Dim SourcePath As String = Path.GetFullPath("Hacker.json")
+        Dim SourcePath As String = Path.GetFullPath("TestData/Hacker.json")
         Dim Beautified As String = BeautifyJson(SourcePath)
         Beautified.ShouldNotBeEmpty
         Beautified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Beautified), Formatting.Indented))
@@ -56,7 +56,7 @@ Imports Newtonsoft.Json.Linq
     ''' Tests minifying the JSON text
     ''' </summary>
     <Test, Description("Action")> Public Sub TestMinifyJsonFile()
-        Dim SourcePath As String = Path.GetFullPath("Hacker.json")
+        Dim SourcePath As String = Path.GetFullPath("TestData/Hacker.json")
         Dim Minified As String = MinifyJson(SourcePath)
         Minified.ShouldNotBeEmpty
         Minified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Minified), Formatting.None))

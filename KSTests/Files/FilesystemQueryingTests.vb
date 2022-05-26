@@ -25,8 +25,8 @@ Imports KS.Misc.Platform
     ''' Tests checking if file exists
     ''' </summary>
     <Test, Description("Querying")> Public Sub TestFileExists()
-        Dim TargetFile As String = Path.GetFullPath("TestText.txt")
-        Dim TargetFile2 As String = Path.GetFullPath("TestTexts.txt")
+        Dim TargetFile As String = Path.GetFullPath("TestData/TestText.txt")
+        Dim TargetFile2 As String = Path.GetFullPath("TestData/TestTexts.txt")
         FileExists(TargetFile).ShouldBeTrue
         FileExists(TargetFile2).ShouldBeFalse
     End Sub
@@ -79,7 +79,7 @@ Imports KS.Misc.Platform
     ''' </summary>
     <Test, Description("Querying")> Public Sub TestGetLineEndingFromFile()
         Dim ExpectedStyle As FilesystemNewlineStyle = FilesystemNewlineStyle.LF
-        Dim ActualStyle As FilesystemNewlineStyle = GetLineEndingFromFile(Path.GetFullPath("TestText.txt"))
+        Dim ActualStyle As FilesystemNewlineStyle = GetLineEndingFromFile(Path.GetFullPath("TestData/TestText.txt"))
         ActualStyle.ShouldBe(ExpectedStyle)
     End Sub
 
