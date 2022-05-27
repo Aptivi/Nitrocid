@@ -130,7 +130,7 @@ Namespace Login
         Public Sub InitializeUsers()
             'Opens file stream
             Dim UsersTokenContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Users))
-            Dim UninitUsersToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "{}"))
+            Dim UninitUsersToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "[] unit t"))
             For Each UserToken As JObject In UninitUsersToken
                 InitializeUser(UserToken("username"), UserToken("password"), False)
             Next
