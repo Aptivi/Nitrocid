@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> 嘗試獲取幀信息時出錯。 {0}：{1}",
     "Welcome to Kernel!": "歡迎來到內核！",
     "Logged in successfully as <user>": "以 <user> 身份成功登錄",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD/MAL 有效，但消息類型無效。假設MOTD...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "試圖讀取無效消息類型的 MOTD/MAL。",
     "Download has completed.": "下載已完成。",
     "Download failed in try {0}: {1}": "嘗試 {0} 時下載失敗：{1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "如果您要從 FTP 服務器下載文件，請使用“ftp”。",

@@ -196,8 +196,6 @@ Muda de idioma
 > Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
 Bem vindo ao Kernel!
 Conectado com sucesso como <user>
-MOTD / MAL é válido, mas o tipo de mensagem não é válido. 
-Tentei ler MOTD / MAL que é do tipo de mensagem inválido.
 Pengunduhan telah selesai.
 Gagal mengunduh dalam percobaan {0}: {1}
 Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.

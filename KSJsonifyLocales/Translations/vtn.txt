@@ -196,8 +196,6 @@ Thay đổi ngôn ngữ
 > Có lỗi khi cố lấy thông tin khung. {0}: {1}
 Chào mừng bạn đến với hạt nhân!
 Đăng nhập thành công với tư cách là <user>
-MOTD / MAL là hợp lệ, nhưng loại tin nhắn không hợp lệ. Giả sử ...
-Đã thử đọc MOTD / MAL thuộc loại tin nhắn không hợp lệ.
 Tải về đã hoàn thành.
 Tải xuống thất bại trong thử {0}: {1}
 Vui lòng sử dụng "ftp" nếu bạn định tải xuống các tệp từ máy chủ FTP.

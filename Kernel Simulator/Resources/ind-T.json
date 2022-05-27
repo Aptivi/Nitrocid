@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> फ़्रेम जानकारी प्राप्त करने का प्रयास करते समय एक त्रुटि हुई है। {0}: {1}",
     "Welcome to Kernel!": "कर्नेल में आपका स्वागत है!",
     "Logged in successfully as <user>": "<User> के रूप में सफलतापूर्वक लॉग इन किया",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL मान्य है, लेकिन संदेश प्रकार मान्य नहीं है। मान लीजिए ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "MOTD / MAL को पढ़ने की कोशिश की जो अमान्य संदेश प्रकार की है।",
     "Download has completed.": "डाउनलोड पूरा कर लिया है।",
     "Download failed in try {0}: {1}": "डाउनलोड करने में विफल {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "यदि आप FTP सर्वर से फाइल डाउनलोड करने जा रहे हैं तो कृपया \"ftp\" का उपयोग करें।",

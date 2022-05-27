@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Pid chas sproby otrymaty informatsiyu pro kadr stalasya pomylka. {0}: {1}",
     "Welcome to Kernel!": "Laskavo prosymo do Kernel!",
     "Logged in successfully as <user>": "Uspishno vviyshov yak <korystuvach>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD/MAL diysnyy, ale typ povidomlennya nediysnyy. Prypuskayuchy MOTD...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Namahavsya prochytaty MOTD/MAL, yake maye nediysnyy typ povidomlennya.",
     "Download has completed.": "Zavantazhennya zaversheno.",
     "Download failed in try {0}: {1}": "Pomylka zavantazhennya pid chas sproby {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Budʹ laska, vykorystovuyte \"ftp\", yakshcho vy zbyrayetesya zavantazhuvaty fayly z FTP-servera.",

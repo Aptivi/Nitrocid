@@ -196,8 +196,6 @@ Verandert de taal
 > Er is een fout opgetreden bij het verkrijgen van framegegevens. {0}: {1}
 Welkom bij Kernel!
 Succesvol aangemeld als <gebruiker>
-MOTD / MAL is geldig, maar het berichttype is niet geldig. 
-Probeerde MOTD / MAL te lezen van het ongeldige berichttype.
 Downloaden is voltooid.
 Downloaden mislukt in probeer {0}: {1}
 Gebruik "ftp" als u bestanden van de FTP-server gaat downloaden.

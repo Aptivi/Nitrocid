@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> 7h3r3 15 4n 3rr0r wh3n 7ry1n6 70 637 fr4m3 1nf0rm4710n. {0}: {1}",
     "Welcome to Kernel!": "w3lc0m3 70 k3rn3l!",
     "Logged in successfully as <user>": "l0663d 1n 5ucc355fully 45 <u53r>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "m07d/m4l 15 v4l1d, bu7 7h3 m355463 7yp3 15 n07 v4l1d. 455um1n6 m07d...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "7r13d 70 r34d m07d/m4l 7h47 15 0f 7h3 1nv4l1d m355463 7yp3.",
     "Download has completed.": "d0wnl04d h45 c0mpl373d.",
     "Download failed in try {0}: {1}": "d0wnl04d f41l3d 1n 7ry {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "pl3453 u53 \"f7p\" 1f y0u 4r3 601n6 70 d0wnl04d f1l35 fr0m 7h3 f7p 53rv3r.",

@@ -196,8 +196,6 @@ changes language
 > there be an error when tryin' to get frame information. {0}: {1}
  ye be welcome to kernel!
 logged in successfully as <user>
-motd/mal be valid, but the message type be not valid. Assumin' motd...
- tried to read motd/mal that there be o' the invalid message type.
  download 'as completed.
  download failed in try {0}: {1}
 please use "ftp" if ye be goin' to download files from the ftp server.

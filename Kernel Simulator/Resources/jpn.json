@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": ">フレーム情報を取得しようとしたときにエラーが発生しました。 {0}：{1}",
     "Welcome to Kernel!": "カーネルへようこそ！",
     "Logged in successfully as <user>": "<user>として正常にログインしました",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MALは有効ですが、メッセージタイプは無効です。 MOTDを想定...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "無効なメッセージタイプのMOTD / MALを読み取ろうとしました。",
     "Download has completed.": "ダウンロードが完了しました。",
     "Download failed in try {0}: {1}": "試行{0}でダウンロードに失敗しました：{1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "FTPサーバーからファイルをダウンロードする場合は、「ftp」を使用してください。",

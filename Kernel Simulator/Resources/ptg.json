@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}",
     "Welcome to Kernel!": "Bem vindo ao Kernel!",
     "Logged in successfully as <user>": "Conectado com sucesso como <user>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL é válido, mas o tipo de mensagem não é válido. ",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Tentei ler MOTD / MAL que é do tipo de mensagem inválido.",
     "Download has completed.": "Pengunduhan telah selesai.",
     "Download failed in try {0}: {1}": "Gagal mengunduh dalam percobaan {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Silakan gunakan \"ftp\" jika Anda akan mengunduh file dari server FTP.",

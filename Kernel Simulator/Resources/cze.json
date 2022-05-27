@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Při pokusu o získání rámových informací došlo k chybě. {0}: {1}",
     "Welcome to Kernel!": "Vítejte v Kernelu!",
     "Logged in successfully as <user>": "Úspěšně přihlášeno jako <user>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL je platný, ale typ zprávy není platný. ",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Pokusil se přečíst MOTD / MAL, který je neplatného typu zprávy.",
     "Download has completed.": "Stahování bylo dokončeno.",
     "Download failed in try {0}: {1}": "Stažení se nezdařilo v pokusu {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Pokud se chystáte stahovat soubory ze serveru FTP, použijte „ftp“.",

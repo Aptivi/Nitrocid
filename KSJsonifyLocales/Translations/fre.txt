@@ -196,8 +196,6 @@ Change de langue
 > Il y a une erreur en essayant d'obtenir des informations sur le cadre. {0}: {1}
 Bienvenue sur Kernel!
 Connecté avec succès en tant que <utilisateur>
-MOTD / MAL est valide, mais le type de message n'est pas valide. 
-J'ai essayé de lire MOTD / MAL dont le type de message était invalide.
 Le téléchargement est terminé.
 Le téléchargement a échoué lors de l'essai {0}: {1}
 Veuillez utiliser "ftp" si vous allez télécharger des fichiers depuis le serveur FTP.

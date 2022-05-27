@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Có lỗi khi cố lấy thông tin khung. {0}: {1}",
     "Welcome to Kernel!": "Chào mừng bạn đến với hạt nhân!",
     "Logged in successfully as <user>": "Đăng nhập thành công với tư cách là <user>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL là hợp lệ, nhưng loại tin nhắn không hợp lệ. Giả sử ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Đã thử đọc MOTD / MAL thuộc loại tin nhắn không hợp lệ.",
     "Download has completed.": "Tải về đã hoàn thành.",
     "Download failed in try {0}: {1}": "Tải xuống thất bại trong thử {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Vui lòng sử dụng \"ftp\" nếu bạn định tải xuống các tệp từ máy chủ FTP.",

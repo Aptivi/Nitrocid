@@ -196,8 +196,6 @@ bhaasha badal jaatee hai
 > frem jaanakaaree praapt karane ka prayaas karate samay koee truti hai. {0}: {1}
 karnel mein aapaka svaagat hai!
 <usair> ke roop mein saphalataapoorvak log in kiya
-motd / mal maany hai, lekin sandesh prakaar maany nahin hai. maan leejie ...
-motd / mal ko padhane kee koshish kee jo amaany sandesh prakaar kee hai.
 daunalod poora kar liya hai.
 daunalod karane mein viphal {0}: {1}
 yadi aap ftp sarvar se phail daunalod karane ja rahe hain to krpaya "ftp" ka upayog karen.

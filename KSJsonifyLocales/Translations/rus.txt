@@ -196,8 +196,6 @@ Menyayet yazyk
 > Oshibka pri popytke poluchit' informatsiyu o kadre. {0}: {1}
 Dobro pozhalovat' v Kernel!
 Vy uspeshno voshli kak <pol'zovatel'>
-MOTD / MAL deystvitelen, no tip soobshcheniya nedeystvitelen. Predpolagaya MOTD ...
-Popytalsya prochitat' MOTD / MAL, kotoryy imeyet nedopustimyy tip soobshcheniya.
 Zagruzka zavershena.
 Oshibka zagruzki pri popytke {0}: {1}
 Pozhaluysta, ispol'zuyte «ftp», yesli vy sobirayetes' zagruzhat' fayly s FTP-servera.

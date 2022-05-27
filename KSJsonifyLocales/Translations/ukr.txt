@@ -196,8 +196,6 @@ Zminyuye movu
 > Pid chas sproby otrymaty informatsiyu pro kadr stalasya pomylka. {0}: {1}
 Laskavo prosymo do Kernel!
 Uspishno vviyshov yak <korystuvach>
-MOTD/MAL diysnyy, ale typ povidomlennya nediysnyy. Prypuskayuchy MOTD...
-Namahavsya prochytaty MOTD/MAL, yake maye nediysnyy typ povidomlennya.
 Zavantazhennya zaversheno.
 Pomylka zavantazhennya pid chas sproby {0}: {1}
 Budʹ laska, vykorystovuyte "ftp", yakshcho vy zbyrayetesya zavantazhuvaty fayly z FTP-servera.

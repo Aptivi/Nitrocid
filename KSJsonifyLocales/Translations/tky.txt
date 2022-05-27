@@ -196,8 +196,6 @@ Dili değiştirir
 > Çerçeve bilgisi alınmaya çalışılırken bir hata oluştu. {0}: {1}
 Çekirdeğe hoş geldiniz!
 <user> olarak başarıyla oturum açıldı
-MOTD/MAL geçerli, ancak mesaj tipi geçerli değil. MOTD'yi varsayarsak...
-Geçersiz mesaj türündeki MOTD/MAL'yi okumaya çalıştı.
 İndirme tamamlandı.
 {0} denemesinde indirme başarısız oldu: {1}
 FTP sunucusundan dosya indirecekseniz lütfen "ftp" kullanın.

@@ -196,8 +196,6 @@ Cambia el idioma
 > Hay un error al intentar obtener información de marco. {0}: {1}
 ¡Bienvenido a Kernel!
 Se inició sesión correctamente como <usuario>
-MOTD / MAL es válido, pero el tipo de mensaje no es válido. 
-Intenté leer MOTD / MAL que es del tipo de mensaje no válido.
 Pobieranie zostało zakończone.
 Pobieranie nie powiodło się w próbie {0}: {1}
 Użyj „ftp”, jeśli zamierzasz pobierać pliki z serwera FTP.

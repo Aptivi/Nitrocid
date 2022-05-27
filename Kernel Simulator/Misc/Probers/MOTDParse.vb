@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Kernel.Exceptions
+
 Namespace Misc.Probers
     Public Module MOTDParse
 
@@ -64,7 +66,7 @@ Namespace Misc.Probers
                     MOTDStreamW.Write(Message)
                     MAL = Message
                 Else
-                    Write(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD..."), True, ColTypes.Error)
+                    Wdbg(DebugLevel.W, "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...")
                     MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
                     Wdbg(DebugLevel.I, "Opened stream to MOTD path")
                     MOTDStreamW.WriteLine(Message)
@@ -75,7 +77,7 @@ Namespace Misc.Probers
                 MOTDStreamW.Close()
                 Wdbg(DebugLevel.I, "Stream closed")
             Catch ex As Exception
-                Write(DoTranslation("Error when trying to set MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
+                Throw New MOTDException(DoTranslation("Error when trying to set MOTD/MAL: {0}"), ex.Message)
                 WStkTrc(ex)
             End Try
         End Sub
@@ -111,10 +113,10 @@ Namespace Misc.Probers
                     MOTDStreamR.Close()
                     Wdbg(DebugLevel.I, "Stream closed")
                 Else
-                    Write(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type."), True, ColTypes.Error)
+                    Wdbg(DebugLevel.W, "MOTD/MAL is valid, but the message type is not valid.")
                 End If
             Catch ex As Exception
-                Write(DoTranslation("Error when trying to get MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
+                Throw New MOTDException(DoTranslation("Error when trying to get MOTD/MAL: {0}"), ex.Message)
                 WStkTrc(ex)
             End Try
         End Sub

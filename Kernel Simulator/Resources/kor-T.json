@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> 프레임 정보를 가져 오려고 할 때 오류가 발생했습니다. {0} : {1}",
     "Welcome to Kernel!": "커널에 오신 것을 환영합니다!",
     "Logged in successfully as <user>": "<사용자>로 성공적으로 로그인",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL은 유효하지만 메시지 유형이 유효하지 않습니다. MOTD 가정 ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "메시지 유형이 잘못된 MOTD / MAL을 읽으려고했습니다.",
     "Download has completed.": "다운로드가 완료되었습니다.",
     "Download failed in try {0}: {1}": "{0} 시도에서 다운로드에 실패했습니다 : {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "FTP 서버에서 파일을 다운로드하려면 \"ftp\"를 사용하십시오.",

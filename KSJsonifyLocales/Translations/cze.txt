@@ -196,8 +196,6 @@ Změní jazyk
 > Při pokusu o získání rámových informací došlo k chybě. {0}: {1}
 Vítejte v Kernelu!
 Úspěšně přihlášeno jako <user>
-MOTD / MAL je platný, ale typ zprávy není platný. 
-Pokusil se přečíst MOTD / MAL, který je neplatného typu zprávy.
 Stahování bylo dokončeno.
 Stažení se nezdařilo v pokusu {0}: {1}
 Pokud se chystáte stahovat soubory ze serveru FTP, použijte „ftp“.

@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> هناك خطأ عند محاولة الحصول على معلومات الإطار. {0}: {1}",
     "Welcome to Kernel!": "مرحبًا بك في Kernel!",
     "Logged in successfully as <user>": "تم تسجيل الدخول بنجاح كـ <user>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL صالح ، لكن نوع الرسالة غير صالح. على افتراض أن MOTD ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "حاول قراءة MOTD / MAL من نوع الرسالة غير صالح.",
     "Download has completed.": "اكتمل التنزيل.",
     "Download failed in try {0}: {1}": "فشل التنزيل في المحاولة {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "يرجى استخدام \"ftp\" إذا كنت تنوي تنزيل الملفات من خادم FTP.",

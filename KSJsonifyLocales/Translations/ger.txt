@@ -196,8 +196,6 @@ Ungültige Sprache
 > Beim Versuch, Frame-Informationen abzurufen, ist ein Fehler aufgetreten. {0}: {1}
 Willkommen im Kernel!
 Erfolgreich als <Benutzer> angemeldet
-MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. 
-Es wurde versucht, MOTD / MAL zu lesen, das vom ungültigen Nachrichtentyp ist.
 Der Download ist abgeschlossen.
 Download in Versuch {0} fehlgeschlagen: {1}
 Bitte verwenden Sie "ftp", wenn Sie Dateien vom FTP-Server herunterladen möchten.

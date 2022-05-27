@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> peuleim jeongboleul gajyeo olyeogo hal ttae olyuga balsaenghaessseubnida. {0} : {1}",
     "Welcome to Kernel!": "keoneol-e osin geos-eul hwan-yeonghabnida!",
     "Logged in successfully as <user>": "<sayongja>lo seong-gongjeog-eulo logeu-in",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MALeun yuhyohajiman mesiji yuhyeong-i yuhyohaji anhseubnida. MOTD gajeong ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "mesiji yuhyeong-i jalmosdoen MOTD / MALeul ilg-eulyeogohaessseubnida.",
     "Download has completed.": "daunlodeuga wanlyodoeeossseubnida.",
     "Download failed in try {0}: {1}": "{0} sido-eseo daunlodeue silpaehaessseubnida : {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "FTP seobeoeseo pail-eul daunlodeuhalyeomyeon \"ftp\"leul sayonghasibsio.",

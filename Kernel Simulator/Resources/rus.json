@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Oshibka pri popytke poluchit' informatsiyu o kadre. {0}: {1}",
     "Welcome to Kernel!": "Dobro pozhalovat' v Kernel!",
     "Logged in successfully as <user>": "Vy uspeshno voshli kak <pol'zovatel'>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL deystvitelen, no tip soobshcheniya nedeystvitelen. Predpolagaya MOTD ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Popytalsya prochitat' MOTD / MAL, kotoryy imeyet nedopustimyy tip soobshcheniya.",
     "Download has completed.": "Zagruzka zavershena.",
     "Download failed in try {0}: {1}": "Oshibka zagruzki pri popytke {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Pozhaluysta, ispol'zuyte «ftp», yesli vy sobirayetes' zagruzhat' fayly s FTP-servera.",

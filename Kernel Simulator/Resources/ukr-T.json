@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Під час спроби отримати інформацію про кадр сталася помилка. {0}: {1}",
     "Welcome to Kernel!": "Ласкаво просимо до Kernel!",
     "Logged in successfully as <user>": "Успішно ввійшов як <користувач>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD/MAL дійсний, але тип повідомлення недійсний. Припускаючи MOTD...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Намагався прочитати MOTD/MAL, яке має недійсний тип повідомлення.",
     "Download has completed.": "Завантаження завершено.",
     "Download failed in try {0}: {1}": "Помилка завантаження під час спроби {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Будь ласка, використовуйте \"ftp\", якщо ви збираєтеся завантажувати файли з FTP-сервера.",

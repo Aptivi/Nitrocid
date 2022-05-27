@@ -196,8 +196,6 @@ Cambia lingua
 > Si è verificato un errore durante il tentativo di ottenere informazioni sul frame. {0}: {1}
 Benvenuto in Kernel!
 Accesso eseguito correttamente come <utente>
-MOTD / MAL è valido, ma il tipo di messaggio non è valido. 
-Ho provato a leggere MOTD / MAL che è del tipo di messaggio non valido.
 Download completato.
 Download non riuscito nel tentativo {0}: {1}
 Utilizzare "ftp" se si intende scaricare file dal server FTP.

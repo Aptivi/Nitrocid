@@ -196,8 +196,6 @@ yughayir allugha
 > hunak khata eind muhawalat alhusul ealaa maelumat al'iitar. {0}: {1}
 mrhbana bik fi Kernel!
 tam tasjil aldukhul binajah k <user>
-MOTD / MAL salih , lkn nawe alrisalat ghyr salih. ealaa aiftirad 'ana MOTD ...
-hawal qra'at MOTD / MAL min nawe alrisalat ghyr salih.
 aiktamal altanzil.
 fashila altanzil fi almuhawala {0}: {1}
 yrja aistikhdam "ftp" 'iidha kunt tunwi tanzil almilaffat min khadim FTP.

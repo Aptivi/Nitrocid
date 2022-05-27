@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Beim Versuch, Frame-Informationen abzurufen, ist ein Fehler aufgetreten. {0}: {1}",
     "Welcome to Kernel!": "Willkommen im Kernel!",
     "Logged in successfully as <user>": "Erfolgreich als <Benutzer> angemeldet",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. ",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Es wurde versucht, MOTD / MAL zu lesen, das vom ungültigen Nachrichtentyp ist.",
     "Download has completed.": "Der Download ist abgeschlossen.",
     "Download failed in try {0}: {1}": "Download in Versuch {0} fehlgeschlagen: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "Bitte verwenden Sie \"ftp\", wenn Sie Dateien vom FTP-Server herunterladen möchten.",

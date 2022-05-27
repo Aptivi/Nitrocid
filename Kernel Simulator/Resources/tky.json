@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> Çerçeve bilgisi alınmaya çalışılırken bir hata oluştu. {0}: {1}",
     "Welcome to Kernel!": "Çekirdeğe hoş geldiniz!",
     "Logged in successfully as <user>": "<user> olarak başarıyla oturum açıldı",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD/MAL geçerli, ancak mesaj tipi geçerli değil. MOTD'yi varsayarsak...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "Geçersiz mesaj türündeki MOTD/MAL'yi okumaya çalıştı.",
     "Download has completed.": "İndirme tamamlandı.",
     "Download failed in try {0}: {1}": "{0} denemesinde indirme başarısız oldu: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "FTP sunucusundan dosya indirecekseniz lütfen \"ftp\" kullanın.",

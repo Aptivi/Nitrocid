@@ -196,8 +196,6 @@ Changes language
 > There is an error when trying to get frame information. {0}: {1}
 Welcome to Kernel!
 Logged in successfully as <user>
-MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...
-Tried to read MOTD/MAL that is of the invalid message type.
 Download has completed.
 Download failed in try {0}: {1}
 Please use "ftp" if you are going to download files from the FTP server.

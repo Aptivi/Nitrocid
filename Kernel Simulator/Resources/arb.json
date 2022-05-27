@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> hunak khata eind muhawalat alhusul ealaa maelumat al'iitar. {0}: {1}",
     "Welcome to Kernel!": "mrhbana bik fi Kernel!",
     "Logged in successfully as <user>": "tam tasjil aldukhul binajah k <user>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD / MAL salih , lkn nawe alrisalat ghyr salih. ealaa aiftirad 'ana MOTD ...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "hawal qra'at MOTD / MAL min nawe alrisalat ghyr salih.",
     "Download has completed.": "aiktamal altanzil.",
     "Download failed in try {0}: {1}": "fashila altanzil fi almuhawala {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "yrja aistikhdam \"ftp\" 'iidha kunt tunwi tanzil almilaffat min khadim FTP.",

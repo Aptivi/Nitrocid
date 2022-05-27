@@ -196,8 +196,6 @@ eon-eo byeongyeong
 > peuleim jeongboleul gajyeo olyeogo hal ttae olyuga balsaenghaessseubnida. {0} : {1}
 keoneol-e osin geos-eul hwan-yeonghabnida!
 <sayongja>lo seong-gongjeog-eulo logeu-in
-MOTD / MALeun yuhyohajiman mesiji yuhyeong-i yuhyohaji anhseubnida. MOTD gajeong ...
-mesiji yuhyeong-i jalmosdoen MOTD / MALeul ilg-eulyeogohaessseubnida.
 daunlodeuga wanlyodoeeossseubnida.
 {0} sido-eseo daunlodeue silpaehaessseubnida : {1}
 FTP seobeoeseo pail-eul daunlodeuhalyeomyeon "ftp"leul sayonghasibsio.

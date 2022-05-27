@@ -196,8 +196,6 @@ gǎibiàn yǔyán
 > Chángshì huòqǔ zhèng xìnxī shí chūcuò. {0}: {1}
 Huānyíng lái dào nèihé!
 Yǐ <user>chénggōng dēnglù
-MOTD/ MAL yǒuxiào, dàn xiāoxī lèixíng wúxiào. Jiǎshè MOTD......
-Shìtú dòu qǔ wúxiào xiāoxī lèixíng de MOTD/ MAL.
 Xiàzài yǐ wánchéng.
 Chángshì {0} xià zǎi shībài:{1}
 Rúguǒ yào cóng FTP fúwùqì xiàzài wénjiàn, qǐng shǐyòng “ftp”.

@@ -200,8 +200,6 @@
     "> There is an error when trying to get frame information. {0}: {1}": "> THAR IZ AN ERROR WHEN TRYIN 2 GIT FRAME INFORMASHUN. {0}: {1}",
     "Welcome to Kernel!": "WELCOM 2 KERNEL!",
     "Logged in successfully as <user>": "LOGGD IN SUCCESFULLY AS <USR>",
-    "MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...": "MOTD/MAL IZ VALID, BUT TEH MESAGE TYPE IZ NOT VALID. ASSUMIN MOTD...",
-    "Tried to read MOTD/MAL that is of the invalid message type.": "TRID 2 READ MOTD/MAL DAT IZ OV TEH INVALID MESAGE TYPE.",
     "Download has completed.": "DOWNLOAD HAS COMPLETD.",
     "Download failed in try {0}: {1}": "DOWNLOAD FAILD IN TRY {0}: {1}",
     "Please use \"ftp\" if you are going to download files from the FTP server.": "PLZ USE \"FTP\" IF U R GOIN 2 DOWNLOAD FILEZ FRUM TEH FTP SERVR.",
