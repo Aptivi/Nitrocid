@@ -19,7 +19,7 @@
 Imports System.IO
 Imports KS.Misc.Probers
 
-<TestFixture> Public Class MOTDSettingTests
+<TestFixture, Order(1)> Public Class MOTDSettingTests
 
     ''' <summary>
     ''' Tests setting MOTD

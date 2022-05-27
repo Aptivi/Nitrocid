@@ -44,7 +44,7 @@ Imports KS.Network.RemoteDebug
     ''' <summary>
     ''' Removes a test device created by <see cref="TestAddDeviceToJson()"/>
     ''' </summary>
-    <TearDown> Public Shared Sub TestRemoveTestDevice()
+    <OneTimeTearDown> Public Shared Sub TestRemoveTestDevice()
         RemoveDeviceFromJson("123.123.123.123").ShouldBeTrue
     End Sub
 

@@ -20,7 +20,7 @@ Imports System.IO
 Imports KS.Kernel
 Imports KS.Misc.Probers
 
-<TestFixture> Public Class MOTDManagementTests
+<TestFixture, Order(2)> Public Class MOTDManagementTests
 
     ''' <summary>
     ''' Tests reading MOTD from file
