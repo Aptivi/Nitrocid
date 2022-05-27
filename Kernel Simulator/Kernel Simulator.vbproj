@@ -230,6 +230,7 @@
     <Compile Include="Hardware\HardwareList.vb" />
     <Compile Include="Kernel\EventsManager.vb" />
     <Compile Include="Kernel\Events.vb" />
+    <Compile Include="Kernel\Exceptions\InvalidModException.vb" />
     <Compile Include="Kernel\Exceptions\MOTDException.vb" />
     <Compile Include="Kernel\Exceptions\HTTPShellException.vb" />
     <Compile Include="Kernel\Exceptions\InsaneConsoleDetectedException.vb" />

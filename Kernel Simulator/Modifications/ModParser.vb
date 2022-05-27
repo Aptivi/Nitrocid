@@ -21,6 +21,7 @@ Imports System.Reflection
 Imports KS.ManPages
 Imports KS.Misc.JsonShell
 Imports KS.Misc.Screensaver.Customized
+Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
 Imports KS.Misc.TextEdit
 Imports KS.Misc.HexEdit
@@ -32,6 +33,7 @@ Imports KS.Network.RemoteDebug
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.TestShell
+Imports KS.Kernel.Exceptions
 
 Namespace Modifications
     Public Module ModParser
@@ -55,8 +57,17 @@ Namespace Modifications
             If modFile.EndsWith(".dll") Then
                 'Mod is a dynamic DLL
                 Try
+                    'Check to see if the DLL is actually a mod
                     Dim script As IScript = GetModInstance(Assembly.LoadFrom(ModPath + modFile))
+
+                    'Check to see if the DLL is actually a screensaver
                     If script Is Nothing Then CompileCustom(ModPath + modFile)
+                    Dim CheckSaver As ICustomSaver = GetScreensaverInstance(Assembly.LoadFrom(ModPath + modFile))
+
+                    'If we didn't find anything, abort
+                    If script Is Nothing AndAlso CheckSaver Is Nothing Then Throw New InvalidModException(DoTranslation("The modfile is invalid."))
+
+                    'Finalize the mod
                     FinalizeMods(script, modFile)
                 Catch ex As ReflectionTypeLoadException
                     Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
@@ -68,6 +79,10 @@ Namespace Modifications
                         ReportProgress(LoaderException.Message, 0, ColTypes.Error)
                     Next
                     ReportProgress(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), 0, ColTypes.Error)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
+                    WStkTrc(ex)
+                    ReportProgress(DoTranslation("Mod can't be loaded because of the following: ") + ex.Message, 0, ColTypes.Error)
                 End Try
             Else
                 'Ignore unsupported files
