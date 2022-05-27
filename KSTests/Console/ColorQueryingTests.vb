@@ -23,60 +23,49 @@ Imports KS.ConsoleBase
     ''' <summary>
     ''' Tests trying to parse the color from hex
     ''' </summary>
-    <Test, Description("Querying")> Public Sub TestTryParseColorFromHex()
-        Debug.WriteLine("Trying #0F0F0F...")
-        TryParseColor("#0F0F0F").ShouldBeTrue
-        Debug.WriteLine("Trying #0G0G0G...")
-        TryParseColor("#0G0G0G").ShouldBeFalse
-    End Sub
+    <TestCase("#0F0F0F", ExpectedResult:=True),
+     TestCase("#0G0G0G", ExpectedResult:=False),
+     Description("Querying")>
+    Public Function TestTryParseColorFromHex(TargetHex As String) As Boolean
+        Debug.WriteLine($"Trying {TargetHex}...")
+        Return TryParseColor(TargetHex)
+    End Function
 
     ''' <summary>
     ''' Tests trying to parse the color from color numbers
     ''' </summary>
-    <Test, Description("Querying")> Public Sub TestTryParseColorFromColorNum()
-        Debug.WriteLine("Trying colornum 26...")
-        TryParseColor(26).ShouldBeTrue
-        Debug.WriteLine("Trying colornum 260...")
-        TryParseColor(260).ShouldBeFalse
-        Debug.WriteLine("Trying colornum -26...")
-        TryParseColor(-26).ShouldBeFalse
-    End Sub
+    <TestCase(26, ExpectedResult:=True),
+     TestCase(260, ExpectedResult:=False),
+     TestCase(-26, ExpectedResult:=False),
+     Description("Querying")>
+    Public Function TestTryParseColorFromColorNum(TargetColorNum As Integer) As Boolean
+        Debug.WriteLine($"Trying colornum {TargetColorNum}...")
+        Return TryParseColor(TargetColorNum)
+    End Function
 
     ''' <summary>
     ''' Tests trying to parse the color from RGB
     ''' </summary>
-    <Test, Description("Querying")> Public Sub TestTryParseColorFromRGB()
-        Debug.WriteLine("Trying rgb 4, 4, 4...")
-        TryParseColor(4, 4, 4).ShouldBeTrue
-        Debug.WriteLine("Trying rgb 400, 4, 4...")
-        TryParseColor(400, 4, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, 400, 4...")
-        TryParseColor(4, 400, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, 4, 400...")
-        TryParseColor(4, 4, 400).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, 400, 400...")
-        TryParseColor(4, 400, 400).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 400, 4, 400...")
-        TryParseColor(400, 4, 400).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 400, 400, 4...")
-        TryParseColor(400, 400, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 400, 400, 400...")
-        TryParseColor(400, 400, 400).ShouldBeFalse
-        Debug.WriteLine("Trying rgb -4, 4, 4...")
-        TryParseColor(-4, 4, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, -4, 4...")
-        TryParseColor(4, -4, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, 4, -4...")
-        TryParseColor(4, 4, -4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb 4, -4, -4...")
-        TryParseColor(4, -4, -4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb -4, -4, 4...")
-        TryParseColor(-4, -4, 4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb -4, 4, -4...")
-        TryParseColor(-4, 4, -4).ShouldBeFalse
-        Debug.WriteLine("Trying rgb -4, -4, -4...")
-        TryParseColor(-4, -4, -4).ShouldBeFalse
-    End Sub
+    <TestCase(4, 4, 4, ExpectedResult:=True),
+     TestCase(400, 4, 4, ExpectedResult:=False),
+     TestCase(4, 400, 4, ExpectedResult:=False),
+     TestCase(4, 4, 400, ExpectedResult:=False),
+     TestCase(4, 400, 400, ExpectedResult:=False),
+     TestCase(400, 4, 400, ExpectedResult:=False),
+     TestCase(400, 400, 4, ExpectedResult:=False),
+     TestCase(400, 400, 400, ExpectedResult:=False),
+     TestCase(-4, 4, 4, ExpectedResult:=False),
+     TestCase(4, -4, 4, ExpectedResult:=False),
+     TestCase(4, 4, -4, ExpectedResult:=False),
+     TestCase(4, -4, -4, ExpectedResult:=False),
+     TestCase(-4, 4, -4, ExpectedResult:=False),
+     TestCase(-4, -4, 4, ExpectedResult:=False),
+     TestCase(-4, -4, -4, ExpectedResult:=False),
+     Description("Querying")>
+    Public Function TestTryParseColorFromRGB(R As Integer, G As Integer, B As Integer) As Boolean
+        Debug.WriteLine($"Trying rgb {R}, {G}, {B}...")
+        Return TryParseColor(R, G, B)
+    End Function
 
     ''' <summary>
     ''' Tests trying to convert from hex to RGB
