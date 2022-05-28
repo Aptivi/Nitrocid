@@ -329,6 +329,7 @@
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
     <Compile Include="Misc\Games\Snaker.vb" />
+    <Compile Include="Misc\Reflection\AssemblyLookup.vb" />
     <Compile Include="Misc\Reflection\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />

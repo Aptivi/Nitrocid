@@ -19,6 +19,7 @@
 Imports KS.Arguments.ArgumentBase
 Imports KS.Hardware
 Imports KS.Kernel.Exceptions
+Imports KS.Misc.Reflection
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
@@ -71,6 +72,7 @@ Namespace Kernel
                     'Initialize crucial things
                     InitPaths()
                     If Not IsOnUnix() Then Initialize255()
+                    AddHandler AppDomain.CurrentDomain.AssemblyResolve, AddressOf LoadFromAssemblySearchPaths
 
                     'Check for pre-boot arguments
                     ParseArguments(Args.ToList, ArgumentType.PreBootCommandLineArgs)

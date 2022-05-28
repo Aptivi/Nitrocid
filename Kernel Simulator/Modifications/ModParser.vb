@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Reflection
 Imports KS.ManPages
 Imports KS.Misc.JsonShell
+Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
@@ -104,6 +105,10 @@ Namespace Modifications
             If script IsNot Nothing Then
                 KernelEventManager.RaiseModParsed(modFile)
                 Try
+                    'Add mod dependencies folder (if any) to the private appdomain lookup folder
+                    Dim ModDepPath As String = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/"
+                    AddPathToAssemblySearchPath(ModDepPath)
+
                     'Start the mod
                     script.StartMod()
                     Wdbg(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
