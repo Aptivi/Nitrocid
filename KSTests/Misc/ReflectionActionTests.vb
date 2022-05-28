@@ -23,21 +23,25 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests checking to see if the string is numeric
     ''' </summary>
-    <Test, Description("Action")> Public Sub TestIsStringNumeric()
-        IsStringNumeric("64").ShouldBeTrue
-        IsStringNumeric("64.5").ShouldBeTrue
-        IsStringNumeric("64-5").ShouldBeFalse
-        IsStringNumeric("Alsalaam 3lekom").ShouldBeFalse
-        IsStringNumeric("").ShouldBeFalse
-    End Sub
+    <TestCase("64", ExpectedResult:=True),
+     TestCase("64.5", ExpectedResult:=True),
+     TestCase("64-5", ExpectedResult:=False),
+     TestCase("Alsalaam 3lekom", ExpectedResult:=False),
+     TestCase("", ExpectedResult:=False),
+     Description("Action")>
+    Public Function TestIsStringNumeric(Expression As String) As Boolean
+        Return IsStringNumeric(Expression)
+    End Function
 
     ''' <summary>
     ''' Tests formatting the string
     ''' </summary>
-    <Test, Description("Action")> Public Sub TestFormatString()
-        FormatString("Hello, {0}!", "Alex").ShouldBe("Hello, Alex!")
-        FormatString("We have 0x{0:X2} faults!", 15).ShouldBe("We have 0x0F faults!")
-        FormatString("Destroy {0 ships!", 3).ShouldBe("Destroy {0 ships!")
-    End Sub
+    <TestCase("Hello, {0}!", "Alex", ExpectedResult:="Hello, Alex!"),
+     TestCase("We have 0x{0:X2} faults!", 15, ExpectedResult:="We have 0x0F faults!"),
+     TestCase("Destroy {0 ships!", 3, ExpectedResult:="Destroy {0 ships!"),
+     Description("Action")>
+    Public Function TestFormatString(Expression As String, ParamArray Vars() As Object) As String
+        Return FormatString(Expression, Vars)
+    End Function
 
 End Class
