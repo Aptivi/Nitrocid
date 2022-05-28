@@ -35,14 +35,14 @@ Imports Newtonsoft.Json.Linq
     ''' <summary>
     ''' Tests setting size parse mode
     ''' </summary>
-    <Test, Description("Setting")> Public Sub TestSetSizeParseMode()
+    <TestCase(True),
+     TestCase(False),
+     Description("Setting")>
+    Public Sub TestSetSizeParseMode([Set] As Boolean)
         Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
-        SetSizeParseMode(True).ShouldBeTrue
-        FullParseMode.ShouldBeTrue
-        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe(True)
-        SetSizeParseMode(False).ShouldBeTrue
-        FullParseMode.ShouldBeFalse
-        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe(False)
+        SetSizeParseMode([Set]).ShouldBeTrue
+        FullParseMode.ShouldBe([Set])
+        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe([Set])
     End Sub
 
     ''' <summary>

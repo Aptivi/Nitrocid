@@ -22,9 +22,7 @@
     ''' Tests user initialization
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializeUsers()
-        InitializeUsers()
-        ListAllUsers(True, True).ShouldNotBeEmpty
-        ListAllUsers().ShouldNotBeEmpty
+        Should.NotThrow(AddressOf InitializeUsers)
     End Sub
 
 End Class

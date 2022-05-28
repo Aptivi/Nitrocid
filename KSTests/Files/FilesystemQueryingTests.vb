@@ -56,23 +56,24 @@ Imports KS.Misc.Platform
     ''' <summary>
     ''' Tests trying to parse the path name
     ''' </summary>
-    <Test, Description("Querying")> Public Sub TestTryParsePath()
-        If IsOnWindows() Then
-            TryParsePath("C:\Windows").ShouldBeTrue
-            TryParsePath("C:\Windows<>").ShouldBeFalse
-        Else
-            TryParsePath("/usr/bin").ShouldBeTrue
-            TryParsePath("/usr/bin<>").ShouldBeFalse
-        End If
-    End Sub
+    <TestCase("C:\Windows", IncludePlatform:="win", ExpectedResult:=True),
+     TestCase("C:\Windows<>", IncludePlatform:="win", ExpectedResult:=False),
+     TestCase("/usr/bin", IncludePlatform:="linux,unix,macosx", ExpectedResult:=True),
+     TestCase("/usr/bin<>", IncludePlatform:="linux,unix,macosx", ExpectedResult:=False),
+     Description("Querying")>
+    Public Function TestTryParsePath(Path As String) As Boolean
+        Return TryParsePath(Path)
+    End Function
 
     ''' <summary>
     ''' Tests trying to parse the file name
     ''' </summary>
-    <Test, Description("Querying")> Public Sub TestTryParseFileName()
-        TryParseFileName("Windows").ShouldBeTrue
-        TryParseFileName("Windows/System32\").ShouldBeFalse
-    End Sub
+    <TestCase("Windows", ExpectedResult:=True),
+     TestCase("Windows/System32\", ExpectedResult:=False),
+     Description("Querying")>
+    Public Function TestTryParseFileName(Path As String) As Boolean
+        Return TryParseFileName(Path)
+    End Function
 
     ''' <summary>
     ''' Tests trying to get the line ending from text file
