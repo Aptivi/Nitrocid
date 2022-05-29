@@ -110,6 +110,13 @@ Public Module RSSBookmarkManager
     End Sub
 
     ''' <summary>
+    ''' Gets all RSS bookmarks
+    ''' </summary>
+    Public Function GetBookmarks() As List(Of String)
+        Return RssBookmarks
+    End Function
+
+    ''' <summary>
     ''' Gets the bookmark URL from number
     ''' </summary>
     Public Function GetBookmark(Num As Integer) As String
