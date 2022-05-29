@@ -331,6 +331,7 @@
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\Execution\ProcessExecutor.vb" />
     <Compile Include="Misc\Games\Snaker.vb" />
+    <Compile Include="Misc\NamesManager.vb" />
     <Compile Include="Misc\Reflection\AssemblyLookup.vb" />
     <Compile Include="Misc\Reflection\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
@@ -605,6 +606,7 @@
     <Compile Include="Shell\Commands\ChMotd.vb" />
     <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
     <Compile Include="Shell\Commands\Combine.vb" />
+    <Compile Include="Shell\Commands\GenName.vb" />
     <Compile Include="Shell\Commands\HexEdit.vb" />
     <Compile Include="Shell\Commands\If.vb" />
     <Compile Include="Shell\Commands\Find.vb" />

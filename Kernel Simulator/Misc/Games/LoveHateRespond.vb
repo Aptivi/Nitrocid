@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Network
+Imports KS.Misc
 
 Namespace Misc.Games
     Public Module LoveHateRespond
@@ -78,8 +78,7 @@ Namespace Misc.Games
 
             'Download the names list
             Write(DoTranslation("Downloading names..."), True, ColTypes.Progress)
-            If Names.Length = 0 Then Names = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/first%20names/all.txt").SplitNewLines
-            If Surnames.Length = 0 Then Surnames = DownloadString("https://cdn.jsdelivr.net/gh/smashew/NameDatabases@master/NamesDatabases/surnames/all.txt").SplitNewLines
+            PopulateNames()
             For NameNum As Integer = 1 To LoveOrHateUsersCount
                 Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
                 Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
