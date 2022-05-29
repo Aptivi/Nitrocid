@@ -16,20 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Network.RSS
+
 Namespace Network.RSS.Commands
-    Class RSS_ChFeedCommand
+    Class RSS_BookmarkCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim UseBookmarkNum As Boolean = ListSwitchesOnly.Contains("-bookmark")
-            Dim BookmarkNum As Integer
-            If UseBookmarkNum Then
-                BookmarkNum = Integer.Parse(ListArgsOnly(0))
-                RSSFeedLink = GetBookmark(BookmarkNum)
-            Else
-                RSSFeedLink = ListArgs(0)
-            End If
+            AddRSSFeedToBookmark()
         End Sub
 
     End Class

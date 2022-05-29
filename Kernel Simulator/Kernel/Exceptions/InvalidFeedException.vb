@@ -16,20 +16,29 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Network.RSS.Commands
-    Class RSS_ChFeedCommand
-        Inherits CommandExecutor
-        Implements ICommand
+Imports KS.Misc.Reflection
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim UseBookmarkNum As Boolean = ListSwitchesOnly.Contains("-bookmark")
-            Dim BookmarkNum As Integer
-            If UseBookmarkNum Then
-                BookmarkNum = Integer.Parse(ListArgsOnly(0))
-                RSSFeedLink = GetBookmark(BookmarkNum)
-            Else
-                RSSFeedLink = ListArgs(0)
-            End If
+Namespace Kernel.Exceptions
+    ''' <summary>
+    ''' Thrown when the RSS feed is invalid.
+    ''' </summary>
+    Public Class InvalidFeedException
+        Inherits Exception
+
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(FormatString(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(FormatString(message, vars), e)
         End Sub
 
     End Class

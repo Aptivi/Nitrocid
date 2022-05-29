@@ -24,7 +24,8 @@ Namespace Network.RSS
 
         'Variables
         Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", {"<feednum>"}, True, 1, New RSS_ArticleInfoCommand)},
-                                                                                    {"chfeed", New CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", {"<feedurl>"}, True, 1, New RSS_ChFeedCommand)},
+                                                                                    {"bookmark", New CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", {}, False, 0, New RSS_BookmarkCommand)},
+                                                                                    {"chfeed", New CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", {"[-bookmark] <feedurl/bookmarknumber>"}, True, 1, New RSS_ChFeedCommand)},
                                                                                     {"exit", New CommandInfo("exit", ShellType.RSSShell, "Exits RSS shell and returns to kernel", {}, False, 0, New RSS_ExitCommand)},
                                                                                     {"feedinfo", New CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", {}, False, 0, New RSS_FeedInfoCommand)},
                                                                                     {"help", New CommandInfo("help", ShellType.RSSShell, "Shows help screen", {}, False, 0, New RSS_HelpCommand)},
