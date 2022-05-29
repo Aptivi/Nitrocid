@@ -31,7 +31,8 @@ Namespace Network.RSS
                                                                                     {"help", New CommandInfo("help", ShellType.RSSShell, "Shows help screen", {}, False, 0, New RSS_HelpCommand)},
                                                                                     {"list", New CommandInfo("list", ShellType.RSSShell, "Lists all feeds", {}, False, 0, New RSS_ListCommand)},
                                                                                     {"read", New CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", {"<feednum>"}, True, 1, New RSS_ReadCommand)},
-                                                                                    {"selfeed", New CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", {}, False, 0, New RSS_SelFeedCommand)}}
+                                                                                    {"selfeed", New CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", {}, False, 0, New RSS_SelFeedCommand)},
+                                                                                    {"unbookmark", New CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", {}, False, 0, New RSS_UnbookmarkCommand)}}
         Public RSSModCommands As New ArrayList
         Public RSSFeedInstance As RSSFeed
         Public RSSShellPromptStyle As String = ""

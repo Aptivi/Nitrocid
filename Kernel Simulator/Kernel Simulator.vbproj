@@ -535,6 +535,7 @@
     <Compile Include="Network\RemoteDebug\RemoteDebugDevice.vb" />
     <Compile Include="Network\RSS\Bookmarks\RSSBookmarkManager.vb" />
     <Compile Include="Network\RSS\Commands\ArticleInfo.vb" />
+    <Compile Include="Network\RSS\Commands\Unbookmark.vb" />
     <Compile Include="Network\RSS\Commands\Bookmark.vb" />
     <Compile Include="Network\RSS\Commands\SelFeed.vb" />
     <Compile Include="Network\RSS\Commands\ChFeed.vb" />

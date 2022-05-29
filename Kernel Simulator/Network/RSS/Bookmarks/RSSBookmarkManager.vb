@@ -66,6 +66,50 @@ Public Module RSSBookmarkManager
     End Sub
 
     ''' <summary>
+    ''' Removes the current RSS feed from the bookmarks
+    ''' </summary>
+    Public Sub RemoveRSSFeedFromBookmark()
+        If Not String.IsNullOrEmpty(RSSFeedLink) Then
+            RemoveRSSFeedFromBookmark(RSSFeedLink)
+        Else
+            Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Removes the RSS feed URL from the bookmarks
+    ''' </summary>
+    ''' <param name="FeedURL">The feed URL to parse</param>
+    Public Sub RemoveRSSFeedFromBookmark(FeedURL As String)
+        If Not String.IsNullOrEmpty(FeedURL) Then
+            Try
+                'Form a URI of feed
+                Dim FinalFeedUri As New Uri(FeedURL)
+                Dim FinalFeedUriString As String = FinalFeedUri.AbsoluteUri
+
+                'Remove the feed from bookmarks if found
+                If RssBookmarks.Contains(FinalFeedUriString) Then
+                    Wdbg(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString)
+                    RssBookmarks.Remove(FinalFeedUriString)
+                Else
+                    Throw New InvalidFeedLinkException(DoTranslation("The feed doesn't exist in bookmarks."))
+                End If
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message)
+                WStkTrc(ex)
+                If ex.GetType.Name = NameOf(UriFormatException) Then
+                    Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL)
+                    Throw New InvalidFeedLinkException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                Else
+                    Throw New InvalidFeedException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                End If
+            End Try
+        Else
+            Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Gets the bookmark URL from number
     ''' </summary>
     Public Function GetBookmark(Num As Integer) As String
