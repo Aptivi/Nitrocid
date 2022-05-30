@@ -19,6 +19,7 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
@@ -26,7 +27,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>KS</RootNamespace>
-    <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,7 +36,7 @@
     <AssemblyName>Kernel Simulator</AssemblyName>
     <Description>Simulates our future kernel</Description>
     <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
-    <MyType>Console</MyType>
+    <MyType Condition="'$(TargetFramework)' == 'net48'">Console</MyType>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
     <OptionExplicit>On</OptionExplicit>
@@ -52,6 +52,21 @@
 
   <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TargetFramework>net48</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
@@ -65,6 +80,19 @@
     <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <TargetFramework>net48</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
@@ -127,15 +155,17 @@
 
   <!-- KS Reference Information -->
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

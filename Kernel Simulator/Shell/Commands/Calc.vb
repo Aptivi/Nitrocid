@@ -25,6 +25,7 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
+#If Not NETCOREAPP Then
                 Dim Res As String = Evaluate(StringArgs)
                 Wdbg(DebugLevel.I, "Res = {0}", Res)
                 If Res = "" Then 'If there is an error in calculation
@@ -32,6 +33,9 @@ Namespace Shell.Commands
                 Else 'Calculation done
                     Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
                 End If
+#Else
+                Throw New PlatformNotSupportedException(DoTranslation("This feature isn't implemented on .NET. Use the .NET Framework version of KS."))
+#End If
             Catch ex As Exception
                 WStkTrc(ex)
                 Write(DoTranslation("Error in calculation."), True, ColTypes.Error)

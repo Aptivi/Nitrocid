@@ -25,9 +25,11 @@ Namespace TestShell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Vars As Object() = ListArgs(0).Split(";")
+#If Not NETCOREAPP Then
             For i As Integer = 0 To Vars.Length - 1
                 Vars(i) = Evaluate(Vars(i)).ToString
             Next
+#End If
             Wdbg(DebugLevel.I, ListArgs(1), Vars)
         End Sub
 
