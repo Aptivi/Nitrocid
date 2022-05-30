@@ -34,6 +34,8 @@ Namespace Network
         Friend DownloadedString As String
         Friend DownloadNotif As Notification
         Friend UploadNotif As Notification
+        Friend SuppressDownloadMessage As Boolean
+        Friend SuppressUploadMessage As Boolean
 
         ''' <summary>
         ''' Downloads a file to the current working directory.
@@ -105,11 +107,14 @@ Namespace Network
 
             'We're done downloading. Check to see if it's actually an error
             DFinish = False
-            If ShowProgress Then Console.WriteLine()
+            If ShowProgress And Not SuppressDownloadMessage Then Console.WriteLine()
+            SuppressDownloadMessage = False
             If IsError Then
+                DownloadNotif.ProgressFailed = True
                 CancellationToken.Cancel()
                 Throw ReasonError
             Else
+                DownloadNotif.Progress = 100
                 Return True
             End If
         End Function
@@ -162,11 +167,14 @@ Namespace Network
 
             'We're done uploading. Check to see if it's actually an error
             UFinish = False
-            If ShowProgress Then Console.WriteLine()
+            If ShowProgress And Not SuppressUploadMessage Then Console.WriteLine()
+            SuppressUploadMessage = False
             If IsError Then
+                UploadNotif.ProgressFailed = True
                 CancellationToken.Cancel()
                 Throw ReasonError
             Else
+                UploadNotif.Progress = 100
                 Return True
             End If
         End Function
@@ -218,7 +226,8 @@ Namespace Network
 
             'We're done downloading. Check to see if it's actually an error
             DFinish = False
-            If ShowProgress Then Console.WriteLine()
+            If ShowProgress And Not SuppressDownloadMessage Then Console.WriteLine()
+            SuppressDownloadMessage = False
             If IsError Then
                 CancellationToken.Cancel()
                 Throw ReasonError
@@ -275,7 +284,8 @@ Namespace Network
 
             'We're done uploading. Check to see if it's actually an error
             UFinish = False
-            If ShowProgress Then Console.WriteLine()
+            If ShowProgress And Not SuppressUploadMessage Then Console.WriteLine()
+            SuppressUploadMessage = False
             If IsError Then
                 CancellationToken.Cancel()
                 Throw ReasonError
@@ -319,15 +329,20 @@ Namespace Network
                 WClient.CancelAsync()
             End If
             If Not DFinish Then
-                If DownloadNotificationProvoke Then
-                    DownloadNotif.Progress = e.ProgressPercentage
-                Else
-                    If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
-                        WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                If e.TotalBytesToReceive >= 0 And Not SuppressDownloadMessage Then
+                    'We know the total bytes. Print it out.
+                    If DownloadNotificationProvoke Then
+                        DownloadNotif.Progress = e.ProgressPercentage
                     Else
-                        WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
+                            WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        Else
+                            WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        End If
+                        ClearLineToRight()
                     End If
-                    ClearLineToRight()
+                Else
+                    SuppressDownloadMessage = True
                 End If
             End If
         End Sub
@@ -353,15 +368,20 @@ Namespace Network
                 WClient.CancelAsync()
             End If
             If Not UFinish Then
-                If UploadNotificationProvoke Then
-                    UploadNotif.Progress = e.ProgressPercentage
-                Else
-                    If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
-                        WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                If e.TotalBytesToSend >= 0 Then
+                    'We know the total bytes. Print it out.
+                    If UploadNotificationProvoke And Not SuppressUploadMessage Then
+                        UploadNotif.Progress = e.ProgressPercentage
                     Else
-                        WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                        If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
+                            WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                        Else
+                            WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                        End If
+                        ClearLineToRight()
                     End If
-                    ClearLineToRight()
+                Else
+                    SuppressUploadMessage = True
                 End If
             End If
         End Sub
