@@ -865,6 +865,17 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Noise", NoiseConfig)
 
+            'PersonLookup config json object
+            Dim PersonLookupConfig As New JObject From {
+                    {"Delay in Milliseconds", PersonLookupDelay},
+                    {"New Screen Delay in Milliseconds", PersonLookupLookedUpDelay},
+                    {"Minimum names count", PersonLookupMinimumNames},
+                    {"Maximum names count", PersonLookupMaximumNames},
+                    {"Minimum age years count", PersonLookupMinimumAgeYears},
+                    {"Maximum age years count", PersonLookupMaximumAgeYears}
+                }
+            ScreensaverConfig.Add("PersonLookup", PersonLookupConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1669,6 +1680,14 @@ Namespace Misc.Configuration
                 '> Noise
                 NoiseNewScreenDelay = If(ConfigToken("Screensaver")?("Noise")?("New Screen Delay in Milliseconds"), 5000)
                 NoiseDensity = If(ConfigToken("Screensaver")?("Noise")?("Noise density"), 40)
+
+                '> PersonLookup
+                PersonLookupDelay = If(ConfigToken("Screensaver")?("PersonLookup")?("Delay in Milliseconds"), 75)
+                PersonLookupLookedUpDelay = If(ConfigToken("Screensaver")?("PersonLookup")?("New Screen Delay in Milliseconds"), 10000)
+                PersonLookupMinimumNames = If(ConfigToken("Screensaver")?("PersonLookup")?("Minimum names count"), 10)
+                PersonLookupMaximumNames = If(ConfigToken("Screensaver")?("PersonLookup")?("Maximum names count"), 1000)
+                PersonLookupMinimumAgeYears = If(ConfigToken("Screensaver")?("PersonLookup")?("Minimum age years count"), 18)
+                PersonLookupMaximumAgeYears = If(ConfigToken("Screensaver")?("PersonLookup")?("Maximum age years count"), 100)
 
                 'Splash Section - Splash-specific settings go below:
                 '> Simple

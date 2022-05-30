@@ -55,6 +55,7 @@ Namespace Misc.Screensaver
                                                                              {"lighter", Lighter},
                                                                              {"lines", Lines},
                                                                              {"linotypo", Linotypo},
+                                                                             {"personlookup", PersonLookup},
                                                                              {"marquee", Marquee},
                                                                              {"matrix", Matrix},
                                                                              {"noise", Noise},
