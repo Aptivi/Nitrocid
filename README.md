@@ -14,10 +14,12 @@ WARNING: Second-generation versions of KS are not backwards-compatible with the 
 
 Here are all the CI build status for all the active KS branches.
 
-| Branch      | AppVeyor 
-|-------------|----------
-| master      | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
-| servicing   | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
+| Branch                           | AppVeyor 
+|----------------------------------|----------
+| master (Kernel Simulator.sln)    | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
+| master (KS.DotNetSdk.sln)        | [![Build status](https://ci.appveyor.com/api/projects/status/1pgcrnfm346o6f0j/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator-dotnetsdk/branch/master)
+| servicing (Kernel Simulator.sln) | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
+| servicing (KS.DotNetSdk.sln)     | [![Build status](https://ci.appveyor.com/api/projects/status/1pgcrnfm346o6f0j/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator-dotnetsdk/branch/servicing)
 
 ## System Requirements
 
