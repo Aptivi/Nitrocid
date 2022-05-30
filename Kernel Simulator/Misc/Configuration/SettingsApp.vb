@@ -163,7 +163,7 @@ Namespace Misc.Configuration
                     'List options
                     For SectionIndex As Integer = 0 To MaxOptions - 1
                         Dim Setting As JToken = SectionToken(SectionIndex)
-                        Dim CurrentValue As Object
+                        Dim CurrentValue As Object = "Unknown"
                         Dim Variable As String = Setting("Variable")
                         Dim VariableProperty As String = Setting("VariableProperty")
                         Dim VariableType As SettingsKeyType = [Enum].Parse(GetType(SettingsKeyType), Setting("Type"))
@@ -175,11 +175,20 @@ Namespace Misc.Configuration
                         Else
                             'Determine how to get the current value
                             If VariableProperty Is Nothing Then
-                                CurrentValue = GetValue(Variable)
+                                If CheckField(Variable) Then
+                                    'We're dealing with the field, get the value from it
+                                    CurrentValue = GetValue(Variable)
+                                ElseIf CheckProperty(Variable) Then
+                                    'We're dealing with the property, get the value from it
+                                    CurrentValue = GetPropertyValue(Variable)
+                                End If
+
+                                'Get the plain sequence from the color
                                 If TypeOf CurrentValue Is Color Then
                                     CurrentValue = CurrentValue.PlainSequence
                                 End If
                             Else
+                                'Get the property value from variable
                                 CurrentValue = GetPropertyValueInVariable(Variable, VariableProperty)
                             End If
                             Write(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
@@ -315,11 +324,20 @@ Namespace Misc.Configuration
                             TargetList = GetMethod(ListFunctionName).Invoke(ListFunctionType, Nothing)
                         End If
                         If KeyVarProperty Is Nothing Then
-                            KeyDefaultValue = GetValue(KeyVar)
+                            If CheckField(KeyVar) Then
+                                'We're dealing with the field, get the value from it
+                                KeyDefaultValue = GetValue(KeyVar)
+                            ElseIf CheckProperty(KeyVar) Then
+                                'We're dealing with the property, get the value from it
+                                KeyDefaultValue = GetPropertyValue(KeyVar)
+                            End If
+
+                            'Get the plain sequence from the color
                             If TypeOf KeyDefaultValue Is Color Then
                                 KeyDefaultValue = KeyDefaultValue.PlainSequence
                             End If
                         Else
+                            'Get the property value from variable
                             KeyDefaultValue = GetPropertyValueInVariable(KeyVar, KeyVarProperty)
                         End If
                     End If
@@ -339,6 +357,7 @@ Namespace Misc.Configuration
                         ColorValue = ColorWheel(New Color(KeyDefaultValue.ToString).Type = ColorType.TrueColor, If(New Color(KeyDefaultValue.ToString).Type = ColorType._255Color, New Color(KeyDefaultValue.ToString).PlainSequence, ConsoleColors.White), New Color(KeyDefaultValue.ToString).R, New Color(KeyDefaultValue.ToString).G, New Color(KeyDefaultValue.ToString).B)
                     End If
 
+                    'Write the list from the current items
                     If KeyType = SettingsKeyType.SSelection Then
                         Write(DoTranslation("Current items:"), True, ColTypes.ListTitle)
                         WriteList(SelectFrom)
@@ -442,18 +461,31 @@ Namespace Misc.Configuration
                         'The answer is numeric! Now, check for types
                         Select Case KeyType
                             Case SettingsKeyType.SBoolean
+                                'We're dealing with boolean
                                 Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
                                 If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
+                                    Dim FinalBool As Boolean
                                     Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt)
                                     KeyFinished = True
+
+                                    'Set boolean
                                     Select Case AnswerInt
                                         Case 1 'True
                                             Wdbg(DebugLevel.I, "Setting to True...")
-                                            SetValue(KeyVar, True)
+                                            FinalBool = True
                                         Case 2 'False
                                             Wdbg(DebugLevel.I, "Setting to False...")
-                                            SetValue(KeyVar, False)
+                                            FinalBool = False
                                     End Select
+
+                                    'Now, set the value
+                                    If CheckField(KeyVar) Then
+                                        'We're dealing with the field
+                                        SetValue(KeyVar, FinalBool)
+                                    ElseIf CheckProperty(KeyVar) Then
+                                        'We're dealing with the property
+                                        SetPropertyValue(KeyVar, FinalBool)
+                                    End If
                                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
                                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                                     KeyFinished = True
@@ -464,6 +496,7 @@ Namespace Misc.Configuration
                                     Console.ReadKey()
                                 End If
                             Case SettingsKeyType.SSelection
+                                'We're dealing with selection
                                 Wdbg(DebugLevel.I, "Answer is numeric and key is of the selection type.")
                                 Dim AnswerIndex As Integer = AnswerInt - 1
                                 If AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
@@ -473,16 +506,34 @@ Namespace Misc.Configuration
                                     If Selections IsNot Nothing Then
                                         Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt)
                                         KeyFinished = True
-                                        SetValue(KeyVar, Selections(AnswerIndex))
+
+                                        'Now, set the value
+                                        If CheckField(KeyVar) Then
+                                            'We're dealing with the field
+                                            SetValue(KeyVar, Selections(AnswerIndex))
+                                        ElseIf CheckProperty(KeyVar) Then
+                                            'We're dealing with the property
+                                            SetPropertyValue(KeyVar, Selections(AnswerIndex))
+                                        End If
                                     ElseIf Not AnswerInt > MaxKeyOptions Then
+                                        Dim FinalValue As Object
                                         If Not SelectionEnum Then
                                             Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                             KeyFinished = True
-                                            SetValue(KeyVar, SelectFrom(AnswerInt - 1))
+                                            FinalValue = SelectFrom(AnswerInt - 1)
                                         Else
                                             Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                             KeyFinished = True
-                                            SetValue(KeyVar, AnswerInt)
+                                            FinalValue = AnswerInt
+                                        End If
+
+                                        'Now, set the value
+                                        If CheckField(KeyVar) Then
+                                            'We're dealing with the field
+                                            SetValue(KeyVar, FinalValue)
+                                        ElseIf CheckProperty(KeyVar) Then
+                                            'We're dealing with the property
+                                            SetPropertyValue(KeyVar, FinalValue)
                                         End If
                                     Else
                                         Wdbg(DebugLevel.W, "Answer is not valid.")
@@ -502,12 +553,21 @@ Namespace Misc.Configuration
                                     Console.ReadKey()
                                 End If
                             Case SettingsKeyType.SInt
+                                'We're dealing with integers
                                 Wdbg(DebugLevel.I, "Answer is numeric and key is of the integer type.")
                                 Dim AnswerIndex As Integer = AnswerInt - 1
                                 If AnswerInt >= 0 Then
                                     Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                     KeyFinished = True
-                                    SetValue(KeyVar, AnswerInt)
+
+                                    'Now, set the value
+                                    If CheckField(KeyVar) Then
+                                        'We're dealing with the field
+                                        SetValue(KeyVar, AnswerInt)
+                                    ElseIf CheckProperty(KeyVar) Then
+                                        'We're dealing with the property
+                                        SetPropertyValue(KeyVar, AnswerInt)
+                                    End If
                                 Else
                                     Wdbg(DebugLevel.W, "Negative values are disallowed.")
                                     Write(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
@@ -515,9 +575,18 @@ Namespace Misc.Configuration
                                     Console.ReadKey()
                                 End If
                             Case SettingsKeyType.SIntSlider
+                                'We're dealing with integers with limits
                                 Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                 KeyFinished = True
-                                SetValue(KeyVar, AnswerInt)
+
+                                'Now, set the value
+                                If CheckField(KeyVar) Then
+                                    'We're dealing with the field
+                                    SetValue(KeyVar, AnswerInt)
+                                ElseIf CheckProperty(KeyVar) Then
+                                    'We're dealing with the property
+                                    SetPropertyValue(KeyVar, AnswerInt)
+                                End If
                         End Select
                     Else
                         Select Case KeyType
@@ -538,28 +607,60 @@ Namespace Misc.Configuration
 
                                 'Set the value
                                 KeyFinished = True
-                                SetValue(KeyVar, AnswerString)
+                                If CheckField(KeyVar) Then
+                                    'We're dealing with the field
+                                    SetValue(KeyVar, AnswerString)
+                                ElseIf CheckProperty(KeyVar) Then
+                                    'We're dealing with the property
+                                    SetPropertyValue(KeyVar, AnswerString)
+                                End If
                             Case SettingsKeyType.SList
                                 Dim FinalDelimiter As String
                                 Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
                                 KeyFinished = True
+
+                                'Get the delimiter
                                 If ListJoinString Is Nothing Then
                                     FinalDelimiter = GetValue(ListJoinStringVariable)
                                 Else
                                     FinalDelimiter = ListJoinString
                                 End If
-                                SetValue(KeyVar, String.Join(FinalDelimiter, TargetList))
+
+                                'Now, set the value
+                                Dim JoinedString As String = String.Join(FinalDelimiter, TargetList)
+                                If CheckField(KeyVar) Then
+                                    'We're dealing with the field
+                                    SetValue(KeyVar, JoinedString)
+                                ElseIf CheckProperty(KeyVar) Then
+                                    'We're dealing with the property
+                                    SetPropertyValue(KeyVar, JoinedString)
+                                End If
                             Case SettingsKeyType.SVariant
-                                SetValue(KeyVar, VariantValue)
-                                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                                'Now, set the value
+                                If CheckField(KeyVar) Then
+                                    'We're dealing with the field
+                                    SetValue(KeyVar, VariantValue)
+                                ElseIf CheckProperty(KeyVar) Then
+                                    'We're dealing with the property
+                                    SetPropertyValue(KeyVar, VariantValue)
+                                End If
                                 KeyFinished = True
                             Case SettingsKeyType.SColor
+                                Dim FinalColor As Object
                                 If GetField(KeyVar).FieldType = GetType(Color) Then
-                                    SetValue(KeyVar, New Color(ColorValue.ToString))
+                                    FinalColor = New Color(ColorValue.ToString)
                                 Else
-                                    SetValue(KeyVar, ColorValue.ToString)
+                                    FinalColor = ColorValue.ToString
                                 End If
-                                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+
+                                'Now, set the value
+                                If CheckField(KeyVar) Then
+                                    'We're dealing with the field
+                                    SetValue(KeyVar, FinalColor)
+                                ElseIf CheckProperty(KeyVar) Then
+                                    'We're dealing with the property
+                                    SetPropertyValue(KeyVar, FinalColor)
+                                End If
                                 KeyFinished = True
                             Case SettingsKeyType.SUnknown
                                 Wdbg(DebugLevel.I, "User requested exit. Returning...")
@@ -677,11 +778,13 @@ Namespace Misc.Configuration
                         Dim KeyEnumeration As String = Key("Enumeration")
                         Dim KeyEnumerationInternal As Boolean = If(Key("EnumerationInternal"), False)
                         Dim KeyEnumerationAssembly As String = Key("EnumerationAssembly")
+                        Dim KeyFound As Boolean
 
-                        'Check the variable field
-                        Results.Add($"{KeyName}, {KeyVariable}", CheckField(KeyVariable))
+                        'Check the variable
+                        KeyFound = CheckField(KeyVariable) Or CheckProperty(KeyVariable)
+                        Results.Add($"{KeyName}, {KeyVariable}", KeyFound)
 
-                        'Check the enumeration field
+                        'Check the enumeration
                         If KeyEnumeration IsNot Nothing Then
                             Dim Result As Boolean
                             If KeyEnumerationInternal Then
