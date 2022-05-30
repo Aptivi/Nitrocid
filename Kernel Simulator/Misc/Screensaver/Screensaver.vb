@@ -42,6 +42,7 @@ Namespace Misc.Screensaver
                                                                              {"bouncingblock", BouncingBlock},
                                                                              {"bouncingtext", BouncingText},
                                                                              {"colormix", ColorMix},
+                                                                             {"dateandtime", DateAndTime},
                                                                              {"disco", Disco},
                                                                              {"dissolve", Dissolve},
                                                                              {"fader", Fader},

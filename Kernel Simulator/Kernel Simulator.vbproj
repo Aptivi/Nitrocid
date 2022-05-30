@@ -363,6 +363,7 @@
     <Compile Include="Misc\Screensaver\Customized\CustomSaverCompiler.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverTools.vb" />
     <Compile Include="Misc\Screensaver\Displays\BeatFader.vb" />
+    <Compile Include="Misc\Screensaver\Displays\DateAndTime.vb" />
     <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
     <Compile Include="Misc\Screensaver\Displays\BarRot.vb" />
     <Compile Include="Misc\Screensaver\Displays\Fireworks.vb" />

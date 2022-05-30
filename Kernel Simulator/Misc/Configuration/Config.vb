@@ -876,6 +876,22 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("PersonLookup", PersonLookupConfig)
 
+            'DateAndTime config json object
+            Dim DateAndTimeConfig As New JObject From {
+                    {"Activate 255 Color Mode", DateAndTime255Colors},
+                    {"Activate True Color Mode", DateAndTimeTrueColor},
+                    {"Delay in Milliseconds", DateAndTimeDelay},
+                    {"Minimum red color level", DateAndTimeMinimumRedColorLevel},
+                    {"Minimum green color level", DateAndTimeMinimumGreenColorLevel},
+                    {"Minimum blue color level", DateAndTimeMinimumBlueColorLevel},
+                    {"Minimum color level", DateAndTimeMinimumColorLevel},
+                    {"Maximum red color level", DateAndTimeMaximumRedColorLevel},
+                    {"Maximum green color level", DateAndTimeMaximumGreenColorLevel},
+                    {"Maximum blue color level", DateAndTimeMaximumBlueColorLevel},
+                    {"Maximum color level", DateAndTimeMaximumColorLevel}
+                }
+            ScreensaverConfig.Add("DateAndTime", DateAndTimeConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1688,6 +1704,19 @@ Namespace Misc.Configuration
                 PersonLookupMaximumNames = If(ConfigToken("Screensaver")?("PersonLookup")?("Maximum names count"), 1000)
                 PersonLookupMinimumAgeYears = If(ConfigToken("Screensaver")?("PersonLookup")?("Minimum age years count"), 18)
                 PersonLookupMaximumAgeYears = If(ConfigToken("Screensaver")?("PersonLookup")?("Maximum age years count"), 100)
+
+                '> DateAndTime
+                DateAndTime255Colors = If(ConfigToken("Screensaver")?("DateAndTime")?("Activate 255 Color Mode"), False)
+                DateAndTimeTrueColor = If(ConfigToken("Screensaver")?("DateAndTime")?("Activate True Color Mode"), True)
+                DateAndTimeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Delay in Milliseconds"), 1000)
+                DateAndTimeMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Minimum red color level"), 0)
+                DateAndTimeMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Minimum green color level"), 0)
+                DateAndTimeMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Minimum blue color level"), 0)
+                DateAndTimeMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Minimum color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Minimum color level"), 0)
+                DateAndTimeMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum red color level"), 255)
+                DateAndTimeMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum green color level"), 255)
+                DateAndTimeMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum blue color level"), 255)
+                DateAndTimeMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum color level"), 255)
 
                 'Splash Section - Splash-specific settings go below:
                 '> Simple
