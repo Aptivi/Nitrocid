@@ -42,6 +42,7 @@ Namespace ConsoleBase
         ''' </summary>
         ''' <param name="MaskChar">Specifies the password mask character</param>
         Public Function ReadLineNoInput(MaskChar As Char) As String
+            'TODO: Use ReadLine.Reboot to do this job.
             Dim Final As String = ""
             While True
                 Dim KeyInfo As ConsoleKeyInfo = Console.ReadKey(True)
@@ -97,20 +98,23 @@ Namespace ConsoleBase
                 While Not Console.KeyAvailable
                     If Condition Then Finished = True
                     Threading.Thread.Sleep(1)
+                    If Finished Then Exit While
                 End While
-                KeyInfo = Console.ReadKey(True)
-                KeyCharacter = KeyInfo.KeyChar
-                If KeyCharacter = vbCr Or KeyCharacter = vbLf Then
-                    Finished = True
-                ElseIf KeyInfo.Key = ConsoleKey.Backspace Then
-                    If Not Final.Length = 0 Then
-                        Final = Final.Remove(Final.Length - 1)
-                        Console.Write(GetEsc() + "D") 'Cursor backwards by one character
-                        Console.Write(GetEsc() + "[1X") 'Remove a character
+                If Not Finished Then
+                    KeyInfo = Console.ReadKey(True)
+                    KeyCharacter = KeyInfo.KeyChar
+                    If KeyCharacter = vbCr Or KeyCharacter = vbLf Then
+                        Finished = True
+                    ElseIf KeyInfo.Key = ConsoleKey.Backspace Then
+                        If Not Final.Length = 0 Then
+                            Final = Final.Remove(Final.Length - 1)
+                            Console.Write(GetEsc() + "D") 'Cursor backwards by one character
+                            Console.Write(GetEsc() + "[1X") 'Remove a character
+                        End If
+                    Else
+                        Final += KeyCharacter
+                        Console.Write(KeyCharacter)
                     End If
-                Else
-                    Final += KeyCharacter
-                    Console.Write(KeyCharacter)
                 End If
             End While
             Return Final
