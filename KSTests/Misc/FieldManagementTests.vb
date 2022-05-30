@@ -17,8 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Reflection
-Imports Figgle
-Imports KS.Languages
 Imports KS.Misc.Reflection
 
 <TestFixture> Public Class FieldManagementTests
@@ -50,35 +48,9 @@ Imports KS.Misc.Reflection
     ''' <summary>
     ''' Tests getting variable
     ''' </summary>
-    <Test, Description("Management")> Public Sub TestGetConfigField()
+    <Test, Description("Management")> Public Sub TestGetField()
         Dim Field As FieldInfo = GetField("HiddenFiles")
         Field.Name.ShouldBe("HiddenFiles")
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting properties
-    ''' </summary>
-    <Test, Description("Management")> Public Sub TestGetProperties()
-        Dim Properties As Dictionary(Of String, Object) = GetProperties(GetType(FiggleFonts))
-        Properties.ShouldNotBeNull
-        Properties.ShouldNotBeEmpty
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting properties
-    ''' </summary>
-    <Test, Description("Management")> Public Sub TestGetPropertiesNoEvaluation()
-        Dim Properties As Dictionary(Of String, Type) = GetPropertiesNoEvaluation(GetType(FiggleFonts))
-        Properties.ShouldNotBeNull
-        Properties.ShouldNotBeEmpty
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting property value from variable
-    ''' </summary>
-    <Test, Description("Management")> Public Sub TestGetPropertyValueInVariable()
-        Dim Value As String = GetPropertyValueInVariable(NameOf(CurrentCult), NameOf(CurrentCult.Name))
-        Value.ShouldNotBeNullOrEmpty
     End Sub
 
 End Class
