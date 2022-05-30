@@ -31,9 +31,6 @@ Namespace Misc.Screensaver.Displays
             Try
                 'Variables
                 Dim random As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
 
                 'Preparations
                 PopulateNames()
