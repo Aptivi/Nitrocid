@@ -86,20 +86,27 @@ Namespace ConsoleBase
 
             'Third, print the text, return to the old position, and return the filtered positions
             Text = FormatString(Text, Vars)
-            Console.Write(Text)
-            Left = Console.CursorLeft
-            Top = Console.CursorTop
+            Dim LeftSeekPosition As Integer = OldLeft
+            Dim TopSeekPosition As Integer = OldTop
+            For i As Integer = 1 To Text.Length
+                'Simulate seeking through text
+                LeftSeekPosition += 1
+                If LeftSeekPosition >= Console.WindowWidth Then
+                    'We've reached end of line
+                    LeftSeekPosition = 0
+
+                    'Get down by one line
+                    TopSeekPosition += 1
+                    If TopSeekPosition > Console.BufferHeight - 1 Then
+                        'We're at the end of buffer! Decrement by one.
+                        TopSeekPosition -= 1
+                    End If
+                End If
+            Next
+            Left = LeftSeekPosition
+            Top = TopSeekPosition
 
             'Finally, set the correct old position
-            If Text.Length > Console.WindowWidth - OldLeft And Top = OldTop Then
-                Dim Times As Integer = Math.Truncate((Text.Length + OldLeft) / Console.WindowWidth - 0.0001)
-                OldTop -= Times
-            End If
-            If Top = Console.BufferHeight - 1 Then
-                Dim NewLines() As String = Text.SplitNewLines
-                Dim NewLinesLength As Integer = NewLines.Length - 1
-                If NewLinesLength > 0 Then OldTop -= NewLinesLength
-            End If
             Console.SetCursorPosition(OldLeft, OldTop)
         End Sub
 
