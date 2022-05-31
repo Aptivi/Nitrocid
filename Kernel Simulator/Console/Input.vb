@@ -27,6 +27,15 @@ Namespace ConsoleBase
         Public CurrentMask As String = "*"c
 
         ''' <summary>
+        ''' Reads the line from the console (not implemented yet)
+        ''' </summary>
+        ''' <param name="InputText">Input text to write</param>
+        ''' <param name="DefaultValue">Default value</param>
+        Public Function ReadLine(InputText As String, DefaultValue As String) As String
+            Throw New NotImplementedException("ReadLine.Reboot will be used, so not implemented at this time.")
+        End Function
+
+        ''' <summary>
         ''' Reads the next line of characters from the standard input stream without showing input being written by user.
         ''' </summary>
         Public Function ReadLineNoInput() As String
