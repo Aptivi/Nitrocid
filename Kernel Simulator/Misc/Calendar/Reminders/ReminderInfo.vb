@@ -16,10 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Xml.Serialization
 Imports KS.Misc.Notifications
 
 Namespace Misc.Calendar.Reminders
-    <Serializable>
+    <XmlRoot("ReminderInfo", IsNullable:=False)>
     Public Class ReminderInfo
 
         Private ReminderNotified As Boolean

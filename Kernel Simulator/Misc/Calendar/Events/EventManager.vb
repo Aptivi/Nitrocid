@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.Xml.Serialization
 Imports System.Threading
 
 Namespace Misc.Calendar.Events
@@ -115,10 +115,10 @@ Namespace Misc.Calendar.Events
 
             'If file exists, convert the file to the event instance
             If FileExists(EventFile) Then
-                Dim BinaryConverter As New BinaryFormatter
+                Dim Converter As New XmlSerializer(GetType(EventInfo))
                 Dim EventFileStream As New FileStream(EventFile, FileMode.Open)
                 Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length)
-                Dim ConvertedEvent As EventInfo = DirectCast(BinaryConverter.Deserialize(EventFileStream), EventInfo)
+                Dim ConvertedEvent As EventInfo = DirectCast(Converter.Deserialize(EventFileStream), EventInfo)
                 Wdbg(DebugLevel.I, "Converted!")
                 Return ConvertedEvent
             Else
@@ -183,10 +183,10 @@ Namespace Misc.Calendar.Events
             ThrowOnInvalidPath(File)
             File = NeutralizePath(File)
             Wdbg(DebugLevel.I, "Saving event to {0}...", File)
-            Dim BinaryConverter As New BinaryFormatter
+            Dim Converter As New XmlSerializer(GetType(EventInfo))
             Dim EventFileStream As New FileStream(File, FileMode.OpenOrCreate)
             Wdbg(DebugLevel.I, "Opened stream with length {0}", EventFileStream.Length)
-            BinaryConverter.Serialize(EventFileStream, EventInstance)
+            Converter.Serialize(EventFileStream, EventInstance)
         End Sub
 
     End Module

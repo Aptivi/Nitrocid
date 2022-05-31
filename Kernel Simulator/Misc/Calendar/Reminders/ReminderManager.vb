@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.Xml.Serialization
 Imports System.Threading
 Imports KS.Misc.Notifications
 
@@ -128,10 +128,10 @@ Namespace Misc.Calendar.Reminders
 
             'If file exists, convert the file to the reminder instance
             If FileExists(ReminderFile) Then
-                Dim BinaryConverter As New BinaryFormatter
+                Dim Converter As New XmlSerializer(GetType(ReminderInfo))
                 Dim ReminderFileStream As New FileStream(ReminderFile, FileMode.Open)
                 Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length)
-                Dim ConvertedReminder As ReminderInfo = DirectCast(BinaryConverter.Deserialize(ReminderFileStream), ReminderInfo)
+                Dim ConvertedReminder As ReminderInfo = DirectCast(Converter.Deserialize(ReminderFileStream), ReminderInfo)
                 Wdbg(DebugLevel.I, "Converted!")
                 Return ConvertedReminder
             Else
@@ -196,10 +196,10 @@ Namespace Misc.Calendar.Reminders
             ThrowOnInvalidPath(File)
             File = NeutralizePath(File)
             Wdbg(DebugLevel.I, "Saving reminder to {0}...", File)
-            Dim BinaryConverter As New BinaryFormatter
+            Dim Converter As New XmlSerializer(GetType(ReminderInfo))
             Dim ReminderFileStream As New FileStream(File, FileMode.OpenOrCreate)
             Wdbg(DebugLevel.I, "Opened stream with length {0}", ReminderFileStream.Length)
-            BinaryConverter.Serialize(ReminderFileStream, ReminderInstance)
+            Converter.Serialize(ReminderFileStream, ReminderInstance)
         End Sub
 
     End Module
