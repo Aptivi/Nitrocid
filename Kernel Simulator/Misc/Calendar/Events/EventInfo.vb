@@ -20,26 +20,17 @@ Imports System.Xml.Serialization
 Imports KS.Misc.Notifications
 
 Namespace Misc.Calendar.Events
-    <XmlRoot("ReminderInfo", IsNullable:=False)>
     Public Class EventInfo
 
         Private EventNotified As Boolean
         ''' <summary>
         ''' Event date
         ''' </summary>
-        Public ReadOnly Property EventDate As Date
+        Public Property EventDate As Date
         ''' <summary>
         ''' Event title
         ''' </summary>
-        Public ReadOnly Property EventTitle As String
-
-        Public Sub New()
-        End Sub
-
-        Public Sub New(EventDate As Date, EventTitle As String)
-            Me.EventDate = EventDate
-            Me.EventTitle = EventTitle
-        End Sub
+        Public Property EventTitle As String
 
         ''' <summary>
         ''' Notifies the user about the event

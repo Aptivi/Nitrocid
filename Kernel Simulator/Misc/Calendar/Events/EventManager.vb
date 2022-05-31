@@ -53,7 +53,10 @@ Namespace Misc.Calendar.Events
         ''' <param name="EventTitle">Event title</param>
         Public Sub AddEvent(EventDate As Date, EventTitle As String)
             If String.IsNullOrWhiteSpace(EventTitle) Then EventTitle = DoTranslation("Untitled event")
-            Dim EventInstance As New EventInfo(EventDate, EventTitle)
+            Dim EventInstance As New EventInfo() With {
+                .EventTitle = EventTitle,
+                .EventDate = EventDate
+            }
             AddEvent(EventInstance)
         End Sub
 

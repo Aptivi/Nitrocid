@@ -20,31 +20,21 @@ Imports System.Xml.Serialization
 Imports KS.Misc.Notifications
 
 Namespace Misc.Calendar.Reminders
-    <XmlRoot("ReminderInfo", IsNullable:=False)>
     Public Class ReminderInfo
 
         Private ReminderNotified As Boolean
         ''' <summary>
         ''' Reminder date
         ''' </summary>
-        Public ReadOnly Property ReminderDate As Date
+        Public Property ReminderDate As Date
         ''' <summary>
         ''' Reminder title
         ''' </summary>
-        Public ReadOnly Property ReminderTitle As String
+        Public Property ReminderTitle As String
         ''' <summary>
         ''' Reminder importance
         ''' </summary>
-        Public ReadOnly Property ReminderImportance As NotifPriority
-
-        Public Sub New()
-        End Sub
-
-        Public Sub New(ReminderDate As Date, ReminderTitle As String, ReminderImportance As NotifPriority)
-            Me.ReminderDate = ReminderDate
-            Me.ReminderTitle = ReminderTitle
-            Me.ReminderImportance = ReminderImportance
-        End Sub
+        Public Property ReminderImportance As NotifPriority
 
         ''' <summary>
         ''' Notifies the user about the reminder

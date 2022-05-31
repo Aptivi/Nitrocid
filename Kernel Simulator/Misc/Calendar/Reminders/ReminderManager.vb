@@ -66,7 +66,11 @@ Namespace Misc.Calendar.Reminders
         ''' <param name="ReminderImportance">Reminder importance</param>
         Public Sub AddReminder(ReminderDate As Date, ReminderTitle As String, ReminderImportance As NotifPriority)
             If String.IsNullOrWhiteSpace(ReminderTitle) Then ReminderTitle = DoTranslation("Untitled reminder")
-            Dim Reminder As New ReminderInfo(ReminderDate, ReminderTitle, ReminderImportance)
+            Dim Reminder As New ReminderInfo() With {
+                .ReminderTitle = ReminderTitle,
+                .ReminderImportance = ReminderImportance,
+                .ReminderDate = ReminderDate
+            }
             AddReminder(Reminder)
         End Sub
 
