@@ -17,115 +17,116 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Kernel.Exceptions
-Imports KS.Network.RSS
 
-Public Module RSSBookmarkManager
+Namespace Network.RSS
+    Public Module RSSBookmarkManager
 
-    Private ReadOnly RssBookmarks As New List(Of String)
+        Private ReadOnly RssBookmarks As New List(Of String)
 
-    ''' <summary>
-    ''' Adds the current RSS feed to the bookmarks
-    ''' </summary>
-    Public Sub AddRSSFeedToBookmark()
-        If Not String.IsNullOrEmpty(RSSFeedLink) Then
-            AddRSSFeedToBookmark(RSSFeedLink)
-        Else
-            Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.")
-        End If
-    End Sub
+        ''' <summary>
+        ''' Adds the current RSS feed to the bookmarks
+        ''' </summary>
+        Public Sub AddRSSFeedToBookmark()
+            If Not String.IsNullOrEmpty(RSSFeedLink) Then
+                AddRSSFeedToBookmark(RSSFeedLink)
+            Else
+                Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.")
+            End If
+        End Sub
 
-    ''' <summary>
-    ''' Adds the RSS feed URL to the bookmarks
-    ''' </summary>
-    ''' <param name="FeedURL">The feed URL to parse</param>
-    Public Sub AddRSSFeedToBookmark(FeedURL As String)
-        If Not String.IsNullOrEmpty(FeedURL) Then
-            Try
-                'Form a URI of feed
-                Dim FinalFeedUri As New Uri(FeedURL)
-                Dim FinalFeedUriString As String = FinalFeedUri.AbsoluteUri
+        ''' <summary>
+        ''' Adds the RSS feed URL to the bookmarks
+        ''' </summary>
+        ''' <param name="FeedURL">The feed URL to parse</param>
+        Public Sub AddRSSFeedToBookmark(FeedURL As String)
+            If Not String.IsNullOrEmpty(FeedURL) Then
+                Try
+                    'Form a URI of feed
+                    Dim FinalFeedUri As New Uri(FeedURL)
+                    Dim FinalFeedUriString As String = FinalFeedUri.AbsoluteUri
 
-                'Add the feed to bookmarks if not found
-                If Not RssBookmarks.Contains(FinalFeedUriString) Then
-                    Wdbg(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString)
-                    RssBookmarks.Add(FinalFeedUriString)
-                End If
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message)
-                WStkTrc(ex)
-                If ex.GetType.Name = NameOf(UriFormatException) Then
-                    Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL)
-                    Throw New InvalidFeedLinkException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
-                Else
-                    Throw New InvalidFeedException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
-                End If
-            End Try
-        Else
-            Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.")
-        End If
-    End Sub
+                    'Add the feed to bookmarks if not found
+                    If Not RssBookmarks.Contains(FinalFeedUriString) Then
+                        Wdbg(DebugLevel.I, "Adding {0} to feed bookmark list...", FinalFeedUriString)
+                        RssBookmarks.Add(FinalFeedUriString)
+                    End If
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to add {0} to RSS bookmarks: {1}", FeedURL, ex.Message)
+                    WStkTrc(ex)
+                    If ex.GetType.Name = NameOf(UriFormatException) Then
+                        Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL)
+                        Throw New InvalidFeedLinkException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                    Else
+                        Throw New InvalidFeedException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                    End If
+                End Try
+            Else
+                Wdbg(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.")
+            End If
+        End Sub
 
-    ''' <summary>
-    ''' Removes the current RSS feed from the bookmarks
-    ''' </summary>
-    Public Sub RemoveRSSFeedFromBookmark()
-        If Not String.IsNullOrEmpty(RSSFeedLink) Then
-            RemoveRSSFeedFromBookmark(RSSFeedLink)
-        Else
-            Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
-        End If
-    End Sub
+        ''' <summary>
+        ''' Removes the current RSS feed from the bookmarks
+        ''' </summary>
+        Public Sub RemoveRSSFeedFromBookmark()
+            If Not String.IsNullOrEmpty(RSSFeedLink) Then
+                RemoveRSSFeedFromBookmark(RSSFeedLink)
+            Else
+                Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
+            End If
+        End Sub
 
-    ''' <summary>
-    ''' Removes the RSS feed URL from the bookmarks
-    ''' </summary>
-    ''' <param name="FeedURL">The feed URL to parse</param>
-    Public Sub RemoveRSSFeedFromBookmark(FeedURL As String)
-        If Not String.IsNullOrEmpty(FeedURL) Then
-            Try
-                'Form a URI of feed
-                Dim FinalFeedUri As New Uri(FeedURL)
-                Dim FinalFeedUriString As String = FinalFeedUri.AbsoluteUri
+        ''' <summary>
+        ''' Removes the RSS feed URL from the bookmarks
+        ''' </summary>
+        ''' <param name="FeedURL">The feed URL to parse</param>
+        Public Sub RemoveRSSFeedFromBookmark(FeedURL As String)
+            If Not String.IsNullOrEmpty(FeedURL) Then
+                Try
+                    'Form a URI of feed
+                    Dim FinalFeedUri As New Uri(FeedURL)
+                    Dim FinalFeedUriString As String = FinalFeedUri.AbsoluteUri
 
-                'Remove the feed from bookmarks if found
-                If RssBookmarks.Contains(FinalFeedUriString) Then
-                    Wdbg(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString)
-                    RssBookmarks.Remove(FinalFeedUriString)
-                Else
-                    Throw New InvalidFeedLinkException(DoTranslation("The feed doesn't exist in bookmarks."))
-                End If
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message)
-                WStkTrc(ex)
-                If ex.GetType.Name = NameOf(UriFormatException) Then
-                    Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL)
-                    Throw New InvalidFeedLinkException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
-                Else
-                    Throw New InvalidFeedException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
-                End If
-            End Try
-        Else
-            Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
-        End If
-    End Sub
+                    'Remove the feed from bookmarks if found
+                    If RssBookmarks.Contains(FinalFeedUriString) Then
+                        Wdbg(DebugLevel.I, "Removing {0} from feed bookmark list...", FinalFeedUriString)
+                        RssBookmarks.Remove(FinalFeedUriString)
+                    Else
+                        Throw New InvalidFeedLinkException(DoTranslation("The feed doesn't exist in bookmarks."))
+                    End If
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to remove {0} from RSS bookmarks: {1}", FeedURL, ex.Message)
+                    WStkTrc(ex)
+                    If ex.GetType.Name = NameOf(UriFormatException) Then
+                        Wdbg(DebugLevel.E, "Verify that {0} is actually valid.", FeedURL)
+                        Throw New InvalidFeedLinkException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                    Else
+                        Throw New InvalidFeedException(DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message)
+                    End If
+                End Try
+            Else
+                Wdbg(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.")
+            End If
+        End Sub
 
-    ''' <summary>
-    ''' Gets all RSS bookmarks
-    ''' </summary>
-    Public Function GetBookmarks() As List(Of String)
-        Return RssBookmarks
-    End Function
+        ''' <summary>
+        ''' Gets all RSS bookmarks
+        ''' </summary>
+        Public Function GetBookmarks() As List(Of String)
+            Return RssBookmarks
+        End Function
 
-    ''' <summary>
-    ''' Gets the bookmark URL from number
-    ''' </summary>
-    Public Function GetBookmark(Num As Integer) As String
-        'Return nothing if there are no bookmarks
-        If RssBookmarks.Count = 0 Then Return ""
+        ''' <summary>
+        ''' Gets the bookmark URL from number
+        ''' </summary>
+        Public Function GetBookmark(Num As Integer) As String
+            'Return nothing if there are no bookmarks
+            If RssBookmarks.Count = 0 Then Return ""
 
-        'Get the bookmark
-        If Num <= 0 Then Num = 1
-        Return RssBookmarks(Num - 1)
-    End Function
+            'Get the bookmark
+            If Num <= 0 Then Num = 1
+            Return RssBookmarks(Num - 1)
+        End Function
 
-End Module
+    End Module
+End Namespace
