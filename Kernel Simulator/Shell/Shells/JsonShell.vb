@@ -85,7 +85,7 @@ Namespace Shell.Shells
 
             'Close file
             JsonShell_CloseTextFile()
-            JsonShell_AutoSave.Abort()
+            JsonShell_AutoSave.Interrupt()
             JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
         End Sub
 

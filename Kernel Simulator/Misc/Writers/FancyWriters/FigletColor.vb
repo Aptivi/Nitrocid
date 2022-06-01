@@ -36,7 +36,7 @@ Namespace Misc.Writers.FancyWriters
                 'Write the font
                 Text = FigletFont.Render(Text)
                 WritePlain(Text, True, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -56,7 +56,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -78,7 +78,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -98,7 +98,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -120,7 +120,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -140,7 +140,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -162,7 +162,7 @@ Namespace Misc.Writers.FancyWriters
 
                 'Actually write
                 WriteFigletPlain(Text, FigletFont, Vars)
-            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try

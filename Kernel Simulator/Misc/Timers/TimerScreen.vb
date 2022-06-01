@@ -182,7 +182,7 @@ Namespace Misc.Timers
                     Else
                         WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
                     End If
-                Catch ex As ThreadAbortException
+                Catch ex As ThreadInterruptedException
                     Exit While
                 End Try
             End While

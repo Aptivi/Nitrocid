@@ -35,7 +35,7 @@ Namespace Network.Mail.Transfer
                     PopulateMessages()
                 Else
                     Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
-                    Thread.CurrentThread.Abort()
+                    Thread.CurrentThread.Interrupt()
                 End If
             End While
         End Sub
@@ -53,7 +53,7 @@ Namespace Network.Mail.Transfer
                     End SyncLock
                 Else
                     Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
-                    Thread.CurrentThread.Abort()
+                    Thread.CurrentThread.Interrupt()
                 End If
             End While
         End Sub
@@ -72,7 +72,7 @@ Namespace Network.Mail.Transfer
                     End SyncLock
                 Else
                     Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping POP3KeepConnection()...")
-                    Thread.CurrentThread.Abort()
+                    Thread.CurrentThread.Interrupt()
                 End If
             End While
 #End If

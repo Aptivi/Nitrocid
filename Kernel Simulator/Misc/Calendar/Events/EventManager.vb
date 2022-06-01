@@ -39,7 +39,7 @@ Namespace Misc.Calendar.Events
                             EventInstance.NotifyEvent()
                         End If
                     Next
-                Catch ex As ThreadAbortException
+                Catch ex As ThreadInterruptedException
                     Wdbg(DebugLevel.I, "Aborting event listener...")
                     Exit Sub
                 End Try

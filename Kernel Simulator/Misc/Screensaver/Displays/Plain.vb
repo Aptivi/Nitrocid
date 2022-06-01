@@ -36,7 +36,7 @@ Namespace Misc.Screensaver.Displays
                 Do While True
                     SleepNoBlock(10, Plain)
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

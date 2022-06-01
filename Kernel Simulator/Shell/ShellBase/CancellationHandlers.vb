@@ -36,7 +36,7 @@ Namespace Shell.ShellBase
                     e.Cancel = True
                     Dim StartCommandThread As KernelThread = ShellStack(ShellStack.Count - 1).ShellCommandThread
                     StartCommandThread.Stop()
-                    ProcessStartCommandThread.Abort()
+                    ProcessStartCommandThread.Interrupt()
                     Console.SetOut(DefConsoleOut)
                 End If
             End SyncLock

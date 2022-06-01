@@ -84,7 +84,7 @@ Namespace Shell.Shells
                         GetLine(WrittenCommand, False, "", ShellType.TextShell)
                         KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception
@@ -96,7 +96,7 @@ Namespace Shell.Shells
 
             'Close file
             TextEdit_CloseTextFile()
-            TextEdit_AutoSave.Abort()
+            TextEdit_AutoSave.Interrupt()
             TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
         End Sub
 

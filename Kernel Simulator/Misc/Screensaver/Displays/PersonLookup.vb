@@ -71,7 +71,7 @@ Namespace Misc.Screensaver.Displays
                     'Wait until we run the lookup again
                     SleepNoBlock(PersonLookupLookedUpDelay, PersonLookup)
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

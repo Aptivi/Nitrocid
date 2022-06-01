@@ -112,7 +112,7 @@ Namespace Misc.Execution
                 'This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
                 NewDataSpotted = True
                 Return CommandProcess.ExitCode
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 CancelRequested = False
                 Return -1
                 Exit Function

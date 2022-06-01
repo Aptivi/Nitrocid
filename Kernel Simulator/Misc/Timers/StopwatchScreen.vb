@@ -160,7 +160,7 @@ Namespace Misc.Timers
                         WriteWhere(LapsListBuilder.ToString, LapsLapsListLeftPosition, LapsLapsListTopPosition, True, LapColor)
                         NewLapAcknowledged = False
                     End If
-                Catch ex As ThreadAbortException
+                Catch ex As ThreadInterruptedException
                     Exit While
                 End Try
             End While

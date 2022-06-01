@@ -72,7 +72,7 @@ Namespace Shell.Shells
                         GetLine(HttpCommand, False, "", ShellType.HTTPShell)
                         KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception

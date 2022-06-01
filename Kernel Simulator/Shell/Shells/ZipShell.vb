@@ -80,7 +80,7 @@ Namespace Shell.Shells
                         GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
                         KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception

@@ -171,7 +171,7 @@ Namespace Misc.Screensaver.Displays
                     CurrentWindowHeight = Console.WindowHeight
                     SleepNoBlock(WipeDelay, Wipe)
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

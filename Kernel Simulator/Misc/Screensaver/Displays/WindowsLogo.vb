@@ -134,7 +134,7 @@ Namespace Misc.Screensaver.Displays
                         End If
                     End If
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

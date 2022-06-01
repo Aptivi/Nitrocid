@@ -46,7 +46,7 @@ Namespace Misc.Screensaver.Displays
                     'Delay
                     SleepNoBlock(DateAndTimeDelay, DateAndTime)
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

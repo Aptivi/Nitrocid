@@ -140,7 +140,7 @@ Namespace Network.RemoteDebug
                             KernelEventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                         End If
                     End If
-                Catch ae As ThreadAbortException
+                Catch ae As ThreadInterruptedException
                     Exit While
                 Catch ex As Exception
                     If NotifyOnRemoteDebugConnectionError Then
@@ -156,7 +156,7 @@ Namespace Network.RemoteDebug
             RDebugStopping = False
             DebugTCP.Stop()
             DebugDevices.Clear()
-            Thread.CurrentThread.Abort()
+            Thread.CurrentThread.Interrupt()
         End Sub
 
         ''' <summary>

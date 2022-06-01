@@ -95,7 +95,7 @@ Namespace Shell.ShellBase
                     DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
                     ShowHelp(Command, ShellType)
                 End If
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 CancelRequested = False
                 Exit Sub
             Catch ex As Exception

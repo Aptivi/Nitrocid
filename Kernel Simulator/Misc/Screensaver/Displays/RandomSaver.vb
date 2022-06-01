@@ -51,7 +51,7 @@ Namespace Misc.Screensaver.Displays
                 Do While Screensavers(ScreensaverName).IsAlive
                     SleepNoBlock(10, RandomSaver)
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

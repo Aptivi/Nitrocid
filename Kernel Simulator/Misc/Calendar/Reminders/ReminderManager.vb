@@ -42,7 +42,7 @@ Namespace Misc.Calendar.Reminders
                             ReminderInstance.NotifyReminder()
                         End If
                     Next
-                Catch ex As ThreadAbortException
+                Catch ex As ThreadInterruptedException
                     Wdbg(DebugLevel.I, "Aborting reminder listener...")
                     Exit Sub
                 End Try

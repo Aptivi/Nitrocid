@@ -67,7 +67,7 @@ Namespace Shell.Shells
                         GetLine(FullCmd, False, "", ShellType.TestShell)
                         KernelEventManager.RaiseTestPostExecuteCommand(FullCmd)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception

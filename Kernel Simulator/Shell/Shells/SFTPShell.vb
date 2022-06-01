@@ -107,7 +107,7 @@ Namespace Shell.Shells
                         GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
                         KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception

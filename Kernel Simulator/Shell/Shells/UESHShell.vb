@@ -89,7 +89,7 @@ Namespace Shell.Shells
                             'Fire an event of PostExecuteCommand
                             KernelEventManager.RaisePostExecuteCommand(strcommand)
                         End If
-                    Catch taex As ThreadAbortException
+                    Catch taex As ThreadInterruptedException
                         CancelRequested = False
                         Bail = True
                     Catch ex As Exception

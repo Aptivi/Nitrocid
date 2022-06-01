@@ -197,7 +197,7 @@ Namespace Misc.Screensaver.Displays
                     CurrentWindowWidth = Console.WindowWidth
                     CurrentWindowHeight = Console.WindowHeight
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

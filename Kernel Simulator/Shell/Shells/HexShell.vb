@@ -88,7 +88,7 @@ Namespace Shell.Shells
                         GetLine(WrittenCommand, False, "", ShellType.HexShell)
                         KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception
@@ -100,7 +100,7 @@ Namespace Shell.Shells
 
             'Close file
             HexEdit_CloseBinaryFile()
-            HexEdit_AutoSave.Abort()
+            HexEdit_AutoSave.Interrupt()
             HexEdit_AutoSave = New Thread(AddressOf HexEdit_HandleAutoSaveBinaryFile) With {.Name = "Hex Edit Autosave Thread"}
         End Sub
 

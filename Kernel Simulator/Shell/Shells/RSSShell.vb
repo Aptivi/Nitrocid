@@ -57,7 +57,7 @@ Namespace Shell.Shells
                             RSSFeedLink = RSSFeedInstance.FeedUrl
                             OldRSSFeedLink = RSSFeedLink
                             BailFromEnter = True
-                        Catch taex As ThreadAbortException
+                        Catch taex As ThreadInterruptedException
                             CancelRequested = False
                             BailFromEnter = True
                             Bail = True
@@ -80,7 +80,7 @@ Namespace Shell.Shells
                         End If
                         OldRSSFeedLink = RSSFeedLink
                         BailFromEnter = True
-                    Catch taex As ThreadAbortException
+                    Catch taex As ThreadInterruptedException
                         CancelRequested = False
                         BailFromEnter = True
                         Bail = True
@@ -126,7 +126,7 @@ Namespace Shell.Shells
                         GetLine(WrittenCommand, False, "", ShellType.RSSShell)
                         KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception

@@ -48,7 +48,7 @@ Namespace Misc.Screensaver.Displays
                         SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
                     End If
                 Loop
-            Catch taex As ThreadAbortException
+            Catch taex As ThreadInterruptedException
                 Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
                 Wdbg(DebugLevel.I, "Entered CustomSaver.PostDisplay().")
                 CustomSaver.PostDisplay()

@@ -116,7 +116,7 @@ Namespace Shell.Shells
                         GetLine(FtpCommand, False, "", ShellType.FTPShell)
                         KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                     End If
-                Catch taex As ThreadAbortException
+                Catch taex As ThreadInterruptedException
                     CancelRequested = False
                     Bail = True
                 Catch ex As Exception
