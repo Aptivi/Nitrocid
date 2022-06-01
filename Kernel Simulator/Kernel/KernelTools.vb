@@ -170,7 +170,8 @@ Namespace Kernel
                            DoTranslation(">> Panic information <<") + NewLine +
                            DoTranslation("> Description: {0}") + NewLine +
                            DoTranslation("> Error type: {1}") + NewLine +
-                           DoTranslation("> Date and Time: {2}") + NewLine, Description, ErrorType.ToString, Render)
+                           DoTranslation("> Date and Time: {2}") + NewLine +
+                           DoTranslation("> Framework Type: {3}") + NewLine, Description, ErrorType.ToString, Render, KernelSimulatorMoniker)
 
                 'Write Info (Exception)
                 If Exc IsNot Nothing Then
@@ -426,6 +427,7 @@ Namespace Kernel
             Wdbg(DebugLevel.I, "-------------------------------------------------------------------")
             Wdbg(DebugLevel.I, "Kernel initialized, version {0}.", KernelVersion)
             Wdbg(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString)
+            Wdbg(DebugLevel.I, "Framework: {0}", KernelSimulatorMoniker)
 
             'Populate ban list for debug devices
             PopulateBlockedDevices()

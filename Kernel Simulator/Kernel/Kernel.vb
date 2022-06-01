@@ -47,14 +47,19 @@ Namespace Kernel
         Friend DefConsoleOut As TextWriter
 
         '#ifdef'd variables
-#If SPECIFIER = "REL" Then
-        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
-#ElseIf SPECIFIER = "RC" Then
-        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate"
-#ElseIf SPECIFIER = "DEV" Then
-        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Developer Preview"
+#If NETCOREAPP Then
+        Public Const KernelSimulatorMoniker As String = ".NET CoreCLR"
 #Else
-        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Unsupported Release"
+        Public Const KernelSimulatorMoniker As String = ".NET Framework"
+#End If
+#If SPECIFIER = "REL" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}"
+#ElseIf SPECIFIER = "RC" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate"
+#ElseIf SPECIFIER = "DEV" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview"
+#Else
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release"
 #End If
 
         ''' <summary>
