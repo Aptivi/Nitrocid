@@ -74,7 +74,7 @@ Namespace Shell.Shells
                     End SyncLock
 
                     'Prompt for the command
-                    Dim WrittenCommand As String = Console.ReadLine
+                    Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                         GetLine(WrittenCommand, False, "", ShellType.ZIPShell)

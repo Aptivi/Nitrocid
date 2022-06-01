@@ -97,7 +97,7 @@ Namespace Misc.Timers
                             SetInputColor()
 
                             'Try to parse the interval
-                            Dim UnparsedInterval As String = Console.ReadLine()
+                            Dim UnparsedInterval As String = ReadLine()
                             If Not Double.TryParse(UnparsedInterval, TimerInterval) Then
                                 'Not numeric.
                                 WriteWhere(DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, False, ColTypes.Error)

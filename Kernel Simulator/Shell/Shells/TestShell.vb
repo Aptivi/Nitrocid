@@ -60,7 +60,7 @@ Namespace Shell.Shells
                 End SyncLock
 
                 'Parse the command
-                Dim FullCmd As String = Console.ReadLine
+                Dim FullCmd As String = ReadLine()
                 Try
                     If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseTestPreExecuteCommand(FullCmd)

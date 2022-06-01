@@ -29,7 +29,7 @@ Namespace Misc.TextEdit.Commands
             Write(DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write ""EOF"" on its own line."), True, ColTypes.Neutral)
             Do Until FinalLine = "EOF"
                 Write(">> ", False, ColTypes.Input)
-                FinalLine = Console.ReadLine
+                FinalLine = ReadLine()
                 If Not FinalLine = "EOF" Then
                     FinalLines.Add(FinalLine)
                 End If

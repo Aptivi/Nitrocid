@@ -107,7 +107,7 @@ Namespace Shell.Shells
                         Connects = False
                     Else
                         Wdbg(DebugLevel.I, "Normal shell")
-                        FtpCommand = Console.ReadLine()
+                        FtpCommand = ReadLine()
                     End If
 
                     'Parse command

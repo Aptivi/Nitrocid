@@ -428,7 +428,7 @@ Namespace Login
             While [Step] = 1
                 Write(DoTranslation("Write your username."), True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
-                AnswerUsername = Console.ReadLine
+                AnswerUsername = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername)
                 If String.IsNullOrWhiteSpace(AnswerUsername) Then
                     Wdbg(DebugLevel.W, "Username is not valid. Returning...")
@@ -463,7 +463,7 @@ Namespace Login
                 Write(" 1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
                 Write(" 2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
                 Write(NewLine + ">> ", False, ColTypes.Input)
-                If Integer.TryParse(Console.ReadLine, AnswerType) Then
+                If Integer.TryParse(ReadLine(), AnswerType) Then
                     Wdbg(DebugLevel.I, "Answer: {0}", AnswerType)
                     Select Case AnswerType
                         Case 1, 2

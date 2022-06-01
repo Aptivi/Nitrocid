@@ -30,7 +30,7 @@ Namespace Network.Mail.Commands
 
             'Prompt for receiver e-mail address
             Write(DoTranslation("Enter recipient mail address:") + " ", False, ColTypes.Input)
-            Receiver = Console.ReadLine
+            Receiver = ReadLine()
             Wdbg(DebugLevel.I, "Recipient: {0}", Receiver)
 
             'Check for mail format
@@ -39,14 +39,14 @@ Namespace Network.Mail.Commands
 
                 'Prompt for subject
                 Write(DoTranslation("Enter the subject:") + " ", False, ColTypes.Input)
-                Subject = Console.ReadLine
+                Subject = ReadLine()
                 Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length)
 
                 'Prompt for body
                 Write(DoTranslation("Enter your message below. Write ""EOF"" to confirm."), True, ColTypes.Input)
                 Dim BodyLine As String = ""
                 While Not BodyLine.ToUpper = "EOF"
-                    BodyLine = Console.ReadLine
+                    BodyLine = ReadLine()
                     If Not BodyLine.ToUpper = "EOF" Then
                         Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
                         Body.TextBody += BodyLine + NewLine
@@ -58,7 +58,7 @@ Namespace Network.Mail.Commands
                 Dim PathLine As String = " "
                 While Not PathLine = ""
                     Write("> ", False, ColTypes.Input)
-                    PathLine = Console.ReadLine
+                    PathLine = ReadLine()
                     If Not PathLine = "" Then
                         PathLine = NeutralizePath(PathLine)
                         Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)

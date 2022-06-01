@@ -164,7 +164,7 @@ Namespace Languages
                                 While Not LanguageSet
                                     Write(">> ", False, ColTypes.Input)
                                     Dim Answer As Integer
-                                    If Integer.TryParse(Console.ReadLine, Answer) Then
+                                    If Integer.TryParse(ReadLine(), Answer) Then
                                         Wdbg(DebugLevel.I, "Choice: {0}", Answer)
                                         Select Case Answer
                                             Case 1, 2

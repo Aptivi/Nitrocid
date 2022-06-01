@@ -47,7 +47,7 @@ Namespace Misc.Games
                 Write(RandomExpression, True, ColTypes.Input)
 
                 'Wait for response
-                UserEvaluated = If(SolverShowInput, Console.ReadLine(), ReadLineNoInput(""))
+                UserEvaluated = If(SolverShowInput, ReadLine(), ReadLineNoInput(""))
                 Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated)
 
                 'Check to see if the user has entered the correct answer

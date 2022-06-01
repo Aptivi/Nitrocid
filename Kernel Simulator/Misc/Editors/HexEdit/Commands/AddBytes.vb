@@ -29,7 +29,7 @@ Namespace Misc.HexEdit.Commands
             Write(DoTranslation("Enter a byte on its own line that you want to append to the end of the file. When you're done, write ""EOF"" on its own line."), True, ColTypes.Neutral)
             Do Until FinalByte = "EOF"
                 Write(">> ", False, ColTypes.Input)
-                FinalByte = Console.ReadLine
+                FinalByte = ReadLine()
                 If Not FinalByte = "EOF" Then
                     Dim ByteContent As Byte
                     If Byte.TryParse(FinalByte, Globalization.NumberStyles.HexNumber, Nothing, ByteContent) Then

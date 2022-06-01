@@ -27,12 +27,19 @@ Namespace ConsoleBase
         Public CurrentMask As String = "*"c
 
         ''' <summary>
-        ''' Reads the line from the console (not implemented yet)
+        ''' Reads the line from the console
+        ''' </summary>
+        Public Function ReadLine() As String
+            Return ReadLine("", "")
+        End Function
+
+        ''' <summary>
+        ''' Reads the line from the console
         ''' </summary>
         ''' <param name="InputText">Input text to write</param>
         ''' <param name="DefaultValue">Default value</param>
         Public Function ReadLine(InputText As String, DefaultValue As String) As String
-            Throw New NotImplementedException("ReadLine.Reboot will be used, so not implemented at this time.")
+            Return ReadLineReboot.ReadLine.Read(InputText, DefaultValue)
         End Function
 
         ''' <summary>
@@ -51,29 +58,7 @@ Namespace ConsoleBase
         ''' </summary>
         ''' <param name="MaskChar">Specifies the password mask character</param>
         Public Function ReadLineNoInput(MaskChar As Char) As String
-            'TODO: Use ReadLine.Reboot to do this job.
-            Dim Final As String = ""
-            While True
-                Dim KeyInfo As ConsoleKeyInfo = Console.ReadKey(True)
-                Dim KeyCharacter As Char = KeyInfo.KeyChar
-                If KeyCharacter = vbCr Or KeyCharacter = vbLf Then
-                    Exit While
-                ElseIf KeyInfo.Key = ConsoleKey.Backspace Then
-                    If Not Final.Length = 0 Then
-                        Final = Final.Remove(Final.Length - 1)
-                        If Not MaskChar = vbNullChar Then
-                            Dim OldCursorLeft As Integer = Console.CursorLeft
-                            Console.CursorLeft = OldCursorLeft - 1
-                            Console.Write(" ")
-                            Console.CursorLeft = OldCursorLeft - 1
-                        End If
-                    End If
-                Else
-                    Final += KeyCharacter
-                    If Not MaskChar = vbNullChar Then Console.Write(MaskChar)
-                End If
-            End While
-            Return Final
+            Return ReadLineReboot.ReadLine.ReadPassword("", MaskChar)
         End Function
 
         ''' <summary>
@@ -134,7 +119,7 @@ Namespace ConsoleBase
         ''' </summary>
         Public Function ReadLineLong() As String
             Console.SetIn(New StreamReader(Console.OpenStandardInput(65536), Console.InputEncoding, False, 65536))
-            Return Console.ReadLine()
+            Return ReadLine()
         End Function
 
     End Module

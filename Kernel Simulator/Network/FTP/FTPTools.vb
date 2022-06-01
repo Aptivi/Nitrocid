@@ -100,7 +100,7 @@ Namespace Network.FTP
                 Else
                     Write(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
                 End If
-                FtpUser = Console.ReadLine()
+                FtpUser = ReadLine()
                 If FtpUser = "" Then
                     Wdbg(DebugLevel.W, "User is not provided. Fallback to ""anonymous""")
                     FtpUser = "anonymous"
@@ -145,7 +145,7 @@ Namespace Network.FTP
                     WriteTable(ProfHeaders, ProfData, 2, ColTypes.Option)
                     While Not profanswered
                         Write(NewLine + ">> ", False, ColTypes.Input)
-                        profanswer = Console.ReadLine
+                        profanswer = ReadLine()
                         Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
                         If IsStringNumeric(profanswer) Then
                             Try
@@ -270,7 +270,7 @@ Namespace Network.FTP
                 Console.WriteLine()
                 While Answering
                     Write(">> ", False, ColTypes.Input)
-                    Answer = Console.ReadLine
+                    Answer = ReadLine()
                     Wdbg(DebugLevel.I, "Response: {0}", Answer)
                     If IsStringNumeric(Answer) Then
                         Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...")

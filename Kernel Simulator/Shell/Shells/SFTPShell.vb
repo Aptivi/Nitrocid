@@ -98,7 +98,7 @@ Namespace Shell.Shells
                         Connects = False
                     Else
                         Wdbg(DebugLevel.I, "Normal shell")
-                        SFTPStrCmd = Console.ReadLine()
+                        SFTPStrCmd = ReadLine()
                     End If
 
                     'Parse command

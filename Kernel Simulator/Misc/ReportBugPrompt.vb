@@ -35,7 +35,7 @@ Namespace Misc
                 Write(" 2) " + DoTranslation("A feature request"), True, ColTypes.Option)
                 Write(" 3) " + DoTranslation("A question") + NewLine, True, ColTypes.Option)
                 Write(">> ", False, ColTypes.Input)
-                If Integer.TryParse(Console.ReadLine, AnswerKind) Then
+                If Integer.TryParse(ReadLine(), AnswerKind) Then
                     Wdbg(DebugLevel.I, "Answer: {0}", AnswerKind)
                     Select Case AnswerKind
                         Case 1, 2, 3
@@ -58,7 +58,7 @@ Namespace Misc
             While [Step] = 2
                 Write(DoTranslation("Type a feature that you want to raise a ticket on.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
-                AnswerFeature = Console.ReadLine
+                AnswerFeature = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerFeature)
                 If String.IsNullOrWhiteSpace(AnswerFeature) Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
@@ -74,7 +74,7 @@ Namespace Misc
             While [Step] = 3
                 Write(DoTranslation("Ask a question, jot your idea, or report a problem.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
-                AnswerRequest = Console.ReadLine
+                AnswerRequest = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerRequest)
                 If String.IsNullOrWhiteSpace(AnswerRequest) Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")

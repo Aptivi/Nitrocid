@@ -103,7 +103,7 @@ Namespace Login
                     'Prompt user to choose a user
                     Do Until AnswerUserInt <> 0
                         Write(">> ", False, ColTypes.Input)
-                        Dim AnswerUserString As String = Console.ReadLine
+                        Dim AnswerUserString As String = ReadLine()
 
                         'Parse input
                         If Not String.IsNullOrWhiteSpace(AnswerUserString) Then
@@ -135,7 +135,7 @@ Namespace Login
                     Else
                         Write(DoTranslation("Username: "), False, ColTypes.Input)
                     End If
-                    Dim answeruser As String = Console.ReadLine()
+                    Dim answeruser As String = ReadLine()
 
                     'Parse input
                     If answeruser.Contains(" ") Then

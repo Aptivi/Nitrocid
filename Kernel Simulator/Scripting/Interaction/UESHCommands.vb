@@ -105,7 +105,7 @@ Namespace Scripting.Interaction
 
                 'Wait for an answer
                 If PressEnter Then
-                    answer = Console.ReadLine
+                    answer = ReadLine()
                 Else
                     answer = Console.ReadKey.KeyChar
                     Console.WriteLine()
@@ -201,7 +201,7 @@ Namespace Scripting.Interaction
                 SetConsoleColor(InputColor)
 
                 'Wait for an answer
-                Answer = Console.ReadLine
+                Answer = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", Answer)
 
                 Wdbg(DebugLevel.I, "Setting {0} to {1}...", ScriptVariable, Answer)

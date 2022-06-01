@@ -225,7 +225,7 @@ Namespace ConsoleBase
                         End Select
                         WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, _DefaultColor)
                         Console.CursorVisible = True
-                        Dim ColorNum As String = Console.ReadLine
+                        Dim ColorNum As String = ReadLine()
                         Console.CursorVisible = False
                         Wdbg(DebugLevel.I, "Got response: {0}", ColorNum)
                         If IsStringNumeric(ColorNum) Then
@@ -248,7 +248,7 @@ Namespace ConsoleBase
                     ElseIf ConsoleResponse.Key = ConsoleKey.C Then
                         WriteWhere(DoTranslation("Enter color code that satisfies these formats:") + " ""RRR;GGG;BBB"" / 0-255 [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, $"{CurrentColorR};{CurrentColorG};{CurrentColorB}")
                         Console.CursorVisible = True
-                        Dim ColorSequence As String = Console.ReadLine
+                        Dim ColorSequence As String = ReadLine()
                         Console.CursorVisible = False
                         Try
                             Wdbg(DebugLevel.I, "Parsing {0}...", ColorSequence)
@@ -304,7 +304,7 @@ Namespace ConsoleBase
                         Wdbg(DebugLevel.I, "Prompting for color number...")
                         WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, CInt(CurrentColor))
                         Console.CursorVisible = True
-                        Dim ColorNum As String = Console.ReadLine
+                        Dim ColorNum As String = ReadLine()
                         Console.CursorVisible = False
                         Wdbg(DebugLevel.I, "Got response: {0}", ColorNum)
                         If IsStringNumeric(ColorNum) Then

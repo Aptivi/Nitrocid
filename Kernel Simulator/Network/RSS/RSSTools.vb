@@ -304,7 +304,7 @@ Namespace Network.RSS
                 Write(">> ", False, ColTypes.Input)
 
                 'Read and parse the answer
-                Dim AnswerStr As String = Console.ReadLine()
+                Dim AnswerStr As String = ReadLine()
                 If IsStringNumeric(AnswerStr) Then
                     'Got a numeric string! Check to see if we're in range before parsing it to index
                     Dim AnswerInt As Integer = AnswerStr
@@ -344,7 +344,7 @@ Namespace Network.RSS
                 Write(">> ", False, ColTypes.Input)
 
                 'Read and parse the answer
-                Dim AnswerStr As String = Console.ReadLine()
+                Dim AnswerStr As String = ReadLine()
                 If IsStringNumeric(AnswerStr) Then
                     'Got a numeric string! Check to see if we're in range before parsing it to index
                     Dim AnswerInt As Integer = AnswerStr

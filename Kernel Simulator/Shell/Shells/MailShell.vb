@@ -73,7 +73,7 @@ Namespace Shell.Shells
                 End SyncLock
 
                 'Listen for a command
-                Dim cmd As String = Console.ReadLine
+                Dim cmd As String = ReadLine()
                 If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"})) Then
                     KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
                     GetLine(cmd, False, "", ShellType.MailShell)

@@ -58,7 +58,7 @@ Namespace Misc.Configuration
                 'Prompt user
                 Console.WriteLine()
                 Write("> ", False, ColTypes.Input)
-                AnswerString = Console.ReadLine
+                AnswerString = ReadLine()
                 Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 Console.WriteLine()
 
@@ -88,7 +88,7 @@ Namespace Misc.Configuration
                     ElseIf AnswerInt = MaxSections + 3 Then
                         'The selected answer is "Save Settings As"
                         Write(DoTranslation("Where do you want to save the current kernel settings?"), True, ColTypes.Question)
-                        Dim Location As String = NeutralizePath(Console.ReadLine)
+                        Dim Location As String = NeutralizePath(ReadLine())
                         If Not FileExists(Location) Then
                             Try
                                 CreateConfig(Location)
@@ -104,7 +104,7 @@ Namespace Misc.Configuration
                     ElseIf AnswerInt = MaxSections + 4 Then
                         'The selected answer is "Load Settings From"
                         Write(DoTranslation("Where do you want to load the current kernel settings from?"), True, ColTypes.Question)
-                        Dim Location As String = NeutralizePath(Console.ReadLine)
+                        Dim Location As String = NeutralizePath(ReadLine())
                         If FileExists(Location) Then
                             Try
                                 ReadConfig(Location)
@@ -200,7 +200,7 @@ Namespace Misc.Configuration
 
                     'Prompt user and check for input
                     Write("> ", False, ColTypes.Input)
-                    AnswerString = Console.ReadLine
+                    AnswerString = ReadLine()
                     Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                     Console.WriteLine()
 
@@ -384,14 +384,14 @@ Namespace Misc.Configuration
                     'Prompt user
                     If KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
                         Write("> ", False, ColTypes.Input)
-                        VariantValue = Console.ReadLine
+                        VariantValue = ReadLine()
                         If NeutralizePaths Then VariantValue = NeutralizePath(VariantValue, NeutralizeRootPath)
                         Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
                     ElseIf Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SColor Then
                         If KeyType = SettingsKeyType.SList Then
                             Write("> ", False, ColTypes.Input)
                             Do Until AnswerString = "q"
-                                AnswerString = Console.ReadLine
+                                AnswerString = ReadLine()
                                 If Not AnswerString = "q" Then
                                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                                     If Not AnswerString.StartsWith("-") Then
@@ -446,7 +446,7 @@ Namespace Misc.Configuration
                                     End Select
                                 Loop
                             Else
-                                AnswerString = Console.ReadLine
+                                AnswerString = ReadLine()
                             End If
 
                             'Neutralize answer path if required
@@ -698,7 +698,7 @@ Namespace Misc.Configuration
             Write(DoTranslation("Write what do you want to search for."), True, ColTypes.Neutral)
             Wdbg(DebugLevel.I, "Prompting user for searching...")
             Write(">> ", False, ColTypes.Input)
-            SearchFor = Console.ReadLine
+            SearchFor = ReadLine()
 
             'Search for the setting
             Results = FindSetting(SearchFor, SettingsToken)
@@ -711,7 +711,7 @@ Namespace Misc.Configuration
                 Write(DoTranslation("Write the number of the setting to go to. Any other character means go back."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Prompting user for writing...")
                 Write(">> ", False, ColTypes.Input)
-                SettingsNumber = Console.ReadLine
+                SettingsNumber = ReadLine()
 
                 'Parse the input and go to setting
                 If IsStringNumeric(SettingsNumber) Then

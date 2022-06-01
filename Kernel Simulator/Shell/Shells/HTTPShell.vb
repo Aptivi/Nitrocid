@@ -64,7 +64,7 @@ Namespace Shell.Shells
 
                     'Prompt for command
                     Wdbg(DebugLevel.I, "Normal shell")
-                    Dim HttpCommand As String = Console.ReadLine()
+                    Dim HttpCommand As String = ReadLine()
 
                     'Parse command
                     If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then

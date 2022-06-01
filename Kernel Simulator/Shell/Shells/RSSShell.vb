@@ -52,7 +52,7 @@ Namespace Shell.Shells
                             Else
                                 Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
                             End If
-                            RSSFeedLink = Console.ReadLine
+                            RSSFeedLink = ReadLine()
                             RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
                             RSSFeedLink = RSSFeedInstance.FeedUrl
                             OldRSSFeedLink = RSSFeedLink
@@ -120,7 +120,7 @@ Namespace Shell.Shells
                     End SyncLock
 
                     'Prompt for command
-                    Dim WrittenCommand As String = Console.ReadLine
+                    Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                         GetLine(WrittenCommand, False, "", ShellType.RSSShell)

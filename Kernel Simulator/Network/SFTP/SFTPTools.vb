@@ -47,7 +47,7 @@ Namespace Network.SFTP
                     Else
                         Write(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
                     End If
-                    SFTPUser = Console.ReadLine()
+                    SFTPUser = ReadLine()
                     If SFTPUser = "" Then
                         Wdbg(DebugLevel.W, "User is not provided. Fallback to ""anonymous""")
                         SFTPUser = "anonymous"
@@ -124,7 +124,7 @@ Namespace Network.SFTP
                     Console.WriteLine()
                     While Answering
                         Write(">> ", False, ColTypes.Input)
-                        Answer = Console.ReadLine
+                        Answer = ReadLine()
                         Wdbg(DebugLevel.I, "Response: {0}", Answer)
                         If IsStringNumeric(Answer) Then
                             Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...")

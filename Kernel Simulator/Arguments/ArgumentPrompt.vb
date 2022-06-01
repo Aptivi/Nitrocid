@@ -43,7 +43,7 @@ Namespace Arguments
             'Prompts for the arguments
             While Not AnswerArgs = "q"
                 Write(">> ", False, ColTypes.Input)
-                AnswerArgs = Console.ReadLine()
+                AnswerArgs = ReadLine()
 
                 'Add an argument to the entered arguments list
                 If AnswerArgs <> "q" Then

@@ -75,7 +75,7 @@ Namespace Shell.Shells
                 End SyncLock
 
                 'Prompt for command
-                Dim WrittenCommand As String = Console.ReadLine
+                Dim WrittenCommand As String = ReadLine()
                 If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                     KernelEventManager.RaiseJsonPreExecuteCommand(WrittenCommand)
                     GetLine(WrittenCommand, False, "", ShellType.JsonShell)

@@ -76,7 +76,7 @@ Namespace Shell.Shells
 
                         'Wait for command
                         Wdbg(DebugLevel.I, "Waiting for command")
-                        Dim strcommand As String = Console.ReadLine()
+                        Dim strcommand As String = ReadLine()
 
                         'Now, parse the line as necessary
                         If Not InSaver Then

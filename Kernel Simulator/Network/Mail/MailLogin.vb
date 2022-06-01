@@ -74,7 +74,7 @@ Namespace Network.Mail
             Else
                 Write(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
             End If
-            PromptPassword(Console.ReadLine)
+            PromptPassword(ReadLine())
         End Sub
 
         ''' <summary>
@@ -124,7 +124,7 @@ Namespace Network.Mail
             Else
                 Write(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
-            IMAP_Address = Console.ReadLine
+            IMAP_Address = ReadLine()
             Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
 
             'SMTP/POP3 server address and port
@@ -134,7 +134,7 @@ Namespace Network.Mail
                 Else
                     Write(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
                 End If
-                SMTP_Address = Console.ReadLine
+                SMTP_Address = ReadLine()
                 SMTP_Port = 587
                 Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
             Else
@@ -144,7 +144,7 @@ Namespace Network.Mail
                 Else
                     Write(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
                 End If
-                POP3_Address = Console.ReadLine
+                POP3_Address = ReadLine()
                 POP3_Port = 995
                 Wdbg(DebugLevel.I, "POP3 Server: ""{0}""", POP3_Address)
 #Else

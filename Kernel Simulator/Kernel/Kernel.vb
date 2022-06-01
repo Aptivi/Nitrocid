@@ -26,6 +26,7 @@ Imports KS.Modifications
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.TimeDate
+Imports ReadLineReboot
 Imports System.IO
 Imports System.Reflection.Assembly
 
@@ -70,6 +71,7 @@ Namespace Kernel
                 Try
                     'A title
                     Console.Title = ConsoleTitle
+                    ReadLine.CtrlCEnabled = True
 
                     'Check for terminal
                     CheckConsole()

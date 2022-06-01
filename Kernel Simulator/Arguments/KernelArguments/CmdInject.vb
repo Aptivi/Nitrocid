@@ -32,7 +32,7 @@ Namespace Arguments.KernelArguments
             Else
                 Write(DoTranslation("Available commands: {0}"), True, ColTypes.Neutral, String.Join(", ", Shell.Shell.Commands.Keys))
                 Write(">> ", False, ColTypes.Input)
-                InjectedCommands.AddRange(Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
+                InjectedCommands.AddRange(ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
                 If String.Join(", ", InjectedCommands) <> "q" Then
                     CommandFlag = True
                 Else
