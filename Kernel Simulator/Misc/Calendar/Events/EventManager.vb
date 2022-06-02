@@ -123,6 +123,7 @@ Namespace Misc.Calendar.Events
                 Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length)
                 Dim ConvertedEvent As EventInfo = DirectCast(Converter.Deserialize(EventFileStream), EventInfo)
                 Wdbg(DebugLevel.I, "Converted!")
+                EventFileStream.Close()
                 Return ConvertedEvent
             Else
                 Wdbg(DebugLevel.E, "File doesn't exist!")
@@ -190,6 +191,7 @@ Namespace Misc.Calendar.Events
             Dim EventFileStream As New FileStream(File, FileMode.OpenOrCreate)
             Wdbg(DebugLevel.I, "Opened stream with length {0}", EventFileStream.Length)
             Converter.Serialize(EventFileStream, EventInstance)
+            EventFileStream.Close()
         End Sub
 
     End Module

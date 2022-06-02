@@ -137,6 +137,7 @@ Namespace Misc.Calendar.Reminders
                 Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length)
                 Dim ConvertedReminder As ReminderInfo = DirectCast(Converter.Deserialize(ReminderFileStream), ReminderInfo)
                 Wdbg(DebugLevel.I, "Converted!")
+                ReminderFileStream.Close()
                 Return ConvertedReminder
             Else
                 Wdbg(DebugLevel.E, "File doesn't exist!")
@@ -204,6 +205,7 @@ Namespace Misc.Calendar.Reminders
             Dim ReminderFileStream As New FileStream(File, FileMode.OpenOrCreate)
             Wdbg(DebugLevel.I, "Opened stream with length {0}", ReminderFileStream.Length)
             Converter.Serialize(ReminderFileStream, ReminderInstance)
+            ReminderFileStream.Close()
         End Sub
 
     End Module
