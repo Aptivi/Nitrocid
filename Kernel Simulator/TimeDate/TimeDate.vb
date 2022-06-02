@@ -45,19 +45,26 @@ Namespace TimeDate
         ''' Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
         ''' </summary>
         Sub TimeDateChange_DoWork()
-            Dim oldWid, oldTop As Integer
-            Do While True
-                Dim TimeString As String = $"{RenderDate()} - {RenderTime()}"
-                KernelDateTime = Date.Now
-                KernelDateTimeUtc = Date.UtcNow
-                If CornerTimeDate = True And Not InSaver Then
-                    oldWid = Console.WindowWidth - TimeString.Length - 1
-                    oldTop = Console.WindowTop
-                    WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)
-                End If
-                Thread.Sleep(1000)
-                If oldWid <> 0 Then WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, True, ColTypes.Neutral)
-            Loop
+            Try
+                Dim oldWid, oldTop As Integer
+                Do While True
+                    Dim TimeString As String = $"{RenderDate()} - {RenderTime()}"
+                    KernelDateTime = Date.Now
+                    KernelDateTimeUtc = Date.UtcNow
+                    If CornerTimeDate = True And Not InSaver Then
+                        oldWid = Console.WindowWidth - TimeString.Length - 1
+                        oldTop = Console.WindowTop
+                        WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)
+                    End If
+                    Thread.Sleep(1000)
+                    If oldWid <> 0 Then WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, True, ColTypes.Neutral)
+                Loop
+            Catch ex As ThreadInterruptedException
+                Wdbg(DebugLevel.W, "Aborting time/date change thread.")
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Fatal error in time/date changer: {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
         End Sub
 
         ''' <summary>
