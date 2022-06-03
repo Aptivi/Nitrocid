@@ -29,6 +29,7 @@ Imports KS.TimeDate
 Imports ReadLineReboot
 Imports System.IO
 Imports System.Reflection.Assembly
+Imports KS.Misc.Notifications
 
 #If SPECIFIER = "REL" Then
 Imports KS.Network
@@ -86,14 +87,20 @@ Namespace Kernel
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER = "REL" Then
-                    NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
+                    If Not NetworkAvailable Then
+                        NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
+                                                    DoTranslation("Check your internet connection and try again."),
+                                                    NotifPriority.Medium, NotifType.Normal))
+                    End If
                     If NetworkAvailable Then
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                             Dim pdbdown As New WebClient
                             Try
                                 pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
                             Catch ex As Exception
-                                NotifyDebugDownloadError = True
+                                NotifySend(New Notification(DoTranslation("Error downloading debug data"),
+                                                            DoTranslation("There is an error while downloading debug data. Check your internet connection."),
+                                                            NotifPriority.Medium, NotifType.Normal))
                             End Try
                         End If
                     End If
@@ -187,7 +194,12 @@ Namespace Kernel
                     If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()
 
                     'Notify user of errors if appropriate
-                    If NotifyFaultsBoot Then NotifyStartupFaults()
+                    If NotifyKernelError Then
+                        NotifyKernelError = False
+                        NotifySend(New Notification(DoTranslation("Previous boot failed"),
+                                                    LastKernelErrorException.Message,
+                                                    NotifPriority.High, NotifType.Normal))
+                    End If
 
                     'Show license if new style used
                     If NewWelcomeStyle Or EnableSplash Then

@@ -1793,7 +1793,11 @@ Namespace Misc.Configuration
             Catch ex As Exception
                 KernelEventManager.RaiseConfigReadError(ex)
                 WStkTrc(ex)
-                NotifyConfigError = True
+                If Not KernelBooted Then
+                    NotifySend(New Notification(DoTranslation("Error loading settings"),
+                                                DoTranslation("There is an error while loading settings. You may need to check the settings file."),
+                                                NotifPriority.Medium, NotifType.Normal))
+                End If
                 Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)
                 Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message)
             End Try
