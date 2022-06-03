@@ -121,7 +121,7 @@ Namespace Login
                             Else
                                 Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                             End If
-                        Else
+                        ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                             Write(DoTranslation("Please enter a user number."), True, ColTypes.Error)
                         End If
                     Loop
@@ -156,7 +156,7 @@ Namespace Login
                             Write(DoTranslation("User is disabled."), True, ColTypes.Error)
                             KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
                         End If
-                    Else
+                    ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                         Wdbg(DebugLevel.E, "Username not found.")
                         Write(DoTranslation("Wrong username."), True, ColTypes.Error)
                         KernelEventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)

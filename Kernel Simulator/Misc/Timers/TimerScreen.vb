@@ -98,7 +98,7 @@ Namespace Misc.Timers
 
                             'Try to parse the interval
                             Dim UnparsedInterval As String = ReadLine()
-                            If Not Double.TryParse(UnparsedInterval, TimerInterval) Then
+                            If Not Double.TryParse(UnparsedInterval, TimerInterval) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                                 'Not numeric.
                                 WriteWhere(DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, False, ColTypes.Error)
                                 ClearLineToRight()

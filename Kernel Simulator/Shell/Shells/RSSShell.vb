@@ -53,9 +53,15 @@ Namespace Shell.Shells
                                 Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
                             End If
                             RSSFeedLink = ReadLine()
-                            RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
-                            RSSFeedLink = RSSFeedInstance.FeedUrl
-                            OldRSSFeedLink = RSSFeedLink
+                            If ReadLineReboot.ReadLine.ReadRanToCompletion Then
+                                'The user entered the feed URL
+                                RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
+                                RSSFeedLink = RSSFeedInstance.FeedUrl
+                                OldRSSFeedLink = RSSFeedLink
+                            Else
+                                'We're aborting.
+                                Bail = True
+                            End If
                             BailFromEnter = True
                         Catch taex As ThreadInterruptedException
                             CancelRequested = False

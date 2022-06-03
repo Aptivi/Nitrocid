@@ -430,7 +430,7 @@ Namespace Login
                 Write(">> ", False, ColTypes.Input)
                 AnswerUsername = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername)
-                If String.IsNullOrWhiteSpace(AnswerUsername) Then
+                If String.IsNullOrWhiteSpace(AnswerUsername) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Username is not valid. Returning...")
                     Write(DoTranslation("You must write your username."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -447,7 +447,7 @@ Namespace Login
                 AnswerPassword = ReadLineNoInput()
                 Console.WriteLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
-                If String.IsNullOrWhiteSpace(AnswerPassword) Then
+                If String.IsNullOrWhiteSpace(AnswerPassword) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Password is not valid. Returning...")
                     Write(DoTranslation("You must write your password."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -474,7 +474,7 @@ Namespace Login
                             Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                     End Select
-                Else
+                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Answer is not numeric.")
                     Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -490,7 +490,7 @@ Namespace Login
                     AnswerRootPassword = ReadLineNoInput()
                     Console.WriteLine()
                     Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
-                    If String.IsNullOrWhiteSpace(AnswerPassword) Then
+                    If String.IsNullOrWhiteSpace(AnswerPassword) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                         Wdbg(DebugLevel.W, "Password is not valid. Returning...")
                         Write(DoTranslation("You must write the administrator password."), True, ColTypes.Error)
                         Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)

@@ -46,7 +46,7 @@ Namespace Misc
                             Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                     End Select
-                Else
+                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Answer is not numeric.")
                     Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -60,7 +60,7 @@ Namespace Misc
                 Write(">> ", False, ColTypes.Input)
                 AnswerFeature = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerFeature)
-                If String.IsNullOrWhiteSpace(AnswerFeature) Then
+                If String.IsNullOrWhiteSpace(AnswerFeature) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                     Write(DoTranslation("You must specify a feature."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -76,7 +76,7 @@ Namespace Misc
                 Write(">> ", False, ColTypes.Input)
                 AnswerRequest = ReadLine()
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerRequest)
-                If String.IsNullOrWhiteSpace(AnswerRequest) Then
+                If String.IsNullOrWhiteSpace(AnswerRequest) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                     Write(DoTranslation("You must write your request."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)

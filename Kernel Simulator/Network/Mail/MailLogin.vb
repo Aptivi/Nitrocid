@@ -74,7 +74,12 @@ Namespace Network.Mail
             Else
                 Write(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
             End If
-            PromptPassword(ReadLine())
+
+            'Try to get the username or e-mail address from the input
+            Dim InputMailAddress As String = ReadLine()
+            If Not String.IsNullOrWhiteSpace(Mail_UserPromptStyle) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
+                PromptPassword(InputMailAddress)
+            End If
         End Sub
 
         ''' <summary>
@@ -125,6 +130,7 @@ Namespace Network.Mail
                 Write(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
             IMAP_Address = ReadLine()
+            If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
             Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
 
             'SMTP/POP3 server address and port
@@ -136,6 +142,7 @@ Namespace Network.Mail
                 End If
                 SMTP_Address = ReadLine()
                 SMTP_Port = 587
+                If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
                 Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
             Else
 #If POP3Feature Then
@@ -146,6 +153,7 @@ Namespace Network.Mail
                 End If
                 POP3_Address = ReadLine()
                 POP3_Port = 995
+                If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
                 Wdbg(DebugLevel.I, "POP3 Server: ""{0}""", POP3_Address)
 #Else
                 Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))

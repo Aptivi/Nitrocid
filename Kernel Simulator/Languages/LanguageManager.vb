@@ -164,7 +164,8 @@ Namespace Languages
                                 While Not LanguageSet
                                     Write(">> ", False, ColTypes.Input)
                                     Dim Answer As Integer
-                                    If Integer.TryParse(ReadLine(), Answer) Then
+                                    Dim AnswerString As String = ReadLine()
+                                    If Integer.TryParse(AnswerString, Answer) Then
                                         Wdbg(DebugLevel.I, "Choice: {0}", Answer)
                                         Select Case Answer
                                             Case 1, 2
@@ -173,8 +174,10 @@ Namespace Languages
                                             Case Else
                                                 Write(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
                                         End Select
-                                    Else
+                                    ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                                         Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                                    Else
+                                        Exit Sub
                                     End If
                                 End While
                             End If

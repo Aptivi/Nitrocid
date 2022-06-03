@@ -130,7 +130,7 @@ Namespace Misc.Configuration
                         Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
-                Else
+                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Answer is not numeric.")
                     Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -219,7 +219,7 @@ Namespace Misc.Configuration
                             Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                         End If
-                    Else
+                    ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                         Wdbg(DebugLevel.W, "Answer is not numeric.")
                         Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                         Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -588,7 +588,7 @@ Namespace Misc.Configuration
                                     SetPropertyValue(KeyVar, AnswerInt)
                                 End If
                         End Select
-                    Else
+                    ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                         Select Case KeyType
                             Case SettingsKeyType.SString, SettingsKeyType.SLongString, SettingsKeyType.SMaskedString, SettingsKeyType.SChar
                                 Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString)

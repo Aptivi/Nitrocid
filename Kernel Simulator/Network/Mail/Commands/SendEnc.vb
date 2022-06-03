@@ -77,8 +77,8 @@ Namespace Network.Mail.Commands
                     Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
                     Write(DoTranslation("Error sending message."), True, ColTypes.Error)
                 End If
-            Else
-                Wdbg(DebugLevel.E, "Mail format unsatisfied. " + Receiver)
+            ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
+                Wdbg(DebugLevel.E, "Mail format unsatisfied." + Receiver)
                 Write(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
             End If
         End Sub
