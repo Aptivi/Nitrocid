@@ -47,7 +47,7 @@ Namespace Misc.TextEdit
         Public TextEdit_FileStream As FileStream
         Public TextEdit_FileLines As List(Of String)
         Friend TextEdit_FileLinesOrig As List(Of String)
-        Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
+        Public TextEdit_AutoSave As New KernelThread("Text Edit Autosave Thread", False, AddressOf TextEdit_HandleAutoSaveTextFile)
         Public TextEdit_AutoSaveFlag As Boolean = True
         Public TextEdit_AutoSaveInterval As Integer = 60
         Public TextEdit_PromptStyle As String = ""

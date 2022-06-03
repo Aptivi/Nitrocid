@@ -100,8 +100,7 @@ Namespace Shell.Shells
 
             'Close file
             HexEdit_CloseBinaryFile()
-            HexEdit_AutoSave.Interrupt()
-            HexEdit_AutoSave = New Thread(AddressOf HexEdit_HandleAutoSaveBinaryFile) With {.Name = "Hex Edit Autosave Thread"}
+            HexEdit_AutoSave.Stop()
         End Sub
 
     End Class

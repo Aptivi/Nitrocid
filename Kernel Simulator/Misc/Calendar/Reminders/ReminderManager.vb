@@ -26,7 +26,7 @@ Namespace Misc.Calendar.Reminders
 
         Public Reminders As New List(Of ReminderInfo)
         Public CurrentReminderImportance As NotifPriority = NotifPriority.Low
-        Public ReminderThread As New Thread(AddressOf ReminderListen) With {.Name = "Reminder Thread"}
+        Public ReminderThread As New KernelThread("Reminder Thread", False, AddressOf ReminderListen)
 
         ''' <summary>
         ''' Listens for reminders and notifies the user

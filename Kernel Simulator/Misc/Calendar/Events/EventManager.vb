@@ -24,7 +24,7 @@ Namespace Misc.Calendar.Events
     Public Module EventManager
 
         Public CalendarEvents As New List(Of EventInfo)
-        Public EventThread As New Thread(AddressOf EventListen) With {.Name = "Event Thread"}
+        Public EventThread As New KernelThread("Event Thread", False, AddressOf EventListen)
 
         ''' <summary>
         ''' Listens for events and notifies the user if the date is due to the event

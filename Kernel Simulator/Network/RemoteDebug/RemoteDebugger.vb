@@ -29,7 +29,7 @@ Namespace Network.RemoteDebug
         Public RDebugClient As Socket
         Public DebugTCP As TcpListener
         Public DebugDevices As New List(Of RemoteDebugDevice)
-        Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
+        Public RDebugThread As New KernelThread("Remote Debug Thread", True, AddressOf StartRDebugger)
         Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
         Public RDebugStopping As Boolean
         Public RDebugAutoStart As Boolean = True
@@ -60,7 +60,7 @@ Namespace Network.RemoteDebug
             If DebugMode Then
                 If RDebugThread.IsAlive Then
                     RDebugStopping = True
-                    RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
+                    RDebugThread.Stop()
                 End If
             End If
         End Sub
@@ -80,7 +80,7 @@ Namespace Network.RemoteDebug
             End Try
 
             'Start the listening thread
-            Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync) With {.Name = "Remote Debug Listener Thread"}
+            Dim RStream As New KernelThread("Remote Debug Listener Thread", False, AddressOf ReadAndBroadcastAsync)
             RStream.Start()
             RDebugBail = True
 

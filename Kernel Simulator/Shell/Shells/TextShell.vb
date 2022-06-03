@@ -96,8 +96,7 @@ Namespace Shell.Shells
 
             'Close file
             TextEdit_CloseTextFile()
-            TextEdit_AutoSave.Interrupt()
-            TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
+            TextEdit_AutoSave.Stop()
         End Sub
 
     End Class

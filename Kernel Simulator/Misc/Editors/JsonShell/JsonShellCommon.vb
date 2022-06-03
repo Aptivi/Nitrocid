@@ -37,7 +37,7 @@ Namespace Misc.JsonShell
         Public JsonShell_FileStream As FileStream
         Public JsonShell_FileToken As JToken = JToken.Parse("{}")
         Friend JsonShell_FileTokenOrig As JToken = JToken.Parse("{}")
-        Public JsonShell_AutoSave As New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
+        Public JsonShell_AutoSave As New KernelThread("JSON Shell Autosave Thread", False, AddressOf JsonShell_HandleAutoSaveJsonFile)
         Public JsonShell_AutoSaveFlag As Boolean = True
         Public JsonShell_AutoSaveInterval As Integer = 60
         Public JsonShell_PromptStyle As String = ""

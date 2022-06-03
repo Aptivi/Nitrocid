@@ -40,7 +40,7 @@ Namespace Misc.HexEdit
         Public HexEdit_FileStream As FileStream
         Public HexEdit_FileBytes As Byte()
         Friend HexEdit_FileBytesOrig As Byte()
-        Public HexEdit_AutoSave As New Thread(AddressOf HexEdit_HandleAutoSaveBinaryFile) With {.Name = "Hex Edit Autosave Thread"}
+        Public HexEdit_AutoSave As New KernelThread("Hex Edit Autosave Thread", False, AddressOf HexEdit_HandleAutoSaveBinaryFile)
         Public HexEdit_AutoSaveFlag As Boolean = True
         Public HexEdit_AutoSaveInterval As Integer = 60
         Public HexEdit_PromptStyle As String = ""
