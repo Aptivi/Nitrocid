@@ -29,7 +29,7 @@
       <dependency id="Extensification.Legacy" version="2022.1.0" />
       <dependency id="Figgle" version="0.4.0" />
       <dependency id="FluentFTP" version="37.0.2" />
-      <dependency id="HtmlAgilityPack" version="1.11.42" />
+      <dependency id="HtmlAgilityPack" version="1.11.43" />
       <dependency id="Inxi.NET" version="2022.1.0.1" />
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
       <dependency id="MailKit" version="3.2.0" />
@@ -110,7 +110,7 @@
       <Version>37.0.2</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.42</Version>
+      <Version>1.11.43</Version>
     </PackageReference>
     <PackageReference Include="Inxi.NET">
       <Version>2022.1.0.1</Version>
