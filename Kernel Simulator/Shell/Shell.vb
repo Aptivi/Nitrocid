@@ -26,6 +26,8 @@ Imports KS.Shell.Commands
 Namespace Shell
     Public Module Shell
 
+        Friend ProcessStartCommandThread As New KernelThread("Executable Command Thread", False, AddressOf ExecuteProcess)
+
         ''' <summary>
         ''' Whether the shell is colored or not
         ''' </summary>

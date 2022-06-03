@@ -727,7 +727,6 @@
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="Shell\ShellBase\ShellType.vb" />
     <Compile Include="Shell\ShellBase\ShellStart.vb" />
-    <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
     <Compile Include="Shell\Shells\RSSShell.vb" />
     <Compile Include="Shell\Shells\JsonShell.vb" />
     <Compile Include="Shell\Shells\HTTPShell.vb" />
