@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Splash.Splashes
+Imports KS.Misc.Reflection
 Imports System.IO
 Imports System.Reflection
 
@@ -68,42 +69,54 @@ Namespace Misc.Splash
         ''' Loads all the splashes from the KSSplashes folder
         ''' </summary>
         Public Sub LoadSplashes()
-            If Not FolderExists(GetKernelPath(KernelPathType.CustomSplashes)) Then MakeDirectory(GetKernelPath(KernelPathType.CustomSplashes))
-            Dim SplashFiles As List(Of FileSystemInfo) = CreateList(GetKernelPath(KernelPathType.CustomSplashes))
+            Dim SplashPath As String = GetKernelPath(KernelPathType.CustomSplashes)
+            If Not FolderExists(SplashPath) Then MakeDirectory(SplashPath)
+            Dim SplashFiles As List(Of FileSystemInfo) = CreateList(SplashPath)
             For Each SplashFileInfo As FileSystemInfo In SplashFiles
                 Dim FilePath As String = SplashFileInfo.FullName
+                Dim FileName As String = SplashFileInfo.Name
 
                 'Try to parse the splash file
-                Try
-                    Wdbg(DebugLevel.I, "Parsing splash file {0}...", FilePath)
-                    Dim SplashAssembly As Assembly = Assembly.LoadFrom(FilePath)
-                    Dim SplashInstance As ISplash = GetSplashInstance(SplashAssembly)
-                    If SplashInstance IsNot Nothing Then
-                        Wdbg(DebugLevel.I, "Found valid splash! Getting information...")
-                        Dim Name As String = SplashInstance.SplashName
-                        Dim DisplaysProgress As Boolean = SplashInstance.SplashDisplaysProgress
-                        Dim ProgressWritePositionX As Integer = SplashInstance.ProgressWritePositionX
-                        Dim ProgressWritePositionY As Integer = SplashInstance.ProgressWritePositionY
-                        Dim ProgressReportWritePositionX As Integer = SplashInstance.ProgressReportWritePositionX
-                        Dim ProgressReportWritePositionY As Integer = SplashInstance.ProgressReportWritePositionY
+                If SplashFileInfo.Extension = ".dll" Then
+                    'We got a .dll file that may or may not contain splash file. Parse that to verify.
+                    Try
+                        'Add splash dependencies folder (if any) to the private appdomain lookup folder
+                        Dim SplashDepPath As String = SplashPath + "Deps/" + Path.GetFileNameWithoutExtension(FileName) + "-" + FileVersionInfo.GetVersionInfo(FilePath).FileVersion + "/"
+                        AddPathToAssemblySearchPath(SplashDepPath)
 
-                        'Install the values to the new instance
-                        Wdbg(DebugLevel.I, "- Name: {0}", Name)
-                        Wdbg(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress)
-                        Wdbg(DebugLevel.I, "- Progress Write Position X: {0}", ProgressWritePositionX)
-                        Wdbg(DebugLevel.I, "- Progress Write Position Y: {0}", ProgressWritePositionY)
-                        Wdbg(DebugLevel.I, "- Progress Report Write Position X: {0}", ProgressReportWritePositionX)
-                        Wdbg(DebugLevel.I, "- Progress Report Write Position Y: {0}", ProgressReportWritePositionY)
-                        Wdbg(DebugLevel.I, "Installing splash...")
-                        Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY, SplashInstance)
-                        InstalledSplashes.AddOrModify(Name, InstalledSplash)
-                    Else
-                        Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath)
-                    End If
-                Catch ex As ReflectionTypeLoadException
-                    Wdbg(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message)
-                    WStkTrc(ex)
-                End Try
+                        'Now, actually parse that.
+                        Wdbg(DebugLevel.I, "Parsing splash file {0}...", FilePath)
+                        Dim SplashAssembly As Assembly = Assembly.LoadFrom(FilePath)
+                        Dim SplashInstance As ISplash = GetSplashInstance(SplashAssembly)
+                        If SplashInstance IsNot Nothing Then
+                            Wdbg(DebugLevel.I, "Found valid splash! Getting information...")
+                            Dim Name As String = SplashInstance.SplashName
+                            Dim DisplaysProgress As Boolean = SplashInstance.SplashDisplaysProgress
+                            Dim ProgressWritePositionX As Integer = SplashInstance.ProgressWritePositionX
+                            Dim ProgressWritePositionY As Integer = SplashInstance.ProgressWritePositionY
+                            Dim ProgressReportWritePositionX As Integer = SplashInstance.ProgressReportWritePositionX
+                            Dim ProgressReportWritePositionY As Integer = SplashInstance.ProgressReportWritePositionY
+
+                            'Install the values to the new instance
+                            Wdbg(DebugLevel.I, "- Name: {0}", Name)
+                            Wdbg(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress)
+                            Wdbg(DebugLevel.I, "- Progress Write Position X: {0}", ProgressWritePositionX)
+                            Wdbg(DebugLevel.I, "- Progress Write Position Y: {0}", ProgressWritePositionY)
+                            Wdbg(DebugLevel.I, "- Progress Report Write Position X: {0}", ProgressReportWritePositionX)
+                            Wdbg(DebugLevel.I, "- Progress Report Write Position Y: {0}", ProgressReportWritePositionY)
+                            Wdbg(DebugLevel.I, "Installing splash...")
+                            Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY, SplashInstance)
+                            InstalledSplashes.AddOrModify(Name, InstalledSplash)
+                        Else
+                            Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath)
+                        End If
+                    Catch ex As ReflectionTypeLoadException
+                        Wdbg(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message)
+                        WStkTrc(ex)
+                    End Try
+                Else
+                    Wdbg(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.Extension)
+                End If
             Next
         End Sub
 
