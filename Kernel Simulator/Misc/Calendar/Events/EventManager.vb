@@ -25,6 +25,7 @@ Namespace Misc.Calendar.Events
 
         Public CalendarEvents As New List(Of EventInfo)
         Public EventThread As New KernelThread("Event Thread", False, AddressOf EventListen)
+        Friend EventManagerLock As New Object
 
         ''' <summary>
         ''' Listens for events and notifies the user if the date is due to the event
@@ -32,13 +33,15 @@ Namespace Misc.Calendar.Events
         Private Sub EventListen()
             While EventThread.IsAlive
                 Try
-                    Thread.Sleep(1)
-                    For EventIndex As Integer = 0 To CalendarEvents.Count - 1
-                        Dim EventInstance As EventInfo = CalendarEvents(EventIndex)
-                        If Date.Today = EventInstance.EventDate.Date Then
-                            EventInstance.NotifyEvent()
-                        End If
-                    Next
+                    Thread.Sleep(100)
+                    SyncLock EventManagerLock
+                        For EventIndex As Integer = 0 To CalendarEvents.Count - 1
+                            Dim EventInstance As EventInfo = CalendarEvents(EventIndex)
+                            If Date.Today = EventInstance.EventDate.Date Then
+                                EventInstance.NotifyEvent()
+                            End If
+                        Next
+                    End SyncLock
                 Catch ex As ThreadInterruptedException
                     Wdbg(DebugLevel.I, "Aborting event listener...")
                     Exit Sub
@@ -112,23 +115,25 @@ Namespace Misc.Calendar.Events
         ''' <param name="EventFile">Event file</param>
         ''' <returns>A converted event info instance. null if unsuccessful.</returns>
         Public Function LoadEvent(EventFile As String) As EventInfo
-            ThrowOnInvalidPath(EventFile)
-            EventFile = NeutralizePath(EventFile)
-            Wdbg(DebugLevel.I, "Loading event {0}...", EventFile)
+            SyncLock EventManagerLock
+                ThrowOnInvalidPath(EventFile)
+                EventFile = NeutralizePath(EventFile)
+                Wdbg(DebugLevel.I, "Loading event {0}...", EventFile)
 
-            'If file exists, convert the file to the event instance
-            If FileExists(EventFile) Then
-                Dim Converter As New XmlSerializer(GetType(EventInfo))
-                Dim EventFileStream As New FileStream(EventFile, FileMode.Open)
-                Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length)
-                Dim ConvertedEvent As EventInfo = DirectCast(Converter.Deserialize(EventFileStream), EventInfo)
-                Wdbg(DebugLevel.I, "Converted!")
-                EventFileStream.Close()
-                Return ConvertedEvent
-            Else
-                Wdbg(DebugLevel.E, "File doesn't exist!")
-            End If
-            Return Nothing
+                'If file exists, convert the file to the event instance
+                If FileExists(EventFile) Then
+                    Dim Converter As New XmlSerializer(GetType(EventInfo))
+                    Dim EventFileStream As New FileStream(EventFile, FileMode.Open)
+                    Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length)
+                    Dim ConvertedEvent As EventInfo = DirectCast(Converter.Deserialize(EventFileStream), EventInfo)
+                    Wdbg(DebugLevel.I, "Converted!")
+                    EventFileStream.Close()
+                    Return ConvertedEvent
+                Else
+                    Wdbg(DebugLevel.E, "File doesn't exist!")
+                End If
+                Return Nothing
+            End SyncLock
         End Function
 
         ''' <summary>

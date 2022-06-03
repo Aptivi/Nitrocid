@@ -27,6 +27,7 @@ Namespace Misc.Calendar.Reminders
         Public Reminders As New List(Of ReminderInfo)
         Public CurrentReminderImportance As NotifPriority = NotifPriority.Low
         Public ReminderThread As New KernelThread("Reminder Thread", False, AddressOf ReminderListen)
+        Friend ReminderManagerLock As New Object
 
         ''' <summary>
         ''' Listens for reminders and notifies the user
@@ -34,14 +35,16 @@ Namespace Misc.Calendar.Reminders
         Private Sub ReminderListen()
             While ReminderThread.IsAlive
                 Try
-                    Thread.Sleep(1)
-                    For ReminderIndex As Integer = 0 To Reminders.Count - 1
-                        Dim ReminderInstance As ReminderInfo = Reminders(ReminderIndex)
-                        Dim CurrentDate As New Date(Date.Now.Year, Date.Now.Month, Date.Now.Day, Date.Now.Hour, Date.Now.Minute, Date.Now.Second)
-                        If Date.Now >= ReminderInstance.ReminderDate Then
-                            ReminderInstance.NotifyReminder()
-                        End If
-                    Next
+                    Thread.Sleep(100)
+                    SyncLock ReminderManagerLock
+                        For ReminderIndex As Integer = 0 To Reminders.Count - 1
+                            Dim ReminderInstance As ReminderInfo = Reminders(ReminderIndex)
+                            Dim CurrentDate As New Date(Date.Now.Year, Date.Now.Month, Date.Now.Day, Date.Now.Hour, Date.Now.Minute, Date.Now.Second)
+                            If Date.Now >= ReminderInstance.ReminderDate Then
+                                ReminderInstance.NotifyReminder()
+                            End If
+                        Next
+                    End SyncLock
                 Catch ex As ThreadInterruptedException
                     Wdbg(DebugLevel.I, "Aborting reminder listener...")
                     Exit Sub
@@ -126,23 +129,25 @@ Namespace Misc.Calendar.Reminders
         ''' <param name="ReminderFile">Reminder file</param>
         ''' <returns>A converted reminder info instance. null if unsuccessful.</returns>
         Public Function LoadReminder(ReminderFile As String) As ReminderInfo
-            ThrowOnInvalidPath(ReminderFile)
-            ReminderFile = NeutralizePath(ReminderFile)
-            Wdbg(DebugLevel.I, "Loading reminder {0}...", ReminderFile)
+            SyncLock ReminderManagerLock
+                ThrowOnInvalidPath(ReminderFile)
+                ReminderFile = NeutralizePath(ReminderFile)
+                Wdbg(DebugLevel.I, "Loading reminder {0}...", ReminderFile)
 
-            'If file exists, convert the file to the reminder instance
-            If FileExists(ReminderFile) Then
-                Dim Converter As New XmlSerializer(GetType(ReminderInfo))
-                Dim ReminderFileStream As New FileStream(ReminderFile, FileMode.Open)
-                Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length)
-                Dim ConvertedReminder As ReminderInfo = DirectCast(Converter.Deserialize(ReminderFileStream), ReminderInfo)
-                Wdbg(DebugLevel.I, "Converted!")
-                ReminderFileStream.Close()
-                Return ConvertedReminder
-            Else
-                Wdbg(DebugLevel.E, "File doesn't exist!")
-            End If
-            Return Nothing
+                'If file exists, convert the file to the reminder instance
+                If FileExists(ReminderFile) Then
+                    Dim Converter As New XmlSerializer(GetType(ReminderInfo))
+                    Dim ReminderFileStream As New FileStream(ReminderFile, FileMode.Open)
+                    Wdbg(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length)
+                    Dim ConvertedReminder As ReminderInfo = DirectCast(Converter.Deserialize(ReminderFileStream), ReminderInfo)
+                    Wdbg(DebugLevel.I, "Converted!")
+                    ReminderFileStream.Close()
+                    Return ConvertedReminder
+                Else
+                    Wdbg(DebugLevel.E, "File doesn't exist!")
+                End If
+                Return Nothing
+            End SyncLock
         End Function
 
         ''' <summary>
