@@ -302,9 +302,9 @@ Namespace Shell
                                                 cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
                                                 Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                                                 Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
-                                                ProcessStartCommandThread = New Thread(AddressOf ExecuteProcess) With {.Name = "Executable Command Thread"}
                                                 ProcessStartCommandThread.Start(Params)
-                                                ProcessStartCommandThread.Join()
+                                                ProcessStartCommandThread.Wait()
+                                                ProcessStartCommandThread.Stop()
                                             End If
                                         Catch ex As Exception
                                             Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
