@@ -18,13 +18,14 @@
 
 Imports System.Threading
 Imports KS.Misc.Screensaver
+Imports KS.Misc.Splash
 
 Namespace Misc.Notifications
     Public Module Notifications
 
         'Variables
         Public NotifRecents As New List(Of Notification)
-        Public NotifThread As New Thread(AddressOf NotifListen) With {.Name = "Notification Thread"}
+        Public NotifThread As New KernelThread("Notification Thread", False, AddressOf NotifListen)
         Public NotifyUpperLeftCornerChar As String = "╔"
         Public NotifyUpperRightCornerChar As String = "╗"
         Public NotifyLowerLeftCornerChar As String = "╚"
@@ -76,7 +77,7 @@ Namespace Misc.Notifications
         Private Sub NotifListen()
             Dim OldNotificationsList As New List(Of Notification)(NotifRecents)
             Dim NewNotificationsList As List(Of Notification)
-            While Not NotifThread.ThreadState = ThreadState.AbortRequested
+            While NotifThread.IsAlive
                 Thread.Sleep(100)
                 NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList
                 If NewNotificationsList.Count > 0 And Not InSaver Then
@@ -85,7 +86,11 @@ Namespace Misc.Notifications
                     OldNotificationsList = New List(Of Notification)(NotifRecents)
                     KernelEventManager.RaiseNotificationsReceived(NewNotificationsList)
 
-                    'Iterate through new notifications
+                    'Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
+                    'kernel has finished booting.
+                    While Not KernelBooted
+                        Thread.Sleep(100)
+                    End While
                     For Each NewNotification As Notification In NewNotificationsList
                         KernelEventManager.RaiseNotificationReceived(NewNotification)
 

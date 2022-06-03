@@ -56,7 +56,7 @@ Namespace ManPages
             'Check to see if title is defined
             If String.IsNullOrWhiteSpace(Name) Then
                 Wdbg(DebugLevel.W, "Title not defined.")
-                Name = $"Untitled ({Pages.Count})"
+                Name = DoTranslation("Untitled manual page") + $" {Pages.Count}"
             End If
 
             'Add the page if valid

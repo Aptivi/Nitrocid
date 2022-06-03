@@ -166,6 +166,7 @@ Namespace Kernel
                         ReportProgress(DoTranslation("Running in safe mode. Skipping stage..."), 0, ColTypes.Neutral)
                     End If
                     KernelEventManager.RaiseStartKernel()
+                    Misc.Notifications.NotifySend(New Misc.Notifications.Notification("Queue me", "queued", Misc.Notifications.Notifications.NotifPriority.Low, Misc.Notifications.Notifications.NotifType.Normal))
 
                     'Phase 4: Log-in
                     ReportNewStage(4, DoTranslation("- Stage 4: Log in"))
