@@ -62,7 +62,7 @@ Namespace Network.SSH
                 Write("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
                 Write("2) " + DoTranslation("Password") + NewLine, True, ColTypes.Option)
                 Write(">> ", False, ColTypes.Input)
-                If Integer.TryParse(ReadLine(), Answer) Then
+                If Integer.TryParse(ReadLine(False), Answer) Then
                     'Check for answer
                     Select Case Answer
                         Case 1, 2
@@ -73,7 +73,7 @@ Namespace Network.SSH
                             Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                     End Select
-                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
+                Else
                     Wdbg(DebugLevel.W, "Answer is not numeric.")
                     Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
@@ -92,7 +92,7 @@ Namespace Network.SSH
 
                         'Ask for location
                         Write(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
-                        PrivateKeyFile = ReadLine()
+                        PrivateKeyFile = ReadLine(False)
                         PrivateKeyFile = NeutralizePath(PrivateKeyFile)
                         If FileExists(PrivateKeyFile) Then
                             'Ask for passphrase

@@ -129,8 +129,7 @@ Namespace Network.Mail
             Else
                 Write(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
-            IMAP_Address = ReadLine()
-            If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
+            IMAP_Address = ReadLine(False)
             Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
 
             'SMTP/POP3 server address and port
@@ -140,9 +139,8 @@ Namespace Network.Mail
                 Else
                     Write(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
                 End If
-                SMTP_Address = ReadLine()
+                SMTP_Address = ReadLine(False)
                 SMTP_Port = 587
-                If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
                 Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
             Else
 #If POP3Feature Then
@@ -151,9 +149,8 @@ Namespace Network.Mail
                 Else
                     Write(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
                 End If
-                POP3_Address = ReadLine()
+                POP3_Address = ReadLine(False)
                 POP3_Port = 995
-                If Not ReadLineReboot.ReadLine.ReadRanToCompletion Then Exit Sub
                 Wdbg(DebugLevel.I, "POP3 Server: ""{0}""", POP3_Address)
 #Else
                 Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))

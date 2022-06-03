@@ -103,7 +103,7 @@ Namespace Misc.Timers
                                 WriteWhere(DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, False, ColTypes.Error)
                                 ClearLineToRight()
                                 Console.ReadKey()
-                            Else
+                            ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                                 'Update the remaining time
                                 Dim RemainingString As String = GetRemainingTimeFromNow(TimerInterval)
                                 UpdateRemainingPositions(RemainingString, TimeLeftPosition, TimeTopPosition)

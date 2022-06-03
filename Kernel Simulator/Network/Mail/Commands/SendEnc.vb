@@ -39,7 +39,7 @@ Namespace Network.Mail.Commands
 
                 'Prompt for subject
                 Write(DoTranslation("Enter the subject:") + " ", False, ColTypes.Input)
-                Subject = ReadLine()
+                Subject = ReadLine(False)
                 Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length)
 
                 'Prompt for body
@@ -58,7 +58,7 @@ Namespace Network.Mail.Commands
                 Dim PathLine As String = " "
                 While Not PathLine = ""
                     Write("> ", False, ColTypes.Input)
-                    PathLine = ReadLine()
+                    PathLine = ReadLine(False)
                     If Not PathLine = "" Then
                         PathLine = NeutralizePath(PathLine)
                         Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)

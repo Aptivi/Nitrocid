@@ -51,6 +51,8 @@ Namespace Misc
                     Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
+                Else
+                    Exit Sub
                 End If
             End While
 
@@ -58,15 +60,17 @@ Namespace Misc
             While [Step] = 2
                 Write(DoTranslation("Type a feature that you want to raise a ticket on.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
-                AnswerFeature = ReadLine()
+                AnswerFeature = ReadLine(False)
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerFeature)
                 If String.IsNullOrWhiteSpace(AnswerFeature) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                     Write(DoTranslation("You must specify a feature."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
-                Else
+                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     [Step] += 1
+                Else
+                    Exit Sub
                 End If
             End While
 
@@ -74,15 +78,17 @@ Namespace Misc
             While [Step] = 3
                 Write(DoTranslation("Ask a question, jot your idea, or report a problem.") + NewLine, True, ColTypes.Neutral)
                 Write(">> ", False, ColTypes.Input)
-                AnswerRequest = ReadLine()
+                AnswerRequest = ReadLine(False)
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerRequest)
                 If String.IsNullOrWhiteSpace(AnswerRequest) And ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                     Write(DoTranslation("You must write your request."), True, ColTypes.Error)
                     Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
-                Else
+                ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                     Exit While
+                Else
+                    Exit Sub
                 End If
             End While
 

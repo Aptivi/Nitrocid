@@ -30,7 +30,15 @@ Namespace ConsoleBase
         ''' Reads the line from the console
         ''' </summary>
         Public Function ReadLine() As String
-            Return ReadLine("", "")
+            Return ReadLine("", "", True)
+        End Function
+
+        ''' <summary>
+        ''' Reads the line from the console
+        ''' </summary>
+        ''' <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
+        Public Function ReadLine(UseCtrlCAsInput As Boolean) As String
+            Return ReadLine("", "", UseCtrlCAsInput)
         End Function
 
         ''' <summary>
@@ -39,7 +47,22 @@ Namespace ConsoleBase
         ''' <param name="InputText">Input text to write</param>
         ''' <param name="DefaultValue">Default value</param>
         Public Function ReadLine(InputText As String, DefaultValue As String) As String
-            Return ReadLineReboot.ReadLine.Read(InputText, DefaultValue)
+            Return ReadLine(InputText, DefaultValue, True)
+        End Function
+
+        ''' <summary>
+        ''' Reads the line from the console
+        ''' </summary>
+        ''' <param name="InputText">Input text to write</param>
+        ''' <param name="DefaultValue">Default value</param>
+        ''' <param name="UseCtrlCAsInput">Whether to treat CTRL + C as input</param>
+        Public Function ReadLine(InputText As String, DefaultValue As String, UseCtrlCAsInput As Boolean) As String
+            'Store the initial CtrlCEnabled value. This is so we can restore the state of CTRL + C being enabled.
+            Dim CtrlCEnabled As Boolean = ReadLineReboot.ReadLine.CtrlCEnabled
+            ReadLineReboot.ReadLine.CtrlCEnabled = UseCtrlCAsInput
+            Dim Output As String = ReadLineReboot.ReadLine.Read(InputText, DefaultValue)
+            ReadLineReboot.ReadLine.CtrlCEnabled = CtrlCEnabled
+            Return Output
         End Function
 
         ''' <summary>

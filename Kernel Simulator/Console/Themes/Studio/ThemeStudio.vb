@@ -263,39 +263,39 @@ Namespace ConsoleBase.Themes.Studio
                             Case 40 'Save theme to another directory...
                                 Wdbg(DebugLevel.I, "Prompting user for directory name...")
                                 Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
-                                Dim DirectoryName As String = ReadLine()
+                                Dim DirectoryName As String = ReadLine(False)
                                 DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                                 Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                                 SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
                             Case 41 'Save theme to current directory as...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
-                                Dim AltThemeName As String = ReadLine()
+                                Dim AltThemeName As String = ReadLine(False)
                                 AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 SaveThemeToCurrentDirectory(AltThemeName)
                             Case 42 'Save theme to another directory as...
                                 Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
                                 Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
-                                Dim DirectoryName As String = ReadLine()
+                                Dim DirectoryName As String = ReadLine(False)
                                 DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                                 Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
-                                Dim AltThemeName As String = ReadLine()
+                                Dim AltThemeName As String = ReadLine(False)
                                 AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
                             Case 43 'Load Theme From File...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
-                                Dim AltThemeName As String = ReadLine() + ".json"
+                                Dim AltThemeName As String = ReadLine(False) + ".json"
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 LoadThemeFromFile(AltThemeName)
                             Case 44 'Load Theme From Prebuilt Themes...
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
-                                Dim AltThemeName As String = ReadLine()
+                                Dim AltThemeName As String = ReadLine(False)
                                 Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                                 LoadThemeFromResource(AltThemeName)
                             Case 45 'Load Current Colors
