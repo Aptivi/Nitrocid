@@ -28,6 +28,10 @@ Namespace Shell.Commands
             If Shell.Commands.ContainsKey(CommandToBeWrapped) Then
                 If Shell.Commands(CommandToBeWrapped).Wrappable Then
                     Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
+                    If ShellStack(ShellStack.Count - 1).AltCommandThreads.Count = 0 Then
+                        Dim WrappedCommand As New KernelThread($"Wrapped Shell Command Thread", False, AddressOf ExecuteCommand)
+                        ShellStack(ShellStack.Count - 1).AltCommandThreads.Add(WrappedCommand)
+                    End If
                     GetLine(ListArgs(0), False, WrapOutputPath)
                     Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                     Dim WrapOutput As String = WrapOutputStream.ReadToEnd

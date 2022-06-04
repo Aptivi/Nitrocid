@@ -286,10 +286,26 @@ Namespace Shell
                                     Else
                                         Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs)
                                         Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
-                                        Dim StartCommandThread As KernelThread = ShellStack(ShellStack.Count - 1).ShellCommandThread
-                                        StartCommandThread.Start(Params)
-                                        StartCommandThread.Wait()
-                                        StartCommandThread.Stop()
+
+                                        'Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
+                                        'is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
+                                        'shell can do their job.
+                                        Dim ShellInstance As ShellInfo = ShellStack(ShellStack.Count - 1)
+                                        Dim StartCommandThread As KernelThread = ShellInstance.ShellCommandThread
+                                        Dim CommandThreadValid As Boolean = True
+                                        If StartCommandThread.IsAlive Then
+                                            If ShellInstance.AltCommandThreads.Count > 0 Then
+                                                StartCommandThread = ShellInstance.AltCommandThreads(ShellInstance.AltCommandThreads.Count - 1)
+                                            Else
+                                                Wdbg(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.")
+                                                CommandThreadValid = False
+                                            End If
+                                        End If
+                                        If CommandThreadValid Then
+                                            StartCommandThread.Start(Params)
+                                            StartCommandThread.Wait()
+                                            StartCommandThread.Stop()
+                                        End If
                                     End If
                                 ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
                                     'If we're in the UESH shell, parse the script file or executable file

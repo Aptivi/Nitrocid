@@ -31,6 +31,10 @@ Namespace Shell.ShellBase
         ''' Shell command thread
         ''' </summary>
         Public ReadOnly ShellCommandThread As KernelThread
+        ''' <summary>
+        ''' Alternative shell command threads
+        ''' </summary>
+        Protected Friend ReadOnly AltCommandThreads As New List(Of KernelThread)
 
         ''' <summary>
         ''' Installs the values to a new instance of ShellInfo
