@@ -38,7 +38,7 @@ Namespace Misc.Writers.ConsoleWriters
                 Try
                     'Get the filtered positions first.
                     Dim FilteredLeft, FilteredTop As Integer
-                    If Not Line Then GetFilteredPositions(Text, FilteredLeft, FilteredTop, vars)
+                    If Not Line And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then GetFilteredPositions(Text, FilteredLeft, FilteredTop, vars)
 
                     'Actually write
                     If Line Then
@@ -56,7 +56,7 @@ Namespace Misc.Writers.ConsoleWriters
                     End If
 
                     'Return to the processed position
-                    If Not Line Then Console.SetCursorPosition(FilteredLeft, FilteredTop)
+                    If Not Line And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then Console.SetCursorPosition(FilteredLeft, FilteredTop)
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
