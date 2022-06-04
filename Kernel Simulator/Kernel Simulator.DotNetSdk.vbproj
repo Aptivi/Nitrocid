@@ -189,7 +189,6 @@
     <Import Include="KS.Misc.Writers.FancyWriters" />
     <Import Include="KS.Shell" />
     <Import Include="KS.Shell.ShellBase" />
-    <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic.Constants" />
     <Import Include="Newtonsoft.Json" />
     <Import Include="Renci.SshNet" />
