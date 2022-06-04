@@ -428,7 +428,7 @@ Namespace Modifications
                             Write(LoaderException.Message, True, ColTypes.Error)
                         Next
                         Write(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
-                        Throw ex
+                        Throw
                     End Try
                 End If
 
