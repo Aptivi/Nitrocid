@@ -1718,14 +1718,34 @@ Namespace Misc.Screensaver
         Public FlashTextMaximumColorLevel As Integer = 0
 
         '-> Noise
-        ''' <summary>
-        ''' [Noise] How many milliseconds to wait before making the new screen?
-        ''' </summary>
-        Public NoiseNewScreenDelay As Integer = 5000
+        Private _noiseNewScreenDelay As Integer = 5000
+        Private _noiseDensity As Integer = 40
+
         ''' <summary>
         ''' [Noise] The noise density in percent
         ''' </summary>
-        Public NoiseDensity As Integer = 40
+        Public Property NoiseDensity As Integer
+            Get
+                Return _noiseDensity
+            End Get
+            Set(value As Integer)
+                If value < 0 Then value = 40
+                If value > 100 Then value = 40
+                _noiseDensity = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Noise] How many milliseconds to wait before making the new screen?
+        ''' </summary>
+        Public Property NoiseNewScreenDelay As Integer
+            Get
+                Return _noiseNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5000
+                _noiseNewScreenDelay = value
+            End Set
+        End Property
 
         '-> PersonLookup
         Private _personLookupDelay As Integer = 75
@@ -1965,6 +1985,5 @@ Namespace Misc.Screensaver
                 _dateAndTimeMaximumColorLevel = value
             End Set
         End Property
-
     End Module
 End Namespace
