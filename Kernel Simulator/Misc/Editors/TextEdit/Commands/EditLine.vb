@@ -24,12 +24,11 @@ Namespace Misc.TextEdit.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-#If Not NETCOREAPP Then
             If IsStringNumeric(ListArgsOnly(0)) Then
                 If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
-                    Windows.Forms.SendKeys.SendWait(TextEdit_FileLines(ListArgsOnly(0) - 1))
-                    Write(">> ", False, ColTypes.Input)
-                    Dim EditedLine As String = ReadLine(False)
+                    Dim OriginalLine As String = TextEdit_FileLines(ListArgsOnly(0) - 1)
+                    Write(">> [{0}]", False, ColTypes.Input, OriginalLine)
+                    Dim EditedLine As String = ReadLine("", OriginalLine, False)
                     TextEdit_FileLines(ListArgsOnly(0) - 1) = EditedLine
                 Else
                     Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
@@ -38,7 +37,6 @@ Namespace Misc.TextEdit.Commands
                 Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
                 Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
             End If
-#End If
         End Sub
 
     End Class
