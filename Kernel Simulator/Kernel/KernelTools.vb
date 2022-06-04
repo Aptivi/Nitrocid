@@ -530,7 +530,7 @@ Namespace Kernel
             Dim compileseconds As Integer = BitConverter.ToInt32(asmByte, i64 + LTOff)
             Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
             dt = dt.AddSeconds(compileseconds)
-            dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+            dt = dt.AddHours(TimeZoneInfo.Local.GetUtcOffset(dt).Hours)
 
             'Now return compile date
             Return dt

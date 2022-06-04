@@ -179,13 +179,13 @@ Namespace Misc.Probers
                 '-> Timezone placeholder
                 If text.Contains("<timezone>") Then
                     Wdbg(DebugLevel.I, "Standard Time Zone placeholder found.")
-                    text = text.Replace("<timezone>", TimeZone.CurrentTimeZone.StandardName)
+                    text = text.Replace("<timezone>", TimeZoneInfo.Local.StandardName)
                 End If
 
                 '-> Summer timezone placeholder
                 If text.Contains("<summertimezone>") Then
                     Wdbg(DebugLevel.I, "Summer Time Zone placeholder found.")
-                    text = text.Replace("<summertimezone>", TimeZone.CurrentTimeZone.DaylightName)
+                    text = text.Replace("<summertimezone>", TimeZoneInfo.Local.DaylightName)
                 End If
 
                 '-> System placeholder
