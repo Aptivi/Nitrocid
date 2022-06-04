@@ -43,7 +43,7 @@ Namespace ManPages
                 Wdbg(DebugLevel.I, "Todo count for ""{0}"": {1}", ManualTitle, Pages(ManualTitle).Todos.Count.ToString)
                 If Pages(ManualTitle).Todos.Count <> 0 Then
                     Wdbg(DebugLevel.I, "Todos are found in manpage.")
-                    Write(DoTranslation("This manual page needs work for:") + NewLine, True, ColTypes.Warning)
+                    Write(DoTranslation("This manual page needs work for:"), True, ColTypes.Warning)
                     WriteList(Pages(ManualTitle).Todos, True)
                     Write(NewLine + DoTranslation("Press any key to read the manual page..."), False, ColTypes.Warning)
                     Console.ReadKey()
