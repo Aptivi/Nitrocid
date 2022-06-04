@@ -256,6 +256,39 @@ Namespace Kernel
         ''' Shows how many aliases available in help for shells
         ''' </summary>
         Public ShowShellAliasesCount As Boolean = True
+        ''' <summary>
+        ''' Whether the input history is enabled
+        ''' </summary>
+        Public Property InputHistoryEnabled As Boolean
+            Get
+                Return ReadLineReboot.ReadLine.HistoryEnabled
+            End Get
+            Set
+                ReadLineReboot.ReadLine.HistoryEnabled = Value
+            End Set
+        End Property
+        ''' <summary>
+        ''' Whether the clipboard and yanking (CTRL + Y) is enabled
+        ''' </summary>
+        Public Property InputClipboardEnabled As Boolean
+            Get
+                Return ReadLineReboot.ReadLine.ClipboardEnabled
+            End Get
+            Set
+                ReadLineReboot.ReadLine.ClipboardEnabled = Value
+            End Set
+        End Property
+        ''' <summary>
+        ''' Whether the undo function is enabled
+        ''' </summary>
+        Public Property InputUndoEnabled As Boolean
+            Get
+                Return ReadLineReboot.ReadLine.UndoEnabled
+            End Get
+            Set
+                ReadLineReboot.ReadLine.UndoEnabled = Value
+            End Set
+        End Property
 
         'Private flags
         ''' <summary>

@@ -1343,6 +1343,24 @@
                 "Type": "SInt",
                 "Variable": "LoveOrHateUsersCount",
                 "Description": "How many users to be in the love or hate comment room?"
+            },
+            {
+                "Name": "Input history enabled",
+                "Type": "SBoolean",
+                "Variable": "InputHistoryEnabled",
+                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
+            },
+            {
+                "Name": "Input clipboard enabled",
+                "Type": "SBoolean",
+                "Variable": "InputClipboardEnabled",
+                "Description": "Whether the input clipboard is enabled or not."
+            },
+            {
+                "Name": "Input undo enabled",
+                "Type": "SBoolean",
+                "Variable": "InputUndoEnabled",
+                "Description": "Whether the input undo feature is enabled or not."
             }
         ]
     }

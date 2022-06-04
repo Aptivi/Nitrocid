@@ -966,7 +966,10 @@ Namespace Misc.Configuration
                     {"Lower frame character for progress bars", ProgressLowerFrameChar},
                     {"Left frame character for progress bars", ProgressLeftFrameChar},
                     {"Right frame character for progress bars", ProgressRightFrameChar},
-                    {"Users count for love or hate comments", LoveOrHateUsersCount}
+                    {"Users count for love or hate comments", LoveOrHateUsersCount},
+                    {"Input history enabled", InputHistoryEnabled},
+                    {"Input clipboard enabled", InputClipboardEnabled},
+                    {"Input undo enabled", InputUndoEnabled}
                 }
             ConfigurationObject.Add("Misc", MiscConfig)
             Return ConfigurationObject
@@ -1779,6 +1782,9 @@ Namespace Misc.Configuration
                 ProgressLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for progress bars"), "║")
                 ProgressRightFrameChar = If(ConfigToken("Misc")?("Right frame character for progress bars"), "║")
                 LoveOrHateUsersCount = If(Integer.TryParse(ConfigToken("Misc")?("Users count for love or hate comments"), 0), ConfigToken("Misc")?("Users count for love or hate comments"), 20)
+                InputHistoryEnabled = If(ConfigToken("Misc")?("Input history enabled"), True)
+                InputClipboardEnabled = If(ConfigToken("Misc")?("Input clipboard enabled"), True)
+                InputUndoEnabled = If(ConfigToken("Misc")?("Input undo enabled"), True)
 
                 'Check to see if the config needs fixes
                 RepairConfig()
