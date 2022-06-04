@@ -80,12 +80,14 @@ Namespace ConsoleBase.Themes
                                                                              {"TealerOS", New ThemeInfo("TealerOS")},
                                                                              {"TrafficLight", New ThemeInfo("TrafficLight")},
                                                                              {"Ubuntu", New ThemeInfo("Ubuntu")},
-                                                                             {"YellowBG", New ThemeInfo("YellowBG")},
-                                                                             {"YellowFG", New ThemeInfo("YellowFG")},
+                                                                             {"VisualStudioDark", New ThemeInfo("VisualStudioDark")},
+                                                                             {"VisualStudioLight", New ThemeInfo("VisualStudioLight")},
                                                                              {"Windows11", New ThemeInfo("Windows11")},
                                                                              {"Windows11Light", New ThemeInfo("Windows11Light")},
                                                                              {"Windows95", New ThemeInfo("Windows95")},
-                                                                             {"Wood", New ThemeInfo("Wood")}}
+                                                                             {"Wood", New ThemeInfo("Wood")},
+                                                                             {"YellowBG", New ThemeInfo("YellowBG")},
+                                                                             {"YellowFG", New ThemeInfo("YellowFG")}}
 
         ''' <summary>
         ''' Sets system colors according to the programmed templates

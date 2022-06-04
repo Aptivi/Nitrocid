@@ -877,6 +877,8 @@
     <None Include="Resources\Themes\Pastel 3.json" />
     <None Include="Resources\Themes\SolarizedDark.json" />
     <None Include="Resources\Themes\SolarizedLight.json" />
+    <None Include="Resources\Themes\VisualStudioDark.json" />
+    <None Include="Resources\Themes\VisualStudioLight.json" />
     <None Include="Resources\Themes\Windows11.json" />
     <None Include="Resources\Themes\Windows11Light.json" />
     <None Include="Resources\Themes\Wood.json" />

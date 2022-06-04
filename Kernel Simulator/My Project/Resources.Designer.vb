@@ -1997,6 +1997,60 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;15&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;15&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;15&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;#100940&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''  &quot;StageColor&quot;: &quot;15&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;WarningColor&quot;: &quot;15&quot;,
+        '''  &quot;OptionColor&quot;: &quot;15&quot;,
+        '''  &quot;BannerColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationProgr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property VisualStudioDark() As String
+            Get
+                Return ResourceManager.GetString("VisualStudioDark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;15&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;15&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;15&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;#7160E8&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''  &quot;StageColor&quot;: &quot;15&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;15&quot;,
+        '''  &quot;WarningColor&quot;: &quot;15&quot;,
+        '''  &quot;OptionColor&quot;: &quot;15&quot;,
+        '''  &quot;BannerColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;15&quot;,
+        '''  &quot;NotificationProgr [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property VisualStudioLight() As String
+            Get
+                Return ResourceManager.GetString("VisualStudioLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Name&quot;: &quot;Vietnamese&quot;,
         '''  &quot;Transliterable&quot;: false,
         '''  &quot;Localizations&quot;: {
