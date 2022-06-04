@@ -23,10 +23,15 @@ Namespace Shell.Commands
         Inherits CommandExecutor
         Implements ICommand
 
+        <CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification:="There is already a platform check in the command logic.")>
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If IsStringNumeric(ListArgs(0)) And CInt(ListArgs(0)) >= 37 And CInt(ListArgs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
-                If IsStringNumeric(ListArgs(1)) Then 'Time must be numeric
-                    Console.Beep(ListArgs(0), ListArgs(1))
+            If IsStringNumeric(ListArgs(0)) And CInt(ListArgs(0)) >= 37 And CInt(ListArgs(0)) <= 32767 Then
+                If IsStringNumeric(ListArgs(1)) Then
+                    If IsOnWindows() Then
+                        Console.Beep(ListArgs(0), ListArgs(1))
+                    Else
+                        Console.Beep()
+                    End If
                 Else
                     Write(DoTranslation("Time must be numeric."), True, ColTypes.Error)
                 End If
