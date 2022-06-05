@@ -604,6 +604,9 @@
     <Compile Include="Shell\Commands\ChLang.vb" />
     <Compile Include="Shell\Commands\ChMal.vb" />
     <Compile Include="Shell\Commands\ChMotd.vb" />
+    <Compile Include="Shell\Commands\ColorRgbToHex.vb" />
+    <Compile Include="Shell\Commands\ColorHexToRgbKS.vb" />
+    <Compile Include="Shell\Commands\ColorHexToRgb.vb" />
     <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
     <Compile Include="Shell\Commands\Combine.vb" />
     <Compile Include="Shell\Commands\GenName.vb" />
