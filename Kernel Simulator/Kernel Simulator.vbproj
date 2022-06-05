@@ -584,8 +584,8 @@
     <Compile Include="Network\Mail\MailShellCommon.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
     <Compile Include="Scripting\Interaction\UESHCommands.vb" />
-    <Compile Include="Scripting\UESHConditional.vb" />
-    <Compile Include="Scripting\UESHConditions.vb" />
+    <Compile Include="Scripting\Conditions\UESHConditional.vb" />
+    <Compile Include="Scripting\Conditions\UESHConditions.vb" />
     <Compile Include="Scripting\UESHOperators.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
