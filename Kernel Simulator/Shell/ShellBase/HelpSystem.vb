@@ -22,6 +22,7 @@ Imports KS.Misc.TextEdit
 Imports KS.Misc.HexEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
+Imports KS.Modifications
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
 Imports KS.Network.Mail
@@ -72,66 +73,70 @@ Namespace Shell.ShellBase
         Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
             'Determine command type
             Dim CommandList As Dictionary(Of String, CommandInfo) = Shell.Commands
-            Dim ModCommandList As Dictionary(Of String, String) = ModDefs
+            Dim ModCommandList As New Dictionary(Of String, CommandInfo)
             Dim AliasedCommandList As Dictionary(Of String, String) = Aliases
+
+            'Add every command from each mod
+            For Each ModInfo As ModInfo In Mods.Values
+                For Each ModPartInfo As PartInfo In ModInfo.ModParts.Values
+                    If ModPartInfo.PartScript.Commands IsNot Nothing Then
+                        'The mod has commands! Process them.
+                        For Each ModCommandName As String In ModPartInfo.PartScript.Commands.Keys
+                            Dim ModCommandInfo As CommandInfo = ModPartInfo.PartScript.Commands(ModCommandName)
+                            If ModCommandInfo.Type = CommandType Then ModCommandList.AddIfNotFound(ModCommandName, ModCommandInfo)
+                        Next
+                    End If
+                Next
+            Next
+
+            'Select which list to use according to the shell type
             Select Case CommandType
                 Case ShellType.Shell
                     CommandList = Shell.Commands
-                    ModCommandList = ModDefs
                     AliasedCommandList = Aliases
                 Case ShellType.FTPShell
                     CommandList = FTPCommands
-                    ModCommandList = FTPModDefs
                     AliasedCommandList = FTPShellAliases
                 Case ShellType.MailShell
                     CommandList = MailCommands
-                    ModCommandList = MailModDefs
                     AliasedCommandList = MailShellAliases
                 Case ShellType.RSSShell
                     CommandList = RSSCommands
-                    ModCommandList = RSSModDefs
                     AliasedCommandList = RSSShellAliases
                 Case ShellType.SFTPShell
                     CommandList = SFTPCommands
-                    ModCommandList = SFTPModDefs
                     AliasedCommandList = SFTPShellAliases
                 Case ShellType.TestShell
                     CommandList = Test_Commands
-                    ModCommandList = TestModDefs
                     AliasedCommandList = TestShellAliases
                 Case ShellType.TextShell
                     CommandList = TextEdit_Commands
-                    ModCommandList = TextEdit_ModHelpEntries
                     AliasedCommandList = TextShellAliases
                 Case ShellType.ZIPShell
                     CommandList = ZipShell_Commands
-                    ModCommandList = ZipShell_ModHelpEntries
                     AliasedCommandList = ZIPShellAliases
                 Case ShellType.RemoteDebugShell
                     CommandList = DebugCommands
-                    ModCommandList = RDebugModDefs
                     AliasedCommandList = RemoteDebugAliases
                 Case ShellType.JsonShell
                     CommandList = JsonShell_Commands
-                    ModCommandList = JsonShell_ModDefs
                     AliasedCommandList = JsonShellAliases
                 Case ShellType.HTTPShell
                     CommandList = HTTPCommands
-                    ModCommandList = HTTPModDefs
                     AliasedCommandList = HTTPShellAliases
                 Case ShellType.HexShell
                     CommandList = HexEdit_Commands
-                    ModCommandList = HexEdit_ModHelpEntries
                     AliasedCommandList = HexShellAliases
             End Select
 
             'Check to see if command exists
-            If Not String.IsNullOrWhiteSpace(command) And (CommandList.ContainsKey(command) Or AliasedCommandList.ContainsKey(command)) Then
+            If Not String.IsNullOrWhiteSpace(command) And (CommandList.ContainsKey(command) Or AliasedCommandList.ContainsKey(command) Or ModCommandList.ContainsKey(command)) Then
                 'Found!
-                Dim FinalCommand As String = If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command)
-                Dim HelpDefinition As String = CommandList(FinalCommand).GetTranslatedHelpEntry
+                Dim FinalCommandList As Dictionary(Of String, CommandInfo) = If(ModCommandList.ContainsKey(command), ModCommandList, CommandList)
+                Dim FinalCommand As String = If(ModCommandList.ContainsKey(command), command, If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command))
+                Dim HelpDefinition As String = FinalCommandList(FinalCommand).GetTranslatedHelpEntry
                 Dim UsageLength As Integer = DoTranslation("Usage:").Length
-                Dim HelpUsages() As String = CommandList(FinalCommand).HelpUsages
+                Dim HelpUsages() As String = FinalCommandList(FinalCommand).HelpUsages
 
                 'Print usage information
                 If HelpUsages.Length <> 0 Then
@@ -155,7 +160,7 @@ Namespace Shell.ShellBase
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Description:") + $" {HelpDefinition}", True, ColTypes.ListValue)
 
                 'Extra help action for some commands
-                CommandList(FinalCommand).CommandBase.HelpHelper()
+                FinalCommandList(FinalCommand).CommandBase?.HelpHelper()
             ElseIf String.IsNullOrWhiteSpace(command) Then
                 'List the available commands
                 If Not SimHelp Then
@@ -177,7 +182,7 @@ Namespace Shell.ShellBase
                     If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("No mod commands."), True, ColTypes.Warning)
                     For Each cmd As String In ModCommandList.Keys
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
-                        DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, ModCommandList(cmd))
+                        DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, ModCommandList(cmd).HelpDefinition)
                     Next
 
                     'The alias commands
