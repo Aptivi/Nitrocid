@@ -32,7 +32,7 @@ Namespace Misc.JsonShell
                                                                                            {"help", New CommandInfo("help", ShellType.JsonShell, "Lists available commands", {"[command]"}, False, 0, New JsonShell_HelpCommand)},
                                                                                            {"print", New CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", {"[property]"}, False, 0, New JsonShell_PrintCommand)},
                                                                                            {"save", New CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", {"[-b|-m]"}, False, 0, New JsonShell_SaveCommand, False, False, False, False, False)}}
-        Public JsonShell_ModCommands As New ArrayList
+        Public JsonShell_ModCommands As New Dictionary(Of String, CommandInfo)
         Public JsonShell_FileStream As FileStream
         Public JsonShell_FileToken As JToken = JToken.Parse("{}")
         Friend JsonShell_FileTokenOrig As JToken = JToken.Parse("{}")

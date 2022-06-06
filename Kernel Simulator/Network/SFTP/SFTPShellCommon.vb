@@ -40,7 +40,7 @@ Namespace Network.SFTP
         Public SFTPCurrDirect As String
         Public SFTPCurrentRemoteDir As String
         Public SFTPUser As String
-        Public SFTPModCommands As New ArrayList
+        Public SFTPModCommands As New Dictionary(Of String, CommandInfo)
         Public SFTPShellPromptStyle As String = ""
         Public SFTPShowDetailsInList As Boolean = True
         Public SFTPUserPromptStyle As String = ""

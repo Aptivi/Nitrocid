@@ -42,7 +42,7 @@ Namespace Network.Mail
                                                                                      {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", {}, False, 0, New Mail_SendCommand)},
                                                                                      {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", {}, False, 0, New Mail_SendEncCommand)}}
         Public IMAP_CurrentDirectory As String = "Inbox"
-        Public MailModCommands As New ArrayList
+        Public MailModCommands As New Dictionary(Of String, CommandInfo)
         Public MailShellPromptStyle As String = ""
         Public Mail_NotifyNewMail As Boolean = True
         Public Mail_ImapPingInterval As Integer = 30000

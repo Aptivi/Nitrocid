@@ -152,42 +152,11 @@ Namespace Modifications
                     Next
 
                     'Clear all mod commands list, since we've stopped all mods.
-                    ModCommands.Clear()
-                    ModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for main shell cleared.")
-                    FTPModCommands.Clear()
-                    FTPModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for FTP shell cleared.")
-                    MailModCommands.Clear()
-                    MailModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for mail shell cleared.")
-                    SFTPModCommands.Clear()
-                    SFTPModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for SFTP shell cleared.")
-                    TextEdit_ModCommands.Clear()
-                    TextEdit_ModHelpEntries.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for text editor shell cleared.")
-                    Test_ModCommands.Clear()
-                    TestModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for test shell cleared.")
-                    DebugModCmds.Clear()
-                    RDebugModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for remote debug shell cleared.")
-                    ZipShell_ModCommands.Clear()
-                    ZipShell_ModHelpEntries.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for ZIP shell cleared.")
-                    RSSModCommands.Clear()
-                    RSSModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for RSS shell cleared.")
-                    JsonShell_ModCommands.Clear()
-                    JsonShell_ModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for JSON shell cleared.")
-                    HTTPModCommands.Clear()
-                    HTTPModDefs.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for HTTP shell cleared.")
-                    HexEdit_ModCommands.Clear()
-                    HexEdit_ModHelpEntries.Clear()
-                    Wdbg(DebugLevel.I, "Mod commands for hex shell cleared.")
+                    For Each ShellTypeName As String In [Enum].GetNames(GetType(ShellType))
+                        Dim ShellTypeEnum As ShellType = [Enum].Parse(GetType(ShellType), ShellTypeName)
+                        ListModCommands(ShellTypeEnum).Clear()
+                        Wdbg(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeEnum.ToString)
+                    Next
 
                     'Clear the custom screensavers
                     CustomSavers.Clear()
@@ -232,56 +201,8 @@ Namespace Modifications
                                     'Remove all the commands associated with the part
                                     If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
                                         For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
-                                            Select Case CommandInfo.Type
-                                                Case ShellType.Shell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
-                                                    ModCommands.Remove(CommandInfo.Command)
-                                                    ModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.FTPShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)
-                                                    FTPModCommands.Remove(CommandInfo.Command)
-                                                    FTPModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.MailShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from mail shell...", CommandInfo.Command)
-                                                    MailModCommands.Remove(CommandInfo.Command)
-                                                    MailModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.SFTPShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from SFTP shell...", CommandInfo.Command)
-                                                    SFTPModCommands.Remove(CommandInfo.Command)
-                                                    SFTPModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.TextShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from text editor shell...", CommandInfo.Command)
-                                                    TextEdit_ModCommands.Remove(CommandInfo.Command)
-                                                    TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
-                                                Case ShellType.TestShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from test shell...", CommandInfo.Command)
-                                                    Test_ModCommands.Remove(CommandInfo.Command)
-                                                    TestModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.RemoteDebugShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from remote debug shell...", CommandInfo.Command)
-                                                    DebugModCmds.Remove(CommandInfo.Command)
-                                                    RDebugModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.ZIPShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from ZIP shell...", CommandInfo.Command)
-                                                    ZipShell_ModCommands.Remove(CommandInfo.Command)
-                                                    ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
-                                                Case ShellType.RSSShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
-                                                    RSSModCommands.Remove(CommandInfo.Command)
-                                                    RSSModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.JsonShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
-                                                    JsonShell_ModCommands.Remove(CommandInfo.Command)
-                                                    JsonShell_ModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.HTTPShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
-                                                    HTTPModCommands.Remove(CommandInfo.Command)
-                                                    HTTPModDefs.Remove(CommandInfo.Command)
-                                                Case ShellType.HexShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from hex shell...", CommandInfo.Command)
-                                                    HexEdit_ModCommands.Remove(CommandInfo.Command)
-                                                    HexEdit_ModHelpEntries.Remove(CommandInfo.Command)
-                                            End Select
+                                            Wdbg(DebugLevel.I, "Removing command {0} from {1}...", CommandInfo.Command, CommandInfo.Type)
+                                            ListModCommands(CommandInfo.Type).Remove(CommandInfo.Command)
                                         Next
                                     End If
 
@@ -520,26 +441,10 @@ Namespace Modifications
         End Function
 
         ''' <summary>
-        ''' Reloads all generic definitions so it can be updated with language change
-        ''' </summary>
-        ''' <param name="OldModDesc">Old mod command description</param>
-        Sub ReloadGenericDefs(OldModDesc As String)
-            For i As Integer = 0 To ModDefs.Keys.Count - 1
-                Wdbg(DebugLevel.I, "Replacing ""{0}""...", OldModDesc)
-                Dim Cmd As String = ModDefs.Keys(i)
-                If ModDefs(Cmd).Contains(OldModDesc) Then
-                    Wdbg(DebugLevel.I, "Old Definition: {0}", ModDefs(Cmd))
-                    ModDefs(Cmd) = ModDefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by "))
-                    Wdbg(DebugLevel.I, "New Definition: {0}", ModDefs(Cmd))
-                End If
-            Next
-        End Sub
-
-        ''' <summary>
         ''' Lists the mod commands based on the shell
         ''' </summary>
         ''' <param name="ShellType">Selected shell type</param>
-        Public Function ListModCommands(ShellType As ShellType) As ArrayList
+        Public Function ListModCommands(ShellType As ShellType) As Dictionary(Of String, CommandInfo)
             Select Case ShellType
                 Case ShellType.Shell
                     Return ModCommands

@@ -35,7 +35,7 @@ Namespace Misc.HexEdit
                                                                                          {"querybyte", New CommandInfo("querybyte", ShellType.HexShell, "Queries a byte in a specified range of bytes or all bytes", {"<byte> [startbyte] [endbyte]"}, True, 1, New HexEdit_QueryByteCommand)},
                                                                                          {"replace", New CommandInfo("replace", ShellType.HexShell, "Replaces a byte with another one", {"<byte> <replacedbyte>"}, True, 2, New HexEdit_ReplaceCommand)},
                                                                                          {"save", New CommandInfo("save", ShellType.HexShell, "Saves the file", {}, False, 0, New HexEdit_SaveCommand)}}
-        Public HexEdit_ModCommands As New ArrayList
+        Public HexEdit_ModCommands As New Dictionary(Of String, CommandInfo)
         Public HexEdit_FileStream As FileStream
         Public HexEdit_FileBytes As Byte()
         Friend HexEdit_FileBytesOrig As Byte()

@@ -50,7 +50,7 @@ Namespace Network.FTP
         Public FtpCurrentDirectory As String
         Public FtpCurrentRemoteDir As String
         Public FtpUser As String
-        Public FTPModCommands As New ArrayList
+        Public FTPModCommands As New Dictionary(Of String, CommandInfo)
         Public FTPShellPromptStyle As String = ""
         Public ClientFTP As FtpClient
         Public FtpShowDetailsInList As Boolean = True

@@ -50,7 +50,7 @@ Namespace Shell
         ''' <summary>
         ''' All mod commands
         ''' </summary>
-        Public ModCommands As New ArrayList
+        Public ModCommands As New Dictionary(Of String, CommandInfo)
         ''' <summary>
         ''' List of commands
         ''' </summary>
@@ -196,7 +196,7 @@ Namespace Shell
 
                     'Iterate through mod commands
                     Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, FullCommand)
-                    If ListModCommands(ShellType).Contains(Parts(0)) Then
+                    If ListModCommands(ShellType).ContainsKey(Parts(0)) Then
                         Done = True
                         Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
                         ExecuteModCommand(Command)

@@ -32,7 +32,7 @@ Namespace Misc.ZipFile
                                                                                           {"help", New CommandInfo("help", ShellType.ZIPShell, "Lists available commands", {"[command]"}, False, 0, New ZipShell_HelpCommand)},
                                                                                           {"list", New CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", {"[directory]"}, False, 0, New ZipShell_ListCommand)},
                                                                                           {"pack", New CommandInfo("pack", ShellType.ZIPShell, "Packs a local file to the archive", {"<localfile> [where]"}, True, 1, New ZipShell_PackCommand)}}
-        Public ZipShell_ModCommands As New ArrayList
+        Public ZipShell_ModCommands As New Dictionary(Of String, CommandInfo)
         Public ZipShell_FileStream As FileStream
         Public ZipShell_ZipArchive As ZipArchive
         Public ZipShell_CurrentDirectory As String

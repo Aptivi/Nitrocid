@@ -55,23 +55,11 @@ Namespace Shell.ShellBase
             Dim Command As String
             Dim RequiredArgumentsProvided As Boolean = True
             Dim ShellCommands As Dictionary(Of String, CommandInfo)
-            Dim ModCommands As New Dictionary(Of String, CommandInfo)
+            Dim ModCommands As Dictionary(Of String, CommandInfo)
 
             'Change the available commands list according to command type
             ShellCommands = GetCommands(CommandType)
-
-            'Add every command from each mod
-            For Each ModInfo As ModInfo In Mods.Values
-                For Each ModPartInfo As PartInfo In ModInfo.ModParts.Values
-                    If ModPartInfo.PartScript.Commands IsNot Nothing Then
-                        'The mod has commands! Process them.
-                        For Each ModCommandName As String In ModPartInfo.PartScript.Commands.Keys
-                            Dim ModCommandInfo As CommandInfo = ModPartInfo.PartScript.Commands(ModCommandName)
-                            If ModCommandInfo.Type = CommandType Then ModCommands.AddIfNotFound(ModCommandName, ModCommandInfo)
-                        Next
-                    End If
-                Next
-            Next
+            ModCommands = ListModCommands(CommandType)
 
             'Get the index of the first space (Used for step 3)
             Dim index As Integer = CommandText.IndexOf(" ")

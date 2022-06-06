@@ -34,20 +34,6 @@ Imports KS.TestShell
 Namespace Shell.ShellBase
     Public Module HelpSystem
 
-        'Mod definitions
-        Public ModDefs As New Dictionary(Of String, String)
-        Public TestModDefs As New Dictionary(Of String, String)
-        Public SFTPModDefs As New Dictionary(Of String, String)
-        Public RSSModDefs As New Dictionary(Of String, String)
-        Public RDebugModDefs As New Dictionary(Of String, String)
-        Public MailModDefs As New Dictionary(Of String, String)
-        Public FTPModDefs As New Dictionary(Of String, String)
-        Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
-        Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
-        Public JsonShell_ModDefs As New Dictionary(Of String, String)
-        Public HTTPModDefs As New Dictionary(Of String, String)
-        Public HexEdit_ModHelpEntries As New Dictionary(Of String, String)
-
         ''' <summary>
         ''' Shows the help of a command, or command list if nothing is specified
         ''' </summary>
@@ -73,21 +59,11 @@ Namespace Shell.ShellBase
         Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
             'Determine command type
             Dim CommandList As Dictionary(Of String, CommandInfo) = Shell.Commands
-            Dim ModCommandList As New Dictionary(Of String, CommandInfo)
+            Dim ModCommandList As Dictionary(Of String, CommandInfo)
             Dim AliasedCommandList As Dictionary(Of String, String) = Aliases
 
             'Add every command from each mod
-            For Each ModInfo As ModInfo In Mods.Values
-                For Each ModPartInfo As PartInfo In ModInfo.ModParts.Values
-                    If ModPartInfo.PartScript.Commands IsNot Nothing Then
-                        'The mod has commands! Process them.
-                        For Each ModCommandName As String In ModPartInfo.PartScript.Commands.Keys
-                            Dim ModCommandInfo As CommandInfo = ModPartInfo.PartScript.Commands(ModCommandName)
-                            If ModCommandInfo.Type = CommandType Then ModCommandList.AddIfNotFound(ModCommandName, ModCommandInfo)
-                        Next
-                    End If
-                Next
-            Next
+            ModCommandList = ListModCommands(CommandType)
 
             'Select which list to use according to the shell type
             Select Case CommandType
@@ -132,9 +108,11 @@ Namespace Shell.ShellBase
             'Check to see if command exists
             If Not String.IsNullOrWhiteSpace(command) And (CommandList.ContainsKey(command) Or AliasedCommandList.ContainsKey(command) Or ModCommandList.ContainsKey(command)) Then
                 'Found!
-                Dim FinalCommandList As Dictionary(Of String, CommandInfo) = If(ModCommandList.ContainsKey(command), ModCommandList, CommandList)
-                Dim FinalCommand As String = If(ModCommandList.ContainsKey(command), command, If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command))
-                Dim HelpDefinition As String = FinalCommandList(FinalCommand).GetTranslatedHelpEntry
+                Dim IsMod As Boolean = ModCommandList.ContainsKey(command)
+                Dim IsAlias As Boolean = AliasedCommandList.ContainsKey(command)
+                Dim FinalCommandList As Dictionary(Of String, CommandInfo) = If(IsMod, ModCommandList, CommandList)
+                Dim FinalCommand As String = If(IsMod, command, If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command))
+                Dim HelpDefinition As String = If(IsMod, FinalCommandList(FinalCommand), FinalCommandList(FinalCommand).GetTranslatedHelpEntry)
                 Dim UsageLength As Integer = DoTranslation("Usage:").Length
                 Dim HelpUsages() As String = FinalCommandList(FinalCommand).HelpUsages
 
@@ -157,6 +135,7 @@ Namespace Shell.ShellBase
                 End If
 
                 'Write the description now
+                If String.IsNullOrEmpty(HelpDefinition) Then HelpDefinition = DoTranslation("Command defined by ") + command
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Description:") + $" {HelpDefinition}", True, ColTypes.ListValue)
 
                 'Extra help action for some commands

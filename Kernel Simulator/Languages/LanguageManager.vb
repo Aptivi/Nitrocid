@@ -117,9 +117,6 @@ Namespace Languages
                     SetConfigValue(ConfigCategory.General, Token, "Language", CurrentLanguage)
                     Wdbg(DebugLevel.I, "Saved new language.")
 
-                    'Update help list for translated help
-                    ReloadGenericDefs(OldModDescGeneric)
-
                     'Update Culture if applicable
                     If LangChangeCulture Then
                         Wdbg(DebugLevel.I, "Updating culture.")

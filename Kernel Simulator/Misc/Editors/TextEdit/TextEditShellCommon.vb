@@ -42,7 +42,7 @@ Namespace Misc.TextEdit
                                                                                           {"replaceregex", New CommandInfo("replaceregex", ShellType.TextShell, "Replaces a word or phrase with another one using regular expressions", {"""<regex>"" ""<word/phrase>"""}, True, 2, New TextEdit_ReplaceRegexCommand)},
                                                                                           {"replaceinlineregex", New CommandInfo("replaceinlineregex", ShellType.TextShell, "Replaces a word or phrase with another one in a line using regular expressions", {"""<regex>"" ""<word/phrase>"" <linenumber> [linenumber2]"}, True, 3, New TextEdit_ReplaceInlineRegexCommand)},
                                                                                           {"save", New CommandInfo("save", ShellType.TextShell, "Saves the file", {}, False, 0, New TextEdit_SaveCommand)}}
-        Public TextEdit_ModCommands As New ArrayList
+        Public TextEdit_ModCommands As New Dictionary(Of String, CommandInfo)
         Public TextEdit_FileStream As FileStream
         Public TextEdit_FileLines As List(Of String)
         Friend TextEdit_FileLinesOrig As List(Of String)

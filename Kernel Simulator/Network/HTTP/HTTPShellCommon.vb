@@ -29,7 +29,7 @@ Namespace Network.HTTP
                                                                                  {"help", New CommandInfo("help", ShellType.HTTPShell, "Shows help screen", {"[command]"}, False, 0, New HTTP_HelpCommand)},
                                                                                  {"setsite", New CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", {"<uri>"}, True, 1, New HTTP_SetSiteCommand)}}
         Public HTTPSite As String
-        Public HTTPModCommands As New ArrayList
+        Public HTTPModCommands As New Dictionary(Of String, CommandInfo)
         Public HTTPShellPromptStyle As String = ""
         Public ClientHTTP As New HttpClient()
 

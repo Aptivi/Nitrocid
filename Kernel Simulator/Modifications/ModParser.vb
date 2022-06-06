@@ -19,21 +19,11 @@
 Imports System.IO
 Imports System.Reflection
 Imports KS.ManPages
-Imports KS.Misc.JsonShell
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
-Imports KS.Misc.ZipFile
-Imports KS.Network.FTP
-Imports KS.Network.HTTP
 Imports KS.Network.Mail
-Imports KS.Network.RemoteDebug
-Imports KS.Network.RSS
-Imports KS.Network.SFTP
-Imports KS.TestShell
 Imports KS.Kernel.Exceptions
 
 Namespace Modifications
@@ -190,68 +180,12 @@ Namespace Modifications
                             'See if the command conflicts with pre-existing shell commands
                             Dim Command As String = script.Commands.Keys(i)
                             Dim ActualCommand As String = Command
-                            Select Case script.Commands(Command).Type
-                                Case ShellType.Shell
-                                    If Shell.Shell.Commands.ContainsKey(Command) Or ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.FTPShell
-                                    If FTPCommands.ContainsKey(Command) Or FTPModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available FTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.MailShell
-                                    If MailCommands.ContainsKey(Command) Or MailModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.SFTPShell
-                                    If SFTPCommands.ContainsKey(Command) Or SFTPModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available SFTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.TextShell
-                                    If TextEdit_Commands.ContainsKey(Command) Or TextEdit_ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.TestShell
-                                    If Test_Commands.ContainsKey(Command) Or Test_ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.RemoteDebugShell
-                                    If DebugCommands.ContainsKey(Command) Or DebugModCmds.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available remote debug shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.ZIPShell
-                                    If ZipShell_Commands.ContainsKey(Command) Or ZipShell_ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available ZIP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.RSSShell
-                                    If RSSCommands.ContainsKey(Command) Or RSSModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available RSS shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.JsonShell
-                                    If JsonShell_Commands.ContainsKey(Command) Or JsonShell_ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available JSON shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.HTTPShell
-                                    If HTTPCommands.ContainsKey(Command) Or HTTPModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available HTTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                                Case ShellType.HexShell
-                                    If HexEdit_Commands.ContainsKey(Command) Or HexEdit_ModCommands.Contains(Command) Then
-                                        Wdbg(DebugLevel.W, "Command {0} conflicts with available hex shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                        Command += $"-{script.Name}-{script.ModPart}"
-                                    End If
-                            End Select
+                            Dim CommandType As CommandType = script.Commands.Values(i).Type
+                            Wdbg(DebugLevel.I, "Command type: {0}", CommandType)
+                            If IsCommandFound(Command, CommandType) Or ListModCommands(CommandType).ContainsKey(Command) Then
+                                Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                Command += $"-{script.Name}-{script.ModPart}"
+                            End If
 
                             'See if mod can be added to command list
                             If Command <> "" Then
@@ -261,69 +195,10 @@ Namespace Modifications
                                     script.Commands(ActualCommand).HelpDefinition = DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")"
                                 End If
 
-                                Wdbg(DebugLevel.I, "Command type: {0}", script.Commands(ActualCommand).Type)
-                                Select Case script.Commands(ActualCommand).Type
-                                    Case ShellType.Shell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for main shell...", Command)
-                                        If Not ModCommands.Contains(Command) Then ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.FTPShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for FTP shell...", Command)
-                                        If Not FTPModCommands.Contains(Command) Then FTPModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        FTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.MailShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for mail shell...", Command)
-                                        If Not MailModCommands.Contains(Command) Then MailModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        MailModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.SFTPShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for SFTP shell...", Command)
-                                        If Not SFTPModCommands.Contains(Command) Then SFTPModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        SFTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.TextShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for text editor shell...", Command)
-                                        If Not TextEdit_ModCommands.Contains(Command) Then TextEdit_ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        TextEdit_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.TestShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for test shell...", Command)
-                                        If Not Test_ModCommands.Contains(Command) Then Test_ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        TestModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.RemoteDebugShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for remote debug shell...", Command)
-                                        If Not DebugModCmds.Contains(Command) Then DebugModCmds.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        RDebugModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.ZIPShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for ZIP shell...", Command)
-                                        If Not ZipShell_ModCommands.Contains(Command) Then ZipShell_ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        ZipShell_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.RSSShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for RSS shell...", Command)
-                                        If Not RSSModCommands.Contains(Command) Then RSSModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        RSSModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.JsonShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for JSON shell...", Command)
-                                        If Not JsonShell_ModCommands.Contains(Command) Then JsonShell_ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        JsonShell_ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.HTTPShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for HTTP shell...", Command)
-                                        If Not HTTPModCommands.Contains(Command) Then HTTPModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        HTTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                    Case ShellType.HexShell
-                                        Wdbg(DebugLevel.I, "Adding command {0} for hex shell...", Command)
-                                        If Not HexEdit_ModCommands.Contains(Command) Then HexEdit_ModCommands.Add(Command)
-                                        script.Commands.RenameKey(ActualCommand, Command)
-                                        HexEdit_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
-                                End Select
+                                'Now, add the command to the mod list
+                                Wdbg(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString)
+                                If Not ListModCommands(CommandType).ContainsKey(Command) Then ListModCommands(CommandType).Add(Command, script.Commands(ActualCommand))
+                                script.Commands.RenameKey(ActualCommand, Command)
                             End If
                         Next
                     End If

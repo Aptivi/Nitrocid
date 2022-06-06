@@ -28,7 +28,7 @@ Namespace Network.RemoteDebug
                                                                                   {"register", New CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
                                                                                   {"trace", New CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
                                                                                   {"username", New CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", {}, False, 0, New Debug_UsernameCommand)}}
-        Public DebugModCmds As New ArrayList
+        Public DebugModCmds As New Dictionary(Of String, CommandInfo)
 
         ''' <summary>
         ''' Client command parsing.

@@ -21,7 +21,7 @@ Imports KS.TestShell.Commands
 Namespace TestShell
     Module TestShellCommon
 
-        Public Test_ModCommands As New ArrayList
+        Public Test_ModCommands As New Dictionary(Of String, CommandInfo)
         Public ReadOnly Test_Commands As New Dictionary(Of String, CommandInfo) From {{"print", New CommandInfo("print", ShellType.TestShell, "Prints a string to console using color type and line print", {"<Color> <Line> <Message>"}, True, 3, New Test_PrintCommand)},
                                                                                       {"printf", New CommandInfo("printf", ShellType.TestShell, "Prints a string to console using color type and line print with format support", {"<Color> <Line> <Variable1;Variable2;Variable3;...> <Message>"}, True, 4, New Test_PrintFCommand)},
                                                                                       {"printd", New CommandInfo("printd", ShellType.TestShell, "Prints a string to debugger", {"<Message>"}, True, 1, New Test_PrintDCommand)},
