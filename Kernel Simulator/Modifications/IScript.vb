@@ -50,6 +50,7 @@ Namespace Modifications
         ''' </summary>
         ''' <param name="Command">A command.</param>
         ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
+        <Obsolete("Investigate the usage of CommandInfo.CommandBase.Execute instead.")>
         Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
         ''' <summary>
         ''' Code executed when initializing events

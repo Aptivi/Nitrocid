@@ -60,12 +60,20 @@ Namespace Modifications
                 If Script.Commands IsNot Nothing Then
                     'Found commands dictionary! Now, check it for the command
                     If Script.Commands.ContainsKey(parts(0)) Then
+                        'Populate the arguments info and command base variables
+                        Dim ScriptCommandBase As CommandExecutor = Script.Commands(parts(0)).CommandBase
+                        Dim ScriptCommandArgsInfo As New ProvidedCommandArgumentsInfo(cmd, Script.Commands(parts(0)).Type)
+                        Dim ScriptCommandFullArgs() As String = ScriptCommandArgsInfo.FullArgumentsList
+                        Dim ScriptCommandArgs() As String = ScriptCommandArgsInfo.ArgumentsList
+                        Dim ScriptCommandSwitches() As String = ScriptCommandArgsInfo.SwitchesList
+                        Dim ScriptCommandExecutable As Boolean
+
+                        'Check to see if we're in the shell type command.
                         If Script.Commands(parts(0)).Type = ShellType.Shell Then
                             'Command type is of shell. Check the user privileges for restricted commands.
                             If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
-                                'User was authorized to use the command, or the command wasn't strict
-                                Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
-                                Script.PerformCmd(Script.Commands(parts(0)), args)
+                                'User is authorized to use the command, or the command isn't strict
+                                ScriptCommandExecutable = True
                             Else
                                 'User wasn't authorized.
                                 Wdbg(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", CurrentUser.Username, parts(0), ModPart)
@@ -73,8 +81,20 @@ Namespace Modifications
                             End If
                         Else
                             'Command type is not of shell. Execute anyway.
+                            ScriptCommandExecutable = True
+
+                        End If
+
+                        'If the command check went all well without any hiccups, execute the command.
+                        If ScriptCommandExecutable Then
                             Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
-                            Script.PerformCmd(Script.Commands(parts(0)), args)
+                            If ScriptCommandBase IsNot Nothing Then
+                                'Use the modern CommandBase.Execute() command instead of the old PerformCmd
+                                ScriptCommandBase.Execute(args, ScriptCommandFullArgs, ScriptCommandArgs, ScriptCommandSwitches)
+                            Else
+                                'TODO: Remove in API v2.1
+                                Script.PerformCmd(Script.Commands(parts(0)), args)
+                            End If
                         End If
                     End If
                 End If

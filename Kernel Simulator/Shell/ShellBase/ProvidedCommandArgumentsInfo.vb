@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Modifications
+
 Namespace Shell.ShellBase
     Public Class ProvidedCommandArgumentsInfo
 
@@ -53,9 +55,23 @@ Namespace Shell.ShellBase
             Dim Command As String
             Dim RequiredArgumentsProvided As Boolean = True
             Dim ShellCommands As Dictionary(Of String, CommandInfo)
+            Dim ModCommands As New Dictionary(Of String, CommandInfo)
 
             'Change the available commands list according to command type
             ShellCommands = GetCommands(CommandType)
+
+            'Add every command from each mod
+            For Each ModInfo As ModInfo In Mods.Values
+                For Each ModPartInfo As PartInfo In ModInfo.ModParts.Values
+                    If ModPartInfo.PartScript.Commands IsNot Nothing Then
+                        'The mod has commands! Process them.
+                        For Each ModCommandName As String In ModPartInfo.PartScript.Commands.Keys
+                            Dim ModCommandInfo As CommandInfo = ModPartInfo.PartScript.Commands(ModCommandName)
+                            If ModCommandInfo.Type = CommandType Then ModCommands.AddIfNotFound(ModCommandName, ModCommandInfo)
+                        Next
+                    End If
+                Next
+            Next
 
             'Get the index of the first space (Used for step 3)
             Dim index As Integer = CommandText.IndexOf(" ")
@@ -76,10 +92,11 @@ Namespace Shell.ShellBase
             Wdbg(DebugLevel.I, "Finished strArgs: {0}", strArgs)
 
             'Split the arguments with enclosed quotes and set the required boolean variable
+            Dim CommandInfo As CommandInfo = If(ModCommands.ContainsKey(Command), ModCommands(Command), ShellCommands(Command))
             Dim EnclosedArgs As List(Of String) = strArgs.SplitEncloseDoubleQuotes(" ")?.ToList
             If EnclosedArgs IsNot Nothing Then
-                RequiredArgumentsProvided = EnclosedArgs?.Count >= ShellCommands(Command).MinimumArguments
-            ElseIf ShellCommands(Command).ArgumentsRequired And EnclosedArgs Is Nothing Then
+                RequiredArgumentsProvided = EnclosedArgs?.Count >= CommandInfo.MinimumArguments
+            ElseIf CommandInfo.ArgumentsRequired And EnclosedArgs Is Nothing Then
                 RequiredArgumentsProvided = False
             End If
             If EnclosedArgs IsNot Nothing Then Wdbg(DebugLevel.I, "Arguments parsed: " + String.Join(", ", EnclosedArgs))
