@@ -30,9 +30,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowlyPlain(msg As String, Line As Boolean, MsEachLetter As Double, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Format string as needed
                     If Not vars.Length = 0 Then msg = FormatString(msg, vars)
@@ -50,9 +48,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -64,9 +60,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="colorType">A type of colors that will be changed.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
                     SetConsoleColor(colorType)
@@ -81,9 +75,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -96,9 +88,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
                     SetConsoleColor(colorTypeForeground)
@@ -114,9 +104,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -128,9 +116,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
                     Console.ForegroundColor = color
@@ -145,9 +131,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -160,9 +144,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="BackgroundColor">A background color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     Console.BackgroundColor = BackgroundColor
                     Console.ForegroundColor = ForegroundColor
@@ -177,9 +159,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -191,9 +171,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                         SetConsoleColor(color)
@@ -210,9 +188,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -225,9 +201,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="BackgroundColor">A background color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                         SetConsoleColor(ForegroundColor)
@@ -244,9 +218,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
     End Module

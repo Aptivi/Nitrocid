@@ -597,10 +597,6 @@ Namespace Kernel
             CompilerVars.Add("NTFSCorruptionFix")
 #End If
 
-#If NOWRITELOCK Then
-            CompilerVars.Add("NOWRITELOCK")
-#End If
-
 #If SPECIFIER = "DEV" Then
             CompilerVars.Add("SPECIFIER = ""DEV""")
 #ElseIf SPECIFIER = "RC" Then

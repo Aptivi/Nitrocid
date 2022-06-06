@@ -33,9 +33,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of TKey, TValue)(List As Dictionary(Of TKey, TValue), Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -71,9 +69,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -94,9 +90,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="ListValueColor">A value color.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of TKey, TValue)(List As Dictionary(Of TKey, TValue), ListKeyColor As ConsoleColor, ListValueColor As ConsoleColor, Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -132,9 +126,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -155,9 +147,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="ListValueColor">A value color.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of TKey, TValue)(List As Dictionary(Of TKey, TValue), ListKeyColor As Color, ListValueColor As Color, Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -193,9 +183,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 #End Region
 #Region "Enumerables"
@@ -213,9 +201,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of T)(List As IEnumerable(Of T), Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -253,9 +239,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -276,9 +260,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="ListValueColor">A value color.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of T)(List As IEnumerable(Of T), ListKeyColor As ConsoleColor, ListValueColor As ConsoleColor, Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -316,9 +298,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 
         ''' <summary>
@@ -339,9 +319,7 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="ListValueColor">A value color.</param>
         ''' <param name="Wrap">Wraps the output as needed.</param>
         Public Sub WriteList(Of T)(List As IEnumerable(Of T), ListKeyColor As Color, ListValueColor As Color, Wrap As Boolean)
-#If Not NOWRITELOCK Then
             SyncLock WriteLock
-#End If
                 Try
                     'Variables
                     Dim LinesMade As Integer
@@ -379,9 +357,7 @@ Namespace Misc.Writers.ConsoleWriters
                     WStkTrc(ex)
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
-#If Not NOWRITELOCK Then
             End SyncLock
-#End If
         End Sub
 #End Region
     End Module
