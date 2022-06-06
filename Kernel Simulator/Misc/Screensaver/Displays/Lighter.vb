@@ -19,9 +19,167 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module LighterDisplay
+    Public Module LighterDisplay
 
-        Public Lighter As New KernelThread("Lighter screensaver thread", True, AddressOf Lighter_DoWork)
+        Friend Lighter As New KernelThread("Lighter screensaver thread", True, AddressOf Lighter_DoWork)
+        Private _lighter255Colors As Boolean
+        Private _lighterTrueColor As Boolean = True
+        Private _lighterDelay As Integer = 100
+        Private _lighterMaxPositions As Integer = 10
+        Private _lighterBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _lighterMinimumRedColorLevel As Integer = 0
+        Private _lighterMinimumGreenColorLevel As Integer = 0
+        Private _lighterMinimumBlueColorLevel As Integer = 0
+        Private _lighterMinimumColorLevel As Integer = 0
+        Private _lighterMaximumRedColorLevel As Integer = 255
+        Private _lighterMaximumGreenColorLevel As Integer = 255
+        Private _lighterMaximumBlueColorLevel As Integer = 255
+        Private _lighterMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property Lighter255Colors As Boolean
+            Get
+                Return _lighter255Colors
+            End Get
+            Set(value As Boolean)
+                _lighter255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property LighterTrueColor As Boolean
+            Get
+                Return _lighterTrueColor
+            End Get
+            Set(value As Boolean)
+                _lighterTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property LighterDelay As Integer
+            Get
+                Return _lighterDelay
+            End Get
+            Set(value As Integer)
+                _lighterDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] How many positions to write before starting to blacken them?
+        ''' </summary>
+        Public Property LighterMaxPositions As Integer
+            Get
+                Return _lighterMaxPositions
+            End Get
+            Set(value As Integer)
+                _lighterMaxPositions = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] Screensaver background color
+        ''' </summary>
+        Public Property LighterBackgroundColor As String
+            Get
+                Return _lighterBackgroundColor
+            End Get
+            Set(value As String)
+                _lighterBackgroundColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The minimum red color level (true color)
+        ''' </summary>
+        Public Property LighterMinimumRedColorLevel As Integer
+            Get
+                Return _lighterMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The minimum green color level (true color)
+        ''' </summary>
+        Public Property LighterMinimumGreenColorLevel As Integer
+            Get
+                Return _lighterMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property LighterMinimumBlueColorLevel As Integer
+            Get
+                Return _lighterMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property LighterMinimumColorLevel As Integer
+            Get
+                Return _lighterMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The maximum red color level (true color)
+        ''' </summary>
+        Public Property LighterMaximumRedColorLevel As Integer
+            Get
+                Return _lighterMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The maximum green color level (true color)
+        ''' </summary>
+        Public Property LighterMaximumGreenColorLevel As Integer
+            Get
+                Return _lighterMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property LighterMaximumBlueColorLevel As Integer
+            Get
+                Return _lighterMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Lighter] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property LighterMaximumColorLevel As Integer
+            Get
+                Return _lighterMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                _lighterMaximumColorLevel = value
+            End Set
+        End Property
+
 
         ''' <summary>
         ''' Handles the code of Lighter

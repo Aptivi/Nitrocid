@@ -20,9 +20,174 @@ Imports System.Threading
 Imports Extensification.IntegerExts
 
 Namespace Misc.Screensaver.Displays
-    Module FireworksDisplay
+    Public Module FireworksDisplay
 
-        Public Fireworks As New KernelThread("Fireworks screensaver thread", True, AddressOf Fireworks_DoWork)
+        Friend Fireworks As New KernelThread("Fireworks screensaver thread", True, AddressOf Fireworks_DoWork)
+        Private _fireworks255Colors As Boolean
+        Private _fireworksTrueColor As Boolean = True
+        Private _fireworksDelay As Integer = 10
+        Private _fireworksRadius As Integer = 5
+        Private _fireworksMinimumRedColorLevel As Integer = 0
+        Private _fireworksMinimumGreenColorLevel As Integer = 0
+        Private _fireworksMinimumBlueColorLevel As Integer = 0
+        Private _fireworksMinimumColorLevel As Integer = 0
+        Private _fireworksMaximumRedColorLevel As Integer = 255
+        Private _fireworksMaximumGreenColorLevel As Integer = 255
+        Private _fireworksMaximumBlueColorLevel As Integer = 255
+        Private _fireworksMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [Fireworks] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property Fireworks255Colors As Boolean
+            Get
+                Return _fireworks255Colors
+            End Get
+            Set(value As Boolean)
+                _fireworks255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property FireworksTrueColor As Boolean
+            Get
+                Return _fireworksTrueColor
+            End Get
+            Set(value As Boolean)
+                _fireworksTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property FireworksDelay As Integer
+            Get
+                Return _fireworksDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _fireworksDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The radius of the explosion
+        ''' </summary>
+        Public Property FireworksRadius As Integer
+            Get
+                Return _fireworksRadius
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5
+                _fireworksRadius = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FireworksMinimumRedColorLevel As Integer
+            Get
+                Return _fireworksMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FireworksMinimumGreenColorLevel As Integer
+            Get
+                Return _fireworksMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FireworksMinimumBlueColorLevel As Integer
+            Get
+                Return _fireworksMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FireworksMinimumColorLevel As Integer
+            Get
+                Return _fireworksMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_fireworks255Colors Or _fireworksTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _fireworksMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FireworksMaximumRedColorLevel As Integer
+            Get
+                Return _fireworksMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumRedColorLevel Then value = _fireworksMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FireworksMaximumGreenColorLevel As Integer
+            Get
+                Return _fireworksMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumGreenColorLevel Then value = _fireworksMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FireworksMaximumBlueColorLevel As Integer
+            Get
+                Return _fireworksMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumBlueColorLevel Then value = _fireworksMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fireworks] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FireworksMaximumColorLevel As Integer
+            Get
+                Return _fireworksMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_fireworks255Colors Or _fireworksTrueColor, 255, 15)
+                If value <= _fireworksMinimumColorLevel Then value = _fireworksMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _fireworksMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Fireworks

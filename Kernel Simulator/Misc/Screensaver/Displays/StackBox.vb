@@ -20,9 +20,173 @@ Imports System.Threading
 Imports Extensification.IntegerExts
 
 Namespace Misc.Screensaver.Displays
-    Module StackBoxDisplay
+    Public Module StackBoxDisplay
 
-        Public StackBox As New KernelThread("StackBox screensaver thread", True, AddressOf StackBox_DoWork)
+        Friend StackBox As New KernelThread("StackBox screensaver thread", True, AddressOf StackBox_DoWork)
+        Private _stackBox255Colors As Boolean
+        Private _stackBoxTrueColor As Boolean = True
+        Private _stackBoxDelay As Integer = 10
+        Private _stackBoxFill As Boolean = True
+        Private _stackBoxMinimumRedColorLevel As Integer = 0
+        Private _stackBoxMinimumGreenColorLevel As Integer = 0
+        Private _stackBoxMinimumBlueColorLevel As Integer = 0
+        Private _stackBoxMinimumColorLevel As Integer = 0
+        Private _stackBoxMaximumRedColorLevel As Integer = 255
+        Private _stackBoxMaximumGreenColorLevel As Integer = 255
+        Private _stackBoxMaximumBlueColorLevel As Integer = 255
+        Private _stackBoxMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [StackBox] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property StackBox255Colors As Boolean
+            Get
+                Return _stackBox255Colors
+            End Get
+            Set(value As Boolean)
+                _stackBox255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property StackBoxTrueColor As Boolean
+            Get
+                Return _stackBoxTrueColor
+            End Get
+            Set(value As Boolean)
+                _stackBoxTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property StackBoxDelay As Integer
+            Get
+                Return _stackBoxDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _stackBoxDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] Whether to fill in the boxes drawn, or only draw the outline
+        ''' </summary>
+        Public Property StackBoxFill As Boolean
+            Get
+                Return _stackBoxFill
+            End Get
+            Set(value As Boolean)
+                _stackBoxFill = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The minimum red color level (true color)
+        ''' </summary>
+        Public Property StackBoxMinimumRedColorLevel As Integer
+            Get
+                Return _stackBoxMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The minimum green color level (true color)
+        ''' </summary>
+        Public Property StackBoxMinimumGreenColorLevel As Integer
+            Get
+                Return _stackBoxMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property StackBoxMinimumBlueColorLevel As Integer
+            Get
+                Return _stackBoxMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property StackBoxMinimumColorLevel As Integer
+            Get
+                Return _stackBoxMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_stackBox255Colors Or _stackBoxTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _stackBoxMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The maximum red color level (true color)
+        ''' </summary>
+        Public Property StackBoxMaximumRedColorLevel As Integer
+            Get
+                Return _stackBoxMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumRedColorLevel Then value = _stackBoxMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The maximum green color level (true color)
+        ''' </summary>
+        Public Property StackBoxMaximumGreenColorLevel As Integer
+            Get
+                Return _stackBoxMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumGreenColorLevel Then value = _stackBoxMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property StackBoxMaximumBlueColorLevel As Integer
+            Get
+                Return _stackBoxMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumBlueColorLevel Then value = _stackBoxMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [StackBox] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property StackBoxMaximumColorLevel As Integer
+            Get
+                Return _stackBoxMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_stackBox255Colors Or _stackBoxTrueColor, 255, 15)
+                If value <= _stackBoxMinimumColorLevel Then value = _stackBoxMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _stackBoxMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of StackBox

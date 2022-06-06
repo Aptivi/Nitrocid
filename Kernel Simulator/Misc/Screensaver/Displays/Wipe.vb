@@ -19,9 +19,166 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module WipeDisplay
+    Public Module WipeDisplay
 
-        Public Wipe As New KernelThread("Wipe screensaver thread", True, AddressOf Wipe_DoWork)
+        Friend Wipe As New KernelThread("Wipe screensaver thread", True, AddressOf Wipe_DoWork)
+        Private _wipe255Colors As Boolean
+        Private _wipeTrueColor As Boolean = True
+        Private _wipeDelay As Integer = 10
+        Private _wipeWipesNeededToChangeDirection As Integer = 10
+        Private _wipeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _wipeMinimumRedColorLevel As Integer = 0
+        Private _wipeMinimumGreenColorLevel As Integer = 0
+        Private _wipeMinimumBlueColorLevel As Integer = 0
+        Private _wipeMinimumColorLevel As Integer = 0
+        Private _wipeMaximumRedColorLevel As Integer = 255
+        Private _wipeMaximumGreenColorLevel As Integer = 255
+        Private _wipeMaximumBlueColorLevel As Integer = 255
+        Private _wipeMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property Wipe255Colors As Boolean
+            Get
+                Return _wipe255Colors
+            End Get
+            Set(value As Boolean)
+                _wipe255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property WipeTrueColor As Boolean
+            Get
+                Return _wipeTrueColor
+            End Get
+            Set(value As Boolean)
+                _wipeTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property WipeDelay As Integer
+            Get
+                Return _wipeDelay
+            End Get
+            Set(value As Integer)
+                _wipeDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] How many wipes needed to change direction?
+        ''' </summary>
+        Public Property WipeWipesNeededToChangeDirection As Integer
+            Get
+                Return _wipeWipesNeededToChangeDirection
+            End Get
+            Set(value As Integer)
+                _wipeWipesNeededToChangeDirection = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] Screensaver background color
+        ''' </summary>
+        Public Property WipeBackgroundColor As String
+            Get
+                Return _wipeBackgroundColor
+            End Get
+            Set(value As String)
+                _wipeBackgroundColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The minimum red color level (true color)
+        ''' </summary>
+        Public Property WipeMinimumRedColorLevel As Integer
+            Get
+                Return _wipeMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The minimum green color level (true color)
+        ''' </summary>
+        Public Property WipeMinimumGreenColorLevel As Integer
+            Get
+                Return _wipeMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property WipeMinimumBlueColorLevel As Integer
+            Get
+                Return _wipeMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property WipeMinimumColorLevel As Integer
+            Get
+                Return _wipeMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The maximum red color level (true color)
+        ''' </summary>
+        Public Property WipeMaximumRedColorLevel As Integer
+            Get
+                Return _wipeMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The maximum green color level (true color)
+        ''' </summary>
+        Public Property WipeMaximumGreenColorLevel As Integer
+            Get
+                Return _wipeMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property WipeMaximumBlueColorLevel As Integer
+            Get
+                Return _wipeMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Wipe] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property WipeMaximumColorLevel As Integer
+            Get
+                Return _wipeMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                _wipeMaximumColorLevel = value
+            End Set
+        End Property
 
         Sub Wipe_DoWork()
             Try

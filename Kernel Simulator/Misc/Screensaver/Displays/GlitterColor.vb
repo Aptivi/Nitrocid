@@ -19,9 +19,161 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module GlitterColorDisplay
+    Public Module GlitterColorDisplay
 
-        Public GlitterColor As New KernelThread("GlitterColor screensaver thread", True, AddressOf GlitterColor_DoWork)
+        Friend GlitterColor As New KernelThread("GlitterColor screensaver thread", True, AddressOf GlitterColor_DoWork)
+        Private _glitterColor255Colors As Boolean
+        Private _glitterColorTrueColor As Boolean = True
+        Private _glitterColorDelay As Integer = 1
+        Private _glitterColorMinimumRedColorLevel As Integer = 0
+        Private _glitterColorMinimumGreenColorLevel As Integer = 0
+        Private _glitterColorMinimumBlueColorLevel As Integer = 0
+        Private _glitterColorMinimumColorLevel As Integer = 0
+        Private _glitterColorMaximumRedColorLevel As Integer = 255
+        Private _glitterColorMaximumGreenColorLevel As Integer = 255
+        Private _glitterColorMaximumBlueColorLevel As Integer = 255
+        Private _glitterColorMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property GlitterColor255Colors As Boolean
+            Get
+                Return _glitterColor255Colors
+            End Get
+            Set(value As Boolean)
+                _glitterColor255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property GlitterColorTrueColor As Boolean
+            Get
+                Return _glitterColorTrueColor
+            End Get
+            Set(value As Boolean)
+                _glitterColorTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property GlitterColorDelay As Integer
+            Get
+                Return _glitterColorDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1
+                _glitterColorDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The minimum red color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMinimumRedColorLevel As Integer
+            Get
+                Return _glitterColorMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _glitterColorMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The minimum green color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMinimumGreenColorLevel As Integer
+            Get
+                Return _glitterColorMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _glitterColorMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMinimumBlueColorLevel As Integer
+            Get
+                Return _glitterColorMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _glitterColorMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property GlitterColorMinimumColorLevel As Integer
+            Get
+                Return _glitterColorMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_glitterColor255Colors Or _glitterColorTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _glitterColorMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The maximum red color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMaximumRedColorLevel As Integer
+            Get
+                Return _glitterColorMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _glitterColorMinimumRedColorLevel Then value = _glitterColorMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _glitterColorMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The maximum green color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMaximumGreenColorLevel As Integer
+            Get
+                Return _glitterColorMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _glitterColorMinimumGreenColorLevel Then value = _glitterColorMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _glitterColorMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property GlitterColorMaximumBlueColorLevel As Integer
+            Get
+                Return _glitterColorMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _glitterColorMinimumBlueColorLevel Then value = _glitterColorMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _glitterColorMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterColor] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property GlitterColorMaximumColorLevel As Integer
+            Get
+                Return _glitterColorMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_glitterColor255Colors Or _glitterColorTrueColor, 255, 15)
+                If value <= _glitterColorMinimumColorLevel Then value = _glitterColorMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _glitterColorMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Glitter Colors

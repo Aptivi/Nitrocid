@@ -17,9 +17,47 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Misc.Screensaver.Displays
-    Module GlitterMatrixDisplay
+    Public Module GlitterMatrixDisplay
 
-        Public GlitterMatrix As New KernelThread("GlitterMatrix screensaver thread", True, AddressOf GlitterMatrix_DoWork)
+        Friend GlitterMatrix As New KernelThread("GlitterMatrix screensaver thread", True, AddressOf GlitterMatrix_DoWork)
+        Private _glitterMatrixDelay As Integer = 1
+        Private _glitterMatrixBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _glitterMatrixForegroundColor As String = New Color(ConsoleColor.Green).PlainSequence
+
+        ''' <summary>
+        ''' [GlitterMatrix] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property GlitterMatrixDelay As Integer
+            Get
+                Return _glitterMatrixDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1
+                _glitterMatrixDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterMatrix] Screensaver background color
+        ''' </summary>
+        Public Property GlitterMatrixBackgroundColor As String
+            Get
+                Return _glitterMatrixBackgroundColor
+            End Get
+            Set(value As String)
+                _glitterMatrixBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [GlitterMatrix] Screensaver foreground color
+        ''' </summary>
+        Public Property GlitterMatrixForegroundColor As String
+            Get
+                Return _glitterMatrixForegroundColor
+            End Get
+            Set(value As String)
+                _glitterMatrixForegroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Glitter Matrix

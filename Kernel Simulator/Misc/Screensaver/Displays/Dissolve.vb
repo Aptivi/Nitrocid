@@ -19,9 +19,160 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module DissolveDisplay
+    Public Module DissolveDisplay
 
-        Public Dissolve As New KernelThread("Dissolve screensaver thread", True, AddressOf Dissolve_DoWork)
+        Friend Dissolve As New KernelThread("Dissolve screensaver thread", True, AddressOf Dissolve_DoWork)
+        Private _dissolve255Colors As Boolean
+        Private _dissolveTrueColor As Boolean = True
+        Private _dissolveBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _dissolveMinimumRedColorLevel As Integer = 0
+        Private _dissolveMinimumGreenColorLevel As Integer = 0
+        Private _dissolveMinimumBlueColorLevel As Integer = 0
+        Private _dissolveMinimumColorLevel As Integer = 0
+        Private _dissolveMaximumRedColorLevel As Integer = 255
+        Private _dissolveMaximumGreenColorLevel As Integer = 255
+        Private _dissolveMaximumBlueColorLevel As Integer = 255
+        Private _dissolveMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property Dissolve255Colors As Boolean
+            Get
+                Return _dissolve255Colors
+            End Get
+            Set(value As Boolean)
+                _dissolve255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property DissolveTrueColor As Boolean
+            Get
+                Return _dissolveTrueColor
+            End Get
+            Set(value As Boolean)
+                _dissolveTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] Screensaver background color
+        ''' </summary>
+        Public Property DissolveBackgroundColor As String
+            Get
+                Return _dissolveBackgroundColor
+            End Get
+            Set(value As String)
+                _dissolveBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The minimum red color level (true color)
+        ''' </summary>
+        Public Property DissolveMinimumRedColorLevel As Integer
+            Get
+                Return _dissolveMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dissolveMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The minimum green color level (true color)
+        ''' </summary>
+        Public Property DissolveMinimumGreenColorLevel As Integer
+            Get
+                Return _dissolveMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dissolveMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property DissolveMinimumBlueColorLevel As Integer
+            Get
+                Return _dissolveMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dissolveMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property DissolveMinimumColorLevel As Integer
+            Get
+                Return _dissolveMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_dissolve255Colors Or _dissolveTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _dissolveMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The maximum red color level (true color)
+        ''' </summary>
+        Public Property DissolveMaximumRedColorLevel As Integer
+            Get
+                Return _dissolveMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dissolveMinimumRedColorLevel Then value = _dissolveMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _dissolveMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The maximum green color level (true color)
+        ''' </summary>
+        Public Property DissolveMaximumGreenColorLevel As Integer
+            Get
+                Return _dissolveMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dissolveMinimumGreenColorLevel Then value = _dissolveMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _dissolveMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property DissolveMaximumBlueColorLevel As Integer
+            Get
+                Return _dissolveMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dissolveMinimumBlueColorLevel Then value = _dissolveMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _dissolveMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Dissolve] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property DissolveMaximumColorLevel As Integer
+            Get
+                Return _dissolveMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_dissolve255Colors Or _dissolveTrueColor, 255, 15)
+                If value <= _dissolveMinimumColorLevel Then value = _dissolveMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _dissolveMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Dissolve

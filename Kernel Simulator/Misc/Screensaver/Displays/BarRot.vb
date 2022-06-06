@@ -19,9 +19,440 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module BarRotDisplay
+    Public Module BarRotDisplay
 
-        Public BarRot As New KernelThread("BarRot screensaver thread", True, AddressOf BarRot_DoWork)
+        Friend BarRot As New KernelThread("BarRot screensaver thread", True, AddressOf BarRot_DoWork)
+        Private _barRot255Colors As Boolean
+        Private _barRotTrueColor As Boolean = True
+        Private _barRotDelay As Integer = 10
+        Private _barRotNextRampDelay As Integer = 250
+        Private _barRotUpperLeftCornerChar As String = "╔"
+        Private _barRotUpperRightCornerChar As String = "╗"
+        Private _barRotLowerLeftCornerChar As String = "╚"
+        Private _barRotLowerRightCornerChar As String = "╝"
+        Private _barRotUpperFrameChar As String = "═"
+        Private _barRotLowerFrameChar As String = "═"
+        Private _barRotLeftFrameChar As String = "║"
+        Private _barRotRightFrameChar As String = "║"
+        Private _barRotMinimumRedColorLevelStart As Integer = 0
+        Private _barRotMinimumGreenColorLevelStart As Integer = 0
+        Private _barRotMinimumBlueColorLevelStart As Integer = 0
+        Private _barRotMaximumRedColorLevelStart As Integer = 255
+        Private _barRotMaximumGreenColorLevelStart As Integer = 255
+        Private _barRotMaximumBlueColorLevelStart As Integer = 255
+        Private _barRotMinimumRedColorLevelEnd As Integer = 0
+        Private _barRotMinimumGreenColorLevelEnd As Integer = 0
+        Private _barRotMinimumBlueColorLevelEnd As Integer = 0
+        Private _barRotMaximumRedColorLevelEnd As Integer = 255
+        Private _barRotMaximumGreenColorLevelEnd As Integer = 255
+        Private _barRotMaximumBlueColorLevelEnd As Integer = 255
+        Private _barRotUpperLeftCornerColor As String = "192;192;192"
+        Private _barRotUpperRightCornerColor As String = "192;192;192"
+        Private _barRotLowerLeftCornerColor As String = "192;192;192"
+        Private _barRotLowerRightCornerColor As String = "192;192;192"
+        Private _barRotUpperFrameColor As String = "192;192;192"
+        Private _barRotLowerFrameColor As String = "192;192;192"
+        Private _barRotLeftFrameColor As String = "192;192;192"
+        Private _barRotRightFrameColor As String = "192;192;192"
+        Private _barRotUseBorderColors As Boolean
+
+        ''' <summary>
+        ''' [BarRot] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property BarRot255Colors As Boolean
+            Get
+                Return _barRot255Colors
+            End Get
+            Set(value As Boolean)
+                _barRot255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property BarRotTrueColor As Boolean
+            Get
+                Return _barRotTrueColor
+            End Get
+            Set(value As Boolean)
+                _barRotTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property BarRotDelay As Integer
+            Get
+                Return _barRotDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _barRotDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] How many milliseconds to wait before rotting the next ramp's one end?
+        ''' </summary>
+        Public Property BarRotNextRampDelay As Integer
+            Get
+                Return _barRotNextRampDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 250
+                _barRotNextRampDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper left corner character 
+        ''' </summary>
+        Public Property BarRotUpperLeftCornerChar As String
+            Get
+                Return _barRotUpperLeftCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╔"
+                _barRotUpperLeftCornerChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper right corner character 
+        ''' </summary>
+        Public Property BarRotUpperRightCornerChar As String
+            Get
+                Return _barRotUpperRightCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╗"
+                _barRotUpperRightCornerChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower left corner character 
+        ''' </summary>
+        Public Property BarRotLowerLeftCornerChar As String
+            Get
+                Return _barRotLowerLeftCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╚"
+                _barRotLowerLeftCornerChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower right corner character 
+        ''' </summary>
+        Public Property BarRotLowerRightCornerChar As String
+            Get
+                Return _barRotLowerRightCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╝"
+                _barRotLowerRightCornerChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper frame character 
+        ''' </summary>
+        Public Property BarRotUpperFrameChar As String
+            Get
+                Return _barRotUpperFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "═"
+                _barRotUpperFrameChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower frame character 
+        ''' </summary>
+        Public Property BarRotLowerFrameChar As String
+            Get
+                Return _barRotLowerFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "═"
+                _barRotLowerFrameChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Left frame character 
+        ''' </summary>
+        Public Property BarRotLeftFrameChar As String
+            Get
+                Return _barRotLeftFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "║"
+                _barRotLeftFrameChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Right frame character 
+        ''' </summary>
+        Public Property BarRotRightFrameChar As String
+            Get
+                Return _barRotRightFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "║"
+                _barRotRightFrameChar = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum red color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMinimumRedColorLevelStart As Integer
+            Get
+                Return _barRotMinimumRedColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumRedColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum green color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMinimumGreenColorLevelStart As Integer
+            Get
+                Return _barRotMinimumGreenColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumGreenColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum blue color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMinimumBlueColorLevelStart As Integer
+            Get
+                Return _barRotMinimumBlueColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumBlueColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum red color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumRedColorLevelStart As Integer
+            Get
+                Return _barRotMaximumRedColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumRedColorLevelStart Then value = _barRotMinimumRedColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumRedColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum green color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumGreenColorLevelStart As Integer
+            Get
+                Return _barRotMaximumGreenColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumGreenColorLevelStart Then value = _barRotMinimumGreenColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumGreenColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum blue color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumBlueColorLevelStart As Integer
+            Get
+                Return _barRotMaximumBlueColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumBlueColorLevelStart Then value = _barRotMinimumBlueColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumBlueColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum red color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumRedColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumRedColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumRedColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum green color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumGreenColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumGreenColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumGreenColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum blue color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumBlueColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumBlueColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumBlueColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum red color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumRedColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumRedColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumRedColorLevelEnd Then value = _barRotMinimumRedColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumRedColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum green color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumGreenColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumGreenColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumGreenColorLevelEnd Then value = _barRotMinimumGreenColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumGreenColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum blue color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumBlueColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumBlueColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumBlueColorLevelEnd Then value = _barRotMinimumBlueColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumBlueColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper left corner color.
+        ''' </summary>
+        Public Property BarRotUpperLeftCornerColor As String
+            Get
+                Return _barRotUpperLeftCornerColor
+            End Get
+            Set(value As String)
+                _barRotUpperLeftCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper right corner color.
+        ''' </summary>
+        Public Property BarRotUpperRightCornerColor As String
+            Get
+                Return _barRotUpperRightCornerColor
+            End Get
+            Set(value As String)
+                _barRotUpperRightCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower left corner color.
+        ''' </summary>
+        Public Property BarRotLowerLeftCornerColor As String
+            Get
+                Return _barRotLowerLeftCornerColor
+            End Get
+            Set(value As String)
+                _barRotLowerLeftCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower right corner color.
+        ''' </summary>
+        Public Property BarRotLowerRightCornerColor As String
+            Get
+                Return _barRotLowerRightCornerColor
+            End Get
+            Set(value As String)
+                _barRotLowerRightCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper frame color.
+        ''' </summary>
+        Public Property BarRotUpperFrameColor As String
+            Get
+                Return _barRotUpperFrameColor
+            End Get
+            Set(value As String)
+                _barRotUpperFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower frame color.
+        ''' </summary>
+        Public Property BarRotLowerFrameColor As String
+            Get
+                Return _barRotLowerFrameColor
+            End Get
+            Set(value As String)
+                _barRotLowerFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Left frame color.
+        ''' </summary>
+        Public Property BarRotLeftFrameColor As String
+            Get
+                Return _barRotLeftFrameColor
+            End Get
+            Set(value As String)
+                _barRotLeftFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Right frame color.
+        ''' </summary>
+        Public Property BarRotRightFrameColor As String
+            Get
+                Return _barRotRightFrameColor
+            End Get
+            Set(value As String)
+                _barRotRightFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Use the border colors.
+        ''' </summary>
+        Public Property BarRotUseBorderColors As Boolean
+            Get
+                Return _barRotUseBorderColors
+            End Get
+            Set(value As Boolean)
+                _barRotUseBorderColors = value
+            End Set
+        End Property
 
         Sub BarRot_DoWork()
             Try

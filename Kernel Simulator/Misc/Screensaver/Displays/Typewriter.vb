@@ -21,9 +21,99 @@ Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
-    Module TypewriterDisplay
+    Public Module TypewriterDisplay
 
-        Public Typewriter As New KernelThread("Typewriter screensaver thread", True, AddressOf Typewriter_DoWork)
+        Friend Typewriter As New KernelThread("Typewriter screensaver thread", True, AddressOf Typewriter_DoWork)
+        Private _typewriterDelay As Integer = 50
+        Private _typewriterNewScreenDelay As Integer = 3000
+        Private _typewriterWrite As String = "Kernel Simulator"
+        Private _typewriterWritingSpeedMin As Integer = 50
+        Private _typewriterWritingSpeedMax As Integer = 80
+        Private _typewriterShowArrowPos As Boolean = True
+        Private _typewriterTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
+        ''' <summary>
+        ''' [Typewriter] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property TypewriterDelay As Integer
+            Get
+                Return _typewriterDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _typewriterDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
+        Public Property TypewriterNewScreenDelay As Integer
+            Get
+                Return _typewriterNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _typewriterNewScreenDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] Text for Typewriter. Longer is better.
+        ''' </summary>
+        Public Property TypewriterWrite As String
+            Get
+                Return _typewriterWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _typewriterWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] Minimum writing speed in WPM
+        ''' </summary>
+        Public Property TypewriterWritingSpeedMin As Integer
+            Get
+                Return _typewriterWritingSpeedMin
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _typewriterWritingSpeedMin = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] Maximum writing speed in WPM
+        ''' </summary>
+        Public Property TypewriterWritingSpeedMax As Integer
+            Get
+                Return _typewriterWritingSpeedMax
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 80
+                _typewriterWritingSpeedMax = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
+        ''' </summary>
+        Public Property TypewriterShowArrowPos As Boolean
+            Get
+                Return _typewriterShowArrowPos
+            End Get
+            Set(value As Boolean)
+                _typewriterShowArrowPos = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typewriter] Text color
+        ''' </summary>
+        Public Property TypewriterTextColor As String
+            Get
+                Return _typewriterTextColor
+            End Get
+            Set(value As String)
+                _typewriterTextColor = New Color(value).PlainSequence
+            End Set
+        End Property
 
         Sub Typewriter_DoWork()
             Try

@@ -19,9 +19,173 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module FlashColorDisplay
+    Public Module FlashColorDisplay
 
-        Public FlashColor As New KernelThread("FlashColor screensaver thread", True, AddressOf FlashColor_DoWork)
+        Friend FlashColor As New KernelThread("FlashColor screensaver thread", True, AddressOf FlashColor_DoWork)
+        Private _flashColor255Colors As Boolean
+        Private _flashColorTrueColor As Boolean = True
+        Private _flashColorDelay As Integer = 20
+        Private _flashColorBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _flashColorMinimumRedColorLevel As Integer = 0
+        Private _flashColorMinimumGreenColorLevel As Integer = 0
+        Private _flashColorMinimumBlueColorLevel As Integer = 0
+        Private _flashColorMinimumColorLevel As Integer = 0
+        Private _flashColorMaximumRedColorLevel As Integer = 255
+        Private _flashColorMaximumGreenColorLevel As Integer = 255
+        Private _flashColorMaximumBlueColorLevel As Integer = 255
+        Private _flashColorMaximumColorLevel As Integer = 0
+
+        ''' <summary>
+        ''' [FlashColor] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property FlashColor255Colors As Boolean
+            Get
+                Return _flashColor255Colors
+            End Get
+            Set(value As Boolean)
+                _flashColor255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property FlashColorTrueColor As Boolean
+            Get
+                Return _flashColorTrueColor
+            End Get
+            Set(value As Boolean)
+                _flashColorTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property FlashColorDelay As Integer
+            Get
+                Return _flashColorDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 20
+                _flashColorDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] Screensaver background color
+        ''' </summary>
+        Public Property FlashColorBackgroundColor As String
+            Get
+                Return _flashColorBackgroundColor
+            End Get
+            Set(value As String)
+                _flashColorBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FlashColorMinimumRedColorLevel As Integer
+            Get
+                Return _flashColorMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashColorMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FlashColorMinimumGreenColorLevel As Integer
+            Get
+                Return _flashColorMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashColorMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FlashColorMinimumBlueColorLevel As Integer
+            Get
+                Return _flashColorMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashColorMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FlashColorMinimumColorLevel As Integer
+            Get
+                Return _flashColorMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_flashColor255Colors Or _flashColorTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _flashColorMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FlashColorMaximumRedColorLevel As Integer
+            Get
+                Return _flashColorMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashColorMinimumRedColorLevel Then value = _flashColorMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _flashColorMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FlashColorMaximumGreenColorLevel As Integer
+            Get
+                Return _flashColorMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashColorMinimumGreenColorLevel Then value = _flashColorMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _flashColorMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FlashColorMaximumBlueColorLevel As Integer
+            Get
+                Return _flashColorMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashColorMinimumBlueColorLevel Then value = _flashColorMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _flashColorMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashColor] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FlashColorMaximumColorLevel As Integer
+            Get
+                Return _flashColorMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_flashColor255Colors Or _flashColorTrueColor, 255, 15)
+                If value <= _flashColorMinimumColorLevel Then value = _flashColorMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _flashColorMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Flash Colors

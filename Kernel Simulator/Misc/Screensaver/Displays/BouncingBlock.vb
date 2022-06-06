@@ -19,9 +19,185 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module BouncingBlockDisplay
+    Public Module BouncingBlockDisplay
 
-        Public BouncingBlock As New KernelThread("BouncingBlock screensaver thread", True, AddressOf BouncingBlock_DoWork)
+        Friend BouncingBlock As New KernelThread("BouncingBlock screensaver thread", True, AddressOf BouncingBlock_DoWork)
+        Private _bouncingBlock255Colors As Boolean
+        Private _bouncingBlockTrueColor As Boolean = True
+        Private _bouncingBlockDelay As Integer = 10
+        Private _bouncingBlockBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _bouncingBlockForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+        Private _bouncingBlockMinimumRedColorLevel As Integer = 0
+        Private _bouncingBlockMinimumGreenColorLevel As Integer = 0
+        Private _bouncingBlockMinimumBlueColorLevel As Integer = 0
+        Private _bouncingBlockMinimumColorLevel As Integer = 0
+        Private _bouncingBlockMaximumRedColorLevel As Integer = 255
+        Private _bouncingBlockMaximumGreenColorLevel As Integer = 255
+        Private _bouncingBlockMaximumBlueColorLevel As Integer = 255
+        Private _bouncingBlockMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property BouncingBlock255Colors As Boolean
+            Get
+                Return _bouncingBlock255Colors
+            End Get
+            Set(value As Boolean)
+                _bouncingBlock255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property BouncingBlockTrueColor As Boolean
+            Get
+                Return _bouncingBlockTrueColor
+            End Get
+            Set(value As Boolean)
+                _bouncingBlockTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property BouncingBlockDelay As Integer
+            Get
+                Return _bouncingBlockDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _bouncingBlockDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] Screensaver background color
+        ''' </summary>
+        Public Property BouncingBlockBackgroundColor As String
+            Get
+                Return _bouncingBlockBackgroundColor
+            End Get
+            Set(value As String)
+                _bouncingBlockBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] Screensaver foreground color
+        ''' </summary>
+        Public Property BouncingBlockForegroundColor As String
+            Get
+                Return _bouncingBlockForegroundColor
+            End Get
+            Set(value As String)
+                _bouncingBlockForegroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The minimum red color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMinimumRedColorLevel As Integer
+            Get
+                Return _bouncingBlockMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingBlockMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The minimum green color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMinimumGreenColorLevel As Integer
+            Get
+                Return _bouncingBlockMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingBlockMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMinimumBlueColorLevel As Integer
+            Get
+                Return _bouncingBlockMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingBlockMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property BouncingBlockMinimumColorLevel As Integer
+            Get
+                Return _bouncingBlockMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_bouncingBlock255Colors Or _bouncingBlockTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _bouncingBlockMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The maximum red color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMaximumRedColorLevel As Integer
+            Get
+                Return _bouncingBlockMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingBlockMinimumRedColorLevel Then value = _bouncingBlockMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _bouncingBlockMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The maximum green color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMaximumGreenColorLevel As Integer
+            Get
+                Return _bouncingBlockMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingBlockMinimumGreenColorLevel Then value = _bouncingBlockMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _bouncingBlockMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property BouncingBlockMaximumBlueColorLevel As Integer
+            Get
+                Return _bouncingBlockMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingBlockMinimumBlueColorLevel Then value = _bouncingBlockMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _bouncingBlockMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingBlock] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property BouncingBlockMaximumColorLevel As Integer
+            Get
+                Return _bouncingBlockMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_bouncingBlock255Colors Or _bouncingBlockTrueColor, 255, 15)
+                If value <= _bouncingBlockMinimumColorLevel Then value = _bouncingBlockMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _bouncingBlockMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Bouncing Block

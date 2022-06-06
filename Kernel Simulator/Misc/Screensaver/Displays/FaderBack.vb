@@ -19,9 +19,133 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module FaderBackDisplay
+    Public Module FaderBackDisplay
 
-        Public FaderBack As New KernelThread("FaderBack screensaver thread", True, AddressOf FaderBack_DoWork)
+        Friend FaderBack As New KernelThread("FaderBack screensaver thread", True, AddressOf FaderBack_DoWork)
+        Private _faderBackDelay As Integer = 10
+        Private _faderBackFadeOutDelay As Integer = 3000
+        Private _faderBackMaxSteps As Integer = 25
+        Private _faderBackMinimumRedColorLevel As Integer = 0
+        Private _faderBackMinimumGreenColorLevel As Integer = 0
+        Private _faderBackMinimumBlueColorLevel As Integer = 0
+        Private _faderBackMaximumRedColorLevel As Integer = 255
+        Private _faderBackMaximumGreenColorLevel As Integer = 255
+        Private _faderBackMaximumBlueColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [FaderBack] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property FaderBackDelay As Integer
+            Get
+                Return _faderBackDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _faderBackDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] How many milliseconds to wait before fading the text out?
+        ''' </summary>
+        Public Property FaderBackFadeOutDelay As Integer
+            Get
+                Return _faderBackFadeOutDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _faderBackFadeOutDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] How many fade steps to do?
+        ''' </summary>
+        Public Property FaderBackMaxSteps As Integer
+            Get
+                Return _faderBackMaxSteps
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 25
+                _faderBackMaxSteps = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FaderBackMinimumRedColorLevel As Integer
+            Get
+                Return _faderBackMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderBackMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FaderBackMinimumGreenColorLevel As Integer
+            Get
+                Return _faderBackMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderBackMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FaderBackMinimumBlueColorLevel As Integer
+            Get
+                Return _faderBackMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderBackMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FaderBackMaximumRedColorLevel As Integer
+            Get
+                Return _faderBackMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderBackMinimumRedColorLevel Then value = _faderBackMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _faderBackMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FaderBackMaximumGreenColorLevel As Integer
+            Get
+                Return _faderBackMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderBackMinimumGreenColorLevel Then value = _faderBackMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _faderBackMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FaderBack] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FaderBackMaximumBlueColorLevel As Integer
+            Get
+                Return _faderBackMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderBackMinimumBlueColorLevel Then value = _faderBackMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _faderBackMaximumBlueColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of FaderBack

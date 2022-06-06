@@ -19,9 +19,158 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module FaderDisplay
+    Public Module FaderDisplay
 
-        Public Fader As New KernelThread("Fader screensaver thread", True, AddressOf Fader_DoWork)
+        Friend Fader As New KernelThread("Fader screensaver thread", True, AddressOf Fader_DoWork)
+        Private _faderDelay As Integer = 50
+        Private _faderFadeOutDelay As Integer = 3000
+        Private _faderWrite As String = "Kernel Simulator"
+        Private _faderMaxSteps As Integer = 25
+        Private _faderBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _faderMinimumRedColorLevel As Integer = 0
+        Private _faderMinimumGreenColorLevel As Integer = 0
+        Private _faderMinimumBlueColorLevel As Integer = 0
+        Private _faderMaximumRedColorLevel As Integer = 255
+        Private _faderMaximumGreenColorLevel As Integer = 255
+        Private _faderMaximumBlueColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [Fader] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property FaderDelay As Integer
+            Get
+                Return _faderDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _faderDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] How many milliseconds to wait before fading the text out?
+        ''' </summary>
+        Public Property FaderFadeOutDelay As Integer
+            Get
+                Return _faderFadeOutDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _faderFadeOutDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] Text for Fader. Shorter is better.
+        ''' </summary>
+        Public Property FaderWrite As String
+            Get
+                Return _faderWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _faderWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] How many fade steps to do?
+        ''' </summary>
+        Public Property FaderMaxSteps As Integer
+            Get
+                Return _faderMaxSteps
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 25
+                _faderMaxSteps = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] Screensaver background color
+        ''' </summary>
+        Public Property FaderBackgroundColor As String
+            Get
+                Return _faderBackgroundColor
+            End Get
+            Set(value As String)
+                _faderBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FaderMinimumRedColorLevel As Integer
+            Get
+                Return _faderMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FaderMinimumGreenColorLevel As Integer
+            Get
+                Return _faderMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FaderMinimumBlueColorLevel As Integer
+            Get
+                Return _faderMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _faderMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FaderMaximumRedColorLevel As Integer
+            Get
+                Return _faderMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderMinimumRedColorLevel Then value = _faderMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _faderMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FaderMaximumGreenColorLevel As Integer
+            Get
+                Return _faderMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderMinimumGreenColorLevel Then value = _faderMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _faderMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Fader] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FaderMaximumBlueColorLevel As Integer
+            Get
+                Return _faderMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _faderMinimumBlueColorLevel Then value = _faderMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _faderMaximumBlueColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Fader

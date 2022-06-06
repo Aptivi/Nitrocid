@@ -19,9 +19,113 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module TypoDisplay
+    Public Module TypoDisplay
 
-        Public Typo As New KernelThread("Typo screensaver thread", True, AddressOf Typo_DoWork)
+        Friend Typo As New KernelThread("Typo screensaver thread", True, AddressOf Typo_DoWork)
+        Private _typoDelay As Integer = 50
+        Private _typoWriteAgainDelay As Integer = 3000
+        Private _typoWrite As String = "Kernel Simulator"
+        Private _typoWritingSpeedMin As Integer = 50
+        Private _typoWritingSpeedMax As Integer = 80
+        Private _typoMissStrikePossibility As Integer = 20
+        Private _typoMissPossibility As Integer = 10
+        Private _typoTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
+        ''' <summary>
+        ''' [Typo] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property TypoDelay As Integer
+            Get
+                Return _typoDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _typoDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] How many milliseconds to wait before writing the text again?
+        ''' </summary>
+        Public Property TypoWriteAgainDelay As Integer
+            Get
+                Return _typoWriteAgainDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _typoWriteAgainDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Text for Typo. Longer is better.
+        ''' </summary>
+        Public Property TypoWrite As String
+            Get
+                Return _typoWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _typoWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Minimum writing speed in WPM
+        ''' </summary>
+        Public Property TypoWritingSpeedMin As Integer
+            Get
+                Return _typoWritingSpeedMin
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _typoWritingSpeedMin = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Maximum writing speed in WPM
+        ''' </summary>
+        Public Property TypoWritingSpeedMax As Integer
+            Get
+                Return _typoWritingSpeedMax
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 80
+                _typoWritingSpeedMax = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Possibility that the writer made a typo in percent
+        ''' </summary>
+        Public Property TypoMissStrikePossibility As Integer
+            Get
+                Return _typoMissStrikePossibility
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 20
+                _typoMissStrikePossibility = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Possibility that the writer missed a character in percent
+        ''' </summary>
+        Public Property TypoMissPossibility As Integer
+            Get
+                Return _typoMissPossibility
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _typoMissPossibility = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Typo] Text color
+        ''' </summary>
+        Public Property TypoTextColor As String
+            Get
+                Return _typoTextColor
+            End Get
+            Set(value As String)
+                _typoTextColor = New Color(value).PlainSequence
+            End Set
+        End Property
 
         Sub Typo_DoWork()
             Try

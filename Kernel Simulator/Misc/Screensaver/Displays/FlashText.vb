@@ -19,9 +19,185 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module FlashTextDisplay
+    Public Module FlashTextDisplay
 
-        Public FlashText As New KernelThread("FlashText screensaver thread", True, AddressOf FlashText_DoWork)
+        Friend FlashText As New KernelThread("FlashText screensaver thread", True, AddressOf FlashText_DoWork)
+        Private _flashText255Colors As Boolean
+        Private _flashTextTrueColor As Boolean = True
+        Private _flashTextDelay As Integer = 20
+        Private _flashTextWrite As String = "Kernel Simulator"
+        Private _flashTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _flashTextMinimumRedColorLevel As Integer = 0
+        Private _flashTextMinimumGreenColorLevel As Integer = 0
+        Private _flashTextMinimumBlueColorLevel As Integer = 0
+        Private _flashTextMinimumColorLevel As Integer = 0
+        Private _flashTextMaximumRedColorLevel As Integer = 255
+        Private _flashTextMaximumGreenColorLevel As Integer = 255
+        Private _flashTextMaximumBlueColorLevel As Integer = 255
+        Private _flashTextMaximumColorLevel As Integer = 0
+
+        ''' <summary>
+        ''' [FlashText] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property FlashText255Colors As Boolean
+            Get
+                Return _flashText255Colors
+            End Get
+            Set(value As Boolean)
+                _flashText255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property FlashTextTrueColor As Boolean
+            Get
+                Return _flashTextTrueColor
+            End Get
+            Set(value As Boolean)
+                _flashTextTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property FlashTextDelay As Integer
+            Get
+                Return _flashTextDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 20
+                _flashTextDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] Text for FlashText. Shorter is better.
+        ''' </summary>
+        Public Property FlashTextWrite As String
+            Get
+                Return _flashTextWrite
+            End Get
+            Set(value As String)
+                _flashTextWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] Screensaver background color
+        ''' </summary>
+        Public Property FlashTextBackgroundColor As String
+            Get
+                Return _flashTextBackgroundColor
+            End Get
+            Set(value As String)
+                _flashTextBackgroundColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumRedColorLevel As Integer
+            Get
+                Return _flashTextMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashTextMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumGreenColorLevel As Integer
+            Get
+                Return _flashTextMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashTextMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumBlueColorLevel As Integer
+            Get
+                Return _flashTextMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashTextMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FlashTextMinimumColorLevel As Integer
+            Get
+                Return _flashTextMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_flashText255Colors Or _flashTextTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _flashTextMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FlashTextMaximumRedColorLevel As Integer
+            Get
+                Return _flashTextMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashTextMinimumRedColorLevel Then value = _flashTextMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _flashTextMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FlashTextMaximumGreenColorLevel As Integer
+            Get
+                Return _flashTextMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashTextMinimumGreenColorLevel Then value = _flashTextMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _flashTextMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FlashTextMaximumBlueColorLevel As Integer
+            Get
+                Return _flashTextMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _flashTextMinimumBlueColorLevel Then value = _flashTextMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _flashTextMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FlashTextMaximumColorLevel As Integer
+            Get
+                Return _flashTextMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_flashText255Colors Or _flashTextTrueColor, 255, 15)
+                If value <= _flashTextMinimumColorLevel Then value = _flashTextMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _flashTextMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Flash Text

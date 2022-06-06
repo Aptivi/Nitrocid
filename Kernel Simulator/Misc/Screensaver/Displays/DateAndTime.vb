@@ -20,9 +20,161 @@ Imports KS.TimeDate
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module DateAndTimeDisplay
+    Public Module DateAndTimeDisplay
 
-        Public DateAndTime As New KernelThread("DateAndTime screensaver thread", True, AddressOf DateAndTime_DoWork)
+        Friend DateAndTime As New KernelThread("DateAndTime screensaver thread", True, AddressOf DateAndTime_DoWork)
+        Private _dateAndTime255Colors As Boolean
+        Private _dateAndTimeTrueColor As Boolean = True
+        Private _dateAndTimeDelay As Integer = 1000
+        Private _dateAndTimeMinimumRedColorLevel As Integer = 0
+        Private _dateAndTimeMinimumGreenColorLevel As Integer = 0
+        Private _dateAndTimeMinimumBlueColorLevel As Integer = 0
+        Private _dateAndTimeMinimumColorLevel As Integer = 0
+        Private _dateAndTimeMaximumRedColorLevel As Integer = 255
+        Private _dateAndTimeMaximumGreenColorLevel As Integer = 255
+        Private _dateAndTimeMaximumBlueColorLevel As Integer = 255
+        Private _dateAndTimeMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [DateAndTime] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property DateAndTime255Colors As Boolean
+            Get
+                Return _dateAndTime255Colors
+            End Get
+            Set(value As Boolean)
+                _dateAndTime255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property DateAndTimeTrueColor As Boolean
+            Get
+                Return _dateAndTimeTrueColor
+            End Get
+            Set(value As Boolean)
+                _dateAndTimeTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property DateAndTimeDelay As Integer
+            Get
+                Return _dateAndTimeDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1000
+                _dateAndTimeDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The minimum red color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMinimumRedColorLevel As Integer
+            Get
+                Return _dateAndTimeMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dateAndTimeMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The minimum green color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMinimumGreenColorLevel As Integer
+            Get
+                Return _dateAndTimeMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dateAndTimeMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMinimumBlueColorLevel As Integer
+            Get
+                Return _dateAndTimeMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _dateAndTimeMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property DateAndTimeMinimumColorLevel As Integer
+            Get
+                Return _dateAndTimeMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_dateAndTime255Colors Or _dateAndTimeTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _dateAndTimeMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The maximum red color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMaximumRedColorLevel As Integer
+            Get
+                Return _dateAndTimeMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dateAndTimeMinimumRedColorLevel Then value = _dateAndTimeMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _dateAndTimeMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The maximum green color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMaximumGreenColorLevel As Integer
+            Get
+                Return _dateAndTimeMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dateAndTimeMinimumGreenColorLevel Then value = _dateAndTimeMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _dateAndTimeMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property DateAndTimeMaximumBlueColorLevel As Integer
+            Get
+                Return _dateAndTimeMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _dateAndTimeMinimumBlueColorLevel Then value = _dateAndTimeMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _dateAndTimeMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [DateAndTime] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property DateAndTimeMaximumColorLevel As Integer
+            Get
+                Return _dateAndTimeMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_dateAndTime255Colors Or _dateAndTimeTrueColor, 255, 15)
+                If value <= _dateAndTimeMinimumColorLevel Then value = _dateAndTimeMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _dateAndTimeMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Bouncing Text

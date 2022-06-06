@@ -21,9 +21,61 @@ Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
-    Module SpotWriteDisplay
+    Public Module SpotWriteDisplay
 
-        Public SpotWrite As New KernelThread("SpotWrite screensaver thread", True, AddressOf SpotWrite_DoWork)
+        Friend SpotWrite As New KernelThread("SpotWrite screensaver thread", True, AddressOf SpotWrite_DoWork)
+        Private _spotWriteDelay As Integer = 100
+        Private _spotWriteWrite As String = "Kernel Simulator"
+        Private _spotWriteNewScreenDelay As Integer = 3000
+        Private _spotWriteTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
+        ''' <summary>
+        ''' [SpotWrite] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property SpotWriteDelay As Integer
+            Get
+                Return _spotWriteDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 100
+                _spotWriteDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [SpotWrite] Text for SpotWrite. Longer is better.
+        ''' </summary>
+        Public Property SpotWriteWrite As String
+            Get
+                Return _spotWriteWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _spotWriteWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [SpotWrite] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
+        Public Property SpotWriteNewScreenDelay As Integer
+            Get
+                Return _spotWriteNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _spotWriteNewScreenDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [SpotWrite] Text color
+        ''' </summary>
+        Public Property SpotWriteTextColor As String
+            Get
+                Return _spotWriteTextColor
+            End Get
+            Set(value As String)
+                _spotWriteTextColor = New Color(value).PlainSequence
+            End Set
+        End Property
 
         Sub SpotWrite_DoWork()
             Try

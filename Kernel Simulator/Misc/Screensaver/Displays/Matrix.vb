@@ -19,9 +19,23 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module MatrixDisplay
+    Public Module MatrixDisplay
 
-        Public Matrix As New KernelThread("Matrix screensaver thread", True, AddressOf Matrix_DoWork)
+        Friend Matrix As New KernelThread("Matrix screensaver thread", True, AddressOf Matrix_DoWork)
+        Private _matrixDelay As Integer = 1
+
+        ''' <summary>
+        ''' [Matrix] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property MatrixDelay As Integer
+            Get
+                Return _matrixDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1
+                _matrixDelay = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Matrix

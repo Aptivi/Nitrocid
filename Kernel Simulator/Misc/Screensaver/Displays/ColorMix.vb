@@ -19,9 +19,173 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module ColorMixDisplay
+    Public Module ColorMixDisplay
 
-        Public ColorMix As New KernelThread("ColorMix screensaver thread", True, AddressOf ColorMix_DoWork)
+        Friend ColorMix As New KernelThread("ColorMix screensaver thread", True, AddressOf ColorMix_DoWork)
+        Private _colorMix255Colors As Boolean
+        Private _colorMixTrueColor As Boolean = True
+        Private _colorMixDelay As Integer = 1
+        Private _colorMixBackgroundColor As String = New Color(ConsoleColor.Red).PlainSequence
+        Private _colorMixMinimumRedColorLevel As Integer = 0
+        Private _colorMixMinimumGreenColorLevel As Integer = 0
+        Private _colorMixMinimumBlueColorLevel As Integer = 0
+        Private _colorMixMinimumColorLevel As Integer = 0
+        Private _colorMixMaximumRedColorLevel As Integer = 255
+        Private _colorMixMaximumGreenColorLevel As Integer = 255
+        Private _colorMixMaximumBlueColorLevel As Integer = 255
+        Private _colorMixMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [ColorMix] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property ColorMix255Colors As Boolean
+            Get
+                Return _colorMix255Colors
+            End Get
+            Set(value As Boolean)
+                _colorMix255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property ColorMixTrueColor As Boolean
+            Get
+                Return _colorMixTrueColor
+            End Get
+            Set(value As Boolean)
+                _colorMixTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property ColorMixDelay As Integer
+            Get
+                Return _colorMixDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1
+                _colorMixDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] Screensaver background color
+        ''' </summary>
+        Public Property ColorMixBackgroundColor As String
+            Get
+                Return _colorMixBackgroundColor
+            End Get
+            Set(value As String)
+                _colorMixBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The minimum red color level (true color)
+        ''' </summary>
+        Public Property ColorMixMinimumRedColorLevel As Integer
+            Get
+                Return _colorMixMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _colorMixMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The minimum green color level (true color)
+        ''' </summary>
+        Public Property ColorMixMinimumGreenColorLevel As Integer
+            Get
+                Return _colorMixMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _colorMixMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property ColorMixMinimumBlueColorLevel As Integer
+            Get
+                Return _colorMixMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _colorMixMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property ColorMixMinimumColorLevel As Integer
+            Get
+                Return _colorMixMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_colorMix255Colors Or _colorMixTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _colorMixMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The maximum red color level (true color)
+        ''' </summary>
+        Public Property ColorMixMaximumRedColorLevel As Integer
+            Get
+                Return _colorMixMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _colorMixMinimumRedColorLevel Then value = _colorMixMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _colorMixMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The maximum green color level (true color)
+        ''' </summary>
+        Public Property ColorMixMaximumGreenColorLevel As Integer
+            Get
+                Return _colorMixMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _colorMixMinimumGreenColorLevel Then value = _colorMixMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _colorMixMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property ColorMixMaximumBlueColorLevel As Integer
+            Get
+                Return _colorMixMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _colorMixMinimumBlueColorLevel Then value = _colorMixMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _colorMixMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [ColorMix] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property ColorMixMaximumColorLevel As Integer
+            Get
+                Return _colorMixMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_colorMix255Colors Or _colorMixTrueColor, 255, 15)
+                If value <= _colorMixMinimumColorLevel Then value = _colorMixMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _colorMixMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of ColorMix

@@ -19,9 +19,198 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module BouncingTextDisplay
+    Public Module BouncingTextDisplay
 
-        Public BouncingText As New KernelThread("BouncingText screensaver thread", True, AddressOf BouncingText_DoWork)
+        Friend BouncingText As New KernelThread("BouncingText screensaver thread", True, AddressOf BouncingText_DoWork)
+        Private _bouncingText255Colors As Boolean
+        Private _bouncingTextTrueColor As Boolean = True
+        Private _bouncingTextDelay As Integer = 10
+        Private _bouncingTextWrite As String = "Kernel Simulator"
+        Private _bouncingTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _bouncingTextForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+        Private _bouncingTextMinimumRedColorLevel As Integer = 0
+        Private _bouncingTextMinimumGreenColorLevel As Integer = 0
+        Private _bouncingTextMinimumBlueColorLevel As Integer = 0
+        Private _bouncingTextMinimumColorLevel As Integer = 0
+        Private _bouncingTextMaximumRedColorLevel As Integer = 255
+        Private _bouncingTextMaximumGreenColorLevel As Integer = 255
+        Private _bouncingTextMaximumBlueColorLevel As Integer = 255
+        Private _bouncingTextMaximumColorLevel As Integer = 255
+
+        ''' <summary>
+        ''' [BouncingText] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property BouncingText255Colors As Boolean
+            Get
+                Return _bouncingText255Colors
+            End Get
+            Set(value As Boolean)
+                _bouncingText255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property BouncingTextTrueColor As Boolean
+            Get
+                Return _bouncingTextTrueColor
+            End Get
+            Set(value As Boolean)
+                _bouncingTextTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property BouncingTextDelay As Integer
+            Get
+                Return _bouncingTextDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _bouncingTextDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] Text for Bouncing Text. Shorter is better.
+        ''' </summary>
+        Public Property BouncingTextWrite As String
+            Get
+                Return _bouncingTextWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _bouncingTextWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] Screensaver background color
+        ''' </summary>
+        Public Property BouncingTextBackgroundColor As String
+            Get
+                Return _bouncingTextBackgroundColor
+            End Get
+            Set(value As String)
+                _bouncingTextBackgroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] Screensaver foreground color
+        ''' </summary>
+        Public Property BouncingTextForegroundColor As String
+            Get
+                Return _bouncingTextForegroundColor
+            End Get
+            Set(value As String)
+                _bouncingTextForegroundColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The minimum red color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMinimumRedColorLevel As Integer
+            Get
+                Return _bouncingTextMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingTextMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The minimum green color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMinimumGreenColorLevel As Integer
+            Get
+                Return _bouncingTextMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingTextMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMinimumBlueColorLevel As Integer
+            Get
+                Return _bouncingTextMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _bouncingTextMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property BouncingTextMinimumColorLevel As Integer
+            Get
+                Return _bouncingTextMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_bouncingText255Colors Or _bouncingTextTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _bouncingTextMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The maximum red color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMaximumRedColorLevel As Integer
+            Get
+                Return _bouncingTextMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingTextMinimumRedColorLevel Then value = _bouncingTextMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _bouncingTextMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The maximum green color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMaximumGreenColorLevel As Integer
+            Get
+                Return _bouncingTextMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingTextMinimumGreenColorLevel Then value = _bouncingTextMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _bouncingTextMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property BouncingTextMaximumBlueColorLevel As Integer
+            Get
+                Return _bouncingTextMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _bouncingTextMinimumBlueColorLevel Then value = _bouncingTextMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _bouncingTextMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BouncingText] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property BouncingTextMaximumColorLevel As Integer
+            Get
+                Return _bouncingTextMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMaximumLevel As Integer = If(_bouncingText255Colors Or _bouncingTextTrueColor, 255, 15)
+                If value <= _bouncingTextMinimumColorLevel Then value = _bouncingTextMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _bouncingTextMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Bouncing Text

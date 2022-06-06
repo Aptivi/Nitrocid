@@ -21,9 +21,164 @@ Imports System.IO
 Imports System.Text
 
 Namespace Misc.Screensaver.Displays
-    Public Module LinotypoDisplay
+    Friend Module LinotypoDisplay
 
         Friend Linotypo As New KernelThread("Linotypo screensaver thread", True, AddressOf Linotypo_DoWork)
+        Private _linotypoDelay As Integer = 50
+        Private _linotypoNewScreenDelay As Integer = 3000
+        Private _linotypoWrite As String = "Kernel Simulator"
+        Private _linotypoWritingSpeedMin As Integer = 50
+        Private _linotypoWritingSpeedMax As Integer = 80
+        Private _linotypoMissStrikePossibility As Integer = 1
+        Private _linotypoTextColumns As Integer = 3
+        Private _linotypoEtaoinThreshold As Integer = 5
+        Private _linotypoEtaoinCappingPossibility As Integer = 5
+        Private _linotypoEtaoinType As FillType = FillType.EtaoinPattern
+        Private _linotypoMissPossibility As Integer = 10
+        Private _linotypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
+        ''' <summary>
+        ''' [Linotypo] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property LinotypoDelay As Integer
+            Get
+                Return _linotypoDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _linotypoDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
+        Public Property LinotypoNewScreenDelay As Integer
+            Get
+                Return _linotypoNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3000
+                _linotypoNewScreenDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Text for Linotypo. Longer is better.
+        ''' </summary>
+        Public Property LinotypoWrite As String
+            Get
+                Return _linotypoWrite
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _linotypoWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Minimum writing speed in WPM
+        ''' </summary>
+        Public Property LinotypoWritingSpeedMin As Integer
+            Get
+                Return _linotypoWritingSpeedMin
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 50
+                _linotypoWritingSpeedMin = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Maximum writing speed in WPM
+        ''' </summary>
+        Public Property LinotypoWritingSpeedMax As Integer
+            Get
+                Return _linotypoWritingSpeedMax
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 80
+                _linotypoWritingSpeedMax = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Possibility that the writer made a typo in percent
+        ''' </summary>
+        Public Property LinotypoMissStrikePossibility As Integer
+            Get
+                Return _linotypoMissStrikePossibility
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1
+                _linotypoMissStrikePossibility = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] The text columns to be printed.
+        ''' </summary>
+        Public Property LinotypoTextColumns As Integer
+            Get
+                Return _linotypoTextColumns
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 3
+                _linotypoTextColumns = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] How many characters to write before triggering the "line fill"?
+        ''' </summary>
+        Public Property LinotypoEtaoinThreshold As Integer
+            Get
+                Return _linotypoEtaoinThreshold
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5
+                _linotypoEtaoinThreshold = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
+        ''' </summary>
+        Public Property LinotypoEtaoinCappingPossibility As Integer
+            Get
+                Return _linotypoEtaoinCappingPossibility
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5
+                _linotypoEtaoinCappingPossibility = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Line fill pattern type
+        ''' </summary>
+        Public Property LinotypoEtaoinType As FillType
+            Get
+                Return _linotypoEtaoinType
+            End Get
+            Set(value As FillType)
+                _linotypoEtaoinType = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Possibility that the writer missed a character in percent
+        ''' </summary>
+        Public Property LinotypoMissPossibility As Integer
+            Get
+                Return _linotypoMissPossibility
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _linotypoMissPossibility = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Linotypo] Text color
+        ''' </summary>
+        Public Property LinotypoTextColor As String
+            Get
+                Return _linotypoTextColor
+            End Get
+            Set(value As String)
+                _linotypoTextColor = New Color(value).PlainSequence
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Linotypo

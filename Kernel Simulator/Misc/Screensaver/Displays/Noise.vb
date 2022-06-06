@@ -19,9 +19,37 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module NoiseDisplay
+    Public Module NoiseDisplay
 
-        Public Noise As New KernelThread("Noise screensaver thread", True, AddressOf Noise_DoWork)
+        Friend Noise As New KernelThread("Noise screensaver thread", True, AddressOf Noise_DoWork)
+        Private _noiseNewScreenDelay As Integer = 5000
+        Private _noiseDensity As Integer = 40
+
+        ''' <summary>
+        ''' [Noise] How many milliseconds to wait before making the new screen?
+        ''' </summary>
+        Public Property NoiseNewScreenDelay As Integer
+            Get
+                Return _noiseNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5000
+                _noiseNewScreenDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Noise] The noise density in percent
+        ''' </summary>
+        Public Property NoiseDensity As Integer
+            Get
+                Return _noiseDensity
+            End Get
+            Set(value As Integer)
+                If value < 0 Then value = 40
+                If value > 100 Then value = 40
+                _noiseDensity = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Noise

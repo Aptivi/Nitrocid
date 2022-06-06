@@ -20,9 +20,9 @@ Imports System.Threading
 Imports KS.Misc.Screensaver.Customized
 
 Namespace Misc.Screensaver.Displays
-    Public Module CustomDisplay
+    Friend Module CustomDisplay
 
-        Public Custom As New KernelThread("Custom screensaver thread", True, AddressOf Custom_DoWork)
+        Friend Custom As New KernelThread("Custom screensaver thread", True, AddressOf Custom_DoWork)
 
         ''' <summary>
         ''' Handles custom screensaver code

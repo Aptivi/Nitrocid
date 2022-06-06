@@ -19,9 +19,190 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Module MarqueeDisplay
+    Public Module MarqueeDisplay
 
-        Public Marquee As New KernelThread("Marquee screensaver thread", True, AddressOf Marquee_DoWork)
+        Friend Marquee As New KernelThread("Marquee screensaver thread", True, AddressOf Marquee_DoWork)
+        Private _marquee255Colors As Boolean
+        Private _marqueeTrueColor As Boolean = True
+        Private _marqueeDelay As Integer = 10
+        Private _marqueeWrite As String = "Kernel Simulator"
+        Private _marqueeAlwaysCentered As Boolean = True
+        Private _marqueeUseConsoleAPI As Boolean = False
+        Private _marqueeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _marqueeMinimumRedColorLevel As Integer = 0
+        Private _marqueeMinimumGreenColorLevel As Integer = 0
+        Private _marqueeMinimumBlueColorLevel As Integer = 0
+        Private _marqueeMinimumColorLevel As Integer = 0
+        Private _marqueeMaximumRedColorLevel As Integer = 255
+        Private _marqueeMaximumGreenColorLevel As Integer = 255
+        Private _marqueeMaximumBlueColorLevel As Integer = 255
+        Private _marqueeMaximumColorLevel As Integer = 0
+
+        ''' <summary>
+        ''' [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
+        ''' </summary>
+        Public Property Marquee255Colors As Boolean
+            Get
+                Return _marquee255Colors
+            End Get
+            Set(value As Boolean)
+                _marquee255Colors = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
+        Public Property MarqueeTrueColor As Boolean
+            Get
+                Return _marqueeTrueColor
+            End Get
+            Set(value As Boolean)
+                _marqueeTrueColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] How many milliseconds to wait before making the next write?
+        ''' </summary>
+        Public Property MarqueeDelay As Integer
+            Get
+                Return _marqueeDelay
+            End Get
+            Set(value As Integer)
+                _marqueeDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] Text for Marquee. Shorter is better.
+        ''' </summary>
+        Public Property MarqueeWrite As String
+            Get
+                Return _marqueeWrite
+            End Get
+            Set(value As String)
+                _marqueeWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] Whether the text is always on center.
+        ''' </summary>
+        Public Property MarqueeAlwaysCentered As Boolean
+            Get
+                Return _marqueeAlwaysCentered
+            End Get
+            Set(value As Boolean)
+                _marqueeAlwaysCentered = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
+        ''' </summary>
+        Public Property MarqueeUseConsoleAPI As Boolean
+            Get
+                Return _marqueeUseConsoleAPI
+            End Get
+            Set(value As Boolean)
+                _marqueeUseConsoleAPI = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] Screensaver background color
+        ''' </summary>
+        Public Property MarqueeBackgroundColor As String
+            Get
+                Return _marqueeBackgroundColor
+            End Get
+            Set(value As String)
+                _marqueeBackgroundColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The minimum red color level (true color)
+        ''' </summary>
+        Public Property MarqueeMinimumRedColorLevel As Integer
+            Get
+                Return _marqueeMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The minimum green color level (true color)
+        ''' </summary>
+        Public Property MarqueeMinimumGreenColorLevel As Integer
+            Get
+                Return _marqueeMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property MarqueeMinimumBlueColorLevel As Integer
+            Get
+                Return _marqueeMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMinimumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property MarqueeMinimumColorLevel As Integer
+            Get
+                Return _marqueeMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMinimumColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The maximum red color level (true color)
+        ''' </summary>
+        Public Property MarqueeMaximumRedColorLevel As Integer
+            Get
+                Return _marqueeMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMaximumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The maximum green color level (true color)
+        ''' </summary>
+        Public Property MarqueeMaximumGreenColorLevel As Integer
+            Get
+                Return _marqueeMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMaximumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property MarqueeMaximumBlueColorLevel As Integer
+            Get
+                Return _marqueeMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMaximumBlueColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Marquee] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property MarqueeMaximumColorLevel As Integer
+            Get
+                Return _marqueeMaximumColorLevel
+            End Get
+            Set(value As Integer)
+                _marqueeMaximumColorLevel = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of Marquee

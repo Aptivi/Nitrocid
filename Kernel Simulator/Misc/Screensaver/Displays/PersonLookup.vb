@@ -20,9 +20,92 @@ Imports System.Threading
 Imports KS.TimeDate
 
 Namespace Misc.Screensaver.Displays
-    Module PersonLookupDisplay
+    Public Module PersonLookupDisplay
 
-        Public PersonLookup As New KernelThread("PersonLookup screensaver thread", True, AddressOf PersonLookup_DoWork)
+        Friend PersonLookup As New KernelThread("PersonLookup screensaver thread", True, AddressOf PersonLookup_DoWork)
+        Private _personLookupDelay As Integer = 75
+        Private _personLookupLookedUpDelay As Integer = 10000
+        Private _personLookupMinimumNames As Integer = 10
+        Private _personLookupMaximumNames As Integer = 100
+        Private _personLookupMinimumAgeYears As Integer = 18
+        Private _personLookupMaximumAgeYears As Integer = 100
+
+        ''' <summary>
+        ''' [PersonLookup] How many milliseconds to wait before getting the new name?
+        ''' </summary>
+        Public Property PersonLookupDelay As Integer
+            Get
+                Return _personLookupDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 75
+                _personLookupDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [PersonLookup] How many milliseconds to show the looked up name?
+        ''' </summary>
+        Public Property PersonLookupLookedUpDelay As Integer
+            Get
+                Return _personLookupLookedUpDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10000
+                _personLookupLookedUpDelay = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [PersonLookup] Minimum names count
+        ''' </summary>
+        Public Property PersonLookupMinimumNames As Integer
+            Get
+                Return _personLookupMinimumNames
+            End Get
+            Set(value As Integer)
+                If value <= 10 Then value = 10
+                If value > 1000 Then value = 1000
+                _personLookupMinimumNames = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [PersonLookup] Maximum names count
+        ''' </summary>
+        Public Property PersonLookupMaximumNames As Integer
+            Get
+                Return _personLookupMaximumNames
+            End Get
+            Set(value As Integer)
+                If value <= _personLookupMinimumNames Then value = _personLookupMinimumNames
+                If value > 1000 Then value = 1000
+                _personLookupMaximumNames = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [PersonLookup] Minimum age years
+        ''' </summary>
+        Public Property PersonLookupMinimumAgeYears As Integer
+            Get
+                Return _personLookupMinimumAgeYears
+            End Get
+            Set(value As Integer)
+                If value <= 18 Then value = 18
+                If value > 100 Then value = 100
+                _personLookupMinimumAgeYears = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [PersonLookup] Maximum age years
+        ''' </summary>
+        Public Property PersonLookupMaximumAgeYears As Integer
+            Get
+                Return _personLookupMaximumAgeYears
+            End Get
+            Set(value As Integer)
+                If value <= _personLookupMinimumAgeYears Then value = _personLookupMinimumAgeYears
+                If value > 100 Then value = 100
+                _personLookupMaximumAgeYears = value
+            End Set
+        End Property
 
         ''' <summary>
         ''' Handles the code of PersonLookup

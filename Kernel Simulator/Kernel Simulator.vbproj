@@ -395,7 +395,6 @@
     <Compile Include="Misc\Screensaver\ICustomSaver.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverInfo.vb" />
-    <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Splash\ISplash.vb" />
     <Compile Include="Misc\Splash\Splashes\Blank.vb" />
     <Compile Include="Misc\Splash\Splashes\Progress.vb" />
