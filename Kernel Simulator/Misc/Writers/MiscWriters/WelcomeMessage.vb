@@ -61,7 +61,7 @@ Namespace Misc.Writers.MiscWriters
                 End If
 
                 If NewWelcomeStyle Then
-                    Write(NewLine + NewLine + GetFigletFont(BannerFigletFont).Render($"KS v{KernelVersion}"), True, ColTypes.Neutral)
+                    Write(NewLine + NewLine + GetFigletFont(BannerFigletFont).Render($"{KernelVersion}"), True, ColTypes.Neutral)
                 Else
                     'Show license
                     WriteLicense(True)
