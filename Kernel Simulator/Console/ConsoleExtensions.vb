@@ -84,22 +84,28 @@ Namespace ConsoleBase
             'Second, filter all text from the VT escape sequences
             Text = FilterVTSequences(Text)
 
-            'Third, print the text, return to the old position, and return the filtered positions
+            'Third, seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
             Text = FormatString(Text, Vars)
+            Text = Text.Replace(Convert.ToChar(13), "")
             Dim LeftSeekPosition As Integer = OldLeft
             Dim TopSeekPosition As Integer = OldTop
             For i As Integer = 1 To Text.Length
-                'Simulate seeking through text
-                LeftSeekPosition += 1
-                If LeftSeekPosition >= Console.WindowWidth Then
-                    'We've reached end of line
-                    LeftSeekPosition = 0
-
-                    'Get down by one line
+                'If we spotted a new line character, get down by one line.
+                If Text(i - 1) = Convert.ToChar(10) And TopSeekPosition < Console.BufferHeight - 1 Then
                     TopSeekPosition += 1
-                    If TopSeekPosition > Console.BufferHeight - 1 Then
-                        'We're at the end of buffer! Decrement by one.
-                        TopSeekPosition -= 1
+                ElseIf Text(i - 1) <> Convert.ToChar(10) Then
+                    'Simulate seeking through text
+                    LeftSeekPosition += 1
+                    If LeftSeekPosition >= Console.WindowWidth Then
+                        'We've reached end of line
+                        LeftSeekPosition = 0
+
+                        'Get down by one line
+                        TopSeekPosition += 1
+                        If TopSeekPosition > Console.BufferHeight - 1 Then
+                            'We're at the end of buffer! Decrement by one.
+                            TopSeekPosition -= 1
+                        End If
                     End If
                 End If
             Next
