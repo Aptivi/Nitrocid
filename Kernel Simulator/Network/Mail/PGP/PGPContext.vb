@@ -35,7 +35,6 @@ Namespace Network.Mail.PGP
                 Write(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
             End If
             Dim Password As String = ReadLineNoInput()
-            Console.WriteLine()
             Return Password
         End Function
     End Class

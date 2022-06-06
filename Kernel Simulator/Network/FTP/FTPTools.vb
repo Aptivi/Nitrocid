@@ -53,7 +53,6 @@ Namespace Network.FTP
 
             'Get input
             FtpPass = ReadLineNoInput()
-            Console.WriteLine()
 
             'Set up credentials
             ClientFTP.Credentials = New NetworkCredential(user, FtpPass)

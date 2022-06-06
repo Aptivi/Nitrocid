@@ -38,7 +38,6 @@ Namespace Shell.Commands
                     Write(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
                     APIKey = ReadLineNoInput()
                     Forecast.ApiKey = APIKey
-                    Console.WriteLine()
                 End If
                 PrintWeatherInfo(ListArgsOnly(0), APIKey)
             End If

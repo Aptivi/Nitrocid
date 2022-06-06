@@ -36,7 +36,6 @@ Namespace Shell.Commands
                                 Credentials.UserName = ListArgs(1)
                                 Write(DoTranslation("Enter password: "), False, ColTypes.Input)
                                 Credentials.Password = ReadLineNoInput()
-                                Console.WriteLine()
                             End If
                             Write(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
                             If DownloadFile(ListArgs(0), Credentials) Then

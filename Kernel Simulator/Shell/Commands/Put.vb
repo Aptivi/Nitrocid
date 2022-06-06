@@ -37,7 +37,6 @@ Namespace Shell.Commands
                                 Credentials.UserName = ListArgs(2)
                                 Write(DoTranslation("Enter password: "), False, ColTypes.Input)
                                 Credentials.Password = ReadLineNoInput()
-                                Console.WriteLine()
                             End If
                             Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
                             If UploadFile(FileName, URL, Credentials) Then

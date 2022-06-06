@@ -194,7 +194,6 @@ Namespace Login
 
                     'Get input
                     Dim answerpass As String = ReadLineNoInput()
-                    Console.WriteLine()
 
                     'Compute password hash
                     Wdbg(DebugLevel.I, "Computing written password hash...")
