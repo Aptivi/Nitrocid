@@ -21,6 +21,7 @@ Imports KS.Misc.Screensaver.Displays
 Namespace Misc.Screensaver
     Public Module ScreensaverSettings
 
+        'TODO: This module is too fat! Move the settings to their own <saver>Display module, publicizing them in the process.
         '-> ColorMix
         Private _colorMix255Colors As Boolean
         Private _colorMixTrueColor As Boolean = True
@@ -188,63 +189,24 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Disco
+        Private _disco255Colors As Boolean
+        Private _discoTrueColor As Boolean = True
+        Private _discoCycleColors As Boolean
+        Private _discoDelay As Integer = 100
+        Private _discoUseBeatsPerMinute As Boolean
+        Private _discoEnableFedMode As Boolean
+        Private _discoMinimumRedColorLevel As Integer = 0
+        Private _discoMinimumGreenColorLevel As Integer = 0
+        Private _discoMinimumBlueColorLevel As Integer = 0
+        Private _discoMinimumColorLevel As Integer = 0
+        Private _discoMaximumRedColorLevel As Integer = 255
+        Private _discoMaximumGreenColorLevel As Integer = 255
+        Private _discoMaximumBlueColorLevel As Integer = 255
+        Private _discoMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Disco] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _disco255Colors As Boolean
-        ''' <summary>
-        ''' [Disco] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _discoTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Disco] Enable color cycling
-        ''' </summary>
-        Private _discoCycleColors As Boolean
-        ''' <summary>
-        ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
-        ''' </summary>
-        Private _discoDelay As Integer = 100
-        ''' <summary>
-        ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
-        ''' </summary>
-        Private _discoUseBeatsPerMinute As Boolean
-        ''' <summary>
-        ''' [Disco] Uses the black and white cycle to produce the same effect as the legacy "fed" screensaver introduced back in v0.0.1
-        ''' </summary>
-        Private _discoEnableFedMode As Boolean
-        ''' <summary>
-        ''' [Disco] The minimum red color level (true color)
-        ''' </summary>
-        Private _discoMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Disco] The minimum green color level (true color)
-        ''' </summary>
-        Private _discoMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Disco] The minimum blue color level (true color)
-        ''' </summary>
-        Private _discoMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Disco] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _discoMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Disco] The maximum red color level (true color)
-        ''' </summary>
-        Private _discoMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Disco] The maximum green color level (true color)
-        ''' </summary>
-        Private _discoMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Disco] The maximum blue color level (true color)
-        ''' </summary>
-        Private _discoMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Disco] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _discoMaximumColorLevel As Integer = 255
-
         Public Property Disco255Colors As Boolean
             Get
                 Return _disco255Colors
@@ -253,7 +215,9 @@ Namespace Misc.Screensaver
                 _disco255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property DiscoTrueColor As Boolean
             Get
                 Return _discoTrueColor
@@ -262,7 +226,9 @@ Namespace Misc.Screensaver
                 _discoTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] Enable color cycling
+        ''' </summary>
         Public Property DiscoCycleColors As Boolean
             Get
                 Return _discoCycleColors
@@ -271,7 +237,9 @@ Namespace Misc.Screensaver
                 _discoCycleColors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
+        ''' </summary>
         Public Property DiscoDelay As Integer
             Get
                 Return _discoDelay
@@ -281,7 +249,9 @@ Namespace Misc.Screensaver
                 _discoDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
+        ''' </summary>
         Public Property DiscoUseBeatsPerMinute As Boolean
             Get
                 Return _discoUseBeatsPerMinute
@@ -290,7 +260,9 @@ Namespace Misc.Screensaver
                 _discoUseBeatsPerMinute = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] Uses the black and white cycle to produce the same effect as the legacy "fed" screensaver introduced back in v0.0.1
+        ''' </summary>
         Public Property DiscoEnableFedMode As Boolean
             Get
                 Return _discoEnableFedMode
@@ -299,7 +271,9 @@ Namespace Misc.Screensaver
                 _discoEnableFedMode = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The minimum red color level (true color)
+        ''' </summary>
         Public Property DiscoMinimumRedColorLevel As Integer
             Get
                 Return _discoMinimumRedColorLevel
@@ -310,7 +284,9 @@ Namespace Misc.Screensaver
                 _discoMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The minimum green color level (true color)
+        ''' </summary>
         Public Property DiscoMinimumGreenColorLevel As Integer
             Get
                 Return _discoMinimumGreenColorLevel
@@ -321,7 +297,9 @@ Namespace Misc.Screensaver
                 _discoMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The minimum blue color level (true color)
+        ''' </summary>
         Public Property DiscoMinimumBlueColorLevel As Integer
             Get
                 Return _discoMinimumBlueColorLevel
@@ -332,7 +310,9 @@ Namespace Misc.Screensaver
                 _discoMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property DiscoMinimumColorLevel As Integer
             Get
                 Return _discoMinimumColorLevel
@@ -344,7 +324,9 @@ Namespace Misc.Screensaver
                 _discoMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The maximum red color level (true color)
+        ''' </summary>
         Public Property DiscoMaximumRedColorLevel As Integer
             Get
                 Return _discoMaximumRedColorLevel
@@ -355,7 +337,9 @@ Namespace Misc.Screensaver
                 _discoMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The maximum green color level (true color)
+        ''' </summary>
         Public Property DiscoMaximumGreenColorLevel As Integer
             Get
                 Return _discoMaximumGreenColorLevel
@@ -366,7 +350,9 @@ Namespace Misc.Screensaver
                 _discoMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The maximum blue color level (true color)
+        ''' </summary>
         Public Property DiscoMaximumBlueColorLevel As Integer
             Get
                 Return _discoMaximumBlueColorLevel
@@ -377,7 +363,9 @@ Namespace Misc.Screensaver
                 _discoMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Disco] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property DiscoMaximumColorLevel As Integer
             Get
                 Return _discoMaximumColorLevel
@@ -391,51 +379,21 @@ Namespace Misc.Screensaver
         End Property
 
         '-> GlitterColor
+        Private _glitterColor255Colors As Boolean
+        Private _glitterColorTrueColor As Boolean = True
+        Private _glitterColorDelay As Integer = 1
+        Private _glitterColorMinimumRedColorLevel As Integer = 0
+        Private _glitterColorMinimumGreenColorLevel As Integer = 0
+        Private _glitterColorMinimumBlueColorLevel As Integer = 0
+        Private _glitterColorMinimumColorLevel As Integer = 0
+        Private _glitterColorMaximumRedColorLevel As Integer = 255
+        Private _glitterColorMaximumGreenColorLevel As Integer = 255
+        Private _glitterColorMaximumBlueColorLevel As Integer = 255
+        Private _glitterColorMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _glitterColor255Colors As Boolean
-        ''' <summary>
-        ''' [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _glitterColorTrueColor As Boolean = True
-        ''' <summary>
-        ''' [GlitterColor] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _glitterColorDelay As Integer = 1
-        ''' <summary>
-        ''' [GlitterColor] The minimum red color level (true color)
-        ''' </summary>
-        Private _glitterColorMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [GlitterColor] The minimum green color level (true color)
-        ''' </summary>
-        Private _glitterColorMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [GlitterColor] The minimum blue color level (true color)
-        ''' </summary>
-        Private _glitterColorMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [GlitterColor] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _glitterColorMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [GlitterColor] The maximum red color level (true color)
-        ''' </summary>
-        Private _glitterColorMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [GlitterColor] The maximum green color level (true color)
-        ''' </summary>
-        Private _glitterColorMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [GlitterColor] The maximum blue color level (true color)
-        ''' </summary>
-        Private _glitterColorMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [GlitterColor] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _glitterColorMaximumColorLevel As Integer = 255
-
         Public Property GlitterColor255Colors As Boolean
             Get
                 Return _glitterColor255Colors
@@ -444,7 +402,9 @@ Namespace Misc.Screensaver
                 _glitterColor255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property GlitterColorTrueColor As Boolean
             Get
                 Return _glitterColorTrueColor
@@ -453,7 +413,9 @@ Namespace Misc.Screensaver
                 _glitterColorTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property GlitterColorDelay As Integer
             Get
                 Return _glitterColorDelay
@@ -463,7 +425,9 @@ Namespace Misc.Screensaver
                 _glitterColorDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The minimum red color level (true color)
+        ''' </summary>
         Public Property GlitterColorMinimumRedColorLevel As Integer
             Get
                 Return _glitterColorMinimumRedColorLevel
@@ -474,7 +438,9 @@ Namespace Misc.Screensaver
                 _glitterColorMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The minimum green color level (true color)
+        ''' </summary>
         Public Property GlitterColorMinimumGreenColorLevel As Integer
             Get
                 Return _glitterColorMinimumGreenColorLevel
@@ -485,7 +451,9 @@ Namespace Misc.Screensaver
                 _glitterColorMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The minimum blue color level (true color)
+        ''' </summary>
         Public Property GlitterColorMinimumBlueColorLevel As Integer
             Get
                 Return _glitterColorMinimumBlueColorLevel
@@ -496,7 +464,9 @@ Namespace Misc.Screensaver
                 _glitterColorMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property GlitterColorMinimumColorLevel As Integer
             Get
                 Return _glitterColorMinimumColorLevel
@@ -508,7 +478,9 @@ Namespace Misc.Screensaver
                 _glitterColorMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The maximum red color level (true color)
+        ''' </summary>
         Public Property GlitterColorMaximumRedColorLevel As Integer
             Get
                 Return _glitterColorMaximumRedColorLevel
@@ -519,7 +491,9 @@ Namespace Misc.Screensaver
                 _glitterColorMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The maximum green color level (true color)
+        ''' </summary>
         Public Property GlitterColorMaximumGreenColorLevel As Integer
             Get
                 Return _glitterColorMaximumGreenColorLevel
@@ -530,7 +504,9 @@ Namespace Misc.Screensaver
                 _glitterColorMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The maximum blue color level (true color)
+        ''' </summary>
         Public Property GlitterColorMaximumBlueColorLevel As Integer
             Get
                 Return _glitterColorMaximumBlueColorLevel
@@ -541,7 +517,9 @@ Namespace Misc.Screensaver
                 _glitterColorMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterColor] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property GlitterColorMaximumColorLevel As Integer
             Get
                 Return _glitterColorMaximumColorLevel
@@ -555,59 +533,23 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Lines
+        Private _lines255Colors As Boolean
+        Private _linesTrueColor As Boolean = True
+        Private _linesDelay As Integer = 500
+        Private _linesLineChar As String = "-"
+        Private _linesBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _linesMinimumRedColorLevel As Integer = 0
+        Private _linesMinimumGreenColorLevel As Integer = 0
+        Private _linesMinimumBlueColorLevel As Integer = 0
+        Private _linesMinimumColorLevel As Integer = 0
+        Private _linesMaximumRedColorLevel As Integer = 255
+        Private _linesMaximumGreenColorLevel As Integer = 255
+        Private _linesMaximumBlueColorLevel As Integer = 255
+        Private _linesMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Lines] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _lines255Colors As Boolean
-        ''' <summary>
-        ''' [Lines] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _linesTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Lines] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _linesDelay As Integer = 500
-        ''' <summary>
-        ''' [Lines] Line character
-        ''' </summary>
-        Private _linesLineChar As String = "-"
-        ''' <summary>
-        ''' [Lines] Screensaver background color
-        ''' </summary>
-        Private _linesBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Lines] The minimum red color level (true color)
-        ''' </summary>
-        Private _linesMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lines] The minimum green color level (true color)
-        ''' </summary>
-        Private _linesMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lines] The minimum blue color level (true color)
-        ''' </summary>
-        Private _linesMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lines] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _linesMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lines] The maximum red color level (true color)
-        ''' </summary>
-        Private _linesMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lines] The maximum green color level (true color)
-        ''' </summary>
-        Private _linesMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lines] The maximum blue color level (true color)
-        ''' </summary>
-        Private _linesMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lines] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _linesMaximumColorLevel As Integer = 255
-
         Public Property Lines255Colors As Boolean
             Get
                 Return _lines255Colors
@@ -616,7 +558,9 @@ Namespace Misc.Screensaver
                 _lines255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property LinesTrueColor As Boolean
             Get
                 Return _linesTrueColor
@@ -625,7 +569,9 @@ Namespace Misc.Screensaver
                 _linesTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property LinesDelay As Integer
             Get
                 Return _linesDelay
@@ -635,7 +581,9 @@ Namespace Misc.Screensaver
                 _linesDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] Line character
+        ''' </summary>
         Public Property LinesLineChar As String
             Get
                 Return _linesLineChar
@@ -645,7 +593,9 @@ Namespace Misc.Screensaver
                 _linesLineChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] Screensaver background color
+        ''' </summary>
         Public Property LinesBackgroundColor As String
             Get
                 Return _linesBackgroundColor
@@ -654,7 +604,9 @@ Namespace Misc.Screensaver
                 _linesBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The minimum red color level (true color)
+        ''' </summary>
         Public Property LinesMinimumRedColorLevel As Integer
             Get
                 Return _linesMinimumRedColorLevel
@@ -665,7 +617,9 @@ Namespace Misc.Screensaver
                 _linesMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The minimum green color level (true color)
+        ''' </summary>
         Public Property LinesMinimumGreenColorLevel As Integer
             Get
                 Return _linesMinimumGreenColorLevel
@@ -676,7 +630,9 @@ Namespace Misc.Screensaver
                 _linesMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The minimum blue color level (true color)
+        ''' </summary>
         Public Property LinesMinimumBlueColorLevel As Integer
             Get
                 Return _linesMinimumBlueColorLevel
@@ -687,7 +643,9 @@ Namespace Misc.Screensaver
                 _linesMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property LinesMinimumColorLevel As Integer
             Get
                 Return _linesMinimumColorLevel
@@ -699,7 +657,9 @@ Namespace Misc.Screensaver
                 _linesMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The maximum red color level (true color)
+        ''' </summary>
         Public Property LinesMaximumRedColorLevel As Integer
             Get
                 Return _linesMaximumRedColorLevel
@@ -710,7 +670,9 @@ Namespace Misc.Screensaver
                 _linesMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The maximum green color level (true color)
+        ''' </summary>
         Public Property LinesMaximumGreenColorLevel As Integer
             Get
                 Return _linesMaximumGreenColorLevel
@@ -721,7 +683,9 @@ Namespace Misc.Screensaver
                 _linesMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The maximum blue color level (true color)
+        ''' </summary>
         Public Property LinesMaximumBlueColorLevel As Integer
             Get
                 Return _linesMaximumBlueColorLevel
@@ -732,7 +696,9 @@ Namespace Misc.Screensaver
                 _linesMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lines] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property LinesMaximumColorLevel As Integer
             Get
                 Return _linesMaximumColorLevel
@@ -746,51 +712,21 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Dissolve
+        Private _dissolve255Colors As Boolean
+        Private _dissolveTrueColor As Boolean = True
+        Private _dissolveBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _dissolveMinimumRedColorLevel As Integer = 0
+        Private _dissolveMinimumGreenColorLevel As Integer = 0
+        Private _dissolveMinimumBlueColorLevel As Integer = 0
+        Private _dissolveMinimumColorLevel As Integer = 0
+        Private _dissolveMaximumRedColorLevel As Integer = 255
+        Private _dissolveMaximumGreenColorLevel As Integer = 255
+        Private _dissolveMaximumBlueColorLevel As Integer = 255
+        Private _dissolveMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _dissolve255Colors As Boolean
-        ''' <summary>
-        ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _dissolveTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Dissolve] Screensaver background color
-        ''' </summary>
-        Private _dissolveBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Dissolve] The minimum red color level (true color)
-        ''' </summary>
-        Private _dissolveMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Dissolve] The minimum green color level (true color)
-        ''' </summary>
-        Private _dissolveMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Dissolve] The minimum blue color level (true color)
-        ''' </summary>
-        Private _dissolveMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Dissolve] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _dissolveMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Dissolve] The maximum red color level (true color)
-        ''' </summary>
-        Private _dissolveMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Dissolve] The maximum green color level (true color)
-        ''' </summary>
-        Private _dissolveMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Dissolve] The maximum blue color level (true color)
-        ''' </summary>
-        Private _dissolveMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Dissolve] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _dissolveMaximumColorLevel As Integer = 255
-
         Public Property Dissolve255Colors As Boolean
             Get
                 Return _dissolve255Colors
@@ -799,7 +735,9 @@ Namespace Misc.Screensaver
                 _dissolve255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property DissolveTrueColor As Boolean
             Get
                 Return _dissolveTrueColor
@@ -808,7 +746,9 @@ Namespace Misc.Screensaver
                 _dissolveTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] Screensaver background color
+        ''' </summary>
         Public Property DissolveBackgroundColor As String
             Get
                 Return _dissolveBackgroundColor
@@ -817,7 +757,9 @@ Namespace Misc.Screensaver
                 _dissolveBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The minimum red color level (true color)
+        ''' </summary>
         Public Property DissolveMinimumRedColorLevel As Integer
             Get
                 Return _dissolveMinimumRedColorLevel
@@ -828,7 +770,9 @@ Namespace Misc.Screensaver
                 _dissolveMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The minimum green color level (true color)
+        ''' </summary>
         Public Property DissolveMinimumGreenColorLevel As Integer
             Get
                 Return _dissolveMinimumGreenColorLevel
@@ -839,7 +783,9 @@ Namespace Misc.Screensaver
                 _dissolveMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The minimum blue color level (true color)
+        ''' </summary>
         Public Property DissolveMinimumBlueColorLevel As Integer
             Get
                 Return _dissolveMinimumBlueColorLevel
@@ -850,7 +796,9 @@ Namespace Misc.Screensaver
                 _dissolveMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property DissolveMinimumColorLevel As Integer
             Get
                 Return _dissolveMinimumColorLevel
@@ -862,7 +810,9 @@ Namespace Misc.Screensaver
                 _dissolveMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The maximum red color level (true color)
+        ''' </summary>
         Public Property DissolveMaximumRedColorLevel As Integer
             Get
                 Return _dissolveMaximumRedColorLevel
@@ -873,7 +823,9 @@ Namespace Misc.Screensaver
                 _dissolveMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The maximum green color level (true color)
+        ''' </summary>
         Public Property DissolveMaximumGreenColorLevel As Integer
             Get
                 Return _dissolveMaximumGreenColorLevel
@@ -884,7 +836,9 @@ Namespace Misc.Screensaver
                 _dissolveMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The maximum blue color level (true color)
+        ''' </summary>
         Public Property DissolveMaximumBlueColorLevel As Integer
             Get
                 Return _dissolveMaximumBlueColorLevel
@@ -895,7 +849,9 @@ Namespace Misc.Screensaver
                 _dissolveMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Dissolve] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property DissolveMaximumColorLevel As Integer
             Get
                 Return _dissolveMaximumColorLevel
@@ -909,59 +865,23 @@ Namespace Misc.Screensaver
         End Property
 
         '-> BouncingBlock
+        Private _bouncingBlock255Colors As Boolean
+        Private _bouncingBlockTrueColor As Boolean = True
+        Private _bouncingBlockDelay As Integer = 10
+        Private _bouncingBlockBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _bouncingBlockForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+        Private _bouncingBlockMinimumRedColorLevel As Integer = 0
+        Private _bouncingBlockMinimumGreenColorLevel As Integer = 0
+        Private _bouncingBlockMinimumBlueColorLevel As Integer = 0
+        Private _bouncingBlockMinimumColorLevel As Integer = 0
+        Private _bouncingBlockMaximumRedColorLevel As Integer = 255
+        Private _bouncingBlockMaximumGreenColorLevel As Integer = 255
+        Private _bouncingBlockMaximumBlueColorLevel As Integer = 255
+        Private _bouncingBlockMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _bouncingBlock255Colors As Boolean
-        ''' <summary>
-        ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _bouncingBlockTrueColor As Boolean = True
-        ''' <summary>
-        ''' [BouncingBlock] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _bouncingBlockDelay As Integer = 10
-        ''' <summary>
-        ''' [BouncingBlock] Screensaver background color
-        ''' </summary>
-        Private _bouncingBlockBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [BouncingBlock] Screensaver foreground color
-        ''' </summary>
-        Private _bouncingBlockForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
-        ''' <summary>
-        ''' [BouncingBlock] The minimum red color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingBlock] The minimum green color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingBlock] The minimum blue color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingBlock] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _bouncingBlockMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingBlock] The maximum red color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingBlock] The maximum green color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingBlock] The maximum blue color level (true color)
-        ''' </summary>
-        Private _bouncingBlockMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingBlock] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _bouncingBlockMaximumColorLevel As Integer = 255
-
         Public Property BouncingBlock255Colors As Boolean
             Get
                 Return _bouncingBlock255Colors
@@ -970,7 +890,9 @@ Namespace Misc.Screensaver
                 _bouncingBlock255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property BouncingBlockTrueColor As Boolean
             Get
                 Return _bouncingBlockTrueColor
@@ -979,7 +901,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property BouncingBlockDelay As Integer
             Get
                 Return _bouncingBlockDelay
@@ -989,7 +913,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] Screensaver background color
+        ''' </summary>
         Public Property BouncingBlockBackgroundColor As String
             Get
                 Return _bouncingBlockBackgroundColor
@@ -998,7 +924,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] Screensaver foreground color
+        ''' </summary>
         Public Property BouncingBlockForegroundColor As String
             Get
                 Return _bouncingBlockForegroundColor
@@ -1007,7 +935,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockForegroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The minimum red color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMinimumRedColorLevel As Integer
             Get
                 Return _bouncingBlockMinimumRedColorLevel
@@ -1018,7 +948,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The minimum green color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMinimumGreenColorLevel As Integer
             Get
                 Return _bouncingBlockMinimumGreenColorLevel
@@ -1029,7 +961,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The minimum blue color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMinimumBlueColorLevel As Integer
             Get
                 Return _bouncingBlockMinimumBlueColorLevel
@@ -1040,7 +974,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BouncingBlockMinimumColorLevel As Integer
             Get
                 Return _bouncingBlockMinimumColorLevel
@@ -1052,7 +988,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The maximum red color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMaximumRedColorLevel As Integer
             Get
                 Return _bouncingBlockMaximumRedColorLevel
@@ -1063,7 +1001,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The maximum green color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMaximumGreenColorLevel As Integer
             Get
                 Return _bouncingBlockMaximumGreenColorLevel
@@ -1074,7 +1014,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The maximum blue color level (true color)
+        ''' </summary>
         Public Property BouncingBlockMaximumBlueColorLevel As Integer
             Get
                 Return _bouncingBlockMaximumBlueColorLevel
@@ -1085,7 +1027,9 @@ Namespace Misc.Screensaver
                 _bouncingBlockMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingBlock] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BouncingBlockMaximumColorLevel As Integer
             Get
                 Return _bouncingBlockMaximumColorLevel
@@ -1099,63 +1043,24 @@ Namespace Misc.Screensaver
         End Property
 
         '-> BouncingText
+        Private _bouncingText255Colors As Boolean
+        Private _bouncingTextTrueColor As Boolean = True
+        Private _bouncingTextDelay As Integer = 10
+        Private _bouncingTextWrite As String = "Kernel Simulator"
+        Private _bouncingTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _bouncingTextForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+        Private _bouncingTextMinimumRedColorLevel As Integer = 0
+        Private _bouncingTextMinimumGreenColorLevel As Integer = 0
+        Private _bouncingTextMinimumBlueColorLevel As Integer = 0
+        Private _bouncingTextMinimumColorLevel As Integer = 0
+        Private _bouncingTextMaximumRedColorLevel As Integer = 255
+        Private _bouncingTextMaximumGreenColorLevel As Integer = 255
+        Private _bouncingTextMaximumBlueColorLevel As Integer = 255
+        Private _bouncingTextMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [BouncingText] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _bouncingText255Colors As Boolean
-        ''' <summary>
-        ''' [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _bouncingTextTrueColor As Boolean = True
-        ''' <summary>
-        ''' [BouncingText] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _bouncingTextDelay As Integer = 10
-        ''' <summary>
-        ''' [BouncingText] Text for Bouncing Text. Shorter is better.
-        ''' </summary>
-        Private _bouncingTextWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [BouncingText] Screensaver background color
-        ''' </summary>
-        Private _bouncingTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [BouncingText] Screensaver foreground color
-        ''' </summary>
-        Private _bouncingTextForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
-        ''' <summary>
-        ''' [BouncingText] The minimum red color level (true color)
-        ''' </summary>
-        Private _bouncingTextMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingText] The minimum green color level (true color)
-        ''' </summary>
-        Private _bouncingTextMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingText] The minimum blue color level (true color)
-        ''' </summary>
-        Private _bouncingTextMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingText] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _bouncingTextMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BouncingText] The maximum red color level (true color)
-        ''' </summary>
-        Private _bouncingTextMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingText] The maximum green color level (true color)
-        ''' </summary>
-        Private _bouncingTextMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingText] The maximum blue color level (true color)
-        ''' </summary>
-        Private _bouncingTextMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BouncingText] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _bouncingTextMaximumColorLevel As Integer = 255
-
         Public Property BouncingText255Colors As Boolean
             Get
                 Return _bouncingText255Colors
@@ -1164,7 +1069,9 @@ Namespace Misc.Screensaver
                 _bouncingText255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property BouncingTextTrueColor As Boolean
             Get
                 Return _bouncingTextTrueColor
@@ -1173,7 +1080,9 @@ Namespace Misc.Screensaver
                 _bouncingTextTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property BouncingTextDelay As Integer
             Get
                 Return _bouncingTextDelay
@@ -1183,7 +1092,9 @@ Namespace Misc.Screensaver
                 _bouncingTextDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] Text for Bouncing Text. Shorter is better.
+        ''' </summary>
         Public Property BouncingTextWrite As String
             Get
                 Return _bouncingTextWrite
@@ -1193,7 +1104,9 @@ Namespace Misc.Screensaver
                 _bouncingTextWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] Screensaver background color
+        ''' </summary>
         Public Property BouncingTextBackgroundColor As String
             Get
                 Return _bouncingTextBackgroundColor
@@ -1202,7 +1115,9 @@ Namespace Misc.Screensaver
                 _bouncingTextBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] Screensaver foreground color
+        ''' </summary>
         Public Property BouncingTextForegroundColor As String
             Get
                 Return _bouncingTextForegroundColor
@@ -1211,7 +1126,9 @@ Namespace Misc.Screensaver
                 _bouncingTextForegroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The minimum red color level (true color)
+        ''' </summary>
         Public Property BouncingTextMinimumRedColorLevel As Integer
             Get
                 Return _bouncingTextMinimumRedColorLevel
@@ -1222,7 +1139,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The minimum green color level (true color)
+        ''' </summary>
         Public Property BouncingTextMinimumGreenColorLevel As Integer
             Get
                 Return _bouncingTextMinimumGreenColorLevel
@@ -1233,7 +1152,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The minimum blue color level (true color)
+        ''' </summary>
         Public Property BouncingTextMinimumBlueColorLevel As Integer
             Get
                 Return _bouncingTextMinimumBlueColorLevel
@@ -1244,7 +1165,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BouncingTextMinimumColorLevel As Integer
             Get
                 Return _bouncingTextMinimumColorLevel
@@ -1256,7 +1179,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The maximum red color level (true color)
+        ''' </summary>
         Public Property BouncingTextMaximumRedColorLevel As Integer
             Get
                 Return _bouncingTextMaximumRedColorLevel
@@ -1267,7 +1192,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The maximum green color level (true color)
+        ''' </summary>
         Public Property BouncingTextMaximumGreenColorLevel As Integer
             Get
                 Return _bouncingTextMaximumGreenColorLevel
@@ -1278,7 +1205,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The maximum blue color level (true color)
+        ''' </summary>
         Public Property BouncingTextMaximumBlueColorLevel As Integer
             Get
                 Return _bouncingTextMaximumBlueColorLevel
@@ -1289,7 +1218,9 @@ Namespace Misc.Screensaver
                 _bouncingTextMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BouncingText] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BouncingTextMaximumColorLevel As Integer
             Get
                 Return _bouncingTextMaximumColorLevel
@@ -1303,279 +1234,78 @@ Namespace Misc.Screensaver
         End Property
 
         '-> ProgressClock
+        Private _progressClock255Colors As Boolean
+        Private _progressClockTrueColor As Boolean = True
+        Private _progressClockCycleColors As Boolean = True
+        Private _progressClockSecondsProgressColor As String = 4
+        Private _progressClockMinutesProgressColor As String = 5
+        Private _progressClockHoursProgressColor As String = 6
+        Private _progressClockProgressColor As String = 7
+        Private _progressClockCycleColorsTicks As Long = 20
+        Private _progressClockDelay As Integer = 500
+        Private _progressClockUpperLeftCornerCharHours As String = "╔"
+        Private _progressClockUpperLeftCornerCharMinutes As String = "╔"
+        Private _progressClockUpperLeftCornerCharSeconds As String = "╔"
+        Private _progressClockUpperRightCornerCharHours As String = "╗"
+        Private _progressClockUpperRightCornerCharMinutes As String = "╗"
+        Private _progressClockUpperRightCornerCharSeconds As String = "╗"
+        Private _progressClockLowerLeftCornerCharHours As String = "╚"
+        Private _progressClockLowerLeftCornerCharMinutes As String = "╚"
+        Private _progressClockLowerLeftCornerCharSeconds As String = "╚"
+        Private _progressClockLowerRightCornerCharHours As String = "╝"
+        Private _progressClockLowerRightCornerCharMinutes As String = "╝"
+        Private _progressClockLowerRightCornerCharSeconds As String = "╝"
+        Private _progressClockUpperFrameCharHours As String = "═"
+        Private _progressClockUpperFrameCharMinutes As String = "═"
+        Private _progressClockUpperFrameCharSeconds As String = "═"
+        Private _progressClockLowerFrameCharHours As String = "═"
+        Private _progressClockLowerFrameCharMinutes As String = "═"
+        Private _progressClockLowerFrameCharSeconds As String = "═"
+        Private _progressClockLeftFrameCharHours As String = "║"
+        Private _progressClockLeftFrameCharMinutes As String = "║"
+        Private _progressClockLeftFrameCharSeconds As String = "║"
+        Private _progressClockRightFrameCharHours As String = "║"
+        Private _progressClockRightFrameCharMinutes As String = "║"
+        Private _progressClockRightFrameCharSeconds As String = "║"
+        Private _progressClockInfoTextHours As String = ""
+        Private _progressClockInfoTextMinutes As String = ""
+        Private _progressClockInfoTextSeconds As String = ""
+        Private _progressClockMinimumRedColorLevelHours As Integer = 0
+        Private _progressClockMinimumGreenColorLevelHours As Integer = 0
+        Private _progressClockMinimumBlueColorLevelHours As Integer = 0
+        Private _progressClockMinimumColorLevelHours As Integer = 0
+        Private _progressClockMaximumRedColorLevelHours As Integer = 255
+        Private _progressClockMaximumGreenColorLevelHours As Integer = 255
+        Private _progressClockMaximumBlueColorLevelHours As Integer = 255
+        Private _progressClockMaximumColorLevelHours As Integer = 255
+        Private _progressClockMinimumRedColorLevelMinutes As Integer = 0
+        Private _progressClockMinimumGreenColorLevelMinutes As Integer = 0
+        Private _progressClockMinimumBlueColorLevelMinutes As Integer = 0
+        Private _progressClockMinimumColorLevelMinutes As Integer = 0
+        Private _progressClockMaximumRedColorLevelMinutes As Integer = 255
+        Private _progressClockMaximumGreenColorLevelMinutes As Integer = 255
+        Private _progressClockMaximumBlueColorLevelMinutes As Integer = 255
+        Private _progressClockMaximumColorLevelMinutes As Integer = 255
+        Private _progressClockMinimumRedColorLevelSeconds As Integer = 0
+        Private _progressClockMinimumGreenColorLevelSeconds As Integer = 0
+        Private _progressClockMinimumBlueColorLevelSeconds As Integer = 0
+        Private _progressClockMinimumColorLevelSeconds As Integer = 0
+        Private _progressClockMaximumRedColorLevelSeconds As Integer = 255
+        Private _progressClockMaximumGreenColorLevelSeconds As Integer = 255
+        Private _progressClockMaximumBlueColorLevelSeconds As Integer = 255
+        Private _progressClockMaximumColorLevelSeconds As Integer = 255
+        Private _progressClockMinimumRedColorLevel As Integer = 0
+        Private _progressClockMinimumGreenColorLevel As Integer = 0
+        Private _progressClockMinimumBlueColorLevel As Integer = 0
+        Private _progressClockMinimumColorLevel As Integer = 0
+        Private _progressClockMaximumRedColorLevel As Integer = 255
+        Private _progressClockMaximumGreenColorLevel As Integer = 255
+        Private _progressClockMaximumBlueColorLevel As Integer = 255
+        Private _progressClockMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _progressClock255Colors As Boolean
-        ''' <summary>
-        ''' [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _progressClockTrueColor As Boolean = True
-        ''' <summary>
-        ''' [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
-        ''' </summary>
-        Private _progressClockCycleColors As Boolean = True
-        ''' <summary>
-        ''' [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        ''' </summary>
-        Private _progressClockSecondsProgressColor As String = 4
-        ''' <summary>
-        ''' [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        ''' </summary>
-        Private _progressClockMinutesProgressColor As String = 5
-        ''' <summary>
-        ''' [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        ''' </summary>
-        Private _progressClockHoursProgressColor As String = 6
-        ''' <summary>
-        ''' [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        ''' </summary>
-        Private _progressClockProgressColor As String = 7
-        ''' <summary>
-        ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
-        ''' </summary>
-        Private _progressClockCycleColorsTicks As Long = 20
-        ''' <summary>
-        ''' [ProgressClock] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _progressClockDelay As Integer = 500
-        ''' <summary>
-        ''' [ProgressClock] Upper left corner character for hours bar
-        ''' </summary>
-        Private _progressClockUpperLeftCornerCharHours As String = "╔"
-        ''' <summary>
-        ''' [ProgressClock] Upper left corner character for minutes bar
-        ''' </summary>
-        Private _progressClockUpperLeftCornerCharMinutes As String = "╔"
-        ''' <summary>
-        ''' [ProgressClock] Upper left corner character for seconds bar
-        ''' </summary>
-        Private _progressClockUpperLeftCornerCharSeconds As String = "╔"
-        ''' <summary>
-        ''' [ProgressClock] Upper right corner character for hours bar
-        ''' </summary>
-        Private _progressClockUpperRightCornerCharHours As String = "╗"
-        ''' <summary>
-        ''' [ProgressClock] Upper right corner character for minutes bar
-        ''' </summary>
-        Private _progressClockUpperRightCornerCharMinutes As String = "╗"
-        ''' <summary>
-        ''' [ProgressClock] Upper right corner character for seconds bar
-        ''' </summary>
-        Private _progressClockUpperRightCornerCharSeconds As String = "╗"
-        ''' <summary>
-        ''' [ProgressClock] Lower left corner character for hours bar
-        ''' </summary>
-        Private _progressClockLowerLeftCornerCharHours As String = "╚"
-        ''' <summary>
-        ''' [ProgressClock] Lower left corner character for minutes bar
-        ''' </summary>
-        Private _progressClockLowerLeftCornerCharMinutes As String = "╚"
-        ''' <summary>
-        ''' [ProgressClock] Lower left corner character for seconds bar
-        ''' </summary>
-        Private _progressClockLowerLeftCornerCharSeconds As String = "╚"
-        ''' <summary>
-        ''' [ProgressClock] Lower right corner character for hours bar
-        ''' </summary>
-        Private _progressClockLowerRightCornerCharHours As String = "╝"
-        ''' <summary>
-        ''' [ProgressClock] Lower right corner character for minutes bar
-        ''' </summary>
-        Private _progressClockLowerRightCornerCharMinutes As String = "╝"
-        ''' <summary>
-        ''' [ProgressClock] Lower right corner character for seconds bar
-        ''' </summary>
-        Private _progressClockLowerRightCornerCharSeconds As String = "╝"
-        ''' <summary>
-        ''' [ProgressClock] Upper frame character for hours bar
-        ''' </summary>
-        Private _progressClockUpperFrameCharHours As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Upper frame character for minutes bar
-        ''' </summary>
-        Private _progressClockUpperFrameCharMinutes As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Upper frame character for seconds bar
-        ''' </summary>
-        Private _progressClockUpperFrameCharSeconds As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Lower frame character for hours bar
-        ''' </summary>
-        Private _progressClockLowerFrameCharHours As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Lower frame character for minutes bar
-        ''' </summary>
-        Private _progressClockLowerFrameCharMinutes As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Lower frame character for seconds bar
-        ''' </summary>
-        Private _progressClockLowerFrameCharSeconds As String = "═"
-        ''' <summary>
-        ''' [ProgressClock] Left frame character for hours bar
-        ''' </summary>
-        Private _progressClockLeftFrameCharHours As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Left frame character for minutes bar
-        ''' </summary>
-        Private _progressClockLeftFrameCharMinutes As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Left frame character for seconds bar
-        ''' </summary>
-        Private _progressClockLeftFrameCharSeconds As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Right frame character for hours bar
-        ''' </summary>
-        Private _progressClockRightFrameCharHours As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Right frame character for minutes bar
-        ''' </summary>
-        Private _progressClockRightFrameCharMinutes As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Right frame character for seconds bar
-        ''' </summary>
-        Private _progressClockRightFrameCharSeconds As String = "║"
-        ''' <summary>
-        ''' [ProgressClock] Information text for hours bar
-        ''' </summary>
-        Private _progressClockInfoTextHours As String = ""
-        ''' <summary>
-        ''' [ProgressClock] Information text for minutes bar
-        ''' </summary>
-        Private _progressClockInfoTextMinutes As String = ""
-        ''' <summary>
-        ''' [ProgressClock] Information text for seconds bar
-        ''' </summary>
-        Private _progressClockInfoTextSeconds As String = ""
-        ''' <summary>
-        ''' [ProgressClock] The minimum red color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMinimumRedColorLevelHours As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum green color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMinimumGreenColorLevelHours As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum blue color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMinimumBlueColorLevelHours As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
-        ''' </summary>
-        Private _progressClockMinimumColorLevelHours As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The maximum red color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMaximumRedColorLevelHours As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum green color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMaximumGreenColorLevelHours As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum blue color level (true color - hours)
-        ''' </summary>
-        Private _progressClockMaximumBlueColorLevelHours As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - hours)
-        ''' </summary>
-        Private _progressClockMaximumColorLevelHours As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The minimum red color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMinimumRedColorLevelMinutes As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum green color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMinimumGreenColorLevelMinutes As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum blue color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMinimumBlueColorLevelMinutes As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
-        ''' </summary>
-        Private _progressClockMinimumColorLevelMinutes As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The maximum red color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMaximumRedColorLevelMinutes As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum green color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMaximumGreenColorLevelMinutes As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum blue color level (true color - minutes)
-        ''' </summary>
-        Private _progressClockMaximumBlueColorLevelMinutes As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - minutes)
-        ''' </summary>
-        Private _progressClockMaximumColorLevelMinutes As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The minimum red color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMinimumRedColorLevelSeconds As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum green color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMinimumGreenColorLevelSeconds As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum blue color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMinimumBlueColorLevelSeconds As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
-        ''' </summary>
-        Private _progressClockMinimumColorLevelSeconds As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The maximum red color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMaximumRedColorLevelSeconds As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum green color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMaximumGreenColorLevelSeconds As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum blue color level (true color - seconds)
-        ''' </summary>
-        Private _progressClockMaximumBlueColorLevelSeconds As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - seconds)
-        ''' </summary>
-        Private _progressClockMaximumColorLevelSeconds As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The minimum red color level (true color)
-        ''' </summary>
-        Private _progressClockMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum green color level (true color)
-        ''' </summary>
-        Private _progressClockMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum blue color level (true color)
-        ''' </summary>
-        Private _progressClockMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _progressClockMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [ProgressClock] The maximum red color level (true color)
-        ''' </summary>
-        Private _progressClockMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum green color level (true color)
-        ''' </summary>
-        Private _progressClockMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum blue color level (true color)
-        ''' </summary>
-        Private _progressClockMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [ProgressClock] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _progressClockMaximumColorLevel As Integer = 255
-
         Public Property ProgressClock255Colors As Boolean
             Get
                 Return _progressClock255Colors
@@ -1584,7 +1314,9 @@ Namespace Misc.Screensaver
                 _progressClock255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property ProgressClockTrueColor As Boolean
             Get
                 Return _progressClockTrueColor
@@ -1593,7 +1325,9 @@ Namespace Misc.Screensaver
                 _progressClockTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
+        ''' </summary>
         Public Property ProgressClockCycleColors As Boolean
             Get
                 Return _progressClockCycleColors
@@ -1602,7 +1336,9 @@ Namespace Misc.Screensaver
                 _progressClockCycleColors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+        ''' </summary>
         Public Property ProgressClockSecondsProgressColor As String
             Get
                 Return _progressClockSecondsProgressColor
@@ -1611,7 +1347,9 @@ Namespace Misc.Screensaver
                 _progressClockSecondsProgressColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+        ''' </summary>
         Public Property ProgressClockMinutesProgressColor As String
             Get
                 Return _progressClockMinutesProgressColor
@@ -1620,7 +1358,9 @@ Namespace Misc.Screensaver
                 _progressClockMinutesProgressColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+        ''' </summary>
         Public Property ProgressClockHoursProgressColor As String
             Get
                 Return _progressClockHoursProgressColor
@@ -1629,7 +1369,9 @@ Namespace Misc.Screensaver
                 _progressClockHoursProgressColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+        ''' </summary>
         Public Property ProgressClockProgressColor As String
             Get
                 Return _progressClockProgressColor
@@ -1638,7 +1380,9 @@ Namespace Misc.Screensaver
                 _progressClockProgressColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
+        ''' </summary>
         Public Property ProgressClockCycleColorsTicks As Long
             Get
                 Return _progressClockCycleColorsTicks
@@ -1648,7 +1392,9 @@ Namespace Misc.Screensaver
                 _progressClockCycleColorsTicks = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property ProgressClockDelay As Integer
             Get
                 Return _progressClockDelay
@@ -1658,7 +1404,9 @@ Namespace Misc.Screensaver
                 _progressClockDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper left corner character for hours bar
+        ''' </summary>
         Public Property ProgressClockUpperLeftCornerCharHours As String
             Get
                 Return _progressClockUpperLeftCornerCharHours
@@ -1668,7 +1416,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperLeftCornerCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper left corner character for minutes bar
+        ''' </summary>
         Public Property ProgressClockUpperLeftCornerCharMinutes As String
             Get
                 Return _progressClockUpperLeftCornerCharMinutes
@@ -1678,7 +1428,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperLeftCornerCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper left corner character for seconds bar
+        ''' </summary>
         Public Property ProgressClockUpperLeftCornerCharSeconds As String
             Get
                 Return _progressClockUpperLeftCornerCharSeconds
@@ -1688,7 +1440,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperLeftCornerCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper right corner character for hours bar
+        ''' </summary>
         Public Property ProgressClockUpperRightCornerCharHours As String
             Get
                 Return _progressClockUpperRightCornerCharHours
@@ -1698,7 +1452,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperRightCornerCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper right corner character for minutes bar
+        ''' </summary>
         Public Property ProgressClockUpperRightCornerCharMinutes As String
             Get
                 Return _progressClockUpperRightCornerCharMinutes
@@ -1708,7 +1464,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperRightCornerCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper right corner character for seconds bar
+        ''' </summary>
         Public Property ProgressClockUpperRightCornerCharSeconds As String
             Get
                 Return _progressClockUpperRightCornerCharSeconds
@@ -1718,7 +1476,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperRightCornerCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower left corner character for hours bar
+        ''' </summary>
         Public Property ProgressClockLowerLeftCornerCharHours As String
             Get
                 Return _progressClockLowerLeftCornerCharHours
@@ -1728,7 +1488,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerLeftCornerCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower left corner character for minutes bar
+        ''' </summary>
         Public Property ProgressClockLowerLeftCornerCharMinutes As String
             Get
                 Return _progressClockLowerLeftCornerCharMinutes
@@ -1738,7 +1500,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerLeftCornerCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower left corner character for seconds bar
+        ''' </summary>
         Public Property ProgressClockLowerLeftCornerCharSeconds As String
             Get
                 Return _progressClockLowerLeftCornerCharSeconds
@@ -1748,7 +1512,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerLeftCornerCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower right corner character for hours bar
+        ''' </summary>
         Public Property ProgressClockLowerRightCornerCharHours As String
             Get
                 Return _progressClockLowerRightCornerCharHours
@@ -1758,7 +1524,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerRightCornerCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower right corner character for minutes bar
+        ''' </summary>
         Public Property ProgressClockLowerRightCornerCharMinutes As String
             Get
                 Return _progressClockLowerRightCornerCharMinutes
@@ -1768,7 +1536,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerRightCornerCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower right corner character for seconds bar
+        ''' </summary>
         Public Property ProgressClockLowerRightCornerCharSeconds As String
             Get
                 Return _progressClockLowerRightCornerCharSeconds
@@ -1778,7 +1548,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerRightCornerCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper frame character for hours bar
+        ''' </summary>
         Public Property ProgressClockUpperFrameCharHours As String
             Get
                 Return _progressClockUpperFrameCharHours
@@ -1788,7 +1560,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperFrameCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper frame character for minutes bar
+        ''' </summary>
         Public Property ProgressClockUpperFrameCharMinutes As String
             Get
                 Return _progressClockUpperFrameCharMinutes
@@ -1798,7 +1572,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperFrameCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Upper frame character for seconds bar
+        ''' </summary>
         Public Property ProgressClockUpperFrameCharSeconds As String
             Get
                 Return _progressClockUpperFrameCharSeconds
@@ -1808,7 +1584,9 @@ Namespace Misc.Screensaver
                 _progressClockUpperFrameCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower frame character for hours bar
+        ''' </summary>
         Public Property ProgressClockLowerFrameCharHours As String
             Get
                 Return _progressClockLowerFrameCharHours
@@ -1818,7 +1596,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerFrameCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower frame character for minutes bar
+        ''' </summary>
         Public Property ProgressClockLowerFrameCharMinutes As String
             Get
                 Return _progressClockLowerFrameCharMinutes
@@ -1828,7 +1608,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerFrameCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Lower frame character for seconds bar
+        ''' </summary>
         Public Property ProgressClockLowerFrameCharSeconds As String
             Get
                 Return _progressClockLowerFrameCharSeconds
@@ -1838,7 +1620,9 @@ Namespace Misc.Screensaver
                 _progressClockLowerFrameCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Left frame character for hours bar
+        ''' </summary>
         Public Property ProgressClockLeftFrameCharHours As String
             Get
                 Return _progressClockLeftFrameCharHours
@@ -1848,7 +1632,9 @@ Namespace Misc.Screensaver
                 _progressClockLeftFrameCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Left frame character for minutes bar
+        ''' </summary>
         Public Property ProgressClockLeftFrameCharMinutes As String
             Get
                 Return _progressClockLeftFrameCharMinutes
@@ -1858,7 +1644,9 @@ Namespace Misc.Screensaver
                 _progressClockLeftFrameCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Left frame character for seconds bar
+        ''' </summary>
         Public Property ProgressClockLeftFrameCharSeconds As String
             Get
                 Return _progressClockLeftFrameCharSeconds
@@ -1868,7 +1656,9 @@ Namespace Misc.Screensaver
                 _progressClockLeftFrameCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Right frame character for hours bar
+        ''' </summary>
         Public Property ProgressClockRightFrameCharHours As String
             Get
                 Return _progressClockRightFrameCharHours
@@ -1878,7 +1668,9 @@ Namespace Misc.Screensaver
                 _progressClockRightFrameCharHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Right frame character for minutes bar
+        ''' </summary>
         Public Property ProgressClockRightFrameCharMinutes As String
             Get
                 Return _progressClockRightFrameCharMinutes
@@ -1888,7 +1680,9 @@ Namespace Misc.Screensaver
                 _progressClockRightFrameCharMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Right frame character for seconds bar
+        ''' </summary>
         Public Property ProgressClockRightFrameCharSeconds As String
             Get
                 Return _progressClockRightFrameCharSeconds
@@ -1898,7 +1692,9 @@ Namespace Misc.Screensaver
                 _progressClockRightFrameCharSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Information text for hours bar
+        ''' </summary>
         Public Property ProgressClockInfoTextHours As String
             Get
                 Return _progressClockInfoTextHours
@@ -1907,7 +1703,9 @@ Namespace Misc.Screensaver
                 _progressClockInfoTextHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Information text for minutes bar
+        ''' </summary>
         Public Property ProgressClockInfoTextMinutes As String
             Get
                 Return _progressClockInfoTextMinutes
@@ -1916,7 +1714,9 @@ Namespace Misc.Screensaver
                 _progressClockInfoTextMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] Information text for seconds bar
+        ''' </summary>
         Public Property ProgressClockInfoTextSeconds As String
             Get
                 Return _progressClockInfoTextSeconds
@@ -1925,7 +1725,9 @@ Namespace Misc.Screensaver
                 _progressClockInfoTextSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum red color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMinimumRedColorLevelHours As Integer
             Get
                 Return _progressClockMinimumRedColorLevelHours
@@ -1936,7 +1738,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumRedColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum green color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMinimumGreenColorLevelHours As Integer
             Get
                 Return _progressClockMinimumGreenColorLevelHours
@@ -1947,7 +1751,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumGreenColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum blue color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMinimumBlueColorLevelHours As Integer
             Get
                 Return _progressClockMinimumBlueColorLevelHours
@@ -1958,7 +1764,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumBlueColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
+        ''' </summary>
         Public Property ProgressClockMinimumColorLevelHours As Integer
             Get
                 Return _progressClockMinimumColorLevelHours
@@ -1970,7 +1778,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum red color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMaximumRedColorLevelHours As Integer
             Get
                 Return _progressClockMaximumRedColorLevelHours
@@ -1981,7 +1791,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumRedColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum green color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMaximumGreenColorLevelHours As Integer
             Get
                 Return _progressClockMaximumGreenColorLevelHours
@@ -1992,7 +1804,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumGreenColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum blue color level (true color - hours)
+        ''' </summary>
         Public Property ProgressClockMaximumBlueColorLevelHours As Integer
             Get
                 Return _progressClockMaximumBlueColorLevelHours
@@ -2003,7 +1817,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumBlueColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - hours)
+        ''' </summary>
         Public Property ProgressClockMaximumColorLevelHours As Integer
             Get
                 Return _progressClockMaximumColorLevelHours
@@ -2015,7 +1831,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumColorLevelHours = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum red color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMinimumRedColorLevelMinutes As Integer
             Get
                 Return _progressClockMinimumRedColorLevelMinutes
@@ -2026,7 +1844,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumRedColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum green color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMinimumGreenColorLevelMinutes As Integer
             Get
                 Return _progressClockMinimumGreenColorLevelMinutes
@@ -2037,7 +1857,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumGreenColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum blue color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMinimumBlueColorLevelMinutes As Integer
             Get
                 Return _progressClockMinimumBlueColorLevelMinutes
@@ -2048,7 +1870,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumBlueColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
+        ''' </summary>
         Public Property ProgressClockMinimumColorLevelMinutes As Integer
             Get
                 Return _progressClockMinimumColorLevelMinutes
@@ -2060,7 +1884,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum red color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMaximumRedColorLevelMinutes As Integer
             Get
                 Return _progressClockMaximumRedColorLevelMinutes
@@ -2071,7 +1897,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumRedColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum green color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMaximumGreenColorLevelMinutes As Integer
             Get
                 Return _progressClockMaximumGreenColorLevelMinutes
@@ -2082,7 +1910,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumGreenColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum blue color level (true color - minutes)
+        ''' </summary>
         Public Property ProgressClockMaximumBlueColorLevelMinutes As Integer
             Get
                 Return _progressClockMaximumBlueColorLevelMinutes
@@ -2093,7 +1923,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumBlueColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - minutes)
+        ''' </summary>
         Public Property ProgressClockMaximumColorLevelMinutes As Integer
             Get
                 Return _progressClockMaximumColorLevelMinutes
@@ -2105,7 +1937,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumColorLevelMinutes = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum red color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMinimumRedColorLevelSeconds As Integer
             Get
                 Return _progressClockMinimumRedColorLevelSeconds
@@ -2116,7 +1950,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumRedColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum green color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMinimumGreenColorLevelSeconds As Integer
             Get
                 Return _progressClockMinimumGreenColorLevelSeconds
@@ -2127,7 +1963,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumGreenColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum blue color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMinimumBlueColorLevelSeconds As Integer
             Get
                 Return _progressClockMinimumBlueColorLevelSeconds
@@ -2138,7 +1976,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumBlueColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
+        ''' </summary>
         Public Property ProgressClockMinimumColorLevelSeconds As Integer
             Get
                 Return _progressClockMinimumColorLevelSeconds
@@ -2150,7 +1990,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum red color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMaximumRedColorLevelSeconds As Integer
             Get
                 Return _progressClockMaximumRedColorLevelSeconds
@@ -2161,7 +2003,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumRedColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum green color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMaximumGreenColorLevelSeconds As Integer
             Get
                 Return _progressClockMaximumGreenColorLevelSeconds
@@ -2172,7 +2016,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumGreenColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum blue color level (true color - seconds)
+        ''' </summary>
         Public Property ProgressClockMaximumBlueColorLevelSeconds As Integer
             Get
                 Return _progressClockMaximumBlueColorLevelSeconds
@@ -2183,7 +2029,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumBlueColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum color level (255 colors or 16 colors - seconds)
+        ''' </summary>
         Public Property ProgressClockMaximumColorLevelSeconds As Integer
             Get
                 Return _progressClockMaximumColorLevelSeconds
@@ -2195,7 +2043,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumColorLevelSeconds = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum red color level (true color)
+        ''' </summary>
         Public Property ProgressClockMinimumRedColorLevel As Integer
             Get
                 Return _progressClockMinimumRedColorLevel
@@ -2206,7 +2056,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum green color level (true color)
+        ''' </summary>
         Public Property ProgressClockMinimumGreenColorLevel As Integer
             Get
                 Return _progressClockMinimumGreenColorLevel
@@ -2217,7 +2069,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum blue color level (true color)
+        ''' </summary>
         Public Property ProgressClockMinimumBlueColorLevel As Integer
             Get
                 Return _progressClockMinimumBlueColorLevel
@@ -2228,7 +2082,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property ProgressClockMinimumColorLevel As Integer
             Get
                 Return _progressClockMinimumColorLevel
@@ -2240,7 +2096,9 @@ Namespace Misc.Screensaver
                 _progressClockMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum red color level (true color)
+        ''' </summary>
         Public Property ProgressClockMaximumRedColorLevel As Integer
             Get
                 Return _progressClockMaximumRedColorLevel
@@ -2251,7 +2109,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum green color level (true color)
+        ''' </summary>
         Public Property ProgressClockMaximumGreenColorLevel As Integer
             Get
                 Return _progressClockMaximumGreenColorLevel
@@ -2262,7 +2122,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum blue color level (true color)
+        ''' </summary>
         Public Property ProgressClockMaximumBlueColorLevel As Integer
             Get
                 Return _progressClockMaximumBlueColorLevel
@@ -2273,7 +2135,9 @@ Namespace Misc.Screensaver
                 _progressClockMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [ProgressClock] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property ProgressClockMaximumColorLevel As Integer
             Get
                 Return _progressClockMaximumColorLevel
@@ -2287,59 +2151,23 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Lighter
+        Private _lighter255Colors As Boolean
+        Private _lighterTrueColor As Boolean = True
+        Private _lighterDelay As Integer = 100
+        Private _lighterMaxPositions As Integer = 10
+        Private _lighterBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _lighterMinimumRedColorLevel As Integer = 0
+        Private _lighterMinimumGreenColorLevel As Integer = 0
+        Private _lighterMinimumBlueColorLevel As Integer = 0
+        Private _lighterMinimumColorLevel As Integer = 0
+        Private _lighterMaximumRedColorLevel As Integer = 255
+        Private _lighterMaximumGreenColorLevel As Integer = 255
+        Private _lighterMaximumBlueColorLevel As Integer = 255
+        Private _lighterMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _lighter255Colors As Boolean
-        ''' <summary>
-        ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _lighterTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Lighter] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _lighterDelay As Integer = 100
-        ''' <summary>
-        ''' [Lighter] How many positions to write before starting to blacken them?
-        ''' </summary>
-        Private _lighterMaxPositions As Integer = 10
-        ''' <summary>
-        ''' [Lighter] Screensaver background color
-        ''' </summary>
-        Private _lighterBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Lighter] The minimum red color level (true color)
-        ''' </summary>
-        Private _lighterMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lighter] The minimum green color level (true color)
-        ''' </summary>
-        Private _lighterMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lighter] The minimum blue color level (true color)
-        ''' </summary>
-        Private _lighterMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lighter] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _lighterMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Lighter] The maximum red color level (true color)
-        ''' </summary>
-        Private _lighterMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lighter] The maximum green color level (true color)
-        ''' </summary>
-        Private _lighterMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lighter] The maximum blue color level (true color)
-        ''' </summary>
-        Private _lighterMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Lighter] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _lighterMaximumColorLevel As Integer = 255
-
         Public Property Lighter255Colors As Boolean
             Get
                 Return _lighter255Colors
@@ -2348,7 +2176,9 @@ Namespace Misc.Screensaver
                 _lighter255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property LighterTrueColor As Boolean
             Get
                 Return _lighterTrueColor
@@ -2357,7 +2187,9 @@ Namespace Misc.Screensaver
                 _lighterTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property LighterDelay As Integer
             Get
                 Return _lighterDelay
@@ -2366,7 +2198,9 @@ Namespace Misc.Screensaver
                 _lighterDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] How many positions to write before starting to blacken them?
+        ''' </summary>
         Public Property LighterMaxPositions As Integer
             Get
                 Return _lighterMaxPositions
@@ -2375,7 +2209,9 @@ Namespace Misc.Screensaver
                 _lighterMaxPositions = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] Screensaver background color
+        ''' </summary>
         Public Property LighterBackgroundColor As String
             Get
                 Return _lighterBackgroundColor
@@ -2384,7 +2220,9 @@ Namespace Misc.Screensaver
                 _lighterBackgroundColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The minimum red color level (true color)
+        ''' </summary>
         Public Property LighterMinimumRedColorLevel As Integer
             Get
                 Return _lighterMinimumRedColorLevel
@@ -2393,7 +2231,9 @@ Namespace Misc.Screensaver
                 _lighterMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The minimum green color level (true color)
+        ''' </summary>
         Public Property LighterMinimumGreenColorLevel As Integer
             Get
                 Return _lighterMinimumGreenColorLevel
@@ -2402,7 +2242,9 @@ Namespace Misc.Screensaver
                 _lighterMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The minimum blue color level (true color)
+        ''' </summary>
         Public Property LighterMinimumBlueColorLevel As Integer
             Get
                 Return _lighterMinimumBlueColorLevel
@@ -2411,7 +2253,9 @@ Namespace Misc.Screensaver
                 _lighterMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property LighterMinimumColorLevel As Integer
             Get
                 Return _lighterMinimumColorLevel
@@ -2420,7 +2264,9 @@ Namespace Misc.Screensaver
                 _lighterMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The maximum red color level (true color)
+        ''' </summary>
         Public Property LighterMaximumRedColorLevel As Integer
             Get
                 Return _lighterMaximumRedColorLevel
@@ -2429,7 +2275,9 @@ Namespace Misc.Screensaver
                 _lighterMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The maximum green color level (true color)
+        ''' </summary>
         Public Property LighterMaximumGreenColorLevel As Integer
             Get
                 Return _lighterMaximumGreenColorLevel
@@ -2438,7 +2286,9 @@ Namespace Misc.Screensaver
                 _lighterMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The maximum blue color level (true color)
+        ''' </summary>
         Public Property LighterMaximumBlueColorLevel As Integer
             Get
                 Return _lighterMaximumBlueColorLevel
@@ -2447,7 +2297,9 @@ Namespace Misc.Screensaver
                 _lighterMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Lighter] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property LighterMaximumColorLevel As Integer
             Get
                 Return _lighterMaximumColorLevel
@@ -2458,59 +2310,23 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Wipe
+        Private _wipe255Colors As Boolean
+        Private _wipeTrueColor As Boolean = True
+        Private _wipeDelay As Integer = 10
+        Private _wipeWipesNeededToChangeDirection As Integer = 10
+        Private _wipeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _wipeMinimumRedColorLevel As Integer = 0
+        Private _wipeMinimumGreenColorLevel As Integer = 0
+        Private _wipeMinimumBlueColorLevel As Integer = 0
+        Private _wipeMinimumColorLevel As Integer = 0
+        Private _wipeMaximumRedColorLevel As Integer = 255
+        Private _wipeMaximumGreenColorLevel As Integer = 255
+        Private _wipeMaximumBlueColorLevel As Integer = 255
+        Private _wipeMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _wipe255Colors As Boolean
-        ''' <summary>
-        ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _wipeTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Wipe] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _wipeDelay As Integer = 10
-        ''' <summary>
-        ''' [Wipe] How many wipes needed to change direction?
-        ''' </summary>
-        Private _wipeWipesNeededToChangeDirection As Integer = 10
-        ''' <summary>
-        ''' [Wipe] Screensaver background color
-        ''' </summary>
-        Private _wipeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Wipe] The minimum red color level (true color)
-        ''' </summary>
-        Private _wipeMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Wipe] The minimum green color level (true color)
-        ''' </summary>
-        Private _wipeMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Wipe] The minimum blue color level (true color)
-        ''' </summary>
-        Private _wipeMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Wipe] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _wipeMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Wipe] The maximum red color level (true color)
-        ''' </summary>
-        Private _wipeMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Wipe] The maximum green color level (true color)
-        ''' </summary>
-        Private _wipeMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Wipe] The maximum blue color level (true color)
-        ''' </summary>
-        Private _wipeMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Wipe] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _wipeMaximumColorLevel As Integer = 255
-
         Public Property Wipe255Colors As Boolean
             Get
                 Return _wipe255Colors
@@ -2519,7 +2335,9 @@ Namespace Misc.Screensaver
                 _wipe255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property WipeTrueColor As Boolean
             Get
                 Return _wipeTrueColor
@@ -2528,7 +2346,9 @@ Namespace Misc.Screensaver
                 _wipeTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property WipeDelay As Integer
             Get
                 Return _wipeDelay
@@ -2537,7 +2357,9 @@ Namespace Misc.Screensaver
                 _wipeDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] How many wipes needed to change direction?
+        ''' </summary>
         Public Property WipeWipesNeededToChangeDirection As Integer
             Get
                 Return _wipeWipesNeededToChangeDirection
@@ -2546,7 +2368,9 @@ Namespace Misc.Screensaver
                 _wipeWipesNeededToChangeDirection = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] Screensaver background color
+        ''' </summary>
         Public Property WipeBackgroundColor As String
             Get
                 Return _wipeBackgroundColor
@@ -2555,7 +2379,9 @@ Namespace Misc.Screensaver
                 _wipeBackgroundColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The minimum red color level (true color)
+        ''' </summary>
         Public Property WipeMinimumRedColorLevel As Integer
             Get
                 Return _wipeMinimumRedColorLevel
@@ -2564,7 +2390,9 @@ Namespace Misc.Screensaver
                 _wipeMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The minimum green color level (true color)
+        ''' </summary>
         Public Property WipeMinimumGreenColorLevel As Integer
             Get
                 Return _wipeMinimumGreenColorLevel
@@ -2573,7 +2401,9 @@ Namespace Misc.Screensaver
                 _wipeMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The minimum blue color level (true color)
+        ''' </summary>
         Public Property WipeMinimumBlueColorLevel As Integer
             Get
                 Return _wipeMinimumBlueColorLevel
@@ -2582,7 +2412,9 @@ Namespace Misc.Screensaver
                 _wipeMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property WipeMinimumColorLevel As Integer
             Get
                 Return _wipeMinimumColorLevel
@@ -2591,7 +2423,9 @@ Namespace Misc.Screensaver
                 _wipeMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The maximum red color level (true color)
+        ''' </summary>
         Public Property WipeMaximumRedColorLevel As Integer
             Get
                 Return _wipeMaximumRedColorLevel
@@ -2600,7 +2434,9 @@ Namespace Misc.Screensaver
                 _wipeMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The maximum green color level (true color)
+        ''' </summary>
         Public Property WipeMaximumGreenColorLevel As Integer
             Get
                 Return _wipeMaximumGreenColorLevel
@@ -2609,7 +2445,9 @@ Namespace Misc.Screensaver
                 _wipeMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The maximum blue color level (true color)
+        ''' </summary>
         Public Property WipeMaximumBlueColorLevel As Integer
             Get
                 Return _wipeMaximumBlueColorLevel
@@ -2618,7 +2456,9 @@ Namespace Misc.Screensaver
                 _wipeMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Wipe] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property WipeMaximumColorLevel As Integer
             Get
                 Return _wipeMaximumColorLevel
@@ -2629,67 +2469,25 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Marquee
+        Private _marquee255Colors As Boolean
+        Private _marqueeTrueColor As Boolean = True
+        Private _marqueeDelay As Integer = 10
+        Private _marqueeWrite As String = "Kernel Simulator"
+        Private _marqueeAlwaysCentered As Boolean = True
+        Private _marqueeUseConsoleAPI As Boolean = False
+        Private _marqueeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _marqueeMinimumRedColorLevel As Integer = 0
+        Private _marqueeMinimumGreenColorLevel As Integer = 0
+        Private _marqueeMinimumBlueColorLevel As Integer = 0
+        Private _marqueeMinimumColorLevel As Integer = 0
+        Private _marqueeMaximumRedColorLevel As Integer = 255
+        Private _marqueeMaximumGreenColorLevel As Integer = 255
+        Private _marqueeMaximumBlueColorLevel As Integer = 255
+        Private _marqueeMaximumColorLevel As Integer = 0
+
         ''' <summary>
         ''' [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _marquee255Colors As Boolean
-        ''' <summary>
-        ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _marqueeTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Marquee] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _marqueeDelay As Integer = 10
-        ''' <summary>
-        ''' [Marquee] Text for Marquee. Shorter is better.
-        ''' </summary>
-        Private _marqueeWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [Marquee] Whether the text is always on center.
-        ''' </summary>
-        Private _marqueeAlwaysCentered As Boolean = True
-        ''' <summary>
-        ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
-        ''' </summary>
-        Private _marqueeUseConsoleAPI As Boolean = False
-        ''' <summary>
-        ''' [Marquee] Screensaver background color
-        ''' </summary>
-        Private _marqueeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Marquee] The minimum red color level (true color)
-        ''' </summary>
-        Private _marqueeMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Marquee] The minimum green color level (true color)
-        ''' </summary>
-        Private _marqueeMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Marquee] The minimum blue color level (true color)
-        ''' </summary>
-        Private _marqueeMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Marquee] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _marqueeMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Marquee] The maximum red color level (true color)
-        ''' </summary>
-        Private _marqueeMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Marquee] The maximum green color level (true color)
-        ''' </summary>
-        Private _marqueeMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Marquee] The maximum blue color level (true color)
-        ''' </summary>
-        Private _marqueeMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Marquee] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _marqueeMaximumColorLevel As Integer = 0
-
         Public Property Marquee255Colors As Boolean
             Get
                 Return _marquee255Colors
@@ -2698,7 +2496,9 @@ Namespace Misc.Screensaver
                 _marquee255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property MarqueeTrueColor As Boolean
             Get
                 Return _marqueeTrueColor
@@ -2707,7 +2507,9 @@ Namespace Misc.Screensaver
                 _marqueeTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property MarqueeDelay As Integer
             Get
                 Return _marqueeDelay
@@ -2716,7 +2518,9 @@ Namespace Misc.Screensaver
                 _marqueeDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] Text for Marquee. Shorter is better.
+        ''' </summary>
         Public Property MarqueeWrite As String
             Get
                 Return _marqueeWrite
@@ -2725,7 +2529,9 @@ Namespace Misc.Screensaver
                 _marqueeWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] Whether the text is always on center.
+        ''' </summary>
         Public Property MarqueeAlwaysCentered As Boolean
             Get
                 Return _marqueeAlwaysCentered
@@ -2734,7 +2540,9 @@ Namespace Misc.Screensaver
                 _marqueeAlwaysCentered = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
+        ''' </summary>
         Public Property MarqueeUseConsoleAPI As Boolean
             Get
                 Return _marqueeUseConsoleAPI
@@ -2743,7 +2551,9 @@ Namespace Misc.Screensaver
                 _marqueeUseConsoleAPI = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] Screensaver background color
+        ''' </summary>
         Public Property MarqueeBackgroundColor As String
             Get
                 Return _marqueeBackgroundColor
@@ -2752,7 +2562,9 @@ Namespace Misc.Screensaver
                 _marqueeBackgroundColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The minimum red color level (true color)
+        ''' </summary>
         Public Property MarqueeMinimumRedColorLevel As Integer
             Get
                 Return _marqueeMinimumRedColorLevel
@@ -2761,7 +2573,9 @@ Namespace Misc.Screensaver
                 _marqueeMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The minimum green color level (true color)
+        ''' </summary>
         Public Property MarqueeMinimumGreenColorLevel As Integer
             Get
                 Return _marqueeMinimumGreenColorLevel
@@ -2770,7 +2584,9 @@ Namespace Misc.Screensaver
                 _marqueeMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The minimum blue color level (true color)
+        ''' </summary>
         Public Property MarqueeMinimumBlueColorLevel As Integer
             Get
                 Return _marqueeMinimumBlueColorLevel
@@ -2779,7 +2595,9 @@ Namespace Misc.Screensaver
                 _marqueeMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property MarqueeMinimumColorLevel As Integer
             Get
                 Return _marqueeMinimumColorLevel
@@ -2788,7 +2606,9 @@ Namespace Misc.Screensaver
                 _marqueeMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The maximum red color level (true color)
+        ''' </summary>
         Public Property MarqueeMaximumRedColorLevel As Integer
             Get
                 Return _marqueeMaximumRedColorLevel
@@ -2797,7 +2617,9 @@ Namespace Misc.Screensaver
                 _marqueeMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The maximum green color level (true color)
+        ''' </summary>
         Public Property MarqueeMaximumGreenColorLevel As Integer
             Get
                 Return _marqueeMaximumGreenColorLevel
@@ -2806,7 +2628,9 @@ Namespace Misc.Screensaver
                 _marqueeMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The maximum blue color level (true color)
+        ''' </summary>
         Public Property MarqueeMaximumBlueColorLevel As Integer
             Get
                 Return _marqueeMaximumBlueColorLevel
@@ -2815,7 +2639,9 @@ Namespace Misc.Screensaver
                 _marqueeMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Marquee] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property MarqueeMaximumColorLevel As Integer
             Get
                 Return _marqueeMaximumColorLevel
@@ -2826,63 +2652,24 @@ Namespace Misc.Screensaver
         End Property
 
         '-> BeatFader
+        Private _beatFader255Colors As Boolean
+        Private _beatFaderTrueColor As Boolean = True
+        Private _beatFaderCycleColors As Boolean = True
+        Private _beatFaderBeatColor As String = 17
+        Private _beatFaderDelay As Integer = 120
+        Private _beatFaderMaxSteps As Integer = 25
+        Private _beatFaderMinimumRedColorLevel As Integer = 0
+        Private _beatFaderMinimumGreenColorLevel As Integer = 0
+        Private _beatFaderMinimumBlueColorLevel As Integer = 0
+        Private _beatFaderMinimumColorLevel As Integer = 0
+        Private _beatFaderMaximumRedColorLevel As Integer = 255
+        Private _beatFaderMaximumGreenColorLevel As Integer = 255
+        Private _beatFaderMaximumBlueColorLevel As Integer = 255
+        Private _beatFaderMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [BeatFader] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
         ''' </summary>
-        Private _beatFader255Colors As Boolean
-        ''' <summary>
-        ''' [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
-        ''' </summary>
-        Private _beatFaderTrueColor As Boolean = True
-        ''' <summary>
-        ''' [BeatFader] Enable color cycling (uses RNG. If disabled, uses the <see cref="BeatFaderBeatColor"/> color.)
-        ''' </summary>
-        Private _beatFaderCycleColors As Boolean = True
-        ''' <summary>
-        ''' [BeatFader] The color of beats. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        ''' </summary>
-        Private _beatFaderBeatColor As String = 17
-        ''' <summary>
-        ''' [BeatFader] How many beats per minute to wait before making the next write?
-        ''' </summary>
-        Private _beatFaderDelay As Integer = 120
-        ''' <summary>
-        ''' [BeatFader] How many fade steps to do?
-        ''' </summary>
-        Private _beatFaderMaxSteps As Integer = 25
-        ''' <summary>
-        ''' [BeatFader] The minimum red color level (true color)
-        ''' </summary>
-        Private _beatFaderMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BeatFader] The minimum green color level (true color)
-        ''' </summary>
-        Private _beatFaderMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BeatFader] The minimum blue color level (true color)
-        ''' </summary>
-        Private _beatFaderMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BeatFader] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _beatFaderMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [BeatFader] The maximum red color level (true color)
-        ''' </summary>
-        Private _beatFaderMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BeatFader] The maximum green color level (true color)
-        ''' </summary>
-        Private _beatFaderMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BeatFader] The maximum blue color level (true color)
-        ''' </summary>
-        Private _beatFaderMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [BeatFader] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _beatFaderMaximumColorLevel As Integer = 255
-
         Public Property BeatFader255Colors As Boolean
             Get
                 Return _beatFader255Colors
@@ -2891,7 +2678,9 @@ Namespace Misc.Screensaver
                 _beatFader255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
+        ''' </summary>
         Public Property BeatFaderTrueColor As Boolean
             Get
                 Return _beatFaderTrueColor
@@ -2900,7 +2689,9 @@ Namespace Misc.Screensaver
                 _beatFaderTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] Enable color cycling (uses RNG. If disabled, uses the <see cref="BeatFaderBeatColor"/> color.)
+        ''' </summary>
         Public Property BeatFaderCycleColors As Boolean
             Get
                 Return _beatFaderCycleColors
@@ -2909,7 +2700,9 @@ Namespace Misc.Screensaver
                 _beatFaderCycleColors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The color of beats. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+        ''' </summary>
         Public Property BeatFaderBeatColor As String
             Get
                 Return _beatFaderBeatColor
@@ -2918,7 +2711,9 @@ Namespace Misc.Screensaver
                 _beatFaderBeatColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] How many beats per minute to wait before making the next write?
+        ''' </summary>
         Public Property BeatFaderDelay As Integer
             Get
                 Return _beatFaderDelay
@@ -2928,7 +2723,9 @@ Namespace Misc.Screensaver
                 _beatFaderDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] How many fade steps to do?
+        ''' </summary>
         Public Property BeatFaderMaxSteps As Integer
             Get
                 Return _beatFaderMaxSteps
@@ -2938,7 +2735,9 @@ Namespace Misc.Screensaver
                 _beatFaderMaxSteps = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The minimum red color level (true color)
+        ''' </summary>
         Public Property BeatFaderMinimumRedColorLevel As Integer
             Get
                 Return _beatFaderMinimumRedColorLevel
@@ -2949,7 +2748,9 @@ Namespace Misc.Screensaver
                 _beatFaderMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The minimum green color level (true color)
+        ''' </summary>
         Public Property BeatFaderMinimumGreenColorLevel As Integer
             Get
                 Return _beatFaderMinimumGreenColorLevel
@@ -2960,7 +2761,9 @@ Namespace Misc.Screensaver
                 _beatFaderMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The minimum blue color level (true color)
+        ''' </summary>
         Public Property BeatFaderMinimumBlueColorLevel As Integer
             Get
                 Return _beatFaderMinimumBlueColorLevel
@@ -2971,7 +2774,9 @@ Namespace Misc.Screensaver
                 _beatFaderMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BeatFaderMinimumColorLevel As Integer
             Get
                 Return _beatFaderMinimumColorLevel
@@ -2983,7 +2788,9 @@ Namespace Misc.Screensaver
                 _beatFaderMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The maximum red color level (true color)
+        ''' </summary>
         Public Property BeatFaderMaximumRedColorLevel As Integer
             Get
                 Return _beatFaderMaximumRedColorLevel
@@ -2994,7 +2801,9 @@ Namespace Misc.Screensaver
                 _beatFaderMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The maximum green color level (true color)
+        ''' </summary>
         Public Property BeatFaderMaximumGreenColorLevel As Integer
             Get
                 Return _beatFaderMaximumGreenColorLevel
@@ -3005,7 +2814,9 @@ Namespace Misc.Screensaver
                 _beatFaderMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The maximum blue color level (true color)
+        ''' </summary>
         Public Property BeatFaderMaximumBlueColorLevel As Integer
             Get
                 Return _beatFaderMaximumBlueColorLevel
@@ -3016,7 +2827,9 @@ Namespace Misc.Screensaver
                 _beatFaderMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [BeatFader] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property BeatFaderMaximumColorLevel As Integer
             Get
                 Return _beatFaderMaximumColorLevel
@@ -3030,19 +2843,13 @@ Namespace Misc.Screensaver
         End Property
 
         '-> GlitterMatrix
+        Private _glitterMatrixDelay As Integer = 1
+        Private _glitterMatrixBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _glitterMatrixForegroundColor As String = New Color(ConsoleColor.Green).PlainSequence
+
         ''' <summary>
         ''' [GlitterMatrix] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _glitterMatrixDelay As Integer = 1
-        ''' <summary>
-        ''' [GlitterMatrix] Screensaver background color
-        ''' </summary>
-        Private _glitterMatrixBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [GlitterMatrix] Screensaver foreground color
-        ''' </summary>
-        Private _glitterMatrixForegroundColor As String = New Color(ConsoleColor.Green).PlainSequence
-
         Public Property GlitterMatrixDelay As Integer
             Get
                 Return _glitterMatrixDelay
@@ -3052,7 +2859,9 @@ Namespace Misc.Screensaver
                 _glitterMatrixDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterMatrix] Screensaver background color
+        ''' </summary>
         Public Property GlitterMatrixBackgroundColor As String
             Get
                 Return _glitterMatrixBackgroundColor
@@ -3061,7 +2870,9 @@ Namespace Misc.Screensaver
                 _glitterMatrixBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [GlitterMatrix] Screensaver foreground color
+        ''' </summary>
         Public Property GlitterMatrixForegroundColor As String
             Get
                 Return _glitterMatrixForegroundColor
@@ -3072,11 +2883,11 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Matrix
+        Private _matrixDelay As Integer = 1
+
         ''' <summary>
         ''' [Matrix] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _matrixDelay As Integer = 1
-
         Public Property MatrixDelay As Integer
             Get
                 Return _matrixDelay
@@ -3088,51 +2899,21 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Fader
+        Private _faderDelay As Integer = 50
+        Private _faderFadeOutDelay As Integer = 3000
+        Private _faderWrite As String = "Kernel Simulator"
+        Private _faderMaxSteps As Integer = 25
+        Private _faderBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _faderMinimumRedColorLevel As Integer = 0
+        Private _faderMinimumGreenColorLevel As Integer = 0
+        Private _faderMinimumBlueColorLevel As Integer = 0
+        Private _faderMaximumRedColorLevel As Integer = 255
+        Private _faderMaximumGreenColorLevel As Integer = 255
+        Private _faderMaximumBlueColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Fader] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _faderDelay As Integer = 50
-        ''' <summary>
-        ''' [Fader] How many milliseconds to wait before fading the text out?
-        ''' </summary>
-        Private _faderFadeOutDelay As Integer = 3000
-        ''' <summary>
-        ''' [Fader] Text for Fader. Shorter is better.
-        ''' </summary>
-        Private _faderWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [Fader] How many fade steps to do?
-        ''' </summary>
-        Private _faderMaxSteps As Integer = 25
-        ''' <summary>
-        ''' [Fader] Screensaver background color
-        ''' </summary>
-        Private _faderBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [Fader] The minimum red color level (true color)
-        ''' </summary>
-        Private _faderMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Fader] The minimum green color level (true color)
-        ''' </summary>
-        Private _faderMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Fader] The minimum blue color level (true color)
-        ''' </summary>
-        Private _faderMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Fader] The maximum red color level (true color)
-        ''' </summary>
-        Private _faderMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Fader] The maximum green color level (true color)
-        ''' </summary>
-        Private _faderMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Fader] The maximum blue color level (true color)
-        ''' </summary>
-        Private _faderMaximumBlueColorLevel As Integer = 255
-
         Public Property FaderDelay As Integer
             Get
                 Return _faderDelay
@@ -3142,7 +2923,9 @@ Namespace Misc.Screensaver
                 _faderDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] How many milliseconds to wait before fading the text out?
+        ''' </summary>
         Public Property FaderFadeOutDelay As Integer
             Get
                 Return _faderFadeOutDelay
@@ -3152,7 +2935,9 @@ Namespace Misc.Screensaver
                 _faderFadeOutDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] Text for Fader. Shorter is better.
+        ''' </summary>
         Public Property FaderWrite As String
             Get
                 Return _faderWrite
@@ -3162,7 +2947,9 @@ Namespace Misc.Screensaver
                 _faderWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] How many fade steps to do?
+        ''' </summary>
         Public Property FaderMaxSteps As Integer
             Get
                 Return _faderMaxSteps
@@ -3172,7 +2959,9 @@ Namespace Misc.Screensaver
                 _faderMaxSteps = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] Screensaver background color
+        ''' </summary>
         Public Property FaderBackgroundColor As String
             Get
                 Return _faderBackgroundColor
@@ -3181,7 +2970,9 @@ Namespace Misc.Screensaver
                 _faderBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The minimum red color level (true color)
+        ''' </summary>
         Public Property FaderMinimumRedColorLevel As Integer
             Get
                 Return _faderMinimumRedColorLevel
@@ -3192,7 +2983,9 @@ Namespace Misc.Screensaver
                 _faderMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The minimum green color level (true color)
+        ''' </summary>
         Public Property FaderMinimumGreenColorLevel As Integer
             Get
                 Return _faderMinimumGreenColorLevel
@@ -3203,7 +2996,9 @@ Namespace Misc.Screensaver
                 _faderMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The minimum blue color level (true color)
+        ''' </summary>
         Public Property FaderMinimumBlueColorLevel As Integer
             Get
                 Return _faderMinimumBlueColorLevel
@@ -3214,7 +3009,9 @@ Namespace Misc.Screensaver
                 _faderMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The maximum red color level (true color)
+        ''' </summary>
         Public Property FaderMaximumRedColorLevel As Integer
             Get
                 Return _faderMaximumRedColorLevel
@@ -3225,7 +3022,9 @@ Namespace Misc.Screensaver
                 _faderMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The maximum green color level (true color)
+        ''' </summary>
         Public Property FaderMaximumGreenColorLevel As Integer
             Get
                 Return _faderMaximumGreenColorLevel
@@ -3236,7 +3035,9 @@ Namespace Misc.Screensaver
                 _faderMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Fader] The maximum blue color level (true color)
+        ''' </summary>
         Public Property FaderMaximumBlueColorLevel As Integer
             Get
                 Return _faderMaximumBlueColorLevel
@@ -3249,43 +3050,19 @@ Namespace Misc.Screensaver
         End Property
 
         '-> FaderBack
+        Private _faderBackDelay As Integer = 10
+        Private _faderBackFadeOutDelay As Integer = 3000
+        Private _faderBackMaxSteps As Integer = 25
+        Private _faderBackMinimumRedColorLevel As Integer = 0
+        Private _faderBackMinimumGreenColorLevel As Integer = 0
+        Private _faderBackMinimumBlueColorLevel As Integer = 0
+        Private _faderBackMaximumRedColorLevel As Integer = 255
+        Private _faderBackMaximumGreenColorLevel As Integer = 255
+        Private _faderBackMaximumBlueColorLevel As Integer = 255
+
         ''' <summary>
         ''' [FaderBack] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _faderBackDelay As Integer = 10
-        ''' <summary>
-        ''' [FaderBack] How many milliseconds to wait before fading the text out?
-        ''' </summary>
-        Private _faderBackFadeOutDelay As Integer = 3000
-        ''' <summary>
-        ''' [FaderBack] How many fade steps to do?
-        ''' </summary>
-        Private _faderBackMaxSteps As Integer = 25
-        ''' <summary>
-        ''' [FaderBack] The minimum red color level (true color)
-        ''' </summary>
-        Private _faderBackMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FaderBack] The minimum green color level (true color)
-        ''' </summary>
-        Private _faderBackMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FaderBack] The minimum blue color level (true color)
-        ''' </summary>
-        Private _faderBackMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FaderBack] The maximum red color level (true color)
-        ''' </summary>
-        Private _faderBackMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [FaderBack] The maximum green color level (true color)
-        ''' </summary>
-        Private _faderBackMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [FaderBack] The maximum blue color level (true color)
-        ''' </summary>
-        Private _faderBackMaximumBlueColorLevel As Integer = 255
-
         Public Property FaderBackDelay As Integer
             Get
                 Return _faderBackDelay
@@ -3295,7 +3072,9 @@ Namespace Misc.Screensaver
                 _faderBackDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] How many milliseconds to wait before fading the text out?
+        ''' </summary>
         Public Property FaderBackFadeOutDelay As Integer
             Get
                 Return _faderBackFadeOutDelay
@@ -3305,7 +3084,9 @@ Namespace Misc.Screensaver
                 _faderBackFadeOutDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] How many fade steps to do?
+        ''' </summary>
         Public Property FaderBackMaxSteps As Integer
             Get
                 Return _faderBackMaxSteps
@@ -3315,7 +3096,9 @@ Namespace Misc.Screensaver
                 _faderBackMaxSteps = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The minimum red color level (true color)
+        ''' </summary>
         Public Property FaderBackMinimumRedColorLevel As Integer
             Get
                 Return _faderBackMinimumRedColorLevel
@@ -3326,7 +3109,9 @@ Namespace Misc.Screensaver
                 _faderBackMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The minimum green color level (true color)
+        ''' </summary>
         Public Property FaderBackMinimumGreenColorLevel As Integer
             Get
                 Return _faderBackMinimumGreenColorLevel
@@ -3337,7 +3122,9 @@ Namespace Misc.Screensaver
                 _faderBackMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The minimum blue color level (true color)
+        ''' </summary>
         Public Property FaderBackMinimumBlueColorLevel As Integer
             Get
                 Return _faderBackMinimumBlueColorLevel
@@ -3348,7 +3135,9 @@ Namespace Misc.Screensaver
                 _faderBackMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The maximum red color level (true color)
+        ''' </summary>
         Public Property FaderBackMaximumRedColorLevel As Integer
             Get
                 Return _faderBackMaximumRedColorLevel
@@ -3359,7 +3148,9 @@ Namespace Misc.Screensaver
                 _faderBackMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The maximum green color level (true color)
+        ''' </summary>
         Public Property FaderBackMaximumGreenColorLevel As Integer
             Get
                 Return _faderBackMaximumGreenColorLevel
@@ -3370,7 +3161,9 @@ Namespace Misc.Screensaver
                 _faderBackMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FaderBack] The maximum blue color level (true color)
+        ''' </summary>
         Public Property FaderBackMaximumBlueColorLevel As Integer
             Get
                 Return _faderBackMaximumBlueColorLevel
@@ -3383,39 +3176,18 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Typo
+        Private _typoDelay As Integer = 50
+        Private _typoWriteAgainDelay As Integer = 3000
+        Private _typoWrite As String = "Kernel Simulator"
+        Private _typoWritingSpeedMin As Integer = 50
+        Private _typoWritingSpeedMax As Integer = 80
+        Private _typoMissStrikePossibility As Integer = 20
+        Private _typoMissPossibility As Integer = 10
+        Private _typoTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
         ''' <summary>
         ''' [Typo] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _typoDelay As Integer = 50
-        ''' <summary>
-        ''' [Typo] How many milliseconds to wait before writing the text again?
-        ''' </summary>
-        Private _typoWriteAgainDelay As Integer = 3000
-        ''' <summary>
-        ''' [Typo] Text for Typo. Longer is better.
-        ''' </summary>
-        Private _typoWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [Typo] Minimum writing speed in WPM
-        ''' </summary>
-        Private _typoWritingSpeedMin As Integer = 50
-        ''' <summary>
-        ''' [Typo] Maximum writing speed in WPM
-        ''' </summary>
-        Private _typoWritingSpeedMax As Integer = 80
-        ''' <summary>
-        ''' [Typo] Possibility that the writer made a typo in percent
-        ''' </summary>
-        Private _typoMissStrikePossibility As Integer = 20
-        ''' <summary>
-        ''' [Typo] Possibility that the writer missed a character in percent
-        ''' </summary>
-        Private _typoMissPossibility As Integer = 10
-        ''' <summary>
-        ''' [Typo] Text color
-        ''' </summary>
-        Private _typoTextColor As String = New Color(ConsoleColor.White).PlainSequence
-
         Public Property TypoDelay As Integer
             Get
                 Return _typoDelay
@@ -3425,7 +3197,9 @@ Namespace Misc.Screensaver
                 _typoDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] How many milliseconds to wait before writing the text again?
+        ''' </summary>
         Public Property TypoWriteAgainDelay As Integer
             Get
                 Return _typoWriteAgainDelay
@@ -3435,7 +3209,9 @@ Namespace Misc.Screensaver
                 _typoWriteAgainDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Text for Typo. Longer is better.
+        ''' </summary>
         Public Property TypoWrite As String
             Get
                 Return _typoWrite
@@ -3445,7 +3221,9 @@ Namespace Misc.Screensaver
                 _typoWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Minimum writing speed in WPM
+        ''' </summary>
         Public Property TypoWritingSpeedMin As Integer
             Get
                 Return _typoWritingSpeedMin
@@ -3455,7 +3233,9 @@ Namespace Misc.Screensaver
                 _typoWritingSpeedMin = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Maximum writing speed in WPM
+        ''' </summary>
         Public Property TypoWritingSpeedMax As Integer
             Get
                 Return _typoWritingSpeedMax
@@ -3465,7 +3245,9 @@ Namespace Misc.Screensaver
                 _typoWritingSpeedMax = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Possibility that the writer made a typo in percent
+        ''' </summary>
         Public Property TypoMissStrikePossibility As Integer
             Get
                 Return _typoMissStrikePossibility
@@ -3475,7 +3257,9 @@ Namespace Misc.Screensaver
                 _typoMissStrikePossibility = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Possibility that the writer missed a character in percent
+        ''' </summary>
         Public Property TypoMissPossibility As Integer
             Get
                 Return _typoMissPossibility
@@ -3485,7 +3269,9 @@ Namespace Misc.Screensaver
                 _typoMissPossibility = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typo] Text color
+        ''' </summary>
         Public Property TypoTextColor As String
             Get
                 Return _typoTextColor
@@ -3496,55 +3282,22 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Linotypo
+        Private _linotypoDelay As Integer = 50
+        Private _linotypoNewScreenDelay As Integer = 3000
+        Private _linotypoWrite As String = "Kernel Simulator"
+        Private _linotypoWritingSpeedMin As Integer = 50
+        Private _linotypoWritingSpeedMax As Integer = 80
+        Private _linotypoMissStrikePossibility As Integer = 1
+        Private _linotypoTextColumns As Integer = 3
+        Private _linotypoEtaoinThreshold As Integer = 5
+        Private _linotypoEtaoinCappingPossibility As Integer = 5
+        Private _linotypoEtaoinType As FillType = FillType.EtaoinPattern
+        Private _linotypoMissPossibility As Integer = 10
+        Private _linotypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
         ''' <summary>
         ''' [Linotypo] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _linotypoDelay As Integer = 50
-        ''' <summary>
-        ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
-        ''' </summary>
-        Private _linotypoNewScreenDelay As Integer = 3000
-        ''' <summary>
-        ''' [Linotypo] Text for Linotypo. Longer is better.
-        ''' </summary>
-        Private _linotypoWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [Linotypo] Minimum writing speed in WPM
-        ''' </summary>
-        Private _linotypoWritingSpeedMin As Integer = 50
-        ''' <summary>
-        ''' [Linotypo] Maximum writing speed in WPM
-        ''' </summary>
-        Private _linotypoWritingSpeedMax As Integer = 80
-        ''' <summary>
-        ''' [Linotypo] Possibility that the writer made a typo in percent
-        ''' </summary>
-        Private _linotypoMissStrikePossibility As Integer = 1
-        ''' <summary>
-        ''' [Linotypo] The text columns to be printed.
-        ''' </summary>
-        Private _linotypoTextColumns As Integer = 3
-        ''' <summary>
-        ''' [Linotypo] How many characters to write before triggering the "line fill"?
-        ''' </summary>
-        Private _linotypoEtaoinThreshold As Integer = 5
-        ''' <summary>
-        ''' [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
-        ''' </summary>
-        Private _linotypoEtaoinCappingPossibility As Integer = 5
-        ''' <summary>
-        ''' [Linotypo] Line fill pattern type
-        ''' </summary>
-        Private _linotypoEtaoinType As FillType = FillType.EtaoinPattern
-        ''' <summary>
-        ''' [Linotypo] Possibility that the writer missed a character in percent
-        ''' </summary>
-        Private _linotypoMissPossibility As Integer = 10
-        ''' <summary>
-        ''' [Linotypo] Text color
-        ''' </summary>
-        Private _linotypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
-
         Public Property LinotypoDelay As Integer
             Get
                 Return _linotypoDelay
@@ -3554,7 +3307,9 @@ Namespace Misc.Screensaver
                 _linotypoDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
         Public Property LinotypoNewScreenDelay As Integer
             Get
                 Return _linotypoNewScreenDelay
@@ -3564,7 +3319,9 @@ Namespace Misc.Screensaver
                 _linotypoNewScreenDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Text for Linotypo. Longer is better.
+        ''' </summary>
         Public Property LinotypoWrite As String
             Get
                 Return _linotypoWrite
@@ -3574,7 +3331,9 @@ Namespace Misc.Screensaver
                 _linotypoWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Minimum writing speed in WPM
+        ''' </summary>
         Public Property LinotypoWritingSpeedMin As Integer
             Get
                 Return _linotypoWritingSpeedMin
@@ -3584,7 +3343,9 @@ Namespace Misc.Screensaver
                 _linotypoWritingSpeedMin = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Maximum writing speed in WPM
+        ''' </summary>
         Public Property LinotypoWritingSpeedMax As Integer
             Get
                 Return _linotypoWritingSpeedMax
@@ -3594,7 +3355,9 @@ Namespace Misc.Screensaver
                 _linotypoWritingSpeedMax = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Possibility that the writer made a typo in percent
+        ''' </summary>
         Public Property LinotypoMissStrikePossibility As Integer
             Get
                 Return _linotypoMissStrikePossibility
@@ -3604,7 +3367,9 @@ Namespace Misc.Screensaver
                 _linotypoMissStrikePossibility = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] The text columns to be printed.
+        ''' </summary>
         Public Property LinotypoTextColumns As Integer
             Get
                 Return _linotypoTextColumns
@@ -3614,7 +3379,9 @@ Namespace Misc.Screensaver
                 _linotypoTextColumns = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] How many characters to write before triggering the "line fill"?
+        ''' </summary>
         Public Property LinotypoEtaoinThreshold As Integer
             Get
                 Return _linotypoEtaoinThreshold
@@ -3624,7 +3391,9 @@ Namespace Misc.Screensaver
                 _linotypoEtaoinThreshold = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
+        ''' </summary>
         Public Property LinotypoEtaoinCappingPossibility As Integer
             Get
                 Return _linotypoEtaoinCappingPossibility
@@ -3634,7 +3403,9 @@ Namespace Misc.Screensaver
                 _linotypoEtaoinCappingPossibility = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Line fill pattern type
+        ''' </summary>
         Public Property LinotypoEtaoinType As FillType
             Get
                 Return _linotypoEtaoinType
@@ -3643,7 +3414,9 @@ Namespace Misc.Screensaver
                 _linotypoEtaoinType = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Possibility that the writer missed a character in percent
+        ''' </summary>
         Public Property LinotypoMissPossibility As Integer
             Get
                 Return _linotypoMissPossibility
@@ -3653,7 +3426,9 @@ Namespace Misc.Screensaver
                 _linotypoMissPossibility = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Linotypo] Text color
+        ''' </summary>
         Public Property LinotypoTextColor As String
             Get
                 Return _linotypoTextColor
@@ -3664,35 +3439,17 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Typewriter
+        Private _typewriterDelay As Integer = 50
+        Private _typewriterNewScreenDelay As Integer = 3000
+        Private _typewriterWrite As String = "Kernel Simulator"
+        Private _typewriterWritingSpeedMin As Integer = 50
+        Private _typewriterWritingSpeedMax As Integer = 80
+        Private _typewriterShowArrowPos As Boolean = True
+        Private _typewriterTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
         ''' <summary>
         ''' [Typewriter] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _typewriterDelay As Integer = 50
-        ''' <summary>
-        ''' [Typewriter] How many milliseconds to wait before writing the text in the new screen again?
-        ''' </summary>
-        Private _typewriterNewScreenDelay As Integer = 3000
-        ''' <summary>
-        ''' [Typewriter] Text for Typewriter. Longer is better.
-        ''' </summary>
-        Private _typewriterWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [Typewriter] Minimum writing speed in WPM
-        ''' </summary>
-        Private _typewriterWritingSpeedMin As Integer = 50
-        ''' <summary>
-        ''' [Typewriter] Maximum writing speed in WPM
-        ''' </summary>
-        Private _typewriterWritingSpeedMax As Integer = 80
-        ''' <summary>
-        ''' [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
-        ''' </summary>
-        Private _typewriterShowArrowPos As Boolean = True
-        ''' <summary>
-        ''' [Typewriter] Text color
-        ''' </summary>
-        Private _typewriterTextColor As String = New Color(ConsoleColor.White).PlainSequence
-
         Public Property TypewriterDelay As Integer
             Get
                 Return _typewriterDelay
@@ -3702,7 +3459,9 @@ Namespace Misc.Screensaver
                 _typewriterDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
         Public Property TypewriterNewScreenDelay As Integer
             Get
                 Return _typewriterNewScreenDelay
@@ -3712,7 +3471,9 @@ Namespace Misc.Screensaver
                 _typewriterNewScreenDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] Text for Typewriter. Longer is better.
+        ''' </summary>
         Public Property TypewriterWrite As String
             Get
                 Return _typewriterWrite
@@ -3722,7 +3483,9 @@ Namespace Misc.Screensaver
                 _typewriterWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] Minimum writing speed in WPM
+        ''' </summary>
         Public Property TypewriterWritingSpeedMin As Integer
             Get
                 Return _typewriterWritingSpeedMin
@@ -3732,7 +3495,9 @@ Namespace Misc.Screensaver
                 _typewriterWritingSpeedMin = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] Maximum writing speed in WPM
+        ''' </summary>
         Public Property TypewriterWritingSpeedMax As Integer
             Get
                 Return _typewriterWritingSpeedMax
@@ -3742,7 +3507,9 @@ Namespace Misc.Screensaver
                 _typewriterWritingSpeedMax = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
+        ''' </summary>
         Public Property TypewriterShowArrowPos As Boolean
             Get
                 Return _typewriterShowArrowPos
@@ -3751,7 +3518,9 @@ Namespace Misc.Screensaver
                 _typewriterShowArrowPos = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Typewriter] Text color
+        ''' </summary>
         Public Property TypewriterTextColor As String
             Get
                 Return _typewriterTextColor
@@ -3762,55 +3531,22 @@ Namespace Misc.Screensaver
         End Property
 
         '-> FlashColor
+        Private _flashColor255Colors As Boolean
+        Private _flashColorTrueColor As Boolean = True
+        Private _flashColorDelay As Integer = 20
+        Private _flashColorBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+        Private _flashColorMinimumRedColorLevel As Integer = 0
+        Private _flashColorMinimumGreenColorLevel As Integer = 0
+        Private _flashColorMinimumBlueColorLevel As Integer = 0
+        Private _flashColorMinimumColorLevel As Integer = 0
+        Private _flashColorMaximumRedColorLevel As Integer = 255
+        Private _flashColorMaximumGreenColorLevel As Integer = 255
+        Private _flashColorMaximumBlueColorLevel As Integer = 255
+        Private _flashColorMaximumColorLevel As Integer = 0
+
         ''' <summary>
         ''' [FlashColor] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _flashColor255Colors As Boolean
-        ''' <summary>
-        ''' [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _flashColorTrueColor As Boolean = True
-        ''' <summary>
-        ''' [FlashColor] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _flashColorDelay As Integer = 20
-        ''' <summary>
-        ''' [FlashColor] Screensaver background color
-        ''' </summary>
-        Private _flashColorBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
-        ''' <summary>
-        ''' [FlashColor] The minimum red color level (true color)
-        ''' </summary>
-        Private _flashColorMinimumRedColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FlashColor] The minimum green color level (true color)
-        ''' </summary>
-        Private _flashColorMinimumGreenColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FlashColor] The minimum blue color level (true color)
-        ''' </summary>
-        Private _flashColorMinimumBlueColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FlashColor] The minimum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _flashColorMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [FlashColor] The maximum red color level (true color)
-        ''' </summary>
-        Private _flashColorMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [FlashColor] The maximum green color level (true color)
-        ''' </summary>
-        Private _flashColorMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [FlashColor] The maximum blue color level (true color)
-        ''' </summary>
-        Private _flashColorMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [FlashColor] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _flashColorMaximumColorLevel As Integer = 0
-
         Public Property FlashColor255Colors As Boolean
             Get
                 Return _flashColor255Colors
@@ -3819,7 +3555,9 @@ Namespace Misc.Screensaver
                 _flashColor255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property FlashColorTrueColor As Boolean
             Get
                 Return _flashColorTrueColor
@@ -3828,7 +3566,9 @@ Namespace Misc.Screensaver
                 _flashColorTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property FlashColorDelay As Integer
             Get
                 Return _flashColorDelay
@@ -3838,7 +3578,9 @@ Namespace Misc.Screensaver
                 _flashColorDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] Screensaver background color
+        ''' </summary>
         Public Property FlashColorBackgroundColor As String
             Get
                 Return _flashColorBackgroundColor
@@ -3847,7 +3589,9 @@ Namespace Misc.Screensaver
                 _flashColorBackgroundColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The minimum red color level (true color)
+        ''' </summary>
         Public Property FlashColorMinimumRedColorLevel As Integer
             Get
                 Return _flashColorMinimumRedColorLevel
@@ -3858,7 +3602,9 @@ Namespace Misc.Screensaver
                 _flashColorMinimumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The minimum green color level (true color)
+        ''' </summary>
         Public Property FlashColorMinimumGreenColorLevel As Integer
             Get
                 Return _flashColorMinimumGreenColorLevel
@@ -3869,7 +3615,9 @@ Namespace Misc.Screensaver
                 _flashColorMinimumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The minimum blue color level (true color)
+        ''' </summary>
         Public Property FlashColorMinimumBlueColorLevel As Integer
             Get
                 Return _flashColorMinimumBlueColorLevel
@@ -3880,7 +3628,9 @@ Namespace Misc.Screensaver
                 _flashColorMinimumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The minimum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property FlashColorMinimumColorLevel As Integer
             Get
                 Return _flashColorMinimumColorLevel
@@ -3892,7 +3642,9 @@ Namespace Misc.Screensaver
                 _flashColorMinimumColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The maximum red color level (true color)
+        ''' </summary>
         Public Property FlashColorMaximumRedColorLevel As Integer
             Get
                 Return _flashColorMaximumRedColorLevel
@@ -3903,7 +3655,9 @@ Namespace Misc.Screensaver
                 _flashColorMaximumRedColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The maximum green color level (true color)
+        ''' </summary>
         Public Property FlashColorMaximumGreenColorLevel As Integer
             Get
                 Return _flashColorMaximumGreenColorLevel
@@ -3914,7 +3668,9 @@ Namespace Misc.Screensaver
                 _flashColorMaximumGreenColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The maximum blue color level (true color)
+        ''' </summary>
         Public Property FlashColorMaximumBlueColorLevel As Integer
             Get
                 Return _flashColorMaximumBlueColorLevel
@@ -3925,7 +3681,9 @@ Namespace Misc.Screensaver
                 _flashColorMaximumBlueColorLevel = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [FlashColor] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
         Public Property FlashColorMaximumColorLevel As Integer
             Get
                 Return _flashColorMaximumColorLevel
@@ -3939,23 +3697,14 @@ Namespace Misc.Screensaver
         End Property
 
         '-> SpotWrite
+        Private _spotWriteDelay As Integer = 100
+        Private _spotWriteWrite As String = "Kernel Simulator"
+        Private _spotWriteNewScreenDelay As Integer = 3000
+        Private _spotWriteTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
         ''' <summary>
         ''' [SpotWrite] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _spotWriteDelay As Integer = 100
-        ''' <summary>
-        ''' [SpotWrite] Text for SpotWrite. Longer is better.
-        ''' </summary>
-        Private _spotWriteWrite As String = "Kernel Simulator"
-        ''' <summary>
-        ''' [SpotWrite] How many milliseconds to wait before writing the text in the new screen again?
-        ''' </summary>
-        Private _spotWriteNewScreenDelay As Integer = 3000
-        ''' <summary>
-        ''' [SpotWrite] Text color
-        ''' </summary>
-        Private _spotWriteTextColor As String = New Color(ConsoleColor.White).PlainSequence
-
         Public Property SpotWriteDelay As Integer
             Get
                 Return _spotWriteDelay
@@ -3965,7 +3714,9 @@ Namespace Misc.Screensaver
                 _spotWriteDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [SpotWrite] Text for SpotWrite. Longer is better.
+        ''' </summary>
         Public Property SpotWriteWrite As String
             Get
                 Return _spotWriteWrite
@@ -3975,7 +3726,9 @@ Namespace Misc.Screensaver
                 _spotWriteWrite = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [SpotWrite] How many milliseconds to wait before writing the text in the new screen again?
+        ''' </summary>
         Public Property SpotWriteNewScreenDelay As Integer
             Get
                 Return _spotWriteNewScreenDelay
@@ -3985,7 +3738,9 @@ Namespace Misc.Screensaver
                 _spotWriteNewScreenDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [SpotWrite] Text color
+        ''' </summary>
         Public Property SpotWriteTextColor As String
             Get
                 Return _spotWriteTextColor
@@ -3996,191 +3751,47 @@ Namespace Misc.Screensaver
         End Property
 
         '-> Ramp
+        Private _ramp255Colors As Boolean
+        Private _rampTrueColor As Boolean = True
+        Private _rampDelay As Integer = 20
+        Private _rampNextRampDelay As Integer = 250
+        Private _rampUpperLeftCornerChar As String = "╔"
+        Private _rampUpperRightCornerChar As String = "╗"
+        Private _rampLowerLeftCornerChar As String = "╚"
+        Private _rampLowerRightCornerChar As String = "╝"
+        Private _rampUpperFrameChar As String = "═"
+        Private _rampLowerFrameChar As String = "═"
+        Private _rampLeftFrameChar As String = "║"
+        Private _rampRightFrameChar As String = "║"
+        Private _rampMinimumRedColorLevelStart As Integer = 0
+        Private _rampMinimumGreenColorLevelStart As Integer = 0
+        Private _rampMinimumBlueColorLevelStart As Integer = 0
+        Private _rampMinimumColorLevelStart As Integer = 0
+        Private _rampMaximumRedColorLevelStart As Integer = 255
+        Private _rampMaximumGreenColorLevelStart As Integer = 255
+        Private _rampMaximumBlueColorLevelStart As Integer = 255
+        Private _rampMaximumColorLevelStart As Integer = 255
+        Private _rampMinimumRedColorLevelEnd As Integer = 0
+        Private _rampMinimumGreenColorLevelEnd As Integer = 0
+        Private _rampMinimumBlueColorLevelEnd As Integer = 0
+        Private _rampMinimumColorLevelEnd As Integer = 0
+        Private _rampMaximumRedColorLevelEnd As Integer = 255
+        Private _rampMaximumGreenColorLevelEnd As Integer = 255
+        Private _rampMaximumBlueColorLevelEnd As Integer = 255
+        Private _rampMaximumColorLevelEnd As Integer = 255
+        Private _rampUpperLeftCornerColor As String = 7
+        Private _rampUpperRightCornerColor As String = 7
+        Private _rampLowerLeftCornerColor As String = 7
+        Private _rampLowerRightCornerColor As String = 7
+        Private _rampUpperFrameColor As String = 7
+        Private _rampLowerFrameColor As String = 7
+        Private _rampLeftFrameColor As String = 7
+        Private _rampRightFrameColor As String = 7
+        Private _rampUseBorderColors As Boolean
+
         ''' <summary>
         ''' [Ramp] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _ramp255Colors As Boolean
-        ''' <summary>
-        ''' [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Private _rampTrueColor As Boolean = True
-        ''' <summary>
-        ''' [Ramp] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Private _rampDelay As Integer = 20
-        ''' <summary>
-        ''' [Ramp] How many milliseconds to wait before starting the next ramp?
-        ''' </summary>
-        Private _rampNextRampDelay As Integer = 250
-        ''' <summary>
-        ''' [Ramp] Upper left corner character 
-        ''' </summary>
-        Private _rampUpperLeftCornerChar As String = "╔"
-        ''' <summary>
-        ''' [Ramp] Upper right corner character 
-        ''' </summary>
-        Private _rampUpperRightCornerChar As String = "╗"
-        ''' <summary>
-        ''' [Ramp] Lower left corner character 
-        ''' </summary>
-        Private _rampLowerLeftCornerChar As String = "╚"
-        ''' <summary>
-        ''' [Ramp] Lower right corner character 
-        ''' </summary>
-        Private _rampLowerRightCornerChar As String = "╝"
-        ''' <summary>
-        ''' [Ramp] Upper frame character 
-        ''' </summary>
-        Private _rampUpperFrameChar As String = "═"
-        ''' <summary>
-        ''' [Ramp] Lower frame character 
-        ''' </summary>
-        Private _rampLowerFrameChar As String = "═"
-        ''' <summary>
-        ''' [Ramp] Left frame character 
-        ''' </summary>
-        Private _rampLeftFrameChar As String = "║"
-        ''' <summary>
-        ''' [Ramp] Right frame character 
-        ''' </summary>
-        Private _rampRightFrameChar As String = "║"
-        ''' <summary>
-        ''' [Ramp] The minimum red color level (true color - start)
-        ''' </summary>
-        Private _rampMinimumRedColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum green color level (true color - start)
-        ''' </summary>
-        Private _rampMinimumGreenColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum blue color level (true color - start)
-        ''' </summary>
-        Private _rampMinimumBlueColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum color level (255 colors or 16 colors - start)
-        ''' </summary>
-        Private _rampMinimumColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The maximum red color level (true color - start)
-        ''' </summary>
-        Private _rampMaximumRedColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum green color level (true color - start)
-        ''' </summary>
-        Private _rampMaximumGreenColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum blue color level (true color - start)
-        ''' </summary>
-        Private _rampMaximumBlueColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum color level (255 colors or 16 colors - start)
-        ''' </summary>
-        Private _rampMaximumColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The minimum red color level (true color - end)
-        ''' </summary>
-        Private _rampMinimumRedColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum green color level (true color - end)
-        ''' </summary>
-        Private _rampMinimumGreenColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum blue color level (true color - end)
-        ''' </summary>
-        Private _rampMinimumBlueColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The minimum color level (255 colors or 16 colors - end)
-        ''' </summary>
-        Private _rampMinimumColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [Ramp] The maximum red color level (true color - end)
-        ''' </summary>
-        Private _rampMaximumRedColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum green color level (true color - end)
-        ''' </summary>
-        Private _rampMaximumGreenColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum blue color level (true color - end)
-        ''' </summary>
-        Private _rampMaximumBlueColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [Ramp] The maximum color level (255 colors or 16 colors - end)
-        ''' </summary>
-        Private _rampMaximumColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [Ramp] Upper left corner color.
-        ''' </summary>
-        Private _rampUpperLeftCornerColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Upper right corner color.
-        ''' </summary>
-        Private _rampUpperRightCornerColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Lower left corner color.
-        ''' </summary>
-        Private _rampLowerLeftCornerColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Lower right corner color.
-        ''' </summary>
-        Private _rampLowerRightCornerColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Upper frame color.
-        ''' </summary>
-        Private _rampUpperFrameColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Lower frame color.
-        ''' </summary>
-        Private _rampLowerFrameColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Left frame color.
-        ''' </summary>
-        Private _rampLeftFrameColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Right frame color.
-        ''' </summary>
-        Private _rampRightFrameColor As String = 7
-        ''' <summary>
-        ''' [Ramp] Use the border colors.
-        ''' </summary>
-        Private _rampUseBorderColors As Boolean
-
-        Public Property RampUseBorderColors As Boolean
-            Get
-                Return _rampUseBorderColors
-            End Get
-            Set(value As Boolean)
-                _rampUseBorderColors = value
-            End Set
-        End Property
-
-        Public Property RampRightFrameColor As String
-            Get
-                Return _rampRightFrameColor
-            End Get
-            Set(value As String)
-                _rampRightFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property RampLeftFrameColor As String
-            Get
-                Return _rampLeftFrameColor
-            End Get
-            Set(value As String)
-                _rampLeftFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property RampLowerFrameColor As String
-            Get
-                Return _rampLowerFrameColor
-            End Get
-            Set(value As String)
-                _rampLowerFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
         Public Property Ramp255Colors As Boolean
             Get
                 Return _ramp255Colors
@@ -4189,7 +3800,9 @@ Namespace Misc.Screensaver
                 _ramp255Colors = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
+        ''' </summary>
         Public Property RampTrueColor As Boolean
             Get
                 Return _rampTrueColor
@@ -4198,7 +3811,9 @@ Namespace Misc.Screensaver
                 _rampTrueColor = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] How many milliseconds to wait before making the next write?
+        ''' </summary>
         Public Property RampDelay As Integer
             Get
                 Return _rampDelay
@@ -4208,7 +3823,9 @@ Namespace Misc.Screensaver
                 _rampDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] How many milliseconds to wait before starting the next ramp?
+        ''' </summary>
         Public Property RampNextRampDelay As Integer
             Get
                 Return _rampNextRampDelay
@@ -4218,7 +3835,9 @@ Namespace Misc.Screensaver
                 _rampNextRampDelay = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper left corner character 
+        ''' </summary>
         Public Property RampUpperLeftCornerChar As String
             Get
                 Return _rampUpperLeftCornerChar
@@ -4228,7 +3847,9 @@ Namespace Misc.Screensaver
                 _rampUpperLeftCornerChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper right corner character 
+        ''' </summary>
         Public Property RampUpperRightCornerChar As String
             Get
                 Return _rampUpperRightCornerChar
@@ -4238,7 +3859,9 @@ Namespace Misc.Screensaver
                 _rampUpperRightCornerChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Lower left corner character 
+        ''' </summary>
         Public Property RampLowerLeftCornerChar As String
             Get
                 Return _rampLowerLeftCornerChar
@@ -4248,7 +3871,9 @@ Namespace Misc.Screensaver
                 _rampLowerLeftCornerChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Lower right corner character 
+        ''' </summary>
         Public Property RampLowerRightCornerChar As String
             Get
                 Return _rampLowerRightCornerChar
@@ -4258,7 +3883,9 @@ Namespace Misc.Screensaver
                 _rampLowerRightCornerChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper frame character 
+        ''' </summary>
         Public Property RampUpperFrameChar As String
             Get
                 Return _rampUpperFrameChar
@@ -4268,7 +3895,9 @@ Namespace Misc.Screensaver
                 _rampUpperFrameChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Lower frame character 
+        ''' </summary>
         Public Property RampLowerFrameChar As String
             Get
                 Return _rampLowerFrameChar
@@ -4278,7 +3907,9 @@ Namespace Misc.Screensaver
                 _rampLowerFrameChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Left frame character 
+        ''' </summary>
         Public Property RampLeftFrameChar As String
             Get
                 Return _rampLeftFrameChar
@@ -4288,7 +3919,9 @@ Namespace Misc.Screensaver
                 _rampLeftFrameChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Right frame character 
+        ''' </summary>
         Public Property RampRightFrameChar As String
             Get
                 Return _rampRightFrameChar
@@ -4298,7 +3931,9 @@ Namespace Misc.Screensaver
                 _rampRightFrameChar = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum red color level (true color - start)
+        ''' </summary>
         Public Property RampMinimumRedColorLevelStart As Integer
             Get
                 Return _rampMinimumRedColorLevelStart
@@ -4309,7 +3944,9 @@ Namespace Misc.Screensaver
                 _rampMinimumRedColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum green color level (true color - start)
+        ''' </summary>
         Public Property RampMinimumGreenColorLevelStart As Integer
             Get
                 Return _rampMinimumGreenColorLevelStart
@@ -4320,7 +3957,9 @@ Namespace Misc.Screensaver
                 _rampMinimumGreenColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum blue color level (true color - start)
+        ''' </summary>
         Public Property RampMinimumBlueColorLevelStart As Integer
             Get
                 Return _rampMinimumBlueColorLevelStart
@@ -4331,7 +3970,9 @@ Namespace Misc.Screensaver
                 _rampMinimumBlueColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum color level (255 colors or 16 colors - start)
+        ''' </summary>
         Public Property RampMinimumColorLevelStart As Integer
             Get
                 Return _rampMinimumColorLevelStart
@@ -4343,7 +3984,9 @@ Namespace Misc.Screensaver
                 _rampMinimumColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum red color level (true color - start)
+        ''' </summary>
         Public Property RampMaximumRedColorLevelStart As Integer
             Get
                 Return _rampMaximumRedColorLevelStart
@@ -4354,7 +3997,9 @@ Namespace Misc.Screensaver
                 _rampMaximumRedColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum green color level (true color - start)
+        ''' </summary>
         Public Property RampMaximumGreenColorLevelStart As Integer
             Get
                 Return _rampMaximumGreenColorLevelStart
@@ -4365,7 +4010,9 @@ Namespace Misc.Screensaver
                 _rampMaximumGreenColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum blue color level (true color - start)
+        ''' </summary>
         Public Property RampMaximumBlueColorLevelStart As Integer
             Get
                 Return _rampMaximumBlueColorLevelStart
@@ -4376,7 +4023,9 @@ Namespace Misc.Screensaver
                 _rampMaximumBlueColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum color level (255 colors or 16 colors - start)
+        ''' </summary>
         Public Property RampMaximumColorLevelStart As Integer
             Get
                 Return _rampMaximumColorLevelStart
@@ -4388,7 +4037,9 @@ Namespace Misc.Screensaver
                 _rampMaximumColorLevelStart = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum red color level (true color - end)
+        ''' </summary>
         Public Property RampMinimumRedColorLevelEnd As Integer
             Get
                 Return _rampMinimumRedColorLevelEnd
@@ -4399,7 +4050,9 @@ Namespace Misc.Screensaver
                 _rampMinimumRedColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum green color level (true color - end)
+        ''' </summary>
         Public Property RampMinimumGreenColorLevelEnd As Integer
             Get
                 Return _rampMinimumGreenColorLevelEnd
@@ -4410,7 +4063,9 @@ Namespace Misc.Screensaver
                 _rampMinimumGreenColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum blue color level (true color - end)
+        ''' </summary>
         Public Property RampMinimumBlueColorLevelEnd As Integer
             Get
                 Return _rampMinimumBlueColorLevelEnd
@@ -4421,7 +4076,9 @@ Namespace Misc.Screensaver
                 _rampMinimumBlueColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The minimum color level (255 colors or 16 colors - end)
+        ''' </summary>
         Public Property RampMinimumColorLevelEnd As Integer
             Get
                 Return _rampMinimumColorLevelEnd
@@ -4433,7 +4090,9 @@ Namespace Misc.Screensaver
                 _rampMinimumColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum red color level (true color - end)
+        ''' </summary>
         Public Property RampMaximumRedColorLevelEnd As Integer
             Get
                 Return _rampMaximumRedColorLevelEnd
@@ -4444,7 +4103,9 @@ Namespace Misc.Screensaver
                 _rampMaximumRedColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum green color level (true color - end)
+        ''' </summary>
         Public Property RampMaximumGreenColorLevelEnd As Integer
             Get
                 Return _rampMaximumGreenColorLevelEnd
@@ -4455,7 +4116,9 @@ Namespace Misc.Screensaver
                 _rampMaximumGreenColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum blue color level (true color - end)
+        ''' </summary>
         Public Property RampMaximumBlueColorLevelEnd As Integer
             Get
                 Return _rampMaximumBlueColorLevelEnd
@@ -4466,7 +4129,9 @@ Namespace Misc.Screensaver
                 _rampMaximumBlueColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] The maximum color level (255 colors or 16 colors - end)
+        ''' </summary>
         Public Property RampMaximumColorLevelEnd As Integer
             Get
                 Return _rampMaximumColorLevelEnd
@@ -4478,7 +4143,9 @@ Namespace Misc.Screensaver
                 _rampMaximumColorLevelEnd = value
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper left corner color.
+        ''' </summary>
         Public Property RampUpperLeftCornerColor As String
             Get
                 Return _rampUpperLeftCornerColor
@@ -4487,7 +4154,9 @@ Namespace Misc.Screensaver
                 _rampUpperLeftCornerColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper right corner color.
+        ''' </summary>
         Public Property RampUpperRightCornerColor As String
             Get
                 Return _rampUpperRightCornerColor
@@ -4496,7 +4165,9 @@ Namespace Misc.Screensaver
                 _rampUpperRightCornerColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Lower left corner color.
+        ''' </summary>
         Public Property RampLowerLeftCornerColor As String
             Get
                 Return _rampLowerLeftCornerColor
@@ -4505,7 +4176,9 @@ Namespace Misc.Screensaver
                 _rampLowerLeftCornerColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Lower right corner color.
+        ''' </summary>
         Public Property RampLowerRightCornerColor As String
             Get
                 Return _rampLowerRightCornerColor
@@ -4514,7 +4187,9 @@ Namespace Misc.Screensaver
                 _rampLowerRightCornerColor = New Color(value).PlainSequence
             End Set
         End Property
-
+        ''' <summary>
+        ''' [Ramp] Upper frame color.
+        ''' </summary>
         Public Property RampUpperFrameColor As String
             Get
                 Return _rampUpperFrameColor
@@ -4523,57 +4198,205 @@ Namespace Misc.Screensaver
                 _rampUpperFrameColor = New Color(value).PlainSequence
             End Set
         End Property
+        ''' <summary>
+        ''' [Ramp] Lower frame color.
+        ''' </summary>
+        Public Property RampLowerFrameColor As String
+            Get
+                Return _rampLowerFrameColor
+            End Get
+            Set(value As String)
+                _rampLowerFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Ramp] Left frame color.
+        ''' </summary>
+        Public Property RampLeftFrameColor As String
+            Get
+                Return _rampLeftFrameColor
+            End Get
+            Set(value As String)
+                _rampLeftFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Ramp] Right frame color.
+        ''' </summary>
+        Public Property RampRightFrameColor As String
+            Get
+                Return _rampRightFrameColor
+            End Get
+            Set(value As String)
+                _rampRightFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [Ramp] Use the border colors.
+        ''' </summary>
+        Public Property RampUseBorderColors As Boolean
+            Get
+                Return _rampUseBorderColors
+            End Get
+            Set(value As Boolean)
+                _rampUseBorderColors = value
+            End Set
+        End Property
 
         '-> StackBox
+        Private _stackBox255Colors As Boolean
+        Private _stackBoxTrueColor As Boolean = True
+        Private _stackBoxDelay As Integer = 10
+        Private _stackBoxFill As Boolean = True
+        Private _stackBoxMinimumRedColorLevel As Integer = 0
+        Private _stackBoxMinimumGreenColorLevel As Integer = 0
+        Private _stackBoxMinimumBlueColorLevel As Integer = 0
+        Private _stackBoxMinimumColorLevel As Integer = 0
+        Private _stackBoxMaximumRedColorLevel As Integer = 255
+        Private _stackBoxMaximumGreenColorLevel As Integer = 255
+        Private _stackBoxMaximumBlueColorLevel As Integer = 255
+        Private _stackBoxMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [StackBox] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _stackBox255Colors As Boolean
+        Public Property StackBox255Colors As Boolean
+            Get
+                Return _stackBox255Colors
+            End Get
+            Set(value As Boolean)
+                _stackBox255Colors = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Private _stackBoxTrueColor As Boolean = True
+        Public Property StackBoxTrueColor As Boolean
+            Get
+                Return _stackBoxTrueColor
+            End Get
+            Set(value As Boolean)
+                _stackBoxTrueColor = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _stackBoxDelay As Integer = 10
+        Public Property StackBoxDelay As Integer
+            Get
+                Return _stackBoxDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _stackBoxDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] Whether to fill in the boxes drawn, or only draw the outline
         ''' </summary>
-        Private _stackBoxFill As Boolean = True
+        Public Property StackBoxFill As Boolean
+            Get
+                Return _stackBoxFill
+            End Get
+            Set(value As Boolean)
+                _stackBoxFill = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The minimum red color level (true color)
         ''' </summary>
-        Private _stackBoxMinimumRedColorLevel As Integer = 0
+        Public Property StackBoxMinimumRedColorLevel As Integer
+            Get
+                Return _stackBoxMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The minimum green color level (true color)
         ''' </summary>
-        Private _stackBoxMinimumGreenColorLevel As Integer = 0
+        Public Property StackBoxMinimumGreenColorLevel As Integer
+            Get
+                Return _stackBoxMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The minimum blue color level (true color)
         ''' </summary>
-        Private _stackBoxMinimumBlueColorLevel As Integer = 0
+        Public Property StackBoxMinimumBlueColorLevel As Integer
+            Get
+                Return _stackBoxMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _stackBoxMinimumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The minimum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _stackBoxMinimumColorLevel As Integer = 0
+        Public Property StackBoxMinimumColorLevel As Integer
+            Get
+                Return _stackBoxMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_stackBox255Colors Or _stackBoxTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _stackBoxMinimumColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The maximum red color level (true color)
         ''' </summary>
-        Private _stackBoxMaximumRedColorLevel As Integer = 255
+        Public Property StackBoxMaximumRedColorLevel As Integer
+            Get
+                Return _stackBoxMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumRedColorLevel Then value = _stackBoxMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The maximum green color level (true color)
         ''' </summary>
-        Private _stackBoxMaximumGreenColorLevel As Integer = 255
+        Public Property StackBoxMaximumGreenColorLevel As Integer
+            Get
+                Return _stackBoxMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumGreenColorLevel Then value = _stackBoxMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The maximum blue color level (true color)
         ''' </summary>
-        Private _stackBoxMaximumBlueColorLevel As Integer = 255
+        Public Property StackBoxMaximumBlueColorLevel As Integer
+            Get
+                Return _stackBoxMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _stackBoxMinimumBlueColorLevel Then value = _stackBoxMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _stackBoxMaximumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [StackBox] The maximum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _stackBoxMaximumColorLevel As Integer = 255
-
         Public Property StackBoxMaximumColorLevel As Integer
             Get
                 Return _stackBoxMaximumColorLevel
@@ -4586,171 +4409,161 @@ Namespace Misc.Screensaver
             End Set
         End Property
 
-        Public Property StackBoxMaximumBlueColorLevel As Integer
-            Get
-                Return _stackBoxMaximumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _stackBoxMinimumBlueColorLevel Then value = _stackBoxMinimumBlueColorLevel
-                If value > 255 Then value = 255
-                _stackBoxMaximumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMaximumGreenColorLevel As Integer
-            Get
-                Return _stackBoxMaximumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _stackBoxMinimumGreenColorLevel Then value = _stackBoxMinimumGreenColorLevel
-                If value > 255 Then value = 255
-                _stackBoxMaximumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMaximumRedColorLevel As Integer
-            Get
-                Return _stackBoxMaximumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _stackBoxMinimumRedColorLevel Then value = _stackBoxMinimumRedColorLevel
-                If value > 255 Then value = 255
-                _stackBoxMaximumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMinimumColorLevel As Integer
-            Get
-                Return _stackBoxMinimumColorLevel
-            End Get
-            Set(value As Integer)
-                Dim FinalMinimumLevel As Integer = If(_stackBox255Colors Or _stackBoxTrueColor, 255, 15)
-                If value <= 0 Then value = 0
-                If value > FinalMinimumLevel Then value = FinalMinimumLevel
-                _stackBoxMinimumColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMinimumBlueColorLevel As Integer
-            Get
-                Return _stackBoxMinimumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _stackBoxMinimumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMinimumGreenColorLevel As Integer
-            Get
-                Return _stackBoxMinimumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _stackBoxMinimumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxMinimumRedColorLevel As Integer
-            Get
-                Return _stackBoxMinimumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _stackBoxMinimumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property StackBoxFill As Boolean
-            Get
-                Return _stackBoxFill
-            End Get
-            Set(value As Boolean)
-                _stackBoxFill = value
-            End Set
-        End Property
-
-        Public Property StackBoxDelay As Integer
-            Get
-                Return _stackBoxDelay
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 10
-                _stackBoxDelay = value
-            End Set
-        End Property
-
-        Public Property StackBoxTrueColor As Boolean
-            Get
-                Return _stackBoxTrueColor
-            End Get
-            Set(value As Boolean)
-                _stackBoxTrueColor = value
-            End Set
-        End Property
-
-        Public Property StackBox255Colors As Boolean
-            Get
-                Return _stackBox255Colors
-            End Get
-            Set(value As Boolean)
-                _stackBox255Colors = value
-            End Set
-        End Property
-
         '-> Snaker
+        Private _snaker255Colors As Boolean
+        Private _snakerTrueColor As Boolean = True
+        Private _snakerDelay As Integer = 100
+        Private _snakerStageDelay As Integer = 5000
+        Private _snakerMinimumRedColorLevel As Integer = 0
+        Private _snakerMinimumGreenColorLevel As Integer = 0
+        Private _snakerMinimumBlueColorLevel As Integer = 0
+        Private _snakerMinimumColorLevel As Integer = 0
+        Private _snakerMaximumRedColorLevel As Integer = 255
+        Private _snakerMaximumGreenColorLevel As Integer = 255
+        Private _snakerMaximumBlueColorLevel As Integer = 255
+        Private _snakerMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Snaker] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _snaker255Colors As Boolean
+        Public Property Snaker255Colors As Boolean
+            Get
+                Return _snaker255Colors
+            End Get
+            Set(value As Boolean)
+                _snaker255Colors = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Private _snakerTrueColor As Boolean = True
+        Public Property SnakerTrueColor As Boolean
+            Get
+                Return _snakerTrueColor
+            End Get
+            Set(value As Boolean)
+                _snakerTrueColor = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _snakerDelay As Integer = 100
+        Public Property SnakerDelay As Integer
+            Get
+                Return _snakerDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 100
+                _snakerDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] How many milliseconds to wait before making the next stage?
         ''' </summary>
-        Private _snakerStageDelay As Integer = 5000
+        Public Property SnakerStageDelay As Integer
+            Get
+                Return _snakerStageDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5000
+                _snakerStageDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The minimum red color level (true color)
         ''' </summary>
-        Private _snakerMinimumRedColorLevel As Integer = 0
+        Public Property SnakerMinimumRedColorLevel As Integer
+            Get
+                Return _snakerMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _snakerMinimumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The minimum green color level (true color)
         ''' </summary>
-        Private _snakerMinimumGreenColorLevel As Integer = 0
+        Public Property SnakerMinimumGreenColorLevel As Integer
+            Get
+                Return _snakerMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _snakerMinimumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The minimum blue color level (true color)
         ''' </summary>
-        Private _snakerMinimumBlueColorLevel As Integer = 0
+        Public Property SnakerMinimumBlueColorLevel As Integer
+            Get
+                Return _snakerMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _snakerMinimumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The minimum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _snakerMinimumColorLevel As Integer = 0
+        Public Property SnakerMinimumColorLevel As Integer
+            Get
+                Return _snakerMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_snaker255Colors Or _snakerTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _snakerMinimumColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The maximum red color level (true color)
         ''' </summary>
-        Private _snakerMaximumRedColorLevel As Integer = 255
+        Public Property SnakerMaximumRedColorLevel As Integer
+            Get
+                Return _snakerMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _snakerMinimumRedColorLevel Then value = _snakerMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _snakerMaximumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The maximum green color level (true color)
         ''' </summary>
-        Private _snakerMaximumGreenColorLevel As Integer = 255
+        Public Property SnakerMaximumGreenColorLevel As Integer
+            Get
+                Return _snakerMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _snakerMinimumGreenColorLevel Then value = _snakerMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _snakerMaximumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The maximum blue color level (true color)
         ''' </summary>
-        Private _snakerMaximumBlueColorLevel As Integer = 255
+        Public Property SnakerMaximumBlueColorLevel As Integer
+            Get
+                Return _snakerMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _snakerMinimumBlueColorLevel Then value = _snakerMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _snakerMaximumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Snaker] The maximum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _snakerMaximumColorLevel As Integer = 255
-
         Public Property SnakerMaximumColorLevel As Integer
             Get
                 Return _snakerMaximumColorLevel
@@ -4763,458 +4576,186 @@ Namespace Misc.Screensaver
             End Set
         End Property
 
-        Public Property SnakerMaximumBlueColorLevel As Integer
-            Get
-                Return _snakerMaximumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _snakerMinimumBlueColorLevel Then value = _snakerMinimumBlueColorLevel
-                If value > 255 Then value = 255
-                _snakerMaximumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMaximumGreenColorLevel As Integer
-            Get
-                Return _snakerMaximumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _snakerMinimumGreenColorLevel Then value = _snakerMinimumGreenColorLevel
-                If value > 255 Then value = 255
-                _snakerMaximumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMaximumRedColorLevel As Integer
-            Get
-                Return _snakerMaximumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _snakerMinimumRedColorLevel Then value = _snakerMinimumRedColorLevel
-                If value > 255 Then value = 255
-                _snakerMaximumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMinimumColorLevel As Integer
-            Get
-                Return _snakerMinimumColorLevel
-            End Get
-            Set(value As Integer)
-                Dim FinalMinimumLevel As Integer = If(_snaker255Colors Or _snakerTrueColor, 255, 15)
-                If value <= 0 Then value = 0
-                If value > FinalMinimumLevel Then value = FinalMinimumLevel
-                _snakerMinimumColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMinimumBlueColorLevel As Integer
-            Get
-                Return _snakerMinimumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _snakerMinimumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMinimumGreenColorLevel As Integer
-            Get
-                Return _snakerMinimumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _snakerMinimumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerMinimumRedColorLevel As Integer
-            Get
-                Return _snakerMinimumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _snakerMinimumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property SnakerStageDelay As Integer
-            Get
-                Return _snakerStageDelay
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 5000
-                _snakerStageDelay = value
-            End Set
-        End Property
-
-        Public Property SnakerDelay As Integer
-            Get
-                Return _snakerDelay
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 100
-                _snakerDelay = value
-            End Set
-        End Property
-
-        Public Property SnakerTrueColor As Boolean
-            Get
-                Return _snakerTrueColor
-            End Get
-            Set(value As Boolean)
-                _snakerTrueColor = value
-            End Set
-        End Property
-
-        Public Property Snaker255Colors As Boolean
-            Get
-                Return _snaker255Colors
-            End Get
-            Set(value As Boolean)
-                _snaker255Colors = value
-            End Set
-        End Property
-
         '-> BarRot
+        Private _barRot255Colors As Boolean
+        Private _barRotTrueColor As Boolean = True
+        Private _barRotDelay As Integer = 10
+        Private _barRotNextRampDelay As Integer = 250
+        Private _barRotUpperLeftCornerChar As String = "╔"
+        Private _barRotUpperRightCornerChar As String = "╗"
+        Private _barRotLowerLeftCornerChar As String = "╚"
+        Private _barRotLowerRightCornerChar As String = "╝"
+        Private _barRotUpperFrameChar As String = "═"
+        Private _barRotLowerFrameChar As String = "═"
+        Private _barRotLeftFrameChar As String = "║"
+        Private _barRotRightFrameChar As String = "║"
+        Private _barRotMinimumRedColorLevelStart As Integer = 0
+        Private _barRotMinimumGreenColorLevelStart As Integer = 0
+        Private _barRotMinimumBlueColorLevelStart As Integer = 0
+        Private _barRotMaximumRedColorLevelStart As Integer = 255
+        Private _barRotMaximumGreenColorLevelStart As Integer = 255
+        Private _barRotMaximumBlueColorLevelStart As Integer = 255
+        Private _barRotMinimumRedColorLevelEnd As Integer = 0
+        Private _barRotMinimumGreenColorLevelEnd As Integer = 0
+        Private _barRotMinimumBlueColorLevelEnd As Integer = 0
+        Private _barRotMaximumRedColorLevelEnd As Integer = 255
+        Private _barRotMaximumGreenColorLevelEnd As Integer = 255
+        Private _barRotMaximumBlueColorLevelEnd As Integer = 255
+        Private _barRotUpperLeftCornerColor As String = "192;192;192"
+        Private _barRotUpperRightCornerColor As String = "192;192;192"
+        Private _barRotLowerLeftCornerColor As String = "192;192;192"
+        Private _barRotLowerRightCornerColor As String = "192;192;192"
+        Private _barRotUpperFrameColor As String = "192;192;192"
+        Private _barRotLowerFrameColor As String = "192;192;192"
+        Private _barRotLeftFrameColor As String = "192;192;192"
+        Private _barRotRightFrameColor As String = "192;192;192"
+        Private _barRotUseBorderColors As Boolean
+
         ''' <summary>
         ''' [BarRot] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _barRot255Colors As Boolean
+        Public Property BarRot255Colors As Boolean
+            Get
+                Return _barRot255Colors
+            End Get
+            Set(value As Boolean)
+                _barRot255Colors = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Private _barRotTrueColor As Boolean = True
+        Public Property BarRotTrueColor As Boolean
+            Get
+                Return _barRotTrueColor
+            End Get
+            Set(value As Boolean)
+                _barRotTrueColor = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _barRotDelay As Integer = 10
+        Public Property BarRotDelay As Integer
+            Get
+                Return _barRotDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _barRotDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] How many milliseconds to wait before rotting the next ramp's one end?
         ''' </summary>
-        Private _barRotNextRampDelay As Integer = 250
+        Public Property BarRotNextRampDelay As Integer
+            Get
+                Return _barRotNextRampDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 250
+                _barRotNextRampDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Upper left corner character 
         ''' </summary>
-        Private _barRotUpperLeftCornerChar As String = "╔"
+        Public Property BarRotUpperLeftCornerChar As String
+            Get
+                Return _barRotUpperLeftCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╔"
+                _barRotUpperLeftCornerChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Upper right corner character 
         ''' </summary>
-        Private _barRotUpperRightCornerChar As String = "╗"
+        Public Property BarRotUpperRightCornerChar As String
+            Get
+                Return _barRotUpperRightCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╗"
+                _barRotUpperRightCornerChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Lower left corner character 
         ''' </summary>
-        Private _barRotLowerLeftCornerChar As String = "╚"
+        Public Property BarRotLowerLeftCornerChar As String
+            Get
+                Return _barRotLowerLeftCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╚"
+                _barRotLowerLeftCornerChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Lower right corner character 
         ''' </summary>
-        Private _barRotLowerRightCornerChar As String = "╝"
+        Public Property BarRotLowerRightCornerChar As String
+            Get
+                Return _barRotLowerRightCornerChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "╝"
+                _barRotLowerRightCornerChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Upper frame character 
         ''' </summary>
-        Private _barRotUpperFrameChar As String = "═"
+        Public Property BarRotUpperFrameChar As String
+            Get
+                Return _barRotUpperFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "═"
+                _barRotUpperFrameChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Lower frame character 
         ''' </summary>
-        Private _barRotLowerFrameChar As String = "═"
+        Public Property BarRotLowerFrameChar As String
+            Get
+                Return _barRotLowerFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "═"
+                _barRotLowerFrameChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Left frame character 
         ''' </summary>
-        Private _barRotLeftFrameChar As String = "║"
+        Public Property BarRotLeftFrameChar As String
+            Get
+                Return _barRotLeftFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "║"
+                _barRotLeftFrameChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] Right frame character 
         ''' </summary>
-        Private _barRotRightFrameChar As String = "║"
+        Public Property BarRotRightFrameChar As String
+            Get
+                Return _barRotRightFrameChar
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "║"
+                _barRotRightFrameChar = value
+            End Set
+        End Property
         ''' <summary>
         ''' [BarRot] The minimum red color level (true color - start)
         ''' </summary>
-        Private _barRotMinimumRedColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The minimum green color level (true color - start)
-        ''' </summary>
-        Private _barRotMinimumGreenColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The minimum blue color level (true color - start)
-        ''' </summary>
-        Private _barRotMinimumBlueColorLevelStart As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The maximum red color level (true color - start)
-        ''' </summary>
-        Private _barRotMaximumRedColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [BarRot] The maximum green color level (true color - start)
-        ''' </summary>
-        Private _barRotMaximumGreenColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [BarRot] The maximum blue color level (true color - start)
-        ''' </summary>
-        Private _barRotMaximumBlueColorLevelStart As Integer = 255
-        ''' <summary>
-        ''' [BarRot] The minimum red color level (true color - end)
-        ''' </summary>
-        Private _barRotMinimumRedColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The minimum green color level (true color - end)
-        ''' </summary>
-        Private _barRotMinimumGreenColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The minimum blue color level (true color - end)
-        ''' </summary>
-        Private _barRotMinimumBlueColorLevelEnd As Integer = 0
-        ''' <summary>
-        ''' [BarRot] The maximum red color level (true color - end)
-        ''' </summary>
-        Private _barRotMaximumRedColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [BarRot] The maximum green color level (true color - end)
-        ''' </summary>
-        Private _barRotMaximumGreenColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [BarRot] The maximum blue color level (true color - end)
-        ''' </summary>
-        Private _barRotMaximumBlueColorLevelEnd As Integer = 255
-        ''' <summary>
-        ''' [BarRot] Upper left corner color.
-        ''' </summary>
-        Private _barRotUpperLeftCornerColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Upper right corner color.
-        ''' </summary>
-        Private _barRotUpperRightCornerColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Lower left corner color.
-        ''' </summary>
-        Private _barRotLowerLeftCornerColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Lower right corner color.
-        ''' </summary>
-        Private _barRotLowerRightCornerColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Upper frame color.
-        ''' </summary>
-        Private _barRotUpperFrameColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Lower frame color.
-        ''' </summary>
-        Private _barRotLowerFrameColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Left frame color.
-        ''' </summary>
-        Private _barRotLeftFrameColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Right frame color.
-        ''' </summary>
-        Private _barRotRightFrameColor As String = "192;192;192"
-        ''' <summary>
-        ''' [BarRot] Use the border colors.
-        ''' </summary>
-        Private _barRotUseBorderColors As Boolean
-
-        Public Property BarRotUseBorderColors As Boolean
-            Get
-                Return _barRotUseBorderColors
-            End Get
-            Set(value As Boolean)
-                _barRotUseBorderColors = value
-            End Set
-        End Property
-
-        Public Property BarRotRightFrameColor As String
-            Get
-                Return _barRotRightFrameColor
-            End Get
-            Set(value As String)
-                _barRotRightFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotLeftFrameColor As String
-            Get
-                Return _barRotLeftFrameColor
-            End Get
-            Set(value As String)
-                _barRotLeftFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotLowerFrameColor As String
-            Get
-                Return _barRotLowerFrameColor
-            End Get
-            Set(value As String)
-                _barRotLowerFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotUpperFrameColor As String
-            Get
-                Return _barRotUpperFrameColor
-            End Get
-            Set(value As String)
-                _barRotUpperFrameColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotLowerRightCornerColor As String
-            Get
-                Return _barRotLowerRightCornerColor
-            End Get
-            Set(value As String)
-                _barRotLowerRightCornerColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotLowerLeftCornerColor As String
-            Get
-                Return _barRotLowerLeftCornerColor
-            End Get
-            Set(value As String)
-                _barRotLowerLeftCornerColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotUpperRightCornerColor As String
-            Get
-                Return _barRotUpperRightCornerColor
-            End Get
-            Set(value As String)
-                _barRotUpperRightCornerColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotUpperLeftCornerColor As String
-            Get
-                Return _barRotUpperLeftCornerColor
-            End Get
-            Set(value As String)
-                _barRotUpperLeftCornerColor = New Color(value).PlainSequence
-            End Set
-        End Property
-
-        Public Property BarRotMaximumBlueColorLevelEnd As Integer
-            Get
-                Return _barRotMaximumBlueColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumBlueColorLevelEnd Then value = _barRotMinimumBlueColorLevelEnd
-                If value > 255 Then value = 255
-                _barRotMaximumBlueColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMaximumGreenColorLevelEnd As Integer
-            Get
-                Return _barRotMaximumGreenColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumGreenColorLevelEnd Then value = _barRotMinimumGreenColorLevelEnd
-                If value > 255 Then value = 255
-                _barRotMaximumGreenColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMaximumRedColorLevelEnd As Integer
-            Get
-                Return _barRotMaximumRedColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumRedColorLevelEnd Then value = _barRotMinimumRedColorLevelEnd
-                If value > 255 Then value = 255
-                _barRotMaximumRedColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMinimumBlueColorLevelEnd As Integer
-            Get
-                Return _barRotMinimumBlueColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _barRotMinimumBlueColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMinimumGreenColorLevelEnd As Integer
-            Get
-                Return _barRotMinimumGreenColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _barRotMinimumGreenColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMinimumRedColorLevelEnd As Integer
-            Get
-                Return _barRotMinimumRedColorLevelEnd
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _barRotMinimumRedColorLevelEnd = value
-            End Set
-        End Property
-
-        Public Property BarRotMaximumBlueColorLevelStart As Integer
-            Get
-                Return _barRotMaximumBlueColorLevelStart
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumBlueColorLevelStart Then value = _barRotMinimumBlueColorLevelStart
-                If value > 255 Then value = 255
-                _barRotMaximumBlueColorLevelStart = value
-            End Set
-        End Property
-
-        Public Property BarRotMaximumGreenColorLevelStart As Integer
-            Get
-                Return _barRotMaximumGreenColorLevelStart
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumGreenColorLevelStart Then value = _barRotMinimumGreenColorLevelStart
-                If value > 255 Then value = 255
-                _barRotMaximumGreenColorLevelStart = value
-            End Set
-        End Property
-
-        Public Property BarRotMaximumRedColorLevelStart As Integer
-            Get
-                Return _barRotMaximumRedColorLevelStart
-            End Get
-            Set(value As Integer)
-                If value <= _barRotMinimumRedColorLevelStart Then value = _barRotMinimumRedColorLevelStart
-                If value > 255 Then value = 255
-                _barRotMaximumRedColorLevelStart = value
-            End Set
-        End Property
-
-        Public Property BarRotMinimumBlueColorLevelStart As Integer
-            Get
-                Return _barRotMinimumBlueColorLevelStart
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _barRotMinimumBlueColorLevelStart = value
-            End Set
-        End Property
-
-        Public Property BarRotMinimumGreenColorLevelStart As Integer
-            Get
-                Return _barRotMinimumGreenColorLevelStart
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _barRotMinimumGreenColorLevelStart = value
-            End Set
-        End Property
-
         Public Property BarRotMinimumRedColorLevelStart As Integer
             Get
                 Return _barRotMinimumRedColorLevelStart
@@ -5225,175 +4766,404 @@ Namespace Misc.Screensaver
                 _barRotMinimumRedColorLevelStart = value
             End Set
         End Property
-
-        Public Property BarRotRightFrameChar As String
+        ''' <summary>
+        ''' [BarRot] The minimum green color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMinimumGreenColorLevelStart As Integer
             Get
-                Return _barRotRightFrameChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "║"
-                _barRotRightFrameChar = value
-            End Set
-        End Property
-
-        Public Property BarRotLeftFrameChar As String
-            Get
-                Return _barRotLeftFrameChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "║"
-                _barRotLeftFrameChar = value
-            End Set
-        End Property
-
-        Public Property BarRotLowerFrameChar As String
-            Get
-                Return _barRotLowerFrameChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "═"
-                _barRotLowerFrameChar = value
-            End Set
-        End Property
-
-        Public Property BarRotUpperFrameChar As String
-            Get
-                Return _barRotUpperFrameChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "═"
-                _barRotUpperFrameChar = value
-            End Set
-        End Property
-
-        Public Property BarRotLowerRightCornerChar As String
-            Get
-                Return _barRotLowerRightCornerChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "╝"
-                _barRotLowerRightCornerChar = value
-            End Set
-        End Property
-
-        Public Property BarRotLowerLeftCornerChar As String
-            Get
-                Return _barRotLowerLeftCornerChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "╚"
-                _barRotLowerLeftCornerChar = value
-            End Set
-        End Property
-
-        Public Property BarRotUpperRightCornerChar As String
-            Get
-                Return _barRotUpperRightCornerChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "╗"
-                _barRotUpperRightCornerChar = value
-            End Set
-        End Property
-
-        Public Property BarRotUpperLeftCornerChar As String
-            Get
-                Return _barRotUpperLeftCornerChar
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "╔"
-                _barRotUpperLeftCornerChar = value
-            End Set
-        End Property
-
-        Public Property BarRotNextRampDelay As Integer
-            Get
-                Return _barRotNextRampDelay
+                Return _barRotMinimumGreenColorLevelStart
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 250
-                _barRotNextRampDelay = value
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumGreenColorLevelStart = value
             End Set
         End Property
-
-        Public Property BarRotDelay As Integer
+        ''' <summary>
+        ''' [BarRot] The minimum blue color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMinimumBlueColorLevelStart As Integer
             Get
-                Return _barRotDelay
+                Return _barRotMinimumBlueColorLevelStart
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 10
-                _barRotDelay = value
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumBlueColorLevelStart = value
             End Set
         End Property
-
-        Public Property BarRotTrueColor As Boolean
+        ''' <summary>
+        ''' [BarRot] The maximum red color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumRedColorLevelStart As Integer
             Get
-                Return _barRotTrueColor
+                Return _barRotMaximumRedColorLevelStart
             End Get
-            Set(value As Boolean)
-                _barRotTrueColor = value
+            Set(value As Integer)
+                If value <= _barRotMinimumRedColorLevelStart Then value = _barRotMinimumRedColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumRedColorLevelStart = value
             End Set
         End Property
-
-        Public Property BarRot255Colors As Boolean
+        ''' <summary>
+        ''' [BarRot] The maximum green color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumGreenColorLevelStart As Integer
             Get
-                Return _barRot255Colors
+                Return _barRotMaximumGreenColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumGreenColorLevelStart Then value = _barRotMinimumGreenColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumGreenColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum blue color level (true color - start)
+        ''' </summary>
+        Public Property BarRotMaximumBlueColorLevelStart As Integer
+            Get
+                Return _barRotMaximumBlueColorLevelStart
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumBlueColorLevelStart Then value = _barRotMinimumBlueColorLevelStart
+                If value > 255 Then value = 255
+                _barRotMaximumBlueColorLevelStart = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum red color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumRedColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumRedColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumRedColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum green color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumGreenColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumGreenColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumGreenColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The minimum blue color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMinimumBlueColorLevelEnd As Integer
+            Get
+                Return _barRotMinimumBlueColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _barRotMinimumBlueColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum red color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumRedColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumRedColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumRedColorLevelEnd Then value = _barRotMinimumRedColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumRedColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum green color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumGreenColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumGreenColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumGreenColorLevelEnd Then value = _barRotMinimumGreenColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumGreenColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] The maximum blue color level (true color - end)
+        ''' </summary>
+        Public Property BarRotMaximumBlueColorLevelEnd As Integer
+            Get
+                Return _barRotMaximumBlueColorLevelEnd
+            End Get
+            Set(value As Integer)
+                If value <= _barRotMinimumBlueColorLevelEnd Then value = _barRotMinimumBlueColorLevelEnd
+                If value > 255 Then value = 255
+                _barRotMaximumBlueColorLevelEnd = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper left corner color.
+        ''' </summary>
+        Public Property BarRotUpperLeftCornerColor As String
+            Get
+                Return _barRotUpperLeftCornerColor
+            End Get
+            Set(value As String)
+                _barRotUpperLeftCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper right corner color.
+        ''' </summary>
+        Public Property BarRotUpperRightCornerColor As String
+            Get
+                Return _barRotUpperRightCornerColor
+            End Get
+            Set(value As String)
+                _barRotUpperRightCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower left corner color.
+        ''' </summary>
+        Public Property BarRotLowerLeftCornerColor As String
+            Get
+                Return _barRotLowerLeftCornerColor
+            End Get
+            Set(value As String)
+                _barRotLowerLeftCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower right corner color.
+        ''' </summary>
+        Public Property BarRotLowerRightCornerColor As String
+            Get
+                Return _barRotLowerRightCornerColor
+            End Get
+            Set(value As String)
+                _barRotLowerRightCornerColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Upper frame color.
+        ''' </summary>
+        Public Property BarRotUpperFrameColor As String
+            Get
+                Return _barRotUpperFrameColor
+            End Get
+            Set(value As String)
+                _barRotUpperFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Lower frame color.
+        ''' </summary>
+        Public Property BarRotLowerFrameColor As String
+            Get
+                Return _barRotLowerFrameColor
+            End Get
+            Set(value As String)
+                _barRotLowerFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Left frame color.
+        ''' </summary>
+        Public Property BarRotLeftFrameColor As String
+            Get
+                Return _barRotLeftFrameColor
+            End Get
+            Set(value As String)
+                _barRotLeftFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Right frame color.
+        ''' </summary>
+        Public Property BarRotRightFrameColor As String
+            Get
+                Return _barRotRightFrameColor
+            End Get
+            Set(value As String)
+                _barRotRightFrameColor = New Color(value).PlainSequence
+            End Set
+        End Property
+        ''' <summary>
+        ''' [BarRot] Use the border colors.
+        ''' </summary>
+        Public Property BarRotUseBorderColors As Boolean
+            Get
+                Return _barRotUseBorderColors
             End Get
             Set(value As Boolean)
-                _barRot255Colors = value
+                _barRotUseBorderColors = value
             End Set
         End Property
 
         '-> Fireworks
+        Private _fireworks255Colors As Boolean
+        Private _fireworksTrueColor As Boolean = True
+        Private _fireworksDelay As Integer = 10
+        Private _fireworksRadius As Integer = 5
+        Private _fireworksMinimumRedColorLevel As Integer = 0
+        Private _fireworksMinimumGreenColorLevel As Integer = 0
+        Private _fireworksMinimumBlueColorLevel As Integer = 0
+        Private _fireworksMinimumColorLevel As Integer = 0
+        Private _fireworksMaximumRedColorLevel As Integer = 255
+        Private _fireworksMaximumGreenColorLevel As Integer = 255
+        Private _fireworksMaximumBlueColorLevel As Integer = 255
+        Private _fireworksMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Fireworks] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _fireworks255Colors As Boolean
+        Public Property Fireworks255Colors As Boolean
+            Get
+                Return _fireworks255Colors
+            End Get
+            Set(value As Boolean)
+                _fireworks255Colors = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Private _fireworksTrueColor As Boolean = True
+        Public Property FireworksTrueColor As Boolean
+            Get
+                Return _fireworksTrueColor
+            End Get
+            Set(value As Boolean)
+                _fireworksTrueColor = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _fireworksDelay As Integer = 10
+        Public Property FireworksDelay As Integer
+            Get
+                Return _fireworksDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 10
+                _fireworksDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The radius of the explosion
         ''' </summary>
-        Private _fireworksRadius As Integer = 5
+        Public Property FireworksRadius As Integer
+            Get
+                Return _fireworksRadius
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5
+                _fireworksRadius = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The minimum red color level (true color)
         ''' </summary>
-        Private _fireworksMinimumRedColorLevel As Integer = 0
+        Public Property FireworksMinimumRedColorLevel As Integer
+            Get
+                Return _fireworksMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The minimum green color level (true color)
         ''' </summary>
-        Private _fireworksMinimumGreenColorLevel As Integer = 0
+        Public Property FireworksMinimumGreenColorLevel As Integer
+            Get
+                Return _fireworksMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The minimum blue color level (true color)
         ''' </summary>
-        Private _fireworksMinimumBlueColorLevel As Integer = 0
+        Public Property FireworksMinimumBlueColorLevel As Integer
+            Get
+                Return _fireworksMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _fireworksMinimumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The minimum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _fireworksMinimumColorLevel As Integer = 0
+        Public Property FireworksMinimumColorLevel As Integer
+            Get
+                Return _fireworksMinimumColorLevel
+            End Get
+            Set(value As Integer)
+                Dim FinalMinimumLevel As Integer = If(_fireworks255Colors Or _fireworksTrueColor, 255, 15)
+                If value <= 0 Then value = 0
+                If value > FinalMinimumLevel Then value = FinalMinimumLevel
+                _fireworksMinimumColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The maximum red color level (true color)
         ''' </summary>
-        Private _fireworksMaximumRedColorLevel As Integer = 255
+        Public Property FireworksMaximumRedColorLevel As Integer
+            Get
+                Return _fireworksMaximumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumRedColorLevel Then value = _fireworksMinimumRedColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The maximum green color level (true color)
         ''' </summary>
-        Private _fireworksMaximumGreenColorLevel As Integer = 255
+        Public Property FireworksMaximumGreenColorLevel As Integer
+            Get
+                Return _fireworksMaximumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumGreenColorLevel Then value = _fireworksMinimumGreenColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The maximum blue color level (true color)
         ''' </summary>
-        Private _fireworksMaximumBlueColorLevel As Integer = 255
+        Public Property FireworksMaximumBlueColorLevel As Integer
+            Get
+                Return _fireworksMaximumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= _fireworksMinimumBlueColorLevel Then value = _fireworksMinimumBlueColorLevel
+                If value > 255 Then value = 255
+                _fireworksMaximumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Fireworks] The maximum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _fireworksMaximumColorLevel As Integer = 255
-
         Public Property FireworksMaximumColorLevel As Integer
             Get
                 Return _fireworksMaximumColorLevel
@@ -5406,221 +5176,120 @@ Namespace Misc.Screensaver
             End Set
         End Property
 
-        Public Property FireworksMaximumBlueColorLevel As Integer
-            Get
-                Return _fireworksMaximumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _fireworksMinimumBlueColorLevel Then value = _fireworksMinimumBlueColorLevel
-                If value > 255 Then value = 255
-                _fireworksMaximumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMaximumGreenColorLevel As Integer
-            Get
-                Return _fireworksMaximumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _fireworksMinimumGreenColorLevel Then value = _fireworksMinimumGreenColorLevel
-                If value > 255 Then value = 255
-                _fireworksMaximumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMaximumRedColorLevel As Integer
-            Get
-                Return _fireworksMaximumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _fireworksMinimumRedColorLevel Then value = _fireworksMinimumRedColorLevel
-                If value > 255 Then value = 255
-                _fireworksMaximumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMinimumColorLevel As Integer
-            Get
-                Return _fireworksMinimumColorLevel
-            End Get
-            Set(value As Integer)
-                Dim FinalMinimumLevel As Integer = If(_fireworks255Colors Or _fireworksTrueColor, 255, 15)
-                If value <= 0 Then value = 0
-                If value > FinalMinimumLevel Then value = FinalMinimumLevel
-                _fireworksMinimumColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMinimumBlueColorLevel As Integer
-            Get
-                Return _fireworksMinimumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _fireworksMinimumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMinimumGreenColorLevel As Integer
-            Get
-                Return _fireworksMinimumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _fireworksMinimumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksMinimumRedColorLevel As Integer
-            Get
-                Return _fireworksMinimumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 0
-                If value > 255 Then value = 255
-                _fireworksMinimumRedColorLevel = value
-            End Set
-        End Property
-
-        Public Property FireworksRadius As Integer
-            Get
-                Return _fireworksRadius
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 5
-                _fireworksRadius = value
-            End Set
-        End Property
-
-        Public Property FireworksDelay As Integer
-            Get
-                Return _fireworksDelay
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 10
-                _fireworksDelay = value
-            End Set
-        End Property
-
-        Public Property FireworksTrueColor As Boolean
-            Get
-                Return _fireworksTrueColor
-            End Get
-            Set(value As Boolean)
-                _fireworksTrueColor = value
-            End Set
-        End Property
-
-        Public Property Fireworks255Colors As Boolean
-            Get
-                Return _fireworks255Colors
-            End Get
-            Set(value As Boolean)
-                _fireworks255Colors = value
-            End Set
-        End Property
-
         '-> Figlet
+        Private _figlet255Colors As Boolean
+        Private _figletTrueColor As Boolean = True
+        Private _figletDelay As Integer = 1000
+        Private _figletText As String = "Kernel Simulator"
+        Private _figletFont As String = "Small"
+        Private _figletMinimumRedColorLevel As Integer = 0
+        Private _figletMinimumGreenColorLevel As Integer = 0
+        Private _figletMinimumBlueColorLevel As Integer = 0
+        Private _figletMinimumColorLevel As Integer = 0
+        Private _figletMaximumRedColorLevel As Integer = 255
+        Private _figletMaximumGreenColorLevel As Integer = 255
+        Private _figletMaximumBlueColorLevel As Integer = 255
+        Private _figletMaximumColorLevel As Integer = 255
+
         ''' <summary>
         ''' [Figlet] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Private _figlet255Colors As Boolean
+        Public Property Figlet255Colors As Boolean
+            Get
+                Return _figlet255Colors
+            End Get
+            Set(value As Boolean)
+                _figlet255Colors = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Private _figletTrueColor As Boolean = True
+        Public Property FigletTrueColor As Boolean
+            Get
+                Return _figletTrueColor
+            End Get
+            Set(value As Boolean)
+                _figletTrueColor = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Private _figletDelay As Integer = 1000
+        Public Property FigletDelay As Integer
+            Get
+                Return _figletDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 1000
+                _figletDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] Text for Figlet. Shorter is better.
         ''' </summary>
-        Private _figletText As String = "Kernel Simulator"
+        Public Property FigletText As String
+            Get
+                Return _figletText
+            End Get
+            Set(value As String)
+                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
+                _figletText = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] Figlet font supported by the figlet library used.
         ''' </summary>
-        Private _figletFont As String = "Small"
+        Public Property FigletFont As String
+            Get
+                Return _figletFont
+            End Get
+            Set(value As String)
+                _figletFont = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] The minimum red color level (true color)
         ''' </summary>
-        Private _figletMinimumRedColorLevel As Integer = 0
+        Public Property FigletMinimumRedColorLevel As Integer
+            Get
+                Return _figletMinimumRedColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _figletMinimumRedColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] The minimum green color level (true color)
         ''' </summary>
-        Private _figletMinimumGreenColorLevel As Integer = 0
+        Public Property FigletMinimumGreenColorLevel As Integer
+            Get
+                Return _figletMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _figletMinimumGreenColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] The minimum blue color level (true color)
         ''' </summary>
-        Private _figletMinimumBlueColorLevel As Integer = 0
+        Public Property FigletMinimumBlueColorLevel As Integer
+            Get
+                Return _figletMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _figletMinimumBlueColorLevel = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Figlet] The minimum color level (255 colors or 16 colors)
         ''' </summary>
-        Private _figletMinimumColorLevel As Integer = 0
-        ''' <summary>
-        ''' [Figlet] The maximum red color level (true color)
-        ''' </summary>
-        Private _figletMaximumRedColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Figlet] The maximum green color level (true color)
-        ''' </summary>
-        Private _figletMaximumGreenColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Figlet] The maximum blue color level (true color)
-        ''' </summary>
-        Private _figletMaximumBlueColorLevel As Integer = 255
-        ''' <summary>
-        ''' [Figlet] The maximum color level (255 colors or 16 colors)
-        ''' </summary>
-        Private _figletMaximumColorLevel As Integer = 255
-
-        Public Property FigletMaximumColorLevel As Integer
-            Get
-                Return _figletMaximumColorLevel
-            End Get
-            Set(value As Integer)
-                Dim FinalMaximumLevel As Integer = If(_figlet255Colors Or _figletTrueColor, 255, 15)
-                If value <= _figletMinimumColorLevel Then value = _figletMinimumColorLevel
-                If value > FinalMaximumLevel Then value = FinalMaximumLevel
-                _figletMaximumColorLevel = value
-            End Set
-        End Property
-
-        Public Property FigletMaximumBlueColorLevel As Integer
-            Get
-                Return _figletMaximumBlueColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _figletMinimumBlueColorLevel Then value = _figletMinimumBlueColorLevel
-                If value > 255 Then value = 255
-                _figletMaximumBlueColorLevel = value
-            End Set
-        End Property
-
-        Public Property FigletMaximumGreenColorLevel As Integer
-            Get
-                Return _figletMaximumGreenColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _figletMinimumGreenColorLevel Then value = _figletMinimumGreenColorLevel
-                If value > 255 Then value = 255
-                _figletMaximumGreenColorLevel = value
-            End Set
-        End Property
-
-        Public Property FigletMaximumRedColorLevel As Integer
-            Get
-                Return _figletMaximumRedColorLevel
-            End Get
-            Set(value As Integer)
-                If value <= _figletMinimumRedColorLevel Then value = _figletMinimumRedColorLevel
-                If value > 255 Then value = 255
-                _figletMaximumRedColorLevel = value
-            End Set
-        End Property
-
         Public Property FigletMinimumColorLevel As Integer
             Get
                 Return _figletMinimumColorLevel
@@ -5632,84 +5301,57 @@ Namespace Misc.Screensaver
                 _figletMinimumColorLevel = value
             End Set
         End Property
-
-        Public Property FigletMinimumBlueColorLevel As Integer
+        ''' <summary>
+        ''' [Figlet] The maximum red color level (true color)
+        ''' </summary>
+        Public Property FigletMaximumRedColorLevel As Integer
             Get
-                Return _figletMinimumBlueColorLevel
+                Return _figletMaximumRedColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _figletMinimumRedColorLevel Then value = _figletMinimumRedColorLevel
                 If value > 255 Then value = 255
-                _figletMinimumBlueColorLevel = value
+                _figletMaximumRedColorLevel = value
             End Set
         End Property
-
-        Public Property FigletMinimumGreenColorLevel As Integer
+        ''' <summary>
+        ''' [Figlet] The maximum green color level (true color)
+        ''' </summary>
+        Public Property FigletMaximumGreenColorLevel As Integer
             Get
-                Return _figletMinimumGreenColorLevel
+                Return _figletMaximumGreenColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _figletMinimumGreenColorLevel Then value = _figletMinimumGreenColorLevel
                 If value > 255 Then value = 255
-                _figletMinimumGreenColorLevel = value
+                _figletMaximumGreenColorLevel = value
             End Set
         End Property
-
-        Public Property FigletMinimumRedColorLevel As Integer
+        ''' <summary>
+        ''' [Figlet] The maximum blue color level (true color)
+        ''' </summary>
+        Public Property FigletMaximumBlueColorLevel As Integer
             Get
-                Return _figletMinimumRedColorLevel
+                Return _figletMaximumBlueColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _figletMinimumBlueColorLevel Then value = _figletMinimumBlueColorLevel
                 If value > 255 Then value = 255
-                _figletMinimumRedColorLevel = value
+                _figletMaximumBlueColorLevel = value
             End Set
         End Property
-
-        Public Property FigletFont As String
+        ''' <summary>
+        ''' [Figlet] The maximum color level (255 colors or 16 colors)
+        ''' </summary>
+        Public Property FigletMaximumColorLevel As Integer
             Get
-                Return _figletFont
-            End Get
-            Set(value As String)
-                _figletFont = value
-            End Set
-        End Property
-
-        Public Property FigletText As String
-            Get
-                Return _figletText
-            End Get
-            Set(value As String)
-                If String.IsNullOrEmpty(value) Then value = "Kernel Simulator"
-                _figletText = value
-            End Set
-        End Property
-
-        Public Property FigletDelay As Integer
-            Get
-                Return _figletDelay
+                Return _figletMaximumColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 1000
-                _figletDelay = value
-            End Set
-        End Property
-
-        Public Property FigletTrueColor As Boolean
-            Get
-                Return _figletTrueColor
-            End Get
-            Set(value As Boolean)
-                _figletTrueColor = value
-            End Set
-        End Property
-
-        Public Property Figlet255Colors As Boolean
-            Get
-                Return _figlet255Colors
-            End Get
-            Set(value As Boolean)
-                _figlet255Colors = value
+                Dim FinalMaximumLevel As Integer = If(_figlet255Colors Or _figletTrueColor, 255, 15)
+                If value <= _figletMinimumColorLevel Then value = _figletMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _figletMaximumColorLevel = value
             End Set
         End Property
 
@@ -5729,56 +5371,98 @@ Namespace Misc.Screensaver
         Private _flashTextMaximumColorLevel As Integer = 0
 
         ''' <summary>
-        ''' [FlashText] The maximum color level (255 colors or 16 colors)
+        ''' [FlashText] Enable 255 color support. Has a higher priority than 16 color support.
         ''' </summary>
-        Public Property FlashTextMaximumColorLevel As Integer
+        Public Property FlashText255Colors As Boolean
             Get
-                Return _flashTextMaximumColorLevel
+                Return _flashText255Colors
             End Get
-            Set(value As Integer)
-                Dim FinalMaximumLevel As Integer = If(_flashText255Colors Or _flashTextTrueColor, 255, 15)
-                If value <= _flashTextMinimumColorLevel Then value = _flashTextMinimumColorLevel
-                If value > FinalMaximumLevel Then value = FinalMaximumLevel
-                _flashTextMaximumColorLevel = value
+            Set(value As Boolean)
+                _flashText255Colors = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The maximum blue color level (true color)
+        ''' [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
         ''' </summary>
-        Public Property FlashTextMaximumBlueColorLevel As Integer
+        Public Property FlashTextTrueColor As Boolean
             Get
-                Return _flashTextMaximumBlueColorLevel
+                Return _flashTextTrueColor
             End Get
-            Set(value As Integer)
-                If value <= _flashTextMinimumBlueColorLevel Then value = _flashTextMinimumBlueColorLevel
-                If value > 255 Then value = 255
-                _flashTextMaximumBlueColorLevel = value
+            Set(value As Boolean)
+                _flashTextTrueColor = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The maximum green color level (true color)
+        ''' [FlashText] How many milliseconds to wait before making the next write?
         ''' </summary>
-        Public Property FlashTextMaximumGreenColorLevel As Integer
+        Public Property FlashTextDelay As Integer
             Get
-                Return _flashTextMaximumGreenColorLevel
+                Return _flashTextDelay
             End Get
             Set(value As Integer)
-                If value <= _flashTextMinimumGreenColorLevel Then value = _flashTextMinimumGreenColorLevel
-                If value > 255 Then value = 255
-                _flashTextMaximumGreenColorLevel = value
+                If value <= 0 Then value = 20
+                _flashTextDelay = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The maximum red color level (true color)
+        ''' [FlashText] Text for FlashText. Shorter is better.
         ''' </summary>
-        Public Property FlashTextMaximumRedColorLevel As Integer
+        Public Property FlashTextWrite As String
             Get
-                Return _flashTextMaximumRedColorLevel
+                Return _flashTextWrite
+            End Get
+            Set(value As String)
+                _flashTextWrite = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] Screensaver background color
+        ''' </summary>
+        Public Property FlashTextBackgroundColor As String
+            Get
+                Return _flashTextBackgroundColor
+            End Get
+            Set(value As String)
+                _flashTextBackgroundColor = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum red color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumRedColorLevel As Integer
+            Get
+                Return _flashTextMinimumRedColorLevel
             End Get
             Set(value As Integer)
-                If value <= _flashTextMinimumRedColorLevel Then value = _flashTextMinimumRedColorLevel
+                If value <= 0 Then value = 0
                 If value > 255 Then value = 255
-                _flashTextMaximumRedColorLevel = value
+                _flashTextMinimumRedColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum green color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumGreenColorLevel As Integer
+            Get
+                Return _flashTextMinimumGreenColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashTextMinimumGreenColorLevel = value
+            End Set
+        End Property
+        ''' <summary>
+        ''' [FlashText] The minimum blue color level (true color)
+        ''' </summary>
+        Public Property FlashTextMinimumBlueColorLevel As Integer
+            Get
+                Return _flashTextMinimumBlueColorLevel
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 0
+                If value > 255 Then value = 255
+                _flashTextMinimumBlueColorLevel = value
             End Set
         End Property
         ''' <summary>
@@ -5796,98 +5480,56 @@ Namespace Misc.Screensaver
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The minimum blue color level (true color)
+        ''' [FlashText] The maximum red color level (true color)
         ''' </summary>
-        Public Property FlashTextMinimumBlueColorLevel As Integer
+        Public Property FlashTextMaximumRedColorLevel As Integer
             Get
-                Return _flashTextMinimumBlueColorLevel
+                Return _flashTextMaximumRedColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _flashTextMinimumRedColorLevel Then value = _flashTextMinimumRedColorLevel
                 If value > 255 Then value = 255
-                _flashTextMinimumBlueColorLevel = value
+                _flashTextMaximumRedColorLevel = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The minimum green color level (true color)
+        ''' [FlashText] The maximum green color level (true color)
         ''' </summary>
-        Public Property FlashTextMinimumGreenColorLevel As Integer
+        Public Property FlashTextMaximumGreenColorLevel As Integer
             Get
-                Return _flashTextMinimumGreenColorLevel
+                Return _flashTextMaximumGreenColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _flashTextMinimumGreenColorLevel Then value = _flashTextMinimumGreenColorLevel
                 If value > 255 Then value = 255
-                _flashTextMinimumGreenColorLevel = value
+                _flashTextMaximumGreenColorLevel = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] The minimum red color level (true color)
+        ''' [FlashText] The maximum blue color level (true color)
         ''' </summary>
-        Public Property FlashTextMinimumRedColorLevel As Integer
+        Public Property FlashTextMaximumBlueColorLevel As Integer
             Get
-                Return _flashTextMinimumRedColorLevel
+                Return _flashTextMaximumBlueColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 0
+                If value <= _flashTextMinimumBlueColorLevel Then value = _flashTextMinimumBlueColorLevel
                 If value > 255 Then value = 255
-                _flashTextMinimumRedColorLevel = value
+                _flashTextMaximumBlueColorLevel = value
             End Set
         End Property
         ''' <summary>
-        ''' [FlashText] Screensaver background color
+        ''' [FlashText] The maximum color level (255 colors or 16 colors)
         ''' </summary>
-        Public Property FlashTextBackgroundColor As String
+        Public Property FlashTextMaximumColorLevel As Integer
             Get
-                Return _flashTextBackgroundColor
-            End Get
-            Set(value As String)
-                _flashTextBackgroundColor = value
-            End Set
-        End Property
-        ''' <summary>
-        ''' [FlashText] Text for FlashText. Shorter is better.
-        ''' </summary>
-        Public Property FlashTextWrite As String
-            Get
-                Return _flashTextWrite
-            End Get
-            Set(value As String)
-                _flashTextWrite = value
-            End Set
-        End Property
-        ''' <summary>
-        ''' [FlashText] How many milliseconds to wait before making the next write?
-        ''' </summary>
-        Public Property FlashTextDelay As Integer
-            Get
-                Return _flashTextDelay
+                Return _flashTextMaximumColorLevel
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 20
-                _flashTextDelay = value
-            End Set
-        End Property
-        ''' <summary>
-        ''' [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
-        ''' </summary>
-        Public Property FlashTextTrueColor As Boolean
-            Get
-                Return _flashTextTrueColor
-            End Get
-            Set(value As Boolean)
-                _flashTextTrueColor = value
-            End Set
-        End Property
-        ''' <summary>
-        ''' [FlashText] Enable 255 color support. Has a higher priority than 16 color support.
-        ''' </summary>
-        Public Property FlashText255Colors As Boolean
-            Get
-                Return _flashText255Colors
-            End Get
-            Set(value As Boolean)
-                _flashText255Colors = value
+                Dim FinalMaximumLevel As Integer = If(_flashText255Colors Or _flashTextTrueColor, 255, 15)
+                If value <= _flashTextMinimumColorLevel Then value = _flashTextMinimumColorLevel
+                If value > FinalMaximumLevel Then value = FinalMaximumLevel
+                _flashTextMaximumColorLevel = value
             End Set
         End Property
 
@@ -5895,6 +5537,18 @@ Namespace Misc.Screensaver
         Private _noiseNewScreenDelay As Integer = 5000
         Private _noiseDensity As Integer = 40
 
+        ''' <summary>
+        ''' [Noise] How many milliseconds to wait before making the new screen?
+        ''' </summary>
+        Public Property NoiseNewScreenDelay As Integer
+            Get
+                Return _noiseNewScreenDelay
+            End Get
+            Set(value As Integer)
+                If value <= 0 Then value = 5000
+                _noiseNewScreenDelay = value
+            End Set
+        End Property
         ''' <summary>
         ''' [Noise] The noise density in percent
         ''' </summary>
@@ -5906,18 +5560,6 @@ Namespace Misc.Screensaver
                 If value < 0 Then value = 40
                 If value > 100 Then value = 40
                 _noiseDensity = value
-            End Set
-        End Property
-        ''' <summary>
-        ''' [Noise] How many milliseconds to wait before making the new screen?
-        ''' </summary>
-        Public Property NoiseNewScreenDelay As Integer
-            Get
-                Return _noiseNewScreenDelay
-            End Get
-            Set(value As Integer)
-                If value <= 0 Then value = 5000
-                _noiseNewScreenDelay = value
             End Set
         End Property
 
