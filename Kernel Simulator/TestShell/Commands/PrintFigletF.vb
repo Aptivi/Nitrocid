@@ -31,11 +31,6 @@ Namespace TestShell.Commands
             Dim FigletFont As FiggleFont = GetFigletFont(ListArgs(1))
             Dim Vars As Object() = ListArgs(2).Split(";")
             Dim Text As String = ListArgs(3)
-#If Not NETCOREAPP Then
-            For i As Integer = 0 To Vars.Length - 1
-                Vars(i) = Evaluate(Vars(i)).ToString
-            Next
-#End If
             WriteFiglet(Text, FigletFont, Color, Vars)
         End Sub
 
