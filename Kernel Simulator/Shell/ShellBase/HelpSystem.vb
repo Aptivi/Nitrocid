@@ -126,11 +126,12 @@ Namespace Shell.ShellBase
             End Select
 
             'Check to see if command exists
-            If Not String.IsNullOrWhiteSpace(command) And CommandList.ContainsKey(command) Then
+            If Not String.IsNullOrWhiteSpace(command) And (CommandList.ContainsKey(command) Or AliasedCommandList.ContainsKey(command)) Then
                 'Found!
-                Dim HelpDefinition As String = CommandList(command).GetTranslatedHelpEntry
+                Dim FinalCommand As String = If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command)
+                Dim HelpDefinition As String = CommandList(FinalCommand).GetTranslatedHelpEntry
                 Dim UsageLength As Integer = DoTranslation("Usage:").Length
-                Dim HelpUsages() As String = CommandList(command).HelpUsages
+                Dim HelpUsages() As String = CommandList(FinalCommand).HelpUsages
 
                 'Print usage information
                 If HelpUsages.Length <> 0 Then
@@ -139,13 +140,13 @@ Namespace Shell.ShellBase
                     DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Usage:"), False, ColTypes.ListEntry)
 
                     'If remote debug, set the command to be prepended by the slash
-                    If CommandType = ShellType.RemoteDebugShell Then command = $"/{command}"
+                    If CommandType = ShellType.RemoteDebugShell Then FinalCommand = $"/{FinalCommand}"
 
                     'Enumerate through the available help usages
                     For Each HelpUsage As String In HelpUsages
                         'Indent, if necessary
                         If Indent Then DecisiveWrite(CommandType, DebugDeviceSocket, " ".Repeat(UsageLength), False, ColTypes.ListEntry)
-                        DecisiveWrite(CommandType, DebugDeviceSocket, $" {command} {HelpUsage}", True, ColTypes.ListEntry)
+                        DecisiveWrite(CommandType, DebugDeviceSocket, $" {FinalCommand} {HelpUsage}", True, ColTypes.ListEntry)
                         Indent = True
                     Next
                 End If
@@ -154,7 +155,7 @@ Namespace Shell.ShellBase
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("Description:") + $" {HelpDefinition}", True, ColTypes.ListValue)
 
                 'Extra help action for some commands
-                CommandList(command).CommandBase.HelpHelper()
+                CommandList(FinalCommand).CommandBase.HelpHelper()
             ElseIf String.IsNullOrWhiteSpace(command) Then
                 'List the available commands
                 If Not SimHelp Then
