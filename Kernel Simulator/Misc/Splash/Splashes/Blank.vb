@@ -75,11 +75,14 @@ Namespace Misc.Splash.Splashes
         End Sub
 
         Public Sub Display() Implements ISplash.Display
-            Wdbg(DebugLevel.I, "Splash displaying.")
-            While Not SplashClosing
-                Thread.Sleep(1)
-            End While
-            Wdbg(DebugLevel.I, "Splash done.")
+            Try
+                Wdbg(DebugLevel.I, "Splash displaying.")
+                While Not SplashClosing
+                    Thread.Sleep(1)
+                End While
+            Catch ex As ThreadInterruptedException
+                Wdbg(DebugLevel.I, "Splash done.")
+            End Try
         End Sub
 
         Public Sub Closing() Implements ISplash.Closing

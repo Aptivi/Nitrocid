@@ -55,7 +55,7 @@ Namespace Misc.Splash
         ''' </summary>
         Sub Opening()
         ''' <summary>
-        ''' The screen which is meant to be looped. You can set it to do nothing. Should be async.
+        ''' The screen which is meant to be looped. You can set it to do nothing. Should be async. It should also handle <see cref="System.Threading.ThreadInterruptedException"/> to avoid kernel exiting on startup.
         ''' </summary>
         Sub Display()
         ''' <summary>

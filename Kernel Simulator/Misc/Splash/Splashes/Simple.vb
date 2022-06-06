@@ -89,16 +89,19 @@ Namespace Misc.Splash.Splashes
         End Sub
 
         Public Sub Display() Implements ISplash.Display
-            Wdbg(DebugLevel.I, "Splash displaying.")
+            Try
+                Wdbg(DebugLevel.I, "Splash displaying.")
 
-            'Display the progress text
-            UpdateProgressReport(Progress, ProgressText, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY)
+                'Display the progress text
+                UpdateProgressReport(Progress, ProgressText, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY)
 
-            'Loop until closing
-            While Not SplashClosing
-                Thread.Sleep(1)
-            End While
-            Wdbg(DebugLevel.I, "Splash done.")
+                'Loop until closing
+                While Not SplashClosing
+                    Thread.Sleep(1)
+                End While
+            Catch ex As ThreadInterruptedException
+                Wdbg(DebugLevel.I, "Splash done.")
+            End Try
         End Sub
 
         Public Sub Closing() Implements ISplash.Closing
