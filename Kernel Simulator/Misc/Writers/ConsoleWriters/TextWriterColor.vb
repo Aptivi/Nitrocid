@@ -79,7 +79,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                     If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
@@ -107,7 +106,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                     If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
@@ -134,7 +132,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
@@ -162,7 +159,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
@@ -191,7 +187,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor.PlainSequence = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
@@ -221,7 +216,6 @@ Namespace Misc.Writers.ConsoleWriters
                     WritePlain(Text, Line, vars)
 
                     'Reset the colors
-                    If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
                 Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                     WStkTrc(ex)
