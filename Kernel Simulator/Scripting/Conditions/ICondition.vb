@@ -16,54 +16,25 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Scripting
-    ''' <summary>
-    ''' The list of known UESH conditions
-    ''' </summary>
-    Public Enum UESHConditions
+Namespace Scripting.Conditions
+    Public Interface ICondition
+
         ''' <summary>
-        ''' No condition
+        ''' Specifies the condition name
         ''' </summary>
-        none = 0
+        ReadOnly Property ConditionName As String
         ''' <summary>
-        ''' Equals
+        ''' Specifies where the condition should be located
         ''' </summary>
-        eq
+        ReadOnly Property ConditionPosition As ConditionPosition
         ''' <summary>
-        ''' Doesn't equal
+        ''' How many arguments are required (counting the condition itself)?
         ''' </summary>
-        neq
+        ReadOnly Property ConditionRequiredArguments As Integer
         ''' <summary>
-        ''' Less than
+        ''' Checks whether the condition is satisfied
         ''' </summary>
-        les
-        ''' <summary>
-        ''' Greater than
-        ''' </summary>
-        gre
-        ''' <summary>
-        ''' Less than or equals to
-        ''' </summary>
-        lesoreq
-        ''' <summary>
-        ''' Greater than or equals to
-        ''' </summary>
-        greoreq
-        ''' <summary>
-        ''' File exists
-        ''' </summary>
-        fileex
-        ''' <summary>
-        ''' File doesn't exist
-        ''' </summary>
-        filenex
-        ''' <summary>
-        ''' Directory exists
-        ''' </summary>
-        direx
-        ''' <summary>
-        ''' Directory doesn't exist
-        ''' </summary>
-        dirnex
-    End Enum
+        Function IsConditionSatisfied(FirstVariable As String, SecondVariable As String) As Boolean
+
+    End Interface
 End Namespace

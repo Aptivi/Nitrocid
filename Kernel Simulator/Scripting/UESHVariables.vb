@@ -76,8 +76,8 @@ Namespace Scripting
         ''' <returns>A value of $variable, or a variable name if not found</returns>
         Public Function GetVariable(var As String) As String
             Try
-                var = SanitizeVariableName(var)
-                Return ShellVariables(var)
+                Dim FinalVar As String = SanitizeVariableName(var)
+                Return ShellVariables(FinalVar)
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message)
             End Try

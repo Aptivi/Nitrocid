@@ -583,9 +583,22 @@
     <Compile Include="Network\Mail\MailLogin.vb" />
     <Compile Include="Network\Mail\MailShellCommon.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
+    <Compile Include="Scripting\Conditions\BaseCondition.vb" />
+    <Compile Include="Scripting\Conditions\ConditionPosition.vb" />
+    <Compile Include="Scripting\Conditions\ICondition.vb" />
+    <Compile Include="Scripting\Conditions\Types\DirectoryExists.vb" />
+    <Compile Include="Scripting\Conditions\Types\DirectoryNotExists.vb" />
+    <Compile Include="Scripting\Conditions\Types\None.vb" />
+    <Compile Include="Scripting\Conditions\Types\FileNotExists.vb" />
+    <Compile Include="Scripting\Conditions\Types\FileExists.vb" />
+    <Compile Include="Scripting\Conditions\Types\GreaterThan.vb" />
+    <Compile Include="Scripting\Conditions\Types\GreaterThanOrEqual.vb" />
+    <Compile Include="Scripting\Conditions\Types\LessThanOrEqual.vb" />
+    <Compile Include="Scripting\Conditions\Types\LessThan.vb" />
+    <Compile Include="Scripting\Conditions\Types\NotEquals.vb" />
+    <Compile Include="Scripting\Conditions\Types\Equals.vb" />
     <Compile Include="Scripting\Interaction\UESHCommands.vb" />
     <Compile Include="Scripting\Conditions\UESHConditional.vb" />
-    <Compile Include="Scripting\Conditions\UESHConditions.vb" />
     <Compile Include="Scripting\UESHOperators.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
@@ -947,6 +960,7 @@
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup />
   <!-- KS Package Files End -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

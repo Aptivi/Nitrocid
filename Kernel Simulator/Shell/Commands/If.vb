@@ -27,6 +27,11 @@ Namespace Shell.Commands
             Try
                 If ConditionSatisfied(ListArgsOnly(0)) Then
                     Dim CommandString As String = String.Join(" ", ListArgsOnly.Skip(1).ToArray)
+                    Dim AltThreads As List(Of KernelThread) = ShellStack(ShellStack.Count - 1).AltCommandThreads
+                    If AltThreads.Count = 0 OrElse AltThreads(AltThreads.Count - 1).IsAlive Then
+                        Dim CommandThread As New KernelThread($"Alternative Shell Command Thread", False, AddressOf ExecuteCommand)
+                        ShellStack(ShellStack.Count - 1).AltCommandThreads.Add(CommandThread)
+                    End If
                     GetLine(CommandString)
                 End If
             Catch ex As Exception
