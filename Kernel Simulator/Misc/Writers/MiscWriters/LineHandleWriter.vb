@@ -102,19 +102,8 @@ Namespace Misc.Writers.MiscWriters
             Filename = NeutralizePath(Filename)
             Dim FileContents() As String = ReadContents(Filename)
 
-            'Get the line index from number
-            If LineNumber <= 0 Then LineNumber = 1
-            If LineNumber > FileContents.Length Then LineNumber = FileContents.Length
-            Dim LineIndex As Integer = LineNumber - 1
-
-            'Get the line
-            Dim LineContent As String = FileContents(LineIndex)
-            Write(" | " + LineContent, True, ColorType)
-
-            'Place the column handle
-            Dim RepeatBlanks As Integer = ColumnNumber - 1
-            If RepeatBlanks < 0 Then RepeatBlanks = 0
-            Write(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
+            'Do the job
+            PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, ColorType)
         End Sub
 
         ''' <summary>
