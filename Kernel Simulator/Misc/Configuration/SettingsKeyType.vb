@@ -34,13 +34,9 @@ Namespace Misc.Configuration
         ''' </summary>
         SInt
         ''' <summary>
-        ''' The value is of <see cref="String"/>, but accepts less than or equal to 255 characters
+        ''' The value is of <see cref="String"/>
         ''' </summary>
         SString
-        ''' <summary>
-        ''' The value is of <see cref="String"/>, but accepts more than 255 characters
-        ''' </summary>
-        SLongString
         ''' <summary>
         ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="List(Of T)"/>
         ''' </summary>

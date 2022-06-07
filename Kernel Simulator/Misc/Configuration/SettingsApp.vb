@@ -369,9 +369,9 @@ Namespace Misc.Configuration
                     End If
 
                     'Add an option to go back.
-                    If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And
-                       Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And
-                       Not KeyType = SettingsKeyType.SChar And Not KeyType = SettingsKeyType.SIntSlider Then
+                    If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SString And
+                       Not KeyType = SettingsKeyType.SList And Not KeyType = SettingsKeyType.SMaskedString And Not KeyType = SettingsKeyType.SChar And
+                       Not KeyType = SettingsKeyType.SIntSlider Then
                         Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
                     ElseIf KeyType = SettingsKeyType.SList Then
                         Write(NewLine + " q) " + DoTranslation("Save Changes...") + NewLine, True, ColTypes.Option, MaxKeyOptions + 1)
@@ -416,9 +416,7 @@ Namespace Misc.Configuration
                             End If
 
                             'Select how to present input
-                            If KeyType = SettingsKeyType.SLongString Then
-                                AnswerString = ReadLineLong()
-                            ElseIf KeyType = SettingsKeyType.SMaskedString Then
+                            If KeyType = SettingsKeyType.SMaskedString Then
                                 AnswerString = ReadLineNoInput()
                             ElseIf KeyType = SettingsKeyType.SChar Then
                                 AnswerString = Console.ReadKey().KeyChar
@@ -590,7 +588,7 @@ Namespace Misc.Configuration
                         End Select
                     ElseIf ReadLineReboot.ReadLine.ReadRanToCompletion Then
                         Select Case KeyType
-                            Case SettingsKeyType.SString, SettingsKeyType.SLongString, SettingsKeyType.SMaskedString, SettingsKeyType.SChar
+                            Case SettingsKeyType.SString, SettingsKeyType.SMaskedString, SettingsKeyType.SChar
                                 Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", KeyType.ToString)
 
                                 'Check to see if written answer is empty
