@@ -133,37 +133,20 @@ Namespace Modifications
                     End If
                     Wdbg(DebugLevel.I, "Mod name: {0}", ModName)
 
-                    'See if the mod part conflicts with existing parts
-                    Wdbg(DebugLevel.I, "Checking to see if {0} exists in scripts...", ModName)
-                    If Mods.ContainsKey(ModName) Then
-                        'The mod already exists. Add mod part to existing mod.
-                        Wdbg(DebugLevel.I, "Exists. Adding mod part {0}...", script.ModPart)
-                        If Not Mods(ModName).ModParts.ContainsKey(script.ModPart) Then
-                            Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
-                            PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
-                            Mods(ModName).ModParts.Add(script.ModPart, PartInstance)
-                        Else
-                            Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
-                            script.ModPart += CStr(Mods(ModName).ModParts.Count)
-                            PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
-                            Mods(ModName).ModParts.Add(script.ModPart, PartInstance)
-                        End If
-                    Else
-                        'The mod wasn't existent. Add mod part to new entry of mod.
-                        Wdbg(DebugLevel.I, "Adding mod with mod part {0}...", script.ModPart)
-                        If Not ModParts.ContainsKey(script.ModPart) Then
-                            Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
-                            PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
-                            ModParts.Add(script.ModPart, PartInstance)
-                        Else
-                            Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
-                            script.ModPart += CStr(Mods.Count)
-                            PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
-                            ModParts.Add(script.ModPart, PartInstance)
-                        End If
-                        ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, ModPath), ModParts, script.Version)
-                        Mods.Add(ModName, ModInstance)
+                    'Check to see if there is a part under the same name.
+                    Dim Parts As Dictionary(Of String, PartInfo) = If(Mods.ContainsKey(ModName), Mods(ModName).ModParts, ModParts)
+                    Wdbg(DebugLevel.I, "Adding mod part {0}...", script.ModPart)
+                    If Parts.ContainsKey(script.ModPart) Then
+                        'Append the number to the end of the name
+                        Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
+                        script.ModPart = $"{script.ModPart} [{Parts.Count}]"
                     End If
+
+                    'Now, add the part
+                    PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
+                    Parts.Add(script.ModPart, PartInstance)
+                    ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, ModPath), Parts, script.Version)
+                    Mods.AddIfNotFound(ModName, ModInstance)
 
                     'See if the mod has version
                     If String.IsNullOrWhiteSpace(script.Version) And Not String.IsNullOrWhiteSpace(script.Name) Then
