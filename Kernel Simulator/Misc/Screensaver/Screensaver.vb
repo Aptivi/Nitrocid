@@ -80,7 +80,7 @@ Namespace Misc.Screensaver
         Sub HandleTimeout()
             Dim CountedTime As Integer
             Dim OldCursorLeft As Integer = Console.CursorLeft
-            While True
+            While Not KernelShutdown
                 If Not ScrnTimeReached Then
                     For CountedTime = 0 To ScrnTimeout
                         Thread.Sleep(1)
@@ -92,6 +92,9 @@ Namespace Misc.Screensaver
                             'This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
                             Exit For
                         End If
+
+                        'Poll to see if there is a kernel shutdown signal
+                        If KernelShutdown Then Exit For
                     Next
                     If Not RebootRequested Then
                         Wdbg(DebugLevel.W, "Screen time has reached.")

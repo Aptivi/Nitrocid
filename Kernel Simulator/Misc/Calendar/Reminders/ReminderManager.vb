@@ -33,7 +33,7 @@ Namespace Misc.Calendar.Reminders
         ''' Listens for reminders and notifies the user
         ''' </summary>
         Private Sub ReminderListen()
-            While ReminderThread.IsAlive
+            While Not KernelShutdown
                 Try
                     Thread.Sleep(100)
                     SyncLock ReminderManagerLock

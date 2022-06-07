@@ -31,7 +31,7 @@ Namespace Misc.Calendar.Events
         ''' Listens for events and notifies the user if the date is due to the event
         ''' </summary>
         Private Sub EventListen()
-            While EventThread.IsAlive
+            While Not KernelShutdown
                 Try
                     Thread.Sleep(100)
                     SyncLock EventManagerLock

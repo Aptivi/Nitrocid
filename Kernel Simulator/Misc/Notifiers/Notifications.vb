@@ -77,7 +77,7 @@ Namespace Misc.Notifications
         Private Sub NotifListen()
             Dim OldNotificationsList As New List(Of Notification)(NotifRecents)
             Dim NewNotificationsList As List(Of Notification)
-            While NotifThread.IsAlive
+            While Not KernelShutdown
                 Thread.Sleep(100)
                 NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList
                 If NewNotificationsList.Count > 0 And Not InSaver Then
