@@ -243,6 +243,14 @@ Copyright (c) Renci
 
 License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
+### StringMath
+
+Source code: https://github.com/miroiu/string-math
+
+Copyright (c) Miroiu Emanuel
+
+License (MIT): https://github.com/miroiu/string-math/blob/dev/LICENSE
+
 ## License
 
     Kernel Simulator - Simulates our future planned Kernel
