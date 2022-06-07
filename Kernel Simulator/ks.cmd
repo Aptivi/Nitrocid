@@ -19,4 +19,7 @@ REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script runs Kernel Simulator. This is a shortcut for running Kernel
 REM Simulator so that you don't have to write the full name of the executable.
+
+REM Please note that we don't support updating in this script, because we use
+REM Chocolatey and NuGet to manage updates for KS.
 "Kernel Simulator.exe" %*
