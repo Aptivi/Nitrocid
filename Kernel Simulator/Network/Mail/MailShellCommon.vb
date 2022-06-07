@@ -42,7 +42,6 @@ Namespace Network.Mail
                                                                                      {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", {}, False, 0, New Mail_SendCommand)},
                                                                                      {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", {}, False, 0, New Mail_SendEncCommand)}}
         Public IMAP_CurrentDirectory As String = "Inbox"
-        Public MailModCommands As New Dictionary(Of String, CommandInfo)
         Public MailShellPromptStyle As String = ""
         Public Mail_NotifyNewMail As Boolean = True
         Public Mail_ImapPingInterval As Integer = 30000
@@ -55,6 +54,7 @@ Namespace Network.Mail
         Public Mail_ProgressStyle As String = ""
         Public Mail_ProgressStyleSingle As String = ""
         Public ReadOnly Mail_Progress As New MailTransferProgress
+        Friend ReadOnly MailModCommands As New Dictionary(Of String, CommandInfo)
         Friend KeepAlive As Boolean
         Friend IMAP_Messages As IEnumerable(Of UniqueId)
 

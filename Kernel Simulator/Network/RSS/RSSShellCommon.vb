@@ -34,7 +34,6 @@ Namespace Network.RSS
                                                                                     {"read", New CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", {"<feednum>"}, True, 1, New RSS_ReadCommand)},
                                                                                     {"selfeed", New CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", {}, False, 0, New RSS_SelFeedCommand)},
                                                                                     {"unbookmark", New CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", {}, False, 0, New RSS_UnbookmarkCommand)}}
-        Public RSSModCommands As New Dictionary(Of String, CommandInfo)
         Public RSSFeedInstance As RSSFeed
         Public RSSShellPromptStyle As String = ""
         Public RSSFeedUrlPromptStyle As String = ""
@@ -44,6 +43,7 @@ Namespace Network.RSS
         Public RSSKeepAlive As Boolean
         Friend RSSRefresher As New KernelThread("RSS Feed Refresher", False, AddressOf RefreshFeeds)
         Friend RSSFeedLink As String
+        Friend ReadOnly RSSModCommands As New Dictionary(Of String, CommandInfo)
 
     End Module
 End Namespace

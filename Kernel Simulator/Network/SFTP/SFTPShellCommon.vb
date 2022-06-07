@@ -35,18 +35,27 @@ Namespace Network.SFTP
                                                                                      {"pwdl", New CommandInfo("pwdl", ShellType.SFTPShell, "Gets current local directory", {}, False, 0, New SFTP_PwdlCommand)},
                                                                                      {"pwdr", New CommandInfo("pwdr", ShellType.SFTPShell, "Gets current remote directory", {}, False, 0, New SFTP_PwdrCommand)},
                                                                                      {"quickconnect", New CommandInfo("quickconnect", ShellType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", {}, False, 0, New SFTP_QuickConnectCommand)}}
-        Public SFTPConnected As Boolean
-        Public SFTPSite As String
         Public SFTPCurrDirect As String
         Public SFTPCurrentRemoteDir As String
-        Public SFTPUser As String
-        Public SFTPModCommands As New Dictionary(Of String, CommandInfo)
         Public SFTPShellPromptStyle As String = ""
         Public SFTPShowDetailsInList As Boolean = True
         Public SFTPUserPromptStyle As String = ""
         Public SFTPNewConnectionsToSpeedDial As Boolean = True
-        Public ClientSFTP As SftpClient
+        Friend SFTPConnected As Boolean
+        Friend _clientSFTP As SftpClient
+        Friend SFTPSite As String
         Friend SFTPPass As String
+        Friend SFTPUser As String
+        Friend ReadOnly SFTPModCommands As New Dictionary(Of String, CommandInfo)
+
+        ''' <summary>
+        ''' The SFTP client used to connect to the SFTP server
+        ''' </summary>
+        Public ReadOnly Property ClientSFTP As SftpClient
+            Get
+                Return _clientSFTP
+            End Get
+        End Property
 
     End Module
 End Namespace

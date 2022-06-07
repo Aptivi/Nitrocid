@@ -45,14 +45,9 @@ Namespace Network.FTP
                                                                                 {"sumfile", New CommandInfo("sumfile", ShellType.FTPShell, "Calculates file sums.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFileCommand)},
                                                                                 {"sumfiles", New CommandInfo("sumfiles", ShellType.FTPShell, "Calculates sums of files in specified directory.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFilesCommand)},
                                                                                 {"type", New CommandInfo("type", ShellType.FTPShell, "Sets the type for this session", {"<a/b>"}, True, 1, New FTP_TypeCommand)}}
-        Public FtpConnected As Boolean
-        Public FtpSite As String
         Public FtpCurrentDirectory As String
         Public FtpCurrentRemoteDir As String
-        Public FtpUser As String
-        Public FTPModCommands As New Dictionary(Of String, CommandInfo)
         Public FTPShellPromptStyle As String = ""
-        Public ClientFTP As FtpClient
         Public FtpShowDetailsInList As Boolean = True
         Public FtpUserPromptStyle As String = ""
         Public FtpPassPromptStyle As String = ""
@@ -66,7 +61,21 @@ Namespace Network.FTP
         Public FtpConnectTimeout As Integer = 15000
         Public FtpDataConnectTimeout As Integer = 15000
         Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
+        Friend _clientFTP As FtpClient
+        Friend FtpConnected As Boolean
+        Friend FtpSite As String
         Friend FtpPass As String
+        Friend FtpUser As String
+        Friend ReadOnly FTPModCommands As New Dictionary(Of String, CommandInfo)
+
+        ''' <summary>
+        ''' The FTP client used to connect to the FTP server
+        ''' </summary>
+        Public ReadOnly Property ClientFTP As FtpClient
+            Get
+                Return _clientFTP
+            End Get
+        End Property
 
     End Module
 End Namespace

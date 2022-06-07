@@ -33,15 +33,15 @@ Namespace Network.FTP
         Public Sub PromptForPassword(user As String, Optional Address As String = "", Optional Port As Integer = 0, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.Explicit)
             'Make a new FTP client object instance (Used in case logging in using speed dial)
             If ClientFTP Is Nothing Then
-                ClientFTP = New FtpClient With {
-                                .Host = Address,
-                                .Port = Port,
-                                .RetryAttempts = FtpVerifyRetryAttempts,
-                                .ConnectTimeout = FtpConnectTimeout,
-                                .DataConnectionConnectTimeout = FtpDataConnectTimeout,
-                                .EncryptionMode = EncryptionMode,
-                                .InternetProtocolVersions = FtpProtocolVersions
-                            }
+                _clientFTP = New FtpClient With {
+                    .Host = Address,
+                    .Port = Port,
+                    .RetryAttempts = FtpVerifyRetryAttempts,
+                    .ConnectTimeout = FtpConnectTimeout,
+                    .DataConnectionConnectTimeout = FtpDataConnectTimeout,
+                    .EncryptionMode = EncryptionMode,
+                    .InternetProtocolVersions = FtpProtocolVersions
+                }
             End If
 
             'Prompt for password
@@ -80,7 +80,7 @@ Namespace Network.FTP
                     End If
 
                     'Make a new FTP client object instance
-                    ClientFTP = New FtpClient With {
+                    _clientFTP = New FtpClient With {
                         .Host = FtpHost,
                         .Port = FtpPort,
                         .RetryAttempts = FtpVerifyRetryAttempts,

@@ -26,6 +26,8 @@ Namespace Shell
     Public Module Shell
 
         Friend ProcessStartCommandThread As New KernelThread("Executable Command Thread", False, AddressOf ExecuteProcess)
+        Friend ReadOnly ModCommands As New Dictionary(Of String, CommandInfo)
+        Friend ReadOnly InjectedCommands As New List(Of String)
 
         ''' <summary>
         ''' Whether the shell is colored or not
@@ -43,14 +45,6 @@ Namespace Shell
         ''' Path lookup delimiter, depending on the operating system
         ''' </summary>
         Public ReadOnly PathLookupDelimiter As String = Path.PathSeparator
-        ''' <summary>
-        ''' All injected commands
-        ''' </summary>
-        Public InjectedCommands As New List(Of String)
-        ''' <summary>
-        ''' All mod commands
-        ''' </summary>
-        Public ModCommands As New Dictionary(Of String, CommandInfo)
         ''' <summary>
         ''' List of commands
         ''' </summary>
