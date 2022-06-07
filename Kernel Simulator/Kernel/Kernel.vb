@@ -29,6 +29,7 @@ Imports KS.TimeDate
 Imports ReadLineReboot
 Imports System.IO
 Imports System.Reflection.Assembly
+Imports System.Threading
 Imports KS.Misc.Notifications
 
 #If SPECIFIER = "REL" Then
@@ -68,10 +69,16 @@ Namespace Kernel
         ''' Entry point
         ''' </summary>
         Sub Main(Args() As String)
+            'Set main thread name
+            Thread.CurrentThread.Name = "Main Kernel Thread"
+
+            'This is a kernel entry point
             While True
                 Try
                     'A title
                     Console.Title = ConsoleTitle
+
+                    'Initial ReadLine settings
                     ReadLine.CtrlCEnabled = True
                     ReadLine.HistoryEnabled = True
 
