@@ -552,6 +552,17 @@ Namespace ConsoleBase
         End Function
 
         ''' <summary>
+        ''' Gets the gray color according to the brightness of the background color
+        ''' </summary>
+        Public Function GetGray() As Color
+            If BackgroundColor.IsBright Then
+                Return NeutralTextColor
+            Else
+                Return New Color(ConsoleColors.Gray)
+            End If
+        End Function
+
+        ''' <summary>
         ''' Sets the console color
         ''' </summary>
         ''' <param name="colorType">A type of colors that will be changed.</param>
@@ -581,11 +592,7 @@ Namespace ConsoleBase
                     Case ColTypes.License
                         SetConsoleColor(LicenseColor, Background)
                     Case ColTypes.Gray
-                        If BackgroundColor.IsBright Then
-                            SetConsoleColor(NeutralTextColor, Background)
-                        Else
-                            SetConsoleColor(New Color(ConsoleColors.Gray), Background)
-                        End If
+                        SetConsoleColor(GetGray, Background)
                     Case ColTypes.ListValue
                         SetConsoleColor(ListValueColor, Background)
                     Case ColTypes.ListEntry

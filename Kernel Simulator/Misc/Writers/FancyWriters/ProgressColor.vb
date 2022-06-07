@@ -47,10 +47,7 @@ Namespace Misc.Writers.FancyWriters
         ''' <param name="Top">The progress position from the top</param>
         Public Sub WriteProgress(Progress As Double, Left As Integer, Top As Integer)
             Try
-                WriteWhere(ProgressUpperLeftCornerChar + ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressUpperRightCornerChar, Left, Top, True, ColTypes.Gray)
-                WriteWhere(ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressRightFrameChar, Left, Top + 1, True, ColTypes.Gray)
-                WriteWhere(ProgressLowerLeftCornerChar + ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressLowerRightCornerChar, Left, Top + 2, True, ColTypes.Gray)
-                WriteWhere(" ".Repeat(PercentRepeat(Progress, 100, 10)), Left + 1, Top + 1, True, ColTypes.Neutral, ColTypes.Progress)
+                WriteProgress(Progress, Left, Top, ColTypes.Progress, ColTypes.Gray)
             Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -66,10 +63,7 @@ Namespace Misc.Writers.FancyWriters
         ''' <param name="ProgressColor">The progress bar color</param>
         Public Sub WriteProgress(Progress As Double, Left As Integer, Top As Integer, ProgressColor As ColTypes)
             Try
-                WriteWhere(ProgressUpperLeftCornerChar + ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressUpperRightCornerChar, Left, Top, True, ColTypes.Gray)
-                WriteWhere(ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressRightFrameChar, Left, Top + 1, True, ColTypes.Gray)
-                WriteWhere(ProgressLowerLeftCornerChar + ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressLowerRightCornerChar, Left, Top + 2, True, ColTypes.Gray)
-                WriteWhere(" ".Repeat(PercentRepeat(Progress, 100, 10)), Left + 1, Top + 1, True, ColTypes.Neutral, ProgressColor)
+                WriteProgress(Progress, Left, Top, ProgressColor, ColTypes.Gray)
             Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -105,10 +99,7 @@ Namespace Misc.Writers.FancyWriters
         ''' <param name="ProgressColor">The progress bar color</param>
         Public Sub WriteProgress(Progress As Double, Left As Integer, Top As Integer, ProgressColor As Color)
             Try
-                WriteWhere(ProgressUpperLeftCornerChar + ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressUpperRightCornerChar, Left, Top, True, ColTypes.Gray)
-                WriteWhere(ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressRightFrameChar, Left, Top + 1, True, ColTypes.Gray)
-                WriteWhere(ProgressLowerLeftCornerChar + ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressLowerRightCornerChar, Left, Top + 2, True, ColTypes.Gray)
-                WriteWhere(" ".Repeat(PercentRepeat(Progress, 100, 10)), Left + 1, Top + 1, True, NeutralTextColor, ProgressColor)
+                WriteProgress(Progress, Left, Top, ProgressColor, GetGray)
             Catch ex As Exception When Not ex.GetType.Name = "ThreadInterruptedException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
