@@ -45,7 +45,7 @@ Namespace Shell.Commands
                             Write(DoTranslation("Mod file is not specified."), True, ColTypes.Error)
                             Exit Sub
                         End If
-                    Case "list"
+                    Case "list", "listparts"
                         If ListArgsOnly.Length > 1 Then
                             ModListTerm = ListArgsOnly(1)
                         End If
@@ -108,6 +108,16 @@ Namespace Shell.Commands
                             Write("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : Write(Mods([Mod]).ModFilePath, True, ColTypes.ListValue)
                             Write("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : Write(Mods([Mod]).ModVersion, True, ColTypes.ListValue)
                             Write("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : Write(Mods([Mod]).ModParts.Count.ToString, True, ColTypes.ListValue)
+                        Next
+                    Case "listparts"
+                        Dim ModList As Dictionary(Of String, ModInfo) = ListMods(ModListTerm)
+                        For Each [Mod] As String In ModList.Keys
+                            For Each Part As String In ModList([Mod]).ModParts.Keys
+                                WriteSeparator($"{[Mod]} > {Part}", True)
+                                Write("- " + DoTranslation("Mod part name:") + " ", False, ColTypes.ListEntry) : Write(ModList([Mod]).ModParts(Part).PartName, True, ColTypes.ListValue)
+                                Write("- " + DoTranslation("Mod part file name:") + " ", False, ColTypes.ListEntry) : Write(Mods([Mod]).ModParts(Part).PartFileName, True, ColTypes.ListValue)
+                                Write("- " + DoTranslation("Mod part file path:") + " ", False, ColTypes.ListEntry) : Write(Mods([Mod]).ModParts(Part).PartFilePath, True, ColTypes.ListValue)
+                            Next
                         Next
                     Case "reloadall"
                         ReloadMods()
