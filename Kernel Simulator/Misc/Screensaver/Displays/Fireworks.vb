@@ -206,31 +206,6 @@ Namespace Misc.Screensaver.Displays
                 Console.ForegroundColor = ConsoleColor.White
                 Console.Clear()
 
-                'Sanity checks for color levels
-                If FireworksTrueColor Or Fireworks255Colors Then
-                    FireworksMinimumRedColorLevel = If(FireworksMinimumRedColorLevel >= 0 And FireworksMinimumRedColorLevel <= 255, FireworksMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FireworksMinimumRedColorLevel)
-                    FireworksMinimumGreenColorLevel = If(FireworksMinimumGreenColorLevel >= 0 And FireworksMinimumGreenColorLevel <= 255, FireworksMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FireworksMinimumGreenColorLevel)
-                    FireworksMinimumBlueColorLevel = If(FireworksMinimumBlueColorLevel >= 0 And FireworksMinimumBlueColorLevel <= 255, FireworksMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FireworksMinimumBlueColorLevel)
-                    FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 255, FireworksMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
-                    FireworksMaximumRedColorLevel = If(FireworksMaximumRedColorLevel >= 0 And FireworksMaximumRedColorLevel <= 255, FireworksMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FireworksMaximumRedColorLevel)
-                    FireworksMaximumGreenColorLevel = If(FireworksMaximumGreenColorLevel >= 0 And FireworksMaximumGreenColorLevel <= 255, FireworksMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FireworksMaximumGreenColorLevel)
-                    FireworksMaximumBlueColorLevel = If(FireworksMaximumBlueColorLevel >= 0 And FireworksMaximumBlueColorLevel <= 255, FireworksMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FireworksMaximumBlueColorLevel)
-                    FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 255, FireworksMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
-                Else
-                    FireworksMinimumColorLevel = If(FireworksMinimumColorLevel >= 0 And FireworksMinimumColorLevel <= 15, FireworksMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FireworksMinimumColorLevel)
-                    FireworksMaximumColorLevel = If(FireworksMaximumColorLevel >= 0 And FireworksMaximumColorLevel <= 15, FireworksMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FireworksMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

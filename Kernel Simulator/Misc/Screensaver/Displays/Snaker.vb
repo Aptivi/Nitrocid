@@ -206,31 +206,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If SnakerTrueColor Or Snaker255Colors Then
-                    SnakerMinimumRedColorLevel = If(SnakerMinimumRedColorLevel >= 0 And SnakerMinimumRedColorLevel <= 255, SnakerMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", SnakerMinimumRedColorLevel)
-                    SnakerMinimumGreenColorLevel = If(SnakerMinimumGreenColorLevel >= 0 And SnakerMinimumGreenColorLevel <= 255, SnakerMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", SnakerMinimumGreenColorLevel)
-                    SnakerMinimumBlueColorLevel = If(SnakerMinimumBlueColorLevel >= 0 And SnakerMinimumBlueColorLevel <= 255, SnakerMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", SnakerMinimumBlueColorLevel)
-                    SnakerMinimumColorLevel = If(SnakerMinimumColorLevel >= 0 And SnakerMinimumColorLevel <= 255, SnakerMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", SnakerMinimumColorLevel)
-                    SnakerMaximumRedColorLevel = If(SnakerMaximumRedColorLevel >= 0 And SnakerMaximumRedColorLevel <= 255, SnakerMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", SnakerMaximumRedColorLevel)
-                    SnakerMaximumGreenColorLevel = If(SnakerMaximumGreenColorLevel >= 0 And SnakerMaximumGreenColorLevel <= 255, SnakerMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", SnakerMaximumGreenColorLevel)
-                    SnakerMaximumBlueColorLevel = If(SnakerMaximumBlueColorLevel >= 0 And SnakerMaximumBlueColorLevel <= 255, SnakerMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", SnakerMaximumBlueColorLevel)
-                    SnakerMaximumColorLevel = If(SnakerMaximumColorLevel >= 0 And SnakerMaximumColorLevel <= 255, SnakerMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", SnakerMaximumColorLevel)
-                Else
-                    SnakerMinimumColorLevel = If(SnakerMinimumColorLevel >= 0 And SnakerMinimumColorLevel <= 15, SnakerMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", SnakerMinimumColorLevel)
-                    SnakerMaximumColorLevel = If(SnakerMaximumColorLevel >= 0 And SnakerMaximumColorLevel <= 15, SnakerMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", SnakerMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     InitializeSnaker(True)

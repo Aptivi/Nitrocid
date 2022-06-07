@@ -196,31 +196,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Console.CursorVisible = False
 
-                'Sanity checks for color levels
-                If WipeTrueColor Or Wipe255Colors Then
-                    WipeMinimumRedColorLevel = If(WipeMinimumRedColorLevel >= 0 And WipeMinimumRedColorLevel <= 255, WipeMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", WipeMinimumRedColorLevel)
-                    WipeMinimumGreenColorLevel = If(WipeMinimumGreenColorLevel >= 0 And WipeMinimumGreenColorLevel <= 255, WipeMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", WipeMinimumGreenColorLevel)
-                    WipeMinimumBlueColorLevel = If(WipeMinimumBlueColorLevel >= 0 And WipeMinimumBlueColorLevel <= 255, WipeMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", WipeMinimumBlueColorLevel)
-                    WipeMinimumColorLevel = If(WipeMinimumColorLevel >= 0 And WipeMinimumColorLevel <= 255, WipeMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", WipeMinimumColorLevel)
-                    WipeMaximumRedColorLevel = If(WipeMaximumRedColorLevel >= 0 And WipeMaximumRedColorLevel <= 255, WipeMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", WipeMaximumRedColorLevel)
-                    WipeMaximumGreenColorLevel = If(WipeMaximumGreenColorLevel >= 0 And WipeMaximumGreenColorLevel <= 255, WipeMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", WipeMaximumGreenColorLevel)
-                    WipeMaximumBlueColorLevel = If(WipeMaximumBlueColorLevel >= 0 And WipeMaximumBlueColorLevel <= 255, WipeMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", WipeMaximumBlueColorLevel)
-                    WipeMaximumColorLevel = If(WipeMaximumColorLevel >= 0 And WipeMaximumColorLevel <= 255, WipeMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", WipeMaximumColorLevel)
-                Else
-                    WipeMinimumColorLevel = If(WipeMinimumColorLevel >= 0 And WipeMinimumColorLevel <= 15, WipeMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", WipeMinimumColorLevel)
-                    WipeMaximumColorLevel = If(WipeMaximumColorLevel >= 0 And WipeMaximumColorLevel <= 15, WipeMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", WipeMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

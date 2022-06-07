@@ -191,31 +191,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If GlitterColorTrueColor Or GlitterColor255Colors Then
-                    GlitterColorMinimumRedColorLevel = If(GlitterColorMinimumRedColorLevel >= 0 And GlitterColorMinimumRedColorLevel <= 255, GlitterColorMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", GlitterColorMinimumRedColorLevel)
-                    GlitterColorMinimumGreenColorLevel = If(GlitterColorMinimumGreenColorLevel >= 0 And GlitterColorMinimumGreenColorLevel <= 255, GlitterColorMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", GlitterColorMinimumGreenColorLevel)
-                    GlitterColorMinimumBlueColorLevel = If(GlitterColorMinimumBlueColorLevel >= 0 And GlitterColorMinimumBlueColorLevel <= 255, GlitterColorMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", GlitterColorMinimumBlueColorLevel)
-                    GlitterColorMinimumColorLevel = If(GlitterColorMinimumColorLevel >= 0 And GlitterColorMinimumColorLevel <= 255, GlitterColorMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", GlitterColorMinimumColorLevel)
-                    GlitterColorMaximumRedColorLevel = If(GlitterColorMaximumRedColorLevel >= 0 And GlitterColorMaximumRedColorLevel <= 255, GlitterColorMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", GlitterColorMaximumRedColorLevel)
-                    GlitterColorMaximumGreenColorLevel = If(GlitterColorMaximumGreenColorLevel >= 0 And GlitterColorMaximumGreenColorLevel <= 255, GlitterColorMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", GlitterColorMaximumGreenColorLevel)
-                    GlitterColorMaximumBlueColorLevel = If(GlitterColorMaximumBlueColorLevel >= 0 And GlitterColorMaximumBlueColorLevel <= 255, GlitterColorMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", GlitterColorMaximumBlueColorLevel)
-                    GlitterColorMaximumColorLevel = If(GlitterColorMaximumColorLevel >= 0 And GlitterColorMaximumColorLevel <= 255, GlitterColorMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", GlitterColorMaximumColorLevel)
-                Else
-                    GlitterColorMinimumColorLevel = If(GlitterColorMinimumColorLevel >= 0 And GlitterColorMinimumColorLevel <= 15, GlitterColorMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", GlitterColorMinimumColorLevel)
-                    GlitterColorMaximumColorLevel = If(GlitterColorMaximumColorLevel >= 0 And GlitterColorMaximumColorLevel <= 15, GlitterColorMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", GlitterColorMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

@@ -217,13 +217,13 @@ Namespace Misc.Screensaver.Displays
         Sub Disco_DoWork()
             Try
                 'Variables
-                Dim MaximumColors As Integer = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 255, DiscoMaximumColorLevel, 255)
+                Dim MaximumColors As Integer = DiscoMaximumColorLevel
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors)
-                Dim MaximumColorsR As Integer = If(DiscoMaximumRedColorLevel >= 0 And DiscoMaximumRedColorLevel <= 255, DiscoMaximumRedColorLevel, 255)
+                Dim MaximumColorsR As Integer = DiscoMaximumRedColorLevel
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR)
-                Dim MaximumColorsG As Integer = If(DiscoMaximumGreenColorLevel >= 0 And DiscoMaximumGreenColorLevel <= 255, DiscoMaximumGreenColorLevel, 255)
+                Dim MaximumColorsG As Integer = DiscoMaximumGreenColorLevel
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG)
-                Dim MaximumColorsB As Integer = If(DiscoMaximumBlueColorLevel >= 0 And DiscoMaximumBlueColorLevel <= 255, DiscoMaximumBlueColorLevel, 255)
+                Dim MaximumColorsB As Integer = DiscoMaximumBlueColorLevel
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
                 Dim CurrentColor As Integer = 0
                 Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer

@@ -192,31 +192,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If DissolveTrueColor Or Dissolve255Colors Then
-                    DissolveMinimumRedColorLevel = If(DissolveMinimumRedColorLevel >= 0 And DissolveMinimumRedColorLevel <= 255, DissolveMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", DissolveMinimumRedColorLevel)
-                    DissolveMinimumGreenColorLevel = If(DissolveMinimumGreenColorLevel >= 0 And DissolveMinimumGreenColorLevel <= 255, DissolveMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", DissolveMinimumGreenColorLevel)
-                    DissolveMinimumBlueColorLevel = If(DissolveMinimumBlueColorLevel >= 0 And DissolveMinimumBlueColorLevel <= 255, DissolveMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", DissolveMinimumBlueColorLevel)
-                    DissolveMinimumColorLevel = If(DissolveMinimumColorLevel >= 0 And DissolveMinimumColorLevel <= 255, DissolveMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", DissolveMinimumColorLevel)
-                    DissolveMaximumRedColorLevel = If(DissolveMaximumRedColorLevel >= 0 And DissolveMaximumRedColorLevel <= 255, DissolveMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", DissolveMaximumRedColorLevel)
-                    DissolveMaximumGreenColorLevel = If(DissolveMaximumGreenColorLevel >= 0 And DissolveMaximumGreenColorLevel <= 255, DissolveMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", DissolveMaximumGreenColorLevel)
-                    DissolveMaximumBlueColorLevel = If(DissolveMaximumBlueColorLevel >= 0 And DissolveMaximumBlueColorLevel <= 255, DissolveMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", DissolveMaximumBlueColorLevel)
-                    DissolveMaximumColorLevel = If(DissolveMaximumColorLevel >= 0 And DissolveMaximumColorLevel <= 255, DissolveMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", DissolveMaximumColorLevel)
-                Else
-                    DissolveMinimumColorLevel = If(DissolveMinimumColorLevel >= 0 And DissolveMinimumColorLevel <= 15, DissolveMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", DissolveMinimumColorLevel)
-                    DissolveMaximumColorLevel = If(DissolveMaximumColorLevel >= 0 And DissolveMaximumColorLevel <= 15, DissolveMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", DissolveMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

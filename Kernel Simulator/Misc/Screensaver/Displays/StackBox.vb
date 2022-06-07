@@ -204,31 +204,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If StackBoxTrueColor Or StackBox255Colors Then
-                    StackBoxMinimumRedColorLevel = If(StackBoxMinimumRedColorLevel >= 0 And StackBoxMinimumRedColorLevel <= 255, StackBoxMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", StackBoxMinimumRedColorLevel)
-                    StackBoxMinimumGreenColorLevel = If(StackBoxMinimumGreenColorLevel >= 0 And StackBoxMinimumGreenColorLevel <= 255, StackBoxMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", StackBoxMinimumGreenColorLevel)
-                    StackBoxMinimumBlueColorLevel = If(StackBoxMinimumBlueColorLevel >= 0 And StackBoxMinimumBlueColorLevel <= 255, StackBoxMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", StackBoxMinimumBlueColorLevel)
-                    StackBoxMinimumColorLevel = If(StackBoxMinimumColorLevel >= 0 And StackBoxMinimumColorLevel <= 255, StackBoxMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", StackBoxMinimumColorLevel)
-                    StackBoxMaximumRedColorLevel = If(StackBoxMaximumRedColorLevel >= 0 And StackBoxMaximumRedColorLevel <= 255, StackBoxMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", StackBoxMaximumRedColorLevel)
-                    StackBoxMaximumGreenColorLevel = If(StackBoxMaximumGreenColorLevel >= 0 And StackBoxMaximumGreenColorLevel <= 255, StackBoxMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", StackBoxMaximumGreenColorLevel)
-                    StackBoxMaximumBlueColorLevel = If(StackBoxMaximumBlueColorLevel >= 0 And StackBoxMaximumBlueColorLevel <= 255, StackBoxMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", StackBoxMaximumBlueColorLevel)
-                    StackBoxMaximumColorLevel = If(StackBoxMaximumColorLevel >= 0 And StackBoxMaximumColorLevel <= 255, StackBoxMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", StackBoxMaximumColorLevel)
-                Else
-                    StackBoxMinimumColorLevel = If(StackBoxMinimumColorLevel >= 0 And StackBoxMinimumColorLevel <= 15, StackBoxMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", StackBoxMinimumColorLevel)
-                    StackBoxMaximumColorLevel = If(StackBoxMaximumColorLevel >= 0 And StackBoxMaximumColorLevel <= 15, StackBoxMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", StackBoxMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

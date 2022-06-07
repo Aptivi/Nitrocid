@@ -219,32 +219,6 @@ Namespace Misc.Screensaver.Displays
                 'Preparations
                 Console.BackgroundColor = ConsoleColor.Black
                 Console.ForegroundColor = ConsoleColor.White
-                Console.Clear()
-
-                'Sanity checks for color levels
-                If FigletTrueColor Or Figlet255Colors Then
-                    FigletMinimumRedColorLevel = If(FigletMinimumRedColorLevel >= 0 And FigletMinimumRedColorLevel <= 255, FigletMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FigletMinimumRedColorLevel)
-                    FigletMinimumGreenColorLevel = If(FigletMinimumGreenColorLevel >= 0 And FigletMinimumGreenColorLevel <= 255, FigletMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FigletMinimumGreenColorLevel)
-                    FigletMinimumBlueColorLevel = If(FigletMinimumBlueColorLevel >= 0 And FigletMinimumBlueColorLevel <= 255, FigletMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FigletMinimumBlueColorLevel)
-                    FigletMinimumColorLevel = If(FigletMinimumColorLevel >= 0 And FigletMinimumColorLevel <= 255, FigletMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FigletMinimumColorLevel)
-                    FigletMaximumRedColorLevel = If(FigletMaximumRedColorLevel >= 0 And FigletMaximumRedColorLevel <= 255, FigletMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FigletMaximumRedColorLevel)
-                    FigletMaximumGreenColorLevel = If(FigletMaximumGreenColorLevel >= 0 And FigletMaximumGreenColorLevel <= 255, FigletMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FigletMaximumGreenColorLevel)
-                    FigletMaximumBlueColorLevel = If(FigletMaximumBlueColorLevel >= 0 And FigletMaximumBlueColorLevel <= 255, FigletMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FigletMaximumBlueColorLevel)
-                    FigletMaximumColorLevel = If(FigletMaximumColorLevel >= 0 And FigletMaximumColorLevel <= 255, FigletMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FigletMaximumColorLevel)
-                Else
-                    FigletMinimumColorLevel = If(FigletMinimumColorLevel >= 0 And FigletMinimumColorLevel <= 16, FigletMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FigletMinimumColorLevel)
-                    FigletMaximumColorLevel = If(FigletMaximumColorLevel >= 0 And FigletMaximumColorLevel <= 16, FigletMaximumColorLevel, 16)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FigletMaximumColorLevel)
-                End If
 
                 'Screensaver logic
                 Do While True

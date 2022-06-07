@@ -152,20 +152,6 @@ Namespace Misc.Screensaver.Displays
         ''' </summary>
         Sub FaderBack_DoWork()
             Try
-                'Sanity checks for color levels
-                FaderBackMinimumRedColorLevel = If(FaderBackMinimumRedColorLevel >= 0 And FaderBackMinimumRedColorLevel <= 255, FaderBackMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FaderBackMinimumRedColorLevel)
-                FaderBackMinimumGreenColorLevel = If(FaderBackMinimumGreenColorLevel >= 0 And FaderBackMinimumGreenColorLevel <= 255, FaderBackMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FaderBackMinimumGreenColorLevel)
-                FaderBackMinimumBlueColorLevel = If(FaderBackMinimumBlueColorLevel >= 0 And FaderBackMinimumBlueColorLevel <= 255, FaderBackMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FaderBackMinimumBlueColorLevel)
-                FaderBackMaximumRedColorLevel = If(FaderBackMaximumRedColorLevel >= 0 And FaderBackMaximumRedColorLevel <= 255, FaderBackMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FaderBackMaximumRedColorLevel)
-                FaderBackMaximumGreenColorLevel = If(FaderBackMaximumGreenColorLevel >= 0 And FaderBackMaximumGreenColorLevel <= 255, FaderBackMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FaderBackMaximumGreenColorLevel)
-                FaderBackMaximumBlueColorLevel = If(FaderBackMaximumBlueColorLevel >= 0 And FaderBackMaximumBlueColorLevel <= 255, FaderBackMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FaderBackMaximumBlueColorLevel)
-
                 'Variables
                 Dim RandomDriver As New Random()
                 Dim RedColorNum As Integer = RandomDriver.Next(FaderBackMinimumRedColorLevel, FaderBackMaximumRedColorLevel)

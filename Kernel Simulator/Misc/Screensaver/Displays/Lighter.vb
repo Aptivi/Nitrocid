@@ -198,31 +198,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If LighterTrueColor Or Lighter255Colors Then
-                    LighterMinimumRedColorLevel = If(LighterMinimumRedColorLevel >= 0 And LighterMinimumRedColorLevel <= 255, LighterMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", LighterMinimumRedColorLevel)
-                    LighterMinimumGreenColorLevel = If(LighterMinimumGreenColorLevel >= 0 And LighterMinimumGreenColorLevel <= 255, LighterMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", LighterMinimumGreenColorLevel)
-                    LighterMinimumBlueColorLevel = If(LighterMinimumBlueColorLevel >= 0 And LighterMinimumBlueColorLevel <= 255, LighterMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", LighterMinimumBlueColorLevel)
-                    LighterMinimumColorLevel = If(LighterMinimumColorLevel >= 0 And LighterMinimumColorLevel <= 255, LighterMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LighterMinimumColorLevel)
-                    LighterMaximumRedColorLevel = If(LighterMaximumRedColorLevel >= 0 And LighterMaximumRedColorLevel <= 255, LighterMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", LighterMaximumRedColorLevel)
-                    LighterMaximumGreenColorLevel = If(LighterMaximumGreenColorLevel >= 0 And LighterMaximumGreenColorLevel <= 255, LighterMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", LighterMaximumGreenColorLevel)
-                    LighterMaximumBlueColorLevel = If(LighterMaximumBlueColorLevel >= 0 And LighterMaximumBlueColorLevel <= 255, LighterMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", LighterMaximumBlueColorLevel)
-                    LighterMaximumColorLevel = If(LighterMaximumColorLevel >= 0 And LighterMaximumColorLevel <= 255, LighterMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LighterMaximumColorLevel)
-                Else
-                    LighterMinimumColorLevel = If(LighterMinimumColorLevel >= 0 And LighterMinimumColorLevel <= 15, LighterMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LighterMinimumColorLevel)
-                    LighterMaximumColorLevel = If(LighterMaximumColorLevel >= 0 And LighterMaximumColorLevel <= 15, LighterMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LighterMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

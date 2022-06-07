@@ -203,31 +203,6 @@ Namespace Misc.Screensaver.Displays
                 Console.Clear()
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If FlashColorTrueColor Or FlashColor255Colors Then
-                    FlashColorMinimumRedColorLevel = If(FlashColorMinimumRedColorLevel >= 0 And FlashColorMinimumRedColorLevel <= 255, FlashColorMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FlashColorMinimumRedColorLevel)
-                    FlashColorMinimumGreenColorLevel = If(FlashColorMinimumGreenColorLevel >= 0 And FlashColorMinimumGreenColorLevel <= 255, FlashColorMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FlashColorMinimumGreenColorLevel)
-                    FlashColorMinimumBlueColorLevel = If(FlashColorMinimumBlueColorLevel >= 0 And FlashColorMinimumBlueColorLevel <= 255, FlashColorMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FlashColorMinimumBlueColorLevel)
-                    FlashColorMinimumColorLevel = If(FlashColorMinimumColorLevel >= 0 And FlashColorMinimumColorLevel <= 255, FlashColorMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FlashColorMinimumColorLevel)
-                    FlashColorMaximumRedColorLevel = If(FlashColorMaximumRedColorLevel >= 0 And FlashColorMaximumRedColorLevel <= 255, FlashColorMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FlashColorMaximumRedColorLevel)
-                    FlashColorMaximumGreenColorLevel = If(FlashColorMaximumGreenColorLevel >= 0 And FlashColorMaximumGreenColorLevel <= 255, FlashColorMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FlashColorMaximumGreenColorLevel)
-                    FlashColorMaximumBlueColorLevel = If(FlashColorMaximumBlueColorLevel >= 0 And FlashColorMaximumBlueColorLevel <= 255, FlashColorMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FlashColorMaximumBlueColorLevel)
-                    FlashColorMaximumColorLevel = If(FlashColorMaximumColorLevel >= 0 And FlashColorMaximumColorLevel <= 255, FlashColorMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FlashColorMaximumColorLevel)
-                Else
-                    FlashColorMinimumColorLevel = If(FlashColorMinimumColorLevel >= 0 And FlashColorMinimumColorLevel <= 15, FlashColorMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FlashColorMinimumColorLevel)
-                    FlashColorMaximumColorLevel = If(FlashColorMaximumColorLevel >= 0 And FlashColorMaximumColorLevel <= 15, FlashColorMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FlashColorMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

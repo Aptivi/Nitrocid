@@ -212,31 +212,6 @@ Namespace Misc.Screensaver.Displays
                 Dim ResizeSyncing As Boolean
                 Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-                'Sanity checks for color levels
-                If LinesTrueColor Or Lines255Colors Then
-                    LinesMinimumRedColorLevel = If(LinesMinimumRedColorLevel >= 0 And LinesMinimumRedColorLevel <= 255, LinesMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", LinesMinimumRedColorLevel)
-                    LinesMinimumGreenColorLevel = If(LinesMinimumGreenColorLevel >= 0 And LinesMinimumGreenColorLevel <= 255, LinesMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", LinesMinimumGreenColorLevel)
-                    LinesMinimumBlueColorLevel = If(LinesMinimumBlueColorLevel >= 0 And LinesMinimumBlueColorLevel <= 255, LinesMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", LinesMinimumBlueColorLevel)
-                    LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 255, LinesMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
-                    LinesMaximumRedColorLevel = If(LinesMaximumRedColorLevel >= 0 And LinesMaximumRedColorLevel <= 255, LinesMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", LinesMaximumRedColorLevel)
-                    LinesMaximumGreenColorLevel = If(LinesMaximumGreenColorLevel >= 0 And LinesMaximumGreenColorLevel <= 255, LinesMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", LinesMaximumGreenColorLevel)
-                    LinesMaximumBlueColorLevel = If(LinesMaximumBlueColorLevel >= 0 And LinesMaximumBlueColorLevel <= 255, LinesMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", LinesMaximumBlueColorLevel)
-                    LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 255, LinesMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
-                Else
-                    LinesMinimumColorLevel = If(LinesMinimumColorLevel >= 0 And LinesMinimumColorLevel <= 15, LinesMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", LinesMinimumColorLevel)
-                    LinesMaximumColorLevel = If(LinesMaximumColorLevel >= 0 And LinesMaximumColorLevel <= 15, LinesMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", LinesMaximumColorLevel)
-                End If
-
                 'Screensaver logic
                 Do While True
                     Console.CursorVisible = False

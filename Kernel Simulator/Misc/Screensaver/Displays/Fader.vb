@@ -177,20 +177,6 @@ Namespace Misc.Screensaver.Displays
         ''' </summary>
         Sub Fader_DoWork()
             Try
-                'Sanity checks for color levels
-                FaderMinimumRedColorLevel = If(FaderMinimumRedColorLevel >= 0 And FaderMinimumRedColorLevel <= 255, FaderMinimumRedColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FaderMinimumRedColorLevel)
-                FaderMinimumGreenColorLevel = If(FaderMinimumGreenColorLevel >= 0 And FaderMinimumGreenColorLevel <= 255, FaderMinimumGreenColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FaderMinimumGreenColorLevel)
-                FaderMinimumBlueColorLevel = If(FaderMinimumBlueColorLevel >= 0 And FaderMinimumBlueColorLevel <= 255, FaderMinimumBlueColorLevel, 0)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FaderMinimumBlueColorLevel)
-                FaderMaximumRedColorLevel = If(FaderMaximumRedColorLevel >= 0 And FaderMaximumRedColorLevel <= 255, FaderMaximumRedColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FaderMaximumRedColorLevel)
-                FaderMaximumGreenColorLevel = If(FaderMaximumGreenColorLevel >= 0 And FaderMaximumGreenColorLevel <= 255, FaderMaximumGreenColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FaderMaximumGreenColorLevel)
-                FaderMaximumBlueColorLevel = If(FaderMaximumBlueColorLevel >= 0 And FaderMaximumBlueColorLevel <= 255, FaderMaximumBlueColorLevel, 255)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FaderMaximumBlueColorLevel)
-
                 'Variables
                 Dim RandomDriver As New Random()
                 Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
