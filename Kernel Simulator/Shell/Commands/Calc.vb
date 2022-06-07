@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports Extensification.Legacy.StringExts
+Imports StringMath
 
 Namespace Shell.Commands
     Class CalcCommand
@@ -25,20 +25,13 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-#If Not NETCOREAPP Then
-                Dim Res As String = Evaluate(StringArgs)
+                Dim Res As String = SMath.Evaluate(StringArgs)
                 Wdbg(DebugLevel.I, "Res = {0}", Res)
-                If Res = "" Then 'If there is an error in calculation
-                    Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
-                Else 'Calculation done
-                    Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
-                End If
-#Else
-                Throw New PlatformNotSupportedException(DoTranslation("This feature isn't implemented on .NET. Use the .NET Framework version of KS."))
-#End If
+                Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
             Catch ex As Exception
+                Wdbg(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message)
                 WStkTrc(ex)
-                Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
+                Write(DoTranslation("Error in calculation.") + " {0}", True, ColTypes.Error, ex.Message)
             End Try
         End Sub
 
