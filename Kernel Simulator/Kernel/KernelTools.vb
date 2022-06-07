@@ -268,7 +268,9 @@ Namespace Kernel
                     Write(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
                     ResetEverything()
                     KernelEventManager.RaisePostShutdown()
-                    Environment.Exit(0)
+                    RebootRequested = True
+                    LogoutRequested = True
+                    KernelShutdown = True
                 Case PowerMode.Reboot, PowerMode.RebootSafe
                     KernelEventManager.RaisePreReboot()
                     Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
@@ -540,6 +542,7 @@ Namespace Kernel
         ''' Removes all configuration files
         ''' </summary>
         Sub FactoryReset()
+            'Delete every single thing found in KernelPaths
             For Each PathName As String In KernelPaths.Keys
                 If FileExists(KernelPaths(PathName)) Then
                     File.Delete(KernelPaths(PathName))
@@ -547,6 +550,10 @@ Namespace Kernel
                     Directory.Delete(KernelPaths(PathName), True)
                 End If
             Next
+
+            'Clear the console and reset the colors
+            Console.ResetColor()
+            Console.Clear()
             Environment.Exit(0)
         End Sub
 

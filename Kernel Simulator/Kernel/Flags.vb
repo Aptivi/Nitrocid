@@ -331,6 +331,10 @@ Namespace Kernel
         ''' Is the cancellation handler installed?
         ''' </summary>
         Friend CancellationHandlerInstalled As Boolean
+        ''' <summary>
+        ''' If the kernel is shut down, exit from main entry point gracefully.
+        ''' </summary>
+        Friend KernelShutdown As Boolean
 
     End Module
 End Namespace

@@ -28,7 +28,12 @@ Namespace Arguments.KernelArguments
             StartShellForced(ShellType.TestShell)
             PurgeShells()
             StageTimer.Start()
-            If Test_ShutdownFlag Then Environment.Exit(0)
+            If Test_ShutdownFlag Then
+                'Clear the console and reset the colors
+                Console.ResetColor()
+                Console.Clear()
+                Environment.Exit(0)
+            End If
         End Sub
 
     End Class

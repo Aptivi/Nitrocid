@@ -73,7 +73,7 @@ Namespace Kernel
             Thread.CurrentThread.Name = "Main Kernel Thread"
 
             'This is a kernel entry point
-            While True
+            While Not KernelShutdown
                 Try
                     'A title
                     Console.Title = ConsoleTitle
@@ -236,7 +236,7 @@ Namespace Kernel
                 Catch icde As InsaneConsoleDetectedException
                     Console.WriteLine(icde.Message)
                     Console.WriteLine(icde.InsanityReason)
-                    Environment.Exit(5)
+                    KernelShutdown = True
                 Catch kee As KernelErrorException
                     WStkTrc(kee)
                     KernelErrored = False
@@ -248,13 +248,17 @@ Namespace Kernel
                     KernelError(KernelErrorLevel.U, True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
                 End Try
             End While
+
+            'Clear the console and reset the colors
+            Console.ResetColor()
+            Console.Clear()
         End Sub
 
         ''' <summary>
         ''' Check to see if KernelError has been called
         ''' </summary>
         Sub CheckErrored()
-            If KernelErrored Then Throw New Exceptions.KernelErrorException(DoTranslation("Kernel Error while booting: {0}"), LastKernelErrorException, LastKernelErrorException.Message)
+            If KernelErrored Then Throw New KernelErrorException(DoTranslation("Kernel Error while booting: {0}"), LastKernelErrorException, LastKernelErrorException.Message)
         End Sub
 
     End Module

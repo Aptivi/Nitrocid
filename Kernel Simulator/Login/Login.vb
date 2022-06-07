@@ -56,7 +56,7 @@ Namespace Login
         Sub LoginPrompt()
             While True
                 'Check to see if the reboot is requested
-                If RebootRequested = True Then
+                If RebootRequested Or KernelShutdown Then
                     Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...")
                     RebootRequested = False
                     Exit Sub
@@ -173,7 +173,7 @@ Namespace Login
             'Prompts user to enter a user's password
             While True
                 'Check to see if reboot is requested
-                If RebootRequested = True Then
+                If RebootRequested Or KernelShutdown Then
                     Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...")
                     RebootRequested = False
                     Exit Sub
