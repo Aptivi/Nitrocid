@@ -73,6 +73,7 @@ Namespace Kernel
                     'A title
                     Console.Title = ConsoleTitle
                     ReadLine.CtrlCEnabled = True
+                    ReadLine.HistoryEnabled = True
 
                     'Check for terminal
                     CheckConsole()
