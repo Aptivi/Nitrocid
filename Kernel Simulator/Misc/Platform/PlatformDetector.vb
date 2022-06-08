@@ -39,7 +39,6 @@ Namespace Misc.Platform
         Public Function IsOnMacOS() As Boolean
             If IsOnUnix() Then
                 Dim UnameExecutable As String = If(FileExists("/usr/bin/uname"), "/usr/bin/uname", "/bin/uname")
-                Write(UnameExecutable, True, ColTypes.Neutral)
                 Dim UnameS As New Process
                 Dim UnameSInfo As New ProcessStartInfo With {.FileName = UnameExecutable, .Arguments = "-s",
                                                              .CreateNoWindow = True,
