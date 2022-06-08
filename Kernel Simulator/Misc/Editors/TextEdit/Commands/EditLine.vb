@@ -27,7 +27,7 @@ Namespace Misc.TextEdit.Commands
             If IsStringNumeric(ListArgsOnly(0)) Then
                 If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
                     Dim OriginalLine As String = TextEdit_FileLines(ListArgsOnly(0) - 1)
-                    Write(">> [{0}]", False, ColTypes.Input, OriginalLine)
+                    Write(">> ", False, ColTypes.Input)
                     Dim EditedLine As String = ReadLine("", OriginalLine, False)
                     TextEdit_FileLines(ListArgsOnly(0) - 1) = EditedLine
                 Else

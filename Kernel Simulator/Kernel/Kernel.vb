@@ -81,6 +81,7 @@ Namespace Kernel
                     'Initial ReadLine settings
                     ReadLine.CtrlCEnabled = True
                     ReadLine.HistoryEnabled = True
+                    ReadLine.PrewriteDefaultValue = True
 
                     'Check for terminal
                     CheckConsole()
