@@ -112,7 +112,7 @@ Namespace Shell.ShellBase
                 Dim IsAlias As Boolean = AliasedCommandList.ContainsKey(command)
                 Dim FinalCommandList As Dictionary(Of String, CommandInfo) = If(IsMod, ModCommandList, CommandList)
                 Dim FinalCommand As String = If(IsMod, command, If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command))
-                Dim HelpDefinition As String = If(IsMod, FinalCommandList(FinalCommand), FinalCommandList(FinalCommand).GetTranslatedHelpEntry)
+                Dim HelpDefinition As String = If(IsMod, FinalCommandList(FinalCommand).HelpDefinition, FinalCommandList(FinalCommand).GetTranslatedHelpEntry)
                 Dim UsageLength As Integer = DoTranslation("Usage:").Length
                 Dim HelpUsages() As String = FinalCommandList(FinalCommand).HelpUsages
 
