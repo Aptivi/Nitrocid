@@ -38,12 +38,14 @@ Namespace Misc.Platform
         ''' </summary>
         Public Function IsOnMacOS() As Boolean
             If IsOnUnix() Then
+                Dim UnameExecutable As String = If(FileExists("/usr/bin/uname"), "/usr/bin/uname", "/bin/uname")
+                Write(UnameExecutable, True, ColTypes.Neutral)
                 Dim UnameS As New Process
-                Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
-                                                         .CreateNoWindow = True,
-                                                         .UseShellExecute = False,
-                                                         .WindowStyle = ProcessWindowStyle.Hidden,
-                                                         .RedirectStandardOutput = True}
+                Dim UnameSInfo As New ProcessStartInfo With {.FileName = UnameExecutable, .Arguments = "-s",
+                                                             .CreateNoWindow = True,
+                                                             .UseShellExecute = False,
+                                                             .WindowStyle = ProcessWindowStyle.Hidden,
+                                                             .RedirectStandardOutput = True}
                 UnameS.StartInfo = UnameSInfo
                 UnameS.Start()
                 UnameS.WaitForExit()
