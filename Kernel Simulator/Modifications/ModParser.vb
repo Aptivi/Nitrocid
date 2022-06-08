@@ -44,6 +44,7 @@ Namespace Modifications
         ''' </summary>
         ''' <param name="modFile">Mod file name with extension. It should end with .dll</param>
         Sub ParseMod(modFile As String)
+            Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
             modFile = Path.GetFileName(modFile)
             If modFile.EndsWith(".dll") Then
                 'Mod is a dynamic DLL
@@ -93,6 +94,7 @@ Namespace Modifications
 
             'Try to finalize mod
             If script IsNot Nothing Then
+                Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
                 KernelEventManager.RaiseModParsed(modFile)
                 Try
                     'Add mod dependencies folder (if any) to the private appdomain lookup folder
