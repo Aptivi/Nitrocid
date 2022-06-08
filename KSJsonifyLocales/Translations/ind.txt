@@ -1706,3 +1706,41 @@ skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan kar
 saamp ka khel!
 nirapeksh ke bajaay saapeksh path ka upayog karata hai
 pop3 mel aksham hai. yadi aap vaastav mein pop3 mel chaahate hain, to pop3 samarthan ke saath eplikeshan ko phir se sankalit karen.
+modaphail amaany hai.
+feed ko bukamaark karen
+naam aur upanaam janaretar
+naam aur upanaam nahin mil sakate:
+feed bukamaark hataata hai
+bukamaark mein feed maujood nahin hai.
+sabhee bukamaark kie gae feed soocheebaddh karata hai
+nyoonatam naam ginatee
+adhikatam naam ginatee
+utpann karane ke lie naamon kee nyoonatam raashi
+utpann karane ke lie naamon kee adhikatam raashi
+nyoonatam aayu varsh ganana
+adhikatam aayu varsh ganana
+utpann karane ke lie aayu varsh kee nyoonatam raashi
+adhikatam aayu varsh utpann karane ke lie
+> phremavark prakaar: {3}
+bina sheershak vaala mainual pej
+inaput itihaas saksham
+inaput klipabord saksham
+inaput poorvavat saksham
+inaput itihaas saksham hai ya nahin. yadi saksham hai, to aap oopar ya neeche teer kunjiyon ka upayog karake haal hee mein taip kie gae aadeshon tak pahunch sakate hain.
+inaput klipabord saksham hai ya nahin.
+inaput poorvavat suvidha saksham hai ya nahin.
+rang rgb sankhyaon ko heks mein kanavart karata hai.
+rang ke heksaadesimal pratinidhitv ko rgb sankhyaon mein parivartit karata hai.
+kees praaroop mein rang ke heksaadesimal pratinidhitv ko aarajeebee sankhyaon mein parivartit karata hai.
+laal rang ka star:
+hara rang star:
+neela rang star:
+aarajeebee rang anukram:
+tark sankhyaatmak hona chaahie.
+laal rang ka star ankeey hona chaahie.
+hare rang ka star ankeey hona chaahie.
+neele rang ka star ankeey hona chaahie.
+rang heksaadesimal pratinidhitv:
+mod bhaag ka naam:
+mod bhaag fail ka naam:
+mod bhaag fail path:

@@ -1706,3 +1706,41 @@ Tập lệnh không đúng định dạng. Kiểm tra tập lệnh và giải qu
 Trò chơi rắn!
 Sử dụng đường dẫn tương đối thay vì tuyệt đối
 Thư POP3 bị tắt. Nếu bạn thực sự muốn thư POP3, hãy biên dịch lại ứng dụng với hỗ trợ POP3.
+Modfile không hợp lệ.
+Đánh dấu nguồn cấp dữ liệu
+Trình tạo tên và họ
+Không thể lấy tên và họ:
+Xóa dấu trang nguồn cấp dữ liệu
+Nguồn cấp dữ liệu không tồn tại trong dấu trang.
+Liệt kê tất cả các nguồn cấp dữ liệu được đánh dấu
+Số lượng tên tối thiểu
+Số lượng tên tối đa
+Số lượng tên tối thiểu để tạo
+Số lượng tên tối đa để tạo
+Số tuổi tối thiểu
+Số tuổi tối đa
+Số năm tuổi tối thiểu để tạo
+Số năm tuổi tối đa để tạo
+> Loại khung: {3}
+Trang hướng dẫn không có tiêu đề
+Đã bật lịch sử nhập liệu
+Đã bật khay nhớ tạm nhập
+Đã bật tính năng hoàn tác nhập liệu
+Lịch sử đầu vào có được bật hay không. Nếu được bật, bạn có thể truy cập các lệnh đã nhập gần đây bằng các phím mũi tên lên hoặc xuống.
+Khay nhớ tạm đầu vào có được bật hay không.
+Tính năng hoàn tác đầu vào có được bật hay không.
+Chuyển đổi số RGB màu thành hex.
+Chuyển đổi biểu diễn thập lục phân của màu thành số RGB.
+Chuyển đổi biểu diễn thập lục phân của màu thành số RGB ở định dạng KS.
+Mức độ màu đỏ:
+Mức độ màu xanh lá cây:
+Mức độ màu xanh lam:
+Chuỗi màu RGB:
+Đối số phải là số.
+Mức màu đỏ phải là số.
+Mức màu xanh lá cây phải là số.
+Mức màu xanh lam phải là số.
+Màu đại diện hệ thập lục phân:
+Tên phần mod:
+Tên tệp phần mod:
+Đường dẫn tệp phần mod:

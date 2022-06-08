@@ -1706,3 +1706,41 @@ Komut dosyası hatalı biçimlendirilmiş. Komut dosyasını kontrol edin ve hat
 Yılan oyunu!
 Mutlak yerine göreli yolu kullanır
 POP3 postası devre dışı. POP3 postasını gerçekten istiyorsanız, uygulamayı POP3 desteğiyle yeniden derleyin.
+Mod dosyası geçersiz.
+Feed'i yer imlerine ekler
+Ad ve soyad oluşturucu
+Ad ve soyadları alınamıyor:
+Besleme yer imini kaldırır
+Feed, yer işaretlerinde mevcut değil.
+Yer imi eklenmiş tüm yayınları listeler
+Minimum ad sayısı
+Maksimum ad sayısı
+Oluşturulacak minimum ad miktarı
+Oluşturulacak maksimum ad miktarı
+Asgari yaş yıl sayısı
+Maksimum yaş yılı sayısı
+Oluşturulacak minimum yaş yılı miktarı
+Oluşturulacak maksimum yaş yılı miktarı
+> Çerçeve Türü: {3}
+Başlıksız kılavuz sayfası
+Giriş geçmişi etkinleştirildi
+Giriş panosu etkinleştirildi
+Giriş geri alma etkin
+Giriş geçmişinin etkin olup olmadığı. Etkinleştirilirse, yukarı veya aşağı ok tuşlarını kullanarak son yazılan komutlara erişebilirsiniz.
+Giriş panosunun etkin olup olmadığı.
+Girişi geri alma özelliğinin etkin olup olmadığı.
+Renk RGB numaralarını hex'e dönüştürür.
+Rengin onaltılık gösterimini RGB sayılarına dönüştürür.
+Rengin onaltılık gösterimini KS formatında RGB sayılarına dönüştürür.
+Kırmızı renk seviyesi:
+Yeşil renk seviyesi:
+Mavi renk seviyesi:
+RGB renk sırası:
+Argüman sayısal olmalıdır.
+Kırmızı renk seviyesi sayısal olmalıdır.
+Yeşil renk seviyesi sayısal olmalıdır.
+Mavi renk seviyesi sayısal olmalıdır.
+Renk onaltılı gösterimi:
+Mod parçası adı:
+Mod parçası dosya adı:
+Mod parçası dosya yolu:

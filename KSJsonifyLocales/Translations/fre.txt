@@ -1706,3 +1706,41 @@ Le script est mal formé. Vérifiez le script et résolvez les éventuelles erre
 Le jeu du serpent !
 Utilise un chemin relatif au lieu d'absolu
 La messagerie POP3 est désactivée. Si vous voulez vraiment du courrier POP3, recompilez l'application avec le support POP3.
+Le fichier mod n'est pas valide.
+Met le flux en signet
+Générateur de nom et prénom
+Impossible d'obtenir les noms et prénoms :
+Supprime le signet de flux
+Le flux n'existe pas dans les favoris.
+Répertorie tous les flux marqués d'un signet
+Nombre minimum de noms
+Nombre maximum de noms
+Quantité minimale de noms à générer
+Nombre maximum de noms à générer
+Les années d'âge minimum comptent
+Nombre maximal d'années d'âge
+Nombre minimum d'années d'âge à générer
+Nombre maximal d'années d'âge à générer
+> Type de cadre : {3}
+Page de manuel sans titre
+Historique des saisies activé
+Presse-papiers d'entrée activé
+Annulation d'entrée activée
+Si l'historique des entrées est activé ou non. Si cette option est activée, vous pouvez accéder aux commandes récemment saisies à l'aide des touches fléchées vers le haut ou vers le bas.
+Si le presse-papiers d'entrée est activé ou non.
+Si la fonction d'annulation d'entrée est activée ou non.
+Convertit les nombres RVB de couleur en hexadécimal.
+Convertit la représentation hexadécimale de la couleur en nombres RVB.
+Convertit la représentation hexadécimale de la couleur en nombres RVB au format KS.
+Niveau de couleur rouge :
+Niveau de couleur verte :
+Niveau de couleur bleu :
+Séquence de couleurs RVB :
+L'argument doit être numérique.
+Le niveau de couleur rouge doit être numérique.
+Le niveau de couleur verte doit être numérique.
+Le niveau de couleur bleu doit être numérique.
+Représentation hexadécimale en couleur :
+Nom de la partie mod :
+Nom du fichier de partie mod :
+Chemin d'accès au fichier de la partie mod :

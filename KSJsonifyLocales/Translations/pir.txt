@@ -1706,3 +1706,41 @@ the script be malformed. Check the script an' resolve any errors: {0}
 the snake game!
 uses relative path instead o' absolute
 Pop3 mail be disabled. If ye really want pop3 mail, re-compile the application with pop3 support.
+The modfile be invalid.
+ bookmarks the feed
+name an' surname generator
+can't get names an' surnames:
+removes the feed bookmark
+the feed doesn't exist in bookmarks.
+ lists all bookmarked feeds
+minimum names count
+maximum names count
+minimum amount o' names to generate
+maximum amount o' names to generate
+minimum age years count
+maximum age years count
+minimum amount o' age years to generate
+maximum amount o' age years to generate
+> framework type: {3}
+untitled manual page
+input 'istory enabled
+input clipboard enabled
+input undo enabled
+whether the input 'istory be enabled or not. If enabled, ye can access recently typed commands usin' the to the sky or down arrow keys.
+ whether the input clipboard be enabled or not.
+ whether the input undo feature be enabled or not.
+ converts the color rgb numbers to 'ex.
+ converts the 'exadecimal representation o' the color to rgb numbers.
+ converts the 'exadecimal representation o' the color to rgb numbers in ks format.
+ red color level:
+green color level:
+blue color level:
+rgb color sequence:
+the argument must be numeric.
+ the red color level must be numeric.
+ the green color level must be numeric.
+ the blue color level must be numeric.
+ color 'exadecimal representation:
+mod part name:
+mod part file name:
+mod part file path:

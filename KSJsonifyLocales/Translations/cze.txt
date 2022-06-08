@@ -1706,3 +1706,41 @@ Skript je poškozen. Zkontrolujte skript a vyřešte případné chyby: {0}
 Hra had!
 Používá relativní cestu namísto absolutní
 Pošta POP3 je zakázána. Pokud opravdu chcete poštu POP3, znovu zkompilujte aplikaci s podporou POP3.
+Modfile je neplatný.
+Přidá zdroj do záložek
+Generátor jména a příjmení
+Nemohu získat jména a příjmení:
+Odebere záložku zdroje
+Zdroj v záložkách neexistuje.
+Zobrazí seznam všech kanálů se záložkami
+Minimální počet jmen
+Maximální počet jmen
+Minimální počet jmen k vygenerování
+Maximální počet vygenerovaných jmen
+Minimální věk se počítá
+Maximální počet let věku
+Minimální počet let věku k vygenerování
+Maximální počet let věku k vygenerování
+> Typ rámce: {3}
+Manuál bez názvu
+Historie zadávání povolena
+Vstupní schránka povolena
+Vstup zpět povolen
+Zda je historie vstupu povolena nebo ne. Pokud je povoleno, můžete přistupovat k naposledy zadaným příkazům pomocí kláves se šipkami nahoru nebo dolů.
+Zda je povolena vstupní schránka nebo ne.
+Zda je funkce vstupu zpět povolena nebo ne.
+Převede čísla barev RGB na hex.
+Převede hexadecimální reprezentaci barvy na čísla RGB.
+Převede hexadecimální reprezentaci barvy na čísla RGB ve formátu KS.
+Úroveň červené barvy:
+Úroveň zelené barvy:
+Úroveň modré barvy:
+Sekvence barev RGB:
+Argument musí být číselný.
+Úroveň červené barvy musí být číselná.
+Úroveň zelené barvy musí být číselná.
+Úroveň modré barvy musí být číselná.
+Barevné hexadecimální znázornění:
+Název dílu modu:
+Název souboru části modu:
+Cesta k souboru modu:

@@ -1706,3 +1706,41 @@ Stsenariy nepravylʹno sformovanyy. Perevirte stsenariy i vypravte vsi pomylky: 
 Hra zmiyka!
 Vykorystovuye vidnosnyy shlyakh zamistʹ absolyutnoho
 Poshta POP3 vymknena. Yakshcho vam diysno potribna poshta POP3, perekompilyuyte prohramu z pidtrymkoyu POP3.
+Fayl modyfikatsiyi nediysnyy.
+Dodaye strichku v zakladky
+Henerator imeni ta prizvyshcha
+Ne vdayetʹsya otrymaty imena ta prizvyshcha:
+Vydalyaye zakladku kanalu
+Kanal ne isnuye v zakladkakh.
+Perelichuye vsi kanaly z zakladkamy
+Minimalʹna kilʹkistʹ imen
+Maksymalʹna kilʹkistʹ imen
+Minimalʹna kilʹkistʹ imen dlya stvorennya
+Maksymalʹna kilʹkistʹ imen dlya stvorennya
+Vrakhovuyetʹsya minimalʹnyy vik
+Pidrakhunok maksymalʹnoho viku
+Minimalʹna kilʹkistʹ rokiv dlya stvorennya
+Maksymalʹna kilʹkistʹ rokiv dlya stvorennya
+> Typ karkasa: {3}
+Storinka posibnyka bez nazvy
+Istoriya vvedennya vvimkneno
+Bufer vvedennya vvimkneno
+Skasuvannya vvedennya vvimkneno
+Chy vvimkneno istoriyu vvedennya chy ni. Yakshcho vvimkneno, vy mozhete otrymaty dostup do neshchodavno vvedenykh komand za dopomohoyu klavish zi strilkamy vhoru abo vnyz.
+Chy vvimkneno bufer obminu vvedennyam chy ni.
+Chy vvimkneno funktsiyu skasuvannya vvedennya chy ni.
+Peretvoryuye nomery kolʹoru RGB u shistnadtsyatkovi.
+Peretvoryuye shistnadtsyatkove predstavlennya kolʹoru v chysla RGB.
+Peretvoryuye shistnadtsyatkove predstavlennya kolʹoru v chysla RGB u formati KS.
+Rivenʹ chervonoho kolʹoru:
+Rivenʹ zelenoho kolʹoru:
+Rivenʹ synʹoho kolʹoru:
+Poslidovnistʹ kolʹoriv RGB:
+Arhument maye buty chyslovym.
+Rivenʹ chervonoho kolʹoru maye buty chyslovym.
+Rivenʹ zelenoho kolʹoru maye buty chyslovym.
+Rivenʹ synʹoho kolʹoru maye buty chyslovym.
+Kolʹorove shistnadtsyatkove predstavlennya:
+Nazva chastyny modu:
+Nazva faylu chastyny modu:
+Shlyakh do faylu chastyny modu:

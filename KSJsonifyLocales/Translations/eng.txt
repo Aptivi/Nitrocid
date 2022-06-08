@@ -1706,3 +1706,41 @@ The script is malformed. Check the script and resolve any errors: {0}
 The snake game!
 Uses relative path instead of absolute
 POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support.
+The modfile is invalid.
+Bookmarks the feed
+Name and surname generator
+Can't get names and surnames:
+Removes the feed bookmark
+The feed doesn't exist in bookmarks.
+Lists all bookmarked feeds
+Minimum names count
+Maximum names count
+Minimum amount of names to generate
+Maximum amount of names to generate
+Minimum age years count
+Maximum age years count
+Minimum amount of age years to generate
+Maximum amount of age years to generate
+> Framework Type: {3}
+Untitled manual page
+Input history enabled
+Input clipboard enabled
+Input undo enabled
+Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
+Whether the input clipboard is enabled or not.
+Whether the input undo feature is enabled or not.
+Converts the color RGB numbers to hex.
+Converts the hexadecimal representation of the color to RGB numbers.
+Converts the hexadecimal representation of the color to RGB numbers in KS format.
+Red color level:
+Green color level:
+Blue color level:
+RGB color sequence:
+The argument must be numeric.
+The red color level must be numeric.
+The green color level must be numeric.
+The blue color level must be numeric.
+Color hexadecimal representation:
+Mod part name:
+Mod part file name:
+Mod part file path:

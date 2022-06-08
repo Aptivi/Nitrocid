@@ -1706,3 +1706,41 @@ alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}
 luebat althuebani!
 yastakhdim almasar alnisbiu bdlaan min almasar almutlaq
 tama taetil barid POP3. 'iidha kunt turid hqan barid POP3 , fa'aeidu tajmie altatbiq biastikhdam daem POP3.
+alnamudhaj ghayr salihin.
+'iisharat marjieiat alkhulasa
+mawlid aliasm wallaqab
+la yumkin alhusul ealaa al'asma' wal'alqabi:
+yuzil 'iisharat marjieiat mujaz
+alkhulasat ghayr mawjudat fi al'iisharat almarjieiati.
+yasrud jamie al'aelaf almarjieia
+alhadu al'adnaa lieadad al'asma'
+alhadu al'aqsaa lieadad al'asma'
+alhadu al'adnaa min al'asma' almurad 'iinshawuha
+alhadu al'aqsaa lieadad al'asma' almurad 'iinshawuha
+alhadu al'adnaa lieumar aleadi
+alhadu al'aqsaa lieumar aleadi
+alhadu al'adnaa limiqdar aleumur sanawat almurad 'iinshawuha
+alhadu al'aqsaa limiqdar aleumr sanawat almurad 'iinshawuha
+> nawe al'iitari: {3}
+safhat dalil bidun eunwan
+tama tamkin sijili al'iidkhal
+tamkin alhafizat al'iidkhal
+tama tamkin altarajue ean al'iidkhal
+sawa' tama tamkin mahfuzat al'iidkhal 'am la. fi halat altamkin , yumkinuk alwusul 'iilaa al'awamir almaktubat mwkhran biaistikhdam mafatih al'ashum li'aelaa 'aw li'asfala.
+ma 'iidha kanat hafizat al'iidkhal mmkknt 'am la.
+ma 'iidha kanat mizat altarajue ean al'iidkhal mmkknt 'am la.
+yuhawil 'arqam RGB almulawanat 'iilaa 'arqam sudasiat eishria.
+yuhawil altamthil alsudasia aleishria lilawn 'iilaa 'arqam RGB.
+yuhawil altamthil alsudasia aleishria lilawn 'iilaa 'arqam RGB bitansiq KS.
+mustawaa allawn al'ahmaru:
+mustawaa allawn al'akhdari:
+mustawaa allawn al'azraqa:
+tasalsal 'alwan RGB:
+yajib 'an takun alwasitat raqmiatan.
+yajib 'an yakun mustawaa allawn al'ahmar rqmyan.
+yajib 'an yakun mustawaa allawn al'akhdar rqmyan.
+yajib 'an yakun mustawaa allawn al'azraq rqmyan.
+altamthil alsudasiu aleishriu liluwni:
+aism juz' altaedili:
+aism milafi juz' wizarat aldifaei:
+masar milafi juz' wizarat aldifaei:

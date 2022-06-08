@@ -1706,3 +1706,41 @@ La sceneggiatura non è corretta. Controlla lo script e risolvi eventuali errori
 Il gioco del serpente!
 Usa il percorso relativo anziché assoluto
 La posta POP3 è disabilitata. Se vuoi davvero la posta POP3, ricompila l'applicazione con il supporto POP3.
+Il file mod non è valido.
+Aggiunge un segnalibro al feed
+Generatore di nomi e cognomi
+Impossibile ottenere nomi e cognomi:
+Rimuove il segnalibro del feed
+Il feed non esiste nei segnalibri.
+Elenca tutti i feed con segnalibri
+Conteggio nomi minimo
+Numero massimo di nomi
+Quantità minima di nomi da generare
+Numero massimo di nomi da generare
+Contano gli anni di età minima
+Conteggio anni di età massima
+Quantità minima di anni di età da generare
+Quantità massima di anni di età da generare
+> Tipo di struttura: {3}
+Pagina di manuale senza titolo
+Cronologia di input abilitata
+Appunti di input abilitato
+Ingresso annulla abilitato
+Se la cronologia di input è abilitata o meno. Se abilitato, puoi accedere ai comandi digitati di recente utilizzando i tasti freccia su o giù.
+Se gli appunti di input sono abilitati o meno.
+Se la funzione di annullamento dell'input è abilitata o meno.
+Converte i numeri RGB dei colori in esadecimali.
+Converte la rappresentazione esadecimale del colore in numeri RGB.
+Converte la rappresentazione esadecimale del colore in numeri RGB in formato KS.
+Livello di colore rosso:
+Livello di colore verde:
+Livello di colore blu:
+Sequenza di colori RGB:
+L'argomento deve essere numerico.
+Il livello di colore rosso deve essere numerico.
+Il livello di colore verde deve essere numerico.
+Il livello di colore blu deve essere numerico.
+Rappresentazione esadecimale del colore:
+Nome parte mod:
+Nome del file della parte mod:
+Percorso del file della parte mod:

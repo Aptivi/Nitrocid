@@ -1706,3 +1706,41 @@ Het script is misvormd. Controleer het script en los eventuele fouten op: {0}
 Het slangenspel!
 Gebruikt relatief pad in plaats van absoluut
 POP3-mail is uitgeschakeld. Als u echt POP3-mail wilt, moet u de toepassing opnieuw compileren met POP3-ondersteuning.
+Het modbestand is ongeldig.
+Voeg een bladwijzer toe aan de feed
+Naam- en achternaamgenerator
+Kan geen namen en achternamen krijgen:
+Verwijdert de feed-bladwijzer
+De feed bestaat niet in bladwijzers.
+Toont alle feeds met bladwijzers
+Minimum aantal namen
+Maximaal aantal namen
+Minimum aantal te genereren namen
+Maximaal aantal te genereren namen
+Minimum leeftijd jaren tellen
+Maximale leeftijd jaren tellen
+Minimum aantal leeftijdsjaren om te genereren
+Maximaal aantal te genereren leeftijdsjaren
+> Kadertype: {3}
+Naamloze handleiding
+Invoergeschiedenis ingeschakeld
+Invoerklembord ingeschakeld
+Invoer ongedaan maken ingeschakeld
+Of de invoergeschiedenis is ingeschakeld of niet. Indien ingeschakeld, hebt u toegang tot recent getypte opdrachten met de pijltoetsen omhoog of omlaag.
+Of het invoerklembord is ingeschakeld of niet.
+Of de invoer ongedaan maken-functie is ingeschakeld of niet.
+Converteert de kleur RGB-nummers naar hex.
+Converteert de hexadecimale weergave van de kleur naar RGB-nummers.
+Converteert de hexadecimale weergave van de kleur naar RGB-nummers in KS-indeling.
+Rood kleurniveau:
+Groen kleurniveau:
+Blauw kleurniveau:
+RGB-kleurvolgorde:
+Het argument moet numeriek zijn.
+Het rode kleurniveau moet numeriek zijn.
+Het groene kleurniveau moet numeriek zijn.
+Het blauwe kleurniveau moet numeriek zijn.
+Kleur hexadecimale weergave:
+Naam mod-onderdeel:
+Mod onderdeel bestandsnaam:
+Mod onderdeel bestandspad:

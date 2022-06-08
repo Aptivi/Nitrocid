@@ -1706,3 +1706,41 @@ Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie alle Fehl
 Das Schlangenspiel!
 Verwendet einen relativen Pfad anstelle eines absoluten
 POP3-Mail ist deaktiviert. Wenn Sie wirklich POP3-Mail wünschen, kompilieren Sie die Anwendung mit POP3-Unterstützung neu.
+Die Moddatei ist ungültig.
+Lesezeichen für den Feed
+Vor- und Nachnamengenerator
+Vor- und Nachnamen können nicht abgerufen werden:
+Entfernt das Feed-Lesezeichen
+Der Feed existiert nicht in Lesezeichen.
+Listet alle mit Lesezeichen versehenen Feeds auf
+Mindestnamen zählen
+Maximale Namen zählen
+Mindestanzahl an zu generierenden Namen
+Maximale Anzahl zu generierender Namen
+Mindestalter Jahre zählen
+Es zählen Jahre des Höchstalters
+Mindestanzahl an zu generierenden Altersjahren
+Maximal zu generierende Altersjahre
+> Framework-Typ: {3}
+Unbenannte Handbuchseite
+Eingabeverlauf aktiviert
+Eingabe-Zwischenablage aktiviert
+Eingabe rückgängig machen aktiviert
+Ob der Eingabeverlauf aktiviert ist oder nicht. Wenn diese Option aktiviert ist, können Sie mit den Aufwärts- oder Abwärtspfeiltasten auf kürzlich eingegebene Befehle zugreifen.
+Ob die Eingabe-Zwischenablage aktiviert ist oder nicht.
+Ob die Funktion zum Rückgängigmachen der Eingabe aktiviert ist oder nicht.
+Konvertiert die Farb-RGB-Zahlen in Hex.
+Konvertiert die hexadezimale Darstellung der Farbe in RGB-Zahlen.
+Konvertiert die hexadezimale Darstellung der Farbe in RGB-Zahlen im KS-Format.
+Rote Farbstufe:
+Grüne Farbstufe:
+Blaue Farbstufe:
+RGB-Farbfolge:
+Das Argument muss numerisch sein.
+Die rote Farbstufe muss numerisch sein.
+Die grüne Farbstufe muss numerisch sein.
+Die blaue Farbstufe muss numerisch sein.
+Hexadezimale Farbdarstellung:
+Name des Mod-Teils:
+Dateiname des Mod-Teils:
+Dateipfad des Mod-Teils:

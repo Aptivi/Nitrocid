@@ -1706,3 +1706,41 @@ El guión está mal formado. Verifique el script y resuelva cualquier error: {0}
 ¡El juego de la serpiente!
 Utiliza ruta relativa en lugar de absoluta
 El correo POP3 está deshabilitado. Si realmente desea correo POP3, vuelva a compilar la aplicación con soporte POP3.
+El archivo mod no es válido.
+Marca el feed
+Generador de nombres y apellidos
+No puedo obtener nombres y apellidos:
+Elimina el marcador de alimentación
+El feed no existe en los marcadores.
+Enumera todos los feeds marcados
+Recuento mínimo de nombres
+Recuento máximo de nombres
+Cantidad mínima de nombres para generar
+Cantidad máxima de nombres a generar
+Los años de edad mínima cuentan
+Número máximo de años de edad
+Cantidad mínima de años de edad para generar
+Cantidad máxima de años de edad para generar
+> Tipo de marco: {3}
+Página del manual sin título
+Historial de entrada habilitado
+Portapapeles de entrada habilitado
+Entrada deshacer habilitada
+Si el historial de entrada está habilitado o no. Si está habilitado, puede acceder a los comandos escritos recientemente usando las teclas de flecha hacia arriba o hacia abajo.
+Si el portapapeles de entrada está habilitado o no.
+Si la función de deshacer entrada está habilitada o no.
+Convierte los números de color RGB a hexadecimal.
+Convierte la representación hexadecimal del color en números RGB.
+Convierte la representación hexadecimal del color a números RGB en formato KS.
+Nivel de color rojo:
+Nivel de color verde:
+Nivel de color azul:
+Secuencia de colores RGB:
+El argumento debe ser numérico.
+El nivel de color rojo debe ser numérico.
+El nivel de color verde debe ser numérico.
+El nivel de color azul debe ser numérico.
+Color representación hexadecimal:
+Nombre de la parte de la modificación:
+Nombre del archivo de la pieza de modificación:
+Ruta del archivo de la pieza de modificación:

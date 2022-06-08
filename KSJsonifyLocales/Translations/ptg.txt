@@ -1706,3 +1706,41 @@ O roteiro está malformado. Verifique o script e resolva quaisquer erros: {0}
 O jogo da cobra!
 Usa caminho relativo em vez de absoluto
 O correio POP3 está desabilitado. Se você realmente deseja correio POP3, recompile o aplicativo com suporte a POP3.
+O modfile é inválido.
+Marca o feed
+Gerador de nome e sobrenome
+Não é possível obter nomes e sobrenomes:
+Remove o marcador de feed
+O feed não existe nos favoritos.
+Lista todos os feeds marcados
+Contagem mínima de nomes
+Contagem máxima de nomes
+Quantidade mínima de nomes para gerar
+Quantidade máxima de nomes a serem gerados
+Contagem de anos de idade mínima
+Contagem máxima de anos de idade
+Quantidade mínima de anos de idade para gerar
+Quantidade máxima de anos de idade para gerar
+> Tipo de Estrutura: {3}
+Página de manual sem título
+Histórico de entrada ativado
+Área de transferência de entrada ativada
+Desfazer de entrada ativado
+Se o histórico de entrada está ativado ou não. Se ativado, você pode acessar comandos digitados recentemente usando as teclas de seta para cima ou para baixo.
+Se a área de transferência de entrada está habilitada ou não.
+Se o recurso de desfazer de entrada está ativado ou não.
+Converte os números RGB de cor em hexadecimal.
+Converte a representação hexadecimal da cor em números RGB.
+Converte a representação hexadecimal da cor em números RGB no formato KS.
+Nível de cor vermelha:
+Nível de cor verde:
+Nível de cor azul:
+Sequência de cores RGB:
+O argumento deve ser numérico.
+O nível de cor vermelha deve ser numérico.
+O nível de cor verde deve ser numérico.
+O nível de cor azul deve ser numérico.
+Representação hexadecimal de cores:
+Nome da peça do mod:
+Nome do arquivo da parte do mod:
+Caminho do arquivo da peça do mod:

@@ -1706,3 +1706,41 @@ Skript imeyet nepravil'nyy format. Prover'te stsenariy i ustranite vse oshibki: 
 Zmeinaya igra!
 Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo
 Pochta POP3 otklyuchena. Yesli vam deystvitel'no nuzhna pochta POP3, perekompiliruyte prilozheniye s podderzhkoy POP3.
+Fayl moda nedeystvitelen.
+Dobavlyayet v zakladki lentu
+Generator imen i familiy
+Ne mogu poluchit' imena i familii:
+Udalyayet zakladku kanala
+Fid ne sushchestvuyet v zakladkakh.
+Spisok vsekh dobavlennykh v zakladki kanalov
+Minimal'noye kolichestvo imen
+Maksimal'noye kolichestvo imen
+Minimal'noye kolichestvo imen dlya generatsii
+Maksimal'noye kolichestvo imen dlya generatsii
+Minimal'nyy vozrast
+Maksimal'nyy vozrast let
+Minimal'noye kolichestvo let dlya generatsii
+Maksimal'noye kolichestvo vozrastnykh let dlya sozdaniya
+> Tip platformy: {3}
+Stranitsa rukovodstva bez nazvaniya
+Istoriya vvoda vklyuchena
+Vkhodnoy bufer obmena vklyuchen
+Otmena vvoda vklyuchena
+Vklyuchena li istoriya vvoda ili net. Yesli etot parametr vklyuchen, vy mozhete poluchit' dostup k nedavno vvedennym komandam s pomoshch'yu klavish so strelkami vverkh ili vniz.
+Vklyuchen li vkhodnoy bufer obmena ili net.
+Vklyuchena li funktsiya otmeny vvoda ili net.
+Preobrazuyet chisla tsvetov RGB v shestnadtsaterichnyye.
+Preobrazuyet shestnadtsaterichnoye predstavleniye tsveta v chisla RGB.
+Preobrazuyet shestnadtsaterichnoye predstavleniye tsveta v chisla RGB v formate KS.
+Uroven' krasnogo tsveta:
+Uroven' zelenogo tsveta:
+Uroven' sinego tsveta:
+Tsvetovaya posledovatel'nost' RGB:
+Argument dolzhen byt' chislovym.
+Uroven' krasnogo tsveta dolzhen byt' chislovym.
+Uroven' zelenogo tsveta dolzhen byt' chislovym.
+Uroven' sinego tsveta dolzhen byt' chislovym.
+Shestnadtsaterichnoye predstavleniye tsveta:
+Nazvaniye chasti moda:
+Imya fayla chasti moda:
+Put' k faylu chasti moda:

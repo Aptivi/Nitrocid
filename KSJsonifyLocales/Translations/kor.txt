@@ -1706,3 +1706,41 @@ seukeulibteu hyeongsig-i jalmosdoeeossseubnida. seukeulibteuleul hwag-inhago oly
 baem geim!
 jeoldae gyeonglo daesin sangdae gyeonglo sayong
 POP3 meil-eul sayonghal su eobs-seubnida. jeongmallo POP3 meil-eul wonhamyeon POP3 jiwon-eulo aepeullikeisyeon-eul dasi keompailhasibsio.
+modeu pail-i jalmosdoeeossseubnida.
+pideu bugmakeu
+ileum mich seong saengseong-gi
+ileumgwa seong-eul gajyeool su eobs-eum:
+pideu bugmakeu jegeo
+bugmakeue pideuga eobs-seubnida.
+bugmakeudoen modeun pideuleul nayeolhabnida.
+choeso ileum su
+choedae ileum su
+saengseonghal ileum-ui choesolyang
+saengseonghal choedae ileum su
+choeso yeonlyeong su
+choedae yeonlyeong su
+saengseonghal choeso yeonlyeong
+saengseonghal su issneun choedae yeonlyeong
+> peuleim-wokeu yuhyeong: {3}
+jemog eobsneun maenyueol peiji
+iblyeog gilog hwalseonghwadoem
+iblyeog keullibbodeu hwalseonghwadoem
+iblyeog chwiso hwalseonghwadoem
+iblyeog gilog-i hwalseonghwadoeeossneunji yeobu-ibnida. hwalseonghwadoen gyeong-u wijjog ttoneun alaejjog hwasalpyo kileul sayonghayeo choegeun-e iblyeoghan myeonglyeong-e aegseseuhal su issseubnida.
+iblyeog keullibbodeuui hwalseonghwa yeobu-ibnida.
+iblyeog chwiso gineung-ui hwalseonghwa yeobu-ibnida.
+saegsang RGB susjaleul 16jinsulo byeonhwanhabnida.
+saegsang-ui 16jinsu pyohyeon-eul RGB susjalo byeonhwanhabnida.
+saegsang-ui 16jinsu pyohyeon-eul KS hyeongsig-ui RGB susjalo byeonhwanhabnida.
+ledeu keolleo lebel:
+nogsaeg saegsang sujun:
+beullu keolleo lebel:
+RGB saegsang sikwonseu:
+insuneun susjayeoya habnida.
+ppalgansaeg lebel-eun susjayeoya habnida.
+nogsaeg saegsang sujun-eun susjayeoya habnida.
+palansaeg lebel-eun susjayeoya habnida.
+saegsang 16jinsu pyohyeon:
+modeu bupum ileum:
+modeu bupum pail ileum:
+modeu bupum pail gyeonglo:
