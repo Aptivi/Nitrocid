@@ -137,13 +137,5 @@ Namespace ConsoleBase
             Return Final
         End Function
 
-        ''' <summary>
-        ''' Reads the next line of characters that exceed the 256-character limit up to 65536 characters
-        ''' </summary>
-        Public Function ReadLineLong() As String
-            Console.SetIn(New StreamReader(Console.OpenStandardInput(65536), Console.InputEncoding, False, 65536))
-            Return ReadLine()
-        End Function
-
     End Module
 End Namespace
