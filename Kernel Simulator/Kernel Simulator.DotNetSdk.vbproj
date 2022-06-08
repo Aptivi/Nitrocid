@@ -144,7 +144,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="ReadLine.Reboot" Version="3.1.1" />
+    <PackageReference Include="ReadLine.Reboot" Version="3.1.2" />
     <PackageReference Include="SSH.NET">
       <Version>2020.0.2</Version>
     </PackageReference>
