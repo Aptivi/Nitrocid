@@ -83,6 +83,7 @@ Namespace Shell.ShellBase
             'Split the arguments with enclosed quotes and set the required boolean variable
             Dim CommandInfo As CommandInfo = If(ModCommands.ContainsKey(Command), ModCommands(Command), ShellCommands(Command))
             Dim EnclosedArgs As List(Of String) = Regex.Split(strArgs, "(?<=^[^""]*(?:""[^""]*""[^""]*)*) (?=(?:[^""]*""[^""]*"")*[^""]*$)").Select(Function(m) If(m.StartsWith("""") And m.EndsWith(""""), m.ReleaseDoubleQuotes(), m)).ToList()
+            If String.IsNullOrWhiteSpace(strArgs) Then EnclosedArgs = Nothing
             If EnclosedArgs IsNot Nothing Then
                 RequiredArgumentsProvided = EnclosedArgs?.Count >= CommandInfo.MinimumArguments
             ElseIf CommandInfo.ArgumentsRequired And EnclosedArgs Is Nothing Then
