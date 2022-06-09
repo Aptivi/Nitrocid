@@ -2,11 +2,11 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>KS</id>
+    <id>KS.NET</id>
     <version>0.0.22.0</version>
     <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
 
-    <title>Kernel Simulator</title>
+    <title>Kernel Simulator - .NET CoreCLR</title>
     <authors>EoflaOE</authors>
     <projectUrl>http://github.com/EoflaOE/Kernel-Simulator</projectUrl>
     <iconUrl>https://rawcdn.githack.com/EoflaOE/Kernel-Simulator/5efe4e48acea326f21af56ecfd9cd1c1f9bc2056/Kernel%20Simulator/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
@@ -15,11 +15,11 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <tags>ks kernel simulator vb.net</tags>
     <summary>Simulates our future-planned kernel</summary>
-    <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. For more information, please go to the project URL.</description>
+    <description>Kernel Simulator is the program that lets you simulate our early aspects of the kernel that will be made in the future. For more information, please go to the project URL. This version is a .NET version of KS.</description>
     <releaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/Release-Notes-for-Second-Generation-KS</releaseNotes>
 
     <dependencies>
-      <dependency id="dotnetfx" version="4.8.0.20190930"/>
+      <dependency id="dotnet-6.0-sdk" version="6.0.300"/>
     </dependencies>
   </metadata>
   <files>

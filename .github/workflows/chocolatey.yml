@@ -18,7 +18,9 @@ jobs:
     - name: Application Pack
       run: |
         $path = "ChocolateyPack"
+        $pathdotnet = "ChocolateyPack-DotNet"
         choco pack (Get-Item "$path\ks.nuspec").FullName
+        choco pack (Get-Item "$pathdotnet\ks.nuspec").FullName
     - name: Package Publication
       run: |
         $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*.nupkg"
