@@ -24,4 +24,6 @@ jobs:
     - name: Package Publication
       run: |
         $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*.nupkg"
-        choco push "$pwd\$FileName"
+        foreach($fn in $FileName) {
+            choco push "$pwd\$fn"
+        }
