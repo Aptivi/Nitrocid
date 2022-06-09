@@ -17,13 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Reflection
+Imports KS.Misc.Text
 
 Namespace Misc.Writers.ConsoleWriters
     Public Module TextWriterColor
 
-
         Friend WriteLock As New Object
-
 
         ''' <summary>
         ''' Outputs the text into the terminal prompt without colors
@@ -39,6 +38,7 @@ Namespace Misc.Writers.ConsoleWriters
                     If Not Line And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then GetFilteredPositions(Text, FilteredLeft, FilteredTop, vars)
 
                     'Actually write
+                    If PerfectTwo Then Text = String.Format(Text, vars).ReplaceAll(GetAllLettersAndNumbers().Select(Function(c) c.ToString).ToArray(), "2")
                     If Line Then
                         If Not vars.Length = 0 Then
                             Console.WriteLine(Text, vars)

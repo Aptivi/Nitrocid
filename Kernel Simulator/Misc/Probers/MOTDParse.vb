@@ -89,7 +89,7 @@ Namespace Misc.Probers
         Public Sub ReadMOTD(MType As MessageType)
             Try
                 Dim MOTDStreamR As IO.StreamReader
-                Dim MOTDBuilder As New Text.StringBuilder
+                Dim MOTDBuilder As New System.Text.StringBuilder
 
                 'Get the MOTD and MAL file path
                 MOTDFilePath = NeutralizePath(MOTDFilePath)

@@ -24,6 +24,7 @@ Namespace Arguments.ArgumentBase
         Public ReadOnly AvailableCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", False, 0, New CommandLine_TestInteractiveArgument)},
                                                                                               {"debug", New ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", False, 0, New CommandLine_DebugArgument)},
                                                                                               {"args", New ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", False, 0, New CommandLine_ArgsArgument)},
+                                                                                              {"perfectTwo", New ArgumentInfo("perfectTwo", ArgumentType.CommandLineArgs, "", "", False, 0, New CommandLine_PerfectTwoArgument)},
                                                                                               {"help", New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, New CommandLine_HelpArgument)}}
 
     End Module
