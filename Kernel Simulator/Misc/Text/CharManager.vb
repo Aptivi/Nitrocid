@@ -29,5 +29,25 @@ Namespace Misc.Text
                              .ToArray()
         End Function
 
+        ''' <summary>
+        ''' Gets all the letters.
+        ''' </summary>
+        Public Function GetAllLetters() As Char()
+            Return Enumerable.Range(0, Convert.ToInt32(Char.MaxValue) + 1) _
+                             .Select(Function(CharNum) Convert.ToChar(CharNum)) _
+                             .Where(Function(c) Char.IsLetter(c)) _
+                             .ToArray()
+        End Function
+
+        ''' <summary>
+        ''' Gets all the numbers.
+        ''' </summary>
+        Public Function GetAllNumbers() As Char()
+            Return Enumerable.Range(0, Convert.ToInt32(Char.MaxValue) + 1) _
+                             .Select(Function(CharNum) Convert.ToChar(CharNum)) _
+                             .Where(Function(c) Char.IsNumber(c)) _
+                             .ToArray()
+        End Function
+
     End Module
 End Namespace
