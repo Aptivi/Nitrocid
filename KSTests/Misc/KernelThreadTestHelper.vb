@@ -24,22 +24,30 @@ Public Module KernelThreadTestHelper
     ''' [Kernel thread test] Write hello to console
     ''' </summary>
     Sub WriteHello()
-        Console.WriteLine("Hello world!")
-        Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
-        While True
-            Thread.Sleep(1)
-        End While
+        Try
+            Console.WriteLine("Hello world!")
+            Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+            While True
+                Thread.Sleep(1)
+            End While
+        Catch ex As ThreadInterruptedException
+            Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+        End Try
     End Sub
 
     ''' <summary>
     ''' [Kernel thread test] Write hello to console with argument
     ''' </summary>
     Sub WriteHelloWithArgument(Name As String)
-        Console.WriteLine("Hello, {0}!", Name)
-        Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
-        While True
-            Thread.Sleep(1)
-        End While
+        Try
+            Console.WriteLine("Hello, {0}!", Name)
+            Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+            While True
+                Thread.Sleep(1)
+            End While
+        Catch ex As ThreadInterruptedException
+            Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId)
+        End Try
     End Sub
 
 End Module
