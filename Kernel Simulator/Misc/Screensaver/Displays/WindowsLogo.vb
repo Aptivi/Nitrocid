@@ -133,6 +133,7 @@ Namespace Misc.Screensaver.Displays
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn!")
                         End If
                     End If
+                    If Drawn Then SleepNoBlock(1000, WindowsLogo)
                 Loop
             Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
