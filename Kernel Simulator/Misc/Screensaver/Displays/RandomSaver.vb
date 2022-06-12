@@ -27,31 +27,34 @@ Namespace Misc.Screensaver.Displays
         ''' Handles the code of RandomSaver
         ''' </summary>
         Sub RandomSaver_DoWork()
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim ScreensaverIndex As Integer = RandomDriver.Next(Screensavers.Count)
+            Dim ScreensaverName As String = Screensavers.Keys(ScreensaverIndex)
+            Dim ScreensaverThread As KernelThread = Screensavers(ScreensaverName)
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim ScreensaverIndex As Integer = RandomDriver.Next(Screensavers.Count)
-                Dim ScreensaverName As String = Screensavers.Keys(ScreensaverIndex)
-
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.White
-                Console.Clear()
-                Console.CursorVisible = False
-
-                'Screensaver logic
+                'We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
                 Do Until ScreensaverName <> "random"
-                    'We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
                     ScreensaverIndex = RandomDriver.Next(Screensavers.Count)
                     ScreensaverName = Screensavers.Keys(ScreensaverIndex)
+                    ScreensaverThread = Screensavers(ScreensaverName)
                 Loop
 
                 'Run the screensaver thread and wait
-                Screensavers(ScreensaverName).Start()
-                Do While Screensavers(ScreensaverName).IsAlive
+                ScreensaverThread.Start()
+                Do While ScreensaverThread.IsAlive
                     SleepNoBlock(10, RandomSaver)
                 Loop
             Catch taex As ThreadInterruptedException
+                ScreensaverThread.Stop()
                 HandleSaverCancel()
             Catch ex As Exception
                 HandleSaverError(ex)

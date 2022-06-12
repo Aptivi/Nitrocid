@@ -72,6 +72,7 @@ Namespace Misc.Screensaver
                                                                              {"windowslogo", WindowsLogo},
                                                                              {"wipe", Wipe}}
         Friend SaverAutoReset As New AutoResetEvent(False)
+        Friend RandomSaverAutoReset As New AutoResetEvent(False)
         Friend Timeout As New KernelThread("Screensaver timeout thread", False, AddressOf HandleTimeout)
 
         ''' <summary>
@@ -121,6 +122,9 @@ Namespace Misc.Screensaver
                     Console.ReadKey()
                     Screensavers(saver).Stop()
                     SaverAutoReset.WaitOne()
+
+                    'TODO: Implement a better way to treat the "Random" screensaver
+                    If saver = "random" Then RandomSaverAutoReset.WaitOne()
                 ElseIf CustomSavers.ContainsKey(saver) Then
                     'Only one custom screensaver can be used.
                     CustomSaver = CustomSavers(saver).Screensaver
@@ -212,6 +216,7 @@ Namespace Misc.Screensaver
             Console.CursorVisible = True
             Wdbg(DebugLevel.I, "All clean. Screensaver stopped.")
             SaverAutoReset.Set()
+            RandomSaverAutoReset.Set()
         End Sub
 
     End Module
