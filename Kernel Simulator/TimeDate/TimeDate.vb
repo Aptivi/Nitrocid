@@ -93,7 +93,8 @@ Namespace TimeDate
         ''' </summary>
         ''' <param name="Milliseconds">The milliseconds interval</param>
         Public Function GetRemainingTimeFromNow(Milliseconds As Integer) As String
-            Dim RemainingTime As TimeSpan = (Date.Now.AddMilliseconds(Milliseconds) - Date.Now)
+            Dim ThisMoment As Date = KernelDateTime
+            Dim RemainingTime As TimeSpan = (ThisMoment.AddMilliseconds(Milliseconds) - ThisMoment)
             Dim RemainingTimeString As String = RemainingTime.ToString("d\.hh\:mm\:ss\.fff", CurrentCult)
             Return RemainingTimeString
         End Function
