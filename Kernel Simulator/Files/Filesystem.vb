@@ -992,6 +992,21 @@ Namespace Files
         End Function
 
         ''' <summary>
+        ''' Gets all the invalid path characters
+        ''' </summary>
+        Public Function GetInvalidPathChars() As Char()
+            Dim FinalInvalidPathChars As Char() = Path.GetInvalidPathChars()
+            Dim WindowsInvalidPathChars As Char() = {"""", "<", ">"}
+            If KernelSimulatorMoniker = ".NET CoreCLR" And IsOnWindows() Then
+                'It's weird of .NET 6.0 to not consider the above three Windows invalid directory chars to be invalid,
+                'so make them invalid as in .NET Framework.
+                ReDim Preserve FinalInvalidPathChars(35)
+                WindowsInvalidPathChars.CopyTo(FinalInvalidPathChars, FinalInvalidPathChars.Length - 3)
+            End If
+            Return FinalInvalidPathChars
+        End Function
+
+        ''' <summary>
         ''' Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(String)"/> instead.)
         ''' </summary>
         ''' <param name="Path">The path to be parsed</param>
@@ -999,7 +1014,7 @@ Namespace Files
         Public Function TryParsePath(Path As String) As Boolean
             Try
                 ThrowOnInvalidPath(Path)
-                Return Not Path.IndexOfAny(IO.Path.GetInvalidPathChars()) >= 0
+                Return Not Path.IndexOfAny(GetInvalidPathChars()) >= 0
             Catch ex As Exception
                 WStkTrc(ex)
                 Wdbg(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message)
@@ -1076,7 +1091,7 @@ Namespace Files
                 'Split the path and the pattern
                 Dim Parent As String = NeutralizePath(IO.Path.GetDirectoryName(Path) + "/" + IO.Path.GetFileName(Path))
                 Dim Pattern As String = If(IsFile, "", "*")
-                If Parent.ContainsAnyOf(IO.Path.GetInvalidPathChars.Select(Function(Character) Character.ToString).ToArray) Then
+                If Parent.ContainsAnyOf(GetInvalidPathChars.Select(Function(Character) Character.ToString).ToArray) Then
                     Parent = IO.Path.GetDirectoryName(Path)
                     Pattern = IO.Path.GetFileName(Path)
                 End If
