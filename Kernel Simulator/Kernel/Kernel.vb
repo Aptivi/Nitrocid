@@ -105,7 +105,11 @@ Namespace Kernel
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                             Dim pdbdown As New WebClient
                             Try
+#If NETCOREAPP Then
+                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+#Else
                                 pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+#End If
                             Catch ex As Exception
                                 NotifySend(New Notification(DoTranslation("Error downloading debug data"),
                                                             DoTranslation("There is an error while downloading debug data. Check your internet connection."),
