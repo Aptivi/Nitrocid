@@ -119,7 +119,14 @@ Namespace Misc.Screensaver
                     saver = saver.ToLower()
                     Screensavers(saver).Start()
                     Wdbg(DebugLevel.I, "{0} started", saver)
+#If NETCOREAPP Then
+                    Do Until Console.KeyAvailable
+                        Thread.Sleep(1)
+                    Loop
+                    Console.ReadKey(True)
+#Else
                     Console.ReadKey()
+#End If
                     Screensavers(saver).Stop()
                     SaverAutoReset.WaitOne()
 
@@ -130,7 +137,14 @@ Namespace Misc.Screensaver
                     CustomSaver = CustomSavers(saver).Screensaver
                     Custom.Start()
                     Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
+#If NETCOREAPP Then
+                    Do Until Console.KeyAvailable
+                        Thread.Sleep(1)
+                    Loop
+                    Console.ReadKey(True)
+#Else
                     Console.ReadKey()
+#End If
                     Custom.Stop()
                     SaverAutoReset.WaitOne()
                 Else
