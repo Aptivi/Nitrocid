@@ -95,7 +95,7 @@ Namespace Misc.Screensaver
                         End If
 
                         'Poll to see if there is a kernel shutdown signal
-                        If KernelShutdown Then Exit For
+                        If KernelShutdown Then Exit While
                     Next
                     If Not RebootRequested Then
                         Wdbg(DebugLevel.W, "Screen time has reached.")
