@@ -104,43 +104,47 @@ Namespace Network.RPC
                 Try
                     MessageBuffer = RPCListen.Receive(RemoteEndpoint)
                     Message = Text.Encoding.Default.GetString(MessageBuffer)
-                    Wdbg("RPC: Received message {0}", Message)
-                    KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
 
-                    'Iterate through every confirmation message
-                    If Message.StartsWith("ShutdownConfirm") Then
-                        Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
-                        RPCPowerListener.Start(PowerMode.Shutdown)
-                    ElseIf Message.StartsWith("RebootConfirm") Then
-                        Wdbg(DebugLevel.I, "Reboot confirmed from remote access.")
-                        RPCPowerListener.Start(PowerMode.Reboot)
-                    ElseIf Message.StartsWith("RebootSafeConfirm") Then
-                        Wdbg(DebugLevel.I, "Reboot to safe mode confirmed from remote access.")
-                        RPCPowerListener.Start(PowerMode.RebootSafe)
-                    ElseIf Message.StartsWith("LockConfirm") Then
-                        Wdbg(DebugLevel.I, "Lock confirmed from remote access.")
-                        LockScreen()
-                    ElseIf Message.StartsWith("SaveScrConfirm") Then
-                        Wdbg(DebugLevel.I, "Save screen confirmed from remote access.")
-                        ShowSavers(DefSaverName)
-                    ElseIf Message.StartsWith("ExecConfirm") Then
-                        If LoggedIn Then
-                            Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
-                            Console.WriteLine()
-                            GetLine(Message.Replace("ExecConfirm, ", "").Replace(NewLine, ""))
+                    'If the message is not empty, parse it
+                    If Not String.IsNullOrEmpty(Message) Then
+                        Wdbg("RPC: Received message {0}", Message)
+                        KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
+
+                        'Iterate through every confirmation message
+                        If Message.StartsWith("ShutdownConfirm") Then
+                            Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
+                            RPCPowerListener.Start(PowerMode.Shutdown)
+                        ElseIf Message.StartsWith("RebootConfirm") Then
+                            Wdbg(DebugLevel.I, "Reboot confirmed from remote access.")
+                            RPCPowerListener.Start(PowerMode.Reboot)
+                        ElseIf Message.StartsWith("RebootSafeConfirm") Then
+                            Wdbg(DebugLevel.I, "Reboot to safe mode confirmed from remote access.")
+                            RPCPowerListener.Start(PowerMode.RebootSafe)
+                        ElseIf Message.StartsWith("LockConfirm") Then
+                            Wdbg(DebugLevel.I, "Lock confirmed from remote access.")
+                            LockScreen()
+                        ElseIf Message.StartsWith("SaveScrConfirm") Then
+                            Wdbg(DebugLevel.I, "Save screen confirmed from remote access.")
+                            ShowSavers(DefSaverName)
+                        ElseIf Message.StartsWith("ExecConfirm") Then
+                            If LoggedIn Then
+                                Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
+                                Console.WriteLine()
+                                GetLine(Message.Replace("ExecConfirm, ", "").Replace(NewLine, ""))
+                            Else
+                                Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
+                            End If
+                        ElseIf Message.StartsWith("AckConfirm") Then
+                            Wdbg(DebugLevel.I, "{0} says ""Hello.""", Message.Replace("AckConfirm, ", "").Replace(NewLine, ""))
+                        ElseIf Message.StartsWith("PingConfirm") Then
+                            Dim IPAddr As String = Message.Replace("PingConfirm, ", "").Replace(NewLine, "")
+                            Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr)
+                            NotifySend(New Notification(DoTranslation("Ping!"),
+                                                        DoTranslation("{0} pinged you.").FormatString(IPAddr),
+                                                        NotifPriority.Low, NotifType.Normal))
                         Else
-                            Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
+                            Wdbg(DebugLevel.W, "Not found. Message was {0}", Message)
                         End If
-                    ElseIf Message.StartsWith("AckConfirm") Then
-                        Wdbg(DebugLevel.I, "{0} says ""Hello.""", Message.Replace("AckConfirm, ", "").Replace(NewLine, ""))
-                    ElseIf Message.StartsWith("PingConfirm") Then
-                        Dim IPAddr As String = Message.Replace("PingConfirm, ", "").Replace(NewLine, "")
-                        Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr)
-                        NotifySend(New Notification(DoTranslation("Ping!"),
-                                                    DoTranslation("{0} pinged you.").FormatString(IPAddr),
-                                                    NotifPriority.Low, NotifType.Normal))
-                    Else
-                        Wdbg(DebugLevel.W, "Not found. Message was {0}", Message)
                     End If
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
