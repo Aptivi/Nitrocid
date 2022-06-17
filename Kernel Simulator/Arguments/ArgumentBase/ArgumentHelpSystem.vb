@@ -48,6 +48,8 @@ Namespace Arguments.ArgumentBase
                     ArgumentList = AvailableArgs
                 Case ArgumentType.CommandLineArgs
                     ArgumentList = AvailableCMDLineArgs
+                Case ArgumentType.PreBootCommandLineArgs
+                    ArgumentList = AvailablePreBootCMDLineArgs
             End Select
 
             'Check to see if argument exists
