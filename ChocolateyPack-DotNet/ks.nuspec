@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>KS.NET</id>
-    <version>0.0.22.3</version>
+    <version>0.0.22.4</version>
     <packageSourceUrl>http://github.com/EoflaOE/Kernel-Simulator</packageSourceUrl>
 
     <title>Kernel Simulator - .NET CoreCLR</title>
