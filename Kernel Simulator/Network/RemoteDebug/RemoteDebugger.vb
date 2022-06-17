@@ -153,6 +153,7 @@ Namespace Network.RemoteDebug
                 End Try
             End While
 
+            RStream.Wait()
             RDebugStopping = False
             DebugTCP.Stop()
             DebugDevices.Clear()
@@ -163,7 +164,7 @@ Namespace Network.RemoteDebug
         ''' Thread to listen to messages and post them to the debugger
         ''' </summary>
         Sub ReadAndBroadcastAsync()
-            While True
+            While Not RDebugStopping
                 For DeviceIndex As Integer = 0 To DebugDevices.Count - 1
                     Thread.Sleep(1)
                     Try
