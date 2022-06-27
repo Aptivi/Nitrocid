@@ -127,7 +127,8 @@ Namespace Misc.Configuration
                     {"New welcome banner", NewWelcomeStyle},
                     {"Stylish splash screen", EnableSplash},
                     {"Splash name", SplashName},
-                    {"Banner figlet font", BannerFigletFont}
+                    {"Banner figlet font", BannerFigletFont},
+                    {"Simulate No APM Mode", SimulateNoAPM}
                 }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -1107,6 +1108,7 @@ Namespace Misc.Configuration
                 EnableSplash = If(ConfigToken("General")?("Stylish splash screen"), True)
                 SplashName = If(ConfigToken("General")?("Splash name"), "Simple")
                 BannerFigletFont = If(ConfigToken("General")?("Banner figlet font"), "Banner")
+                SimulateNoAPM = If(ConfigToken("General")?("Simulate No APM Mode"), False)
 
                 'Login Section
                 Wdbg(DebugLevel.I, "Parsing login section...")

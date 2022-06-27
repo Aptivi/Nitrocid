@@ -257,6 +257,11 @@ Namespace Kernel
         ''' </summary>
         Public ShowShellAliasesCount As Boolean = True
         ''' <summary>
+        ''' Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
+        ''' turn off your computer" text.
+        ''' </summary>
+        Public SimulateNoAPM As Boolean
+        ''' <summary>
         ''' Whether the input history is enabled
         ''' </summary>
         Public Property InputHistoryEnabled As Boolean

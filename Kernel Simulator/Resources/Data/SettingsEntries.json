@@ -126,6 +126,12 @@
                 "Type": "SString",
                 "Variable": "BannerFigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            },
+            {
+                "Name": "Simulate No APM Mode",
+                "Type": "SBoolean",
+                "Variable": "SimulateNoAPM",
+                "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
             }
         ]
     },

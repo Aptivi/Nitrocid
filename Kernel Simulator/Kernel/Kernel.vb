@@ -257,6 +257,10 @@ Namespace Kernel
             'Clear the console and reset the colors
             Console.ResetColor()
             Console.Clear()
+
+            'If "No APM" is enabled, simply print the text
+            Console.WriteLine(DoTranslation("It's now safe to turn off your computer."))
+            Console.ReadKey(True)
         End Sub
 
         ''' <summary>
