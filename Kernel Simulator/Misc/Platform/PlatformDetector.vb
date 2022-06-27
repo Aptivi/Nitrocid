@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports UnameNET
+
 Namespace Misc.Platform
     Public Module PlatformDetector
 
@@ -38,17 +40,7 @@ Namespace Misc.Platform
         ''' </summary>
         Public Function IsOnMacOS() As Boolean
             If IsOnUnix() Then
-                Dim UnameExecutable As String = If(FileExists("/usr/bin/uname"), "/usr/bin/uname", "/bin/uname")
-                Dim UnameS As New Process
-                Dim UnameSInfo As New ProcessStartInfo With {.FileName = UnameExecutable, .Arguments = "-s",
-                                                             .CreateNoWindow = True,
-                                                             .UseShellExecute = False,
-                                                             .WindowStyle = ProcessWindowStyle.Hidden,
-                                                             .RedirectStandardOutput = True}
-                UnameS.StartInfo = UnameSInfo
-                UnameS.Start()
-                UnameS.WaitForExit()
-                Dim System As String = UnameS.StandardOutput.ReadToEnd
+                Dim System As String = UnameManager.GetUname(UnameTypes.KernelName)
                 Return System.Contains("Darwin")
             Else
                 Return False
