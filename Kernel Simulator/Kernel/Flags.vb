@@ -340,11 +340,6 @@ Namespace Kernel
         ''' If the kernel is shut down, exit from main entry point gracefully.
         ''' </summary>
         Friend KernelShutdown As Boolean
-        ''' <summary>
-        ''' Makes all calls to <see cref="Write(String, Boolean, ColTypes, Object())"/> and its derivatives print only the number two.
-        ''' Doesn't affect other families of write.
-        ''' </summary>
-        Friend PerfectTwo As Boolean
 
     End Module
 End Namespace
