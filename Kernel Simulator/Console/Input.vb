@@ -135,5 +135,19 @@ Namespace ConsoleBase
             Return Final
         End Function
 
+        ''' <summary>
+        ''' Detects the keypress
+        ''' </summary>
+        Public Sub DetectKeypress()
+#If NETCOREAPP Then
+            Do Until Console.KeyAvailable
+                Thread.Sleep(1)
+            Loop
+            Console.ReadKey(True)
+#Else
+            Console.ReadKey()
+#End If
+        End Sub
+
     End Module
 End Namespace
