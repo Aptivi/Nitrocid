@@ -147,8 +147,18 @@ Namespace Kernel
                         End If
                 End Select
             Catch ex As Exception
-                WStkTrc(ex)
-                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
+                'Check to see if it's a double panic
+                If ErrorType = KernelErrorLevel.D Then
+                    'Trigger triple fault
+                    Wdbg(DebugLevel.F, "TRIPLE FAULT: Kernel bug: {0}", ex.Message)
+                    WStkTrc(ex)
+                    Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex)
+                Else
+                    'Alright, we have a double panic.
+                    Wdbg(DebugLevel.F, "DOUBLE PANIC: Kernel bug: {0}", ex.Message)
+                    WStkTrc(ex)
+                    KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
+                End If
             End Try
         End Sub
 
