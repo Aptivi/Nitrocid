@@ -46,16 +46,51 @@ Namespace Misc
         ''' </summary>
         ''' <returns>List of generated names</returns>
         Public Function GenerateNames(Count As Integer) As List(Of String)
+            Return GenerateNames(Count, "", "", "", "")
+        End Function
+
+        ''' <summary>
+        ''' Generates the names
+        ''' </summary>
+        ''' <returns>List of generated names</returns>
+        Public Function GenerateNames(Count As Integer, NamePrefix As String, NameSuffix As String, SurnamePrefix As String, SurnameSuffix As String) As List(Of String)
             Dim RandomDriver As New Random()
             Dim NamesList As New List(Of String)
+
+            'Check if the prefix and suffix check is required
+            Dim NamePrefixCheckRequired As Boolean = Not String.IsNullOrEmpty(NamePrefix)
+            Dim NameSuffixCheckRequired As Boolean = Not String.IsNullOrEmpty(NameSuffix)
+            Dim SuramePrefixCheckRequired As Boolean = Not String.IsNullOrEmpty(SurnamePrefix)
+            Dim SurameSuffixCheckRequired As Boolean = Not String.IsNullOrEmpty(SurnameSuffix)
+
+            'Process the names according to suffix and/or prefix check requirement
+            Dim ProcessedNames() As String = Names
+            If NamePrefixCheckRequired And NameSuffixCheckRequired Then
+                ProcessedNames = Names.Where(Function(str) str.StartsWith(NamePrefix) And str.EndsWith(NameSuffix)).ToArray
+            ElseIf NamePrefixCheckRequired Then
+                ProcessedNames = Names.Where(Function(str) str.StartsWith(NamePrefix)).ToArray
+            ElseIf NameSuffixCheckRequired Then
+                ProcessedNames = Names.Where(Function(str) str.EndsWith(NameSuffix)).ToArray
+            End If
+
+            'Do the same for the surnames
+            Dim ProcessedSurnames() As String = Surnames
+            If NamePrefixCheckRequired And NameSuffixCheckRequired Then
+                ProcessedSurnames = Surnames.Where(Function(str) str.StartsWith(SurnamePrefix) And str.EndsWith(SurnameSuffix)).ToArray
+            ElseIf NamePrefixCheckRequired Then
+                ProcessedSurnames = Surnames.Where(Function(str) str.StartsWith(SurnamePrefix)).ToArray
+            ElseIf NameSuffixCheckRequired Then
+                ProcessedSurnames = Surnames.Where(Function(str) str.EndsWith(SurnameSuffix)).ToArray
+            End If
 
             'Initialize names
             PopulateNames()
 
             'Select random names
             For NameNum As Integer = 1 To Count
-                Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
-                Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
+                'Get the names
+                Dim GeneratedName As String = ProcessedNames(RandomDriver.Next(ProcessedNames.Length))
+                Dim GeneratedSurname As String = ProcessedSurnames(RandomDriver.Next(ProcessedSurnames.Length))
                 NamesList.Add(GeneratedName + " " + GeneratedSurname)
             Next
             Return NamesList

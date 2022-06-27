@@ -25,14 +25,20 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim NamesCount As Integer = 10
+            Dim NamePrefix As String = ""
+            Dim NameSuffix As String = ""
+            Dim SurnamePrefix As String = ""
+            Dim SurnameSuffix As String = ""
             Dim NamesList As List(Of String)
-            If ListArgsOnly.Length > 0 Then
-                NamesCount = Integer.Parse(ListArgsOnly(0))
-            End If
+            If ListArgsOnly.Length >= 1 Then NamesCount = Integer.Parse(ListArgsOnly(0))
+            If ListArgsOnly.Length >= 2 Then NamePrefix = ListArgsOnly(1)
+            If ListArgsOnly.Length >= 3 Then NameSuffix = ListArgsOnly(2)
+            If ListArgsOnly.Length >= 4 Then SurnamePrefix = ListArgsOnly(3)
+            If ListArgsOnly.Length >= 5 Then SurnameSuffix = ListArgsOnly(4)
 
             'Generate n names
             PopulateNames()
-            NamesList = GenerateNames(NamesCount)
+            NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix)
             WriteList(NamesList)
         End Sub
 
