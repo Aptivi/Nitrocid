@@ -1,0 +1,141 @@
+## Commands for KS
+
+The commands in the entirety of the kernel are programs that allow you to do what they're supposed to do. They can be either implemented internally (which is what we call the normal commands), implemented as an alias (an alias to normal commands or mods), or created by mods.
+
+All the shells (either normal or custom) share a common command input parser, such as arguments, switches, and so on. Some commands have arguments (either required, for which you should provide to make the command work, or optional, for which you can omit), and some don't provide any.
+
+The switches are special arguments that have the dash in front of them. They change how the commands work, but must be implemented before they actually work.
+
+## UESH shell commands
+
+The below commands for Kernel Simulator can be used in the normal UESH shell, the one that is started after you log in to your account.
+
+For more information about every command, click the command.
+
+### Administrative commands
+
+| Command                                                    | Description
+|:-----------------------------------------------------------|:------------
+| [adduser](commands/uesh/KS-Command-adduser.md)             | You can add the user's name whenever you need, with the password if required. However, passwords are required to ensure security.
+| [alias](commands/uesh/KS-Command-alias.md)                 | You can manage your aliases to commands so you don't have to type long commands.
+| [arginj](commands/uesh/KS-Command-arginj.md)               | You can inject arguments into the kernel so that when you reboot, the arguments that are injected will be run.
+| [blockdbgdev](commands/uesh/KS-Command-blockdbgdev.md)     | You can block an IP address of a debug device to prevent it from entering remote debug until it's unblocked.
+| [cdbglog](commands/uesh/KS-Command-cdbglog.md)             | You can clear debug log, resetting the size to 0
+| [chhostname](commands/uesh/KS-Command-chhostname.md)       | You can change your hostname of your kernel to personalize things. It has an argument of `chhostname <AnyHostName>.`
+| [chlang](commands/uesh/KS-Command-chlang.md)               | Changes your language
+| [chmal](commands/uesh/KS-Command-chmal.md)                 | You can change your message of the day after login, and it supports the same placeholders.
+| [chmotd](commands/uesh/KS-Command-chmotd.md)               | You can change your message of the day, and you can include your own placeholders, including `<user>` which stands for username, `<shortdate>` for the short date in "MM/DD/YYYY" format, `<longdate>` for the long date that looks like "Saturday, December 1, 2018", `<shorttime>` for the short time in "HH:MM" format, `<longtime>` for the long time in "HH:MM:SS AM/PM" format, `<timezone>` for the standard time zone (eg. Egypt Standard Time), `<summertimezone>` for the daylight time zone name (eg. Syria Daylight Time).
+| [chpwd](commands/uesh/KS-Command-chpwd.md)                 | You can change your password, or someone else's password.
+| [chusrname](commands/uesh/KS-Command-chusrname.md)         | You can change your username, or someone else's name, although if you changed your own username to new name, you'll be signed out immediately.
+| [disconndbgdev](commands/uesh/KS-Command-disconndbgdev.md) | Disconnects a debug device
+| [langman](commands/uesh/KS-Command-langman.md)             | Manage languages
+| [lsdbgdev](commands/uesh/KS-Command-lsdbgdev.md)           | Lists all debug devices that are connected
+| [modman](commands/uesh/KS-Command-modman.md)               | Manages your mods
+| [netinfo](commands/uesh/KS-Command-netinfo.md)             | You can check your network status and network interface information, including WiFi support. You can also use this for troubleshooting problems with the network, and you can look at the packets that has an error.
+| [perm](commands/uesh/KS-Command-perm.md)                   | You can manage user's permission settings.
+| [rmuser](commands/uesh/KS-Command-rmuser.md)               | You can remove usernames, but you can't remove yours, if the specified user doesn't want to use the computer, or is uninvited, or is redundant.
+| [rdebug](commands/uesh/KS-Command-rdebug.md)               | Enables or disables remote debugging functionality
+| [reloadconfig](commands/uesh/KS-Command-reloadconfig.md)   | You can reload the configuration file to read the new changes, but the changes will be applied after you restart the kernel.
+| [reloadsaver](commands/uesh/KS-Command-reloadsaver.md)     | Reloads the specified screensaver mod file
+| [rexec](commands/uesh/KS-Command-rexec.md)                 | Remotely executes a command in another kernel instance (other PC)
+| [savecurrdir](commands/uesh/KS-Command-savecurrdir.md)     | Saves the current directory information to kernel config.
+| [setsaver](commands/uesh/KS-Command-setsaver.md)           | You can set your screensaver of your choice or your customized one as the default one, and if you plan to use customized screensavers, you should name your extension as `<ScreensaverName>SS.m` to be recognized as a screensaver, not as an extension.
+| [settings](commands/uesh/KS-Command-settings.md)           | Changes kernel settings.
+| [testshell](commands/uesh/KS-Command-testshell.md)         | Opens a test shell
+| [unblockdbgdev](commands/uesh/KS-Command-unblockdbgdev.md) | You can unblock an IP address so it can enter remote debug again.
+| [update](commands/uesh/KS-Command-update.md)               | Checks for updates, and if it found one, it tells you.
+
+### Normal user commands
+
+| Command                                                              | Description
+|:---------------------------------------------------------------------|:------------
+| [chattr](commands/uesh/KS-Command-chattr.md)                         | Changes the attributes of a file
+| [chdir](commands/uesh/KS-Command-chdir.md)                           | You can change your working directory.
+| [cls](commands/uesh/KS-Command-cls.md)                               | To clear your screen from text.
+| [calc](commands/uesh/KS-Command-calc.md)                             | It's back! The Calculator calculates the formulas like `4 / 2`.
+| [calendar](commands/uesh/KS-Command-calendar.md)                     | Simple calendar
+| [clearfiredevents](commands/uesh/KS-Command-clearfiredevents.md)     | Clears the fired events
+| [copy](commands/uesh/KS-Command-copy.md)                             | Copies the source file to the destination
+| [colorhextorgb](commands/uesh/KS-Command-colorhextorgb.md)           | Converts the hexadecimal representation of the color to RGB numbers.
+| [colorhextorgbks](commands/uesh/KS-Command-colorhextorgbks.md)       | Converts the hexadecimal representation of the color to RGB numbers in KS format.
+| [colorrgbtohex](commands/uesh/KS-Command-colorrgbtohex.md)           | Converts the color RGB numbers to hex.
+| [combine](commands/uesh/KS-Command-combine.md)                       | Combines the two text files or more into the output file
+| [convertlineendings](commands/uesh/KS-Command-convertlineendings.md) | Converts the line endings in text files
+| [dismissnotif](commands/uesh/KS-Command-dismissnotif.md)             | Dismisses a specific notification.
+| [dismissnotifs](commands/uesh/KS-Command-dismissnotifs.md)           | Dismisses all notifications
+| [edit](commands/uesh/KS-Command-edit.md)                             | Opens the text editor shell to an existing text file.
+| [exit](commands/uesh/KS-Command-exit.md)                             | Exits the subshell
+| [fileinfo](commands/uesh/KS-Command-fileinfo.md)                     | Gets file information
+| [find](commands/uesh/KS-Command-find.md)                             | Finds a specified file
+| [firedevents](commands/uesh/KS-Command-firedevents.md)               | Lists all fired events
+| [ftp](commands/uesh/KS-Command-ftp.md)                               | You can transfer files from/to an FTP server, and interact with the servers.
+| [genname](commands/uesh/KS-Command-genname.md)                       | Name generator
+| [get](commands/uesh/KS-Command-get.md)                               | Downloads a file from the specified URL.
+| [gettimeinfo](commands/uesh/KS-Command-gettimeinfo.md)               | Gets the time information for the specified time
+| [hexedit](commands/uesh/KS-Command-hexedit.md)                       | Opens a binary file to the hex editor
+| [http](commands/uesh/KS-Command-http.md)                             | The HTTP Shell
+| [hwinfo](commands/uesh/KS-Command-hwinfo.md)                         | Shows hardware information
+| [jsonbeautify](commands/uesh/KS-Command-jsonbeautify.md)             | Beautifies the JSON file
+| [jsonminify](commands/uesh/KS-Command-jsonminify.md)                 | Minifies the JSON file
+| [jsonshell](commands/uesh/KS-Command-jsonshell.md)                   | The JSON Shell
+| [keyinfo](commands/uesh/KS-Command-keyinfo.md)                       | Gets the key information
+| [list](commands/uesh/KS-Command-list.md)                             | You can list your current working directory, or another directory.
+| [lockscreen](commands/uesh/KS-Command-lockscreen.md)                 | You can lock your screen and show your default screensaver set by you or by the kernel. Default screensaver is Matrix.
+| [lovehate](commands/uesh/KS-Command-lovehate.md)                     | Starts the Love/Hate comment responder game
+| [logout](commands/uesh/KS-Command-logout.md)                         | You can log off your account when you're finished working.
+| [mail](commands/uesh/KS-Command-mail.md)                             | Opens the mail shell to your mail account.
+| [md](commands/uesh/KS-Command-md.md)                                 | You can make your directory on the root directory.
+| [mkfile](commands/uesh/KS-Command-mkfile.md)                         | You can create your file under any name.
+| [mktheme](commands/uesh/KS-Command-mktheme.md)                       | Makes a new theme.
+| [modmanual](commands/uesh/KS-Command-modmanual.md)                   | Mod manual
+| [move](commands/uesh/KS-Command-move.md)                             | Moves the source file to the destination
+| [open](commands/uesh/KS-Command-open.md)                             | Opens a URL
+| [ping](commands/uesh/KS-Command-ping.md)                             | Pings addresses.
+| [put](commands/uesh/KS-Command-put.md)                               | Uploads a file to the URL using a file.
+| [rm](commands/uesh/KS-Command-rm.md)                                 | You can remove a directory or file.
+| [reboot](commands/uesh/KS-Command-reboot.md)                         | You can restart your kernel if you have made manual or tool configuration changes for them to be reflected, or if you want to see the boot sequence again.
+| [reportbug](commands/uesh/KS-Command-reportbug.md)                   | Opens a prompt to let you file a bug report.
+| [rss](commands/uesh/KS-Command-rss.md)                               | Opens an RSS shell.
+| [savescreen](commands/uesh/KS-Command-savescreen.md)                 | You can show the screensaver to prevent screen burn-outs.
+| [search](commands/uesh/KS-Command-search.md)                         | Searches for a specific string in a specific file using regular expressions.
+| [searchword](commands/uesh/KS-Command-searchword.md)                 | Searches for a specific string in a specified file using text.
+| [setthemes](commands/uesh/KS-Command-setthemes.md)                   | You can set the color set for your kernel, as known as themes.
+| [sftp](commands/uesh/KS-Command-sftp.md)                             | You can transfer files from/to an SFTP server, and interact with the servers.
+| [shownotifs](commands/uesh/KS-Command-shownotifs.md)                 | Shows the notifications.
+| [showtd](commands/uesh/KS-Command-showtd.md)                         | You can show your current time and date, as well as your timezone.
+| [showtdzone](commands/uesh/KS-Command-showtdzone.md)                 | You can show the time and date of the timezone, or you can show all of the dates and times of the timezones in the current time and date.
+| [shutdown](commands/uesh/KS-Command-shutdown.md)                     | You can shut down your computer (the kernel, not the actual PC)
+| [snaker](commands/uesh/KS-Command-snaker.md)                         | Starts the snake game
+| [solver](commands/uesh/KS-Command-solver.md)                         | Starts the math solver game
+| [speedpress](commands/uesh/KS-Command-speedpress.md)                 | Initializes the speedpress game
+| [spellbee](commands/uesh/KS-Command-spellbee.md)                     | Plays the spelling bee game
+| [sshell](commands/uesh/KS-Command-sshell.md)                         | Opens the SSH connection. Press ESC to disconnect when in session.
+| [sshcmd](commands/uesh/KS-Command-sshcmd.md)                         | Opens the SSH connection to send a command.
+| [stopwatch](commands/uesh/KS-Command-stopwatch.md)                   | A simple stopwatch
+| [sumfile](commands/uesh/KS-Command-sumfile.md)                       | Calculates the MD5, SHA1, SHA256, or SHA512 sum of a specific file.
+| [sumfiles](commands/uesh/KS-Command-sumfiles.md)                     | Calculates the MD5, SHA1, SHA256, or SHA512 sums of the files in the specified directory.
+| [sysinfo](commands/uesh/KS-Command-sysinfo.md)                       | You can show your system information, as well as the kernel settings.
+| [timer](commands/uesh/KS-Command-timer.md)                           | A simple timer
+| [unzip](commands/uesh/KS-Command-unzip.md)                           | Extracts a zip file
+| [usermanual](commands/uesh/KS-Command-usermanual.md)                 | Opens the Kernel Simulator wiki
+| [verify](commands/uesh/KS-Command-verify.md)                         | Verifies a file.
+| [weather](commands/uesh/KS-Command-weather.md)                       | Gets weather information for a city.
+| [wrap](commands/uesh/KS-Command-wrap.md)                             | Wraps a command
+| [zip](commands/uesh/KS-Command-zip.md)                               | Makes a zip file
+| [zipshell](commands/uesh/KS-Command-zipshell.md)                     | Opens a ZIP shell to the specified zip file
+
+### Scripting commands
+
+These commands can be used in shell and in scripting, though it works better in scripting.
+
+| Command                                          | Description
+|:-------------------------------------------------|:------------
+| [beep](commands/uesh/KS-Command-beep.md)         | Makes your PC speaker beep in specified n Hz in n ms.
+| [cat](commands/uesh/KS-Command-cat.md)           | Prints the content of a specific file to console
+| [choice](commands/uesh/KS-Command-choice.md)     | Makes user choices
+| [echo](commands/uesh/KS-Command-echo.md)         | Prints written strings
+| [if](commands/uesh/KS-Command-if.md)             | Satisfies the condition and then executes the command
+| [input](commands/uesh/KS-Command-input.md)       | Makes user input
+| [set](commands/uesh/KS-Command-set.md)           | Sets a variable to a specified value.
+| [setrange](commands/uesh/KS-Command-setrange.md) | Makes an array of variable with values
+| [select](commands/uesh/KS-Command-select.md)     | Makes user selection

@@ -21,6 +21,9 @@
                     "index.md",
                     "toc.yml"
                 ]
+            },
+            {
+                "files": [ "wiki/**/*.md" ]
             }
         ],
         "resource": [
