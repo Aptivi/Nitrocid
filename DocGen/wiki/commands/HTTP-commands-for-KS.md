@@ -8,7 +8,7 @@ For more information about every command, click the command.
 
 | Command                                                 | Description
 |:--------------------------------------------------------|:------------
-| [delete](commands/http/KS-HTTP-Command-delete.md)       | Deleted content from the HTTP server
-| [get](commands/http/KS-HTTP-Command-get.md)             | Gets the response from the HTTP server using the specified request
-| [getstring](commands/http/KS-HTTP-Command-getstring.md) | Gets the string from the HTTP server using the specified request
-| [setsite](commands/http/KS-HTTP-Command-setsite.md)     | Sets the HTTP site. Must be a valid URI.
+| [delete](http/KS-HTTP-Command-delete.md)       | Deleted content from the HTTP server
+| [get](http/KS-HTTP-Command-get.md)             | Gets the response from the HTTP server using the specified request
+| [getstring](http/KS-HTTP-Command-getstring.md) | Gets the string from the HTTP server using the specified request
+| [setsite](http/KS-HTTP-Command-setsite.md)     | Sets the HTTP site. Must be a valid URI.

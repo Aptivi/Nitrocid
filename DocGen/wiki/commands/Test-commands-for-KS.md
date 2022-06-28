@@ -2,7 +2,7 @@
 
 The types of the colors, which are used to display messages colorfully, are located in the ColTypes enumeration found in ColorTools.
 
-Refer to [Events for Mod Developers](development/Events-for-Mod-Developers.md) for the events that can be used in the `<Event>` argument.
+Refer to [Events for Mod Developers](../development/Events-for-Mod-Developers.md) for the events that can be used in the `<Event>` argument.
 
 `<ErrorType>` options:
 ```
@@ -16,7 +16,7 @@ C = Continuable
 
 You can find strings inside the text files in the [Resources](https://github.com/EoflaOE/Kernel-Simulator/tree/master/Kernel%20Simulator/Resources) folder.
 
-Refer to [this document](misc/Placeholders.md) for the list of placeholders.
+Refer to [this document](../misc/Placeholders.md) for the list of placeholders.
 
 The testing shell provides these commands:
 

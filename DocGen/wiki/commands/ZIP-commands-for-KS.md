@@ -8,9 +8,9 @@ For more information about every command, click the command.
 
 | Command                                         | Description
 |:------------------------------------------------|:------------
-| [cdir](commands/zip/KS-Zip-Command-cdir.md)     | Gets current local directory for this shell.
-| [chadir](commands/zip/KS-Zip-Command-chadir.md) | Changes archive directory.
-| [chdir](commands/zip/KS-Zip-Command-chdir.md)   | Changes local directory.
-| [get](commands/zip/KS-Zip-Command-get.md)       | Extracts a file.
-| [list](commands/zip/KS-Zip-Command-list.md)     | Lists files.
-| [pack](commands/zip/KS-Zip-Command-pack.md)     | Packs a local file to the archive.
+| [cdir](zip/KS-Zip-Command-cdir.md)     | Gets current local directory for this shell.
+| [chadir](zip/KS-Zip-Command-chadir.md) | Changes archive directory.
+| [chdir](zip/KS-Zip-Command-chdir.md)   | Changes local directory.
+| [get](zip/KS-Zip-Command-get.md)       | Extracts a file.
+| [list](zip/KS-Zip-Command-list.md)     | Lists files.
+| [pack](zip/KS-Zip-Command-pack.md)     | Packs a local file to the archive.
