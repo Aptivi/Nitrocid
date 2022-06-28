@@ -166,7 +166,6 @@
     <Compile Include="Arguments\ArgumentBase\ArgumentType.vb" />
     <Compile Include="Arguments\ArgumentBase\ArgumentExecutor.vb" />
     <Compile Include="Arguments\ArgumentBase\CommandLineArgs.vb" />
-    <Compile Include="Arguments\CommandLineArguments\PerfectTwo.vb" />
     <Compile Include="Arguments\CommandLineArguments\Help.vb" />
     <Compile Include="Arguments\CommandLineArguments\Args.vb" />
     <Compile Include="Arguments\CommandLineArguments\Debug.vb" />
