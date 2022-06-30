@@ -119,9 +119,6 @@
     <PackageReference Include="ManagedWeatherMap">
       <Version>1.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.vbproj">
