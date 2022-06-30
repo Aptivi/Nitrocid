@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#If Not NETCOREAPP Then
 Imports KS.ConsoleBase
 Imports KS.Kernel
 Imports KS.Shell
@@ -132,3 +133,4 @@ Module PreFivePointFive
     End Function
 
 End Module
+#End If

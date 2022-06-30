@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#If Not NETCOREAPP Then
 Imports System.Globalization
 Imports KS.ConsoleBase
 Imports KS.Languages
@@ -398,3 +399,4 @@ Module FivePointFive
     End Function
 
 End Module
+#End If

@@ -268,6 +268,7 @@ Module Converter
             WriteSeparator("[7/7] Importing all kernel config to KernelConfig.json", True, ColTypes.Stage)
             Debug.WriteLine($"Config file exists = {FileExists(ListOfBackups("Configuration"))}")
             If FileExists(ListOfBackups("Configuration")) Then
+#If Not NETCOREAPP Then
                 'Read all config from old file
                 Write("  - Reading config from kernelConfig.ini...", True, ColTypes.Progress)
                 Debug.WriteLine("Reading configuration...")
@@ -282,6 +283,12 @@ Module Converter
                 Debug.WriteLine("Saving...")
                 Write("  - Saving configuration to KernelConfig.json...", True, ColTypes.Progress)
                 CreateConfig()
+#Else
+                'We need to use .NET Framework version of KSConverter to be able to fully use MadMilkman.Ini
+                'as we used it back when Kernel Simulator and MadMilkman.Ini were so tied to .NET Framework.
+                Debug.WriteLine("Config conversion needs to be done in .NET Framework.")
+                Write("  - Warning: To convert kernel configuration from kernelConfig.ini to KernelConfig.json, you need to run the .NET Framework version of KSConverter.", True, ColTypes.Warning)
+#End If
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")

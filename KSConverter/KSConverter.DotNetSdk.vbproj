@@ -106,7 +106,7 @@
     <PackageReference Include="FluentFTP">
       <Version>37.0.3</Version>
     </PackageReference>
-    <PackageReference Include="MadMilkman.Ini">
+    <PackageReference Include="MadMilkman.Ini" Condition="'$(TargetFramework)' == 'net48'">
       <Version>1.0.6</Version>
     </PackageReference>
     <PackageReference Include="ManagedWeatherMap">
