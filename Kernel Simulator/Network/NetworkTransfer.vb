@@ -89,7 +89,9 @@ Namespace Network
 
             'Get the stream, file size, and target file stream
             Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim FileSize As Long = Convert.ToInt64(Response.Content.Headers.GetValues("Content-Length")(0))
+            Dim ContentLengthEnum As New List(Of String)
+            Dim GotContentLength As Boolean = Response.Content.Headers.TryGetValues("Content-Length", ContentLengthEnum)
+            Dim FileSize As Long = If(GotContentLength, Convert.ToInt64(ContentLengthEnum(0)), 0)
             Dim FilePath As String = NeutralizePath(FileName)
             Dim FileStream As New FileStream(FilePath, FileMode.Create, FileAccess.Write)
             Dim TransferInfo As New NetworkTransferInfo(FileStream, FileSize, URL, FilePath, NetworkTransferType.Download)
@@ -226,7 +228,9 @@ Namespace Network
 
             'Get the stream, size, and target stream
             Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim ContentSize As Long = Convert.ToInt64(Response.Content.Headers.GetValues("Content-Length")(0))
+            Dim ContentLengthEnum As New List(Of String)
+            Dim GotContentLength As Boolean = Response.Content.Headers.TryGetValues("Content-Length", ContentLengthEnum)
+            Dim ContentSize As Long = If(GotContentLength, Convert.ToInt64(ContentLengthEnum(0)), 0)
             Dim ContentStream As New MemoryStream
             Dim TransferInfo As New NetworkTransferInfo(ContentStream, ContentSize, URL, "", NetworkTransferType.Download)
 
