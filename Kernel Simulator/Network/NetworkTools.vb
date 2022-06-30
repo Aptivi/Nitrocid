@@ -29,8 +29,7 @@ Namespace Network
         Public DownloadRetries As Integer = 3
         Public UploadRetries As Integer = 3
         Public PingTimeout As Integer = 60000
-        Friend DFinish As Boolean
-        Friend UFinish As Boolean
+        Friend TransferFinished As Boolean
 
         Public Enum SpeedDialType
             ''' <summary>

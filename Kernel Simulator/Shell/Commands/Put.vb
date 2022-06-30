@@ -32,14 +32,8 @@ Namespace Shell.Commands
                 Try
                     If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                         If Not URL.StartsWith(" ") Then
-                            Dim Credentials As New NetworkCredential
-                            If ListArgs.Length > 2 Then 'Username specified
-                                Credentials.UserName = ListArgs(2)
-                                Write(DoTranslation("Enter password: "), False, ColTypes.Input)
-                                Credentials.Password = ReadLineNoInput()
-                            End If
                             Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
-                            If UploadFile(FileName, URL, Credentials) Then
+                            If UploadFile(FileName, URL) Then
                                 Write(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
                             End If
                         Else
@@ -50,7 +44,7 @@ Namespace Shell.Commands
                     End If
                     Exit Sub
                 Catch ex As Exception
-                    UFinish = False
+                    TransferFinished = False
                     Write(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                     RetryCount += 1
                     Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)

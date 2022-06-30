@@ -31,14 +31,8 @@ Namespace Shell.Commands
                 Try
                     If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                         If Not URL.StartsWith(" ") Then
-                            Dim Credentials As New NetworkCredential
-                            If ListArgs.Length > 1 Then 'Username specified
-                                Credentials.UserName = ListArgs(1)
-                                Write(DoTranslation("Enter password: "), False, ColTypes.Input)
-                                Credentials.Password = ReadLineNoInput()
-                            End If
                             Write(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
-                            If DownloadFile(ListArgs(0), Credentials) Then
+                            If DownloadFile(ListArgs(0)) Then
                                 Write(DoTranslation("Download has completed."), True, ColTypes.Neutral)
                             End If
                         Else
@@ -49,7 +43,7 @@ Namespace Shell.Commands
                     End If
                     Exit Sub
                 Catch ex As Exception
-                    DFinish = False
+                    TransferFinished = False
                     Write(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                     RetryCount += 1
                     Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)

@@ -10,7 +10,7 @@ This command uploads a file from the website to a file, preserving the file name
 
 ### Command usage
 
-* `put <file> <URL> [username]`
+* `put <file> <URL>`
 
 ### Examples
 

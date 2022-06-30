@@ -10,9 +10,9 @@ This command downloads a file from the website to a file, preserving the file na
 
 ### Command usage
 
-* `get <URL> [username]`
+* `get <URL>`
 
 ### Examples
 
-* `get http://127.0.0.1/Files/images/shanghai.png user1`: Downloads an image to the current working directory after authentication with `user1`.
+* `get http://127.0.0.1/Files/images/shanghai.png`: Downloads an image to the current working directory.
 * `get http://archive.ubuntu.com/ubuntu/pool/universe/p/plasma-desktop/plasma-desktop_5.16.5-0ubuntu1_amd64.deb`: Downloads the Ubuntu/Debian package of KDE Plasma Desktop

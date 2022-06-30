@@ -17,7 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
+Imports System.IO
+Imports System.Net.Http
 Imports System.Threading
+Imports System.Threading.Tasks
 Imports KS.Misc.Notifications
 
 Namespace Network
@@ -30,21 +33,21 @@ Namespace Network
         Friend IsError As Boolean
         Friend ReasonError As Exception
         Friend CancellationToken As New CancellationTokenSource
-        Friend WClient As New WebClient
+        Friend WClient As New HttpClient
         Friend DownloadedString As String
         Friend DownloadNotif As Notification
         Friend UploadNotif As Notification
         Friend SuppressDownloadMessage As Boolean
         Friend SuppressUploadMessage As Boolean
+        Friend TransferProgressHandler As New KernelThread("Transfer Progress Handler", True, AddressOf TransferProgress)
 
         ''' <summary>
         ''' Downloads a file to the current working directory.
         ''' </summary>
         ''' <param name="URL">A URL to a file</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function DownloadFile(URL As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
-            Return DownloadFile(URL, ShowProgress, Credentials)
+        Public Function DownloadFile(URL As String) As Boolean
+            Return DownloadFile(URL, ShowProgress)
         End Function
 
         ''' <summary>
@@ -52,11 +55,10 @@ Namespace Network
         ''' </summary>
         ''' <param name="URL">A URL to a file</param>
         ''' <param name="ShowProgress">Whether or not to show progress bar</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function DownloadFile(URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Public Function DownloadFile(URL As String, ShowProgress As Boolean) As Boolean
             Dim FileName As String = GetFilenameFromUrl(URL)
-            Return DownloadFile(URL, ShowProgress, FileName, Credentials)
+            Return DownloadFile(URL, ShowProgress, FileName)
         End Function
 
         ''' <summary>
@@ -64,10 +66,9 @@ Namespace Network
         ''' </summary>
         ''' <param name="URL">A URL to a file</param>
         ''' <param name="FileName">File name to download to</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function DownloadFile(URL As String, FileName As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
-            Return DownloadFile(URL, ShowProgress, FileName, Credentials)
+        Public Function DownloadFile(URL As String, FileName As String) As Boolean
+            Return DownloadFile(URL, ShowProgress, FileName)
         End Function
 
         ''' <summary>
@@ -76,37 +77,47 @@ Namespace Network
         ''' <param name="URL">A URL to a file</param>
         ''' <param name="ShowProgress">Whether or not to show progress bar</param>
         ''' <param name="FileName">File name to download to</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function DownloadFile(URL As String, ShowProgress As Boolean, FileName As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Public Function DownloadFile(URL As String, ShowProgress As Boolean, FileName As String) As Boolean
             'Intialize variables
-            WClient = New WebClient
             Dim FileUri As New Uri(URL)
 
-            'Check the credentials
+            'Send the GET request to the server for the file
             Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
-            If Credentials IsNot Nothing Then
-                WClient.Credentials = Credentials
-            End If
+            Dim Response As HttpResponseMessage = WClient.GetAsync(FileUri, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
+
+            'Get the stream, file size, and target file stream
+            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
+            Dim FileSize As Long = Convert.ToInt64(Response.Content.Headers.GetValues("Content-Length")(0))
+            Dim FilePath As String = NeutralizePath(FileName)
+            Dim FileStream As New FileStream(FilePath, FileMode.Create, FileAccess.Write)
+            Dim TransferInfo As New NetworkTransferInfo(FileStream, FileSize, URL, FilePath, NetworkTransferType.Download)
 
             'Initialize the progress bar indicator and the file completed event handler
             If DownloadNotificationProvoke Then
                 DownloadNotif = New Notification(DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
-            AddHandler WClient.DownloadFileCompleted, AddressOf DownloadChecker
+            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
 
             'Try to download the file asynchronously
-            WClient.DownloadFileAsync(FileUri, NeutralizePath(FileName), CancellationToken.Token)
-            While Not DFinish
+            Task.Run(Sub()
+                         Try
+                             HttpStream.CopyTo(FileStream)
+                         Catch ex As Exception
+                             DownloadChecker(ex)
+                         End Try
+                     End Sub, CancellationToken.Token)
+            While Not TransferFinished
                 If CancelRequested Then
+                    TransferFinished = True
                     CancellationToken.Cancel()
                 End If
             End While
 
             'We're done downloading. Check to see if it's actually an error
-            DFinish = False
+            TransferFinished = False
             If ShowProgress And Not SuppressDownloadMessage Then Console.WriteLine()
             SuppressDownloadMessage = False
             If IsError Then
@@ -122,51 +133,61 @@ Namespace Network
         ''' <summary>
         ''' Uploads a file to the current working directory.
         ''' </summary>
-        ''' <param name="File">A target file name. Use <see cref="NeutralizePath(String, Boolean)"/> to get full path of source.</param>
+        ''' <param name="FileName">A target file name. Use <see cref="NeutralizePath(String, Boolean)"/> to get full path of source.</param>
         ''' <param name="URL">A URL to a file</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function UploadFile(File As String, URL As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
-            Return UploadFile(File, URL, ShowProgress, Credentials)
+        Public Function UploadFile(FileName As String, URL As String) As Boolean
+            Return UploadFile(FileName, URL, ShowProgress)
         End Function
 
         ''' <summary>
         ''' Uploads a file from the current working directory.
         ''' </summary>
-        ''' <param name="File">A target file name. Use <see cref="NeutralizePath(String, Boolean)"/> to get full path of source.</param>
+        ''' <param name="FileName">A target file name. Use <see cref="NeutralizePath(String, Boolean)"/> to get full path of source.</param>
         ''' <param name="URL">A URL</param>
         ''' <param name="ShowProgress">Whether or not to show progress bar</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function UploadFile(File As String, URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Public Function UploadFile(FileName As String, URL As String, ShowProgress As Boolean) As Boolean
             'Intialize variables
-            WClient = New WebClient
             Dim FileUri As New Uri(URL)
 
-            'Check the credentials
+            'Send the GET request to the server for the file after getting the stream, file size, and target file stream
             Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
-            If Credentials IsNot Nothing Then
-                WClient.Credentials = Credentials
-            End If
+            Dim FilePath As String = NeutralizePath(FileName)
+            Dim FileSize As Long = New FileInfo(FileName).Length
+            Dim FileStream As New FileStream(FilePath, FileMode.Open, FileAccess.Read)
+            Dim Content As New StreamContent(FileStream)
+            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, Content, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
+
+            'Get the HTTP stream, file size, and target file stream
+            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
+            Dim TransferInfo As New NetworkTransferInfo(FileStream, FileSize, URL, FilePath, NetworkTransferType.Upload)
 
             'Initialize the progress bar indicator and the file completed event handler
             If UploadNotificationProvoke Then
                 UploadNotif = New Notification(DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
-                NotifySend(UploadNotif)
+                NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
-            AddHandler WClient.UploadFileCompleted, AddressOf UploadChecker
+            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
 
             'Try to upload the file asynchronously
-            WClient.UploadFileAsync(FileUri, Nothing, File, CancellationToken.Token)
-            While Not UFinish
+            Task.Run(Sub()
+                         Try
+                             HttpStream.CopyTo(FileStream)
+                         Catch ex As Exception
+                             UploadChecker(ex)
+                         End Try
+                     End Sub, CancellationToken.Token)
+            While Not TransferFinished
                 If CancelRequested Then
+                    TransferFinished = True
                     CancellationToken.Cancel()
                 End If
             End While
 
             'We're done uploading. Check to see if it's actually an error
-            UFinish = False
+            TransferFinished = False
             If ShowProgress And Not SuppressUploadMessage Then Console.WriteLine()
             SuppressUploadMessage = False
             If IsError Then
@@ -183,10 +204,9 @@ Namespace Network
         ''' Downloads a resource from URL as a string.
         ''' </summary>
         ''' <param name="URL">A URL to a file</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function DownloadString(URL As String, Optional Credentials As NetworkCredential = Nothing) As String
-            Return DownloadString(URL, ShowProgress, Credentials)
+        Public Function DownloadString(URL As String) As String
+            Return DownloadString(URL, ShowProgress)
         End Function
 
         ''' <summary>
@@ -194,45 +214,55 @@ Namespace Network
         ''' </summary>
         ''' <param name="URL">A URL</param>
         ''' <param name="ShowProgress">Whether or not to show progress bar</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        Public Function DownloadString(URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As String
+        Public Function DownloadString(URL As String, ShowProgress As Boolean) As String
             'Intialize variables
-            WClient = New WebClient
-            Dim FileUri As New Uri(URL)
-            DownloadedString = ""
+            Dim StringUri As New Uri(URL)
 
-            'Check the credentials
-            Wdbg(DebugLevel.I, "Resource location: {0}", URL)
-            If Credentials IsNot Nothing Then
-                WClient.Credentials = Credentials
-            End If
+            'Send the GET request to the server for the file
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Dim Response As HttpResponseMessage = WClient.GetAsync(StringUri, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
 
-            'Initialize the progress bar indicator and the resource completed event handler
+            'Get the stream, size, and target stream
+            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
+            Dim ContentSize As Long = Convert.ToInt64(Response.Content.Headers.GetValues("Content-Length")(0))
+            Dim ContentStream As New MemoryStream
+            Dim TransferInfo As New NetworkTransferInfo(ContentStream, ContentSize, URL, "", NetworkTransferType.Download)
+
+            'Initialize the progress bar indicator and the file completed event handler
             If DownloadNotificationProvoke Then
-                DownloadNotif = New Notification(DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
+                DownloadNotif = New Notification(DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
-            AddHandler WClient.DownloadStringCompleted, AddressOf DownloadStringChecker
+            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
 
-            'Try to download the resource asynchronously
-            WClient.DownloadStringAsync(New Uri(URL), CancellationToken.Token)
-            While Not DFinish
+            'Try to download the string asynchronously
+            Task.Run(Sub()
+                         Try
+                             HttpStream.CopyTo(ContentStream)
+                         Catch ex As Exception
+                             DownloadChecker(ex)
+                         End Try
+                     End Sub, CancellationToken.Token)
+            While Not TransferFinished
                 If CancelRequested Then
+                    TransferFinished = True
                     CancellationToken.Cancel()
                 End If
             End While
 
             'We're done downloading. Check to see if it's actually an error
-            DFinish = False
+            TransferFinished = False
             If ShowProgress And Not SuppressDownloadMessage Then Console.WriteLine()
             SuppressDownloadMessage = False
             If IsError Then
+                DownloadNotif.ProgressFailed = True
                 CancellationToken.Cancel()
                 Throw ReasonError
             Else
-                Return DownloadedString
+                DownloadNotif.Progress = 100
+                Return New StreamReader(ContentStream).ReadToEnd
             End If
         End Function
 
@@ -241,10 +271,9 @@ Namespace Network
         ''' </summary>
         ''' <param name="URL">A URL to a file</param>
         ''' <param name="Data">Content to upload</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-        Public Function UploadString(URL As String, Data As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
-            Return UploadString(URL, Data, ShowProgress, Credentials)
+        Public Function UploadString(URL As String, Data As String) As Boolean
+            Return UploadString(URL, Data, ShowProgress)
         End Function
 
         ''' <summary>
@@ -253,137 +282,120 @@ Namespace Network
         ''' <param name="URL">A URL</param>
         ''' <param name="Data">Content to upload</param>
         ''' <param name="ShowProgress">Whether or not to show progress bar</param>
-        ''' <param name="Credentials">Authentication information</param>
         ''' <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        Public Function UploadString(URL As String, Data As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Public Function UploadString(URL As String, Data As String, ShowProgress As Boolean) As Boolean
             'Intialize variables
-            WClient = New WebClient
-            Dim FileUri As New Uri(URL)
+            Dim StringUri As New Uri(URL)
 
-            'Check the credentials
-            Wdbg(DebugLevel.I, "Resource location: {0}", URL)
-            If Credentials IsNot Nothing Then
-                WClient.Credentials = Credentials
-            End If
+            'Send the GET request to the server for the file
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Dim StringContent As New StringContent(Data)
+            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, StringContent, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
 
-            'Initialize the progress bar indicator and the resource completed event handler
+            'Get the stream, size, and target stream
+            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
+            Dim ContentSize As Long = Data.Length
+            Dim ContentStream As New MemoryStream
+            Dim TransferInfo As New NetworkTransferInfo(ContentStream, ContentSize, URL, "", NetworkTransferType.Upload)
+
+            'Initialize the progress bar indicator and the file completed event handler
             If UploadNotificationProvoke Then
-                UploadNotif = New Notification(DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
+                UploadNotif = New Notification(DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(UploadNotif)
             End If
-            If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
-            AddHandler WClient.UploadFileCompleted, AddressOf UploadChecker
+            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
 
-            'Try to upload the resource asynchronously
-            WClient.UploadStringAsync(New Uri(URL), Nothing, Data, CancellationToken.Token)
-            While Not UFinish
+            'Try to upload the string asynchronously
+            Task.Run(Sub()
+                         Try
+                             ContentStream.CopyTo(HttpStream)
+                         Catch ex As Exception
+                             UploadChecker(ex)
+                         End Try
+                     End Sub, CancellationToken.Token)
+            While Not TransferFinished
                 If CancelRequested Then
+                    TransferFinished = True
                     CancellationToken.Cancel()
                 End If
             End While
 
             'We're done uploading. Check to see if it's actually an error
-            UFinish = False
+            TransferFinished = False
             If ShowProgress And Not SuppressUploadMessage Then Console.WriteLine()
             SuppressUploadMessage = False
             If IsError Then
+                UploadNotif.ProgressFailed = True
                 CancellationToken.Cancel()
                 Throw ReasonError
             Else
-                Return True
+                UploadNotif.Progress = 100
+                Return New StreamReader(ContentStream).ReadToEnd
             End If
         End Function
 
         ''' <summary>
-        ''' Thread to check for errors on download completion.
+        ''' Check for errors on download completion.
         ''' </summary>
-        Private Sub DownloadChecker(sender As Object, e As AsyncCompletedEventArgs)
-            Wdbg(DebugLevel.I, "Download complete. Error: {0}", e.Error?.Message)
-            If e.Error IsNot Nothing Then
+        Private Sub DownloadChecker(e As Exception)
+            Wdbg(DebugLevel.I, "Download complete. Error: {0}", e?.Message)
+            If e IsNot Nothing Then
                 If DownloadNotificationProvoke Then DownloadNotif.ProgressFailed = True
-                ReasonError = e.Error
+                ReasonError = e
                 IsError = True
             End If
-            DFinish = True
+            TransferFinished = True
         End Sub
 
         ''' <summary>
         ''' Thread to check for errors on download completion.
         ''' </summary>
-        Private Sub DownloadStringChecker(sender As Object, e As DownloadStringCompletedEventArgs)
-            Wdbg(DebugLevel.I, "Download complete. Error: {0}", e.Error?.Message)
-            DownloadedString = e.Result
-            If e.Error IsNot Nothing Then
-                If DownloadNotificationProvoke Then DownloadNotif.ProgressFailed = True
-                ReasonError = e.Error
-                IsError = True
-            End If
-            DFinish = True
-        End Sub
-
-        ''' <summary>
-        ''' Thread to repeatedly report the download progress to the console.
-        ''' </summary>
-        Private Sub DownloadManager(sender As Object, e As DownloadProgressChangedEventArgs)
-            If CancellationToken.Token.IsCancellationRequested Then
-                WClient.CancelAsync()
-            End If
-            If Not DFinish Then
-                If e.TotalBytesToReceive >= 0 And Not SuppressDownloadMessage Then
-                    'We know the total bytes. Print it out.
-                    If DownloadNotificationProvoke Then
-                        DownloadNotif.Progress = e.ProgressPercentage
-                    Else
-                        If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
-                            WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
-                        Else
-                            WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
-                        End If
-                        ClearLineToRight()
-                    End If
-                Else
-                    SuppressDownloadMessage = True
-                End If
-            End If
-        End Sub
-
-        ''' <summary>
-        ''' Thread to check for errors on download completion.
-        ''' </summary>
-        Private Sub UploadChecker(sender As Object, e As AsyncCompletedEventArgs)
-            Wdbg(DebugLevel.I, "Upload complete. Error: {0}", e.Error?.Message)
-            If e.Error IsNot Nothing Then
+        Private Sub UploadChecker(e As Exception)
+            Wdbg(DebugLevel.I, "Upload complete. Error: {0}", e?.Message)
+            If e IsNot Nothing Then
                 If UploadNotificationProvoke Then UploadNotif.ProgressFailed = True
-                ReasonError = e.Error
+                ReasonError = e
                 IsError = True
             End If
-            UFinish = True
+            TransferFinished = True
         End Sub
 
         ''' <summary>
-        ''' Thread to repeatedly report the download progress to the console.
+        ''' Report the progress to the console.
         ''' </summary>
-        Private Sub UploadManager(sender As Object, e As UploadProgressChangedEventArgs)
-            If CancellationToken.Token.IsCancellationRequested Then
-                WClient.CancelAsync()
-            End If
-            If Not UFinish Then
-                If e.TotalBytesToSend >= 0 Then
-                    'We know the total bytes. Print it out.
-                    If UploadNotificationProvoke And Not SuppressUploadMessage Then
-                        UploadNotif.Progress = e.ProgressPercentage
-                    Else
-                        If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
-                            WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+        Private Sub TransferProgress(TransferInfo As NetworkTransferInfo)
+            Try
+                While Not TransferFinished
+                    'Distinguish download from upload
+                    Dim NotificationProvoke As Boolean = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotificationProvoke, UploadNotificationProvoke)
+                    Dim NotificationInstance As Notification = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotif, UploadNotif)
+
+                    'Report the progress
+                    If Not TransferFinished Then
+                        If TransferInfo.FileSize >= 0 And Not TransferInfo.MessageSuppressed Then
+                            'We know the total bytes. Print it out.
+                            Dim Progress As Double = 100 * (TransferInfo.FileStream.Length / TransferInfo.FileSize)
+                            If NotificationProvoke Then
+                                NotificationInstance.Progress = Progress
+                            Else
+                                If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
+                                    WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.FileStream.Length.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
+                                Else
+                                    WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.FileStream.Length.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
+                                End If
+                                ClearLineToRight()
+                            End If
                         Else
-                            WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                            TransferInfo.MessageSuppressed = True
                         End If
-                        ClearLineToRight()
                     End If
-                Else
-                    SuppressUploadMessage = True
-                End If
-            End If
+                    Thread.Sleep(1000)
+                End While
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Error trying to report transfer progress for source {0}: {1}", TransferInfo.SourcePath, ex.Message)
+                WStkTrc(ex)
+            End Try
         End Sub
 
     End Module

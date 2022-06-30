@@ -117,6 +117,7 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -499,6 +500,8 @@
     <Compile Include="Network\Mail\Transfer\MailTransferProgress.vb" />
     <Compile Include="Network\NetworkAdapter.vb" />
     <Compile Include="Network\NetworkAdapterPrint.vb" />
+    <Compile Include="Network\NetworkTransferInfo.vb" />
+    <Compile Include="Network\NetworkTransferType.vb" />
     <Compile Include="Network\RemoteDebug\Commands\Exit.vb" />
     <Compile Include="Network\RemoteDebug\Commands\Help.vb" />
     <Compile Include="Network\RemoteDebug\Commands\Register.vb" />
