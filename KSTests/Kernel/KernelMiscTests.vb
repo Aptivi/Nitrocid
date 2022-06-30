@@ -21,14 +21,6 @@ Imports KS.Kernel
 <TestFixture> Public Class KernelMiscTests
 
     ''' <summary>
-    ''' Tests update fetching
-    ''' </summary>
-    <Test, Description("Misc")> Public Sub TestFetchKernelUpdates()
-        Dim Updates As KernelUpdate = FetchKernelUpdates()
-        Updates.ShouldNotBeNull
-    End Sub
-
-    ''' <summary>
     ''' Tests raising an event and adding it to the fired events list
     ''' </summary>
     <Test, Description("Misc")> Public Sub TestRaiseEvent()
