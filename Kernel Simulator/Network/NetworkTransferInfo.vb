@@ -24,21 +24,13 @@ Namespace Network
         Private _MessageSuppressed As Boolean
 
         ''' <summary>
-        ''' Target file stream
+        ''' How many bytes downloaded/uploaded
         ''' </summary>
-        Public ReadOnly Property FileStream As Stream
+        Public ReadOnly Property DoneSize As Long
         ''' <summary>
         ''' File size
         ''' </summary>
         Public ReadOnly Property FileSize As Long
-        ''' <summary>
-        ''' The source path/URL
-        ''' </summary>
-        Public ReadOnly Property SourcePath As String
-        ''' <summary>
-        ''' The target path/URL
-        ''' </summary>
-        Public ReadOnly Property TargetPath As String
         ''' <summary>
         ''' The transfer type
         ''' </summary>
@@ -56,11 +48,9 @@ Namespace Network
             End Set
         End Property
 
-        Protected Friend Sub New(FileStream As Stream, FileSize As Long, SourcePath As String, TargetPath As String, TransferType As NetworkTransferType)
-            Me.FileStream = FileStream
+        Protected Friend Sub New(DoneSize As Long, FileSize As Long, TransferType As NetworkTransferType)
+            Me.DoneSize = DoneSize
             Me.FileSize = FileSize
-            Me.SourcePath = SourcePath
-            Me.TargetPath = TargetPath
             Me.TransferType = TransferType
         End Sub
 

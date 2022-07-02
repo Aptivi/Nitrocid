@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Net.Http
+Imports System.Net.Http.Handlers
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports KS.Misc.Notifications
@@ -32,13 +33,13 @@ Namespace Network
         Friend IsError As Boolean
         Friend ReasonError As Exception
         Friend CancellationToken As New CancellationTokenSource
-        Friend WClient As New HttpClient
+        Friend WClientProgress As New ProgressMessageHandler(New HttpClientHandler)
+        Friend WClient As New HttpClient(WClientProgress)
         Friend DownloadedString As String
         Friend DownloadNotif As Notification
         Friend UploadNotif As Notification
         Friend SuppressDownloadMessage As Boolean
         Friend SuppressUploadMessage As Boolean
-        Friend TransferProgressHandler As New KernelThread("Transfer Progress Handler", True, AddressOf TransferProgress)
 
         ''' <summary>
         ''' Downloads a file to the current working directory.
@@ -81,31 +82,27 @@ Namespace Network
             'Intialize variables
             Dim FileUri As New Uri(URL)
 
-            'Send the GET request to the server for the file
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
-            Dim Response As HttpResponseMessage = WClient.GetAsync(FileUri, CancellationToken.Token).Result
-            Response.EnsureSuccessStatusCode()
-
-            'Get the stream, file size, and target file stream
-            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim ContentLengthEnum As New List(Of String)
-            Dim GotContentLength As Boolean = Response.Content.Headers.TryGetValues("Content-Length", ContentLengthEnum)
-            Dim FileSize As Long = If(GotContentLength, Convert.ToInt64(ContentLengthEnum(0)), 0)
-            Dim FilePath As String = NeutralizePath(FileName)
-            Dim FileStream As New FileStream(FilePath, FileMode.Create, FileAccess.Write)
-            Dim TransferInfo As New NetworkTransferInfo(FileStream, FileSize, URL, FilePath, NetworkTransferType.Download)
-
             'Initialize the progress bar indicator and the file completed event handler
             If DownloadNotificationProvoke Then
                 DownloadNotif = New Notification(DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
+            If ShowProgress Then AddHandler WClientProgress.HttpReceiveProgress, AddressOf HttpReceiveProgressWatch
+
+            'Send the GET request to the server for the file
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Dim Response As HttpResponseMessage = WClient.GetAsync(FileUri, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
+
+            'Get the file stream
+            Dim FilePath As String = NeutralizePath(FileName)
+            Dim FileStream As New FileStream(FilePath, FileMode.Create, FileAccess.Write)
 
             'Try to download the file asynchronously
             Task.Run(Sub()
                          Try
-                             HttpStream.CopyTo(FileStream)
+                             Response.Content.ReadAsStreamAsync.Result.CopyTo(FileStream)
+                             DownloadChecker(Nothing)
                          Catch ex As Exception
                              DownloadChecker(ex)
                          End Try
@@ -152,30 +149,29 @@ Namespace Network
             'Intialize variables
             Dim FileUri As New Uri(URL)
 
-            'Send the GET request to the server for the file after getting the stream, file size, and target file stream
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
-            Dim FilePath As String = NeutralizePath(FileName)
-            Dim FileSize As Long = New FileInfo(FileName).Length
-            Dim FileStream As New FileStream(FilePath, FileMode.Open, FileAccess.Read)
-            Dim Content As New StreamContent(FileStream)
-            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, Content, CancellationToken.Token).Result
-            Response.EnsureSuccessStatusCode()
-
-            'Get the HTTP stream, file size, and target file stream
-            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim TransferInfo As New NetworkTransferInfo(FileStream, FileSize, URL, FilePath, NetworkTransferType.Upload)
-
             'Initialize the progress bar indicator and the file completed event handler
             If UploadNotificationProvoke Then
                 UploadNotif = New Notification(DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
+            If ShowProgress Then AddHandler WClientProgress.HttpSendProgress, AddressOf HttpSendProgressWatch
+
+            'Send the GET request to the server for the file after getting the stream and target file stream
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Dim FilePath As String = NeutralizePath(FileName)
+            Dim FileStream As New FileStream(FilePath, FileMode.Open, FileAccess.Read)
+            Dim Content As New StreamContent(FileStream)
+            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, Content, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
+
+            'Get the HTTP stream
+            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
 
             'Try to upload the file asynchronously
             Task.Run(Sub()
                          Try
                              HttpStream.CopyTo(FileStream)
+                             UploadChecker(Nothing)
                          Catch ex As Exception
                              UploadChecker(ex)
                          End Try
@@ -220,30 +216,26 @@ Namespace Network
             'Intialize variables
             Dim StringUri As New Uri(URL)
 
-            'Send the GET request to the server for the file
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
-            Dim Response As HttpResponseMessage = WClient.GetAsync(StringUri, CancellationToken.Token).Result
-            Response.EnsureSuccessStatusCode()
-
-            'Get the stream, size, and target stream
-            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim ContentLengthEnum As New List(Of String)
-            Dim GotContentLength As Boolean = Response.Content.Headers.TryGetValues("Content-Length", ContentLengthEnum)
-            Dim ContentSize As Long = If(GotContentLength, Convert.ToInt64(ContentLengthEnum(0)), 0)
-            Dim ContentStream As New MemoryStream
-            Dim TransferInfo As New NetworkTransferInfo(ContentStream, ContentSize, URL, "", NetworkTransferType.Download)
-
             'Initialize the progress bar indicator and the file completed event handler
             If DownloadNotificationProvoke Then
                 DownloadNotif = New Notification(DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
                 NotifySend(DownloadNotif)
             End If
-            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
+            If ShowProgress Then AddHandler WClientProgress.HttpReceiveProgress, AddressOf HttpReceiveProgressWatch
+
+            'Send the GET request to the server for the file
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Dim Response As HttpResponseMessage = WClient.GetAsync(StringUri, CancellationToken.Token).Result
+            Response.EnsureSuccessStatusCode()
+
+            'Get the memory stream
+            Dim ContentStream As New MemoryStream
 
             'Try to download the string asynchronously
             Task.Run(Sub()
                          Try
-                             HttpStream.CopyTo(ContentStream)
+                             Response.Content.ReadAsStreamAsync.Result.CopyTo(ContentStream)
+                             DownloadChecker(Nothing)
                          Catch ex As Exception
                              DownloadChecker(ex)
                          End Try
@@ -290,29 +282,28 @@ Namespace Network
             'Intialize variables
             Dim StringUri As New Uri(URL)
 
+            'Initialize the progress bar indicator and the file completed event handler
+            If UploadNotificationProvoke Then
+                UploadNotif = New Notification(DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
+                NotifySend(UploadNotif)
+            End If
+            If ShowProgress Then AddHandler WClientProgress.HttpSendProgress, AddressOf HttpSendProgressWatch
+
             'Send the GET request to the server for the file
             Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
             Dim StringContent As New StringContent(Data)
             Dim Response As HttpResponseMessage = WClient.PutAsync(URL, StringContent, CancellationToken.Token).Result
             Response.EnsureSuccessStatusCode()
 
-            'Get the stream, size, and target stream
+            'Get the streams
             Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim ContentSize As Long = Data.Length
             Dim ContentStream As New MemoryStream
-            Dim TransferInfo As New NetworkTransferInfo(ContentStream, ContentSize, URL, "", NetworkTransferType.Upload)
-
-            'Initialize the progress bar indicator and the file completed event handler
-            If UploadNotificationProvoke Then
-                UploadNotif = New Notification(DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotifPriority.Low, NotifType.Progress)
-                NotifySend(UploadNotif)
-            End If
-            If ShowProgress Then TransferProgressHandler.Start(TransferInfo)
 
             'Try to upload the string asynchronously
             Task.Run(Sub()
                          Try
                              ContentStream.CopyTo(HttpStream)
+                             UploadChecker(Nothing)
                          Catch ex As Exception
                              UploadChecker(ex)
                          End Try
@@ -364,39 +355,48 @@ Namespace Network
             TransferFinished = True
         End Sub
 
+        Private Sub HttpReceiveProgressWatch(sender As Object, e As HttpProgressEventArgs)
+            Dim TotalBytes As Integer = If(e.TotalBytes, -1)
+            Dim TransferInfo As New NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Download)
+            TransferProgress(TransferInfo)
+        End Sub
+
+        Private Sub HttpSendProgressWatch(sender As Object, e As HttpProgressEventArgs)
+            Dim TotalBytes As Integer = If(e.TotalBytes, -1)
+            Dim TransferInfo As New NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Upload)
+            TransferProgress(TransferInfo)
+        End Sub
+
         ''' <summary>
         ''' Report the progress to the console.
         ''' </summary>
         Private Sub TransferProgress(TransferInfo As NetworkTransferInfo)
             Try
-                While Not TransferFinished
-                    'Distinguish download from upload
-                    Dim NotificationProvoke As Boolean = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotificationProvoke, UploadNotificationProvoke)
-                    Dim NotificationInstance As Notification = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotif, UploadNotif)
+                'Distinguish download from upload
+                Dim NotificationProvoke As Boolean = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotificationProvoke, UploadNotificationProvoke)
+                Dim NotificationInstance As Notification = If(TransferInfo.TransferType = NetworkTransferType.Download, DownloadNotif, UploadNotif)
 
-                    'Report the progress
-                    If Not TransferFinished Then
-                        If TransferInfo.FileSize >= 0 And Not TransferInfo.MessageSuppressed Then
-                            'We know the total bytes. Print it out.
-                            Dim Progress As Double = 100 * (TransferInfo.FileStream.Length / TransferInfo.FileSize)
-                            If NotificationProvoke Then
-                                NotificationInstance.Progress = Progress
-                            Else
-                                If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
-                                    WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.FileStream.Length.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
-                                Else
-                                    WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.FileStream.Length.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
-                                End If
-                                ClearLineToRight()
-                            End If
+                'Report the progress
+                If Not TransferFinished Then
+                    If TransferInfo.FileSize >= 0 And Not TransferInfo.MessageSuppressed Then
+                        'We know the total bytes. Print it out.
+                        Dim Progress As Double = 100 * (TransferInfo.DoneSize / TransferInfo.FileSize)
+                        If NotificationProvoke Then
+                            NotificationInstance.Progress = Progress
                         Else
-                            TransferInfo.MessageSuppressed = True
+                            If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
+                                WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
+                            Else
+                                WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, False, ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString, TransferInfo.FileSize.FileSizeToString, Progress)
+                            End If
+                            ClearLineToRight()
                         End If
+                    Else
+                        TransferInfo.MessageSuppressed = True
                     End If
-                    Thread.Sleep(1000)
-                End While
+                End If
             Catch ex As Exception
-                Wdbg(DebugLevel.E, "Error trying to report transfer progress for source {0}: {1}", TransferInfo.SourcePath, ex.Message)
+                Wdbg(DebugLevel.E, "Error trying to report transfer progress: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
         End Sub
