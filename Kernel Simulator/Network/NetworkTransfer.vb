@@ -102,6 +102,8 @@ Namespace Network
             Task.Run(Sub()
                          Try
                              Response.Content.ReadAsStreamAsync.Result.CopyTo(FileStream)
+                             FileStream.Flush()
+                             FileStream.Close()
                              DownloadChecker(Nothing)
                          Catch ex As Exception
                              DownloadChecker(ex)
@@ -235,6 +237,7 @@ Namespace Network
             Task.Run(Sub()
                          Try
                              Response.Content.ReadAsStreamAsync.Result.CopyTo(ContentStream)
+                             ContentStream.Seek(0, SeekOrigin.Begin)
                              DownloadChecker(Nothing)
                          Catch ex As Exception
                              DownloadChecker(ex)
@@ -325,7 +328,7 @@ Namespace Network
                 Throw ReasonError
             Else
                 If UploadNotificationProvoke Then UploadNotif.Progress = 100
-                Return New StreamReader(ContentStream).ReadToEnd
+                Return True
             End If
         End Function
 
