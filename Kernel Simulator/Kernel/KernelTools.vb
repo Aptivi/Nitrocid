@@ -476,18 +476,16 @@ Namespace Kernel
         ''' <returns>A kernel update instance</returns>
         Public Function FetchKernelUpdates() As KernelUpdate
             Try
-                'Variables
-                Dim UpdateDown As New WebClient
-
                 'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
-                UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE")
+                WClient.DefaultRequestHeaders.Add("User-Agent", "EoflaOE")
 
                 'Populate the following variables with information
-                Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
+                Dim UpdateStr As String = DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
                 Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
                 Dim UpdateInstance As New KernelUpdate(UpdateToken)
 
                 'Return the update instance
+                WClient.DefaultRequestHeaders.Remove("User-Agent")
                 Return UpdateInstance
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to check for updates: {0}", ex.Message)
