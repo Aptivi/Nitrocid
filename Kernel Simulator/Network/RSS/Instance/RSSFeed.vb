@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Net.Http
 Imports System.Xml
 
 Namespace Network.RSS.Instance
@@ -98,12 +99,10 @@ Namespace Network.RSS.Instance
         Public Sub Refresh(FeedUrl As String, FeedType As RSSFeedType)
             'Make a web request indicator
             Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl)
-            Dim FeedWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(FeedUrl), HttpWebRequest)
-            FeedWebRequest.Timeout = RSSFetchTimeout
+            Dim FeedWebRequest As HttpResponseMessage = WClient.GetAsync(FeedUrl).Result
 
             'Load the RSS feed and get the feed XML document
-            Dim FeedWebResponse As WebResponse = FeedWebRequest.GetResponse()
-            Dim FeedStream As Stream = FeedWebResponse.GetResponseStream()
+            Dim FeedStream As Stream = FeedWebRequest.Content.ReadAsStream
             Dim FeedDocument As New XmlDocument
             FeedDocument.Load(FeedStream)
 

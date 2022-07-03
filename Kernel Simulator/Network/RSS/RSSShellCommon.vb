@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Net.Http
 Imports KS.Network.RSS.Commands
 Imports KS.Network.RSS.Instance
 
@@ -42,6 +43,7 @@ Namespace Network.RSS
         Public RSSRefreshInterval As Integer = 60000
         Public RSSKeepAlive As Boolean
         Friend RSSRefresher As New KernelThread("RSS Feed Refresher", False, AddressOf RefreshFeeds)
+        Friend RSSRefresherClient As New HttpClient() With {.Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout)}
         Friend RSSFeedLink As String
         Friend ReadOnly RSSModCommands As New Dictionary(Of String, CommandInfo)
 
