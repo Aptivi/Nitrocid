@@ -31,8 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <DocumentationFile>KSJsonifyLocales.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>EXECUTABLEINFRAMEWORKFOLDER</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -201,5 +200,10 @@
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Kernel Simulator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Translations\pla.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

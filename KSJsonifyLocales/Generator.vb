@@ -175,7 +175,11 @@ Module LocaleGenerator
                     IO.File.WriteAllText(HomePath + "/KSLanguages/" + FileName + ".json", SerializedLocale)
                 Else
                     If CopyToResources Then
+#If EXECUTABLEINFRAMEWORKFOLDER Then
+                        IO.File.WriteAllText("../../Resources/" + FileName + ".json", SerializedLocale)
+#Else
                         IO.File.WriteAllText("../Resources/" + FileName + ".json", SerializedLocale)
+#End If
                     Else
                         Directory.CreateDirectory("Translations/Output")
                         IO.File.WriteAllText("Translations/Output/" + FileName + ".json", SerializedLocale)
