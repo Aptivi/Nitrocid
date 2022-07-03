@@ -1544,6 +1544,23 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Name&quot;: &quot;Gangsta, Playa&quot;,
+        '''  &quot;Transliterable&quot;: false,
+        '''  &quot;Localizations&quot;: {
+        '''    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
+        '''    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
+        '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled ta run at next reboot.&quot;,
+        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error while spendin&apos; real command-line arguments: {0}&quot;,
+        '''    &quot;Invalid color template {0}&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property pla() As String
+            Get
+                Return ResourceManager.GetString("pla", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;214;142;60&quot;,
         '''    &quot;LicenseColor&quot;: &quot;214;142;60&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;69;140;90&quot;,

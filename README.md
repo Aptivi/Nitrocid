@@ -10,6 +10,8 @@ Not only it has some basic commands, but it also provides script support, networ
 
 WARNING: Second-generation versions of KS are not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
 
+WARNING: The gangsta language contains strong language that may make you feel uncomfortable reading it.
+
 ## Build Status
 
 Here are all the CI build status for all the active KS branches.

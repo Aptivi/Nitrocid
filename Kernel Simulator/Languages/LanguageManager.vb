@@ -25,6 +25,7 @@ Namespace Languages
 
         'PLEASE NOTE: "zul" language is Zulu and "swa" is Swahili for compatibility with Windows and Linux platforms. Windows considers "zul" as
         '             isiZulu and "swa" as Kiswahili, while Linux considers "zul" as Zulu and "swa" as Swahili.
+        'TODO: Get the base KS languages using Metadata.json from KSJsonifyLocales
         Friend InstalledLanguages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
                                                                                    {"chi", New LanguageInfo("chi", "Chinese", True)}, {"chi-T", New LanguageInfo("chi-T", "Chinese", True)},
                                                                                    {"cnt", New LanguageInfo("cnt", "Chinese (Traditional)", True)}, {"cnt-T", New LanguageInfo("cnt-T", "Chinese (Traditional)", True)},
@@ -42,6 +43,7 @@ Namespace Languages
                                                                                    {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
                                                                                    {"lol", New LanguageInfo("lol", "LOLCAT", False)},
                                                                                    {"pir", New LanguageInfo("pir", "Pirate Speak", False)},
+                                                                                   {"pla", New LanguageInfo("pla", "Gangsta, Playa", False)},
                                                                                    {"ptg", New LanguageInfo("ptg", "Portuguese", False)},
                                                                                    {"rus", New LanguageInfo("rus", "Russian", True)}, {"rus-T", New LanguageInfo("rus-T", "Russian", True)},
                                                                                    {"spa", New LanguageInfo("spa", "Spanish", False)},
@@ -179,6 +181,15 @@ Namespace Languages
                     End If
                 End If
 
+                'Gangsta language contains strong language, so warn the user before setting
+                If lang = "pla" Then
+                    Write(DoTranslation("The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?"), True, ColTypes.Warning)
+                    If Console.ReadKey(True).Key <> ConsoleKey.Y Then
+                        Exit Sub
+                    End If
+                End If
+
+                'Now, set the language!
                 Write(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, CurrentLanguage, lang)
                 If Not SetLang(lang) Then
                     Write(DoTranslation("Failed to set language."), True, ColTypes.Error)
