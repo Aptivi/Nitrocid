@@ -239,7 +239,6 @@ For the progress min-max color values, refer to the topmost table, because they'
 | Figlet font | `string` | Font supported by Figgle | The font to use. It should be supported by Figgle.
 | Text Shown  | `string` | A text                   | The text that is shown.
 
-
 ### Noise
 
 | Name | Type | Values | Description 
@@ -252,3 +251,9 @@ For the progress min-max color values, refer to the topmost table, because they'
 | Name | Type | Values | Description 
 |:-----------|:---------|:-------|:---
 | Text Shown | `string` | A text | The text that is shown.
+
+### Glitch
+
+| Name | Type | Values | Description 
+|:---------------|:----------|:----------------------------------|:---
+| Glitch Density | `integer` | Percent value from 0 to 100       | The greater the percentage, the more dense the glitch!

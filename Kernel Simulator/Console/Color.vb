@@ -65,6 +65,10 @@ Namespace ConsoleBase
         ''' Is the color dark?
         ''' </summary>
         Public ReadOnly Property IsDark As Boolean
+        ''' <summary>
+        ''' Empty color singleton
+        ''' </summary>
+        Public Shared ReadOnly Property Empty As New Color(0, 0, 0)
 
         ''' <summary>
         ''' Makes a new instance of color class from specifier.

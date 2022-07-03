@@ -51,6 +51,7 @@ Namespace Misc.Screensaver
                                                                              {"fireworks", Fireworks},
                                                                              {"flashcolor", FlashColor},
                                                                              {"flashtext", FlashText},
+                                                                             {"glitch", Glitch},
                                                                              {"glittercolor", GlitterColor},
                                                                              {"glittermatrix", GlitterMatrix},
                                                                              {"lighter", Lighter},

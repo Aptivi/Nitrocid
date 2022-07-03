@@ -893,6 +893,13 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("DateAndTime", DateAndTimeConfig)
 
+            'Glitch config json object
+            Dim GlitchConfig As New JObject From {
+                    {"Delay in Milliseconds", GlitchDelay},
+                    {"Glitch density", GlitchDensity}
+                }
+            ScreensaverConfig.Add("Glitch", GlitchConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1722,6 +1729,10 @@ Namespace Misc.Configuration
                 DateAndTimeMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum green color level"), 255)
                 DateAndTimeMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum blue color level"), 255)
                 DateAndTimeMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("DateAndTime")?("Maximum color level"), 0), ConfigToken("Screensaver")?("DateAndTime")?("Maximum color level"), 255)
+
+                '> Glitch
+                GlitchDelay = If(ConfigToken("Screensaver")?("Glitch")?("Delay in Milliseconds"), 10)
+                GlitchDensity = If(ConfigToken("Screensaver")?("Glitch")?("Glitch density"), 40)
 
                 'Splash Section - Splash-specific settings go below:
                 '> Simple
