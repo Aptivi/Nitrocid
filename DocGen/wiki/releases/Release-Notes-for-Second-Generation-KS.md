@@ -145,3 +145,7 @@ This version is WIP as of 6/27/2022.
 2. Added "No APM" simulator
 3. Improved name generation process
 4. No more stack overflow when double panic fails
+5. Added new screensaver (Glitch)
+6. Added new language (Gangsta, Playa - pla)
+7. General compatibility improvements for .NET 6.0
+8. General improvements and bug fixes
