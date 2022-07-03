@@ -38,6 +38,8 @@ Namespace Misc.Platform
         ''' <summary>
         ''' Is this system a macOS system?
         ''' </summary>
+        <CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification:="We already have IsOnUnix() to do the job, so it returns false when Windows is detected.")>
+        <CodeAnalysis.SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification:=".NET Framework doesn't have CA1416.")>
         Public Function IsOnMacOS() As Boolean
             If IsOnUnix() Then
                 Dim System As String = UnameManager.GetUname(UnameTypes.KernelName)
