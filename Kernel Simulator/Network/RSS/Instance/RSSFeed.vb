@@ -102,7 +102,7 @@ Namespace Network.RSS.Instance
             Dim FeedWebRequest As HttpResponseMessage = WClient.GetAsync(FeedUrl).Result
 
             'Load the RSS feed and get the feed XML document
-            Dim FeedStream As Stream = FeedWebRequest.Content.ReadAsStream
+            Dim FeedStream As Stream = FeedWebRequest.Content.ReadAsStreamAsync.Result
             Dim FeedDocument As New XmlDocument
             FeedDocument.Load(FeedStream)
 
