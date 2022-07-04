@@ -94,7 +94,7 @@ Namespace Misc.Games
                 Wdbg(DebugLevel.I, "Comment: {0}", RandomComment)
 
                 'Ask the user the question
-                WriteSeparator("[{0}/{1}]", True, Score, CommentNumber)
+                WriteSeparator("[S: {0} / C: {1}]", True, Score, CommentNumber)
                 Write(DoTranslation("If someone made this comment to your video:"), True, ColTypes.Neutral)
                 Write("- {0}:", False, ColTypes.ListEntry, RandomUser)
                 Write(" {0}", True, ColTypes.ListValue, RandomComment)
