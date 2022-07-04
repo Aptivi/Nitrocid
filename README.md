@@ -163,6 +163,14 @@ The packing and distribution procedures are now easier by executing this script 
 
 Below entries are the open source libraries that are used by KS and are required for execution.
 
+### Addresstigator
+
+Source code: https://github.com/EoflaOE/Addresstigator/
+
+Copyright (c) 2022-present EoflaOE and its companies
+
+License (MIT): https://github.com/EoflaOE/Addresstigator/blob/main/LICENSE.txt
+
 ### CRC32.NET
 
 Source code: https://github.com/force-net/CRC32.NET
@@ -178,6 +186,14 @@ Source code: https://github.com/EoflaOE/Extensification/
 Copyright (c) 2020-present EoflaOE and its companies
 
 License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+
+### Figgle
+
+Source code: https://github.com/drewnoakes/figgle
+
+Copyright (c) 2017-2021 drewnoakes
+
+License (Apache License 2.0): https://github.com/drewnoakes/figgle/blob/master/LICENSE
 
 ### FluentFTP
 
@@ -205,14 +221,6 @@ Copyright (c) 2020-present EoflaOE and its companies
 
 License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
 
-### MadMilkman.Ini
-
-Source code: https://github.com/MarioZ/MadMilkman.Ini
-
-Copyright (c) 2016, Mario Zorica
-
-License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
-
 ### MailKit
 
 Source code: https://github.com/jstedfast/MailKit/
@@ -220,6 +228,22 @@ Source code: https://github.com/jstedfast/MailKit/
 Copyright (c) 2013-present, .NET Foundation and Contributors
 
 License (MIT): https://github.com/jstedfast/MailKit/blob/master/LICENSE
+
+### ManagedWeatherMap
+
+Source code: https://github.com/EoflaOE/ManagedWeatherMap/
+
+Copyright (c) 2021-present EoflaOE and its companies
+
+License (MIT): https://github.com/EoflaOE/ManagedWeatherMap/blob/main/LICENSE.txt
+
+### Microsoft.AspNet.WebApi.Client
+
+Source code: https://github.com/aspnet/aspnetwebstack
+
+Copyright (c) .NET Foundation. All rights reserved.
+
+License (Apache License 2.0): https://github.com/aspnet/AspNetWebStack/blob/main/LICENSE.txt
 
 ### Newtonsoft.Json
 
@@ -236,6 +260,16 @@ Source code: https://github.com/NuGet/NuGet.Client
 Copyright (c) .NET Foundation. All rights reserved.
 
 License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
+
+### ReadLine.Reboot
+
+Source code: https://github.com/EoflaOE/ReadLine.Reboot/
+
+Copyright (c) 2017 Toni Solarin-Sodara
+
+Copyright (c) 2022-present EoflaOE and its companies
+
+License (MIT): https://github.com/EoflaOE/ReadLine.Reboot/blob/master/LICENSE
 
 ### SSH.NET
 
