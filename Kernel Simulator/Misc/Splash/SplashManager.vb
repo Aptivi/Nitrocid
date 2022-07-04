@@ -28,7 +28,8 @@ Namespace Misc.Splash
         Friend SplashThread As New KernelThread("Kernel Splash Thread", False, Sub() CurrentSplash.Display())
         Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
                                                                                  {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
-                                                                                 {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)}}
+                                                                                 {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
+                                                                                 {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)}}
 
         ''' <summary>
         ''' Current splash screen

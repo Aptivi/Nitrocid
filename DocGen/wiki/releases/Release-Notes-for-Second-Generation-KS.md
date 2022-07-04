@@ -147,5 +147,6 @@ This version is WIP as of 6/27/2022.
 4. No more stack overflow when double panic fails
 5. Added new screensaver (Glitch)
 6. Added new language (Gangsta, Playa - pla)
-7. General compatibility improvements for .NET 6.0
-8. General improvements and bug fixes
+7. Added new splash (Fader)
+8. General compatibility improvements for .NET 6.0
+9. General improvements and bug fixes
