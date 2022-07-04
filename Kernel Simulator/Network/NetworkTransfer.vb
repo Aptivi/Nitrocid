@@ -163,27 +163,15 @@ Namespace Network
             Dim FilePath As String = NeutralizePath(FileName)
             Dim FileStream As New FileStream(FilePath, FileMode.Open, FileAccess.Read)
             Dim Content As New StreamContent(FileStream)
-            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, Content, CancellationToken.Token).Result
-            Response.EnsureSuccessStatusCode()
 
-            'Get the HTTP stream
-            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-
-            'Try to upload the file asynchronously
-            Task.Run(Sub()
-                         Try
-                             HttpStream.CopyTo(FileStream)
-                             UploadChecker(Nothing)
-                         Catch ex As Exception
-                             UploadChecker(ex)
-                         End Try
-                     End Sub, CancellationToken.Token)
-            While Not TransferFinished
-                If CancelRequested Then
-                    TransferFinished = True
-                    CancellationToken.Cancel()
-                End If
-            End While
+            'Upload now
+            Try
+                Dim Response As HttpResponseMessage = WClient.PutAsync(URL, Content, CancellationToken.Token).Result
+                Response.EnsureSuccessStatusCode()
+                UploadChecker(Nothing)
+            Catch ex As Exception
+                UploadChecker(ex)
+            End Try
 
             'We're done uploading. Check to see if it's actually an error
             TransferFinished = False
@@ -295,28 +283,14 @@ Namespace Network
             'Send the GET request to the server for the file
             Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
             Dim StringContent As New StringContent(Data)
-            Dim Response As HttpResponseMessage = WClient.PutAsync(URL, StringContent, CancellationToken.Token).Result
-            Response.EnsureSuccessStatusCode()
 
-            'Get the streams
-            Dim HttpStream As Stream = Response.Content.ReadAsStreamAsync.Result
-            Dim ContentStream As New MemoryStream
-
-            'Try to upload the string asynchronously
-            Task.Run(Sub()
-                         Try
-                             ContentStream.CopyTo(HttpStream)
-                             UploadChecker(Nothing)
-                         Catch ex As Exception
-                             UploadChecker(ex)
-                         End Try
-                     End Sub, CancellationToken.Token)
-            While Not TransferFinished
-                If CancelRequested Then
-                    TransferFinished = True
-                    CancellationToken.Cancel()
-                End If
-            End While
+            Try
+                Dim Response As HttpResponseMessage = WClient.PutAsync(URL, StringContent, CancellationToken.Token).Result
+                Response.EnsureSuccessStatusCode()
+                UploadChecker(Nothing)
+            Catch ex As Exception
+                UploadChecker(ex)
+            End Try
 
             'We're done uploading. Check to see if it's actually an error
             TransferFinished = False
