@@ -59,7 +59,7 @@ Namespace Network.RPC
                 Wdbg(DebugLevel.I, "Command: {0}", Cmd)
                 Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
                 Wdbg(DebugLevel.I, "Prototype Arg: {0}", Arg)
-                Arg = Arg.Remove(Arg.Count - 1)
+                Arg = Arg.Remove(Arg.Length - 1)
                 Wdbg(DebugLevel.I, "Finished Arg: {0}", Arg)
 
                 'Check the command
@@ -69,7 +69,7 @@ Namespace Network.RPC
 
                     'Check the request type
                     Dim RequestType As String = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish:=Cmd.IndexOf(">"))
-                    Dim ByteMsg() As Byte = {}
+                    Dim ByteMsg() As Byte = Array.Empty(Of Byte)()
                     Select Case RequestType
                         Case "Shutdown", "Reboot", "RebootSafe", "Lock", "SaveScr", "Exec", "Acknowledge", "Ping"
                             'Populate the byte message to send the confirmation to

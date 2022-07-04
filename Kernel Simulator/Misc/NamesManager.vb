@@ -21,8 +21,8 @@ Imports KS.Network
 Namespace Misc
     Public Module NamesManager
 
-        Friend Names() As String = {}
-        Friend Surnames() As String = {}
+        Friend Names() As String = Array.Empty(Of String)()
+        Friend Surnames() As String = Array.Empty(Of String)()
 
         ''' <summary>
         ''' Populates the names and the surnames for the purpose of initialization

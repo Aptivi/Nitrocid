@@ -1072,7 +1072,7 @@ Namespace Files
         ''' <param name="Path">The path, including the pattern</param>
         ''' <returns>The array of full paths</returns>
         Public Function GetFilesystemEntries(Path As String, Optional IsFile As Boolean = False) As String()
-            Dim Entries As String() = {}
+            Dim Entries As String() = Array.Empty(Of String)()
             Try
                 ThrowOnInvalidPath(Path)
 
@@ -1116,7 +1116,7 @@ Namespace Files
         ''' <param name="Pattern">The pattern</param>
         ''' <returns>The array of full paths</returns>
         Public Function GetFilesystemEntries(Parent As String, Pattern As String) As String()
-            Dim Entries As String() = {}
+            Dim Entries As String() = Array.Empty(Of String)()
             Try
                 ThrowOnInvalidPath(Parent)
                 ThrowOnInvalidPath(Pattern)

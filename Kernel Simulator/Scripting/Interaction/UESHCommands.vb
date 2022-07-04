@@ -52,7 +52,7 @@ Namespace Scripting.Interaction
         ''' <param name="OutputType">Output type of choices</param>
         ''' <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine, Optional PressEnter As Boolean = False)
-            PromptChoice(Question, ScriptVariable, AnswersStr, {}, OutputType, PressEnter)
+            PromptChoice(Question, ScriptVariable, AnswersStr, Array.Empty(Of String)(), OutputType, PressEnter)
         End Sub
 
         ''' <summary>
@@ -126,7 +126,7 @@ Namespace Scripting.Interaction
         ''' <param name="ScriptVariable">A $variable</param>
         ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         Public Sub PromptSelection(Question As String, ScriptVariable As String, AnswersStr As String)
-            PromptSelection(Question, ScriptVariable, AnswersStr, {})
+            PromptSelection(Question, ScriptVariable, AnswersStr, Array.Empty(Of String)())
         End Sub
 
         ''' <summary>

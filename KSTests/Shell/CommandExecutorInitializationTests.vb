@@ -37,21 +37,21 @@ Imports KS.Shell.ShellBase
     ''' Tests initializing the command instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedCommandExecution()
-        Should.NotThrow(New Action(Sub() CommandInstance.Execute("", {}, {}, {})))
+        Should.NotThrow(New Action(Sub() CommandInstance.Execute("", Array.Empty(Of String)(), Array.Empty(Of String)(), Array.Empty(Of String)())))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedCommandExecutionWithArguments()
-        Should.NotThrow(New Action(Sub() CommandInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, {})))
+        Should.NotThrow(New Action(Sub() CommandInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, Array.Empty(Of String)())))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the command instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedCommandExecutionWithSwitches()
-        Should.NotThrow(New Action(Sub() CommandInstance.Execute("-s", {"-s"}, {}, {"-s"})))
+        Should.NotThrow(New Action(Sub() CommandInstance.Execute("-s", {"-s"}, Array.Empty(Of String)(), {"-s"})))
     End Sub
 
     ''' <summary>

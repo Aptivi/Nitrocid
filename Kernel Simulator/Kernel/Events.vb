@@ -2538,7 +2538,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseStartKernel()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event KernelStarted() and responding in RespondStartKernel()...")
-            FiredEvents.Add("KernelStarted (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("KernelStarted (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent KernelStarted()
         End Sub
         ''' <summary>
@@ -2546,7 +2546,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePreLogin()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PreLogin() and responding in RespondPreLogin()...")
-            FiredEvents.Add("PreLogin (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PreLogin (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PreLogin()
         End Sub
         ''' <summary>
@@ -2570,7 +2570,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ShellInitialized() and responding in RespondShellInitialized()...")
-            FiredEvents.Add("ShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ShellInitialized()
         End Sub
         ''' <summary>
@@ -2610,7 +2610,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePreShutdown()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PreShutdown() and responding in RespondPreShutdown()...")
-            FiredEvents.Add("PreShutdown (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PreShutdown (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PreShutdown()
         End Sub
         ''' <summary>
@@ -2618,7 +2618,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePostShutdown()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PostShutdown() and responding in RespondPostShutdown()...")
-            FiredEvents.Add("PostShutdown (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PostShutdown (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PostShutdown()
         End Sub
         ''' <summary>
@@ -2626,7 +2626,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePreReboot()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PreReboot() and responding in RespondPreReboot()...")
-            FiredEvents.Add("PreReboot (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PreReboot (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PreReboot()
         End Sub
         ''' <summary>
@@ -2634,7 +2634,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePostReboot()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PostReboot() and responding in RespondPostReboot()...")
-            FiredEvents.Add("PostReboot (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PostReboot (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PostReboot()
         End Sub
         ''' <summary>
@@ -2682,7 +2682,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePreReloadConfig()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PreReloadConfig() and responding in RespondPreReloadConfig()...")
-            FiredEvents.Add("PreReloadConfig (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PreReloadConfig (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PreReloadConfig()
         End Sub
         ''' <summary>
@@ -2690,7 +2690,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaisePostReloadConfig()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event PostReloadConfig() and responding in RespondPostReloadConfig()...")
-            FiredEvents.Add("PostReloadConfig (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("PostReloadConfig (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent PostReloadConfig()
         End Sub
         ''' <summary>
@@ -2722,7 +2722,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseGarbageCollected()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event GarbageCollected() and responding in RespondGarbageCollected()...")
-            FiredEvents.Add("GarbageCollected (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("GarbageCollected (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent GarbageCollected()
         End Sub
         ''' <summary>
@@ -2730,7 +2730,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseFTPShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event FTPShellInitialized() and responding in RespondFTPShellInitialized()...")
-            FiredEvents.Add("FTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("FTPShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent FTPShellInitialized()
         End Sub
         ''' <summary>
@@ -2794,7 +2794,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseIMAPShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event IMAPShellInitialized() and responding in RespondIMAPShellInitialized()...")
-            FiredEvents.Add("IMAPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("IMAPShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent IMAPShellInitialized()
         End Sub
         ''' <summary>
@@ -2914,7 +2914,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseSFTPShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event SFTPShellInitialized() and responding in RespondSFTPShellInitialized()...")
-            FiredEvents.Add("SFTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("SFTPShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent SFTPShellInitialized()
         End Sub
         ''' <summary>
@@ -3002,7 +3002,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseSSHDisconnected()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event SSHDisconnected() and responding in RespondSSHDisconnected()...")
-            FiredEvents.Add("SSHDisconnected (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("SSHDisconnected (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent SSHDisconnected()
         End Sub
         ''' <summary>
@@ -3066,7 +3066,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseTextShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event TextShellInitialized() and responding in RespondTextShellInitialized()...")
-            FiredEvents.Add("TextShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("TextShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent TextShellInitialized()
         End Sub
         ''' <summary>
@@ -3130,7 +3130,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseNotificationDismissed()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event NotificationDismissed() and responding in RespondNotificationDismissed()...")
-            FiredEvents.Add("NotificationDismissed (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("NotificationDismissed (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent NotificationDismissed()
         End Sub
         ''' <summary>
@@ -3138,7 +3138,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseConfigSaved()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ConfigSaved() and responding in RespondConfigSaved()...")
-            FiredEvents.Add("ConfigSaved (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ConfigSaved (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ConfigSaved()
         End Sub
         ''' <summary>
@@ -3154,7 +3154,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseConfigRead()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ConfigRead() and responding in RespondConfigRead()...")
-            FiredEvents.Add("ConfigRead (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ConfigRead (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ConfigRead()
         End Sub
         ''' <summary>
@@ -3250,7 +3250,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseHardwareProbing()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event HardwareProbing() and responding in RespondHardwareProbing()...")
-            FiredEvents.Add("HardwareProbing (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("HardwareProbing (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent HardwareProbing()
         End Sub
         ''' <summary>
@@ -3258,7 +3258,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseHardwareProbed()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event HardwareProbed() and responding in RespondHardwareProbed()...")
-            FiredEvents.Add("HardwareProbed (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("HardwareProbed (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent HardwareProbed()
         End Sub
         ''' <summary>
@@ -3266,7 +3266,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseCurrentDirectoryChanged()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event CurrentDirectoryChanged() and responding in RespondCurrentDirectoryChanged()...")
-            FiredEvents.Add("CurrentDirectoryChanged (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("CurrentDirectoryChanged (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent CurrentDirectoryChanged()
         End Sub
         ''' <summary>
@@ -3354,7 +3354,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseColorReset()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ColorReset() and responding in RespondColorReset()...")
-            FiredEvents.Add("ColorReset (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ColorReset (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ColorReset()
         End Sub
         ''' <summary>
@@ -3378,7 +3378,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseColorSet()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ColorSet() and responding in RespondColorSet()...")
-            FiredEvents.Add("ColorSet (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ColorSet (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ColorSet()
         End Sub
         ''' <summary>
@@ -3394,7 +3394,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseThemeStudioStarted()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ThemeStudioStarted() and responding in RespondThemeStudioStarted()...")
-            FiredEvents.Add("ThemeStudioStarted (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ThemeStudioStarted (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ThemeStudioStarted()
         End Sub
         ''' <summary>
@@ -3402,7 +3402,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseThemeStudioExit()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ThemeStudioExit() and responding in RespondThemeStudioExit()...")
-            FiredEvents.Add("ThemeStudioExit (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ThemeStudioExit (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ThemeStudioExit()
         End Sub
         ''' <summary>
@@ -3418,7 +3418,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseZipShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event ZipShellInitialized() and responding in RespondZipShellInitialized()...")
-            FiredEvents.Add("ZipShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("ZipShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent ZipShellInitialized()
         End Sub
         ''' <summary>
@@ -3450,7 +3450,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseHTTPShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event HTTPShellInitialized() and responding in RespondHTTPShellInitialized()...")
-            FiredEvents.Add("HTTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("HTTPShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent HTTPShellInitialized()
         End Sub
         ''' <summary>
@@ -3490,7 +3490,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguageInstalled(Language As String)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageInstalled() and responding in RespondLanguageInstalled()...")
-            FiredEvents.Add("LanguageInstalled (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguageInstalled (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguageInstalled(Language)
         End Sub
         ''' <summary>
@@ -3498,7 +3498,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguageUninstalled(Language As String)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageUninstalled() and responding in RespondLanguageUninstalled()...")
-            FiredEvents.Add("LanguageUninstalled (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguageUninstalled (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguageUninstalled(Language)
         End Sub
         ''' <summary>
@@ -3506,7 +3506,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguageInstallError(Language As String, Exception As Exception)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageInstallError() and responding in RespondLanguageInstallError()...")
-            FiredEvents.Add("LanguageInstallError (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguageInstallError (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguageInstallError(Language, Exception)
         End Sub
         ''' <summary>
@@ -3514,7 +3514,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguageUninstallError(Language As String, Exception As Exception)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguageUninstallError() and responding in RespondLanguageUninstallError()...")
-            FiredEvents.Add("LanguageUninstallError (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguageUninstallError (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguageUninstallError(Language, Exception)
         End Sub
         ''' <summary>
@@ -3522,7 +3522,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguagesInstalled()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesInstalled() and responding in RespondLanguagesInstalled()...")
-            FiredEvents.Add("LanguagesInstalled (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguagesInstalled (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguagesInstalled()
         End Sub
         ''' <summary>
@@ -3530,7 +3530,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguagesUninstalled()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesUninstalled() and responding in RespondLanguagesUninstalled()...")
-            FiredEvents.Add("LanguagesUninstalled (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguagesUninstalled (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguagesUninstalled()
         End Sub
         ''' <summary>
@@ -3538,7 +3538,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguagesInstallError(Exception As Exception)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesInstallError() and responding in RespondLanguagesInstallError()...")
-            FiredEvents.Add("LanguagesInstallError (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguagesInstallError (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguagesInstallError(Exception)
         End Sub
         ''' <summary>
@@ -3546,7 +3546,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseLanguagesUninstallError(Exception As Exception)
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event LanguagesUninstallError() and responding in RespondLanguagesUninstallError()...")
-            FiredEvents.Add("LanguagesUninstallError (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("LanguagesUninstallError (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent LanguagesUninstallError(Exception)
         End Sub
         ''' <summary>
@@ -3554,7 +3554,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseHexShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event HexShellInitialized() and responding in RespondHexShellInitialized()...")
-            FiredEvents.Add("HexShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("HexShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent HexShellInitialized()
         End Sub
         ''' <summary>
@@ -3586,7 +3586,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseJsonShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event JsonShellInitialized() and responding in RespondJsonShellInitialized()...")
-            FiredEvents.Add("JsonShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("JsonShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent JsonShellInitialized()
         End Sub
         ''' <summary>
@@ -3618,7 +3618,7 @@ Namespace Kernel
         ''' </summary>
         Public Sub RaiseTestShellInitialized()
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestShellInitialized() and responding in RespondTestShellInitialized()...")
-            FiredEvents.Add("TestShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+            FiredEvents.Add("TestShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
             RaiseEvent TestShellInitialized()
         End Sub
         ''' <summary>

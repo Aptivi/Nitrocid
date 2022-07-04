@@ -61,8 +61,8 @@ Namespace Misc.HexEdit
                 HexEdit_FileStream.Close()
                 HexEdit_FileStream = Nothing
                 Wdbg(DebugLevel.I, "File is no longer open.")
-                HexEdit_FileBytes = {}
-                HexEdit_FileBytesOrig = {}
+                HexEdit_FileBytes = Array.Empty(Of Byte)()
+                HexEdit_FileBytesOrig = Array.Empty(Of Byte)()
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Closing file failed: {0}", ex.Message)

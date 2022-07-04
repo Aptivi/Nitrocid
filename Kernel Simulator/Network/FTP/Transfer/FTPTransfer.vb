@@ -243,7 +243,7 @@ Namespace Network.FTP.Transfer
                     Wdbg(DebugLevel.I, "Downloading {0}...", File)
 
                     'Try to download 3 times
-                    Dim DownloadedBytes() As Byte = {}
+                    Dim DownloadedBytes() As Byte = Array.Empty(Of Byte)()
                     Dim DownloadedContent As New StringBuilder
                     Dim Downloaded As Boolean = ClientFTP.Download(DownloadedBytes, File)
                     For Each DownloadedByte As Byte In DownloadedBytes
