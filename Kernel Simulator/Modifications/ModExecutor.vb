@@ -82,7 +82,6 @@ Namespace Modifications
                         Else
                             'Command type is not of shell. Execute anyway.
                             ScriptCommandExecutable = True
-
                         End If
 
                         'If the command check went all well without any hiccups, execute the command.
@@ -93,6 +92,7 @@ Namespace Modifications
                                 ScriptCommandBase.Execute(args, ScriptCommandFullArgs, ScriptCommandArgs, ScriptCommandSwitches)
                             Else
                                 'TODO: Remove in API v2.1
+                                Write(DoTranslation("This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards."), True, ColTypes.Warning)
                                 Script.PerformCmd(Script.Commands(parts(0)), args)
                             End If
                         End If
