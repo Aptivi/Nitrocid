@@ -361,12 +361,14 @@ Namespace Network
         Private Sub HttpReceiveProgressWatch(sender As Object, e As HttpProgressEventArgs)
             Dim TotalBytes As Integer = If(e.TotalBytes, -1)
             Dim TransferInfo As New NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Download)
+            SuppressDownloadMessage = TotalBytes = -1
             TransferProgress(TransferInfo)
         End Sub
 
         Private Sub HttpSendProgressWatch(sender As Object, e As HttpProgressEventArgs)
             Dim TotalBytes As Integer = If(e.TotalBytes, -1)
             Dim TransferInfo As New NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Upload)
+            SuppressUploadMessage = TotalBytes = -1
             TransferProgress(TransferInfo)
         End Sub
 
