@@ -50,8 +50,6 @@ Namespace Misc.Games
                                                            DoTranslation("We prejudice on this video.")}
         ReadOnly Comments As New Dictionary(Of String, List(Of String)) From {{CommentType.Love, LoveComments}, {CommentType.Hate, HateComments}}
         ReadOnly Users As New Dictionary(Of String, CommentType)
-        Friend Names() As String = Array.Empty(Of String)()
-        Friend Surnames() As String = Array.Empty(Of String)()
 
         Enum CommentType
             ''' <summary>
