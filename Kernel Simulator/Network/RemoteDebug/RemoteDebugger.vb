@@ -202,7 +202,7 @@ Namespace Network.RemoteDebug
                                 If DebugCommands.ContainsKey(Command) Then
                                     'Parsing starts here.
                                     ParseCmd(FullCommand, SocketStreamWriter, SocketIP)
-                                ElseIf RemoteDebugAliases.Keys.Contains(Command) Then
+                                ElseIf RemoteDebugAliases.ContainsKey(Command) Then
                                     'Alias parsing starts here.
                                     ExecuteRDAlias(FullCommand, SocketStreamWriter, SocketIP)
                                 Else

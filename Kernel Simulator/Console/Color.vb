@@ -80,7 +80,7 @@ Namespace ConsoleBase
             ColorSpecifier = ColorSpecifier.Replace("""", "")
 
             'Now, parse the output
-            If ColorSpecifier.Contains(";") Then
+            If ColorSpecifier.Contains(";"c) Then
                 'Split the VT sequence into three parts
                 Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
                 If ColorSpecifierArray.Length = 3 Then

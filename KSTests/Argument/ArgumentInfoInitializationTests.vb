@@ -58,21 +58,21 @@ Imports KS.Arguments.ArgumentBase
     ''' Tests initializing the argument instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecution()
-        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("", {}, {}, {})))
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("", Array.Empty(Of String), Array.Empty(Of String), Array.Empty(Of String))))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecutionWithArguments()
-        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, {})))
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("Hello World", {"Hello", "World"}, {"Hello", "World"}, Array.Empty(Of String))))
     End Sub
 
     ''' <summary>
     ''' Tests initializing the argument instance from base
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializedArgumentExecutionWithSwitches()
-        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s", {"-s"}, {}, {"-s"})))
+        Should.NotThrow(New Action(Sub() ArgumentInstance.Execute("-s", {"-s"}, Array.Empty(Of String), {"-s"})))
     End Sub
 
     ''' <summary>

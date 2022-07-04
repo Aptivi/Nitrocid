@@ -763,7 +763,7 @@ Namespace ConsoleBase
         ''' <param name="RGBSequence">&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
         ''' <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         Public Function ConvertFromRGBToHex(RGBSequence As String) As String
-            If RGBSequence.Contains(";") Then
+            If RGBSequence.Contains(";"c) Then
                 'Split the VT sequence into three parts
                 Dim ColorSpecifierArray() As String = RGBSequence.Split(";")
                 If ColorSpecifierArray.Length = 3 Then

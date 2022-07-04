@@ -48,7 +48,7 @@ Namespace Arguments.ArgumentBase
                 'Parse them now
                 For i As Integer = 0 To ArgumentsInput.Count - 1
                     Dim Argument As String = ArgumentsInput(i)
-                    If Arguments.Keys.Contains(Argument) Then
+                    If Arguments.ContainsKey(Argument) Then
                         'Variables
                         Dim ArgumentInfo As New ProvidedArgumentArgumentsInfo(Argument, ArgumentType)
                         Dim FullArgs() As String = ArgumentInfo.FullArgumentsList

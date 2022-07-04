@@ -24,7 +24,7 @@ Namespace TestShell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Text As String = ListArgsOnly(0)
             Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
-            If LocalizedStrings.Keys.Contains(Text) Then
+            If LocalizedStrings.ContainsKey(Text) Then
                 Write(DoTranslation("String found in the localization resources."), True, ColTypes.Success)
             Else
                 Write(DoTranslation("String not found in the localization resources."), True, ColTypes.Neutral)

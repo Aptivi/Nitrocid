@@ -26,9 +26,9 @@ Namespace Network.Mail
 
         'Variables
         Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", {"<folder>"}, True, 1, New Mail_CdCommand)},
-                                                                                     {"exit", New CommandInfo("exit", ShellType.MailShell, "Exits the IMAP shell", {}, False, 0, New Mail_ExitCommand)},
+                                                                                     {"exit", New CommandInfo("exit", ShellType.MailShell, "Exits the IMAP shell", Array.Empty(Of String), False, 0, New Mail_ExitCommand)},
                                                                                      {"help", New CommandInfo("help", ShellType.MailShell, "List of commands", {"[command]"}, False, 0, New Mail_HelpCommand)},
-                                                                                     {"lsdirs", New CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", {}, False, 0, New Mail_LsDirsCommand)},
+                                                                                     {"lsdirs", New CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", Array.Empty(Of String), False, 0, New Mail_LsDirsCommand)},
                                                                                      {"list", New CommandInfo("list", ShellType.MailShell, "Downloads messages and lists them", {"[pagenum]"}, False, 0, New Mail_ListCommand)},
                                                                                      {"mkdir", New CommandInfo("mkdir", ShellType.MailShell, "Makes a directory in the current working directory", {"<foldername>"}, True, 1, New Mail_MkdirCommand)},
                                                                                      {"mv", New CommandInfo("mv", ShellType.MailShell, "Moves a message", {"<mailid> <targetfolder>"}, True, 2, New Mail_MvCommand)},
@@ -39,8 +39,8 @@ Namespace Network.Mail
                                                                                      {"rm", New CommandInfo("rm", ShellType.MailShell, "Removes a message", {"<mailid>"}, True, 1, New Mail_RmCommand)},
                                                                                      {"rmall", New CommandInfo("rmall", ShellType.MailShell, "Removes all messages from recipient", {"<sendername>"}, True, 1, New Mail_RmAllCommand)},
                                                                                      {"rmdir", New CommandInfo("rmdir", ShellType.MailShell, "Removes a directory from the current working directory", {"<foldername>"}, True, 1, New Mail_RmdirCommand)},
-                                                                                     {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", {}, False, 0, New Mail_SendCommand)},
-                                                                                     {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", {}, False, 0, New Mail_SendEncCommand)}}
+                                                                                     {"send", New CommandInfo("send", ShellType.MailShell, "Sends a message to an address", Array.Empty(Of String), False, 0, New Mail_SendCommand)},
+                                                                                     {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", Array.Empty(Of String), False, 0, New Mail_SendEncCommand)}}
         Public IMAP_CurrentDirectory As String = "Inbox"
         Public MailShellPromptStyle As String = ""
         Public Mail_NotifyNewMail As Boolean = True

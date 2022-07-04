@@ -196,7 +196,7 @@ Namespace Network
         Public Function GetFilenameFromUrl(Url As String) As String
             Dim FileName As String = Url.Split("/").Last()
             Wdbg(DebugLevel.I, "Prototype Filename: {0}", FileName)
-            If FileName.Contains("?") Then
+            If FileName.Contains("?"c) Then
                 FileName = FileName.Remove(FileName.IndexOf("?"c))
             End If
             Wdbg(DebugLevel.I, "Finished Filename: {0}", FileName)

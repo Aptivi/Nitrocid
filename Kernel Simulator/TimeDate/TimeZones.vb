@@ -50,7 +50,7 @@ Namespace TimeDate
         ''' <returns>True if found; False if not found</returns>
         Public Function ShowTimeZone(Zone As String) As Boolean
             Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
-            Dim ZoneFound As Boolean = ZoneTimes.Keys.Contains(Zone)
+            Dim ZoneFound As Boolean = ZoneTimes.ContainsKey(Zone)
             If ZoneFound Then
                 Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, Zone, ZoneTimes(Zone).ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(KernelDateTime).ToString)
             End If

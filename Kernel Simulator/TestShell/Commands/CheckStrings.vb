@@ -26,7 +26,7 @@ Namespace TestShell.Commands
             Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
             Dim Texts() As String = ReadContents(TextPath)
             For Each Text As String In Texts
-                If LocalizedStrings.Keys.Contains(Text) Then
+                If LocalizedStrings.ContainsKey(Text) Then
                     Write("[+] {0}", True, ColTypes.Success, Text)
                 Else
                     Write("[-] {0}", True, ColTypes.Neutral, Text)

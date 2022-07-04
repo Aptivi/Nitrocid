@@ -34,7 +34,7 @@ Namespace ConsoleBase
         ''' <param name="mode">Mode</param>
         ''' <returns>True if succeeded, false if failed</returns>
         <DllImport("kernel32.dll", SetLastError:=True)>
-        Public Function SetConsoleMode(hConsoleHandle As IntPtr, mode As Integer) As Boolean
+        Private Function SetConsoleMode(hConsoleHandle As IntPtr, mode As Integer) As Boolean
         End Function
 
         ''' <summary>
@@ -44,7 +44,7 @@ Namespace ConsoleBase
         ''' <param name="mode">Mode</param>
         ''' <returns>True if succeeded, false if failed</returns>
         <DllImport("kernel32.dll", SetLastError:=True)>
-        Public Function GetConsoleMode(handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
+        Private Function GetConsoleMode(handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
         End Function
 
         ''' <summary>
@@ -53,7 +53,7 @@ Namespace ConsoleBase
         ''' <param name="handle">Handle number</param>
         ''' <returns>True if succeeded, false if failed</returns>
         <DllImport("kernel32.dll", SetLastError:=True)>
-        Public Function GetStdHandle(handle As Integer) As IntPtr
+        Private Function GetStdHandle(handle As Integer) As IntPtr
         End Function
 
         ''' <summary>

@@ -227,9 +227,9 @@ Namespace Network.RSS
         Sub OpenFeedSelector()
             Dim StepNumber As Integer = 1
             Dim FeedListJson As JToken
-            Dim FeedListJsonCountries() As JToken = {}
-            Dim FeedListJsonNewsSources() As JToken = {}
-            Dim FeedListJsonNewsSourceFeeds() As JToken = {}
+            Dim FeedListJsonCountries() As JToken = Array.Empty(Of JToken)
+            Dim FeedListJsonNewsSources() As JToken = Array.Empty(Of JToken)
+            Dim FeedListJsonNewsSourceFeeds() As JToken = Array.Empty(Of JToken)
             Dim SelectedCountryIndex As Integer = 0
             Dim SelectedNewsSourceIndex As Integer
             Dim SelectedNewsSourceFeedIndex As Integer
@@ -240,7 +240,7 @@ Namespace Network.RSS
                 Write(DoTranslation("Downloading feed list..."), True, ColTypes.Progress)
                 If String.IsNullOrEmpty(FeedListJsonText) Then FeedListJsonText = DownloadString("https://cdn.jsdelivr.net/gh/yavuz/news-feed-list-of-countries@master/news-feed-list-of-countries.json")
                 FeedListJson = JToken.Parse(FeedListJsonText)
-                FeedListJsonCountries = FeedListJson.SelectTokens("*").Where(Function(c) c("newSources").Count >= 1).ToArray
+                FeedListJsonCountries = FeedListJson.SelectTokens("*").Where(Function(c) c("newSources").Any()).ToArray
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to get feed list: {0}", ex.Message)
                 WStkTrc(ex)

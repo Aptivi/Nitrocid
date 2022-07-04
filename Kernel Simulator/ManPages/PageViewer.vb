@@ -31,7 +31,7 @@ Namespace ManPages
         ''' </summary>
         ''' <param name="ManualTitle">A manual title</param>
         Public Sub ViewPage(ManualTitle As String)
-            If Pages.Keys.Contains(ManualTitle) Then
+            If Pages.ContainsKey(ManualTitle) Then
                 'Variables
                 Dim InfoPlace As Integer
 

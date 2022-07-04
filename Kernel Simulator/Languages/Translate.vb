@@ -48,7 +48,7 @@ Namespace Languages
                 Wdbg(DebugLevel.I, "Dictionary size: {0}", translatedString.Count)
 
                 'Do translation
-                If translatedString.Keys.Contains(text) Then
+                If translatedString.ContainsKey(text) Then
                     Wdbg(DebugLevel.I, "Translating string to {0}: {1}", lang, text)
                     Return translatedString(text)
                 Else 'String wasn't found

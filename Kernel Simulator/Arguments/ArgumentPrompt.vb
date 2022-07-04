@@ -48,7 +48,7 @@ Namespace Arguments
                 'Add an argument to the entered arguments list
                 If AnswerArgs <> "q" Then
                     For Each AnswerArg As String In AnswerArgs.Split(","c)
-                        If AvailableArgs.Keys.Contains(AnswerArg.Split(" "c)(0)) Then
+                        If AvailableArgs.ContainsKey(AnswerArg.Split(" "c)(0)) Then
                             EnteredArguments.Add(AnswerArg)
                         ElseIf Not String.IsNullOrWhiteSpace(AnswerArg.Split(" "c)(0)) Then
                             Write(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, AnswerArg.Split(" "c)(0))
