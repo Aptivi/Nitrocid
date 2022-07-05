@@ -2,7 +2,7 @@
 
 ### Summary
 
-Executes commands once the [[UESH expressions|UESH Conditions]] are satisfied
+Executes commands once the [UESH Conditions](ueshdevelopment/UESH-Conditions.md) are satisfied
 
 ### Command usage
 

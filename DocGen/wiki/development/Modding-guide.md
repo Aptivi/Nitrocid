@@ -171,7 +171,7 @@ End Class
    - Don't import "KS" by itself. KS does that automatically
    - When importing modules/classes like TextWriterColor, it's written like this: `Imports KS.Misc.Writers.TextWriterColor`
 4. You can add dependencies for your mods.
-5. You can also add manual page files to your mods. Consult the [[Mod Manual Page]] for more info.
+5. You can also add manual page files to your mods. Consult the [Mod Manual Page](development/Mod-Manual-Page.md) for more info.
 
 ## Example
 
