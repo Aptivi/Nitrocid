@@ -232,7 +232,7 @@ Namespace Misc.Screensaver.Displays
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(255, 255, 255), New Color(RedColorNum, GreenColorNum, BlueColorNum))
+                            WriteWhere(" ", ColumnBlock, RowBlock, True, Color.Empty, New Color(RedColorNum, GreenColorNum, BlueColorNum))
                         Else
                             WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...")
                             RowBlock = Console.WindowHeight / 2
@@ -243,7 +243,7 @@ Namespace Misc.Screensaver.Displays
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), New Color(ColorNum))
+                            WriteWhere(" ", ColumnBlock, RowBlock, True, Color.Empty, New Color(ColorNum))
                         Else
                             WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...")
                             RowBlock = Console.WindowHeight / 2

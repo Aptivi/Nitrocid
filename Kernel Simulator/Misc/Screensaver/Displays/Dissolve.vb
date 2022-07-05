@@ -216,7 +216,7 @@ Namespace Misc.Screensaver.Displays
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Not ResizeSyncing Then
-                                    SetConsoleColor(New Color("0;0;0"))
+                                    SetConsoleColor(Color.Empty)
                                     SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
                                     Console.Write(" ")
                                 Else
@@ -231,7 +231,7 @@ Namespace Misc.Screensaver.Displays
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Not ResizeSyncing Then
-                                    SetConsoleColor(New Color("0"))
+                                    SetConsoleColor(Color.Empty)
                                     SetConsoleColor(New Color(ColorNum), True)
                                     Console.Write(" ")
                                 Else
