@@ -14,8 +14,8 @@ For more information about every command, click the command.
 
 ### Administrative commands
 
-| Command                                                    | Description
-|:-----------------------------------------------------------|:------------
+| Command                                           | Description
+|:--------------------------------------------------|:------------
 | [adduser](uesh/KS-Command-adduser.md)             | You can add the user's name whenever you need, with the password if required. However, passwords are required to ensure security.
 | [alias](uesh/KS-Command-alias.md)                 | You can manage your aliases to commands so you don't have to type long commands.
 | [arginj](uesh/KS-Command-arginj.md)               | You can inject arguments into the kernel so that when you reboot, the arguments that are injected will be run.
@@ -47,8 +47,8 @@ For more information about every command, click the command.
 
 ### Normal user commands
 
-| Command                                                              | Description
-|:---------------------------------------------------------------------|:------------
+| Command                                                     | Description
+|:------------------------------------------------------------|:------------
 | [chattr](uesh/KS-Command-chattr.md)                         | Changes the attributes of a file
 | [chdir](uesh/KS-Command-chdir.md)                           | You can change your working directory.
 | [cls](uesh/KS-Command-cls.md)                               | To clear your screen from text.
@@ -61,6 +61,7 @@ For more information about every command, click the command.
 | [colorrgbtohex](uesh/KS-Command-colorrgbtohex.md)           | Converts the color RGB numbers to hex.
 | [combine](uesh/KS-Command-combine.md)                       | Combines the two text files or more into the output file
 | [convertlineendings](uesh/KS-Command-convertlineendings.md) | Converts the line endings in text files
+| [dict](uesh/KS-Command-dict.md)                             | The English Dictionary
 | [dismissnotif](uesh/KS-Command-dismissnotif.md)             | Dismisses a specific notification.
 | [dismissnotifs](uesh/KS-Command-dismissnotifs.md)           | Dismisses all notifications
 | [edit](uesh/KS-Command-edit.md)                             | Opens the text editor shell to an existing text file.
@@ -128,8 +129,8 @@ For more information about every command, click the command.
 
 These commands can be used in shell and in scripting, though it works better in scripting.
 
-| Command                                          | Description
-|:-------------------------------------------------|:------------
+| Command                                 | Description
+|:----------------------------------------|:------------
 | [beep](uesh/KS-Command-beep.md)         | Makes your PC speaker beep in specified n Hz in n ms.
 | [cat](uesh/KS-Command-cat.md)           | Prints the content of a specific file to console
 | [choice](uesh/KS-Command-choice.md)     | Makes user choices

@@ -250,6 +250,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UESH", "UESH", "{69029AB0-4
 		DocGen\wiki\commands\uesh\KS-Command-combine.md = DocGen\wiki\commands\uesh\KS-Command-combine.md
 		DocGen\wiki\commands\uesh\KS-Command-convertlineendings.md = DocGen\wiki\commands\uesh\KS-Command-convertlineendings.md
 		DocGen\wiki\commands\uesh\KS-Command-copy.md = DocGen\wiki\commands\uesh\KS-Command-copy.md
+		DocGen\wiki\commands\uesh\KS-Command-dict.md = DocGen\wiki\commands\uesh\KS-Command-dict.md
 		DocGen\wiki\commands\uesh\KS-Command-dirinfo.md = DocGen\wiki\commands\uesh\KS-Command-dirinfo.md
 		DocGen\wiki\commands\uesh\KS-Command-disconndbgdev.md = DocGen\wiki\commands\uesh\KS-Command-disconndbgdev.md
 		DocGen\wiki\commands\uesh\KS-Command-dismissnotif.md = DocGen\wiki\commands\uesh\KS-Command-dismissnotif.md

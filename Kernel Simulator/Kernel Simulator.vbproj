@@ -286,6 +286,8 @@
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Configuration\SettingsKeyType.vb" />
     <Compile Include="Misc\Configuration\SettingsType.vb" />
+    <Compile Include="Misc\Dictionary\DictionaryManager.vb" />
+    <Compile Include="Misc\Dictionary\DictionaryWord.vb" />
     <Compile Include="Misc\Editors\HexEdit\Commands\AddByte.vb" />
     <Compile Include="Misc\Editors\HexEdit\Commands\AddBytes.vb" />
     <Compile Include="Misc\Editors\HexEdit\Commands\Clear.vb" />
@@ -600,6 +602,7 @@
     <Compile Include="Shell\Commands\ChLang.vb" />
     <Compile Include="Shell\Commands\ChMal.vb" />
     <Compile Include="Shell\Commands\ChMotd.vb" />
+    <Compile Include="Shell\Commands\Dict.vb" />
     <Compile Include="Shell\Commands\ColorRgbToHex.vb" />
     <Compile Include="Shell\Commands\ColorHexToRgbKS.vb" />
     <Compile Include="Shell\Commands\ColorHexToRgb.vb" />
