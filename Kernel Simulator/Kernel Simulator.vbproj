@@ -345,6 +345,7 @@
     <Compile Include="Misc\Screensaver\Displays\Glitch.vb" />
     <Compile Include="Misc\Screensaver\Displays\Noise.vb" />
     <Compile Include="Misc\Screensaver\Displays\PersonLookup.vb" />
+    <Compile Include="Misc\Screensaver\Displays\FallingLine.vb" />
     <Compile Include="Misc\Screensaver\Displays\RandomSaver.vb" />
     <Compile Include="Misc\Screensaver\Displays\Snaker.vb" />
     <Compile Include="Misc\Screensaver\Displays\StackBox.vb" />

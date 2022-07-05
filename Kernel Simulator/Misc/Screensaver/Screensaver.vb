@@ -47,6 +47,7 @@ Namespace Misc.Screensaver
                                                                              {"dissolve", Dissolve},
                                                                              {"fader", Fader},
                                                                              {"faderback", FaderBack},
+                                                                             {"fallingline", FallingLine},
                                                                              {"figlet", Figlet},
                                                                              {"fireworks", Fireworks},
                                                                              {"flashcolor", FlashColor},
