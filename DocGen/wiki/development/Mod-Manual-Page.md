@@ -12,7 +12,7 @@ The file format didn't have so many changes from the 0.0.6.0's `.ksman` format, 
 | Manual layout ver.                    | `-KSLAYOUT:0.0.5.9-OR-ABOVE` | (none)                 |
 | Body start                            | `-BODY START-`               | `-BODY START-`         |
 | Body end                              | `-BODY END-`                 | `-BODY END-`           |
-| [[Placeholder support\|Placeholders]] | (none)                       | Supported              |
+| [Placeholders](misc/Placeholders.md)  | (none)                       | Supported              |
 | Color configuration per-word          | `-COLOR CONFIGURATION-`      | (none)                 |
 | Color configuration per-word end      | `-COLOR CONFIG END-`         | (none)                 |
 | Sections (SE1, SE2, SE3, ...)         | `-SECTIONS-`                 | (none)                 |
@@ -115,7 +115,7 @@ Of course, all the comments are ignored and are not shown, whether it's on the b
 
 ### Personalization
 
-You can even use the placeholders to personalize your manual page. Consult the [[Placeholders]] page for more information about how to use them in manual pages.
+You can even use the placeholders to personalize your manual page. Consult the [Placeholders](misc/Placeholders.md) page for more information about how to use them in manual pages.
 
 ```
 -BODY START-

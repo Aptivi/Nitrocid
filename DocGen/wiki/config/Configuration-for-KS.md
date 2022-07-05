@@ -6,7 +6,7 @@ There are many sections to make reading the config file easier thanks to the nic
 
 ## Config entries
 
-Some of the configuration entries support placeholders. Refer to [[this document|Placeholders]] for more info.
+Some of the configuration entries support placeholders. Refer to [Placeholders](misc/Placeholders.md) for more info.
 
 ### General
 
