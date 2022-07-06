@@ -33,6 +33,7 @@ Some of the configuration entries support placeholders. Refer to [Placeholders](
 | Stylish splash screen                   | `boolean` | `true` or `false`                       | Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot.
 | Splash name                             | `string`  | Valid splash name                       | Splash name from the available splashes implemented in the kernel
 | Banner figlet font                      | `string`  | Figlet font name supported by Figgle    | Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
+| Simulate No APM Mode                    | `boolean` | `true` or `false`                       | If enabled, it will show the "It's now safe to turn off your computer" message on kernel shutdown.
 
 ### Colors
 
@@ -85,7 +86,6 @@ See ConsoleColor for more information.
 | Quiet Probe                 | `boolean` | `true` or `false` | You can make hardware probing quiet, by not showing results of probed hardware.
 | Full Probe                  | `boolean` | `true` or `false` | Ensures that each hardware is probed.
 | Verbose Probe               | `boolean` | `true` or `false` | You can make hardware probing verbose, by showing what probed.
-| Use legacy hardware listing | `boolean` | `true` or `false` | Uses the pre-0.0.20.x way of listing hardware. Otherwise, uses the modern way.
 
 ### Login
 
@@ -264,3 +264,16 @@ These screensavers are built-in directly to Kernel Simulator and are always avai
 | Show the shell commands count on help                | `boolean` | `true` or `false`                    | Self-explanatory
 | Show the mod commands count on help                  | `boolean` | `true` or `false`                    | Self-explanatory
 | Show the aliases count on help                       | `boolean` | `true` or `false`                    | Self-explanatory
+| Password mask character                              | `char`    | A single character                   | A character that is placed to enter the password.
+| Upper left corner character for progress bars        | `char`    | A single character                   | A character that resembles the upper left corner.
+| Upper right corner character for progress bars       | `char`    | A single character                   | A character that resembles the upper right corner.
+| Lower left corner character for progress bars        | `char`    | A single character                   | A character that resembles the lower left corner.
+| Lower right corner character for progress bars       | `char`    | A single character                   | A character that resembles the lower right corner.
+| Upper frame character for progress bars              | `char`    | A single character                   | A character that resembles the upper frame.
+| Lower frame character for progress bars              | `char`    | A single character                   | A character that resembles the lower frame.
+| Left frame character for progress bars               | `char`    | A single character                   | A character that resembles the left frame.
+| Right frame character for progress bars              | `char`    | A single character                   | A character that resembles the right frame.
+| Users count for love or hate comments                | `integer` | Interval in milliseconds             | How many user names to generate in LoveHate game?
+| Input history enabled                                | `boolean` | `true` or `false`                    | Whether the input history is enabled
+| Input clipboard enabled                              | `boolean` | `true` or `false`                    | Whether the input clipboard is enabled. Use `CTRL + Y` to paste or yank the contents back.
+| Input undo enabled                                   | `boolean` | `true` or `false`                    | Whether the input undo is enabled
