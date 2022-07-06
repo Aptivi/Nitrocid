@@ -4,20 +4,20 @@ Manual page for mods is a file consisting of documentation for the mod or for a 
 
 The file format didn't have so many changes from the 0.0.6.0's `.ksman` format, but the file extension is changed to `.man` format, along with the other changes that the modern format has seen.
 
-| Feature                               | `.ksman`                     | `.man`                 |
-|:--------------------------------------|:-----------------------------|:-----------------------|
-| Comments                              | `~~-`                        | `~~-`                  |
-| Manual page start                     | `(*MAN START*)`              | `(*MAN START*)`        |
-| Title & Revision                      | `-TITLE:`/`-REVISION:`       | `-TITLE:`/`-REVISION:` |
-| Manual layout ver.                    | `-KSLAYOUT:0.0.5.9-OR-ABOVE` | (none)                 |
-| Body start                            | `-BODY START-`               | `-BODY START-`         |
-| Body end                              | `-BODY END-`                 | `-BODY END-`           |
-| [Placeholders](misc/Placeholders.md)  | (none)                       | Supported              |
-| Color configuration per-word          | `-COLOR CONFIGURATION-`      | (none)                 |
-| Color configuration per-word end      | `-COLOR CONFIG END-`         | (none)                 |
-| Sections (SE1, SE2, SE3, ...)         | `-SECTIONS-`                 | (none)                 |
-| Sections end                          | `-SECTIONS END-`             | (none)                 |
-| TODOs                                 | `~~- TODO: `                 | `~~- TODO: `           |
+| Feature                                   | `.ksman`                     | `.man`                 |
+|:------------------------------------------|:-----------------------------|:-----------------------|
+| Comments                                  | `~~-`                        | `~~-`                  |
+| Manual page start                         | `(*MAN START*)`              | `(*MAN START*)`        |
+| Title & Revision                          | `-TITLE:`/`-REVISION:`       | `-TITLE:`/`-REVISION:` |
+| Manual layout ver.                        | `-KSLAYOUT:0.0.5.9-OR-ABOVE` | (none)                 |
+| Body start                                | `-BODY START-`               | `-BODY START-`         |
+| Body end                                  | `-BODY END-`                 | `-BODY END-`           |
+| [Placeholders](../misc/Placeholders.md)   | (none)                       | Supported              |
+| Color configuration per-word              | `-COLOR CONFIGURATION-`      | (none)                 |
+| Color configuration per-word end          | `-COLOR CONFIG END-`         | (none)                 |
+| Sections (SE1, SE2, SE3, ...)             | `-SECTIONS-`                 | (none)                 |
+| Sections end                              | `-SECTIONS END-`             | (none)                 |
+| TODOs                                     | `~~- TODO: `                 | `~~- TODO: `           |
 
 To make the comparison clearer, compare the two examples which are shown below:
 
@@ -115,7 +115,7 @@ Of course, all the comments are ignored and are not shown, whether it's on the b
 
 ### Personalization
 
-You can even use the placeholders to personalize your manual page. Consult the [Placeholders](misc/Placeholders.md) page for more information about how to use them in manual pages.
+You can even use the placeholders to personalize your manual page. Consult the [Placeholders](../misc/Placeholders.md) page for more information about how to use them in manual pages.
 
 ```
 -BODY START-

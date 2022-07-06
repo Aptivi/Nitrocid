@@ -6,7 +6,7 @@ There are many sections to make reading the config file easier thanks to the nic
 
 ## Config entries
 
-Some of the configuration entries support placeholders. Refer to [Placeholders](misc/Placeholders.md) for more info.
+Some of the configuration entries support placeholders. Refer to [Placeholders](../misc/Placeholders.md) for more info.
 
 ### General
 
@@ -217,7 +217,7 @@ See ConsoleColor for more information.
 
 #### Built-in screensavers
 
-These screensavers are built-in directly to Kernel Simulator and are always available. If you want your screensaver to be included by default to Kernel Simulator, let us know. Consult [Screensaver Configuration](config/Screensaver-settings-for-KS.md) for configuration entries for specific screensavers.
+These screensavers are built-in directly to Kernel Simulator and are always available. If you want your screensaver to be included by default to Kernel Simulator, let us know. Consult [Screensaver Configuration](Screensaver-settings-for-KS.md) for configuration entries for specific screensavers.
 
 ### Misc
 

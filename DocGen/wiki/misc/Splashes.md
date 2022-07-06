@@ -6,4 +6,4 @@ You can turn them on or off by kernel configuration, but you must reboot the ker
 
 ## Can I create my own splash?
 
-Yes! Consult the [Splash Guide](development/Custom-splash-guide.md) for more information.
+Yes! Consult the [Splash Guide](../development/Custom-splash-guide.md) for more information.
