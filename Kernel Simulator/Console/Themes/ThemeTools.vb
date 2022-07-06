@@ -69,6 +69,8 @@ Namespace ConsoleBase.Themes
                                                                              {"Pastel 1", New ThemeInfo("Pastel_1")},
                                                                              {"Pastel 2", New ThemeInfo("Pastel_2")},
                                                                              {"Pastel 3", New ThemeInfo("Pastel_3")},
+                                                                             {"PhosphoricBG", New ThemeInfo("PhosphoricBG")},
+                                                                             {"PhosphoricFG", New ThemeInfo("PhosphoricFG")},
                                                                              {"Planted Wood", New ThemeInfo("Planted_Wood")},
                                                                              {"Purlow", New ThemeInfo("Purlow")},
                                                                              {"Red Breeze", New ThemeInfo("Red_Breeze")},

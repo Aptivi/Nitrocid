@@ -253,6 +253,8 @@
     <None Include="Resources\Themes\Pastel 1.json" />
     <None Include="Resources\Themes\Pastel 2.json" />
     <None Include="Resources\Themes\Pastel 3.json" />
+    <None Include="Resources\Themes\PhosphoricBG.json" />
+    <None Include="Resources\Themes\PhosphoricFG.json" />
     <None Include="Resources\Themes\SolarizedDark.json" />
     <None Include="Resources\Themes\SolarizedLight.json" />
     <None Include="Resources\Themes\Windows11.json" />

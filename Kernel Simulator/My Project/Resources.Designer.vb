@@ -1527,6 +1527,62 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;0&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;0&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;0&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;0&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;3&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;0&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;0&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;0&quot;,
+        '''  &quot;StageColor&quot;: &quot;0&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;0&quot;,
+        '''  &quot;WarningColor&quot;: &quot;0&quot;,
+        '''  &quot;OptionColor&quot;: &quot;0&quot;,
+        '''  &quot;BannerColor&quot;: &quot;0&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;0&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;0&quot;,
+        '''  &quot;NotificationProgressColor&quot;: &quot;0&quot;,
+        '''  &quot;No [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property PhosphoricBG() As String
+            Get
+                Return ResourceManager.GetString("PhosphoricBG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;3&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;3&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;3&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;3&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;3&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;3&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;3&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;3&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;3&quot;,
+        '''  &quot;StageColor&quot;: &quot;3&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;3&quot;,
+        '''  &quot;WarningColor&quot;: &quot;3&quot;,
+        '''  &quot;OptionColor&quot;: &quot;3&quot;,
+        '''  &quot;BannerColor&quot;: &quot;3&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;3&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;3&quot;,
+        '''  &quot;NotificationProgressColor&quot;: &quot;3&quot;,
+        '''  &quot;No [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property PhosphoricFG() As String
+            Get
+                Return ResourceManager.GetString("PhosphoricFG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Name&quot;: &quot;Pirate Speak&quot;,
         '''  &quot;Transliterable&quot;: false,
         '''  &quot;Localizations&quot;: {
