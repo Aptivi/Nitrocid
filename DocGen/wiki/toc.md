@@ -7,8 +7,8 @@
 ## [Compatibility Notes for First Generation KS](releases/Compatibility-Notes-for-First-Generation-KS.md)
 ## [Compatibility Notes for Second Generation KS](releases/Compatibility-Notes-for-Second-Generation-KS.md)
 # Commands
-## [Normal Shell](commands/(S)FTP-commands-for-KS.md)
-## [(S)FTP Shell](commands/Commands-for-KS.md)
+## [Normal Shell](commands/Commands-for-KS.md)
+## [(S)FTP Shell](commands/(S)FTP-commands-for-KS.md)
 ## [Mail Shell](commands/Mail-commands-for-KS.md)
 ## [RSS Shell](commands/RSS-commands-for-KS.md)
 ## [Text Editor Shell](commands/Text-Editor-commands-for-KS.md)
