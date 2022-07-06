@@ -70,8 +70,7 @@ Namespace Misc.Splash.Splashes
 
         'Fader-specific variables
         Friend RandomDriver As New Random()
-        Friend Left As Integer = RandomDriver.Next(Console.WindowWidth)
-        Friend Top As Integer = RandomDriver.Next(Console.WindowHeight)
+        Friend Left, Top As Integer
         Friend FaderWrite As String = "Kernel Simulator"
 
         'Actual logic
@@ -83,6 +82,10 @@ Namespace Misc.Splash.Splashes
         Public Sub Display() Implements ISplash.Display
             Try
                 Wdbg(DebugLevel.I, "Splash displaying.")
+
+                'Select the left and top position
+                Left = RandomDriver.Next(Console.WindowWidth)
+                Top = RandomDriver.Next(Console.WindowHeight)
 
                 'In case we've selected the left position that is too near the end of buffer, decrement the selected left position
                 'so that the text shows up in one line only.
