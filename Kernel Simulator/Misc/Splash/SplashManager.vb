@@ -29,7 +29,8 @@ Namespace Misc.Splash
         Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
                                                                                  {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
                                                                                  {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
-                                                                                 {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)}}
+                                                                                 {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
+                                                                                 {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)}}
 
         ''' <summary>
         ''' Current splash screen

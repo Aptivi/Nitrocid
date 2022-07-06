@@ -19,13 +19,13 @@
 Imports System.Threading
 
 Namespace Misc.Splash.Splashes
-    Class SplashFader
+    Class SplashFaderBack
         Implements ISplash
 
         'Standalone splash information
         ReadOnly Property SplashName As String Implements ISplash.SplashName
             Get
-                Return "Fader"
+                Return "FaderBack"
             End Get
         End Property
 
@@ -68,12 +68,6 @@ Namespace Misc.Splash.Splashes
             End Get
         End Property
 
-        'Fader-specific variables
-        Friend RandomDriver As New Random()
-        Friend Left As Integer = RandomDriver.Next(Console.WindowWidth)
-        Friend Top As Integer = RandomDriver.Next(Console.WindowHeight)
-        Friend FaderWrite As String = "Kernel Simulator"
-
         'Actual logic
         Public Sub Opening() Implements ISplash.Opening
             Wdbg(DebugLevel.I, "Splash opening. Clearing console...")
@@ -83,14 +77,6 @@ Namespace Misc.Splash.Splashes
         Public Sub Display() Implements ISplash.Display
             Try
                 Wdbg(DebugLevel.I, "Splash displaying.")
-
-                'In case we've selected the left position that is too near the end of buffer, decrement the selected left position
-                'so that the text shows up in one line only.
-                If FaderWrite.Length + Left >= Console.WindowWidth Then
-                    Left -= FaderWrite.Length + 1
-                End If
-
-                'Loop until we got a closing notification
                 While Not SplashClosing
                     Thread.Sleep(1)
                 End While
@@ -110,8 +96,8 @@ Namespace Misc.Splash.Splashes
             'Fade in as progress is getting reported
             Dim GreenColorLevel As Integer = 255 * (Progress / 100)
             Dim GreenColorInstance As New Color(0, GreenColorLevel, 0)
-            SetConsoleColor(GreenColorInstance)
-            WriteWhere(FaderWrite, Left, Top, False, GreenColorInstance)
+            SetConsoleColor(GreenColorInstance, True)
+            Console.Clear()
         End Sub
 
     End Class
