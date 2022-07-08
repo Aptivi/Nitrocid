@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module LinesDisplay
+    Public Module LinesSettings
 
-        Friend Lines As New KernelThread("Lines screensaver thread", True, AddressOf Lines_DoWork)
         Private _lines255Colors As Boolean
         Private _linesTrueColor As Boolean = True
         Private _linesDelay As Integer = 500
@@ -200,72 +199,77 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Lines
-        ''' </summary>
-        Sub Lines_DoWork()
-            Try
-                'Variables
-                Dim random As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    End Module
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    'Select a color
-                    Dim esc As Char = GetEsc()
-                    If LinesTrueColor Then
-                        SetConsoleColor(New Color(LinesBackgroundColor), True)
-                        Console.Clear()
-                        Dim RedColorNum As Integer = random.Next(LinesMinimumRedColorLevel, LinesMaximumRedColorLevel)
-                        Dim GreenColorNum As Integer = random.Next(LinesMinimumGreenColorLevel, LinesMaximumGreenColorLevel)
-                        Dim BlueColorNum As Integer = random.Next(LinesMinimumBlueColorLevel, LinesMaximumBlueColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                        SetConsoleColor(ColorStorage)
-                    ElseIf Lines255Colors Then
-                        SetConsoleColor(New Color(LinesBackgroundColor), True)
-                        Console.Clear()
-                        Dim color As Integer = random.Next(LinesMinimumColorLevel, LinesMaximumColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
-                        SetConsoleColor(New Color(color))
-                    Else
-                        Console.Clear()
-                        SetConsoleColor(New Color(LinesBackgroundColor), True)
-                        Console.ForegroundColor = colors(random.Next(LinesMinimumColorLevel, LinesMaximumColorLevel))
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor)
-                    End If
+    Public Class LinesDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                    'Draw a line
-                    Dim Line As String = ""
-                    Dim Top As Integer = New Random().Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top)
-                    For i As Integer = 1 To Console.WindowWidth
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default ""-""...", LinesLineChar)
-                        Line += If(Not String.IsNullOrWhiteSpace(LinesLineChar), LinesLineChar, "-")
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Line: {0}", Line)
-                    Next
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        Console.SetCursorPosition(0, Top)
-                        Console.WriteLine(Line)
-                    End If
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(LinesDelay, Lines)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverName As String = "Lines" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+
+            'Select a color
+            Dim esc As Char = GetEsc()
+            If LinesTrueColor Then
+                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                Console.Clear()
+                Dim RedColorNum As Integer = RandomDriver.Next(LinesMinimumRedColorLevel, LinesMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(LinesMinimumGreenColorLevel, LinesMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(LinesMinimumBlueColorLevel, LinesMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                SetConsoleColor(ColorStorage)
+            ElseIf Lines255Colors Then
+                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                Console.Clear()
+                Dim color As Integer = RandomDriver.Next(LinesMinimumColorLevel, LinesMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
+                SetConsoleColor(New Color(color))
+            Else
+                Console.Clear()
+                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                Console.ForegroundColor = colors(RandomDriver.Next(LinesMinimumColorLevel, LinesMaximumColorLevel))
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor)
+            End If
+
+            'Draw a line
+            Dim Line As String = ""
+            Dim Top As Integer = New Random().Next(Console.WindowHeight)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top)
+            For i As Integer = 1 To Console.WindowWidth
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default ""-""...", LinesLineChar)
+                Line += If(Not String.IsNullOrWhiteSpace(LinesLineChar), LinesLineChar, "-")
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Line: {0}", Line)
+            Next
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                Console.SetCursorPosition(0, Top)
+                Console.WriteLine(Line)
+            End If
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(LinesDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

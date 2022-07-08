@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module FaderDisplay
+    Public Module FaderSettings
 
-        Friend Fader As New KernelThread("Fader screensaver thread", True, AddressOf Fader_DoWork)
         Private _faderDelay As Integer = 50
         Private _faderFadeOutDelay As Integer = 3000
         Private _faderWrite As String = "Kernel Simulator"
@@ -172,97 +171,94 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Fader
-        ''' </summary>
-        Sub Fader_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
-                Dim GreenColorNum As Integer = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
-                Dim BlueColorNum As Integer = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                SetConsoleColor(New Color(FaderBackgroundColor), True)
-                Console.Clear()
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    Public Class FaderDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
-                    If FaderWrite.Length + Left >= Console.WindowWidth Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", FaderWrite.Length + Left, Console.WindowWidth)
-                        Left -= FaderWrite.Length + 1
-                    End If
-                    Console.SetCursorPosition(Left, Top)
-                    Console.BackgroundColor = ConsoleColor.Black
-                    ClearKeepPosition()
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Set thresholds
-                    Dim ThresholdRed As Double = RedColorNum / FaderMaxSteps
-                    Dim ThresholdGreen As Double = GreenColorNum / FaderMaxSteps
-                    Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+        Public Overrides Property ScreensaverName As String = "Fader" Implements IScreensaver.ScreensaverName
 
-                    'Fade in
-                    Dim CurrentColorRedIn As Integer = 0
-                    Dim CurrentColorGreenIn As Integer = 0
-                    Dim CurrentColorBlueIn As Integer = 0
-                    For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If ResizeSyncing Then Exit For
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
-                        SleepNoBlock(FaderDelay, Fader)
-                        CurrentColorRedIn += ThresholdRed
-                        CurrentColorGreenIn += ThresholdGreen
-                        CurrentColorBlueIn += ThresholdBlue
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
-                    Next
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Wait until fade out
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderFadeOutDelay)
-                    SleepNoBlock(FaderFadeOutDelay, Fader)
-
-                    'Fade out
-                    For CurrentStep As Integer = 1 To FaderMaxSteps
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If ResizeSyncing Then Exit For
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
-                        SleepNoBlock(FaderDelay, Fader)
-                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
-                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
-                        If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
-                    Next
-
-                    'Select new color
-                    RedColorNum = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
-                    GreenColorNum = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
-                    BlueColorNum = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(FaderDelay, Fader)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SetConsoleColor(New Color(FaderBackgroundColor), True)
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
+            Dim GreenColorNum As Integer = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
+            Dim BlueColorNum As Integer = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
+
+            Console.CursorVisible = False
+            Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+            Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
+            If FaderWrite.Length + Left >= Console.WindowWidth Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", FaderWrite.Length + Left, Console.WindowWidth)
+                Left -= FaderWrite.Length + 1
+            End If
+            Console.SetCursorPosition(Left, Top)
+            Console.BackgroundColor = ConsoleColor.Black
+            ClearKeepPosition()
+
+            'Set thresholds
+            Dim ThresholdRed As Double = RedColorNum / FaderMaxSteps
+            Dim ThresholdGreen As Double = GreenColorNum / FaderMaxSteps
+            Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+
+            'Fade in
+            Dim CurrentColorRedIn As Integer = 0
+            Dim CurrentColorGreenIn As Integer = 0
+            Dim CurrentColorBlueIn As Integer = 0
+            For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If ResizeSyncing Then Exit For
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
+                SleepNoBlock(FaderDelay, ScreensaverDisplayerThread)
+                CurrentColorRedIn += ThresholdRed
+                CurrentColorGreenIn += ThresholdGreen
+                CurrentColorBlueIn += ThresholdBlue
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
+            Next
+
+            'Wait until fade out
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderFadeOutDelay)
+            SleepNoBlock(FaderFadeOutDelay, ScreensaverDisplayerThread)
+
+            'Fade out
+            For CurrentStep As Integer = 1 To FaderMaxSteps
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If ResizeSyncing Then Exit For
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
+                SleepNoBlock(FaderDelay, ScreensaverDisplayerThread)
+                Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
+                If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
+            Next
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(FaderDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

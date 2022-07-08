@@ -20,9 +20,8 @@ Imports System.Threading
 Imports KS.TimeDate
 
 Namespace Misc.Screensaver.Displays
-    Public Module PersonLookupDisplay
+    Public Module PersonLookupSettings
 
-        Friend PersonLookup As New KernelThread("PersonLookup screensaver thread", True, AddressOf PersonLookup_DoWork)
         Private _personLookupDelay As Integer = 75
         Private _personLookupLookedUpDelay As Integer = 10000
         Private _personLookupMinimumNames As Integer = 10
@@ -107,59 +106,58 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of PersonLookup
-        ''' </summary>
-        Sub PersonLookup_DoWork()
-            Try
-                'Variables
-                Dim random As New Random()
+    End Module
 
-                'Preparations
-                PopulateNames()
+    Public Class PersonLookupDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.ForegroundColor = ConsoleColor.Green
-                    Console.Clear()
-                    Console.CursorVisible = False
+        Private RandomDriver As Random
+        Public Overrides Property ScreensaverName As String = "PersonLookup" Implements IScreensaver.ScreensaverName
 
-                    'Generate names
-                    Dim NumberOfPeople As Integer = random.Next(PersonLookupMinimumNames, PersonLookupMaximumNames)
-                    Dim NamesToLookup As List(Of String) = GenerateNames(NumberOfPeople)
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Loop through names
-                    For Each GeneratedName As String In NamesToLookup
-                        Dim Age As Integer = random.Next(PersonLookupMinimumAgeYears, PersonLookupMaximumAgeYears)
-                        Dim AgeMonth As Integer = random.Next(-12, 12)
-                        Dim AgeDay As Integer = random.Next(-31, 31)
-                        Dim Birthdate As Date = Date.Now.AddYears(-Age).AddMonths(AgeMonth).AddDays(AgeDay)
-                        Dim FinalAge As Integer = New DateTime((Date.Now - Birthdate).Ticks).Year
-                        Dim FirstName As String = GeneratedName.Substring(0, GeneratedName.IndexOf(" "))
-                        Dim LastName As String = GeneratedName.Substring(GeneratedName.IndexOf(" ") + 1)
-
-                        'Print all information
-                        Console.Clear()
-                        WriteWherePlain("  - Name:                {0}", 0, 1, False, GeneratedName)
-                        WriteWherePlain("  - First Name:          {0}", 0, 2, False, FirstName)
-                        WriteWherePlain("  - Last Name / Surname: {0}", 0, 3, False, LastName)
-                        WriteWherePlain("  - Age:                 {0} years old", 0, 4, False, FinalAge)
-                        WriteWherePlain("  - Birth date:          {0}", 0, 5, False, Render(Birthdate))
-
-                        'Lookup delay
-                        SleepNoBlock(PersonLookupDelay, PersonLookup)
-                    Next
-
-                    'Wait until we run the lookup again
-                    SleepNoBlock(PersonLookupLookedUpDelay, PersonLookup)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            PopulateNames()
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Generate names
+            Dim NumberOfPeople As Integer = RandomDriver.Next(PersonLookupMinimumNames, PersonLookupMaximumNames)
+            Dim NamesToLookup As List(Of String) = GenerateNames(NumberOfPeople)
+
+            'Loop through names
+            For Each GeneratedName As String In NamesToLookup
+                Dim Age As Integer = RandomDriver.Next(PersonLookupMinimumAgeYears, PersonLookupMaximumAgeYears)
+                Dim AgeMonth As Integer = RandomDriver.Next(-12, 12)
+                Dim AgeDay As Integer = RandomDriver.Next(-31, 31)
+                Dim Birthdate As Date = Date.Now.AddYears(-Age).AddMonths(AgeMonth).AddDays(AgeDay)
+                Dim FinalAge As Integer = New DateTime((Date.Now - Birthdate).Ticks).Year
+                Dim FirstName As String = GeneratedName.Substring(0, GeneratedName.IndexOf(" "))
+                Dim LastName As String = GeneratedName.Substring(GeneratedName.IndexOf(" ") + 1)
+
+                'Print all information
+                Console.Clear()
+                WriteWherePlain("  - Name:                {0}", 0, 1, False, GeneratedName)
+                WriteWherePlain("  - First Name:          {0}", 0, 2, False, FirstName)
+                WriteWherePlain("  - Last Name / Surname: {0}", 0, 3, False, LastName)
+                WriteWherePlain("  - Age:                 {0} years old", 0, 4, False, FinalAge)
+                WriteWherePlain("  - Birth date:          {0}", 0, 5, False, Render(Birthdate))
+
+                'Lookup delay
+                SleepNoBlock(PersonLookupDelay, ScreensaverDisplayerThread)
+            Next
+
+            'Wait until we run the lookup again
+            SleepNoBlock(PersonLookupLookedUpDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

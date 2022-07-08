@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module MatrixDisplay
+    Public Module MatrixSettings
 
-        Friend Matrix As New KernelThread("Matrix screensaver thread", True, AddressOf Matrix_DoWork)
         Private _matrixDelay As Integer = 1
 
         ''' <summary>
@@ -37,45 +36,47 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Matrix
-        ''' </summary>
-        Sub Matrix_DoWork()
-            Try
-                'Variables
-                Dim random As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.Green
-                Console.Clear()
+    Public Class MatrixDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        Console.Write(CStr(random.Next(2)))
-                    Else
-                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
-                        Console.Clear()
-                    End If
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(MatrixDelay, Matrix)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverName As String = "Matrix" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.Clear()
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                Console.Write(CStr(RandomDriver.Next(2)))
+            Else
+                WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
+                Console.Clear()
+            End If
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(MatrixDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module BouncingTextDisplay
+    Public Module BouncingTextSettings
 
-        Friend BouncingText As New KernelThread("BouncingText screensaver thread", True, AddressOf BouncingText_DoWork)
         Private _bouncingText255Colors As Boolean
         Private _bouncingTextTrueColor As Boolean = True
         Private _bouncingTextDelay As Integer = 10
@@ -212,108 +211,107 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Bouncing Text
-        ''' </summary>
-        Sub BouncingText_DoWork()
-            Try
-                'Variables
-                Dim Direction As String = "BottomRight"
-                Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
-                Dim BouncingColor As Color
+    End Module
 
-                'Preparations
-                SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
-                SetConsoleColor(New Color(BouncingTextForegroundColor))
-                Console.Clear()
+    Public Class BouncingTextDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
+
+        Private Direction As String = "BottomRight"
+        Private RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+        Private CurrentWindowWidth As Integer = Console.WindowWidth
+        Private CurrentWindowHeight As Integer = Console.WindowHeight
+        Private ResizeSyncing As Boolean
+        Private BouncingColor As Color
+
+        Public Overrides Property ScreensaverName As String = "BouncingText" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
+            SetConsoleColor(New Color(BouncingTextForegroundColor))
+            Console.Clear()
+            RowText = Console.WindowHeight / 2
+            ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
+            ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+        End Sub
+
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            Console.Clear()
+
+            'Define the color
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column first letter of text: {0}", ColumnFirstLetter)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column last letter of text: {0}", ColumnLastLetter)
+            If BouncingColor Is Nothing Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Defining color...")
+                BouncingColor = ChangeBouncingTextColor()
+            End If
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
+            Else
+                WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...")
                 RowText = Console.WindowHeight / 2
                 ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
                 ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+            End If
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Console.Clear()
+            'Change the direction of text
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Text is facing {0}.", Direction)
+            If Direction = "BottomRight" Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and column text position")
+                RowText += 1
+                ColumnFirstLetter += 1
+                ColumnLastLetter += 1
+            ElseIf Direction = "BottomLeft" Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column text position")
+                RowText += 1
+                ColumnFirstLetter -= 1
+                ColumnLastLetter -= 1
+            ElseIf Direction = "TopRight" Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column text position")
+                RowText -= 1
+                ColumnFirstLetter += 1
+                ColumnLastLetter += 1
+            ElseIf Direction = "TopLeft" Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and column text position")
+                RowText -= 1
+                ColumnFirstLetter -= 1
+                ColumnLastLetter -= 1
+            End If
 
-#Disable Warning BC42104
-                    'Define the color
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column first letter of text: {0}", ColumnFirstLetter)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column last letter of text: {0}", ColumnLastLetter)
-                    If BouncingColor Is Nothing Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Defining color...")
-                        BouncingColor = ChangeBouncingTextColor()
-                    End If
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
-                    Else
-                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...")
-                        RowText = Console.WindowHeight / 2
-                        ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
-                        ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
-                    End If
-#Enable Warning BC42104
+            'Check to see if the text is on the edge
+            If RowText = Console.WindowHeight - 2 Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the bottom.")
+                Direction = Direction.Replace("Bottom", "Top")
+                BouncingColor = ChangeBouncingTextColor()
+            ElseIf RowText = 1 Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the top.")
+                Direction = Direction.Replace("Top", "Bottom")
+                BouncingColor = ChangeBouncingTextColor()
+            End If
 
-                    'Change the direction of text
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Text is facing {0}.", Direction)
-                    If Direction = "BottomRight" Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and column text position")
-                        RowText += 1
-                        ColumnFirstLetter += 1
-                        ColumnLastLetter += 1
-                    ElseIf Direction = "BottomLeft" Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column text position")
-                        RowText += 1
-                        ColumnFirstLetter -= 1
-                        ColumnLastLetter -= 1
-                    ElseIf Direction = "TopRight" Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column text position")
-                        RowText -= 1
-                        ColumnFirstLetter += 1
-                        ColumnLastLetter += 1
-                    ElseIf Direction = "TopLeft" Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and column text position")
-                        RowText -= 1
-                        ColumnFirstLetter -= 1
-                        ColumnLastLetter -= 1
-                    End If
+            If ColumnLastLetter = Console.WindowWidth - 1 Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the right.")
+                Direction = Direction.Replace("Right", "Left")
+                BouncingColor = ChangeBouncingTextColor()
+            ElseIf ColumnFirstLetter = 1 Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
+                Direction = Direction.Replace("Left", "Right")
+                BouncingColor = ChangeBouncingTextColor()
+            End If
 
-                    'Check to see if the text is on the edge
-                    If RowText = Console.WindowHeight - 2 Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the bottom.")
-                        Direction = Direction.Replace("Bottom", "Top")
-                        BouncingColor = ChangeBouncingTextColor()
-                    ElseIf RowText = 1 Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the top.")
-                        Direction = Direction.Replace("Top", "Bottom")
-                        BouncingColor = ChangeBouncingTextColor()
-                    End If
-
-                    If ColumnLastLetter = Console.WindowWidth - 1 Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the right.")
-                        Direction = Direction.Replace("Right", "Left")
-                        BouncingColor = ChangeBouncingTextColor()
-                    ElseIf ColumnFirstLetter = 1 Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
-                        Direction = Direction.Replace("Left", "Right")
-                        BouncingColor = ChangeBouncingTextColor()
-                    End If
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(BouncingTextDelay, BouncingText)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(BouncingTextDelay, ScreensaverDisplayerThread)
         End Sub
 
         ''' <summary>
@@ -336,5 +334,5 @@ Namespace Misc.Screensaver.Displays
             Return ColorInstance
         End Function
 
-    End Module
+    End Class
 End Namespace

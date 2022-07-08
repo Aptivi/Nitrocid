@@ -20,9 +20,8 @@ Imports KS.TimeDate
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module DateAndTimeDisplay
+    Public Module DateAndTimeSettings
 
-        Friend DateAndTime As New KernelThread("DateAndTime screensaver thread", True, AddressOf DateAndTime_DoWork)
         Private _dateAndTime255Colors As Boolean
         Private _dateAndTimeTrueColor As Boolean = True
         Private _dateAndTimeDelay As Integer = 1000
@@ -176,33 +175,36 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Bouncing Text
-        ''' </summary>
-        Sub DateAndTime_DoWork()
-            Try
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.Clear()
+    End Module
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Console.Clear()
+    Public Class DateAndTimeDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                    'Write date and time
-                    SetConsoleColor(ChangeDateAndTimeColor)
-                    WriteWherePlain(RenderDate, Console.WindowWidth / 2 - RenderDate.Length / 2, Console.WindowHeight / 2 - 1, False)
-                    WriteWherePlain(RenderTime, Console.WindowWidth / 2 - RenderTime.Length / 2, Console.WindowHeight / 2, False)
+        Private RandomDriver As Random
 
-                    'Delay
-                    SleepNoBlock(DateAndTimeDelay, DateAndTime)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverName As String = "DateAndTime" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+        End Sub
+
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            Console.Clear()
+
+            'Write date and time
+            SetConsoleColor(ChangeDateAndTimeColor)
+            WriteWherePlain(RenderDate, Console.WindowWidth / 2 - RenderDate.Length / 2, Console.WindowHeight / 2 - 1, False)
+            WriteWherePlain(RenderTime, Console.WindowWidth / 2 - RenderTime.Length / 2, Console.WindowHeight / 2, False)
+
+            'Delay
+            SleepNoBlock(DateAndTimeDelay, ScreensaverDisplayerThread)
         End Sub
 
         ''' <summary>
@@ -225,5 +227,5 @@ Namespace Misc.Screensaver.Displays
             Return ColorInstance
         End Function
 
-    End Module
+    End Class
 End Namespace

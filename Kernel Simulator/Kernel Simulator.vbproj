@@ -335,6 +335,7 @@
     <Compile Include="Misc\Reflection\StringManipulate.vb" />
     <Compile Include="Misc\Reflection\StringQuery.vb" />
     <Compile Include="Misc\ReportBugPrompt.vb" />
+    <Compile Include="Misc\Screensaver\BaseScreensaver.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverCompiler.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverTools.vb" />
     <Compile Include="Misc\Screensaver\Displays\BeatFader.vb" />
@@ -375,8 +376,10 @@
     <Compile Include="Misc\Screensaver\Displays\Typo.vb" />
     <Compile Include="Misc\Screensaver\Displays\Wipe.vb" />
     <Compile Include="Misc\Screensaver\ICustomSaver.vb" />
+    <Compile Include="Misc\Screensaver\IScreensaver.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\Customized\CustomSaverInfo.vb" />
+    <Compile Include="Misc\Screensaver\ScreensaverDisplayer.vb" />
     <Compile Include="Misc\Splash\ISplash.vb" />
     <Compile Include="Misc\Splash\Splashes\FaderBack.vb" />
     <Compile Include="Misc\Splash\Splashes\Fader.vb" />

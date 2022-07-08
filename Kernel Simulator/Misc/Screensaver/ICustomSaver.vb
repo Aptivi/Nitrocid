@@ -20,6 +20,7 @@ Namespace Misc.Screensaver
     ''' <summary>
     ''' Custom screensaver interface with groups of subs and properties
     ''' </summary>
+    <Obsolete("This custom screensaver interface is obsolete. Use IScreensaver and BaseScreensaver instead.")>
     Public Interface ICustomSaver
         ''' <summary>
         ''' Initializes screensaver

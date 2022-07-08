@@ -40,7 +40,7 @@ Namespace Misc.Screensaver.Customized
                     'Try loading the screensaver
                     Try
                         Wdbg(DebugLevel.W, "{0} is probably a valid screensaver. Generating...", file)
-                        CustomSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                        CustomSaver = GetScreensaverInstanceLegacy(Assembly.LoadFrom(modPath + file))
                         Wdbg(DebugLevel.W, "Is {0} actually a valid screensaver? {1}", file, CustomSaver IsNot Nothing)
                         If CustomSaver IsNot Nothing Then DoneFlag = True
                     Catch ex As ReflectionTypeLoadException
@@ -73,15 +73,16 @@ Namespace Misc.Screensaver.Customized
                             End If
                             Wdbg(DebugLevel.I, "Is screensaver found? {0}", IsFound)
                             If Not IsFound Then
+                                'TODO: Keep ScreensaverBase null for now; we don't have enough time to implement probing it. Maybe keep it to later?
                                 If Not SaverName = "" Then
                                     ReportProgress(DoTranslation("{0} has been initialized properly."), 0, ColTypes.Neutral, SaverName)
                                     Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
-                                    SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
+                                    SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver, Nothing)
                                     CustomSavers.Add(SaverName, SaverInstance)
                                 Else
                                     ReportProgress(DoTranslation("{0} has been initialized properly."), 0, ColTypes.Neutral, file)
                                     Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
-                                    SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
+                                    SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver, Nothing)
                                     CustomSavers.Add(file, SaverInstance)
                                 End If
                             Else

@@ -20,9 +20,8 @@ Imports System.Threading
 Imports KS.TimeDate
 
 Namespace Misc.Screensaver.Displays
-    Public Module ProgressClockDisplay
+    Public Module ProgressClockSettings
 
-        Friend ProgressClock As New KernelThread("ProgressClock screensaver thread", True, AddressOf ProgressClock_DoWork)
         Private _progressClock255Colors As Boolean
         Private _progressClockTrueColor As Boolean = True
         Private _progressClockCycleColors As Boolean = True
@@ -939,151 +938,156 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Progress Clock
-        ''' </summary>
-        Sub ProgressClock_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
+    Public Class ProgressClockDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Console.Clear()
-                    'Prepare colors
-                    Dim RedColorNumHours, GreenColorNumHours, BlueColorNumHours As Integer
-                    Dim RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes As Integer
-                    Dim RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds As Integer
-                    Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
-                    Dim ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum As Integer
-                    Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer
-                    Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
-                    Dim ColorStorageHours, ColorStorageMinutes, ColorStorageSeconds, ColorStorage As Color
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
+        Private CurrentTicks As Long
 
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks)
-                    If ProgressClockCycleColors Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
-                        If CurrentTicks >= ProgressClockCycleColorsTicks Then
-                            If ProgressClockTrueColor Then
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.")
-                                RedColorNumHours = RandomDriver.Next(ProgressClockMinimumRedColorLevelHours, ProgressClockMaximumRedColorLevelHours)
-                                GreenColorNumHours = RandomDriver.Next(ProgressClockMinimumGreenColorLevelHours, ProgressClockMaximumGreenColorLevelHours)
-                                BlueColorNumHours = RandomDriver.Next(ProgressClockMinimumBlueColorLevelHours, ProgressClockMaximumBlueColorLevelHours)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
-                                RedColorNumMinutes = RandomDriver.Next(ProgressClockMinimumRedColorLevelMinutes, ProgressClockMaximumRedColorLevelMinutes)
-                                GreenColorNumMinutes = RandomDriver.Next(ProgressClockMinimumGreenColorLevelMinutes, ProgressClockMaximumGreenColorLevelMinutes)
-                                BlueColorNumMinutes = RandomDriver.Next(ProgressClockMinimumBlueColorLevelMinutes, ProgressClockMaximumBlueColorLevelMinutes)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
-                                RedColorNumSeconds = RandomDriver.Next(ProgressClockMinimumRedColorLevelSeconds, ProgressClockMaximumRedColorLevelSeconds)
-                                GreenColorNumSeconds = RandomDriver.Next(ProgressClockMinimumGreenColorLevelSeconds, ProgressClockMaximumGreenColorLevelSeconds)
-                                BlueColorNumSeconds = RandomDriver.Next(ProgressClockMinimumBlueColorLevelSeconds, ProgressClockMaximumBlueColorLevelSeconds)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
-                                RedColorNum = RandomDriver.Next(ProgressClockMinimumRedColorLevel, ProgressClockMaximumRedColorLevel)
-                                GreenColorNum = RandomDriver.Next(ProgressClockMinimumGreenColorLevel, ProgressClockMaximumGreenColorLevel)
-                                BlueColorNum = RandomDriver.Next(ProgressClockMinimumBlueColorLevel, ProgressClockMaximumBlueColorLevel)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                                ColorStorageHours = New Color(RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
-                                ColorStorageMinutes = New Color(RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
-                                ColorStorageSeconds = New Color(RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
-                                ColorStorage = New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                            Else
-                                ColorNumHours = RandomDriver.Next(ProgressClockMinimumColorLevelHours, ProgressClockMaximumColorLevelHours)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) ({0})", ColorNumHours)
-                                ColorNumMinutes = RandomDriver.Next(ProgressClockMinimumColorLevelMinutes, ProgressClockMaximumColorLevelMinutes)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) ({0})", ColorNumMinutes)
-                                ColorNumSeconds = RandomDriver.Next(ProgressClockMinimumColorLevelSeconds, ProgressClockMaximumColorLevelSeconds)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) ({0})", ColorNumSeconds)
-                                ColorNum = RandomDriver.Next(ProgressClockMinimumColorLevel, ProgressClockMaximumColorLevel)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                                ColorStorageHours = New Color(ColorNumHours)
-                                ColorStorageMinutes = New Color(ColorNumMinutes)
-                                ColorStorageSeconds = New Color(ColorNumSeconds)
-                                ColorStorage = New Color(ColorNum)
-                            End If
-                            CurrentTicks = 0
-                        End If
-                    Else
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors...")
-                        ColorStorageHours = New Color(ProgressClockHoursProgressColor)
-                        ColorStorageMinutes = New Color(ProgressClockMinutesProgressColor)
-                        ColorStorageSeconds = New Color(ProgressClockSecondsProgressColor)
-                        ColorStorage = New Color(ProgressClockProgressColor)
-                    End If
-                    ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
-                    ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
-                    ProgressFillPositionSeconds = CInt(Console.WindowHeight / 2) + 8
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
-                    InformationPositionHours = CInt(Console.WindowHeight / 2) - 12
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours)
-                    InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes)
-                    InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds)
+        Public Overrides Property ScreensaverName As String = "ProgressClock" Implements IScreensaver.ScreensaverName
 
-#Disable Warning BC42104
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        'Hours
-                        WriteWhere(ProgressClockLowerLeftCornerCharHours + ProgressClockLowerFrameCharHours.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharHours, 4, CInt(Console.WindowHeight / 2) - 9, True, ColorStorageHours)         'Bottom of Hours
-                        WriteWhere(ProgressClockLeftFrameCharHours + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharHours, 4, ProgressFillPositionHours, True, ColorStorageHours)                                                           'Medium of Hours
-                        WriteWhere(ProgressClockUpperLeftCornerCharHours + ProgressClockUpperFrameCharHours.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharHours, 4, CInt(Console.WindowHeight / 2) - 11, True, ColorStorageHours)        'Top of Hours
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                        'Minutes
-                        WriteWhere(ProgressClockLowerLeftCornerCharMinutes + ProgressClockLowerFrameCharMinutes.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharMinutes, 4, CInt(Console.WindowHeight / 2), True, ColorStorageMinutes)     'Bottom of Minutes
-                        WriteWhere(ProgressClockLeftFrameCharMinutes + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharMinutes, 4, ProgressFillPositionMinutes, True, ColorStorageMinutes)                                                   'Medium of Minutes
-                        WriteWhere(ProgressClockUpperLeftCornerCharMinutes + ProgressClockUpperFrameCharMinutes.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharMinutes, 4, CInt(Console.WindowHeight / 2) - 2, True, ColorStorageMinutes) 'Top of Minutes
-
-                        'Seconds
-                        WriteWhere(ProgressClockLowerLeftCornerCharSeconds + ProgressClockLowerFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 9, True, ColorStorageSeconds) 'Bottom of Seconds
-                        WriteWhere(ProgressClockLeftFrameCharSeconds + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharSeconds, 4, ProgressFillPositionSeconds, True, ColorStorageSeconds)                                                   'Medium of Seconds
-                        WriteWhere(ProgressClockUpperLeftCornerCharSeconds + ProgressClockUpperFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 7, True, ColorStorageSeconds) 'Top of Seconds
-
-                        'Fill progress for hours, minutes, and seconds
-                        If Not KernelDateTime.Hour = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, True, Color.Empty, ColorStorageHours)
-                        If Not KernelDateTime.Minute = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, True, Color.Empty, ColorStorageMinutes)
-                        If Not KernelDateTime.Second = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, True, Color.Empty, ColorStorageSeconds)
-
-                        'Print information
-                        If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
-                            WriteWhere(ProbePlaces(ProgressClockInfoTextHours), 4, InformationPositionHours, True, ColorStorageHours, KernelDateTime.Hour)
-                        Else
-                            WriteWhere("H: {0}/24", 4, InformationPositionHours, True, ColorStorageHours, KernelDateTime.Hour)
-                        End If
-                        If Not String.IsNullOrEmpty(ProgressClockInfoTextMinutes) Then
-                            WriteWhere(ProbePlaces(ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, True, ColorStorageMinutes, KernelDateTime.Minute)
-                        Else
-                            WriteWhere("M: {0}/60", 4, InformationPositionMinutes, True, ColorStorageMinutes, KernelDateTime.Minute)
-                        End If
-                        If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
-                            WriteWhere(ProbePlaces(ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, True, ColorStorageSeconds, KernelDateTime.Second)
-                        Else
-                            WriteWhere("S: {0}/60", 4, InformationPositionSeconds, True, ColorStorageSeconds, KernelDateTime.Second)
-                        End If
-
-                        'Print date information
-                        WriteWhere(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorStorageSeconds)
-                    End If
-                    If ProgressClockCycleColors Then CurrentTicks += 1
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(ProgressClockDelay, ProgressClock)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            CurrentTicks = ProgressClockCycleColorsTicks
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            Console.Clear()
+
+            'Prepare colors
+            Dim RedColorNumHours, GreenColorNumHours, BlueColorNumHours As Integer
+            Dim RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes As Integer
+            Dim RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds As Integer
+            Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
+            Dim ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum As Integer
+            Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer
+            Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
+            Dim ColorStorageHours, ColorStorageMinutes, ColorStorageSeconds, ColorStorage As Color
+
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks)
+            If ProgressClockCycleColors Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
+                If CurrentTicks >= ProgressClockCycleColorsTicks Then
+                    If ProgressClockTrueColor Then
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.")
+                        RedColorNumHours = RandomDriver.Next(ProgressClockMinimumRedColorLevelHours, ProgressClockMaximumRedColorLevelHours)
+                        GreenColorNumHours = RandomDriver.Next(ProgressClockMinimumGreenColorLevelHours, ProgressClockMaximumGreenColorLevelHours)
+                        BlueColorNumHours = RandomDriver.Next(ProgressClockMinimumBlueColorLevelHours, ProgressClockMaximumBlueColorLevelHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
+                        RedColorNumMinutes = RandomDriver.Next(ProgressClockMinimumRedColorLevelMinutes, ProgressClockMaximumRedColorLevelMinutes)
+                        GreenColorNumMinutes = RandomDriver.Next(ProgressClockMinimumGreenColorLevelMinutes, ProgressClockMaximumGreenColorLevelMinutes)
+                        BlueColorNumMinutes = RandomDriver.Next(ProgressClockMinimumBlueColorLevelMinutes, ProgressClockMaximumBlueColorLevelMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
+                        RedColorNumSeconds = RandomDriver.Next(ProgressClockMinimumRedColorLevelSeconds, ProgressClockMaximumRedColorLevelSeconds)
+                        GreenColorNumSeconds = RandomDriver.Next(ProgressClockMinimumGreenColorLevelSeconds, ProgressClockMaximumGreenColorLevelSeconds)
+                        BlueColorNumSeconds = RandomDriver.Next(ProgressClockMinimumBlueColorLevelSeconds, ProgressClockMaximumBlueColorLevelSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
+                        RedColorNum = RandomDriver.Next(ProgressClockMinimumRedColorLevel, ProgressClockMaximumRedColorLevel)
+                        GreenColorNum = RandomDriver.Next(ProgressClockMinimumGreenColorLevel, ProgressClockMaximumGreenColorLevel)
+                        BlueColorNum = RandomDriver.Next(ProgressClockMinimumBlueColorLevel, ProgressClockMaximumBlueColorLevel)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        ColorStorageHours = New Color(RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
+                        ColorStorageMinutes = New Color(RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
+                        ColorStorageSeconds = New Color(RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
+                        ColorStorage = New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                    Else
+                        ColorNumHours = RandomDriver.Next(ProgressClockMinimumColorLevelHours, ProgressClockMaximumColorLevelHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) ({0})", ColorNumHours)
+                        ColorNumMinutes = RandomDriver.Next(ProgressClockMinimumColorLevelMinutes, ProgressClockMaximumColorLevelMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) ({0})", ColorNumMinutes)
+                        ColorNumSeconds = RandomDriver.Next(ProgressClockMinimumColorLevelSeconds, ProgressClockMaximumColorLevelSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) ({0})", ColorNumSeconds)
+                        ColorNum = RandomDriver.Next(ProgressClockMinimumColorLevel, ProgressClockMaximumColorLevel)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                        ColorStorageHours = New Color(ColorNumHours)
+                        ColorStorageMinutes = New Color(ColorNumMinutes)
+                        ColorStorageSeconds = New Color(ColorNumSeconds)
+                        ColorStorage = New Color(ColorNum)
+                    End If
+                    CurrentTicks = 0
+                End If
+            Else
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors...")
+                ColorStorageHours = New Color(ProgressClockHoursProgressColor)
+                ColorStorageMinutes = New Color(ProgressClockMinutesProgressColor)
+                ColorStorageSeconds = New Color(ProgressClockSecondsProgressColor)
+                ColorStorage = New Color(ProgressClockProgressColor)
+            End If
+            ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
+            ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
+            ProgressFillPositionSeconds = CInt(Console.WindowHeight / 2) + 8
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
+            InformationPositionHours = CInt(Console.WindowHeight / 2) - 12
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours)
+            InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes)
+            InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds)
+
+#Disable Warning BC42104
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                'Hours
+                WriteWhere(ProgressClockLowerLeftCornerCharHours + ProgressClockLowerFrameCharHours.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharHours, 4, CInt(Console.WindowHeight / 2) - 9, True, ColorStorageHours)         'Bottom of Hours
+                WriteWhere(ProgressClockLeftFrameCharHours + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharHours, 4, ProgressFillPositionHours, True, ColorStorageHours)                                                           'Medium of Hours
+                WriteWhere(ProgressClockUpperLeftCornerCharHours + ProgressClockUpperFrameCharHours.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharHours, 4, CInt(Console.WindowHeight / 2) - 11, True, ColorStorageHours)        'Top of Hours
+
+                'Minutes
+                WriteWhere(ProgressClockLowerLeftCornerCharMinutes + ProgressClockLowerFrameCharMinutes.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharMinutes, 4, CInt(Console.WindowHeight / 2), True, ColorStorageMinutes)     'Bottom of Minutes
+                WriteWhere(ProgressClockLeftFrameCharMinutes + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharMinutes, 4, ProgressFillPositionMinutes, True, ColorStorageMinutes)                                                   'Medium of Minutes
+                WriteWhere(ProgressClockUpperLeftCornerCharMinutes + ProgressClockUpperFrameCharMinutes.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharMinutes, 4, CInt(Console.WindowHeight / 2) - 2, True, ColorStorageMinutes) 'Top of Minutes
+
+                'Seconds
+                WriteWhere(ProgressClockLowerLeftCornerCharSeconds + ProgressClockLowerFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockLowerRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 9, True, ColorStorageSeconds) 'Bottom of Seconds
+                WriteWhere(ProgressClockLeftFrameCharSeconds + " ".Repeat(Console.WindowWidth - 10) + ProgressClockRightFrameCharSeconds, 4, ProgressFillPositionSeconds, True, ColorStorageSeconds)                                                   'Medium of Seconds
+                WriteWhere(ProgressClockUpperLeftCornerCharSeconds + ProgressClockUpperFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 7, True, ColorStorageSeconds) 'Top of Seconds
+
+                'Fill progress for hours, minutes, and seconds
+                If Not KernelDateTime.Hour = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, True, Color.Empty, ColorStorageHours)
+                If Not KernelDateTime.Minute = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, True, Color.Empty, ColorStorageMinutes)
+                If Not KernelDateTime.Second = 0 Then WriteWhere(" ".Repeat(PercentRepeat(KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, True, Color.Empty, ColorStorageSeconds)
+
+                'Print information
+                If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
+                    WriteWhere(ProbePlaces(ProgressClockInfoTextHours), 4, InformationPositionHours, True, ColorStorageHours, KernelDateTime.Hour)
+                Else
+                    WriteWhere("H: {0}/24", 4, InformationPositionHours, True, ColorStorageHours, KernelDateTime.Hour)
+                End If
+                If Not String.IsNullOrEmpty(ProgressClockInfoTextMinutes) Then
+                    WriteWhere(ProbePlaces(ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, True, ColorStorageMinutes, KernelDateTime.Minute)
+                Else
+                    WriteWhere("M: {0}/60", 4, InformationPositionMinutes, True, ColorStorageMinutes, KernelDateTime.Minute)
+                End If
+                If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
+                    WriteWhere(ProbePlaces(ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, True, ColorStorageSeconds, KernelDateTime.Second)
+                Else
+                    WriteWhere("S: {0}/60", 4, InformationPositionSeconds, True, ColorStorageSeconds, KernelDateTime.Second)
+                End If
+
+                'Print date information
+                WriteWhere(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorStorageSeconds)
+            End If
+            If ProgressClockCycleColors Then CurrentTicks += 1
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(ProgressClockDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

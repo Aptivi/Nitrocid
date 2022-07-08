@@ -17,9 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Misc.Screensaver.Displays
-    Public Module GlitterMatrixDisplay
+    Public Module GlitterMatrixSettings
 
-        Friend GlitterMatrix As New KernelThread("GlitterMatrix screensaver thread", True, AddressOf GlitterMatrix_DoWork)
         Private _glitterMatrixDelay As Integer = 1
         Private _glitterMatrixBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
         Private _glitterMatrixForegroundColor As String = New Color(ConsoleColor.Green).PlainSequence
@@ -59,44 +58,51 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Glitter Matrix
-        ''' </summary>
-        Sub GlitterMatrix_DoWork()
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+    End Module
+    Public Class GlitterMatrixDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-            'Preparations
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
+
+        Public Overrides Property ScreensaverName As String = "GlitterMatrix" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
             SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
             SetConsoleColor(New Color(GlitterMatrixForegroundColor))
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
-                Console.SetCursorPosition(Left, Top)
-                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                If Not ResizeSyncing Then
-                    Console.Write(CStr(RandomDriver.Next(2)))
-                Else
-                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...")
-                    Console.Clear()
-                End If
-
-                'Reset resize sync
-                ResizeSyncing = False
-                CurrentWindowWidth = Console.WindowWidth
-                CurrentWindowHeight = Console.WindowHeight
-                SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
-            Loop
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+            Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
+            Console.SetCursorPosition(Left, Top)
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                Console.Write(CStr(RandomDriver.Next(2)))
+            Else
+                WdbgConditional(ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...")
+                Console.Clear()
+            End If
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(GlitterMatrixDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

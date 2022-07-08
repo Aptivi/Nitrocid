@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module NoiseDisplay
+    Public Module NoiseSettings
 
-        Friend Noise As New KernelThread("Noise screensaver thread", True, AddressOf Noise_DoWork)
         Private _noiseNewScreenDelay As Integer = 5000
         Private _noiseDensity As Integer = 40
 
@@ -51,55 +50,60 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Noise
-        ''' </summary>
-        Sub Noise_DoWork()
-            Try
-                'Variables
-                Dim random As New Random()
-                Dim NoiseDense As Double = If(NoiseDensity > 100, 100, NoiseDensity) / 100
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Screensaver logic
-                Do While True
-                    Console.BackgroundColor = ConsoleColor.DarkGray
-                    Console.CursorVisible = False
-                    Console.Clear()
-                    Console.BackgroundColor = ConsoleColor.Black
+    Public Class NoiseDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                    'Select random positions to generate noise
-                    Dim AmountOfBlocks As Integer = Console.WindowWidth * Console.WindowHeight
-                    Dim BlocksToCover As Integer = AmountOfBlocks * NoiseDense
-                    Dim CoveredBlocks As New ArrayList
-                    Do Until CoveredBlocks.Count = BlocksToCover Or ResizeSyncing
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            Dim CoverX As Integer = random.Next(Console.WindowWidth)
-                            Dim CoverY As Integer = random.Next(Console.WindowHeight)
-                            Console.SetCursorPosition(CoverX, CoverY)
-                            Console.Write(" ")
-                            If Not CoveredBlocks.Contains(CStr(CoverX) + ", " + CStr(CoverY)) Then CoveredBlocks.Add(CStr(CoverX) + ", " + CStr(CoverY))
-                        Else
-                            'We're resizing.
-                            Exit Do
-                        End If
-                    Loop
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(NoiseNewScreenDelay, Noise)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverName As String = "Noise" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim NoiseDense As Double = If(NoiseDensity > 100, 100, NoiseDensity) / 100
+
+            Console.BackgroundColor = ConsoleColor.DarkGray
+            Console.CursorVisible = False
+            Console.Clear()
+            Console.BackgroundColor = ConsoleColor.Black
+
+            'Select random positions to generate noise
+            Dim AmountOfBlocks As Integer = Console.WindowWidth * Console.WindowHeight
+            Dim BlocksToCover As Integer = AmountOfBlocks * NoiseDense
+            Dim CoveredBlocks As New ArrayList
+            Do Until CoveredBlocks.Count = BlocksToCover Or ResizeSyncing
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    Dim CoverX As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim CoverY As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(CoverX, CoverY)
+                    Console.Write(" ")
+                    If Not CoveredBlocks.Contains(CStr(CoverX) + ", " + CStr(CoverY)) Then CoveredBlocks.Add(CStr(CoverX) + ", " + CStr(CoverY))
+                Else
+                    'We're resizing.
+                    Exit Do
+                End If
+            Loop
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(NoiseNewScreenDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

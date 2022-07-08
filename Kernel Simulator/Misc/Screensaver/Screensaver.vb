@@ -37,44 +37,45 @@ Namespace Misc.Screensaver
         Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
 
         'Private variables
-        Friend Screensavers As New Dictionary(Of String, KernelThread) From {{"barrot", BarRot},
-                                                                             {"beatfader", BeatFader},
-                                                                             {"bouncingblock", BouncingBlock},
-                                                                             {"bouncingtext", BouncingText},
-                                                                             {"colormix", ColorMix},
-                                                                             {"dateandtime", DateAndTime},
-                                                                             {"disco", Disco},
-                                                                             {"dissolve", Dissolve},
-                                                                             {"fader", Fader},
-                                                                             {"faderback", FaderBack},
-                                                                             {"fallingline", FallingLine},
-                                                                             {"figlet", Figlet},
-                                                                             {"fireworks", Fireworks},
-                                                                             {"flashcolor", FlashColor},
-                                                                             {"flashtext", FlashText},
-                                                                             {"glitch", Glitch},
-                                                                             {"glittercolor", GlitterColor},
-                                                                             {"glittermatrix", GlitterMatrix},
-                                                                             {"lighter", Lighter},
-                                                                             {"lines", Lines},
-                                                                             {"linotypo", Linotypo},
-                                                                             {"personlookup", PersonLookup},
-                                                                             {"marquee", Marquee},
-                                                                             {"matrix", Matrix},
-                                                                             {"noise", Noise},
-                                                                             {"plain", Plain},
-                                                                             {"progressclock", ProgressClock},
-                                                                             {"ramp", Ramp},
-                                                                             {"random", RandomSaver},
-                                                                             {"snaker", Snaker},
-                                                                             {"spotwrite", SpotWrite},
-                                                                             {"stackbox", StackBox},
-                                                                             {"typewriter", Typewriter},
-                                                                             {"typo", Typo},
-                                                                             {"windowslogo", WindowsLogo},
-                                                                             {"wipe", Wipe}}
+        Friend Screensavers As New Dictionary(Of String, BaseScreensaver) From {
+            {"barrot", New BarRotDisplay()},
+            {"beatfader", New BeatFaderDisplay()},
+            {"bouncingblock", New BouncingBlockDisplay()},
+            {"bouncingtext", New BouncingTextDisplay()},
+            {"colormix", New ColorMixDisplay()},
+            {"dateandtime", New DateAndTimeDisplay()},
+            {"disco", New DiscoDisplay()},
+            {"dissolve", New DissolveDisplay()},
+            {"fader", New FaderDisplay()},
+            {"faderback", New FaderBackDisplay()},
+            {"fallingline", New FallingLineDisplay()},
+            {"figlet", New FigletDisplay()},
+            {"fireworks", New FireworksDisplay()},
+            {"flashcolor", New FlashColorDisplay()},
+            {"flashtext", New FlashTextDisplay()},
+            {"glitch", New GlitchDisplay()},
+            {"glittercolor", New GlitterColorDisplay()},
+            {"glittermatrix", New GlitterMatrixDisplay()},
+            {"lighter", New LighterDisplay()},
+            {"lines", New LinesDisplay()},
+            {"linotypo", New LinotypoDisplay()},
+            {"marquee", New MarqueeDisplay()},
+            {"matrix", New MatrixDisplay()},
+            {"noise", New NoiseDisplay()},
+            {"personlookup", New PersonLookupDisplay()},
+            {"plain", New PlainDisplay()},
+            {"progressclock", New ProgressClockDisplay()},
+            {"ramp", New RampDisplay()},
+            {"random", New RandomSaverDisplay()},
+            {"snaker", New SnakerDisplay()},
+            {"spotwrite", New SpotWriteDisplay()},
+            {"stackbox", New StackBoxDisplay()},
+            {"typewriter", New TypewriterDisplay()},
+            {"typo", New TypoDisplay()},
+            {"windowslogo", New WindowsLogoDisplay()},
+            {"wipe", New WipeDisplay()}
+        }
         Friend SaverAutoReset As New AutoResetEvent(False)
-        Friend RandomSaverAutoReset As New AutoResetEvent(False)
         Friend Timeout As New KernelThread("Screensaver timeout thread", False, AddressOf HandleTimeout)
 
         ''' <summary>
@@ -119,21 +120,19 @@ Namespace Misc.Screensaver
                 Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
                 If Screensavers.ContainsKey(saver.ToLower()) Then
                     saver = saver.ToLower()
-                    Screensavers(saver).Start()
+                    Dim BaseSaver As BaseScreensaver = Screensavers(saver)
+                    ScreensaverDisplayerThread.Start(BaseSaver)
                     Wdbg(DebugLevel.I, "{0} started", saver)
                     DetectKeypress()
-                    Screensavers(saver).Stop()
+                    ScreensaverDisplayerThread.Stop()
                     SaverAutoReset.WaitOne()
-
-                    'TODO: Implement a better way to treat the "Random" screensaver
-                    If saver = "random" Then RandomSaverAutoReset.WaitOne()
                 ElseIf CustomSavers.ContainsKey(saver) Then
                     'Only one custom screensaver can be used.
                     CustomSaver = CustomSavers(saver).Screensaver
-                    Custom.Start()
+                    ScreensaverDisplayerThread.Start(New CustomDisplay())
                     Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                     DetectKeypress()
-                    Custom.Stop()
+                    ScreensaverDisplayerThread.Stop()
                     SaverAutoReset.WaitOne()
                 Else
                     Write(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)
@@ -190,9 +189,20 @@ Namespace Misc.Screensaver
         ''' Gets a screensaver instance from loaded assembly
         ''' </summary>
         ''' <param name="Assembly">An assembly</param>
-        Public Function GetScreensaverInstance(Assembly As Assembly) As ICustomSaver
+        <Obsolete("Makes use of ICustomSaver, which is deprecated.")>
+        Public Function GetScreensaverInstanceLegacy(Assembly As Assembly) As ICustomSaver
             For Each t As Type In Assembly.GetTypes()
                 If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), ICustomSaver)
+            Next
+        End Function
+
+        ''' <summary>
+        ''' Gets a screensaver instance from loaded assembly
+        ''' </summary>
+        ''' <param name="Assembly">An assembly</param>
+        Public Function GetScreensaverInstance(Assembly As Assembly) As BaseScreensaver
+            For Each t As Type In Assembly.GetTypes()
+                If t.GetInterface(GetType(IScreensaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), BaseScreensaver)
             Next
         End Function
 
@@ -218,7 +228,6 @@ Namespace Misc.Screensaver
             Console.CursorVisible = True
             Wdbg(DebugLevel.I, "All clean. Screensaver stopped.")
             SaverAutoReset.Set()
-            RandomSaverAutoReset.Set()
         End Sub
 
     End Module

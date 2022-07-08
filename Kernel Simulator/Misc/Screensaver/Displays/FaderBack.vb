@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module FaderBackDisplay
+    Public Module FaderBackSettings
 
-        Friend FaderBack As New KernelThread("FaderBack screensaver thread", True, AddressOf FaderBack_DoWork)
         Private _faderBackDelay As Integer = 10
         Private _faderBackFadeOutDelay As Integer = 3000
         Private _faderBackMaxSteps As Integer = 25
@@ -147,89 +146,87 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of FaderBack
-        ''' </summary>
-        Sub FaderBack_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim RedColorNum As Integer = RandomDriver.Next(FaderBackMinimumRedColorLevel, FaderBackMaximumRedColorLevel)
-                Dim GreenColorNum As Integer = RandomDriver.Next(FaderBackMinimumGreenColorLevel, FaderBackMaximumGreenColorLevel)
-                Dim BlueColorNum As Integer = RandomDriver.Next(FaderBackMinimumBlueColorLevel, FaderBackMaximumBlueColorLevel)
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.Clear()
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    Public Class FaderBackDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    'Set thresholds
-                    Dim ThresholdRed As Double = RedColorNum / FaderBackMaxSteps
-                    Dim ThresholdGreen As Double = GreenColorNum / FaderBackMaxSteps
-                    Dim ThresholdBlue As Double = BlueColorNum / FaderBackMaxSteps
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2}) using {3} steps", ThresholdRed, ThresholdGreen, ThresholdBlue, FaderBackMaxSteps)
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Fade in
-                    Dim CurrentColorRedIn As Integer = 0
-                    Dim CurrentColorGreenIn As Integer = 0
-                    Dim CurrentColorBlueIn As Integer = 0
-                    For CurrentStep As Integer = 1 To FaderBackMaxSteps
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If ResizeSyncing Then Exit For
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
-                        SleepNoBlock(FaderBackDelay, FaderBack)
-                        CurrentColorRedIn += ThresholdRed
-                        CurrentColorGreenIn += ThresholdGreen
-                        CurrentColorBlueIn += ThresholdBlue
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
-                        SetConsoleColor(New Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), True)
-                        Console.Clear()
-                    Next
+        Public Overrides Property ScreensaverName As String = "FaderBack" Implements IScreensaver.ScreensaverName
 
-                    'Wait until fade out
-                    If Not ResizeSyncing Then
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderBackFadeOutDelay)
-                        SleepNoBlock(FaderBackFadeOutDelay, FaderBack)
-                    End If
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Fade out
-                    For CurrentStep As Integer = 1 To FaderBackMaxSteps
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If ResizeSyncing Then Exit For
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
-                        SleepNoBlock(FaderBackDelay, FaderBack)
-                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
-                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
-                        SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
-                        Console.Clear()
-                    Next
-
-                    'Select new color
-                    RedColorNum = RandomDriver.Next(FaderBackMinimumRedColorLevel, FaderBackMaximumRedColorLevel)
-                    GreenColorNum = RandomDriver.Next(FaderBackMinimumGreenColorLevel, FaderBackMaximumGreenColorLevel)
-                    BlueColorNum = RandomDriver.Next(FaderBackMinimumBlueColorLevel, FaderBackMaximumBlueColorLevel)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(FaderBackDelay, FaderBack)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim RedColorNum As Integer = RandomDriver.Next(FaderBackMinimumRedColorLevel, FaderBackMaximumRedColorLevel)
+            Dim GreenColorNum As Integer = RandomDriver.Next(FaderBackMinimumGreenColorLevel, FaderBackMaximumGreenColorLevel)
+            Dim BlueColorNum As Integer = RandomDriver.Next(FaderBackMinimumBlueColorLevel, FaderBackMaximumBlueColorLevel)
+
+            Console.CursorVisible = False
+
+            'Set thresholds
+            Dim ThresholdRed As Double = RedColorNum / FaderBackMaxSteps
+            Dim ThresholdGreen As Double = GreenColorNum / FaderBackMaxSteps
+            Dim ThresholdBlue As Double = BlueColorNum / FaderBackMaxSteps
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2}) using {3} steps", ThresholdRed, ThresholdGreen, ThresholdBlue, FaderBackMaxSteps)
+
+            'Fade in
+            Dim CurrentColorRedIn As Integer = 0
+            Dim CurrentColorGreenIn As Integer = 0
+            Dim CurrentColorBlueIn As Integer = 0
+            For CurrentStep As Integer = 1 To FaderBackMaxSteps
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If ResizeSyncing Then Exit For
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
+                SleepNoBlock(FaderBackDelay, ScreensaverDisplayerThread)
+                CurrentColorRedIn += ThresholdRed
+                CurrentColorGreenIn += ThresholdGreen
+                CurrentColorBlueIn += ThresholdBlue
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
+                SetConsoleColor(New Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), True)
+                Console.Clear()
+            Next
+
+            'Wait until fade out
+            If Not ResizeSyncing Then
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderBackFadeOutDelay)
+                SleepNoBlock(FaderBackFadeOutDelay, ScreensaverDisplayerThread)
+            End If
+
+            'Fade out
+            For CurrentStep As Integer = 1 To FaderBackMaxSteps
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If ResizeSyncing Then Exit For
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
+                SleepNoBlock(FaderBackDelay, ScreensaverDisplayerThread)
+                Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
+                SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
+                Console.Clear()
+            Next
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(FaderBackDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module ColorMixDisplay
+    Public Module ColorMixSettings
 
-        Friend ColorMix As New KernelThread("ColorMix screensaver thread", True, AddressOf ColorMix_DoWork)
         Private _colorMix255Colors As Boolean
         Private _colorMixTrueColor As Boolean = True
         Private _colorMixDelay As Integer = 1
@@ -187,66 +186,68 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of ColorMix
-        ''' </summary>
-        Sub ColorMix_DoWork()
-            Try
-                'Variables
-                Dim colorrand As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
-                Console.ForegroundColor = ConsoleColor.White
-                Console.Clear()
+    Public Class ColorMixDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    'Set colors
-                    If ColorMixTrueColor Then
-                        Dim RedColorNum As Integer = colorrand.Next(ColorMixMinimumRedColorLevel, ColorMixMaximumRedColorLevel)
-                        Dim GreenColorNum As Integer = colorrand.Next(ColorMixMinimumGreenColorLevel, ColorMixMaximumGreenColorLevel)
-                        Dim BlueColorNum As Integer = colorrand.Next(ColorMixMinimumBlueColorLevel, ColorMixMaximumBlueColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            SetConsoleColor(ColorStorage, True)
-                            Console.Write(" ")
-                        End If
-                    ElseIf ColorMix255Colors Then
-                        Dim ColorNum As Integer = colorrand.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            SetConsoleColor(New Color(ColorNum), True)
-                            Console.Write(" ")
-                        End If
-                    Else
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            Console.BackgroundColor = CType(colorrand.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel), ConsoleColor)
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                            Console.Write(" ")
-                        End If
-                    End If
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(ColorMixDelay, ColorMix)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverName As String = "ColorMix" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            'Set colors
+            If ColorMixTrueColor Then
+                Dim RedColorNum As Integer = RandomDriver.Next(ColorMixMinimumRedColorLevel, ColorMixMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(ColorMixMinimumGreenColorLevel, ColorMixMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(ColorMixMinimumBlueColorLevel, ColorMixMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    SetConsoleColor(ColorStorage, True)
+                    Console.Write(" ")
+                End If
+            ElseIf ColorMix255Colors Then
+                Dim ColorNum As Integer = RandomDriver.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    SetConsoleColor(New Color(ColorNum), True)
+                    Console.Write(" ")
+                End If
+            Else
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    Console.BackgroundColor = CType(RandomDriver.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel), ConsoleColor)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                    Console.Write(" ")
+                End If
+            End If
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(ColorMixDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

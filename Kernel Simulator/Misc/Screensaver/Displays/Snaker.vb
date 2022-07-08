@@ -20,9 +20,8 @@ Imports System.Threading
 Imports KS.Misc.Games
 
 Namespace Misc.Screensaver.Displays
-    Public Module SnakerDisplay
+    Public Module SnakerSettings
 
-        Friend Snaker As New KernelThread("Snaker screensaver thread", True, AddressOf Snaker_DoWork)
         Private _snaker255Colors As Boolean
         Private _snakerTrueColor As Boolean = True
         Private _snakerDelay As Integer = 100
@@ -189,71 +188,28 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Snaker
-        ''' </summary>
-        Sub Snaker_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.White
-                Console.Clear()
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    Public Class SnakerDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    InitializeSnaker(True)
+        Public Overrides Property ScreensaverName As String = "Snaker" Implements IScreensaver.ScreensaverName
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(SnakerDelay, Snaker)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-        ''' <summary>
-        ''' Changes the snake color
-        ''' </summary>
-        Function ChangeSnakeColor() As Color
-            Dim RandomDriver As New Random()
-            Dim esc As Char = GetEsc()
-            If SnakerTrueColor Then
-                Dim RedColorNum As Integer = RandomDriver.Next(SnakerMinimumRedColorLevel, SnakerMaximumRedColorLevel)
-                Dim GreenColorNum As Integer = RandomDriver.Next(SnakerMinimumGreenColorLevel, SnakerMaximumGreenColorLevel)
-                Dim BlueColorNum As Integer = RandomDriver.Next(SnakerMinimumBlueColorLevel, SnakerMaximumBlueColorLevel)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                Return New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}")
-            ElseIf Snaker255Colors Then
-                Dim ColorNum As Integer = RandomDriver.Next(SnakerMinimumColorLevel, SnakerMaximumColorLevel)
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                Return New Color(ColorNum)
-            Else
-                Console.BackgroundColor = colors(RandomDriver.Next(SnakerMinimumColorLevel, SnakerMaximumColorLevel))
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-            End If
-        End Function
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            InitializeSnaker(True)
+            SleepNoBlock(SnakerDelay, ScreensaverDisplayerThread)
+        End Sub
 
-        ''' <summary>
-        ''' Where would the snake go?
-        ''' </summary>
-        Enum SnakeDirection
-            Top
-            Bottom
-            Left
-            Right
-        End Enum
-
-    End Module
+    End Class
 End Namespace

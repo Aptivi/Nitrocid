@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module RampDisplay
+    Public Module RampSettings
 
-        Friend Ramp As New KernelThread("Ramp screensaver thread", True, AddressOf Ramp_DoWork)
         Private _ramp255Colors As Boolean
         Private _rampTrueColor As Boolean = True
         Private _rampDelay As Integer = 20
@@ -514,169 +513,154 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        Sub Ramp_DoWork()
-            Try
+    End Module
+    Public Class RampDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim RedColorNumFrom As Integer = RandomDriver.Next(RampMinimumRedColorLevelStart, RampMaximumRedColorLevelStart)
-                Dim GreenColorNumFrom As Integer = RandomDriver.Next(RampMinimumGreenColorLevelStart, RampMaximumGreenColorLevelStart)
-                Dim BlueColorNumFrom As Integer = RandomDriver.Next(RampMinimumBlueColorLevelStart, RampMaximumBlueColorLevelStart)
-                Dim ColorNumFrom As Integer = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
-                Dim RedColorNumTo As Integer = RandomDriver.Next(RampMinimumRedColorLevelEnd, RampMaximumRedColorLevelEnd)
-                Dim GreenColorNumTo As Integer = RandomDriver.Next(RampMinimumGreenColorLevelEnd, RampMaximumGreenColorLevelEnd)
-                Dim BlueColorNumTo As Integer = RandomDriver.Next(RampMinimumBlueColorLevelEnd, RampMaximumBlueColorLevelEnd)
-                Dim ColorNumTo As Integer = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.White
-                Console.Clear()
+        Public Overrides Property ScreensaverName As String = "Ramp" Implements IScreensaver.ScreensaverName
 
-                'Screensaver logic
-                Do While True
-                    'Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
-                    Console.CursorVisible = False
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Select a color range for the ramp
-                    If RampTrueColor Then
-                        RedColorNumFrom = RandomDriver.Next(RampMinimumRedColorLevelStart, RampMaximumRedColorLevelStart)
-                        GreenColorNumFrom = RandomDriver.Next(RampMinimumGreenColorLevelStart, RampMaximumGreenColorLevelStart)
-                        BlueColorNumFrom = RandomDriver.Next(RampMinimumBlueColorLevelStart, RampMaximumBlueColorLevelStart)
-                        RedColorNumTo = RandomDriver.Next(RampMinimumRedColorLevelEnd, RampMaximumRedColorLevelEnd)
-                        GreenColorNumTo = RandomDriver.Next(RampMinimumGreenColorLevelEnd, RampMaximumGreenColorLevelEnd)
-                        BlueColorNumTo = RandomDriver.Next(RampMinimumBlueColorLevelEnd, RampMaximumBlueColorLevelEnd)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo)
-                    ElseIf Ramp255Colors Then
-                        ColorNumFrom = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
-                        ColorNumTo = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color from ({0}) to ({1})", ColorNumFrom, ColorNumTo)
-                    Else
-                        ColorNumFrom = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
-                        ColorNumTo = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                    End If
-
-                    'Set start and end widths for the ramp frame
-                    Dim RampFrameStartWidth As Integer = 4
-                    Dim RampFrameEndWidth As Integer = Console.WindowWidth - RampFrameStartWidth
-                    Dim RampFrameSpaces As Integer = RampFrameEndWidth - RampFrameStartWidth
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces)
-
-                    'Set thresholds for color ramps
-                    Dim RampColorRedThreshold As Integer = RedColorNumFrom - RedColorNumTo
-                    Dim RampColorGreenThreshold As Integer = GreenColorNumFrom - GreenColorNumTo
-                    Dim RampColorBlueThreshold As Integer = BlueColorNumFrom - BlueColorNumTo
-                    Dim RampColorThreshold As Integer = ColorNumFrom - ColorNumTo
-                    Dim RampColorRedSteps As Double = RampColorRedThreshold / RampFrameSpaces
-                    Dim RampColorGreenSteps As Double = RampColorGreenThreshold / RampFrameSpaces
-                    Dim RampColorBlueSteps As Double = RampColorBlueThreshold / RampFrameSpaces
-                    Dim RampColorSteps As Double = RampColorThreshold / RampFrameSpaces
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2} | Normal: {3})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold, RampColorThreshold)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3} | Normal: {4})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps, RampColorSteps)
-
-                    'Let the ramp be printed in the center
-                    Dim RampCenterPosition As Integer = Console.WindowHeight / 2
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition)
-
-                    'Set the current positions
-                    Dim RampCurrentPositionLeft As Integer = RampFrameStartWidth + 1
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
-
-                    'Draw the frame
-                    If Not ResizeSyncing Then
-                        WriteWhere(RampUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, False, If(RampUseBorderColors, New Color(RampUpperLeftCornerColor), New Color(ConsoleColors.Gray)))
-                        Write(RampUpperFrameChar.Repeat(RampFrameSpaces), False, If(RampUseBorderColors, New Color(RampUpperFrameColor), New Color(ConsoleColors.Gray)))
-                        Write(RampUpperRightCornerChar, False, If(RampUseBorderColors, New Color(RampUpperRightCornerColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
-                        WriteWhere(RampLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, False, If(RampUseBorderColors, New Color(RampLowerLeftCornerColor), New Color(ConsoleColors.Gray)))
-                        Write(RampLowerFrameChar.Repeat(RampFrameSpaces), False, If(RampUseBorderColors, New Color(RampLowerFrameColor), New Color(ConsoleColors.Gray)))
-                        Write(RampLowerRightCornerChar, False, If(RampUseBorderColors, New Color(RampLowerRightCornerColor), New Color(ConsoleColors.Gray)))
-                    End If
-
-                    'Draw the ramp
-                    If RampTrueColor Then
-                        'Set the current colors
-                        Dim RampCurrentColorRed As Double = RedColorNumFrom
-                        Dim RampCurrentColorGreen As Double = GreenColorNumFrom
-                        Dim RampCurrentColorBlue As Double = BlueColorNumFrom
-                        Dim RampCurrentColorInstance As New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
-
-                        'Set the console color and fill the ramp!
-                        SetConsoleColor(RampCurrentColorInstance, True)
-                        Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
-                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If ResizeSyncing Then Exit Do
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
-                            Console.Write(" "c)
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
-                            Console.Write(" "c)
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1)
-                            Console.Write(" "c)
-                            RampCurrentPositionLeft = Console.CursorLeft
-
-                            'Change the colors
-                            RampCurrentColorRed -= RampColorRedSteps
-                            RampCurrentColorGreen -= RampColorGreenSteps
-                            RampCurrentColorBlue -= RampColorBlueSteps
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
-                            RampCurrentColorInstance = New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
-                            SetConsoleColor(RampCurrentColorInstance, True)
-
-                            'Delay writing
-                            SleepNoBlock(RampDelay, Ramp)
-                        Loop
-                    Else
-                        'Set the current colors
-                        Dim RampCurrentColor As Double = ColorNumFrom
-                        Dim RampCurrentColorInstance As New Color(Convert.ToInt32(RampCurrentColor))
-
-                        'Set the console color and fill the ramp!
-                        SetConsoleColor(RampCurrentColorInstance, True)
-                        Do Until Convert.ToInt32(RampCurrentColor) = ColorNumTo
-                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                            If ResizeSyncing Then Exit Do
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
-                            Console.Write(" "c)
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
-                            Console.Write(" "c)
-                            Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1)
-                            Console.Write(" "c)
-                            RampCurrentPositionLeft = Console.CursorLeft
-
-                            'Change the colors
-                            RampCurrentColor -= RampColorSteps
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps)
-                            RampCurrentColorInstance = New Color(Convert.ToInt32(RampCurrentColor))
-                            SetConsoleColor(RampCurrentColorInstance, True)
-
-                            'Delay writing
-                            SleepNoBlock(RampDelay, Ramp)
-                        Loop
-                    End If
-                    SleepNoBlock(RampNextRampDelay, Ramp)
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Clear()
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(RampDelay, Ramp)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim RedColorNumFrom As Integer = RandomDriver.Next(RampMinimumRedColorLevelStart, RampMaximumRedColorLevelStart)
+            Dim GreenColorNumFrom As Integer = RandomDriver.Next(RampMinimumGreenColorLevelStart, RampMaximumGreenColorLevelStart)
+            Dim BlueColorNumFrom As Integer = RandomDriver.Next(RampMinimumBlueColorLevelStart, RampMaximumBlueColorLevelStart)
+            Dim ColorNumFrom As Integer = RandomDriver.Next(RampMinimumColorLevelStart, RampMaximumColorLevelStart)
+            Dim RedColorNumTo As Integer = RandomDriver.Next(RampMinimumRedColorLevelEnd, RampMaximumRedColorLevelEnd)
+            Dim GreenColorNumTo As Integer = RandomDriver.Next(RampMinimumGreenColorLevelEnd, RampMaximumGreenColorLevelEnd)
+            Dim BlueColorNumTo As Integer = RandomDriver.Next(RampMinimumBlueColorLevelEnd, RampMaximumBlueColorLevelEnd)
+            Dim ColorNumTo As Integer = RandomDriver.Next(RampMinimumColorLevelEnd, RampMaximumColorLevelEnd)
+
+            'Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
+            Console.CursorVisible = False
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+
+            'Set start and end widths for the ramp frame
+            Dim RampFrameStartWidth As Integer = 4
+            Dim RampFrameEndWidth As Integer = Console.WindowWidth - RampFrameStartWidth
+            Dim RampFrameSpaces As Integer = RampFrameEndWidth - RampFrameStartWidth
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces)
+
+            'Set thresholds for color ramps
+            Dim RampColorRedThreshold As Integer = RedColorNumFrom - RedColorNumTo
+            Dim RampColorGreenThreshold As Integer = GreenColorNumFrom - GreenColorNumTo
+            Dim RampColorBlueThreshold As Integer = BlueColorNumFrom - BlueColorNumTo
+            Dim RampColorThreshold As Integer = ColorNumFrom - ColorNumTo
+            Dim RampColorRedSteps As Double = RampColorRedThreshold / RampFrameSpaces
+            Dim RampColorGreenSteps As Double = RampColorGreenThreshold / RampFrameSpaces
+            Dim RampColorBlueSteps As Double = RampColorBlueThreshold / RampFrameSpaces
+            Dim RampColorSteps As Double = RampColorThreshold / RampFrameSpaces
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2} | Normal: {3})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold, RampColorThreshold)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3} | Normal: {4})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps, RampColorSteps)
+
+            'Let the ramp be printed in the center
+            Dim RampCenterPosition As Integer = Console.WindowHeight / 2
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition)
+
+            'Set the current positions
+            Dim RampCurrentPositionLeft As Integer = RampFrameStartWidth + 1
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
+
+            'Draw the frame
+            If Not ResizeSyncing Then
+                WriteWhere(RampUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, False, If(RampUseBorderColors, New Color(RampUpperLeftCornerColor), New Color(ConsoleColors.Gray)))
+                Write(RampUpperFrameChar.Repeat(RampFrameSpaces), False, If(RampUseBorderColors, New Color(RampUpperFrameColor), New Color(ConsoleColors.Gray)))
+                Write(RampUpperRightCornerChar, False, If(RampUseBorderColors, New Color(RampUpperRightCornerColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                WriteWhere(RampLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, False, If(RampUseBorderColors, New Color(RampLowerLeftCornerColor), New Color(ConsoleColors.Gray)))
+                Write(RampLowerFrameChar.Repeat(RampFrameSpaces), False, If(RampUseBorderColors, New Color(RampLowerFrameColor), New Color(ConsoleColors.Gray)))
+                Write(RampLowerRightCornerChar, False, If(RampUseBorderColors, New Color(RampLowerRightCornerColor), New Color(ConsoleColors.Gray)))
+            End If
+
+            'Draw the ramp
+            If RampTrueColor Then
+                'Set the current colors
+                Dim RampCurrentColorRed As Double = RedColorNumFrom
+                Dim RampCurrentColorGreen As Double = GreenColorNumFrom
+                Dim RampCurrentColorBlue As Double = BlueColorNumFrom
+                Dim RampCurrentColorInstance As New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
+
+                'Set the console color and fill the ramp!
+                SetConsoleColor(RampCurrentColorInstance, True)
+                Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If ResizeSyncing Then Exit Do
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
+                    Console.Write(" "c)
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
+                    Console.Write(" "c)
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1)
+                    Console.Write(" "c)
+                    RampCurrentPositionLeft = Console.CursorLeft
+
+                    'Change the colors
+                    RampCurrentColorRed -= RampColorRedSteps
+                    RampCurrentColorGreen -= RampColorGreenSteps
+                    RampCurrentColorBlue -= RampColorBlueSteps
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
+                    RampCurrentColorInstance = New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
+                    SetConsoleColor(RampCurrentColorInstance, True)
+
+                    'Delay writing
+                    SleepNoBlock(RampDelay, ScreensaverDisplayerThread)
+                Loop
+            Else
+                'Set the current colors
+                Dim RampCurrentColor As Double = ColorNumFrom
+                Dim RampCurrentColorInstance As New Color(Convert.ToInt32(RampCurrentColor))
+
+                'Set the console color and fill the ramp!
+                SetConsoleColor(RampCurrentColorInstance, True)
+                Do Until Convert.ToInt32(RampCurrentColor) = ColorNumTo
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If ResizeSyncing Then Exit Do
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
+                    Console.Write(" "c)
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
+                    Console.Write(" "c)
+                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1)
+                    Console.Write(" "c)
+                    RampCurrentPositionLeft = Console.CursorLeft
+
+                    'Change the colors
+                    RampCurrentColor -= RampColorSteps
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps)
+                    RampCurrentColorInstance = New Color(Convert.ToInt32(RampCurrentColor))
+                    SetConsoleColor(RampCurrentColorInstance, True)
+
+                    'Delay writing
+                    SleepNoBlock(RampDelay, ScreensaverDisplayerThread)
+                Loop
+            End If
+            SleepNoBlock(RampNextRampDelay, ScreensaverDisplayerThread)
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(RampDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

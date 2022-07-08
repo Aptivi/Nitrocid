@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module WipeDisplay
+    Public Module WipeSettings
 
-        Friend Wipe As New KernelThread("Wipe screensaver thread", True, AddressOf Wipe_DoWork)
         Private _wipe255Colors As Boolean
         Private _wipeTrueColor As Boolean = True
         Private _wipeDelay As Integer = 10
@@ -180,134 +179,138 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        Sub Wipe_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim ToDirection As WipeDirections = WipeDirections.Right
-                Dim TimesWiped As Integer = 0
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
+    Public Class WipeDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Preparations
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
+        Private ToDirection As WipeDirections = WipeDirections.Right
+        Private TimesWiped As Integer = 0
+
+        Public Overrides Property ScreensaverName As String = "Wipe" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SetConsoleColor(New Color(WipeBackgroundColor), True)
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+        End Sub
+
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+
+            'Select a color
+            If WipeTrueColor Then
+                Dim RedColorNum As Integer = RandomDriver.Next(WipeMinimumRedColorLevel, WipeMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(WipeMinimumGreenColorLevel, WipeMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(WipeMinimumBlueColorLevel, WipeMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
+            ElseIf Wipe255Colors Then
+                Dim ColorNum As Integer = RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True)
+            Else
+                If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel))
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+            End If
+
+            'Set max height according to platform
+            Dim MaxWindowHeight As Integer = Console.WindowHeight
+            If IsOnUnix() Then MaxWindowHeight -= 1
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight)
+
+            'Print a space {Column} times until the entire screen is wiped.
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wipe direction {0}", ToDirection.ToString)
+            Select Case ToDirection
+                Case WipeDirections.Right
+                    For Column As Integer = 0 To Console.WindowWidth
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If ResizeSyncing Then Exit For
+                        For Row As Integer = 0 To MaxWindowHeight
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                            If ResizeSyncing Then Exit For
+
+                            'Do the actual writing
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
+                            Console.SetCursorPosition(0, Row)
+                            Console.Write(" ".Repeat(Column))
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Column)
+                        Next
+                        SleepNoBlock(WipeDelay, ScreensaverDisplayerThread)
+                    Next
+                Case WipeDirections.Left
+                    For Column As Integer = Console.WindowWidth To 1 Step -1
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If ResizeSyncing Then Exit For
+                        For Row As Integer = 0 To MaxWindowHeight
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                            If ResizeSyncing Then Exit For
+
+                            'Do the actual writing
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting position to {0}", Column - 1, Row)
+                            Console.SetCursorPosition(Column - 1, Row)
+                            Console.Write(" ".Repeat(Console.WindowWidth - Column + 1))
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth - Column + 1)
+                        Next
+                        SleepNoBlock(WipeDelay, ScreensaverDisplayerThread)
+                    Next
+                Case WipeDirections.Top
+                    For Row As Integer = MaxWindowHeight To 0 Step -1
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If ResizeSyncing Then Exit For
+
+                        'Do the actual writing
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
+                        Console.SetCursorPosition(0, Row)
+                        Console.Write(" ".Repeat(Console.WindowWidth))
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
+                        SleepNoBlock(WipeDelay, ScreensaverDisplayerThread)
+                    Next
+                Case WipeDirections.Bottom
+                    For Row As Integer = 0 To MaxWindowHeight
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If ResizeSyncing Then Exit For
+
+                        'Do the actual writing
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
+                        Console.Write(" ".Repeat(Console.WindowWidth))
+                        SleepNoBlock(WipeDelay, ScreensaverDisplayerThread)
+                    Next
+                    Console.SetCursorPosition(0, 0)
+            End Select
+
+            If Not ResizeSyncing Then
+                TimesWiped += 1
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, WipeWipesNeededToChangeDirection)
+
+                'Check if the number of times wiped is equal to the number of required times to change wiping direction.
+                If TimesWiped = WipeWipesNeededToChangeDirection Then
+                    TimesWiped = 0
+                    ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString)
+                End If
+            Else
+                WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
                 SetConsoleColor(New Color(WipeBackgroundColor), True)
-                Console.ForegroundColor = ConsoleColor.White
                 Console.Clear()
-                Console.CursorVisible = False
+            End If
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-
-                    'Select a color
-                    If WipeTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(WipeMinimumRedColorLevel, WipeMaximumRedColorLevel)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(WipeMinimumGreenColorLevel, WipeMaximumGreenColorLevel)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(WipeMinimumBlueColorLevel, WipeMaximumBlueColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
-                    ElseIf Wipe255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True)
-                    Else
-                        If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel))
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                    End If
-
-                    'Set max height according to platform
-                    Dim MaxWindowHeight As Integer = Console.WindowHeight
-                    If IsOnUnix() Then MaxWindowHeight -= 1
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight)
-
-                    'Print a space {Column} times until the entire screen is wiped.
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wipe direction {0}", ToDirection.ToString)
-                    Select Case ToDirection
-                        Case WipeDirections.Right
-                            For Column As Integer = 0 To Console.WindowWidth
-                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If ResizeSyncing Then Exit For
-                                For Row As Integer = 0 To MaxWindowHeight
-                                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                    If ResizeSyncing Then Exit For
-
-                                    'Do the actual writing
-                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
-                                    Console.SetCursorPosition(0, Row)
-                                    Console.Write(" ".Repeat(Column))
-                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Column)
-                                Next
-                                SleepNoBlock(WipeDelay, Wipe)
-                            Next
-                        Case WipeDirections.Left
-                            For Column As Integer = Console.WindowWidth To 1 Step -1
-                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If ResizeSyncing Then Exit For
-                                For Row As Integer = 0 To MaxWindowHeight
-                                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                    If ResizeSyncing Then Exit For
-
-                                    'Do the actual writing
-                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting position to {0}", Column - 1, Row)
-                                    Console.SetCursorPosition(Column - 1, Row)
-                                    Console.Write(" ".Repeat(Console.WindowWidth - Column + 1))
-                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth - Column + 1)
-                                Next
-                                SleepNoBlock(WipeDelay, Wipe)
-                            Next
-                        Case WipeDirections.Top
-                            For Row As Integer = MaxWindowHeight To 0 Step -1
-                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If ResizeSyncing Then Exit For
-
-                                'Do the actual writing
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", Row)
-                                Console.SetCursorPosition(0, Row)
-                                Console.Write(" ".Repeat(Console.WindowWidth))
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
-                                SleepNoBlock(WipeDelay, Wipe)
-                            Next
-                        Case WipeDirections.Bottom
-                            For Row As Integer = 0 To MaxWindowHeight
-                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                                If ResizeSyncing Then Exit For
-
-                                'Do the actual writing
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", Console.WindowWidth)
-                                Console.Write(" ".Repeat(Console.WindowWidth))
-                                SleepNoBlock(WipeDelay, Wipe)
-                            Next
-                            Console.SetCursorPosition(0, 0)
-                    End Select
-
-                    If Not ResizeSyncing Then
-                        TimesWiped += 1
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, WipeWipesNeededToChangeDirection)
-
-                        'Check if the number of times wiped is equal to the number of required times to change wiping direction.
-                        If TimesWiped = WipeWipesNeededToChangeDirection Then
-                            TimesWiped = 0
-                            ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString)
-                        End If
-                    Else
-                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
-                        SetConsoleColor(New Color(WipeBackgroundColor), True)
-                        Console.Clear()
-                    End If
-
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(WipeDelay, Wipe)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(WipeDelay, ScreensaverDisplayerThread)
         End Sub
 
         ''' <summary>
@@ -332,5 +335,5 @@ Namespace Misc.Screensaver.Displays
             Bottom
         End Enum
 
-    End Module
+    End Class
 End Namespace

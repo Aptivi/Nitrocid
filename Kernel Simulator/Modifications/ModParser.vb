@@ -54,7 +54,7 @@ Namespace Modifications
 
                     'Check to see if the DLL is actually a screensaver
                     If script Is Nothing Then CompileCustom(ModPath + modFile)
-                    Dim CheckSaver As ICustomSaver = GetScreensaverInstance(Assembly.LoadFrom(ModPath + modFile))
+                    Dim CheckSaver As ICustomSaver = GetScreensaverInstanceLegacy(Assembly.LoadFrom(ModPath + modFile))
 
                     'If we didn't find anything, abort
                     If script Is Nothing AndAlso CheckSaver Is Nothing Then Throw New InvalidModException(DoTranslation("The modfile is invalid."))

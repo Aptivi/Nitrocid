@@ -16,14 +16,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Threading
-
-Namespace Misc.Screensaver.Displays
-    Public Class PlainDisplay
-        Inherits BaseScreensaver
+Namespace Misc.Screensaver
+    Public MustInherit Class BaseScreensaver
         Implements IScreensaver
 
-        Public Overrides Property ScreensaverName As String = "Plain" Implements IScreensaver.ScreensaverName
+        Public Overridable Property ScreensaverName As String = "BaseScreensaver" Implements IScreensaver.ScreensaverName
 
+        Public Overridable Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overridable Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+        End Sub
+
+        Public Overridable Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            SleepNoBlock(10, ScreensaverDisplayerThread)
+        End Sub
     End Class
 End Namespace

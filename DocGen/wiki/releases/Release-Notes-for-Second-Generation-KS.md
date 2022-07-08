@@ -148,5 +148,6 @@ This version is WIP as of 6/27/2022.
 5. Added new screensavers (Glitch, FallingLine)
 6. Added new language (Gangsta, Playa - pla)
 7. Added new splash (Fader)
-8. General compatibility improvements for .NET 6.0
-9. General improvements and bug fixes
+8. Screensaver improvements
+9. General compatibility improvements for .NET 6.0
+10. General improvements and bug fixes

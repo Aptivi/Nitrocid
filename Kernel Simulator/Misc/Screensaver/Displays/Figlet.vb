@@ -21,9 +21,8 @@ Imports Figgle
 Imports KS.Misc.Writers.FancyWriters.Tools
 
 Namespace Misc.Screensaver.Displays
-    Public Module FigletDisplay
+    Public Module FigletSettings
 
-        Friend Figlet As New KernelThread("Figlet screensaver thread", True, AddressOf Figlet_DoWork)
         Private _figlet255Colors As Boolean
         Private _figletTrueColor As Boolean = True
         Private _figletDelay As Integer = 1000
@@ -202,75 +201,76 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Figlet
-        ''' </summary>
-        Sub Figlet_DoWork()
-            Try
-                'Variables
-                Dim Randomizer As New Random
-                Dim ConsoleMiddleWidth As Integer = Console.WindowWidth / 2
-                Dim ConsoleMiddleHeight As Integer = Console.WindowHeight / 2
-                Dim FigletFontUsed As FiggleFont = GetFigletFont(FigletFont)
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
+    Public Class FigletDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.White
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Console.Clear()
+        Public Overrides Property ScreensaverName As String = "Figlet" Implements IScreensaver.ScreensaverName
 
-                    'Set colors
-                    Dim ColorStorage As New Color(255, 255, 255)
-                    If FigletTrueColor Then
-                        Dim RedColorNum As Integer = Randomizer.Next(FigletMinimumRedColorLevel, FigletMaximumRedColorLevel)
-                        Dim GreenColorNum As Integer = Randomizer.Next(FigletMinimumGreenColorLevel, FigletMaximumGreenColorLevel)
-                        Dim BlueColorNum As Integer = Randomizer.Next(FigletMinimumBlueColorLevel, FigletMaximumBlueColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        ColorStorage = New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                    ElseIf Figlet255Colors Then
-                        Dim ColorNum As Integer = Randomizer.Next(FigletMinimumColorLevel, FigletMaximumColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        ColorStorage = New Color(ColorNum)
-                    Else
-                        Console.BackgroundColor = CType(Randomizer.Next(FigletMinimumColorLevel, FigletMaximumColorLevel), ConsoleColor)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                    End If
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Prepare the figlet font for writing
-                    Dim FigletWrite As String = FigletText.ReplaceAll({vbCr, vbLf}, " - ")
-                    FigletWrite = FigletFontUsed.Render(FigletWrite)
-                    Dim FigletWriteLines() As String = FigletWrite.SplitNewLines.SkipWhile(Function(x) String.IsNullOrEmpty(x)).ToArray
-                    Dim FigletHeight As Integer = ConsoleMiddleHeight - FigletWriteLines.Length / 2
-                    Dim FigletWidth As Integer = ConsoleMiddleWidth - FigletWriteLines(0).Length / 2
-
-                    'Actually write it
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        If Figlet255Colors Or FigletTrueColor Then
-                            WriteWhere(FigletWrite, FigletWidth, FigletHeight, True, ColorStorage)
-                        Else
-                            WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, True)
-                        End If
-                    End If
-                    SleepNoBlock(FigletDelay, Figlet)
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim ConsoleMiddleWidth As Integer = Console.WindowWidth / 2
+            Dim ConsoleMiddleHeight As Integer = Console.WindowHeight / 2
+            Dim FigletFontUsed As FiggleFont = GetFigletFont(FigletFont)
+            Console.CursorVisible = False
+            Console.Clear()
+
+            'Set colors
+            Dim ColorStorage As New Color(255, 255, 255)
+            If FigletTrueColor Then
+                Dim RedColorNum As Integer = RandomDriver.Next(FigletMinimumRedColorLevel, FigletMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(FigletMinimumGreenColorLevel, FigletMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(FigletMinimumBlueColorLevel, FigletMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                ColorStorage = New Color(RedColorNum, GreenColorNum, BlueColorNum)
+            ElseIf Figlet255Colors Then
+                Dim ColorNum As Integer = RandomDriver.Next(FigletMinimumColorLevel, FigletMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                ColorStorage = New Color(ColorNum)
+            Else
+                Console.BackgroundColor = CType(RandomDriver.Next(FigletMinimumColorLevel, FigletMaximumColorLevel), ConsoleColor)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+            End If
+
+            'Prepare the figlet font for writing
+            Dim FigletWrite As String = FigletText.ReplaceAll({vbCr, vbLf}, " - ")
+            FigletWrite = FigletFontUsed.Render(FigletWrite)
+            Dim FigletWriteLines() As String = FigletWrite.SplitNewLines.SkipWhile(Function(x) String.IsNullOrEmpty(x)).ToArray
+            Dim FigletHeight As Integer = ConsoleMiddleHeight - FigletWriteLines.Length / 2
+            Dim FigletWidth As Integer = ConsoleMiddleWidth - FigletWriteLines(0).Length / 2
+
+            'Actually write it
+            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+            If Not ResizeSyncing Then
+                If Figlet255Colors Or FigletTrueColor Then
+                    WriteWhere(FigletWrite, FigletWidth, FigletHeight, True, ColorStorage)
+                Else
+                    WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, True)
+                End If
+            End If
+            SleepNoBlock(FigletDelay, ScreensaverDisplayerThread)
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+        End Sub
+
+    End Class
 End Namespace

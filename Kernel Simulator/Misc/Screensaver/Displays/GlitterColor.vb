@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module GlitterColorDisplay
+    Public Module GlitterColorSettings
 
-        Friend GlitterColor As New KernelThread("GlitterColor screensaver thread", True, AddressOf GlitterColor_DoWork)
         Private _glitterColor255Colors As Boolean
         Private _glitterColorTrueColor As Boolean = True
         Private _glitterColorDelay As Integer = 1
@@ -175,73 +174,76 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Glitter Colors
-        ''' </summary>
-        Sub GlitterColor_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.Clear()
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    Public Class GlitterColorDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    'Select position
-                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
-                    Console.SetCursorPosition(Left, Top)
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'Make a glitter color
-                    Dim esc As Char = GetEsc()
-                    If GlitterColorTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(GlitterColorMinimumRedColorLevel, GlitterColorMaximumRedColorLevel)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(GlitterColorMinimumGreenColorLevel, GlitterColorMaximumGreenColorLevel)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(GlitterColorMinimumBlueColorLevel, GlitterColorMaximumBlueColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            SetConsoleColor(ColorStorage, True)
-                            Console.Write(" ")
-                        End If
-                    ElseIf GlitterColor255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            SetConsoleColor(New Color(ColorNum), True)
-                            Console.Write(" ")
-                        End If
-                    Else
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If Not ResizeSyncing Then
-                            Console.BackgroundColor = colors(RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel))
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                            Console.Write(" ")
-                        End If
-                    End If
+        Public Overrides Property ScreensaverName As String = "GlitterColor" Implements IScreensaver.ScreensaverName
 
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                    SleepNoBlock(GlitterColorDelay, GlitterColor)
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+
+            'Select position
+            Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+            Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
+            Console.SetCursorPosition(Left, Top)
+
+            'Make a glitter color
+            Dim esc As Char = GetEsc()
+            If GlitterColorTrueColor Then
+                Dim RedColorNum As Integer = RandomDriver.Next(GlitterColorMinimumRedColorLevel, GlitterColorMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(GlitterColorMinimumGreenColorLevel, GlitterColorMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(GlitterColorMinimumBlueColorLevel, GlitterColorMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    SetConsoleColor(ColorStorage, True)
+                    Console.Write(" ")
+                End If
+            ElseIf GlitterColor255Colors Then
+                Dim ColorNum As Integer = RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    SetConsoleColor(New Color(ColorNum), True)
+                    Console.Write(" ")
+                End If
+            Else
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    Console.BackgroundColor = colors(RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel))
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                    Console.Write(" ")
+                End If
+            End If
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            SleepNoBlock(GlitterColorDelay, ScreensaverDisplayerThread)
+        End Sub
+
+    End Class
 End Namespace

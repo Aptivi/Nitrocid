@@ -125,7 +125,7 @@ Namespace Misc.Games
 
                 Do Until Dead
                     'Delay
-                    If Simulation Then SleepNoBlock(SnakerDelay, SnakerDisplay.Snaker) Else Thread.Sleep(SnakerDelay)
+                    If Simulation Then SleepNoBlock(SnakerDelay, ScreensaverDisplayerThread) Else Thread.Sleep(SnakerDelay)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If ResizeSyncing Then Exit Do
 
@@ -288,7 +288,7 @@ Namespace Misc.Games
             End If
 
             'Show the stage for few seconds before wiping
-            If Simulation Then SleepNoBlock(SnakerStageDelay, SnakerDisplay.Snaker) Else Thread.Sleep(SnakerStageDelay)
+            If Simulation Then SleepNoBlock(SnakerStageDelay, ScreensaverDisplayerThread) Else Thread.Sleep(SnakerStageDelay)
 
             'Reset mass and console display
             SnakeMassPositions.Clear()
@@ -296,6 +296,37 @@ Namespace Misc.Games
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
         End Sub
+
+        ''' <summary>
+        ''' Changes the snake color
+        ''' </summary>
+        Function ChangeSnakeColor() As Color
+            Dim RandomDriver As New Random()
+            If SnakerTrueColor Then
+                Dim RedColorNum As Integer = RandomDriver.Next(SnakerMinimumRedColorLevel, SnakerMaximumRedColorLevel)
+                Dim GreenColorNum As Integer = RandomDriver.Next(SnakerMinimumGreenColorLevel, SnakerMaximumGreenColorLevel)
+                Dim BlueColorNum As Integer = RandomDriver.Next(SnakerMinimumBlueColorLevel, SnakerMaximumBlueColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                Return New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}")
+            ElseIf Snaker255Colors Then
+                Dim ColorNum As Integer = RandomDriver.Next(SnakerMinimumColorLevel, SnakerMaximumColorLevel)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
+                Return New Color(ColorNum)
+            Else
+                Console.BackgroundColor = colors(RandomDriver.Next(SnakerMinimumColorLevel, SnakerMaximumColorLevel))
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+            End If
+        End Function
+
+        ''' <summary>
+        ''' Where would the snake go?
+        ''' </summary>
+        Enum SnakeDirection
+            Top
+            Bottom
+            Left
+            Right
+        End Enum
 
     End Module
 End Namespace

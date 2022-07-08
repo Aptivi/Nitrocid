@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module DiscoDisplay
+    Public Module DiscoSettings
 
-        Friend WithEvents Disco As New KernelThread("Disco screensaver thread", True, AddressOf Disco_DoWork)
         Private _disco255Colors As Boolean
         Private _discoTrueColor As Boolean = True
         Private _discoCycleColors As Boolean
@@ -211,133 +210,138 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of Disco
-        ''' </summary>
-        Sub Disco_DoWork()
-            Try
-                'Variables
-                Dim MaximumColors As Integer = DiscoMaximumColorLevel
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors)
-                Dim MaximumColorsR As Integer = DiscoMaximumRedColorLevel
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR)
-                Dim MaximumColorsG As Integer = DiscoMaximumGreenColorLevel
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG)
-                Dim MaximumColorsB As Integer = DiscoMaximumBlueColorLevel
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
-                Dim CurrentColor As Integer = 0
-                Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
-                Dim FedColors As ConsoleColors() = {ConsoleColors.Black, ConsoleColors.White}
-                Dim random As New Random()
+    End Module
+    Public Class DiscoDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
+        Private RandomDriver As Random
+        Private CurrentColor As Integer = 0
+        Private CurrentColorR, CurrentColorG, CurrentColorB As Integer
 
-                    'Select the background color
-                    Dim esc As Char = GetEsc()
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", DiscoEnableFedMode)
-                    If Not DiscoEnableFedMode Then
-                        If DiscoTrueColor Then
-                            If Not DiscoCycleColors Then
-                                Dim RedColorNum As Integer = random.Next(255)
-                                Dim GreenColorNum As Integer = random.Next(255)
-                                Dim BlueColorNum As Integer = random.Next(255)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                                Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                                SetConsoleColor(ColorStorage, True)
-                            Else
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
-                                Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
-                                SetConsoleColor(ColorStorage, True)
-                            End If
-                        ElseIf Disco255Colors Then
-                            If Not DiscoCycleColors Then
-                                Dim color As Integer = random.Next(255)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
-                                SetConsoleColor(New Color(color), True)
-                            Else
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
-                                SetConsoleColor(New Color(CurrentColor), True)
-                            End If
-                        Else
-                            If Not DiscoCycleColors Then
-                                Console.BackgroundColor = colors(random.Next(colors.Length - 1))
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                            Else
-                                MaximumColors = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 15, DiscoMaximumColorLevel, 15)
-                                Console.BackgroundColor = colors(CurrentColor)
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                            End If
-                        End If
+        Public Overrides Property ScreensaverName As String = "Disco" Implements IScreensaver.ScreensaverName
+
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
+
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        End Sub
+
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Dim MaximumColors As Integer = DiscoMaximumColorLevel
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors)
+            Dim MaximumColorsR As Integer = DiscoMaximumRedColorLevel
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR)
+            Dim MaximumColorsG As Integer = DiscoMaximumGreenColorLevel
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG)
+            Dim MaximumColorsB As Integer = DiscoMaximumBlueColorLevel
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB)
+            Dim FedColors As ConsoleColors() = {ConsoleColors.Black, ConsoleColors.White}
+
+            Console.CursorVisible = False
+
+            'Select the background color
+            Dim esc As Char = GetEsc()
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", DiscoEnableFedMode)
+            If Not DiscoEnableFedMode Then
+                If DiscoTrueColor Then
+                    If Not DiscoCycleColors Then
+                        Dim RedColorNum As Integer = RandomDriver.Next(255)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                        SetConsoleColor(ColorStorage, True)
                     Else
-                        If CurrentColor = ConsoleColors.Black Then
-                            CurrentColor = ConsoleColors.White
-                        Else
-                            CurrentColor = ConsoleColors.Black
-                        End If
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
+                        Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
+                        SetConsoleColor(ColorStorage, True)
+                    End If
+                ElseIf Disco255Colors Then
+                    If Not DiscoCycleColors Then
+                        Dim color As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
+                        SetConsoleColor(New Color(color), True)
+                    Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
                         SetConsoleColor(New Color(CurrentColor), True)
                     End If
-
-                    'Make the disco effect!
-                    Console.Clear()
-
-                    'Switch to the next color
-                    If DiscoTrueColor Then
-                        If CurrentColorR >= MaximumColorsR Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Red level exceeded maximum color. {0} >= {1}", CurrentColorR, MaximumColorsR)
-                            CurrentColorR = 0
-                        Else
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (R)...")
-                            CurrentColorR += 1
-                        End If
-                        If CurrentColorG >= MaximumColorsG Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Green level exceeded maximum color. {0} >= {1}", CurrentColorG, MaximumColorsG)
-                            CurrentColorG = 0
-                        ElseIf CurrentColorR = 0 Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (G)...")
-                            CurrentColorG += 1
-                        End If
-                        If CurrentColorB >= MaximumColorsB Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Blue level exceeded maximum color. {0} >= {1}", CurrentColorB, MaximumColorsB)
-                            CurrentColorB = 0
-                        ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (B)...")
-                            CurrentColorB += 1
-                        End If
-                        If CurrentColorB = 0 And CurrentColorG = 0 And CurrentColorR = 0 Then
-                            CurrentColorB = 0
-                            CurrentColorG = 0
-                            CurrentColorR = 0
-                        End If
+                Else
+                    If Not DiscoCycleColors Then
+                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                     Else
-                        If CurrentColor >= MaximumColors Then
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color level exceeded maximum color. {0} >= {1}", CurrentColor, MaximumColors)
-                            CurrentColor = 0
-                        Else
-                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one...")
-                            CurrentColor += 1
-                        End If
+                        MaximumColors = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 15, DiscoMaximumColorLevel, 15)
+                        Console.BackgroundColor = colors(CurrentColor)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                     End If
+                End If
+            Else
+                If CurrentColor = ConsoleColors.Black Then
+                    CurrentColor = ConsoleColors.White
+                Else
+                    CurrentColor = ConsoleColors.Black
+                End If
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
+                SetConsoleColor(New Color(CurrentColor), True)
+            End If
 
-                    'Check to see if we're dealing with beats per minute
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
-                    If DiscoUseBeatsPerMinute Then
-                        Dim BeatInterval As Integer = 60000 / DiscoDelay
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
-                        SleepNoBlock(BeatInterval, Disco)
-                    Else
-                        SleepNoBlock(DiscoDelay, Disco)
-                    End If
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+            'Make the disco effect!
+            Console.Clear()
+
+            'Switch to the next color
+            If DiscoTrueColor Then
+                If CurrentColorR >= MaximumColorsR Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Red level exceeded maximum color. {0} >= {1}", CurrentColorR, MaximumColorsR)
+                    CurrentColorR = 0
+                Else
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (R)...")
+                    CurrentColorR += 1
+                End If
+                If CurrentColorG >= MaximumColorsG Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Green level exceeded maximum color. {0} >= {1}", CurrentColorG, MaximumColorsG)
+                    CurrentColorG = 0
+                ElseIf CurrentColorR = 0 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (G)...")
+                    CurrentColorG += 1
+                End If
+                If CurrentColorB >= MaximumColorsB Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Blue level exceeded maximum color. {0} >= {1}", CurrentColorB, MaximumColorsB)
+                    CurrentColorB = 0
+                ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one (B)...")
+                    CurrentColorB += 1
+                End If
+                If CurrentColorB = 0 And CurrentColorG = 0 And CurrentColorR = 0 Then
+                    CurrentColorB = 0
+                    CurrentColorG = 0
+                    CurrentColorR = 0
+                End If
+            Else
+                If CurrentColor >= MaximumColors Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color level exceeded maximum color. {0} >= {1}", CurrentColor, MaximumColors)
+                    CurrentColor = 0
+                Else
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Stepping one...")
+                    CurrentColor += 1
+                End If
+            End If
+
+            'Check to see if we're dealing with beats per minute
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
+            If DiscoUseBeatsPerMinute Then
+                Dim BeatInterval As Integer = 60000 / DiscoDelay
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
+                SleepNoBlock(BeatInterval, ScreensaverDisplayerThread)
+            Else
+                SleepNoBlock(DiscoDelay, ScreensaverDisplayerThread)
+            End If
         End Sub
 
-    End Module
+    End Class
 End Namespace

@@ -19,9 +19,8 @@
 Imports System.Threading
 
 Namespace Misc.Screensaver.Displays
-    Public Module BeatFaderDisplay
+    Public Module BeatFaderSettings
 
-        Friend BeatFader As New KernelThread("BeatFader screensaver thread", True, AddressOf BeatFader_DoWork)
         Private _beatFader255Colors As Boolean
         Private _beatFaderTrueColor As Boolean = True
         Private _beatFaderCycleColors As Boolean = True
@@ -212,100 +211,102 @@ Namespace Misc.Screensaver.Displays
             End Set
         End Property
 
-        ''' <summary>
-        ''' Handles the code of FaderBack
-        ''' </summary>
-        Sub BeatFader_DoWork()
-            Try
-                'Variables
-                Dim RandomDriver As New Random()
-                Dim CurrentWindowWidth As Integer = Console.WindowWidth
-                Dim CurrentWindowHeight As Integer = Console.WindowHeight
-                Dim ResizeSyncing As Boolean
+    End Module
 
-                'Preparations
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.Clear()
-                Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+    Public Class BeatFaderDisplay
+        Inherits BaseScreensaver
+        Implements IScreensaver
 
-                'Screensaver logic
-                Do While True
-                    Console.CursorVisible = False
-                    Dim BeatInterval As Integer = 60000 / BeatFaderDelay
-                    Dim BeatIntervalStep As Integer = BeatInterval / BeatFaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", BeatFaderDelay, BeatInterval)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", BeatFaderDelay, BeatIntervalStep)
-                    SleepNoBlock(BeatIntervalStep, BeatFader)
+        Private RandomDriver As Random
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
+        Private ResizeSyncing As Boolean
 
-                    'If we're cycling colors, set them. Else, use the user-provided color
-                    Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
-                    If BeatFaderCycleColors Then
-                        'We're cycling. Select the color mode, starting from true color
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
-                        If BeatFaderTrueColor Then
-                            RedColorNum = RandomDriver.Next(BeatFaderMinimumRedColorLevel, BeatFaderMinimumRedColorLevel)
-                            GreenColorNum = RandomDriver.Next(BeatFaderMinimumGreenColorLevel, BeatFaderMaximumGreenColorLevel)
-                            BlueColorNum = RandomDriver.Next(BeatFaderMinimumBlueColorLevel, BeatFaderMaximumBlueColorLevel)
-                        ElseIf BeatFader255Colors Then
-                            Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(BeatFaderMinimumColorLevel, BeatFaderMaximumColorLevel))
-                            RedColorNum = ConsoleColor.R
-                            GreenColorNum = ConsoleColor.G
-                            BlueColorNum = ConsoleColor.B
-                        Else
-                            Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(BeatFaderMinimumColorLevel, BeatFaderMaximumColorLevel))
-                            RedColorNum = ConsoleColor.R
-                            GreenColorNum = ConsoleColor.G
-                            BlueColorNum = ConsoleColor.B
-                        End If
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                    Else
-                        'We're not cycling. Parse the color and then select the color mode, starting from true color
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", BeatFaderBeatColor)
-                        Dim UserColor As New Color(BeatFaderBeatColor)
-                        If UserColor.Type = ColorType.TrueColor Then
-                            RedColorNum = UserColor.R
-                            GreenColorNum = UserColor.G
-                            BlueColorNum = UserColor.B
-                        ElseIf UserColor.Type = ColorType._255Color Then
-                            Dim ConsoleColor As New ConsoleColorsInfo(UserColor.PlainSequence)
-                            RedColorNum = ConsoleColor.R
-                            GreenColorNum = ConsoleColor.G
-                            BlueColorNum = ConsoleColor.B
-                        End If
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                    End If
+        Public Overrides Property ScreensaverName As String = "BeatFader" Implements IScreensaver.ScreensaverName
 
-                    'Set thresholds
-                    Dim ThresholdRed As Double = RedColorNum / BeatFaderMaxSteps
-                    Dim ThresholdGreen As Double = GreenColorNum / BeatFaderMaxSteps
-                    Dim ThresholdBlue As Double = BlueColorNum / BeatFaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
 
-                    'Fade out
-                    For CurrentStep As Integer = 1 To BeatFaderMaxSteps
-                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                        If ResizeSyncing Then Exit For
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, BeatFaderMaxSteps, BeatIntervalStep)
-                        SleepNoBlock(BeatIntervalStep, FaderBack)
-                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
-                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
-                        Console.Clear()
-                    Next
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
-                Loop
-            Catch taex As ThreadInterruptedException
-                HandleSaverCancel()
-            Catch ex As Exception
-                HandleSaverError(ex)
-            End Try
+        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
+            'Variable preparations
+            RandomDriver = New Random
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
 
-    End Module
+        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
+            Console.CursorVisible = False
+            Dim BeatInterval As Integer = 60000 / BeatFaderDelay
+            Dim BeatIntervalStep As Integer = BeatInterval / BeatFaderMaxSteps
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", BeatFaderDelay, BeatInterval)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", BeatFaderDelay, BeatIntervalStep)
+            SleepNoBlock(BeatIntervalStep, ScreensaverDisplayerThread)
+
+            'If we're cycling colors, set them. Else, use the user-provided color
+            Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
+            If BeatFaderCycleColors Then
+                'We're cycling. Select the color mode, starting from true color
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
+                If BeatFaderTrueColor Then
+                    RedColorNum = RandomDriver.Next(BeatFaderMinimumRedColorLevel, BeatFaderMinimumRedColorLevel)
+                    GreenColorNum = RandomDriver.Next(BeatFaderMinimumGreenColorLevel, BeatFaderMaximumGreenColorLevel)
+                    BlueColorNum = RandomDriver.Next(BeatFaderMinimumBlueColorLevel, BeatFaderMaximumBlueColorLevel)
+                ElseIf BeatFader255Colors Then
+                    Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(BeatFaderMinimumColorLevel, BeatFaderMaximumColorLevel))
+                    RedColorNum = ConsoleColor.R
+                    GreenColorNum = ConsoleColor.G
+                    BlueColorNum = ConsoleColor.B
+                Else
+                    Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(BeatFaderMinimumColorLevel, BeatFaderMaximumColorLevel))
+                    RedColorNum = ConsoleColor.R
+                    GreenColorNum = ConsoleColor.G
+                    BlueColorNum = ConsoleColor.B
+                End If
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+            Else
+                'We're not cycling. Parse the color and then select the color mode, starting from true color
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", BeatFaderBeatColor)
+                Dim UserColor As New Color(BeatFaderBeatColor)
+                If UserColor.Type = ColorType.TrueColor Then
+                    RedColorNum = UserColor.R
+                    GreenColorNum = UserColor.G
+                    BlueColorNum = UserColor.B
+                ElseIf UserColor.Type = ColorType._255Color Then
+                    Dim ConsoleColor As New ConsoleColorsInfo(UserColor.PlainSequence)
+                    RedColorNum = ConsoleColor.R
+                    GreenColorNum = ConsoleColor.G
+                    BlueColorNum = ConsoleColor.B
+                End If
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+            End If
+
+            'Set thresholds
+            Dim ThresholdRed As Double = RedColorNum / BeatFaderMaxSteps
+            Dim ThresholdGreen As Double = GreenColorNum / BeatFaderMaxSteps
+            Dim ThresholdBlue As Double = BlueColorNum / BeatFaderMaxSteps
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+
+            'Fade out
+            For CurrentStep As Integer = 1 To BeatFaderMaxSteps
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If ResizeSyncing Then Exit For
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, BeatFaderMaxSteps, BeatIntervalStep)
+                SleepNoBlock(BeatIntervalStep, ScreensaverDisplayerThread)
+                Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
+                Console.Clear()
+            Next
+
+            'Reset resize sync
+            ResizeSyncing = False
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+        End Sub
+
+    End Class
 End Namespace
