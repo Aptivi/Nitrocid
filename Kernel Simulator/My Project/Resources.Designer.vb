@@ -1071,6 +1071,38 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''    &quot;arb&quot;: {
+        '''        &quot;name&quot;: &quot;Arabic&quot;,
+        '''        &quot;transliterable&quot;: true
+        '''    },
+        '''    &quot;arb-T&quot;: {
+        '''        &quot;name&quot;: &quot;Arabic&quot;,
+        '''        &quot;transliterable&quot;: true
+        '''    },
+        '''    &quot;chi&quot;: {
+        '''        &quot;name&quot;: &quot;Chinese&quot;,
+        '''        &quot;transliterable&quot;: true
+        '''    },
+        '''    &quot;chi-T&quot;: {
+        '''        &quot;name&quot;: &quot;Chinese&quot;,
+        '''        &quot;transliterable&quot;: true
+        '''    },
+        '''    &quot;cnt&quot;: {
+        '''        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
+        '''        &quot;transliterable&quot;: true
+        '''    },
+        '''    &quot;cnt-T&quot;: {
+        '''        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
+        '''        &quot;transliterable&quot;: [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property LanguageMetadata() As String
+            Get
+                Return ResourceManager.GetString("LanguageMetadata", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;185;204;45&quot;,
         '''    &quot;LicenseColor&quot;: &quot;185;204;45&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;166;160;46&quot;,
