@@ -185,10 +185,10 @@ Namespace Misc.Screensaver.Displays
         Implements IScreensaver
 
         Private RandomDriver As Random
-        Private CoveredPositions As New ArrayList
         Private CurrentWindowWidth As Integer
         Private CurrentWindowHeight As Integer
         Private ResizeSyncing As Boolean
+        Private ReadOnly CoveredPositions As New List(Of Tuple(Of Integer, Integer))
 
         Public Overrides Property ScreensaverName As String = "Lighter" Implements IScreensaver.ScreensaverName
 
@@ -212,9 +212,9 @@ Namespace Misc.Screensaver.Displays
             Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
             Console.SetCursorPosition(Left, Top)
-            If Not CoveredPositions.Contains(Left & ";" & Top) Then
+            If Not CoveredPositions.Any(Function(t) t.Item1 = Left And t.Item2 = Top) Then
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Covering position...")
-                CoveredPositions.Add(Left & ";" & Top)
+                CoveredPositions.Add(New Tuple(Of Integer, Integer)(Left, Top))
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Position covered. Covered positions: {0}", CoveredPositions.Count)
             End If
 
