@@ -184,7 +184,7 @@ Namespace Misc.Screensaver.Displays
         Private CurrentWindowWidth As Integer
         Private CurrentWindowHeight As Integer
         Private ResizeSyncing As Boolean
-        Private ReadOnly CoveredPositions As New ArrayList
+        Private ReadOnly CoveredPositions As New List(Of Tuple(Of Integer, Integer))
 
         Public Overrides Property ScreensaverName As String = "Dissolve" Implements IScreensaver.ScreensaverName
 
@@ -267,9 +267,9 @@ Namespace Misc.Screensaver.Displays
                     ColorFilled = True
                 End If
             Else
-                If Not CoveredPositions.Contains(Left & " - " & Top) Then
+                If Not CoveredPositions.Any(Function(t) t.Item1 = Left And t.Item2 = Top) Then
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Covered position {0}", Left & " - " & Top)
-                    CoveredPositions.Add(Left & " - " & Top)
+                    CoveredPositions.Add(New Tuple(Of Integer, Integer)(Left, Top))
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Covered positions: {0}/{1}", CoveredPositions.Count, (EndLeft + 1) * (EndTop + 1))
                 End If
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
