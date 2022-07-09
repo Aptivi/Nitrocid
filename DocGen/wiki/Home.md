@@ -102,6 +102,7 @@ This revision of the first-generation version is supported until 2/22/2023.
 | v0.0.8.11  |  4/5/2022    |  2/22/2023  | Supported   |
 | v0.0.8.12  |  5/11/2022   |  2/22/2023  | Supported   |
 | v0.0.8.13  |  6/10/2022   |  2/22/2023  | Supported   |
+| v0.0.8.14  |  7/9/2022    |  2/22/2023  | Supported   |
 | v0.0.9.0   |  4/23/2020   |  4/23/2021  | Reached EOL |
 | v0.0.9.1   |  5/6/2020    |  4/23/2021  | Reached EOL |
 | v0.0.10.0  |  5/19/2020   |  5/19/2021  | Reached EOL |
@@ -127,6 +128,7 @@ This revision of the first-generation version is supported until 11/5/2023.
 | v0.0.12.7  |  4/5/2022    |  11/6/2023  | Supported   |
 | v0.0.12.8  |  5/11/2022   |  11/6/2023  | Supported   |
 | v0.0.12.9  |  6/10/2022   |  11/6/2023  | Supported   |
+| v0.0.12.10 |  7/9/2022    |  11/6/2023  | Supported   |
 | v0.0.13.0  |  12/20/2020  |  12/20/2021 | Reached EOL |
 | v0.0.13.1  |  12/24/2020  |  12/20/2021 | Reached EOL |
 | v0.0.13.2  |  8/19/2021   |  12/20/2021 | Reached EOL |
@@ -165,6 +167,7 @@ This revision of the first-generation version is supported until 6/12/2024.
 | v0.0.16.12 |  4/5/2022    |  6/12/2024  | Supported   |
 | v0.0.16.13 |  5/11/2022   |  6/12/2024  | Supported   |
 | v0.0.16.14 |  6/10/2022   |  6/12/2024  | Supported   |
+| v0.0.16.15 |  7/9/2022    |  6/12/2024  | Supported   |
 | v0.0.17.0  |  7/4/2021    |  7/4/2022   | Reached EOL |
 | v0.0.17.1  |  7/17/2021   |  7/4/2022   | Reached EOL |
 | v0.0.17.2  |  7/25/2021   |  7/4/2022   | Reached EOL |
@@ -181,6 +184,7 @@ This revision of the first-generation version is supported until 6/12/2024.
 | v0.0.18.4  |  4/5/2022    |  8/2/2022   | Supported   |
 | v0.0.18.5  |  5/11/2022   |  8/2/2022   | Supported   |
 | v0.0.18.6  |  6/10/2022   |  8/2/2022   | Supported   |
+| v0.0.18.7  |  7/9/2022    |  8/2/2022   | Supported   |
 | v0.0.19.0  |  8/24/2021   |  8/24/2022  | Supported   |
 | v0.0.19.1  |  8/26/2021   |  8/24/2022  | Supported   |
 | v0.0.19.2  |  2/5/2022    |  8/24/2022  | Supported   |
@@ -188,6 +192,7 @@ This revision of the first-generation version is supported until 6/12/2024.
 | v0.0.19.4  |  4/5/2022    |  8/24/2022  | Supported   |
 | v0.0.19.5  |  5/11/2022   |  8/24/2022  | Supported   |
 | v0.0.19.6  |  6/10/2022   |  8/24/2022  | Supported   |
+| v0.0.19.7  |  7/9/2022    |  8/24/2022  | Supported   |
 
 ### Second-generation (API v2.0)
 
@@ -203,6 +208,7 @@ This revision of the second-generation version is still under active development
 | v0.0.20.5  |  4/14/2022   |  2/22/2025  |  2/22/2027        | Supported   |
 | v0.0.20.6  |  5/5/2022    |  2/22/2025  |  2/22/2027        | Supported   |
 | v0.0.20.7  |  6/10/2022   |  2/22/2025  |  2/22/2027        | Supported   |
+| v0.0.20.8  |  7/8/2022    |  2/22/2025  |  2/22/2027        | Supported   |
 | v0.0.21.0  |  4/28/2022   |  4/28/2023  |  4/28/2023        | Supported   |
 | v0.0.21.1  |  5/1/2022    |  4/28/2023  |  4/28/2023        | Supported   |
 | v0.0.21.2  |  5/4/2022    |  4/28/2023  |  4/28/2023        | Supported   |
@@ -210,9 +216,11 @@ This revision of the second-generation version is still under active development
 | v0.0.21.4  |  5/10/2022   |  4/28/2023  |  4/28/2023        | Supported   |
 | v0.0.21.5  |  5/16/2022   |  4/28/2023  |  4/28/2023        | Supported   |
 | v0.0.21.6  |  6/10/2022   |  4/28/2023  |  4/28/2023        | Supported   |
+| v0.0.21.7  |  7/8/2022    |  4/28/2023  |  4/28/2023        | Supported   |
 | v0.0.22.0  |  6/12/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.1  |  6/12/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.2  |  6/13/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.3  |  6/15/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.4  |  6/17/2022   |  6/12/2023  |  6/12/2023        | Supported   |
+| v0.0.22.5  |  7/8/2022    |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.23.0  |  ???         |  ???        |  ???              | ???         |

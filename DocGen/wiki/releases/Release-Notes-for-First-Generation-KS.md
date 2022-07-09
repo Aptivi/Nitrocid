@@ -952,6 +952,10 @@ This release is an update to 0.0.8 that fixes bugs, and clarifies the help comma
 
 1. Backported fixes from 0.0.22.0
 
+### KS 0.0.18.14 (7/9/2022)
+
+1. Backported fixes
+
 ## KS 0.0.9.x series
 
 ### KS 0.0.9.0 (4/23/2020)
@@ -1154,6 +1158,10 @@ This release is a huge release, so what's new is written below:
 ### KS 0.0.12.9 (6/10/2022)
 
 1. Backported fixes from 0.0.22.0
+
+### KS 0.0.12.10 (7/9/2022)
+
+1. Backported fixes
 
 ## KS 0.0.13.x series
 
@@ -1379,6 +1387,10 @@ This release is a huge release, so what's new is written below:
 
 1. Backported fixes from 0.0.22.0
 
+### KS 0.0.16.15 (7/9/2022)
+
+1. Backported fixes
+
 ## KS 0.0.17.x series
 
 ### KS 0.0.17.0 (7/4/2021)
@@ -1468,6 +1480,10 @@ This release is a huge release, so what's new is written below:
 
 1. Backported fixes from 0.0.22.0
 
+### KS 0.0.18.7 (7/9/2022)
+
+1. Backported fixes
+
 ## KS 0.0.19.x series
 
 ### KS 0.0.19.0 (8/24/2021)
@@ -1512,3 +1528,7 @@ This release is a huge release, so what's new is written below:
 ### KS 0.0.19.6 (6/10/2022)
 
 1. Backported fixes from 0.0.22.0
+
+### KS 0.0.19.7 (7/9/2022)
+
+1. Backported fixes

@@ -61,6 +61,10 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 
 1. Backported fixes from 0.0.22.0
 
+### KS 0.0.20.8 (7/8/2022)
+
+1. Backported fixes
+
 ## KS 0.0.21.x series
 
 ### KS 0.0.21.0 (4/28/2022)
@@ -102,6 +106,10 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 
 1. Backported fixes from 0.0.22.0
 
+### KS 0.0.21.7 (7/8/2022)
+
+1. Backported fixes
+
 ## KS 0.0.22.x series
 
 ### KS 0.0.22.0 (6/12/2022)
@@ -134,6 +142,10 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 ### KS 0.0.22.4 (6/17/2022)
 
 1. General improvements and bug fixes
+
+### KS 0.0.22.5 (7/8/2022)
+
+1. Backported fixes
 
 ## KS 0.0.23.x series
 
