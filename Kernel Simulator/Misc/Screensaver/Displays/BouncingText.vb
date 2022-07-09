@@ -219,8 +219,8 @@ Namespace Misc.Screensaver.Displays
 
         Private Direction As String = "BottomRight"
         Private RowText, ColumnFirstLetter, ColumnLastLetter As Integer
-        Private CurrentWindowWidth As Integer = Console.WindowWidth
-        Private CurrentWindowHeight As Integer = Console.WindowHeight
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
         Private ResizeSyncing As Boolean
         Private BouncingColor As Color
 

@@ -204,11 +204,11 @@ Namespace Misc.Screensaver.Displays
         Inherits BaseScreensaver
         Implements IScreensaver
 
-        Private RandomDriver As New Random()
+        Private RandomDriver As Random
         Private Direction As String = "BottomRight"
         Private RowBlock, ColumnBlock As Integer
-        Private CurrentWindowWidth As Integer = Console.WindowWidth
-        Private CurrentWindowHeight As Integer = Console.WindowHeight
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
         Private ResizeSyncing As Boolean
 
         Public Overrides Property ScreensaverName As String = "BouncingBlock" Implements IScreensaver.ScreensaverName

@@ -179,10 +179,10 @@ Namespace Misc.Screensaver.Displays
         Inherits BaseScreensaver
         Implements IScreensaver
 
-        Private RandomDriver As New Random()
+        Private RandomDriver As Random
         Private ColorFilled As Boolean
-        Private CurrentWindowWidth As Integer = Console.WindowWidth
-        Private CurrentWindowHeight As Integer = Console.WindowHeight
+        Private CurrentWindowWidth As Integer
+        Private CurrentWindowHeight As Integer
         Private ResizeSyncing As Boolean
         Private ReadOnly CoveredPositions As New ArrayList
 
