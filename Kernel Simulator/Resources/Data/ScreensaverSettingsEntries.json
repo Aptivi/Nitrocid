@@ -1866,7 +1866,7 @@
                 "IsEnumeration": true,
                 "MaxKeyOptions": 3,
                 "EnumerationInternal": true,
-                "Enumeration": "Misc.Screensaver.Displays.LinotypoDisplay+FillType",
+                "Enumeration": "Misc.Screensaver.Displays.LinotypoSettings+FillType",
                 "EnumerationZeroBased": true,
                 "Description": "Line fill pattern type"
             },
