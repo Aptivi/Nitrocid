@@ -128,8 +128,14 @@ Namespace Misc.Screensaver
                     SaverAutoReset.WaitOne()
                 ElseIf CustomSavers.ContainsKey(saver) Then
                     'Only one custom screensaver can be used.
-                    CustomSaver = CustomSavers(saver).Screensaver
-                    ScreensaverDisplayerThread.Start(New CustomDisplay())
+                    If CustomSavers(saver).Screensaver IsNot Nothing Then
+                        Wdbg(DebugLevel.W, "Trying to start custom screensaver {0} that uses obsolete ICustomSaver. Warning user...", saver)
+                        Write(DoTranslation("This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques."), True, ColTypes.Warning)
+                        CustomSaver = CustomSavers(saver).Screensaver
+                        ScreensaverDisplayerThread.Start(New CustomLegacyDisplay())
+                    Else
+                        ScreensaverDisplayerThread.Start(New CustomDisplay(CustomSavers(saver).ScreensaverBase))
+                    End If
                     Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                     DetectKeypress()
                     ScreensaverDisplayerThread.Stop()

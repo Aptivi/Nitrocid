@@ -36,13 +36,25 @@ Namespace Misc.Screensaver.Customized
             'Start parsing screensaver
             If FileExists(modPath + file) Then
                 Wdbg(DebugLevel.I, "Parsing {0}...", file)
+                Dim ScreensaverBase As BaseScreensaver
                 If Path.GetExtension(file) = ".dll" Then
                     'Try loading the screensaver
                     Try
-                        Wdbg(DebugLevel.W, "{0} is probably a valid screensaver. Generating...", file)
-                        CustomSaver = GetScreensaverInstanceLegacy(Assembly.LoadFrom(modPath + file))
-                        Wdbg(DebugLevel.W, "Is {0} actually a valid screensaver? {1}", file, CustomSaver IsNot Nothing)
-                        If CustomSaver IsNot Nothing Then DoneFlag = True
+                        Wdbg(DebugLevel.I, "{0} is probably a valid screensaver. Generating...", file)
+                        ScreensaverBase = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                        If ScreensaverBase IsNot Nothing Then
+                            'This screensaver uses the modern BaseScreensaver and IScreensaver interfaces
+                            Wdbg(DebugLevel.I, "{0} is a valid screensaver!", file)
+                            ReportProgress(DoTranslation("{0} has been initialized properly."), 0, ColTypes.Neutral, file)
+                            Dim SaverName As String = ScreensaverBase.ScreensaverName
+                            Dim SaverInstance As CustomSaverInfo
+                            SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), Nothing, ScreensaverBase)
+                            CustomSavers.Add(file, SaverInstance)
+                        Else
+                            CustomSaver = GetScreensaverInstanceLegacy(Assembly.LoadFrom(modPath + file))
+                            Wdbg(DebugLevel.I, "Is {0} actually a valid screensaver? {1}", file, CustomSaver IsNot Nothing)
+                            If CustomSaver IsNot Nothing Then DoneFlag = True
+                        End If
                     Catch ex As ReflectionTypeLoadException
                         Wdbg(DebugLevel.E, "Error trying to load dynamic screensaver {0} because of reflection failure: {1}", file, ex.Message)
                         WStkTrc(ex)
@@ -59,6 +71,7 @@ Namespace Misc.Screensaver.Customized
 
                     'Now, initialize the screensaver
                     If DoneFlag Then
+                        'This screensaver uses the legacy ICustomSaver, which will be removed in 0.0.24.0
                         Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
                         CustomSaver.InitSaver()
                         Dim SaverName As String = CustomSaver.SaverName
@@ -73,7 +86,6 @@ Namespace Misc.Screensaver.Customized
                             End If
                             Wdbg(DebugLevel.I, "Is screensaver found? {0}", IsFound)
                             If Not IsFound Then
-                                'TODO: Keep ScreensaverBase null for now; we don't have enough time to implement probing it. Maybe keep it to later?
                                 If Not SaverName = "" Then
                                     ReportProgress(DoTranslation("{0} has been initialized properly."), 0, ColTypes.Neutral, SaverName)
                                     Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
