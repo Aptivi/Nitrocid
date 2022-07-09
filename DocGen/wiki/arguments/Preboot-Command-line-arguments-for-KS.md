@@ -1,3 +1,5 @@
+# Preboot Command line arguments for KS
+
 ## How do I run pre-boot command-line arguments?
 
 You can run these arguments in the same concept as the command-line arguments. The only difference is that they execute before the kernel initialization.

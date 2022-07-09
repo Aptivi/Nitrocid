@@ -1,3 +1,5 @@
+# Splashes
+
 ## What are the splashes?
 
 Splashes are another way to greet the users before the log-in. They act like a progress bar for any application initialization, including the kernel itself. They were inspired from the Plymouth project, a kernel splash screen for Linux systems.

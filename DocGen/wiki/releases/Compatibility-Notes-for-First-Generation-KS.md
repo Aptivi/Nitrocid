@@ -1,4 +1,4 @@
-## Compatibility notes
+## Compatibility notes for first-gen KS
 
 The first-generation versions of Kernel Simulator are not compatible with the second-generation versions, due to too many structural changes. Here are the breaking changes per generation.
 

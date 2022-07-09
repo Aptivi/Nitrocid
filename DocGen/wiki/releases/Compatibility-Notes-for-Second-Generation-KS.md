@@ -1,4 +1,4 @@
-## Compatibility notes
+## Compatibility notes for second-gen KS
 
 The second-generation versions of Kernel Simulator are not backwards-compatible with the first-generation versions, due to too many structural changes as outlined below. Here are the breaking changes per generation.
 

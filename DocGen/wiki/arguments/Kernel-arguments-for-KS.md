@@ -1,3 +1,5 @@
+# Kernel arguments for KS
+
 ## How to run arguments? and how do I make the prompt appear?
 
 An argument to the kernel is the option of which the kernel or parts of it will behave differently based on the options you have chosen. It will be run on the start of the kernel, and if no arguments were specified, the kernel will run normally.

@@ -1,3 +1,5 @@
+# Modding guide
+
 ## What is the mod for the kernel?
 
 The mod is the kernel extension file that loads on boot and adds extensions to the kernel, the shell, and everything. It can also respond to events.

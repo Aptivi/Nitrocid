@@ -1,3 +1,5 @@
+# Screensaver modding guide
+
 ## What is the screensaver for the kernel?
 
 The screensaver is the idle process that will activate if your computer went idle. You can also see the default screensaver by savescreen that is set by you or by the kernel.

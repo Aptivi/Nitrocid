@@ -1,3 +1,5 @@
+# Splash settings for KS
+
 ## Splash config entries
 
 ### Progress

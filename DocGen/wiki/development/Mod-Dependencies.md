@@ -1,3 +1,5 @@
+# Mod Dependencies
+
 ## What is a dependency for a mod?
 
 A depenedency for a mod is a library that allows mods to use features that the library provides. Some mods may make use of such libraries to be able to do a thing that the built-in libraries aren't able to.

@@ -1,3 +1,5 @@
+# Studying Payslip virus
+
 ## The May 2019 Payslip virus, and its usage of some of KS's features
 
 On May 17, 2019, there was a new virus compiled using VB.NET, called Payslip, that manages to obtain some of KS's features, like the flagging system, `TextWriterColor`, etc. on its source code to avoid detection. Most of you have found viruses on shady sites, so you need to avoid these kinds of sites. We are here to study its disassembly of Payslip.

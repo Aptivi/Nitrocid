@@ -1,3 +1,5 @@
+# Events for Mod Developers
+
 ## List of events that KS fires
 
 KS fires an event after its own actions which can be seen below:

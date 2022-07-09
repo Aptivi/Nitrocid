@@ -1,3 +1,5 @@
+# Configuration for KS
+
 ## What is the config?
 
 The config is the configuration file for your kernel that stores more kernel options that couldn't be edited in either the arguments or command-line arguments. It provides control on how the kernel or targeted routine in the kernel (network, shell, etc.) behave, like kernel colors, defaults, and so on. Some commands do change the config file. Use the `settings` command to change the kernel settings as the legacy KS Config Tool is obsolete.

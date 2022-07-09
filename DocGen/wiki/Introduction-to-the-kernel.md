@@ -1,3 +1,5 @@
+# Introduction to the Kernel
+
 ## What is the Kernel? How about Kernel Simulator?
 
 The kernel in general is a computer program that is the core of a computer's operating system, with complete control over everything in the system. On most systems, it is one of the first programs loaded on start-up (after the bootloader). It handles the rest of start-up as well as input/output requests from software, translating them into data-processing instructions for the central processing unit. It handles memory and peripherals like keyboards, monitors, printers, and speakers.

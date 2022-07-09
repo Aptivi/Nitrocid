@@ -1,3 +1,5 @@
+# Screensaver settings for KS
+
 ## Screensaver config entries
 
 Generally, almost all screensavers have the color and delay settings. However, some have no such setting. Refer to the table below. Choose a section to go to extra screensaver settings.

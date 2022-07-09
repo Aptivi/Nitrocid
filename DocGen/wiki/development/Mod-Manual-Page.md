@@ -1,3 +1,5 @@
+# Mod manual page
+
 ## What is the manual page for mods?
 
 Manual page for mods is a file consisting of documentation for the mod or for a specific part of the mod. They clarify how to use the mod, what are the commands, and so on. Sometimes, they may include release notes with the mod.

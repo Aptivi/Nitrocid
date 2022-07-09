@@ -1,4 +1,4 @@
-# First-generation
+# First-generation KS releases
 
 ## KS 0.0.1.x series
 

@@ -1,3 +1,5 @@
+# Output redirection
+
 ## How it works
 
 Output redirection allows you to pipe the output of a command that needs to be saved to a file so you can use it later. For example, if you wanted to save an output for `ls -l` command in Linux, you would type it like this: `ls -l > file.txt`.

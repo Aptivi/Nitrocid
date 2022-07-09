@@ -1,3 +1,5 @@
+# Remote debugging guide
+
 ## What is remote debugging?
 
 Remote debugging is the way of viewing debug information about one device on another device around the network. It requires a high-speed LAN connection to be able to activate remote debugging using raw connection.

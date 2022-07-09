@@ -1,3 +1,5 @@
+# Custom splash guide
+
 ## What is the custom splash for the kernel?
 
 The custom splash is an assembly file that loads before the splash is displayed. It allows you to create custom splashes from simple progress bars to complex console art.
