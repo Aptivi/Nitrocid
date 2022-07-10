@@ -22,6 +22,7 @@ Namespace Misc.Screensaver
     Public Module ScreensaverDisplayer
 
         Public ReadOnly ScreensaverDisplayerThread As New KernelThread("Screensaver display thread", False, AddressOf DisplayScreensaver)
+        Friend OutOfRandom As Boolean
 
         ''' <summary>
         ''' Displays the screensaver from the screensaver base
@@ -30,14 +31,16 @@ Namespace Misc.Screensaver
         Public Sub DisplayScreensaver(Screensaver As BaseScreensaver)
             Try
                 'Preparations
+                OutOfRandom = False
                 Screensaver.ScreensaverPreparation()
 
                 'Execute the actual screensaver logic
-                Do While True
+                Do While Not OutOfRandom
                     Screensaver.ScreensaverLogic()
                 Loop
             Catch taex As ThreadInterruptedException
                 HandleSaverCancel()
+                OutOfRandom = True
             Catch ex As Exception
                 HandleSaverError(ex)
             End Try
