@@ -25,41 +25,42 @@ Namespace Languages
 
         'Variables
         Public CurrentLanguage As String = "eng" 'Default to English
+        Friend BaseLanguages As New Dictionary(Of String, LanguageInfo)
+        Friend CustomLanguages As New Dictionary(Of String, LanguageInfo)
         Private NotifyCodepageError As Boolean
-
-        'PLEASE NOTE: "zul" language is Zulu and "swa" is Swahili for compatibility with Windows and Linux platforms. Windows considers "zul" as
-        '             isiZulu and "swa" as Kiswahili, while Linux considers "zul" as Zulu and "swa" as Swahili.
-        'TODO: Get the base KS languages using Metadata.json from KSJsonifyLocales
-        Friend InstalledLanguages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
-                                                                                   {"chi", New LanguageInfo("chi", "Chinese", True)}, {"chi-T", New LanguageInfo("chi-T", "Chinese", True)},
-                                                                                   {"cnt", New LanguageInfo("cnt", "Chinese (Traditional)", True)}, {"cnt-T", New LanguageInfo("cnt-T", "Chinese (Traditional)", True)},
-                                                                                   {"cze", New LanguageInfo("cze", "Czech", False)},
-                                                                                   {"dtc", New LanguageInfo("dtc", "Dutch", False)},
-                                                                                   {"eng", New LanguageInfo("eng", "English", False)},
-                                                                                   {"fre", New LanguageInfo("fre", "French", False)},
-                                                                                   {"ger", New LanguageInfo("ger", "German", False)},
-                                                                                   {"hxr-1", New LanguageInfo("hxr-1", "H4X0R Level 1", False)},
-                                                                                   {"hxr-2", New LanguageInfo("hxr-2", "H4X0R Level 2", False)},
-                                                                                   {"hxr-3", New LanguageInfo("hxr-3", "H4X0R Level 3", False)},
-                                                                                   {"ind", New LanguageInfo("ind", "Hindi", True)}, {"ind-T", New LanguageInfo("ind-T", "Hindi", True)},
-                                                                                   {"ita", New LanguageInfo("ita", "Italian", False)},
-                                                                                   {"jpn", New LanguageInfo("jpn", "Japanese", False)},
-                                                                                   {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
-                                                                                   {"lol", New LanguageInfo("lol", "LOLCAT", False)},
-                                                                                   {"pir", New LanguageInfo("pir", "Pirate Speak", False)},
-                                                                                   {"pla", New LanguageInfo("pla", "Gangsta, Playa", False)},
-                                                                                   {"ptg", New LanguageInfo("ptg", "Portuguese", False)},
-                                                                                   {"rus", New LanguageInfo("rus", "Russian", True)}, {"rus-T", New LanguageInfo("rus-T", "Russian", True)},
-                                                                                   {"spa", New LanguageInfo("spa", "Spanish", False)},
-                                                                                   {"tky", New LanguageInfo("tky", "Turkish", False)},
-                                                                                   {"ukr", New LanguageInfo("ukr", "Ukrainian", True)}, {"ukr-T", New LanguageInfo("ukr-T", "Ukrainian", True)},
-                                                                                   {"vtn", New LanguageInfo("vtn", "Vietnamese", False)}}
+        Private ReadOnly LanguageMetadata As JToken = JToken.Parse(My.Resources.LanguageMetadata)
 
         ''' <summary>
         ''' The installed languages list.
         ''' </summary>
         Public ReadOnly Property Languages As Dictionary(Of String, LanguageInfo)
             Get
+                Dim InstalledLanguages As New Dictionary(Of String, LanguageInfo)
+
+                'For each language, get information for localization and cache them
+                For Each Language As JToken In LanguageMetadata
+                    Dim LanguageName As String = Language.Path
+                    Dim LanguageFullName As String = Language.First.SelectToken("name")
+                    Dim LanguageTransliterable As Boolean = Language.First.SelectToken("transliterable")
+
+                    'If the language is not found in the base languages cache dictionary, add it
+                    If Not BaseLanguages.ContainsKey(LanguageName) Then
+                        Dim LanguageInfo As New LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable)
+                        BaseLanguages.AddIfNotFound(LanguageName, LanguageInfo)
+                    End If
+                Next
+
+                'Add the base languages to the final dictionary
+                For Each BaseLanguage As String In BaseLanguages.Keys
+                    InstalledLanguages.Add(BaseLanguage, BaseLanguages(BaseLanguage))
+                Next
+
+                'Now, get the custom languages and add them to the languages list
+                For Each CustomLanguage As String In CustomLanguages.Keys
+                    InstalledLanguages.Add(CustomLanguage, CustomLanguages(CustomLanguage))
+                Next
+
+                'Return the list
                 Return InstalledLanguages
             End Get
         End Property
@@ -235,7 +236,7 @@ Namespace Languages
                                 Wdbg(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName))
                                 If Not Languages.ContainsKey(LanguageName) Then
                                     Wdbg(DebugLevel.I, "Language exists. Installing...")
-                                    InstalledLanguages.Add(LanguageName, ParsedLanguageInfo)
+                                    CustomLanguages.Add(LanguageName, ParsedLanguageInfo)
                                     KernelEventManager.RaiseLanguageInstalled(LanguageName)
                                 ElseIf ThrowOnAlreadyInstalled Then
                                     Wdbg(DebugLevel.E, "Can't add existing language.")
@@ -299,7 +300,7 @@ Namespace Languages
                             Wdbg(DebugLevel.I, "Metadata exists!")
 
                             'Uninstall the language
-                            If Not InstalledLanguages.Remove(LanguageName) Then
+                            If Not CustomLanguages.Remove(LanguageName) Then
                                 Wdbg(DebugLevel.E, "Failed to uninstall custom language")
                                 Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom language. It most likely doesn't exist."))
                             End If
@@ -332,7 +333,7 @@ Namespace Languages
                         'Check the status
                         If LanguageInfo.Custom Then
                             'Actually uninstall
-                            If Not InstalledLanguages.Remove(Language) Then
+                            If Not CustomLanguages.Remove(Language) Then
                                 Wdbg(DebugLevel.E, "Failed to uninstall custom languages")
                                 Throw New Exceptions.LanguageUninstallException(DoTranslation("Failed to uninstall custom languages."))
                             End If
