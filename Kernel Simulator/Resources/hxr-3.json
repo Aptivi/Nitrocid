@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "(010|2 |-|3%4|)3(!|\\\\/|41 |23|>|2353|\\\\|+4+!0|\\\\|:",
     "Mod part name:": "|\\\\/|0|) |>4|2+ |\\\\|4|\\\\/|3:",
     "Mod part file name:": "|\\\\/|0|) |>4|2+ |#!13 |\\\\|4|\\\\/|3:",
-    "Mod part file path:": "|\\\\/|0|) |>4|2+ |#!13 |>4+|-|:"
+    "Mod part file path:": "|\\\\/|0|) |>4|2+ |#!13 |>4+|-|:",
+    "It's now safe to turn off your computer.": "!+'5 |\\\\|0\\\\|/ 54|#3 +0 +|_||2|\\\\| 0|#|# `/0|_||2 (0|\\\\/||>|_|+3|2.",
+    "Simulate No APM Mode": "5!|\\\\/||_|14+3 |\\\\|0 4|>|\\\\/| |\\\\/|0|)3",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "\\\\|/|-|3+|-|3|2 +0 5!|\\\\/||_|14+3 4 5!+|_|4+!0|\\\\| \\\\|/|-|3|23 +|-|3|23 !5 |\\\\|0 4|>|\\\\/| 4\\\\/4!14813. !|# 3|\\\\|4813|), !+ !|\\\\||#0|2|\\\\/|5 +|-|3 |_|53|2 +|-|4+ !+'5 |\\\\|0\\\\|/ 54|#3 +0 +|_||2|\\\\| 0|#|# +|-|3 (0|\\\\/||>|_|+3|2 |_||>0|\\\\| 5|-||_|+|)0\\\\|/|\\\\|.",
+    "Glitch density": "61!+(|-| |)3|\\\\|5!+`/",
+    "The greater the percentage, the more dense the glitch!": "+|-|3 6|234+3|2 +|-|3 |>3|2(3|\\\\|+463, +|-|3 |\\\\/|0|23 |)3|\\\\|53 +|-|3 61!+(|-|!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "+|-|3 64|\\\\|65+4 14|\\\\|6|_|463 (0|\\\\|+4!|\\\\|5 5+|20|\\\\|6 14|\\\\|6|_|463 +|-|4+ |\\\\/|4`/ |\\\\/|4|(3 `/0|_| |#331 |_||\\\\|(0|\\\\/||#0|2+4813 |234|)!|\\\\|6 !+. 4|23 `/0|_| 5|_||23 +|-|4+ `/0|_| \\\\|/4|\\\\|+ +0 53+ +|-|3 14|\\\\|6|_|463 4|\\\\|`/\\\\|/4`/5?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "+|-|!5 |\\\\/|0|) !5 |_|5!|\\\\|6 +|-|3 1364(`/ |\\\\/|3+|-|0|) +0 3%3(|_|+3 +|-|3 (0|\\\\/||\\\\/|4|\\\\||)5. +|-|!5 !5 085013+3. |>13453 (0|\\\\|+4(+ +|-|3 |\\\\/|0|) \\\\/3|\\\\||)0|2 +0 |\\\\/|!6|24+3 +0 +|-|3 (|_||2|23|\\\\|+ 5+4|\\\\||)4|2|)5.",
+    "The English Dictionary": "+|-|3 3|\\\\|61!5|-| |)!(+!0|\\\\|4|2`/",
+    "Word information for": "\\\\|/0|2|) !|\\\\||#0|2|\\\\/|4+!0|\\\\| |#0|2",
+    "API is licensed under": "4|>! !5 1!(3|\\\\|53|) |_||\\\\||)3|2",
+    "Word:": "\\\\|/0|2|):",
+    "Word meanings for": "\\\\|/0|2|) |\\\\/|34|\\\\|!|\\\\|65 |#0|2",
+    "Part of Speech:": "|>4|2+ 0|# 5|>33(|-|:",
+    "Definition:": "|)3|#!|\\\\|!+!0|\\\\|:",
+    "Example in Sentence:": "3%4|\\\\/||>13 !|\\\\| 53|\\\\|+3|\\\\|(3:",
+    "Sources used to define": "50|_||2(35 |_|53|) +0 |)3|#!|\\\\|3",
+    "Synonyms:": "5`/|\\\\|0|\\\\|`/|\\\\/|5:",
+    "Antonyms:": "4|\\\\|+0|\\\\|`/|\\\\/|5:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "+|-|!5 5(|233|\\\\|54\\\\/3|2 |_|535 085013+3 +3(|-||\\\\|!?|_|35 +0 |)!5|>14`/ !+5 (0|\\\\|+3|\\\\|+5, \\\\|/|-|!(|-| \\\\|/!11 |\\\\|0 10|\\\\|63|2 \\\\|/0|2|( 5+4|2+!|\\\\|6 |#|20|\\\\/| +|-|3 |\\\\|3%+ |(5 4|>! |23\\\\/!5!0|\\\\|. (0|\\\\|+4(+ +|-|3 \\\\/3|\\\\||)0|2 +0 |\\\\/|!6|24+3 +0 |\\\\|3\\\\|/3|2, 5|_||>|>0|2+3|) +3(|-||\\\\|!?|_|35."
   }
 }

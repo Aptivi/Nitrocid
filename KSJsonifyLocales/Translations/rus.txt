@@ -1744,3 +1744,22 @@ Shestnadtsaterichnoye predstavleniye tsveta:
 Nazvaniye chasti moda:
 Imya fayla chasti moda:
 Put' k faylu chasti moda:
+Teperʹ mozhno bezopasno vyklyuchitʹ kompʹyuter.
+Imitirovatʹ rezhim bez APM
+Imitirovatʹ li situatsiyu, kogda net dostupnogo APM. Yesli on vklyuchen, on informiruyet polʹzovatelya o tom, chto teperʹ bezopasno vyklyuchatʹ kompʹyuter posle vyklyucheniya.
+Plotnostʹ sboyev
+Chem bolʹshe protsent, tem plotneye glyuk!
+Gangsta-yazyk soderzhit grubyye vyrazheniya, kotoryye mogut vyzvatʹ u vas diskomfort pri chtenii. Vy uvereny, chto khotite ustanovitʹ yazyk v lyubom sluchaye?
+Etot mod ispolʹzuyet ustarevshiy metod dlya vypolneniya komand. Eto ustarelo. Pozhaluysta, svyazhitesʹ s prodavtsom moda, chtoby pereyti na tekushchiye standarty.
+Angliyskiy slovarʹ
+Informatsiya o slove dlya
+API nakhodit·sya pod litsenziyey
+Slovo:
+Znacheniya slov dlya
+Chastʹ rechi:
+Opredeleniye:
+Primer v predlozhenii:
+Istochniki, ispolʹzuyemyye dlya opredeleniya
+Sinonimy:
+Antonimy:
+Eta zastavka ispolʹzuyet ustarevshiye metody otobrazheniya svoyego soderzhimogo, kotoryye bolʹshe ne budut rabotatʹ, nachinaya so sleduyushchey versii KS API. Svyazhitesʹ s postavshchikom, chtoby pereyti na boleye novyye podderzhivayemyye tekhnologii.

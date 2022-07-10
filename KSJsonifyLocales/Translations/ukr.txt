@@ -1744,3 +1744,22 @@ Kolʹorove shistnadtsyatkove predstavlennya:
 Nazva chastyny modu:
 Nazva faylu chastyny modu:
 Shlyakh do faylu chastyny modu:
+Teper mozhna bezpechno vymknuty kompʺyuter.
+Symulyuvaty rezhym No APM
+Chy modelyuvaty sytuatsiyu, koly APM nedostupnyy. Yakshcho vvimkneno, vin informuye korystuvacha pro te, shcho teper mozhna bezpechno vymknuty kompʺyuter pislya zavershennya roboty.
+Shchilʹnistʹ hlyukiv
+Chym bilʹshe vidsotok, tym shchilʹnishe hlyuk!
+Hanhstersʹka mova mistytʹ hrubi vyslovlyuvannya, yaki mozhutʹ zmusyty vas pochuvatysya nekomfortno, chytayuchy yiyi. Vy vpevneni, shcho vse odno khochete vstanovyty movu?
+Tsey mod vykorystovuye zastarilyy metod dlya vykonannya komand. Tse vzhe zastarilo. Shchob pereyty na potochni standarty, zvernitʹsya do postachalʹnyka modiv.
+Anhliysʹkyy slovnyk
+Word informatsiya dlya
+API litsenzovano za
+slovo:
+Znachennya sliv dlya
+Chastyna movy:
+vyznachennya:
+Pryklad u rechenni:
+Dzherela, vykorystani dlya vyznachennya
+Synonimy:
+Antonimy:
+Tsya zastavka vykorystovuye zastarili metody dlya vidobrazhennya svoho vmistu, yaki bilʹshe ne pratsyuvatymutʹ, pochynayuchy z nastupnoyi versiyi KS API. Zvernitʹsya do postachalʹnyka, shchob pereyty na novishi pidtrymuvani metody.

@@ -1744,3 +1744,22 @@ Representação hexadecimal de cores:
 Nome da peça do mod:
 Nome do arquivo da parte do mod:
 Caminho do arquivo da peça do mod:
+Agora é seguro desligar o computador.
+Simular nenhum modo APM
+Se deve simular uma situação em que não há APM disponível. Se ativado, ele informa ao usuário que agora é seguro desligar o computador ao desligar.
+Densidade de falha
+Quanto maior a porcentagem, mais densa a falha!
+A linguagem gangsta contém uma linguagem forte que pode fazer você se sentir desconfortável ao lê-la. Tem certeza de que deseja definir o idioma de qualquer maneira?
+Este mod está usando o método legado para executar os comandos. Isso é obsoleto. Entre em contato com o fornecedor do mod para migrar para os padrões atuais.
+O Dicionário de Inglês
+Informações da palavra para
+A API é licenciada sob
+Palavra:
+Significados das palavras para
+Parte do discurso:
+Definição:
+Exemplo na frase:
+Fontes usadas para definir
+Sinônimos:
+Antônimos:
+Este protetor de tela usa técnicas obsoletas para exibir seu conteúdo, que não funcionará mais a partir da próxima revisão da API KS. Entre em contato com o fornecedor para migrar para técnicas mais recentes e com suporte.

@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Renk onaltılı gösterimi:",
     "Mod part name:": "Mod parçası adı:",
     "Mod part file name:": "Mod parçası dosya adı:",
-    "Mod part file path:": "Mod parçası dosya yolu:"
+    "Mod part file path:": "Mod parçası dosya yolu:",
+    "It's now safe to turn off your computer.": "Artık bilgisayarınızı kapatmak güvenlidir.",
+    "Simulate No APM Mode": "APM Yok Modunun Simüle Edilmesi",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Kullanılabilir APM'nin olmadığı bir durumu simüle edip etmeyeceği. Etkinleştirilirse, kullanıcıya bilgisayarı kapattıktan sonra kapatmanın artık güvenli olduğunu bildirir.",
+    "Glitch density": "aksaklık yoğunluğu",
+    "The greater the percentage, the more dense the glitch!": "Yüzde ne kadar büyük olursa, aksaklık o kadar yoğun olur!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Gangsta dili, okurken kendinizi rahatsız hissetmenize neden olabilecek güçlü bir dil içeriyor. Yine de dili ayarlamak istediğinizden emin misiniz?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Bu mod, komutları yürütmek için eski yöntemi kullanıyor. Bu modası geçmiş. Mevcut standartlara geçmek için lütfen mod satıcısı ile iletişime geçin.",
+    "The English Dictionary": "İngilizce Sözlük",
+    "Word information for": "için kelime bilgisi",
+    "API is licensed under": "API lisanslıdır",
+    "Word:": "Kelime:",
+    "Word meanings for": "kelime anlamları",
+    "Part of Speech:": "Konuşmanın bölümü:",
+    "Definition:": "Tanım:",
+    "Example in Sentence:": "Cümledeki Örnek:",
+    "Sources used to define": "Tanımlamak için kullanılan kaynaklar",
+    "Synonyms:": "Eş anlamlı:",
+    "Antonyms:": "Zıtlıklar:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Bu ekran koruyucu, içeriğini görüntülemek için bir sonraki KS API revizyonundan itibaren artık çalışmayacak olan eski teknikleri kullanır. Daha yeni, desteklenen tekniklere geçiş yapmak için satıcıyla iletişime geçin."
   }
 }

@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Kleur hexadecimale weergave:",
     "Mod part name:": "Naam mod-onderdeel:",
     "Mod part file name:": "Mod onderdeel bestandsnaam:",
-    "Mod part file path:": "Mod onderdeel bestandspad:"
+    "Mod part file path:": "Mod onderdeel bestandspad:",
+    "It's now safe to turn off your computer.": "Het is nu veilig om uw computer uit te zetten.",
+    "Simulate No APM Mode": "Simuleer geen APM-modus",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Of een situatie moet worden gesimuleerd waarin er geen APM beschikbaar is. Indien ingeschakeld, informeert het de gebruiker dat het nu veilig is om de computer uit te zetten bij het afsluiten.",
+    "Glitch density": "Glitchdichtheid",
+    "The greater the percentage, the more dense the glitch!": "Hoe groter het percentage, hoe groter de glitch!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "De gangsta-taal bevat sterke taal waardoor je je misschien ongemakkelijk voelt om het te lezen. Weet u zeker dat u de taal toch wilt instellen?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Deze mod gebruikt de legacy-methode om de opdrachten uit te voeren. Dit is achterhaald. Neem contact op met de mod-leverancier om te migreren naar de huidige standaarden.",
+    "The English Dictionary": "Het Engelse Woordenboek",
+    "Word information for": "Woordinformatie voor",
+    "API is licensed under": "API is gelicentieerd onder:",
+    "Word:": "Woord:",
+    "Word meanings for": "Woordbetekenissen voor",
+    "Part of Speech:": "Woordsoort:",
+    "Definition:": "Definitie:",
+    "Example in Sentence:": "Voorbeeld in zin:",
+    "Sources used to define": "Bronnen die worden gebruikt om te definiëren",
+    "Synonyms:": "Synoniemen:",
+    "Antonyms:": "Antoniemen:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Deze screensaver gebruikt verouderde technieken om de inhoud ervan weer te geven, die niet meer zal werken vanaf de volgende KS API-revisie. Neem contact op met de leverancier om te migreren naar nieuwere, ondersteunde technieken."
   }
 }

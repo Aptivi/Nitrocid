@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Kolʹorove shistnadtsyatkove predstavlennya:",
     "Mod part name:": "Nazva chastyny modu:",
     "Mod part file name:": "Nazva faylu chastyny modu:",
-    "Mod part file path:": "Shlyakh do faylu chastyny modu:"
+    "Mod part file path:": "Shlyakh do faylu chastyny modu:",
+    "It's now safe to turn off your computer.": "Teper mozhna bezpechno vymknuty kompʺyuter.",
+    "Simulate No APM Mode": "Symulyuvaty rezhym No APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Chy modelyuvaty sytuatsiyu, koly APM nedostupnyy. Yakshcho vvimkneno, vin informuye korystuvacha pro te, shcho teper mozhna bezpechno vymknuty kompʺyuter pislya zavershennya roboty.",
+    "Glitch density": "Shchilʹnistʹ hlyukiv",
+    "The greater the percentage, the more dense the glitch!": "Chym bilʹshe vidsotok, tym shchilʹnishe hlyuk!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Hanhstersʹka mova mistytʹ hrubi vyslovlyuvannya, yaki mozhutʹ zmusyty vas pochuvatysya nekomfortno, chytayuchy yiyi. Vy vpevneni, shcho vse odno khochete vstanovyty movu?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Tsey mod vykorystovuye zastarilyy metod dlya vykonannya komand. Tse vzhe zastarilo. Shchob pereyty na potochni standarty, zvernitʹsya do postachalʹnyka modiv.",
+    "The English Dictionary": "Anhliysʹkyy slovnyk",
+    "Word information for": "Word informatsiya dlya",
+    "API is licensed under": "API litsenzovano za",
+    "Word:": "slovo:",
+    "Word meanings for": "Znachennya sliv dlya",
+    "Part of Speech:": "Chastyna movy:",
+    "Definition:": "vyznachennya:",
+    "Example in Sentence:": "Pryklad u rechenni:",
+    "Sources used to define": "Dzherela, vykorystani dlya vyznachennya",
+    "Synonyms:": "Synonimy:",
+    "Antonyms:": "Antonimy:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Tsya zastavka vykorystovuye zastarili metody dlya vidobrazhennya svoho vmistu, yaki bilʹshe ne pratsyuvatymutʹ, pochynayuchy z nastupnoyi versiyi KS API. Zvernitʹsya do postachalʹnyka, shchob pereyty na novishi pidtrymuvani metody."
   }
 }

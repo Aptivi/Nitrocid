@@ -1744,3 +1744,22 @@ the argument must be numeric.
 mod part name:
 mod part file name:
 mod part file path:
+It be now safe to turn off yer computer.
+ simulate no apm mode
+whether to simulate a situation where there be no apm available. If enabled, it informs the user that there it be now safe to turn off the computer upon shutdown.
+ glitch density
+the greater the percentage, the more dense the glitch!
+the gangsta language contains strong language that there may make ye feel uncomfortable readin' it. Be ye sure that there ye want to set the language anyways?
+this here mod be usin' the legacy method to execute the commands. This here be obsolete. Please contact the mod vendor to migrate to the current standards.
+ the English dictionary
+word information fer
+api be licensed under
+word:
+word meanings fer
+part o' speech:
+definition:
+example in sentence:
+sources used to define
+synonyms:
+antonyms:
+this here screensaver uses obsolete techniques to display its contents, which will no longer work startin' from the next ks api revision. Contact the vendor to migrate to newer, supported techniques.

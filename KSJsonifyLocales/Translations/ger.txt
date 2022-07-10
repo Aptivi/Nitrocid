@@ -1744,3 +1744,22 @@ Hexadezimale Farbdarstellung:
 Name des Mod-Teils:
 Dateiname des Mod-Teils:
 Dateipfad des Mod-Teils:
+Sie können Ihren Computer jetzt sicher ausschalten.
+Simulieren Sie keinen APM-Modus
+Ob eine Situation simuliert werden soll, in der kein APM verfügbar ist. Wenn aktiviert, informiert es den Benutzer, dass es jetzt sicher ist, den Computer beim Herunterfahren auszuschalten.
+Glitch-Dichte
+Je größer der Prozentsatz, desto dichter der Glitch!
+Die Gangsta-Sprache enthält eine starke Sprache, bei der Sie sich beim Lesen unwohl fühlen können. Sind Sie sicher, dass Sie die Sprache trotzdem einstellen möchten?
+Dieser Mod verwendet die Legacy-Methode, um die Befehle auszuführen. Dies ist veraltet. Bitte wenden Sie sich an den Mod-Anbieter, um zu den aktuellen Standards zu migrieren.
+Das englische Wörterbuch
+Wortinformationen für
+API ist lizenziert unter
+Wort:
+Wortbedeutungen für
+Teil der Rede:
+Definition:
+Beispiel im Satz:
+Quellen verwendet, um zu definieren
+Synonyme:
+Antonyme:
+Dieser Bildschirmschoner verwendet veraltete Techniken zur Anzeige seiner Inhalte, die ab der nächsten KS-API-Revision nicht mehr funktionieren. Wenden Sie sich an den Anbieter, um zu neueren, unterstützten Techniken zu migrieren.

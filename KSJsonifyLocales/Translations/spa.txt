@@ -1744,3 +1744,22 @@ Color representación hexadecimal:
 Nombre de la parte de la modificación:
 Nombre del archivo de la pieza de modificación:
 Ruta del archivo de la pieza de modificación:
+Ahora es seguro apagar su computadora.
+Simular modo sin APM
+Ya sea para simular una situación en la que no hay APM disponible. Si está habilitado, informa al usuario que ahora es seguro apagar la computadora al apagarla.
+Densidad de fallos
+¡Cuanto mayor sea el porcentaje, más denso será el error!
+El lenguaje gangsta contiene un lenguaje fuerte que puede hacerte sentir incómodo al leerlo. ¿Estás seguro de que quieres configurar el idioma de todos modos?
+Este mod utiliza el método heredado para ejecutar los comandos. Esto es obsoleto. Póngase en contacto con el proveedor de mods para migrar a los estándares actuales.
+El Diccionario Inglés
+Palabra de información para
+API tiene licencia bajo
+Palabra:
+significados de palabras para
+Parte del discurso:
+Definición:
+Ejemplo en oración:
+Fuentes utilizadas para definir
+Sinónimos:
+Antónimos:
+Este protector de pantalla utiliza técnicas obsoletas para mostrar su contenido, que ya no funcionará a partir de la próxima revisión de la API de KS. Póngase en contacto con el proveedor para migrar a técnicas compatibles más nuevas.

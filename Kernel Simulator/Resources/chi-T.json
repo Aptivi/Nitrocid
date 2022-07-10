@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "颜色十六进制表示：",
     "Mod part name:": "模组名称：",
     "Mod part file name:": "模组部分文件名：",
-    "Mod part file path:": "Mod部分文件路径："
+    "Mod part file path:": "Mod部分文件路径：",
+    "It's now safe to turn off your computer.": "现在可以安全地关闭计算机。",
+    "Simulate No APM Mode": "模拟无 APM 模式",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "是否模拟没有可用 APM 的情况。 如果启用，它会通知用户现在可以安全地在关机时关闭计算机。",
+    "Glitch density": "毛刺密度",
+    "The greater the percentage, the more dense the glitch!": "百分比越大，故障越密集！",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "黑帮语言包含强烈的语言，可能会让您在阅读时感到不舒服。 您确定要设置语言吗？",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "这个 mod 使用传统方法来执行命令。 这是过时的。 请联系模组供应商以迁移到当前标准。",
+    "The English Dictionary": "英语词典",
+    "Word information for": "单词信息",
+    "API is licensed under": "API 已获得许可",
+    "Word:": "单词：",
+    "Word meanings for": "词义为",
+    "Part of Speech:": "部分演讲：",
+    "Definition:": "定义：",
+    "Example in Sentence:": "句子中的例子：",
+    "Sources used to define": "用于定义的来源",
+    "Synonyms:": "同义词：",
+    "Antonyms:": "反义词：",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "此屏幕保护程序使用过时的技术来显示其内容，从下一个 KS API 修订版开始将不再有效。 联系供应商以迁移到更新的、受支持的技术。"
   }
 }

@@ -1744,3 +1744,22 @@ Représentation hexadécimale en couleur :
 Nom de la partie mod :
 Nom du fichier de partie mod :
 Chemin d'accès au fichier de la partie mod :
+Vous pouvez maintenant éteindre votre ordinateur en toute sécurité.
+Simuler aucun mode APM
+S'il faut simuler une situation où il n'y a pas d'APM disponible. S'il est activé, il informe l'utilisateur qu'il est maintenant sûr d'éteindre l'ordinateur lors de l'arrêt.
+Densité de glitch
+Plus le pourcentage est élevé, plus le glitch est dense !
+Le langage gangsta contient un langage fort qui peut vous mettre mal à l'aise de le lire. Êtes-vous sûr de vouloir quand même définir la langue ?
+Ce mod utilise la méthode héritée pour exécuter les commandes. C'est obsolète. Veuillez contacter le fournisseur du mod pour migrer vers les normes actuelles.
+Le dictionnaire anglais
+Informations sur les mots pour
+L'API est sous licence
+Mot:
+Signification des mots pour
+Partie du discours:
+Définition:
+Exemple dans la phrase :
+Sources utilisées pour définir
+Synonymes :
+Antonymes :
+Cet économiseur d'écran utilise des techniques obsolètes pour afficher son contenu, qui ne fonctionnera plus à partir de la prochaine révision de l'API KS. Contactez le fournisseur pour migrer vers des techniques plus récentes et prises en charge.

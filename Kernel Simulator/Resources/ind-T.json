@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "रंग हेक्साडेसिमल प्रतिनिधित्व:",
     "Mod part name:": "मॉड भाग का नाम:",
     "Mod part file name:": "मॉड भाग फ़ाइल का नाम:",
-    "Mod part file path:": "मॉड भाग फ़ाइल पथ:"
+    "Mod part file path:": "मॉड भाग फ़ाइल पथ:",
+    "It's now safe to turn off your computer.": "अपने कंप्यूटर को बंद करना अब सुरक्षित है।",
+    "Simulate No APM Mode": "सिम्युलेट नो एपीएम मोड",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "क्या ऐसी स्थिति का अनुकरण करना है जहां कोई एपीएम उपलब्ध नहीं है। यदि सक्षम है, तो यह उपयोगकर्ता को सूचित करता है कि शटडाउन होने पर कंप्यूटर को बंद करना अब सुरक्षित है।",
+    "Glitch density": "गड़बड़ घनत्व",
+    "The greater the percentage, the more dense the glitch!": "प्रतिशत जितना अधिक होगा, गड़बड़ उतनी ही घनी होगी!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "गैंगस्टा भाषा में मजबूत भाषा है जो आपको इसे पढ़ने में असहज महसूस करा सकती है। क्या आप वाकई भाषा को वैसे भी सेट करना चाहते हैं?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "यह मॉड कमांड को निष्पादित करने के लिए लीगेसी विधि का उपयोग कर रहा है। यह अप्रचलित है। वर्तमान मानकों पर माइग्रेट करने के लिए कृपया मॉड विक्रेता से संपर्क करें।",
+    "The English Dictionary": "अंग्रेजी शब्दकोश",
+    "Word information for": "शब्द की जानकारी",
+    "API is licensed under": "एपीआई के तहत लाइसेंस प्राप्त है",
+    "Word:": "शब्द:",
+    "Word meanings for": "के लिए शब्द अर्थ",
+    "Part of Speech:": "शब्द भेद:",
+    "Definition:": "परिभाषा:",
+    "Example in Sentence:": "वाक्य में उदाहरण:",
+    "Sources used to define": "परिभाषित करने के लिए प्रयुक्त स्रोत",
+    "Synonyms:": "समानार्थी शब्द:",
+    "Antonyms:": "विलोम शब्द:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "यह स्क्रीनसेवर अपनी सामग्री को प्रदर्शित करने के लिए अप्रचलित तकनीकों का उपयोग करता है, जो अब अगले KS API संशोधन से काम नहीं करेगा। नई, समर्थित तकनीकों में माइग्रेट करने के लिए विक्रेता से संपर्क करें।"
   }
 }

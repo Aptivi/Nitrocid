@@ -1744,3 +1744,22 @@ Barevné hexadecimální znázornění:
 Název dílu modu:
 Název souboru části modu:
 Cesta k souboru modu:
+Nyní je bezpečné vypnout počítač.
+Simulovat bez režimu APM
+Zda se má simulovat situace, kdy není k dispozici APM. Pokud je povoleno, informuje uživatele, že je nyní bezpečné vypnout počítač po vypnutí.
+Hustota závad
+Čím větší procento, tím hustší závada!
+Jazyk gangsta obsahuje silné výrazy, které vám mohou při čtení způsobit nepříjemné pocity. Jste si jisti, že chcete přesto nastavit jazyk?
+Tento mod používá k provádění příkazů starší metodu. Toto je zastaralé. Chcete-li migrovat na aktuální standardy, kontaktujte dodavatele modu.
+Anglický slovník
+Slovní informace pro
+API je licencováno pod
+Slovo:
+Významy slov pro
+Část mluvy:
+Definice:
+Příklad ve větě:
+Zdroje používané k definování
+Synonyma:
+Antonyma:
+Tento spořič obrazovky používá k zobrazení svého obsahu zastaralé techniky, které od příští revize rozhraní KS API již nebudou fungovat. Chcete-li migrovat na novější podporované techniky, kontaktujte dodavatele.

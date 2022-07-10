@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "altamthil alsudasiu aleishriu liluwni:",
     "Mod part name:": "aism juz' altaedili:",
     "Mod part file name:": "aism milafi juz' wizarat aldifaei:",
-    "Mod part file path:": "masar milafi juz' wizarat aldifaei:"
+    "Mod part file path:": "masar milafi juz' wizarat aldifaei:",
+    "It's now safe to turn off your computer.": "yumkinuk alan 'iiqaf tashghil jihaz alkumbuyutar alkhasi bik bi'amani.",
+    "Simulate No APM Mode": "muhakat la yujad wade APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "ma 'iidha kan sayatimu muhakaat mawqif la yatawafar fih APM 'am la. 'iidha tama tamkinuh , fa'iinah yukhbir almustakhdim 'anah min alamin alan 'iiqaf tashghil alkumbuyutar eind 'iiqaf altashghili.",
+    "Glitch density": "kathafat alkhalal",
+    "The greater the percentage, the more dense the glitch!": "kulama zadat alnisbat , zadat kathafat alkhalli!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "tahtawi lughat aleisabat ealaa lughat qawiat qad tajealuk tasheur bieadam aliartiah liqira'atiha. hal 'ant muta'akid 'anak turid taeyin allughat ealaa 'ayi halin?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "yustakhdim hadha alwade altariqat alqadimat litanfidh al'awamir. hadha eafa ealayh alzamanu. alraja' alaitisal bibayie altaedil lilaintiqal 'iilaa almaeayir alhaliiti.",
+    "The English Dictionary": "qamus allughat al'iinjilizia",
+    "Word information for": "maelumat Word l",
+    "API is licensed under": "API murakhas bimujib",
+    "Word:": "kalimatu:",
+    "Word meanings for": "maeani alkalimat l",
+    "Part of Speech:": "juz' min alkalami:",
+    "Definition:": "taerifun:",
+    "Example in Sentence:": "mithal fi aljumlati:",
+    "Sources used to define": "almasadir almustakhdamat litahdid",
+    "Synonyms:": "almuradifati:",
+    "Antonyms:": "altadadu:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "tastakhdim shashat altawaquf hadhih tiqniaat qadimatan lieard muhtawayatiha , walati lan taemal baed alan bd'an min murajaeat KS API altaaliati. aitasal bialmawrid lilaintiqal 'iilaa 'ahdath altaqniaat almadeumati."
   }
 }

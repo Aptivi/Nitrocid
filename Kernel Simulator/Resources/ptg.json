@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Representação hexadecimal de cores:",
     "Mod part name:": "Nome da peça do mod:",
     "Mod part file name:": "Nome do arquivo da parte do mod:",
-    "Mod part file path:": "Caminho do arquivo da peça do mod:"
+    "Mod part file path:": "Caminho do arquivo da peça do mod:",
+    "It's now safe to turn off your computer.": "Agora é seguro desligar o computador.",
+    "Simulate No APM Mode": "Simular nenhum modo APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Se deve simular uma situação em que não há APM disponível. Se ativado, ele informa ao usuário que agora é seguro desligar o computador ao desligar.",
+    "Glitch density": "Densidade de falha",
+    "The greater the percentage, the more dense the glitch!": "Quanto maior a porcentagem, mais densa a falha!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "A linguagem gangsta contém uma linguagem forte que pode fazer você se sentir desconfortável ao lê-la. Tem certeza de que deseja definir o idioma de qualquer maneira?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Este mod está usando o método legado para executar os comandos. Isso é obsoleto. Entre em contato com o fornecedor do mod para migrar para os padrões atuais.",
+    "The English Dictionary": "O Dicionário de Inglês",
+    "Word information for": "Informações da palavra para",
+    "API is licensed under": "A API é licenciada sob",
+    "Word:": "Palavra:",
+    "Word meanings for": "Significados das palavras para",
+    "Part of Speech:": "Parte do discurso:",
+    "Definition:": "Definição:",
+    "Example in Sentence:": "Exemplo na frase:",
+    "Sources used to define": "Fontes usadas para definir",
+    "Synonyms:": "Sinônimos:",
+    "Antonyms:": "Antônimos:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Este protetor de tela usa técnicas obsoletas para exibir seu conteúdo, que não funcionará mais a partir da próxima revisão da API KS. Entre em contato com o fornecedor para migrar para técnicas mais recentes e com suporte."
   }
 }

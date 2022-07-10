@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Yánsè shíliù jìn zhì biǎoshì:",
     "Mod part name:": "Mó zǔ míngchēng:",
     "Mod part file name:": "Mó zǔ bùfèn wénjiàn míng:",
-    "Mod part file path:": "Mod bùfèn wénjiàn lùjìng:"
+    "Mod part file path:": "Mod bùfèn wénjiàn lùjìng:",
+    "It's now safe to turn off your computer.": "Xiànzài kěyǐ ānquán de guānbì jìsuànjīle.",
+    "Simulate No APM Mode": "Mónǐ wú APM móshì",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "shìfǒu mónǐ méiyǒu kěyòng APM de qíngkuàng. Rúguǒ qǐyòng, tā huì tōngzhī yònghù xiànzài kěyǐ ānquán de zài guānjī shí guānbì jìsuànjī.",
+    "Glitch density": "Máocì mìdù",
+    "The greater the percentage, the more dense the glitch!": "bǎifēnbǐ yuè dà, gùzhàng yuè mìjí!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Hēibāng yǔyán bāohán qiángliè de yǔyán, kěnéng huì ràng nín zài yuèdú shí gǎndào bú shūfú. Nín quèdìng yào shèzhì yǔyán ma?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Zhège mod shǐyòng chuántǒng fāngfǎ lái zhíxíng mìnglìng. Zhè shì guòshí de. Qǐng liánxì mó zǔ gōngyìng shāng yǐ qiānyí dào dāngqián biāozhǔn.",
+    "The English Dictionary": "Yīngyǔ cídiǎn",
+    "Word information for": "dāncí xìnxī",
+    "API is licensed under": "API yǐ huòdé xǔkě",
+    "Word:": "dāncí:",
+    "Word meanings for": "Cíyì wèi",
+    "Part of Speech:": "bùfèn yǎnjiǎng:",
+    "Definition:": "Dìngyì:",
+    "Example in Sentence:": "Jùzi zhōng de lìzi:",
+    "Sources used to define": "Yòng yú dìngyì de láiyuán",
+    "Synonyms:": "tóngyìcí:",
+    "Antonyms:": "Fǎnyìcí:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Cǐ píngmù bǎohù chéngxù shǐyòng guòshí de jìshù lái xiǎnshì qí nèiróng, cóng xià yīgè KS API xiūdìng bǎn kāishǐ jiāng bù zài yǒuxiào. Liánxì gōngyìng shāng yǐ qiānyí dào gēngxīn de, shòu zhīchí de jìshù."
   }
 }

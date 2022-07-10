@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Barevné hexadecimální znázornění:",
     "Mod part name:": "Název dílu modu:",
     "Mod part file name:": "Název souboru části modu:",
-    "Mod part file path:": "Cesta k souboru modu:"
+    "Mod part file path:": "Cesta k souboru modu:",
+    "It's now safe to turn off your computer.": "Nyní je bezpečné vypnout počítač.",
+    "Simulate No APM Mode": "Simulovat bez režimu APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Zda se má simulovat situace, kdy není k dispozici APM. Pokud je povoleno, informuje uživatele, že je nyní bezpečné vypnout počítač po vypnutí.",
+    "Glitch density": "Hustota závad",
+    "The greater the percentage, the more dense the glitch!": "Čím větší procento, tím hustší závada!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Jazyk gangsta obsahuje silné výrazy, které vám mohou při čtení způsobit nepříjemné pocity. Jste si jisti, že chcete přesto nastavit jazyk?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Tento mod používá k provádění příkazů starší metodu. Toto je zastaralé. Chcete-li migrovat na aktuální standardy, kontaktujte dodavatele modu.",
+    "The English Dictionary": "Anglický slovník",
+    "Word information for": "Slovní informace pro",
+    "API is licensed under": "API je licencováno pod",
+    "Word:": "Slovo:",
+    "Word meanings for": "Významy slov pro",
+    "Part of Speech:": "Část mluvy:",
+    "Definition:": "Definice:",
+    "Example in Sentence:": "Příklad ve větě:",
+    "Sources used to define": "Zdroje používané k definování",
+    "Synonyms:": "Synonyma:",
+    "Antonyms:": "Antonyma:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Tento spořič obrazovky používá k zobrazení svého obsahu zastaralé techniky, které od příští revize rozhraní KS API již nebudou fungovat. Chcete-li migrovat na novější podporované techniky, kontaktujte dodavatele."
   }
 }

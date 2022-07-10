@@ -1744,3 +1744,22 @@ Kleur hexadecimale weergave:
 Naam mod-onderdeel:
 Mod onderdeel bestandsnaam:
 Mod onderdeel bestandspad:
+Het is nu veilig om uw computer uit te zetten.
+Simuleer geen APM-modus
+Of een situatie moet worden gesimuleerd waarin er geen APM beschikbaar is. Indien ingeschakeld, informeert het de gebruiker dat het nu veilig is om de computer uit te zetten bij het afsluiten.
+Glitchdichtheid
+Hoe groter het percentage, hoe groter de glitch!
+De gangsta-taal bevat sterke taal waardoor je je misschien ongemakkelijk voelt om het te lezen. Weet u zeker dat u de taal toch wilt instellen?
+Deze mod gebruikt de legacy-methode om de opdrachten uit te voeren. Dit is achterhaald. Neem contact op met de mod-leverancier om te migreren naar de huidige standaarden.
+Het Engelse Woordenboek
+Woordinformatie voor
+API is gelicentieerd onder:
+Woord:
+Woordbetekenissen voor
+Woordsoort:
+Definitie:
+Voorbeeld in zin:
+Bronnen die worden gebruikt om te definiëren
+Synoniemen:
+Antoniemen:
+Deze screensaver gebruikt verouderde technieken om de inhoud ervan weer te geven, die niet meer zal werken vanaf de volgende KS API-revisie. Neem contact op met de leverancier om te migreren naar nieuwere, ondersteunde technieken.

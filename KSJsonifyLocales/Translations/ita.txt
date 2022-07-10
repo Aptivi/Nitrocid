@@ -1744,3 +1744,22 @@ Rappresentazione esadecimale del colore:
 Nome parte mod:
 Nome del file della parte mod:
 Percorso del file della parte mod:
+Ora è possibile spegnere il computer.
+Simula la modalità senza APM
+Se simulare una situazione in cui non è disponibile APM. Se abilitato, informa l'utente che ora è possibile spegnere il computer allo spegnimento.
+Densità di glitch
+Maggiore è la percentuale, più denso è il glitch!
+Il linguaggio gangsta contiene un linguaggio forte che potrebbe farti sentire a disagio a leggerlo. Sei sicuro di voler comunque impostare la lingua?
+Questa mod utilizza il metodo legacy per eseguire i comandi. Questo è obsoleto. Si prega di contattare il fornitore della mod per migrare agli standard attuali.
+Il dizionario inglese
+Informazioni sulla parola per
+L'API è concessa in licenza
+Parola:
+Significati delle parole per
+Parte del discorso:
+Definizione:
+Esempio nella frase:
+Fonti utilizzate per definire
+Sinonimi:
+Contrari:
+Questo screensaver utilizza tecniche obsolete per visualizzare i suoi contenuti, che non funzioneranno più a partire dalla prossima revisione dell'API KS. Contatta il fornitore per eseguire la migrazione a tecniche supportate più recenti.

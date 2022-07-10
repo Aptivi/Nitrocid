@@ -1744,3 +1744,22 @@ Màu đại diện hệ thập lục phân:
 Tên phần mod:
 Tên tệp phần mod:
 Đường dẫn tệp phần mod:
+Bây giờ có thể an toàn để tắt máy tính của bạn.
+Mô phỏng Không có Chế độ APM
+Có mô phỏng một tình huống không có sẵn APM hay không. Nếu được bật, nó sẽ thông báo cho người dùng rằng bây giờ có thể an toàn để tắt máy tính khi tắt máy.
+Mật độ trục trặc
+Tỷ lệ phần trăm càng lớn, trục trặc càng dày đặc!
+Ngôn ngữ gangsta chứa ngôn ngữ mạnh có thể khiến bạn cảm thấy không thoải mái khi đọc nó. Bạn có chắc chắn rằng bạn muốn đặt ngôn ngữ nào không?
+Mod này đang sử dụng phương thức kế thừa để thực hiện các lệnh. Điều này là lỗi thời. Vui lòng liên hệ với nhà cung cấp mod để chuyển sang các tiêu chuẩn hiện tại.
+Từ điển tiếng Anh
+Thông tin từ cho
+API được cấp phép theo
+Từ:
+Nghĩa của từ cho
+Phần của bài phát biểu:
+Sự định nghĩa:
+Ví dụ trong câu:
+Các nguồn được sử dụng để xác định
+Từ đồng nghĩa:
+Từ trái nghĩa:
+Trình bảo vệ màn hình này sử dụng các kỹ thuật lỗi thời để hiển thị nội dung của nó, sẽ không còn hoạt động kể từ bản sửa đổi API KS tiếp theo. Liên hệ với nhà cung cấp để chuyển sang các kỹ thuật mới hơn, được hỗ trợ.

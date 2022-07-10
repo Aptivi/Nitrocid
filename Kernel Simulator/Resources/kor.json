@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "saegsang 16jinsu pyohyeon:",
     "Mod part name:": "modeu bupum ileum:",
     "Mod part file name:": "modeu bupum pail ileum:",
-    "Mod part file path:": "modeu bupum pail gyeonglo:"
+    "Mod part file path:": "modeu bupum pail gyeonglo:",
+    "It's now safe to turn off your computer.": "ije keompyuteoleul kkeodo anjeonhabnida.",
+    "Simulate No APM Mode": "APM eobs-eum modeu simyulleisyeon",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "sayong ganeunghan APMi eobsneun sanghwang-eul simyulleisyeonhalji yeobu-ibnida. hwalseonghwadoen gyeong-u jonglyo si keompyuteoleul kkeuneun geos-i anjeonhadago sayongja-ege allibnida.",
+    "Glitch density": "geullichi mildo",
+    "The greater the percentage, the more dense the glitch!": "baegbun-yul-i keulsulog geullichiga deo jomilhaejibnida!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "gaengseuteo eon-eoeneun ilg-giga bulpyeonhal su issneun ganghan eon-eoga pohamdoeeo issseubnida. geulaedo eon-eoleul seoljeonghasigessseubnikka?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "i modeuneun legeosi bangbeob-eul sayonghayeo myeonglyeong-eul silhaenghabnida. igeos-eun deo isang sayongdoeji anhseubnida. hyeonjae pyojun-eulo maigeuleisyeonhalyeomyeon modeu gong-geub-eobchee mun-uihasibsio.",
+    "The English Dictionary": "yeong-eo sajeon",
+    "Word information for": "e daehan dan-eo jeongbo",
+    "API is licensed under": "APIneun da-eum-e ttala laiseonseuga buyeodoebnida.",
+    "Word:": "dan-eo:",
+    "Word meanings for": "e daehan dan-eo uimi",
+    "Part of Speech:": "pumsa:",
+    "Definition:": "jeong-ui:",
+    "Example in Sentence:": "munjang-ui ye:",
+    "Sources used to define": "jeong-uihaneun de sayongdoeneun soseu",
+    "Synonyms:": "dong-uieo:",
+    "Antonyms:": "bandaemal:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "i hwamyeon bohogineun deo isang da-eum KS API gaejeongpanbuteo jagdonghaji anhneun naeyong-eul pyosihagi wihae deo isang sayongdoeji anhneun gisul-eul sayonghabnida. jiwondoeneun choesin gisullo maigeuleisyeonhalyeomyeon gong-geub-eobchee mun-uihasibsio."
   }
 }

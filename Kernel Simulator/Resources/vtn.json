@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Màu đại diện hệ thập lục phân:",
     "Mod part name:": "Tên phần mod:",
     "Mod part file name:": "Tên tệp phần mod:",
-    "Mod part file path:": "Đường dẫn tệp phần mod:"
+    "Mod part file path:": "Đường dẫn tệp phần mod:",
+    "It's now safe to turn off your computer.": "Bây giờ có thể an toàn để tắt máy tính của bạn.",
+    "Simulate No APM Mode": "Mô phỏng Không có Chế độ APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Có mô phỏng một tình huống không có sẵn APM hay không. Nếu được bật, nó sẽ thông báo cho người dùng rằng bây giờ có thể an toàn để tắt máy tính khi tắt máy.",
+    "Glitch density": "Mật độ trục trặc",
+    "The greater the percentage, the more dense the glitch!": "Tỷ lệ phần trăm càng lớn, trục trặc càng dày đặc!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Ngôn ngữ gangsta chứa ngôn ngữ mạnh có thể khiến bạn cảm thấy không thoải mái khi đọc nó. Bạn có chắc chắn rằng bạn muốn đặt ngôn ngữ nào không?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Mod này đang sử dụng phương thức kế thừa để thực hiện các lệnh. Điều này là lỗi thời. Vui lòng liên hệ với nhà cung cấp mod để chuyển sang các tiêu chuẩn hiện tại.",
+    "The English Dictionary": "Từ điển tiếng Anh",
+    "Word information for": "Thông tin từ cho",
+    "API is licensed under": "API được cấp phép theo",
+    "Word:": "Từ:",
+    "Word meanings for": "Nghĩa của từ cho",
+    "Part of Speech:": "Phần của bài phát biểu:",
+    "Definition:": "Sự định nghĩa:",
+    "Example in Sentence:": "Ví dụ trong câu:",
+    "Sources used to define": "Các nguồn được sử dụng để xác định",
+    "Synonyms:": "Từ đồng nghĩa:",
+    "Antonyms:": "Từ trái nghĩa:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Trình bảo vệ màn hình này sử dụng các kỹ thuật lỗi thời để hiển thị nội dung của nó, sẽ không còn hoạt động kể từ bản sửa đổi API KS tiếp theo. Liên hệ với nhà cung cấp để chuyển sang các kỹ thuật mới hơn, được hỗ trợ."
   }
 }

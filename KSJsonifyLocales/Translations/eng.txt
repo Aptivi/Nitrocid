@@ -1744,3 +1744,22 @@ Color hexadecimal representation:
 Mod part name:
 Mod part file name:
 Mod part file path:
+It's now safe to turn off your computer.
+Simulate No APM Mode
+Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
+Glitch density
+The greater the percentage, the more dense the glitch!
+The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?
+This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.
+The English Dictionary
+Word information for
+API is licensed under
+Word:
+Word meanings for
+Part of Speech:
+Definition:
+Example in Sentence:
+Sources used to define
+Synonyms:
+Antonyms:
+This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.

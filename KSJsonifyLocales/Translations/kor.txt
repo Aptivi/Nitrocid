@@ -1744,3 +1744,22 @@ saegsang 16jinsu pyohyeon:
 modeu bupum ileum:
 modeu bupum pail ileum:
 modeu bupum pail gyeonglo:
+ije keompyuteoleul kkeodo anjeonhabnida.
+APM eobs-eum modeu simyulleisyeon
+sayong ganeunghan APMi eobsneun sanghwang-eul simyulleisyeonhalji yeobu-ibnida. hwalseonghwadoen gyeong-u jonglyo si keompyuteoleul kkeuneun geos-i anjeonhadago sayongja-ege allibnida.
+geullichi mildo
+baegbun-yul-i keulsulog geullichiga deo jomilhaejibnida!
+gaengseuteo eon-eoeneun ilg-giga bulpyeonhal su issneun ganghan eon-eoga pohamdoeeo issseubnida. geulaedo eon-eoleul seoljeonghasigessseubnikka?
+i modeuneun legeosi bangbeob-eul sayonghayeo myeonglyeong-eul silhaenghabnida. igeos-eun deo isang sayongdoeji anhseubnida. hyeonjae pyojun-eulo maigeuleisyeonhalyeomyeon modeu gong-geub-eobchee mun-uihasibsio.
+yeong-eo sajeon
+e daehan dan-eo jeongbo
+APIneun da-eum-e ttala laiseonseuga buyeodoebnida.
+dan-eo:
+e daehan dan-eo uimi
+pumsa:
+jeong-ui:
+munjang-ui ye:
+jeong-uihaneun de sayongdoeneun soseu
+dong-uieo:
+bandaemal:
+i hwamyeon bohogineun deo isang da-eum KS API gaejeongpanbuteo jagdonghaji anhneun naeyong-eul pyosihagi wihae deo isang sayongdoeji anhneun gisul-eul sayonghabnida. jiwondoeneun choesin gisullo maigeuleisyeonhalyeomyeon gong-geub-eobchee mun-uihasibsio.

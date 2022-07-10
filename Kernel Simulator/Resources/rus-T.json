@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Шестнадцатеричное представление цвета:",
     "Mod part name:": "Название части мода:",
     "Mod part file name:": "Имя файла части мода:",
-    "Mod part file path:": "Путь к файлу части мода:"
+    "Mod part file path:": "Путь к файлу части мода:",
+    "It's now safe to turn off your computer.": "Теперь можно безопасно выключить компьютер.",
+    "Simulate No APM Mode": "Имитировать режим без APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Имитировать ли ситуацию, когда нет доступного APM. Если он включен, он информирует пользователя о том, что теперь безопасно выключать компьютер после выключения.",
+    "Glitch density": "Плотность сбоев",
+    "The greater the percentage, the more dense the glitch!": "Чем больше процент, тем плотнее глюк!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Гангста-язык содержит грубые выражения, которые могут вызвать у вас дискомфорт при чтении. Вы уверены, что хотите установить язык в любом случае?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Этот мод использует устаревший метод для выполнения команд. Это устарело. Пожалуйста, свяжитесь с продавцом мода, чтобы перейти на текущие стандарты.",
+    "The English Dictionary": "Английский словарь",
+    "Word information for": "Информация о слове для",
+    "API is licensed under": "API находится под лицензией",
+    "Word:": "Слово:",
+    "Word meanings for": "Значения слов для",
+    "Part of Speech:": "Часть речи:",
+    "Definition:": "Определение:",
+    "Example in Sentence:": "Пример в предложении:",
+    "Sources used to define": "Источники, используемые для определения",
+    "Synonyms:": "Синонимы:",
+    "Antonyms:": "Антонимы:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Эта заставка использует устаревшие методы отображения своего содержимого, которые больше не будут работать, начиная со следующей версии KS API. Свяжитесь с поставщиком, чтобы перейти на более новые поддерживаемые технологии."
   }
 }

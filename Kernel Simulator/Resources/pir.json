@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": " color 'exadecimal representation:",
     "Mod part name:": "mod part name:",
     "Mod part file name:": "mod part file name:",
-    "Mod part file path:": "mod part file path:"
+    "Mod part file path:": "mod part file path:",
+    "It's now safe to turn off your computer.": "It be now safe to turn off yer computer.",
+    "Simulate No APM Mode": " simulate no apm mode",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "whether to simulate a situation where there be no apm available. If enabled, it informs the user that there it be now safe to turn off the computer upon shutdown.",
+    "Glitch density": " glitch density",
+    "The greater the percentage, the more dense the glitch!": "the greater the percentage, the more dense the glitch!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "the gangsta language contains strong language that there may make ye feel uncomfortable readin' it. Be ye sure that there ye want to set the language anyways?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "this here mod be usin' the legacy method to execute the commands. This here be obsolete. Please contact the mod vendor to migrate to the current standards.",
+    "The English Dictionary": " the English dictionary",
+    "Word information for": "word information fer",
+    "API is licensed under": "api be licensed under",
+    "Word:": "word:",
+    "Word meanings for": "word meanings fer",
+    "Part of Speech:": "part o' speech:",
+    "Definition:": "definition:",
+    "Example in Sentence:": "example in sentence:",
+    "Sources used to define": "sources used to define",
+    "Synonyms:": "synonyms:",
+    "Antonyms:": "antonyms:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "this here screensaver uses obsolete techniques to display its contents, which will no longer work startin' from the next ks api revision. Contact the vendor to migrate to newer, supported techniques."
   }
 }

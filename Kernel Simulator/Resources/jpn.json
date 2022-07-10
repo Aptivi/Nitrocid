@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "色の16進表現：",
     "Mod part name:": "Modパーツ名：",
     "Mod part file name:": "Modパーツファイル名：",
-    "Mod part file path:": "Modパーツファイルパス："
+    "Mod part file path:": "Modパーツファイルパス：",
+    "It's now safe to turn off your computer.": "これで、コンピューターの電源を安全に切ることができます。",
+    "Simulate No APM Mode": "APMモードなしをシミュレート",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "利用可能なAPMがない状況をシミュレートするかどうか。 有効にすると、シャットダウン時にコンピュータの電源を安全に切ることができるようになったことをユーザーに通知します。",
+    "Glitch density": "グリッチ密度",
+    "The greater the percentage, the more dense the glitch!": "パーセンテージが大きいほど、グリッチの密度が高くなります。",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "ギャングスタ言語には、それを読むのが不快に感じるかもしれない強い言葉が含まれています。 とにかく言語を設定してもよろしいですか？",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "このmodは、従来の方法を使用してコマンドを実行しています。 これは廃止されました。 現在の標準に移行するには、modベンダーに連絡してください。",
+    "The English Dictionary": "英語辞書",
+    "Word information for": "の単語情報",
+    "API is licensed under": "APIは以下のライセンスを受けています",
+    "Word:": "語：",
+    "Word meanings for": "の単語の意味",
+    "Part of Speech:": "品詞：",
+    "Definition:": "意味：",
+    "Example in Sentence:": "文の例：",
+    "Sources used to define": "定義に使用されるソース",
+    "Synonyms:": "同義語：",
+    "Antonyms:": "反意語：",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "このスクリーンセーバーは、廃止された手法を使用してコンテンツを表示しますが、次のKSAPIリビジョン以降は機能しなくなります。 ベンダーに連絡して、サポートされている新しい手法に移行してください。"
   }
 }

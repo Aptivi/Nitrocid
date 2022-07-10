@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "rang heksaadesimal pratinidhitv:",
     "Mod part name:": "mod bhaag ka naam:",
     "Mod part file name:": "mod bhaag fail ka naam:",
-    "Mod part file path:": "mod bhaag fail path:"
+    "Mod part file path:": "mod bhaag fail path:",
+    "It's now safe to turn off your computer.": "apane kampyootar ko band karana ab surakshit hai.",
+    "Simulate No APM Mode": "simyulet no epeeem mod",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "kya aisee sthiti ka anukaran karana hai jahaan koee epeeem upalabdh nahin hai. yadi saksham hai, to yah upayogakarta ko soochit karata hai ki shatadaun hone par kampyootar ko band karana ab surakshit hai.",
+    "Glitch density": "gadabad ghanatv",
+    "The greater the percentage, the more dense the glitch!": "pratishat jitana adhik hoga, gadabad utanee hee ghanee hogee!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "gaingasta bhaasha mein majaboot bhaasha hai jo aapako ise padhane mein asahaj mahasoos kara sakatee hai. kya aap vaakee bhaasha ko vaise bhee set karana chaahate hain?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "yah mod kamaand ko nishpaadit karane ke lie leegesee vidhi ka upayog kar raha hai. yah aprachalit hai. vartamaan maanakon par maigret karane ke lie krpaya mod vikreta se sampark karen.",
+    "The English Dictionary": "angrejee shabdakosh",
+    "Word information for": "shabd kee jaanakaaree",
+    "API is licensed under": "epeeaee ke tahat laisens praapt hai",
+    "Word:": "shabd:",
+    "Word meanings for": "ke lie shabd arth",
+    "Part of Speech:": "shabd bhed:",
+    "Definition:": "paribhaasha:",
+    "Example in Sentence:": "vaaky mein udaaharan:",
+    "Sources used to define": "paribhaashit karane ke lie prayukt srot",
+    "Synonyms:": "samaanaarthee shabd:",
+    "Antonyms:": "vilom shabd:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "yah skreenasevar apanee saamagree ko pradarshit karane ke lie aprachalit takaneekon ka upayog karata hai, jo ab agale ks api sanshodhan se kaam nahin karega. naee, samarthit takaneekon mein maigret karane ke lie vikreta se sampark karen."
   }
 }

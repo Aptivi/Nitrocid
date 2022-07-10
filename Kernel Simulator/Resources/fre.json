@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Représentation hexadécimale en couleur :",
     "Mod part name:": "Nom de la partie mod :",
     "Mod part file name:": "Nom du fichier de partie mod :",
-    "Mod part file path:": "Chemin d'accès au fichier de la partie mod :"
+    "Mod part file path:": "Chemin d'accès au fichier de la partie mod :",
+    "It's now safe to turn off your computer.": "Vous pouvez maintenant éteindre votre ordinateur en toute sécurité.",
+    "Simulate No APM Mode": "Simuler aucun mode APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "S'il faut simuler une situation où il n'y a pas d'APM disponible. S'il est activé, il informe l'utilisateur qu'il est maintenant sûr d'éteindre l'ordinateur lors de l'arrêt.",
+    "Glitch density": "Densité de glitch",
+    "The greater the percentage, the more dense the glitch!": "Plus le pourcentage est élevé, plus le glitch est dense !",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Le langage gangsta contient un langage fort qui peut vous mettre mal à l'aise de le lire. Êtes-vous sûr de vouloir quand même définir la langue ?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Ce mod utilise la méthode héritée pour exécuter les commandes. C'est obsolète. Veuillez contacter le fournisseur du mod pour migrer vers les normes actuelles.",
+    "The English Dictionary": "Le dictionnaire anglais",
+    "Word information for": "Informations sur les mots pour",
+    "API is licensed under": "L'API est sous licence",
+    "Word:": "Mot:",
+    "Word meanings for": "Signification des mots pour",
+    "Part of Speech:": "Partie du discours:",
+    "Definition:": "Définition:",
+    "Example in Sentence:": "Exemple dans la phrase :",
+    "Sources used to define": "Sources utilisées pour définir",
+    "Synonyms:": "Synonymes :",
+    "Antonyms:": "Antonymes :",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Cet économiseur d'écran utilise des techniques obsolètes pour afficher son contenu, qui ne fonctionnera plus à partir de la prochaine révision de l'API KS. Contactez le fournisseur pour migrer vers des techniques plus récentes et prises en charge."
   }
 }

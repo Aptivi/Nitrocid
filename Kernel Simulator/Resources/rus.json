@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "Shestnadtsaterichnoye predstavleniye tsveta:",
     "Mod part name:": "Nazvaniye chasti moda:",
     "Mod part file name:": "Imya fayla chasti moda:",
-    "Mod part file path:": "Put' k faylu chasti moda:"
+    "Mod part file path:": "Put' k faylu chasti moda:",
+    "It's now safe to turn off your computer.": "Teperʹ mozhno bezopasno vyklyuchitʹ kompʹyuter.",
+    "Simulate No APM Mode": "Imitirovatʹ rezhim bez APM",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "Imitirovatʹ li situatsiyu, kogda net dostupnogo APM. Yesli on vklyuchen, on informiruyet polʹzovatelya o tom, chto teperʹ bezopasno vyklyuchatʹ kompʹyuter posle vyklyucheniya.",
+    "Glitch density": "Plotnostʹ sboyev",
+    "The greater the percentage, the more dense the glitch!": "Chem bolʹshe protsent, tem plotneye glyuk!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "Gangsta-yazyk soderzhit grubyye vyrazheniya, kotoryye mogut vyzvatʹ u vas diskomfort pri chtenii. Vy uvereny, chto khotite ustanovitʹ yazyk v lyubom sluchaye?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "Etot mod ispolʹzuyet ustarevshiy metod dlya vypolneniya komand. Eto ustarelo. Pozhaluysta, svyazhitesʹ s prodavtsom moda, chtoby pereyti na tekushchiye standarty.",
+    "The English Dictionary": "Angliyskiy slovarʹ",
+    "Word information for": "Informatsiya o slove dlya",
+    "API is licensed under": "API nakhodit·sya pod litsenziyey",
+    "Word:": "Slovo:",
+    "Word meanings for": "Znacheniya slov dlya",
+    "Part of Speech:": "Chastʹ rechi:",
+    "Definition:": "Opredeleniye:",
+    "Example in Sentence:": "Primer v predlozhenii:",
+    "Sources used to define": "Istochniki, ispolʹzuyemyye dlya opredeleniya",
+    "Synonyms:": "Sinonimy:",
+    "Antonyms:": "Antonimy:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "Eta zastavka ispolʹzuyet ustarevshiye metody otobrazheniya svoyego soderzhimogo, kotoryye bolʹshe ne budut rabotatʹ, nachinaya so sleduyushchey versii KS API. Svyazhitesʹ s postavshchikom, chtoby pereyti na boleye novyye podderzhivayemyye tekhnologii."
   }
 }

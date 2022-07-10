@@ -1744,3 +1744,22 @@ Yánsè shíliù jìn zhì biǎoshì:
 Mó zǔ míngchēng:
 Mó zǔ bùfèn wénjiàn míng:
 Mod bùfèn wénjiàn lùjìng:
+Xiànzài kěyǐ ānquán de guānbì jìsuànjīle.
+Mónǐ wú APM móshì
+shìfǒu mónǐ méiyǒu kěyòng APM de qíngkuàng. Rúguǒ qǐyòng, tā huì tōngzhī yònghù xiànzài kěyǐ ānquán de zài guānjī shí guānbì jìsuànjī.
+Máocì mìdù
+bǎifēnbǐ yuè dà, gùzhàng yuè mìjí!
+Hēibāng yǔyán bāohán qiángliè de yǔyán, kěnéng huì ràng nín zài yuèdú shí gǎndào bú shūfú. Nín quèdìng yào shèzhì yǔyán ma?
+Zhège mod shǐyòng chuántǒng fāngfǎ lái zhíxíng mìnglìng. Zhè shì guòshí de. Qǐng liánxì mó zǔ gōngyìng shāng yǐ qiānyí dào dāngqián biāozhǔn.
+Yīngyǔ cídiǎn
+dāncí xìnxī
+API yǐ huòdé xǔkě
+dāncí:
+Cíyì wèi
+bùfèn yǎnjiǎng:
+Dìngyì:
+Jùzi zhōng de lìzi:
+Yòng yú dìngyì de láiyuán
+tóngyìcí:
+Fǎnyìcí:
+Cǐ píngmù bǎohù chéngxù shǐyòng guòshí de jìshù lái xiǎnshì qí nèiróng, cóng xià yīgè KS API xiūdìng bǎn kāishǐ jiāng bù zài yǒuxiào. Liánxì gōngyìng shāng yǐ qiānyí dào gēngxīn de, shòu zhīchí de jìshù.

@@ -1744,3 +1744,22 @@ Renk onaltılı gösterimi:
 Mod parçası adı:
 Mod parçası dosya adı:
 Mod parçası dosya yolu:
+Artık bilgisayarınızı kapatmak güvenlidir.
+APM Yok Modunun Simüle Edilmesi
+Kullanılabilir APM'nin olmadığı bir durumu simüle edip etmeyeceği. Etkinleştirilirse, kullanıcıya bilgisayarı kapattıktan sonra kapatmanın artık güvenli olduğunu bildirir.
+aksaklık yoğunluğu
+Yüzde ne kadar büyük olursa, aksaklık o kadar yoğun olur!
+Gangsta dili, okurken kendinizi rahatsız hissetmenize neden olabilecek güçlü bir dil içeriyor. Yine de dili ayarlamak istediğinizden emin misiniz?
+Bu mod, komutları yürütmek için eski yöntemi kullanıyor. Bu modası geçmiş. Mevcut standartlara geçmek için lütfen mod satıcısı ile iletişime geçin.
+İngilizce Sözlük
+için kelime bilgisi
+API lisanslıdır
+Kelime:
+kelime anlamları
+Konuşmanın bölümü:
+Tanım:
+Cümledeki Örnek:
+Tanımlamak için kullanılan kaynaklar
+Eş anlamlı:
+Zıtlıklar:
+Bu ekran koruyucu, içeriğini görüntülemek için bir sonraki KS API revizyonundan itibaren artık çalışmayacak olan eski teknikleri kullanır. Daha yeni, desteklenen tekniklere geçiş yapmak için satıcıyla iletişime geçin.

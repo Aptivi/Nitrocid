@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "c0l0r h3x4d3c1m4l r3pr353n74710n:",
     "Mod part name:": "m0d p4r7 n4m3:",
     "Mod part file name:": "m0d p4r7 f1l3 n4m3:",
-    "Mod part file path:": "m0d p4r7 f1l3 p47h:"
+    "Mod part file path:": "m0d p4r7 f1l3 p47h:",
+    "It's now safe to turn off your computer.": "17'5 n0w 54f3 70 7urn 0ff y0ur c0mpu73r.",
+    "Simulate No APM Mode": "51mul473 n0 4pm m0d3",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "wh37h3r 70 51mul473 4 517u4710n wh3r3 7h3r3 15 n0 4pm 4v41l4bl3. 1f 3n4bl3d, 17 1nf0rm5 7h3 u53r 7h47 17'5 n0w 54f3 70 7urn 0ff 7h3 c0mpu73r up0n 5hu7d0wn.",
+    "Glitch density": "6l17ch d3n517y",
+    "The greater the percentage, the more dense the glitch!": "7h3 6r3473r 7h3 p3rc3n7463, 7h3 m0r3 d3n53 7h3 6l17ch!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "7h3 64n6574 l4n6u463 c0n741n5 57r0n6 l4n6u463 7h47 m4y m4k3 y0u f33l unc0mf0r74bl3 r34d1n6 17. 4r3 y0u 5ur3 7h47 y0u w4n7 70 537 7h3 l4n6u463 4nyw4y5?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "7h15 m0d 15 u51n6 7h3 l364cy m37h0d 70 3x3cu73 7h3 c0mm4nd5. 7h15 15 0b50l373. pl3453 c0n74c7 7h3 m0d v3nd0r 70 m16r473 70 7h3 curr3n7 574nd4rd5.",
+    "The English Dictionary": "7h3 3n6l15h d1c710n4ry",
+    "Word information for": "w0rd 1nf0rm4710n f0r",
+    "API is licensed under": "4p1 15 l1c3n53d und3r",
+    "Word:": "w0rd:",
+    "Word meanings for": "w0rd m34n1n65 f0r",
+    "Part of Speech:": "p4r7 0f 5p33ch:",
+    "Definition:": "d3f1n1710n:",
+    "Example in Sentence:": "3x4mpl3 1n 53n73nc3:",
+    "Sources used to define": "50urc35 u53d 70 d3f1n3",
+    "Synonyms:": "5yn0nym5:",
+    "Antonyms:": "4n70nym5:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "7h15 5cr33n54v3r u535 0b50l373 73chn1qu35 70 d15pl4y 175 c0n73n75, wh1ch w1ll n0 l0n63r w0rk 574r71n6 fr0m 7h3 n3x7 k5 4p1 r3v1510n. c0n74c7 7h3 v3nd0r 70 m16r473 70 n3w3r, 5upp0r73d 73chn1qu35."
   }
 }

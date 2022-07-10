@@ -1747,6 +1747,25 @@
     "Color hexadecimal representation:": "COLOR HEXADECIMAL REPRESENTASHUN:",
     "Mod part name:": "MOD PART NAYM:",
     "Mod part file name:": "MOD PART FILE NAYM:",
-    "Mod part file path:": "MOD PART FILE PATH:"
+    "Mod part file path:": "MOD PART FILE PATH:",
+    "It's now safe to turn off your computer.": "IZ NAO SAFE 2 TURN OFF UR COMPUTR.",
+    "Simulate No APM Mode": "SIMULATE NO APM MODE",
+    "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.": "WHETHR 2 SIMULATE SITUASHUN WER THAR IZ NO APM AVAILABLE. IF ENABLD, IT INFORMS TEH USR DAT IZ NAO SAFE 2 TURN OFF DA COMPUTR UPON SHUTDOWN.",
+    "Glitch density": "GLITCH DENSITY",
+    "The greater the percentage, the more dense the glitch!": "TEH GREATR TEH PERSENTAGE, TEH MOAR DENSE TEH GLITCH!",
+    "The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?": "TEH GANGSTA LANGUAGE CONTAINS STRONG LANGUAGE DAT CUD MAK U FEELZ UNCOMFORTABLE READIN IT. R U SURE DAT U WANTS 2 SET TEH LANGUAGE ANYWAYS?",
+    "This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.": "DIS MOD IZ USIN TEH LEGACY METHOD 2 EXECUTE TEH COMMANDZ. DIS AR TEH OBSOLETE. PLZ CONTACT TEH MOD VENDOR 2 MIGRATE 2 TEH CURRENT STANDARDZ.",
+    "The English Dictionary": "TEH ENGLISH DICSHUNARY",
+    "Word information for": "WERD INFORMASHUN 4",
+    "API is licensed under": "API IZ LICENSD UNDR",
+    "Word:": "WERD:",
+    "Word meanings for": "WERD MEANINGS 4",
+    "Part of Speech:": "PART OV SPEECH:",
+    "Definition:": "DEFINISHUN:",
+    "Example in Sentence:": "EXAMPLE IN SENTENCE:",
+    "Sources used to define": "SOURCEZ USD 2 DEFINE",
+    "Synonyms:": "SYNONYMS:",
+    "Antonyms:": "ANTONYMS:",
+    "This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.": "DIS SCREENSAVR USEZ OBSOLETE TECHNIQUEZ 2 DISPLAY ITZ CONTENTS, WHICH WILL NO LONGR WERK STARTIN FRUM TEH NEXT KS API REVISHUN. CONTACT TEH VENDOR 2 MIGRATE 2 NEWR, SUPPORTD TECHNIQUEZ."
   }
 }
