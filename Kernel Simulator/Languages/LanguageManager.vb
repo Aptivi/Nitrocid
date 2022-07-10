@@ -23,6 +23,10 @@ Imports KS.Misc.Configuration
 Namespace Languages
     Public Module LanguageManager
 
+        'Variables
+        Public CurrentLanguage As String = "eng" 'Default to English
+        Private NotifyCodepageError As Boolean
+
         'PLEASE NOTE: "zul" language is Zulu and "swa" is Swahili for compatibility with Windows and Linux platforms. Windows considers "zul" as
         '             isiZulu and "swa" as Kiswahili, while Linux considers "zul" as Zulu and "swa" as Swahili.
         'TODO: Get the base KS languages using Metadata.json from KSJsonifyLocales
@@ -59,10 +63,6 @@ Namespace Languages
                 Return InstalledLanguages
             End Get
         End Property
-
-        'Variables
-        Public CurrentLanguage As String = "eng" 'Default to English
-        Private NotifyCodepageError As Boolean
 
         ''' <summary>
         ''' Sets a system language permanently

@@ -34,7 +34,7 @@
       <dependency id="ManagedWeatherMap" version="1.0.1" />
       <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.9" />
       <dependency id="Newtonsoft.Json" version="13.0.1" />
-      <dependency id="ReadLine.Reboot" version="3.1.2" />
+      <dependency id="ReadLine.Reboot" version="3.2.0" />
       <dependency id="SSH.NET" version="2020.0.2" />
       <dependency id="StringMath" version="3.0.2" />
     </Dependencies>
@@ -106,7 +106,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="ReadLine.Reboot" Version="3.1.2" />
+    <PackageReference Include="ReadLine.Reboot" Version="3.2.0" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="3.0.2" />
   </ItemGroup>
