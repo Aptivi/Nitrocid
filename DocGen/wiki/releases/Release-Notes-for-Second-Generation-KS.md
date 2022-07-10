@@ -149,9 +149,7 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 
 ## KS 0.0.23.x series
 
-### KS 0.0.23.0 (WIP)
-
-This version is WIP as of 6/27/2022.
+### KS 0.0.23.0 (7/12/2022)
 
 1. Updated libraries
 2. Added "No APM" simulator
