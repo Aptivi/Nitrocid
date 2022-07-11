@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports InxiFrontend
+Imports InxiFrontend.InxiTrace
 Imports KS.Misc.Splash
 
 Namespace Hardware
