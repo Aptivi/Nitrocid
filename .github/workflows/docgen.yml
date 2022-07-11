@@ -22,7 +22,6 @@ jobs:
         with:
           args: DocGen/docfx.json
       - name: Saving changes to gh-pages
-        if: ${{ github.ref == 'refs/heads/master'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           commit_message: "Updated documentation to reflect latest changes"
