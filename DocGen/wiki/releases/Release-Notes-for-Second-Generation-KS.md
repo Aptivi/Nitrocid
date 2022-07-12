@@ -162,8 +162,6 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 9. General compatibility improvements for .NET 6.0
 10. General improvements and bug fixes
 
-### KS 0.0.23.1 (WIP)
-
-This version is WIP as of 7/11/2022
+### KS 0.0.23.1 (7/12/2022)
 
 1. Fixed crash on startup due to an Inxi.NET bug

@@ -223,5 +223,5 @@ This revision of the second-generation version is still under active development
 | v0.0.22.3  |  6/15/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.4  |  6/17/2022   |  6/12/2023  |  6/12/2023        | Supported   |
 | v0.0.22.5  |  7/8/2022    |  6/12/2023  |  6/12/2023        | Supported   |
-| v0.0.23.0  |  7/12/2022   |  7/12/2023  |  7/12/2023        | Unreleased  |
-| v0.0.23.1  |  ???         |  7/12/2023  |  7/12/2023        | Unreleased  |
+| v0.0.23.0  |  7/12/2022   |  7/12/2023  |  7/12/2023        | Supported   |
+| v0.0.23.1  |  7/12/2022   |  7/12/2023  |  7/12/2023        | Supported   |
