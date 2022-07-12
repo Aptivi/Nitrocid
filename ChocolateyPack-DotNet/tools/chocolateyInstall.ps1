@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
 $url        = "https://github.com/EoflaOE/Kernel-Simulator/releases/download/v0.0.23.1-beta/0.0.23.1-bin-dotnet.rar"
-$md5check   = "68ff63555b4e1690450b67d9495b6f61"
+$md5check   = "1fcab26bd0d9411559e3027ffd913d96"
 
 Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 Write-Output "<*> Installation directory: $toolsDir"
