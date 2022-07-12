@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=0.0.23.1
+ksversion=0.0.23.2
 
 mkdir ~/tmp
 echo Make sure you have the following:
