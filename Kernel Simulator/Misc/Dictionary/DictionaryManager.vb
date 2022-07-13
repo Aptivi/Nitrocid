@@ -16,31 +16,32 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Net.Http
 Imports KS.Network
 Imports Newtonsoft.Json.Linq
 
 Namespace Misc.Dictionary
     Public Module DictionaryManager
 
-        Private CachedWords As New Dictionary(Of String, DictionaryWord)
+        Private CachedWords As New List(Of DictionaryWord)
 
         ''' <summary>
         ''' Gets the word information
         ''' </summary>
-        Public Function GetWordInfo(Word As String) As DictionaryWord
-            If CachedWords.ContainsKey(Word) Then
+        Public Function GetWordInfo(Word As String) As DictionaryWord()
+            If CachedWords.Any(Function(w) w.Word = Word) Then
                 'We already have a word, so there is no reason to download it again
-                Return CachedWords(Word)
+                Return CachedWords.Where(Function(w) w.Word = Word).ToArray()
             Else
                 'Download the word information
-                Dim WordInfoString As String = DownloadString($"https://api.dictionaryapi.dev/api/v2/entries/en/{Word}", False)
+                Dim WordInfoString As String = DownloadString($"https://api.dictionaryapi.dev/api/v2/entries/en/{Word}")
 
                 'Serialize it to DictionaryWord to cache it so that we don't have to download it again
-                Dim CachedWord As DictionaryWord = JsonConvert.DeserializeObject(Of DictionaryWord())(WordInfoString)(0)
-                CachedWords.Add(Word, CachedWord)
+                Dim Words() As DictionaryWord = JsonConvert.DeserializeObject(WordInfoString, GetType(DictionaryWord()))
+                CachedWords.AddRange(Words)
 
                 'Return the word
-                Return CachedWord
+                Return CachedWords.ToArray()
             End If
         End Function
 
