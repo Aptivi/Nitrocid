@@ -168,4 +168,5 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 
 ### KS 0.0.23.2 (WIP)
 
-This version is WIP as of 7/12/2022.
+1. Fixed dictionary defining only one meaning for words like `fine`
+2. Fixed file handles being stuck open
