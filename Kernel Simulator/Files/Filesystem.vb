@@ -519,6 +519,7 @@ Namespace Files
             For Each SourceDirectory As DirectoryInfo In SourceDirectories
                 Dim DestinationDirectoryPath As String = Path.Combine(Destination, SourceDirectory.Name)
                 Wdbg(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath)
+                If ShowProgress Then Write("* {0}", True, ColTypes.Neutral, DestinationDirectoryPath)
                 CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath)
             Next
         End Sub
@@ -888,6 +889,7 @@ Namespace Files
             While Not FOpen.EndOfStream
                 AllLnList.Add(FOpen.ReadLine)
             End While
+            FOpen.Close()
             Return AllLnList.ToArray
         End Function
 
