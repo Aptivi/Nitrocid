@@ -28,6 +28,7 @@ Imports KS.Misc.Probers
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
         Dim MOTDFile As New StreamReader(GetKernelPath(KernelPathType.MOTD))
         MOTDFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
+        MOTDFile.Close()
     End Sub
 
     ''' <summary>
@@ -37,6 +38,7 @@ Imports KS.Misc.Probers
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
         Dim MALFile As New StreamReader(GetKernelPath(KernelPathType.MAL))
         MALFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
+        MALFile.Close()
     End Sub
 
 End Class

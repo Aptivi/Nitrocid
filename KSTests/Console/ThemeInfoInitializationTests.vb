@@ -134,7 +134,9 @@ Imports KS.ConsoleBase.Themes
     <Test, Description("Initialization")> Public Sub TestInitializeThemeInfoFromFile()
         'Create instance
         Dim SourcePath As String = Path.GetFullPath("TestData/Hacker.json")
-        Dim ThemeInfoInstance As New ThemeInfo(New StreamReader(SourcePath))
+        Dim ThemeInfoStream As New StreamReader(SourcePath)
+        Dim ThemeInfoInstance As New ThemeInfo(ThemeInfoStream)
+        ThemeInfoStream.Close()
 
         'Check for null
         ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull

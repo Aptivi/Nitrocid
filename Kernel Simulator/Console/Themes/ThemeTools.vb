@@ -140,7 +140,9 @@ Namespace ConsoleBase.Themes
                 Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile)
 
                 'Populate theme info
-                Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
+                Dim ThemeStream As New StreamReader(ThemeFile)
+                Dim ThemeInfo As New ThemeInfo(ThemeStream)
+                ThemeStream.Close()
 
                 If Not ThemeFile = "Default" Then
                     'Set colors as appropriate

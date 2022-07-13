@@ -90,6 +90,9 @@ Namespace Scripting
                         Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                     End If
                 End While
+
+                'Close the stream
+                FileStream.Close()
                 KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
             Catch ex As Exception
                 KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)

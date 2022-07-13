@@ -221,7 +221,9 @@ Namespace ConsoleBase.Themes.Studio
         ''' <param name="Theme">A theme name</param>
         Sub LoadThemeFromFile(Theme As String)
             'Populate theme info
-            Dim ThemeInfo As New ThemeInfo(New StreamReader(NeutralizePath(Theme)))
+            Dim ThemeStream As New StreamReader(NeutralizePath(Theme))
+            Dim ThemeInfo As New ThemeInfo(ThemeStream)
+            ThemeStream.Close()
             LoadThemeFromThemeInfo(ThemeInfo)
         End Sub
 
