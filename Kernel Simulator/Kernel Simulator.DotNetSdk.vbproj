@@ -12,7 +12,7 @@
     <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS</PackageReleaseNotes>
+    <PackageReleaseNotes>https://eoflaoe.github.io/Kernel-Simulator/wiki/releases/Release-Notes-for-Second-Generation-KS.html</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
