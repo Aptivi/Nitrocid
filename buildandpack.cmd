@@ -18,7 +18,7 @@ REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script builds KS and packs the artifacts. Use when you have VS installed.
-set ksversion=0.0.23.2
+set ksversion=0.0.24.0
 
 echo Make sure you have the following:
 echo   - %ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe
@@ -53,7 +53,7 @@ goto :finished
 :packbin
 echo Packing binary...
 del "Kernel Simulator\KSBuild\*.nupkg" >> %temp%/buildandpack.log 2>&1
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-bin.rar "Kernel Simulator\KSBuild\" >> %temp%/buildandpack.log 2>&1
+"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-bin.rar "Kernel Simulator\KSBuild\net45\" >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packsrc
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished

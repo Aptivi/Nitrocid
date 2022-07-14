@@ -166,7 +166,15 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 
 1. Fixed crash on startup due to an Inxi.NET bug
 
-### KS 0.0.23.2 (WIP)
+### KS 0.0.23.2 (7/13/2022)
 
 1. Fixed dictionary defining only one meaning for words like `fine`
 2. Fixed file handles being stuck open
+
+# Second-generation, Revision 1
+
+## KS 0.0.24.x series
+
+### KS 0.0.24.0 (WIP)
+
+This version is WIP as of 7/14/2022.

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <!-- KS NuGet Information -->
   <PropertyGroup>
     <PackageId>KS</PackageId>
-    <Version>0.0.23.2</Version>
+    <PackageId Condition=" '$(Configuration)' == 'Debug-dotnet' ">KS.CoreCLR</PackageId>
+    <PackageId Condition=" '$(Configuration)' == 'Release-dotnet' ">KS.CoreCLR</PackageId>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -21,50 +21,41 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <!-- Dependencies set up -->
-    <Dependencies>
-      <dependency id="Addresstigator" version="0.1.0.2" />
-      <dependency id="Crc32.NET" version="1.2.0" />
-      <dependency id="Extensification" version="2022.1.0" />
-      <dependency id="Figgle" version="0.4.0" />
-      <dependency id="FluentFTP" version="37.0.5" />
-      <dependency id="HtmlAgilityPack" version="1.11.43" />
-      <dependency id="Inxi.NET" version="2022.3.0" />
-      <dependency id="MailKit" version="3.3.0" />
-      <dependency id="ManagedWeatherMap" version="1.0.1" />
-      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.9" />
-      <dependency id="Newtonsoft.Json" version="13.0.1" />
-      <dependency id="ReadLine.Reboot" version="3.2.0" />
-      <dependency id="SSH.NET" version="2020.0.2" />
-      <dependency id="StringMath" version="3.0.2" />
-    </Dependencies>
+    <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
+
   <!-- KS General Information -->
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KS</RootNamespace>
     <LangVersion>latest</LangVersion>
+    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
-    <OutputType>Exe</OutputType>
     <StartupObject>KS.Kernel.Kernel</StartupObject>
-    <RootNamespace>KS</RootNamespace>
     <AssemblyName>Kernel Simulator</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Description>Simulates our future kernel</Description>
+    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
+    <MyType Condition="'$(TargetFramework)' == 'net48'">Console</MyType>
+    <OutputPath>KSBuild\</OutputPath>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
     <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
-    <OptionCompare>Binary</OptionCompare>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <GenerateManifests>false</GenerateManifests>
-    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
-    <OutputPath>KSBuild\</OutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Version>0.0.24.0</Version>
+    <PackageVersion>0.0.24.0</PackageVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
+
   <!-- KS Platform Information -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TargetFramework>net48</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
@@ -77,7 +68,34 @@
     <Optimize>false</Optimize>
     <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix,POP3Feature</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <TargetFramework>net48</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
@@ -89,6 +107,7 @@
     <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
+
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Addresstigator" Version="0.1.0.2" />
@@ -111,20 +130,20 @@
     <PackageReference Include="StringMath" Version="3.0.2" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
+
   <!-- KS Reference Information -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <!-- KS Reference Information End -->
+
   <!-- KS Import Information -->
   <ItemGroup>
     <Import Include="Extensification.DictionaryExts" />
@@ -159,656 +178,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <!-- KS Import Information End -->
-  <!-- KS Source Information -->
-  <ItemGroup>
-    <Compile Include="Arguments\ArgumentBase\ArgumentParse.vb" />
-    <Compile Include="Arguments\ArgumentBase\PreBootCommandLineArgs.vb" />
-    <Compile Include="Arguments\ArgumentPrompt.vb" />
-    <Compile Include="Arguments\ArgumentBase\ArgumentInfo.vb" />
-    <Compile Include="Arguments\ArgumentBase\ArgumentType.vb" />
-    <Compile Include="Arguments\ArgumentBase\ArgumentExecutor.vb" />
-    <Compile Include="Arguments\ArgumentBase\CommandLineArgs.vb" />
-    <Compile Include="Arguments\CommandLineArguments\Help.vb" />
-    <Compile Include="Arguments\CommandLineArguments\Args.vb" />
-    <Compile Include="Arguments\CommandLineArguments\Debug.vb" />
-    <Compile Include="Arguments\CommandLineArguments\TestInteractive.vb" />
-    <Compile Include="Arguments\ArgumentBase\ArgumentHelpSystem.vb" />
-    <Compile Include="Arguments\ArgumentBase\IArgument.vb" />
-    <Compile Include="Arguments\KernelArguments\CmdInject.vb" />
-    <Compile Include="Arguments\KernelArguments\TestInteractive.vb" />
-    <Compile Include="Arguments\KernelArguments\Safe.vb" />
-    <Compile Include="Arguments\KernelArguments\Maintenance.vb" />
-    <Compile Include="Arguments\KernelArguments\Debug.vb" />
-    <Compile Include="Arguments\KernelArguments\Quiet.vb" />
-    <Compile Include="Arguments\ArgumentBase\ProvidedArgumentArgumentsInfo.vb" />
-    <Compile Include="Arguments\PreBootCommandLineArguments\BypassSizeDetection.vb" />
-    <Compile Include="Arguments\PreBootCommandLineArguments\Reset.vb" />
-    <Compile Include="Console\Color.vb" />
-    <Compile Include="Console\Color255.vb" />
-    <Compile Include="Console\ColorTools.vb" />
-    <Compile Include="Console\ColorWheelOpen.vb" />
-    <Compile Include="Console\ConsoleColorsInfo.vb" />
-    <Compile Include="Console\ConsoleExtensions.vb" />
-    <Compile Include="Console\ConsoleSanityChecker.vb" />
-    <Compile Include="Console\Input.vb" />
-    <Compile Include="Console\ColorSetErrorReasons.vb" />
-    <Compile Include="Console\Themes\ThemeInfo.vb" />
-    <Compile Include="Console\Themes\Studio\ThemeStudio.vb" />
-    <Compile Include="Console\Themes\Studio\ThemeStudioTools.vb" />
-    <Compile Include="Console\Themes\ThemeTools.vb" />
-    <Compile Include="Files\Filesystem.vb" />
-    <Compile Include="Files\FilesystemEnums.vb" />
-    <Compile Include="Files\Paths.vb" />
-    <Compile Include="Files\PathType.vb" />
-    <Compile Include="Hardware\HardwareList.vb" />
-    <Compile Include="Kernel\EventsManager.vb" />
-    <Compile Include="Kernel\Events.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidFeedException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidFeedLinkException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidModException.vb" />
-    <Compile Include="Kernel\Exceptions\MOTDException.vb" />
-    <Compile Include="Kernel\Exceptions\HTTPShellException.vb" />
-    <Compile Include="Kernel\Exceptions\InsaneConsoleDetectedException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidPlaceholderException.vb" />
-    <Compile Include="Kernel\Exceptions\KernelErrorException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidPathException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidKernelPathException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidManpageException.vb" />
-    <Compile Include="Kernel\Exceptions\LanguageParseException.vb" />
-    <Compile Include="Kernel\Exceptions\LanguageUninstallException.vb" />
-    <Compile Include="Kernel\Exceptions\LanguageInstallException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchThemeException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchReflectionPropertyException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchReflectionVariableException.vb" />
-    <Compile Include="Kernel\Exceptions\UESHScriptException.vb" />
-    <Compile Include="Kernel\Exceptions\UESHConditionParseException.vb" />
-    <Compile Include="Kernel\Exceptions\ModUninstallException.vb" />
-    <Compile Include="Kernel\Exceptions\ModInstallException.vb" />
-    <Compile Include="Kernel\Exceptions\ModNoPartsException.vb" />
-    <Compile Include="Kernel\Exceptions\ScreensaverManagementException.vb" />
-    <Compile Include="Kernel\Exceptions\ConsoleReadTimeoutException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidHashAlgorithmException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidHashException.vb" />
-    <Compile Include="Kernel\Exceptions\InvalidFeedTypeException.vb" />
-    <Compile Include="Kernel\Exceptions\FilesystemException.vb" />
-    <Compile Include="Kernel\Exceptions\RSSNetworkException.vb" />
-    <Compile Include="Kernel\Exceptions\SFTPNetworkException.vb" />
-    <Compile Include="Kernel\Exceptions\FTPNetworkException.vb" />
-    <Compile Include="Kernel\Exceptions\RSSShellException.vb" />
-    <Compile Include="Kernel\Exceptions\SFTPShellException.vb" />
-    <Compile Include="Kernel\Exceptions\FTPShellException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchMailDirectoryException.vb" />
-    <Compile Include="Kernel\Exceptions\MailException.vb" />
-    <Compile Include="Kernel\Exceptions\RemoteDebugDeviceAlreadyExistsException.vb" />
-    <Compile Include="Kernel\Exceptions\SFTPFilesystemException.vb" />
-    <Compile Include="Kernel\Exceptions\FTPFilesystemException.vb" />
-    <Compile Include="Kernel\Exceptions\RemoteDebugDeviceNotFoundException.vb" />
-    <Compile Include="Kernel\Exceptions\ColorException.vb" />
-    <Compile Include="Kernel\Exceptions\PermissionManagementException.vb" />
-    <Compile Include="Kernel\Exceptions\HostnameException.vb" />
-    <Compile Include="Kernel\Exceptions\UserManagementException.vb" />
-    <Compile Include="Kernel\Exceptions\UserCreationException.vb" />
-    <Compile Include="Kernel\Exceptions\ConfigException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchModException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchScreensaverException.vb" />
-    <Compile Include="Kernel\Exceptions\NoSuchLanguageException.vb" />
-    <Compile Include="Kernel\Exceptions\AliasNoSuchCommandException.vb" />
-    <Compile Include="Kernel\Exceptions\AliasAlreadyExistsException.vb" />
-    <Compile Include="Kernel\Exceptions\AliasNoSuchAliasException.vb" />
-    <Compile Include="Kernel\Exceptions\AliasNoSuchTypeException.vb" />
-    <Compile Include="Kernel\Exceptions\AliasInvalidOperationException.vb" />
-    <Compile Include="Kernel\Exceptions\NullUsersException.vb" />
-    <Compile Include="Kernel\Flags.vb" />
-    <Compile Include="Kernel\KernelErrorType.vb" />
-    <Compile Include="Kernel\KernelTools.vb" />
-    <Compile Include="Kernel\KernelUpdate.vb" />
-    <Compile Include="Kernel\KernelUpdateInfo.vb" />
-    <Compile Include="Kernel\PowerMode.vb" />
-    <Compile Include="Languages\CultureManager.vb" />
-    <Compile Include="Languages\LanguageInfo.vb" />
-    <Compile Include="Languages\LanguageManager.vb" />
-    <Compile Include="Languages\Translate.vb" />
-    <Compile Include="Login\UserInfo.vb" />
-    <Compile Include="Login\LoginErrorReasons.vb" />
-    <Compile Include="Login\PermissionManagement.vb" />
-    <Compile Include="ManPages\Manual.vb" />
-    <Compile Include="ManPages\PageManager.vb" />
-    <Compile Include="ManPages\PageParser.vb" />
-    <Compile Include="ManPages\PageViewer.vb" />
-    <Compile Include="Misc\Beautifiers\JsonBeautifier.vb" />
-    <Compile Include="Misc\Beautifiers\JsonMinifier.vb" />
-    <Compile Include="Misc\Calendar\CalendarPrint.vb" />
-    <Compile Include="Misc\Calendar\Events\EventManager.vb" />
-    <Compile Include="Misc\Calendar\Reminders\ReminderInfo.vb" />
-    <Compile Include="Misc\Calendar\Events\EventInfo.vb" />
-    <Compile Include="Misc\Calendar\Reminders\ReminderManager.vb" />
-    <Compile Include="Misc\Configuration\ConfigTools.vb" />
-    <Compile Include="Misc\Configuration\SettingsApp.vb" />
-    <Compile Include="Misc\Configuration\SettingsKeyType.vb" />
-    <Compile Include="Misc\Configuration\SettingsType.vb" />
-    <Compile Include="Misc\Dictionary\DictionaryManager.vb" />
-    <Compile Include="Misc\Dictionary\DictionaryWord.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\AddByte.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\AddBytes.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Clear.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\DelByte.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\DelBytes.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Exit.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\ExitNoSave.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Help.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Print.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\QueryByte.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Replace.vb" />
-    <Compile Include="Misc\Editors\HexEdit\Commands\Save.vb" />
-    <Compile Include="Misc\Editors\HexEdit\HexEditShellCommon.vb" />
-    <Compile Include="Misc\Editors\HexEdit\HexEditTools.vb" />
-    <Compile Include="Misc\Encryption\Encryption.vb" />
-    <Compile Include="Misc\Encryption\HashVerifier.vb" />
-    <Compile Include="Misc\Execution\ProcessExecutor.vb" />
-    <Compile Include="Misc\Games\Snaker.vb" />
-    <Compile Include="Misc\NamesManager.vb" />
-    <Compile Include="Misc\Reflection\AssemblyLookup.vb" />
-    <Compile Include="Misc\Reflection\FieldManager.vb" />
-    <Compile Include="Misc\Forecast\Forecast.vb" />
-    <Compile Include="Misc\Games\LoveHateRespond.vb" />
-    <Compile Include="Misc\Games\Solver.vb" />
-    <Compile Include="Misc\Games\SpeedPress.vb" />
-    <Compile Include="Misc\Games\Speller.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\AddProperty.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\Clear.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\DelProperty.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\Exit.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\ExitNoSave.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\Help.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\Print.vb" />
-    <Compile Include="Misc\Editors\JsonShell\Commands\Save.vb" />
-    <Compile Include="Misc\Editors\JsonShell\JsonShellCommon.vb" />
-    <Compile Include="Misc\Editors\JsonShell\JsonTools.vb" />
-    <Compile Include="Misc\Reflection\MethodManager.vb" />
-    <Compile Include="Misc\Notifiers\Notification.vb" />
-    <Compile Include="Misc\Notifiers\Notifications.vb" />
-    <Compile Include="Misc\Platform\PlatformDetector.vb" />
-    <Compile Include="Misc\Probers\MOTDParse.vb" />
-    <Compile Include="Misc\Probers\PlaceParse.vb" />
-    <Compile Include="Misc\Configuration\Config.vb" />
-    <Compile Include="Misc\Reflection\PropertyManager.vb" />
-    <Compile Include="Misc\Reflection\StringManipulate.vb" />
-    <Compile Include="Misc\Reflection\StringQuery.vb" />
-    <Compile Include="Misc\ReportBugPrompt.vb" />
-    <Compile Include="Misc\Screensaver\BaseScreensaver.vb" />
-    <Compile Include="Misc\Screensaver\Customized\CustomSaverCompiler.vb" />
-    <Compile Include="Misc\Screensaver\Customized\CustomSaverTools.vb" />
-    <Compile Include="Misc\Screensaver\Displays\BeatFader.vb" />
-    <Compile Include="Misc\Screensaver\Displays\CustomLegacy.vb" />
-    <Compile Include="Misc\Screensaver\Displays\DateAndTime.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
-    <Compile Include="Misc\Screensaver\Displays\BarRot.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Fireworks.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Figlet.vb" />
-    <Compile Include="Misc\Screensaver\Displays\FlashText.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Glitch.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Noise.vb" />
-    <Compile Include="Misc\Screensaver\Displays\PersonLookup.vb" />
-    <Compile Include="Misc\Screensaver\Displays\FallingLine.vb" />
-    <Compile Include="Misc\Screensaver\Displays\RandomSaver.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Snaker.vb" />
-    <Compile Include="Misc\Screensaver\Displays\StackBox.vb" />
-    <Compile Include="Misc\Screensaver\Displays\WindowsLogo.vb" />
-    <Compile Include="Misc\Screensaver\Displays\FaderBack.vb" />
-    <Compile Include="Misc\Screensaver\Displays\FlashColor.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Linotypo.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Marquee.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Plain.vb" />
-    <Compile Include="Misc\Screensaver\Displays\ProgressClock.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Dissolve.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
-    <Compile Include="Misc\Screensaver\Displays\BouncingBlock.vb" />
-    <Compile Include="Misc\Screensaver\Displays\BouncingText.vb" />
-    <Compile Include="Misc\Screensaver\Displays\GlitterColor.vb" />
-    <Compile Include="Misc\Screensaver\Displays\GlitterMatrix.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Lines.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
-    <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Ramp.vb" />
-    <Compile Include="Misc\Screensaver\Displays\SpotWrite.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Typewriter.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Typo.vb" />
-    <Compile Include="Misc\Screensaver\Displays\Wipe.vb" />
-    <Compile Include="Misc\Screensaver\ICustomSaver.vb" />
-    <Compile Include="Misc\Screensaver\IScreensaver.vb" />
-    <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\Screensaver\Customized\CustomSaverInfo.vb" />
-    <Compile Include="Misc\Screensaver\ScreensaverDisplayer.vb" />
-    <Compile Include="Misc\Splash\ISplash.vb" />
-    <Compile Include="Misc\Splash\Splashes\FaderBack.vb" />
-    <Compile Include="Misc\Splash\Splashes\Fader.vb" />
-    <Compile Include="Misc\Splash\Splashes\Blank.vb" />
-    <Compile Include="Misc\Splash\Splashes\Progress.vb" />
-    <Compile Include="Misc\Splash\Splashes\Simple.vb" />
-    <Compile Include="Misc\Splash\SplashInfo.vb" />
-    <Compile Include="Misc\Splash\SplashManager.vb" />
-    <Compile Include="Misc\Splash\SplashReport.vb" />
-    <Compile Include="Misc\Splash\SplashSettings.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\AddLines.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\AddLine.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Clear.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\EditLine.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\DelCharNum.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\DelLine.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\DelWord.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Exit.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\ExitNoSave.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Help.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Print.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\QueryChar.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\QueryWordRegex.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\QueryWord.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceRegex.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Replace.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceInlineRegex.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\ReplaceInline.vb" />
-    <Compile Include="Misc\Editors\TextEdit\Commands\Save.vb" />
-    <Compile Include="Misc\Editors\TextEdit\TextEditShellCommon.vb" />
-    <Compile Include="Misc\Editors\TextEdit\TextEditTools.vb" />
-    <Compile Include="Misc\TextLocation.vb" />
-    <Compile Include="Misc\Text\CharManager.vb" />
-    <Compile Include="Misc\Threading\KernelThread.vb" />
-    <Compile Include="Misc\Threading\ThreadManager.vb" />
-    <Compile Include="Misc\Timers\LapDisplayInfo.vb" />
-    <Compile Include="Misc\Timers\TimerScreen.vb" />
-    <Compile Include="Misc\Timers\StopwatchScreen.vb" />
-    <Compile Include="Misc\Writers\DebugWriters\DebugLevels.vb" />
-    <Compile Include="Misc\Writers\DebugWriters\DebugManager.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\FigletWhereColor.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\FigletColor.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\SeparatorColor.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\ListWriterColor.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterSlowColor.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereSlowColor.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereColor.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWrappedColor.vb" />
-    <Compile Include="Misc\Writers\DebugWriters\DebugWriter.vb" />
-    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\TableColor.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\Tools\CellOptions.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\Tools\FigletTools.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\Tools\ProgressTools.vb" />
-    <Compile Include="Misc\Writers\MiscWriters\Decisive.vb" />
-    <Compile Include="Misc\Writers\MiscWriters\LineHandleWriter.vb" />
-    <Compile Include="Misc\Writers\FancyWriters\ProgressColor.vb" />
-    <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />
-    <Compile Include="Misc\ZipFile\Commands\CDir.vb" />
-    <Compile Include="Misc\ZipFile\Commands\ChADir.vb" />
-    <Compile Include="Misc\ZipFile\Commands\ChDir.vb" />
-    <Compile Include="Misc\ZipFile\Commands\Exit.vb" />
-    <Compile Include="Misc\ZipFile\Commands\Pack.vb" />
-    <Compile Include="Misc\ZipFile\Commands\Get.vb" />
-    <Compile Include="Misc\ZipFile\Commands\Help.vb" />
-    <Compile Include="Misc\ZipFile\Commands\List.vb" />
-    <Compile Include="Misc\ZipFile\ZipTools.vb" />
-    <Compile Include="Misc\ZipFile\ZipShellCommon.vb" />
-    <Compile Include="Console\Themes\ThemeSetErrorReasons.vb" />
-    <Compile Include="Modifications\IScript.vb" />
-    <Compile Include="Modifications\ModExecutor.vb" />
-    <Compile Include="Modifications\PartInfo.vb" />
-    <Compile Include="Modifications\ModInfo.vb" />
-    <Compile Include="Modifications\ModManager.vb" />
-    <Compile Include="Modifications\ModParser.vb" />
-    <Compile Include="Network\FTP\Commands\Cdr.vb" />
-    <Compile Include="Network\FTP\Commands\Cdl.vb" />
-    <Compile Include="Network\FTP\Commands\Connect.vb" />
-    <Compile Include="Network\FTP\Commands\Cp.vb" />
-    <Compile Include="Network\FTP\Commands\Del.vb" />
-    <Compile Include="Network\FTP\Commands\Disconnect.vb" />
-    <Compile Include="Network\FTP\Commands\Execute.vb" />
-    <Compile Include="Network\FTP\Commands\Exit.vb" />
-    <Compile Include="Network\FTP\Commands\Get.vb" />
-    <Compile Include="Network\FTP\Commands\SumFiles.vb" />
-    <Compile Include="Network\FTP\Commands\SumFile.vb" />
-    <Compile Include="Network\FTP\Commands\GetFolder.vb" />
-    <Compile Include="Network\FTP\Commands\Info.vb" />
-    <Compile Include="Network\FTP\Commands\Help.vb" />
-    <Compile Include="Network\FTP\Commands\Lsl.vb" />
-    <Compile Include="Network\FTP\Commands\Lsr.vb" />
-    <Compile Include="Network\FTP\Commands\Mv.vb" />
-    <Compile Include="Network\FTP\Commands\Perm.vb" />
-    <Compile Include="Network\FTP\Commands\Put.vb" />
-    <Compile Include="Network\FTP\Commands\PutFolder.vb" />
-    <Compile Include="Network\FTP\Commands\Pwdl.vb" />
-    <Compile Include="Network\FTP\Commands\Pwdr.vb" />
-    <Compile Include="Network\FTP\Commands\QuickConnect.vb" />
-    <Compile Include="Network\FTP\Commands\Type.vb" />
-    <Compile Include="Network\FTP\Filesystem\FTPHashing.vb" />
-    <Compile Include="Network\FTP\Transfer\FTPTransferProgress.vb" />
-    <Compile Include="Network\HTTP\Commands\SetSite.vb" />
-    <Compile Include="Network\HTTP\Commands\GetString.vb" />
-    <Compile Include="Network\HTTP\Commands\Get.vb" />
-    <Compile Include="Network\HTTP\Commands\Delete.vb" />
-    <Compile Include="Network\HTTP\Commands\Exit.vb" />
-    <Compile Include="Network\HTTP\Commands\Help.vb" />
-    <Compile Include="Network\HTTP\HTTPShellCommon.vb" />
-    <Compile Include="Network\HTTP\HTTPTools.vb" />
-    <Compile Include="Network\Mail\Commands\Cd.vb" />
-    <Compile Include="Network\Mail\Commands\Exit.vb" />
-    <Compile Include="Network\Mail\Commands\Help.vb" />
-    <Compile Include="Network\Mail\Commands\List.vb" />
-    <Compile Include="Network\Mail\Commands\LsDirs.vb" />
-    <Compile Include="Network\Mail\Commands\Mkdir.vb" />
-    <Compile Include="Network\Mail\Commands\Mv.vb" />
-    <Compile Include="Network\Mail\Commands\MvAll.vb" />
-    <Compile Include="Network\Mail\Commands\Read.vb" />
-    <Compile Include="Network\Mail\Commands\ReadEnc.vb" />
-    <Compile Include="Network\Mail\Commands\Ren.vb" />
-    <Compile Include="Network\Mail\Commands\Rm.vb" />
-    <Compile Include="Network\Mail\Commands\RmAll.vb" />
-    <Compile Include="Network\Mail\Commands\Rmdir.vb" />
-    <Compile Include="Network\Mail\Commands\Send.vb" />
-    <Compile Include="Network\Mail\Commands\SendEnc.vb" />
-    <Compile Include="Network\Mail\MailHandlers.vb" />
-    <Compile Include="Network\Mail\Transfer\MailPingers.vb" />
-    <Compile Include="Network\Mail\Transfer\MailTransferProgress.vb" />
-    <Compile Include="Network\NetworkAdapter.vb" />
-    <Compile Include="Network\NetworkAdapterPrint.vb" />
-    <Compile Include="Network\NetworkTransferInfo.vb" />
-    <Compile Include="Network\NetworkTransferType.vb" />
-    <Compile Include="Network\RemoteDebug\Commands\Exit.vb" />
-    <Compile Include="Network\RemoteDebug\Commands\Help.vb" />
-    <Compile Include="Network\RemoteDebug\Commands\Register.vb" />
-    <Compile Include="Network\RemoteDebug\Commands\Trace.vb" />
-    <Compile Include="Network\RemoteDebug\Commands\Username.vb" />
-    <Compile Include="Network\RemoteDebug\Interface\IRemoteDebugCommand.vb" />
-    <Compile Include="Network\RemoteDebug\Interface\RemoteDebugCommandExecutor.vb" />
-    <Compile Include="Network\RemoteDebug\RemoteDebugDevice.vb" />
-    <Compile Include="Network\RSS\Bookmarks\RSSBookmarkManager.vb" />
-    <Compile Include="Network\RSS\Commands\ArticleInfo.vb" />
-    <Compile Include="Network\RSS\Commands\ListBookmark.vb" />
-    <Compile Include="Network\RSS\Commands\Unbookmark.vb" />
-    <Compile Include="Network\RSS\Commands\Bookmark.vb" />
-    <Compile Include="Network\RSS\Commands\SelFeed.vb" />
-    <Compile Include="Network\RSS\Commands\ChFeed.vb" />
-    <Compile Include="Network\RSS\Commands\Exit.vb" />
-    <Compile Include="Network\RSS\Commands\FeedInfo.vb" />
-    <Compile Include="Network\RSS\Commands\Help.vb" />
-    <Compile Include="Network\RSS\Commands\List.vb" />
-    <Compile Include="Network\RSS\Commands\Read.vb" />
-    <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
-    <Compile Include="Network\RSS\Instance\RSSFeed.vb" />
-    <Compile Include="Network\RSS\RSSShellCommon.vb" />
-    <Compile Include="Network\RSS\RSSTools.vb" />
-    <Compile Include="Network\SFTP\Commands\Cdl.vb" />
-    <Compile Include="Network\SFTP\Commands\Cdr.vb" />
-    <Compile Include="Network\SFTP\Commands\Connect.vb" />
-    <Compile Include="Network\SFTP\Commands\Del.vb" />
-    <Compile Include="Network\SFTP\Commands\Disconnect.vb" />
-    <Compile Include="Network\SFTP\Commands\Exit.vb" />
-    <Compile Include="Network\SFTP\Commands\Get.vb" />
-    <Compile Include="Network\SFTP\Commands\Help.vb" />
-    <Compile Include="Network\SFTP\Commands\Lsl.vb" />
-    <Compile Include="Network\SFTP\Commands\Lsr.vb" />
-    <Compile Include="Network\SFTP\Commands\Pwdl.vb" />
-    <Compile Include="Network\SFTP\Commands\Pwdr.vb" />
-    <Compile Include="Network\SFTP\Commands\QuickConnect.vb" />
-    <Compile Include="Network\SFTP\Commands\Put.vb" />
-    <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
-    <Compile Include="Network\SFTP\SFTPShellCommon.vb" />
-    <Compile Include="Network\SFTP\SFTPTools.vb" />
-    <Compile Include="Network\SFTP\Transfer\SFTPTransfer.vb" />
-    <Compile Include="Network\FTP\Filesystem\FTPFilesystem.vb" />
-    <Compile Include="Network\FTP\FTPShellCommon.vb" />
-    <Compile Include="Network\FTP\FTPTools.vb" />
-    <Compile Include="Network\FTP\Transfer\FTPTransfer.vb" />
-    <Compile Include="Network\Mail\Directory\MailDirectory.vb" />
-    <Compile Include="Network\Mail\Directory\MailManager.vb" />
-    <Compile Include="Network\Mail\PGP\PGPContext.vb" />
-    <Compile Include="Network\Mail\Transfer\MailTransfer.vb" />
-    <Compile Include="Network\NetworkTools.vb" />
-    <Compile Include="Network\NetworkTransfer.vb" />
-    <Compile Include="Network\RemoteDebug\RemoteDebugCmd.vb" />
-    <Compile Include="Network\RemoteDebug\RemoteDebugger.vb" />
-    <Compile Include="Network\RemoteDebug\RemoteDebugTools.vb" />
-    <Compile Include="Network\RPC\RemoteProcedure.vb" />
-    <Compile Include="Network\RPC\RPCCommands.vb" />
-    <Compile Include="Network\Mail\MailLogin.vb" />
-    <Compile Include="Network\Mail\MailShellCommon.vb" />
-    <Compile Include="Network\SSH\SSH.vb" />
-    <Compile Include="Scripting\Conditions\BaseCondition.vb" />
-    <Compile Include="Scripting\Conditions\ConditionPosition.vb" />
-    <Compile Include="Scripting\Conditions\ICondition.vb" />
-    <Compile Include="Scripting\Conditions\Types\DirectoryExists.vb" />
-    <Compile Include="Scripting\Conditions\Types\DirectoryNotExists.vb" />
-    <Compile Include="Scripting\Conditions\Types\None.vb" />
-    <Compile Include="Scripting\Conditions\Types\FileNotExists.vb" />
-    <Compile Include="Scripting\Conditions\Types\FileExists.vb" />
-    <Compile Include="Scripting\Conditions\Types\GreaterThan.vb" />
-    <Compile Include="Scripting\Conditions\Types\GreaterThanOrEqual.vb" />
-    <Compile Include="Scripting\Conditions\Types\LessThanOrEqual.vb" />
-    <Compile Include="Scripting\Conditions\Types\LessThan.vb" />
-    <Compile Include="Scripting\Conditions\Types\NotEquals.vb" />
-    <Compile Include="Scripting\Conditions\Types\Equals.vb" />
-    <Compile Include="Scripting\Interaction\UESHCommands.vb" />
-    <Compile Include="Scripting\Conditions\UESHConditional.vb" />
-    <Compile Include="Scripting\UESHOperators.vb" />
-    <Compile Include="Scripting\UESHParse.vb" />
-    <Compile Include="Scripting\UESHVariables.vb" />
-    <Compile Include="Shell\Commands\AddUser.vb" />
-    <Compile Include="Shell\Commands\Alias.vb" />
-    <Compile Include="Shell\Commands\ArgInj.vb" />
-    <Compile Include="Shell\Commands\Beep.vb" />
-    <Compile Include="Shell\Commands\BlockDbgDev.vb" />
-    <Compile Include="Shell\Commands\Calendar.vb" />
-    <Compile Include="Shell\Commands\Calc.vb" />
-    <Compile Include="Shell\Commands\Cat.vb" />
-    <Compile Include="Shell\Commands\CdbgLog.vb" />
-    <Compile Include="Shell\Commands\ChAttr.vb" />
-    <Compile Include="Shell\Commands\ChDir.vb" />
-    <Compile Include="Shell\Commands\ChHostName.vb" />
-    <Compile Include="Shell\Commands\ChLang.vb" />
-    <Compile Include="Shell\Commands\ChMal.vb" />
-    <Compile Include="Shell\Commands\ChMotd.vb" />
-    <Compile Include="Shell\Commands\Dict.vb" />
-    <Compile Include="Shell\Commands\ColorRgbToHex.vb" />
-    <Compile Include="Shell\Commands\ColorHexToRgbKS.vb" />
-    <Compile Include="Shell\Commands\ColorHexToRgb.vb" />
-    <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
-    <Compile Include="Shell\Commands\Combine.vb" />
-    <Compile Include="Shell\Commands\GenName.vb" />
-    <Compile Include="Shell\Commands\HexEdit.vb" />
-    <Compile Include="Shell\Commands\If.vb" />
-    <Compile Include="Shell\Commands\Find.vb" />
-    <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
-    <Compile Include="Shell\Commands\LangMan.vb" />
-    <Compile Include="Shell\Commands\Exit.vb" />
-    <Compile Include="Shell\Commands\KeyInfo.vb" />
-    <Compile Include="Shell\Commands\Snaker.vb" />
-    <Compile Include="Shell\Commands\LsVars.vb" />
-    <Compile Include="Shell\Commands\Select.vb" />
-    <Compile Include="Shell\Commands\Choice.vb" />
-    <Compile Include="Shell\Commands\ChPwd.vb" />
-    <Compile Include="Shell\Commands\ChUsrName.vb" />
-    <Compile Include="Shell\Commands\Cls.vb" />
-    <Compile Include="Shell\Commands\Copy.vb" />
-    <Compile Include="Shell\Commands\DirInfo.vb" />
-    <Compile Include="Shell\Commands\DisconnDbgDev.vb" />
-    <Compile Include="Shell\Commands\DismissNotifs.vb" />
-    <Compile Include="Shell\Commands\DismissNotif.vb" />
-    <Compile Include="Shell\Commands\Echo.vb" />
-    <Compile Include="Shell\Commands\Edit.vb" />
-    <Compile Include="Shell\Commands\FileInfo.vb" />
-    <Compile Include="Shell\Commands\FiredEvents.vb" />
-    <Compile Include="Shell\Commands\Http.vb" />
-    <Compile Include="Shell\Commands\Ftp.vb" />
-    <Compile Include="Shell\Commands\Get.vb" />
-    <Compile Include="Shell\Commands\GetTimeInfo.vb" />
-    <Compile Include="Shell\Commands\Help.vb" />
-    <Compile Include="Shell\Commands\HwInfo.vb" />
-    <Compile Include="Shell\Commands\Input.vb" />
-    <Compile Include="Shell\Commands\JsonBeautify.vb" />
-    <Compile Include="Shell\Commands\JsonMinify.vb" />
-    <Compile Include="Shell\Commands\JsonShell.vb" />
-    <Compile Include="Shell\Commands\List.vb" />
-    <Compile Include="Shell\Commands\LockScreen.vb" />
-    <Compile Include="Shell\Commands\Logout.vb" />
-    <Compile Include="Shell\Commands\LoveHate.vb" />
-    <Compile Include="Shell\Commands\LsDbgDev.vb" />
-    <Compile Include="Shell\Commands\Mail.vb" />
-    <Compile Include="Shell\Commands\Solver.vb" />
-    <Compile Include="Shell\Commands\Md.vb" />
-    <Compile Include="Shell\Commands\MkFile.vb" />
-    <Compile Include="Shell\Commands\MkTheme.vb" />
-    <Compile Include="Shell\Commands\ModMan.vb" />
-    <Compile Include="Shell\Commands\ModManual.vb" />
-    <Compile Include="Shell\Commands\Move.vb" />
-    <Compile Include="Shell\Commands\Open.vb" />
-    <Compile Include="Shell\Commands\NetInfo.vb" />
-    <Compile Include="Shell\Commands\Perm.vb" />
-    <Compile Include="Shell\Commands\Ping.vb" />
-    <Compile Include="Shell\Commands\Put.vb" />
-    <Compile Include="Shell\Commands\Rdebug.vb" />
-    <Compile Include="Shell\Commands\Reboot.vb" />
-    <Compile Include="Shell\Commands\ReloadConfig.vb" />
-    <Compile Include="Shell\Commands\ReloadSaver.vb" />
-    <Compile Include="Shell\Commands\ReportBug.vb" />
-    <Compile Include="Shell\Commands\Rexec.vb" />
-    <Compile Include="Shell\Commands\Rm.vb" />
-    <Compile Include="Shell\Commands\RmUser.vb" />
-    <Compile Include="Shell\Commands\Rss.vb" />
-    <Compile Include="Shell\Commands\SaveCurrDir.vb" />
-    <Compile Include="Shell\Commands\SaveScreen.vb" />
-    <Compile Include="Shell\Commands\Search.vb" />
-    <Compile Include="Shell\Commands\SearchWord.vb" />
-    <Compile Include="Shell\Commands\SetRange.vb" />
-    <Compile Include="Shell\Commands\Set.vb" />
-    <Compile Include="Shell\Commands\SetSaver.vb" />
-    <Compile Include="Shell\Commands\SetThemes.vb" />
-    <Compile Include="Shell\Commands\Settings.vb" />
-    <Compile Include="Shell\Commands\Timer.vb" />
-    <Compile Include="Shell\Commands\Stopwatch.vb" />
-    <Compile Include="Shell\Commands\TestShell.vb" />
-    <Compile Include="Shell\Commands\Sftp.vb" />
-    <Compile Include="Shell\Commands\ShowNotifs.vb" />
-    <Compile Include="Shell\Commands\ShowTd.vb" />
-    <Compile Include="Shell\Commands\ShowTdZone.vb" />
-    <Compile Include="Shell\Commands\Shutdown.vb" />
-    <Compile Include="Shell\Commands\SpeedPress.vb" />
-    <Compile Include="Shell\Commands\SpellBee.vb" />
-    <Compile Include="Shell\Commands\Sshcmd.vb" />
-    <Compile Include="Shell\Commands\Sshell.vb" />
-    <Compile Include="Shell\Commands\SumFile.vb" />
-    <Compile Include="Shell\Commands\SumFiles.vb" />
-    <Compile Include="Shell\Commands\SysInfo.vb" />
-    <Compile Include="Shell\Commands\UnblockDbgDev.vb" />
-    <Compile Include="Shell\Commands\UnZip.vb" />
-    <Compile Include="Shell\Commands\Update.vb" />
-    <Compile Include="Shell\Commands\UserManual.vb" />
-    <Compile Include="Shell\Commands\Verify.vb" />
-    <Compile Include="Shell\Commands\Weather.vb" />
-    <Compile Include="Shell\Commands\Wrap.vb" />
-    <Compile Include="Shell\Commands\Zip.vb" />
-    <Compile Include="Shell\Commands\ZipShell.vb" />
-    <Compile Include="Shell\ShellBase\AliasExecutor.vb" />
-    <Compile Include="Shell\ShellBase\CancellationHandlers.vb" />
-    <Compile Include="Shell\ShellBase\ShellInfo.vb" />
-    <Compile Include="Shell\ShellBase\ShellExecutor.vb" />
-    <Compile Include="Shell\ShellBase\CommandExecutor.vb" />
-    <Compile Include="Shell\ShellBase\CommandManager.vb" />
-    <Compile Include="Shell\ShellBase\ICommand.vb" />
-    <Compile Include="Shell\ShellBase\AliasManager.vb" />
-    <Compile Include="Shell\ShellBase\CommandInfo.vb" />
-    <Compile Include="Shell\ShellBase\GetCommand.vb" />
-    <Compile Include="Hardware\HardwareProbe.vb" />
-    <Compile Include="Kernel\Kernel.vb" />
-    <Compile Include="Login\Login.vb" />
-    <Compile Include="Login\UserManagement.vb" />
-    <Compile Include="Shell\ShellBase\HelpSystem.vb" />
-    <Compile Include="Shell\ShellBase\IShell.vb" />
-    <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
-    <Compile Include="Shell\Shell.vb" />
-    <Compile Include="Shell\ShellBase\ShellType.vb" />
-    <Compile Include="Shell\ShellBase\ShellStart.vb" />
-    <Compile Include="Shell\Shells\RSSShell.vb" />
-    <Compile Include="Shell\Shells\JsonShell.vb" />
-    <Compile Include="Shell\Shells\HTTPShell.vb" />
-    <Compile Include="Shell\Shells\HexShell.vb" />
-    <Compile Include="Shell\Shells\ZipShell.vb" />
-    <Compile Include="Shell\Shells\TestShell.vb" />
-    <Compile Include="Shell\Shells\TextShell.vb" />
-    <Compile Include="Shell\Shells\SFTPShell.vb" />
-    <Compile Include="Shell\Shells\MailShell.vb" />
-    <Compile Include="Shell\Shells\FTPShell.vb" />
-    <Compile Include="Shell\Shells\UESHShell.vb" />
-    <Compile Include="TestShell\Commands\CheckSettingsEntryVars.vb" />
-    <Compile Include="TestShell\Commands\CheckLocalLines.vb" />
-    <Compile Include="TestShell\Commands\CheckStrings.vb" />
-    <Compile Include="TestShell\Commands\GetLineStyle.vb" />
-    <Compile Include="TestShell\Commands\PrintFiglet.vb" />
-    <Compile Include="TestShell\Commands\PrintFigletF.vb" />
-    <Compile Include="TestShell\Commands\SleepTook.vb" />
-    <Compile Include="TestShell\Commands\TestCRC32.vb" />
-    <Compile Include="TestShell\Commands\TestTable.vb" />
-    <Compile Include="TestShell\Commands\CheckString.vb" />
-    <Compile Include="TestShell\Commands\UnblacklistMod.vb" />
-    <Compile Include="TestShell\Commands\ColorWheel.vb" />
-    <Compile Include="TestShell\Commands\ColorTest.vb" />
-    <Compile Include="TestShell\Commands\ColorTrueTest.vb" />
-    <Compile Include="TestShell\Commands\DCalend.vb" />
-    <Compile Include="TestShell\Commands\Debug.vb" />
-    <Compile Include="TestShell\Commands\Exit.vb" />
-    <Compile Include="TestShell\Commands\GetCustomSaverSetting.vb" />
-    <Compile Include="TestShell\Commands\Help.vb" />
-    <Compile Include="TestShell\Commands\ListCodePages.vb" />
-    <Compile Include="TestShell\Commands\LoadMods.vb" />
-    <Compile Include="TestShell\Commands\LsCompilerVars.vb" />
-    <Compile Include="TestShell\Commands\LsCultures.vb" />
-    <Compile Include="TestShell\Commands\Panic.vb" />
-    <Compile Include="TestShell\Commands\PanicF.vb" />
-    <Compile Include="TestShell\Commands\Places.vb" />
-    <Compile Include="TestShell\Commands\BlacklistMod.vb" />
-    <Compile Include="TestShell\Commands\ShowDateUtc.vb" />
-    <Compile Include="TestShell\Commands\ShowTDUtc.vb" />
-    <Compile Include="TestShell\Commands\ShowTD.vb" />
-    <Compile Include="TestShell\Commands\ShowDate.vb" />
-    <Compile Include="TestShell\Commands\ShowTimeUtc.vb" />
-    <Compile Include="TestShell\Commands\ShowTime.vb" />
-    <Compile Include="TestShell\Commands\Print.vb" />
-    <Compile Include="TestShell\Commands\PrintD.vb" />
-    <Compile Include="TestShell\Commands\PrintDF.vb" />
-    <Compile Include="TestShell\Commands\PrintF.vb" />
-    <Compile Include="TestShell\Commands\PrintSep.vb" />
-    <Compile Include="TestShell\Commands\PrintSepColor.vb" />
-    <Compile Include="TestShell\Commands\PrintSepColorF.vb" />
-    <Compile Include="TestShell\Commands\PrintSepF.vb" />
-    <Compile Include="TestShell\Commands\ProbeHw.vb" />
-    <Compile Include="TestShell\Commands\RDebug.vb" />
-    <Compile Include="TestShell\Commands\SendNotProg.vb" />
-    <Compile Include="TestShell\Commands\SendNot.vb" />
-    <Compile Include="TestShell\Commands\SetCustomSaverSetting.vb" />
-    <Compile Include="TestShell\Commands\Shutdown.vb" />
-    <Compile Include="TestShell\Commands\ReloadMods.vb" />
-    <Compile Include="TestShell\Commands\StopMods.vb" />
-    <Compile Include="TestShell\Commands\TestDictWriterChar.vb" />
-    <Compile Include="TestShell\Commands\TestDictWriterInt.vb" />
-    <Compile Include="TestShell\Commands\TestDictWriterStr.vb" />
-    <Compile Include="TestShell\Commands\TestEvent.vb" />
-    <Compile Include="TestShell\Commands\TestListWriterChar.vb" />
-    <Compile Include="TestShell\Commands\TestListWriterInt.vb" />
-    <Compile Include="TestShell\Commands\TestListWriterStr.vb" />
-    <Compile Include="TestShell\Commands\TestMD5.vb" />
-    <Compile Include="TestShell\Commands\TestRegExp.vb" />
-    <Compile Include="TestShell\Commands\TestSHA1.vb" />
-    <Compile Include="TestShell\Commands\TestSHA384.vb" />
-    <Compile Include="TestShell\Commands\TestSHA256.vb" />
-    <Compile Include="TestShell\Commands\TestSHA512.vb" />
-    <Compile Include="TestShell\Commands\Translate.vb" />
-    <Compile Include="TestShell\TestShellCommon.vb" />
-    <Compile Include="TimeDate\TimeDate.vb" />
-    <Compile Include="TimeDate\TimeDateConverters.vb" />
-    <Compile Include="TimeDate\TimeDateRenderers.vb" />
-    <Compile Include="TimeDate\TimeDateRenderersUtc.vb" />
-    <Compile Include="TimeDate\TimeZones.vb" />
-  </ItemGroup>
-  <!-- KS Source Information End -->
+
   <!-- KS Launchers and Manpages -->
   <ItemGroup>
     <None Include="ks-converter.1">
@@ -843,6 +213,7 @@
     </None>
   </ItemGroup>
   <!-- KS Launchers and Manpages End -->
+
   <!-- KS Languages -->
   <ItemGroup>
     <None Include="Resources\arb-T.json" />
@@ -878,6 +249,7 @@
     <None Include="Resources\vtn.json" />
   </ItemGroup>
   <!-- KS Languages End -->
+
   <!-- KS Themes -->
   <ItemGroup>
     <None Include="Resources\Themes\Aquatic.json" />
@@ -921,8 +293,6 @@
     <None Include="Resources\Themes\PhosphoricFG.json" />
     <None Include="Resources\Themes\SolarizedDark.json" />
     <None Include="Resources\Themes\SolarizedLight.json" />
-    <None Include="Resources\Themes\VisualStudioDark.json" />
-    <None Include="Resources\Themes\VisualStudioLight.json" />
     <None Include="Resources\Themes\Windows11.json" />
     <None Include="Resources\Themes\Windows11Light.json" />
     <None Include="Resources\Themes\Wood.json" />
@@ -948,6 +318,7 @@
     <None Include="Resources\Themes\Windows95.json" />
   </ItemGroup>
   <!-- KS Themes End -->
+
   <!-- KS Data -->
   <ItemGroup>
     <None Include="Resources\Data\ConsoleColorsData.json" />
@@ -956,39 +327,28 @@
     <None Include="Resources\Data\SettingsEntries.json" />
   </ItemGroup>
   <!-- KS Data End -->
+
   <!-- KS Manifest -->
   <ItemGroup>
     <None Include="app.manifest" />
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
+    <Compile Update="My Project\Resources.Designer.vb">
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <None Include="My Project\app.manifest" />
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+    <EmbeddedResource Update="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Manifest End -->
+
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup />
   <!-- KS Package Files End -->
-  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

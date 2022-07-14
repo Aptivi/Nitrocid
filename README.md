@@ -16,12 +16,10 @@ WARNING: The gangsta language contains strong language that may make you feel un
 
 Here are all the CI build status for all the active KS branches.
 
-| Branch                           | AppVeyor 
-|----------------------------------|----------
-| master (Kernel Simulator.sln)    | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
-| master (KS.DotNetSdk.sln)        | [![Build status](https://ci.appveyor.com/api/projects/status/1pgcrnfm346o6f0j/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator-dotnetsdk/branch/master)
-| servicing (Kernel Simulator.sln) | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
-| servicing (KS.DotNetSdk.sln)     | [![Build status](https://ci.appveyor.com/api/projects/status/1pgcrnfm346o6f0j/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator-dotnetsdk/branch/servicing)
+| Branch    | AppVeyor 
+|-----------|----------
+| master    | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
+| servicing | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
 
 ## System Requirements
 
@@ -102,8 +100,6 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 
 ## How to Build
 
-NOTE: `KS.DotNetSdk.sln` is not ready yet, so builds using .NET SDK are expected to fail.
-
 This section covers how to build Kernel Simulator on your system. Please scroll down to your platform below.
 
 ### Visual Studio 2017+
@@ -155,7 +151,8 @@ The packing and distribution procedures are now easier by executing this script 
 | Ethan Schoonover   | Solarized Theme
 | Fabian Neuschmidt  | [Breezy Theme](https://github.com/fneu/breezy)
 | TechRepublic       | Articles RSS feed URL
-| smashew            | [Name databases](https://github.com/smashew/NameDatabases)
+| EoflaOE            | [Name databases](https://github.com/EoflaOE/NamesList)
+| smashew            | [Name databases (just in case)](https://github.com/smashew/NameDatabases)
 | yavuz              | [RSS feed list by country](https://github.com/yavuz/news-feed-list-of-countries/)
 | All contributors   | Contribution
 

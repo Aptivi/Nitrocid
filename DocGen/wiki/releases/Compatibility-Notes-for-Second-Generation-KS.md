@@ -591,8 +591,16 @@ These are the technical information about **some** of the above breaking changes
 
 #### 0.0.23.0 notes
 
-When upgrading your mods to support 0.0.23.0, you must follow the compatibility notes to ensure that your mod works with 0.0.22.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+When upgrading your mods to support 0.0.23.0, you must follow the compatibility notes to ensure that your mod works with 0.0.23.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Deprecation of ICustomSaver
 
 As we've implemented `BaseScreensaver` to better handle screensavers, we decided to deprecate `ICustomSaver` in favor of the new screensaver model. This will merge all kernel threads of individual screensavers to one master screensaver thread.
+
+### Breaking API changes (Second-generation, Revision 1)
+
+#### 0.0.24.0 notes
+
+When upgrading your mods to support 0.0.24.0, you must follow the compatibility notes to ensure that your mod works with 0.0.24.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+
+##### To be filled

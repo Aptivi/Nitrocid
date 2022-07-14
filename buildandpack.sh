@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=0.0.23.2
+ksversion=0.0.24.0
 
 mkdir ~/tmp
 echo Make sure you have the following:
@@ -68,7 +68,7 @@ fi
 # Pack binary
 echo Packing binary...
 find . -type f -iname \*.nupkg -delete >> ~/tmp/buildandpack.log
-"$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-bin.rar "Kernel Simulator/KSBuild/" >> ~/tmp/buildandpack.log
+"$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-bin.rar "Kernel Simulator/KSBuild/net45/" >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1

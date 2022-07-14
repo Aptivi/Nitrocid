@@ -1,6 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,47 +7,61 @@
     <OutputType>Library</OutputType>
     <RootNamespace>KSTests</RootNamespace>
     <AssemblyName>KSTests</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MyType Condition="'$(TargetFramework)' == 'net48'">Windows</MyType>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Description>Unit tests for Kernel Simulator</Description>
+    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <OutputPath>KSTest\</OutputPath>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Version>0.0.21.2</Version>
+    <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <TargetFramework>net48</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>KSTest\</OutputPath>
+    <DocumentationFile>KSTests.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
     <DocumentationFile>KSTests.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TargetFramework>net48</TargetFramework>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>KSTest\</OutputPath>
     <DocumentationFile>KSTests.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
-  <PropertyGroup>
-    <OptionExplicit>On</OptionExplicit>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
+    <TargetFramework>net6.0</TargetFramework>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <DocumentationFile>KSTests.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
-  <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
-  </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -71,135 +83,55 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Argument\ArgumentInfoInitializationTests.vb" />
-    <Compile Include="Argument\ArgumentTest.vb" />
-    <Compile Include="Console\ConsoleQueryingTests.vb" />
-    <Compile Include="Console\ColorQueryingTests.vb" />
-    <Compile Include="Console\Color255QueryingTests.vb" />
-    <Compile Include="Console\ColorInitializationTests.vb" />
-    <Compile Include="Console\ConsoleColorsInfoInitializationTests.vb" />
-    <Compile Include="Console\ThemeInfoInitializationTests.vb" />
-    <Compile Include="Files\FilesystemNeutralizationTests.vb" />
-    <Compile Include="Files\FilesystemManipulationTests.vb" />
-    <Compile Include="Files\FilesystemSettingTests.vb" />
-    <Compile Include="Files\FilesystemQueryingTests.vb" />
-    <Compile Include="Languages\LocalizationInitializationTests.vb" />
-    <Compile Include="Languages\LocalizationQueryingTests.vb" />
-    <Compile Include="Languages\LocalizationSettingTests.vb" />
-    <Compile Include="Login\UserPermissionManagementTests.vb" />
-    <Compile Include="Login\UserManagementTests.vb" />
-    <Compile Include="Misc\PropertyManagementTests.vb" />
-    <Compile Include="Misc\KernelThreadTestHelper.vb" />
-    <Compile Include="Misc\KernelThreadTests.vb" />
-    <Compile Include="Misc\ReflectionActionTests.vb" />
-    <Compile Include="Misc\MethodManagementTests.vb" />
-    <Compile Include="Misc\ReminderManagementTests.vb" />
-    <Compile Include="Misc\FieldManagementTests.vb" />
-    <Compile Include="Misc\EncryptionActionTests.vb" />
-    <Compile Include="Misc\EventManagementTests.vb" />
-    <Compile Include="Misc\MOTDSettingTests.vb" />
-    <Compile Include="Misc\MOTDManagementTests.vb" />
-    <Compile Include="Misc\JsonActionTests.vb" />
-    <Compile Include="Misc\PlaceholderActionTests.vb" />
-    <Compile Include="Misc\JsonShellInitializationTests.vb" />
-    <Compile Include="Misc\TextEditorInitializationTests.vb" />
-    <Compile Include="Misc\ConfigManagementTests.vb" />
-    <Compile Include="Modifications\BlacklistManipulationTests.vb" />
-    <Compile Include="Shell\ShellTest.vb" />
-    <Compile Include="Shell\ShellExecutorInitializationTests.vb" />
-    <Compile Include="Shell\CommandInfoInitializationTests.vb" />
-    <Compile Include="Shell\CommandExecutorInitializationTests.vb" />
-    <Compile Include="Shell\CommandManagerQueryingTests.vb" />
-    <Compile Include="Shell\CommandTest.vb" />
-    <Compile Include="Shell\UESHVariableTests.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Settings.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Console\ColorSettingTests.vb" />
-    <Compile Include="Languages\LocalizationActionTests.vb" />
-    <Compile Include="Misc\ScreensaverSettingTests.vb" />
-    <Compile Include="Network\NetworkActionTests.vb" />
-    <Compile Include="Network\RemoteDebugManagementTests.vb" />
-    <Compile Include="Network\SpeedDialManagementTests.vb" />
-    <Compile Include="Shell\CommandManagerActionTests.vb" />
-    <Compile Include="TimeDate\TimeConversionTests.vb" />
-    <Compile Include="TimeDate\TimeQueryingTests.vb" />
-    <Compile Include="TimeDate\TimeInitializationTests.vb" />
-    <Compile Include="Kernel\KernelMiscTests.vb" />
-    <Compile Include="Misc\NotificationTests.vb" />
-    <Compile Include="Network\NetworkManipulationTests.vb" />
-    <Compile Include="InitTest.vb" />
-    <Compile Include="Login\UserInitializationTests.vb" />
-    <Compile Include="TimeDate\TimeActionTests.vb" />
     <Content Include="TestData\TestMove.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestText.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifyCRC32.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifyCRC32KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifyMD5.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifyMD5KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA1.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA1KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA256.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA256KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA384.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA384KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA512.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\TestVerifySHA512KS.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="TestData\TestJson.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestData\Hacker.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -224,6 +156,9 @@
     <PackageReference Include="Shouldly">
       <Version>4.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk">
+      <Version>17.2.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.vbproj">
@@ -233,5 +168,4 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

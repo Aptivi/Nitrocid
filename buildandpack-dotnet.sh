@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=0.0.23.2
+ksversion=0.0.24.0
 
 mkdir ~/tmp
 echo Make sure you have the following:
@@ -51,7 +51,7 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" msbuild "KS.DotNetSdk.sln" -t:restore -p:Configuration=Release-dotnet > ~/tmp/buildandpack.log
+"$dotnetpath" msbuild "Kernel Simulator.sln" -t:restore -p:Configuration=Release-dotnet > ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -59,7 +59,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$dotnetpath" msbuild "KS.DotNetSdk.sln" -p:Configuration=Release-dotnet >> ~/tmp/buildandpack.log
+"$dotnetpath" msbuild "Kernel Simulator.sln" -p:Configuration=Release-dotnet >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1

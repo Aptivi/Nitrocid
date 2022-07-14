@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kernel Simulator", "Kernel Simulator\Kernel Simulator.vbproj", "{C7B37899-C361-423D-9512-FE0A87A46866}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Kernel Simulator", "Kernel Simulator\Kernel Simulator.vbproj", "{C7B37899-C361-423D-9512-FE0A87A46866}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSTests", "KSTests\KSTests.vbproj", "{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "KSTests", "KSTests\KSTests.vbproj", "{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSConverter", "KSConverter\KSConverter.vbproj", "{C1A047FA-2595-45CB-8E4D-1F79B7785A29}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "KSConverter", "KSConverter\KSConverter.vbproj", "{C1A047FA-2595-45CB-8E4D-1F79B7785A29}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSJsonifyLocales", "KSJsonifyLocales\KSJsonifyLocales.vbproj", "{3CFE671F-0079-42F7-8419-CC32329AD46C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "KSJsonifyLocales", "KSJsonifyLocales\KSJsonifyLocales.vbproj", "{3CFE671F-0079-42F7-8419-CC32329AD46C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8078B1D-C519-405B-B751-9C1426A4D99B}"
 	ProjectSection(SolutionItems) = preProject
@@ -362,25 +362,43 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug-dotnet|Any CPU = Debug-dotnet|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Release-dotnet|Any CPU = Release-dotnet|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C7B37899-C361-423D-9512-FE0A87A46866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7B37899-C361-423D-9512-FE0A87A46866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B37899-C361-423D-9512-FE0A87A46866}.Debug-dotnet|Any CPU.ActiveCfg = Debug-dotnet|Any CPU
+		{C7B37899-C361-423D-9512-FE0A87A46866}.Debug-dotnet|Any CPU.Build.0 = Debug-dotnet|Any CPU
 		{C7B37899-C361-423D-9512-FE0A87A46866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B37899-C361-423D-9512-FE0A87A46866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B37899-C361-423D-9512-FE0A87A46866}.Release-dotnet|Any CPU.ActiveCfg = Release-dotnet|Any CPU
+		{C7B37899-C361-423D-9512-FE0A87A46866}.Release-dotnet|Any CPU.Build.0 = Release-dotnet|Any CPU
 		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Debug-dotnet|Any CPU.ActiveCfg = Debug-dotnet|Any CPU
+		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Debug-dotnet|Any CPU.Build.0 = Debug-dotnet|Any CPU
 		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Release-dotnet|Any CPU.ActiveCfg = Release-dotnet|Any CPU
+		{94BC4A1A-52AE-4956-A84C-D08105C8BC6B}.Release-dotnet|Any CPU.Build.0 = Release-dotnet|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Debug-dotnet|Any CPU.ActiveCfg = Debug-dotnet|Any CPU
+		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Debug-dotnet|Any CPU.Build.0 = Debug-dotnet|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release-dotnet|Any CPU.ActiveCfg = Release-dotnet|Any CPU
+		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release-dotnet|Any CPU.Build.0 = Release-dotnet|Any CPU
 		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug-dotnet|Any CPU.ActiveCfg = Debug-dotnet|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug-dotnet|Any CPU.Build.0 = Debug-dotnet|Any CPU
 		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release-dotnet|Any CPU.ActiveCfg = Release-dotnet|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release-dotnet|Any CPU.Build.0 = Release-dotnet|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

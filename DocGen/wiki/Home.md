@@ -196,7 +196,7 @@ This revision of the first-generation version is supported until 6/12/2024.
 
 ### Second-generation (API v2.0)
 
-This revision of the second-generation version is still under active development.
+This revision of the second-generation version is supported until 2/22/2025, and the security support will end at 2/22/2027.
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |
 |:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
@@ -226,3 +226,11 @@ This revision of the second-generation version is still under active development
 | v0.0.23.0  |  7/12/2022   |  7/12/2023  |  7/12/2023        | Supported   |
 | v0.0.23.1  |  7/12/2022   |  7/12/2023  |  7/12/2023        | Supported   |
 | v0.0.23.2  |  7/13/2022   |  7/12/2023  |  7/12/2023        | Supported   |
+
+### Second-generation (API v2.1)
+
+This revision of the second-generation version is still under active development.
+
+| Version    | Release date | EOL date    | Security EOL date | EOL status  |
+|:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
+| v0.0.24.0  |  ???         |  ???        |  ???              | ???         |

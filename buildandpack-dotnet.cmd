@@ -18,7 +18,7 @@ REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script builds KS and packs the artifacts. Use when you have VS installed.
-set ksversion=0.0.23.2
+set ksversion=0.0.24.0
 
 echo Make sure you have the following:
 echo   - %ProgramFiles%\dotnet\dotnet.exe (SDK)
@@ -31,14 +31,14 @@ pause > nul
 
 :download
 echo Downloading packages...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "KS.DotNetSdk.sln" -t:restore -p:Configuration=Release-dotnet > %temp%/buildandpack.log 2>&1
+"%ProgramFiles%\dotnet\dotnet.exe" msbuild "Kernel Simulator.sln" -t:restore -p:Configuration=Release-dotnet > %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
 echo Building Kernel Simulator...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "KS.DotNetSdk.sln" -p:Configuration=Release-dotnet >> %temp%/buildandpack.log 2>&1
+"%ProgramFiles%\dotnet\dotnet.exe" msbuild "Kernel Simulator.sln" -p:Configuration=Release-dotnet >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packbin
 echo There was an error trying to build (%errorlevel%).
 goto :finished
