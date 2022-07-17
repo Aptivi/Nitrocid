@@ -51,7 +51,7 @@ Namespace Shell.Shells
                         Write("(t)> ", False, ColTypes.Input)
                     Else
                         Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
+                        Conversion.ConvertVTSequences(ParsedPromptStyle)
                         Write(ParsedPromptStyle, False, ColTypes.Gray)
                     End If
 

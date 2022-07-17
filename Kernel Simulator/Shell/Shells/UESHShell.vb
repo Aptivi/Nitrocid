@@ -110,7 +110,7 @@ Namespace Shell.Shells
             If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
                 'Parse the shell prompt style
                 Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
-                ParsedPromptStyle.ConvertVTSequences
+                Conversion.ConvertVTSequences(ParsedPromptStyle)
                 Write(ParsedPromptStyle, False, ColTypes.Gray)
             ElseIf String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
                 'Write the user dollar sign using the two styles, depending on the permission of the user

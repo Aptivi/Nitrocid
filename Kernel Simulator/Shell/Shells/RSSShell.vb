@@ -116,7 +116,7 @@ Namespace Shell.Shells
                             Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences
+                            Conversion.ConvertVTSequences(ParsedPromptStyle)
                             Write(ParsedPromptStyle, False, ColTypes.Gray)
                         End If
                         SetInputColor()

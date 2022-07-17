@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Extensification
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports KS.Misc.Execution
@@ -313,7 +314,7 @@ Namespace Shell
                                             'Create a new instance of process
                                             If TryParsePath(TargetFile) Then
                                                 cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                                                Removal.RemoveNullsOrWhitespacesAtTheBeginning(cmdArgs)
                                                 Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                                                 Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
                                                 ProcessStartCommandThread.Start(Params)

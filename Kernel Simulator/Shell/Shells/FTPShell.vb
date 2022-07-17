@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Extensification
 Imports System.Threading
 Imports KS.Network.FTP
 
@@ -88,7 +89,7 @@ Namespace Shell.Shells
                                     Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                                 Else
                                     Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                                    ParsedPromptStyle.ConvertVTSequences
+                                    Conversion.ConvertVTSequences(ParsedPromptStyle)
                                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                                 End If
                             Else
