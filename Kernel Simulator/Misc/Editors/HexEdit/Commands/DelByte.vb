@@ -18,7 +18,7 @@
 
 Imports KS.Misc.Reflection
 
-Namespace Misc.HexEdit.Commands
+Namespace Misc.Editors.HexEdit.Commands
     Class HexEdit_DelByteCommand
         Inherits CommandExecutor
         Implements ICommand

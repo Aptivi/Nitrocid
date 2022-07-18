@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Misc.JsonShell.Commands
+Namespace Misc.Editors.JsonShell.Commands
     Class JsonShell_ExitCommand
         Inherits CommandExecutor
         Implements ICommand

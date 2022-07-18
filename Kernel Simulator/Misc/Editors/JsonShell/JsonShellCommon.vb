@@ -18,9 +18,9 @@
 
 Imports System.IO
 Imports Newtonsoft.Json.Linq
-Imports KS.Misc.JsonShell.Commands
+Imports KS.Misc.Editors.JsonShell.Commands
 
-Namespace Misc.JsonShell
+Namespace Misc.Editors.JsonShell
     Public Module JsonShellCommon
 
         'Variables

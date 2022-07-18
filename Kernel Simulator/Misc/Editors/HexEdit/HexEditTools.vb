@@ -21,7 +21,7 @@ Imports Extensification.LongExts
 Imports System.IO
 Imports System.Threading
 
-Namespace Misc.HexEdit
+Namespace Misc.Editors.HexEdit
     Public Module HexEditTools
 
         ''' <summary>

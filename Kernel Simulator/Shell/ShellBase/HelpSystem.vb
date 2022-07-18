@@ -17,9 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports KS.Misc.JsonShell
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.JsonShell
+Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Modifications

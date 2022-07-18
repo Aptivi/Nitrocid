@@ -22,13 +22,13 @@ Imports ManagedWeatherMap.Core
 Imports KS.ManPages
 Imports KS.Misc.Forecast
 Imports KS.Misc.Games
-Imports KS.Misc.JsonShell
+Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Notifications
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters

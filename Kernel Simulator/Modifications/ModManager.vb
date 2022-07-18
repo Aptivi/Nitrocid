@@ -21,11 +21,11 @@ Imports System.Reflection
 Imports Newtonsoft.Json.Linq
 Imports KS.ManPages
 Imports KS.Misc.Configuration
-Imports KS.Misc.JsonShell
+Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP

@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports KS.Misc.JsonShell
+Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells
     Public Class JsonShell

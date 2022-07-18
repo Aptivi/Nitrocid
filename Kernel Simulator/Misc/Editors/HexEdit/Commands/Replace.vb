@@ -19,7 +19,7 @@
 Imports Extensification.LongExts
 Imports KS.Misc.Reflection
 
-Namespace Misc.HexEdit.Commands
+Namespace Misc.Editors.HexEdit.Commands
     Class HexEdit_ReplaceCommand
         Inherits CommandExecutor
         Implements ICommand

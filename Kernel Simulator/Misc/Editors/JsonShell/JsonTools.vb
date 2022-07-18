@@ -22,7 +22,7 @@ Imports Newtonsoft.Json.Linq
 Imports Extensification.StreamReaderExts
 Imports System.Threading
 
-Namespace Misc.JsonShell
+Namespace Misc.Editors.JsonShell
     Public Module JsonTools
 
         ''' <summary>

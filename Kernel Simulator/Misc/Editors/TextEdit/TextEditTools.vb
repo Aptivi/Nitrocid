@@ -21,7 +21,7 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports System.Threading
 
-Namespace Misc.TextEdit
+Namespace Misc.Editors.TextEdit
     Public Module TextEditTools
 
         ''' <summary>

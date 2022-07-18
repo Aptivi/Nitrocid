@@ -24,7 +24,7 @@ Imports KS.Kernel
 Imports KS.Misc.Forecast
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
-Imports KS.Misc.TextEdit
+Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Writers.DebugWriters
 Imports KS.Misc.Writers.ConsoleWriters
 Imports KS.Network.FTP

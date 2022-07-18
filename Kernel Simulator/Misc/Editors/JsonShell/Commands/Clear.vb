@@ -18,7 +18,7 @@
 
 Imports Newtonsoft.Json.Linq
 
-Namespace Misc.JsonShell.Commands
+Namespace Misc.Editors.JsonShell.Commands
     Class JsonShell_ClearCommand
         Inherits CommandExecutor
         Implements ICommand

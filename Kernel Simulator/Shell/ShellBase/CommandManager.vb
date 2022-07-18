@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc.JsonShell
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.JsonShell
+Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP

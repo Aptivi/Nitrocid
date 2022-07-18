@@ -19,7 +19,7 @@
 Imports Extensification.IntegerExts
 Imports KS.Misc.Reflection
 
-Namespace Misc.TextEdit.Commands
+Namespace Misc.Editors.TextEdit.Commands
     Class TextEdit_ReplaceInlineRegexCommand
         Inherits CommandExecutor
         Implements ICommand

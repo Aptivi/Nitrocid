@@ -19,7 +19,7 @@
 Imports KS.Misc.Reflection
 Imports Extensification.IntegerExts
 
-Namespace Misc.TextEdit.Commands
+Namespace Misc.Editors.TextEdit.Commands
     Class TextEdit_QueryWordCommand
         Inherits CommandExecutor
         Implements ICommand

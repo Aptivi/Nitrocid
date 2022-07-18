@@ -19,7 +19,7 @@
 Imports Extensification.LongExts
 Imports KS.Misc.Reflection
 
-Namespace Misc.HexEdit.Commands
+Namespace Misc.Editors.HexEdit.Commands
     Class HexEdit_QueryByteCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Threading
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells
     Public Class HexShell

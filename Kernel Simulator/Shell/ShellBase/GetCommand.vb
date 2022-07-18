@@ -18,9 +18,9 @@
 
 Imports System.IO
 Imports System.Threading
-Imports KS.Misc.JsonShell
-Imports KS.Misc.TextEdit
-Imports KS.Misc.HexEdit
+Imports KS.Misc.Editors.JsonShell
+Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP

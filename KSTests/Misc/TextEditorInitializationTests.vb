@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports KS.Misc.TextEdit
+Imports KS.Misc.Editors.TextEdit
 
 <TestFixture> Public Class TextEditorInitializationTests
 
