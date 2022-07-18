@@ -46,13 +46,6 @@ Namespace Modifications
         ''' </summary>
         Sub StopMod()
         ''' <summary>
-        ''' Code executed when performing command
-        ''' </summary>
-        ''' <param name="Command">A command.</param>
-        ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
-        <Obsolete("Investigate the usage of CommandInfo.CommandBase.Execute instead.")>
-        Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
-        ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
         ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>

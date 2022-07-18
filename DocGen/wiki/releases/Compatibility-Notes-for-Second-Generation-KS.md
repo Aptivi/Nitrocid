@@ -611,3 +611,10 @@ To finalize this change, we've also renamed the module name of the screensaver p
 
 * Affected functions:
   - CompileCustom() -> ParseCustomSaver()
+
+##### Removed support for PerformCmd()
+
+PerformCmd() in IScript is now removed in favor of the changes during the development of 0.0.22.0.
+
+* Affected functions:
+  - PerformCmd()

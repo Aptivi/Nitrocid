@@ -88,12 +88,8 @@ Namespace Modifications
                         If ScriptCommandExecutable Then
                             Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             If ScriptCommandBase IsNot Nothing Then
-                                'Use the modern CommandBase.Execute() command instead of the old PerformCmd
+                                'Use the modern CommandBase.Execute() command
                                 ScriptCommandBase.Execute(args, ScriptCommandFullArgs, ScriptCommandArgs, ScriptCommandSwitches)
-                            Else
-                                'TODO: Remove in API v2.1
-                                Write(DoTranslation("This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards."), True, ColTypes.Warning)
-                                Script.PerformCmd(Script.Commands(parts(0)), args)
                             End If
                         End If
                     End If

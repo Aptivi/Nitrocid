@@ -217,8 +217,6 @@ End Class
 ```
 5. Since we're not implementing commands nor event handlers, we're going to leave these blank:
 ```vb
-    Sub PerformCmd(ByVal Command As CommandInfo, Optional ByVal args As String = "") Implements IScript.PerformCmd
-    End Sub
     Sub InitEvents(ByVal ev As String) Implements IScript.InitEvents
     End Sub
     Sub InitEvents(ByVal ev As String, ParamArray Args As Object()) Implements IScript.InitEvents
@@ -245,8 +243,6 @@ End Class
         End Sub
         Sub StopMod() Implements IScript.StopMod
             Write("Goodbye World", True, ColTypes.Neutral)
-        End Sub
-        Sub PerformCmd(Command As CommandInfo, Optional args As String = "") Implements IScript.PerformCmd
         End Sub
         Sub InitEvents(ev As String) Implements IScript.InitEvents
         End Sub
@@ -278,9 +274,6 @@ End Class
         public void StopMod()
         {
             TextWriterColor.Write("Goodbye World", true, ColorTools.ColTypes.Neutral);
-        }
-        public void PerformCmd(CommandInfo Command, string args = "")
-        {
         }
         public void InitEvents(string ev)
         {
