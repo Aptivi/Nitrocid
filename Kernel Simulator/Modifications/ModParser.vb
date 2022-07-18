@@ -21,7 +21,6 @@ Imports System.Reflection
 Imports KS.ManPages
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
-Imports KS.Misc.Screensaver
 Imports KS.Misc.Splash
 Imports KS.Network.Mail
 Imports KS.Kernel.Exceptions
@@ -50,6 +49,9 @@ Namespace Modifications
                 Try
                     'Check to see if the DLL is actually a mod
                     Dim script As IScript = GetModInstance(Assembly.LoadFrom(ModPath + modFile))
+
+                    'Check to see if the DLL is actually a screensaver
+                    If script Is Nothing Then ParseCustomSaver(ModPath + modFile)
 
                     'If we didn't find anything, abort
                     If script Is Nothing Then Throw New InvalidModException(DoTranslation("The modfile is invalid."))

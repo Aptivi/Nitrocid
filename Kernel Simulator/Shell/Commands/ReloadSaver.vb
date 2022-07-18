@@ -25,7 +25,7 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If Not SafeMode Then
-                CompileCustom(ListArgs(0))
+                ParseCustomSaver(ListArgs(0))
             Else
                 Write(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
             End If

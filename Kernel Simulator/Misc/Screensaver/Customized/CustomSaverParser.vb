@@ -21,13 +21,13 @@ Imports KS.Misc.Splash
 Imports System.IO
 
 Namespace Misc.Screensaver.Customized
-    Public Module CustomSaverCompiler
+    Public Module CustomSaverParser
 
         ''' <summary>
         ''' Compiles the custom screensaver file and configures it so it can be viewed
         ''' </summary>
         ''' <param name="file">File name with .ss.vb</param>
-        Public Sub CompileCustom(file As String)
+        Public Sub ParseCustomSaver(file As String)
             'Initialize path
             Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
             Dim FinalScreensaverPath As String = NeutralizePath(file, ModPath)

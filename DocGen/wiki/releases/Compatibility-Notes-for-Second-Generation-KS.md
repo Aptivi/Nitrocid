@@ -501,7 +501,7 @@ These are the technical information about **some** of the above breaking changes
 
 When upgrading your mods to support 0.0.21.0, you must follow the compatibility notes to ensure that your mod works with 0.0.21.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
-##### [BREAKING] Consolidated the obsolete functions
+##### Consolidated the obsolete functions
 
 The three deprecated functions are just wrappers to the reflection routines in Kernel Simulator. The one sub is about finding settings, but since we already have `FindSetting(String, JToken)`, why don't we just go ahead and remove the `FindSetting(String, Boolean)` one, since it doesn't support splashes?
 
@@ -551,7 +551,7 @@ These are the technical information about **some** of the above breaking changes
 
 When upgrading your mods to support 0.0.22.0, you must follow the compatibility notes to ensure that your mod works with 0.0.22.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
-##### [BREAKING] Separated properties code to PropertyManager
+##### Separated properties code to PropertyManager
 
 As we feel that properties reflection code should have their own place, we moved it to PropertyManager module.
 
@@ -570,7 +570,7 @@ As we have implemented the fully-fledged `CommandBase.Execute()` function which 
 
 If possible, upgrade your mods to use this routine instead of `IScript.PerformCmd()`, which will be deleted in the next API revision.
 
-##### [BREAKING] Removed `ReadLineLong()`
+##### Removed `ReadLineLong()`
 
 As ReadLine.Reboot supports long inputs, we've decided to remove the function, `ReadLineLong()`, as it doesn't do anything.
 
@@ -603,4 +603,11 @@ As we've implemented `BaseScreensaver` to better handle screensavers, we decided
 
 When upgrading your mods to support 0.0.24.0, you must follow the compatibility notes to ensure that your mod works with 0.0.24.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
-##### To be filled
+##### Removed support for ICustomSaver
+
+ICustomSaver is now replaced by the newer IScreensaver, effectively breaking all screensavers that use the old ICustomSaver interface. All guides for custom screensavers should be updated to reflect this change. If any of the screensavers that we've made in the guide still uses the old interface, raise an issue.
+
+To finalize this change, we've also renamed the module name of the screensaver parser from CustomSaverCompiler to CustomSaverParser.
+
+* Affected functions:
+  - CompileCustom() -> ParseCustomSaver()
