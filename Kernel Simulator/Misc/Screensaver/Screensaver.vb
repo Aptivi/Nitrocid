@@ -128,14 +128,7 @@ Namespace Misc.Screensaver
                     SaverAutoReset.WaitOne()
                 ElseIf CustomSavers.ContainsKey(saver) Then
                     'Only one custom screensaver can be used.
-                    If CustomSavers(saver).Screensaver IsNot Nothing Then
-                        Wdbg(DebugLevel.W, "Trying to start custom screensaver {0} that uses obsolete ICustomSaver. Warning user...", saver)
-                        Write(DoTranslation("This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques."), True, ColTypes.Warning)
-                        CustomSaver = CustomSavers(saver).Screensaver
-                        ScreensaverDisplayerThread.Start(New CustomLegacyDisplay())
-                    Else
-                        ScreensaverDisplayerThread.Start(New CustomDisplay(CustomSavers(saver).ScreensaverBase))
-                    End If
+                    ScreensaverDisplayerThread.Start(New CustomDisplay(CustomSavers(saver).ScreensaverBase))
                     Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                     DetectKeypress()
                     ScreensaverDisplayerThread.Stop()
@@ -190,17 +183,6 @@ Namespace Misc.Screensaver
                 Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)
             End If
         End Sub
-
-        ''' <summary>
-        ''' Gets a screensaver instance from loaded assembly
-        ''' </summary>
-        ''' <param name="Assembly">An assembly</param>
-        <Obsolete("Makes use of ICustomSaver, which is deprecated.")>
-        Public Function GetScreensaverInstanceLegacy(Assembly As Assembly) As ICustomSaver
-            For Each t As Type In Assembly.GetTypes()
-                If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), ICustomSaver)
-            Next
-        End Function
 
         ''' <summary>
         ''' Gets a screensaver instance from loaded assembly

@@ -55,9 +55,9 @@ Namespace Shell.Commands
                 Select Case CommandMode
                     Case "start"
                         Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetMod))
-                        StartMod(TargetModPath)
+                        StartMod(Path.GetFileName(TargetModPath))
                     Case "stop"
-                        StopMod(TargetModPath)
+                        StopMod(Path.GetFileName(TargetModPath))
                     Case "info"
                         For Each script As String In Mods.Keys
                             If Mods(script).ModFilePath = TargetModPath Then
@@ -94,8 +94,7 @@ Namespace Shell.Commands
                             End If
                         Next
                     Case "reload"
-                        StopMod(TargetModPath)
-                        StartMod(TargetModPath)
+                        ReloadMod(Path.GetFileName(TargetModPath))
                     Case "install"
                         InstallMod(TargetMod)
                     Case "uninstall"

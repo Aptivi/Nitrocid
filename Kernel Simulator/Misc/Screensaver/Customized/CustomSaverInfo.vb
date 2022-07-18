@@ -32,10 +32,6 @@ Namespace Misc.Screensaver.Customized
         ''' </summary>
         Public ReadOnly Property FilePath As String
         ''' <summary>
-        ''' The screensaver code
-        ''' </summary>
-        Public ReadOnly Property Screensaver As ICustomSaver
-        ''' <summary>
         ''' The screensaver base code
         ''' </summary>
         Public ReadOnly Property ScreensaverBase As BaseScreensaver
@@ -43,11 +39,10 @@ Namespace Misc.Screensaver.Customized
         ''' <summary>
         ''' Creates new screensaver info instance
         ''' </summary>
-        Friend Sub New(SaverName As String, FileName As String, FilePath As String, Screensaver As ICustomSaver, ScreensaverBase As BaseScreensaver)
-            Me.SaverName = SaverName
+        Friend Sub New(SaverName As String, FileName As String, FilePath As String, ScreensaverBase As BaseScreensaver)
+            Me.SaverName = If(String.IsNullOrWhiteSpace(SaverName), FileName, SaverName)
             Me.FileName = FileName
             Me.FilePath = FilePath
-            Me.Screensaver = Screensaver
             Me.ScreensaverBase = ScreensaverBase
         End Sub
 

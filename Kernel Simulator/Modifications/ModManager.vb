@@ -62,6 +62,7 @@ Namespace Modifications
                         If Not GetBlacklistedMods.Contains(modFile) Then
                             Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
                             ReportProgress("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", 0, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
+                            modFile = Path.GetFileName(modFile)
                             ParseMod(modFile)
                         Else
                             Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))
@@ -83,27 +84,27 @@ Namespace Modifications
         ''' <param name="ModFilename">Mod filename found in KSMods</param>
         Public Sub StartMod(ModFilename As String)
             Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
+            Dim PathToMod As String = Path.Combine(ModPath, ModFilename)
             Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
-            ModFilename = Path.Combine(ModPath, ModFilename)
-            Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
+            Wdbg(DebugLevel.I, "Mod file path: {0}", PathToMod)
 
             If Not SafeMode Then
-                If FileExists(ModFilename) Then
+                If FileExists(PathToMod) Then
                     Wdbg(DebugLevel.I, "Mod file exists! Starting...")
-                    If Not HasModStarted(ModFilename) Then
-                        If Not GetBlacklistedMods.Contains(ModFilename) Then
-                            Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(ModFilename))
-                            ReportProgress(DoTranslation("Starting mod") + " {0}...", 0, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                    If Not HasModStarted(PathToMod) Then
+                        If Not GetBlacklistedMods.Contains(PathToMod) Then
+                            Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename)
+                            ReportProgress(DoTranslation("Starting mod") + " {0}...", 0, ColTypes.Neutral, ModFilename)
                             ParseMod(ModFilename)
                         Else
-                            Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(ModFilename))
-                            ReportProgress(DoTranslation("Mod {0} is blacklisted."), 0, ColTypes.Warning, Path.GetFileName(ModFilename))
+                            Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename)
+                            ReportProgress(DoTranslation("Mod {0} is blacklisted."), 0, ColTypes.Warning, ModFilename)
                         End If
                     Else
                         ReportProgress(DoTranslation("Mod has already been started!"), 0, ColTypes.Error)
                     End If
                 Else
-                    ReportProgress(DoTranslation("Mod {0} not found."), 0, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                    ReportProgress(DoTranslation("Mod {0} not found."), 0, ColTypes.Neutral, ModFilename)
                 End If
             Else
                 ReportProgress(DoTranslation("Parsing mods not allowed on safe mode."), 0, ColTypes.Error)
@@ -176,15 +177,15 @@ Namespace Modifications
         ''' <param name="ModFilename">Mod filename found in KSMods</param>
         Public Sub StopMod(ModFilename As String)
             Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
+            Dim PathToMod As String = Path.Combine(ModPath, ModFilename)
             Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
-            ModFilename = Path.Combine(ModPath, ModFilename)
-            Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
+            Wdbg(DebugLevel.I, "Mod file path: {0}", PathToMod)
 
             If Not SafeMode Then
-                If FileExists(ModFilename) Then
-                    If HasModStarted(ModFilename) Then
-                        Write(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
-                        Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
+                If FileExists(PathToMod) Then
+                    If HasModStarted(PathToMod) Then
+                        Write(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, ModFilename)
+                        Wdbg(DebugLevel.I, "Mod {0} is being stopped.", ModFilename)
 
                         'Iterate through all the mods
                         For ScriptIndex As Integer = Mods.Count - 1 To 0 Step -1
@@ -193,7 +194,7 @@ Namespace Modifications
 
                             'Try to stop the mod and all associated parts
                             Wdbg(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName)
-                            If TargetMod.ModFileName = Path.GetFileName(ModFilename) Then
+                            If TargetMod.ModFileName = ModFilename Then
                                 Wdbg(DebugLevel.I, "Found mod to be stopped. Stopping...")
 
                                 'Iterate through all the parts
@@ -228,7 +229,7 @@ Namespace Modifications
                         Write(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
                     End If
                 Else
-                    Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                    Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, ModFilename)
                 End If
             Else
                 Write(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
@@ -324,7 +325,6 @@ Namespace Modifications
         ''' </summary>
         ''' <param name="ModPath">Target mod path</param>
         Public Sub InstallMod(ModPath As String)
-#Disable Warning BC42104
             Dim TargetModPath As String = NeutralizePath(Path.GetFileName(ModPath), GetKernelPath(KernelPathType.Mods))
             Dim Script As IScript
             ModPath = NeutralizePath(ModPath, True)
@@ -342,6 +342,7 @@ Namespace Modifications
                     'Mod is a dynamic DLL
                     Try
                         Script = GetModInstance(Assembly.LoadFrom(ModPath))
+                        If Script Is Nothing Then Throw New Exceptions.ModInstallException(DoTranslation("The mod file provided is incompatible."))
                     Catch ex As ReflectionTypeLoadException
                         Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message)
                         WStkTrc(ex)
@@ -353,11 +354,10 @@ Namespace Modifications
                         Next
                         Write(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
                         Throw
+                    Catch ex As Exceptions.ModInstallException
+                        Throw
                     End Try
                 End If
-
-                'Second, check the script
-                If Script Is Nothing Then Throw New Exceptions.ModInstallException(DoTranslation("The mod file provided is incompatible."))
 
                 'Then, install the file.
                 File.Copy(ModPath, TargetModPath, True)
@@ -376,13 +376,12 @@ Namespace Modifications
 
                 'Finally, start the mod
                 Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetModPath))
-                StartMod(TargetModPath)
+                StartMod(Path.GetFileName(TargetModPath))
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message)
                 WStkTrc(ex)
                 Write(DoTranslation("Installation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
             End Try
-#Enable Warning BC42104
         End Sub
 
         ''' <summary>

@@ -45,19 +45,14 @@ Namespace Modifications
         ''' <param name="modFile">Mod file name with extension. It should end with .dll</param>
         Sub ParseMod(modFile As String)
             Dim ModPath As String = GetKernelPath(KernelPathType.Mods)
-            modFile = Path.GetFileName(modFile)
             If modFile.EndsWith(".dll") Then
                 'Mod is a dynamic DLL
                 Try
                     'Check to see if the DLL is actually a mod
                     Dim script As IScript = GetModInstance(Assembly.LoadFrom(ModPath + modFile))
 
-                    'Check to see if the DLL is actually a screensaver
-                    If script Is Nothing Then CompileCustom(ModPath + modFile)
-                    Dim CheckSaver As ICustomSaver = GetScreensaverInstanceLegacy(Assembly.LoadFrom(ModPath + modFile))
-
                     'If we didn't find anything, abort
-                    If script Is Nothing AndAlso CheckSaver Is Nothing Then Throw New InvalidModException(DoTranslation("The modfile is invalid."))
+                    If script Is Nothing Then Throw New InvalidModException(DoTranslation("The modfile is invalid."))
 
                     'Finalize the mod
                     FinalizeMods(script, modFile)

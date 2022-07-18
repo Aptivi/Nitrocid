@@ -24,7 +24,6 @@ Namespace Misc.Screensaver.Customized
 
         Public CustomSavers As New Dictionary(Of String, CustomSaverInfo)
         Public CustomSaverSettingsToken As JObject
-        Public CustomSaver As ICustomSaver
 
         ''' <summary>
         ''' Initializes and reads the custom saver settings
@@ -37,11 +36,7 @@ Namespace Misc.Screensaver.Customized
                 Dim CustomSaverSettings As JObject = TryCast(CustomSaverToken(Saver), JObject)
                 If CustomSaverSettings IsNot Nothing Then
                     For Each Setting In CustomSaverSettings
-                        If CustomSavers(Saver).ScreensaverBase IsNot Nothing Then
-                            CustomSavers(Saver).ScreensaverBase.ScreensaverSettings(Setting.Key) = Setting.Value.ToString
-                        Else
-                            CustomSavers(Saver).Screensaver.SaverSettings(Setting.Key) = Setting.Value.ToString
-                        End If
+                        CustomSavers(Saver).ScreensaverBase.ScreensaverSettings(Setting.Key) = Setting.Value.ToString
                     Next
                 End If
             Next
@@ -63,16 +58,6 @@ Namespace Misc.Screensaver.Customized
                             End If
                         Next
                     End If
-                Else
-                    If CustomSavers(Saver).Screensaver.SaverSettings IsNot Nothing Then
-                        For Each Setting As String In CustomSavers(Saver).Screensaver.SaverSettings.Keys
-                            If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
-                                TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CustomSavers(Saver).Screensaver.SaverSettings(Setting).ToString)
-                            Else
-                                CustomSaverSettingsToken(Saver)(Setting) = CustomSavers(Saver).Screensaver.SaverSettings(Setting).ToString
-                            End If
-                        Next
-                    End If
                 End If
             Next
             If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
@@ -91,14 +76,6 @@ Namespace Misc.Screensaver.Customized
                     If CustomSavers(CustomSaver).ScreensaverBase.ScreensaverSettings IsNot Nothing Then
                         For Each Setting As String In CustomSavers(CustomSaver).ScreensaverBase.ScreensaverSettings.Keys
                             NewCustomSaver.Add(Setting, CustomSavers(CustomSaver).ScreensaverBase.ScreensaverSettings(Setting).ToString)
-                        Next
-                        CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
-                        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
-                    End If
-                Else
-                    If CustomSavers(CustomSaver).Screensaver.SaverSettings IsNot Nothing Then
-                        For Each Setting As String In CustomSavers(CustomSaver).Screensaver.SaverSettings.Keys
-                            NewCustomSaver.Add(Setting, CustomSavers(CustomSaver).Screensaver.SaverSettings(Setting).ToString)
                         Next
                         CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
                         If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
