@@ -16,10 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Scripting.Conditions
 Imports KS.Scripting.Conditions.Types
 
-Namespace Scripting
+Namespace Scripting.Conditions
     Public Module UESHConditional
 
         Private Conditions As New Dictionary(Of String, BaseCondition) From {{"eq", New EqualsCondition()},
