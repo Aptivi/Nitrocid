@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text
+Imports KS.Files.Querying
 Imports KS.Misc.Encryption
 
 Namespace Shell.Commands

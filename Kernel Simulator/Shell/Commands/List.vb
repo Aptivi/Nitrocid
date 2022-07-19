@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Files.Folders
+
 Namespace Shell.Commands
     Class ListCommand
         Inherits CommandExecutor
@@ -25,7 +27,7 @@ Namespace Shell.Commands
             Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse ShowFileDetailsList
             Dim SuppressUnauthorizedMessage As Boolean = ListSwitchesOnly.Contains("-suppressmessages") OrElse SuppressUnauthorizedMessages
             If ListArgsOnly?.Length = 0 Or ListArgsOnly Is Nothing Then
-                List(CurrDir, ShowFileDetails, SuppressUnauthorizedMessage)
+                List(CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage)
             Else
                 For Each Directory As String In ListArgsOnly
                     Dim direct As String = NeutralizePath(Directory)

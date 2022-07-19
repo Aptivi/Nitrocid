@@ -18,6 +18,11 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
+Imports KS.Files.Folders
+Imports KS.Files.Operations
+Imports KS.Files.Querying
+Imports KS.Files.PathLookup
+Imports KS.Files.Read
 Imports KS.Misc.Platform
 Imports KS.Shell
 
@@ -27,7 +32,7 @@ Imports KS.Shell
     ''' Tests copying directory to directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCopyDirectoryToDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Directory.CreateDirectory(HomePath + "/TestDir")
         Dim SourcePath As String = "/TestDir"
         Dim TargetPath As String = "/TestDir2"
@@ -38,7 +43,7 @@ Imports KS.Shell
     ''' Tests copying file to directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCopyFileToDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -48,7 +53,7 @@ Imports KS.Shell
     ''' Tests copying file to file
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestCopyFileToFile()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -58,7 +63,7 @@ Imports KS.Shell
     ''' Tests making directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         MakeDirectory("/NewDirectory").ShouldBeTrue
     End Sub
 
@@ -66,7 +71,7 @@ Imports KS.Shell
     ''' Tests making file
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeFile()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         MakeFile("/NewFile.txt").ShouldBeTrue
     End Sub
 
@@ -74,7 +79,7 @@ Imports KS.Shell
     ''' Tests making file
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeJsonFile()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         MakeJsonFile("/NewFile.json").ShouldBeTrue
     End Sub
 
@@ -82,7 +87,7 @@ Imports KS.Shell
     ''' Tests moving directory to directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Directory.CreateDirectory(HomePath + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
         Dim TargetPath As String = "/TestMovedDir2"
@@ -93,7 +98,7 @@ Imports KS.Shell
     ''' Tests moving file to directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMoveFileToDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestMove.txt")
         Dim TargetPath As String = "/Documents"
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -103,7 +108,7 @@ Imports KS.Shell
     ''' Tests moving file to file
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMoveFileToFile()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestData/TestMove.txt")
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -123,7 +128,7 @@ Imports KS.Shell
     ''' Tests removing directory
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestRemoveDirectory()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim TargetPath As String = "/TestDir2"
         RemoveDirectory(TargetPath).ShouldBeTrue
     End Sub
@@ -132,7 +137,7 @@ Imports KS.Shell
     ''' Tests removing file
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestRemoveFile()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim TargetPath As String = "/Documents/Text.txt"
         RemoveFile(TargetPath).ShouldBeTrue
     End Sub
@@ -141,7 +146,7 @@ Imports KS.Shell
     ''' Tests searching file for string
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestSearchFileForString()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim TargetPath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
         Matches.ShouldNotBeNull
@@ -152,7 +157,7 @@ Imports KS.Shell
     ''' Tests searching file for string using regular expressions
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestSearchFileForStringRegexp()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim TargetPath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim Matches As List(Of String) = SearchFileForStringRegexp(TargetPath, New Regex("test"))
         Matches.ShouldNotBeNull
@@ -163,7 +168,7 @@ Imports KS.Shell
     ''' Tests adding attribute
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestAddAttribute()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
@@ -172,7 +177,7 @@ Imports KS.Shell
     ''' Tests deleting attribute
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestDeleteAttribute()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub

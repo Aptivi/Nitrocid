@@ -18,6 +18,7 @@
 
 Imports System.Net.Security
 Imports Newtonsoft.Json.Linq
+Imports KS.Files.Querying
 Imports KS.Network.FTP.Transfer
 Imports KS.Misc.Reflection
 

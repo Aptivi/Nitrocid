@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
+Imports KS.Files.Querying
 Imports KS.Misc.Encryption
 
 Namespace Login

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Reflection
+Imports KS.Files.Querying
 Imports KS.ManPages
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized

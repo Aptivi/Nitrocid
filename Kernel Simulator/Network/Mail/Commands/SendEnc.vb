@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports MimeKit
+Imports KS.Files.Querying
 Imports KS.Network.Mail.Transfer
 
 Namespace Network.Mail.Commands

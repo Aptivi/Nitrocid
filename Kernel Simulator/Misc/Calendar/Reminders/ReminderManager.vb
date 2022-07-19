@@ -19,6 +19,8 @@
 Imports System.IO
 Imports System.Xml.Serialization
 Imports System.Threading
+Imports KS.Files.Operations
+Imports KS.Files.Querying
 Imports KS.Misc.Notifications
 
 Namespace Misc.Calendar.Reminders

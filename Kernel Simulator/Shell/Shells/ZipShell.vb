@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.IO.Compression
 Imports System.Threading
+Imports KS.Files.Folders
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells
@@ -36,7 +37,7 @@ Namespace Shell.Shells
 
         Public Overrides Sub InitializeShell(ParamArray ShellArgs() As Object) Implements IShell.InitializeShell
             'Set current directory for ZIP shell
-            ZipShell_CurrentDirectory = CurrDir
+            ZipShell_CurrentDirectory = CurrentDir
 
             'Get file path
             Dim ZipFile As String = ""

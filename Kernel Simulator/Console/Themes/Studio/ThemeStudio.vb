@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Reflection
+Imports KS.Files.Folders
 
 Namespace ConsoleBase.Themes.Studio
     Module ThemeStudio
@@ -262,9 +263,9 @@ Namespace ConsoleBase.Themes.Studio
                                 SaveThemeToCurrentDirectory(ThemeName)
                             Case 40 'Save theme to another directory...
                                 Wdbg(DebugLevel.I, "Prompting user for directory name...")
-                                Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
+                                Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrentDir)
                                 Dim DirectoryName As String = ReadLine(False)
-                                DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
+                                DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrentDir, DirectoryName)
                                 Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                                 SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
                             Case 41 'Save theme to current directory as...
@@ -276,9 +277,9 @@ Namespace ConsoleBase.Themes.Studio
                                 SaveThemeToCurrentDirectory(AltThemeName)
                             Case 42 'Save theme to another directory as...
                                 Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
-                                Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
+                                Write(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrentDir)
                                 Dim DirectoryName As String = ReadLine(False)
-                                DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
+                                DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrentDir, DirectoryName)
                                 Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                                 Wdbg(DebugLevel.I, "Prompting user for theme name...")
                                 Write(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Files.Folders
+
 Namespace Shell.Commands
     Class FindCommand
         Inherits CommandExecutor
@@ -23,7 +25,7 @@ Namespace Shell.Commands
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim FileToSearch As String = ListArgsOnly(0)
-            Dim DirectoryToSearch As String = CurrDir
+            Dim DirectoryToSearch As String = CurrentDir
             If ListArgsOnly.Length > 1 Then
                 DirectoryToSearch = NeutralizePath(ListArgsOnly(1))
             End If

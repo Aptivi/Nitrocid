@@ -19,6 +19,7 @@
 #If Not NETCOREAPP Then
 Imports System.Globalization
 Imports KS.ConsoleBase
+Imports KS.Files.Folders
 Imports KS.Languages
 Imports KS.Kernel
 Imports KS.Misc.Forecast
@@ -126,7 +127,7 @@ Module FivePointFive
                 If ConfigReader.Sections("Shell").Keys("Colored Shell").Value = "True" Then ColoredShell = True Else ColoredShell = False
             End If
             If ConfigReader.Sections("Shell").Keys.Contains("Current Directory") Then
-                CurrDir = ConfigReader.Sections("Shell").Keys("Current Directory").Value
+                CurrentDir = ConfigReader.Sections("Shell").Keys("Current Directory").Value
             End If
             If ConfigReader.Sections("Shell").Keys.Contains("Lookup Directories") Then
                 PathsToLookup = ConfigReader.Sections("Shell").Keys("Lookup Directories").Value.ReleaseDoubleQuotes

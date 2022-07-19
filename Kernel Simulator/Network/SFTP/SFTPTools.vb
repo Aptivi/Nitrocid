@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Newtonsoft.Json.Linq
+Imports KS.Files.Querying
 Imports KS.Network.SSH
 Imports KS.Misc.Reflection
 

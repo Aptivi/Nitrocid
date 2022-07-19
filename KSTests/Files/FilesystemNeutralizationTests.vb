@@ -16,13 +16,15 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Files.Folders
+
 <TestFixture> Public Class FilesystemNeutralizationTests
 
     ''' <summary>
     ''' Tests path neutralization on a folder in home directory
     ''' </summary>
     <Test, Description("Neutralization")> Public Sub TestNeutralizePaths()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim TestPath As String = "Documents"
         Dim ExpectedPath As String = HomePath + "/" + TestPath
         Dim NeutPath As String = NeutralizePath(TestPath)

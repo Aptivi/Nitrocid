@@ -618,3 +618,24 @@ PerformCmd() in IScript is now removed in favor of the changes during the develo
 
 * Affected functions:
   - PerformCmd()
+
+##### Restructured the filesystem API
+
+Filesystem module was a `god class`, so we decided to consolidate it to their own separate files to accomodate with the upcoming changes. However, you need to use their own namespace (for example, if you want to copy a file, import `KS.Files.Operations`) to be able to use them.
+
+We have also removed `SetSizeParseMode()` as it's redundant and it was there for compatibility reasons. You have more than enough APIs to do the same thing this function does, don't you?
+
+However, the base `Filesystem` module will stay so that path neutralization and invalid path detection routines will still be available under the same namespace in 0.0.24.0 and above.
+
+* Removed functions:
+  - `SetSizeParseMode()`
+
+* New namespaces:
+  - `KS.Files.Attributes`
+  - `KS.Files.Folders`
+  - `KS.Files.LineEndings`
+  - `KS.Files.Operations`
+  - `KS.Files.PathLookup`
+  - `KS.Files.Print`
+  - `KS.Files.Querying`
+  - `KS.Files.Read`

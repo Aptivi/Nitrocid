@@ -23,6 +23,7 @@ Imports MailKit.Net.Pop3
 Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
+Imports KS.Files.Querying
 Imports KS.Hardware
 Imports KS.Misc.Calendar.Events
 Imports KS.Misc.Calendar.Reminders

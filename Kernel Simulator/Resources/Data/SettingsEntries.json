@@ -440,7 +440,7 @@
             {
                 "Name": "Current Directory",
                 "Type": "SString",
-                "Variable": "CurrDir",
+                "Variable": "CurrentDir",
                 "Description": "Sets the shell's current directory. Write an absolute path to any existing directory."
             },
             {

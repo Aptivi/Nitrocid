@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Files
+Namespace Files.Folders
     ''' <summary>
     ''' How are the file system entries sorted in list?
     ''' </summary>
@@ -41,37 +41,5 @@ Namespace Files
         ''' Sort by last access time
         ''' </summary>
         LastAccessTime
-    End Enum
-
-    ''' <summary>
-    ''' Sort directions
-    ''' </summary>
-    Public Enum FilesystemSortDirection
-        ''' <summary>
-        ''' Ascending order
-        ''' </summary>
-        Ascending = 1
-        ''' <summary>
-        ''' Descending order
-        ''' </summary>
-        Descending
-    End Enum
-
-    ''' <summary>
-    ''' Line ending styles
-    ''' </summary>
-    Public Enum FilesystemNewlineStyle
-        ''' <summary>
-        ''' Carriage return character. Used in Mac OS 9 or earlier.
-        ''' </summary>
-        CR
-        ''' <summary>
-        ''' Line feed character. Used in Linux, Unix, macOS, ...
-        ''' </summary>
-        LF
-        ''' <summary>
-        ''' Carriage return + line feed character. Used in Windows.
-        ''' </summary>
-        CRLF
     End Enum
 End Namespace

@@ -21,6 +21,7 @@ Imports System.Net.Http
 Imports System.Net.Http.Handlers
 Imports System.Threading
 Imports System.Threading.Tasks
+Imports KS.Files.Folders
 Imports KS.Misc.Notifications
 
 Namespace Network
@@ -90,7 +91,7 @@ Namespace Network
             If ShowProgress Then AddHandler WClientProgress.HttpReceiveProgress, AddressOf HttpReceiveProgressWatch
 
             'Send the GET request to the server for the file
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDir)
             Dim Response As HttpResponseMessage = WClient.GetAsync(FileUri, CancellationToken.Token).Result
             Response.EnsureSuccessStatusCode()
 
@@ -159,7 +160,7 @@ Namespace Network
             If ShowProgress Then AddHandler WClientProgress.HttpSendProgress, AddressOf HttpSendProgressWatch
 
             'Send the GET request to the server for the file after getting the stream and target file stream
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDir)
             Dim FilePath As String = NeutralizePath(FileName)
             Dim FileStream As New FileStream(FilePath, FileMode.Open, FileAccess.Read)
             Dim Content As New StreamContent(FileStream)
@@ -214,7 +215,7 @@ Namespace Network
             If ShowProgress Then AddHandler WClientProgress.HttpReceiveProgress, AddressOf HttpReceiveProgressWatch
 
             'Send the GET request to the server for the file
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDir)
             Dim Response As HttpResponseMessage = WClient.GetAsync(StringUri, CancellationToken.Token).Result
             Response.EnsureSuccessStatusCode()
 
@@ -281,7 +282,7 @@ Namespace Network
             If ShowProgress Then AddHandler WClientProgress.HttpSendProgress, AddressOf HttpSendProgressWatch
 
             'Send the GET request to the server for the file
-            Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)
+            Wdbg(DebugLevel.I, "Directory location: {0}", CurrentDir)
             Dim StringContent As New StringContent(Data)
 
             Try

@@ -18,6 +18,8 @@
 
 Imports System.IO
 Imports System.Text.RegularExpressions
+Imports KS.Files.PathLookup
+Imports KS.Files.Querying
 Imports KS.Misc.Execution
 Imports KS.Modifications
 Imports KS.Scripting

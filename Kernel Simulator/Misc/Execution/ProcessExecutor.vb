@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Files.Folders
 
 Namespace Misc.Execution
     Public Module ProcessExecutor
@@ -58,7 +59,7 @@ Namespace Misc.Execution
         ''' <param name="Args">Arguments, if any</param>
         ''' <returns>Application exit code. -1 if internal error occurred.</returns>
         Public Function ExecuteProcess(File As String, Args As String) As Integer
-            Return ExecuteProcess(File, Args, CurrDir)
+            Return ExecuteProcess(File, Args, CurrentDir)
         End Function
 
         ''' <summary>

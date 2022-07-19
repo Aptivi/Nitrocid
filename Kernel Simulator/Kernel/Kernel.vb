@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
+Imports KS.Files.Querying
 Imports KS.Hardware
 Imports KS.Kernel.Exceptions
 Imports KS.Misc.Reflection

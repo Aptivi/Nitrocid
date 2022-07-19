@@ -19,6 +19,8 @@
 Imports System.Reflection
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
+Imports KS.Files.Folders
+Imports KS.Files.Querying
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
 
@@ -289,7 +291,7 @@ Namespace Misc.Configuration
                 Dim SelectFrom As IEnumerable(Of Object)
                 Dim Selections As Object
                 Dim NeutralizePaths As Boolean = If(KeyToken("IsValuePath"), False)
-                Dim NeutralizeRootPath As String = If(ListIsPathCurrentPath, CurrDir, GetKernelPath(ListValuePathType))
+                Dim NeutralizeRootPath As String = If(ListIsPathCurrentPath, CurrentDir, GetKernelPath(ListValuePathType))
 
                 'Inputs
                 Dim AnswerString As String = ""

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Files.Operations
+Imports KS.Files.Querying
 Imports System.IO
 Imports System.Xml.Serialization
 Imports System.Threading

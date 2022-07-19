@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.IO.Compression
+Imports KS.Files.Folders
 
 Namespace Shell.Commands
     Class UnZipCommand
@@ -27,7 +28,7 @@ Namespace Shell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListArgs?.Length = 1 Then
                 Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
-                ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
+                ZipFile.ExtractToDirectory(ZipArchiveName, CurrentDir)
             ElseIf ListArgs?.Length > 1 Then
                 Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
                 Dim Destination As String = If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")

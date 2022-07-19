@@ -19,6 +19,8 @@
 Imports System.IO
 Imports System.Reflection
 Imports Newtonsoft.Json.Linq
+Imports KS.Files.Operations
+Imports KS.Files.Querying
 Imports KS.ManPages
 Imports KS.Misc.Configuration
 Imports KS.Misc.Editors.JsonShell

@@ -19,6 +19,8 @@
 Imports System.Globalization
 Imports System.IO
 Imports ManagedWeatherMap.Core
+Imports KS.Files.Folders
+Imports KS.Files.Querying
 Imports KS.ManPages
 Imports KS.Misc.Forecast
 Imports KS.Misc.Games
@@ -203,7 +205,7 @@ Namespace Misc.Configuration
             Dim ShellConfig As New JObject From {
                     {"Colored Shell", ColoredShell},
                     {"Simplified Help Command", SimHelp},
-                    {"Current Directory", CurrDir},
+                    {"Current Directory", CurrentDir},
                     {"Lookup Directories", PathsToLookup.EncloseByDoubleQuotes},
                     {"Prompt Style", ShellPromptStyle},
                     {"FTP Prompt Style", FTPShellPromptStyle},
@@ -1134,7 +1136,7 @@ Namespace Misc.Configuration
                 'Shell Section
                 Wdbg(DebugLevel.I, "Parsing shell section...")
                 SimHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
-                CurrDir = If(ConfigToken("Shell")?("Current Directory"), HomePath)
+                CurrentDir = If(ConfigToken("Shell")?("Current Directory"), HomePath)
                 PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environment.GetEnvironmentVariable("PATH"))
                 ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
                 FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")

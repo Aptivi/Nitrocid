@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Files.Querying
 Imports KS.Misc.Beautifiers
 
 Namespace Shell.Commands

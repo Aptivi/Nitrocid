@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Files.Folders
 Imports KS.Network.FTP
 Imports KS.Network.Mail
 Imports KS.Network.SFTP
@@ -131,13 +132,13 @@ Namespace Misc.Probers
                 '-> Current directory placeholder
                 If text.Contains("<currentdirectory>") Then
                     Wdbg(DebugLevel.I, "Current directory placeholder found.")
-                    text = text.Replace("<currentdirectory>", CurrDir)
+                    text = text.Replace("<currentdirectory>", CurrentDir)
                 End If
 
                 '-> Current directory name placeholder
                 If text.Contains("<currentdirectoryname>") Then
                     Wdbg(DebugLevel.I, "Current directory name placeholder found.")
-                    text = text.Replace("<currentdirectoryname>", New DirectoryInfo(CurrDir).Name)
+                    text = text.Replace("<currentdirectoryname>", New DirectoryInfo(CurrentDir).Name)
                 End If
 
                 '-> Short date placeholder

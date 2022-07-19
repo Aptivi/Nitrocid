@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Files.Folders
 Imports KS.Misc.Configuration
 Imports KS.Kernel.Flags
 Imports Newtonsoft.Json.Linq
@@ -26,30 +27,27 @@ Imports Newtonsoft.Json.Linq
     ''' Tests current directory setting
     ''' </summary>
     <Test, Description("Setting")> Public Sub TestSetCurrDir()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         Dim Path As String = HomePath + "/Documents"
-        SetCurrDir(Path).ShouldBeTrue
-        Path.ShouldBe(CurrDir)
+        SetCurrDir(Path)
+        Path.ShouldBe(CurrentDir)
     End Sub
 
     ''' <summary>
-    ''' Tests setting size parse mode
+    ''' Tests current directory setting
     ''' </summary>
-    <TestCase(True),
-     TestCase(False),
-     Description("Setting")>
-    Public Sub TestSetSizeParseMode([Set] As Boolean)
-        Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
-        SetSizeParseMode([Set]).ShouldBeTrue
-        FullParseMode.ShouldBe([Set])
-        GetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode").ShouldBe([Set])
+    <Test, Description("Setting")> Public Sub TestTrySetCurrDir()
+        CurrentDir = HomePath
+        Dim Path As String = HomePath + "/Documents"
+        TrySetCurrDir(Path).ShouldBeTrue
+        Path.ShouldBe(CurrentDir)
     End Sub
 
     ''' <summary>
     ''' Tests saving the current directory value
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestSaveCurrDir()
-        CurrDir = HomePath
+        CurrentDir = HomePath
         SaveCurrDir()
         GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(HomePath)
     End Sub

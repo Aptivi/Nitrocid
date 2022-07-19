@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Files.Folders
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells
@@ -115,9 +116,9 @@ Namespace Shell.Shells
             ElseIf String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
                 'Write the user dollar sign using the two styles, depending on the permission of the user
                 If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" # ", False, ColTypes.UserDollarSign)
+                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrentDir) : Write(" # ", False, ColTypes.UserDollarSign)
                 Else
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrDir) : Write(" $ ", False, ColTypes.UserDollarSign)
+                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrentDir) : Write(" $ ", False, ColTypes.UserDollarSign)
                 End If
             Else
                 Write(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
