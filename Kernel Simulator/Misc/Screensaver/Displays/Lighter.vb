@@ -217,7 +217,6 @@ Namespace Misc.Screensaver.Displays
             End If
 
             'Select a color and write the space
-            Dim esc As Char = GetEsc()
             If LighterTrueColor Then
                 Dim RedColorNum As Integer = RandomDriver.Next(LighterMinimumRedColorLevel, LighterMaximumRedColorLevel)
                 Dim GreenColorNum As Integer = RandomDriver.Next(LighterMinimumGreenColorLevel, LighterMaximumGreenColorLevel)

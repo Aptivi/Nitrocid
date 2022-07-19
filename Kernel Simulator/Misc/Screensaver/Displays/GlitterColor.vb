@@ -207,7 +207,6 @@ Namespace Misc.Screensaver.Displays
             Console.SetCursorPosition(Left, Top)
 
             'Make a glitter color
-            Dim esc As Char = GetEsc()
             If GlitterColorTrueColor Then
                 Dim RedColorNum As Integer = RandomDriver.Next(GlitterColorMinimumRedColorLevel, GlitterColorMaximumRedColorLevel)
                 Dim GreenColorNum As Integer = RandomDriver.Next(GlitterColorMinimumGreenColorLevel, GlitterColorMaximumGreenColorLevel)

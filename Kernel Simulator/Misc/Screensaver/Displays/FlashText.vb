@@ -234,7 +234,6 @@ Namespace Misc.Screensaver.Displays
             Dim HalfDelay As Integer = FlashTextDelay / 2
 
             'Make a flashing text
-            Dim esc As Char = GetEsc()
             Console.BackgroundColor = ConsoleColor.Black
             Console.Clear()
             If FlashTextTrueColor Then

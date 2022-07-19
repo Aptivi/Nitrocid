@@ -243,7 +243,6 @@ Namespace Misc.Screensaver.Displays
             Console.CursorVisible = False
 
             'Select the background color
-            Dim esc As Char = GetEsc()
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", DiscoEnableFedMode)
             If Not DiscoEnableFedMode Then

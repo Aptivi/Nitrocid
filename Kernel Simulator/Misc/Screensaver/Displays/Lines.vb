@@ -224,7 +224,6 @@ Namespace Misc.Screensaver.Displays
             Console.CursorVisible = False
 
             'Select a color
-            Dim esc As Char = GetEsc()
             If LinesTrueColor Then
                 SetConsoleColor(New Color(LinesBackgroundColor), True)
                 Console.Clear()

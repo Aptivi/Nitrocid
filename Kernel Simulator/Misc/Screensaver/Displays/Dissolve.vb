@@ -215,7 +215,6 @@ Namespace Misc.Screensaver.Displays
             If Not ColorFilled Then
                 'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences. For info, seek EB#2:7.
                 If Not (Console.CursorLeft >= EndLeft And Console.CursorTop >= EndTop) Then
-                    Dim esc As Char = GetEsc()
                     If DissolveTrueColor Then
                         Dim RedColorNum As Integer = RandomDriver.Next(DissolveMinimumRedColorLevel, DissolveMaximumRedColorLevel)
                         Dim GreenColorNum As Integer = RandomDriver.Next(DissolveMinimumGreenColorLevel, DissolveMaximumGreenColorLevel)

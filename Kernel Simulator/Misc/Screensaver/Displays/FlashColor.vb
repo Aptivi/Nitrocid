@@ -219,7 +219,6 @@ Namespace Misc.Screensaver.Displays
             Console.SetCursorPosition(Left, Top)
 
             'Make a flash color
-            Dim esc As Char = GetEsc()
             Console.BackgroundColor = ConsoleColor.Black
             ClearKeepPosition()
             If FlashColorTrueColor Then
