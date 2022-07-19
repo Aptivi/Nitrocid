@@ -547,7 +547,7 @@
                 "Variable": "SortMode",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Files.FilesystemSortOptions",
+                "Enumeration": "Files.Folders.FilesystemSortOptions",
                 "EnumerationZeroBased": false,
                 "Description": "Controls how the files will be sorted."
             },
@@ -557,7 +557,7 @@
                 "Variable": "SortDirection",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Files.FilesystemSortDirection",
+                "Enumeration": "Files.Folders.FilesystemSortDirection",
                 "EnumerationZeroBased": false,
                 "Description": "Controls the direction of filesystem sorting whether it's ascending or descending."
             },
