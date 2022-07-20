@@ -83,6 +83,7 @@ Namespace Kernel
                     ReadLine.CtrlCEnabled = True
                     ReadLine.HistoryEnabled = True
                     ReadLine.PrewriteDefaultValue = True
+                    ReadLine.AutoCompletionEnabled = True
 
                     'Check for terminal
                     CheckConsole()

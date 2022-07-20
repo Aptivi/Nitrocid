@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Shell.Shells
+Imports ReadLineReboot
 
 Namespace Shell.ShellBase
     Public Module ShellStart
@@ -46,6 +47,9 @@ Namespace Shell.ShellBase
             'Make a new instance of shell information
             Dim ShellCommandThread As New KernelThread($"{ShellType} Command Thread", False, AddressOf ExecuteCommand)
             Dim ShellInfo As New ShellInfo(ShellType, ShellExecute, ShellCommandThread)
+
+            'Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
+            ReadLine.AutoCompletionHandler = New CommandAutoComplete(ShellType)
 
             'Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
             ShellStack.Add(ShellInfo)
