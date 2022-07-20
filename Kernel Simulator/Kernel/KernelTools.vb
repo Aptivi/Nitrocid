@@ -609,10 +609,6 @@ Namespace Kernel
             Dim CompilerVars As New List(Of String)
 
             'Determine the compiler vars used to build KS using conditional checks
-#If NTFSCorruptionFix Then
-            CompilerVars.Add("NTFSCorruptionFix")
-#End If
-
 #If SPECIFIER = "DEV" Then
             CompilerVars.Add("SPECIFIER = ""DEV""")
 #ElseIf SPECIFIER = "RC" Then
