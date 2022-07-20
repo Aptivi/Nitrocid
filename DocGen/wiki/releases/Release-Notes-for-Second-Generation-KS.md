@@ -180,5 +180,6 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 This version is WIP as of 7/14/2022.
 
 1. Removed obsolete Mod and Screensaver APIs
-2. General API improvements
-3. General improvements and bug fixes
+2. Added command autocompletion
+3. General API improvements
+4. General improvements and bug fixes
