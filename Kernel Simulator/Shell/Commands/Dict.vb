@@ -16,7 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc.Dictionary
+Imports Dictify.Manager.DictionaryManager
+Imports Dictify.Models
 
 Namespace Shell.Commands
     Class DictCommand
@@ -43,7 +44,7 @@ Namespace Shell.Commands
                     Write(DoTranslation("Part of Speech:"), False, ColTypes.ListEntry) : Write($" {MeaningBase.PartOfSpeech}", True, ColTypes.ListValue)
 
                     'Get the definitions
-                    For Each DefinitionBase As DictionaryWord.Definition In MeaningBase.Definitions
+                    For Each DefinitionBase As DictionaryWord.DefinitionType In MeaningBase.Definitions
                         'Write definition and, if applicable, example
                         Write("  - " + DoTranslation("Definition:"), False, ColTypes.ListEntry) : Write($" {DefinitionBase.Definition}", True, ColTypes.ListValue)
                         Write("  - " + DoTranslation("Example in Sentence:"), False, ColTypes.ListEntry) : Write($" {DefinitionBase.Example}", True, ColTypes.ListValue)
