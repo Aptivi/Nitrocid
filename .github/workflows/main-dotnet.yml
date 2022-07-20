@@ -20,9 +20,9 @@ jobs:
     - name: MSBuild Installation
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Dependency Restoration
-      run: msbuild "Kernel Simulator.sln" -t:restore -p:Configuration=Release
+      run: msbuild "Kernel Simulator.sln" -t:restore -p:Configuration=Release-dotnet
     - name: Solution Compilation
-      run: msbuild "Kernel Simulator.sln" -p:Configuration=Release
+      run: msbuild "Kernel Simulator.sln" -p:Configuration=Release-dotnet
     - name: NuGet Preparation
       run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
     - name: Package Publication
