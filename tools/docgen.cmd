@@ -18,15 +18,7 @@ REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script builds KS documentation and packs the artifacts. Use when you have VS installed.
-set ksversion=0.0.24.0
-
-echo Make sure you have the following:
-echo   - Visual Studio 2017+
-echo   - %ProgramData%\chocolatey\bin\docfx.exe
-echo   - %ProgramFiles%\WinRAR\rar.exe
-echo.
-echo Press any key to start.
-pause > nul
+for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
 
 echo Finding DocFX...
 if exist %ProgramData%\chocolatey\bin\docfx.exe goto :build
@@ -35,25 +27,11 @@ goto :finished
 
 :build
 echo Building Kernel Simulator Documentation...
-%ProgramData%\chocolatey\bin\docfx.exe "DocGen\docfx.json" > %temp%/buildandpack.log 2>&1
-if %errorlevel% == 0 goto :pack
+%ProgramData%\chocolatey\bin\docfx.exe "..\DocGen\docfx.json"
+if %errorlevel% == 0 goto :success
 echo There was an error trying to build documentation (%errorlevel%).
 goto :finished
 
-:pack
-echo Packing documentation...
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-doc.rar "docs\" >> %temp%/buildandpack.log 2>&1
-if %errorlevel% == 0 goto :finalize
-echo There was an error trying to pack documentation (%errorlevel%).
-goto :finished
-
-:finalize
-rmdir /S /Q "DocGen\api\" >> %temp%/buildandpack.log 2>&1
-rmdir /S /Q "DocGen\obj\" >> %temp%/buildandpack.log 2>&1
-rmdir /S /Q "docs\" >> %temp%/buildandpack.log 2>&1
-move %temp%\%ksversion%-doc.rar >> %temp%/buildandpack.log 2>&1
+:success
 echo Build and pack successful.
-goto :finished
-
 :finished
-pause

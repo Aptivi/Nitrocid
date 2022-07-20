@@ -18,47 +18,27 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=0.0.24.0
-
-mkdir ~/tmp
-echo Make sure you have the following:
-echo "  - docfx in your PATH"
-echo 
-echo Press any key to start.
-read -n 1
+ksversion=$(cat version)
 
 # Check for dependencies
-msbuildpath=`which docfx`
-if [ ! $? == 0 ]; then
-	echo DocFX is not found.
-	exit 1
-fi
 rarpath=`which rar`
 if [ ! $? == 0 ]; then
 	echo rar is not found.
 	exit 1
 fi
 
-# Build KS
-echo Building KS documentation...
-docfx DocGen/docfx.json >> ~/tmp/buildandpack.log
-if [ ! $? == 0 ]; then
-	echo Build failed.
-	exit 1
-fi
-
 # Pack documentation
 echo Packing documentation...
-"$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-doc.rar "docs/" > ~/tmp/buildandpack.log
+"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-doc.rar "../docs/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
 fi
 
 # Inform success
-rm -rf "DocGen/api" >> ~/tmp/buildandpack.log
-rm -rf "DocGen/obj" >> ~/tmp/buildandpack.log
-rm -rf "docs" >> ~/tmp/buildandpack.log
-mv ~/tmp/$ksversion-doc.rar .
-echo Build and pack successful.
+rm -rf "../DocGen/api"
+rm -rf "../DocGen/obj"
+rm -rf "../docs"
+mv /tmp/$ksversion-doc.rar .
+echo Pack successful.
 exit 0
