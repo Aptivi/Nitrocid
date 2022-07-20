@@ -31,7 +31,7 @@ goto :finished
 :download
 echo MSBuild found in %msbuildpath%
 echo Downloading packages...
-"%msbuildpath%" "..\Kernel Simulator.sln" -t:restore
+"%msbuildpath%" "..\Kernel Simulator.sln" -t:restore -p:Configuration=%releaseconfig%
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
