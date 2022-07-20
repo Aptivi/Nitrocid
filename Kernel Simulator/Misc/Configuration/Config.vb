@@ -702,7 +702,7 @@ Namespace Misc.Configuration
                     {"Next ramp interval", RampDelay},
                     {"Upper left corner character for ramp bar", RampUpperLeftCornerChar},
                     {"Upper right corner character for ramp bar", RampUpperRightCornerChar},
-                    {"Lower left corner character for ramp bar", RampLowerRightCornerChar},
+                    {"Lower left corner character for ramp bar", RampLowerLeftCornerChar},
                     {"Lower right corner character for ramp bar", RampLowerRightCornerChar},
                     {"Upper frame character for ramp bar", RampUpperFrameChar},
                     {"Lower frame character for ramp bar", RampLowerFrameChar},
