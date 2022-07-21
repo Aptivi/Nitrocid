@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1A047FA-2595-45CB-8E4D-1F79B7785A29}</ProjectGuid>
+    <ProjectGuid>{7384C691-E9CD-0A3A-0C15-D507D5EF6E89}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <StartupObject>KSConverter.Converter</StartupObject>
     <RootNamespace>KSConverter</RootNamespace>
@@ -22,6 +22,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.0.21.2</Version>
     <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <TargetFramework>net48</TargetFramework>
@@ -91,13 +93,6 @@
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">

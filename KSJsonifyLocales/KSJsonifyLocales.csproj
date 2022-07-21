@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CFE671F-0079-42F7-8419-CC32329AD46C}</ProjectGuid>
+    <ProjectGuid>{8EDAE674-CC21-0D06-0641-064C500DE0CC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <StartupObject>KSJsonifyLocales.LocaleGenerator</StartupObject>
     <RootNamespace>KSJsonifyLocales</RootNamespace>
@@ -21,6 +21,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.0.21.2</Version>
     <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <TargetFramework>net48</TargetFramework>
@@ -31,7 +33,6 @@
     <DefineTrace>true</DefineTrace>
     <DocumentationFile>KSJsonifyLocales.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>EXECUTABLEINFRAMEWORKFOLDER</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -42,7 +43,6 @@
     <DefineTrace>true</DefineTrace>
     <DocumentationFile>KSJsonifyLocales.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>EXECUTABLEINFRAMEWORKFOLDER</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <TargetFramework>net48</TargetFramework>
@@ -53,7 +53,6 @@
     <Optimize>true</Optimize>
     <DocumentationFile>KSJsonifyLocales.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>EXECUTABLEINFRAMEWORKFOLDER</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -64,7 +63,6 @@
     <Optimize>true</Optimize>
     <DocumentationFile>KSJsonifyLocales.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>EXECUTABLEINFRAMEWORKFOLDER</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
@@ -91,9 +89,8 @@
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <LastGenOutput>Application.Designer.cs</LastGenOutput>
     </None>
-    <None Include="App.config" />
     <None Include="Translations\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -166,6 +163,9 @@
     <Content Include="Translations\pir.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Translations\pla.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Translations\ptg.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -201,10 +201,5 @@
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Kernel Simulator</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="Translations\pla.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>
