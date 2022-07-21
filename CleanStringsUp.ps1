@@ -1,3 +1,6 @@
+# Remove this script in API Milestone 1.
+echo "We advise not to use this script to clean unused strings; this script is very slow. Use KSCleanUnusedLocales instead."
+
 $PSDefaultParameterValues['*:Encoding'] = "default"
 
 Get-Content KSJsonifyLocales\Translations\eng.txt | ForEach-Object { 
