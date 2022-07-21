@@ -4,18 +4,6 @@
         <name>KSConverter</name>
     </assembly>
     <members>
-        <member name="M:KSConverter.FivePointFive.ReadFivePointFiveConfig(System.String)">
-            <summary>
-            Takes configuration values and installs them to appropriate variables.
-            </summary>
-            <param name="PathToConfig">Path to 0.0.5.5+ config (kernelConfig.ini)</param>
-        </member>
-        <member name="M:KSConverter.PreFivePointFive.ReadPreFivePointFiveConfig(System.String)">
-            <summary>
-            Takes configuration values and installs them to appropriate variables. Taken from config.vb version 0.0.5.2 with some removals that reflect this version
-            </summary>
-            <param name="PathToConfig">Path to pre-0.0.5.5 config (kernelConfig.ini)</param>
-        </member>
         <member name="M:KSConverter.Converter.Main">
             <summary>
             Main entry point
