@@ -1,7 +1,6 @@
 Comandos disponibles: {0}
 La inyección de comandos ha sido cancelada.
 Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.
-Error al analizar los argumentos de línea de comando reales: {0}
 Plantilla de color no válida {0}
 hwprobe: Su hardware será probado. Por favor espere ...
 CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...
@@ -49,7 +48,6 @@ Usuario {0} eliminado.
 Error al intentar eliminar el nombre de usuario.
 El protector de pantalla solicitado {0} no se encuentra.
 {0} se ha inicializado correctamente.
-{0} no se inicializó. El código del protector de pantalla podría haber experimentado un error al inicializar.
 El protector de pantalla {0} no existe.
 {0} está configurado como protector de pantalla predeterminado.
 No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente.
@@ -231,7 +229,6 @@ Error al intentar obtener MOTD / MAL: {0}
 Error al intentar iniciar el protector de pantalla, debido a una operación no válida.
 La recarga no está permitida en modo seguro.
 No se permiten las modificaciones de análisis en modo seguro.
-Error al intentar establecer el modo de análisis. Verifique el valor e intente nuevamente. Si esto es correcto, vea el seguimiento de la pila cuando la depuración del núcleo está habilitada.
 La ruta no es ni un archivo ni un directorio.
 Crea otra copia de un archivo en un directorio o nombre diferente.
 Mueve un archivo a otro directorio
@@ -409,7 +406,6 @@ Buscar actualizaciones al iniciar
 Sonda silenciosa
 Mostrar MOTD al iniciar sesión
 Limpiar la pantalla al iniciar sesión
-Mostrar nombres de usuario disponibles
 Concha coloreada
 Comando de ayuda simplificado
 Puerto de depuración
@@ -743,7 +739,6 @@ El valor del color está fuera del rango de 0-255.
 No se encuentra el comando wrappable.
 Consulta una palabra en una línea específica o en todas las líneas.
 {0} de {1} descargado.
-{0} de {1} subidos.
 Imprime una cadena en la consola usando el tipo de color y la impresión de líneas
 Imprime una cadena en la consola usando tipo de color e impresión de línea con soporte de formato
 Imprime una cadena para depurar
@@ -939,7 +934,6 @@ No se encontró la entrada de configuración {0}.
 Usar latidos por minuto
 Ya sea para usar la unidad Beats Per Minute para escribir el siguiente color.
 Retraso en latidos por minuto
-Batir color
 ¿Cuántos latidos por minuto hay que esperar antes de realizar la siguiente escritura?
 BeatFader seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
 Banner de inicio personalizado
@@ -1001,7 +995,6 @@ Uso de comandos:
 Nombre del archivo de pieza:
 Ruta del archivo de pieza:
 Error al intentar iniciar el protector de pantalla:
-Tipo de ruta no válido.
 Tipo de ruta de kernel no válido.
 El arranque anterior falló
 El editor JSON aún no ha abierto un flujo de archivos.
@@ -1015,8 +1008,6 @@ Guarda el archivo JSON
 Abre el shell JSON
 Imprime el archivo JSON
 Siguiente intervalo de rampa
-Activa la compatibilidad con 255 colores para Ramp.
-Activa el soporte de color verdadero para Ramp.
 ¿Cuántos milisegundos hay que esperar antes de llenar la siguiente rampa?
 Color del título de la notificación
 Color de la descripción de la notificación
@@ -1047,8 +1038,6 @@ Muestra la fecha y la hora del kernel local
 Muestra la hora del núcleo UTC
 Muestra la fecha del núcleo UTC
 Muestra la fecha y hora UTC del kernel
-Ruta MOTD
-ruta MAL
 ¿Qué archivo es el archivo de texto MOTD? Escriba una ruta absoluta al archivo de texto.
 ¿Qué archivo es el archivo de texto MAL? Escriba una ruta absoluta al archivo de texto.
 Mods en la lista negra
@@ -1058,7 +1047,6 @@ Recarga todos los mods
 Agrega un mod a la lista negra
 Elimina un mod de la lista negra
 Hora y fecha en UTC: {0}
-No se encuentra el comando de shell JSON especificado.
 Mostrar información de la aplicación durante el arranque
 Analizar argumentos de la línea de comandos
 Mostrar tiempos de finalización de etapa
@@ -1073,7 +1061,6 @@ Muestra la hora actual, la zona horaria y la fecha antes de iniciar sesión.
 Si hay una falla menor durante el arranque del kernel, notifica al usuario al respecto.
 Estilo de solicitud de nombre de usuario
 Estilo de solicitud de contraseña
-Mostrar MAL al iniciar sesión
 Escribe cómo quieres que sea tu indicador de inicio de sesión. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Escribe cómo quieres que sea tu solicitud de contraseña. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Muestra el mensaje del día después de mostrar la pantalla de inicio de sesión.
@@ -1117,12 +1104,6 @@ Escribe cómo quieres que sea tu solicitud de contraseña de GPG. Déjelo en bla
 ¿Cuántos milisegundos para enviar el ping IMAP?
 ¿Cuántos milisegundos para enviar el ping SMTP?
 Controla cómo se mostrará el texto del correo.
-Texto sin formato
-Texto fluido
-texto HTML
-Texto enriquecido
-Texto enriquecido comprimido
-Texto rico
 Iniciar automáticamente la depuración remota al iniciar
 Formato de mensaje de depuración remota
 Si desea que la depuración remota comience en el arranque, habilítelo.
@@ -1270,7 +1251,6 @@ Ya sea para mostrar lo que está escrito en el indicador de entrada.
 ¿Cuál es el número máximo a elegir?
 Escribe cómo quieres que sea la información de tu página de manual. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para título manual, {1} para revisión.
 La propiedad {0} no se encuentra en ninguno de los módulos.
-Esta sección enumera la configuración general del protector de pantalla. Para configuraciones individuales de protector de pantalla, salga de Configuración y abra Configuración de protector de pantalla.
 Inicie la rueda de colores en el modo de color verdadero
 Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar {0} para la versión del kernel.
 ¿Qué variante del idioma actual se está utilizando para cambiar los nombres de los meses, el calendario, etc.?
@@ -1293,7 +1273,6 @@ Tipo de datos de descarga del servidor:
 Tipo de datos de carga del servidor:
 Debe conectarse a un servidor antes de realizar esta operación.
 Ingrese un archivo remoto para ser hash.
-Ingrese un directorio remoto para ser hash.
 Introduzca un directorio remoto.
 Hashing recursivo para FTP
 Ya sea para hacer hash recursivamente en un directorio. Tenga en cuenta que no todos los servidores FTP lo admiten.
@@ -1304,11 +1283,8 @@ Tamaño del disco:
 Memoria total:
 Tarjeta grafica:
 Modelo de disco:
-Número máximo de correos electrónicos en una página
 Cultura de la lengua actual
 Si está seguro de haber abierto la sección correcta, consulte este mensaje:
-Configuraciones misceláneas...
-Ajustes de colores...
 Ejecuta un comando de servidor FTP
 Introduzca la dirección y el puerto del servidor POP3 (<dirección> o <dirección>:[puerto]):
 Estilo de aviso POP3 para correo
@@ -1320,7 +1296,6 @@ Ya sea para usar POP3. Deshabilitar esto usará SMTP.
 Cifra una cadena usando CRC32
 Abre el cliente de correo.
 de correo transferido...
-Los ajustes para este protector de pantalla están disponibles aquí.
 Prueba la funcionalidad de la tabla.
 Edita la línea especificada
 Agrega las nuevas líneas al final del archivo.
@@ -1351,7 +1326,6 @@ El archivo mod proporcionado es incompatible.
 La desinstalación falló para
 Abre una URL
 Imprimir números de línea en el contenido del archivo de impresión
-Hace que el comando \"gato\" imprima los números de línea del archivo.
 Versión transliterada
 Versión traducida
 Descarta todas las notificaciones
@@ -1385,7 +1359,6 @@ Establece el sitio HTTP. Debe ser un URI válido.
 Obtiene la respuesta del servidor HTTP utilizando la solicitud especificada
 Elimina contenido del servidor HTTP
 Hubo un error en el shell HTTP:
-Mensaje HTTP: no se encuentra el comando solicitado {0}. Consulte 'ayuda' para obtener una lista de los comandos disponibles especificados en el shell HTTP.
 Obtiene la cadena del servidor HTTP utilizando la solicitud especificada
 Obteniendo {0}...
 El formato del URI del sitio no es válido.
@@ -1437,8 +1410,6 @@ Error al obtener las últimas noticias.
 Color de la opción seleccionada
 Mostrar seguimiento de pila en error de kernel
 Si hay algún error del kernel, elija si desea o no imprimir el seguimiento de la pila en la consola.
-El mod se puede cargar, pero estas advertencias pueden afectar la forma en que funciona el mod:
-El protector de pantalla se puede cargar, pero estas advertencias pueden afectar la forma en que funciona el protector de pantalla:
 Guardar configuración como
 Cargar configuración desde
 ¿Dónde desea guardar la configuración actual del kernel?
@@ -1463,8 +1434,6 @@ No se pudo eliminar un evento.
 No se proporcionaron suficientes argumentos para agregar un evento.
 No se proporcionaron suficientes argumentos para eliminar un evento.
 No se proporcionaron suficientes argumentos para la manipulación de eventos.
-No se pudo agregar o eliminar un recordatorio.
-No se proporcionaron suficientes argumentos para agregar o eliminar un recordatorio.
 No se proporcionaron suficientes argumentos para la manipulación de recordatorios.
 Recordatorio sin título
 Evento sin título
@@ -1555,11 +1524,8 @@ Habilita la depuración para el sistema de eventos del kernel.
 fuente Figlet
 Escriba una fuente figlet que sea compatible con la biblioteca de Figgle. Consulta la documentación de la biblioteca para más información
 No se pudo instalar el idioma personalizado {0}.
-El archivo de metadatos necesario para instalar el idioma personalizado no existe.
 La información de metadatos necesaria para instalar el idioma personalizado no proporciona las localizaciones necesarias.
 No se pudo desinstalar el idioma personalizado {0}.
-El archivo de metadatos necesario para desinstalar el idioma personalizado no existe.
-La información de metadatos necesaria para desinstalar el idioma personalizado no proporciona las localizaciones necesarias.
 La longitud del idioma inglés no coincide con la longitud del token de idioma proporcionado.
 El idioma ya existe y no se puede sobrescribir.
 No se pudo desinstalar el idioma personalizado. Lo más probable es que no exista.
@@ -1596,7 +1562,6 @@ Si está habilitado, utilizará el sistema de notificación para notificar al ho
 Fuente Figlet para temporizador
 Habilitar Figlet para el temporizador
 Si está habilitado, utilizará figlet para el temporizador. Tenga en cuenta que necesita una pantalla de consola grande para mostrar la hora correctamente con Figlet habilitado.
-Error al analizar los argumentos de la línea de comandos previos al arranque: {0}
 Restablece el kernel a la configuración de fábrica
 Omite la detección del tamaño de la consola
 Parece que estás pasando por alto la detección del tamaño de la consola. Es posible que las cosas no funcionen correctamente en pantallas pequeñas.
@@ -1605,11 +1570,6 @@ Su consola es demasiado pequeña para funcionar correctamente:
 Fuente de banner figlet
 Imprime una cadena en la consola utilizando el tipo de color y la impresión de líneas con soporte Figlet
 Imprime una cadena en la consola utilizando el tipo de color y la impresión de líneas con formato y compatibilidad con Figlet
-Elimina permanentemente un mensaje
-Elimina permanentemente todos los mensajes del destinatario
-Deshacer la eliminación de un mensaje
-Deshacer la eliminación de todos los mensajes del destinatario
-Deshacer eliminación no está implementado para POP3.
 Mostrar los comandos contar con ayuda
 Mostrar los comandos de shell contar con ayuda
 Mostrar los comandos mod contar con ayuda
@@ -1628,7 +1588,6 @@ Sale del shell si se ejecuta en subshell
 ¡No se puede matar a la concha madre!
 No se puede cerrar sesión en la subcapa.
 Archivo no especificado. Saliendo de la carcasa...
-Los ajustes para esta pantalla de bienvenida están disponibles aquí.
 Color de la barra de progreso
 Abre la configuración del salvapantallas.
 Abre la configuración de bienvenida.
@@ -1736,7 +1695,6 @@ Nivel de color rojo:
 Nivel de color verde:
 Nivel de color azul:
 Secuencia de colores RGB:
-El argumento debe ser numérico.
 El nivel de color rojo debe ser numérico.
 El nivel de color verde debe ser numérico.
 El nivel de color azul debe ser numérico.
@@ -1750,7 +1708,6 @@ Ya sea para simular una situación en la que no hay APM disponible. Si está hab
 Densidad de fallos
 ¡Cuanto mayor sea el porcentaje, más denso será el error!
 El lenguaje gangsta contiene un lenguaje fuerte que puede hacerte sentir incómodo al leerlo. ¿Estás seguro de que quieres configurar el idioma de todos modos?
-Este mod utiliza el método heredado para ejecutar los comandos. Esto es obsoleto. Póngase en contacto con el proveedor de mods para migrar a los estándares actuales.
 El Diccionario Inglés
 Palabra de información para
 API tiene licencia bajo
@@ -1762,4 +1719,3 @@ Ejemplo en oración:
 Fuentes utilizadas para definir
 Sinónimos:
 Antónimos:
-Este protector de pantalla utiliza técnicas obsoletas para mostrar su contenido, que ya no funcionará a partir de la próxima revisión de la API de KS. Póngase en contacto con el proveedor para migrar a técnicas compatibles más nuevas.

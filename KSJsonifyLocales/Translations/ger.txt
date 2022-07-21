@@ -1,7 +1,6 @@
 Verfügbare Befehle: {0}
 Die Befehlsinjektion wurde abgebrochen.
 Injizierte Argumente werden für den nächsten Neustart geplant.
-Fehler beim Analysieren von echten Befehlszeilenargumenten: {0}
 Ungültige Farbvorlage {0}
 hwprobe: Ihre Hardware wird geprüft. Bitte warten ...
 CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...
@@ -49,7 +48,6 @@ Benutzer {0} wurde entfernt.
 Fehler beim Versuch, den Nutzernamen zu entfernen.
 Der angeforderte Bildschirmschoner {0} wurde nicht gefunden.
 {0} wurde ordnungsgemäß initialisiert.
-{0} wurde nicht initialisiert. Der Bildschirmschonercode hat möglicherweise beim Initialisieren einen Fehler festgestellt.
 Der Bildschirmschoner {0} existiert nicht.
 {0} ist auf den Standard-Bildschirmschoner eingestellt.
 Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
@@ -231,7 +229,6 @@ Fehler beim Abrufen von MOTD / MAL: {0}
 Fehler beim Versuch, den Bildschirmschoner zu starten, aufgrund eines ungültigen Vorgangs.
 Nachladen im abgesicherten Modus nicht erlaubt.
 Parsing-Mods im abgesicherten Modus nicht erlaubt.
-Fehler beim Versuch, den Analysemodus einzustellen. Überprüfen Sie den Wert und versuchen Sie es erneut. Wenn dies korrekt ist, lesen Sie den Stack-Trace, wenn das Kernel-Debugging aktiviert ist.
 Der Pfad ist weder eine Datei noch ein Verzeichnis.
 Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
 Verschiebt eine Datei in ein anderes Verzeichnis
@@ -409,7 +406,6 @@ Suchen Sie beim Start nach Updates
 Leise Sonde
 MOTD beim Anmelden anzeigen
 Bildschirm beim Anmelden löschen
-Verfügbare Benutzernamen anzeigen
 Farbige Schale
 Vereinfachter Hilfebefehl
 Debug-Port
@@ -743,7 +739,6 @@ Der Farbwert liegt außerhalb des Bereichs von 0-255.
 Der Wrapping-Befehl wurde nicht gefunden.
 Fragt ein Wort in einer bestimmten Zeile oder allen Zeilen ab
 {0} von {1} heruntergeladen.
-{0} von {1} hochgeladen.
 Druckt eine Zeichenfolge an die Konsole mit Farbtyp und Liniendruck
 Druckt eine Zeichenfolge an die Konsole mit Farbtyp und Zeilendruck mit Formatunterstützung
 Gibt eine Zeichenfolge an den Debugger aus
@@ -939,7 +934,6 @@ Konfigurationseintrag {0} nicht gefunden.
 Beats pro Minute verwenden
 Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
 Verzögerung in Schlägen pro Minute
-Beatfarbe
 Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
@@ -1001,7 +995,6 @@ Befehlsverwendung:
 Dateiname des Teils:
 Dateipfad des Teils:
 Fehler beim Versuch, den Bildschirmschoner zu starten:
-Ungültiger Pfadtyp.
 Ungültiger Kernel-Pfadtyp.
 Vorheriger Start fehlgeschlagen
 Der JSON-Editor hat noch keinen Dateistream geöffnet.
@@ -1015,8 +1008,6 @@ Speichert die JSON-Datei
 Öffnet die JSON-Shell
 Druckt die JSON-Datei
 Nächstes Rampenintervall
-Aktiviert die 255-Farben-Unterstützung für Ramp.
-Aktiviert True-Color-Unterstützung für Ramp.
 Wie viele Millisekunden warten, bevor die nächste Rampe ausgefüllt wird?
 Farbe des Benachrichtigungstitels
 Farbe der Benachrichtigungsbeschreibung
@@ -1047,8 +1038,6 @@ Zeigt Datum und Uhrzeit des lokalen Kernels an
 Zeigt die UTC-Kernelzeit an
 Zeigt das UTC-Kernel-Datum an
 Zeigt Datum und Uhrzeit des UTC-Kernels an
-MOTD-Pfad
-MAL-Pfad
 Welche Datei ist die MOTD-Textdatei? Schreiben Sie einen absoluten Pfad zur Textdatei.
 Welche Datei ist die MAL-Textdatei? Schreiben Sie einen absoluten Pfad zur Textdatei.
 Mods auf der schwarzen Liste
@@ -1058,7 +1047,6 @@ Lädt alle Mods neu
 Fügt einen Mod zur Blacklist hinzu
 Entfernt einen Mod von der Blacklist
 Uhrzeit und Datum in UTC: {0}
-Der angegebene JSON-Shell-Befehl wurde nicht gefunden.
 App-Informationen während des Bootens anzeigen
 Befehlszeilenargumente parsen
 Etappenendzeiten anzeigen
@@ -1073,7 +1061,6 @@ Zeigt vor der Anmeldung die aktuelle Uhrzeit, Zeitzone und das Datum an.
 Wenn beim Booten des Kernels ein geringfügiger Fehler auftritt, wird der Benutzer darüber benachrichtigt.
 Stil der Eingabeaufforderung für den Benutzernamen
 Stil der Passwortabfrage
-MAL beim Einloggen anzeigen
 Schreiben Sie, wie Ihre Anmeldeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
 Schreiben Sie, wie Ihre Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
 Zeigt die Nachricht des Tages nach dem Anzeigen des Anmeldebildschirms.
@@ -1117,12 +1104,6 @@ Schreiben Sie, wie Ihre GPG-Passwortabfrage aussehen soll. Lassen Sie das Feld l
 Wie viele Millisekunden soll der IMAP-Ping gesendet werden?
 Wie viele Millisekunden zum Senden des SMTP-Pings?
 Steuert, wie der Mailtext angezeigt wird.
-Klartext
-Fließender Text
-HTML-Text
-Angereicherter Text
-Komprimierter Rich-Text
-Reichhaltiger Text
 Remote-Debug automatisch beim Start starten
 Format der Remote-Debug-Meldung
 Wenn Sie möchten, dass das Remote-Debug beim Booten gestartet wird, aktivieren Sie dies.
@@ -1270,7 +1251,6 @@ Was ist die Mindestanzahl zur Auswahl?
 Was ist die maximale Anzahl zu wählen?
 Schreiben Sie, wie Ihre Manpage-Informationen aussehen sollen. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für Handbuchtitel, {1} für Überarbeitung.
 Eigenschaft {0} wurde in keinem der Module gefunden.
-Dieser Abschnitt listet die allgemeinen Bildschirmschonereinstellungen auf. Beenden Sie für individuelle Bildschirmschonereinstellungen die Einstellungen und öffnen Sie die Bildschirmschonereinstellungen.
 Starten Sie das Farbrad im Echtfarbenmodus
 Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können {0} für die Kernel-Version verwenden.
 Welche Variante der aktuellen Sprache wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
@@ -1293,7 +1273,6 @@ Server-Download-Datentyp:
 Datentyp des Server-Uploads:
 Sie müssen eine Verbindung zu einem Server herstellen, bevor Sie diesen Vorgang ausführen.
 Geben Sie eine Remote-Datei ein, die gehasht werden soll.
-Geben Sie ein Remote-Verzeichnis ein, das gehasht werden soll.
 Geben Sie ein Remote-Verzeichnis ein.
 Rekursives Hashing für FTP
 Ob ein Verzeichnis rekursiv gehasht werden soll. Bitte beachten Sie, dass dies nicht von allen FTP-Servern unterstützt wird.
@@ -1304,11 +1283,8 @@ Festplattengröße:
 Gesamtspeicher:
 Grafikkarte:
 Festplattenmodell:
-Maximale Anzahl von E-Mails auf einer Seite
 Kultur der aktuellen Sprache
 Wenn Sie sicher sind, dass Sie den richtigen Abschnitt geöffnet haben, sehen Sie sich diese Nachricht an:
-Verschiedene Einstellungen...
-Farbeinstellungen...
 Führt einen FTP-Serverbefehl aus
 Geben Sie die Adresse und den Port des POP3-Servers ein (<Adresse> oder <Adresse>:[Port]):
 POP3-Eingabeaufforderungsstil für E-Mails
@@ -1320,7 +1296,6 @@ Ob POP3 verwendet werden soll. Wenn Sie dies deaktivieren, wird SMTP verwendet.
 Verschlüsselt einen String mit CRC32
 Öffnet den Mailclient
 der E-Mail übertragen ...
-Einstellungen für diesen Bildschirmschoner sind hier verfügbar.
 Testet die Tabellenfunktion
 Bearbeitet die angegebene Zeile
 Fügt die neuen Zeilen am Ende der Datei hinzu
@@ -1351,7 +1326,6 @@ Die bereitgestellte Mod-Datei ist nicht kompatibel.
 Deinstallation fehlgeschlagen für
 Öffnet eine URL
 Zeilennummern beim Drucken von Dateiinhalten drucken
-Lässt den \"cat\"-Befehl die Zeilennummern der Datei drucken.
 Transliterierte Fassung
 Übersetzte Fassung
 Schließt alle Benachrichtigungen
@@ -1385,7 +1359,6 @@ Legt die HTTP-Site fest. Muss ein gültiger URI sein.
 Ruft die Antwort vom HTTP-Server mithilfe der angegebenen Anforderung ab
 Löscht Inhalte vom HTTP-Server
 In der HTTP-Shell ist ein Fehler aufgetreten:
-HTTP-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Siehe „Hilfe“ für eine Liste der verfügbaren Befehle, die auf der HTTP-Shell angegeben sind.
 Ruft die Zeichenfolge mithilfe der angegebenen Anforderung vom HTTP-Server ab
 {0} erhalten...
 Das Format des Website-URI ist ungültig.
@@ -1437,8 +1410,6 @@ Die neuesten Nachrichten konnten nicht abgerufen werden.
 Ausgewählte Optionsfarbe
 Stack-Trace bei Kernel-Fehler anzeigen
 Wenn ein Kernelfehler auftritt, wählen Sie aus, ob der Stack-Trace auf der Konsole gedruckt werden soll oder nicht.
-Der Mod kann geladen werden, aber diese Warnungen können sich auf die Funktionsweise des Mods auswirken:
-Der Bildschirmschoner kann geladen werden, aber diese Warnungen können die Funktionsweise des Bildschirmschoners beeinflussen:
 Einstellungen speichern unter
 Einstellungen laden von
 Wo möchten Sie die aktuellen Kernel-Einstellungen speichern?
@@ -1463,8 +1434,6 @@ Ein Ereignis konnte nicht entfernt werden.
 Es wurden nicht genügend Argumente bereitgestellt, um ein Ereignis hinzuzufügen.
 Es wurden nicht genügend Argumente bereitgestellt, um ein Ereignis zu entfernen.
 Es wurden nicht genügend Argumente für die Ereignismanipulation bereitgestellt.
-Eine Erinnerung konnte nicht hinzugefügt oder entfernt werden.
-Es wurden nicht genügend Argumente angegeben, um eine Erinnerung hinzuzufügen oder zu entfernen.
 Nicht genügend Argumente für Mahnungsmanipulationen geliefert.
 Unbenannte Erinnerung
 Unbenannte Veranstaltung
@@ -1555,11 +1524,8 @@ Aktiviert das Debuggen für das Kernel-Ereignissystem
 Figlet-Schriftart
 Schreiben Sie eine Figlet-Schriftart, die von der Figgle-Bibliothek unterstützt wird. Weitere Informationen finden Sie in der Bibliotheksdokumentation
 Fehler beim Installieren der benutzerdefinierten Sprache {0}.
-Die zum Installieren der benutzerdefinierten Sprache erforderliche Metadatendatei ist nicht vorhanden.
 Die zum Installieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit.
 Die benutzerdefinierte Sprache {0} konnte nicht deinstalliert werden.
-Die zum Deinstallieren der benutzerdefinierten Sprache erforderliche Metadatendatei ist nicht vorhanden.
-Die zum Deinstallieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit.
 Die Länge der englischen Sprache stimmt nicht mit der Länge des bereitgestellten Sprachtokens überein.
 Die Sprache existiert bereits und kann nicht überschrieben werden.
 Benutzerdefinierte Sprache konnte nicht deinstalliert werden. Es existiert höchstwahrscheinlich nicht.
@@ -1596,7 +1562,6 @@ Wenn aktiviert, wird das Benachrichtigungssystem verwendet, um den Host über Re
 Figlet-Schriftart für Timer
 Aktivieren Sie Figlet für den Timer
 Wenn aktiviert, wird Figlet als Timer verwendet. Bitte beachten Sie, dass es einen großen Konsolenbildschirm benötigt, um die Zeit mit aktiviertem Figlet richtig darzustellen.
-Fehler beim Analysieren von Preboot-Befehlszeilenargumenten: {0}
 Setzt den Kernel auf die Werkseinstellungen zurück
 Umgeht die Erkennung der Konsolengröße
 Sieht so aus, als würden Sie die Erkennung der Konsolengröße umgehen. Auf kleinen Bildschirmen funktionieren die Dinge möglicherweise nicht richtig.
@@ -1605,11 +1570,6 @@ Ihre Konsole ist zu klein, um ordnungsgemäß ausgeführt zu werden:
 Banner-Filet-Schriftart
 Druckt eine Zeichenkette an die Konsole unter Verwendung von Farbtyp und Zeilendruck mit Figlet-Unterstützung
 Druckt eine Zeichenkette an die Konsole unter Verwendung von Farbtyp und Zeilendruck mit Format- und Figlet-Unterstützung
-Entfernt eine Nachricht dauerhaft
-Entfernt dauerhaft alle Nachrichten vom Empfänger
-Macht das Entfernen einer Nachricht rückgängig
-Macht das Entfernen aller Nachrichten vom Empfänger rückgängig
-Löschen rückgängig machen ist für POP3 nicht implementiert.
 Zeigen Sie die Befehle an, die auf Hilfe zählen
 Zeigen Sie die Anzahl der Shell-Befehle in der Hilfe an
 Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen
@@ -1628,7 +1588,6 @@ Beendet die Shell, wenn sie auf einer Subshell ausgeführt wird
 Kann die Mutterschale nicht töten!
 Abmeldung von der Subshell nicht möglich.
 Datei nicht angegeben. Schale verlassen...
-Einstellungen für diesen Begrüßungsbildschirm sind hier verfügbar.
 Farbe des Fortschrittsbalkens
 Öffnet die Bildschirmschonereinstellungen
 Öffnet die Splash-Einstellungen
@@ -1736,7 +1695,6 @@ Rote Farbstufe:
 Grüne Farbstufe:
 Blaue Farbstufe:
 RGB-Farbfolge:
-Das Argument muss numerisch sein.
 Die rote Farbstufe muss numerisch sein.
 Die grüne Farbstufe muss numerisch sein.
 Die blaue Farbstufe muss numerisch sein.
@@ -1750,7 +1708,6 @@ Ob eine Situation simuliert werden soll, in der kein APM verfügbar ist. Wenn ak
 Glitch-Dichte
 Je größer der Prozentsatz, desto dichter der Glitch!
 Die Gangsta-Sprache enthält eine starke Sprache, bei der Sie sich beim Lesen unwohl fühlen können. Sind Sie sicher, dass Sie die Sprache trotzdem einstellen möchten?
-Dieser Mod verwendet die Legacy-Methode, um die Befehle auszuführen. Dies ist veraltet. Bitte wenden Sie sich an den Mod-Anbieter, um zu den aktuellen Standards zu migrieren.
 Das englische Wörterbuch
 Wortinformationen für
 API ist lizenziert unter
@@ -1762,4 +1719,3 @@ Beispiel im Satz:
 Quellen verwendet, um zu definieren
 Synonyme:
 Antonyme:
-Dieser Bildschirmschoner verwendet veraltete Techniken zur Anzeige seiner Inhalte, die ab der nächsten KS-API-Revision nicht mehr funktionieren. Wenden Sie sich an den Anbieter, um zu neueren, unterstützten Techniken zu migrieren.

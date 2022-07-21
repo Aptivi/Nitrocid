@@ -1,7 +1,6 @@
 Comandos disponíveis: {0}
 A injeção de comando foi cancelada.
 Argumentos injetados serão agendados para serem executados na próxima reinicialização.
-Erro ao analisar argumentos de linha de comando reais: {0}
 Modelo de cor inválido {0}
 hwprobe: Seu hardware será testado. Por favor aguarde ...
 CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
@@ -49,7 +48,6 @@ Usuário {0} removido.
 Erro ao tentar remover o nome de usuário.
 O protetor de tela solicitado {0} não foi encontrado.
 {0} foi inicializado corretamente.
-{0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
 O protetor de tela {0} não existe.
 {0} está definido como protetor de tela padrão.
 Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
@@ -231,7 +229,6 @@ Erro ao tentar obter MOTD / MAL: {0}
 Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
 Recarregar não permitido no modo de segurança.
 Mods de análise não permitidos no modo de segurança.
-Erro ao tentar definir o modo de análise. Verifique o valor e tente novamente. Se isso estiver correto, consulte o rastreamento de pilha quando a depuração do kernel estiver ativada.
 O caminho não é um arquivo nem um diretório.
 Cria outra cópia de um arquivo em um diretório ou nome diferente.
 Move um arquivo para outro diretório
@@ -409,7 +406,6 @@ Verifique se há atualizações na inicialização
 Quiet Probe
 Mostrar MOTD no login
 Limpar tela ao entrar
-Mostrar nomes de usuário disponíveis
 Concha Colorida
 Comando de ajuda simplificado
 Porta de depuração
@@ -743,7 +739,6 @@ O valor da cor está fora do intervalo de 0-255.
 O comando empacotável não foi encontrado.
 Consulta uma palavra em uma linha especificada ou em todas as linhas
 {0} de {1} baixado.
-{0} de {1} enviados.
 Imprime uma string para o console usando tipo de cor e linha de impressão
 Imprime uma string para o console usando tipo de cor e impressão de linha com suporte de formato
 Imprime uma string para o depurador
@@ -939,7 +934,6 @@ Entrada de configuração {0} não encontrada.
 Use batidas por minuto
 Se deve usar a unidade de batidas por minuto para escrever a próxima cor.
 Atraso em batidas por minuto
-Beat Color
 Quantas batidas por minuto devemos esperar antes de fazer a próxima gravação?
 O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Banner de inicialização personalizado
@@ -1001,7 +995,6 @@ Uso do comando:
 Nome do arquivo da peça:
 Caminho do arquivo da peça:
 Erro ao tentar iniciar o protetor de tela:
-Tipo de caminho inválido.
 Tipo de caminho do kernel inválido.
 Falha na inicialização anterior
 O editor JSON ainda não abriu um fluxo de arquivos.
@@ -1015,8 +1008,6 @@ Salva o arquivo JSON
 Abre o shell JSON
 Imprime o arquivo JSON
 Próximo intervalo de rampa
-Ativa o suporte de 255 cores para Ramp.
-Ativa o suporte a cores verdadeiras para Ramp.
 Quantos milissegundos esperar antes de preencher a próxima rampa?
 Cor do título da notificação
 Cor da descrição da notificação
@@ -1047,8 +1038,6 @@ Mostra a data e hora do kernel local
 Mostra a hora do kernel UTC
 Mostra a data do kernel UTC
 Mostra a data e hora do kernel UTC
-Caminho MOTD
-caminho MAL
 Qual arquivo é o arquivo de texto MOTD? Escreva um caminho absoluto para o arquivo de texto.
 Qual arquivo é o arquivo de texto MAL? Escreva um caminho absoluto para o arquivo de texto.
 Mods na lista negra
@@ -1058,7 +1047,6 @@ Recarrega todos os mods
 Adiciona um mod à lista negra
 Remove um mod da lista negra
 Hora e data em UTC: {0}
-O comando shell JSON especificado não foi encontrado.
 Mostrar informações do aplicativo durante a inicialização
 Analisar argumentos de linha de comando
 Mostrar os tempos de término do estágio
@@ -1073,7 +1061,6 @@ Mostra a hora atual, fuso horário e data antes do login.
 Se houver uma pequena falha durante a inicialização do kernel, notifica o usuário sobre isso.
 Estilo de prompt de nome de usuário
 Estilo de solicitação de senha
-Mostrar MAL no login
 Escreva como você deseja que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
 Escreva como você deseja que seu prompt de senha seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
 Mostra a Mensagem do Dia após a exibição da tela de login.
@@ -1117,12 +1104,6 @@ Escreva como você deseja que seu prompt de senha GPG seja. Deixe em branco para
 Quantos milissegundos para enviar o ping IMAP?
 Quantos milissegundos para enviar o ping SMTP?
 Controla como o texto do e-mail será mostrado.
-Texto simples
-Texto fluído
-Texto HTML
-Texto enriquecido
-Rich text compactado
-Rich text
 Iniciar depuração remota automaticamente na inicialização
 Formato de mensagem de depuração remota
 Se você deseja que a depuração remota inicie na inicialização, habilite isso.
@@ -1270,7 +1251,6 @@ Qual é o número mínimo para escolher?
 Qual é o número máximo para escolher?
 Escreva como você deseja que as informações da sua página de manual sejam. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados. {0} para título do manual, {1} para revisão.
 A propriedade {0} não foi encontrada em nenhum dos módulos.
-Esta seção lista as configurações gerais do protetor de tela. Para configurações individuais do protetor de tela, saia das Configurações e abra Configurações do protetor de tela.
 Inicie a roda de cores no modo true color
 Se especificado, ele exibirá um banner de inicialização personalizado com suporte a espaço reservado. Você pode usar {0} para a versão do kernel.
 Qual variante do idioma atual está sendo usada para alterar os nomes dos meses, calendário, etc.?
@@ -1293,7 +1273,6 @@ Tipo de dados de download do servidor:
 Tipo de dados de upload do servidor:
 Você deve se conectar a um servidor antes de realizar esta operação.
 Insira um arquivo remoto a ser hash.
-Insira um diretório remoto a ser hash.
 Insira um diretório remoto.
 Hash recursivo para FTP
 Se o hash recursivamente de um diretório. Observe que nem todos os servidores FTP suportam isso.
@@ -1304,11 +1283,8 @@ Tamanho do disco:
 Memória total:
 Placa de vídeo:
 Modelo de disco:
-Número máximo de e-mails em uma página
 Cultura do idioma atual
 Se você tiver certeza de que abriu a seção correta, confira esta mensagem:
-Configurações diversas...
-Configurações de cores...
 Executa um comando do servidor FTP
 Digite o endereço e a porta do servidor POP3 (<endereço> ou <endereço>:[porta]):
 Estilo de prompt POP3 para e-mail
@@ -1320,7 +1296,6 @@ Se deve usar POP3. Desabilitar isso usará SMTP.
 Criptografa uma string usando CRC32
 Abre o cliente de e-mail
 de correio transferido...
-As configurações para este protetor de tela estão disponíveis aqui.
 Testa a funcionalidade da tabela
 Edita a linha especificada
 Adiciona as novas linhas no final do arquivo
@@ -1351,7 +1326,6 @@ O arquivo mod fornecido é incompatível.
 Falha na desinstalação para
 Abre um URL
 Imprimir números de linha no conteúdo do arquivo de impressão
-Faz com que o comando \"cat\" imprima os números de linha do arquivo.
 Versão transliterada
 Versão traduzida
 Dispensa todas as notificações
@@ -1385,7 +1359,6 @@ Define o site HTTP. Deve ser um URI válido.
 Obtém a resposta do servidor HTTP usando a solicitação especificada
 Exclui conteúdo do servidor HTTP
 Ocorreu um erro no shell HTTP:
-Mensagem HTTP: O comando solicitado {0} não foi encontrado. Consulte 'ajuda' para obter uma lista de comandos disponíveis especificados no shell HTTP.
 Obtém a string do servidor HTTP usando a solicitação especificada
 Obtendo {0}...
 O formato de URI do site é inválido.
@@ -1437,8 +1410,6 @@ Falha ao receber as últimas notícias.
 Cor da opção selecionada
 Mostrar rastreamento de pilha no erro do kernel
 Se houver algum erro de kernel, escolha se deseja ou não imprimir o rastreamento de pilha no console.
-O mod pode ser carregado, mas esses avisos podem afetar a maneira como o mod funciona:
-O protetor de tela pode ser carregado, mas esses avisos podem afetar a maneira como o protetor de tela funciona:
 Salvar configurações como
 Carregar configurações de
 Onde você deseja salvar as configurações atuais do kernel?
@@ -1463,8 +1434,6 @@ Falha ao remover um evento.
 Não foram fornecidos argumentos suficientes para adicionar um evento.
 Não há argumentos suficientes fornecidos para remover um evento.
 Não há argumentos suficientes fornecidos para manipulação de eventos.
-Falha ao adicionar ou remover um lembrete.
-Não foram fornecidos argumentos suficientes para adicionar ou remover um lembrete.
 Não há argumentos suficientes fornecidos para manipulação de lembretes.
 Lembrete sem título
 Evento sem título
@@ -1555,11 +1524,8 @@ Habilita a depuração para o sistema de eventos do kernel
 Fonte Figlet
 Escreva uma fonte figlet compatível com a biblioteca Figgle. Consulte a documentação da biblioteca para obter mais informações
 Falha ao instalar o idioma personalizado {0}.
-O arquivo de metadados necessário para instalar o idioma personalizado não existe.
 As informações de metadados necessárias para instalar o idioma personalizado não fornecem as localizações necessárias.
 Falha ao desinstalar o idioma personalizado {0}.
-O arquivo de metadados necessário para desinstalar o idioma personalizado não existe.
-As informações de metadados necessárias para desinstalar o idioma personalizado não fornecem as localizações necessárias.
 O comprimento do idioma inglês não corresponde ao comprimento do token de idioma fornecido.
 O idioma já existe e não pode ser substituído.
 Falha ao desinstalar o idioma personalizado. Muito provavelmente não existe.
@@ -1596,7 +1562,6 @@ Se ativado, usará o sistema de notificação para notificar o host sobre um err
 Fonte Figlet para temporizador
 Ativar Figlet para temporizador
 Se habilitado, usará figlet para timer. Observe que ele precisa de uma grande tela de console para renderizar a hora corretamente com o Figlet ativado.
-Erro ao analisar argumentos de linha de comando de pré-inicialização: {0}
 Redefine o kernel para as configurações de fábrica
 Ignora a detecção de tamanho do console
 Parece que você está ignorando a detecção de tamanho do console. As coisas podem não funcionar corretamente em telas pequenas.
@@ -1605,11 +1570,6 @@ Seu console é muito pequeno para funcionar corretamente:
 Fonte de figlet de banner
 Imprime uma string no console usando tipo de cor e impressão de linha com suporte a Figlet
 Imprime uma string no console usando tipo de cor e impressão de linha com suporte a formato e Figlet
-Remove permanentemente uma mensagem
-Remove permanentemente todas as mensagens do destinatário
-Desfazer a remoção de uma mensagem
-Desfaz a remoção de todas as mensagens do destinatário
-Desfazer exclusão não é implementado para POP3.
 Mostrar a contagem de comandos na ajuda
 Mostrar a contagem de comandos do shell na ajuda
 Mostrar os comandos mod contam com ajuda
@@ -1628,7 +1588,6 @@ Sai do shell se estiver executando no subshell
 Não pode matar a concha mãe!
 Não é possível sair do subshell.
 Arquivo não especificado. Saindo do escudo...
-As configurações para esta tela inicial estão disponíveis aqui.
 Cor da barra de progresso
 Abre as configurações do protetor de tela
 Abre as configurações de splash
@@ -1736,7 +1695,6 @@ Nível de cor vermelha:
 Nível de cor verde:
 Nível de cor azul:
 Sequência de cores RGB:
-O argumento deve ser numérico.
 O nível de cor vermelha deve ser numérico.
 O nível de cor verde deve ser numérico.
 O nível de cor azul deve ser numérico.
@@ -1750,7 +1708,6 @@ Se deve simular uma situação em que não há APM disponível. Se ativado, ele 
 Densidade de falha
 Quanto maior a porcentagem, mais densa a falha!
 A linguagem gangsta contém uma linguagem forte que pode fazer você se sentir desconfortável ao lê-la. Tem certeza de que deseja definir o idioma de qualquer maneira?
-Este mod está usando o método legado para executar os comandos. Isso é obsoleto. Entre em contato com o fornecedor do mod para migrar para os padrões atuais.
 O Dicionário de Inglês
 Informações da palavra para
 A API é licenciada sob
@@ -1762,4 +1719,3 @@ Exemplo na frase:
 Fontes usadas para definir
 Sinônimos:
 Antônimos:
-Este protetor de tela usa técnicas obsoletas para exibir seu conteúdo, que não funcionará mais a partir da próxima revisão da API KS. Entre em contato com o fornecedor para migrar para técnicas mais recentes e com suporte.

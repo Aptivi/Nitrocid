@@ -1,7 +1,6 @@
 Dostupnyye komandy: {0}
 Komandnaya in"yektsiya byla otmenena.
 Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
-Oshibka pri analize real'nykh argumentov komandnoy stroki: {0}
 Nevernyy tsvetovoy shablon {0}
 hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...
 CPU: odno ili neskol'ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
@@ -49,7 +48,6 @@ Pol'zovatel' {0} udalen.
 Oshibka pri popytke udalit' imya pol'zovatelya.
 Zaproshennaya zastavka {0} ne naydena.
 {0} byl pravil'no initsializirovan.
-{0} ne initsializirovan. V kode zastavki mogla vozniknut' oshibka pri initsializatsii.
 Zastavka {0} ne sushchestvuyet.
 {0} ustanovlen na zastavku po umolchaniyu.
 Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
@@ -231,7 +229,6 @@ Oshibka pri popytke poluchit' MOTD / MAL: {0}
 Oshibka pri popytke zapustit' zastavku iz-za nedopustimoy operatsii.
 Perezagruzka zapreshchena v bezopasnom rezhime.
 Parsing modov ne razreshen v bezopasnom rezhime.
-Oshibka pri popytke ustanovit' rezhim razbora. Prover'te znacheniye i poprobuyte snova. Yesli eto pravil'no, posmotrite trassirovku steka, kogda vklyuchena otladka yadra.
 Put' ne yavlyayetsya ni faylom, ni katalogom.
 Sozdayet druguyu kopiyu fayla v drugom kataloge ili imeni.
 Peremeshchayet fayl v drugoy katalog
@@ -409,7 +406,6 @@ Proveryat' obnovleniya pri zapuske
 Tikhiy zond
 Pokazyvat' MOTD pri vkhode v sistemu
 Ochistit' ekran pri vkhode v sistemu
-Pokazat' dostupnyye imena pol'zovateley
 Tsvetnaya obolochka
 Uproshchennaya komanda spravki
 Port otladki
@@ -743,7 +739,6 @@ Znacheniye tsveta vne diapazona 0–255.
 Oborachivayemaya komanda ne naydena.
 Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh
 Skachano {0} iz {1}.
-Zagruzheno {0} iz {1}.
 Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat'
 Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat' s podderzhkoy formata
 Pechatayet stroku v otladchik
@@ -939,7 +934,6 @@ Zapis' konfiguratsii {0} ne naydena.
 Ispol'zovat' udary v minutu
 Sleduyet li ispol'zovat' yedinitsu udarov v minutu dlya napisaniya sleduyushchego tsveta.
 Zaderzhka v udarakh v minutu
-Tsvet udara
 Skol'ko udarov v minutu nuzhno podozhdat' pered sleduyushchey zapis'yu?
 BeatFader vyberet sluchaynyye tsveta, yesli on vklyuchen. V protivnom sluchaye ispol'zuyte tsveta iz config.
 Pol'zovatel'skiy banner pri zapuske
@@ -1001,7 +995,6 @@ Ispol'zovaniye komandy:
 Imya fayla detali:
 Put' k faylu detali:
 Oshibka pri popytke zapuska skrinseyvera:
-Nedopustimyy tip puti.
 Nedopustimyy tip puti yadra.
 Predydushchaya zagruzka ne udalas'
 Redaktor JSON yeshche ne otkryl faylovyy potok.
@@ -1015,8 +1008,6 @@ Sokhranyayet fayl JSON
 Otkryvayet obolochku JSON
 Pechatayet fayl JSON
 Sleduyushchiy interval rampy
-Aktiviruyet podderzhku 255 tsvetov dlya Ramp.
-Aktiviruyet podderzhku istinnogo tsveta dlya Ramp.
 Skol'ko millisekund zhdat' pered zapolneniyem sleduyushchego pandusa?
 Tsvet zagolovka uvedomleniya
 Tsvet opisaniya uvedomleniya
@@ -1047,8 +1038,6 @@ Pokazyvayet datu i vremya lokal'nogo yadra
 Pokazyvayet vremya yadra UTC
 Pokazyvayet datu yadra UTC
 Pokazyvayet datu i vremya yadra UTC
-put' MOTD
-MAL-put'
 Kakoy fayl yavlyayetsya tekstovym faylom MOTD? Napishite absolyutnyy put' k tekstovomu faylu.
 Kakoy fayl yavlyayetsya tekstovym faylom MAL? Napishite absolyutnyy put' k tekstovomu faylu.
 Chernyy spisok modov
@@ -1058,7 +1047,6 @@ Perezagruzhayet vse mody
 Dobavlyayet mod v chernyy spisok
 Udalyayet mod iz chernogo spiska
 Vremya i data v formate UTC: {0}
-Ukazannaya komanda obolochki JSON ne naydena.
 Pokazyvat' informatsiyu o prilozhenii vo vremya zagruzki
 Razobrat' argumenty komandnoy stroki
 Pokazat' vremya okonchaniya etapa
@@ -1073,7 +1061,6 @@ Pokazyvayet tekushcheye vremya, chasovoy poyas i datu pered vkhodom v sistemu.
 Yesli vo vremya zagruzki yadra voznikayet neznachitel'naya oshibka, uvedomlyayet ob etom pol'zovatelya.
 Stil' podskazki imeni pol'zovatelya
 Stil' podskazki parolya
-Pokazyvat' MAL pri vkhode v sistemu
 Napishite, kak vy khotite, chtoby vashe priglasheniye dlya vkhoda bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
 Napishite, kakim vy khotite, chtoby vash parol' byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
 Pokazyvayet soobshcheniye dnya posle otobrazheniya ekrana vkhoda v sistemu.
@@ -1117,12 +1104,6 @@ Napishite, kakim vy khotite, chtoby vash parol' GPG byl. Ostav'te pustym, chtoby
 Skol'ko millisekund otpravlyat' ping IMAP?
 Skol'ko millisekund otpravlyat' SMTP ping?
 Upravlyayet tem, kak budet otobrazhat'sya tekst soobshcheniya.
-Prostoy tekst
-Peretekayushchiy tekst
-HTML-tekst
-Rasshirennyy tekst
-Szhatyy formatirovannyy tekst
-Bogatyy tekst
 Avtomaticheski zapuskat' udalennuyu otladku pri zapuske
 Format soobshcheniya udalennoy otladki
 Yesli vy khotite, chtoby udalennaya otladka zapuskalas' pri zagruzke, vklyuchite eto.
@@ -1270,7 +1251,6 @@ Kakoye minimal'noye kolichestvo vybrat'?
 Kakoye maksimal'noye chislo vybrat'?
 Napishite, kakoy vy khotite videt' informatsiyu na svoyey stranitse rukovodstva. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya zagolovka rukovodstva, {1} dlya redaktsii.
 Svoystvo {0} ne naydeno ni v odnom iz moduley.
-V etom razdele perechisleny obshchiye nastroyki ekrannoy zastavki. Dlya nastroyki otdel'nykh zastavok vyydite iz «Nastroyki» i otkroyte «Nastroyki zastavki».
 Zapustit' tsvetovoy krug v rezhime istinnogo tsveta
 Yesli ukazano, on budet otobrazhat' nastraivayemyy banner zapuska s podderzhkoy zapolniteley. Vy mozhete ispol'zovat' {0} dlya versii yadra.
 Kakoy variant tekushchego yazyka ispol'zuyetsya dlya izmeneniya nazvaniy mesyatsev, kalendarya i t. d.?
@@ -1293,7 +1273,6 @@ Tip dannykh zagruzki servera:
 Tip dannykh zagruzki servera:
 Pered vypolneniyem etoy operatsii neobkhodimo podklyuchit'sya k serveru.
 Vvedite udalennyy fayl dlya kheshirovaniya.
-Vvedite udalennyy katalog dlya kheshirovaniya.
 Vvedite udalennyy katalog.
 Rekursivnoye kheshirovaniye dlya FTP
 Sleduyet li rekursivno kheshirovat' katalog. Obratite vnimaniye, chto ne vse FTP-servery podderzhivayut eto.
@@ -1304,11 +1283,8 @@ Razmer diska:
 Obshchiy ob"yem pamyati:
 Videokarta:
 Model' diska:
-Maksimal'noye kolichestvo pisem na odnoy stranitse
 Kul'tura tekushchego yazyka
 Yesli vy uvereny, chto otkryli nuzhnyy razdel, prover'te eto soobshcheniye:
-Raznyye nastroyki...
-Nastroyki tsvetov...
 Vypolnyayet komandu FTP-servera
 Vvedite adres servera POP3 i port (<adres> ili <adres>:[port]):
 Stil' priglasheniya POP3 dlya pochty
@@ -1320,7 +1296,6 @@ Ispol'zovat' li POP3. Otklyucheniye etogo budet ispol'zovat' SMTP.
 Shifruyet stroku s pomoshch'yu CRC32
 Otkryvayet pochtovyy kliyent
 pochty peredano...
-Nastroyki etoy zastavki dostupny zdes'.
 Proveryayet funktsional'nost' tablitsy
 Redaktiruyet ukazannuyu stroku
 Dobavlyayet novyye stroki v konets fayla
@@ -1351,7 +1326,6 @@ Predostavlennyy fayl moda nesovmestim.
 Ne udalos' udalit'
 Otkryvayet URL
 Pechatat' nomera strok pri pechati soderzhimogo fayla
-Zastavlyayet komandu «koshka» pechatat' nomera strok fayla.
 Transliterirovannaya versiya
 Perevedennaya versiya
 Zakryvayet vse uvedomleniya
@@ -1385,7 +1359,6 @@ Ustanavlivayet HTTP-sayt. Dolzhen byt' dopustimym URI.
 Poluchayet otvet ot HTTP-servera, ispol'zuya ukazannyy zapros
 Udalyayet kontent s HTTP-servera
 Proizoshla oshibka v HTTP-obolochke:
-Soobshcheniye HTTP: zaproshennaya komanda {0} ne naydena. Sm. «pomoshch'» dlya polucheniya spiska dostupnykh komand, ukazannykh v obolochke HTTP.
 Poluchayet stroku s HTTP-servera, ispol'zuya ukazannyy zapros
 Polucheniye {0}...
 Nedopustimyy format URI sayta.
@@ -1437,8 +1410,6 @@ Ne udalos' poluchit' posledniye novosti.
 Tsvet vybrannogo varianta
 Pokazat' trassirovku steka pri oshibke yadra
 Yesli yest' kakaya-libo oshibka yadra, vyberite, sleduyet li vyvodit' trassirovku steka na konsol'.
-Mod mozhno zagruzit', no eti preduprezhdeniya mogut povliyat' na rabotu moda:
-Zastavka mozhet byt' zagruzhena, no eti preduprezhdeniya mogut povliyat' na rabotu zastavki:
 Sokhranit' nastroyki kak
 Zagruzit' nastroyki iz
 Gde vy khotite sokhranit' tekushchiye nastroyki yadra?
@@ -1463,8 +1434,6 @@ Ne udalos' udalit' sobytiye.
 Nedostatochno argumentov dlya dobavleniya sobytiya.
 Nedostatochno argumentov dlya udaleniya sobytiya.
 Nedostatochno argumentov dlya manipulirovaniya sobytiyami.
-Ne udalos' dobavit' ili udalit' napominaniye.
-Nedostatochno argumentov dlya dobavleniya ili udaleniya napominaniya.
 Nedostatochno argumentov dlya upravleniya napominaniyem.
 Napominaniye bez nazvaniya
 Meropriyatiye bez nazvaniya
@@ -1555,11 +1524,8 @@ Vklyuchayet otladku dlya sistemy sobytiy yadra.
 Figlet shrift
 Napishite shrift figlet, kotoryy podderzhivayetsya bibliotekoy Figgle. Obratites' k dokumentatsii biblioteki dlya polucheniya dopolnitel'noy informatsii.
 Ne udalos' ustanovit' pol'zovatel'skiy yazyk {0}.
-Fayl metadannykh, neobkhodimyy dlya ustanovki pol'zovatel'skogo yazyka, ne sushchestvuyet.
 Svedeniya o metadannykh, neobkhodimyye dlya ustanovki pol'zovatel'skogo yazyka, ne obespechivayut neobkhodimoy lokalizatsii.
 Ne udalos' udalit' pol'zovatel'skiy yazyk {0}.
-Fayl metadannykh, neobkhodimyy dlya udaleniya pol'zovatel'skogo yazyka, ne sushchestvuyet.
-Informatsiya metadannykh, neobkhodimaya dlya udaleniya pol'zovatel'skogo yazyka, ne obespechivayet neobkhodimykh lokalizatsiy.
 Dlina angliyskogo yazyka ne sootvetstvuyet dline predostavlennogo markera yazyka.
 YAzyk uzhe sushchestvuyet i ne mozhet byt' perezapisan.
 Ne udalos' udalit' pol'zovatel'skiy yazyk. Yego skoreye vsego ne sushchestvuyet.
@@ -1596,7 +1562,6 @@ Yesli vklyucheno, budet ispol'zovat' sistemu uvedomleniy dlya uvedomleniya khost
 Figlet shrift dlya taymera
 Vklyuchit' Figlet dlya taymera
 Yesli vklyucheno, budet ispol'zovat' figlet dlya taymera. Obratite vnimaniye, chto dlya pravil'nogo otobrazheniya vremeni s vklyuchennym Figlet trebuyetsya bol'shoy ekran konsoli.
-Oshibka pri sintaksicheskom analize argumentov komandnoy stroki pered zagruzkoy: {0}
 Sbrasyvayet yadro ​​k zavodskim nastroykam
 Obkhodit opredeleniye razmera konsoli
 Pokhozhe, vy obkhodite opredeleniye razmera konsoli. Na malen'kikh ekranakh vse mozhet rabotat' nepravil'no.
@@ -1605,11 +1570,6 @@ Vasha konsol' slishkom mala dlya pravil'noy raboty:
 Bannernyy shrift
 Vyvodit stroku na konsol', ispol'zuya tsvetnoy tip i lineynuyu pechat' s podderzhkoy Figlet.
 Vyvodit stroku na konsol', ispol'zuya tsvetnoy tip i lineynuyu pechat' s podderzhkoy formata i Figlet.
-Navsegda udalit' soobshcheniye
-Navsegda udalit' vse soobshcheniya ot poluchatelya
-Otmenyayet udaleniye soobshcheniya
-Otmenyayet udaleniye vsekh soobshcheniy ot poluchatelya
-Otmena udaleniya ne realizovana dlya POP3.
 Pokazat' kolichestvo komand v spravke
 Pokazat' kolichestvo komand obolochki v spravke
 Pokazat' kolichestvo komand moda v spravke
@@ -1628,7 +1588,6 @@ Vykhod iz obolochki pri rabote na podobolochke
 Ne mogu ubit' materinskuyu obolochku!
 Ne udayetsya vyyti iz podobolochki.
 Fayl ne ukazan. Vykhod iz obolochki...
-Nastroyki dlya etoy zastavki dostupny zdes'.
 Tsvet indikatora vypolneniya
 Otkryvayet nastroyki zastavki
 Otkryvayet nastroyki zastavki
@@ -1736,7 +1695,6 @@ Uroven' krasnogo tsveta:
 Uroven' zelenogo tsveta:
 Uroven' sinego tsveta:
 Tsvetovaya posledovatel'nost' RGB:
-Argument dolzhen byt' chislovym.
 Uroven' krasnogo tsveta dolzhen byt' chislovym.
 Uroven' zelenogo tsveta dolzhen byt' chislovym.
 Uroven' sinego tsveta dolzhen byt' chislovym.
@@ -1750,7 +1708,6 @@ Imitirovatʹ li situatsiyu, kogda net dostupnogo APM. Yesli on vklyuchen, on inf
 Plotnostʹ sboyev
 Chem bolʹshe protsent, tem plotneye glyuk!
 Gangsta-yazyk soderzhit grubyye vyrazheniya, kotoryye mogut vyzvatʹ u vas diskomfort pri chtenii. Vy uvereny, chto khotite ustanovitʹ yazyk v lyubom sluchaye?
-Etot mod ispolʹzuyet ustarevshiy metod dlya vypolneniya komand. Eto ustarelo. Pozhaluysta, svyazhitesʹ s prodavtsom moda, chtoby pereyti na tekushchiye standarty.
 Angliyskiy slovarʹ
 Informatsiya o slove dlya
 API nakhodit·sya pod litsenziyey
@@ -1762,4 +1719,3 @@ Primer v predlozhenii:
 Istochniki, ispolʹzuyemyye dlya opredeleniya
 Sinonimy:
 Antonimy:
-Eta zastavka ispolʹzuyet ustarevshiye metody otobrazheniya svoyego soderzhimogo, kotoryye bolʹshe ne budut rabotatʹ, nachinaya so sleduyushchey versii KS API. Svyazhitesʹ s postavshchikom, chtoby pereyti na boleye novyye podderzhivayemyye tekhnologii.

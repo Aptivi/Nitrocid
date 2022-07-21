@@ -1,7 +1,6 @@
 Dostupni komandy: {0}
 Vvedennya komandy skasovano.
 Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.
-Pomylka pid chas analizu realʹnykh arhumentiv komandnoho ryadka: {0}
 Nediysnyy shablon kolʹoru {0}
 hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...
 TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...
@@ -49,7 +48,6 @@ Korystuvacha {0} vydaleno.
 Pomylka pry sprobi vydalyty imʺya korystuvacha.
 Zapytuvanu zastavku {0} ne znaydeno.
 {0} bulo pravylʹno initsializovano.
-{0} ne initsializovano. Mozhlyvo, pid chas initsializatsiyi stalasya pomylka kodu zastavky.
 Zastavka {0} ne isnuye.
 {0} vstanovleno yak zastavku za umovchannyam.
 Zastavku {0} ne znaydeno v bazi danykh. Perevirte nazvu ta sprobuyte shche raz.
@@ -231,7 +229,6 @@ Pomylka pid chas sproby otrymaty MOTD/MAL: {0}
 Pomylka pid chas sproby zapustyty zastavku cherez nediysnu operatsiyu.
 Perezavantazhennya zaboroneno v bezpechnomu rezhymi.
 Rozbir modiv zaboroneno v bezpechnomu rezhymi.
-Pomylka pid chas sproby vstanovyty rezhym analizu. Perevirte znachennya ta sprobuyte shche raz. Yakshcho tse pravylʹno, podyvitʹsya trasuvannya steka, koly vvimkneno nalahodzhennya yadra.
 Shlyakh ne ye ni faylom, ni katalohom.
 Stvoryuye shche odnu kopiyu faylu v inshomu katalozi abo imeni.
 Peremishchuye fayl v inshyy kataloh
@@ -409,7 +406,6 @@ Perevirte nayavnistʹ onovlenʹ pid chas zapusku
 Tykhyy zond
 Pokazaty MOTD pid chas vkhodu
 Ochystyty ekran pid chas vkhodu
-Pokazaty dostupni imena korystuvachiv
 Kolʹorova obolonka
 Sproshchena komanda dovidky
 Port nalahodzhennya
@@ -743,7 +739,6 @@ Znachennya kolʹoru znakhodytʹsya za mezhamy diapazonu 0-255.
 Komandu, yaku mozhna obhornuty, ne znaydeno.
 Zapytuye slovo u vkazanomu ryadku abo v usikh ryadkakh
 Zavantazheno: {0} z {1}.
-Zavantazheno: {0} z {1}.
 Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta ryadkovoho druku
 Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk z pidtrymkoyu formatu
 Drukuye ryadok u nalahodzhuvach
@@ -939,7 +934,6 @@ Zapys konfihuratsiyi {0} ne znaydeno.
 Vykorystovuyte udariv za khvylynu
 Chy vykorystovuvaty odynytsyu udariv za khvylynu dlya zapysu nastupnoho kolʹoru.
 Zatrymka v udarakh za khvylynu
-Beat Color
 Skilʹky udariv na khvylynu potribno chekaty, persh nizh zrobyty nastupnyy zapys?
 BeatFader vybyratyme vypadkovi kolʹory, yakshcho vin uvimknenyy. V inshomu vypadku vykorystovuyte kolʹory z konfihuratsiyi.
 Spetsialʹnyy baner zapusku
@@ -1001,7 +995,6 @@ Vykorystannya komandy:
 Nazva faylu chastyny:
 Shlyakh do faylu chastyny:
 Pomylka pid chas sproby zapustyty zastavku:
-Nediysnyy typ shlyakhu.
 Nediysnyy typ shlyakhu do yadra.
 Poperednye zavantazhennya ne vdalosya
 Redaktor JSON shche ne vidkryv potik fayliv.
@@ -1015,8 +1008,6 @@ Zberihaye fayl JSON
 Vidkryvaye obolonku JSON
 Drukuye fayl JSON
 Nastupnyy interval narostannya
-Aktyvuye pidtrymku 255 kolʹoriv dlya Ramp.
-Aktyvuye pidtrymku realʹnoho kolʹoru dlya Ramp.
 Skilʹky milisekund chekaty, persh nizh zapovnyty nastupnu rampu?
 Kolir zaholovka spovishchennya
 Kolir opysu spovishchennya
@@ -1047,8 +1038,6 @@ Pokazuye lokalʹnu datu ta chas yadra
 Pokazuye chas yadra UTC
 Pokazuye datu yadra UTC
 Pokazuye datu ta chas yadra UTC
-Shlyakh MOTD
-Shlyakh MAL
 Yakyy fayl ye tekstovym faylom MOTD? Napyshitʹ absolyutnyy shlyakh do tekstovoho faylu.
 Yakyy fayl ye tekstovym faylom MAL? Napyshitʹ absolyutnyy shlyakh do tekstovoho faylu.
 Mody v chornomu spysku
@@ -1058,7 +1047,6 @@ Perezavantazhuye vsi mody
 Dodaye mod do chornoho spysku
 Vydalyaye mod z chornoho spysku
 Chas i data v UTC: {0}
-Vkazana komanda obolonky JSON ne znaydena.
 Pokazuvaty informatsiyu pro prohramu pid chas zavantazhennya
 Proanalizuyte arhumenty komandnoho ryadka
 Pokazaty chas zakinchennya etapu
@@ -1073,7 +1061,6 @@ Pokazuye potochnyy chas, chasovyy poyas i datu pered vkhodom v systemu.
 Yakshcho pid chas zavantazhennya yadra ye neznachna pomylka, povidomlyaye pro tse korystuvacha.
 Stylʹ pidkazky imeni korystuvacha
 Stylʹ pidkazky parolya
-Pokazaty MAL pid chas vkhodu
 Napyshitʹ, yak vy khochete, shchob vasha pidkazka vkhodu bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Napyshitʹ, yak vy khochete, shchob pidkazka vvedennya parolya bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Pokazuye povidomlennya dnya pislya vidobrazhennya ekrana vkhodu.
@@ -1117,12 +1104,6 @@ Napyshitʹ, yak vy khochete, shchob pidkazka parolya GPG bula. Zalyshte porozhni
 Skilʹky milisekund nadsylaty zapyt IMAP?
 Skilʹky milisekund nadsylaty SMTP ping?
 Keruye tym, yak bude vidobrazhatysya tekst lysta.
-Prostyy tekst
-Potik tekstu
-HTML tekst
-Zbahachenyy tekst
-Stysnutyy formatovanyy tekst
-Rozshyrenyy tekst
 Avtomatychno zapuskaty viddalene nalahodzhennya pid chas zapusku
 Format povidomlennya viddalenoho nalahodzhennya
 Yakshcho vy khochete, shchob viddalene nalahodzhennya pochynalosya pid chas zavantazhennya, uvimknitʹ tse.
@@ -1270,7 +1251,6 @@ Yaku minimalʹnu kilʹkistʹ vybraty?
 Yaku maksymalʹnu kilʹkistʹ vybraty?
 Napyshitʹ, yak vy khochete, shchob informatsiya na vashiy tsiy storintsi bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya. {0} dlya nazvy vruchnu, {1} dlya redaktsiyi.
 Vlastyvistʹ {0} ne znaydeno v zhodnomu z moduliv.
-U tsʹomu rozdili navedeno zahalʹni nalashtuvannya zastavky. Dlya okremykh nalashtuvanʹ zastavky vyyditʹ iz «Nalashtuvannya» ta vidkryyte «Nalashtuvannya zastavky».
 Zapustitʹ kolirne koleso v rezhymi realʹnoho kolʹoru
 Yakshcho vkazano, vidobrazhatymetʹsya nalashtovanyy baner zapusku z pidtrymkoyu zapovnyuvacha. Vy mozhete vykorystovuvaty {0} dlya versiyi yadra.
 Yakyy variant potochnoyi movy vykorystovuyetʹsya dlya zminy nazv misyatsiv, kalendarya toshcho?
@@ -1293,7 +1273,6 @@ Typ danykh zavantazhennya servera:
 Typ danykh zavantazhennya na server:
 Pered vykonannyam tsiyeyi operatsiyi neobkhidno pidklyuchytysya do servera.
 Vveditʹ viddalenyy fayl, yakyy potribno kheshuvaty.
-Vveditʹ viddalenyy kataloh dlya kheshuvannya.
 Vveditʹ viddalenyy kataloh.
 Rekursyvne kheshuvannya dlya FTP
 Chy potribno rekursyvno kheshuvaty kataloh. Zvernitʹ uvahu, shcho ne vsi FTP-servery pidtrymuyutʹ tse.
@@ -1304,11 +1283,8 @@ Rozmir dyska:
 Zahalʹna pam'yatʹ:
 videokarta:
 Modelʹ dyska:
-Maksymalʹna kilʹkistʹ elektronnykh lystiv na odniy storintsi
 Kulʹtura suchasnoyi movy
 Yakshcho vy vpevneni, shcho vidkryly pravylʹnyy rozdil, perehlyanʹte tse povidomlennya:
-Rizni nalashtuvannya...
-Nalashtuvannya kolʹoriv...
 Vykonuye komandu FTP-servera
 Vveditʹ adresu ta port servera POP3 (<adresa> abo <adresa>:[port]):
 Stylʹ pidkazok POP3 dlya poshty
@@ -1320,7 +1296,6 @@ Chy vykorystovuvaty POP3. Yakshcho vymknuty tse, bude vykorystovuvatysya SMTP.
 Shyfruye ryadok za dopomohoyu CRC32
 Vidkryvaye poshtovyy kliyent
 poshty peredano...
-Nalashtuvannya tsiyeyi zastavky dostupni tut.
 Testuye funktsionalʹnistʹ tablytsi
 Redahuye vkazanyy ryadok
 Dodaye novi ryadky v kinetsʹ faylu
@@ -1351,7 +1326,6 @@ Nadanyy fayl modu nesumisnyy.
 Ne vdalosya vydalyty
 Vidkryvaye URL-adresu
 Nadrukuyte nomery ryadkiv na drukovanomu vmisti faylu
-Zmushuye komandu \"cat\" drukuvaty nomery ryadkiv faylu.
 Transliterovana versiya
 Perekladena versiya
 Vidkhylyaye vsi spovishchennya
@@ -1385,7 +1359,6 @@ Vstanovlyuye HTTP-sayt. Povynen buty diysnym URI.
 Otrymuye vidpovidʹ vid servera HTTP za dopomohoyu vkazanoho zapytu
 Vydalyaye vmist iz HTTP-servera
 Stalasya pomylka v obolontsi HTTP:
-Povidomlennya HTTP: zapytanu komandu {0} ne znaydeno. Perehlyanʹte «dovidku», shchob otrymaty spysok dostupnykh komand, zaznachenykh v obolontsi HTTP.
 Oderzhuye ryadok iz servera HTTP za dopomohoyu vkazanoho zapytu
 Otrymannya {0}...
 Format URI saytu nediysnyy.
@@ -1437,8 +1410,6 @@ Ne vdalosya otrymaty ostanni novyny.
 Vybranyy variant kolʹoru
 Pokazaty trasuvannya steka pry pomyltsi yadra
 Yakshcho ye pomylka yadra, vyberitʹ, chy potribno drukuvaty trasuvannya steka na konsoli.
-Mod mozhna zavantazhyty, ale tsi poperedzhennya mozhutʹ vplynuty na robotu moda:
-Zastavku mozhna zavantazhyty, ale tsi poperedzhennya mozhutʹ vplynuty na robotu zastavky:
 Zberehty nalashtuvannya yak
 Zavantazhyty nalashtuvannya z
 De vy khochete zberehty potochni nalashtuvannya yadra?
@@ -1463,8 +1434,6 @@ Ne vdalosya vydalyty podiyu.
 Nedostatnʹo arhumentiv, shchob dodaty podiyu.
 Nedostatnʹo arhumentiv dlya vydalennya podiyi.
 Nedostatnʹo arhumentiv dlya manipulyuvannya podiyamy.
-Ne vdalosya dodaty abo vydalyty nahaduvannya.
-Nedostatnʹo arhumentiv, shchob dodaty abo vydalyty nahaduvannya.
 Nedostatnʹo arhumentiv dlya manipulyatsiyi z nahaduvannyam.
 Nahaduvannya bez nazvy
 Podiya bez nazvy
@@ -1555,11 +1524,8 @@ Vmykaye nalahodzhennya dlya systemy podiy yadra
 Filetkovyy shryft
 Napyshitʹ shryft figlet, yakyy pidtrymuyetʹsya bibliotekoyu Figgle. Dlya otrymannya dodatkovoyi informatsiyi zvernitʹsya do bibliotechnoyi dokumentatsiyi
 Ne vdalosya vstanovyty spetsialʹnu movu {0}.
-Fayl metadanykh, neobkhidnyy dlya vstanovlennya spetsialʹnoyi movy, ne isnuye.
 Informatsiya metadanykh, neobkhidna dlya vstanovlennya spetsialʹnoyi movy, ne zabezpechuye neobkhidnykh lokalizatsiy.
 Ne vdalosya vydalyty spetsialʹnu movu {0}.
-Fayl metadanykh, neobkhidnyy dlya vydalennya spetsialʹnoyi movy, ne isnuye.
-Informatsiya metadanykh, neobkhidna dlya vydalennya spetsialʹnoyi movy, ne zabezpechuye neobkhidnykh lokalizatsiy.
 Dovzhyna anhliysʹkoyi movy ne vidpovidaye dovzhyni nadanoho movnoho markera.
 Mova vzhe isnuye, i yiyi ne mozhna perezapysaty.
 Ne vdalosya vydalyty spetsialʹnu movu. Yoho, shvydshe za vse, ne isnuye.
@@ -1596,7 +1562,6 @@ Yakshcho vvimkneno, vykorystovuvatyme systemu spovishchenʹ, shchob spovistyty k
 Filetkovyy shryft dlya taymera
 Uvimknitʹ Figlet dlya taymera
 Yakshcho vvimkneno, vykorystovuvatyme figlet yak taymer. Zvernitʹ uvahu, shcho dlya pravylʹnoho vidobrazhennya chasu z uvimknenym Figlet potriben velykyy ekran konsoli.
-Pomylka pid chas analizu arhumentiv komandnoho ryadka pered zavantazhennyam: {0}
 Skydaye yadro ​​do zavodsʹkykh nalashtuvanʹ
 Obkhodytʹ vyznachennya rozmiru konsoli
 Skhozhe, vy obkhodyte vyznachennya rozmiru konsoli. Na malenʹkykh ekranakh vse mozhe pratsyuvaty nepravylʹno.
@@ -1605,11 +1570,6 @@ Vasha konsolʹ zamala dlya pravylʹnoyi roboty:
 Baner figlet shryft
 Drukuye ryadok na konsolʹ iz vykorystannyam kolʹorovoho typu ta druku ryadkiv iz pidtrymkoyu Filet
 Drukuye ryadok na konsoli, vykorystovuyuchy kolʹorovyy typ i ryadkovyy druk iz pidtrymkoyu formatu ta filet
-Nazavzhdy vydalyaye povidomlennya
-Nazavzhdy vydalyaye vsi povidomlennya vid oderzhuvacha
-Skasuvannya vydalennya povidomlennya
-Skasuye vydalennya vsikh povidomlenʹ vid oderzhuvacha
-Skasuvannya vydalennya ne realizovano dlya POP3.
 Pokazaty komandy rozrakhovuvaty na dopomohu
 Pokazaty, shcho komandy obolonky rozrakhovuyutʹ na dopomohu
 Pokazaty, shcho komandy moda rozrakhovuyutʹ na dopomohu
@@ -1628,7 +1588,6 @@ Vykhodytʹ z obolonky, yakshcho pratsyuye na pidobolontsi
 Ne mozhna vbyty materynsʹku obolonku!
 Ne vdayetʹsya vyyty z pidobolochky.
 Fayl ne vkazano. Vykhid z obolonky...
-Nalashtuvannya dlya tsʹoho zastavky dostupni tut.
 Kolir indykatora prohresu
 Vidkryvaye nalashtuvannya zastavky
 Vidkryvaye nalashtuvannya splesku
@@ -1736,7 +1695,6 @@ Rivenʹ chervonoho kolʹoru:
 Rivenʹ zelenoho kolʹoru:
 Rivenʹ synʹoho kolʹoru:
 Poslidovnistʹ kolʹoriv RGB:
-Arhument maye buty chyslovym.
 Rivenʹ chervonoho kolʹoru maye buty chyslovym.
 Rivenʹ zelenoho kolʹoru maye buty chyslovym.
 Rivenʹ synʹoho kolʹoru maye buty chyslovym.
@@ -1750,7 +1708,6 @@ Chy modelyuvaty sytuatsiyu, koly APM nedostupnyy. Yakshcho vvimkneno, vin inform
 Shchilʹnistʹ hlyukiv
 Chym bilʹshe vidsotok, tym shchilʹnishe hlyuk!
 Hanhstersʹka mova mistytʹ hrubi vyslovlyuvannya, yaki mozhutʹ zmusyty vas pochuvatysya nekomfortno, chytayuchy yiyi. Vy vpevneni, shcho vse odno khochete vstanovyty movu?
-Tsey mod vykorystovuye zastarilyy metod dlya vykonannya komand. Tse vzhe zastarilo. Shchob pereyty na potochni standarty, zvernitʹsya do postachalʹnyka modiv.
 Anhliysʹkyy slovnyk
 Word informatsiya dlya
 API litsenzovano za
@@ -1762,4 +1719,3 @@ Pryklad u rechenni:
 Dzherela, vykorystani dlya vyznachennya
 Synonimy:
 Antonimy:
-Tsya zastavka vykorystovuye zastarili metody dlya vidobrazhennya svoho vmistu, yaki bilʹshe ne pratsyuvatymutʹ, pochynayuchy z nastupnoyi versiyi KS API. Zvernitʹsya do postachalʹnyka, shchob pereyty na novishi pidtrymuvani metody.

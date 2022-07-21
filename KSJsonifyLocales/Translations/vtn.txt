@@ -1,7 +1,6 @@
 Các lệnh khả dụng: {0}
 Lệnh tiêm đã bị hủy bỏ.
 Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.
-Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}
 Mẫu màu không hợp lệ {0}
 hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
 CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...
@@ -49,7 +48,6 @@ Người dùng {0} đã đăng nhập. Đăng xuất và đăng nhập với tư
 Lỗi khi cố gắng xóa tên người dùng.
 Không tìm thấy trình bảo vệ màn hình được yêu cầu {0}.
 {0} đã được khởi tạo đúng cách.
-{0} đã không khởi tạo. Mã bảo vệ màn hình có thể đã gặp lỗi trong khi khởi tạo.
 Trình bảo vệ màn hình {0} không tồn tại.
 {0} được đặt thành trình bảo vệ màn hình mặc định.
 Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. Kiểm tra tên và thử lại.
@@ -231,7 +229,6 @@ Lỗi khi cố lấy MOTD / MAL: {0}
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
 Tải lại không được phép trong chế độ an toàn.
 Phân tích cú pháp mod không được phép trên chế độ an toàn.
-Lỗi khi cố gắng đặt chế độ phân tích cú pháp. Kiểm tra giá trị và thử lại. Nếu điều này là chính xác, hãy xem theo dõi ngăn xếp khi gỡ lỗi kernel được kích hoạt.
 Đường dẫn không phải là một tập tin hay một thư mục.
 Tạo một bản sao khác của một tập tin dưới thư mục hoặc tên khác nhau.
 Di chuyển một tập tin vào thư mục khác
@@ -409,7 +406,6 @@ Kiểm tra các bản cập nhật khi khởi động
 Thăm dò yên lặng
 Hiển thị MOTD khi đăng nhập
 Xóa màn hình khi đăng nhập
-Hiển thị tên người dùng có sẵn
 Vỏ màu
 Lệnh trợ giúp được đơn giản hóa
 Cổng gỡ lỗi
@@ -743,7 +739,6 @@ Giá trị màu nằm ngoài phạm vi 0-255.
 Không tìm thấy lệnh có thể bao bọc.
 Truy vấn một từ trong một dòng cụ thể hoặc tất cả các dòng
 Đã tải xuống {0} trong tổng số {1}.
-Đã tải lên {0} / {1}.
 In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng
 In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với hỗ trợ định dạng
 In một chuỗi để gỡ lỗi
@@ -939,7 +934,6 @@ Không tìm thấy mục nhập cấu hình {0}.
 Sử dụng nhịp mỗi phút
 Có sử dụng đơn vị Nhịp mỗi phút để viết màu tiếp theo hay không.
 Độ trễ theo nhịp mỗi phút
-Đánh bại màu
 Phải đợi bao nhiêu nhịp mỗi phút trước khi viết tiếp?
 BeatFader sẽ chọn màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Biểu ngữ khởi động tùy chỉnh
@@ -1001,7 +995,6 @@ Sử dụng lệnh:
 Tên tệp phần:
 Đường dẫn tệp một phần:
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình:
-Loại đường dẫn không hợp lệ.
 Loại đường dẫn nhân không hợp lệ.
 Khởi động trước không thành công
 Trình chỉnh sửa JSON chưa mở luồng tệp.
@@ -1015,8 +1008,6 @@ Lưu tệp JSON
 Mở trình bao JSON
 In tệp JSON
 Khoảng đoạn đường nối tiếp theo
-Kích hoạt hỗ trợ 255 màu cho Ramp.
-Kích hoạt hỗ trợ màu thực cho Ramp.
 Phải đợi bao nhiêu mili giây trước khi điền vào đoạn đường nối tiếp theo?
 Màu tiêu đề thông báo
 Màu mô tả thông báo
@@ -1047,8 +1038,6 @@ Hiển thị ngày và giờ hạt nhân cục bộ
 Hiển thị thời gian hạt nhân UTC
 Hiển thị ngày hạt nhân UTC
 Hiển thị ngày và giờ hạt nhân UTC
-Đường dẫn MOTD
-Đường dẫn MAL
 Tệp văn bản MOTD là tệp nào? Viết một đường dẫn tuyệt đối đến tệp văn bản.
 Tệp văn bản MAL là tệp nào? Viết một đường dẫn tuyệt đối đến tệp văn bản.
 Các mod trong danh sách đen
@@ -1058,7 +1047,6 @@ Tải lại tất cả các mod
 Thêm một mod vào danh sách đen
 Xóa một mod khỏi danh sách đen
 Ngày và giờ theo UTC: {0}
-Không tìm thấy lệnh shell JSON được chỉ định.
 Hiển thị thông tin ứng dụng trong khi khởi động
 Phân tích cú pháp các đối số dòng lệnh
 Hiển thị thời gian kết thúc giai đoạn
@@ -1073,7 +1061,6 @@ Hiển thị thời gian, múi giờ và ngày hiện tại trước khi đăng 
 Nếu có một lỗi nhỏ trong quá trình khởi động hạt nhân, hãy thông báo cho người dùng về nó.
 Kiểu nhắc tên người dùng
 Kiểu nhắc mật khẩu
-Hiển thị MAL khi đăng nhập
 Viết cách bạn muốn lời nhắc đăng nhập của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Viết cách bạn muốn lời nhắc mật khẩu của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Hiển thị Thông báo trong ngày sau khi hiển thị màn hình đăng nhập.
@@ -1117,12 +1104,6 @@ Viết cách bạn muốn lời nhắc mật khẩu GPG của mình. Để trố
 Bao nhiêu mili giây để gửi ping IMAP?
 Bao nhiêu mili giây để gửi ping SMTP?
 Kiểm soát cách hiển thị văn bản thư.
-Văn bản thô
-Văn bản có dòng
-Văn bản HTML
-Văn bản phong phú
-Văn bản đa dạng thức được nén
-Văn bản đa dạng thức
 Tự động bắt đầu gỡ lỗi từ xa khi khởi động
 Định dạng thông báo gỡ lỗi từ xa
 Nếu bạn muốn gỡ lỗi từ xa bắt đầu khi khởi động, hãy bật tính năng này.
@@ -1270,7 +1251,6 @@ Số lượng tối thiểu để chọn là gì?
 Số lượng tối đa để chọn là bao nhiêu?
 Viết thông tin trang chủ của bạn như thế nào. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp. {0} cho tiêu đề thủ công, {1} để sửa đổi.
 Thuộc tính {0} không được tìm thấy trên bất kỳ mô-đun nào.
-Phần này liệt kê các cài đặt bảo vệ màn hình chung. Đối với các cài đặt bảo vệ màn hình riêng lẻ, hãy thoát Cài đặt và mở Cài đặt trình bảo vệ màn hình.
 Bắt đầu bánh xe màu ở chế độ màu thực
 Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng {0} cho phiên bản hạt nhân.
 Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
@@ -1293,7 +1273,6 @@ Loại dữ liệu tải xuống máy chủ:
 Loại dữ liệu tải lên máy chủ:
 Bạn phải kết nối với máy chủ trước khi thực hiện thao tác này.
 Nhập tệp từ xa sẽ được băm.
-Nhập một thư mục từ xa để được băm.
 Nhập một thư mục từ xa.
 Băm đệ quy cho FTP
 Có nên băm một cách đệ quy một thư mục hay không. Xin lưu ý rằng không phải tất cả các máy chủ FTP đều hỗ trợ điều đó.
@@ -1304,11 +1283,8 @@ Kích thước đĩa:
 Tổng bộ nhớ:
 Card đồ họa:
 Mô hình đĩa:
-Số lượng e-mail tối đa trong một trang
 Văn hóa của ngôn ngữ hiện tại
 Nếu bạn chắc chắn rằng bạn đã mở đúng phần, hãy kiểm tra thông báo này:
-Cài đặt Khác ...
-Cài đặt Màu sắc ...
 Thực thi một lệnh máy chủ FTP
 Nhập địa chỉ máy chủ POP3 và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Kiểu lời nhắc POP3 cho thư
@@ -1320,7 +1296,6 @@ Có sử dụng POP3 hay không. Tắt tính năng này sẽ sử dụng SMTP.
 Mã hóa một chuỗi bằng CRC32
 Mở ứng dụng thư
 trong tổng số thư được chuyển ...
-Cài đặt cho trình bảo vệ màn hình này có sẵn tại đây.
 Kiểm tra chức năng của bảng
 Chỉnh sửa dòng được chỉ định
 Thêm các dòng mới vào cuối tệp
@@ -1351,7 +1326,6 @@ Tệp mod được cung cấp không tương thích.
 Gỡ cài đặt không thành công cho
 Mở một URL
 In số dòng trên nội dung tệp in
-Làm cho lệnh \ "cat \" in số dòng của tệp.
 Phiên bản chuyển ngữ
 Phiên bản đã dịch
 Loại bỏ tất cả các thông báo
@@ -1385,7 +1359,6 @@ Thoát khỏi HTTP shell và quay trở lại kernel
 Nhận phản hồi từ máy chủ HTTP bằng cách sử dụng yêu cầu được chỉ định
 Xóa nội dung khỏi máy chủ HTTP
 Đã xảy ra lỗi trong HTTP shell:
-Thông báo HTTP: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết danh sách các lệnh có sẵn được chỉ định trên HTTP shell.
 Lấy chuỗi từ máy chủ HTTP bằng cách sử dụng yêu cầu đã chỉ định
 Bắt {0} ...
 Định dạng URI của trang web không hợp lệ.
@@ -1437,8 +1410,6 @@ Không nhận được tin tức mới nhất.
 Màu tùy chọn đã chọn
 Hiển thị dấu vết ngăn xếp trên lỗi hạt nhân
 Nếu có bất kỳ lỗi hạt nhân nào, hãy chọn có in dấu vết ngăn xếp vào bảng điều khiển hay không.
-Mod có thể được tải, nhưng những cảnh báo này có thể ảnh hưởng đến cách hoạt động của mod:
-Trình bảo vệ màn hình có thể được tải, nhưng những cảnh báo này có thể ảnh hưởng đến cách trình bảo vệ màn hình hoạt động:
 Lưu cài đặt thành
 Tải cài đặt từ
 Bạn muốn lưu cài đặt hạt nhân hiện tại ở đâu?
@@ -1463,8 +1434,6 @@ Không thể xóa sự kiện.
 Không cung cấp đủ đối số để thêm một sự kiện.
 Không cung cấp đủ đối số để xóa một sự kiện.
 Không cung cấp đủ đối số cho thao tác sự kiện.
-Không thể thêm hoặc xóa lời nhắc.
-Không cung cấp đủ đối số để thêm hoặc xóa lời nhắc.
 Không cung cấp đủ đối số cho thao tác nhắc nhở.
 Lời nhắc không có tiêu đề
 Sự kiện không có tiêu đề
@@ -1555,11 +1524,8 @@ Cho phép gỡ lỗi cho hệ thống sự kiện hạt nhân
 Phông chữ Figlet
 Viết một phông chữ figlet được hỗ trợ bởi thư viện Figgle. Tham khảo tài liệu thư viện để biết thêm thông tin
 Không cài đặt được ngôn ngữ tùy chỉnh {0}.
-Tệp siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không tồn tại.
 Thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết.
 Không gỡ cài đặt được ngôn ngữ tùy chỉnh {0}.
-Tệp siêu dữ liệu cần thiết để gỡ cài đặt ngôn ngữ tùy chỉnh không tồn tại.
-Thông tin siêu dữ liệu cần thiết để gỡ cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết.
 Độ dài của ngôn ngữ tiếng Anh không khớp với độ dài của mã thông báo ngôn ngữ được cung cấp.
 Ngôn ngữ đã tồn tại và không thể bị ghi đè.
 Không gỡ cài đặt được ngôn ngữ tùy chỉnh. Nó rất có thể không tồn tại.
@@ -1596,7 +1562,6 @@ Nếu được bật, sẽ sử dụng hệ thống thông báo để thông bá
 Phông chữ Figlet cho bộ đếm thời gian
 Bật Figlet cho bộ đếm thời gian
 Nếu được bật, sẽ sử dụng figlet cho bộ đếm thời gian. Xin lưu ý rằng nó cần một màn hình điều khiển lớn để hiển thị thời gian chính xác khi bật Figlet.
-Lỗi khi phân tích cú pháp các đối số dòng lệnh trước khi khởi động: {0}
 Đặt lại hạt nhân về cài đặt gốc
 Bỏ qua phát hiện kích thước bảng điều khiển
 Có vẻ như bạn đang bỏ qua phần phát hiện kích thước bảng điều khiển. Mọi thứ có thể không hoạt động bình thường trên màn hình nhỏ.
@@ -1605,11 +1570,6 @@ Bảng điều khiển của bạn quá nhỏ để chạy bình thường:
 Phông chữ tượng nhỏ biểu ngữ
 In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với sự hỗ trợ của Figlet
 In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với định dạng và hỗ trợ Figlet
-Xóa tin nhắn vĩnh viễn
-Xóa vĩnh viễn tất cả tin nhắn khỏi người nhận
-Hoàn tác xóa một tin nhắn
-Hoàn tác xóa tất cả tin nhắn khỏi người nhận
-Hoàn tác xóa không được triển khai cho POP3.
 Hiển thị các lệnh đếm trên trợ giúp
 Hiển thị các lệnh shell đếm trên trợ giúp
 Hiển thị số lệnh mod khi được trợ giúp
@@ -1628,7 +1588,6 @@ Thoát khỏi shell nếu chạy trên subshell
 Không thể giết mẹ vỏ!
 Không thể đăng xuất khỏi vỏ con.
 Tệp không được chỉ định. Đang thoát khỏi trình bao ...
-Cài đặt cho màn hình giật gân này có sẵn tại đây.
 Màu thanh tiến trình
 Mở cài đặt bảo vệ màn hình
 Mở cài đặt giật gân
@@ -1736,7 +1695,6 @@ Mức độ màu đỏ:
 Mức độ màu xanh lá cây:
 Mức độ màu xanh lam:
 Chuỗi màu RGB:
-Đối số phải là số.
 Mức màu đỏ phải là số.
 Mức màu xanh lá cây phải là số.
 Mức màu xanh lam phải là số.
@@ -1750,7 +1708,6 @@ Có mô phỏng một tình huống không có sẵn APM hay không. Nếu đư�
 Mật độ trục trặc
 Tỷ lệ phần trăm càng lớn, trục trặc càng dày đặc!
 Ngôn ngữ gangsta chứa ngôn ngữ mạnh có thể khiến bạn cảm thấy không thoải mái khi đọc nó. Bạn có chắc chắn rằng bạn muốn đặt ngôn ngữ nào không?
-Mod này đang sử dụng phương thức kế thừa để thực hiện các lệnh. Điều này là lỗi thời. Vui lòng liên hệ với nhà cung cấp mod để chuyển sang các tiêu chuẩn hiện tại.
 Từ điển tiếng Anh
 Thông tin từ cho
 API được cấp phép theo
@@ -1762,4 +1719,3 @@ Ví dụ trong câu:
 Các nguồn được sử dụng để xác định
 Từ đồng nghĩa:
 Từ trái nghĩa:
-Trình bảo vệ màn hình này sử dụng các kỹ thuật lỗi thời để hiển thị nội dung của nó, sẽ không còn hoạt động kể từ bản sửa đổi API KS tiếp theo. Liên hệ với nhà cung cấp để chuyển sang các kỹ thuật mới hơn, được hỗ trợ.

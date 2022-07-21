@@ -1,7 +1,6 @@
 Available commands: {0}
 Command injection has been cancelled.
 Injected arguments will be scheduled to run at next reboot.
-Error while parsing real command-line arguments: {0}
 Invalid color template {0}
 hwprobe: Your hardware will be probed. Please wait...
 CPU: One or more of the CPU cores failed to be probed. Showing information anyway...
@@ -49,7 +48,6 @@ User {0} removed.
 Error trying to remove username.
 The requested screensaver {0} is not found.
 {0} has been initialized properly.
-{0} did not initialize. The screensaver code might have experienced an error while initializing.
 Screensaver {0} does not exist.
 {0} is set to default screensaver.
 Screensaver {0} not found in database. Check the name and try again.
@@ -231,7 +229,6 @@ Error when trying to get MOTD/MAL: {0}
 Error when trying to start screensaver, because of an invalid operation.
 Reloading not allowed in safe mode.
 Parsing mods not allowed on safe mode.
-Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.
 The path is neither a file nor a directory.
 Creates another copy of a file under different directory or name.
 Moves a file to another directory
@@ -409,7 +406,6 @@ Check for Updates on Startup
 Quiet Probe
 Show MOTD on Log-in
 Clear Screen on Log-in
-Show available usernames
 Colored Shell
 Simplified Help Command
 Debug Port
@@ -743,7 +739,6 @@ The color value is outside the range of 0-255.
 The wrappable command is not found.
 Queries a word in a specified line or all lines
 {0} of {1} downloaded.
-{0} of {1} uploaded.
 Prints a string to console using color type and line print
 Prints a string to console using color type and line print with format support
 Prints a string to debugger
@@ -939,7 +934,6 @@ Config entry {0} not found.
 Use Beats Per Minute
 Whether to use the Beats Per Minute unit to write the next color.
 Delay in Beats Per Minute
-Beat Color
 How many beats per minute to wait before making the next write?
 BeatFader will select random colors if it's enabled. Otherwise, use colors from config.
 Custom Startup Banner
@@ -1001,7 +995,6 @@ Command usage:
 Part file name:
 Part file path:
 Error when trying to start screensaver:
-Invalid path type.
 Invalid kernel path type.
 Previous boot failed
 The JSON editor hasn't opened a file stream yet.
@@ -1015,8 +1008,6 @@ Saves the JSON file
 Opens the JSON shell
 Prints the JSON file
 Next ramp interval
-Activates 255 color support for Ramp.
-Activates true color support for Ramp.
 How many milliseconds to wait before filling in the next ramp?
 Notification title color
 Notification description color
@@ -1047,8 +1038,6 @@ Shows local kernel date and time
 Shows UTC kernel time
 Shows UTC kernel date
 Shows UTC kernel date and time
-MOTD path
-MAL path
 Which file is the MOTD text file? Write an absolute path to the text file.
 Which file is the MAL text file? Write an absolute path to the text file.
 Blacklisted mods
@@ -1058,7 +1047,6 @@ Reloads all mods
 Adds a mod to the blacklist
 Removes a mod from the blacklist
 Time and date in UTC: {0}
-The specified JSON shell command is not found.
 Show app information during boot
 Parse command-line arguments
 Show stage finish times
@@ -1073,7 +1061,6 @@ Shows the current time, time zone, and date before logging in.
 If there is a minor fault during kernel boot, notifies the user about it.
 Username prompt style
 Password prompt style
-Show MAL on log-in
 Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed.
 Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed.
 Shows Message of the Day after displaying login screen.
@@ -1117,12 +1104,6 @@ Write how you want your GPG password prompt to be. Leave blank to use default st
 How many milliseconds to send the IMAP ping?
 How many milliseconds to send the SMTP ping?
 Controls how the mail text will be shown.
-Plain text
-Flowed text
-HTML text
-Enriched text
-Compressed rich text
-Rich text
 Automatically start remote debug on startup
 Remote debug message format
 If you want remote debug to start on boot, enable this.
@@ -1270,7 +1251,6 @@ What is the minimum number to choose?
 What is the maximum number to choose?
 Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision.
 Property {0} is not found on any of the modules.
-This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.
 Start color wheel in true color mode
 If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version.
 Which variant of the current language is being used to change the month names, calendar, etc.?
@@ -1293,7 +1273,6 @@ Server download data type:
 Server upload data type:
 You must connect to a server before performing this operation.
 Enter a remote file to be hashed.
-Enter a remote directory to be hashed.
 Enter a remote directory.
 Recursive hashing for FTP
 Whether to recursively hash a directory. Please note that not all the FTP servers support that.
@@ -1304,11 +1283,8 @@ Disk size:
 Total memory:
 Graphics card:
 Disk model:
-Maximum number of e-mails in one page
 Culture of the current language
 If you're sure that you've opened the right section, check this message out:
-Misc Settings...
-Colors Settings...
 Executes an FTP server command
 Enter POP3 server address and port (<address> or <address>:[port]): 
 POP3 prompt style for mail
@@ -1320,7 +1296,6 @@ Whether to use POP3. Disabling this will use SMTP.
 Encrypts a string using CRC32
 Opens the mail client
 of mail transferred...
-Settings for this screensaver are available here.
 Tests the table functionality
 Edits the specified line
 Adds the new lines at the end of the file
@@ -1351,7 +1326,6 @@ The mod file provided is incompatible.
 Uninstallation failed for
 Opens a URL
 Print line numbers on printing file contents
-Makes the \"cat\" command print the file's line numbers.
 Transliterated version
 Translated version
 Dismisses all notifications
@@ -1385,7 +1359,6 @@ Sets the HTTP site. Must be a valid URI.
 Gets the response from the HTTP server using the specified request
 Deletes content from HTTP server
 There was an error in the HTTP shell:
-HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell.
 Gets the string from the HTTP server using the specified request
 Getting {0}...
 The site URI format is invalid.
@@ -1437,8 +1410,6 @@ Failed to get the latest news.
 Selected option color
 Show stack trace on kernel error
 If there is any kernel error, choose whether or not to print the stack trace to the console.
-Mod can be loaded, but these warnings may impact the way the mod works:
-Screensaver can be loaded, but these warnings may impact the way the screensaver works:
 Save Settings As
 Load Settings From
 Where do you want to save the current kernel settings?
@@ -1463,8 +1434,6 @@ Failed to remove an event.
 Not enough arguments provided to add an event.
 Not enough arguments provided to remove an event.
 Not enough arguments provided for event manipulation.
-Failed to add or remove a reminder.
-Not enough arguments provided to add or remove a reminder.
 Not enough arguments provided for reminder manipulation.
 Untitled reminder
 Untitled event
@@ -1555,11 +1524,8 @@ Enables debugging for the kernel event system
 Figlet font
 Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
 Failed to install custom language {0}.
-The metadata file needed to install the custom language doesn't exist.
 The metadata information needed to install the custom language doesn't provide the necessary localizations needed.
 Failed to uninstall custom language {0}.
-The metadata file needed to uninstall the custom language doesn't exist.
-The metadata information needed to uninstall the custom language doesn't provide the necessary localizations needed.
 Length of the English language doesn't match the length of the language token provided.
 The language already exists and can't be overwritten.
 Failed to uninstall custom language. It most likely doesn't exist.
@@ -1596,7 +1562,6 @@ If enabled, will use the notification system to notify the host of remote debug 
 Figlet font for timer
 Enable Figlet for timer
 If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
-Error while parsing pre-boot command-line arguments: {0}
 Resets the kernel to the factory settings
 Bypasses the console size detection
 Looks like you're bypassing the console size detection. Things may not work properly on small screens.
@@ -1605,11 +1570,6 @@ Your console is too small to run properly:
 Banner figlet font
 Prints a string to console using color type and line print with Figlet support
 Prints a string to console using color type and line print with format and Figlet support
-Permanently removes a message
-Permanently removes all messages from recipient
-Undos removing a message
-Undos removing all messages from recipient
-Undo deletion is not implemented for POP3.
 Show the commands count on help
 Show the shell commands count on help
 Show the mod commands count on help
@@ -1628,7 +1588,6 @@ Exits the shell if running on subshell
 Can not kill the mother shell!
 Cannot log out from the subshell.
 File not specified. Exiting shell...
-Settings for this splash screen are available here.
 Progress bar color
 Opens the screensaver settings
 Opens the splash settings
@@ -1736,7 +1695,6 @@ Red color level:
 Green color level:
 Blue color level:
 RGB color sequence:
-The argument must be numeric.
 The red color level must be numeric.
 The green color level must be numeric.
 The blue color level must be numeric.
@@ -1750,7 +1708,6 @@ Whether to simulate a situation where there is no APM available. If enabled, it 
 Glitch density
 The greater the percentage, the more dense the glitch!
 The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?
-This mod is using the legacy method to execute the commands. This is obsolete. Please contact the mod vendor to migrate to the current standards.
 The English Dictionary
 Word information for
 API is licensed under
@@ -1762,4 +1719,3 @@ Example in Sentence:
 Sources used to define
 Synonyms:
 Antonyms:
-This screensaver uses obsolete techniques to display its contents, which will no longer work starting from the next KS API revision. Contact the vendor to migrate to newer, supported techniques.

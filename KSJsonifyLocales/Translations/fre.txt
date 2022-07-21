@@ -1,7 +1,6 @@
 Commandes disponibles: {0}
 L'injection de commande a été annulée.
 Les arguments injectés seront programmés pour s'exécuter au prochain redémarrage.
-Erreur lors de l'analyse des arguments de ligne de commande réels: {0}
 Modèle de couleur non valide {0}
 hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
 CPU: Un ou plusieurs des cœurs de la CPU n'ont pas été sondés. Montrer des informations quand même ...
@@ -49,7 +48,6 @@ Utilisateur {0} supprimé.
 Erreur lors de la tentative de suppression du nom d'utilisateur.
 L'économiseur d'écran demandé {0} est introuvable.
 {0} a été initialisé correctement.
-{0} n'a pas été initialisé. Le code de l'économiseur d'écran a peut-être rencontré une erreur lors de l'initialisation.
 L'économiseur d'écran {0} n'existe pas.
 {0} est défini sur l'écran de veille par défaut.
 Économiseur d'écran {0} introuvable dans la base de données. Vérifiez le nom et réessayez.
@@ -231,7 +229,6 @@ Erreur lors de la tentative d'obtention de MOTD / MAL: {0}
 Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
 Le rechargement n'est pas autorisé en mode sans échec.
 L'analyse des mods n'est pas autorisée en mode sans échec.
-Erreur lors de la tentative de définition du mode d'analyse. Vérifiez la valeur et réessayez. Si cela est correct, consultez la trace de la pile lorsque le débogage du noyau est activé.
 Le chemin n'est ni un fichier ni un répertoire.
 Crée une autre copie d'un fichier sous un répertoire ou un nom différent.
 Déplace un fichier vers un autre répertoire
@@ -409,7 +406,6 @@ Rechercher des mises à jour au démarrage
 Sonde silencieuse
 Afficher MOTD lors de la connexion
 Effacer l'écran lors de la connexion
-Afficher les noms d'utilisateur disponibles
 Coquille colorée
 Commande d'aide simplifiée
 Port de débogage
@@ -743,7 +739,6 @@ La valeur de la couleur est en dehors de la plage de 0-255.
 La commande enveloppable est introuvable.
 Interroge un mot dans une ligne spécifiée ou toutes les lignes
 {0} sur {1} téléchargés.
-{0} sur {1} téléchargés.
 Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne
 Imprime une chaîne sur la console à l'aide du type de couleur et de l'impression de ligne avec prise en charge du format
 Imprime une chaîne au débogueur
@@ -939,7 +934,6 @@ Konfigurationseintrag {0} nicht gefunden.
 Beats pro Minute verwenden
 Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
 Verzögerung in Schlägen pro Minute
-Beatfarbe
 Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
@@ -1001,7 +995,6 @@ Utilisation de la commande :
 Nom du fichier pièce :
 Chemin d'accès au fichier partiel :
 Erreur lors de la tentative de démarrage de l'économiseur d'écran :
-Type de chemin non valide.
 Type de chemin d'accès au noyau non valide.
 Le démarrage précédent a échoué
 L'éditeur JSON n'a pas encore ouvert de flux de fichiers.
@@ -1015,8 +1008,6 @@ Enregistre le fichier JSON
 Ouvre le shell JSON
 Imprime le fichier JSON
 Prochain intervalle de rampe
-Active la prise en charge de 255 couleurs pour Ramp.
-Active la prise en charge des couleurs vraies pour Ramp.
 Combien de millisecondes attendre avant de remplir la rampe suivante ?
 Couleur du titre de la notification
 Couleur de la description des notifications
@@ -1047,8 +1038,6 @@ Affiche la date et l'heure du noyau local
 Affiche l'heure UTC du noyau
 Affiche la date du noyau UTC
 Affiche la date et l'heure UTC du noyau
-Chemin MOTD
-Chemin MAL
 Quel fichier est le fichier texte MOTD ? Écrivez un chemin absolu vers le fichier texte.
 Quel fichier est le fichier texte MAL ? Écrivez un chemin absolu vers le fichier texte.
 Mods sur liste noire
@@ -1058,7 +1047,6 @@ Recharge tous les mods
 Ajoute un mod à la liste noire
 Supprime un mod de la liste noire
 Heure et date en UTC : {0}
-La commande shell JSON spécifiée est introuvable.
 Afficher les informations de l'application au démarrage
 Analyser les arguments de ligne de commande
 Afficher les heures d'arrivée des étapes
@@ -1073,7 +1061,6 @@ Affiche l'heure actuelle, le fuseau horaire et la date avant la connexion.
 S'il y a une erreur mineure lors du démarrage du noyau, en informe l'utilisateur.
 Style d'invite de nom d'utilisateur
 Style d'invite de mot de passe
-Afficher MAL à la connexion
 Écrivez comment vous voulez que votre invite de connexion soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Écrivez comment vous voulez que votre invite de mot de passe soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Affiche le message du jour après avoir affiché l'écran de connexion.
@@ -1117,12 +1104,6 @@ Vous avertit de tout nouveau message électronique.
 Combien de millisecondes pour envoyer le ping IMAP ?
 Combien de millisecondes pour envoyer le ping SMTP ?
 Contrôle la manière dont le texte de l'e-mail sera affiché.
-Texte brut
-Texte enchaîné
-Texte HTML
-Texte enrichi
-Texte enrichi compressé
-Texte riche
 Démarrer automatiquement le débogage à distance au démarrage
 Format du message de débogage à distance
 Si vous voulez que le débogage à distance démarre au démarrage, activez-le.
@@ -1270,7 +1251,6 @@ Quel est le nombre minimum à choisir ?
 Quel est le nombre maximum à choisir ?
 Écrivez comment vous voulez que les informations de votre page de manuel soient. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour le titre du manuel, {1} pour la révision.
 La propriété {0} n'est trouvée sur aucun des modules.
-Cette section répertorie les paramètres généraux de l'économiseur d'écran. Pour les paramètres individuels de l'économiseur d'écran, quittez Paramètres et ouvrez Paramètres de l'économiseur d'écran.
 Démarrer la roue chromatique en mode couleurs vraies
 Si spécifié, il affichera une bannière de démarrage personnalisée avec prise en charge des espaces réservés. Vous pouvez utiliser {0} pour la version du noyau.
 Quelle variante de la langue actuelle est utilisée pour modifier les noms de mois, le calendrier, etc. ?
@@ -1293,7 +1273,6 @@ Type de données de téléchargement du serveur :
 Type de données de téléchargement du serveur :
 Vous devez vous connecter à un serveur avant d'effectuer cette opération.
 Entrez un fichier distant à hacher.
-Entrez un répertoire distant à hacher.
 Entrez un répertoire distant.
 Hachage récursif pour FTP
 Indique s'il faut hacher récursivement un répertoire. Veuillez noter que tous les serveurs FTP ne le prennent pas en charge.
@@ -1304,11 +1283,8 @@ Taille du disque :
 Mémoire totale:
 Carte graphique:
 Modèle de disque :
-Nombre maximum d'e-mails sur une page
 Culture de la langue actuelle
 Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
-Paramètres divers...
-Paramètres de couleurs...
 Exécute une commande de serveur FTP
 Saisissez l'adresse et le port du serveur POP3 (<adresse> ou <adresse> :[port]) :
 Style d'invite POP3 pour le courrier
@@ -1320,7 +1296,6 @@ Que ce soit pour utiliser POP3. Désactiver cela utilisera SMTP.
 Crypte une chaîne en utilisant CRC32
 Ouvre le client de messagerie
 du courrier transféré...
-Les paramètres de cet économiseur d'écran sont disponibles ici.
 Teste la fonctionnalité du tableau
 Modifie la ligne spécifiée
 Ajoute les nouvelles lignes à la fin du fichier
@@ -1351,7 +1326,6 @@ Le fichier mod fourni est incompatible.
 La désinstallation a échoué pour
 Ouvre une URL
 Imprimer les numéros de ligne lors de l'impression du contenu du fichier
-Fait en sorte que la commande \"cat\" imprime les numéros de ligne du fichier.
 Version translittérée
 Version traduite
 Ignore toutes les notifications
@@ -1385,7 +1359,6 @@ Définit le site HTTP. Doit être un URI valide.
 Obtient la réponse du serveur HTTP à l'aide de la requête spécifiée
 Supprime le contenu du serveur HTTP
 Une erreur s'est produite dans le shell HTTP :
-Message HTTP : La commande demandée {0} est introuvable. Voir 'help' pour une liste des commandes disponibles spécifiées sur le shell HTTP.
 Obtient la chaîne du serveur HTTP à l'aide de la requête spécifiée
 Obtenir {0}...
 Le format URI du site n'est pas valide.
@@ -1437,8 +1410,6 @@ Impossible d'obtenir les dernières nouvelles.
 Couleur de l'option sélectionnée
 Afficher la trace de la pile en cas d'erreur du noyau
 S'il y a une erreur de noyau, choisissez d'imprimer ou non la trace de la pile sur la console.
-Le mod peut être chargé, mais ces avertissements peuvent avoir un impact sur le fonctionnement du mod :
-L'économiseur d'écran peut être chargé, mais ces avertissements peuvent avoir un impact sur le fonctionnement de l'économiseur d'écran :
 Enregistrer les paramètres sous
 Charger les paramètres depuis
 Où voulez-vous enregistrer les paramètres actuels du noyau ?
@@ -1463,8 +1434,6 @@ Impossible d'ajouter un événement.
 Pas assez d'arguments fournis pour ajouter un événement.
 Pas assez d'arguments fournis pour supprimer un événement.
 Pas assez d'arguments fournis pour la manipulation d'événements.
-Échec de l'ajout ou de la suppression d'un rappel.
-Pas assez d'arguments fournis pour ajouter ou supprimer un rappel.
 Pas assez d'arguments fournis pour la manipulation des rappels.
 Rappel sans titre
 Événement sans titre
@@ -1555,11 +1524,8 @@ Active le débogage pour le système d'événements du noyau
 Police Figlet
 Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d'informations
 Échec de l'installation de la langue personnalisée {0}.
-Le fichier de métadonnées nécessaire à l'installation de la langue personnalisée n'existe pas.
 Les informations de métadonnées nécessaires pour installer la langue personnalisée ne fournissent pas les localisations nécessaires.
 Échec de la désinstallation de la langue personnalisée {0}.
-Le fichier de métadonnées nécessaire pour désinstaller la langue personnalisée n'existe pas.
-Les informations de métadonnées nécessaires pour désinstaller la langue personnalisée ne fournissent pas les localisations nécessaires.
 La longueur de la langue anglaise ne correspond pas à la longueur du jeton de langue fourni.
 La langue existe déjà et ne peut pas être écrasée.
 Échec de la désinstallation de la langue personnalisée. Il n'existe probablement pas.
@@ -1596,7 +1562,6 @@ Si activé, utilisera le système de notification pour informer l'hôte de l'err
 Police Figlet pour la minuterie
 Activer Figlet pour la minuterie
 Si activé, utilisera figlet pour la minuterie. Veuillez noter qu'il a besoin d'un grand écran de console pour afficher correctement l'heure avec Figlet activé.
-Erreur lors de l'analyse des arguments de ligne de commande de pré-démarrage : {0}
 Réinitialise le noyau aux paramètres d'usine
 Contourne la détection de la taille de la console
 On dirait que vous contournez la détection de la taille de la console. Les choses peuvent ne pas fonctionner correctement sur les petits écrans.
@@ -1605,11 +1570,6 @@ Votre console est trop petite pour fonctionner correctement :
 Police figlet de la bannière
 Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le support Figlet
 Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne avec le format et la prise en charge de Figlet
-Supprime définitivement un message
-Supprime définitivement tous les messages du destinataire
-Annuler la suppression d'un message
-Annule la suppression de tous les messages du destinataire
-Annuler la suppression n'est pas implémenté pour POP3.
 Afficher le nombre de commandes dans l'aide
 Afficher le nombre de commandes shell dans l'aide
 Afficher les commandes de mod comptent sur l'aide
@@ -1628,7 +1588,6 @@ Quitte le shell s'il est exécuté sur un sous-shell
 Impossible de tuer la coquille mère !
 Impossible de se déconnecter du sous-shell.
 Fichier non spécifié. Sortie de coque...
-Les paramètres de cet écran de démarrage sont disponibles ici.
 Couleur de la barre de progression
 Ouvre les paramètres de l'économiseur d'écran
 Ouvre les paramètres de démarrage
@@ -1736,7 +1695,6 @@ Niveau de couleur rouge :
 Niveau de couleur verte :
 Niveau de couleur bleu :
 Séquence de couleurs RVB :
-L'argument doit être numérique.
 Le niveau de couleur rouge doit être numérique.
 Le niveau de couleur verte doit être numérique.
 Le niveau de couleur bleu doit être numérique.
@@ -1750,7 +1708,6 @@ S'il faut simuler une situation où il n'y a pas d'APM disponible. S'il est acti
 Densité de glitch
 Plus le pourcentage est élevé, plus le glitch est dense !
 Le langage gangsta contient un langage fort qui peut vous mettre mal à l'aise de le lire. Êtes-vous sûr de vouloir quand même définir la langue ?
-Ce mod utilise la méthode héritée pour exécuter les commandes. C'est obsolète. Veuillez contacter le fournisseur du mod pour migrer vers les normes actuelles.
 Le dictionnaire anglais
 Informations sur les mots pour
 L'API est sous licence
@@ -1762,4 +1719,3 @@ Exemple dans la phrase :
 Sources utilisées pour définir
 Synonymes :
 Antonymes :
-Cet économiseur d'écran utilise des techniques obsolètes pour afficher son contenu, qui ne fonctionnera plus à partir de la prochaine révision de l'API KS. Contactez le fournisseur pour migrer vers des techniques plus récentes et prises en charge.

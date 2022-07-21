@@ -1,7 +1,6 @@
 4v41l4bl3 c0mm4nd5: {0}
 c0mm4nd 1nj3c710n h45 b33n c4nc3ll3d.
 1nj3c73d 4r6um3n75 w1ll b3 5ch3dul3d 70 run 47 n3x7 r3b007.
-3rr0r wh1l3 p4r51n6 r34l c0mm4nd-l1n3 4r6um3n75: {0}
 1nv4l1d c0l0r 73mpl473 {0}
 hwpr0b3: y0ur h4rdw4r3 w1ll b3 pr0b3d. pl3453 w417...
 cpu: 0n3 0r m0r3 0f 7h3 cpu c0r35 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...
@@ -49,7 +48,6 @@ u53r {0} r3m0v3d.
 3rr0r 7ry1n6 70 r3m0v3 u53rn4m3.
 7h3 r3qu3573d 5cr33n54v3r {0} 15 n07 f0und.
 {0} h45 b33n 1n1714l1z3d pr0p3rly.
-{0} d1d n07 1n1714l1z3. 7h3 5cr33n54v3r c0d3 m16h7 h4v3 3xp3r13nc3d 4n 3rr0r wh1l3 1n1714l1z1n6.
 5cr33n54v3r {0} d035 n07 3x157.
 {0} 15 537 70 d3f4ul7 5cr33n54v3r.
 5cr33n54v3r {0} n07 f0und 1n d474b453. ch3ck 7h3 n4m3 4nd 7ry 4641n.
@@ -231,7 +229,6 @@ dump 1nf0rm4710n 647h3r3r cr45h3d wh3n 7ry1n6 70 637 1nf0rm4710n 4b0u7 {0}: {1}
 3rr0r wh3n 7ry1n6 70 574r7 5cr33n54v3r, b3c4u53 0f 4n 1nv4l1d 0p3r4710n.
 r3l04d1n6 n07 4ll0w3d 1n 54f3 m0d3.
 p4r51n6 m0d5 n07 4ll0w3d 0n 54f3 m0d3.
-3rr0r wh3n 7ry1n6 70 537 p4r53 m0d3. ch3ck 7h3 v4lu3 4nd 7ry 4641n. 1f 7h15 15 c0rr3c7, 533 7h3 574ck 7r4c3 wh3n k3rn3l d3bu661n6 15 3n4bl3d.
 7h3 p47h 15 n317h3r 4 f1l3 n0r 4 d1r3c70ry.
 cr34735 4n07h3r c0py 0f 4 f1l3 und3r d1ff3r3n7 d1r3c70ry 0r n4m3.
 m0v35 4 f1l3 70 4n07h3r d1r3c70ry
@@ -409,7 +406,6 @@ ch3ck f0r upd4735 0n 574r7up
 qu137 pr0b3
 5h0w m07d 0n l06-1n
 cl34r 5cr33n 0n l06-1n
-5h0w 4v41l4bl3 u53rn4m35
 c0l0r3d 5h3ll
 51mpl1f13d h3lp c0mm4nd
 d3bu6 p0r7
@@ -743,7 +739,6 @@ n0 4l145 c0mm4nd5.
 7h3 wr4pp4bl3 c0mm4nd 15 n07 f0und.
 qu3r135 4 w0rd 1n 4 5p3c1f13d l1n3 0r 4ll l1n35
 {0} 0f {1} d0wnl04d3d.
-{0} 0f {1} upl04d3d.
 pr1n75 4 57r1n6 70 c0n50l3 u51n6 c0l0r 7yp3 4nd l1n3 pr1n7
 pr1n75 4 57r1n6 70 c0n50l3 u51n6 c0l0r 7yp3 4nd l1n3 pr1n7 w17h f0rm47 5upp0r7
 pr1n75 4 57r1n6 70 d3bu663r
@@ -939,7 +934,6 @@ c0nf16 3n7ry {0} n07 f0und.
 u53 b3475 p3r m1nu73
 wh37h3r 70 u53 7h3 b3475 p3r m1nu73 un17 70 wr173 7h3 n3x7 c0l0r.
 d3l4y 1n b3475 p3r m1nu73
-b347 c0l0r
 h0w m4ny b3475 p3r m1nu73 70 w417 b3f0r3 m4k1n6 7h3 n3x7 wr173?
 b347f4d3r w1ll 53l3c7 r4nd0m c0l0r5 1f 17'5 3n4bl3d. 07h3rw153, u53 c0l0r5 fr0m c0nf16.
 cu570m 574r7up b4nn3r
@@ -1001,7 +995,6 @@ c0mm4nd u5463:
 p4r7 f1l3 n4m3:
 p4r7 f1l3 p47h:
 3rr0r wh3n 7ry1n6 70 574r7 5cr33n54v3r:
-1nv4l1d p47h 7yp3.
 1nv4l1d k3rn3l p47h 7yp3.
 pr3v10u5 b007 f41l3d
 7h3 j50n 3d170r h45n'7 0p3n3d 4 f1l3 57r34m y37.
@@ -1015,8 +1008,6 @@ r3m0v35 4 pr0p3r7y fr0m 7h3 j50n f1l3
 0p3n5 7h3 j50n 5h3ll
 pr1n75 7h3 j50n f1l3
 n3x7 r4mp 1n73rv4l
-4c71v4735 255 c0l0r 5upp0r7 f0r r4mp.
-4c71v4735 7ru3 c0l0r 5upp0r7 f0r r4mp.
 h0w m4ny m1ll153c0nd5 70 w417 b3f0r3 f1ll1n6 1n 7h3 n3x7 r4mp?
 n071f1c4710n 717l3 c0l0r
 n071f1c4710n d35cr1p710n c0l0r
@@ -1047,8 +1038,6 @@ h16h pr10r17y b0rd3r c0l0r
 5h0w5 u7c k3rn3l 71m3
 5h0w5 u7c k3rn3l d473
 5h0w5 u7c k3rn3l d473 4nd 71m3
-m07d p47h
-m4l p47h
 wh1ch f1l3 15 7h3 m07d 73x7 f1l3? wr173 4n 4b50lu73 p47h 70 7h3 73x7 f1l3.
 wh1ch f1l3 15 7h3 m4l 73x7 f1l3? wr173 4n 4b50lu73 p47h 70 7h3 73x7 f1l3.
 bl4ckl1573d m0d5
@@ -1058,7 +1047,6 @@ r3l04d5 4ll m0d5
 4dd5 4 m0d 70 7h3 bl4ckl157
 r3m0v35 4 m0d fr0m 7h3 bl4ckl157
 71m3 4nd d473 1n u7c: {0}
-7h3 5p3c1f13d j50n 5h3ll c0mm4nd 15 n07 f0und.
 5h0w 4pp 1nf0rm4710n dur1n6 b007
 p4r53 c0mm4nd-l1n3 4r6um3n75
 5h0w 57463 f1n15h 71m35
@@ -1073,7 +1061,6 @@ p4r535 7h3 c0mm4nd-l1n3 4r6um3n75 0n b007.
 1f 7h3r3 15 4 m1n0r f4ul7 dur1n6 k3rn3l b007, n071f135 7h3 u53r 4b0u7 17.
 u53rn4m3 pr0mp7 57yl3
 p455w0rd pr0mp7 57yl3
-5h0w m4l 0n l06-1n
 wr173 h0w y0u w4n7 y0ur l061n pr0mp7 70 b3. l34v3 bl4nk 70 u53 d3f4ul7 57yl3. pl4c3h0ld3r5 4r3 p4r53d.
 wr173 h0w y0u w4n7 y0ur p455w0rd pr0mp7 70 b3. l34v3 bl4nk 70 u53 d3f4ul7 57yl3. pl4c3h0ld3r5 4r3 p4r53d.
 5h0w5 m355463 0f 7h3 d4y 4f73r d15pl4y1n6 l061n 5cr33n.
@@ -1117,12 +1104,6 @@ wr173 h0w y0u w4n7 y0ur 6p6 p455w0rd pr0mp7 70 b3. l34v3 bl4nk 70 u53 d3f4ul7 57
 h0w m4ny m1ll153c0nd5 70 53nd 7h3 1m4p p1n6?
 h0w m4ny m1ll153c0nd5 70 53nd 7h3 5m7p p1n6?
 c0n7r0l5 h0w 7h3 m41l 73x7 w1ll b3 5h0wn.
-pl41n 73x7
-fl0w3d 73x7
-h7ml 73x7
-3nr1ch3d 73x7
-c0mpr3553d r1ch 73x7
-r1ch 73x7
 4u70m471c4lly 574r7 r3m073 d3bu6 0n 574r7up
 r3m073 d3bu6 m355463 f0rm47
 1f y0u w4n7 r3m073 d3bu6 70 574r7 0n b007, 3n4bl3 7h15.
@@ -1270,7 +1251,6 @@ wh47 15 7h3 m1n1mum numb3r 70 ch0053?
 wh47 15 7h3 m4x1mum numb3r 70 ch0053?
 wr173 h0w y0u w4n7 y0ur m4np463 1nf0rm4710n 70 b3. l34v3 bl4nk 70 u53 d3f4ul7 57yl3. pl4c3h0ld3r5 4r3 p4r53d. {0} f0r m4nu4l 717l3, {1} f0r r3v1510n.
 pr0p3r7y {0} 15 n07 f0und 0n 4ny 0f 7h3 m0dul35.
-7h15 53c710n l1575 7h3 63n3r4l 5cr33n54v3r 53771n65. f0r 1nd1v1du4l 5cr33n54v3r 53771n65, 3x17 53771n65 4nd 0p3n 5cr33n54v3r 53771n65.
 574r7 c0l0r wh33l 1n 7ru3 c0l0r m0d3
 1f 5p3c1f13d, 17 w1ll d15pl4y cu570m1z3d 574r7up b4nn3r w17h pl4c3h0ld3r 5upp0r7. y0u c4n u53 {0} f0r k3rn3l v3r510n.
 wh1ch v4r14n7 0f 7h3 curr3n7 l4n6u463 15 b31n6 u53d 70 ch4n63 7h3 m0n7h n4m35, c4l3nd4r, 37c.?
@@ -1293,7 +1273,6 @@ f7p 53rv3r 1nf0rm4710n
 53rv3r upl04d d474 7yp3:
 y0u mu57 c0nn3c7 70 4 53rv3r b3f0r3 p3rf0rm1n6 7h15 0p3r4710n.
 3n73r 4 r3m073 f1l3 70 b3 h45h3d.
-3n73r 4 r3m073 d1r3c70ry 70 b3 h45h3d.
 3n73r 4 r3m073 d1r3c70ry.
 r3cur51v3 h45h1n6 f0r f7p
 wh37h3r 70 r3cur51v3ly h45h 4 d1r3c70ry. pl3453 n073 7h47 n07 4ll 7h3 f7p 53rv3r5 5upp0r7 7h47.
@@ -1304,11 +1283,8 @@ d15k 51z3:
 7074l m3m0ry:
 6r4ph1c5 c4rd:
 d15k m0d3l:
-m4x1mum numb3r 0f 3-m41l5 1n 0n3 p463
 cul7ur3 0f 7h3 curr3n7 l4n6u463
 1f y0u'r3 5ur3 7h47 y0u'v3 0p3n3d 7h3 r16h7 53c710n, ch3ck 7h15 m355463 0u7:
-m15c 53771n65...
-c0l0r5 53771n65...
 3x3cu735 4n f7p 53rv3r c0mm4nd
 3n73r p0p3 53rv3r 4ddr355 4nd p0r7 (<4ddr355> 0r <4ddr355>:[p0r7]): 
 p0p3 pr0mp7 57yl3 f0r m41l
@@ -1320,7 +1296,6 @@ wh37h3r 70 u53 p0p3. d154bl1n6 7h15 w1ll u53 5m7p.
 3ncryp75 4 57r1n6 u51n6 crc32
 0p3n5 7h3 m41l cl13n7
 0f m41l 7r4n5f3rr3d...
-53771n65 f0r 7h15 5cr33n54v3r 4r3 4v41l4bl3 h3r3.
 73575 7h3 74bl3 func710n4l17y
 3d175 7h3 5p3c1f13d l1n3
 4dd5 7h3 n3w l1n35 47 7h3 3nd 0f 7h3 f1l3
@@ -1351,7 +1326,6 @@ m0d f1l3 15 n07 5p3c1f13d.
 un1n574ll4710n f41l3d f0r
 0p3n5 4 url
 pr1n7 l1n3 numb3r5 0n pr1n71n6 f1l3 c0n73n75
-m4k35 7h3 \"c47\" c0mm4nd pr1n7 7h3 f1l3'5 l1n3 numb3r5.
 7r4n5l173r473d v3r510n
 7r4n5l473d v3r510n
 d15m15535 4ll n071f1c4710n5
@@ -1385,7 +1359,6 @@ u53 7h3 b0rd3r c0l0r5 f0r 7h3 r4mp b4r. 1f d154bl3d, w1ll 63n3r473 4 6r3y b4r.
 6375 7h3 r35p0n53 fr0m 7h3 h77p 53rv3r u51n6 7h3 5p3c1f13d r3qu357
 d3l3735 c0n73n7 fr0m h77p 53rv3r
 7h3r3 w45 4n 3rr0r 1n 7h3 h77p 5h3ll:
-h77p m355463: 7h3 r3qu3573d c0mm4nd {0} 15 n07 f0und. 533 'h3lp' f0r 4 l157 0f 4v41l4bl3 c0mm4nd5 5p3c1f13d 0n h77p 5h3ll.
 6375 7h3 57r1n6 fr0m 7h3 h77p 53rv3r u51n6 7h3 5p3c1f13d r3qu357
 63771n6 {0}...
 7h3 5173 ur1 f0rm47 15 1nv4l1d.
@@ -1437,8 +1410,6 @@ f41l3d 70 637 7h3 l47357 n3w5.
 53l3c73d 0p710n c0l0r
 5h0w 574ck 7r4c3 0n k3rn3l 3rr0r
 1f 7h3r3 15 4ny k3rn3l 3rr0r, ch0053 wh37h3r 0r n07 70 pr1n7 7h3 574ck 7r4c3 70 7h3 c0n50l3.
-m0d c4n b3 l04d3d, bu7 7h353 w4rn1n65 m4y 1mp4c7 7h3 w4y 7h3 m0d w0rk5:
-5cr33n54v3r c4n b3 l04d3d, bu7 7h353 w4rn1n65 m4y 1mp4c7 7h3 w4y 7h3 5cr33n54v3r w0rk5:
 54v3 53771n65 45
 l04d 53771n65 fr0m
 wh3r3 d0 y0u w4n7 70 54v3 7h3 curr3n7 k3rn3l 53771n65?
@@ -1463,8 +1434,6 @@ f41l3d 70 r3m0v3 4n 3v3n7.
 n07 3n0u6h 4r6um3n75 pr0v1d3d 70 4dd 4n 3v3n7.
 n07 3n0u6h 4r6um3n75 pr0v1d3d 70 r3m0v3 4n 3v3n7.
 n07 3n0u6h 4r6um3n75 pr0v1d3d f0r 3v3n7 m4n1pul4710n.
-f41l3d 70 4dd 0r r3m0v3 4 r3m1nd3r.
-n07 3n0u6h 4r6um3n75 pr0v1d3d 70 4dd 0r r3m0v3 4 r3m1nd3r.
 n07 3n0u6h 4r6um3n75 pr0v1d3d f0r r3m1nd3r m4n1pul4710n.
 un717l3d r3m1nd3r
 un717l3d 3v3n7
@@ -1555,11 +1524,8 @@ cl34r5 4ll f1r3d 3v3n75
 f16l37 f0n7
 wr173 4 f16l37 f0n7 7h47 15 5upp0r73d by 7h3 f166l3 l1br4ry. c0n5ul7 7h3 l1br4ry d0cum3n74710n f0r m0r3 1nf0rm4710n
 f41l3d 70 1n574ll cu570m l4n6u463 {0}.
-7h3 m374d474 f1l3 n33d3d 70 1n574ll 7h3 cu570m l4n6u463 d035n'7 3x157.
 7h3 m374d474 1nf0rm4710n n33d3d 70 1n574ll 7h3 cu570m l4n6u463 d035n'7 pr0v1d3 7h3 n3c3554ry l0c4l1z4710n5 n33d3d.
 f41l3d 70 un1n574ll cu570m l4n6u463 {0}.
-7h3 m374d474 f1l3 n33d3d 70 un1n574ll 7h3 cu570m l4n6u463 d035n'7 3x157.
-7h3 m374d474 1nf0rm4710n n33d3d 70 un1n574ll 7h3 cu570m l4n6u463 d035n'7 pr0v1d3 7h3 n3c3554ry l0c4l1z4710n5 n33d3d.
 l3n67h 0f 7h3 3n6l15h l4n6u463 d035n'7 m47ch 7h3 l3n67h 0f 7h3 l4n6u463 70k3n pr0v1d3d.
 7h3 l4n6u463 4lr34dy 3x1575 4nd c4n'7 b3 0v3rwr1773n.
 f41l3d 70 un1n574ll cu570m l4n6u463. 17 m057 l1k3ly d035n'7 3x157.
@@ -1596,7 +1562,6 @@ n071fy 0n r3m073 d3bu6 c0nn3c710n 3rr0r
 f16l37 f0n7 f0r 71m3r
 3n4bl3 f16l37 f0r 71m3r
 1f 3n4bl3d, w1ll u53 f16l37 f0r 71m3r. pl3453 n073 7h47 17 n33d5 4 b16 c0n50l3 5cr33n 1n 0rd3r 70 r3nd3r 7h3 71m3 pr0p3rly w17h f16l37 3n4bl3d.
-3rr0r wh1l3 p4r51n6 pr3-b007 c0mm4nd-l1n3 4r6um3n75: {0}
 r35375 7h3 k3rn3l 70 7h3 f4c70ry 53771n65
 byp45535 7h3 c0n50l3 51z3 d373c710n
 l00k5 l1k3 y0u'r3 byp4551n6 7h3 c0n50l3 51z3 d373c710n. 7h1n65 m4y n07 w0rk pr0p3rly 0n 5m4ll 5cr33n5.
@@ -1605,11 +1570,6 @@ y0ur c0n50l3 15 700 5m4ll 70 run pr0p3rly:
 b4nn3r f16l37 f0n7
 pr1n75 4 57r1n6 70 c0n50l3 u51n6 c0l0r 7yp3 4nd l1n3 pr1n7 w17h f16l37 5upp0r7
 pr1n75 4 57r1n6 70 c0n50l3 u51n6 c0l0r 7yp3 4nd l1n3 pr1n7 w17h f0rm47 4nd f16l37 5upp0r7
-p3rm4n3n7ly r3m0v35 4 m355463
-p3rm4n3n7ly r3m0v35 4ll m3554635 fr0m r3c1p13n7
-und05 r3m0v1n6 4 m355463
-und05 r3m0v1n6 4ll m3554635 fr0m r3c1p13n7
-und0 d3l3710n 15 n07 1mpl3m3n73d f0r p0p3.
 5h0w 7h3 c0mm4nd5 c0un7 0n h3lp
 5h0w 7h3 5h3ll c0mm4nd5 c0un7 0n h3lp
 5h0w 7h3 m0d c0mm4nd5 c0un7 0n h3lp
@@ -1628,7 +1588,6 @@ p455w0rd m45k ch4r4c73r
 c4n n07 k1ll 7h3 m07h3r 5h3ll!
 c4nn07 l06 0u7 fr0m 7h3 5ub5h3ll.
 f1l3 n07 5p3c1f13d. 3x171n6 5h3ll...
-53771n65 f0r 7h15 5pl45h 5cr33n 4r3 4v41l4bl3 h3r3.
 pr06r355 b4r c0l0r
 0p3n5 7h3 5cr33n54v3r 53771n65
 0p3n5 7h3 5pl45h 53771n65
@@ -1736,7 +1695,6 @@ r3d c0l0r l3v3l:
 6r33n c0l0r l3v3l:
 blu3 c0l0r l3v3l:
 r6b c0l0r 53qu3nc3:
-7h3 4r6um3n7 mu57 b3 num3r1c.
 7h3 r3d c0l0r l3v3l mu57 b3 num3r1c.
 7h3 6r33n c0l0r l3v3l mu57 b3 num3r1c.
 7h3 blu3 c0l0r l3v3l mu57 b3 num3r1c.
@@ -1750,7 +1708,6 @@ wh37h3r 70 51mul473 4 517u4710n wh3r3 7h3r3 15 n0 4pm 4v41l4bl3. 1f 3n4bl3d, 17 
 6l17ch d3n517y
 7h3 6r3473r 7h3 p3rc3n7463, 7h3 m0r3 d3n53 7h3 6l17ch!
 7h3 64n6574 l4n6u463 c0n741n5 57r0n6 l4n6u463 7h47 m4y m4k3 y0u f33l unc0mf0r74bl3 r34d1n6 17. 4r3 y0u 5ur3 7h47 y0u w4n7 70 537 7h3 l4n6u463 4nyw4y5?
-7h15 m0d 15 u51n6 7h3 l364cy m37h0d 70 3x3cu73 7h3 c0mm4nd5. 7h15 15 0b50l373. pl3453 c0n74c7 7h3 m0d v3nd0r 70 m16r473 70 7h3 curr3n7 574nd4rd5.
 7h3 3n6l15h d1c710n4ry
 w0rd 1nf0rm4710n f0r
 4p1 15 l1c3n53d und3r
@@ -1762,4 +1719,3 @@ d3f1n1710n:
 50urc35 u53d 70 d3f1n3
 5yn0nym5:
 4n70nym5:
-7h15 5cr33n54v3r u535 0b50l373 73chn1qu35 70 d15pl4y 175 c0n73n75, wh1ch w1ll n0 l0n63r w0rk 574r71n6 fr0m 7h3 n3x7 k5 4p1 r3v1510n. c0n74c7 7h3 v3nd0r 70 m16r473 70 n3w3r, 5upp0r73d 73chn1qu35.

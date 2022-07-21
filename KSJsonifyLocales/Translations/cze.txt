@@ -1,7 +1,6 @@
 Dostupné příkazy: {0}
 Příkazové injekce byla zrušena.
 Vložené argumenty budou naplánovány na další restart.
-Chyba při analýze reálných argumentů příkazového řádku: {0}
 Neplatná šablona barev {0}
 hwprobe: Váš hardware bude testován. Prosím, čekejte...
 CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...
@@ -49,7 +48,6 @@ Uživatel {0} byl odstraněn.
 Chyba při pokusu o odebrání uživatelského jména.
 Požadovaný spořič obrazovky {0} nebyl nalezen.
 {0} bylo správně inicializováno.
-{0} nebyl inicializován. Kód spořiče obrazovky mohl při inicializaci zaznamenat chybu.
 Spořič obrazovky {0} neexistuje.
 {0} je nastaven na výchozí spořič obrazovky.
 Spořič obrazovky {0} nebyl nalezen v databázi. Zkontrolujte název a zkuste to znovu.
@@ -231,7 +229,6 @@ Chyba při pokusu získat MOTD / MAL: {0}
 Chyba při pokusu o spuštění spořiče obrazovky z důvodu neplatné operace.
 Obnovení není povoleno v nouzovém režimu.
 Režimy analýzy nejsou v bezpečném režimu povoleny.
-Chyba při pokusu o nastavení režimu analýzy. Zkontrolujte hodnotu a akci opakujte. Pokud je to správné, podívejte se na trasování zásobníku, když je povoleno ladění jádra.
 Cesta není ani soubor, ani adresář.
 Vytvoří další kopii souboru pod jiným adresářem nebo názvem.
 Přesune soubor do jiného adresáře
@@ -409,7 +406,6 @@ Zkontrolujte aktualizace při spuštění
 Tichá sonda
 Zobrazit MOTD při přihlášení
 Vymazat obrazovku při přihlášení
-Zobrazit dostupná uživatelská jména
 Barevná skořápka
 Zjednodušený příkaz nápovědy
 Debug Port
@@ -743,7 +739,6 @@ De kleurwaarde ligt buiten het bereik van 0-255.
 De wrappable-opdracht is niet gevonden.
 Vraagt ​​een woord in een opgegeven regel of alle regels
 {0} van {1} gedownload.
-{0} van {1} geüpload.
 Drukt een string af naar console met behulp van kleurtype en lijnafdruk
 Drukt een string af naar console met kleurtype en lijnafdruk met formaatondersteuning with
 Drukt een string af naar debugger
@@ -939,7 +934,6 @@ Záznam konfigurace {0} nebyl nalezen.
 Používejte údery za minutu
 Zda použít jednotku Beats Per Minute k napsání další barvy.
 Zpoždění v úderech za minutu
-Porazte barvu
 Kolik úderů za minutu počkat, než začnete psát další?
 BeatFader vybere náhodné barvy, pokud je povolen. Jinak použijte barvy z config.
 Vlastní banner pro spuštění
@@ -1001,7 +995,6 @@ Použití příkazů:
 Název souboru části:
 Cesta k souboru části:
 Chyba při pokusu o spuštění spořiče obrazovky:
-Neplatný typ cesty.
 Neplatný typ cesty jádra.
 Předchozí spuštění se nezdařilo
 Editor JSON ještě neotevřel souborový stream.
@@ -1015,8 +1008,6 @@ Uloží soubor JSON
 Otevře prostředí JSON
 Vytiskne soubor JSON
 Další interval rampy
-Aktivuje podporu 255 barev pro Ramp.
-Aktivuje podporu skutečných barev pro Ramp.
 Kolik milisekund čekat před vyplněním další rampy?
 Barva nadpisu oznámení
 Barva popisu oznámení
@@ -1047,8 +1038,6 @@ Zobrazuje datum a čas místního jádra
 Zobrazuje čas jádra UTC
 Zobrazuje datum jádra UTC
 Zobrazuje datum a čas jádra UTC
-cesta MOTD
-Cesta MAL
 Který soubor je textový soubor MOTD? Napište absolutní cestu k textovému souboru.
 Který soubor je textový soubor MAL? Napište absolutní cestu k textovému souboru.
 Mody na černé listině
@@ -1058,7 +1047,6 @@ Znovu načte všechny mody
 Přidá mod na černou listinu
 Odebere mod z černé listiny
 Čas a datum v UTC: {0}
-Zadaný příkaz prostředí JSON nebyl nalezen.
 Zobrazovat informace o aplikaci během spouštění
 Analyzujte argumenty příkazového řádku
 Zobrazit časy dokončení etapy
@@ -1073,7 +1061,6 @@ Zobrazuje aktuální čas, časové pásmo a datum před přihlášením.
 Pokud během bootování jádra dojde k menší chybě, upozorní na to uživatele.
 Styl výzvy pro uživatelské jméno
 Styl výzvy k zadání hesla
-Zobrazit MAL při přihlášení
 Napište, jak chcete, aby byla vaše výzva k přihlášení. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
 Napište, jak chcete, aby vaše výzva k zadání hesla vypadala. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
 Zobrazí zprávu dne po zobrazení přihlašovací obrazovky.
@@ -1117,12 +1104,6 @@ Napište, jak chcete, aby vaše výzva k zadání hesla GPG vypadala. Chcete-li 
 Kolik milisekund odeslat IMAP ping?
 Kolik milisekund odeslat SMTP ping?
 Určuje, jak se bude zobrazovat text pošty.
-Prostý text
-Plynulý text
-HTML text
-Obohacený text
-Komprimovaný formátovaný text
-Bohatý text
 Automaticky spustit vzdálené ladění při spuštění
 Formát zprávy vzdáleného ladění
 Pokud chcete, aby se vzdálené ladění spustilo při bootování, povolte toto.
@@ -1270,7 +1251,6 @@ Jaký je minimální počet pro výběr?
 Jaký je maximální počet na výběr?
 Napište, jak chcete, aby byly informace o vaší manpage. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány. {0} pro název manuálu, {1} pro revizi.
 Vlastnost {0} nebyla nalezena v žádném z modulů.
-Tato část uvádí obecná nastavení spořiče obrazovky. Pro individuální nastavení spořiče obrazovky ukončete Nastavení a otevřete Nastavení spořiče obrazovky.
 Spusťte barevné kolo v režimu skutečných barev
 Pokud je zadán, zobrazí přizpůsobený úvodní banner s podporou zástupných symbolů. Pro verzi jádra můžete použít {0}.
 Která varianta aktuálního jazyka se používá ke změně názvů měsíců, kalendáře atd.?
@@ -1293,7 +1273,6 @@ Typ dat pro stahování serveru:
 Typ dat pro nahrávání serveru:
 Před provedením této operace se musíte připojit k serveru.
 Zadejte vzdálený soubor, který má být hašován.
-Zadejte vzdálený adresář, který má být hašován.
 Zadejte vzdálený adresář.
 Rekurzivní hašování pro FTP
 Zda rekurzivně hashovat adresář. Upozorňujeme, že ne všechny FTP servery to podporují.
@@ -1304,11 +1283,8 @@ Velikost disku:
 Celková paměť:
 Grafická karta:
 Model disku:
-Maximální počet e-mailů na jedné stránce
 Kultura současného jazyka
 Pokud jste si jisti, že jste otevřeli správnou sekci, podívejte se na tuto zprávu:
-Různá nastavení...
-Nastavení barev...
 Provede příkaz FTP serveru
 Zadejte adresu a port POP3 serveru (<adresa> nebo <adresa>:[port]):
 Styl výzvy POP3 pro poštu
@@ -1320,7 +1296,6 @@ Zda použít POP3. Pokud toto zakážete, použije se SMTP.
 Zašifruje řetězec pomocí CRC32
 Otevře poštovního klienta
 přenesené pošty...
-Nastavení pro tento spořič obrazovky jsou k dispozici zde.
 Testuje funkčnost tabulky
 Upraví zadaný řádek
 Přidá nové řádky na konec souboru
@@ -1351,7 +1326,6 @@ Poskytnutý soubor modu je nekompatibilní.
 Odinstalace se nezdařila pro
 Otevře adresu URL
 Tisk čísel řádků na obsah tiskového souboru
-Způsobí, že příkaz \"cat\" vytiskne čísla řádků souboru.
 Přepsaná verze
 Přeložená verze
 Zavře všechna oznámení
@@ -1385,7 +1359,6 @@ Nastaví web HTTP. Musí být platný identifikátor URI.
 Získá odpověď ze serveru HTTP pomocí zadaného požadavku
 Odstraní obsah ze serveru HTTP
 V prostředí HTTP došlo k chybě:
-Zpráva HTTP: Požadovaný příkaz {0} nebyl nalezen. Viz 'help' pro seznam dostupných příkazů specifikovaných v HTTP shellu.
 Získá řetězec ze serveru HTTP pomocí zadaného požadavku
 Získávání {0}...
 Formát URI webu je neplatný.
@@ -1437,8 +1410,6 @@ Nepodařilo se získat nejnovější zprávy.
 Barva vybrané možnosti
 Zobrazit trasování zásobníku při chybě jádra
 Pokud dojde k nějaké chybě jádra, zvolte, zda se má nebo nemá tisknout trasování zásobníku do konzoly.
-Mod lze načíst, ale tato varování mohou ovlivnit způsob, jakým mod funguje:
-Spořič obrazovky lze načíst, ale tato varování mohou ovlivnit fungování spořiče obrazovky:
 Uložit nastavení jako
 Načíst nastavení z
 Kam chcete uložit aktuální nastavení jádra?
@@ -1463,8 +1434,6 @@ Odebrání události se nezdařilo.
 Nebyl zadán dostatek argumentů pro přidání události.
 Nebyl zadán dostatek argumentů k odstranění události.
 Není k dispozici dostatek argumentů pro manipulaci s událostmi.
-Připomenutí se nepodařilo přidat nebo odebrat.
-Nebyl zadán dostatek argumentů pro přidání nebo odstranění připomenutí.
 Nebyl poskytnut dostatek argumentů pro manipulaci s upomínkami.
 Připomenutí bez názvu
 Akce bez názvu
@@ -1555,11 +1524,8 @@ Umožňuje ladění systému událostí jádra
 Figurka písmo
 Napište figlet font, který je podporován knihovnou Figgle. Více informací naleznete v dokumentaci knihovny
 Nepodařilo se nainstalovat vlastní jazyk {0}.
-Soubor metadat potřebný k instalaci vlastního jazyka neexistuje.
 Informace o metadatech potřebné k instalaci vlastního jazyka neposkytují potřebné lokalizace.
 Vlastní jazyk {0} se nepodařilo odinstalovat.
-Soubor metadat potřebný k odinstalaci vlastního jazyka neexistuje.
-Informace o metadatech potřebné k odinstalaci vlastního jazyka neposkytují potřebné lokalizace.
 Délka anglického jazyka neodpovídá délce poskytnutého jazykového tokenu.
 Jazyk již existuje a nelze jej přepsat.
 Vlastní jazyk se nepodařilo odinstalovat. S největší pravděpodobností neexistuje.
@@ -1596,7 +1562,6 @@ Pokud je povoleno, použije systém upozornění k upozornění hostitele na chy
 Figlet písmo pro časovač
 Povolit Figlet pro časovač
 Pokud je povoleno, bude pro časovač používat figlet. Vezměte prosím na vědomí, že potřebuje velkou obrazovku konzoly, aby správně vykresloval čas s povoleným Figletem.
-Chyba při analýze argumentů příkazového řádku před spuštěním: {0}
 Resetuje jádro na tovární nastavení
 Obchází zjišťování velikosti konzoly
 Zdá se, že obcházíte detekci velikosti konzoly. Na malých obrazovkách nemusí věci fungovat správně.
@@ -1605,11 +1570,6 @@ Vaše konzole je příliš malá na to, aby fungovala správně:
 Písmo figurky nápisu
 Vytiskne řetězec do konzoly pomocí barevného typu a čárového tisku s podporou Figlet
 Vytiskne řetězec do konzoly pomocí barevného typu a čárového tisku s podporou formátu a Figlet
-Trvale odstraní zprávu
-Trvale odstraní všechny zprávy od příjemce
-Vrátí zpět odebrání zprávy
-Vrátí zpět odebrání všech zpráv od příjemce
-Zpětné odstranění není implementováno pro POP3.
 Zobrazit příkazy počítat s nápovědou
 Zobrazit příkazy shellu počítejte s nápovědou
 Ukažte příkazům modu počítat s nápovědou
@@ -1628,7 +1588,6 @@ Opustí shell, pokud běží na subshell
 Nemůže zabít matku shell!
 Nelze se odhlásit z podshell.
 Soubor není zadán. Opuštění shellu...
-Nastavení pro tuto úvodní obrazovku jsou k dispozici zde.
 Barva ukazatele průběhu
 Otevře nastavení spořiče obrazovky
 Otevře úvodní nastavení
@@ -1736,7 +1695,6 @@ Převede hexadecimální reprezentaci barvy na čísla RGB ve formátu KS.
 Úroveň zelené barvy:
 Úroveň modré barvy:
 Sekvence barev RGB:
-Argument musí být číselný.
 Úroveň červené barvy musí být číselná.
 Úroveň zelené barvy musí být číselná.
 Úroveň modré barvy musí být číselná.
@@ -1750,7 +1708,6 @@ Zda se má simulovat situace, kdy není k dispozici APM. Pokud je povoleno, info
 Hustota závad
 Čím větší procento, tím hustší závada!
 Jazyk gangsta obsahuje silné výrazy, které vám mohou při čtení způsobit nepříjemné pocity. Jste si jisti, že chcete přesto nastavit jazyk?
-Tento mod používá k provádění příkazů starší metodu. Toto je zastaralé. Chcete-li migrovat na aktuální standardy, kontaktujte dodavatele modu.
 Anglický slovník
 Slovní informace pro
 API je licencováno pod
@@ -1762,4 +1719,3 @@ Příklad ve větě:
 Zdroje používané k definování
 Synonyma:
 Antonyma:
-Tento spořič obrazovky používá k zobrazení svého obsahu zastaralé techniky, které od příští revize rozhraní KS API již nebudou fungovat. Chcete-li migrovat na novější podporované techniky, kontaktujte dodavatele.

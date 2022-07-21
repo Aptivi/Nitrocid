@@ -1,7 +1,6 @@
 Kullanılabilir komutlar: {0}
 Komut enjeksiyonu iptal edildi.
 Enjekte edilen argümanlar bir sonraki yeniden başlatmada çalışacak şekilde programlanacaktır.
-Gerçek komut satırı bağımsız değişkenleri ayrıştırılırken hata oluştu: {0}
 Geçersiz renk şablonu {0}
 hwprobe: Donanımınız incelenecek. Lütfen bekle...
 CPU: Bir veya daha fazla CPU çekirdeği araştırılamadı. Yine de bilgi gösteriliyor...
@@ -49,7 +48,6 @@ Boş kullanıcı adı.
 Kullanıcı adını kaldırmaya çalışırken hata oluştu.
 İstenen ekran koruyucu {0} bulunamadı.
 {0} düzgün bir şekilde başlatıldı.
-{0} başlatılamadı. Ekran koruyucu kodu başlatılırken bir hatayla karşılaşmış olabilir.
 {0} ekran koruyucusu mevcut değil.
 {0}, varsayılan ekran koruyucuya ayarlandı.
 Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edin ve tekrar deneyin.
@@ -231,7 +229,6 @@ MOTD/MAL almaya çalışırken hata oluştu: {0}
 Geçersiz bir işlem nedeniyle ekran koruyucuyu başlatmaya çalışırken hata oluştu.
 Güvenli modda yeniden yüklemeye izin verilmez.
 Güvenli modda modların ayrıştırılmasına izin verilmez.
-Ayrıştırma modunu ayarlamaya çalışırken hata oluştu. Değeri kontrol edin ve tekrar deneyin. Bu doğruysa, çekirdek hata ayıklama etkinleştirildiğinde yığın izlemesine bakın.
 Yol ne bir dosya ne de bir dizindir.
 Farklı dizin veya ad altında bir dosyanın başka bir kopyasını oluşturur.
 Bir dosyayı başka bir dizine taşır
@@ -409,7 +406,6 @@ Başlangıçta Güncellemeleri Kontrol Edin
 Sessiz Sonda
 Oturum Açıldığında MOTD'yi Göster
 Oturum Açıldığında Ekranı Temizle
-Kullanılabilir kullanıcı adlarını göster
 Renkli Kabuk
 Basitleştirilmiş Yardım Komutu
 Hata Ayıklama Bağlantı Noktası
@@ -743,7 +739,6 @@ Renk değeri 0-255 aralığının dışında.
 Sarılabilir komut bulunamadı.
 Belirtilen satırda veya tüm satırlarda bir kelimeyi sorgular
 {0} / {1} indirildi.
-{0} / {1} yüklendi.
 Renk türünü ve satır yazdırmayı kullanarak konsola bir dize yazdırır
 Renk türünü ve biçim desteğiyle satır yazdırmayı kullanarak bir dizeyi konsola yazdırır
 Hata ayıklayıcıya bir dize yazdırır
@@ -939,7 +934,6 @@ JSON dosyasını güzelleştirir
 Dakikada Vuruş Sayısını Kullan
 Bir sonraki rengi yazmak için Dakika Başına Vuruş biriminin kullanılıp kullanılmayacağı.
 Dakikada Vuruş Gecikmesi
-Yendi Renk
 Bir sonraki yazma işlemini yapmadan önce dakikada kaç vuruş beklenmelidir?
 Etkinleştirilmişse, BeatFader rastgele renkler seçecektir. Aksi takdirde, yapılandırmadaki renkleri kullanın.
 Özel Başlangıç ​​Banner'ı
@@ -1001,7 +995,6 @@ Komut kullanımı:
 Parça dosya adı:
 Parça dosya yolu:
 Ekran koruyucuyu başlatmaya çalışırken hata oluştu:
-Geçersiz yol türü.
 Geçersiz çekirdek yolu türü.
 Önceki önyükleme başarısız oldu
 JSON düzenleyicisi henüz bir dosya akışı açmadı.
@@ -1015,8 +1008,6 @@ JSON dosyasını kaydeder
 JSON kabuğunu açar
 JSON dosyasını yazdırır
 Sonraki rampa aralığı
-Rampa için 255 renk desteğini etkinleştirir.
-Rampa için gerçek renk desteğini etkinleştirir.
 Bir sonraki rampayı doldurmadan önce kaç milisaniye beklenmeli?
 Bildirim başlığı rengi
 Bildirim açıklama rengi
@@ -1047,8 +1038,6 @@ Yerel çekirdek tarihini ve saatini gösterir
 UTC çekirdek zamanını gösterir
 UTC çekirdek tarihini gösterir
 UTC çekirdek tarihini ve saatini gösterir
-MOTD yolu
-MAL yolu
 MOTD metin dosyası hangi dosyadır? Metin dosyasına mutlak bir yol yazın.
 MAL metin dosyası hangi dosyadır? Metin dosyasına mutlak bir yol yazın.
 Kara listeye alınan modlar
@@ -1058,7 +1047,6 @@ Tüm modları yeniden yükler
 Kara listeye bir mod ekler
 Kara listeden bir modu kaldırır
 UTC'de saat ve tarih: {0}
-Belirtilen JSON kabuk komutu bulunamadı.
 Önyükleme sırasında uygulama bilgilerini göster
 Komut satırı bağımsız değişkenlerini ayrıştır
 Aşama bitiş zamanlarını göster
@@ -1073,7 +1061,6 @@ Oturum açmadan önce geçerli saati, saat dilimini ve tarihi gösterir.
 Çekirdek önyüklemesi sırasında küçük bir hata varsa, kullanıcıyı bu konuda bilgilendirir.
 Kullanıcı adı istemi stili
 Şifre istemi stili
-Girişte MAL'yi göster
 Giriş isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
 Parola isteminizin nasıl olmasını istiyorsanız öyle yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
 Giriş ekranı görüntülendikten sonra Günün Mesajını gösterir.
@@ -1117,12 +1104,6 @@ GPG şifre isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili
 IMAP pingi göndermek için kaç milisaniye?
 SMTP pingi göndermek için kaç milisaniye?
 Posta metninin nasıl gösterileceğini kontrol eder.
-düz metin
-akıcı metin
-HTML metni
-Zenginleştirilmiş metin
-Sıkıştırılmış zengin metin
-Zengin metin
 Başlangıçta uzaktan hata ayıklamayı otomatik olarak başlat
 Uzaktan hata ayıklama mesajı formatı
 Uzaktan hata ayıklamanın önyüklemede başlamasını istiyorsanız, bunu etkinleştirin.
@@ -1270,7 +1251,6 @@ Seçilecek minimum sayı nedir?
 Seçilecek maksimum sayı nedir?
 Manpage bilgilerinizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır. manuel başlık için {0}, revizyon için {1}.
 {0} özelliği hiçbir modülde bulunamadı.
-Bu bölüm, genel ekran koruyucu ayarlarını listeler. Bireysel ekran koruyucu ayarları için Ayarlar'dan çıkın ve Ekran Koruyucu Ayarları'nı açın.
 Renk tekerleğini gerçek renk modunda başlatın
 Belirtilirse, yer tutucu desteğiyle özelleştirilmiş başlangıç ​​başlığını görüntüler. Çekirdek sürümü için {0} kullanabilirsiniz.
 Ay adlarını, takvimi vb. değiştirmek için geçerli dilin hangi türevi kullanılıyor?
@@ -1293,7 +1273,6 @@ Sunucu indirme veri türü:
 Sunucu yükleme veri türü:
 Bu işlemi gerçekleştirmeden önce bir sunucuya bağlanmalısınız.
 Karma oluşturulacak bir uzak dosya girin.
-Karma oluşturulacak bir uzak dizini girin.
 Uzak bir dizine girin.
 FTP için özyinelemeli karma
 Bir dizinin özyinelemeli olarak hash edilip edilmeyeceği. Lütfen tüm FTP sunucularının bunu desteklemediğini unutmayın.
@@ -1304,11 +1283,8 @@ Disk boyutu:
 Toplam hafıza:
 Grafik kartı:
 Disk modeli:
-Bir sayfada maksimum e-posta sayısı
 Mevcut dilin kültürü
 Doğru bölümü açtığınızdan eminseniz şu mesajı kontrol edin:
-Diğer ayarlar...
-Renk Ayarları...
 Bir FTP sunucusu komutu yürütür
 POP3 sunucu adresini ve bağlantı noktasını girin (<adres> veya <adres>:[port]):
 Posta için POP3 bilgi istemi stili
@@ -1320,7 +1296,6 @@ POP3 kullanılıp kullanılmayacağı. Bunu devre dışı bırakmak SMTP'yi kull
 CRC32 kullanarak bir dizeyi şifreler
 Posta istemcisini açar
 aktarılan posta sayısı...
-Bu ekran koruyucunun ayarları burada mevcuttur.
 Tablo işlevselliğini test eder
 Belirtilen satırı düzenler
 Dosyanın sonuna yeni satırlar ekler
@@ -1351,7 +1326,6 @@ Sağlanan mod dosyası uyumsuz.
 Kaldırma işlemi için başarısız oldu
 Bir URL açar
 Dosya içeriğini yazdırırken satır numaralarını yazdır
-\"cat\" komutunun dosyanın satır numaralarını yazdırmasını sağlar.
 Çevrilmiş versiyon
 çevrilmiş versiyon
 Tüm bildirimleri kapatır
@@ -1385,7 +1359,6 @@ HTTP sitesini ayarlar. Geçerli bir URI olmalıdır.
 Belirtilen isteği kullanarak HTTP sunucusundan yanıt alır
 İçeriği HTTP sunucusundan siler
 HTTP kabuğunda bir hata oluştu:
-HTTP mesajı: İstenen {0} komutu bulunamadı. HTTP kabuğunda belirtilen kullanılabilir komutların listesi için 'yardım'a bakın.
 Belirtilen isteği kullanarak dizeyi HTTP sunucusundan alır
 {0} alınıyor...
 Site URI biçimi geçersiz.
@@ -1437,8 +1410,6 @@ En son haberler alınamadı.
 Seçilen seçenek rengi
 Çekirdek hatasında yığın izini göster
 Herhangi bir çekirdek hatası varsa, yığın izinin konsola yazdırılıp yazdırılmayacağını seçin.
-Mod yüklenebilir, ancak bu uyarılar modun çalışma şeklini etkileyebilir:
-Ekran koruyucu yüklenebilir, ancak bu uyarılar ekran koruyucunun çalışma şeklini etkileyebilir:
 Ayarları Farklı Kaydet
 Ayarları Yükle
 Mevcut çekirdek ayarlarını nereye kaydetmek istiyorsunuz?
@@ -1463,8 +1434,6 @@ Bir etkinlik kaldırılamadı.
 Etkinlik eklemek için yeterli bağımsız değişken sağlanmadı.
 Bir etkinliği kaldırmak için yeterli bağımsız değişken sağlanmadı.
 Olay işleme için yeterli argüman sağlanmadı.
-Bir hatırlatıcı eklenemedi veya kaldırılamadı.
-Bir hatırlatıcı eklemek veya kaldırmak için yeterli argüman sağlanmadı.
 Hatırlatma manipülasyonu için yeterli argüman sağlanmadı.
 Adsız hatırlatıcı
 Adsız etkinlik
@@ -1555,11 +1524,8 @@ Olay hata ayıklamasını etkinleştir
 Figlet yazı tipi
 Figgle kitaplığı tarafından desteklenen bir figlet yazı tipi yazın. Daha fazla bilgi için kütüphane belgelerine bakın
 {0} özel dili yüklenemedi.
-Özel dili yüklemek için gereken meta veri dosyası mevcut değil.
 Özel dili yüklemek için gereken meta veri bilgileri, gerekli yerelleştirmeleri sağlamaz.
 {0} özel dili kaldırılamadı.
-Özel dili kaldırmak için gereken meta veri dosyası mevcut değil.
-Özel dili kaldırmak için gereken meta veri bilgileri, gerekli yerelleştirmeleri sağlamaz.
 İngilizce dilinin uzunluğu, sağlanan dil belirtecinin uzunluğuyla eşleşmiyor.
 Dil zaten var ve üzerine yazılamaz.
 Özel dil kaldırılamadı. Büyük olasılıkla mevcut değil.
@@ -1596,7 +1562,6 @@ Etkinleştirilirse, ana bilgisayara uzaktan hata ayıklama bağlantı hatası bi
 Zamanlayıcı için figlet yazı tipi
 Zamanlayıcı için Figlet'i etkinleştir
 Etkinleştirilirse, zamanlayıcı için figlet kullanır. Figlet etkinken zamanı doğru bir şekilde işlemek için büyük bir konsol ekranına ihtiyaç duyduğunu lütfen unutmayın.
-Önyükleme öncesi komut satırı bağımsız değişkenleri ayrıştırılırken hata oluştu: {0}
 Çekirdeği fabrika ayarlarına sıfırlar
 Konsol boyutu algılamasını atlar
 Görünüşe göre konsol boyutu algılamayı atlıyorsunuz. Küçük ekranlarda işler düzgün çalışmayabilir.
@@ -1605,11 +1570,6 @@ Konsolunuz düzgün çalışamayacak kadar küçük:
 Afiş figlet yazı tipi
 Figlet desteğiyle renkli tip ve çizgi baskı kullanarak konsola bir dizi yazdırır
 Biçim ve Figlet desteğiyle renk türü ve satır yazdırma kullanarak konsola bir dize yazdırır
-Bir mesajı kalıcı olarak kaldırır
-Alıcıdan gelen tüm mesajları kalıcı olarak kaldırır
-Bir mesajı kaldırmayı geri alma
-Alıcıdan tüm mesajları kaldırmayı geri alır
-POP3 için silmeyi geri alma uygulanmaz.
 Yardıma bağlı komutların sayısını göster
 Yardıma bağlı kabuk komutlarının sayısını göster
 Yardıma bağlı mod komutlarının sayısını göster
@@ -1628,7 +1588,6 @@ Alt kabukta çalışıyorsa kabuktan çıkar
 Anne kabuğunu öldüremezsiniz!
 Alt kabuktan çıkış yapılamıyor.
 Dosya belirtilmedi. Kabuktan çıkılıyor...
-Bu açılış ekranının ayarları burada mevcuttur.
 İlerleme çubuğu rengi
 Ekran koruyucu ayarlarını açar
 Sıçrama ayarlarını açar
@@ -1736,7 +1695,6 @@ Kırmızı renk seviyesi:
 Yeşil renk seviyesi:
 Mavi renk seviyesi:
 RGB renk sırası:
-Argüman sayısal olmalıdır.
 Kırmızı renk seviyesi sayısal olmalıdır.
 Yeşil renk seviyesi sayısal olmalıdır.
 Mavi renk seviyesi sayısal olmalıdır.
@@ -1750,7 +1708,6 @@ Kullanılabilir APM'nin olmadığı bir durumu simüle edip etmeyeceği. Etkinle
 aksaklık yoğunluğu
 Yüzde ne kadar büyük olursa, aksaklık o kadar yoğun olur!
 Gangsta dili, okurken kendinizi rahatsız hissetmenize neden olabilecek güçlü bir dil içeriyor. Yine de dili ayarlamak istediğinizden emin misiniz?
-Bu mod, komutları yürütmek için eski yöntemi kullanıyor. Bu modası geçmiş. Mevcut standartlara geçmek için lütfen mod satıcısı ile iletişime geçin.
 İngilizce Sözlük
 için kelime bilgisi
 API lisanslıdır
@@ -1762,4 +1719,3 @@ Cümledeki Örnek:
 Tanımlamak için kullanılan kaynaklar
 Eş anlamlı:
 Zıtlıklar:
-Bu ekran koruyucu, içeriğini görüntülemek için bir sonraki KS API revizyonundan itibaren artık çalışmayacak olan eski teknikleri kullanır. Daha yeni, desteklenen tekniklere geçiş yapmak için satıcıyla iletişime geçin.

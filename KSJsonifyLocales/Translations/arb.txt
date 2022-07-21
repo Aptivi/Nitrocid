@@ -1,7 +1,6 @@
 al'awamir almtaht: {0}
 tam 'iilgha' haqn al'awamir.
 sayatimu jadwlat alhujaj almahqunat litashghiliha eind 'iieadat altamhid altaali.
-khata 'athna' tahlil wasayitat satar al'awamir alhaqiqiat: {0}
 qalib 'alwan ghayr salih {0}
 hwprobe: sayatim altahqiq fi al'ajhizat alkhasat bika. arjuk aintazara...
 wahdat almuealajat almarkaziat: fashal tahqiq wahid 'aw 'akthar min marakiz wahdat almuealajat almarkaziati. earad almaelumat ealaa 'ayi hal ...
@@ -49,7 +48,6 @@ tamat 'iizalat almustakhdum {0}.
 khata fi muhawalat 'iizalat aism almustakhdm.
 lm yatim aleuthur ealaa shashat altawaquf almatluba {0}.
 tamat tahyia {0} bishakl sahihin.
-{0} lm yatima altahayyat. qad yakun ramz shashat altawaquf qad wajah khtaan 'athna' altahyyat.
 shashat altawaquf {0} ghyr mawjudatin.
 {0} madbut ealaa shashat altawaquf alaiftiradiat.
 shashat altawaquf {0} ghyr mawjudat fi qaeidat albayanat. tuhaqiq min alaism wahawal maratan 'ukhraa.
@@ -231,7 +229,6 @@ khata eind muhawalat alhusul ealaa MOTD / MAL: {0}
 khata eind muhawalat bad' shashat altawaquf , bsbb eamaliat ghyr salihat.
 'iieadat tahmil ghyr masmuh biha fi alwade alamina.
 tahlil altaedil ghyr masmuh bih fi alwade alamina.
-khata eind muhawalat dabt wade altahlil. tuhaqiq alqimat wahawal maratan 'ukhraa. 'iidha kan hdha shyhana , farajie tatabie almukadas eind tamkin tashih 'akhta' kernel.
 almasar lays milafun wala dalil.
 yunashiy nuskhatan 'ukhraa min almilafi taht aism 'aw dalil mukhtalf.
 yanqul milafun 'iilaa dalil akhar
@@ -409,7 +406,6 @@ tahaqaq min wujud tahdithat eind bad' altashghil
 misbar hadi
 'iizhar MOTD eind tasjil aldukhul
 mash alshaashat eind tasjil aldukhul
-eard 'asma' almustakhdimin almutaha
 qadhifat mulawana
 'amr musaeadat mubasat
 manfidh altashih
@@ -743,7 +739,6 @@ taqae qimat allawn kharij alnitaq min 0-255.
 lam yatima aleuthur ealaa 'amr alaltafafu.
 liliastielam ean kalimat fi satr muhadad 'aw kuli al'astur
 tama tanzil {0} min {1}.
-tama tahmil {0} min {1}.
 yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn watibaeat alsatr
 yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn watibaeat alsatr mae daem altansiq
 yatbae silsilatan 'iilaa almusahah
@@ -939,7 +934,6 @@ fiat altakwin {0} ghayr mawjudatin.
 aistakhdim alnabadat fi aldaqiqa
 ma 'iidha kunt turid astikhdam wahdat Beats Per Minute likitabat allawn altaali.
 takhir fi alnabadat fi aldaqiqa
-faz allawn
 kam nabdatan fi aldaqiqat tantazir qabl alkitabat altaaliati?
 sayakhtar BeatFader alwanan eashwayiyatan 'iidha tama tamkinuhu. khilaf dhalik , astakhdim al'alwan min config.
 shiear bad' altashghil almukhasas
@@ -1001,7 +995,6 @@ aistikhdam al'amra:
 aism milafi aljuz'i:
 masar milafi aljuz'i:
 khataan eind muhawalat bad' shashat altawaquf:
-nawe almasar ghayr salihi.
 nawe masar kernel ghayr salihi.
 fashil altamhid alsaabiq
 lam yaftah muharir JSON tadafuq almilafaat hataa alan.
@@ -1015,8 +1008,6 @@ yahfaz milaff JSON
 yaftah ghilaf JSON
 yatbae milafa JSON
 alfasil alzamaniu lilmunhadar altaali
-yanshut daem 255 lwnan li Ramp.
-yanshut daem al'alwan alhaqiqii la Ramp.
 kam mili thaniat yajib aliantizar qabl mil' almunhadar altaali?
 lawn eunwan al'iikhtar
 lawn wasf al'iikhtar
@@ -1047,8 +1038,6 @@ yuzhir tarikh wawaqt kernel almahaliy
 yazhar UTC kernel time
 yazhar UTC kernel date
 yaerid tarikh wawaqt nawat UTC
-masar MOTD
-masar MAL
 'ayu milafin hu milafu nisiyin MOTD? aktub msaran mtlqan lilmilafi alnasiy.
 'ayu milafin hu milafu nisiyin MAL? aktub msaran mtlqan lilmilafi alnasiy.
 taedil alqayimat alsawda'
@@ -1058,7 +1047,6 @@ yueid tahmil jamie altaedilat
 yudif taedil 'iilaa alqayimat alsawda'
 yuzil altaedil min alqayimat alsawda'
 alwaqt waltaarikh bialtawqit alealamii almunasaqi: {0}
-lam yatima aleuthur ealaa 'amr JSON shell almuhadadu.
 'iizhar maelumat altatbiq 'athna' altamhid
 tahlil wasaytat satr al'awamir
 'iizhar 'awqat aintiha' almarhala
@@ -1073,7 +1061,6 @@ yaerad alwaqt alhalia walmintiqat alzamaniat waltaarikh qabl tasjil aldukhuli.
 'iidha kan hunak khata basit 'athna' tamhid kernel , faqum bi'iielam almustakhdam bihi.
 aism almustakhdim muajah alnamat
 'uslub muajah kalimat almurur
-'iizhar MAL eind tasjil aldukhul
 aiktub kayf turid 'an takun mutalabat tasjil aldukhul alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibati.
 aiktub kayf turid 'an takun mutalabatan kalimat almurur alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibatu.
 yaerid risalat alyawm baed eard shashat tasjil aldukhuli.
@@ -1117,12 +1104,6 @@ aiktub kayf turid 'an takun mutalabatan kalimat murur GPG alkhasat bika. atrukh 
 kam eadad almalli thaniatan li'iirsal 'amr ping eabr IMAP؟
 kam milli thaniatan li'iirsal akhtibar atisal SMTP؟
 yatahakam fi kayfiat eard nasi albirid.
-nasu eadi
-nasu mutadafiq
-nasu HTML
-nasun ghaniun
-nasun munasaq madghut
-alnasu alghaniu
 bad' altashih ean bued tilqayiya eind bad' altashghil
 tansiq risalat altashih ean bued
 'iidha kunt turid bad' altashih ean bued eind altamhid , faqum bitamkin hadha.
@@ -1270,7 +1251,6 @@ ma hu 'aqalu eadad liliakhtiari?
 ma hu aleadad al'aqsaa liliakhtiari?
 aiktub kayf turid 'an takun maelumat safhatuka. atrukh farighan liaistikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibatu. {0} lilhusul ealaa aleunwan alyadawii , {1} lilmurajaeati.
 lam yatima aleuthur ealaa alkhasiya {0} fi 'ayin min alwahadat alnamatiati.
-yasrud hadha alqism 'iiedadat shashat altawaquf aleamati. li'iiedadat shashat altawaquf alfardiat , akhruj min al'iiedadat waftah 'iiedadat shashat altawaquf.
 abda eajalat al'alwan fi wade al'alwan alhaqiqii
 'iidha tama tahdiduh , fasayaerad shiear bad' altashghil almukhasas mae daem aleunsur alnaayibi. yumkinuk astikhdam {0} li'iisdar kernel.
 'ayu mutaghayir min allughat alhaliat yatimu astikhdamuh litaghyir 'asma' al'ashhur waltaqwim wama 'iilaa dhalika?
@@ -1293,7 +1273,6 @@ nawe bayanat tanzil alkhadimi:
 nawe bayanat tahmil alkhadimi:
 yajib ealayk aliatisal bialkhadim qabl 'iijra' hadhih aleamaliati.
 'adkhul mlfan beydan litatima tajziatuhu.
-'adkhil dalil baeid litatima tajziatuhu.
 'adkhil dalil baeid.
 altajziat aleawdiat liburutukul naql almilafaat
 ma 'iidha kan sayatimu tajziat aldalil bishakl mutakariri. yurjaa mulahazat 'anah laysat kulu khawadim FTP tadeam dhalika.
@@ -1304,11 +1283,8 @@ hajm alqirsu:
 aldhaakirat alajmaliatu:
 bitaqat musawiratin:
 tiraz alqirsu:
-'aqsaa eadad min rasayil albarid al'iiliktrunii fi safhat wahida
 thaqafat allughat alhalia
 'iidha kunt mtakdan min 'anak fataht alqism alsahih , fatahaqaq min hadhih alrisalati:
-'iiedadat mutanawiea ...
-'iiedadat al'alwan ...
 yunafidh 'amr khadim FTP
 'adkhul eunwan wamanafidh khadim POP3 (<aleunwani> 'aw <aleunwani>: [almunfadhi]):
 namat muajah POP3 lilbarid
@@ -1320,7 +1296,6 @@ ma 'iidha kan yajib astikhdam POP3. taetil hadha sayustakhdam SMTP.
 yushfar silsilatan biastikhdam CRC32
 yaftah eamil albarid
 min naql albarid ...
-'iiedadat shashat altawaquf hadhih mutawafirat huna.
 aikhtibarat wazayif aljadwal
 yuharir alsatr almuhadad
 yudif al'astur aljadidat fi nihayat almilafi
@@ -1351,7 +1326,6 @@ milafun mod almutawafir ghayr mutawafiqin.
 fashil 'iilgha' altathbit l
 yaftah eunwan URL
 tibaeat 'arqam al'astur eind tibaeat muhtawayat almilafi
-yajeal al'amr \ "cat \" yatbae 'arqam 'astur almilafa.
 nuskhat mutarjama
 nuskhat mutarjama
 yarfud jamie al'iikhtarat
@@ -1385,7 +1359,6 @@ yeyn mawqie HTTP. yajib 'an yakun URI salhan.
 yahsul ealaa aliastijabat min khadim HTTP biastikhdam altalab almuhadad
 yahdhaf almuhtawaa min khadim HTTP
 hadath khataan fi ghilaf HTTP:
-risalat HTTP: al'amr almatlub {0} ghayr mawjuda. rajie "taelimati" lilhusul ealaa qayimat bial'awamir almutahat almuhadadat fi ghilaf HTTP.
 yahsul ealaa alsilsilat min khadim HTTP biastikhdam altalab almuhadad
 alhusul ealaa {0} ...
 tansiq URI lilmawqie ghayr salihi.
@@ -1437,8 +1410,6 @@ fashil fi alhusul ealaa akhar al'akhbari.
 lawn alkhiar almuhadad
 'iizhar tatabue almukdas ealaa khata kernel
 'iidha kan hunak 'ayu khata fi kernel , aikhtar ma 'iidha kunt turid tibaeat tatabue almukdas 'iilaa wahdat altahakum 'am la.
-yumkin tahmil altaedil , lakina hadhih altahdhirat qad tuathir ealaa tariqat eamal altaedili:
-yumkin tahmil shashat altawaquf , walakina hadhih altahdhirat qad tuathir ealaa tariqat eamal shashat altawaquf:
 hifz al'iiedadat biasm
 tahmil al'iiedadat min
 'ayn turid hifz 'iiedadat kernel alhaliati?
@@ -1463,8 +1434,6 @@ fashal 'iizalat alhadathi.
 lam yatima tawfir wasitat kafiat li'iidafat hadthi.
 lam yatima tawfir wasitat kafiat li'iizalat hadthi.
 lam yatima tawfir alhujaj alkafiat liltalaeub bialhadathi.
-fashil fi 'iidafat 'aw 'iizalat tadhkiri.
-lam yatima tawfir wasitat kafiat li'iidafat tadhkir 'aw 'iizalatihi.
 lam yatima tawfir alhujaj alkafiat liltalaeub bialtadhkiri.
 tadhkir bidun eunwan
 hadath bila eunwan
@@ -1555,11 +1524,8 @@ tamakan min tashih 'akhta' nizam 'ahdath kernel
 khatu Figlet
 aktub khata alshakl aladhi tadeamuh maktabat Figgle. rajie wathayiq almaktabat limazid min almaelumat
 fashal tathbit lughat mukhasasa {0}.
-milafu albayanat alwasfiat almatlub litathbit allughat almukhasasat ghayr mawjudi.
 la tuafir maelumat albayanat alwasfiat allaazimat litathbit allughat almukhasasat altarjumat almatlubat almatlubata.
 fashil 'iilgha' tathbit allughat almukhasasa {0}.
-milafu albayanat alwasfiat almatlub li'iilgha' tathbit allughat almukhasasat ghayr mawjudi.
-la tuafir maelumat albayanat alwasfiat almatlubat li'iilgha' tathbit allughat almukhasasat altatwieat almahaliyat almatlubata.
 la yatatabaq tul allughat al'iinjiliziat mae tul ramz allughat almuqadami.
 allughat mawjudat bialfiel wala yumkin alkitabat fawqaha.
 fashil 'iilgha' tathbit allughat almukhasasati. ealaa al'arjah ghayr mawjudi.
@@ -1596,7 +1562,6 @@ fi halat altamkin , sayatimu aistikhdam nizam al'iielam li'iielam almudif bikhat
 alkhati Figlet lilmuaqat
 tamkin Figlet lilmuaqat
 fi halat altamkin , sayatimu aistikhdam alshakl alsaghir lilmuaqat. yurjaa mulahazat 'anah yahtaj 'iilaa shashat wahdat tahakum kabirat lieard alwaqt bishakl sahih mae tamkin Figlet.
-khata 'athna' tahlil wasaytat satr al'awamir qabl altamhidi: {0}
 yueid taeyin alnawat 'iilaa 'iiedadat almasnae
 tajawaz alkashf ean hajm wahdat altahakum
 yabdu 'anak tatajawaz aiktishaf hajm wahdat altahakumi. qad la taemal al'ashya' bishakl sahih ealaa alshaashat alsaghirati.
@@ -1605,11 +1570,6 @@ wahdat altahakum alkhasat bik saghirat jdan bihayth la yumkin tashghiluha bishak
 khatu rayat alshakl
 yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn waltibaeat alkhatiat bidaem Figlet
 yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn waltibaeat alkhatiat biastikhdam altansiq wadaem Figlet
-yuzil risalatan bishakl dayim
-yuzil bishakl dayim jamie alrasayil min almustalam
-yatarajae ean 'iizalat risala
-yatarajae ean 'iizalat jamie alrasayil min almustalam
-lam yatima tanfidh altarajue ean alhadhf la POP3.
 'azhar 'ana al'awamir taetamid ealaa almusaeada
 'azhir 'ana 'awamir shell taetamid ealaa almusaeada
 'azhar 'ana 'awamir altaedil taetamid ealaa almusaeada
@@ -1628,7 +1588,6 @@ yakhruj min alghilaf 'iidha kan yaemal ealaa qishrat fareia
 la yumkin 'an taqtal qadhifat al'um!
 la yumkin tasjil alkhuruj min almajmueat alfareiati.
 almilafu ghayr muhadadi. qadhifat alkhuruj ...
-tatawafar 'iiedadat shashat albidayat hadhih huna.
 lawn sharit altaqadum
 yaftah 'iiedadat shashat altawaquf
 yaftah 'iiedadat albidaya
@@ -1736,7 +1695,6 @@ mustawaa allawn al'ahmaru:
 mustawaa allawn al'akhdari:
 mustawaa allawn al'azraqa:
 tasalsal 'alwan RGB:
-yajib 'an takun alwasitat raqmiatan.
 yajib 'an yakun mustawaa allawn al'ahmar rqmyan.
 yajib 'an yakun mustawaa allawn al'akhdar rqmyan.
 yajib 'an yakun mustawaa allawn al'azraq rqmyan.
@@ -1750,7 +1708,6 @@ ma 'iidha kan sayatimu muhakaat mawqif la yatawafar fih APM 'am la. 'iidha tama 
 kathafat alkhalal
 kulama zadat alnisbat , zadat kathafat alkhalli!
 tahtawi lughat aleisabat ealaa lughat qawiat qad tajealuk tasheur bieadam aliartiah liqira'atiha. hal 'ant muta'akid 'anak turid taeyin allughat ealaa 'ayi halin?
-yustakhdim hadha alwade altariqat alqadimat litanfidh al'awamir. hadha eafa ealayh alzamanu. alraja' alaitisal bibayie altaedil lilaintiqal 'iilaa almaeayir alhaliiti.
 qamus allughat al'iinjilizia
 maelumat Word l
 API murakhas bimujib
@@ -1762,4 +1719,3 @@ mithal fi aljumlati:
 almasadir almustakhdamat litahdid
 almuradifati:
 altadadu:
-tastakhdim shashat altawaquf hadhih tiqniaat qadimatan lieard muhtawayatiha , walati lan taemal baed alan bd'an min murajaeat KS API altaaliati. aitasal bialmawrid lilaintiqal 'iilaa 'ahdath altaqniaat almadeumati.

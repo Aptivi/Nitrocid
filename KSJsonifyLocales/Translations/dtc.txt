@@ -1,7 +1,6 @@
 Beschikbare opdrachten: {0}
 Commando-injectie is geannuleerd.
 Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.
-Fout tijdens het parseren van echte opdrachtregelargumenten: {0}
 Ongeldige kleurensjabloon {0}
 hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...
 CPU: een of meer van de CPU-kernen konden niet worden getest. Informatie toch laten zien ...
@@ -49,7 +48,6 @@ Gebruiker {0} verwijderd.
 Fout bij proberen gebruikersnaam te verwijderen.
 De gevraagde screensaver {0} is niet gevonden.
 {0} is correct geïnitialiseerd.
-{0} is niet geïnitialiseerd. De schermbeveiligingscode kan tijdens het initialiseren een fout hebben ondervonden.
 Screensaver {0} bestaat niet.
 {0} is ingesteld op de standaard screensaver.
 Screensaver {0} niet gevonden in database. Controleer de naam en probeer het opnieuw.
@@ -231,7 +229,6 @@ Fout bij het verkrijgen van MOTD / MAL: {0}
 Fout bij het starten van de screensaver vanwege een ongeldige bewerking.
 Herladen niet toegestaan ​​in veilige modus.
 Mods voor parseren niet toegestaan ​​in veilige modus.
-Fout bij het proberen de parse-modus in te stellen. Controleer de waarde en probeer het opnieuw. Als dit correct is, raadpleegt u de stacktracering wanneer kernel-foutopsporing is ingeschakeld.
 Het pad is noch een bestand, noch een map.
 Maakt een andere kopie van een bestand onder een andere map of naam.
 Verplaatst een bestand naar een andere map
@@ -409,7 +406,6 @@ Controleer op updates bij het opstarten
 Stille sonde
 Toon MOTD bij inloggen
 Scherm wissen bij inloggen
-Toon beschikbare gebruikersnamen
 Gekleurde schelp
 Vereenvoudigde Help-opdracht
 Debug-poort
@@ -743,7 +739,6 @@ De kleurwaarde ligt buiten het bereik van 0-255.
 De wrappable-opdracht is niet gevonden.
 Vraagt ​​een woord in een opgegeven regel of alle regels
 {0} van {1} gedownload.
-{0} van {1} geüpload.
 Drukt een string af naar console met behulp van kleurtype en lijnafdruk
 Drukt een string af naar console met kleurtype en lijnafdruk met formaatondersteuning with
 Drukt een string af naar debugger
@@ -939,7 +934,6 @@ Configuratie-item {0} niet gevonden.
 Gebruik beats per minuut
 Of de Beats Per Minute-eenheid moet worden gebruikt om de volgende kleur te schrijven.
 Vertraging in beats per minuut
-Klop kleur
 Hoeveel beats per minuut moet je wachten voordat je de volgende keer schrijft?
 BeatFader selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
 Aangepaste opstartbanner
@@ -1001,7 +995,6 @@ Gebruik van de opdracht:
 Bestandsnaam onderdeel:
 Pad bestandsbestand:
 Fout bij het starten van de screensaver:
-Ongeldig padtype.
 Ongeldig type kernelpad.
 Vorige opstarten mislukt
 De JSON-editor heeft nog geen bestandsstream geopend.
@@ -1015,8 +1008,6 @@ Slaat het JSON-bestand op
 Opent de JSON-shell
 Drukt het JSON-bestand af
 Volgende hellingsinterval
-Activeert 255 kleurenondersteuning voor Ramp.
-Activeert ondersteuning voor ware kleuren voor Ramp.
 Hoeveel milliseconden wachten voordat de volgende helling wordt ingevuld?
 Kleur van meldingstitel
 Kleur van meldingsbeschrijving
@@ -1047,8 +1038,6 @@ Toont lokale kernel datum en tijd
 Toont UTC-kerneltijd
 Toont UTC-kerneldatum
 Toont de datum en tijd van de UTC-kernel
-MOTD-pad
-MAL-pad
 Welk bestand is het MOTD-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
 Welk bestand is het MAL-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
 Mods op de zwarte lijst
@@ -1058,7 +1047,6 @@ Herlaadt alle mods
 Voegt een mod toe aan de zwarte lijst
 Verwijdert een mod van de zwarte lijst
 Tijd en datum in UTC: {0}
-De opgegeven JSON-shellopdracht is niet gevonden.
 App-informatie tonen tijdens opstarten
 Opdrachtregelargumenten ontleden
 Eindtijden etappe weergeven
@@ -1073,7 +1061,6 @@ Toont de huidige tijd, tijdzone en datum voordat u zich aanmeldt.
 Als er een kleine fout optreedt tijdens het opstarten van de kernel, wordt de gebruiker hiervan op de hoogte gesteld.
 Stijl voor gebruikersnaam prompt
 Stijl voor wachtwoordprompt
-Toon MAL bij inloggen
 Schrijf hoe u wilt dat uw aanmeldingsprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Schrijf hoe u wilt dat uw wachtwoordprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Toont Bericht van de Dag na het weergeven van het inlogscherm.
@@ -1117,12 +1104,6 @@ Schrijf hoe u wilt dat uw GPG-wachtwoord wordt gevraagd. Laat leeg om de standaa
 Hoeveel milliseconden om de IMAP-ping te verzenden?
 Hoeveel milliseconden om de SMTP-ping te verzenden?
 Bepaalt hoe de e-mailtekst wordt weergegeven.
-Platte tekst
-Vloeiende tekst
-HTML-tekst
-Verrijkte tekst
-Gecomprimeerde tekst met opmaak
-Rijke text
 Automatisch foutopsporing op afstand starten bij opstarten
 Berichtindeling voor foutopsporing op afstand
 Als u foutopsporing op afstand wilt starten bij het opstarten, schakelt u dit in.
@@ -1270,7 +1251,6 @@ Wat is het minimum aantal om te kiezen?
 Wat is het maximale aantal om te kiezen?
 Schrijf hoe u wilt dat uw manpage-informatie is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor handmatige titel, {1} voor revisie.
 Eigenschap {0} is niet gevonden op een van de modules.
-In dit gedeelte worden de algemene schermbeveiligingsinstellingen vermeld. Voor individuele screensaver-instellingen, verlaat u Instellingen en opent u Screensaver-instellingen.
 Start kleurenwiel in ware kleurenmodus
 Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. U kunt {0} gebruiken voor de kernelversie.
 Welke variant van de huidige taal wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
@@ -1293,7 +1273,6 @@ Gegevenstype serverdownload:
 Gegevenstype serverupload:
 U moet verbinding maken met een server voordat u deze bewerking uitvoert.
 Voer een extern bestand in dat moet worden gehasht.
-Voer een externe map in die moet worden gehasht.
 Voer een externe map in.
 Recursieve hashing voor FTP
 Of een directory recursief moet worden gehasht. Houd er rekening mee dat niet alle FTP-servers dat ondersteunen.
@@ -1304,11 +1283,8 @@ Schijfgrootte:
 Totaal geheugen:
 Grafische kaart:
 Schijfmodel:
-Maximaal aantal e-mails op één pagina
 Cultuur van de huidige taal
 Als je zeker weet dat je de juiste sectie hebt geopend, bekijk dan dit bericht:
-Diverse instellingen...
-Kleuren Instellingen...
 Voert een FTP-serveropdracht uit
 Voer het POP3-serveradres en de poort in (<adres> of <adres>:[poort]):
 POP3-promptstijl voor e-mail
@@ -1320,7 +1296,6 @@ Of u POP3 wilt gebruiken. Als u dit uitschakelt, wordt SMTP gebruikt.
 Codeert een string met CRC32
 Opent de e-mailclient
 van post overgedragen...
-Instellingen voor deze screensaver zijn hier beschikbaar.
 Test de tabelfunctionaliteit
 Bewerkt de opgegeven regel
 Voegt de nieuwe regels toe aan het einde van het bestand
@@ -1351,7 +1326,6 @@ Het geleverde mod-bestand is incompatibel.
 Verwijderen mislukt voor
 Opent een URL
 Regelnummers afdrukken bij het afdrukken van bestandsinhoud
-Zorgt ervoor dat de opdracht \"cat\" de regelnummers van het bestand afdrukt.
 getranslitereerde versie
 vertaalde versie
 Sluit alle meldingen af
@@ -1385,7 +1359,6 @@ Stelt de HTTP-site in. Moet een geldige URI zijn.
 Krijgt het antwoord van de HTTP-server met behulp van het opgegeven verzoek
 Verwijdert inhoud van HTTP-server
 Er is een fout opgetreden in de HTTP-shell:
-HTTP-bericht: het gevraagde commando {0} is niet gevonden. Zie 'help' voor een lijst met beschikbare commando's gespecificeerd op HTTP-shell.
 Haalt de string op van de HTTP-server met behulp van het opgegeven verzoek
 Krijg {0}...
 De indeling van de site-URI is ongeldig.
@@ -1437,8 +1410,6 @@ Het laatste nieuws is niet ontvangen.
 Geselecteerde optiekleur
 Toon stacktracering op kernelfout
 Als er een kernelfout is, kiest u of u de stacktracering naar de console wilt afdrukken of niet.
-Mod kan worden geladen, maar deze waarschuwingen kunnen van invloed zijn op de manier waarop de mod werkt:
-Screensaver kan worden geladen, maar deze waarschuwingen kunnen van invloed zijn op de manier waarop de screensaver werkt:
 Instellingen opslaan als
 Instellingen laden van
 Waar wil je de huidige kernelinstellingen opslaan?
@@ -1463,8 +1434,6 @@ Kan een evenement niet verwijderen.
 Er zijn niet genoeg argumenten opgegeven om een ​​evenement toe te voegen.
 Er zijn niet genoeg argumenten opgegeven om een ​​gebeurtenis te verwijderen.
 Er zijn niet genoeg argumenten gegeven voor het manipuleren van gebeurtenissen.
-Kan een herinnering niet toevoegen of verwijderen.
-Er zijn niet genoeg argumenten opgegeven om een ​​herinnering toe te voegen of te verwijderen.
 Er zijn niet genoeg argumenten gegeven voor het manipuleren van herinneringen.
 Naamloze herinnering
 Naamloos evenement
@@ -1555,11 +1524,8 @@ Schakelt foutopsporing in voor het kernelgebeurtenissysteem
 Lettertype Figlet
 Schrijf een figlet-lettertype dat wordt ondersteund door de Figgle-bibliotheek. Raadpleeg de bibliotheekdocumentatie voor meer informatie
 Kan aangepaste taal {0} niet installeren.
-Het metagegevensbestand dat nodig is om de aangepaste taal te installeren, bestaat niet.
 De metagegevens die nodig zijn om de aangepaste taal te installeren, bieden niet de benodigde lokalisaties.
 Kan aangepaste taal {0} niet verwijderen.
-Het metadatabestand dat nodig is om de aangepaste taal te verwijderen, bestaat niet.
-De metagegevens die nodig zijn om de aangepaste taal te verwijderen, bieden niet de benodigde lokalisaties.
 De lengte van de Engelse taal komt niet overeen met de lengte van de opgegeven taaltoken.
 De taal bestaat al en kan niet worden overschreven.
 Kan aangepaste taal niet verwijderen. Die bestaat hoogstwaarschijnlijk niet.
@@ -1596,7 +1562,6 @@ Indien ingeschakeld, wordt het meldingssysteem gebruikt om de host op de hoogte 
 Figlet-lettertype voor timer
 Schakel Figlet in voor timer
 Indien ingeschakeld, wordt figlet gebruikt voor timer. Houd er rekening mee dat het een groot consolescherm nodig heeft om de tijd correct weer te geven met Figlet ingeschakeld.
-Fout bij het parseren van pre-boot opdrachtregelargumenten: {0}
 Zet de kernel terug naar de fabrieksinstellingen
 Omzeilt de detectie van de consolegrootte
 Het lijkt erop dat je de detectie van de consolegrootte omzeilt. Het kan zijn dat dingen niet goed werken op kleine schermen.
@@ -1605,11 +1570,6 @@ Uw console is te klein om goed te werken:
 Lettertype spandoek
 Drukt een string af naar console met behulp van kleurtype en lijnafdruk met Figlet-ondersteuning
 Drukt een string af naar console met behulp van kleurtype en lijnafdruk met formaat en Figlet-ondersteuning
-Verwijdert een bericht permanent
-Verwijdert permanent alle berichten van de ontvanger
-Het verwijderen van een bericht ongedaan maken
-Verwijdering van alle berichten van de ontvanger ongedaan maken
-Verwijdering ongedaan maken is niet geïmplementeerd voor POP3.
 Toon de commando's rekenen op hulp
 Toon de shell-commando's rekenen op hulp
 Toon de mod-commando's rekenen op hulp
@@ -1628,7 +1588,6 @@ Verlaat de shell als deze op subshell draait
 Kan de moederschelp niet doden!
 Kan niet uitloggen uit de subshell.
 Bestand niet gespecificeerd. Uitgaande schelp...
-Instellingen voor dit opstartscherm zijn hier beschikbaar.
 Kleur voortgangsbalk
 Opent de schermbeveiligingsinstellingen
 Opent de splash-instellingen
@@ -1736,7 +1695,6 @@ Rood kleurniveau:
 Groen kleurniveau:
 Blauw kleurniveau:
 RGB-kleurvolgorde:
-Het argument moet numeriek zijn.
 Het rode kleurniveau moet numeriek zijn.
 Het groene kleurniveau moet numeriek zijn.
 Het blauwe kleurniveau moet numeriek zijn.
@@ -1750,7 +1708,6 @@ Of een situatie moet worden gesimuleerd waarin er geen APM beschikbaar is. Indie
 Glitchdichtheid
 Hoe groter het percentage, hoe groter de glitch!
 De gangsta-taal bevat sterke taal waardoor je je misschien ongemakkelijk voelt om het te lezen. Weet u zeker dat u de taal toch wilt instellen?
-Deze mod gebruikt de legacy-methode om de opdrachten uit te voeren. Dit is achterhaald. Neem contact op met de mod-leverancier om te migreren naar de huidige standaarden.
 Het Engelse Woordenboek
 Woordinformatie voor
 API is gelicentieerd onder:
@@ -1762,4 +1719,3 @@ Voorbeeld in zin:
 Bronnen die worden gebruikt om te definiëren
 Synoniemen:
 Antoniemen:
-Deze screensaver gebruikt verouderde technieken om de inhoud ervan weer te geven, die niet meer zal werken vanaf de volgende KS API-revisie. Neem contact op met de leverancier om te migreren naar nieuwere, ondersteunde technieken.

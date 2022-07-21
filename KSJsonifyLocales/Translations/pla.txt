@@ -1,7 +1,6 @@
-﻿Available commands: {0}
+Available commands: {0}
 Command injection has been cancelled.
 Injected arguments will be scheduled ta run at next reboot.
-Error while spendin' real command-line arguments: {0}
 Invalid color template {0}
 hwprobe: Its just anotha homocide. Yo' hardware will be probed. Drop it like its hot. Pleaze wait...
 CPU: One or more of tha CPU cores failed ta be probed hittin that booty. Show'n information anyway...
@@ -49,7 +48,6 @@ Usa {0} removed and yo momma.
 Error cruisin' ta remove username.
 Tha requested homie {0} be not found.
 {0} has been initialize' properly. Aint no stoppin' this shit nigga.
-{0} did not initialize. Tha brotha code might have experienced an error while weed-smokin'.
 Screensava {0} does not exist.
 {0} be set ta default screensava.
 Screensava {0} not fizzound 'n databaze. Check tha name n try again.
@@ -231,7 +229,6 @@ Error when frontin' ta git MOTD/MAL: {0}
 Error when mobbin' ta start shot calla, coz of an invalid operation.
 Chillin' not allowed 'n safe mode so show some love, niggaz!
 Pars'n mods not allowed on safe mode.
-Error when cruisin' ta set parze mode and my money on my mind. Check tha value n try again paper'd up. If dis is correct, see tha stack trace when kernel bustin' be enabled.
 Tha path is playa a file nor a directory.
 Creates anotha copy of a file unda different directory or name.
 Moves a file ta anotha directory
@@ -409,7 +406,6 @@ Check fo` Updates on Startup
 Quiet Probe
 Show MOTD on Log-'n
 Clear Screen on Log-'n
-Show available usernames
 Colored Shell
 Simplify Help Command
 Debug Port
@@ -743,7 +739,6 @@ The color value be outside tha range of 0-255.
 Tha wrappable command is not found keep'n it real yo.
 Queries a word 'n a specify line or all lines
 {0} of {1} downloaded.
-{0} of {1} uploaded ta help you tap dat ass.
 Prints a str'n ta console blunt-rollin' color type n line print
 Prints a str'n ta console us'n color type and line print wit format support
 Prints a str'n ta motherfucka
@@ -939,7 +934,6 @@ Config entry {0} not found.
 Uze Beats Pa Minute
 Homie ta uze tha Beats Bitch Minute unit ta write tha next color. Real niggas recognize the realness.
 Delay 'n Beats Drug deala Minute
-Beat Color
 How many beats homeboi minute to wait before pimpin' tha next write in tha mutha fuckin club?
 Drug deala will select random colors if it enabled. Otherwise, uze colors from config.
 Custom Startup Homeboi
@@ -1001,7 +995,6 @@ Command usage:
 Part file name: Im a bad boy wit a lotta hos.
 Part file path: Snoop dogg is in this bitch.
 Error when steppin' ta start nigga gangsta style:
-Invalid path type fo yo bitch ass.
 Invalid kernel path type. Boom bam as I step in the jam, God damn.
 Previous boot failed
 Tha JSON editor hasn't opened a file stream yet.
@@ -1015,8 +1008,6 @@ Saves tha JSON file
 Opens tha JSON shell
 Prints tha JSON file
 Next ramp interval
-Activates 255 color support fo` Ramp.
-Activates true color support for Ramp so sit back relax new jacks get smacked.
 How many milliseconds ta wait before slackin' in tha next ramp?
 Notification title color
 Notification description color
@@ -1047,8 +1038,6 @@ Shows local kernel date n time
 Shows UTC kernel time
 Shows UTC kernel date
 Shows UTC kernel date n time
-MOTD path
-MAL path
 Which file be tha MOTD text file? Write an absolute path to tha text file.
 Which file be tha MAL text file? Write an absolute P-to-tha-izzath to tha text F-to-tha-izzile.
 Blacklisted mods
@@ -1058,7 +1047,6 @@ Reloads all mods
 Adds a mod ta tha blacklist
 Removes a mod from tha blacklist
 Time n date 'n UTC: {0}
-Tha specified JSON shell command be not found. Boom bam as I step in the jam, God damn.
 Show app 411 dur'n boot
 Parze command-line arguments
 Show stage finish times
@@ -1073,7 +1061,6 @@ Shows tha current time, time zone, n date before saggin' 'n.
 If there be a minor fault chillin' kernel boot, notifies tha baller 'bout it.
 Username prompt style
 Password prompt style
-Show MAL on log-'n
 Write how you want yo' login prompt ta be. Leave blank ta use default style. Placeholda are parze'.
 Write how you want yo' password prompt ta be but real niggaz don't give a fuck. Leave blank ta uze default style. Placeholda be parze'. Im a bad boy wit a lotta hos.
 Shows Message of tha Day shot calla spendin' login screen.
@@ -1117,12 +1104,6 @@ Write how you want yo' GPG password prompt to be. Leave blank ta use default sty
 How many milliseconds ta send the IMAP doggy stylin' cuz I'm fresh out the pen?
 How many milliseconds ta send the SMTP p'n?
 Controls how tha mail text will be shown.
-Plain text
-Flowed text
-HTML text
-Enriched text
-Compresze' rich text
-Rich text
 Automatically start remote debug on startup
 Remote debug message format
 If you want remote debug ta start on boot, enable dis.
@@ -1270,7 +1251,6 @@ What be tha minimum homeboi ta chooze, chill yo?
 What be tha maximum numba ta chooze sho nuff?
 Write how you want your manpage 411 ta be. Leave blank ta uze default style. Brothaz be parze'. {0} fo` manual title, {1} fo` revision.
 Property {0} be not found on any of tha modules.
-This section lists tha general screensava settings. Fo` individual rappa blunt-rollin', exit Sett'n n open Shot calla Sett'n.
 Start color whizzle 'n true color mode
 If specify, it will display customize' startup banna wit homie support. You can uze {0} fo` kernel version.
 Which variant of tha current language be bein uze' ta change tha month names, calendar, etc.?
@@ -1293,7 +1273,6 @@ Hustla download data type:
 Playa upload data type in tha mutha fuckin club:
 You must connect ta a cracka before perform'n dis operation.
 Cracka a remote file ta be hashed cuz its a doggy dog world.
-Enta a remote directory ta be hashed.
 Motherfucka a remizzle directory paper'd up.
 Recizzle slackin' fo` FTP
 Shot calla ta recursively hash a directory. Pleaze note that not all tha FTP brothas support that.
@@ -1304,11 +1283,8 @@ Disk size now pass the glock:
 Total memory:
 Graphics card:
 Disk model:
-Maximum gangsta of e-mails 'n one page
 Culture of tha current language
 If yoe sure that you opened tha right section, check dis message out:
-Misc Sett'n...
-Colors Settings...
 Executes an FTP serva command
 Brotha POP3 bitch address n port (<address> or <address>, ya feel me?[port]): 
 POP3 prompt style for mail
@@ -1320,7 +1296,6 @@ Whetha ta uze POP3. Playa hatin' dis will use SMTP.
 Encrypts a str'n us'n CRC32
 Opens tha mail client
 of mail transferred...
-Messin' fo` dis homey be available here.
 Tests tha table functionality
 Edits tha specify line
 Adds tha new lines at tha end of tha file
@@ -1351,7 +1326,6 @@ Tha mod file provided be incompatible.
 Uninstallation failed for
 Opens a URL
 Print line numba on print'n file contents
-Makes tha \"cat\" command print tha file line numba.
 Transliterated version
 Translated version
 Dismiszes all notifications
@@ -1385,7 +1359,6 @@ Sets tha HTTP site. Must be a valid URI.
 Gets tha responze from the HTTP brotha sippin' tha specify request
 Deletes content from HTTP motherfucka
 There was an error 'n tha HTTP shell:
-HTTP message: The requested command {0} be not found like old skool shit. See 'help' fo` a list of available commands specify on HTTP shell.
 Gets tha slackin' from tha HTTP homeboi us'n tha specify request
 Chillin' {0}...
 Tha site URI format be invalid. Holler at tha boss dogg.
@@ -1437,8 +1410,6 @@ Failed ta git tha latest news.
 Selected option color
 Show stack trace on kernel error
 If there be any kernel error, chooze whetha or not ta print tha stack trace ta tha console. Throw yo guns in the motherfuckin air.
-Mod can be loaded, but theze pimpin' may impact the way tha mod works:
-Wanna be gangsta can be loaded, but theze slackin' may impact tha way tha screensaver works:
 Save Blunt-rollin' As
 Load Sett'n From
 Where d-ya want ta save the current kernel trippin'?
@@ -1463,8 +1434,6 @@ Failed ta remove an event cuz this is how we do it.
 Not enough arguments provided ta add an event.
 Not enough arguments provided ta remove an event, betta check yo self.
 Not enough arguments provided fo` event manipulation. Anotha dogg house production.
-Failed ta add or remove a wanna be gangsta.
-Not enough arguments provided ta add or remove a brotha fo my bling bling.
 Not enough arguments provided fo` killa manipizzle.
 Untitled reminda
 Untitled event
@@ -1555,11 +1524,8 @@ Enables ballin' fo` tha kernel event system
 Figlet font
 Write a figlet font that be supported by tha Fizniggle library. Consult tha library documentation fo` more 411
 Failed ta install custom language {0}.
-Tha metadata file needed ta install tha custom language doesn't exist.
 Tha metadata 411 needed to install tha custom language doesn't provide tha necessary localizations needed. Boo-Yaa!
 Failed ta uninstall custom language {0}.
-Tha metizzle file needed ta uninstall tha custom language doesn't exist. wat it do ??
-Tha metadata 411 needed ta uninstall tha custom language doesn't provide the necessary localizations needed sho nuff.
 Length of tha English language doesn't match tha lizzay of tha language token provided.
 Tha language already exists n can't be overwritten. Its just anotha homocide.
 Failed ta uninstall custom language. It most likely doesn't exist.
@@ -1596,7 +1562,6 @@ If enabled, will uze tha notification system ta notify tha host of remote debug 
 Figlet font fo` drug deala
 Enable Figlet for tima
 If enabled, will uze figlet fo` tima. Pleaze note that it needs a big console screen in homeboy ta renda tha time properly wit Figlet enabled.
-Error while trippin' pre-boot command-line arguments: {0}
 Resets tha kernel ta tha factory slackin'
 Bypaszes tha console size detection
 Looks like yoe bypass'n tha console size detection. Hatin' may not work properly on small screens.
@@ -1605,11 +1570,6 @@ Your console be too small ta run properly:
 Banna figlet font
 Prints a mobbin' to console us'n color type n line print with Figlet support
 Prints a str'n ta console blingin' color type n line print wit format n Figlet support
-Permanently removes a message
-Permanently removes all messages from recipient
-Undos remov'n a message
-Undos remov'n all messages from recipient
-Undo deletion be not implemented fo` POP3.
 Show the commands count on help
 Show tha shell commands count on help
 Show tha mod commands count on help
@@ -1628,7 +1588,6 @@ Exits the shell if blunt-rollin' on subshell
 Can not kill tha crazy ass nigga shell!
 Cannot log out from tha subshell.
 File not specified. Exit'n shell...
-Blunt-rollin' fo` dis splash screen be available here in tha dogg pound.
 Progress bar color
 Opens tha pimp sett'n
 Opens tha splash sett'n
@@ -1736,7 +1695,6 @@ Red color level:
 Green color level: Death row 187 4 life.
 Blue color level: Aint no L-I-M-I-to-tha-T.
 RGB color sequence:
-Thizze argument must be numeric.
 Tha red color level must be numeric.
 The green color level must be numeric.
 Tha blue color level must be numeric.
@@ -1750,7 +1708,6 @@ Playa ta simulate a situation where there be no APM availizzle. If enabled, it i
 Glitch density
 Tha homeboi tha percentage, tha more dense tha glitch!
 The gizzle language contains strong language that miznay miznake you fizzeel uncomfortable blunt-rollin' it. Are yiznou sure thizzle yizzay wizzay ta set tha language anyways?
-Dis mizzle be bustin' tha legacy mizzle ta execizzle tha commands cuz this is how we do it. Dis be obsolete. Pleaze contact tha mod vendor ta migrate ta tha current standards.
 Tha English Dictionarizzle
 Wizzy 411 fo`
 API be licenze' unda
@@ -1762,4 +1719,3 @@ Example in Sentence:
 Sizzles uze' ta dizzle
 Synonyms fo gettin yo pimp on:
 Antonyms like a tru playa':
-Dis screensava uzes obsolizzle techniqizzles ta display its contents, which will no longa wiznork playa hatin' from tha N-to-tha-izzext KS API revision. You gotta check dis shit out yo. Contact tha vendor ta migrate ta nizzle, supportizzle techniques.

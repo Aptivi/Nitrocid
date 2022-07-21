@@ -1,7 +1,6 @@
 upalabdh aadesh: {0}
 kamaand injekshan radd kar diya gaya hai.
 injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.
-asalee kamaand lain tarkon ko paars karate samay truti: {0}
 amaany rang tempalet {0}
 hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...
 seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...
@@ -49,7 +48,6 @@ upayogakarta {0} hata diya gaya.
 upayogakarta naam hataane kee koshish mein truti.
 anurodh kiya gaya skreenasevar {0} nahin mila hai.
 {0} theek se shuroo kiya gaya hai.
-{0} praarambh nahin hua. praarambh karane ke dauraan skreenasevar kod mein ek truti huee ho sakatee hai.
 skreenasevar {0} maujood nahin hai.
 {0} difolt skreenasevar par set hai.
 skreenasevar {0} detaabes mein nahin mila. naam kee jaanch karen aur punah prayaas karen.
@@ -231,7 +229,6 @@ motd / mal paane ke lie prayaas karate samay truti: {0}
 amaany opareshan ke kaaran skreenasevar ko praarambh karane ka prayaas karate samay truti.
 surakshit mod mein riloding kee anumati nahin hai.
 surakshit mod par paarsing mod kee anumati nahin hai.
-paars mod set karane ka prayaas karate samay truti. maan kee jaanch karen aur pun: prayaas karen. yadi yah sahee hai, to karnel deebaging saksham hone par staik tres dekhen.
 raasta na to phail hai aur na hee daayarektaree.
 alag nirdeshika ya naam ke tahat ek fail kee ek aur pratilipi banaata hai.
 fail ko kisee any nirdeshika mein le jaata hai
@@ -409,7 +406,6 @@ staartap par apadet ke lie jaanch karen
 shaant jaanch
 log-in par motd dikhaen
 log-in par spasht skreen
-upalabdh upayogakarta naam dikhaen
 rangeen khol
 saraleekrt sahaayata kamaan
 dibag port
@@ -743,7 +739,6 @@ rang maan 0-255 kee seema se baahar hai.
 lapetane yogy aadesh nahin mila hai.
 kisee shabd ko ek nirdisht pankti ya sabhee panktiyon mein kveree karata hai
 {1} mein se {0} daunalod kiya gaya.
-{1} mein se {0} apalod kiya gaya.
 rang prakaar aur lain print ka upayog karake kansol ko string print karata hai
 rang prakaar aur praaroop samarthan ke saath lain print ka upayog karake kansol ke lie ek string print karata hai
 deebagar par ek string print karata hai
@@ -939,7 +934,6 @@ konphig pravishti {0} nahin milee.
 beets prati minat ka prayog karen
 agala rang likhane ke lie beets prati minat ikaee ka upayog karana hai ya nahin.
 beets prati minat mein deree
-beet kalar
 agala likhane se pahale prati minat kitane beets prateeksha karen?
 yadi yah saksham hai to beetaphaidar yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen.
 kastam staartap bainar
@@ -1001,7 +995,6 @@ kamaand ka upayog:
 bhaag fail ka naam:
 bhaag fail path:
 skreenasevar praarambh karane ka prayaas karate samay truti:
-amaany path prakaar.
 amaany karnel path prakaar.
 pichhala boot viphal
 json sampaadak ne abhee tak koee fail streem nahin kholee hai.
@@ -1015,8 +1008,6 @@ json fail sahejata hai
 json shel kholata hai
 json fail print karata hai
 agala raimp antaraal
-raimp ke lie 255 kalar saport ko sakriy karata hai.
-raimp ke lie troo kalar saport sakriy karata hai.
 agale raimp mein bharane se pahale kitane mileesekand prateeksha karen?
 adhisoochana sheershak rang
 adhisoochana vivaran rang
@@ -1047,8 +1038,6 @@ sthaaneey karnel dinaank aur samay dikhaata hai
 yooteesee karnel samay dikhaata hai
 utch karnel dinaank dikhaata hai
 utch karnel dinaank aur samay dikhaata hai
-motd path
-mal path
 motd tekst fail kaun see fail hai? tekst fail ke lie ek nirapeksh path likhen.
 emeel tekst phail kaun see phail hai? tekst fail ke lie ek nirapeksh path likhen.
 blaik listed mod
@@ -1058,7 +1047,6 @@ sabhee mod ko punah lod karata hai
 blaikalist mein ek mod jodata hai
 ek mod ko blaikalist se hataata hai
 yooteesee mein samay aur taareekh: {0}
-nirdisht json shel kamaand nahin mila.
 boot ke dauraan aip kee jaanakaaree dikhaen
 paars kamaand lain tark
 stej khatm hone ka samay dikhaen
@@ -1073,7 +1061,6 @@ log in karane se pahale vartamaan samay, samay kshetr aur dinaank dikhaata hai.
 yadi karnel boot ke dauraan koee maamoolee kharaabee hai, to upayogakarta ko isake baare mein soochit karata hai.
 upayogakarta naam sheeghr shailee
 paasavard sheeghr shailee
-log-in par mal dikhaen
 likhen ki aap apane login prompt ko kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
 likhen ki aap kaise chaahate hain ki aapaka paasavard sheeghr ho. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
 login skreen pradarshit karane ke baad din ka sandesh dikhaata hai.
@@ -1117,12 +1104,6 @@ likhen ki aap apane jeepeejee paasavard ko kaise chaahate hain. difolt shailee k
 imap ping bhejane ke lie kitane mileesekand?
 smtp ping bhejane ke lie kitane mileesekand?
 niyantrit karata hai ki mel tekst kaise dikhaaya jaega.
-saade paath
-pravaahit paath
-echateeemel tekst
-samrddh paath
-sampeedit samrddh paath
-rich paath
 staartap par svachaalit roop se doorasth deebag praarambh karen
 doorasth dibag sandesh praaroop
 yadi aap boot par doorasth deebag praarambh karana chaahate hain, to ise saksham karen.
@@ -1270,7 +1251,6 @@ chunane ke lie nyoonatam sankhya kya hai?
 chunane ke lie adhikatam sankhya kya hai?
 likhen ki aap apane mainapej kee jaanakaaree kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai. {0} mainyual sheershak ke lie, {1} sanshodhan ke lie.
 sampatti {0} kisee bhee modyool par nahin milee hai.
-yah khand saamaany skreenasevar setings ko soocheebaddh karata hai. alag-alag skreenasevar setings ke lie, setings se baahar nikalen aur skreenasevar setings kholen.
 kalar vheel ko troo kalar mod mein shuroo karen
 yadi nirdisht kiya gaya hai, to yah plesaholdar samarthan ke saath anukoolit staartap bainar pradarshit karega. aap karnel sanskaran ke lie {0} ka upayog kar sakate hain.
 maheene ke naam, kailendar aadi ko badalane ke lie vartamaan bhaasha ke kis sanskaran ka upayog kiya ja raha hai?
@@ -1293,7 +1273,6 @@ sarvar daunalod deta prakaar:
 sarvar apalod deta prakaar:
 is opareshan ko karane se pahale aapako ek sarvar se kanekt hona hoga.
 haish karane ke lie ek doorasth fail darj karen.
-haish karane ke lie ek doorasth nirdeshika darj karen.
 ek doorasth nirdeshika darj karen.
 efateepee ke lie punaraavartee haishing
 nirdeshika ko punaraavartee haish karana hai ya nahin. krpaya dhyaan den ki sabhee ftp sarvar isaka samarthan nahin karate hain.
@@ -1304,11 +1283,8 @@ disk ka aakaar:
 kul smrti:
 chitropama patrak:
 disk modal:
-ek pej mein ee-mel kee adhikatam sankhya
 vartamaan bhaasha kee sanskrti
 yadi aap sunishchit hain ki aapane sahee anubhaag khola hai, to is sandesh ko dekhen:
-vividh setings...
-rang setings...
 ek ftp sarvar kamaand nishpaadit karata hai
 pop3 sarvar pata aur port darj karen (<pata> ya <pata>:[port]):
 mel ke lie pop3 sheeghr shailee
@@ -1320,7 +1296,6 @@ pop3 ka upayog karana hai ya nahin. ise aksham karane se esemateepee ka upayog h
 chrch32 ka upayog karake ek string ko enkript karata hai
 mel klaint kholata hai
 mel ke traansaphar...
-is skreenasevar ke lie setings yahaan upalabdh hain.
 taalika kee kaaryakshamata ka pareekshan karata hai
 nirdisht pankti ko sampaadit karata hai
 fail ke ant mein naee lainen jodata hai
@@ -1351,7 +1326,6 @@ pradaan kee gaee mod fail asangat hai.
 sthaapana radd karane mein viphal
 ek yooaarel kholata hai
 fail saamagree ko print karane par lain nambar print karen
-\"chat\" kamaand ko phail ke lain nambar print karavaata hai.
 anoodit sanskaran
 anuvaadit sanskaran
 sabhee soochanaon ko khaarij karata hai
@@ -1385,7 +1359,6 @@ http sait set karata hai. ek vaidh yooaaraee hona chaahie.
 nirdisht anurodh ka upayog karake http sarvar se pratikriya praapt karen
 http sarvar se saamagree hataata hai
 http shel mein ek truti thee:
-http sandesh: anurodhit aadesh {0} nahin mila. http shel par nirdisht upalabdh kamaand kee soochee ke lie sahaayata dekhen.
 nirdisht anurodh ka upayog karake http sarvar se string praapt karen
 mil raha hai {0}...
 sait yooaaraee praaroop amaany hai.
@@ -1437,8 +1410,6 @@ naveenatam samaachaar praapt karane mein viphal.
 chayanit vikalp rang
 karnel truti par staik tres dikhaen
 yadi koee karnel truti hai, to chunen ki staik tres ko kansol par print karana hai ya nahin.
-mod ko lod kiya ja sakata hai, lekin ye chetaavaniyaan mod ke kaam karane ke tareeke ko prabhaavit kar sakatee hain:
-skreenasevar lod kiya ja sakata hai, lekin ye chetaavaniyaan skreenasevar ke kaam karane ke tareeke ko prabhaavit kar sakatee hain:
 setings ko is roop mein sahejen
 se setings lod karen
 aap vartamaan karnel setings ko kahaan sahejana chaahate hain?
@@ -1463,8 +1434,6 @@ kisee eevent ko nikaalane mein viphal.
 ivent jodane ke lie paryaapt tark nahin die gae hain.
 kisee eevent ko nikaalane ke lie paryaapt tark nahin die gae hain.
 ghatana mein herapher ke lie paryaapt tark nahin die gae hain.
-rimaindar jodane ya nikaalane mein viphal.
-rimaindar jodane ya hataane ke lie paryaapt tark nahin die gae hain.
 rimaindar herapher ke lie paryaapt tark nahin die gae hain.
 bina sheershak vaala rimaindar
 sheershakaheen ghatana
@@ -1555,11 +1524,8 @@ karnel ivent sistam ke lie dibaging saksham karata hai
 phigalet phont
 ek phigalet phont likhen jo phigal laibreree dvaara samarthit ho. adhik jaanakaaree ke lie pustakaalay ke dastaavez dekhen
 kastam bhaasha {0} sthaapit karane mein viphal.
-kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta fail maujood nahin hai.
 kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree aavashyak sthaaneeyakaran pradaan nahin karatee hai.
 kastam bhaasha {0} kee sthaapana radd karane mein viphal.
-kastam bhaasha ko aninstol karane ke lie aavashyak metaadeta fail maujood nahin hai.
-kastam bhaasha ko aninstol karane ke lie aavashyak metaadeta jaanakaaree aavashyak sthaaneeyakaran pradaan nahin karatee hai.
 angrejee bhaasha kee lambaee pradaan kee gaee bhaasha tokan kee lambaee se mel nahin khaatee.
 bhaasha pahale se maujood hai aur ise adhilekhit nahin kiya ja sakata hai.
 kastam bhaasha kee sthaapana radd karane mein viphal. sabase adhik sambhaavana hai ki yah maujood nahin hai.
@@ -1596,7 +1562,6 @@ yadi saksham kiya gaya hai, to doorasth deebag kanekshan truti ke host ko soochi
 taimar ke lie phigalet font
 taimar ke lie phigalet saksham karen
 saksham hone par, taimar ke lie phigalet ka upayog karega. krpaya dhyaan den ki figlait saksham ke saath samay ko theek se prastut karane ke lie ise ek badee kansol skreen kee aavashyakata hai.
-pree-boot kamaand-lain tarkon ko paars karate samay truti: {0}
 karnel ko faiktaree setings par reeset karata hai
 kansol saij ditekshan ko baayapaas karata hai
 aisa lagata hai ki aap kansol aakaar kee pahachaan ko darakinaar kar rahe hain. ho sakata hai ki chhote parde par cheejen theek se kaam na karen.
@@ -1605,11 +1570,6 @@ aapaka kansol theek se chalane ke lie bahut chhota hai:
 bainar anjeer font
 figalet samarthan ke saath rang prakaar aur lain print ka upayog karake kansol par ek string print karata hai
 rang prakaar aur lain print ka upayog karake praaroop aur phigalet samarthan ke saath ek string ko kansol par print karata hai
-ek sandesh ko sthaayee roop se hataata hai
-praaptakarta se sabhee sandeshon ko sthaayee roop se hata deta hai
-kisee sandesh ko hataana poorvavat karen
-praaptakarta se sabhee sandeshon ko hataana poorvavat karen
-pop3 ke lie poorvavat hataana kriyaanvit nahin kiya gaya hai.
 aadesh dikhaen madad par bharosa karen
 shel kamaand dikhaen madad par bharosa karen
 mod kamaand dikhaen madad par bharosa karen
@@ -1628,7 +1588,6 @@ sabashel par chalane par shel se baahar nikalata hai
 maan ke khol ko nahin maar sakate!
 upakosh se log aaut nahin kiya ja sakata.
 fail nirdisht nahin hai. shel se baahar nikal raha hai...
-is splaish skreen ke lie setings yahaan upalabdh hain.
 pragati baar rang
 skreenasevar seting kholata hai
 splaish seting kholata hai
@@ -1736,7 +1695,6 @@ laal rang ka star:
 hara rang star:
 neela rang star:
 aarajeebee rang anukram:
-tark sankhyaatmak hona chaahie.
 laal rang ka star ankeey hona chaahie.
 hare rang ka star ankeey hona chaahie.
 neele rang ka star ankeey hona chaahie.
@@ -1750,7 +1708,6 @@ kya aisee sthiti ka anukaran karana hai jahaan koee epeeem upalabdh nahin hai. y
 gadabad ghanatv
 pratishat jitana adhik hoga, gadabad utanee hee ghanee hogee!
 gaingasta bhaasha mein majaboot bhaasha hai jo aapako ise padhane mein asahaj mahasoos kara sakatee hai. kya aap vaakee bhaasha ko vaise bhee set karana chaahate hain?
-yah mod kamaand ko nishpaadit karane ke lie leegesee vidhi ka upayog kar raha hai. yah aprachalit hai. vartamaan maanakon par maigret karane ke lie krpaya mod vikreta se sampark karen.
 angrejee shabdakosh
 shabd kee jaanakaaree
 epeeaee ke tahat laisens praapt hai
@@ -1762,4 +1719,3 @@ vaaky mein udaaharan:
 paribhaashit karane ke lie prayukt srot
 samaanaarthee shabd:
 vilom shabd:
-yah skreenasevar apanee saamagree ko pradarshit karane ke lie aprachalit takaneekon ka upayog karata hai, jo ab agale ks api sanshodhan se kaam nahin karega. naee, samarthit takaneekon mein maigret karane ke lie vikreta se sampark karen.
