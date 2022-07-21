@@ -181,5 +181,6 @@ This version is WIP as of 7/14/2022.
 
 1. Removed obsolete Mod and Screensaver APIs
 2. Added command autocompletion
-3. General API improvements
-4. General improvements and bug fixes
+3. Fixed wrong character for lower left corner in Ramp when the config is being created
+4. General API improvements
+5. General improvements and bug fixes

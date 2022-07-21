@@ -639,3 +639,17 @@ However, the base `Filesystem` module will stay so that path neutralization and 
   - `KS.Files.Print`
   - `KS.Files.Querying`
   - `KS.Files.Read`
+
+##### Separated ConsoleColors enumeration
+
+It was previously inside the Colors255 module. Now, it resides in its own code file. It's in the same namespace.
+
+##### Removed KS.Misc.Dictionary to substitute with Dictify
+
+We have removed this namespace that existed in 0.0.23.0 to use the Doctify library so if we try to update it for bug fixes or feature additions, we don't depend on Kernel Simulator for this feature.
+
+* Affected functions:
+  - `GetWordInfo()`
+
+* Affected classes:
+  - `DictionaryWord`
