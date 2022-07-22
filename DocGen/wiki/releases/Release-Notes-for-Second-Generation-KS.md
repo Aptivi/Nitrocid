@@ -185,6 +185,7 @@ This version is WIP as of 7/14/2022.
 4. Added new splashes (systemd, sysvinit, openrc)
 5. Added support for UESH conditions that require moer than three arguments
 6. Added preview to saver settings
-7. Fixed wrong character for lower left corner in Ramp when the config is being created
-8. General API improvements
-9. General improvements and bug fixes
+7. Added new tests
+8. Fixed wrong character for lower left corner in Ramp when the config is being created
+9. General API improvements
+10. General improvements and bug fixes
