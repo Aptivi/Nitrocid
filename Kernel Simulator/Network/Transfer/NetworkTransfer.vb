@@ -24,7 +24,7 @@ Imports System.Threading.Tasks
 Imports KS.Files.Folders
 Imports KS.Misc.Notifications
 
-Namespace Network
+Namespace Network.Transfer
     Public Module NetworkTransfer
 
         Public DownloadPercentagePrint As String = ""
