@@ -27,7 +27,7 @@ Namespace Scripting.Conditions.Types
             End Get
         End Property
 
-        Public Overrides ReadOnly Property ConditionPosition As ConditionPosition = ConditionPosition.First Implements ICondition.ConditionPosition
+        Public Overrides ReadOnly Property ConditionPosition As Integer = 1 Implements ICondition.ConditionPosition
 
         Public Overrides ReadOnly Property ConditionRequiredArguments As Integer = 2 Implements ICondition.ConditionRequiredArguments
 

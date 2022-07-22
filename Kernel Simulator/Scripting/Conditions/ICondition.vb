@@ -24,17 +24,21 @@ Namespace Scripting.Conditions
         ''' </summary>
         ReadOnly Property ConditionName As String
         ''' <summary>
-        ''' Specifies where the condition should be located
+        ''' Specifies where the condition should be located. Beware that it starts from 1.
         ''' </summary>
-        ReadOnly Property ConditionPosition As ConditionPosition
+        ReadOnly Property ConditionPosition As Integer
         ''' <summary>
-        ''' How many arguments are required (counting the condition itself)?
+        ''' How many arguments are required (counting the condition itself)? Beware that it starts from 1.
         ''' </summary>
         ReadOnly Property ConditionRequiredArguments As Integer
         ''' <summary>
         ''' Checks whether the condition is satisfied
         ''' </summary>
         Function IsConditionSatisfied(FirstVariable As String, SecondVariable As String) As Boolean
+        ''' <summary>
+        ''' Checks whether the condition is satisfiedfor more than two variables
+        ''' </summary>
+        Function IsConditionSatisfied(Variables As String()) As Boolean
 
     End Interface
 End Namespace

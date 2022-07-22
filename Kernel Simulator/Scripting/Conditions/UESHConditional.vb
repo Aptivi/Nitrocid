@@ -68,24 +68,14 @@ Namespace Scripting.Conditions
 
                 'Check the expression for argument numbers and middle condition
                 Dim RequiredArguments As Integer = ConditionBase.ConditionRequiredArguments
-                Dim ConditionPosition As ConditionPosition = ConditionBase.ConditionPosition
+                Dim ConditionPosition As Integer = ConditionBase.ConditionPosition
                 If EnclosedWords.Count < RequiredArguments Then
                     Wdbg(DebugLevel.E, "Argument count {0} is less than the required arguments {1}", EnclosedWords.Count, RequiredArguments)
                     Throw New Exceptions.UESHConditionParseException(DoTranslation("Condition {0} requires {1} arguments. Got {2}."), ConditionType, RequiredArguments, EnclosedWords.Count)
                 End If
-                If ConditionPosition = ConditionPosition.Last And ((RequiredArguments = 3 And Not AvailableConditions.ContainsKey(EnclosedWords(2))) Or
-                                                                   (RequiredArguments = 2 And Not AvailableConditions.ContainsKey(EnclosedWords(1)))) Then
-                    Wdbg(DebugLevel.E, "Condition should be in the end, but {0} is not a condition.", If(RequiredArguments = 3, EnclosedWords(2), EnclosedWords(1)))
+                If Not AvailableConditions.ContainsKey(EnclosedWords(ConditionPosition - 1)) Then
+                    Wdbg(DebugLevel.E, "Condition should be in position {0}, but {1} is not a condition.", ConditionPosition, EnclosedWords(ConditionPosition - 1))
                     Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition needs to be placed in the end."))
-                End If
-                If ConditionPosition = ConditionPosition.Middle And ((RequiredArguments = 3 And Not AvailableConditions.ContainsKey(EnclosedWords(1))) Or
-                                                                     (RequiredArguments = 2 And Not AvailableConditions.ContainsKey(EnclosedWords(0)))) Then
-                    Wdbg(DebugLevel.E, "Condition should be in the middle, but {0} is not a condition.", If(RequiredArguments = 3, EnclosedWords(1), EnclosedWords(0)))
-                    Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition needs to be placed in the middle."))
-                End If
-                If ConditionPosition = ConditionPosition.First And Not AvailableConditions.ContainsKey(EnclosedWords(0)) Then
-                    Wdbg(DebugLevel.E, "Condition should be in the beginning, but {0} is not a condition.", EnclosedWords(0))
-                    Throw New Exceptions.UESHConditionParseException(DoTranslation("The condition needs to be placed in the beginning."))
                 End If
 
                 'Execute the conditions
@@ -96,10 +86,10 @@ Namespace Scripting.Conditions
                         Case 2
                             Dim Variable As String = ""
                             Select Case ConditionPosition
-                                Case ConditionPosition.First, ConditionPosition.Middle
+                                Case 1
                                     'Expression can be "<condition> <variable>". Since there is no middle here, assume first.
                                     Variable = EnclosedWords(1)
-                                Case ConditionPosition.Last
+                                Case 2
                                     'Expression can be "<variable> <condition>"
                                     Variable = EnclosedWords(0)
                             End Select
@@ -108,20 +98,23 @@ Namespace Scripting.Conditions
                             Dim FirstVariable As String = ""
                             Dim SecondVariable As String = ""
                             Select Case ConditionPosition
-                                Case ConditionPosition.First
+                                Case 1
                                     'Expression can be "<condition> <variable> <variable>"
                                     FirstVariable = EnclosedWords(1)
                                     SecondVariable = EnclosedWords(2)
-                                Case ConditionPosition.Middle
+                                Case 2
                                     'Expression can be "<variable> <condition> <variable>"
                                     FirstVariable = EnclosedWords(0)
                                     SecondVariable = EnclosedWords(2)
-                                Case ConditionPosition.Last
+                                Case 3
                                     'Expression can be "<variable> <variable> <condition>"
                                     FirstVariable = EnclosedWords(0)
                                     SecondVariable = EnclosedWords(1)
                             End Select
                             Satisfied = ConditionBase.IsConditionSatisfied(FirstVariable, SecondVariable)
+                        Case Else
+                            Dim Variables As String() = EnclosedWords.SkipWhile(Function(str) str = EnclosedWords(ConditionPosition - 1)).ToArray
+                            Satisfied = ConditionBase.IsConditionSatisfied(Variables)
                     End Select
                     Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
                     Return Satisfied

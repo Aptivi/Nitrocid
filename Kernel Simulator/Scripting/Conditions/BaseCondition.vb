@@ -26,12 +26,17 @@ Namespace Scripting.Conditions
             End Get
         End Property
 
-        Public Overridable ReadOnly Property ConditionPosition As ConditionPosition = ConditionPosition.First Implements ICondition.ConditionPosition
+        Public Overridable ReadOnly Property ConditionPosition As Integer = 1 Implements ICondition.ConditionPosition
 
         Public Overridable ReadOnly Property ConditionRequiredArguments As Integer = 1 Implements ICondition.ConditionRequiredArguments
 
         Public Overridable Function IsConditionSatisfied(FirstVariable As String, SecondVariable As String) As Boolean Implements ICondition.IsConditionSatisfied
-            Wdbg(DebugLevel.I, "Doing nothing because the condition is none. Returning true...")
+            Wdbg(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...")
+            Return True
+        End Function
+
+        Public Function IsConditionSatisfied(Variables() As String) As Boolean Implements ICondition.IsConditionSatisfied
+            Wdbg(DebugLevel.I, "Doing nothing because the condition is undefined. Returning true...")
             Return True
         End Function
 

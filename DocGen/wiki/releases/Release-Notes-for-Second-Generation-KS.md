@@ -183,6 +183,7 @@ This version is WIP as of 7/14/2022.
 2. Removed report bug prompt
 3. Added command autocompletion
 4. Added new splashes (systemd, sysvinit, openrc)
-5. Fixed wrong character for lower left corner in Ramp when the config is being created
-6. General API improvements
-7. General improvements and bug fixes
+5. Added support for UESH conditions that require moer than three arguments
+6. Fixed wrong character for lower left corner in Ramp when the config is being created
+7. General API improvements
+8. General improvements and bug fixes
