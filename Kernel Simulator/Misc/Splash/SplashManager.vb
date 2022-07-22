@@ -33,7 +33,8 @@ Namespace Misc.Splash
                                                                                  {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
                                                                                  {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
                                                                                  {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
-                                                                                 {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)}}
+                                                                                 {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)},
+                                                                                 {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)}}
 
         ''' <summary>
         ''' Current splash screen
