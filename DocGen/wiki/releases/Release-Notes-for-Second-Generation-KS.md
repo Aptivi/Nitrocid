@@ -182,6 +182,7 @@ This version is WIP as of 7/14/2022.
 1. Removed obsolete Mod and Screensaver APIs
 2. Removed report bug prompt
 3. Added command autocompletion
-4. Fixed wrong character for lower left corner in Ramp when the config is being created
-5. General API improvements
-6. General improvements and bug fixes
+4. Added new splashes (systemd)
+5. Fixed wrong character for lower left corner in Ramp when the config is being created
+6. General API improvements
+7. General improvements and bug fixes
