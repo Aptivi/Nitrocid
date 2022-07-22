@@ -23,9 +23,12 @@ Imports KS.Files.Folders
 Imports KS.Files.Querying
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
+Imports KS.Misc.Screensaver
 
 Namespace Misc.Configuration
     Public Module SettingsApp
+
+        Private CurrentSettingsType As SettingsType = SettingsType.Normal
 
         ''' <summary>
         ''' Main page
@@ -36,9 +39,11 @@ Namespace Misc.Configuration
             Dim AnswerInt As Integer
             Dim SettingsToken As JToken = OpenSettingsResource(SettingsType)
             Dim MaxSections As Integer = SettingsToken.Count
+            CurrentSettingsType = SettingsType
 
             While Not PromptFinished
                 Console.Clear()
+
                 'List sections
                 WriteSeparator(DoTranslation("Welcome to Settings!"), True)
                 Write(NewLine + DoTranslation("Select section:") + NewLine, True, ColTypes.Neutral)
@@ -197,7 +202,12 @@ Namespace Misc.Configuration
                         End If
                     Next
                     Console.WriteLine()
-                    Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxOptions + 1)
+                    If CurrentSettingsType = SettingsType.Screensaver Then
+                        Write(" {0}) " + DoTranslation("Preview screensaver"), True, ColTypes.BackOption, MaxOptions + 1)
+                        Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxOptions + 2)
+                    Else
+                        Write(" {0}) " + DoTranslation("Go Back...") + NewLine, True, ColTypes.BackOption, MaxOptions + 1)
+                    End If
                     Wdbg(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions)
 
                     'Prompt user and check for input
@@ -212,7 +222,12 @@ Namespace Misc.Configuration
                         If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
                             Wdbg(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, Section)
                             OpenKey(Section, AnswerInt, SettingsToken)
-                        ElseIf AnswerInt = MaxOptions + 1 Then 'Go Back...
+                        ElseIf AnswerInt = MaxOptions + 1 And CurrentSettingsType = SettingsType.Screensaver Then
+                            'Preview screensaver
+                            Wdbg(DebugLevel.I, "User requested screensaver preview.")
+                            ShowSavers(Section)
+                        ElseIf AnswerInt = MaxOptions + 1 Or (AnswerInt = MaxOptions + 2 And CurrentSettingsType = SettingsType.Screensaver) Then
+                            'Go Back...
                             Wdbg(DebugLevel.I, "User requested exit. Returning...")
                             SectionFinished = True
                         Else
