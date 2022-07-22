@@ -25,6 +25,7 @@ using KS.ConsoleBase;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Login;
+using KS.Misc.Configuration;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network;
