@@ -45,6 +45,7 @@ Imports KS.Network.RPC
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.Network.SSH
+Imports KS.Network.Transfer
 Imports KS.Scripting.Interaction
 Imports KS.TestShell
 Imports MimeKit.Text

@@ -37,7 +37,7 @@ Imports KS.Modifications
 Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
-Imports KS.Network
+Imports KS.Network.Transfer
 Imports KS.Scripting
 Imports KS.TimeDate
 

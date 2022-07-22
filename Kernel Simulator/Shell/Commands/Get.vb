@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network
+Imports KS.Network.Transfer
 
 Namespace Shell.Commands
     Class Get_Command

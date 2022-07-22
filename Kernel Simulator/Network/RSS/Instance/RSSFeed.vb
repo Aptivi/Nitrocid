@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Net.Http
 Imports System.Xml
+Imports KS.Network.Transfer
 
 Namespace Network.RSS.Instance
     Public Class RSSFeed
