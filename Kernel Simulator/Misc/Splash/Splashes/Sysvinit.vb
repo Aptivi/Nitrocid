@@ -19,13 +19,13 @@
 Imports System.Threading
 
 Namespace Misc.Splash.Splashes
-    Class SplashSystemd
+    Class SplashSysvinit
         Implements ISplash
 
         'Standalone splash information
         ReadOnly Property SplashName As String Implements ISplash.SplashName
             Get
-                Return "systemd"
+                Return "sysvinit"
             End Get
         End Property
 
@@ -69,8 +69,6 @@ Namespace Misc.Splash.Splashes
         End Property
 
         'Private variables
-        Private IndicatorLeft As Integer
-        Private IndicatorTop As Integer
         Private Beginning As Boolean = True
 
         'Actual logic
@@ -83,8 +81,6 @@ Namespace Misc.Splash.Splashes
         Public Sub Display() Implements ISplash.Display
             Try
                 Wdbg(DebugLevel.I, "Splash displaying.")
-                IndicatorLeft = Console.CursorLeft + 2
-                IndicatorTop = Console.CursorTop
                 While Not SplashClosing
                     Thread.Sleep(1)
                 End While
@@ -100,12 +96,8 @@ Namespace Misc.Splash.Splashes
         End Sub
 
         Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
-            If Not Beginning Then WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, True, ColTypes.Success)
-            Write($" [      ] {ProgressReport}", True, ColTypes.Neutral, Vars)
-            If Not Beginning Then
-                IndicatorLeft = 2
-                IndicatorTop = Console.CursorTop - 1
-            End If
+            If Not Beginning Then Write(".", True, ColTypes.Neutral)
+            Write($"{ProgressReport}:", False, ColTypes.Neutral, Vars)
             Beginning = False
         End Sub
 

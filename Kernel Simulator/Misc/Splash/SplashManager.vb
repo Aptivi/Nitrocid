@@ -34,7 +34,8 @@ Namespace Misc.Splash
                                                                                  {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
                                                                                  {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
                                                                                  {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)},
-                                                                                 {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)}}
+                                                                                 {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)},
+                                                                                 {"sysvinit", New SplashInfo("sysvinit", True, 0, 0, 0, 0, New SplashSysvinit)}}
 
         ''' <summary>
         ''' Current splash screen
