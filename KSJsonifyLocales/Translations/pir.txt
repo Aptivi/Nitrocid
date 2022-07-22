@@ -695,13 +695,6 @@ invalid color specifier. Ensure that there it be on the correct format, which me
 error in test shell: {0}
 sets a variable to a value in a script
 a bug reportin' prompt.
- thank ye fer raisin' a ticket to us! select what kind o' offer do ye 'ave.
- a problem
-a feature offer
-a question
-ye must specify a feature.
- ask a question, jot yer idea, or report a problem.
- ye must write yer offer.
  there been an error in the ftp shell:
 unknown ftp shell error:
 there been an error in the sftp shell:

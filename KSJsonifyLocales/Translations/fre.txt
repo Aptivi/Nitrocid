@@ -695,13 +695,6 @@ Spécificateur de couleur non valide. Assurez-vous qu'il est au bon format, ce q
 Erreur dans le shell de test : {0}
 Définit une variable à une valeur dans un script
 Une invite de rapport de bogue.
-Merci d'avoir soulevé un ticket pour nous! Sélectionnez le type de demande que vous avez.
-Un problème
-Une demande de fonctionnalité
-Une question
-Vous devez spécifier une caractéristique.
-Posez une question, notez votre idée ou signalez un problème.
-Vous devez rédiger votre demande.
 Une erreur s'est produite dans le shell FTP :
 Erreur de shell FTP inconnue :
 Une erreur s'est produite dans le shell SFTP :

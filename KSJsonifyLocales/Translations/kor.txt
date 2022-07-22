@@ -695,13 +695,6 @@ jalmosdoen saegsang jijeongjaibnida. olbaleun hyeongsig-inji hwag-inhasibsio. je
 teseuteu syel olyu : {0}
 byeonsuleul seukeulibteuui gabs-eulo seoljeong
 beogeubogo peulompeuteu.
-tikes-eul ollyeo jusyeoseo gamsahabnida! eotteon jonglyuui yocheong-i issneunji seontaeghasibsio.
-munje
-gineung yocheong
-jilmun
-gineung-eul jijeonghaeyahabnida.
-jilmunhageona aidieoleul jeoggeona munjeleulbogohasibsio.
-yocheong-eul jagseonghaeyahabnida.
 FTP syel-e olyuga issseubnida.
 al sueobsneun FTP syel olyu :
 SFTP syel-e olyuga issseubnida.

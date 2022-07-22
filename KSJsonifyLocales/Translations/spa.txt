@@ -695,13 +695,6 @@ Especificador de color no válido. Asegúrese de que esté en el formato correct
 Error en el shell de prueba: {0}
 Establece una variable en un valor en un script
 Un mensaje de notificación de errores.
-¡Gracias por subirnos un boleto! Seleccione qué tipo de solicitud tiene.
-Un problema
-Una solicitud de función
-Una pregunta
-Debe especificar una característica.
-Haga una pregunta, anote su idea o informe un problema.
-Debe escribir su solicitud.
 Hubo un error en el shell de FTP:
 Error de shell de FTP desconocido:
 Hubo un error en el shell SFTP:

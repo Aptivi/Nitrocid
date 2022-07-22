@@ -695,13 +695,6 @@ yánsè shuōmíng fú wúxiào. Quèbǎo tā de géshì zhèngquè, rúguǒ sh�
 Cèshì shell zhōng de cuòwù:{0}
 Jiāng biàn liáng shèzhì wèi jiǎoběn zhōng de zhí
 cuòwù bàogào tíshì.
-Gǎnxiè nín wèi wǒmen chóují ménpiào! Xuǎnzé nín yǒu shé me yàng de yāoqiú.
-Yīgè wèntí
-gōngnéng qǐngqiú
-yīgè wèntí
-nín bìxū zhǐdìng yīgè gōngnéng.
-Tíchū wèntí, jì xià nín de xiǎngfǎ huò bàogào wèntí.
-Nín bìxū xiě xià nín de qǐngqiú.
 FTP shell zhòng chūxiàn cuòwù:
 Wèizhī de FTP wàiké cuòwù:
 SFTP shell zhòng chūxiàn cuòwù:

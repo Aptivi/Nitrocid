@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "KSJsonifyLocales - Copy localizations to resources": {
+      "commandName": "Project",
+      "commandLineArgs": "--CopyToResources --All"
+    },
+    "KSJsonifyLocales": {
+      "commandName": "Project"
+    }
+  }
+}

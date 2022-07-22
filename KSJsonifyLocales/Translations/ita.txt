@@ -695,13 +695,6 @@ Identificatore di colore non valido. Assicurati che sia nel formato corretto, il
 Errore nella shell di prova: {0}
 Imposta una variabile su un valore in uno script
 Una richiesta di segnalazione di bug.
-Grazie per aver raccolto un biglietto per noi! Seleziona che tipo di richiesta hai.
-Un problema
-Una richiesta di funzionalità
-Una domanda
-Devi specificare una caratteristica.
-Fai una domanda, annota la tua idea o segnala un problema.
-Devi scrivere la tua richiesta.
 Si è verificato un errore nella shell FTP:
 Errore sconosciuto della shell FTP:
 Si è verificato un errore nella shell SFTP:

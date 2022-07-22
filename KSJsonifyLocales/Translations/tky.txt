@@ -695,13 +695,6 @@ Geçersiz renk belirteci. Doğru biçimde olduğundan emin olun; bu, 255 renk ku
 Test kabuğunda hata: {0}
 Bir komut dosyasında bir değere bir değişken ayarlar
 Bir hata raporlama istemi.
-Bize bir bilet yükselttiğiniz için teşekkür ederiz! Ne tür bir isteğiniz olduğunu seçin.
-Bir sorun
-Bir özellik isteği
-Bir soru
-Bir özellik belirtmelisiniz.
-Bir soru sorun, fikrinizi not edin veya bir sorunu bildirin.
-Talebinizi yazmalısınız.
 FTP kabuğunda bir hata oluştu:
 Bilinmeyen FTP kabuğu hatası:
 SFTP kabuğunda bir hata oluştu:

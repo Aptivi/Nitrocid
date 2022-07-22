@@ -695,13 +695,6 @@ muhadad allawn ghayr salihi. ta'akad min 'anah fi altansiq alsahih , mimaa yaeni
 khataan fi haykal aliakhtibari: {0}
 yeyn mtghyrana 'iilaa qimat fi nasin barmajiin
 muajih al'iielam bialkhata'a.
-shukrana lirafe tadhkirat lina! hadad nawe altalab lidayka.
-mushkila
-talab mizatan
-sual
-yajib ealayk tahdid mayzatin.
-atruh swalaan 'aw dwin fikratik 'aw 'ablagh ean mushkilatin.
-yajib ealayk kitabat talabka.
 hadath khataan fi ghilaf FTP:
 khata fi shil FTP ghayr maerufin:
 hadath khataan fi ghilaf SFTP:

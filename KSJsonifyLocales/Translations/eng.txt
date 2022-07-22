@@ -695,13 +695,6 @@ Invalid color specifier. Ensure that it's on the correct format, which means a n
 Error in test shell: {0}
 Sets a variable to a value in a script
 A bug reporting prompt.
-Thank you for raising a ticket to us! Select what kind of request do you have.
-A problem
-A feature request
-A question
-You must specify a feature.
-Ask a question, jot your idea, or report a problem.
-You must write your request.
 There was an error in the FTP shell:
 Unknown FTP shell error:
 There was an error in the SFTP shell:

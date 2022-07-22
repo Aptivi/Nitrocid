@@ -695,13 +695,6 @@ Especificador de cor inválido. Certifique-se de que está no formato correto, o
 Erro no shell de teste: {0}
 Define uma variável para um valor em um script
 Um prompt de relatório de bug.
-Obrigado por nos enviar um tíquete! Selecione que tipo de solicitação você tem.
-Um problema
-Um pedido de recurso
-Uma pergunta
-Você deve especificar um recurso.
-Faça uma pergunta, escreva sua ideia ou relate um problema.
-Você deve escrever seu pedido.
 Ocorreu um erro no shell do FTP:
 Erro de shell de FTP desconhecido:
 Ocorreu um erro no shell SFTP:

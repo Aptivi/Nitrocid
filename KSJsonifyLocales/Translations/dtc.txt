@@ -695,13 +695,6 @@ Ongeldige kleurspecificatie. Zorg ervoor dat het de juiste indeling heeft, wat e
 Fout in testshell: {0}
 Stelt een variabele in op een waarde in een script
 Een prompt voor het melden van fouten.
-Bedankt dat je een kaartje naar ons hebt opgehaald! Selecteer wat voor soort verzoek je hebt.
-Een probleem
-Een functieverzoek
-Een vraag
-U moet een functie opgeven.
-Stel een vraag, noteer uw idee of meld een probleem.
-U moet uw verzoek schrijven.
 Er is een fout opgetreden in de FTP-shell:
 Onbekende FTP-shellfout:
 Er is een fout opgetreden in de SFTP-shell:

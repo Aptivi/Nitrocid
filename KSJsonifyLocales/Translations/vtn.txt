@@ -695,13 +695,6 @@ Bộ chỉ định màu không hợp lệ. Đảm bảo rằng nó ở đúng đ
 Lỗi trong trình bao thử nghiệm: {0}
 Đặt một biến thành một giá trị trong một tập lệnh
 Lời nhắc báo cáo lỗi.
-Cảm ơn bạn đã tăng một vé cho chúng tôi! Chọn loại yêu cầu bạn có.
-Vấn đề
-Một yêu cầu tính năng
-Một câu hỏi
-Bạn phải chỉ định một tính năng.
-Đặt một câu hỏi, ghi lại ý tưởng của bạn hoặc báo cáo một vấn đề.
-Bạn phải viết yêu cầu của bạn.
 Đã xảy ra lỗi trong FTP shell:
 Lỗi trình bao FTP không xác định:
 Đã xảy ra lỗi trong trình bao SFTP:

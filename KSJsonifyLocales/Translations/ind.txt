@@ -695,13 +695,6 @@ amaany rang vinirdeshak. sunishchit karen ki yah sahee praaroop par hai, jisaka 
 pareekshan shel mein truti: {0}
 ek char ko ek skript mein ek maan par set karata hai
 ek bag riporting prompt.
-hamaare lie tikat badhaane ke lie dhanyavaad! chunen ki aapake paas kis prakaar ka anurodh hai.
-ek samasya
-ek suvidha anurodh
-ek prashn
-aapako ek visheshata nirdisht karanee hogee.
-ek prashn poochhen, apana vichaar likhen, ya kisee samasya kee riport karen.
-aapako apana anurodh likhana hoga.
 ftp shel mein ek truti thee:
 agyaat ftp shel truti:
 sftp shel mein ek truti thee:

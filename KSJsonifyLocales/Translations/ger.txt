@@ -695,13 +695,6 @@ Ungültiger Farbspezifizierer. Stellen Sie sicher, dass das richtige Format vorl
 Fehler in der Test-Shell: {0}
 Setzt eine Variable auf einen Wert in einem Skript
 Eine Aufforderung zur Fehlerberichterstattung.
-Vielen Dank, dass Sie ein Ticket zu uns erhoben haben! Wählen Sie aus, welche Art von Anfrage Sie haben.
-Ein Problem
-Eine Funktionsanfrage
-Eine Frage
-Sie müssen eine Funktion angeben.
-Stellen Sie eine Frage, notieren Sie Ihre Idee oder melden Sie ein Problem.
-Sie müssen Ihre Anfrage schreiben.
 In der FTP-Shell ist ein Fehler aufgetreten:
 Unbekannter FTP-Shell-Fehler:
 In der SFTP-Shell ist ein Fehler aufgetreten:

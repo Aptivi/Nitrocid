@@ -695,13 +695,6 @@ Nedopustimyy spetsifikator tsveta. Ubedites', chto eto pravil'nyy format, chto o
 Oshibka v testovoy obolochke: {0}
 Ustanavlivayet znacheniye peremennoy v skripte
 Podskazka ob oshibke.
-Spasibo, chto podnyali nam bilet! Vyberite, kakoy u vas zapros.
-Problema
-Zapros funktsii
-Vopros
-Vy dolzhny ukazat' funktsiyu.
-Zadayte vopros, zapishite svoyu ideyu ili soobshchite o probleme.
-Vy dolzhny napisat' svoy zapros.
 Oshibka v obolochke FTP:
 Neizvestnaya oshibka obolochki FTP:
 V obolochke SFTP proizoshla oshibka:

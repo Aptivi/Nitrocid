@@ -695,13 +695,6 @@ Nediysnyy spetsyfikator kolʹoru. Perekonaytesya, shcho vin u pravylʹnomu forma
 Pomylka v testoviy obolontsi: {0}
 Vstanovlyuye zminniy znachennya v stsenariyi
 Pidkazka povidomyty pro pomylku.
-Dyakuyemo, shcho nadaly nam kvytok! Vyberitʹ, yakyy u vas zapyt.
-Problema
-Zapyt na funktsiyu
-Pytannya
-Vy povynni vkazaty funktsiyu.
-Postavte zapytannya, zapyshitʹ svoyu ideyu abo povidomte pro problemu.
-Vy povynni napysaty sviy zapyt.
 Stalasya pomylka v obolontsi FTP:
 Nevidoma pomylka obolonky FTP:
 Stalasya pomylka v obolontsi SFTP:

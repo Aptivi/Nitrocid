@@ -695,13 +695,6 @@ Invalid color specifia. Ensure that it on tha correct format, which means a gang
 Error 'n test shell: {0}
 Sets a variable ta a value 'n a script
 A bug report'n prompt.
-Thank you fo` blunt-rollin' a ticket ta us! Smells like tha good shit. Select what kind of request d-ya have.
-A problem
-A feature request
-A question
-You must specify a feature.
-Ask a question, jot yo' idea, or report a problem.
-You must write yo' request, betta check yo self.
 There was an error 'n tha FTP shell to increase tha peace:
 Unknown FTP shell error:
 There was an error 'n tha SFTP shell:

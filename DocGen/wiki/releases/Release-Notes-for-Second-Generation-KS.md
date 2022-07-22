@@ -180,7 +180,8 @@ Meanwhile, we plan to keep supporting the first generation KS until 2024.
 This version is WIP as of 7/14/2022.
 
 1. Removed obsolete Mod and Screensaver APIs
-2. Added command autocompletion
-3. Fixed wrong character for lower left corner in Ramp when the config is being created
-4. General API improvements
-5. General improvements and bug fixes
+2. Removed report bug prompt
+3. Added command autocompletion
+4. Fixed wrong character for lower left corner in Ramp when the config is being created
+5. General API improvements
+6. General improvements and bug fixes

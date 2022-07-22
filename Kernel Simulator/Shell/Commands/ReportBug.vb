@@ -16,15 +16,14 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc
-
 Namespace Shell.Commands
     Class ReportBugCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            PromptForBug()
+            Write(DoTranslation("Thank you for reporting a bug to us! Please follow the instructions on the screen."), True, ColTypes.Neutral)
+            Process.Start("https://github.com/EoflaOE/Kernel-Simulator/issues/new/choose")
         End Sub
 
     End Class
