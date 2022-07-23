@@ -81,7 +81,7 @@ Namespace Kernel
 
                     'Initial ReadLine settings
                     ReadLine.CtrlCEnabled = True
-                    ReadLine.HistoryEnabled = True
+                    InputHistoryEnabled = True
                     ReadLine.PrewriteDefaultValue = True
                     ReadLine.AutoCompletionEnabled = True
 
