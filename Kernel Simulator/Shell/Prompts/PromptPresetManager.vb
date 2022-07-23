@@ -1,0 +1,95 @@
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'
+'    This file is part of Kernel Simulator
+'
+'    Kernel Simulator is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    Kernel Simulator is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Imports KS.Shell.Prompts.Presets
+Imports KS.Kernel.Exceptions
+
+Namespace Shell.Prompts
+    Public Module PromptPresetManager
+
+        'Shell presets
+        Friend ReadOnly UESHShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New DefaultPreset()}
+        }
+
+        'Custom shell presets used by mods
+        Friend ReadOnly UESHCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+
+        'Current presets
+        Friend UESHShellCurrentPreset As PromptPresetBase = UESHShellPresets("Default")
+
+        ''' <summary>
+        ''' Sets the shell preset
+        ''' </summary>
+        ''' <param name="PresetName">The preset name</param>
+        Public Sub SetPreset(PresetName As String, ShellType As ShellType)
+            Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
+            If Presets.ContainsKey(PresetName) Then
+                Dim CurrentPresetBase As PromptPresetBase
+                GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+                CurrentPresetBase = Presets(PresetName)
+            Else
+                Throw New NoSuchShellPresetException(DoTranslation("The specified preset {0} is not found."), PresetName)
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Gets the current preset base from the shell
+        ''' </summary>
+        ''' <param name="ShellType">The shell type</param>
+        Public Sub GetCurrentPresetBaseFromShell(ShellType As ShellType, ByRef CurrentPresetRef As PromptPresetBase)
+            Select Case ShellType
+                Case ShellType.Shell
+                    CurrentPresetRef = UESHShellCurrentPreset
+            End Select
+        End Sub
+
+        ''' <summary>
+        ''' Gets the predefined presets from the shell
+        ''' </summary>
+        ''' <param name="ShellType">The shell type</param>
+        Public Function GetPresetsFromShell(ShellType As ShellType) As Dictionary(Of String, PromptPresetBase)
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return UESHShellPresets
+            End Select
+        End Function
+
+        ''' <summary>
+        ''' Gets the custom presets (defined by mods) from the shell
+        ''' </summary>
+        ''' <param name="ShellType">The shell type</param>
+        Public Function GetCustomPresetsFromShell(ShellType As ShellType) As Dictionary(Of String, PromptPresetBase)
+            Select Case ShellType
+                Case ShellType.Shell
+                    Return UESHCustomShellPresets
+            End Select
+        End Function
+
+        ''' <summary>
+        ''' Writes the shell prompt
+        ''' </summary>
+        ''' <param name="ShellType">Shell type</param>
+        Public Sub WriteShellPrompt(ShellType As ShellType)
+            Dim CurrentPresetBase As PromptPresetBase
+            GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+            Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
+        End Sub
+
+    End Module
+End Namespace

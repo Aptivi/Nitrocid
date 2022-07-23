@@ -189,6 +189,7 @@ This version is WIP as of 7/14/2022.
 8. Added new screensavers (Indeterminate)
 9. Added new languages (SMS Message, Shakespearean)
 10. Added new themes (Ports from VIM community themes)
-11. Fixed wrong character for lower left corner in Ramp when the config is being created
-12. General API improvements
-13. General improvements and bug fixes
+11. Added shell presets
+12. Fixed wrong character for lower left corner in Ramp when the config is being created
+13. General API improvements
+14. General improvements and bug fixes

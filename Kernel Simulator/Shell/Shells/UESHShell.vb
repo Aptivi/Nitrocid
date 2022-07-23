@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
-Imports KS.Files.Folders
+Imports KS.Shell.Prompts
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells
@@ -102,6 +102,8 @@ Namespace Shell.Shells
             End While
         End Sub
 
+        'TODO: Promote CommandPromptWrite() to the ShellBase namespace, changing its name to WriteShellPrompt() and preserving support
+        '      for the custom shell prompt style from config until further notice.
         ''' <summary>
         ''' Writes the input for command prompt
         ''' </summary>
@@ -113,15 +115,8 @@ Namespace Shell.Shells
                 Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
                 Conversion.ConvertVTSequences(ParsedPromptStyle)
                 Write(ParsedPromptStyle, False, ColTypes.Gray)
-            ElseIf String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
-                'Write the user dollar sign using the two styles, depending on the permission of the user
-                If HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrentDir) : Write(" # ", False, ColTypes.UserDollarSign)
-                Else
-                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, CurrentUser.Username) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HostName) : Write("]{0}", False, ColTypes.Gray, CurrentDir) : Write(" $ ", False, ColTypes.UserDollarSign)
-                End If
             Else
-                Write(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
+                WriteShellPrompt(ShellType.Shell)
             End If
         End Sub
 
