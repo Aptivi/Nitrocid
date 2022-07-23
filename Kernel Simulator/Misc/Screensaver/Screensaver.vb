@@ -56,6 +56,7 @@ Namespace Misc.Screensaver
             {"glitch", New GlitchDisplay()},
             {"glittercolor", New GlitterColorDisplay()},
             {"glittermatrix", New GlitterMatrixDisplay()},
+            {"indeterminate", New IndeterminateDisplay()},
             {"lighter", New LighterDisplay()},
             {"lines", New LinesDisplay()},
             {"linotypo", New LinotypoDisplay()},

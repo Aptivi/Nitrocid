@@ -903,6 +903,39 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Glitch", GlitchConfig)
 
+            'Indeterminate config json object
+            Dim IndeterminateConfig As New JObject From {
+                    {"Activate 255 Color Mode", Indeterminate255Colors},
+                    {"Activate True Color Mode", IndeterminateTrueColor},
+                    {"Delay in Milliseconds", IndeterminateDelay},
+                    {"Upper left corner character for ramp bar", IndeterminateUpperLeftCornerChar},
+                    {"Upper right corner character for ramp bar", IndeterminateUpperRightCornerChar},
+                    {"Lower left corner character for ramp bar", IndeterminateLowerLeftCornerChar},
+                    {"Lower right corner character for ramp bar", IndeterminateLowerRightCornerChar},
+                    {"Upper frame character for ramp bar", IndeterminateUpperFrameChar},
+                    {"Lower frame character for ramp bar", IndeterminateLowerFrameChar},
+                    {"Left frame character for ramp bar", IndeterminateLeftFrameChar},
+                    {"Right frame character for ramp bar", IndeterminateRightFrameChar},
+                    {"Minimum red color level", IndeterminateMinimumRedColorLevel},
+                    {"Minimum green color level", IndeterminateMinimumGreenColorLevel},
+                    {"Minimum blue color level", IndeterminateMinimumBlueColorLevel},
+                    {"Minimum color level", IndeterminateMinimumColorLevel},
+                    {"Maximum red color level", IndeterminateMaximumRedColorLevel},
+                    {"Maximum green color level", IndeterminateMaximumGreenColorLevel},
+                    {"Maximum blue color level", IndeterminateMaximumBlueColorLevel},
+                    {"Maximum color level", IndeterminateMaximumColorLevel},
+                    {"Upper left corner color for ramp bar", IndeterminateUpperLeftCornerColor},
+                    {"Upper right corner color for ramp bar", IndeterminateUpperRightCornerColor},
+                    {"Lower left corner color for ramp bar", IndeterminateLowerLeftCornerColor},
+                    {"Lower right corner color for ramp bar", IndeterminateLowerRightCornerColor},
+                    {"Upper frame color for ramp bar", IndeterminateUpperFrameColor},
+                    {"Lower frame color for ramp bar", IndeterminateLowerFrameColor},
+                    {"Left frame color for ramp bar", IndeterminateLeftFrameColor},
+                    {"Right frame color for ramp bar", IndeterminateRightFrameColor},
+                    {"Use border colors for ramp bar", IndeterminateUseBorderColors}
+                }
+            ScreensaverConfig.Add("Indeterminate", IndeterminateConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1736,6 +1769,36 @@ Namespace Misc.Configuration
                 '> Glitch
                 GlitchDelay = If(ConfigToken("Screensaver")?("Glitch")?("Delay in Milliseconds"), 10)
                 GlitchDensity = If(ConfigToken("Screensaver")?("Glitch")?("Glitch density"), 40)
+
+                '> Indeterminate
+                Indeterminate255Colors = If(ConfigToken("Screensaver")?("Indeterminate")?("Activate 255 Color Mode"), False)
+                IndeterminateTrueColor = If(ConfigToken("Screensaver")?("Indeterminate")?("Activate True Color Mode"), True)
+                IndeterminateDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Delay in Milliseconds"), 20)
+                IndeterminateUpperLeftCornerChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Upper left corner character for ramp bar"), "╔")
+                IndeterminateUpperRightCornerChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Upper right corner character for ramp bar"), "╗")
+                IndeterminateLowerLeftCornerChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Lower left corner character for ramp bar"), "╚")
+                IndeterminateLowerRightCornerChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Lower right corner character for ramp bar"), "╝")
+                IndeterminateUpperFrameChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Upper frame character for ramp bar"), "═")
+                IndeterminateLowerFrameChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Lower frame character for ramp bar"), "═")
+                IndeterminateLeftFrameChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Left frame character for ramp bar"), "║")
+                IndeterminateRightFrameChar = If(ConfigToken("Screensaver")?("Indeterminate")?("Right frame character for ramp bar"), "║")
+                IndeterminateMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Minimum red color level"), 0)
+                IndeterminateMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Minimum green color level"), 0)
+                IndeterminateMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Minimum blue color level"), 0)
+                IndeterminateMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Minimum color level"), 0)
+                IndeterminateMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Maximum red color level"), 255)
+                IndeterminateMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Maximum green color level"), 255)
+                IndeterminateMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Maximum blue color level"), 255)
+                IndeterminateMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Indeterminate")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Indeterminate")?("Maximum color level"), 255)
+                IndeterminateUpperLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Upper left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateUpperRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Upper right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateLowerLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Lower left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateLowerRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Lower right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateUpperFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Upper frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateLowerFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Lower frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Left frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Right frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+                IndeterminateUseBorderColors = If(ConfigToken("Screensaver")?("Indeterminate")?("Use border colors for ramp bar"), False)
 
                 'Splash Section - Splash-specific settings go below:
                 '> Simple

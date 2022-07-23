@@ -186,6 +186,7 @@ This version is WIP as of 7/14/2022.
 5. Added support for UESH conditions that require moer than three arguments
 6. Added preview to saver settings
 7. Added new tests
-8. Fixed wrong character for lower left corner in Ramp when the config is being created
-9. General API improvements
-10. General improvements and bug fixes
+8. Added new screensavers (Indeterminate)
+9. Fixed wrong character for lower left corner in Ramp when the config is being created
+10. General API improvements
+11. General improvements and bug fixes
