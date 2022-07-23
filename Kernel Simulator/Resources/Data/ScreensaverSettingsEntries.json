@@ -3284,12 +3284,6 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             },
             {
-                "Name": "Next ramp interval",
-                "Type": "SInt",
-                "Variable": "IndeterminateNextIndeterminateDelay",
-                "Description": "How many milliseconds to wait before filling in the next ramp?"
-            },
-            {
                 "Name": "Upper left corner character for ramp bar",
                 "Type": "SChar",
                 "Variable": "IndeterminateUpperLeftCornerChar",
