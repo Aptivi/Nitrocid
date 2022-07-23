@@ -141,20 +141,21 @@ The packing and distribution procedures are now easier by executing this script 
 
 ## Credits
 
-| Credits to         | For
-|--------------------|--------------------
-| EoflaOE            | Owner of Kernel Simulator
-| OpenWeatherMap     | Weather API
-| jonasjacek         | [Console color data](https://jonasjacek.github.io/colors/)
-| sindresorhus       | Word list
-| ayu-theme          | Ayu Theme
-| Ethan Schoonover   | Solarized Theme
-| Fabian Neuschmidt  | [Breezy Theme](https://github.com/fneu/breezy)
-| TechRepublic       | Articles RSS feed URL
-| EoflaOE            | [Name databases](https://github.com/EoflaOE/NamesList)
-| smashew            | [Name databases (just in case)](https://github.com/smashew/NameDatabases)
-| yavuz              | [RSS feed list by country](https://github.com/yavuz/news-feed-list-of-countries/)
-| All contributors   | Contribution
+| Credits to           | For
+|----------------------|--------------------
+| EoflaOE              | Owner of Kernel Simulator
+| OpenWeatherMap       | Weather API
+| jonasjacek           | [Console color data](https://jonasjacek.github.io/colors/)
+| sindresorhus         | Word list
+| ayu-theme            | Ayu Theme
+| Ethan Schoonover     | Solarized Theme
+| Fabian Neuschmidt    | [Breezy Theme](https://github.com/fneu/breezy)
+| TechRepublic         | Articles RSS feed URL
+| EoflaOE              | [Name databases](https://github.com/EoflaOE/NamesList)
+| smashew              | [Name databases (just in case)](https://github.com/smashew/NameDatabases)
+| yavuz                | [RSS feed list by country](https://github.com/yavuz/news-feed-list-of-countries/)
+| All VIM theme makers | for VIM themes, such as [Darcula](https://github.com/doums/darcula), [Melange](https://github.com/savq/melange), [Papercolor](https://github.com/NLKNguyen/papercolor-theme), [SpaceCamp](https://github.com/jaredgorski/SpaceCamp), etc.
+| All contributors     | Contribution
 
 ## Open Source Libraries
 

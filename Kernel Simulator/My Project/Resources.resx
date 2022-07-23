@@ -430,4 +430,43 @@
   <data name="ssp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ssp.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="Darcula" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Darcula.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Gruvbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Gruvbox.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Melange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Melange.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="MelangeDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\MelangeDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NoFrilsAcme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NoFrilsAcme.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NoFrilsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NoFrilsDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NoFrilsLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NoFrilsLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="NoFrilsSepia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\NoFrilsSepia.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Papercolor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Papercolor.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="PapercolorDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\PapercolorDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="Rigel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\Rigel.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="SpaceCamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\SpaceCamp.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="SpaceDuck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\SpaceDuck.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>
