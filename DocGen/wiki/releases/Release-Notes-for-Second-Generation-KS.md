@@ -187,6 +187,7 @@ This version is WIP as of 7/14/2022.
 6. Added preview to saver settings
 7. Added new tests
 8. Added new screensavers (Indeterminate)
-9. Fixed wrong character for lower left corner in Ramp when the config is being created
-10. General API improvements
-11. General improvements and bug fixes
+9. Added new languages (SMS Message, Shakespearean)
+10. Fixed wrong character for lower left corner in Ramp when the config is being created
+11. General API improvements
+12. General improvements and bug fixes

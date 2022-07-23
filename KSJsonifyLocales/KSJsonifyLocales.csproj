@@ -202,4 +202,12 @@
       <Name>Kernel Simulator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Translations\sms.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Translations\ssp.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

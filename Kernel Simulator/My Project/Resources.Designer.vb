@@ -144,8 +144,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;al&apos;awamir almtaht: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;tam &apos;iilgha&apos; haqn al&apos;awamir.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;sayatimu jadwlat alhujaj almahqunat litashghiliha eind &apos;iieadat altamhid altaali.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;khata &apos;athna&apos; tahlil wasayitat satar al&apos;awamir alhaqiqiat: {0}&quot;,
-        '''    &quot;Invalid color temp [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;qalib &apos;alwan ghayr salih {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: sayatim alta [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb() As String
             Get
@@ -161,9 +161,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;الأوامر المتاحة: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;تم إلغاء حقن الأوامر.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;خطأ أثناء تحليل وسيطات سطر الأوامر الحقيقية: {0}&quot;,
         '''    &quot;Invalid color template {0}&quot;: &quot;قالب ألوان غير صالح {0}&quot;,
-        '''    &quot; [rest of string was truncated]&quot;;.
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر. [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb_T() As String
             Get
@@ -492,8 +491,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè m [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi() As String
             Get
@@ -509,10 +508,9 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的参数将计划在下次重新引导时运行。&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;解析实际的命令行参数时出错：{0}&quot;,
         '''    &quot;Invalid color template {0}&quot;: &quot;无效的颜色模板{0}&quot;,
         '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
-        '''    &quot;CPU: One or more o [rest of string was truncated]&quot;;.
+        '''    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi_T() As String
             Get
@@ -528,8 +526,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng:{0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Zhùrù de cānshù jiāng bèi ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Jiěxī shíjì mìnglìng xíng cānshù shí chūcuò:{0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;W [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nín de yìngji [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cnt() As String
             Get
@@ -545,10 +543,9 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入的參數將被安排在下次重新啟動時運行。&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;解析實際命令行參數時出錯：{0}&quot;,
         '''    &quot;Invalid color template {0}&quot;: &quot;無效的顏色模板 {0}&quot;,
         '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
-        '''    &quot;CPU: [rest of string was truncated]&quot;;.
+        '''    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cnt_T() As String
             Get
@@ -573,8 +570,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Dostupné příkazy: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Příkazové injekce byla zrušena.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vložené argumenty budou naplánovány na další restart.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Chyba při analýze reálných argumentů příkazového řádku: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona barev {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Váš hardware bude testován. Prosím, čeke [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cze() As String
             Get
@@ -640,7 +637,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Beschikbare opdrachten: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Commando-injectie is geannuleerd.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Geïnjecteerde argumenten worden gepland om te worden uitgevoerd bij het volgende opnieuw opstarten.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fout tijdens het parseren van echte opdrachtregelargumenten:  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleurensjabloon {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wai [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property dtc() As String
             Get
@@ -656,8 +654,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled to run at next reboot.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error while parsing real command-line arguments: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;Invalid  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be pr [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property eng() As String
             Get
@@ -696,8 +694,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Commandes disponibles: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;L&apos;injection de commande a été annulée.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Les arguments injectés seront programmés pour s&apos;exécuter au prochain redémarrage.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erreur lors de l&apos;analyse des arguments de ligne de commande réels: {0}&quot;,
-        ''' [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Modèle de couleur non valide {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hw [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property fre() As String
             Get
@@ -713,8 +711,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Verfügbare Befehle: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Die Befehlsinjektion wurde abgebrochen.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injizierte Argumente werden für den nächsten Neustart geplant.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Fehler beim Analysieren von echten Befehlszeilenargumenten: {0}&quot;,
-        '''    &quot;Invalid color template  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Ungültige Farbvorlage {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ihre Hardware wird ge [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ger() As String
             Get
@@ -926,8 +924,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;4v41l4bl3 c0mm4nd5: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;c0mm4nd 1nj3c710n h45 b33n c4nc3ll3d.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;1nj3c73d 4r6um3n75 w1ll b3 5ch3dul3d 70 run 47 n3x7 r3b007.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;3rr0r wh1l3 p4r51n6 r34l c0mm4nd-l1n3 4r6um3n75: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;1n [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;1nv4l1d c0l0r 73mpl473 {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwpr0b3: y0ur h4rdw4r3 w1ll [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property hxr_1() As String
             Get
@@ -943,7 +941,7 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;4\\\\/4!|_4|3|_3 (0/\\\\/\\\\/\\\\/\\\\4|\\\\||)5: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;(0/\\\\/\\\\/\\\\/\\\\4|\\\\||) !|\\\\|_|3(7!0|\\\\| |-|45 |333|\\\\| (4|\\\\|(3|_|_3|).&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_|3(73|) 4|29(_)/\\\\/\\\\3|\\\\|75 \\\\/\\\\/!|_|_ |33 5(|-|3|)(_)|_3|) 70 |2(_)|\\\\| 47 |\\\\|3&gt;&lt;7 |23|3007.&quot;,
-        '''    &quot;Error wh [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property hxr_2() As String
             Get
@@ -959,7 +957,7 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;4\\\\/4!14813 (0|\\\\/||\\\\/|4|\\\\||)5: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;(0|\\\\/||\\\\/|4|\\\\||) !|\\\\|_)3(+!0|\\\\| |-|45 833|\\\\| (4|\\\\|(3113|).&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;!|\\\\|_)3(+3|) 4|26|_||\\\\/|3|\\\\|+5 \\\\|/!11 83 5(|-|3|)|_|13|) +0 |2|_||\\\\| 4+ |\\\\|3%+ |23800+.&quot;,
-        '''    &quot;Error while parsing real command-line a [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\ [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property hxr_3() As String
             Get
@@ -975,8 +973,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;upalabdh aadesh: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;kamaand injekshan radd kar diya gaya hai.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injekshan vaale tark agale reeboot par chalane ke lie nirdhaarit kie jaenge.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;asalee kamaand lain tarkon ko paars karate samay truti: {0}&quot;,
-        '''    &quot;Invalid color te [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;amaany rang tempalet {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobai: aapake haa [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind() As String
             Get
@@ -992,8 +990,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेश: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;कमांड इंजेक्शन रद्द कर दिया गया है।&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;इंजेक्ट किए गए तर्कों को अगले रिबूट पर चलाने के लिए निर्धारित किया जाएगा।&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;वास्तविक कमांड-लाइन तर्कों को पार्स करते समय त्रुटि: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;अम [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;अमान्य रंग टेम्पलेट {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: आपके हार्डवेयर की जांच की [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind_T() As String
             Get
@@ -1009,7 +1007,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Comandi disponibili: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione del comando è stata annullata.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Errore durante l&apos;analisi degli argomenti della riga di comando rea [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Modello di colore non valido {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait. [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ita() As String
             Get
@@ -1025,9 +1024,9 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;利用可能なコマンド：{0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;コマンドインジェクションはキャンセルされました。&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;注入された引数は、次回の再起動時に実行されるようにスケジュールされます。&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;実際のコマンドライン引数の解析中にエラーが発生しました：{0}&quot;,
         '''    &quot;Invalid color template {0}&quot;: &quot;無効なカラーテンプレート{0}&quot;,
-        '''    &quot;hwprobe: Your hardware will be probed. Please wait [rest of string was truncated]&quot;;.
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
+        '''    &quot;CPU: One or more of the CPU cores failed to be [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jpn() As String
             Get
@@ -1043,7 +1042,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;sayong ganeunghan myeonglyeong : {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;myeonglyeong ju-ib-i chwisodoeeossseubnida.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;ju-ib doen insuneun da-eum-e dasi buting hal ttae silhaengdoedolog yeyagdoebnida.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;silje myeonglyeong haeng insuleul gumun bunseoghaneun jung-e [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;jalmosdoen saegsang tempeullis {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Plea [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor() As String
             Get
@@ -1059,9 +1059,9 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;사용 가능한 명령 : {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;명령 주입이 취소되었습니다.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;주입 된 인수는 다음에 다시 부팅 할 때 실행되도록 예약됩니다.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;실제 명령 행 인수를 구문 분석하는 중에 오류가 발생했습니다 : {0}&quot;,
         '''    &quot;Invalid color template {0}&quot;: &quot;잘못된 색상 템플릿 {0}&quot;,
-        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot; [rest of string was truncated]&quot;;.
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
+        '''    &quot;CPU: One or more of the CPU cores failed to be probed. Show [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor_T() As String
             Get
@@ -1209,8 +1209,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;AVAILABLE COMMANDZ: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;COMMAND INJECSHUN HAS BEEN CANCELLD.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;INJECTD ARGUMENTS WILL BE SCHEDULD 2 RUN AT NEXT REBOOT.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;ERROR WHILE PARSIN REAL COMMAND-LINE ARGUMENTS: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;INVALID COLOR  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;INVALID COLOR TEMPLATE {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;HWPROBE: UR HARDWARE WILL BE PROBD. PL [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property lol() As String
             Get
@@ -1621,8 +1621,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;command injection been cancelled.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;injected arguments be scheduled to run at next reboot.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot; error while parsin&apos; real command-line arguments: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;invalid col [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;invalid color template {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;&apos;wprobe: yer &apos;ardware be probed. Plea [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pir() As String
             Get
@@ -1638,8 +1638,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Injected arguments will be scheduled ta run at next reboot.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error while spendin&apos; real command-line arguments: {0}&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Its just anotha h [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pla() As String
             Get
@@ -1678,8 +1678,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Comandos disponíveis: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;A injeção de comando foi cancelada.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Argumentos injetados serão agendados para serem executados na próxima reinicialização.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Erro ao analisar argumentos de linha de comando reais: {0}&quot;,
-        '''    &quot;In [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Modelo de cor inválido {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwp [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ptg() As String
             Get
@@ -1794,8 +1794,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Dostupnyye komandy: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Komandnaya in\&quot;yektsiya byla otmenena.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Oshibka pri analize real&apos;nykh argumentov komandnoy stroki: {0}&quot;,
-        '''    &quot;In [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Nevernyy tsvetovoy shablon {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwp [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus() As String
             Get
@@ -1811,8 +1811,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Доступные команды: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Командная инъекция была отменена.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введенные аргументы будут запланированы для запуска при следующей перезагрузке.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Ошибка при анализе реальных аргументов командной строки: {0}&quot;,
-        '''    &quot;Invalid color te [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Неверный цветовой шаблон {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ваше обо [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus_T() As String
             Get
@@ -1862,6 +1862,24 @@ Namespace My.Resources
         Public ReadOnly Property SettingsEntries() As String
             Get
                 Return ResourceManager.GetString("SettingsEntries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Name&quot;: &quot;SMS Message&quot;,
+        '''  &quot;Transliterable&quot;: false,
+        '''  &quot;Localizations&quot;: {
+        '''    &quot;Available commands: {0}&quot;: &quot;Avlbl cmmnds: {0}&quot;,
+        '''    &quot;Command injection has been cancelled.&quot;: &quot;cmmnd njctn hs bn cnclld.&quot;,
+        '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot; injctd rgmnts wll b schdld t rn t nxt rbt.&quot;,
+        '''    &quot;Invalid color template {0}&quot;: &quot; invld clr tmplt {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprb: yr hrdwr wll b prbd. Pls wt...&quot;,
+        '''    &quot;CPU: One or more of the [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property sms() As String
+            Get
+                Return ResourceManager.GetString("sms", resourceCulture)
             End Get
         End Property
         
@@ -1919,8 +1937,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Comandos disponibles: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;La inyección de comandos ha sido cancelada.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Error al analizar los argumentos de línea de comando reales: {0}&quot;,
-        '''   [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no válida {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property spa() As String
             Get
@@ -1946,6 +1964,23 @@ Namespace My.Resources
         Public ReadOnly Property SplashSettingsEntries() As String
             Get
                 Return ResourceManager.GetString("SplashSettingsEntries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Name&quot;: &quot;Shakespearean&quot;,
+        '''  &quot;Transliterable&quot;: false,
+        '''  &quot;Localizations&quot;: {
+        '''    &quot;Available commands: {0}&quot;: &quot;Available hests: {0}&quot;,
+        '''    &quot;Command injection has been cancelled.&quot;: &quot;hest injection hast been cancell&apos;d. &quot;,
+        '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot; did inject arguments shall beest schedul&apos;d to runneth at next reboot. &quot;,
+        '''    &quot;Invalid color template {0}&quot;: &quot; invalid col&apos;r template {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: thy hardw [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ssp() As String
+            Get
+                Return ResourceManager.GetString("ssp", resourceCulture)
             End Get
         End Property
         
@@ -2006,7 +2041,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Kullanılabilir komutlar: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Komut enjeksiyonu iptal edildi.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Enjekte edilen argümanlar bir sonraki yeniden başlatmada çalışacak şekilde programlanacaktır.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Gerçek komut satırı bağımsız değişkenleri ayrıştırılırken hata olu [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Geçersiz renk şablonu {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;h [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property tky() As String
             Get
@@ -2074,8 +2110,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Dostupni komandy: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Vvedennya komandy skasovano.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Vvedeni arhumenty budutʹ zaplanovani na zapusk pid chas nastupnoho perezavantazhennya.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Pomylka pid chas analizu realʹnykh arhumentiv komandnoho ryadka: {0}&quot;,
-        '''    &quot;Inval [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Nediysnyy shablon kolʹoru {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vash [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ukr() As String
             Get
@@ -2091,8 +2127,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Доступні команди: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Введення команди скасовано.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Введені аргументи будуть заплановані на запуск під час наступного перезавантаження.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Помилка під час аналізу реальних аргументів командного рядка: {0}&quot;,
-        '''    &quot;Invalid colo [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Недійсний шаблон кольору {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ваше обла [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ukr_T() As String
             Get
@@ -2162,8 +2198,8 @@ Namespace My.Resources
         '''    &quot;Available commands: {0}&quot;: &quot;Các lệnh khả dụng: {0}&quot;,
         '''    &quot;Command injection has been cancelled.&quot;: &quot;Lệnh tiêm đã bị hủy bỏ.&quot;,
         '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.&quot;,
-        '''    &quot;Error while parsing real command-line arguments: {0}&quot;: &quot;Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}&quot;,
-        '''    &quot;Invalid color template  [rest of string was truncated]&quot;;.
+        '''    &quot;Invalid color template {0}&quot;: &quot;Mẫu màu không hợp lệ {0}&quot;,
+        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Phần cứng của bạn [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property vtn() As String
             Get

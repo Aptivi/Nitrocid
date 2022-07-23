@@ -424,4 +424,10 @@
   <data name="LanguageMetadata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\KSJsonifyLocales\Translations\Metadata.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="sms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sms.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
+  <data name="ssp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ssp.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

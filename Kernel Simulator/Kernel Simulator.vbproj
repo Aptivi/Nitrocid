@@ -243,7 +243,9 @@
     <None Include="Resources\ptg.json" />
     <None Include="Resources\rus-T.json" />
     <None Include="Resources\rus.json" />
+    <None Include="Resources\sms.json" />
     <None Include="Resources\spa.json" />
+    <None Include="Resources\ssp.json" />
     <None Include="Resources\tky.json" />
     <None Include="Resources\ukr-T.json" />
     <None Include="Resources\ukr.json" />

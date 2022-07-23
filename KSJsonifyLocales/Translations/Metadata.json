@@ -103,8 +103,16 @@
         "name": "Russian",
         "transliterable": true
     },
+    "sms": {
+        "name": "SMS Message",
+        "transliterable": false
+    },
     "spa": {
         "name": "Spanish",
+        "transliterable": false
+    },
+    "ssp": {
+        "name": "Shakespearean",
         "transliterable": false
     },
     "tky": {
