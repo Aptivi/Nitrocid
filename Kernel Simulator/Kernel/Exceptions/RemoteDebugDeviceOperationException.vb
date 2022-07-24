@@ -16,23 +16,29 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Network.RemoteDebug
+Imports KS.Misc.Reflection
 
-Namespace Shell.Commands
-    Class BlockDbgDevCommand
-        Inherits CommandExecutor
-        Implements ICommand
+Namespace Kernel.Exceptions
+    ''' <summary>
+    ''' Thrown when there is a remote debugger operation error
+    ''' </summary>
+    Public Class RemoteDebugDeviceOperationException
+        Inherits Exception
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If Not RDebugBlocked.Contains(ListArgs(0)) Then
-                If TryAddToBlockList(ListArgs(0)) Then
-                    Write(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, ListArgs(0))
-                Else
-                    Write(DoTranslation("Failed to block {0}."), True, ColTypes.Neutral, ListArgs(0))
-                End If
-            Else
-                Write(DoTranslation("{0} is already blocked."), True, ColTypes.Neutral, ListArgs(0))
-            End If
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(FormatString(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(FormatString(message, vars), e)
         End Sub
 
     End Class

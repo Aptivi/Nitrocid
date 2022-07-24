@@ -69,28 +69,35 @@ Namespace Network.RemoteDebug
         ''' Adds device to block list
         ''' </summary>
         ''' <param name="IP">An IP address for device</param>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        Public Function AddToBlockList(IP As String) As Boolean
-            Try
-                Dim BlockedDevices() As String = ListDevices()
-                Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
-                If BlockedDevices.Contains(IP) And Not GetDeviceProperty(IP, DeviceProperty.Blocked) Then
-                    Wdbg(DebugLevel.I, "Device {0} will be blocked...", IP)
+        Public Sub AddToBlockList(IP As String)
+            Dim BlockedDevices() As String = ListDevices()
+            Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
+            If BlockedDevices.Contains(IP) And Not GetDeviceProperty(IP, DeviceProperty.Blocked) Then
+                Wdbg(DebugLevel.I, "Device {0} will be blocked...", IP)
+                DisconnectDbgDev(IP)
+                SetDeviceProperty(IP, DeviceProperty.Blocked, True)
+                RDebugBlocked.Add(IP)
+            ElseIf BlockedDevices.Contains(IP) And GetDeviceProperty(IP, DeviceProperty.Blocked) Then
+                Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP)
+                If Not RDebugBlocked.Contains(IP) Then
                     DisconnectDbgDev(IP)
-                    SetDeviceProperty(IP, DeviceProperty.Blocked, True)
                     RDebugBlocked.Add(IP)
-                    Return True
-                ElseIf BlockedDevices.Contains(IP) And GetDeviceProperty(IP, DeviceProperty.Blocked) Then
-                    Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP)
-                    If Not RDebugBlocked.Contains(IP) Then
-                        DisconnectDbgDev(IP)
-                        RDebugBlocked.Add(IP)
-                        Return True
-                    Else
-                        Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP)
-                        Return False
-                    End If
+                Else
+                    Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP)
+                    Throw New Exceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists in the block list."))
                 End If
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Adds device to block list
+        ''' </summary>
+        ''' <param name="IP">An IP address for device</param>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        Public Function TryAddToBlockList(IP As String) As Boolean
+            Try
+                AddToBlockList(IP)
+                Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to add device to block list: {0}", ex.Message)
                 WStkTrc(ex)
@@ -102,19 +109,28 @@ Namespace Network.RemoteDebug
         ''' Removes device from block list
         ''' </summary>
         ''' <param name="IP">A blocked IP address for device</param>
+        Public Sub RemoveFromBlockList(IP As String)
+            Dim BlockedDevices() As String = ListDevices()
+            Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
+            If BlockedDevices.Contains(IP) Then
+                Wdbg(DebugLevel.I, "Device {0} found.", IP)
+                RDebugBlocked.Remove(IP)
+                SetDeviceProperty(IP, DeviceProperty.Blocked, False)
+            Else
+                Wdbg(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP)
+                If Not RDebugBlocked.Remove(IP) Then Throw New Exceptions.RemoteDebugDeviceOperationException(DoTranslation("Device doesn't exist in the block list."))
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Removes device from block list
+        ''' </summary>
+        ''' <param name="IP">A blocked IP address for device</param>
         ''' <returns>True if successful; False if unsuccessful.</returns>
-        Public Function RemoveFromBlockList(IP As String) As Boolean
+        Public Function TryRemoveFromBlockList(IP As String) As Boolean
             Try
-                Dim BlockedDevices() As String = ListDevices()
-                Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
-                If BlockedDevices.Contains(IP) Then
-                    Wdbg(DebugLevel.I, "Device {0} found.", IP)
-                    RDebugBlocked.Remove(IP)
-                    Return SetDeviceProperty(IP, DeviceProperty.Blocked, False)
-                Else
-                    Wdbg(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP)
-                    Return RDebugBlocked.Remove(IP)
-                End If
+                RemoveFromBlockList(IP)
+                Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to remove device from block list: {0}", ex.Message)
                 WStkTrc(ex)
@@ -172,8 +188,7 @@ Namespace Network.RemoteDebug
         ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
         ''' <param name="DeviceProperty">Device property</param>
         ''' <param name="Value">Value</param>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        Public Function SetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty, Value As Object) As Boolean
+        Public Sub SetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty, Value As Object)
             Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
             Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
             Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
@@ -188,11 +203,25 @@ Namespace Network.RemoteDebug
                         ChatHistory.Add(Value)
                 End Select
                 File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
-                Return True
             Else
                 Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
-                Return False
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Sets device property from device IP address
+        ''' </summary>
+        ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+        ''' <param name="DeviceProperty">Device property</param>
+        ''' <param name="Value">Value</param>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        Public Function TrySetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty, Value As Object) As Boolean
+            Try
+                SetDeviceProperty(DeviceIP, DeviceProperty, Value)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
@@ -200,8 +229,7 @@ Namespace Network.RemoteDebug
         ''' </summary>
         ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
         ''' <param name="ThrowException">Optionally throw exception</param>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        Public Function AddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
+        Public Sub AddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True)
             MakeFile(GetKernelPath(KernelPathType.DebugDevNames), False)
             Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
             Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
@@ -211,29 +239,53 @@ Namespace Network.RemoteDebug
                                              New JProperty("ChatHistory", New JArray()))
                 DeviceNameToken.Add(DeviceIP, NewDevice)
                 File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
-                Return True
             Else
                 If ThrowException Then Throw New Exceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
-                Return False
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Adds new device IP address to JSON
+        ''' </summary>
+        ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+        ''' <param name="ThrowException">Optionally throw exception</param>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        Public Function TryAddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
+            Try
+                AddDeviceToJson(DeviceIP, ThrowException)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
         ''' Removes a device IP address from JSON
         ''' </summary>
         ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        ''' <returns>True if successful; False if unsuccessful.</returns>
-        Public Function RemoveDeviceFromJson(DeviceIP As String) As Boolean
+        Public Sub RemoveDeviceFromJson(DeviceIP As String)
             Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
             Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
             If DeviceNameToken(DeviceIP) IsNot Nothing Then
                 DeviceNameToken.Remove(DeviceIP)
                 File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
-                Return True
             Else
                 Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
-                Return False
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Removes a device IP address from JSON
+        ''' </summary>
+        ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        Public Function TryRemoveDeviceFromJson(DeviceIP As String) As Boolean
+            Try
+                RemoveDeviceFromJson(DeviceIP)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>

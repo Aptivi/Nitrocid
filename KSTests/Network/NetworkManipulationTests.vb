@@ -27,7 +27,7 @@ Imports KS.Network
     ''' Tests hostname change
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestChangeHostname()
-        ChangeHostname("NewHost").ShouldBeTrue
+        TryChangeHostname("NewHost").ShouldBeTrue
         HostName.ShouldBe("NewHost")
         GetConfigValue(ConfigCategory.Login, GetConfigCategory(ConfigCategory.Login), "Host Name").ShouldBe("NewHost")
     End Sub

@@ -25,12 +25,19 @@ Namespace Misc.Configuration
         ''' <summary>
         ''' Reloads config
         ''' </summary>
+        Public Sub ReloadConfig()
+            KernelEventManager.RaisePreReloadConfig()
+            InitializeConfig()
+            KernelEventManager.RaisePostReloadConfig()
+        End Sub
+
+        ''' <summary>
+        ''' Reloads config
+        ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function ReloadConfig() As Boolean
+        Public Function TryReloadConfig() As Boolean
             Try
-                KernelEventManager.RaisePreReloadConfig()
-                InitializeConfig()
-                KernelEventManager.RaisePostReloadConfig()
+                ReloadConfig()
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to reload config: {0}", ex.Message)

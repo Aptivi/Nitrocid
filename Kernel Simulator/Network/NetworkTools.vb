@@ -92,17 +92,24 @@ Namespace Network
         ''' Changes host name
         ''' </summary>
         ''' <param name="NewHost">New host name</param>
+        Public Sub ChangeHostname(NewHost As String)
+            HostName = NewHost
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Login)
+            SetConfigValue(ConfigCategory.Login, Token, "Host Name", HostName)
+        End Sub
+
+        ''' <summary>
+        ''' Changes host name
+        ''' </summary>
+        ''' <param name="NewHost">New host name</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function ChangeHostname(NewHost As String) As Boolean
+        Public Function TryChangeHostname(NewHost As String) As Boolean
             Try
-                HostName = NewHost
-                Dim Token As JToken = GetConfigCategory(ConfigCategory.Login)
-                SetConfigValue(ConfigCategory.Login, Token, "Host Name", HostName)
+                ChangeHostname(NewHost)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
                 Wdbg(DebugLevel.E, "Failed to change hostname: {0}", ex.Message)
-                Throw New Exceptions.HostnameException(DoTranslation("Failed to change host name: {0}"), ex, ex.Message)
             End Try
             Return False
         End Function
@@ -116,8 +123,7 @@ Namespace Network
         ''' <param name="EncryptionMode">A speed dial encryption mode</param>
         ''' <param name="SpeedDialType">Speed dial type</param>
         ''' <param name="ThrowException">Optionally throw exception</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function AddEntryToSpeedDial(Address As String, Port As Integer, User As String, SpeedDialType As SpeedDialType, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True) As Boolean
+        Public Sub AddEntryToSpeedDial(Address As String, Port As Integer, User As String, SpeedDialType As SpeedDialType, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True)
             Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
             Dim SpeedDialEnum As KernelPathType = [Enum].Parse(GetType(KernelPathType), PathName)
             MakeFile(GetKernelPath(SpeedDialEnum), False)
@@ -135,7 +141,6 @@ Namespace Network
                                                 New JProperty("FTP Encryption Mode", EncryptionMode))
                 SpeedDialToken.Add(Address, NewSpeedDial)
                 File.WriteAllText(GetKernelPath(SpeedDialEnum), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented))
-                Return True
             Else
                 If ThrowException Then
                     If SpeedDialType = SpeedDialType.FTP Then
@@ -144,8 +149,26 @@ Namespace Network
                         Throw New Exceptions.SFTPNetworkException(DoTranslation("Entry already exists."))
                     End If
                 End If
-                Return False
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Adds an entry to speed dial
+        ''' </summary>
+        ''' <param name="Address">A speed dial address</param>
+        ''' <param name="Port">A speed dial port</param>
+        ''' <param name="User">A speed dial username</param>
+        ''' <param name="EncryptionMode">A speed dial encryption mode</param>
+        ''' <param name="SpeedDialType">Speed dial type</param>
+        ''' <param name="ThrowException">Optionally throw exception</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryAddEntryToSpeedDial(Address As String, Port As Integer, User As String, SpeedDialType As SpeedDialType, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True) As Boolean
+            Try
+                AddEntryToSpeedDial(Address, Port, User, SpeedDialType, EncryptionMode, ThrowException)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>

@@ -24,14 +24,14 @@ Imports KS.Network
     ''' Tests adding FTP speed dial entry
     ''' </summary>
     <Test, Description("Management")> Public Sub TestAddEntryToFTPSpeedDial()
-        AddEntryToSpeedDial("ftp.riken.jp", "21", "anonymous", SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
+        TryAddEntryToSpeedDial("ftp.riken.jp", "21", "anonymous", SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests adding SFTP speed dial entry
     ''' </summary>
     <Test, Description("Management")> Public Sub TestAddEntryToSFTPSpeedDial()
-        AddEntryToSpeedDial("test.rebex.net", "22", "demo", SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
+        TryAddEntryToSpeedDial("test.rebex.net", "22", "demo", SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, False).ShouldBeTrue
     End Sub
 
     ''' <summary>

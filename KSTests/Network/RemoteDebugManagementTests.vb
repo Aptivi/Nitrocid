@@ -24,14 +24,14 @@ Imports KS.Network.RemoteDebug
     ''' Tests adding device to json
     ''' </summary>
     <Test, Description("Management")> Public Sub TestAddDeviceToJson()
-        AddDeviceToJson("123.123.123.123").ShouldBeTrue
+        TryAddDeviceToJson("123.123.123.123").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests setting device property
     ''' </summary>
     <Test, Description("Management")> Public Sub TestDeviceSetProperty()
-        SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser").ShouldBeTrue
+        TrySetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -45,7 +45,7 @@ Imports KS.Network.RemoteDebug
     ''' Removes a test device created by <see cref="TestAddDeviceToJson()"/>
     ''' </summary>
     <OneTimeTearDown> Public Shared Sub TestRemoveTestDevice()
-        RemoveDeviceFromJson("123.123.123.123").ShouldBeTrue
+        TryRemoveDeviceFromJson("123.123.123.123").ShouldBeTrue
     End Sub
 
 End Class
