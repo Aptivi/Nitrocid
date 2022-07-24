@@ -62,7 +62,7 @@ Imports KS.ConsoleBase
                   ConsoleColors.Gray,        'Table value
                   ConsoleColors.Yellow,      'Selected option
                   ConsoleColors.DarkGreen    'Alternative option
-                 ).ShouldBeTrue
+                 )
         InputColor.ShouldBeEquivalentTo(New Color(ConsoleColors.White))
         LicenseColor.ShouldBeEquivalentTo(New Color(ConsoleColors.White))
         ContKernelErrorColor.ShouldBeEquivalentTo(New Color(ConsoleColors.Yellow))

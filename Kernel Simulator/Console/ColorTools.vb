@@ -384,15 +384,77 @@ Namespace ConsoleBase
         ''' <param name="SelectedOptionColor">Selected option color</param>
         ''' <param name="AlternativeOptionColor">Alternative option color</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TrySetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
+                                     BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
+                                     OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
+                                     NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
+                                     SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
+                                     LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
+                                     TableValueColor As String, SelectedOptionColor As String, AlternativeOptionColor As String) As Boolean
+            Try
+                SetColors(InputColor, LicenseColor, ContKernelErrorColor, UncontKernelErrorColor, HostNameShellColor, UserNameShellColor,
+                          BackgroundColor, NeutralTextColor, ListEntryColor, ListValueColor, StageColor, ErrorColor, WarningColor,
+                          OptionColor, BannerColor, NotificationTitleColor, NotificationDescriptionColor, NotificationProgressColor,
+                          NotificationFailureColor, QuestionColor, SuccessColor, UserDollarColor, TipColor, SeparatorTextColor,
+                          SeparatorColor, ListTitleColor, DevelopmentWarningColor, StageTimeColor, ProgressColor, BackOptionColor,
+                          LowPriorityBorderColor, MediumPriorityBorderColor, HighPriorityBorderColor, TableSeparatorColor, TableHeaderColor,
+                          TableValueColor, SelectedOptionColor, AlternativeOptionColor)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
+        ''' <summary>
+        ''' Sets custom colors. It only works if colored shell is enabled.
+        ''' </summary>
+        ''' <param name="InputColor">Input color</param>
+        ''' <param name="LicenseColor">License color</param>
+        ''' <param name="ContKernelErrorColor">Continuable kernel error color</param>
+        ''' <param name="UncontKernelErrorColor">Uncontinuable kernel error color</param>
+        ''' <param name="HostNameShellColor">Host name color</param>
+        ''' <param name="UserNameShellColor">User name color</param>
+        ''' <param name="BackgroundColor">Background color</param>
+        ''' <param name="NeutralTextColor">Neutral text color</param>
+        ''' <param name="ListEntryColor">Command list color</param>
+        ''' <param name="ListValueColor">Command definition color</param>
+        ''' <param name="StageColor">Stage color</param>
+        ''' <param name="ErrorColor">Error color</param>
+        ''' <param name="WarningColor">Warning color</param>
+        ''' <param name="OptionColor">Option color</param>
+        ''' <param name="BannerColor">Banner color</param>
+        ''' <param name="NotificationTitleColor">Notification title color</param>
+        ''' <param name="NotificationDescriptionColor">Notification description color</param>
+        ''' <param name="NotificationProgressColor">Notification progress color</param>
+        ''' <param name="NotificationFailureColor">Notification failure color</param>
+        ''' <param name="QuestionColor">Question color</param>
+        ''' <param name="SuccessColor">Success text color</param>
+        ''' <param name="UserDollarColor">User dollar color</param>
+        ''' <param name="TipColor">Tip color</param>
+        ''' <param name="SeparatorTextColor">Separator text color</param>
+        ''' <param name="SeparatorColor">Separator color</param>
+        ''' <param name="ListTitleColor">List title color</param>
+        ''' <param name="DevelopmentWarningColor">Development warning color</param>
+        ''' <param name="StageTimeColor">Stage time color</param>
+        ''' <param name="ProgressColor">Progress color</param>
+        ''' <param name="BackOptionColor">Back option color</param>
+        ''' <param name="LowPriorityBorderColor">Low priority notification border color</param>
+        ''' <param name="MediumPriorityBorderColor">Medium priority notification border color</param>
+        ''' <param name="HighPriorityBorderColor">High priority notification border color</param>
+        ''' <param name="TableSeparatorColor">Table separator color</param>
+        ''' <param name="TableHeaderColor">Table header color</param>
+        ''' <param name="TableValueColor">Table value color</param>
+        ''' <param name="SelectedOptionColor">Selected option color</param>
+        ''' <param name="AlternativeOptionColor">Alternative option color</param>
         ''' <exception cref="InvalidOperationException"></exception>
         ''' <exception cref="Exceptions.ColorException"></exception>
-        Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
-                              BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
-                              OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
-                              NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
-                              SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
-                              LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
-                              TableValueColor As String, SelectedOptionColor As String, AlternativeOptionColor As String) As Boolean
+        Public Sub SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
+                             BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
+                             OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
+                             NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
+                             SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
+                             LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
+                             TableValueColor As String, SelectedOptionColor As String, AlternativeOptionColor As String)
             'Check colors for null and set them to "def" if found
             If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
             If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -524,7 +586,6 @@ Namespace ConsoleBase
 
                     'Raise event
                     KernelEventManager.RaiseColorSet()
-                    Return True
                 Catch ex As Exception
                     WStkTrc(ex)
                     KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
@@ -534,22 +595,31 @@ Namespace ConsoleBase
                 KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
                 Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
             End If
-            Return False
-        End Function
+        End Sub
 
         ''' <summary>
         ''' Sets input color
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function SetInputColor() As Boolean
+        Public Function TrySetInputColor() As Boolean
+            Try
+                SetInputColor()
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
+        ''' <summary>
+        ''' Sets input color
+        ''' </summary>
+        Public Sub SetInputColor()
             Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
             If ColoredShell = True Then
                 SetConsoleColor(InputColor)
                 SetConsoleColor(BackgroundColor, True)
-                Return True
             End If
-            Return False
-        End Function
+        End Sub
 
         ''' <summary>
         ''' Gets the gray color according to the brightness of the background color
@@ -566,17 +636,15 @@ Namespace ConsoleBase
         ''' Sets the console color
         ''' </summary>
         ''' <param name="colorType">A type of colors that will be changed.</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function SetConsoleColor(colorType As ColTypes) As Boolean
-            Return SetConsoleColor(colorType, False)
-        End Function
+        Public Sub SetConsoleColor(colorType As ColTypes)
+            SetConsoleColor(colorType, False)
+        End Sub
 
         ''' <summary>
         ''' Sets the console color
         ''' </summary>
         ''' <param name="colorType">A type of colors that will be changed.</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function SetConsoleColor(colorType As ColTypes, Background As Boolean) As Boolean
+        Public Sub SetConsoleColor(colorType As ColTypes, Background As Boolean)
             If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                 Select Case colorType
                     Case ColTypes.Neutral
@@ -658,16 +726,14 @@ Namespace ConsoleBase
                 End Select
                 If Not Background Then SetConsoleColor(BackgroundColor, True)
             End If
-            Return True
-        End Function
+        End Sub
 
         ''' <summary>
         ''' Sets the console color
         ''' </summary>
         ''' <param name="ColorSequence">The color instance</param>
         ''' <param name="Background">Whether to set background or not</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function SetConsoleColor(ColorSequence As Color, Optional Background As Boolean = False) As Boolean
+        Public Sub SetConsoleColor(ColorSequence As Color, Optional Background As Boolean = False)
             If ColoredShell Then
                 If ColorSequence Is Nothing Then Throw New ArgumentNullException(NameOf(ColorSequence))
                 Dim OldLeft As Integer = Console.CursorLeft
@@ -685,9 +751,45 @@ Namespace ConsoleBase
                         Console.SetCursorPosition(OldLeft, OldTop)
                     End If
                 End If
-                Return True
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Sets the console color
+        ''' </summary>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TrySetConsoleColor(colorType As ColTypes) As Boolean
+            Return TrySetConsoleColor(colorType, False)
+        End Function
+
+        ''' <summary>
+        ''' Sets the console color
+        ''' </summary>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TrySetConsoleColor(colorType As ColTypes, Background As Boolean) As Boolean
+            Try
+                SetConsoleColor(colorType, Background)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
+        ''' <summary>
+        ''' Sets the console color
+        ''' </summary>
+        ''' <param name="ColorSequence">The color instance</param>
+        ''' <param name="Background">Whether to set background or not</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TrySetConsoleColor(ColorSequence As Color, Background As Boolean) As Boolean
+            Try
+                SetConsoleColor(ColorSequence, Background)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>

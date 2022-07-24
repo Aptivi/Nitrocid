@@ -177,10 +177,9 @@ Namespace ConsoleBase.Themes
         ''' Sets custom colors. It only works if colored shell is enabled.
         ''' </summary>
         ''' <param name="ThemeInfo">Theme information</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="InvalidOperationException"></exception>
         ''' <exception cref="Exceptions.ColorException"></exception>
-        Public Function SetColorsTheme(ThemeInfo As ThemeInfo) As Boolean
+        Public Sub SetColorsTheme(ThemeInfo As ThemeInfo)
             If ThemeInfo Is Nothing Then Throw New ArgumentNullException(NameOf(ThemeInfo))
 
             'Set the colors
@@ -229,7 +228,6 @@ Namespace ConsoleBase.Themes
 
                     'Raise event
                     KernelEventManager.RaiseColorSet()
-                    Return True
                 Catch ex As Exception
                     WStkTrc(ex)
                     KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
@@ -239,7 +237,22 @@ Namespace ConsoleBase.Themes
                 KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
                 Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Sets custom colors. It only works if colored shell is enabled.
+        ''' </summary>
+        ''' <param name="ThemeInfo">Theme information</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="InvalidOperationException"></exception>
+        ''' <exception cref="Exceptions.ColorException"></exception>
+        Public Function TrySetColorsTheme(ThemeInfo As ThemeInfo) As Boolean
+            Try
+                SetColorsTheme(ThemeInfo)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
     End Module
