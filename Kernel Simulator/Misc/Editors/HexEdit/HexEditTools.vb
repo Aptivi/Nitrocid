@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Extensification
+Imports Extensification.ArrayExts
 Imports Extensification.LongExts
 Imports System.IO
 Imports System.Threading
@@ -125,7 +126,7 @@ Namespace Misc.Editors.HexEdit
         ''' <param name="Content">New byte content</param>
         Public Sub HexEdit_AddNewByte(Content As Byte)
             If HexEdit_FileStream IsNot Nothing Then
-                ArrayExts.Addition.Add(HexEdit_FileBytes, Content)
+                HexEdit_FileBytes.Add(Content)
             Else
                 Throw New InvalidOperationException(DoTranslation("The hex editor hasn't opened a file stream yet."))
             End If
@@ -138,7 +139,7 @@ Namespace Misc.Editors.HexEdit
         Public Sub HexEdit_AddNewBytes(Bytes() As Byte)
             If HexEdit_FileStream IsNot Nothing Then
                 For Each ByteContent As Byte In Bytes
-                    ArrayExts.Addition.Add(HexEdit_FileBytes, ByteContent)
+                    HexEdit_FileBytes.Add(ByteContent)
                 Next
             Else
                 Throw New InvalidOperationException(DoTranslation("The hex editor hasn't opened a file stream yet."))

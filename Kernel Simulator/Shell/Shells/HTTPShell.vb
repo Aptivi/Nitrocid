@@ -48,7 +48,7 @@ Namespace Shell.Shells
                                 Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
                             Else
                                 Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                                Conversion.ConvertVTSequences(ParsedPromptStyle)
+                                ParsedPromptStyle.ConvertVTSequences()
                                 Write(ParsedPromptStyle, False, ColTypes.Gray)
                             End If
                         Else

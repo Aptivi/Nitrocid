@@ -318,7 +318,7 @@ Namespace Shell
                                             'Create a new instance of process
                                             If TryParsePath(TargetFile) Then
                                                 cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                                                Removal.RemoveNullsOrWhitespacesAtTheBeginning(cmdArgs)
+                                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning()
                                                 Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                                                 Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
                                                 ProcessStartCommandThread.Start(Params)

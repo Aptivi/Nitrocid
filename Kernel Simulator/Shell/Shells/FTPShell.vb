@@ -88,7 +88,7 @@ Namespace Shell.Shells
                                     Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                                 Else
                                     Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                                    Conversion.ConvertVTSequences(ParsedPromptStyle)
+                                    ParsedPromptStyle.ConvertVTSequences()
                                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                                 End If
                             Else

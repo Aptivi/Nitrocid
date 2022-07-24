@@ -79,7 +79,7 @@ Namespace Shell.Shells
                                     Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
                                 Else
                                     Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
-                                    Conversion.ConvertVTSequences(ParsedPromptStyle)
+                                    ParsedPromptStyle.ConvertVTSequences()
                                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                                 End If
                             Else

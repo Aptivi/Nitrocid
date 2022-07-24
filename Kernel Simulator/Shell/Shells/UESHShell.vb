@@ -113,7 +113,7 @@ Namespace Shell.Shells
             If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
                 'Parse the shell prompt style
                 Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
-                Conversion.ConvertVTSequences(ParsedPromptStyle)
+                ParsedPromptStyle.ConvertVTSequences()
                 Write(ParsedPromptStyle, False, ColTypes.Gray)
             Else
                 WriteShellPrompt(ShellType.Shell)
