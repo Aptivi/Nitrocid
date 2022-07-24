@@ -32,7 +32,7 @@ Imports Newtonsoft.Json.Linq
     ''' Tests username change
     ''' </summary>
     <Test, Description("Management")> Public Sub TestChangeUser()
-        ChangeUsername("Account2", "Account3").ShouldBeTrue
+        TryChangeUsername("Account2", "Account3").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -47,8 +47,8 @@ Imports Newtonsoft.Json.Linq
     ''' Tests removing user
     ''' </summary>
     <Test, Description("Management")> Public Sub TestRemoveUser()
-        RemoveUser("Account1").ShouldBeTrue
-        RemoveUser("Account3").ShouldBeTrue
+        TryRemoveUser("Account1").ShouldBeTrue
+        TryRemoveUser("Account3").ShouldBeTrue
     End Sub
 
 End Class

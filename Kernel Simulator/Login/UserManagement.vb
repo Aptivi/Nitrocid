@@ -229,10 +229,9 @@ Namespace Login
         ''' Removes a user from users database
         ''' </summary>
         ''' <param name="user">A user</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.UserManagementException"></exception>
         ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
-        Public Function RemoveUser(user As String) As Boolean
+        Public Sub RemoveUser(user As String)
             If user.Contains(" ") Then
                 Wdbg(DebugLevel.W, "There are spaces in username.")
                 Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed."))
@@ -273,7 +272,6 @@ Namespace Login
 
                         'Raise event
                         KernelEventManager.RaiseUserRemoved(user)
-                        Return True
                     Catch ex As Exception
                         WStkTrc(ex)
                         Throw New Exceptions.UserManagementException(DoTranslation("Error trying to remove username.") + NewLine +
@@ -281,7 +279,22 @@ Namespace Login
                     End Try
                 End If
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Removes a user from users database
+        ''' </summary>
+        ''' <param name="user">A user</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.UserManagementException"></exception>
+        ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
+        Public Function TryRemoveUser(user As String) As Boolean
+            Try
+                RemoveUser(user)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
@@ -289,7 +302,7 @@ Namespace Login
         ''' </summary>
         ''' <param name="OldName">Old username</param>
         ''' <param name="Username">New username</param>
-        Public Function ChangeUsername(OldName As String, Username As String) As Boolean
+        Public Sub ChangeUsername(OldName As String, Username As String)
             If Users.ContainsKey(OldName) Then
                 If Not Users.ContainsKey(Username) Then
                     Try
@@ -306,7 +319,6 @@ Namespace Login
 
                         'Raise event
                         KernelEventManager.RaiseUsernameChanged(OldName, Username)
-                        Return True
                     Catch ex As Exception
                         WStkTrc(ex)
                         Throw New Exceptions.UserManagementException(DoTranslation("Failed to rename user. {0}"), ex, ex.Message)
@@ -317,7 +329,21 @@ Namespace Login
             Else
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found."), OldName)
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Changes the username
+        ''' </summary>
+        ''' <param name="OldName">Old username</param>
+        ''' <param name="Username">New username</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryChangeUsername(OldName As String, Username As String) As Boolean
+            Try
+                ChangeUsername(OldName, Username)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
@@ -342,9 +368,8 @@ Namespace Login
         ''' <param name="Target">Target username</param>
         ''' <param name="CurrentPass">Current user password</param>
         ''' <param name="NewPass">New user password</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.UserManagementException"></exception>
-        Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String) As Boolean
+        Public Sub ChangePassword(Target As String, CurrentPass As String, NewPass As String)
             CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
             If CurrentPass = Users(Target) Then
                 If HasPermission(CurrentUser.Username, PermissionType.Administrator) And Users.ContainsKey(Target) Then
@@ -357,7 +382,6 @@ Namespace Login
 
                     'Raise event
                     KernelEventManager.RaiseUserPasswordChanged(Target)
-                    Return True
                 ElseIf HasPermission(CurrentUser.Username, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
                     Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
                 ElseIf HasPermission(Target, PermissionType.Administrator) And Not HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
@@ -366,7 +390,23 @@ Namespace Login
             Else
                 Throw New Exceptions.UserManagementException(DoTranslation("Wrong user password."))
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Changes user password
+        ''' </summary>
+        ''' <param name="Target">Target username</param>
+        ''' <param name="CurrentPass">Current user password</param>
+        ''' <param name="NewPass">New user password</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.UserManagementException"></exception>
+        Public Function TryChangePassword(Target As String, CurrentPass As String, NewPass As String) As Boolean
+            Try
+                ChangePassword(Target, CurrentPass, NewPass)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>

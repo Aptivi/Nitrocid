@@ -26,23 +26,23 @@
     ''' Tests adding permissions to user
     ''' </summary>
     <Test, Description("Management")> Public Sub TestAddUserPerm()
-        AddPermission(PermissionType.Administrator, "Account").ShouldBeTrue
-        AddPermission(PermissionType.Disabled, "Account").ShouldBeTrue
+        TryAddPermission(PermissionType.Administrator, "Account").ShouldBeTrue
+        TryAddPermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests removing permissions from user
     ''' </summary>
     <Test, Description("Management")> Public Sub TestRemoveUserPerm()
-        RemovePermission(PermissionType.Administrator, "Account").ShouldBeTrue
-        RemovePermission(PermissionType.Disabled, "Account").ShouldBeTrue
+        TryRemovePermission(PermissionType.Administrator, "Account").ShouldBeTrue
+        TryRemovePermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests loading permissions
     ''' </summary>
     <Test, Description("Management")> Public Sub TestLoadPermissions()
-        LoadPermissions.ShouldBeTrue
+        TryLoadPermissions.ShouldBeTrue
     End Sub
 
     <TearDown> Public Shared Sub RemoveNecessaryUser()

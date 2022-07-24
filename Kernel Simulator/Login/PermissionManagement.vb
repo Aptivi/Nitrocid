@@ -93,9 +93,8 @@ Namespace Login
         ''' </summary>
         ''' <param name="PermType">Whether it be Admin or Disabled</param>
         ''' <param name="Username">A username to be managed</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-        Public Function AddPermission(PermType As PermissionType, Username As String) As Boolean
+        Public Sub AddPermission(PermType As PermissionType, Username As String)
             'Sets the required permissions to false.
             If Users.Keys.ToArray.Contains(Username) Then
                 Wdbg(DebugLevel.I, "Type is {0}", PermType)
@@ -109,13 +108,11 @@ Namespace Login
                     Case Else
                         Wdbg(DebugLevel.W, "Type is invalid")
                         Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType)
-                        Return False
                 End Select
                 Wdbg(DebugLevel.I, "User {0} permission added; value is now: {1}", Username, UserPermissions(Username))
             Else
                 Wdbg(DebugLevel.W, "User {0} not found on list", Username)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}"), Username)
-                Return False
             End If
 
             'Save changes
@@ -127,7 +124,22 @@ Namespace Login
                 End If
             Next
             File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
-            Return True
+        End Sub
+
+        ''' <summary>
+        ''' Adds user to one of permission types
+        ''' </summary>
+        ''' <param name="PermType">Whether it be Admin or Disabled</param>
+        ''' <param name="Username">A username to be managed</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.PermissionManagementException"></exception>
+        Public Function TryAddPermission(PermType As PermissionType, Username As String) As Boolean
+            Try
+                AddPermission(PermType, Username)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
@@ -135,9 +147,8 @@ Namespace Login
         ''' </summary>
         ''' <param name="PermType">Whether it be Admin or Disabled</param>
         ''' <param name="Username">A username to be managed</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-        Public Function RemovePermission(PermType As PermissionType, Username As String) As Boolean
+        Public Sub RemovePermission(PermType As PermissionType, Username As String)
             'Sets the required permissions to false.
             If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser?.Username Then
                 Wdbg(DebugLevel.I, "Type is {0}", PermType)
@@ -151,16 +162,13 @@ Namespace Login
                     Case Else
                         Wdbg(DebugLevel.W, "Type is invalid")
                         Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
-                        Return False
                 End Select
                 Wdbg(DebugLevel.I, "User {0} permission removed; value is now: {1}", Username, UserPermissions(Username))
             ElseIf Username = CurrentUser.Username Then
                 Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
-                Return False
             Else
                 Wdbg(DebugLevel.W, "User {0} not found on list", Username)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}"), Username)
-                Return False
             End If
 
             'Save changes
@@ -172,7 +180,22 @@ Namespace Login
                 End If
             Next
             File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
-            Return True
+        End Sub
+
+        ''' <summary>
+        ''' Removes user from one of permission types
+        ''' </summary>
+        ''' <param name="PermType">Whether it be Admin or Disabled</param>
+        ''' <param name="Username">A username to be managed</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.PermissionManagementException"></exception>
+        Public Function TryRemovePermission(PermType As PermissionType, Username As String) As Boolean
+            Try
+                RemovePermission(PermType, Username)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
@@ -180,9 +203,8 @@ Namespace Login
         ''' </summary>
         ''' <param name="OldName">Old username</param>
         ''' <param name="Username">New username</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-        Public Function PermissionEditForNewUser(OldName As String, Username As String) As Boolean
+        Public Sub PermissionEditForNewUser(OldName As String, Username As String)
             'Edit username
             If UserPermissions.ContainsKey(OldName) Then
                 Try
@@ -196,7 +218,6 @@ Namespace Login
                     'Add new user entry
                     UserPermissions.Add(Username, UserOldPermissions)
                     Wdbg(DebugLevel.I, "Added {0} to permissions list with value of {1}", Username, UserPermissions(Username))
-                    Return True
                 Catch ex As Exception
                     WStkTrc(ex)
                     Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + NewLine +
@@ -205,8 +226,33 @@ Namespace Login
             Else
                 Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."), OldName)
             End If
-            Return False
+        End Sub
+
+        ''' <summary>
+        ''' Edits the permission database for new user name
+        ''' </summary>
+        ''' <param name="OldName">Old username</param>
+        ''' <param name="Username">New username</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.PermissionManagementException"></exception>
+        Public Function TryPermissionEditForNewUser(OldName As String, Username As String) As Boolean
+            Try
+                PermissionEditForNewUser(OldName, Username)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
+
+        ''' <summary>
+        ''' Initializes permissions for a new user with default settings
+        ''' </summary>
+        ''' <param name="NewUser">A new user name</param>
+        ''' <exception cref="Exceptions.PermissionManagementException"></exception>
+        Public Sub InitPermissionsForNewUser(NewUser As String)
+            'Initialize permissions locally
+            If Not UserPermissions.ContainsKey(NewUser) Then UserPermissions.Add(NewUser, PermissionType.None)
+        End Sub
 
         ''' <summary>
         ''' Initializes permissions for a new user with default settings
@@ -214,45 +260,48 @@ Namespace Login
         ''' <param name="NewUser">A new user name</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-        Public Function InitPermissionsForNewUser(NewUser As String) As Boolean
+        Public Function TryInitPermissionsForNewUser(NewUser As String) As Boolean
             Try
-                'Initialize permissions locally
-                If Not UserPermissions.ContainsKey(NewUser) Then UserPermissions.Add(NewUser, PermissionType.None)
+                InitPermissionsForNewUser(NewUser)
                 Return True
             Catch ex As Exception
-                WStkTrc(ex)
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}"), ex, NewUser, ex.Message)
+                Return False
             End Try
-            Return False
         End Function
+
+        ''' <summary>
+        ''' Loads permissions for all users
+        ''' </summary>
+        ''' <exception cref="Exceptions.PermissionManagementException"></exception>
+        Public Sub LoadPermissions()
+            For Each UserToken As JObject In UsersToken
+                Dim User As String = UserToken("username")
+                UserPermissions(User) = PermissionType.None
+                For Each Perm As String In CType(UserToken("permissions"), JArray)
+                    Select Case Perm
+                        Case "Administrator"
+                            UserPermissions(User) += PermissionType.Administrator
+                        Case "Disabled"
+                            UserPermissions(User) += PermissionType.Disabled
+                        Case "Anonymous"
+                            UserPermissions(User) += PermissionType.Anonymous
+                    End Select
+                Next
+            Next
+        End Sub
 
         ''' <summary>
         ''' Loads permissions for all users
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-        Public Function LoadPermissions() As Boolean
+        Public Function TryLoadPermissions() As Boolean
             Try
-                For Each UserToken As JObject In UsersToken
-                    Dim User As String = UserToken("username")
-                    UserPermissions(User) = PermissionType.None
-                    For Each Perm As String In CType(UserToken("permissions"), JArray)
-                        Select Case Perm
-                            Case "Administrator"
-                                UserPermissions(User) += PermissionType.Administrator
-                            Case "Disabled"
-                                UserPermissions(User) += PermissionType.Disabled
-                            Case "Anonymous"
-                                UserPermissions(User) += PermissionType.Anonymous
-                        End Select
-                    Next
-                Next
+                LoadPermissions()
                 Return True
             Catch ex As Exception
-                WStkTrc(ex)
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}"), ex, ex.Message)
+                Return False
             End Try
-            Return False
         End Function
 
         ''' <summary>
