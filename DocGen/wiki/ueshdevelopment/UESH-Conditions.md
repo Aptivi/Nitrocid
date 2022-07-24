@@ -10,17 +10,21 @@ Currently, only the `if` command supports this feature.
 
 ### Available conditions
 
-| Condition | Syntax               | Description
-|:----------|:---------------------|:------------
-| eq        | `$var eq $var2`      | The first variable equals the second
-| neq       | `$var neq $var2`     | The first variable doesn't equal the second
-| les       | `$var les $var2`     | The first variable is less than the second
-| gre       | `$var gre $var2`     | The first variable is greater than the second
-| lesoreq   | `$var lesoreq $var2` | The first variable is less than or equal to the second
-| greoreq   | `$var greoreq $var2` | The first variable is greater than or equal to the second
-| fileex    | `fileex $path`       | The file exists
-| filenex   | `filenex $path`      | The file doesn't exist
-| direx     | `direx $path`        | The directory exists
-| dirnex    | `dirnex $path`       | The directory doesn't exist
-| has       | `$var has $path`     | The first variable contains the second
-| hasno     | `$var hasno $path`   | The first variable doesn't contain the second
+| Condition  | Syntax               | Description
+|:-----------|:---------------------|:------------
+| eq         | `$var eq $var2`      | The first variable equals the second
+| neq        | `$var neq $var2`     | The first variable doesn't equal the second
+| les        | `$var les $var2`     | The first variable is less than the second
+| gre        | `$var gre $var2`     | The first variable is greater than the second
+| lesoreq    | `$var lesoreq $var2` | The first variable is less than or equal to the second
+| greoreq    | `$var greoreq $var2` | The first variable is greater than or equal to the second
+| fileex     | `fileex $path`       | The file exists
+| filenex    | `filenex $path`      | The file doesn't exist
+| direx      | `direx $path`        | The directory exists
+| dirnex     | `dirnex $path`       | The directory doesn't exist
+| has        | `$var has $path`     | The first variable contains the second
+| hasno      | `$var hasno $path`   | The first variable doesn't contain the second
+| ispath     | `$path ispath`       | The first variable is a path
+| isnotpath  | `$path isnotpath`    | The first variable is not a path
+| isfname    | `$path isfname`      | The first variable is a filename
+| isnotfname | `$path isnotfname`   | The first variable is not a filename

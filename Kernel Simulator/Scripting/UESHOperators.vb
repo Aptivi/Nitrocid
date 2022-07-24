@@ -233,5 +233,65 @@ Namespace Scripting
             Return Satisfied
         End Function
 
+        ''' <summary>
+        ''' Checks to see if the value of the UESH variable is a valid file path
+        ''' </summary>
+        ''' <param name="Variable">The $variable</param>
+        ''' <returns>True if valid. False if otherwise.</returns>
+        Public Function UESHVariableValidPath(Variable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0}...", Variable)
+            Dim VarValue As String = GetVariable(Variable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue)
+            Satisfied = TryParsePath(VarValue)
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if the value of the UESH variable is not a valid file path
+        ''' </summary>
+        ''' <param name="Variable">The $variable</param>
+        ''' <returns>True if invalid. False if otherwise.</returns>
+        Public Function UESHVariableInvalidPath(Variable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0}...", Variable)
+            Dim VarValue As String = GetVariable(Variable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue)
+            Satisfied = Not TryParsePath(VarValue)
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if the value of the UESH variable is a valid file name
+        ''' </summary>
+        ''' <param name="Variable">The $variable</param>
+        ''' <returns>True if valid. False if otherwise.</returns>
+        Public Function UESHVariableValidFileName(Variable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0}...", Variable)
+            Dim VarValue As String = GetVariable(Variable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue)
+            Satisfied = TryParseFileName(VarValue)
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if the value of the UESH variable is not a valid file name
+        ''' </summary>
+        ''' <param name="Variable">The $variable</param>
+        ''' <returns>True if invalid. False if otherwise.</returns>
+        Public Function UESHVariableInvalidFileName(Variable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0}...", Variable)
+            Dim VarValue As String = GetVariable(Variable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue)
+            Satisfied = Not TryParseFileName(VarValue)
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
     End Module
 End Namespace

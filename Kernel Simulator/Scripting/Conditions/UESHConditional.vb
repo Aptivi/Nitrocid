@@ -34,6 +34,10 @@ Namespace Scripting.Conditions
             {"dirnex", New DirectoryNotExistsCondition()},
             {"has", New ContainsCondition()},
             {"hasno", New NotContainsCondition()},
+            {"ispath", New ValidPathCondition()},
+            {"isnotpath", New InvalidPathCondition()},
+            {"isfname", New ValidFileNameCondition()},
+            {"isnotfname", New InvalidFileNameCondition()},
             {"none", New NoneCondition()}
         }
 
