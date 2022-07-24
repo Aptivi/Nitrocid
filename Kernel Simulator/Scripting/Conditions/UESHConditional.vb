@@ -21,7 +21,7 @@ Imports KS.Scripting.Conditions.Types
 Namespace Scripting.Conditions
     Public Module UESHConditional
 
-        Private Conditions As New Dictionary(Of String, BaseCondition) From {
+        Private ReadOnly Conditions As New Dictionary(Of String, BaseCondition) From {
             {"eq", New EqualsCondition()},
             {"neq", New NotEqualsCondition()},
             {"les", New LessThanCondition()},
