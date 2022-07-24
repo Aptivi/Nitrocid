@@ -82,6 +82,8 @@ The testing shell provides these commands:
 | getlinestyle           | Gets the line ending style from text file. | `getlinestyle <textfile>`
 | printfiglet            | It lets you test the figlet print to print every text, using the font and colors that you need. | `printfiglet <Color> <FigletFont> <Message>`
 | printfigletf           | It lets you test the figlet print to print every text, using the font and colors that you need. It has an additional feature of variables. | `printfigletf <Color> <FigletFont> <Variable1;Variable2;Variable3;...> <Message>`
+| powerlinetest          | It lets you test the powerline glyphs
+| testexecuteasm         | It lets you test the assembly execution by reflection
 | help                   | It lists all the commands and its usages. | `help [command]`
 | exit                   | It exits the test shell, and starts up the kernel. Exits normally if started up with `testshell`. | `exit`
 | shutdown               | It shuts down the system. | `shutdown`
