@@ -269,6 +269,14 @@ Copyright (c) 2022-present EoflaOE and its companies
 
 License (MIT): https://github.com/EoflaOE/ReadLine.Reboot/blob/master/LICENSE
 
+### SharpCompress
+
+Source code: https://github.com/adamhathcock/sharpcompress
+
+Copyright (c) 2014 Adam Hathcock
+
+License (MIT): https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
+
 ### SSH.NET
 
 Source code: https://github.com/sshnet/SSH.NET/
