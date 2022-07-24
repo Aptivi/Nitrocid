@@ -31,14 +31,14 @@ Namespace Shell.Commands
                 If ListArgs(1).EndsWith("Normal") Or ListArgs(1).EndsWith("ReadOnly") Or ListArgs(1).EndsWith("Hidden") Or ListArgs(1).EndsWith("Archive") Then
                     If ListArgs(1).StartsWith("+") Then
                         Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgs(1).Remove(0, 1))
-                        If AddAttributeToFile(NeutralizedFilePath, Attrib) Then
+                        If TryAddAttributeToFile(NeutralizedFilePath, Attrib) Then
                             Write(DoTranslation("Attribute has been added successfully."), True, ColTypes.Neutral, ListArgs(1))
                         Else
                             Write(DoTranslation("Failed to add attribute."), True, ColTypes.Neutral, ListArgs(1))
                         End If
                     ElseIf ListArgs(1).StartsWith("-") Then
                         Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgs(1).Remove(0, 1))
-                        If RemoveAttributeFromFile(NeutralizedFilePath, Attrib) Then
+                        If TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib) Then
                             Write(DoTranslation("Attribute has been removed successfully."), True, ColTypes.Neutral, ListArgs(1))
                         Else
                             Write(DoTranslation("Failed to remove attribute."), True, ColTypes.Neutral, ListArgs(1))

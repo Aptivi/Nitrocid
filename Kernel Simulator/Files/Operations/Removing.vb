@@ -25,19 +25,26 @@ Namespace Files.Operations
         ''' Removes a directory
         ''' </summary>
         ''' <param name="Target">Target directory</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function RemoveDirectory(Target As String) As Boolean
-            Try
-                ThrowOnInvalidPath(Target)
-                Dim Dir As String = NeutralizePath(Target)
-                Directory.Delete(Dir, True)
+        Public Sub RemoveDirectory(Target As String)
+            ThrowOnInvalidPath(Target)
+            Dim Dir As String = NeutralizePath(Target)
+            Directory.Delete(Dir, True)
 
-                'Raise event
-                KernelEventManager.RaiseDirectoryRemoved(Target)
+            'Raise event
+            KernelEventManager.RaiseDirectoryRemoved(Target)
+        End Sub
+
+        ''' <summary>
+        ''' Removes a directory
+        ''' </summary>
+        ''' <param name="Target">Target directory</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryRemoveDirectory(Target As String) As Boolean
+            Try
+                RemoveDirectory(Target)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New IOException(DoTranslation("Unable to remove directory: {0}").FormatString(ex.Message))
             End Try
             Return False
         End Function
@@ -46,19 +53,26 @@ Namespace Files.Operations
         ''' Removes a file
         ''' </summary>
         ''' <param name="Target">Target directory</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function RemoveFile(Target As String) As Boolean
-            Try
-                ThrowOnInvalidPath(Target)
-                Dim Dir As String = NeutralizePath(Target)
-                File.Delete(Dir)
+        Public Sub RemoveFile(Target As String)
+            ThrowOnInvalidPath(Target)
+            Dim Dir As String = NeutralizePath(Target)
+            File.Delete(Dir)
 
-                'Raise event
-                KernelEventManager.RaiseFileRemoved(Target)
+            'Raise event
+            KernelEventManager.RaiseFileRemoved(Target)
+        End Sub
+
+        ''' <summary>
+        ''' Removes a file
+        ''' </summary>
+        ''' <param name="Target">Target directory</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryRemoveFile(Target As String) As Boolean
+            Try
+                RemoveFile(Target)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New IOException(DoTranslation("Unable to remove file: {0}").FormatString(ex.Message))
             End Try
             Return False
         End Function

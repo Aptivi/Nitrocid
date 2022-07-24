@@ -27,16 +27,25 @@ Namespace Files
         ''' </summary>
         ''' <param name="FilePath">File path</param>
         ''' <param name="Attributes">Attributes</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function AddAttributeToFile(FilePath As String, Attributes As FileAttributes) As Boolean
-            Try
-                ThrowOnInvalidPath(FilePath)
-                FilePath = NeutralizePath(FilePath)
-                Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attributes)
-                File.SetAttributes(FilePath, Attributes)
+        Public Sub AddAttributeToFile(FilePath As String, Attributes As FileAttributes)
+            ThrowOnInvalidPath(FilePath)
+            FilePath = NeutralizePath(FilePath)
+            Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attributes)
+            File.SetAttributes(FilePath, Attributes)
 
-                'Raise event
-                KernelEventManager.RaiseFileAttributeAdded(FilePath, Attributes)
+            'Raise event
+            KernelEventManager.RaiseFileAttributeAdded(FilePath, Attributes)
+        End Sub
+
+        ''' <summary>
+        ''' Adds attribute to file
+        ''' </summary>
+        ''' <param name="FilePath">File path</param>
+        ''' <param name="Attributes">Attributes</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryAddAttributeToFile(FilePath As String, Attributes As FileAttributes) As Boolean
+            Try
+                AddAttributeToFile(FilePath, Attributes)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
@@ -61,19 +70,28 @@ Namespace Files
         ''' </summary>
         ''' <param name="FilePath">File path</param>
         ''' <param name="Attributes">Attributes</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function RemoveAttributeFromFile(FilePath As String, Attributes As FileAttributes) As Boolean
-            Try
-                ThrowOnInvalidPath(FilePath)
-                FilePath = NeutralizePath(FilePath)
-                Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
-                Wdbg(DebugLevel.I, "File attributes: {0}", Attrib)
-                Attrib = Attrib.RemoveAttribute(Attributes)
-                Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attrib)
-                File.SetAttributes(FilePath, Attrib)
+        Public Sub RemoveAttributeFromFile(FilePath As String, Attributes As FileAttributes)
+            ThrowOnInvalidPath(FilePath)
+            FilePath = NeutralizePath(FilePath)
+            Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
+            Wdbg(DebugLevel.I, "File attributes: {0}", Attrib)
+            Attrib = Attrib.RemoveAttribute(Attributes)
+            Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attrib)
+            File.SetAttributes(FilePath, Attrib)
 
-                'Raise event
-                KernelEventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
+            'Raise event
+            KernelEventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
+        End Sub
+
+        ''' <summary>
+        ''' Removes attribute from file
+        ''' </summary>
+        ''' <param name="FilePath">File path</param>
+        ''' <param name="Attributes">Attributes</param>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryRemoveAttributeFromFile(FilePath As String, Attributes As FileAttributes) As Boolean
+            Try
+                RemoveAttributeFromFile(FilePath, Attributes)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)

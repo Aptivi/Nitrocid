@@ -31,57 +31,99 @@ Namespace Files.PathLookup
         ''' <summary>
         ''' Adds a (non-)neutralized path to lookup
         ''' </summary>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function AddToPathLookup(Path As String) As Boolean
+        Public Sub AddToPathLookup(Path As String)
             ThrowOnInvalidPath(Path)
             Dim LookupPaths As List(Of String) = GetPathList()
             Path = NeutralizePath(Path)
             LookupPaths.Add(Path)
             PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
-            Return True
+        End Sub
+
+        ''' <summary>
+        ''' Adds a (non-)neutralized path to lookup
+        ''' </summary>
+        Public Sub AddToPathLookup(Path As String, RootPath As String)
+            ThrowOnInvalidPath(Path)
+            ThrowOnInvalidPath(RootPath)
+            Dim LookupPaths As List(Of String) = GetPathList()
+            Path = NeutralizePath(Path, RootPath)
+            LookupPaths.Add(Path)
+            PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
+        End Sub
+
+        ''' <summary>
+        ''' Adds a (non-)neutralized path to lookup
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryAddToPathLookup(Path As String) As Boolean
+            Try
+                AddToPathLookup(Path)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
         ''' Adds a (non-)neutralized path to lookup
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function AddToPathLookup(Path As String, RootPath As String) As Boolean
-            ThrowOnInvalidPath(Path)
-            ThrowOnInvalidPath(RootPath)
-            Dim LookupPaths As List(Of String) = GetPathList()
-            Path = NeutralizePath(Path, RootPath)
-            LookupPaths.Add(Path)
-            PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
-            Return True
+        Public Function TryAddToPathLookup(Path As String, RootPath As String) As Boolean
+            Try
+                AddToPathLookup(Path, RootPath)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
         ''' Removes an existing (non-)neutralized path from lookup
         ''' </summary>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function RemoveFromPathLookup(Path As String) As Boolean
+        Public Sub RemoveFromPathLookup(Path As String)
             ThrowOnInvalidPath(Path)
             Dim LookupPaths As List(Of String) = GetPathList()
-            Dim Returned As Boolean
             Path = NeutralizePath(Path)
-            Returned = LookupPaths.Remove(Path)
+            LookupPaths.Remove(Path)
             PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
-            Return Returned
+        End Sub
+
+        ''' <summary>
+        ''' Removes an existing (non-)neutralized path from lookup
+        ''' </summary>
+        Public Sub RemoveFromPathLookup(Path As String, RootPath As String)
+            ThrowOnInvalidPath(Path)
+            ThrowOnInvalidPath(RootPath)
+            Dim LookupPaths As List(Of String) = GetPathList()
+            Path = NeutralizePath(Path, RootPath)
+            LookupPaths.Remove(Path)
+            PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
+        End Sub
+
+        ''' <summary>
+        ''' Removes an existing (non-)neutralized path from lookup
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Public Function TryRemoveFromPathLookup(Path As String) As Boolean
+            Try
+                RemoveFromPathLookup(Path)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>
         ''' Removes an existing (non-)neutralized path from lookup
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
-        Public Function RemoveFromPathLookup(Path As String, RootPath As String) As Boolean
-            ThrowOnInvalidPath(Path)
-            ThrowOnInvalidPath(RootPath)
-            Dim LookupPaths As List(Of String) = GetPathList()
-            Dim Returned As Boolean
-            Path = NeutralizePath(Path, RootPath)
-            Returned = LookupPaths.Remove(Path)
-            PathsToLookup = String.Join(PathLookupDelimiter, LookupPaths)
-            Return Returned
+        Public Function TryRemoveFromPathLookup(Path As String, RootPath As String) As Boolean
+            Try
+                RemoveFromPathLookup(Path, RootPath)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
         End Function
 
         ''' <summary>

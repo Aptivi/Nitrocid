@@ -27,47 +27,54 @@ Namespace Files.Operations
         ''' </summary>
         ''' <param name="Source">Source file or directory</param>
         ''' <param name="Destination">Target file or directory</param>
+        ''' <exception cref="IOException"></exception>
+        Public Sub MoveFileOrDir(Source As String, Destination As String)
+            ThrowOnInvalidPath(Source)
+            ThrowOnInvalidPath(Destination)
+            Source = NeutralizePath(Source)
+            Wdbg(DebugLevel.I, "Source directory: {0}", Source)
+            Destination = NeutralizePath(Destination)
+            Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
+            Dim FileName As String = Path.GetFileName(Source)
+            Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
+            If FolderExists(Source) Then
+                Wdbg(DebugLevel.I, "Source and destination are directories")
+                Directory.Move(Source, Destination)
+
+                'Raise event
+                KernelEventManager.RaiseDirectoryMoved(Source, Destination)
+            ElseIf FileExists(Source) And FolderExists(Destination) Then
+                Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
+                File.Move(Source, Destination + "/" + FileName)
+
+                'Raise event
+                KernelEventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
+            ElseIf FileExists(Source) Then
+                Wdbg(DebugLevel.I, "Source is a file and destination is a file")
+                File.Move(Source, Destination)
+
+                'Raise event
+                KernelEventManager.RaiseFileMoved(Source, Destination)
+            Else
+                Wdbg(DebugLevel.E, "Source or destination are invalid.")
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Moves a file or directory
+        ''' </summary>
+        ''' <param name="Source">Source file or directory</param>
+        ''' <param name="Destination">Target file or directory</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="IOException"></exception>
-        Public Function MoveFileOrDir(Source As String, Destination As String) As Boolean
+        Public Function TryMoveFileOrDir(Source As String, Destination As String) As Boolean
             Try
-                ThrowOnInvalidPath(Source)
-                ThrowOnInvalidPath(Destination)
-                Source = NeutralizePath(Source)
-                Wdbg(DebugLevel.I, "Source directory: {0}", Source)
-                Destination = NeutralizePath(Destination)
-                Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
-                Dim FileName As String = Path.GetFileName(Source)
-                Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
-                If FolderExists(Source) Then
-                    Wdbg(DebugLevel.I, "Source and destination are directories")
-                    Directory.Move(Source, Destination)
-
-                    'Raise event
-                    KernelEventManager.RaiseDirectoryMoved(Source, Destination)
-                    Return True
-                ElseIf FileExists(Source) And FolderExists(Destination) Then
-                    Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
-                    File.Move(Source, Destination + "/" + FileName)
-
-                    'Raise event
-                    KernelEventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
-                    Return True
-                ElseIf FileExists(Source) Then
-                    Wdbg(DebugLevel.I, "Source is a file and destination is a file")
-                    File.Move(Source, Destination)
-
-                    'Raise event
-                    KernelEventManager.RaiseFileMoved(Source, Destination)
-                    Return True
-                Else
-                    Wdbg(DebugLevel.E, "Source or destination are invalid.")
-                    Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
-                End If
+                MoveFileOrDir(Source, Destination)
+                Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
                 WStkTrc(ex)
-                Throw New IOException(DoTranslation("Failed to move file or directory: {0}").FormatString(ex.Message))
             End Try
             Return False
         End Function

@@ -27,47 +27,54 @@ Namespace Files.Operations
         ''' </summary>
         ''' <param name="Source">Source file or directory</param>
         ''' <param name="Destination">Target file or directory</param>
+        ''' <exception cref="IOException"></exception>
+        Public Sub CopyFileOrDir(Source As String, Destination As String)
+            ThrowOnInvalidPath(Source)
+            ThrowOnInvalidPath(Destination)
+            Source = NeutralizePath(Source)
+            Wdbg(DebugLevel.I, "Source directory: {0}", Source)
+            Destination = NeutralizePath(Destination)
+            Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
+            Dim FileName As String = Path.GetFileName(Source)
+            Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
+            If FolderExists(Source) Then
+                Wdbg(DebugLevel.I, "Source and destination are directories")
+                CopyDirectory(Source, Destination)
+
+                'Raise event
+                KernelEventManager.RaiseDirectoryCopied(Source, Destination)
+            ElseIf FileExists(Source) And FolderExists(Destination) Then
+                Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
+                File.Copy(Source, Destination + "/" + FileName, True)
+
+                'Raise event
+                KernelEventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
+            ElseIf FileExists(Source) Then
+                Wdbg(DebugLevel.I, "Source is a file and destination is a file")
+                File.Copy(Source, Destination, True)
+
+                'Raise event
+                KernelEventManager.RaiseFileCopied(Source, Destination)
+            Else
+                Wdbg(DebugLevel.E, "Source or destination are invalid.")
+                Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Copies a file or directory
+        ''' </summary>
+        ''' <param name="Source">Source file or directory</param>
+        ''' <param name="Destination">Target file or directory</param>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="IOException"></exception>
-        Public Function CopyFileOrDir(Source As String, Destination As String) As Boolean
+        Public Function TryCopyFileOrDir(Source As String, Destination As String) As Boolean
             Try
-                ThrowOnInvalidPath(Source)
-                ThrowOnInvalidPath(Destination)
-                Source = NeutralizePath(Source)
-                Wdbg(DebugLevel.I, "Source directory: {0}", Source)
-                Destination = NeutralizePath(Destination)
-                Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
-                Dim FileName As String = Path.GetFileName(Source)
-                Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
-                If FolderExists(Source) Then
-                    Wdbg(DebugLevel.I, "Source and destination are directories")
-                    CopyDirectory(Source, Destination)
-
-                    'Raise event
-                    KernelEventManager.RaiseDirectoryCopied(Source, Destination)
-                    Return True
-                ElseIf FileExists(Source) And FolderExists(Destination) Then
-                    Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
-                    File.Copy(Source, Destination + "/" + FileName, True)
-
-                    'Raise event
-                    KernelEventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
-                    Return True
-                ElseIf FileExists(Source) Then
-                    Wdbg(DebugLevel.I, "Source is a file and destination is a file")
-                    File.Copy(Source, Destination, True)
-
-                    'Raise event
-                    KernelEventManager.RaiseFileCopied(Source, Destination)
-                    Return True
-                Else
-                    Wdbg(DebugLevel.E, "Source or destination are invalid.")
-                    Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
-                End If
+                CopyFileOrDir(Source, Destination)
+                Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message)
                 WStkTrc(ex)
-                Throw New IOException(DoTranslation("Failed to copy file or directory: {0}").FormatString(ex.Message))
             End Try
             Return False
         End Function

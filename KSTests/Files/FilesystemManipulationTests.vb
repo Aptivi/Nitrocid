@@ -36,7 +36,7 @@ Imports KS.Shell
         Directory.CreateDirectory(HomePath + "/TestDir")
         Dim SourcePath As String = "/TestDir"
         Dim TargetPath As String = "/TestDir2"
-        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -46,7 +46,7 @@ Imports KS.Shell
         CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents"
-        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -56,7 +56,7 @@ Imports KS.Shell
         CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
-        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryCopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -64,7 +64,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeDirectory()
         CurrentDir = HomePath
-        MakeDirectory("/NewDirectory").ShouldBeTrue
+        TryMakeDirectory("/NewDirectory").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -72,7 +72,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeFile()
         CurrentDir = HomePath
-        MakeFile("/NewFile.txt").ShouldBeTrue
+        TryMakeFile("/NewFile.txt").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -80,7 +80,7 @@ Imports KS.Shell
     ''' </summary>
     <Test, Description("Manipulation")> Public Sub TestMakeJsonFile()
         CurrentDir = HomePath
-        MakeJsonFile("/NewFile.json").ShouldBeTrue
+        TryMakeJsonFile("/NewFile.json").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -91,7 +91,7 @@ Imports KS.Shell
         Directory.CreateDirectory(HomePath + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
         Dim TargetPath As String = "/TestMovedDir2"
-        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -101,7 +101,7 @@ Imports KS.Shell
         CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestMove.txt")
         Dim TargetPath As String = "/Documents"
-        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -111,7 +111,7 @@ Imports KS.Shell
         CurrentDir = HomePath
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestData/TestMove.txt")
-        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
+        TryMoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -130,7 +130,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestRemoveDirectory()
         CurrentDir = HomePath
         Dim TargetPath As String = "/TestDir2"
-        RemoveDirectory(TargetPath).ShouldBeTrue
+        TryRemoveDirectory(TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -139,7 +139,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestRemoveFile()
         CurrentDir = HomePath
         Dim TargetPath As String = "/Documents/Text.txt"
-        RemoveFile(TargetPath).ShouldBeTrue
+        TryRemoveFile(TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -170,7 +170,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestAddAttribute()
         CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
-        AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
+        TryAddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -179,7 +179,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestDeleteAttribute()
         CurrentDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestData/TestText.txt")
-        RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
+        TryRemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -218,7 +218,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestAddToPathLookupNeutralized()
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        AddToPathLookup(NeutralizedPath).ShouldBeTrue
+        TryAddToPathLookup(NeutralizedPath).ShouldBeTrue
         PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
@@ -228,7 +228,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestAddToPathLookupNonNeutralized()
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        AddToPathLookup(Path).ShouldBeTrue
+        TryAddToPathLookup(Path).ShouldBeTrue
         PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
@@ -239,7 +239,7 @@ Imports KS.Shell
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        AddToPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
+        TryAddToPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
         PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
@@ -250,7 +250,7 @@ Imports KS.Shell
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        AddToPathLookup(Path, RootPath).ShouldBeTrue
+        TryAddToPathLookup(Path, RootPath).ShouldBeTrue
         PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
@@ -260,7 +260,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestRemoveFromPathLookupNeutralized()
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        RemoveFromPathLookup(NeutralizedPath).ShouldBeTrue
+        TryRemoveFromPathLookup(NeutralizedPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -269,7 +269,7 @@ Imports KS.Shell
     <Test, Description("Manipulation")> Public Sub TestRemoveFromPathLookupNonNeutralized()
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        RemoveFromPathLookup(Path).ShouldBeTrue
+        TryRemoveFromPathLookup(Path).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -279,7 +279,7 @@ Imports KS.Shell
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        RemoveFromPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
+        TryRemoveFromPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -289,7 +289,7 @@ Imports KS.Shell
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        RemoveFromPathLookup(Path, RootPath).ShouldBeTrue
+        TryRemoveFromPathLookup(Path, RootPath).ShouldBeTrue
         PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
