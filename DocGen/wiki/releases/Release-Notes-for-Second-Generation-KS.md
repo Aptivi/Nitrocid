@@ -190,6 +190,7 @@ This version is WIP as of 7/14/2022.
 9. Added new languages (SMS Message, Shakespearean)
 10. Added new themes (Ports from VIM community themes)
 11. Added shell presets
-12. Fixed wrong character for lower left corner in Ramp when the config is being created
-13. General API improvements
-14. General improvements and bug fixes
+12. Added new UESH conditions
+13. Fixed wrong character for lower left corner in Ramp when the config is being created
+14. General API improvements
+15. General improvements and bug fixes

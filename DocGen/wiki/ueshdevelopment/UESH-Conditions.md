@@ -19,6 +19,8 @@ Currently, only the `if` command supports this feature.
 | lesoreq   | `$var lesoreq $var2` | The first variable is less than or equal to the second
 | greoreq   | `$var greoreq $var2` | The first variable is greater than or equal to the second
 | fileex    | `fileex $path`       | The file exists
-| filenex   | `filenex $path`      | The file doesn't
+| filenex   | `filenex $path`      | The file doesn't exist
 | direx     | `direx $path`        | The directory exists
-| dirnex    | `dirnex $path`       | The directory doesn't
+| dirnex    | `dirnex $path`       | The directory doesn't exist
+| has       | `$var has $path`     | The first variable contains the second
+| hasno     | `$var hasno $path`   | The first variable doesn't contain the second

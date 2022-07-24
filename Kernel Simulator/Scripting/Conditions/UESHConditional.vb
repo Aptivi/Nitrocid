@@ -21,17 +21,21 @@ Imports KS.Scripting.Conditions.Types
 Namespace Scripting.Conditions
     Public Module UESHConditional
 
-        Private Conditions As New Dictionary(Of String, BaseCondition) From {{"eq", New EqualsCondition()},
-                                                                             {"neq", New NotEqualsCondition()},
-                                                                             {"les", New LessThanCondition()},
-                                                                             {"lesoreq", New LessThanOrEqualCondition()},
-                                                                             {"gre", New GreaterThanCondition()},
-                                                                             {"greoreq", New GreaterThanOrEqualCondition()},
-                                                                             {"fileex", New FileExistsCondition()},
-                                                                             {"filenex", New FileNotExistsCondition()},
-                                                                             {"direx", New DirectoryExistsCondition()},
-                                                                             {"dirnex", New DirectoryNotExistsCondition()},
-                                                                             {"none", New NoneCondition()}}
+        Private Conditions As New Dictionary(Of String, BaseCondition) From {
+            {"eq", New EqualsCondition()},
+            {"neq", New NotEqualsCondition()},
+            {"les", New LessThanCondition()},
+            {"lesoreq", New LessThanOrEqualCondition()},
+            {"gre", New GreaterThanCondition()},
+            {"greoreq", New GreaterThanOrEqualCondition()},
+            {"fileex", New FileExistsCondition()},
+            {"filenex", New FileNotExistsCondition()},
+            {"direx", New DirectoryExistsCondition()},
+            {"dirnex", New DirectoryNotExistsCondition()},
+            {"has", New ContainsCondition()},
+            {"hasno", New NotContainsCondition()},
+            {"none", New NoneCondition()}
+        }
 
         ''' <summary>
         ''' The available condition names
