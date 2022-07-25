@@ -657,3 +657,7 @@ We have removed this namespace that existed in 0.0.23.0 to use the Doctify libra
 ##### Moved network transfer APIs to its own namespace
 
 We have moved all network transfer APIs to `KS.Network.Transfer` to further organize the network APIs.
+
+##### Moved color-related console APIs to its own namespace
+
+We have moved all color-related console APIs to `KS.ConsoleBase.Themes` as it keeps getting expanded.

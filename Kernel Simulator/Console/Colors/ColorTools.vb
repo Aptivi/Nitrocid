@@ -19,7 +19,7 @@
 Imports System.IO
 Imports KS.Misc.Configuration
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     Public Module ColorTools
 
         ''' <summary>

@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     ''' <summary>
     ''' Enumeration for the color setting error reasons
     ''' </summary>

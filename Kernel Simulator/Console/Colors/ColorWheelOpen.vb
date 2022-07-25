@@ -18,7 +18,7 @@
 
 Imports KS.Misc.Reflection
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     Public Module ColorWheelOpen
 
         Public WheelUpperLeftCornerChar As String = "╔"

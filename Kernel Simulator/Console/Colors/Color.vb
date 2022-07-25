@@ -18,7 +18,7 @@
 
 Imports KS.Misc.Reflection
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     Public Class Color
 
         ''' <summary>

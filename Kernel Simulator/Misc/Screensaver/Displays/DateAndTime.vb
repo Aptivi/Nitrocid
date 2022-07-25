@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.ConsoleBase.Colors
 Imports KS.TimeDate
 
 Namespace Misc.Screensaver.Displays
@@ -207,10 +208,9 @@ Namespace Misc.Screensaver.Displays
         End Sub
 
         ''' <summary>
-        ''' Changes the color of bouncing text
+        ''' Changes the color of date and time
         ''' </summary>
         Function ChangeDateAndTimeColor() As Color
-            Dim RandomDriver As New Random
             Dim ColorInstance As Color
             If DateAndTimeTrueColor Then
                 Dim RedColorNum As Integer = RandomDriver.Next(DateAndTimeMinimumRedColorLevel, DateAndTimeMaximumRedColorLevel)

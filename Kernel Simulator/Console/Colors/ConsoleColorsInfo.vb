@@ -18,7 +18,7 @@
 
 Imports Newtonsoft.Json.Linq
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     Public Class ConsoleColorsInfo
 
         ''' <summary>

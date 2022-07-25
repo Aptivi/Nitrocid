@@ -19,7 +19,7 @@
 Imports System.Runtime.InteropServices
 Imports Newtonsoft.Json.Linq
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Colors
     Public Module Color255
 
         ''' <summary>
