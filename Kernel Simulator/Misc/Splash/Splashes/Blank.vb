@@ -44,30 +44,6 @@ Namespace Misc.Splash.Splashes
             End Get
         End Property
 
-        ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
-            Get
-                Return Info.ProgressWritePositionX
-            End Get
-        End Property
-
-        ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
-            Get
-                Return Info.ProgressWritePositionY
-            End Get
-        End Property
-
-        ReadOnly Property ProgressReportWritePositionX As Integer Implements ISplash.ProgressReportWritePositionX
-            Get
-                Return Info.ProgressReportWritePositionX
-            End Get
-        End Property
-
-        ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
-            Get
-                Return Info.ProgressReportWritePositionY
-            End Get
-        End Property
-
         'Actual logic
         Public Sub Opening() Implements ISplash.Opening
             Wdbg(DebugLevel.I, "Splash opening. Clearing console...")
@@ -91,7 +67,7 @@ Namespace Misc.Splash.Splashes
             Console.Clear()
         End Sub
 
-        Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
+        Public Sub Report(Progress As Integer, ProgressReport As String, ParamArray Vars() As Object) Implements ISplash.Report
         End Sub
 
     End Class

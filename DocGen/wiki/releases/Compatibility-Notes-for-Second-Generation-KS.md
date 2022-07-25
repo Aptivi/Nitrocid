@@ -665,3 +665,13 @@ We have moved all color-related console APIs to `KS.ConsoleBase.Themes` as it ke
 ##### Moved input-related console APIs to its own namespace
 
 We have moved all input-related console APIs to `KS.ConsoleBase.Inputs` as it keeps getting expanded.
+
+##### Removed the progress and its report positions from SplashInfo.
+
+The splashes are the ones who are rensponsible for setting their own progress positions.
+
+* Removed properties:
+  - ProgressWritePositionX
+  - ProgressWritePositionY
+  - ProgressReportWritePositionX
+  - ProgressReportWritePositionY

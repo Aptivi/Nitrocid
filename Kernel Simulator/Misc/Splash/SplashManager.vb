@@ -29,15 +29,15 @@ Namespace Misc.Splash
 
         Public SplashName As String = "Simple"
         Friend SplashThread As New KernelThread("Kernel Splash Thread", False, Sub() CurrentSplash.Display())
-        Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {
-            {"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
-            {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
-            {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
-            {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
-            {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)},
-            {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)},
-            {"sysvinit", New SplashInfo("sysvinit", True, 0, 0, 0, 0, New SplashSysvinit)},
-            {"openrc", New SplashInfo("openrc", True, 0, 0, 0, 0, New SplashOpenRC)}
+        Private ReadOnly InstalledSplashes As New Dictionary(Of String, SplashInfo) From {
+            {"Simple", New SplashInfo("Simple", True, New SplashSimple)},
+            {"Progress", New SplashInfo("Progress", True, New SplashProgress)},
+            {"Blank", New SplashInfo("Blank", False, New SplashBlank)},
+            {"Fader", New SplashInfo("Fader", True, New SplashFader)},
+            {"FaderBack", New SplashInfo("FaderBack", True, New SplashFaderBack)},
+            {"systemd", New SplashInfo("systemd", True, New SplashSystemd)},
+            {"sysvinit", New SplashInfo("sysvinit", True, New SplashSysvinit)},
+            {"openrc", New SplashInfo("openrc", True, New SplashOpenRC)}
         }
 
         ''' <summary>
@@ -102,20 +102,12 @@ Namespace Misc.Splash
                             Wdbg(DebugLevel.I, "Found valid splash! Getting information...")
                             Dim Name As String = SplashInstance.SplashName
                             Dim DisplaysProgress As Boolean = SplashInstance.SplashDisplaysProgress
-                            Dim ProgressWritePositionX As Integer = SplashInstance.ProgressWritePositionX
-                            Dim ProgressWritePositionY As Integer = SplashInstance.ProgressWritePositionY
-                            Dim ProgressReportWritePositionX As Integer = SplashInstance.ProgressReportWritePositionX
-                            Dim ProgressReportWritePositionY As Integer = SplashInstance.ProgressReportWritePositionY
 
                             'Install the values to the new instance
                             Wdbg(DebugLevel.I, "- Name: {0}", Name)
                             Wdbg(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress)
-                            Wdbg(DebugLevel.I, "- Progress Write Position X: {0}", ProgressWritePositionX)
-                            Wdbg(DebugLevel.I, "- Progress Write Position Y: {0}", ProgressWritePositionY)
-                            Wdbg(DebugLevel.I, "- Progress Report Write Position X: {0}", ProgressReportWritePositionX)
-                            Wdbg(DebugLevel.I, "- Progress Report Write Position Y: {0}", ProgressReportWritePositionY)
                             Wdbg(DebugLevel.I, "Installing splash...")
-                            Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY, SplashInstance)
+                            Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, SplashInstance)
                             InstalledSplashes.AddOrModify(Name, InstalledSplash)
                         Else
                             Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath)

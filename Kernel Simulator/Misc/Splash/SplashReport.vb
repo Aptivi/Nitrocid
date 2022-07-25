@@ -68,7 +68,7 @@ Namespace Misc.Splash
                 If _Progress >= 100 Then _Progress = 100
                 If CurrentSplashInfo.DisplaysProgress Then
                     If EnableSplash Then
-                        CurrentSplash.Report(_Progress, Text, CurrentSplash.ProgressWritePositionX, CurrentSplash.ProgressWritePositionY, CurrentSplash.ProgressReportWritePositionX, CurrentSplash.ProgressReportWritePositionY, Vars)
+                        CurrentSplash.Report(_Progress, Text, Vars)
                     ElseIf Not QuietKernel Then
                         Write(Text, True, ColTypes, Vars)
                     End If

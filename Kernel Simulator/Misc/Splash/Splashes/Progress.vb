@@ -44,40 +44,40 @@ Namespace Misc.Splash.Splashes
             End Get
         End Property
 
-        ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
+        ReadOnly Property ProgressWritePositionX As Integer
             Get
-                Return Info.ProgressWritePositionX
+                Return 3
             End Get
         End Property
 
-        ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
+        ReadOnly Property ProgressWritePositionY As Integer
             Get
                 Select Case ProgressProgressTextLocation
                     Case TextLocation.Top
-                        Return Info.ProgressWritePositionY
+                        Return 1
                     Case TextLocation.Bottom
                         Return Console.WindowHeight - 6
                     Case Else
-                        Return Info.ProgressWritePositionY
+                        Return 1
                 End Select
             End Get
         End Property
 
-        ReadOnly Property ProgressReportWritePositionX As Integer Implements ISplash.ProgressReportWritePositionX
+        ReadOnly Property ProgressReportWritePositionX As Integer
             Get
-                Return Info.ProgressReportWritePositionX
+                Return 9
             End Get
         End Property
 
-        ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
+        ReadOnly Property ProgressReportWritePositionY As Integer
             Get
                 Select Case ProgressProgressTextLocation
                     Case TextLocation.Top
-                        Return Info.ProgressReportWritePositionY
+                        Return 1
                     Case TextLocation.Bottom
                         Return Console.WindowHeight - 6
                     Case Else
-                        Return Info.ProgressReportWritePositionY
+                        Return 1
                 End Select
             End Get
         End Property
@@ -93,7 +93,7 @@ Namespace Misc.Splash.Splashes
                 Wdbg(DebugLevel.I, "Splash displaying.")
 
                 'Display the progress bar
-                UpdateProgressReport(Progress, ProgressText, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY)
+                UpdateProgressReport(Progress, ProgressText)
 
                 'Loop until closing
                 While Not SplashClosing
@@ -110,8 +110,8 @@ Namespace Misc.Splash.Splashes
             Console.Clear()
         End Sub
 
-        Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
-            UpdateProgressReport(Progress, ProgressReport, ProgressWritePositionX, ProgressWritePositionY, ProgressReportWritePositionX, ProgressReportWritePositionY, Vars)
+        Public Sub Report(Progress As Integer, ProgressReport As String, ParamArray Vars() As Object) Implements ISplash.Report
+            UpdateProgressReport(Progress, ProgressReport, Vars)
         End Sub
 
         ''' <summary>
@@ -119,11 +119,7 @@ Namespace Misc.Splash.Splashes
         ''' </summary>
         ''' <param name="Progress">Progress percentage from 0 to 100</param>
         ''' <param name="ProgressReport">The progress text</param>
-        ''' <param name="ProgressWritePositionX">The left position of the progress write position</param>
-        ''' <param name="ProgressWritePositionY">The top position of the progress write position</param>
-        ''' <param name="ProgressReportWritePositionX">The left position of the progress report write position</param>
-        ''' <param name="ProgressReportWritePositionY">The top position of the progress report write position</param>
-        Sub UpdateProgressReport(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object)
+        Sub UpdateProgressReport(Progress As Integer, ProgressReport As String, ParamArray Vars() As Object)
             'Display the text and percentage
             Dim RenderedText As String = ProgressReport.Truncate(Console.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3)
             WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress, Progress.ToString.PadLeft(3))

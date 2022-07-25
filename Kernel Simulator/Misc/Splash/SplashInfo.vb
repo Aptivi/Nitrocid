@@ -28,22 +28,6 @@ Namespace Misc.Splash
         ''' </summary>
         Public ReadOnly Property DisplaysProgress As Boolean
         ''' <summary>
-        ''' Progress write left console position
-        ''' </summary>
-        Public ReadOnly Property ProgressWritePositionX As Integer
-        ''' <summary>
-        ''' Progress write top console position
-        ''' </summary>
-        Public ReadOnly Property ProgressWritePositionY As Integer
-        ''' <summary>
-        ''' Progress report write left console position
-        ''' </summary>
-        Public ReadOnly Property ProgressReportWritePositionX As Integer
-        ''' <summary>
-        ''' Progress report write top console position
-        ''' </summary>
-        Public ReadOnly Property ProgressReportWritePositionY As Integer
-        ''' <summary>
         ''' Splash entry point
         ''' </summary>
         Public ReadOnly Property EntryPoint As ISplash
@@ -54,13 +38,9 @@ Namespace Misc.Splash
         ''' <param name="SplashName">Splash name</param>
         ''' <param name="DisplaysProgress">Does the splash display progress?</param>
         ''' <param name="EntryPoint">Splash entry point</param>
-        Protected Friend Sub New(SplashName As String, DisplaysProgress As Boolean, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, EntryPoint As ISplash)
+        Protected Friend Sub New(SplashName As String, DisplaysProgress As Boolean, EntryPoint As ISplash)
             Me.SplashName = SplashName
             Me.DisplaysProgress = DisplaysProgress
-            Me.ProgressWritePositionX = ProgressWritePositionX
-            Me.ProgressWritePositionY = ProgressWritePositionY
-            Me.ProgressReportWritePositionX = ProgressReportWritePositionX
-            Me.ProgressReportWritePositionY = ProgressReportWritePositionY
             Me.EntryPoint = EntryPoint
         End Sub
 
