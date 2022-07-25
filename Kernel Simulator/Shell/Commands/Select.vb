@@ -32,12 +32,12 @@ Namespace Shell.Commands
             End If
 
             'Prompt for selection
-            PromptSelection(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
+            PromptSelectionAndSet(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
         End Sub
 
         Public Overrides Sub HelpHelper()
             Write(DoTranslation("where <$variable> is any variable that will be used to store response") + NewLine +
-              DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
+                  DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
         End Sub
 
     End Class

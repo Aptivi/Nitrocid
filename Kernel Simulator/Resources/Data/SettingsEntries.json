@@ -532,7 +532,7 @@
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Scripting.Interaction.UESHCommands+ChoiceOutputType",
+                "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceStyle+ChoiceOutputType",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
             }

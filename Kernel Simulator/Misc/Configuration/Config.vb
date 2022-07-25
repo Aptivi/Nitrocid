@@ -19,6 +19,7 @@
 Imports System.Globalization
 Imports System.IO
 Imports ManagedWeatherMap.Core
+Imports KS.ConsoleBase.Inputs.Styles
 Imports KS.Files.Folders
 Imports KS.Files.Querying
 Imports KS.ManPages

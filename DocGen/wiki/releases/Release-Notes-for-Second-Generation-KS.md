@@ -183,7 +183,7 @@ This version is WIP as of 7/14/2022.
 2. Removed report bug prompt
 3. Added command autocompletion
 4. Added new splashes (systemd, sysvinit, openrc)
-5. Added support for UESH conditions that require moer than three arguments
+5. Added support for UESH conditions that require more than three arguments
 6. Added preview to saver settings
 7. Added new tests
 8. Added new screensavers (Indeterminate)

@@ -16,16 +16,29 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Scripting.Interaction
+Namespace ConsoleBase.Inputs.Styles
+    Public Module InputStyle
 
-Namespace Shell.Commands
-    Class InputCommand
-        Inherits CommandExecutor
-        Implements ICommand
+        ''' <summary>
+        ''' Prompts user for input (answer the question with your own answers)
+        ''' </summary>
+        Public Function PromptInput(Question As String) As String
+            While True
+                'Variables
+                Dim Answer As String
+                Wdbg(DebugLevel.I, "Question: {0}", Question)
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            PromptInputAndSet(StringArgs.Replace(ListArgs(0) + " ", ""), ListArgs(0))
-        End Sub
+                'Ask a question
+                Write(Question, False, ColTypes.Question)
+                SetConsoleColor(InputColor)
 
-    End Class
+                'Wait for an answer
+                Answer = ReadLine()
+                Wdbg(DebugLevel.I, "Answer: {0}", Answer)
+
+                Return Answer
+            End While
+        End Function
+
+    End Module
 End Namespace

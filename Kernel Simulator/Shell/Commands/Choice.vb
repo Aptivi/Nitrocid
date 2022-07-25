@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.ConsoleBase.Inputs.Styles
 Imports KS.Scripting.Interaction
 
 Namespace Shell.Commands
@@ -44,7 +45,7 @@ Namespace Shell.Commands
             End If
 
             'Prompt for choice
-            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray, OutputType, PressEnter)
+            PromptChoiceAndSet(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray, OutputType, PressEnter)
         End Sub
 
         Public Overrides Sub HelpHelper()
