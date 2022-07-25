@@ -16,11 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.ConsoleBase.Colors
+
 #If NETCOREAPP Then
 Imports System.Threading
 #End If
 
-Namespace ConsoleBase
+Namespace ConsoleBase.Inputs
     Public Module Input
 
         ''' <summary>

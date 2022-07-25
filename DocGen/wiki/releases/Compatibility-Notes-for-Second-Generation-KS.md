@@ -661,3 +661,7 @@ We have moved all network transfer APIs to `KS.Network.Transfer` to further orga
 ##### Moved color-related console APIs to its own namespace
 
 We have moved all color-related console APIs to `KS.ConsoleBase.Themes` as it keeps getting expanded.
+
+##### Moved input-related console APIs to its own namespace
+
+We have moved all input-related console APIs to `KS.ConsoleBase.Inputs` as it keeps getting expanded.
