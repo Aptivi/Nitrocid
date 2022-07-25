@@ -675,3 +675,7 @@ The splashes are the ones who are rensponsible for setting their own progress po
   - ProgressWritePositionY
   - ProgressReportWritePositionX
   - ProgressReportWritePositionY
+
+##### Replaced `CommandPromptWrite()`
+
+`CommandPromptWrite()` used to be the helper for UESH to write its own prompt, but it's eventually replaced by the more powerful `WriteShellPrompt()` to accommodate all possible cases, like custom 

@@ -112,15 +112,7 @@ Namespace Shell.Shells
                         If DefConsoleOut IsNot Nothing Then
                             Console.SetOut(DefConsoleOut)
                         End If
-                        Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
-                        If RSSShellPromptStyle = "" Then
-                            WriteShellPrompt(ShellType)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences()
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
-                        End If
-                        SetInputColor()
+                        WriteShellPrompt(ShellType)
 
                         'Raise the event
                         KernelEventManager.RaiseRSSShellInitialized(RSSFeedLink)

@@ -66,10 +66,7 @@ Namespace Shell.Shells
                             If DefConsoleOut IsNot Nothing Then
                                 Console.SetOut(DefConsoleOut)
                             End If
-                            CommandPromptWrite()
-
-                            'Set an input color
-                            SetInputColor()
+                            WriteShellPrompt(ShellType)
 
                             'Raise shell initialization event
                             KernelEventManager.RaiseShellInitialized()
@@ -100,24 +97,6 @@ Namespace Shell.Shells
                     End Try
                 End If
             End While
-        End Sub
-
-        'TODO: Promote CommandPromptWrite() to the ShellBase namespace, changing its name to WriteShellPrompt() and preserving support
-        '      for the custom shell prompt style from config until further notice.
-        ''' <summary>
-        ''' Writes the input for command prompt
-        ''' </summary>
-        Public Sub CommandPromptWrite()
-            'Check the custom shell prompt style and kernel mode
-            Wdbg(DebugLevel.I, "ShellPromptStyle = {0}", ShellPromptStyle)
-            If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
-                'Parse the shell prompt style
-                Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
-                ParsedPromptStyle.ConvertVTSequences()
-                Write(ParsedPromptStyle, False, ColTypes.Gray)
-            Else
-                WriteShellPrompt(ShellType.Shell)
-            End If
         End Sub
 
     End Class

@@ -62,15 +62,7 @@ Namespace Shell.Shells
                     If DefConsoleOut IsNot Nothing Then
                         Console.SetOut(DefConsoleOut)
                     End If
-                    Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
-                    If MailShellPromptStyle = "" Then
-                        WriteShellPrompt(ShellType)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences()
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                    WriteShellPrompt(ShellType)
                 End SyncLock
 
                 'Listen for a command

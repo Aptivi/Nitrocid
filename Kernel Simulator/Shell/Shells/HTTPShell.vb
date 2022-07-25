@@ -43,21 +43,7 @@ Namespace Shell.Shells
                             Console.SetOut(DefConsoleOut)
                         End If
                         Wdbg(DebugLevel.I, "Preparing prompt...")
-                        If HTTPConnected Then
-                            Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
-                            If HTTPShellPromptStyle = "" Then
-                                WriteShellPrompt(ShellType)
-                            Else
-                                Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                                ParsedPromptStyle.ConvertVTSequences()
-                                Write(ParsedPromptStyle, False, ColTypes.Gray)
-                            End If
-                        Else
-                            WriteShellPrompt(ShellType)
-                        End If
-
-                        'Set input color
-                        SetInputColor()
+                        WriteShellPrompt(ShellType)
 
                         'Raise the event
                         KernelEventManager.RaiseHTTPShellInitialized()

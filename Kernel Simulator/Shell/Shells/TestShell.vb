@@ -46,15 +46,8 @@ Namespace Shell.Shells
                         Console.SetOut(DefConsoleOut)
                     End If
 
-                    'Write the custom prompt style for the test shell
-                    Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
-                    If Test_PromptStyle = "" Then
-                        WriteShellPrompt(ShellType)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences()
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
+                    'Write the prompt
+                    WriteShellPrompt(ShellType)
 
                     'Raise the event
                     KernelEventManager.RaiseTestShellInitialized()

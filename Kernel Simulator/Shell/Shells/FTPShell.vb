@@ -83,22 +83,8 @@ Namespace Shell.Shells
                         'Prompt for command
                         If Not Connects Then
                             Wdbg(DebugLevel.I, "Preparing prompt...")
-                            If FtpConnected Then
-                                Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
-                                If FTPShellPromptStyle = "" Then
-                                    WriteShellPrompt(ShellType)
-                                Else
-                                    Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
-                                    ParsedPromptStyle.ConvertVTSequences()
-                                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                                End If
-                            Else
-                                WriteShellPrompt(ShellType)
-                            End If
+                            WriteShellPrompt(ShellType)
                         End If
-
-                        'Set input color
-                        SetInputColor()
                     End SyncLock
 
                     'Try to connect if IP address is specified.

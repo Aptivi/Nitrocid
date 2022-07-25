@@ -64,15 +64,7 @@ Namespace Shell.Shells
                         If DefConsoleOut IsNot Nothing Then
                             Console.SetOut(DefConsoleOut)
                         End If
-                        Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
-                        If TextEdit_PromptStyle = "" Then
-                            WriteShellPrompt(ShellType)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences()
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
-                        End If
-                        SetInputColor()
+                        WriteShellPrompt(ShellType)
 
                         'Raise the event
                         KernelEventManager.RaiseTextShellInitialized()

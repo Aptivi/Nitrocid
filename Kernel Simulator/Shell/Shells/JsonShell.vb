@@ -59,15 +59,7 @@ Namespace Shell.Shells
                     If DefConsoleOut IsNot Nothing Then
                         Console.SetOut(DefConsoleOut)
                     End If
-                    Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
-                    If JsonShell_PromptStyle = "" Then
-                        WriteShellPrompt(ShellType)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences()
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
-                    End If
-                    SetInputColor()
+                    WriteShellPrompt(ShellType)
 
                     'Raise the event
                     KernelEventManager.RaiseJsonShellInitialized()

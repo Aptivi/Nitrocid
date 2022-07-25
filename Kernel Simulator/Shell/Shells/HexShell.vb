@@ -68,14 +68,7 @@ Namespace Shell.Shells
 
                         'Prepare for prompt
                         Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
-                        If HexEdit_PromptStyle = "" Then
-                            WriteShellPrompt(ShellType)
-                        Else
-                            Dim ParsedPromptStyle As String = ProbePlaces(HexEdit_PromptStyle)
-                            ParsedPromptStyle.ConvertVTSequences()
-                            Write(ParsedPromptStyle, False, ColTypes.Gray)
-                        End If
-                        SetInputColor()
+                        WriteShellPrompt(ShellType)
 
                         'Raise the event
                         KernelEventManager.RaiseHexShellInitialized()

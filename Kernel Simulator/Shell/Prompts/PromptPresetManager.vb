@@ -99,17 +99,20 @@ Namespace Shell.Prompts
         ''' <param name="PresetName">The preset name</param>
         Public Sub SetPreset(PresetName As String, ShellType As ShellType, Optional ThrowOnNotFound As Boolean = True)
             Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
+            Dim CustomPresets As Dictionary(Of String, PromptPresetBase) = GetCustomPresetsFromShell(ShellType)
+            Dim CurrentPresetBase As PromptPresetBase
+            GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+
+            'Check to see if we have the preset
             If Presets.ContainsKey(PresetName) Then
-                Dim CurrentPresetBase As PromptPresetBase
-                GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
                 CurrentPresetBase = Presets(PresetName)
+            ElseIf CustomPresets.ContainsKey(Presetname) Then
+                CurrentPresetBase = CustomPresets(PresetName)
             Else
                 If ThrowOnNotFound Then
                     Wdbg(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString())
                     Throw New NoSuchShellPresetException(DoTranslation("The specified preset {0} is not found."), PresetName)
                 Else
-                    Dim CurrentPresetBase As PromptPresetBase
-                    GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
                     CurrentPresetBase = Presets("Default")
                 End If
             End If
@@ -213,9 +216,20 @@ Namespace Shell.Prompts
         ''' </summary>
         ''' <param name="ShellType">Shell type</param>
         Public Sub WriteShellPrompt(ShellType As ShellType)
-            Dim CurrentPresetBase As PromptPresetBase
-            GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
-            Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
+            Dim ShellPromptStyle As String = GetCustomShellPromptStyle(ShellType)
+            If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
+                'Parse the shell prompt style
+                Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
+                ParsedPromptStyle.ConvertVTSequences()
+                Write(ParsedPromptStyle, False, ColTypes.Input)
+            Else
+                Dim CurrentPresetBase As PromptPresetBase
+                GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+                Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
+            End If
+
+            'Set input color in case custom preset or custom shell prompt style didn't set the input color as instructed
+            SetInputColor()
         End Sub
 
     End Module

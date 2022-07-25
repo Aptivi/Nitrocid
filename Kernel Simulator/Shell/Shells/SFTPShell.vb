@@ -74,18 +74,7 @@ Namespace Shell.Shells
                         End If
                         If Not Connects Then
                             Wdbg(DebugLevel.I, "Preparing prompt...")
-                            If SFTPConnected Then
-                                Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
-                                If SFTPShellPromptStyle = "" Then
-                                    WriteShellPrompt(ShellType)
-                                Else
-                                    Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
-                                    ParsedPromptStyle.ConvertVTSequences()
-                                    Write(ParsedPromptStyle, False, ColTypes.Gray)
-                                End If
-                            Else
-                                WriteShellPrompt(ShellType)
-                            End If
+                            WriteShellPrompt(ShellType)
                         End If
 
                         'Set input color
