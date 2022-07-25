@@ -16,13 +16,22 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Shell.Prompts
+Imports KS.ConsoleBase.Inputs.Styles
+
 Namespace Shell.Commands
     Class PresetsCommand
         Inherits CommandExecutor
         Implements ICommand
 
+        'TODO: This is a unified command. Implement UnifiedCommands to add commands that apply to all shells.
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Write("Presets TBD", True, ColTypes.Warning)
+            Dim ShellType As ShellType = ShellStack(ShellStack.Count - 1).ShellType
+            Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellStack(ShellStack.Count - 1).ShellType)
+            Dim PresetNames As String() = Presets.Keys.ToArray
+            Dim PresetDisplays As String() = Presets.Values.Select(Function(Preset) Preset.PresetPrompt).ToArray
+            Dim SelectedPreset As String = PromptChoice(DoTranslation("Select preset for {0}:").FormatString(ShellType), String.Join("/", PresetNames), PresetDisplays, ChoiceOutputType.Modern, True)
+            SetPreset(SelectedPreset, ShellType)
         End Sub
 
     End Class
