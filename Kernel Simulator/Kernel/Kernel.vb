@@ -261,8 +261,10 @@ Namespace Kernel
             Console.Clear()
 
             'If "No APM" is enabled, simply print the text
-            Console.WriteLine(DoTranslation("It's now safe to turn off your computer."))
-            Console.ReadKey(True)
+            If SimulateNoAPM Then
+                Console.WriteLine(DoTranslation("It's now safe to turn off your computer."))
+                Console.ReadKey(True)
+            End If
         End Sub
 
         ''' <summary>
