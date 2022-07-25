@@ -16,8 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports SharpCompress.Archives.Zip
+Imports SharpCompress.Readers
 Imports System.IO
-Imports System.IO.Compression
 Imports System.Threading
 Imports KS.Shell.Prompts
 Imports KS.Files.Folders
@@ -53,7 +54,7 @@ Namespace Shell.Shells
                 Try
                     'Open file if not open
                     If ZipShell_FileStream Is Nothing Then ZipShell_FileStream = New FileStream(ZipFile, FileMode.Open)
-                    If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
+                    If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = ZipArchive.Open(ZipShell_FileStream)
 
                     'See UESHShell.vb for more info
                     SyncLock GetCancelSyncLock(ShellType)

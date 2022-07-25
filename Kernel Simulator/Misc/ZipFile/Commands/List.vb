@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO.Compression
+Imports SharpCompress.Archives.Zip
 
 Namespace Misc.ZipFile.Commands
     Class ZipShell_ListCommand
@@ -33,9 +33,9 @@ Namespace Misc.ZipFile.Commands
                 Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
             End If
             For Each Entry As ZipArchiveEntry In Entries
-                Write("- {0}: ", False, ColTypes.ListEntry, Entry.FullName)
-                If Not Entry.Name = "" Then 'Entry is a file
-                    Write("{0} ({1})", True, ColTypes.ListValue, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
+                Write("- {0}: ", False, ColTypes.ListEntry, Entry.Key)
+                If Not Entry.IsDirectory Then 'Entry is a file
+                    Write("{0} ({1})", True, ColTypes.ListValue, Entry.CompressedSize.FileSizeToString, Entry.Size.FileSizeToString)
                 Else
                     Console.WriteLine()
                 End If

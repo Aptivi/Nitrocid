@@ -17,8 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Files.Querying
+Imports KS.Files.Operations
+Imports SharpCompress.Archives.Zip
 Imports System.IO
-Imports System.IO.Compression
 
 Namespace Misc.ZipFile
     Public Module ZipTools
@@ -31,14 +32,14 @@ Namespace Misc.ZipFile
             If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentArchiveDirectory
             Dim Entries As New List(Of ZipArchiveEntry)
             For Each ArchiveEntry As ZipArchiveEntry In ZipShell_ZipArchive?.Entries
-                Wdbg(DebugLevel.I, "Parsing entry {0}...", ArchiveEntry.FullName)
+                Wdbg(DebugLevel.I, "Parsing entry {0}...", ArchiveEntry.Key)
                 If Target IsNot Nothing Then
-                    If ArchiveEntry.FullName.StartsWith(Target) Then
-                        Wdbg(DebugLevel.I, "Entry {0} found in target {1}. Adding...", ArchiveEntry.FullName, Target)
+                    If ArchiveEntry.Key.StartsWith(Target) Then
+                        Wdbg(DebugLevel.I, "Entry {0} found in target {1}. Adding...", ArchiveEntry.Key, Target)
                         Entries.Add(ArchiveEntry)
                     End If
                 ElseIf Target Is Nothing Then
-                    Wdbg(DebugLevel.I, "Adding entry {0}...", ArchiveEntry.FullName)
+                    Wdbg(DebugLevel.I, "Adding entry {0}...", ArchiveEntry.Key)
                     Entries.Add(ArchiveEntry)
                 End If
             Next
@@ -62,15 +63,17 @@ Namespace Misc.ZipFile
 
             'Define local destination while getting an entry from target
             Dim LocalDestination As String = Where + "/"
-            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.GetEntry(AbsoluteTarget)
+            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.Entries(AbsoluteTarget)
             If FullTargetPath Then
-                LocalDestination += ZipEntry.FullName.Replace(ZipEntry.Name, "")
+                LocalDestination += ZipEntry.Key
             End If
             Wdbg(DebugLevel.I, "Where: {0}", LocalDestination)
 
             'Try to extract file
             Directory.CreateDirectory(LocalDestination)
-            ZipEntry.ExtractToFile(LocalDestination + ZipEntry.Name, True)
+            MakeFile(LocalDestination + ZipEntry.Key)
+            Dim ZipEntryStream As New StreamReader(ZipEntry.OpenEntryStream())
+            Dim LocalDestinationStream As New StreamWriter(LocalDestination + ZipEntry.Key)
             Return True
         End Function
 
@@ -91,7 +94,8 @@ Namespace Misc.ZipFile
             'Define local destination while getting an entry from target
             Target = NeutralizePath(Target, Where)
             Wdbg(DebugLevel.I, "Where: {0}", Target)
-            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.CreateEntryFromFile(Target, ArchiveTarget)
+            Dim ArchiveTargetStream As New FileStream(ArchiveTarget, FileMode.Open)
+            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.AddEntry(Target, ArchiveTargetStream)
             Return True
         End Function
 
@@ -148,10 +152,10 @@ Namespace Misc.ZipFile
 
             'Enumerate entries
             For Each Entry As ZipArchiveEntry In ListZipEntries(Target)
-                Wdbg(DebugLevel.I, "Entry: {0}", Entry.FullName)
-                If Entry.FullName.StartsWith(Target) Then
-                    Wdbg(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.FullName)
-                    ZipShell_CurrentArchiveDirectory = Entry.FullName.RemoveLetter(Entry.FullName.Length - 1)
+                Wdbg(DebugLevel.I, "Entry: {0}", Entry.Key)
+                If Entry.Key.StartsWith(Target) Then
+                    Wdbg(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.Key)
+                    ZipShell_CurrentArchiveDirectory = Entry.Key.RemoveLetter(Entry.Key.Length - 1)
                     Wdbg(DebugLevel.I, "Setting CAD to {0}...", ZipShell_CurrentArchiveDirectory)
                     Return True
                 End If

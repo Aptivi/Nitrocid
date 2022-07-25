@@ -16,8 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports SharpCompress.Archives.Zip
 Imports System.IO
-Imports System.IO.Compression
 Imports KS.Misc.ZipFile.Commands
 
 Namespace Misc.ZipFile
