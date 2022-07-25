@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Files.Querying
+Imports KS.Misc.Encryption
 
 Namespace Scripting
     Public Module UESHOperators
@@ -289,6 +290,78 @@ Namespace Scripting
             Dim VarValue As String = GetVariable(Variable)
             Wdbg(DebugLevel.I, "Got value of {0}: {1}...", Variable, VarValue)
             Satisfied = Not TryParseFileName(VarValue)
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if a UESH variable matches its hash specified on the second
+        ''' </summary>
+        ''' <param name="FirstVariable">The first $variable</param>
+        ''' <param name="SecondVariable">The second $variable</param>
+        ''' <returns>True if satisfied. False if otherwise.</returns>
+        Public Function UESHVariableHashMatch(FirstVariable As String, SecondVariable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable)
+            Dim FirstVarValue As String = GetVariable(FirstVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue)
+            Dim SecondVarValue As String = GetVariable(SecondVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue)
+            Satisfied = GetEncryptedString(FirstVarValue, Algorithms.SHA256) = SecondVarValue
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if a UESH variable doesn't match its hash specified on the second
+        ''' </summary>
+        ''' <param name="FirstVariable">The first $variable</param>
+        ''' <param name="SecondVariable">The second $variable</param>
+        ''' <returns>True if satisfied. False if otherwise.</returns>
+        Public Function UESHVariableHashNoMatch(FirstVariable As String, SecondVariable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable)
+            Dim FirstVarValue As String = GetVariable(FirstVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue)
+            Dim SecondVarValue As String = GetVariable(SecondVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue)
+            Satisfied = GetEncryptedString(FirstVarValue, Algorithms.SHA256) <> SecondVarValue
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if a file specified from a UESH variable matches its hash specified on the second
+        ''' </summary>
+        ''' <param name="FirstVariable">The first $variable</param>
+        ''' <param name="SecondVariable">The second $variable</param>
+        ''' <returns>True if satisfied. False if otherwise.</returns>
+        Public Function UESHVariableFileHashMatch(FirstVariable As String, SecondVariable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable)
+            Dim FirstVarValue As String = GetVariable(FirstVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue)
+            Dim SecondVarValue As String = GetVariable(SecondVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue)
+            Satisfied = GetEncryptedFile(FirstVarValue, Algorithms.SHA256) = SecondVarValue
+            Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
+            Return Satisfied
+        End Function
+
+        ''' <summary>
+        ''' Checks to see if a file specified from a UESH variable doesn't match its hash specified on the second
+        ''' </summary>
+        ''' <param name="FirstVariable">The first $variable</param>
+        ''' <param name="SecondVariable">The second $variable</param>
+        ''' <returns>True if satisfied. False if otherwise.</returns>
+        Public Function UESHVariableFileHashNoMatch(FirstVariable As String, SecondVariable As String) As Boolean
+            Dim Satisfied As Boolean
+            Wdbg(DebugLevel.I, "Querying {0} and {1}...", FirstVariable, SecondVariable)
+            Dim FirstVarValue As String = GetVariable(FirstVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", FirstVariable, FirstVarValue)
+            Dim SecondVarValue As String = GetVariable(SecondVariable)
+            Wdbg(DebugLevel.I, "Got value of {0}: {1}...", SecondVariable, SecondVarValue)
+            Satisfied = GetEncryptedFile(FirstVarValue, Algorithms.SHA256) <> SecondVarValue
             Wdbg(DebugLevel.I, "Satisfied: {0}", Satisfied)
             Return Satisfied
         End Function

@@ -38,6 +38,10 @@ Namespace Scripting.Conditions
             {"isnotpath", New InvalidPathCondition()},
             {"isfname", New ValidFileNameCondition()},
             {"isnotfname", New InvalidFileNameCondition()},
+            {"sane", New HashesMatchCondition()},
+            {"insane", New HashesMismatchCondition()},
+            {"fsane", New FileHashMatchCondition()},
+            {"finsane", New FileHashMismatchCondition()},
             {"none", New NoneCondition()}
         }
 
