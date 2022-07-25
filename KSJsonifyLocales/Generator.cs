@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;

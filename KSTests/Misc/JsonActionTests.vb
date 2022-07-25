@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports KS.ConsoleBase
+Imports KS.ConsoleBase.Colors
 Imports KS.Misc.Beautifiers
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq

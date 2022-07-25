@@ -21,7 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using Extensification.StringExts;
-using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;

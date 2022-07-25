@@ -153,6 +153,8 @@
     <Import Include="FluentFTP" />
     <Import Include="FluentFTP.Helpers" />
     <Import Include="KS.ConsoleBase" />
+    <Import Include="KS.ConsoleBase.Colors" />
+    <Import Include="KS.ConsoleBase.Inputs" />
     <Import Include="KS.ConsoleBase.Themes" />
     <Import Include="KS.ConsoleBase.Themes.Studio" />
     <Import Include="KS.Files" />

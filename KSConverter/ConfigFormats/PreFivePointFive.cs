@@ -20,7 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell;

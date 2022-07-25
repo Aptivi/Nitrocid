@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using FluentFTP;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Login;
@@ -31,7 +32,7 @@ using KS.Misc.Writers.FancyWriters;
 using KS.Network;
 using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase;
-using static KS.ConsoleBase.ColorTools;
+using static KS.ConsoleBase.Colors.ColorTools;
 
 namespace KSConverter
 {

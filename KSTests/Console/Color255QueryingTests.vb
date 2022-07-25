@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.ConsoleBase
+Imports KS.ConsoleBase.Colors
 Imports Newtonsoft.Json.Linq
 
 <TestFixture> Public Class Color255QueryingTests
