@@ -356,5 +356,10 @@
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shell\ShellBase\Aliases\" />
+    <Folder Include="Shell\ShellBase\Commands\" />
+    <Folder Include="Shell\ShellBase\Shells\" />
+  </ItemGroup>
   <!-- KS Package Files End -->
 </Project>
