@@ -24,17 +24,19 @@ Namespace Network.RSS
     Public Module RSSShellCommon
 
         'Variables
-        Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", {"<feednum>"}, True, 1, New RSS_ArticleInfoCommand)},
-                                                                                    {"bookmark", New CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", Array.Empty(Of String), False, 0, New RSS_BookmarkCommand)},
-                                                                                    {"chfeed", New CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", {"[-bookmark] <feedurl/bookmarknumber>"}, True, 1, New RSS_ChFeedCommand)},
-                                                                                    {"exit", New CommandInfo("exit", ShellType.RSSShell, "Exits RSS shell and returns to kernel", Array.Empty(Of String), False, 0, New RSS_ExitCommand)},
-                                                                                    {"feedinfo", New CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", Array.Empty(Of String), False, 0, New RSS_FeedInfoCommand)},
-                                                                                    {"help", New CommandInfo("help", ShellType.RSSShell, "Shows help screen", Array.Empty(Of String), False, 0, New RSS_HelpCommand)},
-                                                                                    {"list", New CommandInfo("list", ShellType.RSSShell, "Lists all feeds", Array.Empty(Of String), False, 0, New RSS_ListCommand)},
-                                                                                    {"listbookmark", New CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", Array.Empty(Of String), False, 0, New RSS_ListBookmarkCommand)},
-                                                                                    {"read", New CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", {"<feednum>"}, True, 1, New RSS_ReadCommand)},
-                                                                                    {"selfeed", New CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", Array.Empty(Of String), False, 0, New RSS_SelFeedCommand)},
-                                                                                    {"unbookmark", New CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", Array.Empty(Of String), False, 0, New RSS_UnbookmarkCommand)}}
+        Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {
+            {"articleinfo", New CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", {"<feednum>"}, True, 1, New RSS_ArticleInfoCommand)},
+            {"bookmark", New CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", Array.Empty(Of String), False, 0, New RSS_BookmarkCommand)},
+            {"chfeed", New CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", {"[-bookmark] <feedurl/bookmarknumber>"}, True, 1, New RSS_ChFeedCommand)},
+            {"exit", New CommandInfo("exit", ShellType.RSSShell, "Exits RSS shell and returns to kernel", Array.Empty(Of String), False, 0, New RSS_ExitCommand)},
+            {"feedinfo", New CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", Array.Empty(Of String), False, 0, New RSS_FeedInfoCommand)},
+            {"help", New CommandInfo("help", ShellType.RSSShell, "Shows help screen", Array.Empty(Of String), False, 0, New RSS_HelpCommand)},
+            {"list", New CommandInfo("list", ShellType.RSSShell, "Lists all feeds", Array.Empty(Of String), False, 0, New RSS_ListCommand)},
+            {"listbookmark", New CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", Array.Empty(Of String), False, 0, New RSS_ListBookmarkCommand)},
+            {"read", New CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", {"<feednum>"}, True, 1, New RSS_ReadCommand)},
+            {"selfeed", New CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", Array.Empty(Of String), False, 0, New RSS_SelFeedCommand)},
+            {"unbookmark", New CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", Array.Empty(Of String), False, 0, New RSS_UnbookmarkCommand)}
+        }
         Public RSSFeedInstance As RSSFeed
         Public RSSShellPromptStyle As String = ""
         Public RSSFeedUrlPromptStyle As String = ""

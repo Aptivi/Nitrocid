@@ -23,18 +23,20 @@ Namespace Misc.Editors.HexEdit
     Public Module HexEditShellCommon
 
         'Variables
-        Public ReadOnly HexEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addbyte", New CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte at the end of the file", {"<byte>"}, True, 1, New HexEdit_AddByteCommand)},
-                                                                                         {"addbytes", New CommandInfo("addbytes", ShellType.HexShell, "Adds the new bytes at the end of the file", Array.Empty(Of String), False, 0, New HexEdit_AddBytesCommand)},
-                                                                                         {"clear", New CommandInfo("clear", ShellType.HexShell, "Clears the binary file", Array.Empty(Of String), False, 0, New HexEdit_ClearCommand)},
-                                                                                         {"delbyte", New CommandInfo("delbyte", ShellType.HexShell, "Deletes a byte using the byte number", {"<bytenumber>"}, True, 1, New HexEdit_DelByteCommand)},
-                                                                                         {"delbytes", New CommandInfo("delbytes", ShellType.HexShell, "Deletes the range of bytes", {"<startbyte> [endbyte]"}, True, 1, New HexEdit_DelBytesCommand)},
-                                                                                         {"exit", New CommandInfo("exit", ShellType.HexShell, "Exits the hex editor and save unsaved changes", Array.Empty(Of String), False, 0, New HexEdit_ExitCommand)},
-                                                                                         {"exitnosave", New CommandInfo("exitnosave", ShellType.HexShell, "Exits the hex editor", Array.Empty(Of String), False, 0, New HexEdit_ExitNoSaveCommand)},
-                                                                                         {"help", New CommandInfo("help", ShellType.HexShell, "Lists available commands", {"[command]"}, False, 0, New HexEdit_HelpCommand)},
-                                                                                         {"print", New CommandInfo("print", ShellType.HexShell, "Prints the contents of the file with byte numbers to the console", {"[startbyte] [endbyte]"}, False, 0, New HexEdit_PrintCommand)},
-                                                                                         {"querybyte", New CommandInfo("querybyte", ShellType.HexShell, "Queries a byte in a specified range of bytes or all bytes", {"<byte> [startbyte] [endbyte]"}, True, 1, New HexEdit_QueryByteCommand)},
-                                                                                         {"replace", New CommandInfo("replace", ShellType.HexShell, "Replaces a byte with another one", {"<byte> <replacedbyte>"}, True, 2, New HexEdit_ReplaceCommand)},
-                                                                                         {"save", New CommandInfo("save", ShellType.HexShell, "Saves the file", Array.Empty(Of String), False, 0, New HexEdit_SaveCommand)}}
+        Public ReadOnly HexEdit_Commands As New Dictionary(Of String, CommandInfo) From {
+            {"addbyte", New CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte at the end of the file", {"<byte>"}, True, 1, New HexEdit_AddByteCommand)},
+            {"addbytes", New CommandInfo("addbytes", ShellType.HexShell, "Adds the new bytes at the end of the file", Array.Empty(Of String), False, 0, New HexEdit_AddBytesCommand)},
+            {"clear", New CommandInfo("clear", ShellType.HexShell, "Clears the binary file", Array.Empty(Of String), False, 0, New HexEdit_ClearCommand)},
+            {"delbyte", New CommandInfo("delbyte", ShellType.HexShell, "Deletes a byte using the byte number", {"<bytenumber>"}, True, 1, New HexEdit_DelByteCommand)},
+            {"delbytes", New CommandInfo("delbytes", ShellType.HexShell, "Deletes the range of bytes", {"<startbyte> [endbyte]"}, True, 1, New HexEdit_DelBytesCommand)},
+            {"exit", New CommandInfo("exit", ShellType.HexShell, "Exits the hex editor and save unsaved changes", Array.Empty(Of String), False, 0, New HexEdit_ExitCommand)},
+            {"exitnosave", New CommandInfo("exitnosave", ShellType.HexShell, "Exits the hex editor", Array.Empty(Of String), False, 0, New HexEdit_ExitNoSaveCommand)},
+            {"help", New CommandInfo("help", ShellType.HexShell, "Lists available commands", {"[command]"}, False, 0, New HexEdit_HelpCommand)},
+            {"print", New CommandInfo("print", ShellType.HexShell, "Prints the contents of the file with byte numbers to the console", {"[startbyte] [endbyte]"}, False, 0, New HexEdit_PrintCommand)},
+            {"querybyte", New CommandInfo("querybyte", ShellType.HexShell, "Queries a byte in a specified range of bytes or all bytes", {"<byte> [startbyte] [endbyte]"}, True, 1, New HexEdit_QueryByteCommand)},
+            {"replace", New CommandInfo("replace", ShellType.HexShell, "Replaces a byte with another one", {"<byte> <replacedbyte>"}, True, 2, New HexEdit_ReplaceCommand)},
+            {"save", New CommandInfo("save", ShellType.HexShell, "Saves the file", Array.Empty(Of String), False, 0, New HexEdit_SaveCommand)}
+        }
         Public HexEdit_FileStream As FileStream
         Public HexEdit_FileBytes As Byte()
         Public HexEdit_AutoSave As New KernelThread("Hex Edit Autosave Thread", False, AddressOf HexEdit_HandleAutoSaveBinaryFile)

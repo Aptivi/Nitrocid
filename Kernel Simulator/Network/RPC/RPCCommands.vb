@@ -34,7 +34,16 @@ Namespace Network.RPC
         ''' <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
         ''' <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
         ''' </summary>
-        ReadOnly RPCCommands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:RebootSafe>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
+        ReadOnly RPCCommands As New List(Of String) From {
+            "<Request:Shutdown>",
+            "<Request:Reboot>",
+            "<Request:RebootSafe>",
+            "<Request:Lock>",
+            "<Request:SaveScr>",
+            "<Request:Exec>",
+            "<Request:Acknowledge>",
+            "<Request:Ping>"
+        }
 
         ''' <summary>
         ''' Send an RPC command to another instance of KS using the specified address

@@ -29,14 +29,16 @@ Namespace Misc.Splash
 
         Public SplashName As String = "Simple"
         Friend SplashThread As New KernelThread("Kernel Splash Thread", False, Sub() CurrentSplash.Display())
-        Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {{"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
-                                                                                 {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
-                                                                                 {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
-                                                                                 {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
-                                                                                 {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)},
-                                                                                 {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)},
-                                                                                 {"sysvinit", New SplashInfo("sysvinit", True, 0, 0, 0, 0, New SplashSysvinit)},
-                                                                                 {"openrc", New SplashInfo("openrc", True, 0, 0, 0, 0, New SplashOpenRC)}}
+        Private InstalledSplashes As New Dictionary(Of String, SplashInfo) From {
+            {"Simple", New SplashInfo("Simple", True, 3, 1, 9, 1, New SplashSimple)},
+            {"Progress", New SplashInfo("Progress", True, 3, 1, 9, 1, New SplashProgress)},
+            {"Blank", New SplashInfo("Blank", False, 0, 0, 0, 0, New SplashBlank)},
+            {"Fader", New SplashInfo("Fader", True, 0, 0, 0, 0, New SplashFader)},
+            {"FaderBack", New SplashInfo("FaderBack", True, 0, 0, 0, 0, New SplashFaderBack)},
+            {"systemd", New SplashInfo("systemd", True, 0, 0, 0, 0, New SplashSystemd)},
+            {"sysvinit", New SplashInfo("sysvinit", True, 0, 0, 0, 0, New SplashSysvinit)},
+            {"openrc", New SplashInfo("openrc", True, 0, 0, 0, 0, New SplashOpenRC)}
+        }
 
         ''' <summary>
         ''' Current splash screen

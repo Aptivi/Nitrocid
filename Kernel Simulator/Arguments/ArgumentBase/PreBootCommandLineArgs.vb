@@ -21,8 +21,10 @@ Imports KS.Arguments.PreBootCommandLineArguments
 Namespace Arguments.ArgumentBase
     Public Module PreBootCommandLineArgsParse
 
-        Public ReadOnly AvailablePreBootCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {{"reset", New ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", False, 0, New PreBootCommandLine_ResetArgument)},
-                                                                                                     {"bypasssizedetection", New ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", False, 0, New PreBootCommandLine_BypassSizeDetectionArgument)}}
+        Public ReadOnly AvailablePreBootCMDLineArgs As New Dictionary(Of String, ArgumentInfo) From {
+            {"reset", New ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", False, 0, New PreBootCommandLine_ResetArgument)},
+            {"bypasssizedetection", New ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", False, 0, New PreBootCommandLine_BypassSizeDetectionArgument)}
+        }
 
     End Module
 End Namespace

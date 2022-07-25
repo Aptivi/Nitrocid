@@ -21,30 +21,32 @@ Imports KS.Network.FTP.Commands
 Namespace Network.FTP
     Public Module FTPShellCommon
 
-        Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},
-                                                                                {"cdl", New CommandInfo("cdl", ShellType.FTPShell, "Changes local directory to download to or upload from", {"<directory>"}, True, 1, New FTP_CdlCommand)},
-                                                                                {"cdr", New CommandInfo("cdr", ShellType.FTPShell, "Changes remote directory to download from or upload to", {"<directory>"}, True, 1, New FTP_CdrCommand)},
-                                                                                {"cp", New CommandInfo("cp", ShellType.FTPShell, "Copies file or directory to another file or directory.", {"<sourcefileordir> <targetfileordir>"}, True, 2, New FTP_CpCommand)},
-                                                                                {"del", New CommandInfo("del", ShellType.FTPShell, "Deletes remote file from server", {"<file>"}, True, 1, New FTP_DelCommand)},
-                                                                                {"disconnect", New CommandInfo("disconnect", ShellType.FTPShell, "Disconnects from server", {"[-f]"}, False, 0, New FTP_DisconnectCommand, False, False, False, False, False)},
-                                                                                {"execute", New CommandInfo("execute", ShellType.FTPShell, "Executes an FTP server command", {"<command>"}, True, 1, New FTP_ExecuteCommand)},
-                                                                                {"exit", New CommandInfo("exit", ShellType.FTPShell, "Exits FTP shell and returns to kernel", Array.Empty(Of String), False, 0, New FTP_ExitCommand)},
-                                                                                {"get", New CommandInfo("get", ShellType.FTPShell, "Downloads remote file to local directory using binary or text", {"<file> [output]"}, True, 1, New FTP_GetCommand)},
-                                                                                {"getfolder", New CommandInfo("getfolder", ShellType.FTPShell, "Downloads remote folder to local directory using binary or text", {"<folder> [outputfolder]"}, True, 1, New FTP_GetFolderCommand)},
-                                                                                {"help", New CommandInfo("help", ShellType.FTPShell, "Shows help screen", {"[command]"}, False, 0, New FTP_HelpCommand)},
-                                                                                {"info", New CommandInfo("info", ShellType.FTPShell, "FTP server information", Array.Empty(Of String), False, 0, New FTP_InfoCommand)},
-                                                                                {"lsl", New CommandInfo("lsl", ShellType.FTPShell, "Lists local directory", {"[-showdetails|-suppressmessages] [dir]"}, False, 0, New FTP_LslCommand, False, False, False, False, False)},
-                                                                                {"lsr", New CommandInfo("lsr", ShellType.FTPShell, "Lists remote directory", {"[-showdetails] [dir]"}, False, 0, New FTP_LsrCommand, False, False, False, False, False)},
-                                                                                {"mv", New CommandInfo("mv", ShellType.FTPShell, "Moves file or directory to another file or directory. You can also use that to rename files.", {"<sourcefileordir> <targetfileordir>"}, True, 2, New FTP_MvCommand)},
-                                                                                {"put", New CommandInfo("put", ShellType.FTPShell, "Uploads local file to remote directory using binary or text", {"<file> [output]"}, True, 1, New FTP_PutCommand)},
-                                                                                {"putfolder", New CommandInfo("putfolder", ShellType.FTPShell, "Uploads local folder to remote directory using binary or text", {"<folder> [outputfolder]"}, True, 1, New FTP_PutFolderCommand)},
-                                                                                {"pwdl", New CommandInfo("pwdl", ShellType.FTPShell, "Gets current local directory", Array.Empty(Of String), False, 0, New FTP_PwdlCommand)},
-                                                                                {"pwdr", New CommandInfo("pwdr", ShellType.FTPShell, "Gets current remote directory", Array.Empty(Of String), False, 0, New FTP_PwdrCommand)},
-                                                                                {"perm", New CommandInfo("perm", ShellType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", {"<file> <permnumber>"}, True, 2, New FTP_PermCommand)},
-                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", Array.Empty(Of String), False, 0, New FTP_QuickConnectCommand)},
-                                                                                {"sumfile", New CommandInfo("sumfile", ShellType.FTPShell, "Calculates file sums.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFileCommand)},
-                                                                                {"sumfiles", New CommandInfo("sumfiles", ShellType.FTPShell, "Calculates sums of files in specified directory.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFilesCommand)},
-                                                                                {"type", New CommandInfo("type", ShellType.FTPShell, "Sets the type for this session", {"<a/b>"}, True, 1, New FTP_TypeCommand)}}
+        Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {
+            {"connect", New CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", {"<server>"}, True, 1, New FTP_ConnectCommand)},
+            {"cdl", New CommandInfo("cdl", ShellType.FTPShell, "Changes local directory to download to or upload from", {"<directory>"}, True, 1, New FTP_CdlCommand)},
+            {"cdr", New CommandInfo("cdr", ShellType.FTPShell, "Changes remote directory to download from or upload to", {"<directory>"}, True, 1, New FTP_CdrCommand)},
+            {"cp", New CommandInfo("cp", ShellType.FTPShell, "Copies file or directory to another file or directory.", {"<sourcefileordir> <targetfileordir>"}, True, 2, New FTP_CpCommand)},
+            {"del", New CommandInfo("del", ShellType.FTPShell, "Deletes remote file from server", {"<file>"}, True, 1, New FTP_DelCommand)},
+            {"disconnect", New CommandInfo("disconnect", ShellType.FTPShell, "Disconnects from server", {"[-f]"}, False, 0, New FTP_DisconnectCommand, False, False, False, False, False)},
+            {"execute", New CommandInfo("execute", ShellType.FTPShell, "Executes an FTP server command", {"<command>"}, True, 1, New FTP_ExecuteCommand)},
+            {"exit", New CommandInfo("exit", ShellType.FTPShell, "Exits FTP shell and returns to kernel", Array.Empty(Of String), False, 0, New FTP_ExitCommand)},
+            {"get", New CommandInfo("get", ShellType.FTPShell, "Downloads remote file to local directory using binary or text", {"<file> [output]"}, True, 1, New FTP_GetCommand)},
+            {"getfolder", New CommandInfo("getfolder", ShellType.FTPShell, "Downloads remote folder to local directory using binary or text", {"<folder> [outputfolder]"}, True, 1, New FTP_GetFolderCommand)},
+            {"help", New CommandInfo("help", ShellType.FTPShell, "Shows help screen", {"[command]"}, False, 0, New FTP_HelpCommand)},
+            {"info", New CommandInfo("info", ShellType.FTPShell, "FTP server information", Array.Empty(Of String), False, 0, New FTP_InfoCommand)},
+            {"lsl", New CommandInfo("lsl", ShellType.FTPShell, "Lists local directory", {"[-showdetails|-suppressmessages] [dir]"}, False, 0, New FTP_LslCommand, False, False, False, False, False)},
+            {"lsr", New CommandInfo("lsr", ShellType.FTPShell, "Lists remote directory", {"[-showdetails] [dir]"}, False, 0, New FTP_LsrCommand, False, False, False, False, False)},
+            {"mv", New CommandInfo("mv", ShellType.FTPShell, "Moves file or directory to another file or directory. You can also use that to rename files.", {"<sourcefileordir> <targetfileordir>"}, True, 2, New FTP_MvCommand)},
+            {"put", New CommandInfo("put", ShellType.FTPShell, "Uploads local file to remote directory using binary or text", {"<file> [output]"}, True, 1, New FTP_PutCommand)},
+            {"putfolder", New CommandInfo("putfolder", ShellType.FTPShell, "Uploads local folder to remote directory using binary or text", {"<folder> [outputfolder]"}, True, 1, New FTP_PutFolderCommand)},
+            {"pwdl", New CommandInfo("pwdl", ShellType.FTPShell, "Gets current local directory", Array.Empty(Of String), False, 0, New FTP_PwdlCommand)},
+            {"pwdr", New CommandInfo("pwdr", ShellType.FTPShell, "Gets current remote directory", Array.Empty(Of String), False, 0, New FTP_PwdrCommand)},
+            {"perm", New CommandInfo("perm", ShellType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", {"<file> <permnumber>"}, True, 2, New FTP_PermCommand)},
+            {"quickconnect", New CommandInfo("quickconnect", ShellType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", Array.Empty(Of String), False, 0, New FTP_QuickConnectCommand)},
+            {"sumfile", New CommandInfo("sumfile", ShellType.FTPShell, "Calculates file sums.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFileCommand)},
+            {"sumfiles", New CommandInfo("sumfiles", ShellType.FTPShell, "Calculates sums of files in specified directory.", {"<file> <MD5/SHA1/SHA256/SHA512/CRC>"}, True, 2, New FTP_SumFilesCommand)},
+            {"type", New CommandInfo("type", ShellType.FTPShell, "Sets the type for this session", {"<a/b>"}, True, 1, New FTP_TypeCommand)}
+        }
         Public FtpCurrentDirectory As String
         Public FtpCurrentRemoteDir As String
         Public FTPShellPromptStyle As String = ""

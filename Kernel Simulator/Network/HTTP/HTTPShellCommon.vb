@@ -22,12 +22,14 @@ Imports KS.Network.HTTP.Commands
 Namespace Network.HTTP
     Public Module HTTPShellCommon
 
-        Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {{"delete", New CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", {"<request>"}, True, 1, New HTTP_DeleteCommand)},
-                                                                                 {"exit", New CommandInfo("exit", ShellType.HTTPShell, "Exits HTTP shell and returns to kernel", Array.Empty(Of String), False, 0, New HTTP_ExitCommand)},
-                                                                                 {"get", New CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetCommand)},
-                                                                                 {"getstring", New CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetStringCommand)},
-                                                                                 {"help", New CommandInfo("help", ShellType.HTTPShell, "Shows help screen", {"[command]"}, False, 0, New HTTP_HelpCommand)},
-                                                                                 {"setsite", New CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", {"<uri>"}, True, 1, New HTTP_SetSiteCommand)}}
+        Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {
+            {"delete", New CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", {"<request>"}, True, 1, New HTTP_DeleteCommand)},
+            {"exit", New CommandInfo("exit", ShellType.HTTPShell, "Exits HTTP shell and returns to kernel", Array.Empty(Of String), False, 0, New HTTP_ExitCommand)},
+            {"get", New CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetCommand)},
+            {"getstring", New CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetStringCommand)},
+            {"help", New CommandInfo("help", ShellType.HTTPShell, "Shows help screen", {"[command]"}, False, 0, New HTTP_HelpCommand)},
+            {"setsite", New CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", {"<uri>"}, True, 1, New HTTP_SetSiteCommand)}
+        }
         Public HTTPSite As String
         Public HTTPShellPromptStyle As String = ""
         Public ClientHTTP As New HttpClient()

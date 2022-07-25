@@ -23,11 +23,13 @@ Imports KS.Network.RemoteDebug.Interface
 Namespace Network.RemoteDebug
     Module RemoteDebugCmd
 
-        Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", Array.Empty(Of String), False, 0, New Debug_ExitCommand)},
-                                                                                      {"help", New CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
-                                                                                      {"register", New CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
-                                                                                      {"trace", New CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
-                                                                                      {"username", New CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", Array.Empty(Of String), False, 0, New Debug_UsernameCommand)}}
+        Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {
+            {"exit", New CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", Array.Empty(Of String), False, 0, New Debug_ExitCommand)},
+            {"help", New CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
+            {"register", New CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
+            {"trace", New CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
+            {"username", New CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", Array.Empty(Of String), False, 0, New Debug_UsernameCommand)}
+        }
         Friend ReadOnly DebugModCmds As New Dictionary(Of String, CommandInfo)
 
         ''' <summary>

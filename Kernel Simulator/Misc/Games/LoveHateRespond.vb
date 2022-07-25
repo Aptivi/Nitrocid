@@ -23,32 +23,39 @@ Namespace Misc.Games
         ''' How many users to add to the love/hate comment room?
         ''' </summary>
         Public LoveOrHateUsersCount As Integer = 20
-        ReadOnly LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting."),
-                                                           DoTranslation("Everyone will support your video for this."),
-                                                           DoTranslation("I gave you the special file in your e-mail for your next video."),
-                                                           DoTranslation("Listen, haters, he is trying to help us, not scam."),
-                                                           DoTranslation("I don't know how much do I and my friends thank you for this video."),
-                                                           DoTranslation("I love you for this video."),
-                                                           DoTranslation("Keep going, don't stop."),
-                                                           DoTranslation("I will help you reach to 1M subscribers!"),
-                                                           DoTranslation("My friends got their computer fixed because of you."),
-                                                           DoTranslation("Awesome prank! I shut down my enemy's PC."),
-                                                           DoTranslation("To haters: STOP HATING ON HIM"),
-                                                           DoTranslation("To haters: GET TO WORK"),
-                                                           DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
-        ReadOnly HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost."),
-                                                           DoTranslation("What is this? This is unclear."),
-                                                           DoTranslation("This video is the worst!"),
-                                                           DoTranslation("Everyone report this video!"),
-                                                           DoTranslation("My friends are furious with you!"),
-                                                           DoTranslation("Lovers will now hate you for this."),
-                                                           DoTranslation("Your friend will hate you for this."),
-                                                           DoTranslation("This prank made me unsubscribe to you."),
-                                                           DoTranslation("Mission failed, Respect -, Subscriber -"),
-                                                           DoTranslation("Stop making this kind of video!!!"),
-                                                           DoTranslation("Get back to your job, your videos are the worst!"),
-                                                           DoTranslation("We prejudice on this video.")}
-        ReadOnly Comments As New Dictionary(Of String, List(Of String)) From {{CommentType.Love, LoveComments}, {CommentType.Hate, HateComments}}
+        ReadOnly LoveComments As New List(Of String) From {
+            DoTranslation("Thanks! This is interesting."),
+            DoTranslation("Everyone will support your video for this."),
+            DoTranslation("I gave you the special file in your e-mail for your next video."),
+            DoTranslation("Listen, haters, he is trying to help us, not scam."),
+            DoTranslation("I don't know how much do I and my friends thank you for this video."),
+            DoTranslation("I love you for this video."),
+            DoTranslation("Keep going, don't stop."),
+            DoTranslation("I will help you reach to 1M subscribers!"),
+            DoTranslation("My friends got their computer fixed because of you."),
+            DoTranslation("Awesome prank! I shut down my enemy's PC."),
+            DoTranslation("To haters: STOP HATING ON HIM"),
+            DoTranslation("To haters: GET TO WORK"),
+            DoTranslation("Nobody will notice this now thanks to your object hiding guide")
+        }
+        ReadOnly HateComments As New List(Of String) From {
+            DoTranslation("I will stop watching your videos. Subscriber lost."),
+            DoTranslation("What is this? This is unclear."),
+            DoTranslation("This video is the worst!"),
+            DoTranslation("Everyone report this video!"),
+            DoTranslation("My friends are furious with you!"),
+            DoTranslation("Lovers will now hate you for this."),
+            DoTranslation("Your friend will hate you for this."),
+            DoTranslation("This prank made me unsubscribe to you."),
+            DoTranslation("Mission failed, Respect -, Subscriber -"),
+            DoTranslation("Stop making this kind of video!!!"),
+            DoTranslation("Get back to your job, your videos are the worst!"),
+            DoTranslation("We prejudice on this video.")
+        }
+        ReadOnly Comments As New Dictionary(Of String, List(Of String)) From {
+            {CommentType.Love, LoveComments},
+            {CommentType.Hate, HateComments}
+        }
         ReadOnly Users As New Dictionary(Of String, CommentType)
 
         Enum CommentType
