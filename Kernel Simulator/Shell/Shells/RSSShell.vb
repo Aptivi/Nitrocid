@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Shell.Prompts
 Imports KS.Network.RSS.Instance
 Imports KS.Network.RSS
 Imports System.Threading
@@ -113,7 +114,7 @@ Namespace Shell.Shells
                         End If
                         Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
                         If RSSShellPromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
+                            WriteShellPrompt(ShellType)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences()

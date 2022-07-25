@@ -24,6 +24,8 @@ Namespace Shell.Prompts
 
         Public Overridable ReadOnly Property PresetPrompt As String = "> " Implements IPromptPreset.PresetPrompt
 
+        Public Overridable ReadOnly Property PresetShellType As ShellType = ShellType.Shell Implements IPromptPreset.PresetShellType
+
         Friend Overridable Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
             Wdbg(DebugLevel.E, "Tried to call prompt builder on base.")
             Throw New NotImplementedException()

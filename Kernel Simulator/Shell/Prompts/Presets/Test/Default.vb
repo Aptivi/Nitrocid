@@ -16,29 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Shell.Prompts
-    ''' <summary>
-    ''' Prompt preset interface
-    ''' </summary>
-    Public Interface IPromptPreset
+Namespace Shell.Prompts.Presets.Test
+    Public Class TestDefaultPreset
+        Inherits PromptPresetBase
+        Implements IPromptPreset
 
-        ''' <summary>
-        ''' Preset name
-        ''' </summary>
-        ReadOnly Property PresetName As String
-        ''' <summary>
-        ''' Preset prompt style
-        ''' </summary>
-        ReadOnly Property PresetPrompt As String
-        ''' <summary>
-        ''' Preset shell type
-        ''' </summary>
-        ReadOnly Property PresetShellType As ShellType
+        Public Overrides ReadOnly Property PresetName As String = "Default" Implements IPromptPreset.PresetName
 
-        ''' <summary>
-        ''' Preset prompt builder logic for advanced prompts, like PowerLine, ...
-        ''' </summary>
-        Function PresetPromptBuilder() As String
+        Public Overrides ReadOnly Property PresetPrompt As String = "(t)> " Implements IPromptPreset.PresetPrompt
 
-    End Interface
+        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.TestShell Implements IPromptPreset.PresetShellType
+
+    End Class
 End Namespace

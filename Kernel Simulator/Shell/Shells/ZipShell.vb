@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.IO.Compression
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Files.Folders
 Imports KS.Misc.ZipFile
 
@@ -62,7 +63,7 @@ Namespace Shell.Shells
                         End If
                         Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
                         If ZipShell_PromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
+                            WriteShellPrompt(ShellType)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
                             ParsedPromptStyle.ConvertVTSequences()

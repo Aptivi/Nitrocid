@@ -16,7 +16,17 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Shell.Prompts.Presets
+Imports KS.Shell.Prompts.Presets.UESH
+Imports KS.Shell.Prompts.Presets.Test
+Imports KS.Shell.Prompts.Presets.ZIP
+Imports KS.Shell.Prompts.Presets.Text
+Imports KS.Shell.Prompts.Presets.SFTP
+Imports KS.Shell.Prompts.Presets.RSS
+Imports KS.Shell.Prompts.Presets.Mail
+Imports KS.Shell.Prompts.Presets.Json
+Imports KS.Shell.Prompts.Presets.HTTP
+Imports KS.Shell.Prompts.Presets.Hex
+Imports KS.Shell.Prompts.Presets.FTP
 Imports KS.Kernel.Exceptions
 
 Namespace Shell.Prompts
@@ -26,25 +36,82 @@ Namespace Shell.Prompts
         Friend ReadOnly UESHShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New DefaultPreset()}
         }
+        Friend ReadOnly TestShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New TestDefaultPreset()}
+        }
+        Friend ReadOnly ZipShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New ZipDefaultPreset()}
+        }
+        Friend ReadOnly TextShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New TextDefaultPreset()}
+        }
+        Friend ReadOnly SFTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New SFTPDefaultPreset()}
+        }
+        Friend ReadOnly RSSShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New RSSDefaultPreset()}
+        }
+        Friend ReadOnly MailShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New MailDefaultPreset()}
+        }
+        Friend ReadOnly JsonShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New JsonDefaultPreset()}
+        }
+        Friend ReadOnly HTTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New HTTPDefaultPreset()}
+        }
+        Friend ReadOnly HexShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New HexDefaultPreset()}
+        }
+        Friend ReadOnly FTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New FTPDefaultPreset()}
+        }
 
         'Custom shell presets used by mods
         Friend ReadOnly UESHCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly TestCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly ZipCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly TextCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly SFTPCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly RSSCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly MailCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly JsonCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly HTTPCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly HexCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly FTPCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
 
         'Current presets
         Friend UESHShellCurrentPreset As PromptPresetBase = UESHShellPresets("Default")
+        Friend TestShellCurrentPreset As PromptPresetBase = TestShellPresets("Default")
+        Friend ZipShellCurrentPreset As PromptPresetBase = ZipShellPresets("Default")
+        Friend TextShellCurrentPreset As PromptPresetBase = TextShellPresets("Default")
+        Friend SFTPShellCurrentPreset As PromptPresetBase = SFTPShellPresets("Default")
+        Friend RSSShellCurrentPreset As PromptPresetBase = RSSShellPresets("Default")
+        Friend MailShellCurrentPreset As PromptPresetBase = MailShellPresets("Default")
+        Friend JsonShellCurrentPreset As PromptPresetBase = JsonShellPresets("Default")
+        Friend HTTPShellCurrentPreset As PromptPresetBase = HTTPShellPresets("Default")
+        Friend HexShellCurrentPreset As PromptPresetBase = HexShellPresets("Default")
+        Friend FTPShellCurrentPreset As PromptPresetBase = FTPShellPresets("Default")
 
         ''' <summary>
         ''' Sets the shell preset
         ''' </summary>
         ''' <param name="PresetName">The preset name</param>
-        Public Sub SetPreset(PresetName As String, ShellType As ShellType)
+        Public Sub SetPreset(PresetName As String, ShellType As ShellType, Optional ThrowOnNotFound As Boolean = True)
             Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
             If Presets.ContainsKey(PresetName) Then
                 Dim CurrentPresetBase As PromptPresetBase
                 GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
                 CurrentPresetBase = Presets(PresetName)
             Else
-                Throw New NoSuchShellPresetException(DoTranslation("The specified preset {0} is not found."), PresetName)
+                If ThrowOnNotFound Then
+                    Wdbg(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString())
+                    Throw New NoSuchShellPresetException(DoTranslation("The specified preset {0} is not found."), PresetName)
+                Else
+                    Dim CurrentPresetBase As PromptPresetBase
+                    GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+                    CurrentPresetBase = Presets("Default")
+                End If
             End If
         End Sub
 
@@ -56,6 +123,26 @@ Namespace Shell.Prompts
             Select Case ShellType
                 Case ShellType.Shell
                     CurrentPresetRef = UESHShellCurrentPreset
+                Case ShellType.TestShell
+                    CurrentPresetRef = TestShellCurrentPreset
+                Case ShellType.ZIPShell
+                    CurrentPresetRef = ZipShellCurrentPreset
+                Case ShellType.TextShell
+                    CurrentPresetRef = TextShellCurrentPreset
+                Case ShellType.SFTPShell
+                    CurrentPresetRef = SFTPShellCurrentPreset
+                Case ShellType.RSSShell
+                    CurrentPresetRef = RSSShellCurrentPreset
+                Case ShellType.MailShell
+                    CurrentPresetRef = MailShellCurrentPreset
+                Case ShellType.JsonShell
+                    CurrentPresetRef = JsonShellCurrentPreset
+                Case ShellType.HTTPShell
+                    CurrentPresetRef = HTTPShellCurrentPreset
+                Case ShellType.HexShell
+                    CurrentPresetRef = HexShellCurrentPreset
+                Case ShellType.FTPShell
+                    CurrentPresetRef = FTPShellCurrentPreset
             End Select
         End Sub
 
@@ -67,6 +154,26 @@ Namespace Shell.Prompts
             Select Case ShellType
                 Case ShellType.Shell
                     Return UESHShellPresets
+                Case ShellType.TestShell
+                    Return TestShellPresets
+                Case ShellType.ZIPShell
+                    Return ZipShellPresets
+                Case ShellType.TextShell
+                    Return TextShellPresets
+                Case ShellType.SFTPShell
+                    Return SFTPShellPresets
+                Case ShellType.RSSShell
+                    Return RSSShellPresets
+                Case ShellType.MailShell
+                    Return MailShellPresets
+                Case ShellType.JsonShell
+                    Return JsonShellPresets
+                Case ShellType.HTTPShell
+                    Return HTTPShellPresets
+                Case ShellType.HexShell
+                    Return HexShellPresets
+                Case ShellType.FTPShell
+                    Return FTPShellPresets
             End Select
         End Function
 
@@ -78,6 +185,26 @@ Namespace Shell.Prompts
             Select Case ShellType
                 Case ShellType.Shell
                     Return UESHCustomShellPresets
+                Case ShellType.TestShell
+                    Return TestCustomShellPresets
+                Case ShellType.ZIPShell
+                    Return ZipCustomShellPresets
+                Case ShellType.TextShell
+                    Return TextCustomShellPresets
+                Case ShellType.SFTPShell
+                    Return SFTPCustomShellPresets
+                Case ShellType.RSSShell
+                    Return RSSCustomShellPresets
+                Case ShellType.MailShell
+                    Return MailCustomShellPresets
+                Case ShellType.JsonShell
+                    Return JsonCustomShellPresets
+                Case ShellType.HTTPShell
+                    Return HTTPCustomShellPresets
+                Case ShellType.HexShell
+                    Return HexCustomShellPresets
+                Case ShellType.FTPShell
+                    Return FTPCustomShellPresets
             End Select
         End Function
 

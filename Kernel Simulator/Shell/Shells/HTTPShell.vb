@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Network.HTTP
 
 Namespace Shell.Shells
@@ -45,14 +46,14 @@ Namespace Shell.Shells
                         If HTTPConnected Then
                             Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
                             If HTTPShellPromptStyle = "" Then
-                                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
+                                WriteShellPrompt(ShellType)
                             Else
                                 Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
                                 ParsedPromptStyle.ConvertVTSequences()
                                 Write(ParsedPromptStyle, False, ColTypes.Gray)
                             End If
                         Else
-                            Write("> ", False, ColTypes.Gray)
+                            WriteShellPrompt(ShellType)
                         End If
 
                         'Set input color

@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
+Imports KS.Shell.Prompts
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells
@@ -61,7 +61,7 @@ Namespace Shell.Shells
                     End If
                     Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
                     If JsonShell_PromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                        WriteShellPrompt(ShellType)
                     Else
                         Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
                         ParsedPromptStyle.ConvertVTSequences()

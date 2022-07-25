@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Network.FTP
 
 Namespace Shell.Shells
@@ -85,14 +86,14 @@ Namespace Shell.Shells
                             If FtpConnected Then
                                 Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
                                 If FTPShellPromptStyle = "" Then
-                                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
+                                    WriteShellPrompt(ShellType)
                                 Else
                                     Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
                                     ParsedPromptStyle.ConvertVTSequences()
                                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                                 End If
                             Else
-                                Write("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
+                                WriteShellPrompt(ShellType)
                             End If
                         End If
 

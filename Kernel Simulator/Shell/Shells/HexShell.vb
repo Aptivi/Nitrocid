@@ -16,8 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells
@@ -69,7 +69,7 @@ Namespace Shell.Shells
                         'Prepare for prompt
                         Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
                         If HexEdit_PromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(HexEdit_WasHexEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                            WriteShellPrompt(ShellType)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(HexEdit_PromptStyle)
                             ParsedPromptStyle.ConvertVTSequences()

@@ -17,10 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
-Imports KS.Files.Folders
+Imports KS.Network.FTP
 
-Namespace Shell.Prompts.Presets
-    Public Class DefaultPreset
+Namespace Shell.Prompts.Presets.FTP
+    Public Class FTPDefaultPreset
         Inherits PromptPresetBase
         Implements IPromptPreset
 
@@ -32,39 +32,36 @@ Namespace Shell.Prompts.Presets
             End Get
         End Property
 
-        Friend Overrides Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
-            Dim PresetStringBuilder As New StringBuilder
-            Dim UserDollarSign As Char = If(HasPermission(CurrentUser.Username, PermissionType.Administrator), "#"c, "$"c)
+        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.FTPShell Implements IPromptPreset.PresetShellType
 
+        Friend Overrides Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
             'Build the preset
-            If Not Maintenance Then
+            Dim PresetStringBuilder As New StringBuilder
+
+            If FtpConnected Then
                 'Opening
                 PresetStringBuilder.Append(GetGray().VTSequenceForeground)
                 PresetStringBuilder.Append("[")
 
-                'Current username
+                'SFTP user
                 PresetStringBuilder.Append(UserNameShellColor.VTSequenceForeground)
-                PresetStringBuilder.AppendFormat("{0}", CurrentUser.Username)
+                PresetStringBuilder.AppendFormat("{0}", FtpUser)
 
-                '"At" sign
+                '"at" sign
                 PresetStringBuilder.Append(GetGray().VTSequenceForeground)
                 PresetStringBuilder.Append("@")
 
-                'Current hostname
+                'SFTP site
                 PresetStringBuilder.Append(HostNameShellColor.VTSequenceForeground)
-                PresetStringBuilder.AppendFormat("{0}", HostName)
+                PresetStringBuilder.AppendFormat("{0}", FtpSite)
 
+                'Closing
+                PresetStringBuilder.Append(GetGray().VTSequenceForeground)
+                PresetStringBuilder.AppendFormat("]{0}> ", FtpCurrentRemoteDir)
+            Else
                 'Current directory
                 PresetStringBuilder.Append(GetGray().VTSequenceForeground)
-                PresetStringBuilder.AppendFormat("]{0}", CurrentDir)
-
-                'User dollar sign
-                PresetStringBuilder.Append(UserDollarColor.VTSequenceForeground)
-                PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign)
-            Else
-                'Maintenance mode
-                PresetStringBuilder.Append(GetGray().VTSequenceForeground)
-                PresetStringBuilder.Append(DoTranslation("Maintenance Mode") + "> ")
+                PresetStringBuilder.AppendFormat("{0}> ", FtpCurrentDirectory)
             End If
 
             'Present final string

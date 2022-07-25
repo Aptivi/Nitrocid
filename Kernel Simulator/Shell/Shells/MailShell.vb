@@ -18,6 +18,7 @@
 
 Imports KS.Network.Mail.Transfer
 Imports KS.Network.Mail
+Imports KS.Shell.Prompts
 
 Namespace Shell.Shells
     Public Class MailShell
@@ -63,7 +64,7 @@ Namespace Shell.Shells
                     End If
                     Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
                     If MailShellPromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Mail_Authentication.UserName) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                        WriteShellPrompt(ShellType)
                     Else
                         Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
                         ParsedPromptStyle.ConvertVTSequences()

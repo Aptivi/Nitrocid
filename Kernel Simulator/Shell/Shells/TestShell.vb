@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.TestShell
 
 Namespace Shell.Shells
@@ -48,7 +49,7 @@ Namespace Shell.Shells
                     'Write the custom prompt style for the test shell
                     Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
                     If Test_PromptStyle = "" Then
-                        Write("(t)> ", False, ColTypes.Input)
+                        WriteShellPrompt(ShellType)
                     Else
                         Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
                         ParsedPromptStyle.ConvertVTSequences()

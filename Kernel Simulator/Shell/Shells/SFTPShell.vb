@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Network.SFTP
 
 Namespace Shell.Shells
@@ -76,14 +77,14 @@ Namespace Shell.Shells
                             If SFTPConnected Then
                                 Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
                                 If SFTPShellPromptStyle = "" Then
-                                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                                    WriteShellPrompt(ShellType)
                                 Else
                                     Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
                                     ParsedPromptStyle.ConvertVTSequences()
                                     Write(ParsedPromptStyle, False, ColTypes.Gray)
                                 End If
                             Else
-                                Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                                WriteShellPrompt(ShellType)
                             End If
                         End If
 

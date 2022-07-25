@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Threading
+Imports KS.Shell.Prompts
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells
@@ -65,7 +66,7 @@ Namespace Shell.Shells
                         End If
                         Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
                         If TextEdit_PromptStyle = "" Then
-                            Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
+                            WriteShellPrompt(ShellType)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
                             ParsedPromptStyle.ConvertVTSequences()
