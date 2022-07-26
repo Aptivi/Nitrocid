@@ -646,7 +646,7 @@ It was previously inside the Colors255 module. Now, it resides in its own code f
 
 ##### Removed KS.Misc.Dictionary to substitute with Dictify
 
-We have removed this namespace that existed in 0.0.23.0 to use the Doctify library so if we try to update it for bug fixes or feature additions, we don't depend on Kernel Simulator for this feature.
+We have removed this namespace that existed in 0.0.23.0 to use the Dictify library so if we try to update it for bug fixes or feature additions, we don't depend on Kernel Simulator for this feature.
 
 * Affected functions:
   - `GetWordInfo()`
@@ -668,7 +668,7 @@ We have moved all input-related console APIs to `KS.ConsoleBase.Inputs` as it ke
 
 ##### Removed the progress and its report positions from SplashInfo.
 
-The splashes are the ones who are rensponsible for setting their own progress positions.
+The splashes are the ones who are responsible for setting their own progress positions.
 
 * Removed properties:
   - ProgressWritePositionX
@@ -678,4 +678,4 @@ The splashes are the ones who are rensponsible for setting their own progress po
 
 ##### Replaced `CommandPromptWrite()`
 
-`CommandPromptWrite()` used to be the helper for UESH to write its own prompt, but it's eventually replaced by the more powerful `WriteShellPrompt()` to accommodate all possible cases, like custom 
+`CommandPromptWrite()` used to be the helper for UESH to write its own prompt, but it's eventually replaced by the more powerful `WriteShellPrompt()` to accommodate all possible cases, like custom variables, and so on.
