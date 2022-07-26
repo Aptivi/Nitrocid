@@ -1,6 +1,37 @@
-## Packing for distribution
 
-The packing and distribution procedures are now easier by executing this script below on the command line.
+# Packaging
 
-1. Open the terminal to the root directory of KS
-2. Execute `./buildandpack.sh` if you're using Linux or execute `buildandpack` on `cmd` if running on Windows
+The packing and distribution procedures are now easier <br>
+by executing this script below on the command line.
+
+<br>
+
+## Steps
+
+<br>
+
+1.  Open a new terminal in the root directory of **KS**
+
+    <br>
+
+2.  Execute the following to pack:
+
+    <br>
+
+    ### Linux
+
+    ```shell
+    ./buildandpack.sh
+    ```
+    
+    <br>
+    
+    ### Windows
+    
+    *with `cmd`*
+    
+    ```shell
+    buildandpack
+    ```
+
+<br>
