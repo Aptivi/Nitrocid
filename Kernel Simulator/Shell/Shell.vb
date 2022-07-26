@@ -24,6 +24,8 @@ Imports KS.Misc.Execution
 Imports KS.Modifications
 Imports KS.Scripting
 Imports KS.Shell.Commands
+Imports KS.Shell.ShellBase.Aliases
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell
     Public Module Shell

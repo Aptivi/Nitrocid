@@ -16,58 +16,37 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Shell.ShellBase
-    ''' <summary>
-    ''' Shell type enumeration
-    ''' </summary>
-    Public Enum ShellType
+Namespace Shell.ShellBase.Shells
+    Public Class ShellInfo
+
         ''' <summary>
-        ''' Normal UESH shell
+        ''' Shell type
         ''' </summary>
-        Shell
+        Public ReadOnly ShellType As ShellType
         ''' <summary>
-        ''' FTP shell
+        ''' Shell executor
         ''' </summary>
-        FTPShell
+        Public ReadOnly ShellExecutor As ShellExecutor
         ''' <summary>
-        ''' Mail shell
+        ''' Shell command thread
         ''' </summary>
-        MailShell
+        Public ReadOnly ShellCommandThread As KernelThread
         ''' <summary>
-        ''' SFTP shell
+        ''' Alternative shell command threads
         ''' </summary>
-        SFTPShell
+        Protected Friend ReadOnly AltCommandThreads As New List(Of KernelThread)
+
         ''' <summary>
-        ''' Text shell
+        ''' Installs the values to a new instance of ShellInfo
         ''' </summary>
-        TextShell
-        ''' <summary>
-        ''' Test shell
-        ''' </summary>
-        TestShell
-        ''' <summary>
-        ''' Remote debug shell
-        ''' </summary>
-        RemoteDebugShell
-        ''' <summary>
-        ''' ZIP shell
-        ''' </summary>
-        ZIPShell
-        ''' <summary>
-        ''' RSS Shell
-        ''' </summary>
-        RSSShell
-        ''' <summary>
-        ''' JSON Shell
-        ''' </summary>
-        JsonShell
-        ''' <summary>
-        ''' HTTP shell
-        ''' </summary>
-        HTTPShell
-        ''' <summary>
-        ''' Hex shell
-        ''' </summary>
-        HexShell
-    End Enum
+        ''' <param name="ShellType">The shell type</param>
+        ''' <param name="ShellExecutor">Shell executor</param>
+        ''' <param name="ShellCommandThread">Shell command thread</param>
+        Public Sub New(ShellType As ShellType, ShellExecutor As ShellExecutor, ShellCommandThread As KernelThread)
+            Me.ShellType = ShellType
+            Me.ShellExecutor = ShellExecutor
+            Me.ShellCommandThread = ShellCommandThread
+        End Sub
+
+    End Class
 End Namespace

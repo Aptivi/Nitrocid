@@ -169,6 +169,7 @@
     <Import Include="KS.Misc.Writers.FancyWriters" />
     <Import Include="KS.Shell" />
     <Import Include="KS.Shell.ShellBase" />
+    <Import Include="KS.Shell.ShellBase.Commands" />
     <Import Include="Microsoft.VisualBasic.Constants" />
     <Import Include="Newtonsoft.Json" />
     <Import Include="Renci.SshNet" />
@@ -355,11 +356,6 @@
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Shell\ShellBase\Aliases\" />
-    <Folder Include="Shell\ShellBase\Commands\" />
-    <Folder Include="Shell\ShellBase\Shells\" />
   </ItemGroup>
   <!-- KS Package Files End -->
 </Project>

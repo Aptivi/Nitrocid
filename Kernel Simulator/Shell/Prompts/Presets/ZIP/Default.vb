@@ -18,6 +18,7 @@
 
 Imports System.Text
 Imports KS.Misc.ZipFile
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.ZIP
     Public Class ZipDefaultPreset

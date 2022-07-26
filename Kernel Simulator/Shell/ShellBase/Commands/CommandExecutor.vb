@@ -16,24 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Shell.ShellBase
-    ''' <summary>
-    ''' Base shell functions
-    ''' </summary>
-    Public Interface IShell
+Namespace Shell.ShellBase.Commands
+    Public MustInherit Class CommandExecutor
+        Implements ICommand
 
-        ''' <summary>
-        ''' The shell type
-        ''' </summary>
-        ReadOnly Property ShellType As ShellType
-        ''' <summary>
-        ''' If true, will exit the shell
-        ''' </summary>
-        Property Bail As Boolean
-        ''' <summary>
-        ''' The shell initializer
-        ''' </summary>
-        Sub InitializeShell(ParamArray ShellArgs() As Object)
+        Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Wdbg(DebugLevel.F, "We shouldn't be here!!!")
+            Throw New InvalidOperationException()
+        End Sub
 
-    End Interface
+        Public Overridable Sub HelpHelper() Implements ICommand.HelpHelper
+            Wdbg(DebugLevel.I, "No additional information found.")
+        End Sub
+
+    End Class
 End Namespace

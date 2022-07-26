@@ -27,6 +27,7 @@ Imports KS.Shell.Prompts.Presets.Json
 Imports KS.Shell.Prompts.Presets.HTTP
 Imports KS.Shell.Prompts.Presets.Hex
 Imports KS.Shell.Prompts.Presets.FTP
+Imports KS.Shell.ShellBase.Shells
 Imports KS.Kernel.Exceptions
 
 Namespace Shell.Prompts

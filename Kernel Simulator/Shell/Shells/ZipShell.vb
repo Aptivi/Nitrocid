@@ -20,9 +20,10 @@ Imports SharpCompress.Archives.Zip
 Imports SharpCompress.Readers
 Imports System.IO
 Imports System.Threading
-Imports KS.Shell.Prompts
 Imports KS.Files.Folders
 Imports KS.Misc.ZipFile
+Imports KS.Shell.Prompts
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class ZipShell

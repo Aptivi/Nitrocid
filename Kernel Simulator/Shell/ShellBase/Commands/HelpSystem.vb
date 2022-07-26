@@ -29,9 +29,11 @@ Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
+Imports KS.Shell.ShellBase.Aliases
+Imports KS.Shell.ShellBase.Shells
 Imports KS.TestShell
 
-Namespace Shell.ShellBase
+Namespace Shell.ShellBase.Commands
     Public Module HelpSystem
 
         ''' <summary>
@@ -60,7 +62,7 @@ Namespace Shell.ShellBase
             'Determine command type
             Dim CommandList As Dictionary(Of String, CommandInfo) = Shell.Commands
             Dim ModCommandList As Dictionary(Of String, CommandInfo)
-            Dim AliasedCommandList As Dictionary(Of String, String) = Aliases
+            Dim AliasedCommandList As Dictionary(Of String, String) = Aliases.Aliases
 
             'Add every command from each mod
             ModCommandList = ListModCommands(CommandType)
@@ -69,7 +71,7 @@ Namespace Shell.ShellBase
             Select Case CommandType
                 Case ShellType.Shell
                     CommandList = Shell.Commands
-                    AliasedCommandList = Aliases
+                    AliasedCommandList = Aliases.Aliases
                 Case ShellType.FTPShell
                     CommandList = FTPCommands
                     AliasedCommandList = FTPShellAliases

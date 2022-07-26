@@ -18,8 +18,9 @@
 
 Imports System.IO
 Imports System.Threading
-Imports KS.Shell.Prompts
 Imports KS.Misc.Editors.TextEdit
+Imports KS.Shell.Prompts
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class TextShell

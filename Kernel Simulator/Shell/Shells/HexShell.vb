@@ -17,8 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Threading
-Imports KS.Shell.Prompts
 Imports KS.Misc.Editors.HexEdit
+Imports KS.Shell.Prompts
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class HexShell

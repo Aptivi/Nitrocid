@@ -16,37 +16,58 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Shell.ShellBase
-    Public Class ShellInfo
-
+Namespace Shell.ShellBase.Shells
+    ''' <summary>
+    ''' Shell type enumeration
+    ''' </summary>
+    Public Enum ShellType
         ''' <summary>
-        ''' Shell type
+        ''' Normal UESH shell
         ''' </summary>
-        Public ReadOnly ShellType As ShellType
+        Shell
         ''' <summary>
-        ''' Shell executor
+        ''' FTP shell
         ''' </summary>
-        Public ReadOnly ShellExecutor As ShellExecutor
+        FTPShell
         ''' <summary>
-        ''' Shell command thread
+        ''' Mail shell
         ''' </summary>
-        Public ReadOnly ShellCommandThread As KernelThread
+        MailShell
         ''' <summary>
-        ''' Alternative shell command threads
+        ''' SFTP shell
         ''' </summary>
-        Protected Friend ReadOnly AltCommandThreads As New List(Of KernelThread)
-
+        SFTPShell
         ''' <summary>
-        ''' Installs the values to a new instance of ShellInfo
+        ''' Text shell
         ''' </summary>
-        ''' <param name="ShellType">The shell type</param>
-        ''' <param name="ShellExecutor">Shell executor</param>
-        ''' <param name="ShellCommandThread">Shell command thread</param>
-        Public Sub New(ShellType As ShellType, ShellExecutor As ShellExecutor, ShellCommandThread As KernelThread)
-            Me.ShellType = ShellType
-            Me.ShellExecutor = ShellExecutor
-            Me.ShellCommandThread = ShellCommandThread
-        End Sub
-
-    End Class
+        TextShell
+        ''' <summary>
+        ''' Test shell
+        ''' </summary>
+        TestShell
+        ''' <summary>
+        ''' Remote debug shell
+        ''' </summary>
+        RemoteDebugShell
+        ''' <summary>
+        ''' ZIP shell
+        ''' </summary>
+        ZIPShell
+        ''' <summary>
+        ''' RSS Shell
+        ''' </summary>
+        RSSShell
+        ''' <summary>
+        ''' JSON Shell
+        ''' </summary>
+        JsonShell
+        ''' <summary>
+        ''' HTTP shell
+        ''' </summary>
+        HTTPShell
+        ''' <summary>
+        ''' Hex shell
+        ''' </summary>
+        HexShell
+    End Enum
 End Namespace

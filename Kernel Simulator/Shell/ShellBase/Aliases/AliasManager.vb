@@ -19,8 +19,9 @@
 Imports KS.Files.Operations
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports KS.Shell.ShellBase.Shells
 
-Namespace Shell.ShellBase
+Namespace Shell.ShellBase.Aliases
     Public Module AliasManager
 
         Public Aliases As New Dictionary(Of String, String)

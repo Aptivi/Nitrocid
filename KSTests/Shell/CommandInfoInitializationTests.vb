@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Shell.ShellBase
+Imports KS.Shell.ShellBase.Commands
 
 <TestFixture> Public Class CommandInfoInitializationTests
 

@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.ConsoleBase.Colors
+Imports KS.Shell.ShellBase.Shells
 Imports System.IO
 
 Namespace Misc.Writers.MiscWriters

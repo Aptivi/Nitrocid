@@ -19,6 +19,7 @@
 Imports System.Text
 Imports KS.Misc.ZipFile
 Imports KS.Misc.Editors.TextEdit
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.Text
     Public Class TextDefaultPreset

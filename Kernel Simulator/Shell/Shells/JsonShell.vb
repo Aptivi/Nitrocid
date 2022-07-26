@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Shell.Prompts
+Imports KS.Shell.ShellBase.Shells
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells

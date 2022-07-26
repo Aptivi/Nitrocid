@@ -19,7 +19,7 @@
 Imports KS.Shell.Shells
 Imports ReadLineReboot
 
-Namespace Shell.ShellBase
+Namespace Shell.ShellBase.Shells
     Public Module ShellStart
 
         Friend ShellStack As New List(Of ShellInfo)
@@ -104,7 +104,7 @@ Namespace Shell.ShellBase
                 Case ShellType.TextShell
                     Return New TextShell()
                 Case ShellType.TestShell
-                    Return New Shells.TestShell()
+                    Return New KS.Shell.Shells.TestShell()
                 Case ShellType.ZIPShell
                     Return New ZipShell()
                 Case ShellType.RSSShell

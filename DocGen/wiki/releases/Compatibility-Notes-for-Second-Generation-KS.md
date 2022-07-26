@@ -679,3 +679,10 @@ The splashes are the ones who are responsible for setting their own progress pos
 ##### Replaced `CommandPromptWrite()`
 
 `CommandPromptWrite()` used to be the helper for UESH to write its own prompt, but it's eventually replaced by the more powerful `WriteShellPrompt()` to accommodate all possible cases, like custom variables, and so on.
+
+##### Organized the ShellBase namespaces
+
+The shell base has been divided to three types:
+  - Aliases
+  - Commands
+  - Shells

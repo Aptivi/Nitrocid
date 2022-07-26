@@ -18,6 +18,7 @@
 
 Imports System.Text
 Imports KS.Network.FTP
+Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.FTP
     Public Class FTPDefaultPreset

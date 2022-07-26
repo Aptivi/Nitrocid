@@ -32,6 +32,7 @@ using KS.Misc.Writers.FancyWriters;
 using KS.Network;
 using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase;
+using KS.Shell.ShellBase.Aliases;
 using static KS.ConsoleBase.Colors.ColorTools;
 
 namespace KSConverter

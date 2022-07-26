@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
+Imports KS.Shell.ShellBase.Shells
 Imports KS.Network.RSS
 
 Namespace Shell.Prompts.Presets.RSS
