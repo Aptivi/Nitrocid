@@ -1,19 +1,114 @@
-### Linux systems
 
-#### Recommended method (Ubuntu)
+# Linux
 
-1. Open the terminal, and execute `sudo add-apt-repository ppa:eofla/kernel-sim`
-2. Confirm the addition of the PPA. It should update your package cache
-3. Execute `sudo apt install kernel-simulator`
-4. Execute `ks`
+*How to install the **Kernel Simulator**.*
 
-#### Alternative method
+<br>
 
-1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
-2. Unzip the file to any directory
-3. Install the following programs:
-   - Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
-   - mono-vbnc (Debian and its derivatives: `sudo apt install mono-vbnc`)
-   - libcpanel-json-xs-perl (Debian and its derivatives: `sudo apt install libcpanel-json-xs-perl`)
-   - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
-4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
+## Recommended
+
+*The following steps are for **Ubuntu**.*
+
+<br>
+
+1.  Open a new terminal.
+
+    <br>
+
+2.  Add the **PPA** withs:
+
+    ```shell
+    sudo add-apt-repository ppa:eofla/kernel-sim
+    ```
+    
+    <br>
+
+2.  Confirm the addition of the **PPA**.
+
+    *It should update your package cache.*
+
+    <br>
+
+3.  Install the package with:
+
+    ```shell
+    sudo apt install kernel-simulator
+    ```
+    
+    <br>
+
+4.  Start the simulator with:
+
+    ```shell
+    ks
+    ```
+
+<br>
+<br>
+
+## Alternative
+
+*The commands given are meant* <br>
+*for **Debian** related distributions.*
+
+<br>
+
+1.  **[Download]** the Kernel Simulator binaries.
+
+    <br>
+
+2.  Unzip the archive to any directory
+
+    <br>
+
+3.  Install the following programs:
+    
+    <br>
+   
+    -   `Microsoft.VisualBasic.dll` 10.0
+    
+        ```shell
+        sudo apt install libmono-microsoft-visualbasic10.0-cil
+        ```
+        
+        <br>
+   
+    -   **mono-vbnc**
+    
+        ```shell
+        sudo apt install mono-vbnc
+        ```
+        
+        <br>
+   
+    -   **libcpanel-json-xs-perl**
+        
+        ```shell
+        sudo apt install libcpanel-json-xs-perl
+        ```
+        
+        <br>
+   
+    -   **Inxi Application**
+    
+        *For hard drive probation*
+        
+        ```shell
+        sudo apt install inxi libcpanel-json-xs-perl
+        ```
+    
+    <br>
+
+4.  Open a new terminal in the directory <br>
+    that contains **KS**, and start it with:
+
+    ```shell
+    mono "Kernel Simulator.exe"
+    ```
+
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Download]: https://github.com/EoflaOE/Kernel-Simulator/releases
