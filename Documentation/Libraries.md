@@ -1,143 +1,213 @@
-## Open Source Libraries
 
-Below entries are the open source libraries that are used by KS and are required for execution.
+# Open Source Libraries
+
+*Below are the open source libraries that are* <br>
+*used by **KS** and are required for execution.*
+
+<br>
 
 ### Addresstigator
 
-Source code: https://github.com/EoflaOE/Addresstigator/
+[![Button Source]][Addresstigator]   
+[![Button MIT]][License Addresstigator]
 
-Copyright (c) 2022-present EoflaOE and its companies
+© 2022 - Present EoflaOE and its companies
 
-License (MIT): https://github.com/EoflaOE/Addresstigator/blob/main/LICENSE.txt
+<br>
 
 ### CRC32.NET
 
-Source code: https://github.com/force-net/CRC32.NET
+[![Button Source]][CRC32.NET]   
+[![Button MIT]][License CRC32.NET]
 
-Copyright (c) 2017, force
+© 2017 force
 
-License (MIT): https://github.com/force-net/Crc32.NET/blob/develop/LICENSE
+<br>
 
 ### Extensification
 
-Source code: https://github.com/EoflaOE/Extensification/
+[![Button Source]][Extensification]   
+[![Button GPL3]][License Extensification]
 
-Copyright (c) 2020-present EoflaOE and its companies
+© 2020 - present EoflaOE and its companies
 
-License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+<br>
 
 ### Figgle
 
-Source code: https://github.com/drewnoakes/figgle
+[![Button Source]][Figgle]   
+[![Button Apache]][License Figgle]
 
-Copyright (c) 2017-2021 drewnoakes
+© 2017 - 2021 drewnoakes
 
-License (Apache License 2.0): https://github.com/drewnoakes/figgle/blob/master/LICENSE
+<br>
 
 ### FluentFTP
 
-Source code: https://github.com/robinrodricks/FluentFTP
+[![Button Source]][FluentFTP]   
+[![Button MIT]][License FluentFTP]
 
-Copyright (c) 2011-2016, J.P. Trosclair
+© 2011 - 2016 J.P. Trosclair
 
-Copyright (c) 2016-present, Robin Rodricks
+© 2016 - present Robin Rodricks
 
-License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+<br>
 
 ### HtmlAgilityPack
 
-Source code: https://github.com/zzzprojects/html-agility-pack/
+[![Button Source]][HtmlAgilityPack]   
+[![Button MIT]][License HtmlAgilityPack]
 
-Copyright (c) ZZZ Projects Inc. 2014 - 2021. All rights reserved.
+© 2014 - 2021 ZZZ Projects Inc. All rights reserved.
 
-License (MIT): https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
+<br>
 
 ### Inxi.NET
 
-Source code: https://github.com/EoflaOE/Inxi.NET/
+[![Button Source]][Inxi.NET]   
+[![Button GPL3]][License Inxi.NET]
 
-Copyright (c) 2020-present EoflaOE and its companies
+© 2020 - present EoflaOE and its companies
 
-License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
+<br>
 
 ### MailKit
 
-Source code: https://github.com/jstedfast/MailKit/
+[![Button Source]][MailKit]   
+[![Button MIT]][License MailKit]
 
-Copyright (c) 2013-present, .NET Foundation and Contributors
+© 2013 - present .NET Foundation and Contributors
 
-License (MIT): https://github.com/jstedfast/MailKit/blob/master/LICENSE
+<br>
 
 ### ManagedWeatherMap
 
-Source code: https://github.com/EoflaOE/ManagedWeatherMap/
+[![Button Source]][ManagedWeatherMap]   
+[![Button MIT]][License ManagedWeatherMap]
 
-Copyright (c) 2021-present EoflaOE and its companies
+© 2021 - Present EoflaOE and its companies
 
-License (MIT): https://github.com/EoflaOE/ManagedWeatherMap/blob/main/LICENSE.txt
+<br>
 
 ### Microsoft.AspNet.WebApi.Client
 
-Source code: https://github.com/aspnet/aspnetwebstack
+[![Button Source]][Microsoft.AspNet.WebApi.Client]   
+[![Button Apache]][License Microsoft.AspNet.WebApi.Client]
 
-Copyright (c) .NET Foundation. All rights reserved.
+© .NET Foundation. All rights reserved.
 
-License (Apache License 2.0): https://github.com/aspnet/AspNetWebStack/blob/main/LICENSE.txt
+<br>
 
 ### Newtonsoft.Json
 
-Source code: https://github.com/JamesNK/Newtonsoft.Json
+[![Button Source]][Newtonsoft.Json]   
+[![Button MIT]][License Newtonsoft.Json]
 
-Copyright (c) 2007, James Newton-King
+© 2007 James Newton-King
 
-License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+<br>
 
-### Nuget.Build.Tasks.Pack (build dependency)
+### Nuget.Build.Tasks.Pack
 
-Source code: https://github.com/NuGet/NuGet.Client
+[![Button Source]][Nuget.Build.Tasks.Pack]   
+[![Button Apache]][License Nuget.Build.Tasks.Pack]
 
-Copyright (c) .NET Foundation. All rights reserved.
+© .NET Foundation. All rights reserved.
 
-License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
+<br>
 
 ### ReadLine.Reboot
 
-Source code: https://github.com/EoflaOE/ReadLine.Reboot/
+[![Button Source]][ReadLine.Reboot]   
+[![Button MIT]][License ReadLine.Reboot]
 
-Copyright (c) 2017 Toni Solarin-Sodara
+© 2017 Toni Solarin-Sodara
 
-Copyright (c) 2022-present EoflaOE and its companies
+© 2022 - Present EoflaOE and its companies
 
-License (MIT): https://github.com/EoflaOE/ReadLine.Reboot/blob/master/LICENSE
+<br>
 
 ### SharpCompress
 
-Source code: https://github.com/adamhathcock/sharpcompress
+[![Button Source]][SharpCompress]   
+[![Button MIT]][License SharpCompress]
 
-Copyright (c) 2014 Adam Hathcock
+© 2014 Adam Hathcock
 
-License (MIT): https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
+<br>
 
 ### SSH.NET
 
-Source code: https://github.com/sshnet/SSH.NET/
+[![Button Source]][SSH.NET]   
+[![Button MIT]][License SSH.NET]
 
-Copyright (c) Renci
+© Renci
 
-License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
+<br>
 
 ### StringMath
 
-Source code: https://github.com/miroiu/string-math
+[![Button Source]][StringMath]   
+[![Button MIT]][License StringMath]
 
-Copyright (c) Miroiu Emanuel
+© Miroiu Emanuel
 
-License (MIT): https://github.com/miroiu/string-math/blob/dev/LICENSE
+<br>
 
 ### UnitsNet
 
-Source code: https://github.com/angularsen/UnitsNet
+[![Button Source]][UnitsNet]   
+[![Button MIT-0]][License UnitsNet]
 
-Copyright 2013 Andreas Gullberg Larsen
+© 2013 Andreas Gullberg Larsen
 
-License (MIT-0): https://github.com/angularsen/UnitsNet/blob/master/LICENSE
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Microsoft.AspNet.WebApi.Client]: https://github.com/aspnet/aspnetwebstack
+[Nuget.Build.Tasks.Pack]: https://github.com/NuGet/NuGet.Client
+[ManagedWeatherMap]: https://github.com/EoflaOE/ManagedWeatherMap/
+[Extensification]: https://github.com/EoflaOE/Extensification/
+[HtmlAgilityPack]:  https://github.com/zzzprojects/html-agility-pack/
+[Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json
+[ReadLine.Reboot]: https://github.com/EoflaOE/ReadLine.Reboot/
+[Addresstigator]: https://github.com/EoflaOE/Addresstigator/
+[SharpCompress]: https://github.com/adamhathcock/sharpcompress
+[StringMath]: https://github.com/miroiu/string-math
+[CRC32.NET]: https://github.com/force-net/CRC32.NET
+[FluentFTP]: https://github.com/robinrodricks/FluentFTP
+[UnitsNet]: https://github.com/angularsen/UnitsNet
+[Inxi.NET]: https://github.com/EoflaOE/Inxi.NET/
+[MailKit]: https://github.com/jstedfast/MailKit/
+[SSH.NET]: https://github.com/sshnet/SSH.NET/
+[Figgle]: https://github.com/drewnoakes/figgle
+
+[License Microsoft.AspNet.WebApi.Client]: https://github.com/aspnet/AspNetWebStack/blob/main/LICENSE.txt
+[License Nuget.Build.Tasks.Pack]: https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
+[License ManagedWeatherMap]: https://github.com/EoflaOE/ManagedWeatherMap/blob/main/LICENSE.txt
+[License Extensification]: https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+[License HtmlAgilityPack]: https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
+[License Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+[License ReadLine.Reboot]: https://github.com/EoflaOE/ReadLine.Reboot/blob/master/LICENSE
+[License Addresstigator]: https://github.com/EoflaOE/Addresstigator/blob/main/LICENSE.txt
+[License SharpCompress]: https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
+[License StringMath]: https://github.com/miroiu/string-math/blob/dev/LICENSE
+[License FluentFTP]: https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
+[License CRC32.NET]: https://github.com/force-net/Crc32.NET/blob/develop/LICENSE
+[License UnitsNet]: https://github.com/angularsen/UnitsNet/blob/master/LICENSE
+[License Inxi.NET]: https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
+[License MailKit]: https://github.com/jstedfast/MailKit/blob/master/LICENSE
+[License SSH.NET]: https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
+[License Figgle]: https://github.com/drewnoakes/figgle/blob/master/LICENSE
+
+
+<!---------------------------------[ Buttons ]--------------------------------->
+
+[Button Source]: https://img.shields.io/badge/Source-3884FF?style=for-the-badge&logoColor=white&logo=GitHub
+
+[Button Apache]: https://img.shields.io/badge/License-Apache_2.0-961b1f?style=for-the-badge&labelColor=D22128
+[Button MIT-0]: https://img.shields.io/badge/License-MIT--0-ac8b11.svg?style=for-the-badge&labelColor=yellow
+[Button GPL3]: https://img.shields.io/badge/License-GPL3+-015d93.svg?style=for-the-badge&labelColor=blue
+[Button MIT]: https://img.shields.io/badge/License-MIT-ac8b11.svg?style=for-the-badge&labelColor=yellow
