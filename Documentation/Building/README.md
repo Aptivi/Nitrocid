@@ -22,9 +22,9 @@
 
 <!----------------------------------------------------------------------------->
 
-[Visual Studio]: Building/Visual%20Studio.md
-[MonoDevelop]: Building/MonoDevelop.md
-[JetBrains]: Building/JetBrains.md
+[Visual Studio]: Visual%20Studio.md
+[MonoDevelop]: MonoDevelop.md
+[JetBrains]: JetBrains.md
 
 
 <!---------------------------------[ Buttons ]--------------------------------->

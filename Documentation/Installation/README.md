@@ -22,9 +22,9 @@
 
 <!----------------------------------------------------------------------------->
 
-[Windows]: Installation/Windows.md
-[Linux]: Installation/Linux.md
-[MacOS]: Installation/MacOS.md
+[Windows]: Windows.md
+[Linux]: Linux.md
+[MacOS]: MacOS.md
 
 
 <!---------------------------------[ Buttons ]--------------------------------->
