@@ -35,7 +35,8 @@ Namespace Shell.Prompts
 
         'Shell presets
         Friend ReadOnly UESHShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New DefaultPreset()}
+            {"Default", New DefaultPreset()},
+            {"PowerLine1", New PowerLine1Preset()}
         }
         Friend ReadOnly TestShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New TestDefaultPreset()}
