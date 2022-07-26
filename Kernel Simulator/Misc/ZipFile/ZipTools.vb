@@ -63,7 +63,7 @@ Namespace Misc.ZipFile
 
             'Define local destination while getting an entry from target
             Dim LocalDestination As String = Where + "/"
-            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.Entries(AbsoluteTarget)
+            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.Entries(CInt(AbsoluteTarget))
             If FullTargetPath Then
                 LocalDestination += ZipEntry.Key
             End If
