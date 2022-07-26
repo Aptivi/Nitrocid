@@ -45,6 +45,19 @@ Namespace Files
             End Get
         End Property
 
+        ''' <summary>
+        ''' Retro Kernel Simulator download path
+        ''' </summary>
+        Public ReadOnly Property RetroKSDownloadPath As String
+            Get
+                If IsOnUnix() Then
+                    Return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/"
+                Else
+                    Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/").Replace("\", "/")
+                End If
+            End Get
+        End Property
+
         'Variables
         Friend KernelPaths As New Dictionary(Of String, String)
 
