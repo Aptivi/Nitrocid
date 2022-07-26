@@ -296,6 +296,14 @@ Copyright (c) Miroiu Emanuel
 
 License (MIT): https://github.com/miroiu/string-math/blob/dev/LICENSE
 
+### UnitsNet
+
+Source code: https://github.com/angularsen/UnitsNet
+
+Copyright 2013 Andreas Gullberg Larsen
+
+License (MIT-0): https://github.com/angularsen/UnitsNet/blob/master/LICENSE
+
 ## License
 
     Kernel Simulator - Simulates our future planned Kernel
