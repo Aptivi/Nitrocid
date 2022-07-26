@@ -53,7 +53,6 @@ El protector de pantalla {0} no existe.
 No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente.
 El protector de pantalla no se puede cargar debido a lo siguiente: 
 Hay un error grave al imprimir texto.
-Hay un error al intentar crear la configuración.
 El mod no se puede cargar debido a lo siguiente: 
 mod: cargando mods ...
 mod: detener mods ...
@@ -209,7 +208,6 @@ Registro de depuración eliminado. Todos los dispositivos de depuración conecta
 Error al eliminar el registro de depuración: {0}
 El cambio de directorio ha fallado: {0}
 Especifique la dirección
-No se puede eliminar el directorio: {0}
 La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
@@ -458,12 +456,8 @@ Error al intentar ignorar la notificación.
 usrmgr: no se pudo crear el nombre de usuario {0}: {1}
 No se pudo cambiar el nombre del usuario. {0}
 Una de las listas de permisos no contiene el nombre de usuario {0}.
-No se pudieron cargar los permisos del archivo: {0}
-No se pudo cambiar el nombre de host: {0}
 Usuario no encontrado
 No se pudo cambiar la contraseña del nombre de usuario: {0}
-No se pudo copiar el archivo o directorio: {0}
-No se pudo mover el archivo o directorio: {0}
 No se pudo encontrar el archivo que coincida con la cadena "{0}": {1}
 Error al descargar el archivo {0}.
 No se pudieron enumerar los archivos remotos: {0}
@@ -519,7 +513,6 @@ El mod {0} no tiene el nombre de la pieza. Error al analizar el mod. Revise el c
 Debe activar el modo de depuración antes de poder borrar el registro de depuración.
 {0} mensajes nuevos llegaron a la bandeja de entrada.
 Abra "mail" para verlos.
-No se puede eliminar el archivo: {0}
 Elimina un directorio o un archivo
 No se puede eliminar {0} porque no existe.
 Presione CTRL + C para salir.
@@ -1279,7 +1272,6 @@ Modelo de disco:
 Cultura de la lengua actual
 Si está seguro de haber abierto la sección correcta, consulte este mensaje:
 Ejecuta un comando de servidor FTP
-Introduzca la dirección y el puerto del servidor POP3 (<dirección> o <dirección>:[puerto]):
 Estilo de aviso POP3 para correo
 Enviar intervalo de ping POP3
 Escribe cómo quieres que sea el indicador de tu servidor POP3. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
@@ -1571,8 +1563,6 @@ Muestra el recuento de comandos en la lista de comandos, controlado por los tres
 Ejecuta comandos una vez que se cumplen las expresiones UESH
 La condición no se encontró en la expresión.
 La condición {0} requiere {1} argumentos. Tengo {2}.
-La condición debe colocarse en el medio.
-La condición debe colocarse al principio.
 Error al analizar la expresión debido a un error de sintaxis.
 No se pudo satisfacer la condición. Más información aquí:
 Carácter de máscara de contraseña
@@ -1657,7 +1647,6 @@ Cuanto mayor sea el porcentaje, más ruidosa será la señal
 El guión está mal formado. Verifique el script y resuelva cualquier error: {0}
 ¡El juego de la serpiente!
 Utiliza ruta relativa en lugar de absoluta
-El correo POP3 está deshabilitado. Si realmente desea correo POP3, vuelva a compilar la aplicación con soporte POP3.
 El archivo mod no es válido.
 Marca el feed
 Generador de nombres y apellidos

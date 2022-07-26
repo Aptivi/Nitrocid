@@ -53,7 +53,6 @@ Zastavka {0} ne isnuye.
 Zastavku {0} ne znaydeno v bazi danykh. Perevirte nazvu ta sprobuyte shche raz.
 Ne vdayetʹsya zavantazhyty zastavku cherez nastupne:
 Pid chas druku tekstu stalasya seryozna pomylka.
-Pid chas sproby stvoryty konfihuratsiyu stalasya pomylka.
 Mod ne mozhe buty zavantazhenyy cherez nastupne:
 mod: Zavantazhennya modiv...
 mod: Zupynka modiv...
@@ -209,7 +208,6 @@ Zhurnal nalahodzhennya vydaleno. Usi pidklyucheni prystroyi dlya nalahodzhennya 
 Pomylka vydalennya zhurnalu nalahodzhennya: {0}
 Ne vdalosya zminyty kataloh: {0}
 Vkazhitʹ adresu
-Ne vdayetʹsya vydalyty kataloh: {0}
 Chasovyy poyas vkazano nepravylʹno.
 Nediysnyy vybir profilyu.
 Sproba pidklyuchytysya do {0} za dopomohoyu profilyu {1}...
@@ -458,12 +456,8 @@ Pomylka sproby zakryty spovishchennya.
 usrmgr: Ne vdalosya stvoryty im'ya korystuvacha {0}: {1}
 Ne vdalosya pereymenuvaty korystuvacha. {0}
 Odyn zi spyskiv dozvoliv ne mistytʹ imeni korystuvacha {0}.
-Ne vdalosya zavantazhyty dozvoly z faylu: {0}
-Ne vdalosya zminyty imʺya khosta: {0}
 Korystuvach ne znaydenyy
 Ne vdalosya zminyty parolʹ imeni korystuvacha: {0}
-Ne vdalosya skopiyuvaty fayl abo kataloh: {0}
-Ne vdalosya peremistyty fayl abo kataloh: {0}
 Ne vdayetʹsya znayty fayl, yakyy vidpovidaye ryadku "{0}": {1}
 Ne vdalosya zavantazhyty fayl {0}.
 Pomylka spysku viddalenykh fayliv: {0}
@@ -519,7 +513,6 @@ Mod {0} ne maye nazvy chastyny. Pomylka analizu modu. Perehlyanʹte vykhidnyy ko
 Vy povynni uvimknuty rezhym nalahodzhennya, persh nizh vy zmozhete ochystyty zhurnal nalahodzhennya.
 U papku "Vkhidni" nadiyshlo {0} novykh povidomlenʹ.
 Vidkryyte «lsmail», shchob pobachyty yikh.
-Ne vdayetʹsya vydalyty fayl: {0}
 Vydalyaye kataloh abo fayl
 Ne vdayetʹsya vydalyty {0}, oskilʹky vin ne isnuye.
 Natysnitʹ CTRL+C, shchob vyyty.
@@ -1279,7 +1272,6 @@ Modelʹ dyska:
 Kulʹtura suchasnoyi movy
 Yakshcho vy vpevneni, shcho vidkryly pravylʹnyy rozdil, perehlyanʹte tse povidomlennya:
 Vykonuye komandu FTP-servera
-Vveditʹ adresu ta port servera POP3 (<adresa> abo <adresa>:[port]):
 Stylʹ pidkazok POP3 dlya poshty
 Interval nadsylannya POP3
 Napyshitʹ, yak vy khochete, shchob pidkazka servera POP3 bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
@@ -1571,8 +1563,6 @@ Pokazuye kilʹkistʹ komand u spysku komand, shcho keruyetʹsya trʹoma peremyka
 Vykonuye komandy pislya vykonannya vyraziv UESH
 Umovu u vyrazi ne znaydeno.
 Umova {0} vymahaye {1} arhumentiv. Otrymano {2}.
-Umovu potribno postavyty poseredyni.
-Umovu potribno postavyty na pochatku.
 Pomylka analizu vyrazu cherez syntaksychnu pomylku.
 Ne vdalosya zadovolʹnyty umovu. Bilʹshe informatsiyi tut:
 Symvol masky parolya
@@ -1657,7 +1647,6 @@ Chym bilʹshe vidsotok, tym shumnishyy syhnal
 Stsenariy nepravylʹno sformovanyy. Perevirte stsenariy i vypravte vsi pomylky: {0}
 Hra zmiyka!
 Vykorystovuye vidnosnyy shlyakh zamistʹ absolyutnoho
-Poshta POP3 vymknena. Yakshcho vam diysno potribna poshta POP3, perekompilyuyte prohramu z pidtrymkoyu POP3.
 Fayl modyfikatsiyi nediysnyy.
 Dodaye strichku v zakladky
 Henerator imeni ta prizvyshcha

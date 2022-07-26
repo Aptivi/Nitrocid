@@ -53,7 +53,6 @@ Trình bảo vệ màn hình {0} không tồn tại.
 Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. Kiểm tra tên và thử lại.
 Trình bảo vệ màn hình không thể được tải vì những điều sau đây:
 Có một lỗi nghiêm trọng khi in văn bản.
-Có lỗi khi cố gắng tạo cấu hình.
 Mod không thể được tải vì những điều sau đây:
 mod: Đang tải mod ...
 mod: Dừng mod ...
@@ -209,7 +208,6 @@ Nhật ký gỡ lỗi được gỡ bỏ. Tất cả các thiết bị gỡ lỗ
 Xóa nhật ký gỡ lỗi không thành công: {0}
 Thay đổi thư mục không thành công: {0}
 Chỉ định địa chỉ
-Không thể xóa thư mục: {0}
 Múi giờ được chỉ định không chính xác.
 Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối với {0} với hồ sơ {1} ...
@@ -458,12 +456,8 @@ Lỗi khi cố gắng loại bỏ thông báo.
 usrmgr: Không tạo được tên người dùng {0}: {1}
 Không thể đổi tên người dùng. {0}
 Một trong các danh sách quyền không chứa tên người dùng {0}.
-Không tải được quyền từ tệp: {0}
-Không thay đổi được tên máy chủ: {0}
 Không tìm thấy người dùng
 Không thể thay đổi mật khẩu của tên người dùng: {0}
-Không sao chép được tệp hoặc thư mục: {0}
-Không di chuyển được tệp hoặc thư mục: {0}
 Không thể tìm thấy tệp để khớp với chuỗi "{0}": {1}
 Không tải xuống được tệp {0}.
 Không liệt kê được các tệp từ xa: {0}
@@ -519,7 +513,6 @@ Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành cô
 Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
 {0} thư mới đã đến hộp thư đến.
 Mở "mail" để xem chúng.
-Không thể xóa tệp: {0}
 Xóa một thư mục hoặc một tệp
 Không thể xóa {0} vì nó không tồn tại.
 Nhấn CTRL + C để thoát.
@@ -1279,7 +1272,6 @@ Mô hình đĩa:
 Văn hóa của ngôn ngữ hiện tại
 Nếu bạn chắc chắn rằng bạn đã mở đúng phần, hãy kiểm tra thông báo này:
 Thực thi một lệnh máy chủ FTP
-Nhập địa chỉ máy chủ POP3 và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Kiểu lời nhắc POP3 cho thư
 Gửi khoảng thời gian ping POP3
 Viết cách bạn muốn lời nhắc máy chủ POP3 của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
@@ -1571,8 +1563,6 @@ Hiển thị số lệnh trong danh sách lệnh, được điều khiển bởi
 Thực hiện các lệnh khi các biểu thức UESH được thỏa mãn
 Điều kiện không được tìm thấy trong biểu thức.
 Điều kiện {0} yêu cầu {1} đối số. Có {2}.
-Điều kiện cần được đặt ở giữa.
-Điều kiện cần được đặt ngay từ đầu.
 Lỗi phân tích cú pháp biểu thức do lỗi cú pháp.
 Không đáp ứng được điều kiện. Thông tin thêm tại đây:
 Ký tự mặt nạ mật khẩu
@@ -1657,7 +1647,6 @@ Tỷ lệ phần trăm càng lớn, tín hiệu càng ồn
 Tập lệnh không đúng định dạng. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào: {0}
 Trò chơi rắn!
 Sử dụng đường dẫn tương đối thay vì tuyệt đối
-Thư POP3 bị tắt. Nếu bạn thực sự muốn thư POP3, hãy biên dịch lại ứng dụng với hỗ trợ POP3.
 Modfile không hợp lệ.
 Đánh dấu nguồn cấp dữ liệu
 Trình tạo tên và họ

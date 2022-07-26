@@ -237,21 +237,16 @@ Namespace Network.Mail.Transfer
             Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
 
             'Send the message
-            If Not Mail_UsePop3 Then
-                SyncLock SMTP_Client.SyncRoot
-                    Try
-                        SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
-                        Return True
-                    Catch ex As Exception
-                        Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                        WStkTrc(ex)
-                    End Try
-                    Return False
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.E, "Not implemented.")
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
                 Return False
-            End If
+            End SyncLock
         End Function
 
         ''' <summary>
@@ -274,21 +269,16 @@ Namespace Network.Mail.Transfer
             Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
 
             'Send the message
-            If Not Mail_UsePop3 Then
-                SyncLock SMTP_Client.SyncRoot
-                    Try
-                        SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
-                        Return True
-                    Catch ex As Exception
-                        Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                        WStkTrc(ex)
-                    End Try
-                    Return False
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.E, "Not implemented.")
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
                 Return False
-            End If
+            End SyncLock
         End Function
 
         ''' <summary>
@@ -311,21 +301,16 @@ Namespace Network.Mail.Transfer
             Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
 
             'Send the message
-            If Not Mail_UsePop3 Then
-                SyncLock SMTP_Client.SyncRoot
-                    Try
-                        SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
-                        Return True
-                    Catch ex As Exception
-                        Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                        WStkTrc(ex)
-                    End Try
-                    Return False
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.E, "Not implemented.")
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
                 Return False
-            End If
+            End SyncLock
         End Function
 
         ''' <summary>

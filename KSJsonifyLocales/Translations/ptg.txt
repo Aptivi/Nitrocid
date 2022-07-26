@@ -53,7 +53,6 @@ O protetor de tela {0} não existe.
 Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
 O protetor de tela não pode ser carregado por causa do seguinte: 
 Há um erro sério ao imprimir texto.
-Há um erro ao tentar criar uma configuração.
 Mod não pode ser carregado por causa do seguinte: 
 mod: Carregando mods ...
 mod: Parando mods ...
@@ -209,7 +208,6 @@ Log de depuração removido. Todos os dispositivos de depuração conectados ain
 Falha na remoção do log de depuração: {0}
 A alteração do diretório falhou: {0}
 Especifique o endereço
-Não foi possível remover o diretório: {0}
 O fuso horário está especificado incorretamente.
 Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
@@ -458,12 +456,8 @@ Erro ao tentar dispensar notificação.
 usrmgr: Falha ao criar nome de usuário {0}: {1}
 Falha ao renomear o usuário. {0}
 Uma das listas de permissão não contém o nome de usuário {0}.
-Falha ao carregar permissões do arquivo: {0}
-Falha ao alterar o nome do host: {0}
 Usuário não encontrado
 Falha ao alterar a senha do nome de usuário: {0}
-Falha ao copiar arquivo ou diretório: {0}
-Falha ao mover arquivo ou diretório: {0}
 Não foi possível localizar o arquivo para a string "{0}": {1}
 Falha no download do arquivo {0}.
 Falha ao listar arquivos remotos: {0}
@@ -519,7 +513,6 @@ O mod {0} não tem o nome da peça. A análise do mod falhou. Revise o código-f
 Você deve ativar o modo de depuração antes de limpar o log de depuração.
 {0} novas mensagens chegaram à caixa de entrada.
 Abra "mail" para vê-los.
-Não foi possível remover o arquivo: {0}
 Remove um diretório ou arquivo
 Não é possível remover {0} porque ele não existe.
 Pressione CTRL + C para sair.
@@ -1279,7 +1272,6 @@ Modelo de disco:
 Cultura do idioma atual
 Se você tiver certeza de que abriu a seção correta, confira esta mensagem:
 Executa um comando do servidor FTP
-Digite o endereço e a porta do servidor POP3 (<endereço> ou <endereço>:[porta]):
 Estilo de prompt POP3 para e-mail
 Enviar intervalo de ping POP3
 Escreva como você deseja que o prompt do servidor POP3 seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
@@ -1571,8 +1563,6 @@ Mostra a contagem de comandos na lista de comandos, controlada pelos três switc
 Executa comandos quando as expressões UESH são satisfeitas
 A condição não foi encontrada na expressão.
 A condição {0} requer {1} argumentos. Obteve {2}.
-A condição precisa ser colocada no meio.
-A condição precisa ser colocada no início.
 Erro ao analisar a expressão devido a um erro de sintaxe.
 Falha ao satisfazer a condição. Mais informações aqui:
 Caractere de máscara de senha
@@ -1657,7 +1647,6 @@ Quanto maior a porcentagem, mais ruidoso o sinal
 O roteiro está malformado. Verifique o script e resolva quaisquer erros: {0}
 O jogo da cobra!
 Usa caminho relativo em vez de absoluto
-O correio POP3 está desabilitado. Se você realmente deseja correio POP3, recompile o aplicativo com suporte a POP3.
 O modfile é inválido.
 Marca o feed
 Gerador de nome e sobrenome

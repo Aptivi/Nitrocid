@@ -53,7 +53,6 @@ Zastavka {0} ne sushchestvuyet.
 Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
 Zastavka ne mozhet byt' zagruzhena iz-za sleduyushchego:
 Pri pechati teksta voznikayet ser'yeznaya oshibka.
-Pri popytke sozdat' konfiguratsiyu proizoshla oshibka.
 Mod ne mozhet byt' zagruzhen iz-za sleduyushchego:
 mod: zagruzka modov ...
 mod: Ostanovka modov ...
@@ -209,7 +208,6 @@ Zhurnal otladki udalen. Vse podklyuchennyye otladochnyye ustroystva mogut po-pre
 Oshibka udaleniya zhurnala otladki: {0}
 Oshibka izmeneniya kataloga: {0}
 Ukazhite adres
-Nevozmozhno udalit' katalog: {0}
 Chasovoy poyas ukazan neverno.
 Nevernyy vybor profilya.
 Popytka podklyuchit'sya k {0} s profilem {1} ...
@@ -458,12 +456,8 @@ Oshibka pri popytke zakryt' uvedomleniye.
 usrmgr: ne udalos' sozdat' imya pol'zovatelya {0}: {1}
 Ne udalos' pereimenovat' pol'zovatelya. {0}
 Odin iz spiskov razresheniy ne soderzhit imeni pol'zovatelya {0}.
-Ne udalos' zagruzit' razresheniya iz fayla: {0}
-Ne udalos' izmenit' imya khosta: {0}
 Pol'zovatel' ne nayden
 Ne udalos' izmenit' parol' imeni pol'zovatelya: {0}
-Ne udalos' skopirovat' fayl ili katalog: {0}
-Ne udalos' peremestit' fayl ili katalog: {0}
 Nevozmozhno nayti fayl, sootvetstvuyushchiy stroke "{0}": {1}
 Ne udalos' skachat' fayl {0}.
 Ne udalos' perechislit' udalennyye fayly: {0}
@@ -519,7 +513,6 @@ U moda {0} net nazvaniya detali. Ne udalos' proanalizirovat' mod. Prosmotrite is
 Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.
 Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.
 Otkroyte «mail», chtoby uvidet' ikh.
-Nevozmozhno udalit' fayl: {0}
 Udalyayet katalog ili fayl
 Nevozmozhno udalit' {0}, potomu chto on ne sushchestvuyet.
 Nazhmite CTRL + C, chtoby vyyti.
@@ -1279,7 +1272,6 @@ Model' diska:
 Kul'tura tekushchego yazyka
 Yesli vy uvereny, chto otkryli nuzhnyy razdel, prover'te eto soobshcheniye:
 Vypolnyayet komandu FTP-servera
-Vvedite adres servera POP3 i port (<adres> ili <adres>:[port]):
 Stil' priglasheniya POP3 dlya pochty
 Otpravlyat' interval pinga POP3
 Napishite, kak vy khotite, chtoby vashe priglasheniye servera POP3 bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
@@ -1571,8 +1563,6 @@ Pokazyvayet kolichestvo komand v spiske komand, upravlyayemoye tremya pereklyuch
 Vypolnyayet komandy posle vypolneniya vyrazheniy UESH.
 Usloviye ne naydeno v vyrazhenii.
 Usloviye {0} trebuyet {1} argumentov. Poluchil {2}.
-Usloviye nuzhno postavit' poseredine.
-Usloviye nuzhno postavit' v nachale.
 Oshibka razbora vyrazheniya iz-za sintaksicheskoy oshibki.
 Ne udalos' vypolnit' usloviye. Podrobneye zdes':
 Simvol maski parolya
@@ -1657,7 +1647,6 @@ Chem bol'she protsent, tem shumneye signal
 Skript imeyet nepravil'nyy format. Prover'te stsenariy i ustranite vse oshibki: {0}
 Zmeinaya igra!
 Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo
-Pochta POP3 otklyuchena. Yesli vam deystvitel'no nuzhna pochta POP3, perekompiliruyte prilozheniye s podderzhkoy POP3.
 Fayl moda nedeystvitelen.
 Dobavlyayet v zakladki lentu
 Generator imen i familiy

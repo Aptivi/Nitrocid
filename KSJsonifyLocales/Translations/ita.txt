@@ -53,7 +53,6 @@ Il salvaschermo {0} non esiste.
 Screensaver {0} non trovato nel database. Controlla il nome e riprova.
 Il salvaschermo non può essere caricato a causa di quanto segue:
 Si è verificato un errore grave durante la stampa del testo.
-Si è verificato un errore durante il tentativo di creare la configurazione.
 Mod non può essere caricato a causa di quanto segue:
 mod: caricamento mod ...
 mod: interruzione mod ...
@@ -209,7 +208,6 @@ Registro di debug rimosso. Tutti i dispositivi di debug collegati possono comunq
 Rimozione del registro di debug non riuscita: {0}
 Modifica directory non riuscita: {0}
 Specifica l'indirizzo
-Impossibile rimuovere la directory: {0}
 Il fuso orario non è specificato correttamente.
 Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
@@ -458,12 +456,8 @@ Errore durante il tentativo di ignorare la notifica.
 usrmgr: impossibile creare il nome utente {0}: {1}
 Impossibile rinominare l'utente. {0}
 Uno degli elenchi di autorizzazioni non contiene il nome utente {0}.
-Impossibile caricare le autorizzazioni dal file: {0}
-Impossibile modificare il nome host: {0}
 Utente non trovato
 Impossibile modificare la password del nome utente: {0}
-Impossibile copiare il file o la directory: {0}
-Impossibile spostare il file o la directory: {0}
 Impossibile trovare il file che corrisponda alla stringa "{0}": {1}
 Download non riuscito per il file {0}.
 Impossibile elencare i file remoti: {0}
@@ -519,7 +513,6 @@ La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codic
 È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
 {0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
 Apri "mail" per vederli.
-Impossibile rimuovere il file: {0}
 Rimuove una directory o un file
 Impossibile rimuovere {0} perché non esiste.
 Premere CTRL + C per uscire.
@@ -1279,7 +1272,6 @@ Modello del disco:
 Cultura della lingua attuale
 Se sei sicuro di aver aperto la sezione giusta, controlla questo messaggio:
 Esegue un comando del server FTP
-Immettere l'indirizzo e la porta del server POP3 (<indirizzo> o <indirizzo>:[porta]):
 Stile prompt POP3 per la posta
 Invia intervallo di ping POP3
 Scrivi come vuoi che sia il prompt del tuo server POP3. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
@@ -1571,8 +1563,6 @@ Mostra il conteggio dei comandi nell'elenco dei comandi, controllato dai tre swi
 Esegue i comandi una volta che le espressioni UESH sono soddisfatte
 La condizione non è stata trovata nell'espressione.
 La condizione {0} richiede {1} argomenti. Hai {2}.
-La condizione deve essere posta nel mezzo.
-La condizione deve essere posta all'inizio.
 Errore durante l'analisi dell'espressione a causa di un errore di sintassi.
 Impossibile soddisfare la condizione. Maggiori informazioni qui:
 Carattere maschera password
@@ -1657,7 +1647,6 @@ Maggiore è la percentuale, più rumoroso è il segnale
 La sceneggiatura non è corretta. Controlla lo script e risolvi eventuali errori: {0}
 Il gioco del serpente!
 Usa il percorso relativo anziché assoluto
-La posta POP3 è disabilitata. Se vuoi davvero la posta POP3, ricompila l'applicazione con il supporto POP3.
 Il file mod non è valido.
 Aggiunge un segnalibro al feed
 Generatore di nomi e cognomi

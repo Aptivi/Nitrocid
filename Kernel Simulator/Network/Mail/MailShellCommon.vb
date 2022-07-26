@@ -48,9 +48,7 @@ Namespace Network.Mail
         Public Mail_NotifyNewMail As Boolean = True
         Public Mail_ImapPingInterval As Integer = 30000
         Public Mail_SmtpPingInterval As Integer = 30000
-        Public Mail_POP3PingInterval As Integer = 30000
         Public Mail_MaxMessagesInPage As Integer = 10
-        Public Mail_UsePop3 As Boolean
         Public Mail_TextFormat As TextFormat = TextFormat.Plain
         Public Mail_ShowProgress As Boolean = True
         Public Mail_ProgressStyle As String = ""

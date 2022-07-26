@@ -53,7 +53,6 @@ Spořič obrazovky {0} neexistuje.
 Spořič obrazovky {0} nebyl nalezen v databázi. Zkontrolujte název a zkuste to znovu.
 Spořič obrazovky nelze načíst z následujících důvodů:
 Při tisku textu došlo k závažné chybě.
-Při pokusu o vytvoření konfigurace došlo k chybě.
 Mod nelze načíst z následujících důvodů:
 mod: Načítání modů ...
 mod: Zastavení modů ...
@@ -209,7 +208,6 @@ Ladicí protokol byl odstraněn. Všechna připojená ladicí zařízení mohou 
 Odebrání protokolu ladění se nezdařilo: {0}
 Změna adresáře se nezdařila: {0}
 Zadejte adresu
-Adresář nelze odstranit: {0}
 Časové pásmo je zadáno nesprávně.
 Neplatný výběr profilu.
 Pokouší se připojit k {0} s profilem {1} ...
@@ -458,12 +456,8 @@ Při pokusu o odmítnutí oznámení došlo k chybě.
 usrmgr: Nepodařilo se vytvořit uživatelské jméno {0}: {1}
 Nepodařilo se přejmenovat uživatele. {0}
 Jeden ze seznamů oprávnění neobsahuje uživatelské jméno {0}.
-Načtení oprávnění ze souboru se nezdařilo: {0}
-Nepodařilo se změnit název hostitele: {0}
 Uživatel nenalezen
 Nepodařilo se změnit heslo uživatelského jména: {0}
-Kopírování souboru nebo adresáře se nezdařilo: {0}
-Nepodařilo se přesunout soubor nebo adresář: {0}
 Nelze najít soubor, který by odpovídal řetězci „{0}“: {1}
 Stažení souboru {0} se nezdařilo.
 Seznam vzdálených souborů se nezdařil: {0}
@@ -519,7 +513,6 @@ Mod {0} nemá název součásti. Analýza modů se nezdařila. Zkontrolujte zdro
 Než budete moci vymazat protokol ladění, musíte zapnout režim ladění.
 {0} nové zprávy dorazily do doručené pošty.
 Chcete-li je zobrazit, otevřete „mail“.
-Nelze odebrat soubor: {0}
 Odebere adresář nebo soubor
 Aplikaci {0} nelze odebrat, protože neexistuje.
 Ukončete stisknutím kombinace kláves CTRL + C.
@@ -1279,7 +1272,6 @@ Model disku:
 Kultura současného jazyka
 Pokud jste si jisti, že jste otevřeli správnou sekci, podívejte se na tuto zprávu:
 Provede příkaz FTP serveru
-Zadejte adresu a port POP3 serveru (<adresa> nebo <adresa>:[port]):
 Styl výzvy POP3 pro poštu
 Interval odesílání POP3 pingů
 Napište, jak chcete, aby byl váš POP3 server výzva. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
@@ -1571,8 +1563,6 @@ Zobrazuje počet příkazů v seznamu příkazů, ovládaný třemi přepínači
 Provádí příkazy, jakmile jsou splněny výrazy UESH
 Podmínka nebyla ve výrazu nalezena.
 Podmínka {0} vyžaduje {1} argumentů. Mám {2}.
-Podmínku je potřeba umístit doprostřed.
-Podmínku je potřeba položit hned na začátku.
 Chyba při analýze výrazu kvůli chybě syntaxe.
 Nepodařilo se splnit podmínku. Více informací zde:
 Znak masky hesla
@@ -1657,7 +1647,6 @@ Kolik milisekund čekat před zápisem na novou obrazovku?
 Skript je poškozen. Zkontrolujte skript a vyřešte případné chyby: {0}
 Hra had!
 Používá relativní cestu namísto absolutní
-Pošta POP3 je zakázána. Pokud opravdu chcete poštu POP3, znovu zkompilujte aplikaci s podporou POP3.
 Modfile je neplatný.
 Přidá zdroj do záložek
 Generátor jména a příjmení

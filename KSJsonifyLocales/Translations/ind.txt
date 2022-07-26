@@ -53,7 +53,6 @@ skreenasevar {0} maujood nahin hai.
 skreenasevar {0} detaabes mein nahin mila. naam kee jaanch karen aur punah prayaas karen.
 nimnalikhit ke kaaran skreenasevar lod nahin kiya ja sakata hai: 
 paath print karate samay ek gambheer truti hai.
-konfigareshan banaane ka prayaas karane mein truti huee hai.
 nimnalikhit ke kaaran mod lod nahin kiya ja sakata hai: 
 mod: mod lod ho raha hai ...
 mod: mod rokana ...
@@ -209,7 +208,6 @@ dibag log hataaya gaya. sabhee kanekted deebaging divais abhee bhee sandesh dekh
 deebag log nikaalana viphal: {0}
 badalatee nirdeshika viphal rahee: {0}
 pata nirdisht karen
-nirdeshika nikaalane mein asamarth: {0}
 samayakshetr galat tareeke se nirdisht kiya gaya hai.
 amaany profail chayan.
 profail {1} se {0} se kanekt karane ka prayaas kar raha hai ...
@@ -458,12 +456,8 @@ soochana ko khaarij karane kee koshish kar raha truti
 usrmgr: upayogakarta naam {0} banaane mein viphal: {1}
 upayogakarta ka naam badalane mein viphal. {0}
 anumati soochiyon mein se ek mein upayogakarta naam {0} nahin hai.
-fail se anumatiyaan lod karane mein viphal: {0}
-host naam badalane mein viphal: {0}
 upayogakarta nahin mila
 upayogakarta naam ka paasavard badalane mein viphal: {0}
-fail ya nirdeshika kee pratilipi banaane mein viphal: {0}
-fail ya nirdeshika le jaane mein viphal: {0}
 "{0}" se milaan karane ke lie fail khojane mein asamarth: {1}
 fail {0} ke lie daunalod viphal raha.
 doorasth failon ko soocheebaddh karane mein viphal: {0}
@@ -519,7 +513,6 @@ mod {0} ka paart naam nahin hai. mod paarsing viphal rahee. srot kod kee sameeks
 deebag log ko khaalee karane se pahale aapako deebag mod chaaloo karana hoga.
 {0} nae sandesh inaboks mein aae.
 unhen dekhane ke lie "mail" kholen.
-fail nikaalane mein asamarth: {0}
 nirdeshika ya fail ko nikaalata hai
 {0} ko hata nahin sakate kyonki yah maujood nahin hai.
 baahar nikalane ke lie chtrl + ch dabaen.
@@ -1279,7 +1272,6 @@ disk modal:
 vartamaan bhaasha kee sanskrti
 yadi aap sunishchit hain ki aapane sahee anubhaag khola hai, to is sandesh ko dekhen:
 ek ftp sarvar kamaand nishpaadit karata hai
-pop3 sarvar pata aur port darj karen (<pata> ya <pata>:[port]):
 mel ke lie pop3 sheeghr shailee
 pop3 ping antaraal bhejen
 likhen ki aap apane pop3 sarvar ko kaise prompt karana chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
@@ -1571,8 +1563,6 @@ vibhinn prakaar ke aadeshon ke lie teen kaunt sho svich dvaara niyantrit kamaand
 ek baar uaish ke bhaav santusht hone ke baad kamaand nishpaadit karata hai
 abhivyakti mein sthiti nahin paee gaee.
 shart {0} ke lie {1} tarkon kee aavashyakata hai. {2} mil gaya.
-sthiti ko beech mein rakhane kee jaroorat hai.
-shart ko shuruaat mein rakha jaana chaahie.
 sintaiks truti ke kaaran abhivyakti ko paars karane mein truti.
 shart ko poora karane mein viphal. adhik jaanakaaree yahaan:
 paasavard maask kairektar
@@ -1657,7 +1647,6 @@ pratishat jitana adhik hoga, signal utana hee shor hoga
 skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}
 saamp ka khel!
 nirapeksh ke bajaay saapeksh path ka upayog karata hai
-pop3 mel aksham hai. yadi aap vaastav mein pop3 mel chaahate hain, to pop3 samarthan ke saath eplikeshan ko phir se sankalit karen.
 modaphail amaany hai.
 feed ko bukamaark karen
 naam aur upanaam janaretar

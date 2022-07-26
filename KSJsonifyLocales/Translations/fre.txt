@@ -53,7 +53,6 @@ L'économiseur d'écran {0} n'existe pas.
 Économiseur d'écran {0} introuvable dans la base de données. Vérifiez le nom et réessayez.
 L'économiseur d'écran ne peut pas être chargé à cause des problèmes suivants: 
 Il y a une grave erreur lors de l’impression de texte.
-Une erreur s'est produite lors de la tentative de création de la configuration.
 Mod ne peut pas être chargé pour les raisons suivantes:
 mod: Chargement des mods ...
 mod: Arrêter les mods ...
@@ -209,7 +208,6 @@ Journal de débogage supprimé. Tous les périphériques de débogage connectés
 La suppression du journal de débogage a échoué: {0}
 Le changement de répertoire a échoué: {0}
 Spécifiez l'adresse
-Impossible de supprimer le répertoire: {0}
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
@@ -458,12 +456,8 @@ Erreur lors de la tentative de rejet de la notification.
 usrmgr: échec de la création du nom d'utilisateur {0}: {1}
 Échec du changement de nom de l'utilisateur. {0}
 L'une des listes d'autorisations ne contient pas le nom d'utilisateur {0}.
-Échec du chargement des autorisations à partir du fichier: {0}
-Échec de la modification du nom d'hôte: {0}
 Utilisateur non trouvé
 Échec de la modification du mot de passe du nom d'utilisateur: {0}
-Échec de la copie du fichier ou du répertoire: {0}
-Échec du déplacement du fichier ou du répertoire: {0}
 Impossible de trouver le fichier correspondant à la chaîne "{0}": {1}
 Le téléchargement a échoué pour le fichier {0}.
 Échec de la liste des fichiers distants: {0}
@@ -519,7 +513,6 @@ Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez l
 Vous devez activer le mode débogage avant de pouvoir effacer le journal de débogage.
 {0} nouveaux messages sont arrivés dans la boîte de réception.
 Ouvrez «mail» pour les voir.
-Impossible de supprimer le fichier: {0}
 Supprime un répertoire ou un fichier
 Impossible de supprimer {0}, car il n'existe pas.
 Appuyez sur CTRL + C pour quitter.
@@ -1279,7 +1272,6 @@ Modèle de disque :
 Culture de la langue actuelle
 Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
 Exécute une commande de serveur FTP
-Saisissez l'adresse et le port du serveur POP3 (<adresse> ou <adresse> :[port]) :
 Style d'invite POP3 pour le courrier
 Envoyer l'intervalle de ping POP3
 Écrivez comment vous voulez que votre invite de serveur POP3 soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
@@ -1571,8 +1563,6 @@ Affiche le nombre de commandes dans la liste de commandes, contrôlé par les tr
 Exécute les commandes une fois que les expressions UESH sont satisfaites
 La condition n'a pas été trouvée dans l'expression.
 La condition {0} nécessite {1} arguments. J'ai {2}.
-La condition doit être placée au milieu.
-La condition doit être placée au début.
 Erreur lors de l'analyse de l'expression en raison d'une erreur de syntaxe.
 Échec de satisfaction de la condition. Plus d'infos ici:
 Caractère de masque de mot de passe
@@ -1657,7 +1647,6 @@ Plus le pourcentage est élevé, plus le signal est bruyant
 Le script est mal formé. Vérifiez le script et résolvez les éventuelles erreurs : {0}
 Le jeu du serpent !
 Utilise un chemin relatif au lieu d'absolu
-La messagerie POP3 est désactivée. Si vous voulez vraiment du courrier POP3, recompilez l'application avec le support POP3.
 Le fichier mod n'est pas valide.
 Met le flux en signet
 Générateur de nom et prénom

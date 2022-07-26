@@ -58,26 +58,6 @@ Namespace Network.Mail.Transfer
             End While
         End Sub
 
-        ''' <summary>
-        ''' [POP3] Tries to keep the connection going
-        ''' </summary>
-        Sub POP3KeepConnection()
-#If POP3Feature Then
-            'Every 30 seconds, send a ping to POP3 server
-            While POP3_Client.IsConnected
-                Thread.Sleep(Mail_POP3PingInterval)
-                If POP3_Client.IsConnected Then
-                    SyncLock POP3_Client.SyncRoot
-                        POP3_Client.NoOp()
-                    End SyncLock
-                Else
-                    Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping POP3KeepConnection()...")
-                    Thread.CurrentThread.Interrupt()
-                End If
-            End While
-#End If
-        End Sub
-
     End Module
 End Namespace
 

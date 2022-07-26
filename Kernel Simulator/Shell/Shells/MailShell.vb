@@ -39,17 +39,9 @@ Namespace Shell.Shells
             Dim IMAP_NoOp As New KernelThread("IMAP Keep Connection", False, AddressOf IMAPKeepConnection)
             IMAP_NoOp.Start()
             Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()")
-            If Not Mail_UsePop3 Then
-                Dim SMTP_NoOp As New KernelThread("SMTP Keep Connection", False, AddressOf SMTPKeepConnection)
-                SMTP_NoOp.Start()
-                Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
-            Else
-#If POP3Feature Then
-                Dim POP3_NoOp As New KernelThread("POP3 Keep Connection", False, AddressOf POP3KeepConnection)
-                POP3_NoOp.Start()
-                Wdbg(DebugLevel.I, "Made new thread about POP3KeepConnection()")
-#End If
-            End If
+            Dim SMTP_NoOp As New KernelThread("SMTP Keep Connection", False, AddressOf SMTPKeepConnection)
+            SMTP_NoOp.Start()
+            Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
             KernelEventManager.RaiseIMAPShellInitialized()
 
             While Not Bail
@@ -84,9 +76,6 @@ Namespace Shell.Shells
                 If Mail_NotifyNewMail Then ReleaseHandlers()
                 IMAP_Client.Disconnect(True)
                 SMTP_Client.Disconnect(True)
-#If POP3Feature Then
-                POP3_Client.Disconnect(True)
-#End If
             End If
         End Sub
 

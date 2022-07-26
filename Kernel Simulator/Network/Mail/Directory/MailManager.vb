@@ -57,32 +57,18 @@ Namespace Network.Mail.Directory
 
                     'Getting information about the message is vital to display them.
                     Wdbg(DebugLevel.I, "Getting message {0}...", i)
-                    If Not Mail_UsePop3 Then
-                        SyncLock IMAP_Client.SyncRoot
-                            Dim Msg As MimeMessage
-                            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                                Msg = Dir.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
-                            Else
-                                Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
-                            End If
-                            MsgFrom = Msg.From.ToString
-                            MsgSubject = Msg.Subject
-                            MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
-                        End SyncLock
-                    Else
-#If POP3Feature Then
-                        SyncLock POP3_Client.SyncRoot
-                            Dim Msg As MimeMessage
-                            Msg = POP3_Client.GetMessage(i)
-                            MsgFrom = Msg.From.ToString
-                            MsgSubject = Msg.Subject
-                            MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
-                        End SyncLock
-#Else
-                        Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
-#End If
-                    End If
+                    SyncLock IMAP_Client.SyncRoot
+                        Dim Msg As MimeMessage
+                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                            Msg = Dir.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
+                        Else
+                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
+                        End If
+                        MsgFrom = Msg.From.ToString
+                        MsgSubject = Msg.Subject
+                        MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
+                    End SyncLock
                     Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
 
                     'Display them now.
@@ -121,33 +107,23 @@ Namespace Network.Mail.Directory
                 Return False
             End If
 
-            If Not Mail_UsePop3 Then
-                SyncLock IMAP_Client.SyncRoot
-                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                        'Remove message
-                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                        Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
-                        Dir.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
-                        Wdbg(DebugLevel.I, "Removed.")
-                        Dir.Expunge()
-                    Else
-                        'Remove message
-                        IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                        Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber)
-                        IMAP_Client.Inbox.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
-                        Wdbg(DebugLevel.I, "Removed.")
-                        IMAP_Client.Inbox.Expunge()
-                    End If
-                End SyncLock
-            Else
-#If POP3Feature Then
-                SyncLock POP3_Client.SyncRoot
-                    POP3_Client.DeleteMessage(Message)
-                End SyncLock
-#Else
-                Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
-#End If
-            End If
+            SyncLock IMAP_Client.SyncRoot
+                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                    'Remove message
+                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                    Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
+                    Dir.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
+                    Wdbg(DebugLevel.I, "Removed.")
+                    Dir.Expunge()
+                Else
+                    'Remove message
+                    IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
+                    Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber)
+                    IMAP_Client.Inbox.Store(IMAP_Messages(Message), New StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted))
+                    Wdbg(DebugLevel.I, "Removed.")
+                    IMAP_Client.Inbox.Expunge()
+                End If
+            End SyncLock
             Return True
         End Function
 

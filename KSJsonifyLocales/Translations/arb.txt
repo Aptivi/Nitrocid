@@ -53,7 +53,6 @@ shashat altawaquf {0} ghyr mawjudatin.
 shashat altawaquf {0} ghyr mawjudat fi qaeidat albayanat. tuhaqiq min alaism wahawal maratan 'ukhraa.
 la yumkin tahmil shashat altawaquf bsbb ma yly:
 yujad khata khatir eind tabaeat alnas.
-yujad khata fi muhawalat takwin altawsif.
 la yumkin tahmil altaedil bsbb ma yly: 
 taedil: jar tahmil altaedilat ...
 taedil: jar waqf taedil ...
@@ -209,7 +208,6 @@ sajal altashih 'iizaltha. qad la tazal jmye 'ajhizat tashih al'akhta' almutasila
 fashil 'iizalat sajal altshyh: {0}
 fashila taghyir aldlyl: {0}
 hadad aleunwan
-ghyr qadir ealaa 'iizalat aldlyl: {0}
 tama tahdid almintaqat alzamaniat bishakl ghyr sahihin.
 aikhtiar milafi taerif ghyr salih.
 tuhawil alaitisal b {0} mae almilafi alshakhsii {1} ...
@@ -458,12 +456,8 @@ khata fi muhawalat rafd al'iikhtari.
 usrmgr: fashil 'iinsha' asm almustakhdim {0}: {1}
 fashilat 'iieadat tasmiat almustakhdimi. {0}
 la tahtawi 'iihdaa qawayim al'udhunat ealaa asm almustakhdim {0}.
-fashil tahmil al'udhunat min almilafa: {0}
-fashil taghyir asm almudifi: {0}
 almustakhdim lays mawjud
 fashil taghyir kalimat murur asm almustakhdimi: {0}
-fashil nasakh almilafi 'aw aldilili: {0}
-fashil naql almilafi 'aw aldilili: {0}
 taeadhar aleuthur ealaa milafin yutabiq alsilsila "{0}": {1}
 fashal tanzil almilafi {0}.
 fashal sard almilafaat albaeidati: {0}
@@ -519,7 +513,6 @@ Mod {0} lays lah aism aljuz'a. fashal tahlil wizarat aldifaei. rajae altaelimat 
 yajib tashghil wade altashih qabl 'an tatamakan min mash sijila altashihi.
 wasalat {0} min alrasayil aljadidat 'iilaa albarid alwaridi.
 aftah "mail" liruyatihim.
-taeadhur 'iizalat almilafa: {0}
 yuzil dalil 'aw milafun
 la yumkin 'iizala {0} li'anah ghayr mawjudi.
 adghat ealaa CTRL + C lilkhuruji.
@@ -1279,7 +1272,6 @@ tiraz alqirsu:
 thaqafat allughat alhalia
 'iidha kunt mtakdan min 'anak fataht alqism alsahih , fatahaqaq min hadhih alrisalati:
 yunafidh 'amr khadim FTP
-'adkhul eunwan wamanafidh khadim POP3 (<aleunwani> 'aw <aleunwani>: [almunfadhi]):
 namat muajah POP3 lilbarid
 'iirsal alfasil alzamanii bingh POP3
 aktub kayf turid 'an takun mutalabat khadim POP3. atrukh farighan liastikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
@@ -1571,8 +1563,6 @@ yatbae silsilatan liwahdat altahakum biastikhdam nawe allawn waltibaeat alkhatia
 yunafadh al'awamir bimujarad 'iirda' taebirat UESH
 lam yatima aleuthur ealaa alshart fi altaebiri.
 yatatalab alshart {0} wasitat {1}. hasalat ealaa {2}.
-yajib 'an tudae alhalat fi almuntasafi.
-yajib wade alshart fi albidayati.
 khataan fi tahlil altaebir bisabab khata fi bina' aljumlati.
 fashil fi talbiat alshartu. mazid min almaelumat huna:
 shakhsiat qinae kalimat almurur
@@ -1657,7 +1647,6 @@ kulama zadat alnisbat almiawiat , zadat dawda' al'iishara
 alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}
 luebat althuebani!
 yastakhdim almasar alnisbiu bdlaan min almasar almutlaq
-tama taetil barid POP3. 'iidha kunt turid hqan barid POP3 , fa'aeidu tajmie altatbiq biastikhdam daem POP3.
 alnamudhaj ghayr salihin.
 'iisharat marjieiat alkhulasa
 mawlid aliasm wallaqab

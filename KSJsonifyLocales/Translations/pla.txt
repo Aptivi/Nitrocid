@@ -53,7 +53,6 @@ Screensava {0} does not exist.
 Screensava {0} not fizzound 'n databaze. Check tha name n try again.
 Screensava can't be loaded coz of tha weed-smokin': Aint no L-I-M-I-to-tha-T. 
 There is a serious error when print'n text paper'd up.
-There be an error hatin' ta create configuration.
 Mod can't be loaded coz of tha weed-smokin': 
 mod: Mobbin' mods... Keep'n it gangsta dogg.
 mod: Messin' mods, niggaz, better recognize...
@@ -209,7 +208,6 @@ Debug log removed. All connected ballin' devices may still view messages. Death 
 Debug log removal failed: {0}
 Chang'n directory has failed: {0}
 Specify tha address
-Unable ta remove directory: {0}
 Timezone be specified incorrectly.
 Invalid profizzle selection in tha dogg pound.
 Try'n ta connect to {0} with profile {1}...
@@ -458,12 +456,8 @@ Error trippin' ta dismiss notification.
 usrmgr: Failed to create username {0}: {1}
 Failed ta rename playa. {0}
 One of tha permission lists doesn't contain username {0}.
-Failed ta load permissions from file: {0}
-Failed ta change host name: {0}
 Hustla not found
 Fizzle ta change password of username yaba daba dizzle: {0}
-Failed ta cizzle file or directory: Holler at tha boss dogg. {0}
-Failed ta move file or directory droppin hits: {0}
 Unable ta find file ta match pimpin' "{0}" from tha streets of tha L-B-C: {1}
 Download failed fo` file {0} puttin tha smack down.
 Failed ta list remote files: {0}
@@ -519,7 +513,6 @@ Mod {0} does not have tha part name. Mod pars'n failed in all flavas. Review tha
 You must turn on debug mode before you cizzay clear debug log.
 {0} new messages arrived 'n inbox. Hollaz to the East Side.
 Open "mail" ta see them. Hollaz to the East Side.
-Unable ta remove file: Wussup to all my niggaz in the house. {0}
 Removes a directory or a file
 Can't remove {0} coz it doesn't exist. Chill as I take you on a trip.
 Press CTRL+C ta exit.
@@ -1279,7 +1272,6 @@ Disk model:
 Culture of tha current language
 If yoe sure that you opened tha right section, check dis message out:
 Executes an FTP serva command
-Brotha POP3 bitch address n port (<address> or <address>, ya feel me?[port]): 
 POP3 prompt style for mail
 Send POP3 rhymin' interval
 Write how you want yo' POP3 shot calla prompt ta be yaba daba dizzle. Leave blank ta uze default style. Placeholda be parze' ya feelin' me?
@@ -1571,8 +1563,6 @@ Shows tha commands count 'n tha command list, controlled by tha three count show
 Executes commands once tha UESH expressions be satisfy
 Tha condition was not found 'n tha expression.
 Condition {0} requires {1} arguments. Gots {2}.
-Tha condition needs ta be placed 'n tha middle.
-Tha condition needs ta be placed 'n tha beginn'n.
 Error clockin' expression due to syntax error.
 Failed ta satisfy condition. More info here:
 Password mizzask killa
@@ -1657,7 +1647,6 @@ Tha greata tha percentage, tha noisier tha signal
 Tha script be malformed wit da big Bo$$ Dogg. Check tha script n resolve any errors cuz its a pimp thang: {0}
 Tha snake game!
 Uzes relative path instead of absolute
-POP3 mail be disabled from tha streets of tha L-B-C. If you really want POP3 mail, re-compile tha application wit POP3 support.
 Tha modfile be invalid cuz I put gangsta rap on tha map.
 Bookmarks tha fee'
 Name n surname generator

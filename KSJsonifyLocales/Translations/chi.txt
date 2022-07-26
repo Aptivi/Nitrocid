@@ -53,7 +53,6 @@ Píngmù bǎohù chéngxù {0} bù cúnzài.
 Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Jiǎnchá míngchēng, ránhòu chóng shì.
 Yóuyú yǐxià yuányīn, wúfǎ jiāzài píngmù bǎohù chéngxù: 
 Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
-Chángshì chuàngjiàn pèizhì shí chūcuò.
 Yóuyú yǐxià yuányīn, wúfǎ jiāzài Mod:
 mod: Jiāzài mods...
 mod: Tíngzhǐ mods...
@@ -209,7 +208,6 @@ Tiáoshì rìzhì yǐ shānchú. Suǒyǒu liánjiē de tiáoshì shèbèi réng 
 Tiáoshì rìzhì shānchú shībài:{0}
 Gēnggǎi mùlù shībài:{0}
 zhǐdìng dìzhǐ
-wúfǎ shānchú mùlù:{0}
 Shíqū zhǐdìng bù zhèngquè.
 Wúxiào de pèizhì wénjiàn xuǎnzé.
 Chángshì shǐyòng pèizhì wénjiàn {1} liánjiē dào {0}...
@@ -458,12 +456,8 @@ Chángshì guānbì tōngzhī shí chūcuò.
 Usrmgr: Wúfǎ chuàngjiàn yònghù míng {0}:{1}
 Zhòng mìngmíng yònghù shībài. {0}
 Quánxiàn lièbiǎo zhī yī bù bāohán yònghù míng {0}.
-Wúfǎ cóng wénjiàn {0} jiāzài quánxiàn
-gēnggǎi zhǔjī míng shībài:{0}
 Zhǎo bù dào shǐyòng zhě
 gēnggǎi yònghù míng {0} de mìmǎ shībài
-fùzhì wénjiàn huò mùlù shībài:{0}
-Wúfǎ yídòng wénjiàn huò mùlù:{0}
 Zhǎo bù dào yǔ zìfú chuàn “ {0}” pǐpèi de wénjiàn:{1}
 Wénjiàn {0} xià zǎi shībài.
 Wúfǎ liè chū yuǎnchéng wénjiàn:{0}
@@ -519,7 +513,6 @@ Mod {0} méiyǒu bùjiàn míngchēng. Mod jiěxī shībài. Chákàn yuán dài
 Nín bìxū xiān dǎkāi tiáoshì móshì, ránhòu cáinéng qīngchú tiáoshì rìzhì.
 {0} Tiáo xīn yóujiàn dàodá shōu jiàn xiāng.
 Dǎkāi “mail” yǐ chákàn tāmen.
-Wúfǎ shānchú wénjiàn:{0}
 Shānchú mùlù huò wénjiàn
 wúfǎ shānchú {0}, yīnwèi tā bù cúnzài.
 Àn CTRL + C tuìchū.
@@ -1279,7 +1272,6 @@ Cípán xíng hào:
 dāngqián yǔyán de wénhuà
 rúguǒ nín quèdìng nín dǎkāile zhèngquè de bùfèn, qǐng chákàn cǐ xiāoxī:
 Zhíxíng FTP fúwùqì mìnglìng
-shūrù POP3 fúwùqì dìzhǐ hé duānkǒu (<address> huò <address>:[Port]):
 Yóujiàn de POP3 tíshì yàngshì
 fāsòng POP3 ping jiàngé
 xiě xià nín xīwàng POP3 fúwùqì tíshì fú de yàngzi. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī.
@@ -1571,8 +1563,6 @@ xiǎnshì mìnglìng lièbiǎo zhōng de mìnglìng jìshù, yóu sān gè jìsh
 Yīdàn mǎnzú UESH biǎodá shì, jiù zhíxíng mìnglìng
 zài biǎodá shì zhōng zhǎo bù dào tiáojiàn.
 Tiáojiàn {0} xūyào {1} gè cānshù. Dédào {2}.
-Tiáojiàn xūyào fàng zài zhōngjiān.
-Tiáojiàn xūyào fàng zài kāitóu.
 Yóuyú yǔfǎ cuòwù, jiěxī biǎodá shì shí chūcuò.
 Wèi néng mǎnzú tiáojiàn. Gèng duō xìnxī zài zhèlǐ:
 Mìmǎ yǎn mǎ zìfú
@@ -1657,7 +1647,6 @@ Bǎifēnbǐ yuè dà, xìnhào yuè cáozá
 jiǎoběn géshì bù zhèngquè. Jiǎnchá jiǎoběn bìng jiějué suǒyǒu cuòwù:{0}
 Shé yóuxì!
 Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng
-POP3 yóujiàn bèi jìnyòng. Rúguǒ nín zhēn de xiǎng yào POP3 yóujiàn, qǐng chóngxīn biānyì zhīchí POP3 de yìngyòng chéngxù.
 Mó zǔ wénjiàn wúxiào.
 Wèi tíyào tiānjiā shūqiān
 xìngmíng hé xìngshì shēngchéng qì

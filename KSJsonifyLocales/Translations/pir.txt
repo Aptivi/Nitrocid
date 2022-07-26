@@ -53,7 +53,6 @@ error tryin' to add username.
  screensaver {0} not found in database. Check the name an' try again.
  screensaver can't be loaded because o' the following: 
 there be a serious error when printin' text.
- there be an error tryin' to create configuration.
  mod can't be loaded because o' the following: 
 mod: loadin' mods...
  mod: stoppin' mods...
@@ -209,7 +208,6 @@ debug log removed. All connected debuggin' devices may still view messages.
  debug log removal failed: {0}
 changin' directory 'as failed: {0}
 specify the address
-unable to remove directory: {0}
 timezone be specified incorrectly.
  invalid profile selection.
  tryin' to connect to {0} with profile {1}...
@@ -458,12 +456,8 @@ removed alias {0} successfully.
  usrmgr: failed to create username {0}: {1}
 failed to rename user. {0}
 one o' the permission lists doesn't contain username {0}.
- failed to load permissions from file: {0}
-failed to change 'ost name: {0}
 user not found
 failed to change password o' username: {0}
-failed to copy file or directory: {0}
-failed to move file or directory: {0}
 unable to find file to match strin' "{0}": {1}
 download failed fer file {0}.
  failed to list remote files: {0}
@@ -519,7 +513,6 @@ mod {0} does not 'ave the part name. Mod parsin' failed. Review the source code.
  ye must turn on debug mode before ye can clearrr debug log.
  {0} new messages arrived in inbox.
  open "lsmail" to see them.
- unable to remove file: {0}
 removes a directory or a file
 can't remove {0} because it doesn't exist.
  press ctrl+c to exit.
@@ -1279,7 +1272,6 @@ disk model:
 culture o' the current language
 if ye be sure that there ye've opened starboard section, check this here message out:
  executes an ftp server command
-enter pop3 server address an' port (<address> or <address>:[port]): 
 pop3 prompt style fer mail
 send pop3 pin' interval
 write 'ow ye want yer pop3 server prompt to be. Set sail blank to use default style. Placeholders be parsed.
@@ -1571,8 +1563,6 @@ shows the commands count in the command list, controlled by the three count show
  executes commands once the uesh expressions be satisfied
 the condition been not found in the expression.
  condition {0} requires {1} arguments. Got {2}.
- the condition needs to be placed in the middle.
- the condition needs to be placed in the beginnin'.
  error parsin' expression due to syntax error.
  failed to satisfy condition. More info 'ere:
 password mask character
@@ -1657,7 +1647,6 @@ the greater the percentage, the noisier the signal
 the script be malformed. Check the script an' resolve any errors: {0}
 the snake game!
 uses relative path instead o' absolute
-Pop3 mail be disabled. If ye really want pop3 mail, re-compile the application with pop3 support.
 The modfile be invalid.
  bookmarks the feed
 name an' surname generator

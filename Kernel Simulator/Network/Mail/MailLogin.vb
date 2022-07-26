@@ -19,7 +19,6 @@
 Imports MailKit
 Imports MailKit.Net.Imap
 Imports MailKit.Net.Smtp
-Imports MailKit.Net.Pop3
 Imports MimeKit.Cryptography
 Imports Addresstigator
 Imports KS.Network.Mail.PGP
@@ -35,14 +34,9 @@ Namespace Network.Mail
         Public Mail_PassPromptStyle As String = ""
         Public Mail_IMAPPromptStyle As String = ""
         Public Mail_SMTPPromptStyle As String = ""
-        Public Mail_POP3PromptStyle As String = ""
         Public Mail_GPGPromptStyle As String = ""
         Public Mail_Debug As Boolean
         Public Mail_AutoDetectServer As Boolean = True
-
-#If POP3Feature Then
-        Public POP3_Client As Pop3Client
-#End If
 
         ''' <summary>
         ''' Mail server type
@@ -56,12 +50,6 @@ Namespace Network.Mail
             ''' The SMTP server
             ''' </summary>
             SMTP
-#If POP3Feature Then
-            ''' <summary>
-            ''' The POP3 server
-            ''' </summary>
-            POP3
-#End If
         End Enum
 
         ''' <summary>
@@ -99,14 +87,9 @@ Namespace Network.Mail
 
             Dim DynamicAddressIMAP As String = ServerDetect(Username, ServerType.IMAP)
             Dim DynamicAddressSMTP As String = ServerDetect(Username, ServerType.SMTP)
-#If POP3Feature Then
-            Dim DynamicAddressPOP3 As String = ServerDetect(Username, ServerType.POP3)
-#Else
-            Dim DynamicAddressPOP3 As String = ""
-#End If
 
-            If DynamicAddressIMAP <> "" And (DynamicAddressSMTP <> "" Or DynamicAddressPOP3 <> "") And Mail_AutoDetectServer Then
-                ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0, DynamicAddressPOP3, 0)
+            If DynamicAddressIMAP <> "" And (DynamicAddressSMTP <> "") And Mail_AutoDetectServer Then
+                ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0)
             Else
                 PromptServer()
             End If
@@ -120,8 +103,6 @@ Namespace Network.Mail
             Dim IMAP_Port As Integer
             Dim SMTP_Address As String = ""
             Dim SMTP_Port As Integer
-            Dim POP3_Address As String = ""
-            Dim POP3_Port As Integer = 587
             'IMAP server address and port
             If Not String.IsNullOrWhiteSpace(Mail_IMAPPromptStyle) Then
                 Write(ProbePlaces(Mail_IMAPPromptStyle), False, ColTypes.Input)
@@ -131,36 +112,21 @@ Namespace Network.Mail
             IMAP_Address = ReadLine(False)
             Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
 
-            'SMTP/POP3 server address and port
-            If Not Mail_UsePop3 Then
-                If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
-                    Write(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
-                Else
-                    Write(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
-                End If
-                SMTP_Address = ReadLine(False)
-                SMTP_Port = 587
-                Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
+            'SMTP server address and port
+            If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
+                Write(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
             Else
-#If POP3Feature Then
-                If Not String.IsNullOrWhiteSpace(Mail_POP3PromptStyle) Then
-                    Write(ProbePlaces(Mail_POP3PromptStyle), False, ColTypes.Input)
-                Else
-                    Write(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
-                End If
-                POP3_Address = ReadLine(False)
-                POP3_Port = 995
-                Wdbg(DebugLevel.I, "POP3 Server: ""{0}""", POP3_Address)
-#Else
-                Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
-#End If
+                Write(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
+            SMTP_Address = ReadLine(False)
+            SMTP_Port = 587
+            Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
 
             'Parse addresses to connect
-            ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, POP3_Address, POP3_Port)
+            ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
         End Sub
 
-        Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer, POP3_Address As String, POP3_Port As Integer)
+        Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer)
             'If the address is <address>:[port]
             If IMAP_Address.Contains(":") Then
                 Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
@@ -177,19 +143,9 @@ Namespace Network.Mail
                 Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port)
             End If
 
-            'If the address is <address>:[port]
-#If POP3Feature Then
-            If POP3_Address.Contains(":") Then
-                Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
-                POP3_Port = CInt(POP3_Address.Substring(POP3_Address.IndexOf(":") + 1))
-                POP3_Address = POP3_Address.Remove(POP3_Address.IndexOf(":"))
-                Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", POP3_Address, POP3_Port)
-            End If
-#End If
-
             'Try to connect
             Mail_Authentication.Domain = IMAP_Address
-            ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, POP3_Address, POP3_Port)
+            ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
         End Sub
 
         ''' <summary>
@@ -210,15 +166,6 @@ Namespace Network.Mail
                         ReturnedMailAddress = ImapServer.Hostname
                         ReturnedMailPort = ImapServer.Port
                     End If
-#If POP3Feature Then
-                Case ServerType.POP3
-                    Dim Pop3Servers = DynamicConfiguration.EmailProvider.IncomingServer.Select(Function(x) x).Where(Function(x) x.Type = "pop3")
-                    If Pop3Servers.Count > 0 Then
-                        Dim Pop3Server As IncomingServer = Pop3Servers(0)
-                        ReturnedMailAddress = Pop3Server.Hostname
-                        ReturnedMailPort = Pop3Server.Port
-                    End If
-#End If
                 Case ServerType.SMTP
                     Dim SmtpServer As OutgoingServer = DynamicConfiguration.EmailProvider.OutgoingServer
                     ReturnedMailAddress = SmtpServer?.Hostname
@@ -236,17 +183,12 @@ Namespace Network.Mail
         ''' <param name="Port">A port of the IMAP server</param>
         ''' <param name="SmtpAddress">An IP address of the SMTP server</param>
         ''' <param name="SmtpPort">A port of the SMTP server</param>
-        ''' <param name="POP3_Address">An IP address of the POP3 server</param>
-        ''' <param name="POP3_Port">A port of the POP3 server</param>
-        Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer, POP3_Address As String, POP3_Port As Integer)
+        Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer)
             Try
                 'Register the context and initialize the loggers if debug mode is on
                 If DebugMode And Mail_Debug Then
                     IMAP_Client = New ImapClient(New ProtocolLogger(HomePath + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
                     SMTP_Client = New SmtpClient(New ProtocolLogger(HomePath + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
-#If POP3Feature Then
-                    POP3_Client = New Pop3Client(New ProtocolLogger(HomePath + "/Pop3Debug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
-#End If
                 End If
                 CryptographyContext.Register(GetType(PGPContext))
 
@@ -256,38 +198,19 @@ Namespace Network.Mail
                 IMAP_Client.Connect(Address, Port, Security.SecureSocketOptions.SslOnConnect)
                 AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
-                'SMTP/POP3 Connection
-                If Not Mail_UsePop3 Then
-                    Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
-                    Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
-                    SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTlsWhenAvailable)
-                Else
-#If POP3Feature Then
-                    Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, POP3_Address)
-                    Wdbg(DebugLevel.I, "Connecting to POP3 Server {0}:{1} with SSL...", Address, Port)
-                    POP3_Client.Connect(POP3_Address, POP3_Port, Security.SecureSocketOptions.SslOnConnect)
-#Else
-                    Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
-#End If
-                End If
+                'SMTP Connection
+                Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
+                Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
+                SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTlsWhenAvailable)
 
                 'IMAP Authentication
                 Write(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address)
                 IMAP_Client.Authenticate(Mail_Authentication)
 
-                'SMTP/POP3 Authentication
-                If Not Mail_UsePop3 Then
-                    Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
-                    SMTP_Client.Authenticate(Mail_Authentication)
-                Else
-#If POP3Feature Then
-                    Wdbg(DebugLevel.I, "Authenticating {0} to POP3 server {1}...", Mail_Authentication.UserName, POP3_Address)
-                    POP3_Client.Authenticate(Mail_Authentication)
-#Else
-                    Throw New PlatformNotSupportedException(DoTranslation("POP3 mail is disabled. If you really want POP3 mail, re-compile the application with POP3 support."))
-#End If
-                End If
+                'SMTP Authentication
+                Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
+                SMTP_Client.Authenticate(Mail_Authentication)
                 RemoveHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
                 'Initialize shell
@@ -298,9 +221,6 @@ Namespace Network.Mail
                 WStkTrc(ex)
                 IMAP_Client.Disconnect(True)
                 SMTP_Client.Disconnect(True)
-#If POP3Feature Then
-                POP3_Client.Disconnect(True)
-#End If
             End Try
         End Sub
 

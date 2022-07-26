@@ -53,7 +53,6 @@ err'r trying to add username.
  screensav'r {0} not hath found in database.  Check the name and tryeth again. 
  screensav'r can't beest load'd because of the following: 
 thither is a serious err'r at which hour printing text. 
- thither is an err'r trying to maketh configuration. 
  mod can't beest load'd because of the following: 
 mod: loading mods. 
  mod: stopping mods. 
@@ -209,7 +208,6 @@ debug log did remove.  All did connect debugging devices may still view messages
  debug log removal did fail: {0}
 changing directory hast did fail: {0}
 specify the address
-unable to remove directory: {0}
 timezone is specifi'd incorrectly. 
  invalid profile selection. 
  trying to connect to {0} with profile {1}. 
@@ -458,12 +456,8 @@ did remove alias {0} successfully.
  usrmgr: did fail to maketh username {0}: {1}
 did fail to rename user.  {0}
 one of the permission lists doesn't enwheel username {0}. 
- did fail to load permissions from file: {0}
-did fail to changeth host name: {0}
 user not hath found
 did fail to changeth password of username: {0}
-did fail to copy file 'r directory: {0}
-did fail to moveth file 'r directory: {0}
 unable to findeth file to match string "{0}": {1}
 download did fail f'r file {0}. 
  did fail to list remote files: {0}
@@ -519,7 +513,6 @@ mod {0} doest not has't the part name.  Mod parsing did fail.  Review the source
  thee wilt turn on debug mode ere thee can clear debug log. 
  {0} new messages arriv'd in inbox. 
  ope "mail" to see those folk. 
- unable to remove file: {0}
 removes a directory 'r a file
 can't remove {0} because t doesn't exist. 
  press ctrl+c to exit. 
@@ -1279,7 +1272,6 @@ disk model:
 culture of the current language
 if 't be true thou art sure yond thee've hath opened the right section, check this message out:
 executes an ftp serv'r hest
-enter pop3 serv'r address and port (<address> 'r <address>:[port]): 
 pop3 prompt style f'r mail
 sendeth pop3 ping interval
 writeth how thee wanteth thy pop3 serv'r prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
@@ -1571,8 +1563,6 @@ shows the hests count in the hest list, did control by the three count showeth s
  executes hests once the uesh expressions art did satisfy
 the condition wast not hath found in the expression. 
  condition {0} requires {1} arguments.  Did get {2}. 
- the condition needeth to beest did place in the middle. 
- the condition needeth to beest did place in the beginning. 
  err'r parsing expression due to syntax err'r. 
  did fail to satisfy condition.  Moo info hither:
 password mask character
@@ -1657,7 +1647,6 @@ the ranker the percentage, the noisier the signal
 the script is malform'd.  Check the script and resolve any errors: {0}
 the snake game!
 uses relative path instead of absolute
-pop3 mail is disabl'd.  If 't be true thee very much wanteth pop3 mail, re-compile the application with pop3 supporteth. 
  the modfile is invalid. 
  bookmarks the fe'd
 name and surname generat'r

@@ -53,7 +53,6 @@ Screensaver {0} bestaat niet.
 Screensaver {0} niet gevonden in database. Controleer de naam en probeer het opnieuw.
 Screensaver kan niet worden geladen vanwege het volgende:
 Er is een ernstige fout opgetreden bij het afdrukken van tekst.
-Er is een fout opgetreden bij het proberen om de configuratie te maken.
 Mod kan niet worden geladen vanwege het volgende:
 mod: Mods laden ...
 mod: Mods stoppen ...
@@ -209,7 +208,6 @@ Foutopsporingslogboek verwijderd. Alle aangesloten foutopsporingsapparaten kunne
 Verwijderen van logboek voor foutopsporing is mislukt: {0}
 Het wijzigen van de map is mislukt: {0}
 Geef het adres op
-Kan map niet verwijderen: {0}
 Tijdzone is onjuist opgegeven.
 Ongeldige profielselectie.
 Probeer verbinding te maken met {0} met profiel {1} ...
@@ -458,12 +456,8 @@ Fout bij het negeren van melding.
 usrmgr: kan geen gebruikersnaam {0} maken: {1}
 Het wijzigen van de naam van de gebruiker is mislukt. {0}
 Een van de toestemmingslijsten bevat geen gebruikersnaam {0}.
-Kan machtigingen niet laden uit bestand: {0}
-Kan hostnaam niet wijzigen: {0}
 Gebruiker niet gevonden
 Kan wachtwoord van gebruikersnaam niet wijzigen: {0}
-Kan bestand of directory niet kopiëren: {0}
-Kan bestand of directory niet verplaatsen: {0}
 Kan bestand niet vinden dat overeenkomt met tekenreeks "{0}": {1}
 Downloaden voor bestand {0} mislukt.
 Kan externe bestanden niet weergeven: {0}
@@ -519,7 +513,6 @@ Mod {0} heeft niet de onderdeelnaam. Mod-parsing is mislukt. Bekijk de broncode.
 U moet de foutopsporingsmodus inschakelen voordat u het foutopsporingslogboek kunt wissen.
 {0} nieuwe berichten zijn binnengekomen in de inbox.
 Open "mail" om ze te zien.
-Kan bestand niet verwijderen: {0}
 Verwijdert een map of een bestand
 Kan {0} niet verwijderen omdat het niet bestaat.
 Druk op CTRL + C om af te sluiten.
@@ -1279,7 +1272,6 @@ Schijfmodel:
 Cultuur van de huidige taal
 Als je zeker weet dat je de juiste sectie hebt geopend, bekijk dan dit bericht:
 Voert een FTP-serveropdracht uit
-Voer het POP3-serveradres en de poort in (<adres> of <adres>:[poort]):
 POP3-promptstijl voor e-mail
 POP3-ping-interval verzenden
 Schrijf hoe u wilt dat uw POP3-serverprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
@@ -1571,8 +1563,6 @@ Toont het aantal commando's in de commandolijst, bestuurd door de drie count sho
 Voert opdrachten uit zodra aan de UESH-expressies is voldaan
 De voorwaarde is niet gevonden in de expressie.
 Voorwaarde {0} vereist {1} argumenten. Heb {2}.
-De voorwaarde moet in het midden worden geplaatst.
-De voorwaarde moet in het begin worden geplaatst.
 Fout bij parseren van expressie vanwege syntaxisfout.
 Voldeed niet aan de voorwaarde. Meer info hier:
 Wachtwoord masker karakter
@@ -1657,7 +1647,6 @@ Hoe groter het percentage, hoe luidruchtiger het signaal
 Het script is misvormd. Controleer het script en los eventuele fouten op: {0}
 Het slangenspel!
 Gebruikt relatief pad in plaats van absoluut
-POP3-mail is uitgeschakeld. Als u echt POP3-mail wilt, moet u de toepassing opnieuw compileren met POP3-ondersteuning.
 Het modbestand is ongeldig.
 Voeg een bladwijzer toe aan de feed
 Naam- en achternaamgenerator

@@ -53,7 +53,6 @@ Der Bildschirmschoner {0} existiert nicht.
 Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
 Der Bildschirmschoner kann aufgrund folgender Ursachen nicht geladen werden:
 Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
-Beim Erstellen der Konfiguration ist ein Fehler aufgetreten.
 Der Mod kann wegen folgendem nicht geladen werden:
 mod: Lade Mods ...
 mod: Mods stoppen ...
@@ -209,7 +208,6 @@ Debug-Protokoll entfernt. Alle angeschlossenen Debugging-Geräte können weiterh
 Fehler beim Entfernen des Debug-Protokolls: {0}
 Das Ändern des Verzeichnisses ist fehlgeschlagen: {0}
 Geben Sie die Adresse an
-Verzeichnis kann nicht entfernt werden: {0}
 Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
@@ -458,12 +456,8 @@ Fehler beim Versuch, die Benachrichtigung zu schließen.
 usrmgr: Benutzername {0} konnte nicht erstellt werden: {1}
 Benutzer konnte nicht umbenannt werden. {0}
 Eine der Berechtigungslisten enthält keinen Benutzernamen {0}.
-Fehler beim Laden der Berechtigungen aus der Datei: {0}
-Hostname konnte nicht geändert werden: {0}
 Benutzer nicht gefunden
 Fehler beim Ändern des Kennworts des Benutzernamens: {0}
-Fehler beim Kopieren der Datei oder des Verzeichnisses: {0}
-Datei oder Verzeichnis konnte nicht verschoben werden: {0}
 Datei kann nicht gefunden werden, die der Zeichenfolge "{0}" entspricht: {1}
 Download für Datei {0} fehlgeschlagen.
 Remote-Dateien konnten nicht aufgelistet werden: {0}
@@ -519,7 +513,6 @@ Mod {0} hat keinen Teilenamen. Mod-Analyse fehlgeschlagen. Überprüfen Sie den 
 Sie müssen den Debug-Modus aktivieren, bevor Sie das Debug-Protokoll löschen können.
 {0} Neue Nachrichten sind im Posteingang eingetroffen.
 Öffnen Sie "mail", um sie zu sehen.
-Datei kann nicht entfernt werden: {0}
 Entfernt ein Verzeichnis oder eine Datei
 {0} kann nicht entfernt werden, da es nicht vorhanden ist.
 Drücken Sie STRG + C, um den Vorgang zu beenden.
@@ -1279,7 +1272,6 @@ Festplattenmodell:
 Kultur der aktuellen Sprache
 Wenn Sie sicher sind, dass Sie den richtigen Abschnitt geöffnet haben, sehen Sie sich diese Nachricht an:
 Führt einen FTP-Serverbefehl aus
-Geben Sie die Adresse und den Port des POP3-Servers ein (<Adresse> oder <Adresse>:[Port]):
 POP3-Eingabeaufforderungsstil für E-Mails
 POP3-Ping-Intervall senden
 Schreiben Sie, wie die Eingabeaufforderung Ihres POP3-Servers aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
@@ -1571,8 +1563,6 @@ Zeigt die Anzahl der Befehle in der Befehlsliste an, gesteuert durch die drei Co
 Führt Befehle aus, sobald die UESH-Ausdrücke erfüllt sind
 Die Bedingung wurde im Ausdruck nicht gefunden.
 Bedingung {0} erfordert {1} Argumente. {2} erhalten.
-Die Bedingung muss in der Mitte platziert werden.
-Die Bedingung muss an den Anfang gestellt werden.
 Fehler beim Analysieren des Ausdrucks aufgrund eines Syntaxfehlers.
 Bedingung konnte nicht erfüllt werden. Mehr Infos hier:
 Passwortmaskenzeichen
@@ -1657,7 +1647,6 @@ Je größer der Prozentsatz, desto verrauschter das Signal
 Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie alle Fehler: {0}
 Das Schlangenspiel!
 Verwendet einen relativen Pfad anstelle eines absoluten
-POP3-Mail ist deaktiviert. Wenn Sie wirklich POP3-Mail wünschen, kompilieren Sie die Anwendung mit POP3-Unterstützung neu.
 Die Moddatei ist ungültig.
 Lesezeichen für den Feed
 Vor- und Nachnamengenerator
