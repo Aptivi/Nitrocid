@@ -245,7 +245,7 @@ Namespace Network.FTP.Transfer
                     'Try to download 3 times
                     Dim DownloadedBytes() As Byte = Array.Empty(Of Byte)()
                     Dim DownloadedContent As New StringBuilder
-                    Dim Downloaded As Boolean = ClientFTP.Download(DownloadedBytes, File)
+                    Dim Downloaded As Boolean = ClientFTP.DownloadBytes(DownloadedBytes, File)
                     For Each DownloadedByte As Byte In DownloadedBytes
                         DownloadedContent.Append(Convert.ToChar(DownloadedByte))
                     Next

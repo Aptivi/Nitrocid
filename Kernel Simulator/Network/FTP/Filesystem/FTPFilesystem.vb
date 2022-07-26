@@ -59,21 +59,21 @@ Namespace Network.FTP.Filesystem
                     For Each DirListFTP As FtpListItem In Listing
                         EntryBuilder.Append($"- {DirListFTP.Name}")
                         'Check to see if the file that we're dealing with is a symbolic link
-                        If DirListFTP.Type = FtpFileSystemObjectType.Link Then
+                        If DirListFTP.Type = FtpObjectType.Link Then
                             EntryBuilder.Append(" >> ")
                             EntryBuilder.Append(DirListFTP.LinkTarget)
                             DirListFTP = DirListFTP.LinkObject
                         End If
 
                         If DirListFTP IsNot Nothing Then
-                            If DirListFTP.Type = FtpFileSystemObjectType.File Then
+                            If DirListFTP.Type = FtpObjectType.File Then
                                 If ShowDetails Then
                                     EntryBuilder.Append(": ")
                                     FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                                     ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
                                     EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString((FileSize / 1024).ToString("N2"), ModDate.ToString))
                                 End If
-                            ElseIf DirListFTP.Type = FtpFileSystemObjectType.Directory Then
+                            ElseIf DirListFTP.Type = FtpObjectType.Directory Then
                                 EntryBuilder.Append("/")
                             End If
                         End If
