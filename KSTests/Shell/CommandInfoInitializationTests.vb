@@ -18,6 +18,7 @@
 
 Imports KS.Shell.ShellBase
 Imports KS.Shell.ShellBase.Commands
+Imports KS.Shell.ShellBase.Shells
 
 <TestFixture> Public Class CommandInfoInitializationTests
 

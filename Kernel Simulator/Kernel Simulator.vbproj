@@ -170,6 +170,7 @@
     <Import Include="KS.Shell" />
     <Import Include="KS.Shell.ShellBase" />
     <Import Include="KS.Shell.ShellBase.Commands" />
+    <Import Include="KS.Shell.ShellBase.Shells" />
     <Import Include="Microsoft.VisualBasic.Constants" />
     <Import Include="Newtonsoft.Json" />
     <Import Include="Renci.SshNet" />
