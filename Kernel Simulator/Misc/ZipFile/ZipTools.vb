@@ -20,6 +20,8 @@ Imports KS.Files.Querying
 Imports KS.Files.Operations
 Imports SharpCompress.Archives.Zip
 Imports System.IO
+Imports SharpCompress.Readers
+Imports SharpCompress.Writers
 
 Namespace Misc.ZipFile
     Public Module ZipTools
@@ -63,7 +65,7 @@ Namespace Misc.ZipFile
 
             'Define local destination while getting an entry from target
             Dim LocalDestination As String = Where + "/"
-            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.Entries(CInt(AbsoluteTarget))
+            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.Entries.Where(Function(x) x.Key = AbsoluteTarget).ToArray()(0)
             If FullTargetPath Then
                 LocalDestination += ZipEntry.Key
             End If
@@ -72,8 +74,13 @@ Namespace Misc.ZipFile
             'Try to extract file
             Directory.CreateDirectory(LocalDestination)
             MakeFile(LocalDestination + ZipEntry.Key)
-            Dim ZipEntryStream As New StreamReader(ZipEntry.OpenEntryStream())
-            Dim LocalDestinationStream As New StreamWriter(LocalDestination + ZipEntry.Key)
+            ZipShell_FileStream.Seek(0, SeekOrigin.Begin)
+            Dim ZipReader As IReader = ReaderFactory.Open(ZipShell_FileStream)
+            While ZipReader.MoveToNextEntry()
+                If ZipReader.Entry.Key = ZipEntry.Key And Not ZipReader.Entry.IsDirectory Then
+                    ZipReader.WriteEntryToFile(LocalDestination + ZipEntry.Key)
+                End If
+            End While
             Return True
         End Function
 
@@ -94,8 +101,9 @@ Namespace Misc.ZipFile
             'Define local destination while getting an entry from target
             Target = NeutralizePath(Target, Where)
             Wdbg(DebugLevel.I, "Where: {0}", Target)
-            Dim ArchiveTargetStream As New FileStream(ArchiveTarget, FileMode.Open)
-            Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.AddEntry(Target, ArchiveTargetStream)
+            Dim ArchiveTargetStream As New FileStream(Target, FileMode.Open)
+            ZipShell_ZipArchive.AddEntry(ArchiveTarget, ArchiveTargetStream)
+            ZipShell_ZipArchive.SaveTo(ZipShell_FileStream)
             Return True
         End Function
 
