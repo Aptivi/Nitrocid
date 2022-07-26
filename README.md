@@ -8,10 +8,6 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
-WARNING: Second-generation versions of KS are not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
-
-WARNING: The gangsta language contains strong language that may make you feel uncomfortable reading it.
-
 ## Build Status
 
 Here are all the CI build status for all the active KS branches.
@@ -47,6 +43,7 @@ This section covers what you need to run Kernel Simulator. Please refer to the t
 * Download .NET Runtime 6.0 from [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 * Download .NET Framework 4.8 from [here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer)
 * Download Mono from [here](https://www.mono-project.com/download/stable/)
+* If you want to use the PowerLine fonts, it's recommended to use an appropriate console font, like Cascadia Code PL or Nerd Fonts.
 
 ## How to install
 
@@ -138,6 +135,12 @@ The packing and distribution procedures are now easier by executing this script 
 
 1. Open the terminal to the root directory of KS
 2. Execute `./buildandpack.sh` if you're using Linux or execute `buildandpack` on `cmd` if running on Windows
+
+## Warnings and notes
+
+* The second-generation versions of KS are not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
+
+* The gangsta language contains strong language that may make you feel uncomfortable reading it.
 
 ## Credits
 

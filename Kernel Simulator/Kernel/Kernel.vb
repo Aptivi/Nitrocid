@@ -61,7 +61,11 @@ Namespace Kernel
 #ElseIf SPECIFIER = "RC" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate"
 #ElseIf SPECIFIER = "DEV" Then
+#If MILESTONE Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 1"
+#Else
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview"
+#End If
 #Else
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release"
 #End If
