@@ -39,7 +39,10 @@ Namespace Shell.Commands
             Write(DoTranslation("Available unit types and their units:"), True, ColTypes.Neutral)
             For Each QuantityInfo As QuantityInfo In Quantity.Infos
                 Write("- {0}:", True, ColTypes.ListEntry, QuantityInfo.Name)
-                Write("  - {0}", True, ColTypes.ListEntry, String.Join(", ", QuantityInfo.UnitInfos().Select(Function(x) x.Name)))
+                For Each UnitValues As [Enum] In QuantityInfo.UnitInfos().Select(Function(x) x.Value)
+                    Write("  - {0}: ", False, ColTypes.ListEntry, String.Join(", ", UnitAbbreviationsCache.Default.GetDefaultAbbreviation(UnitValues.GetType, Convert.ToInt32(UnitValues))))
+                    Write(UnitValues.ToString(), True, ColTypes.ListValue)
+                Next
             Next
         End Sub
 
