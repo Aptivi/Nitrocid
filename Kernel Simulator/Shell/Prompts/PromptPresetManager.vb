@@ -102,54 +102,84 @@ Namespace Shell.Prompts
         Public Sub SetPreset(PresetName As String, ShellType As ShellType, Optional ThrowOnNotFound As Boolean = True)
             Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
             Dim CustomPresets As Dictionary(Of String, PromptPresetBase) = GetCustomPresetsFromShell(ShellType)
-            Dim CurrentPresetBase As PromptPresetBase
-            GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
 
             'Check to see if we have the preset
             If Presets.ContainsKey(PresetName) Then
-                CurrentPresetBase = Presets(PresetName)
+                SetPresetInternal(PresetName, ShellType, Presets)
             ElseIf CustomPresets.ContainsKey(Presetname) Then
-                CurrentPresetBase = CustomPresets(PresetName)
+                SetPresetInternal(PresetName, ShellType, CustomPresets)
             Else
                 If ThrowOnNotFound Then
                     Wdbg(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString())
                     Throw New NoSuchShellPresetException(DoTranslation("The specified preset {0} is not found."), PresetName)
                 Else
-                    CurrentPresetBase = Presets("Default")
+                    SetPresetInternal("Default", ShellType, Presets)
                 End If
             End If
+        End Sub
+
+        ''' <summary>
+        ''' Sets the preset
+        ''' </summary>
+        ''' <param name="PresetName">The preset name</param>
+        ''' <param name="ShellType">The shell type</param>
+        Friend Sub SetPresetInternal(PresetName As String, ShellType As ShellType, Presets As Dictionary(Of String, PromptPresetBase))
+            Select Case ShellType
+                Case ShellType.Shell
+                    UESHShellCurrentPreset = Presets(PresetName)
+                Case ShellType.TestShell
+                    TestShellCurrentPreset = Presets(PresetName)
+                Case ShellType.ZIPShell
+                    ZipShellCurrentPreset = Presets(PresetName)
+                Case ShellType.TextShell
+                    TextShellCurrentPreset = Presets(PresetName)
+                Case ShellType.SFTPShell
+                    SFTPShellCurrentPreset = Presets(PresetName)
+                Case ShellType.RSSShell
+                    RSSShellCurrentPreset = Presets(PresetName)
+                Case ShellType.MailShell
+                    MailShellCurrentPreset = Presets(PresetName)
+                Case ShellType.JsonShell
+                    JsonShellCurrentPreset = Presets(PresetName)
+                Case ShellType.HTTPShell
+                    HTTPShellCurrentPreset = Presets(PresetName)
+                Case ShellType.HexShell
+                    HexShellCurrentPreset = Presets(PresetName)
+                Case ShellType.FTPShell
+                    FTPShellCurrentPreset = Presets(PresetName)
+            End Select
         End Sub
 
         ''' <summary>
         ''' Gets the current preset base from the shell
         ''' </summary>
         ''' <param name="ShellType">The shell type</param>
-        Public Sub GetCurrentPresetBaseFromShell(ShellType As ShellType, ByRef CurrentPresetRef As PromptPresetBase)
+        Public Function GetCurrentPresetBaseFromShell(ShellType As ShellType) As PromptPresetBase
             Select Case ShellType
                 Case ShellType.Shell
-                    CurrentPresetRef = UESHShellCurrentPreset
+                    Return UESHShellCurrentPreset
                 Case ShellType.TestShell
-                    CurrentPresetRef = TestShellCurrentPreset
+                    Return TestShellCurrentPreset
                 Case ShellType.ZIPShell
-                    CurrentPresetRef = ZipShellCurrentPreset
+                    Return ZipShellCurrentPreset
                 Case ShellType.TextShell
-                    CurrentPresetRef = TextShellCurrentPreset
+                    Return TextShellCurrentPreset
                 Case ShellType.SFTPShell
-                    CurrentPresetRef = SFTPShellCurrentPreset
+                    Return SFTPShellCurrentPreset
                 Case ShellType.RSSShell
-                    CurrentPresetRef = RSSShellCurrentPreset
+                    Return RSSShellCurrentPreset
                 Case ShellType.MailShell
-                    CurrentPresetRef = MailShellCurrentPreset
+                    Return MailShellCurrentPreset
                 Case ShellType.JsonShell
-                    CurrentPresetRef = JsonShellCurrentPreset
+                    Return JsonShellCurrentPreset
                 Case ShellType.HTTPShell
-                    CurrentPresetRef = HTTPShellCurrentPreset
+                    Return HTTPShellCurrentPreset
                 Case ShellType.HexShell
-                    CurrentPresetRef = HexShellCurrentPreset
+                    Return HexShellCurrentPreset
                 Case ShellType.FTPShell
-                    CurrentPresetRef = FTPShellCurrentPreset
+                    Return FTPShellCurrentPreset
             End Select
-        End Sub
+        End Function
 
         ''' <summary>
         ''' Gets the predefined presets from the shell
@@ -225,8 +255,7 @@ Namespace Shell.Prompts
                 ParsedPromptStyle.ConvertVTSequences()
                 Write(ParsedPromptStyle, False, ColTypes.Input)
             Else
-                Dim CurrentPresetBase As PromptPresetBase
-                GetCurrentPresetBaseFromShell(ShellType, CurrentPresetBase)
+                Dim CurrentPresetBase As PromptPresetBase = GetCurrentPresetBaseFromShell(ShellType)
                 Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
             End If
 
