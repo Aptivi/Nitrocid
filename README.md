@@ -1,43 +1,140 @@
+
+<div align = center>
+
+<br>
+
+[![Badge Latest]][Latest]   
+[![Badge Chocolatey]][Chocolatey]   
+[![Badge NuGet]][NuGet]
+
+![Badge Size]   
+[![Badge Downloads]][Releases]
+
+<br>
+
 # Kernel Simulator
 
-![image](https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png)
+*A simulator for the kernel that we are building.*
 
-![GitHub repo size](https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=purple&label=size) [![GitHub All Releases](https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=purple&label=d/l)](https://github.com/EoflaOE/Kernel-Simulator/releases) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=purple&include_prereleases&label=github)](https://github.com/EoflaOE/Kernel-Simulator/releases/latest) [![Chocolatey Version (including pre-releases)](https://img.shields.io/chocolatey/v/ks?color=purple&include_prereleases)](https://chocolatey.org/packages/KS/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/KS?color=purple)](https://www.nuget.org/packages/KS/)
+<br>
 
-Kernel Simulator simulates the future of our planned kernel that's coming as soon as it's finished. It consists of the kernel, the built-in shell known as UESH, and the built-in applications.
+![Preview]
 
-Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
+<br>
+
+</div>
+
+<br>
+
+## Features
+
+<br>
+
+- **UESH - A Built-In Shell**
+
+- **Built-In Applications**
+
+- **Basic Commands**
+
+- **Network Support**
+
+- **Script Support**
+
+- **Script Support**
+
+- **The Kernel**
+
+<br>
+<br>
 
 ## Build Status
 
-Here are all the CI build status for all the active KS branches.
+**Servicing:**  [![Badge Servicing]][Servicing] <br>
+**Master:**  [![Badge Master]][Master]
 
-| Branch    | AppVeyor 
-|-----------|----------
-| master    | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master)
-| servicing | [![Build status](https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true)](https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing)
+<br>
+<br>
 
+## Warnings
 
-## Warnings and notes
+-   The 2nd generations of **KS** are not backwards <br>
+    compatible with the 1st generation versions.
 
-* The second-generation versions of KS are not backwards-compatible with the first-generation versions. Upgrade your mods to support the latest API changes.
+    *Upgrade your mods to support the latest API changes.*
 
-* The gangsta language contains strong language that may make you feel uncomfortable reading it.
+-   The gangsta language contains strong language <br>
+    that may make you feel uncomfortable reading it.
+
+<br>
+<br>
 
 ## Credits
 
-| Credits to           | For
-|----------------------|--------------------
-| EoflaOE              | Owner of Kernel Simulator
-| OpenWeatherMap       | Weather API
-| jonasjacek           | [Console color data](https://jonasjacek.github.io/colors/)
-| sindresorhus         | Word list
-| ayu-theme            | Ayu Theme
-| Ethan Schoonover     | Solarized Theme
-| Fabian Neuschmidt    | [Breezy Theme](https://github.com/fneu/breezy)
-| TechRepublic         | Articles RSS feed URL
-| EoflaOE              | [Name databases](https://github.com/EoflaOE/NamesList)
-| smashew              | [Name databases (just in case)](https://github.com/smashew/NameDatabases)
-| yavuz                | [RSS feed list by country](https://github.com/yavuz/news-feed-list-of-countries/)
-| All VIM theme makers | for VIM themes, such as [Darcula](https://github.com/doums/darcula), [Melange](https://github.com/savq/melange), [Papercolor](https://github.com/NLKNguyen/papercolor-theme), [SpaceCamp](https://github.com/jaredgorski/SpaceCamp), etc.
-| All contributors     | Contribution
+**EoflaOE**  -  *Owner of Kernel Simulator*
+
+**OpenWeatherMap**  -  *Weather API*
+
+**jonasjacek**  -  *[Console color data]*
+
+**sindresorhus**  -  *Word list*
+
+**ayu-theme**  -  *Ayu Theme*
+
+**Ethan Schoonover**  -  *Solarized Theme*
+
+**Fabian Neuschmidt**  -  *[Breezy Theme]*
+
+**TechRepublic**  -  Articles RSS Feed Url
+
+**EoflaOE**  -  *[NamesList]*
+
+**smashew**  -  *[Name Databases]*
+
+**yavuz**  -  *[RSS Feed]*
+
+**All contributors**
+
+**VIM Theme Makers**
+
+- *[SpaceCamp]*
+- *[Papercolor]*
+- *[Melange]*
+- *[Darcula]*
+
+<br>
+
+
+<!----------------------------------------------------------------------------->
+
+[Console color data]: https://jonasjacek.github.io/colors/
+[Name Databases]: https://github.com/smashew/NameDatabases
+[Breezy Theme]: https://github.com/fneu/breezy
+[Papercolor]: https://github.com/NLKNguyen/papercolor-theme
+[Chocolatey]: https://chocolatey.org/packages/KS/
+[SpaceCamp]: https://github.com/jaredgorski/SpaceCamp
+[NamesList]: https://github.com/EoflaOE/NamesList
+[RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/
+[Releases]: https://github.com/EoflaOE/Kernel-Simulator/releases
+[Preview]: https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png
+[Darcula]: https://github.com/doums/darcula
+[Melange]: https://github.com/savq/melange
+[Latest]: https://github.com/EoflaOE/Kernel-Simulator/releases/latest
+[NuGet]: https://www.nuget.org/packages/KS/
+
+[Servicing]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing
+[Master]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master
+
+
+<!----------------------------------[ Badges ]--------------------------------->
+
+[Badge Chocolatey]: https://img.shields.io/chocolatey/v/ks?color=5e85a7&include_prereleases&style=for-the-badge&logoColor=white&logo=Chocolatey&labelColor=80B5E3
+[Badge Downloads]: https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Latest]: https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
+[Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
+[Badge Size]: https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
+
+[Badge Servicing]: https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true
+[Badge Master]: https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true
+
+
+<!---------------------------------[ Buttons ]--------------------------------->
