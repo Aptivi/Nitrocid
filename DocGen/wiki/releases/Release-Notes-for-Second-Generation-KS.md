@@ -194,6 +194,7 @@ This version is WIP as of 7/14/2022.
 13. Added RetroKS!
 14. Fixed wrong character for lower left corner in Ramp when the config is being created
 15. No More POP3
+16. UnitConv is back!
 16. General API improvements
 17. General improvements and bug fixes
 18. And more...

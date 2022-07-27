@@ -164,7 +164,7 @@ Namespace Shell
             {"testshell", New CommandInfo("testshell", ShellType.Shell, "Opens a test shell", Array.Empty(Of String), False, 0, New TestShellCommand, True)},
             {"timer", New CommandInfo("timer", ShellType.Shell, "A simple timer", Array.Empty(Of String), False, 0, New TimerCommand)},
             {"unblockdbgdev", New CommandInfo("unblockdbgdev", ShellType.Shell, "Unblock a debug device by IP address", {"<ipaddress>"}, True, 1, New UnblockDbgDevCommand, True)},
-            {"unitconv", New CommandInfo("unitconv", ShellType.Shell, "Unit converter shell", Array.Empty(Of String), False, 0, New UnitConvCommand)},
+            {"unitconv", New CommandInfo("unitconv", ShellType.Shell, "Unit converter", {"<unittype> <quantity> <sourceunit> <targetunit>"}, True, 4, New UnitConvCommand)},
             {"unzip", New CommandInfo("unzip", ShellType.Shell, "Extracts a ZIP archive", {"<zipfile> [path] [-createdir]"}, True, 1, New UnZipCommand, False, False, False, False, False)},
             {"update", New CommandInfo("update", ShellType.Shell, "System update", Array.Empty(Of String), False, 0, New UpdateCommand, True)},
             {"usermanual", New CommandInfo("usermanual", ShellType.Shell, "Takes you to our GitHub Wiki.", {"[-modapi]"}, False, 0, New UserManualCommand)},

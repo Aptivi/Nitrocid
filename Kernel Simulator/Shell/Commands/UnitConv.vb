@@ -16,13 +16,31 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports UnitsNet
+
 Namespace Shell.Commands
     Class UnitConvCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Write("UnitConv TBD", True, ColTypes.Warning)
+            Dim UnitType As String = ListArgsOnly(0)
+            Dim QuantityNum As Integer = ListArgsOnly(1)
+            Dim SourceUnit As String = ListArgsOnly(2)
+            Dim TargetUnit As String = ListArgsOnly(3)
+            Dim QuantityInfos As QuantityInfo() = Quantity.Infos.Where(Function(x) x.Name = UnitType).ToArray()
+            Dim TargetUnitInstance As [Enum] = UnitParser.Default.Parse(TargetUnit, QuantityInfos(0).UnitType)
+            Dim ConvertedUnit As IQuantity = Quantity.Parse(QuantityInfos(0).ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance)
+            Write("- {0} => {1}: ", False, ColTypes.ListEntry, SourceUnit, TargetUnit)
+            Write(ConvertedUnit.ToString(CurrentCult.NumberFormat), True, ColTypes.ListValue)
+        End Sub
+
+        Public Overrides Sub HelpHelper()
+            Write(DoTranslation("Available unit types and their units:"), True, ColTypes.Neutral)
+            For Each QuantityInfo As QuantityInfo In Quantity.Infos
+                Write("- {0}:", True, ColTypes.ListEntry, QuantityInfo.Name)
+                Write("  - {0}", True, ColTypes.ListEntry, String.Join(", ", QuantityInfo.UnitInfos().Select(Function(x) x.Name)))
+            Next
         End Sub
 
     End Class
