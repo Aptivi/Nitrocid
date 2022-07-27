@@ -21,54 +21,55 @@
 ![Preview]
 
 <br>
-
-</div>
-
 <br>
 
 ## Features
 
 <br>
 
-- **UESH - A Built-In Shell**
+<kbd>  <br>  UESH - A Built-In Shell  <br>  </kbd>  
+<kbd>  <br>  Built-In Applications  <br>  </kbd>  
+<kbd>  <br>  Basic Commands  <br>  </kbd>
 
-- **Built-In Applications**
-
-- **Basic Commands**
-
-- **Network Support**
-
-- **Script Support**
-
-- **Script Support**
-
-- **The Kernel**
+<kbd>  <br>  Network Support  <br>  </kbd>  
+<kbd>  <br>  Script Support  <br>  </kbd>  
+<kbd>  <br>  Script Support  <br>  </kbd>  
+<kbd>  <br>  The Kernel  <br>  </kbd>  
 
 <br>
 <br>
 
 ## Build Status
 
-**Servicing:**  [![Badge Servicing]][Servicing] <br>
-**Master:**  [![Badge Master]][Master]
+| **Master** | **Servicing** |
+|:----------:|:-------------:|
+| [![Badge Master]][Master] | [![Badge Servicing]][Servicing]
 
 <br>
 <br>
 
-## Warnings
+## ⚠  Warnings  ⚠
 
--   The 2nd generations of **KS** are not backwards <br>
-    compatible with the 1st generation versions.
+<br>
 
-    *Upgrade your mods to support the latest API changes.*
+The 2nd generations of **KS** are not backwards <br>
+compatible with the 1st generation versions.
 
--   The gangsta language contains strong language <br>
-    that may make you feel uncomfortable reading it.
+*Upgrade your mods to support the latest API changes.*
+
+<br>
+
+The gangsta language contains strong language <br>
+that may make you feel uncomfortable reading it.
+
+</div>
 
 <br>
 <br>
 
 ## Credits
+
+<br>
 
 **EoflaOE**  -  *Owner of Kernel Simulator*
 
