@@ -896,24 +896,6 @@
                 "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
             },
             {
-                "Name": "POP3 prompt style for mail",
-                "Type": "SString",
-                "Variable": "Mail_POP3PromptStyle",
-                "Description": "Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed."
-            },
-            {
-                "Name": "Send POP3 ping interval",
-                "Type": "SInt",
-                "Variable": "Mail_POP3PingInterval",
-                "Description": "How many milliseconds to send the POP3 ping?"
-            },
-            {
-                "Name": "Use POP3",
-                "Type": "SBoolean",
-                "Variable": "Mail_UsePop3",
-                "Description": "Whether to use POP3. Disabling this will use SMTP."
-            },
-            {
                 "Name": "Show mail transfer progress",
                 "Type": "SBoolean",
                 "Variable": "Mail_ShowProgress",
