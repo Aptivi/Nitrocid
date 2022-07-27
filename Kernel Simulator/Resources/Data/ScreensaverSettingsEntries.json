@@ -3442,5 +3442,70 @@
                 "Description": "Use the border colors for the ramp bar. If disabled, will generate a grey bar."
             }
         ]
+    },
+    "Pulse": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "PulseDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "PulseMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "PulseMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 }

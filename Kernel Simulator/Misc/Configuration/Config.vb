@@ -934,6 +934,19 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Indeterminate", IndeterminateConfig)
 
+            'Pulse config json object
+            Dim PulseConfig As New JObject From {
+                    {"Delay in Milliseconds", PulseDelay},
+                    {"Max Fade Steps", PulseMaxSteps},
+                    {"Minimum red color level", PulseMinimumRedColorLevel},
+                    {"Minimum green color level", PulseMinimumGreenColorLevel},
+                    {"Minimum blue color level", PulseMinimumBlueColorLevel},
+                    {"Maximum red color level", PulseMaximumRedColorLevel},
+                    {"Maximum green color level", PulseMaximumGreenColorLevel},
+                    {"Maximum blue color level", PulseMaximumBlueColorLevel}
+                }
+            ScreensaverConfig.Add("Pulse", PulseConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1815,6 +1828,16 @@ Namespace Misc.Configuration
             IndeterminateLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Left frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
             IndeterminateRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Indeterminate")?("Right frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
             IndeterminateUseBorderColors = If(ConfigToken("Screensaver")?("Indeterminate")?("Use border colors for ramp bar"), False)
+
+            '> Pulse
+            PulseDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Pulse")?("Delay in Milliseconds"), 50)
+            PulseMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Pulse")?("Max Fade Steps"), 25)
+            PulseMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Minimum red color level"), 0)
+            PulseMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Minimum green color level"), 0)
+            PulseMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Minimum blue color level"), 0)
+            PulseMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum red color level"), 255)
+            PulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum green color level"), 255)
+            PulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum blue color level"), 255)
 
             'Splash Section - Splash-specific settings go below:
             '> Simple

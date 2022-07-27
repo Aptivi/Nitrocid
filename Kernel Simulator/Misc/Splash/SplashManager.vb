@@ -37,7 +37,8 @@ Namespace Misc.Splash
             {"FaderBack", New SplashInfo("FaderBack", True, New SplashFaderBack)},
             {"systemd", New SplashInfo("systemd", True, New SplashSystemd)},
             {"sysvinit", New SplashInfo("sysvinit", True, New SplashSysvinit)},
-            {"openrc", New SplashInfo("openrc", True, New SplashOpenRC)}
+            {"openrc", New SplashInfo("openrc", True, New SplashOpenRC)},
+            {"Pulse", New SplashInfo("Pulse", True, New SplashPulse)}
         }
 
         ''' <summary>

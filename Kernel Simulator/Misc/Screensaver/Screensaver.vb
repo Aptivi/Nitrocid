@@ -67,6 +67,7 @@ Namespace Misc.Screensaver
             {"personlookup", New PersonLookupDisplay()},
             {"plain", New PlainDisplay()},
             {"progressclock", New ProgressClockDisplay()},
+            {"pulse", New PulseDisplay()},
             {"ramp", New RampDisplay()},
             {"random", New RandomSaverDisplay()},
             {"snaker", New SnakerDisplay()},
