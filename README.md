@@ -18,6 +18,16 @@
 
 <br>
 
+[![Button Install]][Install]   
+[![Button Requirements]][Requirements]   
+[![Button Building]][Building]
+
+[![Button Packaging]][Packaging]   
+[![Button Libraries]][Libraries]
+
+<br>
+<br>
+
 ![Preview]
 
 <br>
@@ -125,6 +135,11 @@ that may make you feel uncomfortable reading it.
 [Servicing]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing
 [Master]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master
 
+[Requirements]: Documentation/Requirements.md
+[Libraries]: Documentation/Libraries.md
+[Packaging]: Documentation/Packaging.md
+[Building]: Documentation/Building
+[Install]: Documentation/Installation
 
 <!----------------------------------[ Badges ]--------------------------------->
 
@@ -139,3 +154,9 @@ that may make you feel uncomfortable reading it.
 
 
 <!---------------------------------[ Buttons ]--------------------------------->
+
+[Button Requirements]: https://img.shields.io/badge/Requirements-0170CE?style=for-the-badge&logoColor=white&logo=Leanpub
+[Button Libraries]: https://img.shields.io/badge/Libraries-EA8220?style=for-the-badge&logoColor=white&logo=AzureArtifacts
+[Button Packaging]: https://img.shields.io/badge/Packaging-36A9AE?style=for-the-badge&logoColor=white&logo=GitLFS
+[Button Building]: https://img.shields.io/badge/Building-5D4F85?style=for-the-badge&logoColor=white&logo=Hackaday
+[Button Install]: https://img.shields.io/badge/Installation-2F8D46?style=for-the-badge&logoColor=white&logo=DocuSign
