@@ -41,6 +41,7 @@ Namespace Misc.Screensaver
         Friend Screensavers As New Dictionary(Of String, BaseScreensaver) From {
             {"barrot", New BarRotDisplay()},
             {"beatfader", New BeatFaderDisplay()},
+            {"beatpulse", New BeatPulseDisplay()},
             {"bouncingblock", New BouncingBlockDisplay()},
             {"bouncingtext", New BouncingTextDisplay()},
             {"colormix", New ColorMixDisplay()},

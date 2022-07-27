@@ -164,7 +164,7 @@ Namespace Misc.Screensaver.Displays
 
         Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
             Animations.Pulse.Simulate(PulseSettingsInstance)
-            SleepNoBlock(SnakerDelay, ScreensaverDisplayerThread)
+            SleepNoBlock(PulseDelay, ScreensaverDisplayerThread)
         End Sub
 
     End Class

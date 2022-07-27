@@ -947,6 +947,25 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("Pulse", PulseConfig)
 
+            'BeatPulse config json object
+            Dim BeatPulseConfig As New JObject From {
+                    {"Activate 255 Color Mode", BeatPulse255Colors},
+                    {"Activate True Color Mode", BeatPulseTrueColor},
+                    {"Delay in Beats Per Minute", BeatPulseDelay},
+                    {"Cycle Colors", BeatPulseCycleColors},
+                    {"Beat Color", BeatPulseBeatColor},
+                    {"Max Fade Steps", BeatPulseMaxSteps},
+                    {"Minimum red color level", BeatPulseMinimumRedColorLevel},
+                    {"Minimum green color level", BeatPulseMinimumGreenColorLevel},
+                    {"Minimum blue color level", BeatPulseMinimumBlueColorLevel},
+                    {"Minimum color level", BeatPulseMinimumColorLevel},
+                    {"Maximum red color level", BeatPulseMaximumRedColorLevel},
+                    {"Maximum green color level", BeatPulseMaximumGreenColorLevel},
+                    {"Maximum blue color level", BeatPulseMaximumBlueColorLevel},
+                    {"Maximum color level", BeatPulseMaximumColorLevel}
+                }
+            ScreensaverConfig.Add("BeatPulse", BeatPulseConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1838,6 +1857,22 @@ Namespace Misc.Configuration
             PulseMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum red color level"), 255)
             PulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum green color level"), 255)
             PulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Pulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Pulse")?("Maximum blue color level"), 255)
+
+            '> BeatPulse
+            BeatPulse255Colors = If(ConfigToken("Screensaver")?("BeatPulse")?("Activate 255 Color Mode"), False)
+            BeatPulseTrueColor = If(ConfigToken("Screensaver")?("BeatPulse")?("Activate True Color Mode"), True)
+            BeatPulseCycleColors = If(ConfigToken("Screensaver")?("BeatPulse")?("Cycle Colors"), True)
+            BeatPulseBeatColor = If(ConfigToken("Screensaver")?("BeatPulse")?("Beat Color"), 17)
+            BeatPulseDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Delay in Beats Per Minute"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Delay in Beats Per Minute"), 120)
+            BeatPulseMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Max Fade Steps"), 25)
+            BeatPulseMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Minimum red color level"), 0)
+            BeatPulseMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Minimum green color level"), 0)
+            BeatPulseMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Minimum blue color level"), 0)
+            BeatPulseMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Minimum color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Minimum color level"), 0)
+            BeatPulseMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum red color level"), 255)
+            BeatPulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum green color level"), 255)
+            BeatPulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum blue color level"), 255)
+            BeatPulseMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum color level"), 255)
 
             'Splash Section - Splash-specific settings go below:
             '> Simple

@@ -3507,5 +3507,109 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    "BeatPulse": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "BeatPulse255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "BeatPulseTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Beats Per Minute",
+                "Type": "SInt",
+                "Variable": "BeatPulseDelay",
+                "Description": "How many beats per minute to wait before making the next write?"
+            },
+            {
+                "Name": "Cycle colors",
+                "Type": "SBoolean",
+                "Variable": "BeatPulseCycleColors",
+                "Description": "BeatPulse will select random colors if it's enabled. Otherwise, use colors from config."
+            },
+            {
+                "Name": "Beat color",
+                "Type": "SColor",
+                "Variable": "BeatPulseBeatColor"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "BeatPulseMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "BeatPulseMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 }
