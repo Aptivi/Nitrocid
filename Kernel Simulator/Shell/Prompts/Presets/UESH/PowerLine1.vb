@@ -79,7 +79,7 @@ Namespace Shell.Prompts.Presets.UESH
                 'Transition
                 PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground)
                 PresetStringBuilder.Append(BackgroundColor.VTSequenceBackground)
-                PresetStringBuilder.AppendFormat("{0}", TransitionChar)
+                PresetStringBuilder.AppendFormat("{0} ", TransitionChar)
             Else
                 'Maintenance mode
                 PresetStringBuilder.Append(GetGray().VTSequenceForeground)
