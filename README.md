@@ -18,17 +18,30 @@
 
 <br>
 
-[![Button Install]][Install]   
-[![Button Requirements]][Requirements]   
+<img
+  src = 'https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png'
+  width = 440
+  align = left
+/>
+
+<div align = right>
+
+[![Button Install]][Install]
+
+[![Button Requirements]][Requirements]
+
 [![Button Building]][Building]
 
-[![Button Packaging]][Packaging]   
+[![Button Packaging]][Packaging]
+
 [![Button Libraries]][Libraries]
 
+</div>
+
 <br>
 <br>
 
-![Preview]
+
 
 <br>
 <br>
@@ -126,7 +139,6 @@ that may make you feel uncomfortable reading it.
 [NamesList]: https://github.com/EoflaOE/NamesList
 [RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/
 [Releases]: https://github.com/EoflaOE/Kernel-Simulator/releases
-[Preview]: https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png
 [Darcula]: https://github.com/doums/darcula
 [Melange]: https://github.com/savq/melange
 [Latest]: https://github.com/EoflaOE/Kernel-Simulator/releases/latest
