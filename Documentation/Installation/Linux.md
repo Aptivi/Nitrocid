@@ -15,7 +15,7 @@
 
     <br>
 
-2.  Add the **PPA** withs:
+2.  Add the **PPA** with:
 
     ```shell
     sudo add-apt-repository ppa:eofla/kernel-sim
