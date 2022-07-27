@@ -17,12 +17,15 @@
 *A simulator for the kernel that we are building.*
 
 <br>
+<br>
 
 <img
   src = 'https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png'
-  width = 440
+  width = 540
   align = left
 />
+
+<br>
 
 <div align = right>
 
