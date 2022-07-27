@@ -38,7 +38,10 @@ Namespace Misc.Splash
             {"systemd", New SplashInfo("systemd", True, New SplashSystemd)},
             {"sysvinit", New SplashInfo("sysvinit", True, New SplashSysvinit)},
             {"openrc", New SplashInfo("openrc", True, New SplashOpenRC)},
-            {"Pulse", New SplashInfo("Pulse", True, New SplashPulse)}
+            {"Pulse", New SplashInfo("Pulse", True, New SplashPulse)},
+            {"BeatPulse", New SplashInfo("BeatPulse", True, New SplashBeatPulse)},
+            {"EdgePulse", New SplashInfo("EdgePulse", True, New SplashEdgePulse)},
+            {"BeatEdgePulse", New SplashInfo("BeatEdgePulse", True, New SplashBeatEdgePulse)}
         }
 
         ''' <summary>

@@ -966,6 +966,38 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("BeatPulse", BeatPulseConfig)
 
+            'EdgePulse config json object
+            Dim EdgePulseConfig As New JObject From {
+                    {"Delay in Milliseconds", EdgePulseDelay},
+                    {"Max Fade Steps", EdgePulseMaxSteps},
+                    {"Minimum red color level", EdgePulseMinimumRedColorLevel},
+                    {"Minimum green color level", EdgePulseMinimumGreenColorLevel},
+                    {"Minimum blue color level", EdgePulseMinimumBlueColorLevel},
+                    {"Maximum red color level", EdgePulseMaximumRedColorLevel},
+                    {"Maximum green color level", EdgePulseMaximumGreenColorLevel},
+                    {"Maximum blue color level", EdgePulseMaximumBlueColorLevel}
+                }
+            ScreensaverConfig.Add("EdgePulse", EdgePulseConfig)
+
+            'BeatEdgePulse config json object
+            Dim BeatEdgePulseConfig As New JObject From {
+                    {"Activate 255 Color Mode", BeatEdgePulse255Colors},
+                    {"Activate True Color Mode", BeatEdgePulseTrueColor},
+                    {"Delay in Beats Per Minute", BeatEdgePulseDelay},
+                    {"Cycle Colors", BeatEdgePulseCycleColors},
+                    {"Beat Color", BeatEdgePulseBeatColor},
+                    {"Max Fade Steps", BeatEdgePulseMaxSteps},
+                    {"Minimum red color level", BeatEdgePulseMinimumRedColorLevel},
+                    {"Minimum green color level", BeatEdgePulseMinimumGreenColorLevel},
+                    {"Minimum blue color level", BeatEdgePulseMinimumBlueColorLevel},
+                    {"Minimum color level", BeatEdgePulseMinimumColorLevel},
+                    {"Maximum red color level", BeatEdgePulseMaximumRedColorLevel},
+                    {"Maximum green color level", BeatEdgePulseMaximumGreenColorLevel},
+                    {"Maximum blue color level", BeatEdgePulseMaximumBlueColorLevel},
+                    {"Maximum color level", BeatEdgePulseMaximumColorLevel}
+                }
+            ScreensaverConfig.Add("BeatEdgePulse", BeatEdgePulseConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1873,6 +1905,32 @@ Namespace Misc.Configuration
             BeatPulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum green color level"), 255)
             BeatPulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum blue color level"), 255)
             BeatPulseMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatPulse")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BeatPulse")?("Maximum color level"), 255)
+
+            '> EdgePulse
+            EdgePulseDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Delay in Milliseconds"), 50)
+            EdgePulseMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Max Fade Steps"), 25)
+            EdgePulseMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Minimum red color level"), 0)
+            EdgePulseMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Minimum green color level"), 0)
+            EdgePulseMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Minimum blue color level"), 0)
+            EdgePulseMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Maximum red color level"), 255)
+            EdgePulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Maximum green color level"), 255)
+            EdgePulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("EdgePulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("EdgePulse")?("Maximum blue color level"), 255)
+
+            '> BeatEdgePulse
+            BeatEdgePulse255Colors = If(ConfigToken("Screensaver")?("BeatEdgePulse")?("Activate 255 Color Mode"), False)
+            BeatEdgePulseTrueColor = If(ConfigToken("Screensaver")?("BeatEdgePulse")?("Activate True Color Mode"), True)
+            BeatEdgePulseCycleColors = If(ConfigToken("Screensaver")?("BeatEdgePulse")?("Cycle Colors"), True)
+            BeatEdgePulseBeatColor = If(ConfigToken("Screensaver")?("BeatEdgePulse")?("Beat Color"), 17)
+            BeatEdgePulseDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Delay in Beats Per Minute"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Delay in Beats Per Minute"), 120)
+            BeatEdgePulseMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Max Fade Steps"), 25)
+            BeatEdgePulseMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum red color level"), 0)
+            BeatEdgePulseMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum green color level"), 0)
+            BeatEdgePulseMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum blue color level"), 0)
+            BeatEdgePulseMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Minimum color level"), 0)
+            BeatEdgePulseMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum red color level"), 255)
+            BeatEdgePulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum green color level"), 255)
+            BeatEdgePulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum blue color level"), 255)
+            BeatEdgePulseMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum color level"), 255)
 
             'Splash Section - Splash-specific settings go below:
             '> Simple
