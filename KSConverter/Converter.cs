@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -31,8 +32,8 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network;
 using KS.Network.RemoteDebug;
-using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Aliases;
+using KS.Shell.ShellBase.Shells;
 using static KS.ConsoleBase.Colors.ColorTools;
 
 namespace KSConverter
@@ -264,48 +265,45 @@ namespace KSConverter
                         switch (AliasType ?? "")
                         {
                             case "Shell":
-                                if (!AliasManager.Aliases.ContainsKey(AliasCommand))
                                 {
-                                    Debug.WriteLine($"Adding alias {AliasCommand}...");
-                                    AliasManager.Aliases.Add(AliasCommand, ActualCommand);
+                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.Shell);
+                                    if (!aliases.ContainsKey(AliasCommand))
+                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.Shell);
+                                    break;
                                 }
-
-                                break;
                             case "Remote":
-                                if (!AliasManager.RemoteDebugAliases.ContainsKey(AliasCommand))
                                 {
-                                    Debug.WriteLine($"Adding alias {AliasCommand}...");
-                                    AliasManager.RemoteDebugAliases.Add(AliasCommand, ActualCommand);
+                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.RemoteDebugShell);
+                                    if (!aliases.ContainsKey(AliasCommand))
+                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.RemoteDebugShell);
+                                    break;
                                 }
-
-                                break;
                             case "FTPShell":
-                                if (!AliasManager.FTPShellAliases.ContainsKey(AliasCommand))
                                 {
-                                    Debug.WriteLine($"Adding alias {AliasCommand}...");
-                                    AliasManager.FTPShellAliases.Add(AliasCommand, ActualCommand);
+                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.FTPShell);
+                                    if (!aliases.ContainsKey(AliasCommand))
+                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.FTPShell);
+                                    break;
                                 }
-
-                                break;
                             case "SFTPShell":
-                                if (!AliasManager.SFTPShellAliases.ContainsKey(AliasCommand))
                                 {
-                                    Debug.WriteLine($"Adding alias {AliasCommand}...");
-                                    AliasManager.SFTPShellAliases.Add(AliasCommand, ActualCommand);
+                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.SFTPShell);
+                                    if (!aliases.ContainsKey(AliasCommand))
+                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.SFTPShell);
+                                    break;
                                 }
-
-                                break;
                             case "Mail":
-                                if (!AliasManager.MailShellAliases.ContainsKey(AliasCommand))
                                 {
-                                    Debug.WriteLine($"Adding alias {AliasCommand}...");
-                                    AliasManager.MailShellAliases.Add(AliasCommand, ActualCommand);
+                                    Dictionary<string, string> aliases = AliasManager.GetAliasesListFromType(ShellType.MailShell);
+                                    if (!aliases.ContainsKey(AliasCommand))
+                                        AliasManager.AddAlias(AliasCommand, ActualCommand, ShellType.MailShell);
+                                    break;
                                 }
-
-                                break;
                             default:
-                                TextWriterColor.Write("  - Invalid type {0}", true, ColTypes.Error, AliasType);
-                                break;
+                                {
+                                    TextWriterColor.Write("  - Invalid type {0}", true, ColTypes.Error, AliasType);
+                                    break;
+                                }
                         }
                     }
 
