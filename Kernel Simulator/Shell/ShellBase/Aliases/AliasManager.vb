@@ -55,7 +55,7 @@ Namespace Shell.ShellBase.Aliases
                 AliasType = AliasObject("Type").ToObject(GetType(ShellType))
                 Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString)
                 Dim TargetAliasList = GetAliasesListFromType(AliasType)
-                TargetAliasList.Add(AliasCmd, ActualCmd)
+                TargetAliasList.AddOrModify(AliasCmd, ActualCmd)
             Next
         End Sub
 
