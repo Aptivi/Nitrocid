@@ -467,13 +467,20 @@ Namespace Misc.Screensaver.Displays
                 If ResizeSyncing Then Exit Do
 
                 'Clear the ramp
-                'TODO: Reduce flickering before final release
                 Console.BackgroundColor = ConsoleColor.Black
-                For BlockPos As Integer = RampFrameBlockStartWidth To RampFrameBlockEndWidth
-                    WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, True)
-                    WriteWherePlain(" ", BlockPos, RampCenterPosition, True)
-                    WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, True)
-                Next
+                If IndeterminateCurrentBlockDirection = IndeterminateDirection.LeftToRight Then
+                    For BlockPos As Integer = RampFrameBlockStartWidth To IndeterminateCurrentBlockStart
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, True)
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition, True)
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, True)
+                    Next
+                Else
+                    For BlockPos As Integer = IndeterminateCurrentBlockEnd To RampFrameBlockEndWidth
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, True)
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition, True)
+                        WriteWherePlain(" ", BlockPos, RampCenterPosition + 1, True)
+                    Next
+                End If
 
                 'Fill the ramp
                 SetConsoleColor(RampCurrentColorInstance, True)
