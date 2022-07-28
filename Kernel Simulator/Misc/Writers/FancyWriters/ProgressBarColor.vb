@@ -19,7 +19,7 @@
 Imports KS.Misc.Writers.FancyWriters.Tools
 
 Namespace Misc.Writers.FancyWriters
-    Public Module ProgressColor
+    Public Module ProgressBarColor
 
         ''' <summary>
         ''' Writes the progress bar

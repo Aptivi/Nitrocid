@@ -690,3 +690,10 @@ The shell base has been divided to three types:
   - Aliases
   - Commands
   - Shells
+
+##### Changed progress bar writer module name
+
+We didn't want to cause confusion between `ProgressColor` in the `FancyWriters` namespace and the actual `ProgressColor` in the `ColorTools` module, so we decided to extend the name of the progress bar writer module to `ProgressBarColor`.
+
+* Affected modules
+  - ProgressColor -> ProgressBarColor
