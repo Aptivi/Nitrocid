@@ -6,8 +6,8 @@ UESH conditions are expressions that check to see if the target variables satisf
 
 For example, take "$count eq 5". If the $count variable equals 5, the condition is satisfies. If it doesn't, it isn't satisfied.
 
-[!WARNING]
-Currently, only the `if` command supports this feature.
+> [!WARNING]
+> Currently, only the `if` command supports this feature.
 
 ### Available conditions
 

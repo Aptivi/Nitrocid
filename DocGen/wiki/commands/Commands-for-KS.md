@@ -14,8 +14,8 @@ For more information about every command, click the command.
 
 ### Administrative commands
 
-[!IMPORTANT]
-The user must have at least the administrative privileges before they can run the below commands.
+> [!IMPORTANT]
+> The user must have at least the administrative privileges before they can run the below commands.
 
 | Command                                           | Description
 |:--------------------------------------------------|:------------

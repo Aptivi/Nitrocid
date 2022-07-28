@@ -25,8 +25,8 @@ KSConverter can convert the following configurations:
 | users.csv           | 0.0.4 -> 0.0.15.x    | Users.json
 | aliases.csv         | 0.0.6 -> 0.0.15.x    | Aliases.json
 
-[!WARNING]
-KSConverter for .NET 6.0 can't convert the configuration files from the old format to the new one. If you want to upgrade such files, use the version shipped with the .NET Framework version of Kernel Simulator.
+> [!WARNING]
+> KSConverter for .NET 6.0 can't convert the configuration files from the old format to the new one. If you want to upgrade such files, use the version shipped with the .NET Framework version of Kernel Simulator.
 
 ### How to use
 

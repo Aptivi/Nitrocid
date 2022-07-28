@@ -8,8 +8,8 @@ Each breaking change have their own workarounds and description, including the r
 
 #### 0.0.20.0 notes
 
-[!WARNING]
-When upgrading your mods to support 0.0.20.0, you must follow the compatibility notes to ensure that your mod works with 0.0.20.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+> [!WARNING]
+> When upgrading your mods to support 0.0.20.0, you must follow the compatibility notes to ensure that your mod works with 0.0.20.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Unified help system to support every shell
 
@@ -225,11 +225,11 @@ It has been recently reported that a single-lettered function or sub is not a go
 
 Moreover, there was a need to overload all the writing functions by renaming their names to their appropriate "Write" functions so that we wouldn't have to use the separate functions for their colored versions. However, if it was bound to cause problems in later commits, we'll revert this change.
 
-[!WARNING]
-Your mods might break if any of them uses the console writing functions from KS, so change all the `W()` instances to `Write()` and remove any "C" or "C16" suffixes.
+> [!WARNING]
+> Your mods might break if any of them uses the console writing functions from KS, so change all the `W()` instances to `Write()` and remove any "C" or "C16" suffixes.
 
-[!WARNING]
-When writing such functions, you'll discover that the arguments parsing is stricter than the previous, due to how we've implemented the message argument. Make explicit casts while we're testing the new overloads to make sure that everything is the same as before.
+> [!WARNING]
+> When writing such functions, you'll discover that the arguments parsing is stricter than the previous, due to how we've implemented the message argument. Make explicit casts while we're testing the new overloads to make sure that everything is the same as before.
 
 ##### Actually removed AliasType
 
@@ -498,8 +498,8 @@ These are the technical information about **some** of the above breaking changes
 
 #### 0.0.21.0 notes
 
-[!WARNING]
-When upgrading your mods to support 0.0.21.0, you must follow the compatibility notes to ensure that your mod works with 0.0.21.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+> [!WARNING]
+> When upgrading your mods to support 0.0.21.0, you must follow the compatibility notes to ensure that your mod works with 0.0.21.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Consolidated the obsolete functions
 
@@ -549,8 +549,8 @@ These are the technical information about **some** of the above breaking changes
 
 #### 0.0.22.0 notes
 
-[!WARNING]
-When upgrading your mods to support 0.0.22.0, you must follow the compatibility notes to ensure that your mod works with 0.0.22.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+> [!WARNING]
+> When upgrading your mods to support 0.0.22.0, you must follow the compatibility notes to ensure that your mod works with 0.0.22.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Separated properties code to PropertyManager
 
@@ -592,8 +592,8 @@ These are the technical information about **some** of the above breaking changes
 
 #### 0.0.23.0 notes
 
-[!WARNING]
-When upgrading your mods to support 0.0.23.0, you must follow the compatibility notes to ensure that your mod works with 0.0.23.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+> [!WARNING]
+> When upgrading your mods to support 0.0.23.0, you must follow the compatibility notes to ensure that your mod works with 0.0.23.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Deprecation of ICustomSaver
 
@@ -603,8 +603,8 @@ As we've implemented `BaseScreensaver` to better handle screensavers, we decided
 
 #### 0.0.24.0 notes
 
-[!WARNING]
-When upgrading your mods to support 0.0.24.0, you must follow the compatibility notes to ensure that your mod works with 0.0.24.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+> [!WARNING]
+> When upgrading your mods to support 0.0.24.0, you must follow the compatibility notes to ensure that your mod works with 0.0.24.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
 
 ##### Removed support for ICustomSaver
 
@@ -628,8 +628,8 @@ Filesystem module was a `god class`, so we decided to consolidate it to their ow
 
 We have also removed `SetSizeParseMode()` as it's redundant and it was there for compatibility reasons. You have more than enough APIs to do the same thing this function does, don't you?
 
-[!NOTE]
-The base `Filesystem` module will stay so that path neutralization and invalid path detection routines will still be available under the same namespace in 0.0.24.0 and above.
+> [!NOTE]
+> The base `Filesystem` module will stay so that path neutralization and invalid path detection routines will still be available under the same namespace in 0.0.24.0 and above.
 
 * Removed functions:
   - `SetSizeParseMode()`

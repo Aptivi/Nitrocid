@@ -2,8 +2,8 @@
 
 Since 0.0.10, the shell scripting support has been added to automate the sets of steps used. It can handle variables and comments and are treated as such. It can also be used to make scripts ranging from the Hello World script to the most complicated one.
 
-[!WARNING]
-It doesn't support making functions yet, but it will be supported in the near future. Meanwhile, here's the basic guide on how to start the UESH scripting.
+> [!WARNING]
+> It doesn't support making functions yet, but it will be supported in the near future. Meanwhile, here's the basic guide on how to start the UESH scripting.
 
 ## How to make scripts?
 

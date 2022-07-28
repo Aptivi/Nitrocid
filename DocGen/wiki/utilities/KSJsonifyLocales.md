@@ -59,8 +59,8 @@ If there's a transliterable version of a language that you're going to add, you 
 - The translated version (lng-T, for e.g. arb-T)
 - The transliterated version (lng, for e.g. arb)
 
-[!WARNING]
-The custom language shouldn't be under the same three-letter language name; it should be unique. If you're creating a fixed version of the existing language, you should append a number after it. For example, "afr-1", not "afr".
+> [!WARNING]
+> The custom language shouldn't be under the same three-letter language name; it should be unique. If you're creating a fixed version of the existing language, you should append a number after it. For example, "afr-1", not "afr".
 
 ### How to use
 
