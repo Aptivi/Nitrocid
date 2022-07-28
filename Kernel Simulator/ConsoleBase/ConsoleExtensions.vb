@@ -120,14 +120,14 @@ Namespace ConsoleBase
         ''' Polls $TERM_PROGRAM to get terminal emulator
         ''' </summary>
         Public Function GetTerminalEmulator() As String
-            Return Environment.GetEnvironmentVariable("TERM_PROGRAM")
+            Return If(Environment.GetEnvironmentVariable("TERM_PROGRAM"), "")
         End Function
 
         ''' <summary>
         ''' Polls $TERM to get terminal type (vt100, dumb, ...)
         ''' </summary>
         Public Function GetTerminalType() As String
-            Return Environment.GetEnvironmentVariable("TERM")
+            Return If(Environment.GetEnvironmentVariable("TERM"), "")
         End Function
 
     End Module
