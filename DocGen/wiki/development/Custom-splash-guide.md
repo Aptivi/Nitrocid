@@ -4,6 +4,7 @@
 
 The custom splash is an assembly file that loads before the splash is displayed. It allows you to create custom splashes from simple progress bars to complex console art.
 
+[!TIP]
 To get started to our Kernel Simulator API, visit [this page](https://eoflaoe.github.io/Kernel-Simulator/).
 
 ## Custom splash format
@@ -12,6 +13,7 @@ The mods have the file extension of `.dll`, and can support more than one code f
 
 ## How to start your own custom splash on Visual Studio?
 
+[!NOTE]
 We recommend following the template repository for making your own mod [here](https://github.com/EoflaOE/KSCustomSplashTemplate).
 
 If you're going to make your custom splash, follow these steps:

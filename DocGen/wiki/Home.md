@@ -6,6 +6,7 @@ Kernel Simulator is an application which simulates our future-planned kernel as 
 
 Here are all the listed versions of Kernel Simulator which is either supported or out of support. You can also see the release date and the expected end of life date.
 
+[!IMPORTANT]
 If your kernel has the status of Reached EOL, you must upgrade to the supported version. Otherwise, you can get support from us as long as the version you're running is supported.
 
 ### Compatibility warnings
@@ -17,6 +18,7 @@ Each revision of the kernel API has several incompatibilities that break the exi
 
 ### First-generation (API v1.0)
 
+[!IMPORTANT]
 This revision of the first-generation version is no longer supported as of 5/20/2021.
 
 | Version    | Release date | EOL date    | EOL status  |
@@ -87,6 +89,7 @@ This revision of the first-generation version is no longer supported as of 5/20/
 
 ### First-generation (API v1.1)
 
+[!WARNING]
 This revision of the first-generation version is supported until 2/22/2023.
 
 | Version    | Release date | EOL date    | EOL status  |
@@ -114,6 +117,7 @@ This revision of the first-generation version is supported until 2/22/2023.
 
 ### First-generation (API v1.2)
 
+[!WARNING]
 This revision of the first-generation version is supported until 11/5/2023.
 
 | Version    | Release date | EOL date    | EOL status  |
@@ -149,6 +153,7 @@ This revision of the first-generation version is supported until 11/5/2023.
 
 ### First-generation (API v1.3)
 
+[!WARNING]
 This revision of the first-generation version is supported until 6/12/2024.
 
 | Version    | Release date | EOL date    | EOL status  |
@@ -196,6 +201,7 @@ This revision of the first-generation version is supported until 6/12/2024.
 
 ### Second-generation (API v2.0)
 
+[!NOTE]
 This revision of the second-generation version is supported until 2/22/2025, and the security support will end at 2/22/2027.
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |
@@ -229,6 +235,7 @@ This revision of the second-generation version is supported until 2/22/2025, and
 
 ### Second-generation (API v2.1)
 
+[!NOTE]
 This revision of the second-generation version is still under active development.
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |

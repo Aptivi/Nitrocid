@@ -6,10 +6,12 @@ The screensaver is the idle process that will activate if your computer went idl
 
 The screensaver can also be customized, and we'll teach you how to make your first screensaver, to make from the simplest screensavers to the legendary ones. The custom screensavers are glorified dynamic mods.
 
+[!TIP]
 To get started to our Kernel Simulator API, visit [this page](https://eoflaoe.github.io/Kernel-Simulator/).
 
 ## How to start your own screensaver on Visual Studio?
 
+[!NOTE]
 We recommend following the template repository for making your own screensaver [here](https://github.com/EoflaOE/KSScreensaverTemplate).
 
 If you're going to make your mod, follow these steps:

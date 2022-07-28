@@ -1,10 +1,8 @@
 ## KSConverter
 
-KSConverter is an application that can convert your Kernel Simulator configuration files from the old format (0.0.15.x or lower) to the newer, modern format (0.0.16.x or higher). It can even convert your configuration files from the first version that implemented it, which is 0.0.4.
+KSConverter is an application that can convert your Kernel Simulator configuration files from the old format (0.0.15.x or lower) to the newer, modern format (0.0.16.x or higher). It can even convert your configuration files from the first version that implemented it, which is 0.0.4. It comes with Kernel Simulator and does not need to be installed separately in order to be used.
 
-It comes with Kernel Simulator and does not need to be installed separately in order to be used.
-
-Your old configuration files will be backed up to KSBackups directory in your user profile directory so you can easil revert to a pre-1.3 API version of KS (0.0.15.x or lower).
+Your old configuration files will be backed up to KSBackups directory in your user profile directory so you can easily revert to a pre-1.3 API version of KS (0.0.15.x or lower).
 
 ### Conversion
 
@@ -26,6 +24,9 @@ KSConverter can convert the following configurations:
 | ftp_speeddial.csv   | 0.0.11.x -> 0.0.15.x | FTP_SpeedDial.json
 | users.csv           | 0.0.4 -> 0.0.15.x    | Users.json
 | aliases.csv         | 0.0.6 -> 0.0.15.x    | Aliases.json
+
+[!WARNING]
+KSConverter for .NET 6.0 can't convert the configuration files from the old format to the new one. If you want to upgrade such files, use the version shipped with the .NET Framework version of Kernel Simulator.
 
 ### How to use
 

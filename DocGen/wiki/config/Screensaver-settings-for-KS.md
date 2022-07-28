@@ -259,3 +259,52 @@ For the progress min-max color values, refer to the topmost table, because they'
 | Name | Type | Values | Description 
 |:---------------|:----------|:----------------------------------|:---
 | Glitch Density | `integer` | Percent value from 0 to 100       | The greater the percentage, the more dense the glitch!
+
+### Indeterminate
+
+| Name | Type | Values | Description 
+|:---------------|:----------|:----------------------------------|:---
+| Upper Left Corner Char   | `char`    | A valid character                 | Which character to use to draw the upper left corner of the ramp?
+| Upper Right Corner Char  | `char`    | A valid character                 | Which character to use to draw the upper right corner of the ramp?
+| Lower Left Corner Char   | `char`    | A valid character                 | Which character to use to draw the lower left corner of the ramp?
+| Lower Right Corner Char  | `char`    | A valid character                 | Which character to use to draw the lower right corner of the ramp?
+| Upper Frame Char         | `char`    | A valid character                 | Which character to use to draw the upper frame of the ramp?
+| Lower Frame Char         | `char`    | A valid character                 | Which character to use to draw the lower frame of the ramp?
+| Left Frame Char          | `char`    | A valid character                 | Which character to use to draw the left frame of the ramp?
+| Right Frame Char         | `char`    | A valid character                 | Which character to use to draw the right frame of the ramp?
+| Upper Left Corner Color  | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the upper left corner of the ramp
+| Upper Right Corner Color | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the upper right corner of the ramp
+| Lower Left Corner Color  | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the lower left corner of the ramp
+| Lower Right Corner Color | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the lower right corner of the ramp
+| Upper Frame Color        | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the upper frame of the ramp
+| Lower Frame Color        | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the lower frame of the ramp
+| Left Frame Color         | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the left frame of the ramp
+| Right Frame Color        | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the color of the right frame of the ramp
+
+### BeatPulse
+
+| Name | Type | Values | Description 
+|:-------------|:----------|:----------------------------------|:---
+| Cycle colors | `boolean` | `true` or `false`                 | Specifies whether to cycle the colors
+| Beat color   | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the beat color
+| Max steps    | `integer` | Any positive number               | How many fade steps to do?
+
+### Pulse
+
+| Name | Type | Values | Description 
+|:-------------------------------|:----------|:-------------------------|:---
+| Max Fade Steps                 | `integer` | Any positive number      | How many fade steps to do?
+
+### BeatEdgePulse
+
+| Name | Type | Values | Description 
+|:-------------|:----------|:----------------------------------|:---
+| Cycle colors | `boolean` | `true` or `false`                 | Specifies whether to cycle the colors
+| Beat color   | `string`  | `0-15`, `0-255`, or `RRR;GGG;BBB` | Selects the beat color
+| Max steps    | `integer` | Any positive number               | How many fade steps to do?
+
+### EdgePulse
+
+| Name | Type | Values | Description 
+|:-------------------------------|:----------|:-------------------------|:---
+| Max Fade Steps                 | `integer` | Any positive number      | How many fade steps to do?

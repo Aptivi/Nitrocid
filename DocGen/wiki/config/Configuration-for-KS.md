@@ -217,8 +217,7 @@ See ConsoleColor for more information.
 | Enable screensaver debugging   | `boolean` | `true` or `false`            | Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.
 | Ask for password after locking | `boolean` | `true` or `false`            | After locking the screen, ask for password
 
-#### Built-in screensavers
-
+[!NOTE]
 These screensavers are built-in directly to Kernel Simulator and are always available. If you want your screensaver to be included by default to Kernel Simulator, let us know. Consult [Screensaver Configuration](Screensaver-settings-for-KS.md) for configuration entries for specific screensavers.
 
 ### Misc

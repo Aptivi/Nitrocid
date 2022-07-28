@@ -8,7 +8,7 @@ KSJsonifyLocales is the new tool that can convert the language files consisting 
 
 KSJsonifyLocales contains the Translations folder that has the translation text files inside. When this program is run, it reads the entire folder, parses all the files, and converts them to the JSON output, which can be found in Translations/Done folder in the same place as the executable.
 
-If run with `--CopyToResources`, it will copy the results directly to Kernel Simulator's resources, but it is untested, so use at your own risk.
+If run with `--CopyToResources`, it will copy the results directly to Kernel Simulator's resources, assuming that it's run on KSBuild found inside the source code folder. This usually works with git clones of KS.
 
 To illustrate this, KSJsonifyLocales will:
 
@@ -17,7 +17,7 @@ To illustrate this, KSJsonifyLocales will:
 - add them to the list of language files,
 - read both the English and the target language lines,
 - save them to JSON, and
-- save them to Translations/Done or (optionally) ../Resources, assuming that the executable is found one level above the Kernel Simulator source folder
+- save them to Translations/Done or (optionally) ../../Resources, assuming that the executable is found one level above the Kernel Simulator source folder
 
 #### What else can it do?
 
@@ -36,18 +36,21 @@ These switches can change the way how KSJsonifyLocales runs. In ordrer to use an
 The CustomLanguages folder is for the custom languages which change the language of the messages found in Kernel Simulator. This folder can be used to store the text files of your custom languages, but you have to place the metadata information for each custom language to be read by the kernel as it starts up. It can be accessed in the same location as the Kernel Simulator executable.
 
 This metadata information should be stored in a file called Metadata.json in the format below to be jsonified by this tool. It should not be removed.
- 
+```json
     "lng": {
         "name": "Language",
         "transliterable": false / true
     }
+```
  
 Example:
  
+```json
     "afr": {
         "name": "Afrikaans",
         "transliterable": false
     }
+```
  
 The outputs for the custom languages can be found in the KSLanguages folder in your system profile directory (`$HOME` or `%USERPROFILE%`) stored as lng.json. For example, afr.json.
  
@@ -56,7 +59,8 @@ If there's a transliterable version of a language that you're going to add, you 
 - The translated version (lng-T, for e.g. arb-T)
 - The transliterated version (lng, for e.g. arb)
 
-WARNING: The custom language shouldn't be under the same three-letter language name; it should be unique. If you're creating a fixed version of the existing language, you should append a number after it. For example, "afr-1", not "afr".
+[!WARNING]
+The custom language shouldn't be under the same three-letter language name; it should be unique. If you're creating a fixed version of the existing language, you should append a number after it. For example, "afr-1", not "afr".
 
 ### How to use
 

@@ -4,9 +4,16 @@
 
 You can run these arguments to make the simulator behave differently, by running Kernel Simulator like below examples:
 ```cmd
-choco install ks
-"Kernel Simulator.exe" debug
+ks.cmd debug
+ks.cmd args
 ```
+```sh
+ks debug
+ks args
+```
+
+[!NOTE]
+These command line arguments are handled by the kernel after the pre-boot stage has been done. For pre-boot command line arguments that get executed before the kernel really starts, take a look at the [pre-boot arguments](Preboot-Command-line-arguments-for-KS).
 
 ### Useful arguments
 

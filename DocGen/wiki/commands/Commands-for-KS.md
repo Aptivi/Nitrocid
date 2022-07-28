@@ -14,6 +14,9 @@ For more information about every command, click the command.
 
 ### Administrative commands
 
+[!IMPORTANT]
+The user must have at least the administrative privileges before they can run the below commands.
+
 | Command                                           | Description
 |:--------------------------------------------------|:------------
 | [adduser](uesh/KS-Command-adduser.md)             | You can add the user's name whenever you need, with the password if required. However, passwords are required to ensure security.
