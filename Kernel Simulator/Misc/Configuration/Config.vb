@@ -1291,7 +1291,7 @@ Namespace Misc.Configuration
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")
             QuietHardwareProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
-            FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
+            FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), False)
             VerboseHardwareProbe = If(ConfigToken("Hardware")?("Verbose Probe"), False)
 
             'Network Section

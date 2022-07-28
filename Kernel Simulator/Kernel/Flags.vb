@@ -143,7 +143,7 @@ Namespace Kernel
         ''' <summary>
         ''' Ensures that all hardware will be probed
         ''' </summary>
-        Public FullHardwareProbe As Boolean = True
+        Public FullHardwareProbe As Boolean
         ''' <summary>
         ''' Makes the hardware prober a bit talkative
         ''' </summary>
