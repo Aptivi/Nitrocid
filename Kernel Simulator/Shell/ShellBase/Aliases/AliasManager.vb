@@ -23,19 +23,19 @@ Imports Newtonsoft.Json.Linq
 Namespace Shell.ShellBase.Aliases
     Public Module AliasManager
 
-        Public Aliases As New Dictionary(Of String, String)
-        Public RemoteDebugAliases As New Dictionary(Of String, String)
-        Public FTPShellAliases As New Dictionary(Of String, String)
-        Public MailShellAliases As New Dictionary(Of String, String)
-        Public SFTPShellAliases As New Dictionary(Of String, String)
-        Public TextShellAliases As New Dictionary(Of String, String)
-        Public TestShellAliases As New Dictionary(Of String, String)
-        Public ZIPShellAliases As New Dictionary(Of String, String)
-        Public RSSShellAliases As New Dictionary(Of String, String)
-        Public JsonShellAliases As New Dictionary(Of String, String)
-        Public HTTPShellAliases As New Dictionary(Of String, String)
-        Public HexShellAliases As New Dictionary(Of String, String)
-        Public RARShellAliases As New Dictionary(Of String, String)
+        Friend Aliases As New Dictionary(Of String, String)
+        Friend RemoteDebugAliases As New Dictionary(Of String, String)
+        Friend FTPShellAliases As New Dictionary(Of String, String)
+        Friend MailShellAliases As New Dictionary(Of String, String)
+        Friend SFTPShellAliases As New Dictionary(Of String, String)
+        Friend TextShellAliases As New Dictionary(Of String, String)
+        Friend TestShellAliases As New Dictionary(Of String, String)
+        Friend ZIPShellAliases As New Dictionary(Of String, String)
+        Friend RSSShellAliases As New Dictionary(Of String, String)
+        Friend JsonShellAliases As New Dictionary(Of String, String)
+        Friend HTTPShellAliases As New Dictionary(Of String, String)
+        Friend HexShellAliases As New Dictionary(Of String, String)
+        Friend RARShellAliases As New Dictionary(Of String, String)
         Friend AliasesToBeRemoved As New Dictionary(Of String, ShellType)
 
         ''' <summary>
@@ -46,69 +46,16 @@ Namespace Shell.ShellBase.Aliases
             MakeFile(GetKernelPath(KernelPathType.Aliases), False)
             Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
             Dim AliasNameToken As JToken = JToken.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "{}"))
-            Dim AliasCmd, ActualCmd, AliasType As String
+            Dim AliasCmd, ActualCmd As String
+            Dim AliasType As ShellType
 
             For Each AliasObject As JObject In AliasNameToken
                 AliasCmd = AliasObject("Alias")
                 ActualCmd = AliasObject("Command")
-                AliasType = AliasObject("Type")
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType)
-                Select Case AliasType
-                    Case "Shell"
-                        If Not Aliases.ContainsKey(AliasCmd) Then
-                            Aliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "Remote"
-                        If Not RemoteDebugAliases.ContainsKey(AliasCmd) Then
-                            RemoteDebugAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "FTPShell"
-                        If Not FTPShellAliases.ContainsKey(AliasCmd) Then
-                            FTPShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "SFTPShell"
-                        If Not SFTPShellAliases.ContainsKey(AliasCmd) Then
-                            SFTPShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "Mail"
-                        If Not MailShellAliases.ContainsKey(AliasCmd) Then
-                            MailShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "Text"
-                        If Not TextShellAliases.ContainsKey(AliasCmd) Then
-                            TextShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "Test"
-                        If Not TestShellAliases.ContainsKey(AliasCmd) Then
-                            TestShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "ZIP"
-                        If Not ZIPShellAliases.ContainsKey(AliasCmd) Then
-                            ZIPShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "RSS"
-                        If Not RSSShellAliases.ContainsKey(AliasCmd) Then
-                            RSSShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "JSON"
-                        If Not JsonShellAliases.ContainsKey(AliasCmd) Then
-                            JsonShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "HTTP"
-                        If Not HTTPShellAliases.ContainsKey(AliasCmd) Then
-                            HTTPShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "Hex"
-                        If Not HexShellAliases.ContainsKey(AliasCmd) Then
-                            HexShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case "RAR"
-                        If Not RARShellAliases.ContainsKey(AliasCmd) Then
-                            RARShellAliases.Add(AliasCmd, ActualCmd)
-                        End If
-                    Case Else
-                        Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
-                End Select
+                AliasType = AliasObject("Type").ToObject(GetType(ShellType))
+                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString)
+                Dim TargetAliasList = GetAliasesListFromType(AliasType)
+                TargetAliasList.Add(AliasCmd, ActualCmd)
             Next
         End Sub
 
@@ -116,152 +63,28 @@ Namespace Shell.ShellBase.Aliases
         ''' Saves aliases
         ''' </summary>
         Public Sub SaveAliases()
+            'Save all aliases
+            For Each Shell As ShellType In [Enum].GetValues(GetType(ShellType))
+                SaveAliasesInternal(Shell)
+            Next
+        End Sub
+
+        Friend Sub SaveAliasesInternal(ShellType As ShellType)
             'Get all aliases from file
             MakeFile(GetKernelPath(KernelPathType.Aliases), False)
             Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
             Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
-            'Shell aliases
-            For i As Integer = 0 To Aliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Shell...", Aliases.Keys(i), Aliases.Values(i))
+            'Save the alias
+            Dim ShellAliases = GetAliasesListFromType(ShellType)
+            For i As Integer = 0 To ShellAliases.Count - 1
+                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type {2}...", ShellAliases.Keys(i), ShellAliases.Values(i), ShellType.ToString)
                 Dim AliasObject As New JObject From {
-                    {"Alias", Aliases.Keys(i)},
-                    {"Command", Aliases.Values(i)},
-                    {"Type", "Shell"}
+                    {"Alias", ShellAliases.Keys(i)},
+                    {"Command", ShellAliases.Values(i)},
+                    {"Type", ShellType.ToString}
                 }
-                If Not DoesAliasExist(Aliases.Keys(i), ShellType.Shell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'Remote Debug aliases
-            For i As Integer = 0 To RemoteDebugAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Remote...", RemoteDebugAliases.Keys(i), RemoteDebugAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", RemoteDebugAliases.Keys(i)},
-                    {"Command", RemoteDebugAliases.Values(i)},
-                    {"Type", "Remote"}
-                }
-                If Not DoesAliasExist(RemoteDebugAliases.Keys(i), ShellType.RemoteDebugShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'FTP shell aliases
-            For i As Integer = 0 To FTPShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type FTPShell...", FTPShellAliases.Keys(i), FTPShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", FTPShellAliases.Keys(i)},
-                    {"Command", FTPShellAliases.Values(i)},
-                    {"Type", "FTPShell"}
-                }
-                If Not DoesAliasExist(FTPShellAliases.Keys(i), ShellType.FTPShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'SFTP shell aliases
-            For i As Integer = 0 To SFTPShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type SFTPShell...", SFTPShellAliases.Keys(i), SFTPShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", SFTPShellAliases.Keys(i)},
-                    {"Command", SFTPShellAliases.Values(i)},
-                    {"Type", "SFTPShell"}
-                }
-                If Not DoesAliasExist(SFTPShellAliases.Keys(i), ShellType.SFTPShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'Mail shell aliases
-            For i As Integer = 0 To MailShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Mail...", MailShellAliases.Keys(i), MailShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", MailShellAliases.Keys(i)},
-                    {"Command", MailShellAliases.Values(i)},
-                    {"Type", "Mail"}
-                }
-                If Not DoesAliasExist(MailShellAliases.Keys(i), ShellType.MailShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'Text shell aliases
-            For i As Integer = 0 To TextShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Text...", TextShellAliases.Keys(i), TextShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", TextShellAliases.Keys(i)},
-                    {"Command", TextShellAliases.Values(i)},
-                    {"Type", "Text"}
-                }
-                If Not DoesAliasExist(TextShellAliases.Keys(i), ShellType.TextShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'Test shell aliases
-            For i As Integer = 0 To TestShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Test...", TestShellAliases.Keys(i), TestShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", TestShellAliases.Keys(i)},
-                    {"Command", TestShellAliases.Values(i)},
-                    {"Type", "Test"}
-                }
-                If Not DoesAliasExist(TestShellAliases.Keys(i), ShellType.TestShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'ZIP shell aliases
-            For i As Integer = 0 To ZIPShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type ZIP...", ZIPShellAliases.Keys(i), ZIPShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", ZIPShellAliases.Keys(i)},
-                    {"Command", ZIPShellAliases.Values(i)},
-                    {"Type", "ZIP"}
-                }
-                If Not DoesAliasExist(ZIPShellAliases.Keys(i), ShellType.ZIPShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'RSS shell aliases
-            For i As Integer = 0 To RSSShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type RSS...", RSSShellAliases.Keys(i), RSSShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", RSSShellAliases.Keys(i)},
-                    {"Command", RSSShellAliases.Values(i)},
-                    {"Type", "RSS"}
-                }
-                If Not DoesAliasExist(RSSShellAliases.Keys(i), ShellType.RSSShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'JSON shell aliases
-            For i As Integer = 0 To JsonShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type JSON...", JsonShellAliases.Keys(i), JsonShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", JsonShellAliases.Keys(i)},
-                    {"Command", JsonShellAliases.Values(i)},
-                    {"Type", "JSON"}
-                }
-                If Not DoesAliasExist(JsonShellAliases.Keys(i), ShellType.JsonShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'HTTP shell aliases
-            For i As Integer = 0 To HTTPShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type HTTP...", HTTPShellAliases.Keys(i), HTTPShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", HTTPShellAliases.Keys(i)},
-                    {"Command", HTTPShellAliases.Values(i)},
-                    {"Type", "HTTP"}
-                }
-                If Not DoesAliasExist(HTTPShellAliases.Keys(i), ShellType.HTTPShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'Hex shell aliases
-            For i As Integer = 0 To HexShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type HTTP...", HexShellAliases.Keys(i), HexShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", HexShellAliases.Keys(i)},
-                    {"Command", HexShellAliases.Values(i)},
-                    {"Type", "Hex"}
-                }
-                If Not DoesAliasExist(HexShellAliases.Keys(i), ShellType.HexShell) Then AliasNameToken.Add(AliasObject)
-            Next
-
-            'RAR shell aliases
-            For i As Integer = 0 To RARShellAliases.Count - 1
-                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type RAR...", RARShellAliases.Keys(i), RARShellAliases.Values(i))
-                Dim AliasObject As New JObject From {
-                    {"Alias", RARShellAliases.Keys(i)},
-                    {"Command", RARShellAliases.Values(i)},
-                    {"Type", "RAR"}
-                }
-                If Not DoesAliasExist(RARShellAliases.Keys(i), ShellType.RARShell) Then AliasNameToken.Add(AliasObject)
+                If Not DoesAliasExist(ShellAliases.Keys(i), ShellType) Then AliasNameToken.Add(AliasObject)
             Next
 
             'Save changes
@@ -386,34 +209,7 @@ Namespace Shell.ShellBase.Aliases
                 For RemovedAliasIndex As Integer = AliasNameToken.Count - 1 To 0 Step -1
                     Dim TargetAliasType As ShellType = AliasesToBeRemoved(TargetAliasItem)
                     Dim TargetAlias As String = TargetAliasItem.Substring(TargetAliasItem.IndexOf("-") + 1)
-                    Select Case TargetAliasType
-                        Case ShellType.Shell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Shell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.RemoteDebugShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Remote" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.FTPShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "FTPShell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.SFTPShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "SFTPShell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.MailShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Mail" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.TextShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Text" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.TestShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Test" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.ZIPShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "ZIP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.RSSShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RSS" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.JsonShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "JSON" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.HTTPShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "HTTP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.HexShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Hex" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                        Case ShellType.RARShell
-                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RAR" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
-                    End Select
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = TargetAliasType.ToString Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                 Next
             Next
 
@@ -437,63 +233,9 @@ Namespace Shell.ShellBase.Aliases
             Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
             'Check to see if the specified alias exists
-            Select Case Type
-                Case ShellType.Shell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Shell" Then Return True
-                    Next
-                Case ShellType.RemoteDebugShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Remote" Then Return True
-                    Next
-                Case ShellType.FTPShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "FTPShell" Then Return True
-                    Next
-                Case ShellType.SFTPShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "SFTPShell" Then Return True
-                    Next
-                Case ShellType.MailShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Mail" Then Return True
-                    Next
-                Case ShellType.TextShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Text" Then Return True
-                    Next
-                Case ShellType.TestShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Test" Then Return True
-                    Next
-                Case ShellType.ZIPShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "ZIP" Then Return True
-                    Next
-                Case ShellType.RSSShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS" Then Return True
-                    Next
-                Case ShellType.JsonShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "JSON" Then Return True
-                    Next
-                Case ShellType.HTTPShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "HTTP" Then Return True
-                    Next
-                Case ShellType.HexShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "Hex" Then Return True
-                    Next
-                Case ShellType.RARShell
-                    For Each AliasName As JObject In AliasNameToken
-                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "RAR" Then Return True
-                    Next
-                Case Else
-                    Wdbg(DebugLevel.E, "Type {0} not found.", Type)
-                    Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
-            End Select
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = Type.ToString Then Return True
+            Next
             Return False
         End Function
 
@@ -529,6 +271,9 @@ Namespace Shell.ShellBase.Aliases
                     Return HexShellAliases
                 Case ShellType.RARShell
                     Return RARShellAliases
+                Case Else
+                    Wdbg(DebugLevel.E, "Type {0} not found.", ShellType)
+                    Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), ShellType)
             End Select
         End Function
 
