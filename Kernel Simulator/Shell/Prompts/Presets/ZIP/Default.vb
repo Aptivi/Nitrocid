@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Text
 Imports KS.Misc.ZipFile
 
@@ -42,8 +43,11 @@ Namespace Shell.Prompts.Presets.ZIP
             PresetStringBuilder.Append(GetGray().VTSequenceForeground)
             PresetStringBuilder.Append("[")
 
-            'Current archive directory
-            'TODO: Show ZIP file name again
+            'File name
+            PresetStringBuilder.Append(UserNameShellColor.VTSequenceForeground)
+            PresetStringBuilder.AppendFormat(Path.GetFileName(ZipShell_FileStream.Name))
+
+            'Was file edited?
             PresetStringBuilder.Append(UserNameShellColor.VTSequenceForeground)
             PresetStringBuilder.AppendFormat("{0}", ZipShell_CurrentArchiveDirectory)
 
