@@ -29,6 +29,9 @@ Namespace Misc.Animations.EdgePulse
         ''' Simulates the edge pulsing animation
         ''' </summary>
         Public Sub Simulate(Settings As EdgePulseSettings)
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
+
             'Now, do the rest
             Dim RandomDriver As Random = Settings.RandomDriver
             Dim RedColorNum As Integer = RandomDriver.Next(Settings.EdgePulseMinimumRedColorLevel, Settings.EdgePulseMaximumRedColorLevel)

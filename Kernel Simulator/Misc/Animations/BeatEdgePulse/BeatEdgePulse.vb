@@ -29,6 +29,8 @@ Namespace Misc.Animations.BeatEdgePulse
         ''' Simulates the beat pulsing animation
         ''' </summary>
         Public Sub Simulate(Settings As BeatEdgePulseSettings)
+            CurrentWindowWidth = Console.WindowWidth
+            CurrentWindowHeight = Console.WindowHeight
             Dim RandomDriver As Random = Settings.RandomDriver
             Console.CursorVisible = False
             Dim BeatInterval As Integer = 60000 / Settings.BeatEdgePulseDelay

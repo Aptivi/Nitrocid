@@ -16,15 +16,16 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Misc.Screensaver.Displays
-    Public Module BeatFaderSettings
+Namespace Misc.Animations.BeatFader
+    Public Class BeatFaderSettings
 
+        Friend RandomDriver As Random
         Private _beatFader255Colors As Boolean
         Private _beatFaderTrueColor As Boolean = True
+        Private _beatFaderDelay As Integer = 120
+        Private _beatFaderMaxSteps As Integer = 30
         Private _beatFaderCycleColors As Boolean = True
         Private _beatFaderBeatColor As String = 17
-        Private _beatFaderDelay As Integer = 120
-        Private _beatFaderMaxSteps As Integer = 25
         Private _beatFaderMinimumRedColorLevel As Integer = 0
         Private _beatFaderMinimumGreenColorLevel As Integer = 0
         Private _beatFaderMinimumBlueColorLevel As Integer = 0
@@ -208,51 +209,6 @@ Namespace Misc.Screensaver.Displays
                 _beatFaderMaximumColorLevel = value
             End Set
         End Property
-
-    End Module
-
-    Public Class BeatFaderDisplay
-        Inherits BaseScreensaver
-        Implements IScreensaver
-
-        Private RandomDriver As Random
-        Private CurrentWindowWidth As Integer
-        Private CurrentWindowHeight As Integer
-        Private ResizeSyncing As Boolean
-        Private BeatFaderSettingsInstance As Animations.BeatFader.BeatFaderSettings
-
-        Public Overrides Property ScreensaverName As String = "BeatFader" Implements IScreensaver.ScreensaverName
-
-        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
-
-        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
-            'Variable preparations
-            RandomDriver = New Random
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-            BeatFaderSettingsInstance = New Animations.BeatFader.BeatFaderSettings With {
-                .BeatFader255Colors = BeatFader255Colors,
-                .BeatFaderTrueColor = BeatFaderTrueColor,
-                .BeatFaderBeatColor = BeatFaderBeatColor,
-                .BeatFaderDelay = BeatFaderDelay,
-                .BeatFaderMaxSteps = BeatFaderMaxSteps,
-                .BeatFaderCycleColors = BeatFaderCycleColors,
-                .BeatFaderMinimumRedColorLevel = BeatFaderMinimumRedColorLevel,
-                .BeatFaderMinimumGreenColorLevel = BeatFaderMinimumGreenColorLevel,
-                .BeatFaderMinimumBlueColorLevel = BeatFaderMinimumBlueColorLevel,
-                .BeatFaderMinimumColorLevel = BeatFaderMinimumColorLevel,
-                .BeatFaderMaximumRedColorLevel = BeatFaderMaximumRedColorLevel,
-                .BeatFaderMaximumGreenColorLevel = BeatFaderMaximumGreenColorLevel,
-                .BeatFaderMaximumBlueColorLevel = BeatFaderMaximumBlueColorLevel,
-                .BeatFaderMaximumColorLevel = BeatFaderMaximumColorLevel,
-                .RandomDriver = RandomDriver
-            }
-        End Sub
-
-        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
-            Animations.BeatFader.Simulate(BeatFaderSettingsInstance)
-        End Sub
 
     End Class
 End Namespace

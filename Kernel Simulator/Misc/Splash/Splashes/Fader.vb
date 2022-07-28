@@ -46,8 +46,20 @@ Namespace Misc.Splash.Splashes
 
         'Fader-specific variables
         Friend RandomDriver As New Random()
-        Friend Left, Top As Integer
-        Friend FaderWrite As String = "Kernel Simulator"
+        Friend FaderSettingsInstance As New Animations.Fader.FaderSettings With {
+            .FaderDelay = 50,
+            .FaderWrite = "Kernel Simulator",
+            .FaderBackgroundColor = New Color(ConsoleColor.Black).PlainSequence,
+            .FaderFadeOutDelay = 3000,
+            .FaderMaxSteps = 30,
+            .FaderMinimumRedColorLevel = 0,
+            .FaderMinimumGreenColorLevel = 0,
+            .FaderMinimumBlueColorLevel = 0,
+            .FaderMaximumRedColorLevel = 255,
+            .FaderMaximumGreenColorLevel = 255,
+            .FaderMaximumBlueColorLevel = 255,
+            .RandomDriver = RandomDriver
+        }
 
         'Actual logic
         Public Sub Opening() Implements ISplash.Opening
@@ -58,20 +70,8 @@ Namespace Misc.Splash.Splashes
         Public Sub Display() Implements ISplash.Display
             Try
                 Wdbg(DebugLevel.I, "Splash displaying.")
-
-                'Select the left and top position
-                Left = RandomDriver.Next(Console.WindowWidth)
-                Top = RandomDriver.Next(Console.WindowHeight)
-
-                'In case we've selected the left position that is too near the end of buffer, decrement the selected left position
-                'so that the text shows up in one line only.
-                If FaderWrite.Length + Left >= Console.WindowWidth Then
-                    Left -= FaderWrite.Length + 1
-                End If
-
-                'Loop until we got a closing notification
                 While Not SplashClosing
-                    Thread.Sleep(1)
+                    Animations.Fader.Simulate(FaderSettingsInstance)
                 End While
             Catch ex As ThreadInterruptedException
                 Wdbg(DebugLevel.I, "Splash done.")
@@ -86,11 +86,6 @@ Namespace Misc.Splash.Splashes
         End Sub
 
         Public Sub Report(Progress As Integer, ProgressReport As String, ParamArray Vars() As Object) Implements ISplash.Report
-            'Fade in as progress is getting reported
-            Dim GreenColorLevel As Integer = 255 * (Progress / 100)
-            Dim GreenColorInstance As New Color(0, GreenColorLevel, 0)
-            SetConsoleColor(GreenColorInstance)
-            WriteWhere(FaderWrite, Left, Top, False, GreenColorInstance)
         End Sub
 
     End Class

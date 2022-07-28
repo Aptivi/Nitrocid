@@ -16,9 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Misc.Screensaver.Displays
-    Public Module FaderSettings
+Namespace Misc.Animations.Fader
+    Public Class FaderSettings
 
+        Friend RandomDriver As Random
         Private _faderDelay As Integer = 50
         Private _faderFadeOutDelay As Integer = 3000
         Private _faderWrite As String = "Kernel Simulator"
@@ -168,48 +169,6 @@ Namespace Misc.Screensaver.Displays
                 _faderMaximumBlueColorLevel = value
             End Set
         End Property
-
-    End Module
-
-    Public Class FaderDisplay
-        Inherits BaseScreensaver
-        Implements IScreensaver
-
-        Private RandomDriver As Random
-        Private CurrentWindowWidth As Integer
-        Private CurrentWindowHeight As Integer
-        Private ResizeSyncing As Boolean
-        Private FaderSettingsInstance As Animations.Fader.FaderSettings
-
-        Public Overrides Property ScreensaverName As String = "Fader" Implements IScreensaver.ScreensaverName
-
-        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
-
-        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
-            'Variable preparations
-            RandomDriver = New Random
-            SetConsoleColor(New Color(FaderBackgroundColor), True)
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-            FaderSettingsInstance = New Animations.Fader.FaderSettings With {
-                .FaderDelay = FaderDelay,
-                .FaderWrite = FaderWrite,
-                .FaderBackgroundColor = FaderBackgroundColor,
-                .FaderFadeOutDelay = FaderFadeOutDelay,
-                .FaderMaxSteps = FaderMaxSteps,
-                .FaderMinimumRedColorLevel = FaderMinimumRedColorLevel,
-                .FaderMinimumGreenColorLevel = FaderMinimumGreenColorLevel,
-                .FaderMinimumBlueColorLevel = FaderMinimumBlueColorLevel,
-                .FaderMaximumRedColorLevel = FaderMaximumRedColorLevel,
-                .FaderMaximumGreenColorLevel = FaderMaximumGreenColorLevel,
-                .FaderMaximumBlueColorLevel = FaderMaximumBlueColorLevel,
-                .RandomDriver = RandomDriver
-            }
-        End Sub
-
-        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
-            Animations.Fader.Simulate(FaderSettingsInstance)
-        End Sub
 
     End Class
 End Namespace

@@ -16,10 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Misc.Screensaver.Displays
-    Public Module FaderBackSettings
+Namespace Misc.Animations.FaderBack
+    Public Class FaderBackSettings
 
-        Private _faderBackDelay As Integer = 10
+        Friend RandomDriver As Random
+        Private _faderBackDelay As Integer = 50
         Private _faderBackFadeOutDelay As Integer = 3000
         Private _faderBackMaxSteps As Integer = 25
         Private _faderBackMinimumRedColorLevel As Integer = 0
@@ -37,7 +38,7 @@ Namespace Misc.Screensaver.Displays
                 Return _faderBackDelay
             End Get
             Set(value As Integer)
-                If value <= 0 Then value = 10
+                If value <= 0 Then value = 50
                 _faderBackDelay = value
             End Set
         End Property
@@ -143,48 +144,6 @@ Namespace Misc.Screensaver.Displays
                 _faderBackMaximumBlueColorLevel = value
             End Set
         End Property
-
-    End Module
-
-    Public Class FaderBackDisplay
-        Inherits BaseScreensaver
-        Implements IScreensaver
-
-        Private RandomDriver As Random
-        Private CurrentWindowWidth As Integer
-        Private CurrentWindowHeight As Integer
-        Private ResizeSyncing As Boolean
-        Private FaderBackSettingsInstance As Animations.FaderBack.FaderBackSettings
-
-        Public Overrides Property ScreensaverName As String = "FaderBack" Implements IScreensaver.ScreensaverName
-
-        Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object) Implements IScreensaver.ScreensaverSettings
-
-        Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
-            'Variable preparations
-            RandomDriver = New Random
-            CurrentWindowWidth = Console.WindowWidth
-            CurrentWindowHeight = Console.WindowHeight
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-            FaderBackSettingsInstance = New Animations.FaderBack.FaderBackSettings With {
-                .FaderBackDelay = FaderBackDelay,
-                .FaderBackFadeOutDelay = FaderBackFadeOutDelay,
-                .FaderBackMaxSteps = FaderBackMaxSteps,
-                .FaderBackMinimumRedColorLevel = FaderBackMinimumRedColorLevel,
-                .FaderBackMinimumGreenColorLevel = FaderBackMinimumGreenColorLevel,
-                .FaderBackMinimumBlueColorLevel = FaderBackMinimumBlueColorLevel,
-                .FaderBackMaximumRedColorLevel = FaderBackMaximumRedColorLevel,
-                .FaderBackMaximumGreenColorLevel = FaderBackMaximumGreenColorLevel,
-                .FaderBackMaximumBlueColorLevel = FaderBackMaximumBlueColorLevel,
-                .RandomDriver = RandomDriver
-            }
-        End Sub
-
-        Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
-            Animations.FaderBack.Simulate(FaderBackSettingsInstance)
-        End Sub
 
     End Class
 End Namespace
