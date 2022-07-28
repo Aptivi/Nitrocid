@@ -120,15 +120,18 @@ Namespace Misc.Games
 
                     'Draw the meteor, the bullet, and the spaceship if any of them are updated
                     DrawSpaceship()
-                    For Each Meteor In Meteors
+                    For MeteorIndex As Integer = Meteors.Count - 1 To 0 Step -1
+                        Dim Meteor = Meteors(MeteorIndex)
                         DrawMeteor(Meteor.Item1, Meteor.Item2)
                     Next
-                    For Each Bullet In Bullets
+                    For BulletIndex As Integer = Bullets.Count - 1 To 0 Step -1
+                        Dim Bullet = Bullets(BulletIndex)
                         DrawBullet(Bullet.Item1, Bullet.Item2)
                     Next
 
                     'Check to see if the spaceship is blown up
-                    For Each Meteor In Meteors
+                    For MeteorIndex As Integer = Meteors.Count - 1 To 0 Step -1
+                        Dim Meteor = Meteors(MeteorIndex)
                         If Meteor.Item1 = 0 And Meteor.Item2 = SpaceshipHeight Then
                             'The spaceship crashed! Game ended.
                             GameEnded = True
@@ -156,13 +159,12 @@ Namespace Misc.Games
             Catch ex As Exception
                 'Game is over with an unexpected error.
                 WriteWhere(DoTranslation("Unexpected error") + ": {0}", 0, Console.WindowHeight - 1, False, ConsoleColor.Red, ex.Message)
-                Threading.SleepNoBlock(3000, MeteorDrawThread)
+                SleepNoBlock(3000, MeteorDrawThread)
                 Console.Clear()
-                Exit Sub
             Finally
                 'Write game over
                 WriteWhere(DoTranslation("Game over"), 0, Console.WindowHeight - 1, False, ConsoleColor.Red)
-                Threading.SleepNoBlock(3000, MeteorDrawThread)
+                SleepNoBlock(3000, MeteorDrawThread)
                 Console.Clear()
             End Try
         End Sub
