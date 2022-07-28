@@ -126,6 +126,7 @@ Namespace Shell
             {"ping", New CommandInfo("ping", ShellType.Shell, "Pings an address", {"[times] <Address1> <Address2> ..."}, True, 1, New PingCommand)},
             {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", Array.Empty(Of String), False, 0, New PresetsCommand)},
             {"put", New CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", {"<FileName> <URL>"}, True, 2, New PutCommand)},
+            {"rarshell", New CommandInfo("rarshell", ShellType.Shell, "The RAR shell", Array.Empty(Of String), False, 0, New RarShellCommand)},
             {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", {"[ip] [port]"}, False, 0, New RebootCommand)},
             {"reloadconfig", New CommandInfo("reloadconfig", ShellType.Shell, "Reloads configuration file that is edited.", Array.Empty(Of String), False, 0, New ReloadConfigCommand, True, False, False, False, True)},
             {"reloadsaver", New CommandInfo("reloadsaver", ShellType.Shell, "Reloads screensaver file in KSMods", {"<customsaver>"}, True, 1, New ReloadSaverCommand, True, False, False, False, True)},
