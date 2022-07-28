@@ -83,10 +83,18 @@ Namespace ConsoleBase.Inputs.Styles
                         Write("<{0}> ", False, ColTypes.Input, AnswersStr)
                     Case ChoiceOutputType.Modern
                         Write(Question + NewLine, True, ColTypes.Question)
+                        Dim AnswerTitleLeft As Integer = answers.Max(Function(x) $" {x}) ".Length)
+                        If AnswerTitleLeft >= Console.WindowWidth Then AnswerTitleLeft = 0
                         For AnswerIndex As Integer = 0 To answers.Length - 1
                             Dim AnswerInstance As String = answers(AnswerIndex)
                             Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
-                            Write($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
+                            If AnswerTitleLeft > 0 Then
+                                Write($" {AnswerInstance}) ", False, ColTypes.Option)
+                                WriteWhere(AnswerTitle, AnswerTitleLeft, Console.CursorTop, False, ColTypes.Option)
+                                Write("", True, ColTypes.Option)
+                            Else
+                                Write($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
+                            End If
                         Next
                         Write(NewLine + ">> ", False, ColTypes.Input)
                     Case ChoiceOutputType.Table
