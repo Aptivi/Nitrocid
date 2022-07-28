@@ -16,21 +16,30 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Files.Querying
+Imports SharpCompress.Archives.Rar
 
-Namespace Shell.Commands
-    Class RarShellCommand
+Namespace Misc.RarFile.Commands
+    Class RarShell_ListCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            ListArgs(0) = NeutralizePath(ListArgs(0))
-            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-            If FileExists(ListArgs(0)) Then
-                StartShell(ShellType.RARShell, ListArgs(0))
+            Dim Entries As List(Of RarArchiveEntry)
+            If ListArgs?.Length > 0 Then
+                Wdbg(DebugLevel.I, "Listing entries with {0} as target directory", ListArgs(0))
+                Entries = ListRarEntries(ListArgs(0))
             Else
-                Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
+                Wdbg(DebugLevel.I, "Listing entries with current directory as target directory")
+                Entries = ListRarEntries(RarShell_CurrentArchiveDirectory)
             End If
+            For Each Entry As RarArchiveEntry In Entries
+                Write("- {0}: ", False, ColTypes.ListEntry, Entry.Key)
+                If Not Entry.IsDirectory Then 'Entry is a file
+                    Write("{0} ({1})", True, ColTypes.ListValue, Entry.CompressedSize.FileSizeToString, Entry.Size.FileSizeToString)
+                Else
+                    Console.WriteLine()
+                End If
+            Next
         End Sub
 
     End Class

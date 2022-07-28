@@ -24,7 +24,7 @@ Namespace Shell.ShellBase
         Friend CurrentShellType As ShellType = ShellType.Shell
         Friend LastShellType As ShellType = ShellType.Shell
         Friend CancelSync, EditorCancelSync, FTPCancelSync, HTTPCancelSync, JsonShellCancelSync, MailCancelSync, RssShellCancelSync,
-               SFTPCancelSync, TestCancelSync, ZipShellCancelSync, HexEditorCancelSync As New Object
+               SFTPCancelSync, TestCancelSync, ZipShellCancelSync, HexEditorCancelSync, RarShellCancelSync As New Object
 
         Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
             SyncLock GetCancelSyncLock(ShellStack(ShellStack.Count - 1).ShellType)
@@ -66,6 +66,8 @@ Namespace Shell.ShellBase
                     Return HTTPCancelSync
                 Case ShellType.HexShell
                     Return HexEditorCancelSync
+                Case ShellType.RARShell
+                    Return RarShellCancelSync
             End Select
         End Function
 

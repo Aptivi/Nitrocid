@@ -28,6 +28,7 @@ Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
 Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
+Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -474,6 +475,8 @@ Namespace Modifications
                     Return HTTPModCommands
                 Case ShellType.HexShell
                     Return HexEdit_ModCommands
+                Case ShellType.RARShell
+                    Return RARShell_ModCommands
             End Select
         End Function
 

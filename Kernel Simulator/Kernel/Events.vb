@@ -168,6 +168,10 @@ Namespace Kernel
         Public Event JsonPreExecuteCommand(Command As String)
         Public Event JsonPostExecuteCommand(Command As String)
         Public Event JsonCommandError(Command As String, Exception As Exception)
+        Public Event RarShellInitialized()
+        Public Event RarPreExecuteCommand(Command As String)
+        Public Event RarPostExecuteCommand(Command As String)
+        Public Event RarCommandError(Command As String, Exception As Exception)
 
         ''' <summary>
         ''' Makes the mod respond to the event of kernel start
@@ -2531,6 +2535,74 @@ Namespace Kernel
                 Next
             Next
         End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of ZIP shell initialized
+        ''' </summary>
+        Public Sub RespondRarShellInitialized() Handles Me.RarShellInitialized
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarShellInitialized()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("RarShellInitialized")
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of ZIP pre-command execution
+        ''' </summary>
+        Public Sub RespondRarPreExecuteCommand(Command As String) Handles Me.RarPreExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("RarPreExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of ZIP post-command execution
+        ''' </summary>
+        Public Sub RespondRarPostExecuteCommand(Command As String) Handles Me.RarPostExecuteCommand
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("RarPostExecuteCommand", Command)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
+        ''' <summary>
+        ''' Makes the mod respond to the event of ZIP command error
+        ''' </summary>
+        Public Sub RespondRarCommandError(Command As String, Exception As Exception) Handles Me.RarCommandError
+            For Each ModPart As ModInfo In Mods.Values
+                For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                    Try
+                        Dim script As IScript = PartInfo.PartScript
+                        WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event RarCommandError()...", script.ModPart, script.Name, script.Version)
+                        script.InitEvents("RarCommandError", Command, Exception)
+                    Catch ex As Exception
+                        WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                        WStkTrcConditional(EventDebug, ex)
+                    End Try
+                Next
+            Next
+        End Sub
 
         'These subs are for raising events
         ''' <summary>
@@ -3644,6 +3716,38 @@ Namespace Kernel
             WdbgConditional(EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...")
             FiredEvents.Add("TestCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
             RaiseEvent TestCommandError(Command, Exception)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of ZIP shell initialized
+        ''' </summary>
+        Public Sub RaiseRarShellInitialized()
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event RarShellInitialized() and responding in RespondRarShellInitialized()...")
+            FiredEvents.Add("RarShellInitialized (" + CStr(FiredEvents.Count) + ")", Array.Empty(Of Object))
+            RaiseEvent RarShellInitialized()
+        End Sub
+        ''' <summary>
+        ''' Raise an event of ZIP pre-command execution
+        ''' </summary>
+        Public Sub RaiseRarPreExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event RarPreExecuteCommand() and responding in RespondRarPreExecuteCommand()...")
+            FiredEvents.Add("RarPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent RarPreExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of ZIP post-command execution
+        ''' </summary>
+        Public Sub RaiseRarPostExecuteCommand(Command As String)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event RarPostExecuteCommand() and responding in RespondRarPostExecuteCommand()...")
+            FiredEvents.Add("RarPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+            RaiseEvent RarPostExecuteCommand(Command)
+        End Sub
+        ''' <summary>
+        ''' Raise an event of ZIP command error
+        ''' </summary>
+        Public Sub RaiseRarCommandError(Command As String, Exception As Exception)
+            WdbgConditional(EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...")
+            FiredEvents.Add("RarCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+            RaiseEvent RarCommandError(Command, Exception)
         End Sub
 
     End Class

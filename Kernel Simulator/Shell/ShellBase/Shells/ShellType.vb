@@ -69,5 +69,9 @@ Namespace Shell.ShellBase.Shells
         ''' Hex shell
         ''' </summary>
         HexShell
+        ''' <summary>
+        ''' RAR shell
+        ''' </summary>
+        RARShell
     End Enum
 End Namespace

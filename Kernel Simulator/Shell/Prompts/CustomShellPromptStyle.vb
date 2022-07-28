@@ -19,6 +19,7 @@
 Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
+Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.Mail
@@ -55,6 +56,8 @@ Namespace Shell.Prompts
                     Return HexEdit_PromptStyle
                 Case ShellType.FTPShell
                     Return FTPShellPromptStyle
+                Case ShellType.RARShell
+                    Return RARShell_PromptStyle
                 Case Else
                     Return ShellPromptStyle
             End Select

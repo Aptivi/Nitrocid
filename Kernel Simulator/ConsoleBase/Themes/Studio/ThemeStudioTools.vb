@@ -306,7 +306,8 @@ Namespace ConsoleBase.Themes.Studio
             SelectedListTitleColor = ListTitleColor
             SelectedDevelopmentWarningColor = DevelopmentWarningColor
             SelectedStageTimeColor = StageTimeColor
-            SelectedProgressColor = ProgressColor
+            'TODO: Change module name of ProgressColor to avoid conflict
+            SelectedProgressColor = ColorTools.ProgressColor
             SelectedBackOptionColor = BackOptionColor
             SelectedLowPriorityBorderColor = LowPriorityBorderColor
             SelectedMediumPriorityBorderColor = MediumPriorityBorderColor

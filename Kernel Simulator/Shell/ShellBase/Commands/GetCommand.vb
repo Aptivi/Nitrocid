@@ -22,6 +22,7 @@ Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Writers.MiscWriters
+Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -133,6 +134,8 @@ Namespace Shell.ShellBase.Commands
                     Return HTTPCommands
                 Case ShellType.HexShell
                     Return HexEdit_Commands
+                Case ShellType.RARShell
+                    Return RarShell_Commands
                 Case Else
                     Return Shell.Commands
             End Select

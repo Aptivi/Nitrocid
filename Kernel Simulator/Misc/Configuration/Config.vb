@@ -27,6 +27,7 @@ Imports KS.Misc.Forecast
 Imports KS.Misc.Games
 Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Notifications
+Imports KS.Misc.RarFile
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
@@ -39,6 +40,7 @@ Imports KS.Misc.ZipFile
 Imports KS.Modifications
 Imports KS.Network
 Imports KS.Network.FTP
+Imports KS.Network.HTTP
 Imports KS.Network.Mail
 Imports KS.Network.Mail.Directory
 Imports KS.Network.RemoteDebug
@@ -218,6 +220,8 @@ Namespace Misc.Configuration
                     {"Test Shell Prompt Style", Test_PromptStyle},
                     {"JSON Shell Prompt Style", JsonShell_PromptStyle},
                     {"Hex Edit Prompt Style", HexEdit_PromptStyle},
+                    {"HTTP Shell Prompt Style", HTTPShellPromptStyle},
+                    {"RAR Shell Prompt Style", RarShell_PromptStyle},
                     {"Probe injected commands", ProbeInjectedCommands},
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
@@ -1264,6 +1268,8 @@ Namespace Misc.Configuration
             Test_PromptStyle = If(ConfigToken("Shell")?("Test Shell Prompt Style"), "")
             JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
             HexEdit_PromptStyle = If(ConfigToken("Shell")?("Hex Edit Prompt Style"), "")
+            HTTPShellPromptStyle = If(ConfigToken("Shell")?("HTTP Shell Prompt Style"), "")
+            RarShell_PromptStyle = If(ConfigToken("Shell")?("RAR Shell Prompt Style"), "")
             ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
             ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
             DefaultChoiceOutputType = If(ConfigToken("Shell")?("Default choice output type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Shell")?("Default choice output type"), DefaultChoiceOutputType), DefaultChoiceOutputType, ChoiceOutputType.Modern), ChoiceOutputType.Modern)

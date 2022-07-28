@@ -515,6 +515,18 @@
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
+                "Name": "HTTP Shell Prompt Style",
+                "Type": "SString",
+                "Variable": "HTTPShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "RAR Shell Prompt Style",
+                "Type": "SString",
+                "Variable": "RarShell_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
                 "Name": "Probe injected commands",
                 "Type": "SBoolean",
                 "Variable": "ProbeInjectedCommands",

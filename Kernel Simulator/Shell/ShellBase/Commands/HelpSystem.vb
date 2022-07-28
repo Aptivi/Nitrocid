@@ -21,6 +21,7 @@ Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Writers.MiscWriters
+Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
 Imports KS.Modifications
 Imports KS.Network.FTP
@@ -104,6 +105,9 @@ Namespace Shell.ShellBase.Commands
                 Case ShellType.HexShell
                     CommandList = HexEdit_Commands
                     AliasedCommandList = HexShellAliases
+                Case ShellType.RARShell
+                    CommandList = RarShell_Commands
+                    AliasedCommandList = RARShellAliases
             End Select
 
             'Check to see if command exists

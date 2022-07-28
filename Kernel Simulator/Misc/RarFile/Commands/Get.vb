@@ -16,21 +16,26 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Files.Querying
-
-Namespace Shell.Commands
-    Class RarShellCommand
+Namespace Misc.RarFile.Commands
+    Class RarShell_GetCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            ListArgs(0) = NeutralizePath(ListArgs(0))
-            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-            If FileExists(ListArgs(0)) Then
-                StartShell(ShellType.RARShell, ListArgs(0))
-            Else
-                Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
+            Dim Where As String = ""
+            Dim Absolute As Boolean
+            If ListArgs?.Length > 1 Then
+                If Not ListArgs(1) = "-absolute" Then Where = NeutralizePath(ListArgs(1))
+                If ListArgs?.Contains("-absolute") Then
+                    Absolute = True
+                End If
             End If
+            ExtractRarFileEntry(ListArgs(0), Where, Absolute)
+        End Sub
+
+        Public Overrides Sub HelpHelper()
+            Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+            Write("  -absolute: ", False, ColTypes.ListEntry) : Write(DoTranslation("Indicates that the target path is absolute"), True, ColTypes.ListValue)
         End Sub
 
     End Class

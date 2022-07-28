@@ -27,6 +27,7 @@ Imports KS.Shell.Prompts.Presets.Json
 Imports KS.Shell.Prompts.Presets.HTTP
 Imports KS.Shell.Prompts.Presets.Hex
 Imports KS.Shell.Prompts.Presets.FTP
+Imports KS.Shell.Prompts.Presets.RAR
 Imports KS.Kernel.Exceptions
 
 Namespace Shell.Prompts
@@ -67,6 +68,9 @@ Namespace Shell.Prompts
         Friend ReadOnly FTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New FTPDefaultPreset()}
         }
+        Friend ReadOnly RARShellPresets As New Dictionary(Of String, PromptPresetBase) From {
+            {"Default", New RarDefaultPreset()}
+        }
 
         'Custom shell presets used by mods
         Friend ReadOnly UESHCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
@@ -80,6 +84,7 @@ Namespace Shell.Prompts
         Friend ReadOnly HTTPCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
         Friend ReadOnly HexCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
         Friend ReadOnly FTPCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
+        Friend ReadOnly RARCustomShellPresets As New Dictionary(Of String, PromptPresetBase)
 
         'Current presets
         Friend UESHShellCurrentPreset As PromptPresetBase = UESHShellPresets("Default")
@@ -93,6 +98,7 @@ Namespace Shell.Prompts
         Friend HTTPShellCurrentPreset As PromptPresetBase = HTTPShellPresets("Default")
         Friend HexShellCurrentPreset As PromptPresetBase = HexShellPresets("Default")
         Friend FTPShellCurrentPreset As PromptPresetBase = FTPShellPresets("Default")
+        Friend RARShellCurrentPreset As PromptPresetBase = FTPShellPresets("Default")
 
         ''' <summary>
         ''' Sets the shell preset
@@ -146,6 +152,8 @@ Namespace Shell.Prompts
                     HexShellCurrentPreset = Presets(PresetName)
                 Case ShellType.FTPShell
                     FTPShellCurrentPreset = Presets(PresetName)
+                Case ShellType.RARShell
+                    RARShellCurrentPreset = Presets(PresetName)
             End Select
         End Sub
 
@@ -177,6 +185,8 @@ Namespace Shell.Prompts
                     Return HexShellCurrentPreset
                 Case ShellType.FTPShell
                     Return FTPShellCurrentPreset
+                Case ShellType.RARShell
+                    Return RARShellCurrentPreset
             End Select
         End Function
 
@@ -208,6 +218,8 @@ Namespace Shell.Prompts
                     Return HexShellPresets
                 Case ShellType.FTPShell
                     Return FTPShellPresets
+                Case ShellType.RARShell
+                    Return RARShellPresets
             End Select
         End Function
 
@@ -239,6 +251,8 @@ Namespace Shell.Prompts
                     Return HexCustomShellPresets
                 Case ShellType.FTPShell
                     Return FTPCustomShellPresets
+                Case ShellType.RARShell
+                    Return RARCustomShellPresets
             End Select
         End Function
 

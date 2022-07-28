@@ -19,6 +19,7 @@
 Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
+Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
 Imports KS.Network.FTP
 Imports KS.Network.HTTP
@@ -64,6 +65,8 @@ Namespace Shell.ShellBase.Commands
                     Return HTTPCommands.ContainsKey(Command)
                 Case ShellType.HexShell
                     Return HexEdit_Commands.ContainsKey(Command)
+                Case ShellType.RARShell
+                    Return RarShell_Commands.ContainsKey(Command)
                 Case Else
                     Return False
             End Select
@@ -87,7 +90,8 @@ Namespace Shell.ShellBase.Commands
                    TextEdit_Commands.ContainsKey(Command) Or
                    ZipShell_Commands.ContainsKey(Command) Or
                    HTTPCommands.ContainsKey(Command) Or
-                   HexEdit_Commands.ContainsKey(Command)
+                   HexEdit_Commands.ContainsKey(Command) Or
+                   RarShell_Commands.ContainsKey(Command)
         End Function
 
     End Module

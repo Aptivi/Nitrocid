@@ -115,6 +115,8 @@ Namespace Shell.ShellBase.Shells
                     Return New HTTPShell()
                 Case ShellType.HexShell
                     Return New HexShell()
+                Case ShellType.RARShell
+                    Return New RarShell()
             End Select
         End Function
 

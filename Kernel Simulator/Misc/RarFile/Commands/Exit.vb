@@ -16,21 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Files.Querying
-
-Namespace Shell.Commands
-    Class RarShellCommand
+Namespace Misc.RarFile.Commands
+    Class RarShell_ExitCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            ListArgs(0) = NeutralizePath(ListArgs(0))
-            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-            If FileExists(ListArgs(0)) Then
-                StartShell(ShellType.RARShell, ListArgs(0))
-            Else
-                Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
-            End If
+            KillShell()
         End Sub
 
     End Class

@@ -35,6 +35,7 @@ Namespace Shell.ShellBase.Aliases
         Public JsonShellAliases As New Dictionary(Of String, String)
         Public HTTPShellAliases As New Dictionary(Of String, String)
         Public HexShellAliases As New Dictionary(Of String, String)
+        Public RARShellAliases As New Dictionary(Of String, String)
         Friend AliasesToBeRemoved As New Dictionary(Of String, ShellType)
 
         ''' <summary>
@@ -100,6 +101,10 @@ Namespace Shell.ShellBase.Aliases
                     Case "Hex"
                         If Not HexShellAliases.ContainsKey(AliasCmd) Then
                             HexShellAliases.Add(AliasCmd, ActualCmd)
+                        End If
+                    Case "RAR"
+                        If Not RARShellAliases.ContainsKey(AliasCmd) Then
+                            RARShellAliases.Add(AliasCmd, ActualCmd)
                         End If
                     Case Else
                         Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
@@ -243,9 +248,20 @@ Namespace Shell.ShellBase.Aliases
                 Dim AliasObject As New JObject From {
                     {"Alias", HexShellAliases.Keys(i)},
                     {"Command", HexShellAliases.Values(i)},
-                    {"Type", "HTTP"}
+                    {"Type", "Hex"}
                 }
                 If Not DoesAliasExist(HexShellAliases.Keys(i), ShellType.HexShell) Then AliasNameToken.Add(AliasObject)
+            Next
+
+            'RAR shell aliases
+            For i As Integer = 0 To RARShellAliases.Count - 1
+                Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type RAR...", RARShellAliases.Keys(i), RARShellAliases.Values(i))
+                Dim AliasObject As New JObject From {
+                    {"Alias", RARShellAliases.Keys(i)},
+                    {"Command", RARShellAliases.Values(i)},
+                    {"Type", "RAR"}
+                }
+                If Not DoesAliasExist(RARShellAliases.Keys(i), ShellType.RARShell) Then AliasNameToken.Add(AliasObject)
             Next
 
             'Save changes
@@ -395,6 +411,8 @@ Namespace Shell.ShellBase.Aliases
                             If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "HTTP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                         Case ShellType.HexShell
                             If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Hex" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                        Case ShellType.RARShell
+                            If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RAR" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                     End Select
                 Next
             Next
@@ -468,6 +486,10 @@ Namespace Shell.ShellBase.Aliases
                     For Each AliasName As JObject In AliasNameToken
                         If AliasName("Alias") = TargetAlias And AliasName("Type") = "Hex" Then Return True
                     Next
+                Case ShellType.RARShell
+                    For Each AliasName As JObject In AliasNameToken
+                        If AliasName("Alias") = TargetAlias And AliasName("Type") = "RAR" Then Return True
+                    Next
                 Case Else
                     Wdbg(DebugLevel.E, "Type {0} not found.", Type)
                     Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
@@ -505,6 +527,8 @@ Namespace Shell.ShellBase.Aliases
                     Return HTTPShellAliases
                 Case ShellType.HexShell
                     Return HexShellAliases
+                Case ShellType.RARShell
+                    Return RARShellAliases
             End Select
         End Function
 
