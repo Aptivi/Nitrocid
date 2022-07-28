@@ -56,7 +56,7 @@ Namespace ManPages
                 If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
                     WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                 Else
-                    WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    WriteWhere(" {0} [v{1}] ", Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                 End If
 
                 'Disable blinking cursor
@@ -67,10 +67,12 @@ Namespace ManPages
                 Dim IncompleteSentenceBuilder As New StringBuilder
                 Dim CharactersParsed As Integer
                 Dim EscapeCharacters As Integer
+                Dim EscapeCharactersCountInside As Integer
                 Dim InEsc As Boolean
                 For Each line As String In Pages(ManualTitle).Body.ToString.SplitNewLines
                     CharactersParsed = 0
                     EscapeCharacters = 0
+                    EscapeCharactersCountInside = 0
 
                     'Deal with empty lines
                     If String.IsNullOrEmpty(line) Then
@@ -81,7 +83,8 @@ Namespace ManPages
                     For Each LineChar As Char In line
                         'If the character is Escape, run through the color change sequence until we reach "m"
                         If LineChar = GetEsc() Then InEsc = True
-                        If InEsc And LineChar = "m" Then
+                        If InEsc Then EscapeCharactersCountInside += 1
+                        If InEsc And (EscapeCharactersCountInside > 19 Or LineChar = "m") Then
                             EscapeCharacters += 1
                             InEsc = False
                         End If
