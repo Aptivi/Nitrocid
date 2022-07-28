@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Shell.ShellBase.Shells
-
 Namespace Shell.Prompts
     Public MustInherit Class PromptPresetBase
         Implements IPromptPreset

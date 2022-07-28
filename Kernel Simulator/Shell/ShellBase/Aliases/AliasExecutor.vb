@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.RemoteDebug
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.ShellBase.Aliases
     Module AliasExecutor

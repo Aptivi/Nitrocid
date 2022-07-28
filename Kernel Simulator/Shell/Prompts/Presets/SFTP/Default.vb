@@ -18,7 +18,6 @@
 
 Imports System.Text
 Imports KS.Network.SFTP
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.SFTP
     Public Class SFTPDefaultPreset

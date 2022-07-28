@@ -18,7 +18,6 @@
 
 Imports System.Threading
 Imports KS.Shell.Prompts
-Imports KS.Shell.ShellBase.Shells
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells

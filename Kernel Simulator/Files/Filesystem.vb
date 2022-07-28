@@ -18,15 +18,8 @@
 
 Imports Extensification.StringExts.Manipulation
 Imports System.IO
-Imports System.Runtime.CompilerServices
-Imports System.Text
-Imports System.Text.RegularExpressions
-Imports Newtonsoft.Json.Linq
 Imports KS.Files.Folders
-Imports KS.Files.LineEndings
 Imports KS.Files.Querying
-Imports KS.Files.Read
-Imports KS.Misc.Configuration
 
 Namespace Files
     Public Module Filesystem

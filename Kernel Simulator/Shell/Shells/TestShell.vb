@@ -18,8 +18,6 @@
 
 Imports System.Threading
 Imports KS.Shell.Prompts
-Imports KS.Shell.ShellBase.Shells
-Imports KS.TestShell
 
 Namespace Shell.Shells
     Public Class TestShell

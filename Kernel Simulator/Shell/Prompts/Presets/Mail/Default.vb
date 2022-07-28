@@ -18,7 +18,6 @@
 
 Imports System.Text
 Imports KS.Network.Mail
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.Mail
     Public Class MailDefaultPreset

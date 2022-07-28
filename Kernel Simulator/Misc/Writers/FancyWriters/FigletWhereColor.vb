@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Figgle
-Imports KS.ConsoleBase.Colors
 Imports KS.Misc.Reflection
 
 Namespace Misc.Writers.FancyWriters

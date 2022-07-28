@@ -19,7 +19,6 @@
 Imports System.Threading
 Imports KS.Network.FTP
 Imports KS.Shell.Prompts
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class FTPShell

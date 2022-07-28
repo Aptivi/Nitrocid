@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Files.Folders
-Imports KS.Shell.ShellBase.Shells
 Imports ReadLineReboot
 
 Namespace Shell.ShellBase

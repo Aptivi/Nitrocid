@@ -17,13 +17,11 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports SharpCompress.Archives.Zip
-Imports SharpCompress.Readers
 Imports System.IO
 Imports System.Threading
 Imports KS.Files.Folders
 Imports KS.Misc.ZipFile
 Imports KS.Shell.Prompts
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class ZipShell

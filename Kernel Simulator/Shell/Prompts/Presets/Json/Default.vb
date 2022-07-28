@@ -18,7 +18,6 @@
 
 Imports System.Text
 Imports KS.Misc.Editors.JsonShell
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.Json
     Public Class JsonDefaultPreset

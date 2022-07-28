@@ -18,7 +18,6 @@
 
 Imports System.Text
 Imports KS.Misc.Editors.HexEdit
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.Hex
     Public Class HexDefaultPreset

@@ -18,8 +18,6 @@
 
 Imports KS.Files.Folders
 Imports KS.Misc.Configuration
-Imports KS.Kernel.Flags
-Imports Newtonsoft.Json.Linq
 
 <TestFixture> Public Class FilesystemSettingTests
 

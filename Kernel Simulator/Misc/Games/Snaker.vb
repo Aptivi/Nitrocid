@@ -18,7 +18,6 @@
 
 Imports Extensification.ListExts
 Imports System.Threading
-Imports KS.ConsoleBase.Colors
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 

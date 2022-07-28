@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Reflection
-Imports KS.ConsoleBase.Colors
 
 Namespace Misc.Writers.ConsoleWriters
     Public Module TextWriterWhereColor

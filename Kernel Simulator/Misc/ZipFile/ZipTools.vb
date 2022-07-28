@@ -21,7 +21,6 @@ Imports KS.Files.Operations
 Imports SharpCompress.Archives.Zip
 Imports System.IO
 Imports SharpCompress.Readers
-Imports SharpCompress.Writers
 
 Namespace Misc.ZipFile
     Public Module ZipTools

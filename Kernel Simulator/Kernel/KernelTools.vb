@@ -19,7 +19,6 @@
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
-Imports MailKit.Net.Pop3
 Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase

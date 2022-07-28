@@ -18,7 +18,6 @@
 
 Imports System.Text
 Imports KS.Network.HTTP
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Prompts.Presets.HTTP
     Public Class HTTPDefaultPreset

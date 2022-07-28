@@ -19,7 +19,6 @@
 Imports KS.Shell.Prompts
 Imports KS.Network.RSS.Instance
 Imports KS.Network.RSS
-Imports KS.Shell.ShellBase.Shells
 Imports System.Threading
 
 Namespace Shell.Shells

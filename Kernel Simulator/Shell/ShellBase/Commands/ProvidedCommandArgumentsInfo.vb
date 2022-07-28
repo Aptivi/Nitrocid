@@ -18,7 +18,6 @@
 
 Imports System.Text.RegularExpressions
 Imports KS.Modifications
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.ShellBase.Commands
     Public Class ProvidedCommandArgumentsInfo

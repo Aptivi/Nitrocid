@@ -30,7 +30,6 @@ Imports KS.Network.RemoteDebug
 Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.Shell.ShellBase.Aliases
-Imports KS.Shell.ShellBase.Shells
 Imports KS.TestShell
 
 Namespace Shell.ShellBase.Commands

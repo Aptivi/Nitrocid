@@ -19,7 +19,6 @@
 Imports KS.Network.Mail.Transfer
 Imports KS.Network.Mail
 Imports KS.Shell.Prompts
-Imports KS.Shell.ShellBase.Shells
 
 Namespace Shell.Shells
     Public Class MailShell
