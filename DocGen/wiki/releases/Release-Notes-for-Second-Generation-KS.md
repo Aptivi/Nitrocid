@@ -176,8 +176,8 @@ Please note that the API that the second-generation KS has will not be backwards
 
 ### KS 0.0.24.0 (WIP)
 
-[!NOTE]
-This version is WIP as of 7/14/2022.
+> [!NOTE]
+> This version is WIP as of 7/14/2022.
 
 1. Removed obsolete Mod and Screensaver APIs
 2. Removed report bug prompt
