@@ -199,8 +199,8 @@ Namespace Misc.Screensaver.Displays
 
             'Write date and time
             SetConsoleColor(ChangeDateAndTimeColor)
-            WriteWherePlain(RenderDate, Console.WindowWidth / 2 - RenderDate.Length / 2, Console.WindowHeight / 2 - 1, False)
-            WriteWherePlain(RenderTime, Console.WindowWidth / 2 - RenderTime.Length / 2, Console.WindowHeight / 2, False)
+            WriteWherePlain(RenderDate, Console.WindowWidth / 2 - RenderDate.Length / 2, Console.WindowHeight / 2 - 1)
+            WriteWherePlain(RenderTime, Console.WindowWidth / 2 - RenderTime.Length / 2, Console.WindowHeight / 2)
 
             'Delay
             SleepNoBlock(DateAndTimeDelay, ScreensaverDisplayerThread)

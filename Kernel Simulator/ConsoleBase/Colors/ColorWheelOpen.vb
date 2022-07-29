@@ -98,8 +98,8 @@ Namespace ConsoleBase.Colors
                     Wdbg(DebugLevel.I, "Red foreground: {0} | Red background: {1}", RedForeground.PlainSequence, RedBackground.PlainSequence)
                     Write(NewLine + "  ", False, ColTypes.Neutral)
                     Write(" < ", False, RedForeground, RedBackground)
-                    WriteWhere("R: {0}", (Console.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2, Console.CursorTop, True, New Color($"{CurrentColorR};0;0"), CurrentColorR)
-                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, False, RedForeground, RedBackground)
+                    WriteWhere("R: {0}", (Console.CursorLeft + 35 - $"R: {CurrentColorR}".Length) / 2, Console.CursorTop, New Color($"{CurrentColorR};0;0"), CurrentColorR)
+                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, RedForeground, RedBackground)
 
                     'The green color level
                     Dim GreenForeground As Color = If(CurrentRange = "G", New Color(ConsoleColors.Black), New Color("0;255;0"))
@@ -107,8 +107,8 @@ Namespace ConsoleBase.Colors
                     Wdbg(DebugLevel.I, "Green foreground: {0} | Green background: {1}", GreenForeground.PlainSequence, GreenBackground.PlainSequence)
                     Write(NewLine + "  ", False, ColTypes.Neutral)
                     Write(" < ", False, GreenForeground, GreenBackground)
-                    WriteWhere("G: {0}", (Console.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2, Console.CursorTop, True, New Color($"0;{CurrentColorG};0"), CurrentColorG)
-                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, False, GreenForeground, GreenBackground)
+                    WriteWhere("G: {0}", (Console.CursorLeft + 35 - $"G: {CurrentColorG}".Length) / 2, Console.CursorTop, New Color($"0;{CurrentColorG};0"), CurrentColorG)
+                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, GreenForeground, GreenBackground)
 
                     'The blue color level
                     Dim BlueForeground As Color = If(CurrentRange = "B", New Color(ConsoleColors.Black), New Color("0;0;255"))
@@ -116,18 +116,18 @@ Namespace ConsoleBase.Colors
                     Wdbg(DebugLevel.I, "Blue foreground: {0} | Blue background: {1}", BlueForeground.PlainSequence, BlueBackground.PlainSequence)
                     Write(NewLine + "  ", False, ColTypes.Neutral)
                     Write(" < ", False, BlueForeground, BlueBackground)
-                    WriteWhere("B: {0}", (Console.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2, Console.CursorTop, True, New Color($"0;0;{CurrentColorB}"), CurrentColorB)
-                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, False, BlueForeground, BlueBackground)
+                    WriteWhere("B: {0}", (Console.CursorLeft + 35 - $"B: {CurrentColorB}".Length) / 2, Console.CursorTop, New Color($"0;0;{CurrentColorB}"), CurrentColorB)
+                    WriteWhere(" > " + NewLine, Console.CursorLeft + 32, Console.CursorTop, BlueForeground, BlueBackground)
 
                     'Draw the RGB ramp
-                    WriteWhere(WheelUpperLeftCornerChar + WheelUpperFrameChar.Repeat(Console.WindowWidth - 6) + WheelUpperRightCornerChar, 2, Console.WindowHeight - 6, True, ColTypes.Gray)
-                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 5, True, ColTypes.Gray)
-                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 4, True, ColTypes.Gray)
-                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 3, True, ColTypes.Gray)
-                    WriteWhere(WheelLowerLeftCornerChar + WheelLowerFrameChar.Repeat(Console.WindowWidth - 6) + WheelLowerRightCornerChar, 2, Console.WindowHeight - 2, True, ColTypes.Gray)
-                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorR, 255, 6)), 3, Console.WindowHeight - 5, True, New Color(ConsoleColors.Black), New Color(255, 0, 0))
-                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorG, 255, 6)), 3, Console.WindowHeight - 4, True, New Color(ConsoleColors.Black), New Color(0, 255, 0))
-                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorB, 255, 6)), 3, Console.WindowHeight - 3, True, New Color(ConsoleColors.Black), New Color(0, 0, 255))
+                    WriteWhere(WheelUpperLeftCornerChar + WheelUpperFrameChar.Repeat(Console.WindowWidth - 6) + WheelUpperRightCornerChar, 2, Console.WindowHeight - 6, ColTypes.Gray)
+                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 5, ColTypes.Gray)
+                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 4, ColTypes.Gray)
+                    WriteWhere(WheelLeftFrameChar + " ".Repeat(Console.WindowWidth - 6) + WheelRightFrameChar, 2, Console.WindowHeight - 3, ColTypes.Gray)
+                    WriteWhere(WheelLowerLeftCornerChar + WheelLowerFrameChar.Repeat(Console.WindowWidth - 6) + WheelLowerRightCornerChar, 2, Console.WindowHeight - 2, ColTypes.Gray)
+                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorR, 255, 6)), 3, Console.WindowHeight - 5, New Color(ConsoleColors.Black), New Color(255, 0, 0))
+                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorG, 255, 6)), 3, Console.WindowHeight - 4, New Color(ConsoleColors.Black), New Color(0, 255, 0))
+                    WriteWhere(" ".Repeat(PercentRepeat(CurrentColorB, 255, 6)), 3, Console.WindowHeight - 3, New Color(ConsoleColors.Black), New Color(0, 0, 255))
 
                     'Show example
                     Dim PreviewColor As New Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}")
@@ -273,8 +273,8 @@ Namespace ConsoleBase.Colors
 
                     'The color selection
                     Write(NewLine + "   < ", False, ColTypes.Gray)
-                    WriteWhere($"{CurrentColor} [{Convert.ToInt32(CurrentColor)}]", (Console.CursorLeft + 38 - $"{CurrentColor} [{Convert.ToInt32(CurrentColor)}]".Length) / 2, Console.CursorTop, True, New Color(CurrentColor))
-                    WriteWhere(" >", Console.CursorLeft + 32, Console.CursorTop, False, ColTypes.Gray)
+                    WriteWhere($"{CurrentColor} [{Convert.ToInt32(CurrentColor)}]", (Console.CursorLeft + 38 - $"{CurrentColor} [{Convert.ToInt32(CurrentColor)}]".Length) / 2, Console.CursorTop, New Color(CurrentColor))
+                    WriteWhere(" >", Console.CursorLeft + 32, Console.CursorTop, ColTypes.Gray)
 
                     'Show prompt
                     Dim PreviewColor As New Color(CurrentColor)
@@ -302,7 +302,7 @@ Namespace ConsoleBase.Colors
                         End If
                     ElseIf ConsoleResponse.Key = ConsoleKey.I Then
                         Wdbg(DebugLevel.I, "Prompting for color number...")
-                        WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, CInt(CurrentColor))
+                        WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, ColTypes.Input, CInt(CurrentColor))
                         Console.CursorVisible = True
                         Dim ColorNum As String = ReadLine()
                         Console.CursorVisible = False

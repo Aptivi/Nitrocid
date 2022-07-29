@@ -1077,7 +1077,7 @@ Namespace Misc.Screensaver.Displays
                 End If
 
                 'Print date information
-                WriteWhere(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, ColorStorageSeconds)
+                WriteWhere(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, ColorStorageSeconds)
             End If
             If ProgressClockCycleColors Then CurrentTicks += 1
 
