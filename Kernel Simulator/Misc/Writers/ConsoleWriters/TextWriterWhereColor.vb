@@ -27,6 +27,17 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWherePlain(msg As String, Left As Integer, Top As Integer, ParamArray vars() As Object)
+            WriteWherePlain(msg, Left, Top, False, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteWherePlain(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ParamArray vars() As Object)
@@ -81,6 +92,18 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, colorType As ColTypes, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, colorType, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="colorType">A type of colors that will be changed.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -100,6 +123,19 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, colorTypeForeground, colorTypeBackground, vars)
         End Sub
 
         ''' <summary>
@@ -137,6 +173,18 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, color As ConsoleColor, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -156,6 +204,19 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, ForegroundColor, BackgroundColor, vars)
         End Sub
 
         ''' <summary>
@@ -192,6 +253,18 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, color As Color, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -213,6 +286,19 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+            WriteWhere(msg, Left, Top, False, ForegroundColor, BackgroundColor, vars)
         End Sub
 
         ''' <summary>
