@@ -31,6 +31,8 @@ Namespace Shell.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Write(DoTranslation("Checking for updates..."), True, ColTypes.Neutral)
+
             'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
             WClient.DefaultRequestHeaders.Add("User-Agent", "EoflaOE")
 
@@ -55,13 +57,17 @@ Namespace Shell.Commands
             MakeDirectory(RetroKSDownloadPath, False)
 
             'Check to see if we already have RetroKS installed and up-to-date
-            If (FileExists(RetroExecKSPath) AndAlso Assembly.LoadFrom(RetroExecKSPath).GetName.Version < SortedVersions(0).UpdateVersion) Or
+            Dim RetroKSBin() As Byte = IO.File.ReadAllBytes(RetroExecKSPath)
+            If (FileExists(RetroExecKSPath) AndAlso Assembly.Load(RetroKSBin).GetName.Version < SortedVersions(0).UpdateVersion) Or
                 Not FileExists(RetroExecKSPath) Then
+                Write(DoTranslation("Downloading version") + " {0}...", True, ColTypes.Neutral, SortedVersions(0).UpdateVersion.ToString)
+
                 'Download RetroKS
                 Dim RetroKSURI As Uri = SortedVersions(0).UpdateURL
                 DownloadFile(RetroKSURI.ToString, RetroKSPath)
 
                 'Extract it
+                Write(DoTranslation("Installing version") + " {0}...", True, ColTypes.Neutral, SortedVersions(0).UpdateVersion.ToString)
                 Using archive = RarArchive.Open(RetroKSPath)
                     For Each entry In archive.Entries.Where(Function(e) Not e.IsDirectory)
                         entry.WriteToDirectory(RetroKSDownloadPath, New ExtractionOptions() With {
@@ -73,6 +79,7 @@ Namespace Shell.Commands
             End If
 
             'Now, run the assembly
+            Write(DoTranslation("Going back to 2018..."), True, ColTypes.Neutral)
             Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty(Of Object))
 
             'Clear the console
