@@ -30,6 +30,19 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
         ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowlyPlain(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, ParamArray vars() As Object)
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, False, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub WriteWhereSlowlyPlain(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, ParamArray vars() As Object)
@@ -78,6 +91,20 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
         ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, colorType, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="colorType">A type of colors that will be changed.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -97,6 +124,21 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, colorTypeForeground, colorTypeBackground, vars)
         End Sub
 
         ''' <summary>
@@ -138,6 +180,20 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
         ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -157,6 +213,21 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, ForegroundColor, BackgroundColor, vars)
         End Sub
 
         ''' <summary>
@@ -197,6 +268,20 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="Left">Column number in console</param>
         ''' <param name="Top">Row number in console</param>
         ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         ''' <param name="Return">Whether or not to return to old position</param>
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
@@ -218,6 +303,21 @@ Namespace Misc.Writers.ConsoleWriters
                     KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
                 End Try
             End SyncLock
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with location support, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Left">Column number in console</param>
+        ''' <param name="Top">Row number in console</param>
+        ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+            WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, False, ForegroundColor, BackgroundColor, vars)
         End Sub
 
         ''' <summary>
