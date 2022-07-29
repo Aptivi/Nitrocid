@@ -26,18 +26,18 @@ Imports KS.Shell.ShellBase.Shells
     ''' </summary>
     <Test, Description("Initialization")> Public Sub TestInitializeCommandInfoInstanceFromCommandLineArg()
         'Create instance
-        Dim CommandInstance As New CommandInfo("help", ShellType.Shell, "Help page", {""}, False, 0, Nothing)
+        Dim CommandInstance As New CommandInfo("help", ShellType.Shell, "Help page", New CommandArgumentInfo({""}, False, 0), Nothing)
 
         'Check for null
         CommandInstance.ShouldNotBeNull
         CommandInstance.Command.ShouldNotBeNullOrEmpty
         CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty
-        CommandInstance.HelpUsages.ShouldNotBeNull
+        CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeNull
 
         'Check for property correctness
         CommandInstance.Command.ShouldBe("help")
         CommandInstance.HelpDefinition.ShouldBe("Help page")
-        CommandInstance.HelpUsages.ShouldNotBeEmpty
+        CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeEmpty
         CommandInstance.Type.ShouldBe(ShellType.Shell)
         CommandInstance.Strict.ShouldBeFalse
         CommandInstance.Obsolete.ShouldBeFalse

@@ -106,7 +106,12 @@ Namespace Shell.ShellBase.Commands
                 Dim FinalCommand As String = If(IsMod, command, If(AliasedCommandList.ContainsKey(command), AliasedCommandList(command), command))
                 Dim HelpDefinition As String = If(IsMod, FinalCommandList(FinalCommand).HelpDefinition, FinalCommandList(FinalCommand).GetTranslatedHelpEntry)
                 Dim UsageLength As Integer = DoTranslation("Usage:").Length
-                Dim HelpUsages() As String = FinalCommandList(FinalCommand).HelpUsages
+                Dim HelpUsages() As String = Array.Empty(Of String)
+
+                'Populate help usages
+                If FinalCommandList(FinalCommand).CommandArgumentInfo IsNot Nothing Then
+                    HelpUsages = FinalCommandList(FinalCommand).CommandArgumentInfo.HelpUsages
+                End If
 
                 'Print usage information
                 If HelpUsages.Length <> 0 Then

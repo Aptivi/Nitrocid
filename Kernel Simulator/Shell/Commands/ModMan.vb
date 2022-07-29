@@ -78,17 +78,19 @@ Namespace Shell.Commands
                                             WriteSeparator("--- {0}", False, ModCommand)
                                             Write("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : Write(ModCommand, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
-                                            For Each Usage As String In Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpUsages
-                                                Write("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : Write(Usage, True, ColTypes.ListValue)
-                                            Next
                                             Write("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).Type.ToString, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).Strict.ToString, True, ColTypes.ListValue)
-                                            Write("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).ArgumentsRequired.ToString, True, ColTypes.ListValue)
-                                            Write("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).MinimumArguments.ToString, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Wrappable command?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).Wrappable.ToString, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Setting shell variable?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).SettingVariable.ToString, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Can not run in maintenance mode?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).NoMaintenance.ToString, True, ColTypes.ListValue)
                                             Write("- " + DoTranslation("Obsolete?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).Obsolete.ToString, True, ColTypes.ListValue)
+                                            If Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).CommandArgumentInfo IsNot Nothing Then
+                                                For Each Usage As String In Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).CommandArgumentInfo.HelpUsages
+                                                    Write("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : Write(Usage, True, ColTypes.ListValue)
+                                                Next
+                                                Write("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).CommandArgumentInfo.ArgumentsRequired.ToString, True, ColTypes.ListValue)
+                                                Write("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : Write(Mods(script).ModParts(ModPart).PartScript.Commands(ModCommand).CommandArgumentInfo.MinimumArguments.ToString, True, ColTypes.ListValue)
+                                            End If
                                         Next
                                     End If
                                 Next

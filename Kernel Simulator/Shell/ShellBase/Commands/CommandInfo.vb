@@ -32,17 +32,9 @@ Namespace Shell.ShellBase.Commands
         ''' </summary>
         Public Property HelpDefinition As String
         ''' <summary>
-        ''' The help usages of command.
+        ''' Command argument info
         ''' </summary>
-        Public ReadOnly Property HelpUsages As String()
-        ''' <summary>
-        ''' Does the command require arguments?
-        ''' </summary>
-        Public ReadOnly Property ArgumentsRequired As Boolean
-        ''' <summary>
-        ''' User must specify at least this number of arguments
-        ''' </summary>
-        Public ReadOnly Property MinimumArguments As Integer
+        Public ReadOnly Property CommandArgumentInfo As CommandArgumentInfo
         ''' <summary>
         ''' Command base for execution
         ''' </summary>
@@ -74,22 +66,18 @@ Namespace Shell.ShellBase.Commands
         ''' <param name="Command">Command</param>
         ''' <param name="Type">Shell command type</param>
         ''' <param name="HelpDefinition">Command help definition</param>
-        ''' <param name="HelpUsages">Command help usages</param>
-        ''' <param name="ArgumentsRequired">Does the command require arguments?</param>
-        ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
+        ''' <param name="CommandArgumentInfo">Command argument info</param>
         ''' <param name="CommandBase">Command base for execution</param>
         ''' <param name="Strict">Is the command admin-only?</param>
         ''' <param name="Wrappable">Is the command wrappable?</param>
         ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
         ''' <param name="Obsolete">Is the command obsolete?</param>
         ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
+        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, CommandArgumentInfo As CommandArgumentInfo, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
             Me.Command = Command
             Me.Type = Type
             Me.HelpDefinition = HelpDefinition
-            Me.HelpUsages = HelpUsages
-            Me.ArgumentsRequired = ArgumentsRequired
-            Me.MinimumArguments = MinimumArguments
+            Me.CommandArgumentInfo = CommandArgumentInfo
             Me.CommandBase = CommandBase
             Me.Strict = Strict
             Me.Wrappable = Wrappable

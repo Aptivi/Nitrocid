@@ -29,5 +29,9 @@ Namespace Shell.Commands
             End If
         End Sub
 
+        Public Shared Function ListCmds() As String()
+            Return GetCommands(CurrentShellType).Keys.ToArray()
+        End Function
+
     End Class
 End Namespace

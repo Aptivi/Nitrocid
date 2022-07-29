@@ -88,13 +88,19 @@ Namespace Shell.ShellBase.Commands
                 End If
 
                 'If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                If (TargetCommands(Command).ArgumentsRequired And RequiredArgumentsProvided) Or Not TargetCommands(Command).ArgumentsRequired Then
+                If TargetCommands(Command).CommandArgumentInfo IsNot Nothing Then
+                    Dim ArgInfo As CommandArgumentInfo = TargetCommands(Command).CommandArgumentInfo
+                    If (ArgInfo.ArgumentsRequired And RequiredArgumentsProvided) Or Not ArgInfo.ArgumentsRequired Then
+                        Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
+                        CommandBase.Execute(StrArgs, FullArgs, Args, Switches)
+                    Else
+                        Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
+                        DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
+                        ShowHelp(Command, ShellType)
+                    End If
+                Else
                     Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
                     CommandBase.Execute(StrArgs, FullArgs, Args, Switches)
-                Else
-                    Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
-                    DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
-                    ShowHelp(Command, ShellType)
                 End If
             Catch taex As ThreadInterruptedException
                 CancelRequested = False
