@@ -25,6 +25,7 @@ Imports KS.Modifications
 Imports KS.Scripting
 Imports KS.Shell.Commands
 Imports KS.Shell.ShellBase.Aliases
+Imports KS.Shell.UnifiedCommands
 
 Namespace Shell
     Public Module Shell
@@ -123,7 +124,6 @@ Namespace Shell
             {"open", New CommandInfo("open", ShellType.Shell, "Opens a URL", {"<URL>"}, True, 1, New OpenCommand)},
             {"perm", New CommandInfo("perm", ShellType.Shell, "Manage permissions for users", {"<userName> <Administrator/Disabled/Anonymous> <Allow/Disallow>"}, True, 3, New PermCommand, True)},
             {"ping", New CommandInfo("ping", ShellType.Shell, "Pings an address", {"[times] <Address1> <Address2> ..."}, True, 1, New PingCommand)},
-            {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", Array.Empty(Of String), False, 0, New PresetsCommand)},
             {"put", New CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", {"<FileName> <URL>"}, True, 2, New PutCommand)},
             {"rarshell", New CommandInfo("rarshell", ShellType.Shell, "The RAR shell", {"<rarfile>"}, True, 1, New RarShellCommand)},
             {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", {"[ip] [port]"}, False, 0, New RebootCommand)},
@@ -173,6 +173,12 @@ Namespace Shell
             {"wrap", New CommandInfo("wrap", ShellType.Shell, "Wraps the console output", {"<command>"}, True, 1, New WrapCommand, False, False, False, False, True)},
             {"zip", New CommandInfo("zip", ShellType.Shell, "Creates a ZIP archive", {"<zipfile> <path> [-fast|-nocomp|-nobasedir]"}, True, 2, New ZipCommand, False, False, False, False, False)},
             {"zipshell", New CommandInfo("zipshell", ShellType.Shell, "Opens a ZIP archive", {"<zipfile>"}, True, 1, New ZipShellCommand)}
+        }
+        ''' <summary>
+        ''' List of unified commands
+        ''' </summary>
+        Public ReadOnly UnifiedCommandDict As New Dictionary(Of String, CommandInfo) From {
+            {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", Array.Empty(Of String), False, 0, New PresetsUnifiedCommand)}
         }
 
         ''' <summary>

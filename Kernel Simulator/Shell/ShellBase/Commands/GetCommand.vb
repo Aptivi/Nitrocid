@@ -111,34 +111,43 @@ Namespace Shell.ShellBase.Commands
         ''' </summary>
         ''' <param name="ShellType">The shell type</param>
         Public Function GetCommands(ShellType As ShellType) As Dictionary(Of String, CommandInfo)
+            'Individual shells
+            Dim FinalCommands As Dictionary(Of String, CommandInfo)
             Select Case ShellType
                 Case ShellType.FTPShell
-                    Return FTPCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(FTPCommands)
                 Case ShellType.MailShell
-                    Return MailCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(MailCommands)
                 Case ShellType.RemoteDebugShell
-                    Return DebugCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(DebugCommands)
                 Case ShellType.RSSShell
-                    Return RSSCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(RSSCommands)
                 Case ShellType.SFTPShell
-                    Return SFTPCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(SFTPCommands)
                 Case ShellType.TestShell
-                    Return Test_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(Test_Commands)
                 Case ShellType.TextShell
-                    Return TextEdit_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(TextEdit_Commands)
                 Case ShellType.ZIPShell
-                    Return ZipShell_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(ZipShell_Commands)
                 Case ShellType.JsonShell
-                    Return JsonShell_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(JsonShell_Commands)
                 Case ShellType.HTTPShell
-                    Return HTTPCommands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(HTTPCommands)
                 Case ShellType.HexShell
-                    Return HexEdit_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(HexEdit_Commands)
                 Case ShellType.RARShell
-                    Return RarShell_Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(RarShell_Commands)
                 Case Else
-                    Return Shell.Commands
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(Shell.Commands)
             End Select
+
+            'Unified commands
+            For Each UnifiedCommand As String In UnifiedCommandDict.Keys
+                FinalCommands.Add(UnifiedCommand, UnifiedCommandDict(UnifiedCommand))
+            Next
+
+            Return FinalCommands
         End Function
 
     End Module

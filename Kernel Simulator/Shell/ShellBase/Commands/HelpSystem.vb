@@ -60,7 +60,7 @@ Namespace Shell.ShellBase.Commands
         ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
         Public Sub ShowHelp(command As String, CommandType As ShellType, Optional DebugDeviceSocket As StreamWriter = Nothing)
             'Determine command type
-            Dim CommandList As Dictionary(Of String, CommandInfo) = Shell.Commands
+            Dim CommandList As Dictionary(Of String, CommandInfo) = GetCommands(CommandType)
             Dim ModCommandList As Dictionary(Of String, CommandInfo)
             Dim AliasedCommandList As Dictionary(Of String, String) = Aliases.Aliases
 
@@ -70,43 +70,30 @@ Namespace Shell.ShellBase.Commands
             'Select which list to use according to the shell type
             Select Case CommandType
                 Case ShellType.Shell
-                    CommandList = Shell.Commands
                     AliasedCommandList = Aliases.Aliases
                 Case ShellType.FTPShell
-                    CommandList = FTPCommands
                     AliasedCommandList = FTPShellAliases
                 Case ShellType.MailShell
-                    CommandList = MailCommands
                     AliasedCommandList = MailShellAliases
                 Case ShellType.RSSShell
-                    CommandList = RSSCommands
                     AliasedCommandList = RSSShellAliases
                 Case ShellType.SFTPShell
-                    CommandList = SFTPCommands
                     AliasedCommandList = SFTPShellAliases
                 Case ShellType.TestShell
-                    CommandList = Test_Commands
                     AliasedCommandList = TestShellAliases
                 Case ShellType.TextShell
-                    CommandList = TextEdit_Commands
                     AliasedCommandList = TextShellAliases
                 Case ShellType.ZIPShell
-                    CommandList = ZipShell_Commands
                     AliasedCommandList = ZIPShellAliases
                 Case ShellType.RemoteDebugShell
-                    CommandList = DebugCommands
                     AliasedCommandList = RemoteDebugAliases
                 Case ShellType.JsonShell
-                    CommandList = JsonShell_Commands
                     AliasedCommandList = JsonShellAliases
                 Case ShellType.HTTPShell
-                    CommandList = HTTPCommands
                     AliasedCommandList = HTTPShellAliases
                 Case ShellType.HexShell
-                    CommandList = HexEdit_Commands
                     AliasedCommandList = HexShellAliases
                 Case ShellType.RARShell
-                    CommandList = RarShell_Commands
                     AliasedCommandList = RARShellAliases
             End Select
 
@@ -156,7 +143,7 @@ Namespace Shell.ShellBase.Commands
                     For Each cmd As String In CommandList.Keys
                         If ((Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
                             (Maintenance And Not CommandList(cmd).NoMaintenance Or Not Maintenance) Then
-                            DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
+                            DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, If(UnifiedCommandDict.ContainsKey(cmd), ColTypes.Success, ColTypes.ListEntry), cmd)
                             DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
                         End If
                     Next
@@ -178,9 +165,8 @@ Namespace Shell.ShellBase.Commands
                     Next
 
                     'A tip for you all
-                    If CommandType = ShellType.Shell Then
-                        DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Tip)
-                    End If
+                    DecisiveWrite(CommandType, DebugDeviceSocket, NewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Tip)
+                    DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("Commands highlighted in another color are unified commands and are available in every shell."), True, ColTypes.Tip)
                 Else
                     'The built-in commands
                     For Each cmd As String In CommandList.Keys
