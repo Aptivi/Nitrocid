@@ -58,7 +58,6 @@ Namespace Network
                     Dim p As IPv4InterfaceProperties
                     Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
                     Dim p6 As IPv6InterfaceProperties
-                    'TODO: IPV6InterfaceStatistics is not implemented yet
                     Try
                         p = adapterProperties.GetIPv4Properties
                         p6 = adapterProperties.GetIPv6Properties

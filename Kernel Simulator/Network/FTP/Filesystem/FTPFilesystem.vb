@@ -213,7 +213,6 @@ Namespace Network.FTP.Filesystem
                 Dim Result As Object
 
                 'Begin the copying process
-                'TODO: FluentFTP currently doesn't support .CopyFile and .CopyDirectory
                 Dim SourceFile As String = Source.Split("/").Last
                 Wdbg(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
                 If ClientFTP.DirectoryExists(Source) Then

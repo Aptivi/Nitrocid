@@ -244,7 +244,6 @@ Namespace Network.SSH
                 KernelEventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
                 Dim SSHC As SshCommand = SSHClient.CreateCommand(Command)
                 Dim SSHCAsyncResult As IAsyncResult = SSHC.BeginExecute()
-                'TODO: SshCommand doesn't have input support.
                 Dim SSHCOutputReader As New StreamReader(SSHC.OutputStream)
                 Dim SSHCErrorReader As New StreamReader(SSHC.ExtendedOutputStream)
 
