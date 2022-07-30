@@ -27,7 +27,6 @@ Namespace Network.SFTP
             {"cdr", New CommandInfo("cdr", ShellType.SFTPShell, "Changes remote directory to download from or upload to", New CommandArgumentInfo({"<directory>"}, True, 1), New SFTP_CdrCommand)},
             {"del", New CommandInfo("del", ShellType.SFTPShell, "Deletes remote file from server", New CommandArgumentInfo({"<file>"}, True, 1), New SFTP_DelCommand)},
             {"disconnect", New CommandInfo("disconnect", ShellType.SFTPShell, "Disconnects from server", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_DisconnectCommand)},
-            {"exit", New CommandInfo("exit", ShellType.SFTPShell, "Exits SFTP shell and returns to kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_ExitCommand)},
             {"get", New CommandInfo("get", ShellType.SFTPShell, "Downloads remote file to local directory using binary or text", New CommandArgumentInfo({"<file>"}, True, 1), New SFTP_GetCommand)},
             {"help", New CommandInfo("help", ShellType.SFTPShell, "Shows help screen", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_HelpCommand)},
             {"lsl", New CommandInfo("lsl", ShellType.SFTPShell, "Lists local directory", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [dir]"}, False, 0), New SFTP_LslCommand, False, False, False, False, False)},

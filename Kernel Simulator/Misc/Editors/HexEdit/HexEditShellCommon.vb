@@ -29,7 +29,6 @@ Namespace Misc.Editors.HexEdit
             {"clear", New CommandInfo("clear", ShellType.HexShell, "Clears the binary file", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New HexEdit_ClearCommand)},
             {"delbyte", New CommandInfo("delbyte", ShellType.HexShell, "Deletes a byte using the byte number", New CommandArgumentInfo({"<bytenumber>"}, True, 1), New HexEdit_DelByteCommand)},
             {"delbytes", New CommandInfo("delbytes", ShellType.HexShell, "Deletes the range of bytes", New CommandArgumentInfo({"<startbyte> [endbyte]"}, True, 1), New HexEdit_DelBytesCommand)},
-            {"exit", New CommandInfo("exit", ShellType.HexShell, "Exits the hex editor and save unsaved changes", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New HexEdit_ExitCommand)},
             {"exitnosave", New CommandInfo("exitnosave", ShellType.HexShell, "Exits the hex editor", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New HexEdit_ExitNoSaveCommand)},
             {"help", New CommandInfo("help", ShellType.HexShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New HexEdit_HelpCommand)},
             {"print", New CommandInfo("print", ShellType.HexShell, "Prints the contents of the file with byte numbers to the console", New CommandArgumentInfo({"[startbyte] [endbyte]"}, False, 0), New HexEdit_PrintCommand)},

@@ -28,7 +28,6 @@ Namespace Misc.Editors.JsonShell
             {"addproperty", New CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", New CommandArgumentInfo({"<parentProperty> <propertyName> <propertyValue>"}, True, 3), New JsonShell_AddPropertyCommand)},
             {"clear", New CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New JsonShell_ClearCommand)},
             {"delproperty", New CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", New CommandArgumentInfo({"<propertyName>"}, True, 1), New JsonShell_DelPropertyCommand)},
-            {"exit", New CommandInfo("exit", ShellType.JsonShell, "Exits the JSON shell", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New JsonShell_ExitCommand)},
             {"exitnosave", New CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New JsonShell_ExitNoSaveCommand)},
             {"help", New CommandInfo("help", ShellType.JsonShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New JsonShell_HelpCommand)},
             {"print", New CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", New CommandArgumentInfo({"[property]"}, False, 0), New JsonShell_PrintCommand)},

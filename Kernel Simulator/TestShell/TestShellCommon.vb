@@ -86,7 +86,7 @@ Namespace TestShell
             {"powerlinetest", New CommandInfo("powerlinetest", ShellType.TestShell, "Tests your console for PowerLine support", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Test_PowerLineTestCommand)},
             {"testexecuteasm", New CommandInfo("testexecuteasm", ShellType.TestShell, "Tests assembly entry point execution", New CommandArgumentInfo({"<pathtoasm>"}, True, 1), New Test_TestExecuteAsmCommand)},
             {"help", New CommandInfo("help", ShellType.TestShell, "Shows help screen", New CommandArgumentInfo({"[command]"}, False, 0), New Test_HelpCommand)},
-            {"exit", New CommandInfo("exit", ShellType.TestShell, "Exits the test shell and starts the kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Test_ExitCommand)},
+            {"start", New CommandInfo("start", ShellType.TestShell, "Exits the test shell and starts the kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Test_StartCommand)},
             {"shutdown", New CommandInfo("shutdown", ShellType.TestShell, "Exits the test shell and shuts down the kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Test_ShutdownCommand)}
         }
         Public Test_ShutdownFlag As Boolean

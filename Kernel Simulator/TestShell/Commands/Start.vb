@@ -16,14 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Misc.Editors.JsonShell.Commands
-    Class JsonShell_ExitCommand
+Namespace TestShell.Commands
+    Class Test_StartCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            JsonShell_SaveFile(True)
-            KillShell()
+            KillShellForced()
         End Sub
 
     End Class

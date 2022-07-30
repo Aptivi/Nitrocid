@@ -24,7 +24,6 @@ Namespace Network.HTTP
 
         Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {
             {"delete", New CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_DeleteCommand)},
-            {"exit", New CommandInfo("exit", ShellType.HTTPShell, "Exits HTTP shell and returns to kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New HTTP_ExitCommand)},
             {"get", New CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_GetCommand)},
             {"getstring", New CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_GetStringCommand)},
             {"help", New CommandInfo("help", ShellType.HTTPShell, "Shows help screen", New CommandArgumentInfo({"[command]"}, False, 0), New HTTP_HelpCommand)},

@@ -87,7 +87,6 @@ Namespace Shell
             {"dismissnotifs", New CommandInfo("dismissnotifs", ShellType.Shell, "Dismisses all notifications", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New DismissNotifsCommand)},
             {"echo", New CommandInfo("echo", ShellType.Shell, "Writes text into the console", New CommandArgumentInfo({"[text]"}, False, 0), New EchoCommand)},
             {"edit", New CommandInfo("edit", ShellType.Shell, "Edits a text file", New CommandArgumentInfo({"<file>"}, True, 1), New EditCommand)},
-            {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New ExitCommand)},
             {"fileinfo", New CommandInfo("fileinfo", ShellType.Shell, "Provides information about a file", New CommandArgumentInfo({"<file>"}, True, 1), New FileInfoCommand)},
             {"find", New CommandInfo("find", ShellType.Shell, "Finds a file in the specified directory or in the current directory", New CommandArgumentInfo({"<file> [directory]"}, True, 1), New FindCommand)},
             {"firedevents", New CommandInfo("firedevents", ShellType.Shell, "Lists all fired events", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New FiredEventsCommand)},
@@ -178,7 +177,8 @@ Namespace Shell
         ''' List of unified commands
         ''' </summary>
         Public ReadOnly UnifiedCommandDict As New Dictionary(Of String, CommandInfo) From {
-            {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New PresetsUnifiedCommand)}
+            {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New PresetsUnifiedCommand)},
+            {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New ExitCommand)}
         }
 
         ''' <summary>

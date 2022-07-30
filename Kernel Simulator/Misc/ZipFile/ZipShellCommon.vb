@@ -28,7 +28,6 @@ Namespace Misc.ZipFile
             {"cdir", New CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New ZipShell_CDirCommand)},
             {"chdir", New CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", New CommandArgumentInfo({"<directory>"}, True, 1), New ZipShell_ChDirCommand)},
             {"chadir", New CommandInfo("chadir", ShellType.ZIPShell, "Changes archive directory", New CommandArgumentInfo({"<archivedirectory>"}, True, 1), New ZipShell_ChADirCommand)},
-            {"exit", New CommandInfo("exit", ShellType.ZIPShell, "Exits the ZIP shell", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New ZipShell_ExitCommand)},
             {"get", New CommandInfo("get", ShellType.ZIPShell, "Extracts a file to a specified directory or a current directory", New CommandArgumentInfo({"<entry> [where] [-absolute]"}, True, 1), New ZipShell_GetCommand, False, False, False, False, False)},
             {"help", New CommandInfo("help", ShellType.ZIPShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New ZipShell_HelpCommand)},
             {"list", New CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", New CommandArgumentInfo({"[directory]"}, False, 0), New ZipShell_ListCommand)},

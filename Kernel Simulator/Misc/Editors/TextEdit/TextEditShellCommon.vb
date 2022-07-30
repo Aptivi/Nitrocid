@@ -31,7 +31,6 @@ Namespace Misc.Editors.TextEdit
             {"delline", New CommandInfo("delline", ShellType.TextShell, "Removes the specified line number", New CommandArgumentInfo({"<linenumber> [linenumber2]"}, True, 1), New TextEdit_DelLineCommand)},
             {"delword", New CommandInfo("delword", ShellType.TextShell, "Deletes a word or phrase from line number", New CommandArgumentInfo({"""<word/phrase>"" <linenumber> [linenumber2]"}, True, 2), New TextEdit_DelWordCommand)},
             {"editline", New CommandInfo("editline", ShellType.TextShell, "Edits the specified line", New CommandArgumentInfo({"<linenumber>"}, True, 1), New TextEdit_EditLineCommand)},
-            {"exit", New CommandInfo("exit", ShellType.TextShell, "Exits the text editor and save unsaved changes", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New TextEdit_ExitCommand)},
             {"exitnosave", New CommandInfo("exitnosave", ShellType.TextShell, "Exits the text editor", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New TextEdit_ExitNoSaveCommand)},
             {"help", New CommandInfo("help", ShellType.TextShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New TextEdit_HelpCommand)},
             {"print", New CommandInfo("print", ShellType.TextShell, "Prints the contents of the file with line numbers to the console", New CommandArgumentInfo({"[linenumber] [linenumber2]"}, False, 0), New TextEdit_PrintCommand)},
