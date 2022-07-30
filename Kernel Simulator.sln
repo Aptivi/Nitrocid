@@ -365,7 +365,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{61
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kernel Simulator Source", "Kernel Simulator Source", "{6A7CBCC5-37B9-402E-8590-DBD4D3B93579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSCleanUnusedLocales", "KSCleanUnusedLocales\KSCleanUnusedLocales.csproj", "{22744969-682D-4974-895E-53079DA9EA3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSCleanUnusedLocales", "KSCleanUnusedLocales\KSCleanUnusedLocales.csproj", "{22744969-682D-4974-895E-53079DA9EA3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
