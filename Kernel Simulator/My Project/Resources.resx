@@ -199,12 +199,6 @@
   <data name="ConsoleColorsData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data\ConsoleColorsData.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="BrandingBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\BrandingBlue.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="BrandingPurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\BrandingPurple.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="Breeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Breeze.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>

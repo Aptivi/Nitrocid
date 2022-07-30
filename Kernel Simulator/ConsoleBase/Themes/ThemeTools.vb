@@ -37,8 +37,6 @@ Namespace ConsoleBase.Themes
             {"Blue Power", New ThemeInfo("Blue_Power")},
             {"Bluesome", New ThemeInfo("Bluesome")},
             {"Bluespire", New ThemeInfo("Bluespire")},
-            {"BrandingBlue", New ThemeInfo("BrandingBlue")},
-            {"BrandingPurple", New ThemeInfo("BrandingPurple")},
             {"BreezeDark", New ThemeInfo("BreezeDark")},
             {"Breeze", New ThemeInfo("Breeze")},
             {"Dawn Aurora", New ThemeInfo("Dawn_Aurora")},

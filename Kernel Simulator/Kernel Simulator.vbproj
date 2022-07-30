@@ -286,8 +286,6 @@
     <None Include="Resources\Themes\Tealed.json" />
     <None Include="Resources\Themes\Breeze.json" />
     <None Include="Resources\Themes\BreezeDark.json" />
-    <None Include="Resources\Themes\BrandingBlue.json" />
-    <None Include="Resources\Themes\BrandingPurple.json" />
     <None Include="Resources\Themes\AyuDark.json" />
     <None Include="Resources\Themes\AyuLight.json" />
     <None Include="Resources\Themes\AyuMirage.json" />

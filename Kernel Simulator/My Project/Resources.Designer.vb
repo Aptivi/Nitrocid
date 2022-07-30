@@ -391,54 +391,6 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;0;70&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;4;0;89&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;255;0;238&quot;,
-        '''    &quot;ListEntryColor&quot;: &quot;255;0;238&quot;,
-        '''    &quot;ListValueColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;StageColor&quot;: &quot;128;0;119&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;255;0;70&quot;,
-        '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
-        '''    &quot;OptionColor&quot;: &quot;255;0;238&quot;,
-        '''   [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property BrandingBlue() As String
-            Get
-                Return ResourceManager.GetString("BrandingBlue", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to {
-        '''    &quot;InputColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;LicenseColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
-        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;70;0&quot;,
-        '''    &quot;HostNameShellColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;UserNameShellColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;BackgroundColor&quot;: &quot;94;0;63&quot;,
-        '''    &quot;NeutralTextColor&quot;: &quot;0;255;238&quot;,
-        '''    &quot;ListEntryColor&quot;: &quot;0;255;238&quot;,
-        '''    &quot;ListValueColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;StageColor&quot;: &quot;0;128;119&quot;,
-        '''    &quot;ErrorColor&quot;: &quot;255;70;0&quot;,
-        '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
-        '''    &quot;OptionColor&quot;: &quot;0;255;238&quot;,
-        '''  [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property BrandingPurple() As String
-            Get
-                Return ResourceManager.GetString("BrandingPurple", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;244;79;79&quot;,
         '''    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
