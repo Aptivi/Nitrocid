@@ -255,7 +255,7 @@ Namespace Shell
                         Try
                             Dim EntireCommand As String = Command
                             If Not (Command = Nothing Or Command.StartsWithAnyOf({" ", "#"}) = True) Then
-                                Console.Title = $"{ConsoleTitle} - {Command}"
+                                SetTitle($"{ConsoleTitle} - {Command}")
 
                                 'Parse script command (if any)
                                 Dim scriptArgs As List(Of String) = Command.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
@@ -362,7 +362,7 @@ Namespace Shell
                     End If
                 End If
             Next
-            Console.Title = ConsoleTitle
+            SetTitle(ConsoleTitle)
 
             'Restore console output to its original state if any
 #Disable Warning BC42104

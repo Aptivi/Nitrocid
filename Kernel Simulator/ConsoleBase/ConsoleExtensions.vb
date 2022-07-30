@@ -67,6 +67,7 @@ Namespace ConsoleBase
         ''' <param name="Text">The text that contains the VT sequences</param>
         ''' <returns>The text that doesn't contain the VT sequences</returns>
         Public Function FilterVTSequences(Text As String) As String
+            'TODO: This doesn't filter setting console title sequence.
             Return Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
         End Function
 
@@ -129,6 +130,14 @@ Namespace ConsoleBase
         Public Function GetTerminalType() As String
             Return If(Environment.GetEnvironmentVariable("TERM"), "")
         End Function
+
+        Public Sub SetTitle(Text As String)
+            Dim BellChar As Char = Convert.ToChar(7)
+            Dim EscapeChar As Char = Convert.ToChar(27)
+            Dim Sequence As String = $"{EscapeChar}]0;{Text}{BellChar}"
+            Console.Title = Text
+            WritePlain(Sequence, False)
+        End Sub
 
     End Module
 End Namespace

@@ -81,7 +81,7 @@ Namespace Kernel
             While Not KernelShutdown
                 Try
                     'A title
-                    Console.Title = ConsoleTitle
+                    SetTitle(ConsoleTitle)
 
                     'Initial ReadLine settings
                     ReadLine.CtrlCEnabled = True
