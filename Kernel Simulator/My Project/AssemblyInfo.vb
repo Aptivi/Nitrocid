@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Kernel Simulator")>
 <Assembly: AssemblyDescription("Simulates our future kernel")>
-<Assembly: AssemblyCompany("EoflaOE")>
+<Assembly: AssemblyCompany("Aptivi")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2022")>
+<Assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

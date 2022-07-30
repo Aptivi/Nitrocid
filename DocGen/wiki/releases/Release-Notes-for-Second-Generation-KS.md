@@ -118,7 +118,7 @@ Because the API was having mixed code of between refactored and unrefactored, we
 3. Added new screensavers
 4. Added new themes
 5. Added support for .NET 6.0
-6. Used [ReadLine.Reboot](https://github.com/EoflaOE/ReadLine.Reboot) to read inputs. This fixes many issues regarding reading inputs on Linux systems.
+6. Used [ReadLine.Reboot](https://github.com/Aptivi/ReadLine.Reboot) to read inputs. This fixes many issues regarding reading inputs on Linux systems.
 7. Fixed variety of crashes
 8. Removed unnecessary dependency, MadMilkman.Ini, from the main app
 9. You can now run Kernel Simulator from Android directly (UserLAnd)!

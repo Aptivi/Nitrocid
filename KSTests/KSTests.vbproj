@@ -10,7 +10,7 @@
     <MyType Condition="'$(TargetFramework)' == 'net48'">Windows</MyType>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <Description>Unit tests for Kernel Simulator</Description>
-    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>

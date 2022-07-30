@@ -97,7 +97,7 @@ that may make you feel uncomfortable reading it.
 
 <br>
 
-**EoflaOE**  -  *Owner of Kernel Simulator*
+**Aptivi**  -  *Owner of Kernel Simulator*
 
 **OpenWeatherMap**  -  *Weather API*
 
@@ -113,7 +113,7 @@ that may make you feel uncomfortable reading it.
 
 **TechRepublic**  -  Articles RSS Feed Url
 
-**EoflaOE**  -  *[NamesList]*
+**Aptivi**  -  *[NamesList]*
 
 **smashew**  -  *[Name Databases]*
 
@@ -139,16 +139,16 @@ that may make you feel uncomfortable reading it.
 [Papercolor]: https://github.com/NLKNguyen/papercolor-theme
 [Chocolatey]: https://chocolatey.org/packages/KS/
 [SpaceCamp]: https://github.com/jaredgorski/SpaceCamp
-[NamesList]: https://github.com/EoflaOE/NamesList
+[NamesList]: https://github.com/Aptivi/NamesList
 [RSS Feed]: https://github.com/yavuz/news-feed-list-of-countries/
-[Releases]: https://github.com/EoflaOE/Kernel-Simulator/releases
+[Releases]: https://github.com/Aptivi/Kernel-Simulator/releases
 [Darcula]: https://github.com/doums/darcula
 [Melange]: https://github.com/savq/melange
-[Latest]: https://github.com/EoflaOE/Kernel-Simulator/releases/latest
+[Latest]: https://github.com/Aptivi/Kernel-Simulator/releases/latest
 [NuGet]: https://www.nuget.org/packages/KS/
 
-[Servicing]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/servicing
-[Master]: https://ci.appveyor.com/project/EoflaOE/kernel-simulator/branch/master
+[Servicing]: https://ci.appveyor.com/project/Aptivi/kernel-simulator/branch/servicing
+[Master]: https://ci.appveyor.com/project/Aptivi/kernel-simulator/branch/master
 
 [Requirements]: Documentation/Requirements.md
 [Libraries]: Documentation/Libraries.md
@@ -159,10 +159,10 @@ that may make you feel uncomfortable reading it.
 <!----------------------------------[ Badges ]--------------------------------->
 
 [Badge Chocolatey]: https://img.shields.io/chocolatey/v/ks?color=5e85a7&include_prereleases&style=for-the-badge&logoColor=white&logo=Chocolatey&labelColor=80B5E3
-[Badge Downloads]: https://img.shields.io/github/downloads/EoflaOE/Kernel-Simulator/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
-[Badge Latest]: https://img.shields.io/github/v/release/EoflaOE/Kernel-Simulator?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
+[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/Kernel-Simulator/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/Kernel-Simulator?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
 [Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
-[Badge Size]: https://img.shields.io/github/repo-size/EoflaOE/Kernel-Simulator?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
+[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Kernel-Simulator?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
 [Badge Servicing]: https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/servicing?svg=true
 [Badge Master]: https://ci.appveyor.com/api/projects/status/9anm0jc0x9raoy8x/branch/master?svg=true

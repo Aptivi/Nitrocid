@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -33,11 +33,11 @@ Namespace Shell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Write(DoTranslation("Checking for updates..."), True, ColTypes.Neutral)
 
-            'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
-            WClient.DefaultRequestHeaders.Add("User-Agent", "EoflaOE")
+            'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
+            WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi")
 
             'Populate the following variables with information
-            Dim RetroKSStr As String = DownloadString("https://api.github.com/repos/EoflaOE/RetroKS/releases")
+            Dim RetroKSStr As String = DownloadString("https://api.github.com/repos/Aptivi/RetroKS/releases")
             Dim RetroKSToken As JToken = JToken.Parse(RetroKSStr)
             Dim SortedVersions As New List(Of KernelUpdateInfo)
             For Each RetroKS As JToken In RetroKSToken

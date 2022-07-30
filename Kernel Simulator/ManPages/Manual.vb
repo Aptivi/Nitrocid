@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2019  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2019  Aptivi
 '
 '    This file is part of Kernel Simulator
 '

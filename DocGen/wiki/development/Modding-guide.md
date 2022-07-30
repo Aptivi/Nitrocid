@@ -7,7 +7,7 @@ The mod is the kernel extension file that loads on boot and adds extensions to t
 This is useful if you want to add your own extensions to the kernel, like event handlers for the kernel.
 
 > [!TIP]
-> To get started to our Kernel Simulator API, visit [this page](https://eoflaoe.github.io/Kernel-Simulator/).
+> To get started to our Kernel Simulator API, visit [this page](https://aptivi.github.io/Kernel-Simulator/).
 
 ## Mod format
 
@@ -16,7 +16,7 @@ The mods have the file extension of `.dll`, and can support more than one code f
 ## How to start your own mod on Visual Studio?
 
 > [!NOTE]
-> We recommend following the template repository for making your own mod [here](https://github.com/EoflaOE/KSModTemplate).
+> We recommend following the template repository for making your own mod [here](https://github.com/Aptivi/KSModTemplate).
 
 If you're going to make your mod, follow these steps:
 
@@ -290,4 +290,4 @@ End Class
 
 ## More Examples
 
-If you want to check out more examples, feel free to check them out in the [KSModExamples](https://github.com/EoflaOE/KSModExamples) respository in GitHub.
+If you want to check out more examples, feel free to check them out in the [KSModExamples](https://github.com/Aptivi/KSModExamples) respository in GitHub.

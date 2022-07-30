@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -112,9 +112,9 @@ Namespace Kernel
                             Dim pdbdown As New WebClient
                             Try
 #If NETCOREAPP Then
-                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                                pdbdown.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
 #Else
-                                pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                                pdbdown.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
 #End If
                             Catch ex As Exception
                                 NotifySend(New Notification(DoTranslation("Error downloading debug data"),

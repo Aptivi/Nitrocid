@@ -3,9 +3,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Kernel Simulator Tests")>
 <Assembly: AssemblyDescription("Unit tests for Kernel Simulator")>
-<Assembly: AssemblyCompany("EoflaOE")>
+<Assembly: AssemblyCompany("Aptivi")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
-<Assembly: AssemblyCopyright("Copyright © EoflaOE 2018-2022")>
+<Assembly: AssemblyCopyright("Copyright © Aptivi 2018-2022")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

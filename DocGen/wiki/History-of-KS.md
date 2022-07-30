@@ -8,7 +8,7 @@ Before the release of 0.0.1.0, we were working on the PowerPoint OS collection a
 
 In that way, we have learned how to develop VB.NET, and started to think about the kernels, and because it's impossible to make a bootable kernel except that if we have Cosmos, we have done the simulator that does the equivalent way of booting.
 
-We wrote the kernel booting procedure, log-in, and the shell which includes commands, making that four source code files compared to now. When we finished, we have initialized our Git repository sitting around the EoflaOE account on GitHub as our coding management system, because it isn't right to release the GNU GPL software WITHOUT the source code.
+We wrote the kernel booting procedure, log-in, and the shell which includes commands, making that four source code files compared to now. When we finished, we have initialized our Git repository sitting around the Aptivi account on GitHub as our coding management system, because it isn't right to release the GNU GPL software WITHOUT the source code.
 
 ### Big releases
 
@@ -197,4 +197,4 @@ We have fears of hard drives thrashing, especially the SSDs that they have read 
 
 #### Removal history
 
-* Removed filesystem parsing according to commit [a9fc2de6](https://github.com/EoflaOE/Kernel-Simulator/commit/a9fc2de6cfa79c4580331fa5bea5c7e5ad9326fe)
+* Removed filesystem parsing according to commit [a9fc2de6](https://github.com/Aptivi/Kernel-Simulator/commit/a9fc2de6cfa79c4580331fa5bea5c7e5ad9326fe)

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -30,9 +30,9 @@ Namespace Misc
         Public Sub PopulateNames()
             Try
                 Wdbg(DebugLevel.I, "Populating names...")
-                If Names.Length = 0 Then Names = DownloadString("https://cdn.jsdelivr.net/gh/EoflaOE/NamesList@master/Processed/FirstNames.txt").SplitNewLines
+                If Names.Length = 0 Then Names = DownloadString("https://cdn.jsdelivr.net/gh/Aptivi/NamesList@master/Processed/FirstNames.txt").SplitNewLines
                 Wdbg(DebugLevel.I, "Populating surnames...")
-                If Surnames.Length = 0 Then Surnames = DownloadString("https://cdn.jsdelivr.net/gh/EoflaOE/NamesList@master/Processed/Surnames.txt").SplitNewLines
+                If Surnames.Length = 0 Then Surnames = DownloadString("https://cdn.jsdelivr.net/gh/Aptivi/NamesList@master/Processed/Surnames.txt").SplitNewLines
                 Wdbg(DebugLevel.I, "Got {0} names and {1} surnames.", Names.Length, Surnames.Length)
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Can't get names and surnames: {0}", ex.Message)

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -469,11 +469,11 @@ Namespace Kernel
         ''' <returns>A kernel update instance</returns>
         Public Function FetchKernelUpdates() As KernelUpdate
             Try
-                'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
-                WClient.DefaultRequestHeaders.Add("User-Agent", "EoflaOE")
+                'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
+                WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi")
 
                 'Populate the following variables with information
-                Dim UpdateStr As String = DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
+                Dim UpdateStr As String = DownloadString("https://api.github.com/repos/Aptivi/Kernel-Simulator/releases")
                 Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
                 Dim UpdateInstance As New KernelUpdate(UpdateToken)
 

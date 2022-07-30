@@ -4,22 +4,22 @@
     <PackageId>KS</PackageId>
     <PackageId Condition=" '$(Configuration)' == 'Debug-dotnet' ">KS.CoreCLR</PackageId>
     <PackageId Condition=" '$(Configuration)' == 'Release-dotnet' ">KS.CoreCLR</PackageId>
-    <Authors>EoflaOE</Authors>
+    <Authors>Aptivi</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
     <PackageTags>kernel;simulator;vb.net</PackageTags>
     <!-- URL settings -->
-    <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Aptivi/Kernel-Simulator</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>https://eoflaoe.github.io/Kernel-Simulator/wiki/releases/Release-Notes-for-Second-Generation-KS.html</PackageReleaseNotes>
+    <PackageReleaseNotes>https://aptivi.github.io/Kernel-Simulator/wiki/releases/Release-Notes-for-Second-Generation-KS.html</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <PackageOutputPath>KSBuild</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->
-    <RepositoryUrl>https://github.com/EoflaOE/Kernel-Simulator.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Aptivi/Kernel-Simulator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Configurations>Debug;Release;Debug-dotnet;Release-dotnet</Configurations>
   </PropertyGroup>
@@ -37,7 +37,7 @@
     <StartupObject>KS.Kernel.Kernel</StartupObject>
     <AssemblyName>Kernel Simulator</AssemblyName>
     <Description>Simulates our future kernel</Description>
-    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
     <MyType Condition="'$(TargetFramework)' == 'net48'">Console</MyType>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>

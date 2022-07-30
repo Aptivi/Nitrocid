@@ -10,9 +10,9 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("KSConverter")]
 [assembly: AssemblyDescription("Converts existing Kenel Simulator settings (0.0.15.x or lower) to newer format")]
-[assembly: AssemblyCompany("EoflaOE")]
+[assembly: AssemblyCompany("Aptivi")]
 [assembly: AssemblyProduct("Kernel Simulator")]
-[assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2022")]
+[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2022")]
 [assembly: AssemblyTrademark("")]
 
 [assembly: ComVisible(false)]

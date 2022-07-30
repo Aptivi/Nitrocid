@@ -48,7 +48,7 @@ Greg Kroah-Hartman is the lead maintainer for the Linux kernel and guides its de
 
 Linux vendors and communities combine and distribute the kernel, GNU components, and non-GNU components, with additional package management software in the form of Linux distributions.
 
-#### Brief description for our Kernel aka Eofla Kernel
+#### Brief description for our Kernel aka Aptivi Kernel
 
 The kernel is built from scratch, and the first public Simulator version was built at 23 February, 2018. Currently, the Simulator grabs hardware information via Windows Management Instrumentation (WMI) or files in Linux which provides every information for your hardware, including the processor, RAM, and hard drive. It provides a built-in shell named Unified Eofla SHell (UESH) that will later be a kernel initialization program as known as InitiaOE which runs UESH if run on multiuser and uesh-maint if run on maintenance mode.
 

@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -24,9 +24,9 @@ Namespace Shell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim ModDocumentation As Boolean = ListSwitchesOnly.Contains("-modapi")
             If ModDocumentation Then
-                Process.Start("https://eoflaoe.github.io/Kernel-Simulator")
+                Process.Start("https://aptivi.github.io/Kernel-Simulator")
             Else
-                Process.Start("https://github.com/EoflaOE/Kernel-Simulator/wiki")
+                Process.Start("https://github.com/Aptivi/Kernel-Simulator/wiki")
             End If
         End Sub
 

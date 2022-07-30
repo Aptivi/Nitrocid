@@ -12,7 +12,7 @@
     <Deterministic>true</Deterministic>
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <Description>Converts existing Kenel Simulator settings (0.0.15.x or lower) to newer format</Description>
-    <Copyright>Copyright © EoflaOE 2018 - 2022</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2022</Copyright>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>

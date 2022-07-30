@@ -16,5 +16,5 @@ This command lets you connect to another computer to remotely execute commands.
 
 ### Examples
 
-* `sshell 192.168.1.102 EoflaOE`: Connects to 192.168.1.102 with port 22 using EoflaOE
+* `sshell 192.168.1.102 Aptivi`: Connects to 192.168.1.102 with port 22 using Aptivi
 * `sshell 127.0.0.1:2233 Michele`: Connects to 127.0.0.1 with port 2233 using Michele

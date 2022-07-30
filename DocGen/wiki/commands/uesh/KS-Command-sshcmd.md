@@ -16,5 +16,5 @@ This command lets you connect to another computer to remotely execute commands.
 
 ### Examples
 
-* `sshcmd 192.168.1.102 EoflaOE "rm ~/test.txt"`: Connects to 192.168.1.102 with port 22 using EoflaOE to execute command "rm ~/test.txt"
+* `sshcmd 192.168.1.102 Aptivi "rm ~/test.txt"`: Connects to 192.168.1.102 with port 22 using Aptivi to execute command "rm ~/test.txt"
 * `sshcmd 127.0.0.1:2233 Michele "touch ~/home.txt"`: Connects to 127.0.0.1 with port 2233 using Michele o execute command "touch ~/home.txt"

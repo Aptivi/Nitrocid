@@ -10,9 +10,9 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("KS Locale JSON-ifier")]
 [assembly: AssemblyDescription("Converts bare text files for KS localizations to a parsable format for KS")]
-[assembly: AssemblyCompany("EoflaOE")]
+[assembly: AssemblyCompany("Aptivi")]
 [assembly: AssemblyProduct("Kernel Simulator")]
-[assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2022")]
+[assembly: AssemblyCopyright("Copyright © Aptivi 2018 - 2022")]
 [assembly: AssemblyTrademark("")]
 
 [assembly: ComVisible(false)]

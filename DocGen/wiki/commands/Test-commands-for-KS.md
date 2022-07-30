@@ -14,7 +14,7 @@ C = Continuable
 ```
 `<RebootTime>` is measured in seconds. It is used if `<Reboot>` is True or 1.
 
-You can find strings inside the text files in the [Resources](https://github.com/EoflaOE/Kernel-Simulator/tree/master/Kernel%20Simulator/Resources) folder.
+You can find strings inside the text files in the [Resources](https://github.com/Aptivi/Kernel-Simulator/tree/master/Kernel%20Simulator/Resources) folder.
 
 Refer to [this document](../misc/Placeholders.md) for the list of placeholders.
 

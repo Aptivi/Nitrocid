@@ -1,5 +1,5 @@
 ﻿
-'    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+'    Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 '
 '    This file is part of Kernel Simulator
 '
@@ -74,7 +74,7 @@ Namespace Misc.Writers.MiscWriters
         ''' Writes the license
         ''' </summary>
         Sub WriteLicense(TwoNewlines As Boolean)
-            Write(NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE" + NewLine +
+            Write(NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + NewLine +
                             "    This program comes with ABSOLUTELY NO WARRANTY, not even " + NewLine +
                             "    MERCHANTABILITY or FITNESS for particular purposes." + NewLine +
                             "    This is free software, and you are welcome to redistribute it" + NewLine +
