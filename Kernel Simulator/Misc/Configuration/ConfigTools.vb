@@ -393,6 +393,26 @@ Namespace Misc.Configuration
         ''' Sets the value of an entry in a category.
         ''' </summary>
         ''' <param name="ConfigCategory">Config category</param>
+        ''' <param name="ConfigEntryName">Config entry name.</param>
+        ''' <param name="ConfigValue">Config entry value to install</param>
+        Public Sub SetConfigValue(ConfigCategory As ConfigCategory, ConfigEntryName As String, ConfigValue As JToken)
+            SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName, ConfigValue)
+        End Sub
+
+        ''' <summary>
+        ''' Sets the value of an entry in a category.
+        ''' </summary>
+        ''' <param name="ConfigCategory">Config category</param>
+        ''' <param name="ConfigEntryName">Config entry name.</param>
+        ''' <param name="ConfigValue">Config entry value to install</param>
+        Public Sub SetConfigValue(ConfigCategory As ConfigCategory, ConfigSubCategoryName As String, ConfigEntryName As String, ConfigValue As JToken)
+            SetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName, ConfigValue)
+        End Sub
+
+        ''' <summary>
+        ''' Sets the value of an entry in a category.
+        ''' </summary>
+        ''' <param name="ConfigCategory">Config category</param>
         ''' <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
         ''' <param name="ConfigEntryName">Config entry name.</param>
         ''' <param name="ConfigValue">Config entry value to install</param>
@@ -422,6 +442,24 @@ Namespace Misc.Configuration
                 Throw New Exceptions.ConfigException(DoTranslation("Config category {0} not found."), ConfigCategory)
             End If
         End Sub
+
+        ''' <summary>
+        ''' Gets the value of an entry in a category.
+        ''' </summary>
+        ''' <param name="ConfigCategory">Config category</param>
+        ''' <param name="ConfigEntryName">Config entry name.</param>
+        Public Function GetConfigValue(ConfigCategory As ConfigCategory, ConfigEntryName As String) As JToken
+            Return GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory), ConfigEntryName)
+        End Function
+
+        ''' <summary>
+        ''' Gets the value of an entry in a category.
+        ''' </summary>
+        ''' <param name="ConfigCategory">Config category</param>
+        ''' <param name="ConfigEntryName">Config entry name.</param>
+        Public Function GetConfigValue(ConfigCategory As ConfigCategory, ConfigSubCategoryName As String, ConfigEntryName As String) As JToken
+            Return GetConfigValue(ConfigCategory, GetConfigCategory(ConfigCategory, ConfigSubCategoryName), ConfigEntryName)
+        End Function
 
         ''' <summary>
         ''' Gets the value of an entry in a category.

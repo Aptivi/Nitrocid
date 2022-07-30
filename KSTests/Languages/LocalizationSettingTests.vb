@@ -35,7 +35,7 @@ Imports KS.Languages
     ''' </summary>
     <Test, Description("Setting")> Public Sub TestUpdateCultureCustom()
         CurrentLanguage = "spa"
-        Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
+        Dim ExpectedCulture As String = "Spanish (Spain)"
         UpdateCulture(ExpectedCulture)
         CurrentCult.EnglishName.ShouldBe(ExpectedCulture)
     End Sub

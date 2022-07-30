@@ -134,40 +134,40 @@ Namespace Shell.Prompts
             Select Case ShellType
                 Case ShellType.Shell
                     UESHShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Prompt Preset", PresetName)
                 Case ShellType.TestShell
                     TestShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Test Shell Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Test Shell Prompt Preset", PresetName)
                 Case ShellType.ZIPShell
                     ZipShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Zip Shell Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Zip Shell Prompt Preset", PresetName)
                 Case ShellType.TextShell
                     TextShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Text Edit Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Text Edit Prompt Preset", PresetName)
                 Case ShellType.SFTPShell
                     SFTPShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "SFTP Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "SFTP Prompt Preset", PresetName)
                 Case ShellType.RSSShell
                     RSSShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "RSS Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "RSS Prompt Preset", PresetName)
                 Case ShellType.MailShell
                     MailShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Mail Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Mail Prompt Preset", PresetName)
                 Case ShellType.JsonShell
                     JsonShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "JSON Shell Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "JSON Shell Prompt Preset", PresetName)
                 Case ShellType.HTTPShell
                     HTTPShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "HTTP Shell Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "HTTP Shell Prompt Preset", PresetName)
                 Case ShellType.HexShell
                     HexShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Hex Edit Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "Hex Edit Prompt Preset", PresetName)
                 Case ShellType.FTPShell
                     FTPShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "FTP Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "FTP Prompt Preset", PresetName)
                 Case ShellType.RARShell
                     RARShellCurrentPreset = Presets(PresetName)
-                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "RAR Shell Prompt Preset", PresetName)
+                    SetConfigValue(ConfigCategory.Shell, "RAR Shell Prompt Preset", PresetName)
             End Select
         End Sub
 

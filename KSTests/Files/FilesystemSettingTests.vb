@@ -47,7 +47,7 @@ Imports KS.Misc.Configuration
     <Test, Description("Manipulation")> Public Sub TestSaveCurrDir()
         CurrentDir = HomePath
         SaveCurrDir()
-        GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(HomePath)
+        GetConfigValue(ConfigCategory.Shell, "Current Directory").ToString.ShouldBe(HomePath)
     End Sub
 
 End Class
