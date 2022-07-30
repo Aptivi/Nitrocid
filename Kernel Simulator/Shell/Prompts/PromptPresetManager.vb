@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.ConsoleBase.Inputs.Styles
+Imports KS.Misc.Configuration
 Imports KS.Shell.Prompts.Presets.UESH
 Imports KS.Shell.Prompts.Presets.Test
 Imports KS.Shell.Prompts.Presets.ZIP
@@ -132,28 +134,40 @@ Namespace Shell.Prompts
             Select Case ShellType
                 Case ShellType.Shell
                     UESHShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Prompt Preset", PresetName)
                 Case ShellType.TestShell
                     TestShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Test Shell Prompt Preset", PresetName)
                 Case ShellType.ZIPShell
                     ZipShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Zip Shell Prompt Preset", PresetName)
                 Case ShellType.TextShell
                     TextShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Text Edit Prompt Preset", PresetName)
                 Case ShellType.SFTPShell
                     SFTPShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "SFTP Prompt Preset", PresetName)
                 Case ShellType.RSSShell
                     RSSShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "RSS Prompt Preset", PresetName)
                 Case ShellType.MailShell
                     MailShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Mail Prompt Preset", PresetName)
                 Case ShellType.JsonShell
                     JsonShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "JSON Shell Prompt Preset", PresetName)
                 Case ShellType.HTTPShell
                     HTTPShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "HTTP Shell Prompt Preset", PresetName)
                 Case ShellType.HexShell
                     HexShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Hex Edit Prompt Preset", PresetName)
                 Case ShellType.FTPShell
                     FTPShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "FTP Prompt Preset", PresetName)
                 Case ShellType.RARShell
                     RARShellCurrentPreset = Presets(PresetName)
+                    SetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "RAR Shell Prompt Preset", PresetName)
             End Select
         End Sub
 
@@ -274,6 +288,25 @@ Namespace Shell.Prompts
 
             'Set input color in case custom preset or custom shell prompt style didn't set the input color as instructed
             SetInputColor()
+        End Sub
+
+        ''' <summary>
+        ''' Prompts a user to select the preset
+        ''' </summary>
+        Public Sub PromptForPresets()
+            Dim ShellType As ShellType = ShellStack(ShellStack.Count - 1).ShellType
+            Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
+
+            'Add the custom presets to the local dictionary
+            For Each PresetName As String In GetCustomPresetsFromShell(ShellType).Keys
+                Presets.Add(PresetName, Presets(PresetName))
+            Next
+
+            'Now, prompt the user
+            Dim PresetNames As String() = Presets.Keys.ToArray
+            Dim PresetDisplays As String() = Presets.Values.Select(Function(Preset) Preset.PresetPrompt).ToArray
+            Dim SelectedPreset As String = PromptChoice(DoTranslation("Select preset for {0}:").FormatString(ShellType), String.Join("/", PresetNames), PresetDisplays, ChoiceOutputType.Modern, True)
+            SetPreset(SelectedPreset, ShellType)
         End Sub
 
     End Module

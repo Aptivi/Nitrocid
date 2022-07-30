@@ -290,7 +290,8 @@ Namespace Misc.Configuration
 
                 'Variant properties
                 Dim VariantValue As Object = ""
-                Dim VariantValueFromExternalPrompt As Boolean
+                Dim VariantFunctionSetsValue As Boolean = If(KeyToken("VariantFunctionSetsValue"), False)
+                Dim VariantFunction As String = KeyToken("VariantFunction")
 
                 'Color properties
                 Dim ColorValue As Object = ""
@@ -399,11 +400,15 @@ Namespace Misc.Configuration
                     Wdbg(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue)
 
                     'Prompt user
-                    If KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
-                        Write("> ", False, ColTypes.Input)
-                        VariantValue = ReadLine()
-                        If NeutralizePaths Then VariantValue = NeutralizePath(VariantValue, NeutralizeRootPath)
-                        Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
+                    If KeyType = SettingsKeyType.SVariant Then
+                        If VariantFunctionSetsValue Then
+                            GetMethod(VariantFunction).Invoke(Nothing, Nothing)
+                        Else
+                            Write("> ", False, ColTypes.Input)
+                            VariantValue = ReadLine()
+                            If NeutralizePaths Then VariantValue = NeutralizePath(VariantValue, NeutralizeRootPath)
+                            Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
+                        End If
                     ElseIf Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SColor Then
                         If KeyType = SettingsKeyType.SList Then
                             Write("> ", False, ColTypes.Input)
@@ -651,13 +656,15 @@ Namespace Misc.Configuration
                                     SetPropertyValue(KeyVar, JoinedString)
                                 End If
                             Case SettingsKeyType.SVariant
-                                'Now, set the value
-                                If CheckField(KeyVar) Then
-                                    'We're dealing with the field
-                                    SetValue(KeyVar, VariantValue, True)
-                                ElseIf CheckProperty(KeyVar) Then
-                                    'We're dealing with the property
-                                    SetPropertyValue(KeyVar, VariantValue)
+                                If Not VariantFunctionSetsValue Then
+                                    'Now, set the value
+                                    If CheckField(KeyVar) Then
+                                        'We're dealing with the field
+                                        SetValue(KeyVar, VariantValue, True)
+                                    ElseIf CheckProperty(KeyVar) Then
+                                        'We're dealing with the property
+                                        SetPropertyValue(KeyVar, VariantValue)
+                                    End If
                                 End If
                                 KeyFinished = True
                             Case SettingsKeyType.SColor

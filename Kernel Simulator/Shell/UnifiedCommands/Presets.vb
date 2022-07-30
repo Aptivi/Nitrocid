@@ -25,19 +25,7 @@ Namespace Shell.UnifiedCommands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim ShellType As ShellType = ShellStack(ShellStack.Count - 1).ShellType
-            Dim Presets As Dictionary(Of String, PromptPresetBase) = GetPresetsFromShell(ShellType)
-
-            'Add the custom presets to the local dictionary
-            For Each PresetName As String In GetCustomPresetsFromShell(ShellType).Keys
-                Presets.Add(PresetName, Presets(PresetName))
-            Next
-
-            'Now, prompt the user
-            Dim PresetNames As String() = Presets.Keys.ToArray
-            Dim PresetDisplays As String() = Presets.Values.Select(Function(Preset) Preset.PresetPrompt).ToArray
-            Dim SelectedPreset As String = PromptChoice(DoTranslation("Select preset for {0}:").FormatString(ShellType), String.Join("/", PresetNames), PresetDisplays, ChoiceOutputType.Modern, True)
-            SetPreset(SelectedPreset, ShellType)
+            PromptForPresets()
         End Sub
 
     End Class
