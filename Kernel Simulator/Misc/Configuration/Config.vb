@@ -49,6 +49,7 @@ Imports KS.Network.RSS
 Imports KS.Network.SFTP
 Imports KS.Network.SSH
 Imports KS.Network.Transfer
+Imports KS.Shell.Prompts
 Imports KS.TestShell
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
@@ -210,18 +211,18 @@ Namespace Misc.Configuration
                     {"Simplified Help Command", SimHelp},
                     {"Current Directory", CurrentDir},
                     {"Lookup Directories", PathsToLookup.EncloseByDoubleQuotes},
-                    {"Prompt Style", ShellPromptStyle},
-                    {"FTP Prompt Style", FTPShellPromptStyle},
-                    {"Mail Prompt Style", MailShellPromptStyle},
-                    {"SFTP Prompt Style", SFTPShellPromptStyle},
-                    {"RSS Prompt Style", RSSShellPromptStyle},
-                    {"Text Edit Prompt Style", TextEdit_PromptStyle},
-                    {"Zip Shell Prompt Style", ZipShell_PromptStyle},
-                    {"Test Shell Prompt Style", Test_PromptStyle},
-                    {"JSON Shell Prompt Style", JsonShell_PromptStyle},
-                    {"Hex Edit Prompt Style", HexEdit_PromptStyle},
-                    {"HTTP Shell Prompt Style", HTTPShellPromptStyle},
-                    {"RAR Shell Prompt Style", RarShell_PromptStyle},
+                    {"Prompt Preset", UESHShellCurrentPreset.PresetName},
+                    {"FTP Prompt Preset", FTPShellCurrentPreset.PresetName},
+                    {"Mail Prompt Preset", MailShellCurrentPreset.PresetName},
+                    {"SFTP Prompt Preset", SFTPShellCurrentPreset.PresetName},
+                    {"RSS Prompt Preset", RSSShellCurrentPreset.PresetName},
+                    {"Text Edit Prompt Preset", TextShellCurrentPreset.PresetName},
+                    {"Zip Shell Prompt Preset", ZipShellCurrentPreset.PresetName},
+                    {"Test Shell Prompt Preset", TestShellCurrentPreset.PresetName},
+                    {"JSON Shell Prompt Preset", JsonShellCurrentPreset.PresetName},
+                    {"Hex Edit Prompt Preset", HexShellCurrentPreset.PresetName},
+                    {"HTTP Shell Prompt Preset", HTTPShellCurrentPreset.PresetName},
+                    {"RAR Shell Prompt Preset", RARShellCurrentPreset.PresetName},
                     {"Probe injected commands", ProbeInjectedCommands},
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
@@ -1258,18 +1259,18 @@ Namespace Misc.Configuration
             SimHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
             CurrentDir = If(ConfigToken("Shell")?("Current Directory"), HomePath)
             PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environment.GetEnvironmentVariable("PATH"))
-            ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
-            FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
-            MailShellPromptStyle = If(ConfigToken("Shell")?("Mail Prompt Style"), "")
-            SFTPShellPromptStyle = If(ConfigToken("Shell")?("SFTP Prompt Style"), "")
-            RSSShellPromptStyle = If(ConfigToken("Shell")?("RSS Prompt Style"), "")
-            TextEdit_PromptStyle = If(ConfigToken("Shell")?("Text Edit Prompt Style"), "")
-            ZipShell_PromptStyle = If(ConfigToken("Shell")?("Zip Shell Prompt Style"), "")
-            Test_PromptStyle = If(ConfigToken("Shell")?("Test Shell Prompt Style"), "")
-            JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
-            HexEdit_PromptStyle = If(ConfigToken("Shell")?("Hex Edit Prompt Style"), "")
-            HTTPShellPromptStyle = If(ConfigToken("Shell")?("HTTP Shell Prompt Style"), "")
-            RarShell_PromptStyle = If(ConfigToken("Shell")?("RAR Shell Prompt Style"), "")
+            SetPreset(If(ConfigToken("Shell")?("Prompt Preset"), ""), ShellType.Shell, False)
+            SetPreset(If(ConfigToken("Shell")?("FTP Prompt Preset"), ""), ShellType.FTPShell, False)
+            SetPreset(If(ConfigToken("Shell")?("Mail Prompt Preset"), ""), ShellType.MailShell, False)
+            SetPreset(If(ConfigToken("Shell")?("SFTP Prompt Preset"), ""), ShellType.SFTPShell, False)
+            SetPreset(If(ConfigToken("Shell")?("RSS Prompt Preset"), ""), ShellType.RSSShell, False)
+            SetPreset(If(ConfigToken("Shell")?("Text Edit Prompt Preset"), ""), ShellType.TextShell, False)
+            SetPreset(If(ConfigToken("Shell")?("Zip Shell Prompt Preset"), ""), ShellType.ZIPShell, False)
+            SetPreset(If(ConfigToken("Shell")?("Test Shell Prompt Preset"), ""), ShellType.TestShell, False)
+            SetPreset(If(ConfigToken("Shell")?("JSON Shell Prompt Preset"), ""), ShellType.JsonShell, False)
+            SetPreset(If(ConfigToken("Shell")?("Hex Edit Prompt Preset"), ""), ShellType.HexShell, False)
+            SetPreset(If(ConfigToken("Shell")?("HTTP Shell Prompt Preset"), ""), ShellType.HTTPShell, False)
+            SetPreset(If(ConfigToken("Shell")?("RAR Shell Prompt Preset"), ""), ShellType.RARShell, False)
             ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
             ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
             DefaultChoiceOutputType = If(ConfigToken("Shell")?("Default choice output type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Shell")?("Default choice output type"), DefaultChoiceOutputType), DefaultChoiceOutputType, ChoiceOutputType.Modern), ChoiceOutputType.Modern)

@@ -26,8 +26,8 @@ Namespace Misc.Reflection
         ''' </summary>
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <param name="VariableValue">New value of variable</param>
-        Public Sub SetValue(Variable As String, VariableValue As Object)
-            SetValue(Variable, VariableValue, Nothing)
+        Public Sub SetValue(Variable As String, VariableValue As Object, Optional Internal As Boolean = False)
+            SetValue(Variable, VariableValue, Nothing, Internal)
         End Sub
 
         ''' <summary>
@@ -36,13 +36,13 @@ Namespace Misc.Reflection
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <param name="VariableValue">New value of variable</param>
         ''' <param name="VariableType">Variable type</param>
-        Public Sub SetValue(Variable As String, VariableValue As Object, VariableType As Type)
+        Public Sub SetValue(Variable As String, VariableValue As Object, VariableType As Type, Optional Internal As Boolean = False)
             'Get field for specified variable
             Dim TargetField As FieldInfo
             If VariableType IsNot Nothing Then
-                TargetField = GetField(Variable, VariableType)
+                TargetField = GetField(Variable, VariableType, Internal)
             Else
-                TargetField = GetField(Variable)
+                TargetField = GetField(Variable, Internal)
             End If
 
             'Set the variable if found
@@ -64,8 +64,8 @@ Namespace Misc.Reflection
         ''' </summary>
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <returns>Value of a variable</returns>
-        Public Function GetValue(Variable As String) As Object
-            Return GetValue(Variable, Nothing)
+        Public Function GetValue(Variable As String, Optional Internal As Boolean = False) As Object
+            Return GetValue(Variable, Nothing, Internal)
         End Function
 
         ''' <summary>
@@ -74,13 +74,13 @@ Namespace Misc.Reflection
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <param name="VariableType">Variable type</param>
         ''' <returns>Value of a variable</returns>
-        Public Function GetValue(Variable As String, VariableType As Type) As Object
+        Public Function GetValue(Variable As String, VariableType As Type, Optional Internal As Boolean = False) As Object
             'Get field for specified variable
             Dim TargetField As FieldInfo
             If VariableType IsNot Nothing Then
-                TargetField = GetField(Variable, VariableType)
+                TargetField = GetField(Variable, VariableType, Internal)
             Else
-                TargetField = GetField(Variable)
+                TargetField = GetField(Variable, Internal)
             End If
 
             'Get the variable if found
@@ -103,9 +103,14 @@ Namespace Misc.Reflection
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <param name="Type">Variable type</param>
         ''' <returns>Field information</returns>
-        Public Function GetField(Variable As String, Type As Type) As FieldInfo
+        Public Function GetField(Variable As String, Type As Type, Optional Internal As Boolean = False) As FieldInfo
             'Get fields of specified type
-            Dim Field As FieldInfo = Type.GetField(Variable)
+            Dim Field As FieldInfo
+            If Internal Then
+                Field = Type.GetField(Variable, BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.NonPublic Or BindingFlags.Public)
+            Else
+                Field = Type.GetField(Variable)
+            End If
 
             'Check if any of them contains the specified variable
             If Field IsNot Nothing Then
@@ -118,7 +123,7 @@ Namespace Misc.Reflection
         ''' </summary>
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         ''' <returns>Field information</returns>
-        Public Function GetField(Variable As String) As FieldInfo
+        Public Function GetField(Variable As String, Optional Internal As Boolean = False) As FieldInfo
             Dim PossibleTypes As Type()
             Dim PossibleField As FieldInfo
 
@@ -127,7 +132,11 @@ Namespace Misc.Reflection
 
             'Get fields of flag modules
             For Each PossibleType As Type In PossibleTypes
-                PossibleField = PossibleType.GetField(Variable)
+                If Internal Then
+                    PossibleField = PossibleType.GetField(Variable, BindingFlags.Instance Or BindingFlags.Static Or BindingFlags.NonPublic Or BindingFlags.Public)
+                Else
+                    PossibleField = PossibleType.GetField(Variable)
+                End If
                 If PossibleField IsNot Nothing Then Return PossibleField
             Next
         End Function
@@ -136,9 +145,9 @@ Namespace Misc.Reflection
         ''' Checks the specified variable if it exists
         ''' </summary>
         ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
-        Public Function CheckField(Variable As String) As Boolean
+        Public Function CheckField(Variable As String, Optional Internal As Boolean = False) As Boolean
             'Get field for specified variable
-            Dim TargetField As FieldInfo = GetField(Variable)
+            Dim TargetField As FieldInfo = GetField(Variable, Internal)
 
             'Set the variable if found
             Return TargetField IsNot Nothing

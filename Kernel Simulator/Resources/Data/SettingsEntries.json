@@ -455,75 +455,99 @@
                 "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory."
             },
             {
-                "Name": "Prompt Style",
+                "Name": "Prompt Preset",
                 "Type": "SString",
-                "Variable": "ShellPromptStyle",
+                "Variable": "UESHShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "FTP Prompt Style",
+                "Name": "FTP Prompt Preset",
                 "Type": "SString",
-                "Variable": "FTPShellPromptStyle",
+                "Variable": "FTPShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "Mail Prompt Style",
+                "Name": "Mail Prompt Preset",
                 "Type": "SString",
-                "Variable": "MailShellPromptStyle",
+                "Variable": "MailShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "SFTP Prompt Style",
+                "Name": "SFTP Prompt Preset",
                 "Type": "SString",
-                "Variable": "SFTPShellPromptStyle",
+                "Variable": "SFTPShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "RSS Prompt Style",
+                "Name": "RSS Prompt Preset",
                 "Type": "SString",
-                "Variable": "RSSShellPromptStyle",
+                "Variable": "RSSShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "Text Edit Prompt Style",
+                "Name": "Text Edit Prompt Preset",
                 "Type": "SString",
-                "Variable": "TextEdit_PromptStyle",
+                "Variable": "TextShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "Zip Shell Prompt Style",
+                "Name": "Zip Shell Prompt Preset",
                 "Type": "SString",
-                "Variable": "ZipShell_PromptStyle",
+                "Variable": "ZipShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "Test Shell Prompt Style",
+                "Name": "Test Shell Prompt Preset",
                 "Type": "SString",
-                "Variable": "Test_PromptStyle",
+                "Variable": "TestShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "JSON Shell Prompt Style",
+                "Name": "JSON Shell Prompt Preset",
                 "Type": "SString",
-                "Variable": "JsonShell_PromptStyle",
+                "Variable": "JsonShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "Hex Edit Prompt Style",
+                "Name": "Hex Edit Prompt Preset",
                 "Type": "SString",
-                "Variable": "HexEdit_PromptStyle",
+                "Variable": "HexShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "HTTP Shell Prompt Style",
+                "Name": "HTTP Shell Prompt Preset",
                 "Type": "SString",
-                "Variable": "HTTPShellPromptStyle",
+                "Variable": "HTTPShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
-                "Name": "RAR Shell Prompt Style",
+                "Name": "RAR Shell Prompt Preset",
                 "Type": "SString",
-                "Variable": "RarShell_PromptStyle",
+                "Variable": "RARShellCurrentPreset",
+                "VariableProperty": "PresetName",
+                "VariablePropertyType": "KS.Shell.Prompts.PromptPresetBase",
                 "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {

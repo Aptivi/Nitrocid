@@ -165,9 +165,9 @@ Namespace Misc.Reflection
             'Get field for specified variable
             Dim TargetField As FieldInfo
             If VariableType IsNot Nothing Then
-                TargetField = GetField(Variable, VariableType)
+                TargetField = GetField(Variable, VariableType, True)
             Else
-                TargetField = GetField(Variable)
+                TargetField = GetField(Variable, True)
             End If
 
             'Get the variable if found
@@ -177,9 +177,9 @@ Namespace Misc.Reflection
                 Dim TargetProperty As PropertyInfo = TargetField.FieldType.GetProperty([Property])
                 Dim TargetValue As Object
                 If VariableType IsNot Nothing Then
-                    TargetValue = GetValue(Variable, VariableType)
+                    TargetValue = GetValue(Variable, VariableType, True)
                 Else
-                    TargetValue = GetValue(Variable)
+                    TargetValue = GetValue(Variable, True)
                 End If
 
                 'Get the property value if found

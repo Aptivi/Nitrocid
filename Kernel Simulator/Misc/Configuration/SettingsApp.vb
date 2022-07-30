@@ -496,7 +496,7 @@ Namespace Misc.Configuration
                                     'Now, set the value
                                     If CheckField(KeyVar) Then
                                         'We're dealing with the field
-                                        SetValue(KeyVar, FinalBool)
+                                        SetValue(KeyVar, FinalBool, True)
                                     ElseIf CheckProperty(KeyVar) Then
                                         'We're dealing with the property
                                         SetPropertyValue(KeyVar, FinalBool)
@@ -525,7 +525,7 @@ Namespace Misc.Configuration
                                         'Now, set the value
                                         If CheckField(KeyVar) Then
                                             'We're dealing with the field
-                                            SetValue(KeyVar, Selections(AnswerIndex))
+                                            SetValue(KeyVar, Selections(AnswerIndex), True)
                                         ElseIf CheckProperty(KeyVar) Then
                                             'We're dealing with the property
                                             SetPropertyValue(KeyVar, Selections(AnswerIndex))
@@ -545,7 +545,7 @@ Namespace Misc.Configuration
                                         'Now, set the value
                                         If CheckField(KeyVar) Then
                                             'We're dealing with the field
-                                            SetValue(KeyVar, FinalValue)
+                                            SetValue(KeyVar, FinalValue, True)
                                         ElseIf CheckProperty(KeyVar) Then
                                             'We're dealing with the property
                                             SetPropertyValue(KeyVar, FinalValue)
@@ -578,7 +578,7 @@ Namespace Misc.Configuration
                                     'Now, set the value
                                     If CheckField(KeyVar) Then
                                         'We're dealing with the field
-                                        SetValue(KeyVar, AnswerInt)
+                                        SetValue(KeyVar, AnswerInt, True)
                                     ElseIf CheckProperty(KeyVar) Then
                                         'We're dealing with the property
                                         SetPropertyValue(KeyVar, AnswerInt)
@@ -597,7 +597,7 @@ Namespace Misc.Configuration
                                 'Now, set the value
                                 If CheckField(KeyVar) Then
                                     'We're dealing with the field
-                                    SetValue(KeyVar, AnswerInt)
+                                    SetValue(KeyVar, AnswerInt, True)
                                 ElseIf CheckProperty(KeyVar) Then
                                     'We're dealing with the property
                                     SetPropertyValue(KeyVar, AnswerInt)
@@ -622,9 +622,9 @@ Namespace Misc.Configuration
 
                                 'Set the value
                                 KeyFinished = True
-                                If CheckField(KeyVar) Then
+                                If CheckField(KeyVar, True) Then
                                     'We're dealing with the field
-                                    SetValue(KeyVar, AnswerString)
+                                    SetValue(KeyVar, AnswerString, True)
                                 ElseIf CheckProperty(KeyVar) Then
                                     'We're dealing with the property
                                     SetPropertyValue(KeyVar, AnswerString)
@@ -645,7 +645,7 @@ Namespace Misc.Configuration
                                 Dim JoinedString As String = String.Join(FinalDelimiter, TargetList)
                                 If CheckField(KeyVar) Then
                                     'We're dealing with the field
-                                    SetValue(KeyVar, JoinedString)
+                                    SetValue(KeyVar, JoinedString, True)
                                 ElseIf CheckProperty(KeyVar) Then
                                     'We're dealing with the property
                                     SetPropertyValue(KeyVar, JoinedString)
@@ -654,7 +654,7 @@ Namespace Misc.Configuration
                                 'Now, set the value
                                 If CheckField(KeyVar) Then
                                     'We're dealing with the field
-                                    SetValue(KeyVar, VariantValue)
+                                    SetValue(KeyVar, VariantValue, True)
                                 ElseIf CheckProperty(KeyVar) Then
                                     'We're dealing with the property
                                     SetPropertyValue(KeyVar, VariantValue)
@@ -671,7 +671,7 @@ Namespace Misc.Configuration
                                 'Now, set the value
                                 If CheckField(KeyVar) Then
                                     'We're dealing with the field
-                                    SetValue(KeyVar, FinalColor)
+                                    SetValue(KeyVar, FinalColor, True)
                                 ElseIf CheckProperty(KeyVar) Then
                                     'We're dealing with the property
                                     SetPropertyValue(KeyVar, FinalColor)
