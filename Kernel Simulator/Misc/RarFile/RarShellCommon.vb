@@ -37,7 +37,6 @@ Namespace Misc.RarFile
         Public RarShell_RarArchive As RarArchive
         Public RarShell_CurrentDirectory As String
         Public RarShell_CurrentArchiveDirectory As String
-        Public RarShell_PromptStyle As String = ""
 
     End Module
 End Namespace

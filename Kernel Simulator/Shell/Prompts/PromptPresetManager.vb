@@ -275,18 +275,10 @@ Namespace Shell.Prompts
         ''' </summary>
         ''' <param name="ShellType">Shell type</param>
         Public Sub WriteShellPrompt(ShellType As ShellType)
-            Dim ShellPromptStyle As String = GetCustomShellPromptStyle(ShellType)
-            If Not String.IsNullOrWhiteSpace(ShellPromptStyle) And Not Maintenance Then
-                'Parse the shell prompt style
-                Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
-                ParsedPromptStyle.ConvertVTSequences()
-                Write(ParsedPromptStyle, False, ColTypes.Input)
-            Else
-                Dim CurrentPresetBase As PromptPresetBase = GetCurrentPresetBaseFromShell(ShellType)
-                Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
-            End If
+            Dim CurrentPresetBase As PromptPresetBase = GetCurrentPresetBaseFromShell(ShellType)
+            Write(CurrentPresetBase.PresetPrompt, False, ColTypes.Input)
 
-            'Set input color in case custom preset or custom shell prompt style didn't set the input color as instructed
+            'Set input color in case custom preset didn't set the input color as instructed
             SetInputColor()
         End Sub
 

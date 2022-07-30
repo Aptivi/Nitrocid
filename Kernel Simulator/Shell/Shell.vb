@@ -39,10 +39,6 @@ Namespace Shell
         ''' </summary>
         Public ColoredShell As Boolean = True
         ''' <summary>
-        ''' Shell prompt style
-        ''' </summary>
-        Public ShellPromptStyle As String = ""
-        ''' <summary>
         ''' Specifies where to lookup for executables in these paths. Same as in PATH implementation.
         ''' </summary>
         Public PathsToLookup As String = Environment.GetEnvironmentVariable("PATH")

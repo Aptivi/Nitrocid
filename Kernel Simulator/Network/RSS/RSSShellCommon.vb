@@ -37,7 +37,6 @@ Namespace Network.RSS
             {"unbookmark", New CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New RSS_UnbookmarkCommand)}
         }
         Public RSSFeedInstance As RSSFeed
-        Public RSSShellPromptStyle As String = ""
         Public RSSFeedUrlPromptStyle As String = ""
         Public RSSFetchTimeout As Integer = 60000
         Public RSSRefreshFeeds As Boolean = True

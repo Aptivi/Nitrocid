@@ -67,7 +67,6 @@ Namespace Shell.Shells
                         End If
 
                         'Prepare for prompt
-                        Wdbg(DebugLevel.I, "HexEdit_PromptStyle = {0}", HexEdit_PromptStyle)
                         WriteShellPrompt(ShellType)
 
                         'Raise the event

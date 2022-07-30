@@ -199,22 +199,6 @@ namespace KSConverter
                 {
                     Shell.PathsToLookup = ConfigReader.Sections["Shell"].Keys["Lookup Directories"].Value.ReleaseDoubleQuotes();
                 }
-                if (ConfigReader.Sections["Shell"].Keys.Contains("Prompt Style"))
-                {
-                    Shell.ShellPromptStyle = ConfigReader.Sections["Shell"].Keys["Prompt Style"].Value;
-                }
-                if (ConfigReader.Sections["Shell"].Keys.Contains("FTP Prompt Style"))
-                {
-                    FTPShellCommon.FTPShellPromptStyle = ConfigReader.Sections["Shell"].Keys["FTP Prompt Style"].Value;
-                }
-                if (ConfigReader.Sections["Shell"].Keys.Contains("Mail Prompt Style"))
-                {
-                    MailShellCommon.MailShellPromptStyle = ConfigReader.Sections["Shell"].Keys["Mail Prompt Style"].Value;
-                }
-                if (ConfigReader.Sections["Shell"].Keys.Contains("SFTP Prompt Style"))
-                {
-                    SFTPShellCommon.SFTPShellPromptStyle = ConfigReader.Sections["Shell"].Keys["SFTP Prompt Style"].Value;
-                }
 
                 // Hardware section
                 if (ConfigReader.Sections["Hardware"].Keys.Contains("Quiet Probe"))

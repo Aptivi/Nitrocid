@@ -38,7 +38,6 @@ Namespace Network.SFTP
         }
         Public SFTPCurrDirect As String
         Public SFTPCurrentRemoteDir As String
-        Public SFTPShellPromptStyle As String = ""
         Public SFTPShowDetailsInList As Boolean = True
         Public SFTPUserPromptStyle As String = ""
         Public SFTPNewConnectionsToSpeedDial As Boolean = True

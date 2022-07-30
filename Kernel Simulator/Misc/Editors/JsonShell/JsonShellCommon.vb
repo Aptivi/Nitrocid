@@ -38,7 +38,6 @@ Namespace Misc.Editors.JsonShell
         Public JsonShell_AutoSave As New KernelThread("JSON Shell Autosave Thread", False, AddressOf JsonShell_HandleAutoSaveJsonFile)
         Public JsonShell_AutoSaveFlag As Boolean = True
         Public JsonShell_AutoSaveInterval As Integer = 60
-        Public JsonShell_PromptStyle As String = ""
         Public JsonShell_Formatting As Formatting = Formatting.Indented
         Friend JsonShell_FileTokenOrig As JToken = JToken.Parse("{}")
         Friend ReadOnly JsonShell_ModCommands As New Dictionary(Of String, CommandInfo)

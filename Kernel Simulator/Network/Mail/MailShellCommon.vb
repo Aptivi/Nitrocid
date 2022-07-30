@@ -43,7 +43,6 @@ Namespace Network.Mail
             {"sendenc", New CommandInfo("sendenc", ShellType.MailShell, "Sends an encrypted message to an address", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Mail_SendEncCommand)}
         }
         Public IMAP_CurrentDirectory As String = "Inbox"
-        Public MailShellPromptStyle As String = ""
         Public Mail_NotifyNewMail As Boolean = True
         Public Mail_ImapPingInterval As Integer = 30000
         Public Mail_SmtpPingInterval As Integer = 30000

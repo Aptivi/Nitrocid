@@ -48,7 +48,6 @@ Namespace Network.FTP
         }
         Public FtpCurrentDirectory As String
         Public FtpCurrentRemoteDir As String
-        Public FTPShellPromptStyle As String = ""
         Public FtpShowDetailsInList As Boolean = True
         Public FtpUserPromptStyle As String = ""
         Public FtpPassPromptStyle As String = ""

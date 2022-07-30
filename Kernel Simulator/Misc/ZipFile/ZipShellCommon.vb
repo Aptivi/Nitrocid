@@ -38,7 +38,6 @@ Namespace Misc.ZipFile
         Public ZipShell_ZipArchive As ZipArchive
         Public ZipShell_CurrentDirectory As String
         Public ZipShell_CurrentArchiveDirectory As String
-        Public ZipShell_PromptStyle As String = ""
 
     End Module
 End Namespace

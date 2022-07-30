@@ -90,7 +90,6 @@ Namespace TestShell
             {"shutdown", New CommandInfo("shutdown", ShellType.TestShell, "Exits the test shell and shuts down the kernel", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New Test_ShutdownCommand)}
         }
         Public Test_ShutdownFlag As Boolean
-        Public Test_PromptStyle As String = ""
 
     End Module
 End Namespace

@@ -41,7 +41,6 @@ Namespace Misc.Editors.HexEdit
         Public HexEdit_AutoSave As New KernelThread("Hex Edit Autosave Thread", False, AddressOf HexEdit_HandleAutoSaveBinaryFile)
         Public HexEdit_AutoSaveFlag As Boolean = True
         Public HexEdit_AutoSaveInterval As Integer = 60
-        Public HexEdit_PromptStyle As String = ""
         Friend HexEdit_FileBytesOrig As Byte()
         Friend ReadOnly HexEdit_ModCommands As New Dictionary(Of String, CommandInfo)
 
