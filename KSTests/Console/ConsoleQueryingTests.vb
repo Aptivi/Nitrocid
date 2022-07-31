@@ -32,7 +32,10 @@ Imports KS.ConsoleBase.Colors
     ''' Tests filtering the VT sequences that matches the regex
     ''' </summary>
     <Test, Description("Querying")> Public Sub TestFilterVTSequences()
+        Dim BellChar As Char = Convert.ToChar(7)
+        Dim EscapeChar As Char = Convert.ToChar(27)
         FilterVTSequences($"Hello!{GetEsc()}[38;5;43m").ShouldBe("Hello!")
+        FilterVTSequences($"{GetEsc()}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!")
     End Sub
 
 End Class

@@ -67,8 +67,12 @@ Namespace ConsoleBase
         ''' <param name="Text">The text that contains the VT sequences</param>
         ''' <returns>The text that doesn't contain the VT sequences</returns>
         Public Function FilterVTSequences(Text As String) As String
-            'TODO: This doesn't filter setting console title sequence.
-            Return Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+            'Filter all CSI sequences
+            Text = Regex.Replace(Text, "(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", "")
+
+            'Filter all OSC sequences
+            Text = Regex.Replace(Text, "(\x9D|\x1B\]).+(\x9c|\x07)", "")
+            Return Text
         End Function
 
         ''' <summary>
