@@ -200,7 +200,7 @@ Namespace Shell
 
                 'Check to see if the command is a comment
                 If Not (Command = Nothing Or Command?.StartsWithAnyOf({" ", "#"})) Then
-                    Dim Parts As String() = Regex.Split(Command, "(?<=^[^""]*(?:""[^""]*""[^""]*)*) (?=(?:[^""]*""[^""]*"")*[^""]*$)").Select(Function(m) If(m.StartsWith("""") And m.EndsWith(""""), m.ReleaseDoubleQuotes(), m)).ToArray()
+                    Dim Parts As String() = Command.SplitSpacesEncloseDoubleQuotes
 
                     'Iterate through mod commands
                     Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, FullCommand)

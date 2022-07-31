@@ -82,7 +82,7 @@ Namespace Shell.ShellBase.Commands
 
             'Split the arguments with enclosed quotes and set the required boolean variable
             Dim CommandInfo As CommandInfo = If(ModCommands.ContainsKey(Command), ModCommands(Command), ShellCommands(Command))
-            Dim EnclosedArgs As List(Of String) = Regex.Split(strArgs, "(?<=^[^""]*(?:""[^""]*""[^""]*)*) (?=(?:[^""]*""[^""]*"")*[^""]*$)").Select(Function(m) If(m.StartsWith("""") And m.EndsWith(""""), m.ReleaseDoubleQuotes(), m)).ToList()
+            Dim EnclosedArgs As String() = strArgs.SplitSpacesEncloseDoubleQuotes
             If String.IsNullOrWhiteSpace(strArgs) Then EnclosedArgs = Nothing
             If CommandInfo.CommandArgumentInfo IsNot Nothing Then
                 If EnclosedArgs IsNot Nothing Then
@@ -109,7 +109,7 @@ Namespace Shell.ShellBase.Commands
             End If
 
             'Install the parsed values to the new class instance
-            FullArgumentsList = EnclosedArgs?.ToArray
+            FullArgumentsList = EnclosedArgs
             ArgumentsList = FinalArgs.ToArray
             SwitchesList = FinalSwitches.ToArray
             ArgumentsText = strArgs
