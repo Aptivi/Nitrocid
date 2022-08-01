@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Namer.NameGenerator
+
 Namespace Misc.Games
     Public Module LoveHateRespond
 
@@ -83,9 +85,8 @@ Namespace Misc.Games
             Write(DoTranslation("Downloading names..."), True, ColTypes.Progress)
             PopulateNames()
             For NameNum As Integer = 1 To LoveOrHateUsersCount
-                Dim GeneratedName As String = Names(RandomDriver.Next(Names.Length))
-                Dim GeneratedSurname As String = Surnames(RandomDriver.Next(Surnames.Length))
-                Users.Add($"{GeneratedName} {GeneratedSurname}", RandomDriver.Next(2))
+                Dim GeneratedName As String = GenerateNames()(0)
+                Users.Add($"{GeneratedName}", RandomDriver.Next(2))
             Next
 
             'Game logic

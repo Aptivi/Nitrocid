@@ -98,6 +98,15 @@
 
 <br>
 
+### Namer
+
+[![Button Source]][Namer]   
+[![Button MIT]][License Namer]
+
+© 2022 Aptivi
+
+<br>
+
 ### Newtonsoft.Json
 
 [![Button Source]][Newtonsoft.Json]   
@@ -183,6 +192,7 @@
 [MailKit]: https://github.com/jstedfast/MailKit/
 [SSH.NET]: https://github.com/sshnet/SSH.NET/
 [Figgle]: https://github.com/drewnoakes/figgle
+[Namer]: https://github.com/Aptivi/Namer
 
 [License Microsoft.AspNet.WebApi.Client]: https://github.com/aspnet/AspNetWebStack/blob/main/LICENSE.txt
 [License Nuget.Build.Tasks.Pack]: https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
@@ -201,6 +211,7 @@
 [License MailKit]: https://github.com/jstedfast/MailKit/blob/master/LICENSE
 [License SSH.NET]: https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 [License Figgle]: https://github.com/drewnoakes/figgle/blob/master/LICENSE
+[License Namer]: https://github.com/Aptivi/Namer/blob/main/LICENSE.txt
 
 
 <!---------------------------------[ Buttons ]--------------------------------->

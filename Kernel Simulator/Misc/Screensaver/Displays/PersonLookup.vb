@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.TimeDate
+Imports Namer.NameGenerator
 
 Namespace Misc.Screensaver.Displays
     Public Module PersonLookupSettings
