@@ -17,21 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports KS.Misc.Editors.JsonShell
-Imports KS.Misc.Editors.TextEdit
-Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Writers.MiscWriters
-Imports KS.Misc.RarFile
-Imports KS.Misc.ZipFile
 Imports KS.Modifications
-Imports KS.Network.FTP
-Imports KS.Network.HTTP
-Imports KS.Network.Mail
-Imports KS.Network.RemoteDebug
-Imports KS.Network.RSS
-Imports KS.Network.SFTP
 Imports KS.Shell.ShellBase.Aliases
-Imports KS.TestShell
 
 Namespace Shell.ShellBase.Commands
     Public Module HelpSystem

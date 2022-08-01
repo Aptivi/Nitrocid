@@ -27,20 +27,16 @@ Imports KS.Misc.Forecast
 Imports KS.Misc.Games
 Imports KS.Misc.Editors.JsonShell
 Imports KS.Misc.Notifications
-Imports KS.Misc.RarFile
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
 Imports KS.Misc.Editors.TextEdit
-Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
-Imports KS.Misc.ZipFile
 Imports KS.Modifications
 Imports KS.Network
 Imports KS.Network.FTP
-Imports KS.Network.HTTP
 Imports KS.Network.Mail
 Imports KS.Network.Mail.Directory
 Imports KS.Network.RemoteDebug
@@ -50,7 +46,6 @@ Imports KS.Network.SFTP
 Imports KS.Network.SSH
 Imports KS.Network.Transfer
 Imports KS.Shell.Prompts
-Imports KS.TestShell
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
 

@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Shell.Prompts
-Imports KS.ConsoleBase.Inputs.Styles
 
 Namespace Shell.UnifiedCommands
     Class PresetsUnifiedCommand

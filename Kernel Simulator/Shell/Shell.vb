@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Text.RegularExpressions
 Imports KS.Files.PathLookup
 Imports KS.Files.Querying
 Imports KS.Misc.Execution
