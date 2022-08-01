@@ -66,7 +66,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV",POP3Feature,MILESTONE</DefineConstants>
+    <DefineConstants>SPECIFIER="RC"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -80,7 +80,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV",POP3Feature,MILESTONE</DefineConstants>
+    <DefineConstants>SPECIFIER="RC"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <TargetFramework>net48</TargetFramework>
@@ -92,7 +92,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL",MILESTONE</DefineConstants>
+    <DefineConstants>SPECIFIER="REL"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -104,7 +104,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL",MILESTONE</DefineConstants>
+    <DefineConstants>SPECIFIER="REL"</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
