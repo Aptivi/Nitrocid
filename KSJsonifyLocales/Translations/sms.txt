@@ -1701,3 +1701,25 @@ exmpl n sntnc:
 srcs sd t dfn
 synnyms:
 antnyms:
+Thnk y fr rprtng  bg t s! pls fllw th nstrctns n th scrn.
+ prvw scrnsvr
+tsts yr cnsl fr pwrln spprt
+b sr t s  cnsl fnt spprtng pwrln glyphs, r th tpt my nt rndr prprly. W rcmmnd
+opns th shll prst lbrry
+th spcfd prst {0} s nt fnd.
+ y r  spcshp nd th mtrs r cmng t dstry y. Cn y sv t?
+rtr krnl smltr bsd n 0.0.4.1
+dvc lrdy xsts n th blck lst.
+ dvc dsn't xst n th blck lst.
+ tsts ssmbly ntry pnt xctn
+slct prst fr {0}:
+unt cnvrtr
+avlbl nt typs nd thr nts:
+gm vr
+unxpctd rrr
+th rar shll
+cmmnds hghlghtd n nthr clr r nfd cmmnds nd r vlbl n vry shll.
+ chckng fr pdts...
+ dwnldng vrsn
+instllng vrsn
+gng bck t 2018...

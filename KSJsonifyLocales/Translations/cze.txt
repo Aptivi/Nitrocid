@@ -1701,3 +1701,25 @@ Příklad ve větě:
 Zdroje používané k definování
 Synonyma:
 Antonyma:
+Děkujeme, že jste nám nahlásili chybu! Postupujte podle pokynů na obrazovce.
+Náhled spořiče obrazovky
+Otestuje vaši konzolu na podporu PowerLine
+Ujistěte se, že používáte konzolové písmo podporující glyfy PowerLine, jinak se výstup nemusí vykreslit správně. Doporučujeme
+Otevře knihovnu přednastavení prostředí
+Zadaná předvolba {0} nebyla nalezena.
+Jste vesmírná loď a meteory vás přicházejí zničit. Můžete to uložit?
+Retro Kernel Simulator založený na 0.0.4.1
+Zařízení již v seznamu blokovaných existuje.
+Zařízení v seznamu blokovaných neexistuje.
+Testuje provádění vstupního bodu sestavy
+Vyberte předvolbu pro {0}:
+Převodník jednotek
+Dostupné typy jednotek a jejich jednotky:
+Konec hry
+Neočekávaná chyba
+RAR shell
+Příkazy zvýrazněné jinou barvou jsou jednotné příkazy a jsou dostupné v každém shellu.
+Kontrola aktualizací...
+Stahování verze
+Instalace verze
+Návrat do roku 2018...

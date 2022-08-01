@@ -1701,3 +1701,25 @@ Pryklad u rechenni:
 Dzherela, vykorystani dlya vyznachennya
 Synonimy:
 Antonimy:
+Dyakuyemo, shcho povidomyly nam pro pomylku! Dotrymuytesʹ instruktsiy na ekrani.
+Poperedniy perehlyad zastavky
+Testuye vashu konsolʹ na pidtrymku PowerLine
+Obovʺyazkovo vykorystovuyte konsolʹnyy shryft iz pidtrymkoyu hlifiv PowerLine, inakshe rezulʹtat mozhe vidobrazhatysya nepravylʹno. My rekomenduyemo
+Vidkryvaye biblioteku poperednikh nalashtuvanʹ obolonky
+Zaznachenyy stylʹ {0} ne znaydeno.
+Vy kosmichnyy korabelʹ, i meteory ydutʹ, shchob znyshchyty vas. Vy mozhete zberehty tse?
+Retro symulyator yadra na osnovi 0.0.4.1
+Prystriy uzhe isnuye v spysku blokuvanʹ.
+Prystroyu nemaye v spysku blokuvanʹ.
+Testuye vykonannya tochky vkhodu zbirky
+Vyberitʹ stylʹ dlya {0}:
+Peretvoryuvach odynytsʹ
+Dostupni typy odynytsʹ ta yikhni odynytsi:
+Hra zavershena
+Neochikuvana pomylka
+Obolonka RAR
+Komandy, vydileni inshym kolʹorom, ye unifikovanymy komandamy ta dostupni v kozhniy obolontsi.
+Perevirka onovlenʹ...
+Zavantazhennya versiyi
+Ustanovka versiyi
+Povertayuchysʹ u 2018 rik...

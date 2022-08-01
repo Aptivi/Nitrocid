@@ -1701,3 +1701,25 @@ Beispiel im Satz:
 Quellen verwendet, um zu definieren
 Synonyme:
 Antonyme:
+Vielen Dank, dass Sie uns einen Fehler gemeldet haben! Bitte folgen Sie den Anweisungen auf dem Bildschirm.
+Vorschau-Bildschirmschoner
+Testet Ihre Konsole auf PowerLine-Unterstützung
+Stellen Sie sicher, dass Sie eine Konsolenschriftart verwenden, die PowerLine-Glyphen unterstützt, da die Ausgabe sonst möglicherweise nicht richtig gerendert wird. Wir empfehlen
+Öffnet die Shell-Preset-Bibliothek
+Die angegebene Voreinstellung {0} wurde nicht gefunden.
+Du bist ein Raumschiff und die Meteore kommen, um dich zu zerstören. Kannst du es speichern?
+Retro-Kernel-Simulator basierend auf 0.0.4.1
+Gerät existiert bereits in der Sperrliste.
+Das Gerät existiert nicht in der Sperrliste.
+Testet die Ausführung des Assembly-Einstiegspunkts
+Voreinstellung für {0} auswählen:
+Einheitenumwandler
+Verfügbare Einheitentypen und ihre Einheiten:
+Spiel ist aus
+Unerwarteter Fehler
+Die RAR-Shell
+Andersfarbig hervorgehobene Befehle sind einheitliche Befehle und in jeder Shell verfügbar.
+Suche nach Aktualisierungen...
+Version herunterladen
+Version installieren
+Zurück ins Jahr 2018...

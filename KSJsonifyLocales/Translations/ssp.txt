@@ -1701,3 +1701,25 @@ example in sentence:
 sources hath used to define
 synonyms:
 antonyms:
+Thank thee f'r reporting a bug to us! prithee followeth the instructions on the screen. 
+ preview screensav'r
+tests thy console f'r powerline supporteth
+beest sure to useth a console font supporting powerline glyphs, 'r the did output may not render properly.  We recommend
+opens the shell did preset library
+the specifi'd did preset {0} is not hath found. 
+ thou art a spaceship and the meteors art coming to destroy thee.  Can thee save t?
+retro kernel simulat'r bas'd on 0. 0. 4. 1
+device already exists in the block list. 
+ device doesn't exist in the block list. 
+ tests assembly entry point execution
+select did preset f'r {0}:
+unit converter
+available unit types and their units:
+game ov'r
+unexpect'd err'r
+the rar shell
+hests highlight'd in another col'r art unifi'd hests and art available in every shell. 
+ checking f'r updates. 
+ downloading version
+installing version
+going back to 2018

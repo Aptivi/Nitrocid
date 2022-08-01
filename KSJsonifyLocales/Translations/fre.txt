@@ -1701,3 +1701,25 @@ Exemple dans la phrase :
 Sources utilisées pour définir
 Synonymes :
 Antonymes :
+Merci de nous avoir signalé un bug ! Veuillez suivre les instructions à l'écran.
+Aperçu de l'économiseur d'écran
+Teste votre console pour le support PowerLine
+Assurez-vous d'utiliser une police de console prenant en charge les glyphes PowerLine, sinon la sortie risque de ne pas s'afficher correctement. Nous recommandons
+Ouvre la bibliothèque de préréglages du shell
+Le préréglage spécifié {0} est introuvable.
+Vous êtes un vaisseau spatial et les météores viennent vous détruire. Pouvez-vous le sauver?
+Simulateur de noyau rétro basé sur 0.0.4.1
+L'appareil existe déjà dans la liste de blocage.
+L'appareil n'existe pas dans la liste de blocage.
+Teste l'exécution du point d'entrée de l'assemblage
+Sélectionnez le préréglage pour {0} :
+Convertisseur d'unité
+Types d'unités disponibles et leurs unités :
+Jeu terminé
+Erreur inattendue
+La coque RAR
+Les commandes surlignées dans une autre couleur sont des commandes unifiées et sont disponibles dans chaque shell.
+Vérification des mises à jour...
+Version de téléchargement
+Version d'installation
+Retour en 2018...

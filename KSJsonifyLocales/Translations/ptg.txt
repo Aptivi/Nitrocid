@@ -1701,3 +1701,25 @@ Exemplo na frase:
 Fontes usadas para definir
 Sinônimos:
 Antônimos:
+Obrigado por relatar um bug para nós! Por favor siga as instruções na tela.
+Protetor de tela de visualização
+Testa seu console para suporte a PowerLine
+Certifique-se de usar uma fonte de console compatível com glifos PowerLine, ou a saída pode não ser renderizada corretamente. Nós recomendamos
+Abre a biblioteca de predefinições do shell
+A predefinição especificada {0} não foi encontrada.
+Você é uma nave espacial e os meteoros estão vindo para destruí-lo. Você pode salvá-lo?
+Retro Kernel Simulator baseado em 0.0.4.1
+O dispositivo já existe na lista de bloqueio.
+O dispositivo não existe na lista de bloqueio.
+Testa a execução do ponto de entrada do assembly
+Selecione a predefinição para {0}:
+Conversor de unidades
+Tipos de unidades disponíveis e suas unidades:
+Fim de jogo
+Erro inesperado
+O escudo RAR
+Os comandos destacados em outra cor são comandos unificados e estão disponíveis em cada shell.
+Verificando atualizações...
+Baixando a versão
+Instalando a versão
+Voltando a 2018...

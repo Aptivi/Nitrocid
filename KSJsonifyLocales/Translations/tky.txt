@@ -1701,3 +1701,25 @@ Cümledeki Örnek:
 Tanımlamak için kullanılan kaynaklar
 Eş anlamlı:
 Zıtlıklar:
+Bize bir hatayı bildirdiğiniz için teşekkür ederiz! Lütfen ekrandaki talimatları izleyin.
+Önizleme ekran koruyucu
+Konsolunuzu PowerLine desteği için test eder
+PowerLine gliflerini destekleyen bir konsol yazı tipi kullandığınızdan emin olun, aksi takdirde çıktı düzgün işlenmeyebilir. Öneririz
+Kabuk ön ayar kitaplığını açar
+Belirtilen {0} ön ayarı bulunamadı.
+Sen bir uzay gemisisin ve meteorlar seni yok etmeye geliyor. Onu kurtarabilir misin?
+0.0.4.1 tabanlı Retro Çekirdek Simülatörü
+Cihaz, engelleme listesinde zaten var.
+Cihaz, engelleme listesinde yok.
+Montaj giriş noktası yürütmesini test eder
+{0} için ön ayar seçin:
+Birim dönüştürücü
+Mevcut birim türleri ve birimleri:
+Oyun bitti
+Beklenmeyen hata
+RAR kabuğu
+Başka bir renkle vurgulanan komutlar birleştirilmiş komutlardır ve her kabukta bulunur.
+Güncellemeler kontrol ediliyor...
+Sürüm indiriliyor
+Sürüm yükleniyor
+2018'e dönersek...

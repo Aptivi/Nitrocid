@@ -1701,3 +1701,25 @@ Jùzi zhōng de lìzi:
 Yòng yú dìngyì de láiyuán
 tóngyìcí:
 Fǎnyìcí:
+Gǎnxiè nín xiàng wǒmen bàogào cuòwù! Qǐng ànzhào píngmù shàng de shuōmíng jìnxíng cāozuò.
+Yùlǎn píngbǎo
+cèshì nín de kòngzhì tái shìfǒu zhīchí PowerLine
+qǐng wùbì shǐyòng zhīchí PowerLine zìxíng de kòngzhì tái zìtǐ, fǒuzé shūchū kěnéng wúfǎ zhèngquè chéngxiàn. Wǒmen tuījiàn
+dǎkāi wàiké yù shè kù
+wèi zhǎodào zhǐdìng de yù shè {0}.
+Nǐ shì yī sōu yǔzhòu fēichuán, liúxīng zhèngzài cuīhuǐ nǐ. Nǐ néng bǎocún ma?
+Jīyú 0.0.4.1 De fùgǔ nèihé mónǐ qì
+shèbèi yǐ cúnzài yú zǔzhǐ lièbiǎo zhōng.
+Shèbèi bù cúnzài yú zǔzhǐ lièbiǎo zhōng.
+Cèshì chéngxù jí rùkǒu diǎn zhíxíng
+wèi {0} xuǎnzé yù shè:
+Dānwèi huànsuàn
+kěyòng de dānwèi lèixíng jí qí dānwèi:
+Yóuxì jiéshù
+yìwài de cuòwù
+RAR wàiké
+yǐ lìng yīzhǒng yánsè túchū xiǎnshì de mìnglìng shì tǒngyī de mìnglìng, bìngqiě zài měi gè shell zhōng dōu kěyòng.
+Cháxún gēngxīn...
+Xiàzài bǎnběn
+ānzhuāng bǎnběn
+huí dào 2018 nián……

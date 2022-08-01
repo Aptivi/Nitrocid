@@ -1701,3 +1701,25 @@ Ví dụ trong câu:
 Các nguồn được sử dụng để xác định
 Từ đồng nghĩa:
 Từ trái nghĩa:
+Cảm ơn bạn đã báo cáo lỗi cho chúng tôi! Hãy làm theo các hướng dẫn trên màn hình.
+Xem trước trình bảo vệ màn hình
+Kiểm tra bảng điều khiển của bạn để được hỗ trợ PowerLine
+Đảm bảo sử dụng phông chữ bảng điều khiển hỗ trợ PowerLine glyphs, nếu không đầu ra có thể không hiển thị đúng cách. Chúng tôi đề nghị
+Mở thư viện đặt trước shell
+Không tìm thấy giá trị đặt trước đã chỉ định {0}.
+Bạn là một con tàu vũ trụ và các thiên thạch đang đến để tiêu diệt bạn. Bạn có thể cứu nó?
+Retro Kernel Simulator dựa trên 0.0.4.1
+Thiết bị đã tồn tại trong danh sách chặn.
+Thiết bị không tồn tại trong danh sách chặn.
+Kiểm tra việc thực hiện điểm vào lắp ráp
+Chọn giá trị đặt trước cho {0}:
+Bộ chuyển đổi đơn vị
+Các loại đơn vị có sẵn và đơn vị của chúng:
+Trò chơi kết thúc
+Lỗi không mong đợi
+Vỏ RAR
+Các lệnh được tô sáng bằng màu khác là các lệnh hợp nhất và có sẵn trong mọi trình bao.
+Đang kiểm tra các bản cập nhật ...
+Đang tải xuống phiên bản
+Đang cài đặt phiên bản
+Quay trở lại năm 2018 ...

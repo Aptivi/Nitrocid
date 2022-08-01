@@ -1701,3 +1701,25 @@ Ejemplo en oración:
 Fuentes utilizadas para definir
 Sinónimos:
 Antónimos:
+¡Gracias por informarnos de un error! Siga las instrucciones en pantalla.
+Salvapantallas de vista previa
+Prueba su consola para compatibilidad con PowerLine
+Asegúrese de utilizar una fuente de consola compatible con los glifos PowerLine, o es posible que la salida no se reproduzca correctamente. Nosotros recomendamos
+Abre la biblioteca de ajustes preestablecidos de shell
+No se encuentra el preajuste especificado {0}.
+Eres una nave espacial y los meteoritos vienen a destruirte. ¿Puedes guardarlo?
+Simulador de núcleo retro basado en 0.0.4.1
+El dispositivo ya existe en la lista de bloqueo.
+El dispositivo no existe en la lista de bloqueo.
+Prueba la ejecución del punto de entrada del ensamblaje
+Seleccione preestablecido para {0}:
+Convertidor de unidades
+Tipos de unidades disponibles y sus unidades:
+Juego terminado
+Error inesperado
+La carcasa RAR
+Los comandos resaltados en otro color son comandos unificados y están disponibles en todos los shells.
+Comprobando actualizaciones...
+Descargando versión
+Versión de instalación
+Volviendo al 2018...

@@ -1701,3 +1701,25 @@ Esempio nella frase:
 Fonti utilizzate per definire
 Sinonimi:
 Contrari:
+Grazie per averci segnalato un bug! Si prega di seguire le istruzioni sullo schermo.
+Salvaschermo in anteprima
+Testa la tua console per il supporto PowerLine
+Assicurati di utilizzare un carattere della console che supporti i glifi PowerLine, altrimenti l'output potrebbe non essere visualizzato correttamente. Noi raccomandiamo
+Apre la libreria dei preset della shell
+La preimpostazione specificata {0} non è stata trovata.
+Sei un'astronave e le meteore stanno arrivando per distruggerti. Puoi salvarlo?
+Simulatore di kernel retrò basato su 0.0.4.1
+Il dispositivo esiste già nell'elenco dei blocchi.
+Il dispositivo non esiste nell'elenco dei blocchi.
+Verifica l'esecuzione del punto di ingresso dell'assieme
+Seleziona la preimpostazione per {0}:
+Convertitore di unità
+Tipi di unità disponibili e relative unità:
+Gioco finito
+Errore inaspettato
+La shell RAR
+I comandi evidenziati in un altro colore sono comandi unificati e sono disponibili in ogni shell.
+Verifica aggiornamenti...
+Download della versione
+Installazione della versione
+Tornando al 2018...

@@ -1701,3 +1701,25 @@ Voorbeeld in zin:
 Bronnen die worden gebruikt om te definiëren
 Synoniemen:
 Antoniemen:
+Bedankt voor het melden van een bug aan ons! Volg de instructies op het scherm.
+Voorbeeld screensaver
+Test uw console op PowerLine-ondersteuning
+Zorg ervoor dat u een consolelettertype gebruikt dat PowerLine-glyphs ondersteunt, anders wordt de uitvoer mogelijk niet correct weergegeven. Wij raden aan
+Opent de shell-presetbibliotheek
+De opgegeven voorinstelling {0} is niet gevonden.
+Je bent een ruimteschip en de meteoren komen om je te vernietigen. Kun je het redden?
+Retro Kernel Simulator gebaseerd op 0.0.4.1
+Apparaat bestaat al in de blokkeerlijst.
+Apparaat bestaat niet in de blokkeerlijst.
+Test de uitvoering van het ingangspunt van de assemblage
+Voorinstelling selecteren voor {0}:
+Eenheidsomzetter
+Beschikbare unittypes en hun units:
+Spel is over
+Onverwachte fout
+De RAR-shell
+Commando's die in een andere kleur zijn gemarkeerd, zijn uniforme commando's en zijn beschikbaar in elke shell.
+Controleren op updates...
+Versie downloaden
+Versie installeren
+Even terug naar 2018...

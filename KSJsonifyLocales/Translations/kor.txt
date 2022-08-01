@@ -1701,3 +1701,25 @@ munjang-ui ye:
 jeong-uihaneun de sayongdoeneun soseu
 dong-uieo:
 bandaemal:
+beogeuleul singohae jusyeoseo gamsahabnida! hwamyeon-ui jisileul ttaleusibsio.
+hwamyeon bohogi milibogi
+PowerLine jiwon-eul wihae konsol-eul teseuteuhabnida.
+PowerLine geullipeuleul jiwonhaneun konsol geulkkol-eul sayonghaeya habnida. geuleohji anh-eumyeon chullyeog-i jedaelo lendeolingdoeji anh-eul su issseubnida. ulineun chucheonhabnida
+swel sajeon seoljeong laibeuleolileul yeobnida.
+jijeongdoen sajeon seoljeong {0}eul(leul) chaj-eul su eobs-seubnida.
+dangsin-eun ujuseon-igo yuseong-eun dangsin-eul pagoehagi wihae ogo issseubnida. jeojanghal su issseubnikka?
+0.0.4.1 giban leteulo keoneol simyulleiteo
+jangchiga imi chadan moglog-e issseubnida.
+chadan moglog-e jangchiga eobs-seubnida.
+eosembeulli jin-ibjeom silhaeng teseuteu
+{0}e daehan sajeon seoljeong seontaeg:
+dan-wi byeonhwangi
+sayong ganeunghan dan-wi yuhyeong mich dan-wi:
+geim kkeut
+yesangchi moshan eleo
+RAR swel
+daleun saegsang-eulo gangjo pyosidoen myeonglyeong-eun tonghab myeonglyeong-imyeo modeun syel-eseo sayonghal su issseubnida.
+eobdeiteu hwag-in jung...
+beojeon daunlodeu jung
+beojeon seolchi jung
+2018nyeon-eulo dol-aga...

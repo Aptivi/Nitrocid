@@ -1701,3 +1701,25 @@ example in sentence:
 sources used to define
 synonyms:
 antonyms:
+Thank ye fer reportin' a bug to us! please follow the instructions on the screen.
+ preview screensaver
+tests yer console fer powerline support
+be sure to use a console font supportin' powerline glyphs, or the output may not render properly. We recommend
+opens the shell preset library
+the specified preset {0} be not found.
+ ye be a spaceship an' the meteors be comin' to destroy ye. Can ye save it?
+retro kernel simulator based on 0.0.4.1
+device already exists in the block list.
+ device doesn't exist in the block list.
+ tests assembly entry point execution
+select preset fer {0}:
+unit converter
+available unit types an' their units:
+game o'er
+unexpected error
+the arr, that be a .zip file shell
+commands 'ighlighted in another color be unified commands an' be available in every shell.
+ checkin' fer updates...
+ downloadin' version
+installin' version
+goin' aft to 2018...

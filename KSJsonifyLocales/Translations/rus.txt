@@ -1701,3 +1701,25 @@ Primer v predlozhenii:
 Istochniki, ispolʹzuyemyye dlya opredeleniya
 Sinonimy:
 Antonimy:
+Spasibo, chto soobshchili nam ob oshibke! Pozhaluysta, sleduyte instruktsiyam na ekrane.
+Predvaritelʹnyy prosmotr zastavki
+Proveryayet vashu konsolʹ na podderzhku PowerLine
+Obyazatelʹno ispolʹzuyte konsolʹnyy shrift, podderzhivayushchiy glify PowerLine, inache vykhodnyye dannyye mogut otobrazhatʹsya nepravilʹno. My rekomenduyem
+Otkryvayet biblioteku presetov obolochki
+Ukazannyy preset {0} ne nayden.
+Vy kosmicheskiy korablʹ, i meteory priletayut, chtoby unichtozhitʹ vas. Vy mozhete spasti yego?
+Retro-simulyator yadra na osnove 0.0.4.1
+Ustroystvo uzhe sushchestvuyet v chernom spiske.
+Ustroystvo ot·sut·stvuyet v chernom spiske.
+Proveryayet vypolneniye tochki vkhoda sborki
+Vyberite predustanovku dlya {0}:
+Konverter
+Dostupnyye tipy yunitov i ikh yunity:
+Igra zakonchena
+Neozhidannaya oshibka
+Obolochka RAR
+Komandy, vydelennyye drugim tsvetom, yavlyayut·sya unifitsirovannymi komandami i dostupny v kazhdoy obolochke.
+Proverka obnovleniy...
+Skachivaniye versii
+Ustanovka versii
+Vozvrashchayasʹ k 2018 godu...
