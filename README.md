@@ -21,7 +21,7 @@
 <br>
 
 <img
-  src = 'https://user-images.githubusercontent.com/15963131/154856234-bcbdfbb2-7c37-4e65-a6bf-43fbb8fbb949.png'
+  src = 'https://user-images.githubusercontent.com/15963131/182303842-d04fec73-069d-49dd-8b4f-10a4b1ca80f0.png'
   width = 640
   align = left
 />
