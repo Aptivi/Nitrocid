@@ -16,7 +16,7 @@
 3.  In Repository Location, enter 
     
     ```
-    https://github.com/EoflaOE/Kernel-Simulator.git
+    https://github.com/Aptivi/Kernel-Simulator.git
     ```
 
 4.  Wait until it has finished cloning, this may take a few <br>

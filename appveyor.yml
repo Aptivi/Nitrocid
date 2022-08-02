@@ -10,7 +10,7 @@ configuration:
 dotnet_csproj:
   patch: true
   file: Kernel Simulator\Kernel Simulator.vbproj
-  package_version: 0.0.24.0-dev{build}
+  package_version: 0.0.24.1-dev{build}
 environment:
   WEBHOOK_URL:
     secure: p3nnkhnWtqFFH8UJ1eaKFfRjFPlOVhNtmLjd94R7+KQCX9M9FmZFhOcGcH61R33BHZ4eY8SR6ng+Zuux6lw6nrmSiV/Qr4N6KOBwNoFCWQvdz+sgO0AOdssJTUj5CG4oXw/fKMUzelVM9RUnmuzBw4pRdmjnKoJN7BgtfmIQNzE=

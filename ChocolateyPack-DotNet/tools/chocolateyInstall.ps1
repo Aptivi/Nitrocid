@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
-$url        = "https://github.com/EoflaOE/Kernel-Simulator/releases/download/v0.0.24.0-beta/0.0.24.0-bin-dotnet.rar"
+$url        = "https://github.com/Aptivi/Kernel-Simulator/releases/download/v0.0.24.1-beta/0.0.24.1-bin-dotnet.rar"
 $md5check   = "bd251b83ba34d70203efecfe00045954"
 
 Write-Output "<*>: for assumptions, <+> for progress, <-> for error"

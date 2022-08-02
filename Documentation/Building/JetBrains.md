@@ -37,7 +37,7 @@
 3.  Insert the following for the URL:
 
     ```
-    https://github.com/EoflaOE/Kernel-Simulator.git
+    https://github.com/Aptivi/Kernel-Simulator.git
     ```
     
     Press  <kbd>  Test  </kbd>  to verify your connectivity.

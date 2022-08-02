@@ -41,5 +41,5 @@
 <!----------------------------------------------------------------------------->
 
 [Mono Runtime]: https://www.mono-project.com/download/stable/#download-mac
-[Download]: https://github.com/EoflaOE/Kernel-Simulator/releases
+[Download]: https://github.com/Aptivi/Kernel-Simulator/releases
 [iTerm2]: https://iterm2.com/downloads.html

@@ -11,7 +11,7 @@
 [![Button Source]][Addresstigator]   
 [![Button MIT]][License Addresstigator]
 
-© 2022 - Present EoflaOE and its companies
+© 2022 - Present Aptivi
 
 <br>
 
@@ -29,7 +29,7 @@
 [![Button Source]][Extensification]   
 [![Button GPL3]][License Extensification]
 
-© 2020 - present EoflaOE and its companies
+© 2020 - present Aptivi
 
 <br>
 
@@ -67,7 +67,7 @@
 [![Button Source]][Inxi.NET]   
 [![Button GPL3]][License Inxi.NET]
 
-© 2020 - present EoflaOE and its companies
+© 2020 - present Aptivi
 
 <br>
 
@@ -85,7 +85,7 @@
 [![Button Source]][ManagedWeatherMap]   
 [![Button MIT]][License ManagedWeatherMap]
 
-© 2021 - Present EoflaOE and its companies
+© 2021 - Present Aptivi
 
 <br>
 
@@ -132,7 +132,7 @@
 
 © 2017 Toni Solarin-Sodara
 
-© 2022 - Present EoflaOE and its companies
+© 2022 - Present Aptivi
 
 <br>
 
@@ -177,18 +177,18 @@
 
 [Microsoft.AspNet.WebApi.Client]: https://github.com/aspnet/aspnetwebstack
 [Nuget.Build.Tasks.Pack]: https://github.com/NuGet/NuGet.Client
-[ManagedWeatherMap]: https://github.com/EoflaOE/ManagedWeatherMap/
-[Extensification]: https://github.com/EoflaOE/Extensification/
+[ManagedWeatherMap]: https://github.com/Aptivi/ManagedWeatherMap/
+[Extensification]: https://github.com/Aptivi/Extensification/
 [HtmlAgilityPack]:  https://github.com/zzzprojects/html-agility-pack/
 [Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json
-[ReadLine.Reboot]: https://github.com/EoflaOE/ReadLine.Reboot/
-[Addresstigator]: https://github.com/EoflaOE/Addresstigator/
+[ReadLine.Reboot]: https://github.com/Aptivi/ReadLine.Reboot/
+[Addresstigator]: https://github.com/Aptivi/Addresstigator/
 [SharpCompress]: https://github.com/adamhathcock/sharpcompress
 [StringMath]: https://github.com/miroiu/string-math
 [CRC32.NET]: https://github.com/force-net/CRC32.NET
 [FluentFTP]: https://github.com/robinrodricks/FluentFTP
 [UnitsNet]: https://github.com/angularsen/UnitsNet
-[Inxi.NET]: https://github.com/EoflaOE/Inxi.NET/
+[Inxi.NET]: https://github.com/Aptivi/Inxi.NET/
 [MailKit]: https://github.com/jstedfast/MailKit/
 [SSH.NET]: https://github.com/sshnet/SSH.NET/
 [Figgle]: https://github.com/drewnoakes/figgle
@@ -196,18 +196,18 @@
 
 [License Microsoft.AspNet.WebApi.Client]: https://github.com/aspnet/AspNetWebStack/blob/main/LICENSE.txt
 [License Nuget.Build.Tasks.Pack]: https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
-[License ManagedWeatherMap]: https://github.com/EoflaOE/ManagedWeatherMap/blob/main/LICENSE.txt
-[License Extensification]: https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+[License ManagedWeatherMap]: https://github.com/Aptivi/ManagedWeatherMap/blob/main/LICENSE.txt
+[License Extensification]: https://github.com/Aptivi/Extensification/blob/master/LICENSE
 [License HtmlAgilityPack]: https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
 [License Newtonsoft.Json]: https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
-[License ReadLine.Reboot]: https://github.com/EoflaOE/ReadLine.Reboot/blob/master/LICENSE
-[License Addresstigator]: https://github.com/EoflaOE/Addresstigator/blob/main/LICENSE.txt
+[License ReadLine.Reboot]: https://github.com/Aptivi/ReadLine.Reboot/blob/master/LICENSE
+[License Addresstigator]: https://github.com/Aptivi/Addresstigator/blob/main/LICENSE.txt
 [License SharpCompress]: https://github.com/adamhathcock/sharpcompress/blob/master/LICENSE.txt
 [License StringMath]: https://github.com/miroiu/string-math/blob/dev/LICENSE
 [License FluentFTP]: https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 [License CRC32.NET]: https://github.com/force-net/Crc32.NET/blob/develop/LICENSE
 [License UnitsNet]: https://github.com/angularsen/UnitsNet/blob/master/LICENSE
-[License Inxi.NET]: https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
+[License Inxi.NET]: https://github.com/Aptivi/Inxi.NET/blob/master/LICENSE
 [License MailKit]: https://github.com/jstedfast/MailKit/blob/master/LICENSE
 [License SSH.NET]: https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 [License Figgle]: https://github.com/drewnoakes/figgle/blob/master/LICENSE

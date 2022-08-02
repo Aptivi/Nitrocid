@@ -52,4 +52,4 @@
 <!----------------------------------------------------------------------------->
 
 
-[Download]: https://github.com/EoflaOE/Kernel-Simulator/archive/refs/heads/master.zip
+[Download]: https://github.com/Aptivi/Kernel-Simulator/archive/refs/heads/master.zip
