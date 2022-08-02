@@ -79,12 +79,16 @@ Namespace Shell.Commands
             End If
 
             'Now, run the assembly
+#If NET48 Then
             Write(DoTranslation("Going back to 2018..."), True, ColTypes.Neutral)
             Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty(Of Object))
 
             'Clear the console
             SetConsoleColor(BackgroundColor, True)
             Console.Clear()
+#Else
+            Write(DoTranslation("You can't go back to 2018 on .NET 6.0!"), True, ColTypes.Neutral)
+#End If
         End Sub
 
     End Class

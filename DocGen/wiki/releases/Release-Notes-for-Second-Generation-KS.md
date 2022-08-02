@@ -200,3 +200,5 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 > [!NOTE]
 > This release is WIP as of 8/2/2022.
+
+1. You can't go back to 2018 on .NET 6.0!
