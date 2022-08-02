@@ -36,6 +36,10 @@ Namespace Misc.Games
         ''' Initializes the Meteor game
         ''' </summary>
         Sub InitializeMeteor()
+            'Clear all bullets and meteors
+            Bullets.Clear()
+            Meteors.Clear()
+
             'Make the spaceship height in the center
             SpaceshipHeight = Console.WindowHeight / 2
 
