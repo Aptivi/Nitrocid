@@ -91,7 +91,6 @@ Changes remote directory to download from or upload to
 Deletes remote file from server
 Disconnects from server
 Downloads remote file to local directory using binary or text
-Exits FTP shell and returns to kernel
 Shows help screen
 Lists local directory
 Lists remote directory
@@ -314,7 +313,6 @@ Enter password:
 Error while connecting to {0}: {1}
 Connecting to {0}...
 Authenticating...
-Exits the IMAP shell
 List of commands
 Downloads messages and lists them
 Opens a message
@@ -368,7 +366,6 @@ File already exists.
 Error trying to create a file: {0}
 Failed to open file. Exiting shell...
 Lists available commands
-Exits the text editor and save unsaved changes
 Prints the contents of the file with line numbers to the console
 Adds a new line with text at the end of the file
 Removes the specified line number
@@ -431,8 +428,6 @@ The answer is invalid. Check to make sure that the answer is numeric for config 
 Variable {0} is not found on any of the modules.
 Changes kernel configuration
 Activate 255 colors
-Do you want to keep connected?
-Invalid choice. Assuming no...
 Change Culture when Switching Languages
 Text shown
 Write any text you want shown. Shorter is better.
@@ -597,9 +592,6 @@ Background color
 Neutral text color
 Stage color
 Error color
-FTP Prompt Style
-Mail Prompt Style
-SFTP Prompt Style
 Trying to access invalid path.
 Clears the text file
 Exits the text editor
@@ -673,7 +665,6 @@ Invalid mode {0}
 Load Theme From Prebuilt Themes...
 Specify theme file name wihout the .json extension:
 Opens a ZIP archive
-Exits the ZIP shell
 Lists all files inside the archive
 Extracts a file to a specified directory or a current directory
 Changes archive directory
@@ -811,7 +802,6 @@ Sets custom saver settings
 Settings set successfully for screensaver
 Failed to set a setting for screensaver
 Opens an RSS shell to read the feeds
-Exits RSS shell and returns to kernel
 Changes the feed link
 Lists all feeds
 Reads a feed in a web browser
@@ -905,9 +895,6 @@ Wrappable command?
 Setting shell variable?
 Can not run in maintenance mode?
 Obsolete?
-RSS Prompt Style
-Text Edit Prompt Style
-Zip Shell Prompt Style
 Folder is empty.
 Successfully probed {0}.
 Verbose Probe
@@ -988,7 +975,6 @@ The property inside the JSON file isn't found.
 Removed property.
 Adds a new property at the end of the JSON file
 Removes a property from the JSON file
-Exits the JSON shell
 Exits the JSON shell without saving the changes
 Saves the JSON file
 Opens the JSON shell
@@ -1050,8 +1036,6 @@ Password prompt style
 Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed.
 Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed.
 Shows Message of the Day after displaying login screen.
-Test Shell Prompt Style
-JSON Shell Prompt Style
 Probe injected commands
 Probes the injected commands at the start of the kernel shell.
 Show file details in list
@@ -1272,12 +1256,6 @@ Disk model:
 Culture of the current language
 If you're sure that you've opened the right section, check this message out:
 Executes an FTP server command
-POP3 prompt style for mail
-Send POP3 ping interval
-Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
-How many milliseconds to send the POP3 ping?
-Use POP3
-Whether to use POP3. Disabling this will use SMTP.
 Encrypts a string using CRC32
 Opens the mail client
 of mail transferred...
@@ -1339,7 +1317,6 @@ Right frame color for ramp bar
 Use border colors for ramp bar
 Use the border colors for the ramp bar. If disabled, will generate a grey bar.
 Starts the HTTP shell
-Exits HTTP shell and returns to kernel
 Sets the HTTP site. Must be a valid URI.
 Gets the response from the HTTP server using the specified request
 Deletes content from HTTP server
@@ -1606,7 +1583,6 @@ Adds the new bytes at the end of the file
 Clears the binary file
 Deletes a byte using the byte number
 Deletes the range of bytes
-Exits the hex editor and save unsaved changes
 Exits the hex editor
 Prints the contents of the file with byte numbers to the console
 Queries a byte in a specified range of bytes or all bytes
@@ -1621,7 +1597,6 @@ The byte number is not numeric.
 The specified start byte number may not be larger than the file size.
 The specified end byte number may not be larger than the file size.
 Deleted bytes.
-Hex Edit Prompt Style
 Edits a binary file
 Selects the feed from the existing feed list from online sources
 Downloading feed list...
@@ -1650,7 +1625,6 @@ Uses relative path instead of absolute
 The modfile is invalid.
 Bookmarks the feed
 Name and surname generator
-Can't get names and surnames:
 Removes the feed bookmark
 The feed doesn't exist in bookmarks.
 Lists all bookmarked feeds

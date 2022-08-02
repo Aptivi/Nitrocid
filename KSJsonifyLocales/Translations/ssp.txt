@@ -91,7 +91,6 @@ changes remote directory to download from 'r upload to
 deletes remote file from serv'r
 disconnects from serv'r
 downloads remote file to local directory using binary 'r text
-exits ftp shell and returns to kernel
 shows holp screen
 lists local directory
 lists remote directory
@@ -314,7 +313,6 @@ enter password:
 err'r while connecting to {0}: {1}
 connecting to {0}. 
  authenticating. 
- exits the imap shell
 list of hests
 downloads messages and lists those folk
 opens a message
@@ -368,7 +366,6 @@ file already exists.
  err'r trying to maketh a file: {0}
 did fail to ope file.  Exiting shell. 
  lists available hests
-exits the text edit'r and save unsav'd changes
 prints the contents of the file with line numbers to the console
 adds a new line with text at the end of the file
 removes the specifi'd line number
@@ -431,8 +428,6 @@ writeth a remote debugger port.  T wilt beest numeric, and wilt not beest alread
  variable {0} is not hath found on any of the modules. 
  changes kernel configuration
 activate 255 colors
-doth thee wanteth to keepeth did connect?
-invalid choice.  Assuming nay. 
  changeth culture at which hour switching languages
 text shown
 writeth any text thee wanteth shown.  Shorter is better. 
@@ -597,9 +592,6 @@ background col'r
 neutral text col'r
 stage col'r
 err'r col'r
-ftp prompt style
-mail prompt style
-sftp prompt style
 trying to access invalid path. 
  clears the text file
 exits the text edit'r
@@ -673,7 +665,6 @@ the user {0} hast been did add to the "{1}" list.
 load theme from prebuilt themes. 
  specify theme file name wihout the. json extension:
 opens a zip archive
-exits the zip shell
 lists all files inside the archive
 extracts a file to a specifi'd directory 'r a current directory
 changes archive directory
@@ -811,7 +802,6 @@ sets custom sav'r settings
 settings setteth successfully f'r screensav'r
 did fail to setteth a setting f'r screensav'r
 opens an rss shell to readeth the feeds
-exits rss shell and returns to kernel
 changes the fe'd link
 lists all feeds
 reads a fe'd in a web browser
@@ -905,9 +895,6 @@ wrappable hest?
 setting shell variable?
 can not runneth in maintenance mode?
 obsolete?
-rss prompt style
-text edit prompt style
-zip shell prompt style
 folder is exsufflicate. 
  successfully prob'd {0}. 
  verbose probe
@@ -988,7 +975,6 @@ the json edit'r hasn't hath opened a file stream yet.
  did remove property. 
  adds a new property at the end of the json file
 removes a property from the json file
-exits the json shell
 exits the json shell without saving the changes
 saves the json file
 opens the json shell
@@ -1050,8 +1036,6 @@ password prompt style
 writeth how thee wanteth thy login prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
  writeth how thee wanteth thy password prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
  shows message of the day after displaying login screen. 
- test shell prompt style
-json shell prompt style
 probe did inject hests
 probes the did inject hests at the start of the kernel shell. 
  showeth file details in list
@@ -1272,12 +1256,6 @@ disk model:
 culture of the current language
 if 't be true thou art sure yond thee've hath opened the right section, check this message out:
 executes an ftp serv'r hest
-pop3 prompt style f'r mail
-sendeth pop3 ping interval
-writeth how thee wanteth thy pop3 serv'r prompt to beest.  Leaveth blank to useth default style.  Placeholders art pars'd. 
- how many milliseconds to sendeth the pop3 ping?
-useth pop3
-whe'r to useth pop3.  Disabling this shall useth smtp. 
  encrypts a string using crc32
 opens the mail client
 of mail did transfer. 
@@ -1339,7 +1317,6 @@ right frame col'r f'r ramp bar
 useth border colors f'r ramp bar
 useth the border colors f'r the ramp bar.  If 't be true disabled, shall generate a grizzled bar. 
  starts the http shell
-exits http shell and returns to kernel
 sets the http site.  Might not but beest a valid uri. 
  gets the response from the http serv'r using the specifi'd request
 deletes content from http serv'r
@@ -1606,7 +1583,6 @@ adds the new bytes at the end of the file
 clears the binary file
 deletes a byte using the byte number
 deletes the range of bytes
-exits the hex edit'r and save unsav'd changes
 exits the hex edit'r
 prints the contents of the file with byte numbers to the console
 queries a byte in a specifi'd range of bytes 'r all bytes
@@ -1621,7 +1597,6 @@ byte did replace.
  the specifi'd start byte number may not beest larger than the file size. 
  the specifi'd end byte number may not beest larger than the file size. 
  did delete bytes. 
- hex edit prompt style
 edits a binary file
 selects the fe'd from the existing fe'd list from online sources
 downloading fe'd list. 
@@ -1650,7 +1625,6 @@ uses relative path instead of absolute
  the modfile is invalid. 
  bookmarks the fe'd
 name and surname generat'r
-can't receiveth names and surnames:
 removes the fe'd bookmark
 the fe'd doesn't exist in bookmarks. 
  lists all bookmark'd feeds

@@ -91,7 +91,6 @@ gēnggǎi yuǎnchéng mùlù yǐ xiàzài huò shàngchuán dào
 cóng fúwùqì shānchú yuǎnchéng wénjiàn
 yǔ fúwùqì duàn kāi liánjiē
 shǐyòng èr jìn zhì huò wénběn jiāng yuǎnchéng wénjiàn xiàzài dào běndì mùlù
-tuìchū FTP shell bìng fǎnhuí nèihé
 xiǎnshì bāngzhù píngmù
 liè chū běndì mùlù
 liè chū yuǎnchéng mùlù
@@ -314,7 +313,6 @@ Shūrù mìmǎ:
 Liánjiē dào {0} shí chūcuò:{1}
 Zhèngzài liánjiē dào {0}...
 Zhèngzài yànzhèng...
-Tuìchū IMAP wàiké
 mìnglìng lièbiǎo
 xiàzài xiāoxī bìngliè chū tāmen
 dǎkāi xiāoxī
@@ -368,7 +366,6 @@ wénjiàn yǐ cúnzài.
 Chángshì chuàngjiàn wénjiàn shí chūcuò:{0}
 Wúfǎ dǎkāi wénjiàn. Tuìchū wàiké...
 Liè chū kěyòng mìnglìng
-tuìchū wénběn biānjí qì bìng bǎocún wèi bǎocún de gēnggǎi
 jiāng dài yǒu xíng hào de wénjiàn nèiróng dǎyìn dào kòngzhì tái
 zài wénjiàn mòwěi tiānjiā yīgè dài yǒu wénběn de xīn xíng
 shānchú zhǐdìng de xíng hào
@@ -431,8 +428,6 @@ Dá'àn wúxiào. Jiǎnchá yǐ quèbǎo xūyào shùzì zuòwéi dá'àn de pè
 Zài rènhé mókuài shàng dū zhǎo bù dào biànliàng {0}.
 Gēnggǎi nèihé pèizhì
 Jīhuó 255 zhǒng yánsè
-nǐ xiǎng bǎochí liánxì ma?
-Wúxiào de xuǎnzé. Jiǎshè méiyǒu...
 Qiēhuàn yǔyán shí gǎibiàn wénhuà
 xiǎnshì de wénzì
 xiě xià nín xiǎng yào xiǎnshì de rènhé wénběn. Yuè duǎn yuè hǎo.
@@ -597,9 +592,6 @@ bèijǐng yánsè
 zhōng xìng wénzì yánsè
 wǔtái sècǎi
 cuòwù yánsè
-FTP tíshì yàngshì
-yóujiàn tíshì yàngshì
-SFTP tíshì yàngshì
 Shìtú fǎngwèn wúxiào lùjìng.
 Qīngchú wénběn wénjiàn
 tuìchū wénběn biānjí qì
@@ -673,7 +665,6 @@ Wúxiào móshì {0}
 cóng yù jiàn zhǔtí jiāzài zhǔtí...
 Zhǐdìng méiyǒu.Json kuòzhǎn míng de zhǔtí wénjiàn míng:
 Dǎkāi ZIP cúndàng
-tuìchū ZIP wàiké
 liè chū cúndàng zhōng de suǒyǒu wénjiàn
 jiāng wénjiàn jiěyā dào zhǐdìng mùlù huò dāngqián mùlù
 gēnggǎi cúndàng mùlù
@@ -811,7 +802,6 @@ shèzhì zì dìngyì bǎohù chéngxù shèzhì
 píngmù bǎohù chéngxù shèzhì chénggōng
 wúfǎ shèzhì píngmù bǎohù chéngxù
 Dǎkāi RSS shell yǐ dòu qǔ tíyào
-tuìchū RSS shell bìng fǎnhuí nèihé
 gēnggǎi tíyào liànjiē
 liè chū suǒyǒu tíyào
 zài Web liúlǎn qì zhōng dòu qǔ tíyào
@@ -905,9 +895,6 @@ Kě bāozhuāng mìnglìng?
 Shèzhì shell biànliàng?
 Bùnéng zài wéihù móshì xià yùnxíng?
 Guòshí de?
-RSS tíshì yàngshì
-wénběn biānjí tíshì yàngshì
-Zip Shell tíshì yàngshì
 wénjiàn jiā wèi kōng.
 Chénggōng tàncè {0}.
 Xiángxì tàn zhēn
@@ -988,7 +975,6 @@ Wèi zhǎodào JSON wénjiàn zhōng de shǔxìng.
 Shānchú de shǔxìng.
 Zài JSON wénjiàn mòwěi tiānjiā yīgè xīn shǔxìng
 cóng JSON wénjiàn zhōng shānchú yīgè shǔxìng
-tuìchū JSON wàiké
 tuìchū JSON shell ér bù bǎocún gēnggǎi
 bǎocún JSON wénjiàn
 dǎkāi JSON wàiké
@@ -1050,8 +1036,6 @@ mìmǎ tíshì yàngshì
 xiě xià nín xīwàng dēnglù tíshì de fāngshì. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī.
 Xiě xià nín xīwàng mìmǎ tíshì de fāngshì. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī.
 Xiǎnshì dēnglù píngmù hòu xiǎnshì měi rì xiāoxī.
-Cèshì wàiké tíshì yàngshì
-JSON Shell tíshì yàngshì
 tàn zhēn zhùrù mìnglìng
 zài nèihé shell kāishǐ shí tàncè zhùrù de mìnglìng.
 Zài lièbiǎo zhōng xiǎnshì wénjiàn xiángxì xìnxī
@@ -1272,12 +1256,6 @@ Cípán xíng hào:
 dāngqián yǔyán de wénhuà
 rúguǒ nín quèdìng nín dǎkāile zhèngquè de bùfèn, qǐng chákàn cǐ xiāoxī:
 Zhíxíng FTP fúwùqì mìnglìng
-Yóujiàn de POP3 tíshì yàngshì
-fāsòng POP3 ping jiàngé
-xiě xià nín xīwàng POP3 fúwùqì tíshì fú de yàngzi. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī.
-Fāsòng POP3 ping xūyào duōshǎo háomiǎo?
-Shǐyòng POP3
-Shìfǒu shǐyòng POP3. Jìnyòng cǐ gōngnéng jiāng shǐyòng SMTP.
 Shǐyòng CRC32 jiāmì zìfú chuàn
 dǎkāi yóujiàn kèhù duān
 zhuǎn jì de yóujiàn...
@@ -1339,7 +1317,6 @@ xiépō tiáo de yòu biānkuāng yánsè
 shǐyòng jiànbiàn tiáo de biānkuāng yánsè
 shǐyòng jiànbiàn lán de biānkuāng yánsè. Rúguǒ jìnyòng, jiāng shēngchéng yīgè huīsè tiáo.
 Qǐdòng HTTP wàiké
-tuìchū HTTP shell bìng fǎnhuí nèihé
 shèzhì HTTP zhàn diǎn. Bìxū shì yǒuxiào de URI.
 Shǐyòng zhǐdìng qǐngqiú cóng HTTP fúwùqì huòqǔ xiǎngyìng
 cóng HTTP fúwùqì zhōng shānchú nèiróng
@@ -1606,7 +1583,6 @@ zài wénjiàn mòwěi tiānjiā xīn zì jié
 qīngchú èr jìn zhì wénjiàn
 shǐyòng zì jié hào shānchú yīgè zì jié
 shānchú zì jié fànwéi
-tuìchū shíliù jìn zhì biānjí qì bìng bǎocún wèi bǎocún de gēnggǎi
 tuìchū shíliù jìn zhì biānjí qì
 jiāng dài yǒu zì jié shǔ de wénjiàn nèiróng dǎyìn dào kòngzhì tái
 cháxún zhǐdìng zì jié fànwéi nèi de yīgè zì jié huò suǒyǒu zì jié
@@ -1621,7 +1597,6 @@ Zì jié shǔ bùshì shùzì.
 Zhǐdìng de qǐ shǐ zì jié shǔ bùdé dàyú wénjiàn dàxiǎo.
 Zhǐdìng de jiéshùzì jié shǔ bùdé dàyú wénjiàn dàxiǎo.
 Shānchú de zì jié.
-Shíliù jìn zhì biānjí tíshì yàngshì
 biānjí èr jìn zhì wénjiàn
 cóng zàixiàn zīyuán de xiànyǒu tíyào lièbiǎo zhòng xuǎnzé tíyào
 zhèngzài xiàzài Feed lièbiǎo...
@@ -1650,7 +1625,6 @@ Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng
 Mó zǔ wénjiàn wúxiào.
 Wèi tíyào tiānjiā shūqiān
 xìngmíng hé xìngshì shēngchéng qì
-wúfǎ huòqǔ xìngmíng hé xìngshì:
 Shānchú tíyào shūqiān
 shūqiān zhōng bù cúnzài gāi tíyào.
 Liè chū suǒyǒu yǐ tiānjiā shūqiān de tíyào

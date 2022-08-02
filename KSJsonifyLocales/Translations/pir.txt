@@ -91,7 +91,6 @@ changes remote directory to download from or upload to
 deletes remote file from server
 disconnects from server
 downloads remote file to local directory usin' binary or text
-exits ftp shell an' returns to kernel
 shows 'elp screen
 lists local directory
 lists remote directory
@@ -314,7 +313,6 @@ enter password:
 error while connectin' to {0}: {1}
 connectin' to {0}...
  authenticatin'...
- exits the imap shell
 list o' commands
 downloads messages an' lists them
 opens a message
@@ -368,7 +366,6 @@ file already exists.
  error tryin' to create a file: {0}
 failed to open file. Exitin' shell...
  lists available commands
-exits the text editor an' save unsaved changes
 prints the contents o' the file with line numbers to the console
 adds a new line with text at the end o' the file
 removes the specified line number
@@ -431,8 +428,6 @@ disable
  variable {0} be not found on any o' the modules.
  changes kernel configuration
  activate 255 colors
-do ye want to keep connected?
-invalid choice. Assumin' no...
  change culture when switchin' languages
 text shown
 write any text ye want shown. Shorter be better.
@@ -597,9 +592,6 @@ background color
 neutral text color
 stage color
 error color
-ftp prompt style
-mail prompt style
-sftp prompt style
  tryin' to access invalid path.
  clears the text file
 exits the text editor
@@ -673,7 +665,6 @@ the user {0} been added to the "{1}" list.
  load theme from prebuilt themes...
  specify theme file name wihout the.json extension:
 opens a zip archive
-exits the zip shell
 lists all files inside the archive
 extracts a file to a specified directory or a current directory
 changes archive directory
@@ -811,7 +802,6 @@ sets custom saver settings
 settings set successfully fer screensaver
 failed to set a settin' fer screensaver
  opens an rss shell to read the feeds
-exits rss shell an' returns to kernel
 changes the feed link
 lists all feeds
 reads a feed in a web browser
@@ -905,9 +895,6 @@ wrappable command?
 settin' shell variable?
 can not run in maintenance mode?
 obsolete?
-rss prompt style
-text edit prompt style
-zip shell prompt style
 folder be empty.
  successfully probed {0}.
  verbose probe
@@ -988,7 +975,6 @@ the json editor 'asn't opened a file stream yet.
  removed property.
  adds a new property at the end o' the json file
 removes a property from the json file
-exits the json shell
 exits the json shell without savin' the changes
 saves the json file
 opens the json shell
@@ -1050,8 +1036,6 @@ password prompt style
 write 'ow ye want yer login prompt to be. Set sail blank to use default style. Placeholders be parsed.
  write 'ow ye want yer password prompt to be. Set sail blank to use default style. Placeholders be parsed.
  shows message o' the day after displayin' login screen.
- test shell prompt style
-json shell prompt style
 probe injected commands
 probes the injected commands at the start o' the kernel shell.
  show file details in list
@@ -1272,12 +1256,6 @@ disk model:
 culture o' the current language
 if ye be sure that there ye've opened starboard section, check this here message out:
  executes an ftp server command
-pop3 prompt style fer mail
-send pop3 pin' interval
-write 'ow ye want yer pop3 server prompt to be. Set sail blank to use default style. Placeholders be parsed.
- 'ow many milliseconds to send the pop3 ping?
-use pop3
-whether to use pop3. Disablin' this here will use smtp.
  encrypts a strin' usin' crc32
 opens the mail client
 o' mail transferred...
@@ -1339,7 +1317,6 @@ right frame color fer ramp barrr
 use border colors fer ramp barrr
 use the border colors fer the ramp barrr. If disabled, will generate a grey barrr.
  starts the 'ttp shell
-exits 'ttp shell an' returns to kernel
 sets the 'ttp site. Must be a valid uri.
  gets the response from the 'ttp server usin' the specified offer
 deletes content from 'ttp server
@@ -1606,7 +1583,6 @@ adds the new bytes at the end o' the file
 clears the binary file
 deletes a byte usin' the byte number
 deletes the range o' bytes
-exits the 'ex editor an' save unsaved changes
 exits the 'ex editor
 prints the contents o' the file with byte numbers to the console
 queries a byte in a specified range o' bytes or all bytes
@@ -1621,7 +1597,6 @@ byte replaced.
  the specified start byte number may not be larger than the file size.
  the specified end byte number may not be larger than the file size.
  deleted bytes.
- 'ex edit prompt style
 edits a binary file
 selects the feed from the existin' feed list from online sources
 downloadin' feed list...
@@ -1650,7 +1625,6 @@ uses relative path instead o' absolute
 The modfile be invalid.
  bookmarks the feed
 name an' surname generator
-can't get names an' surnames:
 removes the feed bookmark
 the feed doesn't exist in bookmarks.
  lists all bookmarked feeds

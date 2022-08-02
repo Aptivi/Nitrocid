@@ -91,7 +91,6 @@ Cambia la directory remota da scaricare o caricare in
 Elimina il file remoto dal server
 Disconnette dal server
 Scarica il file remoto nella directory locale usando binari o testo
-Esce dalla shell FTP e ritorna al kernel
 Mostra la schermata di aiuto
 Elenca la directory locale
 Elenca la directory remota
@@ -314,7 +313,6 @@ Inserire la password:
 Errore durante la connessione a {0}: {1}
 Connessione a {0} ...
 Autenticazione in ...
-Esce dalla shell IMAP
 Elenco dei comandi
 Scarica i messaggi e li elenca
 Apre un messaggio
@@ -368,7 +366,6 @@ Il file esiste già.
 Errore durante il tentativo di creare un file: {0}
 Impossibile aprire il file. Uscita dalla shell ...
 Elenca i comandi disponibili
-Esce dall'editor di testo e salva le modifiche non salvate
 Stampa il contenuto del file con i numeri di riga sulla console
 Aggiunge una nuova riga con testo alla fine del file
 Rimuove il numero di riga specificato
@@ -431,8 +428,6 @@ La risposta non è valida. Verificare che la risposta sia numerica per le voci d
 La variabile {0} non è stata trovata su nessuno dei moduli.
 Modifica la configurazione del kernel
 Attiva 255 colori
-Vuoi restare connesso?
-Scelta non valida. Supponendo no ...
 Cambia cultura quando si cambia lingua
 Testo mostrato
 Scrivi il testo che desideri venga mostrato. Più corto è meglio.
@@ -597,9 +592,6 @@ Colore di sfondo
 Colore del testo neutro
 Colore del palco
 Colore errore
-Stile prompt FTP
-Stile messaggio di posta
-Stile prompt SFTP
 Tentativo di accesso a un percorso non valido.
 Cancella il file di testo
 Esce dall'editor di testo
@@ -673,7 +665,6 @@ Modalità non valida {0}
 Carica tema da temi predefiniti...
 Specifica il nome del file del tema senza l'estensione .json:
 Apre un archivio ZIP
-Esce dalla shell ZIP
 Elenca tutti i file all'interno dell'archivio
 Estrae un file in una directory specificata o in una directory corrente
 Cambia la directory dell'archivio
@@ -811,7 +802,6 @@ Imposta le impostazioni di risparmio personalizzate
 Impostazioni impostate correttamente per lo screensaver
 Impossibile impostare un'impostazione per il salvaschermo
 Apre una shell RSS per leggere i feed
-Esce dalla shell RSS e torna al kernel
 Cambia il collegamento al feed
 Elenca tutti i feed
 Legge un feed in un browser web
@@ -905,9 +895,6 @@ Comando avvolgibile?
 Impostazione variabile shell?
 Non è possibile eseguire in modalità di manutenzione?
 Obsoleto?
-Stile del prompt RSS
-Stile del messaggio di modifica del testo
-Zip Shell Stile Prompt
 La cartella è vuota.
 Sondaggio {0} riuscito.
 Sonda verbosa
@@ -988,7 +975,6 @@ La proprietà all'interno del file JSON non è stata trovata.
 Proprietà rimossa.
 Aggiunge una nuova proprietà alla fine del file JSON
 Rimuove una proprietà dal file JSON
-Esce dalla shell JSON
 Esce dalla shell JSON senza salvare le modifiche
 Salva il file JSON
 Apre la shell JSON
@@ -1050,8 +1036,6 @@ Stile di richiesta password
 Scrivi come vuoi che sia la tua richiesta di accesso. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
 Scrivi come vuoi che sia richiesta la password. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
 Mostra il messaggio del giorno dopo aver visualizzato la schermata di accesso.
-Prova lo stile del prompt della shell
-Stile prompt shell JSON
 Comandi iniettati sonda
 Rileva i comandi iniettati all'inizio della shell del kernel.
 Mostra i dettagli del file nell'elenco
@@ -1272,12 +1256,6 @@ Modello del disco:
 Cultura della lingua attuale
 Se sei sicuro di aver aperto la sezione giusta, controlla questo messaggio:
 Esegue un comando del server FTP
-Stile prompt POP3 per la posta
-Invia intervallo di ping POP3
-Scrivi come vuoi che sia il prompt del tuo server POP3. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.
-Quanti millisecondi per inviare il ping POP3?
-Usa POP3
-Se usare POP3. La disabilitazione utilizzerà SMTP.
 Crittografa una stringa usando CRC32
 Apre il client di posta
 di posta trasferita...
@@ -1339,7 +1317,6 @@ Colore del telaio destro per la barra della rampa
 Usa i colori dei bordi per la barra della rampa
 Usa i colori del bordo per la barra della rampa. Se disabilitato, genererà una barra grigia.
 Avvia la shell HTTP
-Esce dalla shell HTTP e ritorna al kernel
 Imposta il sito HTTP. Deve essere un URI valido.
 Ottiene la risposta dal server HTTP utilizzando la richiesta specificata
 Elimina il contenuto dal server HTTP
@@ -1606,7 +1583,6 @@ Aggiunge i nuovi byte alla fine del file
 Cancella il file binario
 Elimina un byte utilizzando il numero di byte
 Elimina l'intervallo di byte
-Esce dall'editor esadecimale e salva le modifiche non salvate
 Esce dall'editor esadecimale
 Stampa il contenuto del file con i numeri di byte sulla console
 Interroga un byte in un intervallo di byte specificato o tutti i byte
@@ -1621,7 +1597,6 @@ Il numero di byte non è numerico.
 Il numero di byte iniziale specificato potrebbe non essere maggiore della dimensione del file.
 Il numero di byte finale specificato potrebbe non essere maggiore della dimensione del file.
 Byte cancellati.
-Stile del prompt di modifica esadecimale
 Modifica un file binario
 Seleziona il feed dall'elenco di feed esistente da fonti online
 Download elenco feed in corso...
@@ -1650,7 +1625,6 @@ Usa il percorso relativo anziché assoluto
 Il file mod non è valido.
 Aggiunge un segnalibro al feed
 Generatore di nomi e cognomi
-Impossibile ottenere nomi e cognomi:
 Rimuove il segnalibro del feed
 Il feed non esiste nei segnalibri.
 Elenca tutti i feed con segnalibri

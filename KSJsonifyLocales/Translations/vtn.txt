@@ -91,7 +91,6 @@ Thay đổi thư mục từ xa để tải xuống từ hoặc tải lên
 Xóa tập tin từ xa khỏi máy chủ
 Ngắt kết nối với máy chủ
 Tải tập tin từ xa vào thư mục cục bộ bằng cách sử dụng nhị phân hoặc văn bản
-Thoát khỏi vỏ FTP và trở về kernel
 Hiển thị màn hình trợ giúp
 Liệt kê thư mục địa phương
 Liệt kê thư mục từ xa
@@ -314,7 +313,6 @@ Nhập mật khẩu:
 Lỗi khi kết nối với {0}: {1}
 Đang kết nối với {0} ...
 Xác thực ...
-Thoát khỏi vỏ IMAP
 Danh sách các lệnh
 Tải tin nhắn và liệt kê chúng
 Mở một tin nhắn
@@ -368,7 +366,6 @@ Tập tin đã tồn tại.
 Lỗi khi tạo tệp: {0}
 Không thể mở tập tin. Thoát khỏi vỏ ...
 Liệt kê các lệnh có sẵn
-Thoát khỏi trình soạn thảo văn bản và lưu các thay đổi chưa lưu
 In nội dung của tệp với số dòng vào bảng điều khiển
 Thêm một dòng mới với văn bản ở cuối tập tin
 Xóa số dòng được chỉ định
@@ -431,8 +428,6 @@ Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câ
 Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Thay đổi cấu hình hạt nhân
 Kích hoạt 255 màu
-Bạn có muốn giữ kết nối không?
-Lựa chọn không hợp lệ. Giả sử không ...
 Thay đổi văn hóa khi chuyển đổi ngôn ngữ
 Văn bản được hiển thị
 Viết bất kỳ văn bản nào bạn muốn hiển thị. Ngắn hơn là tốt hơn.
@@ -597,9 +592,6 @@ Màu nền
 Màu văn bản trung tính
 Màu sân khấu
 Màu lỗi
-Kiểu lời nhắc FTP
-Kiểu Lời nhắc Thư
-Kiểu nhắc SFTP
 Đang cố gắng truy cập đường dẫn không hợp lệ.
 Xóa tệp văn bản
 Thoát khỏi trình soạn thảo văn bản
@@ -673,7 +665,6 @@ Chế độ không hợp lệ {0}
 Tải chủ đề từ chủ đề dựng sẵn ...
 Chỉ định tên tệp chủ đề mà không có phần mở rộng .json:
 Mở kho lưu trữ ZIP
-Thoát khỏi trình bao ZIP
 Liệt kê tất cả các tệp bên trong kho lưu trữ
 Giải nén một tập tin vào một thư mục cụ thể hoặc một thư mục hiện tại
 Thay đổi thư mục lưu trữ
@@ -811,7 +802,6 @@ Nhận cài đặt trình tiết kiệm tùy chỉnh
 Đã đặt thành công cài đặt cho trình bảo vệ màn hình
 Không đặt được cài đặt cho trình bảo vệ màn hình
 Mở trình bao RSS để đọc nguồn cấp dữ liệu
-Thoát khỏi trình bao RSS và quay trở lại hạt nhân
 Thay đổi liên kết nguồn cấp dữ liệu
 Liệt kê tất cả các nguồn cấp dữ liệu
 Đọc nguồn cấp dữ liệu trong trình duyệt web
@@ -905,9 +895,6 @@ Lệnh có thể quấn?
 Đặt biến shell?
 Không thể chạy ở chế độ bảo trì?
 Đã lỗi thời?
-Kiểu nhắc RSS
-Chỉnh sửa văn bản Kiểu lời nhắc
-Kiểu gợi ý Zip Shell
 Tệp này rỗng.
 Đã thăm dò thành công {0}.
 Verbose Probe
@@ -988,7 +975,6 @@ Không tìm thấy thuộc tính bên trong tệp JSON.
 Đã xóa thuộc tính.
 Thêm thuộc tính mới vào cuối tệp JSON
 Xóa một thuộc tính khỏi tệp JSON
-Thoát khỏi trình bao JSON
 Thoát khỏi trình bao JSON mà không lưu các thay đổi
 Lưu tệp JSON
 Mở trình bao JSON
@@ -1050,8 +1036,6 @@ Kiểu nhắc mật khẩu
 Viết cách bạn muốn lời nhắc đăng nhập của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Viết cách bạn muốn lời nhắc mật khẩu của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
 Hiển thị Thông báo trong ngày sau khi hiển thị màn hình đăng nhập.
-Test Shell Prompt Style
-JSON Shell Prompt Style
 Thăm dò các lệnh đã tiêm
 Thăm dò các lệnh được đưa vào khi bắt đầu vỏ hạt nhân.
 Hiển thị chi tiết tệp trong danh sách
@@ -1272,12 +1256,6 @@ Mô hình đĩa:
 Văn hóa của ngôn ngữ hiện tại
 Nếu bạn chắc chắn rằng bạn đã mở đúng phần, hãy kiểm tra thông báo này:
 Thực thi một lệnh máy chủ FTP
-Kiểu lời nhắc POP3 cho thư
-Gửi khoảng thời gian ping POP3
-Viết cách bạn muốn lời nhắc máy chủ POP3 của mình. Để trống để sử dụng kiểu mặc định. Phần giữ chỗ được phân tích cú pháp.
-Bao nhiêu mili giây để gửi ping POP3?
-Sử dụng POP3
-Có sử dụng POP3 hay không. Tắt tính năng này sẽ sử dụng SMTP.
 Mã hóa một chuỗi bằng CRC32
 Mở ứng dụng thư
 trong tổng số thư được chuyển ...
@@ -1339,7 +1317,6 @@ Màu khung bên phải cho thanh đoạn nối
 Sử dụng màu đường viền cho thanh đoạn nối
 Sử dụng màu viền cho thanh đường nối. Nếu bị vô hiệu hóa, sẽ tạo ra một thanh màu xám.
 Bắt đầu HTTP shell
-Thoát khỏi HTTP shell và quay trở lại kernel
 Đặt trang web HTTP. Phải là một URI hợp lệ.
 Nhận phản hồi từ máy chủ HTTP bằng cách sử dụng yêu cầu được chỉ định
 Xóa nội dung khỏi máy chủ HTTP
@@ -1606,7 +1583,6 @@ Thêm các byte mới vào cuối tệp
 Xóa tệp nhị phân
 Xóa một byte bằng cách sử dụng số byte
 Xóa phạm vi byte
-Thoát khỏi trình chỉnh sửa hex và lưu các thay đổi chưa lưu
 Thoát khỏi trình chỉnh sửa hex
 In nội dung của tệp có số byte vào bảng điều khiển
 Truy vấn một byte trong một phạm vi byte được chỉ định hoặc tất cả các byte
@@ -1621,7 +1597,6 @@ Số byte không phải là số.
 Số byte bắt đầu được chỉ định không được lớn hơn kích thước tệp.
 Số byte kết thúc được chỉ định không được lớn hơn kích thước tệp.
 Đã xóa các byte.
-Hex Chỉnh sửa kiểu nhắc
 Chỉnh sửa tệp nhị phân
 Chọn nguồn cấp dữ liệu từ danh sách nguồn cấp dữ liệu hiện có từ các nguồn trực tuyến
 Đang tải xuống danh sách nguồn cấp dữ liệu ...
@@ -1650,7 +1625,6 @@ Sử dụng đường dẫn tương đối thay vì tuyệt đối
 Modfile không hợp lệ.
 Đánh dấu nguồn cấp dữ liệu
 Trình tạo tên và họ
-Không thể lấy tên và họ:
 Xóa dấu trang nguồn cấp dữ liệu
 Nguồn cấp dữ liệu không tồn tại trong dấu trang.
 Liệt kê tất cả các nguồn cấp dữ liệu được đánh dấu

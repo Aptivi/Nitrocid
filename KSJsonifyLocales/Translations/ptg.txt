@@ -91,7 +91,6 @@ Altera o diretório remoto para download ou upload para
 Exclui o arquivo remoto do servidor
 Desconecta do servidor
 Faz o download do arquivo remoto para o diretório local usando binário ou texto
-Sai do shell FTP e retorna ao kernel
 Mostra a tela de ajuda
 Lista o diretório local
 Lista o diretório remoto
@@ -314,7 +313,6 @@ Digite a senha:
 Erro ao conectar-se a {0}: {1}
 Conectando a {0} ...
 Autenticando ...
-Sai do shell IMAP
 Lista de comandos
 Faz o download das mensagens e as lista
 Abre uma mensagem
@@ -368,7 +366,6 @@ O arquivo já existe.
 Erro ao tentar criar um arquivo: {0}
 Falha ao abrir arquivo. Saindo do shell ...
 Lista comandos disponíveis
-Sai do editor de texto e salva as alterações não salvas
 Imprime o conteúdo do arquivo com números de linha no console
 Adiciona uma nova linha com texto no final do arquivo
 Remove o número da linha especificado
@@ -431,8 +428,6 @@ A resposta é inválida. Certifique-se de que a resposta seja numérica para ent
 A variável {0} não foi encontrada em nenhum dos módulos.
 Altera a configuração do kernel
 Ative 255 cores
-Você quer se manter conectado?
-Escolha inválida. Supondo que não ...
 Mudança de cultura ao mudar de idioma
 Texto mostrado
 Escreva qualquer texto que você deseja mostrar. Quanto mais curto, melhor.
@@ -597,9 +592,6 @@ Cor de fundo
 Cor neutra do texto
 Cor do palco
 Cor do erro
-Estilo de solicitação de FTP
-Estilo do prompt de correio
-Estilo de solicitação de SFTP
 Tentando acessar um caminho inválido.
 Limpa o arquivo de texto
 Sai do editor de texto
@@ -673,7 +665,6 @@ Modo inválido {0}
 Carregar tema de temas pré-construídos ...
 Especifique o nome do arquivo do tema sem a extensão .json:
 Abre um arquivo ZIP
-Sai do shell ZIP
 Lista todos os arquivos dentro do arquivo
 Extrai um arquivo para um diretório especificado ou um diretório atual
 Altera o diretório do arquivo
@@ -811,7 +802,6 @@ Define configurações de proteção personalizadas
 Configurações definidas com sucesso para o protetor de tela
 Falha ao definir uma configuração para o protetor de tela
 Abre um shell RSS para ler os feeds
-Sai do shell RSS e retorna ao kernel
 Altera o link do feed
 Lista todos os feeds
 Lê um feed em um navegador da web
@@ -905,9 +895,6 @@ Comando encapsulável?
 Definindo a variável do shell?
 Não pode ser executado no modo de manutenção?
 Obsoleto?
-Estilo de prompt RSS
-Estilo de Prompt de Edição de Texto
-Estilo de prompt Zip Shell
 Pasta está vazia.
 Sondado com sucesso {0}.
 Verbose Probe
@@ -988,7 +975,6 @@ A propriedade dentro do arquivo JSON não foi encontrada.
 Propriedade removida.
 Adiciona uma nova propriedade no final do arquivo JSON
 Remove uma propriedade do arquivo JSON
-Sai do shell JSON
 Sai do shell JSON sem salvar as alterações
 Salva o arquivo JSON
 Abre o shell JSON
@@ -1050,8 +1036,6 @@ Estilo de solicitação de senha
 Escreva como você deseja que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
 Escreva como você deseja que seu prompt de senha seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
 Mostra a Mensagem do Dia após a exibição da tela de login.
-Estilo de prompt de shell de teste
-Estilo de prompt do shell JSON
 Comandos injetados no probe
 Testa os comandos injetados no início do shell do kernel.
 Mostrar detalhes do arquivo na lista
@@ -1272,12 +1256,6 @@ Modelo de disco:
 Cultura do idioma atual
 Se você tiver certeza de que abriu a seção correta, confira esta mensagem:
 Executa um comando do servidor FTP
-Estilo de prompt POP3 para e-mail
-Enviar intervalo de ping POP3
-Escreva como você deseja que o prompt do servidor POP3 seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.
-Quantos milissegundos para enviar o ping POP3?
-Usar POP3
-Se deve usar POP3. Desabilitar isso usará SMTP.
 Criptografa uma string usando CRC32
 Abre o cliente de e-mail
 de correio transferido...
@@ -1339,7 +1317,6 @@ Cor da moldura certa para a barra de rampa
 Use cores de borda para barra de rampa
 Use as cores da borda para a barra de rampa. Se desabilitado, irá gerar uma barra cinza.
 Inicia o shell HTTP
-Sai do shell HTTP e retorna ao kernel
 Define o site HTTP. Deve ser um URI válido.
 Obtém a resposta do servidor HTTP usando a solicitação especificada
 Exclui conteúdo do servidor HTTP
@@ -1606,7 +1583,6 @@ Adiciona os novos bytes no final do arquivo
 Limpa o arquivo binário
 Exclui um byte usando o número do byte
 Exclui o intervalo de bytes
-Sai do editor hexadecimal e salva as alterações não salvas
 Sai do editor hexadecimal
 Imprime o conteúdo do arquivo com números de bytes no console
 Consulta um byte em um intervalo especificado de bytes ou todos os bytes
@@ -1621,7 +1597,6 @@ O número do byte não é numérico.
 O número de byte inicial especificado não pode ser maior que o tamanho do arquivo.
 O número do byte final especificado não pode ser maior que o tamanho do arquivo.
 Bytes excluídos.
-Estilo de prompt de edição hexadecimal
 Edita um arquivo binário
 Seleciona o feed da lista de feeds existente de fontes online
 Baixando lista de feeds...
@@ -1650,7 +1625,6 @@ Usa caminho relativo em vez de absoluto
 O modfile é inválido.
 Marca o feed
 Gerador de nome e sobrenome
-Não é possível obter nomes e sobrenomes:
 Remove o marcador de feed
 O feed não existe nos favoritos.
 Lista todos os feeds marcados

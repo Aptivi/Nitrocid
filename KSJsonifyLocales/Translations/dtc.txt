@@ -91,7 +91,6 @@ Hiermee wordt de externe map gewijzigd om te downloaden van of te uploaden naar
 Wist het externe bestand van de server
 Verbreekt de verbinding met de server
 Download het externe bestand naar de lokale map met binair of tekst
-Sluit de FTP-shell af en keert terug naar de kernel
 Toont helpscherm
 Geeft een lokale map weer
 Geeft de externe map weer
@@ -314,7 +313,6 @@ Voer wachtwoord in:
 Fout bij verbinden met {0}: {1}
 Verbinding maken met {0} ...
 Verifiëren ...
-Verlaat de IMAP-shell
 Lijst met opdrachten
 Downloadt berichten en geeft ze weer
 Opent een bericht
@@ -368,7 +366,6 @@ Bestand bestaat al.
 Fout bij het maken van een bestand: {0}
 Gefaald om het document te openen. Shell afsluiten ...
 Geeft beschikbare opdrachten weer
-Sluit de teksteditor af en sla niet-opgeslagen wijzigingen op
 Drukt de inhoud van het bestand met regelnummers af naar de console
 Voegt een nieuwe regel met tekst toe aan het einde van het bestand
 Verwijdert het opgegeven regelnummer
@@ -431,8 +428,6 @@ Het antwoord is ongeldig. Controleer of het antwoord numeriek is voor configurat
 Variabele {0} is niet gevonden in een van de modules.
 Verandert de kernelconfiguratie
 Activeer 255 kleuren
-Wil je verbonden blijven?
-Ongeldige keuze. Ervan uitgaande dat ...
 Verander de cultuur bij het wisselen van taal
 Tekst getoond
 Schrijf elke gewenste tekst. Korter is beter.
@@ -597,9 +592,6 @@ Achtergrond kleur
 Neutrale tekstkleur
 Stage kleur
 Foutkleur
-FTP-promptstijl
-E-mailpromptstijl
-SFTP-promptstijl
 Probeert toegang te krijgen tot een ongeldig pad.
 Wist het tekstbestand
 Verlaat de teksteditor
@@ -673,7 +665,6 @@ Ongeldige modus {0}
 Thema laden vanuit vooraf gemaakte thema's...
 Geef de naam van het themabestand op zonder de .json-extensie:
 Opent een ZIP-archief
-Verlaat de ZIP-shell
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
@@ -811,7 +802,6 @@ Stelt aangepaste spaarinstellingen in
 Instellingen succesvol ingesteld voor screensaver
 Kan geen instelling voor screensaver instellen
 Opent een RSS-shell om de feeds te lezen
-Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
@@ -905,9 +895,6 @@ Inpakbare opdracht?
 Shell-variabele instellen?
 Kan niet worden uitgevoerd in de onderhoudsmodus?
 Verouderd?
-RSS-promptstijl
-Aanwijzingsstijl voor tekstbewerking
-Zip Shell Prompt-stijl
 Map is leeg.
 {0} gesondeerd.
 Uitgebreide sonde
@@ -988,7 +975,6 @@ De eigenschap in het JSON-bestand is niet gevonden.
 Eigendom verwijderd.
 Voegt een nieuwe eigenschap toe aan het einde van het JSON-bestand
 Verwijdert een eigenschap uit het JSON-bestand
-Sluit de JSON-shell af
 Sluit de JSON-shell af zonder de wijzigingen op te slaan
 Slaat het JSON-bestand op
 Opent de JSON-shell
@@ -1050,8 +1036,6 @@ Stijl voor wachtwoordprompt
 Schrijf hoe u wilt dat uw aanmeldingsprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Schrijf hoe u wilt dat uw wachtwoordprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
 Toont Bericht van de Dag na het weergeven van het inlogscherm.
-Test Shell Prompt Stijl
-JSON Shell-promptstijl
 Probe-geïnjecteerde opdrachten
 Onderzoekt de geïnjecteerde opdrachten aan het begin van de kernelshell.
 Toon bestandsdetails in lijst
@@ -1272,12 +1256,6 @@ Schijfmodel:
 Cultuur van de huidige taal
 Als je zeker weet dat je de juiste sectie hebt geopend, bekijk dan dit bericht:
 Voert een FTP-serveropdracht uit
-POP3-promptstijl voor e-mail
-POP3-ping-interval verzenden
-Schrijf hoe u wilt dat uw POP3-serverprompt is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd.
-Hoeveel milliseconden om de POP3-ping te verzenden?
-Gebruik POP3
-Of u POP3 wilt gebruiken. Als u dit uitschakelt, wordt SMTP gebruikt.
 Codeert een string met CRC32
 Opent de e-mailclient
 van post overgedragen...
@@ -1339,7 +1317,6 @@ Rechter framekleur voor oprijbalk
 Gebruik randkleuren voor hellingsbalk
 Gebruik de randkleuren voor de hellingsbalk. Indien uitgeschakeld, wordt een grijze balk gegenereerd.
 Start de HTTP-shell
-Sluit HTTP-shell af en keert terug naar kernel
 Stelt de HTTP-site in. Moet een geldige URI zijn.
 Krijgt het antwoord van de HTTP-server met behulp van het opgegeven verzoek
 Verwijdert inhoud van HTTP-server
@@ -1606,7 +1583,6 @@ Voegt de nieuwe bytes toe aan het einde van het bestand
 Wist het binaire bestand
 Verwijdert een byte met behulp van het bytenummer
 Verwijdert het bereik van bytes
-Sluit de hex-editor af en sla niet-opgeslagen wijzigingen op
 Sluit de hex-editor af
 Drukt de inhoud van het bestand met bytenummers af naar de console
 Vraagt ​​een byte op in een gespecificeerd bereik van bytes of alle bytes
@@ -1621,7 +1597,6 @@ Het bytenummer is niet numeriek.
 Het opgegeven startbytenummer mag niet groter zijn dan de bestandsgrootte.
 Het opgegeven eindbytenummer mag niet groter zijn dan de bestandsgrootte.
 Byte verwijderd.
-Hex-promptstijl bewerken
 Bewerkt een binair bestand
 Selecteert de feed uit de bestaande feedlijst van online bronnen
 Feedlijst downloaden...
@@ -1650,7 +1625,6 @@ Gebruikt relatief pad in plaats van absoluut
 Het modbestand is ongeldig.
 Voeg een bladwijzer toe aan de feed
 Naam- en achternaamgenerator
-Kan geen namen en achternamen krijgen:
 Verwijdert de feed-bladwijzer
 De feed bestaat niet in bladwijzers.
 Toont alle feeds met bladwijzers

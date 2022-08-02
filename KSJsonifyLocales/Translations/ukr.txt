@@ -91,7 +91,6 @@ Zminyuye viddalenyy kataloh dlya zavantazhennya abo zavantazhennya
 Vydalyaye viddalenyy fayl iz servera
 Vid'yednuyetʹsya vid servera
 Zavantazhuye viddalenyy fayl u lokalʹnyy kataloh, vykorystovuyuchy dviykovyy abo tekstovyy fayl
-Vykhodytʹ z obolonky FTP i povertayetʹsya do yadra
 Pokazuye ekran dovidky
 Perelichuye lokalʹnyy kataloh
 Perelichuye viddalenyy kataloh
@@ -314,7 +313,6 @@ Vveditʹ parolʹ:
 Pomylka pid chas pidklyuchennya do {0}: {1}
 Pidklyuchennya do {0}...
 Autentyfikatsiya...
-Vykhodytʹ z obolonky IMAP
 Spysok komand
 Zavantazhuye povidomlennya ta pererakhovuye yikh
 Vidkryvaye povidomlennya
@@ -368,7 +366,6 @@ Fayl uzhe isnuye.
 Pomylka sproby stvoryty fayl: {0}
 Ne vdalosya vidkryty fayl. Vykhid z obolonky...
 Perelichuye dostupni komandy
-Vykhid iz tekstovoho redaktora ta zberezhennya nezberezhenykh zmin
 Vyvodytʹ na konsolʹ vmist faylu z nomeramy ryadkiv
 Dodaye novyy ryadok z tekstom u kintsi faylu
 Vydalyaye vkazanyy nomer ryadka
@@ -431,8 +428,6 @@ Vidpovidʹ nediysna. Perekonaytesya, shcho vidpovidʹ ye chyslovoyu dlya zapysiv
 Zminna {0} ne znaydena v zhodnomu z moduliv.
 Zminyuye konfihuratsiyu yadra
 Aktyvuyte 255 kolʹoriv
-Khochete zalyshatysya na zvʺyazku?
-Nediysnyy vybir. Yakshcho prypustyty, shcho ni...
 Zminitʹ kulʹturu pry zmini movy
 Pokazanyy tekst
 Napyshitʹ budʹ-yakyy tekst, yakyy khochete pokazaty. Korotshe - krashche.
@@ -597,9 +592,6 @@ Kolir fonu
 Neytralʹnyy kolir tekstu
 Kolir stseny
 Kolir pomylky
-Stylʹ pidkazky FTP
-Stylʹ pidkazky poshty
-Stylʹ pidkazky SFTP
 Sproba otrymaty dostup do nediysnoho shlyakhu.
 Ochyshchaye tekstovyy fayl
 Vykhid iz tekstovoho redaktora
@@ -673,7 +665,6 @@ Nediysnyy rezhym {0}
 Zavantazhyty temu iz poperednʹo stvorenykh tem...
 Vkazhitʹ nazvu faylu temy bez rozshyrennya .json:
 Vidkryvaye ZIP-arkhiv
-Vykhodytʹ z obolonky ZIP
 Perelichuye vsi fayly v arkhivi
 Rozpakovuye fayl u vkazanyy kataloh abo potochnyy kataloh
 Zminyuye kataloh arkhivu
@@ -811,7 +802,6 @@ Vstanovlyuye spetsialʹni parametry zberezhennya
 Nalashtuvannya dlya zastavky uspishno vstanovleno
 Ne vdalosya vstanovyty nalashtuvannya dlya zastavky
 Vidkryvaye obolonku RSS dlya chytannya kanaliv
-Vykhodytʹ z obolonky RSS i povertayetʹsya do yadra
 Zminyuye posylannya kanalu
 Perelichuye vsi kanaly
 Chytaye kanal u veb-brauzeri
@@ -905,9 +895,6 @@ Komanda, yaku mozhna obhornuty?
 Vstanovyty zminnu obolonky?
 Ne mozhna zapustyty v rezhymi obsluhovuvannya?
 Zastarilo?
-Stylʹ pidkazky RSS
-Stylʹ pidkazky redahuvannya tekstu
-Stylʹ pidkazky Zip Shell
 Papka porozhnya.
 Uspishno perevireno {0}.
 Detalʹnyy zond
@@ -988,7 +975,6 @@ Vlastyvistʹ u fayli JSON ne znaydeno.
 Vylucheno mayno.
 Dodaye novu vlastyvistʹ v kinetsʹ faylu JSON
 Vydalyaye vlastyvistʹ z faylu JSON
-Vykhodytʹ z obolonky JSON
 Vykhodytʹ z obolonky JSON bez zberezhennya zmin
 Zberihaye fayl JSON
 Vidkryvaye obolonku JSON
@@ -1050,8 +1036,6 @@ Stylʹ pidkazky parolya
 Napyshitʹ, yak vy khochete, shchob vasha pidkazka vkhodu bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Napyshitʹ, yak vy khochete, shchob pidkazka vvedennya parolya bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
 Pokazuye povidomlennya dnya pislya vidobrazhennya ekrana vkhodu.
-Testovyy stylʹ pidkazky obolonky
-Stylʹ pidkazky obolonky JSON
 Zonduvaty vvedeni komandy
 Pereviryaye vvedeni komandy na pochatku obolonky yadra.
 Pokazaty detali faylu v spysku
@@ -1272,12 +1256,6 @@ Modelʹ dyska:
 Kulʹtura suchasnoyi movy
 Yakshcho vy vpevneni, shcho vidkryly pravylʹnyy rozdil, perehlyanʹte tse povidomlennya:
 Vykonuye komandu FTP-servera
-Stylʹ pidkazok POP3 dlya poshty
-Interval nadsylannya POP3
-Napyshitʹ, yak vy khochete, shchob pidkazka servera POP3 bula. Zalyshte porozhnim, shchob vykorystovuvaty stylʹ za zamovchuvannyam. Zapovnyuvachi analizuyutʹsya.
-Skilʹky milisekund nadsylaty zapyt POP3?
-Vykorystovuyte POP3
-Chy vykorystovuvaty POP3. Yakshcho vymknuty tse, bude vykorystovuvatysya SMTP.
 Shyfruye ryadok za dopomohoyu CRC32
 Vidkryvaye poshtovyy kliyent
 poshty peredano...
@@ -1339,7 +1317,6 @@ Pravyy kolir ramky dlya rampy
 Vykorystovuyte kolʹory mezh dlya paneli rampy
 Vykorystovuyte kolʹory mezh dlya smuhy rampy. Yakshcho vymkneno, bude stvoryuvatysya sira smuha.
 Zapuskaye obolonku HTTP
-Vykhodytʹ z obolonky HTTP i povertayetʹsya do yadra
 Vstanovlyuye HTTP-sayt. Povynen buty diysnym URI.
 Otrymuye vidpovidʹ vid servera HTTP za dopomohoyu vkazanoho zapytu
 Vydalyaye vmist iz HTTP-servera
@@ -1606,7 +1583,6 @@ Dodaye novi bayty v kinetsʹ faylu
 Ochyshchaye dviykovyy fayl
 Vydalyaye bayt, vykorystovuyuchy nomer bayta
 Vydalyaye diapazon baytiv
-Vykhodytʹ iz shistnadtsyatkovoho redaktora ta zberihaye nezberezheni zminy
 Vykhodytʹ iz shistnadtsyatkovoho redaktora
 Vyvodytʹ na konsolʹ vmist faylu z nomeramy baytiv
 Zapytuye bayt u vyznachenomu diapazoni baytiv abo vsikh baytakh
@@ -1621,7 +1597,6 @@ Nomer bayta ne ye chyslovym.
 Vkazanyy nomer pochatkovoho bayta ne mozhe buty bilʹshym za rozmir faylu.
 Vkazanyy nomer kintsevoho bayta ne mozhe buty bilʹshym za rozmir faylu.
 Vydaleni bayty.
-Shistnadtsyatkovyy stylʹ pidkazky redahuvannya
 Redahuye dviykovyy fayl
 Vybyraye kanal iz nayavnoho spysku kanaliv iz onlayn-dzherel
 Zavantazhennya spysku kanaliv...
@@ -1650,7 +1625,6 @@ Vykorystovuye vidnosnyy shlyakh zamistʹ absolyutnoho
 Fayl modyfikatsiyi nediysnyy.
 Dodaye strichku v zakladky
 Henerator imeni ta prizvyshcha
-Ne vdayetʹsya otrymaty imena ta prizvyshcha:
 Vydalyaye zakladku kanalu
 Kanal ne isnuye v zakladkakh.
 Perelichuye vsi kanaly z zakladkamy

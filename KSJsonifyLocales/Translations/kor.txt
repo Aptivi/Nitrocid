@@ -91,7 +91,6 @@ daunlodeuhageona eoblodeu hal wongyeog dilegtolileul byeongyeonghabnida.
 seobeoeseo wongyeog pail-eul sagjehabnida
 seobeowaui yeongyeol-eul kkeunhseubnida
 baineoli ttoneun tegseuteuleul sayonghayeo wongyeog pail-eul lokeol dilegtolilo daunlodeu
-FTP swel-eul jonglyohago keoneollo dol-agabnida
 doummal hwamyeon-eul pyosihabnida
 lokeol dilegtolileul nayeolhabnida
 wongyeog dilegtolileul nayeolhabnida.
@@ -314,7 +313,6 @@ amholeul iblyeog:
 {0}e yeongyeolhaneun dong-an olyuga balsaenghaessseubnida: {1}
 {0}e yeongyeolhaneun jung ...
 injeung jung ...
-IMAP swel-eul jonglyohabnida
 myeonglyeong moglog
 mesijileul daunlodeuhayeo nayeol
 mesijileul yeobni da
@@ -368,7 +366,6 @@ jonjaehaneun pail-ibnida.
 pail-eul jagseonghaneun jung-e olyuga balsaenghaessseubnida: {0}
 pail-eul yeolji moshaessseubnida. swel jonglyo jung ...
 sayong ganeunghan myeonglyeong-eul nayeolhabnida.
-tegseuteu pyeonjibgileul jonglyohago jeojanghaji anh-eun byeongyeong sahang-eul jeojanghasibsio
 jul beonhowa hamkke pail-ui naeyong-eul konsol-e inswaehabnida
 pail kkeut-e tegseuteugaissneun jul-eul saelo chugahabnida
 jijeongdoen jul beonholeul jegeohabnida
@@ -431,8 +428,6 @@ daedab-i jalmosdoeeossseubnida. dabbyeon-eulo susjaga pil-yohan guseong hangmog-
 modyul-eseo {0} byeonsuleul chaj-eul su eobs-seubnida.
 keoneol guseong byeongyeong
 255 gaji saegsang hwalseonghwa
-gyesog yeongyeol hasigessseubnikka?
-jalmosdoen seontaeg-ibnida. andoendago gajeonghamyeon ...
 eon-eo jeonhwansi munhwa byeongyeong
 pyosidoen tegseuteu
 pyosihalyeoneun tegseuteuleul jagseonghasibsio. jjalb-eulsulog johseubnida.
@@ -597,9 +592,6 @@ baegyeongsaeg
 junglibjeog in tegseuteu saegsang
 mudae saegsang
 olyu saegsang
-FTP peulompeuteu seutail
-meil peulompeuteu seutail
-SFTP peulompeuteu seutail
 jalmosdoen gyeonglo-e aegseseuhalyeogohabnida.
 tegseuteu pail-eul ji ubnida.
 tegseuteu pyeonjibgileul jonglyohabnida.
@@ -673,7 +665,6 @@ jalmosdoen modeu {0}
 mili bildeu doen tema-eseo temalodeu ...
 .json hwagjangja-eobs-i tema pail ileum-eul jijeonghabnida.
 ZIP akaibeuleul yeobni da
-ZIP syel-eul jonglyohabnida.
 akaibeu naeui modeun pail-eul nayeolhabnida.
 jijeongdoen dilegtoli ttoneun hyeonjae dilegtolie pail-eul chuchulhabnida.
 akaibeu dilegtoli byeongyeong
@@ -811,7 +802,6 @@ sayongja jijeong bohogi seoljeong-eul jijeonghabnida.
 seukeulin seibeoe daehan seoljeong-i seong-gongjeog-eulo seoljeongdoeeossseubnida.
 seukeulin seibeo seoljeong-e silpaehaessseubnida.
 RSS syel-eul yeol-eo pideuleul ilgseubnida.
-RSS syel-eul jonglyohago keoneollo dol-agabnida.
 pideu lingkeuleul byeongyeonghabnida.
 modeun pideuleul nayeolhabnida.
 web beulaujeoeseo pideuleul ilgseubnida.
@@ -905,9 +895,6 @@ laeping ganeunghan myeonglyeong?
 syel byeonsuleul seoljeong hasigessseubnikka?
 yuji gwanli modeueseo silhaenghal su eobs-seubnikka?
 gusig?
-RSS peulompeuteu seutail
-tegseuteu pyeonjib peulompeuteu seutail
-Zip swel peulompeuteu seutail
 poldeoga bieo issseubnida.
 {0}eul(leul) seong-gongjeog-eulo geomsaeghaessseubnida.
 sangse peulobeu
@@ -988,7 +975,6 @@ JSON pail naeui sogseong-eul chaj-eul su eobs-seubnida.
 sogseong-eul jegeohaessseubnida.
 JSON pail kkeut-e sae sogseong-eul chugahabnida.
 JSON pail-eseo sogseong-eul jegeohabnida.
-JSON syel-eul jonglyohabnida.
 byeongyeong sahang-eul jeojanghaji anhgo JSON syel-eul jonglyohabnida.
 JSON pail-eul jeojanghabnida.
 JSON syel-eul yeobnida.
@@ -1050,8 +1036,6 @@ bimilbeonho peulompeuteu seutail
 wonhaneun logeu-in peulompeuteuleul jagseonghasibsio. gibon seutail-eul sayonghalyeomyeon biwo dubnida. jali pyosijaga gumun bunseogdoebnida.
 amho peulompeuteuleul wonhaneun bangsig-eulo jagseonghasibsio. gibon seutail-eul sayonghalyeomyeon biwo dubnida. jali pyosijaga gumun bunseogdoebnida.
 logeu-in hwamyeon-eul pyosihan hu oneul-ui mesijileul pyosihabnida.
-teseuteu syel peulompeuteu seutail
-JSON syel peulompeuteu seutail
 peulobeu ju-ib myeonglyeong
 keoneol syel sijag si ju-ibdoen myeonglyeong-eul josahabnida.
 moglog-e pail sebu jeongbo pyosi
@@ -1272,12 +1256,6 @@ diseukeu model:
 hyeonjae eon-eoui munhwa
 olbaleun segsyeon-eul yeol-eossdamyeon da-eum mesijileul hwag-inhaseyo.
 FTP seobeo myeonglyeong-eul silhaenghabnida.
-meil-yong POP3 peulompeuteu seutail
-POP3 ping gangyeog bonaegi
-wonhaneun POP3 seobeo peulompeuteuleul jagseonghasibsio. gibon seutail-eul sayonghalyeomyeon biwo dubnida. jali pyosijaga gumun bunseogdoebnida.
-POP3 ping-eul bonaeneun de myeoch millichoga geollinayo?
-POP3 sayong
-POP3 sayong yeobu. bihwalseonghwahamyeon SMTPga sayongdoebnida.
 CRC32leul sayonghayeo munjayeol amhohwa
 meil keullaieonteuleul yeobnida.
 jeonsongdoen meil-ui...
@@ -1339,7 +1317,6 @@ laempeu baui oleunjjog peuleim saegsang
 laempeu ba-e teduli saegsang sayong
 laempeu ba-e teduli saegsang-eul sayonghabnida. bihwalseonghwadoen gyeong-u hoesaeg magdaega saengseongdoebnida.
 HTTP syel sijag
-HTTP syel-eul jonglyohago keoneollo dol-agabnida.
 HTTP saiteuleul seoljeonghabnida. yuhyohan URIyeoya habnida.
 jijeongdoen yocheong-eul sayonghayeo HTTP seobeoeseo eungdab-eul gajyeoobnida.
 HTTP seobeoeseo kontencheu sagje
@@ -1606,7 +1583,6 @@ pail kkeut-e sae baiteuleul chugahabnida.
 baineoli pail-eul jiubnida.
 baiteu beonholeul sayonghayeo baiteuleul sagjehabnida.
 baiteu beom-wileul sagjehabnida.
-16jinsu pyeonjibgileul jonglyohago jeojanghaji anh-eun byeongyeong sahang-eul jeojanghabnida.
 16jinsu pyeonjibgileul jonglyohabnida.
 baiteu beonhoga issneun pail naeyong-eul konsol-e inswaehabnida.
 jijeongdoen baiteu beom-wi ttoneun modeun baiteuui baiteuleul kwolihabnida.
@@ -1621,7 +1597,6 @@ baiteu beonhoneun susjaga anibnida.
 jijeongdoen sijag baiteu suneun pail keugiboda keul su eobs-seubnida.
 jijeongdoen kkeut baiteu suneun pail keugiboda keul su eobs-seubnida.
 sagjedoen baiteu-ibnida.
-16jinsu pyeonjib peulompeuteu seutail
 baineoli pail-eul pyeonjibhabnida.
 onlain soseuui gijon pideu moglog-eseo pideuleul seontaeghabnida.
 pideu moglog daunlodeu jung...
@@ -1650,7 +1625,6 @@ jeoldae gyeonglo daesin sangdae gyeonglo sayong
 modeu pail-i jalmosdoeeossseubnida.
 pideu bugmakeu
 ileum mich seong saengseong-gi
-ileumgwa seong-eul gajyeool su eobs-eum:
 pideu bugmakeu jegeo
 bugmakeue pideuga eobs-seubnida.
 bugmakeudoen modeun pideuleul nayeolhabnida.

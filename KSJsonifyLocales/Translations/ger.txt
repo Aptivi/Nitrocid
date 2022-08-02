@@ -91,7 +91,6 @@ Ruft das aktuelle ferne Verzeichnis ab
 Löscht die entfernte Datei vom Server
 Trennt die Verbindung zum Server
 Lädt die Remote-Datei in das lokale Verzeichnis unter Verwendung von Binär- oder Textdateien
-Beendet die FTP-Shell und kehrt zum Kernel zurück
 Zeigt Hilfebildschirm
 Listet das lokale Verzeichnis auf
 Listet das entfernte Verzeichnis auf
@@ -314,7 +313,6 @@ Passwort eingeben:
 Fehler beim Herstellen einer Verbindung zu {0}: {1}
 Verbindung zu {0} herstellen ...
 Authentifizierung ...
-Beendet die IMAP-Shell
 Liste der Befehle
 Lädt Nachrichten herunter und listet sie auf
 Öffnet eine Nachricht
@@ -368,7 +366,6 @@ Die Datei existiert bereits.
 Fehler beim Erstellen einer Datei: {0}
 Datei konnte nicht geöffnet werden. Shell verlassen ...
 Listet verfügbare Befehle auf
-Beendet den Texteditor und speichert nicht gespeicherte Änderungen
 Druckt den Inhalt der Datei mit Zeilennummern an die Konsole
 Fügt am Ende der Datei eine neue Zeile mit Text hinzu
 Entfernt die angegebene Zeilennummer
@@ -431,8 +428,6 @@ Die Antwort ist ungültig. Stellen Sie sicher, dass die Antwort für Konfigurati
 Die Variable {0} wurde in keinem der Module gefunden.
 Ändert die Kernelkonfiguration
 Aktiviere 255 Farben
-Möchten Sie in Verbindung bleiben?
-Ungültige Wahl. Vorausgesetzt nein ...
 Kultur beim Sprachenwechsel ändern
 Text angezeigt
 Schreiben Sie einen beliebigen Text, den Sie anzeigen möchten. Kürzer ist besser.
@@ -597,9 +592,6 @@ Hintergrundfarbe
 Neutrale Textfarbe
 Bühnenfarbe
 Fehlerfarbe
-FTP-Eingabeaufforderungsstil
-Mail Prompt Style
-SFTP-Eingabeaufforderungsstil
 Versuch, auf einen ungültigen Pfad zuzugreifen.
 Löscht die Textdatei
 Beendet den Texteditor
@@ -673,7 +665,6 @@ Ungültiger Modus {0}
 Theme aus vorgefertigten Themes laden...
 Geben Sie den Namen der Designdatei ohne die Erweiterung .json an:
 Öffnet ein ZIP-Archiv
-Beendet die ZIP-Shell
 Listet alle Dateien im Archiv auf
 Extrahiert eine Datei in ein angegebenes Verzeichnis oder ein aktuelles Verzeichnis
 Ändert das Archivverzeichnis
@@ -811,7 +802,6 @@ Legt benutzerdefinierte Spareinstellungen fest
 Einstellungen für Bildschirmschoner erfolgreich eingestellt
 Einstellung für Bildschirmschoner fehlgeschlagen
 Öffnet eine RSS-Shell zum Lesen der Feeds
-Beendet die RSS-Shell und kehrt zum Kernel zurück
 Ändert den Feed-Link
 Listet alle Feeds auf
 Liest einen Feed in einem Webbrowser
@@ -905,9 +895,6 @@ Einwickelbarer Befehl?
 Shell-Variable setzen?
 Kann nicht im Wartungsmodus ausgeführt werden?
 Obsolet?
-RSS-Eingabeaufforderungsstil
-Eingabeaufforderungsstil für Textbearbeitung
-Stil mit Reißverschluss-Eingabeaufforderung
 Der Ordner ist leer.
 {0} erfolgreich getestet.
 Ausführliche Sonde
@@ -988,7 +975,6 @@ Die Eigenschaft in der JSON-Datei wurde nicht gefunden.
 Entferntes Eigentum.
 Fügt eine neue Eigenschaft am Ende der JSON-Datei hinzu
 Entfernt eine Eigenschaft aus der JSON-Datei
-Beendet die JSON-Shell
 Beendet die JSON-Shell, ohne die Änderungen zu speichern
 Speichert die JSON-Datei
 Öffnet die JSON-Shell
@@ -1050,8 +1036,6 @@ Stil der Passwortabfrage
 Schreiben Sie, wie Ihre Anmeldeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
 Schreiben Sie, wie Ihre Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
 Zeigt die Nachricht des Tages nach dem Anzeigen des Anmeldebildschirms.
-Shell-Eingabeaufforderungsstil testen
-JSON-Shell-Eingabeaufforderungsstil
 Testen Sie injizierte Befehle
 Prüft die eingefügten Befehle beim Start der Kernel-Shell.
 Dateidetails in der Liste anzeigen
@@ -1272,12 +1256,6 @@ Festplattenmodell:
 Kultur der aktuellen Sprache
 Wenn Sie sicher sind, dass Sie den richtigen Abschnitt geöffnet haben, sehen Sie sich diese Nachricht an:
 Führt einen FTP-Serverbefehl aus
-POP3-Eingabeaufforderungsstil für E-Mails
-POP3-Ping-Intervall senden
-Schreiben Sie, wie die Eingabeaufforderung Ihres POP3-Servers aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.
-Wie viele Millisekunden soll der POP3-Ping gesendet werden?
-Verwenden Sie POP3
-Ob POP3 verwendet werden soll. Wenn Sie dies deaktivieren, wird SMTP verwendet.
 Verschlüsselt einen String mit CRC32
 Öffnet den Mailclient
 der E-Mail übertragen ...
@@ -1339,7 +1317,6 @@ Rechte Rahmenfarbe für Rampenstange
 Verwenden Sie Rahmenfarben für die Rampenleiste
 Verwenden Sie die Rahmenfarben für die Rampenleiste. Wenn deaktiviert, wird ein grauer Balken erzeugt.
 Startet die HTTP-Shell
-Beendet die HTTP-Shell und kehrt zum Kernel zurück
 Legt die HTTP-Site fest. Muss ein gültiger URI sein.
 Ruft die Antwort vom HTTP-Server mithilfe der angegebenen Anforderung ab
 Löscht Inhalte vom HTTP-Server
@@ -1606,7 +1583,6 @@ Fügt die neuen Bytes am Ende der Datei hinzu
 Löscht die Binärdatei
 Löscht ein Byte anhand der Bytenummer
 Löscht den Bereich von Bytes
-Beendet den Hex-Editor und speichert ungespeicherte Änderungen
 Beendet den Hex-Editor
 Gibt den Inhalt der Datei mit Bytenummern an die Konsole aus
 Fragt ein Byte in einem angegebenen Bereich von Bytes oder alle Bytes ab
@@ -1621,7 +1597,6 @@ Die Bytenummer ist nicht numerisch.
 Die angegebene Startbytezahl darf nicht größer als die Dateigröße sein.
 Die angegebene Endbytezahl darf nicht größer als die Dateigröße sein.
 Gelöschte Bytes.
-Eingabeaufforderungsstil Hex bearbeiten
 Bearbeitet eine Binärdatei
 Wählt den Feed aus der bestehenden Feed-Liste aus Online-Quellen aus
 Feedliste wird heruntergeladen...
@@ -1650,7 +1625,6 @@ Verwendet einen relativen Pfad anstelle eines absoluten
 Die Moddatei ist ungültig.
 Lesezeichen für den Feed
 Vor- und Nachnamengenerator
-Vor- und Nachnamen können nicht abgerufen werden:
 Entfernt das Feed-Lesezeichen
 Der Feed existiert nicht in Lesezeichen.
 Listet alle mit Lesezeichen versehenen Feeds auf

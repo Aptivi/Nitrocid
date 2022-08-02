@@ -91,7 +91,6 @@ yughayir aldalil albaeid liltanzil minh 'aw altahmil 'iilayh
 hadhaf almilafu albaeid min alkhadim
 qate alaitisal min alkhadim
 yaqum bitanzil almilafi albaeid 'iilaa aldalil almahaliyi biastikhdam thunayiyin 'aw nas
-yakhruj shell FTP wayaeud 'iilaa kernel
 yuzhir shashat almusaeada
 yusarid aldalil almahaliyu
 yusarid aldalil albaeid
@@ -314,7 +313,6 @@ yahsab majmue almilaffat fi aldalil almuhadad.
 khata 'athna' alaitisal b {0}: {1}
 jar alaitisal b {0} ...
 musadaqa ...
-yakhruj min qadhifat IMAP
 qayimat al'awamir
 tanzil alrasayil wa'iidrajiha
 yaftah risalatan
@@ -368,7 +366,6 @@ almilafu mawjud bialfiel.
 khata fi muhawalat 'iinsha' mlf: {0}
 fashilu fath milf. alkhuruj min alsudfa ...
 yusarid al'awamir almutaha
-alkhuruj min muharir alnusus wahifz altaghyirat ghyr almahfuza
 yatbae muhtawiat almilafi bi'arqam al'ustur 'iilaa wahdat altahakum
 yudif strana jdydana yahtawi ealaa nasin fi nihayat almilafi
 yazil raqm alsatar almuhadad
@@ -431,8 +428,6 @@ aljawab ghayr sahihi. tuhaqiq lilta'akud min 'ana al'iijabat raqmiat li'iidkhala
 almutaghayir {0} ghayr mawjud fi 'ayin min alwahdati.
 yughayir takwin alnawa
 tafeil 255 lawna
-hal turid albaqa' ealaa atisalu?
-akhtiar ghayr sahihin. biaftirad la ...
 taghyir althaqafat eind tabdil allughat
 yuzhar alnasu
 aktub 'aya nasin turid 'iizharahu. al'aqsar hu al'afdala.
@@ -597,9 +592,6 @@ lawn alkhalfia
 lawn nasi mahayid
 lawn almarhala
 lawn alkhata
-namat muajah FTP
-namatu muajah albarid
-namat mutalabat SFTP
 tuhawil alwusul 'iilaa masar ghyr salih.
 yamsah almilafu alnasia
 yakhruj min muharar alnusus
@@ -673,7 +665,6 @@ wade ghayr salih {0}
 tahmil simat min simat musbaqat alsune ...
 hadad asm milafi alnasaq bidun amtidad .json:
 yaftah milafu 'arshif bitansiq ZIP
-yakhruj min ghilaf ZIP
 yasrud jamie almilafaat almawjudat dakhil al'arshif
 yustakhrij mlfana 'iilaa dalil muhadad 'aw dalil haliin
 yughayir dalil al'arshif
@@ -811,7 +802,6 @@ yadbit 'iiedadat altawaquf almukhasasa
 tama dabt al'iiedadat binajah lishashat altawaquf
 fashil fi taeyin al'iiedad lishashat altawaquf
 yaftah qadhifatan RSS liqira'at alkhalasat
-yakhruj RSS shell wayaeud 'iilaa kernel
 yughayir artibat alkhulasa
 yasrud jamie al'aelaf
 yaqra mujaz wib fi mutasafih alwib
@@ -905,9 +895,6 @@ alhujaj almatlubatu?
 tahdid mutaghayir qadhifatun?
 la yumkin 'an taemal fi wade alsiyanati?
 eafa ealayha alzamana?
-'uslub muajah RSS
-namat muajih tahrir alnasi
-namat muajah min nawe Zip Shell
 mujalad farghi.
 tama fahs {0} binajahi.
 misbar mutawal
@@ -988,7 +975,6 @@ lam yatima aleuthur ealaa alkhasiyat dakhil milafi JSON.
 almumtalakat alati tamat 'iizalataha.
 yudif khasiyatan jadidatan fi nihayat milafi JSON
 yuzil khasiyatan min milafi JSON
-yakhruj min ghilaf JSON
 yakhruj min ghilaf JSON bidun hifz altaghyirat
 yahfaz milaff JSON
 yaftah ghilaf JSON
@@ -1050,8 +1036,6 @@ aism almustakhdim muajah alnamat
 aiktub kayf turid 'an takun mutalabat tasjil aldukhul alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibati.
 aiktub kayf turid 'an takun mutalabatan kalimat almurur alkhasat bika. atrukh farighan liaistikhdam alnamat alaiftiradi. yatimu tahlil aleanasir alnaayibatu.
 yaerid risalat alyawm baed eard shashat tasjil aldukhuli.
-aikhtibar namat muajah shil
-namat muajah JSON Shell
 daqaq fi al'awamir almahquna
 yasbur al'awamir almahqunat fi bidayat ghilaf alnawati.
 'iizhar tafasil almilafi fi alqayima
@@ -1272,12 +1256,6 @@ tiraz alqirsu:
 thaqafat allughat alhalia
 'iidha kunt mtakdan min 'anak fataht alqism alsahih , fatahaqaq min hadhih alrisalati:
 yunafidh 'amr khadim FTP
-namat muajah POP3 lilbarid
-'iirsal alfasil alzamanii bingh POP3
-aktub kayf turid 'an takun mutalabat khadim POP3. atrukh farighan liastikhdam alnamat aliaftiradi. yatimu tahlil aleanasir alnaayibati.
-kam eadad almalli thaniatan li'iirsal 'amr ping eabr burutukul POP3؟
-astakhdim burutukul POP3
-ma 'iidha kan yajib astikhdam POP3. taetil hadha sayustakhdam SMTP.
 yushfar silsilatan biastikhdam CRC32
 yaftah eamil albarid
 min naql albarid ...
@@ -1339,7 +1317,6 @@ lawn al'iitar al'ayman lisharit almunhadar
 astakhdim 'alwan alhudud lisharit almunhadar
 astakhdim 'alwan alhudud lisharit almunhadiri. 'iidha tama taetiluh , fasayatimu 'iinsha' sharit ramadi.
 yabda qadhifat HTTP
-yakhruj HTTP shell wayaeud 'iilaa kernel
 yeyn mawqie HTTP. yajib 'an yakun URI salhan.
 yahsul ealaa aliastijabat min khadim HTTP biastikhdam altalab almuhadad
 yahdhaf almuhtawaa min khadim HTTP
@@ -1606,7 +1583,6 @@ yudif wahadat albayit aljadidat fi nihayat almilafi
 yamsah almilafu althunayiyu
 yahdhaf bayat biastikhdam raqm albayt
 yahdhif nitaq albayt
-yakhruj min muharar sita eishri wayahfaz altaghyirat ghayr almahfuza
 yakhruj min muharir sita eishri
 yatbae muhtawayat almilafi bi'arqam bayat ealaa wahdat altahakum
 liliaistielam ean bayt fi nitaq muhadad min albayit 'aw kuli albayt
@@ -1621,7 +1597,6 @@ raqm albayt lays rqmyan.
 yajib 'alaa yakun raqm bayt albidayat almuhadad 'akbar min hajm almilafa.
 yajib 'alaa yakun raqm bayat alnihayat almuhadad 'akbar min hajm almilafa.
 albayt almahdhufatu.
-namat muajah tahrir sudasiun eashriun
 yaqum bitahrir milafin thunayiyin
 tahdid altaghdhiat min qayimat altaghdhiat almawjudat min almasadir eabr al'iintirnit
 jar tanzil qayimat alkhulasa ...
@@ -1650,7 +1625,6 @@ yastakhdim almasar alnisbiu bdlaan min almasar almutlaq
 alnamudhaj ghayr salihin.
 'iisharat marjieiat alkhulasa
 mawlid aliasm wallaqab
-la yumkin alhusul ealaa al'asma' wal'alqabi:
 yuzil 'iisharat marjieiat mujaz
 alkhulasat ghayr mawjudat fi al'iisharat almarjieiati.
 yasrud jamie al'aelaf almarjieia

@@ -91,7 +91,6 @@ Cambia el directorio remoto para descargar o subir a
 Borra el archivo remoto del servidor
 Desconecta del servidor
 Descarga el archivo remoto al directorio local usando binario o texto
-Sale del shell FTP y regresa al kernel
 Muestra la pantalla de ayuda
 Lista del directorio local
 Lista del directorio remoto
@@ -314,7 +313,6 @@ Introducir la contraseña:
 Error al conectarse a {0}: {1}
 Conectando a {0} ...
 Autenticando ...
-Sale del shell IMAP
 Lista de comandos
 Descarga mensajes y los enumera
 Abre un mensaje
@@ -368,7 +366,6 @@ El archivo ya existe.
 Error al intentar crear un archivo: {0}
 Fallo al abrir el archivo. Saliendo de la carcasa ...
 Enumera los comandos disponibles.
-Sale del editor de texto y guarda los cambios no guardados
 Imprime el contenido del archivo con números de línea en la consola
 Agrega una nueva línea con texto al final del archivo
 Elimina el número de línea especificado.
@@ -431,8 +428,6 @@ La respuesta no es válida. Verifique para asegurarse de que la respuesta sea nu
 La variable {0} no se encuentra en ninguno de los módulos.
 Cambia la configuración del kernel
 Activar 255 colores
-¿Quieres mantenerte conectado?
-Elección no válida Suponiendo que no ...
 Cambiar de cultura al cambiar de idioma
 Texto mostrado
 Escriba el texto que desee que se muestre. Cuanto más corto, mejor.
@@ -597,9 +592,6 @@ Color de fondo
 Color de texto neutro
 Color del escenario
 Color de error
-Estilo de solicitud de FTP
-Estilo de mensaje de correo
-Estilo de mensaje SFTP
 Intentando acceder a una ruta no válida.
 Borra el archivo de texto
 Sale del editor de texto.
@@ -673,7 +665,6 @@ Modo no válido {0}
 Cargar tema desde temas prediseñados ...
 Especifique el nombre del archivo del tema sin la extensión .json:
 Abre un archivo ZIP
-Sale del caparazón ZIP
 Muestra todos los archivos dentro del archivo.
 Extrae un archivo a un directorio específico o un directorio actual
 Cambia el directorio de archivos
@@ -811,7 +802,6 @@ Establece la configuración del protector personalizado
 La configuración se estableció correctamente para el protector de pantalla
 No se pudo establecer una configuración para el protector de pantalla
 Abre un shell RSS para leer los feeds.
-Sale del shell RSS y vuelve al kernel
 Cambia el enlace del feed
 Muestra todos los feeds
 Lee un feed en un navegador web
@@ -905,9 +895,6 @@ Cantidad mínima de argumentos requeridos:
 ¿Configurando la variable de shell?
 ¿No se puede ejecutar en modo de mantenimiento?
 ¿Obsoleto?
-Estilo de mensaje RSS
-Estilo de solicitud de edición de texto
-Estilo de aviso de cremallera
 La carpeta está vacía.
 Probado con éxito {0}.
 Sonda detallada
@@ -988,7 +975,6 @@ No se encuentra la propiedad dentro del archivo JSON.
 Propiedad eliminada.
 Agrega una nueva propiedad al final del archivo JSON
 Elimina una propiedad del archivo JSON
-Sale del shell JSON
 Sale del shell JSON sin guardar los cambios.
 Guarda el archivo JSON
 Abre el shell JSON
@@ -1050,8 +1036,6 @@ Estilo de solicitud de contraseña
 Escribe cómo quieres que sea tu indicador de inicio de sesión. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Escribe cómo quieres que sea tu solicitud de contraseña. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
 Muestra el mensaje del día después de mostrar la pantalla de inicio de sesión.
-Estilo de solicitud de shell de prueba
-Estilo de solicitud de shell JSON
 Comandos inyectados con sonda
 Sondea los comandos inyectados al comienzo del shell del kernel.
 Mostrar detalles del archivo en la lista
@@ -1272,12 +1256,6 @@ Modelo de disco:
 Cultura de la lengua actual
 Si está seguro de haber abierto la sección correcta, consulte este mensaje:
 Ejecuta un comando de servidor FTP
-Estilo de aviso POP3 para correo
-Enviar intervalo de ping POP3
-Escribe cómo quieres que sea el indicador de tu servidor POP3. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan.
-¿Cuántos milisegundos para enviar el ping POP3?
-Usar POP3
-Ya sea para usar POP3. Deshabilitar esto usará SMTP.
 Cifra una cadena usando CRC32
 Abre el cliente de correo.
 de correo transferido...
@@ -1339,7 +1317,6 @@ Color de marco derecho para barra de rampa
 Usar colores de borde para la barra de rampa
 Utilice los colores de borde para la barra de rampa. Si está deshabilitado, generará una barra gris.
 Inicia el shell HTTP
-Sale del shell HTTP y regresa al kernel
 Establece el sitio HTTP. Debe ser un URI válido.
 Obtiene la respuesta del servidor HTTP utilizando la solicitud especificada
 Elimina contenido del servidor HTTP
@@ -1606,7 +1583,6 @@ Agrega los nuevos bytes al final del archivo.
 Borra el archivo binario
 Elimina un byte usando el número de byte
 Elimina el rango de bytes
-Sale del editor hexadecimal y guarda los cambios no guardados
 Sale del editor hexadecimal
 Imprime el contenido del archivo con números de byte a la consola
 Consulta un byte en un rango específico de bytes o todos los bytes
@@ -1621,7 +1597,6 @@ El número de byte no es numérico.
 El número de byte de inicio especificado no puede ser mayor que el tamaño del archivo.
 El número de byte final especificado no puede ser mayor que el tamaño del archivo.
 Bytes eliminados.
-Estilo de solicitud de edición hexadecimal
 Edita un archivo binario
 Selecciona el feed de la lista de feeds existente de fuentes en línea
 Descargando lista de fuentes...
@@ -1650,7 +1625,6 @@ Utiliza ruta relativa en lugar de absoluta
 El archivo mod no es válido.
 Marca el feed
 Generador de nombres y apellidos
-No puedo obtener nombres y apellidos:
 Elimina el marcador de alimentación
 El feed no existe en los marcadores.
 Enumera todos los feeds marcados

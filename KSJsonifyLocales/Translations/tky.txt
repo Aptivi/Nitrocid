@@ -91,7 +91,6 @@ Geçerli uzak dizini alır
 Uzak dosyayı sunucudan siler
 Sunucuyla bağlantıyı keser
 Uzak dosyayı ikili veya metin kullanarak yerel dizine indirir
-FTP kabuğundan çıkar ve çekirdeğe döner
 Yardım ekranını gösterir
 Yerel dizini listeler
 Uzak dizini listeler
@@ -314,7 +313,6 @@ Parolanı Gir:
 {0}'e bağlanırken hata oluştu: {1}
 {0} ile bağlanılıyor...
 Kimlik doğrulanıyor...
-IMAP kabuğundan çıkar
 Komutların listesi
 Mesajları indirir ve listeler
 Bir mesaj açar
@@ -368,7 +366,6 @@ Dosya zaten mevcut.
 Dosya oluşturmaya çalışırken hata oluştu: {0}
 Dosya açılamadı. Kabuktan çıkılıyor...
 Kullanılabilir komutları listeler
-Metin düzenleyiciden çıkar ve kaydedilmemiş değişiklikleri kaydeder
 Satır numaralarıyla dosyanın içeriğini konsola yazdırır
 Dosyanın sonuna metin içeren yeni bir satır ekler
 Belirtilen satır numarasını kaldırır
@@ -431,8 +428,6 @@ Cevap geçersiz. Yanıt olarak sayılara ihtiyaç duyan yapılandırma girişler
 Modüllerin hiçbirinde {0} değişkeni bulunamadı.
 Çekirdek yapılandırmasını değiştirir
 255 rengi etkinleştir
-Bağlı kalmak istiyor musunuz?
-Geçersiz seçim. Hayır olduğunu varsayarsak...
 Dil Değiştirirken Kültürü Değiştirin
 Gösterilen metin
 Gösterilmesini istediğiniz herhangi bir metni yazın. Daha kısa daha iyidir.
@@ -597,9 +592,6 @@ Arka plan rengi
 Nötr metin rengi
 Sahne rengi
 Hata rengi
-FTP İstemi Stili
-Posta İstemi Stili
-SFTP İstemi Stili
 Geçersiz yola erişmeye çalışıyor.
 Metin dosyasını temizler
 Metin düzenleyiciden çıkar
@@ -673,7 +665,6 @@ Geçersiz mod {0}
 Temayı Önceden Oluşturulmuş Temalardan Yükle...
 .json uzantısı olmadan tema dosya adını belirtin:
 Bir ZIP arşivi açar
-ZIP kabuğundan çıkar
 Arşiv içindeki tüm dosyaları listeler
 Bir dosyayı belirli bir dizine veya geçerli bir dizine ayıklar
 Arşiv dizinini değiştirir
@@ -811,7 +802,6 @@ Doğruysa, tüm donanımı araştırır; aksi takdirde, yalnızca gerekli donan�
 Ekran koruyucu için ayarlar başarıyla ayarlandı
 Ekran koruyucu için bir ayar belirlenemedi
 Beslemeleri okumak için bir RSS kabuğu açar
-RSS kabuğundan çıkar ve çekirdeğe geri döner
 Besleme bağlantısını değiştirir
 Tüm yayınları listeler
 Bir web tarayıcısında bir beslemeyi okur
@@ -905,9 +895,6 @@ Sarılabilir komut?
 Kabuk değişkeni ayarlanıyor mu?
 Bakım modunda çalıştırılamıyor mu?
 Modası geçmiş?
-RSS İstemi Stili
-Metin Düzenleme İstemi Stili
-Zip Kabuk İstemi Stili
 Klasör boş.
 {0} başarıyla araştırıldı.
 Ayrıntılı Prob
@@ -988,7 +975,6 @@ JSON dosyasının içindeki özellik bulunamadı.
 Kaldırılan mülk.
 JSON dosyasının sonuna yeni bir özellik ekler
 JSON dosyasından bir özelliği kaldırır
-JSON kabuğundan çıkar
 Değişiklikleri kaydetmeden JSON kabuğundan çıkar
 JSON dosyasını kaydeder
 JSON kabuğunu açar
@@ -1050,8 +1036,6 @@ Kullanıcı adı istemi stili
 Giriş isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
 Parola isteminizin nasıl olmasını istiyorsanız öyle yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
 Giriş ekranı görüntülendikten sonra Günün Mesajını gösterir.
-Kabuk İstemi Stilini Test Et
-JSON Kabuk İstemi Stili
 Prob enjekte edilen komutlar
 Çekirdek kabuğunun başlangıcında enjekte edilen komutları araştırır.
 Dosya ayrıntılarını listede göster
@@ -1272,12 +1256,6 @@ Disk modeli:
 Mevcut dilin kültürü
 Doğru bölümü açtığınızdan eminseniz şu mesajı kontrol edin:
 Bir FTP sunucusu komutu yürütür
-Posta için POP3 bilgi istemi stili
-POP3 ping aralığı gönder
-POP3 sunucusu isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.
-POP3 pingini göndermek için kaç milisaniye?
-POP3'ü kullan
-POP3 kullanılıp kullanılmayacağı. Bunu devre dışı bırakmak SMTP'yi kullanır.
 CRC32 kullanarak bir dizeyi şifreler
 Posta istemcisini açar
 aktarılan posta sayısı...
@@ -1339,7 +1317,6 @@ Rampa çubuğu için sağ çerçeve rengi
 Rampa çubuğu için kenarlık renklerini kullanın
 Rampa çubuğu için kenarlık renklerini kullanın. Devre dışı bırakılırsa, gri bir çubuk oluşturur.
 HTTP kabuğunu başlatır
-HTTP kabuğundan çıkar ve çekirdeğe döner
 HTTP sitesini ayarlar. Geçerli bir URI olmalıdır.
 Belirtilen isteği kullanarak HTTP sunucusundan yanıt alır
 İçeriği HTTP sunucusundan siler
@@ -1606,7 +1583,6 @@ Yeni baytları dosyanın sonuna ekler
 İkili dosyayı temizler
 Bayt numarasını kullanarak bir baytı siler
 Bayt aralığını siler
-Onaltılık düzenleyiciden çıkar ve kaydedilmemiş değişiklikleri kaydeder
 altıgen düzenleyiciden çıkar
 Dosyanın içeriğini bayt numaralarıyla konsola yazdırır
 Belirli bir bayt aralığında veya tüm baytlarda bir baytı sorgular
@@ -1621,7 +1597,6 @@ Bayt numarası sayısal değildir.
 Belirtilen başlangıç ​​bayt numarası dosya boyutundan büyük olamaz.
 Belirtilen bitiş bayt numarası dosya boyutundan büyük olamaz.
 Silinen baytlar.
-Onaltılı Düzenleme İstemi Stili
 Bir ikili dosyayı düzenler
 Çevrimiçi kaynaklardan mevcut besleme listesinden beslemeyi seçer
 Yayın listesi indiriliyor...
@@ -1650,7 +1625,6 @@ Mutlak yerine göreli yolu kullanır
 Mod dosyası geçersiz.
 Feed'i yer imlerine ekler
 Ad ve soyad oluşturucu
-Ad ve soyadları alınamıyor:
 Besleme yer imini kaldırır
 Feed, yer işaretlerinde mevcut değil.
 Yer imi eklenmiş tüm yayınları listeler

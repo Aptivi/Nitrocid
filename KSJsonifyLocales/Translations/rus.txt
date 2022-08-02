@@ -91,7 +91,6 @@ Izmenyayet udalennyy katalog dlya zagruzki ili zagruzki v
 Udalyayet udalennyy fayl s servera
 Otklyuchayetsya ot servera
 Zagruzhayet udalennyy fayl v lokal'nyy katalog, ispol'zuya dvoichnyy ili tekstovyy
-Vykhodit iz obolochki FTP i vozvrashchayetsya v yadro
 Pokazyvayet ekran pomoshchi
 Spisok lokal'nykh katalogov
 Perechislyayet udalennyy katalog
@@ -314,7 +313,6 @@ Vvedite parol':
 Oshibka pri podklyuchenii k {0}: {1}
 Podklyucheniye k {0} ...
 Proverka podlinnosti ...
-Vykhod iz obolochki IMAP
 Spisok komand
 Zagruzhayet soobshcheniya i perechislyayet ikh
 Otkryvayet soobshcheniye
@@ -368,7 +366,6 @@ Fayl uzhe sushchestvuyet.
 Oshibka pri popytke sozdat' fayl: {0}
 Ne udalos' otkryt' fayl. Vykhod iz obolochki ...
 Spisok dostupnykh komand
-Vykhod iz tekstovogo redaktora i sokhraneniye nesokhranennykh izmeneniy.
 Vyvodit soderzhimoye fayla s nomerami strok na konsol'
 Dobavlyayet novuyu stroku s tekstom v kontse fayla
 Udalyayet ukazannyy nomer stroki
@@ -431,8 +428,6 @@ Otvet nevernyy. Ubedites', chto otvet yavlyayetsya chislovym dlya zapisey konfig
 Peremennaya {0} ne naydena ni v odnom iz moduley.
 Izmenyayet konfiguratsiyu yadra
 Aktivirovat' 255 tsvetov
-Vy khotite ostavat'sya na svyazi?
-Nevernyy vybor. Predpolagaya, chto net ...
 Izmenite kul'turu pri pereklyuchenii yazykov
 Tekst pokazan
 Napishite lyuboy tekst, kotoryy khotite pokazat'. Koroche luchshe.
@@ -597,9 +592,6 @@ Fonovyy tsvet
 Neytral'nyy tsvet teksta
 Tsvet stseny
 Tsvet oshibki
-Stil' priglasheniya FTP
-Stil' pochtovoy podskazki
-Stil' podskazki SFTP
 Popytka poluchit' dostup k nevernomu puti.
 Ochishchayet tekstovyy fayl
 Vykhod iz tekstovogo redaktora
@@ -673,7 +665,6 @@ Nedeystvitel'nyy rezhim {0}
 Zagruzit' temu iz gotovykh tem ...
 Ukazhite imya fayla temy bez rasshireniya .json:
 Otkryvayet ZIP-arkhiv
-Vykhod iz obolochki ZIP
 Spisok vsekh faylov vnutri arkhiva
 Izvlekayet fayl v ukazannyy katalog ili tekushchiy katalog
 Izmenyayet katalog arkhiva
@@ -811,7 +802,6 @@ Ustanavlivayet pol'zovatel'skiye nastroyki zastavki
 Nastroyki dlya zastavki uspeshno ustanovleny
 Ne udalos' ustanovit' nastroyki dlya zastavki.
 Otkryvayet obolochku RSS dlya chteniya lent
-Vykhodit iz obolochki RSS i vozvrashchayetsya v yadro
 Izmenyayet ssylku na fid
 Perechislyayet vse kanaly
 Chitayet lentu v veb-brauzere
@@ -905,9 +895,6 @@ Oborachivayemaya komanda?
 Ustanovka peremennoy obolochki?
 Ne mozhet rabotat' v rezhime obsluzhivaniya?
 Ustarevshiy?
-Stil' podskazki RSS
-Stil' podskazki redaktirovaniya teksta
-Zastezhka-molniya v stile podskazki
 Papka pusta.
 Uspeshno issledovano {0}.
 Podrobnyy zond
@@ -988,7 +975,6 @@ Svoystvo vnutri fayla JSON ne naydeno.
 Udalennoye svoystvo.
 Dobavlyayet novoye svoystvo v konets fayla JSON.
 Udalyayet svoystvo iz fayla JSON
-Vykhod iz obolochki JSON
 Vykhod iz obolochki JSON bez sokhraneniya izmeneniy
 Sokhranyayet fayl JSON
 Otkryvayet obolochku JSON
@@ -1050,8 +1036,6 @@ Stil' podskazki parolya
 Napishite, kak vy khotite, chtoby vashe priglasheniye dlya vkhoda bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
 Napishite, kakim vy khotite, chtoby vash parol' byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
 Pokazyvayet soobshcheniye dnya posle otobrazheniya ekrana vkhoda v sistemu.
-Stil' priglasheniya testovoy obolochki
-Stil' priglasheniya obolochki JSON
 Komandy, vvodimyye zondom
 Proveryayet vvedennyye komandy v nachale obolochki yadra.
 Pokazat' detali fayla v spiske
@@ -1272,12 +1256,6 @@ Model' diska:
 Kul'tura tekushchego yazyka
 Yesli vy uvereny, chto otkryli nuzhnyy razdel, prover'te eto soobshcheniye:
 Vypolnyayet komandu FTP-servera
-Stil' priglasheniya POP3 dlya pochty
-Otpravlyat' interval pinga POP3
-Napishite, kak vy khotite, chtoby vashe priglasheniye servera POP3 bylo. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya.
-Skol'ko millisekund otpravlyat' ping POP3?
-Ispol'zovat' POP3
-Ispol'zovat' li POP3. Otklyucheniye etogo budet ispol'zovat' SMTP.
 Shifruyet stroku s pomoshch'yu CRC32
 Otkryvayet pochtovyy kliyent
 pochty peredano...
@@ -1339,7 +1317,6 @@ Pravil'nyy tsvet ramki dlya pandusa
 Ispol'zuyte tsveta granits dlya pandusa
 Ispol'zuyte tsveta granits dlya paneli rampy. Yesli otklyucheno, budet generirovat'sya seraya polosa.
 Zapuskayet HTTP-obolochku
-Vykhodit iz obolochki HTTP i vozvrashchayetsya v yadro
 Ustanavlivayet HTTP-sayt. Dolzhen byt' dopustimym URI.
 Poluchayet otvet ot HTTP-servera, ispol'zuya ukazannyy zapros
 Udalyayet kontent s HTTP-servera
@@ -1606,7 +1583,6 @@ Dobavlyayet novyye bayty v konets fayla
 Ochishchayet binarnyy fayl
 Udalyayet bayt, ispol'zuya nomer bayta
 Udalyayet diapazon baytov
-Vykhod iz shestnadtsaterichnogo redaktora i sokhraneniye nesokhranennykh izmeneniy
 Vykhod iz shestnadtsaterichnogo redaktora
 Vyvodit v konsol' soderzhimoye fayla s nomerami baytov
 Zaprashivayet bayt v ukazannom diapazone baytov ili vse bayty
@@ -1621,7 +1597,6 @@ Nomer bayta ne chislovoy.
 Ukazannyy nomer nachal'nogo bayta ne mozhet byt' bol'she razmera fayla.
 Ukazannyy nomer konechnogo bayta ne mozhet byt' bol'she razmera fayla.
 Udalennyye bayty.
-Shestnadtsaterichnyy stil' podskazki redaktirovaniya
 Redaktiruyet binarnyy fayl
 Vybirayet kanal iz sushchestvuyushchego spiska kanalov iz onlayn-istochnikov.
 Zagruzka spiska kanalov...
@@ -1650,7 +1625,6 @@ Ispol'zuyet otnositel'nyy put' vmesto absolyutnogo
 Fayl moda nedeystvitelen.
 Dobavlyayet v zakladki lentu
 Generator imen i familiy
-Ne mogu poluchit' imena i familii:
 Udalyayet zakladku kanala
 Fid ne sushchestvuyet v zakladkakh.
 Spisok vsekh dobavlennykh v zakladki kanalov

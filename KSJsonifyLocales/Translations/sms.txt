@@ -91,7 +91,6 @@ chngs rmt drctry t dwnld frm r pld t
 dlts rmt fl frm srvr
 dscnncts frm srvr
 dwnlds rmt fl t lcl drctry sng bnry r txt
-exts ftp shll nd rtrns t krnl
 shws hlp scrn
 lsts lcl drctry
 lsts rmt drctry
@@ -314,7 +313,6 @@ entr psswrd:
 errr whl cnnctng t {0}: {1}
 cnnctng t {0}...
  athntctng...
- exts th imap shll
 lst f cmmnds
 dwnlds mssgs nd lsts thm
 opns  mssg
@@ -368,7 +366,6 @@ fl lrdy xsts.
  errr tryng t crt  fl: {0}
 fld t pn fl. Extng shll...
  lsts vlbl cmmnds
-exts th txt dtr nd sv nsvd chngs
 prnts th cntnts f th fl wth ln nmbrs t th cnsl
 adds  nw ln wth txt t th nd f th fl
 rmvs th spcfd ln nmbr
@@ -431,8 +428,6 @@ wrt  rmt dbggr prt. It mst b nmrc, nd mst nt b lrdy sd. Othrws, rmt dbggr wll fl
  vrbl {0} s nt fnd n ny f th mdls.
  chngs krnl cnfgrtn
 actvt 255 clrs
-d y wnt t kp cnnctd?
-invld chc. Assmng n...
  chng cltr whn swtchng lnggs
 txt shwn
 wrt ny txt y wnt shwn. Shrtr s bttr.
@@ -597,9 +592,6 @@ bckgrnd clr
 ntrl txt clr
 stg clr
 errr clr
-ftp prmpt styl
-ml prmpt styl
-sftp prmpt styl
 tryng t ccss nvld pth.
  clrs th txt fl
 exts th txt dtr
@@ -673,7 +665,6 @@ th sr {0} hs bn ddd t th "{1}" lst.
 ld thm frm prblt thms...
  spcfy thm fl nm wht th.jsn xtnsn:
 opns  zip rchv
-exts th zip shll
 lsts ll fls nsd th rchv
 extrcts  fl t  spcfd drctry r  crrnt drctry
 chngs rchv drctry
@@ -811,7 +802,6 @@ sts cstm svr sttngs
 sttngs st sccssflly fr scrnsvr
 fld t st  sttng fr scrnsvr
 opns n rss shll t rd th fds
-exts rss shll nd rtrns t krnl
 chngs th fd lnk
 lsts ll fds
 rds  fd n  wb brwsr
@@ -905,9 +895,6 @@ wrppbl cmmnd?
 sttng shll vrbl?
 cn nt rn n mntnnc md?
 obslt?
-rss prmpt styl
-txt edt prmpt styl
-zp shll prmpt styl
 fldr s mpty.
  sccssflly prbd {0}.
  vrbs prb
@@ -988,7 +975,6 @@ th json dtr hsn't pnd  fl strm yt.
  rmvd prprty.
  adds  nw prprty t th nd f th json fl
 rmvs  prprty frm th json fl
-exts th json shll
 exts th json shll wtht svng th chngs
 svs th json fl
 opns th json shll
@@ -1050,8 +1036,6 @@ psswrd prmpt styl
 wrt hw y wnt yr lgn prmpt t b. Lv blnk t s dflt styl. Plchldrs r prsd.
  wrt hw y wnt yr psswrd prmpt t b. Lv blnk t s dflt styl. Plchldrs r prsd.
  shws mssg f th dy ftr dsplyng lgn scrn.
- tst shll prmpt styl
-json shll prmpt styl
 prb njctd cmmnds
 prbs th njctd cmmnds t th strt f th krnl shll.
  shw fl dtls n lst
@@ -1272,12 +1256,6 @@ dsk mdl:
 cltr f th crrnt lngg
 if y'r sr tht y'v pnd th rght sctn, chck ths mssg t:
 excts n ftp srvr cmmnd
-pop3 prmpt styl fr ml
-snd pop3 png ntrvl
-wrt hw y wnt yr pop3 srvr prmpt t b. Lv blnk t s dflt styl. Plchldrs r prsd.
- hw mny mllscnds t snd th pop3 png?
-us pop3
-whthr t s pop3. Dsblng ths wll s smtp.
  encrypts  strng sng crc32
 opns th ml clnt
 f ml trnsfrrd...
@@ -1339,7 +1317,6 @@ rght frm clr fr rmp br
 us brdr clrs fr rmp br
 us th brdr clrs fr th rmp br. If dsbld, wll gnrt  gry br.
  strts th http shll
-exts http shll nd rtrns t krnl
 sts th http st. Mst b  vld uri.
  gts th rspns frm th http srvr sng th spcfd rqst
 dlts cntnt frm http srvr
@@ -1606,7 +1583,6 @@ adds th nw byts t th nd f th fl
 clrs th bnry fl
 dlts  byt sng th byt nmbr
 dlts th rng f byts
-exts th hx dtr nd sv nsvd chngs
 exts th hx dtr
 prnts th cntnts f th fl wth byt nmbrs t th cnsl
 qrs  byt n  spcfd rng f byts r ll byts
@@ -1621,7 +1597,6 @@ byt rplcd.
  th spcfd strt byt nmbr my nt b lrgr thn th fl sz.
  th spcfd nd byt nmbr my nt b lrgr thn th fl sz.
  dltd byts.
- hx edt prmpt styl
 edts  bnry fl
 slcts th fd frm th xstng fd lst frm nln srcs
 dwnldng fd lst...
@@ -1650,7 +1625,6 @@ uss rltv pth nstd f bslt
  th mdfl s nvld.
  bkmrks th fd
 nm nd srnm gnrtr
-cn't gt nms nd srnms:
 rmvs th fd bkmrk
 th fd dsn't xst n bkmrks.
  lsts ll bkmrkd fds

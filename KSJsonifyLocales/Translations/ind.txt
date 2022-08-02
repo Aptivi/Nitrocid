@@ -91,7 +91,6 @@ se daunalod ya apalod karane ke lie doorasth nirdeshika badalata hai
 sarvar se doorasth fail hata deta hai
 sarvar se diskanekt
 dviaadhaaree ya paath  ka upayog kar sthaaneey nirdeshika mein doorasth fail daunalod karata hai
-efateepee khol se baahar nikalata hai aur karnel par lautaata hai
 madad skreen dikhaata hai
 sthaaneey nirdeshika soocheebaddh karata hai
 doorasth nirdeshika soocheebaddh karata hai
@@ -314,7 +313,6 @@ paas vard darj karen:
 {0}: {1} se kanekt karate samay truti
 {0} se kanekt ho raha hai ...
 pramaanit kar raha hai ...
-imap shel se baahar nikalata hai
 aadeshon kee soochee
 sandesh daunalod karata hai aur unhen soocheebaddh karata hai
 ek sandesh kholata hai
@@ -368,7 +366,6 @@ fail pahale se hee maujood hai.
 fail banaane ka prayaas karane mein truti: {0}
 fail kholane mein asamarth. shel se baahar ...
 upalabdh aadeshon ko soocheebaddh karata hai
-paath sampaadak se baahar nikalata hai aur saheje gae parivartanon ko sahejata hai
 kansol ke lie lain nambar ke saath fail kee saamagree ko print karata hai
 fail ke ant mein paath ke saath ek naee pankti jodata hai
 nirdisht pankti sankhya ko nikaalata hai
@@ -431,8 +428,6 @@ uttar amaany hai. yah sunishchit karane ke lie jaanchen ki uttar konfigareshan p
 parivartaneey {0} kisee bhee modyool par nahin paaya jaata hai.
 karnel konfigareshan badalata hai
 255 rangon ko sakriy karen
-kya aap jude rahana chaahate hain?
-amaany vikalp. nahin maan raha hai ...
 bhaasha badalane par sanskrti badalen
 paath dikhaaya gaya
 aapake dvaara dikhae gae kisee bhee paath ko likhen. kam behatar hai.
@@ -597,9 +592,6 @@ peechhe ka rang
 tatasth paath rang
 manch ka rang
 truti rang
-efateepee sheeghr shailee
-mel prompt stail
-sftp sheeghr shailee
 amaany path tak pahunchane ka prayaas kar raha hai.
 paath fail ko saaf karata hai
 paath sampaadak se baahar nikalata hai
@@ -673,7 +665,6 @@ amaany mod {0}
 preebilt theem se theem lod karen...
 .json eksatenshan ke bina theem fail naam nirdisht karen:
 ek zip sangrah kholata hai
-zip shel se baahar nikalata hai
 sangrah ke andar sabhee phailon ko soocheebaddh karata hai
 kisee fail ko kisee nirdisht nirdeshika ya vartamaan nirdeshika mein nikaalata hai
 sangrah nirdeshika badalata hai
@@ -811,7 +802,6 @@ kastam sevar seting set karata hai
 skreenasevar ke lie seting saphalataapoorvak set kee gaeen
 skreenasevar ke lie seting set karane mein viphal
 feed padhane ke lie rss shel kholata hai
-rss shel se baahar nikalata hai aur karnel mein vaapas aata hai
 feed link badalata hai
 sabhee feed soocheebaddh karata hai
 veb brauzar mein feed padhata hai
@@ -905,9 +895,6 @@ lapetane yogy aadesh?
 khol char set karana?
 rakharakhaav mod mein nahin chal sakata?
 aprachalit?
-aareses sheeghr shailee
-paath sampaadit karen sheeghr shailee
-zip shail sheeghr shailee
 foldar khaalee hai.
 {0} kee saphalataapoorvak jaanch kee gaee.
 kriya jaanch
@@ -988,7 +975,6 @@ json fail ke andar kee sampatti nahin milee.
 hataee gaee sampatti.
 json fail ke ant mein ek naee sampatti jodata hai
 json fail se ek sampatti nikaalata hai
-json shel se baahar nikalata hai
 parivartanon ko saheje bina json shel se baahar nikalata hai
 json fail sahejata hai
 json shel kholata hai
@@ -1050,8 +1036,6 @@ paasavard sheeghr shailee
 likhen ki aap apane login prompt ko kaise chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
 likhen ki aap kaise chaahate hain ki aapaka paasavard sheeghr ho. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
 login skreen pradarshit karane ke baad din ka sandesh dikhaata hai.
-test shel prompt stail
-json shel prompt stail
 jaanch injekshan aadesh
 karnel shel kee shuruaat mein injekt kie gae kamaand kee jaanch karata hai.
 soochee mein fail vivaran dikhaen
@@ -1272,12 +1256,6 @@ disk modal:
 vartamaan bhaasha kee sanskrti
 yadi aap sunishchit hain ki aapane sahee anubhaag khola hai, to is sandesh ko dekhen:
 ek ftp sarvar kamaand nishpaadit karata hai
-mel ke lie pop3 sheeghr shailee
-pop3 ping antaraal bhejen
-likhen ki aap apane pop3 sarvar ko kaise prompt karana chaahate hain. difolt shailee ka upayog karane ke lie khaalee chhod den. plesaholdars ko paars kiya jaata hai.
-pop3 ping bhejane ke lie kitane mileesekand?
-pop3 ka prayog karen
-pop3 ka upayog karana hai ya nahin. ise aksham karane se esemateepee ka upayog hoga.
 chrch32 ka upayog karake ek string ko enkript karata hai
 mel klaint kholata hai
 mel ke traansaphar...
@@ -1339,7 +1317,6 @@ raimp baar ke lie sahee phrem rang
 raimp baar ke lie bordar rangon ka prayog karen
 raimp baar ke lie bordar kalars ka istemaal karen. aksham hone par, ek dhoosar baar janaret karega.
 http shel praarambh karata hai
-http shel se baahar nikalata hai aur karnel mein vaapas aata hai
 http sait set karata hai. ek vaidh yooaaraee hona chaahie.
 nirdisht anurodh ka upayog karake http sarvar se pratikriya praapt karen
 http sarvar se saamagree hataata hai
@@ -1606,7 +1583,6 @@ fail ke ant mein nae bait jodata hai
 bainaree fail ko saaf karata hai
 bait sankhya ka upayog karake ek bait ko hataata hai
 baits kee seema hataata hai
-heks sampaadak se baahar nikalata hai aur saheje nahin gae parivartanon ko sahejata hai
 heks sampaadak se baahar nikalata hai
 fail kee saamagree ko bait sankhyaon ke saath kansol par print karata hai
 baits ya sabhee baits kee ek nirdisht shrenee mein ek bait ko kveree karata hai
@@ -1621,7 +1597,6 @@ bait sankhya sankhyaatmak nahin hai.
 nirdisht praarambh bait sankhya fail aakaar se badee nahin ho sakatee hai.
 nirdisht ant bait sankhya fail aakaar se badee nahin ho sakatee hai.
 hatae gae baits.
-heks sheeghr shailee sampaadit karen
 ek bainaree fail sampaadit karata hai
 onalain sroton se maujooda feed soochee se feed ka chayan karata hai
 feed soochee daunalod ho rahee hai...
@@ -1650,7 +1625,6 @@ nirapeksh ke bajaay saapeksh path ka upayog karata hai
 modaphail amaany hai.
 feed ko bukamaark karen
 naam aur upanaam janaretar
-naam aur upanaam nahin mil sakate:
 feed bukamaark hataata hai
 bukamaark mein feed maujood nahin hai.
 sabhee bukamaark kie gae feed soocheebaddh karata hai

@@ -91,7 +91,6 @@ Modifie le répertoire distant vers lequel télécharger ou télécharger
 Supprime le fichier distant du serveur
 Déconnecte du serveur
 Télécharge un fichier distant dans un répertoire local à l'aide de binaire ou de texte
-Quitte le shell FTP et retourne au noyau
 Affiche l'écran d'aide
 Répertorie le répertoire local
 Répertorie le répertoire distant
@@ -314,7 +313,6 @@ Entrer le mot de passe:
 Erreur lors de la connexion à {0}: {1}
 Connexion à {0} ...
 Authentification ...
-Quitte le shell IMAP
 Liste des commandes
 Télécharge les messages et les répertorie
 Ouvre un message
@@ -368,7 +366,6 @@ Le fichier existe déjà.
 Erreur lors de la tentative de création d'un fichier: {0}
 Échec de l'ouverture du fichier. Sortie du shell ...
 Répertorie les commandes disponibles
-Quitte l'éditeur de texte et enregistre les modifications non enregistrées
 Imprime le contenu du fichier avec les numéros de ligne sur la console
 Ajoute une nouvelle ligne avec du texte à la fin du fichier
 Supprime le numéro de ligne spécifié
@@ -431,8 +428,6 @@ La réponse est invalide. Assurez-vous que la réponse est numérique pour les e
 La variable {0} n'est trouvée sur aucun des modules.
 Modifie la configuration du noyau
 Activer 255 couleurs
-Voulez-vous rester connecté?
-Choix invalide. En supposant que non ...
 Changer de culture lors du changement de langue
 Texte affiché
 Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux.
@@ -597,9 +592,6 @@ Couleur de l'arrière plan
 Couleur de texte neutre
 Couleur de la scène
 Couleur d'erreur
-Style d'invite FTP
-Style d'invite de courrier
-Style d'invite SFTP
 Tentative d'accès à un chemin non valide.
 Efface le fichier texte
 Quitte l'éditeur de texte
@@ -673,7 +665,6 @@ Mode invalide {0}
 Charger le thème à partir des thèmes prédéfinis...
 Spécifiez le nom du fichier de thème sans l'extension .json :
 Ouvre une archive ZIP
-Quitte le shell ZIP
 Répertorie tous les fichiers à l'intérieur de l'archive
 Extrait un fichier dans un répertoire spécifié ou un répertoire courant
 Change le répertoire d'archives
@@ -811,7 +802,6 @@ Définit les paramètres d'économiseur personnalisés
 Paramètres définis avec succès pour l'économiseur d'écran
 Échec de la définition d'un paramètre pour l'économiseur d'écran
 Ouvre un shell RSS pour lire les flux
-Quitte le shell RSS et retourne au noyau
 Modifie le lien de flux
 Répertorie tous les flux
 Lit un flux dans un navigateur Web
@@ -905,9 +895,6 @@ Commande enveloppable ?
 Paramétrer la variable shell ?
 Impossible de fonctionner en mode maintenance ?
 Obsolète?
-Style d'invite RSS
-Style d'invite d'édition de texte
-Style d'invite de la coquille zippée
 Le dossier est vide.
 {0} erfolgreich getestet.
 Ausführliche Sonde
@@ -988,7 +975,6 @@ La propriété à l'intérieur du fichier JSON est introuvable.
 Propriété supprimée.
 Ajoute une nouvelle propriété à la fin du fichier JSON
 Supprime une propriété du fichier JSON
-Quitte le shell JSON
 Quitte le shell JSON sans enregistrer les modifications
 Enregistre le fichier JSON
 Ouvre le shell JSON
@@ -1050,8 +1036,6 @@ Style d'invite de mot de passe
 Écrivez comment vous voulez que votre invite de connexion soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Écrivez comment vous voulez que votre invite de mot de passe soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
 Affiche le message du jour après avoir affiché l'écran de connexion.
-Tester le style d'invite du shell
-Style d'invite de shell JSON
 Sonder les commandes injectées
 Sonde les commandes injectées au démarrage du shell du noyau.
 Afficher les détails du fichier dans la liste
@@ -1272,12 +1256,6 @@ Modèle de disque :
 Culture de la langue actuelle
 Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
 Exécute une commande de serveur FTP
-Style d'invite POP3 pour le courrier
-Envoyer l'intervalle de ping POP3
-Écrivez comment vous voulez que votre invite de serveur POP3 soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés.
-Combien de millisecondes pour envoyer le ping POP3 ?
-Utiliser POP3
-Que ce soit pour utiliser POP3. Désactiver cela utilisera SMTP.
 Crypte une chaîne en utilisant CRC32
 Ouvre le client de messagerie
 du courrier transféré...
@@ -1339,7 +1317,6 @@ Couleur du cadre droit pour la barre de rampe
 Utiliser les couleurs de bordure pour la barre de rampe
 Utilisez les couleurs de bordure pour la barre de rampe. Si désactivé, générera une barre grise.
 Démarre le shell HTTP
-Quitte le shell HTTP et retourne au noyau
 Définit le site HTTP. Doit être un URI valide.
 Obtient la réponse du serveur HTTP à l'aide de la requête spécifiée
 Supprime le contenu du serveur HTTP
@@ -1606,7 +1583,6 @@ Ajoute les nouveaux octets à la fin du fichier
 Efface le fichier binaire
 Supprime un octet en utilisant le numéro d'octet
 Supprime la plage d'octets
-Quitte l'éditeur hexadécimal et enregistre les modifications non enregistrées
 Quitte l'éditeur hexadécimal
 Imprime le contenu du fichier avec les numéros d'octets sur la console
 Interroge un octet dans une plage d'octets spécifiée ou tous les octets
@@ -1621,7 +1597,6 @@ Le numéro d'octet n'est pas numérique.
 Le nombre d'octets de début spécifié ne doit pas être supérieur à la taille du fichier.
 Le nombre d'octets de fin spécifié ne doit pas être supérieur à la taille du fichier.
 Octets supprimés.
-Style d'invite de modification hexadécimale
 Edite un fichier binaire
 Sélectionne le flux dans la liste de flux existante à partir de sources en ligne
 Téléchargement de la liste des flux...
@@ -1650,7 +1625,6 @@ Utilise un chemin relatif au lieu d'absolu
 Le fichier mod n'est pas valide.
 Met le flux en signet
 Générateur de nom et prénom
-Impossible d'obtenir les noms et prénoms :
 Supprime le signet de flux
 Le flux n'existe pas dans les favoris.
 Répertorie tous les flux marqués d'un signet

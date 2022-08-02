@@ -91,7 +91,6 @@ Změní vzdálený adresář ke stažení z nebo nahrajte na
 Odstraní vzdálený soubor ze serveru
 Odpojí se od serveru
 Stažení vzdáleného souboru do lokálního adresáře pomocí binárního nebo textového souboru
-Ukončí FTP shell a vrátí se do jádra
 Zobrazí obrazovku nápovědy
 Seznam místních adresářů
 Seznamy vzdáleného adresáře
@@ -314,7 +313,6 @@ Zadejte heslo:
 Chyba při připojení k {0}: {1}
 Připojuji se k {0} ...
 Ověřování ...
-Ukončí prostředí IMAP
 Seznam příkazů
 Stáhne zprávy a vypíše je
 Otevře zprávu
@@ -368,7 +366,6 @@ Soubor již existuje.
 Chyba při pokusu o vytvoření souboru: {0}
 Otevření souboru se nezdařilo. Ukončení shellu ...
 Vypíše dostupné příkazy
-Ukončí textový editor a uloží neuložené změny
 Vytiskne obsah souboru s čísly řádků na konzoli
 Na konec souboru přidá nový řádek s textem
 Odstraní zadané číslo řádku
@@ -431,8 +428,6 @@ Odpověď je neplatná. Zkontrolujte, zda je číselná odpověď pro položky k
 Proměnná {0} se nenachází na žádném z modulů.
 Změní konfiguraci jádra
 Aktivujte 255 barev
-Chcete zůstat ve spojení?
-Neplatná volba. Za předpokladu, že ne ...
 Změnit kulturu při přepínání jazyků
 Zobrazený text
 Napište libovolný text, který chcete zobrazit. Kratší je lepší.
@@ -597,9 +592,6 @@ Barva pozadí
 Neutrální barva textu
 Barva fáze
 Barva chyby
-Styl výzvy FTP
-Styl výzvy
-Styl výzvy SFTP
 Pokus o přístup k neplatné cestě.
 Vymaže textový soubor
 Ukončí textový editor
@@ -673,7 +665,6 @@ Ongeldige modus {0}
 Thema laden vanuit vooraf gemaakte thema's...
 Geef de naam van het themabestand op zonder de .json-extensie:
 Opent een ZIP-archief
-Verlaat de ZIP-shell
 Geeft een overzicht van alle bestanden in het archief
 Extraheert een bestand naar een opgegeven map of een huidige map
 Wijzigingen archiefmap
@@ -811,7 +802,6 @@ Stelt aangepaste spaarinstellingen in
 Instellingen succesvol ingesteld voor screensaver
 Kan geen instelling voor screensaver instellen
 Opent een RSS-shell om de feeds te lezen
-Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
@@ -905,9 +895,6 @@ Zabalitelný příkaz?
 Nastavení proměnné prostředí?
 Nelze spustit v režimu údržby?
 Zastaralý?
-Styl výzvy RSS
-Styl výzvy k úpravě textu
-Rychlý styl zipu
 Složka je prázdná.
 Úspěšně sondováno {0}.
 Podrobná sonda
@@ -988,7 +975,6 @@ Vlastnost uvnitř souboru JSON nebyla nalezena.
 Odstraněná vlastnost.
 Přidá novou vlastnost na konec souboru JSON
 Odebere vlastnost ze souboru JSON
-Ukončí prostředí JSON
 Opustí prostředí JSON bez uložení změn
 Uloží soubor JSON
 Otevře prostředí JSON
@@ -1050,8 +1036,6 @@ Styl výzvy k zadání hesla
 Napište, jak chcete, aby byla vaše výzva k přihlášení. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
 Napište, jak chcete, aby vaše výzva k zadání hesla vypadala. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
 Zobrazí zprávu dne po zobrazení přihlašovací obrazovky.
-Styl výzvy testovacího prostředí
-Styl výzvy prostředí JSON
 Příkazy vložené sondou
 Testuje vložené příkazy na začátku shellu jádra.
 Zobrazit podrobnosti o souboru v seznamu
@@ -1272,12 +1256,6 @@ Model disku:
 Kultura současného jazyka
 Pokud jste si jisti, že jste otevřeli správnou sekci, podívejte se na tuto zprávu:
 Provede příkaz FTP serveru
-Styl výzvy POP3 pro poštu
-Interval odesílání POP3 pingů
-Napište, jak chcete, aby byl váš POP3 server výzva. Chcete-li použít výchozí styl, ponechte prázdné. Zástupné symboly jsou analyzovány.
-Kolik milisekund odeslat POP3 ping?
-Použijte POP3
-Zda použít POP3. Pokud toto zakážete, použije se SMTP.
 Zašifruje řetězec pomocí CRC32
 Otevře poštovního klienta
 přenesené pošty...
@@ -1339,7 +1317,6 @@ Pravá barva rámu pro rampu
 Pro pruh rampy použijte barvy ohraničení
 Použijte barvy okraje pro pruh rampy. Pokud je zakázáno, vygeneruje se šedý pruh.
 Spustí prostředí HTTP
-Ukončí prostředí HTTP a vrátí se do jádra
 Nastaví web HTTP. Musí být platný identifikátor URI.
 Získá odpověď ze serveru HTTP pomocí zadaného požadavku
 Odstraní obsah ze serveru HTTP
@@ -1606,7 +1583,6 @@ Přidá nové bajty na konec souboru
 Vymaže binární soubor
 Smaže bajt pomocí čísla bajtu
 Odstraní rozsah bajtů
-Ukončí hexadecimální editor a uloží neuložené změny
 Ukončí hex editor
 Vytiskne obsah souboru s čísly bajtů do konzoly
 Dotazuje se na bajt v zadaném rozsahu bajtů nebo na všechny bajty
@@ -1621,7 +1597,6 @@ Byte smazán.
 Zadané počáteční číslo bajtu nesmí být větší než velikost souboru.
 Zadané koncové číslo bajtu nesmí být větší než velikost souboru.
 Smazané bajty.
-Hexadecimální styl výzvy k úpravě
 Upraví binární soubor
 Vybere zdroj ze stávajícího seznamu zdrojů z online zdrojů
 Stahování seznamu zdrojů...
@@ -1650,7 +1625,6 @@ Používá relativní cestu namísto absolutní
 Modfile je neplatný.
 Přidá zdroj do záložek
 Generátor jména a příjmení
-Nemohu získat jména a příjmení:
 Odebere záložku zdroje
 Zdroj v záložkách neexistuje.
 Zobrazí seznam všech kanálů se záložkami

@@ -91,7 +91,6 @@ Changes remote directory ta download from or upload ta
 Deletes remote file from serva
 Disconnects from serva
 Downloads remote file ta local directory ho-slappin' binary or text
-Exits FTP shell n returns ta kernel
 Shows help screen
 Lists local directory
 Lists remote directory
@@ -314,7 +313,6 @@ Enta password cuz its a pimp thang:
 Error while straight trippin' ta {0}: Ill slap tha taste out yo mouf. {1}
 Cruisin' ta {0}...
 Cruisin'...
-Exits tha IMAP shell
 List of commands
 Downloads messages n lists them
 Opens a message
@@ -368,7 +366,6 @@ File already exists.
 Error try'n ta create a file: {0}
 Failed ta open file. Exit'n shell...
 Lists available commands
-Exits tha text editor n save unsaved changes
 Prints tha contents of tha file wit line killas ta tha console
 Adds a new line wit text at tha end of tha file
 Removes the specify line numba
@@ -431,8 +428,6 @@ Tha answa be invalid. Smells like tha good shit. Check to make sure that tha cra
 Variable {0} be not found on any of tha modules so show some love, niggaz!
 Changes kernel configuration
 Activate 255 colors
-D-ya want ta keep connected?
-Invalid choice. Bustin' no but real niggaz don't give a fuck...
 Change Culture W-H-to-tha-izzen Blunt-rollin' Languages
 Text shown
 Write any text you want shown so you betta run and grab yo glock. Shorta be betta.
@@ -597,9 +592,6 @@ Background color
 Neutral text color
 Stage color
 Error color
-FTP Prompt Style
-Mail Prompt Style
-SFTP Prompt Style
 Spendin' ta access invalid path.
 Clears tha text file
 Exits tha text editor
@@ -673,7 +665,6 @@ Invalid mode {0}
 Load Theme From Prebuilt Themes so you betta run and grab yo glock...
 Specify theme file name wihout tha .json extension:
 Opens a ZIP archive
-Exits tha ZIP shell
 Lists all files inside tha archive
 Extracts a file ta a specify directory or a current directory
 Changes archive directory
@@ -811,7 +802,6 @@ Sets custom homie sett'n
 Crack-a-lackin` set successfully fo` bitch
 Failed ta set a saggin' for screensava
 Opens an RSS shell ta read tha feeds
-Exits RSS shell n returns ta kernel
 Changes tha fee' link
 Lists all feeds
 Reads a fee' 'n a web browsa
@@ -905,9 +895,6 @@ Wrappable command?
 Sett'n shell variable? Ya fuck with us, we gots to fuck you up.
 Can not run 'n maintenance mode?
 Obsolete cuz I put gangsta rap on tha map?
-RSS Prompt Style
-Text Edit Prompt Style
-Zip Shell Prompt Style
 Folda be empty. Real niggas recognize the realness.
 Successfully probed {0}.
 Verboze Probe
@@ -988,7 +975,6 @@ Tha property inside the JSON file isn't found. Boo-Yaa!
 Removed property.
 Adds a new property at tha end of tha JSON file
 Removes a property from tha JSON file
-Exits tha JSON shell
 Exits tha JSON shell witout gang bangin' the changes
 Saves tha JSON file
 Opens tha JSON shell
@@ -1050,8 +1036,6 @@ Password prompt style
 Write how you want yo' login prompt ta be. Leave blank ta use default style. Placeholda are parze'.
 Write how you want yo' password prompt ta be but real niggaz don't give a fuck. Leave blank ta uze default style. Placeholda be parze'. Im a bad boy wit a lotta hos.
 Shows Message of tha Day shot calla spendin' login screen.
-Test Shell P-R-to-tha-izzompt Style
-JSON Shell Prompt Style
 Probe injected commands
 Probes tha injected commands at tha start of tha kernel shell.
 Show file details in list
@@ -1272,12 +1256,6 @@ Disk model:
 Culture of tha current language
 If yoe sure that you opened tha right section, check dis message out:
 Executes an FTP serva command
-POP3 prompt style for mail
-Send POP3 rhymin' interval
-Write how you want yo' POP3 shot calla prompt ta be yaba daba dizzle. Leave blank ta uze default style. Placeholda be parze' ya feelin' me?
-How many milliseconds ta send tha POP3 hatin' if you gots a paper stack?
-Uze POP3
-Whetha ta uze POP3. Playa hatin' dis will use SMTP.
 Encrypts a str'n us'n CRC32
 Opens tha mail client
 of mail transferred...
@@ -1339,7 +1317,6 @@ Right frame color fo` ramp bar
 Uze cracka colors fo` ramp bar
 Uze tha borda colors fo` tha ramp bar. If disabled, will generate a grey bar hittin that booty.
 Starts tha HTTP shell
-Exits HTTP shell n returns ta kernel
 Sets tha HTTP site. Must be a valid URI.
 Gets tha responze from the HTTP brotha sippin' tha specify request
 Deletes content from HTTP motherfucka
@@ -1606,7 +1583,6 @@ Adds tha new bytes at tha end of tha file
 Clears tha binary file
 Deletes a byte using tha byte baller
 Deletes tha range of bytes
-Exits tha hex editor n save unsaved changes
 Exits the hex editor
 Prints the contents of tha file with B-Y-T-to-tha-izze homeys ta the console
 Queries a byte in a specify range of bytes or all bytes
@@ -1621,7 +1597,6 @@ The byte pusha be not numeric.
 The specify start byte pusha may not be larga than tha file size.
 Tha specify end byte homey may not be motherfucka than the file size.
 Deleted bytes droppin hits.
-Hex Edit Prompt Style
 Edits a binary file
 Selects tha feed from tha slackin' fee' lizzle from online sources
 Ballin' fee' list with my forty-fo' mag...
@@ -1650,7 +1625,6 @@ Uzes relative path instead of absolute
 Tha modfile be invalid cuz I put gangsta rap on tha map.
 Bookmarks tha fee'
 Name n surname generator
-Can't git names n surnames:
 Removes the fee' bookmark
 Tha fee' doesn't exist 'n bookmarks.
 Lists all bookmarked feeds
