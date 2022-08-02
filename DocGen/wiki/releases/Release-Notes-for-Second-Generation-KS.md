@@ -174,10 +174,7 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 ## KS 0.0.24.x series
 
-### KS 0.0.24.0 (WIP)
-
-> [!NOTE]
-> This version is WIP as of 7/14/2022.
+### KS 0.0.24.0 (8/2/2022)
 
 1. Removed obsolete Mod and Screensaver APIs
 2. Removed report bug prompt
@@ -198,3 +195,8 @@ Because the API was having mixed code of between refactored and unrefactored, we
 16. General API improvements
 17. General improvements and bug fixes
 18. And more...
+
+### KS 0.0.24.1 (WIP)
+
+> [!NOTE]
+> This release is WIP as of 8/2/2022.

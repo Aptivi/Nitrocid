@@ -240,4 +240,5 @@ Each revision of the kernel API has several incompatibilities that break the exi
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |
 |:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
-| v0.0.24.0  |  ???         |  ???        |  ???              | ???         |
+| v0.0.24.0  |  8/2/2022    |  8/2/2025   |  8/2/2027         | Supported   |
+| v0.0.24.1  |  ???         |  8/2/2025   |  8/2/2027         | Supported   |
