@@ -1289,6 +1289,18 @@
                 "Type": "SBoolean",
                 "Variable": "InputUndoEnabled",
                 "Description": "Whether the input undo feature is enabled or not."
+            },
+            {
+                "Name": "Use PowerLine for rendering spaceship",
+                "Type": "SBoolean",
+                "Variable": "MeteorUsePowerLine",
+                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support."
+            },
+            {
+                "Name": "Meteor game speed",
+                "Type": "SInt",
+                "Variable": "MeteorSpeed",
+                "Description": "Specifies the game speed in milliseconds."
             }
         ]
     }

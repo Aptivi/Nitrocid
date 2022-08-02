@@ -1074,7 +1074,9 @@ Namespace Misc.Configuration
                     {"Users count for love or hate comments", LoveOrHateUsersCount},
                     {"Input history enabled", InputHistoryEnabled},
                     {"Input clipboard enabled", InputClipboardEnabled},
-                    {"Input undo enabled", InputUndoEnabled}
+                    {"Input undo enabled", InputUndoEnabled},
+                    {"Use PowerLine for rendering spaceship", MeteorUsePowerLine},
+                    {"Meteor game speed", MeteorSpeed}
                 }
             ConfigurationObject.Add("Misc", MiscConfig)
             Return ConfigurationObject
@@ -1997,6 +1999,8 @@ Namespace Misc.Configuration
             InputHistoryEnabled = If(ConfigToken("Misc")?("Input history enabled"), True)
             InputClipboardEnabled = If(ConfigToken("Misc")?("Input clipboard enabled"), True)
             InputUndoEnabled = If(ConfigToken("Misc")?("Input undo enabled"), True)
+            MeteorUsePowerLine = If(ConfigToken("Misc")?("Use PowerLine for rendering spaceship"), True)
+            MeteorSpeed = If(Integer.TryParse(ConfigToken("Misc")?("Meteor game speed"), 0), ConfigToken("Misc")?("Meteor game speed"), 10)
 
             'Check to see if the config needs fixes
             RepairConfig()

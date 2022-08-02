@@ -21,8 +21,8 @@ Imports System.Threading
 Namespace Misc.Games
     Public Module MeteorShooter
 
-        'TODO: Make these configurable in day-one patch
         Public MeteorUsePowerLine As Boolean = True
+        Public MeteorSpeed As Integer = 10
         Private SpaceshipHeight As Integer = 0
         Private GameEnded As Boolean = False
         Private ReadOnly MaxBullets As Integer = 10
@@ -158,7 +158,7 @@ Namespace Misc.Games
                     Next
 
                     'Wait for a few milliseconds
-                    SleepNoBlock(10, MeteorDrawThread)
+                    SleepNoBlock(MeteorSpeed, MeteorDrawThread)
                 End While
             Catch ex As ThreadInterruptedException
                 'Game is over. Move to the Finally block.
