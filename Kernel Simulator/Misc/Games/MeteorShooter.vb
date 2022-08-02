@@ -21,6 +21,7 @@ Imports System.Threading
 Namespace Misc.Games
     Public Module MeteorShooter
 
+        'TODO: Make these configurable in day-one patch
         Public MeteorUsePowerLine As Boolean = True
         Private SpaceshipHeight As Integer = 0
         Private GameEnded As Boolean = False
@@ -67,6 +68,7 @@ Namespace Misc.Games
             End While
 
             'Stop the draw thread since the game ended
+            MeteorDrawThread.Wait()
             MeteorDrawThread.Stop()
             GameEnded = False
         End Sub
