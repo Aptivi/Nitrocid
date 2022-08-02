@@ -20,7 +20,7 @@ REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 REM This script builds KS and packs the artifacts. Use when you have VS installed.
 for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
 set releaseconfig=%1
-if "%releaseconfig%" == "" set releaseconfig=Release
+if "%releaseconfig%" == "" set releaseconfig=Release-dotnet
 
 :download
 echo Downloading packages...
