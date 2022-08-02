@@ -196,10 +196,7 @@ Because the API was having mixed code of between refactored and unrefactored, we
 17. General improvements and bug fixes
 18. And more...
 
-### KS 0.0.24.1 (WIP)
-
-> [!NOTE]
-> This release is WIP as of 8/2/2022.
+### KS 0.0.24.1 (8/3/2022)
 
 1. You can't go back to 2018 on .NET 6.0!
 2. Meteor is customizable
