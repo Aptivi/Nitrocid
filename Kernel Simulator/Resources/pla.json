@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Check'n fo` updizzles...",
     "Downloading version": "Downloading versizzle",
     "Installing version": "Install'n version",
-    "Going back to 2018...": "Crack-a-lackin` B-to-tha-izzack ta 2018..."
+    "Going back to 2018...": "Crack-a-lackin` B-to-tha-izzack ta 2018...",
+    "You can't go back to 2018 on .NET 6.0!": "You can't go back ta 2018 on .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "Use PowerLine fo` render'n spaceship",
+    "Meteor game speed": "Meteor game spee'",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Whetha ta uze Powizzle ta renda tha spacizzle or ta uze tha standard greata than characta. If yiznou W-to-tha-izzant ta uze PowerLine with Mizzle, you nee' to instizzle an appropriate font wit PowerLine support.",
+    "Specifies the game speed in milliseconds.": "Specizzles tha game spee' 'n millizzles cuz its a doggy dog world."
   }
 }

@@ -1726,6 +1726,11 @@
     "Checking for updates...": "ch3ck1n6 f0r upd4735...",
     "Downloading version": "d0wnl04d1n6 v3r510n",
     "Installing version": "1n574ll1n6 v3r510n",
-    "Going back to 2018...": "601n6 b4ck 70 2018..."
+    "Going back to 2018...": "601n6 b4ck 70 2018...",
+    "You can't go back to 2018 on .NET 6.0!": "y0u c4n'7 60 b4ck 70 2018 0n .n37 6.0!",
+    "Use PowerLine for rendering spaceship": "u53 p0w3rl1n3 f0r r3nd3r1n6 5p4c35h1p",
+    "Meteor game speed": "m3730r 64m3 5p33d",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "wh37h3r 70 u53 p0w3rl1n3 70 r3nd3r 7h3 5p4c35h1p 0r 70 u53 7h3 574nd4rd 6r3473r 7h4n ch4r4c73r. 1f y0u w4n7 70 u53 p0w3rl1n3 w17h m3730r, y0u n33d 70 1n574ll 4n 4ppr0pr1473 f0n7 w17h p0w3rl1n3 5upp0r7.",
+    "Specifies the game speed in milliseconds.": "5p3c1f135 7h3 64m3 5p33d 1n m1ll153c0nd5."
   }
 }

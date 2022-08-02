@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Perevirka onovlenʹ...",
     "Downloading version": "Zavantazhennya versiyi",
     "Installing version": "Ustanovka versiyi",
-    "Going back to 2018...": "Povertayuchysʹ u 2018 rik..."
+    "Going back to 2018...": "Povertayuchysʹ u 2018 rik...",
+    "You can't go back to 2018 on .NET 6.0!": "Vy ne mozhete povernutysya do 2018 roku na .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "Vykorystovuyte PowerLine dlya vizualizatsiyi kosmichnoho korablya",
+    "Meteor game speed": "Shvydkistʹ hry Meteor",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Chy vykorystovuvaty PowerLine dlya vizualizatsiyi kosmichnoho korablya, chy vykorystovuvaty standartnyy symvol «bilʹshe». Yakshcho vy khochete vykorystovuvaty PowerLine z Meteor, vam potribno vstanovyty vidpovidnyy shryft iz pidtrymkoyu PowerLine.",
+    "Specifies the game speed in milliseconds.": "Vyznachaye shvydkistʹ hry v milisekundakh."
   }
 }

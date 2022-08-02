@@ -1723,3 +1723,8 @@ Proverka obnovleniy...
 Skachivaniye versii
 Ustanovka versii
 Vozvrashchayasʹ k 2018 godu...
+Vy ne mozhete vernutʹsya v 2018 god na .NET 6.0!
+Ispolʹzuyte PowerLine dlya renderinga kosmicheskogo korablya
+Meteor skorostʹ igry
+Ispolʹzovatʹ li PowerLine dlya renderinga kosmicheskogo korablya ili ispolʹzovatʹ standartnyy simvol bolʹshe, chem simvol. Yesli vy khotite ispolʹzovatʹ PowerLine s Meteor, vam neobkhodimo ustanovitʹ sootvet·stvuyushchiy shrift s podderzhkoy PowerLine.
+Opredelyayet skorostʹ igry v millisekundakh.

@@ -1723,3 +1723,8 @@ Suche nach Aktualisierungen...
 Version herunterladen
 Version installieren
 Zurück ins Jahr 2018...
+Sie können mit .NET 6.0 nicht bis 2018 zurückgehen!
+Verwenden Sie PowerLine zum Rendern von Raumschiffen
+Meteor-Spielgeschwindigkeit
+Ob PowerLine verwendet werden soll, um das Raumschiff zu rendern, oder ob das Standardgrößer-als-Zeichen verwendet werden soll. Wenn Sie PowerLine mit Meteor verwenden möchten, müssen Sie eine entsprechende Schriftart mit PowerLine-Unterstützung installieren.
+Gibt die Spielgeschwindigkeit in Millisekunden an.

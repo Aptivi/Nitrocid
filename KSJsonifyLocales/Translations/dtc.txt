@@ -1723,3 +1723,8 @@ Controleren op updates...
 Versie downloaden
 Versie installeren
 Even terug naar 2018...
+Je kunt niet terug naar 2018 op .NET 6.0!
+Gebruik PowerLine voor het renderen van een ruimteschip
+Meteor spelsnelheid
+Of je nu PowerLine wilt gebruiken om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met Meteor wilt gebruiken, moet u een geschikt lettertype installeren met PowerLine-ondersteuning.
+Specificeert de spelsnelheid in milliseconden.

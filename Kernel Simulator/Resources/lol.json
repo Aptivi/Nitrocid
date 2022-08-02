@@ -1726,6 +1726,11 @@
     "Checking for updates...": " CHEkin fr updaTEZ??????",
     "Downloading version": " downloadin vershuN",
     "Installing version": "enSTALIN vershun",
-    "Going back to 2018...": "goin bak TO 2018?????? plz?"
+    "Going back to 2018...": "goin bak TO 2018?????? plz?",
+    "You can't go back to 2018 on .NET 6.0!": "u cant Go Bak to 2018 on??NET 6??0!??",
+    "Use PowerLine for rendering spaceship": "us poWERLINE fr rENderin spacesheP",
+    "Meteor game speed": "meter game SPEedED",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "wethr tO US PowERLINE tO rendR teH SPAcEShep or to us teh standard greetr THan characTR?? if u want to us powerliNE wif meTEOR u nd tO enstel an approprimicate font wif powerline sUpport??",
+    "Specifies the game speed in milliseconds.": " speCifIEZ TEH game SPEEDed in milisecondz??"
   }
 }

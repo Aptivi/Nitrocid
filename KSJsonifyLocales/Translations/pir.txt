@@ -1723,3 +1723,8 @@ commands 'ighlighted in another color be unified commands an' be available in ev
  downloadin' version
 installin' version
 goin' aft to 2018...
+Ye can't go aft to 2018 on.Net 6.0!
+use powerline fer renderin' spaceship
+meteor game speed
+whether to use powerline to render the spaceship or to use the standard greater than character. If ye want to use powerline with meteor, ye need to install an appropriate font with powerline support.
+ specifies the game speed in milliseconds.

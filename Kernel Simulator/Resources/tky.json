@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Güncellemeler kontrol ediliyor...",
     "Downloading version": "Sürüm indiriliyor",
     "Installing version": "Sürüm yükleniyor",
-    "Going back to 2018...": "2018'e dönersek..."
+    "Going back to 2018...": "2018'e dönersek...",
+    "You can't go back to 2018 on .NET 6.0!": ".NET 6.0'da 2018'e geri dönemezsiniz!",
+    "Use PowerLine for rendering spaceship": "Uzay gemisi oluşturmak için PowerLine kullanın",
+    "Meteor game speed": "Meteor oyun hızı",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Uzay gemisini oluşturmak için PowerLine'ın mı yoksa karakterden büyük standardı mı kullanacağı. PowerLine'ı Meteor ile kullanmak istiyorsanız, PowerLine destekli uygun bir yazı tipi yüklemeniz gerekir.",
+    "Specifies the game speed in milliseconds.": "Oyun hızını milisaniye cinsinden belirtir."
   }
 }

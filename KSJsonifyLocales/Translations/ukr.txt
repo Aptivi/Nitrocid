@@ -1723,3 +1723,8 @@ Perevirka onovlenʹ...
 Zavantazhennya versiyi
 Ustanovka versiyi
 Povertayuchysʹ u 2018 rik...
+Vy ne mozhete povernutysya do 2018 roku na .NET 6.0!
+Vykorystovuyte PowerLine dlya vizualizatsiyi kosmichnoho korablya
+Shvydkistʹ hry Meteor
+Chy vykorystovuvaty PowerLine dlya vizualizatsiyi kosmichnoho korablya, chy vykorystovuvaty standartnyy symvol «bilʹshe». Yakshcho vy khochete vykorystovuvaty PowerLine z Meteor, vam potribno vstanovyty vidpovidnyy shryft iz pidtrymkoyu PowerLine.
+Vyznachaye shvydkistʹ hry v milisekundakh.

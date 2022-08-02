@@ -1726,6 +1726,11 @@
     "Checking for updates...": "البحث عن تحديثات...",
     "Downloading version": "تحميل النسخة",
     "Installing version": "تثبيت الإصدار",
-    "Going back to 2018...": "العودة إلى 2018 ..."
+    "Going back to 2018...": "العودة إلى 2018 ...",
+    "You can't go back to 2018 on .NET 6.0!": "لا يمكنك العودة إلى 2018 على .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "استخدم PowerLine لتقديم سفينة الفضاء",
+    "Meteor game speed": "سرعة لعبة النيزك",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "ما إذا كان يجب استخدام PowerLine لتقديم سفينة الفضاء أو استخدام المعيار أكبر من الحرف. إذا كنت ترغب في استخدام PowerLine مع Meteor ، فأنت بحاجة إلى تثبيت خط مناسب مع دعم PowerLine.",
+    "Specifies the game speed in milliseconds.": "يحدد سرعة اللعبة بالمللي ثانية."
   }
 }

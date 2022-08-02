@@ -1726,6 +1726,11 @@
     "Checking for updates...": "アップデートの確認...",
     "Downloading version": "ダウンロード版",
     "Installing version": "インストールバージョン",
-    "Going back to 2018...": "2018年に戻る..."
+    "Going back to 2018...": "2018年に戻る...",
+    "You can't go back to 2018 on .NET 6.0!": ".NET 6.0 では 2018 年には戻れません!",
+    "Use PowerLine for rendering spaceship": "宇宙船のレンダリングに PowerLine を使用する",
+    "Meteor game speed": "流星のゲーム速度",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "PowerLine を使用して宇宙船をレンダリングするか、標準の大なり文字を使用するか。 Meteor で PowerLine を使用する場合は、PowerLine をサポートする適切なフォントをインストールする必要があります。",
+    "Specifies the game speed in milliseconds.": "ゲーム速度をミリ秒単位で指定します。"
   }
 }

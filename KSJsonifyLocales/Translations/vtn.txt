@@ -1723,3 +1723,8 @@ Các lệnh được tô sáng bằng màu khác là các lệnh hợp nhất v�
 Đang tải xuống phiên bản
 Đang cài đặt phiên bản
 Quay trở lại năm 2018 ...
+Bạn không thể quay lại năm 2018 trên .NET 6.0!
+Sử dụng PowerLine để kết xuất tàu vũ trụ
+Tốc độ trò chơi Meteor
+Sử dụng PowerLine để kết xuất tàu vũ trụ hay sử dụng tiêu chuẩn lớn hơn ký tự. Nếu bạn muốn sử dụng PowerLine với Meteor, bạn cần cài đặt một phông chữ thích hợp có hỗ trợ PowerLine.
+Chỉ định tốc độ trò chơi tính bằng mili giây.

@@ -1726,6 +1726,11 @@
     "Checking for updates...": "查询更新...",
     "Downloading version": "下载版本",
     "Installing version": "安装版本",
-    "Going back to 2018...": "回到2018年……"
+    "Going back to 2018...": "回到2018年……",
+    "You can't go back to 2018 on .NET 6.0!": "你不能在 .NET 6.0 上回到 2018 年！",
+    "Use PowerLine for rendering spaceship": "使用 PowerLine 渲染宇宙飞船",
+    "Meteor game speed": "流星游戏速度",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "是使用 PowerLine 渲染飞船还是使用标准大于字符。 如果您想将 PowerLine 与 Meteor 一起使用，则需要安装支持 PowerLine 的适当字体。",
+    "Specifies the game speed in milliseconds.": "以毫秒为单位指定游戏速度。"
   }
 }

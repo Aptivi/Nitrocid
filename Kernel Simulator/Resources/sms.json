@@ -1726,6 +1726,11 @@
     "Checking for updates...": " chckng fr pdts...",
     "Downloading version": " dwnldng vrsn",
     "Installing version": "instllng vrsn",
-    "Going back to 2018...": "gng bck t 2018..."
+    "Going back to 2018...": "gng bck t 2018...",
+    "You can't go back to 2018 on .NET 6.0!": "Y cn't g bck t 2018 n.Net 6.0!",
+    "Use PowerLine for rendering spaceship": "us pwrln fr rndrng spcshp",
+    "Meteor game speed": "mtr gm spd",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "whthr t s pwrln t rndr th spcshp r t s th stndrd grtr thn chrctr. If y wnt t s pwrln wth mtr, y nd t nstll n pprprt fnt wth pwrln spprt.",
+    "Specifies the game speed in milliseconds.": " spcfs th gm spd n mllscnds."
   }
 }

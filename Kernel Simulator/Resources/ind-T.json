@@ -1726,6 +1726,11 @@
     "Checking for updates...": "अपडेट्स के लिए जांच हो रही है...",
     "Downloading version": "संस्करण डाउनलोड कर रहा है",
     "Installing version": "संस्करण स्थापित करना",
-    "Going back to 2018...": "2018 में वापस जा रहे हैं ..."
+    "Going back to 2018...": "2018 में वापस जा रहे हैं ...",
+    "You can't go back to 2018 on .NET 6.0!": "आप .NET 6.0 पर 2018 में वापस नहीं जा सकते!",
+    "Use PowerLine for rendering spaceship": "स्पेसशिप प्रदान करने के लिए पावरलाइन का प्रयोग करें",
+    "Meteor game speed": "उल्का खेल की गति",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "स्पेसशिप को रेंडर करने के लिए पॉवरलाइन का इस्तेमाल करना है या कैरेक्टर से बड़े स्टैंडर्ड का इस्तेमाल करना है। यदि आप उल्का के साथ PowerLine का उपयोग करना चाहते हैं, तो आपको PowerLine समर्थन के साथ एक उपयुक्त फ़ॉन्ट स्थापित करने की आवश्यकता है।",
+    "Specifies the game speed in milliseconds.": "मिलीसेकंड में खेल की गति निर्दिष्ट करता है।"
   }
 }

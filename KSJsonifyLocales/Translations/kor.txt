@@ -1723,3 +1723,8 @@ eobdeiteu hwag-in jung...
 beojeon daunlodeu jung
 beojeon seolchi jung
 2018nyeon-eulo dol-aga...
+.NET 6.0eseoneun 2018nyeon-eulo dol-agal su eobs-seubnida!
+ujuseon lendeoling-e PowerLine sayong
+yuseong geim sogdo
+ujuseon-eul lendeolinghagi wihae PowerLineeul sayonghalji animyeon munjaboda keun pyojun-eul sayonghalji yeobu. Meteorwa hamkke PowerLineeul sayonghalyeomyeon PowerLineeul jiwonhaneun jeogjeolhan geulkkol-eul seolchihaeya habnida.
+geim sogdoleul millicho dan-wilo jijeonghabnida.

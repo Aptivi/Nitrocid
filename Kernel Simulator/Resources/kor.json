@@ -1726,6 +1726,11 @@
     "Checking for updates...": "eobdeiteu hwag-in jung...",
     "Downloading version": "beojeon daunlodeu jung",
     "Installing version": "beojeon seolchi jung",
-    "Going back to 2018...": "2018nyeon-eulo dol-aga..."
+    "Going back to 2018...": "2018nyeon-eulo dol-aga...",
+    "You can't go back to 2018 on .NET 6.0!": ".NET 6.0eseoneun 2018nyeon-eulo dol-agal su eobs-seubnida!",
+    "Use PowerLine for rendering spaceship": "ujuseon lendeoling-e PowerLine sayong",
+    "Meteor game speed": "yuseong geim sogdo",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "ujuseon-eul lendeolinghagi wihae PowerLineeul sayonghalji animyeon munjaboda keun pyojun-eul sayonghalji yeobu. Meteorwa hamkke PowerLineeul sayonghalyeomyeon PowerLineeul jiwonhaneun jeogjeolhan geulkkol-eul seolchihaeya habnida.",
+    "Specifies the game speed in milliseconds.": "geim sogdoleul millicho dan-wilo jijeonghabnida."
   }
 }

@@ -1723,3 +1723,8 @@ Kontrola aktualizací...
 Stahování verze
 Instalace verze
 Návrat do roku 2018...
+Na .NET 6.0 se nemůžete vrátit do roku 2018!
+Pro vykreslení vesmírné lodi použijte PowerLine
+Rychlost meteorické hry
+Zda použít PowerLine k vykreslení vesmírné lodi nebo použít standard větší než znak. Pokud chcete používat PowerLine s Meteorem, musíte nainstalovat vhodný font s podporou PowerLine.
+Určuje rychlost hry v milisekundách.

@@ -1723,3 +1723,8 @@ Vérification des mises à jour...
 Version de téléchargement
 Version d'installation
 Retour en 2018...
+Vous ne pouvez pas revenir en arrière en 2018 sur .NET 6.0 !
+Utilisez PowerLine pour le rendu du vaisseau spatial
+Vitesse de jeu Meteor
+Que ce soit pour utiliser PowerLine pour rendre le vaisseau spatial ou pour utiliser le caractère standard supérieur à. Si vous souhaitez utiliser PowerLine avec Meteor, vous devez installer une police appropriée avec le support PowerLine.
+Spécifie la vitesse du jeu en millisecondes.

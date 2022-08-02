@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Đang kiểm tra các bản cập nhật ...",
     "Downloading version": "Đang tải xuống phiên bản",
     "Installing version": "Đang cài đặt phiên bản",
-    "Going back to 2018...": "Quay trở lại năm 2018 ..."
+    "Going back to 2018...": "Quay trở lại năm 2018 ...",
+    "You can't go back to 2018 on .NET 6.0!": "Bạn không thể quay lại năm 2018 trên .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "Sử dụng PowerLine để kết xuất tàu vũ trụ",
+    "Meteor game speed": "Tốc độ trò chơi Meteor",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Sử dụng PowerLine để kết xuất tàu vũ trụ hay sử dụng tiêu chuẩn lớn hơn ký tự. Nếu bạn muốn sử dụng PowerLine với Meteor, bạn cần cài đặt một phông chữ thích hợp có hỗ trợ PowerLine.",
+    "Specifies the game speed in milliseconds.": "Chỉ định tốc độ trò chơi tính bằng mili giây."
   }
 }

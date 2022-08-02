@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Verifica aggiornamenti...",
     "Downloading version": "Download della versione",
     "Installing version": "Installazione della versione",
-    "Going back to 2018...": "Tornando al 2018..."
+    "Going back to 2018...": "Tornando al 2018...",
+    "You can't go back to 2018 on .NET 6.0!": "Non puoi tornare al 2018 su .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "Usa PowerLine per il rendering dell'astronave",
+    "Meteor game speed": "Velocità di gioco della meteora",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Se utilizzare PowerLine per rendere l'astronave o utilizzare lo standard maggiore del carattere. Se si desidera utilizzare PowerLine con Meteor, è necessario installare un font appropriato con supporto PowerLine.",
+    "Specifies the game speed in milliseconds.": "Specifica la velocità di gioco in millisecondi."
   }
 }

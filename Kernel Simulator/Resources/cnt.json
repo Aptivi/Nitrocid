@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Cháxún gēngxīn...",
     "Downloading version": "Xiàzài bǎnběn",
     "Installing version": "ānzhuāng bǎnběn",
-    "Going back to 2018...": "huí dào 2018 nián……"
+    "Going back to 2018...": "huí dào 2018 nián……",
+    "You can't go back to 2018 on .NET 6.0!": "Nǐ bùnéng zài.NET 6.0 Shàng huí dào 2018 nián!",
+    "Use PowerLine for rendering spaceship": "Shǐyòng PowerLine xuànrǎn yǔzhòu fēichuán",
+    "Meteor game speed": "liúxīng yóuxì sùdù",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "shì shǐyòng PowerLine xuànrǎn fēichuán háishì shǐyòng biāozhǔn dàyú zìfú. Rúguǒ nín xiǎng jiāng PowerLine yǔ Meteor yīqǐ shǐyòng, zé xūyào ānzhuāng zhīchí PowerLine de shìdàng zìtǐ.",
+    "Specifies the game speed in milliseconds.": "Yǐ háomiǎo wèi dānwèi zhǐdìng yóuxì sùdù."
   }
 }

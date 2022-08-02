@@ -1723,3 +1723,8 @@ Verifica aggiornamenti...
 Download della versione
 Installazione della versione
 Tornando al 2018...
+Non puoi tornare al 2018 su .NET 6.0!
+Usa PowerLine per il rendering dell'astronave
+Velocità di gioco della meteora
+Se utilizzare PowerLine per rendere l'astronave o utilizzare lo standard maggiore del carattere. Se si desidera utilizzare PowerLine con Meteor, è necessario installare un font appropriato con supporto PowerLine.
+Specifica la velocità di gioco in millisecondi.

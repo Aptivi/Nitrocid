@@ -1726,6 +1726,11 @@
     "Checking for updates...": "apadets ke lie jaanch ho rahee hai...",
     "Downloading version": "sanskaran daunalod kar raha hai",
     "Installing version": "sanskaran sthaapit karana",
-    "Going back to 2018...": "2018 mein vaapas ja rahe hain ..."
+    "Going back to 2018...": "2018 mein vaapas ja rahe hain ...",
+    "You can't go back to 2018 on .NET 6.0!": "aap .nait 6.0 par 2018 mein vaapas nahin ja sakate!",
+    "Use PowerLine for rendering spaceship": "spesaship pradaan karane ke lie paavaralain ka prayog karen",
+    "Meteor game speed": "ulka khel kee gati",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "spesaship ko rendar karane ke lie povaralain ka istemaal karana hai ya kairektar se bade staindard ka istemaal karana hai. yadi aap ulka ke saath powairlinai ka upayog karana chaahate hain, to aapako powairlinai samarthan ke saath ek upayukt font sthaapit karane kee aavashyakata hai.",
+    "Specifies the game speed in milliseconds.": "mileesekand mein khel kee gati nirdisht karata hai."
   }
 }

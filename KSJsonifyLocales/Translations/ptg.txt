@@ -1723,3 +1723,8 @@ Verificando atualizações...
 Baixando a versão
 Instalando a versão
 Voltando a 2018...
+Você não pode voltar para 2018 no .NET 6.0!
+Use PowerLine para renderizar nave espacial
+Velocidade do jogo de meteoros
+Se deve usar o PowerLine para renderizar a nave espacial ou usar o padrão maior que o caractere. Se você quiser usar PowerLine com Meteor, você precisa instalar uma fonte apropriada com suporte a PowerLine.
+Especifica a velocidade do jogo em milissegundos.

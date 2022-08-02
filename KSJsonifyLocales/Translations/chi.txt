@@ -1723,3 +1723,8 @@ Cháxún gēngxīn...
 Xiàzài bǎnběn
 ānzhuāng bǎnběn
 huí dào 2018 nián……
+Nǐ bùnéng zài.NET 6.0 Shàng huí dào 2018 nián!
+Shǐyòng PowerLine xuànrǎn yǔzhòu fēichuán
+liúxīng yóuxì sùdù
+shì shǐyòng PowerLine xuànrǎn fēichuán háishì shǐyòng biāozhǔn dàyú zìfú. Rúguǒ nín xiǎng jiāng PowerLine yǔ Meteor yīqǐ shǐyòng, zé xūyào ānzhuāng zhīchí PowerLine de shìdàng zìtǐ.
+Yǐ háomiǎo wèi dānwèi zhǐdìng yóuxì sùdù.

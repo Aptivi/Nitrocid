@@ -1726,6 +1726,11 @@
     "Checking for updates...": "albahth ean tahdithati...",
     "Downloading version": "tahmil alnuskha",
     "Installing version": "tathbit al'iisdar",
-    "Going back to 2018...": "aleawdat 'iilaa 2018 ..."
+    "Going back to 2018...": "aleawdat 'iilaa 2018 ...",
+    "You can't go back to 2018 on .NET 6.0!": "la yumkinuk aleawdat 'iilaa 2018 ealaa .NET 6.0!",
+    "Use PowerLine for rendering spaceship": "astakhdim PowerLine litaqdim safinat alfada'",
+    "Meteor game speed": "sureat luebat alnayzak",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "ma 'iidha kan yajib astikhdam PowerLine litaqdim safinat alfada' 'aw astikhdam almieyar 'akbar min alharafa. 'iidha kunt targhab fi astikhdam PowerLine mae Meteor , fa'ant bihajat 'iilaa tathbit khatin munasib mae daem PowerLine.",
+    "Specifies the game speed in milliseconds.": "yuhadid sureat alluebat bialmalli thaniatan."
   }
 }

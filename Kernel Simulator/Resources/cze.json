@@ -1726,6 +1726,11 @@
     "Checking for updates...": "Kontrola aktualizací...",
     "Downloading version": "Stahování verze",
     "Installing version": "Instalace verze",
-    "Going back to 2018...": "Návrat do roku 2018..."
+    "Going back to 2018...": "Návrat do roku 2018...",
+    "You can't go back to 2018 on .NET 6.0!": "Na .NET 6.0 se nemůžete vrátit do roku 2018!",
+    "Use PowerLine for rendering spaceship": "Pro vykreslení vesmírné lodi použijte PowerLine",
+    "Meteor game speed": "Rychlost meteorické hry",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "Zda použít PowerLine k vykreslení vesmírné lodi nebo použít standard větší než znak. Pokud chcete používat PowerLine s Meteorem, musíte nainstalovat vhodný font s podporou PowerLine.",
+    "Specifies the game speed in milliseconds.": "Určuje rychlost hry v milisekundách."
   }
 }

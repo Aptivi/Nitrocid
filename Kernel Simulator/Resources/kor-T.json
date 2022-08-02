@@ -1726,6 +1726,11 @@
     "Checking for updates...": "업데이트 확인 중...",
     "Downloading version": "버전 다운로드 중",
     "Installing version": "버전 설치 중",
-    "Going back to 2018...": "2018년으로 돌아가..."
+    "Going back to 2018...": "2018년으로 돌아가...",
+    "You can't go back to 2018 on .NET 6.0!": ".NET 6.0에서는 2018년으로 돌아갈 수 없습니다!",
+    "Use PowerLine for rendering spaceship": "우주선 렌더링에 PowerLine 사용",
+    "Meteor game speed": "유성 게임 속도",
+    "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.": "우주선을 렌더링하기 위해 PowerLine을 사용할지 아니면 문자보다 큰 표준을 사용할지 여부. Meteor와 함께 PowerLine을 사용하려면 PowerLine을 지원하는 적절한 글꼴을 설치해야 합니다.",
+    "Specifies the game speed in milliseconds.": "게임 속도를 밀리초 단위로 지정합니다."
   }
 }

@@ -1723,3 +1723,8 @@ hests highlight'd in another col'r art unifi'd hests and art available in every 
  downloading version
 installing version
 going back to 2018
+Thee can't wend back to 2018 on. Meshes 6. 0!
+useth powerline f'r rendering spaceship
+mete'r game spe'd
+whe'r to useth powerline to render the spaceship 'r to useth the standard ranker than character.  If 't be true thee wanteth to useth powerline with meteor, thee needeth to install an appropriate font with powerline supporteth. 
+ specifies the game spe'd in milliseconds

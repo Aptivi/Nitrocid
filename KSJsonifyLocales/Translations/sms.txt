@@ -1723,3 +1723,8 @@ cmmnds hghlghtd n nthr clr r nfd cmmnds nd r vlbl n vry shll.
  dwnldng vrsn
 instllng vrsn
 gng bck t 2018...
+Y cn't g bck t 2018 n.Net 6.0!
+us pwrln fr rndrng spcshp
+mtr gm spd
+whthr t s pwrln t rndr th spcshp r t s th stndrd grtr thn chrctr. If y wnt t s pwrln wth mtr, y nd t nstll n pprprt fnt wth pwrln spprt.
+ spcfs th gm spd n mllscnds.

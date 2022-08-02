@@ -1723,3 +1723,8 @@ Güncellemeler kontrol ediliyor...
 Sürüm indiriliyor
 Sürüm yükleniyor
 2018'e dönersek...
+.NET 6.0'da 2018'e geri dönemezsiniz!
+Uzay gemisi oluşturmak için PowerLine kullanın
+Meteor oyun hızı
+Uzay gemisini oluşturmak için PowerLine'ın mı yoksa karakterden büyük standardı mı kullanacağı. PowerLine'ı Meteor ile kullanmak istiyorsanız, PowerLine destekli uygun bir yazı tipi yüklemeniz gerekir.
+Oyun hızını milisaniye cinsinden belirtir.
