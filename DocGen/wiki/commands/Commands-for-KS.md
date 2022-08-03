@@ -6,6 +6,15 @@ All the shells (either normal or custom) share a common command input parser, su
 
 The switches are special arguments that have the dash in front of them. They change how the commands work, but must be implemented before they actually work.
 
+## General commands
+
+These commands that are mentioned below are available in all of the shells.
+
+ | Command                                  | Description
+ |:-----------------------------------------|:------------
+ | [exit](unified/KS-Command-exit.md)       | Exits the subshell
+ | [presets](unified/KS-Command-presets.md) | Changes the shell preset
+
 ## UESH shell commands
 
 The below commands for Kernel Simulator can be used in the normal UESH shell, the one that is started after you log in to your account.
@@ -68,7 +77,6 @@ For more information about every command, click the command.
 | [dismissnotif](uesh/KS-Command-dismissnotif.md)             | Dismisses a specific notification.
 | [dismissnotifs](uesh/KS-Command-dismissnotifs.md)           | Dismisses all notifications
 | [edit](uesh/KS-Command-edit.md)                             | Opens the text editor shell to an existing text file.
-| [exit](uesh/KS-Command-exit.md)                             | Exits the subshell
 | [fileinfo](uesh/KS-Command-fileinfo.md)                     | Gets file information
 | [find](uesh/KS-Command-find.md)                             | Finds a specified file
 | [firedevents](uesh/KS-Command-firedevents.md)               | Lists all fired events
@@ -87,8 +95,10 @@ For more information about every command, click the command.
 | [lockscreen](uesh/KS-Command-lockscreen.md)                 | You can lock your screen and show your default screensaver set by you or by the kernel. Default screensaver is Matrix.
 | [lovehate](uesh/KS-Command-lovehate.md)                     | Starts the Love/Hate comment responder game
 | [logout](uesh/KS-Command-logout.md)                         | You can log off your account when you're finished working.
+| [lsvars](uesh/KS-Command-lsvars.md) | Lists variables
 | [mail](uesh/KS-Command-mail.md)                             | Opens the mail shell to your mail account.
 | [md](uesh/KS-Command-md.md)                                 | You can make your directory on the root directory.
+| [meteor](uesh/KS-Command-meteor.md) | You're a spaceship and the meteors are destroying you.
 | [mkfile](uesh/KS-Command-mkfile.md)                         | You can create your file under any name.
 | [mktheme](uesh/KS-Command-mktheme.md)                       | Makes a new theme.
 | [modmanual](uesh/KS-Command-modmanual.md)                   | Mod manual
@@ -96,9 +106,11 @@ For more information about every command, click the command.
 | [open](uesh/KS-Command-open.md)                             | Opens a URL
 | [ping](uesh/KS-Command-ping.md)                             | Pings addresses.
 | [put](uesh/KS-Command-put.md)                               | Uploads a file to the URL using a file.
+| [rarshell](uesh/KS-Command-rarshell.md) | Opens a RAR shell to the specified rar file
 | [rm](uesh/KS-Command-rm.md)                                 | You can remove a directory or file.
 | [reboot](uesh/KS-Command-reboot.md)                         | You can restart your kernel if you have made manual or tool configuration changes for them to be reflected, or if you want to see the boot sequence again.
 | [reportbug](uesh/KS-Command-reportbug.md)                   | Opens a prompt to let you file a bug report.
+| [retroks](uesh/KS-Command-retroks.md) | Retro Kernel Simulator based on 0.0.4.1
 | [rss](uesh/KS-Command-rss.md)                               | Opens an RSS shell.
 | [savescreen](uesh/KS-Command-savescreen.md)                 | You can show the screensaver to prevent screen burn-outs.
 | [search](uesh/KS-Command-search.md)                         | Searches for a specific string in a specific file using regular expressions.
@@ -120,6 +132,7 @@ For more information about every command, click the command.
 | [sumfiles](uesh/KS-Command-sumfiles.md)                     | Calculates the MD5, SHA1, SHA256, or SHA512 sums of the files in the specified directory.
 | [sysinfo](uesh/KS-Command-sysinfo.md)                       | You can show your system information, as well as the kernel settings.
 | [timer](uesh/KS-Command-timer.md)                           | A simple timer
+| [unitconv](uesh/KS-Command-unitconv.md) | Unit conversion
 | [unzip](uesh/KS-Command-unzip.md)                           | Extracts a zip file
 | [usermanual](uesh/KS-Command-usermanual.md)                 | Opens the Kernel Simulator wiki
 | [verify](uesh/KS-Command-verify.md)                         | Verifies a file.
