@@ -217,7 +217,7 @@ Because the API was having mixed code of between refactored and unrefactored, we
 1. You can't go back to 2018 on .NET 6.0!
 2. Meteor is customizable
 
-### KS 0.0.24.2 (WIP)
+### KS 0.0.24.2 (8/5/2022)
 
-> [!NOTE]
-> This version is WIP as of 8/5/2022.
+1. RetroKS can now run in .NET 6.0
+2. RetroKS can now run for the first time again
