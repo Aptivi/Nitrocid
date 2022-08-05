@@ -50,7 +50,7 @@ Namespace Shell.Commands
                 Dim RetroKSURL As String
                 Dim RetroKSAssets As JToken = RetroKS.SelectToken("assets")
 #If NETCOREAPP Then
-                Dim RetroKSURL As String = RetroKSAssets(0)("browser_download_url")
+                RetroKSURL = RetroKSAssets(0)("browser_download_url")
 #Else
                 If RetroKSAssets.Count > 1 Then
                     RetroKSURL = RetroKSAssets(1)("browser_download_url")
