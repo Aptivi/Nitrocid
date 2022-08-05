@@ -200,3 +200,8 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. You can't go back to 2018 on .NET 6.0!
 2. Meteor is customizable
+
+### KS 0.0.24.2 (WIP)
+
+> [!NOTE]
+> This version is WIP as of 8/5/2022.
