@@ -50,11 +50,20 @@ Namespace Files
         ''' </summary>
         Public ReadOnly Property RetroKSDownloadPath As String
             Get
+#If NETCOREAPP Then
                 If IsOnUnix() Then
-                    Return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/"
+                    Return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr"
                 Else
-                    Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/").Replace("\", "/")
+                    Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\", "/")
                 End If
+#Else
+                If IsOnUnix() Then
+                    Return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/fx"
+                Else
+                    Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/fx").Replace("\", "/")
+                End If
+#End If
+
             End Get
         End Property
 
