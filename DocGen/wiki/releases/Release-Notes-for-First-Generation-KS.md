@@ -1163,6 +1163,10 @@ This release is a huge release, so what's new is written below:
 
 1. Backported fixes
 
+### KS 0.0.12.11 (8/5/2022)
+
+1. Backported fixes
+
 ## KS 0.0.13.x series
 
 ### KS 0.0.13.0 (12/20/2020)
@@ -1391,6 +1395,10 @@ This release is a huge release, so what's new is written below:
 
 1. Backported fixes
 
+### KS 0.0.16.16 (8/5/2022)
+
+1. Backported fixes
+
 ## KS 0.0.17.x series
 
 ### KS 0.0.17.0 (7/4/2021)
@@ -1530,5 +1538,9 @@ This release is a huge release, so what's new is written below:
 1. Backported fixes from 0.0.22.0
 
 ### KS 0.0.19.7 (7/9/2022)
+
+1. Backported fixes
+
+### KS 0.0.19.8 (8/5/2022)
 
 1. Backported fixes

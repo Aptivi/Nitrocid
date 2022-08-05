@@ -64,6 +64,10 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. Backported fixes
 
+### KS 0.0.20.9 (8/5/2022)
+
+1. Backported changes
+
 ## KS 0.0.21.x series
 
 ### KS 0.0.21.0 (4/28/2022)
@@ -109,6 +113,10 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. Backported fixes
 
+### KS 0.0.21.8 (8/5/2022)
+
+1. Backported changes
+
 ## KS 0.0.22.x series
 
 ### KS 0.0.22.0 (6/12/2022)
@@ -146,6 +154,10 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. Backported fixes
 
+### KS 0.0.22.6 (8/5/2022)
+
+1. Backported changes
+
 ## KS 0.0.23.x series
 
 ### KS 0.0.23.0 (7/12/2022)
@@ -169,6 +181,10 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. Fixed dictionary defining only one meaning for words like `fine`
 2. Fixed file handles being stuck open
+
+### KS 0.0.23.3 (8/5/2022)
+
+1. Backported changes
 
 # Second-generation, Revision 1
 
