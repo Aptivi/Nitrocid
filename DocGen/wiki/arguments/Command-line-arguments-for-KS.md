@@ -13,7 +13,7 @@ ks args
 ```
 
 > [!NOTE]
-> These command line arguments are handled by the kernel after the pre-boot stage has been done. For pre-boot command line arguments that get executed before the kernel really starts, take a look at the [pre-boot arguments](Preboot-Command-line-arguments-for-KS).
+> These command line arguments are handled by the kernel after the pre-boot stage has been done. For pre-boot command line arguments that get executed before the kernel really starts, take a look at the [pre-boot arguments](Preboot-Command-line-arguments-for-KS.md).
 
 ### Useful arguments
 
