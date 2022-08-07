@@ -44,6 +44,9 @@
         "noLangKeyword": false,
         "keepFileLink": false,
         "cleanupCacheHistory": false,
-        "disableGitFeatures": false
+        "disableGitFeatures": false,
+        "sitemap": {
+            "baseUrl": "https://aptivi.github.io/Kernel-Simulator/"
+        }
     }
 }
