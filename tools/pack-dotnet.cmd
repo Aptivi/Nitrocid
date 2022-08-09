@@ -28,6 +28,7 @@ goto :finished
 
 :complete
 move %temp%\%ksversion%-bin-dotnet.rar
+copy "..\Kernel Simulator\KSBuild\net6.0\Kernel Simulator.pdb" .\%ksversion%-dotnet.pdb
 
 echo Pack successful.
 :finished

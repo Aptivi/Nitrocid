@@ -28,6 +28,7 @@ goto :finished
 
 :complete
 move %temp%\%ksversion%-bin.rar
+copy "..\Kernel Simulator\KSBuild\net48\Kernel Simulator.pdb" .\%ksversion%.pdb
 
 echo Pack successful.
 :finished

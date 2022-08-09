@@ -37,5 +37,6 @@ fi
 
 # Inform success
 mv ~/tmp/$ksversion-bin-dotnet.rar .
+cp "../Kernel Simulator/KSBuild/net6.0/Kernel Simulator.pdb" ./$ksversion.pdb
 echo Build and pack successful.
 exit 0
