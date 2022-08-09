@@ -2,6 +2,10 @@
 
 Kernel Simulator is an application which simulates our future-planned kernel as we've imagined it. It has all the usual applications, including filesystem manipulation, kernel mods, basic scripting, and many more awesome features.
 
+## How to boot with GRILO?
+
+Place all Kernel Simulator files to `%localappdata%/GRILO/Bootables/ks/` in Windows or `~/.config/grilo/Bootables/ks`.
+
 ## List of supported versions
 
 Here are all the listed versions of Kernel Simulator which is either supported or out of support. You can also see the release date and the expected end of life date.
@@ -250,3 +254,4 @@ Each revision of the kernel API has several incompatibilities that break the exi
 | v0.0.24.0  |  8/2/2022    |  8/2/2025   |  8/2/2027         | Supported   |
 | v0.0.24.1  |  8/3/2022    |  8/2/2025   |  8/2/2027         | Supported   |
 | v0.0.24.2  |  8/5/2022    |  8/2/2025   |  8/2/2027         | Supported   |
+| v0.0.24.3  |  8/9/2022    |  8/2/2025   |  8/2/2027         | Supported   |

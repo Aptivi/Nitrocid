@@ -221,3 +221,7 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. RetroKS can now run in .NET 6.0
 2. RetroKS can now run for the first time again
+
+### KS 0.0.24.3 (8/9/2022)
+
+1. KS can now be run in GRILO
