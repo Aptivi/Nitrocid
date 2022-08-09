@@ -28,6 +28,9 @@ Namespace Kernel
 
         Public Sub Boot(args() As String) Implements IBootable.Boot
             Main(args)
+
+            'GRILO needs ShutdownRequested to be set; otherwise, boot fails.
+            ShutdownRequested = True
         End Sub
 
     End Class

@@ -230,3 +230,5 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 > [!NOTICE]
 > This version is WIP as of 8/9/2022.
+
+1. Fixed false boot failure on GRILO
