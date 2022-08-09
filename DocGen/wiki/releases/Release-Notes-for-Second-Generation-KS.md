@@ -225,3 +225,8 @@ Because the API was having mixed code of between refactored and unrefactored, we
 ### KS 0.0.24.3 (8/9/2022)
 
 1. KS can now be run in GRILO
+
+### KS 0.0.24.4 (???)
+
+> [!NOTICE]
+> This version is WIP as of 8/9/2022.
