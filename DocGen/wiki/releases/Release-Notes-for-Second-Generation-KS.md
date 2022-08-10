@@ -226,9 +226,16 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. KS can now be run in GRILO
 
-### KS 0.0.24.4 (???)
-
-> [!NOTICE]
-> This version is WIP as of 8/9/2022.
+### KS 0.0.24.4 (8/10/2022)
 
 1. Fixed false boot failure on GRILO
+
+# Future generation
+
+## KS 0.1.x.y series
+
+### KS 0.1.0 (WIP)
+
+> [!NOTE]
+> This version is WIP as of 8/10/2022.
+

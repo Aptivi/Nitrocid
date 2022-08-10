@@ -255,4 +255,13 @@ Each revision of the kernel API has several incompatibilities that break the exi
 | v0.0.24.1  |  8/3/2022    |  8/2/2025   |  8/2/2027         | Supported   |
 | v0.0.24.2  |  8/5/2022    |  8/2/2025   |  8/2/2027         | Supported   |
 | v0.0.24.3  |  8/9/2022    |  8/2/2025   |  8/2/2027         | Supported   |
-| v0.0.24.4  |  ???         |  8/2/2025   |  8/2/2027         | Supported   |
+| v0.0.24.4  |  8/10/2022   |  8/2/2025   |  8/2/2027         | Supported   |
+
+### Future generation
+
+> [!NOTE]
+> This generation is undefined, but will be defined in the future.
+
+| Version    | Release date | EOL date    | Security EOL date | EOL status  |
+|:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
+| v0.1.0     |  ???         |  ???        |  ???              | ???         |

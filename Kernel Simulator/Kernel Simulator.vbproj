@@ -48,8 +48,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <GenerateManifests>false</GenerateManifests>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Version>0.0.24.4</Version>
-    <PackageVersion>0.0.24.4</PackageVersion>
+    <Version>0.1.0</Version>
+    <PackageVersion>0.1.0</PackageVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
 
