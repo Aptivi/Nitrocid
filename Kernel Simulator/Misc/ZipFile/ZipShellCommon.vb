@@ -25,7 +25,7 @@ Namespace Misc.ZipFile
 
         'Variables
         Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {
-            {"cdir", New CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New ZipShell_CDirCommand)},
+            {"cdir", New CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", New CommandArgumentInfo(), New ZipShell_CDirCommand)},
             {"chdir", New CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", New CommandArgumentInfo({"<directory>"}, True, 1), New ZipShell_ChDirCommand)},
             {"chadir", New CommandInfo("chadir", ShellType.ZIPShell, "Changes archive directory", New CommandArgumentInfo({"<archivedirectory>"}, True, 1), New ZipShell_ChADirCommand)},
             {"get", New CommandInfo("get", ShellType.ZIPShell, "Extracts a file to a specified directory or a current directory", New CommandArgumentInfo({"<entry> [where] [-absolute]"}, True, 1), New ZipShell_GetCommand, False, False, False, False, False)},

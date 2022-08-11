@@ -26,15 +26,15 @@ Namespace Network.SFTP
             {"cdl", New CommandInfo("cdl", ShellType.SFTPShell, "Changes local directory to download to or upload from", New CommandArgumentInfo({"<directory>"}, True, 1), New SFTP_CdlCommand)},
             {"cdr", New CommandInfo("cdr", ShellType.SFTPShell, "Changes remote directory to download from or upload to", New CommandArgumentInfo({"<directory>"}, True, 1), New SFTP_CdrCommand)},
             {"del", New CommandInfo("del", ShellType.SFTPShell, "Deletes remote file from server", New CommandArgumentInfo({"<file>"}, True, 1), New SFTP_DelCommand)},
-            {"disconnect", New CommandInfo("disconnect", ShellType.SFTPShell, "Disconnects from server", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_DisconnectCommand)},
+            {"disconnect", New CommandInfo("disconnect", ShellType.SFTPShell, "Disconnects from server", New CommandArgumentInfo(), New SFTP_DisconnectCommand)},
             {"get", New CommandInfo("get", ShellType.SFTPShell, "Downloads remote file to local directory using binary or text", New CommandArgumentInfo({"<file>"}, True, 1), New SFTP_GetCommand)},
-            {"help", New CommandInfo("help", ShellType.SFTPShell, "Shows help screen", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_HelpCommand)},
+            {"help", New CommandInfo("help", ShellType.SFTPShell, "Shows help screen", New CommandArgumentInfo(), New SFTP_HelpCommand)},
             {"lsl", New CommandInfo("lsl", ShellType.SFTPShell, "Lists local directory", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [dir]"}, False, 0), New SFTP_LslCommand, False, False, False, False, False)},
             {"lsr", New CommandInfo("lsr", ShellType.SFTPShell, "Lists remote directory", New CommandArgumentInfo({"[-showdetails] [dir]"}, False, 0), New SFTP_LsrCommand, False, False, False, False, False)},
             {"put", New CommandInfo("put", ShellType.SFTPShell, "Uploads local file to remote directory using binary or text", New CommandArgumentInfo({"<file>"}, True, 1), New SFTP_PutCommand)},
-            {"pwdl", New CommandInfo("pwdl", ShellType.SFTPShell, "Gets current local directory", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_PwdlCommand)},
-            {"pwdr", New CommandInfo("pwdr", ShellType.SFTPShell, "Gets current remote directory", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_PwdrCommand)},
-            {"quickconnect", New CommandInfo("quickconnect", ShellType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", New CommandArgumentInfo(Array.Empty(Of String), False, 0), New SFTP_QuickConnectCommand)}
+            {"pwdl", New CommandInfo("pwdl", ShellType.SFTPShell, "Gets current local directory", New CommandArgumentInfo(), New SFTP_PwdlCommand)},
+            {"pwdr", New CommandInfo("pwdr", ShellType.SFTPShell, "Gets current remote directory", New CommandArgumentInfo(), New SFTP_PwdrCommand)},
+            {"quickconnect", New CommandInfo("quickconnect", ShellType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", New CommandArgumentInfo(), New SFTP_QuickConnectCommand)}
         }
         Public SFTPCurrDirect As String
         Public SFTPCurrentRemoteDir As String

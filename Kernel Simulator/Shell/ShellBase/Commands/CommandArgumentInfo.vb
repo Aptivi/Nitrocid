@@ -39,6 +39,13 @@ Namespace Shell.ShellBase.Commands
         ''' <summary>
         ''' Installs a new instance of the command argument info class
         ''' </summary>
+        Public Sub New()
+            Me.New(Array.Empty(Of String), False, 0)
+        End Sub
+
+        ''' <summary>
+        ''' Installs a new instance of the command argument info class
+        ''' </summary>
         ''' <param name="HelpUsages">Help usages</param>
         ''' <param name="ArgumentsRequired">Arguments required</param>
         ''' <param name="MinimumArguments">Minimum arguments</param>
