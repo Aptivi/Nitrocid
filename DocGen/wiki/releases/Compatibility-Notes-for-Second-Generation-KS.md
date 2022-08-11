@@ -697,3 +697,12 @@ We didn't want to cause confusion between `ProgressColor` in the `FancyWriters` 
 
 * Affected modules
   - ProgressColor -> ProgressBarColor
+  
+### Breaking API changes (Future generation)
+
+#### 0.1.0 notes
+
+> [!WARNING]
+> When upgrading your mods to support 0.1.0, you must follow the compatibility notes to ensure that your mod works with 0.1.0. If you want to support the first-generation KS, you must separate your mod codebase to two parts: one for the first-gen and the other for the second-gen. They can't coexist with each other in your KSMods directory.
+
+To be filled.

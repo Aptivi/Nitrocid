@@ -239,3 +239,4 @@ Because the API was having mixed code of between refactored and unrefactored, we
 > [!NOTE]
 > This version is WIP as of 8/10/2022.
 
+1. Updated all libraries
