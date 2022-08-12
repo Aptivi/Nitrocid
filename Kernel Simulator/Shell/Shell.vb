@@ -29,6 +29,8 @@ Imports KS.Shell.UnifiedCommands
 Namespace Shell
     Public Module Shell
 
+        Friend OutputTextWriter As StreamWriter
+        Friend OutputStream As FileStream
         Friend ProcessStartCommandThread As New KernelThread("Executable Command Thread", False, AddressOf ExecuteProcess)
         Friend ReadOnly ModCommands As New Dictionary(Of String, CommandInfo)
         Friend ReadOnly InjectedCommands As New List(Of String)
@@ -189,187 +191,192 @@ Namespace Shell
             If String.IsNullOrEmpty(FullCommand) Then FullCommand = ""
 
             'Variables
-            Dim OutputTextWriter As StreamWriter
-            Dim OutputStream As FileStream
+            Dim TargetFile As String = ""
+            Dim TargetFileName As String = ""
 
             'Check for a type of command
             Dim SplitCommands As String() = FullCommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+            Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
             For Each Command As String In SplitCommands
-                Dim Done As Boolean = False
 
                 'Check to see if the command is a comment
                 If Not (Command = Nothing Or Command?.StartsWithAnyOf({" ", "#"})) Then
+                    'Get the index of the first space
+                    Dim indexCmd As Integer = Command.IndexOf(" ")
+                    Dim cmdArgs As String = Command 'Command with args
+                    Wdbg(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command)
+                    If indexCmd = -1 Then indexCmd = Command.Length
+                    Command = Command.Substring(0, indexCmd)
+                    Wdbg(DebugLevel.I, "Finished indexCmd and Command: {0}, {1}", indexCmd, Command)
+
+                    'Parse script command (if any)
+                    Dim scriptArgs As List(Of String) = Command.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
+                    scriptArgs.RemoveAt(0)
+
+                    'Get command parts
                     Dim Parts As String() = Command.SplitSpacesEncloseDoubleQuotes
+                    'Reads command written by user
+                    Try
+                        'Set title
+                        SetTitle($"{ConsoleTitle} - {Command}")
 
-                    'Iterate through mod commands
-                    Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, FullCommand)
-                    If ListModCommands(ShellType).ContainsKey(Parts(0)) Then
-                        Done = True
-                        Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
-                        ExecuteModCommand(Command)
-                    End If
-
-                    'Iterate through alias commands
-                    Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, FullCommand)
-                    If GetAliasesListFromType(ShellType).ContainsKey(Parts(0)) Then
-                        Done = True
-                        Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
-                        ExecuteAlias(Command, ShellType)
-                    End If
-
-                    'Execute the built-in command
-                    If Done = False Then
-                        Wdbg(DebugLevel.I, "Executing built-in command")
-
-                        'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-                        Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"))
-                        If Command.Contains(">>>") Then
-                            Wdbg(DebugLevel.I, "Output redirection found with append.")
-                            Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
-                            DefConsoleOut = Console.Out
-                            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
-                            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-                            Console.SetOut(OutputTextWriter)
-                            Command = Command.Replace(" >>> " + OutputFileName, "")
-                        ElseIf Command.Contains(">>") Then
-                            Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
-                            Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
-                            DefConsoleOut = Console.Out
-                            OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
-                            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-                            Console.SetOut(OutputTextWriter)
-                            Command = Command.Replace(" >> " + OutputFileName, "")
+                        'Iterate through mod commands
+                        Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, FullCommand)
+                        If ListModCommands(ShellType).ContainsKey(Parts(0)) Then
+                            Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
+                            ExecuteModCommand(Command)
                         End If
 
-                        'Checks to see if the user provided optional path
-                        If Not String.IsNullOrWhiteSpace(OutputPath) Then
-                            Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath)
-                            DefConsoleOut = Console.Out
-                            OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
-                            OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
-                            Console.SetOut(OutputTextWriter)
+                        'Iterate through alias commands
+                        Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, FullCommand)
+                        If GetAliasesListFromType(ShellType).ContainsKey(Parts(0)) Then
+                            Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
+                            ExecuteAlias(Command, ShellType)
                         End If
 
-                        'Reads command written by user
-                        Try
-                            Dim EntireCommand As String = Command
+                        'Execute the built-in command
+                        If Commands.ContainsKey(Command) Then
+                            Wdbg(DebugLevel.I, "Executing built-in command")
+
+                            'Check to see if the command supports redirection
+                            If Commands(Command).Flags.HasFlag(CommandFlags.RedirectionSupported) Then
+                                Wdbg(DebugLevel.I, "Redirection supported!")
+                                InitializeRedirection(Command, OutputPath)
+                            End If
                             If Not (Command = Nothing Or Command.StartsWithAnyOf({" ", "#"}) = True) Then
-                                SetTitle($"{ConsoleTitle} - {Command}")
-
-                                'Parse script command (if any)
-                                Dim scriptArgs As List(Of String) = Command.Split({".uesh "}, StringSplitOptions.RemoveEmptyEntries).ToList
-                                scriptArgs.RemoveAt(0)
-
-                                'Get the index of the first space
-                                Dim indexCmd As Integer = Command.IndexOf(" ")
-                                Dim cmdArgs As String = Command 'Command with args
-                                Wdbg(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command)
-                                If indexCmd = -1 Then indexCmd = Command.Length
-                                Command = Command.Substring(0, indexCmd)
-                                Wdbg(DebugLevel.I, "Finished indexCmd and Command: {0}, {1}", indexCmd, Command)
-
-                                'Scan PATH for file existence and set file name as needed
-                                Dim TargetFile As String = ""
-                                Dim TargetFileName As String = ""
-                                FileExistsInPath(Command, TargetFile)
-                                If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(Command)
-                                If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
 
                                 'Check to see if a user is able to execute a command
-                                Dim Commands As Dictionary(Of String, CommandInfo) = GetCommands(ShellType)
-                                If Commands.ContainsKey(Command) Then
-                                    If ShellType = ShellType.Shell Then
-                                        If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(Command).Flags.HasFlag(CommandFlags.Strict) Then
-                                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", Command)
-                                            Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, Command)
-                                            Exit Try
-                                        End If
+                                If ShellType = ShellType.Shell Then
+                                    If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(Command).Flags.HasFlag(CommandFlags.Strict) Then
+                                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", Command)
+                                        Write(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, Command)
+                                        Exit Try
                                     End If
+                                End If
 
-                                    If Maintenance = True And Commands(Command).Flags.HasFlag(CommandFlags.NoMaintenance) Then
-                                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", Command)
-                                        Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, Command)
-                                    ElseIf IsInvokedByKernelArgument And (Command.StartsWith("logout") Or Command.StartsWith("shutdown") Or Command.StartsWith("reboot")) Then
-                                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", Command)
-                                        Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, Command)
-                                    Else
-                                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs)
-                                        Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellType, Nothing)
-
-                                        'Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
-                                        'is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
-                                        'shell can do their job.
-                                        Dim ShellInstance As ShellInfo = ShellStack(ShellStack.Count - 1)
-                                        Dim StartCommandThread As KernelThread = ShellInstance.ShellCommandThread
-                                        Dim CommandThreadValid As Boolean = True
-                                        If StartCommandThread.IsAlive Then
-                                            If ShellInstance.AltCommandThreads.Count > 0 Then
-                                                StartCommandThread = ShellInstance.AltCommandThreads(ShellInstance.AltCommandThreads.Count - 1)
-                                            Else
-                                                Wdbg(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.")
-                                                CommandThreadValid = False
-                                            End If
-                                        End If
-                                        If CommandThreadValid Then
-                                            StartCommandThread.Start(Params)
-                                            StartCommandThread.Wait()
-                                            StartCommandThread.Stop()
-                                        End If
-                                    End If
-                                ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
-                                    'If we're in the UESH shell, parse the script file or executable file
-                                    If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
-                                        Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", Command)
-                                        Try
-                                            'Create a new instance of process
-                                            If TryParsePath(TargetFile) Then
-                                                cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning()
-                                                Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
-                                                Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
-                                                ProcessStartCommandThread.Start(Params)
-                                                ProcessStartCommandThread.Wait()
-                                                ProcessStartCommandThread.Stop()
-                                            End If
-                                        Catch ex As Exception
-                                            Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
-                                            Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, Command, ex.Message)
-                                            WStkTrc(ex)
-                                        End Try
-                                    ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                                        Try
-                                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", Command)
-                                            Execute(TargetFile, scriptArgs.Join(" "))
-                                        Catch ex As Exception
-                                            Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
-                                            WStkTrc(ex)
-                                        End Try
-                                    Else
-                                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd)
-                                        Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, Command)
-                                    End If
+                                'Check the command before starting
+                                If Maintenance = True And Commands(Command).Flags.HasFlag(CommandFlags.NoMaintenance) Then
+                                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", Command)
+                                    Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, Command)
+                                ElseIf IsInvokedByKernelArgument And (Command.StartsWith("logout") Or Command.StartsWith("shutdown") Or Command.StartsWith("reboot")) Then
+                                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", Command)
+                                    Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, Command)
                                 Else
-                                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd)
-                                    Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, Command)
+                                    Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs)
+                                    Dim Params As New ExecuteCommandThreadParameters(FullCommand, ShellType, Nothing)
+
+                                    'Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
+                                    'is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
+                                    'shell can do their job.
+                                    Dim ShellInstance As ShellInfo = ShellStack(ShellStack.Count - 1)
+                                    Dim StartCommandThread As KernelThread = ShellInstance.ShellCommandThread
+                                    Dim CommandThreadValid As Boolean = True
+                                    If StartCommandThread.IsAlive Then
+                                        If ShellInstance.AltCommandThreads.Count > 0 Then
+                                            StartCommandThread = ShellInstance.AltCommandThreads(ShellInstance.AltCommandThreads.Count - 1)
+                                        Else
+                                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: Alt command threads are not there.")
+                                            CommandThreadValid = False
+                                        End If
+                                    End If
+                                    If CommandThreadValid Then
+                                        StartCommandThread.Start(Params)
+                                        StartCommandThread.Wait()
+                                        StartCommandThread.Stop()
+                                    End If
                                 End If
                             End If
-                        Catch ex As Exception
-                            WStkTrc(ex)
-                            Write(DoTranslation("Error trying to execute command.") + NewLine +
-                                  DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-                        End Try
-                    End If
+                        ElseIf TryParsePath(TargetFile) And ShellType = ShellType.Shell Then
+                            'Scan PATH for file existence and set file name as needed
+                            FileExistsInPath(Command, TargetFile)
+                            If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(Command)
+                            If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
+
+                            'If we're in the UESH shell, parse the script file or executable file
+                            If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
+                                Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", Command)
+                                Try
+                                    'Create a new instance of process
+                                    If TryParsePath(TargetFile) Then
+                                        cmdArgs = cmdArgs.Replace(TargetFileName, "")
+                                        cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning()
+                                        Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
+                                        Dim Params As New ExecuteProcessThreadParameters(TargetFile, cmdArgs)
+                                        ProcessStartCommandThread.Start(Params)
+                                        ProcessStartCommandThread.Wait()
+                                        ProcessStartCommandThread.Stop()
+                                    End If
+                                Catch ex As Exception
+                                    Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
+                                    Write(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, Command, ex.Message)
+                                    WStkTrc(ex)
+                                End Try
+                            ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
+                                Try
+                                    Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", Command)
+                                    Execute(TargetFile, scriptArgs.Join(" "))
+                                Catch ex As Exception
+                                    Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
+                                    WStkTrc(ex)
+                                End Try
+                            Else
+                                Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd)
+                                Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, Command)
+                            End If
+                        Else
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd)
+                            Write(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, Command)
+                        End If
+
+                        'Restore title
+                        SetTitle(ConsoleTitle)
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        Write(DoTranslation("Error trying to execute command.") + NewLine +
+                              DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                    End Try
                 End If
             Next
-            SetTitle(ConsoleTitle)
 
             'Restore console output to its original state if any
-#Disable Warning BC42104
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
                 OutputTextWriter?.Close()
             End If
-#Enable Warning BC42104
+        End Sub
+
+        ''' <summary>
+        ''' Initializes the redirection
+        ''' </summary>
+        Private Sub InitializeRedirection(ByRef Command As String, OutputPath As String)
+            'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
+            Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", Command.Contains(">>>"), Command.Contains(">>"))
+            If Command.Contains(">>>") Then
+                Wdbg(DebugLevel.I, "Output redirection found with append.")
+                Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
+                DefConsoleOut = Console.Out
+                OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+                Command = Command.Replace(" >>> " + OutputFileName, "")
+            ElseIf Command.Contains(">>") Then
+                Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
+                Dim OutputFileName As String = Command.Substring(Command.LastIndexOf(">") + 2)
+                DefConsoleOut = Console.Out
+                OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+                Command = Command.Replace(" >> " + OutputFileName, "")
+            End If
+
+            'Checks to see if the user provided optional path
+            If Not String.IsNullOrWhiteSpace(OutputPath) Then
+                Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath)
+                DefConsoleOut = Console.Out
+                OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
+                OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
+                Console.SetOut(OutputTextWriter)
+            End If
         End Sub
 
     End Module
