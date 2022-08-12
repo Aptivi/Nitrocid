@@ -104,7 +104,7 @@ Namespace Shell
             {"langman", New CommandInfo("langman", ShellType.Shell, "Manage your languages", New CommandArgumentInfo({"<reload/load/unload> <customlanguagename>", "<list/reloadall>"}, True, 1), New LangManCommand, CommandFlags.Strict)},
             {"list", New CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [directory]"}, False, 0), New ListCommand, CommandFlags.Wrappable)},
             {"lockscreen", New CommandInfo("lockscreen", ShellType.Shell, "Locks your screen with a password", New CommandArgumentInfo(), New LockScreenCommand)},
-            {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", New CommandArgumentInfo(), New LogoutCommand, CommandFlags.NoMaintenance)},
+            {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", New CommandArgumentInfo(), New LogoutCommand, CommandFlags.NoMaintenance Or CommandFlags.UninvokableByKernelArgument)},
             {"lovehate", New CommandInfo("lovehate", ShellType.Shell, "Respond to love or hate comments.", New CommandArgumentInfo(), New LoveHateCommand)},
             {"lsdbgdev", New CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", New CommandArgumentInfo(), New LsDbgDevCommand, CommandFlags.Strict Or CommandFlags.Wrappable)},
             {"lsvars", New CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", New CommandArgumentInfo(), New LsVarsCommand, CommandFlags.Wrappable)},
@@ -122,7 +122,7 @@ Namespace Shell
             {"ping", New CommandInfo("ping", ShellType.Shell, "Pings an address", New CommandArgumentInfo({"[times] <Address1> <Address2> ..."}, True, 1), New PingCommand)},
             {"put", New CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", New CommandArgumentInfo({"<FileName> <URL>"}, True, 2), New PutCommand)},
             {"rarshell", New CommandInfo("rarshell", ShellType.Shell, "The RAR shell", New CommandArgumentInfo({"<rarfile>"}, True, 1), New RarShellCommand)},
-            {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New RebootCommand)},
+            {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New RebootCommand, CommandFlags.UninvokableByKernelArgument)},
             {"reloadconfig", New CommandInfo("reloadconfig", ShellType.Shell, "Reloads configuration file that is edited.", New CommandArgumentInfo(), New ReloadConfigCommand, CommandFlags.Strict)},
             {"reloadsaver", New CommandInfo("reloadsaver", ShellType.Shell, "Reloads screensaver file in KSMods", New CommandArgumentInfo({"<customsaver>"}, True, 1), New ReloadSaverCommand, CommandFlags.Strict)},
             {"retroks", New CommandInfo("retroks", ShellType.Shell, "Retro Kernel Simulator based on 0.0.4.1", New CommandArgumentInfo(), New RetroKSCommand)},
@@ -146,7 +146,7 @@ Namespace Shell
             {"shownotifs", New CommandInfo("shownotifs", ShellType.Shell, "Shows all received notifications", New CommandArgumentInfo(), New ShowNotifsCommand)},
             {"showtd", New CommandInfo("showtd", ShellType.Shell, "Shows date and time", New CommandArgumentInfo(), New ShowTdCommand)},
             {"showtdzone", New CommandInfo("showtdzone", ShellType.Shell, "Shows date and time in zones", New CommandArgumentInfo({"[-all] <timezone>"}, True, 1), New ShowTdZoneCommand, CommandFlags.Wrappable)},
-            {"shutdown", New CommandInfo("shutdown", ShellType.Shell, "The kernel will be shut down", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New ShutdownCommand)},
+            {"shutdown", New CommandInfo("shutdown", ShellType.Shell, "The kernel will be shut down", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New ShutdownCommand, CommandFlags.UninvokableByKernelArgument)},
             {"snaker", New CommandInfo("snaker", ShellType.Shell, "The snake game!", New CommandArgumentInfo(), New SnakerCommand)},
             {"solver", New CommandInfo("solver", ShellType.Shell, "See if you can solve mathematical equations on time", New CommandArgumentInfo(), New SolverCommand)},
             {"speedpress", New CommandInfo("speedpress", ShellType.Shell, "See if you can press a key on time", New CommandArgumentInfo({"[-e|-m|-h|-v|-c] [timeout]"}, False, 0), New SpeedPressCommand)},
@@ -258,7 +258,7 @@ Namespace Shell
                                 If Maintenance = True And Commands(Command).Flags.HasFlag(CommandFlags.NoMaintenance) Then
                                     Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", Command)
                                     Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, Command)
-                                ElseIf IsInvokedByKernelArgument And (Command.StartsWith("logout") Or Command.StartsWith("shutdown") Or Command.StartsWith("reboot")) Then
+                                ElseIf IsInvokedByKernelArgument And Commands(Command).Flags.HasFlag(CommandFlags.UninvokableByKernelArgument) Then
                                     Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", Command)
                                     Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, Command)
                                 Else
