@@ -26,7 +26,7 @@ Namespace TestShell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
                 Dim SubName As String = "Raise" + ListArgs(0)
-                CallByName(New Events, SubName, CallType.Method)
+                CallByName(New Events.Events, SubName, CallType.Method)
             Catch ex As Exception
                 Write(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, ListArgs(0))
             End Try

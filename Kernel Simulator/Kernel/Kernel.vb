@@ -45,7 +45,7 @@ Namespace Kernel
         Public HostName As String = "kernel"
         Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
         Public ReadOnly NewLine As String = Environment.NewLine
-        Public ReadOnly KernelEventManager As New Events
+        Public ReadOnly KernelEventManager As New Events.Events
         Public ReadOnly ExecutableDir As String = Environment.CurrentDirectory
         Friend StageTimer As New Stopwatch
         Friend DefConsoleOut As TextWriter

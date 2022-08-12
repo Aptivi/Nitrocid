@@ -20,13 +20,8 @@ Imports System.IO
 Imports KS.Misc.Notifications
 Imports KS.Modifications
 
-Namespace Kernel
+Namespace Kernel.Events
     Public Class Events
-
-        ''' <summary>
-        ''' Recently fired events
-        ''' </summary>
-        Friend Property FiredEvents As New Dictionary(Of String, Object())
 
         'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
         Public Event KernelStarted()

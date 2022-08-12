@@ -16,8 +16,13 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Namespace Kernel
+Namespace Kernel.Events
     Public Module EventsManager
+
+        ''' <summary>
+        ''' Recently fired events
+        ''' </summary>
+        Friend Property FiredEvents As New Dictionary(Of String, Object())
 
         ''' <summary>
         ''' Lists all the fired events with arguments
@@ -34,9 +39,9 @@ Namespace Kernel
             Dim FiredEvents As New Dictionary(Of String, Object())
 
             'Enumerate all the fired events
-            For Each FiredEvent As String In KernelEventManager.FiredEvents.Keys
+            For Each FiredEvent As String In FiredEvents.Keys
                 If FiredEvent.Contains(SearchTerm) Then
-                    Dim EventArguments As Object() = KernelEventManager.FiredEvents(FiredEvent)
+                    Dim EventArguments As Object() = FiredEvents(FiredEvent)
                     FiredEvents.Add(FiredEvent, EventArguments)
                 End If
             Next
@@ -47,7 +52,7 @@ Namespace Kernel
         ''' Clears all the fired events
         ''' </summary>
         Public Sub ClearAllFiredEvents()
-            KernelEventManager.FiredEvents.Clear()
+            FiredEvents.Clear()
         End Sub
 
     End Module
