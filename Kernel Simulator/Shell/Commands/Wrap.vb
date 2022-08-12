@@ -26,7 +26,7 @@ Namespace Shell.Commands
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
             If Shell.Commands.ContainsKey(CommandToBeWrapped) Then
-                If Shell.Commands(CommandToBeWrapped).Wrappable Then
+                If Shell.Commands(CommandToBeWrapped).Flags.HasFlag(CommandFlags.Wrappable) Then
                     Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
                     Dim AltThreads As List(Of KernelThread) = ShellStack(ShellStack.Count - 1).AltCommandThreads
                     If AltThreads.Count = 0 OrElse AltThreads(AltThreads.Count - 1).IsAlive Then
@@ -43,7 +43,7 @@ Namespace Shell.Commands
                 Else
                     Dim WrappableCmds As New ArrayList
                     For Each CommandInfo As CommandInfo In Shell.Commands.Values
-                        If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+                        If CommandInfo.Flags.HasFlag(CommandFlags.Wrappable) Then WrappableCmds.Add(CommandInfo.Command)
                     Next
                     Write(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
                 End If
@@ -56,7 +56,7 @@ Namespace Shell.Commands
             'Get wrappable commands
             Dim WrappableCmds As New ArrayList
             For Each CommandInfo As CommandInfo In Shell.Commands.Values
-                If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+                If CommandInfo.Flags.HasFlag(CommandFlags.Wrappable) Then WrappableCmds.Add(CommandInfo.Command)
             Next
 
             'Print them along with help description

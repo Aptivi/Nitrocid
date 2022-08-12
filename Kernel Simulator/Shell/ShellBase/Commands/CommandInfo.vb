@@ -40,25 +40,9 @@ Namespace Shell.ShellBase.Commands
         ''' </summary>
         Public ReadOnly Property CommandBase As CommandExecutor
         ''' <summary>
-        ''' Is the command admin-only?
+        ''' Command properties
         ''' </summary>
-        Public ReadOnly Property Strict As Boolean
-        ''' <summary>
-        ''' Is the command wrappable?
-        ''' </summary>
-        Public ReadOnly Property Wrappable As Boolean
-        ''' <summary>
-        ''' If true, the command can't be run in maintenance mode
-        ''' </summary>
-        Public ReadOnly Property NoMaintenance As Boolean
-        ''' <summary>
-        ''' Is the command obsolete?
-        ''' </summary>
-        Public ReadOnly Property Obsolete As Boolean
-        ''' <summary>
-        ''' Does the command set a UESH $variable?
-        ''' </summary>
-        Public ReadOnly Property SettingVariable As Boolean
+        Public ReadOnly Property Flags As CommandFlags
 
         ''' <summary>
         ''' Installs a new instance of command info class
@@ -68,22 +52,14 @@ Namespace Shell.ShellBase.Commands
         ''' <param name="HelpDefinition">Command help definition</param>
         ''' <param name="CommandArgumentInfo">Command argument info</param>
         ''' <param name="CommandBase">Command base for execution</param>
-        ''' <param name="Strict">Is the command admin-only?</param>
-        ''' <param name="Wrappable">Is the command wrappable?</param>
-        ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
-        ''' <param name="Obsolete">Is the command obsolete?</param>
-        ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, CommandArgumentInfo As CommandArgumentInfo, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
+        ''' <param name="Flags">Command flags</param>
+        Public Sub New(Command As String, Type As ShellType, HelpDefinition As String, CommandArgumentInfo As CommandArgumentInfo, CommandBase As CommandExecutor, Optional Flags As CommandFlags = CommandFlags.None)
             Me.Command = Command
             Me.Type = Type
             Me.HelpDefinition = HelpDefinition
             Me.CommandArgumentInfo = CommandArgumentInfo
             Me.CommandBase = CommandBase
-            Me.Strict = Strict
-            Me.Wrappable = Wrappable
-            Me.NoMaintenance = NoMaintenance
-            Me.Obsolete = Obsolete
-            Me.SettingVariable = SettingVariable
+            Me.Flags = Flags
         End Sub
 
         ''' <summary>

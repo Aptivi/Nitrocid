@@ -39,11 +39,12 @@ Imports KS.Shell.ShellBase.Shells
         CommandInstance.HelpDefinition.ShouldBe("Help page")
         CommandInstance.CommandArgumentInfo.HelpUsages.ShouldNotBeEmpty
         CommandInstance.Type.ShouldBe(ShellType.Shell)
-        CommandInstance.Strict.ShouldBeFalse
-        CommandInstance.Obsolete.ShouldBeFalse
-        CommandInstance.Wrappable.ShouldBeFalse
-        CommandInstance.NoMaintenance.ShouldBeFalse
-        CommandInstance.SettingVariable.ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.Wrappable).ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse
+        CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse
     End Sub
 
 End Class

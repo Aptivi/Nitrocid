@@ -56,7 +56,7 @@ Namespace Scripting
         Function GetVariableCommand(var As String, cmd As String) As String
             Dim CommandArgumentsInfo As New ProvidedCommandArgumentsInfo(cmd, ShellType.Shell)
             Dim NewCommand As String = $"{CommandArgumentsInfo.Command} "
-            If Not Shell.Shell.Commands(CommandArgumentsInfo.Command).SettingVariable Then
+            If Not Shell.Shell.Commands(CommandArgumentsInfo.Command).Flags.HasFlag(CommandFlags.SettingVariable) Then
                 For Each Word As String In CommandArgumentsInfo.ArgumentsList
                     If Word.Contains(var) And Word.StartsWith("$") Then
                         Word = ShellVariables(var)

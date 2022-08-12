@@ -82,7 +82,7 @@ Namespace Shell.ShellBase.Commands
                 TargetCommands = GetCommands(ShellType)
 
                 'Check to see if a requested command is obsolete
-                If TargetCommands(Command).Obsolete Then
+                If TargetCommands(Command).Flags.HasFlag(CommandFlags.Obsolete) Then
                     Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
                     DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
                 End If

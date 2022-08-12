@@ -71,7 +71,7 @@ Namespace Modifications
                         'Check to see if we're in the shell type command.
                         If Script.Commands(parts(0)).Type = ShellType.Shell Then
                             'Command type is of shell. Check the user privileges for restricted commands.
-                            If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
+                            If (Script.Commands(parts(0)).Flags.HasFlag(CommandFlags.Strict) And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Flags.HasFlag(CommandFlags.Strict) Then
                                 'User is authorized to use the command, or the command isn't strict
                                 ScriptCommandExecutable = True
                             Else

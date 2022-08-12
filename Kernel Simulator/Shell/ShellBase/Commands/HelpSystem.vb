@@ -134,8 +134,10 @@ Namespace Shell.ShellBase.Commands
                     'Check the command list count and print not implemented. This is an extremely rare situation.
                     If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "- " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
                     For Each cmd As String In CommandList.Keys
-                        If ((Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
-                            (Maintenance And Not CommandList(cmd).NoMaintenance Or Not Maintenance) Then
+                        If ((Not CommandList(cmd).Flags.HasFlag(CommandFlags.Strict)) Or
+                            (CommandList(cmd).Flags.HasFlag(CommandFlags.Strict) And
+                            HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
+                            (Maintenance And Not CommandList(cmd).Flags.HasFlag(CommandFlags.NoMaintenance) Or Not Maintenance) Then
                             DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, If(UnifiedCommandDict.ContainsKey(cmd), ColTypes.Success, ColTypes.ListEntry), cmd)
                             DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
                         End If
@@ -163,8 +165,10 @@ Namespace Shell.ShellBase.Commands
                 Else
                     'The built-in commands
                     For Each cmd As String In CommandList.Keys
-                        If ((Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
-                            (Maintenance And Not CommandList(cmd).NoMaintenance Or Not Maintenance) Then
+                        If ((Not CommandList(cmd).Flags.HasFlag(CommandFlags.Strict)) Or
+                            (CommandList(cmd).Flags.HasFlag(CommandFlags.Strict) And
+                            HasPermission(CurrentUser?.Username, PermissionType.Administrator))) And
+                            (Maintenance And Not CommandList(cmd).Flags.HasFlag(CommandFlags.NoMaintenance) Or Not Maintenance) Then
                             DecisiveWrite(CommandType, DebugDeviceSocket, "{0}, ", False, ColTypes.ListEntry, cmd)
                         End If
                     Next
