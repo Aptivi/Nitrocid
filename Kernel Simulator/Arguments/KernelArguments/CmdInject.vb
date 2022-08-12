@@ -22,6 +22,7 @@ Namespace Arguments.KernelArguments
     Class CmdInjectArgument
         Inherits ArgumentExecutor
         Implements IArgument
+        'TODO: Remove this command because this isn't going to be secure.
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
             If ListArgs IsNot Nothing Then
