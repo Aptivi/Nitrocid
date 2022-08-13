@@ -41,30 +41,28 @@ Namespace Shell.Prompts.Presets.ZIP
             Dim TransitionPartChar As Char = Convert.ToChar(&HE0B1)
 
             'PowerLine preset colors
-            Dim UserNameShellColorSegmentForeground As New Color(255, 255, 85)
-            Dim UserNameShellColorSegmentBackground As New Color(25, 25, 25)
-            Dim HostNameShellColorSegmentForeground As New Color(255, 255, 85)
-            Dim HostNameShellColorSegmentBackground As New Color(25, 25, 25)
-            Dim CurrentDirectoryShellColorSegmentForeground As New Color(255, 255, 85)
-            Dim CurrentDirectoryShellColorSegmentBackground As New Color(25, 25, 25)
+            Dim FirstColorSegmentForeground As New Color(255, 255, 85)
+            Dim FirstColorSegmentBackground As New Color(25, 25, 25)
+            Dim SecondColorSegmentForeground As New Color(255, 255, 85)
+            Dim SecondColorSegmentBackground As New Color(25, 25, 25)
             Dim LastTransitionForeground As New Color(25, 25, 25)
 
             'Builder
             Dim PresetStringBuilder As New StringBuilder
 
             'File name
-            PresetStringBuilder.Append(UserNameShellColorSegmentForeground.VTSequenceForeground)
-            PresetStringBuilder.Append(UserNameShellColorSegmentBackground.VTSequenceBackground)
+            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
+            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground)
             PresetStringBuilder.AppendFormat(" {0} ", Path.GetFileName(ZipShell_FileStream.Name))
 
             'Transition
-            PresetStringBuilder.Append(UserNameShellColorSegmentForeground.VTSequenceForeground)
-            PresetStringBuilder.Append(HostNameShellColorSegmentBackground.VTSequenceBackground)
+            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground)
             PresetStringBuilder.AppendFormat("{0}", TransitionPartChar)
 
             'Current archive directory
-            PresetStringBuilder.Append(HostNameShellColorSegmentForeground.VTSequenceForeground)
-            PresetStringBuilder.Append(HostNameShellColorSegmentBackground.VTSequenceBackground)
+            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground)
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground)
             PresetStringBuilder.AppendFormat(" {0} ", ZipShell_CurrentArchiveDirectory)
 
             'Transition

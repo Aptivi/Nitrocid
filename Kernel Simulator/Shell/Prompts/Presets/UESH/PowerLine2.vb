@@ -38,12 +38,12 @@ Namespace Shell.Prompts.Presets.UESH
             Dim PadlockChar As Char = Convert.ToChar(&HE0A2)
 
             'PowerLine preset colors
-            Dim UserNameShellColorSegmentForeground As New Color(255, 85, 255)
-            Dim UserNameShellColorSegmentBackground As New Color(127, 43, 127)
-            Dim HostNameShellColorSegmentForeground As New Color(0, 0, 0)
-            Dim HostNameShellColorSegmentBackground As New Color(255, 85, 255)
-            Dim CurrentDirectoryShellColorSegmentForeground As New Color(0, 0, 0)
-            Dim CurrentDirectoryShellColorSegmentBackground As New Color(255, 255, 255)
+            Dim FirstColorSegmentForeground As New Color(255, 85, 255)
+            Dim FirstColorSegmentBackground As New Color(127, 43, 127)
+            Dim SecondColorSegmentForeground As New Color(0, 0, 0)
+            Dim SecondColorSegmentBackground As New Color(255, 85, 255)
+            Dim ThirdColorSegmentForeground As New Color(0, 0, 0)
+            Dim ThirdColorSegmentBackground As New Color(255, 255, 255)
             Dim LastTransitionForeground As New Color(255, 255, 255)
 
             'Builder
@@ -52,28 +52,28 @@ Namespace Shell.Prompts.Presets.UESH
             'Build the preset
             If Not Maintenance Then
                 'Current username
-                PresetStringBuilder.Append(UserNameShellColorSegmentForeground.VTSequenceForeground)
-                PresetStringBuilder.Append(UserNameShellColorSegmentBackground.VTSequenceBackground)
+                PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
+                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground)
                 PresetStringBuilder.AppendFormat(" {0} ", CurrentUser.Username)
 
                 'Transition
-                PresetStringBuilder.Append(UserNameShellColorSegmentBackground.VTSequenceForeground)
-                PresetStringBuilder.Append(HostNameShellColorSegmentBackground.VTSequenceBackground)
+                PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground)
+                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground)
                 PresetStringBuilder.AppendFormat("{0}", TransitionChar)
 
                 'Current hostname
-                PresetStringBuilder.Append(HostNameShellColorSegmentForeground.VTSequenceForeground)
-                PresetStringBuilder.Append(HostNameShellColorSegmentBackground.VTSequenceBackground)
+                PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground)
+                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground)
                 PresetStringBuilder.AppendFormat(" {0} {1} ", PadlockChar, HostName)
 
                 'Transition
-                PresetStringBuilder.Append(HostNameShellColorSegmentBackground.VTSequenceForeground)
-                PresetStringBuilder.Append(CurrentDirectoryShellColorSegmentBackground.VTSequenceBackground)
+                PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceForeground)
+                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground)
                 PresetStringBuilder.AppendFormat("{0}", TransitionChar)
 
                 'Current directory
-                PresetStringBuilder.Append(CurrentDirectoryShellColorSegmentForeground.VTSequenceForeground)
-                PresetStringBuilder.Append(CurrentDirectoryShellColorSegmentBackground.VTSequenceBackground)
+                PresetStringBuilder.Append(ThirdColorSegmentForeground.VTSequenceForeground)
+                PresetStringBuilder.Append(ThirdColorSegmentBackground.VTSequenceBackground)
                 PresetStringBuilder.AppendFormat(" {0} ", CurrentDir)
 
                 'Transition
