@@ -16,12 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
 Imports System.Text
-Imports KS.Misc.Editors.TextEdit
 
-Namespace Shell.Prompts.Presets.Text
-    Public Class TextPowerLine1Preset
+Namespace Shell.Prompts.Presets.Test
+    Public Class TestPowerLine1Preset
         Inherits PromptPresetBase
         Implements IPromptPreset
 
@@ -33,7 +31,7 @@ Namespace Shell.Prompts.Presets.Text
             End Get
         End Property
 
-        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.TextShell Implements IPromptPreset.PresetShellType
+        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.TestShell Implements IPromptPreset.PresetShellType
 
         Friend Overrides Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
             'PowerLine glyphs
@@ -50,7 +48,7 @@ Namespace Shell.Prompts.Presets.Text
             'File name
             PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
             PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground)
-            PresetStringBuilder.AppendFormat(" {0} ", Path.GetFileName(TextEdit_FileStream.Name))
+            PresetStringBuilder.AppendFormat(" t ")
 
             'Transition
             PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground)

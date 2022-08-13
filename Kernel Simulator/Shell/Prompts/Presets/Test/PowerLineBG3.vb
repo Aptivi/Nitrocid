@@ -16,16 +16,14 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
 Imports System.Text
-Imports KS.Misc.Editors.TextEdit
 
-Namespace Shell.Prompts.Presets.Text
-    Public Class TextPowerLine1Preset
+Namespace Shell.Prompts.Presets.Test
+    Public Class TestPowerLineBG3Preset
         Inherits PromptPresetBase
         Implements IPromptPreset
 
-        Public Overrides ReadOnly Property PresetName As String = "PowerLine1" Implements IPromptPreset.PresetName
+        Public Overrides ReadOnly Property PresetName As String = "PowerLineBG3" Implements IPromptPreset.PresetName
 
         Public Overrides ReadOnly Property PresetPrompt As String Implements IPromptPreset.PresetPrompt
             Get
@@ -33,16 +31,17 @@ Namespace Shell.Prompts.Presets.Text
             End Get
         End Property
 
-        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.TextShell Implements IPromptPreset.PresetShellType
+        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.TestShell Implements IPromptPreset.PresetShellType
 
         Friend Overrides Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
             'PowerLine glyphs
             Dim TransitionChar As Char = Convert.ToChar(&HE0B0)
+            Dim TransitionPartChar As Char = Convert.ToChar(&HE0B1)
 
             'PowerLine preset colors
-            Dim FirstColorSegmentForeground As New Color(85, 255, 255)
-            Dim FirstColorSegmentBackground As New Color(43, 127, 127)
-            Dim LastTransitionForeground As New Color(255, 255, 255)
+            Dim FirstColorSegmentForeground As New Color(255, 255, 85)
+            Dim FirstColorSegmentBackground As New Color(25, 25, 25)
+            Dim LastTransitionForeground As New Color(25, 25, 25)
 
             'Builder
             Dim PresetStringBuilder As New StringBuilder
@@ -50,10 +49,10 @@ Namespace Shell.Prompts.Presets.Text
             'File name
             PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
             PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground)
-            PresetStringBuilder.AppendFormat(" {0} ", Path.GetFileName(TextEdit_FileStream.Name))
+            PresetStringBuilder.AppendFormat(" t ")
 
             'Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground)
+            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground)
             PresetStringBuilder.Append(BackgroundColor.VTSequenceBackground)
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar)
 

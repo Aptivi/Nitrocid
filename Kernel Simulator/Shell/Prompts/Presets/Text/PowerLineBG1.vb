@@ -20,7 +20,7 @@ Imports System.IO
 Imports System.Text
 Imports KS.Misc.Editors.TextEdit
 
-Namespace Shell.Prompts.Presets.ZIP
+Namespace Shell.Prompts.Presets.Text
     Public Class TextPowerLineBG1Preset
         Inherits PromptPresetBase
         Implements IPromptPreset
