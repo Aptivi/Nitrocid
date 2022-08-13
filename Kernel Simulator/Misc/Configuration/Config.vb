@@ -56,6 +56,10 @@ Namespace Misc.Configuration
         ''' Base config token to be loaded each kernel startup.
         ''' </summary>
         Friend ConfigToken As JObject
+        ''' <summary>
+        ''' Fallback configuration
+        ''' </summary>
+        Friend ReadOnly PristineConfigToken As JObject = GetNewConfigObject()
 
         ''' <summary>
         ''' Config category enumeration
