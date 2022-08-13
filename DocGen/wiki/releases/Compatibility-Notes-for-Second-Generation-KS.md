@@ -707,4 +707,11 @@ We didn't want to cause confusion between `ProgressColor` in the `FancyWriters` 
 
 ##### Moved events to KS.Kernel.Events
 
-All of the event-related code files are moved to KS.Kernel.Events to separate these from the actual kernel code. However, because events are part of the kernel, we prefer to put it on KS.Kernel namespace rather than KS.Misc.
+All of the event-related code files are moved to `KS.Kernel.Events` to separate these from the actual kernel code. However, because events are part of the kernel, we prefer to put it on `KS.Kernel` namespace rather than `KS.Misc`.
+
+##### Moved PlatformDetector to KS.Kernel.KernelPlatform
+
+It has come to the conclusion that `PlatformDetector` is now promoted to the Kernel namespace under the name `KernelPlatform` so you can access it under the `KS.Kernel` namespace.
+
+* Affected classes:
+  - PlatformDetector -> KernelPlatform

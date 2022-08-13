@@ -73,7 +73,7 @@ namespace KSConverter
         /// </summary>
         public static string GetHomeDirectory()
         {
-            if (PlatformDetector.IsOnUnix())
+            if (KernelPlatform.IsOnUnix())
                 return Environment.GetEnvironmentVariable("HOME");
             else
                 return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");

@@ -19,7 +19,7 @@
 Imports UnameNET
 
 Namespace Misc.Platform
-    Public Module PlatformDetector
+    Public Module KernelPlatform
 
         ''' <summary>
         ''' Is this system a Windows system?
