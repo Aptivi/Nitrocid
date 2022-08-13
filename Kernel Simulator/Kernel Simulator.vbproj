@@ -245,7 +245,6 @@
     <None Include="Resources\jpn.json" />
     <None Include="Resources\kor-T.json" />
     <None Include="Resources\kor.json" />
-    <None Include="Resources\lol.json" />
     <None Include="Resources\pir.json" />
     <None Include="Resources\pla.json" />
     <None Include="Resources\ptg.json" />

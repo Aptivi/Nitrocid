@@ -1203,23 +1203,6 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;Name&quot;: &quot;LOLCAT&quot;,
-        '''  &quot;Transliterable&quot;: false,
-        '''  &quot;Localizations&quot;: {
-        '''    &quot;Available commands: {0}&quot;: &quot;AVAILABLE COMMANDZ: {0}&quot;,
-        '''    &quot;Command injection has been cancelled.&quot;: &quot;COMMAND INJECSHUN HAS BEEN CANCELLD.&quot;,
-        '''    &quot;Injected arguments will be scheduled to run at next reboot.&quot;: &quot;INJECTD ARGUMENTS WILL BE SCHEDULD 2 RUN AT NEXT REBOOT.&quot;,
-        '''    &quot;Invalid color template {0}&quot;: &quot;INVALID COLOR TEMPLATE {0}&quot;,
-        '''    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;HWPROBE: UR HARDWARE WILL BE PROBD. PL [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property lol() As String
-            Get
-                Return ResourceManager.GetString("lol", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;105;158;62&quot;,
         '''    &quot;LicenseColor&quot;: &quot;105;158;62&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;56;91;232&quot;,

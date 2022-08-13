@@ -157,9 +157,6 @@
     <Content Include="Translations\kor.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Translations\lol.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Translations\pir.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

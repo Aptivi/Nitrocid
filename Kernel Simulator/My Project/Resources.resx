@@ -301,9 +301,6 @@
   <data name="hxr_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hxr-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="lol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lol.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="pir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pir.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>

@@ -242,5 +242,6 @@ Because the API was having mixed code of between refactored and unrefactored, we
 1. Updated all libraries
 2. Added new commands
 3. Removed command injection as it isn't secure
-4. General API improvements
-5. General improvements and bug fixes
+4. Removed LOLCAT as it has become inconsistent
+5. General API improvements
+6. General improvements and bug fixes

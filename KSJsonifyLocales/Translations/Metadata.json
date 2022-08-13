@@ -79,10 +79,6 @@
         "name": "Korean",
         "transliterable": true
     },
-    "lol": {
-        "name": "LOLCAT",
-        "transliterable": false
-    },
     "pir": {
         "name": "Pirate Speak",
         "transliterable": false
