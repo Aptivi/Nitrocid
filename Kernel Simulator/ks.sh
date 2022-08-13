@@ -23,7 +23,7 @@ isppa=0
 
 # Run the entry point
 if [ -e "/usr/lib/ks/Kernel Simulator.exe" ]; then
-    isppa=1
+	isppa=1
 	mono "/usr/lib/ks/Kernel Simulator.exe" $@
 elif [ -e "./Kernel Simulator.exe" ]; then
 	mono "./Kernel Simulator.exe" $@
