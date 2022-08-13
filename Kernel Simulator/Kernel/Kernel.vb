@@ -244,6 +244,9 @@ Namespace Kernel
                             ShowPasswordPrompt("root")
                         End If
                     End If
+
+                    'Clear all active threads as we're rebooting
+                    StopAllThreads()
                 Catch icde As InsaneConsoleDetectedException
                     Console.WriteLine(icde.Message)
                     Console.WriteLine(icde.InsanityReason)

@@ -61,6 +61,7 @@ Namespace Misc.Threading
             Name = ThreadName
             IsBackground = Background
             Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId)
+            KernelThreads.Add(Me)
         End Sub
 
         ''' <summary>
@@ -76,6 +77,7 @@ Namespace Misc.Threading
             Name = ThreadName
             IsBackground = Background
             Wdbg(DebugLevel.I, "Made a new kernel thread {0} with ID {1}", ThreadName, BaseThread.ManagedThreadId)
+            KernelThreads.Add(Me)
         End Sub
 
         ''' <summary>
@@ -115,8 +117,13 @@ Namespace Misc.Threading
         ''' Waits for the kernel thread to finish
         ''' </summary>
         Public Sub Wait()
-            Wdbg(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId)
-            BaseThread.Join()
+            Try
+                Wdbg(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, BaseThread.ManagedThreadId)
+                BaseThread.Join()
+            Catch ex As Exception
+                Wdbg(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
         End Sub
 
     End Class

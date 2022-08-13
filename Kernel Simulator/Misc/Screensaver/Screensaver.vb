@@ -87,30 +87,35 @@ Namespace Misc.Screensaver
         ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
         ''' </summary>
         Sub HandleTimeout()
-            Dim CountedTime As Integer
-            Dim OldCursorLeft As Integer = Console.CursorLeft
-            While Not KernelShutdown
-                If Not ScrnTimeReached Then
-                    For CountedTime = 0 To ScrnTimeout
-                        Thread.Sleep(1)
-                        If Console.KeyAvailable Or OldCursorLeft <> Console.CursorLeft Then
-                            CountedTime = 0
-                        End If
-                        OldCursorLeft = Console.CursorLeft
-                        If CountedTime > ScrnTimeout Then
-                            'This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
-                            Exit For
-                        End If
+            Try
+                Dim CountedTime As Integer
+                Dim OldCursorLeft As Integer = Console.CursorLeft
+                While Not KernelShutdown
+                    If Not ScrnTimeReached Then
+                        For CountedTime = 0 To ScrnTimeout
+                            Thread.Sleep(1)
+                            If Console.KeyAvailable Or OldCursorLeft <> Console.CursorLeft Then
+                                CountedTime = 0
+                            End If
+                            OldCursorLeft = Console.CursorLeft
+                            If CountedTime > ScrnTimeout Then
+                                'This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
+                                Exit For
+                            End If
 
-                        'Poll to see if there is a kernel shutdown signal
-                        If KernelShutdown Then Exit While
-                    Next
-                    If Not RebootRequested Then
-                        Wdbg(DebugLevel.W, "Screen time has reached.")
-                        LockScreen()
+                            'Poll to see if there is a kernel shutdown signal
+                            If KernelShutdown Then Exit While
+                        Next
+                        If Not RebootRequested Then
+                            Wdbg(DebugLevel.W, "Screen time has reached.")
+                            LockScreen()
+                        End If
                     End If
-                End If
-            End While
+                End While
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message)
+                WStkTrc(ex)
+            End Try
         End Sub
 
         ''' <summary>

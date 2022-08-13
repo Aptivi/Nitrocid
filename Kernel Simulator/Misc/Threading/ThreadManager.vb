@@ -22,6 +22,27 @@ Imports System.Threading
 Namespace Misc.Threading
     Public Module ThreadManager
 
+        Friend KernelThreads As New List(Of KernelThread)
+
+        ''' <summary>
+        ''' Gets active threads
+        ''' </summary>
+        Public ReadOnly Property ActiveThreads As List(Of KernelThread)
+            Get
+                Return KernelThreads.Where(Function(x) x.IsAlive).ToList()
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Stops all active threads
+        ''' </summary>
+        Friend Sub StopAllThreads()
+            For Each ActiveThread As KernelThread In ActiveThreads
+                ActiveThread.Stop()
+                ActiveThread.Wait()
+            Next
+        End Sub
+
         ''' <summary>
         ''' Sleeps until either the time specified, or the thread has finished or cancelled.
         ''' </summary>
