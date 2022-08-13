@@ -85,7 +85,6 @@ Namespace TestShell
             {"printfigletf", New CommandInfo("printfigletf", ShellType.TestShell, "Prints a string to console using color type and line print with format and Figlet support", New CommandArgumentInfo({"<Color> <FigletFont> <Variable1;Variable2;Variable3;...> <Message>"}, True, 4), New Test_PrintFigletFCommand)},
             {"powerlinetest", New CommandInfo("powerlinetest", ShellType.TestShell, "Tests your console for PowerLine support", New CommandArgumentInfo(), New Test_PowerLineTestCommand)},
             {"testexecuteasm", New CommandInfo("testexecuteasm", ShellType.TestShell, "Tests assembly entry point execution", New CommandArgumentInfo({"<pathtoasm>"}, True, 1), New Test_TestExecuteAsmCommand)},
-            {"help", New CommandInfo("help", ShellType.TestShell, "Shows help screen", New CommandArgumentInfo({"[command]"}, False, 0), New Test_HelpCommand)},
             {"start", New CommandInfo("start", ShellType.TestShell, "Exits the test shell and starts the kernel", New CommandArgumentInfo(), New Test_StartCommand)},
             {"shutdown", New CommandInfo("shutdown", ShellType.TestShell, "Exits the test shell and shuts down the kernel", New CommandArgumentInfo(), New Test_ShutdownCommand)}
         }

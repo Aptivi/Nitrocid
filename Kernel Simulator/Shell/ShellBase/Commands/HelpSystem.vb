@@ -37,7 +37,7 @@ Namespace Shell.ShellBase.Commands
         ''' </summary>
         ''' <param name="command">A specified command</param>
         Public Sub ShowHelp(command As String)
-            ShowHelp(command, ShellType.Shell)
+            ShowHelp(command, CurrentShellType)
         End Sub
 
         ''' <summary>

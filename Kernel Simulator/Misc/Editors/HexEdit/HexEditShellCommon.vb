@@ -30,7 +30,6 @@ Namespace Misc.Editors.HexEdit
             {"delbyte", New CommandInfo("delbyte", ShellType.HexShell, "Deletes a byte using the byte number", New CommandArgumentInfo({"<bytenumber>"}, True, 1), New HexEdit_DelByteCommand)},
             {"delbytes", New CommandInfo("delbytes", ShellType.HexShell, "Deletes the range of bytes", New CommandArgumentInfo({"<startbyte> [endbyte]"}, True, 1), New HexEdit_DelBytesCommand)},
             {"exitnosave", New CommandInfo("exitnosave", ShellType.HexShell, "Exits the hex editor", New CommandArgumentInfo(), New HexEdit_ExitNoSaveCommand)},
-            {"help", New CommandInfo("help", ShellType.HexShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New HexEdit_HelpCommand)},
             {"print", New CommandInfo("print", ShellType.HexShell, "Prints the contents of the file with byte numbers to the console", New CommandArgumentInfo({"[startbyte] [endbyte]"}, False, 0), New HexEdit_PrintCommand)},
             {"querybyte", New CommandInfo("querybyte", ShellType.HexShell, "Queries a byte in a specified range of bytes or all bytes", New CommandArgumentInfo({"<byte> [startbyte] [endbyte]"}, True, 1), New HexEdit_QueryByteCommand)},
             {"replace", New CommandInfo("replace", ShellType.HexShell, "Replaces a byte with another one", New CommandArgumentInfo({"<byte> <replacedbyte>"}, True, 2), New HexEdit_ReplaceCommand)},

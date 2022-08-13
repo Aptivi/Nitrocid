@@ -90,7 +90,6 @@ Namespace Shell
             {"genname", New CommandInfo("genname", ShellType.Shell, "Name and surname generator", New CommandArgumentInfo({"[namescount] [nameprefix] [namesuffix] [surnameprefix] [surnamesuffix]"}, False, 0), New GenNameCommand)},
             {"gettimeinfo", New CommandInfo("gettimeinfo", ShellType.Shell, "Gets the date and time information", New CommandArgumentInfo({"<date>"}, True, 1), New GetTimeInfoCommand)},
             {"get", New CommandInfo("get", ShellType.Shell, "Downloads a file to current working directory", New CommandArgumentInfo({"<URL>"}, True, 1), New Get_Command)},
-            {"help", New CommandInfo("help", ShellType.Shell, "Help page", New CommandArgumentInfo({"[command]"}, False, 0, AddressOf HelpCommand.ListCmds), New HelpCommand)},
             {"hexedit", New CommandInfo("hexedit", ShellType.Shell, "Edits a binary file", New CommandArgumentInfo({"<file>"}, True, 1), New HexEditCommand)},
             {"http", New CommandInfo("http", ShellType.Shell, "Starts the HTTP shell", New CommandArgumentInfo(), New HttpCommand)},
             {"hwinfo", New CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", New CommandArgumentInfo({"<HardwareType>"}, True, 1), New HwInfoCommand, CommandFlags.Wrappable)},
@@ -175,7 +174,8 @@ Namespace Shell
         ''' </summary>
         Public ReadOnly UnifiedCommandDict As New Dictionary(Of String, CommandInfo) From {
             {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", New CommandArgumentInfo(), New PresetsUnifiedCommand)},
-            {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", New CommandArgumentInfo(), New ExitCommand)}
+            {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", New CommandArgumentInfo(), New ExitUnifiedCommand)},
+            {"help", New CommandInfo("help", ShellType.Shell, "Help page", New CommandArgumentInfo({"[command]"}, False, 0, AddressOf HelpUnifiedCommand.ListCmds), New HelpUnifiedCommand)}
         }
         ''' <summary>
         ''' Current shell type

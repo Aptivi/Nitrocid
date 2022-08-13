@@ -29,7 +29,6 @@ Namespace Misc.Editors.JsonShell
             {"clear", New CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", New CommandArgumentInfo(), New JsonShell_ClearCommand)},
             {"delproperty", New CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", New CommandArgumentInfo({"<propertyName>"}, True, 1), New JsonShell_DelPropertyCommand)},
             {"exitnosave", New CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", New CommandArgumentInfo(), New JsonShell_ExitNoSaveCommand)},
-            {"help", New CommandInfo("help", ShellType.JsonShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New JsonShell_HelpCommand)},
             {"print", New CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", New CommandArgumentInfo({"[property]"}, False, 0), New JsonShell_PrintCommand)},
             {"save", New CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", New CommandArgumentInfo({"[-b|-m]"}, False, 0), New JsonShell_SaveCommand)}
         }

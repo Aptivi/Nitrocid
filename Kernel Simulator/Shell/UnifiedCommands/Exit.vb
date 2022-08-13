@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Commands
-    Class ExitCommand
+    Class ExitUnifiedCommand
         Inherits CommandExecutor
         Implements ICommand
 

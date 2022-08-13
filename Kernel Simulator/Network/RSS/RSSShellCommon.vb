@@ -29,7 +29,6 @@ Namespace Network.RSS
             {"bookmark", New CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", New CommandArgumentInfo(), New RSS_BookmarkCommand)},
             {"chfeed", New CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", New CommandArgumentInfo({"[-bookmark] <feedurl/bookmarknumber>"}, True, 1), New RSS_ChFeedCommand)},
             {"feedinfo", New CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", New CommandArgumentInfo(), New RSS_FeedInfoCommand)},
-            {"help", New CommandInfo("help", ShellType.RSSShell, "Shows help screen", New CommandArgumentInfo(), New RSS_HelpCommand)},
             {"list", New CommandInfo("list", ShellType.RSSShell, "Lists all feeds", New CommandArgumentInfo(), New RSS_ListCommand)},
             {"listbookmark", New CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", New CommandArgumentInfo(), New RSS_ListBookmarkCommand)},
             {"read", New CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", New CommandArgumentInfo({"<feednum>"}, True, 1), New RSS_ReadCommand)},

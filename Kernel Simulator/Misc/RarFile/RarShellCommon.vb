@@ -29,7 +29,6 @@ Namespace Misc.RarFile
             {"chdir", New CommandInfo("chdir", ShellType.RARShell, "Changes directory", New CommandArgumentInfo({"<directory>"}, True, 1), New RarShell_ChDirCommand)},
             {"chadir", New CommandInfo("chadir", ShellType.RARShell, "Changes archive directory", New CommandArgumentInfo({"<archivedirectory>"}, True, 1), New RarShell_ChADirCommand)},
             {"get", New CommandInfo("get", ShellType.RARShell, "Extracts a file to a specified directory or a current directory", New CommandArgumentInfo({"<entry> [where] [-absolute]"}, True, 1), New RarShell_GetCommand)},
-            {"help", New CommandInfo("help", ShellType.RARShell, "Lists available commands", New CommandArgumentInfo({"[command]"}, False, 0), New RarShell_HelpCommand)},
             {"list", New CommandInfo("list", ShellType.RARShell, "Lists all files inside the archive", New CommandArgumentInfo({"[directory]"}, False, 0), New RarShell_ListCommand)}
         }
         Friend ReadOnly RarShell_ModCommands As New Dictionary(Of String, CommandInfo)

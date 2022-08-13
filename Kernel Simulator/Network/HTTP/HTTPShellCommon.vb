@@ -26,7 +26,6 @@ Namespace Network.HTTP
             {"delete", New CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_DeleteCommand)},
             {"get", New CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_GetCommand)},
             {"getstring", New CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", New CommandArgumentInfo({"<request>"}, True, 1), New HTTP_GetStringCommand)},
-            {"help", New CommandInfo("help", ShellType.HTTPShell, "Shows help screen", New CommandArgumentInfo({"[command]"}, False, 0), New HTTP_HelpCommand)},
             {"setsite", New CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", New CommandArgumentInfo({"<uri>"}, True, 1), New HTTP_SetSiteCommand)}
         }
         Public HTTPSite As String

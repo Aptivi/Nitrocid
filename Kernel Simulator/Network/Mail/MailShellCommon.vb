@@ -27,7 +27,6 @@ Namespace Network.Mail
         'Variables
         Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {
             {"cd", New CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", New CommandArgumentInfo({"<folder>"}, True, 1), New Mail_CdCommand)},
-            {"help", New CommandInfo("help", ShellType.MailShell, "List of commands", New CommandArgumentInfo({"[command]"}, False, 0), New Mail_HelpCommand)},
             {"lsdirs", New CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", New CommandArgumentInfo(), New Mail_LsDirsCommand)},
             {"list", New CommandInfo("list", ShellType.MailShell, "Downloads messages and lists them", New CommandArgumentInfo({"[pagenum]"}, False, 0), New Mail_ListCommand)},
             {"mkdir", New CommandInfo("mkdir", ShellType.MailShell, "Makes a directory in the current working directory", New CommandArgumentInfo({"<foldername>"}, True, 1), New Mail_MkdirCommand)},

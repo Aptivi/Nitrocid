@@ -31,7 +31,6 @@ Namespace Network.FTP
             {"execute", New CommandInfo("execute", ShellType.FTPShell, "Executes an FTP server command", New CommandArgumentInfo({"<command>"}, True, 1), New FTP_ExecuteCommand)},
             {"get", New CommandInfo("get", ShellType.FTPShell, "Downloads remote file to local directory using binary or text", New CommandArgumentInfo({"<file> [output]"}, True, 1), New FTP_GetCommand)},
             {"getfolder", New CommandInfo("getfolder", ShellType.FTPShell, "Downloads remote folder to local directory using binary or text", New CommandArgumentInfo({"<folder> [outputfolder]"}, True, 1), New FTP_GetFolderCommand)},
-            {"help", New CommandInfo("help", ShellType.FTPShell, "Shows help screen", New CommandArgumentInfo({"[command]"}, False, 0), New FTP_HelpCommand)},
             {"info", New CommandInfo("info", ShellType.FTPShell, "FTP server information", New CommandArgumentInfo(), New FTP_InfoCommand)},
             {"lsl", New CommandInfo("lsl", ShellType.FTPShell, "Lists local directory", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [dir]"}, False, 0), New FTP_LslCommand)},
             {"lsr", New CommandInfo("lsr", ShellType.FTPShell, "Lists remote directory", New CommandArgumentInfo({"[-showdetails] [dir]"}, False, 0), New FTP_LsrCommand)},
