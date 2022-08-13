@@ -100,7 +100,13 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New MailPowerLineBG3Preset()}
         }
         Friend ReadOnly JsonShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New JsonDefaultPreset()}
+            {"Default", New JsonDefaultPreset()},
+            {"PowerLine1", New JsonPowerLine1Preset()},
+            {"PowerLine2", New JsonPowerLine2Preset()},
+            {"PowerLine3", New JsonPowerLine3Preset()},
+            {"PowerLineBG1", New JsonPowerLineBG1Preset()},
+            {"PowerLineBG2", New JsonPowerLineBG2Preset()},
+            {"PowerLineBG3", New JsonPowerLineBG3Preset()}
         }
         Friend ReadOnly HTTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New HTTPDefaultPreset()}
