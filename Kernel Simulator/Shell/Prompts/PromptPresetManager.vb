@@ -73,7 +73,13 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New TextPowerLineBG3Preset()}
         }
         Friend ReadOnly SFTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New SFTPDefaultPreset()}
+            {"Default", New SFTPDefaultPreset()},
+            {"PowerLine1", New SftpPowerLine1Preset()},
+            {"PowerLine2", New SftpPowerLine2Preset()},
+            {"PowerLine3", New SftpPowerLine3Preset()},
+            {"PowerLineBG1", New SftpPowerLineBG1Preset()},
+            {"PowerLineBG2", New SftpPowerLineBG2Preset()},
+            {"PowerLineBG3", New SftpPowerLineBG3Preset()}
         }
         Friend ReadOnly RSSShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New RSSDefaultPreset()}
@@ -91,7 +97,13 @@ Namespace Shell.Prompts
             {"Default", New HexDefaultPreset()}
         }
         Friend ReadOnly FTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New FTPDefaultPreset()}
+            {"Default", New FTPDefaultPreset()},
+            {"PowerLine1", New FtpPowerLine1Preset()},
+            {"PowerLine2", New FtpPowerLine2Preset()},
+            {"PowerLine3", New FtpPowerLine3Preset()},
+            {"PowerLineBG1", New FtpPowerLineBG1Preset()},
+            {"PowerLineBG2", New FtpPowerLineBG2Preset()},
+            {"PowerLineBG3", New FtpPowerLineBG3Preset()}
         }
         Friend ReadOnly RARShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New RarDefaultPreset()}
