@@ -82,7 +82,13 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New SftpPowerLineBG3Preset()}
         }
         Friend ReadOnly RSSShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New RSSDefaultPreset()}
+            {"Default", New RSSDefaultPreset()},
+            {"PowerLine1", New RSSPowerLine1Preset()},
+            {"PowerLine2", New RSSPowerLine2Preset()},
+            {"PowerLine3", New RSSPowerLine3Preset()},
+            {"PowerLineBG1", New RSSPowerLineBG1Preset()},
+            {"PowerLineBG2", New RSSPowerLineBG2Preset()},
+            {"PowerLineBG3", New RSSPowerLineBG3Preset()}
         }
         Friend ReadOnly MailShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New MailDefaultPreset()},
