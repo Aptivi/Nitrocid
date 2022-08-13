@@ -1141,22 +1141,21 @@ Namespace Misc.Configuration
         End Sub
 
         ''' <summary>
-        ''' Configures the kernel according to the kernel configuration file
+        ''' Configures the kernel according to the custom kernel configuration file
         ''' </summary>
-        ''' <returns>True if successful; False if unsuccessful</returns>
-        ''' <exception cref="Exceptions.ConfigException"></exception>
-        Public Function TryReadConfig() As Boolean
-            Return TryReadConfig(GetKernelPath(KernelPathType.Configuration))
-        End Function
+        Sub ReadConfig(ConfigPath As String)
+            ThrowOnInvalidPath(ConfigPath)
+            ReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)))
+        End Sub
 
         ''' <summary>
         ''' Configures the kernel according to the custom kernel configuration file
         ''' </summary>
         ''' <exception cref="Exceptions.ConfigException"></exception>
-        Sub ReadConfig(ConfigPath As String)
-            'Parse configuration. NOTE: Question marks between parentheses are for nullable types.
-            ThrowOnInvalidPath(ConfigPath)
-            InitializeConfigToken(ConfigPath)
+        Sub ReadConfig(ConfigToken As JToken)
+            'Parse configuration.
+            'NOTE: Question marks between parentheses are for nullable types.
+            Config.ConfigToken = ConfigToken
             Wdbg(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count)
 
             '----------------------------- Important configuration -----------------------------
@@ -1247,8 +1246,8 @@ Namespace Misc.Configuration
             ShowMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
             If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HostName = ConfigToken("Login")?("Host Name")
-            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MOTD Path")) And TryParsePath(ConfigToken("Login")?("MOTD Path")) Then MOTDFilePath = ConfigToken("Login")?("MOTD Path")
-            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MAL Path")) And TryParsePath(ConfigToken("Login")?("MAL Path")) Then MALFilePath = ConfigToken("Login")?("MAL Path")
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MOTD Path")) And TryParsePath(ConfigToken("Login")?("MOTD Path")) Then MotdFilePath = ConfigToken("Login")?("MOTD Path")
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MAL Path")) And TryParsePath(ConfigToken("Login")?("MAL Path")) Then MalFilePath = ConfigToken("Login")?("MAL Path")
             UsernamePrompt = If(ConfigToken("Login")?("Username prompt style"), "")
             PasswordPrompt = If(ConfigToken("Login")?("Password prompt style"), "")
             ShowMAL = If(ConfigToken("Login")?("Show MAL on Log-in"), True)
@@ -2013,13 +2012,31 @@ Namespace Misc.Configuration
         End Sub
 
         ''' <summary>
+        ''' Configures the kernel according to the kernel configuration file
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <exception cref="Exceptions.ConfigException"></exception>
+        Public Function TryReadConfig() As Boolean
+            Return TryReadConfig(GetKernelPath(KernelPathType.Configuration))
+        End Function
+
+        ''' <summary>
+        ''' Configures the kernel according to the custom kernel configuration file
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful</returns>
+        Function TryReadConfig(ConfigPath As String) As Boolean
+            ThrowOnInvalidPath(ConfigPath)
+            Return TryReadConfig(JObject.Parse(File.ReadAllText(ConfigPath)))
+        End Function
+
+        ''' <summary>
         ''' Configures the kernel according to the custom kernel configuration file
         ''' </summary>
         ''' <returns>True if successful; False if unsuccessful</returns>
         ''' <exception cref="Exceptions.ConfigException"></exception>
-        Function TryReadConfig(ConfigPath As String) As Boolean
+        Function TryReadConfig(ConfigToken As JToken) As Boolean
             Try
-                ReadConfig(ConfigPath)
+                ReadConfig(ConfigToken)
                 Return True
             Catch nre As NullReferenceException
                 'Rare, but repair config if an NRE is caught.
@@ -2056,21 +2073,6 @@ Namespace Misc.Configuration
                 Write(cex.Message, True, ColTypes.Error)
                 WStkTrc(cex)
             End Try
-        End Sub
-
-        ''' <summary>
-        ''' Initializes the config token
-        ''' </summary>
-        Sub InitializeConfigToken()
-            InitializeConfigToken(GetKernelPath(KernelPathType.Configuration))
-        End Sub
-
-        ''' <summary>
-        ''' Initializes the config token
-        ''' </summary>
-        Sub InitializeConfigToken(ConfigPath As String)
-            ThrowOnInvalidPath(ConfigPath)
-            ConfigToken = JObject.Parse(File.ReadAllText(ConfigPath))
         End Sub
 
     End Module

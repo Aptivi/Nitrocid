@@ -33,7 +33,7 @@ Imports KS.Misc.Configuration
             If Not FileExists(GetKernelPath(KernelPathType.Configuration) + ".old") Then File.Move(GetKernelPath(KernelPathType.Configuration), GetKernelPath(KernelPathType.Configuration) + ".old")
             CreateConfig()
         End If
-        InitializeConfigToken()
+        ReadConfig(GetKernelPath(KernelPathType.Configuration))
         LoadUserToken()
 
         'NUnit sets current directory to a wrong directory, so set it to the test context directory
