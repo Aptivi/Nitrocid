@@ -59,7 +59,6 @@
 
 <kbd>  <br>  Network Support  <br>  </kbd>  
 <kbd>  <br>  Script Support  <br>  </kbd>  
-<kbd>  <br>  Script Support  <br>  </kbd>  
 <kbd>  <br>  The Kernel  <br>  </kbd>  
 
 <br>

@@ -82,11 +82,15 @@
     
     - **Nerd Fonts**.
 
+-   [.NET Framework 4.8.1] is supported, but not <br>
+    required.
+
 <br>
 
 
 <!----------------------------------------------------------------------------->
 
 [.NET Framework 4.8]: https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer
+[.NET Framework 4.8.1]: https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net481-web-installer
 [.NET Runtime 6.0]: https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 [Mono]: https://www.mono-project.com/download/stable/
