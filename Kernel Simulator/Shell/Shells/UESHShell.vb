@@ -42,17 +42,6 @@ Namespace Shell.Shells
                     Bail = True
                 ElseIf Not InSaver Then
                     Try
-                        'Try to probe injected commands
-                        Wdbg(DebugLevel.I, "Probing injected commands...")
-                        If CommandFlag = True Then
-                            CommandFlag = False
-                            If ProbeInjectedCommands Then
-                                For Each cmd In InjectedCommands
-                                    GetLine(cmd, True)
-                                Next
-                            End If
-                        End If
-
                         'We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
                         'thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
                         'would either be incomplete or not printed to the console at all. As a side effect, we wouldn't fire the shell initialization event

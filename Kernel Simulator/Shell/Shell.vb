@@ -33,7 +33,6 @@ Namespace Shell
         Friend OutputStream As FileStream
         Friend ProcessStartCommandThread As New KernelThread("Executable Command Thread", False, AddressOf ExecuteProcess)
         Friend ReadOnly ModCommands As New Dictionary(Of String, CommandInfo)
-        Friend ReadOnly InjectedCommands As New List(Of String)
 
         ''' <summary>
         ''' Whether the shell is colored or not
@@ -105,7 +104,7 @@ Namespace Shell
             {"list", New CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [directory]"}, False, 0), New ListCommand, CommandFlags.Wrappable)},
             {"listunits", New CommandInfo("listunits", ShellType.Shell, "Lists all available units", New CommandArgumentInfo({"<type>"}, True, 1), New ListUnitsCommand, CommandFlags.Wrappable)},
             {"lockscreen", New CommandInfo("lockscreen", ShellType.Shell, "Locks your screen with a password", New CommandArgumentInfo(), New LockScreenCommand)},
-            {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", New CommandArgumentInfo(), New LogoutCommand, CommandFlags.NoMaintenance Or CommandFlags.UninvokableByKernelArgument)},
+            {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", New CommandArgumentInfo(), New LogoutCommand, CommandFlags.NoMaintenance)},
             {"lovehate", New CommandInfo("lovehate", ShellType.Shell, "Respond to love or hate comments.", New CommandArgumentInfo(), New LoveHateCommand)},
             {"lsdbgdev", New CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", New CommandArgumentInfo(), New LsDbgDevCommand, CommandFlags.Strict Or CommandFlags.Wrappable)},
             {"lsvars", New CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", New CommandArgumentInfo(), New LsVarsCommand, CommandFlags.Wrappable)},
@@ -123,7 +122,7 @@ Namespace Shell
             {"ping", New CommandInfo("ping", ShellType.Shell, "Pings an address", New CommandArgumentInfo({"[times] <Address1> <Address2> ..."}, True, 1), New PingCommand)},
             {"put", New CommandInfo("put", ShellType.Shell, "Uploads a file to specified website", New CommandArgumentInfo({"<FileName> <URL>"}, True, 2), New PutCommand)},
             {"rarshell", New CommandInfo("rarshell", ShellType.Shell, "The RAR shell", New CommandArgumentInfo({"<rarfile>"}, True, 1), New RarShellCommand)},
-            {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New RebootCommand, CommandFlags.UninvokableByKernelArgument)},
+            {"reboot", New CommandInfo("reboot", ShellType.Shell, "Restarts your computer (WARNING: No syncing, because it is not a final kernel)", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New RebootCommand)},
             {"reloadconfig", New CommandInfo("reloadconfig", ShellType.Shell, "Reloads configuration file that is edited.", New CommandArgumentInfo(), New ReloadConfigCommand, CommandFlags.Strict)},
             {"reloadsaver", New CommandInfo("reloadsaver", ShellType.Shell, "Reloads screensaver file in KSMods", New CommandArgumentInfo({"<customsaver>"}, True, 1), New ReloadSaverCommand, CommandFlags.Strict)},
             {"retroks", New CommandInfo("retroks", ShellType.Shell, "Retro Kernel Simulator based on 0.0.4.1", New CommandArgumentInfo(), New RetroKSCommand)},
@@ -147,7 +146,7 @@ Namespace Shell
             {"shownotifs", New CommandInfo("shownotifs", ShellType.Shell, "Shows all received notifications", New CommandArgumentInfo(), New ShowNotifsCommand)},
             {"showtd", New CommandInfo("showtd", ShellType.Shell, "Shows date and time", New CommandArgumentInfo(), New ShowTdCommand)},
             {"showtdzone", New CommandInfo("showtdzone", ShellType.Shell, "Shows date and time in zones", New CommandArgumentInfo({"[-all] <timezone>"}, True, 1), New ShowTdZoneCommand, CommandFlags.Wrappable)},
-            {"shutdown", New CommandInfo("shutdown", ShellType.Shell, "The kernel will be shut down", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New ShutdownCommand, CommandFlags.UninvokableByKernelArgument)},
+            {"shutdown", New CommandInfo("shutdown", ShellType.Shell, "The kernel will be shut down", New CommandArgumentInfo({"[ip] [port]"}, False, 0), New ShutdownCommand)},
             {"snaker", New CommandInfo("snaker", ShellType.Shell, "The snake game!", New CommandArgumentInfo(), New SnakerCommand)},
             {"solver", New CommandInfo("solver", ShellType.Shell, "See if you can solve mathematical equations on time", New CommandArgumentInfo(), New SolverCommand)},
             {"speedpress", New CommandInfo("speedpress", ShellType.Shell, "See if you can press a key on time", New CommandArgumentInfo({"[-e|-m|-h|-v|-c] [timeout]"}, False, 0), New SpeedPressCommand)},
@@ -183,11 +182,10 @@ Namespace Shell
         ''' Parses a specified command.
         ''' </summary>
         ''' <param name="FullCommand">The full command string</param>
-        ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
         ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
         ''' <param name="ShellType">Shell type</param>
         ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        Public Sub GetLine(FullCommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
+        Public Sub GetLine(FullCommand As String, Optional OutputPath As String = "", Optional ShellType As ShellType = ShellType.Shell)
             'Check for sanity
             If String.IsNullOrEmpty(FullCommand) Then FullCommand = ""
 
@@ -259,9 +257,6 @@ Namespace Shell
                                 If Maintenance = True And Commands(Command).Flags.HasFlag(CommandFlags.NoMaintenance) Then
                                     Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", Command)
                                     Write(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, Command)
-                                ElseIf IsInvokedByKernelArgument And Commands(Command).Flags.HasFlag(CommandFlags.UninvokableByKernelArgument) Then
-                                    Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", Command)
-                                    Write(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, Command)
                                 Else
                                     Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs)
                                     Dim Params As New ExecuteCommandThreadParameters(FullCommand, ShellType, Nothing)

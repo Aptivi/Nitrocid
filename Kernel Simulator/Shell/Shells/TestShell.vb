@@ -57,7 +57,7 @@ Namespace Shell.Shells
                 Try
                     If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseTestPreExecuteCommand(FullCmd)
-                        GetLine(FullCmd, False, "", ShellType.TestShell)
+                        GetLine(FullCmd, "", ShellType.TestShell)
                         KernelEventManager.RaiseTestPostExecuteCommand(FullCmd)
                     End If
                 Catch taex As ThreadInterruptedException

@@ -122,7 +122,7 @@ Namespace Shell.Shells
                     Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.RSSShell)
+                        GetLine(WrittenCommand, "", ShellType.RSSShell)
                         KernelEventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                     End If
                 Catch taex As ThreadInterruptedException

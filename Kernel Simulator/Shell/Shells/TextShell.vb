@@ -73,7 +73,7 @@ Namespace Shell.Shells
                     Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.TextShell)
+                        GetLine(WrittenCommand, "", ShellType.TextShell)
                         KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                     End If
                 Catch taex As ThreadInterruptedException

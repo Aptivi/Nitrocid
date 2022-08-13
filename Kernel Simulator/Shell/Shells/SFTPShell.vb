@@ -94,7 +94,7 @@ Namespace Shell.Shells
                     'Parse command
                     If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
-                        GetLine(SFTPStrCmd, False, "", ShellType.SFTPShell)
+                        GetLine(SFTPStrCmd, "", ShellType.SFTPShell)
                         KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If
                 Catch taex As ThreadInterruptedException

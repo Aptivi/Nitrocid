@@ -49,9 +49,5 @@ Namespace Shell.ShellBase.Commands
         ''' Redirection is supported, meaning that all the output to the commands can be redirected to a file.
         ''' </summary>
         RedirectionSupported = 32
-        ''' <summary>
-        ''' This command can't run when it's injected.
-        ''' </summary>
-        UninvokableByKernelArgument = 64
     End Enum
 End Namespace

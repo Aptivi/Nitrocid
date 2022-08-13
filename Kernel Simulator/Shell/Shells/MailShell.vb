@@ -61,7 +61,7 @@ Namespace Shell.Shells
                 Dim cmd As String = ReadLine()
                 If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"})) Then
                     KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
-                    GetLine(cmd, False, "", ShellType.MailShell)
+                    GetLine(cmd, "", ShellType.MailShell)
                     KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
                 End If
             End While

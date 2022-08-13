@@ -69,7 +69,7 @@ Namespace Shell.Shells
                 Dim WrittenCommand As String = ReadLine()
                 If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                     KernelEventManager.RaiseJsonPreExecuteCommand(WrittenCommand)
-                    GetLine(WrittenCommand, False, "", ShellType.JsonShell)
+                    GetLine(WrittenCommand, "", ShellType.JsonShell)
                     KernelEventManager.RaiseJsonPostExecuteCommand(WrittenCommand)
                 End If
             End While

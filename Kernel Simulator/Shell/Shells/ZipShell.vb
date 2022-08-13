@@ -71,7 +71,7 @@ Namespace Shell.Shells
                     Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.ZIPShell)
+                        GetLine(WrittenCommand, "", ShellType.ZIPShell)
                         KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                     End If
                 Catch taex As ThreadInterruptedException

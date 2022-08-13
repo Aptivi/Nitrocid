@@ -56,7 +56,7 @@ Namespace Shell.Shells
                     'Parse command
                     If Not (HttpCommand = Nothing Or HttpCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseHTTPPreExecuteCommand(HttpCommand)
-                        GetLine(HttpCommand, False, "", ShellType.HTTPShell)
+                        GetLine(HttpCommand, "", ShellType.HTTPShell)
                         KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand)
                     End If
                 Catch taex As ThreadInterruptedException

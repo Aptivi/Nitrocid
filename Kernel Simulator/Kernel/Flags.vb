@@ -25,10 +25,6 @@ Namespace Kernel
         ''' </summary>
         Public DebugMode As Boolean
         ''' <summary>
-        ''' A signal for command kernel argument
-        ''' </summary>
-        Public CommandFlag As Boolean
-        ''' <summary>
         ''' A flag for checking for an argument on reboot
         ''' </summary>
         Public ArgsInjected As Boolean
@@ -176,10 +172,6 @@ Namespace Kernel
         ''' Whether to notify the user about minor boot faults
         ''' </summary>
         Public NotifyFaultsBoot As Boolean = True
-        ''' <summary>
-        ''' Whether to probe the injected commands at the start of the kernel shell
-        ''' </summary>
-        Public ProbeInjectedCommands As Boolean = True
         ''' <summary>
         ''' Whether to show more information about adapters
         ''' </summary>

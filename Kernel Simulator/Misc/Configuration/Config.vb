@@ -218,7 +218,6 @@ Namespace Misc.Configuration
                     {"Hex Edit Prompt Preset", HexShellCurrentPreset.PresetName},
                     {"HTTP Shell Prompt Preset", HTTPShellCurrentPreset.PresetName},
                     {"RAR Shell Prompt Preset", RARShellCurrentPreset.PresetName},
-                    {"Probe injected commands", ProbeInjectedCommands},
                     {"Start color wheel in true color mode", ColorWheelTrueColor},
                     {"Default choice output type", DefaultChoiceOutputType}
                 }
@@ -1268,7 +1267,6 @@ Namespace Misc.Configuration
             SetPreset(If(ConfigToken("Shell")?("Hex Edit Prompt Preset"), ""), ShellType.HexShell, False)
             SetPreset(If(ConfigToken("Shell")?("HTTP Shell Prompt Preset"), ""), ShellType.HTTPShell, False)
             SetPreset(If(ConfigToken("Shell")?("RAR Shell Prompt Preset"), ""), ShellType.RARShell, False)
-            ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
             ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
             DefaultChoiceOutputType = If(ConfigToken("Shell")?("Default choice output type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Shell")?("Default choice output type"), DefaultChoiceOutputType), DefaultChoiceOutputType, ChoiceOutputType.Modern), ChoiceOutputType.Modern)
 

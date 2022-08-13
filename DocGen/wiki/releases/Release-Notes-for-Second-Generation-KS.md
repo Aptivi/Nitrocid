@@ -241,5 +241,6 @@ Because the API was having mixed code of between refactored and unrefactored, we
 
 1. Updated all libraries
 2. Added new commands
-3. General API improvements
-4. General improvements and bug fixes
+3. Removed command injection as it isn't secure
+4. General API improvements
+5. General improvements and bug fixes

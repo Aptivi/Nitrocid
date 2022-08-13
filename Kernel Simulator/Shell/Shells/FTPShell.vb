@@ -100,7 +100,7 @@ Namespace Shell.Shells
                     'Parse command
                     If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseFTPPreExecuteCommand(FtpCommand)
-                        GetLine(FtpCommand, False, "", ShellType.FTPShell)
+                        GetLine(FtpCommand, "", ShellType.FTPShell)
                         KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                     End If
                 Catch taex As ThreadInterruptedException

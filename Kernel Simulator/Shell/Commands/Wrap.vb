@@ -33,7 +33,7 @@ Namespace Shell.Commands
                         Dim WrappedCommand As New KernelThread($"Wrapped Shell Command Thread", False, AddressOf ExecuteCommand)
                         ShellStack(ShellStack.Count - 1).AltCommandThreads.Add(WrappedCommand)
                     End If
-                    GetLine(ListArgs(0), False, WrapOutputPath)
+                    GetLine(ListArgs(0), WrapOutputPath)
                     Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                     Dim WrapOutput As String = WrapOutputStream.ReadToEnd
                     WriteWrapped(WrapOutput, False, ColTypes.Neutral)

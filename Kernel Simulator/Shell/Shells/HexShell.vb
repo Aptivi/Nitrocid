@@ -77,7 +77,7 @@ Namespace Shell.Shells
                     Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseHexPreExecuteCommand(WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.HexShell)
+                        GetLine(WrittenCommand, "", ShellType.HexShell)
                         KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand)
                     End If
                 Catch taex As ThreadInterruptedException

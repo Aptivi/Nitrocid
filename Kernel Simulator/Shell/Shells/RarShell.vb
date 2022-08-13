@@ -71,7 +71,7 @@ Namespace Shell.Shells
                     Dim WrittenCommand As String = ReadLine()
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"})) Then
                         KernelEventManager.RaiseRarPreExecuteCommand(WrittenCommand)
-                        GetLine(WrittenCommand, False, "", ShellType.RARShell)
+                        GetLine(WrittenCommand, "", ShellType.RARShell)
                         KernelEventManager.RaiseRarPostExecuteCommand(WrittenCommand)
                     End If
                 Catch taex As ThreadInterruptedException
