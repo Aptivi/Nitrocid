@@ -240,5 +240,6 @@ Because the API was having mixed code of between refactored and unrefactored, we
 > This version is WIP as of 8/10/2022.
 
 1. Updated all libraries
-2. General API improvements
-3. General improvements and bug fixes
+2. Added new commands
+3. General API improvements
+4. General improvements and bug fixes

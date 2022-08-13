@@ -103,6 +103,7 @@ Namespace Shell
             {"keyinfo", New CommandInfo("keyinfo", ShellType.Shell, "Gets key information for a pressed key. Useful for debugging", New CommandArgumentInfo({""}, False, 0), New KeyInfoCommand)},
             {"langman", New CommandInfo("langman", ShellType.Shell, "Manage your languages", New CommandArgumentInfo({"<reload/load/unload> <customlanguagename>", "<list/reloadall>"}, True, 1), New LangManCommand, CommandFlags.Strict)},
             {"list", New CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", New CommandArgumentInfo({"[-showdetails|-suppressmessages] [directory]"}, False, 0), New ListCommand, CommandFlags.Wrappable)},
+            {"listunits", New CommandInfo("listunits", ShellType.Shell, "Lists all available units", New CommandArgumentInfo({"<type>"}, True, 1), New ListUnitsCommand, CommandFlags.Wrappable)},
             {"lockscreen", New CommandInfo("lockscreen", ShellType.Shell, "Locks your screen with a password", New CommandArgumentInfo(), New LockScreenCommand)},
             {"logout", New CommandInfo("logout", ShellType.Shell, "Logs you out", New CommandArgumentInfo(), New LogoutCommand, CommandFlags.NoMaintenance Or CommandFlags.UninvokableByKernelArgument)},
             {"lovehate", New CommandInfo("lovehate", ShellType.Shell, "Respond to love or hate comments.", New CommandArgumentInfo(), New LoveHateCommand)},
