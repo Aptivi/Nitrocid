@@ -85,7 +85,13 @@ Namespace Shell.Prompts
             {"Default", New RSSDefaultPreset()}
         }
         Friend ReadOnly MailShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New MailDefaultPreset()}
+            {"Default", New MailDefaultPreset()},
+            {"PowerLine1", New MailPowerLine1Preset()},
+            {"PowerLine2", New MailPowerLine2Preset()},
+            {"PowerLine3", New MailPowerLine3Preset()},
+            {"PowerLineBG1", New MailPowerLineBG1Preset()},
+            {"PowerLineBG2", New MailPowerLineBG2Preset()},
+            {"PowerLineBG3", New MailPowerLineBG3Preset()}
         }
         Friend ReadOnly JsonShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New JsonDefaultPreset()}
