@@ -77,6 +77,7 @@ Namespace ManPages
                     'Deal with empty lines
                     If String.IsNullOrEmpty(line) Then
                         IncompleteSentences.Add("")
+                        Continue For
                     End If
 
                     'Now, enumerate through each character in the string
@@ -86,6 +87,7 @@ Namespace ManPages
                         If InEsc Then EscapeCharactersCountInside += 1
                         If InEsc And (EscapeCharactersCountInside > 19 Or LineChar = "m") Then
                             EscapeCharacters += 1
+                            EscapeCharactersCountInside = 0
                             InEsc = False
                         End If
 
