@@ -86,7 +86,7 @@ Namespace Shell.Prompts.Presets.FTP
                 'FTP current directory
                 PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground)
                 PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground)
-                PresetStringBuilder.AppendFormat(" {0} ", FTPCurrDirect)
+                PresetStringBuilder.AppendFormat(" {0} ", FtpCurrentDirectory)
 
                 'Transition
                 PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground)
