@@ -363,8 +363,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Misc\Platform\" />
-  </ItemGroup>
   <!-- KS Package Files End -->
 </Project>
