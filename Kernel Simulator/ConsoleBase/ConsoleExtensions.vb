@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Misc.Reflection
-Imports System.Text.RegularExpressions
+Imports VT.NET
 
 Namespace ConsoleBase
     Public Module ConsoleExtensions
@@ -68,7 +68,7 @@ Namespace ConsoleBase
         ''' <returns>The text that doesn't contain the VT sequences</returns>
         Public Function FilterVTSequences(Text As String) As String
             'Filter all sequences
-            Text = Regex.Replace(Text, "(\x9D|\x1B\]).+(\x07|\x9c)|\x1b [F-Nf-n]|\x1b#[3-8]|\x1b%[@Gg]|\x1b[()*+][A-Za-z0-9=`<>]|\x1b[()*+]\""[>4?]|\x1b[()*+]%[0-6=]|\x1b[()*+]&[4-5]|\x1b[-.\/][ABFHLM]|\x1b[6-9Fcl-o=>\|\}~]|(\x9f|\x1b_).+\x9c|(\x90|\x1bP).+\x9c|(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]|(\x9e|\x1b\^).+\x9c|\x1b[DEHMNOVWXYZ78]", "")
+            Text = Filters.FilterVTSequences(Text)
             Return Text
         End Function
 
