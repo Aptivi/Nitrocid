@@ -58,7 +58,13 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New ZipPowerLineBG3Preset()}
         }
         Friend ReadOnly TextShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New TextDefaultPreset()}
+            {"Default", New TextDefaultPreset()},
+            {"PowerLine1", New TextPowerLine1Preset()},
+            {"PowerLine2", New TextPowerLine2Preset()},
+            {"PowerLine3", New TextPowerLine3Preset()},
+            {"PowerLineBG1", New TextPowerLineBG1Preset()},
+            {"PowerLineBG2", New TextPowerLineBG2Preset()},
+            {"PowerLineBG3", New TextPowerLineBG3Preset()}
         }
         Friend ReadOnly SFTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New SFTPDefaultPreset()}
