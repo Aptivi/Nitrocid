@@ -19,23 +19,28 @@
 
 unrarpath=`which unrar`
 unrarexistent=$?
+isppa=0
 
 # Run the entry point
 if [ -e "/usr/lib/ks/Kernel Simulator.exe" ]; then
+    isppa=1
 	mono "/usr/lib/ks/Kernel Simulator.exe" $@
 elif [ -e "./Kernel Simulator.exe" ]; then
 	mono "./Kernel Simulator.exe" $@
 else
 	echo "Unable to find the entry point."
-fi
-
-# Check to see if we have unrar and update.rar
-if [ ! $unrarexistent == 0 ]; then
-	echo unrar is not found.
 	exit 1
 fi
-if [ -e "./update.rar" ]; then
-	# TODO: We only support update.rar located in the current directory.
-	echo Update found. Installing...
-	"$unrarpath" x -ep1 -r "./update.rar"
+
+# Check to see if we're on the PPA
+if [ isppa == 0 ]; then
+	# Check to see if we have unrar and update.rar
+	if [ ! $unrarexistent == 0 ]; then
+		echo unrar is not found.
+		exit 1
+	fi
+	if [ -e "./update.rar" ]; then
+		echo Update found. Installing...
+		"$unrarpath" x -ep1 -r "./update.rar"
+	fi
 fi
