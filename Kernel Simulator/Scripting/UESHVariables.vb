@@ -19,7 +19,9 @@
 Namespace Scripting
     Public Module UESHVariables
 
-        Friend ShellVariables As New Dictionary(Of String, String)
+        Friend ShellVariables As New Dictionary(Of String, String) From {
+            {"$IsRunningFromGrilo", IsRunningFromGrilo()}
+        }
 
         ''' <summary>
         ''' Checks to see if the variable name starts with the correct format
