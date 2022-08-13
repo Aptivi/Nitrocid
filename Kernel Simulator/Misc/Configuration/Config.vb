@@ -1001,6 +1001,12 @@ Namespace Misc.Configuration
                 }
             ScreensaverConfig.Add("BeatEdgePulse", BeatEdgePulseConfig)
 
+            'Starfield config json object
+            Dim StarfieldConfig As New JObject From {
+                    {"Delay in Milliseconds", StarfieldDelay}
+                }
+            ScreensaverConfig.Add("Starfield", StarfieldConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1936,6 +1942,9 @@ Namespace Misc.Configuration
             BeatEdgePulseMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum green color level"), 255)
             BeatEdgePulseMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum blue color level"), 255)
             BeatEdgePulseMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BeatEdgePulse")?("Maximum color level"), 255)
+
+            '> Starfield
+            StarfieldDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Starfield")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Starfield")?("Delay in Milliseconds"), 10)
 
             'Splash Section - Splash-specific settings go below:
             '> Simple

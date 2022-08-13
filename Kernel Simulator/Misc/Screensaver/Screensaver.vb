@@ -75,6 +75,7 @@ Namespace Misc.Screensaver
             {"snaker", New SnakerDisplay()},
             {"spotwrite", New SpotWriteDisplay()},
             {"stackbox", New StackBoxDisplay()},
+            {"starfield", New StarfieldDisplay()},
             {"typewriter", New TypewriterDisplay()},
             {"typo", New TypoDisplay()},
             {"windowslogo", New WindowsLogoDisplay()},
