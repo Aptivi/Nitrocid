@@ -182,6 +182,15 @@ Namespace Shell
         ''' Parses a specified command.
         ''' </summary>
         ''' <param name="FullCommand">The full command string</param>
+        ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        Public Sub GetLine(FullCommand As String)
+            GetLine(FullCommand, "", CurrentShellType)
+        End Sub
+
+        ''' <summary>
+        ''' Parses a specified command.
+        ''' </summary>
+        ''' <param name="FullCommand">The full command string</param>
         ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
         ''' <param name="ShellType">Shell type</param>
         ''' <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
