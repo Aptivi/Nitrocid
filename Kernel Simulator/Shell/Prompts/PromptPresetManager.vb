@@ -109,10 +109,22 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New JsonPowerLineBG3Preset()}
         }
         Friend ReadOnly HTTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New HTTPDefaultPreset()}
+            {"Default", New HTTPDefaultPreset()},
+            {"PowerLine1", New HTTPPowerLine1Preset()},
+            {"PowerLine2", New HTTPPowerLine2Preset()},
+            {"PowerLine3", New HTTPPowerLine3Preset()},
+            {"PowerLineBG1", New HTTPPowerLineBG1Preset()},
+            {"PowerLineBG2", New HTTPPowerLineBG2Preset()},
+            {"PowerLineBG3", New HTTPPowerLineBG3Preset()}
         }
         Friend ReadOnly HexShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New HexDefaultPreset()}
+            {"Default", New HexDefaultPreset()},
+            {"PowerLine1", New HexPowerLine1Preset()},
+            {"PowerLine2", New HexPowerLine2Preset()},
+            {"PowerLine3", New HexPowerLine3Preset()},
+            {"PowerLineBG1", New HexPowerLineBG1Preset()},
+            {"PowerLineBG2", New HexPowerLineBG2Preset()},
+            {"PowerLineBG3", New HexPowerLineBG3Preset()}
         }
         Friend ReadOnly FTPShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New FTPDefaultPreset()},
