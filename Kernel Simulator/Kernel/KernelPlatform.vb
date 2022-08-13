@@ -56,5 +56,12 @@ Namespace Misc.Platform
             Return Type.GetType("Mono.Runtime") IsNot Nothing
         End Function
 
+        ''' <summary>
+        ''' Is Kernel Simulator running from GRILO?
+        ''' </summary>
+        Public Function IsRunningFromGrilo() As Boolean
+            Return System.Reflection.Assembly.GetEntryAssembly().GetName().Name.StartsWith("GRILO")
+        End Function
+
     End Module
 End Namespace
