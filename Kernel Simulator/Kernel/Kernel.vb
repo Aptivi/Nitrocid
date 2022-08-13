@@ -35,6 +35,7 @@ Imports KS.Misc.Notifications
 
 #If SPECIFIER = "REL" Then
 Imports KS.Network
+Imports KS.Network.Transfer
 #End If
 
 Namespace Kernel
@@ -109,12 +110,11 @@ Namespace Kernel
                     End If
                     If NetworkAvailable Then
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
-                            Dim pdbdown As New WebClient
                             Try
 #If NETCOREAPP Then
-                                pdbdown.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                                DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
 #Else
-                                pdbdown.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                                DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
 #End If
                             Catch ex As Exception
                                 NotifySend(New Notification(DoTranslation("Error downloading debug data"),
