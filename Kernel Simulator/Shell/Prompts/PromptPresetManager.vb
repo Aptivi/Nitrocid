@@ -106,7 +106,13 @@ Namespace Shell.Prompts
             {"PowerLineBG3", New FtpPowerLineBG3Preset()}
         }
         Friend ReadOnly RARShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New RarDefaultPreset()}
+            {"Default", New RarDefaultPreset()},
+            {"PowerLine1", New RarPowerLine1Preset()},
+            {"PowerLine2", New RarPowerLine2Preset()},
+            {"PowerLine3", New RarPowerLine3Preset()},
+            {"PowerLineBG1", New RarPowerLineBG1Preset()},
+            {"PowerLineBG2", New RarPowerLineBG2Preset()},
+            {"PowerLineBG3", New RarPowerLineBG3Preset()}
         }
 
         'Custom shell presets used by mods
