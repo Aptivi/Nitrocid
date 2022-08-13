@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Probers.Motd
 Imports KS.Misc.Encryption
 Imports KS.Misc.Screensaver
 Imports KS.Network.RSS
@@ -83,8 +84,8 @@ Namespace Login
                 End If
 
                 'Read MOTD and MAL
-                ReadMOTD(MessageType.MOTD)
-                ReadMOTD(MessageType.MAL)
+                ReadMOTD()
+                ReadMal()
 
                 'Show MOTD once
                 Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD)

@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports KS.Kernel
-Imports KS.Misc.Probers
+Imports KS.Misc.Probers.Motd
 
 <TestFixture, Order(2)> Public Class MOTDManagementTests
 
@@ -26,7 +26,7 @@ Imports KS.Misc.Probers
     ''' Tests reading MOTD from file
     ''' </summary>
     <Test, Description("Management")> Public Sub TestReadMOTDFromFile()
-        ReadMOTD(MessageType.MOTD)
+        ReadMotd()
         Dim MOTDLine As String = File.ReadAllText(GetKernelPath(KernelPathType.MOTD))
         MOTDLine.ShouldBe(MOTDMessage)
     End Sub
@@ -35,7 +35,7 @@ Imports KS.Misc.Probers
     ''' Tests reading MAL from file
     ''' </summary>
     <Test, Description("Management")> Public Sub TestReadMALFromFile()
-        ReadMOTD(MessageType.MAL)
+        ReadMal()
         Dim MALLine As String = File.ReadAllText(GetKernelPath(KernelPathType.MAL))
         MALLine.ShouldBe(MAL)
     End Sub

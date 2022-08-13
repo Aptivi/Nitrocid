@@ -31,6 +31,7 @@ Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
 Imports KS.Misc.Editors.TextEdit
+Imports KS.Misc.Probers.Motd
 Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS.Misc.Probers
+Imports KS.Misc.Probers.Motd
 
 <TestFixture, Order(1)> Public Class MOTDSettingTests
 
@@ -25,7 +26,7 @@ Imports KS.Misc.Probers
     ''' Tests setting MOTD
     ''' </summary>
     <Test, Description("Setting")> Public Sub TestSetMOTD()
-        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
+        SetMOTD(ProbePlaces("Hello, I am on <system>"))
         Dim MOTDFile As New StreamReader(GetKernelPath(KernelPathType.MOTD))
         MOTDFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
         MOTDFile.Close()
@@ -35,7 +36,7 @@ Imports KS.Misc.Probers
     ''' Tests setting MAL
     ''' </summary>
     <Test, Description("Setting")> Public Sub TestSetMAL()
-        SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
+        SetMal(ProbePlaces("Hello, I am on <system>"))
         Dim MALFile As New StreamReader(GetKernelPath(KernelPathType.MAL))
         MALFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
         MALFile.Close()

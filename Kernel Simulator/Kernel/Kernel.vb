@@ -23,6 +23,7 @@ Imports KS.Kernel.Exceptions
 Imports KS.Misc.Reflection
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
+Imports KS.Misc.Probers.Motd
 Imports KS.Modifications
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
@@ -161,11 +162,11 @@ Namespace Kernel
 
                     'If the two files are not found, create two MOTD files with current config.
                     If Not FileExists(GetKernelPath(KernelPathType.MOTD)) Then
-                        SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                        SetMotd(DoTranslation("Welcome to Kernel!"))
                         ReportProgress(DoTranslation("Generated default MOTD."), 3, ColTypes.Neutral)
                     End If
                     If Not FileExists(GetKernelPath(KernelPathType.MAL)) Then
-                        SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                        SetMal(DoTranslation("Logged in successfully as <user>"))
                         ReportProgress(DoTranslation("Generated default MAL."), 3, ColTypes.Neutral)
                     End If
 
@@ -231,8 +232,8 @@ Namespace Kernel
                     If Not Maintenance Then
                         LoginPrompt()
                     Else
-                        ReadMOTD(MessageType.MOTD)
-                        ReadMOTD(MessageType.MAL)
+                        ReadMotd()
+                        ReadMal()
                         Write(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
                         If Users.ContainsKey("root") Then
                             Wdbg(DebugLevel.I, "Root account found. Prompting for password...")

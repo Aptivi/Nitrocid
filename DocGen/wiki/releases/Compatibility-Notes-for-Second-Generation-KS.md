@@ -715,3 +715,7 @@ It has come to the conclusion that `PlatformDetector` is now promoted to the Ker
 
 * Affected classes:
   - PlatformDetector -> KernelPlatform
+
+##### Separated the MOTD and MAL parsers
+
+MOTD and MAL parsers were unified since early versions of Kernel Simulator. However, it didn't occur to us that we need to separate them for a very long time. Now is the time to separate them, effectively removing `MessageType` enumeration.

@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Probers.Motd
+
 Namespace Shell.Commands
     Class ChMalCommand
         Inherits CommandExecutor
@@ -27,12 +29,12 @@ Namespace Shell.Commands
                     Write(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
                 Else
                     Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
-                    SetMOTD(StringArgs, MessageType.MAL)
+                    SetMal(StringArgs)
                 End If
             Else
                 StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MAL))
                 Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
-                ReadMOTD(MessageType.MAL)
+                ReadMal()
             End If
         End Sub
 

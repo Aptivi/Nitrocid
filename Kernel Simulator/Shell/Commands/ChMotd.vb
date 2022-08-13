@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Probers.Motd
+
 Namespace Shell.Commands
     Class ChMotdCommand
         Inherits CommandExecutor
@@ -27,12 +29,12 @@ Namespace Shell.Commands
                     Write(DoTranslation("Blank message of the day."), True, ColTypes.Error)
                 Else
                     Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
-                    SetMOTD(StringArgs, MessageType.MOTD)
+                    SetMotd(StringArgs)
                 End If
             Else
                 StartShell(ShellType.TextShell, GetKernelPath(KernelPathType.MOTD))
                 Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
-                ReadMOTD(MessageType.MOTD)
+                ReadMotd()
             End If
         End Sub
 
