@@ -40,6 +40,7 @@ Namespace Shell.ShellBase.Commands
         ''' <returns>True if found; False if not found or shell type is invalid.</returns>
         Public Function IsCommandFound(Command As String, ShellType As ShellType) As Boolean
             Wdbg(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType)
+            If UnifiedCommandDict.ContainsKey(Command) Then Return True
             Select Case ShellType
                 Case ShellType.FTPShell
                     Return FTPCommands.ContainsKey(Command)
@@ -79,7 +80,8 @@ Namespace Shell.ShellBase.Commands
         ''' <returns>True if found; False if not found.</returns>
         Public Function IsCommandFound(Command As String) As Boolean
             Wdbg(DebugLevel.I, "Command: {0}", Command)
-            Return FTPCommands.ContainsKey(Command) Or
+            Return UnifiedCommandDict.ContainsKey(Command) Or
+                   FTPCommands.ContainsKey(Command) Or
                    JsonShell_Commands.ContainsKey(Command) Or
                    MailCommands.ContainsKey(Command) Or
                    DebugCommands.ContainsKey(Command) Or
