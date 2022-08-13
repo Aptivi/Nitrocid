@@ -47,7 +47,7 @@ Namespace Shell.Prompts.Presets.ZIP
             PresetStringBuilder.Append(UserNameShellColor.VTSequenceForeground)
             PresetStringBuilder.AppendFormat(Path.GetFileName(ZipShell_FileStream.Name))
 
-            'Was file edited?
+            'Current archive directory
             PresetStringBuilder.Append(UserNameShellColor.VTSequenceForeground)
             PresetStringBuilder.AppendFormat("{0}", ZipShell_CurrentArchiveDirectory)
 

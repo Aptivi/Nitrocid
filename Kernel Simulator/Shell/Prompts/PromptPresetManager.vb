@@ -49,7 +49,13 @@ Namespace Shell.Prompts
             {"Default", New TestDefaultPreset()}
         }
         Friend ReadOnly ZipShellPresets As New Dictionary(Of String, PromptPresetBase) From {
-            {"Default", New ZipDefaultPreset()}
+            {"Default", New ZipDefaultPreset()},
+            {"PowerLine1", New ZipPowerLine1Preset()},
+            {"PowerLine2", New ZipPowerLine2Preset()},
+            {"PowerLine3", New ZipPowerLine3Preset()},
+            {"PowerLineBG1", New ZipPowerLineBG1Preset()},
+            {"PowerLineBG2", New ZipPowerLineBG2Preset()},
+            {"PowerLineBG3", New ZipPowerLineBG3Preset()}
         }
         Friend ReadOnly TextShellPresets As New Dictionary(Of String, PromptPresetBase) From {
             {"Default", New TextDefaultPreset()}
