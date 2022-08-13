@@ -36,16 +36,16 @@ Namespace Kernel.Events
         ''' </summary>
         ''' <param name="SearchTerm">The search term</param>
         Public Function ListAllFiredEvents(SearchTerm As String) As Dictionary(Of String, Object())
-            Dim FiredEvents As New Dictionary(Of String, Object())
+            Dim Events As New Dictionary(Of String, Object())
 
             'Enumerate all the fired events
             For Each FiredEvent As String In FiredEvents.Keys
                 If FiredEvent.Contains(SearchTerm) Then
                     Dim EventArguments As Object() = FiredEvents(FiredEvent)
-                    FiredEvents.Add(FiredEvent, EventArguments)
+                    Events.Add(FiredEvent, EventArguments)
                 End If
             Next
-            Return FiredEvents
+            Return Events
         End Function
 
         ''' <summary>
