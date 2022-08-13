@@ -64,35 +64,42 @@ Namespace Misc.Configuration
             End If
 
             'Go through sections
-            For Each Section In PristineConfigToken
-                If ConfigToken(Section.Key) IsNot Nothing Then
-                    'Check the normal keys
-                    If ConfigToken(Section.Key).Count <> PristineConfigToken(Section.Key).Count Then
-                        Wdbg(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key)
-                        FixesNeeded = True
-                    End If
+            Try
+                For Each Section In PristineConfigToken
+                    If ConfigToken(Section.Key) IsNot Nothing Then
+                        'Check the normal keys
+                        If ConfigToken(Section.Key).Count <> PristineConfigToken(Section.Key).Count Then
+                            Wdbg(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key)
+                            FixesNeeded = True
+                        End If
 
-                    'Check the screensaver keys
-                    If Section.Key = "Screensaver" Then
-                        For Each ScreensaverSection As JProperty In PristineConfigToken("Screensaver").Where(Function(x) x.First.Type = JTokenType.Object)
-                            If ConfigToken("Screensaver")(ScreensaverSection.Name).Count() <> PristineConfigToken("Screensaver")(ScreensaverSection.Name).Count() Then
-                                Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name)
-                                FixesNeeded = True
-                            End If
-                        Next
-                    End If
+                        'Check the screensaver keys
+                        If Section.Key = "Screensaver" Then
+                            For Each ScreensaverSection As JProperty In PristineConfigToken("Screensaver").Where(Function(x) x.First.Type = JTokenType.Object)
+                                If ConfigToken("Screensaver")(ScreensaverSection.Name).Count() <> PristineConfigToken("Screensaver")(ScreensaverSection.Name).Count() Then
+                                    Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name)
+                                    FixesNeeded = True
+                                End If
+                            Next
+                        End If
 
-                    'Check the splash keys
-                    If Section.Key = "Splash" Then
-                        For Each SplashSection As JProperty In PristineConfigToken("Splash").Where(Function(x) x.First.Type = JTokenType.Object)
-                            If ConfigToken("Splash")(SplashSection.Name).Count() <> PristineConfigToken("Splash")(SplashSection.Name).Count() Then
-                                Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name)
-                                FixesNeeded = True
-                            End If
-                        Next
+                        'Check the splash keys
+                        If Section.Key = "Splash" Then
+                            For Each SplashSection As JProperty In PristineConfigToken("Splash").Where(Function(x) x.First.Type = JTokenType.Object)
+                                If ConfigToken("Splash")(SplashSection.Name).Count() <> PristineConfigToken("Splash")(SplashSection.Name).Count() Then
+                                    Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name)
+                                    FixesNeeded = True
+                                End If
+                            Next
+                        End If
                     End If
-                End If
-            Next
+                Next
+            Catch ex As Exception
+                'Somehow, the config is corrupt or something. Fix it.
+                Wdbg(DebugLevel.E, "Found a serious error in configuration: {0}", ex.Message)
+                WStkTrc(ex)
+                FixesNeeded = True
+            End Try
 
             'If the fixes are needed, try to remake config with parsed values
             If FixesNeeded Then CreateConfig()
