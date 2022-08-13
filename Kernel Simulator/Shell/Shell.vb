@@ -177,6 +177,31 @@ Namespace Shell
             {"presets", New CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", New CommandArgumentInfo(), New PresetsUnifiedCommand)},
             {"exit", New CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", New CommandArgumentInfo(), New ExitCommand)}
         }
+        ''' <summary>
+        ''' Current shell type
+        ''' </summary>
+        Public ReadOnly Property CurrentShellType As ShellType
+            Get
+                Return ShellStack(ShellStack.Count - 1).ShellType
+            End Get
+        End Property
+        ''' <summary>
+        ''' Last shell type
+        ''' </summary>
+        Public ReadOnly Property LastShellType As ShellType
+            Get
+                If ShellStack.Count = 0 Then
+                    'We don't have any shell. Return Shell.
+                    Return ShellType.Shell
+                ElseIf ShellStack.Count = 1 Then
+                    'We only have one shell. Consider current as last.
+                    Return CurrentShellType
+                Else
+                    'We have more than one shell. Return the shell type for a shell before the last one.
+                    Return ShellStack(ShellStack.Count - 2).ShellType
+                End If
+            End Get
+        End Property
 
         ''' <summary>
         ''' Parses a specified command.

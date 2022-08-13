@@ -21,8 +21,6 @@ Imports System.IO
 Namespace Shell.ShellBase
     Module CancellationHandlers
 
-        Friend CurrentShellType As ShellType = ShellType.Shell
-        Friend LastShellType As ShellType = ShellType.Shell
         Friend CancelSync, EditorCancelSync, FTPCancelSync, HTTPCancelSync, JsonShellCancelSync, MailCancelSync, RssShellCancelSync,
                SFTPCancelSync, TestCancelSync, ZipShellCancelSync, HexEditorCancelSync, RarShellCancelSync As New Object
 
