@@ -32,7 +32,7 @@ Namespace Shell.Prompts.Presets.FTP
             End Get
         End Property
 
-        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.SFTPShell Implements IPromptPreset.PresetShellType
+        Public Overrides ReadOnly Property PresetShellType As ShellType = ShellType.FTPShell Implements IPromptPreset.PresetShellType
 
         Friend Overrides Function PresetPromptBuilder() As String Implements IPromptPreset.PresetPromptBuilder
             'PowerLine glyphs
