@@ -156,7 +156,7 @@ Namespace Shell
             {"stopwatch", New CommandInfo("stopwatch", ShellType.Shell, "A simple stopwatch", New CommandArgumentInfo(), New StopwatchCommand)},
             {"sumfile", New CommandInfo("sumfile", ShellType.Shell, "Calculates file sums.", New CommandArgumentInfo({"[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]"}, True, 2), New SumFileCommand)},
             {"sumfiles", New CommandInfo("sumfiles", ShellType.Shell, "Calculates sums of files in specified directory.", New CommandArgumentInfo({"[-relative] <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]"}, True, 2), New SumFilesCommand)},
-            {"sysinfo", New CommandInfo("sysinfo", ShellType.Shell, "System information", New CommandArgumentInfo({"[-s|-h|-u|-m|-l|-a]"}, False, 0), New SysInfoCommand)},
+            {"sysinfo", New CommandInfo("sysinfo", ShellType.Shell, "System information", New CommandArgumentInfo({"[-s|-h|-u|-m|-l|-a]"}, False, 0), New SysInfoCommand, CommandFlags.Obsolete)},
             {"testshell", New CommandInfo("testshell", ShellType.Shell, "Opens a test shell", New CommandArgumentInfo(), New TestShellCommand, CommandFlags.Strict)},
             {"timer", New CommandInfo("timer", ShellType.Shell, "A simple timer", New CommandArgumentInfo(), New TimerCommand)},
             {"unblockdbgdev", New CommandInfo("unblockdbgdev", ShellType.Shell, "Unblock a debug device by IP address", New CommandArgumentInfo({"<ipaddress>"}, True, 1), New UnblockDbgDevCommand, CommandFlags.Strict)},
