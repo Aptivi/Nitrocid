@@ -68,13 +68,32 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="colorType">A type of colors that will be changed.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+            Write(Text, Line, False, colorType, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="colorType">A type of colors that will be changed.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, colorType As ColTypes, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    SetConsoleColor(colorType)
+                    SetConsoleColor(colorType, Highlight)
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        SetConsoleColor(colorType)
+                        SetConsoleColor(BackgroundColor, True)
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
@@ -94,14 +113,34 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
+            Write(Text, Line, False, colorTypeForeground, colorTypeBackground, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt, and sets colors as needed.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        ''' <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, colorTypeForeground As ColTypes, colorTypeBackground As ColTypes, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    SetConsoleColor(colorTypeForeground)
-                    SetConsoleColor(colorTypeBackground, True)
+                    SetConsoleColor(colorTypeForeground, Highlight)
+                    SetConsoleColor(colorTypeBackground, Not Highlight)
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        SetConsoleColor(colorTypeForeground)
+                        SetConsoleColor(colorTypeBackground, True)
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If colorTypeForeground = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
@@ -120,14 +159,38 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
+            Write(Text, Line, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, color As ConsoleColor, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Try to write to console
-                    Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
-                    Console.ForegroundColor = color
+                    If Highlight Then
+                        Console.ForegroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                        Console.BackgroundColor = color
+                    Else
+                        Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                        Console.ForegroundColor = color
+                    End If
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        Console.BackgroundColor = If(IsStringNumeric(BackgroundColor.PlainSequence) AndAlso BackgroundColor.PlainSequence <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor.PlainSequence), ConsoleColor.Black)
+                        Console.ForegroundColor = color
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
@@ -147,14 +210,39 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="BackgroundColor">A background color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+            Write(Text, Line, False, ForegroundColor, BackgroundColor, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Try to write to console
-                    Console.BackgroundColor = BackgroundColor
-                    Console.ForegroundColor = ForegroundColor
+                    If Highlight Then
+                        Console.BackgroundColor = ForegroundColor
+                        Console.ForegroundColor = BackgroundColor
+                    Else
+                        Console.BackgroundColor = BackgroundColor
+                        Console.ForegroundColor = ForegroundColor
+                    End If
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        Console.BackgroundColor = BackgroundColor
+                        Console.ForegroundColor = ForegroundColor
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
@@ -173,16 +261,35 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="color">A color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
+            Write(Text, Line, False, color, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="color">A color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, color As Color, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Try to write to console
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                        SetConsoleColor(color)
-                        SetConsoleColor(BackgroundColor, True)
+                        SetConsoleColor(color, Highlight)
+                        SetConsoleColor(BackgroundColor, Not Highlight)
                     End If
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        SetConsoleColor(color)
+                        SetConsoleColor(BackgroundColor, True)
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
@@ -202,16 +309,36 @@ Namespace Misc.Writers.ConsoleWriters
         ''' <param name="BackgroundColor">A background color that will be changed to.</param>
         ''' <param name="vars">Variables to format the message before it's written.</param>
         Public Sub Write(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+            Write(Text, Line, False, ForegroundColor, BackgroundColor, vars)
+        End Sub
+
+        ''' <summary>
+        ''' Outputs the text into the terminal prompt with custom color support.
+        ''' </summary>
+        ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        ''' <param name="Line">Whether to print a new line or not</param>
+        ''' <param name="Highlight">Highlight the text written</param>
+        ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        ''' <param name="BackgroundColor">A background color that will be changed to.</param>
+        ''' <param name="vars">Variables to format the message before it's written.</param>
+        Public Sub Write(Text As String, Line As Boolean, Highlight As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
             SyncLock WriteLock
                 Try
                     'Try to write to console
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                        SetConsoleColor(ForegroundColor)
-                        SetConsoleColor(BackgroundColor, True)
+                        SetConsoleColor(ForegroundColor, Highlight)
+                        SetConsoleColor(BackgroundColor, Not Highlight)
                     End If
 
                     'Write the text to console
-                    WritePlain(Text, Line, vars)
+                    If Highlight Then
+                        WritePlain(Text, False, vars)
+                        SetConsoleColor(ForegroundColor)
+                        SetConsoleColor(BackgroundColor, True)
+                        WritePlain("", Line)
+                    Else
+                        WritePlain(Text, Line, vars)
+                    End If
 
                     'Reset the colors
                     If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
