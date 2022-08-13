@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Kernel
+Imports KS.Kernel.Events
 
 <TestFixture> Public Class KernelMiscTests
 
