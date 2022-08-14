@@ -187,6 +187,12 @@ Namespace Misc.Splash
         Sub CloseSplash()
             If EnableSplash Then
                 CurrentSplash.Closing()
+
+                'We need to wait for the splash display thread to finish its work once Closing() is called, because some splashes, like PowerLine,
+                'actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
+                'are done in the Display() function, we'd abruptly stop without waiting, causing race condition. If this happened, visual glitches
+                'manifest, which is not good.
+                SplashThread.Wait()
                 SplashThread.Stop()
                 Console.CursorVisible = True
             End If
