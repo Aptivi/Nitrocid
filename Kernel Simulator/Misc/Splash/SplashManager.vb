@@ -42,7 +42,8 @@ Namespace Misc.Splash
             {"Pulse", New SplashInfo("Pulse", True, New SplashPulse)},
             {"BeatPulse", New SplashInfo("BeatPulse", True, New SplashBeatPulse)},
             {"EdgePulse", New SplashInfo("EdgePulse", True, New SplashEdgePulse)},
-            {"BeatEdgePulse", New SplashInfo("BeatEdgePulse", True, New SplashBeatEdgePulse)}
+            {"BeatEdgePulse", New SplashInfo("BeatEdgePulse", True, New SplashBeatEdgePulse)},
+            {"PowerLine", New SplashInfo("PowerLine", True, New SplashPowerLine)}
         }
 
         ''' <summary>
