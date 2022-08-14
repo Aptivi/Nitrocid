@@ -16,7 +16,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Arguments.ArgumentBase
-Imports KS.TestShell
+Imports KS.Shell.Shells.Test
 
 Namespace Arguments.CommandLineArguments
     Class CommandLine_TestInteractiveArgument

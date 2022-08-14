@@ -37,13 +37,14 @@ Imports KS.Misc.Writers.FancyWriters.Tools
 Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
 Imports KS.Network
-Imports KS.Network.FTP
+Imports KS.Shell.Shells.FTP
 Imports KS.Network.Mail
 Imports KS.Network.Mail.Directory
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
 Imports KS.Network.RSS
-Imports KS.Network.SFTP
+Imports KS.Shell.Shells.RSS
+Imports KS.Shell.Shells.SFTP
 Imports KS.Network.SSH
 Imports KS.Network.Transfer
 Imports KS.Shell.Prompts

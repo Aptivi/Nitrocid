@@ -19,6 +19,7 @@
 Imports Newtonsoft.Json.Linq
 Imports KS.Files.Querying
 Imports KS.Network.SSH
+Imports KS.Shell.Shells.SFTP
 Imports KS.Misc.Reflection
 
 Namespace Network.SFTP

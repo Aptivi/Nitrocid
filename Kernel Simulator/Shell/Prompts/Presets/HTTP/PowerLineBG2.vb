@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
-Imports KS.Network.HTTP
+Imports KS.Shell.Shells.HTTP
 
 Namespace Shell.Prompts.Presets.HTTP
     Public Class HTTPPowerLineBG2Preset

@@ -20,6 +20,7 @@ Imports System.Net.Security
 Imports Newtonsoft.Json.Linq
 Imports KS.Files.Querying
 Imports KS.Network.FTP.Transfer
+Imports KS.Shell.Shells.FTP
 Imports KS.Misc.Reflection
 
 Namespace Network.FTP

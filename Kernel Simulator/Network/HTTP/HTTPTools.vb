@@ -18,6 +18,7 @@
 
 Imports System.Net.Http
 Imports System.Threading.Tasks
+Imports KS.Shell.Shells.HTTP
 
 Namespace Network.HTTP
     Public Module HTTPTools

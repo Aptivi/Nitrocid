@@ -21,6 +21,7 @@ Imports System.Threading
 Imports System.Xml
 Imports KS.Misc.Notifications
 Imports KS.Misc.Reflection
+Imports KS.Shell.Shells.RSS
 Imports KS.Network.RSS.Instance
 Imports KS.Network.Transfer
 Imports Newtonsoft.Json.Linq

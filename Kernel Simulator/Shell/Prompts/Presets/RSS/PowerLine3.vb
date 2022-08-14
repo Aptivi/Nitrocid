@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
-Imports KS.Network.RSS
+Imports KS.Shell.Shells.RSS
 
 Namespace Shell.Prompts.Presets.RSS
     Public Class RSSPowerLine3Preset

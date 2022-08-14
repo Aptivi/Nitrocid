@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
+Imports KS.Shell.Shells.FTP
 
 Namespace Network.FTP.Transfer
     Public Module FTPTransfer

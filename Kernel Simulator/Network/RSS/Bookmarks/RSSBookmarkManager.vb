@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Kernel.Exceptions
+Imports KS.Shell.Shells.RSS
 
 Namespace Network.RSS
     Public Module RSSBookmarkManager

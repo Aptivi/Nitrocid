@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
-Imports KS.Network.FTP
+Imports KS.Shell.Shells.FTP
 
 Namespace Shell.Prompts.Presets.FTP
     Public Class FTPDefaultPreset

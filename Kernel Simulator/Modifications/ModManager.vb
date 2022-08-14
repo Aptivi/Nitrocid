@@ -30,13 +30,13 @@ Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
-Imports KS.Network.FTP
-Imports KS.Network.HTTP
+Imports KS.Shell.Shells.FTP
+Imports KS.Shell.Shells.HTTP
 Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
-Imports KS.Network.RSS
-Imports KS.Network.SFTP
-Imports KS.TestShell
+Imports KS.Shell.Shells.RSS
+Imports KS.Shell.Shells.SFTP
+Imports KS.Shell.Shells.Test
 
 Namespace Modifications
     Public Module ModManager

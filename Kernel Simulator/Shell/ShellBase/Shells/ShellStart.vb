@@ -16,7 +16,17 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Shell.Shells
+Imports KS.Shell.Shells.FTP
+Imports KS.Shell.Shells.Hex
+Imports KS.Shell.Shells.HTTP
+Imports KS.Shell.Shells.Json
+Imports KS.Shell.Shells.Mail
+Imports KS.Shell.Shells.Rar
+Imports KS.Shell.Shells.RSS
+Imports KS.Shell.Shells.SFTP
+Imports KS.Shell.Shells.Text
+Imports KS.Shell.Shells.UESH
+Imports KS.Shell.Shells.Zip
 Imports ReadLineReboot
 
 Namespace Shell.ShellBase.Shells
@@ -104,7 +114,7 @@ Namespace Shell.ShellBase.Shells
                 Case ShellType.TextShell
                     Return New TextShell()
                 Case ShellType.TestShell
-                    Return New KS.Shell.Shells.TestShell()
+                    Return New KS.Shell.Shells.Test.TestShell()
                 Case ShellType.ZIPShell
                     Return New ZipShell()
                 Case ShellType.RSSShell

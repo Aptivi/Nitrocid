@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
-Imports KS.Network.SFTP
+Imports KS.Shell.Shells.SFTP
 
 Namespace Shell.Prompts.Presets.SFTP
     Public Class SftpPowerLine2Preset
