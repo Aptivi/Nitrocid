@@ -9,7 +9,7 @@
             ],
             "dest": "api",
             "disableGitFeatures": false,
-            "disableDefaultFilter": false,
+            "disableDefaultFilter": true,
             "filter": "filterConfig.yml"
         }
     ],
