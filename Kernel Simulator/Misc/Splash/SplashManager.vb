@@ -30,20 +30,20 @@ Namespace Misc.Splash
         Public SplashName As String = "Simple"
         Friend SplashThread As New KernelThread("Kernel Splash Thread", False, Sub() CurrentSplash.Display())
         Private ReadOnly InstalledSplashes As New Dictionary(Of String, SplashInfo) From {
-            {"Simple", New SplashInfo("Simple", True, New SplashSimple)},
-            {"Progress", New SplashInfo("Progress", True, New SplashProgress)},
-            {"Blank", New SplashInfo("Blank", False, New SplashBlank)},
-            {"Fader", New SplashInfo("Fader", True, New SplashFader)},
-            {"FaderBack", New SplashInfo("FaderBack", True, New SplashFaderBack)},
-            {"BeatFader", New SplashInfo("BeatFader", True, New SplashBeatFader)},
-            {"systemd", New SplashInfo("systemd", True, New SplashSystemd)},
-            {"sysvinit", New SplashInfo("sysvinit", True, New SplashSysvinit)},
-            {"openrc", New SplashInfo("openrc", True, New SplashOpenRC)},
-            {"Pulse", New SplashInfo("Pulse", True, New SplashPulse)},
-            {"BeatPulse", New SplashInfo("BeatPulse", True, New SplashBeatPulse)},
-            {"EdgePulse", New SplashInfo("EdgePulse", True, New SplashEdgePulse)},
-            {"BeatEdgePulse", New SplashInfo("BeatEdgePulse", True, New SplashBeatEdgePulse)},
-            {"PowerLine", New SplashInfo("PowerLine", True, New SplashPowerLine)}
+            {"Simple", New SplashInfo("Simple", New SplashSimple)},
+            {"Progress", New SplashInfo("Progress", New SplashProgress)},
+            {"Blank", New SplashInfo("Blank", New SplashBlank, False)},
+            {"Fader", New SplashInfo("Fader", New SplashFader)},
+            {"FaderBack", New SplashInfo("FaderBack", New SplashFaderBack)},
+            {"BeatFader", New SplashInfo("BeatFader", New SplashBeatFader)},
+            {"systemd", New SplashInfo("systemd", New SplashSystemd)},
+            {"sysvinit", New SplashInfo("sysvinit", New SplashSysvinit)},
+            {"openrc", New SplashInfo("openrc", New SplashOpenRC)},
+            {"Pulse", New SplashInfo("Pulse", New SplashPulse)},
+            {"BeatPulse", New SplashInfo("BeatPulse", New SplashBeatPulse)},
+            {"EdgePulse", New SplashInfo("EdgePulse", New SplashEdgePulse)},
+            {"BeatEdgePulse", New SplashInfo("BeatEdgePulse", New SplashBeatEdgePulse)},
+            {"PowerLine", New SplashInfo("PowerLine", New SplashPowerLine)}
         }
 
         ''' <summary>
@@ -113,7 +113,7 @@ Namespace Misc.Splash
                             Wdbg(DebugLevel.I, "- Name: {0}", Name)
                             Wdbg(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress)
                             Wdbg(DebugLevel.I, "Installing splash...")
-                            Dim InstalledSplash As New SplashInfo(Name, DisplaysProgress, SplashInstance)
+                            Dim InstalledSplash As New SplashInfo(Name, SplashInstance, DisplaysProgress)
                             InstalledSplashes.AddOrModify(Name, InstalledSplash)
                         Else
                             Wdbg(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath)

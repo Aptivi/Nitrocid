@@ -38,7 +38,7 @@ Namespace Misc.Splash
         ''' <param name="SplashName">Splash name</param>
         ''' <param name="DisplaysProgress">Does the splash display progress?</param>
         ''' <param name="EntryPoint">Splash entry point</param>
-        Protected Friend Sub New(SplashName As String, DisplaysProgress As Boolean, EntryPoint As ISplash)
+        Protected Friend Sub New(SplashName As String, EntryPoint As ISplash, Optional DisplaysProgress As Boolean = True)
             Me.SplashName = SplashName
             Me.DisplaysProgress = DisplaysProgress
             Me.EntryPoint = EntryPoint
