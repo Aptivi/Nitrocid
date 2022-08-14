@@ -31,8 +31,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests getting list of commands from specific shell type
-    /// </summary>
+        /// Tests getting list of commands from specific shell type
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetCommandListFromSpecificShell()
@@ -45,8 +45,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting list of commands from all shells
-    /// </summary>
+        /// Tests getting list of commands from all shells
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells()

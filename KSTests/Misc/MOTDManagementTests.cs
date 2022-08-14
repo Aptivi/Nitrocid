@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -33,8 +32,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests reading MOTD from file
-    /// </summary>
+        /// Tests reading MOTD from file
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestReadMOTDFromFile()
@@ -45,8 +44,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests reading MAL from file
-    /// </summary>
+        /// Tests reading MAL from file
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestReadMALFromFile()

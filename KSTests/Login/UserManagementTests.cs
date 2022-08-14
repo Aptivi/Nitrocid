@@ -1,5 +1,4 @@
-﻿using KS.Login;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Login;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests user addition
-    /// </summary>
+        /// Tests user addition
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddUser()
@@ -40,8 +40,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests username change
-    /// </summary>
+        /// Tests username change
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestChangeUser()
@@ -50,8 +50,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests username change
-    /// </summary>
+        /// Tests username change
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetUserProperty()
@@ -61,8 +61,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing user
-    /// </summary>
+        /// Tests removing user
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestRemoveUser()

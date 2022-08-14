@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -33,8 +32,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests setting MOTD
-    /// </summary>
+        /// Tests setting MOTD
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetMOTD()
@@ -46,8 +45,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests setting MAL
-    /// </summary>
+        /// Tests setting MAL
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetMAL()

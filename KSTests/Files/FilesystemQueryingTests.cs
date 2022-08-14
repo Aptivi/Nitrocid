@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using KS.Files;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,10 +16,14 @@ using KS.Files;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Files.LineEndings;
 using KS.Files.Querying;
 using NUnit.Framework;
 using Shouldly;
+using System;
+using System.Diagnostics;
+using System.IO;
 
 namespace KSTests
 {
@@ -33,8 +33,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests checking if file exists
-    /// </summary>
+        /// Tests checking if file exists
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestFileExists()
@@ -46,8 +46,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests checking if directory exists
-    /// </summary>
+        /// Tests checking if directory exists
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestDirectoryExists()
@@ -59,8 +59,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting the kernel path for each entry
-    /// </summary>
+        /// Tests getting the kernel path for each entry
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetKernelPaths()
@@ -75,8 +75,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to parse the path name
-    /// </summary>
+        /// Tests trying to parse the path name
+        /// </summary>
         [TestCase(@"C:\Windows", IncludePlatform = "win", ExpectedResult = true)]
         [TestCase(@"C:\Windows<>", IncludePlatform = "win", ExpectedResult = false)]
         [TestCase("/usr/bin", IncludePlatform = "linux,unix,macosx", ExpectedResult = true)]
@@ -88,8 +88,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to parse the file name
-    /// </summary>
+        /// Tests trying to parse the file name
+        /// </summary>
         [TestCase("Windows", ExpectedResult = true)]
         [TestCase(@"Windows/System32\", ExpectedResult = false)]
         [Description("Querying")]
@@ -99,8 +99,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to get the line ending from text file
-    /// </summary>
+        /// Tests trying to get the line ending from text file
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetLineEndingFromFile()

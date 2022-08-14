@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -31,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests string encryption
-    /// </summary>
+        /// Tests string encryption
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = "9413827E")]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = "C4C1867580D6D25B11210F84F935359A")]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = "CFF9FDA895B0B638957E17CF952457D81ADD622F")]
@@ -47,8 +46,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests file encryption
-    /// </summary>
+        /// Tests file encryption
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = "9413827E")]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = "C4C1867580D6D25B11210F84F935359A")]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = "CFF9FDA895B0B638957E17CF952457D81ADD622F")]
@@ -69,8 +68,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests file encryption
-    /// </summary>
+        /// Tests file encryption
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = "D394D7F0")]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = "CD5578C85A4CF32E48D157746A90C7F6")]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = "36EBF31AF7234D6C99CA65DC4EDA524161600657")]
@@ -90,8 +89,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification
-    /// </summary>
+        /// Tests hash verification
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, "D394D7F0", ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6", ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657", ExpectedResult = true)]
@@ -112,8 +111,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification from hashes file
-    /// </summary>
+        /// Tests hash verification from hashes file
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = true)]
@@ -130,8 +129,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification from hashes file
-    /// </summary>
+        /// Tests hash verification from hashes file
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = true)]
@@ -148,8 +147,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification for an uncalculated file
-    /// </summary>
+        /// Tests hash verification for an uncalculated file
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, "D394D7F0", ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, "CD5578C85A4CF32E48D157746A90C7F6", ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, "36EBF31AF7234D6C99CA65DC4EDA524161600657", ExpectedResult = true)]
@@ -169,8 +168,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification from hashes file for an uncalculated file
-    /// </summary>
+        /// Tests hash verification from hashes file for an uncalculated file
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = true)]
@@ -186,8 +185,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests hash verification from hashes file for an uncalculated file
-    /// </summary>
+        /// Tests hash verification from hashes file for an uncalculated file
+        /// </summary>
         [TestCase(Encryption.Algorithms.CRC32, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.MD5, ExpectedResult = true)]
         [TestCase(Encryption.Algorithms.SHA1, ExpectedResult = true)]

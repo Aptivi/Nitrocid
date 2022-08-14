@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -21,6 +20,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -30,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests getting how many times to repeat the character to represent the appropriate percentage level for the specified number.
-    /// </summary>
+        /// Tests getting how many times to repeat the character to represent the appropriate percentage level for the specified number.
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestPercentRepeatTargeted()
@@ -40,8 +40,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests filtering the VT sequences that matches the regex
-    /// </summary>
+        /// Tests filtering the VT sequences that matches the regex
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestFilterVTSequences()

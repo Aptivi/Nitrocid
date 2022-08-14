@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -18,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Threading;
+using System;
 
 namespace KSTests
 {
@@ -26,8 +26,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// [Kernel thread test] Write hello to console
-    /// </summary>
+        /// [Kernel thread test] Write hello to console
+        /// </summary>
         public static void WriteHello()
         {
             try
@@ -44,8 +44,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// [Kernel thread test] Write hello to console with argument
-    /// </summary>
+        /// [Kernel thread test] Write hello to console with argument
+        /// </summary>
         public static void WriteHelloWithArgument(string Name)
         {
             try

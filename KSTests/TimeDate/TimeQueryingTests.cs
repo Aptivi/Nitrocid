@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -29,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests getting remaining time from now
-    /// </summary>
+        /// Tests getting remaining time from now
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetRemainingTimeFromNow()

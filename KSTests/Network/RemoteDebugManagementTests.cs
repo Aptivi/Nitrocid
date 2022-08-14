@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests adding device to json
-    /// </summary>
+        /// Tests adding device to json
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddDeviceToJson()
@@ -39,8 +39,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests setting device property
-    /// </summary>
+        /// Tests setting device property
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestDeviceSetProperty()
@@ -49,8 +49,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting device property
-    /// </summary>
+        /// Tests getting device property
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetDeviceProperty()
@@ -59,8 +59,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Removes a test device created by <see cref="TestAddDeviceToJson()"/>
-    /// </summary>
+        /// Removes a test device created by <see cref="TestAddDeviceToJson()"/>
+        /// </summary>
         [OneTimeTearDown]
         public static void TestRemoveTestDevice()
         {

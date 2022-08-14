@@ -1,5 +1,4 @@
-﻿using KS.Files;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Files.Folders;
 using NUnit.Framework;
 using Shouldly;
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests path neutralization on a folder in home directory
-    /// </summary>
+        /// Tests path neutralization on a folder in home directory
+        /// </summary>
         [Test]
         [Description("Neutralization")]
         public void TestNeutralizePaths()
@@ -43,8 +43,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests path neutralization on a folder in a custom directory
-    /// </summary>
+        /// Tests path neutralization on a folder in a custom directory
+        /// </summary>
         [Test]
         [Description("Neutralization")]
         public void TestNeutralizePathsCustom()

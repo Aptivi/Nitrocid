@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -29,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests setting default screensaver
-    /// </summary>
+        /// Tests setting default screensaver
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetDefaultScreensaver()

@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.IO;
 using KS.Files;
 using KS.Files.Querying;
@@ -26,14 +26,12 @@ using NUnit.Framework;
 
 namespace KSTests
 {
-
     [SetUpFixture]
     public class InitTest
     {
-
         /// <summary>
-    /// Initialize everything that is required before starting unit tests
-    /// </summary>
+        /// Initialize everything that is required before starting unit tests
+        /// </summary>
         [OneTimeSetUp]
         public static void ReadyEverything()
         {
@@ -57,8 +55,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Clean up everything that the unit tests made
-    /// </summary>
+        /// Clean up everything that the unit tests made
+        /// </summary>
         [OneTimeTearDown]
         public static void CleanEverything()
         {
@@ -87,6 +85,5 @@ namespace KSTests
                 File.Move(Paths.GetKernelPath(KernelPathType.Configuration) + ".old", Paths.GetKernelPath(KernelPathType.Configuration));
             }
         }
-
     }
 }

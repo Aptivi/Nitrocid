@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.Misc.Probers;
 using NUnit.Framework;
 using Shouldly;
+using System.Collections.Generic;
 
 namespace KSTests
 {
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests parsing placeholders
-    /// </summary>
+        /// Tests parsing placeholders
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestParsePlaceholders()

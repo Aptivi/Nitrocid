@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -31,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests initializing an instance of ThemeInfo from KS resources
-    /// </summary>
+        /// Tests initializing an instance of ThemeInfo from KS resources
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromResources()
@@ -81,8 +80,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing an instance of ThemeInfo from all KS resources
-    /// </summary>
+        /// Tests initializing an instance of ThemeInfo from all KS resources
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromAllResources()
@@ -151,8 +150,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing an instance of ThemeInfo from file
-    /// </summary>
+        /// Tests initializing an instance of ThemeInfo from file
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromFile()

@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,22 +16,21 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using KS.Arguments.ArgumentBase;
 using NUnit.Framework;
 using Shouldly;
 
 namespace KSTests
 {
-
     [TestFixture]
     public class ArgumentInfoInitializationTests
     {
-
         private static ArgumentExecutor ArgumentInstance;
 
         /// <summary>
-    /// Tests initializing ArgumentInfo instance from a command line argument
-    /// </summary>
+        /// Tests initializing ArgumentInfo instance from a command line argument
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeArgumentInfoInstanceFromCommandLineArg()
@@ -55,8 +53,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the argument instance from base
-    /// </summary>
+        /// Tests initializing the argument instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeArgumentFromBase()
@@ -69,8 +67,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the argument instance from base
-    /// </summary>
+        /// Tests initializing the argument instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecution()
@@ -79,8 +77,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the argument instance from base
-    /// </summary>
+        /// Tests initializing the argument instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArguments()
@@ -89,8 +87,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the argument instance from base
-    /// </summary>
+        /// Tests initializing the argument instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithSwitches()
@@ -99,8 +97,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the argument instance from base
-    /// </summary>
+        /// Tests initializing the argument instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArgumentsAndSwitches()

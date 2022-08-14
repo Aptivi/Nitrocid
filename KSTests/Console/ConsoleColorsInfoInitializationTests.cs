@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -29,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests initializing an instance of ConsoleColorsInfo from a bright color
-    /// </summary>
+        /// Tests initializing an instance of ConsoleColorsInfo from a bright color
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeConsoleColorsInfoInstanceBright()
@@ -48,8 +47,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing an instance of ConsoleColorsInfo from a dark color
-    /// </summary>
+        /// Tests initializing an instance of ConsoleColorsInfo from a dark color
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeConsoleColorsInfoInstanceDark()

@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -29,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests setting colors
-    /// </summary>
+        /// Tests setting colors
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetColors()

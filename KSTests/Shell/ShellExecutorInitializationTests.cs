@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -31,8 +31,8 @@ namespace KSTests
         private static ShellExecutor ShellInstance;
 
         /// <summary>
-    /// Tests initializing the shell instance from base
-    /// </summary>
+        /// Tests initializing the shell instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         [SetUp]
@@ -46,8 +46,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the shell instance from base
-    /// </summary>
+        /// Tests initializing the shell instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedShellExecution()
@@ -57,8 +57,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the shell instance from base
-    /// </summary>
+        /// Tests initializing the shell instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedShellExecutionWithArguments()

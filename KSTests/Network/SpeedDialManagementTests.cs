@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests adding FTP speed dial entry
-    /// </summary>
+        /// Tests adding FTP speed dial entry
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddEntryToFTPSpeedDial()
@@ -39,8 +39,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding SFTP speed dial entry
-    /// </summary>
+        /// Tests adding SFTP speed dial entry
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddEntryToSFTPSpeedDial()
@@ -49,8 +49,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests listing FTP speed dial entries
-    /// </summary>
+        /// Tests listing FTP speed dial entries
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestListFTPSpeedDialEntries()
@@ -60,8 +60,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests listing SFTP speed dial entries
-    /// </summary>
+        /// Tests listing SFTP speed dial entries
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestListSFTPSpeedDialEntries()

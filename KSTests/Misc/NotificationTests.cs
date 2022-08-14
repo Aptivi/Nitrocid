@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -21,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Notifications;
 using NUnit.Framework;
 using Shouldly;
+using System.Collections.Generic;
 
 namespace KSTests
 {
@@ -30,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests notification creation
-    /// </summary>
+        /// Tests notification creation
+        /// </summary>
         [Test]
         public void TestNotifyCreate()
         {
@@ -40,8 +40,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests custom notification creation
-    /// </summary>
+        /// Tests custom notification creation
+        /// </summary>
         [Test]
         public void TestNotifyCreateCustom()
         {
@@ -66,8 +66,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests notification sending
-    /// </summary>
+        /// Tests notification sending
+        /// </summary>
         [Test]
         public void TestNotifySend()
         {
@@ -77,8 +77,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests notifications sending
-    /// </summary>
+        /// Tests notifications sending
+        /// </summary>
         [Test]
         public void TestNotifySendRange()
         {
@@ -91,8 +91,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests notification dismiss
-    /// </summary>
+        /// Tests notification dismiss
+        /// </summary>
         [Test]
         public void TestNotifyDismiss()
         {

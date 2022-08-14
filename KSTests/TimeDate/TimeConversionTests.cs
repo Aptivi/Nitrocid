@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.TimeDate;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests converting the date to Unix time (seconds since 1970/1/1)
-    /// </summary>
+        /// Tests converting the date to Unix time (seconds since 1970/1/1)
+        /// </summary>
         [Test]
         [Description("Conversion")]
         public void TestDateToUnix()
@@ -43,8 +43,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests converting the Unix time (seconds since 1970/1/1) to date
-    /// </summary>
+        /// Tests converting the Unix time (seconds since 1970/1/1) to date
+        /// </summary>
         [Test]
         [Description("Conversion")]
         public void TestUnixToDate()

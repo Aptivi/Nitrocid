@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -30,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests raising an event and adding it to the fired events list
-    /// </summary>
+        /// Tests raising an event and adding it to the fired events list
+        /// </summary>
         [Test]
         [Description("Misc")]
         public void TestRaiseEvent()

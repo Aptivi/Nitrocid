@@ -32,8 +32,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests checking field
-    /// </summary>
+        /// Tests checking field
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestCheckProperty()
@@ -42,8 +42,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting value
-    /// </summary>
+        /// Tests getting value
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetPropertyValue()
@@ -53,8 +53,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests setting value
-    /// </summary>
+        /// Tests setting value
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestSetPropertyValue()
@@ -65,8 +65,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting variable
-    /// </summary>
+        /// Tests getting variable
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetConfigProperty()
@@ -76,8 +76,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting properties
-    /// </summary>
+        /// Tests getting properties
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetProperties()
@@ -88,8 +88,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting properties
-    /// </summary>
+        /// Tests getting properties
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetPropertiesNoEvaluation()
@@ -100,8 +100,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting property value from variable
-    /// </summary>
+        /// Tests getting property value from variable
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetPropertyValueInVariable()

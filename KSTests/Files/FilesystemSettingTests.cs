@@ -1,5 +1,4 @@
-﻿using KS.Files;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Files.Folders;
 using KS.Misc.Configuration;
 using NUnit.Framework;
@@ -30,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests current directory setting
-    /// </summary>
+        /// Tests current directory setting
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetCurrDir()
@@ -43,8 +43,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests current directory setting
-    /// </summary>
+        /// Tests current directory setting
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestTrySetCurrDir()
@@ -56,8 +56,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests saving the current directory value
-    /// </summary>
+        /// Tests saving the current directory value
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestSaveCurrDir()

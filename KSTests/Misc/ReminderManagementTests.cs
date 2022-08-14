@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.Misc.Calendar.Reminders;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests adding the reminder
-    /// </summary>
+        /// Tests adding the reminder
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddReminder()
@@ -44,8 +44,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding the reminder
-    /// </summary>
+        /// Tests adding the reminder
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestRemoveReminder()

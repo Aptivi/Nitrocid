@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -33,8 +32,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests beautifying the JSON text
-    /// </summary>
+        /// Tests beautifying the JSON text
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestBeautifyJsonText()
@@ -45,8 +44,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests beautifying the JSON text
-    /// </summary>
+        /// Tests beautifying the JSON text
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestBeautifyJsonFile()
@@ -58,8 +57,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests minifying the JSON text
-    /// </summary>
+        /// Tests minifying the JSON text
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestMinifyJsonText()
@@ -70,8 +69,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests minifying the JSON text
-    /// </summary>
+        /// Tests minifying the JSON text
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestMinifyJsonFile()

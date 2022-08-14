@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -21,6 +20,7 @@ using System.Globalization;
 using KS.TimeDate;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -30,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests rendering kernel date
-    /// </summary>
+        /// Tests rendering kernel date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDate()
@@ -41,8 +41,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specific format type
-    /// </summary>
+        /// Tests rendering kernel date with specific format type
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateType()
@@ -53,8 +53,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture
-    /// </summary>
+        /// Tests rendering kernel date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateCult()
@@ -65,8 +65,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture and format type
-    /// </summary>
+        /// Tests rendering kernel date with specified culture and format type
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateCultType()
@@ -78,8 +78,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date (UTC)
-    /// </summary>
+        /// Tests rendering kernel date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateUtc()
@@ -89,8 +89,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specific format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specific format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateUtcType()
@@ -101,8 +101,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateUtcCult()
@@ -113,8 +113,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture and format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specified culture and format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelDateUtcCultType()
@@ -126,8 +126,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date
-    /// </summary>
+        /// Tests rendering custom date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDate()
@@ -137,8 +137,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date
-    /// </summary>
+        /// Tests rendering custom date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateType()
@@ -149,8 +149,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture
-    /// </summary>
+        /// Tests rendering custom date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateCult()
@@ -161,8 +161,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture
-    /// </summary>
+        /// Tests rendering custom date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateCultType()
@@ -174,8 +174,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date (UTC)
-    /// </summary>
+        /// Tests rendering custom date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateUtc()
@@ -185,8 +185,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date (UTC)
-    /// </summary>
+        /// Tests rendering custom date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateUtcType()
@@ -197,8 +197,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateUtcCult()
@@ -209,8 +209,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomDateUtcCultType()
@@ -222,8 +222,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time
-    /// </summary>
+        /// Tests rendering kernel time
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTime()
@@ -233,8 +233,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time
-    /// </summary>
+        /// Tests rendering kernel time
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeType()
@@ -245,8 +245,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time with specified culture
-    /// </summary>
+        /// Tests rendering kernel time with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeCult()
@@ -257,8 +257,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time with specified culture
-    /// </summary>
+        /// Tests rendering kernel time with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeCultType()
@@ -270,8 +270,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time (UTC)
-    /// </summary>
+        /// Tests rendering kernel time (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeUtc()
@@ -281,8 +281,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time with specific format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel time with specific format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeUtcType()
@@ -293,8 +293,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering kernel time with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCult()
@@ -305,8 +305,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel time with specified culture and format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel time with specified culture and format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCultType()
@@ -318,8 +318,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time
-    /// </summary>
+        /// Tests rendering custom time
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTime()
@@ -329,8 +329,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time
-    /// </summary>
+        /// Tests rendering custom time
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeType()
@@ -341,8 +341,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time with specified culture
-    /// </summary>
+        /// Tests rendering custom time with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeCult()
@@ -353,8 +353,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time with specified culture
-    /// </summary>
+        /// Tests rendering custom time with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeCultType()
@@ -366,8 +366,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time (UTC)
-    /// </summary>
+        /// Tests rendering custom time (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeUtc()
@@ -377,8 +377,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time (UTC)
-    /// </summary>
+        /// Tests rendering custom time (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeUtcType()
@@ -389,8 +389,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom time with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCult()
@@ -401,8 +401,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom time with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom time with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCultType()
@@ -414,8 +414,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date
-    /// </summary>
+        /// Tests rendering kernel date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernel()
@@ -425,8 +425,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date
-    /// </summary>
+        /// Tests rendering kernel date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelType()
@@ -437,8 +437,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture
-    /// </summary>
+        /// Tests rendering kernel date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelCult()
@@ -449,8 +449,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture
-    /// </summary>
+        /// Tests rendering kernel date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelCultType()
@@ -462,8 +462,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date (UTC)
-    /// </summary>
+        /// Tests rendering kernel date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelUtc()
@@ -473,8 +473,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specific format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specific format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelUtcType()
@@ -485,8 +485,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelUtcCult()
@@ -497,8 +497,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering kernel date with specified culture and format type (UTC)
-    /// </summary>
+        /// Tests rendering kernel date with specified culture and format type (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderKernelUtcCultType()
@@ -510,8 +510,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date
-    /// </summary>
+        /// Tests rendering custom date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustom()
@@ -521,8 +521,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date
-    /// </summary>
+        /// Tests rendering custom date
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomType()
@@ -533,8 +533,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture
-    /// </summary>
+        /// Tests rendering custom date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomCult()
@@ -545,8 +545,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture
-    /// </summary>
+        /// Tests rendering custom date with specified culture
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomCultType()
@@ -558,8 +558,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date (UTC)
-    /// </summary>
+        /// Tests rendering custom date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomUtc()
@@ -569,8 +569,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date (UTC)
-    /// </summary>
+        /// Tests rendering custom date (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomUtcType()
@@ -581,8 +581,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomUtcCult()
@@ -593,8 +593,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests rendering custom date with specified culture (UTC)
-    /// </summary>
+        /// Tests rendering custom date with specified culture (UTC)
+        /// </summary>
         [Test]
         [Description("Action")]
         public void TestRenderCustomUtcCultType()

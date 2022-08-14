@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.Shell.ShellBase.Commands;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -31,8 +31,8 @@ namespace KSTests
         private static CommandExecutor CommandInstance;
 
         /// <summary>
-    /// Tests initializing the command instance from base
-    /// </summary>
+        /// Tests initializing the command instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeCommandExecutorFromBase()
@@ -45,8 +45,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the command instance from base
-    /// </summary>
+        /// Tests initializing the command instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedCommandExecution()
@@ -55,8 +55,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the command instance from base
-    /// </summary>
+        /// Tests initializing the command instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArguments()
@@ -65,8 +65,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the command instance from base
-    /// </summary>
+        /// Tests initializing the command instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithSwitches()
@@ -75,8 +75,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing the command instance from base
-    /// </summary>
+        /// Tests initializing the command instance from base
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()

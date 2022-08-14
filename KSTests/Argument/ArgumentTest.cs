@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,13 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
+using System.Diagnostics;
 
 namespace KSTests
 {
-
     class ArgumentTest : ArgumentExecutor, IArgument
     {
-
         public override void Execute(string StringArgs, string[] ListArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             Debug.WriteLine("We're on ArgumentTest with:");
@@ -32,6 +31,5 @@ namespace KSTests
             Debug.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
             Debug.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
         }
-
     }
 }

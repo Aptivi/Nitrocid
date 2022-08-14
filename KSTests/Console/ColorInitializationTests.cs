@@ -28,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests initializing color instance from 255 colors
-    /// </summary>
+        /// Tests initializing color instance from 255 colors
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255Colors()
@@ -57,8 +57,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing color instance from true color
-    /// </summary>
+        /// Tests initializing color instance from true color
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColor()
@@ -86,8 +86,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing color instance from true color
-    /// </summary>
+        /// Tests initializing color instance from true color
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromHex()

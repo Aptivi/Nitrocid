@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests checking field
-    /// </summary>
+        /// Tests checking field
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestCheckField()
@@ -39,8 +39,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting value
-    /// </summary>
+        /// Tests getting value
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetValue()
@@ -50,8 +50,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests setting value
-    /// </summary>
+        /// Tests setting value
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestSetValue()
@@ -62,8 +62,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting variable
-    /// </summary>
+        /// Tests getting variable
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestGetField()

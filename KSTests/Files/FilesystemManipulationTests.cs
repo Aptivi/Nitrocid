@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -38,8 +37,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests copying directory to directory
-    /// </summary>
+        /// Tests copying directory to directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestCopyDirectoryToDirectory()
@@ -52,8 +51,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests copying file to directory
-    /// </summary>
+        /// Tests copying file to directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestCopyFileToDirectory()
@@ -65,8 +64,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests copying file to file
-    /// </summary>
+        /// Tests copying file to file
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestCopyFileToFile()
@@ -78,8 +77,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests making directory
-    /// </summary>
+        /// Tests making directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMakeDirectory()
@@ -89,8 +88,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests making file
-    /// </summary>
+        /// Tests making file
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMakeFile()
@@ -100,8 +99,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests making file
-    /// </summary>
+        /// Tests making file
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMakeJsonFile()
@@ -111,8 +110,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests moving directory to directory
-    /// </summary>
+        /// Tests moving directory to directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMoveDirectoryToDirectory()
@@ -125,8 +124,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests moving file to directory
-    /// </summary>
+        /// Tests moving file to directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMoveFileToDirectory()
@@ -138,8 +137,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests moving file to file
-    /// </summary>
+        /// Tests moving file to file
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestMoveFileToFile()
@@ -151,8 +150,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests attribute removal implementation
-    /// </summary>
+        /// Tests attribute removal implementation
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveAttribute()
@@ -164,8 +163,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing directory
-    /// </summary>
+        /// Tests removing directory
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveDirectory()
@@ -176,8 +175,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing file
-    /// </summary>
+        /// Tests removing file
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveFile()
@@ -188,8 +187,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests searching file for string
-    /// </summary>
+        /// Tests searching file for string
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestSearchFileForString()
@@ -202,8 +201,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests searching file for string using regular expressions
-    /// </summary>
+        /// Tests searching file for string using regular expressions
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestSearchFileForStringRegexp()
@@ -216,8 +215,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding attribute
-    /// </summary>
+        /// Tests adding attribute
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestAddAttribute()
@@ -228,8 +227,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests deleting attribute
-    /// </summary>
+        /// Tests deleting attribute
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestDeleteAttribute()
@@ -240,8 +239,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests reading all lines without roadblocks
-    /// </summary>
+        /// Tests reading all lines without roadblocks
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestReadAllLinesNoBlock()
@@ -254,8 +253,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests reading all lines
-    /// </summary>
+        /// Tests reading all lines
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestReadContents()
@@ -268,8 +267,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting lookup path list
-    /// </summary>
+        /// Tests getting lookup path list
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestGetPathList()
@@ -279,8 +278,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding a neutralized path to lookup
-    /// </summary>
+        /// Tests adding a neutralized path to lookup
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestAddToPathLookupNeutralized()
@@ -292,8 +291,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding a non-neutralized path to lookup
-    /// </summary>
+        /// Tests adding a non-neutralized path to lookup
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestAddToPathLookupNonNeutralized()
@@ -305,8 +304,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding a neutralized path to lookup with the root path specified
-    /// </summary>
+        /// Tests adding a neutralized path to lookup with the root path specified
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestAddToPathLookupNeutralizedWithRootPath()
@@ -319,8 +318,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests adding a non-neutralized path to lookup with the root path specified
-    /// </summary>
+        /// Tests adding a non-neutralized path to lookup with the root path specified
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestAddToPathLookupNonNeutralizedWithRootPath()
@@ -333,8 +332,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing a neutralized path to lookup
-    /// </summary>
+        /// Tests removing a neutralized path to lookup
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNeutralized()
@@ -345,8 +344,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing a non-neutralized path to lookup
-    /// </summary>
+        /// Tests removing a non-neutralized path to lookup
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNonNeutralized()
@@ -357,8 +356,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing a neutralized path to lookup with the root path specified
-    /// </summary>
+        /// Tests removing a neutralized path to lookup with the root path specified
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNeutralizedWithRootPath()
@@ -370,8 +369,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing a non-neutralized path to lookup with the root path specified
-    /// </summary>
+        /// Tests removing a non-neutralized path to lookup with the root path specified
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNonNeutralizedWithRootPath()
@@ -384,8 +383,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests checking to see if the file exists in any of the lookup paths
-    /// </summary>
+        /// Tests checking to see if the file exists in any of the lookup paths
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestFileExistsInPath()
@@ -397,8 +396,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests creating filesystem entries list
-    /// </summary>
+        /// Tests creating filesystem entries list
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestCreateList()
@@ -408,8 +407,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests combining files
-    /// </summary>
+        /// Tests combining files
+        /// </summary>
         [Test]
         [Description("Manipulation")]
         public void TestCombineFiles()

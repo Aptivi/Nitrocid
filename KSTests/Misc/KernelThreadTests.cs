@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -32,8 +31,8 @@ namespace KSTests
         private static KernelThread TargetParameterizedThread;
 
         /// <summary>
-    /// Tests initializing kernel thread
-    /// </summary>
+        /// Tests initializing kernel thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeKernelThread()
@@ -42,8 +41,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests initializing kernel parameterized thread
-    /// </summary>
+        /// Tests initializing kernel parameterized thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestInitializeKernelParameterizedThread()
@@ -52,8 +51,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests starting kernel thread
-    /// </summary>
+        /// Tests starting kernel thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestStartKernelThread()
@@ -62,8 +61,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests starting kernel parameterized thread
-    /// </summary>
+        /// Tests starting kernel parameterized thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThread()
@@ -72,8 +71,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests stopping kernel thread
-    /// </summary>
+        /// Tests stopping kernel thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestStopKernelThread()
@@ -84,8 +83,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests stopping kernel parameterized thread
-    /// </summary>
+        /// Tests stopping kernel parameterized thread
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestStopKernelParameterizedThread()

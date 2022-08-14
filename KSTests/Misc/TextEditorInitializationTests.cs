@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -30,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests opening, saving, and closing text file
-    /// </summary>
+        /// Tests opening, saving, and closing text file
+        /// </summary>
         [Test]
         [Description("Initialization")]
         public void TestOpenSaveCloseTextFile()

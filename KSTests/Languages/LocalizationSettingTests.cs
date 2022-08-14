@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -29,8 +28,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests updating the culture
-    /// </summary>
+        /// Tests updating the culture
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestUpdateCulture()
@@ -42,8 +41,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests updating the culture using custom culture
-    /// </summary>
+        /// Tests updating the culture using custom culture
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestUpdateCultureCustom()
@@ -55,8 +54,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests language setting
-    /// </summary>
+        /// Tests language setting
+        /// </summary>
         [Test]
         [Description("Setting")]
         public void TestSetLang()
@@ -65,8 +64,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Restores the language
-    /// </summary>
+        /// Restores the language
+        /// </summary>
         [TearDown]
         public void RestoreLanguage()
         {

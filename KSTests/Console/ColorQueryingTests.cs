@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using NUnit.Framework;
 using Shouldly;
+using System.Diagnostics;
 
 namespace KSTests
 {
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests trying to parse the color from hex
-    /// </summary>
+        /// Tests trying to parse the color from hex
+        /// </summary>
         [TestCase("#0F0F0F", ExpectedResult = true)]
         [TestCase("#0G0G0G", ExpectedResult = false)]
         [Description("Querying")]
@@ -41,8 +41,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to parse the color from color numbers
-    /// </summary>
+        /// Tests trying to parse the color from color numbers
+        /// </summary>
         [TestCase(26, ExpectedResult = true)]
         [TestCase(260, ExpectedResult = false)]
         [TestCase(-26, ExpectedResult = false)]
@@ -54,8 +54,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to parse the color from RGB
-    /// </summary>
+        /// Tests trying to parse the color from RGB
+        /// </summary>
         [TestCase(4, 4, 4, ExpectedResult = true)]
         [TestCase(400, 4, 4, ExpectedResult = false)]
         [TestCase(4, 400, 4, ExpectedResult = false)]
@@ -79,8 +79,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to convert from hex to RGB
-    /// </summary>
+        /// Tests trying to convert from hex to RGB
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestConvertFromHexToRGB()
@@ -90,8 +90,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to convert from RGB sequence to hex
-    /// </summary>
+        /// Tests trying to convert from RGB sequence to hex
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestConvertFromRGBSequenceToHex()
@@ -101,8 +101,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests trying to convert from RGB numbers to hex
-    /// </summary>
+        /// Tests trying to convert from RGB numbers to hex
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestConvertFromRGBNumbersToHex()

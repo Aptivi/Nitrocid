@@ -1,5 +1,4 @@
-﻿using KS.Files;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +19,7 @@
 using KS.Modifications;
 using NUnit.Framework;
 using Shouldly;
+using KS.Files;
 
 namespace KSTests
 {
@@ -29,8 +29,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests adding a mod to the blacklist
-    /// </summary>
+        /// Tests adding a mod to the blacklist
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestAddModToBlacklist()
@@ -40,8 +40,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests removing a mod from the blacklist
-    /// </summary>
+        /// Tests removing a mod from the blacklist
+        /// </summary>
         [Test]
         [Description("Management")]
         public void TestRemoveModFromBlacklist()

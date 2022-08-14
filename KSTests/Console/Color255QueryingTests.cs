@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -30,8 +30,8 @@ namespace KSTests
     {
 
         /// <summary>
-    /// Tests querying 255-color data from JSON (parses only needed data by KS)
-    /// </summary>
+        /// Tests querying 255-color data from JSON (parses only needed data by KS)
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestQueryColorDataFromJson()
@@ -50,8 +50,8 @@ namespace KSTests
         }
 
         /// <summary>
-    /// Tests getting an escape character
-    /// </summary>
+        /// Tests getting an escape character
+        /// </summary>
         [Test]
         [Description("Querying")]
         public void TestGetEsc()
