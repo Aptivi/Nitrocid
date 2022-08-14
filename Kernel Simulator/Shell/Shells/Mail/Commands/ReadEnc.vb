@@ -16,15 +16,21 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Network.Mail.Directory
+Imports KS.Network.Mail.Transfer
+Imports KS.Misc.Reflection
 
-Namespace Network.Mail.Commands
-    Class Mail_CdCommand
+Namespace Shell.Shells.Mail.Commands
+    Class Mail_ReadEncCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            MailChangeDirectory(ListArgs(0))
+            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
+            If IsStringNumeric(ListArgs(0)) Then
+                MailPrintMessage(ListArgs(0), True)
+            Else
+                Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+            End If
         End Sub
 
     End Class

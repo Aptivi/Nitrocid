@@ -21,7 +21,7 @@ Imports KS.Misc.Editors.TextEdit
 Imports KS.Misc.Editors.HexEdit
 Imports KS.Misc.RarFile
 Imports KS.Misc.ZipFile
-Imports KS.Network.Mail
+Imports KS.Shell.Shells.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Shell.Shells.RSS
 Imports KS.Shell.Shells.FTP

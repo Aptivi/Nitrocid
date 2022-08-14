@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.Mail
+Imports KS.Shell.Shells.Mail
 
 Namespace Shell.Commands
     Class MailCommand

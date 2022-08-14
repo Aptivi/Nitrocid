@@ -38,6 +38,7 @@ Imports KS.Misc.Writers.MiscWriters
 Imports KS.Modifications
 Imports KS.Network
 Imports KS.Shell.Shells.FTP
+Imports KS.Shell.Shells.Mail
 Imports KS.Network.Mail
 Imports KS.Network.Mail.Directory
 Imports KS.Network.RemoteDebug

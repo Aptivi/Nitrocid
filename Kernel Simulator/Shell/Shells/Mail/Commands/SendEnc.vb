@@ -20,7 +20,7 @@ Imports MimeKit
 Imports KS.Files.Querying
 Imports KS.Network.Mail.Transfer
 
-Namespace Network.Mail.Commands
+Namespace Shell.Shells.Mail.Commands
     Class Mail_SendEncCommand
         Inherits CommandExecutor
         Implements ICommand

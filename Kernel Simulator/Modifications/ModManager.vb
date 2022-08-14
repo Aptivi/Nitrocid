@@ -33,6 +33,7 @@ Imports KS.Misc.ZipFile
 Imports KS.Shell.Shells.FTP
 Imports KS.Shell.Shells.HTTP
 Imports KS.Network.Mail
+Imports KS.Shell.Shells.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Shell.Shells.RSS
 Imports KS.Shell.Shells.SFTP

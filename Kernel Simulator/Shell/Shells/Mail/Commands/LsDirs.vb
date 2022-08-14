@@ -18,13 +18,13 @@
 
 Imports KS.Network.Mail.Directory
 
-Namespace Network.Mail.Commands
-    Class Mail_MkdirCommand
+Namespace Shell.Shells.Mail.Commands
+    Class Mail_LsDirsCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            CreateMailDirectory(ListArgs(0))
+            Write(MailListDirectories, False, ColTypes.Neutral)
         End Sub
 
     End Class

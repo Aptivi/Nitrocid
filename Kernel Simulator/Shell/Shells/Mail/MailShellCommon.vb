@@ -18,10 +18,10 @@
 
 Imports MailKit
 Imports MimeKit.Text
-Imports KS.Network.Mail.Commands
+Imports KS.Shell.Shells.Mail.Commands
 Imports KS.Network.Mail.Transfer
 
-Namespace Network.Mail
+Namespace Shell.Shells.Mail
     Public Module MailShellCommon
 
         'Variables

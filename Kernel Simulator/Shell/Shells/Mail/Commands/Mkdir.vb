@@ -17,20 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.Mail.Directory
-Imports KS.Misc.Reflection
 
-Namespace Network.Mail.Commands
-    Class Mail_RmCommand
+Namespace Shell.Shells.Mail.Commands
+    Class Mail_MkdirCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
-            If IsStringNumeric(ListArgs(0)) Then
-                MailRemoveMessage(ListArgs(0))
-            Else
-                Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
-            End If
+            CreateMailDirectory(ListArgs(0))
         End Sub
 
     End Class

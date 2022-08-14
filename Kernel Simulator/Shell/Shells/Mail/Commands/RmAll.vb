@@ -17,19 +17,17 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Network.Mail.Directory
-Imports KS.Misc.Reflection
 
-Namespace Network.Mail.Commands
-    Class Mail_MvCommand
+Namespace Shell.Shells.Mail.Commands
+    Class Mail_RmAllCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
-            If IsStringNumeric(ListArgs(0)) Then
-                MailMoveMessage(ListArgs(0), ListArgs(1))
+            If MailRemoveAllBySender(ListArgs(0)) Then
+                Write(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Success, ListArgs(0))
             Else
-                Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+                Write(DoTranslation("Failed to remove all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
             End If
         End Sub
 

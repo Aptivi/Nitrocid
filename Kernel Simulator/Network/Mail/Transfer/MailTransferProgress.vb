@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports MailKit
+Imports KS.Shell.Shells.Mail
 
 Namespace Network.Mail.Transfer
     Public Class MailTransferProgress

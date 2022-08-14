@@ -23,6 +23,7 @@ Imports MailKit.Search
 Imports MimeKit
 Imports MimeKit.Cryptography
 Imports MimeKit.Text
+Imports KS.Shell.Shells.Mail
 Imports KS.Network.Mail.Directory
 Imports KS.Network.Mail.PGP
 Imports KS.TimeDate

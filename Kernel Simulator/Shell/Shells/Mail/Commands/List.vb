@@ -19,7 +19,7 @@
 Imports KS.Network.Mail.Directory
 Imports KS.Misc.Reflection
 
-Namespace Network.Mail.Commands
+Namespace Shell.Shells.Mail.Commands
     Class Mail_ListCommand
         Inherits CommandExecutor
         Implements ICommand

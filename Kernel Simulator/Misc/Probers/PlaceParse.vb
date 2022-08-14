@@ -19,6 +19,7 @@
 Imports System.IO
 Imports KS.Files.Folders
 Imports KS.Shell.Shells.FTP
+Imports KS.Shell.Shells.Mail
 Imports KS.Network.Mail
 Imports KS.Shell.Shells.SFTP
 Imports KS.Scripting

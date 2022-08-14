@@ -18,13 +18,13 @@
 
 Imports KS.Network.Mail.Directory
 
-Namespace Network.Mail.Commands
-    Class Mail_RmdirCommand
+Namespace Shell.Shells.Mail.Commands
+    Class Mail_RenCommand
         Inherits CommandExecutor
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            DeleteMailDirectory(ListArgs(0))
+            RenameMailDirectory(ListArgs(0), ListArgs(1))
         End Sub
 
     End Class

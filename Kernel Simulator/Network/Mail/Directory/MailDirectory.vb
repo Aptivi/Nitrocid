@@ -18,6 +18,7 @@
 
 Imports System.Text
 Imports MailKit
+Imports KS.Shell.Shells.Mail
 
 Namespace Network.Mail.Directory
     Public Module MailDirectory

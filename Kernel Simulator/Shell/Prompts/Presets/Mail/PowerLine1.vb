@@ -18,6 +18,7 @@
 
 Imports System.Text
 Imports KS.Network.Mail
+Imports KS.Shell.Shells.Mail
 
 Namespace Shell.Prompts.Presets.Mail
     Public Class MailPowerLine1Preset
