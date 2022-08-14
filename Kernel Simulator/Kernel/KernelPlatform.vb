@@ -57,6 +57,20 @@ Namespace Misc.Platform
         End Function
 
         ''' <summary>
+        ''' Polls $TERM_PROGRAM to get terminal emulator
+        ''' </summary>
+        Public Function GetTerminalEmulator() As String
+            Return If(Environment.GetEnvironmentVariable("TERM_PROGRAM"), "")
+        End Function
+
+        ''' <summary>
+        ''' Polls $TERM to get terminal type (vt100, dumb, ...)
+        ''' </summary>
+        Public Function GetTerminalType() As String
+            Return If(Environment.GetEnvironmentVariable("TERM"), "")
+        End Function
+
+        ''' <summary>
         ''' Is Kernel Simulator running from GRILO?
         ''' </summary>
         Public Function IsRunningFromGrilo() As Boolean

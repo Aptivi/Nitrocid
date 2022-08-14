@@ -719,3 +719,9 @@ It has come to the conclusion that `PlatformDetector` is now promoted to the Ker
 ##### Separated the MOTD and MAL parsers
 
 MOTD and MAL parsers were unified since early versions of Kernel Simulator. However, it didn't occur to us that we need to separate them for a very long time. Now is the time to separate them, effectively removing `MessageType` enumeration.
+
+##### Moved GetTerminal* to KernelPlatform
+
+These two functions are actually part of the terminal, and they make use of the $TERM_PROGRAM and $TERM environment variables, which are dependent on the terminal.
+
+Since these usually are undefined in Windows, we put these functions to KernelPlatform to accomodate the change as platform-dependent, but we don't actually check for Linux to execute these functions, because some terminal emulators in Windows actually define these variables.
