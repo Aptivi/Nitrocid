@@ -71,7 +71,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Import Include="KS.Files" />
     <Import Include="KS.Login" />
     <Import Include="NUnit.Framework" />

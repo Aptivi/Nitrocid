@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Diagnostics;
 using KS.Network;
-using Microsoft.VisualBasic.CompilerServices;
 using NUnit.Framework;
 using Shouldly;
 
@@ -36,7 +35,7 @@ namespace KSTests
         [Description("Management")]
         public void TestAddEntryToFTPSpeedDial()
         {
-            NetworkTools.TryAddEntryToSpeedDial("ftp.riken.jp", Conversions.ToInteger("21"), "anonymous", NetworkTools.SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
+            NetworkTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, "anonymous", NetworkTools.SpeedDialType.FTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
         }
 
         /// <summary>
@@ -46,7 +45,7 @@ namespace KSTests
         [Description("Management")]
         public void TestAddEntryToSFTPSpeedDial()
         {
-            NetworkTools.TryAddEntryToSpeedDial("test.rebex.net", Conversions.ToInteger("22"), "demo", NetworkTools.SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
+            NetworkTools.TryAddEntryToSpeedDial("test.rebex.net", 22, "demo", NetworkTools.SpeedDialType.SFTP, FluentFTP.FtpEncryptionMode.None, false).ShouldBeTrue();
         }
 
         /// <summary>

@@ -74,7 +74,7 @@ Namespace Misc.Platform
         ''' Is Kernel Simulator running from GRILO?
         ''' </summary>
         Public Function IsRunningFromGrilo() As Boolean
-            Return System.Reflection.Assembly.GetEntryAssembly().GetName().Name.StartsWith("GRILO")
+            Return If(System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO"), False)
         End Function
 
     End Module

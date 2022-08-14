@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -18,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Network.RemoteDebug;
-using Microsoft.VisualBasic.CompilerServices;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace KSTests
 {
@@ -56,7 +55,7 @@ namespace KSTests
         [Description("Management")]
         public void TestGetDeviceProperty()
         {
-            Conversions.ToString(RemoteDebugTools.GetDeviceProperty("123.123.123.123", RemoteDebugTools.DeviceProperty.Name)).ShouldBe("TestUser");
+            Convert.ToString(RemoteDebugTools.GetDeviceProperty("123.123.123.123", RemoteDebugTools.DeviceProperty.Name)).ShouldBe("TestUser");
         }
 
         /// <summary>
