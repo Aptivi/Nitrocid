@@ -54,19 +54,27 @@ Namespace Kernel
         Friend StageTimer As New Stopwatch
         Friend DefConsoleOut As TextWriter
 
-        '#ifdef'd variables
+        '#ifdef'd variables ... Framework monikers
 #If NETCOREAPP Then
         Public Const KernelSimulatorMoniker As String = ".NET CoreCLR"
 #Else
         Public Const KernelSimulatorMoniker As String = ".NET Framework"
 #End If
+
+        'Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, DELTA, GAMMA, NONE | None satisfied: Unsupported Release)
 #If SPECIFIER = "REL" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}"
 #ElseIf SPECIFIER = "RC" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate"
 #ElseIf SPECIFIER = "DEV" Then
-#If MILESTONE Then
+#If MILESTONESPECIFIER = "ALPHA" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 1"
+#ElseIf MILESTONESPECIFIER = "BETA" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1"
+#ElseIf MILESTONESPECIFIER = "DELTA" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Delta 1"
+#ElseIf MILESTONESPECIFIER = "GAMMA" Then
+        Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Gamma 1"
 #Else
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview"
 #End If
