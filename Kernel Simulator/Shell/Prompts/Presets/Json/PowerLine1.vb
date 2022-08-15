@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Misc.Editors.JsonShell
+Imports KS.Shell.Shells.Json
 
 Namespace Shell.Prompts.Presets.Json
     Public Class JsonPowerLine1Preset

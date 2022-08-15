@@ -18,6 +18,7 @@
 
 using System.IO;
 using KS.Misc.Editors.TextEdit;
+using KS.Shell.Shells.Text;
 using NUnit.Framework;
 using Shouldly;
 

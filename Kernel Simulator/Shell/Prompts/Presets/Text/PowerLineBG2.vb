@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Misc.Editors.TextEdit
+Imports KS.Shell.Shells.Text
 
 Namespace Shell.Prompts.Presets.Text
     Public Class TextPowerLineBG2Preset

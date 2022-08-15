@@ -23,13 +23,13 @@ Imports KS.Files.Operations
 Imports KS.Files.Querying
 Imports KS.ManPages
 Imports KS.Misc.Configuration
-Imports KS.Misc.Editors.JsonShell
+Imports KS.Shell.Shells.Json
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash
-Imports KS.Misc.Editors.TextEdit
-Imports KS.Misc.Editors.HexEdit
-Imports KS.Misc.RarFile
-Imports KS.Misc.ZipFile
+Imports KS.Shell.Shells.Text
+Imports KS.Shell.Shells.Hex
+Imports KS.Shell.Shells.Rar
+Imports KS.Shell.Shells.Zip
 Imports KS.Shell.Shells.FTP
 Imports KS.Shell.Shells.HTTP
 Imports KS.Network.Mail
@@ -38,6 +38,7 @@ Imports KS.Network.RemoteDebug
 Imports KS.Shell.Shells.RSS
 Imports KS.Shell.Shells.SFTP
 Imports KS.Shell.Shells.Test
+Imports KS.Shell.Shells.UESH
 
 Namespace Modifications
     Public Module ModManager

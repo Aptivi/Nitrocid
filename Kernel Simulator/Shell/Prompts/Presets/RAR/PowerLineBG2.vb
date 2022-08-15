@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Misc.RarFile
+Imports KS.Shell.Shells.Rar
 
 Namespace Shell.Prompts.Presets.RAR
     Public Class RarPowerLineBG2Preset

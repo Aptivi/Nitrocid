@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Misc.Editors.HexEdit
+Imports KS.Shell.Shells.Hex
 
 Namespace Shell.Prompts.Presets.Hex
     Public Class HexPowerLine3Preset

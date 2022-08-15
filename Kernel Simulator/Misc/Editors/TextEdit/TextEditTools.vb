@@ -20,6 +20,7 @@ Imports System.IO
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports System.Threading
+Imports KS.Shell.Shells.Text
 
 Namespace Misc.Editors.TextEdit
     Public Module TextEditTools

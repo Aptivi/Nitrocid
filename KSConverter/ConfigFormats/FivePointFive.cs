@@ -25,7 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Editors.TextEdit;
+using KS.Shell.Shells.Text;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Writers.ConsoleWriters;

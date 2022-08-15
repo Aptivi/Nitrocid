@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Shell.Shells.UESH
+
 Namespace Scripting
     Public Module UESHVariables
 
@@ -58,7 +60,7 @@ Namespace Scripting
         Function GetVariableCommand(var As String, cmd As String) As String
             Dim CommandArgumentsInfo As New ProvidedCommandArgumentsInfo(cmd, ShellType.Shell)
             Dim NewCommand As String = $"{CommandArgumentsInfo.Command} "
-            If Not Shell.Shell.Commands(CommandArgumentsInfo.Command).Flags.HasFlag(CommandFlags.SettingVariable) Then
+            If Not UESHShellCommon.Commands(CommandArgumentsInfo.Command).Flags.HasFlag(CommandFlags.SettingVariable) Then
                 For Each Word As String In CommandArgumentsInfo.ArgumentsList
                     If Word.Contains(var) And Word.StartsWith("$") Then
                         Word = ShellVariables(var)

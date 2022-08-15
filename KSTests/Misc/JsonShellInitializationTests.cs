@@ -18,6 +18,7 @@
 
 using System.IO;
 using KS.Misc.Editors.JsonShell;
+using KS.Shell.Shells.Json;
 using NUnit.Framework;
 using Shouldly;
 

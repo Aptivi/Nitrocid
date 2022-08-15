@@ -18,6 +18,7 @@
 
 Imports KS.Files.Querying
 Imports KS.Files.Operations
+Imports KS.Shell.Shells.Rar
 Imports SharpCompress.Archives.Rar
 Imports System.IO
 Imports SharpCompress.Readers

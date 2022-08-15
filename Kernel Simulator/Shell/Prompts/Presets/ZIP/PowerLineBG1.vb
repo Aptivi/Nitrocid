@@ -18,7 +18,7 @@
 
 Imports System.IO
 Imports System.Text
-Imports KS.Misc.ZipFile
+Imports KS.Shell.Shells.Zip
 
 Namespace Shell.Prompts.Presets.ZIP
     Public Class ZipPowerLineBG1Preset

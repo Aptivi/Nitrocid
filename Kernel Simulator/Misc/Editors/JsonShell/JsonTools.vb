@@ -21,6 +21,7 @@ Imports System.Text
 Imports Newtonsoft.Json.Linq
 Imports Extensification.StreamReaderExts
 Imports System.Threading
+Imports KS.Shell.Shells.Json
 
 Namespace Misc.Editors.JsonShell
     Public Module JsonTools

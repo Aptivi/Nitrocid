@@ -25,12 +25,12 @@ Imports KS.Files.Querying
 Imports KS.ManPages
 Imports KS.Misc.Forecast
 Imports KS.Misc.Games
-Imports KS.Misc.Editors.JsonShell
+Imports KS.Shell.Shells.Json
 Imports KS.Misc.Notifications
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Splash
-Imports KS.Misc.Editors.TextEdit
+Imports KS.Shell.Shells.Text
 Imports KS.Misc.Probers.Motd
 Imports KS.Misc.Timers
 Imports KS.Misc.Writers.FancyWriters.Tools

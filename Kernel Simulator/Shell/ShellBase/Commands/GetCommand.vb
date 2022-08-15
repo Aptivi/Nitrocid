@@ -18,12 +18,12 @@
 
 Imports System.IO
 Imports System.Threading
-Imports KS.Misc.Editors.JsonShell
-Imports KS.Misc.Editors.TextEdit
-Imports KS.Misc.Editors.HexEdit
+Imports KS.Shell.Shells.Json
+Imports KS.Shell.Shells.Text
+Imports KS.Shell.Shells.Hex
 Imports KS.Misc.Writers.MiscWriters
-Imports KS.Misc.RarFile
-Imports KS.Misc.ZipFile
+Imports KS.Shell.Shells.Rar
+Imports KS.Shell.Shells.Zip
 Imports KS.Shell.Shells.FTP
 Imports KS.Shell.Shells.HTTP
 Imports KS.Shell.Shells.Mail
@@ -31,6 +31,7 @@ Imports KS.Network.RemoteDebug
 Imports KS.Shell.Shells.RSS
 Imports KS.Shell.Shells.SFTP
 Imports KS.Shell.Shells.Test
+Imports KS.Shell.Shells.UESH
 
 Namespace Shell.ShellBase.Commands
     Public Module GetCommand
@@ -76,7 +77,7 @@ Namespace Shell.ShellBase.Commands
                 Dim Switches() As String = ArgumentInfo.SwitchesList
                 Dim StrArgs As String = ArgumentInfo.ArgumentsText
                 Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
-                Dim TargetCommands As Dictionary(Of String, CommandInfo) = Shell.Commands
+                Dim TargetCommands As Dictionary(Of String, CommandInfo) = UESHShellCommon.Commands
 
                 'Set TargetCommands according to the shell type
                 TargetCommands = GetCommands(ShellType)
@@ -145,7 +146,7 @@ Namespace Shell.ShellBase.Commands
                 Case ShellType.RARShell
                     FinalCommands = New Dictionary(Of String, CommandInfo)(RarShell_Commands)
                 Case Else
-                    FinalCommands = New Dictionary(Of String, CommandInfo)(Shell.Commands)
+                    FinalCommands = New Dictionary(Of String, CommandInfo)(UESHShellCommon.Commands)
             End Select
 
             'Unified commands

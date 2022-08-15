@@ -16,11 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc.Editors.JsonShell
-Imports KS.Misc.Editors.TextEdit
-Imports KS.Misc.Editors.HexEdit
-Imports KS.Misc.RarFile
-Imports KS.Misc.ZipFile
+Imports KS.Shell.Shells.Json
+Imports KS.Shell.Shells.Text
+Imports KS.Shell.Shells.Hex
+Imports KS.Shell.Shells.Rar
+Imports KS.Shell.Shells.Zip
 Imports KS.Shell.Shells.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Shell.Shells.RSS
@@ -28,6 +28,7 @@ Imports KS.Shell.Shells.FTP
 Imports KS.Shell.Shells.SFTP
 Imports KS.Shell.Shells.Test
 Imports KS.Shell.Shells.HTTP
+Imports KS.Shell.Shells.UESH
 
 Namespace Shell.ShellBase.Commands
     Public Module CommandManager
@@ -55,7 +56,7 @@ Namespace Shell.ShellBase.Commands
                 Case ShellType.SFTPShell
                     Return SFTPCommands.ContainsKey(Command)
                 Case ShellType.Shell
-                    Return Shell.Commands.ContainsKey(Command)
+                    Return UESHShellCommon.Commands.ContainsKey(Command)
                 Case ShellType.TestShell
                     Return Test_Commands.ContainsKey(Command)
                 Case ShellType.TextShell
@@ -87,7 +88,7 @@ Namespace Shell.ShellBase.Commands
                    DebugCommands.ContainsKey(Command) Or
                    RSSCommands.ContainsKey(Command) Or
                    SFTPCommands.ContainsKey(Command) Or
-                   Shell.Commands.ContainsKey(Command) Or
+                   UESHShellCommon.Commands.ContainsKey(Command) Or
                    Test_Commands.ContainsKey(Command) Or
                    TextEdit_Commands.ContainsKey(Command) Or
                    ZipShell_Commands.ContainsKey(Command) Or
