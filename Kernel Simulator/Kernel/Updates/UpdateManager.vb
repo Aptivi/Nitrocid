@@ -53,6 +53,13 @@ Namespace Kernel.Updates
         ''' Prompt for checking for kernel updates
         ''' </summary>
         Sub CheckKernelUpdates()
+            'Check to see if we're running from Ubuntu PPA
+            If ExecPath.StartsWith("/usr/lib/ks") Then
+                ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error)
+                Exit Sub
+            End If
+
+            'Check for updates now
             ReportProgress(DoTranslation("Checking for system updates..."), 10, ColTypes.Neutral)
             Dim AvailableUpdate As KernelUpdate = FetchKernelUpdates()
             If AvailableUpdate IsNot Nothing Then
