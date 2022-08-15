@@ -131,7 +131,6 @@ For more information about every command, click the command.
 | [stopwatch](uesh/KS-Command-stopwatch.md)                   | A simple stopwatch
 | [sumfile](uesh/KS-Command-sumfile.md)                       | Calculates the MD5, SHA1, SHA256, or SHA512 sum of a specific file.
 | [sumfiles](uesh/KS-Command-sumfiles.md)                     | Calculates the MD5, SHA1, SHA256, or SHA512 sums of the files in the specified directory.
-| [sysinfo](uesh/KS-Command-sysinfo.md)                       | You can show your system information, as well as the kernel settings.
 | [timer](uesh/KS-Command-timer.md)                           | A simple timer
 | [unitconv](uesh/KS-Command-unitconv.md)                     | Unit conversion
 | [unzip](uesh/KS-Command-unzip.md)                           | Extracts a zip file
