@@ -18,6 +18,7 @@
 
 Imports KS.Files.Querying
 Imports KS.Files.Operations
+Imports KS.Kernel.Updates
 Imports KS.Network.Transfer
 Imports Newtonsoft.Json.Linq
 Imports SharpCompress.Archives

@@ -18,7 +18,7 @@
 
 Imports Newtonsoft.Json.Linq
 
-Namespace Kernel
+Namespace Kernel.Updates
     Public Class KernelUpdate
 
         ''' <summary>

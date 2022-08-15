@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports System.Threading
-Imports Newtonsoft.Json.Linq
 Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
 Imports KS.Files.Querying
@@ -36,7 +35,6 @@ Imports KS.Modifications
 Imports KS.Network.Mail
 Imports KS.Network.RemoteDebug
 Imports KS.Network.RPC
-Imports KS.Network.Transfer
 Imports KS.Shell.ShellBase.Aliases
 Imports KS.Scripting
 Imports KS.TimeDate
@@ -410,55 +408,6 @@ Namespace Kernel
                 KernelError(KernelErrorLevel.F, False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), Nothing)
             End If
             InstanceChecked = True
-        End Sub
-
-        ''' <summary>
-        ''' Fetches the GitHub repo to see if there are any updates
-        ''' </summary>
-        ''' <returns>A kernel update instance</returns>
-        Public Function FetchKernelUpdates() As KernelUpdate
-            Try
-                'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
-                WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi")
-
-                'Populate the following variables with information
-                Dim UpdateStr As String = DownloadString("https://api.github.com/repos/Aptivi/Kernel-Simulator/releases")
-                Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
-                Dim UpdateInstance As New KernelUpdate(UpdateToken)
-
-                'Return the update instance
-                WClient.DefaultRequestHeaders.Remove("User-Agent")
-                Return UpdateInstance
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to check for updates: {0}", ex.Message)
-                WStkTrc(ex)
-            End Try
-            Return Nothing
-        End Function
-
-        ''' <summary>
-        ''' Prompt for checking for kernel updates
-        ''' </summary>
-        Sub CheckKernelUpdates()
-            ReportProgress(DoTranslation("Checking for system updates..."), 10, ColTypes.Neutral)
-            Dim AvailableUpdate As KernelUpdate = FetchKernelUpdates()
-            If AvailableUpdate IsNot Nothing Then
-                If Not AvailableUpdate.Updated Then
-                    ReportProgress(DoTranslation("Found new version: "), 10, ColTypes.ListEntry)
-                    ReportProgress(AvailableUpdate.UpdateVersion.ToString, 10, ColTypes.ListValue)
-                    If AutoDownloadUpdate Then
-                        DownloadFile(AvailableUpdate.UpdateURL.ToString, Path.Combine(Environment.CurrentDirectory, "update.rar"))
-                        ReportProgress(DoTranslation("Downloaded the update successfully!"), 10, ColTypes.Success)
-                    Else
-                        ReportProgress(DoTranslation("You can download it at: "), 10, ColTypes.ListEntry)
-                        ReportProgress(AvailableUpdate.UpdateURL.ToString, 10, ColTypes.ListValue)
-                    End If
-                Else
-                    ReportProgress(DoTranslation("You're up to date!"), 10, ColTypes.Neutral)
-                End If
-            ElseIf AvailableUpdate Is Nothing Then
-                ReportProgress(DoTranslation("Failed to check for updates."), 10, ColTypes.Error)
-            End If
         End Sub
 
         ''' <summary>
