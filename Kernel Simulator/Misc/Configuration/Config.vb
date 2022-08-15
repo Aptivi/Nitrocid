@@ -1107,6 +1107,8 @@ Namespace Misc.Configuration
         ''' </summary>
         ''' <exception cref="Exceptions.ConfigException"></exception>
         Sub CreateConfig(ConfigPath As String)
+            If SafeMode Then Return
+
             ThrowOnInvalidPath(ConfigPath)
             Dim ConfigurationObject As JObject = GetNewConfigObject()
 
@@ -1150,6 +1152,14 @@ Namespace Misc.Configuration
         End Function
 
         ''' <summary>
+        ''' Configures the kernel according to the kernel failsafe configuration
+        ''' </summary>
+        ''' <exception cref="Exceptions.ConfigException"></exception>
+        Sub ReadFailsafeConfig()
+            ReadConfig(PristineConfigToken, True)
+        End Sub
+
+        ''' <summary>
         ''' Configures the kernel according to the kernel configuration file
         ''' </summary>
         ''' <exception cref="Exceptions.ConfigException"></exception>
@@ -1169,7 +1179,9 @@ Namespace Misc.Configuration
         ''' Configures the kernel according to the custom kernel configuration file
         ''' </summary>
         ''' <exception cref="Exceptions.ConfigException"></exception>
-        Sub ReadConfig(ConfigToken As JToken)
+        Sub ReadConfig(ConfigToken As JToken, Optional Force As Boolean = False)
+            If SafeMode And Not Force Then Return
+
             'Parse configuration.
             'NOTE: Question marks between parentheses are for nullable types.
             Config.ConfigToken = ConfigToken

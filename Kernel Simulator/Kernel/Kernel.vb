@@ -20,6 +20,7 @@ Imports KS.Arguments.ArgumentBase
 Imports KS.Files.Querying
 Imports KS.Hardware
 Imports KS.Kernel.Exceptions
+Imports KS.Misc.Configuration
 Imports KS.Misc.Reflection
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
@@ -96,6 +97,7 @@ Namespace Kernel
 
                     'Initialize crucial things
                     InitPaths()
+                    If SafeMode Then ReadFailsafeConfig()
                     If Not IsOnUnix() Then Initialize255()
                     AddHandler AppDomain.CurrentDomain.AssemblyResolve, AddressOf LoadFromAssemblySearchPaths
 
