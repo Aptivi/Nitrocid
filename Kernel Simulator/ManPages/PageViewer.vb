@@ -17,6 +17,8 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
+Imports System.Text.RegularExpressions
+Imports VT.NET
 
 Namespace ManPages
     Public Module PageViewer
@@ -68,6 +70,7 @@ Namespace ManPages
                 Dim CharactersParsed As Integer
                 Dim EscapeCharacters As Integer
                 Dim EscapeCharactersCountInside As Integer
+                Dim EscapeIndex As Integer
                 Dim InEsc As Boolean
                 For Each line As String In Pages(ManualTitle).Body.ToString.SplitNewLines
                     CharactersParsed = 0
@@ -80,12 +83,18 @@ Namespace ManPages
                         Continue For
                     End If
 
+                    'Get all escapes
+                    Dim Escapes As MatchCollection = Matches.MatchVTSequences(line)
+
                     'Now, enumerate through each character in the string
                     For Each LineChar As Char In line
-                        'If the character is Escape, run through the color change sequence until we reach "m"
+                        'Get escape from escape index
+                        Dim Escape As Match = If(Escapes.Count > 0, Escapes(EscapeIndex), Nothing)
+
+                        'If the character is Escape, run through the escape sequence until the end
                         If LineChar = GetEsc() Then InEsc = True
                         If InEsc Then EscapeCharactersCountInside += 1
-                        If InEsc And (EscapeCharactersCountInside > 19 Or LineChar = "m") Then
+                        If InEsc AndAlso EscapeCharactersCountInside = Escape.Length Then
                             EscapeCharacters += 1
                             EscapeCharactersCountInside = 0
                             InEsc = False
