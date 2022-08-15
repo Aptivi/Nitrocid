@@ -71,13 +71,7 @@ namespace KSConverter
         /// <summary>
         /// Gets home directory depending on platform
         /// </summary>
-        public static string GetHomeDirectory()
-        {
-            if (KernelPlatform.IsOnUnix())
-                return Environment.GetEnvironmentVariable("HOME");
-            else
-                return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
-        }
+        public static string GetHomeDirectory() => KS.Files.Paths.HomePath;
 
     }
 }
