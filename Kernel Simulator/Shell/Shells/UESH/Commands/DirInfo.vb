@@ -21,6 +21,12 @@ Imports KS.TimeDate
 Imports System.IO
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows directory information
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to view directory information.
+    ''' </remarks>
     Class DirInfoCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,14 @@
 Imports KS.Network.RPC
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Remote execution
+    ''' </summary>
+    ''' <remarks>
+    ''' This command can be used to remotely execute KS commands.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class RexecCommand
         Inherits CommandExecutor
         Implements ICommand
