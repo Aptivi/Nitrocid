@@ -87,8 +87,9 @@ Namespace Network.RemoteDebug
 
             'Run forever! Until the remote debugger is stopping.
             While Not RDebugStopping
-                Thread.Sleep(1)
                 Try
+                    Thread.Sleep(1)
+
                     'Variables
                     Dim RDebugStream As NetworkStream
                     Dim RDebugSWriter As StreamWriter
