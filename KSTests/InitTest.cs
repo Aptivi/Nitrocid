@@ -21,7 +21,7 @@ using System.IO;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Login;
-using KS.Misc.Configuration;
+using KS.Kernel.Configuration;
 using NUnit.Framework;
 
 namespace KSTests

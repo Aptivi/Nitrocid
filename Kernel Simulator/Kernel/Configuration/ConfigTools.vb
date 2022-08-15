@@ -19,7 +19,7 @@
 Imports System.IO
 Imports Newtonsoft.Json.Linq
 
-Namespace Misc.Configuration
+Namespace Kernel.Configuration
     Public Module ConfigTools
 
         ''' <summary>

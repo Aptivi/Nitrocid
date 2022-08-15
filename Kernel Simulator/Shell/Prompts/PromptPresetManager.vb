@@ -17,7 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.ConsoleBase.Inputs.Styles
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration
 Imports KS.Shell.Prompts.Presets.UESH
 Imports KS.Shell.Prompts.Presets.Test
 Imports KS.Shell.Prompts.Presets.ZIP

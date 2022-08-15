@@ -18,7 +18,7 @@
 
 using KS.Files;
 using KS.Files.Folders;
-using KS.Misc.Configuration;
+using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
 

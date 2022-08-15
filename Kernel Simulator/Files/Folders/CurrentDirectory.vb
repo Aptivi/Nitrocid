@@ -18,8 +18,8 @@
 
 Imports System.IO
 Imports KS.Files.Querying
-Imports KS.Misc.Configuration.Config
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration.Config
+Imports KS.Kernel.Configuration
 Imports Newtonsoft.Json.Linq
 
 Namespace Files.Folders

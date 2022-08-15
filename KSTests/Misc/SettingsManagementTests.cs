@@ -16,31 +16,26 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Network;
+using KS.Misc.Settings;
 using NUnit.Framework;
 using Shouldly;
 
 namespace KSTests
 {
-
-    // Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
     [TestFixture]
-    public class NetworkManipulationTests
+    internal class SettingsManagementTests
     {
-
         /// <summary>
-        /// Tests hostname change
+        /// Tests checking the settings variables
         /// </summary>
         [Test]
-        [Description("Manipulation")]
-        public void TestChangeHostname()
+        [Description("Management")]
+        public void TestCheckSettingsVariables()
         {
-            NetworkTools.TryChangeHostname("NewHost").ShouldBeTrue();
-            Kernel.HostName.ShouldBe("NewHost");
-            ConfigTools.GetConfigValue(Config.ConfigCategory.Login, "Host Name").ShouldBe("NewHost");
+            var SettingsVariables = SettingsApp.CheckSettingsVariables();
+            SettingsVariables.ShouldNotBeNull();
+            SettingsVariables.ShouldNotBeEmpty();
+            SettingsVariables.Values.ShouldNotContain(false);
         }
-
     }
 }

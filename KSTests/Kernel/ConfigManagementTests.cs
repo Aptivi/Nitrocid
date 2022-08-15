@@ -16,17 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Configuration;
+using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
 
 namespace KSTests
 {
-
     [TestFixture]
     public class ConfigManagementTests
     {
-
         /// <summary>
         /// Tests creates a new JSON object containing the kernel settings of all kinds
         /// </summary>
@@ -89,19 +87,6 @@ namespace KSTests
             var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.Screensaver, "Matrix");
             ConfigTools.SetConfigValue(Config.ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2);
             Token["Delay in Milliseconds"].ToObject<int>().ShouldBe(2);
-        }
-
-        /// <summary>
-        /// Tests checking the settings variables
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestCheckSettingsVariables()
-        {
-            var SettingsVariables = SettingsApp.CheckSettingsVariables();
-            SettingsVariables.ShouldNotBeNull();
-            SettingsVariables.ShouldNotBeEmpty();
-            SettingsVariables.Values.ShouldNotContain(false);
         }
 
     }

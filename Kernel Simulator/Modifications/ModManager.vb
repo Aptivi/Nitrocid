@@ -22,7 +22,7 @@ Imports Newtonsoft.Json.Linq
 Imports KS.Files.Operations
 Imports KS.Files.Querying
 Imports KS.ManPages
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration
 Imports KS.Shell.Shells.Json
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Splash

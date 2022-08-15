@@ -25,7 +25,7 @@ Imports KS.Files.Querying
 Imports KS.Hardware
 Imports KS.Misc.Calendar.Events
 Imports KS.Misc.Calendar.Reminders
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration
 Imports KS.Misc.Notifications
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver

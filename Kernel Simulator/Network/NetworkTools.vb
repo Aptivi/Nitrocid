@@ -21,7 +21,7 @@ Imports System.Net.NetworkInformation
 Imports System.Text
 Imports Newtonsoft.Json.Linq
 Imports KS.Files.Operations
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration
 
 Namespace Network
     Public Module NetworkTools

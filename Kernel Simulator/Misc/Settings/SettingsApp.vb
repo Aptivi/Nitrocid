@@ -21,11 +21,12 @@ Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports KS.Files.Folders
 Imports KS.Files.Querying
+Imports KS.Kernel.Configuration
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver
 
-Namespace Misc.Configuration
+Namespace Misc.Settings
     Public Module SettingsApp
 
         Private CurrentSettingsType As SettingsType = SettingsType.Normal

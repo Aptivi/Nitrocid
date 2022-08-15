@@ -51,8 +51,9 @@ Imports KS.Network.Transfer
 Imports KS.Shell.Prompts
 Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
+Imports KS.Misc
 
-Namespace Misc.Configuration
+Namespace Kernel.Configuration
     Public Module Config
 
         ''' <summary>
@@ -197,8 +198,8 @@ Namespace Misc.Configuration
                     {"Clear Screen on Log-in", ClearOnLogin},
                     {"Host Name", HostName},
                     {"Show available usernames", ShowAvailableUsers},
-                    {"MOTD Path", MOTDFilePath},
-                    {"MAL Path", MALFilePath},
+                    {"MOTD Path", MotdFilePath},
+                    {"MAL Path", MalFilePath},
                     {"Username prompt style", UsernamePrompt},
                     {"Password prompt style", PasswordPrompt},
                     {"Show MAL on Log-in", ShowMAL},

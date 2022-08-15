@@ -20,7 +20,7 @@ Imports KS.Arguments.ArgumentBase
 Imports KS.Files.Querying
 Imports KS.Hardware
 Imports KS.Kernel.Exceptions
-Imports KS.Misc.Configuration
+Imports KS.Kernel.Configuration
 Imports KS.Misc.Reflection
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.MiscWriters
