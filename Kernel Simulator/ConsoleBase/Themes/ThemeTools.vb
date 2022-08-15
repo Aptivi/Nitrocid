@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Configuration
 Imports System.IO
 
 Namespace ConsoleBase.Themes
@@ -224,7 +225,7 @@ Namespace ConsoleBase.Themes
                     SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
                     AlternativeOptionColor = ThemeInfo.ThemeAlternativeOptionColor
                     LoadBack()
-                    MakePermanent()
+                    CreateConfig()
 
                     'Raise event
                     KernelEventManager.RaiseColorSet()

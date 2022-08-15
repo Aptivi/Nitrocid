@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Configuration
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
@@ -34,7 +35,7 @@ Namespace Shell.Shells.UESH.Commands
                 End If
 
                 'Save it to configuration
-                MakePermanent()
+                CreateConfig()
             Else
                 Write(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
             End If

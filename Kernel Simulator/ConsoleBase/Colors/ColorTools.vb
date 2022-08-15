@@ -298,51 +298,6 @@ Namespace ConsoleBase.Colors
         End Sub
 
         ''' <summary>
-        ''' Makes the color configuration permanent
-        ''' </summary>
-        Public Sub MakePermanent()
-            ConfigToken("Colors")("User Name Shell Color") = UserNameShellColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Host Name Shell Color") = HostNameShellColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Continuable Kernel Error Color") = ContKernelErrorColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Uncontinuable Kernel Error Color") = UncontKernelErrorColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Text Color") = NeutralTextColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("License Color") = LicenseColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Background Color") = BackgroundColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Input Color") = InputColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("List Entry Color") = ListEntryColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("List Value Color") = ListValueColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Kernel Stage Color") = StageColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Error Text Color") = ErrorColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Warning Text Color") = WarningColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Option Color") = OptionColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Banner Color") = BannerColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Notification Title Color") = NotificationTitleColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Notification Description Color") = NotificationDescriptionColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Notification Progress Color") = NotificationProgressColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Notification Failure Color") = NotificationFailureColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Question Color") = QuestionColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Success Color") = SuccessColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("User Dollar Color") = UserDollarColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Tip Color") = TipColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Separator Text Color") = SeparatorTextColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Separator Color") = SeparatorColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("List Title Color") = ListTitleColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Development Warning Color") = DevelopmentWarningColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Stage Time Color") = StageTimeColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Progress Color") = ProgressColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Back Option Color") = BackOptionColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Low Priority Border Color") = LowPriorityBorderColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Medium Priority Border Color") = MediumPriorityBorderColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("High Priority Border Color") = HighPriorityBorderColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Table Separator Color") = TableSeparatorColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Table Header Color") = TableHeaderColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Table Value Color") = TableValueColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Selected Option Color") = SelectedOptionColor.PlainSequenceEnclosed
-            ConfigToken("Colors")("Alternative Option Color") = AlternativeOptionColor.PlainSequenceEnclosed
-            File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
-        End Sub
-
-        ''' <summary>
         ''' Sets custom colors. It only works if colored shell is enabled.
         ''' </summary>
         ''' <param name="InputColor">Input color</param>
@@ -582,7 +537,7 @@ Namespace ConsoleBase.Colors
                     ColorTools.SelectedOptionColor = New Color(SelectedOptionColor)
                     ColorTools.AlternativeOptionColor = New Color(AlternativeOptionColor)
                     LoadBack()
-                    MakePermanent()
+                    CreateConfig()
 
                     'Raise event
                     KernelEventManager.RaiseColorSet()
