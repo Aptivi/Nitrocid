@@ -325,7 +325,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UESH", "UESH", "{69029AB0-4
 		DocGen\wiki\commands\uesh\KS-Command-stopwatch.md = DocGen\wiki\commands\uesh\KS-Command-stopwatch.md
 		DocGen\wiki\commands\uesh\KS-Command-sumfile.md = DocGen\wiki\commands\uesh\KS-Command-sumfile.md
 		DocGen\wiki\commands\uesh\KS-Command-sumfiles.md = DocGen\wiki\commands\uesh\KS-Command-sumfiles.md
-		DocGen\wiki\commands\uesh\KS-Command-sysinfo.md = DocGen\wiki\commands\uesh\KS-Command-sysinfo.md
 		DocGen\wiki\commands\uesh\KS-Command-testshell.md = DocGen\wiki\commands\uesh\KS-Command-testshell.md
 		DocGen\wiki\commands\uesh\KS-Command-timer.md = DocGen\wiki\commands\uesh\KS-Command-timer.md
 		DocGen\wiki\commands\uesh\KS-Command-unblockdbgdev.md = DocGen\wiki\commands\uesh\KS-Command-unblockdbgdev.md
