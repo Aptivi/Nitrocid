@@ -19,6 +19,12 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the hex editor shell
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to edit a binary file or a text file, this command will let you open the hex editor shell to a specified document so you can edit it. Currently, it's on the basic stage, so it doesn't have advanced options yet.
+    ''' </remarks>
     Class HexEditCommand
         Inherits CommandExecutor
         Implements ICommand

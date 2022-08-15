@@ -19,6 +19,12 @@
 Imports KS.Files.Operations
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can move the file or directory from one place to another
+    ''' </summary>
+    ''' <remarks>
+    ''' This command allows you to move files or folders to a different name, or different path. This is useful for many purposes.
+    ''' </remarks>
     Class MoveCommand
         Inherits CommandExecutor
         Implements ICommand

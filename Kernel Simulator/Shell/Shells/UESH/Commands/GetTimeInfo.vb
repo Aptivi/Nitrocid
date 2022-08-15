@@ -19,6 +19,12 @@
 Imports KS.TimeDate
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows time information
+    ''' </summary>
+    ''' <remarks>
+    ''' This shows you the detailed time information, including the time analysis, binary representation, and even the Unix time.
+    ''' </remarks>
     Class GetTimeInfoCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -20,6 +20,16 @@ Imports KS.Arguments
 Imports KS.Arguments.ArgumentBase
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can set the arguments to launch at reboot.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you need to reboot your kernel to run the debugger, or if you want to disable hardware probing to save time when booting, then this command is for you. It allows you to set arguments so they will be run once at each reboot.
+    ''' <br></br>
+    ''' You can use this command if you need to inject arguments while on the kernel. You can also separate many arguments by spaces so you don't have to run arguments one by one to conserve reboots.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ArgInjCommand
         Inherits CommandExecutor
         Implements ICommand

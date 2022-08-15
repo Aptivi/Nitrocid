@@ -19,6 +19,14 @@
 Imports KS.Misc.Notifications
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Dismisses all notifications
+    ''' </summary>
+    ''' <remarks>
+    ''' If you hate having to remove a notification at a time, you can use this command to remove all the notifications at once.
+    ''' <br></br>
+    ''' To show available notifications, consult shownotifs command.
+    ''' </remarks>
     Class DismissNotifsCommand
         Inherits CommandExecutor
         Implements ICommand

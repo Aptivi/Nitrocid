@@ -20,6 +20,12 @@ Imports System.IO
 Imports KS.Shell.Shells.UESH
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Wraps a command
+    ''' </summary>
+    ''' <remarks>
+    ''' You can wrap a command so it stops outputting until you press a key if the console has printed lines that exceed the console window height. Only the commands that are explicitly set to be wrappable can be used with this command.
+    ''' </remarks>
     Class WrapCommand
         Inherits CommandExecutor
         Implements ICommand

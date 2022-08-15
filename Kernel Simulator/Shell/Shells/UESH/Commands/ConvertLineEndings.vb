@@ -19,6 +19,32 @@
 Imports KS.Files.LineEndings
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Converts the line endings
+    ''' </summary>
+    ''' <remarks>
+    ''' If you have a text file that needs a change for its line endings, you can use this command to convert the line endings to your platform's format, or the format of your choice by using these switches:
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-w</term>
+    ''' <description>Converts the line endings to the Windows format (CR + LF)</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-u</term>
+    ''' <description>Converts the line endings to the Unix format (LF)</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-m</term>
+    ''' <description>Converts the line endings to the Mac OS 9 format (CR)</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ConvertLineEndingsCommand
         Inherits CommandExecutor
         Implements ICommand

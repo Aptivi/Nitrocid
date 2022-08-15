@@ -17,6 +17,16 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Removes uninvited or redundant user
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you remove the uninvited or redundant user from the user dictionary that is initialized at the start of the kernel. It also removes password from the removed user if it has one.
+    ''' <br></br>
+    ''' However you can't remove your own user that is signed in.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class RmUserCommand
         Inherits CommandExecutor
         Implements ICommand

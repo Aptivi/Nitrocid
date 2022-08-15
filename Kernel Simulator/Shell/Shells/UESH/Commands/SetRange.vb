@@ -19,6 +19,12 @@
 Imports KS.Scripting
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Makes a UESH array and sets their values
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to store a group of values in one variable, you can use this command to create arrays of values. Such variables will have the [n] suffix, for example, $values[1].
+    ''' </remarks>
     Class SetRangeCommand
         Inherits CommandExecutor
         Implements ICommand

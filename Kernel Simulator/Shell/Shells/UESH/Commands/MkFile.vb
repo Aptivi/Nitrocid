@@ -19,6 +19,12 @@
 Imports KS.Files.Operations
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' This command allows you to make a file.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to create a file, this command is for you. It allows you to create every kind of file, including files without extensions, text files, binary files, and so on. If it's a text file, you can use the edit command to add new lines, delete them, and so on.
+    ''' </remarks>
     Class MkFileCommand
         Inherits CommandExecutor
         Implements ICommand

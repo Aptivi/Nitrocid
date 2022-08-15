@@ -22,6 +22,12 @@ Imports KS.Files.Querying
 Imports KS.Misc.Encryption
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Calculates the sum of a file
+    ''' </summary>
+    ''' <remarks>
+    ''' Calculating the hash sum of files is important, because it lets users verify if the file is corrupt or not. It calculates the sum of a file using either the MD5, SHA1, SHA256, or SHA512 algorithms.
+    ''' </remarks>
     Class SumFileCommand
         Inherits CommandExecutor
         Implements ICommand

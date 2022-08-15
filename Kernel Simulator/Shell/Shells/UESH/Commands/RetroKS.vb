@@ -27,6 +27,12 @@ Imports SharpCompress.Common
 Imports System.Reflection
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Retro Kernel Simulator based on 0.0.4.1
+    ''' </summary>
+    ''' <remarks>
+    ''' This command runs a legacy version of Kernel Simulator based on 0.0.4.1 with added optimizations for both Linux and Windows operating systems.
+    ''' </remarks>
     Class RetroKSCommand
         Inherits CommandExecutor
         Implements ICommand

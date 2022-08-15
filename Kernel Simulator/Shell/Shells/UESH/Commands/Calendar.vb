@@ -21,6 +21,12 @@ Imports KS.Misc.Calendar.Reminders
 Imports KS.Misc.Calendar
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Manages your calendar
+    ''' </summary>
+    ''' <remarks>
+    ''' This is a master application for the calendar that not only it shows you the calendar, but also shows and manages the events and reminders.
+    ''' </remarks>
     Class CalendarCommand
         Inherits CommandExecutor
         Implements ICommand

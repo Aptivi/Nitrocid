@@ -20,6 +20,44 @@ Imports KS.ConsoleBase.Inputs.Styles
 Imports KS.Scripting.Interaction
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Lets the user make a choice
+    ''' </summary>
+    ''' <remarks>
+    ''' This command can be used in scripting file that end in .uesh file extension. It lets the user choose the correct answers when answering this question and passes the chosen answer to the specified variable.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-multiple</term>
+    ''' <description>The output can be more than a character</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-single</term>
+    ''' <description>The output can be only one character</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-o</term>
+    ''' <description>One line choice style</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-t</term>
+    ''' <description>Two lines choice style</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-m</term>
+    ''' <description>Modern choice style</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-a</term>
+    ''' <description>Table choice style</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ChoiceCommand
         Inherits CommandExecutor
         Implements ICommand

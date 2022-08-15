@@ -19,6 +19,12 @@
 Imports KS.Hardware
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows hardware information
+    ''' </summary>
+    ''' <remarks>
+    ''' This shows you the detailed hardware information, including the CPU information and its features.
+    ''' </remarks>
     Class HwInfoCommand
         Inherits CommandExecutor
         Implements ICommand

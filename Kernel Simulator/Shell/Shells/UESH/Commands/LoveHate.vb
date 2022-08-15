@@ -19,6 +19,9 @@
 Imports KS.Misc.Games
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Takes you to the Love/Hate comment responder game
+    ''' </summary>
     Class LoveHateCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,36 @@
 Imports KS.Misc.Games
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Takes you to the snake game
+    ''' </summary>
+    ''' <remarks>
+    ''' This game lets you play the snake game found in old Nokia phones.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Key</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>ARROW UP</term>
+    ''' <description>Moves your snake up</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ARROW DOWN</term>
+    ''' <description>Moves your snake down</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ARROW LEFT</term>
+    ''' <description>Moves your snake left</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ARROW RIGHT</term>
+    ''' <description>Moves your snake right</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class SnakerCommand
         Inherits CommandExecutor
         Implements ICommand

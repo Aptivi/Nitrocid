@@ -19,6 +19,12 @@
 Imports System.IO
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Clears debugging log
+    ''' </summary>
+    ''' <remarks>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class CdbgLogCommand
         Inherits CommandExecutor
         Implements ICommand

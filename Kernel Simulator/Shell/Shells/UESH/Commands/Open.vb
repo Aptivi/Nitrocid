@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens a URL
+    ''' </summary>
+    ''' <remarks>
+    ''' If you have a webpage to open, you can use this command.
+    ''' </remarks>
     Class OpenCommand
         Inherits CommandExecutor
         Implements ICommand

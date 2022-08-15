@@ -21,6 +21,24 @@ Imports System.IO.Compression
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Extracts a ZIP file
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to extract the contents of a ZIP file, you can use this command to gain access to the compressed files stored inside it.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-createdir</term>
+    ''' <description>Extracts the archive to the new directory that has the same name as the archive</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class UnZipCommand
         Inherits CommandExecutor
         Implements ICommand

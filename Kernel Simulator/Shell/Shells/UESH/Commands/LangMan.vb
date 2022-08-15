@@ -19,6 +19,14 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Manages your custom languages
+    ''' </summary>
+    ''' <remarks>
+    ''' You can manage all your custom languages installed in Kernel Simulator by this command.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class LangManCommand
         Inherits CommandExecutor
         Implements ICommand

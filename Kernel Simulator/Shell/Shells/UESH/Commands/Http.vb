@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can interact with the Hyper Text Transfer Protocol (HTTP) using this shell.
+    ''' </summary>
     Class HttpCommand
         Inherits CommandExecutor
         Implements ICommand

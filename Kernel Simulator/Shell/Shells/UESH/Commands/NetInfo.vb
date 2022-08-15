@@ -19,6 +19,14 @@
 Imports KS.Network
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can view the detailed status of the network connection
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you view the details about all your wireless/Ethernet adapters, packets, packets that has an error, etc. The information that are printed is diagnostic so if you can't connect to the Internet, you can use these information to diagnose.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class NetInfoCommand
         Inherits CommandExecutor
         Implements ICommand

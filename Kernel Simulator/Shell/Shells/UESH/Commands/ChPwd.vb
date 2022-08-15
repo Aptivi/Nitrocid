@@ -17,6 +17,18 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can change your password or someone else's password
+    ''' </summary>
+    ''' <remarks>
+    ''' If the password for your account, or for someone else's account, needs to be changed, then you can use this command to change your password or someone else's password.
+    ''' <br></br>
+    ''' This is useful if you think that your account or someone else's account has a bad password or is in the easy password list located online.
+    ''' <br></br>
+    ''' This command requires you to specify your password or someone else's password before writing your new password.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ChPwdCommand
         Inherits CommandExecutor
         Implements ICommand

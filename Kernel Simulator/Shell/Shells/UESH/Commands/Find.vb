@@ -19,6 +19,12 @@
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Finds a file in the specified directory or in the current directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you are looking for a file and you can't remember where, using this command will help you find it.
+    ''' </remarks>
     Class FindCommand
         Inherits CommandExecutor
         Implements ICommand

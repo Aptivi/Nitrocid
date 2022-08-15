@@ -19,6 +19,14 @@
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Saves your current directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command can save your current directory in the main shell to the kernel configuration file. This is helpful if you don't want to manually configure your current working directory to your desired place everytime you log in.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class SaveCurrDirCommand
         Inherits CommandExecutor
         Implements ICommand

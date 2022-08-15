@@ -19,6 +19,12 @@
 Imports KS.Kernel.Events
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows the list of fired events
+    ''' </summary>
+    ''' <remarks>
+    ''' It shows you a detailed list of fired events with the arguments passed to each of them, if any.
+    ''' </remarks>
     Class FiredEventsCommand
         Inherits CommandExecutor
         Implements ICommand

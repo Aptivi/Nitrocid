@@ -20,6 +20,36 @@ Imports KS.Files.Querying
 Imports System.IO
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Changes attributes of file
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to change attributes of a file.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Attribute</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>Normal</term>
+    ''' <description>The file is a normal file</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ReadOnly</term>
+    ''' <description>The file is a read-only file</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Hidden</term>
+    ''' <description>The file is a hidden file</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Archive</term>
+    ''' <description>The file is an archive. Used for backups.</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ChAttrCommand
         Inherits CommandExecutor
         Implements ICommand

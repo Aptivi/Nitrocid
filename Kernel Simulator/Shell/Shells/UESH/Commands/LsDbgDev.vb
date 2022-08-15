@@ -19,6 +19,14 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Lists debugging devices connected
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lists all the connected IP addresses that are currently receiving debug messages. This is useful for listing, identifying, and possibly disconnecting the address from the debugging server.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class LsDbgDevCommand
         Inherits CommandExecutor
         Implements ICommand

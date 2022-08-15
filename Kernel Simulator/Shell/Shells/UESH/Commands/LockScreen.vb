@@ -19,6 +19,12 @@
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can lock the screen with the default screensaver to prevent screen burns
+    ''' </summary>
+    ''' <remarks>
+    ''' You can lock your screen and show your default screensaver to confirm that you're away and will come back for an hour or more. It then asks for your password for security.
+    ''' </remarks>
     Class LockScreenCommand
         Inherits CommandExecutor
         Implements ICommand

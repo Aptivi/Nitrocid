@@ -20,6 +20,14 @@ Imports KS.Shell.Shells.Test
 Imports KS.Kernel.Power
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens a test shell
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to test functions of the kernel, you can do so using this command. Please note that it's only available in development versions of KS.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class TestShellCommand
         Inherits CommandExecutor
         Implements ICommand

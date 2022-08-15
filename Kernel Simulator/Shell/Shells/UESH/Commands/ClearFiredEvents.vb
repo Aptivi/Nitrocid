@@ -19,6 +19,9 @@
 Imports KS.Kernel.Events
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Clears the list of fired events
+    ''' </summary>
     Class ClearFiredEventsCommand
         Inherits CommandExecutor
         Implements ICommand

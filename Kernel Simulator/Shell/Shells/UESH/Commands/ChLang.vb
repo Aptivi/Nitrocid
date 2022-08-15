@@ -17,6 +17,37 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Changes system language
+    ''' </summary>
+    ''' <remarks>
+    ''' The system language can be changed either by manually editing configuration files or by using this command. Restart is not required, since printing text, viewing user manual, and updating help list relies on the current language field.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-alwaystransliterated</term>
+    ''' <description>Always use the transliterated version of the language. Must be transliterable.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-alwaystranslated</term>
+    ''' <description>Always use the translated version of the language. Must be transliterable.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-force</term>
+    ''' <description>Forces the language to be set.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-list</term>
+    ''' <description>Lists the installed languages.</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ChLangCommand
         Inherits CommandExecutor
         Implements ICommand

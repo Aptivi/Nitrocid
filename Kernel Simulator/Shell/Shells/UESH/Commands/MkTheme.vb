@@ -17,6 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Makes a new theme
+    ''' </summary>
+    ''' <remarks>
+    ''' This opens up a theme studio to manage the newly-created theme colors that you can adjust. This will allow you to create your own themes for Kernel Simulator.
+    ''' <br></br>
+    ''' If you want your theme to be included in the default Kernel Simulator themes, let us know.
+    ''' </remarks>
     Class MkThemeCommand
         Inherits CommandExecutor
         Implements ICommand

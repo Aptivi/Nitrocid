@@ -17,6 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can interact with the File Transfer Protocol (FTP) shell to connect to a server and transfer files
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use the FTP shell to connect to your FTP server or the public FTP servers to interact with the files found in the server.
+    ''' <br></br>
+    ''' You can download files to your computer, upload files to the server, manage files by renaming, deleting, etc., and so on.
+    ''' </remarks>
     Class FtpCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Makes the PC speaker beep using specified time and frequency
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you make a PC speaker beep using specified time in milliseconds and frequency in Hz. This requires that you have it installed.
+    ''' </remarks>
     Class BeepCommand
         Inherits CommandExecutor
         Implements ICommand

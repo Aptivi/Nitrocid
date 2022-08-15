@@ -19,6 +19,12 @@
 Imports KS.Scripting.Conditions
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Tests the condition
+    ''' </summary>
+    ''' <remarks>
+    ''' Executes commands once the UESH conditions are satisfied
+    ''' </remarks>
     Class IfCommand
         Inherits CommandExecutor
         Implements ICommand

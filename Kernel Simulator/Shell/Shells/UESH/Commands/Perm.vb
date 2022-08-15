@@ -17,6 +17,16 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Manages permissions for your user or other users
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to manage permissions for your user or other users, or if you want to prevent the user from being logged on, use this command.
+    ''' <br></br>
+    ''' This command lets you manage permissions whether the administrative privileges are on or off, or if the user is disabled or not.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class PermCommand
         Inherits CommandExecutor
         Implements ICommand

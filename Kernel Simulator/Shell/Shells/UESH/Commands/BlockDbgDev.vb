@@ -19,6 +19,16 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can block an IP address from entering the remote debugger.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to moderate the remote debugger and block a device from joining it because it either causes problems or kept flooding the chat, you may use this command to block such offenders.
+    ''' <br></br>
+    ''' This command is available to administrators only. The blocked device can be unblocked using the unblockdbgdev command.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class BlockDbgDevCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,28 @@
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can list contents inside the current directory, or specified folder
+    ''' </summary>
+    ''' <remarks>
+    ''' If you don't know what's in the directory, or in the current directory, you can use this command to list folder contents in the colorful way.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-showdetails</term>
+    ''' <description>Shows the details of the files and folders</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-suppressmessages</term>
+    ''' <description>Suppresses the "unauthorized" messages</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ListCommand
         Inherits CommandExecutor
         Implements ICommand

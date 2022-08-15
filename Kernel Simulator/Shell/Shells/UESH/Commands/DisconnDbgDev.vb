@@ -19,6 +19,14 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Disconnects debug devices
+    ''' </summary>
+    ''' <remarks>
+    ''' This command allows you to disconnect debug devices that are no longer needed. This will ensure that the target will not receive further debugging messages, and the debugger will notify other targets that he/she is disconnected.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class DisconnDbgDevCommand
         Inherits CommandExecutor
         Implements ICommand

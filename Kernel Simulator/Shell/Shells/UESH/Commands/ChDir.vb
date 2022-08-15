@@ -20,6 +20,12 @@ Imports System.IO
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can change your current working directory to another directory
+    ''' </summary>
+    ''' <remarks>
+    ''' You can change your working directory to another directory to execute listing commands, removing files, or creating directories on another directory.
+    ''' </remarks>
     Class ChDirCommand
         Inherits CommandExecutor
         Implements ICommand

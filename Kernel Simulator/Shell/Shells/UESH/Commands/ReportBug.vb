@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Reports a bug
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to prepare your bug report to be sent to GitHub. You must be signed in to GitHub to be able to use this feature.
+    ''' </remarks>
     Class ReportBugCommand
         Inherits CommandExecutor
         Implements ICommand

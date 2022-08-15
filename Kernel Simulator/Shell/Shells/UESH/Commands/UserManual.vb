@@ -17,6 +17,22 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the web browser to this wiki or to the KS API for mods.
+    ''' </summary>
+    ''' <remarks>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-createdir</term>
+    ''' <description>Extracts the archive to the new directory that has the same name as the archive</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class UserManualCommand
         Inherits CommandExecutor
         Implements ICommand

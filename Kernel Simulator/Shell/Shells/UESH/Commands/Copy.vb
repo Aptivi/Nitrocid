@@ -19,6 +19,12 @@
 Imports KS.Files.Operations
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can copy the file to a destination.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command allows you to create copies of files or folders to a different name, or different path. This is useful for many purposes.
+    ''' </remarks>
     Class CopyCommand
         Inherits CommandExecutor
         Implements ICommand

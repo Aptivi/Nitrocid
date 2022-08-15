@@ -20,6 +20,12 @@ Imports Dictify.Manager.DictionaryManager
 Imports Dictify.Models
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' The English Dictionary
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to define a specific English word, you can use this command.
+    ''' </remarks>
     Class DictCommand
         Inherits CommandExecutor
         Implements ICommand

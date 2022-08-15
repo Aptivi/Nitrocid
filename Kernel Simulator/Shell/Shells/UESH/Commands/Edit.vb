@@ -19,6 +19,14 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the text editor shell
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to edit a text document, this command will let you open the text editor shell to a specified document so you can edit it. Currently, it's on the basic stage, so it doesn't have advanced options yet.
+    ''' <br></br>
+    ''' It can also open binary files, but we don't recommend doing that, because it isn't a hex editor yet. Editing a binary file may or may not cause file corruptions. Use hexedit for such tasks.
+    ''' </remarks>
     Class EditCommand
         Inherits CommandExecutor
         Implements ICommand

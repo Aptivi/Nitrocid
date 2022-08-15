@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Converts the hexadecimal representation of the color to RGB numbers.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get the RGB color numbers from the hexadecimal representation of the color, you can use this command.
+    ''' </remarks>
     Class ColorHexToRgbCommand
         Inherits CommandExecutor
         Implements ICommand

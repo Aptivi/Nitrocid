@@ -20,6 +20,12 @@ Imports KS.Files.Operations
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Removes directory or file from current working directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you remove a directory or a file from your current working directory.
+    ''' </remarks>
     Class RmCommand
         Inherits CommandExecutor
         Implements ICommand

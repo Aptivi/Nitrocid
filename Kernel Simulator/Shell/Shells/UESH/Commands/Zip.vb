@@ -19,6 +19,32 @@
 Imports System.IO.Compression
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Makes a ZIP file
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to make a ZIP file containing the contents you want to compress, you can use this command.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-fast</term>
+    ''' <description>Uses fast compression</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-nocomp</term>
+    ''' <description>No compression</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-nobasedir</term>
+    ''' <description>Don't create base directory on the archive</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ZipCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens an RSS shell
+    ''' </summary>
+    ''' <remarks>
+    ''' You can interact with the RSS shell to connect to a feed server and interact with them.
+    ''' </remarks>
     Class RssCommand
         Inherits CommandExecutor
         Implements ICommand

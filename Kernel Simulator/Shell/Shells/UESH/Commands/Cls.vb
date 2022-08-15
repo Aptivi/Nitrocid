@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can clear your screen from clutter
+    ''' </summary>
+    ''' <remarks>
+    ''' If you are trying to focus on one thing and you can't do it, or if you want the personal info printed by commands hidden, you can clear your screen from clutter to gain focus and reduce eyestrain.
+    ''' </remarks>
     Class ClsCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.TimeDate
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows the current time and date
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to know what time is it without repeatedly going into the clock, you can use this command to show you the current time and date, as well as your time zone.
+    ''' </remarks>
     Class ShowTdCommand
         Inherits CommandExecutor
         Implements ICommand

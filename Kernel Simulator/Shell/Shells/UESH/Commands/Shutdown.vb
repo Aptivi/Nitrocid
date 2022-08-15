@@ -19,6 +19,12 @@
 Imports KS.Kernel.Power
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shuts down your computer
+    ''' </summary>
+    ''' <remarks>
+    ''' If you're finished with everything and don't want to do something else on your computer, instead of leaving it on to consume energy and pay high energy bills, you have to use this command to shutdown your computer and conserve power.
+    ''' </remarks>
     Class ShutdownCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,24 @@
 Imports KS.ManPages
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the mod manual
+    ''' </summary>
+    ''' <remarks>
+    ''' If the mod has a manual page which you can refer to, you can use them by this command.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-list</term>
+    ''' <description>Lists all installed mod manuals</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ModManualCommand
         Inherits CommandExecutor
         Implements ICommand

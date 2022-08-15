@@ -19,6 +19,12 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the JSON editor shell
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this shell to open the JSON editor. It allows you to manipulate with the JSON file in various ways, such as adding and deleting properties.
+    ''' </remarks>
     Class JsonShellCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Scripting.Interaction
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Lets the user make a selection
+    ''' </summary>
+    ''' <remarks>
+    ''' This command can be used in a scripting file that ends in .uesh file extension. It lets the user select the correct answers when answering this question and passes the chosen answer to the specified variable.
+    ''' </remarks>
     Class SelectCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,14 @@
 Imports KS.Files.Operations
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can make your directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to organize your files into a folder, you must create a folder.
+    ''' <br></br>
+    ''' This command lets you create a folder in the current working directory.
+    ''' </remarks>
     Class MdCommand
         Inherits CommandExecutor
         Implements ICommand

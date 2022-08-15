@@ -19,6 +19,12 @@
 Imports KS.Misc.Timers
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' The timer CLI
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to set the time limit, you can do so using this command.
+    ''' </remarks>
     Class TimerCommand
         Inherits CommandExecutor
         Implements ICommand

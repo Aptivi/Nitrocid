@@ -19,6 +19,12 @@
 Imports StringMath
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Calculates expressions.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you calculate expressions and return the results.
+    ''' </remarks>
     Class CalcCommand
         Inherits CommandExecutor
         Implements ICommand

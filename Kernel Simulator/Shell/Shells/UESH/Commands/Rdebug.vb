@@ -19,6 +19,16 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Enables remote debug
+    ''' </summary>
+    ''' <remarks>
+    ''' If the kernel is on the debugging mode, you can use this command to turn on/off the functionality. If the remote debug is on, it will turn it off, and it will do inverse.
+    ''' <br></br>
+    ''' The remote debug will listen on a port that is unused as specified in the kernel settings, Debug Port.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class RdebugCommand
         Inherits CommandExecutor
         Implements ICommand

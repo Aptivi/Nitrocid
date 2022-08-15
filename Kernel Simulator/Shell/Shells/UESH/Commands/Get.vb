@@ -20,6 +20,12 @@ Imports KS.Network
 Imports KS.Network.Transfer
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Download a file
+    ''' </summary>
+    ''' <remarks>
+    ''' This command downloads a file from the website to a file, preserving the file name. This is currently very basic, but it will be expanded in future releases.
+    ''' </remarks>
     Class Get_Command
         Inherits CommandExecutor
         Implements ICommand

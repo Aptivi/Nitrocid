@@ -19,6 +19,18 @@
 Imports KS.Shell.ShellBase.Aliases
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can set an alternative shortcut to the command if you want to use shorter words for long commands.
+    ''' </summary>
+    ''' <remarks>
+    ''' Some commands in this kernel are long, and some people doesn't write fast on computers. The alias command fixes this problem by providing the shorter terms for long commands.
+    ''' <br></br>
+    ''' You can also use this command if you plan to make scripts if the real file system will be added in the future, or if you are rushing for something and you don't have time to execute the long command.
+    ''' <br></br>
+    ''' You can add or remove the alias to the long command.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class AliasCommand
         Inherits CommandExecutor
         Implements ICommand

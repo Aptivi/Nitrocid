@@ -19,6 +19,14 @@
 Imports KS.Network.SSH
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can interact with the Secure SHell server (SSH) to remotely execute commands on the host of another PC.
+    ''' </summary>
+    ''' <remarks>
+    ''' Secure SHell server (SSH) is a type of server which lets another computer connect to it to run commands in it. In the recent iterations, it is bound to support X11 forwarding. Our implementation is pretty basic, and uses the SSH.NET library by Renci.
+    ''' <br></br>
+    ''' This command lets you connect to another computer to remotely execute commands.
+    ''' </remarks>
     Class SshcmdCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,28 @@
 Imports KS.Files.Print
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Prints files to console.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you print the contents of a text file to the console.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-lines</term>
+    ''' <description>Prints the line numbers alongside the contents</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-nolines</term>
+    ''' <description>Prints only the contents</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class CatCommand
         Inherits CommandExecutor
         Implements ICommand

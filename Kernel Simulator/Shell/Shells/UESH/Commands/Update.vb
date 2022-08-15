@@ -21,6 +21,16 @@ Imports KS.Kernel.Updates
 #End If
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Checks for the kernel update
+    ''' </summary>
+    ''' <remarks>
+    ''' It checks for the kernel update by fetching the release information from GitHub, taking the latest release group, and comparing between versions. It will not download the update automatically, only checks for it.
+    ''' <br></br>
+    ''' To download the update, download it using the link provided in this command, shutdown the kernel using shutdown command, and extract it to the executable directory, overwriting the old version with the latest version.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class UpdateCommand
         Inherits CommandExecutor
         Implements ICommand

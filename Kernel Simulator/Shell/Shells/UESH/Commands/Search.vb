@@ -20,6 +20,12 @@ Imports KS.Files.Querying
 Imports System.Text.RegularExpressions
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Searches for a string in a specified file
+    ''' </summary>
+    ''' <remarks>
+    ''' Searching for strings in files is a common practice to find messages, unused messages, and hidden messages in files and executables, especially games. The command is found to make this practice much easier to access. It searches for a specified string in a specified file, and returns all matches. This command uses regular expressions.
+    ''' </remarks>
     Class SearchCommand
         Inherits CommandExecutor
         Implements ICommand

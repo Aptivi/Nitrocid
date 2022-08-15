@@ -19,6 +19,26 @@
 Imports KS.Misc.Forecast
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows weather information for a specified city
+    ''' </summary>
+    ''' <remarks>
+    ''' We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Kernel Simulator only accesses free features; all you have to do is make an account and generate your own API key.
+    ''' <br></br>
+    ''' This command lets you get current weather information for a specified city by city ID as recommended by OpenWeatherMap. If you want a list, use the switch indicated below.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-list</term>
+    ''' <description>Lists the available cities</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class WeatherCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -21,6 +21,14 @@ Imports System.IO
 Imports KS.Modifications
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Manages your mods
+    ''' </summary>
+    ''' <remarks>
+    ''' You can manage all your mods installed in Kernel Simulator by this command. It allows you to stop, start, reload, get info, and list all your mods.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ModManCommand
         Inherits CommandExecutor
         Implements ICommand

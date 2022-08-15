@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Converts the hexadecimal representation of the color to RGB numbers in KS format.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get the semicolon-delimited sequence of the RGB color numbers from the hexadecimal representation of the color, you can use this command. You can use this to form a complete VT sequence of changing color.
+    ''' </remarks>
     Class ColorHexToRgbKSCommand
         Inherits CommandExecutor
         Implements ICommand

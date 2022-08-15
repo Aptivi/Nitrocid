@@ -20,6 +20,14 @@ Imports KS.Network.Mail
 Imports KS.Shell.Shells.Mail
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens the mail shell
+    ''' </summary>
+    ''' <remarks>
+    ''' This command is an entry point to the mail shell that lets you view and list messages.
+    ''' <br></br>
+    ''' If no address is specified, it will prompt you for the address, password, and the mail server (IMAP) if the address is not found in the ISP database. Currently, it connects with necessary requirements to ensure successful connection.
+    ''' </remarks>
     Class MailCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports UnitsNet
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Lists all units
+    ''' </summary>
+    ''' <remarks>
+    ''' If you don't know what units are there, you can use this command. If you don't know what unit types are there, use its help entry.
+    ''' </remarks>
     Class ListUnitsCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can view the information about a pressed key
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you view the details about a pressed key on your keyboard, including the pressed key and character, the hexadecimal representation of the letter, the pressed modifiers, and the keyboard shortcut.
+    ''' </remarks>
     Class KeyInfoCommand
         Inherits CommandExecutor
         Implements ICommand

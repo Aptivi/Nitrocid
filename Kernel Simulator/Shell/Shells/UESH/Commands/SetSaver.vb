@@ -21,6 +21,14 @@ Imports KS.Misc.Screensaver.Customized
 Imports KS.Misc.Screensaver
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Sets your default screensaver as your own screensaver or built-in savers
+    ''' </summary>
+    ''' <remarks>
+    ''' You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="Screensavers"/> can be used as the argument for this command.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class SetSaverCommand
         Inherits CommandExecutor
         Implements ICommand

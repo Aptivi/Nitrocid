@@ -21,6 +21,12 @@ Imports KS.Files.Querying
 Imports KS.Misc.Beautifiers
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Beautifies a JSON file
+    ''' </summary>
+    ''' <remarks>
+    ''' This command parses the JSON file to beautify it. It can be wrapped and saved to output file using the command-line redirection.
+    ''' </remarks>
     Class JsonBeautifyCommand
         Inherits CommandExecutor
         Implements ICommand

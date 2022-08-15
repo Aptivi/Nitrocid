@@ -19,6 +19,12 @@
 Imports KS.Scripting.Interaction
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' This command will ask the user a question, and the user has to write the answer.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command can be used in shell scripts to ask the user a specified question, which has to be answered using text. It will them pass the answer to the specified $variable.
+    ''' </remarks>
     Class InputCommand
         Inherits CommandExecutor
         Implements ICommand

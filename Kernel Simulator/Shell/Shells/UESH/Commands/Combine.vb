@@ -20,6 +20,12 @@ Imports KS.Files.Operations
 Imports System.IO
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Combines the two text files or more into the output file.
+    ''' </summary>
+    ''' <remarks>
+    ''' If you have two or more fragments of a complete text file, you can combine them using this command to generate a complete text file.
+    ''' </remarks>
     Class CombineCommand
         Inherits CommandExecutor
         Implements ICommand

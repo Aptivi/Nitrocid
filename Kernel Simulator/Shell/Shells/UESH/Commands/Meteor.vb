@@ -19,6 +19,36 @@
 Imports KS.Misc.Games
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You're the spaceship and the meteors are destroying you. Can you save it?
+    ''' </summary>
+    ''' <remarks>
+    ''' This command runs a game that lets you shoot all the meteors coming to your spaceship. You must shoot all the meteors before one of them destroys your spaceship!
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Key</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>ARROW UP</term>
+    ''' <description>Moves your spaceship up</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ARROW DOWN</term>
+    ''' <description>Moves your spaceship down</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>SPACE</term>
+    ''' <description>Fire your laser</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>ESC</term>
+    ''' <description>Exit game</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class MeteorCommand
         Inherits CommandExecutor
         Implements ICommand

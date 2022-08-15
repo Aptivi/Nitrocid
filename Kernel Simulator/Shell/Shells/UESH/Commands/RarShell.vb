@@ -19,6 +19,12 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens an RAR shell
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to interact with an RAR file more thoroughly, you can use this command to open a shell to an RAR file.
+    ''' </remarks>
     Class RarShellCommand
         Inherits CommandExecutor
         Implements ICommand

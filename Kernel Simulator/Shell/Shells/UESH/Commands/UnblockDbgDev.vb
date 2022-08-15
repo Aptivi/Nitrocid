@@ -19,6 +19,14 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Lets you unblock a blocked debug device
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to let a device whose IP address is blocked join the remote debugging again, you can unblock it using this command.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class UnblockDbgDevCommand
         Inherits CommandExecutor
         Implements ICommand

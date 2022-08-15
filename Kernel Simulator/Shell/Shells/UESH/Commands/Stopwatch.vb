@@ -19,6 +19,12 @@
 Imports KS.Misc.Timers
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' The stopwatch CLI
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to record the time elapsed from when the stopwatch has started, you can use this command. It's useful for races, because it has the lap feature.
+    ''' </remarks>
     Class StopwatchCommand
         Inherits CommandExecutor
         Implements ICommand

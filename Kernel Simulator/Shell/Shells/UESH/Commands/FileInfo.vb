@@ -22,6 +22,12 @@ Imports KS.Files.Querying
 Imports KS.TimeDate
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows file information
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to view file information.
+    ''' </remarks>
     Class FileInfoCommand
         Inherits CommandExecutor
         Implements ICommand

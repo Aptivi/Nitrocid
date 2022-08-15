@@ -19,6 +19,14 @@
 Imports KS.Kernel.Configuration
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Reloads the kernel configuration
+    ''' </summary>
+    ''' <remarks>
+    ''' This command reloads the kernel settings and tries to conserve restarts and reflect the changes immediately. If the changes are not reflected, reboot the kernel.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ReloadConfigCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,14 @@
 Imports KS.Misc.Notifications
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Dismisses a specific notification
+    ''' </summary>
+    ''' <remarks>
+    ''' Takes a notification number to dismiss a specified notification, if you're done with it, or you don't want clutter on your recents.
+    ''' <br></br>
+    ''' To show available notifications, consult shownotifs command.
+    ''' </remarks>
     Class DismissNotifCommand
         Inherits CommandExecutor
         Implements ICommand

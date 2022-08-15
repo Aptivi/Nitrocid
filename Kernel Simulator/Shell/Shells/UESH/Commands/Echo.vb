@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Echoes the text
+    ''' </summary>
+    ''' <remarks>
+    ''' This command will repeat back the string that you have entered. It is used in scripting to print text. It supports $variable parsing.
+    ''' </remarks>
     Class EchoCommand
         Inherits CommandExecutor
         Implements ICommand

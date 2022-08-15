@@ -19,6 +19,28 @@
 Imports KS.TimeDate
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Shows current time and date in another timezone
+    ''' </summary>
+    ''' <remarks>
+    ''' If you need to know what time is it on another city or country, you can use this tool to tell you the current time and date in another country or city.
+    ''' <br></br>
+    ''' This command is multi-platform, and uses the IANA timezones on Unix systems and the Windows timezone system on Windows.
+    ''' <br></br>
+    ''' For example, if you need to use "Asia/Damascus" on the Unix systems, you will write showtdzone Asia/Damascus." However on Windows 10, assuming we're on the summer season, you write showtdzone "Syria Daylight Time"
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-all</term>
+    ''' <description>Displays all timezones and their times and dates</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class ShowTdZoneCommand
         Inherits CommandExecutor
         Implements ICommand

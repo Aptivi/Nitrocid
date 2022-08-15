@@ -19,6 +19,12 @@
 Imports KS.Scripting
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Sets a UESH variable to a specified value
+    ''' </summary>
+    ''' <remarks>
+    ''' You can set a UESH variable to a specified value. This can be used in UESH scripts.
+    ''' </remarks>
     Class SetCommand
         Inherits CommandExecutor
         Implements ICommand

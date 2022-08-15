@@ -20,6 +20,40 @@ Imports KS.Misc.Games
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Launches the speed press game
+    ''' </summary>
+    ''' <remarks>
+    ''' This game will test your keystroke speed. It will only give you very little time to press a key before moving to the next one.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-e</term>
+    ''' <description>Easy</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-m</term>
+    ''' <description>Medium</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-h</term>
+    ''' <description>Hard</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-v</term>
+    ''' <description>Very Hard</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-c</term>
+    ''' <description>Custom. The timeout should be specified in milliseconds.</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class SpeedPressCommand
         Inherits CommandExecutor
         Implements ICommand

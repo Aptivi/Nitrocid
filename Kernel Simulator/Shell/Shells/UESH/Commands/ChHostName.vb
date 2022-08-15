@@ -19,6 +19,20 @@
 Imports KS.Network
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can change your host name to another name
+    ''' </summary>
+    ''' <remarks>
+    ''' If you're planning to change your host name to another name, this command is for you.
+    ''' <br></br>
+    ''' This command used to change your host name and resets it everytime you reboot the kernel, but now it stores it in the config file as soon as you change your host name.
+    ''' <br></br>
+    ''' This version of the kernel finally allows hostnames that is less than 4 characters.
+    ''' <br></br>
+    ''' This command is also useful if you're identifying multiple computers/servers, so you won't forget them.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ChHostNameCommand
         Inherits CommandExecutor
         Implements ICommand

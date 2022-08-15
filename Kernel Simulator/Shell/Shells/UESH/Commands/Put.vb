@@ -20,6 +20,12 @@ Imports KS.Network
 Imports KS.Network.Transfer
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Upload a file
+    ''' </summary>
+    ''' <remarks>
+    ''' This command uploads a file from the website to a file, preserving the file name. This is currently very basic, but it will be expanded in future releases.
+    ''' </remarks>
     Class PutCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -20,6 +20,12 @@ Imports KS.Kernel.Configuration
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Sets your theme
+    ''' </summary>
+    ''' <remarks>
+    ''' You can personalize your kernel using themes, which contains the color sets to set colors.
+    ''' </remarks>
     Class SetThemesCommand
         Inherits CommandExecutor
         Implements ICommand

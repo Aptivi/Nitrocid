@@ -19,6 +19,16 @@
 Imports KS.Misc.Screensaver.Customized
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' You can reload screensaver files after making changes to them.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command compiles the contents of your modfile to see if there is any errors, and reassign your screensaver mod files to the valid screensaver list if your screensaver doesn't contain any errors from the build system.
+    ''' <br></br>
+    ''' If you want to reflect changes on your screensaver, make some changes on your screensaver modfile and run this command pointing to the changed modfile.
+    ''' <br></br>
+    ''' The user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class ReloadSaverCommand
         Inherits CommandExecutor
         Implements ICommand

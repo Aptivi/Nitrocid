@@ -19,6 +19,12 @@
 Imports KS.Files.Querying
 
 Namespace Shell.Shells.UESH.Commands
+    ''' <summary>
+    ''' Opens a ZIP shell
+    ''' </summary>
+    ''' <remarks>
+    ''' If you wanted to interact with a ZIP file more thoroughly, you can use this command to open a shell to a ZIP file.
+    ''' </remarks>
     Class ZipShellCommand
         Inherits CommandExecutor
         Implements ICommand
