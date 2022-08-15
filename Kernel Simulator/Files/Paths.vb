@@ -16,8 +16,21 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Reflection
+
 Namespace Files
     Public Module Paths
+
+        'Basic paths
+
+        ''' <summary>
+        ''' Path to KS executable folder
+        ''' </summary>
+        Public ReadOnly Property ExecPath As String
+            Get
+                Return IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
+            End Get
+        End Property
 
         ''' <summary>
         ''' Platform-dependent home path
@@ -65,6 +78,8 @@ Namespace Files
 #End If
             End Get
         End Property
+
+        'Kernel Simulator paths
 
         ''' <summary>
         ''' Mods path
