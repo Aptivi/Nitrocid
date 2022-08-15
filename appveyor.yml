@@ -1,4 +1,4 @@
-version: api2-{build}-{branch}
+version: api3.0-{build}-{branch}
 branches:
   only:
   - master
@@ -25,7 +25,7 @@ test_script:
 - cmd: >-
     nuget install Appveyor.TestLogger -Version 2.0.0
 
-    dotnet test --test-adapter-path:. --logger:Appveyor "%APPVEYOR_BUILD_FOLDER%\KSTests\KSTests.vbproj" -c %CONFIGURATION%
+    dotnet test --test-adapter-path:. --logger:Appveyor "%APPVEYOR_BUILD_FOLDER%\KSTests\KSTests.csproj" -c %CONFIGURATION%
 artifacts:
 - path: devbuild.zip
   name: Development build of Kernel Simulator
