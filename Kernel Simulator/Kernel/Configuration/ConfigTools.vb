@@ -16,6 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Reflection
+Imports System.Reflection
+Imports System.Text.RegularExpressions
 Imports System.IO
 Imports Newtonsoft.Json.Linq
 
@@ -242,6 +245,80 @@ Namespace Kernel.Configuration
                 Wdbg(DebugLevel.E, "Category {0} not found!", ConfigCategory)
                 Throw New Exceptions.ConfigException(DoTranslation("Config category {0} not found."), ConfigCategory)
             End If
+        End Function
+
+        ''' <summary>
+        ''' Finds a setting with the matching pattern
+        ''' </summary>
+        Public Function FindSetting(Pattern As String, SettingsToken As JToken) As List(Of String)
+            Dim Results As New List(Of String)
+
+            'Search the settings for the given pattern
+            Try
+                For SectionIndex As Integer = 0 To SettingsToken.Count - 1
+                    Dim SectionToken As JToken = SettingsToken.ToList(SectionIndex)
+                    For SettingIndex As Integer = 0 To SectionToken.Count - 1
+                        Dim SettingToken As JToken = SectionToken.ToList(SettingIndex)("Keys")
+                        For KeyIndex As Integer = 0 To SettingToken.Count - 1
+                            Dim KeyName As String = DoTranslation(SettingToken.ToList(KeyIndex)("Name"))
+                            If Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase) Then
+                                Results.Add($"[{SectionIndex + 1}/{KeyIndex + 1}] {KeyName}")
+                            End If
+                        Next
+                    Next
+                Next
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message)
+                WStkTrc(ex)
+            End Try
+
+            'Return the results
+            Return Results
+        End Function
+
+        ''' <summary>
+        ''' Checks all the config variables to see if they can be parsed
+        ''' </summary>
+        Public Function CheckConfigVariables() As Dictionary(Of String, Boolean)
+            Dim SettingsToken As JToken = JToken.Parse(My.Resources.SettingsEntries)
+            Dim SaverSettingsToken As JToken = JToken.Parse(My.Resources.ScreensaverSettingsEntries)
+            Dim SplashSettingsToken As JToken = JToken.Parse(My.Resources.SplashSettingsEntries)
+            Dim Tokens As JToken() = {SettingsToken, SaverSettingsToken, SplashSettingsToken}
+            Dim Results As New Dictionary(Of String, Boolean)
+
+            'Parse all the settings
+            For Each Token As JToken In Tokens
+                For Each Section As JProperty In Token
+                    Dim SectionToken As JToken = Token(Section.Name)
+                    For Each Key As JToken In SectionToken("Keys")
+                        Dim KeyName As String = Key("Name")
+                        Dim KeyVariable As String = Key("Variable")
+                        Dim KeyEnumeration As String = Key("Enumeration")
+                        Dim KeyEnumerationInternal As Boolean = If(Key("EnumerationInternal"), False)
+                        Dim KeyEnumerationAssembly As String = Key("EnumerationAssembly")
+                        Dim KeyFound As Boolean
+
+                        'Check the variable
+                        KeyFound = CheckField(KeyVariable) Or CheckProperty(KeyVariable)
+                        Results.Add($"{KeyName}, {KeyVariable}", KeyFound)
+
+                        'Check the enumeration
+                        If KeyEnumeration IsNot Nothing Then
+                            Dim Result As Boolean
+                            If KeyEnumerationInternal Then
+                                'Apparently, we need to have a full assembly name for getting types.
+                                Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly.FullName) IsNot Nothing
+                            Else
+                                Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) IsNot Nothing
+                            End If
+                            Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result)
+                        End If
+                    Next
+                Next
+            Next
+
+            'Return the results
+            Return Results
         End Function
 
     End Module

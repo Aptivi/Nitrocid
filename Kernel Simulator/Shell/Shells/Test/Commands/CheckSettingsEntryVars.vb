@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS.Misc.Settings
+Imports KS.Kernel.Configuration
 
 Namespace Shell.Shells.Test.Commands
     Class Test_CheckSettingsEntryVarsCommand
@@ -24,7 +24,7 @@ Namespace Shell.Shells.Test.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim Results As Dictionary(Of String, Boolean) = CheckSettingsVariables()
+            Dim Results As Dictionary(Of String, Boolean) = CheckConfigVariables()
             Dim NotFound As New List(Of String)
 
             'Go through each and every result

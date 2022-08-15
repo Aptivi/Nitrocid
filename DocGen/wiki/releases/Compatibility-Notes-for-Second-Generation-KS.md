@@ -739,3 +739,10 @@ This function is now removed as a result of recent configuration improvements.
 ##### Graduated `Configuration` to `KS.Kernel`
 
 This configuration logic is smart enough to be graduated, since it's the core function in the kernel. It's used everywhere, including the `settings` command, which is an application that lets you adjust settings on the go.
+
+##### Graduated `FindSetting` and `CheckSettingsVariables`
+
+These two functions are probably unrelated to the settings app, but one of them is what `KS.Misc.Settings.SettingsApp` uses, and one of them is renamed to accomodate with the graduation.
+
+* Renamed functions:
+  - CheckSettingsVariables() -> CheckConfigVariables()

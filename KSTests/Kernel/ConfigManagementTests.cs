@@ -89,5 +89,17 @@ namespace KSTests
             Token["Delay in Milliseconds"].ToObject<int>().ShouldBe(2);
         }
 
+        /// <summary>
+        /// Tests checking the settings variables
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestCheckConfigVariables()
+        {
+            var SettingsVariables = ConfigTools.CheckConfigVariables();
+            SettingsVariables.ShouldNotBeNull();
+            SettingsVariables.ShouldNotBeEmpty();
+            SettingsVariables.Values.ShouldNotContain(false);
+        }
     }
 }
