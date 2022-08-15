@@ -731,3 +731,7 @@ Since these usually are undefined in Windows, we put these functions to KernelPl
 This is to separate the shell code for each tool from their folders to a unified namespace, `KS.Shell.Shells`. It houses every shell for every tool. This is to make creation of built-in shells easier.
 
 This means that `*ShellCommon` modules are moved to `KS.Shell.Shells.*` and every call to that module should be redirected to that namespace. The tools, however, stays intact.
+
+##### Removed MakePermanent()
+
+This function is now removed as a result of recent configuration improvements.
