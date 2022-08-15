@@ -38,6 +38,7 @@ Imports KS.Misc.Notifications
 #If SPECIFIER = "REL" Then
 Imports KS.Network
 Imports KS.Network.Transfer
+Imports KS.Kernel.Updates
 #End If
 
 Namespace Kernel

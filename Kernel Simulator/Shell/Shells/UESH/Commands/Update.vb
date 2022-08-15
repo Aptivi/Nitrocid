@@ -16,6 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+#If SPECIFIER = "REL" Then
+Imports KS.Kernel.Updates
+#End If
+
 Namespace Shell.Shells.UESH.Commands
     Class UpdateCommand
         Inherits CommandExecutor
