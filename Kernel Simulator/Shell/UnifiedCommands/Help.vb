@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Commands
+    ''' <summary>
+    ''' Opens the help page
+    ''' </summary>
+    ''' <remarks>
+    ''' This command allows you to get help for any specific command, including its usage. If no command is specified, all commands are listed.
+    ''' </remarks>
     Class HelpUnifiedCommand
         Inherits CommandExecutor
         Implements ICommand
