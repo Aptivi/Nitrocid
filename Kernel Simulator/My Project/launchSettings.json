@@ -1,0 +1,23 @@
+{
+  "profiles": {
+    "KS - Debug": {
+      "commandName": "Project",
+      "commandLineArgs": "debug"
+    },
+    "KS - Args": {
+      "commandName": "Project",
+      "commandLineArgs": "args"
+    },
+    "KS - Test Shell": {
+      "commandName": "Project",
+      "commandLineArgs": "testInteractive"
+    },
+    "KS - Reset": {
+      "commandName": "Project",
+      "commandLineArgs": "reset"
+    },
+    "KS": {
+      "commandName": "Project"
+    }
+  }
+}
