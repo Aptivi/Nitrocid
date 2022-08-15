@@ -1130,8 +1130,17 @@ Namespace Misc.Configuration
         ''' <returns>True if successful; False if unsuccessful.</returns>
         ''' <exception cref="Exceptions.ConfigException"></exception>
         Function TryCreateConfig(ConfigPath As String) As Boolean
+            Return TryCreateConfig(JObject.Parse(File.ReadAllText(ConfigPath)))
+        End Function
+
+        ''' <summary>
+        ''' Creates the kernel configuration file with custom path
+        ''' </summary>
+        ''' <returns>True if successful; False if unsuccessful.</returns>
+        ''' <exception cref="Exceptions.ConfigException"></exception>
+        Function TryCreateConfig(ConfigToken As JToken) As Boolean
             Try
-                CreateConfig(ConfigPath)
+                CreateConfig(ConfigToken)
                 Return True
             Catch ex As Exception
                 KernelEventManager.RaiseConfigSaveError(ex)
