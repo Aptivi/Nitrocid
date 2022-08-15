@@ -35,7 +35,6 @@ namespace KSTests
         [OneTimeSetUp]
         public static void ReadyEverything()
         {
-            Paths.InitPaths();
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
                 Config.CreateConfig();

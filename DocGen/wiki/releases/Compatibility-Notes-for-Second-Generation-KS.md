@@ -750,3 +750,7 @@ These two functions are probably unrelated to the settings app, but one of them 
 ##### Moved power management functions to `KS.Kernel.Power`
 
 These power management functions were there in `KernelTools` since the earliest version of KS. Now, they're relocated to `KS.Kernel.Power`.
+
+##### Removed `InitPaths` in favor of properties
+
+Now, we don't have to initialize paths everytime we make an internal app that depends on Kernel Simulator's paths. The call to the function that gets the path, `GetKernelPath`, however won't be removed because it's widely used and is unaffected. This reduces the `NullReferenceException` bugs regarding paths.

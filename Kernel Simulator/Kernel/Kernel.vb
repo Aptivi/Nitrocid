@@ -96,7 +96,6 @@ Namespace Kernel
                     CheckConsole()
 
                     'Initialize crucial things
-                    InitPaths()
                     If SafeMode Then ReadFailsafeConfig()
                     If Not IsOnUnix() Then Initialize255()
                     AddHandler AppDomain.CurrentDomain.AssemblyResolve, AddressOf LoadFromAssemblySearchPaths

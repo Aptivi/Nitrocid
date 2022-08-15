@@ -466,11 +466,12 @@ Namespace Kernel
         ''' </summary>
         Sub FactoryReset()
             'Delete every single thing found in KernelPaths
-            For Each PathName As String In KernelPaths.Keys
-                If FileExists(KernelPaths(PathName)) Then
-                    File.Delete(KernelPaths(PathName))
+            For Each PathName As String In [Enum].GetNames(GetType(KernelPathType))
+                Dim TargetPath As String = GetKernelPath(PathName)
+                If FileExists(TargetPath) Then
+                    File.Delete(TargetPath)
                 Else
-                    Directory.Delete(KernelPaths(PathName), True)
+                    Directory.Delete(TargetPath, True)
                 End If
             Next
 

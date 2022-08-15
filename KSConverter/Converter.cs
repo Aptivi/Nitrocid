@@ -54,9 +54,6 @@ namespace KSConverter
                 var ListOfOldPaths = ConverterTools.GetOldPaths("");
                 var ListOfBackups = ConverterTools.GetOldPaths("KSBackup");
 
-                // Initialize paths
-                Paths.InitPaths();
-
                 // Load user token
                 UserManagement.LoadUserToken();
 

@@ -63,33 +63,143 @@ Namespace Files
                     Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/fx").Replace("\", "/")
                 End If
 #End If
-
             End Get
         End Property
 
-        'Variables
-        Friend KernelPaths As New Dictionary(Of String, String)
+        ''' <summary>
+        ''' Mods path
+        ''' </summary>
+        Public ReadOnly Property ModsPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KSMods/")
+            End Get
+        End Property
 
         ''' <summary>
-        ''' Initializes the paths
+        ''' Configuration path
         ''' </summary>
-        Sub InitPaths()
-            KernelPaths.AddIfNotFound("Mods", HomePath + "/KSMods/")
-            KernelPaths.AddIfNotFound("Configuration", HomePath + "/KernelConfig.json")
-            KernelPaths.AddIfNotFound("Debugging", HomePath + "/kernelDbg.log")
-            KernelPaths.AddIfNotFound("Aliases", HomePath + "/Aliases.json")
-            KernelPaths.AddIfNotFound("Users", HomePath + "/Users.json")
-            KernelPaths.AddIfNotFound("FTPSpeedDial", HomePath + "/FTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("SFTPSpeedDial", HomePath + "/SFTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("DebugDevNames", HomePath + "/DebugDeviceNames.json")
-            KernelPaths.AddIfNotFound("MOTD", HomePath + "/MOTD.txt")
-            KernelPaths.AddIfNotFound("MAL", HomePath + "/MAL.txt")
-            KernelPaths.AddIfNotFound("CustomSaverSettings", HomePath + "/CustomSaverSettings.json")
-            KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
-            KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
-            KernelPaths.AddIfNotFound("CustomLanguages", HomePath + "/KSLanguages/")
-            KernelPaths.AddIfNotFound("CustomSplashes", HomePath + "/KSSplashes/")
-        End Sub
+        Public ReadOnly Property ConfigurationPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KernelConfig.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Debugging path
+        ''' </summary>
+        Public ReadOnly Property DebuggingPath As String
+            Get
+                Return NeutralizePath(HomePath + "/kernelDbg.log")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Aliases path
+        ''' </summary>
+        Public ReadOnly Property AliasesPath As String
+            Get
+                Return NeutralizePath(HomePath + "/Aliases.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Users path
+        ''' </summary>
+        Public ReadOnly Property UsersPath As String
+            Get
+                Return NeutralizePath(HomePath + "/Users.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' FTPSpeedDial path
+        ''' </summary>
+        Public ReadOnly Property FTPSpeedDialPath As String
+            Get
+                Return NeutralizePath(HomePath + "/FTP_SpeedDial.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' SFTPSpeedDial path
+        ''' </summary>
+        Public ReadOnly Property SFTPSpeedDialPath As String
+            Get
+                Return NeutralizePath(HomePath + "/SFTP_SpeedDial.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' DebugDevNames path
+        ''' </summary>
+        Public ReadOnly Property DebugDevNamesPath As String
+            Get
+                Return NeutralizePath(HomePath + "/DebugDeviceNames.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' MOTD path
+        ''' </summary>
+        Public ReadOnly Property MOTDPath As String
+            Get
+                Return NeutralizePath(HomePath + "/MOTD.txt")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' MAL path
+        ''' </summary>
+        Public ReadOnly Property MALPath As String
+            Get
+                Return NeutralizePath(HomePath + "/MAL.txt")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' CustomSaverSettings path
+        ''' </summary>
+        Public ReadOnly Property CustomSaverSettingsPath As String
+            Get
+                Return NeutralizePath(HomePath + "/CustomSaverSettings.json")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Events path
+        ''' </summary>
+        Public ReadOnly Property EventsPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KSEvents/")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Reminders path
+        ''' </summary>
+        Public ReadOnly Property RemindersPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KSReminders/")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' CustomLanguages path
+        ''' </summary>
+        Public ReadOnly Property CustomLanguagesPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KSLanguages/")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' CustomSplashes path
+        ''' </summary>
+        Public ReadOnly Property CustomSplashesPath As String
+            Get
+                Return NeutralizePath(HomePath + "/KSSplashes/")
+            End Get
+        End Property
 
         ''' <summary>
         ''' Gets the neutralized kernel path
@@ -98,11 +208,40 @@ Namespace Files
         ''' <returns>A kernel path</returns>
         ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
         Public Function GetKernelPath(PathType As KernelPathType) As String
-            If [Enum].IsDefined(GetType(KernelPathType), PathType) Then
-                Return NeutralizePath(KernelPaths(PathType.ToString))
-            Else
-                Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
-            End If
+            Select Case PathType
+                Case KernelPathType.Aliases
+                    Return AliasesPath
+                Case KernelPathType.Configuration
+                    Return ConfigurationPath
+                Case KernelPathType.CustomLanguages
+                    Return CustomLanguagesPath
+                Case KernelPathType.CustomSaverSettings
+                    Return CustomSaverSettingsPath
+                Case KernelPathType.CustomSplashes
+                    Return CustomSplashesPath
+                Case KernelPathType.DebugDevNames
+                    Return DebugDevNamesPath
+                Case KernelPathType.Debugging
+                    Return DebuggingPath
+                Case KernelPathType.Events
+                    Return EventsPath
+                Case KernelPathType.FTPSpeedDial
+                    Return FTPSpeedDialPath
+                Case KernelPathType.MAL
+                    Return MALPath
+                Case KernelPathType.Mods
+                    Return ModsPath
+                Case KernelPathType.MOTD
+                    Return MOTDPath
+                Case KernelPathType.Reminders
+                    Return RemindersPath
+                Case KernelPathType.SFTPSpeedDial
+                    Return SFTPSpeedDialPath
+                Case KernelPathType.Users
+                    Return UsersPath
+                Case Else
+                    Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
+            End Select
         End Function
 
     End Module
