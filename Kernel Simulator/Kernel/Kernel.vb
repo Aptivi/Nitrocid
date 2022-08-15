@@ -105,6 +105,7 @@ Namespace Kernel
                     ParseArguments(Args.ToList, ArgumentType.PreBootCommandLineArgs)
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
+                    'TODO: Move this to a separate function
 #If SPECIFIER = "REL" Then
                     If Not NetworkAvailable Then
                         NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
@@ -112,7 +113,14 @@ Namespace Kernel
                                                     NotifPriority.Medium, NotifType.Normal))
                     End If
                     If NetworkAvailable Then
-                        If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
+                        'Check to see if we're running from Ubuntu PPA
+                        Dim PPASpotted As Boolean = ExecPath.StartsWith("/usr/lib/ks")
+                        If ExecPath.StartsWith("/usr/lib/ks") Then
+                            ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error)
+                        End If
+
+                        'Download debug symbols
+                        If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) And Not PPASpotted Then
                             Try
 #If NETCOREAPP Then
                                 DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
@@ -128,8 +136,8 @@ Namespace Kernel
                     End If
 #End If
 
-                    'Check for console size
-                    If CheckingForConsoleSize Then
+                        'Check for console size
+                        If CheckingForConsoleSize Then
                         'Check for the minimum console window requirements (80x24)
                         Do While Console.WindowWidth < 80 Or Console.WindowHeight < 24
                             Write(DoTranslation("Your console is too small to run properly:") + " {0}x{1}", True, ColTypes.Warning, Console.WindowWidth, Console.WindowHeight)
