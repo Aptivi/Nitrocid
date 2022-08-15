@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Net.Sockets
+Imports KS.Kernel.Power
 Imports KS.Misc.Notifications
 Imports KS.Misc.Screensaver
 

@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS.Shell.Shells.Test
+Imports KS.Kernel.Power
 
 Namespace Shell.Shells.UESH.Commands
     Class TestShellCommand

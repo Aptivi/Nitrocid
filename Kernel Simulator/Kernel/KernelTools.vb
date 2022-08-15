@@ -26,6 +26,7 @@ Imports KS.Hardware
 Imports KS.Misc.Calendar.Events
 Imports KS.Misc.Calendar.Reminders
 Imports KS.Kernel.Configuration
+Imports KS.Kernel.Power
 Imports KS.Misc.Notifications
 Imports KS.Misc.Reflection
 Imports KS.Misc.Screensaver
@@ -246,57 +247,6 @@ Namespace Kernel
                 Write(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.GetType.FullName, ex.Message)
                 WStkTrc(ex)
             End Try
-        End Sub
-
-        '----------------------------------------------- Power management -----------------------------------------------
-
-        ''' <summary>
-        ''' Manage computer's (actually, simulated computer) power
-        ''' </summary>
-        ''' <param name="PowerMode">Selects the power mode</param>
-        Public Sub PowerManage(PowerMode As PowerMode)
-            PowerManage(PowerMode, "0.0.0.0", RPCPort)
-        End Sub
-
-        ''' <summary>
-        ''' Manage computer's (actually, simulated computer) power
-        ''' </summary>
-        ''' <param name="PowerMode">Selects the power mode</param>
-        Public Sub PowerManage(PowerMode As PowerMode, IP As String)
-            PowerManage(PowerMode, IP, RPCPort)
-        End Sub
-
-        ''' <summary>
-        ''' Manage computer's (actually, simulated computer) power
-        ''' </summary>
-        ''' <param name="PowerMode">Selects the power mode</param>
-        Public Sub PowerManage(PowerMode As PowerMode, IP As String, Port As Integer)
-            Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
-            Select Case PowerMode
-                Case PowerMode.Shutdown
-                    KernelEventManager.RaisePreShutdown()
-                    Write(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
-                    ResetEverything()
-                    KernelEventManager.RaisePostShutdown()
-                    RebootRequested = True
-                    LogoutRequested = True
-                    KernelShutdown = True
-                Case PowerMode.Reboot, PowerMode.RebootSafe
-                    KernelEventManager.RaisePreReboot()
-                    Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
-                    ResetEverything()
-                    KernelEventManager.RaisePostReboot()
-                    Console.Clear()
-                    RebootRequested = True
-                    LogoutRequested = True
-                Case PowerMode.RemoteShutdown
-                    SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
-                Case PowerMode.RemoteRestart
-                    SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
-                Case PowerMode.RemoteRestartSafe
-                    SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port)
-            End Select
-            SafeMode = PowerMode = PowerMode.RebootSafe
         End Sub
 
         '----------------------------------------------- Init and reset -----------------------------------------------

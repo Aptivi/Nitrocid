@@ -746,3 +746,7 @@ These two functions are probably unrelated to the settings app, but one of them 
 
 * Renamed functions:
   - CheckSettingsVariables() -> CheckConfigVariables()
+
+##### Moved power management functions to `KS.Kernel.Power`
+
+These power management functions were there in `KernelTools` since the earliest version of KS. Now, they're relocated to `KS.Kernel.Power`.
