@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you translate strings that are found in the current language file in the source code from the current source language to the target language, and prints it in the console.
+    ''' </summary>
     Class Test_TranslateCommand
         Inherits CommandExecutor
         Implements ICommand

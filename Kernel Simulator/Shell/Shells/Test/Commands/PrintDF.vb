@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you send any message to the debugger, using <see cref="Wdbg(DebugLevel, String, Object())"/> call. It provides support for variables. It only works if you have enabled the debugger which you can enable by debug 1.
+    ''' </summary>
     Class Test_PrintDFCommand
         Inherits CommandExecutor
         Implements ICommand

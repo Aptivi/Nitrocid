@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the powerline glyphs
+    ''' </summary>
     Class Test_PowerLineTestCommand
         Inherits CommandExecutor
         Implements ICommand

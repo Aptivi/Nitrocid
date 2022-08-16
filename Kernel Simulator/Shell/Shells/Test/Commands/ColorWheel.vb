@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Opens the colorwheel facility to test choosing the color based on the type of color whether it's a 255-color or a true color.
+    ''' </summary>
     Class Test_ColorWheelCommand
         Inherits CommandExecutor
         Implements ICommand

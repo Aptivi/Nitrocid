@@ -19,6 +19,9 @@
 Imports KS.Hardware
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you probe hardware in the testing session.
+    ''' </summary>
     Class Test_ProbeHwCommand
         Inherits CommandExecutor
         Implements ICommand

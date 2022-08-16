@@ -20,6 +20,9 @@ Imports System.Globalization
 Imports KS.TimeDate
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you render date using different calendar types (one of Gregorian, Hijri, Persian, Saudi-Hijri, Thai-Buddhist)
+    ''' </summary>
     Class Test_DCalendCommand
         Inherits CommandExecutor
         Implements ICommand

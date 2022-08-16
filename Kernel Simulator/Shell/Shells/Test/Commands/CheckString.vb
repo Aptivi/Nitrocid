@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Checks the specified string if it exists in the localization files found in the resources of KS (found in the language JSON file)
+    ''' </summary>
     Class Test_CheckStringCommand
         Inherits CommandExecutor
         Implements ICommand

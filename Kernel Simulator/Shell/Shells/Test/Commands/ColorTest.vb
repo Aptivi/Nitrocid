@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the 255 color compatibility.
+    ''' </summary>
     Class Test_ColorTestCommand
         Inherits CommandExecutor
         Implements ICommand

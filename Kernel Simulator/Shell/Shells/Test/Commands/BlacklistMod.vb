@@ -19,6 +19,9 @@
 Imports KS.Modifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you blacklist a mod in the testing shell.
+    ''' </summary>
     Class Test_BlacklistModCommand
         Inherits CommandExecutor
         Implements ICommand

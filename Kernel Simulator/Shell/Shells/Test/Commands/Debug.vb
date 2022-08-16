@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you enable and disable debugging mode. It only enables the local debugging which will write to your home directory. This allows printd and printdf to function.
+    ''' </summary>
     Class Test_DebugCommand
         Inherits CommandExecutor
         Implements ICommand

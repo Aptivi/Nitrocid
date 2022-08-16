@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Checks how many milliseconds (or ticks if started with the -t switch) did it really take to sleep.
+    ''' </summary>
     Class Test_SleepTookCommand
         Inherits CommandExecutor
         Implements ICommand

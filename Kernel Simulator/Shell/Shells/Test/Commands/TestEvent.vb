@@ -19,6 +19,9 @@
 Imports Microsoft.VisualBasic
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you raise any event. If you have loaded mods, you can use this command for testing event raises.
+    ''' </summary>
     Class Test_TestEventCommand
         Inherits CommandExecutor
         Implements ICommand

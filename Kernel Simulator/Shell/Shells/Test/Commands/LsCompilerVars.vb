@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you list all the compiler variables used to build Kernel Simulator.
+    ''' </summary>
     Class Test_LsCompilerVarsCommand
         Inherits CommandExecutor
         Implements ICommand

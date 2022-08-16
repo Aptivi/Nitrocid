@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you parse placeholders in the text without the option of changing color and the newline.
+    ''' </summary>
     Class Test_PlacesCommand
         Inherits CommandExecutor
         Implements ICommand

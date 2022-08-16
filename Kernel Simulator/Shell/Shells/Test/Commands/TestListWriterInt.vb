@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the list writer using the Integer type.
+    ''' </summary>
     Class Test_TestListWriterIntCommand
         Inherits CommandExecutor
         Implements ICommand

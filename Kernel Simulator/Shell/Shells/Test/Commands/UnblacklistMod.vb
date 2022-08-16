@@ -19,6 +19,9 @@
 Imports KS.Modifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you unblacklist a mod in the testing shell.
+    ''' </summary>
     Class Test_UnblacklistModCommand
         Inherits CommandExecutor
         Implements ICommand

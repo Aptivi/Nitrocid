@@ -19,6 +19,9 @@
 Imports System.Globalization
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the available cultures installed on the system.
+    ''' </summary>
     Class Test_LsCulturesCommand
         Inherits CommandExecutor
         Implements ICommand

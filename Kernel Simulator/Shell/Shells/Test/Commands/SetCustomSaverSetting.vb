@@ -19,6 +19,9 @@
 Imports KS.Misc.Screensaver.Customized
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you set a setting from a custom saver. Load all the mods and screensavers first before using this command.
+    ''' </summary>
     Class Test_SetCustomSaverSettingCommand
         Inherits CommandExecutor
         Implements ICommand

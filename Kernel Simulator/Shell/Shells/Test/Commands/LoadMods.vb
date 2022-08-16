@@ -19,6 +19,9 @@
 Imports KS.Modifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you load mods in the testing shell.
+    ''' </summary>
     Class Test_LoadModsCommand
         Inherits CommandExecutor
         Implements ICommand

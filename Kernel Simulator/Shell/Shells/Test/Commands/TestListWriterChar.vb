@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the list writer using the Char type.
+    ''' </summary>
     Class Test_TestListWriterCharCommand
         Inherits CommandExecutor
         Implements ICommand

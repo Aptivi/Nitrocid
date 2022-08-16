@@ -19,6 +19,9 @@
 Imports KS.Misc.Encryption
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you estimate the time taken to encode a specified string on milliseconds using SHA256 algorithm.
+    ''' </summary>
     Class Test_TestSHA256Command
         Inherits CommandExecutor
         Implements ICommand

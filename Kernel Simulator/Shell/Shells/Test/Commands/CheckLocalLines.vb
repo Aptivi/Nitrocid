@@ -19,6 +19,9 @@
 Imports Newtonsoft.Json.Linq
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Checks the localization files to see if the line numbers in them are all equal.
+    ''' </summary>
     Class Test_CheckLocalLinesCommand
         Inherits CommandExecutor
         Implements ICommand

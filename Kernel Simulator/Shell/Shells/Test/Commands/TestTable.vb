@@ -19,6 +19,9 @@
 Imports KS.TimeDate
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Tests the table drawing
+    ''' </summary>
     Class Test_TestTableCommand
         Inherits CommandExecutor
         Implements ICommand

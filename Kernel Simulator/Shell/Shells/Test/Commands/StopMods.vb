@@ -19,6 +19,9 @@
 Imports KS.Modifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you stop mods in the testing shell.
+    ''' </summary>
     Class Test_StopModsCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,9 @@
 Imports KS.Network.RemoteDebug
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you enable remote debugger inside the debugging core. This allows users who need to see what's going on in another computer running KS to see its debugging logs. It uses port number 3014 and can be changed.
+    ''' </summary>
     Class Test_RDebugCommand
         Inherits CommandExecutor
         Implements ICommand

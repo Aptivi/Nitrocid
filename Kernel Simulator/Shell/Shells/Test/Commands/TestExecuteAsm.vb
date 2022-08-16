@@ -19,6 +19,9 @@
 Imports System.Reflection
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the assembly execution by reflection
+    ''' </summary>
     Class Test_TestExecuteAsmCommand
         Inherits CommandExecutor
         Implements ICommand

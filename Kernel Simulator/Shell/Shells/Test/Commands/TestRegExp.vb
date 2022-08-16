@@ -19,6 +19,9 @@
 Imports System.Text.RegularExpressions
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the regular expression pattern on a specific string. It prints all matches.
+    ''' </summary>
     Class Test_TestRegExpCommand
         Inherits CommandExecutor
         Implements ICommand

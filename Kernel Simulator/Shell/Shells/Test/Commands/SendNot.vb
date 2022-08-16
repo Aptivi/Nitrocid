@@ -19,6 +19,9 @@
 Imports KS.Misc.Notifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the notification system by sending the notification with the specified title and description on a specific priority.
+    ''' </summary>
     Class Test_SendNotCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the 24-bit color compatibility, assuming that R, G, and B aren't less than 0 or greater than 255.
+    ''' </summary>
     Class Test_ColorTrueTestCommand
         Inherits CommandExecutor
         Implements ICommand

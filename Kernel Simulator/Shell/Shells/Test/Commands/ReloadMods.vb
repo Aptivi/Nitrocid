@@ -19,6 +19,9 @@
 Imports KS.Modifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you reload mods in the testing shell.
+    ''' </summary>
     Class Test_ReloadModsCommand
         Inherits CommandExecutor
         Implements ICommand

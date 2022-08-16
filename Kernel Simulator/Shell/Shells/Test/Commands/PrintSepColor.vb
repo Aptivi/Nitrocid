@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you print the separator using any text you want with color support.
+    ''' </summary>
     Class Test_PrintSepColorCommand
         Inherits CommandExecutor
         Implements ICommand

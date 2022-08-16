@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It force crashes the kernel using custom exception types, messages, reboot times, etc. It provides support for variables.
+    ''' </summary>
     Class Test_PanicFCommand
         Inherits CommandExecutor
         Implements ICommand

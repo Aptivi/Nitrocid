@@ -19,6 +19,9 @@
 Imports KS.Misc.Notifications
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the notification system by sending the notification with the specified title and description on a specific priority with progress support to test the incrementation. It can be set to fail at a specific percentage (0-100).
+    ''' </summary>
     Class Test_SendNotProgCommand
         Inherits CommandExecutor
         Implements ICommand

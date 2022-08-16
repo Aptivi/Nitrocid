@@ -20,6 +20,9 @@ Imports Figgle
 Imports KS.Misc.Writers.FancyWriters.Tools
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the figlet print to print every text, using the font and colors that you need. It has an additional feature of variables.
+    ''' </summary>
     Class Test_PrintFigletFCommand
         Inherits CommandExecutor
         Implements ICommand

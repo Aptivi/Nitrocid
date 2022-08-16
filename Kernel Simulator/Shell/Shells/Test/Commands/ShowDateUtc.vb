@@ -19,6 +19,9 @@
 Imports KS.TimeDate
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Shows the current date (UTC)
+    ''' </summary>
     Class Test_ShowDateUtcCommand
         Inherits CommandExecutor
         Implements ICommand

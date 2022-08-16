@@ -19,6 +19,9 @@
 Imports System.Text
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you list all the available codepages installed on the system.
+    ''' </summary>
     Class Test_ListCodePagesCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,9 @@
 Imports KS.Files.LineEndings
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Gets the line ending style from text file.
+    ''' </summary>
     Class Test_GetLineStyleCommand
         Inherits CommandExecutor
         Implements ICommand

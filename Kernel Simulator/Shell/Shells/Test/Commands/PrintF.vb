@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It lets you test the <see cref="Write(String, Boolean, ColTypes, Object())"/> call to print every text, using the lines and colors that you need. It comes with format support.
+    ''' </summary>
     Class Test_PrintFCommand
         Inherits CommandExecutor
         Implements ICommand

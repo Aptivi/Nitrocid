@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' It shuts down the system.
+    ''' </summary>
     Class Test_ShutdownCommand
         Inherits CommandExecutor
         Implements ICommand

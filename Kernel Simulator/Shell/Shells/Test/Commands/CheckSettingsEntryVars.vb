@@ -19,6 +19,9 @@
 Imports KS.Kernel.Configuration
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Checks the settings entry variables to see if it can be accessible using the settings program.
+    ''' </summary>
     Class Test_CheckSettingsEntryVarsCommand
         Inherits CommandExecutor
         Implements ICommand
