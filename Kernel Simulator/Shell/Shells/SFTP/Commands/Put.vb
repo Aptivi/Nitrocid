@@ -19,6 +19,16 @@
 Imports KS.Network.SFTP.Transfer
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Uploads the file to the server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you need to add your local files in your current working directory to the current working server directory, you must have administrative privileges to add them.
+    ''' <br></br>
+    ''' For example, if you're adding the picture of the New Delhi city using the PNG format, you need to upload it to the server for everyone to see. Assuming that it's "NewDelhi.PNG", use "put NewDelhi.PNG."
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class SFTP_PutCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,14 @@
 Imports KS.Network.SFTP
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Connects your SFTP client to any SFTP server that is valid
+    ''' </summary>
+    ''' <remarks>
+    ''' This command must be executed before running any interactive SFTP server commands, like get, put, cdl, cdr, etc.
+    ''' <br></br>
+    ''' This command opens a new session to connect your SFTP client to any SFTP server that is open to the public, and valid. It then asks for your credentials. Try with anonymous first, then usernames.
+    ''' </remarks>
     Class SFTP_ConnectCommand
         Inherits CommandExecutor
         Implements ICommand

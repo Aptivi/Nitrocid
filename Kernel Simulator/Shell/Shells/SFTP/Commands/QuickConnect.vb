@@ -19,6 +19,14 @@
 Imports KS.Network.SFTP
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Prompts you to select an address to connect to
+    ''' </summary>
+    ''' <remarks>
+    ''' We have implemented speed dial to the SFTP client to quickly connect to the last-connected SFTP server. This is so you don't have to repeat the connect command to the same server over and over.
+    ''' <br></br>
+    ''' For this, we have implemented this command for easier access to SFTP servers.
+    ''' </remarks>
     Class SFTP_QuickConnectCommand
         Inherits CommandExecutor
         Implements ICommand

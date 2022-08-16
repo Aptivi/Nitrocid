@@ -19,6 +19,12 @@
 Imports KS.Network.SFTP.Filesystem
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Changes your remote directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you change your remote directory in your connected SFTP server to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
+    ''' </remarks>
     Class SFTP_CdrCommand
         Inherits CommandExecutor
         Implements ICommand

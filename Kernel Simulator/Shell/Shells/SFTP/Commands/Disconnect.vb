@@ -19,6 +19,12 @@
 Imports KS.Shell.Shells.FTP
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Disconnects from the current working server
+    ''' </summary>
+    ''' <remarks>
+    ''' This command sends the quit command to the SFTP server so the server knows that you're going away. It basically disconnects you from the server to connect to the server again or re-connect to the last server connected.
+    ''' </remarks>
     Class SFTP_DisconnectCommand
         Inherits CommandExecutor
         Implements ICommand

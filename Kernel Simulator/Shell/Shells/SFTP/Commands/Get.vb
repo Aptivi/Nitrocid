@@ -19,6 +19,12 @@
 Imports KS.Network.SFTP.Transfer
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Downloads a file from the current working directory
+    ''' </summary>
+    ''' <remarks>
+    ''' Downloads the binary or text file and saves it to the current working local directory for you to use the downloaded file that is provided in the SFTP server.
+    ''' </remarks>
     Class SFTP_GetCommand
         Inherits CommandExecutor
         Implements ICommand

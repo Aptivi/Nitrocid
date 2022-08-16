@@ -19,6 +19,12 @@
 Imports KS.Network.SFTP.Filesystem
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Changes your local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you change your local directory in your hard drives to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
+    ''' </remarks>
     Class SFTP_CdlCommand
         Inherits CommandExecutor
         Implements ICommand
