@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells.Json.Commands
+    ''' <summary>
+    ''' Deletes a property
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to remove a property from the end of the JSON file.
+    ''' </remarks>
     Class JsonShell_DelPropertyCommand
         Inherits CommandExecutor
         Implements ICommand

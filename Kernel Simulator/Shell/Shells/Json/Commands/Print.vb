@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells.Json.Commands
+    ''' <summary>
+    ''' Prints a property or the whole file
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to print the contents of either the full JSON file or a property.
+    ''' </remarks>
     Class JsonShell_PrintCommand
         Inherits CommandExecutor
         Implements ICommand

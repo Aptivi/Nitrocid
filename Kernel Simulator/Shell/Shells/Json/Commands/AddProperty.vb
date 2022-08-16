@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells.Json.Commands
+    ''' <summary>
+    ''' Adds a new property
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to add a property to the end of the parent property. Note that the parent property must exist.
+    ''' </remarks>
     Class JsonShell_AddPropertyCommand
         Inherits CommandExecutor
         Implements ICommand

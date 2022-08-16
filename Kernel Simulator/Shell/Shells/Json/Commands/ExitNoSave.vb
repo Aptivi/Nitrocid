@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Json.Commands
+    ''' <summary>
+    ''' Exits the JSON shell without saving changes to the JSON file if any.
+    ''' </summary>
     Class JsonShell_ExitNoSaveCommand
         Inherits CommandExecutor
         Implements ICommand

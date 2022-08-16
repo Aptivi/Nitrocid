@@ -19,6 +19,28 @@
 Imports KS.Misc.Editors.JsonShell
 
 Namespace Shell.Shells.Json.Commands
+    ''' <summary>
+    ''' Saves changes to a JSON file
+    ''' </summary>
+    ''' <remarks>
+    ''' If you're done with the JSON file, you can save it to the current JSON file. You can optionally beautify or minify the JSON file using the below switches:
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-b</term>
+    ''' <description>Beautifies the JSON file while saving</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-m</term>
+    ''' <description>Minifies the JSON file while saving</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class JsonShell_SaveCommand
         Inherits CommandExecutor
         Implements ICommand
