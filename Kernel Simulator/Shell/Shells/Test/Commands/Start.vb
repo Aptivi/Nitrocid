@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Test.Commands
+    ''' <summary>
+    ''' Exits the test shell forcefully.
+    ''' </summary>
     Class Test_StartCommand
         Inherits CommandExecutor
         Implements ICommand
