@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Deletes the bytes
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to remove a extraneous bytes in a specified range. You can use the print command to review the changes.
+    ''' </remarks>
     Class HexEdit_DelBytesCommand
         Inherits CommandExecutor
         Implements ICommand

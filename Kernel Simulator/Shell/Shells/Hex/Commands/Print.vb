@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Prints the contents of the file
+    ''' </summary>
+    ''' <remarks>
+    ''' Prints the contents of the file with bytes to the console. This is useful if you need to view the contents before and after editing.
+    ''' </remarks>
     Class HexEdit_PrintCommand
         Inherits CommandExecutor
         Implements ICommand

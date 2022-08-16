@@ -20,6 +20,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Removes the specified byte number
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to remove a specified byte by number. You can use the print command to take a look at the unneeded byte and its number.
+    ''' </remarks>
     Class HexEdit_DelByteCommand
         Inherits CommandExecutor
         Implements ICommand

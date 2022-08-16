@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Queries a byte in a specified byte, a range of bytes, or entirely
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to query a byte and get its number from the specified byte, a range of bytes, or entirely.
+    ''' </remarks>
     Class HexEdit_QueryByteCommand
         Inherits CommandExecutor
         Implements ICommand

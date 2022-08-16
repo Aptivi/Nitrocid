@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Exits your hex editor shell
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to exit the hex editor shell without saving changes.
+    ''' </remarks>
     Class HexEdit_ExitNoSaveCommand
         Inherits CommandExecutor
         Implements ICommand

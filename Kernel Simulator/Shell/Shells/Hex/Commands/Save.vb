@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Saves the file
+    ''' </summary>
+    ''' <remarks>
+    ''' This command will save any changes made to the binary file that is currently open.
+    ''' </remarks>
     Class HexEdit_SaveCommand
         Inherits CommandExecutor
         Implements ICommand

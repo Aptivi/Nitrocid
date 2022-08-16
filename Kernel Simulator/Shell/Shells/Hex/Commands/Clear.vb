@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Clears the binary file
+    ''' </summary>
     Class HexEdit_ClearCommand
         Inherits CommandExecutor
         Implements ICommand

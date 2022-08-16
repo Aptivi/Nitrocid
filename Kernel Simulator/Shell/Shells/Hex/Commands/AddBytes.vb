@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Adds new bytes at the end of the file
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to add new bytes at the end of the file.
+    ''' </remarks>
     Class HexEdit_AddBytesCommand
         Inherits CommandExecutor
         Implements ICommand

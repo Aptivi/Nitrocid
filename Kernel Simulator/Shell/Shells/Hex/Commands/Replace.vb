@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.HexEdit
 
 Namespace Shell.Shells.Hex.Commands
+    ''' <summary>
+    ''' Replaces a byte with another one
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to replace a byte with another one.
+    ''' </remarks>
     Class HexEdit_ReplaceCommand
         Inherits CommandExecutor
         Implements ICommand
