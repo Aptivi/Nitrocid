@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Removes the specified line number
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to remove a specified line by number. You can use the print command to take a look at the unneeded line and its number.
+    ''' </remarks>
     Class TextEdit_DelLineCommand
         Inherits CommandExecutor
         Implements ICommand

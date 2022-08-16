@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Replaces a word or phrase with another one using regular expressions
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to replace a word or phrase enclosed in double quotes with another one enclosed in double quotes.
+    ''' </remarks>
     Class TextEdit_ReplaceRegexCommand
         Inherits CommandExecutor
         Implements ICommand

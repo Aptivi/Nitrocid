@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Saves the file
+    ''' </summary>
+    ''' <remarks>
+    ''' This command will save any changes made to the text file that is currently open
+    ''' </remarks>
     Class TextEdit_SaveCommand
         Inherits CommandExecutor
         Implements ICommand

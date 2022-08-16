@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Deletes a word or phrase from line number
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to remove an extraneous word or phrase enclosed in double quotes in a specified line number. You can use the print command to review the changes and line numbers.
+    ''' </remarks>
     Class TextEdit_DelWordCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Adds new lines with text at the end of the file
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to add new lines at the end of the file.
+    ''' </remarks>
     Class TextEdit_AddLinesCommand
         Inherits CommandExecutor
         Implements ICommand

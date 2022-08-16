@@ -17,6 +17,9 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Clears the text file
+    ''' </summary>
     Class TextEdit_ClearCommand
         Inherits CommandExecutor
         Implements ICommand

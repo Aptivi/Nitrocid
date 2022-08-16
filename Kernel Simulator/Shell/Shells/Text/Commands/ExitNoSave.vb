@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Exits your text editor shell
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to exit the text editor shell without saving changes.
+    ''' </remarks>
     Class TextEdit_ExitNoSaveCommand
         Inherits CommandExecutor
         Implements ICommand

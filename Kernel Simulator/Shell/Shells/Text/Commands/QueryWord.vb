@@ -21,6 +21,12 @@ Imports Extensification.IntegerExts
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Queries a word in a specified line or all lines
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to query a word and get its number from the specified line or all lines.
+    ''' </remarks>
     Class TextEdit_QueryWordCommand
         Inherits CommandExecutor
         Implements ICommand

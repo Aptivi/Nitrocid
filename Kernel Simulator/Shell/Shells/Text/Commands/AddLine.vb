@@ -19,6 +19,12 @@
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Adds a new line with text at the end of the file
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to add a new line at the end of the file with the content that is enclosed in double quotes. You can also add nothing by addline "".
+    ''' </remarks>
     Class TextEdit_AddLineCommand
         Inherits CommandExecutor
         Implements ICommand

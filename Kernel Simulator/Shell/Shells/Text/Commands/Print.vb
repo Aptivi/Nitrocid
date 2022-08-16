@@ -20,6 +20,12 @@ Imports Extensification.IntegerExts
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Prints the contents of the file
+    ''' </summary>
+    ''' <remarks>
+    ''' Prints the contents of the file with line numbers to the console. This is useful if you need to view the contents before and after editing.
+    ''' </remarks>
     Class TextEdit_PrintCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Edits a line
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to edit a line seamlessly.
+    ''' </remarks>
     Class TextEdit_EditLineCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Replaces a word or phrase with another one in a line
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to replace a word or a complete phrase enclosed in double quotes with another one (enclosed in double quotes again) in a line.
+    ''' </remarks>
     Class TextEdit_ReplaceInlineCommand
         Inherits CommandExecutor
         Implements ICommand

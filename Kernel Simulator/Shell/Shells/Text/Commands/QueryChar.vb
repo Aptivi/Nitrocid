@@ -21,6 +21,12 @@ Imports KS.Misc.Reflection
 Imports KS.Misc.Editors.TextEdit
 
 Namespace Shell.Shells.Text.Commands
+    ''' <summary>
+    ''' Queries a character in a specified line or all lines
+    ''' </summary>
+    ''' <remarks>
+    ''' You can use this command to query a character and get its number from the specified line or all lines. This is useful for some commands like delcharnum.
+    ''' </remarks>
     Class TextEdit_QueryCharCommand
         Inherits CommandExecutor
         Implements ICommand
