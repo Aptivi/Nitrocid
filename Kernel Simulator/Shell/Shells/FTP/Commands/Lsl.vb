@@ -19,6 +19,30 @@
 Imports KS.Files.Folders
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Lists the contents of the current folder or the folder provided
+    ''' </summary>
+    ''' <remarks>
+    ''' You can see the list of the files and sub-directories contained in the current working directory if no directories are specified, or in the specified directory, if specified.
+    ''' <br></br>
+    ''' You can also see the list of the files and sub-directories contained in the previous directory of your current position.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-showdetails</term>
+    ''' <description>Shows the details of the files and folders</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>-suppressmessages</term>
+    ''' <description>Suppresses the "unauthorized" messages</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class FTP_LslCommand
         Inherits CommandExecutor
         Implements ICommand

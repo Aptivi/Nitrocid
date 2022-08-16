@@ -19,6 +19,28 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Lists the contents of the current folder or the folder provided
+    ''' </summary>
+    ''' <remarks>
+    ''' You can see the list of the files and sub-directories contained in the current working directory if no directories are specified, or in the specified directory, if specified.
+    ''' <br></br>
+    ''' You can also see the list of the files and sub-directories contained in the previous directory of your current position.
+    ''' <br></br>
+    ''' Unlike lsl, you should connect to the server to use this command, because it lists directories in the server, not in the local hard drive.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-showdetails</term>
+    ''' <description>Shows the details of the files and folders</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class FTP_LsrCommand
         Inherits CommandExecutor
         Implements ICommand

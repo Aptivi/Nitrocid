@@ -17,6 +17,24 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Disconnects from the current working server
+    ''' </summary>
+    ''' <remarks>
+    ''' This command sends the quit command to the FTP server so the server knows that you're going away. It basically disconnects you from the server to connect to the server again or re-connect to the last server connected.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-f</term>
+    ''' <description>Force disconnection</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class FTP_DisconnectCommand
         Inherits CommandExecutor
         Implements ICommand

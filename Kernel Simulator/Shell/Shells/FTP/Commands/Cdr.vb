@@ -19,6 +19,12 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Changes your remote directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you change your remote directory in your connected FTP server to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
+    ''' </remarks>
     Class FTP_CdrCommand
         Inherits CommandExecutor
         Implements ICommand

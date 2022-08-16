@@ -19,6 +19,16 @@
 Imports KS.Network.FTP.Transfer
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Uploads the folder to the server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you need to add your local folders in your current working directory to the current working server directory, you must have administrative privileges to add them.
+    ''' <br></br>
+    ''' For example, if you're adding the group of pictures, you need to upload it to the server for everyone to see. Assuming that it's "NewDelhi", use "putfolder NewDelhi."
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class FTP_PutFolderCommand
         Inherits CommandExecutor
         Implements ICommand

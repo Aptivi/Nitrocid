@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Sets data transfer type
+    ''' </summary>
+    ''' <remarks>
+    ''' If you need to change how the data transfer is made, you can use this command to switch between the ASCII transfer and the binary transfer. Please note that the ASCII transfer is highly discouraged in many conditions except if you're only transferring text.
+    ''' </remarks>
     Class FTP_TypeCommand
         Inherits CommandExecutor
         Implements ICommand

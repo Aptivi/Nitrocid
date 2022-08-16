@@ -19,6 +19,14 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Sets file permissions
+    ''' </summary>
+    ''' <remarks>
+    ''' If you have administrative access to the FTP server, you can set the remote file permissions. The permnumber argument is inherited from CHMOD's permission number.
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class FTP_PermCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Network.FTP.Transfer
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Downloads a folder from the current working directory
+    ''' </summary>
+    ''' <remarks>
+    ''' Downloads the binary or text folder and saves it to the current working local directory for you to use the downloaded folder that is provided in the FTP server.
+    ''' </remarks>
     Class FTP_GetFolderCommand
         Inherits CommandExecutor
         Implements ICommand

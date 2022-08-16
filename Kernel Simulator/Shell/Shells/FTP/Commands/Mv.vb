@@ -19,6 +19,14 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Moves a file or directory to another destination in the server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you manage the FTP server and wanted to move a file or a directory from a remote directory to another remote directory, use this command.
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class FTP_MvCommand
         Inherits CommandExecutor
         Implements ICommand

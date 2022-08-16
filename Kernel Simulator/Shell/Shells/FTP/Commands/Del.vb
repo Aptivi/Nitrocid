@@ -19,6 +19,16 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Removes files or folders
+    ''' </summary>
+    ''' <remarks>
+    ''' If you have logged in to a user that has administrative privileges, you can remove unwanted files, or extra folders, from the server.
+    ''' <br></br>
+    ''' If you deleted a file while there are transmissions going on in the server, people who tries to get the deleted file will never be able to download it again after their download fails.
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class FTP_DelCommand
         Inherits CommandExecutor
         Implements ICommand

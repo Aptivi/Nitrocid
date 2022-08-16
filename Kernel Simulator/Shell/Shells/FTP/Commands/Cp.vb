@@ -19,6 +19,16 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Copies a file or directory to another destination in the server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you manage the FTP server and wanted to copy a file or a directory from a remote directory to another remote directory, use this command. It might take a few minutes depending on the server, because it downloads the file to a temporary directory and uploads the file to another destination.
+    ''' <br></br>
+    ''' This is because FluentFTP doesn't support .CopyFile(Source, Destination) yet.
+    ''' <br></br>
+    ''' The authenticated user must have at least the administrative privileges before they can run the below commands.
+    ''' </remarks>
     Class FTP_CpCommand
         Inherits CommandExecutor
         Implements ICommand
