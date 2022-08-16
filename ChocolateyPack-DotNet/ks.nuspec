@@ -2,12 +2,12 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>KS.NET</id>
+    <id>kernel-simulator-coreclr</id>
     <version>0.1.0</version>
     <packageSourceUrl>http://github.com/Aptivi/Kernel-Simulator</packageSourceUrl>
 
     <title>Kernel Simulator - .NET CoreCLR</title>
-    <authors>EoflaOE</authors>
+    <authors>Aptivi</authors>
     <projectUrl>http://github.com/Aptivi/Kernel-Simulator</projectUrl>
     <iconUrl>https://rawcdn.githack.com/Aptivi/Kernel-Simulator/5efe4e48acea326f21af56ecfd9cd1c1f9bc2056/Kernel%20Simulator/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
     <copyright>Copyright © 2018-2022 Aptivi, All rights reserved.</copyright>
