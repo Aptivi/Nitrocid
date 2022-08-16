@@ -40,7 +40,7 @@ Namespace Shell.Shells.UESH.Commands
     ''' </item>
     ''' <item>
     ''' <term>Third</term>
-    ''' <description>It can verify files by opening the hashes file that some other tool generated and finding the hash of the file, assuming that it's in this format: <c>&lt;<expected hash>&gt; &lt;<file name>&gt;</c></description>
+    ''' <description>It can verify files by opening the hashes file that some other tool generated and finding the hash of the file, assuming that it's in this format: <c>&lt;expected hash&gt; &lt;file name&gt;</c></description>
     ''' </item>
     ''' </list>
     ''' <br></br>
