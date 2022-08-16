@@ -26,7 +26,7 @@ Namespace Network.FTP.Filesystem
         ''' </summary>
         ''' <param name="File">A file to be hashed</param>
         ''' <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
-        ''' <returns>True if successful; False if unsuccessful</returns>
+        ''' <returns>The <see cref="FtpHash"/> instance containing computed hash of remote file</returns>
         ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
         ''' <exception cref="InvalidOperationException"></exception>
         ''' <exception cref="ArgumentNullException"></exception>
