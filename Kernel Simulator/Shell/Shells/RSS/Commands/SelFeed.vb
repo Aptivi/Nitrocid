@@ -19,6 +19,12 @@
 Imports KS.Network.RSS
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Selects feed
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to select feed from the available feed dataset, use this command.
+    ''' </remarks>
     Class RSS_SelFeedCommand
         Inherits CommandExecutor
         Implements ICommand

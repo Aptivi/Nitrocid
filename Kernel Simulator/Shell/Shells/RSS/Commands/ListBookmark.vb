@@ -19,6 +19,12 @@
 Imports KS.Network.RSS
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Lists bookmarks
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to list all bookmarks, use this command.
+    ''' </remarks>
     Class RSS_ListBookmarkCommand
         Inherits CommandExecutor
         Implements ICommand
