@@ -20,6 +20,12 @@ Imports KS.Network.Mail.Directory
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Lists all messages in the current folder
+    ''' </summary>
+    ''' <remarks>
+    ''' It allows you to list all the messages in the current working folder in pages. It lists 10 messages in a page, so you can optionally specify the page number.
+    ''' </remarks>
     Class Mail_ListCommand
         Inherits CommandExecutor
         Implements ICommand

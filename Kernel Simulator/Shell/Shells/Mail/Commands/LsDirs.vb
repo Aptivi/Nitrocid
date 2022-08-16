@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Lists all mail directories
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you list all mail directories in your mail account. It varies from one account to other.
+    ''' </remarks>
     Class Mail_LsDirsCommand
         Inherits CommandExecutor
         Implements ICommand

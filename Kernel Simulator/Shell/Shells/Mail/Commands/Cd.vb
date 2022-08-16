@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Changes your directory
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you change your directory in your mail folders to another directory that exists in the subdirectory.
+    ''' </remarks>
     Class Mail_CdCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -20,6 +20,12 @@ Imports KS.Network.Mail.Directory
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Moves a message to a folder
+    ''' </summary>
+    ''' <remarks>
+    ''' This command lets you move a message to a folder. It is especially useful when organizing mail messages manually.
+    ''' </remarks>
     Class Mail_MvCommand
         Inherits CommandExecutor
         Implements ICommand

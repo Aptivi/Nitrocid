@@ -19,6 +19,9 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Removes a mail directory
+    ''' </summary>
     Class Mail_RmdirCommand
         Inherits CommandExecutor
         Implements ICommand

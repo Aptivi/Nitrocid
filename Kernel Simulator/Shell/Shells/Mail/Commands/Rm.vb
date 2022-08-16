@@ -20,6 +20,12 @@ Imports KS.Network.Mail.Directory
 Imports KS.Misc.Reflection
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Removes a mail
+    ''' </summary>
+    ''' <remarks>
+    ''' If you no longer want a message in your mail account, use this command to remove a mail permanently.
+    ''' </remarks>
     Class Mail_RmCommand
         Inherits CommandExecutor
         Implements ICommand

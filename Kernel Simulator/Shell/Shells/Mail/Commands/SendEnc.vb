@@ -21,6 +21,33 @@ Imports KS.Files.Querying
 Imports KS.Network.Mail.Transfer
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Sends an encrypted mail.
+    ''' </summary>
+    ''' <remarks>
+    ''' This command opens to a prompt which will tell you to provide the following details:
+    ''' <br></br>
+    ''' <list type="bullet">
+    ''' <item>
+    ''' <term>Recipient mail address</term>
+    ''' <description>The account who will receive the mail.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Subject</term>
+    ''' <description>The title of the message.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Body</term>
+    ''' <description>The body of the message. This is where most information lies.</description>
+    ''' </item>
+    ''' <item>
+    ''' <term>Attachments</term>
+    ''' <description>If you want to provide attachments, enter the file name. It supports relative and absolute directories.</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' This command supports encryption, assuming you have a private key.
+    ''' </remarks>
     Class Mail_SendEncCommand
         Inherits CommandExecutor
         Implements ICommand

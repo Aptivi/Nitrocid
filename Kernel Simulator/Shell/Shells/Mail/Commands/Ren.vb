@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Renames a directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to change the name of a directory to something else, you can use this command.
+    ''' </remarks>
     Class Mail_RenCommand
         Inherits CommandExecutor
         Implements ICommand

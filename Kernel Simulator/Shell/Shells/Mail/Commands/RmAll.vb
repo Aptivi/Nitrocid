@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Removes all mail from a specified recipient
+    ''' </summary>
+    ''' <remarks>
+    ''' If you no longer want all messages from a recipient in your mail account, use this command, assuming you know the full name of the recipient.
+    ''' </remarks>
     Class Mail_RmAllCommand
         Inherits CommandExecutor
         Implements ICommand

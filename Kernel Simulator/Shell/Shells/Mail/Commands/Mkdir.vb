@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Makes a mail directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want an additional mail folder to organize your messages there, you can use this command. Works with the combination of the mv or mvall command.
+    ''' </remarks>
     Class Mail_MkdirCommand
         Inherits CommandExecutor
         Implements ICommand

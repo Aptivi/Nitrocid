@@ -19,6 +19,12 @@
 Imports KS.Network.Mail.Directory
 
 Namespace Shell.Shells.Mail.Commands
+    ''' <summary>
+    ''' Moves all messages from a recipient to a folder
+    ''' </summary>
+    ''' <remarks>
+    ''' It allows you to bulk move all messages from a recipient to a folder. Depending on the number of messages in the folder, it may take some time to move all messages.
+    ''' </remarks>
     Class Mail_MvAllCommand
         Inherits CommandExecutor
         Implements ICommand
