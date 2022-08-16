@@ -19,6 +19,12 @@
 Imports KS.Network.RSS
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Changes current feed
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to read another feed, you can use this command to provide a second feed URL to the shell so you can interact with it.
+    ''' </remarks>
     Class RSS_ChFeedCommand
         Inherits CommandExecutor
         Implements ICommand

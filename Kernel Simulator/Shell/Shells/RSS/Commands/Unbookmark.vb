@@ -19,6 +19,12 @@
 Imports KS.Network.RSS
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Unbookmarks current feed
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to remove the bookmark that points to the current feed, you can use this command.
+    ''' </remarks>
     Class RSS_UnbookmarkCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Network.RSS.Instance
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Lists articles
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get articles found in the current RSS feed, you can use this command.
+    ''' </remarks>
     Class RSS_ListCommand
         Inherits CommandExecutor
         Implements ICommand

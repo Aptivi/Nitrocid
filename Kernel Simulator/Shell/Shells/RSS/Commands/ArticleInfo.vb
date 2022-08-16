@@ -19,6 +19,14 @@
 Imports KS.Network.RSS.Instance
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Gets article information
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to know more about the article, you can use this command to get extensive information about the article. Some feeds provide extra arguments to the article to make getting information even more vital to those who need it.
+    ''' <br></br>
+    ''' It shows you the article title, the link, the description, and the extra arguments and their values, if available.
+    ''' </remarks>
     Class RSS_ArticleInfoCommand
         Inherits CommandExecutor
         Implements ICommand

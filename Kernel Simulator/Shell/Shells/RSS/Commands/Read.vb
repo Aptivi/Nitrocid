@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Opens a web browser to an article
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to read more about the article, you can use this command to open your current web browser to the article link, if one is found.
+    ''' </remarks>
     Class RSS_ReadCommand
         Inherits CommandExecutor
         Implements ICommand

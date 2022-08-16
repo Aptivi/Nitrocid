@@ -19,6 +19,12 @@
 Imports KS.Network.RSS
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Bookmarks current feed
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to bookmark the current feed that you're in, you can use this command.
+    ''' </remarks>
     Class RSS_BookmarkCommand
         Inherits CommandExecutor
         Implements ICommand

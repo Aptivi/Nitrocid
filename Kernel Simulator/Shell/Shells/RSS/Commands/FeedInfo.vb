@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.RSS.Commands
+    ''' <summary>
+    ''' Gets feed information
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to know more about the current RSS feed, you can use this command to get some information about it. It currently provides you the title, the link, the description, the feed type, and the number of articles.
+    ''' </remarks>
     Class RSS_FeedInfoCommand
         Inherits CommandExecutor
         Implements ICommand
