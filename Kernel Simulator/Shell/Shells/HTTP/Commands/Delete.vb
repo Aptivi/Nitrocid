@@ -20,6 +20,12 @@ Imports System.Threading.Tasks
 Imports KS.Network.HTTP
 
 Namespace Shell.Shells.HTTP.Commands
+    ''' <summary>
+    ''' Removes content from the HTTP server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to test a DELETE function of the REST API, you can do so using this command.
+    ''' </remarks>
     Class HTTP_DeleteCommand
         Inherits CommandExecutor
         Implements ICommand

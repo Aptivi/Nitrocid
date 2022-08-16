@@ -21,6 +21,12 @@ Imports System.Threading.Tasks
 Imports KS.Network.HTTP
 
 Namespace Shell.Shells.HTTP.Commands
+    ''' <summary>
+    ''' Gets a response from the HTTP server
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to test a GET function of the REST API, you can do so using this command.
+    ''' </remarks>
     Class HTTP_GetCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -17,6 +17,14 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.HTTP.Commands
+    ''' <summary>
+    ''' Sets a URL for the current shell instance
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to be able to execute any HTTP command, you must issue this command first. It sets the target URL that you want to send commands to.
+    ''' <br></br>
+    ''' You must set the target URL to the one that supports the commands.
+    ''' </remarks>
     Class HTTP_SetSiteCommand
         Inherits CommandExecutor
         Implements ICommand
