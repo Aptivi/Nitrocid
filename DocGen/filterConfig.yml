@@ -5,6 +5,22 @@ apiRules:
       ctorArguments:
       - System.ComponentModel.EditorBrowsableState.Never
 - exclude:
+    # inherited members from Form
+    uidRegex: ^System\.Windows\.Forms\.Form\..*$
+    type: Member
+- exclude:
+    # inherited members from Control
+    uidRegex: ^System\.Windows\.Forms\.Control\..*$
+    type: Member
+- exclude:
+    # mentioning types from System.* namespace
+    uidRegex: ^System\..*$
+    type: Type
+- exclude:
+    # mentioning types from Microsoft.* namespace
+    uidRegex: ^Microsoft\..*$
+    type: Type
+- exclude:
     # KS resources
     uidRegex: ^KS\.My\.Resources\..*$
 - exclude:
