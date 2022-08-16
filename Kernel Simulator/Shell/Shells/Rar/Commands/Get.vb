@@ -19,6 +19,24 @@
 Imports KS.Misc.RarFile
 
 Namespace Shell.Shells.Rar.Commands
+    ''' <summary>
+    ''' Extract a file from a RAR archive
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get a single file from the RAR archive, you can use this command to extract such file to the current working directory, or a specified directory.
+    ''' <br></br>
+    ''' <list type="table">
+    ''' <listheader>
+    ''' <term>Switches</term>
+    ''' <description>Description</description>
+    ''' </listheader>
+    ''' <item>
+    ''' <term>-absolute</term>
+    ''' <description>Uses the full target path</description>
+    ''' </item>
+    ''' </list>
+    ''' <br></br>
+    ''' </remarks>
     Class RarShell_GetCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -19,6 +19,12 @@
 Imports KS.Misc.RarFile
 
 Namespace Shell.Shells.Rar.Commands
+    ''' <summary>
+    ''' Changes current local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to interact with the RAR file in another local directory, you can use this command to change the current local directory. This change isn't applied to the main shell.
+    ''' </remarks>
     Class RarShell_ChDirCommand
         Inherits CommandExecutor
         Implements ICommand

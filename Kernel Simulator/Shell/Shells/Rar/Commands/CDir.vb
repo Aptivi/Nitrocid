@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Rar.Commands
+    ''' <summary>
+    ''' Gets current local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' Should you want to get the current local directory in the RAR shell, you can use this command.
+    ''' </remarks>
     Class RarShell_CDirCommand
         Inherits CommandExecutor
         Implements ICommand

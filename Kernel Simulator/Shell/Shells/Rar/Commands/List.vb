@@ -20,6 +20,12 @@ Imports SharpCompress.Archives.Rar
 Imports KS.Misc.RarFile
 
 Namespace Shell.Shells.Rar.Commands
+    ''' <summary>
+    ''' Lists RAR file entries
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to know what this RAR file contains, you can use this command to list all the files and folders included in the archive.
+    ''' </remarks>
     Class RarShell_ListCommand
         Inherits CommandExecutor
         Implements ICommand

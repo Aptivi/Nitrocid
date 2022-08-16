@@ -19,6 +19,12 @@
 Imports KS.Misc.RarFile
 
 Namespace Shell.Shells.Rar.Commands
+    ''' <summary>
+    ''' Changes current archive directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to go to a folder inside the RAR archive, you can use this command to change the working archive directory.
+    ''' </remarks>
     Class RarShell_ChADirCommand
         Inherits CommandExecutor
         Implements ICommand
