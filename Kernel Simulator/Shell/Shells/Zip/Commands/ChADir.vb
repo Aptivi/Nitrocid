@@ -19,6 +19,12 @@
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells.Zip.Commands
+    ''' <summary>
+    ''' Changes current archive directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to go to a folder inside the ZIP archive, you can use this command to change the working archive directory.
+    ''' </remarks>
     Class ZipShell_ChADirCommand
         Inherits CommandExecutor
         Implements ICommand

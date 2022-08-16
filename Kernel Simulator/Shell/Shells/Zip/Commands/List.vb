@@ -20,6 +20,12 @@ Imports SharpCompress.Archives.Zip
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells.Zip.Commands
+    ''' <summary>
+    ''' Lists ZIP file entries
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to know what this ZIP file contains, you can use this command to list all the files and folders included in the archive.
+    ''' </remarks>
     Class ZipShell_ListCommand
         Inherits CommandExecutor
         Implements ICommand

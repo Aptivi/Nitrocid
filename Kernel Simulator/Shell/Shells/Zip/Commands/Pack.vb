@@ -19,6 +19,12 @@
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells.Zip.Commands
+    ''' <summary>
+    ''' Compresses a file to a ZIP archive
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to compress a single file from the ZIP archive, you can use this command.
+    ''' </remarks>
     Class ZipShell_PackCommand
         Inherits CommandExecutor
         Implements ICommand

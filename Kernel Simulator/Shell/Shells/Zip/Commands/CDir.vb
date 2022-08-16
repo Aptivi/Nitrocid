@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.Zip.Commands
+    ''' <summary>
+    ''' Gets current local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' Should you want to get the current local directory in the ZIP shell, you can use this command.
+    ''' </remarks>
     Class ZipShell_CDirCommand
         Inherits CommandExecutor
         Implements ICommand

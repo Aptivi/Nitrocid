@@ -19,6 +19,12 @@
 Imports KS.Misc.ZipFile
 
 Namespace Shell.Shells.Zip.Commands
+    ''' <summary>
+    ''' Changes current local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to interact with the ZIP file in another local directory, you can use this command to change the current local directory. This change isn't applied to the main shell.
+    ''' </remarks>
     Class ZipShell_ChDirCommand
         Inherits CommandExecutor
         Implements ICommand
