@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Gets server info
+    ''' </summary>
+    ''' <remarks>
+    ''' To get the server info, including the operating system and server type, use this command.
+    ''' </remarks>
     Class FTP_InfoCommand
         Inherits CommandExecutor
         Implements ICommand

@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Executes a server command
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to go advanced and execute a server command to the FTP server, you can use this command.
+    ''' </remarks>
     Class FTP_ExecuteCommand
         Inherits CommandExecutor
         Implements ICommand

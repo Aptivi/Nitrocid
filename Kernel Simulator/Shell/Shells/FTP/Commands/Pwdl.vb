@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Gets local directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get the local directory, use this command.
+    ''' </remarks>
     Class FTP_PwdlCommand
         Inherits CommandExecutor
         Implements ICommand

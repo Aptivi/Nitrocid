@@ -19,6 +19,12 @@
 Imports KS.Network.FTP.Filesystem
 
 Namespace Shell.Shells.FTP.Commands
+    ''' <summary>
+    ''' Gets remote file checksum
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get a remote file checksum, use this command.
+    ''' </remarks>
     Class FTP_SumFileCommand
         Inherits CommandExecutor
         Implements ICommand
