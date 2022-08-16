@@ -35,5 +35,15 @@ Namespace Misc.Splash
         ''' </summary>
         Public ProgressProgressTextLocation As TextLocation = TextLocation.Top
 
+        '-> PowerLineProgress
+        ''' <summary>
+        ''' [PowerLineProgress] The progress color
+        ''' </summary>
+        Public PowerLineProgressProgressColor As String = ColorTools.ProgressColor.PlainSequence
+        ''' <summary>
+        ''' [PowerLineProgress] The progress text location
+        ''' </summary>
+        Public PowerLineProgressProgressTextLocation As TextLocation = TextLocation.Top
+
     End Module
 End Namespace

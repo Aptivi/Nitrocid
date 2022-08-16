@@ -1029,6 +1029,13 @@ Namespace Kernel.Configuration
                 }
             SplashConfig.Add("Progress", SplashProgressConfig)
 
+            'PowerLineProgress config json object
+            Dim SplashPowerLineProgressConfig As New JObject From {
+                    {"Progress bar color", PowerLineProgressProgressColor},
+                    {"Progress text location", PowerLineProgressProgressTextLocation}
+                }
+            SplashConfig.Add("PowerLineProgress", SplashPowerLineProgressConfig)
+
             'Add a splash config json object to Splash section
             ConfigurationObject.Add("Splash", SplashConfig)
 
@@ -1977,6 +1984,10 @@ Namespace Kernel.Configuration
             '> Progress
             ProgressProgressColor = New Color(If(ConfigToken("Splash")?("Progress")?("Progress bar color").ToString, ColorTools.ProgressColor.PlainSequence)).PlainSequence
             ProgressProgressTextLocation = If(ConfigToken("Splash")?("Progress")?("Progress text location") IsNot Nothing, If([Enum].TryParse(ConfigToken("Splash")?("Progress")?("Progress text location"), ProgressProgressTextLocation), ProgressProgressTextLocation, TextLocation.Top), TextLocation.Top)
+
+            '> PowerLineProgress
+            PowerLineProgressProgressColor = New Color(If(ConfigToken("Splash")?("PowerLineProgress")?("Progress bar color").ToString, ColorTools.ProgressColor.PlainSequence)).PlainSequence
+            PowerLineProgressProgressTextLocation = If(ConfigToken("Splash")?("PowerLineProgress")?("Progress text location") IsNot Nothing, If([Enum].TryParse(ConfigToken("Splash")?("PowerLineProgress")?("Progress text location"), PowerLineProgressProgressTextLocation), PowerLineProgressProgressTextLocation, TextLocation.Top), TextLocation.Top)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")
