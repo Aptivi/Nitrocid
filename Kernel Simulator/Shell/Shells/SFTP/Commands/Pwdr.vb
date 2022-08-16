@@ -17,6 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Namespace Shell.Shells.SFTP.Commands
+    ''' <summary>
+    ''' Gets remote directory
+    ''' </summary>
+    ''' <remarks>
+    ''' If you want to get the remote directory, use this command.
+    ''' </remarks>
     Class SFTP_PwdrCommand
         Inherits CommandExecutor
         Implements ICommand
