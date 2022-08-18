@@ -53,7 +53,7 @@ Namespace Shell.Prompts.Presets.Test
 
             'Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground)
-            PresetStringBuilder.Append(BackgroundColor.VTSequenceBackground)
+            PresetStringBuilder.Append(If(SetBackground, BackgroundColor.VTSequenceBackground, GetEsc() + $"[49m"))
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar)
 
             'Present final string

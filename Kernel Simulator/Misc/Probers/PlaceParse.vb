@@ -217,7 +217,7 @@ Namespace Misc.Probers
                 '-> Background color reset placeholder
                 If text.Contains("<b:reset>") Then
                     Wdbg(DebugLevel.I, "Background color reset placeholder found.")
-                    text = text.Replace("<b:reset>", BackgroundColor.VTSequenceBackground)
+                    text = text.Replace("<b:reset>", If(SetBackground, BackgroundColor.VTSequenceBackground, GetEsc() + $"[49m"))
                 End If
 
                 '-> Foreground color placeholder
@@ -241,7 +241,7 @@ Namespace Misc.Probers
                         Dim EndBackgroundIndex As Integer = text.Substring(text.IndexOf("<b:")).IndexOf(">")
                         Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), length:=EndBackgroundIndex + 1)
                         Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
-                        Dim VTSequence As String = New Color(PlainSequence).VTSequenceBackground
+                        Dim VTSequence As String = If(SetBackground, New Color(PlainSequence).VTSequenceBackground, GetEsc() + $"[49m")
                         text = text.Replace(SequenceSubstring, VTSequence)
                     Loop
                 End If

@@ -688,7 +688,8 @@ Namespace ConsoleBase.Colors
         ''' </summary>
         ''' <param name="ColorSequence">The color instance</param>
         ''' <param name="Background">Whether to set background or not</param>
-        Public Sub SetConsoleColor(ColorSequence As Color, Optional Background As Boolean = False)
+        ''' <param name="ForceSet">Force set background even if background setting is disabled</param>
+        Public Sub SetConsoleColor(ColorSequence As Color, Optional Background As Boolean = False, Optional ForceSet As Boolean = False)
             If ColoredShell Then
                 If ColorSequence Is Nothing Then Throw New ArgumentNullException(NameOf(ColorSequence))
                 Dim OldLeft As Integer = Console.CursorLeft
@@ -696,7 +697,7 @@ Namespace ConsoleBase.Colors
 
                 'Set background
                 If Background Then
-                    If SetBackground Then
+                    If SetBackground Or ForceSet Then
                         Console.Write(ColorSequence.VTSequenceBackground)
                     Else
                         Console.Write(GetEsc() + $"[49m")
