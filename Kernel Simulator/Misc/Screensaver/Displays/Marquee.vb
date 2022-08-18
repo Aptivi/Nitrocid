@@ -220,7 +220,7 @@ Namespace Misc.Screensaver.Displays
             RandomDriver = New Random
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(MarqueeBackgroundColor), True)
+            SetConsoleColor(New Color(MarqueeBackgroundColor), True, True)
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
             MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")

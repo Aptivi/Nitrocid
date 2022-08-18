@@ -58,7 +58,7 @@ Namespace Misc.Animations.Pulse
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(New Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), True)
+                    SetConsoleColor(New Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), True, True)
                     Console.Clear()
                 End If
             Next
@@ -74,7 +74,7 @@ Namespace Misc.Animations.Pulse
                 Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
                 If Not ResizeSyncing Then
-                    SetConsoleColor(New Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), True)
+                    SetConsoleColor(New Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), True, True)
                     Console.Clear()
                 End If
             Next

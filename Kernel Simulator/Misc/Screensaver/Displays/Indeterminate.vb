@@ -483,7 +483,7 @@ Namespace Misc.Screensaver.Displays
                 End If
 
                 'Fill the ramp
-                SetConsoleColor(RampCurrentColorInstance, True)
+                SetConsoleColor(RampCurrentColorInstance, True, True)
                 For BlockPos As Integer = IndeterminateCurrentBlockStart To IndeterminateCurrentBlockEnd
                     WriteWherePlain(" ", BlockPos, RampCenterPosition - 1, True)
                     WriteWherePlain(" ", BlockPos, RampCenterPosition, True)

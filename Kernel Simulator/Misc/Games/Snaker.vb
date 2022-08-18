@@ -61,7 +61,7 @@ Namespace Misc.Games
                 Dim FloorLeftEdge As Integer = 2
                 Dim FloorRightEdge As Integer = Console.WindowWidth - 4
                 Wdbg(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge)
-                SetConsoleColor(FloorColor, True)
+                SetConsoleColor(FloorColor, True, True)
 
                 'First, draw the floor top edge
                 For x As Integer = FloorTopLeftEdge To FloorTopRightEdge
@@ -135,7 +135,7 @@ Namespace Misc.Games
                     Console.Write(" ")
 
                     'Set the snake color
-                    SetConsoleColor(SnakeColor, True)
+                    SetConsoleColor(SnakeColor, True, True)
 
                     'Draw an apple
                     If Not AppleDrawn Then

@@ -229,12 +229,12 @@ Namespace Misc.Screensaver.Displays
                 Dim BlueColorNum As Integer = RandomDriver.Next(FallingLineMinimumBlueColorLevel, FallingLineMaximumBlueColorLevel)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                 ColorStorage = New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                SetConsoleColor(ColorStorage, True)
+                SetConsoleColor(ColorStorage, True, True)
             ElseIf FallingLine255Colors Then
                 Dim ColorNum As Integer = RandomDriver.Next(FallingLineMinimumColorLevel, FallingLineMaximumColorLevel)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                 ColorStorage = New Color(ColorNum)
-                SetConsoleColor(ColorStorage, True)
+                SetConsoleColor(ColorStorage, True, True)
             Else
                 Console.BackgroundColor = colors(RandomDriver.Next(FallingLineMinimumColorLevel, FallingLineMaximumColorLevel))
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)

@@ -225,7 +225,7 @@ Namespace Misc.Screensaver.Displays
 
             'Select a color
             If LinesTrueColor Then
-                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                SetConsoleColor(New Color(LinesBackgroundColor), True, True)
                 Console.Clear()
                 Dim RedColorNum As Integer = RandomDriver.Next(LinesMinimumRedColorLevel, LinesMaximumRedColorLevel)
                 Dim GreenColorNum As Integer = RandomDriver.Next(LinesMinimumGreenColorLevel, LinesMaximumGreenColorLevel)
@@ -234,14 +234,14 @@ Namespace Misc.Screensaver.Displays
                 Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                 SetConsoleColor(ColorStorage)
             ElseIf Lines255Colors Then
-                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                SetConsoleColor(New Color(LinesBackgroundColor), True, True)
                 Console.Clear()
                 Dim color As Integer = RandomDriver.Next(LinesMinimumColorLevel, LinesMaximumColorLevel)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
                 SetConsoleColor(New Color(color))
             Else
                 Console.Clear()
-                SetConsoleColor(New Color(LinesBackgroundColor), True)
+                SetConsoleColor(New Color(LinesBackgroundColor), True, True)
                 Console.ForegroundColor = colors(RandomDriver.Next(LinesMinimumColorLevel, LinesMaximumColorLevel))
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor)
             End If

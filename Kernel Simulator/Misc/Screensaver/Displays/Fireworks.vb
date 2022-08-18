@@ -264,7 +264,7 @@ Namespace Misc.Screensaver.Displays
                     SleepNoBlock(FireworksDelay, ScreensaverDisplayerThread)
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
-                    SetConsoleColor(New Color(255, 255, 255), True)
+                    SetConsoleColor(New Color(255, 255, 255), True, True)
 
                     'Change positions
                     CurrentX += FireworkStepsX
@@ -289,7 +289,7 @@ Namespace Misc.Screensaver.Displays
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX)
 
                     'Draw the explosion
-                    SetConsoleColor(IgniteColor, True)
+                    SetConsoleColor(IgniteColor, True, True)
                     If UpperParticleY < Console.WindowHeight Then
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY)
                         Console.SetCursorPosition(IgnitePositionX, UpperParticleY)

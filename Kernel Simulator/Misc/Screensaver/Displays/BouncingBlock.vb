@@ -224,7 +224,7 @@ Namespace Misc.Screensaver.Displays
 
         Public Overrides Sub ScreensaverLogic() Implements IScreensaver.ScreensaverLogic
             Console.CursorVisible = False
-            SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
+            SetConsoleColor(New Color(BouncingBlockBackgroundColor), True, True)
             SetConsoleColor(New Color(BouncingBlockForegroundColor))
             Console.Clear()
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)

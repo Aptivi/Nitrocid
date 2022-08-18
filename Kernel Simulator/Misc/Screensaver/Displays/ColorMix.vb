@@ -204,7 +204,7 @@ Namespace Misc.Screensaver.Displays
             RandomDriver = New Random
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+            SetConsoleColor(New Color(ColorMixBackgroundColor), True, True)
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
         End Sub
@@ -220,7 +220,7 @@ Namespace Misc.Screensaver.Displays
                 Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(ColorStorage, True)
+                    SetConsoleColor(ColorStorage, True, True)
                     Console.Write(" ")
                 End If
             ElseIf ColorMix255Colors Then
@@ -228,7 +228,7 @@ Namespace Misc.Screensaver.Displays
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(New Color(ColorNum), True)
+                    SetConsoleColor(New Color(ColorNum), True, True)
                     Console.Write(" ")
                 End If
             Else

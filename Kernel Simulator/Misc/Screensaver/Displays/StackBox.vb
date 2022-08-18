@@ -249,11 +249,11 @@ Namespace Misc.Screensaver.Displays
                         Dim GreenColorNum As Integer = RandomDriver.Next(StackBoxMinimumGreenColorLevel, StackBoxMaximumGreenColorLevel)
                         Dim BlueColorNum As Integer = RandomDriver.Next(StackBoxMinimumBlueColorLevel, StackBoxMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
+                        SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True, True)
                     ElseIf StackBox255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(StackBoxMinimumColorLevel, StackBoxMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        SetConsoleColor(New Color(ColorNum), True)
+                        SetConsoleColor(New Color(ColorNum), True, True)
                     Else
                         Console.BackgroundColor = colors(RandomDriver.Next(StackBoxMinimumColorLevel, StackBoxMaximumColorLevel))
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)

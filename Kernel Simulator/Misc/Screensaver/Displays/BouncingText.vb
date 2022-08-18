@@ -230,7 +230,7 @@ Namespace Misc.Screensaver.Displays
             'Variable preparations
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
+            SetConsoleColor(New Color(BouncingTextBackgroundColor), True, True)
             SetConsoleColor(New Color(BouncingTextForegroundColor))
             Console.Clear()
             RowText = Console.WindowHeight / 2

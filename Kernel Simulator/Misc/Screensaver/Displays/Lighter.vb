@@ -197,7 +197,7 @@ Namespace Misc.Screensaver.Displays
             RandomDriver = New Random
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(LighterBackgroundColor), True)
+            SetConsoleColor(New Color(LighterBackgroundColor), True, True)
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         End Sub
@@ -225,7 +225,7 @@ Namespace Misc.Screensaver.Displays
                 Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(ColorStorage, True)
+                    SetConsoleColor(ColorStorage, True, True)
                     Console.Write(" ")
                 Else
                     WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
@@ -236,7 +236,7 @@ Namespace Misc.Screensaver.Displays
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(New Color(ColorNum), True)
+                    SetConsoleColor(New Color(ColorNum), True, True)
                     Console.Write(" ")
                 Else
                     WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
@@ -263,7 +263,7 @@ Namespace Misc.Screensaver.Displays
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
                     Console.SetCursorPosition(WipeLeft, WipeTop)
-                    SetConsoleColor(New Color(LighterBackgroundColor), True)
+                    SetConsoleColor(New Color(LighterBackgroundColor), True, True)
                     Console.Write(" ")
                     CoveredPositions.RemoveAt(0)
                 Else

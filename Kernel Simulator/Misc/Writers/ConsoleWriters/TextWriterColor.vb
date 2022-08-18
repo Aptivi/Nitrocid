@@ -277,8 +277,8 @@ Namespace Misc.Writers.ConsoleWriters
                 Try
                     'Try to write to console
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                        SetConsoleColor(color, Highlight)
-                        SetConsoleColor(BackgroundColor, Not Highlight)
+                        SetConsoleColor(color, Highlight, Highlight)
+                        SetConsoleColor(BackgroundColor, Not Highlight, Not Highlight)
                     End If
 
                     'Write the text to console
@@ -326,8 +326,8 @@ Namespace Misc.Writers.ConsoleWriters
                 Try
                     'Try to write to console
                     If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
-                        SetConsoleColor(ForegroundColor, Highlight)
-                        SetConsoleColor(BackgroundColor, Not Highlight)
+                        SetConsoleColor(ForegroundColor, Highlight, Highlight)
+                        SetConsoleColor(BackgroundColor, Not Highlight, Not Highlight)
                     End If
 
                     'Write the text to console

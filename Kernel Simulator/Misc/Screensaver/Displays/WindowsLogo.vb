@@ -88,7 +88,7 @@ Namespace Misc.Screensaver.Displays
                 If Not Drawn Then
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
-                    SetConsoleColor(New Color($"0;120;212"), True)
+                    SetConsoleColor(New Color($"0;120;212"), True, True)
 
                     'First, draw the upper left box
                     For X As Integer = UpperLeftBoxStartX To UpperLeftBoxEndX

@@ -215,7 +215,7 @@ Namespace Misc.Screensaver.Displays
                 Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(ColorStorage, True)
+                    SetConsoleColor(ColorStorage, True, True)
                     Console.Write(" ")
                 End If
             ElseIf GlitterColor255Colors Then
@@ -223,7 +223,7 @@ Namespace Misc.Screensaver.Displays
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    SetConsoleColor(New Color(ColorNum), True)
+                    SetConsoleColor(New Color(ColorNum), True, True)
                     Console.Write(" ")
                 End If
             Else

@@ -188,7 +188,7 @@ Namespace Misc.Screensaver.Displays
         Public Overrides Sub ScreensaverPreparation() Implements IScreensaver.ScreensaverPreparation
             'Variable preparations
             RandomDriver = New Random
-            SetConsoleColor(New Color(FaderBackgroundColor), True)
+            SetConsoleColor(New Color(FaderBackgroundColor), True, True)
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
             FaderSettingsInstance = New Animations.Fader.FaderSettings With {

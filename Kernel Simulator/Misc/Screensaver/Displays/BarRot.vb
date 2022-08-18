@@ -566,7 +566,7 @@ Namespace Misc.Screensaver.Displays
 
                 'Make a new instance
                 Dim RampSubgradientCurrentColorInstance As New Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}")
-                SetConsoleColor(RampSubgradientCurrentColorInstance, True)
+                SetConsoleColor(RampSubgradientCurrentColorInstance, True, True)
 
                 'Try to fill the ramp
                 Dim RampSubgradientStepsMade As Integer = 0
@@ -588,7 +588,7 @@ Namespace Misc.Screensaver.Displays
                     RampSubgradientCurrentColorBlue -= RampSubgradientColorBlueSteps
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps)
                     RampSubgradientCurrentColorInstance = New Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}")
-                    SetConsoleColor(RampSubgradientCurrentColorInstance, True)
+                    SetConsoleColor(RampSubgradientCurrentColorInstance, True, True)
                 Loop
 
                 'Change the colors

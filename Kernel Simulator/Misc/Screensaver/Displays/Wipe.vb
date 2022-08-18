@@ -198,7 +198,7 @@ Namespace Misc.Screensaver.Displays
             RandomDriver = New Random
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(WipeBackgroundColor), True)
+            SetConsoleColor(New Color(WipeBackgroundColor), True, True)
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
             Console.CursorVisible = False
@@ -214,11 +214,11 @@ Namespace Misc.Screensaver.Displays
                 Dim GreenColorNum As Integer = RandomDriver.Next(WipeMinimumGreenColorLevel, WipeMaximumGreenColorLevel)
                 Dim BlueColorNum As Integer = RandomDriver.Next(WipeMinimumBlueColorLevel, WipeMaximumBlueColorLevel)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
+                If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True, True)
             ElseIf Wipe255Colors Then
                 Dim ColorNum As Integer = RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True)
+                If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True, True)
             Else
                 If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel))
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)

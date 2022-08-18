@@ -600,7 +600,7 @@ Namespace Misc.Screensaver.Displays
                 Dim RampCurrentColorInstance As New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
 
                 'Set the console color and fill the ramp!
-                SetConsoleColor(RampCurrentColorInstance, True)
+                SetConsoleColor(RampCurrentColorInstance, True, True)
                 Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If ResizeSyncing Then Exit Do
@@ -618,7 +618,7 @@ Namespace Misc.Screensaver.Displays
                     RampCurrentColorBlue -= RampColorBlueSteps
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
                     RampCurrentColorInstance = New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
-                    SetConsoleColor(RampCurrentColorInstance, True)
+                    SetConsoleColor(RampCurrentColorInstance, True, True)
 
                     'Delay writing
                     SleepNoBlock(RampDelay, ScreensaverDisplayerThread)
@@ -629,7 +629,7 @@ Namespace Misc.Screensaver.Displays
                 Dim RampCurrentColorInstance As New Color(Convert.ToInt32(RampCurrentColor))
 
                 'Set the console color and fill the ramp!
-                SetConsoleColor(RampCurrentColorInstance, True)
+                SetConsoleColor(RampCurrentColorInstance, True, True)
                 Do Until Convert.ToInt32(RampCurrentColor) = ColorNumTo
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If ResizeSyncing Then Exit Do
@@ -645,7 +645,7 @@ Namespace Misc.Screensaver.Displays
                     RampCurrentColor -= RampColorSteps
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps)
                     RampCurrentColorInstance = New Color(Convert.ToInt32(RampCurrentColor))
-                    SetConsoleColor(RampCurrentColorInstance, True)
+                    SetConsoleColor(RampCurrentColorInstance, True, True)
 
                     'Delay writing
                     SleepNoBlock(RampDelay, ScreensaverDisplayerThread)

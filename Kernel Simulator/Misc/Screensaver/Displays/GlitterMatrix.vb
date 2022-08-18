@@ -77,7 +77,7 @@ Namespace Misc.Screensaver.Displays
             RandomDriver = New Random
             CurrentWindowWidth = Console.WindowWidth
             CurrentWindowHeight = Console.WindowHeight
-            SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
+            SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True, True)
             SetConsoleColor(New Color(GlitterMatrixForegroundColor))
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)

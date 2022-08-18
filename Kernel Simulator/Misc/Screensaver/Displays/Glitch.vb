@@ -140,15 +140,15 @@ Namespace Misc.Screensaver.Displays
                             If ColorLetter Then SetConsoleColor(ColorLetterInstance) Else Console.ForegroundColor = ConsoleColor.White
                             Console.Write(Symbol)
                         Case GlitchType.RedGreenBlueColor
-                            SetConsoleColor(ColorBlockInstance, True)
+                            SetConsoleColor(ColorBlockInstance, True, True)
                             Console.Write(" ")
                         Case GlitchType.RedGreenBlueColorWithRandomLetter
                             If ColorLetter Then SetConsoleColor(ColorLetterInstance) Else Console.ForegroundColor = ConsoleColor.White
-                            SetConsoleColor(ColorBlockInstance, True)
+                            SetConsoleColor(ColorBlockInstance, True, True)
                             Console.Write(Letter)
                         Case GlitchType.RedGreenBlueColorWithRandomSymbol
                             If ColorLetter Then SetConsoleColor(ColorLetterInstance) Else Console.ForegroundColor = ConsoleColor.White
-                            SetConsoleColor(ColorBlockInstance, True)
+                            SetConsoleColor(ColorBlockInstance, True, True)
                             Console.Write(Symbol)
                     End Select
                     If Not CoveredBlocks.Contains(CStr(CoverX) + ", " + CStr(CoverY)) Then CoveredBlocks.Add(CStr(CoverX) + ", " + CStr(CoverY))

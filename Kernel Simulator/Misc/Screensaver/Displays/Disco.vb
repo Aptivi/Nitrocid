@@ -253,20 +253,20 @@ Namespace Misc.Screensaver.Displays
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                        SetConsoleColor(ColorStorage, True)
+                        SetConsoleColor(ColorStorage, True, True)
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
                         Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
-                        SetConsoleColor(ColorStorage, True)
+                        SetConsoleColor(ColorStorage, True, True)
                     End If
                 ElseIf Disco255Colors Then
                     If Not DiscoCycleColors Then
                         Dim color As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
-                        SetConsoleColor(New Color(color), True)
+                        SetConsoleColor(New Color(color), True, True)
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
-                        SetConsoleColor(New Color(CurrentColor), True)
+                        SetConsoleColor(New Color(CurrentColor), True, True)
                     End If
                 Else
                     If Not DiscoCycleColors Then
@@ -285,7 +285,7 @@ Namespace Misc.Screensaver.Displays
                     CurrentColor = ConsoleColors.Black
                 End If
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
-                SetConsoleColor(New Color(CurrentColor), True)
+                SetConsoleColor(New Color(CurrentColor), True, True)
             End If
 
             'Make the disco effect!
