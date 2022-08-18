@@ -229,22 +229,3 @@ Because the API was having mixed code of between refactored and unrefactored, we
 ### KS 0.0.24.4 (8/10/2022)
 
 1. Fixed false boot failure on GRILO
-
-# Future generation
-
-## KS 0.1.x.y series
-
-### KS 0.1.0 (WIP)
-
-> [!NOTE]
-> This version is WIP as of 8/10/2022.
-
-1. Updated all libraries
-2. Added new commands
-3. Added new screensavers
-4. Added new splashes
-5. Added support for transparent terminals
-6. Removed command injection as it isn't secure
-7. Removed LOLCAT as it has become inconsistent
-8. General API improvements
-9. General improvements and bug fixes

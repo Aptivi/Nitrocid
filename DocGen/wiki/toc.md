@@ -4,8 +4,10 @@
 # Releases
 ## [Release Notes (First-gen)](releases/Release-Notes-for-First-Generation-KS.md)
 ## [Release Notes (Second-gen)](releases/Release-Notes-for-Second-Generation-KS.md)
+## [Release Notes (Third-gen)](releases/Release-Notes-for-Third-Generation-KS.md)
 ## [Compatibility Notes for First Generation KS](releases/Compatibility-Notes-for-First-Generation-KS.md)
 ## [Compatibility Notes for Second Generation KS](releases/Compatibility-Notes-for-Second-Generation-KS.md)
+## [Compatibility Notes for Third Generation KS](releases/Compatibility-Notes-for-Third-Generation-KS.md)
 # Commands
 ## [Normal Shell](commands/Commands-for-KS.md)
 ## [(S)FTP Shell](commands/(S)FTP-commands-for-KS.md)

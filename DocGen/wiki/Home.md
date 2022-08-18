@@ -247,7 +247,7 @@ Each revision of the kernel API has several incompatibilities that break the exi
 ### Second-generation (API v2.1)
 
 > [!NOTE]
-> This revision of the second-generation version is still under active development.
+> This revision of the second-generation version is supported until 8/2/2025, and the security support will end at 8/2/2027.
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |
 |:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
@@ -257,10 +257,10 @@ Each revision of the kernel API has several incompatibilities that break the exi
 | v0.0.24.3  |  8/9/2022    |  8/2/2025   |  8/2/2027         | Supported   |
 | v0.0.24.4  |  8/10/2022   |  8/2/2025   |  8/2/2027         | Supported   |
 
-### Future generation
+### Third generation (API v3.0)
 
 > [!NOTE]
-> This generation is undefined, but will be defined in the future.
+> This revision of the third-generation version is still under active development.
 
 | Version    | Release date | EOL date    | Security EOL date | EOL status  |
 |:----------:|:------------:|:-----------:|:-----------------:|:-----------:|
