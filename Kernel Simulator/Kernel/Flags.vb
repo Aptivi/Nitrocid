@@ -254,6 +254,10 @@ Namespace Kernel
         ''' </summary>
         Public SimulateNoAPM As Boolean
         ''' <summary>
+        ''' Sets the console background color using the VT sequence if true.
+        ''' </summary>
+        Public SetBackground As Boolean = True
+        ''' <summary>
         ''' Whether the input history is enabled
         ''' </summary>
         Public Property InputHistoryEnabled As Boolean

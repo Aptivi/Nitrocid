@@ -693,18 +693,21 @@ Namespace ConsoleBase.Colors
                 If ColorSequence Is Nothing Then Throw New ArgumentNullException(NameOf(ColorSequence))
                 Dim OldLeft As Integer = Console.CursorLeft
                 Dim OldTop As Integer = Console.CursorTop
+
+                'Set background
                 If Background Then
-                    Console.Write(ColorSequence.VTSequenceBackground)
-                    If IsOnUnix() Then
-                        'Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
-                        Console.SetCursorPosition(OldLeft, OldTop)
+                    If SetBackground Then
+                        Console.Write(ColorSequence.VTSequenceBackground)
+                    Else
+                        Console.Write(GetEsc() + $"[49m")
                     End If
                 Else
                     Console.Write(ColorSequence.VTSequenceForeground)
-                    If IsOnUnix() Then
-                        'Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
-                        Console.SetCursorPosition(OldLeft, OldTop)
-                    End If
+                End If
+
+                'Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
+                If IsOnUnix() Then
+                    Console.SetCursorPosition(OldLeft, OldTop)
                 End If
             End If
         End Sub

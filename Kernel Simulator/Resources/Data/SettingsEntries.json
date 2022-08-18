@@ -132,6 +132,12 @@
                 "Type": "SBoolean",
                 "Variable": "SimulateNoAPM",
                 "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
+            },
+            {
+                "Name": "Set console background color",
+                "Type": "SBoolean",
+                "Variable": "SetBackground",
+                "Description": "If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Kernel Simulator will set its own background colors."
             }
         ]
     },

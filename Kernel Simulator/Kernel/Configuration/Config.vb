@@ -137,7 +137,8 @@ Namespace Kernel.Configuration
                     {"Stylish splash screen", EnableSplash},
                     {"Splash name", SplashName},
                     {"Banner figlet font", BannerFigletFont},
-                    {"Simulate No APM Mode", SimulateNoAPM}
+                    {"Simulate No APM Mode", SimulateNoAPM},
+                    {"Set console background color", SetBackground}
                 }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -1196,6 +1197,9 @@ Namespace Kernel.Configuration
             Wdbg(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count)
 
             '----------------------------- Important configuration -----------------------------
+            'Set background color flag
+            SetBackground = If(ConfigToken("General")?("Set console background color"), True)
+
             'Language
             LangChangeCulture = If(ConfigToken("General")?("Change Culture when Switching Languages"), False)
             If LangChangeCulture Then CurrentCult = New CultureInfo(If(ConfigToken("General")?("Culture") IsNot Nothing, ConfigToken("General")("Culture").ToString, "en-US"))

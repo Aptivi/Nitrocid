@@ -243,7 +243,8 @@ Because the API was having mixed code of between refactored and unrefactored, we
 2. Added new commands
 3. Added new screensavers
 4. Added new splashes
-5. Removed command injection as it isn't secure
-6. Removed LOLCAT as it has become inconsistent
-7. General API improvements
-8. General improvements and bug fixes
+5. Added support for transparent terminals
+6. Removed command injection as it isn't secure
+7. Removed LOLCAT as it has become inconsistent
+8. General API improvements
+9. General improvements and bug fixes
