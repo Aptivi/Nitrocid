@@ -42,7 +42,7 @@ Namespace Shell.Shells.UESH.Commands
             If ModDocumentation Then
                 Process.Start("https://aptivi.github.io/Kernel-Simulator")
             Else
-                Process.Start("https://github.com/Aptivi/Kernel-Simulator/wiki")
+                Process.Start("https://aptivi.github.io/Kernel-Simulator/wiki/Home.html")
             End If
         End Sub
 
