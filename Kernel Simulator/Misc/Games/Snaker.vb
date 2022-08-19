@@ -315,6 +315,7 @@ Namespace Misc.Games
             Else
                 Console.BackgroundColor = colors(RandomDriver.Next(SnakerMinimumColorLevel, SnakerMaximumColorLevel))
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                Return Color.Empty
             End If
         End Function
 

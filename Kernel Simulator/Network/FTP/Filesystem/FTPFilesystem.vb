@@ -211,7 +211,7 @@ Namespace Network.FTP.Filesystem
         Public Function FTPCopyItem(Source As String, Target As String) As Boolean
             If FtpConnected Then
                 Dim Success As Boolean = True
-                Dim Result As Object
+                Dim Result As Object = Nothing
 
                 'Begin the copying process
                 Dim SourceFile As String = Source.Split("/").Last
@@ -229,7 +229,6 @@ Namespace Network.FTP.Filesystem
                 Directory.Delete(TempPath + "/FTPTransfer", True)
 
                 'See if copied successfully
-#Disable Warning BC42104
                 If Result.GetType = GetType(List(Of FtpResult)) Then
                     For Each FileResult As FtpResult In Result
                         If FileResult.IsFailed Then
@@ -244,7 +243,6 @@ Namespace Network.FTP.Filesystem
                         Success = False
                     End If
                 End If
-#Enable Warning BC42104
                 Wdbg(DebugLevel.I, "Copied. Result: {0}", Success)
                 Return Success
             Else

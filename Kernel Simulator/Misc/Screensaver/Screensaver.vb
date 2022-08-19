@@ -203,6 +203,7 @@ Namespace Misc.Screensaver
             For Each t As Type In Assembly.GetTypes()
                 If t.GetInterface(GetType(IScreensaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), BaseScreensaver)
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

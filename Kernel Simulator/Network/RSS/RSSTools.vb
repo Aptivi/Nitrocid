@@ -170,6 +170,7 @@ Namespace Network.RSS
                 Case Else
                     Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
             End Select
+            Return ""
         End Function
 
         ''' <summary>

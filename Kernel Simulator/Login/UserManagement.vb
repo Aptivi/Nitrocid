@@ -158,6 +158,7 @@ Namespace Login
                     Return UserToken.SelectToken(PropertyType.ToString.ToLower)
                 End If
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

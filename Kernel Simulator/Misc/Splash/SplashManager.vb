@@ -168,6 +168,7 @@ Namespace Misc.Splash
             For Each t As Type In Assembly.GetTypes()
                 If t.GetInterface(GetType(ISplash).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), ISplash)
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

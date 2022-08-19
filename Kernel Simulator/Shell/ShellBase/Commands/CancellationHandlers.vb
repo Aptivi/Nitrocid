@@ -66,6 +66,8 @@ Namespace Shell.ShellBase
                     Return HexEditorCancelSync
                 Case ShellType.RARShell
                     Return RarShellCancelSync
+                Case Else
+                    Return CancelSync
             End Select
         End Function
 

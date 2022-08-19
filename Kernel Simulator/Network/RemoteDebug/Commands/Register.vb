@@ -28,11 +28,7 @@ Namespace Network.RemoteDebug.Commands
             If String.IsNullOrWhiteSpace(GetDeviceProperty(DeviceAddress, DeviceProperty.Name)) Then
                 If ListArgs.Length <> 0 Then
                     SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgs(0))
-                    DebugDevices.Select(Function(Device As RemoteDebugDevice)
-                                            If Device.ClientIP = DeviceAddress Then
-                                                Return Device
-                                            End If
-                                        End Function)(0).ClientName = ListArgs(0)
+                    DebugDevices.Where(Function(Device As RemoteDebugDevice) Device.ClientIP = DeviceAddress)(0).ClientName = ListArgs(0)
                     SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgs(0)))
                 Else
                     SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))

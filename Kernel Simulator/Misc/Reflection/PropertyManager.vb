@@ -111,6 +111,7 @@ Namespace Misc.Reflection
             If PropertyInstance IsNot Nothing Then
                 Return PropertyInstance
             End If
+            Return Nothing
         End Function
 
         ''' <summary>
@@ -130,6 +131,7 @@ Namespace Misc.Reflection
                 PossibleProperty = PossibleType.GetProperty(Variable)
                 If PossibleProperty IsNot Nothing Then Return PossibleProperty
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

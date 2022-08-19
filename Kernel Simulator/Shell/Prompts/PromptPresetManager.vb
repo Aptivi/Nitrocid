@@ -272,6 +272,8 @@ Namespace Shell.Prompts
                     Return FTPShellCurrentPreset
                 Case ShellType.RARShell
                     Return RARShellCurrentPreset
+                Case Else
+                    Return UESHShellCurrentPreset
             End Select
         End Function
 
@@ -305,6 +307,8 @@ Namespace Shell.Prompts
                     Return FTPShellPresets
                 Case ShellType.RARShell
                     Return RARShellPresets
+                Case Else
+                    Return UESHShellPresets
             End Select
         End Function
 
@@ -338,6 +342,8 @@ Namespace Shell.Prompts
                     Return FTPCustomShellPresets
                 Case ShellType.RARShell
                     Return RARCustomShellPresets
+                Case Else
+                    Return UESHCustomShellPresets
             End Select
         End Function
 

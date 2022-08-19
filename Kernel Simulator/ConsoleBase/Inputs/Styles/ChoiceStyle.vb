@@ -122,6 +122,7 @@ Namespace ConsoleBase.Inputs.Styles
                     Return answer
                 End If
             End While
+            Return ""
         End Function
 
     End Module

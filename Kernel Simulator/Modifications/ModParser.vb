@@ -37,6 +37,7 @@ Namespace Modifications
             For Each t As Type In Assembly.GetTypes()
                 If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), IScript)
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

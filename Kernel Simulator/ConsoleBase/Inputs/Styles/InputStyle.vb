@@ -38,6 +38,7 @@ Namespace ConsoleBase.Inputs.Styles
 
                 Return Answer
             End While
+            Return ""
         End Function
 
     End Module

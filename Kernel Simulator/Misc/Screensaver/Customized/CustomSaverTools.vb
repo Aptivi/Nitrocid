@@ -111,6 +111,7 @@ Namespace Misc.Screensaver.Customized
                     Return Setting.Value.ToObject(GetType(Object))
                 End If
             Next
+            Return Nothing
         End Function
 
         ''' <summary>

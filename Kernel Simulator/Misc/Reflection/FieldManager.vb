@@ -116,6 +116,7 @@ Namespace Misc.Reflection
             If Field IsNot Nothing Then
                 Return Field
             End If
+            Return Nothing
         End Function
 
         ''' <summary>
@@ -139,6 +140,7 @@ Namespace Misc.Reflection
                 End If
                 If PossibleField IsNot Nothing Then Return PossibleField
             Next
+            Return Nothing
         End Function
 
         ''' <summary>
