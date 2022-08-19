@@ -37,7 +37,7 @@ Namespace Network.RemoteDebug
         Public RDebugMessageFormat As String = ""
         Friend RDebugFailed As Boolean
         Friend RDebugFailedReason As Exception
-        Private ReadOnly RDebugVersion As String = "0.7.0"
+        Private ReadOnly RDebugVersion As String = "0.7.1"
         Private RDebugBail As Boolean
 
         ''' <summary>
