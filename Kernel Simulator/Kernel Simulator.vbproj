@@ -134,7 +134,7 @@
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="3.0.2" />
     <PackageReference Include="UnitsNet" Version="4.144.0" />
-    <PackageReference Include="Aptivi.VT.NET" Version="0.1.0" />
+    <PackageReference Include="Aptivi.VT.NET" Version="0.2.0" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
