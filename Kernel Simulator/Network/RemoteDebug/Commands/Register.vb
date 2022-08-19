@@ -24,12 +24,12 @@ Namespace Network.RemoteDebug.Commands
         Inherits RemoteDebugCommandExecutor
         Implements IRemoteDebugCommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly() As String, ListSwitchesOnly() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
             If String.IsNullOrWhiteSpace(GetDeviceProperty(DeviceAddress, DeviceProperty.Name)) Then
-                If ListArgs.Length <> 0 Then
-                    SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgs(0))
-                    DebugDevices.Where(Function(Device As RemoteDebugDevice) Device.ClientIP = DeviceAddress)(0).ClientName = ListArgs(0)
-                    SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgs(0)))
+                If ListArgsOnly.Length <> 0 Then
+                    SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgsOnly(0))
+                    DebugDevices.Where(Function(Device As RemoteDebugDevice) Device.ClientIP = DeviceAddress)(0).ClientName = ListArgsOnly(0)
+                    SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgsOnly(0)))
                 Else
                     SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
                 End If

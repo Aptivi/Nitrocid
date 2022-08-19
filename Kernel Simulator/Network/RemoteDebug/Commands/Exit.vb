@@ -24,7 +24,7 @@ Namespace Network.RemoteDebug.Commands
         Inherits RemoteDebugCommandExecutor
         Implements IRemoteDebugCommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly() As String, ListSwitchesOnly() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
             DisconnectDbgDev(DeviceAddress)
         End Sub
 

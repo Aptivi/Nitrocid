@@ -23,7 +23,7 @@ Namespace Network.RemoteDebug.Interface
         Inherits CommandExecutor
         Implements IRemoteDebugCommand
 
-        Public Overridable Overloads Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+        Public Overridable Overloads Sub Execute(StringArgs As String, ListArgsOnly() As String, ListSwitchesOnly() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
             Wdbg(DebugLevel.F, "We shouldn't be here!!!")
             Throw New InvalidOperationException()
         End Sub

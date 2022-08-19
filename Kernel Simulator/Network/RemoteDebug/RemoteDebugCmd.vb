@@ -43,12 +43,13 @@ Namespace Network.RemoteDebug
             Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell)
             Dim Command As String = ArgumentInfo.Command
             Dim Args() As String = ArgumentInfo.ArgumentsList
+            Dim Switches() As String = ArgumentInfo.SwitchesList
             Dim StrArgs As String = ArgumentInfo.ArgumentsText
             Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
             Try
                 Dim DebugCommandBase As RemoteDebugCommandExecutor = DebugCommands(Command).CommandBase
-                DebugCommandBase.Execute(StrArgs, Args, SocketStreamWriter, Address)
+                DebugCommandBase.Execute(StrArgs, Args, Switches, SocketStreamWriter, Address)
             Catch ex As Exception
                 SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
                 KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)

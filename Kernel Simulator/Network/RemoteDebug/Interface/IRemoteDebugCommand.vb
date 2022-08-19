@@ -25,10 +25,11 @@ Namespace Network.RemoteDebug.Interface
         ''' Executes the command with the given argument
         ''' </summary>
         ''' <param name="StringArgs">Arguments in a string</param>
-        ''' <param name="ListArgs">List of provided arguments</param>
+        ''' <param name="ListArgsOnly">List of provided arguments</param>
+        ''' <param name="ListSwitchesOnly">List of provided switches</param>
         ''' <param name="SocketStreamWriter">Target debug devide to write on</param>
         ''' <param name="DeviceAddress">Target device address</param>
-        Sub Execute(StringArgs As String, ListArgs As String(), SocketStreamWriter As StreamWriter, DeviceAddress As String)
+        Sub Execute(StringArgs As String, ListArgsOnly() As String, ListSwitchesOnly() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String)
 
     End Interface
 End Namespace

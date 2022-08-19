@@ -24,9 +24,9 @@ Namespace Network.RemoteDebug.Commands
         Inherits RemoteDebugCommandExecutor
         Implements IRemoteDebugCommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-            If ListArgs?.Length <> 0 Then
-                ShowHelp(ListArgs(0), ShellType.RemoteDebugShell, SocketStreamWriter)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly() As String, ListSwitchesOnly() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+            If ListArgsOnly.Length <> 0 Then
+                ShowHelp(ListArgsOnly(0), ShellType.RemoteDebugShell, SocketStreamWriter)
             Else
                 ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter)
             End If
