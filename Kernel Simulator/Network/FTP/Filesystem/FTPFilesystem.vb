@@ -32,7 +32,7 @@ Namespace Network.FTP.Filesystem
         ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
         ''' <exception cref="InvalidOperationException"></exception>
         Public Function FTPListRemote(Path As String) As List(Of String)
-            FTPListRemote(Path, FtpShowDetailsInList)
+            Return FTPListRemote(Path, FtpShowDetailsInList)
         End Function
 
         ''' <summary>

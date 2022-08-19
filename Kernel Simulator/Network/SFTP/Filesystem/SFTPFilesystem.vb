@@ -32,7 +32,7 @@ Namespace Network.SFTP.Filesystem
         ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
         ''' <exception cref="InvalidOperationException"></exception>
         Public Function SFTPListRemote(Path As String) As List(Of String)
-            SFTPListRemote(Path, SFTPShowDetailsInList)
+            Return SFTPListRemote(Path, SFTPShowDetailsInList)
         End Function
 
         ''' <summary>
