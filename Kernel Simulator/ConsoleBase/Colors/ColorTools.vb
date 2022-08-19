@@ -180,20 +180,6 @@ Namespace ConsoleBase.Colors
             AlternativeOption
         End Enum
 
-        ''' <summary>
-        ''' Color type enumeration
-        ''' </summary>
-        Public Enum ColorType
-            ''' <summary>
-            ''' Color is a true color
-            ''' </summary>
-            TrueColor
-            ''' <summary>
-            ''' Color is a 256-bit color
-            ''' </summary>
-            _255Color
-        End Enum
-
         'Variables for colors used by previous versions of the kernel.
         Public InputColor As New Color(ConsoleColors.White)
         Public LicenseColor As New Color(ConsoleColors.White)

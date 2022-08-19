@@ -38,14 +38,11 @@ namespace KSTests.ConsoleTests
         {
             for (int ColorIndex = 0; ColorIndex <= 255; ColorIndex++)
             {
-                JObject ColorData = (JObject)Color255.ColorDataJson[ColorIndex];
+                JObject ColorData = (JObject)ColorSeq.Color255.ColorDataJson[ColorIndex];
                 ColorData["colorId"].ToString().ShouldBe(ColorIndex.ToString());
-                int argresult = 0;
-                int.TryParse(ColorData["rgb"]["r"].ToString(), out argresult).ShouldBeTrue();
-                int argresult1 = 0;
-                int.TryParse(ColorData["rgb"]["g"].ToString(), out argresult1).ShouldBeTrue();
-                int argresult2 = 0;
-                int.TryParse(ColorData["rgb"]["b"].ToString(), out argresult2).ShouldBeTrue();
+                int.TryParse(ColorData["rgb"]["r"].ToString(), out int argresult).ShouldBeTrue();
+                int.TryParse(ColorData["rgb"]["g"].ToString(), out int argresult1).ShouldBeTrue();
+                int.TryParse(ColorData["rgb"]["b"].ToString(), out int argresult2).ShouldBeTrue();
             }
         }
 

@@ -38,9 +38,9 @@ namespace KSTests.MiscTests
         [Description("Action")]
         public void TestBeautifyJsonText()
         {
-            string Beautified = JsonBeautifier.BeautifyJsonText(JsonConvert.SerializeObject(Color255.ColorDataJson));
+            string Beautified = JsonBeautifier.BeautifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
             Beautified.ShouldNotBeEmpty();
-            Beautified.ShouldBe(JsonConvert.SerializeObject(Color255.ColorDataJson, Formatting.Indented));
+            Beautified.ShouldBe(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson, Formatting.Indented));
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace KSTests.MiscTests
         [Description("Action")]
         public void TestMinifyJsonText()
         {
-            string Minified = JsonMinifier.MinifyJsonText(JsonConvert.SerializeObject(Color255.ColorDataJson));
+            string Minified = JsonMinifier.MinifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
             Minified.ShouldNotBeEmpty();
-            Minified.ShouldBe(JsonConvert.SerializeObject(Color255.ColorDataJson, Formatting.None));
+            Minified.ShouldBe(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson, Formatting.None));
         }
 
         /// <summary>

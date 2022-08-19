@@ -16,9 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
 using NUnit.Framework;
 using Shouldly;
+using Colors = KS.ConsoleBase.Colors;
+using ColorSeq;
 
 namespace KSTests.ConsoleTests
 {
@@ -45,9 +46,9 @@ namespace KSTests.ConsoleTests
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorTools.ColorType._255Color);
-            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc().ToString() + "[48;5;13m");
-            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc().ToString() + "[38;5;13m");
+            ColorInstance.Type.ShouldBe(ColorType._255Color);
+            ColorInstance.VTSequenceBackground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[48;5;13m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[38;5;13m");
             ColorInstance.R.ShouldBe(255);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(255);
@@ -74,9 +75,9 @@ namespace KSTests.ConsoleTests
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("94;0;63");
-            ColorInstance.Type.ShouldBe(ColorTools.ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc().ToString() + "[48;2;94;0;63m");
-            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc().ToString() + "[38;2;94;0;63m");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[48;2;94;0;63m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[38;2;94;0;63m");
             ColorInstance.R.ShouldBe(94);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(63);
@@ -103,9 +104,9 @@ namespace KSTests.ConsoleTests
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("15;15;15");
-            ColorInstance.Type.ShouldBe(ColorTools.ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc().ToString() + "[48;2;15;15;15m");
-            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc().ToString() + "[38;2;15;15;15m");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[48;2;15;15;15m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Colors.Color255.GetEsc().ToString() + "[38;2;15;15;15m");
             ColorInstance.R.ShouldBe(15);
             ColorInstance.G.ShouldBe(15);
             ColorInstance.B.ShouldBe(15);

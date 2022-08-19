@@ -41,6 +41,7 @@ using KS.Network.SSH;
 using KS.Shell;
 using MadMilkman.Ini;
 using ManagedWeatherMap.Core;
+using ColorSeq;
 
 namespace KSConverter
 {

@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell;
+using ColorSeq;
 
 namespace KSConverter
 {
