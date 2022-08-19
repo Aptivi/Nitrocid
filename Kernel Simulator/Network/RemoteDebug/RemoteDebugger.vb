@@ -103,7 +103,9 @@ Namespace Network.RemoteDebug
                     If DebugTCP.Pending Then
                         'Populate the device variables with the information
                         RDebugClient = DebugTCP.AcceptSocket
-                        RDebugStream = New NetworkStream(RDebugClient)
+
+                        'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
+                        RDebugStream = New NetworkStream(RDebugClient) With {.ReadTimeout = 10}
 
                         'Add the device to JSON
                         RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString
@@ -172,13 +174,10 @@ Namespace Network.RemoteDebug
                     Try
                         'Variables
                         Dim MessageBuffer(65536) As Byte
-                        Dim SocketStream As New NetworkStream(DebugDevices(DeviceIndex).ClientSocket)
+                        Dim SocketStream As NetworkStream = DebugDevices(DeviceIndex).ClientStream
                         Dim SocketStreamWriter As StreamWriter = DebugDevices(DeviceIndex).ClientStreamWriter
                         Dim SocketIP As String = DebugDevices(DeviceIndex).ClientIP
                         Dim SocketName As String = DebugDevices(DeviceIndex).ClientName
-
-                        'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
-                        SocketStream.ReadTimeout = 10
 
                         'Read a message from the stream
                         SocketStream.Read(MessageBuffer, 0, 65536)
@@ -186,20 +185,23 @@ Namespace Network.RemoteDebug
 
                         'Make some fixups regarding newlines, which means remove all instances of vbCr (Mac OS 9 newlines) and vbLf (Linux newlines).
                         'Windows hosts are affected, too, because it uses vbCrLf, which means (vbCr + vbLf)
-                        Message = Message.Replace(vbCr, vbNullChar)
-                        Message = Message.Replace(vbLf, vbNullChar)
+                        Message = Message.Replace(vbCr, "")
+                        Message = Message.Replace(vbLf, "")
+
+                        'Now, remove all null chars
+                        Message = Message.Replace(Convert.ToChar(0), "")
+
+                        'If the message is empty, return.
+                        If String.IsNullOrWhiteSpace(Message) Then Continue For
 
                         'Don't post message if it starts with a null character. On Unix, the nullchar detection always returns false even if it seems
                         'that the message starts with the actual character, not the null character, so detect nullchar by getting the first character
                         'from the message and comparing it to the null char ASCII number, which is 0.
                         If Not Convert.ToInt32(Message(0)) = 0 Then
-                            'Fix the value of the message
-                            Message = Message.Replace(vbNullChar, "")
-
                             'Now, check the message
                             If Message.StartsWith("/") Then
                                 'Message is a command
-                                Dim FullCommand As String = Message.Replace("/", "").Replace(vbNullChar, "")
+                                Dim FullCommand As String = Message.Replace("/", "")
                                 Dim Command As String = FullCommand.Split(" ")(0)
                                 If DebugCommands.ContainsKey(Command) Then
                                     'Parsing starts here.
