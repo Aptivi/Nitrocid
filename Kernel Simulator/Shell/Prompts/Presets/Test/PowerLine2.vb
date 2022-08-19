@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
+Imports KS.Misc.Text
 
 Namespace Shell.Prompts.Presets.Test
     Public Class TestPowerLine2Preset

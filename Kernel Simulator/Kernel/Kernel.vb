@@ -106,7 +106,7 @@ Namespace Kernel
 
                     'Initialize crucial things
                     If SafeMode Then ReadFailsafeConfig()
-                    If Not IsOnUnix() Then Initialize255()
+                    If Not IsOnUnix() Then Color255.Initialize255()
                     AddHandler AppDomain.CurrentDomain.AssemblyResolve, AddressOf LoadFromAssemblySearchPaths
 
                     'Check for pre-boot arguments

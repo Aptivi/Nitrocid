@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text
+Imports KS.Misc.Text
 Imports KS.Shell.Shells.Rar
 
 Namespace Shell.Prompts.Presets.RAR

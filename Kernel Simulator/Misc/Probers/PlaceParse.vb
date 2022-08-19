@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports KS.Misc.Text
 Imports KS.Files.Folders
 Imports KS.Shell.Shells.FTP
 Imports KS.Shell.Shells.Mail

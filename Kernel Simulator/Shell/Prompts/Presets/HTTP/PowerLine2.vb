@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Text
+Imports KS.Misc.Text
 Imports KS.Shell.Shells.HTTP
 
 Namespace Shell.Prompts.Presets.HTTP

@@ -49,5 +49,13 @@ Namespace Misc.Text
                              .ToArray()
         End Function
 
+        ''' <summary>
+        ''' A simplification for <see cref="Convert.ToChar(Integer)"/> function to return the ESC character
+        ''' </summary>
+        ''' <returns>ESC</returns>
+        Public Function GetEsc() As Char
+            Return Convert.ToChar(&H1B)
+        End Function
+
     End Module
 End Namespace

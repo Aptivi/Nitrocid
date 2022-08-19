@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
+using KS.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System;
@@ -47,9 +47,9 @@ namespace KSTests.ConsoleTests
         public void TestFilterVTSequences()
         {
             char BellChar = Convert.ToChar(7);
-            char EscapeChar = Convert.ToChar(27);
-            ConsoleExtensions.FilterVTSequences($"Hello!{Color255.GetEsc()}[38;5;43m").ShouldBe("Hello!");
-            ConsoleExtensions.FilterVTSequences($"{Color255.GetEsc()}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
+            char EscapeChar = CharManager.GetEsc();
+            ConsoleExtensions.FilterVTSequences($"Hello!{EscapeChar}[38;5;43m").ShouldBe("Hello!");
+            ConsoleExtensions.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
         }
 
     }

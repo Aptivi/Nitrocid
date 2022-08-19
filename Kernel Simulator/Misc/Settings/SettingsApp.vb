@@ -18,6 +18,7 @@
 
 Imports System.Reflection
 Imports Newtonsoft.Json.Linq
+Imports KS.Misc.Text
 Imports KS.Files.Folders
 Imports KS.Files.Querying
 Imports KS.Kernel.Configuration

@@ -62,3 +62,7 @@ Same story as in power management.
 ##### Removed `ListArgs()` from `ICommand` and `IArgument`
 
 It seems that `ListArgs()` is now no longer a reliable way to check for arguments, as it could be `null` when no argument is provided. While it contains a collection of switches and arguments, it's sequential. We have separated between switches and arguments as demonstrated in both the `ListArgsOnly()` and `ListSwitchesOnly()` arrays.
+
+##### Moved `GetEsc()` to `Misc.Text.CharManager`
+
+`GetEsc()` is now widely used for color manipulation, but we need to move it to a better place as migration to `ColorSeq` is done. We have deleted `Color255` from `KS.ConsoleBase` as a result of this migration.

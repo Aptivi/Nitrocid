@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports KS.Misc.Text
+
 Namespace Shell.Shells.Test.Commands
     ''' <summary>
     ''' It lets you test the 24-bit color compatibility, assuming that R, G, and B aren't less than 0 or greater than 255.
