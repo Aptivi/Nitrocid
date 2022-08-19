@@ -31,25 +31,25 @@ Namespace Shell.Shells.Hex.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Count = 1 Then
-                Dim ByteContent As Byte = Convert.ToByte(ListArgs(0), 16)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 1 Then
+                Dim ByteContent As Byte = Convert.ToByte(ListArgsOnly(0), 16)
                 HexEdit_QueryByteAndDisplay(ByteContent)
-            ElseIf ListArgs?.Count = 2 Then
-                If IsStringNumeric(ListArgs(1)) Then
-                    If CLng(ListArgs(1)) <= HexEdit_FileBytes.LongLength Then
-                        Dim ByteContent As Byte = Convert.ToByte(ListArgs(0), 16)
-                        HexEdit_QueryByteAndDisplay(ByteContent, ListArgs(1))
+            ElseIf ListArgsOnly.Length = 2 Then
+                If IsStringNumeric(ListArgsOnly(1)) Then
+                    If CLng(ListArgsOnly(1)) <= HexEdit_FileBytes.LongLength Then
+                        Dim ByteContent As Byte = Convert.ToByte(ListArgsOnly(0), 16)
+                        HexEdit_QueryByteAndDisplay(ByteContent, ListArgsOnly(1))
                     Else
                         Write(DoTranslation("The specified byte number may not be larger than the file size."), True, ColTypes.Error)
                     End If
                 End If
-            ElseIf ListArgs?.Count > 2 Then
-                If IsStringNumeric(ListArgs(1)) And IsStringNumeric(ListArgs(2)) Then
-                    If CLng(ListArgs(1)) <= HexEdit_FileBytes.LongLength And CLng(ListArgs(2)) <= HexEdit_FileBytes.LongLength Then
-                        Dim ByteContent As Byte = Convert.ToByte(ListArgs(0), 16)
-                        Dim ByteNumberStart As Long = ListArgs(1)
-                        Dim ByteNumberEnd As Long = ListArgs(2)
+            ElseIf ListArgsOnly.Length > 2 Then
+                If IsStringNumeric(ListArgsOnly(1)) And IsStringNumeric(ListArgsOnly(2)) Then
+                    If CLng(ListArgsOnly(1)) <= HexEdit_FileBytes.LongLength And CLng(ListArgsOnly(2)) <= HexEdit_FileBytes.LongLength Then
+                        Dim ByteContent As Byte = Convert.ToByte(ListArgsOnly(0), 16)
+                        Dim ByteNumberStart As Long = ListArgsOnly(1)
+                        Dim ByteNumberEnd As Long = ListArgsOnly(2)
                         ByteNumberStart.SwapIfSourceLarger(ByteNumberEnd)
                         HexEdit_QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd)
                     Else

@@ -32,8 +32,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            For Each FileName As String In ListArgs
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each FileName As String In ListArgsOnly
                 Dim FilePath As String = NeutralizePath(FileName)
                 Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FileExists(FilePath))
                 WriteSeparator(FileName, True)

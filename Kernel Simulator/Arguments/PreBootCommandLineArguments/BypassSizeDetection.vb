@@ -22,7 +22,7 @@ Namespace Arguments.PreBootCommandLineArguments
         Inherits ArgumentExecutor
         Implements IArgument
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
             CheckingForConsoleSize = False
         End Sub
 

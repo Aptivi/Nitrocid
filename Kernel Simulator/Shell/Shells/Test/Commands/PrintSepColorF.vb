@@ -24,9 +24,9 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim Vars As Object() = ListArgs(1).Split(";")
-            WriteSeparator(ListArgs(2), True, New Color(ListArgs(0)), Vars)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Vars As Object() = ListArgsOnly(1).Split(";")
+            WriteSeparator(ListArgsOnly(2), True, New Color(ListArgsOnly(0)), Vars)
         End Sub
 
     End Class

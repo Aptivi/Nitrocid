@@ -26,10 +26,9 @@ Namespace Arguments.ArgumentBase
         ''' Executes the kernel argument with the given argument
         ''' </summary>
         ''' <param name="StringArgs">Arguments in a string</param>
-        ''' <param name="ListArgs">List of provided arguments and switches</param>
         ''' <param name="ListArgsOnly">List of provided arguments</param>
         ''' <param name="ListSwitchesOnly">List of provided switches</param>
-        Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
+        Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String())
 
     End Interface
 End Namespace

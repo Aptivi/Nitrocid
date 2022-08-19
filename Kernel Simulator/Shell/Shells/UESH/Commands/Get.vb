@@ -30,16 +30,16 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim RetryCount As Integer = 1
-            Dim URL As String = ListArgs(0)
+            Dim URL As String = ListArgsOnly(0)
             Wdbg(DebugLevel.I, "URL: {0}", URL)
             While Not RetryCount > DownloadRetries
                 Try
                     If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                         If Not URL.StartsWith(" ") Then
                             Write(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
-                            If DownloadFile(ListArgs(0)) Then
+                            If DownloadFile(ListArgsOnly(0)) Then
                                 Write(DoTranslation("Download has completed."), True, ColTypes.Neutral)
                             End If
                         Else

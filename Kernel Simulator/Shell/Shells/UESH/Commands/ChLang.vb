@@ -52,7 +52,7 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ListSwitchesOnly.Contains("-list") Then
                 Write(DoTranslation("Available languages:"), True, ColTypes.ListTitle)
                 For Each Language As String In Languages.Languages.Keys

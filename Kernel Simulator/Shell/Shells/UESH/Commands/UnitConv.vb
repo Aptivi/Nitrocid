@@ -31,7 +31,7 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim UnitType As String = ListArgsOnly(0)
             Dim QuantityNum As Integer = ListArgsOnly(1)
             Dim SourceUnit As String = ListArgsOnly(2)

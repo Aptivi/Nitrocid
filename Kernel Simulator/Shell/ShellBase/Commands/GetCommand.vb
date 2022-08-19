@@ -72,7 +72,6 @@ Namespace Shell.ShellBase.Commands
                 'Variables
                 Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(RequestedCommand, ShellType)
                 Dim Command As String = ArgumentInfo.Command
-                Dim FullArgs() As String = ArgumentInfo.FullArgumentsList
                 Dim Args() As String = ArgumentInfo.ArgumentsList
                 Dim Switches() As String = ArgumentInfo.SwitchesList
                 Dim StrArgs As String = ArgumentInfo.ArgumentsText
@@ -93,7 +92,7 @@ Namespace Shell.ShellBase.Commands
                     Dim ArgInfo As CommandArgumentInfo = TargetCommands(Command).CommandArgumentInfo
                     If (ArgInfo.ArgumentsRequired And RequiredArgumentsProvided) Or Not ArgInfo.ArgumentsRequired Then
                         Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
-                        CommandBase.Execute(StrArgs, FullArgs, Args, Switches)
+                        CommandBase.Execute(StrArgs, Args, Switches)
                     Else
                         Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
                         DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
@@ -101,7 +100,7 @@ Namespace Shell.ShellBase.Commands
                     End If
                 Else
                     Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
-                    CommandBase.Execute(StrArgs, FullArgs, Args, Switches)
+                    CommandBase.Execute(StrArgs, Args, Switches)
                 End If
             Catch taex As ThreadInterruptedException
                 CancelRequested = False

@@ -24,12 +24,12 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim Parts As New List(Of String)(ListArgs)
-            Dim Color As ColTypes = ListArgs(0)
-            Dim Line As Boolean = ListArgs(1)
-            Dim Vars As Object() = ListArgs(2).Split(";")
-            Dim Text As String = ListArgs(3)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Parts As New List(Of String)(ListArgsOnly)
+            Dim Color As ColTypes = ListArgsOnly(0)
+            Dim Line As Boolean = ListArgsOnly(1)
+            Dim Vars As Object() = ListArgsOnly(2).Split(";")
+            Dim Text As String = ListArgsOnly(3)
             Write(Text, Line, Color, Vars)
         End Sub
 

@@ -29,7 +29,7 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim FileToSearch As String = ListArgsOnly(0)
             Dim DirectoryToSearch As String = CurrentDir
             If ListArgsOnly.Length > 1 Then

@@ -29,8 +29,8 @@ Namespace Shell.Shells.SFTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            SFTPChangeLocalDir(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            SFTPChangeLocalDir(ListArgsOnly(0))
         End Sub
 
     End Class

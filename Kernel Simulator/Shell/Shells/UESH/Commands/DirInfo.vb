@@ -31,8 +31,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            For Each Dir As String In ListArgs
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            For Each Dir As String In ListArgsOnly
                 Dim DirectoryPath As String = NeutralizePath(Dir)
                 Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, FolderExists(DirectoryPath))
                 WriteSeparator(Dir, True)

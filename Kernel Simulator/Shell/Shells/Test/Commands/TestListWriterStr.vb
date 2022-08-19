@@ -24,7 +24,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim NormalStringList As New List(Of String) From {"String 1", "String 2", "String 3"}
             Dim ArrayStringList As New List(Of String()) From {{{"String 1", "String 2", "String 3"}}, {{"String 1", "String 2", "String 3"}}, {{"String 1", "String 2", "String 3"}}}
             Write(DoTranslation("Normal string list:"), True, ColTypes.Neutral)

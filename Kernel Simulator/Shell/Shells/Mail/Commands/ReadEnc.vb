@@ -32,10 +32,10 @@ Namespace Shell.Shells.Mail.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgs(0)))
-            If IsStringNumeric(ListArgs(0)) Then
-                MailPrintMessage(ListArgs(0), True)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Wdbg(DebugLevel.I, "Message number is numeric? {0}", IsStringNumeric(ListArgsOnly(0)))
+            If IsStringNumeric(ListArgsOnly(0)) Then
+                MailPrintMessage(ListArgsOnly(0), True)
             Else
                 Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
             End If

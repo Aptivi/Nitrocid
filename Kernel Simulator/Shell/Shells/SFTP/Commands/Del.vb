@@ -33,18 +33,18 @@ Namespace Shell.Shells.SFTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If SFTPConnected Then
                 'Print a message
-                Write(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
+                Write(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgsOnly(0))
 
                 'Make a confirmation message so user will not accidentally delete a file or folder
-                Write(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))
+                Write(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgsOnly(0))
                 Dim answer As String = Console.ReadKey.KeyChar
                 Console.WriteLine()
 
                 Try
-                    SFTPDeleteRemote(ListArgs(0))
+                    SFTPDeleteRemote(ListArgsOnly(0))
                 Catch ex As Exception
                     Write(ex.Message, True, ColTypes.Error)
                 End Try

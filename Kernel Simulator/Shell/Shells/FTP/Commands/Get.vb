@@ -29,9 +29,9 @@ Namespace Shell.Shells.FTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim RemoteFile As String = ListArgs(0)
-            Dim LocalFile As String = If(ListArgs.Count > 1, ListArgs(1), "")
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RemoteFile As String = ListArgsOnly(0)
+            Dim LocalFile As String = If(ListArgsOnly.Length > 1, ListArgsOnly(1), "")
             Write(DoTranslation("Downloading file {0}..."), False, ColTypes.Progress, RemoteFile)
             Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFile), FTPGetFile(RemoteFile, LocalFile), FTPGetFile(RemoteFile))
             If Result Then

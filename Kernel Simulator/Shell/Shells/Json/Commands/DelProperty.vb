@@ -29,8 +29,8 @@ Namespace Shell.Shells.Json.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            JsonShell_RemoveProperty(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            JsonShell_RemoveProperty(ListArgsOnly(0))
             Write(DoTranslation("Removed property."), True, ColTypes.Success)
         End Sub
 

@@ -24,8 +24,8 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs(0) = True Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly(0) = True Then
                 DebugMode = True
             Else
                 RebootRequested = True 'Abort remote debugger

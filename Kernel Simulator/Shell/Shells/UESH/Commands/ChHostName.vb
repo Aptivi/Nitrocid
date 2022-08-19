@@ -37,14 +37,14 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs(0) = "" Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly(0) = "" Then
                 Write(DoTranslation("Blank host name."), True, ColTypes.Error)
-            ElseIf ListArgs(0).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+            ElseIf ListArgsOnly(0).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Write(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
             Else
-                Write(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HostName, ListArgs(0))
-                ChangeHostname(ListArgs(0))
+                Write(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HostName, ListArgsOnly(0))
+                ChangeHostname(ListArgsOnly(0))
             End If
         End Sub
 

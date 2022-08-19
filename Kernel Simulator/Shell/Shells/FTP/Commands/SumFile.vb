@@ -29,9 +29,9 @@ Namespace Shell.Shells.FTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim RemoteFile As String = ListArgs(0)
-            Dim Hash As String = ListArgs(1)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim RemoteFile As String = ListArgsOnly(0)
+            Dim Hash As String = ListArgsOnly(1)
 
             'Check to see if hash is found
             If [Enum].IsDefined(GetType(FtpHashAlgorithm), Hash) Then

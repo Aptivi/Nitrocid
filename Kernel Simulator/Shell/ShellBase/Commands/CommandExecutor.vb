@@ -20,7 +20,7 @@ Namespace Shell.ShellBase.Commands
     Public MustInherit Class CommandExecutor
         Implements ICommand
 
-        Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overridable Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Wdbg(DebugLevel.F, "We shouldn't be here!!!")
             Throw New InvalidOperationException()
         End Sub

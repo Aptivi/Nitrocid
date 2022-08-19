@@ -52,7 +52,6 @@ Namespace Arguments.ArgumentBase
                     If Arguments.ContainsKey(Argument) Then
                         'Variables
                         Dim ArgumentInfo As New ProvidedArgumentArgumentsInfo(Argument, ArgumentType)
-                        Dim FullArgs() As String = ArgumentInfo.FullArgumentsList
                         Dim Args() As String = ArgumentInfo.ArgumentsList
                         Dim Switches() As String = ArgumentInfo.SwitchesList
                         Dim strArgs As String = ArgumentInfo.ArgumentsText
@@ -61,7 +60,7 @@ Namespace Arguments.ArgumentBase
                         'If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
                         If (Arguments(Argument).ArgumentsRequired And RequiredArgumentsProvided) Or Not Arguments(Argument).ArgumentsRequired Then
                             Dim ArgumentBase As ArgumentExecutor = Arguments(Argument).ArgumentBase
-                            ArgumentBase.Execute(strArgs, FullArgs, Args, Switches)
+                            ArgumentBase.Execute(strArgs, Args, Switches)
                         Else
                             Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)
                             Write(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)

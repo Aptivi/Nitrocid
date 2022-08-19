@@ -54,28 +54,28 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        'Warning: Don't use ListSwitchesOnly to replace ListArgs(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim NeutralizedFilePath As String = NeutralizePath(ListArgs(0))
+        'Warning: Don't use ListSwitchesOnly to replace ListArgsOnly(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NeutralizedFilePath As String = NeutralizePath(ListArgsOnly(0))
             If FileExists(NeutralizedFilePath) Then
-                If ListArgs(1).EndsWith("Normal") Or ListArgs(1).EndsWith("ReadOnly") Or ListArgs(1).EndsWith("Hidden") Or ListArgs(1).EndsWith("Archive") Then
-                    If ListArgs(1).StartsWith("+") Then
-                        Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgs(1).Remove(0, 1))
+                If ListArgsOnly(1).EndsWith("Normal") Or ListArgsOnly(1).EndsWith("ReadOnly") Or ListArgsOnly(1).EndsWith("Hidden") Or ListArgsOnly(1).EndsWith("Archive") Then
+                    If ListArgsOnly(1).StartsWith("+") Then
+                        Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgsOnly(1).Remove(0, 1))
                         If TryAddAttributeToFile(NeutralizedFilePath, Attrib) Then
-                            Write(DoTranslation("Attribute has been added successfully."), True, ColTypes.Neutral, ListArgs(1))
+                            Write(DoTranslation("Attribute has been added successfully."), True, ColTypes.Neutral, ListArgsOnly(1))
                         Else
-                            Write(DoTranslation("Failed to add attribute."), True, ColTypes.Neutral, ListArgs(1))
+                            Write(DoTranslation("Failed to add attribute."), True, ColTypes.Neutral, ListArgsOnly(1))
                         End If
-                    ElseIf ListArgs(1).StartsWith("-") Then
-                        Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgs(1).Remove(0, 1))
+                    ElseIf ListArgsOnly(1).StartsWith("-") Then
+                        Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgsOnly(1).Remove(0, 1))
                         If TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib) Then
-                            Write(DoTranslation("Attribute has been removed successfully."), True, ColTypes.Neutral, ListArgs(1))
+                            Write(DoTranslation("Attribute has been removed successfully."), True, ColTypes.Neutral, ListArgsOnly(1))
                         Else
-                            Write(DoTranslation("Failed to remove attribute."), True, ColTypes.Neutral, ListArgs(1))
+                            Write(DoTranslation("Failed to remove attribute."), True, ColTypes.Neutral, ListArgsOnly(1))
                         End If
                     End If
                 Else
-                    Write(DoTranslation("Attribute ""{0}"" is invalid."), True, ColTypes.Error, ListArgs(1))
+                    Write(DoTranslation("Attribute ""{0}"" is invalid."), True, ColTypes.Error, ListArgsOnly(1))
                 End If
             Else
                 Write(DoTranslation("File not found."), True, ColTypes.Error)

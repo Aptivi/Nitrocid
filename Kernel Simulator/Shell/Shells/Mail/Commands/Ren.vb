@@ -29,8 +29,8 @@ Namespace Shell.Shells.Mail.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            RenameMailDirectory(ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            RenameMailDirectory(ListArgsOnly(0), ListArgsOnly(1))
         End Sub
 
     End Class

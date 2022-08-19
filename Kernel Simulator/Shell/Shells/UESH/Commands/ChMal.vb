@@ -35,8 +35,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length > 0 Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length > 0 Then
                 If StringArgs = "" Then
                     Write(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
                 Else

@@ -29,8 +29,8 @@ Namespace Shell.Shells.Json.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs IsNot Nothing AndAlso ListArgs?.Count > 0 Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length > 0 Then
                 Write(JsonShell_SerializeToString(StringArgs), True, ColTypes.Neutral)
             Else
                 Write(JsonShell_SerializeToString("$"), True, ColTypes.Neutral)

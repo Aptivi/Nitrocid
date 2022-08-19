@@ -34,9 +34,9 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim FinalArgs As New List(Of String)
-            For Each arg As String In ListArgs
+            For Each arg As String In ListArgsOnly
                 Wdbg(DebugLevel.I, "Parsing argument {0}...", arg)
                 If AvailableArgs.ContainsKey(arg) Then
                     Wdbg(DebugLevel.I, "Adding argument {0}...", arg)

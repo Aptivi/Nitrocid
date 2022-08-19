@@ -29,14 +29,14 @@ Namespace Shell.Shells.RSS.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim UseBookmarkNum As Boolean = ListSwitchesOnly.Contains("-bookmark")
             Dim BookmarkNum As Integer
             If UseBookmarkNum Then
                 BookmarkNum = Integer.Parse(ListArgsOnly(0))
                 RSSFeedLink = GetBookmark(BookmarkNum)
             Else
-                RSSFeedLink = ListArgs(0)
+                RSSFeedLink = ListArgsOnly(0)
             End If
         End Sub
 

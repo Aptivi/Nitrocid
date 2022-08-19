@@ -43,15 +43,15 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length = 1 Then
-                Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 1 Then
+                Dim ZipArchiveName As String = NeutralizePath(ListArgsOnly(0))
                 ZipFile.ExtractToDirectory(ZipArchiveName, CurrentDir)
-            ElseIf ListArgs?.Length > 1 Then
-                Dim ZipArchiveName As String = NeutralizePath(ListArgs(0))
-                Dim Destination As String = If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")
-                If ListArgs?.Contains("-createdir") Then
-                    Destination = $"{If(Not ListArgs(1) = "-createdir", NeutralizePath(ListArgs(1)), "")}/{If(Not ListArgs(1) = "-createdir", Path.GetFileNameWithoutExtension(ZipArchiveName), NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}"
+            ElseIf ListArgsOnly.Length > 1 Then
+                Dim ZipArchiveName As String = NeutralizePath(ListArgsOnly(0))
+                Dim Destination As String = If(Not ListSwitchesOnly(0) = "-createdir", NeutralizePath(ListArgsOnly(1)), "")
+                If ListSwitchesOnly.Contains("-createdir") Then
+                    Destination = $"{If(Not ListSwitchesOnly(0) = "-createdir", NeutralizePath(ListArgsOnly(1)), "")}/{If(Not ListSwitchesOnly(0) = "-createdir", Path.GetFileNameWithoutExtension(ZipArchiveName), NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}"
                     If Destination(0) = "/" Then Destination = Destination.RemoveLetter(0)
                 End If
                 ZipFile.ExtractToDirectory(ZipArchiveName, Destination)

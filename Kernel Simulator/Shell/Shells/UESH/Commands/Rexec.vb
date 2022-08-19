@@ -31,11 +31,11 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length = 2 Then
-                SendCommand("<Request:Exec>(" + ListArgs(1) + ")", ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 2 Then
+                SendCommand("<Request:Exec>(" + ListArgsOnly(1) + ")", ListArgsOnly(0))
             Else
-                SendCommand("<Request:Exec>(" + ListArgs(2) + ")", ListArgs(0), ListArgs(1))
+                SendCommand("<Request:Exec>(" + ListArgsOnly(2) + ")", ListArgsOnly(0), ListArgsOnly(1))
             End If
         End Sub
 

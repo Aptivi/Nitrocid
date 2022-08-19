@@ -26,10 +26,10 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim spent As New Stopwatch
             spent.Start() 'Time when you're on a breakpoint is counted
-            Write(GetEncryptedString(ListArgs(0), Algorithms.MD5), True, ColTypes.Neutral)
+            Write(GetEncryptedString(ListArgsOnly(0), Algorithms.MD5), True, ColTypes.Neutral)
             Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
             spent.Stop()
         End Sub

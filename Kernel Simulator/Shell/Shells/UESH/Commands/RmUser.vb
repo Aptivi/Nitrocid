@@ -31,9 +31,9 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            RemoveUser(ListArgs(0))
-            Write(DoTranslation("User {0} removed."), True, ColTypes.Neutral, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            RemoveUser(ListArgsOnly(0))
+            Write(DoTranslation("User {0} removed."), True, ColTypes.Neutral, ListArgsOnly(0))
         End Sub
 
     End Class

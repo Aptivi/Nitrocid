@@ -31,32 +31,32 @@ Namespace Shell.Shells.Hex.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim ByteNumber As Long
-            If ListArgs?.Length > 0 Then
-                If ListArgs?.Length = 1 Then
+            If ListArgsOnly.Length > 0 Then
+                If ListArgsOnly.Length = 1 Then
                     'We've only provided one range
-                    Wdbg(DebugLevel.I, "Byte number provided: {0}", ListArgs(0))
-                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgs(0)))
-                    If IsStringNumeric(ListArgs(0)) Then
-                        ByteNumber = ListArgs(0)
+                    Wdbg(DebugLevel.I, "Byte number provided: {0}", ListArgsOnly(0))
+                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgsOnly(0)))
+                    If IsStringNumeric(ListArgsOnly(0)) Then
+                        ByteNumber = ListArgsOnly(0)
                         HexEdit_DisplayHex(ByteNumber)
                     Else
                         Write(DoTranslation("The byte number is not numeric."), True, ColTypes.Error)
-                        Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                        Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
                     End If
                 Else
                     'We've provided two Byte numbers in the range
-                    Wdbg(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgs(0), ListArgs(1))
-                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgs(0)), IsStringNumeric(ListArgs(1)))
-                    If IsStringNumeric(ListArgs(0)) And IsStringNumeric(ListArgs(1)) Then
-                        Dim ByteNumberStart As Long = ListArgs(0)
-                        Dim ByteNumberEnd As Long = ListArgs(1)
+                    Wdbg(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgsOnly(0), ListArgsOnly(1))
+                    Wdbg(DebugLevel.I, "Is it numeric? {0}", IsStringNumeric(ListArgsOnly(0)), IsStringNumeric(ListArgsOnly(1)))
+                    If IsStringNumeric(ListArgsOnly(0)) And IsStringNumeric(ListArgsOnly(1)) Then
+                        Dim ByteNumberStart As Long = ListArgsOnly(0)
+                        Dim ByteNumberEnd As Long = ListArgsOnly(1)
                         ByteNumberStart.SwapIfSourceLarger(ByteNumberEnd)
                         HexEdit_DisplayHex(ByteNumberStart, ByteNumberEnd)
                     Else
                         Write(DoTranslation("The byte number is not numeric."), True, ColTypes.Error)
-                        Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                        Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
                     End If
                 End If
             Else

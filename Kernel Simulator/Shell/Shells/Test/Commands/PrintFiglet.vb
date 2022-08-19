@@ -27,10 +27,10 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim Color As ColTypes = ListArgs(0)
-            Dim FigletFont As FiggleFont = GetFigletFont(ListArgs(1))
-            Dim Text As String = ListArgs(2)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Color As ColTypes = ListArgsOnly(0)
+            Dim FigletFont As FiggleFont = GetFigletFont(ListArgsOnly(1))
+            Dim Text As String = ListArgsOnly(2)
             WriteFiglet(Text, FigletFont, Color)
         End Sub
 

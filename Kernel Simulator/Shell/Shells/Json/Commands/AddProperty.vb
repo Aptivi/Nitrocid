@@ -29,8 +29,8 @@ Namespace Shell.Shells.Json.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            JsonShell_AddNewProperty(ListArgs(0), ListArgs(1), ListArgs(2))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            JsonShell_AddNewProperty(ListArgsOnly(0), ListArgsOnly(1), ListArgsOnly(2))
         End Sub
 
     End Class

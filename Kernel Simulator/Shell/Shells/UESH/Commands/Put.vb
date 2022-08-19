@@ -30,10 +30,10 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim RetryCount As Integer = 1
-            Dim FileName As String = NeutralizePath(ListArgs(0))
-            Dim URL As String = ListArgs(1)
+            Dim FileName As String = NeutralizePath(ListArgsOnly(0))
+            Dim URL As String = ListArgsOnly(1)
             Wdbg(DebugLevel.I, "URL: {0}", URL)
             While Not RetryCount > UploadRetries
                 Try

@@ -29,8 +29,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            PromptInputAndSet(StringArgs.Replace(ListArgs(0) + " ", ""), ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            PromptInputAndSet(StringArgs.Replace(ListArgsOnly(0) + " ", ""), ListArgsOnly(0))
         End Sub
 
     End Class

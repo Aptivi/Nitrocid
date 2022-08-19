@@ -31,24 +31,24 @@ Namespace Shell.Shells.Text.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Count = 1 Then
-                If IsStringNumeric(ListArgs(0)) Then
-                    If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
-                        TextEdit_RemoveLine(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 1 Then
+                If IsStringNumeric(ListArgsOnly(0)) Then
+                    If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
+                        TextEdit_RemoveLine(ListArgsOnly(0))
                         Write(DoTranslation("Removed line."), True, ColTypes.Success)
                     Else
                         Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                     End If
                 Else
-                    Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
-                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                    Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgsOnly(0))
+                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
                 End If
-            ElseIf ListArgs?.Count > 1 Then
-                If IsStringNumeric(ListArgs(0)) And IsStringNumeric(ListArgs(1)) Then
-                    If CInt(ListArgs(0)) <= TextEdit_FileLines.Count And CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
-                        Dim LineNumberStart As Integer = ListArgs(0)
-                        Dim LineNumberEnd As Integer = ListArgs(1)
+            ElseIf ListArgsOnly.Length > 1 Then
+                If IsStringNumeric(ListArgsOnly(0)) And IsStringNumeric(ListArgsOnly(1)) Then
+                    If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count And CInt(ListArgsOnly(1)) <= TextEdit_FileLines.Count Then
+                        Dim LineNumberStart As Integer = ListArgsOnly(0)
+                        Dim LineNumberEnd As Integer = ListArgsOnly(1)
                         LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                         For LineNumber = LineNumberStart To LineNumberEnd
                             TextEdit_RemoveLine(LineNumber)
@@ -58,8 +58,8 @@ Namespace Shell.Shells.Text.Commands
                         Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                     End If
                 Else
-                    Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(1))
-                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(1))
+                    Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgsOnly(1))
+                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(1))
                 End If
             End If
         End Sub

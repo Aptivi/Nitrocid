@@ -29,11 +29,11 @@ Namespace Shell.Shells.Mail.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If MailMoveAllBySender(ListArgs(0), ListArgs(1)) Then
-                Write(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Success, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If MailMoveAllBySender(ListArgsOnly(0), ListArgsOnly(1)) Then
+                Write(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Success, ListArgsOnly(0))
             Else
-                Write(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
+                Write(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Error, ListArgsOnly(0))
             End If
         End Sub
 

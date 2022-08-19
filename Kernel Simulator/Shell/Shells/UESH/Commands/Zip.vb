@@ -49,7 +49,7 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim ZipArchiveName As String = NeutralizePath(ListArgsOnly(0))
             Dim Destination As String = NeutralizePath(ListArgsOnly(1))
             Dim ZipCompression As CompressionLevel = CompressionLevel.Optimal

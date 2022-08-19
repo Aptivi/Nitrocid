@@ -31,11 +31,11 @@ Namespace Shell.Shells.FTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs(0).StartsWith("ftp://") Or ListArgs(0).StartsWith("ftps://") Or ListArgs(0).StartsWith("ftpes://") Then
-                TryToConnect(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly(0).StartsWith("ftp://") Or ListArgsOnly(0).StartsWith("ftps://") Or ListArgsOnly(0).StartsWith("ftpes://") Then
+                TryToConnect(ListArgsOnly(0))
             Else
-                TryToConnect($"ftp://{ListArgs(0)}")
+                TryToConnect($"ftp://{ListArgsOnly(0)}")
             End If
         End Sub
 

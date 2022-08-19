@@ -26,15 +26,15 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If CustomSavers.ContainsKey(ListArgs(0)) Then
-                If SetCustomSaverSettings(ListArgs(0), ListArgs(1), ListArgs(2)) Then
-                    Write(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If CustomSavers.ContainsKey(ListArgsOnly(0)) Then
+                If SetCustomSaverSettings(ListArgsOnly(0), ListArgsOnly(1), ListArgsOnly(2)) Then
+                    Write(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, ListArgsOnly(0))
                 Else
-                    Write(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Error, ListArgs(0))
+                    Write(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Error, ListArgsOnly(0))
                 End If
             Else
-                Write(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, ListArgs(0))
+                Write(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, ListArgsOnly(0))
             End If
         End Sub
 

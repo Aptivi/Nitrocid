@@ -31,11 +31,11 @@ Namespace Shell.Shells.SFTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs(0).StartsWith("sftp://") Then
-                SFTPTryToConnect(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly(0).StartsWith("sftp://") Then
+                SFTPTryToConnect(ListArgsOnly(0))
             Else
-                SFTPTryToConnect($"sftp://{ListArgs(0)}")
+                SFTPTryToConnect($"sftp://{ListArgsOnly(0)}")
             End If
         End Sub
 

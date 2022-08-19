@@ -29,9 +29,9 @@ Namespace Shell.Shells.Zip.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If Not ChangeWorkingArchiveDirectory(ListArgs(0)) Then
-                Write(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ChangeWorkingArchiveDirectory(ListArgsOnly(0)) Then
+                Write(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, ListArgsOnly(0))
             End If
         End Sub
 

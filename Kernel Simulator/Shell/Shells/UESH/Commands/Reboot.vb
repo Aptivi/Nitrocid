@@ -32,15 +32,15 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If Not ListArgs?.Length = 0 Then
-                If ListArgs(0) = "safe" Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ListArgsOnly.Length = 0 Then
+                If ListArgsOnly(0) = "safe" Then
                     PowerManage(PowerMode.RebootSafe)
-                ElseIf ListArgs(0) <> "" Then
-                    If ListArgs?.Length > 1 Then
-                        PowerManage(PowerMode.RemoteRestart, ListArgs(0), ListArgs(1))
+                ElseIf ListArgsOnly(0) <> "" Then
+                    If ListArgsOnly.Length > 1 Then
+                        PowerManage(PowerMode.RemoteRestart, ListArgsOnly(0), ListArgsOnly(1))
                     Else
-                        PowerManage(PowerMode.RemoteRestart, ListArgs(0))
+                        PowerManage(PowerMode.RemoteRestart, ListArgsOnly(0))
                     End If
                 Else
                     PowerManage(PowerMode.Reboot)

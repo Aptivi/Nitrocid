@@ -35,18 +35,18 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length > 3 Then
-                If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
-                    ManageAlias(ListArgs(0), [Enum].Parse(GetType(ShellType), ListArgs(1)), ListArgs(2), ListArgs(3))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length > 3 Then
+                If ListArgsOnly(0) = "add" And [Enum].IsDefined(GetType(ShellType), ListArgsOnly(1)) Then
+                    ManageAlias(ListArgsOnly(0), [Enum].Parse(GetType(ShellType), ListArgsOnly(1)), ListArgsOnly(2), ListArgsOnly(3))
                 Else
-                    Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
+                    Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgsOnly(1))
                 End If
-            ElseIf ListArgs?.Length = 3 Then
-                If ListArgs(0) = "rem" And [Enum].IsDefined(GetType(ShellType), ListArgs(1)) Then
-                    ManageAlias(ListArgs(0), [Enum].Parse(GetType(ShellType), ListArgs(1)), ListArgs(2))
+            ElseIf ListArgsOnly.Length = 3 Then
+                If ListArgsOnly(0) = "rem" And [Enum].IsDefined(GetType(ShellType), ListArgsOnly(1)) Then
+                    ManageAlias(ListArgsOnly(0), [Enum].Parse(GetType(ShellType), ListArgsOnly(1)), ListArgsOnly(2))
                 Else
-                    Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
+                    Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgsOnly(1))
                 End If
             End If
         End Sub

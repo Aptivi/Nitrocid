@@ -24,13 +24,13 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim EType As KernelErrorLevel = [Enum].Parse(GetType(KernelErrorLevel), ListArgs(0))
-            Dim Reboot As Boolean = ListArgs(1)
-            Dim RTime As Long = ListArgs(2)
-            Dim Args As String = ListArgs(3)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim EType As KernelErrorLevel = [Enum].Parse(GetType(KernelErrorLevel), ListArgsOnly(0))
+            Dim Reboot As Boolean = ListArgsOnly(1)
+            Dim RTime As Long = ListArgsOnly(2)
+            Dim Args As String = ListArgsOnly(3)
             Dim Exc As New Exception
-            Dim Message As String = ListArgs(4)
+            Dim Message As String = ListArgsOnly(4)
             KernelError(EType, Reboot, RTime, Message, Exc, Args)
         End Sub
 

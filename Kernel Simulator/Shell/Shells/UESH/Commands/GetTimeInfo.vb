@@ -29,9 +29,9 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim DateTimeInfo As Date
-            If Date.TryParse(ListArgs(0), DateTimeInfo) Then
+            If Date.TryParse(ListArgsOnly(0), DateTimeInfo) Then
                 Write("-- " + DoTranslation("Information for") + " {0} --" + NewLine, True, ColTypes.Neutral, Render(DateTimeInfo))
                 Write(DoTranslation("Milliseconds:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Millisecond)
                 Write(DoTranslation("Seconds:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Second)
@@ -49,7 +49,7 @@ Namespace Shell.Shells.UESH.Commands
                 Write(DoTranslation("Universal Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToUniversalTime))
                 Write(DoTranslation("Unix Time:") + " {0}", True, ColTypes.Neutral, DateToUnix(DateTimeInfo))
             Else
-                Write(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Error, ListArgs(0))
+                Write(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Error, ListArgsOnly(0))
             End If
         End Sub
 

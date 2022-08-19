@@ -58,14 +58,14 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Difficulty As SpeedPressDifficulty = SpeedPressDifficulty.Medium
             Dim CustomTimeout As Integer = SpeedPressTimeout
             If ListSwitchesOnly.Contains("-e") Then Difficulty = SpeedPressDifficulty.Easy
             If ListSwitchesOnly.Contains("-m") Then Difficulty = SpeedPressDifficulty.Medium
             If ListSwitchesOnly.Contains("-h") Then Difficulty = SpeedPressDifficulty.Hard
             If ListSwitchesOnly.Contains("-v") Then Difficulty = SpeedPressDifficulty.VeryHard
-            If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso IsStringNumeric(ListArgsOnly(0)) Then
+            If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Length > 0 AndAlso IsStringNumeric(ListArgsOnly(0)) Then
                 Difficulty = SpeedPressDifficulty.Custom
                 CustomTimeout = ListArgsOnly(0)
             End If

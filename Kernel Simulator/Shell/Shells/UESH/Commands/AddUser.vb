@@ -31,14 +31,14 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length = 1 Then
-                Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
-                AddUser(ListArgs(0))
-            ElseIf ListArgs?.Length > 2 Then
-                If ListArgs(1) = ListArgs(2) Then
-                    Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
-                    AddUser(ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 1 Then
+                Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgsOnly(0))
+                AddUser(ListArgsOnly(0))
+            ElseIf ListArgsOnly.Length > 2 Then
+                If ListArgsOnly(1) = ListArgsOnly(2) Then
+                    Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgsOnly(0))
+                    AddUser(ListArgsOnly(0), ListArgsOnly(1))
                 Else
                     Write(DoTranslation("Passwords don't match."), True, ColTypes.Error)
                 End If

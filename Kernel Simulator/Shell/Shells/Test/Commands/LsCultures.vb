@@ -26,11 +26,11 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
             For Each Cult As CultureInfo In Cults
-                If ListArgs?.Length > 0 Or ListArgs IsNot Nothing Then
-                    If Cult.Name.ToLower.Contains(ListArgs(0).ToLower) Or Cult.EnglishName.ToLower.Contains(ListArgs(0).ToLower) Then
+                If ListArgsOnly.Length > 0 Then
+                    If Cult.Name.ToLower.Contains(ListArgsOnly(0).ToLower) Or Cult.EnglishName.ToLower.Contains(ListArgsOnly(0).ToLower) Then
                         Write("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
                     End If
                 Else

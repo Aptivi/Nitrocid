@@ -24,7 +24,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Text As String = ListArgsOnly(0)
             Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
             If LocalizedStrings.ContainsKey(Text) Then

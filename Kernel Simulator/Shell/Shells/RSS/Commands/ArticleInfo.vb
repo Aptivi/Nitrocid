@@ -31,8 +31,8 @@ Namespace Shell.Shells.RSS.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim ArticleIndex As Integer = ListArgs(0) - 1
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim ArticleIndex As Integer = ListArgsOnly(0) - 1
             If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
                 Write(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
                 Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)

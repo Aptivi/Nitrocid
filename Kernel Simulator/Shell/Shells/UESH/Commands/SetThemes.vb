@@ -30,14 +30,14 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If ColoredShell Then
                 'Try to apply the theme
-                Dim ThemePath As String = NeutralizePath(ListArgs(0))
+                Dim ThemePath As String = NeutralizePath(ListArgsOnly(0))
                 If FileExists(ThemePath) Then
                     ApplyThemeFromFile(ThemePath)
                 Else
-                    ApplyThemeFromResources(ListArgs(0))
+                    ApplyThemeFromResources(ListArgsOnly(0))
                 End If
 
                 'Save it to configuration

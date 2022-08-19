@@ -26,7 +26,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Headers() As String = {"Ubuntu Version", "Release Date", "Support End", "ESM Support End"}
             Dim Rows(,) As String = {{"12.04 (Precise Pangolin)", Render(New Date(2012, 4, 26)), Render(New Date(2017, 4, 28)), Render(New Date(2019, 4, 28))},
                                  {"14.04 (Trusty Tahr)", Render(New Date(2014, 4, 17)), Render(New Date(2019, 4, 25)), Render(New Date(2024, 4, 25))},
@@ -34,7 +34,7 @@ Namespace Shell.Shells.Test.Commands
                                  {"18.04 (Bionic Beaver)", Render(New Date(2018, 4, 26)), Render(New Date(2023, 4, 30)), Render(New Date(2028, 4, 30))},
                                  {"20.04 (Focal Fossa)", Render(New Date(2020, 4, 23)), Render(New Date(2025, 4, 25)), Render(New Date(2030, 4, 25))},
                                  {"22.04 (Jammy Jellyfish)", Render(New Date(2022, 4, 26)), Render(New Date(2027, 4, 25)), Render(New Date(2032, 4, 25))}}
-            Dim Margin As Integer = If(ListArgsOnly.Count > 0, ListArgsOnly(0), 2)
+            Dim Margin As Integer = If(ListArgsOnly.Length > 0, ListArgsOnly(0), 2)
             WriteTable(Headers, Rows, Margin)
         End Sub
 

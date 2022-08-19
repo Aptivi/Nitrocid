@@ -27,17 +27,17 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs(0) = "Gregorian" Then
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly(0) = "Gregorian" Then
                 Write(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
-            ElseIf ListArgs(0) = "Hijri" Then
+            ElseIf ListArgsOnly(0) = "Hijri" Then
                 Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
                 Write(RenderDate(Cult), True, ColTypes.Neutral)
-            ElseIf ListArgs(0) = "Persian" Then
+            ElseIf ListArgsOnly(0) = "Persian" Then
                 Write(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
-            ElseIf ListArgs(0) = "Saudi-Hijri" Then
+            ElseIf ListArgsOnly(0) = "Saudi-Hijri" Then
                 Write(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
-            ElseIf ListArgs(0) = "Thai-Buddhist" Then
+            ElseIf ListArgsOnly(0) = "Thai-Buddhist" Then
                 Write(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
             End If
         End Sub

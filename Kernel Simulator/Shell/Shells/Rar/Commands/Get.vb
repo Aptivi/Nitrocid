@@ -41,16 +41,14 @@ Namespace Shell.Shells.Rar.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Where As String = ""
             Dim Absolute As Boolean
-            If ListArgs?.Length > 1 Then
-                If Not ListArgs(1) = "-absolute" Then Where = NeutralizePath(ListArgs(1))
-                If ListArgs?.Contains("-absolute") Then
-                    Absolute = True
-                End If
+            If ListArgsOnly.Length > 1 Then
+                If Not ListSwitchesOnly(0) = "-absolute" Then Where = NeutralizePath(ListArgsOnly(1))
+                If ListSwitchesOnly("-absolute") Then Absolute = True
             End If
-            ExtractRarFileEntry(ListArgs(0), Where, Absolute)
+            ExtractRarFileEntry(ListArgsOnly(0), Where, Absolute)
         End Sub
 
         Public Overrides Sub HelpHelper()

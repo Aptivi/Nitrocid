@@ -29,11 +29,11 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            ListArgs(0) = NeutralizePath(ListArgs(0))
-            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgs(0), FileExists(ListArgs(0)))
-            If FileExists(ListArgs(0)) Then
-                StartShell(ShellType.HexShell, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            ListArgsOnly(0) = NeutralizePath(ListArgsOnly(0))
+            Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly(0), FileExists(ListArgsOnly(0)))
+            If FileExists(ListArgsOnly(0)) Then
+                StartShell(ShellType.HexShell, ListArgsOnly(0))
             Else
                 Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
             End If

@@ -30,17 +30,17 @@ Namespace Shell.Shells.Hex.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If IsStringNumeric(ListArgs(0)) Then
-                If CInt(ListArgs(0)) <= HexEdit_FileBytes.LongLength Then
-                    HexEdit_DeleteByte(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If IsStringNumeric(ListArgsOnly(0)) Then
+                If CInt(ListArgsOnly(0)) <= HexEdit_FileBytes.LongLength Then
+                    HexEdit_DeleteByte(ListArgsOnly(0))
                     Write(DoTranslation("Byte deleted."), True, ColTypes.Success)
                 Else
                     Write(DoTranslation("The specified byte number may not be larger than the file size."), True, ColTypes.Error)
                 End If
             Else
                 Write(DoTranslation("The byte number is not numeric."), True, ColTypes.Error)
-                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
             End If
         End Sub
 

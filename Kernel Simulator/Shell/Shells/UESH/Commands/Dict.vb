@@ -30,7 +30,7 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Words As DictionaryWord() = GetWordInfo(ListArgsOnly(0))
 
             'Iterate for each word
@@ -40,11 +40,11 @@ Namespace Shell.Shells.UESH.Commands
                 Write("dictionaryapi.dev " + DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}", True, ColTypes.Neutral)
 
                 'Now, we can write the word information
-                WriteSeparator(DoTranslation("Word information for") + $" {ListArgs(0)}", True)
+                WriteSeparator(DoTranslation("Word information for") + $" {ListArgsOnly(0)}", True)
                 Write(DoTranslation("Word:"), False, ColTypes.ListEntry) : Write($" {Word.Word}", True, ColTypes.ListValue)
 
                 'Meanings...
-                WriteSeparator(DoTranslation("Word meanings for") + $" {ListArgs(0)}", True)
+                WriteSeparator(DoTranslation("Word meanings for") + $" {ListArgsOnly(0)}", True)
                 For Each MeaningBase As DictionaryWord.Meaning In Word.Meanings
                     'Base part of speech
                     Write(DoTranslation("Part of Speech:"), False, ColTypes.ListEntry) : Write($" {MeaningBase.PartOfSpeech}", True, ColTypes.ListValue)
@@ -82,7 +82,7 @@ Namespace Shell.Shells.UESH.Commands
                 Next
 
                 'Sources...
-                WriteSeparator(DoTranslation("Sources used to define") + $" {ListArgs(0)}", True)
+                WriteSeparator(DoTranslation("Sources used to define") + $" {ListArgsOnly(0)}", True)
                 WriteList(Word.SourceUrls)
             Next
         End Sub

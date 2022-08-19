@@ -30,11 +30,11 @@ Namespace Shell.Shells.Mail.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Length > 0 Then
-                Wdbg(DebugLevel.I, "Page is numeric? {0}", IsStringNumeric(ListArgs(0)))
-                If IsStringNumeric(ListArgs(0)) Then
-                    MailListMessages(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length > 0 Then
+                Wdbg(DebugLevel.I, "Page is numeric? {0}", IsStringNumeric(ListArgsOnly(0)))
+                If IsStringNumeric(ListArgsOnly(0)) Then
+                    MailListMessages(ListArgsOnly(0))
                 Else
                     Write(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
                 End If

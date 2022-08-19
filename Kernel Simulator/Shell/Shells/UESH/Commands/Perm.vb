@@ -31,8 +31,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Permission([Enum].Parse(GetType(PermissionType), ListArgs(1)), ListArgs(0), [Enum].Parse(GetType(PermissionManagementMode), ListArgs(2)))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Permission([Enum].Parse(GetType(PermissionType), ListArgsOnly(1)), ListArgsOnly(0), [Enum].Parse(GetType(PermissionManagementMode), ListArgsOnly(2)))
         End Sub
 
     End Class

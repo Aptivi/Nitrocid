@@ -31,8 +31,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim JsonFile As String = NeutralizePath(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim JsonFile As String = NeutralizePath(ListArgsOnly(0))
             Dim JsonOutputFile As String
             Dim BeautifiedJson As String
 
@@ -42,8 +42,8 @@ Namespace Shell.Shells.UESH.Commands
                 Write(BeautifiedJson, True, ColTypes.Neutral)
 
                 'Beautify it to an output file specified (optional)
-                If ListArgs.Count > 1 Then
-                    JsonOutputFile = NeutralizePath(ListArgs(1))
+                If ListArgsOnly.Length > 1 Then
+                    JsonOutputFile = NeutralizePath(ListArgsOnly(1))
                     File.WriteAllText(JsonOutputFile, BeautifiedJson)
                 End If
             Else

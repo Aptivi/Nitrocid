@@ -30,8 +30,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim CommandToBeWrapped As String = ListArgsOnly(0).Split(" ")(0)
             If UESHShellCommon.Commands.ContainsKey(CommandToBeWrapped) Then
                 If UESHShellCommon.Commands(CommandToBeWrapped).Flags.HasFlag(CommandFlags.Wrappable) Then
                     Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
@@ -40,7 +40,7 @@ Namespace Shell.Shells.UESH.Commands
                         Dim WrappedCommand As New KernelThread($"Wrapped Shell Command Thread", False, AddressOf ExecuteCommand)
                         ShellStack(ShellStack.Count - 1).AltCommandThreads.Add(WrappedCommand)
                     End If
-                    GetLine(ListArgs(0), WrapOutputPath)
+                    GetLine(ListArgsOnly(0), WrapOutputPath)
                     Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                     Dim WrapOutput As String = WrapOutputStream.ReadToEnd
                     WriteWrapped(WrapOutput, False, ColTypes.Neutral)

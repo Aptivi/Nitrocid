@@ -31,13 +31,13 @@ Namespace Shell.Shells.FTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If FtpConnected Then
-                Write(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Progress, ListArgs(0), ListArgs(1))
-                If FTPMoveItem(ListArgs(0), ListArgs(1)) Then
+                Write(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Progress, ListArgsOnly(0), ListArgsOnly(1))
+                If FTPMoveItem(ListArgsOnly(0), ListArgsOnly(1)) Then
                     Write(NewLine + DoTranslation("Moved successfully"), True, ColTypes.Success)
                 Else
-                    Write(NewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
+                    Write(NewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Error, ListArgsOnly(0), ListArgsOnly(1))
                 End If
             Else
                 Write(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)

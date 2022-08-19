@@ -29,12 +29,12 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-                If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
+                If ListArgsOnly.Length = 0 Then
                     StartShell(ShellType.SFTPShell)
                 Else
-                    StartShell(ShellType.SFTPShell, ListArgs(0))
+                    StartShell(ShellType.SFTPShell, ListArgsOnly(0))
                 End If
             Catch sftpex As Exceptions.SFTPShellException
                 Write(sftpex.Message, True, ColTypes.Error)

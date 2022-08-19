@@ -31,24 +31,24 @@ Namespace Shell.Shells.Hex.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If ListArgs?.Count = 1 Then
-                If IsStringNumeric(ListArgs(0)) Then
-                    If CLng(ListArgs(0)) <= HexEdit_FileBytes.LongLength Then
-                        HexEdit_DeleteBytes(ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If ListArgsOnly.Length = 1 Then
+                If IsStringNumeric(ListArgsOnly(0)) Then
+                    If CLng(ListArgsOnly(0)) <= HexEdit_FileBytes.LongLength Then
+                        HexEdit_DeleteBytes(ListArgsOnly(0))
                         Write(DoTranslation("Deleted bytes."), True, ColTypes.Success)
                     Else
                         Write(DoTranslation("The specified byte number may not be larger than the file size."), True, ColTypes.Error)
                     End If
                 Else
-                    Write(DoTranslation("Specified Byte number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
-                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                    Write(DoTranslation("Specified Byte number {0} is not a valid number."), True, ColTypes.Error, ListArgsOnly(0))
+                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
                 End If
-            ElseIf ListArgs?.Count > 1 Then
-                If IsStringNumeric(ListArgs(0)) And IsStringNumeric(ListArgs(1)) Then
-                    If CLng(ListArgs(0)) <= HexEdit_FileBytes.LongLength And CLng(ListArgs(1)) <= HexEdit_FileBytes.LongLength Then
-                        Dim ByteNumberStart As Long = ListArgs(0)
-                        Dim ByteNumberEnd As Long = ListArgs(1)
+            ElseIf ListArgsOnly.Length > 1 Then
+                If IsStringNumeric(ListArgsOnly(0)) And IsStringNumeric(ListArgsOnly(1)) Then
+                    If CLng(ListArgsOnly(0)) <= HexEdit_FileBytes.LongLength And CLng(ListArgsOnly(1)) <= HexEdit_FileBytes.LongLength Then
+                        Dim ByteNumberStart As Long = ListArgsOnly(0)
+                        Dim ByteNumberEnd As Long = ListArgsOnly(1)
                         ByteNumberStart.SwapIfSourceLarger(ByteNumberEnd)
                         HexEdit_DeleteBytes(ByteNumberStart, ByteNumberEnd)
                     Else
@@ -56,7 +56,7 @@ Namespace Shell.Shells.Hex.Commands
                     End If
                 Else
                     Write(DoTranslation("The byte number is not numeric."), True, ColTypes.Error)
-                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(1))
+                    Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(1))
                 End If
             End If
         End Sub

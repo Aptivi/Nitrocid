@@ -30,17 +30,17 @@ Namespace Shell.Shells.Text.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If IsStringNumeric(ListArgs(1)) And IsStringNumeric(ListArgs(0)) Then
-                If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
-                    TextEdit_DeleteChar(ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If IsStringNumeric(ListArgsOnly(1)) And IsStringNumeric(ListArgsOnly(0)) Then
+                If CInt(ListArgsOnly(1)) <= TextEdit_FileLines.Count Then
+                    TextEdit_DeleteChar(ListArgsOnly(0), ListArgsOnly(1))
                     Write(DoTranslation("Character deleted."), True, ColTypes.Success)
                 Else
                     Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             Else
                 Write(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
-                Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgs(0), ListArgs(1))
+                Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly(0), ListArgsOnly(1))
             End If
         End Sub
 

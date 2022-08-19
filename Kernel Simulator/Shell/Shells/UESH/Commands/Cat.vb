@@ -45,12 +45,12 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
                 Dim PrintLines As Boolean = PrintLineNumbers
                 If ListSwitchesOnly.Contains("-lines") Then PrintLines = True
                 If ListSwitchesOnly.Contains("-nolines") Then PrintLines = False '-lines and -nolines cancel together.
-                PrintContents(ListArgs(0), PrintLines)
+                PrintContents(ListArgsOnly(0), PrintLines)
             Catch ex As Exception
                 WStkTrc(ex)
                 Write(ex.Message, True, ColTypes.Error)

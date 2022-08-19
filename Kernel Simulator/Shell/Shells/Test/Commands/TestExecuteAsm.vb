@@ -26,7 +26,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             ListArgsOnly(0) = NeutralizePath(ListArgsOnly(0))
             Assembly.LoadFrom(ListArgsOnly(0)).EntryPoint.Invoke("", Array.Empty(Of Object))
         End Sub

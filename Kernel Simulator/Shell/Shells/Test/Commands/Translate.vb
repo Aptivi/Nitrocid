@@ -24,9 +24,9 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim Lang As String = ListArgs(0)
-            Dim Message As String = ListArgs(1)
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim Lang As String = ListArgsOnly(0)
+            Dim Message As String = ListArgsOnly(1)
             Write(DoTranslation(Message, Lang), True, ColTypes.Neutral)
         End Sub
 

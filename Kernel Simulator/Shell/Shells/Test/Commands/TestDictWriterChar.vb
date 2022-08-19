@@ -24,7 +24,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim NormalCharDict As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
             Dim ArrayCharDict As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
             Write(DoTranslation("Normal char dictionary:"), True, ColTypes.Neutral)

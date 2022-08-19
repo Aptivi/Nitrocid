@@ -31,13 +31,13 @@ Namespace Shell.Shells.HTTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Async Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Async Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If HTTPConnected = True Then
                 'Print a message
-                Write(DoTranslation("Getting {0}..."), True, ColTypes.Progress, ListArgs(0))
+                Write(DoTranslation("Getting {0}..."), True, ColTypes.Progress, ListArgsOnly(0))
 
                 Try
-                    Dim ResponseTask As Task(Of HttpResponseMessage) = HttpGet(ListArgs(0))
+                    Dim ResponseTask As Task(Of HttpResponseMessage) = HttpGet(ListArgsOnly(0))
                     ResponseTask.Wait()
                     Dim Response As HttpResponseMessage = ResponseTask.Result
                     Dim ResponseContent As String = Await Response.Content.ReadAsStringAsync

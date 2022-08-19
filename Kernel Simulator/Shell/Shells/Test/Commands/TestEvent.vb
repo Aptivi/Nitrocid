@@ -26,12 +26,12 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-                Dim SubName As String = "Raise" + ListArgs(0)
+                Dim SubName As String = "Raise" + ListArgsOnly(0)
                 CallByName(New Events.Events, SubName, CallType.Method)
             Catch ex As Exception
-                Write(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, ListArgs(0))
+                Write(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, ListArgsOnly(0))
             End Try
         End Sub
 

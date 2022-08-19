@@ -27,7 +27,7 @@ Namespace Shell.Shells.FTP.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If FtpConnected Then
                 Write("<<< C: {0}", True, ColTypes.Neutral, StringArgs)
                 Dim ExecutedReply As FtpReply = ClientFTP.Execute(StringArgs)

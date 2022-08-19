@@ -31,8 +31,8 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            Dim NotifIndex As Integer = ListArgs(0) - 1
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            Dim NotifIndex As Integer = ListArgsOnly(0) - 1
             If NotifDismiss(NotifIndex) Then
                 Write(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
             Else

@@ -29,7 +29,7 @@ Namespace Shell.Shells.Text.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             If IsStringNumeric(ListArgsOnly(0)) Then
                 If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
                     Dim OriginalLine As String = TextEdit_FileLines(ListArgsOnly(0) - 1)
@@ -41,7 +41,7 @@ Namespace Shell.Shells.Text.Commands
                 End If
             Else
                 Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
-                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly(0))
             End If
         End Sub
 

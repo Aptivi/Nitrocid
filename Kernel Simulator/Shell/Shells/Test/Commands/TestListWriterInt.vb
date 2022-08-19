@@ -24,7 +24,7 @@ Namespace Shell.Shells.Test.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim NormalIntegerList As New List(Of Integer) From {1, 2, 3}
             Dim ArrayIntegerList As New List(Of Integer()) From {{{1, 2, 3}}, {{1, 2, 3}}, {{1, 2, 3}}}
             Write(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)

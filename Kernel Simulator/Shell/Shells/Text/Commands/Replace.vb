@@ -29,8 +29,8 @@ Namespace Shell.Shells.Text.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            TextEdit_Replace(ListArgs(0), ListArgs(1))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            TextEdit_Replace(ListArgsOnly(0), ListArgsOnly(1))
             Write(DoTranslation("String replaced."), True, ColTypes.Success)
         End Sub
 

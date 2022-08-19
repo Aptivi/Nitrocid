@@ -33,16 +33,16 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             'If the pinged address is actually a number of times
             Dim PingTimes As Integer = 4
             Dim StepsToSkip As Integer = 0
-            If IsStringNumeric(ListArgs(0)) Then
-                Wdbg(DebugLevel.I, "ListArgs(0) is numeric. Assuming number of times: {0}", ListArgs(0))
-                PingTimes = ListArgs(0)
+            If IsStringNumeric(ListArgsOnly(0)) Then
+                Wdbg(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly(0))
+                PingTimes = ListArgsOnly(0)
                 StepsToSkip = 1
             End If
-            For Each PingedAddress As String In ListArgs.Skip(StepsToSkip)
+            For Each PingedAddress As String In ListArgsOnly.Skip(StepsToSkip)
                 If PingedAddress <> "" Then
                     WriteSeparator(PingedAddress, True)
                     For CurrentTime As Integer = 1 To PingTimes

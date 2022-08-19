@@ -63,7 +63,6 @@ Namespace Modifications
                         'Populate the arguments info and command base variables
                         Dim ScriptCommandBase As CommandExecutor = Script.Commands(parts(0)).CommandBase
                         Dim ScriptCommandArgsInfo As New ProvidedCommandArgumentsInfo(cmd, Script.Commands(parts(0)).Type)
-                        Dim ScriptCommandFullArgs() As String = ScriptCommandArgsInfo.FullArgumentsList
                         Dim ScriptCommandArgs() As String = ScriptCommandArgsInfo.ArgumentsList
                         Dim ScriptCommandSwitches() As String = ScriptCommandArgsInfo.SwitchesList
                         Dim ScriptCommandExecutable As Boolean
@@ -89,7 +88,7 @@ Namespace Modifications
                             Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             If ScriptCommandBase IsNot Nothing Then
                                 'Use the modern CommandBase.Execute() command
-                                ScriptCommandBase.Execute(args, ScriptCommandFullArgs, ScriptCommandArgs, ScriptCommandSwitches)
+                                ScriptCommandBase.Execute(args, ScriptCommandArgs, ScriptCommandSwitches)
                             End If
                         End If
                     End If

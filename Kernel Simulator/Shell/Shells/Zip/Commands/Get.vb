@@ -41,16 +41,16 @@ Namespace Shell.Shells.Zip.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Dim Where As String = ""
             Dim Absolute As Boolean
-            If ListArgs?.Length > 1 Then
-                If Not ListArgs(1) = "-absolute" Then Where = NeutralizePath(ListArgs(1))
-                If ListArgs?.Contains("-absolute") Then
+            If ListArgsOnly.Length > 1 Then
+                If Not ListSwitchesOnly(0) = "-absolute" Then Where = NeutralizePath(ListArgsOnly(1))
+                If ListSwitchesOnly.Contains("-absolute") Then
                     Absolute = True
                 End If
             End If
-            ExtractZipFileEntry(ListArgs(0), Where, Absolute)
+            ExtractZipFileEntry(ListArgsOnly(0), Where, Absolute)
         End Sub
 
         Public Overrides Sub HelpHelper()

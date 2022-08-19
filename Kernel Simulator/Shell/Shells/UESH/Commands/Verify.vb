@@ -52,17 +52,17 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-                Dim HashFile As String = NeutralizePath(ListArgs(2))
+                Dim HashFile As String = NeutralizePath(ListArgsOnly(2))
                 If FileExists(HashFile) Then
-                    If VerifyHashFromHashesFile(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
+                    If VerifyHashFromHashesFile(ListArgsOnly(3), [Enum].Parse(GetType(Algorithms), ListArgsOnly(0)), ListArgsOnly(2), ListArgsOnly(1)) Then
                         Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
                     Else
                         Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
                     End If
                 Else
-                    If VerifyHashFromHash(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
+                    If VerifyHashFromHash(ListArgsOnly(3), [Enum].Parse(GetType(Algorithms), ListArgsOnly(0)), ListArgsOnly(2), ListArgsOnly(1)) Then
                         Write(DoTranslation("Hashes match."), True, ColTypes.Neutral)
                     Else
                         Write(DoTranslation("Hashes don't match."), True, ColTypes.Warning)
@@ -76,7 +76,7 @@ Namespace Shell.Shells.UESH.Commands
                 Write(DoTranslation("Hashes are malformed."), True, ColTypes.Error)
             Catch fnfe As FileNotFoundException
                 WStkTrc(fnfe)
-                Write(DoTranslation("{0} is not found."), True, ColTypes.Error, ListArgs(3))
+                Write(DoTranslation("{0} is not found."), True, ColTypes.Error, ListArgsOnly(3))
             End Try
         End Sub
 

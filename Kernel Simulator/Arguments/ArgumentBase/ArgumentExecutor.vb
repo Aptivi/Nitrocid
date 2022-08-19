@@ -20,7 +20,7 @@ Namespace Arguments.ArgumentBase
     Public MustInherit Class ArgumentExecutor
         Implements IArgument
 
-        Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+        Public Overridable Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
             Wdbg(DebugLevel.F, "We shouldn't be here!!!")
             Throw New InvalidOperationException()
         End Sub

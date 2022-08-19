@@ -29,12 +29,12 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
             Try
-                If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
+                If ListArgsOnly.Length = 0 Then
                     StartShell(ShellType.FTPShell)
                 Else
-                    StartShell(ShellType.FTPShell, ListArgs(0))
+                    StartShell(ShellType.FTPShell, ListArgsOnly(0))
                 End If
             Catch ftpex As Exceptions.FTPShellException
                 Write(ftpex.Message, True, ColTypes.Error)

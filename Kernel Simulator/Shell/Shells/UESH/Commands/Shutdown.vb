@@ -29,12 +29,12 @@ Namespace Shell.Shells.UESH.Commands
         Inherits CommandExecutor
         Implements ICommand
 
-        Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-            If Not ListArgs?.Length = 0 Then
-                If ListArgs?.Length = 1 Then
-                    PowerManage(PowerMode.RemoteShutdown, ListArgs(0))
+        Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+            If Not ListArgsOnly.Length = 0 Then
+                If ListArgsOnly.Length = 1 Then
+                    PowerManage(PowerMode.RemoteShutdown, ListArgsOnly(0))
                 Else
-                    PowerManage(PowerMode.RemoteShutdown, ListArgs(0), ListArgs(1))
+                    PowerManage(PowerMode.RemoteShutdown, ListArgsOnly(0), ListArgsOnly(1))
                 End If
             Else
                 PowerManage(PowerMode.Shutdown)
