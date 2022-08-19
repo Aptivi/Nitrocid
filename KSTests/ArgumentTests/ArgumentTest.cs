@@ -23,11 +23,10 @@ namespace KSTests.ArgumentTests
 {
     class ArgumentTest : ArgumentExecutor, IArgument
     {
-        public override void Execute(string StringArgs, string[] ListArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             Debug.WriteLine("We're on ArgumentTest with:");
             Debug.WriteLine(format: "- StringArgs: {0}", StringArgs);
-            Debug.WriteLine(format: "- ListArgs: {0}", string.Join(", ", ListArgs));
             Debug.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
             Debug.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
         }

@@ -73,7 +73,7 @@ namespace KSTests.ArgumentTests
         [Description("Initialization")]
         public void TestInitializedArgumentExecution()
         {
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("", Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>())));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("", Array.Empty<string>(), Array.Empty<string>())));
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace KSTests.ArgumentTests
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArguments()
         {
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", new[] { "Hello", "World" }, new[] { "Hello", "World" }, Array.Empty<string>())));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", new[] { "Hello", "World" }, Array.Empty<string>())));
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace KSTests.ArgumentTests
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithSwitches()
         {
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", new[] { "-s" }, Array.Empty<string>(), new[] { "-s" })));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", Array.Empty<string>(), new[] { "-s" })));
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace KSTests.ArgumentTests
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArgumentsAndSwitches()
         {
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s Hello!", new[] { "-s", "Hello!" }, new[] { "Hello!" }, new[] { "-s" })));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s Hello!", new[] { "Hello!" }, new[] { "-s" })));
         }
 
     }

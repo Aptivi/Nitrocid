@@ -51,7 +51,7 @@ namespace KSTests.ShellTests
         [Description("Initialization")]
         public void TestInitializedCommandExecution()
         {
-            Should.NotThrow(new Action(() => CommandInstance.Execute("", Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>())));
+            Should.NotThrow(new Action(() => CommandInstance.Execute("", Array.Empty<string>(), Array.Empty<string>())));
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace KSTests.ShellTests
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArguments()
         {
-            Should.NotThrow(new Action(() => CommandInstance.Execute("Hello World", new[] { "Hello", "World" }, new[] { "Hello", "World" }, Array.Empty<string>())));
+            Should.NotThrow(new Action(() => CommandInstance.Execute("Hello World", new[] { "Hello", "World" }, Array.Empty<string>())));
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace KSTests.ShellTests
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithSwitches()
         {
-            Should.NotThrow(new Action(() => CommandInstance.Execute("-s", new[] { "-s" }, Array.Empty<string>(), new[] { "-s" })));
+            Should.NotThrow(new Action(() => CommandInstance.Execute("-s", Array.Empty<string>(), new[] { "-s" })));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace KSTests.ShellTests
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()
         {
-            Should.NotThrow(new Action(() => CommandInstance.Execute("-s Hello!", new[] { "-s", "Hello!" }, new[] { "Hello!" }, new[] { "-s" })));
+            Should.NotThrow(new Action(() => CommandInstance.Execute("-s Hello!", new[] { "Hello!" }, new[] { "-s" })));
         }
 
     }
