@@ -1,7 +1,4 @@
-﻿using System;
-using ColorSeq;
-using KS.ConsoleBase;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -19,6 +16,9 @@ using KS.ConsoleBase;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using ColorSeq;
+using KS.ConsoleBase;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;

@@ -1,12 +1,4 @@
-﻿using System;
-using System.IO;
-using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Languages;
-using KS.Misc.Splash;
-using KS.Misc.Writers.DebugWriters;
-using KS.Network.Transfer;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -24,6 +16,14 @@ using KS.Network.Transfer;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.IO;
+using KS.ConsoleBase.Colors;
+using KS.Files;
+using KS.Languages;
+using KS.Misc.Splash;
+using KS.Misc.Writers.DebugWriters;
+using KS.Network.Transfer;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Updates

@@ -1,7 +1,4 @@
-﻿using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Editors.TextEdit;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -19,6 +16,9 @@ using KS.Misc.Editors.TextEdit;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Editors.TextEdit;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;

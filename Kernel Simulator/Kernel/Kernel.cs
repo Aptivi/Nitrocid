@@ -1,12 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using static System.Reflection.Assembly;
-using System.Threading;
-using ColorSeq;
-using Extensification.StringExts;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -24,6 +16,14 @@ using Extensification.StringExts;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using static System.Reflection.Assembly;
+using System.Threading;
+using ColorSeq;
+using Extensification.StringExts;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;

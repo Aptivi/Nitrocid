@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Text;
-using Extensification.StringExts;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -19,6 +16,9 @@ using Extensification.StringExts;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.IO;
+using System.Text;
+using Extensification.StringExts;
 using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Languages;

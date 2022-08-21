@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
-using KS.Misc.Writers.FancyWriters;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -24,6 +16,14 @@ using KS.Misc.Writers.FancyWriters;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.FancyWriters;
 using static Namer.NameGenerator;
 
 namespace KS.Misc.Games

@@ -1,12 +1,4 @@
-﻿using System;
-using ColorSeq;
-using Extensification.StringExts;
-using KS.ConsoleBase.Themes;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Platform;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -24,6 +16,14 @@ using KS.Misc.Platform;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using ColorSeq;
+using Extensification.StringExts;
+using KS.ConsoleBase.Themes;
+using KS.Kernel;
+using KS.Kernel.Configuration;
+using KS.Languages;
+using KS.Misc.Platform;
 using KS.Misc.Text;
 using KS.Misc.Writers.DebugWriters;
 

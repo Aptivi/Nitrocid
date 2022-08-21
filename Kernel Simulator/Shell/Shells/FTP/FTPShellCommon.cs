@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using FluentFTP;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +16,10 @@ using KS.Shell.ShellBase.Shells;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Collections.Generic;
+using FluentFTP;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.FTP.Commands;
 
 namespace KS.Shell.Shells.FTP

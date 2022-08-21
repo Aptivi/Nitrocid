@@ -1,12 +1,4 @@
-﻿using System;
-using Extensification.StringExts;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Languages;
-using KS.Misc.Editors.JsonShell;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -24,6 +16,14 @@ using KS.Misc.Writers.DebugWriters;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using Extensification.StringExts;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
+using KS.Languages;
+using KS.Misc.Editors.JsonShell;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Shells;

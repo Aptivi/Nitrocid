@@ -1,5 +1,4 @@
-﻿using KS.Shell.ShellBase.Commands;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -17,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.Shells.Json.Commands

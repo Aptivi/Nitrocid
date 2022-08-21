@@ -1,18 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Timers;
-using Timer = System.Timers.Timer;
-using Extensification.StringExts;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Kernel;
-using KS.Languages;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -30,6 +16,20 @@ using KS.Misc.Writers.FancyWriters;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Timers;
+using Timer = System.Timers.Timer;
+using Extensification.StringExts;
+using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
+using KS.Kernel;
+using KS.Languages;
+using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Timers

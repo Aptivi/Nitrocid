@@ -1,9 +1,4 @@
-﻿using System;
-using System.Data;
-using System.IO;
-using System.Linq;
-using KS.Files;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -21,6 +16,11 @@ using KS.Files;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Data;
+using System.IO;
+using System.Linq;
+using KS.Files;
 using KS.Files.Operations;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;

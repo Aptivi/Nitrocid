@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -18,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.CommandLineArguments;
+using System.Collections.Generic;
 
 namespace KS.Arguments.ArgumentBase
 {

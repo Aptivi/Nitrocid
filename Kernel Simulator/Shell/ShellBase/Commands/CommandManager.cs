@@ -1,10 +1,4 @@
-﻿using KS.Misc.Writers.DebugWriters;
-using KS.Network.RemoteDebug;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.FTP;
-using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.HTTP;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -22,6 +16,12 @@ using KS.Shell.Shells.HTTP;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Writers.DebugWriters;
+using KS.Network.RemoteDebug;
+using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.FTP;
+using KS.Shell.Shells.Hex;
+using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.Rar;

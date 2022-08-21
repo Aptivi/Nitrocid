@@ -1,9 +1,4 @@
-﻿using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.Shell.ShellBase.Commands;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +15,12 @@ using KS.Shell.ShellBase.Commands;
 // 
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.FancyWriters;
+using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP.Commands
 {

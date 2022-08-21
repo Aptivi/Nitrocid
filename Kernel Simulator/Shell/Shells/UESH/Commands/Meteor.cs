@@ -1,5 +1,4 @@
 ﻿
-
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator

@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Languages;
-
+﻿
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
@@ -20,6 +16,10 @@ using KS.Languages;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Collections.Generic;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
+using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
