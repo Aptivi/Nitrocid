@@ -136,7 +136,7 @@
   <!-- KS Dependencies Information End -->
 
   <!-- KS Reference Information -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression.FileSystem" />
