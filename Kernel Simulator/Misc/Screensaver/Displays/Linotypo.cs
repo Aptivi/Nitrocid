@@ -26,7 +26,6 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -459,7 +458,7 @@ namespace KS.Misc.Screensaver.Displays
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Etaoin mode on. Delaying {0} ms...", WriteMs);
 
                             // Get the character
-                            StruckChar = Conversions.ToChar(LinotypeLayout[LinotypeColumnIndex, LinotypeKeyIndex]);
+                            StruckChar = Convert.ToChar(LinotypeLayout[LinotypeColumnIndex, LinotypeKeyIndex]);
                             if (CappedEtaoin)
                             {
                                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Capped Etaoin.");
@@ -519,7 +518,7 @@ namespace KS.Misc.Screensaver.Displays
                                 {
                                     // Miss is guaranteed. Simulate the missed character
                                     DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Missed a character!");
-                                    StruckChar = Conversions.ToChar("");
+                                    StruckChar = Convert.ToChar("");
                                 }
                                 // Typo is guaranteed. Select a strike string randomly until the struck key is found in between the characters
                                 else
@@ -531,9 +530,9 @@ namespace KS.Misc.Screensaver.Displays
                                     while (!StruckFound)
                                     {
                                         StrikeCharsIndex1 = RandomDriver.Next(0, Strikes.Count - 1);
-                                        CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(Conversions.ToString(StruckChar));
+                                        CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(Convert.ToString(StruckChar));
                                         StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex1] : Strikes[StrikeCharsIndex1];
-                                        StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Conversions.ToString(StruckChar));
+                                        StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Convert.ToString(StruckChar));
                                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", StrikeCharsIndex1);
                                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Capped strike: {0}", CappedStrike);
                                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Strikes pattern: {0}", StrikesString);
@@ -544,7 +543,7 @@ namespace KS.Misc.Screensaver.Displays
                                     // Select a random character that is a typo from the selected strike index
                                     int RandomStrikeIndex = RandomDriver.Next(0, StrikesString.Length - 1);
                                     char MistypedChar = StrikesString[RandomStrikeIndex];
-                                    if (@"`-=\][';/.,".Contains(Conversions.ToString(MistypedChar)) & CappedStrike)
+                                    if (@"`-=\][';/.,".Contains(Convert.ToString(MistypedChar)) & CappedStrike)
                                     {
                                         // The mistyped character is a symbol and the strike is capped. Select a symbol from CapStrikes.
                                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Mistyped character is a symbol and the strike is capped.");
@@ -566,7 +565,7 @@ namespace KS.Misc.Screensaver.Displays
                         }
 
                         // Write the final character to the console and wait
-                        if (!(Conversions.ToString(StruckChar) == Microsoft.VisualBasic.Constants.vbNullChar))
+                        if (!(StruckChar == Convert.ToChar(0)))
                             Console.Write(StruckChar);
                         ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
 

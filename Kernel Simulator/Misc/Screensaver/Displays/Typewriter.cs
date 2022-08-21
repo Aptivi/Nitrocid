@@ -27,7 +27,6 @@ using KS.Files.Querying;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -286,7 +285,7 @@ namespace KS.Misc.Screensaver.Displays
                             int OldLeft = Console.CursorLeft;
                             Console.SetCursorPosition(OldLeft, Console.WindowHeight - 1);
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", Console.CursorLeft, Console.CursorTop);
-                            Console.Write(Conversions.ToString(CharManager.GetEsc()) + "[1K^" + Conversions.ToString(CharManager.GetEsc()) + "[K");
+                            Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1K^" + Convert.ToString(CharManager.GetEsc()) + "[K");
                             Console.SetCursorPosition(OldLeft, OldTop);
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", OldLeft, OldTop);
                         }

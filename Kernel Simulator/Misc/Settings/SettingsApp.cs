@@ -35,7 +35,6 @@ using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Misc.Settings
@@ -229,7 +228,7 @@ namespace KS.Misc.Settings
                         object CurrentValue = "Unknown";
                         string Variable = (string)Setting["Variable"];
                         string VariableProperty = (string)Setting["VariableProperty"];
-                        SettingsKeyType VariableType = (SettingsKeyType)Conversions.ToInteger(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
+                        SettingsKeyType VariableType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)Setting["Type"]));
 
                         // Print the option
                         if (VariableType == SettingsKeyType.SMaskedString)
@@ -254,9 +253,9 @@ namespace KS.Misc.Settings
                                 }
 
                                 // Get the plain sequence from the color
-                                if (CurrentValue is Color)
+                                if (CurrentValue is Color color)
                                 {
-                                    CurrentValue = CurrentValue.PlainSequence;
+                                    CurrentValue = color.PlainSequence;
                                 }
                             }
                             else
@@ -354,7 +353,7 @@ namespace KS.Misc.Settings
                 // Key properties
                 string KeyName = (string)KeyToken["Name"];
                 string KeyDescription = (string)KeyToken["Description"];
-                SettingsKeyType KeyType = (SettingsKeyType)Conversions.ToInteger(Enum.Parse(typeof(SettingsKeyType), (string)KeyToken["Type"]));
+                SettingsKeyType KeyType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)KeyToken["Type"]));
                 string KeyVar = (string)KeyToken["Variable"];
                 object KeyValue = "";
                 object KeyDefaultValue = "";
@@ -385,7 +384,7 @@ namespace KS.Misc.Settings
                 string ListFunctionName = (string)KeyToken["SelectionFunctionName"];
                 string ListFunctionType = (string)KeyToken["SelectionFunctionType"];
                 bool ListIsPathCurrentPath = (bool)(KeyToken["IsPathCurrentPath"] ?? false);
-                KernelPathType ListValuePathType = (KernelPathType)Conversions.ToInteger(KeyToken["ValuePathType"] is not null ? Enum.Parse(typeof(KernelPathType), (string)KeyToken["ValuePathType"]) : KernelPathType.Mods);
+                KernelPathType ListValuePathType = (KernelPathType)Convert.ToInt32(KeyToken["ValuePathType"] is not null ? Enum.Parse(typeof(KernelPathType), (string)KeyToken["ValuePathType"]) : KernelPathType.Mods);
                 var TargetList = default(IEnumerable<object>);
                 var SelectFrom = default(IEnumerable<object>);
                 var Selections = default(object);
@@ -396,8 +395,6 @@ namespace KS.Misc.Settings
                 string AnswerString = "";
                 int AnswerInt;
 
-                var PressedKey = default(ConsoleKey);
-                var FinalBool = default(bool);
                 while (!KeyFinished)
                 {
                     Console.Clear();
@@ -451,9 +448,9 @@ namespace KS.Misc.Settings
                             }
 
                             // Get the plain sequence from the color
-                            if (KeyDefaultValue is Color)
+                            if (KeyDefaultValue is Color color)
                             {
-                                KeyDefaultValue = KeyDefaultValue.PlainSequence;
+                                KeyDefaultValue = color.PlainSequence;
                             }
                         }
                         else
@@ -478,7 +475,7 @@ namespace KS.Misc.Settings
                     // If the type is a color, initialize the color wheel
                     if (KeyType == SettingsKeyType.SColor)
                     {
-                        ColorValue = ColorWheelOpen.ColorWheel(new Color(KeyDefaultValue.ToString()).Type == ColorType.TrueColor, (ConsoleColors)Conversions.ToInteger(new Color(KeyDefaultValue.ToString()).Type == ColorType._255Color ? new global::ColorSeq.Color(KeyDefaultValue.ToString()).PlainSequence : global::ColorSeq.ConsoleColors.White), new Color(KeyDefaultValue.ToString()).R, new Color(KeyDefaultValue.ToString()).G, new Color(KeyDefaultValue.ToString()).B);
+                        ColorValue = ColorWheelOpen.ColorWheel(new Color(KeyDefaultValue.ToString()).Type == ColorType.TrueColor, (ConsoleColors)Convert.ToInt32(new Color(KeyDefaultValue.ToString()).Type == ColorType._255Color ? new global::ColorSeq.Color(KeyDefaultValue.ToString()).PlainSequence : global::ColorSeq.ConsoleColors.White), new Color(KeyDefaultValue.ToString()).R, new Color(KeyDefaultValue.ToString()).G, new Color(KeyDefaultValue.ToString()).B);
                     }
 
                     // Write the list from the current items
@@ -521,7 +518,7 @@ namespace KS.Misc.Settings
                             TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                             VariantValue = Input.ReadLine();
                             if (NeutralizePaths)
-                                VariantValue = Filesystem.NeutralizePath(Conversions.ToString(VariantValue), NeutralizeRootPath);
+                                VariantValue = Filesystem.NeutralizePath(Convert.ToString(VariantValue), NeutralizeRootPath);
                             DebugWriter.Wdbg(DebugLevel.I, "User answered {0}", VariantValue);
                         }
                     }
@@ -573,23 +570,24 @@ namespace KS.Misc.Settings
                             }
                             else if (KeyType == SettingsKeyType.SChar)
                             {
-                                AnswerString = Conversions.ToString(Console.ReadKey().KeyChar);
+                                AnswerString = Convert.ToString(Console.ReadKey().KeyChar);
                             }
                             else if (KeyType == SettingsKeyType.SIntSlider)
                             {
-                                int CurrentValue = Conversions.ToInteger(KeyDefaultValue);
+                                var PressedKey = default(ConsoleKey);
+                                int CurrentValue = Convert.ToInt32(KeyDefaultValue);
                                 Console.CursorVisible = false;
-                                while (ph48cf15fd89044be3b16fbbd95f9c3c6c != ConsoleKey.Enter)
+                                while (PressedKey != ConsoleKey.Enter)
                                 {
                                     // Draw the progress bar
                                     ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, Console.WindowHeight - 4);
 
                                     // Show the current value
-                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Conversions.ToString(CharManager.GetEsc()) + "[0K", 5, Console.WindowHeight - 5, false, ColorTools.ColTypes.Neutral, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+                                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, Console.WindowHeight - 5, false, ColorTools.ColTypes.Neutral, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
 
                                     // Parse the user input
-                                    ph48cf15fd89044be3b16fbbd95f9c3c6c = Console.ReadKey().Key;
-                                    switch (ph48cf15fd89044be3b16fbbd95f9c3c6c)
+                                    PressedKey = Console.ReadKey().Key;
+                                    switch (PressedKey)
                                     {
                                         case ConsoleKey.LeftArrow:
                                             {
@@ -637,6 +635,7 @@ namespace KS.Misc.Settings
                                     DebugWriter.Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
                                     if (AnswerInt >= 1 & AnswerInt <= MaxKeyOptions)
                                     {
+                                        var FinalBool = true;
                                         DebugWriter.Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt);
                                         KeyFinished = true;
 
@@ -646,13 +645,13 @@ namespace KS.Misc.Settings
                                             case 1: // True
                                                 {
                                                     DebugWriter.Wdbg(DebugLevel.I, "Setting to True...");
-                                                    ph89b09900f75e46d397028be36c7cea37 = true;
+                                                    FinalBool = true;
                                                     break;
                                                 }
                                             case 2: // False
                                                 {
                                                     DebugWriter.Wdbg(DebugLevel.I, "Setting to False...");
-                                                    ph89b09900f75e46d397028be36c7cea37 = false;
+                                                    FinalBool = false;
                                                     break;
                                                 }
                                         }
@@ -661,12 +660,12 @@ namespace KS.Misc.Settings
                                         if (FieldManager.CheckField(KeyVar))
                                         {
                                             // We're dealing with the field
-                                            FieldManager.SetValue(KeyVar, (object)ph89b09900f75e46d397028be36c7cea37, true);
+                                            FieldManager.SetValue(KeyVar, (object)FinalBool, true);
                                         }
                                         else if (PropertyManager.CheckProperty(KeyVar))
                                         {
                                             // We're dealing with the property
-                                            PropertyManager.SetPropertyValue(KeyVar, (object)ph89b09900f75e46d397028be36c7cea37);
+                                            PropertyManager.SetPropertyValue(KeyVar, (object)FinalBool);
                                         }
                                     }
                                     else if (AnswerInt == MaxKeyOptions + 1) // Go Back...
@@ -696,7 +695,7 @@ namespace KS.Misc.Settings
                                     }
                                     else if (AnswerInt > 0)
                                     {
-                                        if (Selections is not null)
+                                        if (Selections is IEnumerable<object> selectionsArray)
                                         {
                                             DebugWriter.Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt);
                                             KeyFinished = true;
@@ -705,12 +704,12 @@ namespace KS.Misc.Settings
                                             if (FieldManager.CheckField(KeyVar))
                                             {
                                                 // We're dealing with the field
-                                                FieldManager.SetValue(KeyVar, Selections((object)AnswerIndex), true);
+                                                FieldManager.SetValue(KeyVar, selectionsArray.ToArray()[AnswerIndex], true);
                                             }
                                             else if (PropertyManager.CheckProperty(KeyVar))
                                             {
                                                 // We're dealing with the property
-                                                PropertyManager.SetPropertyValue(KeyVar, Selections((object)AnswerIndex));
+                                                PropertyManager.SetPropertyValue(KeyVar, selectionsArray.ToArray()[AnswerIndex]);
                                             }
                                         }
                                         else if (!(AnswerInt > MaxKeyOptions))
@@ -834,7 +833,7 @@ namespace KS.Misc.Settings
                                     if (string.IsNullOrWhiteSpace(AnswerString))
                                     {
                                         DebugWriter.Wdbg(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
-                                        AnswerString = Conversions.ToString(KeyValue);
+                                        AnswerString = Convert.ToString(KeyValue);
                                     }
 
                                     // Check to see if the user intended to clear the variable to make it consist of nothing
@@ -868,7 +867,7 @@ namespace KS.Misc.Settings
                                     // Get the delimiter
                                     if (ListJoinString is null)
                                     {
-                                        FinalDelimiter = Conversions.ToString(FieldManager.GetValue(ListJoinStringVariable));
+                                        FinalDelimiter = Convert.ToString(FieldManager.GetValue(ListJoinStringVariable));
                                     }
                                     else
                                     {
@@ -1002,10 +1001,10 @@ namespace KS.Misc.Settings
                 // Parse the input and go to setting
                 if (StringQuery.IsStringNumeric(SettingsNumber))
                 {
-                    int ChosenSettingIndex = Conversions.ToInteger(SettingsNumber) - 1;
+                    int ChosenSettingIndex = Convert.ToInt32(SettingsNumber) - 1;
                     string ChosenSetting = Results[ChosenSettingIndex];
-                    int SectionIndex = Conversions.ToInteger(ChosenSetting.AsSpan().Slice(1, ChosenSetting.IndexOf("/") - 1).ToString()) - 1;
-                    int KeyNumber = Conversions.ToInteger(ChosenSetting.AsSpan().Slice(ChosenSetting.IndexOf("/") + 1, ChosenSetting.IndexOf("]") - (ChosenSetting.IndexOf("/") + 1)).ToString());
+                    int SectionIndex = Convert.ToInt32(ChosenSetting.AsSpan().Slice(1, ChosenSetting.IndexOf("/") - 1).ToString()) - 1;
+                    int KeyNumber = Convert.ToInt32(ChosenSetting.AsSpan().Slice(ChosenSetting.IndexOf("/") + 1, ChosenSetting.IndexOf("]") - (ChosenSetting.IndexOf("/") + 1)).ToString());
                     JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
                     string SectionName = Section.Name;
                     OpenKey(SectionName, KeyNumber, SettingsToken);
@@ -1028,20 +1027,19 @@ namespace KS.Misc.Settings
             {
                 case SettingsType.Normal:
                     {
-                        return JToken.Parse(My.Resources.Resources.SettingsEntries);
+                        return JToken.Parse(Properties.Resources.Resources.SettingsEntries);
                     }
                 case SettingsType.Screensaver:
                     {
-                        return JToken.Parse(My.Resources.Resources.ScreensaverSettingsEntries);
+                        return JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
                     }
                 case SettingsType.Splash:
                     {
-                        return JToken.Parse(My.Resources.Resources.SplashSettingsEntries);
+                        return JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
                     }
-
                 default:
                     {
-                        return JToken.Parse(My.Resources.Resources.SettingsEntries);
+                        return JToken.Parse(Properties.Resources.Resources.SettingsEntries);
                     }
             }
         }

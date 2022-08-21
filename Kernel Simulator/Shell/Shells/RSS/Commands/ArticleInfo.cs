@@ -4,7 +4,6 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.RSS.Commands
 {
@@ -21,7 +20,7 @@ namespace KS.Shell.Shells.RSS.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            int ArticleIndex = (int)Math.Round(Conversions.ToDouble(ListArgsOnly[0]) - 1d);
+            int ArticleIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, ColorTools.ColTypes.Error);

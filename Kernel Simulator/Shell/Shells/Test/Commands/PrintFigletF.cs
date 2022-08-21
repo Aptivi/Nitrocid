@@ -3,7 +3,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -16,7 +16,7 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             var Parts = new List<string>(ListArgsOnly);
-            ColorTools.ColTypes Color = (ColorTools.ColTypes)Conversions.ToInteger(ListArgsOnly[0]);
+            ColorTools.ColTypes Color = (ColorTools.ColTypes)Convert.ToInt32(ListArgsOnly[0]);
             var FigletFont = FigletTools.GetFigletFont(ListArgsOnly[1]);
             object[] Vars = ListArgsOnly[2].Split(';');
             string Text = ListArgsOnly[3];

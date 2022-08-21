@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -33,6 +34,7 @@ using System.Runtime.InteropServices;
 // <Assembly: AssemblyVersion("1.0.*")> 
 
 [assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("2.1.25.0")]
+[assembly: AssemblyFileVersion("3.0.25.0")]
 
 [assembly: NeutralResourcesLanguage("en-US")]
+[assembly: InternalsVisibleTo("KSTests")]

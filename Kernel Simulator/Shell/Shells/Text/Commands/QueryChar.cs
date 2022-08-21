@@ -24,7 +24,7 @@ using KS.Misc.Editors.TextEdit;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -43,9 +43,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[1]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Conversions.ToChar(ListArgsOnly[0]), Conversions.ToInteger(ListArgsOnly[1]));
+                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
                         foreach (int CharIndex in QueriedChars.Keys)
                         {
                             TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, CharIndex);
@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else if (ListArgsOnly[1].ToLower() == "all")
                 {
-                    var QueriedChars = TextEditTools.TextEdit_QueryChar(Conversions.ToChar(ListArgsOnly[0]));
+                    var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]));
                     foreach (int LineIndex in QueriedChars.Keys)
                     {
                         foreach (int CharIndex in QueriedChars[LineIndex].Keys)
@@ -74,14 +74,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[1]) & StringQuery.IsStringNumeric(ListArgsOnly[2]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Conversions.ToInteger(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Conversions.ToInteger(ListArgsOnly[1]);
-                        int LineNumberEnd = Conversions.ToInteger(ListArgsOnly[2]);
+                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[1]);
+                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.TextEdit_QueryChar(Conversions.ToChar(ListArgsOnly[0]), LineNumber);
+                            var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineNumber);
                             foreach (int CharIndex in QueriedChars.Keys)
                             {
                                 TextWriterColor.Write("- {0}:{1}: ", false, ColorTools.ColTypes.ListEntry, LineNumber, CharIndex);

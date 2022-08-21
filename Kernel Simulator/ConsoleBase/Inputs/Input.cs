@@ -19,7 +19,6 @@ using KS.Languages;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Misc.Text;
-using Microsoft.VisualBasic.CompilerServices;
 
 /* TODO ERROR: Skipped IfDirectiveTrivia
 #If NETCOREAPP Then
@@ -36,7 +35,7 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Current mask character
         /// </summary>
-        public static string CurrentMask = Conversions.ToString('*');
+        public static string CurrentMask = Convert.ToString('*');
 
         /// <summary>
         /// Reads the line from the console
@@ -92,7 +91,7 @@ namespace KS.ConsoleBase.Inputs
             }
             else
             {
-                return ReadLineNoInput(Conversions.ToChar(""));
+                return ReadLineNoInput(Convert.ToChar(""));
             }
         }
 
@@ -152,7 +151,7 @@ namespace KS.ConsoleBase.Inputs
                 {
                     KeyInfo = Console.ReadKey(true);
                     KeyCharacter = KeyInfo.KeyChar;
-                    if (Conversions.ToString(KeyCharacter) == Microsoft.VisualBasic.Constants.vbCr | Conversions.ToString(KeyCharacter) == Microsoft.VisualBasic.Constants.vbLf)
+                    if (KeyCharacter == Convert.ToChar(13) | KeyCharacter == Convert.ToChar(10))
                     {
                         Finished = true;
                     }
@@ -161,13 +160,13 @@ namespace KS.ConsoleBase.Inputs
                         if (!(Final.Length == 0))
                         {
                             Final = Final.Remove(Final.Length - 1);
-                            Console.Write(Conversions.ToString(CharManager.GetEsc()) + "D"); // Cursor backwards by one character
-                            Console.Write(Conversions.ToString(CharManager.GetEsc()) + "[1X"); // Remove a character
+                            Console.Write(Convert.ToString(CharManager.GetEsc()) + "D"); // Cursor backwards by one character
+                            Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1X"); // Remove a character
                         }
                     }
                     else
                     {
-                        Final += Conversions.ToString(KeyCharacter);
+                        Final += Convert.ToString(KeyCharacter);
                         Console.Write(KeyCharacter);
                     }
                 }

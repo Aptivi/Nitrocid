@@ -280,9 +280,9 @@ Namespace Kernel.Configuration
         ''' Checks all the config variables to see if they can be parsed
         ''' </summary>
         Public Function CheckConfigVariables() As Dictionary(Of String, Boolean)
-            Dim SettingsToken As JToken = JToken.Parse(My.Resources.SettingsEntries)
-            Dim SaverSettingsToken As JToken = JToken.Parse(My.Resources.ScreensaverSettingsEntries)
-            Dim SplashSettingsToken As JToken = JToken.Parse(My.Resources.SplashSettingsEntries)
+            Dim SettingsToken As JToken = JToken.Parse(Properties.Resources.SettingsEntries)
+            Dim SaverSettingsToken As JToken = JToken.Parse(Properties.Resources.ScreensaverSettingsEntries)
+            Dim SplashSettingsToken As JToken = JToken.Parse(Properties.Resources.SplashSettingsEntries)
             Dim Tokens As JToken() = {SettingsToken, SaverSettingsToken, SplashSettingsToken}
             Dim Results As New Dictionary(Of String, Boolean)
 

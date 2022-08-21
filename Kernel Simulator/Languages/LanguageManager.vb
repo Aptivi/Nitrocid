@@ -30,7 +30,7 @@ Namespace Languages
         Friend BaseLanguages As New Dictionary(Of String, LanguageInfo)
         Friend CustomLanguages As New Dictionary(Of String, LanguageInfo)
         Private NotifyCodepageError As Boolean
-        Private ReadOnly LanguageMetadata As JToken = JToken.Parse(My.Resources.LanguageMetadata)
+        Private ReadOnly LanguageMetadata As JToken = JToken.Parse(Properties.Resources.LanguageMetadata)
 
         ''' <summary>
         ''' The installed languages list.

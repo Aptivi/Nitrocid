@@ -26,7 +26,6 @@ using KS.Files.Querying;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.SFTP;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.SFTP.Filesystem
 {
@@ -231,7 +230,7 @@ namespace KS.Network.SFTP.Filesystem
                 var SFTPSession = SFTPSessionField.GetValue(SFTPShellCommon.ClientSFTP);
                 var SFTPSessionType = SFTPSession.GetType();
                 var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
-                string CanonicalPath = Conversions.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
+                string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
                 DebugWriter.Wdbg(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
                 return CanonicalPath;
             }

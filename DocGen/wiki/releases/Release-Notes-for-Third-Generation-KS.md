@@ -19,5 +19,6 @@ We have outlined in our old product documentation that `0.1.x` is real beta, so 
 5. Added support for transparent terminals
 6. Removed command injection as it isn't secure
 7. Removed LOLCAT as it has become inconsistent
+8. Removed references to `Microsoft.VisualBasic` completely
 8. General API improvements
 9. General improvements and bug fixes

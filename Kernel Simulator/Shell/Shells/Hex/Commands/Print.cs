@@ -25,7 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Hex.Commands
 {
@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     DebugWriter.Wdbg(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]));
                     if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
                     {
-                        ByteNumber = Conversions.ToLong(ListArgsOnly[0]);
+                        ByteNumber = Convert.ToInt64(ListArgsOnly[0]);
                         HexEditTools.HexEdit_DisplayHex(ByteNumber);
                     }
                     else
@@ -66,8 +66,8 @@ namespace KS.Shell.Shells.Hex.Commands
                     DebugWriter.Wdbg(DebugLevel.I, "Is it numeric? {0}", StringQuery.IsStringNumeric(ListArgsOnly[0]), StringQuery.IsStringNumeric(ListArgsOnly[1]));
                     if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
                     {
-                        long ByteNumberStart = Conversions.ToLong(ListArgsOnly[0]);
-                        long ByteNumberEnd = Conversions.ToLong(ListArgsOnly[1]);
+                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
+                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DisplayHex(ByteNumberStart, ByteNumberEnd);
                     }

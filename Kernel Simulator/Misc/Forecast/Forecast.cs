@@ -23,7 +23,7 @@ using KS.Misc.Writers.FancyWriters;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ManagedWeatherMap.Core;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Misc.Forecast
 {
@@ -96,7 +96,7 @@ namespace KS.Misc.Forecast
             string WindSpeedSpecifier = "m.s";
             if (StringQuery.IsStringNumeric(CityID))
             {
-                WeatherInfo = GetWeatherInfo(Conversions.ToLong(CityID), APIKey);
+                WeatherInfo = GetWeatherInfo(Convert.ToInt64(CityID), APIKey);
             }
             else
             {

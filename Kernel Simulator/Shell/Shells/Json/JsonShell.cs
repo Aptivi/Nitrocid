@@ -27,7 +27,6 @@ using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Shells;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.Json
 {
@@ -50,7 +49,7 @@ namespace KS.Shell.Shells.Json
             string FilePath = "";
             if (ShellArgs.Length > 0)
             {
-                FilePath = Conversions.ToString(ShellArgs[0]);
+                FilePath = Convert.ToString(ShellArgs[0]);
             }
             else
             {

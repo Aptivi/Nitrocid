@@ -24,7 +24,6 @@ using KS.Files;
 using KS.Files.Operations;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -88,14 +87,14 @@ namespace KS.Network.RemoteDebug
         {
             var BlockedDevices = ListDevices();
             DebugWriter.Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
-            if (Conversions.ToBoolean(Operators.AndObject(BlockedDevices.Contains(IP), !GetDeviceProperty(IP, DeviceProperty.Blocked))))
+            if (BlockedDevices.Contains(IP) && !(bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Device {0} will be blocked...", IP);
                 DisconnectDbgDev(IP);
                 SetDeviceProperty(IP, DeviceProperty.Blocked, true);
                 RemoteDebugger.RDebugBlocked.Add(IP);
             }
-            else if (Conversions.ToBoolean(Operators.AndObject(BlockedDevices.Contains(IP), GetDeviceProperty(IP, DeviceProperty.Blocked))))
+            else if (BlockedDevices.Contains(IP) && (bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
             {
                 DebugWriter.Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP);
                 if (!RemoteDebugger.RDebugBlocked.Contains(IP))
@@ -185,7 +184,7 @@ namespace KS.Network.RemoteDebug
                 DebugWriter.Wdbg(DebugLevel.I, "Devices count: {0}", BlockEntries.Length);
                 foreach (string BlockEntry in BlockEntries)
                 {
-                    if (Conversions.ToBoolean(GetDeviceProperty(BlockEntry, DeviceProperty.Blocked)))
+                    if (Convert.ToBoolean(GetDeviceProperty(BlockEntry, DeviceProperty.Blocked)))
                         AddToBlockList(BlockEntry);
                 }
                 return true;

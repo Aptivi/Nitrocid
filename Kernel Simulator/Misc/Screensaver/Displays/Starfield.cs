@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -116,7 +115,7 @@ namespace KS.Misc.Screensaver.Displays
                     char StarSymbol = '*';
                     int StarX = Star.Item1;
                     int StarY = Star.Item2;
-                    TextWriterWhereColor.WriteWhere(Conversions.ToString(StarSymbol), StarX, StarY, false, ConsoleColor.White);
+                    TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColor.White);
                 }
             }
             else

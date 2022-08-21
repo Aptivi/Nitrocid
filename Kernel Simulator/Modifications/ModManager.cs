@@ -48,9 +48,8 @@ using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Test;
 using KS.Shell.Shells.Text;
-using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.Zip;
-using Microsoft.VisualBasic.CompilerServices;
+using KS.Shell.Shells.UESH;
 
 namespace KS.Modifications
 {
@@ -81,19 +80,20 @@ namespace KS.Modifications
                     SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0, ColorTools.ColTypes.Neutral);
                     DebugWriter.Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count);
                     int CurrentCount = 1;
-                    foreach (string modFile in Directory.EnumerateFiles(ModPath))
+                    foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
                     {
+                        string modFile = Path.GetFileName(modFilePath);
                         if (!GetBlacklistedMods().Contains(modFile))
                         {
-                            DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile));
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Progress, Path.GetFileName(modFile), CurrentCount.ToString(), count.ToString());
-                            modFile = Path.GetFileName(modFile);
+                            DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
+                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Progress, modFile, CurrentCount.ToString(), count.ToString());
+                            modFile = modFile;
                             ModParser.ParseMod(modFile);
                         }
                         else
                         {
-                            DebugWriter.Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile));
-                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, Path.GetFileName(modFile), CurrentCount.ToString(), count.ToString());
+                            DebugWriter.Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", modFile);
+                            SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Mod {0} is blacklisted."), 0, ColorTools.ColTypes.Warning, modFile, CurrentCount.ToString(), count.ToString());
                         }
                         CurrentCount += 1;
                     }
@@ -208,7 +208,7 @@ namespace KS.Modifications
                     // Clear all mod commands list, since we've stopped all mods.
                     foreach (string ShellTypeName in Enum.GetNames(typeof(ShellType)))
                     {
-                        ShellType ShellTypeEnum = (ShellType)Conversions.ToInteger(Enum.Parse(typeof(ShellType), ShellTypeName));
+                        ShellType ShellTypeEnum = (ShellType)Convert.ToInt32(Enum.Parse(typeof(ShellType), ShellTypeName));
                         ListModCommands(ShellTypeEnum).Clear();
                         DebugWriter.Wdbg(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeEnum.ToString());
                     }

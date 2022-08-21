@@ -4,7 +4,6 @@ using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -204,8 +203,12 @@ namespace KS.Misc.Screensaver.Displays
 
             // Get struck character and write it
             var StrikeCharsIndex = default(int);
+            char StruckCharAssigned = default(char);
             foreach (char StruckChar in TypoSettings.TypoWrite)
             {
+                StruckCharAssigned = StruckChar;
+
+                // Check to see if we can go ahead
                 if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
@@ -215,7 +218,7 @@ namespace KS.Misc.Screensaver.Displays
                 int SelectedCpm = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax);
                 int WriteMs = (int)Math.Round(60d / SelectedCpm * 1000d);
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckChar);
+                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckCharAssigned);
 
                 // See if the typo is guaranteed
                 double Probability = (TypoSettings.TypoMissStrikePossibility >= 80 ? 80 : TypoSettings.TypoMissStrikePossibility) / 100d;
@@ -231,7 +234,7 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         // Miss is guaranteed. Simulate the missed character
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Missed a character!");
-                        StruckChar = Conversions.ToChar("");
+                        StruckCharAssigned = Convert.ToChar("");
                     }
                     // Typo is guaranteed. Select a strike string randomly until the struck key is found in between the characters
                     else
@@ -242,11 +245,11 @@ namespace KS.Misc.Screensaver.Displays
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Bruteforcing...");
                         while (!StruckFound)
                         {
-                            ph37273d295ba64e6caaaff99e99013814 = RandomDriver.Next(0, Strikes.Count - 1);
-                            CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(Conversions.ToString(StruckChar));
-                            StrikesString = CappedStrike ? CapStrikes[ph37273d295ba64e6caaaff99e99013814] : Strikes[ph37273d295ba64e6caaaff99e99013814];
-                            StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Conversions.ToString(StruckChar));
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", (object)ph37273d295ba64e6caaaff99e99013814);
+                            StrikeCharsIndex = RandomDriver.Next(0, Strikes.Count - 1);
+                            CappedStrike = char.IsUpper(StruckCharAssigned) | CapSymbols.Contains(Convert.ToString(StruckCharAssigned));
+                            StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex] : Strikes[StrikeCharsIndex];
+                            StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Convert.ToString(StruckCharAssigned));
+                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", StrikeCharsIndex);
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Capped strike: {0}", CappedStrike);
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Strikes pattern: {0}", StrikesString);
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Found? {0}", StruckFound);
@@ -256,20 +259,20 @@ namespace KS.Misc.Screensaver.Displays
                         // Select a random character that is a typo from the selected strike index
                         int RandomStrikeIndex = RandomDriver.Next(0, StrikesString.Length - 1);
                         char MistypedChar = StrikesString[RandomStrikeIndex];
-                        if (@"`-=\][';/.,".Contains(Conversions.ToString(MistypedChar)) & CappedStrike)
+                        if (@"`-=\][';/.,".Contains(Convert.ToString(MistypedChar)) & CappedStrike)
                         {
                             // The mistyped character is a symbol and the strike is capped. Select a symbol from CapStrikes.
                             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Mistyped character is a symbol and the strike is capped.");
-                            MistypedChar = CapStrikes[ph37273d295ba64e6caaaff99e99013814][RandomStrikeIndex];
+                            MistypedChar = CapStrikes[StrikeCharsIndex][RandomStrikeIndex];
                         }
-                        StruckChar = MistypedChar;
-                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckChar);
+                        StruckCharAssigned = MistypedChar;
+                        DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckCharAssigned);
                     }
                 }
 
                 // Write the final character to the console and wait
-                if (!(Conversions.ToString(StruckChar) == Microsoft.VisualBasic.Constants.vbNullChar))
-                    Console.Write(StruckChar);
+                if (!(StruckCharAssigned == Convert.ToChar(0)))
+                    Console.Write(StruckCharAssigned);
                 ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 

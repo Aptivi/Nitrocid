@@ -20,7 +20,6 @@ using KS.Misc.Reflection;
 
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using Microsoft.VisualBasic.CompilerServices;
 using VT.NET;
 
 namespace KS.ConsoleBase
@@ -44,7 +43,7 @@ namespace KS.ConsoleBase
         /// </summary>
         public static void ClearLineToRight()
         {
-            Console.Write(Conversions.ToString(CharManager.GetEsc()) + "[0K");
+            Console.Write(Convert.ToString(CharManager.GetEsc()) + "[0K");
         }
 
         /// <summary>
@@ -100,7 +99,7 @@ namespace KS.ConsoleBase
 
             // Third, seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
             Text = StringManipulate.FormatString(Text, Vars);
-            Text = Text.Replace(Conversions.ToString(Convert.ToChar(13)), "");
+            Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             int LeftSeekPosition = OldLeft;
             int TopSeekPosition = OldTop;
             for (int i = 1, loopTo = Text.Length; i <= loopTo; i++)

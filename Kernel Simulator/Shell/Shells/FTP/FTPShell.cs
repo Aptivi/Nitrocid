@@ -29,7 +29,6 @@ using KS.Network.FTP;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Shells;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.FTP
 {
@@ -55,7 +54,7 @@ namespace KS.Shell.Shells.FTP
             bool Connects = ShellArgs.Length > 0;
             string Address = "";
             if (Connects)
-                Address = Conversions.ToString(ShellArgs[0]);
+                Address = Convert.ToString(ShellArgs[0]);
 
             // Actual shell logic
             while (!Bail)

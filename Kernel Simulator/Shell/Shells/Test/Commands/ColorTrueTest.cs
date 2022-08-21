@@ -19,7 +19,6 @@
 
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -32,7 +31,7 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             char esc = CharManager.GetEsc();
-            Console.WriteLine(Conversions.ToString(esc) + "[38;2;" + ListArgsOnly[0] + "mIndex " + ListArgsOnly[0]);
+            Console.WriteLine(Convert.ToString(esc) + "[38;2;" + ListArgsOnly[0] + "mIndex " + ListArgsOnly[0]);
         }
 
     }

@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -111,8 +110,8 @@ namespace KS.ConsoleBase.Colors
                     DebugWriter.Wdbg(DebugLevel.I, "Current Range: {0}", CurrentRange);
 
                     // The red color level
-                    var RedForeground = Conversions.ToString(CurrentRange) == "R" ? new Color((int)ConsoleColors.Black) : new Color("255;0;0");
-                    var RedBackground = Conversions.ToString(CurrentRange) == "R" ? new Color("255;0;0") : new Color((int)ConsoleColors.Black);
+                    var RedForeground = Convert.ToString(CurrentRange) == "R" ? new Color((int)ConsoleColors.Black) : new Color("255;0;0");
+                    var RedBackground = Convert.ToString(CurrentRange) == "R" ? new Color("255;0;0") : new Color((int)ConsoleColors.Black);
                     DebugWriter.Wdbg(DebugLevel.I, "Red foreground: {0} | Red background: {1}", RedForeground.PlainSequence, RedBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, RedForeground, RedBackground);
@@ -120,8 +119,8 @@ namespace KS.ConsoleBase.Colors
                     TextWriterWhereColor.WriteWhere(" > " + Kernel.Kernel.NewLine, Console.CursorLeft + 32, Console.CursorTop, RedForeground, RedBackground);
 
                     // The green color level
-                    var GreenForeground = Conversions.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
-                    var GreenBackground = Conversions.ToString(CurrentRange) == "G" ? new Color("0;255;0") : new Color((int)ConsoleColors.Black);
+                    var GreenForeground = Convert.ToString(CurrentRange) == "G" ? new Color((int)ConsoleColors.Black) : new Color("0;255;0");
+                    var GreenBackground = Convert.ToString(CurrentRange) == "G" ? new Color("0;255;0") : new Color((int)ConsoleColors.Black);
                     DebugWriter.Wdbg(DebugLevel.I, "Green foreground: {0} | Green background: {1}", GreenForeground.PlainSequence, GreenBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, GreenForeground, GreenBackground);
@@ -129,8 +128,8 @@ namespace KS.ConsoleBase.Colors
                     TextWriterWhereColor.WriteWhere(" > " + Kernel.Kernel.NewLine, Console.CursorLeft + 32, Console.CursorTop, GreenForeground, GreenBackground);
 
                     // The blue color level
-                    var BlueForeground = Conversions.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
-                    var BlueBackground = Conversions.ToString(CurrentRange) == "B" ? new Color("0;0;255") : new Color((int)ConsoleColors.Black);
+                    var BlueForeground = Convert.ToString(CurrentRange) == "B" ? new Color((int)ConsoleColors.Black) : new Color("0;0;255");
+                    var BlueBackground = Convert.ToString(CurrentRange) == "B" ? new Color("0;0;255") : new Color((int)ConsoleColors.Black);
                     DebugWriter.Wdbg(DebugLevel.I, "Blue foreground: {0} | Blue background: {1}", BlueForeground.PlainSequence, BlueBackground.PlainSequence);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + "  ", false, ColorTools.ColTypes.Neutral);
                     TextWriterColor.Write(" < ", false, BlueForeground, BlueBackground);
@@ -309,21 +308,21 @@ namespace KS.ConsoleBase.Colors
                         {
                             case 'R':
                                 {
-                                    phba6c34f067b54c5faaa7772fc3b13e5d = CurrentColorR;
+                                    _DefaultColor = CurrentColorR;
                                     break;
                                 }
                             case 'G':
                                 {
-                                    phba6c34f067b54c5faaa7772fc3b13e5d = CurrentColorG;
+                                    _DefaultColor = CurrentColorG;
                                     break;
                                 }
                             case 'B':
                                 {
-                                    phba6c34f067b54c5faaa7772fc3b13e5d = CurrentColorB;
+                                    _DefaultColor = CurrentColorB;
                                     break;
                                 }
                         }
-                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, false, ColorTools.ColTypes.Input, (object)phba6c34f067b54c5faaa7772fc3b13e5d);
+                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, false, ColorTools.ColTypes.Input, _DefaultColor);
                         Console.CursorVisible = true;
                         string ColorNum = Input.ReadLine();
                         Console.CursorVisible = false;
@@ -331,7 +330,7 @@ namespace KS.ConsoleBase.Colors
                         if (StringQuery.IsStringNumeric(ColorNum))
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Numeric! Checking range...");
-                            if (Conversions.ToDouble(ColorNum) >= 0d & Conversions.ToDouble(ColorNum) <= 255d)
+                            if (Convert.ToDouble(ColorNum) >= 0d & Convert.ToDouble(ColorNum) <= 255d)
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "In range!");
                                 switch (CurrentRange)
@@ -339,19 +338,19 @@ namespace KS.ConsoleBase.Colors
                                     case 'R':
                                         {
                                             DebugWriter.Wdbg(DebugLevel.I, "Changing red color level to {0}...", ColorNum);
-                                            CurrentColorR = Conversions.ToInteger(ColorNum);
+                                            CurrentColorR = Convert.ToInt32(ColorNum);
                                             break;
                                         }
                                     case 'G':
                                         {
                                             DebugWriter.Wdbg(DebugLevel.I, "Changing green color level to {0}...", ColorNum);
-                                            CurrentColorG = Conversions.ToInteger(ColorNum);
+                                            CurrentColorG = Convert.ToInt32(ColorNum);
                                             break;
                                         }
                                     case 'B':
                                         {
                                             DebugWriter.Wdbg(DebugLevel.I, "Changing blue color level to {0}...", ColorNum);
-                                            CurrentColorB = Conversions.ToInteger(ColorNum);
+                                            CurrentColorB = Convert.ToInt32(ColorNum);
                                             break;
                                         }
                                 }
@@ -416,7 +415,7 @@ namespace KS.ConsoleBase.Colors
                         }
                         else
                         {
-                            CurrentColor = CurrentColor - 1;
+                            CurrentColor--;
                             DebugWriter.Wdbg(DebugLevel.I, "Decremented to {0}", CurrentColor);
                         }
                     }
@@ -429,7 +428,7 @@ namespace KS.ConsoleBase.Colors
                         }
                         else
                         {
-                            CurrentColor = CurrentColor + 1;
+                            CurrentColor++;
                             DebugWriter.Wdbg(DebugLevel.I, "Incremented to {0}", CurrentColor);
                         }
                     }
@@ -444,10 +443,10 @@ namespace KS.ConsoleBase.Colors
                         if (StringQuery.IsStringNumeric(ColorNum))
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Numeric! Checking range...");
-                            if (Conversions.ToDouble(ColorNum) >= 0d & Conversions.ToDouble(ColorNum) <= 255d)
+                            if (Convert.ToDouble(ColorNum) >= 0d & Convert.ToDouble(ColorNum) <= 255d)
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "In range! Changing color level to {0}...", ColorNum);
-                                CurrentColor = (ConsoleColors)Conversions.ToInteger(ColorNum);
+                                CurrentColor = (ConsoleColors)Convert.ToInt32(ColorNum);
                             }
                         }
                     }

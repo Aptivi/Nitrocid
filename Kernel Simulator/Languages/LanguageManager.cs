@@ -44,7 +44,7 @@ namespace KS.Languages
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new Dictionary<string, LanguageInfo>();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new Dictionary<string, LanguageInfo>();
         private static bool NotifyCodepageError;
-        private readonly static JToken LanguageMetadata = JToken.Parse(My.Resources.Resources.LanguageMetadata);
+        private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
 
         /// <summary>
         /// The installed languages list.

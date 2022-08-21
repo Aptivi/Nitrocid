@@ -12,7 +12,6 @@ using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Shells;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -57,7 +56,7 @@ namespace KS.Shell.Shells.Rar
             string RarFile = "";
             if (ShellArgs.Length > 0)
             {
-                RarFile = Conversions.ToString(ShellArgs[0]);
+                RarFile = Convert.ToString(ShellArgs[0]);
             }
             else
             {

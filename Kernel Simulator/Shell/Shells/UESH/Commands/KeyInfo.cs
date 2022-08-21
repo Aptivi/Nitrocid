@@ -3,7 +3,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -46,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!char.IsControl(KeyPress.KeyChar))
             {
                 TextWriterColor.Write("- " + Translate.DoTranslation("Pressed key character") + ": ", false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(Conversions.ToString(KeyPress.KeyChar), true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write(Convert.ToString(KeyPress.KeyChar), true, ColorTools.ColTypes.ListValue);
             }
 
             // Pressed key character code
@@ -59,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Keyboard shortcut
             TextWriterColor.Write("- " + Translate.DoTranslation("Keyboard shortcut") + ": ", false, ColorTools.ColTypes.ListEntry);
-            TextWriterColor.Write($"{string.Join(" +", KeyPress.Modifiers.ToString().Split(Conversions.ToChar(", ")))} + {KeyPress.Key}", true, ColorTools.ColTypes.ListValue);
+            TextWriterColor.Write($"{string.Join(" +", KeyPress.Modifiers.ToString().Split(Convert.ToChar(", ")))} + {KeyPress.Key}", true, ColorTools.ColTypes.ListValue);
         }
 
     }

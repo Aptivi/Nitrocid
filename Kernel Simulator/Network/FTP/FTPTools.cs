@@ -36,7 +36,6 @@ using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network.FTP.Transfer;
 using KS.Shell.Shells.FTP;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.FTP
 {
@@ -114,7 +113,7 @@ namespace KS.Network.FTP
                     FTPShellCommon._clientFTP = new FtpClient()
                     {
                         Host = FtpHost,
-                        Port = Conversions.ToInteger(FtpPort),
+                        Port = Convert.ToInt32(FtpPort),
                         RetryAttempts = FTPShellCommon.FtpVerifyRetryAttempts,
                         ConnectTimeout = FTPShellCommon.FtpConnectTimeout,
                         DataConnectionConnectTimeout = FTPShellCommon.FtpDataConnectTimeout,
@@ -199,7 +198,7 @@ namespace KS.Network.FTP
                             try
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "Profile selected");
-                                int AnswerNumber = Conversions.ToInteger(profanswer);
+                                int AnswerNumber = Convert.ToInt32(profanswer);
                                 profsel = profiles[AnswerNumber - 1];
                                 profanswered = true;
                             }
@@ -301,7 +300,7 @@ namespace KS.Network.FTP
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, ColorTools.ColTypes.Question);
                         ColorTools.SetConsoleColor(ColorTools.InputColor);
-                        Answer = Conversions.ToString(Console.ReadKey().KeyChar);
+                        Answer = Convert.ToString(Console.ReadKey().KeyChar);
                         Console.WriteLine();
                         DebugWriter.Wdbg(DebugLevel.I, $"Answer is {Answer}");
                         if (Answer.ToLower() == "y")
@@ -356,7 +355,7 @@ namespace KS.Network.FTP
                         if (StringQuery.IsStringNumeric(Answer))
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
-                            int AnswerInt = Conversions.ToInteger(Answer);
+                            int AnswerInt = Convert.ToInt32(Answer);
                             if (AnswerInt <= SpeedDialLines.Count)
                             {
                                 Answering = false;
@@ -366,9 +365,9 @@ namespace KS.Network.FTP
                                 string Address = ChosenSpeedDialAddress;
                                 string Port = (string)SpeedDialLines[ChosenSpeedDialAddress]["Port"];
                                 string Username = (string)SpeedDialLines[ChosenSpeedDialAddress]["User"];
-                                FtpEncryptionMode Encryption = (FtpEncryptionMode)Conversions.ToInteger(Enum.Parse(typeof(FtpEncryptionMode), (string)SpeedDialLines[ChosenSpeedDialAddress]["FTP Encryption Mode"]));
+                                FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(Enum.Parse(typeof(FtpEncryptionMode), (string)SpeedDialLines[ChosenSpeedDialAddress]["FTP Encryption Mode"]));
                                 DebugWriter.Wdbg(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption);
-                                PromptForPassword(Username, Address, Conversions.ToInteger(Port), Encryption);
+                                PromptForPassword(Username, Address, Convert.ToInt32(Port), Encryption);
                             }
                             else
                             {

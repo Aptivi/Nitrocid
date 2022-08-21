@@ -27,7 +27,6 @@ using KS.Files.Folders;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -66,7 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (ListSwitchesOnly.Contains("-createdir"))
                 {
                     Destination = $"{(!(ListSwitchesOnly[0] == "-createdir") ? Filesystem.NeutralizePath(ListArgsOnly[1]) : "")}/{(!(ListSwitchesOnly[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : Filesystem.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
-                    if (Conversions.ToString(Destination[0]) == "/")
+                    if (Convert.ToString(Destination[0]) == "/")
                         Destination = Destination.RemoveLetter(0);
                 }
                 ZipFile.ExtractToDirectory(ZipArchiveName, Destination);

@@ -6,7 +6,6 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -92,7 +91,7 @@ namespace KS.Misc.Games
                 TextWriterColor.Write("- {0}:", false, ColorTools.ColTypes.ListEntry, RandomUser);
                 TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, RandomComment);
                 TextWriterColor.Write(Translate.DoTranslation("How would you respond?") + " <A/T/Q> ", false, ColorTools.ColTypes.Input);
-                Response = Conversions.ToString(Console.ReadKey().KeyChar);
+                Response = Convert.ToString(Console.ReadKey().KeyChar);
                 Console.WriteLine();
                 DebugWriter.Wdbg(DebugLevel.I, "Response: {0}", Response);
 

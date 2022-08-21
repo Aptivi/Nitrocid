@@ -30,9 +30,9 @@ namespace KS.Scripting.Conditions
             }
         }
 
-        public virtual int ConditionPosition { get; private set; } = 1;
+        public virtual int ConditionPosition { get; } = 1;
 
-        public virtual int ConditionRequiredArguments { get; private set; } = 1;
+        public virtual int ConditionRequiredArguments { get; } = 1;
 
         public virtual bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {

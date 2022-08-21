@@ -1,7 +1,6 @@
 ﻿using System;
 using KS.Kernel;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -30,9 +29,9 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            KernelErrorLevel EType = (KernelErrorLevel)Conversions.ToInteger(Enum.Parse(typeof(KernelErrorLevel), ListArgsOnly[0]));
-            bool Reboot = Conversions.ToBoolean(ListArgsOnly[1]);
-            long RTime = Conversions.ToLong(ListArgsOnly[2]);
+            KernelErrorLevel EType = (KernelErrorLevel)Convert.ToInt32(Enum.Parse(typeof(KernelErrorLevel), ListArgsOnly[0]));
+            bool Reboot = Convert.ToBoolean(ListArgsOnly[1]);
+            long RTime = Convert.ToInt64(ListArgsOnly[2]);
             var Exc = new Exception();
             string Message = ListArgsOnly[3];
             KernelTools.KernelError(EType, Reboot, RTime, Message, Exc);

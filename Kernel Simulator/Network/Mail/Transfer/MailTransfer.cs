@@ -33,7 +33,6 @@ using KS.Shell.Shells.Mail;
 using KS.TimeDate;
 using MailKit;
 using MailKit.Search;
-using Microsoft.VisualBasic.CompilerServices;
 using MimeKit;
 using MimeKit.Cryptography;
 using MimeKit.Text;
@@ -305,14 +304,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Conversions.ToString(true);
+                    return Convert.ToString(true);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WStkTrc(ex);
                 }
-                return Conversions.ToString(false);
+                return Convert.ToString(false);
             }
         }
 
@@ -342,14 +341,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Conversions.ToString(true);
+                    return Convert.ToString(true);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WStkTrc(ex);
                 }
-                return Conversions.ToString(false);
+                return Convert.ToString(false);
             }
         }
 
@@ -379,14 +378,14 @@ namespace KS.Network.Mail.Transfer
                 try
                 {
                     MailLogin.SMTP_Client.Send(FinalMessage, default, MailShellCommon.Mail_Progress);
-                    return Conversions.ToString(true);
+                    return Convert.ToString(true);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message);
                     DebugWriter.WStkTrc(ex);
                 }
-                return Conversions.ToString(false);
+                return Convert.ToString(false);
             }
         }
 

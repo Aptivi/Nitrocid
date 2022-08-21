@@ -27,7 +27,6 @@ using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.RPC
 {
@@ -144,7 +143,7 @@ namespace KS.Network.RPC
                     // If the message is not empty, parse it
                     if (!string.IsNullOrEmpty(Message))
                     {
-                        DebugWriter.Wdbg((DebugLevel)Conversions.ToInteger("RPC: Received message {0}"), Message);
+                        DebugWriter.Wdbg((DebugLevel)Convert.ToInt32("RPC: Received message {0}"), Message);
                         Kernel.Kernel.KernelEventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
 
                         // Iterate through every confirmation message

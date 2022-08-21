@@ -23,7 +23,6 @@ using KS.Languages;
 
 using KS.Misc.Reflection;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
@@ -150,7 +149,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    Console.BackgroundColor = (ConsoleColor)Conversions.ToInteger(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Conversions.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
                     Console.ForegroundColor = color;
 
                     // Write wrapped output

@@ -25,7 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        TextEditTools.TextEdit_RemoveLine(Conversions.ToInteger(ListArgsOnly[0]));
+                        TextEditTools.TextEdit_RemoveLine(Convert.ToInt32(ListArgsOnly[0]));
                         TextWriterColor.Write(Translate.DoTranslation("Removed line."), true, ColorTools.ColTypes.Success);
                     }
                     else
@@ -64,10 +64,10 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count & Conversions.ToInteger(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Conversions.ToInteger(ListArgsOnly[0]);
-                        int LineNumberEnd = Conversions.ToInteger(ListArgsOnly[1]);
+                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[0]);
+                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
                         {

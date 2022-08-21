@@ -23,7 +23,6 @@ using KS.Misc.Writers.ConsoleWriters;
 
 using KS.Network.FTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.FTP.Commands
 {
@@ -44,7 +43,7 @@ namespace KS.Shell.Shells.FTP.Commands
             // Check to see if hash is found
             if (Enum.IsDefined(typeof(FtpHashAlgorithm), Hash))
             {
-                var HashResults = FTPHashing.FTPGetHashes(RemoteDirectory, (FtpHashAlgorithm)Conversions.ToInteger(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
+                var HashResults = FTPHashing.FTPGetHashes(RemoteDirectory, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 foreach (string Filename in HashResults.Keys)
                 {
                     TextWriterColor.Write("- " + Filename + ": ", false, ColorTools.ColTypes.ListEntry);

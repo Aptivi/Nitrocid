@@ -20,7 +20,6 @@ using System.Linq;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Querying;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Files.PathLookup
 {
@@ -32,7 +31,7 @@ namespace KS.Files.PathLookup
         /// </summary>
         public static List<string> GetPathList()
         {
-            return Shell.Shell.PathsToLookup.Split(Conversions.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
+            return Shell.Shell.PathsToLookup.Split(Convert.ToChar(Shell.Shell.PathLookupDelimiter)).ToList();
         }
 
         /// <summary>

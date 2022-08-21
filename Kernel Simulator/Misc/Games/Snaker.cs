@@ -27,7 +27,6 @@ using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Games
 {
@@ -173,8 +172,8 @@ namespace KS.Misc.Games
                     for (int PositionIndex = SnakeMassPositions.Count - 1; PositionIndex >= 0; PositionIndex -= 1)
                     {
                         var PositionStrings = SnakeMassPositions[PositionIndex].Split('/');
-                        int PositionX = Conversions.ToInteger(PositionStrings[0]);
-                        int PositionY = Conversions.ToInteger(PositionStrings[1]);
+                        int PositionX = Convert.ToInt32(PositionStrings[0]);
+                        int PositionY = Convert.ToInt32(PositionStrings[1]);
                         Console.SetCursorPosition(PositionX, PositionY);
                         Console.Write(" ");
                         Console.SetCursorPosition(PositionX, PositionY);
@@ -195,11 +194,11 @@ namespace KS.Misc.Games
                             DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                             if (DidHorizontal)
                             {
-                                Direction = (SnakeDirection)Conversions.ToInteger(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2).ToString()));
                             }
                             else if (DidVertical)
                             {
-                                Direction = (SnakeDirection)Conversions.ToInteger(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2, 4).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Next(2, 4).ToString()));
                             }
                         }
                         switch (Direction)
@@ -332,8 +331,8 @@ namespace KS.Misc.Games
                     {
                         DebugWriter.Wdbg(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
                         var LastTailPositionStrings = SnakeMassPositions[0].Split('/');
-                        SnakeLastTailToWipeX = Conversions.ToInteger(LastTailPositionStrings[0]);
-                        SnakeLastTailToWipeY = Conversions.ToInteger(LastTailPositionStrings[1]);
+                        SnakeLastTailToWipeX = Convert.ToInt32(LastTailPositionStrings[0]);
+                        SnakeLastTailToWipeY = Convert.ToInt32(LastTailPositionStrings[1]);
                         SnakeMassPositions.RemoveAt(0);
                     }
 

@@ -1,6 +1,5 @@
 ﻿using KS.Kernel;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -19,6 +18,8 @@ using Microsoft.VisualBasic.CompilerServices;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
@@ -29,7 +30,7 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (Conversions.ToBoolean(ListArgsOnly[0]) == true)
+            if (Convert.ToBoolean(ListArgsOnly[0]) == true)
             {
                 Flags.DebugMode = true;
             }

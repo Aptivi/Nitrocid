@@ -24,7 +24,6 @@ using KS.Files.Querying;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -71,7 +70,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     if (ListArgsOnly[1].StartsWith("+"))
                     {
-                        FileAttributes Attrib = (FileAttributes)Conversions.ToInteger(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
                         if (AttributeManager.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[1]);
@@ -83,7 +82,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     else if (ListArgsOnly[1].StartsWith("-"))
                     {
-                        FileAttributes Attrib = (FileAttributes)Conversions.ToInteger(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
                         if (AttributeManager.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully."), true, ColorTools.ColTypes.Neutral, ListArgsOnly[1]);

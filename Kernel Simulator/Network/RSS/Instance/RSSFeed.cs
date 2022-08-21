@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
+using System;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
 using KS.Network.Transfer;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.RSS.Instance
 {
@@ -149,8 +149,8 @@ namespace KS.Network.RSS.Instance
             /* TODO ERROR: Skipped WarningDirectiveTrivia
             #Disable Warning BC42104
             */
-            string FeedTitle = Conversions.ToString(RSSTools.GetFeedProperty("title", FeedNodeList, _FeedType));
-            string FeedDescription = Conversions.ToString(RSSTools.GetFeedProperty("description", FeedNodeList, _FeedType));
+            string FeedTitle = Convert.ToString(RSSTools.GetFeedProperty("title", FeedNodeList, _FeedType));
+            string FeedDescription = Convert.ToString(RSSTools.GetFeedProperty("description", FeedNodeList, _FeedType));
 
             // Populate articles
             var Articles = RSSTools.MakeRssArticlesFromFeed(FeedNodeList, _FeedType);

@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -39,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            int NotifIndex = (int)Math.Round(Conversions.ToDouble(ListArgsOnly[0]) - 1d);
+            int NotifIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
             if (Notifications.NotifDismiss(NotifIndex))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."), true, ColorTools.ColTypes.Neutral);

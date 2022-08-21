@@ -25,7 +25,6 @@ using KS.Kernel;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Json;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Prompts.Presets.Json
 {
@@ -65,7 +64,7 @@ namespace KS.Shell.Prompts.Presets.Json
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Conversions.ToString(CharManager.GetEsc()) + $"[49m");
+            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Present final string

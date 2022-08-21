@@ -51,32 +51,5 @@ namespace KSTests.LanguagesTests
             InfoInstance.Cultures.ShouldNotBeEmpty();
         }
 
-        /// <summary>
-        /// Tests translation dictionary preparation for a language
-        /// </summary>
-        [Test]
-        [Description("Initialization")]
-        public void TestPrepareDictForOneLanguage()
-        {
-            int ExpectedLength = JObject.Parse(KS.My.Resources.Resources.spa).SelectToken("Localizations").Count();
-            int ActualLength = Translate.PrepareDict("spa").Values.Count;
-            ActualLength.ShouldBe(ExpectedLength);
-        }
-
-        /// <summary>
-        /// Tests translation dictionary preparation for all languages
-        /// </summary>
-        [Test]
-        [Description("Initialization")]
-        public void TestPrepareDictForAllLanguages()
-        {
-            foreach (string Lang in LanguageManager.Languages.Keys)
-            {
-                int ExpectedLength = JObject.Parse(KS.My.Resources.Resources.ResourceManager.GetString(Lang.Replace("-", "_"))).SelectToken("Localizations").Count();
-                int ActualLength = Translate.PrepareDict(Lang).Values.Count;
-                ActualLength.ShouldBe(ExpectedLength, $"Lang: {Lang}");
-            }
-        }
-
     }
 }

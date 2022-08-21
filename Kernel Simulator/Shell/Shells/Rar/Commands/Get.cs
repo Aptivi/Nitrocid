@@ -22,7 +22,7 @@ using KS.Languages;
 using KS.Misc.RarFile;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Rar.Commands
 {
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.Rar.Commands
             {
                 if (!(ListSwitchesOnly[0] == "-absolute"))
                     Where = Filesystem.NeutralizePath(ListArgsOnly[1]);
-                if (Conversions.ToBoolean(ListSwitchesOnly[Conversions.ToInteger("-absolute")]))
+                if (Convert.ToBoolean(ListSwitchesOnly[Convert.ToInt32("-absolute")]))
                     Absolute = true;
             }
             RarTools.ExtractRarFileEntry(ListArgsOnly[0], Where, Absolute);

@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -280,7 +279,7 @@ namespace KS.Misc.Screensaver.Displays
             ColorTools.SetConsoleColor(new Color(MarqueeSettings.MarqueeBackgroundColor), true, true);
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
-            MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new[] { Microsoft.VisualBasic.Constants.vbCr, Microsoft.VisualBasic.Constants.vbLf }, " - ");
+            MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
         }
 
         public override void ScreensaverLogic()
@@ -356,7 +355,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!MarqueeSettings.MarqueeUseConsoleAPI)
-                    MarqueeWritten += Conversions.ToString(CharManager.GetEsc()) + "[0K";
+                    MarqueeWritten += Convert.ToString(CharManager.GetEsc()) + "[0K";
 
                 // Set the appropriate cursor position and write the results
                 Console.SetCursorPosition(CurrentLeft, TopPrinted);

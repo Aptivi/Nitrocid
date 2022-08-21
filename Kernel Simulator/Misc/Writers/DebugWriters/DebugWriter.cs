@@ -25,7 +25,6 @@ using KS.Files;
 using KS.Kernel;
 using KS.Misc.Platform;
 using KS.Network.RemoteDebug;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Writers.DebugWriters
 {
@@ -79,7 +78,7 @@ namespace KS.Misc.Writers.DebugWriters
                         DebugManager.CheckForDebugQuotaExceed();
 
                     // For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
-                    if (Source is not null & !(Conversions.ToDouble(LineNum) == 0d))
+                    if (Source is not null & !(Convert.ToDouble(LineNum) == 0d))
                     {
                         // Debug to file and all connected debug devices (raw mode)
                         DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars);
@@ -128,8 +127,9 @@ namespace KS.Misc.Writers.DebugWriters
                     }
 
                     // Disconnect offending clients who are disconnected
-                    foreach (int i in OffendingIndex)
+                    foreach (string si in OffendingIndex)
                     {
+                        int i = int.Parse(si);
                         if (i != -1)
                         {
                             RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
@@ -192,8 +192,9 @@ namespace KS.Misc.Writers.DebugWriters
                 #End If
                 */
                 // Disconnect offending clients who are disconnected
-                foreach (int i in OffendingIndex)
+                foreach (string si in OffendingIndex)
                 {
+                    int i = int.Parse(si);
                     if (i != -1)
                     {
                         RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);

@@ -2,7 +2,6 @@
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -21,10 +20,12 @@ using Microsoft.VisualBasic.CompilerServices;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
-    /// It lets you test the <see cref="Write(String, Boolean, ColTypes, Object())"/> call to print every text, using the lines and colors that you need. It comes with format support.
+    /// It lets you test the <see cref="Write(String, Boolean, ColTypes, Object[])"/> call to print every text, using the lines and colors that you need. It comes with format support.
     /// </summary>
     class Test_PrintFCommand : CommandExecutor, ICommand
     {
@@ -32,8 +33,8 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             var Parts = new List<string>(ListArgsOnly);
-            ColorTools.ColTypes Color = (ColorTools.ColTypes)Conversions.ToInteger(ListArgsOnly[0]);
-            bool Line = Conversions.ToBoolean(ListArgsOnly[1]);
+            ColorTools.ColTypes Color = (ColorTools.ColTypes)Convert.ToInt32(ListArgsOnly[0]);
+            bool Line = Convert.ToBoolean(ListArgsOnly[1]);
             object[] Vars = ListArgsOnly[2].Split(';');
             string Text = ListArgsOnly[3];
             TextWriterColor.Write(Text, Line, Color, Vars);

@@ -31,7 +31,6 @@ using KS.Network.RSS.Instance;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Shells;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.RSS
 {
@@ -56,7 +55,7 @@ namespace KS.Shell.Shells.RSS
             string FeedUrl = "";
             if (ShellArgs.Length > 0)
             {
-                FeedUrl = Conversions.ToString(ShellArgs[0]);
+                FeedUrl = Convert.ToString(ShellArgs[0]);
             }
             RSSShellCommon.RSSFeedLink = FeedUrl;
 

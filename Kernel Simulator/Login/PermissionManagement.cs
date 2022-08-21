@@ -25,7 +25,6 @@ using KS.Files;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -159,7 +158,7 @@ namespace KS.Login
             {
                 if ((UserToken["username"].ToString() ?? "") == (Username ?? ""))
                 {
-                    if (Conversions.ToBoolean(!((JArray)UserToken["permissions"]).ToObject(typeof(List<string>)).Contains(PermType.ToString())))
+                    if (Convert.ToBoolean(!((JArray)UserToken["permissions"]).ToObject<List<string>>().Contains(PermType.ToString())))
                     {
                         ((JArray)UserToken["permissions"]).Add(PermType.ToString());
                     }

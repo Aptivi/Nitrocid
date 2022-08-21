@@ -908,7 +908,7 @@ namespace KS.ConsoleBase.Colors
                     }
                     else
                     {
-                        Console.Write(Conversions.ToString(CharManager.GetEsc()) + $"[49m");
+                        Console.Write(Convert.ToString(CharManager.GetEsc()) + $"[49m");
                     }
                 }
                 else
@@ -1061,15 +1061,15 @@ namespace KS.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromRGBToHex(string RGBSequence)
         {
-            if (RGBSequence.Contains(Conversions.ToString(';')))
+            if (RGBSequence.Contains(Convert.ToString(';')))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = RGBSequence.Split(';');
                 if (ColorSpecifierArray.Length == 3)
                 {
-                    int R = Conversions.ToInteger(ColorSpecifierArray[0]);
-                    int G = Conversions.ToInteger(ColorSpecifierArray[1]);
-                    int B = Conversions.ToInteger(ColorSpecifierArray[2]);
+                    int R = Convert.ToInt32(ColorSpecifierArray[0]);
+                    int G = Convert.ToInt32(ColorSpecifierArray[1]);
+                    int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     return $"#{R:X2}{G:X2}{B:X2}";
                 }
                 else

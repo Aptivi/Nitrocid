@@ -23,7 +23,6 @@ using FluentFTP.Helpers;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.FTP;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.FTP.Transfer
 {
@@ -192,7 +191,7 @@ namespace KS.Network.FTP.Transfer
 
                 // Try to upload
                 string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
-                bool Success = Conversions.ToBoolean(FTPShellCommon.ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
+                bool Success = Convert.ToBoolean(FTPShellCommon.ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
                 DebugWriter.Wdbg(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
                 Kernel.Kernel.KernelEventManager.RaiseFTPPostUpload(File, Success);
                 return Success;

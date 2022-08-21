@@ -4,7 +4,6 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Platform;
 using KS.Misc.Writers.ConsoleWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -49,9 +48,9 @@ namespace KS.Misc.Writers.FancyWriters
                 {
                     for (int CharIndex = 0, loopTo = Text.Length - 1; CharIndex <= loopTo; CharIndex++)
                     {
-                        if (Conversions.ToString(Text[CharIndex]) == "-")
+                        if (Convert.ToString(Text[CharIndex]) == "-")
                         {
-                            TextWriterColor.Write(Conversions.ToString(Text[CharIndex]), false, ColorTools.ColTypes.Separator);
+                            TextWriterColor.Write(Convert.ToString(Text[CharIndex]), false, ColorTools.ColTypes.Separator);
                         }
                         else
                         {

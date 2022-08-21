@@ -55,7 +55,7 @@ Namespace Languages
         ''' <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         Public Sub New(LangName As String, FullLanguageName As String, Transliterable As Boolean)
             'Check to see if the language being installed is found in resources
-            If Not String.IsNullOrEmpty(My.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))) Then
+            If Not String.IsNullOrEmpty(Properties.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))) Then
                 'Install values to the object instance
                 ThreeLetterLanguageName = LangName
                 Me.FullLanguageName = FullLanguageName
@@ -74,7 +74,7 @@ Namespace Languages
                 Me.Cultures = Cultures
 
                 'Get instance of langauge resource and install it
-                Dim LanguageResource As JObject = JObject.Parse(My.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations")
+                Dim LanguageResource As JObject = JObject.Parse(Properties.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations")
                 Me.LanguageResource = LanguageResource
                 Custom = False
             Else
@@ -107,7 +107,7 @@ Namespace Languages
             Me.Cultures = Cultures
 
             'Install it
-            Dim EnglishLength As Integer = JObject.Parse(My.Resources.eng).SelectToken("Localizations").Count
+            Dim EnglishLength As Integer = JObject.Parse(Properties.Resources.eng).SelectToken("Localizations").Count
             Custom = True
             If LanguageToken.Count = EnglishLength Then
                 LanguageResource = LanguageToken

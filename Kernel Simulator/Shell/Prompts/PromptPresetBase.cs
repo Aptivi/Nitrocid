@@ -24,11 +24,11 @@ namespace KS.Shell.Prompts
     public abstract class PromptPresetBase : IPromptPreset
     {
 
-        public virtual string PresetName { get; private set; } = "BasePreset";
+        public virtual string PresetName { get; } = "BasePreset";
 
-        public virtual string PresetPrompt { get; private set; } = "> ";
+        public virtual string PresetPrompt { get; } = "> ";
 
-        public virtual ShellType PresetShellType { get; private set; } = ShellType.Shell;
+        public virtual ShellType PresetShellType { get; } = ShellType.Shell;
 
         internal virtual string PresetPromptBuilder()
         {

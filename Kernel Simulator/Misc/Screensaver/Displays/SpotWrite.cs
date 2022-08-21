@@ -27,7 +27,6 @@ using KS.Files.Querying;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -222,10 +221,10 @@ namespace KS.Misc.Screensaver.Displays
                         }
 
                         // Write the final character to the console and wait
-                        Console.Write(Conversions.ToString(CharManager.GetEsc()) + "[1K" + Conversions.ToString(StruckChar) + Conversions.ToString(CharManager.GetEsc()) + "[K");
+                        Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
                         ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
-                    Console.Write(Conversions.ToString(CharManager.GetEsc()) + "[1K");
+                    Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
                 }
             }
 

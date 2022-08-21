@@ -34,7 +34,6 @@ using KS.Misc.Writers.DebugWriters;
 using KS.Network.RSS.Instance;
 using KS.Network.Transfer;
 using KS.Shell.Shells.RSS;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Network.RSS
@@ -134,7 +133,7 @@ namespace KS.Network.RSS
                 if (ArticleNode.Name == "title")
                 {
                     // Trimming newlines and spaces is necessary, since some RSS feeds (GitHub commits) might return string with trailing and leading spaces and newlines.
-                    Title = ArticleNode.InnerText.Trim(Conversions.ToChar(Microsoft.VisualBasic.Constants.vbCr), Conversions.ToChar(Microsoft.VisualBasic.Constants.vbLf), ' ');
+                    Title = ArticleNode.InnerText.Trim(Convert.ToChar(Convert.ToChar(13)), Convert.ToChar(Convert.ToChar(10)), ' ');
                 }
 
                 // Check the link
@@ -161,7 +160,7 @@ namespace KS.Network.RSS
                         {
                             // Extract plain text from HTML
                             var HtmlContent = new HtmlDocument();
-                            HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(Conversions.ToChar(Microsoft.VisualBasic.Constants.vbCr), Conversions.ToChar(Microsoft.VisualBasic.Constants.vbLf), ' '));
+                            HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(Convert.ToChar(Convert.ToChar(13)), Convert.ToChar(Convert.ToChar(10)), ' '));
 
                             // Some feeds have no node called "pre," so work around this...
                             var PreNode = HtmlContent.DocumentNode.SelectSingleNode("pre");
@@ -176,12 +175,12 @@ namespace KS.Network.RSS
                         }
                         else
                         {
-                            Description = ArticleNode.InnerText.Trim(Conversions.ToChar(Microsoft.VisualBasic.Constants.vbCr), Conversions.ToChar(Microsoft.VisualBasic.Constants.vbLf), ' ');
+                            Description = ArticleNode.InnerText.Trim(Convert.ToChar(Convert.ToChar(13)), Convert.ToChar(Convert.ToChar(10)), ' ');
                         }
                     }
                     else
                     {
-                        Description = ArticleNode.InnerText.Trim(Conversions.ToChar(Microsoft.VisualBasic.Constants.vbCr), Conversions.ToChar(Microsoft.VisualBasic.Constants.vbLf), ' ');
+                        Description = ArticleNode.InnerText.Trim(Convert.ToChar(Convert.ToChar(13)), Convert.ToChar(Convert.ToChar(10)), ' ');
                     }
                 }
                 Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode);
@@ -431,7 +430,7 @@ namespace KS.Network.RSS
                 if (StringQuery.IsStringNumeric(AnswerStr))
                 {
                     // Got a numeric string! Check to see if we're in range before parsing it to index
-                    int AnswerInt = Conversions.ToInteger(AnswerStr);
+                    int AnswerInt = Convert.ToInt32(AnswerStr);
                     DebugWriter.Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt);
                     if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSources.Length)
                     {
@@ -485,7 +484,7 @@ namespace KS.Network.RSS
                 if (StringQuery.IsStringNumeric(AnswerStr))
                 {
                     // Got a numeric string! Check to see if we're in range before parsing it to index
-                    int AnswerInt = Conversions.ToInteger(AnswerStr);
+                    int AnswerInt = Convert.ToInt32(AnswerStr);
                     DebugWriter.Wdbg(DebugLevel.W, "Got answer {0}.", AnswerInt);
                     if (AnswerInt > 0 & AnswerInt <= FeedListJsonNewsSourceFeeds.Length)
                     {

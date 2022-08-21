@@ -21,7 +21,6 @@ using System.IO;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
 using KS.Network.RemoteDebug.Interface;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.RemoteDebug.Commands
 {
@@ -36,7 +35,7 @@ namespace KS.Network.RemoteDebug.Commands
                 {
                     try
                     {
-                        SocketStreamWriter.WriteLine(DebugWriter.DebugStackTraces[Conversions.ToInteger(ListArgsOnly[0])]);
+                        SocketStreamWriter.WriteLine(DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])]);
                     }
                     catch (Exception ex)
                     {

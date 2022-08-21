@@ -26,7 +26,6 @@ using KS.Misc.Writers.DebugWriters;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Network.Transfer;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Games
 {
@@ -54,7 +53,7 @@ namespace KS.Misc.Games
                 RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count));
                 DebugWriter.Wdbg(DebugLevel.I, "Word: {0}", RandomWord);
                 TextWriterColor.Write(RandomWord, true, ColorTools.ColTypes.Input);
-                SpeltWord = Input.ReadLineNoInput(Conversions.ToChar(""));
+                SpeltWord = Input.ReadLineNoInput(Convert.ToChar(""));
 
                 if ((SpeltWord ?? "") == (RandomWord ?? ""))
                 {

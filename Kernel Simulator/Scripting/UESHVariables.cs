@@ -4,6 +4,7 @@ using KS.Misc.Platform;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.Shells.UESH;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -22,15 +23,13 @@ using KS.Shell.ShellBase.Shells;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Shell.Shells.UESH;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Scripting
 {
     public static class UESHVariables
     {
 
-        internal static Dictionary<string, string> ShellVariables = new Dictionary<string, string>() { { "$IsRunningFromGrilo", Conversions.ToString(KernelPlatform.IsRunningFromGrilo()) } };
+        internal static Dictionary<string, string> ShellVariables = new Dictionary<string, string>() { { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) } };
 
         /// <summary>
         /// Checks to see if the variable name starts with the correct format
@@ -76,11 +75,12 @@ namespace KS.Scripting
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {
-                    if (Word.Contains(var) & Word.StartsWith("$"))
+                    string finalWord = Word;
+                    if (finalWord.Contains(var) & finalWord.StartsWith("$"))
                     {
-                        Word = ShellVariables[var];
+                        finalWord = ShellVariables[var];
                     }
-                    NewCommand += $"{Word} ";
+                    NewCommand += $"{finalWord} ";
                 }
                 DebugWriter.Wdbg(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, NewCommand);
                 return NewCommand.TrimEnd(' ');
@@ -191,7 +191,7 @@ namespace KS.Scripting
         {
             var EnvVars = Environment.GetEnvironmentVariables();
             foreach (string EnvVar in EnvVars.Keys)
-                SetVariable(EnvVar, Conversions.ToString(EnvVars[EnvVar]));
+                SetVariable(EnvVar, Convert.ToString(EnvVars[EnvVar]));
         }
 
     }

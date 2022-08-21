@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.RSS.Commands
             {
                 TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, Article.ArticleTitle);
                 TextWriterColor.Write(Article.ArticleLink, true, ColorTools.ColTypes.ListValue);
-                TextWriterColor.Write("    {0}", true, ColorTools.ColTypes.Neutral, Extensification.StringExts.Querying.SplitNewLines(Article.ArticleDescription, 0).Truncate(200));
+                TextWriterColor.Write("    {0}", true, ColorTools.ColTypes.Neutral, Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
         }
 

@@ -22,6 +22,7 @@ using KS.Shell.ShellBase.Commands;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -33,11 +34,11 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var EnglishJson = JToken.Parse(My.Resources.Resources.eng);
+            var EnglishJson = JToken.Parse(Properties.Resources.Resources.eng);
             JToken LanguageJson;
             foreach (string LanguageName in LanguageManager.Languages.Keys)
             {
-                LanguageJson = JToken.Parse(My.Resources.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")));
+                LanguageJson = JToken.Parse(Properties.Resources.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")));
                 if (LanguageJson.Count() != EnglishJson.Count())
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, ColorTools.ColTypes.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());

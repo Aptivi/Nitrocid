@@ -22,7 +22,6 @@ using static Extensification.CharExts.Querying;
 using Extensification.StringExts;
 using KS.Files.Querying;
 using KS.Languages;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Files.LineEndings
 {
@@ -36,26 +35,14 @@ namespace KS.Files.LineEndings
         {
             get
             {
-                switch (Environment.NewLine ?? "")
-                {
-                    case Microsoft.VisualBasic.Constants.vbCrLf:
-                        {
-                            return FilesystemNewlineStyle.CRLF;
-                        }
-                    case Microsoft.VisualBasic.Constants.vbLf:
-                        {
-                            return FilesystemNewlineStyle.LF;
-                        }
-                    case Microsoft.VisualBasic.Constants.vbCr:
-                        {
-                            return FilesystemNewlineStyle.CR;
-                        }
-
-                    default:
-                        {
-                            return FilesystemNewlineStyle.CRLF;
-                        }
-                }
+                if (Kernel.Kernel.NewLine == $"{Convert.ToChar(13)}{Convert.ToChar(10)}")
+                    return FilesystemNewlineStyle.CRLF;
+                else if (Kernel.Kernel.NewLine == Convert.ToChar(13).ToString())
+                    return FilesystemNewlineStyle.CR;
+                else if (Kernel.Kernel.NewLine == Convert.ToChar(10).ToString())
+                    return FilesystemNewlineStyle.LF;
+                else
+                    return FilesystemNewlineStyle.CRLF;
             }
         }
 
@@ -69,17 +56,16 @@ namespace KS.Files.LineEndings
             {
                 case FilesystemNewlineStyle.CRLF:
                     {
-                        return Microsoft.VisualBasic.Constants.vbCrLf;
+                        return $"{Convert.ToChar(13)}{Convert.ToChar(10)}";
                     }
                 case FilesystemNewlineStyle.LF:
                     {
-                        return Microsoft.VisualBasic.Constants.vbLf;
+                        return Convert.ToChar(10).ToString();
                     }
                 case FilesystemNewlineStyle.CR:
                     {
-                        return Microsoft.VisualBasic.Constants.vbCr;
+                        return Convert.ToChar(13).ToString();
                     }
-
                 default:
                     {
                         return Environment.NewLine;
@@ -99,10 +85,10 @@ namespace KS.Files.LineEndings
                 throw new IOException(Translate.DoTranslation("File {0} not found.").FormatString(TextFile));
 
             // Open the file stream
-            var NewlineStyle = NewlineStyle;
+            var NewlineStyle = LineEndingsTools.NewlineStyle;
             var TextFileStream = new FileStream(TextFile, FileMode.Open, FileAccess.Read);
-            int CarriageReturnCode = Conversions.ToChar(GetLineEndingString(FilesystemNewlineStyle.CR)).GetAsciiCode();
-            int LineFeedCode = Conversions.ToChar(GetLineEndingString(FilesystemNewlineStyle.LF)).GetAsciiCode();
+            int CarriageReturnCode = Convert.ToChar(GetLineEndingString(FilesystemNewlineStyle.CR)).GetAsciiCode();
+            int LineFeedCode = Convert.ToChar(GetLineEndingString(FilesystemNewlineStyle.LF)).GetAsciiCode();
             var CarriageReturnSpotted = default(bool);
             var LineFeedSpotted = default(bool);
             var ExitOnSpotted = default(bool);

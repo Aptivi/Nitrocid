@@ -25,7 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Hex.Commands
 {
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
                 {
-                    if (Conversions.ToLong(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        HexEditTools.HexEdit_DeleteBytes(Conversions.ToLong(ListArgsOnly[0]));
+                        HexEditTools.HexEdit_DeleteBytes(Convert.ToInt64(ListArgsOnly[0]));
                         TextWriterColor.Write(Translate.DoTranslation("Deleted bytes."), true, ColorTools.ColTypes.Success);
                     }
                     else
@@ -64,10 +64,10 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & StringQuery.IsStringNumeric(ListArgsOnly[1]))
                 {
-                    if (Conversions.ToLong(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Conversions.ToLong(ListArgsOnly[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(ListArgsOnly[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        long ByteNumberStart = Conversions.ToLong(ListArgsOnly[0]);
-                        long ByteNumberEnd = Conversions.ToLong(ListArgsOnly[1]);
+                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
+                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DeleteBytes(ByteNumberStart, ByteNumberEnd);
                     }

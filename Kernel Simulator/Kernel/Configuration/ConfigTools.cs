@@ -347,9 +347,9 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static Dictionary<string, bool> CheckConfigVariables()
         {
-            var SettingsToken = JToken.Parse(My.Resources.Resources.SettingsEntries);
-            var SaverSettingsToken = JToken.Parse(My.Resources.Resources.ScreensaverSettingsEntries);
-            var SplashSettingsToken = JToken.Parse(My.Resources.Resources.SplashSettingsEntries);
+            var SettingsToken = JToken.Parse(Properties.Resources.Resources.SettingsEntries);
+            var SaverSettingsToken = JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
+            var SplashSettingsToken = JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
             var Tokens = new[] { SettingsToken, SaverSettingsToken, SplashSettingsToken };
             var Results = new Dictionary<string, bool>();
 

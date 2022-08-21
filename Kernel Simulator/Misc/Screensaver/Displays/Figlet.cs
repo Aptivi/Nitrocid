@@ -302,7 +302,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Prepare the figlet font for writing
-            string FigletWrite = FigletSettings.FigletText.ReplaceAll(new[] { Microsoft.VisualBasic.Constants.vbCr, Microsoft.VisualBasic.Constants.vbLf }, " - ");
+            string FigletWrite = FigletSettings.FigletText.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
             FigletWrite = FigletFontUsed.Render(FigletWrite);
             var FigletWriteLines = FigletWrite.SplitNewLines().SkipWhile(x => string.IsNullOrEmpty(x)).ToArray();
             int FigletHeight = (int)Math.Round(ConsoleMiddleHeight - FigletWriteLines.Length / 2d);

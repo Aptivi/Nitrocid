@@ -52,7 +52,6 @@ using KS.Scripting;
 using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Aliases;
 using KS.TimeDate;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Kernel
 {
@@ -61,7 +60,7 @@ namespace KS.Kernel
 
         // Variables
         public static string BannerFigletFont = "Banner";
-        internal static KernelThread RPCPowerListener = new KernelThread("RPC Power Listener Thread", true, (_) => PowerManager.PowerManage());
+        internal static KernelThread RPCPowerListener = new KernelThread("RPC Power Listener Thread", true, ((object arg) => PowerManager.PowerManage((PowerMode)arg)));
         internal static Exception LastKernelErrorException;
         internal static bool InstanceChecked;
 
@@ -474,9 +473,9 @@ namespace KS.Kernel
             UESHVariables.ConvertSystemEnvironmentVariables();
         }
 
-        private static Mutex _MultiInstance_ksInst;
-
         // ----------------------------------------------- Misc -----------------------------------------------
+
+        private static Mutex _MultiInstance_ksInst;
 
         /// <summary>
         /// Check to see if multiple Kernel Simulator processes are running.
@@ -500,7 +499,7 @@ namespace KS.Kernel
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
             {
-                string TargetPath = Paths.GetKernelPath((KernelPathType)Conversions.ToInteger(PathName));
+                string TargetPath = Paths.GetKernelPath((KernelPathType)Convert.ToInt32(PathName));
                 if (Checking.FileExists(TargetPath))
                 {
                     File.Delete(TargetPath);
@@ -569,35 +568,17 @@ namespace KS.Kernel
             var CompilerVars = new List<string>();
 
             // Determine the compiler vars used to build KS using conditional checks
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If SPECIFIER = "DEV" Then
-            */
+#if SPECIFIERDEV
             CompilerVars.Add("SPECIFIER = \"DEV\"");
-            /* TODO ERROR: Skipped ElifDirectiveTrivia
-            #ElseIf SPECIFIER = "RC" Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        CompilerVars.Add("SPECIFIER = ""RC""")
-            *//* TODO ERROR: Skipped ElifDirectiveTrivia
-            #ElseIf SPECIFIER = "REL" Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        CompilerVars.Add("SPECIFIER = ""REL""")
-            *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If ENABLEIMMEDIATEWINDOWDEBUG Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG")
-            *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If POP3Feature Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        CompilerVars.Add("POP3Feature")
-            *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
+#elif SPECIFIERRC
+            CompilerVars.Add("SPECIFIER = \"RC\"");
+#elif SPECIFIERREL
+            CompilerVars.Add("SPECIFIER = \"REL\"");
+#endif
+#if ENABLEIMMEDIATEWINDOWDEBUG
+            CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG");
+#endif
+
             // Return the compiler vars
             return CompilerVars.ToArray();
         }

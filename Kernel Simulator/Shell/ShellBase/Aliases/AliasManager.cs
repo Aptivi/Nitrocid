@@ -30,7 +30,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -70,7 +69,7 @@ namespace KS.Shell.ShellBase.Aliases
             {
                 AliasCmd = (string)AliasObject["Alias"];
                 ActualCmd = (string)AliasObject["Command"];
-                AliasType = (ShellType)Conversions.ToInteger(AliasObject["Type"].ToObject(typeof(ShellType)));
+                AliasType = (ShellType)Convert.ToInt32(AliasObject["Type"].ToObject(typeof(ShellType)));
                 DebugWriter.Wdbg(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType.ToString());
                 var TargetAliasList = GetAliasesListFromType(AliasType);
                 TargetAliasList.AddOrModify(AliasCmd, ActualCmd);

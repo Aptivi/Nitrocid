@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -22,7 +23,6 @@ using System.Linq;
 using Extensification.StringExts;
 using KS.Languages;
 using KS.Network.RemoteDebug.Interface;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.RemoteDebug.Commands
 {
@@ -31,7 +31,7 @@ namespace KS.Network.RemoteDebug.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
         {
-            if (string.IsNullOrWhiteSpace(Conversions.ToString(RemoteDebugTools.GetDeviceProperty(DeviceAddress, RemoteDebugTools.DeviceProperty.Name))))
+            if (string.IsNullOrWhiteSpace(Convert.ToString(RemoteDebugTools.GetDeviceProperty(DeviceAddress, RemoteDebugTools.DeviceProperty.Name))))
             {
                 if (ListArgsOnly.Length != 0)
                 {

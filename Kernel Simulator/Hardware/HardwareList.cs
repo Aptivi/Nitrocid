@@ -29,7 +29,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Hardware
 {
@@ -90,7 +89,7 @@ namespace KS.Hardware
 
                 // Print RAM info
                 TextWriterColor.Write("RAM: " + Translate.DoTranslation("Total memory:"), false, ColorTools.ColTypes.ListEntry);
-                TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Conversions.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).FileSizeToString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
+                TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).FileSizeToString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
 
                 // GPU info
                 foreach (string GPUInfo in HardwareProbe.HardwareInfo.Hardware.GPU.Keys)
@@ -109,20 +108,20 @@ namespace KS.Hardware
                         TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk model:"), false, ColorTools.ColTypes.ListEntry);
                         TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetDrive.Model);
                         TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk size:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Conversions.ToLong(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
+                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
                     }
                     else
                     {
                         TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk model:"), false, ColorTools.ColTypes.ListEntry);
                         TextWriterColor.Write(" {0} {1}", true, ColorTools.ColTypes.ListValue, TargetDrive.Vendor, TargetDrive.Model);
                         TextWriterColor.Write("HDD: " + Translate.DoTranslation("Disk size:"), false, ColorTools.ColTypes.ListEntry);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Conversions.ToLong(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
+                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
                     }
                     foreach (string PartInfo in TargetDrive.Partitions.Keys)
                     {
                         var TargetPart = TargetDrive.Partitions[PartInfo];
                         TextWriterColor.Write("HDD ({0}): " + Translate.DoTranslation("Partition size:"), false, ColorTools.ColTypes.ListEntry, TargetPart.ID);
-                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Conversions.ToLong(TargetPart.Size).FileSizeToString() : TargetPart.Size);
+                        TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).FileSizeToString() : TargetPart.Size);
                         TextWriterColor.Write("HDD ({0}): " + Translate.DoTranslation("Partition filesystem:"), false, ColorTools.ColTypes.ListEntry, TargetPart.ID);
                         TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, TargetPart.FileSystem);
                     }
@@ -182,7 +181,7 @@ namespace KS.Hardware
                                         foreach (PropertyInfo PartitionValuePropertyInfo in Partitions[PartitionKey].GetType().GetProperties())
                                         {
                                             TextWriterColor.Write("      - {0}: ", false, ColorTools.ColTypes.ListEntry, PartitionValuePropertyInfo.Name);
-                                            TextWriterColor.Write(Conversions.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, ColorTools.ColTypes.ListValue);
+                                            TextWriterColor.Write(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, ColorTools.ColTypes.ListValue);
                                         }
                                     }
                                 }
@@ -197,7 +196,7 @@ namespace KS.Hardware
                             }
                             else
                             {
-                                TextWriterColor.Write(Conversions.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, ColorTools.ColTypes.ListValue);
+                                TextWriterColor.Write(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, ColorTools.ColTypes.ListValue);
                             }
                         }
                     }
@@ -207,7 +206,7 @@ namespace KS.Hardware
                     foreach (FieldInfo HardwareFieldInfo in Field.FieldType.GetFields())
                     {
                         TextWriterColor.Write("- {0}: ", false, ColorTools.ColTypes.ListEntry, HardwareFieldInfo.Name);
-                        TextWriterColor.Write(Conversions.ToString(HardwareFieldInfo.GetValue(FieldValue)), true, ColorTools.ColTypes.ListValue);
+                        TextWriterColor.Write(Convert.ToString(HardwareFieldInfo.GetValue(FieldValue)), true, ColorTools.ColTypes.ListValue);
                     }
                 }
             }

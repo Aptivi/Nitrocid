@@ -11,8 +11,6 @@
 
 <br>
 
-- `libmono-microsoft-visualbasic10.0-cil`
-
 - **MonoDevelop**
 
 <br>

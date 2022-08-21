@@ -6,7 +6,6 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Platform;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -393,7 +392,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (TimesWiped == WipeSettings.WipeWipesNeededToChangeDirection)
                 {
                     TimesWiped = 0;
-                    ToDirection = (WipeDirections)Conversions.ToInteger(Enum.Parse(typeof(WipeDirections), RandomDriver.Next(0, 3).ToString()));
+                    ToDirection = (WipeDirections)Convert.ToInt32(Enum.Parse(typeof(WipeDirections), RandomDriver.Next(0, 3).ToString()));
                     DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString());
                 }
             }

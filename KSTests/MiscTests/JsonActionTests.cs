@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.ConsoleBase.Colors;
 using KS.Misc.Beautifiers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

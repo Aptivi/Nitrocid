@@ -1,7 +1,6 @@
 ﻿using System;
 using KS.Login;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -37,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            PermissionManagement.Permission((PermissionManagement.PermissionType)Conversions.ToInteger(Enum.Parse(typeof(PermissionManagement.PermissionType), ListArgsOnly[1])), ListArgsOnly[0], (PermissionManagement.PermissionManagementMode)Conversions.ToInteger(Enum.Parse(typeof(PermissionManagement.PermissionManagementMode), ListArgsOnly[2])));
+            PermissionManagement.Permission((PermissionManagement.PermissionType)Convert.ToInt32(Enum.Parse(typeof(PermissionManagement.PermissionType), ListArgsOnly[1])), ListArgsOnly[0], (PermissionManagement.PermissionManagementMode)Convert.ToInt32(Enum.Parse(typeof(PermissionManagement.PermissionManagementMode), ListArgsOnly[2])));
         }
 
     }

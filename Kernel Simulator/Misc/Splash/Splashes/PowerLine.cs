@@ -24,7 +24,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -90,7 +89,7 @@ namespace KS.Misc.Splash.Splashes
                         if (SplashClosing)
                             break;
                         TextWriterWhereColor.WriteWhere(" ".Repeat(PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
-                        TextWriterWhereColor.WriteWhere(Conversions.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
+                        TextWriterWhereColor.WriteWhere(Convert.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
                         ConsoleExtensions.ClearLineToRight();
                     }
 

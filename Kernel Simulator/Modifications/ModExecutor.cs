@@ -71,7 +71,6 @@ namespace KS.Modifications
             }
 
             // Try to execute the command.
-            var ScriptCommandExecutable = default(bool);
             foreach (string ModPart in ModManager.Mods[actualCmd].ModParts.Keys)
             {
                 var Script = ModManager.Mods[actualCmd].ModParts[ModPart].PartScript;
@@ -81,6 +80,7 @@ namespace KS.Modifications
                     if (Script.Commands.ContainsKey(parts[0]))
                     {
                         // Populate the arguments info and command base variables
+                        var ScriptCommandExecutable = false;
                         var ScriptCommandBase = Script.Commands[parts[0]].CommandBase;
                         var ScriptCommandArgsInfo = new ProvidedCommandArgumentsInfo(cmd, Script.Commands[parts[0]].Type);
                         var ScriptCommandArgs = ScriptCommandArgsInfo.ArgumentsList;
@@ -93,7 +93,7 @@ namespace KS.Modifications
                             if (Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict) & PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) | !Script.Commands[parts[0]].Flags.HasFlag(CommandFlags.Strict))
                             {
                                 // User is authorized to use the command, or the command isn't strict
-                                ph0b6dd4784e9d4a609316b142b38bf53e = true;
+                                ScriptCommandExecutable = true;
                             }
                             else
                             {
@@ -105,11 +105,11 @@ namespace KS.Modifications
                         else
                         {
                             // Command type is not of shell. Execute anyway.
-                            ph0b6dd4784e9d4a609316b142b38bf53e = true;
+                            ScriptCommandExecutable = true;
                         }
 
                         // If the command check went all well without any hiccups, execute the command.
-                        if (ph0b6dd4784e9d4a609316b142b38bf53e)
+                        if (ScriptCommandExecutable)
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts[0], ModPart);
                             if (ScriptCommandBase is not null)

@@ -21,7 +21,7 @@ using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Test.Commands
             if (CustomSaverTools.CustomSavers.ContainsKey(ListArgsOnly[0]))
             {
                 TextWriterColor.Write("- {0} -> {1}: ", false, ColorTools.ColTypes.ListEntry, ListArgsOnly[0], ListArgsOnly[1]);
-                TextWriterColor.Write(Conversions.ToString(CustomSaverTools.GetCustomSaverSettings(ListArgsOnly[0], ListArgsOnly[1])), true, ColorTools.ColTypes.ListValue);
+                TextWriterColor.Write(Convert.ToString(CustomSaverTools.GetCustomSaverSettings(ListArgsOnly[0], ListArgsOnly[1])), true, ColorTools.ColTypes.ListValue);
             }
             else
             {

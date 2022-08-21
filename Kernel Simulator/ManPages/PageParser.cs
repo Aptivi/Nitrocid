@@ -94,7 +94,7 @@ namespace KS.ManPages
                         // Check the body or manual metadata
                         if (!ManLine.StartsWith("~~-"))
                         {
-                            if (pha32844f478ae4be49a976eab6ea8188e)
+                            if (BodyParsing)
                             {
                                 // If we're not at the end of the body
                                 if ((ManLine ?? "") != (BodyEndConstant ?? ""))
@@ -106,7 +106,7 @@ namespace KS.ManPages
                                 else
                                 {
                                     // Stop parsing the body
-                                    pha32844f478ae4be49a976eab6ea8188e = false;
+                                    BodyParsing = false;
                                 }
                             }
                             // Check for constants
@@ -136,7 +136,7 @@ namespace KS.ManPages
                             }
                             else if (ManLine == "-BODY START-")
                             {
-                                pha32844f478ae4be49a976eab6ea8188e = true;
+                                BodyParsing = true;
                             }
                         }
                     }

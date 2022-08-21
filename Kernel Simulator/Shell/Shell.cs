@@ -41,7 +41,6 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.UnifiedCommands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell
 {
@@ -50,7 +49,7 @@ namespace KS.Shell
 
         internal static StreamWriter OutputTextWriter;
         internal static FileStream OutputStream;
-        internal static KernelThread ProcessStartCommandThread = new KernelThread("Executable Command Thread", false, (_) => ProcessExecutor.ExecuteProcess());
+        internal static KernelThread ProcessStartCommandThread = new KernelThread("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
 
         /// <summary>
         /// Whether the shell is colored or not
@@ -63,7 +62,7 @@ namespace KS.Shell
         /// <summary>
         /// Path lookup delimiter, depending on the operating system
         /// </summary>
-        public readonly static string PathLookupDelimiter = Conversions.ToString(Path.PathSeparator);
+        public readonly static string PathLookupDelimiter = Convert.ToString(Path.PathSeparator);
 
         /// <summary>
         /// List of unified commands
@@ -138,7 +137,6 @@ namespace KS.Shell
             var Commands = GetCommand.GetCommands(ShellType);
             foreach (string Command in SplitCommands)
             {
-
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
@@ -148,73 +146,73 @@ namespace KS.Shell
                     DebugWriter.Wdbg(DebugLevel.I, "Prototype indexCmd and Command: {0}, {1}", indexCmd, Command);
                     if (indexCmd == -1)
                         indexCmd = Command.Length;
-                    Command = Command.Substring(0, indexCmd);
-                    DebugWriter.Wdbg(DebugLevel.I, "Finished indexCmd and Command: {0}, {1}", indexCmd, Command);
+                    string finalCommand = Command.Substring(0, indexCmd);
+                    DebugWriter.Wdbg(DebugLevel.I, "Finished indexCmd and finalCommand: {0}, {1}", indexCmd, finalCommand);
 
                     // Parse script command (if any)
-                    var scriptArgs = Command.Split(new[] { ".uesh " }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    var scriptArgs = finalCommand.Split(new[] { ".uesh " }, StringSplitOptions.RemoveEmptyEntries).ToList();
                     scriptArgs.RemoveAt(0);
 
                     // Get command parts
-                    var Parts = Command.SplitSpacesEncloseDoubleQuotes();
+                    var Parts = finalCommand.SplitSpacesEncloseDoubleQuotes();
                     // Reads command written by user
                     do
                     {
                         try
                         {
                             // Set title
-                            ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {Command}");
+                            ConsoleExtensions.SetTitle($"{Kernel.Kernel.ConsoleTitle} - {finalCommand}");
 
                             // Iterate through mod commands
-                            DebugWriter.Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, FullCommand);
+                            DebugWriter.Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", finalCommand, FullCommand);
                             if (ModManager.ListModCommands(ShellType).ContainsKey(Parts[0]))
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "Mod command: {0}", Parts[0]);
-                                ModExecutor.ExecuteModCommand(Command);
+                                ModExecutor.ExecuteModCommand(finalCommand);
                             }
 
                             // Iterate through alias commands
-                            DebugWriter.Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, FullCommand);
+                            DebugWriter.Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", finalCommand, FullCommand);
                             if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(Parts[0]))
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "Alias: {0}", Parts[0]);
-                                AliasExecutor.ExecuteAlias(Command, ShellType);
+                                AliasExecutor.ExecuteAlias(finalCommand, ShellType);
                             }
 
                             // Execute the built-in command
-                            if (Commands.ContainsKey(Command))
+                            if (Commands.ContainsKey(finalCommand))
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "Executing built-in command");
 
                                 // Check to see if the command supports redirection
-                                if (Commands[Command].Flags.HasFlag(CommandFlags.RedirectionSupported))
+                                if (Commands[finalCommand].Flags.HasFlag(CommandFlags.RedirectionSupported))
                                 {
                                     DebugWriter.Wdbg(DebugLevel.I, "Redirection supported!");
-                                    InitializeRedirection(ref Command, OutputPath);
+                                    InitializeRedirection(ref finalCommand, OutputPath);
                                 }
-                                if (!(string.IsNullOrEmpty(Command) | Command.StartsWithAnyOf(new[] { " ", "#" }) == true))
+                                if (!(string.IsNullOrEmpty(finalCommand) | finalCommand.StartsWithAnyOf(new[] { " ", "#" }) == true))
                                 {
 
                                     // Check to see if a user is able to execute a command
                                     if (ShellType == ShellType.Shell)
                                     {
-                                        if (PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) == false & Commands[Command].Flags.HasFlag(CommandFlags.Strict))
+                                        if (PermissionManagement.HasPermission(Login.Login.CurrentUser.Username, PermissionManagement.PermissionType.Administrator) == false & Commands[finalCommand].Flags.HasFlag(CommandFlags.Strict))
                                         {
-                                            DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", Command);
-                                            TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, Command);
+                                            DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", finalCommand);
+                                            TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, ColorTools.ColTypes.Error, finalCommand);
                                             break;
                                         }
                                     }
 
                                     // Check the command before starting
-                                    if (Flags.Maintenance == true & Commands[Command].Flags.HasFlag(CommandFlags.NoMaintenance))
+                                    if (Flags.Maintenance == true & Commands[finalCommand].Flags.HasFlag(CommandFlags.NoMaintenance))
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", Command);
-                                        TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, ColorTools.ColTypes.Error, Command);
+                                        DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", finalCommand);
+                                        TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, ColorTools.ColTypes.Error, finalCommand);
                                     }
                                     else
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", Command, cmdArgs);
+                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", finalCommand, cmdArgs);
                                         var Params = new GetCommand.ExecuteCommandThreadParameters(FullCommand, ShellType, null);
 
                                         // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
@@ -247,16 +245,16 @@ namespace KS.Shell
                             else if (Parsing.TryParsePath(TargetFile) & ShellType == ShellType.Shell)
                             {
                                 // Scan PATH for file existence and set file name as needed
-                                PathLookupTools.FileExistsInPath(Command, ref TargetFile);
+                                PathLookupTools.FileExistsInPath(finalCommand, ref TargetFile);
                                 if (string.IsNullOrEmpty(TargetFile))
-                                    TargetFile = Filesystem.NeutralizePath(Command);
+                                    TargetFile = Filesystem.NeutralizePath(finalCommand);
                                 if (Parsing.TryParsePath(TargetFile))
                                     TargetFileName = Path.GetFileName(TargetFile);
 
                                 // If we're in the UESH shell, parse the script file or executable file
                                 if (Checking.FileExists(TargetFile) & !TargetFile.EndsWith(".uesh"))
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", Command);
+                                    DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", finalCommand);
                                     try
                                     {
                                         // Create a new instance of process
@@ -274,7 +272,7 @@ namespace KS.Shell
                                     catch (Exception ex)
                                     {
                                         DebugWriter.Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message);
-                                        TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, ColorTools.ColTypes.Error, Command, ex.Message);
+                                        TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, ColorTools.ColTypes.Error, finalCommand, ex.Message);
                                         DebugWriter.WStkTrc(ex);
                                     }
                                 }
@@ -282,7 +280,7 @@ namespace KS.Shell
                                 {
                                     try
                                     {
-                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", Command);
+                                        DebugWriter.Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", finalCommand);
                                         UESHParse.Execute(TargetFile, scriptArgs.Join(" "));
                                     }
                                     catch (Exception ex)
@@ -293,14 +291,14 @@ namespace KS.Shell
                                 }
                                 else
                                 {
-                                    DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd);
-                                    TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, Command);
+                                    DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
+                                    TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, finalCommand);
                                 }
                             }
                             else
                             {
-                                DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", Command, indexCmd);
-                                TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, Command);
+                                DebugWriter.Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", finalCommand, indexCmd);
+                                TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, ColorTools.ColTypes.Error, finalCommand);
                             }
 
                             // Restore title

@@ -65,22 +65,6 @@
     
     <br>
    
-    -   `Microsoft.VisualBasic.dll` 10.0
-    
-        ```shell
-        sudo apt install libmono-microsoft-visualbasic10.0-cil
-        ```
-        
-        <br>
-   
-    -   **mono-vbnc**
-    
-        ```shell
-        sudo apt install mono-vbnc
-        ```
-        
-        <br>
-   
     -   **libcpanel-json-xs-perl**
         
         ```shell

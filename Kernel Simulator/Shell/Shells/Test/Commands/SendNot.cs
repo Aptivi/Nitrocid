@@ -19,7 +19,7 @@
 
 using KS.Misc.Notifications;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var Notif = new Notification(ListArgsOnly[1], ListArgsOnly[2], (Notifications.NotifPriority)Conversions.ToInteger(ListArgsOnly[0]), Notifications.NotifType.Normal);
+            var Notif = new Notification(ListArgsOnly[1], ListArgsOnly[2], (Notifications.NotifPriority)Convert.ToInt32(ListArgsOnly[0]), Notifications.NotifType.Normal);
             Notifications.NotifySend(Notif);
         }
 

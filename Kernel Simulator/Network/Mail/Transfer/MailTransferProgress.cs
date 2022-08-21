@@ -25,7 +25,6 @@ using KS.Shell.Shells.Mail;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using MailKit;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.Mail.Transfer
 {
@@ -38,11 +37,11 @@ namespace KS.Network.Mail.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyle) + Conversions.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyle) + Convert.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + Conversions.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
+                    TextWriterWhereColor.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + Convert.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
                 }
             }
         }
@@ -53,11 +52,11 @@ namespace KS.Network.Mail.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyleSingle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyleSingle) + Conversions.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString());
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyleSingle) + Convert.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString());
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + Conversions.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString());
+                    TextWriterWhereColor.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + Convert.ToString(CharManager.GetEsc()) + "[0K", 0, Console.CursorTop, true, ColorTools.ColTypes.Progress, bytesTransferred.FileSizeToString());
                 }
             }
         }

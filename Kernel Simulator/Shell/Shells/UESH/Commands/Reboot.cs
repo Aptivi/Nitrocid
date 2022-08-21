@@ -19,7 +19,7 @@
 
 using KS.Kernel.Power;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     if (ListArgsOnly.Length > 1)
                     {
-                        PowerManager.PowerManage(PowerMode.RemoteRestart, ListArgsOnly[0], Conversions.ToInteger(ListArgsOnly[1]));
+                        PowerManager.PowerManage(PowerMode.RemoteRestart, ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1]));
                     }
                     else
                     {

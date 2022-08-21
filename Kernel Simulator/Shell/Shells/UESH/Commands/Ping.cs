@@ -27,7 +27,6 @@ using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Network;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -50,7 +49,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
             {
                 DebugWriter.Wdbg(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly[0]);
-                PingTimes = Conversions.ToInteger(ListArgsOnly[0]);
+                PingTimes = Convert.ToInt32(ListArgsOnly[0]);
                 StepsToSkip = 1;
             }
             foreach (string PingedAddress in ListArgsOnly.Skip(StepsToSkip))

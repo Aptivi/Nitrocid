@@ -73,29 +73,23 @@ namespace KS.Network
                     var s = adapter.GetIPv4Statistics();
                     try
                     {
-                        phddf5d739ad584c0fafc6aac112777f51 = adapterProperties.GetIPv4Properties();
-                        phed2288516b4c4ddf8d74a104b3a9f9c8 = adapterProperties.GetIPv6Properties();
+                        p = adapterProperties.GetIPv4Properties();
+                        p6 = adapterProperties.GetIPv6Properties();
                     }
                     catch (NetworkInformationException ex)
                     {
-                        /* TODO ERROR: Skipped WarningDirectiveTrivia
-                        #Disable Warning BC42104
-                        */
-                        if (phed2288516b4c4ddf8d74a104b3a9f9c8 is null)
+                        if (p6 is null)
                         {
                             DebugWriter.Wdbg(DebugLevel.W, "Failed to get IPv6 properties.");
                             TextWriterColor.Write(Translate.DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), true, ColorTools.ColTypes.Error, adapter.Description);
                         }
-                        if (phddf5d739ad584c0fafc6aac112777f51 is null)
+                        if (p is null)
                         {
                             DebugWriter.Wdbg(DebugLevel.E, "Failed to get IPv4 properties.");
                             TextWriterColor.Write(Translate.DoTranslation("Failed to get properties for adapter {0}"), true, ColorTools.ColTypes.Error, adapter.Description);
                             Failed = true;
                         }
                         DebugWriter.WStkTrc(ex);
-                        /* TODO ERROR: Skipped WarningDirectiveTrivia
-                        #Enable Warning BC42104
-                        */
                     }
 
                     // Check if statistics is nothing
@@ -109,11 +103,11 @@ namespace KS.Network
                     // Print adapter infos if not failed
                     if (!Failed)
                     {
-                        NetworkAdapterPrint.PrintAdapterIPv4Info(adapter, phddf5d739ad584c0fafc6aac112777f51, s, adapterNumber);
+                        NetworkAdapterPrint.PrintAdapterIPv4Info(adapter, p, s, adapterNumber);
                         // Additionally, print adapter IPv6 info if available
                         if (!NoV6)
                         {
-                            NetworkAdapterPrint.PrintAdapterIPv6Info(adapter, phed2288516b4c4ddf8d74a104b3a9f9c8, adapterNumber);
+                            NetworkAdapterPrint.PrintAdapterIPv6Info(adapter, p6, adapterNumber);
                         }
                     }
                 }

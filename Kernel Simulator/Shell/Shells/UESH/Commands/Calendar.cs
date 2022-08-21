@@ -26,7 +26,6 @@ using KS.Misc.Calendar.Reminders;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -61,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                     StringMonth = ActionArguments[1];
 
                                 // Show the calendar using the provided year and month
-                                CalendarPrint.PrintCalendar(Conversions.ToInteger(StringYear), Conversions.ToInteger(StringMonth));
+                                CalendarPrint.PrintCalendar(Convert.ToInt32(StringYear), Convert.ToInt32(StringMonth));
                             }
                             catch (Exception ex)
                             {
@@ -121,7 +120,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             // Enough arguments provided.
                                             try
                                             {
-                                                int EventId = Conversions.ToInteger(ActionArguments[1]);
+                                                int EventId = Convert.ToInt32(ActionArguments[1]);
                                                 var EventInstance = EventManager.CalendarEvents[EventId - 1];
                                                 EventManager.RemoveEvent(EventInstance.EventDate, EventId);
                                             }
@@ -211,7 +210,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             // Enough arguments provided.
                                             try
                                             {
-                                                int ReminderId = Conversions.ToInteger(ActionArguments[1]);
+                                                int ReminderId = Convert.ToInt32(ActionArguments[1]);
                                                 var ReminderInstance = ReminderManager.Reminders[ReminderId - 1];
                                                 ReminderManager.RemoveReminder(ReminderInstance.ReminderDate, ReminderId);
                                             }

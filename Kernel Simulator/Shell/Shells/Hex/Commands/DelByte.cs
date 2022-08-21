@@ -23,7 +23,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Hex.Commands
 {
@@ -40,9 +40,9 @@ namespace KS.Shell.Shells.Hex.Commands
         {
             if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
             {
-                if (Conversions.ToInteger(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (Convert.ToInt32(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    HexEditTools.HexEdit_DeleteByte(Conversions.ToLong(ListArgsOnly[0]));
+                    HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(ListArgsOnly[0]));
                     TextWriterColor.Write(Translate.DoTranslation("Byte deleted."), true, ColorTools.ColTypes.Success);
                 }
                 else

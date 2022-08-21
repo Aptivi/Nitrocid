@@ -84,11 +84,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -103,7 +103,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -111,7 +111,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -194,11 +194,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -213,7 +213,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -221,7 +221,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -305,11 +305,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -324,7 +324,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -332,7 +332,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -418,11 +418,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -437,7 +437,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -445,7 +445,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -532,11 +532,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -551,7 +551,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -559,7 +559,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -642,11 +642,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -661,7 +661,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -669,7 +669,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }
@@ -753,11 +753,11 @@ namespace KS.Misc.Writers.FancyWriters
             }
 
             // Write the rows
-            var ColoredCell1 = default(bool);
             for (int RowIndex = 0, loopTo2 = Rows.GetLength(0) - 1; RowIndex <= loopTo2; RowIndex++)
             {
                 for (int RowValueIndex = 0, loopTo3 = Rows.GetLength(1) - 1; RowValueIndex <= loopTo3; RowValueIndex++)
                 {
+                    var ColoredCell = false;
                     var CellColor = ColorTools.NeutralTextColor;
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
@@ -772,7 +772,7 @@ namespace KS.Misc.Writers.FancyWriters
                         {
                             if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
                             {
-                                ColoredCell1 = CellOption.ColoredCell1;
+                                ColoredCell = CellOption.ColoredCell;
                                 CellColor = CellOption.CellColor;
                                 CellBackgroundColor = CellOption.CellBackgroundColor;
                             }
@@ -780,7 +780,7 @@ namespace KS.Misc.Writers.FancyWriters
                     }
 
                     // Now, write the cell value
-                    if (ColoredCell1)
+                    if (ColoredCell)
                     {
                         TextWriterWhereColor.WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
                     }

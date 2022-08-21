@@ -31,7 +31,6 @@ using KS.Misc.Writers.DebugWriters;
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Shell.Shells.FTP;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.FTP.Filesystem
 {
@@ -80,28 +79,29 @@ namespace KS.Network.FTP.Filesystem
                     }
                     foreach (FtpListItem DirListFTP in Listing)
                     {
-                        EntryBuilder.Append($"- {DirListFTP.Name}");
+                        FtpListItem finalDirListFTP = DirListFTP;
+                        EntryBuilder.Append($"- {finalDirListFTP.Name}");
                         // Check to see if the file that we're dealing with is a symbolic link
-                        if (DirListFTP.Type == FtpObjectType.Link)
+                        if (finalDirListFTP.Type == FtpObjectType.Link)
                         {
                             EntryBuilder.Append(" >> ");
-                            EntryBuilder.Append(DirListFTP.LinkTarget);
-                            DirListFTP = DirListFTP.LinkObject;
+                            EntryBuilder.Append(finalDirListFTP.LinkTarget);
+                            finalDirListFTP = finalDirListFTP.LinkObject;
                         }
 
-                        if (DirListFTP is not null)
+                        if (finalDirListFTP is not null)
                         {
-                            if (DirListFTP.Type == FtpObjectType.File)
+                            if (finalDirListFTP.Type == FtpObjectType.File)
                             {
                                 if (ShowDetails)
                                 {
                                     EntryBuilder.Append(": ");
-                                    FileSize = FTPShellCommon.ClientFTP.GetFileSize(DirListFTP.FullName);
-                                    ModDate = FTPShellCommon.ClientFTP.GetModifiedTime(DirListFTP.FullName);
+                                    FileSize = FTPShellCommon.ClientFTP.GetFileSize(finalDirListFTP.FullName);
+                                    ModDate = FTPShellCommon.ClientFTP.GetModifiedTime(finalDirListFTP.FullName);
                                     EntryBuilder.Append(ColorTools.ListValueColor.VTSequenceForeground + Translate.DoTranslation("{0} KB | Modified in: {1}").FormatString((FileSize / 1024d).ToString("N2"), ModDate.ToString()));
                                 }
                             }
-                            else if (DirListFTP.Type == FtpObjectType.Directory)
+                            else if (finalDirListFTP.Type == FtpObjectType.Directory)
                             {
                                 EntryBuilder.Append("/");
                             }
@@ -317,7 +317,7 @@ namespace KS.Network.FTP.Filesystem
                 }
                 else if (Result.GetType() == typeof(FtpStatus))
                 {
-                    if (((FtpStatus)Conversions.ToInteger(Result)).IsFailure())
+                    if (((FtpStatus)Convert.ToInt32(Result)).IsFailure())
                     {
                         DebugWriter.Wdbg(DebugLevel.E, "Transfer failed");
                         Success = false;

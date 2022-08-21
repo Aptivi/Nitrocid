@@ -24,7 +24,6 @@ using KS.Kernel;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.SFTP;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Prompts.Presets.SFTP
 {
@@ -92,7 +91,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
 
                 // Transition
                 PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Conversions.ToString(CharManager.GetEsc()) + $"[49m");
+                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
                 PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
             }
             else
@@ -104,7 +103,7 @@ namespace KS.Shell.Prompts.Presets.SFTP
 
                 // Transition
                 PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Conversions.ToString(CharManager.GetEsc()) + $"[49m");
+                PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
                 PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
             }
 

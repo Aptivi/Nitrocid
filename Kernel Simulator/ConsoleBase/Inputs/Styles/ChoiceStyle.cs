@@ -4,7 +4,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -149,7 +148,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
                 else
                 {
-                    answer = Conversions.ToString(Console.ReadKey().KeyChar);
+                    answer = Convert.ToString(Console.ReadKey().KeyChar);
                     Console.WriteLine();
                 }
 

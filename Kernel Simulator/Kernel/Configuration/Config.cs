@@ -1540,15 +1540,15 @@ namespace KS.Kernel.Configuration
 
             //> GlitterMatrix
             GlitterMatrixSettings.GlitterMatrixDelay = int.TryParse((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["GlitterMatrix"]["Delay in Milliseconds"] : 1;
-            GlitterMatrixSettings.GlitterMatrixBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["GlitterMatrix"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
-            GlitterMatrixSettings.GlitterMatrixForegroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["GlitterMatrix"]["Foreground color"]) ?? ConsoleColors.Green).ToString()).PlainSequence;
+            GlitterMatrixSettings.GlitterMatrixBackgroundColor = new Color((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Background color"]).PlainSequence;
+            GlitterMatrixSettings.GlitterMatrixForegroundColor = new Color((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Foreground color"]).PlainSequence;
 
             //> Lines
             LinesSettings.Lines255Colors = (bool)ConfigToken["Screensaver"]["Lines"]["Activate 255 Color Mode"];
             LinesSettings.LinesTrueColor = (bool)ConfigToken["Screensaver"]["Lines"]["Activate True Color Mode"];
             LinesSettings.LinesDelay = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"] : 500;
             LinesSettings.LinesLineChar = (string)ConfigToken["Screensaver"]["Lines"]["Line character"] ?? "-";
-            LinesSettings.LinesBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Lines"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            LinesSettings.LinesBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Lines"]["Background color"]).PlainSequence;
             LinesSettings.LinesMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Minimum red color level"] : 0;
             LinesSettings.LinesMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Minimum green color level"] : 0;
             LinesSettings.LinesMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Minimum blue color level"] : 0;
@@ -1561,7 +1561,7 @@ namespace KS.Kernel.Configuration
             //> Dissolve
             DissolveSettings.Dissolve255Colors = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate 255 Color Mode"];
             DissolveSettings.DissolveTrueColor = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate True Color Mode"];
-            DissolveSettings.DissolveBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Dissolve"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            DissolveSettings.DissolveBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Dissolve"]["Background color"]).PlainSequence;
             DissolveSettings.DissolveMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Minimum red color level"] : 0;
             DissolveSettings.DissolveMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Minimum green color level"] : 0;
             DissolveSettings.DissolveMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Dissolve"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Dissolve"]["Minimum blue color level"] : 0;
@@ -1575,8 +1575,8 @@ namespace KS.Kernel.Configuration
             BouncingBlockSettings.BouncingBlock255Colors = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate 255 Color Mode"];
             BouncingBlockSettings.BouncingBlockTrueColor = (bool)ConfigToken["Screensaver"]["BouncingBlock"]["Activate True Color Mode"];
             BouncingBlockSettings.BouncingBlockDelay = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Delay in Milliseconds"] : 10;
-            BouncingBlockSettings.BouncingBlockBackgroundColor = new Color(ConfigToken["Screensaver"]["BouncingBlock"]["Background color"].ToString()).PlainSequence;
-            BouncingBlockSettings.BouncingBlockForegroundColor = new Color(ConfigToken["Screensaver"]["BouncingBlock"]["Foreground color"].ToString()).PlainSequence;
+            BouncingBlockSettings.BouncingBlockBackgroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingBlock"]["Background color"]).PlainSequence;
+            BouncingBlockSettings.BouncingBlockForegroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingBlock"]["Foreground color"]).PlainSequence;
             BouncingBlockSettings.BouncingBlockMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum red color level"] : 0;
             BouncingBlockSettings.BouncingBlockMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum green color level"] : 0;
             BouncingBlockSettings.BouncingBlockMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Minimum blue color level"] : 0;
@@ -1591,8 +1591,8 @@ namespace KS.Kernel.Configuration
             BouncingTextSettings.BouncingTextTrueColor = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate True Color Mode"];
             BouncingTextSettings.BouncingTextDelay = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"] : 10;
             BouncingTextSettings.BouncingTextWrite = (string)ConfigToken["Screensaver"]["BouncingText"]["Text Shown"] ?? "Kernel Simulator";
-            BouncingTextSettings.BouncingTextBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BouncingText"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
-            BouncingTextSettings.BouncingTextForegroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BouncingText"]["Foreground color"]) ?? ConsoleColors.White).ToString()).PlainSequence;
+            BouncingTextSettings.BouncingTextBackgroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingText"]["Background color"]).PlainSequence;
+            BouncingTextSettings.BouncingTextForegroundColor = new Color((string)ConfigToken["Screensaver"]["BouncingText"]["Foreground color"]).PlainSequence;
             BouncingTextSettings.BouncingTextMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Minimum red color level"] : 0;
             BouncingTextSettings.BouncingTextMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Minimum green color level"] : 0;
             BouncingTextSettings.BouncingTextMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Minimum blue color level"] : 0;
@@ -1677,7 +1677,7 @@ namespace KS.Kernel.Configuration
             LighterSettings.LighterTrueColor = (bool)ConfigToken["Screensaver"]["Lighter"]["Activate True Color Mode"];
             LighterSettings.LighterDelay = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Delay in Milliseconds"] : 100;
             LighterSettings.LighterMaxPositions = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Max Positions Count"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Max Positions Count"] : 10;
-            LighterSettings.LighterBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Lighter"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            LighterSettings.LighterBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Lighter"]["Background color"]).PlainSequence;
             LighterSettings.LighterMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Minimum red color level"] : 0;
             LighterSettings.LighterMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Minimum green color level"] : 0;
             LighterSettings.LighterMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Minimum blue color level"] : 0;
@@ -1692,7 +1692,7 @@ namespace KS.Kernel.Configuration
             WipeSettings.WipeTrueColor = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate True Color Mode"];
             WipeSettings.WipeDelay = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"] : 10;
             WipeSettings.WipeWipesNeededToChangeDirection = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Wipes to change direction"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Wipes to change direction"] : 10;
-            WipeSettings.WipeBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Wipe"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            WipeSettings.WipeBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Wipe"]["Background color"]).PlainSequence;
             WipeSettings.WipeMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Minimum red color level"] : 0;
             WipeSettings.WipeMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Minimum green color level"] : 0;
             WipeSettings.WipeMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Minimum blue color level"] : 0;
@@ -1707,7 +1707,7 @@ namespace KS.Kernel.Configuration
             FaderSettings.FaderFadeOutDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"] : 3000;
             FaderSettings.FaderWrite = (string)ConfigToken["Screensaver"]["Fader"]["Text Shown"] ?? "Kernel Simulator";
             FaderSettings.FaderMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Max Fade Steps"] : 25;
-            FaderSettings.FaderBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Fader"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            FaderSettings.FaderBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Fader"]["Background color"]).PlainSequence;
             FaderSettings.FaderMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Minimum red color level"] : 0;
             FaderSettings.FaderMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Minimum green color level"] : 0;
             FaderSettings.FaderMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Minimum blue color level"] : 0;
@@ -1750,7 +1750,7 @@ namespace KS.Kernel.Configuration
             TypoSettings.TypoWritingSpeedMax = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Maximum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Maximum writing speed in WPM"] : 80;
             TypoSettings.TypoMissStrikePossibility = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Probability of typo in percent"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Probability of typo in percent"] : 20;
             TypoSettings.TypoMissPossibility = int.TryParse((string)ConfigToken["Screensaver"]["Typo"]["Probability of miss in percent"], out _) ? (int)ConfigToken["Screensaver"]["Typo"]["Probability of miss in percent"] : 10;
-            TypoSettings.TypoTextColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Typo"]["Text color"]) ?? ConsoleColors.White).ToString()).PlainSequence;
+            TypoSettings.TypoTextColor = new Color((string)ConfigToken["Screensaver"]["Typo"]["Text color"]).PlainSequence;
 
             // > Marquee
             MarqueeSettings.Marquee255Colors = (bool)ConfigToken["Screensaver"]["Marquee"]["Activate 255 Color Mode"];
@@ -1767,7 +1767,7 @@ namespace KS.Kernel.Configuration
             MarqueeSettings.MarqueeMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Maximum green color level"] : 255;
             MarqueeSettings.MarqueeMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Maximum blue color level"] : 255;
             MarqueeSettings.MarqueeMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Marquee"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Marquee"]["Maximum color level"] : 255;
-            MarqueeSettings.MarqueeBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Marquee"]["Text color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            MarqueeSettings.MarqueeBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Marquee"]["Background color"]).PlainSequence;
 
             // > Matrix
             MatrixSettings.MatrixDelay = int.TryParse((string)ConfigToken["Screensaver"]["Matrix"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Matrix"]["Delay in Milliseconds"] : 1;
@@ -1794,7 +1794,7 @@ namespace KS.Kernel.Configuration
 
             LinotypoSettings.LinotypoEtaoinType = ConfigToken["Screensaver"]["Linotypo"]["Line Fill Type"] != null ? localTryParse() ? LinotypoSettings.LinotypoEtaoinType : LinotypoSettings.FillType.EtaoinPattern : LinotypoSettings.FillType.EtaoinPattern;
             LinotypoSettings.LinotypoMissPossibility = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Probability of miss in percent"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Probability of miss in percent"] : 10;
-            LinotypoSettings.LinotypoTextColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Linotypo"]["Text color"]) ?? ConsoleColors.White).ToString()).PlainSequence;
+            LinotypoSettings.LinotypoTextColor = new Color((string)ConfigToken["Screensaver"]["Linotypo"]["Text color"]).PlainSequence;
 
             // > Typewriter
             TypewriterSettings.TypewriterDelay = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Delay in Milliseconds"] : 50;
@@ -1802,13 +1802,13 @@ namespace KS.Kernel.Configuration
             TypewriterSettings.TypewriterWrite = (string)ConfigToken["Screensaver"]["Typewriter"]["Text Shown"] ?? "Kernel Simulator";
             TypewriterSettings.TypewriterWritingSpeedMin = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Minimum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Minimum writing speed in WPM"] : 50;
             TypewriterSettings.TypewriterWritingSpeedMax = int.TryParse((string)ConfigToken["Screensaver"]["Typewriter"]["Maximum writing speed in WPM"], out _) ? (int)ConfigToken["Screensaver"]["Typewriter"]["Maximum writing speed in WPM"] : 80;
-            TypewriterSettings.TypewriterTextColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Typewriter"]["Text color"]) ?? ConsoleColors.White).ToString()).PlainSequence;
+            TypewriterSettings.TypewriterTextColor = new Color((string)ConfigToken["Screensaver"]["Typewriter"]["Text color"]).PlainSequence;
 
             // > FlashColor
             FlashColorSettings.FlashColor255Colors = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate 255 Color Mode"];
             FlashColorSettings.FlashColorTrueColor = (bool)ConfigToken["Screensaver"]["FlashColor"]["Activate True Color Mode"];
             FlashColorSettings.FlashColorDelay = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Delay in Milliseconds"] : 1;
-            FlashColorSettings.FlashColorBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Typewriter"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            FlashColorSettings.FlashColorBackgroundColor = new Color((string)ConfigToken["Screensaver"]["FlashColor"]["Background color"]).PlainSequence;
             FlashColorSettings.FlashColorMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Minimum red color level"] : 0;
             FlashColorSettings.FlashColorMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Minimum green color level"] : 0;
             FlashColorSettings.FlashColorMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashColor"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashColor"]["Minimum blue color level"] : 0;
@@ -1822,7 +1822,7 @@ namespace KS.Kernel.Configuration
             SpotWriteSettings.SpotWriteDelay = int.TryParse((string)ConfigToken["Screensaver"]["SpotWrite"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["SpotWrite"]["Delay in Milliseconds"] : 50;
             SpotWriteSettings.SpotWriteNewScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["SpotWrite"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["SpotWrite"]["New Screen Delay in Milliseconds"] : 3000;
             SpotWriteSettings.SpotWriteWrite = (string)ConfigToken["Screensaver"]["SpotWrite"]["Text Shown"] ?? "Kernel Simulator";
-            SpotWriteSettings.SpotWriteTextColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["SpotWrite"]["Text color"]) ?? ConsoleColors.White).ToString()).PlainSequence;
+            SpotWriteSettings.SpotWriteTextColor = new Color((string)ConfigToken["Screensaver"]["SpotWrite"]["Text color"]).PlainSequence;
 
             // > Ramp
             RampSettings.Ramp255Colors = (bool)ConfigToken["Screensaver"]["Ramp"]["Activate 255 Color Mode"];
@@ -1853,14 +1853,14 @@ namespace KS.Kernel.Configuration
             RampSettings.RampMaximumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Ramp"]["Maximum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Ramp"]["Maximum green color level for end color"] : 255;
             RampSettings.RampMaximumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Ramp"]["Maximum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Ramp"]["Maximum blue color level for end color"] : 255;
             RampSettings.RampMaximumColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Ramp"]["Maximum color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Ramp"]["Maximum color level for end color"] : 255;
-            RampSettings.RampUpperLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Upper left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampUpperRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Upper right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampLowerLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Lower left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampLowerRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Lower right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampUpperFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Upper frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampLowerFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Lower frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampLeftFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Left frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            RampSettings.RampRightFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Ramp"]["Right frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
+            RampSettings.RampUpperLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Upper left corner color for ramp bar"]).PlainSequence;
+            RampSettings.RampUpperRightCornerColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Upper right corner color for ramp bar"]).PlainSequence;
+            RampSettings.RampLowerLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Lower left corner color for ramp bar"]).PlainSequence;
+            RampSettings.RampLowerRightCornerColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Lower right corner color for ramp bar"]).PlainSequence;
+            RampSettings.RampUpperFrameColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Upper frame color for ramp bar"]).PlainSequence;
+            RampSettings.RampLowerFrameColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Lower frame color for ramp bar"]).PlainSequence;
+            RampSettings.RampLeftFrameColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Left frame color for ramp bar"]).PlainSequence;
+            RampSettings.RampRightFrameColor = new Color((string)ConfigToken["Screensaver"]["Ramp"]["Right frame color for ramp bar"]).PlainSequence;
             RampSettings.RampUseBorderColors = (bool)ConfigToken["Screensaver"]["Ramp"]["Use border colors for ramp bar"];
 
             // > StackBox
@@ -1916,14 +1916,14 @@ namespace KS.Kernel.Configuration
             BarRotSettings.BarRotMaximumRedColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["BarRot"]["Maximum red color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["BarRot"]["Maximum red color level for end color"] : 255;
             BarRotSettings.BarRotMaximumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["BarRot"]["Maximum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["BarRot"]["Maximum green color level for end color"] : 255;
             BarRotSettings.BarRotMaximumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["BarRot"]["Maximum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["BarRot"]["Maximum blue color level for end color"] : 255;
-            BarRotSettings.BarRotUpperLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Upper left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotUpperRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Upper right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotLowerLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Lower left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotLowerRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Lower right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotUpperFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Upper frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotLowerFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Lower frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotLeftFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Left frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            BarRotSettings.BarRotRightFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["BarRot"]["Right frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
+            BarRotSettings.BarRotUpperLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Upper left corner color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotUpperRightCornerColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Upper right corner color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotLowerLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Lower left corner color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotLowerRightCornerColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Lower right corner color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotUpperFrameColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Upper frame color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotLowerFrameColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Lower frame color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotLeftFrameColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Left frame color for ramp bar"]).PlainSequence;
+            BarRotSettings.BarRotRightFrameColor = new Color((string)ConfigToken["Screensaver"]["BarRot"]["Right frame color for ramp bar"]).PlainSequence;
             BarRotSettings.BarRotUseBorderColors = (bool)ConfigToken["Screensaver"]["BarRot"]["Use border colors for ramp bar"];
 
             // > Fireworks
@@ -1960,7 +1960,7 @@ namespace KS.Kernel.Configuration
             FlashTextSettings.FlashTextTrueColor = (bool)ConfigToken["Screensaver"]["FlashText"]["Activate True Color Mode"];
             FlashTextSettings.FlashTextDelay = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Delay in Milliseconds"] : 10;
             FlashTextSettings.FlashTextWrite = (string)ConfigToken["Screensaver"]["FlashText"]["Text Shown"] ?? "Kernel Simulator";
-            FlashTextSettings.FlashTextBackgroundColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["FlashText"]["Background color"]) ?? ConsoleColors.Black).ToString()).PlainSequence;
+            FlashTextSettings.FlashTextBackgroundColor = new Color((string)ConfigToken["Screensaver"]["FlashText"]["Background color"]).PlainSequence;
             FlashTextSettings.FlashTextMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Minimum red color level"] : 0;
             FlashTextSettings.FlashTextMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Minimum green color level"] : 0;
             FlashTextSettings.FlashTextMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["FlashText"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["FlashText"]["Minimum blue color level"] : 0;
@@ -2019,14 +2019,14 @@ namespace KS.Kernel.Configuration
             IndeterminateSettings.IndeterminateMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Indeterminate"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Indeterminate"]["Maximum green color level"] : 255;
             IndeterminateSettings.IndeterminateMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Indeterminate"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Indeterminate"]["Maximum blue color level"] : 255;
             IndeterminateSettings.IndeterminateMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Indeterminate"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Indeterminate"]["Maximum color level"] : 255;
-            IndeterminateSettings.IndeterminateUpperLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Upper left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateUpperRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Upper right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateLowerLeftCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Lower left corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateLowerRightCornerColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Lower right corner color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateUpperFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Upper frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateLowerFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Lower frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateLeftFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Left frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
-            IndeterminateSettings.IndeterminateRightFrameColor = new Color((Enum.Parse(typeof(ConsoleColors), (string)ConfigToken["Screensaver"]["Indeterminate"]["Right frame color for ramp bar"]) ?? ConsoleColors.Gray).ToString()).PlainSequence;
+            IndeterminateSettings.IndeterminateUpperLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Upper left corner color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateUpperRightCornerColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Upper right corner color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateLowerLeftCornerColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Lower left corner color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateLowerRightCornerColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Lower right corner color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateUpperFrameColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Upper frame color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateLowerFrameColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Lower frame color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateLeftFrameColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Left frame color for ramp bar"]).PlainSequence;
+            IndeterminateSettings.IndeterminateRightFrameColor = new Color((string)ConfigToken["Screensaver"]["Indeterminate"]["Right frame color for ramp bar"]).PlainSequence;
             IndeterminateSettings.IndeterminateUseBorderColors = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Use border colors for ramp bar"];
 
             // > Pulse
@@ -2088,7 +2088,7 @@ namespace KS.Kernel.Configuration
 
             // Splash Section - Splash-specific settings go below:
             // > Simple
-            SplashSettings.SimpleProgressTextLocation = ConfigToken["Splash"]["Starfield"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["Starfield"]["Progress text location"], out SplashSettings.SimpleProgressTextLocation) ? SplashSettings.SimpleProgressTextLocation : TextLocation.Top : TextLocation.Top;
+            SplashSettings.SimpleProgressTextLocation = ConfigToken["Splash"]["Simple"]["Progress text location"] != null ? Enum.TryParse((string)ConfigToken["Splash"]["Simple"]["Progress text location"], out SplashSettings.SimpleProgressTextLocation) ? SplashSettings.SimpleProgressTextLocation : TextLocation.Top : TextLocation.Top;
 
             // > Progress
             SplashSettings.ProgressProgressColor = new Color((ConfigToken["Splash"]["Progress"]["Progress bar color"].ToString()) ?? ColorTools.ProgressColor.PlainSequence).PlainSequence;

@@ -180,7 +180,7 @@ Namespace ConsoleBase.Themes
         ''' </summary>
         ''' <param name="ThemeResourceName">Theme name (must match resource name)</param>
         Public Sub New(ThemeResourceName As String)
-            Me.New(JToken.Parse(My.Resources.ResourceManager.GetString(ThemeResourceName)))
+            Me.New(JToken.Parse(Properties.Resources.ResourceManager.GetString(ThemeResourceName)))
         End Sub
 
         ''' <summary>

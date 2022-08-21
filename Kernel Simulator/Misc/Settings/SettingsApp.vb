@@ -759,13 +759,13 @@ Namespace Misc.Settings
         Private Function OpenSettingsResource(SettingsType As SettingsType) As JToken
             Select Case SettingsType
                 Case SettingsType.Normal
-                    Return JToken.Parse(My.Resources.SettingsEntries)
+                    Return JToken.Parse(Properties.Resources.SettingsEntries)
                 Case SettingsType.Screensaver
-                    Return JToken.Parse(My.Resources.ScreensaverSettingsEntries)
+                    Return JToken.Parse(Properties.Resources.ScreensaverSettingsEntries)
                 Case SettingsType.Splash
-                    Return JToken.Parse(My.Resources.SplashSettingsEntries)
+                    Return JToken.Parse(Properties.Resources.SplashSettingsEntries)
                 Case Else
-                    Return JToken.Parse(My.Resources.SettingsEntries)
+                    Return JToken.Parse(Properties.Resources.SettingsEntries)
             End Select
         End Function
 

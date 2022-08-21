@@ -28,7 +28,6 @@ using KS.Files.Operations;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -148,7 +147,7 @@ namespace KS.Network
         public static void AddEntryToSpeedDial(string Address, int Port, string User, SpeedDialType SpeedDialType, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.None, bool ThrowException = true)
         {
             string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Conversions.ToInteger(Enum.Parse(typeof(KernelPathType), PathName));
+            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
             Making.MakeFile(Paths.GetKernelPath(SpeedDialEnum), false);
             string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
             if (SpeedDialJsonContent.StartsWith("["))
@@ -207,7 +206,7 @@ namespace KS.Network
         public static Dictionary<string, JToken> ListSpeedDialEntries(SpeedDialType SpeedDialType)
         {
             string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Conversions.ToInteger(Enum.Parse(typeof(KernelPathType), PathName));
+            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
             Making.MakeFile(Paths.GetKernelPath(SpeedDialEnum), false);
             string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
             if (SpeedDialJsonContent.StartsWith("["))
@@ -229,7 +228,7 @@ namespace KS.Network
         public static void ConvertSpeedDialEntries(SpeedDialType SpeedDialType)
         {
             string PathName = SpeedDialType == SpeedDialType.SFTP ? "SFTPSpeedDial" : "FTPSpeedDial";
-            KernelPathType SpeedDialEnum = (KernelPathType)Conversions.ToInteger(Enum.Parse(typeof(KernelPathType), PathName));
+            KernelPathType SpeedDialEnum = (KernelPathType)Convert.ToInt32(Enum.Parse(typeof(KernelPathType), PathName));
             string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(SpeedDialEnum));
             var SpeedDialToken = JArray.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "[]");
             File.Delete(Paths.GetKernelPath(SpeedDialEnum));
@@ -239,8 +238,8 @@ namespace KS.Network
                 string Address = ChosenLineSeparation[0];
                 string Port = ChosenLineSeparation[1];
                 string Username = ChosenLineSeparation[2];
-                FtpEncryptionMode Encryption = (FtpEncryptionMode)Conversions.ToInteger(SpeedDialType == SpeedDialType.FTP ? Enum.Parse(typeof(FtpEncryptionMode), ChosenLineSeparation[3]) : FtpEncryptionMode.None);
-                AddEntryToSpeedDial(Address, Conversions.ToInteger(Port), Username, SpeedDialType, Encryption, false);
+                FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(SpeedDialType == SpeedDialType.FTP ? Enum.Parse(typeof(FtpEncryptionMode), ChosenLineSeparation[3]) : FtpEncryptionMode.None);
+                AddEntryToSpeedDial(Address, Convert.ToInt32(Port), Username, SpeedDialType, Encryption, false);
             }
         }
 
@@ -252,7 +251,7 @@ namespace KS.Network
         {
             string FileName = Url.Split('/').Last();
             DebugWriter.Wdbg(DebugLevel.I, "Prototype Filename: {0}", FileName);
-            if (FileName.Contains(Conversions.ToString('?')))
+            if (FileName.Contains(Convert.ToString('?')))
             {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
             }

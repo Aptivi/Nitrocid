@@ -24,7 +24,6 @@ using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.Hex.Commands
 {
@@ -50,11 +49,11 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
                 {
-                    if (Conversions.ToLong(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
                         byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
                         byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
-                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Conversions.ToLong(ListArgsOnly[2]));
+                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Convert.ToInt64(ListArgsOnly[2]));
                         TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
                     }
                     else
@@ -67,12 +66,12 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
                 {
-                    if (Conversions.ToLong(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Conversions.ToLong(ListArgsOnly[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(ListArgsOnly[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
                         byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
                         byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
-                        long ByteNumberStart = Conversions.ToLong(ListArgsOnly[2]);
-                        long ByteNumberEnd = Conversions.ToLong(ListArgsOnly[3]);
+                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[2]);
+                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
                         TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);

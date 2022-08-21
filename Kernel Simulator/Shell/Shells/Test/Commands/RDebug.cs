@@ -19,7 +19,7 @@
 
 using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Test.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (Conversions.ToBoolean(ListArgsOnly[0]) == true)
+            if (Convert.ToBoolean(ListArgsOnly[0]) == true)
             {
                 RemoteDebugger.StartRDebugThread();
             }

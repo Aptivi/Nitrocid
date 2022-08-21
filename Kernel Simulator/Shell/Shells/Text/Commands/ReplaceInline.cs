@@ -25,7 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
+using System;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], Conversions.ToInteger(ListArgsOnly[2]));
+                        TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], Convert.ToInt32(ListArgsOnly[2]));
                         TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, ColorTools.ColTypes.Success);
                     }
                     else
@@ -64,10 +64,10 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
                 {
-                    if (Conversions.ToInteger(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Conversions.ToInteger(ListArgsOnly[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Conversions.ToInteger(ListArgsOnly[2]);
-                        int LineNumberEnd = Conversions.ToInteger(ListArgsOnly[3]);
+                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[2]);
+                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[3]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
                         {

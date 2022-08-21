@@ -31,7 +31,6 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Files.Folders
 {
@@ -139,15 +138,15 @@ namespace KS.Files.Folders
                     }
                 case FilesystemSortOptions.CreationTime:
                     {
-                        return Conversions.ToString(FileSystemEntry.CreationTime);
+                        return Convert.ToString(FileSystemEntry.CreationTime);
                     }
                 case FilesystemSortOptions.LastAccessTime:
                     {
-                        return Conversions.ToString(FileSystemEntry.LastAccessTime);
+                        return Convert.ToString(FileSystemEntry.LastAccessTime);
                     }
                 case FilesystemSortOptions.LastWriteTime:
                     {
-                        return Conversions.ToString(FileSystemEntry.LastWriteTime);
+                        return Convert.ToString(FileSystemEntry.LastWriteTime);
                     }
 
                 default:

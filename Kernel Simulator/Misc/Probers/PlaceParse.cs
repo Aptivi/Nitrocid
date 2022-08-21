@@ -32,7 +32,6 @@ using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.TimeDate;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Probers
 {
@@ -260,7 +259,7 @@ namespace KS.Misc.Probers
                 if (text.Contains("<b:reset>"))
                 {
                     DebugWriter.Wdbg(DebugLevel.I, "Background color reset placeholder found.");
-                    text = text.Replace("<b:reset>", Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Conversions.ToString(CharManager.GetEsc()) + $"[49m");
+                    text = text.Replace("<b:reset>", Flags.SetBackground ? ColorTools.BackgroundColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
                 }
 
                 // -> Foreground color placeholder
@@ -288,7 +287,7 @@ namespace KS.Misc.Probers
                         int EndBackgroundIndex = text.Substring(text.IndexOf("<b:")).IndexOf(">");
                         string SequenceSubstring = text.Substring(text.IndexOf("<b:"), length: EndBackgroundIndex + 1);
                         string PlainSequence = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3);
-                        string VTSequence = Flags.SetBackground ? new Color(PlainSequence).VTSequenceBackground : Conversions.ToString(CharManager.GetEsc()) + $"[49m";
+                        string VTSequence = Flags.SetBackground ? new Color(PlainSequence).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m";
                         text = text.Replace(SequenceSubstring, VTSequence);
                     }
                 }

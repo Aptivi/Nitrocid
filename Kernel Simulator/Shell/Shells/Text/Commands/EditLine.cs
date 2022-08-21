@@ -24,7 +24,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -41,12 +40,12 @@ namespace KS.Shell.Shells.Text.Commands
         {
             if (StringQuery.IsStringNumeric(ListArgsOnly[0]))
             {
-                if (Conversions.ToInteger(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    string OriginalLine = TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Conversions.ToDouble(ListArgsOnly[0]) - 1d)];
+                    string OriginalLine = TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)];
                     TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine, false);
-                    TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Conversions.ToDouble(ListArgsOnly[0]) - 1d)] = EditedLine;
+                    TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)] = EditedLine;
                 }
                 else
                 {

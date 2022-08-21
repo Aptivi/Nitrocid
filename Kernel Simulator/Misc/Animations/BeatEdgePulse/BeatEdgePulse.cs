@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Animations.BeatEdgePulse
 {
@@ -89,7 +88,7 @@ namespace KS.Misc.Animations.BeatEdgePulse
                 }
                 else if (UserColor.Type == ColorType._255Color)
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)Conversions.ToInteger(UserColor.PlainSequence));
+                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
                     RedColorNum = ConsoleColor.R;
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;

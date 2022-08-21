@@ -6,7 +6,6 @@ using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -60,12 +59,12 @@ namespace KS.Misc.Games
                 TextWriterColor.Write(RandomExpression, true, ColorTools.ColTypes.Input);
 
                 // Wait for response
-                UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Conversions.ToChar(""));
+                UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar(""));
                 DebugWriter.Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
 
                 // Check to see if the user has entered the correct answer
                 double UserEvaluatedNumber;
-                double EvaluatedNumber = Conversions.ToDouble(new DataTable().Compute(RandomExpression, null));
+                double EvaluatedNumber = Convert.ToDouble(new DataTable().Compute(RandomExpression, null));
                 if (double.TryParse(UserEvaluated, out UserEvaluatedNumber))
                 {
                     if (UserEvaluatedNumber == EvaluatedNumber)

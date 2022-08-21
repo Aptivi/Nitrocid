@@ -22,7 +22,6 @@ using System.Threading;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Misc.Games
 {
@@ -229,19 +228,19 @@ namespace KS.Misc.Games
         {
             char PowerLineSpaceship = Convert.ToChar(0xE0B0);
             char SpaceshipSymbol = MeteorUsePowerLine ? PowerLineSpaceship : '>';
-            TextWriterWhereColor.WriteWhere(Conversions.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColor.Green);
+            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColor.Green);
         }
 
         public static void DrawMeteor(int MeteorX, int MeteorY)
         {
             char MeteorSymbol = '*';
-            TextWriterWhereColor.WriteWhere(Conversions.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColor.Red);
+            TextWriterWhereColor.WriteWhere(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColor.Red);
         }
 
         public static void DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            TextWriterWhereColor.WriteWhere(Conversions.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColor.Cyan);
+            TextWriterWhereColor.WriteWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColor.Cyan);
         }
 
     }

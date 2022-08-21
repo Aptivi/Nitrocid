@@ -59,48 +59,48 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV";MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIER="ALPHA"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV";MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIER="ALPHA"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <TargetFramework>net48</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL"</DefineConstants>
+    <DefineConstants>SPECIFIERREL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <DocumentationFile>$(OutputPath)Kernel Simulator.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL"</DefineConstants>
+    <DefineConstants>SPECIFIERREL</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
@@ -136,7 +136,7 @@
   <!-- KS Dependencies Information End -->
 
   <!-- KS Reference Information -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -174,7 +174,6 @@
     <Import Include="KS.Shell.ShellBase" />
     <Import Include="KS.Shell.ShellBase.Commands" />
     <Import Include="KS.Shell.ShellBase.Shells" />
-    <Import Include="Microsoft.VisualBasic.Constants" />
     <Import Include="Newtonsoft.Json" />
     <Import Include="Renci.SshNet" />
     <Import Include="System" />
@@ -339,13 +338,11 @@
   <!-- KS Manifest -->
   <ItemGroup>
     <None Include="app.manifest" />
-    <Compile Update="My Project\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Update="My Project\Resources.resx">
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Properties.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Manifest End -->
@@ -355,6 +352,13 @@
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
     <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="BootMetadata.json">

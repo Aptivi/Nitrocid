@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Threading;
-using Microsoft.VisualBasic.CompilerServices;
 
 // Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
@@ -110,24 +109,24 @@ namespace KS.Misc.Screensaver.Displays
                     Console.SetCursorPosition(CoverX, CoverY);
 
                     // Select random glitch type
-                    GlitchType GlitchType = (GlitchType)Conversions.ToInteger(Enum.Parse(typeof(GlitchType), RandomDriver.Next(5).ToString()));
+                    GlitchType GlitchType = (GlitchType)Convert.ToInt32(Enum.Parse(typeof(GlitchType), RandomDriver.Next(5).ToString()));
 
                     // Select random letter
-                    bool LetterCapitalized = Conversions.ToBoolean(RandomDriver.Next(2));
+                    bool LetterCapitalized = Convert.ToBoolean(RandomDriver.Next(2));
                     int LetterRangeStart = LetterCapitalized ? 65 : 97;
                     int LetterRangeEnd = LetterCapitalized ? 90 : 122;
                     char Letter = Convert.ToChar(RandomDriver.Next(LetterRangeStart, LetterRangeEnd + 1));
 
                     // Select random symbol
-                    bool UseExtendedAscii = Conversions.ToBoolean(RandomDriver.Next(2));
+                    bool UseExtendedAscii = Convert.ToBoolean(RandomDriver.Next(2));
                     int SymbolRangeStart = UseExtendedAscii ? 128 : 33;
                     int SymbolRangeEnd = UseExtendedAscii ? 256 : 64;
                     char Symbol = Convert.ToChar(RandomDriver.Next(SymbolRangeStart, SymbolRangeEnd + 1));
 
                     // Select red, green, or blue background and foreground
-                    GlitchColorType GlitchBlockColorType = (GlitchColorType)Conversions.ToInteger(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
-                    GlitchColorType GlitchLetterColorType = (GlitchColorType)Conversions.ToInteger(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
-                    bool ColorLetter = Conversions.ToBoolean(RandomDriver.Next(2));
+                    GlitchColorType GlitchBlockColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
+                    GlitchColorType GlitchLetterColorType = (GlitchColorType)Convert.ToInt32(Enum.Parse(typeof(GlitchColorType), RandomDriver.Next(3).ToString()));
+                    bool ColorLetter = Convert.ToBoolean(RandomDriver.Next(2));
                     int ColorBlockNumber = RandomDriver.Next(0, 256);
                     int ColorLetterNumber = RandomDriver.Next(0, 256);
                     var ColorBlockInstance = Color.Empty;

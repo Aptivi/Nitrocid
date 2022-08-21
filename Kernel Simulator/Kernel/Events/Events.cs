@@ -681,7 +681,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of login error
         /// </summary>
-        public void RespondLoginError(string Username, string Reason)
+        public void RespondLoginError(string Username, LoginErrorReasons Reason)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -3003,7 +3003,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of theme setting problem
         /// </summary>
-        public void RespondThemeSetError(string Theme, string Reason)
+        public void RespondThemeSetError(string Theme, ThemeSetErrorReasons Reason)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -3049,7 +3049,7 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Makes the mod respond to the event of console colors having problems being set
         /// </summary>
-        public void RespondColorSetError(string Reason)
+        public void RespondColorSetError(ColorSetErrorReasons Reason)
         {
             foreach (ModInfo ModPart in ModManager.Mods.Values)
             {
@@ -3932,7 +3932,7 @@ namespace KS.Kernel.Events
         public void RaiseLoginError(string Username, LoginErrorReasons Reason)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event LoginError() and responding in RespondLoginError()...");
-            EventsManager.FiredEvents.Add("LoginError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Username, Reason });
+            EventsManager.FiredEvents.Add("LoginError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Username, Reason });
             LoginError?.Invoke(Username, Reason);
         }
         /// <summary>
@@ -4058,7 +4058,7 @@ namespace KS.Kernel.Events
         public void RaiseCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event CommandError() and responding in RespondCommandError()...");
-            EventsManager.FiredEvents.Add("CommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("CommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             CommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4103,7 +4103,7 @@ namespace KS.Kernel.Events
         public void RaisePlaceholderParseError(string Target, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event PlaceholderParseError() and responding in RespondPlaceholderParseError()...");
-            EventsManager.FiredEvents.Add("PlaceholderParseError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Target, Exception });
+            EventsManager.FiredEvents.Add("PlaceholderParseError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Target, Exception });
             PlaceholderParseError?.Invoke(Target, Exception);
         }
         /// <summary>
@@ -4148,7 +4148,7 @@ namespace KS.Kernel.Events
         public void RaiseFTPCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FTPCommandError() and responding in RespondFTPCommandError()...");
-            EventsManager.FiredEvents.Add("FTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("FTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             FTPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4220,7 +4220,7 @@ namespace KS.Kernel.Events
         public void RaiseIMAPCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...");
-            EventsManager.FiredEvents.Add("IMAPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("IMAPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             IMAPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4256,7 +4256,7 @@ namespace KS.Kernel.Events
         public void RaiseRemoteDebugCommandError(string IP, string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...");
-            EventsManager.FiredEvents.Add("RemoteDebugCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { IP, Command, Exception });
+            EventsManager.FiredEvents.Add("RemoteDebugCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { IP, Command, Exception });
             RemoteDebugCommandError?.Invoke(IP, Command, Exception);
         }
         /// <summary>
@@ -4283,7 +4283,7 @@ namespace KS.Kernel.Events
         public void RaiseRPCCommandError(string Command, Exception Exception, string IP, int Port)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RPCCommandError() and responding in RespondRPCCommandError()...");
-            EventsManager.FiredEvents.Add("RPCCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("RPCCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RPCCommandError?.Invoke(Command, Exception, IP, Port);
         }
         /// <summary>
@@ -4319,7 +4319,7 @@ namespace KS.Kernel.Events
         public void RaiseRSSCommandError(string FeedUrl, string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RSSCommandError() and responding in RespondRSSCommandError()...");
-            EventsManager.FiredEvents.Add("RSSCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { FeedUrl, Command, Exception });
+            EventsManager.FiredEvents.Add("RSSCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { FeedUrl, Command, Exception });
             RSSCommandError?.Invoke(FeedUrl, Command, Exception);
         }
         /// <summary>
@@ -4355,7 +4355,7 @@ namespace KS.Kernel.Events
         public void RaiseSFTPCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...");
-            EventsManager.FiredEvents.Add("SFTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("SFTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             SFTPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4382,7 +4382,7 @@ namespace KS.Kernel.Events
         public void RaiseSFTPDownloadError(string File, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...");
-            EventsManager.FiredEvents.Add("SFTPDownloadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, Exception });
+            EventsManager.FiredEvents.Add("SFTPDownloadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Exception });
             SFTPDownloadError?.Invoke(File, Exception);
         }
         /// <summary>
@@ -4409,7 +4409,7 @@ namespace KS.Kernel.Events
         public void RaiseSFTPUploadError(string File, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...");
-            EventsManager.FiredEvents.Add("SFTPUploadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, Exception });
+            EventsManager.FiredEvents.Add("SFTPUploadError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Exception });
             SFTPUploadError?.Invoke(File, Exception);
         }
         /// <summary>
@@ -4454,7 +4454,7 @@ namespace KS.Kernel.Events
         public void RaiseSSHCommandError(string Target, string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event SSHCommandError() and responding in RespondSSHCommandError()...");
-            EventsManager.FiredEvents.Add("SSHCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("SSHCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             SSHCommandError?.Invoke(Target, Command, Exception);
         }
         /// <summary>
@@ -4490,7 +4490,7 @@ namespace KS.Kernel.Events
         public void RaiseUESHError(string Command, string Arguments, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event UESHError() and responding in RespondUESHError()...");
-            EventsManager.FiredEvents.Add("UESHError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Arguments, Exception });
+            EventsManager.FiredEvents.Add("UESHError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Arguments, Exception });
             UESHError?.Invoke(Command, Arguments, Exception);
         }
         /// <summary>
@@ -4526,7 +4526,7 @@ namespace KS.Kernel.Events
         public void RaiseTextCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TextCommandError() and responding in RespondTextCommandError()...");
-            EventsManager.FiredEvents.Add("TextCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("TextCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             TextCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4805,7 +4805,7 @@ namespace KS.Kernel.Events
         public void RaiseFileAttributeAdded(string File, FileAttributes Attributes)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...");
-            EventsManager.FiredEvents.Add("FileAttributeAdded (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, Attributes });
+            EventsManager.FiredEvents.Add("FileAttributeAdded (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Attributes });
             FileAttributeAdded?.Invoke(File, Attributes);
         }
         /// <summary>
@@ -4814,7 +4814,7 @@ namespace KS.Kernel.Events
         public void RaiseFileAttributeRemoved(string File, FileAttributes Attributes)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...");
-            EventsManager.FiredEvents.Add("FileAttributeRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { File, Attributes });
+            EventsManager.FiredEvents.Add("FileAttributeRemoved (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { File, Attributes });
             FileAttributeRemoved?.Invoke(File, Attributes);
         }
         /// <summary>
@@ -4841,7 +4841,7 @@ namespace KS.Kernel.Events
         public void RaiseThemeSetError(string Theme, ThemeSetErrorReasons Reason)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ThemeSetError() and responding in RespondThemeSetError()...");
-            EventsManager.FiredEvents.Add("ThemeSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Theme, Reason });
+            EventsManager.FiredEvents.Add("ThemeSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Theme, Reason });
             ThemeSetError?.Invoke(Theme, Reason);
         }
         /// <summary>
@@ -4859,7 +4859,7 @@ namespace KS.Kernel.Events
         public void RaiseColorSetError(ColorSetErrorReasons Reason)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ColorSetError() and responding in RespondColorSetError()...");
-            EventsManager.FiredEvents.Add("ColorSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Reason });
+            EventsManager.FiredEvents.Add("ColorSetError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Reason });
             ColorSetError?.Invoke(Reason);
         }
         /// <summary>
@@ -4922,7 +4922,7 @@ namespace KS.Kernel.Events
         public void RaiseZipCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ZipCommandError() and responding in RespondZipCommandError()...");
-            EventsManager.FiredEvents.Add("ZipCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("ZipCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             ZipCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4958,7 +4958,7 @@ namespace KS.Kernel.Events
         public void RaiseHTTPCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...");
-            EventsManager.FiredEvents.Add("HTTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("HTTPCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             HTTPCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -4967,7 +4967,7 @@ namespace KS.Kernel.Events
         public void RaiseProcessError(string Process, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event ProcessError() and responding in RespondProcessError()...");
-            EventsManager.FiredEvents.Add("ProcessError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Process, Exception });
+            EventsManager.FiredEvents.Add("ProcessError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Process, Exception });
             ProcessError?.Invoke(Process, Exception);
         }
         /// <summary>
@@ -5075,7 +5075,7 @@ namespace KS.Kernel.Events
         public void RaiseHexCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event HexCommandError() and responding in RespondHexCommandError()...");
-            EventsManager.FiredEvents.Add("HexCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("HexCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             HexCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -5111,7 +5111,7 @@ namespace KS.Kernel.Events
         public void RaiseJsonCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event JsonCommandError() and responding in RespondJsonCommandError()...");
-            EventsManager.FiredEvents.Add("JsonCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("JsonCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             JsonCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -5147,7 +5147,7 @@ namespace KS.Kernel.Events
         public void RaiseTestCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event TestCommandError() and responding in RespondTestCommandError()...");
-            EventsManager.FiredEvents.Add("TestCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("TestCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             TestCommandError?.Invoke(Command, Exception);
         }
         /// <summary>
@@ -5183,7 +5183,7 @@ namespace KS.Kernel.Events
         public void RaiseRarCommandError(string Command, Exception Exception)
         {
             DebugWriter.WdbgConditional(ref Flags.EventDebug, DebugLevel.I, "Raising event RarCommandError() and responding in RespondRarCommandError()...");
-            EventsManager.FiredEvents.Add("RarCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new[] { Command, Exception });
+            EventsManager.FiredEvents.Add("RarCommandError (" + EventsManager.FiredEvents.Count.ToString() + ")", new object[] { Command, Exception });
             RarCommandError?.Invoke(Command, Exception);
         }
 

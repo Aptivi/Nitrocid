@@ -183,7 +183,7 @@ namespace KS.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         /// <param name="ThemeResourceName">Theme name (must match resource name)</param>
-        public ThemeInfo(string ThemeResourceName) : this(JToken.Parse(My.Resources.Resources.ResourceManager.GetString(ThemeResourceName)))
+        public ThemeInfo(string ThemeResourceName) : this(JToken.Parse(Properties.Resources.Resources.ResourceManager.GetString(ThemeResourceName)))
         {
         }
 

@@ -1,7 +1,7 @@
 
 # Installation
 
-*How to install the **Kernel Simulator**.*
+*How to install **Kernel Simulator**.*
 
 <br>
 

@@ -60,15 +60,15 @@ namespace KS.Misc.Threading
         /// <param name="ThreadWork">The working thread</param>
         public static void SleepNoBlock(long Time, BackgroundWorker ThreadWork)
         {
-            var WorkFinished = default(bool);
-            var TimeCount = default(long);
-            ThreadWork.RunWorkerCompleted += () => WorkFinished = true;
-            while (!(WorkFinished | TimeCount == Time))
+            bool WorkFinished = false;
+            long TimeCount = 0;
+            ThreadWork.RunWorkerCompleted += (_, _) => WorkFinished = true;
+            while (!(WorkFinished || TimeCount == Time))
             {
                 Thread.Sleep(1);
                 if (ThreadWork.CancellationPending)
                     WorkFinished = true;
-                TimeCount += 1L;
+                TimeCount += 1;
             }
         }
 

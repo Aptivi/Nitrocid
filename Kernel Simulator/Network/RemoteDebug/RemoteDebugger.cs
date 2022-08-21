@@ -32,7 +32,6 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Aliases;
 using KS.TimeDate;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace KS.Network.RemoteDebug
 {
@@ -140,7 +139,7 @@ namespace KS.Network.RemoteDebug
                         RemoteDebugTools.AddDeviceToJson(RDebugIP, false);
 
                         // Get the remaining properties
-                        RDebugName = Conversions.ToString(RemoteDebugTools.GetDeviceProperty(RDebugIP, RemoteDebugTools.DeviceProperty.Name));
+                        RDebugName = Convert.ToString(RemoteDebugTools.GetDeviceProperty(RDebugIP, RemoteDebugTools.DeviceProperty.Name));
                         RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugIP, RDebugName);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 
@@ -231,11 +230,11 @@ namespace KS.Network.RemoteDebug
 
                         // Make some fixups regarding newlines, which means remove all instances of vbCr (Mac OS 9 newlines) and vbLf (Linux newlines).
                         // Windows hosts are affected, too, because it uses vbCrLf, which means (vbCr + vbLf)
-                        Message = Message.Replace(Microsoft.VisualBasic.Constants.vbCr, "");
-                        Message = Message.Replace(Microsoft.VisualBasic.Constants.vbLf, "");
+                        Message = Message.Replace(Convert.ToChar(13), default);
+                        Message = Message.Replace(Convert.ToChar(10), default);
 
                         // Now, remove all null chars
-                        Message = Message.Replace(Conversions.ToString(Convert.ToChar(0)), "");
+                        Message = Message.Replace(Convert.ToString(Convert.ToChar(0)), "");
 
                         // If the message is empty, return.
                         if (string.IsNullOrWhiteSpace(Message))
