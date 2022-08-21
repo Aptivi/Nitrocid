@@ -9,7 +9,7 @@ configuration:
 - Debug-dotnet
 dotnet_csproj:
   patch: true
-  file: Kernel Simulator\Kernel Simulator.vbproj
+  file: Kernel Simulator\Kernel Simulator.csproj
   package_version: 0.1.0-dev{build}
 environment:
   WEBHOOK_URL:
