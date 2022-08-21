@@ -1773,6 +1773,12 @@ namespace KS.Kernel.Configuration
             MatrixSettings.MatrixDelay = int.TryParse((string)ConfigToken["Screensaver"]["Matrix"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Matrix"]["Delay in Milliseconds"] : 1;
 
             // > Linotypo
+            bool tryGetEtaoinType()
+            {
+                var ret = Enum.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Type"], out LinotypoSettings.FillType argresult);
+                LinotypoSettings.LinotypoEtaoinType = argresult;
+                return ret;
+            }
             LinotypoSettings.LinotypoDelay = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Delay in Milliseconds"] : 50;
             LinotypoSettings.LinotypoNewScreenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["New Screen Delay in Milliseconds"] : 3000;
             LinotypoSettings.LinotypoWrite = (string)ConfigToken["Screensaver"]["Linotypo"]["Text Shown"] ?? "Kernel Simulator";
@@ -1782,17 +1788,7 @@ namespace KS.Kernel.Configuration
             LinotypoSettings.LinotypoTextColumns = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Column Count"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Column Count"] : 3;
             LinotypoSettings.LinotypoEtaoinThreshold = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Threshold"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Threshold"] : 5;
             LinotypoSettings.LinotypoEtaoinCappingPossibility = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Capping Probability in percent"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Capping Probability in percent"] : 5;
-
-            // TODO: Consolidate this
-            bool localTryParse()
-            {
-                _ = LinotypoSettings.LinotypoEtaoinType;
-                var ret = Enum.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Line Fill Type"], out LinotypoSettings.FillType argresult);
-                LinotypoSettings.LinotypoEtaoinType = argresult;
-                return ret;
-            }
-
-            LinotypoSettings.LinotypoEtaoinType = ConfigToken["Screensaver"]["Linotypo"]["Line Fill Type"] != null ? localTryParse() ? LinotypoSettings.LinotypoEtaoinType : LinotypoSettings.FillType.EtaoinPattern : LinotypoSettings.FillType.EtaoinPattern;
+            LinotypoSettings.LinotypoEtaoinType = ConfigToken["Screensaver"]["Linotypo"]["Line Fill Type"] != null ? (tryGetEtaoinType() ? LinotypoSettings.LinotypoEtaoinType : LinotypoSettings.FillType.EtaoinPattern) : LinotypoSettings.FillType.EtaoinPattern;
             LinotypoSettings.LinotypoMissPossibility = int.TryParse((string)ConfigToken["Screensaver"]["Linotypo"]["Probability of miss in percent"], out _) ? (int)ConfigToken["Screensaver"]["Linotypo"]["Probability of miss in percent"] : 10;
             LinotypoSettings.LinotypoTextColor = new Color((string)ConfigToken["Screensaver"]["Linotypo"]["Text color"]).PlainSequence;
 
