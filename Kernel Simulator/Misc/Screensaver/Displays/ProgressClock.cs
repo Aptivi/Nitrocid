@@ -1349,9 +1349,6 @@ namespace KS.Misc.Screensaver.Displays
             InformationPositionSeconds = (int)Math.Round(Console.WindowHeight / 2d) + 6;
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds);
 
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Disable Warning BC42104
-            */
             if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
                 ResizeSyncing = true;
             if (!ResizeSyncing)

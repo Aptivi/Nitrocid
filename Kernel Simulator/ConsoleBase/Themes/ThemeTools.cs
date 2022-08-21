@@ -65,13 +65,8 @@ namespace KS.ConsoleBase.Themes
 
                 if (!(theme == "Default"))
                 {
-                    /* TODO ERROR: Skipped WarningDirectiveTrivia
-                    #Disable Warning BC42104
-                    */                    // Set colors as appropriate
+                    // Set colors as appropriate
                     SetColorsTheme(ThemeInfo);
-                    /* TODO ERROR: Skipped WarningDirectiveTrivia
-                    #Enable Warning BC42104
-                    */
                 }
 
                 // Raise event

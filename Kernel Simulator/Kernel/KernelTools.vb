@@ -351,7 +351,7 @@ Namespace Kernel
             If Not EnableSplash Then
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
                 Write(DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
-#ElseIf SPECIFIER = "RC" Then
+#elif SPECIFIERRC
                 Write(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), True, ColTypes.DevelopmentWarning)
 #ElseIf SPECIFIER <> "REL" Then
                 Write(DoTranslation("Looks like you were running an unsupported version. It's highly advisable not to use this version."), True, ColTypes.DevelopmentWarning)
@@ -475,7 +475,7 @@ Namespace Kernel
             'Determine the compiler vars used to build KS using conditional checks
 #If SPECIFIER = "DEV" Then
             CompilerVars.Add("SPECIFIER = ""DEV""")
-#ElseIf SPECIFIER = "RC" Then
+#elif SPECIFIERRC
             CompilerVars.Add("SPECIFIER = ""RC""")
 #ElseIf SPECIFIER = "REL" Then
             CompilerVars.Add("SPECIFIER = ""REL""")

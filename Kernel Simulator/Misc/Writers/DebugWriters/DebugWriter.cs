@@ -95,13 +95,9 @@ namespace KS.Misc.Writers.DebugWriters
                             }
                         }
                     }
-                    /* TODO ERROR: Skipped IfDirectiveTrivia
-                    #If ENABLEIMMEDIATEWINDOWDEBUG Then
-                    *//* TODO ERROR: Skipped DisabledTextTrivia
-                                    Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
-                    *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-                    #End If
-                    */
+                    #if ENABLEIMMEDIATEWINDOWDEBUG
+                    Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars);
+                    #endif
                     else // Rare case, unless debug symbol is not found on archives.
                     {
                         DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
@@ -117,13 +113,9 @@ namespace KS.Misc.Writers.DebugWriters
                                 WStkTrc(ex);
                             }
                         }
-                        /* TODO ERROR: Skipped IfDirectiveTrivia
-                        #If ENABLEIMMEDIATEWINDOWDEBUG Then
-                        *//* TODO ERROR: Skipped DisabledTextTrivia
-                                        Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
-                        *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-                        #End If
-                        */
+                        #if ENABLEIMMEDIATEWINDOWDEBUG
+                        Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars);
+                        #endif
                     }
 
                     // Disconnect offending clients who are disconnected
@@ -184,13 +176,10 @@ namespace KS.Misc.Writers.DebugWriters
                         WStkTrc(ex);
                     }
                 }
-                /* TODO ERROR: Skipped IfDirectiveTrivia
-                #If ENABLEIMMEDIATEWINDOWDEBUG Then
-                *//* TODO ERROR: Skipped DisabledTextTrivia
-                            Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
-                *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-                #End If
-                */
+                #if ENABLEIMMEDIATEWINDOWDEBUG
+                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars);
+                #endif
+
                 // Disconnect offending clients who are disconnected
                 foreach (string si in OffendingIndex)
                 {

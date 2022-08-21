@@ -63,17 +63,11 @@ namespace KS.Kernel.Updates
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 var KernelUpdateVer = new Version(KernelUpdate.SelectToken("tag_name").ToString().ReplaceAll(new[] { "v", "-alpha", "-beta" }, ""));
-                /* TODO ERROR: Skipped IfDirectiveTrivia
-                #If NETCOREAPP Then
-                *//* TODO ERROR: Skipped DisabledTextTrivia
-                                Dim KernelUpdateURL As String = KernelUpdate.SelectToken("assets")(0)("browser_download_url")
-                *//* TODO ERROR: Skipped ElseDirectiveTrivia
-                #Else
-                */
+                #if NETCOREAPP
+                string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
+                #else
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[1]["browser_download_url"];
-                /* TODO ERROR: Skipped EndIfDirectiveTrivia
-                #End If
-                */
+                #endif
                 var KernelUpdateInfo = new KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL);
                 SortedVersions.Add(KernelUpdateInfo);
             }

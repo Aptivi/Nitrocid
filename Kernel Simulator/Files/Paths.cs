@@ -82,17 +82,16 @@ namespace KS.Files
         {
             get
             {
-                /* TODO ERROR: Skipped IfDirectiveTrivia
-                #If NETCOREAPP Then
-                *//* TODO ERROR: Skipped DisabledTextTrivia
-                                If IsOnUnix() Then
-                                    Return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr"
-                                Else
-                                    Return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\", "/")
-                                End If
-                *//* TODO ERROR: Skipped ElseDirectiveTrivia
-                #Else
-                */
+                #if NETCOREAPP
+			    if (IsOnUnix())
+			    {
+				    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
+			    }
+			    else
+			    {
+				    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
+			    }
+                #else
                 if (KernelPlatform.IsOnUnix())
                 {
                     return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/fx";
@@ -101,9 +100,7 @@ namespace KS.Files
                 {
                     return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/fx").Replace(@"\", "/");
                 }
-                /* TODO ERROR: Skipped EndIfDirectiveTrivia
-                #End If
-                */
+                #endif
             }
         }
 

@@ -65,7 +65,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -78,7 +78,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERALPHA</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <TargetFramework>net48</TargetFramework>

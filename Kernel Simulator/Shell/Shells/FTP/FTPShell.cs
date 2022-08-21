@@ -65,13 +65,9 @@ namespace KS.Shell.Shells.FTP
                     if (FtpInitialized == false)
                     {
                         DebugWriter.Wdbg(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}");
-                        /* TODO ERROR: Skipped IfDirectiveTrivia
-                        #If Not NETCOREAPP Then
-                        */
+                        #if NETCOREAPP == false
                         FtpTrace.AddListener(new FTPTracer());
-                        /* TODO ERROR: Skipped EndIfDirectiveTrivia
-                        #End If
-                        */
+                        #endif
                         FtpTrace.LogUserName = Flags.FTPLoggerUsername;
                         FtpTrace.LogPassword = false; // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                         FtpTrace.LogIP = Flags.FTPLoggerIP;

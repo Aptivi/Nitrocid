@@ -49,15 +49,12 @@ using KS.Network.RemoteDebug;
 using KS.Network.RPC;
 using ReadLineReboot;
 
-/* TODO ERROR: Skipped IfDirectiveTrivia
-#If SPECIFIER = "REL" Then
-*//* TODO ERROR: Skipped DisabledTextTrivia
+#if SPECIFIERREL
 Imports KS.Network
 Imports KS.Network.Transfer
 Imports KS.Kernel.Updates
-*//* TODO ERROR: Skipped EndIfDirectiveTrivia
-#End If
-*/
+#endif
+
 namespace KS.Kernel
 {
     public static class Kernel
@@ -74,57 +71,32 @@ namespace KS.Kernel
         internal static TextWriter DefConsoleOut;
 
         // #ifdef'd variables ... Framework monikers
-        /* TODO ERROR: Skipped IfDirectiveTrivia
-        #If NETCOREAPP Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public Const KernelSimulatorMoniker As String = ".NET CoreCLR"
-        *//* TODO ERROR: Skipped ElseDirectiveTrivia
-        #Else
-        */
+#if NETCOREAPP
+        public const string KernelSimulatorMoniker = ".NET CoreCLR";
+#else
         public const string KernelSimulatorMoniker = ".NET Framework";
-        /* TODO ERROR: Skipped EndIfDirectiveTrivia
-        #End If
-        */
+#endif
         // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, DELTA, GAMMA, NONE | None satisfied: Unsupported Release)
-        /* TODO ERROR: Skipped IfDirectiveTrivia
-        #If SPECIFIER = "REL" Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}"
-        *//* TODO ERROR: Skipped ElifDirectiveTrivia
-        #ElseIf SPECIFIER = "RC" Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate"
-        *//* TODO ERROR: Skipped ElifDirectiveTrivia
-        #ElseIf SPECIFIER = "DEV" Then
-        *//* TODO ERROR: Skipped IfDirectiveTrivia
-        #If MILESTONESPECIFIER = "ALPHA" Then
-        */
+#if SPECIFIERREL
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
+#elif SPECIFIERRC
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate";
+#elif SPECIFIERDEV
+#if MILESTONESPECIFIERALPHA
         public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 1";
-        /* TODO ERROR: Skipped ElifDirectiveTrivia
-        #ElseIf MILESTONESPECIFIER = "BETA" Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1"
-        *//* TODO ERROR: Skipped ElifDirectiveTrivia
-        #ElseIf MILESTONESPECIFIER = "DELTA" Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Delta 1"
-        *//* TODO ERROR: Skipped ElifDirectiveTrivia
-        #ElseIf MILESTONESPECIFIER = "GAMMA" Then
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Gamma 1"
-        *//* TODO ERROR: Skipped ElseDirectiveTrivia
-        #Else
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview"
-        *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-        #End If
-        *//* TODO ERROR: Skipped ElseDirectiveTrivia
-        #Else
-        *//* TODO ERROR: Skipped DisabledTextTrivia
-                Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release"
-        *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-        #End If
-        */
+#elif MILESTONESPECIFIERBETA
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1";
+#elif MILESTONESPECIFIERDELTA
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Delta 1";
+#elif MILESTONESPECIFIERGAMMA
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Gamma 1";
+#else
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview";
+#endif
+#else
+        public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release";
+#endif
+
         /// <summary>
         /// Entry point
         /// </summary>
@@ -162,39 +134,39 @@ namespace KS.Kernel
 
                     // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
                     // TODO: Move this to a separate function
-                    /* TODO ERROR: Skipped IfDirectiveTrivia
-                    #If SPECIFIER = "REL" Then
-                    *//* TODO ERROR: Skipped DisabledTextTrivia
-                                        If Not NetworkAvailable Then
-                                            NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
-                                                                        DoTranslation("Check your internet connection and try again."),
-                                                                        NotifPriority.Medium, NotifType.Normal))
-                                        End If
-                                        If NetworkAvailable Then
-                                            'Check to see if we're running from Ubuntu PPA
-                                            Dim PPASpotted As Boolean = ExecPath.StartsWith("/usr/lib/ks")
-                                            If ExecPath.StartsWith("/usr/lib/ks") Then
-                                                ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error)
-                                            End If
+#if SPECIFIERREL
+					if (!NetworkAvailable)
+					{
+						NotifySend(new Notification(DoTranslation("No network while downloading debug data"), DoTranslation("Check your internet connection and try again."), NotifPriority.Medium, NotifType.Normal));
+					}
+					if (NetworkAvailable)
+					{
+						//Check to see if we're running from Ubuntu PPA
+						bool PPASpotted = ExecPath.StartsWith("/usr/lib/ks");
+						if (ExecPath.StartsWith("/usr/lib/ks"))
+						{
+							ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error);
+						}
 
-                                            'Download debug symbols
-                                            If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) And Not PPASpotted Then
-                                                Try
-                    #If NETCOREAPP Then
-                                                    DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-                    #Else
-                                                    DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-                    #End If
-                                                Catch ex As Exception
-                                                    NotifySend(New Notification(DoTranslation("Error downloading debug data"),
-                                                                                DoTranslation("There is an error while downloading debug data. Check your internet connection."),
-                                                                                NotifPriority.Medium, NotifType.Normal))
-                                                End Try
-                                            End If
-                                        End If
-                    *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-                    #End If
-                    */
+						//Download debug symbols
+						if ((FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) & !PPASpotted) == 0)
+						{
+							try
+							{
+#if NETCOREAPP
+								DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
+#else
+								DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
+#endif
+							}
+							catch (Exception ex)
+							{
+								NotifySend(new Notification(DoTranslation("Error downloading debug data"), DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotifPriority.Medium, NotifType.Normal));
+							}
+						}
+					}
+#endif
+
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
                     {
@@ -249,15 +221,11 @@ namespace KS.Kernel
                     }
 
                     // Check for kernel updates
-                    /* TODO ERROR: Skipped IfDirectiveTrivia
-                    #If SPECIFIER = "REL" Then
-                    *//* TODO ERROR: Skipped DisabledTextTrivia
-                                        If CheckUpdateStart Then
-                                            CheckKernelUpdates()
-                                        End If
-                    *//* TODO ERROR: Skipped EndIfDirectiveTrivia
-                    #End If
-                    */
+                    #if SPECIFIERREL
+                    if (CheckUpdateStart)
+                        CheckKernelUpdates()
+                    #endif
+
                     // Phase 2: Probe hardware
                     KernelTools.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));
                     if (!Flags.QuietHardwareProbe)

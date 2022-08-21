@@ -53,11 +53,11 @@ Namespace Kernel.Updates
             Dim SortedVersions As New List(Of KernelUpdateInfo)
             For Each KernelUpdate As JToken In UpdateToken
                 Dim KernelUpdateVer As New Version(KernelUpdate.SelectToken("tag_name").ToString.ReplaceAll({"v", "-alpha", "-beta"}, ""))
-#If NETCOREAPP Then
+#if NETCOREAPP
                 Dim KernelUpdateURL As String = KernelUpdate.SelectToken("assets")(0)("browser_download_url")
-#Else
+#else
                 Dim KernelUpdateURL As String = KernelUpdate.SelectToken("assets")(1)("browser_download_url")
-#End If
+#endif
                 Dim KernelUpdateInfo As New KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL)
                 SortedVersions.Add(KernelUpdateInfo)
             Next

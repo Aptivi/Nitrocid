@@ -48,17 +48,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If NETCOREAPP Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        Dim ExecutableName As String = "RetroKS.dll"
-            *//* TODO ERROR: Skipped ElseDirectiveTrivia
-            #Else
-            */
+#if NETCOREAPP
+            string ExecutableName = "RetroKS.dll";
+#else
             string ExecutableName = "RetroKS.exe";
-            /* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
+#endif
             TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."), true, ColorTools.ColTypes.Neutral);
 
             // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
@@ -73,13 +67,9 @@ namespace KS.Shell.Shells.UESH.Commands
                 var RetroKSVer = new Version(RetroKS.SelectToken("tag_name").ToString());
                 string RetroKSURL;
                 var RetroKSAssets = RetroKS.SelectToken("assets");
-                /* TODO ERROR: Skipped IfDirectiveTrivia
-                #If NETCOREAPP Then
-                *//* TODO ERROR: Skipped DisabledTextTrivia
-                                RetroKSURL = RetroKSAssets(0)("browser_download_url")
-                *//* TODO ERROR: Skipped ElseDirectiveTrivia
-                #Else
-                */
+#if NETCOREAPP
+                RetroKSURL = RetroKSAssets(0)["browser_download_url"];
+#else
                 if (RetroKSAssets.Count() > 1)
                 {
                     RetroKSURL = (string)RetroKSAssets[1]["browser_download_url"];
@@ -88,9 +78,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     RetroKSURL = (string)RetroKSAssets[0]["browser_download_url"];
                 }
-                /* TODO ERROR: Skipped EndIfDirectiveTrivia
-                #End If
-                */
+#endif
                 var RetroKSInfo = new KernelUpdateInfo(RetroKSVer, RetroKSURL);
                 SortedVersions.Add(RetroKSInfo);
             }

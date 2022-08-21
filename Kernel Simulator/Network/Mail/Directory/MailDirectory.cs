@@ -172,9 +172,6 @@ namespace KS.Network.Mail.Directory
                 }
             }
 
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Disable Warning BC42104
-            */
             if (Opened is not null)
             {
                 return Opened;
@@ -183,9 +180,6 @@ namespace KS.Network.Mail.Directory
             {
                 throw new Kernel.Exceptions.NoSuchMailDirectoryException(Translate.DoTranslation("Mail folder {0} not found."), FolderString);
             }
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Enable Warning BC42104
-            */
         }
 
         /// <summary>

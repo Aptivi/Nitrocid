@@ -38,11 +38,11 @@ Namespace Shell.Shells.UESH.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-#If NETCOREAPP Then
+#if NETCOREAPP
             Dim ExecutableName As String = "RetroKS.dll"
-#Else
+#else
             Dim ExecutableName As String = "RetroKS.exe"
-#End If
+#endif
             Write(DoTranslation("Checking for updates..."), True, ColTypes.Neutral)
 
             'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
@@ -56,15 +56,15 @@ Namespace Shell.Shells.UESH.Commands
                 Dim RetroKSVer As New Version(RetroKS.SelectToken("tag_name").ToString)
                 Dim RetroKSURL As String
                 Dim RetroKSAssets As JToken = RetroKS.SelectToken("assets")
-#If NETCOREAPP Then
+#if NETCOREAPP
                 RetroKSURL = RetroKSAssets(0)("browser_download_url")
-#Else
+#else
                 If RetroKSAssets.Count > 1 Then
                     RetroKSURL = RetroKSAssets(1)("browser_download_url")
                 Else
                     RetroKSURL = RetroKSAssets(0)("browser_download_url")
                 End If
-#End If
+#endif
                 Dim RetroKSInfo As New KernelUpdateInfo(RetroKSVer, RetroKSURL)
                 SortedVersions.Add(RetroKSInfo)
             Next

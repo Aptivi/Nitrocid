@@ -146,17 +146,12 @@ namespace KS.Network.RSS.Instance
             }
 
             // Populate basic feed properties
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Disable Warning BC42104
-            */
             string FeedTitle = Convert.ToString(RSSTools.GetFeedProperty("title", FeedNodeList, _FeedType));
             string FeedDescription = Convert.ToString(RSSTools.GetFeedProperty("description", FeedNodeList, _FeedType));
 
             // Populate articles
             var Articles = RSSTools.MakeRssArticlesFromFeed(FeedNodeList, _FeedType);
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Enable Warning BC42104
-            */
+
             // Install the variables to a new instance
             _FeedUrl = FeedUrl;
             _FeedTitle = FeedTitle.Trim();

@@ -185,13 +185,7 @@ namespace KS.Network.RSS
                 }
                 Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode);
             }
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Disable Warning BC42104
-            */
             return new RSSArticle(Title, Link, Description, Parameters);
-            /* TODO ERROR: Skipped WarningDirectiveTrivia
-            #Enable Warning BC42104
-            */
         }
 
         /// <summary>

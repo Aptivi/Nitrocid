@@ -16,9 +16,9 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#If SPECIFIER = "REL" Then
+#if SPECIFIERREL
 Imports KS.Kernel.Updates
-#End If
+#endif
 
 Namespace Shell.Shells.UESH.Commands
     ''' <summary>
@@ -36,11 +36,11 @@ Namespace Shell.Shells.UESH.Commands
         Implements ICommand
 
         Public Overrides Sub Execute(StringArgs As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-#If SPECIFIER = "REL" Then
+#if SPECIFIERREL
             CheckKernelUpdates()
-#Else
+#else
             Write(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
-#End If
+#endif
         End Sub
 
     End Class

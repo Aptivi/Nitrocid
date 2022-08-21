@@ -20,13 +20,10 @@ using KS.Shell.ShellBase.Commands;
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-/* TODO ERROR: Skipped IfDirectiveTrivia
-#If SPECIFIER = "REL" Then
-*//* TODO ERROR: Skipped DisabledTextTrivia
-Imports KS.Kernel.Updates
-*//* TODO ERROR: Skipped EndIfDirectiveTrivia
-#End If
-*/
+#if SPECIFIERREL
+using KS.Kernel.Updates;
+#endif
+
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
@@ -44,17 +41,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If SPECIFIER = "REL" Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        CheckKernelUpdates()
-            *//* TODO ERROR: Skipped ElseDirectiveTrivia
-            #Else
-            */
+            #if SPECIFIERREL
+            CheckKernelUpdates();
+            #else
             TextWriterColor.Write(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."), true, ColorTools.ColTypes.Error);
-            /* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
+            #endif
         }
 
     }

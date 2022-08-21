@@ -460,9 +460,7 @@ namespace KS.Misc.Settings
                         }
                     }
 
-                    /* TODO ERROR: Skipped WarningDirectiveTrivia
-                    #Disable Warning BC42104
-                    */                    // If the type is boolean, write the two options
+                    // If the type is boolean, write the two options
                     if (KeyType == SettingsKeyType.SBoolean)
                     {
                         Console.WriteLine();
@@ -951,9 +949,6 @@ namespace KS.Misc.Settings
                                 }
                         }
                     }
-                    /* TODO ERROR: Skipped WarningDirectiveTrivia
-                    #Enable Warning BC42104
-                    */
                 }
             }
             catch (Exception ex)

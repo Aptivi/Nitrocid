@@ -170,9 +170,6 @@ namespace KS.Network.Mail.Transfer
                 Console.WriteLine();
 
                 // Populate attachments
-                /* TODO ERROR: Skipped WarningDirectiveTrivia
-                #Disable Warning BC42104
-                */
                 if (Msg.Attachments.Count() > 0)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Attachments:"), true, ColorTools.ColTypes.Neutral);
@@ -229,9 +226,6 @@ namespace KS.Network.Mail.Transfer
                         }
                     }
                 }
-                /* TODO ERROR: Skipped WarningDirectiveTrivia
-                #Enable Warning BC42104
-                */
             }
         }
 

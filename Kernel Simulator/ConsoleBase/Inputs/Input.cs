@@ -20,13 +20,10 @@ using KS.Languages;
 
 using KS.Misc.Text;
 
-/* TODO ERROR: Skipped IfDirectiveTrivia
-#If NETCOREAPP Then
-*//* TODO ERROR: Skipped DisabledTextTrivia
+#if NETCOREAPP
 Imports System.Threading
-*//* TODO ERROR: Skipped EndIfDirectiveTrivia
-#End If
-*/
+#endif
+
 namespace KS.ConsoleBase.Inputs
 {
     public static class Input
@@ -179,20 +176,13 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         public static void DetectKeypress()
         {
-            /* TODO ERROR: Skipped IfDirectiveTrivia
-            #If NETCOREAPP Then
-            *//* TODO ERROR: Skipped DisabledTextTrivia
-                        Do Until Console.KeyAvailable
-                            Thread.Sleep(1)
-                        Loop
-                        Console.ReadKey(True)
-            *//* TODO ERROR: Skipped ElseDirectiveTrivia
-            #Else
-            */
+            #if NETCOREAPP
+            while (!Console.KeyAvailable)
+                Thread.Sleep(1)
+            Console.ReadKey(true);
+            #else
             Console.ReadKey();
-            /* TODO ERROR: Skipped EndIfDirectiveTrivia
-            #End If
-            */
+            #endif
         }
 
     }

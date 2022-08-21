@@ -35,11 +35,11 @@ Imports System.Reflection.Assembly
 Imports System.Threading
 Imports KS.Misc.Notifications
 
-#If SPECIFIER = "REL" Then
+#if SPECIFIERREL
 Imports KS.Network
 Imports KS.Network.Transfer
 Imports KS.Kernel.Updates
-#End If
+#endif
 
 Namespace Kernel
     Public Module Kernel
@@ -55,32 +55,32 @@ Namespace Kernel
         Friend DefConsoleOut As TextWriter
 
         '#ifdef'd variables ... Framework monikers
-#If NETCOREAPP Then
+#if NETCOREAPP
         Public Const KernelSimulatorMoniker As String = ".NET CoreCLR"
-#Else
+#else
         Public Const KernelSimulatorMoniker As String = ".NET Framework"
-#End If
+#EndIf
 
         'Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, DELTA, GAMMA, NONE | None satisfied: Unsupported Release)
-#If SPECIFIER = "REL" Then
+#If SPECIFIERRELThen Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}"
-#ElseIf SPECIFIER = "RC" Then
+#elif SPECIFIERRC
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Release Candidate"
-#ElseIf SPECIFIER = "DEV" Then
+#elif SPECIFIERDEV
 #If MILESTONESPECIFIER = "ALPHA" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Milestone 1"
-#ElseIf MILESTONESPECIFIER = "BETA" Then
+#elif MILESTONESPECIFIER = "BETA" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Beta 1"
-#ElseIf MILESTONESPECIFIER = "DELTA" Then
+#elif MILESTONESPECIFIER = "DELTA" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Delta 1"
-#ElseIf MILESTONESPECIFIER = "GAMMA" Then
+#elif MILESTONESPECIFIER = "GAMMA" Then
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview - Gamma 1"
-#Else
+#else
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Developer Preview"
-#End If
+#endif
 #Else
         Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker} - Unsupported Release"
-#End If
+#endif
 
         ''' <summary>
         ''' Entry point
@@ -114,7 +114,7 @@ Namespace Kernel
 
                     'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
                     'TODO: Move this to a separate function
-#If SPECIFIER = "REL" Then
+#if SPECIFIERREL
                     If Not NetworkAvailable Then
                         NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
                                                     DoTranslation("Check your internet connection and try again."),
@@ -130,11 +130,11 @@ Namespace Kernel
                         'Download debug symbols
                         If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) And Not PPASpotted Then
                             Try
-#If NETCOREAPP Then
+#if NETCOREAPP
                                 DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-#Else
+#else
                                 DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-#End If
+#endif
                             Catch ex As Exception
                                 NotifySend(New Notification(DoTranslation("Error downloading debug data"),
                                                             DoTranslation("There is an error while downloading debug data. Check your internet connection."),
@@ -142,7 +142,7 @@ Namespace Kernel
                             End Try
                         End If
                     End If
-#End If
+#endif
 
                         'Check for console size
                         If CheckingForConsoleSize Then
@@ -189,11 +189,11 @@ Namespace Kernel
                     End If
 
                     'Check for kernel updates
-#If SPECIFIER = "REL" Then
+#if SPECIFIERREL
                     If CheckUpdateStart Then
                         CheckKernelUpdates()
                     End If
-#End If
+#endif
 
                     'Phase 2: Probe hardware
                     ReportNewStage(2, DoTranslation("- Stage 2: Hardware detection"))

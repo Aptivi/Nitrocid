@@ -75,7 +75,7 @@ Namespace Misc.Writers.DebugWriters
                         Next
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
                 Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
-#End If
+#endif
                     Else 'Rare case, unless debug symbol is not found on archives.
                         DebugStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                         For i As Integer = 0 To DebugDevices.Count - 1
@@ -88,7 +88,7 @@ Namespace Misc.Writers.DebugWriters
                         Next
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
                 Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
-#End If
+#endif
                     End If
 
                     'Disconnect offending clients who are disconnected
@@ -138,7 +138,7 @@ Namespace Misc.Writers.DebugWriters
                 Next
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
             Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
-#End If
+#endif
 
                 'Disconnect offending clients who are disconnected
                 For Each i As Integer In OffendingIndex

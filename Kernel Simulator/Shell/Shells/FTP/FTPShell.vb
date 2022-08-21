@@ -50,7 +50,7 @@ Namespace Shell.Shells.FTP
                         Wdbg(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}")
 #If Not NETCOREAPP Then
                         FtpTrace.AddListener(New FTPTracer)
-#End If
+#endif
                         FtpTrace.LogUserName = FTPLoggerUsername
                         FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                         FtpTrace.LogIP = FTPLoggerIP
