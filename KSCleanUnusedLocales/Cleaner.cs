@@ -37,8 +37,8 @@ namespace KSCleanUnusedLocales
 
                 // Iterate through all the source code files for the main project
                 Console.WriteLine("Checking for unused strings...");
-                List<string> sources =       CodeLister.PopulateSources();
-                List<string> dataSources =   CodeLister.PopulateData();
+                List<string> sources = CodeLister.PopulateSources();
+                List<string> dataSources = CodeLister.PopulateData();
                 List<int> redundantIndexes = new();
                 int lineNumber = 1;
                 foreach (string engString in engStrings)

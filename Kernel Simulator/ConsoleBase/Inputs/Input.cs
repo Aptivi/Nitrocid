@@ -21,7 +21,7 @@ using KS.Languages;
 using KS.Misc.Text;
 
 #if NETCOREAPP
-Imports System.Threading
+using System.Threading;
 #endif
 
 namespace KS.ConsoleBase.Inputs
@@ -176,13 +176,13 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         public static void DetectKeypress()
         {
-            #if NETCOREAPP
+#if NETCOREAPP
             while (!Console.KeyAvailable)
-                Thread.Sleep(1)
+                Thread.Sleep(1);
             Console.ReadKey(true);
-            #else
+#else
             Console.ReadKey();
-            #endif
+#endif
         }
 
     }

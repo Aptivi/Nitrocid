@@ -82,16 +82,16 @@ namespace KS.Files
         {
             get
             {
-                #if NETCOREAPP
-			    if (IsOnUnix())
-			    {
-				    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
-			    }
-			    else
-			    {
-				    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
-			    }
-                #else
+#if NETCOREAPP
+                if (KernelPlatform.IsOnUnix())
+                {
+                    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
+                }
+                else
+                {
+                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
+                }
+#else
                 if (KernelPlatform.IsOnUnix())
                 {
                     return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/fx";
@@ -100,7 +100,7 @@ namespace KS.Files
                 {
                     return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/fx").Replace(@"\", "/");
                 }
-                #endif
+#endif
             }
         }
 

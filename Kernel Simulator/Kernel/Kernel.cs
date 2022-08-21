@@ -221,10 +221,10 @@ namespace KS.Kernel
                     }
 
                     // Check for kernel updates
-                    #if SPECIFIERREL
+#if SPECIFIERREL
                     if (CheckUpdateStart)
                         CheckKernelUpdates()
-                    #endif
+#endif
 
                     // Phase 2: Probe hardware
                     KernelTools.ReportNewStage(2, Translate.DoTranslation("- Stage 2: Hardware detection"));

@@ -415,13 +415,13 @@ namespace KS.Kernel
             // Show dev version notice
             if (!Flags.EnableSplash)
             {
-                #if SPECIFIERDEV // WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
+#if SPECIFIERDEV // WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
                 TextWriterColor.Write(Translate.DoTranslation("Looks like you were running the development version of the kernel. While you can see the aspects, it is frequently updated and might introduce bugs. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
-                #elif SPECIFIERRC
+#elif SPECIFIERRC
                 TextWriterColor.Write(DoTranslation("Looks like you were running the release candidate version. It is recommended that you stay on the stable version."), true, ColorTools.ColTypes.DevelopmentWarning);
-                #elif SPECIFIERREL == false
+#elif SPECIFIERREL == false
                 TextWriterColor.Write(DoTranslation("Looks like you were running an unsupported version. It's highly advisable not to use this version."), true, ColorTools.ColTypes.DevelopmentWarning);
-                #endif
+#endif
             }
 
             // Parse real command-line arguments

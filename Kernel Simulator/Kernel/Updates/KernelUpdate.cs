@@ -63,11 +63,11 @@ namespace KS.Kernel.Updates
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 var KernelUpdateVer = new Version(KernelUpdate.SelectToken("tag_name").ToString().ReplaceAll(new[] { "v", "-alpha", "-beta" }, ""));
-                #if NETCOREAPP
+#if NETCOREAPP
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
-                #else
+#else
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[1]["browser_download_url"];
-                #endif
+#endif
                 var KernelUpdateInfo = new KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL);
                 SortedVersions.Add(KernelUpdateInfo);
             }

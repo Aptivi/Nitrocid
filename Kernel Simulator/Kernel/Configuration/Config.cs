@@ -567,9 +567,9 @@ namespace KS.Kernel.Configuration
             ScreensaverConfig.Add("Wipe", WipeConfig);
 
             // Matrix config json object
-            var MatrixConfig = new JObject() 
-            { 
-                { "Delay in Milliseconds", MatrixSettings.MatrixDelay } 
+            var MatrixConfig = new JObject()
+            {
+                { "Delay in Milliseconds", MatrixSettings.MatrixDelay }
             };
             ScreensaverConfig.Add("Matrix", MatrixConfig);
 
@@ -1069,8 +1069,8 @@ namespace KS.Kernel.Configuration
             ScreensaverConfig.Add("BeatEdgePulse", BeatEdgePulseConfig);
 
             // Starfield config json object
-            var StarfieldConfig = new JObject() 
-            { 
+            var StarfieldConfig = new JObject()
+            {
                 { "Delay in Milliseconds", StarfieldSettings.StarfieldDelay }
             };
             ScreensaverConfig.Add("Starfield", StarfieldConfig);
@@ -1082,8 +1082,8 @@ namespace KS.Kernel.Configuration
             var SplashConfig = new JObject();
 
             // Simple config json object
-            var SplashSimpleConfig = new JObject() 
-            { 
+            var SplashSimpleConfig = new JObject()
+            {
                 { "Progress text location", SplashSettings.SimpleProgressTextLocation.ToString() }
             };
             SplashConfig.Add("Simple", SplashSimpleConfig);
