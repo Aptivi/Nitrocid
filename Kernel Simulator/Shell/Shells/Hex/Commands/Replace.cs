@@ -1,0 +1,89 @@
+﻿using System;
+
+// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+// 
+// This file is part of Kernel Simulator
+// 
+// Kernel Simulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Kernel Simulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using Extensification.LongExts;
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Editors.HexEdit;
+using KS.Misc.Reflection;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Commands;
+using Microsoft.VisualBasic.CompilerServices;
+
+namespace KS.Shell.Shells.Hex.Commands
+{
+    /// <summary>
+    /// Replaces a byte with another one
+    /// </summary>
+    /// <remarks>
+    /// You can use this command to replace a byte with another one.
+    /// </remarks>
+    class HexEdit_ReplaceCommand : CommandExecutor, ICommand
+    {
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            if (ListArgsOnly.Length == 2)
+            {
+                byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
+                byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
+                HexEditTools.HexEdit_Replace(ByteFrom, ByteWith);
+                TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+            }
+            else if (ListArgsOnly.Length == 3)
+            {
+                if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
+                {
+                    if (Conversions.ToLong(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    {
+                        byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
+                        byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
+                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Conversions.ToLong(ListArgsOnly[2]));
+                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    }
+                }
+            }
+            else if (ListArgsOnly.Length > 3)
+            {
+                if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
+                {
+                    if (Conversions.ToLong(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Conversions.ToLong(ListArgsOnly[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    {
+                        byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
+                        byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
+                        long ByteNumberStart = Conversions.ToLong(ListArgsOnly[2]);
+                        long ByteNumberEnd = Conversions.ToLong(ListArgsOnly[3]);
+                        ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
+                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
+                        TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, ColorTools.ColTypes.Success);
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, ColorTools.ColTypes.Error);
+                    }
+                }
+            }
+        }
+
+    }
+}

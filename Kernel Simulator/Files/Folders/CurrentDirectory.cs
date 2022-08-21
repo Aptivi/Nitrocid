@@ -1,0 +1,123 @@
+﻿using System;
+
+// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+// 
+// This file is part of Kernel Simulator
+// 
+// Kernel Simulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Kernel Simulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using System.IO;
+using Extensification.StringExts;
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
+using static KS.Kernel.Configuration.Config;
+using KS.Languages;
+using KS.Misc.Writers.DebugWriters;
+
+namespace KS.Files.Folders
+{
+    public static class CurrentDirectory
+    {
+
+        private static string _CurrentDirectory = Paths.HomePath;
+
+        /// <summary>
+        /// The current directory
+        /// </summary>
+        public static string CurrentDir
+        {
+            get
+            {
+                return _CurrentDirectory;
+            }
+            set
+            {
+                Filesystem.ThrowOnInvalidPath(value);
+                value = Filesystem.NeutralizePath(value);
+                if (Checking.FolderExists(value))
+                {
+                    _CurrentDirectory = value;
+                }
+                else
+                {
+                    throw new DirectoryNotFoundException(Translate.DoTranslation("Directory {0} not found").FormatString(value));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the current working directory
+        /// </summary>
+        /// <param name="dir">A directory</param>
+        /// <exception cref="DirectoryNotFoundException"></exception>
+        public static void SetCurrDir(string dir)
+        {
+            CurrentDir = dir;
+
+            // Raise event
+            Kernel.Kernel.KernelEventManager.RaiseCurrentDirectoryChanged();
+        }
+
+        /// <summary>
+        /// Tries to set the current working directory
+        /// </summary>
+        /// <param name="dir">A directory</param>
+        /// <returns>True if successful; otherwise, false.</returns>
+        /// <exception cref="DirectoryNotFoundException"></exception>
+        public static bool TrySetCurrDir(string dir)
+        {
+            try
+            {
+                SetCurrDir(dir);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.Wdbg(DebugLevel.E, "Failed to set current directory: {0}", ex.Message);
+                DebugWriter.WStkTrc(ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Saves the current directory to configuration
+        /// </summary>
+        public static void SaveCurrDir()
+        {
+            var Token = ConfigTools.GetConfigCategory(ConfigCategory.Shell);
+            ConfigTools.SetConfigValue(ConfigCategory.Shell, Token, "Current Directory", CurrentDir);
+        }
+
+        /// <summary>
+        /// Tries to set the current directory to configuration
+        /// </summary>
+        /// <returns>True if successful; otherwise, false.</returns>
+        public static bool TrySaveCurrDir()
+        {
+            try
+            {
+                SaveCurrDir();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WStkTrc(ex);
+                DebugWriter.Wdbg(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
+                throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
+            }
+            return false;
+        }
+
+    }
+}

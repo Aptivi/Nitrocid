@@ -1,0 +1,346 @@
+﻿using System;
+using ColorSeq;
+using Extensification.StringExts;
+using KS.ConsoleBase.Colors;
+using KS.Misc.Platform;
+using KS.Misc.Writers.ConsoleWriters;
+using Microsoft.VisualBasic.CompilerServices;
+
+// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+// 
+// This file is part of Kernel Simulator
+// 
+// Kernel Simulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Kernel Simulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+namespace KS.Misc.Writers.FancyWriters
+{
+    public static class SeparatorWriterColor
+    {
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    TextWriterColor.Write("- ", false, ColorTools.ColTypes.Separator, Vars);
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+
+                // We need to set an appropriate color for the suffix in the text.
+                if (Text.StartsWith("-"))
+                {
+                    for (int CharIndex = 0, loopTo = Text.Length - 1; CharIndex <= loopTo; CharIndex++)
+                    {
+                        if (Conversions.ToString(Text[CharIndex]) == "-")
+                        {
+                            TextWriterColor.Write(Conversions.ToString(Text[CharIndex]), false, ColorTools.ColTypes.Separator);
+                        }
+                        else
+                        {
+                            // We're (mostly) done
+                            Text = Text.Substring(CharIndex);
+                            break;
+                        }
+                    }
+                }
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ColorTools.ColTypes.SeparatorText, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColorTools.ColTypes.Separator);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, ColorTools.ColTypes ColTypes, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ColTypes, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColTypes);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, colorTypeForeground, colorTypeBackground, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, colorTypeForeground, colorTypeBackground);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColor Color, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, Color, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, Color);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, Color Color, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, Color, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, Color);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+        /// <summary>
+        /// Draw a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            // Print the suffix and the text
+            if (!string.IsNullOrWhiteSpace(Text))
+            {
+                if (PrintSuffix)
+                    Text = "- " + Text;
+                if (!Text.EndsWith("-"))
+                    Text += " ";
+                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
+            }
+
+            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+            int RepeatTimes;
+            if (!(Console.CursorLeft == 0))
+            {
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+            }
+            else
+            {
+                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+            }
+
+            // Write the closing minus sign.
+            int OldTop = Console.CursorTop;
+            TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
+
+            // Fix CursorTop value on Unix systems. Mono...
+            if (KernelPlatform.IsOnUnix())
+            {
+                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
+                    Console.CursorTop -= 1;
+            }
+        }
+
+    }
+}

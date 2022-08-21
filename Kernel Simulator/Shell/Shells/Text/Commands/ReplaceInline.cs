@@ -1,0 +1,87 @@
+﻿
+
+// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+// 
+// This file is part of Kernel Simulator
+// 
+// Kernel Simulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Kernel Simulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using Extensification.IntegerExts;
+using KS.ConsoleBase.Colors;
+using KS.Languages;
+using KS.Misc.Editors.TextEdit;
+using KS.Misc.Reflection;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.DebugWriters;
+using KS.Shell.ShellBase.Commands;
+using Microsoft.VisualBasic.CompilerServices;
+
+namespace KS.Shell.Shells.Text.Commands
+{
+    /// <summary>
+    /// Replaces a word or phrase with another one in a line
+    /// </summary>
+    /// <remarks>
+    /// You can use this command to replace a word or a complete phrase enclosed in double quotes with another one (enclosed in double quotes again) in a line.
+    /// </remarks>
+    class TextEdit_ReplaceInlineCommand : CommandExecutor, ICommand
+    {
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            if (ListArgsOnly.Length == 3)
+            {
+                if (StringQuery.IsStringNumeric(ListArgsOnly[2]))
+                {
+                    if (Conversions.ToInteger(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    {
+                        TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], Conversions.ToInteger(ListArgsOnly[2]));
+                        TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, ColorTools.ColTypes.Success);
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                    }
+                }
+                else
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, ColorTools.ColTypes.Error, ListArgsOnly[2]);
+                    DebugWriter.Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[2]);
+                }
+            }
+            else if (ListArgsOnly.Length > 3)
+            {
+                if (StringQuery.IsStringNumeric(ListArgsOnly[2]) & StringQuery.IsStringNumeric(ListArgsOnly[3]))
+                {
+                    if (Conversions.ToInteger(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Conversions.ToInteger(ListArgsOnly[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    {
+                        int LineNumberStart = Conversions.ToInteger(ListArgsOnly[2]);
+                        int LineNumberEnd = Conversions.ToInteger(ListArgsOnly[3]);
+                        LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
+                        for (int LineNumber = LineNumberStart, loopTo = LineNumberEnd; LineNumber <= loopTo; LineNumber++)
+                        {
+                            TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], LineNumber);
+                            TextWriterColor.Write(Translate.DoTranslation("String replaced in line {0}."), true, ColorTools.ColTypes.Success, LineNumber);
+                        }
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, ColorTools.ColTypes.Error);
+                    }
+                }
+            }
+        }
+
+    }
+}

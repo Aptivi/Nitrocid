@@ -194,7 +194,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.vbproj">
+    <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Kernel Simulator</Name>
     </ProjectReference>

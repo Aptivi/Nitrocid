@@ -7,7 +7,7 @@
     <Authors>Aptivi</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
-    <PackageTags>kernel;simulator;vb.net</PackageTags>
+    <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/Kernel-Simulator</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
@@ -65,7 +65,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV", MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV";MILESTONESPECIFIER="ALPHA"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-dotnet|AnyCPU'">
     <TargetFramework>net6.0</TargetFramework>
@@ -78,7 +78,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV", MILESTONESPECIFIER="ALPHA"</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV";MILESTONESPECIFIER="ALPHA"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <TargetFramework>net48</TargetFramework>
@@ -339,15 +339,13 @@
   <!-- KS Manifest -->
   <ItemGroup>
     <None Include="app.manifest" />
-    <Compile Update="My Project\Resources.Designer.vb">
+    <Compile Update="My Project\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Update="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Manifest End -->
