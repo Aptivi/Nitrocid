@@ -107,7 +107,6 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Addresstigator" Version="0.1.0.2" />
-    <PackageReference Include="Aptivi.VT.NET" Version="0.1.0" />
     <PackageReference Include="ColorSeq" Version="1.0.0" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="Dictify" Version="1.0.0.1" />
