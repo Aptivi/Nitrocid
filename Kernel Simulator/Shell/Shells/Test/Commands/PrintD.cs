@@ -22,7 +22,7 @@ using KS.Shell.ShellBase.Commands;
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
-    /// It lets you send any message to the debugger, using <see cref="Wdbg(DebugLevel, String, Object())"/> call. It doesn't provide support for variables unlike printdf. It only works if you have enabled the debugger which you can enable by debug 1.
+    /// It lets you send any message to the debugger, using <see cref="DebugWriter.Wdbg(DebugLevel, string, object[])"/> call. It doesn't provide support for variables unlike printdf. It only works if you have enabled the debugger which you can enable by debug 1.
     /// </summary>
     class Test_PrintDCommand : CommandExecutor, ICommand
     {
