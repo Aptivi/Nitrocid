@@ -53,6 +53,14 @@ using KS.Shell.ShellBase;
 using KS.Shell.ShellBase.Aliases;
 using KS.TimeDate;
 
+#if SPECIFIERREL
+using static KS.ConsoleBase.Colors.ColorTools;
+using static KS.Misc.Notifications.Notifications;
+using KS.Network;
+using KS.Network.Transfer;
+using System.Reflection;
+#endif
+
 namespace KS.Kernel
 {
     public static class KernelTools
@@ -560,31 +568,31 @@ namespace KS.Kernel
         public static void CheckDebugSymbols()
         {
 #if SPECIFIERREL
-			if (!NetworkAvailable)
+			if (!NetworkTools.NetworkAvailable)
 			{
-				NotifySend(new Notification(DoTranslation("No network while downloading debug data"), DoTranslation("Check your internet connection and try again."), NotifPriority.Medium, NotifType.Normal));
+				NotifySend(new Notification(Translate.DoTranslation("No network while downloading debug data"), Translate.DoTranslation("Check your internet connection and try again."), NotifPriority.Medium, NotifType.Normal));
 			}
-			if (NetworkAvailable)
+			if (NetworkTools.NetworkAvailable)
 			{
 				//Check to see if we're running from Ubuntu PPA
-				bool PPASpotted = ExecPath.StartsWith("/usr/lib/ks");
+				bool PPASpotted = Paths.ExecPath.StartsWith("/usr/lib/ks");
 				if (PPASpotted)
-					ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error);
+					SplashReport.ReportProgress(Translate.DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error);
 
 				//Download debug symbols
-				if ((FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) & !PPASpotted) == 0)
+				if (!Checking.FileExists(Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb")) & !PPASpotted)
 				{
 					try
 					{
 #if NETCOREAPP
-						DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
+						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{Kernel.KernelVersion}-beta/{Kernel.KernelVersion}-dotnet.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
 #else
-						DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
+                        NetworkTransfer.DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{Kernel.KernelVersion}-beta/{Kernel.KernelVersion}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
 #endif
 					}
 					catch (Exception)
 					{
-						NotifySend(new Notification(DoTranslation("Error downloading debug data"), DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotifPriority.Medium, NotifType.Normal));
+						NotifySend(new Notification(Translate.DoTranslation("Error downloading debug data"), Translate.DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotifPriority.Medium, NotifType.Normal));
 					}
 				}
 			}

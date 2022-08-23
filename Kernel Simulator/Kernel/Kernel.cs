@@ -50,9 +50,7 @@ using KS.Network.RPC;
 using ReadLineReboot;
 
 #if SPECIFIERREL
-Imports KS.Network
-Imports KS.Network.Transfer
-Imports KS.Kernel.Updates
+using KS.Kernel.Updates;
 #endif
 
 namespace KS.Kernel
@@ -190,8 +188,8 @@ namespace KS.Kernel
 
                     // Check for kernel updates
 #if SPECIFIERREL
-                    if (CheckUpdateStart)
-                        CheckKernelUpdates()
+                    if (Flags.CheckUpdateStart)
+                        UpdateManager.CheckKernelUpdates();
 #endif
 
                     // Phase 2: Probe hardware
