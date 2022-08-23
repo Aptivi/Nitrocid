@@ -40,7 +40,24 @@ namespace KS.Misc.Splash
 
         public static string SplashName = "Simple";
         internal static KernelThread SplashThread = new KernelThread("Kernel Splash Thread", false, () => CurrentSplash.Display());
-        private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new Dictionary<string, SplashInfo>() { { "Simple", new SplashInfo("Simple", new SplashSimple()) }, { "Progress", new SplashInfo("Progress", new SplashProgress()) }, { "Blank", new SplashInfo("Blank", new SplashBlank(), false) }, { "Fader", new SplashInfo("Fader", new SplashFader()) }, { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) }, { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) }, { "systemd", new SplashInfo("systemd", new SplashSystemd()) }, { "sysvinit", new SplashInfo("sysvinit", new SplashSysvinit()) }, { "openrc", new SplashInfo("openrc", new SplashOpenRC()) }, { "Pulse", new SplashInfo("Pulse", new SplashPulse()) }, { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) }, { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) }, { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) }, { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) }, { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) } };
+        private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new Dictionary<string, SplashInfo>()
+        {
+            { "Simple", new SplashInfo("Simple", new SplashSimple()) },
+            { "Progress", new SplashInfo("Progress", new SplashProgress()) },
+            { "Blank", new SplashInfo("Blank", new SplashBlank(), false) },
+            { "Fader", new SplashInfo("Fader", new SplashFader()) },
+            { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) },
+            { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) },
+            { "systemd", new SplashInfo("systemd", new SplashSystemd()) },
+            { "sysvinit", new SplashInfo("sysvinit", new SplashSysvinit()) },
+            { "openrc", new SplashInfo("openrc", new SplashOpenRC()) },
+            { "Pulse", new SplashInfo("Pulse", new SplashPulse()) },
+            { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) },
+            { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
+            { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
+            { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
+            { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) }
+        };
 
         /// <summary>
         /// Current splash screen

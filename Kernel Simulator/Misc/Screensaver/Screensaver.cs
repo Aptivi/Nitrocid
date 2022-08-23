@@ -48,7 +48,51 @@ namespace KS.Misc.Screensaver
         public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));  // 255 Console Colors
 
         // Private variables
-        internal static Dictionary<string, BaseScreensaver> Screensavers = new Dictionary<string, BaseScreensaver>() { { "barrot", new BarRotDisplay() }, { "beatfader", new BeatFaderDisplay() }, { "beatpulse", new BeatPulseDisplay() }, { "beatedgepulse", new BeatEdgePulseDisplay() }, { "bouncingblock", new BouncingBlockDisplay() }, { "bouncingtext", new BouncingTextDisplay() }, { "colormix", new ColorMixDisplay() }, { "dateandtime", new DateAndTimeDisplay() }, { "disco", new DiscoDisplay() }, { "dissolve", new DissolveDisplay() }, { "edgepulse", new EdgePulseDisplay() }, { "fader", new FaderDisplay() }, { "faderback", new FaderBackDisplay() }, { "fallingline", new FallingLineDisplay() }, { "figlet", new FigletDisplay() }, { "fireworks", new FireworksDisplay() }, { "flashcolor", new FlashColorDisplay() }, { "flashtext", new FlashTextDisplay() }, { "glitch", new GlitchDisplay() }, { "glittercolor", new GlitterColorDisplay() }, { "glittermatrix", new GlitterMatrixDisplay() }, { "indeterminate", new IndeterminateDisplay() }, { "lighter", new LighterDisplay() }, { "lines", new LinesDisplay() }, { "linotypo", new LinotypoDisplay() }, { "marquee", new MarqueeDisplay() }, { "matrix", new MatrixDisplay() }, { "noise", new NoiseDisplay() }, { "personlookup", new PersonLookupDisplay() }, { "plain", new PlainDisplay() }, { "progressclock", new ProgressClockDisplay() }, { "pulse", new PulseDisplay() }, { "ramp", new RampDisplay() }, { "random", new RandomSaverDisplay() }, { "snaker", new SnakerDisplay() }, { "spotwrite", new SpotWriteDisplay() }, { "stackbox", new StackBoxDisplay() }, { "starfield", new StarfieldDisplay() }, { "typewriter", new TypewriterDisplay() }, { "typo", new TypoDisplay() }, { "windowslogo", new WindowsLogoDisplay() }, { "wipe", new WipeDisplay() } };
+        internal static Dictionary<string, BaseScreensaver> Screensavers = new Dictionary<string, BaseScreensaver>()
+        {
+            { "barrot", new BarRotDisplay() },
+            { "beatfader", new BeatFaderDisplay() },
+            { "beatpulse", new BeatPulseDisplay() },
+            { "beatedgepulse", new BeatEdgePulseDisplay() },
+            { "bouncingblock", new BouncingBlockDisplay() },
+            { "bouncingtext", new BouncingTextDisplay() },
+            { "colormix", new ColorMixDisplay() },
+            { "dateandtime", new DateAndTimeDisplay() },
+            { "disco", new DiscoDisplay() },
+            { "dissolve", new DissolveDisplay() },
+            { "edgepulse", new EdgePulseDisplay() },
+            { "fader", new FaderDisplay() },
+            { "faderback", new FaderBackDisplay() },
+            { "fallingline", new FallingLineDisplay() },
+            { "figlet", new FigletDisplay() },
+            { "fireworks", new FireworksDisplay() },
+            { "flashcolor", new FlashColorDisplay() },
+            { "flashtext", new FlashTextDisplay() },
+            { "glitch", new GlitchDisplay() },
+            { "glittercolor", new GlitterColorDisplay() },
+            { "glittermatrix", new GlitterMatrixDisplay() },
+            { "indeterminate", new IndeterminateDisplay() },
+            { "lighter", new LighterDisplay() },
+            { "lines", new LinesDisplay() },
+            { "linotypo", new LinotypoDisplay() },
+            { "marquee", new MarqueeDisplay() },
+            { "matrix", new MatrixDisplay() },
+            { "noise", new NoiseDisplay() },
+            { "personlookup", new PersonLookupDisplay() },
+            { "plain", new PlainDisplay() },
+            { "progressclock", new ProgressClockDisplay() },
+            { "pulse", new PulseDisplay() },
+            { "ramp", new RampDisplay() },
+            { "random", new RandomSaverDisplay() },
+            { "snaker", new SnakerDisplay() },
+            { "spotwrite", new SpotWriteDisplay() },
+            { "stackbox", new StackBoxDisplay() },
+            { "starfield", new StarfieldDisplay() },
+            { "typewriter", new TypewriterDisplay() },
+            { "typo", new TypoDisplay() },
+            { "windowslogo", new WindowsLogoDisplay() },
+            { "wipe", new WipeDisplay() }
+        };
         internal static AutoResetEvent SaverAutoReset = new AutoResetEvent(false);
         internal static KernelThread Timeout = new KernelThread("Screensaver timeout thread", false, HandleTimeout);
 
