@@ -25,6 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Platform;
 using KS.Misc.Text;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 
 namespace KS.ConsoleBase.Colors
@@ -896,30 +897,21 @@ namespace KS.ConsoleBase.Colors
             {
                 if (ColorSequence is null)
                     throw new ArgumentNullException(nameof(ColorSequence));
-                int OldLeft = Console.CursorLeft;
-                int OldTop = Console.CursorTop;
+
+                // Define reset background sequence
+                string resetSequence = CharManager.GetEsc() + $"[49m";
 
                 // Set background
                 if (Background)
                 {
                     if (Flags.SetBackground | ForceSet)
-                    {
-                        Console.Write(ColorSequence.VTSequenceBackground);
-                    }
+                        TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
                     else
-                    {
-                        Console.Write(Convert.ToString(CharManager.GetEsc()) + $"[49m");
-                    }
+                        TextWriterColor.WritePlain(resetSequence, false);
                 }
                 else
                 {
-                    Console.Write(ColorSequence.VTSequenceForeground);
-                }
-
-                // Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
-                if (KernelPlatform.IsOnUnix())
-                {
-                    Console.SetCursorPosition(OldLeft, OldTop);
+                    TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
                 }
             }
         }
