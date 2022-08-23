@@ -327,7 +327,6 @@
 
   <!-- KS Data -->
   <ItemGroup>
-    <None Include="Resources\Data\ConsoleColorsData.json" />
     <None Include="Resources\Data\SplashSettingsEntries.json" />
     <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
     <None Include="Resources\Data\SettingsEntries.json" />

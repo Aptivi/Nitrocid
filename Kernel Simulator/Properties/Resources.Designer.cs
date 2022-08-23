@@ -506,15 +506,6 @@ namespace Properties.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{&quot;colorId&quot;:0,&quot;hexString&quot;:&quot;#000000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:0,&quot;l&quot;:0},&quot;name&quot;:&quot;Black&quot;},{&quot;colorId&quot;:1,&quot;hexString&quot;:&quot;#800000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Maroon&quot;},{&quot;colorId&quot;:2,&quot;hexString&quot;:&quot;#008000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:120,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Green&quot;},{&quot;colorId&quot;:3,&quot;hexString&quot;:&quot;#808000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:60,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Olive&quot;},{&quot;colorId&quot;:4,&quot;hexString&quot;:&quot;#000080&quot;,&q....
-        /// </summary>
-        public static string ConsoleColorsData {
-            get {
-                return ResourceManager.GetString("ConsoleColorsData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Czech&quot;,
         ///  &quot;Transliterable&quot;: false,
