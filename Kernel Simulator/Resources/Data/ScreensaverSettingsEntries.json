@@ -3791,5 +3791,118 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "GradientRot": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "GradientRotDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Next gradient rot interval",
+                "Type": "SInt",
+                "Variable": "GradientRotNextRampDelay",
+                "Description": "How many milliseconds to wait before rotting the next screen?"
+            },
+            {
+                "Name": "Minimum red color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumRedColorLevelStart",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumGreenColorLevelStart",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumBlueColorLevelStart",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumRedColorLevelStart",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumGreenColorLevelStart",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level for start color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumBlueColorLevelStart",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum red color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumRedColorLevelEnd",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumGreenColorLevelEnd",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMinimumBlueColorLevelEnd",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumRedColorLevelEnd",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumGreenColorLevelEnd",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level for end color",
+                "Type": "SIntSlider",
+                "Variable": "GradientRotMaximumBlueColorLevelEnd",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 }

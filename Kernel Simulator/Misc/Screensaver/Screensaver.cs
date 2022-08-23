@@ -71,6 +71,7 @@ namespace KS.Misc.Screensaver
             { "glitch", new GlitchDisplay() },
             { "glittercolor", new GlitterColorDisplay() },
             { "glittermatrix", new GlitterMatrixDisplay() },
+            { "gradientrot", new GradientRotDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
             { "lighter", new LighterDisplay() },
             { "lines", new LinesDisplay() },
