@@ -62,7 +62,6 @@ namespace KS.Kernel
         public static string BannerFigletFont = "Banner";
         internal static KernelThread RPCPowerListener = new KernelThread("RPC Power Listener Thread", true, ((object arg) => PowerManager.PowerManage((PowerMode)arg)));
         internal static Exception LastKernelErrorException;
-        internal static bool InstanceChecked;
 
         // ----------------------------------------------- Kernel errors -----------------------------------------------
 
@@ -388,10 +387,6 @@ namespace KS.Kernel
             // Initialize custom languages
             LanguageManager.InstallCustomLanguages();
 
-            // Check for multiple instances of KS
-            if (InstanceChecked == false)
-                MultiInstance();
-
             // Initialize splashes
             SplashManager.LoadSplashes();
 
@@ -466,22 +461,6 @@ namespace KS.Kernel
         }
 
         // ----------------------------------------------- Misc -----------------------------------------------
-
-        private static Mutex _MultiInstance_ksInst;
-
-        /// <summary>
-        /// Check to see if multiple Kernel Simulator processes are running.
-        /// </summary>
-        public static void MultiInstance()
-        {
-            var ksOwner = default(bool);
-            _MultiInstance_ksInst = new Mutex(true, "Kernel Simulator", out ksOwner);
-            if (!ksOwner)
-            {
-                KernelError(KernelErrorLevel.F, false, 0L, Translate.DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), null);
-            }
-            InstanceChecked = true;
-        }
 
         /// <summary>
         /// Removes all configuration files
