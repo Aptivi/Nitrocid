@@ -37,10 +37,6 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         public string ArgumentsText { get; private set; }
         /// <summary>
-        /// List version of the provided arguments and switches
-        /// </summary>
-        public string[] FullArgumentsList { get; private set; }
-        /// <summary>
         /// List version of the provided arguments
         /// </summary>
         public string[] ArgumentsList { get; private set; }
@@ -130,7 +126,6 @@ namespace KS.Shell.ShellBase.Commands
             }
 
             // Install the parsed values to the new class instance
-            FullArgumentsList = EnclosedArgs;
             ArgumentsList = FinalArgs.ToArray();
             SwitchesList = FinalSwitches.ToArray();
             ArgumentsText = strArgs;
