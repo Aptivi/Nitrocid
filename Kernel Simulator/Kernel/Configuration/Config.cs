@@ -1068,6 +1068,60 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("BeatEdgePulse", BeatEdgePulseConfig);
 
+            // GradientRot config json object
+            var GradientRotConfig = new JObject()
+            {
+                { "Delay in Milliseconds", GradientRotSettings.GradientRotDelay },
+                { "Next gradient rot interval", GradientRotSettings.GradientRotNextRampDelay },
+                { "Minimum red color level for start color", GradientRotSettings.GradientRotMinimumRedColorLevelStart },
+                { "Minimum green color level for start color", GradientRotSettings.GradientRotMinimumGreenColorLevelStart },
+                { "Minimum blue color level for start color", GradientRotSettings.GradientRotMinimumBlueColorLevelStart },
+                { "Maximum red color level for start color", GradientRotSettings.GradientRotMaximumRedColorLevelStart },
+                { "Maximum green color level for start color", GradientRotSettings.GradientRotMaximumGreenColorLevelStart },
+                { "Maximum blue color level for start color", GradientRotSettings.GradientRotMaximumBlueColorLevelStart },
+                { "Minimum red color level for end color", GradientRotSettings.GradientRotMinimumRedColorLevelEnd },
+                { "Minimum green color level for end color", GradientRotSettings.GradientRotMinimumGreenColorLevelEnd },
+                { "Minimum blue color level for end color", GradientRotSettings.GradientRotMinimumBlueColorLevelEnd },
+                { "Maximum red color level for end color", GradientRotSettings.GradientRotMaximumRedColorLevelEnd },
+                { "Maximum green color level for end color", GradientRotSettings.GradientRotMaximumGreenColorLevelEnd },
+                { "Maximum blue color level for end color", GradientRotSettings.GradientRotMaximumBlueColorLevelEnd }
+            };
+            ScreensaverConfig.Add("GradientRot", GradientRotConfig);
+
+            // Gradient config json object
+            var GradientConfig = new JObject()
+            {
+                { "Next gradient rot interval", GradientSettings.GradientNextRampDelay },
+                { "Minimum red color level for start color", GradientSettings.GradientMinimumRedColorLevelStart },
+                { "Minimum green color level for start color", GradientSettings.GradientMinimumGreenColorLevelStart },
+                { "Minimum blue color level for start color", GradientSettings.GradientMinimumBlueColorLevelStart },
+                { "Maximum red color level for start color", GradientSettings.GradientMaximumRedColorLevelStart },
+                { "Maximum green color level for start color", GradientSettings.GradientMaximumGreenColorLevelStart },
+                { "Maximum blue color level for start color", GradientSettings.GradientMaximumBlueColorLevelStart },
+                { "Minimum red color level for end color", GradientSettings.GradientMinimumRedColorLevelEnd },
+                { "Minimum green color level for end color", GradientSettings.GradientMinimumGreenColorLevelEnd },
+                { "Minimum blue color level for end color", GradientSettings.GradientMinimumBlueColorLevelEnd },
+                { "Maximum red color level for end color", GradientSettings.GradientMaximumRedColorLevelEnd },
+                { "Maximum green color level for end color", GradientSettings.GradientMaximumGreenColorLevelEnd },
+                { "Maximum blue color level for end color", GradientSettings.GradientMaximumBlueColorLevelEnd }
+            };
+            ScreensaverConfig.Add("Gradient", GradientConfig);
+
+            // Lightspeed config json object
+            var LightspeedConfig = new JObject()
+            {
+                { "Cycle Colors", LightspeedSettings.LightspeedCycleColors },
+                { "Minimum red color level", LightspeedSettings.LightspeedMinimumRedColorLevel },
+                { "Minimum green color level", LightspeedSettings.LightspeedMinimumGreenColorLevel },
+                { "Minimum blue color level", LightspeedSettings.LightspeedMinimumBlueColorLevel },
+                { "Minimum color level", LightspeedSettings.LightspeedMinimumColorLevel },
+                { "Maximum red color level", LightspeedSettings.LightspeedMaximumRedColorLevel },
+                { "Maximum green color level", LightspeedSettings.LightspeedMaximumGreenColorLevel },
+                { "Maximum blue color level", LightspeedSettings.LightspeedMaximumBlueColorLevel },
+                { "Maximum color level", LightspeedSettings.LightspeedMaximumColorLevel }
+            };
+            ScreensaverConfig.Add("Lightspeed", LightspeedConfig);
+
             // Starfield config json object
             var StarfieldConfig = new JObject()
             {
@@ -2078,6 +2132,48 @@ namespace KS.Kernel.Configuration
             BeatEdgePulseSettings.BeatEdgePulseMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum green color level"] : 255;
             BeatEdgePulseSettings.BeatEdgePulseMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum blue color level"] : 255;
             BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["BeatEdgePulse"]["Maximum color level"] : 255;
+
+            // > GradientRot
+            GradientRotSettings.GradientRotDelay = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Delay in Milliseconds"] : 10;
+            GradientRotSettings.GradientRotNextRampDelay = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Next ramp rot interval"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Next ramp rot interval"] : 250;
+            GradientRotSettings.GradientRotMinimumRedColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum red color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum red color level for start color"] : 0;
+            GradientRotSettings.GradientRotMinimumGreenColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum green color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum green color level for start color"] : 0;
+            GradientRotSettings.GradientRotMinimumBlueColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum blue color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum blue color level for start color"] : 0;
+            GradientRotSettings.GradientRotMaximumRedColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum red color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum red color level for start color"] : 255;
+            GradientRotSettings.GradientRotMaximumGreenColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum green color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum green color level for start color"] : 255;
+            GradientRotSettings.GradientRotMaximumBlueColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum blue color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum blue color level for start color"] : 255;
+            GradientRotSettings.GradientRotMinimumRedColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum red color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum red color level for end color"] : 0;
+            GradientRotSettings.GradientRotMinimumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum green color level for end color"] : 0;
+            GradientRotSettings.GradientRotMinimumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Minimum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Minimum blue color level for end color"] : 0;
+            GradientRotSettings.GradientRotMaximumRedColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum red color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum red color level for end color"] : 255;
+            GradientRotSettings.GradientRotMaximumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum green color level for end color"] : 255;
+            GradientRotSettings.GradientRotMaximumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["GradientRot"]["Maximum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["GradientRot"]["Maximum blue color level for end color"] : 255;
+
+            // > Gradient
+            GradientSettings.GradientNextRampDelay = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Next ramp rot interval"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Next ramp rot interval"] : 250;
+            GradientSettings.GradientMinimumRedColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum red color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum red color level for start color"] : 0;
+            GradientSettings.GradientMinimumGreenColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum green color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum green color level for start color"] : 0;
+            GradientSettings.GradientMinimumBlueColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum blue color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum blue color level for start color"] : 0;
+            GradientSettings.GradientMaximumRedColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum red color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum red color level for start color"] : 255;
+            GradientSettings.GradientMaximumGreenColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum green color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum green color level for start color"] : 255;
+            GradientSettings.GradientMaximumBlueColorLevelStart = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for start color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for start color"] : 255;
+            GradientSettings.GradientMinimumRedColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum red color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum red color level for end color"] : 0;
+            GradientSettings.GradientMinimumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum green color level for end color"] : 0;
+            GradientSettings.GradientMinimumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Minimum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Minimum blue color level for end color"] : 0;
+            GradientSettings.GradientMaximumRedColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum red color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum red color level for end color"] : 255;
+            GradientSettings.GradientMaximumGreenColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum green color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum green color level for end color"] : 255;
+            GradientSettings.GradientMaximumBlueColorLevelEnd = int.TryParse((string)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for end color"], out _) ? (int)ConfigToken["Screensaver"]["Gradient"]["Maximum blue color level for end color"] : 255;
+
+            // > Lightspeed
+            LightspeedSettings.LightspeedCycleColors = (bool)ConfigToken["Screensaver"]["Lightspeed"]["Cycle Colors"];
+            LightspeedSettings.LightspeedMinimumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum red color level"] : 0;
+            LightspeedSettings.LightspeedMinimumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum green color level"] : 0;
+            LightspeedSettings.LightspeedMinimumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum blue color level"] : 0;
+            LightspeedSettings.LightspeedMinimumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Minimum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Minimum color level"] : 0;
+            LightspeedSettings.LightspeedMaximumRedColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Maximum red color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Maximum red color level"] : 255;
+            LightspeedSettings.LightspeedMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Maximum green color level"] : 255;
+            LightspeedSettings.LightspeedMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Maximum blue color level"] : 255;
+            LightspeedSettings.LightspeedMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lightspeed"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lightspeed"]["Maximum color level"] : 255;
 
             // > Starfield
             StarfieldSettings.StarfieldDelay = int.TryParse((string)ConfigToken["Screensaver"]["Starfield"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Starfield"]["Delay in Milliseconds"] : 10;

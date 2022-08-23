@@ -4022,12 +4022,6 @@
                 "Description": "Lightspeed will cycle colors when enabled. Otherwise, select random colors."
             },
             {
-                "Name": "Enable Black and White Mode",
-                "Type": "SBoolean",
-                "Variable": "LightspeedEnableFedMode",
-                "Description": "Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images."
-            },
-            {
                 "Name": "Minimum red color level",
                 "Type": "SIntSlider",
                 "Variable": "LightspeedMinimumRedColorLevel",
