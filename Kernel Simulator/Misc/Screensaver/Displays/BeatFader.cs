@@ -282,9 +282,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Random RandomDriver;
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
         private Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
 
         public override string ScreensaverName { get; set; } = "BeatFader";

@@ -198,9 +198,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Random RandomDriver;
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
         private Animations.FaderBack.FaderBackSettings FaderBackSettingsInstance;
 
         public override string ScreensaverName { get; set; } = "FaderBack";
@@ -211,8 +208,6 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);

@@ -232,9 +232,6 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private Random RandomDriver;
-        private int CurrentWindowWidth;
-        private int CurrentWindowHeight;
-        private bool ResizeSyncing;
         private Animations.Fader.FaderSettings FaderSettingsInstance;
 
         public override string ScreensaverName { get; set; } = "Fader";
