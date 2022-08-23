@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.RSS
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> RSSCommands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> RSSCommands = new()
         {
             { "articleinfo", new CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ArticleInfoCommand()) },
             { "bookmark", new CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", new CommandArgumentInfo(), new RSS_BookmarkCommand()) },
@@ -50,10 +50,10 @@ namespace KS.Shell.Shells.RSS
         public static bool RSSRefreshFeeds = true;
         public static int RSSRefreshInterval = 60000;
         public static bool RSSKeepAlive;
-        internal static KernelThread RSSRefresher = new KernelThread("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
-        internal static HttpClient RSSRefresherClient = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
+        internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
+        internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
         internal static string RSSFeedLink;
-        internal readonly static Dictionary<string, CommandInfo> RSSModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> RSSModCommands = new();
 
     }
 }

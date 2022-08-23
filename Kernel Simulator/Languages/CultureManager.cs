@@ -27,7 +27,7 @@ namespace KS.Languages
     {
 
         // Variables
-        public static CultureInfo CurrentCult = new CultureInfo("en-US");
+        public static CultureInfo CurrentCult = new("en-US");
 
         /// <summary>
         /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.

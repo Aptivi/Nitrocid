@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Rar
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> RarShell_Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> RarShell_Commands = new()
         {
             { "cdir", new CommandInfo("cdir", ShellType.RARShell, "Gets current local directory", new CommandArgumentInfo(), new RarShell_CDirCommand()) },
             { "chdir", new CommandInfo("chdir", ShellType.RARShell, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new RarShell_ChDirCommand()) },
@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Rar
             { "get", new CommandInfo("get", ShellType.RARShell, "Extracts a file to a specified directory or a current directory", new CommandArgumentInfo(new[] { "<entry> [where] [-absolute]" }, true, 1), new RarShell_GetCommand()) },
             { "list", new CommandInfo("list", ShellType.RARShell, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new RarShell_ListCommand()) }
         };
-        internal readonly static Dictionary<string, CommandInfo> RarShell_ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> RarShell_ModCommands = new();
         public static FileStream RarShell_FileStream;
         public static RarArchive RarShell_RarArchive;
         public static string RarShell_CurrentDirectory;

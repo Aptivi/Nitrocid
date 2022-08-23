@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.FTP
     public static class FTPShellCommon
     {
 
-        public readonly static Dictionary<string, CommandInfo> FTPCommands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> FTPCommands = new()
         {
             { "connect", new CommandInfo("connect", ShellType.FTPShell, "Connects to an FTP server (it must start with \"ftp://\" or \"ftps://\")", new CommandArgumentInfo(new[] { "<server>" }, true, 1), new FTP_ConnectCommand()) },
             { "cdl", new CommandInfo("cdl", ShellType.FTPShell, "Changes local directory to download to or upload from", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new FTP_CdlCommand()) },
@@ -72,7 +72,7 @@ namespace KS.Shell.Shells.FTP
         internal static string FtpSite;
         internal static string FtpPass;
         internal static string FtpUser;
-        internal readonly static Dictionary<string, CommandInfo> FTPModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> FTPModCommands = new();
 
         /// <summary>
         /// The FTP client used to connect to the FTP server

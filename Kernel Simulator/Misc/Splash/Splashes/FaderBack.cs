@@ -54,7 +54,7 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        internal Random RandomDriver = new Random();
+        internal Random RandomDriver = new();
         internal Animations.FaderBack.FaderBackSettings FaderBackSettingsInstance;
 
         public SplashFaderBack()

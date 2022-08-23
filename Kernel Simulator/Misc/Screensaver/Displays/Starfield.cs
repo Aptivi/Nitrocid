@@ -55,7 +55,7 @@ namespace KS.Misc.Screensaver.Displays
         private int CurrentWindowWidth;
         private int CurrentWindowHeight;
         private bool ResizeSyncing;
-        private readonly List<Tuple<int, int>> Stars = new List<Tuple<int, int>>();
+        private readonly List<Tuple<int, int>> Stars = new();
 
         public override string ScreensaverName { get; set; } = "Starfield";
 

@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Hex
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> HexEdit_Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> HexEdit_Commands = new()
         {
             { "addbyte", new CommandInfo("addbyte", ShellType.HexShell, "Adds a new byte at the end of the file", new CommandArgumentInfo(new[] { "<byte>" }, true, 1), new HexEdit_AddByteCommand()) },
             { "addbytes", new CommandInfo("addbytes", ShellType.HexShell, "Adds the new bytes at the end of the file", new CommandArgumentInfo(), new HexEdit_AddBytesCommand()) },
@@ -45,11 +45,11 @@ namespace KS.Shell.Shells.Hex
         };
         public static FileStream HexEdit_FileStream;
         public static byte[] HexEdit_FileBytes;
-        public static KernelThread HexEdit_AutoSave = new KernelThread("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
+        public static KernelThread HexEdit_AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
         public static bool HexEdit_AutoSaveFlag = true;
         public static int HexEdit_AutoSaveInterval = 60;
         internal static byte[] HexEdit_FileBytesOrig;
-        internal readonly static Dictionary<string, CommandInfo> HexEdit_ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> HexEdit_ModCommands = new();
 
     }
 }

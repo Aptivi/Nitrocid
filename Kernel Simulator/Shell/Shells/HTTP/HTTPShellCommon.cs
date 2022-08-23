@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.HTTP
     public static class HTTPShellCommon
     {
 
-        public readonly static Dictionary<string, CommandInfo> HTTPCommands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> HTTPCommands = new()
         {
             { "delete", new CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
             { "get", new CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
@@ -36,8 +36,8 @@ namespace KS.Shell.Shells.HTTP
         };
         public static string HTTPSite;
         public static string HTTPShellPromptStyle = "";
-        public static HttpClient ClientHTTP = new HttpClient();
-        internal readonly static Dictionary<string, CommandInfo> HTTPModCommands = new Dictionary<string, CommandInfo>();
+        public static HttpClient ClientHTTP = new();
+        internal readonly static Dictionary<string, CommandInfo> HTTPModCommands = new();
 
         /// <summary>
         /// See if the HTTP shell is connected

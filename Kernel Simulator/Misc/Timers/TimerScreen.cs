@@ -38,7 +38,7 @@ namespace KS.Misc.Timers
     {
 
         public static string TimerFigletFont = "Small";
-        internal static KernelThread TimerUpdate = new KernelThread("Timer Remaining Time Updater", true, UpdateTimerElapsedDisplay);
+        internal static KernelThread TimerUpdate = new("Timer Remaining Time Updater", true, UpdateTimerElapsedDisplay);
         internal static DateTime TimerStarted;
         internal static int FigletTimeOldWidth;
         internal static int FigletTimeOldWidthEnd;

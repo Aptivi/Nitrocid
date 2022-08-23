@@ -26,7 +26,7 @@ namespace KS.ManPages
     {
 
         // Variables
-        internal static Dictionary<string, Manual> Pages = new Dictionary<string, Manual>();
+        internal static Dictionary<string, Manual> Pages = new();
 
         /// <summary>
         /// Lists all manual pages

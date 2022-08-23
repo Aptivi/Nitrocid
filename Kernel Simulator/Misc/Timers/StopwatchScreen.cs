@@ -34,11 +34,11 @@ namespace KS.Misc.Timers
     public static class StopwatchScreen
     {
 
-        internal static List<LapDisplayInfo> Laps = new List<LapDisplayInfo>();
-        internal static KernelThread StopwatchUpdate = new KernelThread("Stopwatch ETA Updater", true, UpdateStopwatchElapsedDisplay);
+        internal static List<LapDisplayInfo> Laps = new();
+        internal static KernelThread StopwatchUpdate = new("Stopwatch ETA Updater", true, UpdateStopwatchElapsedDisplay);
         internal static Color LapColor = ColorTools.NeutralTextColor;
-        internal static Stopwatch Stopwatch = new Stopwatch();
-        internal static Stopwatch LappedStopwatch = new Stopwatch();
+        internal static Stopwatch Stopwatch = new();
+        internal static Stopwatch LappedStopwatch = new();
         internal static bool NewLapAcknowledged;
 
         /// <summary>

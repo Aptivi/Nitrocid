@@ -37,10 +37,10 @@ namespace KS.Misc.Calendar.Reminders
     public static class ReminderManager
     {
 
-        public static List<ReminderInfo> Reminders = new List<ReminderInfo>();
+        public static List<ReminderInfo> Reminders = new();
         public static Notifications.Notifications.NotifPriority CurrentReminderImportance = Notifications.Notifications.NotifPriority.Low;
-        public static KernelThread ReminderThread = new KernelThread("Reminder Thread", false, ReminderListen);
-        internal static object ReminderManagerLock = new object();
+        public static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
+        internal static object ReminderManagerLock = new();
 
         /// <summary>
         /// Listens for reminders and notifies the user

@@ -24,7 +24,7 @@ namespace KS.Arguments.ArgumentBase
     public static class PreBootCommandLineArgsParse
     {
 
-        public readonly static Dictionary<string, ArgumentInfo> AvailablePreBootCMDLineArgs = new Dictionary<string, ArgumentInfo>() { { "reset", new ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new PreBootCommandLine_ResetArgument()) }, { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", false, 0, new PreBootCommandLine_BypassSizeDetectionArgument()) } };
+        public readonly static Dictionary<string, ArgumentInfo> AvailablePreBootCMDLineArgs = new() { { "reset", new ArgumentInfo("reset", ArgumentType.PreBootCommandLineArgs, "Resets the kernel to the factory settings", "", false, 0, new PreBootCommandLine_ResetArgument()) }, { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", ArgumentType.PreBootCommandLineArgs, "Bypasses the console size detection", "", false, 0, new PreBootCommandLine_BypassSizeDetectionArgument()) } };
 
     }
 }

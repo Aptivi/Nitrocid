@@ -35,8 +35,8 @@ namespace KS.Misc.Notifications
     {
 
         // Variables
-        public static List<Notification> NotifRecents = new List<Notification>();
-        public static KernelThread NotifThread = new KernelThread("Notification Thread", false, NotifListen);
+        public static List<Notification> NotifRecents = new();
+        public static KernelThread NotifThread = new("Notification Thread", false, NotifListen);
         public static string NotifyUpperLeftCornerChar = "╔";
         public static string NotifyUpperRightCornerChar = "╗";
         public static string NotifyLowerLeftCornerChar = "╚";

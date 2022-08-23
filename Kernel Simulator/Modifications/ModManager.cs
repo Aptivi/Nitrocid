@@ -57,7 +57,7 @@ namespace KS.Modifications
     {
 
         public static string BlacklistedModsString = "";
-        internal static Dictionary<string, ModInfo> Mods = new Dictionary<string, ModInfo>();
+        internal static Dictionary<string, ModInfo> Mods = new();
 
         /// <summary>
         /// Loads all mods in KSMods

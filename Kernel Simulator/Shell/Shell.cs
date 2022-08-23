@@ -49,7 +49,7 @@ namespace KS.Shell
 
         internal static StreamWriter OutputTextWriter;
         internal static FileStream OutputStream;
-        internal static KernelThread ProcessStartCommandThread = new KernelThread("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
+        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
 
         /// <summary>
         /// Whether the shell is colored or not
@@ -67,7 +67,7 @@ namespace KS.Shell
         /// <summary>
         /// List of unified commands
         /// </summary>
-        public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new Dictionary<string, CommandInfo>() { { "presets", new CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", new CommandArgumentInfo(), new PresetsUnifiedCommand()) }, { "exit", new CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", new CommandArgumentInfo(), new ExitUnifiedCommand()) }, { "help", new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, HelpUnifiedCommand.ListCmds), new HelpUnifiedCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new() { { "presets", new CommandInfo("presets", ShellType.Shell, "Opens the shell preset library", new CommandArgumentInfo(), new PresetsUnifiedCommand()) }, { "exit", new CommandInfo("exit", ShellType.Shell, "Exits the shell if running on subshell", new CommandArgumentInfo(), new ExitUnifiedCommand()) }, { "help", new CommandInfo("help", ShellType.Shell, "Help page", new CommandArgumentInfo(new[] { "[command]" }, false, 0, HelpUnifiedCommand.ListCmds), new HelpUnifiedCommand()) } };
 
         /// <summary>
         /// Current shell type

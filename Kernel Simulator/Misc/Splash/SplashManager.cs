@@ -39,8 +39,8 @@ namespace KS.Misc.Splash
     {
 
         public static string SplashName = "Simple";
-        internal static KernelThread SplashThread = new KernelThread("Kernel Splash Thread", false, () => CurrentSplash.Display());
-        private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new Dictionary<string, SplashInfo>()
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, () => CurrentSplash.Display());
+        private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },
             { "Progress", new SplashInfo("Progress", new SplashProgress()) },

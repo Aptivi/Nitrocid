@@ -60,9 +60,9 @@ namespace KS.Misc.Splash.Splashes
         private int IndicatorLeft;
         private int IndicatorTop;
         private bool Beginning = true;
-        private readonly Color OpenRCVersionColor = new Color(85, 255, 255);
-        private readonly Color OpenRCIndicatorColor = new Color((int)ConsoleColor.Green);
-        private readonly Color OpenRCPlaceholderColor = new Color(85, 85, 255);
+        private readonly Color OpenRCVersionColor = new(85, 255, 255);
+        private readonly Color OpenRCIndicatorColor = new((int)ConsoleColor.Green);
+        private readonly Color OpenRCPlaceholderColor = new(85, 85, 255);
 
         // Actual logic
         public void Opening()

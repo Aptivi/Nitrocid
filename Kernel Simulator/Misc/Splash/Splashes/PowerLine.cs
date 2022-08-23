@@ -63,7 +63,7 @@ namespace KS.Misc.Splash.Splashes
         private int PowerLineLength = 0;
         private bool LengthDecreasing;
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
-        private readonly Random RandomDriver = new Random();
+        private readonly Random RandomDriver = new();
 
         // Actual logic
         public void Opening()

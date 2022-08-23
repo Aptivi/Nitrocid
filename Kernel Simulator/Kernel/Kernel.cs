@@ -63,9 +63,9 @@ namespace KS.Kernel
         public static string HostName = "kernel";
         public readonly static string KernelVersion = GetExecutingAssembly().GetName().Version.ToString();
         public readonly static string NewLine = Environment.NewLine;
-        public readonly static Events.Events KernelEventManager = new Events.Events();
+        public readonly static Events.Events KernelEventManager = new();
         public readonly static string ExecutableDir = Environment.CurrentDirectory;
-        internal static Stopwatch StageTimer = new Stopwatch();
+        internal static Stopwatch StageTimer = new();
         internal static TextWriter DefConsoleOut;
 
         // #ifdef'd variables ... Framework monikers

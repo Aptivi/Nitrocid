@@ -32,7 +32,7 @@ namespace KS.Network.RSS.Instance
         private RSSFeedType _FeedType;
         private string _FeedTitle;
         private string _FeedDescription;
-        private List<RSSArticle> _FeedArticles = new List<RSSArticle>();
+        private List<RSSArticle> _FeedArticles = new();
 
         /// <summary>
         /// A URL to RSS feed

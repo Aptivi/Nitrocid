@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.SFTP
     public static class SFTPShellCommon
     {
 
-        public readonly static Dictionary<string, CommandInfo> SFTPCommands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> SFTPCommands = new()
         {
             { "connect", new CommandInfo("connect", ShellType.SFTPShell, "Connects to an SFTP server (it must start with \"sftp://\")", new CommandArgumentInfo(new[] { "<server>" }, true, 1), new SFTP_ConnectCommand()) },
             { "cdl", new CommandInfo("cdl", ShellType.SFTPShell, "Changes local directory to download to or upload from", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new SFTP_CdlCommand()) },
@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.SFTP
         internal static string SFTPSite;
         internal static string SFTPPass;
         internal static string SFTPUser;
-        internal readonly static Dictionary<string, CommandInfo> SFTPModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> SFTPModCommands = new();
 
         /// <summary>
         /// The SFTP client used to connect to the SFTP server

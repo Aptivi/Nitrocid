@@ -45,9 +45,9 @@ namespace KS.Network.Transfer
         public static bool UploadNotificationProvoke;
         internal static bool IsError;
         internal static Exception ReasonError;
-        internal static CancellationTokenSource CancellationToken = new CancellationTokenSource();
-        internal static ProgressMessageHandler WClientProgress = new ProgressMessageHandler(new HttpClientHandler());
-        internal static HttpClient WClient = new HttpClient(WClientProgress);
+        internal static CancellationTokenSource CancellationToken = new();
+        internal static ProgressMessageHandler WClientProgress = new(new HttpClientHandler());
+        internal static HttpClient WClient = new(WClientProgress);
         internal static string DownloadedString;
         internal static Notification DownloadNotif;
         internal static Notification UploadNotif;

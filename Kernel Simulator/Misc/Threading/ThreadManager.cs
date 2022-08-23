@@ -28,7 +28,7 @@ namespace KS.Misc.Threading
     public static class ThreadManager
     {
 
-        internal static List<KernelThread> KernelThreads = new List<KernelThread>();
+        internal static List<KernelThread> KernelThreads = new();
 
         /// <summary>
         /// Gets active threads

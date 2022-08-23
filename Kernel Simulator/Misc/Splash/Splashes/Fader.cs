@@ -56,7 +56,7 @@ namespace KS.Misc.Splash.Splashes
         }
 
         // Fader-specific variables
-        internal Random RandomDriver = new Random();
+        internal Random RandomDriver = new();
         internal Animations.Fader.FaderSettings FaderSettingsInstance;
 
         public SplashFader()

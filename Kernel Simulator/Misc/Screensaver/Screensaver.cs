@@ -48,7 +48,7 @@ namespace KS.Misc.Screensaver
         public readonly static ConsoleColors[] colors255 = (ConsoleColors[])Enum.GetValues(typeof(ConsoleColors));  // 255 Console Colors
 
         // Private variables
-        internal static Dictionary<string, BaseScreensaver> Screensavers = new Dictionary<string, BaseScreensaver>()
+        internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
             { "barrot", new BarRotDisplay() },
             { "beatfader", new BeatFaderDisplay() },
@@ -96,8 +96,8 @@ namespace KS.Misc.Screensaver
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() }
         };
-        internal static AutoResetEvent SaverAutoReset = new AutoResetEvent(false);
-        internal static KernelThread Timeout = new KernelThread("Screensaver timeout thread", false, HandleTimeout);
+        internal static AutoResetEvent SaverAutoReset = new(false);
+        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout);
 
         /// <summary>
         /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches

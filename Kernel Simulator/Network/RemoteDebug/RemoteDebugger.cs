@@ -41,9 +41,9 @@ namespace KS.Network.RemoteDebug
         public static int DebugPort = 3014;
         public static Socket RDebugClient;
         public static TcpListener DebugTCP;
-        public static List<RemoteDebugDevice> DebugDevices = new List<RemoteDebugDevice>();
-        public static KernelThread RDebugThread = new KernelThread("Remote Debug Thread", true, StartRDebugger);
-        public static List<string> RDebugBlocked = new List<string>(); // Blocked IP addresses
+        public static List<RemoteDebugDevice> DebugDevices = new();
+        public static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
+        public static List<string> RDebugBlocked = new(); // Blocked IP addresses
         public static bool RDebugStopping;
         public static bool RDebugAutoStart = true;
         public static string RDebugMessageFormat = "";

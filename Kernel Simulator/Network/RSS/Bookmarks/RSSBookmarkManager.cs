@@ -28,7 +28,7 @@ namespace KS.Network.RSS
     public static class RSSBookmarkManager
     {
 
-        private readonly static List<string> RssBookmarks = new List<string>();
+        private readonly static List<string> RssBookmarks = new();
 
         /// <summary>
         /// Adds the current RSS feed to the bookmarks

@@ -23,7 +23,7 @@ namespace KS.TimeDate
     public static class TimeDateConverters
     {
 
-        public readonly static DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        public readonly static DateTime UnixEpoch = new(1970, 1, 1, 0, 0, 0, 0);
 
         /// <summary>
         /// Converts the date to Unix time (seconds since 1970/1/1) (UTC)

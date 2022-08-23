@@ -32,7 +32,7 @@ namespace KS.Misc.Writers.DebugWriters
     {
 
         public static StreamWriter DebugStreamWriter;
-        public static List<string> DebugStackTraces = new List<string>();
+        public static List<string> DebugStackTraces = new();
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.

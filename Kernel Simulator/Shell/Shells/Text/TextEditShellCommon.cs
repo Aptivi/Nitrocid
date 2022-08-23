@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Text
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> TextEdit_Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> TextEdit_Commands = new()
         {
             { "addline", new CommandInfo("addline", ShellType.TextShell, "Adds a new line with text at the end of the file", new CommandArgumentInfo(new[] { "<text>" }, true, 1), new TextEdit_AddLineCommand()) },
             { "addlines", new CommandInfo("addlines", ShellType.TextShell, "Adds the new lines at the end of the file", new CommandArgumentInfo(), new TextEdit_AddLinesCommand()) },
@@ -52,10 +52,10 @@ namespace KS.Shell.Shells.Text
         };
         public static List<string> TextEdit_FileLines;
         public static FileStream TextEdit_FileStream;
-        public static KernelThread TextEdit_AutoSave = new KernelThread("Text Edit Autosave Thread", false, TextEditTools.TextEdit_HandleAutoSaveTextFile);
+        public static KernelThread TextEdit_AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.TextEdit_HandleAutoSaveTextFile);
         public static bool TextEdit_AutoSaveFlag = true;
         public static int TextEdit_AutoSaveInterval = 60;
-        internal readonly static Dictionary<string, CommandInfo> TextEdit_ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> TextEdit_ModCommands = new();
         internal static List<string> TextEdit_FileLinesOrig;
 
     }

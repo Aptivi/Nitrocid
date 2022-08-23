@@ -35,7 +35,7 @@ namespace KS.Misc.Execution
 
         internal static string ProcessData = "";
         internal static bool NewDataSpotted;
-        internal static KernelThread NewDataDetector = new KernelThread("New data detection for process", false, DetectNewData);
+        internal static KernelThread NewDataDetector = new("New data detection for process", false, DetectNewData);
 
         /// <summary>
         /// Thread parameters for ExecuteProcess()

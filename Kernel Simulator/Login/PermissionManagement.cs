@@ -33,7 +33,7 @@ namespace KS.Login
     public static class PermissionManagement
     {
 
-        internal static Dictionary<string, PermissionType> UserPermissions = new Dictionary<string, PermissionType>();
+        internal static Dictionary<string, PermissionType> UserPermissions = new();
 
         /// <summary>
         /// This enumeration lists all permission types.

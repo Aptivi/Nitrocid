@@ -26,12 +26,12 @@ namespace KS.Shell.Shells.UESH
 {
     public static class UESHShellCommon
     {
-        internal readonly static Dictionary<string, CommandInfo> ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> ModCommands = new();
 
         /// <summary>
         /// List of commands
         /// </summary>
-        public readonly static Dictionary<string, CommandInfo> Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> Commands = new()
         {
             {
                 "adduser",

@@ -85,13 +85,13 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        private readonly Color FirstColorSegmentForeground = new Color(85, 255, 255);
-        private readonly Color FirstColorSegmentBackground = new Color(43, 127, 127);
-        private readonly Color SecondColorSegmentForeground = new Color(0, 0, 0);
-        private readonly Color SecondColorSegmentBackground = new Color(85, 255, 255);
-        private readonly Color LastTransitionForeground = new Color(85, 255, 255);
+        private readonly Color FirstColorSegmentForeground = new(85, 255, 255);
+        private readonly Color FirstColorSegmentBackground = new(43, 127, 127);
+        private readonly Color SecondColorSegmentForeground = new(0, 0, 0);
+        private readonly Color SecondColorSegmentBackground = new(85, 255, 255);
+        private readonly Color LastTransitionForeground = new(85, 255, 255);
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
-        private readonly Random RandomDriver = new Random();
+        private readonly Random RandomDriver = new();
 
         // Actual logic
         public void Opening()

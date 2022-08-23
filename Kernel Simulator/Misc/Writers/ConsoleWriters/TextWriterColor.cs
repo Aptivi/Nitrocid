@@ -30,7 +30,7 @@ namespace KS.Misc.Writers.ConsoleWriters
     public static class TextWriterColor
     {
 
-        internal static object WriteLock = new object();
+        internal static object WriteLock = new();
 
         /// <summary>
         /// Outputs the text into the terminal prompt without colors

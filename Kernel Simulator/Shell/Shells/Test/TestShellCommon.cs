@@ -26,8 +26,8 @@ namespace KS.Shell.Shells.Test
     static class TestShellCommon
     {
 
-        internal readonly static Dictionary<string, CommandInfo> Test_ModCommands = new Dictionary<string, CommandInfo>();
-        public readonly static Dictionary<string, CommandInfo> Test_Commands = new Dictionary<string, CommandInfo>()
+        internal readonly static Dictionary<string, CommandInfo> Test_ModCommands = new();
+        public readonly static Dictionary<string, CommandInfo> Test_Commands = new()
         {
             { "print", new CommandInfo("print", ShellType.TestShell, "Prints a string to console using color type and line print", new CommandArgumentInfo(new[] { "<Color> <Line> <Message>" }, true, 3), new Test_PrintCommand()) },
             { "printf", new CommandInfo("printf", ShellType.TestShell, "Prints a string to console using color type and line print with format support", new CommandArgumentInfo(new[] { "<Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" }, true, 4), new Test_PrintFCommand()) },

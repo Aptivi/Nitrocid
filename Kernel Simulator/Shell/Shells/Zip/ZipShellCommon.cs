@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Zip
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> ZipShell_Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> ZipShell_Commands = new()
         {
             { "cdir", new CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", new CommandArgumentInfo(), new ZipShell_CDirCommand()) },
             { "chdir", new CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new ZipShell_ChDirCommand()) },
@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.Zip
             { "list", new CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new ZipShell_ListCommand()) },
             { "pack", new CommandInfo("pack", ShellType.ZIPShell, "Packs a local file to the archive", new CommandArgumentInfo(new[] { "<localfile> [where]" }, true, 1), new ZipShell_PackCommand()) }
         };
-        internal readonly static Dictionary<string, CommandInfo> ZipShell_ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> ZipShell_ModCommands = new();
         public static FileStream ZipShell_FileStream;
         public static ZipArchive ZipShell_ZipArchive;
         public static string ZipShell_CurrentDirectory;

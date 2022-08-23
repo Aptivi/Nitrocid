@@ -29,7 +29,7 @@ namespace KS.Misc.Screensaver.Customized
     public static class CustomSaverTools
     {
 
-        public static Dictionary<string, CustomSaverInfo> CustomSavers = new Dictionary<string, CustomSaverInfo>();
+        public static Dictionary<string, CustomSaverInfo> CustomSavers = new();
         public static JObject CustomSaverSettingsToken;
 
         /// <summary>

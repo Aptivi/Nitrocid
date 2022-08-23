@@ -32,7 +32,7 @@ namespace KS.Misc.Games
     static class Speller
     {
 
-        public static List<string> Words = new List<string>();
+        public static List<string> Words = new();
 
         /// <summary>
         /// Initializes the game

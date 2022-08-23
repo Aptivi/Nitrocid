@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Mail
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> MailCommands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> MailCommands = new()
         {
             { "cd", new CommandInfo("cd", ShellType.MailShell, "Changes current mail directory", new CommandArgumentInfo(new[] { "<folder>" }, true, 1), new Mail_CdCommand()) },
             { "lsdirs", new CommandInfo("lsdirs", ShellType.MailShell, "Lists directories in your mail address", new CommandArgumentInfo(), new Mail_LsDirsCommand()) },
@@ -56,8 +56,8 @@ namespace KS.Shell.Shells.Mail
         public static bool Mail_ShowProgress = true;
         public static string Mail_ProgressStyle = "";
         public static string Mail_ProgressStyleSingle = "";
-        public readonly static MailTransferProgress Mail_Progress = new MailTransferProgress();
-        internal readonly static Dictionary<string, CommandInfo> MailModCommands = new Dictionary<string, CommandInfo>();
+        public readonly static MailTransferProgress Mail_Progress = new();
+        internal readonly static Dictionary<string, CommandInfo> MailModCommands = new();
         internal static bool KeepAlive;
         internal static IEnumerable<UniqueId> IMAP_Messages;
 

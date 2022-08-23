@@ -33,9 +33,9 @@ namespace KS.TimeDate
     {
 
         // Variables
-        public static DateTime KernelDateTime = new DateTime();
-        public static DateTime KernelDateTimeUtc = new DateTime();
-        internal static KernelThread TimeDateChange = new KernelThread("Time/date updater thread", true, TimeDateChange_DoWork);
+        public static DateTime KernelDateTime = new();
+        public static DateTime KernelDateTimeUtc = new();
+        internal static KernelThread TimeDateChange = new("Time/date updater thread", true, TimeDateChange_DoWork);
 
         /// <summary>
         /// Specifies the time/date format type.

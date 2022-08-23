@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Json
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new Dictionary<string, CommandInfo>()
+        public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new()
         {
             { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue>" }, true, 3), new JsonShell_AddPropertyCommand()) },
             { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
@@ -43,12 +43,12 @@ namespace KS.Shell.Shells.Json
         };
         public static FileStream JsonShell_FileStream;
         public static JToken JsonShell_FileToken = JToken.Parse("{}");
-        public static KernelThread JsonShell_AutoSave = new KernelThread("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
+        public static KernelThread JsonShell_AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
         public static bool JsonShell_AutoSaveFlag = true;
         public static int JsonShell_AutoSaveInterval = 60;
         public static Formatting JsonShell_Formatting = Formatting.Indented;
         internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
-        internal readonly static Dictionary<string, CommandInfo> JsonShell_ModCommands = new Dictionary<string, CommandInfo>();
+        internal readonly static Dictionary<string, CommandInfo> JsonShell_ModCommands = new();
 
     }
 }

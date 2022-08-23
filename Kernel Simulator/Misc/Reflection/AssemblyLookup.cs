@@ -28,7 +28,7 @@ namespace KS.Misc.Reflection
     public static class AssemblyLookup
     {
 
-        private readonly static List<string> AssemblyLookupPaths = new List<string>();
+        private readonly static List<string> AssemblyLookupPaths = new();
 
         /// <summary>
         /// Adds the path pointing to the dependencies to the assembly search path

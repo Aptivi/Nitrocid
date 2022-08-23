@@ -31,7 +31,7 @@ namespace KS.Arguments
     {
 
         // Variables
-        internal static List<string> EnteredArguments = new List<string>();
+        internal static List<string> EnteredArguments = new();
 
         /// <summary>
         /// Prompts user for arguments

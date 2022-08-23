@@ -33,11 +33,11 @@ namespace KS.Misc.Games
         private static int SpaceshipHeight = 0;
         private static bool GameEnded = false;
         private readonly static int MaxBullets = 10;
-        private readonly static List<Tuple<int, int>> Bullets = new List<Tuple<int, int>>();
+        private readonly static List<Tuple<int, int>> Bullets = new();
         private readonly static int MaxMeteors = 10;
-        private readonly static List<Tuple<int, int>> Meteors = new List<Tuple<int, int>>();
-        private readonly static KernelThread MeteorDrawThread = new KernelThread("Meteor Shooter Draw Thread", true, DrawGame);
-        private readonly static Random RandomDriver = new Random();
+        private readonly static List<Tuple<int, int>> Meteors = new();
+        private readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
+        private readonly static Random RandomDriver = new();
 
         /// <summary>
         /// Initializes the Meteor game

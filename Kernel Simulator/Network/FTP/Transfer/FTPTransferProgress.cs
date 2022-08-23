@@ -30,11 +30,11 @@ namespace KS.Network.FTP.Transfer
         /// <summary>
         /// Action of file progress. You can make your own handler by mods
         /// </summary>
-        public static Action<FtpProgress> FileProgress = new Action<FtpProgress>(FileProgressHandler);
+        public static Action<FtpProgress> FileProgress = new(FileProgressHandler);
         /// <summary>
         /// Action of folder/multiple file progress. You can make your own handler by mods
         /// </summary>
-        public static Action<FtpProgress> MultipleProgress = new Action<FtpProgress>(MultipleProgressHandler);
+        public static Action<FtpProgress> MultipleProgress = new(MultipleProgressHandler);
 
         /// <summary>
         /// Handles the individual file download/upload progress

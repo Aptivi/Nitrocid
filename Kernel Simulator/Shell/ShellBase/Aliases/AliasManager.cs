@@ -38,20 +38,20 @@ namespace KS.Shell.ShellBase.Aliases
     public static class AliasManager
     {
 
-        internal static Dictionary<string, string> Aliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> RemoteDebugAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> FTPShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> MailShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> SFTPShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> TextShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> TestShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> ZIPShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> RSSShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> JsonShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> HTTPShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> HexShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, string> RARShellAliases = new Dictionary<string, string>();
-        internal static Dictionary<string, ShellType> AliasesToBeRemoved = new Dictionary<string, ShellType>();
+        internal static Dictionary<string, string> Aliases = new();
+        internal static Dictionary<string, string> RemoteDebugAliases = new();
+        internal static Dictionary<string, string> FTPShellAliases = new();
+        internal static Dictionary<string, string> MailShellAliases = new();
+        internal static Dictionary<string, string> SFTPShellAliases = new();
+        internal static Dictionary<string, string> TextShellAliases = new();
+        internal static Dictionary<string, string> TestShellAliases = new();
+        internal static Dictionary<string, string> ZIPShellAliases = new();
+        internal static Dictionary<string, string> RSSShellAliases = new();
+        internal static Dictionary<string, string> JsonShellAliases = new();
+        internal static Dictionary<string, string> HTTPShellAliases = new();
+        internal static Dictionary<string, string> HexShellAliases = new();
+        internal static Dictionary<string, string> RARShellAliases = new();
+        internal static Dictionary<string, ShellType> AliasesToBeRemoved = new();
 
         /// <summary>
         /// Initializes aliases

@@ -42,9 +42,9 @@ namespace KS.Network.Mail
     {
 
         // Variables
-        public static ImapClient IMAP_Client = new ImapClient();
-        public static SmtpClient SMTP_Client = new SmtpClient();
-        internal static NetworkCredential Mail_Authentication = new NetworkCredential();
+        public static ImapClient IMAP_Client = new();
+        public static SmtpClient SMTP_Client = new();
+        internal static NetworkCredential Mail_Authentication = new();
         public static string Mail_UserPromptStyle = "";
         public static string Mail_PassPromptStyle = "";
         public static string Mail_IMAPPromptStyle = "";

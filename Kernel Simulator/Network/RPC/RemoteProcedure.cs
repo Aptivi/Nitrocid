@@ -33,7 +33,7 @@ namespace KS.Network.RPC
         public static UdpClient RPCListen;
         public static int RPCPort = 12345;
         public static bool RPCEnabled = true;
-        internal static KernelThread RPCThread = new KernelThread("RPC Thread", true, RPCCommands.ReceiveCommand);
+        internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand);
 
         /// <summary>
         /// Whether the RPC started

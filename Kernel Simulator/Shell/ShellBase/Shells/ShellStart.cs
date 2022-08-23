@@ -39,7 +39,7 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellStart
     {
 
-        internal static List<ShellInfo> ShellStack = new List<ShellInfo>();
+        internal static List<ShellInfo> ShellStack = new();
 
         /// <summary>
         /// Starts the shell

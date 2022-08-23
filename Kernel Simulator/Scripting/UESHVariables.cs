@@ -29,7 +29,7 @@ namespace KS.Scripting
     public static class UESHVariables
     {
 
-        internal static Dictionary<string, string> ShellVariables = new Dictionary<string, string>() { { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) } };
+        internal static Dictionary<string, string> ShellVariables = new() { { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) } };
 
         /// <summary>
         /// Checks to see if the variable name starts with the correct format

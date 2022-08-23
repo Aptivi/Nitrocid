@@ -39,7 +39,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <summary>
         /// Alternative shell command threads
         /// </summary>
-        protected internal readonly List<KernelThread> AltCommandThreads = new List<KernelThread>();
+        protected internal readonly List<KernelThread> AltCommandThreads = new();
 
         /// <summary>
         /// Installs the values to a new instance of ShellInfo

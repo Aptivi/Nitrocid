@@ -41,8 +41,8 @@ namespace KS.Languages
 
         // Variables
         public static string CurrentLanguage = "eng"; // Default to English
-        internal static Dictionary<string, LanguageInfo> BaseLanguages = new Dictionary<string, LanguageInfo>();
-        internal static Dictionary<string, LanguageInfo> CustomLanguages = new Dictionary<string, LanguageInfo>();
+        internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
+        internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         private static bool NotifyCodepageError;
         private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
 

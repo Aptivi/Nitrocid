@@ -50,7 +50,7 @@ namespace KS.Login
         /// <summary>
         /// List of usernames and passwords
         /// </summary>
-        internal static Dictionary<string, string> Users = new Dictionary<string, string>();
+        internal static Dictionary<string, string> Users = new();
         /// <summary>
         /// Current username
         /// </summary>
