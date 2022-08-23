@@ -41,7 +41,7 @@ namespace KS.Misc.Reflection
             foreach (Type PossibleType in PossibleTypes)
             {
                 PossibleMethod = PossibleType.GetMethod(Method);
-                if (PossibleMethod is not null)
+                if (PossibleMethod != null)
                     return PossibleMethod;
             }
             return null;
