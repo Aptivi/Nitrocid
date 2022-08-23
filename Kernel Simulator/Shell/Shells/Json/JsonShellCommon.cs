@@ -32,7 +32,15 @@ namespace KS.Shell.Shells.Json
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new Dictionary<string, CommandInfo>() { { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue>" }, true, 3), new JsonShell_AddPropertyCommand()) }, { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) }, { "delproperty", new CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) }, { "exitnosave", new CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", new CommandArgumentInfo(), new JsonShell_ExitNoSaveCommand()) }, { "print", new CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) }, { "save", new CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> JsonShell_Commands = new Dictionary<string, CommandInfo>()
+        {
+            { "addproperty", new CommandInfo("addproperty", ShellType.JsonShell, "Adds a new property at the end of the JSON file", new CommandArgumentInfo(new[] { "<parentProperty> <propertyName> <propertyValue>" }, true, 3), new JsonShell_AddPropertyCommand()) },
+            { "clear", new CommandInfo("clear", ShellType.JsonShell, "Clears the JSON file", new CommandArgumentInfo(), new JsonShell_ClearCommand()) },
+            { "delproperty", new CommandInfo("delproperty", ShellType.JsonShell, "Removes a property from the JSON file", new CommandArgumentInfo(new[] { "<propertyName>" }, true, 1), new JsonShell_DelPropertyCommand()) },
+            { "exitnosave", new CommandInfo("exitnosave", ShellType.JsonShell, "Exits the JSON shell without saving the changes", new CommandArgumentInfo(), new JsonShell_ExitNoSaveCommand()) },
+            { "print", new CommandInfo("print", ShellType.JsonShell, "Prints the JSON file", new CommandArgumentInfo(new[] { "[property]" }, false, 0), new JsonShell_PrintCommand()) },
+            { "save", new CommandInfo("save", ShellType.JsonShell, "Saves the JSON file", new CommandArgumentInfo(new[] { "[-b|-m]" }, false, 0), new JsonShell_SaveCommand()) }
+        };
         public static FileStream JsonShell_FileStream;
         public static JToken JsonShell_FileToken = JToken.Parse("{}");
         public static KernelThread JsonShell_AutoSave = new KernelThread("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);

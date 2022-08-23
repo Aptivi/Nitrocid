@@ -29,7 +29,15 @@ namespace KS.Shell.Shells.Zip
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> ZipShell_Commands = new Dictionary<string, CommandInfo>() { { "cdir", new CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", new CommandArgumentInfo(), new ZipShell_CDirCommand()) }, { "chdir", new CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new ZipShell_ChDirCommand()) }, { "chadir", new CommandInfo("chadir", ShellType.ZIPShell, "Changes archive directory", new CommandArgumentInfo(new[] { "<archivedirectory>" }, true, 1), new ZipShell_ChADirCommand()) }, { "get", new CommandInfo("get", ShellType.ZIPShell, "Extracts a file to a specified directory or a current directory", new CommandArgumentInfo(new[] { "<entry> [where] [-absolute]" }, true, 1), new ZipShell_GetCommand()) }, { "list", new CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new ZipShell_ListCommand()) }, { "pack", new CommandInfo("pack", ShellType.ZIPShell, "Packs a local file to the archive", new CommandArgumentInfo(new[] { "<localfile> [where]" }, true, 1), new ZipShell_PackCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> ZipShell_Commands = new Dictionary<string, CommandInfo>()
+        {
+            { "cdir", new CommandInfo("cdir", ShellType.ZIPShell, "Gets current local directory", new CommandArgumentInfo(), new ZipShell_CDirCommand()) },
+            { "chdir", new CommandInfo("chdir", ShellType.ZIPShell, "Changes directory", new CommandArgumentInfo(new[] { "<directory>" }, true, 1), new ZipShell_ChDirCommand()) },
+            { "chadir", new CommandInfo("chadir", ShellType.ZIPShell, "Changes archive directory", new CommandArgumentInfo(new[] { "<archivedirectory>" }, true, 1), new ZipShell_ChADirCommand()) },
+            { "get", new CommandInfo("get", ShellType.ZIPShell, "Extracts a file to a specified directory or a current directory", new CommandArgumentInfo(new[] { "<entry> [where] [-absolute]" }, true, 1), new ZipShell_GetCommand()) },
+            { "list", new CommandInfo("list", ShellType.ZIPShell, "Lists all files inside the archive", new CommandArgumentInfo(new[] { "[directory]" }, false, 0), new ZipShell_ListCommand()) },
+            { "pack", new CommandInfo("pack", ShellType.ZIPShell, "Packs a local file to the archive", new CommandArgumentInfo(new[] { "<localfile> [where]" }, true, 1), new ZipShell_PackCommand()) }
+        };
         internal readonly static Dictionary<string, CommandInfo> ZipShell_ModCommands = new Dictionary<string, CommandInfo>();
         public static FileStream ZipShell_FileStream;
         public static ZipArchive ZipShell_ZipArchive;

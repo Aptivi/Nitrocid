@@ -27,7 +27,13 @@ namespace KS.Shell.Shells.HTTP
     public static class HTTPShellCommon
     {
 
-        public readonly static Dictionary<string, CommandInfo> HTTPCommands = new Dictionary<string, CommandInfo>() { { "delete", new CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) }, { "get", new CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) }, { "getstring", new CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) }, { "setsite", new CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> HTTPCommands = new Dictionary<string, CommandInfo>()
+        {
+            { "delete", new CommandInfo("delete", ShellType.HTTPShell, "Deletes content from HTTP server", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_DeleteCommand()) },
+            { "get", new CommandInfo("get", ShellType.HTTPShell, "Gets the response from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetCommand()) },
+            { "getstring", new CommandInfo("getstring", ShellType.HTTPShell, "Gets the string from the HTTP server using the specified request", new CommandArgumentInfo(new[] { "<request>" }, true, 1), new HTTP_GetStringCommand()) },
+            { "setsite", new CommandInfo("setsite", ShellType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", new CommandArgumentInfo(new[] { "<uri>" }, true, 1), new HTTP_SetSiteCommand()) }
+        };
         public static string HTTPSite;
         public static string HTTPShellPromptStyle = "";
         public static HttpClient ClientHTTP = new HttpClient();

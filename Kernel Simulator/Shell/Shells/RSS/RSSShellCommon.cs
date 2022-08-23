@@ -32,7 +32,18 @@ namespace KS.Shell.Shells.RSS
     {
 
         // Variables
-        public readonly static Dictionary<string, CommandInfo> RSSCommands = new Dictionary<string, CommandInfo>() { { "articleinfo", new CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ArticleInfoCommand()) }, { "bookmark", new CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", new CommandArgumentInfo(), new RSS_BookmarkCommand()) }, { "chfeed", new CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", new CommandArgumentInfo(new[] { "[-bookmark] <feedurl/bookmarknumber>" }, true, 1), new RSS_ChFeedCommand()) }, { "feedinfo", new CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", new CommandArgumentInfo(), new RSS_FeedInfoCommand()) }, { "list", new CommandInfo("list", ShellType.RSSShell, "Lists all feeds", new CommandArgumentInfo(), new RSS_ListCommand()) }, { "listbookmark", new CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", new CommandArgumentInfo(), new RSS_ListBookmarkCommand()) }, { "read", new CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ReadCommand()) }, { "selfeed", new CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", new CommandArgumentInfo(), new RSS_SelFeedCommand()) }, { "unbookmark", new CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> RSSCommands = new Dictionary<string, CommandInfo>()
+        {
+            { "articleinfo", new CommandInfo("articleinfo", ShellType.RSSShell, "Gets the article info", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ArticleInfoCommand()) },
+            { "bookmark", new CommandInfo("bookmark", ShellType.RSSShell, "Bookmarks the feed", new CommandArgumentInfo(), new RSS_BookmarkCommand()) },
+            { "chfeed", new CommandInfo("chfeed", ShellType.RSSShell, "Changes the feed link", new CommandArgumentInfo(new[] { "[-bookmark] <feedurl/bookmarknumber>" }, true, 1), new RSS_ChFeedCommand()) },
+            { "feedinfo", new CommandInfo("feedinfo", ShellType.RSSShell, "Gets the feed info", new CommandArgumentInfo(), new RSS_FeedInfoCommand()) },
+            { "list", new CommandInfo("list", ShellType.RSSShell, "Lists all feeds", new CommandArgumentInfo(), new RSS_ListCommand()) },
+            { "listbookmark", new CommandInfo("listbookmark", ShellType.RSSShell, "Lists all bookmarked feeds", new CommandArgumentInfo(), new RSS_ListBookmarkCommand()) },
+            { "read", new CommandInfo("read", ShellType.RSSShell, "Reads a feed in a web browser", new CommandArgumentInfo(new[] { "<feednum>" }, true, 1), new RSS_ReadCommand()) },
+            { "selfeed", new CommandInfo("selfeed", ShellType.RSSShell, "Selects the feed from the existing feed list from online sources", new CommandArgumentInfo(), new RSS_SelFeedCommand()) },
+            { "unbookmark", new CommandInfo("unbookmark", ShellType.RSSShell, "Removes the feed bookmark", new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) }
+        };
         public static RSSFeed RSSFeedInstance;
         public static string RSSFeedUrlPromptStyle = "";
         public static int RSSFetchTimeout = 60000;
