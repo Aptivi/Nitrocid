@@ -51,7 +51,6 @@ namespace KSTests.ShellTests
             CommandInstance.Type.ShouldBe(ShellType.Shell);
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.Wrappable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
