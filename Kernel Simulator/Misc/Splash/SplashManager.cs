@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Extensification.DictionaryExts;
 using KS.Files;
@@ -80,13 +81,12 @@ namespace KS.Misc.Splash
         /// <summary>
         /// All the installed splashes either normal or custom
         /// </summary>
-        public static Dictionary<string, SplashInfo> Splashes
-        {
-            get
-            {
-                return InstalledSplashes;
-            }
-        }
+        public static Dictionary<string, SplashInfo> Splashes => InstalledSplashes;
+
+        /// <summary>
+        /// Gets names of the installed splashes
+        /// </summary>
+        public static List<string> GetNamesOfSplashes() => Splashes.Keys.ToList();
 
         /// <summary>
         /// Loads all the splashes from the KSSplashes folder

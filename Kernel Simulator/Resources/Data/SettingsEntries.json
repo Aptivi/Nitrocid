@@ -117,8 +117,12 @@
             },
             {
                 "Name": "Splash name",
-                "Type": "SString",
+                "Type": "SSelection",
                 "Variable": "SplashName",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetNamesOfSplashes",
+                "SelectionFunctionType": "SplashManager",
+                "SelectionFallback": [ "Simple" ],
                 "Description": "Splash name from the available splashes implemented in the kernel."
             },
             {
