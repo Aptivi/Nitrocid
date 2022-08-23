@@ -66,3 +66,7 @@ It seems that `ListArgs()` is now no longer a reliable way to check for argument
 ##### Moved `GetEsc()` to `Misc.Text.CharManager`
 
 `GetEsc()` is now widely used for color manipulation, but we need to move it to a better place as migration to `ColorSeq` is done. We have deleted `Color255` from `KS.ConsoleBase` as a result of this migration.
+
+##### Removed FullArgumentList
+
+Following the removal of `ListArgs()`, we can safely remove this property.
