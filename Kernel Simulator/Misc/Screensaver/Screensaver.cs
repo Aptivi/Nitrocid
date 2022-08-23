@@ -75,6 +75,7 @@ namespace KS.Misc.Screensaver
             { "gradientrot", new GradientRotDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
             { "lighter", new LighterDisplay() },
+            { "lightspeed", new LightspeedDisplay() },
             { "lines", new LinesDisplay() },
             { "linotypo", new LinotypoDisplay() },
             { "marquee", new MarqueeDisplay() },
