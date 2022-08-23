@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.Rar
                         Kernel.Kernel.KernelEventManager.RaiseRarPostExecuteCommand(WrittenCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

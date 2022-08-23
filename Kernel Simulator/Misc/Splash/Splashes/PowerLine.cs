@@ -119,7 +119,7 @@ namespace KS.Misc.Splash.Splashes
                     Thread.Sleep(10);
                 }
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Splash done.");
             }

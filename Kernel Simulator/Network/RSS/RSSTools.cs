@@ -283,7 +283,7 @@ namespace KS.Network.RSS
                     Thread.Sleep(RSSShellCommon.RSSRefreshInterval);
                 }
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
                 DebugWriter.Wdbg(DebugLevel.W, "Aborting refresher...");
             }

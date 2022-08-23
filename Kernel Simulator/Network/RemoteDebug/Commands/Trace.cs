@@ -37,7 +37,7 @@ namespace KS.Network.RemoteDebug.Commands
                     {
                         SocketStreamWriter.WriteLine(DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])]);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         SocketStreamWriter.WriteLine(Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), ListArgsOnly[0], DebugWriter.DebugStackTraces.Count);
                     }

@@ -108,7 +108,7 @@ namespace KS.ConsoleBase.Themes
                 // Raise event
                 Kernel.Kernel.KernelEventManager.RaiseThemeSet(ThemeFile);
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
                 DebugWriter.Wdbg(DebugLevel.E, "Theme not found.");
@@ -206,7 +206,7 @@ namespace KS.ConsoleBase.Themes
                 SetColorsTheme(ThemeInfo);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

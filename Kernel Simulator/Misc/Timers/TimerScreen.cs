@@ -259,7 +259,7 @@ namespace KS.Misc.Timers
                         TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, ColorTools.ColTypes.Neutral);
                     }
                 }
-                catch (ThreadInterruptedException ex)
+                catch (ThreadInterruptedException)
                 {
                     break;
                 }

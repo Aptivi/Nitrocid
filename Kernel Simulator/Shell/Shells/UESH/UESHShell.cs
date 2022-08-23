@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.UESH
                             Kernel.Kernel.KernelEventManager.RaisePostExecuteCommand(strcommand);
                         }
                     }
-                    catch (ThreadInterruptedException taex)
+                    catch (ThreadInterruptedException)
                     {
                         Flags.CancelRequested = false;
                         Bail = true;

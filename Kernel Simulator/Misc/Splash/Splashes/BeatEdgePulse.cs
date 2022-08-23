@@ -100,7 +100,7 @@ namespace KS.Misc.Splash.Splashes
                 while (!SplashClosing)
                     BeatEdgePulse.Simulate(BeatEdgePulseSettings);
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Splash done.");
             }

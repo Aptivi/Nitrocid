@@ -349,7 +349,7 @@ namespace KS.ConsoleBase.Colors
                 SetColors(InputColor, LicenseColor, ContKernelErrorColor, UncontKernelErrorColor, HostNameShellColor, UserNameShellColor, BackgroundColor, NeutralTextColor, ListEntryColor, ListValueColor, StageColor, ErrorColor, WarningColor, OptionColor, BannerColor, NotificationTitleColor, NotificationDescriptionColor, NotificationProgressColor, NotificationFailureColor, QuestionColor, SuccessColor, UserDollarColor, TipColor, SeparatorTextColor, SeparatorColor, ListTitleColor, DevelopmentWarningColor, StageTimeColor, ProgressColor, BackOptionColor, LowPriorityBorderColor, MediumPriorityBorderColor, HighPriorityBorderColor, TableSeparatorColor, TableHeaderColor, TableValueColor, SelectedOptionColor, AlternativeOptionColor);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -635,7 +635,7 @@ namespace KS.ConsoleBase.Colors
                 SetInputColor();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -938,7 +938,7 @@ namespace KS.ConsoleBase.Colors
                 SetConsoleColor(colorType, Background);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -957,7 +957,7 @@ namespace KS.ConsoleBase.Colors
                 SetConsoleColor(ColorSequence, Background);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

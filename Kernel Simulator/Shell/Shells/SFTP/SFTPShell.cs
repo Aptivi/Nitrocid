@@ -122,7 +122,7 @@ namespace KS.Shell.Shells.SFTP
                         Kernel.Kernel.KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

@@ -135,7 +135,7 @@ namespace KS.Misc.Games
                         TextWriterColor.Write(Translate.DoTranslation("You've pressed the wrong character."), true, ColorTools.ColTypes.Warning);
                     }
                 }
-                catch (Kernel.Exceptions.ConsoleReadTimeoutException ex)
+                catch (Kernel.Exceptions.ConsoleReadTimeoutException)
                 {
                     Console.WriteLine();
                     TextWriterColor.Write(Translate.DoTranslation("Character not pressed on time."), true, ColorTools.ColTypes.Warning);

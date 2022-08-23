@@ -103,7 +103,7 @@ namespace KS.Shell.Shells.Hex
                         Kernel.Kernel.KernelEventManager.RaiseHexPostExecuteCommand(WrittenCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

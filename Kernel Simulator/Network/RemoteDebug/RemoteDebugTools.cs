@@ -287,7 +287,7 @@ namespace KS.Network.RemoteDebug
                 SetDeviceProperty(DeviceIP, DeviceProperty, Value);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -326,7 +326,7 @@ namespace KS.Network.RemoteDebug
                 AddDeviceToJson(DeviceIP, ThrowException);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -363,7 +363,7 @@ namespace KS.Network.RemoteDebug
                 RemoveDeviceFromJson(DeviceIP);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

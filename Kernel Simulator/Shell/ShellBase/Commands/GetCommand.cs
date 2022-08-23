@@ -124,7 +124,7 @@ namespace KS.Shell.ShellBase.Commands
                     CommandBase.Execute(StrArgs, Args, Switches);
                 }
             }
-            catch (ThreadInterruptedException taex)
+            catch (ThreadInterruptedException)
             {
                 Flags.CancelRequested = false;
                 return;

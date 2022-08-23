@@ -212,7 +212,7 @@ namespace KS.Misc.Timers
                         NewLapAcknowledged = false;
                     }
                 }
-                catch (ThreadInterruptedException ex)
+                catch (ThreadInterruptedException)
                 {
                     break;
                 }

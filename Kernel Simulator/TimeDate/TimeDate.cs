@@ -76,7 +76,7 @@ namespace KS.TimeDate
                         TextWriterWhereColor.WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, true, ColorTools.ColTypes.Neutral);
                 }
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
                 DebugWriter.Wdbg(DebugLevel.W, "Aborting time/date change thread.");
             }

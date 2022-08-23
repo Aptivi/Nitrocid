@@ -181,7 +181,7 @@ namespace KS.Login
                 AddPermission(PermType, Username);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -262,7 +262,7 @@ namespace KS.Login
                 RemovePermission(PermType, Username);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -318,7 +318,7 @@ namespace KS.Login
                 PermissionEditForNewUser(OldName, Username);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -349,7 +349,7 @@ namespace KS.Login
                 InitPermissionsForNewUser(NewUser);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -401,7 +401,7 @@ namespace KS.Login
                 LoadPermissions();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

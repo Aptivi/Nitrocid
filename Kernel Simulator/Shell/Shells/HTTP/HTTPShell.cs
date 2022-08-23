@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.HTTP
                         Kernel.Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HttpCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

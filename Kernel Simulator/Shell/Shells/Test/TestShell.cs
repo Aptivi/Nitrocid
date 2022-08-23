@@ -80,7 +80,7 @@ namespace KS.Shell.Shells.Test
                         Kernel.Kernel.KernelEventManager.RaiseTestPostExecuteCommand(FullCmd);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

@@ -178,7 +178,7 @@ namespace KS.Network.RemoteDebug
                         }
                     }
                 }
-                catch (ThreadInterruptedException ae)
+                catch (ThreadInterruptedException)
                 {
                     break;
                 }

@@ -204,7 +204,7 @@ namespace KS.Misc.Games
                     ThreadManager.SleepNoBlock(MeteorSpeed, MeteorDrawThread);
                 }
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
             }
             // Game is over. Move to the Finally block.

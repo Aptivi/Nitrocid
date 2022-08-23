@@ -63,7 +63,7 @@ namespace KS.Misc.Calendar.Events
                         }
                     }
                 }
-                catch (ThreadInterruptedException ex)
+                catch (ThreadInterruptedException)
                 {
                     DebugWriter.Wdbg(DebugLevel.I, "Aborting event listener...");
                     return;

@@ -70,7 +70,7 @@ namespace KS.Files.PathLookup
                 AddToPathLookup(Path);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -87,7 +87,7 @@ namespace KS.Files.PathLookup
                 AddToPathLookup(Path, RootPath);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -129,7 +129,7 @@ namespace KS.Files.PathLookup
                 RemoveFromPathLookup(Path);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -146,7 +146,7 @@ namespace KS.Files.PathLookup
                 RemoveFromPathLookup(Path, RootPath);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

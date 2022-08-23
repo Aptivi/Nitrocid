@@ -44,7 +44,7 @@ namespace KS.Misc.Screensaver
                 while (!OutOfRandom)
                     Screensaver.ScreensaverLogic();
             }
-            catch (ThreadInterruptedException taex)
+            catch (ThreadInterruptedException)
             {
                 Misc.Screensaver.Screensaver.HandleSaverCancel();
                 OutOfRandom = true;

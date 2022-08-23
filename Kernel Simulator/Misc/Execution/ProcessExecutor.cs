@@ -139,7 +139,7 @@ namespace KS.Misc.Execution
                 NewDataSpotted = true;
                 return CommandProcess.ExitCode;
             }
-            catch (ThreadInterruptedException taex)
+            catch (ThreadInterruptedException)
             {
                 Flags.CancelRequested = false;
                 return -1;

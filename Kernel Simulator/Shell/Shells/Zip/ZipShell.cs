@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.Zip
                         Kernel.Kernel.KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

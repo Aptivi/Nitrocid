@@ -374,7 +374,7 @@ namespace KS.Login
                 RemoveUser(user);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -437,7 +437,7 @@ namespace KS.Login
                 ChangeUsername(OldName, Username);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -520,7 +520,7 @@ namespace KS.Login
                 ChangePassword(Target, CurrentPass, NewPass);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

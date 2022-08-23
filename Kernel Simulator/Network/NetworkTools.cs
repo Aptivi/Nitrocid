@@ -192,7 +192,7 @@ namespace KS.Network
                 AddEntryToSpeedDial(Address, Port, User, SpeedDialType, EncryptionMode, ThrowException);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

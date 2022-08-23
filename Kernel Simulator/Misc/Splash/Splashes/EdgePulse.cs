@@ -94,7 +94,7 @@ namespace KS.Misc.Splash.Splashes
                 while (!SplashClosing)
                     EdgePulse.Simulate(EdgePulseSettings);
             }
-            catch (ThreadInterruptedException ex)
+            catch (ThreadInterruptedException)
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Splash done.");
             }

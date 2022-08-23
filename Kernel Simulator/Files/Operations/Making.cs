@@ -66,7 +66,7 @@ namespace KS.Files.Operations
                 MakeDirectory(NewDirectory, ThrowIfDirectoryExists);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -119,7 +119,7 @@ namespace KS.Files.Operations
                 MakeFile(NewFile, ThrowIfFileExists);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -175,7 +175,7 @@ namespace KS.Files.Operations
                 MakeJsonFile(NewFile, ThrowIfFileExists);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

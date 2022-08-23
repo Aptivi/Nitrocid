@@ -65,7 +65,7 @@ namespace KS.Misc.Calendar.Reminders
                         }
                     }
                 }
-                catch (ThreadInterruptedException ex)
+                catch (ThreadInterruptedException)
                 {
                     DebugWriter.Wdbg(DebugLevel.I, "Aborting reminder listener...");
                     return;

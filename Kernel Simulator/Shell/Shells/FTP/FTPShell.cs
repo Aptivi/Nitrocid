@@ -129,7 +129,7 @@ namespace KS.Shell.Shells.FTP
                         Kernel.Kernel.KernelEventManager.RaiseFTPPostExecuteCommand(FtpCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

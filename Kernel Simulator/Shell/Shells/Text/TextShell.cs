@@ -100,7 +100,7 @@ namespace KS.Shell.Shells.Text
                         Kernel.Kernel.KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;

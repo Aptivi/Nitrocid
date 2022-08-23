@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.RSS
                             }
                             BailFromEnter = true;
                         }
-                        catch (ThreadInterruptedException taex)
+                        catch (ThreadInterruptedException)
                         {
                             Flags.CancelRequested = false;
                             BailFromEnter = true;
@@ -122,7 +122,7 @@ namespace KS.Shell.Shells.RSS
                         OldRSSFeedLink = RSSShellCommon.RSSFeedLink;
                         BailFromEnter = true;
                     }
-                    catch (ThreadInterruptedException taex)
+                    catch (ThreadInterruptedException)
                     {
                         Flags.CancelRequested = false;
                         BailFromEnter = true;
@@ -170,7 +170,7 @@ namespace KS.Shell.Shells.RSS
                         Kernel.Kernel.KernelEventManager.RaiseRSSPostExecuteCommand(RSSShellCommon.RSSFeedLink, WrittenCommand);
                     }
                 }
-                catch (ThreadInterruptedException taex)
+                catch (ThreadInterruptedException)
                 {
                     Flags.CancelRequested = false;
                     Bail = true;
