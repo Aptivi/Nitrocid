@@ -45,7 +45,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(Console.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
                 TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " ".Repeat(Console.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
                 TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(Console.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
-                TextWriterWhereColor.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
+                TextWriterWhereColor.WriteWherePlain("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
