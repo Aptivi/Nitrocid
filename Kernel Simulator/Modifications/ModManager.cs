@@ -87,7 +87,6 @@ namespace KS.Modifications
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", modFile);
                             SplashReport.ReportProgress("[{1}/{2}] " + Translate.DoTranslation("Starting mod") + " {0}...", 0, ColorTools.ColTypes.Progress, modFile, CurrentCount.ToString(), count.ToString());
-                            modFile = modFile;
                             ModParser.ParseMod(modFile);
                         }
                         else
@@ -449,7 +448,7 @@ namespace KS.Modifications
                     }
                     catch (Kernel.Exceptions.ModInstallException ex)
                     {
-                        throw;
+                        throw ex;
                     }
                 }
 
