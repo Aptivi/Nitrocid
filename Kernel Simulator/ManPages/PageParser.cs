@@ -134,7 +134,7 @@ namespace KS.ManPages
                                 }
                                 ManTitle = Title;
                             }
-                            else if (ManLine == "-BODY START-")
+                            else if (ManLine == BodyStartConstant)
                             {
                                 BodyParsing = true;
                             }
