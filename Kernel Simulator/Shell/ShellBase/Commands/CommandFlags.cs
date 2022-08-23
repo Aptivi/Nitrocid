@@ -32,24 +32,20 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         Strict = 1,
         /// <summary>
-        /// The command is wrappable.
-        /// </summary>
-        Wrappable = 2,
-        /// <summary>
         /// This command can't run in maintenance mode.
         /// </summary>
-        NoMaintenance = 4,
+        NoMaintenance = 2,
         /// <summary>
         /// The command is obsolete.
         /// </summary>
-        Obsolete = 8,
+        Obsolete = 4,
         /// <summary>
         /// The command is setting a variable.
         /// </summary>
-        SettingVariable = 16,
+        SettingVariable = 8,
         /// <summary>
         /// Redirection is supported, meaning that all the output to the commands can be redirected to a file.
         /// </summary>
-        RedirectionSupported = 32
+        RedirectionSupported = 16
     }
 }

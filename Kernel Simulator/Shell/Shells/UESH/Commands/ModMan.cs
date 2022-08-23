@@ -142,8 +142,6 @@ namespace KS.Shell.Shells.UESH.Commands
                                                 TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Type.ToString(), true, ColorTools.ColTypes.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Strict command?") + " ", false, ColorTools.ColTypes.ListEntry);
                                                 TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Strict).ToString(), true, ColorTools.ColTypes.ListValue);
-                                                TextWriterColor.Write("- " + Translate.DoTranslation("Wrappable command?") + " ", false, ColorTools.ColTypes.ListEntry);
-                                                TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.Wrappable).ToString(), true, ColorTools.ColTypes.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Setting shell variable?") + " ", false, ColorTools.ColTypes.ListEntry);
                                                 TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].Flags.HasFlag(CommandFlags.SettingVariable).ToString(), true, ColorTools.ColTypes.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Can not run in maintenance mode?") + " ", false, ColorTools.ColTypes.ListEntry);

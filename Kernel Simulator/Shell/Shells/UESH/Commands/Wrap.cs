@@ -43,6 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string CommandToBeWrapped = ListArgsOnly[0].Split(' ')[0];
             if (UESHShellCommon.Commands.ContainsKey(CommandToBeWrapped))
             {
+                /*
                 if (UESHShellCommon.Commands[CommandToBeWrapped].Flags.HasFlag(CommandFlags.Wrappable))
                 {
                     string WrapOutputPath = Paths.TempPath + "/wrapoutput.txt";
@@ -71,6 +72,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", true, ColorTools.ColTypes.Error, string.Join(", ", WrappableCmds.ToArray()));
                 }
+                */
             }
             else
             {
@@ -84,8 +86,10 @@ namespace KS.Shell.Shells.UESH.Commands
             var WrappableCmds = new ArrayList();
             foreach (CommandInfo CommandInfo in UESHShellCommon.Commands.Values)
             {
+                /*
                 if (CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                     WrappableCmds.Add(CommandInfo.Command);
+                */
             }
 
             // Print them along with help description

@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "cat",
-                new CommandInfo("cat", ShellType.Shell, "Prints content of file to console", new CommandArgumentInfo(new[] { "[-lines|-nolines] <file>" }, true, 1), new CatCommand(), CommandFlags.Wrappable)
+                new CommandInfo("cat", ShellType.Shell, "Prints content of file to console", new CommandArgumentInfo(new[] { "[-lines|-nolines] <file>" }, true, 1), new CatCommand())
             },
             {
                 "cdbglog",
@@ -203,7 +203,7 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "hwinfo",
-                new CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", new CommandArgumentInfo(new[] { "<HardwareType>" }, true, 1), new HwInfoCommand(), CommandFlags.Wrappable)
+                new CommandInfo("hwinfo", ShellType.Shell, "Prints hardware information", new CommandArgumentInfo(new[] { "<HardwareType>" }, true, 1), new HwInfoCommand())
             },
             {
                 "if",
@@ -215,11 +215,11 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "jsonbeautify",
-                new CommandInfo("jsonbeautify", ShellType.Shell, "Beautifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonBeautifyCommand(), CommandFlags.Wrappable)
+                new CommandInfo("jsonbeautify", ShellType.Shell, "Beautifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonBeautifyCommand())
             },
             {
                 "jsonminify",
-                new CommandInfo("jsonminify", ShellType.Shell, "Minifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonMinifyCommand(), CommandFlags.Wrappable)
+                new CommandInfo("jsonminify", ShellType.Shell, "Minifies the JSON file", new CommandArgumentInfo(new[] { "<jsonfile> [output]" }, true, 1), new JsonMinifyCommand())
             },
             {
                 "jsonshell",
@@ -235,11 +235,11 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "list",
-                new CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", new CommandArgumentInfo(new[] { "[-showdetails|-suppressmessages] [directory]" }, false, 0), new ListCommand(), CommandFlags.Wrappable)
+                new CommandInfo("list", ShellType.Shell, "List file/folder contents in current folder", new CommandArgumentInfo(new[] { "[-showdetails|-suppressmessages] [directory]" }, false, 0), new ListCommand())
             },
             {
                 "listunits",
-                new CommandInfo("listunits", ShellType.Shell, "Lists all available units", new CommandArgumentInfo(new[] { "<type>" }, true, 1), new ListUnitsCommand(), CommandFlags.Wrappable)
+                new CommandInfo("listunits", ShellType.Shell, "Lists all available units", new CommandArgumentInfo(new[] { "<type>" }, true, 1), new ListUnitsCommand())
             },
             {
                 "lockscreen",
@@ -255,11 +255,11 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "lsdbgdev",
-                new CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", new CommandArgumentInfo(), new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.Wrappable)
+                new CommandInfo("lsdbgdev", ShellType.Shell, "Lists debugging devices connected", new CommandArgumentInfo(), new LsDbgDevCommand(), CommandFlags.Strict)
             },
             {
                 "lsvars",
-                new CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", new CommandArgumentInfo(), new LsVarsCommand(), CommandFlags.Wrappable)
+                new CommandInfo("lsvars", ShellType.Shell, "Lists available UESH variables", new CommandArgumentInfo(), new LsVarsCommand())
             },
             {
                 "mail",
@@ -295,7 +295,7 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "netinfo",
-                new CommandInfo("netinfo", ShellType.Shell, "Lists information about all available interfaces", new CommandArgumentInfo(), new NetInfoCommand(), CommandFlags.Strict | CommandFlags.Wrappable)
+                new CommandInfo("netinfo", ShellType.Shell, "Lists information about all available interfaces", new CommandArgumentInfo(), new NetInfoCommand(), CommandFlags.Strict)
             },
             {
                 "open",
@@ -411,7 +411,7 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "showtdzone",
-                new CommandInfo("showtdzone", ShellType.Shell, "Shows date and time in zones", new CommandArgumentInfo(new[] { "[-all] <timezone>" }, true, 1), new ShowTdZoneCommand(), CommandFlags.Wrappable)
+                new CommandInfo("showtdzone", ShellType.Shell, "Shows date and time in zones", new CommandArgumentInfo(new[] { "[-all] <timezone>" }, true, 1), new ShowTdZoneCommand())
             },
             {
                 "shutdown",
