@@ -36,6 +36,8 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
         /// <param name="Margin">Safe threshold from left</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
             int ColumnCapacity = (int)Math.Round(Console.WindowWidth / (double)Headers.Length);
@@ -145,6 +147,11 @@ namespace KS.Misc.Writers.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="Color">A color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColor Color, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
@@ -255,6 +262,11 @@ namespace KS.Misc.Writers.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ConsoleColor ForegroundColor, ConsoleColor BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
@@ -368,7 +380,9 @@ namespace KS.Misc.Writers.FancyWriters
         /// </summary>
         /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Safe threshold from left</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ColorTools.ColTypes ColTypes, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
@@ -481,7 +495,9 @@ namespace KS.Misc.Writers.FancyWriters
         /// </summary>
         /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Safe threshold from left</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, ColorTools.ColTypes colorTypeForeground, ColorTools.ColTypes colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null)
@@ -593,7 +609,12 @@ namespace KS.Misc.Writers.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
         /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color Color, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
             int ColumnCapacity = (int)Math.Round(Console.WindowWidth / (double)Headers.Length);
@@ -703,6 +724,11 @@ namespace KS.Misc.Writers.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color ForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)

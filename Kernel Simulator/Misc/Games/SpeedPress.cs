@@ -61,6 +61,7 @@ namespace KS.Misc.Games
         /// Initializes the SpeedPress game
         /// </summary>
         /// <param name="Difficulty">The difficulty of the game</param>
+        /// <param name="CustomTimeout">Custom game timeout</param>
         public static void InitializeSpeedPress(SpeedPressDifficulty Difficulty, int CustomTimeout = 0)
         {
             var SpeedTimeout = default(int);

@@ -192,6 +192,8 @@ namespace KS.Languages
         /// </summary>
         /// <param name="lang">A specified language</param>
         /// <param name="Force">Force changes</param>
+        /// <param name="AlwaysTransliterated">The language is always transliterated</param>
+        /// <param name="AlwaysTranslated">The language is always translated</param>
         public static void PromptForSetLang(string lang, bool Force = false, bool AlwaysTransliterated = false, bool AlwaysTranslated = false)
         {
             if (Languages.ContainsKey(lang))

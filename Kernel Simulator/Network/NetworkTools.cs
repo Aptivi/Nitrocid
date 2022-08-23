@@ -96,6 +96,8 @@ namespace KS.Network
         /// Pings an address
         /// </summary>
         /// <param name="Address">Target address</param>
+        /// <param name="Timeout">Timeout in milliseconds</param>
+        /// <param name="Buffer">The buffer consisting of array of bytes</param>
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
         {

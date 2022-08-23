@@ -207,6 +207,8 @@ namespace KS.Network.SSH
         /// <param name="Address">An IP address or hostname</param>
         /// <param name="Port">A port of the SSH server. It's usually 22</param>
         /// <param name="Username">A username to authenticate with</param>
+        /// <param name="Connection">Connection type</param>
+        /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
         public static void InitializeSSH(string Address, int Port, string Username, ConnectionType Connection, string Command = "")
         {
             try
@@ -305,6 +307,7 @@ namespace KS.Network.SSH
         /// Opens an SSH shell for a command
         /// </summary>
         /// <param name="SSHClient">SSH client instance</param>
+        /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
         public static void OpenCommand(SshClient SSHClient, string Command)
         {
             try

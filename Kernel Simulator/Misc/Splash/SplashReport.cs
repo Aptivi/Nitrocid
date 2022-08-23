@@ -67,6 +67,8 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
         /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="Vars">Varibales to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system.

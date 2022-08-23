@@ -682,6 +682,8 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <param name="ForceSet">Force set color</param>
         public static void SetConsoleColor(ColTypes colorType, bool Background, bool ForceSet = false)
         {
             if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
@@ -930,6 +932,7 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool TrySetConsoleColor(ColTypes colorType, bool Background)
         {
