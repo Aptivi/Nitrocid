@@ -133,39 +133,7 @@ namespace KS.Kernel
                     ArgumentParse.ParseArguments(Args.ToList(), ArgumentType.PreBootCommandLineArgs);
 
                     // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-                    // TODO: Move this to a separate function
-#if SPECIFIERREL
-					if (!NetworkAvailable)
-					{
-						NotifySend(new Notification(DoTranslation("No network while downloading debug data"), DoTranslation("Check your internet connection and try again."), NotifPriority.Medium, NotifType.Normal));
-					}
-					if (NetworkAvailable)
-					{
-						//Check to see if we're running from Ubuntu PPA
-						bool PPASpotted = ExecPath.StartsWith("/usr/lib/ks");
-						if (ExecPath.StartsWith("/usr/lib/ks"))
-						{
-							ReportProgress(DoTranslation("Use apt to update Kernel Simulator."), 10, ColTypes.Error);
-						}
-
-						//Download debug symbols
-						if ((FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) & !PPASpotted) == 0)
-						{
-							try
-							{
-#if NETCOREAPP
-								DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}-dotnet.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
-#else
-								DownloadFile($"https://github.com/Aptivi/Kernel-Simulator/releases/download/v{KernelVersion}-beta/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"));
-#endif
-							}
-							catch (Exception ex)
-							{
-								NotifySend(new Notification(DoTranslation("Error downloading debug data"), DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotifPriority.Medium, NotifType.Normal));
-							}
-						}
-					}
-#endif
+                    KernelTools.CheckDebugSymbols();
 
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
