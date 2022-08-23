@@ -74,11 +74,9 @@ namespace KS.ConsoleBase.Themes
             }
             else
             {
-                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), theme);
                 DebugWriter.Wdbg(DebugLevel.E, "Theme not found.");
-
-                // Raise event
                 Kernel.Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound);
+                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), theme);
             }
         }
 
@@ -110,11 +108,9 @@ namespace KS.ConsoleBase.Themes
             }
             catch (FileNotFoundException)
             {
-                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
                 DebugWriter.Wdbg(DebugLevel.E, "Theme not found.");
-
-                // Raise event
                 Kernel.Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound);
+                throw new Kernel.Exceptions.NoSuchThemeException(Translate.DoTranslation("Invalid color template {0}"), ThemeFile);
             }
         }
 

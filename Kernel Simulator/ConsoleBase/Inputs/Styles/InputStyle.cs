@@ -46,7 +46,6 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 return Answer;
             }
-            return "";
         }
 
     }

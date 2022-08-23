@@ -102,7 +102,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                 }
             }
-            return -1;
         }
 
     }

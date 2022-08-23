@@ -208,7 +208,6 @@ namespace KS.Shell.ShellBase.Aliases
                 DebugWriter.Wdbg(DebugLevel.E, "Type {0} not found.", Type);
                 throw new Kernel.Exceptions.AliasNoSuchTypeException(Translate.DoTranslation("Invalid type {0}."), Type);
             }
-            return false;
         }
 
         /// <summary>
@@ -238,7 +237,6 @@ namespace KS.Shell.ShellBase.Aliases
                 DebugWriter.Wdbg(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
                 throw new Kernel.Exceptions.AliasNoSuchAliasException(Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
             }
-            return false;
         }
 
         /// <summary>

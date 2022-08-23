@@ -111,7 +111,6 @@ namespace KS.Network.SFTP.Filesystem
             {
                 throw new InvalidOperationException(Translate.DoTranslation("You should connect to server before listing all remote files."));
             }
-            return null;
         }
 
         /// <summary>
@@ -136,7 +135,6 @@ namespace KS.Network.SFTP.Filesystem
                 {
                     DebugWriter.Wdbg(DebugLevel.E, "{0} is not found.", Target);
                     throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("{0} is not found in the server."), Target);
-                    return false;
                 }
                 DebugWriter.Wdbg(DebugLevel.I, "Deleted {0}", Target);
                 return true;
@@ -145,7 +143,6 @@ namespace KS.Network.SFTP.Filesystem
             {
                 throw new Kernel.Exceptions.SFTPFilesystemException(Translate.DoTranslation("You must connect to server with administrative privileges before performing the deletion."));
             }
-            return false;
         }
 
         /// <summary>
@@ -184,7 +181,6 @@ namespace KS.Network.SFTP.Filesystem
             {
                 throw new InvalidOperationException(Translate.DoTranslation("You must connect to a server before changing directory"));
             }
-            return false;
         }
 
         public static bool SFTPChangeLocalDir(string Directory)
@@ -212,7 +208,6 @@ namespace KS.Network.SFTP.Filesystem
             {
                 throw new ArgumentNullException(Directory, Translate.DoTranslation("Enter a local directory. \"..\" to go back."));
             }
-            return false;
         }
 
         /// <summary>

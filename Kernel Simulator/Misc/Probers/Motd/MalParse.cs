@@ -56,8 +56,8 @@ namespace KS.Misc.Probers.Motd
             }
             catch (Exception ex)
             {
-                throw new MOTDException(Translate.DoTranslation("Error when trying to set MAL: {0}"), ex.Message);
                 DebugWriter.WStkTrc(ex);
+                throw new MOTDException(Translate.DoTranslation("Error when trying to set MAL: {0}"), ex.Message);
             }
         }
 
@@ -85,8 +85,8 @@ namespace KS.Misc.Probers.Motd
             }
             catch (Exception ex)
             {
-                throw new MOTDException(Translate.DoTranslation("Error when trying to get MAL: {0}"), ex.Message);
                 DebugWriter.WStkTrc(ex);
+                throw new MOTDException(Translate.DoTranslation("Error when trying to get MAL: {0}"), ex.Message);
             }
         }
 

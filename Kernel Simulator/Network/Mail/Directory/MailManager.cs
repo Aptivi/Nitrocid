@@ -126,13 +126,11 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.Wdbg(DebugLevel.E, "Trying to remove message 0 or less than 0.");
                 throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
-                return false;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
-                return false;
             }
 
             lock (MailLogin.IMAP_Client.SyncRoot)
@@ -246,13 +244,11 @@ namespace KS.Network.Mail.Directory
             {
                 DebugWriter.Wdbg(DebugLevel.E, "Trying to move message 0 or less than 0.");
                 throw new ArgumentException(Translate.DoTranslation("Message number may not be negative or zero."));
-                return false;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
                 throw new Kernel.Exceptions.MailException(Translate.DoTranslation("Message specified is not found."));
-                return false;
             }
 
             lock (MailLogin.IMAP_Client.SyncRoot)

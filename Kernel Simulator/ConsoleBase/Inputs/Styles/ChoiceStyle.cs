@@ -159,7 +159,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                     return answer;
                 }
             }
-            return "";
         }
 
     }

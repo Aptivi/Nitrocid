@@ -145,10 +145,9 @@ namespace KS.Login
             }
             catch (Exception ex)
             {
-                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
                 DebugWriter.WStkTrc(ex);
+                throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("Error trying to add username.") + Kernel.Kernel.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
             }
-            return false;
         }
 
         /// <summary>
@@ -285,7 +284,6 @@ namespace KS.Login
                 DebugWriter.Wdbg(DebugLevel.W, "User {0} already found.", newUser);
                 throw new Kernel.Exceptions.UserCreationException(Translate.DoTranslation("usrmgr: Username {0} is already found"), newUser);
             }
-            return false;
         }
 
         /// <summary>

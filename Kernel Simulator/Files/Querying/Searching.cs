@@ -62,7 +62,6 @@ namespace KS.Files.Querying
                 DebugWriter.WStkTrc(ex);
                 throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
             }
-            return null;
         }
 
         /// <summary>
@@ -98,7 +97,6 @@ namespace KS.Files.Querying
                 DebugWriter.WStkTrc(ex);
                 throw new IOException(Translate.DoTranslation("Unable to find file to match string \"{0}\": {1}").FormatString(StringLookup, ex.Message));
             }
-            return null;
         }
 
     }

@@ -116,7 +116,6 @@ namespace KS.Files.Folders
                 DebugWriter.Wdbg(DebugLevel.E, "Failed to save current directory: {0}", ex.Message);
                 throw new Kernel.Exceptions.FilesystemException(Translate.DoTranslation("Failed to save current directory: {0}"), ex, ex.Message);
             }
-            return false;
         }
 
     }

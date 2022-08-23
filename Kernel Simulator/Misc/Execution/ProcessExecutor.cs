@@ -142,7 +142,6 @@ namespace KS.Misc.Execution
             catch (ThreadInterruptedException)
             {
                 Flags.CancelRequested = false;
-                return -1;
                 return default;
             }
             catch (Exception ex)

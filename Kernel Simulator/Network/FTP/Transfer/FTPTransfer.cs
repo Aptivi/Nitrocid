@@ -200,7 +200,6 @@ namespace KS.Network.FTP.Transfer
             {
                 throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
             }
-            return false;
         }
 
         /// <summary>
@@ -273,7 +272,6 @@ namespace KS.Network.FTP.Transfer
             {
                 throw new InvalidOperationException(Translate.DoTranslation("You must connect to server before performing transmission."));
             }
-            return false;
         }
 
         /// <summary>
