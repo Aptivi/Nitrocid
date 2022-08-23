@@ -111,7 +111,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteFiglet(string Text, FiggleFont FigletFont, ConsoleColor Color, params object[] Vars)
         {

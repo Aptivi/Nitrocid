@@ -55,7 +55,7 @@ namespace KS.TimeDate
         /// <summary>
         /// Shows current time in selected time zone
         /// </summary>
-        /// <param name="zone">Time zone</param>
+        /// <param name="Zone">Time zone</param>
         /// <returns>True if found; False if not found</returns>
         public static bool ShowTimeZone(string Zone)
         {
@@ -71,7 +71,7 @@ namespace KS.TimeDate
         /// <summary>
         /// Shows current time in selected time zone
         /// </summary>
-        /// <param name="zone">Time zone to search</param>
+        /// <param name="Zone">Time zone to search</param>
         /// <returns>True if found; False if not found</returns>
         public static bool ShowTimeZones(string Zone)
         {

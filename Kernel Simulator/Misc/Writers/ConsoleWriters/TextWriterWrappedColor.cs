@@ -32,7 +32,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt, wraps the long terminal output if needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrappedPlain(string Text, bool Line, params object[] vars)
@@ -74,7 +74,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -105,7 +105,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
@@ -138,7 +138,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -170,7 +170,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
@@ -203,7 +203,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -238,7 +238,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
         /// </summary>
-        /// <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>

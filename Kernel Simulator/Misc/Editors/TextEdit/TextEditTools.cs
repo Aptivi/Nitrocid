@@ -221,7 +221,7 @@ namespace KS.Misc.Editors.TextEdit
         /// Replaces every occurence of a string with the replacement using regular expressions
         /// </summary>
         /// <param name="From">Regular expression to be replaced</param>
-        /// <param name="[With]">String to replace with</param>
+        /// <param name="With">String to replace with</param>
         public static void TextEdit_ReplaceRegex(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
@@ -245,7 +245,7 @@ namespace KS.Misc.Editors.TextEdit
         /// Replaces every occurence of a string with the replacement using regular expressions
         /// </summary>
         /// <param name="From">Regular expression to be replaced</param>
-        /// <param name="[With]">String to replace with</param>
+        /// <param name="With">String to replace with</param>
         /// <param name="LineNumber">The line number</param>
         public static void TextEdit_ReplaceRegex(string From, string With, int LineNumber)
         {
@@ -276,7 +276,7 @@ namespace KS.Misc.Editors.TextEdit
         /// Replaces every occurence of a string with the replacement
         /// </summary>
         /// <param name="From">String to be replaced</param>
-        /// <param name="[With]">String to replace with</param>
+        /// <param name="With">String to replace with</param>
         public static void TextEdit_Replace(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
@@ -300,7 +300,7 @@ namespace KS.Misc.Editors.TextEdit
         /// Replaces every occurence of a string with the replacement
         /// </summary>
         /// <param name="From">String to be replaced</param>
-        /// <param name="[With]">String to replace with</param>
+        /// <param name="With">String to replace with</param>
         /// <param name="LineNumber">The line number</param>
         public static void TextEdit_Replace(string From, string With, int LineNumber)
         {

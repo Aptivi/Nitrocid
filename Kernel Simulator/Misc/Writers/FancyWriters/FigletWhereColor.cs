@@ -123,7 +123,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FiggleFont FigletFont, ConsoleColor Color, params object[] Vars)
         {

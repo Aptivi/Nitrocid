@@ -157,7 +157,7 @@ namespace KS.Misc.Editors.JsonShell
         /// <summary>
         /// Gets a property in the JSON file
         /// </summary>
-        /// <param name="[Property]">The property. You can use JSONPath.</param>
+        /// <param name="Property">The property. You can use JSONPath.</param>
         public static JToken JsonShell_GetProperty(string Property)
         {
             if (JsonShellCommon.JsonShell_FileStream is not null)
@@ -196,7 +196,7 @@ namespace KS.Misc.Editors.JsonShell
         /// <summary>
         /// Removes a property from the current JSON file
         /// </summary>
-        /// <param name="[Property]">The property. You can use JSONPath.</param>
+        /// <param name="Property">The property. You can use JSONPath.</param>
         public static void JsonShell_RemoveProperty(string Property)
         {
             DebugWriter.Wdbg(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
@@ -208,7 +208,7 @@ namespace KS.Misc.Editors.JsonShell
         /// <summary>
         /// Serializes the property to the string
         /// </summary>
-        /// <param name="[Property]">The property. You can use JSONPath.</param>
+        /// <param name="Property">The property. You can use JSONPath.</param>
         public static string JsonShell_SerializeToString(string Property)
         {
             var TargetToken = JsonShell_GetProperty(Property);
