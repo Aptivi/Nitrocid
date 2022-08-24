@@ -1129,6 +1129,14 @@ namespace KS.Kernel.Configuration
             };
             ScreensaverConfig.Add("Starfield", StarfieldConfig);
 
+            // Siren config json object
+            var SirenConfig = new JObject()
+            {
+                { "Delay in Milliseconds", SirenSettings.SirenDelay },
+                { "Siren style", SirenSettings.SirenStyle }
+            };
+            ScreensaverConfig.Add("Siren", SirenConfig);
+
             // Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig);
 
@@ -2177,6 +2185,10 @@ namespace KS.Kernel.Configuration
 
             // > Starfield
             StarfieldSettings.StarfieldDelay = int.TryParse((string)ConfigToken["Screensaver"]["Starfield"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Starfield"]["Delay in Milliseconds"] : 10;
+
+            // > Siren
+            SirenSettings.SirenDelay = int.TryParse((string)ConfigToken["Screensaver"]["Siren"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Siren"]["Delay in Milliseconds"] : 10;
+            SirenSettings.SirenStyle = (string)(ConfigToken["Screensaver"]["Siren"]["Siren style"] ?? "Cop");
 
             // Splash Section - Splash-specific settings go below:
             // > Simple
