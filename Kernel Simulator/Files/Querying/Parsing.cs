@@ -44,7 +44,7 @@ namespace KS.Files.Querying
         }
 
         /// <summary>
-        /// Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(String)"/> instead.)
+        /// Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(string)"/> instead.)
         /// </summary>
         /// <param name="Path">The path to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>
@@ -64,7 +64,7 @@ namespace KS.Files.Querying
         }
 
         /// <summary>
-        /// Tries to parse the file name (For full paths, use <see cref="TryParsePath(String)"/> instead.)
+        /// Tries to parse the file name (For full paths, use <see cref="TryParsePath(string)"/> instead.)
         /// </summary>
         /// <param name="Name">The file name to be parsed</param>
         /// <returns>True if successful; false if unsuccessful</returns>

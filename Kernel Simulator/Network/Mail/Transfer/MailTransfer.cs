@@ -278,7 +278,7 @@ namespace KS.Network.Mail.Transfer
         /// </summary>
         /// <param name="Recipient">Recipient name</param>
         /// <param name="Subject">Subject</param>
-        /// <param name="Body">Body (only text. See <see cref="MailSendMessage(String, String, MimeEntity)"/> for more.)</param>
+        /// <param name="Body">Body (only text. See <see cref="MailSendMessage(string, string, MimeEntity)"/> for more.)</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
         public static string MailSendMessage(string Recipient, string Subject, string Body)
         {

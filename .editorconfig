@@ -10,9 +10,6 @@ dotnet_diagnostic.CS1591.severity = none
 # CS1574: XML comment has cref attribute that could not be resolved
 dotnet_diagnostic.CS1574.severity = none
 
-# CS1580: Invalid type for parameter in XML comment cref attribute
-dotnet_diagnostic.CS1580.severity = none
-
 [*.md]
 charset = utf-8
 indent_style = space

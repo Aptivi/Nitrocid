@@ -36,7 +36,7 @@ namespace KS.Misc.Editors.JsonShell
         /// <summary>
         /// Opens the JSON file
         /// </summary>
-        /// <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
+        /// <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool JsonShell_OpenJsonFile(string File)
         {

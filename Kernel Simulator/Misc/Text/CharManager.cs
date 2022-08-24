@@ -56,7 +56,7 @@ namespace KS.Misc.Text
         }
 
         /// <summary>
-        /// A simplification for <see cref="Convert.ToChar(Integer)"/> function to return the ESC character
+        /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
         /// </summary>
         /// <returns>ESC</returns>
         public static char GetEsc()

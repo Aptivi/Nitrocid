@@ -36,7 +36,7 @@ namespace KS.Misc.Editors.HexEdit
         /// <summary>
         /// Opens the binary file
         /// </summary>
-        /// <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
+        /// <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool HexEdit_OpenBinaryFile(string File)
         {

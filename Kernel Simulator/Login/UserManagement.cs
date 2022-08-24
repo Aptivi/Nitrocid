@@ -552,7 +552,7 @@ namespace KS.Login
         }
 
         /// <summary>
-        /// Selects a user from the <see cref="ListAllUsers(Boolean, Boolean)"/> list
+        /// Selects a user from the <see cref="ListAllUsers(bool, bool)"/> list
         /// </summary>
         /// <param name="UserNumber">The user number. This is NOT an index!</param>
         /// <returns>The username which is selected</returns>
@@ -562,7 +562,7 @@ namespace KS.Login
         }
 
         /// <summary>
-        /// Selects a user from the <see cref="ListAllUsers(Boolean, Boolean)"/> list
+        /// Selects a user from the <see cref="ListAllUsers(bool, bool)"/> list
         /// </summary>
         /// <param name="UserNumber">The user number. This is NOT an index!</param>
         /// <param name="IncludeAnonymous">Include anonymous users</param>

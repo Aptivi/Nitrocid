@@ -29,6 +29,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using static KS.Kernel.Configuration.Config;
 
 namespace KS.Kernel.Configuration
 {
@@ -213,7 +214,7 @@ namespace KS.Kernel.Configuration
         /// Sets the value of an entry in a category.
         /// </summary>
         /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
+        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, string)"/></param>
         /// <param name="ConfigEntryName">Config entry name.</param>
         /// <param name="ConfigValue">Config entry value to install</param>
         public static void SetConfigValue(Config.ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName, JToken ConfigValue)
@@ -275,7 +276,7 @@ namespace KS.Kernel.Configuration
         /// Gets the value of an entry in a category.
         /// </summary>
         /// <param name="ConfigCategory">Config category</param>
-        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
+        /// <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, string)"/></param>
         /// <param name="ConfigEntryName">Config entry name.</param>
         public static JToken GetConfigValue(Config.ConfigCategory ConfigCategory, JToken ConfigCategoryToken, string ConfigEntryName)
         {

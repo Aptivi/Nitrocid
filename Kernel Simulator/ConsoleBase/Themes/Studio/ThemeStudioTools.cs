@@ -198,7 +198,7 @@ namespace KS.ConsoleBase.Themes.Studio
         /// Saves theme to another directory under "<paramref name="Theme"/>.json."
         /// </summary>
         /// <param name="Theme">Theme name</param>
-        /// <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(String, Boolean)"/></param>
+        /// <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(string, bool)"/></param>
         public static void SaveThemeToAnotherDirectory(string Theme, string Path)
         {
             var ThemeJson = GetThemeJson();

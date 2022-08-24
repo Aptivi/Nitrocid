@@ -19,12 +19,13 @@
 using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using static KS.ConsoleBase.Colors.ColorTools;
 using System;
 
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
-    /// It lets you test the <see cref="TextWriterColor.Write(String, Boolean, ColTypes, Object[])"/> call to print every text, using the lines and colors that you need.
+    /// It lets you test the <see cref="TextWriterColor.Write(string, bool, ColTypes, object[])"/> call to print every text, using the lines and colors that you need.
     /// </summary>
     class Test_PrintCommand : CommandExecutor, ICommand
     {

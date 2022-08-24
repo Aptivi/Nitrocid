@@ -25,7 +25,7 @@ using System;
 namespace KS.Shell.Shells.Test.Commands
 {
     /// <summary>
-    /// It lets you test the <see cref="Write(String, Boolean, ColTypes, Object[])"/> call to print every text, using the lines and colors that you need. It comes with format support.
+    /// It lets you test the <see cref="Write(string, bool, ColTypes, object[])"/> call to print every text, using the lines and colors that you need. It comes with format support.
     /// </summary>
     class Test_PrintFCommand : CommandExecutor, ICommand
     {
