@@ -91,6 +91,8 @@ namespace KS.Shell.Shells.Test
             { "powerlinetest", new CommandInfo("powerlinetest", ShellType.TestShell, "Tests your console for PowerLine support", new CommandArgumentInfo(), new Test_PowerLineTestCommand()) },
             { "testexecuteasm", new CommandInfo("testexecuteasm", ShellType.TestShell, "Tests assembly entry point execution", new CommandArgumentInfo(new[] { "<pathtoasm>" }, true, 1), new Test_TestExecuteAsmCommand()) },
             { "testevent", new CommandInfo("testevent", ShellType.TestShell, "Tests an event", new CommandArgumentInfo(new[] { "<event>" }, true, 1), new Test_TestEventCommand()) },
+            { "testargs", new CommandInfo("testargs", ShellType.TestShell, "Tests arguments", new CommandArgumentInfo(), new Test_TestArgsCommand()) },
+            { "testswitches", new CommandInfo("testswitches", ShellType.TestShell, "Tests switches", new CommandArgumentInfo(), new Test_TestSwitchesCommand()) },
             { "start", new CommandInfo("start", ShellType.TestShell, "Exits the test shell and starts the kernel", new CommandArgumentInfo(), new Test_StartCommand()) },
             { "shutdown", new CommandInfo("shutdown", ShellType.TestShell, "Exits the test shell and shuts down the kernel", new CommandArgumentInfo(), new Test_ShutdownCommand()) }
         };
