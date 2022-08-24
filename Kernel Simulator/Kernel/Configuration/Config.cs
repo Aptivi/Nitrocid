@@ -1406,7 +1406,6 @@ namespace KS.Kernel.Configuration
                 ColorTools.TableValueColor = new Color(ConfigToken["Colors"]["Table Value Color"].ToString());
                 ColorTools.SelectedOptionColor = new Color(ConfigToken["Colors"]["Selected Option Color"].ToString());
                 ColorTools.AlternativeOptionColor = new Color(ConfigToken["Colors"]["Alternative Option Color"].ToString());
-                ColorTools.LoadBack();
             }
 
             // General Section

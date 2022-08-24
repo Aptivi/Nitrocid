@@ -401,6 +401,9 @@ namespace KS.Kernel
             // Create config file and then read it
             Config.InitializeConfig();
 
+            // Load background
+            ColorTools.LoadBack();
+
             // Load user token
             UserManagement.LoadUserToken();
 
