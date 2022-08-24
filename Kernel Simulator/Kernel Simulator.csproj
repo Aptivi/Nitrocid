@@ -45,7 +45,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationManifest>Properties/app.manifest</ApplicationManifest>
     <GenerateManifests>false</GenerateManifests>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
@@ -335,7 +335,6 @@
 
   <!-- KS Manifest -->
   <ItemGroup>
-    <None Include="app.manifest" />
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <CustomToolNamespace>Properties.Resources</CustomToolNamespace>
