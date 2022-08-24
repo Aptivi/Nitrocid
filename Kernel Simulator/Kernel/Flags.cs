@@ -320,7 +320,7 @@ namespace KS.Kernel
         /// </summary>
         internal static bool CancelRequested;
         /// <summary>
-        /// Show MOTD every <see cref="LoginPrompt()"/> call
+        /// Show MOTD every <see cref="Login.Login.LoginPrompt()"/> call
         /// </summary>
         internal static bool ShowMOTDOnceFlag = true;
         /// <summary>

@@ -114,7 +114,7 @@ namespace KS.Login
         /// </summary>
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static void AddPermission(PermissionType PermType, string Username)
         {
             // Sets the required permissions to false.
@@ -173,7 +173,7 @@ namespace KS.Login
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static bool TryAddPermission(PermissionType PermType, string Username)
         {
             try
@@ -192,7 +192,7 @@ namespace KS.Login
         /// </summary>
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static void RemovePermission(PermissionType PermType, string Username)
         {
             // Sets the required permissions to false.
@@ -254,7 +254,7 @@ namespace KS.Login
         /// <param name="PermType">Whether it be Admin or Disabled</param>
         /// <param name="Username">A username to be managed</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static bool TryRemovePermission(PermissionType PermType, string Username)
         {
             try
@@ -273,7 +273,7 @@ namespace KS.Login
         /// </summary>
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static void PermissionEditForNewUser(string OldName, string Username)
         {
             // Edit username
@@ -310,7 +310,7 @@ namespace KS.Login
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static bool TryPermissionEditForNewUser(string OldName, string Username)
         {
             try
@@ -328,7 +328,7 @@ namespace KS.Login
         /// Initializes permissions for a new user with default settings
         /// </summary>
         /// <param name="NewUser">A new user name</param>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static void InitPermissionsForNewUser(string NewUser)
         {
             // Initialize permissions locally
@@ -341,7 +341,7 @@ namespace KS.Login
         /// </summary>
         /// <param name="NewUser">A new user name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static bool TryInitPermissionsForNewUser(string NewUser)
         {
             try
@@ -358,7 +358,7 @@ namespace KS.Login
         /// <summary>
         /// Loads permissions for all users
         /// </summary>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static void LoadPermissions()
         {
             foreach (JObject UserToken in UserManagement.UsersToken)
@@ -393,7 +393,7 @@ namespace KS.Login
         /// Loads permissions for all users
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        /// <exception cref="Exceptions.PermissionManagementException"></exception>
+        /// <exception cref="Kernel.Exceptions.PermissionManagementException"></exception>
         public static bool TryLoadPermissions()
         {
             try

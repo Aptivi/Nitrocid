@@ -30,7 +30,7 @@ namespace KS.Misc.Beautifiers
         /// <summary>
         /// Minifies the JSON text contained in the file.
         /// </summary>
-        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="NeutralizePath(String, Boolean)"/>.</param>
+        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="Filesystem.NeutralizePath(string, bool)"/>.</param>
         /// <returns>Minified JSON</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string MinifyJson(string JsonFile)

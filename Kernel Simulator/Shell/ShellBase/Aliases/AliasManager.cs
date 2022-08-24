@@ -172,10 +172,10 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Destination">A one-word command to alias to.</param>
         /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
-        /// <exception cref="Exceptions.AliasInvalidOperationException"></exception>
-        /// <exception cref="Exceptions.AliasNoSuchCommandException"></exception>
-        /// <exception cref="Exceptions.AliasAlreadyExistsException"></exception>
-        /// <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasInvalidOperationException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchCommandException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasAlreadyExistsException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
         public static bool AddAlias(string SourceAlias, string Destination, ShellType Type)
         {
             if (Enum.IsDefined(typeof(ShellType), Type))
@@ -216,8 +216,8 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">An alias that needs to be removed.</param>
         /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
-        /// <exception cref="Exceptions.AliasNoSuchAliasException"></exception>
-        /// <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchAliasException"></exception>
+        /// <exception cref="Kernel.Exceptions.AliasNoSuchTypeException"></exception>
         public static bool RemoveAlias(string TargetAlias, ShellType Type)
         {
             // Variables

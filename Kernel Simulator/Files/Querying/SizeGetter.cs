@@ -29,7 +29,7 @@ namespace KS.Files.Querying
     {
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Flags.FullParseMode"/>
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>

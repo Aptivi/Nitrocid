@@ -116,7 +116,7 @@ namespace KS.Network.Mail.Directory
         /// <param name="MsgNumber">Message number</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="Exceptions.MailException"></exception>
+        /// <exception cref="Kernel.Exceptions.MailException"></exception>
         public static bool MailRemoveMessage(int MsgNumber)
         {
             int Message = MsgNumber - 1;
@@ -234,7 +234,7 @@ namespace KS.Network.Mail.Directory
         /// <param name="TargetFolder">Target folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="Exceptions.MailException"></exception>
+        /// <exception cref="Kernel.Exceptions.MailException"></exception>
         public static bool MailMoveMessage(int MsgNumber, string TargetFolder)
         {
             int Message = MsgNumber - 1;

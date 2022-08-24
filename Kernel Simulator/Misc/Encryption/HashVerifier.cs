@@ -35,8 +35,8 @@ namespace KS.Misc.Encryption
         /// <param name="HashesFile">Hashes file that contains the target file</param>
         /// <param name="ActualHash">Actual hash calculated from hash tool</param>
         /// <returns>True if they match; else, false.</returns>
-        /// <exception cref="Exceptions.InvalidHashException"></exception>
-        /// <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyHashFromHashesFile(string FileName, Encryption.Algorithms HashType, string HashesFile, string ActualHash)
         {
@@ -124,8 +124,8 @@ namespace KS.Misc.Encryption
         /// <param name="ExpectedHash">Expected hash of a target file</param>
         /// <param name="ActualHash">Actual hash calculated from hash tool</param>
         /// <returns>True if they match; else, false.</returns>
-        /// <exception cref="Exceptions.InvalidHashException"></exception>
-        /// <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyHashFromHash(string FileName, Encryption.Algorithms HashType, string ExpectedHash, string ActualHash)
         {
@@ -175,8 +175,8 @@ namespace KS.Misc.Encryption
         /// <param name="HashType">Hash algorithm</param>
         /// <param name="HashesFile">Hashes file that contains the target file</param>
         /// <returns>True if they match; else, false.</returns>
-        /// <exception cref="Exceptions.InvalidHashException"></exception>
-        /// <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyUncalculatedHashFromHashesFile(string FileName, Encryption.Algorithms HashType, string HashesFile)
         {
@@ -264,8 +264,8 @@ namespace KS.Misc.Encryption
         /// <param name="HashType">Hash algorithm</param>
         /// <param name="ExpectedHash">Expected hash of a target file</param>
         /// <returns>True if they match; else, false.</returns>
-        /// <exception cref="Exceptions.InvalidHashException"></exception>
-        /// <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashException"></exception>
+        /// <exception cref="Kernel.Exceptions.InvalidHashAlgorithmException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyUncalculatedHashFromHash(string FileName, Encryption.Algorithms HashType, string ExpectedHash)
         {

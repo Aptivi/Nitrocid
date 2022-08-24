@@ -397,7 +397,7 @@ namespace KS.ConsoleBase.Colors
         /// <param name="SelectedOptionColor">Selected option color</param>
         /// <param name="AlternativeOptionColor">Alternative option color</param>
         /// <exception cref="InvalidOperationException"></exception>
-        /// <exception cref="Exceptions.ColorException"></exception>
+        /// <exception cref="Kernel.Exceptions.ColorException"></exception>
         public static void SetColors(string InputColor, string LicenseColor, string ContKernelErrorColor, string UncontKernelErrorColor, string HostNameShellColor, string UserNameShellColor, string BackgroundColor, string NeutralTextColor, string ListEntryColor, string ListValueColor, string StageColor, string ErrorColor, string WarningColor, string OptionColor, string BannerColor, string NotificationTitleColor, string NotificationDescriptionColor, string NotificationProgressColor, string NotificationFailureColor, string QuestionColor, string SuccessColor, string UserDollarColor, string TipColor, string SeparatorTextColor, string SeparatorColor, string ListTitleColor, string DevelopmentWarningColor, string StageTimeColor, string ProgressColor, string BackOptionColor, string LowPriorityBorderColor, string MediumPriorityBorderColor, string HighPriorityBorderColor, string TableSeparatorColor, string TableHeaderColor, string TableValueColor, string SelectedOptionColor, string AlternativeOptionColor)
         {
             // Check colors for null and set them to "def" if found

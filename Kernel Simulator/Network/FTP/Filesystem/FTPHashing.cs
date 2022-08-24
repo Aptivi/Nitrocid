@@ -34,7 +34,7 @@ namespace KS.Network.FTP.Filesystem
         /// <param name="File">A file to be hashed</param>
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
         /// <returns>The <see cref="FtpHash"/> instance containing computed hash of remote file</returns>
-        /// <exception cref="Exceptions.FTPFilesystemException"></exception>
+        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm)
@@ -70,7 +70,7 @@ namespace KS.Network.FTP.Filesystem
         /// </summary>
         /// <param name="Directory">A directory for its contents to be hashed</param>
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
-        /// <exception cref="Exceptions.FTPFilesystemException"></exception>
+        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm)
@@ -84,7 +84,7 @@ namespace KS.Network.FTP.Filesystem
         /// <param name="Directory">A directory for its contents to be hashed</param>
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
         /// <param name="Recurse">Whether to hash the files within the subdirectories too.</param>
-        /// <exception cref="Exceptions.FTPFilesystemException"></exception>
+        /// <exception cref="Kernel.Exceptions.FTPFilesystemException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse)

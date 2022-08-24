@@ -119,7 +119,7 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         /// <param name="ThemeInfo">Theme information</param>
         /// <exception cref="InvalidOperationException"></exception>
-        /// <exception cref="Exceptions.ColorException"></exception>
+        /// <exception cref="Kernel.Exceptions.ColorException"></exception>
         public static void SetColorsTheme(ThemeInfo ThemeInfo)
         {
             if (ThemeInfo is null)
@@ -194,7 +194,7 @@ namespace KS.ConsoleBase.Themes
         /// <param name="ThemeInfo">Theme information</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        /// <exception cref="Exceptions.ColorException"></exception>
+        /// <exception cref="Kernel.Exceptions.ColorException"></exception>
         public static bool TrySetColorsTheme(ThemeInfo ThemeInfo)
         {
             try

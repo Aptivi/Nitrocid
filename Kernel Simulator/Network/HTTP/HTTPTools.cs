@@ -79,7 +79,7 @@ namespace KS.Network.HTTP
         }
 
         /// <summary>
-        /// Neutralize the URI so the host name, <see cref="HTTPSite"/>, doesn't appear twice.
+        /// Neutralize the URI so the host name, <see cref="HTTPShellCommon.HTTPSite"/>, doesn't appear twice.
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
         public static string NeutralizeUri(string ContentUri)
