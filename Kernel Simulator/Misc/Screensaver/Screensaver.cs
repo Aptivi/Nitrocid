@@ -286,7 +286,6 @@ namespace KS.Misc.Screensaver
         internal static void HandleSaverCancel()
         {
             DebugWriter.Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
-            ColorTools.SetInputColor();
             ColorTools.LoadBack();
             Console.CursorVisible = true;
             DebugWriter.Wdbg(DebugLevel.I, "All clean. Screensaver stopped.");

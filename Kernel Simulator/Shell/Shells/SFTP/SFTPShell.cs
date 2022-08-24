@@ -96,9 +96,6 @@ namespace KS.Shell.Shells.SFTP
                             DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
                             PromptPresetManager.WriteShellPrompt(ShellType);
                         }
-
-                        // Set input color
-                        ColorTools.SetInputColor();
                     }
 
                     // Try to connect if IP address is specified.

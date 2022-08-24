@@ -123,10 +123,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (colorType == ColorTools.ColTypes.Input & Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -180,10 +176,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (colorTypeForeground == ColorTools.ColTypes.Input & Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -243,10 +235,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -308,10 +296,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -366,10 +350,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -426,10 +406,6 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         WritePlain(Text, Line, vars);
                     }
-
-                    // Reset the colors
-                    if (Shell.Shell.ColoredShell & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        ColorTools.SetInputColor();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

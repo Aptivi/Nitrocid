@@ -146,7 +146,6 @@ namespace KS.Misc.Timers
                             if (!Timer.Enabled)
                             {
                                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Question, TimerInterval);
-                                ColorTools.SetInputColor();
 
                                 // Try to parse the interval
                                 string UnparsedInterval = Input.ReadLine();

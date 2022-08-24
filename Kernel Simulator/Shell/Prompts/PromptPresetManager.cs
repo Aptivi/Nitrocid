@@ -404,9 +404,6 @@ namespace KS.Shell.Prompts
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
             TextWriterColor.Write(CurrentPresetBase.PresetPrompt, false, ColorTools.ColTypes.Input);
-
-            // Set input color in case custom preset didn't set the input color as instructed
-            ColorTools.SetInputColor();
         }
 
         /// <summary>

@@ -625,36 +625,6 @@ namespace KS.ConsoleBase.Colors
         }
 
         /// <summary>
-        /// Sets input color
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetInputColor()
-        {
-            try
-            {
-                SetInputColor();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Sets input color
-        /// </summary>
-        public static void SetInputColor()
-        {
-            DebugWriter.Wdbg(DebugLevel.I, "ColoredShell is {0}", Shell.Shell.ColoredShell);
-            if (Shell.Shell.ColoredShell == true)
-            {
-                SetConsoleColor(InputColor);
-                SetConsoleColor(BackgroundColor, true);
-            }
-        }
-
-        /// <summary>
         /// Gets the gray color according to the brightness of the background color
         /// </summary>
         public static Color GetGray()
@@ -781,9 +751,13 @@ namespace KS.ConsoleBase.Colors
                             break;
                         }
                     case ColTypes.Question:
-                    case ColTypes.Input:
                         {
                             SetConsoleColor(QuestionColor, Background, ForceSet);
+                            break;
+                        }
+                    case ColTypes.Input:
+                        {
+                            SetConsoleColor(InputColor, Background, ForceSet);
                             break;
                         }
                     case ColTypes.Success:
