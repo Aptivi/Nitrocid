@@ -436,6 +436,7 @@ namespace KS.Misc.Editors.HexEdit
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
+        /// <param name="Start">Start byte number</param>
         public static void HexEdit_Replace(byte FromByte, byte WithByte, long Start)
         {
             HexEdit_Replace(FromByte, WithByte, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
@@ -446,6 +447,8 @@ namespace KS.Misc.Editors.HexEdit
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
+        /// <param name="StartByte">Start byte number</param>
+        /// <param name="EndByte">End byte number</param>
         public static void HexEdit_Replace(byte FromByte, byte WithByte, long StartByte, long EndByte)
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)

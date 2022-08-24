@@ -39,6 +39,7 @@ namespace KS.Files
         /// Simplifies the path to the correct one. It converts the path format to the unified format.
         /// </summary>
         /// <param name="Path">Target path, be it a file or a folder</param>
+        /// <param name="Strict">If path is not found, throw exception. Otherwise, neutralize anyway.</param>
         /// <returns>Absolute path</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string NeutralizePath(string Path, bool Strict = false)
@@ -51,6 +52,7 @@ namespace KS.Files
         /// </summary>
         /// <param name="Path">Target path, be it a file or a folder</param>
         /// <param name="Source">Source path in which the target is found. Must be a directory</param>
+        /// <param name="Strict">If path is not found, throw exception. Otherwise, neutralize anyway.</param>
         /// <returns>Absolute path</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string NeutralizePath(string Path, string Source, bool Strict = false)

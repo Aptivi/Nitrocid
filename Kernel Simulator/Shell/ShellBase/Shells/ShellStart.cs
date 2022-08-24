@@ -45,6 +45,7 @@ namespace KS.Shell.ShellBase.Shells
         /// Starts the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShell(ShellType ShellType, params object[] ShellArgs)
         {
             if (ShellStack.Count >= 1)
@@ -58,6 +59,7 @@ namespace KS.Shell.ShellBase.Shells
         /// Force starts the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShellForced(ShellType ShellType, params object[] ShellArgs)
         {
             // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)

@@ -48,6 +48,7 @@ namespace KS.Network.FTP
         /// <param name="user">A user name</param>
         /// <param name="Address">A host address</param>
         /// <param name="Port">A port for the address</param>
+        /// <param name="EncryptionMode">FTP encryption mode</param>
         public static void PromptForPassword(string user, string Address = "", int Port = 0, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.Explicit)
         {
             // Make a new FTP client object instance (Used in case logging in using speed dial)

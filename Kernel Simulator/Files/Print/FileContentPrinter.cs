@@ -40,6 +40,7 @@ namespace KS.Files.Print
         /// Prints the contents of a file to the console
         /// </summary>
         /// <param name="filename">Full path to file with wildcards supported</param>
+        /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
         public static void PrintContents(string filename, bool PrintLineNumbers)
         {
             // Read the contents

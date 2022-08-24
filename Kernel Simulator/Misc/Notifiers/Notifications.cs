@@ -251,6 +251,9 @@ namespace KS.Misc.Notifications
         /// <param name="Width">Console width</param>
         /// <param name="TopTitle">Vertical location of title</param>
         /// <param name="TopDesc">Vertical location of description</param>
+        /// <param name="TopProg">Vertical location of progress</param>
+        /// <param name="TopOpenBorder">Vertical location of open border</param>
+        /// <param name="TopCloseBorder">Vertical location of close border</param>
         private static void NotifClearArea(int Width, int TopTitle, int TopDesc, int TopProg, int TopOpenBorder, int TopCloseBorder)
         {
             if (Flags.DrawBorderNotification)

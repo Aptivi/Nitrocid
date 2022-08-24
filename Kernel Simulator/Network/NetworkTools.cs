@@ -83,6 +83,7 @@ namespace KS.Network
         /// Pings an address
         /// </summary>
         /// <param name="Address">Target address</param>
+        /// <param name="Timeout">Ping timeout in milliseconds</param>
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address, int Timeout)
         {

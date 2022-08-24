@@ -27,6 +27,7 @@ namespace KS.Files.Querying
         /// Checks to see if the file exists. Windows 10/11 bug aware.
         /// </summary>
         /// <param name="File">Target file</param>
+        /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
         public static bool FileExists(string File, bool Neutralize = false)
         {
@@ -40,6 +41,7 @@ namespace KS.Files.Querying
         /// Checks to see if the folder exists. Windows 10/11 bug aware.
         /// </summary>
         /// <param name="Folder">Target folder</param>
+        /// <param name="Neutralize">Whether to neutralize the path</param>
         /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
         public static bool FolderExists(string Folder, bool Neutralize = false)
         {

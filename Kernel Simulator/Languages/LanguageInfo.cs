@@ -99,6 +99,7 @@ namespace KS.Languages
         /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
+        /// <param name="LanguageToken">The language token</param>
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JObject LanguageToken)
         {
             // Install values to the object instance

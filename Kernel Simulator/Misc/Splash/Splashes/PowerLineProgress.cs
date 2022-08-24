@@ -138,6 +138,7 @@ namespace KS.Misc.Splash.Splashes
         /// </summary>
         /// <param name="Progress">Progress percentage from 0 to 100</param>
         /// <param name="ProgressReport">The progress text</param>
+        /// <param name="Vars">Variables to be formatted in the text</param>
         public void UpdateProgressReport(int Progress, string ProgressReport, params object[] Vars)
         {
             // Variables

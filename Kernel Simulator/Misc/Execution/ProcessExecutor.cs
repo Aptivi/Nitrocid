@@ -82,6 +82,7 @@ namespace KS.Misc.Execution
         /// </summary>
         /// <param name="File">Full path to file</param>
         /// <param name="Args">Arguments, if any</param>
+        /// <param name="WorkingDirectory">Specifies the working directory</param>
         /// <returns>Application exit code. -1 if internal error occurred.</returns>
         public static int ExecuteProcess(string File, string Args, string WorkingDirectory)
         {

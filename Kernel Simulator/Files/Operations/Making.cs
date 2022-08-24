@@ -34,6 +34,7 @@ namespace KS.Files.Operations
         /// Makes a directory
         /// </summary>
         /// <param name="NewDirectory">New directory</param>
+        /// <param name="ThrowIfDirectoryExists">If directory exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
         public static void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true)
         {
@@ -57,6 +58,7 @@ namespace KS.Files.Operations
         /// Makes a directory
         /// </summary>
         /// <param name="NewDirectory">New directory</param>
+        /// <param name="ThrowIfDirectoryExists">If directory exists, throw an exception.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
         public static bool TryMakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true)
@@ -76,6 +78,7 @@ namespace KS.Files.Operations
         /// Makes a file
         /// </summary>
         /// <param name="NewFile">New file</param>
+        /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
         public static void MakeFile(string NewFile, bool ThrowIfFileExists = true)
         {
@@ -110,6 +113,7 @@ namespace KS.Files.Operations
         /// Makes a file
         /// </summary>
         /// <param name="NewFile">New file</param>
+        /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
         public static bool TryMakeFile(string NewFile, bool ThrowIfFileExists = true)
@@ -129,6 +133,7 @@ namespace KS.Files.Operations
         /// Makes an empty JSON file
         /// </summary>
         /// <param name="NewFile">New JSON file</param>
+        /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <exception cref="IOException"></exception>
         public static void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true)
         {
@@ -166,6 +171,7 @@ namespace KS.Files.Operations
         /// Makes an empty JSON file
         /// </summary>
         /// <param name="NewFile">New JSON file</param>
+        /// <param name="ThrowIfFileExists">If file exists, throw an exception.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="IOException"></exception>
         public static bool TryMakeJsonFile(string NewFile, bool ThrowIfFileExists = true)

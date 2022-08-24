@@ -294,6 +294,7 @@ namespace KS.Languages
         /// Installs the custom language to the installed languages
         /// </summary>
         /// <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
+        /// <param name="ThrowOnAlreadyInstalled">If the custom language is already installed, throw an exception</param>
         public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
         {
             if (!Flags.SafeMode)

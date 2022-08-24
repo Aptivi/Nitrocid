@@ -88,6 +88,7 @@ namespace KS.ConsoleBase
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="Left">The filtered left position</param>
         /// <param name="Top">The filtered top position</param>
+        /// <param name="Vars">Variables to be formatted in the text</param>
         public static void GetFilteredPositions(string Text, ref int Left, ref int Top, params object[] Vars)
         {
             // First, get the old cursor positions

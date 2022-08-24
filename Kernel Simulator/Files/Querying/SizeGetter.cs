@@ -42,6 +42,7 @@ namespace KS.Files.Querying
         /// Gets all file sizes in a folder, and optionally parses the entire folder
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
+        /// <param name="FullParseMode">Whether to parse all the directories</param>
         /// <returns>Directory Size</returns>
         public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
         {

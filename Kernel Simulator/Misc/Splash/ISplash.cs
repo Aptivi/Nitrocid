@@ -53,6 +53,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="ProgressReport">The progress text to indicate how did the kernel progress</param>
         /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="Vars">Variables to be formatted in the text</param>
         void Report(int Progress, string ProgressReport, params object[] Vars);
 
     }

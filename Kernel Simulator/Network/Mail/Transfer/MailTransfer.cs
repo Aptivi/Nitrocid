@@ -46,6 +46,7 @@ namespace KS.Network.Mail.Transfer
         /// Prints content of message to console
         /// </summary>
         /// <param name="MessageNum">Message number</param>
+        /// <param name="Decrypt">Whether to decrypt messages or not</param>
         public static void MailPrintMessage(int MessageNum, bool Decrypt = false)
         {
             int Message = MessageNum - 1;

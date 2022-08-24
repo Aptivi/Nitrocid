@@ -31,6 +31,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// Translates alias to actual command, preserving arguments
         /// </summary>
         /// <param name="aliascmd">Specifies the alias with arguments</param>
+        /// <param name="ShellType">Type of shell</param>
         public static void ExecuteAlias(string aliascmd, ShellType ShellType)
         {
             var AliasesList = AliasManager.GetAliasesListFromType(ShellType);

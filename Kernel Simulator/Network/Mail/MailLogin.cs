@@ -190,6 +190,7 @@ namespace KS.Network.Mail
         /// Detects servers based on dictionary
         /// </summary>
         /// <param name="Address">E-mail address</param>
+        /// <param name="Type">Server type</param>
         /// <returns>Server address. Otherwise, null.</returns>
         public static string ServerDetect(string Address, ServerType Type)
         {

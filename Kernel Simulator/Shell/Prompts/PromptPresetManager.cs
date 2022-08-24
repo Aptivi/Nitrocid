@@ -92,6 +92,8 @@ namespace KS.Shell.Prompts
         /// Sets the shell preset
         /// </summary>
         /// <param name="PresetName">The preset name</param>
+        /// <param name="ShellType">Type of shell</param>
+        /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
         public static void SetPreset(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true)
         {
             var Presets = GetPresetsFromShell(ShellType);
@@ -122,6 +124,7 @@ namespace KS.Shell.Prompts
         /// </summary>
         /// <param name="PresetName">The preset name</param>
         /// <param name="ShellType">The shell type</param>
+        /// <param name="Presets">Dictionary of presets</param>
         internal static void SetPresetInternal(string PresetName, ShellType ShellType, Dictionary<string, PromptPresetBase> Presets)
         {
             switch (ShellType)

@@ -31,6 +31,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value of variable</param>
+        /// <param name="Internal">Whether the field is internal</param>
         public static void SetValue(string Variable, object VariableValue, bool Internal = false)
         {
             SetValue(Variable, VariableValue, null, Internal);
@@ -42,6 +43,7 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value of variable</param>
         /// <param name="VariableType">Variable type</param>
+        /// <param name="Internal">Whether the field is internal</param>
         public static void SetValue(string Variable, object VariableValue, Type VariableType, bool Internal = false)
         {
             // Get field for specified variable
@@ -76,6 +78,7 @@ namespace KS.Misc.Reflection
         /// Gets the value of a variable dynamically 
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
         public static object GetValue(string Variable, bool Internal = false)
         {
@@ -87,6 +90,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Variable type</param>
+        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Value of a variable</returns>
         public static object GetValue(string Variable, Type VariableType, bool Internal = false)
         {
@@ -123,6 +127,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
         /// <param name="Type">Variable type</param>
+        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Field information</returns>
         public static FieldInfo GetField(string Variable, Type Type, bool Internal = false)
         {
@@ -149,6 +154,7 @@ namespace KS.Misc.Reflection
         /// Gets a field from variable name
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <param name="Internal">Whether the field is internal</param>
         /// <returns>Field information</returns>
         public static FieldInfo GetField(string Variable, bool Internal = false)
         {
@@ -179,6 +185,7 @@ namespace KS.Misc.Reflection
         /// Checks the specified variable if it exists
         /// </summary>
         /// <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+        /// <param name="Internal">Whether the field is internal</param>
         public static bool CheckField(string Variable, bool Internal = false)
         {
             // Get field for specified variable

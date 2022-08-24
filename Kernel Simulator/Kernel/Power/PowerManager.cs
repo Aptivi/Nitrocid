@@ -41,6 +41,7 @@ namespace KS.Kernel.Power
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
+        /// <param name="IP">IP address to remotely manage power</param>
         public static void PowerManage(PowerMode PowerMode, string IP)
         {
             PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
@@ -50,6 +51,8 @@ namespace KS.Kernel.Power
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
+        /// <param name="IP">IP address to remotely manage power</param>
+        /// <param name="Port">Port of the remote system running KS RPC</param>
         public static void PowerManage(PowerMode PowerMode, string IP, int Port)
         {
             DebugWriter.Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode);

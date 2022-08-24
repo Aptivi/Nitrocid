@@ -82,6 +82,7 @@ namespace KS.Scripting.Interaction
         /// <summary>
         /// Prompts user for input (answer the question with your own answers)
         /// </summary>
+        /// <param name="Question">The question to ask</param>
         /// <param name="ScriptVariable">An $variable</param>
         public static void PromptInputAndSet(string Question, string ScriptVariable)
         {

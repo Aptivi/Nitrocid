@@ -37,6 +37,7 @@ namespace KS.Misc.Writers.DebugWriters
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
+        /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Wdbg(DebugLevel Level, string text, params object[] vars)
@@ -144,6 +145,7 @@ namespace KS.Misc.Writers.DebugWriters
         /// Conditionally outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
         /// <param name="Condition">The condition that must be satisfied</param>
+        /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WdbgConditional(ref bool Condition, DebugLevel Level, string text, params object[] vars)
@@ -155,6 +157,7 @@ namespace KS.Misc.Writers.DebugWriters
         /// <summary>
         /// Outputs the text into the debugger devices, and sets the time stamp. Note that it doesn't print where did the debugger debug in source files.
         /// </summary>
+        /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WdbgDevicesOnly(DebugLevel Level, string text, params object[] vars)

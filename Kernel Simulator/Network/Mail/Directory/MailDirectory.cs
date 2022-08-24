@@ -80,6 +80,7 @@ namespace KS.Network.Mail.Directory
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
+        /// <param name="NewName">New mail directory name</param>
         public static void RenameMailDirectory(string Directory, string NewName)
         {
             DebugWriter.Wdbg(DebugLevel.I, "Renaming folder {0} to {1}", Directory, NewName);
@@ -126,6 +127,7 @@ namespace KS.Network.Mail.Directory
         /// Locates the normal (not special) folder and opens it.
         /// </summary>
         /// <param name="FolderString">A folder to open (not a path)</param>
+        /// <param name="FolderMode">Folder mode</param>
         /// <returns>A folder</returns>
         public static MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
         {

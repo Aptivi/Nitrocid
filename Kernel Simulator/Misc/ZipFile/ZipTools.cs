@@ -71,6 +71,7 @@ namespace KS.Misc.ZipFile
         /// </summary>
         /// <param name="Target">Target file in an archive</param>
         /// <param name="Where">Where in the local filesystem to extract?</param>
+        /// <param name="FullTargetPath">Whether to use the full target path</param>
         public static bool ExtractZipFileEntry(string Target, string Where, bool FullTargetPath = false)
         {
             if (string.IsNullOrWhiteSpace(Target))
