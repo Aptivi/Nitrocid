@@ -93,24 +93,6 @@ namespace KS.ConsoleBase
         }
 
         /// <summary>
-        /// The console window left
-        /// </summary>
-        public static int WindowLeft
-        {
-            get
-            {
-                if (IsDumb)
-                    return int.MaxValue;
-                return Console.WindowLeft;
-            }
-            set
-            {
-                if (!IsDumb)
-                    Console.WindowLeft = value;
-            }
-        }
-
-        /// <summary>
         /// The console window top (rows)
         /// </summary>
         public static int WindowTop
@@ -120,11 +102,6 @@ namespace KS.ConsoleBase
                 if (IsDumb)
                     return int.MaxValue;
                 return Console.WindowTop;
-            }
-            set
-            {
-                if (!IsDumb)
-                    Console.WindowTop = value;
             }
         }
 
@@ -139,11 +116,6 @@ namespace KS.ConsoleBase
                     return int.MaxValue;
                 return Console.WindowWidth;
             }
-            set
-            {
-                if (!IsDumb)
-                    Console.WindowWidth = value;
-            }
         }
 
         /// <summary>
@@ -156,11 +128,6 @@ namespace KS.ConsoleBase
                 if (IsDumb)
                     return int.MaxValue;
                 return Console.WindowHeight;
-            }
-            set
-            {
-                if (!IsDumb)
-                    Console.WindowHeight = value;
             }
         }
 
@@ -175,11 +142,6 @@ namespace KS.ConsoleBase
                     return int.MaxValue;
                 return Console.BufferWidth;
             }
-            set
-            {
-                if (!IsDumb)
-                    Console.BufferWidth = value;
-            }
         }
 
         /// <summary>
@@ -192,28 +154,6 @@ namespace KS.ConsoleBase
                 if (IsDumb)
                     return int.MaxValue;
                 return Console.BufferHeight;
-            }
-            set
-            {
-                if (!IsDumb)
-                    Console.BufferHeight = value;
-            }
-        }
-
-        /// <summary>
-        /// The console color
-        /// </summary>
-        public static string Title { 
-            get 
-            {
-                if (IsDumb)
-                    return "";
-                return Console.Title;
-            }
-            set
-            {
-                if (!IsDumb)
-                    ConsoleExtensions.SetTitle(value);
             }
         }
 
@@ -257,12 +197,6 @@ namespace KS.ConsoleBase
         /// The cursor visibility mode
         /// </summary>
         public static bool CursorVisible { 
-            get 
-            {
-                if (IsDumb)
-                    return true;
-                return Console.CursorVisible;
-            }
             set
             {
                 if (!IsDumb)
