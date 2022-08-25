@@ -34,7 +34,7 @@ namespace KS.Misc.Screensaver.Customized
         /// <summary>
         /// Compiles the custom screensaver file and configures it so it can be viewed
         /// </summary>
-        /// <param name="file">File name with .ss.vb</param>
+        /// <param name="file">File name with .dll</param>
         public static void ParseCustomSaver(string file)
         {
             // Initialize path
@@ -89,7 +89,7 @@ namespace KS.Misc.Screensaver.Customized
                 }
                 else
                 {
-                    DebugWriter.Wdbg(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have \".ss.vb\" or \".dll\" at the end.", file);
+                    DebugWriter.Wdbg(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have \".dll\" at the end.", file);
                 }
             }
             else

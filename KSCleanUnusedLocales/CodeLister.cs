@@ -31,7 +31,7 @@ namespace KSCleanUnusedLocales
             if (Directory.Exists(kernelSimulatorSource))
             {
                 // Iterate through all the source files for Kernel Simulator
-                string[] files = Directory.GetFiles(kernelSimulatorSource, "*.vb", SearchOption.AllDirectories);
+                string[] files = Directory.GetFiles(kernelSimulatorSource, "*.cs", SearchOption.AllDirectories);
                 return files;
             }
             return Array.Empty<string>();
