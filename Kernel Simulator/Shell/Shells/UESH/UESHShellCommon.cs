@@ -210,6 +210,10 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("if", ShellType.Shell, "Executes commands once the UESH expressions are satisfied", new CommandArgumentInfo(new[] { "<uesh-expression> <command>" }, true, 2), new IfCommand())
             },
             {
+                "ifm",
+                new CommandInfo("ifm", ShellType.Shell, "Interactive system host file manager", new CommandArgumentInfo(), new IfmCommand())
+            },
+            {
                 "input",
                 new CommandInfo("input", ShellType.Shell, "Allows user to enter input", new CommandArgumentInfo(new[] { "<$variable> <question>" }, true, 2), new InputCommand(), CommandFlags.SettingVariable)
             },
