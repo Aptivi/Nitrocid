@@ -70,3 +70,7 @@ It seems that `ListArgs()` is now no longer a reliable way to check for argument
 ##### Removed FullArgumentList
 
 Following the removal of `ListArgs()`, we can safely remove this property.
+
+##### Removed `ConsoleWriters.*.Write*Plain` in favor of the plain writers
+
+The plain writer interfaces feel like they're a great addition to control the console writers.
