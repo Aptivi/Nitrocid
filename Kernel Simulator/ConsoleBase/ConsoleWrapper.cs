@@ -298,7 +298,13 @@ namespace KS.ConsoleBase
         /// Sets console output
         /// </summary>
         /// <param name="newOut">New output</param>
-        public static void SetOut(TextWriter newOut) => Console.SetOut(newOut);
+        public static void SetOut(TextWriter newOut)
+        {
+            // We need to reset dumb state because the new output may not support usual console features other then reading/writing.
+            _dumbSet = false;
+            _dumb = true;
+            Console.SetOut(newOut);
+        }
 
         /// <summary>
         /// Beeps the console
