@@ -65,8 +65,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.TableHeader);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -95,8 +94,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -180,8 +178,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -210,8 +207,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -296,8 +292,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -326,8 +321,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -411,8 +405,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColTypes);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -441,8 +434,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -527,8 +519,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, colorTypeForeground, colorTypeBackground);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -557,8 +548,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -642,8 +632,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, Color);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -672,8 +661,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)
@@ -758,8 +746,7 @@ namespace KS.Misc.Writers.FancyWriters
             {
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
-                if (Header is null)
-                    Header = "";
+                Header ??= "";
                 TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ForegroundColor, BackgroundColor);
             }
             ConsoleBase.ConsoleWrapper.WriteLine();
@@ -788,8 +775,7 @@ namespace KS.Misc.Writers.FancyWriters
                     var CellBackgroundColor = ColorTools.BackgroundColor;
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
-                    if (RowValue is null)
-                        RowValue = "";
+                    RowValue ??= "";
 
                     // Get the cell options and set them as necessary
                     if (CellOptions is not null)

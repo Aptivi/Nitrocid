@@ -57,10 +57,8 @@ namespace KS.Files
         /// <exception cref="FileNotFoundException"></exception>
         public static string NeutralizePath(string Path, string Source, bool Strict = false)
         {
-            if (Path is null)
-                Path = "";
-            if (Source is null)
-                Source = "";
+            Path ??= "";
+            Source ??= "";
 
             ThrowOnInvalidPath(Path);
             ThrowOnInvalidPath(Source);

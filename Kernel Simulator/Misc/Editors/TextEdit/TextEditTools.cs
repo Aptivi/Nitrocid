@@ -45,10 +45,8 @@ namespace KS.Misc.Editors.TextEdit
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Trying to open file {0}...", File);
                 TextEditShellCommon.TextEdit_FileStream = new FileStream(File, FileMode.Open);
-                if (TextEditShellCommon.TextEdit_FileLines is null)
-                    TextEditShellCommon.TextEdit_FileLines = new List<string>();
-                if (TextEditShellCommon.TextEdit_FileLinesOrig is null)
-                    TextEditShellCommon.TextEdit_FileLinesOrig = new List<string>();
+                TextEditShellCommon.TextEdit_FileLines ??= new List<string>();
+                TextEditShellCommon.TextEdit_FileLinesOrig ??= new List<string>();
                 DebugWriter.Wdbg(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.TextEdit_FileStream.Length, TextEditShellCommon.TextEdit_FileStream.Position);
                 var TextFileStreamReader = new StreamReader(TextEditShellCommon.TextEdit_FileStream);
                 while (!TextFileStreamReader.EndOfStream)

@@ -69,10 +69,8 @@ namespace KS.Shell.Shells.Zip
                 try
                 {
                     // Open file if not open
-                    if (ZipShellCommon.ZipShell_FileStream is null)
-                        ZipShellCommon.ZipShell_FileStream = new FileStream(ZipFile, FileMode.Open);
-                    if (ZipShellCommon.ZipShell_ZipArchive is null)
-                        ZipShellCommon.ZipShell_ZipArchive = ZipArchive.Open(ZipShellCommon.ZipShell_FileStream);
+                    ZipShellCommon.ZipShell_FileStream ??= new FileStream(ZipFile, FileMode.Open);
+                    ZipShellCommon.ZipShell_ZipArchive ??= ZipArchive.Open(ZipShellCommon.ZipShell_FileStream);
 
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))

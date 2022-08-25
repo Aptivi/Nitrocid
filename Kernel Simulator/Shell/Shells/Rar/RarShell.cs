@@ -69,10 +69,8 @@ namespace KS.Shell.Shells.Rar
                 try
                 {
                     // Open file if not open
-                    if (RarShellCommon.RarShell_FileStream is null)
-                        RarShellCommon.RarShell_FileStream = new FileStream(RarFile, FileMode.Open);
-                    if (RarShellCommon.RarShell_RarArchive is null)
-                        RarShellCommon.RarShell_RarArchive = RarArchive.Open(RarShellCommon.RarShell_FileStream);
+                    RarShellCommon.RarShell_FileStream ??= new FileStream(RarFile, FileMode.Open);
+                    RarShellCommon.RarShell_RarArchive ??= RarArchive.Open(RarShellCommon.RarShell_FileStream);
 
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
