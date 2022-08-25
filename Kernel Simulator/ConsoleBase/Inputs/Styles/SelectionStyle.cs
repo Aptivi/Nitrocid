@@ -49,7 +49,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Variables
                 var answers = AnswersStr.Split('/');
                 ConsoleKeyInfo Answer;
-                Console.Clear();
+                ConsoleWrapper.Clear();
 
                 // Check to see if the answer titles are the same
                 if (answers.Length != AnswersTitles.Length)
@@ -67,8 +67,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Wait for an answer
-                Answer = Console.ReadKey(true);
-                Console.WriteLine();
+                Answer = ConsoleWrapper.ReadKey(true);
+                ConsoleWrapper.WriteLine();
 
                 // Check the answer
                 switch (Answer.Key)

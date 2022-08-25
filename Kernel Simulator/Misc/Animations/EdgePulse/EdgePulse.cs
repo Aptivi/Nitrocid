@@ -36,15 +36,15 @@ namespace KS.Misc.Animations.EdgePulse
         /// </summary>
         public static void Simulate(EdgePulseSettings Settings)
         {
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
 
             // Now, do the rest
             var RandomDriver = Settings.RandomDriver;
             int RedColorNum = RandomDriver.Next(Settings.EdgePulseMinimumRedColorLevel, Settings.EdgePulseMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Next(Settings.EdgePulseMinimumGreenColorLevel, Settings.EdgePulseMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Next(Settings.EdgePulseMinimumBlueColorLevel, Settings.EdgePulseMaximumBlueColorLevel);
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)Settings.EdgePulseMaxSteps;
@@ -58,7 +58,7 @@ namespace KS.Misc.Animations.EdgePulse
             int CurrentColorBlueIn = 0;
             for (int CurrentStep = Settings.EdgePulseMaxSteps; CurrentStep >= 1; CurrentStep -= 1)
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -68,7 +68,7 @@ namespace KS.Misc.Animations.EdgePulse
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
@@ -80,7 +80,7 @@ namespace KS.Misc.Animations.EdgePulse
             // Fade out
             for (int CurrentStep = 1, loopTo = Settings.EdgePulseMaxSteps; CurrentStep <= loopTo; CurrentStep++)
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -99,8 +99,8 @@ namespace KS.Misc.Animations.EdgePulse
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
         }
 
@@ -110,48 +110,48 @@ namespace KS.Misc.Animations.EdgePulse
             int FloorBottomLeftEdge = 0;
             DebugWriter.Wdbg(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
 
-            int FloorTopRightEdge = Console.WindowWidth - 1;
-            int FloorBottomRightEdge = Console.WindowWidth - 1;
+            int FloorTopRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+            int FloorBottomRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
             DebugWriter.Wdbg(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
 
             int FloorTopEdge = 0;
-            int FloorBottomEdge = Console.WindowHeight - 1;
+            int FloorBottomEdge = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
             DebugWriter.Wdbg(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
 
             int FloorLeftEdge = 0;
-            int FloorRightEdge = Console.WindowWidth - 2;
+            int FloorRightEdge = ConsoleBase.ConsoleWrapper.WindowWidth - 2;
             DebugWriter.Wdbg(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
 
             // First, draw the floor top edge
             for (int x = FloorTopLeftEdge, loopTo = FloorTopRightEdge; x <= loopTo; x++)
             {
-                Console.SetCursorPosition(x, 0);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(x, 0);
                 DebugWriter.Wdbg(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
-                Console.Write(" ");
+                ConsoleBase.ConsoleWrapper.Write(" ");
             }
 
             // Second, draw the floor bottom edge
             for (int x = FloorBottomLeftEdge, loopTo1 = FloorBottomRightEdge; x <= loopTo1; x++)
             {
-                Console.SetCursorPosition(x, FloorBottomEdge);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                 DebugWriter.Wdbg(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
-                Console.Write(" ");
+                ConsoleBase.ConsoleWrapper.Write(" ");
             }
 
             // Third, draw the floor left edge
             for (int y = FloorTopEdge, loopTo2 = FloorBottomEdge; y <= loopTo2; y++)
             {
-                Console.SetCursorPosition(FloorLeftEdge, y);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                 DebugWriter.Wdbg(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
-                Console.Write("  ");
+                ConsoleBase.ConsoleWrapper.Write("  ");
             }
 
             // Finally, draw the floor right edge
             for (int y = FloorTopEdge, loopTo3 = FloorBottomEdge; y <= loopTo3; y++)
             {
-                Console.SetCursorPosition(FloorRightEdge, y);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                 DebugWriter.Wdbg(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
-                Console.Write("  ");
+                ConsoleBase.ConsoleWrapper.Write("  ");
             }
         }
 

@@ -36,7 +36,7 @@ namespace KS.TimeDate
         public static Dictionary<string, DateTime> GetTimeZones()
         {
             // Get all system time zones (IANA on Unix)
-            var Zones = TimeZoneInfo.GetSystemTimeZones().ToArray();
+            var Zones = GetSystemTimeZones().ToArray();
             var ZoneTimes = new Dictionary<string, DateTime>();
             DebugWriter.Wdbg(DebugLevel.I, "Found {0} time zones.", Zones.Length);
 

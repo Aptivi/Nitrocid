@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             Snaker.InitializeSnaker(false);
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
     }

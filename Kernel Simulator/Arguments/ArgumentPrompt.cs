@@ -45,7 +45,7 @@ namespace KS.Arguments
             // Shows available arguments
             TextWriterColor.Write(Translate.DoTranslation("Available kernel arguments:"), true, ColorTools.ColTypes.ListTitle);
             ArgumentHelpSystem.ShowArgsHelp(ArgumentType.KernelArgs);
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
             TextWriterColor.Write("* " + Translate.DoTranslation("Press \"q\" if you're done."), true, ColorTools.ColTypes.Tip);
             TextWriterColor.Write("* " + Translate.DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " \"debug,safe\"", true, ColorTools.ColTypes.Tip);
             TextWriterColor.Write("* " + Translate.DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject \"beep 100 500 : echo Hello!\"", true, ColorTools.ColTypes.Tip);

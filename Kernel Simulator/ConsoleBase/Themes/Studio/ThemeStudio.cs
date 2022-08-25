@@ -47,7 +47,7 @@ namespace KS.ConsoleBase.Themes.Studio
             while (!StudioExiting)
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);
-                Console.Clear();
+                ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral, ThemeName);
 
                 // List options
@@ -89,7 +89,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write("36) " + Translate.DoTranslation("Table value color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedTableValueColor.PlainSequence);
                 TextWriterColor.Write("37) " + Translate.DoTranslation("Selected option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedSelectedOptionColor.PlainSequence);
                 TextWriterColor.Write("38) " + Translate.DoTranslation("Alternative option color") + ": [{0}] ", true, ColorTools.ColTypes.Option, ThemeStudioTools.SelectedAlternativeOptionColor.PlainSequence);
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
 
                 // List saving and loading options
                 TextWriterColor.Write("39) " + Translate.DoTranslation("Save Theme to Current Directory"), true, ColorTools.ColTypes.AlternativeOption);
@@ -101,7 +101,7 @@ namespace KS.ConsoleBase.Themes.Studio
                 TextWriterColor.Write("45) " + Translate.DoTranslation("Load Current Colors"), true, ColorTools.ColTypes.AlternativeOption);
                 TextWriterColor.Write("46) " + Translate.DoTranslation("Preview..."), true, ColorTools.ColTypes.AlternativeOption);
                 TextWriterColor.Write("47) " + Translate.DoTranslation("Exit"), true, ColorTools.ColTypes.AlternativeOption);
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
 
                 // Prompt user
                 DebugWriter.Wdbg(DebugLevel.I, "Waiting for user input...");
@@ -470,7 +470,7 @@ namespace KS.ConsoleBase.Themes.Studio
                         DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, NumericResponse);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                        Console.ReadKey();
+                        ConsoleWrapper.ReadKey();
                     }
                 }
                 else
@@ -478,7 +478,7 @@ namespace KS.ConsoleBase.Themes.Studio
                     DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    Console.ReadKey();
+                    ConsoleWrapper.ReadKey();
                 }
             }
 

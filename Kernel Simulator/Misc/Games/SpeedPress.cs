@@ -124,7 +124,7 @@ namespace KS.Misc.Games
                     TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", true, ColorTools.ColTypes.Neutral, SelectedChar);
                     TextWriterColor.Write("> ", false, ColorTools.ColTypes.Input);
                     WrittenChar = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
 
                     // Check to see if the user has pressed the correct character
                     if (WrittenChar.KeyChar == SelectedChar)
@@ -138,7 +138,7 @@ namespace KS.Misc.Games
                 }
                 catch (Kernel.Exceptions.ConsoleReadTimeoutException)
                 {
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                     TextWriterColor.Write(Translate.DoTranslation("Character not pressed on time."), true, ColorTools.ColTypes.Warning);
                 }
             }

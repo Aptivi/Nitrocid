@@ -46,7 +46,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
+                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
                         ConsoleExtensions.GetFilteredPositions(Text, ref FilteredLeft, ref FilteredTop, vars);
 
                     // Actually write
@@ -54,25 +54,25 @@ namespace KS.Misc.Writers.ConsoleWriters
                     {
                         if (!(vars.Length == 0))
                         {
-                            Console.WriteLine(Text, vars);
+                            ConsoleWrapper.WriteLine(Text, vars);
                         }
                         else
                         {
-                            Console.WriteLine(Text);
+                            ConsoleWrapper.WriteLine(Text);
                         }
                     }
                     else if (!(vars.Length == 0))
                     {
-                        Console.Write(Text, vars);
+                        ConsoleWrapper.Write(Text, vars);
                     }
                     else
                     {
-                        Console.Write(Text);
+                        ConsoleWrapper.Write(Text);
                     }
 
                     // Return to the processed position
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out)))
-                        Console.SetCursorPosition(FilteredLeft, FilteredTop);
+                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
+                        ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -214,21 +214,21 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Try to write to console
                     if (Highlight)
                     {
-                        Console.ForegroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                        Console.BackgroundColor = color;
+                        ConsoleWrapper.ForegroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.BackgroundColor = color;
                     }
                     else
                     {
-                        Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                        Console.ForegroundColor = color;
+                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.ForegroundColor = color;
                     }
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                        Console.ForegroundColor = color;
+                        ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                        ConsoleWrapper.ForegroundColor = color;
                         WritePlain("", Line);
                     }
                     else
@@ -275,21 +275,21 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Try to write to console
                     if (Highlight)
                     {
-                        Console.BackgroundColor = ForegroundColor;
-                        Console.ForegroundColor = BackgroundColor;
+                        ConsoleWrapper.BackgroundColor = ForegroundColor;
+                        ConsoleWrapper.ForegroundColor = BackgroundColor;
                     }
                     else
                     {
-                        Console.BackgroundColor = BackgroundColor;
-                        Console.ForegroundColor = ForegroundColor;
+                        ConsoleWrapper.BackgroundColor = BackgroundColor;
+                        ConsoleWrapper.ForegroundColor = ForegroundColor;
                     }
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        Console.BackgroundColor = BackgroundColor;
-                        Console.ForegroundColor = ForegroundColor;
+                        ConsoleWrapper.BackgroundColor = BackgroundColor;
+                        ConsoleWrapper.ForegroundColor = ForegroundColor;
                         WritePlain("", Line);
                     }
                     else
@@ -332,7 +332,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(color, Highlight, Highlight);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, !Highlight, !Highlight);
@@ -388,7 +388,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
                         ColorTools.SetConsoleColor(BackgroundColor, !Highlight, !Highlight);

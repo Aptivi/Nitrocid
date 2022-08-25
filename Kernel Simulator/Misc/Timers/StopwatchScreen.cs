@@ -47,22 +47,22 @@ namespace KS.Misc.Timers
         public static void OpenStopwatch()
         {
             // Clear for cleanliness
-            Console.Clear();
-            Console.CursorVisible = false;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
 
             // Populate the positions for time
             string LapsText = Translate.DoTranslation("Lap");
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             int TimeLeftPosition = (int)Math.Round(HalfWidth * 1.5d - Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult).Length / 2d);
             int TimeTopPosition = HalfHeight - 2;
             int LapsCurrentLapLeftPosition = 4;
-            int LapsCurrentLapTopPosition = Console.WindowHeight - 6;
+            int LapsCurrentLapTopPosition = ConsoleWrapper.WindowHeight - 6;
 
             // Populate the keys text variable
             string KeysText = "[ENTER] " + Translate.DoTranslation("Start or stop") + " | [L] " + Translate.DoTranslation("Lap") + " | [R] " + Translate.DoTranslation("Reset") + " | [ESC] " + Translate.DoTranslation("Exit");
             int KeysTextLeftPosition = (int)Math.Round(HalfWidth - KeysText.Length / 2d);
-            int KeysTextTopPosition = Console.WindowHeight - 2;
+            int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
@@ -78,7 +78,7 @@ namespace KS.Misc.Timers
             while (KeysKeypress != ConsoleKey.Escape)
             {
                 // Wait for a keypress
-                KeysKeypress = Console.ReadKey(true).Key;
+                KeysKeypress = ConsoleWrapper.ReadKey(true).Key;
 
                 // Check for a keypress
                 switch (KeysKeypress)
@@ -137,7 +137,7 @@ namespace KS.Misc.Timers
                             Laps.Clear();
                             for (int Y = 1, loopTo = LapsCurrentLapTopPosition - 1; Y <= loopTo; Y++)
                             {
-                                Console.SetCursorPosition(LapsCurrentLapLeftPosition, Y);
+                                ConsoleWrapper.SetCursorPosition(LapsCurrentLapLeftPosition, Y);
                                 ConsoleExtensions.ClearLineToRight();
                             }
 
@@ -145,7 +145,7 @@ namespace KS.Misc.Timers
                             LapColor = ColorTools.NeutralTextColor;
                             TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
                             ConsoleExtensions.ClearLineToRight();
-                            Console.SetCursorPosition(0, TimeTopPosition);
+                            ConsoleWrapper.SetCursorPosition(0, TimeTopPosition);
                             ConsoleExtensions.ClearLineToRight();
                             TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
                             MakeBorder();
@@ -167,8 +167,8 @@ namespace KS.Misc.Timers
 
             // Clear for cleanliness
             Laps.Clear();
-            Console.Clear();
-            Console.CursorVisible = true;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = true;
         }
 
         /// <summary>
@@ -178,12 +178,12 @@ namespace KS.Misc.Timers
         {
             // Populate the positions for time and for lap list
             string LapsText = Translate.DoTranslation("Lap");
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             int TimeLeftPosition = (int)Math.Round(HalfWidth * 1.5d - Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult).Length / 2d);
             int TimeTopPosition = HalfHeight - 2;
             int LapsCurrentLapLeftPosition = 4;
-            int LapsCurrentLapTopPosition = Console.WindowHeight - 6;
+            int LapsCurrentLapTopPosition = ConsoleWrapper.WindowHeight - 6;
             int LapsLapsListLeftPosition = 4;
             int LapsLapsListTopPosition = 3;
 
@@ -198,7 +198,7 @@ namespace KS.Misc.Timers
                     // Update the laps list if new lap is acknowledged
                     if (NewLapAcknowledged)
                     {
-                        int LapsListEndBorder = Console.WindowHeight - 10;
+                        int LapsListEndBorder = ConsoleWrapper.WindowHeight - 10;
                         var LapsListBuilder = new StringBuilder();
                         int BorderDifference = Laps.Count - LapsListEndBorder;
                         if (BorderDifference < 0)
@@ -224,10 +224,10 @@ namespace KS.Misc.Timers
         /// </summary>
         public static void MakeBorder()
         {
-            int KeysTextTopPosition = Console.WindowHeight - 2;
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            TextWriterWhereColor.WriteWhere("═".Repeat(Console.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
-            TextWriterWhereColor.WriteWhere("═".Repeat(Console.WindowWidth), 0, 1, true, ColorTools.ColTypes.Gray);
+            int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.ColTypes.Gray);
             for (int Height = 2, loopTo = KeysTextTopPosition - 2; Height <= loopTo; Height++)
                 TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, ColorTools.ColTypes.Gray);
             TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);

@@ -281,28 +281,28 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(FlashTextSettings.FlashTextBackgroundColor), true, true);
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
 
             // Select position
-            Left = RandomDriver.Next(Console.WindowWidth);
-            Top = RandomDriver.Next(Console.WindowHeight);
+            Left = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+            Top = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Make two delay halves to make up one half for screen with text and one half for screen with no text to make a flashing effect
             int HalfDelay = (int)Math.Round(FlashTextSettings.FlashTextDelay / 2d);
 
             // Make a flashing text
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
             if (FlashTextSettings.FlashTextTrueColor)
             {
                 int RedColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumRedColorLevel, FlashTextSettings.FlashTextMaximumRedColorLevel);
@@ -310,7 +310,7 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumBlueColorLevel, FlashTextSettings.FlashTextMaximumBlueColorLevel);
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
@@ -321,7 +321,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 int ColorNum = RandomDriver.Next(FlashTextSettings.FlashTextMinimumColorLevel, FlashTextSettings.FlashTextMaximumColorLevel);
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
@@ -330,7 +330,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
@@ -338,14 +338,14 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
 
     }

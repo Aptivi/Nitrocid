@@ -189,10 +189,10 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             EdgePulseSettingsInstance = new Animations.EdgePulse.EdgePulseSettings()
             {
                 EdgePulseDelay = EdgePulseSettings.EdgePulseDelay,

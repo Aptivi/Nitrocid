@@ -77,7 +77,7 @@ namespace KS.Misc.Splash.Splashes
                         }
                     case TextLocation.Bottom:
                         {
-                            return Console.WindowHeight - 2;
+                            return ConsoleWrapper.WindowHeight - 2;
                         }
 
                     default:
@@ -108,7 +108,7 @@ namespace KS.Misc.Splash.Splashes
                         }
                     case TextLocation.Bottom:
                         {
-                            return Console.WindowHeight - 2;
+                            return ConsoleWrapper.WindowHeight - 2;
                         }
 
                     default:
@@ -123,7 +123,7 @@ namespace KS.Misc.Splash.Splashes
         public void Opening()
         {
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Display()
@@ -149,7 +149,7 @@ namespace KS.Misc.Splash.Splashes
         {
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)
@@ -165,7 +165,7 @@ namespace KS.Misc.Splash.Splashes
         /// <param name="Vars">Variables to be formatted in the text</param>
         public void UpdateProgressReport(int Progress, string ProgressReport, params object[] Vars)
         {
-            string RenderedText = ProgressReport.Truncate(Console.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
+            string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             TextWriterWhereColor.WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, true, ColorTools.ColTypes.Progress, Progress.ToString().PadLeft(3));
             TextWriterWhereColor.WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, false, ColorTools.ColTypes.Neutral, Vars);
             ConsoleExtensions.ClearLineToRight();

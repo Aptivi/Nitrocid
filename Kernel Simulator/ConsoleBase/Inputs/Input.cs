@@ -109,7 +109,7 @@ namespace KS.ConsoleBase.Inputs
         public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
         {
             var CurrentMilliseconds = default(double);
-            while (!Console.KeyAvailable)
+            while (!ConsoleWrapper.KeyAvailable)
             {
                 if (!(CurrentMilliseconds == Timeout.TotalMilliseconds))
                 {
@@ -121,7 +121,7 @@ namespace KS.ConsoleBase.Inputs
                 }
                 System.Threading.Thread.Sleep(1);
             }
-            return Console.ReadKey(Intercept);
+            return ConsoleWrapper.ReadKey(Intercept);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace KS.ConsoleBase.Inputs
             {
                 ConsoleKeyInfo KeyInfo;
                 char KeyCharacter;
-                while (!Console.KeyAvailable)
+                while (!ConsoleWrapper.KeyAvailable)
                 {
                     if (Condition)
                         Finished = true;
@@ -146,7 +146,7 @@ namespace KS.ConsoleBase.Inputs
                 }
                 if (!Finished)
                 {
-                    KeyInfo = Console.ReadKey(true);
+                    KeyInfo = ConsoleWrapper.ReadKey(true);
                     KeyCharacter = KeyInfo.KeyChar;
                     if (KeyCharacter == Convert.ToChar(13) | KeyCharacter == Convert.ToChar(10))
                     {
@@ -157,14 +157,14 @@ namespace KS.ConsoleBase.Inputs
                         if (!(Final.Length == 0))
                         {
                             Final = Final.Remove(Final.Length - 1);
-                            Console.Write(Convert.ToString(CharManager.GetEsc()) + "D"); // Cursor backwards by one character
-                            Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1X"); // Remove a character
+                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "D"); // Cursor backwards by one character
+                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1X"); // Remove a character
                         }
                     }
                     else
                     {
                         Final += Convert.ToString(KeyCharacter);
-                        Console.Write(KeyCharacter);
+                        ConsoleWrapper.Write(KeyCharacter);
                     }
                 }
             }
@@ -177,11 +177,11 @@ namespace KS.ConsoleBase.Inputs
         public static void DetectKeypress()
         {
 #if NETCOREAPP
-            while (!Console.KeyAvailable)
+            while (!KS.ConsoleBase.ConsoleWrapper.KeyAvailable)
                 Thread.Sleep(1);
-            Console.ReadKey(true);
+            KS.ConsoleBase.ConsoleWrapper.ReadKey(true);
 #else
-            Console.ReadKey();
+            ConsoleWrapper.ReadKey();
 #endif
         }
 

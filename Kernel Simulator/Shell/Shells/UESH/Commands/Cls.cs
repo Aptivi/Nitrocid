@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
     }

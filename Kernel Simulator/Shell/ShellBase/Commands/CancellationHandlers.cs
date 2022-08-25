@@ -35,14 +35,14 @@ namespace KS.Shell.ShellBase
                 if (e.SpecialKey == ConsoleSpecialKey.ControlC)
                 {
                     Flags.CancelRequested = true;
-                    Console.WriteLine();
-                    Kernel.Kernel.DefConsoleOut = Console.Out;
-                    Console.SetOut(StreamWriter.Null);
+                    ConsoleBase.ConsoleWrapper.WriteLine();
+                    Kernel.Kernel.DefConsoleOut = ConsoleBase.ConsoleWrapper.Out;
+                    ConsoleBase.ConsoleWrapper.SetOut(StreamWriter.Null);
                     e.Cancel = true;
                     var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
                     StartCommandThread.Stop();
                     Shell.ProcessStartCommandThread.Stop();
-                    Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                    ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                 }
             }
         }

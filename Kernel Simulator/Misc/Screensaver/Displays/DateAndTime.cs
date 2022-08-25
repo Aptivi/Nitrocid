@@ -247,19 +247,19 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.Clear();
 
             // Write date and time
             ColorTools.SetConsoleColor(ChangeDateAndTimeColor());
-            TextWriterWhereColor.WriteWherePlain(TimeDateRenderers.RenderDate(), (int)Math.Round(Console.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(Console.WindowHeight / 2d - 1d));
-            TextWriterWhereColor.WriteWherePlain(TimeDateRenderers.RenderTime(), (int)Math.Round(Console.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(Console.WindowHeight / 2d));
+            TextWriterWhereColor.WriteWherePlain(TimeDateRenderers.RenderDate(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d));
+            TextWriterWhereColor.WriteWherePlain(TimeDateRenderers.RenderTime(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d));
 
             // Delay
             ThreadManager.SleepNoBlock(DateAndTimeSettings.DateAndTimeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

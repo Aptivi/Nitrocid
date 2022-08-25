@@ -79,8 +79,8 @@ namespace KS.Misc.Timers
         public static void OpenTimer()
         {
             // Clear for cleanliness
-            Console.Clear();
-            Console.CursorVisible = false;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
 
             // Populate the figlet font (if any)
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
@@ -89,8 +89,8 @@ namespace KS.Misc.Timers
             double TimerInterval = 60000d;
 
             // Populate the positions for time
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             string CurrentRemainingString = TimeDate.TimeDate.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;
@@ -103,7 +103,7 @@ namespace KS.Misc.Timers
             // Populate the keys text variable
             string KeysText = "[ENTER] " + Translate.DoTranslation("Start (re)counting down") + " | [T] " + Translate.DoTranslation("Set interval") + " | [ESC] " + Translate.DoTranslation("Exit");
             int KeysTextLeftPosition = (int)Math.Round(HalfWidth - KeysText.Length / 2d);
-            int KeysTextTopPosition = Console.WindowHeight - 2;
+            int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
@@ -120,12 +120,12 @@ namespace KS.Misc.Timers
             }
 
             // Print the border
-            TextWriterWhereColor.WriteWhere("═".Repeat(Console.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
+            TextWriterWhereColor.WriteWhere("═".Repeat(ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.ColTypes.Gray);
 
             // Wait for a keypress
             while (KeysKeypress != ConsoleKey.Escape)
             {
-                KeysKeypress = Console.ReadKey(true).Key;
+                KeysKeypress = ConsoleWrapper.ReadKey(true).Key;
 
                 // Check for a keypress
                 switch (KeysKeypress)
@@ -154,7 +154,7 @@ namespace KS.Misc.Timers
                                     // Not numeric.
                                     TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Indicated timeout is not numeric."), 2, KeysTextTopPosition - 4, false, ColorTools.ColTypes.Error);
                                     ConsoleExtensions.ClearLineToRight();
-                                    Console.ReadKey();
+                                    ConsoleWrapper.ReadKey();
                                 }
                                 else if (ReadLineReboot.ReadLine.ReadRanToCompletion)
                                 {
@@ -173,7 +173,7 @@ namespace KS.Misc.Timers
                                 }
 
                                 // Clean up
-                                Console.SetCursorPosition(0, KeysTextTopPosition - 4);
+                                ConsoleWrapper.SetCursorPosition(0, KeysTextTopPosition - 4);
                                 ConsoleExtensions.ClearLineToRight();
                             }
 
@@ -193,8 +193,8 @@ namespace KS.Misc.Timers
 
             // Clear for cleanliness
             Timer = new Timer();
-            Console.Clear();
-            Console.CursorVisible = true;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = true;
         }
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace KS.Misc.Timers
         private static void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             string ElapsedText = new TimeSpan().ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
             int TimeLeftPosition = 0;
             int TimeTopPosition = 0;
@@ -238,8 +238,8 @@ namespace KS.Misc.Timers
                 try
                 {
                     var Until = TimerStarted.AddMilliseconds(Timer.Interval) - DateTime.Now;
-                    int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-                    int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+                    int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+                    int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                     string UntilText = Until.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
                     int TimeLeftPosition = 0;
                     int TimeTopPosition = 0;
@@ -272,8 +272,8 @@ namespace KS.Misc.Timers
         {
             // Some initial variables
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
 
             // Get the Figlet time left and top position
             int FigletTimeLeftPosition = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(RemainingTimeText, FigletFont) / 2d);
@@ -293,8 +293,8 @@ namespace KS.Misc.Timers
         {
             // Some initial variables
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            int HalfWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
 
             // Get the Figlet time left and top position
             int FigletTimeLeftPosition = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(RemainingTimeText, FigletFont) / 2d);
@@ -307,15 +307,15 @@ namespace KS.Misc.Timers
             {
                 for (int FigletTimePosition = FigletTimeTopPosition, loopTo = FigletTimeBottomPosition; FigletTimePosition <= loopTo; FigletTimePosition++)
                 {
-                    Console.CursorTop = FigletTimePosition;
+                    ConsoleWrapper.CursorTop = FigletTimePosition;
                     for (int Position = FigletOldWidth - 1, loopTo1 = FigletTimeLeftPosition - 1; Position <= loopTo1; Position++)
                     {
-                        Console.CursorLeft = Position;
+                        ConsoleWrapper.CursorLeft = Position;
                         TextWriterColor.Write(" ", false, ColorTools.NeutralTextColor, ColorTools.BackgroundColor);
                     }
                     for (int Position = FigletOldWidthEnd, loopTo2 = FigletTimeLeftEndPosition + 1; Position <= loopTo2; Position++)
                     {
-                        Console.CursorLeft = Position;
+                        ConsoleWrapper.CursorLeft = Position;
                         TextWriterColor.Write(" ", false, ColorTools.NeutralTextColor, ColorTools.BackgroundColor);
                     }
                 }

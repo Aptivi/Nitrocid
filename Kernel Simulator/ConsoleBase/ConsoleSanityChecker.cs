@@ -71,7 +71,7 @@ namespace KS.ConsoleBase
             // appropriate variable, like the frontend applications that rely on console applications and their outputs to do their job (for example,
             // Brasero, a disk burning program, uses wodim, xorriso, and such applications to do its very intent of burning a blank CD-ROM. All these
             // backend applications are console programs).
-            if (TerminalType == "dumb")
+            if (TerminalType == "dumb" || ConsoleWrapper.IsDumb)
             {
                 throw new InsaneConsoleDetectedException("Kernel Simulator makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Kernel.Kernel.NewLine + "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + Kernel.Kernel.NewLine + "                   We recommend using the \"vt100\" terminal emulators to get the most out of Kernel Simulator.");
             }
@@ -84,9 +84,9 @@ namespace KS.ConsoleBase
             // still use the VT sequence to print colored text, but this will be changed later.
             if (!TerminalType.Contains("-256col") & !KernelPlatform.IsOnWindows())
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
                 TextWriterColor.WritePlain("Warning: Kernel Simulator makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
-                Console.ReadKey(true);
+                ConsoleWrapper.ReadKey(true);
             }
         }
 

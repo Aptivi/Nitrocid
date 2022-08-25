@@ -76,7 +76,7 @@ namespace KS.Kernel.Power
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."), true, ColorTools.ColTypes.Neutral);
                         KernelTools.ResetEverything();
                         Kernel.KernelEventManager.RaisePostReboot();
-                        Console.Clear();
+                        ConsoleBase.ConsoleWrapper.Clear();
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         break;

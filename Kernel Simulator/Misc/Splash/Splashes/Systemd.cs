@@ -65,7 +65,7 @@ namespace KS.Misc.Splash.Splashes
         {
             Beginning = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Display()
@@ -73,8 +73,8 @@ namespace KS.Misc.Splash.Splashes
             try
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Splash displaying.");
-                IndicatorLeft = Console.CursorLeft + 2;
-                IndicatorTop = Console.CursorTop;
+                IndicatorLeft = ConsoleBase.ConsoleWrapper.CursorLeft + 2;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop;
                 while (!SplashClosing)
                     Thread.Sleep(1);
             }
@@ -88,7 +88,7 @@ namespace KS.Misc.Splash.Splashes
         {
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)
@@ -99,7 +99,7 @@ namespace KS.Misc.Splash.Splashes
             if (!Beginning)
             {
                 IndicatorLeft = 2;
-                IndicatorTop = Console.CursorTop - 1;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
         }

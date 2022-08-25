@@ -167,7 +167,7 @@ namespace KS.Kernel
                             TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), true, ColorTools.ColTypes.Continuable, ErrorType, Description);
                             if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                 TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.Continuable);
-                            Console.ReadKey();
+                            ConsoleBase.ConsoleWrapper.ReadKey();
                             break;
                         }
 
@@ -190,7 +190,7 @@ namespace KS.Kernel
                                 TextWriterColor.Write(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), true, ColorTools.ColTypes.Uncontinuable, ErrorType, Description);
                                 if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                                     TextWriterColor.Write(Exc.StackTrace, true, ColorTools.ColTypes.Uncontinuable);
-                                Console.ReadKey();
+                                ConsoleBase.ConsoleWrapper.ReadKey();
                                 PowerManager.PowerManage(PowerMode.Shutdown);
                             }
 
@@ -493,8 +493,8 @@ namespace KS.Kernel
             }
 
             // Clear the console and reset the colors
-            Console.ResetColor();
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.ResetColor();
+            ConsoleBase.ConsoleWrapper.Clear();
             Environment.Exit(0);
         }
 
@@ -520,7 +520,7 @@ namespace KS.Kernel
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {Kernel.StageTimer.Elapsed}", 10, ColorTools.ColTypes.StageTime);
                     Kernel.StageTimer.Reset();
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                 }
             }
             else if (Flags.ShowStageFinishTimes)
@@ -534,7 +534,7 @@ namespace KS.Kernel
             {
                 if (!Flags.EnableSplash & !Flags.QuietKernel)
                 {
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                     SeparatorWriterColor.WriteSeparator(StageText, false, ColorTools.ColTypes.Stage);
                 }
                 DebugWriter.Wdbg(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");

@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Test.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             char esc = CharManager.GetEsc();
-            Console.WriteLine(Convert.ToString(esc) + "[38;2;" + ListArgsOnly[0] + "mIndex " + ListArgsOnly[0]);
+            ConsoleBase.ConsoleWrapper.WriteLine(Convert.ToString(esc) + "[38;2;" + ListArgsOnly[0] + "mIndex " + ListArgsOnly[0]);
         }
 
     }

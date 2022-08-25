@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Rar.Commands
                 }
                 else
                 {
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                 }
             }
         }

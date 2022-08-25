@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.HTTP
                         // Prompt for command
                         if (Kernel.Kernel.DefConsoleOut is not null)
                         {
-                            Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                         }
                         DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
                         PromptPresetManager.WriteShellPrompt(ShellType);

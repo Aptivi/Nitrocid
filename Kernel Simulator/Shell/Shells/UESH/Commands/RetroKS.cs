@@ -120,7 +120,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Clear the console
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
     }

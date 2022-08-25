@@ -356,7 +356,7 @@ namespace KS.ConsoleBase.Themes.Studio
         /// </summary>
         public static void PreparePreview()
         {
-            Console.Clear();
+            ConsoleWrapper.Clear();
             TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
 
             // Print every possibility of color types
@@ -514,7 +514,7 @@ namespace KS.ConsoleBase.Themes.Studio
 
             // Pause until a key is pressed
             TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Neutral);
-            Console.ReadKey();
+            ConsoleWrapper.ReadKey();
         }
 
     }

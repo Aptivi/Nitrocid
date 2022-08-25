@@ -599,7 +599,7 @@ namespace KS.Login
                     DebugWriter.Wdbg(DebugLevel.W, "Username is not valid. Returning...");
                     TextWriterColor.Write(Translate.DoTranslation("You must write your username."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    Console.ReadKey();
+                    ConsoleBase.ConsoleWrapper.ReadKey();
                 }
                 else
                 {
@@ -619,7 +619,7 @@ namespace KS.Login
                     DebugWriter.Wdbg(DebugLevel.W, "Password is not valid. Returning...");
                     TextWriterColor.Write(Translate.DoTranslation("You must write your password."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    Console.ReadKey();
+                    ConsoleBase.ConsoleWrapper.ReadKey();
                 }
                 else
                 {
@@ -651,7 +651,7 @@ namespace KS.Login
                                 DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
                                 TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, AnswerType);
                                 TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                                Console.ReadKey();
+                                ConsoleBase.ConsoleWrapper.ReadKey();
                                 break;
                             }
                     }
@@ -661,7 +661,7 @@ namespace KS.Login
                     DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    Console.ReadKey();
+                    ConsoleBase.ConsoleWrapper.ReadKey();
                 }
             }
 
@@ -679,7 +679,7 @@ namespace KS.Login
                         DebugWriter.Wdbg(DebugLevel.W, "Password is not valid. Returning...");
                         TextWriterColor.Write(Translate.DoTranslation("You must write the administrator password."), true, ColorTools.ColTypes.Error);
                         TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                        Console.ReadKey();
+                        ConsoleBase.ConsoleWrapper.ReadKey();
                     }
                     else
                     {

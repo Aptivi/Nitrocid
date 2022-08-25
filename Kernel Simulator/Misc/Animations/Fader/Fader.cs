@@ -38,25 +38,25 @@ namespace KS.Misc.Animations.Fader
         /// </summary>
         public static void Simulate(FaderSettings Settings)
         {
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             var RandomDriver = Settings.RandomDriver;
             int RedColorNum = RandomDriver.Next(Settings.FaderMinimumRedColorLevel, Settings.FaderMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Next(Settings.FaderMinimumGreenColorLevel, Settings.FaderMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Next(Settings.FaderMinimumBlueColorLevel, Settings.FaderMaximumBlueColorLevel);
-            Console.CursorVisible = false;
+            ConsoleWrapper.CursorVisible = false;
 
             // Check the text
-            int Left = RandomDriver.Next(Console.WindowWidth);
-            int Top = RandomDriver.Next(Console.WindowHeight);
+            int Left = RandomDriver.Next(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.Next(ConsoleWrapper.WindowHeight);
             DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            if (Settings.FaderWrite.Length + Left >= Console.WindowWidth)
+            if (Settings.FaderWrite.Length + Left >= ConsoleWrapper.WindowWidth)
             {
-                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", Settings.FaderWrite.Length + Left, Console.WindowWidth);
+                DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", Settings.FaderWrite.Length + Left, ConsoleWrapper.WindowWidth);
                 Left -= Settings.FaderWrite.Length + 1;
             }
-            Console.SetCursorPosition(Left, Top);
-            Console.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.SetCursorPosition(Left, Top);
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
             ConsoleExtensions.ClearKeepPosition();
 
             // Set thresholds
@@ -71,7 +71,7 @@ namespace KS.Misc.Animations.Fader
             int CurrentColorBlueIn = 0;
             for (int CurrentStep = Settings.FaderMaxSteps; CurrentStep >= 1; CurrentStep -= 1)
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -81,7 +81,7 @@ namespace KS.Misc.Animations.Fader
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WdbgConditional(ref Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                     TextWriterWhereColor.WriteWhere(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedIn + ";" + CurrentColorGreenIn + ";" + CurrentColorBlueIn), new Color((int)ConsoleColors.Black));
@@ -94,7 +94,7 @@ namespace KS.Misc.Animations.Fader
             // Fade out
             for (int CurrentStep = 1, loopTo = Settings.FaderMaxSteps; CurrentStep <= loopTo; CurrentStep++)
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -110,8 +110,8 @@ namespace KS.Misc.Animations.Fader
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
         }
 

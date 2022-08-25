@@ -31,10 +31,10 @@ namespace KS.Misc.Screensaver
 
         public virtual void ScreensaverPreparation()
         {
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
         public virtual void ScreensaverLogic()

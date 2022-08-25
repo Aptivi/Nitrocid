@@ -44,11 +44,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     if (KernelPlatform.IsOnWindows())
                     {
+                        // TODO: Remove by Milestone 3
                         Console.Beep(Convert.ToInt32(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
                     }
                     else
                     {
-                        Console.Beep();
+                        ConsoleBase.ConsoleWrapper.Beep();
                     }
                 }
                 else

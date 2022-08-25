@@ -133,17 +133,17 @@ namespace KS.Kernel
                     if (Flags.CheckingForConsoleSize)
                     {
                         // Check for the minimum console window requirements (80x24)
-                        while (Console.WindowWidth < 80 | Console.WindowHeight < 24)
+                        while (ConsoleWrapper.WindowWidth < 80 | ConsoleWrapper.WindowHeight < 24)
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1}", true, ColorTools.ColTypes.Warning, Console.WindowWidth, Console.WindowHeight);
+                            TextWriterColor.Write(Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1}", true, ColorTools.ColTypes.Warning, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                             TextWriterColor.Write(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
-                            Console.ReadKey(true);
+                            ConsoleWrapper.ReadKey(true);
                         }
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + NewLine + Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, ColorTools.ColTypes.Warning);
-                        Console.ReadKey(true);
+                        ConsoleWrapper.ReadKey(true);
                         Flags.CheckingForConsoleSize = true;
                     }
 
@@ -241,7 +241,7 @@ namespace KS.Kernel
                     // Show license if new style used
                     if (Flags.NewWelcomeStyle | Flags.EnableSplash)
                     {
-                        Console.WriteLine();
+                        ConsoleWrapper.WriteLine();
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, ColorTools.ColTypes.Stage);
                         WelcomeMessage.WriteLicense(false);
                     }
@@ -275,8 +275,8 @@ namespace KS.Kernel
                 }
                 catch (InsaneConsoleDetectedException icde)
                 {
-                    Console.WriteLine(icde.Message);
-                    Console.WriteLine(icde.InsanityReason);
+                    ConsoleWrapper.WriteLine(icde.Message);
+                    ConsoleWrapper.WriteLine(icde.InsanityReason);
                     Flags.KernelShutdown = true;
                 }
                 catch (KernelErrorException kee)
@@ -295,14 +295,14 @@ namespace KS.Kernel
             }
 
             // Clear the console and reset the colors
-            Console.ResetColor();
-            Console.Clear();
+            ConsoleWrapper.ResetColor();
+            ConsoleWrapper.Clear();
 
             // If "No APM" is enabled, simply print the text
             if (Flags.SimulateNoAPM)
             {
-                Console.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
-                Console.ReadKey(true);
+                ConsoleWrapper.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
+                ConsoleWrapper.ReadKey(true);
             }
         }
 

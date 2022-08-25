@@ -158,11 +158,11 @@ namespace KS.Misc.Notifications
                             }
 
                             // Write notification to console
-                            DebugWriter.Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", Console.WindowWidth - 40, Console.WindowTop, Console.WindowTop + 1, Console.WindowTop + 2);
-                            TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop, true, ColorTools.ColTypes.Neutral);
-                            TextWriterWhereColor.WriteWhere(Title + Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, true, NotifyTitleColor);
-                            TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, true, NotifyDescColor);
-                            TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
+                            DebugWriter.Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, ConsoleBase.ConsoleWrapper.WindowTop + 1, ConsoleBase.ConsoleWrapper.WindowTop + 2);
+                            TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
+                            TextWriterWhereColor.WriteWhere(Title + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyTitleColor);
+                            TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyDescColor);
+                            TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
 
                             // Optionally, draw a border
                             if (Flags.DrawBorderNotification)
@@ -191,14 +191,14 @@ namespace KS.Misc.Notifications
                                 }
 
                                 // Just draw the border!
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyUpperLeftCornerChar + CurrentNotifyUpperFrameChar.Repeat(38L) + CurrentNotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhere(CurrentNotifyLowerLeftCornerChar + CurrentNotifyLowerFrameChar.Repeat(38L) + CurrentNotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyUpperLeftCornerChar + CurrentNotifyUpperFrameChar.Repeat(38L) + CurrentNotifyUpperRightCornerChar, ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLeftFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 2, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 2, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyRightFrameChar, ConsoleBase.ConsoleWrapper.WindowWidth - 2, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhere(CurrentNotifyLowerLeftCornerChar + CurrentNotifyLowerFrameChar.Repeat(38L) + CurrentNotifyLowerRightCornerChar, ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 4, true, NotifyBorderColor);
                             }
 
                             // Beep according to priority
@@ -206,7 +206,7 @@ namespace KS.Misc.Notifications
                             if (NewNotification.Priority == NotifPriority.Custom)
                                 BeepTimes = NewNotification.CustomBeepTimes;
                             for (int i = 1, loopTo = BeepTimes; i <= loopTo; i++)
-                                Console.Beep();
+                                ConsoleBase.ConsoleWrapper.Beep();
 
                             // Show progress
                             if (NewNotification.Type == NotifType.Progress)
@@ -214,26 +214,26 @@ namespace KS.Misc.Notifications
                                 while (!(NewNotification.Progress >= 100 | NewNotification.ProgressFailed))
                                 {
                                     string ProgressTitle = Title + " (" + NewNotification.Progress.ToString() + "%)";
-                                    DebugWriter.Wdbg(DebugLevel.I, "Where to store progress: {0},{1}", Console.WindowWidth - 40, Console.WindowTop + 3);
+                                    DebugWriter.Wdbg(DebugLevel.I, "Where to store progress: {0},{1}", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3);
                                     DebugWriter.Wdbg(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
-                                    TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop, true, ColorTools.ColTypes.Neutral);
-                                    TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, true, NotifyTitleColor, NewNotification.Progress);
-                                    TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, true, NotifyDescColor);
-                                    TextWriterWhereColor.WriteWhere("*".Repeat((long)Math.Round(NewNotification.Progress * 100 / 100d * (38d / 100d))), Console.WindowWidth - 40, Console.WindowTop + 3, true, NotifyProgressColor);
+                                    TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
+                                    TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyTitleColor, NewNotification.Progress);
+                                    TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, NotifyDescColor);
+                                    TextWriterWhereColor.WriteWhere("*".Repeat((long)Math.Round(NewNotification.Progress * 100 / 100d * (38d / 100d))), ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, NotifyProgressColor);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
-                                        TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, true, NotifyProgressFailureColor, NewNotification.Progress);
+                                        TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, NotifyProgressFailureColor, NewNotification.Progress);
                                 }
                             }
 
                             // Clear the area
-                            int TopTitleClear = Console.WindowTop + 1;
-                            int TopDescClear = Console.WindowTop + 2;
-                            int TopProgClear = Console.WindowTop + 3;
-                            int TopOpenBorderClear = Console.WindowTop;
-                            int TopCloseBorderClear = Console.WindowTop + 4;
+                            int TopTitleClear = ConsoleBase.ConsoleWrapper.WindowTop + 1;
+                            int TopDescClear = ConsoleBase.ConsoleWrapper.WindowTop + 2;
+                            int TopProgClear = ConsoleBase.ConsoleWrapper.WindowTop + 3;
+                            int TopOpenBorderClear = ConsoleBase.ConsoleWrapper.WindowTop;
+                            int TopCloseBorderClear = ConsoleBase.ConsoleWrapper.WindowTop + 4;
                             Thread.Sleep(5000);
-                            NotifClearArea(Console.WindowWidth - (Flags.DrawBorderNotification ? 41 : 40), TopTitleClear, TopDescClear, TopProgClear, TopOpenBorderClear, TopCloseBorderClear);
+                            NotifClearArea(ConsoleBase.ConsoleWrapper.WindowWidth - (Flags.DrawBorderNotification ? 41 : 40), TopTitleClear, TopDescClear, TopProgClear, TopOpenBorderClear, TopCloseBorderClear);
                         }
                     }
                 }
@@ -258,24 +258,24 @@ namespace KS.Misc.Notifications
         {
             if (Flags.DrawBorderNotification)
             {
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 41, Console.WindowTop, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopOpenBorder, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 41, Console.WindowTop + 1, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopTitle, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 41, Console.WindowTop + 2, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopDesc, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 41, Console.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopProg, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 41, Console.WindowTop + 4, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 41, ConsoleBase.ConsoleWrapper.WindowTop + 4, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopCloseBorder, true, ColorTools.ColTypes.Neutral);
             }
             else
             {
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 1, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopTitle, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 2, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopDesc, true, ColorTools.ColTypes.Neutral);
-                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
+                TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", ConsoleBase.ConsoleWrapper.WindowWidth - 40, ConsoleBase.ConsoleWrapper.WindowTop + 3, true, ColorTools.ColTypes.Neutral);
                 TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", Width, TopProg, true, ColorTools.ColTypes.Neutral);
             }
         }

@@ -108,7 +108,7 @@ namespace KS.Misc.Screensaver
             try
             {
                 int CountedTime;
-                int OldCursorLeft = Console.CursorLeft;
+                int OldCursorLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
                 while (!Flags.KernelShutdown)
                 {
                     if (!Flags.ScrnTimeReached)
@@ -118,11 +118,11 @@ namespace KS.Misc.Screensaver
                         for (CountedTime = 0; CountedTime <= loopTo; CountedTime++)
                         {
                             Thread.Sleep(1);
-                            if (Console.KeyAvailable | OldCursorLeft != Console.CursorLeft)
+                            if (ConsoleBase.ConsoleWrapper.KeyAvailable | OldCursorLeft != ConsoleBase.ConsoleWrapper.CursorLeft)
                             {
                                 CountedTime = 0;
                             }
-                            OldCursorLeft = Console.CursorLeft;
+                            OldCursorLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
                             if (CountedTime > ScrnTimeout)
                             {
                                 // This shouldn't happen, but the counted time is bigger than the screen timeout. Just bail.
@@ -288,7 +288,7 @@ namespace KS.Misc.Screensaver
         {
             DebugWriter.Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
             ColorTools.LoadBack();
-            Console.CursorVisible = true;
+            ConsoleBase.ConsoleWrapper.CursorVisible = true;
             DebugWriter.Wdbg(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
         }

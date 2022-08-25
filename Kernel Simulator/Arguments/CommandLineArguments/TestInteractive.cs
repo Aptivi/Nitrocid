@@ -35,8 +35,8 @@ namespace KS.Arguments.CommandLineArguments
             if (TestShellCommon.Test_ShutdownFlag)
             {
                 // Clear the console and reset the colors
-                Console.ResetColor();
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.ResetColor();
+                ConsoleBase.ConsoleWrapper.Clear();
                 Environment.Exit(0);
             }
         }

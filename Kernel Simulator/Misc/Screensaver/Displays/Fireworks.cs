@@ -267,22 +267,22 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
             // Variables
-            int HalfHeight = (int)Math.Round(Console.WindowHeight / 2d);
-            int LaunchPositionX = RandomDriver.Next(Console.WindowWidth);
-            int LaunchPositionY = Console.WindowHeight - 1;
-            int IgnitePositionX = RandomDriver.Next(Console.WindowWidth);
+            int HalfHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
+            int LaunchPositionX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+            int LaunchPositionY = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
+            int IgnitePositionX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
             int IgnitePositionY = RandomDriver.Next(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
             LaunchPositionX.SwapIfSourceLarger(ref IgnitePositionX);
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
@@ -299,7 +299,7 @@ namespace KS.Misc.Screensaver.Displays
             var IgniteColor = new Color(255, 255, 255);
 
             // Select a color
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
             if (FireworksSettings.FireworksTrueColor)
             {
                 int RedColorNum = RandomDriver.Next(FireworksSettings.FireworksMinimumRedColorLevel, FireworksSettings.FireworksMaximumRedColorLevel);
@@ -322,18 +322,18 @@ namespace KS.Misc.Screensaver.Displays
                 int CurrentY = LaunchPositionY;
                 while (!(CurrentX >= IgnitePositionX & CurrentY <= IgnitePositionY))
                 {
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
                     DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
-                    Console.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
-                    Console.Write(" ");
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
+                    ConsoleBase.ConsoleWrapper.Write(" ");
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Clear();
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+                    ConsoleBase.ConsoleWrapper.Clear();
                     ColorTools.SetConsoleColor(new Color(255, 255, 255), true, true);
 
                     // Change positions
@@ -347,7 +347,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 for (int Radius = 0, loopTo = FireworkRadius; Radius <= loopTo; Radius++)
                 {
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
@@ -364,42 +364,42 @@ namespace KS.Misc.Screensaver.Displays
 
                     // Draw the explosion
                     ColorTools.SetConsoleColor(IgniteColor, true, true);
-                    if (UpperParticleY < Console.WindowHeight)
+                    if (UpperParticleY < ConsoleBase.ConsoleWrapper.WindowHeight)
                     {
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
-                        Console.SetCursorPosition(IgnitePositionX, UpperParticleY);
-                        Console.Write(" ");
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(IgnitePositionX, UpperParticleY);
+                        ConsoleBase.ConsoleWrapper.Write(" ");
                     }
-                    if (LowerParticleY < Console.WindowHeight)
+                    if (LowerParticleY < ConsoleBase.ConsoleWrapper.WindowHeight)
                     {
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
-                        Console.SetCursorPosition(IgnitePositionX, LowerParticleY);
-                        Console.Write(" ");
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(IgnitePositionX, LowerParticleY);
+                        ConsoleBase.ConsoleWrapper.Write(" ");
                     }
-                    if (LeftParticleX < Console.WindowWidth)
+                    if (LeftParticleX < ConsoleBase.ConsoleWrapper.WindowWidth)
                     {
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
-                        Console.SetCursorPosition(LeftParticleX, IgnitePositionY);
-                        Console.Write(" ");
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(LeftParticleX, IgnitePositionY);
+                        ConsoleBase.ConsoleWrapper.Write(" ");
                     }
-                    if (RightParticleX < Console.WindowWidth)
+                    if (RightParticleX < ConsoleBase.ConsoleWrapper.WindowWidth)
                     {
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
-                        Console.SetCursorPosition(RightParticleX, IgnitePositionY);
-                        Console.Write(" ");
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(RightParticleX, IgnitePositionY);
+                        ConsoleBase.ConsoleWrapper.Write(" ");
                     }
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Clear();
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+                    ConsoleBase.ConsoleWrapper.Clear();
                 }
             }
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
 
     }

@@ -60,7 +60,7 @@ namespace KS.Misc.Writers.MiscWriters
         {
             if (!Flags.EnableSplash)
             {
-                Console.CursorVisible = false;
+                ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
                 // The default message to write
                 string MessageWrite = GetCustomBanner();
@@ -84,7 +84,7 @@ namespace KS.Misc.Writers.MiscWriters
                     // Show license
                     WriteLicense(true);
                 }
-                Console.CursorVisible = true;
+                ConsoleBase.ConsoleWrapper.CursorVisible = true;
             }
         }
 
@@ -96,7 +96,7 @@ namespace KS.Misc.Writers.MiscWriters
             TextWriterColor.Write(Kernel.Kernel.NewLine + "    Kernel Simulator  Copyright (C) 2018-2022  Aptivi" + Kernel.Kernel.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " + Kernel.Kernel.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." + Kernel.Kernel.NewLine + "    This is free software, and you are welcome to redistribute it" + Kernel.Kernel.NewLine + "    under certain conditions; See COPYING file in source code." + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.License);
             TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, ColorTools.ColTypes.License);
             if (TwoNewlines)
-                Console.WriteLine();
+                ConsoleBase.ConsoleWrapper.WriteLine();
         }
 
     }

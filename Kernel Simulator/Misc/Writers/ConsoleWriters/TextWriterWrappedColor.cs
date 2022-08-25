@@ -47,21 +47,21 @@ namespace KS.Misc.Writers.ConsoleWriters
                     if (!(vars.Length == 0))
                         Text = StringManipulate.FormatString(Text, vars);
 
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (char TextChar in Text.ToString().ToCharArray())
                     {
-                        Console.Write(TextChar);
-                        LinesMade += Console.CursorTop - OldTop;
-                        OldTop = Console.CursorTop;
-                        if (LinesMade == Console.WindowHeight - 1)
+                        ConsoleBase.ConsoleWrapper.Write(TextChar);
+                        LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                        OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                        if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                             LinesMade = 0;
                         }
                     }
                     if (Line)
-                        Console.WriteLine();
+                        ConsoleBase.ConsoleWrapper.WriteLine();
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -141,8 +141,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                    Console.ForegroundColor = color;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write wrapped output
                     WriteWrappedPlain(Text, Line, vars);
@@ -170,8 +170,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    Console.BackgroundColor = BackgroundColor;
-                    Console.ForegroundColor = ForegroundColor;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write wrapped output
                     WriteWrappedPlain(Text, Line, vars);
@@ -198,7 +198,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
@@ -230,7 +230,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);

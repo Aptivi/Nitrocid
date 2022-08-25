@@ -317,7 +317,7 @@ namespace KS.Shell
             // Restore console output to its original state if any
             if (Kernel.Kernel.DefConsoleOut is not null)
             {
-                Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                 OutputTextWriter?.Close();
             }
         }
@@ -333,20 +333,20 @@ namespace KS.Shell
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Output redirection found with append.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                Kernel.Kernel.DefConsoleOut = Console.Out;
+                Kernel.Kernel.DefConsoleOut = ConsoleWrapper.Out;
                 OutputStream = new FileStream(Filesystem.NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write);
                 OutputTextWriter = new StreamWriter(OutputStream) { AutoFlush = true };
-                Console.SetOut(OutputTextWriter);
+                ConsoleWrapper.SetOut(OutputTextWriter);
                 Command = Command.Replace(" >>> " + OutputFileName, "");
             }
             else if (Command.Contains(">>"))
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Output redirection found with overwrite.");
                 string OutputFileName = Command.Substring(Command.LastIndexOf(">") + 2);
-                Kernel.Kernel.DefConsoleOut = Console.Out;
+                Kernel.Kernel.DefConsoleOut = ConsoleWrapper.Out;
                 OutputStream = new FileStream(Filesystem.NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write);
                 OutputTextWriter = new StreamWriter(OutputStream) { AutoFlush = true };
-                Console.SetOut(OutputTextWriter);
+                ConsoleWrapper.SetOut(OutputTextWriter);
                 Command = Command.Replace(" >> " + OutputFileName, "");
             }
 
@@ -354,10 +354,10 @@ namespace KS.Shell
             if (!string.IsNullOrWhiteSpace(OutputPath))
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
-                Kernel.Kernel.DefConsoleOut = Console.Out;
+                Kernel.Kernel.DefConsoleOut = ConsoleWrapper.Out;
                 OutputStream = new FileStream(Filesystem.NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write);
                 OutputTextWriter = new StreamWriter(OutputStream) { AutoFlush = true };
-                Console.SetOut(OutputTextWriter);
+                ConsoleWrapper.SetOut(OutputTextWriter);
             }
         }
 

@@ -32,10 +32,10 @@ namespace KS.ConsoleBase
         /// </summary>
         public static void ClearKeepPosition()
         {
-            int Left = Console.CursorLeft;
-            int Top = Console.CursorTop;
-            Console.Clear();
-            Console.SetCursorPosition(Left, Top);
+            int Left = ConsoleWrapper.CursorLeft;
+            int Top = ConsoleWrapper.CursorTop;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.SetCursorPosition(Left, Top);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace KS.ConsoleBase
         /// </summary>
         public static void ClearLineToRight()
         {
-            Console.Write(Convert.ToString(CharManager.GetEsc()) + "[0K");
+            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[0K");
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace KS.ConsoleBase
         /// <returns>How many times to repeat the character</returns>
         public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset)
         {
-            return (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((Console.WindowWidth - WidthOffset) * 0.01d));
+            return (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
         }
 
         /// <summary>
@@ -92,8 +92,8 @@ namespace KS.ConsoleBase
         public static void GetFilteredPositions(string Text, ref int Left, ref int Top, params object[] Vars)
         {
             // First, get the old cursor positions
-            int OldLeft = Console.CursorLeft;
-            int OldTop = Console.CursorTop;
+            int OldLeft = ConsoleWrapper.CursorLeft;
+            int OldTop = ConsoleWrapper.CursorTop;
 
             // Second, filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
@@ -106,7 +106,7 @@ namespace KS.ConsoleBase
             for (int i = 1, loopTo = Text.Length; i <= loopTo; i++)
             {
                 // If we spotted a new line character, get down by one line.
-                if (Text[i - 1] == Convert.ToChar(10) & TopSeekPosition < Console.BufferHeight - 1)
+                if (Text[i - 1] == Convert.ToChar(10) & TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
                 {
                     TopSeekPosition += 1;
                 }
@@ -114,14 +114,14 @@ namespace KS.ConsoleBase
                 {
                     // Simulate seeking through text
                     LeftSeekPosition += 1;
-                    if (LeftSeekPosition >= Console.WindowWidth)
+                    if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                     {
                         // We've reached end of line
                         LeftSeekPosition = 0;
 
                         // Get down by one line
                         TopSeekPosition += 1;
-                        if (TopSeekPosition > Console.BufferHeight - 1)
+                        if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                         {
                             // We're at the end of buffer! Decrement by one.
                             TopSeekPosition -= 1;
@@ -133,7 +133,7 @@ namespace KS.ConsoleBase
             Top = TopSeekPosition;
 
             // Finally, set the correct old position
-            Console.SetCursorPosition(OldLeft, OldTop);
+            ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
         }
 
         public static void SetTitle(string Text)

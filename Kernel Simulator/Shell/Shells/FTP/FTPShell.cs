@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.FTP
                         // Restore console state
                         if (Kernel.Kernel.DefConsoleOut is not null)
                         {
-                            Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                         }
 
                         // Prompt for command

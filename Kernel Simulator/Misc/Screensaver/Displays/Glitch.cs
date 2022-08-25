@@ -84,30 +84,30 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.CursorVisible = false;
-            Console.Clear();
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
         {
             // Select random positions to generate the glitch
             double GlitchDense = (GlitchSettings.GlitchDensity > 100 ? 100 : GlitchSettings.GlitchDensity) / 100d;
-            int AmountOfBlocks = Console.WindowWidth * Console.WindowHeight;
+            int AmountOfBlocks = ConsoleBase.ConsoleWrapper.WindowWidth * ConsoleBase.ConsoleWrapper.WindowHeight;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
             while (!(CoveredBlocks.Count == BlocksToCover | ResizeSyncing))
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    int CoverX = RandomDriver.Next(Console.WindowWidth);
-                    int CoverY = RandomDriver.Next(Console.WindowHeight);
-                    Console.SetCursorPosition(CoverX, CoverY);
+                    int CoverX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
 
                     // Select random glitch type
                     GlitchType GlitchType = (GlitchType)Convert.ToInt32(Enum.Parse(typeof(GlitchType), RandomDriver.Next(5).ToString()));
@@ -181,8 +181,8 @@ namespace KS.Misc.Screensaver.Displays
                                 if (ColorLetter)
                                     ColorTools.SetConsoleColor(ColorLetterInstance);
                                 else
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write(Letter);
+                                    ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                                ConsoleBase.ConsoleWrapper.Write(Letter);
                                 break;
                             }
                         case Displays.GlitchType.RandomSymbol:
@@ -190,14 +190,14 @@ namespace KS.Misc.Screensaver.Displays
                                 if (ColorLetter)
                                     ColorTools.SetConsoleColor(ColorLetterInstance);
                                 else
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write(Symbol);
+                                    ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                                ConsoleBase.ConsoleWrapper.Write(Symbol);
                                 break;
                             }
                         case Displays.GlitchType.RedGreenBlueColor:
                             {
                                 ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
-                                Console.Write(" ");
+                                ConsoleBase.ConsoleWrapper.Write(" ");
                                 break;
                             }
                         case Displays.GlitchType.RedGreenBlueColorWithRandomLetter:
@@ -205,9 +205,9 @@ namespace KS.Misc.Screensaver.Displays
                                 if (ColorLetter)
                                     ColorTools.SetConsoleColor(ColorLetterInstance);
                                 else
-                                    Console.ForegroundColor = ConsoleColor.White;
+                                    ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
                                 ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
-                                Console.Write(Letter);
+                                ConsoleBase.ConsoleWrapper.Write(Letter);
                                 break;
                             }
                         case Displays.GlitchType.RedGreenBlueColorWithRandomSymbol:
@@ -215,9 +215,9 @@ namespace KS.Misc.Screensaver.Displays
                                 if (ColorLetter)
                                     ColorTools.SetConsoleColor(ColorLetterInstance);
                                 else
-                                    Console.ForegroundColor = ConsoleColor.White;
+                                    ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
                                 ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
-                                Console.Write(Symbol);
+                                ConsoleBase.ConsoleWrapper.Write(Symbol);
                                 break;
                             }
                     }
@@ -227,7 +227,7 @@ namespace KS.Misc.Screensaver.Displays
                 else
                 {
                     // We're resizing.
-                    Console.CursorVisible = false;
+                    ConsoleBase.ConsoleWrapper.CursorVisible = false;
                     break;
                 }
                 ThreadManager.SleepNoBlock(GlitchSettings.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -235,8 +235,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
 
     }

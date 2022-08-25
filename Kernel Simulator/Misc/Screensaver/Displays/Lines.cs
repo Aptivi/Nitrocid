@@ -281,20 +281,20 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Select a color
             if (LinesSettings.LinesTrueColor)
             {
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
                 int RedColorNum = RandomDriver.Next(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
@@ -305,41 +305,41 @@ namespace KS.Misc.Screensaver.Displays
             else if (LinesSettings.Lines255Colors)
             {
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
                 int color = RandomDriver.Next(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
             else
             {
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
                 ColorTools.SetConsoleColor(new Color(LinesSettings.LinesBackgroundColor), true, true);
-                Console.ForegroundColor = Screensaver.colors[RandomDriver.Next(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor);
+                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Next(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel)];
+                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 
             // Draw a line
             string Line = "";
-            int Top = new Random().Next(Console.WindowHeight);
+            int Top = new Random().Next(ConsoleBase.ConsoleWrapper.WindowHeight);
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
-            for (int i = 1, loopTo = Console.WindowWidth; i <= loopTo; i++)
+            for (int i = 1, loopTo = ConsoleBase.ConsoleWrapper.WindowWidth; i <= loopTo; i++)
             {
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default \"-\"...", LinesSettings.LinesLineChar);
                 Line += !string.IsNullOrWhiteSpace(LinesSettings.LinesLineChar) ? LinesSettings.LinesLineChar : "-";
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Line: {0}", Line);
             }
-            if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
-                Console.SetCursorPosition(0, Top);
-                Console.WriteLine(Line);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(0, Top);
+                ConsoleBase.ConsoleWrapper.WriteLine(Line);
             }
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(LinesSettings.LinesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

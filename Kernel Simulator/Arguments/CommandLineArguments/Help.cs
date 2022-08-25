@@ -32,20 +32,20 @@ namespace KS.Arguments.CommandLineArguments
             // Command-line arguments
             TextWriterColor.Write(Translate.DoTranslation("Command-line arguments:"), true, ColorTools.ColTypes.ListTitle);
             ArgumentHelpSystem.ShowArgsHelp(ArgumentType.CommandLineArgs);
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
 
             // Pre-boot command-line arguments
             TextWriterColor.Write(Translate.DoTranslation("Pre-boot command-line arguments:"), true, ColorTools.ColTypes.ListTitle);
             ArgumentHelpSystem.ShowArgsHelp(ArgumentType.PreBootCommandLineArgs);
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
 
             // Either start the kernel or exit it
             TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, ColorTools.ColTypes.Tip);
-            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
             {
                 // Clear the console and reset the colors
-                Console.ResetColor();
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.ResetColor();
+                ConsoleBase.ConsoleWrapper.Clear();
                 Environment.Exit(0);
             }
         }

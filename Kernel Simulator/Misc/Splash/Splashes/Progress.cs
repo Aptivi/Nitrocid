@@ -79,7 +79,7 @@ namespace KS.Misc.Splash.Splashes
                         }
                     case TextLocation.Bottom:
                         {
-                            return Console.WindowHeight - 6;
+                            return ConsoleWrapper.WindowHeight - 6;
                         }
 
                     default:
@@ -110,7 +110,7 @@ namespace KS.Misc.Splash.Splashes
                         }
                     case TextLocation.Bottom:
                         {
-                            return Console.WindowHeight - 6;
+                            return ConsoleWrapper.WindowHeight - 6;
                         }
 
                     default:
@@ -125,7 +125,7 @@ namespace KS.Misc.Splash.Splashes
         public void Opening()
         {
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Display()
@@ -151,7 +151,7 @@ namespace KS.Misc.Splash.Splashes
         {
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)
@@ -168,7 +168,7 @@ namespace KS.Misc.Splash.Splashes
         public void UpdateProgressReport(int Progress, string ProgressReport, params object[] Vars)
         {
             // Display the text and percentage
-            string RenderedText = ProgressReport.Truncate(Console.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
+            string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             TextWriterWhereColor.WriteWhere("{0}%", ProgressWritePositionX, ProgressWritePositionY, true, ColorTools.ColTypes.Progress, Progress.ToString().PadLeft(3));
             TextWriterWhereColor.WriteWhere(RenderedText, ProgressReportWritePositionX, ProgressReportWritePositionY, false, ColorTools.ColTypes.Neutral, Vars);
             ConsoleExtensions.ClearLineToRight();
@@ -177,11 +177,11 @@ namespace KS.Misc.Splash.Splashes
             if (!string.IsNullOrEmpty(SplashSettings.ProgressProgressColor) & ColorTools.TryParseColor(SplashSettings.ProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashSettings.ProgressProgressColor);
-                ProgressBarColor.WriteProgress(Progress, 4, Console.WindowHeight - 4, ProgressColor);
+                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
             }
             else
             {
-                ProgressBarColor.WriteProgress(Progress, 4, Console.WindowHeight - 4);
+                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4);
             }
         }
 

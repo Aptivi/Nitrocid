@@ -66,10 +66,10 @@ namespace KS.Misc.Writers.ConsoleWriters
                         msg = StringManipulate.FormatString(msg, vars);
 
                     // Write text in another place slowly
-                    int OldLeft = Console.CursorLeft;
-                    int OldTop = Console.CursorTop;
+                    int OldLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
+                    int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
-                    Console.SetCursorPosition(Left, Top);
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0, loopTo = Paragraphs.Length - 1; MessageParagraphIndex <= loopTo; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
@@ -77,25 +77,25 @@ namespace KS.Misc.Writers.ConsoleWriters
                         foreach (char ParagraphChar in MessageParagraph)
                         {
                             Thread.Sleep((int)Math.Round(MsEachLetter));
-                            if (Console.CursorLeft == Console.WindowWidth)
+                            if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth)
                             {
-                                Console.CursorTop += 1;
-                                Console.CursorLeft = Left;
+                                ConsoleBase.ConsoleWrapper.CursorTop += 1;
+                                ConsoleBase.ConsoleWrapper.CursorLeft = Left;
                             }
-                            Console.Write(ParagraphChar);
+                            ConsoleBase.ConsoleWrapper.Write(ParagraphChar);
                             if (Line)
-                                Console.WriteLine();
+                                ConsoleBase.ConsoleWrapper.WriteLine();
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         if (!(MessageParagraphIndex == Paragraphs.Length - 1))
                         {
-                            Console.CursorTop += 1;
-                            Console.CursorLeft = Left;
+                            ConsoleBase.ConsoleWrapper.CursorTop += 1;
+                            ConsoleBase.ConsoleWrapper.CursorLeft = Left;
                         }
                     }
                     if (Return)
-                        Console.SetCursorPosition(OldLeft, OldTop);
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -232,8 +232,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                    Console.ForegroundColor = color;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, vars);
@@ -280,8 +280,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = BackgroundColor;
-                    Console.ForegroundColor = ForegroundColor;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, vars);
@@ -326,7 +326,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
@@ -377,7 +377,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);

@@ -69,7 +69,7 @@ namespace KS.Misc.Splash.Splashes
         {
             Beginning = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
             TextWriterColor.Write(Kernel.Kernel.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {ColorTools.NeutralTextColor.VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Kernel Simulator {Kernel.Kernel.KernelVersion}" + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Neutral);
         }
 
@@ -78,8 +78,8 @@ namespace KS.Misc.Splash.Splashes
             try
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Splash displaying.");
-                IndicatorLeft = Console.WindowWidth - 8;
-                IndicatorTop = Console.CursorTop;
+                IndicatorLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 8;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop;
                 while (!SplashClosing)
                     Thread.Sleep(1);
             }
@@ -93,7 +93,7 @@ namespace KS.Misc.Splash.Splashes
         {
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)
@@ -107,8 +107,8 @@ namespace KS.Misc.Splash.Splashes
             TextWriterColor.Write(ProgressReport, true, ColorTools.ColTypes.Neutral, Vars);
             if (!Beginning)
             {
-                IndicatorLeft = Console.WindowWidth - 8;
-                IndicatorTop = Console.CursorTop - 1;
+                IndicatorLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 8;
+                IndicatorTop = ConsoleBase.ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
         }

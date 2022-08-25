@@ -177,7 +177,7 @@ namespace KS.Network.RPC
                             if (Flags.LoggedIn)
                             {
                                 DebugWriter.Wdbg(DebugLevel.I, "Exec confirmed from remote access.");
-                                Console.WriteLine();
+                                ConsoleBase.ConsoleWrapper.WriteLine();
                                 Shell.Shell.GetLine(Message.Replace("ExecConfirm, ", "").Replace(Kernel.Kernel.NewLine, ""));
                             }
                             else

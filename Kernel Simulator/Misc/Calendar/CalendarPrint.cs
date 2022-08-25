@@ -55,8 +55,8 @@ namespace KS.Misc.Calendar
             var CalendarCellOptions = new List<CellOptions>();
 
             // Populate the calendar data
-            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((Console.WindowWidth - CalendarTitle.Length) / 2d), Console.CursorTop, true, ColorTools.ColTypes.Neutral);
-            Console.WriteLine();
+            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleBase.ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.Neutral);
+            ConsoleBase.ConsoleWrapper.WriteLine();
             for (int CurrentDay = 1, loopTo = DateTo.Day; CurrentDay <= loopTo; CurrentDay++)
             {
                 var CurrentDate = new DateTime(Year, Month, CurrentDay, CultureManager.CurrentCult.DateTimeFormat.Calendar);

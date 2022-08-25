@@ -292,7 +292,7 @@ namespace KS.ConsoleBase.Colors
             {
                 DebugWriter.Wdbg(DebugLevel.I, "Filling background with background color");
                 SetConsoleColor(BackgroundColor, true);
-                Console.Clear();
+                ConsoleWrapper.Clear();
             }
             catch (Exception ex)
             {
@@ -656,7 +656,7 @@ namespace KS.ConsoleBase.Colors
         /// <param name="ForceSet">Force set color</param>
         public static void SetConsoleColor(ColTypes colorType, bool Background, bool ForceSet = false)
         {
-            if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+            if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
             {
                 switch (colorType)
                 {

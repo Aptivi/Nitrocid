@@ -269,22 +269,22 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
-            Console.CursorVisible = false;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
         }
 
         public override void ScreensaverLogic()
         {
             // Choose the column for the falling line
-            ColumnLine = RandomDriver.Next(Console.WindowWidth);
+            ColumnLine = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
 
             // Now, determine the fall start and end position
             int FallStart = 0;
-            int FallEnd = Console.WindowHeight - 1;
+            int FallEnd = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
 
             // Select the color
             Color ColorStorage;
@@ -306,16 +306,16 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                Console.BackgroundColor = Screensaver.colors[RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor);
-                ColorStorage = new Color((int)Console.BackgroundColor);
+                ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel)];
+                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
+                ColorStorage = new Color((int)ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Make the line fall down
             for (int Fall = FallStart, loopTo = FallEnd; Fall <= loopTo; Fall++)
             {
                 // Check to see if user decided to resize
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -333,7 +333,7 @@ namespace KS.Misc.Screensaver.Displays
             for (int StepNum = 0, loopTo1 = FallingLineSettings.FallingLineMaxSteps; StepNum <= loopTo1; StepNum++)
             {
                 // Check to see if user decided to resize
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -355,7 +355,7 @@ namespace KS.Misc.Screensaver.Displays
                 foreach (Tuple<int, int> PositionTuple in CoveredPositions)
                 {
                     // Check to see if user decided to resize
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
@@ -372,8 +372,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

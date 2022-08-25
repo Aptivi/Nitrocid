@@ -103,7 +103,7 @@ namespace KS.Login
                 if (Flags.ClearOnLogin == true)
                 {
                     DebugWriter.Wdbg(DebugLevel.I, "Clearing screen...");
-                    Console.Clear();
+                    ConsoleBase.ConsoleWrapper.Clear();
                 }
 
                 // Read MOTD and MAL

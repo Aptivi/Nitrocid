@@ -117,7 +117,7 @@ namespace KS.Misc.Screensaver.Displays
             }
         }
         /// <summary>
-        /// [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
+        /// [Marquee] Whether to use the KS.ConsoleBase.ConsoleWrapper.Clear() API (slow) or use the line-clearing VT sequence (fast).
         /// </summary>
         public static bool MarqueeUseConsoleAPI
         {
@@ -274,30 +274,30 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(MarqueeSettings.MarqueeBackgroundColor), true, true);
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
             MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.Clear();
 
             // Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
-            int TopPrinted = (int)Math.Round(Console.WindowHeight / 2d);
+            int TopPrinted = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
             if (!MarqueeSettings.MarqueeAlwaysCentered)
             {
-                TopPrinted = RandomDriver.Next(Console.WindowHeight - 1);
+                TopPrinted = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
             }
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
 
             // Start with the left position as the right position.
-            int CurrentLeft = Console.WindowWidth - 1;
-            int CurrentLeftOtherEnd = Console.WindowWidth - 1;
+            int CurrentLeft = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+            int CurrentLeftOtherEnd = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
             int CurrentCharacterNum = 0;
 
             // We need to set colors for the text.
@@ -317,20 +317,20 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                Console.ForegroundColor = Screensaver.colors[RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor);
+                ConsoleBase.ConsoleWrapper.ForegroundColor = Screensaver.colors[RandomDriver.Next(MarqueeSettings.MarqueeMinimumColorLevel, MarqueeSettings.MarqueeMaximumColorLevel)];
+                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.ForegroundColor);
             }
 
             // If the text is at the right and is longer than the console width, crop it until it's complete.
             while (CurrentLeftOtherEnd != 0)
             {
                 ThreadManager.SleepNoBlock(MarqueeSettings.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
                 if (MarqueeSettings.MarqueeUseConsoleAPI)
-                    Console.Clear();
+                    ConsoleBase.ConsoleWrapper.Clear();
                 DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
 
                 // Declare variable for written marquee text
@@ -358,8 +358,8 @@ namespace KS.Misc.Screensaver.Displays
                     MarqueeWritten += Convert.ToString(CharManager.GetEsc()) + "[0K";
 
                 // Set the appropriate cursor position and write the results
-                Console.SetCursorPosition(CurrentLeft, TopPrinted);
-                Console.Write(MarqueeWritten);
+                ConsoleBase.ConsoleWrapper.SetCursorPosition(CurrentLeft, TopPrinted);
+                ConsoleBase.ConsoleWrapper.Write(MarqueeWritten);
                 if (Middle)
                     CurrentCharacterNum += 1;
 
@@ -380,8 +380,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(MarqueeSettings.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

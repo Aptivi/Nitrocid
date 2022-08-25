@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.Test
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Show the welcome message
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome to Test Shell!"), true);
 
             // Actual shell logic
@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Test
                 {
                     if (Kernel.Kernel.DefConsoleOut is not null)
                     {
-                        Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                        ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                     }
 
                     // Write the prompt

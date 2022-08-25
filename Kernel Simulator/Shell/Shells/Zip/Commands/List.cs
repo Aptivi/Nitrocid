@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Zip.Commands
                 }
                 else
                 {
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                 }
             }
         }

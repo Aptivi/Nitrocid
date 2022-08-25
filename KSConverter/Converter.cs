@@ -324,20 +324,20 @@ namespace KSConverter
                 {
 #if !NETCOREAPP
                     // Read all config from old file
-                    TextWriterColor.Write("  - Reading config from kernelConfig.ini...", true, ColorTools.ColTypes.Progress);
+                    TextWriterColor.Write("  - Reading config from kernelConfig.ini...", true, ColTypes.Progress);
                     Debug.WriteLine("Reading configuration...");
                     if (!PreFivePointFive.ReadPreFivePointFiveConfig(ListOfBackups["Configuration"]))
                     {
                         if (!FivePointFive.ReadFivePointFiveConfig(ListOfBackups["Configuration"]))
                         {
                             Debug.WriteLine("Incompatible format. Both ReadPreFivePointFiveConfig and ReadFivePointFiveConfig returned False. Regenerating...");
-                            TextWriterColor.Write("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", true, ColorTools.ColTypes.Warning);
+                            TextWriterColor.Write("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", true, ColTypes.Warning);
                         }
                     }
 
                     // Save the changes
                     Debug.WriteLine("Saving...");
-                    TextWriterColor.Write("  - Saving configuration to KernelConfig.json...", true, ColorTools.ColTypes.Progress);
+                    TextWriterColor.Write("  - Saving configuration to KernelConfig.json...", true, ColTypes.Progress);
                     Config.CreateConfig();
 #else
                     // We need to use .NET Framework version of KSConverter to be able to fully use MadMilkman.Ini

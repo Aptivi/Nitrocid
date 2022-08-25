@@ -159,10 +159,10 @@ namespace KS.Misc.Screensaver.Displays
 
         public override void ScreensaverLogic()
         {
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Clear();
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
+            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Generate names
             int NumberOfPeople = RandomDriver.Next(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
@@ -180,7 +180,7 @@ namespace KS.Misc.Screensaver.Displays
                 string LastName = GeneratedName.Substring(GeneratedName.IndexOf(" ") + 1);
 
                 // Print all information
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
                 TextWriterWhereColor.WriteWherePlain("  - Name:                {0}", 0, 1, false, GeneratedName);
                 TextWriterWhereColor.WriteWherePlain("  - First Name:          {0}", 0, 2, false, FirstName);
                 TextWriterWhereColor.WriteWherePlain("  - Last Name / Surname: {0}", 0, 3, false, LastName);

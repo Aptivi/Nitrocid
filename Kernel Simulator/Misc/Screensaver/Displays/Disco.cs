@@ -292,9 +292,9 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -309,7 +309,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
             var FedColors = new[] { ConsoleColors.Black, ConsoleColors.White };
 
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Select the background color
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoSettings.DiscoCycleColors);
@@ -350,14 +350,14 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else if (!DiscoSettings.DiscoCycleColors)
                 {
-                    Console.BackgroundColor = Screensaver.colors[RandomDriver.Next(Screensaver.colors.Length - 1)];
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor);
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[RandomDriver.Next(Screensaver.colors.Length - 1)];
+                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 }
                 else
                 {
                     MaximumColors = DiscoSettings.DiscoMaximumColorLevel >= 0 & DiscoSettings.DiscoMaximumColorLevel <= 15 ? DiscoSettings.DiscoMaximumColorLevel : 15;
-                    Console.BackgroundColor = Screensaver.colors[CurrentColor];
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor);
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = Screensaver.colors[CurrentColor];
+                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
                 }
             }
             else
@@ -375,7 +375,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Make the disco effect!
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
 
             // Switch to the next color
             if (DiscoSettings.DiscoTrueColor)

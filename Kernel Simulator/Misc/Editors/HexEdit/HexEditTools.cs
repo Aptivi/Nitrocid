@@ -296,7 +296,7 @@ namespace KS.Misc.Editors.HexEdit
                     // 0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                     // ... and so on.
                     TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, ColorTools.ColTypes.ListEntry);
-                    int ByteWritePositionX = Console.CursorLeft + 2;
+                    int ByteWritePositionX = ConsoleBase.ConsoleWrapper.CursorLeft + 2;
                     int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                     int ByteNumberEachSixteen = 1;
                     for (long CurrentByteNumber = StartByte, loopTo = EndByte; CurrentByteNumber <= loopTo; CurrentByteNumber++)
@@ -317,8 +317,8 @@ namespace KS.Misc.Editors.HexEdit
                             RenderedByteChar = ProjectedByteChar;
                         }
                         DebugWriter.Wdbg(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                        TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), Console.CursorTop, false, ColorTools.ColTypes.ListValue);
-                        TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), Console.CursorTop, false, ColorTools.ColTypes.ListValue);
+                        TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.ListValue);
+                        TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.ListValue);
 
                         // Increase the byte number
                         ByteNumberEachSixteen += 1;
@@ -328,7 +328,7 @@ namespace KS.Misc.Editors.HexEdit
                         {
                             // OK, let's increase the byte iteration and get the next line ready
                             TextWriterColor.Write(Kernel.Kernel.NewLine + $"0x{CurrentByteNumber:X8}", false, ColorTools.ColTypes.ListEntry);
-                            ByteWritePositionX = Console.CursorLeft + 2;
+                            ByteWritePositionX = ConsoleBase.ConsoleWrapper.CursorLeft + 2;
                             ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                             ByteNumberEachSixteen = 1;
                         }

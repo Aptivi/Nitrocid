@@ -67,9 +67,9 @@ namespace KS.TimeDate
                     KernelDateTimeUtc = DateTime.UtcNow;
                     if (Flags.CornerTimeDate == true & !Screensaver.InSaver)
                     {
-                        oldWid = Console.WindowWidth - TimeString.Length - 1;
-                        oldTop = Console.WindowTop;
-                        TextWriterWhereColor.WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, true, ColorTools.ColTypes.Neutral);
+                        oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
+                        oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
+                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
                     }
                     Thread.Sleep(1000);
                     if (oldWid != 0)

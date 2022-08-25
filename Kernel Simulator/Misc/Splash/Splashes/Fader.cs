@@ -82,7 +82,7 @@ namespace KS.Misc.Splash.Splashes
         public void Opening()
         {
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Display()
@@ -104,7 +104,7 @@ namespace KS.Misc.Splash.Splashes
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)

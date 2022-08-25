@@ -61,49 +61,49 @@ namespace KS.Misc.Writers.ConsoleWriters
                         msg = StringManipulate.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    int OldLeft = Console.CursorLeft;
-                    int OldTop = Console.CursorTop;
+                    int OldLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
+                    int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
-                    Console.SetCursorPosition(Left, Top);
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0, loopTo = Paragraphs.Length - 1; MessageParagraphIndex <= loopTo; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
                         string MessageParagraph = Paragraphs[MessageParagraphIndex];
                         foreach (char ParagraphChar in MessageParagraph)
                         {
-                            if (Console.CursorLeft == Console.WindowWidth)
+                            if (ConsoleBase.ConsoleWrapper.CursorLeft == ConsoleBase.ConsoleWrapper.WindowWidth)
                             {
-                                if (Console.CursorTop == Console.BufferHeight - 1)
+                                if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.BufferHeight - 1)
                                 {
                                     // We've reached the end of buffer. Write the line to scroll.
-                                    Console.WriteLine();
+                                    ConsoleBase.ConsoleWrapper.WriteLine();
                                 }
                                 else
                                 {
-                                    Console.CursorTop += 1;
+                                    ConsoleBase.ConsoleWrapper.CursorTop += 1;
                                 }
-                                Console.CursorLeft = Left;
+                                ConsoleBase.ConsoleWrapper.CursorLeft = Left;
                             }
-                            Console.Write(ParagraphChar);
+                            ConsoleBase.ConsoleWrapper.Write(ParagraphChar);
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         if (!(MessageParagraphIndex == Paragraphs.Length - 1))
                         {
-                            if (Console.CursorTop == Console.BufferHeight - 1)
+                            if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.BufferHeight - 1)
                             {
                                 // We've reached the end of buffer. Write the line to scroll.
-                                Console.WriteLine();
+                                ConsoleBase.ConsoleWrapper.WriteLine();
                             }
                             else
                             {
-                                Console.CursorTop += 1;
+                                ConsoleBase.ConsoleWrapper.CursorTop += 1;
                             }
-                            Console.CursorLeft = Left;
+                            ConsoleBase.ConsoleWrapper.CursorLeft = Left;
                         }
                     }
                     if (Return)
-                        Console.SetCursorPosition(OldLeft, OldTop);
+                        ConsoleBase.ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -228,8 +228,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                    Console.ForegroundColor = color;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWherePlain(msg, Left, Top, Return, vars);
@@ -272,8 +272,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = BackgroundColor;
-                    Console.ForegroundColor = ForegroundColor;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWherePlain(msg, Left, Top, Return, vars);
@@ -314,7 +314,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
@@ -361,7 +361,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);

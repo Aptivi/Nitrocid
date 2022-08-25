@@ -65,16 +65,16 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Move the stars left
             for (int Star = 0, loopTo = Stars.Count - 1; Star <= loopTo; Star++)
@@ -100,13 +100,13 @@ namespace KS.Misc.Screensaver.Displays
             bool StarShowGuaranteed = RandomDriver.NextDouble() < StarShowProbability;
             if (StarShowGuaranteed)
             {
-                int StarX = Console.WindowWidth - 1;
-                int StarY = RandomDriver.Next(Console.WindowHeight - 1);
+                int StarX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+                int StarY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
                 Stars.Add(new Tuple<int, int>(StarX, StarY));
             }
 
             // Draw stars
-            if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
@@ -127,10 +127,10 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(StarfieldSettings.StarfieldDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
     }

@@ -61,29 +61,29 @@ namespace KS.Misc.Writers.FancyWriters
                         }
                     }
                 }
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ColorTools.ColTypes.SeparatorText, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, ColorTools.ColTypes.SeparatorText, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColorTools.ColTypes.Separator);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -103,29 +103,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ColTypes, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, ColTypes, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ColTypes);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -146,29 +146,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, colorTypeForeground, colorTypeBackground, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, colorTypeForeground, colorTypeBackground, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, colorTypeForeground, colorTypeBackground);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -188,29 +188,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, Color, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, Color, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, Color);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -231,29 +231,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -273,29 +273,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, Color, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, Color, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, Color);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 
@@ -316,29 +316,29 @@ namespace KS.Misc.Writers.FancyWriters
                     Text = "- " + Text;
                 if (!Text.EndsWith("-"))
                     Text += " ";
-                TextWriterColor.Write(Text.Truncate(Console.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
+                TextWriterColor.Write(Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6), false, ForegroundColor, BackgroundColor, Vars);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes;
-            if (!(Console.CursorLeft == 0))
+            if (!(ConsoleBase.ConsoleWrapper.CursorLeft == 0))
             {
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - ConsoleBase.ConsoleWrapper.CursorLeft;
             }
             else
             {
-                RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1;
+                RepeatTimes = ConsoleBase.ConsoleWrapper.WindowWidth - (Text.Truncate(ConsoleBase.ConsoleWrapper.WindowWidth - 6) + " ").Length - 1;
             }
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
+            int OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
             TextWriterColor.Write("-".Repeat(RepeatTimes), true, ForegroundColor, BackgroundColor);
 
             // Fix CursorTop value on Unix systems. Mono...
             if (KernelPlatform.IsOnUnix())
             {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleBase.ConsoleWrapper.WindowHeight - 3)
+                    ConsoleBase.ConsoleWrapper.CursorTop -= 1;
             }
         }
 

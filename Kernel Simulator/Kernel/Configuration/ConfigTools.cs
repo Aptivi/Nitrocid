@@ -42,7 +42,7 @@ namespace KS.Kernel.Configuration
         public static void ReloadConfig()
         {
             Kernel.KernelEventManager.RaisePreReloadConfig();
-            Config.InitializeConfig();
+            InitializeConfig();
             Kernel.KernelEventManager.RaisePostReloadConfig();
         }
 
@@ -75,10 +75,10 @@ namespace KS.Kernel.Configuration
             var FixesNeeded = default(bool);
 
             // General sections
-            int ExpectedSections = Config.PristineConfigToken.Count;
+            int ExpectedSections = PristineConfigToken.Count;
 
             // Check for missing sections
-            if (Config.ConfigToken.Count != ExpectedSections)
+            if (ConfigToken.Count != ExpectedSections)
             {
                 DebugWriter.Wdbg(DebugLevel.W, "Missing sections. Config fix needed set to true.");
                 FixesNeeded = true;
@@ -87,12 +87,12 @@ namespace KS.Kernel.Configuration
             // Go through sections
             try
             {
-                foreach (KeyValuePair<string, JToken> Section in Config.PristineConfigToken)
+                foreach (KeyValuePair<string, JToken> Section in PristineConfigToken)
                 {
-                    if (Config.ConfigToken[Section.Key] is not null)
+                    if (ConfigToken[Section.Key] is not null)
                     {
                         // Check the normal keys
-                        if (Config.ConfigToken[Section.Key].Count() != Config.PristineConfigToken[Section.Key].Count())
+                        if (ConfigToken[Section.Key].Count() != PristineConfigToken[Section.Key].Count())
                         {
                             DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in {0}. Config fix needed set to true.", Section.Key);
                             FixesNeeded = true;
@@ -101,9 +101,9 @@ namespace KS.Kernel.Configuration
                         // Check the screensaver keys
                         if (Section.Key == "Screensaver")
                         {
-                            foreach (JProperty ScreensaverSection in Config.PristineConfigToken["Screensaver"].Where(x => x.First.Type == JTokenType.Object))
+                            foreach (JProperty ScreensaverSection in PristineConfigToken["Screensaver"].Where(x => x.First.Type == JTokenType.Object))
                             {
-                                if (Config.ConfigToken["Screensaver"][ScreensaverSection.Name].Count() != Config.PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count())
+                                if (ConfigToken["Screensaver"][ScreensaverSection.Name].Count() != PristineConfigToken["Screensaver"][ScreensaverSection.Name].Count())
                                 {
                                     DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver > {0}. Config fix needed set to true.", ScreensaverSection.Name);
                                     FixesNeeded = true;
@@ -114,9 +114,9 @@ namespace KS.Kernel.Configuration
                         // Check the splash keys
                         if (Section.Key == "Splash")
                         {
-                            foreach (JProperty SplashSection in Config.PristineConfigToken["Splash"].Where(x => x.First.Type == JTokenType.Object))
+                            foreach (JProperty SplashSection in PristineConfigToken["Splash"].Where(x => x.First.Type == JTokenType.Object))
                             {
-                                if (Config.ConfigToken["Splash"][SplashSection.Name].Count() != Config.PristineConfigToken["Splash"][SplashSection.Name].Count())
+                                if (ConfigToken["Splash"][SplashSection.Name].Count() != PristineConfigToken["Splash"][SplashSection.Name].Count())
                                 {
                                     DebugWriter.Wdbg(DebugLevel.W, "Missing sections and/or keys in Splash > {0}. Config fix needed set to true.", SplashSection.Name);
                                     FixesNeeded = true;
@@ -136,7 +136,7 @@ namespace KS.Kernel.Configuration
 
             // If the fixes are needed, try to remake config with parsed values
             if (FixesNeeded)
-                Config.CreateConfig();
+                CreateConfig();
             return FixesNeeded;
         }
 
@@ -153,7 +153,7 @@ namespace KS.Kernel.Configuration
             {
                 // We got a valid category. Now, get the token for the specific category
                 DebugWriter.Wdbg(DebugLevel.I, "Category {0} found! Parsing sub-category {1} ({2})...", ConfigCategory, ConfigSubCategoryName, ConfigSubCategoryName.Length);
-                var CategoryToken = Config.ConfigToken[ConfigCategory.ToString()];
+                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
 
                 // Try to get the sub-category token and check to see if it's found or not
                 var SubCategoryToken = CategoryToken[ConfigSubCategoryName];
@@ -225,7 +225,7 @@ namespace KS.Kernel.Configuration
             {
                 // We have a valid category. Now, find the config entry property in the token
                 DebugWriter.Wdbg(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
-                var CategoryToken = Config.ConfigToken[ConfigCategory.ToString()];
+                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
                 if (ConfigCategoryToken[ConfigEntryName] is not null)
                 {
                     // Assign the new value to it and write the changes to the token and the config file. Don't worry, debuggers, when you set the value like below,
@@ -234,7 +234,7 @@ namespace KS.Kernel.Configuration
                     ConfigCategoryToken[ConfigEntryName] = ConfigValue;
 
                     // Write the changes to the config file
-                    File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(Config.ConfigToken, Formatting.Indented));
+                    File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented));
                 }
                 else
                 {
@@ -286,7 +286,7 @@ namespace KS.Kernel.Configuration
             {
                 // We have a valid category. Now, find the config entry property in the token
                 DebugWriter.Wdbg(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName);
-                var CategoryToken = Config.ConfigToken[ConfigCategory.ToString()];
+                var CategoryToken = ConfigToken[ConfigCategory.ToString()];
                 if (ConfigCategoryToken[ConfigEntryName] is not null)
                 {
                     // We got the appropriate value! Return it.

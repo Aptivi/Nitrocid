@@ -74,7 +74,7 @@ namespace KS.Misc.Splash.Splashes
                         }
                     case TextLocation.Bottom:
                         {
-                            return Console.WindowHeight - 6;
+                            return ConsoleWrapper.WindowHeight - 6;
                         }
 
                     default:
@@ -97,7 +97,7 @@ namespace KS.Misc.Splash.Splashes
         public void Opening()
         {
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Display()
@@ -125,7 +125,7 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.ColTypes.Neutral);
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-            Console.Clear();
+            ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)
@@ -143,7 +143,7 @@ namespace KS.Misc.Splash.Splashes
         {
             // Variables
             var PresetStringBuilder = new StringBuilder();
-            string RenderedText = ProgressReport.Truncate(Console.WindowWidth - 5);
+            string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - 5);
 
             // Percentage
             PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
@@ -173,11 +173,11 @@ namespace KS.Misc.Splash.Splashes
             if (!string.IsNullOrEmpty(SplashSettings.PowerLineProgressProgressColor) & ColorTools.TryParseColor(SplashSettings.PowerLineProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashSettings.PowerLineProgressProgressColor);
-                ProgressBarColor.WriteProgress(Progress, 4, Console.WindowHeight - 4, ProgressColor);
+                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
             }
             else
             {
-                ProgressBarColor.WriteProgress(Progress, 4, Console.WindowHeight - 4);
+                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4);
             }
         }
 

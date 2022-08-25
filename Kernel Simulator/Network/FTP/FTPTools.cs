@@ -301,8 +301,8 @@ namespace KS.Network.FTP
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, ColorTools.ColTypes.Question);
                         ColorTools.SetConsoleColor(ColorTools.InputColor);
-                        Answer = Convert.ToString(Console.ReadKey().KeyChar);
-                        Console.WriteLine();
+                        Answer = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
+                        ConsoleBase.ConsoleWrapper.WriteLine();
                         DebugWriter.Wdbg(DebugLevel.I, $"Answer is {Answer}");
                         if (Answer.ToLower() == "y")
                         {
@@ -347,7 +347,7 @@ namespace KS.Network.FTP
                         SpeedDialData[i, 4] = (string)SpeedDialLines[SpeedDialAddress]["FTP Encryption Mode"];
                     }
                     TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2, ColorTools.ColTypes.Option);
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                     while (Answering)
                     {
                         TextWriterColor.Write(">> ", false, ColorTools.ColTypes.Input);

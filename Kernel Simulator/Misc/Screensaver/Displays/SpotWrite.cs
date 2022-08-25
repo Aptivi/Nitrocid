@@ -117,16 +117,16 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(SpotWriteSettings.SpotWriteTextColor));
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
         {
             string TypeWrite = SpotWriteSettings.SpotWriteWrite;
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.Wdbg(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", SpotWriteSettings.SpotWriteWrite);
@@ -140,7 +140,7 @@ namespace KS.Misc.Screensaver.Displays
             // For each line, write four spaces, and extra two spaces if paragraph starts.
             foreach (string Paragraph in TypeWrite.SplitNewLines())
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -157,7 +157,7 @@ namespace KS.Misc.Screensaver.Displays
                 int ReservedCharacters = 4;
                 foreach (char ParagraphChar in Paragraph)
                 {
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
@@ -167,7 +167,7 @@ namespace KS.Misc.Screensaver.Displays
                     CharactersParsed += 1;
 
                     // Check to see if we're at the maximum character number
-                    if (IncompleteSentenceBuilder.Length == Console.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
+                    if (IncompleteSentenceBuilder.Length == ConsoleBase.ConsoleWrapper.WindowWidth - 2 - ReservedCharacters | Paragraph.Length == CharactersParsed)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
@@ -180,58 +180,58 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Prepare display (make a paragraph indentation)
-                if (!(Console.CursorTop == Console.WindowHeight - 2))
+                if (!(ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2))
                 {
-                    Console.SetCursorPosition(0, Console.CursorTop + 1);
-                    Console.Write("    ");
-                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop);
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(0, ConsoleBase.ConsoleWrapper.CursorTop + 1);
+                    ConsoleBase.ConsoleWrapper.Write("    ");
+                    DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
                 for (int SentenceIndex = 0, loopTo = IncompleteSentences.Count - 1; SentenceIndex <= loopTo; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
                     foreach (char StruckChar in Sentence)
                     {
-                        if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                        if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                             ResizeSyncing = true;
                         if (ResizeSyncing)
                             break;
 
                         // If we're at the end of the page, clear the screen
-                        if (Console.CursorTop == Console.WindowHeight - 2)
+                        if (ConsoleBase.ConsoleWrapper.CursorTop == ConsoleBase.ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", Console.CursorTop, Console.WindowHeight - 2);
+                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleBase.ConsoleWrapper.CursorTop, ConsoleBase.ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                            Console.Clear();
-                            Console.WriteLine();
+                            ConsoleBase.ConsoleWrapper.Clear();
+                            ConsoleBase.ConsoleWrapper.WriteLine();
                             if (SentenceIndex == 0)
                             {
-                                Console.Write("    ");
+                                ConsoleBase.ConsoleWrapper.Write("    ");
                             }
                             else
                             {
-                                Console.Write(" ");
+                                ConsoleBase.ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop);
+                            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
                         }
 
                         // Write the final character to the console and wait
-                        Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
+                        ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K" + Convert.ToString(StruckChar) + Convert.ToString(CharManager.GetEsc()) + "[K");
                         ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
-                    Console.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
+                    ConsoleBase.ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
                 }
             }
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

@@ -78,8 +78,8 @@ namespace KS.Misc.Splash.Splashes
         public void Opening()
         {
             DebugWriter.Wdbg(DebugLevel.I, "Splash opening. Clearing console...");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
             RandomDriver = new Random();
             EdgePulseSettings.RandomDriver = RandomDriver;
         }
@@ -105,7 +105,7 @@ namespace KS.Misc.Splash.Splashes
             SplashClosing = true;
             DebugWriter.Wdbg(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public void Report(int Progress, string ProgressReport, params object[] Vars)

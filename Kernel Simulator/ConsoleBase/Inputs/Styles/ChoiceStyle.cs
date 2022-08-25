@@ -106,7 +106,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         {
                             TextWriterColor.Write(Question + Kernel.Kernel.NewLine, true, ColorTools.ColTypes.Question);
                             int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
-                            if (AnswerTitleLeft >= Console.WindowWidth)
+                            if (AnswerTitleLeft >= ConsoleWrapper.WindowWidth)
                                 AnswerTitleLeft = 0;
                             for (int AnswerIndex = 0, loopTo = answers.Length - 1; AnswerIndex <= loopTo; AnswerIndex++)
                             {
@@ -115,7 +115,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 if (AnswerTitleLeft > 0)
                                 {
                                     TextWriterColor.Write($" {AnswerInstance}) ", false, ColorTools.ColTypes.Option);
-                                    TextWriterWhereColor.WriteWhere(AnswerTitle, AnswerTitleLeft, Console.CursorTop, false, ColorTools.ColTypes.Option);
+                                    TextWriterWhereColor.WriteWhere(AnswerTitle, AnswerTitleLeft, ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Option);
                                     TextWriterColor.Write("", true, ColorTools.ColTypes.Option);
                                 }
                                 else
@@ -149,8 +149,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
                 else
                 {
-                    answer = Convert.ToString(Console.ReadKey().KeyChar);
-                    Console.WriteLine();
+                    answer = Convert.ToString(ConsoleWrapper.ReadKey().KeyChar);
+                    ConsoleWrapper.WriteLine();
                 }
 
                 // Check if answer is correct.

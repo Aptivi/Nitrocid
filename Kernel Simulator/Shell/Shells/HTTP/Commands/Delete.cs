@@ -43,8 +43,8 @@ namespace KS.Shell.Shells.HTTP.Commands
 
                 // Make a confirmation message so user will not accidentally delete a file or folder
                 TextWriterColor.Write(Translate.DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", false, ColorTools.ColTypes.Input, ListArgsOnly[0]);
-                string answer = Convert.ToString(Console.ReadKey().KeyChar);
-                Console.WriteLine();
+                string answer = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
+                ConsoleBase.ConsoleWrapper.WriteLine();
 
                 try
                 {

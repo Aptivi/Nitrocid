@@ -67,12 +67,12 @@ namespace KS.Shell.Shells.UESH
                         lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                         {
                             // Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
-                            Console.CursorVisible = true;
+                            ConsoleBase.ConsoleWrapper.CursorVisible = true;
 
                             // Write a prompt
                             if (Kernel.Kernel.DefConsoleOut is not null)
                             {
-                                Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                                ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                             }
                             PromptPresetManager.WriteShellPrompt(ShellType);
 

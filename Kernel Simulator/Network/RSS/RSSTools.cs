@@ -349,21 +349,21 @@ namespace KS.Network.RSS
             while (StepNumber == 1)
             {
                 // If the JSON token is actually full, show the list of countries
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection."), 0, 1, false, ColorTools.ColTypes.Neutral);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + "   < ", false, ColorTools.ColTypes.Gray);
 
                 // The cursor positions for the arrow elements
                 int MaxLength = FeedListJsonCountries.Max(x => x["name"].ToString().Length);
                 string ItemName = $"{FeedListJsonCountries[SelectedCountryIndex]["name"]} [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]";
-                int ArrowLeftXPosition = Console.CursorLeft + MaxLength + $" [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]".Length;
-                int ItemNameXPosition = (int)Math.Round(Console.CursorLeft + (ArrowLeftXPosition - Console.CursorLeft) / 2d - ItemName.Length / 2d);
-                TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, Console.CursorTop, true, ColorTools.ColTypes.Option);
-                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, Console.CursorTop, false, ColorTools.ColTypes.Gray);
+                int ArrowLeftXPosition = ConsoleBase.ConsoleWrapper.CursorLeft + MaxLength + $" [{FeedListJsonCountries[SelectedCountryIndex]["iso"]}]".Length;
+                int ItemNameXPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.CursorLeft + (ArrowLeftXPosition - ConsoleBase.ConsoleWrapper.CursorLeft) / 2d - ItemName.Length / 2d);
+                TextWriterWhereColor.WriteWhere(ItemName, ItemNameXPosition, ConsoleBase.ConsoleWrapper.CursorTop, true, ColorTools.ColTypes.Option);
+                TextWriterWhereColor.WriteWhere(" >", ArrowLeftXPosition, ConsoleBase.ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Gray);
                 TextWriterColor.Write(Kernel.Kernel.NewLine + Kernel.Kernel.NewLine + Translate.DoTranslation("This country has {0} news sources."), true, ColorTools.ColTypes.Neutral, FeedListJsonCountries[SelectedCountryIndex]["newSources"].Count());
 
                 // Read and get response
-                var ConsoleResponse = Console.ReadKey(true);
+                var ConsoleResponse = ConsoleBase.ConsoleWrapper.ReadKey(true);
                 DebugWriter.Wdbg(DebugLevel.I, "Keypress: {0}", ConsoleResponse.Key.ToString());
                 if (ConsoleResponse.Key == ConsoleKey.LeftArrow)
                 {
@@ -399,7 +399,7 @@ namespace KS.Network.RSS
                     // Go to the next step
                     DebugWriter.Wdbg(DebugLevel.I, "Selected country: {0}", FeedListJsonCountries[SelectedCountryIndex]["name"]);
                     FeedListJsonNewsSources = FeedListJsonCountries[SelectedCountryIndex]["newSources"].ToArray();
-                    Console.WriteLine();
+                    ConsoleBase.ConsoleWrapper.WriteLine();
                     StepNumber += 1;
                 }
             }
@@ -412,7 +412,7 @@ namespace KS.Network.RSS
                 string NewsSourceTitle = NewsSource["site"]["title"].ToString().Trim();
                 TextWriterColor.Write("{0}) {1}", true, ColorTools.ColTypes.Option, SourceIndex + 1, NewsSourceTitle);
             }
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
             while (StepNumber == 2)
             {
                 // Print input
@@ -431,7 +431,7 @@ namespace KS.Network.RSS
                         DebugWriter.Wdbg(DebugLevel.W, "Answer is in range.");
                         SelectedNewsSourceIndex = AnswerInt - 1;
                         FeedListJsonNewsSourceFeeds = FeedListJsonNewsSources[SelectedNewsSourceIndex]["feedUrls"].ToArray();
-                        Console.WriteLine();
+                        ConsoleBase.ConsoleWrapper.WriteLine();
                         StepNumber += 1;
                     }
                     else
@@ -466,7 +466,7 @@ namespace KS.Network.RSS
                 NewsSourceTitle = NewsSourceTitle.Trim();
                 TextWriterColor.Write("{0}) {1}: {2}", true, ColorTools.ColTypes.Option, SourceFeedIndex + 1, NewsSourceTitle, NewsSourceFeed["url"]);
             }
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
             while (StepNumber == 3)
             {
                 // Print input

@@ -102,11 +102,11 @@ namespace KS.Network
                     // Print adapter infos if not failed
                     if (!Failed)
                     {
-                        NetworkAdapterPrint.PrintAdapterIPv4Info(adapter, p, s, adapterNumber);
+                        PrintAdapterIPv4Info(adapter, p, s, adapterNumber);
                         // Additionally, print adapter IPv6 info if available
                         if (!NoV6)
                         {
-                            NetworkAdapterPrint.PrintAdapterIPv6Info(adapter, p6, adapterNumber);
+                            PrintAdapterIPv6Info(adapter, p6, adapterNumber);
                         }
                     }
                 }

@@ -49,23 +49,23 @@ namespace KS.Misc.Games
             Meteors.Clear();
 
             // Make the spaceship height in the center
-            SpaceshipHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            SpaceshipHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
 
             // Start the draw thread
             MeteorDrawThread.Stop();
             MeteorDrawThread.Start();
 
             // Remove the cursor
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Now, handle input
             ConsoleKeyInfo Keypress;
             while (!GameEnded)
             {
-                if (Console.KeyAvailable)
+                if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                 {
                     // Read the key
-                    Keypress = Console.ReadKey(true);
+                    Keypress = ConsoleBase.ConsoleWrapper.ReadKey(true);
 
                     // Select command based on key value
                     switch (Keypress.Key)
@@ -78,7 +78,7 @@ namespace KS.Misc.Games
                             }
                         case ConsoleKey.DownArrow:
                             {
-                                if (SpaceshipHeight < Console.WindowHeight)
+                                if (SpaceshipHeight < ConsoleBase.ConsoleWrapper.WindowHeight)
                                     SpaceshipHeight += 1;
                                 break;
                             }
@@ -110,7 +110,7 @@ namespace KS.Misc.Games
                 while (!GameEnded)
                 {
                     // Clear screen
-                    Console.Clear();
+                    ConsoleBase.ConsoleWrapper.Clear();
 
                     // Move the meteors left
                     for (int Meteor = 0, loopTo = Meteors.Count - 1; Meteor <= loopTo; Meteor++)
@@ -132,7 +132,7 @@ namespace KS.Misc.Games
                     for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = Bullets[BulletIndex];
-                        if (Bullet.Item1 >= Console.WindowWidth)
+                        if (Bullet.Item1 >= ConsoleBase.ConsoleWrapper.WindowWidth)
                         {
                             // The bullet went beyond. Remove it.
                             Bullets.RemoveAt(BulletIndex);
@@ -155,8 +155,8 @@ namespace KS.Misc.Games
                     bool MeteorShowGuaranteed = RandomDriver.NextDouble() < MeteorShowProbability;
                     if (MeteorShowGuaranteed & Meteors.Count < MaxMeteors)
                     {
-                        int MeteorX = Console.WindowWidth - 1;
-                        int MeteorY = RandomDriver.Next(Console.WindowHeight - 1);
+                        int MeteorX = ConsoleBase.ConsoleWrapper.WindowWidth - 1;
+                        int MeteorY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight - 1);
                         Meteors.Add(new Tuple<int, int>(MeteorX, MeteorY));
                     }
 
@@ -211,16 +211,16 @@ namespace KS.Misc.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, Console.WindowHeight - 1, false, ConsoleColor.Red, ex.Message);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleBase.ConsoleWrapper.WindowHeight - 1, false, ConsoleColor.Red, ex.Message);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
             }
             finally
             {
                 // Write game over
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, Console.WindowHeight - 1, false, ConsoleColor.Red);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleBase.ConsoleWrapper.WindowHeight - 1, false, ConsoleColor.Red);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
             }
         }
 

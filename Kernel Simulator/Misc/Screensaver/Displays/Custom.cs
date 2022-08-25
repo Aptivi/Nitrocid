@@ -30,7 +30,7 @@ namespace KS.Misc.Screensaver.Displays
         // To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         // Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         // Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
-        // Substitute: TextWriterColor.Write() with System.Console.WriteLine() or System.Console.Write().
+        // Substitute: TextWriterColor.Write() with System.KS.ConsoleBase.ConsoleWrapper.WriteLine() or System.KS.ConsoleBase.ConsoleWrapper.Write().
 
         // WARNING: Please refrain from using ICustomSaver; use IScreensaver instead, which is more dynamic.
         // This implementation doesn't call PostDisplay().
@@ -41,7 +41,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
             DebugWriter.Wdbg(DebugLevel.I, "Entered CustomSaver.ScreensaverPreparation().");
             CustomSaver.ScreensaverPreparation();
             DebugWriter.Wdbg(DebugLevel.I, "Exited CustomSaver.ScreensaverPreparation().");

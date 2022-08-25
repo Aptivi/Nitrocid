@@ -131,7 +131,7 @@ namespace KS.Network.Transfer
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressDownloadMessage)
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
             SuppressDownloadMessage = false;
             if (IsError)
             {
@@ -201,7 +201,7 @@ namespace KS.Network.Transfer
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressUploadMessage)
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
             SuppressUploadMessage = false;
             if (IsError)
             {
@@ -270,7 +270,7 @@ namespace KS.Network.Transfer
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressDownloadMessage)
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
             SuppressDownloadMessage = false;
             if (IsError)
             {
@@ -337,7 +337,7 @@ namespace KS.Network.Transfer
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !SuppressUploadMessage)
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
             SuppressUploadMessage = false;
             if (IsError)
             {
@@ -428,11 +428,11 @@ namespace KS.Network.Transfer
                         {
                             if (!string.IsNullOrWhiteSpace(DownloadPercentagePrint))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, false, ColorTools.ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, false, ColorTools.ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, ConsoleWrapper.CursorTop, false, ColorTools.ColTypes.Neutral, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
                             }
                             ConsoleExtensions.ClearLineToRight();
                         }

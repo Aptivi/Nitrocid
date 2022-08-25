@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.Mail
                     // Initialize prompt
                     if (Kernel.Kernel.DefConsoleOut is not null)
                     {
-                        Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                        ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                     }
                     PromptPresetManager.WriteShellPrompt(ShellType);
                 }

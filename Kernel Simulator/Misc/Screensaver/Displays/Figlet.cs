@@ -283,19 +283,19 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
         }
 
         public override void ScreensaverLogic()
         {
-            int ConsoleMiddleWidth = (int)Math.Round(Console.WindowWidth / 2d);
-            int ConsoleMiddleHeight = (int)Math.Round(Console.WindowHeight / 2d);
+            int ConsoleMiddleWidth = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d);
+            int ConsoleMiddleHeight = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
             var FigletFontUsed = FigletTools.GetFigletFont(FigletSettings.FigletFont);
-            Console.CursorVisible = false;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.Clear();
 
             // Set colors
             var ColorStorage = new Color(255, 255, 255);
@@ -315,8 +315,8 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                Console.BackgroundColor = (ConsoleColor)RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
-                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor);
+                ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)RandomDriver.Next(FigletSettings.FigletMinimumColorLevel, FigletSettings.FigletMaximumColorLevel);
+                DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ConsoleBase.ConsoleWrapper.BackgroundColor);
             }
 
             // Prepare the figlet font for writing
@@ -327,7 +327,7 @@ namespace KS.Misc.Screensaver.Displays
             int FigletWidth = (int)Math.Round(ConsoleMiddleWidth - FigletWriteLines[0].Length / 2d);
 
             // Actually write it
-            if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
             if (!ResizeSyncing)
             {
@@ -344,8 +344,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
 
     }

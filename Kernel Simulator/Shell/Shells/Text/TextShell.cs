@@ -83,7 +83,7 @@ namespace KS.Shell.Shells.Text
                         // Prepare for prompt
                         if (Kernel.Kernel.DefConsoleOut is not null)
                         {
-                            Console.SetOut(Kernel.Kernel.DefConsoleOut);
+                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
                         }
                         PromptPresetManager.WriteShellPrompt(ShellType);
 

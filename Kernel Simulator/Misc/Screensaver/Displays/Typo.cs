@@ -181,10 +181,10 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ColorTools.SetConsoleColor(new Color(TypoSettings.TypoTextColor));
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
@@ -195,12 +195,12 @@ namespace KS.Misc.Screensaver.Displays
             var CapStrikes = new List<string>() { "Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:\"{_+}|", "?\":> ", "M<LKJN ", "VBHGFC ", "ZXDSA " };
             string CapSymbols = "~!@$#%&^*)(:\"{_+}|?><";
 
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Prepare display (make a paragraph indentation)
-            Console.WriteLine();
-            Console.Write("    ");
-            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop);
+            ConsoleBase.ConsoleWrapper.WriteLine();
+            ConsoleBase.ConsoleWrapper.Write("    ");
+            DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleBase.ConsoleWrapper.CursorLeft, ConsoleBase.ConsoleWrapper.CursorTop);
 
             // Get struck character and write it
             var StrikeCharsIndex = default(int);
@@ -210,7 +210,7 @@ namespace KS.Misc.Screensaver.Displays
                 StruckCharAssigned = StruckChar;
 
                 // Check to see if we can go ahead
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (ResizeSyncing)
                     break;
@@ -273,19 +273,19 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Write the final character to the console and wait
                 if (!(StruckCharAssigned == Convert.ToChar(0)))
-                    Console.Write(StruckCharAssigned);
+                    ConsoleBase.ConsoleWrapper.Write(StruckCharAssigned);
                 ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Wait until retry
-            Console.WriteLine();
+            ConsoleBase.ConsoleWrapper.WriteLine();
             if (!ResizeSyncing)
                 ThreadManager.SleepNoBlock(TypoSettings.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(TypoSettings.TypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

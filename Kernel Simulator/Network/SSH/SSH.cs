@@ -98,7 +98,7 @@ namespace KS.Network.SSH
                                 DebugWriter.Wdbg(DebugLevel.W, "Option is not valid. Returning...");
                                 TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, ColorTools.ColTypes.Error, Answer);
                                 TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                                Console.ReadKey();
+                                ConsoleBase.ConsoleWrapper.ReadKey();
                                 break;
                             }
                     }
@@ -113,7 +113,7 @@ namespace KS.Network.SSH
                     DebugWriter.Wdbg(DebugLevel.W, "Answer is not numeric.");
                     TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, ColorTools.ColTypes.Error);
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, ColorTools.ColTypes.Error);
-                    Console.ReadKey();
+                    ConsoleBase.ConsoleWrapper.ReadKey();
                 }
             }
 
@@ -271,7 +271,7 @@ namespace KS.Network.SSH
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.Wdbg(DebugLevel.I, "Opening shell...");
-                var SSHS = SSHClient.CreateShell(Console.OpenStandardInput(), Console.OpenStandardOutput(), Console.OpenStandardError(), KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100", (uint)Console.WindowWidth, (uint)Console.WindowHeight, (uint)Console.BufferWidth, (uint)Console.BufferHeight, new Dictionary<TerminalModes, uint>());
+                var SSHS = SSHClient.CreateShell(ConsoleBase.ConsoleWrapper.OpenStandardInput(), ConsoleBase.ConsoleWrapper.OpenStandardOutput(), ConsoleBase.ConsoleWrapper.OpenStandardError(), KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100", (uint)ConsoleBase.ConsoleWrapper.WindowWidth, (uint)ConsoleBase.ConsoleWrapper.WindowHeight, (uint)ConsoleBase.ConsoleWrapper.BufferWidth, (uint)ConsoleBase.ConsoleWrapper.BufferHeight, new Dictionary<TerminalModes, uint>());
                 SSHS.Start();
 
                 // Wait until disconnection

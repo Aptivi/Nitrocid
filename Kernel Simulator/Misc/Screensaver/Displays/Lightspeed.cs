@@ -212,9 +212,9 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -228,7 +228,7 @@ namespace KS.Misc.Screensaver.Displays
             int MaximumColorsB = LightspeedSettings.LightspeedMaximumBlueColorLevel;
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
 
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Select the background color
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", LightspeedSettings.LightspeedCycleColors);
@@ -249,7 +249,7 @@ namespace KS.Misc.Screensaver.Displays
             }
 
             // Make the disco effect!
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
 
             // Switch to the next color
             if (LightspeedSettings.LightspeedCycleColors)

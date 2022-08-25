@@ -82,33 +82,33 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
         }
 
         public override void ScreensaverLogic()
         {
             double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
 
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.CursorVisible = false;
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.DarkGray;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
 
             // Select random positions to generate noise
-            int AmountOfBlocks = Console.WindowWidth * Console.WindowHeight;
+            int AmountOfBlocks = ConsoleBase.ConsoleWrapper.WindowWidth * ConsoleBase.ConsoleWrapper.WindowHeight;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * NoiseDense);
             var CoveredBlocks = new ArrayList();
             while (!(CoveredBlocks.Count == BlocksToCover | ResizeSyncing))
             {
-                if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                     ResizeSyncing = true;
                 if (!ResizeSyncing)
                 {
-                    int CoverX = RandomDriver.Next(Console.WindowWidth);
-                    int CoverY = RandomDriver.Next(Console.WindowHeight);
-                    Console.SetCursorPosition(CoverX, CoverY);
-                    Console.Write(" ");
+                    int CoverX = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.Next(ConsoleBase.ConsoleWrapper.WindowHeight);
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
+                    ConsoleBase.ConsoleWrapper.Write(" ");
                     if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
                         CoveredBlocks.Add(CoverX.ToString() + ", " + CoverY.ToString());
                 }
@@ -121,8 +121,8 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset resize sync
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(NoiseSettings.NoiseNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

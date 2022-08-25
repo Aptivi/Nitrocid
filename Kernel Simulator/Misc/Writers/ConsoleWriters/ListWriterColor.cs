@@ -55,7 +55,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int OldTop;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (TKey ListEntry in List.Keys)
                     {
                         var Values = new List<object>();
@@ -73,18 +73,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         }
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -126,7 +126,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int OldTop;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (TKey ListEntry in List.Keys)
                     {
                         var Values = new List<object>();
@@ -144,18 +144,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         }
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -197,7 +197,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int OldTop;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (TKey ListEntry in List.Keys)
                     {
                         var Values = new List<object>();
@@ -215,18 +215,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         }
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -266,7 +266,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int EntryNumber = 1;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (T ListEntry in List)
                     {
                         var Values = new List<object>();
@@ -285,18 +285,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         EntryNumber += 1;
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -339,7 +339,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int EntryNumber = 1;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (T ListEntry in List)
                     {
                         var Values = new List<object>();
@@ -358,18 +358,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         EntryNumber += 1;
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
@@ -412,7 +412,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     int EntryNumber = 1;
 
                     // Try to write list to console
-                    OldTop = Console.CursorTop;
+                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
                     foreach (T ListEntry in List)
                     {
                         var Values = new List<object>();
@@ -431,18 +431,18 @@ namespace KS.Misc.Writers.ConsoleWriters
                         EntryNumber += 1;
                         if (Wrap)
                         {
-                            LinesMade += Console.CursorTop - OldTop;
-                            OldTop = Console.CursorTop;
-                            if (LinesMade == Console.WindowHeight - 1)
+                            LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
                             {
-                                if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                                if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (Console.KeyAvailable)
+                        else if (ConsoleBase.ConsoleWrapper.KeyAvailable)
                         {
-                            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
                                 break;
                         }
                     }

@@ -91,8 +91,8 @@ namespace KS.Misc.Games
                 TextWriterColor.Write("- {0}:", false, ColorTools.ColTypes.ListEntry, RandomUser);
                 TextWriterColor.Write(" {0}", true, ColorTools.ColTypes.ListValue, RandomComment);
                 TextWriterColor.Write(Translate.DoTranslation("How would you respond?") + " <A/T/Q> ", false, ColorTools.ColTypes.Input);
-                Response = Convert.ToString(Console.ReadKey().KeyChar);
-                Console.WriteLine();
+                Response = Convert.ToString(ConsoleBase.ConsoleWrapper.ReadKey().KeyChar);
+                ConsoleBase.ConsoleWrapper.WriteLine();
                 DebugWriter.Wdbg(DebugLevel.I, "Response: {0}", Response);
 
                 // Parse response

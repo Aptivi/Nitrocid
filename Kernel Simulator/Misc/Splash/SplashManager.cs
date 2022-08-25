@@ -224,7 +224,7 @@ namespace KS.Misc.Splash
         {
             if (Flags.EnableSplash)
             {
-                Console.CursorVisible = false;
+                ConsoleBase.ConsoleWrapper.CursorVisible = false;
                 CurrentSplash.Opening();
                 SplashThread.Stop();
                 SplashThread.Start();
@@ -246,7 +246,7 @@ namespace KS.Misc.Splash
                 // manifest, which is not good.
                 SplashThread.Wait();
                 SplashThread.Stop();
-                Console.CursorVisible = true;
+                ConsoleBase.ConsoleWrapper.CursorVisible = true;
             }
             SplashReport._KernelBooted = true;
         }

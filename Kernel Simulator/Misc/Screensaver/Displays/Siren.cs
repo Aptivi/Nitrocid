@@ -81,14 +81,14 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+            ConsoleBase.ConsoleWrapper.Clear();
         }
 
         public override void ScreensaverLogic()
         {
-            Console.CursorVisible = false;
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
             // Get step color array from siren type
             Color[] sirenColors = sirens[SirenSettings.SirenStyle];
@@ -102,7 +102,7 @@ namespace KS.Misc.Screensaver.Displays
             ColorTools.SetConsoleColor(sirenColors[step], true, true);
 
             // Clear screen and delay
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.Clear();
             ThreadManager.SleepNoBlock(SirenSettings.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

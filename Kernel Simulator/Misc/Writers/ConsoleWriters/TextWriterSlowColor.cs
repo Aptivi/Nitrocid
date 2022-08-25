@@ -53,11 +53,11 @@ namespace KS.Misc.Writers.ConsoleWriters
                     foreach (char ch in chars)
                     {
                         Thread.Sleep((int)Math.Round(MsEachLetter));
-                        Console.Write(ch);
+                        ConsoleBase.ConsoleWrapper.Write(ch);
                     }
                     if (Line)
                     {
-                        Console.WriteLine();
+                        ConsoleBase.ConsoleWrapper.WriteLine();
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -140,8 +140,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
-                    Console.ForegroundColor = color;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -169,8 +169,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    Console.BackgroundColor = BackgroundColor;
-                    Console.ForegroundColor = ForegroundColor;
+                    ConsoleBase.ConsoleWrapper.BackgroundColor = BackgroundColor;
+                    ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -197,7 +197,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
@@ -229,7 +229,7 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, Console.Out))
+                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
                     {
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);

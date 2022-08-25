@@ -692,11 +692,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             RandomDriver = new Random();
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
-            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight);
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
+            DebugWriter.Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
         }
 
         public override void ScreensaverLogic()
@@ -711,13 +711,13 @@ namespace KS.Misc.Screensaver.Displays
             int ColorNumTo = RandomDriver.Next(RampSettings.RampMinimumColorLevelEnd, RampSettings.RampMaximumColorLevelEnd);
 
             // Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
-            Console.CursorVisible = false;
-            if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                 ResizeSyncing = true;
 
             // Set start and end widths for the ramp frame
             int RampFrameStartWidth = 4;
-            int RampFrameEndWidth = Console.WindowWidth - RampFrameStartWidth;
+            int RampFrameEndWidth = ConsoleBase.ConsoleWrapper.WindowWidth - RampFrameStartWidth;
             int RampFrameSpaces = RampFrameEndWidth - RampFrameStartWidth;
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
 
@@ -734,7 +734,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3} | Normal: {4})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps, RampColorSteps);
 
             // Let the ramp be printed in the center
-            int RampCenterPosition = (int)Math.Round(Console.WindowHeight / 2d);
+            int RampCenterPosition = (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d);
             DebugWriter.WdbgConditional(ref Screensaver.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Set the current positions
@@ -771,17 +771,17 @@ namespace KS.Misc.Screensaver.Displays
                 ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
                 while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
                 {
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
-                    Console.Write(' ');
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
-                    Console.Write(' ');
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
-                    Console.Write(' ');
-                    RampCurrentPositionLeft = Console.CursorLeft;
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    RampCurrentPositionLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
 
                     // Change the colors
                     RampCurrentColorRed -= RampColorRedSteps;
@@ -805,17 +805,17 @@ namespace KS.Misc.Screensaver.Displays
                 ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleBase.ConsoleWrapper.WindowHeight | CurrentWindowWidth != ConsoleBase.ConsoleWrapper.WindowWidth)
                         ResizeSyncing = true;
                     if (ResizeSyncing)
                         break;
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
-                    Console.Write(' ');
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
-                    Console.Write(' ');
-                    Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
-                    Console.Write(' ');
-                    RampCurrentPositionLeft = Console.CursorLeft;
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    ConsoleBase.ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition + 1);
+                    ConsoleBase.ConsoleWrapper.Write(' ');
+                    RampCurrentPositionLeft = ConsoleBase.ConsoleWrapper.CursorLeft;
 
                     // Change the colors
                     RampCurrentColor -= RampColorSteps;
@@ -828,11 +828,11 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
             ThreadManager.SleepNoBlock(RampSettings.RampNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleBase.ConsoleWrapper.Clear();
             ResizeSyncing = false;
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleBase.ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleBase.ConsoleWrapper.WindowHeight;
             ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

@@ -68,7 +68,7 @@ namespace KS.Files.Print
                         {
                             TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, ColorTools.ColTypes.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
                         }
-                        Console.WriteLine();
+                        ConsoleBase.ConsoleWrapper.WriteLine();
                     }
                 }
             }

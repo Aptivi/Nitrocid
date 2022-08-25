@@ -51,7 +51,7 @@ namespace KS.ManPages
                 int InfoPlace;
 
                 // Get the bottom place
-                InfoPlace = Console.WindowHeight - 1;
+                InfoPlace = ConsoleBase.ConsoleWrapper.WindowHeight - 1;
                 DebugWriter.Wdbg(DebugLevel.I, "Bottom info height is {0}", InfoPlace);
 
                 // If there is any To-do, write them to the console
@@ -62,24 +62,24 @@ namespace KS.ManPages
                     TextWriterColor.Write(Translate.DoTranslation("This manual page needs work for:"), true, ColorTools.ColTypes.Warning);
                     ListWriterColor.WriteList(PageManager.Pages[ManualTitle].Todos, true);
                     TextWriterColor.Write(Kernel.Kernel.NewLine + Translate.DoTranslation("Press any key to read the manual page..."), false, ColorTools.ColTypes.Warning);
-                    Console.ReadKey();
+                    ConsoleBase.ConsoleWrapper.ReadKey();
                 }
 
                 // Clear screen for readability
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
 
                 // Write the information to the console
                 if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", Console.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                    TextWriterWhereColor.WriteWhere(" {0} [v{1}] ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                 }
 
                 // Disable blinking cursor
-                Console.CursorVisible = false;
+                ConsoleBase.ConsoleWrapper.CursorVisible = false;
 
                 // Split the sentences to parts to deal with sentence lengths that are longer than the console window width
                 var IncompleteSentences = new List<string>();
@@ -130,7 +130,7 @@ namespace KS.ManPages
                         // Check to see if we're at the maximum character number
                         if (!InEsc)
                         {
-                            if (IncompleteSentenceBuilder.Length - EscapeCharacters == Console.WindowWidth - Convert.ToInt32(KernelPlatform.IsOnUnix()) | line.Length == CharactersParsed)
+                            if (IncompleteSentenceBuilder.Length - EscapeCharacters == ConsoleBase.ConsoleWrapper.WindowWidth - Convert.ToInt32(KernelPlatform.IsOnUnix()) | line.Length == CharactersParsed)
                             {
                                 // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                                 DebugWriter.Wdbg(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
@@ -151,30 +151,30 @@ namespace KS.ManPages
                 foreach (string line in IncompleteSentences)
                 {
                     // Write the line
-                    int OldTop = Console.CursorTop + 1;
+                    int OldTop = ConsoleBase.ConsoleWrapper.CursorTop + 1;
                     TextWriterColor.Write(line, true, ColorTools.ColTypes.Neutral);
-                    if (OldTop != Console.CursorTop)
-                        Console.CursorTop = OldTop;
+                    if (OldTop != ConsoleBase.ConsoleWrapper.CursorTop)
+                        ConsoleBase.ConsoleWrapper.CursorTop = OldTop;
 
                     // Check to see if we're at the end
-                    if (Console.CursorTop == InfoPlace - 1)
+                    if (ConsoleBase.ConsoleWrapper.CursorTop == InfoPlace - 1)
                     {
-                        var PressedKey = Console.ReadKey();
+                        var PressedKey = ConsoleBase.ConsoleWrapper.ReadKey();
                         if (PressedKey.Key == ConsoleKey.Escape)
                         {
-                            Console.Clear();
+                            ConsoleBase.ConsoleWrapper.Clear();
                             return;
                         }
                         else
                         {
-                            Console.Clear();
+                            ConsoleBase.ConsoleWrapper.Clear();
                             if (!string.IsNullOrWhiteSpace(ManpageInfoStyle))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(ManpageInfoStyle), ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
+                                TextWriterWhereColor.WriteWhere(" {0} (v{1}) ", ConsoleBase.ConsoleWrapper.CursorLeft, InfoPlace, true, ColorTools.BackgroundColor, ColorTools.NeutralTextColor, PageManager.Pages[ManualTitle].Title, PageManager.Pages[ManualTitle].Revision);
                             }
                         }
                     }
@@ -182,11 +182,11 @@ namespace KS.ManPages
 
                 // Stop on last page
                 DebugWriter.Wdbg(DebugLevel.I, "We're on the last page.");
-                Console.ReadKey();
+                ConsoleBase.ConsoleWrapper.ReadKey();
 
                 // Clean up
                 DebugWriter.Wdbg(DebugLevel.I, "Exiting...");
-                Console.Clear();
+                ConsoleBase.ConsoleWrapper.Clear();
             }
             else
             {
