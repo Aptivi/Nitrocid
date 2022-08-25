@@ -21,6 +21,7 @@ using KS.Files.Read;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using System.Linq;
 
 namespace KS.Shell.Shells.Test.Commands
 {
@@ -35,11 +36,13 @@ namespace KS.Shell.Shells.Test.Commands
             string TextPath = ListArgsOnly[0];
             var LocalizedStrings = Translate.PrepareDict("eng");
             var Texts = FileRead.ReadContents(TextPath);
+            bool missingOnly = ListSwitchesOnly.Contains("-missingonly");
             foreach (string Text in Texts)
             {
                 if (LocalizedStrings.ContainsKey(Text))
                 {
-                    TextWriterColor.Write("[+] {0}", true, ColorTools.ColTypes.Success, Text);
+                    if (!missingOnly)
+                        TextWriterColor.Write("[+] {0}", true, ColorTools.ColTypes.Success, Text);
                 }
                 else
                 {
