@@ -2032,12 +2032,12 @@ namespace KS.Kernel.Configuration
             NoiseSettings.NoiseDensity = int.TryParse((string)ConfigToken["Screensaver"]["Noise"]["Noise density"], out _) ? (int)ConfigToken["Screensaver"]["Noise"]["Noise density"] : 40;
 
             // > PersonLookup
-            PersonLookupSettings.PersonLookupDelay = (int)ConfigToken["Screensaver"]["PersonLookup"]["Delay in Milliseconds"];
-            PersonLookupSettings.PersonLookupLookedUpDelay = (int)ConfigToken["Screensaver"]["PersonLookup"]["New Screen Delay in Milliseconds"];
-            PersonLookupSettings.PersonLookupMinimumNames = (int)ConfigToken["Screensaver"]["PersonLookup"]["Minimum names count"];
-            PersonLookupSettings.PersonLookupMaximumNames = (int)ConfigToken["Screensaver"]["PersonLookup"]["Maximum names count"];
-            PersonLookupSettings.PersonLookupMinimumAgeYears = (int)ConfigToken["Screensaver"]["PersonLookup"]["Minimum age years count"];
-            PersonLookupSettings.PersonLookupMaximumAgeYears = (int)ConfigToken["Screensaver"]["PersonLookup"]["Maximum age years count"];
+            PersonLookupSettings.PersonLookupDelay = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Delay in Milliseconds"] : 75;
+            PersonLookupSettings.PersonLookupLookedUpDelay = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["New Screen Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["New Screen Delay in Milliseconds"] : 10000;
+            PersonLookupSettings.PersonLookupMinimumNames = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Minimum names count"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Minimum names count"] : 10;
+            PersonLookupSettings.PersonLookupMaximumNames = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Maximum names count"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Maximum names count"] : 100;
+            PersonLookupSettings.PersonLookupMinimumAgeYears = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Minimum age years count"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Minimum age years count"] : 18;
+            PersonLookupSettings.PersonLookupMaximumAgeYears = int.TryParse((string)ConfigToken["Screensaver"]["PersonLookup"]["Maximum age years count"], out _) ? (int)ConfigToken["Screensaver"]["PersonLookup"]["Maximum age years count"] : 100;
 
             // > DateAndTime
             DateAndTimeSettings.DateAndTime255Colors = (bool)ConfigToken["Screensaver"]["DateAndTime"]["Activate 255 Color Mode"];
@@ -2053,8 +2053,8 @@ namespace KS.Kernel.Configuration
             DateAndTimeSettings.DateAndTimeMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["DateAndTime"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["DateAndTime"]["Maximum color level"] : 255;
 
             // > Glitch
-            GlitchSettings.GlitchDelay = (int)ConfigToken["Screensaver"]["Glitch"]["Delay in Milliseconds"];
-            GlitchSettings.GlitchDensity = (int)ConfigToken["Screensaver"]["Glitch"]["Glitch density"];
+            GlitchSettings.GlitchDelay = int.TryParse((string)ConfigToken["Screensaver"]["Glitch"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Glitch"]["Delay in Milliseconds"] : 10;
+            GlitchSettings.GlitchDensity = int.TryParse((string)ConfigToken["Screensaver"]["Glitch"]["Glitch density"], out _) ? (int)ConfigToken["Screensaver"]["Glitch"]["Glitch density"] : 40;
 
             // > Indeterminate
             IndeterminateSettings.Indeterminate255Colors = (bool)ConfigToken["Screensaver"]["Indeterminate"]["Activate 255 Color Mode"];
