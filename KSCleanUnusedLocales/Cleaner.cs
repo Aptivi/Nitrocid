@@ -49,9 +49,9 @@ namespace KSCleanUnusedLocales
                     foreach (string source in sources)
                     {
                         // Check to see if the string exists in the source
-                        if (source.Contains($"DoTranslation(\"{engString.Replace("\"", "\"\"")}\"") ||
-                            source.Contains($"Shell, \"{engString}\", ") ||
-                            source.Contains($"Args, \"{engString}\", "))
+                        if (source.Contains($"DoTranslation(\"{engString.Replace("\"", "\\\"")}\"") ||
+                            source.Contains($"Shell, \"{engString.Replace("\"", "\\\"")}\", ") ||
+                            source.Contains($"Args, \"{engString.Replace("\"", "\\\"")}\", "))
                         {
                             found = true;
                             break;
