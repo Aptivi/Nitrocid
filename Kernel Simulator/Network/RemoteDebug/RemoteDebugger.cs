@@ -93,7 +93,7 @@ namespace KS.Network.RemoteDebug
             // Listen to a current IP address
             try
             {
-                DebugTCP = new TcpListener(new IPAddress(new[] { (byte)0, (byte)0, (byte)0, (byte)0 }), DebugPort);
+                DebugTCP = new TcpListener(IPAddress.Any, DebugPort);
                 DebugTCP.Start();
             }
             catch (SocketException sex)
