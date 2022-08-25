@@ -364,7 +364,7 @@ namespace KS.Kernel
             Flags.SafeMode = false;
 
             // Stop the time/date change thread
-            TimeDate.TimeDate.TimeDateChange.Stop();
+            TimeDate.TimeDate.TimeTopRightChange.Stop();
         }
 
         /// <summary>
@@ -389,9 +389,6 @@ namespace KS.Kernel
             // Initialize aliases
             AliasManager.InitAliases();
 
-            // Initialize date
-            TimeDate.TimeDate.InitTimeDate();
-
             // Initialize custom languages
             LanguageManager.InstallCustomLanguages();
 
@@ -403,6 +400,9 @@ namespace KS.Kernel
 
             // Load background
             ColorTools.LoadBack();
+
+            // Initialize top right date
+            TimeDate.TimeDate.InitTopRightDate();
 
             // Load user token
             UserManagement.LoadUserToken();

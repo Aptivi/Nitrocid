@@ -33,9 +33,16 @@ namespace KS.TimeDate
     {
 
         // Variables
-        public static DateTime KernelDateTime = new();
-        public static DateTime KernelDateTimeUtc = new();
-        internal static KernelThread TimeDateChange = new("Time/date updater thread", true, TimeDateChange_DoWork);
+        internal static KernelThread TimeTopRightChange = new("Time/date top right corner updater thread", true, TimeTopRightChange_DoWork);
+
+        /// <summary>
+        /// The kernel time and date
+        /// </summary>
+        public static DateTime KernelDateTime { get => DateTime.Now; }
+        /// <summary>
+        /// The kernel time and date (UTC)
+        /// </summary>
+        public static DateTime KernelDateTimeUtc { get => DateTime.UtcNow; }
 
         /// <summary>
         /// Specifies the time/date format type.
@@ -55,7 +62,7 @@ namespace KS.TimeDate
         /// <summary>
         /// Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
         /// </summary>
-        public static void TimeDateChange_DoWork()
+        public static void TimeTopRightChange_DoWork()
         {
             try
             {
@@ -63,8 +70,6 @@ namespace KS.TimeDate
                 while (true)
                 {
                     string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
-                    KernelDateTime = DateTime.Now;
-                    KernelDateTimeUtc = DateTime.UtcNow;
                     if (Flags.CornerTimeDate == true & !Screensaver.InSaver)
                     {
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
@@ -88,16 +93,12 @@ namespace KS.TimeDate
         }
 
         /// <summary>
-        /// Updates the KernelDateTime so it reflects the current time, and runs the updater.
+        /// Starts the time on top right corner
         /// </summary>
-        public static void InitTimeDate()
+        public static void InitTopRightDate()
         {
-            if (!TimeDateChange.IsAlive)
-            {
-                KernelDateTime = DateTime.Now;
-                KernelDateTimeUtc = DateTime.UtcNow;
-                TimeDateChange.Start();
-            }
+            if (!TimeTopRightChange.IsAlive && Flags.CornerTimeDate)
+                TimeTopRightChange.Start();
         }
 
         /// <summary>
