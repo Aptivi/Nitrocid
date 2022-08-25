@@ -24,7 +24,13 @@ namespace KS.Arguments.ArgumentBase
     public static class CommandLineArgs
     {
 
-        public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new() { { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", false, 0, new CommandLine_TestInteractiveArgument()) }, { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", false, 0, new CommandLine_DebugArgument()) }, { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", false, 0, new CommandLine_ArgsArgument()) }, { "help", new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", false, 0, new CommandLine_HelpArgument()) } };
+        public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
+        {
+            { "testInteractive", new ArgumentInfo("testInteractive", ArgumentType.CommandLineArgs, "Opens a test shell", "", false, 0, new CommandLine_TestInteractiveArgument()) },
+            { "debug", new ArgumentInfo("debug", ArgumentType.CommandLineArgs, "Enables debug mode", "", false, 0, new CommandLine_DebugArgument()) },
+            { "args", new ArgumentInfo("args", ArgumentType.CommandLineArgs, "Prompts for arguments", "", false, 0, new CommandLine_ArgsArgument()) },
+            { "help", new ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", false, 0, new CommandLine_HelpArgument()) }
+        };
 
     }
 }
