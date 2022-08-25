@@ -83,7 +83,7 @@ namespace KS.Shell.Shells.SFTP
                         return;
                     }
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prompt for command

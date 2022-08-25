@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.Test
             // Actual shell logic
             while (!Bail)
             {
-                // See UESHShell.vb for more info
+                // See UESHShell.cs for more info
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
                     if (Kernel.Kernel.DefConsoleOut is not null)

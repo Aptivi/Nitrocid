@@ -147,7 +147,7 @@ namespace KS.Shell.Shells.RSS
                         RSSShellCommon.RSSRefresher.Start();
                     DebugWriter.Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()");
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prepare for prompt

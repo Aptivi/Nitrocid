@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.Zip
                     if (ZipShellCommon.ZipShell_ZipArchive is null)
                         ZipShellCommon.ZipShell_ZipArchive = ZipArchive.Open(ZipShellCommon.ZipShell_FileStream);
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prepare for prompt

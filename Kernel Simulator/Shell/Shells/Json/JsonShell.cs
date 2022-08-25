@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Json
                     JsonShellCommon.JsonShell_AutoSave.Start();
                 }
 
-                // See UESHShell.vb for more info
+                // See UESHShell.cs for more info
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
                     // Prepare for prompt

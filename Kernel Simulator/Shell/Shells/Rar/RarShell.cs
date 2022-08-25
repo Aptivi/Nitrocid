@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.Rar
                     if (RarShellCommon.RarShell_RarArchive is null)
                         RarShellCommon.RarShell_RarArchive = RarArchive.Open(RarShellCommon.RarShell_FileStream);
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prepare for prompt

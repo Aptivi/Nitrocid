@@ -91,7 +91,7 @@ namespace KS.Shell.Shells.FTP
                         return;
                     }
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Restore console state

@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.Hex
                         HexEditShellCommon.HexEdit_AutoSave.Start();
                     }
 
-                    // See UESHShell.vb for more info
+                    // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Restore the console state

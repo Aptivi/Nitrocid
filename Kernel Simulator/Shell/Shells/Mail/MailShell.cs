@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.Mail
                 if (MailShellCommon.Mail_NotifyNewMail)
                     MailHandlers.InitializeHandlers();
 
-                // See UESHShell.vb for more info
+                // See UESHShell.cs for more info
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
                     // Initialize prompt
