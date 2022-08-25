@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using KS.Kernel;
+using KS.Misc.Writers.WriterBase;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase
@@ -36,13 +37,12 @@ namespace KS.Shell.ShellBase
                 {
                     Flags.CancelRequested = true;
                     ConsoleBase.ConsoleWrapper.WriteLine();
-                    Kernel.Kernel.DefConsoleOut = ConsoleBase.ConsoleWrapper.Out;
-                    ConsoleBase.ConsoleWrapper.SetOut(StreamWriter.Null);
+                    WriterPlainManager.ChangePlain("Null");
                     e.Cancel = true;
                     var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
                     StartCommandThread.Stop();
                     Shell.ProcessStartCommandThread.Stop();
-                    ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
+                    WriterPlainManager.ChangePlain("Console");
                 }
             }
         }

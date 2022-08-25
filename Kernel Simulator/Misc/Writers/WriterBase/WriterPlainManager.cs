@@ -26,10 +26,36 @@ namespace KS.Misc.Writers.WriterBase
     /// </summary>
     public static class WriterPlainManager
     {
-        internal static Dictionary<string, IWriterPlain> plains = new()
+        internal readonly static Dictionary<string, IWriterPlain> plains = new()
         {
-            { "Console", new ConsolePlainWriter() }
+            { "Console", new ConsolePlainWriter() },
+            { "File", new FilePlainWriter() },
+            { "Null", new NullPlainWriter() }
         };
-        internal static IWriterPlain currentPlain = plains["Console"];
+        internal static string currentPlainName = "Console";
+        internal static IWriterPlain currentPlain = plains[currentPlainName];
+
+        /// <summary>
+        /// Gets the current plain writer name
+        /// </summary>
+        public static string CurrentPlainName { get => currentPlainName; }
+
+        /// <summary>
+        /// Changes the plain writer
+        /// </summary>
+        /// <param name="plainName">The plain writer name. Usually found in <see cref="plains"/></param>
+        public static void ChangePlain(string plainName)
+        {
+            if (plains.ContainsKey(plainName))
+            {
+                currentPlainName = plainName;
+                currentPlain = plains[plainName];
+            }
+            else
+            {
+                currentPlainName = "Console";
+                currentPlain = plains[currentPlainName];
+            }
+        }
     }
 }
