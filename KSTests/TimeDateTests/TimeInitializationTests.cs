@@ -35,8 +35,6 @@ namespace KSTests.TimeDateTests
         [Description("Initialization")]
         public void TestGetTimeZones()
         {
-            TimeDate.KernelDateTime = DateTime.Now;
-            TimeDate.KernelDateTimeUtc = DateTime.UtcNow;
             var TimeZones = KS.TimeDate.TimeZones.GetTimeZones();
             TimeZones.ShouldNotBeNull();
             TimeZones.ShouldNotBeEmpty();

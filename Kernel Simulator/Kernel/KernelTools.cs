@@ -364,7 +364,7 @@ namespace KS.Kernel
             Flags.SafeMode = false;
 
             // Stop the time/date change thread
-            TimeDate.TimeDate.TimeTopRightChange.Stop();
+            TimeDateTopRight.TimeTopRightChange.Stop();
         }
 
         /// <summary>
@@ -402,7 +402,7 @@ namespace KS.Kernel
             ColorTools.LoadBack();
 
             // Initialize top right date
-            TimeDate.TimeDate.InitTopRightDate();
+            TimeDateTopRight.InitTopRightDate();
 
             // Load user token
             UserManagement.LoadUserToken();

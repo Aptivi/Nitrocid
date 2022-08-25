@@ -17,23 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Threading;
-using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Screensaver;
-using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.TimeDate
 {
     public static class TimeDate
     {
-
-        // Variables
-        internal static KernelThread TimeTopRightChange = new("Time/date top right corner updater thread", true, TimeTopRightChange_DoWork);
 
         /// <summary>
         /// The kernel time and date
@@ -57,48 +48,6 @@ namespace KS.TimeDate
             /// Short time/date format
             /// </summary>
             Short
-        }
-
-        /// <summary>
-        /// Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
-        /// </summary>
-        public static void TimeTopRightChange_DoWork()
-        {
-            try
-            {
-                int oldWid = default, oldTop = default;
-                while (true)
-                {
-                    string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
-                    if (Flags.CornerTimeDate == true & !Screensaver.InSaver)
-                    {
-                        oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
-                        oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, ColorTools.ColTypes.Neutral);
-                    }
-                    Thread.Sleep(1000);
-                    if (oldWid != 0)
-                        TextWriterWhereColor.WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, true, ColorTools.ColTypes.Neutral);
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.Wdbg(DebugLevel.W, "Aborting time/date change thread.");
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.Wdbg(DebugLevel.E, "Fatal error in time/date changer: {0}", ex.Message);
-                DebugWriter.WStkTrc(ex);
-            }
-        }
-
-        /// <summary>
-        /// Starts the time on top right corner
-        /// </summary>
-        public static void InitTopRightDate()
-        {
-            if (!TimeTopRightChange.IsAlive && Flags.CornerTimeDate)
-                TimeTopRightChange.Start();
         }
 
         /// <summary>
