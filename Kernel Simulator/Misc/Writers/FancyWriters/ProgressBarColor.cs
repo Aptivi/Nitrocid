@@ -26,6 +26,7 @@ using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -42,10 +43,10 @@ namespace KS.Misc.Writers.FancyWriters
         {
             try
             {
-                TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
-                TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
-                TextWriterWhereColor.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
-                TextWriterWhereColor.WriteWherePlain("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
+                WriterPlainManager.currentPlain.WriteWherePlain(ProgressTools.ProgressUpperLeftCornerChar + ProgressTools.ProgressUpperFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                WriterPlainManager.currentPlain.WriteWherePlain(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true);
+                WriterPlainManager.currentPlain.WriteWherePlain(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true);
+                WriterPlainManager.currentPlain.WriteWherePlain("*".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -109,7 +110,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
                 TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
+                WriterPlainManager.currentPlain.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
@@ -154,7 +155,7 @@ namespace KS.Misc.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " ".Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressRightFrameChar, Left, Top + 1, true, FrameColor);
                 TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar + ProgressTools.ProgressLowerFrameChar.Repeat(ConsoleWrapper.WindowWidth - 10) + ProgressTools.ProgressLowerRightCornerChar, Left, Top + 2, true, FrameColor);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
-                TextWriterWhereColor.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
+                WriterPlainManager.currentPlain.WriteWherePlain(" ".Repeat(ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, 10)), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

@@ -25,6 +25,7 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -50,7 +51,7 @@ namespace KS.Misc.Writers.FancyWriters
 
                 // Write the font
                 Text = FigletFont.Render(Text);
-                TextWriterWhereColor.WriteWherePlain(Text, Left, Top, Return, Vars);
+                WriterPlainManager.currentPlain.WriteWherePlain(Text, Left, Top, Return, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {

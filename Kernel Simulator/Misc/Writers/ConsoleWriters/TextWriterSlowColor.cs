@@ -25,48 +25,12 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
     public static class TextWriterSlowColor
     {
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt slowly with no color support.
-        /// </summary>
-        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    // Format string as needed
-                    if (!(vars.Length == 0))
-                        msg = StringManipulate.FormatString(msg, vars);
-
-                    // Write text slowly
-                    var chars = msg.ToCharArray().ToList();
-                    foreach (char ch in chars)
-                    {
-                        Thread.Sleep((int)Math.Round(MsEachLetter));
-                        ConsoleBase.ConsoleWrapper.Write(ch);
-                    }
-                    if (Line)
-                    {
-                        ConsoleBase.ConsoleWrapper.WriteLine();
-                    }
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
-                {
-                    DebugWriter.WStkTrc(ex);
-                    KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
-                }
-            }
-        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.
@@ -86,7 +50,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -116,7 +80,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -144,7 +108,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -173,7 +137,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -204,7 +168,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     }
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -236,7 +200,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     }
 
                     // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {

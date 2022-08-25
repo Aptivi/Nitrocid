@@ -20,6 +20,7 @@ using System;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Misc.Writers.WriterBase;
 using VT.NET;
 
 namespace KS.ConsoleBase
@@ -142,7 +143,7 @@ namespace KS.ConsoleBase
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
             Console.Title = Text;
-            TextWriterColor.WritePlain(Sequence, false);
+            WriterPlainManager.currentPlain.WritePlain(Sequence, false);
         }
 
     }

@@ -25,6 +25,7 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -337,7 +338,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, true);
+                    WriterPlainManager.currentPlain.WriteWherePlain(FigletWrite, FigletWidth, FigletHeight, true);
                 }
             }
             ThreadManager.SleepNoBlock(FigletSettings.FigletDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

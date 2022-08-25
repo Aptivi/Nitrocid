@@ -23,6 +23,7 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -321,7 +322,7 @@ namespace KS.Misc.Screensaver.Displays
                     break;
 
                 // Print a block and add the covered position to the list so fading down can be done
-                TextWriterWhereColor.WriteWherePlain(" ", ColumnLine, Fall, false);
+                WriterPlainManager.currentPlain.WriteWherePlain(" ", ColumnLine, Fall, false);
                 var PositionTuple = new Tuple<int, int>(ColumnLine, Fall);
                 CoveredPositions.Add(PositionTuple);
 

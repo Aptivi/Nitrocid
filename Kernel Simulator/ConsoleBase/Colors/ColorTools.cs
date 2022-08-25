@@ -27,6 +27,7 @@ using KS.Misc.Platform;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -881,13 +882,13 @@ namespace KS.ConsoleBase.Colors
                 if (Background)
                 {
                     if (Flags.SetBackground | ForceSet)
-                        TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
+                        WriterPlainManager.currentPlain.WritePlain(ColorSequence.VTSequenceBackground, false);
                     else
-                        TextWriterColor.WritePlain(resetSequence, false);
+                        WriterPlainManager.currentPlain.WritePlain(resetSequence, false);
                 }
                 else
                 {
-                    TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
+                    WriterPlainManager.currentPlain.WritePlain(ColorSequence.VTSequenceForeground, false);
                 }
             }
         }

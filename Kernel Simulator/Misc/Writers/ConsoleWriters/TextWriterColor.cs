@@ -24,6 +24,7 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
@@ -31,56 +32,6 @@ namespace KS.Misc.Writers.ConsoleWriters
     {
 
         internal static object WriteLock = new();
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt without colors
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, bool Line, params object[] vars)
-        {
-            lock (WriteLock)
-            {
-                try
-                {
-                    // Get the filtered positions first.
-                    int FilteredLeft = default, FilteredTop = default;
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
-                        ConsoleExtensions.GetFilteredPositions(Text, ref FilteredLeft, ref FilteredTop, vars);
-
-                    // Actually write
-                    if (Line)
-                    {
-                        if (!(vars.Length == 0))
-                        {
-                            ConsoleWrapper.WriteLine(Text, vars);
-                        }
-                        else
-                        {
-                            ConsoleWrapper.WriteLine(Text);
-                        }
-                    }
-                    else if (!(vars.Length == 0))
-                    {
-                        ConsoleWrapper.Write(Text, vars);
-                    }
-                    else
-                    {
-                        ConsoleWrapper.Write(Text);
-                    }
-
-                    // Return to the processed position
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
-                        ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
-                {
-                    DebugWriter.WStkTrc(ex);
-                    KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
-                }
-            }
-        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -114,14 +65,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorType);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -167,14 +118,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(colorTypeForeground);
                         ColorTools.SetConsoleColor(colorTypeBackground, true);
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -226,14 +177,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ConsoleWrapper.BackgroundColor = (ConsoleColor)Convert.ToInt32(StringQuery.IsStringNumeric(ColorTools.BackgroundColor.PlainSequence) && Convert.ToDouble(ColorTools.BackgroundColor.PlainSequence) <= 15d ? Enum.Parse(typeof(ConsoleColor), ColorTools.BackgroundColor.PlainSequence) : ConsoleColor.Black);
                         ConsoleWrapper.ForegroundColor = color;
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -287,14 +238,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ConsoleWrapper.BackgroundColor = BackgroundColor;
                         ConsoleWrapper.ForegroundColor = ForegroundColor;
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -341,14 +292,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(color);
                         ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
@@ -397,14 +348,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                     // Write the text to console
                     if (Highlight)
                     {
-                        WritePlain(Text, false, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, false, vars);
                         ColorTools.SetConsoleColor(ForegroundColor);
                         ColorTools.SetConsoleColor(BackgroundColor, true);
-                        WritePlain("", Line);
+                        WriterPlainManager.currentPlain.WritePlain("", Line);
                     }
                     else
                     {
-                        WritePlain(Text, Line, vars);
+                        WriterPlainManager.currentPlain.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))

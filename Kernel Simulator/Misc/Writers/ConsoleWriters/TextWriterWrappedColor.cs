@@ -23,53 +23,12 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.DebugWriters;
+using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
     public static class TextWriterWrappedColor
     {
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrappedPlain(string Text, bool Line, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                var LinesMade = default(int);
-                int OldTop;
-                try
-                {
-                    // Format string as needed
-                    if (!(vars.Length == 0))
-                        Text = StringManipulate.FormatString(Text, vars);
-
-                    OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
-                    foreach (char TextChar in Text.ToString().ToCharArray())
-                    {
-                        ConsoleBase.ConsoleWrapper.Write(TextChar);
-                        LinesMade += ConsoleBase.ConsoleWrapper.CursorTop - OldTop;
-                        OldTop = ConsoleBase.ConsoleWrapper.CursorTop;
-                        if (LinesMade == ConsoleBase.ConsoleWrapper.WindowHeight - 1)
-                        {
-                            if (ConsoleBase.ConsoleWrapper.ReadKey(true).Key == ConsoleKey.Escape)
-                                break;
-                            LinesMade = 0;
-                        }
-                    }
-                    if (Line)
-                        ConsoleBase.ConsoleWrapper.WriteLine();
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
-                {
-                    DebugWriter.WStkTrc(ex);
-                    KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
-                }
-            }
-        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
@@ -88,7 +47,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorType);
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -117,7 +76,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -145,7 +104,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = color;
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -174,7 +133,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     ConsoleBase.ConsoleWrapper.ForegroundColor = ForegroundColor;
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -205,7 +164,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     }
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
@@ -237,7 +196,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                     }
 
                     // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
+                    WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
                 {
