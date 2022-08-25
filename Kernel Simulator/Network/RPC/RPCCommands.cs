@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 using Extensification.StringExts;
 using KS.Kernel;
 using KS.Kernel.Power;
@@ -133,6 +134,7 @@ namespace KS.Network.RPC
             var RemoteEndpoint = new IPEndPoint(IPAddress.Any, RemoteProcedure.RPCPort);
             while (RemoteProcedure.RPCStarted)
             {
+                Thread.Sleep(1);
                 byte[] MessageBuffer;
                 string Message = "";
                 try
