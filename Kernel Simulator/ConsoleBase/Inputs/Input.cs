@@ -104,8 +104,8 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
         /// </summary>
-        /// <param name="Intercept"></param>
-        /// <param name="Timeout"></param>
+        /// <param name="Intercept">Whether to intercept an input</param>
+        /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
         {
             var CurrentMilliseconds = default(double);

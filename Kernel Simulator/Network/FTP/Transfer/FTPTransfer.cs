@@ -216,8 +216,8 @@ namespace KS.Network.FTP.Transfer
         /// <summary>
         /// Uploads a folder to the currently connected FTP server
         /// </summary>
-        /// <param name="Folder">A local folder</param>
-        /// <param name="LocalFolder"></param>
+        /// <param name="Folder">A remote folder</param>
+        /// <param name="LocalFolder">A local folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPUploadFolder(string Folder, string LocalFolder)
         {

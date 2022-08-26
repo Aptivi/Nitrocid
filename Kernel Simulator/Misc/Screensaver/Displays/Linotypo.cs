@@ -642,10 +642,7 @@ namespace KS.Misc.Screensaver.Displays
         /// <summary>
         /// Instructs the Linotypo screensaver to go to the next column
         /// </summary>
-        /// <param name="CurrentColumn"></param>
-        /// <param name="CurrentColumnRowConsole"></param>
-        /// <param name="ColumnRowConsoleThreshold"></param>
-        public void HandleNextColumn(ref int CurrentColumn, ref int CurrentColumnRowConsole, int ColumnRowConsoleThreshold)
+        private void HandleNextColumn(ref int CurrentColumn, ref int CurrentColumnRowConsole, int ColumnRowConsoleThreshold)
         {
             if (LinotypoSettings.LinotypoTextColumns > 1)
             {
