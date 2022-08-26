@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using System.IO;
 using System.Net.Sockets;
 
 namespace KS.Shell.ShellBase.Aliases
@@ -33,31 +34,34 @@ namespace KS.Shell.ShellBase.Aliases
         /// </summary>
         /// <param name="aliascmd">Specifies the alias with arguments</param>
         /// <param name="ShellType">Type of shell</param>
-        public static void ExecuteAlias(string aliascmd, ShellType ShellType)
+        /// <param name="SocketStream">A socket stream writer</param>
+        /// <param name="Address">IP Address</param>
+        public static void ExecuteAlias(string aliascmd, ShellType ShellType, StreamWriter SocketStream = null, string Address = "")
         {
             var AliasesList = AliasManager.GetAliasesListFromType(ShellType);
+
+            // Get the actual command from the alias
             string FirstWordCmd = aliascmd.SplitEncloseDoubleQuotes(" ")[0];
             string actualCmd = aliascmd.Replace(FirstWordCmd, AliasesList[FirstWordCmd]);
             DebugWriter.Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd);
-            var Params = new GetCommand.ExecuteCommandThreadParameters(actualCmd, ShellType, null);
-            var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
-            StartCommandThread.Start(Params);
-            StartCommandThread.Wait();
-            StartCommandThread.Stop();
-        }
 
-        /// <summary>
-        /// Executes the remote debugger alias
-        /// </summary>
-        /// <param name="aliascmd">Aliased command with arguments</param>
-        /// <param name="SocketStream">A socket stream writer</param>
-        /// <param name="Address">IP Address</param>
-        public static void ExecuteRDAlias(string aliascmd, System.IO.StreamWriter SocketStream, string Address)
-        {
-            string FirstWordCmd = aliascmd.Split(' ')[0];
-            string actualCmd = aliascmd.Replace(FirstWordCmd, AliasManager.RemoteDebugAliases[FirstWordCmd]);
-            var Params = new GetCommand.ExecuteCommandThreadParameters(actualCmd, ShellType.RemoteDebugShell, SocketStream, Address);
-            GetCommand.ExecuteCommand(Params);
+            // Make thread parameters.
+            var Params = new GetCommand.ExecuteCommandThreadParameters(actualCmd, ShellType, SocketStream, Address);
+
+            // Check to see if we're on the shell or on the remote debug
+            if (ShellType == ShellType.RemoteDebugShell)
+            {
+                // Handle the remote debug case specially
+                GetCommand.ExecuteCommand(Params);
+            }
+            else
+            {
+                // Start the command thread
+                var StartCommandThread = ShellStart.ShellStack[ShellStart.ShellStack.Count - 1].ShellCommandThread;
+                StartCommandThread.Start(Params);
+                StartCommandThread.Wait();
+                StartCommandThread.Stop();
+            }
         }
 
     }

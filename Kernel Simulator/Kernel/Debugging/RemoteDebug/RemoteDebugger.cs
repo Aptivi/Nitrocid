@@ -260,7 +260,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 else if (AliasManager.RemoteDebugAliases.ContainsKey(Command))
                                 {
                                     // Alias parsing starts here.
-                                    AliasExecutor.ExecuteRDAlias(FullCommand, SocketStreamWriter, SocketIP);
+                                    AliasExecutor.ExecuteAlias(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
                                 }
                                 else
                                 {

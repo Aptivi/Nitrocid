@@ -87,3 +87,7 @@ We felt that moving debug-related functions to `KS.Kernel` would be more conveni
 ##### Merged `ParseCmd` with `ExecuteCommand`
 
 It has come to the conclusion that `ParseCmd` is now very similar to `ExecuteCommand` with treating the remote debug shell specially. This is no longer needed as `ProvidedCommandArgumentsInfo` has been provided the IP address of the target device, making `ParseCmd` redundant.
+
+##### Removed `ExecuteRDAlias()`
+
+This function is not needed to execute aliases since there has been recent improvements to the executor in both 0.0.20.0 and 0.0.24.0.
