@@ -249,7 +249,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             if (Message.StartsWith("/"))
                             {
                                 // Message is a command
-                                string FullCommand = Message.Replace("/", "");
+                                string FullCommand = Message.Substring(1);
                                 string Command = FullCommand.Split(' ')[0];
                                 if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
                                 {
