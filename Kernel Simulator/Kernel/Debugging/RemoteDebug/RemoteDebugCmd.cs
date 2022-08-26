@@ -39,33 +39,5 @@ namespace KS.Kernel.Debugging.RemoteDebug
             { "username", new CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", new CommandArgumentInfo(), new Debug_UsernameCommand()) }
         };
         internal readonly static Dictionary<string, CommandInfo> DebugModCmds = new();
-
-        /// <summary>
-        /// Client command parsing.
-        /// </summary>
-        /// <param name="CmdString">A specified command. It may contain arguments.</param>
-        /// <param name="SocketStreamWriter">A socket stream writer</param>
-        /// <param name="Address">An IP address</param>
-        public static void ParseCmd(string CmdString, StreamWriter SocketStreamWriter, string Address)
-        {
-            Kernel.KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString);
-            var ArgumentInfo = new ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell);
-            string Command = ArgumentInfo.Command;
-            var Args = ArgumentInfo.ArgumentsList;
-            var Switches = ArgumentInfo.SwitchesList;
-            string StrArgs = ArgumentInfo.ArgumentsText;
-            bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-
-            try
-            {
-                RemoteDebugCommandExecutor DebugCommandBase = (RemoteDebugCommandExecutor)DebugCommands[Command].CommandBase;
-                DebugCommandBase.Execute(StrArgs, Args, Switches, SocketStreamWriter, Address);
-            }
-            catch (Exception ex)
-            {
-                SocketStreamWriter.WriteLine(Translate.DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message);
-                Kernel.KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex);
-            }
-        }
     }
 }

@@ -29,6 +29,8 @@ using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Aliases;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 using KS.TimeDate;
 
 namespace KS.Kernel.Debugging.RemoteDebug
@@ -252,7 +254,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 if (RemoteDebugCmd.DebugCommands.ContainsKey(Command))
                                 {
                                     // Parsing starts here.
-                                    RemoteDebugCmd.ParseCmd(FullCommand, SocketStreamWriter, SocketIP);
+                                    var Params = new GetCommand.ExecuteCommandThreadParameters(FullCommand, ShellType.RemoteDebugShell, SocketStreamWriter, SocketIP);
+                                    GetCommand.ExecuteCommand(Params);
                                 }
                                 else if (AliasManager.RemoteDebugAliases.ContainsKey(Command))
                                 {

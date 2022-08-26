@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using System.Net.Sockets;
 
 namespace KS.Shell.ShellBase.Aliases
 {
@@ -55,7 +56,8 @@ namespace KS.Shell.ShellBase.Aliases
         {
             string FirstWordCmd = aliascmd.Split(' ')[0];
             string actualCmd = aliascmd.Replace(FirstWordCmd, AliasManager.RemoteDebugAliases[FirstWordCmd]);
-            RemoteDebugCmd.ParseCmd(actualCmd, SocketStream, Address);
+            var Params = new GetCommand.ExecuteCommandThreadParameters(actualCmd, ShellType.RemoteDebugShell, SocketStream, Address);
+            GetCommand.ExecuteCommand(Params);
         }
 
     }

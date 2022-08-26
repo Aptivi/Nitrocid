@@ -83,3 +83,7 @@ We felt that moving debug-related functions to `KS.Kernel` would be more conveni
   - `KS.Misc.Writers.DebugWriters` -> `KS.Debugging`
   - `KS.Network.RemoteDebug` -> `KS.Debugging.RemoteDebug`
   - `KS.Misc.Notifiers` -> `KS.Misc.Notifications`
+
+##### Merged `ParseCmd` with `ExecuteCommand`
+
+It has come to the conclusion that `ParseCmd` is now very similar to `ExecuteCommand` with treating the remote debug shell specially. This is no longer needed as `ProvidedCommandArgumentsInfo` has been provided the IP address of the target device, making `ParseCmd` redundant.
