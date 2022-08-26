@@ -25,8 +25,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using FluentFTP.Helpers;
 using KS.Files;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.Text;
 
 namespace KS.Misc.Editors.TextEdit

@@ -16,28 +16,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc.Writers.DebugWriters
+using System.IO;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
+
+namespace KS.Kernel.Debugging.RemoteDebug.Commands
 {
-    /// <summary>
-    /// One-lettered debugging level enumeration
-    /// </summary>
-    public enum DebugLevel
+    class Debug_UsernameCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
     {
-        /// <summary>
-        /// Informational message
-        /// </summary>
-        I,
-        /// <summary>
-        /// Warning message
-        /// </summary>
-        W,
-        /// <summary>
-        /// Error message
-        /// </summary>
-        E,
-        /// <summary>
-        /// Fatal error message
-        /// </summary>
-        F
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
+        {
+            SocketStreamWriter.WriteLine(Login.Login.CurrentUser.Username);
+        }
+
     }
 }

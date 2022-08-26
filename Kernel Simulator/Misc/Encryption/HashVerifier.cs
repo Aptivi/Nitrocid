@@ -20,7 +20,7 @@ using System.IO;
 using Extensification.StringExts;
 using KS.Files;
 using KS.Files.Querying;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Misc.Encryption
 {

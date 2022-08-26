@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Writers.DebugWriters;
-using KS.Network.RemoteDebug;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Hex;

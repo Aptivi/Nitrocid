@@ -20,9 +20,9 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.Misc.Writers.ConsoleWriters

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging.RemoteDebug;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

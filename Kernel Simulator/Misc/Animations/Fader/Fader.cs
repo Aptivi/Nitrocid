@@ -19,10 +19,10 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Animations.Fader
 {

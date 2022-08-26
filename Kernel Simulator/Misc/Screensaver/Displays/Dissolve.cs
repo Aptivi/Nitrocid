@@ -22,7 +22,7 @@ using System.Linq;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
 {

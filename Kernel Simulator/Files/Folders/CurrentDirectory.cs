@@ -23,7 +23,7 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using static KS.Kernel.Configuration.Config;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Files.Folders
 {

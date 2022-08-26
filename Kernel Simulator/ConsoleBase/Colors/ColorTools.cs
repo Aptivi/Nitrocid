@@ -22,11 +22,9 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Themes;
 using KS.Kernel;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Platform;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.WriterBase;
 
 namespace KS.ConsoleBase.Colors

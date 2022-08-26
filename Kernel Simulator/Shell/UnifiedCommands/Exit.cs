@@ -19,7 +19,7 @@
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Commands
+namespace KS.Shell.UnifiedCommands
 {
     /// <summary>
     /// Exits the subshell

@@ -18,10 +18,10 @@
 
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Login;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 

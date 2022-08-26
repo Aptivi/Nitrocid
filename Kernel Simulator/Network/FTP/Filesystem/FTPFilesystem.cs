@@ -28,8 +28,8 @@ using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Filesystem

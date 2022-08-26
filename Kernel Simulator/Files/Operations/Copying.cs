@@ -21,9 +21,9 @@ using System.IO;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Files.Operations
 {

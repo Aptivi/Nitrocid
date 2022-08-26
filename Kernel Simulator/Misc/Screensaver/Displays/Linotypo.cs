@@ -24,8 +24,8 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {

@@ -27,13 +27,13 @@ using Extensification.DictionaryExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.ManPages;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 

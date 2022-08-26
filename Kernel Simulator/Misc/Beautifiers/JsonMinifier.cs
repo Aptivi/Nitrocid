@@ -18,7 +18,7 @@
 
 using System.IO;
 using KS.Files;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

@@ -25,10 +25,10 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Encryption;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

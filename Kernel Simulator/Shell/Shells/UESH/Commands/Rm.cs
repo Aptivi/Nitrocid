@@ -20,9 +20,9 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using KS.Modifications;
 using KS.Shell.ShellBase.Shells;
 

@@ -23,10 +23,10 @@ using ColorSeq;
 using Extensification.DictionaryExts;
 using Extensification.ListExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Games
 {

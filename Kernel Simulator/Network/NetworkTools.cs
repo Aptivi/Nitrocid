@@ -26,8 +26,8 @@ using FluentFTP;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

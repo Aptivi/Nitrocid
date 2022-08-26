@@ -22,9 +22,9 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

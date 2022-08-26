@@ -19,7 +19,7 @@
 using System;
 using UnameNET;
 
-namespace KS.Misc.Platform
+namespace KS.Kernel
 {
     public static class KernelPlatform
     {

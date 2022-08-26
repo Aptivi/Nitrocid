@@ -18,12 +18,12 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.RSS;
 
-namespace KS.Network.RSS
+namespace KS.Network.RSS.Bookmarks
 {
     public static class RSSBookmarkManager
     {

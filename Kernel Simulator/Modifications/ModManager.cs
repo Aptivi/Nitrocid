@@ -34,8 +34,6 @@ using KS.ManPages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
-using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.FTP;
@@ -50,6 +48,8 @@ using KS.Shell.Shells.Test;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.Zip;
 using KS.Shell.Shells.UESH;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug;
 
 namespace KS.Modifications
 {

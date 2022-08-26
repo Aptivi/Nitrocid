@@ -74,3 +74,12 @@ Following the removal of `ListArgs()`, we can safely remove this property.
 ##### Removed `ConsoleWriters.*.Write*Plain` in favor of the plain writers
 
 The plain writer interfaces feel like they're a great addition to control the console writers.
+
+##### Updated debug and notifications namespaces
+
+We felt that moving debug-related functions to `KS.Kernel` would be more convenient, so we moved these functions to it. Also, we've renamed the notifications namespace.
+
+* Affected namespaces:
+  - `KS.Misc.Writers.DebugWriters` -> `KS.Debugging`
+  - `KS.Network.RemoteDebug` -> `KS.Debugging.RemoteDebug`
+  - `KS.Misc.Notifiers` -> `KS.Misc.Notifications`

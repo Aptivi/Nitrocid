@@ -19,7 +19,7 @@
 using System.IO;
 using System.Net.Sockets;
 
-namespace KS.Network.RemoteDebug
+namespace KS.Kernel.Debugging.RemoteDebug
 {
     public class RemoteDebugDevice
     {

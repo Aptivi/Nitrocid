@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Threading;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using KS.Shell.Shells.Mail;
 
 namespace KS.Network.Mail.Transfer

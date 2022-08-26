@@ -17,21 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 
-namespace KS.Network.RemoteDebug.Interface
+namespace KS.Kernel.Debugging.RemoteDebug.Commands
 {
-    public interface IRemoteDebugCommand
+    class Debug_ExitCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
     {
 
-        /// <summary>
-        /// Executes the command with the given argument
-        /// </summary>
-        /// <param name="StringArgs">Arguments in a string</param>
-        /// <param name="ListArgsOnly">List of provided arguments</param>
-        /// <param name="ListSwitchesOnly">List of provided switches</param>
-        /// <param name="SocketStreamWriter">Target debug devide to write on</param>
-        /// <param name="DeviceAddress">Target device address</param>
-        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
+        {
+            RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
+        }
 
     }
 }

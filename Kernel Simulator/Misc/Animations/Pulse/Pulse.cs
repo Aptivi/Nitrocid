@@ -19,8 +19,8 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Animations.Pulse
 {

@@ -17,17 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Network.RemoteDebug.Interface;
 
-namespace KS.Network.RemoteDebug.Commands
+namespace KS.Kernel.Debugging.RemoteDebug.Interface
 {
-    class Debug_UsernameCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
+    public interface IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
-        {
-            SocketStreamWriter.WriteLine(Login.Login.CurrentUser.Username);
-        }
+        /// <summary>
+        /// Executes the command with the given argument
+        /// </summary>
+        /// <param name="StringArgs">Arguments in a string</param>
+        /// <param name="ListArgsOnly">List of provided arguments</param>
+        /// <param name="ListSwitchesOnly">List of provided switches</param>
+        /// <param name="SocketStreamWriter">Target debug devide to write on</param>
+        /// <param name="DeviceAddress">Target device address</param>
+        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress);
 
     }
 }

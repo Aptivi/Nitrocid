@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts

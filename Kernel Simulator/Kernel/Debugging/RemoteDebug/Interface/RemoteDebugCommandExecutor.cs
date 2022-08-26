@@ -16,26 +16,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.IO;
-using KS.Network.RemoteDebug.Interface;
+using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 
-namespace KS.Network.RemoteDebug.Commands
+namespace KS.Kernel.Debugging.RemoteDebug.Interface
 {
-    class Debug_HelpCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
+    public abstract class RemoteDebugCommandExecutor : CommandExecutor, IRemoteDebugCommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
+        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
         {
-            if (ListArgsOnly.Length != 0)
-            {
-                HelpSystem.ShowHelp(ListArgsOnly[0], ShellType.RemoteDebugShell, SocketStreamWriter);
-            }
-            else
-            {
-                HelpSystem.ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter);
-            }
+            DebugWriter.Wdbg(DebugLevel.F, "We shouldn't be here!!!");
+            throw new InvalidOperationException();
         }
 
     }

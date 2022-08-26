@@ -20,8 +20,8 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

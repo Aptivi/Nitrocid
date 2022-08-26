@@ -28,12 +28,12 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
 using Newtonsoft.Json.Linq;
 

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.Kernel;
 using KS.Kernel.Exceptions;
-using KS.Misc.Platform;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.WriterBase;
 

@@ -19,8 +19,8 @@
 using System;
 using System.Collections.Generic;
 using KS.Files.Read;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Files.Operations
 {

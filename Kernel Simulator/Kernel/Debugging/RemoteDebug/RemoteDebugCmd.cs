@@ -19,13 +19,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using KS.Kernel.Debugging.RemoteDebug.Commands;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
-using KS.Network.RemoteDebug.Commands;
-using KS.Network.RemoteDebug.Interface;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Network.RemoteDebug
+namespace KS.Kernel.Debugging.RemoteDebug
 {
     static class RemoteDebugCmd
     {
@@ -41,7 +41,7 @@ namespace KS.Network.RemoteDebug
         /// <param name="Address">An IP address</param>
         public static void ParseCmd(string CmdString, StreamWriter SocketStreamWriter, string Address)
         {
-            Kernel.Kernel.KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString);
+            Kernel.KernelEventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString);
             var ArgumentInfo = new ProvidedCommandArgumentsInfo(CmdString, ShellType.RemoteDebugShell);
             string Command = ArgumentInfo.Command;
             var Args = ArgumentInfo.ArgumentsList;
@@ -57,7 +57,7 @@ namespace KS.Network.RemoteDebug
             catch (Exception ex)
             {
                 SocketStreamWriter.WriteLine(Translate.DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message);
-                Kernel.Kernel.KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex);
+                Kernel.KernelEventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex);
             }
         }
     }

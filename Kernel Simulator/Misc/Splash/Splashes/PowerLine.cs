@@ -22,8 +22,8 @@ using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

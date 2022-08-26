@@ -21,9 +21,9 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Games
 {

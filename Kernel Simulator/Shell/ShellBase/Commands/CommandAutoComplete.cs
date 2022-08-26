@@ -20,11 +20,10 @@ using System.Data;
 using System.Linq;
 using Extensification.StringExts;
 using KS.Files.Folders;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using ReadLineReboot;
 
-namespace KS.Shell.ShellBase
+namespace KS.Shell.ShellBase.Commands
 {
     public class CommandAutoComplete : IAutoCompleteHandler
     {

@@ -18,9 +18,9 @@
 
 using System;
 using System.IO;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
-namespace KS.Files
+namespace KS.Files.Attributes
 {
     public static class AttributeManager
     {

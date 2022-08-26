@@ -20,10 +20,10 @@ using System.Net.Sockets;
 using System.Threading;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Network.RPC
 {

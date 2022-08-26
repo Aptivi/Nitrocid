@@ -25,12 +25,12 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Screensaver
 {

@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {

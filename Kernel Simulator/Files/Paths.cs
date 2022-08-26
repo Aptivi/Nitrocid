@@ -18,8 +18,8 @@
 
 using System;
 using System.Reflection;
+using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Platform;
 
 namespace KS.Files
 {

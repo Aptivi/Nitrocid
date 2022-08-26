@@ -21,9 +21,9 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Folders;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -20,9 +20,9 @@ using System;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.Files;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
-using KS.Misc.Writers.DebugWriters;
 using KS.Network.Transfer;
 using Newtonsoft.Json.Linq;
 

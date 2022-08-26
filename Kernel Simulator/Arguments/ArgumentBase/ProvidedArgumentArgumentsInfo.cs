@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Arguments.ArgumentBase
 {

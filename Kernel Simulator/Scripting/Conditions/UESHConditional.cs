@@ -20,8 +20,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Extensification.StringExts;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Scripting.Conditions.Types;
 
 namespace KS.Scripting.Conditions

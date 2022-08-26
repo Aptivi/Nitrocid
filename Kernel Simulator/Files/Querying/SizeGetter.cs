@@ -20,8 +20,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using KS.Kernel;
-using KS.Misc.Platform;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Files.Querying
 {

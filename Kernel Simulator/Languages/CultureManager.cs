@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using KS.Kernel.Configuration;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Languages
 {

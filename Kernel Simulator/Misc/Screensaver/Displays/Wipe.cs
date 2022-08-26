@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Platform;
+using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {

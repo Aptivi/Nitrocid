@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Extensification.StringExts;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Updates

@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Linq;
 using ColorSeq;
 using Extensification.StringExts;
+using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Misc.Writers.WriterBase;
 

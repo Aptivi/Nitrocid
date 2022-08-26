@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {

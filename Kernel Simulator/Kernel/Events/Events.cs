@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Themes;
+using KS.Kernel.Debugging;
 using KS.Login;
 using KS.Misc.Notifications;
-using KS.Misc.Writers.DebugWriters;
 using KS.Modifications;
 
 namespace KS.Kernel.Events

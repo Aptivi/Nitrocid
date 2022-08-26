@@ -18,7 +18,7 @@
 
 using System;
 using System.Threading;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Misc.Threading
 {

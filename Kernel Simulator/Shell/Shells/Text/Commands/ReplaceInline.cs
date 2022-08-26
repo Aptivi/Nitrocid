@@ -18,11 +18,11 @@
 
 using Extensification.IntegerExts;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Editors.TextEdit;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using System;
 

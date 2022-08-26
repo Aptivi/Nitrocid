@@ -20,8 +20,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Network.Transfer;
+using KS.Kernel.Debugging;
 
 namespace KS.Network.RSS.Instance
 {

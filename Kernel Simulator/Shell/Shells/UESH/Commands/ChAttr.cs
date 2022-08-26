@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.Files;
+using KS.Files.Attributes;
 using KS.Files.Querying;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;

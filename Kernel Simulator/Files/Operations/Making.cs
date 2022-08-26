@@ -20,8 +20,8 @@ using System;
 using System.IO;
 using Extensification.StringExts;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

@@ -17,36 +17,39 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Data;
 using System.IO;
-using System.Linq;
-using Extensification.StringExts;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Languages;
-using KS.Network.RemoteDebug.Interface;
 
-namespace KS.Network.RemoteDebug.Commands
+namespace KS.Kernel.Debugging.RemoteDebug.Commands
 {
-    class Debug_RegisterCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
+    class Debug_TraceCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
         {
-            if (string.IsNullOrWhiteSpace(Convert.ToString(RemoteDebugTools.GetDeviceProperty(DeviceAddress, RemoteDebugTools.DeviceProperty.Name))))
+            if (DebugWriter.DebugStackTraces.Count != 0)
             {
                 if (ListArgsOnly.Length != 0)
                 {
-                    RemoteDebugTools.SetDeviceProperty(DeviceAddress, RemoteDebugTools.DeviceProperty.Name, ListArgsOnly[0]);
-                    RemoteDebugger.DebugDevices.Where((Device) => (Device.ClientIP ?? "") == (DeviceAddress ?? "")).ElementAtOrDefault(0).ClientName = ListArgsOnly[0];
-                    SocketStreamWriter.WriteLine(Translate.DoTranslation("Hi, {0}!").FormatString(ListArgsOnly[0]));
+                    try
+                    {
+                        SocketStreamWriter.WriteLine(DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])]);
+                    }
+                    catch (Exception)
+                    {
+                        SocketStreamWriter.WriteLine(Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), ListArgsOnly[0], DebugWriter.DebugStackTraces.Count);
+                    }
                 }
                 else
                 {
-                    SocketStreamWriter.WriteLine(Translate.DoTranslation("You need to write your name."));
+                    SocketStreamWriter.WriteLine(DebugWriter.DebugStackTraces[0]);
                 }
             }
             else
             {
-                SocketStreamWriter.WriteLine(Translate.DoTranslation("You're already registered."));
+                SocketStreamWriter.WriteLine(Translate.DoTranslation("No stack trace"));
             }
         }
 

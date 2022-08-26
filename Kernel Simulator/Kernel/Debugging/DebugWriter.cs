@@ -22,11 +22,9 @@ using System.Diagnostics;
 using System.IO;
 using Extensification.StringExts;
 using KS.Files;
-using KS.Kernel;
-using KS.Misc.Platform;
-using KS.Network.RemoteDebug;
+using KS.Kernel.Debugging.RemoteDebug;
 
-namespace KS.Misc.Writers.DebugWriters
+namespace KS.Kernel.Debugging
 {
     public static class DebugWriter
     {
@@ -126,7 +124,7 @@ namespace KS.Misc.Writers.DebugWriters
                         if (i != -1)
                         {
                             RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                            Kernel.Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
+                            Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
                             Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                             RemoteDebugger.DebugDevices.RemoveAt(i);
                         }
@@ -190,7 +188,7 @@ namespace KS.Misc.Writers.DebugWriters
                     if (i != -1)
                     {
                         RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                        Kernel.Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
+                        Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(RemoteDebugger.DebugDevices[i].ClientIP);
                         Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", RemoteDebugger.DebugDevices[i].ClientName, RemoteDebugger.DebugDevices[i].ClientIP);
                         RemoteDebugger.DebugDevices.RemoveAt(i);
                     }
@@ -221,12 +219,12 @@ namespace KS.Misc.Writers.DebugWriters
                 // These two NewLines are padding for accurate stack tracing.
                 var Inner = Ex.InnerException;
                 int InnerNumber = 1;
-                var NewStackTraces = new List<string>() { $"{Kernel.Kernel.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{Kernel.Kernel.NewLine}{Ex.StackTrace}{Kernel.Kernel.NewLine}" };
+                var NewStackTraces = new List<string>() { $"{Kernel.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{Kernel.NewLine}{Ex.StackTrace}{Kernel.NewLine}" };
 
                 // Get all the inner exceptions
                 while (!(Inner is null))
                 {
-                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{Kernel.Kernel.NewLine}{Inner.StackTrace}{Kernel.Kernel.NewLine}");
+                    NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{Kernel.NewLine}{Inner.StackTrace}{Kernel.NewLine}");
                     InnerNumber += 1;
                     Inner = Inner.InnerException;
                 }

@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 using ColorSeq;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Misc.Screensaver.Displays
 {

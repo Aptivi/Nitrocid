@@ -21,7 +21,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Force.Crc32;
 using KS.Files;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Misc.Encryption
 {

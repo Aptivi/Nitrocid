@@ -23,10 +23,10 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Execution
 {

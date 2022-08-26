@@ -21,10 +21,10 @@ using System.Collections.Generic;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase;
+using KS.Kernel.Debugging;
 using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.TimeDate;
 
 namespace KS.Misc.Screensaver.Displays

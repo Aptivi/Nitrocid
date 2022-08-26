@@ -23,10 +23,9 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Platform;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Files.Print
 {

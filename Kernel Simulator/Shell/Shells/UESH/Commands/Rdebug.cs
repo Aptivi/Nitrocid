@@ -18,9 +18,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Debugging.RemoteDebug;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.RemoteDebug;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

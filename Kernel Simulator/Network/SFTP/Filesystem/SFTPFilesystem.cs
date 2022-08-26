@@ -23,8 +23,8 @@ using System.Text;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.SFTP;
 
 namespace KS.Network.SFTP.Filesystem

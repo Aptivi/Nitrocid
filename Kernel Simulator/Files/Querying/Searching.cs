@@ -21,8 +21,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using Extensification.StringExts;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Files.Querying
 {

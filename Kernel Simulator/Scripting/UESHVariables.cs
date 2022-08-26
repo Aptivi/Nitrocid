@@ -18,8 +18,8 @@
 
 using System;
 using System.Collections.Generic;
-using KS.Misc.Platform;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.UESH;

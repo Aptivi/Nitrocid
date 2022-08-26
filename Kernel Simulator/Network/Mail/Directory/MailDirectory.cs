@@ -18,8 +18,8 @@
 
 using System;
 using System.Text;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Shells.Mail;
 using MailKit;
 

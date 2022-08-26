@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Languages

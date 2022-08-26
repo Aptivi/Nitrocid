@@ -35,19 +35,18 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Login;
 using KS.Misc.Notifications;
-using KS.Misc.Platform;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
 using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
-using KS.Network.RemoteDebug;
 using KS.Network.RPC;
 using ReadLineReboot;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug;
 
 #if SPECIFIERREL
 using KS.Kernel.Updates;

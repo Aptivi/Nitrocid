@@ -29,19 +29,16 @@ using KS.Shell.Shells.Text;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Network;
-using KS.Network.FTP;
-using KS.Network.Mail;
 using KS.Network.Mail.Directory;
-using KS.Network.RemoteDebug;
 using KS.Network.RPC;
-using KS.Network.SFTP;
 using KS.Network.SSH;
 using KS.Shell;
 using MadMilkman.Ini;
 using ManagedWeatherMap.Core;
 using ColorSeq;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug;
 
 namespace KSConverter
 {

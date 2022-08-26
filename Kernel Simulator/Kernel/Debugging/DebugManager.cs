@@ -22,7 +22,7 @@ using System.Linq;
 using KS.Files;
 using KS.Files.Read;
 
-namespace KS.Misc.Writers.DebugWriters
+namespace KS.Kernel.Debugging
 {
     public static class DebugManager
     {

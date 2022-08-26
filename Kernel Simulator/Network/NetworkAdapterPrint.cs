@@ -19,9 +19,9 @@
 using System.Net.NetworkInformation;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Network
 {

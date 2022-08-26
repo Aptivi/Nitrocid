@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Misc.Encryption;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Scripting
 {

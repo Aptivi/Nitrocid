@@ -23,17 +23,15 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Probers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Aliases;
 using KS.TimeDate;
 
-namespace KS.Network.RemoteDebug
+namespace KS.Kernel.Debugging.RemoteDebug
 {
     public static class RemoteDebugger
     {
@@ -174,7 +172,7 @@ namespace KS.Network.RemoteDebug
                             // Acknowledge the debugger
                             DebugWriter.Wdbg(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
                             RDebugSWriter.Flush();
-                            Kernel.Kernel.KernelEventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP);
+                            Kernel.KernelEventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP);
                         }
                     }
                 }

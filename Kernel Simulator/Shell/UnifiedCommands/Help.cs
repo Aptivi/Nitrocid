@@ -19,7 +19,7 @@
 using System.Linq;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Commands
+namespace KS.Shell.UnifiedCommands
 {
     /// <summary>
     /// Opens the help page

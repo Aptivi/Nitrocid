@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Misc.Writers.FancyWriters;
 using ManagedWeatherMap.Core;
 using System;

@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Network.RSS;
+using KS.Network.RSS.Bookmarks;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.RSS.Commands

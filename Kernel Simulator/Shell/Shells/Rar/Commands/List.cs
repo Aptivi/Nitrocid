@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.RarFile;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.ShellBase.Commands;
 using SharpCompress.Archives.Rar;
 

@@ -18,8 +18,8 @@
 
 using System;
 using System.IO;
-using KS.Misc.Platform;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel;
+using KS.Kernel.Debugging;
 
 namespace KS.Files.Querying
 {

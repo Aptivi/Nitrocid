@@ -23,11 +23,11 @@ using System.Net.Sockets;
 using System.Threading;
 using Extensification.StringExts;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Network.RPC
 {

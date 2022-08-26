@@ -21,10 +21,10 @@ using System.Threading;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.TimeDate
 {

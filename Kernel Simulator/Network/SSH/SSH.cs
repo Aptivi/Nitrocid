@@ -24,11 +24,11 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Platform;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
-using KS.Shell.ShellBase;
+using KS.Shell.ShellBase.Commands;
 using Renci.SshNet;
 using Renci.SshNet.Common;
 

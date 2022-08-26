@@ -21,12 +21,12 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using KS.Shell.Prompts;
-using KS.Shell.ShellBase;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH

@@ -18,9 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using KS.Kernel.Debugging;
 using KS.Misc.Games;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {

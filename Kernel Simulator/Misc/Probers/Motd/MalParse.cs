@@ -18,9 +18,9 @@
 
 using System;
 using KS.Files;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Probers.Motd
 {

@@ -22,9 +22,9 @@ using System.IO;
 using System.Text;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.ManPages
 {

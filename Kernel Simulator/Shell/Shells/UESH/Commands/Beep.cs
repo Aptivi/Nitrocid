@@ -18,8 +18,8 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Platform;
 using KS.Misc.Reflection;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;

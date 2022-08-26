@@ -1,5 +1,4 @@
-﻿
-// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
+﻿// Kernel Simulator  Copyright (C) 2018-2022  Aptivi
 // 
 // This file is part of Kernel Simulator
 // 
@@ -16,18 +15,28 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
-using KS.Network.RemoteDebug.Interface;
-
-namespace KS.Network.RemoteDebug.Commands
+namespace KS.Kernel.Debugging
 {
-    class Debug_ExitCommand : RemoteDebugCommandExecutor, IRemoteDebugCommand
+    /// <summary>
+    /// One-lettered debugging level enumeration
+    /// </summary>
+    public enum DebugLevel
     {
-
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
-        {
-            RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
-        }
-
+        /// <summary>
+        /// Informational message
+        /// </summary>
+        I,
+        /// <summary>
+        /// Warning message
+        /// </summary>
+        W,
+        /// <summary>
+        /// Error message
+        /// </summary>
+        E,
+        /// <summary>
+        /// Fatal error message
+        /// </summary>
+        F
     }
 }

@@ -21,8 +21,8 @@ using System.Text;
 using Extensification.StringExts;
 using KS.Files.Querying;
 using KS.Files.Read;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Files.LineEndings
 {

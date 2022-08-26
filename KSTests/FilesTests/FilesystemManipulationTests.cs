@@ -19,12 +19,13 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using KS.Files;
+using KS.Files.Attributes;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.PathLookup;
 using KS.Files.Querying;
 using KS.Files.Read;
-using KS.Misc.Platform;
+using KS.Kernel;
 using KS.Shell;
 using NUnit.Framework;
 using Shouldly;

@@ -19,8 +19,8 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Debugging;
 using KS.Misc.Animations.EdgePulse;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

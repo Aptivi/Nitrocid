@@ -28,10 +28,10 @@ using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Misc.Reflection;
 using KS.Misc.Splash.Splashes;
 using KS.Misc.Threading;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.Misc.Splash
 {

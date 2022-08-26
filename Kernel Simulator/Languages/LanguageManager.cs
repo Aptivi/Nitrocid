@@ -30,8 +30,8 @@ using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.DebugWriters;
 using Newtonsoft.Json.Linq;
 
 namespace KS.Languages

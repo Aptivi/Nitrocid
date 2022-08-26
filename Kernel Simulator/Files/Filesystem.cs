@@ -24,8 +24,8 @@ using static Extensification.StringExts.Manipulation;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Languages;
-using KS.Misc.Platform;
-using KS.Misc.Writers.DebugWriters;
+using KS.Kernel.Debugging;
+using KS.Kernel;
 
 namespace KS.Files
 {

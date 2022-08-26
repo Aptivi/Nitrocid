@@ -18,7 +18,7 @@
 
 using System;
 using System.Linq;
-using KS.Network.RSS;
+using KS.Network.RSS.Bookmarks;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.RSS.Commands

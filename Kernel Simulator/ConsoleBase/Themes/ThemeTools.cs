@@ -23,8 +23,8 @@ using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.DebugWriters;
 
 namespace KS.ConsoleBase.Themes
 {

@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using KS.Misc.Platform;
 
 namespace KSConverter
 {

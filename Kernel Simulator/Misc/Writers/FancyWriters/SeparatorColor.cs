@@ -20,7 +20,7 @@ using System;
 using ColorSeq;
 using Extensification.StringExts;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Platform;
+using KS.Kernel;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.FancyWriters
