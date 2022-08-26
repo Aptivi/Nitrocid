@@ -35,16 +35,24 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         /// <summary>
-        /// Shows the help of a command, or command list if nothing is specified
+        /// Shows the list of commands under the current shell type
         /// </summary>
-        /// <param name="CommandType">A specified command type</param>
+        public static void ShowHelp()
+        {
+            ShowHelp("", Shell.CurrentShellType);
+        }
+
+        /// <summary>
+        /// Shows the list of commands under the specified shell type
+        /// </summary>
+        /// <param name="CommandType">A specified shell type</param>
         public static void ShowHelp(ShellType CommandType)
         {
             ShowHelp("", CommandType);
         }
 
         /// <summary>
-        /// Shows the help of a command, or command list if nothing is specified
+        /// Shows the help of a command, or command list under the current shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
         public static void ShowHelp(string command)
@@ -53,10 +61,10 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Shows the help of a command, or command list if nothing is specified
+        /// Shows the help of a command, or command list under the specified shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
-        /// <param name="CommandType">A specified command type</param>
+        /// <param name="CommandType">A specified shell type</param>
         /// <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
         public static void ShowHelp(string command, ShellType CommandType, StreamWriter DebugDeviceSocket = null)
         {
