@@ -30,7 +30,14 @@ namespace KS.Kernel.Debugging.RemoteDebug
     static class RemoteDebugCmd
     {
 
-        public readonly static Dictionary<string, CommandInfo> DebugCommands = new() { { "exit", new CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", new CommandArgumentInfo(), new Debug_ExitCommand()) }, { "help", new CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", new CommandArgumentInfo(new[] { "[command]" }, false, 0), new Debug_HelpCommand()) }, { "register", new CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", new CommandArgumentInfo(new[] { "<username>" }, true, 1), new Debug_RegisterCommand()) }, { "trace", new CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", new CommandArgumentInfo(new[] { "<tracenumber>" }, true, 1), new Debug_TraceCommand()) }, { "username", new CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", new CommandArgumentInfo(), new Debug_UsernameCommand()) } };
+        public readonly static Dictionary<string, CommandInfo> DebugCommands = new()
+        {
+            { "exit", new CommandInfo("exit", ShellType.RemoteDebugShell, "Disconnects you from the debugger", new CommandArgumentInfo(), new Debug_ExitCommand()) },
+            { "help", new CommandInfo("help", ShellType.RemoteDebugShell, "Shows help screen", new CommandArgumentInfo(new[] { "[command]" }, false, 0), new Debug_HelpCommand()) },
+            { "register", new CommandInfo("register", ShellType.RemoteDebugShell, "Sets device username", new CommandArgumentInfo(new[] { "<username>" }, true, 1), new Debug_RegisterCommand()) },
+            { "trace", new CommandInfo("trace", ShellType.RemoteDebugShell, "Shows last stack trace on exception", new CommandArgumentInfo(new[] { "<tracenumber>" }, true, 1), new Debug_TraceCommand()) },
+            { "username", new CommandInfo("username", ShellType.RemoteDebugShell, "Shows current username in the session", new CommandArgumentInfo(), new Debug_UsernameCommand()) }
+        };
         internal readonly static Dictionary<string, CommandInfo> DebugModCmds = new();
 
         /// <summary>
