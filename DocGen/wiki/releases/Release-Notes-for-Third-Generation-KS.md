@@ -21,5 +21,6 @@ We have outlined in our old product documentation that `0.1.x` is real beta, so 
 7. Removed LOLCAT as it has become inconsistent
 8. Removed references to `Microsoft.VisualBasic` completely
 9. Removed checks for multi-instance
+10. Removed frequency and time from `beep` command as it isn't cross-platform
 10. General API improvements
 11. General improvements and bug fixes

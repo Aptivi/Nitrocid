@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH
             },
             {
                 "beep",
-                new CommandInfo("beep", ShellType.Shell, "Beep in 'n' Hz and time in 'n' milliseconds", new CommandArgumentInfo(new[] { "<37-32767 Hz> <milliseconds>" }, true, 2), new BeepCommand())
+                new CommandInfo("beep", ShellType.Shell, "Beep in 'n' Hz and time in 'n' milliseconds", new CommandArgumentInfo(), new BeepCommand())
             },
             {
                 "blockdbgdev",

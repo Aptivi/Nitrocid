@@ -16,51 +16,26 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using KS.ConsoleBase.Colors;
-using KS.Kernel;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Makes the PC speaker beep using specified time and frequency
+    /// Makes the PC speaker beep.
     /// </summary>
     /// <remarks>
-    /// This command lets you make a PC speaker beep using specified time in milliseconds and frequency in Hz. This requires that you have it installed.
+    /// This command lets you make a PC speaker beep. This requires that you have it installed.
+    /// <br></br>
+    /// This command used to give you an option to specify the time in milliseconds and the frequency, but it isn't cross-platform because it only works
+    /// on Windows. With the help of a native utility to utilize the PC speaker completely in Linux, this would have been achieved. However, we're trying
+    /// to be 100% .NET compatible and not depend on that utility.
     /// </remarks>
     class BeepCommand : CommandExecutor, ICommand
     {
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "There is already a platform check in the command logic.")]
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            if (StringQuery.IsStringNumeric(ListArgsOnly[0]) & Convert.ToInt32(ListArgsOnly[0]) >= 37 & Convert.ToInt32(ListArgsOnly[0]) <= 32767)
-            {
-                if (StringQuery.IsStringNumeric(ListArgsOnly[1]))
-                {
-                    if (KernelPlatform.IsOnWindows())
-                    {
-                        // TODO: Remove by Milestone 3
-                        Console.Beep(Convert.ToInt32(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
-                    }
-                    else
-                    {
-                        ConsoleBase.ConsoleWrapper.Beep();
-                    }
-                }
-                else
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Time must be numeric."), true, ColorTools.ColTypes.Error);
-                }
-            }
-            else
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), true, ColorTools.ColTypes.Error);
-            }
+            ConsoleBase.ConsoleWrapper.Beep();
         }
 
     }
