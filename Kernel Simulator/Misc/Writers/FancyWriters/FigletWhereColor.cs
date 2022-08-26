@@ -56,7 +56,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -83,7 +83,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -112,7 +112,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -139,7 +139,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -168,7 +168,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -195,7 +195,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -224,7 +224,7 @@ namespace KS.Misc.Writers.FancyWriters
             catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))
             {
                 DebugWriter.WStkTrc(ex);
-                KernelTools.KernelError(KernelErrorLevel.C, false, 0L, Translate.DoTranslation("There is a serious error when printing text."), ex);
+                DebugWriter.Wdbg(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 

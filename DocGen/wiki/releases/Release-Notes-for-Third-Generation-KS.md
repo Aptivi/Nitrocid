@@ -22,5 +22,6 @@ We have outlined in our old product documentation that `0.1.x` is real beta, so 
 8. Removed references to `Microsoft.VisualBasic` completely
 9. Removed checks for multi-instance
 10. Removed frequency and time from `beep` command as it isn't cross-platform
+11. Console printing errors shouldn't cause kernel error anymore as `KernelError` itself calls these printing function
 10. General API improvements
 11. General improvements and bug fixes
