@@ -153,7 +153,7 @@ namespace KS.Shell.ShellBase.Commands
                 bool IsMod = ModCommandList.ContainsKey(command);
                 bool IsAlias = AliasedCommandList.ContainsKey(command);
                 var FinalCommandList = IsMod ? ModCommandList : CommandList;
-                string FinalCommand = IsMod ? command : AliasedCommandList.ContainsKey(command) ? AliasedCommandList[command] : command;
+                string FinalCommand = IsMod ? command : IsAlias ? AliasedCommandList[command] : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
                 int UsageLength = Translate.DoTranslation("Usage:").Length;
                 var HelpUsages = Array.Empty<string>();
