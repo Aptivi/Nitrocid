@@ -69,7 +69,7 @@ namespace KS.Shell.ShellBase.Commands
             /// </summary>
             internal string Address;
 
-            internal ExecuteCommandThreadParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket, string Address = "")
+            internal ExecuteCommandThreadParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
             {
                 this.RequestedCommand = RequestedCommand;
                 this.ShellType = ShellType;
