@@ -67,7 +67,7 @@ namespace KS.Kernel
 
         // Variables
         public static string BannerFigletFont = "Banner";
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, ((object arg) => PowerManager.PowerManage((PowerMode)arg)));
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg));
         internal static Exception LastKernelErrorException;
 
         // ----------------------------------------------- Kernel errors -----------------------------------------------

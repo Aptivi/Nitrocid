@@ -25,7 +25,7 @@ namespace KS.Misc.Screensaver
     public static class ScreensaverDisplayer
     {
 
-        public readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, ((ss) => DisplayScreensaver((BaseScreensaver)ss)));
+        public readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss));
         internal static bool OutOfRandom;
 
         /// <summary>
