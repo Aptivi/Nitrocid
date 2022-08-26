@@ -116,8 +116,8 @@ namespace KS.Shell.ShellBase.Commands
                     if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
                     {
                         var CommandBase = TargetCommands[Command].CommandBase;
-                        if (CommandBase is RemoteDebugCommandExecutor executor && DebugDeviceSocket != null)
-                            executor.Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
+                        if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
+                            ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
                         else
                             CommandBase.Execute(StrArgs, Args, Switches);
                     }
@@ -131,8 +131,8 @@ namespace KS.Shell.ShellBase.Commands
                 else
                 {
                     var CommandBase = TargetCommands[Command].CommandBase;
-                    if (CommandBase is RemoteDebugCommandExecutor executor && DebugDeviceSocket != null)
-                        executor.Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
+                    if ((CommandBase is RemoteDebugCommandExecutor || CommandBase.GetType().GetInterface(typeof(IRemoteDebugCommand).Name) != null) && DebugDeviceSocket != null)
+                        ((IRemoteDebugCommand)CommandBase).Execute(StrArgs, Args, Switches, DebugDeviceSocket, DebugDeviceAddress);
                     else
                         CommandBase.Execute(StrArgs, Args, Switches);
                 }

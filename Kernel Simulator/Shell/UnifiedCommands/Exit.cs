@@ -16,8 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using System.IO;
 
 namespace KS.Shell.UnifiedCommands
 {
@@ -27,12 +30,17 @@ namespace KS.Shell.UnifiedCommands
     /// <remarks>
     /// If the UESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
     /// </remarks>
-    class ExitUnifiedCommand : CommandExecutor, ICommand
+    class ExitUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             ShellStart.KillShell();
+        }
+
+        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
+        {
+            RemoteDebugTools.DisconnectDbgDev(DeviceAddress);
         }
 
     }

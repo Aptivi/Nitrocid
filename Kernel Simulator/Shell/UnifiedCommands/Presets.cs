@@ -16,8 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
+using System.IO;
 
 namespace KS.Shell.UnifiedCommands
 {
@@ -27,7 +29,7 @@ namespace KS.Shell.UnifiedCommands
     /// <remarks>
     /// This command allows you to change your shell presets to either one of the pre-defined presets or your custom preset installed by a mod.
     /// </remarks>
-    class PresetsUnifiedCommand : CommandExecutor, ICommand
+    class PresetsUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)

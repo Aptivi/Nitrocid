@@ -16,8 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.IO;
 using System.Linq;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.UnifiedCommands
 {
@@ -27,7 +30,7 @@ namespace KS.Shell.UnifiedCommands
     /// <remarks>
     /// This command allows you to get help for any specific command, including its usage. If no command is specified, all commands are listed.
     /// </remarks>
-    class HelpUnifiedCommand : CommandExecutor, ICommand
+    class HelpUnifiedCommand : CommandExecutor, ICommand, IRemoteDebugCommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
@@ -39,6 +42,18 @@ namespace KS.Shell.UnifiedCommands
             else
             {
                 HelpSystem.ShowHelp(ListArgsOnly[0]);
+            }
+        }
+
+        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress)
+        {
+            if (ListArgsOnly.Length != 0)
+            {
+                HelpSystem.ShowHelp(ListArgsOnly[0], ShellType.RemoteDebugShell, SocketStreamWriter);
+            }
+            else
+            {
+                HelpSystem.ShowHelp("", ShellType.RemoteDebugShell, SocketStreamWriter);
             }
         }
 

@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.IO;
 using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug.Interface;
 
 namespace KS.Shell.ShellBase.Commands
 {
-    public abstract class CommandExecutor : ICommand
+    public abstract class CommandExecutor : ICommand, IRemoteDebugCommand
     {
 
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
@@ -29,6 +31,8 @@ namespace KS.Shell.ShellBase.Commands
             DebugWriter.Wdbg(DebugLevel.F, "We shouldn't be here!!!");
             throw new InvalidOperationException();
         }
+
+        void IRemoteDebugCommand.Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, StreamWriter SocketStreamWriter, string DeviceAddress) { }
 
         public virtual void HelpHelper()
         {

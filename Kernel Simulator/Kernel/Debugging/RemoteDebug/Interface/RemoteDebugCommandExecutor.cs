@@ -18,7 +18,6 @@
 
 using System;
 using System.IO;
-using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Interface
