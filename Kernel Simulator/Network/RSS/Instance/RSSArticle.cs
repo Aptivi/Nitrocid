@@ -44,11 +44,11 @@ namespace KS.Network.RSS.Instance
         /// <summary>
         /// Makes a new instance of RSS article
         /// </summary>
-        /// <param name="ArticleTitle"></param>
-        /// <param name="ArticleLink"></param>
-        /// <param name="ArticleDescription"></param>
-        /// <param name="ArticleVariables"></param>
-        public RSSArticle(string ArticleTitle, string ArticleLink, string ArticleDescription, Dictionary<string, XmlNode> ArticleVariables)
+        /// <param name="ArticleTitle">Article title</param>
+        /// <param name="ArticleLink">Link to article</param>
+        /// <param name="ArticleDescription">Article description</param>
+        /// <param name="ArticleVariables">Article variables as <see cref="XmlNode"/>s</param>
+        internal RSSArticle(string ArticleTitle, string ArticleLink, string ArticleDescription, Dictionary<string, XmlNode> ArticleVariables)
         {
             this.ArticleTitle = ArticleTitle.Trim();
             this.ArticleLink = ArticleLink.Trim();
