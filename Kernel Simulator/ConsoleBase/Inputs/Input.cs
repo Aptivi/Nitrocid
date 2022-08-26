@@ -124,11 +124,11 @@ namespace KS.ConsoleBase.Inputs
             return ConsoleWrapper.ReadKey(Intercept);
         }
 
-        [Obsolete("It'll make its return on a new generation of ReadLine.Reboot")]
         /// <summary>
         /// Reads the next line of characters until the condition is met or the user pressed ENTER
         /// </summary>
         /// <param name="Condition">The condition to be met</param>
+        [Obsolete("It'll make its return on a new generation of ReadLine.Reboot")]
         public static string ReadLineUntil(ref bool Condition)
         {
             string Final = "";
