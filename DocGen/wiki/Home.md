@@ -196,15 +196,15 @@ Each revision of the kernel API has several incompatibilities that break the exi
 | v0.0.18.5  |  5/11/2022   |  8/2/2022   | Reached EOL |
 | v0.0.18.6  |  6/10/2022   |  8/2/2022   | Reached EOL |
 | v0.0.18.7  |  7/9/2022    |  8/2/2022   | Reached EOL |
-| v0.0.19.0  |  8/24/2021   |  8/24/2022  | Supported   |
-| v0.0.19.1  |  8/26/2021   |  8/24/2022  | Supported   |
-| v0.0.19.2  |  2/5/2022    |  8/24/2022  | Supported   |
-| v0.0.19.3  |  3/3/2022    |  8/24/2022  | Supported   |
-| v0.0.19.4  |  4/5/2022    |  8/24/2022  | Supported   |
-| v0.0.19.5  |  5/11/2022   |  8/24/2022  | Supported   |
-| v0.0.19.6  |  6/10/2022   |  8/24/2022  | Supported   |
-| v0.0.19.7  |  7/9/2022    |  8/24/2022  | Supported   |
-| v0.0.19.8  |  8/5/2022    |  8/24/2022  | Supported   |
+| v0.0.19.0  |  8/24/2021   |  8/24/2022  | Reached EOL |
+| v0.0.19.1  |  8/26/2021   |  8/24/2022  | Reached EOL |
+| v0.0.19.2  |  2/5/2022    |  8/24/2022  | Reached EOL |
+| v0.0.19.3  |  3/3/2022    |  8/24/2022  | Reached EOL |
+| v0.0.19.4  |  4/5/2022    |  8/24/2022  | Reached EOL |
+| v0.0.19.5  |  5/11/2022   |  8/24/2022  | Reached EOL |
+| v0.0.19.6  |  6/10/2022   |  8/24/2022  | Reached EOL |
+| v0.0.19.7  |  7/9/2022    |  8/24/2022  | Reached EOL |
+| v0.0.19.8  |  8/5/2022    |  8/24/2022  | Reached EOL |
 
 ### Second-generation (API v2.0)
 
