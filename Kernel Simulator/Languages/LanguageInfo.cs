@@ -39,6 +39,10 @@ namespace KS.Languages
         /// </summary>
         public readonly bool Transliterable;
         /// <summary>
+        /// The codepage number for the language
+        /// </summary>
+        public readonly int Codepage;
+        /// <summary>
         /// Whether the language is custom
         /// </summary>
         public readonly bool Custom;
@@ -57,7 +61,8 @@ namespace KS.Languages
         /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable)
+        /// <param name="Codepage">Appropriate codepage number for language</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001)
         {
             // Check to see if the language being installed is found in resources
             if (!string.IsNullOrEmpty(Properties.Resources.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))))
@@ -66,6 +71,7 @@ namespace KS.Languages
                 ThreeLetterLanguageName = LangName;
                 this.FullLanguageName = FullLanguageName;
                 this.Transliterable = Transliterable;
+                this.Codepage = Codepage;
 
                 // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
                 // the current culture is assumed.

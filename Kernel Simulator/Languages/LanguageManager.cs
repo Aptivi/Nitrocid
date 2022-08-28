@@ -61,11 +61,12 @@ namespace KS.Languages
                     string LanguageName = Language.Path;
                     string LanguageFullName = (string)Language.First.SelectToken("name");
                     bool LanguageTransliterable = (bool)Language.First.SelectToken("transliterable");
+                    int LanguageCodepage = (int)(Language.First.SelectToken("codepage") ?? 65001);
 
                     // If the language is not found in the base languages cache dictionary, add it
                     if (!BaseLanguages.ContainsKey(LanguageName))
                     {
-                        var LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable);
+                        var LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
                         BaseLanguages.AddIfNotFound(LanguageName, LanguageInfo);
                     }
                 }
@@ -95,59 +96,10 @@ namespace KS.Languages
                 // Set appropriate codepage for incapable terminals
                 try
                 {
-                    switch (lang ?? "")
-                    {
-                        case "arb-T":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(1256);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(1256);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Arabic to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                        case "chi-T":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(936);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(936);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Chinese to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                        case "jpn":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(932);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(932);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Japanese to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                        case "kor-T":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(949);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(949);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Korean to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                        case "rus-T":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(866);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(866);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Russian to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                        case "vtn":
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(1258);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(1258);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for Vietnamese to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-
-                        default:
-                            {
-                                ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(65001);
-                                ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(65001);
-                                DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully to {0}.", ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
-                                break;
-                            }
-                    }
+                    int Codepage = Languages[lang].Codepage;
+                    ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                    ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                    DebugWriter.Wdbg(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
                 }
                 catch (Exception ex)
                 {

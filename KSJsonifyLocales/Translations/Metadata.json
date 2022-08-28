@@ -5,7 +5,8 @@
     },
     "arb-T": {
         "name": "Arabic",
-        "transliterable": true
+        "transliterable": true,
+        "codepage": 1256
     },
     "chi": {
         "name": "Chinese",
@@ -13,7 +14,8 @@
     },
     "chi-T": {
         "name": "Chinese",
-        "transliterable": true
+        "transliterable": true,
+        "codepage": 936
     },
     "cnt": {
         "name": "Chinese (Traditional)",
@@ -69,7 +71,8 @@
     },
     "jpn": {
         "name": "Japanese",
-        "transliterable": false
+        "transliterable": false,
+        "codepage": 932
     },
     "kor": {
         "name": "Korean",
@@ -77,7 +80,8 @@
     },
     "kor-T": {
         "name": "Korean",
-        "transliterable": true
+        "transliterable": true,
+        "codepage": 949
     },
     "pir": {
         "name": "Pirate Speak",
@@ -97,7 +101,8 @@
     },
     "rus-T": {
         "name": "Russian",
-        "transliterable": true
+        "transliterable": true,
+        "codepage": 866
     },
     "sms": {
         "name": "SMS Message",
@@ -125,6 +130,7 @@
     },
     "vtn": {
         "name": "Vietnamese",
-        "transliterable": false
+        "transliterable": false,
+        "codepage": 1258
     }
 }
