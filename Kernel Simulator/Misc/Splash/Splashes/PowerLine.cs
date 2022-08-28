@@ -23,6 +23,7 @@ using Extensification.StringExts;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Splash.Splashes
@@ -116,7 +117,7 @@ namespace KS.Misc.Splash.Splashes
                     }
 
                     // Sleep to draw
-                    Thread.Sleep(10);
+                    ThreadManager.SleepNoBlock(10, SplashManager.SplashThread);
                 }
             }
             catch (ThreadInterruptedException)
