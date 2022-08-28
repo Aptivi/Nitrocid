@@ -233,6 +233,7 @@ namespace KS.Languages
                 }
                 if (NotifyCodepageError)
                 {
+                    NotifyCodepageError = false;
                     TextWriterColor.Write(Translate.DoTranslation("Unable to set codepage. The language may not display properly."), true, ColorTools.ColTypes.Error);
                 }
             }
