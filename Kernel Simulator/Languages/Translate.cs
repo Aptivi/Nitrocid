@@ -25,6 +25,8 @@ namespace KS.Languages
     public static class Translate
     {
 
+        internal static Dictionary<string, string> translatedString;
+
         /// <summary>
         /// Translates string into current kernel language.
         /// </summary>
@@ -45,16 +47,10 @@ namespace KS.Languages
         {
             if (string.IsNullOrWhiteSpace(lang))
                 lang = "eng";
-            // Get language string and translate
-            Dictionary<string, string> translatedString;
 
             // If the language is available and is not English, translate
             if (LanguageManager.Languages.ContainsKey(lang) & lang != "eng")
             {
-                // Prepare dictionary
-                translatedString = PrepareDict(lang);
-                DebugWriter.Wdbg(DebugLevel.I, "Dictionary size: {0}", translatedString.Count);
-
                 // Do translation
                 if (translatedString.ContainsKey(text))
                 {

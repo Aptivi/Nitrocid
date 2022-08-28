@@ -114,6 +114,7 @@ namespace KS.Languages
                     string OldModDescGeneric = Translate.DoTranslation("Command defined by ");
                     DebugWriter.Wdbg(DebugLevel.I, "Translating kernel to {0}.", lang);
                     CurrentLanguage = lang;
+                    Translate.translatedString = Translate.PrepareDict(lang);
                     var Token = ConfigTools.GetConfigCategory(Config.ConfigCategory.General);
                     ConfigTools.SetConfigValue(Config.ConfigCategory.General, Token, "Language", CurrentLanguage);
                     DebugWriter.Wdbg(DebugLevel.I, "Saved new language.");

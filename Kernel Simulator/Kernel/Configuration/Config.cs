@@ -1361,7 +1361,6 @@ namespace KS.Kernel.Configuration
                 Shell.Shell.ColoredShell = false;
             }
 
-
             // ----------------------------- General configuration -----------------------------
             // Colors Section
             DebugWriter.Wdbg(DebugLevel.I, "Loading colors...");
@@ -1482,7 +1481,6 @@ namespace KS.Kernel.Configuration
             Listing.SortList = (bool)ConfigToken["Filesystem"]["Sort the list"];
             Listing.ShowTotalSizeInList = (bool)ConfigToken["Filesystem"]["Show total size in list"];
 
-
             // Hardware Section
             DebugWriter.Wdbg(DebugLevel.I, "Parsing hardware section...");
             Flags.QuietHardwareProbe = (bool)ConfigToken["Hardware"]["Quiet Probe"];
@@ -1586,7 +1584,7 @@ namespace KS.Kernel.Configuration
             DiscoSettings.DiscoMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Disco"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Disco"]["Maximum blue color level"] : 255;
             DiscoSettings.DiscoMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Disco"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Disco"]["Maximum color level"] : 255;
 
-            //> GlitterColor
+            // > GlitterColor
             GlitterColorSettings.GlitterColor255Colors = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate 255 Color Mode"];
             GlitterColorSettings.GlitterColorTrueColor = (bool)ConfigToken["Screensaver"]["GlitterColor"]["Activate True Color Mode"];
             GlitterColorSettings.GlitterColorDelay = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Delay in Milliseconds"] : 1;
@@ -1599,12 +1597,12 @@ namespace KS.Kernel.Configuration
             GlitterColorSettings.GlitterColorMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Maximum blue color level"] : 255;
             GlitterColorSettings.GlitterColorMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["GlitterColor"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["GlitterColor"]["Maximum color level"] : 255;
 
-            //> GlitterMatrix
+            // > GlitterMatrix
             GlitterMatrixSettings.GlitterMatrixDelay = int.TryParse((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["GlitterMatrix"]["Delay in Milliseconds"] : 1;
             GlitterMatrixSettings.GlitterMatrixBackgroundColor = new Color((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Background color"]).PlainSequence;
             GlitterMatrixSettings.GlitterMatrixForegroundColor = new Color((string)ConfigToken["Screensaver"]["GlitterMatrix"]["Foreground color"]).PlainSequence;
 
-            //> Lines
+            // > Lines
             LinesSettings.Lines255Colors = (bool)ConfigToken["Screensaver"]["Lines"]["Activate 255 Color Mode"];
             LinesSettings.LinesTrueColor = (bool)ConfigToken["Screensaver"]["Lines"]["Activate True Color Mode"];
             LinesSettings.LinesDelay = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Delay in Milliseconds"] : 500;
@@ -1619,7 +1617,7 @@ namespace KS.Kernel.Configuration
             LinesSettings.LinesMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Maximum blue color level"] : 255;
             LinesSettings.LinesMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lines"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lines"]["Maximum color level"] : 255;
 
-            //> Dissolve
+            // > Dissolve
             DissolveSettings.Dissolve255Colors = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate 255 Color Mode"];
             DissolveSettings.DissolveTrueColor = (bool)ConfigToken["Screensaver"]["Dissolve"]["Activate True Color Mode"];
             DissolveSettings.DissolveBackgroundColor = new Color((string)ConfigToken["Screensaver"]["Dissolve"]["Background color"]).PlainSequence;
@@ -1647,7 +1645,7 @@ namespace KS.Kernel.Configuration
             BouncingBlockSettings.BouncingBlockMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum blue color level"] : 255;
             BouncingBlockSettings.BouncingBlockMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["BouncingBlock"]["Maximum color level"] : 255;
 
-            //> BouncingText
+            // > BouncingText
             BouncingTextSettings.BouncingText255Colors = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate 255 Color Mode"];
             BouncingTextSettings.BouncingTextTrueColor = (bool)ConfigToken["Screensaver"]["BouncingText"]["Activate True Color Mode"];
             BouncingTextSettings.BouncingTextDelay = int.TryParse((string)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["BouncingText"]["Delay in Milliseconds"] : 10;
@@ -1748,7 +1746,7 @@ namespace KS.Kernel.Configuration
             LighterSettings.LighterMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Maximum blue color level"] : 255;
             LighterSettings.LighterMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Lighter"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Lighter"]["Maximum color level"] : 255;
 
-            //> Wipe
+            // > Wipe
             WipeSettings.Wipe255Colors = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate 255 Color Mode"];
             WipeSettings.WipeTrueColor = (bool)ConfigToken["Screensaver"]["Wipe"]["Activate True Color Mode"];
             WipeSettings.WipeDelay = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Delay in Milliseconds"] : 10;
@@ -1763,7 +1761,7 @@ namespace KS.Kernel.Configuration
             WipeSettings.WipeMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Maximum blue color level"] : 255;
             WipeSettings.WipeMaximumColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Wipe"]["Maximum color level"], out _) ? (int)ConfigToken["Screensaver"]["Wipe"]["Maximum color level"] : 255;
 
-            //> Fader
+            // > Fader
             FaderSettings.FaderDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Delay in Milliseconds"] : 50;
             FaderSettings.FaderFadeOutDelay = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Fade Out Delay in Milliseconds"] : 3000;
             FaderSettings.FaderWrite = (string)ConfigToken["Screensaver"]["Fader"]["Text Shown"] ?? "Kernel Simulator";
@@ -1776,7 +1774,7 @@ namespace KS.Kernel.Configuration
             FaderSettings.FaderMaximumGreenColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Maximum green color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Maximum green color level"] : 255;
             FaderSettings.FaderMaximumBlueColorLevel = int.TryParse((string)ConfigToken["Screensaver"]["Fader"]["Maximum blue color level"], out _) ? (int)ConfigToken["Screensaver"]["Fader"]["Maximum blue color level"] : 255;
 
-            //> FaderBack
+            // > FaderBack
             FaderBackSettings.FaderBackDelay = int.TryParse((string)ConfigToken["Screensaver"]["FaderBack"]["Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FaderBack"]["Delay in Milliseconds"] : 50;
             FaderBackSettings.FaderBackFadeOutDelay = int.TryParse((string)ConfigToken["Screensaver"]["FaderBack"]["Fade Out Delay in Milliseconds"], out _) ? (int)ConfigToken["Screensaver"]["FaderBack"]["Fade Out Delay in Milliseconds"] : 3000;
             FaderBackSettings.FaderBackMaxSteps = int.TryParse((string)ConfigToken["Screensaver"]["FaderBack"]["Max Fade Steps"], out _) ? (int)ConfigToken["Screensaver"]["FaderBack"]["Max Fade Steps"] : 25;
