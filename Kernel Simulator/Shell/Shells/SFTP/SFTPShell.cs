@@ -87,10 +87,6 @@ namespace KS.Shell.Shells.SFTP
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prompt for command
-                        if (Kernel.Kernel.DefConsoleOut is not null)
-                        {
-                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                        }
                         if (!Connects)
                         {
                             DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");

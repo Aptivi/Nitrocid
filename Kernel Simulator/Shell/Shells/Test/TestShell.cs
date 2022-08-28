@@ -57,11 +57,6 @@ namespace KS.Shell.Shells.Test
                 // See UESHShell.cs for more info
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
-                    if (Kernel.Kernel.DefConsoleOut is not null)
-                    {
-                        ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                    }
-
                     // Write the prompt
                     PromptPresetManager.WriteShellPrompt(ShellType);
 

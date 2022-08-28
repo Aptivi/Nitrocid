@@ -161,11 +161,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(color);
-                        ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-                    }
+                    ColorTools.SetConsoleColor(color);
+                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
 
                     // Write text slowly
                     WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -193,11 +190,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(ForegroundColor);
-                        ColorTools.SetConsoleColor(BackgroundColor, true);
-                    }
+                    ColorTools.SetConsoleColor(ForegroundColor);
+                    ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text slowly
                     WriterPlainManager.currentPlain.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);

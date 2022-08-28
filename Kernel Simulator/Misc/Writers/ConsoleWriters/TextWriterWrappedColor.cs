@@ -156,12 +156,9 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(color);
-                        ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
-                    }
+                    // Set the console color to selected background and foreground colors
+                    ColorTools.SetConsoleColor(color);
+                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, true);
 
                     // Write wrapped output
                     WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);
@@ -188,12 +185,9 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleBase.ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(ForegroundColor);
-                        ColorTools.SetConsoleColor(BackgroundColor, true);
-                    }
+                    // Set the console color to selected background and foreground colors
+                    ColorTools.SetConsoleColor(ForegroundColor);
+                    ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write wrapped output
                     WriterPlainManager.currentPlain.WriteWrappedPlain(Text, Line, vars);

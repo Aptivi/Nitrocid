@@ -76,10 +76,6 @@ namespace KS.Shell.Shells.Zip
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prepare for prompt
-                        if (Kernel.Kernel.DefConsoleOut is not null)
-                        {
-                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                        }
                         PromptPresetManager.WriteShellPrompt(ShellType);
 
                         // Raise the event

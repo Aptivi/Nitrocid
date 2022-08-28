@@ -283,11 +283,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(color, Highlight, Highlight);
-                        ColorTools.SetConsoleColor(ColorTools.BackgroundColor, !Highlight, !Highlight);
-                    }
+                    ColorTools.SetConsoleColor(color, Highlight, Highlight);
+                    ColorTools.SetConsoleColor(ColorTools.BackgroundColor, !Highlight, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
@@ -339,11 +336,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
-                    {
-                        ColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
-                        ColorTools.SetConsoleColor(BackgroundColor, !Highlight, !Highlight);
-                    }
+                    ColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
+                    ColorTools.SetConsoleColor(BackgroundColor, !Highlight, !Highlight);
 
                     // Write the text to console
                     if (Highlight)

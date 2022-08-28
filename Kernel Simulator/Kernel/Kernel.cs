@@ -65,7 +65,6 @@ namespace KS.Kernel
         public readonly static Events.Events KernelEventManager = new();
         public readonly static string ExecutableDir = Environment.CurrentDirectory;
         internal static Stopwatch StageTimer = new();
-        internal static TextWriter DefConsoleOut;
 
         // #ifdef'd variables ... Framework monikers
 #if NETCOREAPP

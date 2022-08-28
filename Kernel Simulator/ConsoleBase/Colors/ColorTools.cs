@@ -655,209 +655,206 @@ namespace KS.ConsoleBase.Colors
         /// <param name="ForceSet">Force set color</param>
         public static void SetConsoleColor(ColTypes colorType, bool Background, bool ForceSet = false)
         {
-            if (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out))
+            switch (colorType)
             {
-                switch (colorType)
-                {
-                    case ColTypes.Neutral:
-                        {
-                            SetConsoleColor(NeutralTextColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Continuable:
-                        {
-                            SetConsoleColor(ContKernelErrorColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Uncontinuable:
-                        {
-                            SetConsoleColor(UncontKernelErrorColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.HostName:
-                        {
-                            SetConsoleColor(HostNameShellColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.UserName:
-                        {
-                            SetConsoleColor(UserNameShellColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.License:
-                        {
-                            SetConsoleColor(LicenseColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Gray:
-                        {
-                            SetConsoleColor(GetGray(), Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.ListValue:
-                        {
-                            SetConsoleColor(ListValueColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.ListEntry:
-                        {
-                            SetConsoleColor(ListEntryColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Stage:
-                        {
-                            SetConsoleColor(StageColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Error:
-                        {
-                            SetConsoleColor(ErrorColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Warning:
-                        {
-                            SetConsoleColor(WarningColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Option:
-                        {
-                            SetConsoleColor(OptionColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Banner:
-                        {
-                            SetConsoleColor(BannerColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.NotificationTitle:
-                        {
-                            SetConsoleColor(NotificationTitleColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.NotificationDescription:
-                        {
-                            SetConsoleColor(NotificationDescriptionColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.NotificationProgress:
-                        {
-                            SetConsoleColor(NotificationProgressColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.NotificationFailure:
-                        {
-                            SetConsoleColor(NotificationFailureColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Question:
-                        {
-                            SetConsoleColor(QuestionColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Input:
-                        {
-                            SetConsoleColor(InputColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Success:
-                        {
-                            SetConsoleColor(SuccessColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.UserDollarSign:
-                        {
-                            SetConsoleColor(UserDollarColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Tip:
-                        {
-                            SetConsoleColor(TipColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.SeparatorText:
-                        {
-                            SetConsoleColor(SeparatorTextColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Separator:
-                        {
-                            SetConsoleColor(SeparatorColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.ListTitle:
-                        {
-                            SetConsoleColor(ListTitleColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.DevelopmentWarning:
-                        {
-                            SetConsoleColor(DevelopmentWarningColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.StageTime:
-                        {
-                            SetConsoleColor(StageTimeColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.Progress:
-                        {
-                            SetConsoleColor(ProgressColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.BackOption:
-                        {
-                            SetConsoleColor(BackOptionColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.LowPriorityBorder:
-                        {
-                            SetConsoleColor(LowPriorityBorderColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.MediumPriorityBorder:
-                        {
-                            SetConsoleColor(MediumPriorityBorderColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.HighPriorityBorder:
-                        {
-                            SetConsoleColor(HighPriorityBorderColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.TableSeparator:
-                        {
-                            SetConsoleColor(TableSeparatorColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.TableHeader:
-                        {
-                            SetConsoleColor(TableHeaderColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.TableValue:
-                        {
-                            SetConsoleColor(TableValueColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.SelectedOption:
-                        {
-                            SetConsoleColor(SelectedOptionColor, Background, ForceSet);
-                            break;
-                        }
-                    case ColTypes.AlternativeOption:
-                        {
-                            SetConsoleColor(AlternativeOptionColor, Background, ForceSet);
-                            break;
-                        }
+                case ColTypes.Neutral:
+                    {
+                        SetConsoleColor(NeutralTextColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Continuable:
+                    {
+                        SetConsoleColor(ContKernelErrorColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Uncontinuable:
+                    {
+                        SetConsoleColor(UncontKernelErrorColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.HostName:
+                    {
+                        SetConsoleColor(HostNameShellColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.UserName:
+                    {
+                        SetConsoleColor(UserNameShellColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.License:
+                    {
+                        SetConsoleColor(LicenseColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Gray:
+                    {
+                        SetConsoleColor(GetGray(), Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.ListValue:
+                    {
+                        SetConsoleColor(ListValueColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.ListEntry:
+                    {
+                        SetConsoleColor(ListEntryColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Stage:
+                    {
+                        SetConsoleColor(StageColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Error:
+                    {
+                        SetConsoleColor(ErrorColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Warning:
+                    {
+                        SetConsoleColor(WarningColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Option:
+                    {
+                        SetConsoleColor(OptionColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Banner:
+                    {
+                        SetConsoleColor(BannerColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.NotificationTitle:
+                    {
+                        SetConsoleColor(NotificationTitleColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.NotificationDescription:
+                    {
+                        SetConsoleColor(NotificationDescriptionColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.NotificationProgress:
+                    {
+                        SetConsoleColor(NotificationProgressColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.NotificationFailure:
+                    {
+                        SetConsoleColor(NotificationFailureColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Question:
+                    {
+                        SetConsoleColor(QuestionColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Input:
+                    {
+                        SetConsoleColor(InputColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Success:
+                    {
+                        SetConsoleColor(SuccessColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.UserDollarSign:
+                    {
+                        SetConsoleColor(UserDollarColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Tip:
+                    {
+                        SetConsoleColor(TipColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.SeparatorText:
+                    {
+                        SetConsoleColor(SeparatorTextColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Separator:
+                    {
+                        SetConsoleColor(SeparatorColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.ListTitle:
+                    {
+                        SetConsoleColor(ListTitleColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.DevelopmentWarning:
+                    {
+                        SetConsoleColor(DevelopmentWarningColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.StageTime:
+                    {
+                        SetConsoleColor(StageTimeColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.Progress:
+                    {
+                        SetConsoleColor(ProgressColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.BackOption:
+                    {
+                        SetConsoleColor(BackOptionColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.LowPriorityBorder:
+                    {
+                        SetConsoleColor(LowPriorityBorderColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.MediumPriorityBorder:
+                    {
+                        SetConsoleColor(MediumPriorityBorderColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.HighPriorityBorder:
+                    {
+                        SetConsoleColor(HighPriorityBorderColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.TableSeparator:
+                    {
+                        SetConsoleColor(TableSeparatorColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.TableHeader:
+                    {
+                        SetConsoleColor(TableHeaderColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.TableValue:
+                    {
+                        SetConsoleColor(TableValueColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.SelectedOption:
+                    {
+                        SetConsoleColor(SelectedOptionColor, Background, ForceSet);
+                        break;
+                    }
+                case ColTypes.AlternativeOption:
+                    {
+                        SetConsoleColor(AlternativeOptionColor, Background, ForceSet);
+                        break;
+                    }
 
-                    default:
-                        {
-                            break;
-                        }
-                }
-                if (!Background)
-                    SetConsoleColor(BackgroundColor, true);
+                default:
+                    {
+                        break;
+                    }
             }
+            if (!Background)
+                SetConsoleColor(BackgroundColor, true);
         }
 
         /// <summary>

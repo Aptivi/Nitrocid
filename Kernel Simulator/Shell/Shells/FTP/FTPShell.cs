@@ -94,12 +94,6 @@ namespace KS.Shell.Shells.FTP
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
-                        // Restore console state
-                        if (Kernel.Kernel.DefConsoleOut is not null)
-                        {
-                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                        }
-
                         // Prompt for command
                         if (!Connects)
                         {

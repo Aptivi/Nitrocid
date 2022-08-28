@@ -81,12 +81,6 @@ namespace KS.Shell.Shells.Hex
                     // See UESHShell.cs for more info
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
-                        // Restore the console state
-                        if (Kernel.Kernel.DefConsoleOut is not null)
-                        {
-                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                        }
-
                         // Prepare for prompt
                         PromptPresetManager.WriteShellPrompt(ShellType);
 

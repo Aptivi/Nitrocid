@@ -64,10 +64,6 @@ namespace KS.Shell.Shells.Mail
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
                     // Initialize prompt
-                    if (Kernel.Kernel.DefConsoleOut is not null)
-                    {
-                        ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                    }
                     PromptPresetManager.WriteShellPrompt(ShellType);
                 }
 

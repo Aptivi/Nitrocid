@@ -70,10 +70,6 @@ namespace KS.Shell.Shells.UESH
                             ConsoleBase.ConsoleWrapper.CursorVisible = true;
 
                             // Write a prompt
-                            if (Kernel.Kernel.DefConsoleOut is not null)
-                            {
-                                ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                            }
                             PromptPresetManager.WriteShellPrompt(ShellType);
 
                             // Raise shell initialization event

@@ -40,7 +40,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
+                    if (!Line)
                         ConsoleExtensions.GetFilteredPositions(Text, ref FilteredLeft, ref FilteredTop, vars);
 
                     // Actually write
@@ -65,7 +65,7 @@ namespace KS.Misc.Writers.WriterBase.PlainWriters
                     }
 
                     // Return to the processed position
-                    if (!Line & (Kernel.Kernel.DefConsoleOut is null | Equals(Kernel.Kernel.DefConsoleOut, ConsoleWrapper.Out)))
+                    if (!Line)
                         ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == "ThreadInterruptedException"))

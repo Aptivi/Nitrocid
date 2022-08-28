@@ -52,10 +52,6 @@ namespace KS.Shell.Shells.HTTP
                     lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                     {
                         // Prompt for command
-                        if (Kernel.Kernel.DefConsoleOut is not null)
-                        {
-                            ConsoleBase.ConsoleWrapper.SetOut(Kernel.Kernel.DefConsoleOut);
-                        }
                         DebugWriter.Wdbg(DebugLevel.I, "Preparing prompt...");
                         PromptPresetManager.WriteShellPrompt(ShellType);
 
