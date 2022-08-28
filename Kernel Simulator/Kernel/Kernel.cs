@@ -73,7 +73,7 @@ namespace KS.Kernel
 #else
         public const string KernelSimulatorMoniker = ".NET Framework";
 #endif
-        // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, DELTA, GAMMA, NONE | None satisfied: Unsupported Release)
+        // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, NONE | None satisfied: Unsupported Release)
 #if SPECIFIERREL
         public readonly static string ConsoleTitle = $"Kernel Simulator v{KernelVersion} - {KernelSimulatorMoniker}";
 #elif SPECIFIERRC
