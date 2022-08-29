@@ -213,7 +213,7 @@ namespace KS.Kernel.Debugging
                 var NewStackTraces = new List<string>() { $"{Kernel.NewLine}{Ex.ToString().Substring(0, Ex.ToString().IndexOf(":"))}: {Ex.Message}{Kernel.NewLine}{Ex.StackTrace}{Kernel.NewLine}" };
 
                 // Get all the inner exceptions
-                while (!(Inner is null))
+                while (Inner is not null)
                 {
                     NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString().Substring(0, Inner.ToString().IndexOf(":"))}: {Inner.Message}{Kernel.NewLine}{Inner.StackTrace}{Kernel.NewLine}");
                     InnerNumber += 1;
