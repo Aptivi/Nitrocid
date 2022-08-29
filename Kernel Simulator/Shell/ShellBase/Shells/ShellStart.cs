@@ -67,7 +67,7 @@ namespace KS.Shell.ShellBase.Shells
             var ShellExecute = GetShellExecutor(ShellType);
 
             // Make a new instance of shell information
-            var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandThreadParameters)cmdThreadParams));
+            var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => GetCommand.ExecuteCommand((GetCommand.ExecuteCommandParameters)cmdThreadParams));
             var ShellInfo = new ShellInfo(ShellType, ShellExecute, ShellCommandThread);
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.

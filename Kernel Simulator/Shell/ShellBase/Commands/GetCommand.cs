@@ -48,9 +48,9 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         /// <summary>
-        /// Thread parameters for ExecuteCommand()
+        /// Parameters to pass to <see cref="ExecuteCommand(ExecuteCommandParameters)"/>
         /// </summary>
-        internal class ExecuteCommandThreadParameters
+        internal class ExecuteCommandParameters
         {
             /// <summary>
             /// The requested command with arguments
@@ -69,7 +69,7 @@ namespace KS.Shell.ShellBase.Commands
             /// </summary>
             internal string Address;
 
-            internal ExecuteCommandThreadParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
+            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, StreamWriter DebugDeviceSocket = null, string Address = "")
             {
                 this.RequestedCommand = RequestedCommand;
                 this.ShellType = ShellType;
@@ -82,7 +82,7 @@ namespace KS.Shell.ShellBase.Commands
         /// Executes a command
         /// </summary>
         /// <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
-        internal static void ExecuteCommand(ExecuteCommandThreadParameters ThreadParams)
+        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             var ShellType = ThreadParams.ShellType;
