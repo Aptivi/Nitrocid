@@ -551,6 +551,11 @@ namespace KS.Kernel
             // Determine the compiler vars used to build KS using conditional checks
 #if SPECIFIERDEV
             CompilerVars.Add("SPECIFIER = \"DEV\"");
+#if MILESTONESPECIFIERALPHA
+            CompilerVars.Add("MILESTONESPECIFIERALPHA");
+#elif MILESTONESPECIFIERBETA
+            CompilerVars.Add("MILESTONESPECIFIERBETA");
+#endif
 #elif SPECIFIERRC
             CompilerVars.Add("SPECIFIER = \"RC\"");
 #elif SPECIFIERREL
