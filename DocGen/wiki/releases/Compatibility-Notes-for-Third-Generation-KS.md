@@ -91,3 +91,20 @@ It has come to the conclusion that `ParseCmd` is now very similar to `ExecuteCom
 ##### Removed `ExecuteRDAlias()`
 
 This function is not needed to execute aliases since there has been recent improvements to the executor in both 0.0.20.0 and 0.0.24.0.
+
+##### Renamed debug writer function names
+
+We needed to do the same thing as we've renamed `W()` to `Write()`, so we renamed the following:
+  - Wdbg() -> WriteDebug()
+  - WdbgConditional() -> WriteDebugConditional()
+  - WdbgDevicesOnly() -> WriteDebugDevicesOnly()
+  - WStkTrcConditional() -> WriteDebugStackTraceConditional()
+  - WStkTrc() -> WriteDebugStackTrace
+
+##### Moved MAL and MOTD message to Misc.Probers.Motd
+
+These have no relationship with the kernel directly.
+
+##### Moved HostName from Kernel to NetworkTools
+
+It has no relationship with the kernel either.
