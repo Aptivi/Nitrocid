@@ -556,9 +556,6 @@ namespace KS.Kernel
 #elif SPECIFIERREL
             CompilerVars.Add("SPECIFIER = \"REL\"");
 #endif
-#if ENABLEIMMEDIATEWINDOWDEBUG
-            CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG");
-#endif
 
             // Return the compiler vars
             return CompilerVars.ToArray();

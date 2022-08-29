@@ -76,7 +76,7 @@ namespace KS.Kernel.Debugging
                     if (Flags.CheckDebugQuota)
                         DebugManager.CheckForDebugQuotaExceed();
 
-                    // For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
+                    // Check to see if source file name is not empty.
                     if (Source is not null & !(Convert.ToDouble(LineNum) == 0d))
                     {
                         // Debug to file and all connected debug devices (raw mode)
@@ -94,9 +94,6 @@ namespace KS.Kernel.Debugging
                             }
                         }
                     }
-#if ENABLEIMMEDIATEWINDOWDEBUG
-                    Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars);
-#endif
                     else // Rare case, unless debug symbol is not found on archives.
                     {
                         DebugStreamWriter.WriteLine($"{TimeDate.TimeDate.KernelDateTime.ToShortDateString()} {TimeDate.TimeDate.KernelDateTime.ToShortTimeString()} [{Level}] {text}", vars);
@@ -112,9 +109,6 @@ namespace KS.Kernel.Debugging
                                 WStkTrc(ex);
                             }
                         }
-#if ENABLEIMMEDIATEWINDOWDEBUG
-                        Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars);
-#endif
                     }
 
                     // Disconnect offending clients who are disconnected
@@ -177,9 +171,6 @@ namespace KS.Kernel.Debugging
                         WStkTrc(ex);
                     }
                 }
-#if ENABLEIMMEDIATEWINDOWDEBUG
-                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars);
-#endif
 
                 // Disconnect offending clients who are disconnected
                 foreach (string si in OffendingIndex)
